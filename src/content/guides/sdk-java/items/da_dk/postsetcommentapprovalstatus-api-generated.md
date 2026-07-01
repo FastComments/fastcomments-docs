@@ -1,10 +1,12 @@
 ## Parametre
 
-| Navn | Type | Placering | Krævet | Beskrivelse |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Ja |  |
-| approved | boolean | query | Nej |  |
-| sso | string | query | Nej |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| approved | boolean | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Svar
 
@@ -27,12 +29,15 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     Boolean approved = true; // Boolean | 
+    String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      SetCommentApprovedResponse result = apiInstance.postSetCommentApprovalStatus(commentId)
+      SetCommentApprovedResponse result = apiInstance.postSetCommentApprovalStatus(tenantId, commentId)
             .approved(approved)
+            .broadcastId(broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);

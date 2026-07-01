@@ -1,27 +1,29 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| urlId | string | Да |  |
-| userId | string | Не |  |
-| anonUserId | string | Не |  |
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Da |  |
+| urlId | string | Da |  |
+| userId | string | Ne |  |
+| anonUserId | string | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetVotesForUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetVotesForUserResponse.ts)
+Vraća: [`GetVotesForUserResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetVotesForUserResponse1.ts)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'getVotesForUser Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getVotesForUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "northwind-io";
-const urlId: string = "blog/2025/06/typescript-updates";
-const userId: string = "u_72f9b1c4";
-const anonUserId: string = "anon_e4d2a9";
+async function demo() {
+  const tenantId: string = "acme-corp";
+  const urlId: string = "post-9f8b7c";
+  const userId: string = "user-42";
+  const anonUserId: string = "anon-123";
 
-const votesForRegistered: GetVotesForUserResponse = await getVotesForUser(tenantId, urlId, userId);
-const votesForAnonymous: GetVotesForUserResponse = await getVotesForUser(tenantId, urlId, undefined, anonUserId);
+  const votesRequiredOnly: GetVotesForUserResponse1 = await getVotesForUser(tenantId, urlId);
+  const votesWithUserId: GetVotesForUserResponse1 = await getVotesForUser(tenantId, urlId, userId);
+  const votesWithAnonId: GetVotesForUserResponse1 = await getVotesForUser(tenantId, urlId, undefined, anonUserId);
+}
+demo();
 [inline-code-end]
-
----

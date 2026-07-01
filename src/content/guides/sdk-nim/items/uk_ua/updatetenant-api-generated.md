@@ -1,36 +1,34 @@
----
-## Parameters
+## Параметри
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Так |  |
-| id | string | Ні |  |
-| updateTenantBody | UpdateTenantBody | Ні |  |
+| Назва | Тип | Обов'язково | Опис |
+|------|------|-------------|------|
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| updateTenantBody | UpdateTenantBody | No |  |
 
-## Response
+## Відповідь
 
 Повертає: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад updateTenant'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateTenant Приклад'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateTenant(
-  tenantId = "my-tenant-123",
-  id = "settings",
-  updateTenantBody = UpdateTenantBody(
-    name = "My Tenant 123",
-    enableModeration = true,
-    allowedDomains = @["news.example.com", "blog.example.org"],
-    maxCommentLength = 1000
-  )
+let updateBody = UpdateTenantBody(
+  name: "My Tenant",
+  description: "Tenant for news site",
+  isActive: true,
+  allowedDomains: @["example.com", "news.com"]
 )
 
-if response.isSome:
-  let apiResp = response.get()
-  echo "Tenant updated successfully: ", apiResp
-else:
-  echo "Failed to update tenant, HTTP status: ", httpResponse.status
+let (apiResp, httpResp) = client.updateTenant(
+  tenantId = "my-tenant-123",
+  id = "tenant-456",
+  updateTenantBody = updateBody
+)
+
+if apiResp.isSome:
+  let emptyResp = apiResp.get()
 [inline-code-end]
 
 ---

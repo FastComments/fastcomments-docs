@@ -1,13 +1,15 @@
 ## Parameter
 
-| Name | Typ | Location | Erforderlich | Beschreibung |
-|------|------|----------|----------|-------------|
+| Name | Typ | Ort | Erforderlich | Beschreibung |
+|------|-----|-----|--------------|---------------|
+| tenantId | string | query | Ja |  |
 | commentId | string | path | Ja |  |
+| broadcastId | string | query | Nein |  |
 | sso | string | query | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
+Rückgabe: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## Beispiel
 
@@ -26,10 +28,13 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
+    String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      APIEmptyResponse result = apiInstance.postFlagComment(commentId)
+      APIEmptyResponse result = apiInstance.postFlagComment(tenantId, commentId)
+            .broadcastId(broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);

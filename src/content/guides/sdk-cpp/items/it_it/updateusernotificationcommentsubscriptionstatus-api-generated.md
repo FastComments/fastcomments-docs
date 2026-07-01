@@ -1,14 +1,13 @@
----
 Abilita o disabilita le notifiche per un commento specifico.
 
 ## Parametri
 
-| Nome | Tipo | Obbligatorio | Descrizione |
-|------|------|--------------|-------------|
-| tenantId | string | Sì |  |
-| notificationId | string | Sì |  |
-| optedInOrOut | string | Sì |  |
-| commentId | string | Sì |  |
+| Nome | Tipo | Richiesto | Descrizione |
+|------|------|-----------|-------------|
+| tenantId | string | Yes |  |
+| notificationId | string | Yes |  |
+| optedInOrOut | string | Yes |  |
+| commentId | string | Yes |  |
 | sso | string | No |  |
 
 ## Risposta
@@ -19,20 +18,14 @@ Restituisce: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https:/
 
 [inline-code-attrs-start title = 'Esempio di updateUserNotificationCommentSubscriptionStatus'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t notificationId = U("notif-456");
-utility::string_t optedInOrOut = U("opted_in");
-utility::string_t commentId = U("cmt-789");
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("sso-jwt-abc123"));
-api->updateUserNotificationCommentSubscriptionStatus(tenantId, notificationId, optedInOrOut, commentId, sso)
-.then([](pplx::task<std::shared_ptr<UpdateUserNotificationCommentSubscriptionStatusResponse>> t) {
-    try {
-        auto resp = t.get();
-        if(!resp) resp = std::make_shared<UpdateUserNotificationCommentSubscriptionStatusResponse>();
-        std::cout << "Subscription update completed" << std::endl;
-    } catch(const std::exception& e) {
-        std::cout << "Error updating subscription: " << e.what() << std::endl;
-    }
+auto updateTask = api->updateUserNotificationCommentSubscriptionStatus(
+    utility::conversions::to_string_t("my-tenant-123"),
+    utility::conversions::to_string_t("notif-456"),
+    utility::conversions::to_string_t("optedIn"),
+    utility::conversions::to_string_t("comment-789"),
+    boost::optional<utility::string_t>(utility::conversions::to_string_t("sso-token-abc"))
+).then([](std::shared_ptr<UpdateUserNotificationCommentSubscriptionStatusResponse> resp){
+    (void)resp;
 });
 [inline-code-end]
 

@@ -1,7 +1,7 @@
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
 | tenantId | string | Da |  |
 | id | string | Ne |  |
 | skip | float64 | Ne |  |
@@ -12,14 +12,20 @@ Vraća: [`Option[GetEmailTemplateRenderErrorsResponse]`](https://github.com/Fast
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer getEmailTemplateRenderErrors'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getEmailTemplateRenderErrors Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getEmailTemplateRenderErrors(tenantId = "my-tenant-123", id = "", skip = 0.0)
-if response.isSome:
-  let templateErrors = response.get()
-  discard templateErrors
+let (optResp, httpResp) = client.getEmailTemplateRenderErrors(
+  tenantId = "my-tenant-123",
+  id = "welcome-template",
+  skip = 0.0
+)
+
+if optResp.isSome:
+  let resp = optResp.get()
+  # koristite resp po potrebi
 else:
-  discard httpResponse
+  # obradite nedostajući odgovor
+  discard
 [inline-code-end]
 
 ---

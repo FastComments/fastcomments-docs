@@ -1,12 +1,11 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | id | string | Не |  |
 | unBlockFromCommentParams | UnBlockFromCommentParams | Не |  |
-| userId | string | Не |  |
-| anonUserId | string | Не |  |
+| options | UnBlockUserFromCommentOptions | Не |  |
 
 ## Отговор
 
@@ -14,21 +13,15 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за unBlockUserFromComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'unBlockUserFromComment Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.unBlockUserFromComment(
   tenantId = "my-tenant-123",
-  id = "comment-9f3b2a",
-  unBlockFromCommentParams = UnBlockFromCommentParams(),
-  userId = "user-1024",
-  anonUserId = "anon-77b"
+  id = "comment-456",
+  unBlockFromCommentParams = UnBlockFromCommentParams(userId = "user-789", commentId = "cmt-321"),
+  options = UnBlockUserFromCommentOptions(),
 )
 
 if response.isSome:
-  let unblockResult = response.get()
-  echo unblockResult
-else:
-  echo "Unblock failed"
+  let unblockSuccess = response.get()
 [inline-code-end]
-
----

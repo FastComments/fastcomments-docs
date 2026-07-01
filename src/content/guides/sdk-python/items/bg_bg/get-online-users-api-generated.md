@@ -1,46 +1,49 @@
-В момента онлайн зрителите на страница: хора, чиито websocket сесии са абонирани за страницата в момента.
-Връща anonCount + totalCount (абонати в рамките на стаята, включително анонимни зрители, които не изброяваме).
+Currently-online viewers of a page: people whose websocket session is subscribed to the page right now.  
+Връща anonCount + totalCount (room-wide subscribers, including anon viewers we don't enumerate).  
+Текущо онлайн зрители на страница: хора, чиито уебсокет сесия е абонирана за страницата в момента.  
+Връща anonCount + totalCount (абонати в цялата стая, включително анонимни зрители, които не изброяваме).
 
-## Параметри
+## Parameters
 
-| Име | Тип | Местоположение | Задължително | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| urlId | string | query | Да | Идентификатор на URL на страницата (изчистен на сървъра). |
-| afterName | string | query | Не | Курсор: предайте nextAfterName от предишния отговор. |
-| afterUserId | string | query | Не | Курсор за решаване на равенство: предайте nextAfterUserId от предишния отговор. Задължително, когато afterName е зададено, за да се предотврати пропускане на записи при еднакви имена. |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes | Page URL identifier (cleaned server-side). |
+| afterName | string | query | No | Cursor: pass nextAfterName from the previous response. |
+| afterUserId | string | query | No | Cursor tiebreaker: pass nextAfterUserId from the previous response. Required when afterName is set so name-ties don't drop entries. |
 
-## Отговор
+## Response
 
-Връща: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/page_users_online_response.py)
+Returns: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/page_users_online_response.py)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'Пример за get_online_users'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_online_users Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetOnlineUsersOptions
 from client.models.page_users_online_response import PageUsersOnlineResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинирането на хост е по избор и по подразбиране е https://fastcomments.com
-# Вижте configuration.py за списък на всички поддържани конфигурационни параметри.
+# Defining the host is optional and defaults to https://fastcomments.com
+# See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Влезте в контекст с инстанция на API клиента
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Създайте инстанция на API класа
+    # Create an instance of the API class
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    url_id = 'url_id_example' # str | Идентификатор на URL на страницата (изчистен на сървъра).
-    after_name = 'after_name_example' # str | Курсор: предайте nextAfterName от предишния отговор. (по избор)
-    after_user_id = 'after_user_id_example' # str | Курсор за решаване на равенство: предайте nextAfterUserId от предишния отговор. Задължително, когато afterName е зададено, за да се предотврати пропускане на записи при еднакви имена. (по избор)
+    url_id = 'url_id_example' # str | Page URL identifier (cleaned server-side).
+    after_name = 'after_name_example' # str | Cursor: pass nextAfterName from the previous response. (optional)
+    after_user_id = 'after_user_id_example' # str | Cursor tiebreaker: pass nextAfterUserId from the previous response. Required when afterName is set so name-ties don't drop entries. (optional)
 
     try:
-        api_response = api_instance.get_online_users(tenant_id, url_id, after_name=after_name, after_user_id=after_user_id)
+        api_response = api_instance.get_online_users(tenant_id, url_id, GetOnlineUsersOptions(after_name=after_name, after_user_id=after_user_id))
         print("The response of PublicApi->get_online_users:\n")
         pprint(api_response)
     except Exception as e:

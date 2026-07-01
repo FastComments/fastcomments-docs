@@ -1,17 +1,19 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Назва | Тип | Розташування | Обов’язково | Опис |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Да |  |
-| sso | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
+Повертає: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример PostRestoreDeletedComment'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад PostRestoreDeletedComment'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,17 +25,19 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
-	sso := "sso_example" // string |  (необязательно)
+	broadcastId := "broadcastId_example" // string |  (необов’язковий)
+	sso := "sso_example" // string |  (необов’язковий)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostRestoreDeletedComment(context.Background(), commentId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostRestoreDeletedComment(context.Background(), commentId).TenantId(tenantId).BroadcastId(broadcastId).Sso(sgo).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostRestoreDeletedComment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// ответ от `PostRestoreDeletedComment`: APIEmptyResponse
+	// response from `PostRestoreDeletedComment`: APIEmptyResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostRestoreDeletedComment`: %v\n", resp)
 }
 [inline-code-end]

@@ -1,45 +1,46 @@
-## Parameters
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| userId | string | query | No |  |
-| limit | number | query | No |  |
-| skip | number | query | No |  |
+| tenantId | string | query | Да |  |
+| userId | string | query | Не |  |
+| limit | number | query | Не |  |
+| skip | number | query | Не |  |
 
-## Response
+## Отговор
 
 Връща: [`APIGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_user_badge_progress_list_response.py)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'Пример за get_user_badge_progress_list'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_user_badge_progress_list Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetUserBadgeProgressListOptions
 from client.models.api_get_user_badge_progress_list_response import APIGetUserBadgeProgressListResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://fastcomments.com
-# See configuration.py for a list of all supported configuration parameters.
+# Определянето на хоста е по избор и по подразбиране е https://fastcomments.com
+# Вижте configuration.py за списък с всички поддържани конфигурационни параметри.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Клипентът трябва да конфигурира параметрите за удостоверяване и упълномощаване
+# в съответствие с политиката за сигурност на API сървъра.
+# Примери за всеки метод на удостоверяване са предоставени по-долу, използвайте примера,
+# който отговаря на вашия случай на използване на удостоверяване.
 
-# Configure API key authorization: api_key
+# Конфигурирайте удостоверяване с API ключ: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Разкоментирайте по-долу, за да настроите префикс (например Bearer) за API ключа, ако е необходимо
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Enter a context with an instance of the API client
+# Въведете контекст с инстанция на API клиента
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # Създайте инстанция на API класа
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     user_id = 'user_id_example' # str |  (по избор)
@@ -47,9 +48,11 @@ with client.ApiClient(configuration) as api_client:
     skip = 3.4 # float |  (по избор)
 
     try:
-        api_response = api_instance.get_user_badge_progress_list(tenant_id, user_id=user_id, limit=limit, skip=skip)
+        api_response = api_instance.get_user_badge_progress_list(tenant_id, GetUserBadgeProgressListOptions(user_id=user_id, limit=limit, skip=skip))
         print("The response of DefaultApi->get_user_badge_progress_list:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling DefaultApi->get_user_badge_progress_list: %s\n" % e)
 [inline-code-end]
+
+---

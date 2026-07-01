@@ -1,32 +1,40 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Обавезно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
-| updatableCommentParams | UpdatableCommentParams | Да |  |
-| contextUserId | string | Не |  |
-| doSpamCheck | boolean | Не |  |
-| isLive | boolean | Не |  |
+| tenantId | string | Da |  |
+| id | string | Da |  |
+| updatableCommentParams | UpdatableCommentParams | Da |  |
+| contextUserId | string | Ne |  |
+| doSpamCheck | boolean | Ne |  |
+| isLive | boolean | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Vraća: [`UpdateCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateCommentResponse.ts)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример updateComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateComment Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant-prod-01';
-const id: string = 'cmt-000127';
-const updatableCommentParams: UpdatableCommentParams = {
-  body: 'Thanks — I updated the steps to include the missing config flag.',
-  isHidden: false
-};
-const contextUserId: string = 'moderator_77';
-const doSpamCheck: boolean = true;
-const isLive: boolean = true;
-const result: APIEmptyResponse = await updateComment(tenantId, id, updatableCommentParams, contextUserId, doSpamCheck, isLive);
-[inline-code-end]
+const tenantId: string = "tenant_12345";
+const commentId: string = "cmt_98765";
 
----
+const updatableCommentParams: UpdatableCommentParams = {
+  // primer polja; stvarni oblik zavisi od definicije API-ja
+  // npr., body: "Edited comment content",
+};
+
+const contextUserId: string = "user_abcde";
+const doSpamCheck: boolean = true;
+const isLive: boolean = false;
+
+const result: UpdateCommentResponse = await updateComment(
+  tenantId,
+  commentId,
+  updatableCommentParams,
+  contextUserId,
+  doSpamCheck,
+  isLive
+);
+[inline-code-end]

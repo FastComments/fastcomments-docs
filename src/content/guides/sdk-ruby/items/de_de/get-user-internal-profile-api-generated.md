@@ -1,13 +1,14 @@
 ## Parameter
 
-| Name | Typ | Ort | Erforderlich | Beschreibung |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Ja |  |
 | commentId | string | query | Nein |  |
 | sso | string | query | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`GetUserInternalProfileResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_internal_profile_response.rb)
+Rückgabe: [`GetUserInternalProfileResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_internal_profile_response.rb)
 
 ## Beispiel
 
@@ -17,6 +18,7 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 opts = {
   comment_id: 'comment_id_example', # String | 
   sso: 'sso_example' # String | 
@@ -24,11 +26,9 @@ opts = {
 
 begin
   
-  result = api_instance.get_user_internal_profile(opts)
+  result = api_instance.get_user_internal_profile(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_user_internal_profile: #{e}"
 end
 [inline-code-end]
-
----

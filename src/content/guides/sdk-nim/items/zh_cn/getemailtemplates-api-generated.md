@@ -1,9 +1,9 @@
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| skip | float64 | 否 |  |
+| tenantId | string | Yes |  |
+| skip | float64 | No |  |
 
 ## 响应
 
@@ -13,10 +13,10 @@
 
 [inline-code-attrs-start title = 'getEmailTemplates 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getEmailTemplates(tenantId = "my-tenant-123", skip = 0.0)
-if response.isSome:
-  let templates = response.get()
+let (emailTemplatesOpt, httpResp) = client.getEmailTemplates(tenantId = "my-tenant-123", skip = 0.0)
+if emailTemplatesOpt.isSome:
+  let templates = emailTemplatesOpt.get()
   echo templates
-else:
-  echo "No email templates available"
 [inline-code-end]
+
+---

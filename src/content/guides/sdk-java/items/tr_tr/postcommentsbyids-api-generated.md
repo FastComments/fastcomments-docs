@@ -1,8 +1,9 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Zorunlu | Açıklama |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| sso | string | sorgu | Hayır |  |
+| tenantId | string | query | Evet |  |
+| sso | string | query | Hayır |  |
 
 ## Yanıt
 
@@ -25,18 +26,19 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     CommentsByIdsParams commentsByIdsParams = new CommentsByIdsParams(); // CommentsByIdsParams | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationAPIChildCommentsResponse result = apiInstance.postCommentsByIds(commentsByIdsParams)
+      ModerationAPIChildCommentsResponse result = apiInstance.postCommentsByIds(tenantId, commentsByIdsParams)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ModerationApi#postCommentsByIds");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("ModerationApi#postCommentsByIds çağrılırken istisna");
+      System.err.println("Durum kodu: " + e.getCode());
+      System.err.println("Sebep: " + e.getResponseBody());
+      System.err.println("Yanıt üstbilgileri: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }

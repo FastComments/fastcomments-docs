@@ -2,16 +2,16 @@
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Tak |  |
-| userId | string | query | Nie |  |
-| urlId | string | query | Nie |  |
-| fromCommentId | string | query | Nie |  |
-| viewed | boolean | query | Nie |  |
-| type | string | query | Nie |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| urlId | string | query | No |  |
+| fromCommentId | string | query | No |  |
+| viewed | boolean | query | No |  |
+| type | string | query | No |  |
 
 ## Odpowiedź
 
-Zwraca: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetNotificationCountResponse.php)
+Returns: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetNotificationCountResponse.php)
 
 ## Przykład
 
@@ -21,27 +21,31 @@ Zwraca: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcom
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Skonfiguruj uwierzytelnianie klucza API: api_key
+// Skonfiguruj autoryzację klucza API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli to konieczne
+// Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli potrzebne
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Jeśli chcesz użyć niestandardowego klienta HTTP, przekaż klienta implementującego `GuzzleHttp\ClientInterface`.
-    // To opcjonalne, domyślnie zostanie użyty `GuzzleHttp\Client`.
+    // Jeśli chcesz użyć własnego klienta HTTP, przekaż swojego klienta implementującego `GuzzleHttp\ClientInterface`.
+    // To jest opcjonalne, `GuzzleHttp\Client` zostanie użyty jako domyślny.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$user_id = 'user_id_example'; // string
-$url_id = 'url_id_example'; // string
-$from_comment_id = 'from_comment_id_example'; // string
-$viewed = True; // bool
-$type = 'type_example'; // string
+$options = [
+    'user_id' => 'user_id_example', // string
+    'url_id' => 'url_id_example', // string
+    'from_comment_id' => 'from_comment_id_example', // string
+    'viewed' => True, // bool
+    'type' => 'type_example', // string
+];
+
 
 try {
-    $result = $apiInstance->getNotificationCount($tenant_id, $user_id, $url_id, $from_comment_id, $viewed, $type);
+    $result = $apiInstance->getNotificationCount($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getNotificationCount: ', $e->getMessage(), PHP_EOL;

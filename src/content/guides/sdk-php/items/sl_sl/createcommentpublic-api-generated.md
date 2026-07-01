@@ -1,12 +1,12 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Da |  |
-| urlId | string | query | Da |  |
-| broadcastId | string | query | Da |  |
-| sessionId | string | query | Ne |  |
-| sso | string | query | Ne |  |
+| tenantId | string | pot | Da |  |
+| urlId | string | poizvedba | Da |  |
+| broadcastId | string | poizvedba | Da |  |
+| sessionId | string | poizvedba | Ne |  |
+| sso | string | poizvedba | Ne |  |
 
 ## Odgovor
 
@@ -22,19 +22,23 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Če želite uporabiti svojega HTTP klienta, posredujte klienta, ki implementira `GuzzleHttp\ClientInterface`.
-    // To je neobvezno, kot privzeti bo uporabljen `GuzzleHttp\Client`.
+    // Če želite uporabiti prilagojeni http odjemalec, podajte svoj odjemalec, ki implementira `GuzzleHttp\ClientInterface`.
+    // To je neobvezno, `GuzzleHttp\Client` bo uporabljen kot privzeto.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $url_id = 'url_id_example'; // string
 $broadcast_id = 'broadcast_id_example'; // string
 $comment_data = new \FastComments\Client\Model\CommentData(); // \FastComments\Client\Model\CommentData
-$session_id = 'session_id_example'; // string
-$sso = 'sso_example'; // string
+$options = [
+    'session_id' => 'session_id_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->createCommentPublic($tenant_id, $url_id, $broadcast_id, $comment_data, $session_id, $sso);
+    $result = $apiInstance->createCommentPublic($tenant_id, $url_id, $broadcast_id, $comment_data, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->createCommentPublic: ', $e->getMessage(), PHP_EOL;

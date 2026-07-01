@@ -1,26 +1,29 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Oui |  |
-| approved | boolean | query | Non |  |
-| sso | string | query | Non |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| approved | boolean | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Réponse
 
-Renvoie: [`SetCommentApprovedResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/set_comment_approved_response.py)
+Returns: [`SetCommentApprovedResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/set_comment_approved_response.py)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de post_set_comment_approval_status'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_set_comment_approval_status Exemple'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import PostSetCommentApprovalStatusOptions
 from client.models.set_comment_approved_response import SetCommentApprovedResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# La définition de l'hôte est optionnelle et la valeur par défaut est https://fastcomments.com
-# Voir configuration.py pour une liste de tous les paramètres de configuration pris en charge.
+# La définition de l'hôte est optionnelle et par défaut https://fastcomments.com
+# Voir configuration.py pour la liste de tous les paramètres de configuration pris en charge.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -30,13 +33,15 @@ configuration = client.Configuration(
 with client.ApiClient(configuration) as api_client:
     # Créer une instance de la classe API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     approved = True # bool |  (optionnel)
+    broadcast_id = 'broadcast_id_example' # str |  (optionnel)
     sso = 'sso_example' # str |  (optionnel)
 
     try:
-        api_response = api_instance.post_set_comment_approval_status(comment_id, approved=approved, sso=sso)
-        print("The response of ModerationApi->post_set_comment_approval_status:\n")
+        api_response = api_instance.post_set_comment_approval_status(tenant_id, comment_id, PostSetCommentApprovalStatusOptions(approved=approved, broadcast_id=broadcast_id, sso=sso))
+        # La réponse de ModerationApi->post_set_comment_approval_status:\n
         pprint(api_response)
     except Exception as e:
         print("Exception when calling ModerationApi->post_set_comment_approval_status: %s\n" % e)

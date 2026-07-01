@@ -1,10 +1,12 @@
 ## Parametre
 
-| Name | Type | Location | Required | Description |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| commentId | string | sti | Ja |  |
-| approved | boolean | forespørgsel | Nej |  |
-| sso | string | forespørgsel | Nej |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| approved | boolean | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Svar
 
@@ -24,13 +26,15 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
 	approved := true // bool |  (valgfri)
+	broadcastId := "broadcastId_example" // string |  (valgfri)
 	sso := "sso_example" // string |  (valgfri)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostSetCommentApprovalStatus(context.Background(), commentId).Approved(approved).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostSetCommentApprovalStatus(context.Background(), commentId).TenantId(tenantId).Approved(approved).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostSetCommentApprovalStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -39,5 +43,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostSetCommentApprovalStatus`: %v\n", resp)
 }
 [inline-code-end]
-
----

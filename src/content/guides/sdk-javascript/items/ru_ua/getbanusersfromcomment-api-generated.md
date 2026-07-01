@@ -1,26 +1,32 @@
----
-## Параметры
+## Параметри
 
-| Name | Type | Required | Description |
+| Назва | Тип | Обов’язковий | Опис |
 |------|------|----------|-------------|
-| commentId | string | Да |  |
-| sso | string | Нет |  |
+| commentId | string | Так |  |
+| tenantId | string | Ні |  |
+| sso | string | Ні |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`GetBannedUsersFromCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetBannedUsersFromCommentResponse.ts)
+Повертає: [`GetBanUsersFromCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetBanUsersFromCommentResponse.ts)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример getBanUsersFromComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getBanUsersFromComment Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const commentId: string = "cmt_7f4d2a9b6c";
-  const ssoToken: string = "sso_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.signature";
-  const bannedWithoutSso: GetBannedUsersFromCommentResponse = await getBanUsersFromComment(commentId);
-  const bannedWithSso: GetBannedUsersFromCommentResponse = await getBanUsersFromComment(commentId, ssoToken);
-  console.log(bannedWithoutSso, bannedWithSso);
-})();
-[inline-code-end]
+async function demoGetBanUsers() {
+  const commentId: string = "cmt_5f8e3a9b2d";
+  const tenantId: string = "tenant_42";
+  const sso: string = "sso_token_abc123";
 
----
+  // Виклик з усіма параметрами
+  const fullResult: GetBanUsersFromCommentResponse = await getBanUsersFromComment(commentId, tenantId, sso);
+  console.log(fullResult);
+
+  // Виклик лише з обов’язковим параметром
+  const minimalResult: GetBanUsersFromCommentResponse = await getBanUsersFromComment(commentId);
+  console.log(minimalResult);
+}
+
+demoGetBanUsers();
+[inline-code-end]

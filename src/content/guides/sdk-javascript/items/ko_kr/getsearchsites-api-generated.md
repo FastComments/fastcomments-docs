@@ -1,20 +1,27 @@
 ## 매개변수
 
-| 이름 | 타입 | 필수 | 설명 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| value | string | 아니오 |  |
-| sso | string | 아니오 |  |
+| value | string | No |  |
+| tenantId | string | No |  |
+| sso | string | No |  |
 
 ## 응답
 
-반환: [`ModerationSiteSearchResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationSiteSearchResponse.ts)
+반환: [`GetSearchSitesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetSearchSitesResponse.ts)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'getSearchSites 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSearchSites 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const searchValue: string = 'fastcomments.com';
-const ssoToken: string = 'sso_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';
-const responseWithSSO: ModerationSiteSearchResponse = await getSearchSites(searchValue, ssoToken);
-const responseWithoutSSO: ModerationSiteSearchResponse = await getSearchSites('news.fastcompany.com');
+async function fetchSites() {
+  const value: string = "customer support"
+  const tenantId: string = "tenant-9876"
+  const sso: string = "sso-abc123"
+
+  const sites: GetSearchSitesResponse = await getSearchSites(value, tenantId, sso)
+  const sitesOnlyTenant: GetSearchSitesResponse = await getSearchSites(undefined, tenantId)
+}
 [inline-code-end]
+
+---

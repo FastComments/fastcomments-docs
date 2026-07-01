@@ -1,25 +1,26 @@
 ## 매개변수
 
 | 이름 | 타입 | 필수 | 설명 |
-|------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| commentId | string | 예 |  |
-| broadcastId | string | 아니요 |  |
-| editKey | string | 아니요 |  |
-| sso | string | 아니요 |  |
+|------|------|------|------|
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| broadcastId | string | No |  |
+| options | DeleteCommentPublicOptions | No |  |
 
 ## 응답
 
 반환: [`Option[PublicAPIDeleteCommentResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_public_api_delete_comment_response.nim)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'deleteCommentPublic 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteCommentPublic 예시'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteCommentPublic(tenantId = "my-tenant-123", commentId = "cmt-987654321", broadcastId = "", editKey = "", sso = "")
-if response.isSome:
-  let deleted = response.get()
-  echo "Delete acknowledged, HTTP status: ", httpResponse.status
+let (responseOpt, httpResp) = client.deleteCommentPublic(
+  tenantId = "my-tenant-123",
+  commentId = "cmt-456789",
+  broadcastId = "",
+  options = DeleteCommentPublicOptions())
+if responseOpt.isSome:
+  let resp = responseOpt.get()
+  echo resp
 [inline-code-end]
-
----

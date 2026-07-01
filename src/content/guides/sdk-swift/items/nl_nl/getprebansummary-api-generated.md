@@ -1,7 +1,8 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
-|------|------|----------|----------|-------------|
+| Naam | Type | Locatie | Verplicht | Beschrijving |
+|------|------|----------|------------|--------------|
+| tenantId | string | query | Yes |  |
 | commentId | string | path | Yes |  |
 | includeByUserIdAndEmail | boolean | query | No |  |
 | includeByIP | boolean | query | No |  |
@@ -16,16 +17,17 @@ Retourneert: [`PreBanSummary`](https://github.com/FastComments/fastcomments-swif
 
 [inline-code-attrs-start title = 'getPreBanSummary Voorbeeld'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// De volgende codevoorbeelden zijn nog in bèta. Voor problemen, meld deze via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De volgende codevoorbeelden zijn nog in de bèta. Meld eventuele problemen via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
-let includeByUserIdAndEmail = true // Bool |  (optioneel)
-let includeByIP = true // Bool |  (optioneel)
-let includeByEmailDomain = true // Bool |  (optioneel)
-let sso = "sso_example" // String |  (optioneel)
+let includeByUserIdAndEmail = true // Bool |  (optional)
+let includeByIP = true // Bool |  (optional)
+let includeByEmailDomain = true // Bool |  (optional)
+let sso = "sso_example" // String |  (optional)
 
-ModerationAPI.getPreBanSummary(commentId: commentId, includeByUserIdAndEmail: includeByUserIdAndEmail, includeByIP: includeByIP, includeByEmailDomain: includeByEmailDomain, sso: sso) { (response, error) in
+ModerationAPI.getPreBanSummary(tenantId: tenantId, commentId: commentId, options: ModerationAPI.GetPreBanSummaryOptions(includeByUserIdAndEmail: includeByUserIdAndEmail, includeByIP: includeByIP, includeByEmailDomain: includeByEmailDomain, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

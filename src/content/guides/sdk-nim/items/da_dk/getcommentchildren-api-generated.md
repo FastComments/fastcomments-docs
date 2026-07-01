@@ -2,8 +2,9 @@
 
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
+| tenantId | string | Ja |  |
 | commentId | string | Ja |  |
-| sso | string | Nej |  |
+| sso | string = "" | Nej |  |
 
 ## Svar
 
@@ -13,10 +14,8 @@ Returnerer: [`Option[ModerationAPIChildCommentsResponse]`](https://github.com/Fa
 
 [inline-code-attrs-start title = 'getCommentChildren Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getCommentChildren(commentId = "comment-98765", sso = "")
-if response.isSome:
-  let childResp = response.get()
-  discard childResp
+let (childRespOpt, httpResp) = client.getCommentChildren(tenantId = "my-tenant-123", commentId = "cmt-456789", sso = "")
+if childRespOpt.isSome:
+  let childResp = childRespOpt.get()
+  echo childResp
 [inline-code-end]
-
----

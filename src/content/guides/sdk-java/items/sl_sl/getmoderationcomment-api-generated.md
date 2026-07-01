@@ -1,11 +1,12 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| commentId | string | pot | Da |  |
-| includeEmail | boolean | poizvedba | Ne |  |
-| includeIP | boolean | poizvedba | Ne |  |
-| sso | string | poizvedba | Ne |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| includeEmail | boolean | query | No |  |
+| includeIP | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Odziv
 
@@ -28,12 +29,13 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     Boolean includeEmail = true; // Boolean | 
     Boolean includeIP = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationAPICommentResponse result = apiInstance.getModerationComment(commentId)
+      ModerationAPICommentResponse result = apiInstance.getModerationComment(tenantId, commentId)
             .includeEmail(includeEmail)
             .includeIP(includeIP)
             .sso(sso)

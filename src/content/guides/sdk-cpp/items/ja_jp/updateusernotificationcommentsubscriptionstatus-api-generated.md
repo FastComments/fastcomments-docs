@@ -1,8 +1,8 @@
-特定のコメントに対する通知を有効化または無効化します。
+Enable or disable notifications for a specific comment.
 
 ## パラメータ
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | notificationId | string | Yes |  |
@@ -10,7 +10,7 @@
 | commentId | string | Yes |  |
 | sso | string | No |  |
 
-## レスポンス
+## 応答
 
 戻り値: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UpdateUserNotificationCommentSubscriptionStatusResponse.h)
 
@@ -18,19 +18,13 @@
 
 [inline-code-attrs-start title = 'updateUserNotificationCommentSubscriptionStatus の例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t notificationId = U("notif-456");
-utility::string_t optedInOrOut = U("opted_in");
-utility::string_t commentId = U("cmt-789");
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("sso-jwt-abc123"));
-api->updateUserNotificationCommentSubscriptionStatus(tenantId, notificationId, optedInOrOut, commentId, sso)
-.then([](pplx::task<std::shared_ptr<UpdateUserNotificationCommentSubscriptionStatusResponse>> t) {
-    try {
-        auto resp = t.get();
-        if(!resp) resp = std::make_shared<UpdateUserNotificationCommentSubscriptionStatusResponse>();
-        std::cout << "Subscription update completed" << std::endl;
-    } catch(const std::exception& e) {
-        std::cout << "Error updating subscription: " << e.what() << std::endl;
-    }
+auto updateTask = api->updateUserNotificationCommentSubscriptionStatus(
+    utility::conversions::to_string_t("my-tenant-123"),
+    utility::conversions::to_string_t("notif-456"),
+    utility::conversions::to_string_t("optedIn"),
+    utility::conversions::to_string_t("comment-789"),
+    boost::optional<utility::string_t>(utility::conversions::to_string_t("sso-token-abc"))
+).then([](std::shared_ptr<UpdateUserNotificationCommentSubscriptionStatusResponse> resp){
+    (void)resp;
 });
 [inline-code-end]

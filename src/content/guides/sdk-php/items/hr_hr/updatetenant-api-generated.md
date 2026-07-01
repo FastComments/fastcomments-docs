@@ -1,7 +1,7 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
 | tenantId | string | query | Da |  |
 | id | string | path | Da |  |
 
@@ -19,19 +19,21 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Konfigurirajte autorizaciju API ključa: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Odkomentirajte dolje da biste postavili prefiks (npr. Bearer) za API ključ, ako je potrebno
+// Otkomentirajte dolje za postavljanje prefiksa (npr. Bearer) za API ključ, po potrebi
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ako želite koristiti prilagođeni HTTP klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao zadani.
+    // Ako želite koristiti prilagođeni http klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je neobvezno, `GuzzleHttp\Client` će se koristiti kao zadano.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
 $update_tenant_body = new \FastComments\Client\Model\UpdateTenantBody(); // \FastComments\Client\Model\UpdateTenantBody
+
 
 try {
     $result = $apiInstance->updateTenant($tenant_id, $id, $update_tenant_body);
@@ -40,3 +42,5 @@ try {
     echo 'Exception when calling DefaultApi->updateTenant: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

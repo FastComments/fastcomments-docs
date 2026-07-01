@@ -1,13 +1,13 @@
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Da |  |
-| urlId | string | query | Da |  |
-| usernameStartsWith | string | query | Ne |  |
-| mentionGroupIds | array | query | Ne |  |
-| sso | string | query | Ne |  |
-| searchSection | string | query | Ne |  |
+|------|------|----------|----------|------|
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| usernameStartsWith | string | query | No |  |
+| mentionGroupIds | array | query | No |  |
+| sso | string | query | No |  |
+| searchSection | string | query | No |  |
 
 ## Odgovor
 
@@ -17,17 +17,17 @@ Vraća: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-swift
 
 [inline-code-attrs-start title = 'searchUsers Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sledeći primeri koda su još uvek beta. Za bilo koji problem, prijavite putem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledeći primeri koda su i dalje beta. Za bilo koji problem, molimo prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
-let usernameStartsWith = "usernameStartsWith_example" // String |  (neobavezno)
-let mentionGroupIds = ["inner_example"] // [String] |  (neobavezno)
-let sso = "sso_example" // String |  (neobavezno)
-let searchSection = "searchSection_example" // String |  (neobavezno)
+let usernameStartsWith = "usernameStartsWith_example" // String |  (opcionalno)
+let mentionGroupIds = ["inner_example"] // [String] |  (opcionalno)
+let sso = "sso_example" // String |  (opcionalno)
+let searchSection = "searchSection_example" // String |  (opcionalno)
 
-PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, usernameStartsWith: usernameStartsWith, mentionGroupIds: mentionGroupIds, sso: sso, searchSection: searchSection) { (response, error) in
+PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, options: PublicAPI.SearchUsersOptions(usernameStartsWith: usernameStartsWith, mentionGroupIds: mentionGroupIds, sso: sso, searchSection: searchSection)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -38,5 +38,3 @@ PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, usernameStartsWith: user
     }
 }
 [inline-code-end]
-
----

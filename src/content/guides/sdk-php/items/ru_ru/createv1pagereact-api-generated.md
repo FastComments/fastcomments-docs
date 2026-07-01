@@ -1,10 +1,10 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | путь | Да |  |
-| urlId | string | параметр запроса | Да |  |
-| title | string | параметр запроса | Нет |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| title | string | query | No |  |
 
 ## Ответ
 
@@ -20,13 +20,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Если вы хотите использовать пользовательский HTTP-клиент, передайте клиент, который реализует `GuzzleHttp\ClientInterface`.
-    // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
+    // Если вы хотите использовать пользовательский HTTP‑клиент, передайте ваш клиент, реализующий `GuzzleHttp\ClientInterface`.
+    // Это опционально, по умолчанию будет использован `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // строка
-$url_id = 'url_id_example'; // строка
-$title = 'title_example'; // строка
+
+$tenant_id = 'tenant_id_example'; // string
+$url_id = 'url_id_example'; // string
+$title = 'title_example'; // string
+
 
 try {
     $result = $apiInstance->createV1PageReact($tenant_id, $url_id, $title);

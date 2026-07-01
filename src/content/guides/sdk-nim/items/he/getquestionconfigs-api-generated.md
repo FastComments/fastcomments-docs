@@ -2,8 +2,8 @@
 
 | שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| skip | float64 | לא |  |
+| tenantId | string | Yes |  |
+| skip | float64 | No |  |
 
 ## תגובה
 
@@ -11,15 +11,10 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getQuestionConfigs'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל‑getQuestionConfigs'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.getQuestionConfigs(tenantId = "my-tenant-123", skip = 0.0)
 if response.isSome:
   let configs = response.get()
-  echo "Received question configs for tenant my-tenant-123"
   echo configs
-else:
-  echo "No question configs returned"
 [inline-code-end]
-
----

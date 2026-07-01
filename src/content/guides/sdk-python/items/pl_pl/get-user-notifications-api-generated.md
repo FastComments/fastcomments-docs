@@ -2,18 +2,18 @@
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Tak |  |
-| urlId | string | query | Nie | Służy do określenia, czy bieżąca strona jest subskrybowana. |
-| pageSize | integer | query | Nie |  |
-| afterId | string | query | Nie |  |
-| includeContext | boolean | query | Nie |  |
-| afterCreatedAt | integer | query | Nie |  |
-| unreadOnly | boolean | query | Nie |  |
-| dmOnly | boolean | query | Nie |  |
-| noDm | boolean | query | Nie |  |
-| includeTranslations | boolean | query | Nie |  |
-| includeTenantNotifications | boolean | query | Nie |  |
-| sso | string | query | Nie |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | No | Używany do określenia, czy bieżąca strona jest subskrybowana. |
+| pageSize | integer | query | No |  |
+| afterId | string | query | No |  |
+| includeContext | boolean | query | No |  |
+| afterCreatedAt | integer | query | No |  |
+| unreadOnly | boolean | query | No |  |
+| dmOnly | boolean | query | No |  |
+| noDm | boolean | query | No |  |
+| includeTranslations | boolean | query | No |  |
+| includeTenantNotifications | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Odpowiedź
 
@@ -21,39 +21,40 @@ Zwraca: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomme
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład get_user_notifications'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_user_notifications Przykład'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetUserNotificationsOptions
 from client.models.get_my_notifications_response import GetMyNotificationsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Określenie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
-# Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracji.
+# Definiowanie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
+# Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracyjnych.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Otwórz kontekst z instancją klienta API
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Utwórz instancję klasy API
+    # Create an instance of the API class
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    url_id = 'url_id_example' # str | Służy do określenia, czy bieżąca strona jest subskrybowana. (opcjonalne)
-    page_size = 56 # int |  (opcjonalne)
-    after_id = 'after_id_example' # str |  (opcjonalne)
-    include_context = True # bool |  (opcjonalne)
-    after_created_at = 56 # int |  (opcjonalne)
-    unread_only = True # bool |  (opcjonalne)
-    dm_only = True # bool |  (opcjonalne)
-    no_dm = True # bool |  (opcjonalne)
-    include_translations = True # bool |  (opcjonalne)
-    include_tenant_notifications = True # bool |  (opcjonalne)
-    sso = 'sso_example' # str |  (opcjonalne)
+    url_id = 'url_id_example' # str | Używany do określenia, czy bieżąca strona jest subskrybowana. (opcjonalnie)
+    page_size = 56 # int |  (opcjonalnie)
+    after_id = 'after_id_example' # str |  (opcjonalnie)
+    include_context = True # bool |  (opcjonalnie)
+    after_created_at = 56 # int |  (opcjonalnie)
+    unread_only = True # bool |  (opcjonalnie)
+    dm_only = True # bool |  (opcjonalnie)
+    no_dm = True # bool |  (opcjonalnie)
+    include_translations = True # bool |  (opcjonalnie)
+    include_tenant_notifications = True # bool |  (opcjonalnie)
+    sso = 'sso_example' # str |  (opcjonalnie)
 
     try:
-        api_response = api_instance.get_user_notifications(tenant_id, url_id=url_id, page_size=page_size, after_id=after_id, include_context=include_context, after_created_at=after_created_at, unread_only=unread_only, dm_only=dm_only, no_dm=no_dm, include_translations=include_translations, include_tenant_notifications=include_tenant_notifications, sso=sso)
+        api_response = api_instance.get_user_notifications(tenant_id, GetUserNotificationsOptions(url_id=url_id, page_size=page_size, after_id=after_id, include_context=include_context, after_created_at=after_created_at, unread_only=unread_only, dm_only=dm_only, no_dm=no_dm, include_translations=include_translations, include_tenant_notifications=include_tenant_notifications, sso=sso))
         print("The response of PublicApi->get_user_notifications:\n")
         pprint(api_response)
     except Exception as e:

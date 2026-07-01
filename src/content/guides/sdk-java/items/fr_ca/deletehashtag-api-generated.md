@@ -1,19 +1,19 @@
 ## Paramètres
 
-| Name | Type | Emplacement | Obligatoire | Description |
-|------|------|-------------|------------|-------------|
-| tag | string | chemin | Oui |  |
-| tenantId | string | requête | Non |  |
+| Nom | Type | Emplacement | Obligatoire | Description |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
+| tag | string | path | Yes |  |
 
 ## Réponse
 
-Retourne: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
+Retourne : [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de deleteHashTag'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple deleteHashTag'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importer des classes:
+// Importer les classes :
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,19 +26,18 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configurer l'authentification par clé API : api_key
+    // Configurer l'autorisation de la clé API : api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Décommentez la ligne suivante pour définir un préfixe pour la clé API, p. ex. "Token" (par défaut null)
+    // Décommentez la ligne suivante pour définir un préfixe pour la clé API, par ex. "Token" (valeur par défaut : null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    String tag = "tag_example"; // String | 
     String tenantId = "tenantId_example"; // String | 
+    String tag = "tag_example"; // String | 
     DeleteHashTagRequestBody deleteHashTagRequestBody = new DeleteHashTagRequestBody(); // DeleteHashTagRequestBody | 
     try {
-      APIEmptyResponse result = apiInstance.deleteHashTag(tag)
-            .tenantId(tenantId)
+      APIEmptyResponse result = apiInstance.deleteHashTag(tenantId, tag)
             .deleteHashTagRequestBody(deleteHashTagRequestBody)
             .execute();
       System.out.println(result);

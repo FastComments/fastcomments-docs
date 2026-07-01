@@ -1,7 +1,7 @@
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nome | Tipo | Obbligatorio | Descrizione |
+|------|------|--------------|-------------|
 | tenantId | string | Yes |  |
 | domainToUpdate | string | Yes |  |
 | patchDomainConfigParams | PatchDomainConfigParams | Yes |  |
@@ -12,16 +12,19 @@ Restituisce: [`PatchDomainConfigResponse`](https://github.com/FastComments/fastc
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di patchDomainConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio patchDomainConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_8d9f3c4b";
-const domainToUpdate: string = "comments.newsroom.example.com";
-const patchDomainConfigParams: PatchDomainConfigParams = {
-  enabled: true,
-  enforceHttps: true, // parametro opzionale incluso
-  allowedOrigins: ["https://newsroom.example.com"] // parametro opzionale incluso
-};
-const result: PatchDomainConfigResponse = await patchDomainConfig(tenantId, domainToUpdate, patchDomainConfigParams);
-[inline-code-end]
+async function updateDomainConfig() {
+  const tenantId: string = "tenant_98765";
+  const domainToUpdate: string = "forum.mycompany.com";
+  const patchParams: PatchDomainConfigParams = {
+    enableComments: true,
+    moderationLevel: "strict",
+    allowAnonymous: false, // parametro opzionale mostrato
+  };
+  const response: PatchDomainConfigResponse = await patchDomainConfig(tenantId, domainToUpdate, patchParams);
+  console.log(response);
+}
 
----
+updateDomainConfig();
+[inline-code-end]

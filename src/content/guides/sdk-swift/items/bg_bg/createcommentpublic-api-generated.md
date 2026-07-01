@@ -14,9 +14,9 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за createCommentPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createCommentPublic Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следните примери за код все още са в бета. За всеки проблем, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следващите примерни кодове все още са в бета версия. За всякакъв проблем, моля докладвайте на http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -26,7 +26,7 @@ let commentData = CommentData(date: 123, localDateString: "localDateString_examp
 let sessionId = "sessionId_example" // String |  (по избор)
 let sso = "sso_example" // String |  (по избор)
 
-PublicAPI.createCommentPublic(tenantId: tenantId, urlId: urlId, broadcastId: broadcastId, commentData: commentData, sessionId: sessionId, sso: sso) { (response, error) in
+PublicAPI.createCommentPublic(tenantId: tenantId, urlId: urlId, broadcastId: broadcastId, commentData: commentData, options: PublicAPI.CreateCommentPublicOptions(sessionId: sessionId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

@@ -1,9 +1,9 @@
 ## Параметри
 
-| Назва | Тип | Обов'язкове | Опис |
-|------|------|----------|-------------|
+| Назва | Тип | Обов'язковий | Опис |
+|------|------|--------------|------|
 | tenantId | string | Так |  |
-| userId | string | Ні |  |
+| userId | string = "" | Ні |  |
 
 ## Відповідь
 
@@ -11,10 +11,10 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад getSubscriptions'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSubscriptions Приклад'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSubscriptions(tenantId = "my-tenant-123", userId = "")
-if response.isSome:
-  let subscriptions = response.get()
-  discard subscriptions
+let (subscriptionsOpt, httpResp) = client.getSubscriptions(tenantId = "my-tenant-123", userId = "user-456")
+if subscriptionsOpt.isSome:
+  let subscriptions = subscriptionsOpt.get()
+  echo subscriptions
 [inline-code-end]

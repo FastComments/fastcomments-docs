@@ -1,7 +1,7 @@
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
-|------|------|----------|-------------|
+| Naam | Type | Verplicht | Beschrijving |
+|------|------|-----------|--------------|
 | tenantId | string | Ja |  |
 | domain | string | Nee |  |
 
@@ -13,12 +13,8 @@ Retourneert: [`Option[GetDomainConfigResponse]`](https://github.com/FastComments
 
 [inline-code-attrs-start title = 'getDomainConfig Voorbeeld'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getDomainConfig(tenantId = "my-tenant-123", domain = "news/top-story-2026")
-if response.isSome:
-  let cfg = response.get()
+let (configOpt, httpResp) = client.getDomainConfig(tenantId = "my-tenant-123", domain = "news.example.com")
+if configOpt.isSome:
+  let cfg = configOpt.get()
   discard cfg
-else:
-  discard httpResponse
 [inline-code-end]
-
----

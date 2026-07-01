@@ -1,11 +1,11 @@
 ## Параметри
 
-| Ім'я | Тип | Розташування | Обов'язково | Опис |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Так |  |
-| urlId | string | query | Так |  |
-| id | string | query | Так |  |
-| title | string | query | Ні |  |
+| Назва | Тип | Розташування | Обов’язково | Опис |
+|------|------|--------------|-------------|------|
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| id | string | query | Yes |  |
+| title | string | query | No |  |
 
 ## Відповідь
 
@@ -13,7 +13,7 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад createV2PageReact'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createV2PageReact Приклад'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -21,14 +21,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Якщо ви хочете використати кастомний HTTP-клієнт, передайте ваш клієнт, який реалізує `GuzzleHttp\ClientInterface`.
-    // Це необов'язково, за замовчуванням буде використовуватись `GuzzleHttp\Client`.
+    // Якщо ви хочете використовувати кастомний HTTP-клієнт, передайте ваш клієнт, який реалізує `GuzzleHttp\ClientInterface`.
+    // Це необов’язково, за замовчуванням буде використаний `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $url_id = 'url_id_example'; // string
 $id = 'id_example'; // string
 $title = 'title_example'; // string
+
 
 try {
     $result = $apiInstance->createV2PageReact($tenant_id, $url_id, $id, $title);

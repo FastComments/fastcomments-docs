@@ -1,7 +1,7 @@
-## Parameters
+## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
-|------|------|----------|----------|-------------|
+|------|------|-----------|--------------|-------------|
 | tenantId | string | query | Sì |  |
 | page | integer | query | No |  |
 | limit | integer | query | No |  |
@@ -26,30 +26,30 @@ Restituisce: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomm
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di getComments'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getComments Esempio'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// I seguenti esempi di codice sono ancora in beta. Per qualsiasi problema, si prega di segnalare tramite http://github.com/OpenAPITools/openapi-generator/issues/new
+// I seguenti esempi di codice sono ancora in beta. Per qualsiasi problema, si prega di segnalarlo via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let page = 987 // Int |  (opzionale)
-let limit = 987 // Int |  (opzionale)
-let skip = 987 // Int |  (opzionale)
-let asTree = true // Bool |  (opzionale)
-let skipChildren = 987 // Int |  (opzionale)
-let limitChildren = 987 // Int |  (opzionale)
-let maxTreeDepth = 987 // Int |  (opzionale)
-let urlId = "urlId_example" // String |  (opzionale)
-let userId = "userId_example" // String |  (opzionale)
-let anonUserId = "anonUserId_example" // String |  (opzionale)
-let contextUserId = "contextUserId_example" // String |  (opzionale)
-let hashTag = "hashTag_example" // String |  (opzionale)
-let parentId = "parentId_example" // String |  (opzionale)
-let direction = SortDirections() // SortDirections |  (opzionale)
-let fromDate = 987 // Int64 |  (opzionale)
-let toDate = 987 // Int64 |  (opzionale)
+let page = 987 // Int |  (optional)
+let limit = 987 // Int |  (optional)
+let skip = 987 // Int |  (optional)
+let asTree = true // Bool |  (optional)
+let skipChildren = 987 // Int |  (optional)
+let limitChildren = 987 // Int |  (optional)
+let maxTreeDepth = 987 // Int |  (optional)
+let urlId = "urlId_example" // String |  (optional)
+let userId = "userId_example" // String |  (optional)
+let anonUserId = "anonUserId_example" // String |  (optional)
+let contextUserId = "contextUserId_example" // String |  (optional)
+let hashTag = "hashTag_example" // String |  (optional)
+let parentId = "parentId_example" // String |  (optional)
+let direction = SortDirections() // SortDirections |  (optional)
+let fromDate = 987 // Int64 |  (optional)
+let toDate = 987 // Int64 |  (optional)
 
-DefaultAPI.getComments(tenantId: tenantId, page: page, limit: limit, skip: skip, asTree: asTree, skipChildren: skipChildren, limitChildren: limitChildren, maxTreeDepth: maxTreeDepth, urlId: urlId, userId: userId, anonUserId: anonUserId, contextUserId: contextUserId, hashTag: hashTag, parentId: parentId, direction: direction, fromDate: fromDate, toDate: toDate) { (response, error) in
+DefaultAPI.getComments(tenantId: tenantId, options: DefaultAPI.GetCommentsOptions(page: page, limit: limit, skip: skip, asTree: asTree, skipChildren: skipChildren, limitChildren: limitChildren, maxTreeDepth: maxTreeDepth, urlId: urlId, userId: userId, anonUserId: anonUserId, contextUserId: contextUserId, hashTag: hashTag, parentId: parentId, direction: direction, fromDate: fromDate, toDate: toDate)) { (response, error) in
     guard error == nil else {
         print(error)
         return

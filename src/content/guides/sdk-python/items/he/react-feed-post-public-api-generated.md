@@ -1,12 +1,12 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| שם | סוג | מיקום | חובה | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | כן |  |
-| postId | string | path | כן |  |
-| isUndo | boolean | query | לא |  |
-| broadcastId | string | query | לא |  |
-| sso | string | query | לא |  |
+| tenantId | string | path | Yes |  |
+| postId | string | path | Yes |  |
+| isUndo | boolean | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## תגובה
 
@@ -14,22 +14,23 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-react_feed_post_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'react_feed_post_public דוגמה'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import ReactFeedPostPublicOptions
 from client.models.react_body_params import ReactBodyParams
 from client.models.react_feed_post_response import ReactFeedPostResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת ה-host היא אופציונלית ומוגדרת כברירת מחדל ל-https://fastcomments.com
-# ראה את configuration.py לרשימת כל פרמטרי התצורה הנתמכים.
+# הגדרת המארח היא אופציונלית ומוגדרת כברירת מחדל ל-https://fastcomments.com
+# ראה configuration.py לקבלת רשימה של כל פרמטרי הקונפיגורציה הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# כניסה להקשר עם מופע של ApiClient
+# הכנס הקשר עם מופע של לקוח ה-API
 with client.ApiClient(configuration) as api_client:
     # צור מופע של מחלקת ה-API
     api_instance = client.PublicApi(api_client)
@@ -41,9 +42,11 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.react_feed_post_public(tenant_id, post_id, react_body_params, is_undo=is_undo, broadcast_id=broadcast_id, sso=sso)
+        api_response = api_instance.react_feed_post_public(tenant_id, post_id, react_body_params, ReactFeedPostPublicOptions(is_undo=is_undo, broadcast_id=broadcast_id, sso=sso))
         print("The response of PublicApi->react_feed_post_public:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling PublicApi->react_feed_post_public: %s\n" % e)
 [inline-code-end]
+
+---

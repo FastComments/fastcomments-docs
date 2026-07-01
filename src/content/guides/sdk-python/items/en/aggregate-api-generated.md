@@ -18,6 +18,7 @@ Returns: [`AggregateResponse`](https://github.com/FastComments/fastcomments-pyth
 [inline-code-attrs-start title = 'aggregate Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import AggregateOptions
 from client.models.aggregate_response import AggregateResponse
 from client.models.aggregation_request import AggregationRequest
 from client.rest import ApiException
@@ -50,7 +51,7 @@ with client.ApiClient(configuration) as api_client:
     include_stats = True # bool |  (optional)
 
     try:
-        api_response = api_instance.aggregate(tenant_id, aggregation_request, parent_tenant_id=parent_tenant_id, include_stats=include_stats)
+        api_response = api_instance.aggregate(tenant_id, aggregation_request, AggregateOptions(parent_tenant_id=parent_tenant_id, include_stats=include_stats))
         print("The response of DefaultApi->aggregate:\n")
         pprint(api_response)
     except Exception as e:

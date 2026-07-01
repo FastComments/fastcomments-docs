@@ -1,24 +1,24 @@
----
 ## 參數
 
-| 名稱 | 型別 | 位置 | 必填 | 描述 |
+| 名稱 | 類型 | 位置 | 必要 | 描述 |
 |------|------|----------|----------|-------------|
-| text-search | string | query | 否 |  |
-| byIPFromComment | string | query | 否 |  |
-| filter | string | query | 否 |  |
-| searchFilters | string | query | 否 |  |
-| demo | boolean | query | 否 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filter | string | query | No |  |
+| searchFilters | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## 回應
 
-回傳: [`ModerationAPICountCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationAPICountCommentsResponse.java)
+Returns: [`ModerationAPICountCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationAPICountCommentsResponse.java)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getCount 範例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 匯入類別：
+// 匯入類別:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -31,6 +31,7 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String textSearch = "textSearch_example"; // String | 
     String byIPFromComment = "byIPFromComment_example"; // String | 
     String filter = "filter_example"; // String | 
@@ -38,7 +39,7 @@ public class Example {
     Boolean demo = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationAPICountCommentsResponse result = apiInstance.getCount()
+      ModerationAPICountCommentsResponse result = apiInstance.getCount(tenantId)
             .textSearch(textSearch)
             .byIPFromComment(byIPFromComment)
             .filter(filter)

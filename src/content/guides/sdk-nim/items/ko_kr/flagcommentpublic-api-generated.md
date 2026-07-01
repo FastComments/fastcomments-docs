@@ -1,30 +1,28 @@
-## 매개변수
+## Parameters
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | commentId | string | 예 |  |
-| isFlagged | bool | 아니요 |  |
-| sso | string | 아니요 |  |
+| isFlagged | bool | 아니오 |  |
+| sso | string = "" | 아니오 |  |
 
-## 응답
+## Response
 
 반환: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
-## 예제
+## Example
 
-[inline-code-attrs-start title = 'flagCommentPublic 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'flagCommentPublic 예시'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.flagCommentPublic(
+let (optResp, httpResp) = client.flagCommentPublic(
   tenantId = "my-tenant-123",
   commentId = "cmt-456789",
   isFlagged = true,
   sso = ""
 )
 
-if response.isSome:
-  let apiResp = response.get()
-  discard apiResp
-else:
-  discard httpResponse
+if optResp.isSome:
+  let empty = optResp.get()
+  discard empty
 [inline-code-end]

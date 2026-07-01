@@ -1,34 +1,26 @@
-## Parametry
+## Parameters
 
 | Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
 | tenantId | string | Tak |  |
 | id | string | Tak |  |
-| deleteComments | bool | Nie |  |
-| commentDeleteMode | string | Nie |  |
+| options | const DeleteSSOUserOptions& | Tak |  |
 
-## Odpowiedź
+## Response
 
 Zwraca: [`DeleteSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/DeleteSSOUserAPIResponse.h)
 
-## Przykład
+## Example
 
 [inline-code-attrs-start title = 'Przykład deleteSSOUser'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t ssoId = U("user@example.com");
-boost::optional<bool> deleteComments = true;
-boost::optional<utility::string_t> commentDeleteMode = U("anonymize");
-
-api->deleteSSOUser(tenantId, ssoId, deleteComments, commentDeleteMode)
-.then([](pplx::task<std::shared_ptr<DeleteSSOUserAPIResponse>> t){
-    try {
-        auto resp = t.get();
-        auto respCopy = std::make_shared<DeleteSSOUserAPIResponse>(*resp);
-        (void)respCopy;
-    } catch (const std::exception&) {
+auto tenantId = U("my-tenant-123");
+auto userId = U("user-456");
+DeleteSSOUserOptions options;
+options.dryRun = boost::optional<bool>(true);
+api->deleteSSOUser(tenantId, userId, options).then([](std::shared_ptr<DeleteSSOUserAPIResponse> resp) {
+    if (resp) {
+        (void)resp;
     }
 });
 [inline-code-end]
-
----

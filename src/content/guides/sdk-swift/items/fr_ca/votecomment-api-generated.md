@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Oui |  |
 | commentId | string | path | Oui |  |
@@ -15,7 +15,7 @@ Renvoie : [`VoteResponse`](https://github.com/FastComments/fastcomments-swift/bl
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de voteComment'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple voteComment'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Les exemples de code suivants sont encore en version bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
@@ -25,10 +25,10 @@ let commentId = "commentId_example" // String |
 let urlId = "urlId_example" // String | 
 let broadcastId = "broadcastId_example" // String | 
 let voteBodyParams = VoteBodyParams(commenterEmail: "commenterEmail_example", commenterName: "commenterName_example", voteDir: "voteDir_example", url: "url_example") // VoteBodyParams | 
-let sessionId = "sessionId_example" // String |  (optionnel)
-let sso = "sso_example" // String |  (optionnel)
+let sessionId = "sessionId_example" // String |  (facultatif)
+let sso = "sso_example" // String |  (facultatif)
 
-PublicAPI.voteComment(tenantId: tenantId, commentId: commentId, urlId: urlId, broadcastId: broadcastId, voteBodyParams: voteBodyParams, sessionId: sessionId, sso: sso) { (response, error) in
+PublicAPI.voteComment(tenantId: tenantId, commentId: commentId, urlId: urlId, broadcastId: broadcastId, voteBodyParams: voteBodyParams, options: PublicAPI.VoteCommentOptions(sessionId: sessionId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -39,3 +39,5 @@ PublicAPI.voteComment(tenantId: tenantId, commentId: commentId, urlId: urlId, br
     }
 }
 [inline-code-end]
+
+---

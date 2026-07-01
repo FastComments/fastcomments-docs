@@ -1,13 +1,12 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| urlId | string | Так |  |
-| broadcastId | string | Ні |  |
-| commentData | CommentData | Ні |  |
-| sessionId | string | Ні |  |
-| sso | string | Ні |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| broadcastId | string | No |  |
+| commentData | CommentData | No |  |
+| options | CreateCommentPublicOptions | No |  |
 
 ## Відповідь
 
@@ -15,26 +14,24 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад createCommentPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createCommentPublic Приклад'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let commentPayload = CommentData(
-  text = "Great write-up on serverless architectures.",
-  authorName = "Jane Doe",
-  authorEmail = "jane.doe@example.com",
-  isPublic = true,
-  tags = @["tech", "serverless"]
-)
-let (response, httpResponse) = client.createCommentPublic(
-  tenantId = "my-tenant-123",
-  urlId = "news/2026/06/fastcomments-sdk-update",
-  broadcastId = "broadcast-2026-06-19",
-  commentData = commentPayload,
-  sessionId = "sess-8a7b6c",
-  sso = "sso-jwt-abc123"
-)
-if response.isSome:
-  let saved = response.get()
-  discard saved
+let
+  tenantId = "my-tenant-123"
+  urlId = "news/article-title"
+  broadcastId = "broadcast-456"
+  commentData = CommentData()
+  options = CreateCommentPublicOptions()
+let (maybeResp, httpResp) = client.createCommentPublic(
+  tenantId = tenantId,
+  urlId = urlId,
+  broadcastId = broadcastId,
+  commentData = commentData,
+  options = options)
+
+if maybeResp.isSome:
+  let resp = maybeResp.get()
+  echo resp
 [inline-code-end]
 
 ---

@@ -1,10 +1,10 @@
----
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
-| text-search | string | query | Ne |  |
-| sso | string | query | Ne |  |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -12,7 +12,7 @@ Vraća: [`ModerationSuggestResponse`](https://github.com/FastComments/fastcommen
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer getSearchSuggest'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSearchSuggest Primer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -20,19 +20,22 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Ako želite da koristite prilagođeni HTTP klijent, prosledite klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opciono, `GuzzleHttp\Client` će biti korišćen kao podrazumevani.
+    // Ako želite koristiti prilagođeni http klijent, prosledite vaš klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opciono, `GuzzleHttp\Client` će biti korišćen kao podrazumevano.
     new GuzzleHttp\Client()
 );
-$text_search = 'text_search_example'; // string
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // string
+$options = [
+    'text_search' => 'text_search_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->getSearchSuggest($text_search, $sso);
+    $result = $apiInstance->getSearchSuggest($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getSearchSuggest: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

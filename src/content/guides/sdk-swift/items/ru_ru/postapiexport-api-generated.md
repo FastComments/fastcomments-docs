@@ -2,12 +2,13 @@
 
 | Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| text-search | string | query | Нет |  |
-| byIPFromComment | string | query | Нет |  |
-| filters | string | query | Нет |  |
-| searchFilters | string | query | Нет |  |
-| sorts | string | query | Нет |  |
-| sso | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sorts | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Ответ
 
@@ -15,19 +16,20 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример postApiExport'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postApiExport Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие примеры кода находятся в стадии бета. Для сообщения о проблеме, пожалуйста, создайте отчет через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следующие образцы кода находятся в бета-версии. При возникновении проблем, пожалуйста, сообщайте их по адресу http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let textSearch = "textSearch_example" // String |  (необязательно)
-let byIPFromComment = "byIPFromComment_example" // String |  (необязательно)
-let filters = "filters_example" // String |  (необязательно)
-let searchFilters = "searchFilters_example" // String |  (необязательно)
-let sorts = "sorts_example" // String |  (необязательно)
-let sso = "sso_example" // String |  (необязательно)
+let tenantId = "tenantId_example" // String | 
+let textSearch = "textSearch_example" // String |  (optional)
+let byIPFromComment = "byIPFromComment_example" // String |  (optional)
+let filters = "filters_example" // String |  (optional)
+let searchFilters = "searchFilters_example" // String |  (optional)
+let sorts = "sorts_example" // String |  (optional)
+let sso = "sso_example" // String |  (optional)
 
-ModerationAPI.postApiExport(textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, sso: sso) { (response, error) in
+ModerationAPI.postApiExport(tenantId: tenantId, options: ModerationAPI.PostApiExportOptions(textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

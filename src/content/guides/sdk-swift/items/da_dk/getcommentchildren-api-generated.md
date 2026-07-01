@@ -1,11 +1,12 @@
 ## Parametre
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Ja |  |
-| sso | string | query | Nej |  |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
+|------|------|-----------|----------|-------------|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| sso | string | query | No |  |
 
-## Response
+## Svar
 
 Returnerer: [`ModerationAPIChildCommentsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationAPIChildCommentsResponse.swift)
 
@@ -13,13 +14,14 @@ Returnerer: [`ModerationAPIChildCommentsResponse`](https://github.com/FastCommen
 
 [inline-code-attrs-start title = 'getCommentChildren Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Følgende kodeeksempler er stadig i beta. Hvis der er et problem, bedes du rapportere det via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De følgende kodeeksempler er stadig i beta. For eventuelle problemer, rapportér venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
 let sso = "sso_example" // String |  (valgfri)
 
-ModerationAPI.getCommentChildren(commentId: commentId, sso: sso) { (response, error) in
+ModerationAPI.getCommentChildren(tenantId: tenantId, commentId: commentId, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -30,5 +32,3 @@ ModerationAPI.getCommentChildren(commentId: commentId, sso: sso) { (response, er
     }
 }
 [inline-code-end]
-
----

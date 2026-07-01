@@ -1,7 +1,7 @@
 ## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
-|------|------|----------|----------|-------------|
+|------|------|----------|--------------|-------------|
 | tenantId | string | query | Sì |  |
 | questionId | string | query | No |  |
 | questionIds | array | query | No |  |
@@ -18,9 +18,9 @@ Restituisce: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/F
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di combineCommentsWithQuestionResults'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'combineCommentsWithQuestionResults Esempio'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Gli esempi di codice seguenti sono ancora in beta. Per qualsiasi problema, si prega di segnalarlo tramite http://github.com/OpenAPITools/openapi-generator/issues/new
+// I seguenti esempi di codice sono ancora beta. Per qualsiasi problema, si prega di segnalarlo tramite http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -33,7 +33,7 @@ let minValue = 987 // Double |  (opzionale)
 let maxValue = 987 // Double |  (opzionale)
 let limit = 987 // Double |  (opzionale)
 
-DefaultAPI.combineCommentsWithQuestionResults(tenantId: tenantId, questionId: questionId, questionIds: questionIds, urlId: urlId, startDate: startDate, forceRecalculate: forceRecalculate, minValue: minValue, maxValue: maxValue, limit: limit) { (response, error) in
+DefaultAPI.combineCommentsWithQuestionResults(tenantId: tenantId, options: DefaultAPI.CombineCommentsWithQuestionResultsOptions(questionId: questionId, questionIds: questionIds, urlId: urlId, startDate: startDate, forceRecalculate: forceRecalculate, minValue: minValue, maxValue: maxValue, limit: limit)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -44,5 +44,3 @@ DefaultAPI.combineCommentsWithQuestionResults(tenantId: tenantId, questionId: qu
     }
 }
 [inline-code-end]
-
----

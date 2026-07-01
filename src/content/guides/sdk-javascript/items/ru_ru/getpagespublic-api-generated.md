@@ -1,12 +1,11 @@
----
-Перечисляет страницы для тенанта. Используется настольным клиентом FChat для заполнения его списка комнат.
-Требуется, чтобы в вычисленной пользовательской конфигурации каждой страницы `enableFChat` было true.
-Страницы, требующие SSO, фильтруются с учётом доступа групп запрашивающего пользователя.
+Получить список страниц для арендатора. Используется клиентом FChat на рабочем столе для заполнения списка комнат.  
+Требует, чтобы `enableFChat` был установлен в true в разрешённой пользовательской конфигурации для каждой страницы.  
+Страницы, требующие SSO, фильтруются в соответствии с доступом группы запрашивающего пользователя.
 
 ## Параметры
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Имя | Тип | Обязательно | Описание |
+|------|------|-------------|----------|
 | tenantId | string | Yes |  |
 | cursor | string | No |  |
 | limit | number | No |  |
@@ -16,18 +15,31 @@
 
 ## Ответ
 
-Возвращает: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPublicPagesResponse.ts)
+Returns: [`GetPagesPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPagesPublicResponse.ts)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример getPagesPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7f9b2c";
-const cursor: string = "cursor_0001a2b3";
-const limit: number = 25;
-const q: string = "product page";
-const hasComments: boolean = true;
-const response: GetPublicPagesResponse = await getPagesPublic(tenantId, cursor, limit, q, undefined, hasComments);
+async function fetchPages() {
+  const tenantId: string = "tenant_12345";
+  const cursor: string = "nextPageToken";
+  const limit: number = 20;
+  const q: string = "blog";
+  const sortBy: PagesSortBy = "createdAt";
+  const hasComments: boolean = true;
+
+  const response: GetPagesPublicResponse = await getPagesPublic(
+    tenantId,
+    cursor,
+    limit,
+    q,
+    sortBy,
+    hasComments
+  );
+
+  console.log(response);
+}
 [inline-code-end]
 
 ---

@@ -1,7 +1,8 @@
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
 | commentId | string | path | Da |  |
 | includeEmail | boolean | query | Ne |  |
 | includeIP | boolean | query | Ne |  |
@@ -13,9 +14,9 @@ Vraća: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcom
 
 ## Primjer
 
-[inline-code-attrs-start title = 'getModerationComment Primjer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getModerationComment'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvoz klasa:
+// Uvezi klase:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -28,12 +29,13 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     Boolean includeEmail = true; // Boolean | 
     Boolean includeIP = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationAPICommentResponse result = apiInstance.getModerationComment(commentId)
+      ModerationAPICommentResponse result = apiInstance.getModerationComment(tenantId, commentId)
             .includeEmail(includeEmail)
             .includeIP(includeIP)
             .sso(sso)

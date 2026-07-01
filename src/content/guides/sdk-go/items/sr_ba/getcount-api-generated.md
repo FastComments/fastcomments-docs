@@ -1,21 +1,22 @@
-## Параметри
+## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| text-search | string | query | Не |  |
-| byIPFromComment | string | query | Не |  |
-| filter | string | query | Не |  |
-| searchFilters | string | query | Не |  |
-| demo | boolean | query | Не |  |
-| sso | string | query | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
+| text-search | string | query | Ne |  |
+| byIPFromComment | string | query | Ne |  |
+| filter | string | query | Ne |  |
+| searchFilters | string | query | Ne |  |
+| demo | boolean | query | Ne |  |
+| sso | string | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`ModerationAPICountCommentsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_api_count_comments_response.go)
+Vraća: [`ModerationAPICountCommentsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_api_count_comments_response.go)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'GetCount пример'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GetCount primjer'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -27,23 +28,22 @@ import (
 )
 
 func main() {
-	textSearch := "textSearch_example" // string |  (необавезно)
-	byIPFromComment := "byIPFromComment_example" // string |  (необавезно)
-	filter := "filter_example" // string |  (необавезно)
-	searchFilters := "searchFilters_example" // string |  (необавезно)
-	demo := true // bool |  (необавезno)
-	sso := "sso_example" // string |  (необавезно)
+	tenantId := "tenantId_example" // string | 
+	textSearch := "textSearch_example" // string |  (opcionalno)
+	byIPFromComment := "byIPFromComment_example" // string |  (opcionalno)
+	filter := "filter_example" // string |  (opcionalno)
+	searchFilters := "searchFilters_example" // string |  (opcionalno)
+	demo := true // bool |  (opcionalno)
+	sso := "sso_example" // string |  (opcionalno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetCount(context.Background()).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filter(filter).SearchFilters(searchFilters).Demo(demo).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetCount(context.Background()).TenantId(tenantId).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filter(filter).SearchFilters(searchFilters).Demo(demo).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetCount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// одговор од `GetCount`: ModerationAPICountCommentsResponse
+	// odgovor od `GetCount`: ModerationAPICountCommentsResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetCount`: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -1,7 +1,8 @@
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | 是 |  |
 | sso | string | query | 否 |  |
 
 ## 响应
@@ -22,12 +23,13 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	banUserUndoParams := *openapiclient.NewBanUserUndoParams(*openapiclient.NewAPIBanUserChangeLog()) // BanUserUndoParams | 
-	sso := "sso_example" // string |  (可选)
+	sso := "sso_example" // string |  （可选）
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostBanUserUndo(context.Background()).BanUserUndoParams(banUserUndoParams).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostBanUserUndo(context.Background()).TenantId(tenantId).BanUserUndoParams(banUserUndoParams).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostBanUserUndo``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -36,5 +38,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostBanUserUndo`: %v\n", resp)
 }
 [inline-code-end]
-
----

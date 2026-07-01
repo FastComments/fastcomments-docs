@@ -16,6 +16,7 @@ Returns: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-python/
 [inline-code-attrs-start title = 'un_block_user_from_comment Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import UnBlockUserFromCommentOptions
 from client.models.un_block_from_comment_params import UnBlockFromCommentParams
 from client.models.unblock_success import UnblockSuccess
 from client.rest import ApiException
@@ -49,7 +50,7 @@ with client.ApiClient(configuration) as api_client:
     anon_user_id = 'anon_user_id_example' # str |  (optional)
 
     try:
-        api_response = api_instance.un_block_user_from_comment(tenant_id, id, un_block_from_comment_params, user_id=user_id, anon_user_id=anon_user_id)
+        api_response = api_instance.un_block_user_from_comment(tenant_id, id, un_block_from_comment_params, UnBlockUserFromCommentOptions(user_id=user_id, anon_user_id=anon_user_id))
         print("The response of DefaultApi->un_block_user_from_comment:\n")
         pprint(api_response)
     except Exception as e:

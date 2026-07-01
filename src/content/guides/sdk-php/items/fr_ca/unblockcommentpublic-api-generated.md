@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | commentId | string | path | Oui |  |
@@ -20,17 +20,19 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Si vous voulez utiliser un client HTTP personnalisé, passez votre client qui implémente `GuzzleHttp\ClientInterface`.
+    // Si vous souhaitez utiliser un client HTTP personnalisé, transmettez votre client qui implémente `GuzzleHttp\ClientInterface`.
     // Ceci est optionnel, `GuzzleHttp\Client` sera utilisé par défaut.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$comment_id = 'comment_id_example'; // string
+
+$tenant_id = 'tenant_id_example'; // chaîne
+$comment_id = 'comment_id_example'; // chaîne
 $public_block_from_comment_params = new \FastComments\Client\Model\PublicBlockFromCommentParams(); // \FastComments\Client\Model\PublicBlockFromCommentParams
-$sso = 'sso_example'; // string
+$sso = 'sso_example'; // chaîne
+
 
 try {
-    $result = $apiInstance->unBlockCommentPublic($tenant_id, $comment_id, $public_block_from_comment_params, $sso);
+    $result = $apiInstance->unBlockCommentPublic($tenant_id, $comment_id, $public_block_from_comment_params, $sss);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->unBlockCommentPublic: ', $e->getMessage(), PHP_EOL;

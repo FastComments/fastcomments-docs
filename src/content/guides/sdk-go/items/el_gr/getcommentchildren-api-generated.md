@@ -1,9 +1,10 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Θέση | Απαραίτητο | Περιγραφή |
+| Όνομα | Τύπος | Θέση | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Ναι |  |
-| sso | string | query | Όχι |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| sso | string | query | No |  |
 
 ## Απόκριση
 
@@ -23,12 +24,13 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
 	sso := "sso_example" // string |  (προαιρετικό)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetCommentChildren(context.Background(), commentId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetCommentChildren(context.Background(), commentId).TenantId(tenantId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetCommentChildren``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -37,5 +39,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetCommentChildren`: %v\n", resp)
 }
 [inline-code-end]
-
----

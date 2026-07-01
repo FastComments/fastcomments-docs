@@ -1,28 +1,26 @@
----
-## Параметры
+## Параметри
 
-| Имя | Тип | Обязательно | Описание |
+| Назва | Тип | Обов'язковий | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`GetTenantPackageResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetTenantPackageResponse.h)
+Повертає: [`GetTenantPackageResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetTenantPackageResponse.h)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример getTenantPackage'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад getTenantPackage'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t id = U("pkg-basic-001");
-boost::optional<utility::string_t> requestedBy = U("admin@example.com");
-auto task = api->getTenantPackage(tenantId, id)
-    .then([requestedBy](std::shared_ptr<GetTenantPackageResponse> resp) -> std::shared_ptr<GetTenantPackageResponse> {
-        if(!resp) return std::make_shared<GetTenantPackageResponse>();
-        if(requestedBy) {}
-        return std::make_shared<GetTenantPackageResponse>(*resp);
-    });
+auto tenantId = U("my-tenant-123");
+auto packageId = U("pkg-456");
+api->getTenantPackage(tenantId, packageId).then([](pplx::task<std::shared_ptr<GetTenantPackageResponse>> task){
+    try{
+        auto resp = task.get();
+        auto result = std::make_shared<GetTenantPackageResponse>(*resp);
+    }catch(...){}
+});
 [inline-code-end]
 
 ---

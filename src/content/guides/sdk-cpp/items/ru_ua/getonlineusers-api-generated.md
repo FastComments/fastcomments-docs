@@ -1,39 +1,30 @@
----
-Текущие онлайн-зрители страницы: люди, чья websocket session подписана на страницу прямо сейчас.
-Возвращает anonCount + totalCount (room-wide подписчики, включая анонимных зрителей, которых мы не перечисляем).
+Текуще‑онлайн зрители страницы: люди, чья websocket‑сессия подписана на страницу прямо сейчас. Возвращает anonCount + totalCount (подписчики в масштабе комнаты, включая анонимных зрителей, которых мы не перечисляем).
 
-## Параметры
+## Parameters
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| urlId | string | Да |  |
-| afterName | string | Нет |  |
-| afterUserId | string | Нет |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| options | const GetOnlineUsersOptions& | Yes |  |
 
-## Ответ
+## Response
 
-Возвращает: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PageUsersOnlineResponse.h)
+Returns: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PageUsersOnlineResponse.h)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'Пример использования getOnlineUsers'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getOnlineUsers Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-utility::string_t urlId = U("https://www.example.com/posts/2026/06/19/introduction");
-boost::optional<utility::string_t> afterName = boost::optional<utility::string_t>(U("alice@example.com"));
-boost::optional<utility::string_t> afterUserId;
-
-api->getOnlineUsers(tenantId, urlId, afterName, afterUserId)
-.then([](pplx::task<std::shared_ptr<PageUsersOnlineResponse>> t){
-    try {
-        auto resp = t.get();
-        if(!resp) resp = std::make_shared<PageUsersOnlineResponse>();
-        return resp;
-    } catch(...) {
-        return std::make_shared<PageUsersOnlineResponse>();
+utility::string_t urlId = U("article-456");
+auto options = std::make_shared<GetOnlineUsersOptions>();
+options->maxResults = boost::optional<int>(100);
+options->includeInactive = boost::optional<bool>(false);
+api->getOnlineUsers(tenantId, urlId, *options).then([](pplx::task<std::shared_ptr<PageUsersOnlineResponse>> task){
+    try{
+        auto response = task.get();
+    }catch(const std::exception&){
     }
-}).wait();
+});
 [inline-code-end]
-
----

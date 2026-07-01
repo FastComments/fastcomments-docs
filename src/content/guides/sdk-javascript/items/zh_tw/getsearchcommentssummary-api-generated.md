@@ -2,24 +2,36 @@
 
 | 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
-| value | string | 否 |  |
-| filters | string | 否 |  |
-| searchFilters | string | 否 |  |
-| sso | string | 否 |  |
+| value | string | No |  |
+| filters | string | No |  |
+| searchFilters | string | No |  |
+| tenantId | string | No |  |
+| sso | string | No |  |
 
 ## 回應
 
-回傳: [`ModerationCommentSearchResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationCommentSearchResponse.ts)
+回傳: [`GetSearchCommentsSummaryResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetSearchCommentsSummaryResponse.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getSearchCommentsSummary 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const query: string = 'renewable energy incentives';
-const filters: string = 'status:approved AND created_at>2025-01-01';
-const searchFilters: string | undefined = undefined;
-const sso: string | undefined = undefined;
-const summary: ModerationCommentSearchResponse = await getSearchCommentsSummary(query, filters, searchFilters, sso);
-[inline-code-end]
+async function runExample(): Promise<void> {
+    const searchTerm: string = "fastcomments integration";
+    const filterString: string = "status:approved";
+    const searchFilterString: string = "author:jane";
+    const tenantId: string = "123e4567-e89b-12d3-a456-426614174000";
+    const ssoToken: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...";
 
----
+    const summary: GetSearchCommentsSummaryResponse = await getSearchCommentsSummary(
+        searchTerm,
+        filterString,
+        searchFilterString,
+        tenantId,
+        ssoToken
+    );
+
+    console.log(summary);
+}
+runExample();
+[inline-code-end]

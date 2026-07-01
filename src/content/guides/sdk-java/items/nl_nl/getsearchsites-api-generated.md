@@ -1,11 +1,12 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
-|------|------|----------|----------|-------------|
+| Naam | Type | Locatie | Verplicht | Beschrijving |
+|------|------|----------|-----------|--------------|
+| tenantId | string | query | Ja |  |
 | value | string | query | Nee |  |
 | sso | string | query | Nee |  |
 
-## Respons
+## Response
 
 Retourneert: [`ModerationSiteSearchResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationSiteSearchResponse.java)
 
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String value = "value_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationSiteSearchResponse result = apiInstance.getSearchSites()
+      ModerationSiteSearchResponse result = apiInstance.getSearchSites(tenantId)
             .value(value)
             .sso(sso)
             .execute();

@@ -1,3 +1,4 @@
+---
 ## レスポンス
 
 戻り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
@@ -12,10 +13,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // カスタムの HTTP クライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
-    // これは任意です。デフォルトでは `GuzzleHttp\Client` が使用されます。
+    // カスタム HTTP クライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装したクライアントを渡してください。
+    // これはオプションで、デフォルトでは `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client()
 );
+
+
 
 try {
     $result = $apiInstance->logoutPublic();

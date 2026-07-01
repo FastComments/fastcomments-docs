@@ -2,15 +2,8 @@
 
 | שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| questionId | string | לא |  |
-| questionIds | seq[string] | לא |  |
-| urlId | string | כן |  |
-| startDate | string | לא |  |
-| forceRecalculate | bool | לא |  |
-| minValue | float64 | לא |  |
-| maxValue | float64 | לא |  |
-| limit | float64 | לא |  |
+| tenantId | string | Yes |  |
+| options | CombineCommentsWithQuestionResultsOptions | No |  |
 
 ## תגובה
 
@@ -18,25 +11,13 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-combineCommentsWithQuestionResults'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'combineCommentsWithQuestionResults דוגמה'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.combineCommentsWithQuestionResults(
+let (combineOpt, httpResponse) = client.combineCommentsWithQuestionResults(
   tenantId = "my-tenant-123",
-  questionId = "",
-  questionIds = @[],
-  urlId = "news/article-2026-climate-change",
-  startDate = "",
-  forceRecalculate = false,
-  minValue = 0.0,
-  maxValue = 0.0,
-  limit = 0.0
+  options = default(CombineCommentsWithQuestionResultsOptions)
 )
 
-if response.isSome:
-  let combined = response.get()
-  echo "Combined results received for tenant:", " my-tenant-123"
-else:
-  echo "No combined results returned"
+if combineOpt.isSome:
+  let combineResult = combineOpt.get()
 [inline-code-end]
-
----

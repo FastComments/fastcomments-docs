@@ -3,7 +3,7 @@
 | Nombre | Tipo | Obligatorio | Descripción |
 |------|------|----------|-------------|
 | tenantId | string | Sí |  |
-| sso | string | No |  |
+| sso | string = "" | No |  |
 
 ## Respuesta
 
@@ -11,14 +11,12 @@ Devuelve: [`Option[ResetUserNotificationsResponse]`](https://github.com/FastComm
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de resetUserNotificationCount'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'resetUserNotificationCount Ejemplo'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.resetUserNotificationCount(tenantId = "my-tenant-123", sso = "user-sso-token-456")
-if response.isSome:
-  let result = response.get()
-  echo "ResetUserNotificationsResponse:", result
+let (resetRespOpt, httpResp) = client.resetUserNotificationCount(tenantId = "my-tenant-123", sso = "user-456")
+if resetRespOpt.isSome:
+  let resetResp = resetRespOpt.get()
+  echo resetResp
 else:
-  echo "Reset failed, HTTP response:", httpResponse
+  echo "Reset notification count response not available"
 [inline-code-end]
-
----

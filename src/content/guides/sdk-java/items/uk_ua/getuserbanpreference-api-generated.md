@@ -1,7 +1,8 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Так |  |
 | sso | string | query | Ні |  |
 
 ## Відповідь
@@ -10,7 +11,7 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад getUserBanPreference'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUserBanPreference Приклад'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Імпорт класів:
 import com.fastcomments.invoker.ApiClient;
@@ -25,9 +26,10 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      APIModerateGetUserBanPreferencesResponse result = apiInstance.getUserBanPreference()
+      APIModerateGetUserBanPreferencesResponse result = apiInstance.getUserBanPreference(tenantId)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -41,5 +43,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

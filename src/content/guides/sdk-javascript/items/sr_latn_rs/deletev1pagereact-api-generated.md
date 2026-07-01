@@ -1,21 +1,24 @@
+---
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| tenantId | string | Da |  |
-| urlId | string | Da |  |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
 
 ## Odgovor
 
-Vraća: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateV1PageReact.ts)
+Vraća: [`DeleteV1PageReactResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteV1PageReactResponse.ts)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer deleteV1PageReact'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteV1PageReact Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-tenant-01';
-const urlId: string = 'post-5f2a8b3c9d';
-const deletedReaction: CreateV1PageReact = await deleteV1PageReact(tenantId, urlId);
+const tenantId: string = "acme-corp";
+const urlId: string = "article-2024-06-01";
+
+const response: DeleteV1PageReactResponse = await deleteV1PageReact(tenantId, urlId);
+console.log(response);
 [inline-code-end]
 
 ---

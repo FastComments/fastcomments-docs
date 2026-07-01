@@ -1,12 +1,12 @@
-## Параметри
+## Parameters
 
-| Име | Тип | Местоположение | Задължително | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| yearNumber | number | query | No |  |
-| monthNumber | number | query | No |  |
-| dayNumber | number | query | No |  |
-| skip | number | query | No |  |
+| tenantId | string | query | Да |  |
+| yearNumber | number | query | Не |  |
+| monthNumber | number | query | Не |  |
+| dayNumber | number | query | Не |  |
+| skip | number | query | Не |  |
 
 ## Отговор
 
@@ -16,16 +16,16 @@
 
 [inline-code-attrs-start title = 'getTenantDailyUsages Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следните примери за код все още са в бета версия. За всеки проблем, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следващите примерни кодове са все още в бета. При възникнали проблеми, моля съобщете ги чрез http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let yearNumber = 987 // Double |  (незадължително)
-let monthNumber = 987 // Double |  (незадължително)
-let dayNumber = 987 // Double |  (незадължително)
-let skip = 987 // Double |  (незадължително)
+let yearNumber = 987 // Double |  (по избор)
+let monthNumber = 987 // Double |  (по избор)
+let dayNumber = 987 // Double |  (по избор)
+let skip = 987 // Double |  (по избор)
 
-DefaultAPI.getTenantDailyUsages(tenantId: tenantId, yearNumber: yearNumber, monthNumber: monthNumber, dayNumber: dayNumber, skip: skip) { (response, error) in
+DefaultAPI.getTenantDailyUsages(tenantId: tenantId, options: DefaultAPI.GetTenantDailyUsagesOptions(yearNumber: yearNumber, monthNumber: monthNumber, dayNumber: dayNumber, skip: skip)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -36,5 +36,3 @@ DefaultAPI.getTenantDailyUsages(tenantId: tenantId, yearNumber: yearNumber, mont
     }
 }
 [inline-code-end]
-
----

@@ -1,7 +1,7 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язкове | Опис |
-|------|------|----------|----------|-------------|
+| Назва | Тип | Розташування | Обов’язково | Опис |
+|------|------|--------------|-------------|------|
 | tenantId | string | path | Так |  |
 | locale | string | query | Ні |  |
 | rating | string | query | Ні |  |
@@ -16,28 +16,29 @@
 [inline-code-attrs-start title = 'get_gifs_trending Приклад'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetGifsTrendingOptions
 from client.models.get_gifs_trending_response import GetGifsTrendingResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Визначення host необов'язкове і за замовчуванням — https://fastcomments.com
+# Визначення хоста є необов’язковим і за замовчуванням https://fastcomments.com
 # Дивіться configuration.py для списку всіх підтримуваних параметрів конфігурації.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Відкрийте контекст з екземпляром клієнта API
+# Відкрийте контекст з екземпляром API‑клієнта
 with client.ApiClient(configuration) as api_client:
     # Створіть екземпляр класу API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    locale = 'locale_example' # str |  (необов'язково)
-    rating = 'rating_example' # str |  (необов'язково)
-    page = 3.4 # float |  (необов'язково)
+    locale = 'locale_example' # str |  (необов’язково)
+    rating = 'rating_example' # str |  (необов’язково)
+    page = 3.4 # float |  (необов’язково)
 
     try:
-        api_response = api_instance.get_gifs_trending(tenant_id, locale=locale, rating=rating, page=page)
+        api_response = api_instance.get_gifs_trending(tenant_id, GetGifsTrendingOptions(locale=locale, rating=rating, page=page))
         print("The response of PublicApi->get_gifs_trending:\n")
         pprint(api_response)
     except Exception as e:

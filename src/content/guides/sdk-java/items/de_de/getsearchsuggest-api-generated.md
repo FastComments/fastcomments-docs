@@ -2,16 +2,17 @@
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Ja |  |
 | text-search | string | query | Nein |  |
 | sso | string | query | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`ModerationSuggestResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationSuggestResponse.java)
+Rückgabe: [`ModerationSuggestResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationSuggestResponse.java)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'getSearchSuggest Beispiel'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Beispiel für getSearchSuggest'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Klassen importieren:
 import com.fastcomments.invoker.ApiClient;
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String textSearch = "textSearch_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationSuggestResponse result = apiInstance.getSearchSuggest()
+      ModerationSuggestResponse result = apiInstance.getSearchSuggest(tenantId)
             .textSearch(textSearch)
             .sso(sso)
             .execute();

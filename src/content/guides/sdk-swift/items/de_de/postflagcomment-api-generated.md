@@ -1,25 +1,29 @@
 ## Parameter
 
-| Name | Typ | Location | Erforderlich | Beschreibung |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Ja |  |
-| sso | string | query | Nein |  |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
+|------|-----|-----|--------------|--------------|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Antwort
 
-Gibt zurück: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
+Rückgabe: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'postFlagComment Beispiel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Die folgenden Codebeispiele sind noch Beta. Bei Problemen melden Sie sich bitte unter http://github.com/OpenAPITools/openapi-generator/issues/new
+// Die folgenden Codebeispiele sind noch in der Beta‑Phase. Bei Problemen bitte melden über http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
+let broadcastId = "broadcastId_example" // String |  (optional)
 let sso = "sso_example" // String |  (optional)
 
-ModerationAPI.postFlagComment(commentId: commentId, sso: sso) { (response, error) in
+ModerationAPI.postFlagComment(tenantId: tenantId, commentId: commentId, options: ModerationAPI.PostFlagCommentOptions(broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -30,5 +34,3 @@ ModerationAPI.postFlagComment(commentId: commentId, sso: sso) { (response, error
     }
 }
 [inline-code-end]
-
----

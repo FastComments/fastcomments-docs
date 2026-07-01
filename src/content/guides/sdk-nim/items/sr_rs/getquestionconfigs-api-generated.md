@@ -1,25 +1,20 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| skip | float64 | Не |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| skip | float64 | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[GetQuestionConfigsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_question_configs_response.nim)
+Vraća: [`Option[GetQuestionConfigsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_question_configs_response.nim)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'getQuestionConfigs Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getQuestionConfigs'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.getQuestionConfigs(tenantId = "my-tenant-123", skip = 0.0)
 if response.isSome:
   let configs = response.get()
-  echo "Received question configs for tenant my-tenant-123"
   echo configs
-else:
-  echo "No question configs returned"
 [inline-code-end]
-
----

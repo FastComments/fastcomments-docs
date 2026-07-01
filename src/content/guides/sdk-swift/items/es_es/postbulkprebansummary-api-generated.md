@@ -1,7 +1,8 @@
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Sí |  |
 | includeByUserIdAndEmail | boolean | query | No |  |
 | includeByIP | boolean | query | No |  |
 | includeByEmailDomain | boolean | query | No |  |
@@ -13,18 +14,19 @@ Devuelve: [`BulkPreBanSummary`](https://github.com/FastComments/fastcomments-swi
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de postBulkPreBanSummary'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postBulkPreBanSummary Ejemplo'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Los siguientes ejemplos de código aún están en beta. Para cualquier problema, repórtelo en http://github.com/OpenAPITools/openapi-generator/issues/new
+// Los siguientes ejemplos de código siguen en beta. Para cualquier problema, por favor informe a http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let bulkPreBanParams = BulkPreBanParams(commentIds: ["commentIds_example"]) // BulkPreBanParams | 
 let includeByUserIdAndEmail = true // Bool |  (opcional)
 let includeByIP = true // Bool |  (opcional)
 let includeByEmailDomain = true // Bool |  (opcional)
 let sso = "sso_example" // String |  (opcional)
 
-ModerationAPI.postBulkPreBanSummary(bulkPreBanParams: bulkPreBanParams, includeByUserIdAndEmail: includeByUserIdAndEmail, includeByIP: includeByIP, includeByEmailDomain: includeByEmailDomain, sso: sso) { (response, error) in
+ModerationAPI.postBulkPreBanSummary(tenantId: tenantId, bulkPreBanParams: bulkPreBanParams, options: ModerationAPI.PostBulkPreBanSummaryOptions(includeByUserIdAndEmail: includeByUserIdAndEmail, includeByIP: includeByIP, includeByEmailDomain: includeByEmailDomain, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

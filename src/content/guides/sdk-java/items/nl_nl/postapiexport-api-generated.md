@@ -2,14 +2,15 @@
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
-| text-search | string | query | No |  |
-| byIPFromComment | string | query | No |  |
-| filters | string | query | No |  |
-| searchFilters | string | query | No |  |
-| sorts | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Ja |  |
+| text-search | string | query | Nee |  |
+| byIPFromComment | string | query | Nee |  |
+| filters | string | query | Nee |  |
+| searchFilters | string | query | Nee |  |
+| sorts | string | query | Nee |  |
+| sso | string | query | Nee |  |
 
-## Antwoord
+## Response
 
 Retourneert: [`ModerationExportResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationExportResponse.java)
 
@@ -30,6 +31,7 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String textSearch = "textSearch_example"; // String | 
     String byIPFromComment = "byIPFromComment_example"; // String | 
     String filters = "filters_example"; // String | 
@@ -37,7 +39,7 @@ public class Example {
     String sorts = "sorts_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationExportResponse result = apiInstance.postApiExport()
+      ModerationExportResponse result = apiInstance.postApiExport(tenantId)
             .textSearch(textSearch)
             .byIPFromComment(byIPFromComment)
             .filters(filters)

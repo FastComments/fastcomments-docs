@@ -2,38 +2,40 @@
 
 | שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| urlId | string | query | כן |  |
-| sso | string | query | לא |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## תגובה
 
-מחזיר: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
+Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-put_close_thread'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'put_close_thread דוגמה'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת ה-host אופציונלית ומתבססת כברירת מחדל על https://fastcomments.com
-# עיין ב-configuration.py לרשימת כל פרמטרי התצורה הנתמכים.
+# הגדרת המארח היא אופציונלית ומוגדרת כברירת מחדל ל-https://fastcomments.com
+# ראה configuration.py עבור רשימת כל פרמטרי התצורה הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Enter a context with an instance of the API client
+# פתח קונטקסט עם מופע של לקוח ה-API
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # צור מופע של מחלקת ה-API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
     sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.put_close_thread(url_id, sso=sso)
+        api_response = api_instance.put_close_thread(tenant_id, url_id, sso=sso)
         print("The response of ModerationApi->put_close_thread:\n")
         pprint(api_response)
     except Exception as e:

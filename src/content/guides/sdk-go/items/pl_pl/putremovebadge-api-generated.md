@@ -1,7 +1,8 @@
 ## Parametry
 
-| Name | Type | Location | Wymagane | Opis |
-|------|------|----------|----------|-------------|
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Tak |  |
 | badgeId | string | query | Tak |  |
 | userId | string | query | Nie |  |
 | commentId | string | query | Nie |  |
@@ -26,15 +27,16 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	badgeId := "badgeId_example" // string | 
-	userId := "userId_example" // string |  (opcjonalne)
-	commentId := "commentId_example" // string |  (opcjonalne)
-	broadcastId := "broadcastId_example" // string |  (opcjonalne)
-	sso := "sso_example" // string |  (opcjonalne)
+	userId := "userId_example" // string |  (opcjonalny)
+	commentId := "commentId_example" // string |  (opcjonalny)
+	broadcastId := "broadcastId_example" // string |  (opcjonalny)
+	sso := "sso_example" // string |  (opcjonalny)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PutRemoveBadge(context.Background()).BadgeId(badgeId).UserId(userId).CommentId(commentId).BroadcastId(broadcastId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PutRemoveBadge(context.Background()).TenantId(tenantId).BadgeId(badgeId).UserId(userId).CommentId(commentId).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PutRemoveBadge``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

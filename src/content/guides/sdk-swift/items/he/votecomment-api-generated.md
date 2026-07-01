@@ -1,13 +1,13 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | חובה | תיאור |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | כן |  |
-| commentId | string | path | כן |  |
-| urlId | string | query | כן |  |
-| broadcastId | string | query | כן |  |
-| sessionId | string | query | לא |  |
-| sso | string | query | לא |  |
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| broadcastId | string | query | Yes |  |
+| sessionId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## תגובה
 
@@ -15,9 +15,9 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת voteComment'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'voteComment דוגמה'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// דוגמאות הקוד הבאות עדיין בבטא. לכל בעיה, דווחו דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// הדגימות הקודיות הבאות עדיין בגרסת בטא. לכל בעיה, אנא דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -28,7 +28,7 @@ let voteBodyParams = VoteBodyParams(commenterEmail: "commenterEmail_example", co
 let sessionId = "sessionId_example" // String |  (אופציונלי)
 let sso = "sso_example" // String |  (אופציונלי)
 
-PublicAPI.voteComment(tenantId: tenantId, commentId: commentId, urlId: urlId, broadcastId: broadcastId, voteBodyParams: voteBodyParams, sessionId: sessionId, sso: sso) { (response, error) in
+PublicAPI.voteComment(tenantId: tenantId, commentId: commentId, urlId: urlId, broadcastId: broadcastId, voteBodyParams: voteBodyParams, options: PublicAPI.VoteCommentOptions(sessionId: sessionId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -39,5 +39,3 @@ PublicAPI.voteComment(tenantId: tenantId, commentId: commentId, urlId: urlId, br
     }
 }
 [inline-code-end]
-
----

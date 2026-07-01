@@ -1,27 +1,28 @@
----
 ## パラメータ
 
-| 名前 | 型 | 必須 | 説明 |
+| 名前 | タイプ | 必須 | 説明 |
 |------|------|----------|-------------|
+| tenantId | string | はい |  |
 | commentId | string | はい |  |
-| includeEmail | bool | いいえ |  |
-| includeIP | bool | いいえ |  |
-| sso | string | いいえ |  |
+| options | GetModerationCommentOptions | いいえ |  |
 
 ## レスポンス
 
-返却値: [`Option[ModerationAPICommentResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_api_comment_response.nim)
+返却: [`Option[ModerationAPICommentResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_api_comment_response.nim)
 
 ## 例
 
-[inline-code-attrs-start title = 'getModerationComment の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getModerationComment 例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getModerationComment(commentId = "cmt-8f3b2a9d", includeEmail = false, includeIP = false, sso = "")
-if response.isSome:
-  let comment = response.get()
-  discard comment
-else:
-  echo "No moderation comment returned"
+let (maybeComment, httpResponse) = client.getModerationComment(
+  tenantId = "my-tenant-123",
+  commentId = "cmt-456789",
+  options = default(GetModerationCommentOptions)
+)
+
+if maybeComment.isSome:
+  let comment = maybeComment.get()
+  echo comment
 [inline-code-end]
 
 ---

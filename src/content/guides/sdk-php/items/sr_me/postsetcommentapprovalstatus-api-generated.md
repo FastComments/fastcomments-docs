@@ -1,9 +1,11 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Da |  |
 | commentId | string | path | Da |  |
 | approved | boolean | query | Ne |  |
+| broadcastId | string | query | Ne |  |
 | sso | string | query | Ne |  |
 
 ## Odgovor
@@ -20,16 +22,22 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Ako želite da koristite prilagođeni HTTP klijent, prosledite klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opciono, `GuzzleHttp\Client` će se koristiti kao podrazumijevani.
+    // Ako želite koristiti prilagođeni HTTP klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opciono, `GuzzleHttp\Client` će se koristiti kao zadano.
     new GuzzleHttp\Client()
 );
+
+$tenant_id = 'tenant_id_example'; // string
 $comment_id = 'comment_id_example'; // string
-$approved = True; // bool
-$sso = 'sso_example'; // string
+$options = [
+    'approved' => True, // bool
+    'broadcast_id' => 'broadcast_id_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->postSetCommentApprovalStatus($comment_id, $approved, $sso);
+    $result = $apiInstance->postSetCommentApprovalStatus($tenant_id, $comment_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->postSetCommentApprovalStatus: ', $e->getMessage(), PHP_EOL;

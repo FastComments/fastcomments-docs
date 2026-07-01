@@ -1,11 +1,13 @@
+---
+Subir y redimensionar una imagen
+
 ## Parámetros
 
 | Nombre | Tipo | Requerido | Descripción |
-|------|------|----------|-------------|
-| tenantId | string | Sí |  |
+|--------|------|-----------|-------------|
+| tenantId | string | Yes |  |
 | file | string | No |  |
-| sizePreset | SizePreset | No |  |
-| urlId | string | Sí |  |
+| options | UploadImageOptions | No |  |
 
 ## Respuesta
 
@@ -15,14 +17,15 @@ Devuelve: [`Option[UploadImageResponse]`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'Ejemplo de uploadImage'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.uploadImage(
+let (uploadResult, httpResponse) = client.uploadImage(
   tenantId = "my-tenant-123",
-  file = "assets/images/comment-avatar.jpg",
-  sizePreset = SizePreset.small,
-  urlId = "news/article-2025-11-22"
+  file = "images/avatar.jpg",
+  options = UploadImageOptions()
 )
-if response.isSome:
-  let upload = response.get()
-  echo "Uploaded image id: ", upload.id
-  echo "Uploaded image url: ", upload.url
+
+if uploadResult.isSome:
+  let result = uploadResult.get()
+  # usar el resultado según sea necesario
 [inline-code-end]
+
+---

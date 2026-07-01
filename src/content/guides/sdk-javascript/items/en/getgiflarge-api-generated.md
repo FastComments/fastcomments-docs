@@ -7,14 +7,16 @@
 
 ## Response
 
-Returns: [`GifGetLargeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GifGetLargeResponse.ts)
+Returns: [`GetGifLargeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetGifLargeResponse.ts)
 
 ## Example
 
 [inline-code-attrs-start title = 'getGifLarge Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-42';
-const largeInternalURLSanitized: string = '/assets/internal/gifs/launch-party-9f8b7c.gif';
-const correlationId?: string = 'req-20260619-01';
-const result: GifGetLargeResponse = await getGifLarge(tenantId, largeInternalURLSanitized);
+(async () => {
+  const tenantId: string = 'c9f4a1b2-3d5e-4f6a-8b9c-0d1e2f3a4b5c';
+  const largeInternalURLSanitized: string = 'https://cdn.fastcomments.com/gifs/awesome-cat-large.gif';
+  const result: GetGifLargeResponse = await getGifLarge(tenantId, largeInternalURLSanitized);
+  console.log(result);
+})();
 [inline-code-end]

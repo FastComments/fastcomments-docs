@@ -1,9 +1,11 @@
 ## Параметри
 
 | Име | Тип | Местоположение | Задължително | Описание |
-|------|------|----------|----------|-------------|
-| commentId | string | път | Да |  |
-| sso | string | заявка | Не |  |
+|------|------|----------------|--------------|----------|
+| tenantId | string | query | Да |  |
+| commentId | string | path | Да |  |
+| broadcastId | string | query | Не |  |
+| sso | string | query | Не |  |
 
 ## Отговор
 
@@ -11,7 +13,7 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за postRestoreDeletedComment'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postRestoreDeletedComment Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Импортиране на класове:
 import com.fastcomments.invoker.ApiClient;
@@ -26,10 +28,13 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
+    String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      APIEmptyResponse result = apiInstance.postRestoreDeletedComment(commentId)
+      APIEmptyResponse result = apiInstance.postRestoreDeletedComment(tenantId, commentId)
+            .broadcastId(broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);

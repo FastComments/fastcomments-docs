@@ -1,16 +1,11 @@
 ## Παράμετροι
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Ναι |  |
-| questionId | string | Όχι |  |
-| questionIds | seq[string] | Όχι |  |
-| urlId | string | Ναι |  |
-| timeBucket | AggregateTimeBucket | Όχι |  |
-| startDate | string | Όχι |  |
-| forceRecalculate | bool | Όχι |  |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+|------|------|------------|-----------|
+| tenantId | string | Yes |  |
+| options | AggregateQuestionResultsOptions | No |  |
 
-## Απάντηση
+## Απόκριση
 
 Επιστρέφει: [`Option[AggregateQuestionResultsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_aggregate_question_results_response.nim)
 
@@ -18,17 +13,10 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα aggregateQuestionResults'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.aggregateQuestionResults(
-  tenantId = "my-tenant-123",
-  questionId = "",
-  questionIds = @[],
-  urlId = "news/article-title",
-  timeBucket = AggregateTimeBucket(0),
-  startDate = "",
-  forceRecalculate = false
-)
-
-if response.isSome:
-  let results = response.get()
-  discard results
+let opts = AggregateQuestionResultsOptions()
+let (aggResultOpt, httpResp) = client.aggregateQuestionResults(tenantId = "my-tenant-123", options = opts)
+if aggResultOpt.isSome:
+  let aggResult = aggResultOpt.get()
 [inline-code-end]
+
+---

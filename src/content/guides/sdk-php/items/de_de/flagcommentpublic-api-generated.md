@@ -1,15 +1,15 @@
 ## Parameter
 
-| Name | Type | Location | Erforderlich | Beschreibung |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| commentId | string | path | Ja |  |
-| isFlagged | boolean | query | Ja |  |
-| sso | string | query | Nein |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| isFlagged | boolean | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Antwort
 
-Gibt zurück: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
+Rückgabe: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
 ## Beispiel
 
@@ -25,10 +25,12 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     // Dies ist optional, `GuzzleHttp\Client` wird standardmäßig verwendet.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $comment_id = 'comment_id_example'; // string
 $is_flagged = True; // bool
 $sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->flagCommentPublic($tenant_id, $comment_id, $is_flagged, $sso);
@@ -37,5 +39,3 @@ try {
     echo 'Exception when calling PublicApi->flagCommentPublic: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

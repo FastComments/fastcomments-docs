@@ -1,9 +1,9 @@
 ## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
-|------|------|----------|----------|-------------|
+|------|------|-----------|--------------|-------------|
+| tenantId | string | query | Sì |  |
 | tag | string | path | Sì |  |
-| tenantId | string | query | No |  |
 
 ## Risposta
 
@@ -11,16 +11,16 @@ Restituisce: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-s
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di deleteHashTag'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteHashTag Esempio'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// I seguenti esempi di codice sono ancora in beta. Per qualsiasi problema, segnalalo tramite http://github.com/OpenAPITools/openapi-generator/issues/new
+// I seguenti esempi di codice sono ancora in beta. Per qualsiasi problema, segnalalo via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let tag = "tag_example" // String | 
-let tenantId = "tenantId_example" // String |  (opzionale)
-let deleteHashTagRequestBody = DeleteHashTagRequestBody(tenantId: "tenantId_example") // DeleteHashTagRequestBody |  (opzionale)
+let deleteHashTagRequestBody = DeleteHashTagRequestBody(tenantId: "tenantId_example") // DeleteHashTagRequestBody |  (optional)
 
-DefaultAPI.deleteHashTag(tag: tag, tenantId: tenantId, deleteHashTagRequestBody: deleteHashTagRequestBody) { (response, error) in
+DefaultAPI.deleteHashTag(tenantId: tenantId, tag: tag, deleteHashTagRequestBody: deleteHashTagRequestBody) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -31,5 +31,3 @@ DefaultAPI.deleteHashTag(tag: tag, tenantId: tenantId, deleteHashTagRequestBody:
     }
 }
 [inline-code-end]
-
----

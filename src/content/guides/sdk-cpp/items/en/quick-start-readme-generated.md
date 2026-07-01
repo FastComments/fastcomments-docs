@@ -75,14 +75,10 @@ int main() {
     // Pass the moderator's SSO token to authenticate the call
     auto ssoToken = utility::conversions::to_string_t("YOUR_MODERATOR_SSO_TOKEN");
 
-    auto response = moderationApi.getCount(
-        boost::none,  // textSearch
-        boost::none,  // byIPFromComment
-        boost::none,  // filter
-        boost::none,  // searchFilters
-        boost::none,  // demo
-        ssoToken      // sso
-    ).get();
+    org::openapitools::client::api::GetCountOptions options;
+    options.sso = ssoToken;
+
+    auto response = moderationApi.getCount(options).get();
 
     return 0;
 }

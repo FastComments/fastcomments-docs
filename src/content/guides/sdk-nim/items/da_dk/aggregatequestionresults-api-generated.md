@@ -2,13 +2,8 @@
 
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| questionId | string | Nej |  |
-| questionIds | seq[string] | Nej |  |
-| urlId | string | Ja |  |
-| timeBucket | AggregateTimeBucket | Nej |  |
-| startDate | string | Nej |  |
-| forceRecalculate | bool | Nej |  |
+| tenantId | string | Yes |  |
+| options | AggregateQuestionResultsOptions | No |  |
 
 ## Svar
 
@@ -18,19 +13,8 @@ Returnerer: [`Option[AggregateQuestionResultsResponse]`](https://github.com/Fast
 
 [inline-code-attrs-start title = 'aggregateQuestionResults Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.aggregateQuestionResults(
-  tenantId = "my-tenant-123",
-  questionId = "",
-  questionIds = @[],
-  urlId = "news/article-title",
-  timeBucket = AggregateTimeBucket(0),
-  startDate = "",
-  forceRecalculate = false
-)
-
-if response.isSome:
-  let results = response.get()
-  discard results
+let opts = AggregateQuestionResultsOptions()
+let (aggResultOpt, httpResp) = client.aggregateQuestionResults(tenantId = "my-tenant-123", options = opts)
+if aggResultOpt.isSome:
+  let aggResult = aggResultOpt.get()
 [inline-code-end]
-
----

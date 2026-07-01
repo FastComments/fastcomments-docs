@@ -1,9 +1,10 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| commentId | string | query | Ne |  |
-| sso | string | query | Ne |  |
+| Ime | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| commentId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -26,21 +27,24 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      GetUserInternalProfileResponse result = apiInstance.getUserInternalProfile()
+      GetUserInternalProfileResponse result = apiInstance.getUserInternalProfile(tenantId)
             .commentId(commentId)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ModerationApi#getUserInternalProfile");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("Izuzetak prilikom pozivanja ModerationApi#getUserInternalProfile");
+      System.err.println("Statusni kod: " + e.getCode());
+      System.err.println("Razlog: " + e.getResponseBody());
+      System.err.println("Zaglavlja odgovora: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }
 }
 [inline-code-end]
+
+---

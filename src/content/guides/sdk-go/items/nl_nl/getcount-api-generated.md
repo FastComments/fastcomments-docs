@@ -2,6 +2,7 @@
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Ja |  |
 | text-search | string | query | Nee |  |
 | byIPFromComment | string | query | Nee |  |
 | filter | string | query | Nee |  |
@@ -27,6 +28,7 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	textSearch := "textSearch_example" // string |  (optioneel)
 	byIPFromComment := "byIPFromComment_example" // string |  (optioneel)
 	filter := "filter_example" // string |  (optioneel)
@@ -36,7 +38,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetCount(context.Background()).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filter(filter).SearchFilters(searchFilters).Demo(demo).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetCount(context.Background()).TenantId(tenantId).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filter(filter).SearchFilters(searchFilters).Demo(demo).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetCount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

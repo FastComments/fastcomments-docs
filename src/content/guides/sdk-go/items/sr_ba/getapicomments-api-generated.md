@@ -1,24 +1,25 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Обавезно | Опис |
-|------|------|----------|----------|-------------|
-| page | number | query | Не |  |
-| count | number | query | Не |  |
-| text-search | string | query | Не |  |
-| byIPFromComment | string | query | Не |  |
-| filters | string | query | Не |  |
-| searchFilters | string | query | Не |  |
-| sorts | string | query | Не |  |
-| demo | boolean | query | Не |  |
-| sso | string | query | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
+| page | number | query | Ne |  |
+| count | number | query | Ne |  |
+| text-search | string | query | Ne |  |
+| byIPFromComment | string | query | Ne |  |
+| filters | string | query | Ne |  |
+| searchFilters | string | query | Ne |  |
+| sorts | string | query | Ne |  |
+| demo | boolean | query | Ne |  |
+| sso | string | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_api_get_comments_response.go)
+Vraća: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_api_get_comments_response.go)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример GetApiComments'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GetApiComments primjer'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -30,26 +31,25 @@ import (
 )
 
 func main() {
-	page := float64(1.2) // float64 |  (необавезно)
-	count := float64(1.2) // float64 |  (необавезно)
-	textSearch := "textSearch_example" // string |  (необавезно)
-	byIPFromComment := "byIPFromComment_example" // string |  (необавезno)
-	filters := "filters_example" // string |  (необавезно)
-	searchFilters := "searchFilters_example" // string |  (необавезно)
-	sorts := "sorts_example" // string |  (необавезно)
-	demo := true // bool |  (необавезно)
-	sso := "sso_example" // string |  (необавезно)
+	tenantId := "tenantId_example" // string | 
+	page := float64(1.2) // float64 |  (opcionalno)
+	count := float64(1.2) // float64 |  (opcionalno)
+	textSearch := "textSearch_example" // string |  (opcionalno)
+	byIPFromComment := "byIPFromComment_example" // string |  (opcionalno)
+	filters := "filters_example" // string |  (opcionalno)
+	searchFilters := "searchFilters_example" // string |  (opcionalno)
+	sorts := "sorts_example" // string |  (opcionalno)
+	demo := true // bool |  (opcionalno)
+	sso := "sso_example" // string |  (opcionalno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetApiComments(context.Background()).Page(page).Count(count).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).Sorts(sorts).Demo(demo).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetApiComments(context.Background()).TenantId(tenantId).Page(page).Count(count).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).Sorts(sorts).Demo(demo).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetApiComments``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// одговор из `GetApiComments`: ModerationAPIGetCommentsResponse
+	// odgovor iz `GetApiComments`: ModerationAPIGetCommentsResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetApiComments`: %v\n", resp)
 }
 [inline-code-end]
-
----

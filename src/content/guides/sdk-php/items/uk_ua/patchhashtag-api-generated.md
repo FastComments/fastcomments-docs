@@ -1,9 +1,9 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
-|------|------|----------|----------|-------------|
+| Назва | Тип | Розташування | Обов’язково | Опис |
+|------|------|--------------|--------------|------|
+| tenantId | string | query | Так |  |
 | tag | string | path | Так |  |
-| tenantId | string | query | Ні |  |
 
 ## Відповідь
 
@@ -17,24 +17,26 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Налаштування авторизації API-ключа: api_key
+// Налаштуйте авторизацію API-ключа: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Розкоментуйте нижче, щоб налаштувати префікс (наприклад, Bearer) для API-ключа, якщо потрібно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Якщо ви хочете використовувати власний HTTP-клієнт, передайте ваш клієнт, який реалізує `GuzzleHttp\ClientInterface`.
+    // Якщо ви хочете використати власний HTTP-клієнт, передайте ваш клієнт, який реалізує `GuzzleHttp\ClientInterface`.
     // Це необов'язково, за замовчуванням буде використано `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
-$tag = 'tag_example'; // string
-$tenant_id = 'tenant_id_example'; // string
+
+$tenant_id = 'tenant_id_example'; // рядок
+$tag = 'tag_example'; // рядок
 $update_hash_tag_body = new \FastComments\Client\Model\UpdateHashTagBody(); // \FastComments\Client\Model\UpdateHashTagBody
 
+
 try {
-    $result = $apiInstance->patchHashTag($tag, $tenant_id, $update_hash_tag_body);
+    $result = $apiInstance->patchHashTag($tenant_id, $tag, $update_hash_tag_body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->patchHashTag: ', $e->getMessage(), PHP_EOL;

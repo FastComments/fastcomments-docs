@@ -1,35 +1,37 @@
-## Параметри
+## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
 
-## Одговор
+## Response
 
-Враћа: [`CreateTenantResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateTenantResponse.php)
+Vraća: [`CreateTenantResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateTenantResponse.php)
 
-## Примјер
+## Example
 
-[inline-code-attrs-start title = 'createTenant Примјер'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer createTenant'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Конфигуришите API кључ за ауторизацију: api_key
+// Konfigurišite autorizaciju API ključa: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Откоментирајте испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
+// Odkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, po potrebi
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ако желите да користите прилагођени HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционално, `GuzzleHttp\Client` ће бити коришћен као подразумевани.
+    // Ako želite koristiti prilagođeni http klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opcionalno, `GuzzleHttp\Client` će biti korišten kao podrazumevani.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $create_tenant_body = new \FastComments\Client\Model\CreateTenantBody(); // \FastComments\Client\Model\CreateTenantBody
+
 
 try {
     $result = $apiInstance->createTenant($tenant_id, $create_tenant_body);
@@ -38,3 +40,5 @@ try {
     echo 'Exception when calling DefaultApi->createTenant: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

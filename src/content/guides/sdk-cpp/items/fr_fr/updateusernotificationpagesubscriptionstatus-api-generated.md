@@ -1,8 +1,8 @@
-Activer ou désactiver les notifications pour une page. Lorsque les utilisateurs sont abonnés à une page, des notifications sont créées pour les nouveaux commentaires de premier niveau, et aussi
+Activer ou désactiver les notifications pour une page. Lorsque les utilisateurs sont abonnés à une page, des notifications sont créées pour les nouveaux commentaires racine, et également
 
 ## Paramètres
 
-| Name | Type | Required | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
 | tenantId | string | Oui |  |
 | urlId | string | Oui |  |
@@ -17,21 +17,17 @@ Renvoie : [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://githu
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de updateUserNotificationPageSubscriptionStatus'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple updateUserNotificationPageSubscriptionStatus'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> sso(utility::conversions::to_string_t("sso-token-abc123"));
-api->updateUserNotificationPageSubscriptionStatus(
-    utility::conversions::to_string_t("my-tenant-123"),
-    utility::conversions::to_string_t("article-456"),
-    utility::conversions::to_string_t("https://www.example.com/posts/456"),
-    utility::conversions::to_string_t("How to Test C++ SDK"),
-    utility::conversions::to_string_t("subscribed"),
-    sso
-).then([](pplx::task<std::shared_ptr<UpdateUserNotificationPageSubscriptionStatusResponse>> t){
-    try {
-        auto resp = t.get();
-        auto copy = std::make_shared<UpdateUserNotificationPageSubscriptionStatusResponse>(*resp);
-        (void)copy;
-    } catch (const std::exception&) { }
-});
+utility::string_t tenantId = U("my-tenant-123");
+utility::string_t urlId = U("page-456");
+utility::string_t url = U("https://example.com/articles/awesome-article");
+utility::string_t pageTitle = U("Awesome Article");
+utility::string_t subscription = U("subscribed");
+boost::optional<utility::string_t> sso = boost::make_optional<utility::string_t>(U("sso-token-789"));
+
+api->updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscription, sso)
+    .then([](std::shared_ptr<UpdateUserNotificationPageSubscriptionStatusResponse> resp) {
+        // process resp if needed
+    });
 [inline-code-end]

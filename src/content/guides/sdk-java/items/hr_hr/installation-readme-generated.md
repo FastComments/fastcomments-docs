@@ -1,6 +1,6 @@
 ### Maven
 
-Dodajte Repsy repozitorij u POM vašeg projekta:
+Dodajte Repsy spremište u POM vašeg projekta:
 
 ```xml
 <repositories>
@@ -41,7 +41,7 @@ Zatim dodajte potrebne ovisnosti:
 
 ### Gradle
 
-Dodajte Repsy repozitorij u datoteku build.gradle:
+Dodajte Repsy spremište u vaš build.gradle datoteku:
 
 ```groovy
 repositories {
@@ -65,14 +65,14 @@ dependencies {
 
 ### Library Contents
 
-Ova biblioteka sadrži tri modula. Generirani API klijent, core Java biblioteka koja sadrži ručno napisane pomoćne funkcije za lakši rad s API-jem, i modul `pubsub` koji je biblioteka za pretplatu na feedove promjena.
+Ova biblioteka sadrži tri modula. Generirani API klijent, osnovna Java biblioteka koja sadrži ručno napisane alate za olakšavanje rada s API‑jem, i `pubsub` modul koji je biblioteka za pretplatu na feedove promjena.
 
-- [Dokumentacija API klijenta](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Dokumentacija Core biblioteke, uključujući primjere SSO-a](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [Dokumentacija PubSub biblioteke](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [Dokumenti API klijentske biblioteke](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Dokumenti osnovne biblioteke, uključujući SSO primjere](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [Dokumenti PubSub biblioteke](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
 ### Public vs Secured APIs
 
-Za API klijenta postoje tri klase, `DefaultApi`, `PublicApi`, i `ModerationApi`. `DefaultApi` sadrži metode koje zahtijevaju vaš API ključ, a `PublicApi` sadrži metode koje se mogu pozivati izravno iz preglednika/mobilnog uređaja/itd. bez autentifikacije.
+Za API klijent postoje tri klase, `DefaultApi`, `PublicApi` i `ModerationApi`. `DefaultApi` sadrži metode koje zahtijevaju vaš API ključ, a `PublicApi` sadrži metode koje se mogu pozvati izravno iz preglednika/mobilnog uređaja itd. bez autentifikacije.
 
-`ModerationApi` pokreće nadzornu ploču moderatora. Sadrži metode za moderiranje komentara (listanje, brojanje, pretraživanje, zapisi i izvoz), akcije moderiranja (ukloni/vrati, označi, postavi status za pregled/spam/odobrenje, glasovi i ponovno otvori/zatvori temu), zabrane (zabrana komentiranja, poništi zabranu, sažeci prije zabrane, status i postavke zabrane, i broj zabranjenih korisnika), te značke i povjerenje (dodijeli/ukloni značku, ručne značke, dohvati/postavi faktor povjerenja i interni korisnički profil). Svaka metoda `ModerationApi` prihvaća `sso` parametar tako da se poziv može izvršiti u ime moderatora autentificiranog putem SSO-a.
+`ModerationApi` pruža opsežan skup API‑ja za moderiranje u stvarnom vremenu i brzu moderaciju. Svaka metoda `ModerationApi` prihvaća `sso` parametar i može se autentificirati putem SSO ili sesijskog kolačića FastComments.com.

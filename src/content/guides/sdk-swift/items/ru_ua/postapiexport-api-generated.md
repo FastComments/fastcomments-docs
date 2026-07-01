@@ -1,33 +1,35 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Расположение | Обязательно | Описание |
-|------|------|----------|----------|-------------|
-| text-search | string | query | No |  |
-| byIPFromComment | string | query | No |  |
-| filters | string | query | No |  |
-| searchFilters | string | query | No |  |
-| sorts | string | query | No |  |
-| sso | string | query | No |  |
+| Назва | Тип | Розташування | Обов’язково | Опис |
+|------|------|--------------|-------------|------|
+| tenantId | string | query | Так |  |
+| text-search | string | query | Ні |  |
+| byIPFromComment | string | query | Ні |  |
+| filters | string | query | Ні |  |
+| searchFilters | string | query | Ні |  |
+| sorts | string | query | Ні |  |
+| sso | string | query | Ні |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`ModerationExportResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationExportResponse.swift)
+Повертає: [`ModerationExportResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationExportResponse.swift)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример postApiExport'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postApiExport Приклад'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие примеры кода все ещё в бета-версии. Если возникнут проблемы, пожалуйста, сообщите через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наступні приклади коду ще у бета-версії. Якщо виникли проблеми, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let textSearch = "textSearch_example" // Строка |  (необязательно)
-let byIPFromComment = "byIPFromComment_example" // Строка |  (необязательно)
-let filters = "filters_example" // Строка |  (необязательно)
-let searchFilters = "searchFilters_example" // Строка |  (необязательно)
-let sorts = "sorts_example" // Строка |  (необязательно)
-let sso = "sso_example" // Строка |  (необязательно)
+let tenantId = "tenantId_example" // String | 
+let textSearch = "textSearch_example" // String |  (необов’язково)
+let byIPFromComment = "byIPFromComment_example" // String |  (необов’язково)
+let filters = "filters_example" // String |  (необов’язково)
+let searchFilters = "searchFilters_example" // String |  (необов’язково)
+let sorts = "sorts_example" // String |  (необов’язково)
+let sso = "sso_example" // String |  (необов’язково)
 
-ModerationAPI.postApiExport(textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, sso: sso) { (response, error) in
+ModerationAPI.postApiExport(tenantId: tenantId, options: ModerationAPI.PostApiExportOptions(textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

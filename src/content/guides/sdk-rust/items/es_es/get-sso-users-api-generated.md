@@ -1,7 +1,7 @@
 ## Parámetros
 
-| Nombre | Tipo | Requerido | Descripción |
-|------|------|----------|-------------|
+| Nombre | Tipo | Obligatorio | Descripción |
+|--------|------|--------------|-------------|
 | tenant_id | String | Sí |  |
 | skip | i32 | No |  |
 
@@ -11,15 +11,15 @@ Devuelve: [`GetSsoUsersResponse`](https://github.com/FastComments/fastcomments-r
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de get_sso_users'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo get_sso_users'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<GetSsoUsersResponse, Error> {
-    let params: GetSsoUsersParams = GetSsoUsersParams {
-        tenant_id: String::from("acme-corp-tenant"),
+async fn example() -> Result<(), Error> {
+    let params = GetSsoUsersParams {
+        tenant_id: "acme-corp-tenant".to_string(),
         skip: Some(10),
     };
-    let sso_users: GetSsoUsersResponse = get_sso_users(&configuration, params).await?;
-    Ok(sso_users)
+    let _response = get_sso_users(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
 

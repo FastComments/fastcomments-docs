@@ -2,8 +2,9 @@
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| userId | string | query | Nie |  |
-| sso | string | query | Nie |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Odpowiedź
 
@@ -11,7 +12,7 @@ Zwraca: [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastcomme
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład użycia GetTrustFactor'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład GetTrustFactor'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,12 +24,13 @@ import (
 )
 
 func main() {
-	userId := "userId_example" // string |  (opcjonalne)
-	sso := "sso_example" // string |  (opcjonalne)
+	tenantId := "tenantId_example" // string | 
+	userId := "userId_example" // string |  (opcjonalny)
+	sso := "sso_example" // string |  (opcjonalny)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetTrustFactor(context.Background()).UserId(userId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetTrustFactor(context.Background()).TenantId(tenantId).UserId(userId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetTrustFactor``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -37,3 +39,5 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetTrustFactor`: %v\n", resp)
 }
 [inline-code-end]
+
+---

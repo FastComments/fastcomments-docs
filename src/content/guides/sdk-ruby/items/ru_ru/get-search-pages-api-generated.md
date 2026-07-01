@@ -1,9 +1,10 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
-|------|------|----------|----------|-------------|
-| value | string | query | Нет |  |
-| sso | string | query | Нет |  |
+| Имя | Тип | Местоположение | Обязательно | Описание |
+|------|------|----------------|-------------|----------|
+| tenantId | string | query | Yes |  |
+| value | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Ответ
 
@@ -17,6 +18,7 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 opts = {
   value: 'value_example', # String | 
   sso: 'sso_example' # String | 
@@ -24,11 +26,9 @@ opts = {
 
 begin
   
-  result = api_instance.get_search_pages(opts)
+  result = api_instance.get_search_pages(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_search_pages: #{e}"
 end
 [inline-code-end]
-
----

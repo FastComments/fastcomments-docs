@@ -1,19 +1,20 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Расположение | Обязательно | Описание |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Да |  |
-| sso | string | query | Нет |  |
+| Ім'я | Тип | Розташування | Обов'язковий | Опис |
+|------|------|--------------|--------------|------|
+| tenantId | string | query | Так |  |
+| commentId | string | path | Так |  |
+| sso | string | query | Ні |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`ModerationAPIGetLogsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationAPIGetLogsResponse.java)
+Returns: [`ModerationAPIGetLogsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationAPIGetLogsResponse.java)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример getLogs'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад getLogs'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Импорт классов:
+// Імпорт класів:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationAPIGetLogsResponse result = apiInstance.getLogs(commentId)
+      ModerationAPIGetLogsResponse result = apiInstance.getLogs(tenantId, commentId)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -43,5 +45,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

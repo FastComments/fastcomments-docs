@@ -31,15 +31,19 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$cursor = 'cursor_example'; // string | Opaque pagination cursor returned as `nextCursor` from a prior request. Tied to the same `sortBy`.
-$limit = 56; // int | 1..200, default 50
-$q = 'q_example'; // string | Optional case-insensitive title prefix filter.
-$sort_by = new \FastComments\Client\Model\\FastComments\Client\Model\PagesSortBy(); // \FastComments\Client\Model\PagesSortBy | Sort order. `updatedAt` (default, newest first), `commentCount` (most comments first), or `title` (alphabetical).
-$has_comments = True; // bool | If true, only return pages with at least one comment.
+$options = [
+    'cursor' => 'cursor_example', // string | Opaque pagination cursor returned as `nextCursor` from a prior request. Tied to the same `sortBy`.
+    'limit' => 56, // int | 1..200, default 50
+    'q' => 'q_example', // string | Optional case-insensitive title prefix filter.
+    'sort_by' => new \FastComments\Client\Model\\FastComments\Client\Model\PagesSortBy(), // \FastComments\Client\Model\PagesSortBy | Sort order. `updatedAt` (default, newest first), `commentCount` (most comments first), or `title` (alphabetical).
+    'has_comments' => True, // bool | If true, only return pages with at least one comment.
+];
+
 
 try {
-    $result = $apiInstance->getPagesPublic($tenant_id, $cursor, $limit, $q, $sort_by, $has_comments);
+    $result = $apiInstance->getPagesPublic($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getPagesPublic: ', $e->getMessage(), PHP_EOL;

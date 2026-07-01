@@ -1,13 +1,14 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
-| text-search | string | query | Non |  |
-| byIPFromComment | string | query | Non |  |
-| filter | string | query | Non |  |
-| searchFilters | string | query | Non |  |
-| demo | boolean | query | Non |  |
-| sso | string | query | Non |  |
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filter | string | query | No |  |
+| searchFilters | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Réponse
 
@@ -15,7 +16,7 @@ Renvoie : [`ModerationAPICountCommentsResponse`](https://github.com/FastComments
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de GetCount'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple GetCount'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -27,23 +28,22 @@ import (
 )
 
 func main() {
-	textSearch := "textSearch_example" // string |  (facultatif)
-	byIPFromComment := "byIPFromComment_example" // string |  (facultatif)
-	filter := "filter_example" // string |  (facultatif)
-	searchFilters := "searchFilters_example" // string |  (facultatif)
-	demo := true // bool |  (facultatif)
-	sso := "sso_example" // string |  (facultatif)
+	tenantId := "tenantId_example" // string |
+	textSearch := "textSearch_example" // string |  (optional)
+	byIPFromComment := "byIPFromComment_example" // string |  (optional)
+	filter := "filter_example" // string |  (optional)
+	searchFilters := "searchFilters_example" // string |  (optional)
+	demo := true // bool |  (optional)
+	sso := "sso_example" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetCount(context.Background()).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filter(filter).SearchFilters(searchFilters).Demo(demo).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetCount(context.Background()).TenantId(tenantId).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filter(filter).SearchFilters(searchFilters).Demo(demo).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetCount``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Erreur lors de l'appel de `ModerationAPI.GetCount`` : %v\n", err)
+		fmt.Fprintf(os.Stderr, "Réponse HTTP complète : %v\n", r)
 	}
 	// réponse de `GetCount` : ModerationAPICountCommentsResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetCount`: %v\n", resp)
+	fmt.Fprintf(os.Stdout, "Réponse de `ModerationAPI.GetCount` : %v\n", resp)
 }
 [inline-code-end]
-
----

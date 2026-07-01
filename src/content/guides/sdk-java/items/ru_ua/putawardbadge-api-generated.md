@@ -1,22 +1,23 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Расположение | Обязательно | Описание |
-|------|------|----------|----------|-------------|
-| badgeId | string | query | Да |  |
-| userId | string | query | Нет |  |
-| commentId | string | query | Нет |  |
-| broadcastId | string | query | Нет |  |
-| sso | string | query | Нет |  |
+| Назва | Тип | Розташування | Обов'язково | Опис |
+|------|------|--------------|-------------|------|
+| tenantId | string | query | Так |  |
+| badgeId | string | query | Так |  |
+| userId | string | query | Ні |  |
+| commentId | string | query | Ні |  |
+| broadcastId | string | query | Ні |  |
+| sso | string | query | Ні |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AwardUserBadgeResponse.java)
+Повертає: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AwardUserBadgeResponse.java)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример putAwardBadge'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putAwardBadge Приклад'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Импорт классов:
+// Імпорт класів:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,13 +30,14 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String badgeId = "badgeId_example"; // String | 
     String userId = "userId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      AwardUserBadgeResponse result = apiInstance.putAwardBadge(badgeId)
+      AwardUserBadgeResponse result = apiInstance.putAwardBadge(tenantId, badgeId)
             .userId(userId)
             .commentId(commentId)
             .broadcastId(broadcastId)
@@ -43,10 +45,10 @@ public class Example {
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ModerationApi#putAwardBadge");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("Виняток під час виклику ModerationApi#putAwardBadge");
+      System.err.println("Код статусу: " + e.getCode());
+      System.err.println("Причина: " + e.getResponseBody());
+      System.err.println("Заголовки відповіді: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }

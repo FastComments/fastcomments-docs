@@ -1,20 +1,20 @@
----
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
-| urlId | string | query | Oui |  |
-| sso | string | query | Non |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Réponse
 
-Renvoie: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
+Renvoie : [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de putCloseThread'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple putCloseThread'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Import des classes :
+// Importer les classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -27,22 +27,21 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      APIEmptyResponse result = apiInstance.putCloseThread(urlId)
+      APIEmptyResponse result = apiInstance.putCloseThread(tenantId, urlId)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ModerationApi#putCloseThread");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("Exception lors de l'appel de ModerationApi#putCloseThread");
+      System.err.println("Code d'état : " + e.getCode());
+      System.err.println("Raison : " + e.getResponseBody());
+      System.err.println("En-têtes de réponse : " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }
 }
 [inline-code-end]
-
----

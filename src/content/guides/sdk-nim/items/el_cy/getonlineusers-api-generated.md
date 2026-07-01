@@ -1,14 +1,13 @@
-Χρήστες που είναι αυτή τη στιγμή online σε μια σελίδα: άτομα των οποίων η websocket συνεδρία είναι εγγεγραμμένη στη σελίδα αυτή αυτή τη στιγμή.
-Επιστρέφει anonCount + totalCount (συνδρομητές σε όλο το δωμάτιο, συμπεριλαμβανομένων των ανώνυμων θεατών που δεν απαριθμούμε).
+Currently-online viewers of a page: άτομα των οποίων η συνεδρία websocket είναι συνδρομημένη στη σελίδα αυτή τη στιγμή.  
+Returns anonCount + totalCount (συμμετέχοντες στο δωμάτιο, συμπεριλαμβανομένων ανώνυμων θεατών που δεν απαριθμούμε).
 
 ## Παράμετροι
 
-| Name | Type | Required | Description |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
-| tenantId | string | Ναι |  |
-| urlId | string | Ναι |  |
-| afterName | string | Όχι |  |
-| afterUserId | string | Όχι |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| options | GetOnlineUsersOptions | No |  |
 
 ## Απάντηση
 
@@ -18,13 +17,9 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα getOnlineUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getOnlineUsers(tenantId = "my-tenant-123", urlId = "news/politics/top-story", afterName = "", afterUserId = "")
-if response.isSome:
-  let page = response.get()
-  echo "Received online users page:"
-  echo page
-else:
-  echo "No online users returned. HTTP status: ", httpResponse.statusCode
+let opts = GetOnlineUsersOptions()
+let (onlineUsersOpt, httpResp) = client.getOnlineUsers(tenantId = "my-tenant-123", urlId = "news/article-title", options = opts)
+if onlineUsersOpt.isSome:
+  let onlineUsers = onlineUsersOpt.get()
+  echo onlineUsers
 [inline-code-end]
-
----

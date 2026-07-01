@@ -1,17 +1,18 @@
-## Parametri
+## Parameters
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Da |  |
 | value | string | query | Ne |  |
 | sso | string | query | Ne |  |
 
-## Odgovor
+## Response
 
-Vraća: [`ModerationPageSearchResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationPageSearchResponse.php)
+Returns: [`ModerationPageSearchResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationPageSearchResponse.php)
 
-## Primjer
+## Example
 
-[inline-code-attrs-start title = 'getSearchPages Primjer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getSearchPages'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -19,15 +20,20 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Ako želite koristiti prilagođeni HTTP klijent, proslijedite klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opcionalno, `GuzzleHttp\Client` će biti korišten kao podrazumijevani.
+    // Ako želite koristiti prilagođeni http klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao podrazumevani.
     new GuzzleHttp\Client()
 );
-$value = 'value_example'; // string
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // string
+$options = [
+    'value' => 'value_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->getSearchPages($value, $sso);
+    $result = $apiInstance->getSearchPages($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getSearchPages: ', $e->getMessage(), PHP_EOL;

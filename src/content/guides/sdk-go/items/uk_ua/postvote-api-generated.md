@@ -1,9 +1,11 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язковий | Опис |
+| Назва | Тип | Розташування | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Так |  |
 | commentId | string | path | Так |  |
 | direction | string | query | Ні |  |
+| broadcastId | string | query | Ні |  |
 | sso | string | query | Ні |  |
 
 ## Відповідь
@@ -24,18 +26,20 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
 	direction := "direction_example" // string |  (необов'язковий)
+	broadcastId := "broadcastId_example" // string |  (необов'язковий)
 	sso := "sso_example" // string |  (необов'язковий)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostVote(context.Background(), commentId).Direction(direction).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostVote(context.Background(), commentId).TenantId(tenantId).Direction(direction).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostVote``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// відповідь від `PostVote`: VoteResponse
+	// response from `PostVote`: VoteResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostVote`: %v\n", resp)
 }
 [inline-code-end]

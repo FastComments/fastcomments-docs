@@ -1,16 +1,17 @@
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
-| page | number | query | Ne |  |
-| count | number | query | Ne |  |
-| text-search | string | query | Ne |  |
-| byIPFromComment | string | query | Ne |  |
-| filters | string | query | Ne |  |
-| searchFilters | string | query | Ne |  |
-| sorts | string | query | Ne |  |
-| demo | boolean | query | Ne |  |
-| sso | string | query | Ne |  |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| page | number | query | No |  |
+| count | number | query | No |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sorts | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -18,24 +19,26 @@ Vraća: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fas
 
 ## Primer
 
-[inline-code-attrs-start title = 'get_api_comments Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer get_api_comments'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetApiCommentsOptions
 from client.models.moderation_api_get_comments_response import ModerationAPIGetCommentsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Podešavanje hosta je opciono i podrazumevano je https://fastcomments.com
-# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
+# Definisanje hosta je opciono i podrazumevano je https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih konfiguracionih parametara.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Uđite u kontekst koristeći instancu API klijenta
+# Uđite u kontekst sa instancom API klijenta
 with client.ApiClient(configuration) as api_client:
     # Kreirajte instancu API klase
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     page = 3.4 # float |  (opciono)
     count = 3.4 # float |  (opciono)
     text_search = 'text_search_example' # str |  (opciono)
@@ -47,7 +50,7 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (opciono)
 
     try:
-        api_response = api_instance.get_api_comments(page=page, count=count, text_search=text_search, by_ip_from_comment=by_ip_from_comment, filters=filters, search_filters=search_filters, sorts=sorts, demo=demo, sso=sso)
+        api_response = api_instance.get_api_comments(tenant_id, GetApiCommentsOptions(page=page, count=count, text_search=text_search, by_ip_from_comment=by_ip_from_comment, filters=filters, search_filters=search_filters, sorts=sorts, demo=demo, sso=sso))
         print("The response of ModerationApi->get_api_comments:\n")
         pprint(api_response)
     except Exception as e:

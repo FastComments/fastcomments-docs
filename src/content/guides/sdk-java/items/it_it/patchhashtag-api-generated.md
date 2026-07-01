@@ -1,9 +1,9 @@
 ## Parametri
 
-| Nome | Tipo | Posizione | Richiesto | Descrizione |
-|------|------|----------|----------|-------------|
-| tag | string | path | Sì |  |
-| tenantId | string | query | No |  |
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+|------|------|-----------|--------------|-------------|
+| tenantId | string | query | Yes |  |
+| tag | string | path | Yes |  |
 
 ## Risposta
 
@@ -11,7 +11,7 @@ Restituisce: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomme
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di patchHashTag'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'patchHashTag Esempio'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importa le classi:
 import com.fastcomments.invoker.ApiClient;
@@ -26,19 +26,18 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configura l'autenticazione tramite API key: api_key
+    // Configura l'autorizzazione della chiave API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Decommenta la riga seguente per impostare un prefisso per la API key, es. "Token" (predefinito null)
+    // Decommenta la riga seguente per impostare un prefisso per la chiave API, ad esempio "Token" (predefinito a null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    String tag = "tag_example"; // String | 
     String tenantId = "tenantId_example"; // String | 
+    String tag = "tag_example"; // String | 
     UpdateHashTagBody updateHashTagBody = new UpdateHashTagBody(); // UpdateHashTagBody | 
     try {
-      UpdateHashTagResponse result = apiInstance.patchHashTag(tag)
-            .tenantId(tenantId)
+      UpdateHashTagResponse result = apiInstance.patchHashTag(tenantId, tag)
             .updateHashTagBody(updateHashTagBody)
             .execute();
       System.out.println(result);

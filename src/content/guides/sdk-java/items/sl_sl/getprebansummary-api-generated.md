@@ -1,21 +1,21 @@
----
 ## Parametri
 
 | Ime | Tip | Lokacija | Obvezno | Opis |
-|------|------|----------|----------|-------------|
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
 | commentId | string | path | Da |  |
 | includeByUserIdAndEmail | boolean | query | Ne |  |
 | includeByIP | boolean | query | Ne |  |
 | includeByEmailDomain | boolean | query | Ne |  |
 | sso | string | query | Ne |  |
 
-## Odziv
+## Odgovor
 
 Vrne: [`PreBanSummary`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/PreBanSummary.java)
 
 ## Primer
 
-[inline-code-attrs-start title = 'getPreBanSummary Primer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getPreBanSummary'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Uvozi razrede:
 import com.fastcomments.invoker.ApiClient;
@@ -30,13 +30,14 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     Boolean includeByUserIdAndEmail = true; // Boolean | 
     Boolean includeByIP = true; // Boolean | 
     Boolean includeByEmailDomain = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      PreBanSummary result = apiInstance.getPreBanSummary(commentId)
+      PreBanSummary result = apiInstance.getPreBanSummary(tenantId, commentId)
             .includeByUserIdAndEmail(includeByUserIdAndEmail)
             .includeByIP(includeByIP)
             .includeByEmailDomain(includeByEmailDomain)
@@ -53,5 +54,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

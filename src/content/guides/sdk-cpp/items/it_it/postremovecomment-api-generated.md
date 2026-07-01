@@ -1,28 +1,30 @@
 ## Parametri
 
-| Name | Tipo | Obbligatorio | Descrizione |
+| Nome | Tipo | Obbligatorio | Descrizione |
 |------|------|--------------|-------------|
+| tenantId | string | Sì |  |
 | commentId | string | Sì |  |
-| sso | string | No |  |
+| options | const PostRemoveCommentOptions& | Sì |  |
 
 ## Risposta
 
-Restituisce: [`PostRemoveCommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PostRemoveCommentResponse.h)
+Restituisce: [`PostRemoveCommentApiResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PostRemoveCommentApiResponse.h)
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di postRemoveComment'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio postRemoveComment'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t commentId = U("cmt-987654");
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
-api->postRemoveComment(commentId, sso)
-    .then([](pplx::task<std::shared_ptr<PostRemoveCommentResponse>> t) {
+auto tenantId = utility::string_t(U("my-tenant-123"));
+auto commentId = utility::string_t(U("cmt-456789"));
+PostRemoveCommentOptions options;
+options.permanent = boost::optional<bool>(true);
+api->postRemoveComment(tenantId, commentId, options)
+    .then([](pplx::task<std::shared_ptr<PostRemoveCommentApiResponse>> task) {
         try {
-            auto resp = t.get();
-            auto result = resp ? resp : std::make_shared<PostRemoveCommentResponse>();
-            if (result) std::cout << "Comment removed successfully\n";
-        } catch (const std::exception &e) {
-            std::cerr << "Remove failed: " << e.what() << "\n";
+            auto response = task.get();
+            // Elabora la risposta
+        } catch (const std::exception& ex) {
+            // Gestisci l'errore
         }
     });
 [inline-code-end]

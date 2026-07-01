@@ -17,20 +17,22 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// APIキー認証を構成: api_key
+// APIキー認証を設定: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// 必要に応じて以下のコメントを外して、APIキー用のプレフィックス（例: Bearer）を設定します
+// 必要に応じて、以下のコメントアウトを外してプレフィックス（例: Bearer）を設定
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // カスタムHTTPクライアントを使用する場合は、`GuzzleHttp\ClientInterface`を実装するクライアントを渡してください。
-    // これはオプションです。デフォルトでは `GuzzleHttp\Client` が使用されます。
+    // カスタム HTTP クライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装したクライアントを渡してください。
+    // これは省略可能で、デフォルトでは `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$id = 'id_example'; // string
+
+$tenant_id = 'tenant_id_example'; // 文字列
+$id = 'id_example'; // 文字列
+
 
 try {
     $result = $apiInstance->deletePendingWebhookEvent($tenant_id, $id);

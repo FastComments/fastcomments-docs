@@ -1,7 +1,7 @@
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
+|------|------|----------|----------|------|
 | tenantId | string | query | Yes |  |
 | page | integer | query | No |  |
 | limit | integer | query | No |  |
@@ -26,29 +26,27 @@ Vraća: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-
 
 ## Primer
 
-[inline-code-attrs-start title = 'get_comments Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer get_comments'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetCommentsOptions
 from client.models.api_get_comments_response import APIGetCommentsResponse
 from client.models.sort_directions import SortDirections
 from client.rest import ApiException
 from pprint import pprint
 
-# Definisanje hosta je opciono i podrazumevano je https://fastcomments.com
+# Definisanje host-a je opciono i podrazumevano je https://fastcomments.com
 # Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Klijent mora da konfiguriše parametre autentifikacije i autorizacije
-# u skladu sa sigurnosnom politikom API servera.
-# Ispod su dati primeri za svaki metod autentifikacije; koristite primer koji
-# odgovara vašem slučaju upotrebe.
+# u skladu sa politikom sigurnosti API servera.
+# Primeri za svaki metod autentifikacije su dati ispod, koristite primer koji
+# zadovoljava vaš slučaj korišćenja autentifikacije.
 
-# Konfigurišite autorizaciju pomoću API ključa: api_key
-configuration.api_key['api_key'] = os.environ["API_KEY"]
-
-# Otkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
+# Otkomentarišite ispod da biste postavili prefiks (npr. Bearer) za API ključ, ako je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Uđite u kontekst sa instancom API klijenta
@@ -56,25 +54,25 @@ with client.ApiClient(configuration) as api_client:
     # Kreirajte instancu API klase
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    page = 56 # int |  (opciono)
-    limit = 56 # int |  (opciono)
-    skip = 56 # int |  (opciono)
-    as_tree = True # bool |  (opciono)
-    skip_children = 56 # int |  (opciono)
-    limit_children = 56 # int |  (opciono)
-    max_tree_depth = 56 # int |  (opciono)
-    url_id = 'url_id_example' # str |  (opciono)
-    user_id = 'user_id_example' # str |  (opciono)
-    anon_user_id = 'anon_user_id_example' # str |  (opciono)
-    context_user_id = 'context_user_id_example' # str |  (opciono)
-    hash_tag = 'hash_tag_example' # str |  (opciono)
-    parent_id = 'parent_id_example' # str |  (opciono)
-    direction = client.SortDirections() # SortDirections |  (opciono)
-    from_date = 56 # int |  (opciono)
-    to_date = 56 # int |  (opciono)
+    page = 56 # int |  (optional)
+    limit = 56 # int |  (optional)
+    skip = 56 # int |  (optional)
+    as_tree = True # bool |  (optional)
+    skip_children = 56 # int |  (optional)
+    limit_children = 56 # int |  (optional)
+    max_tree_depth = 56 # int |  (optional)
+    url_id = 'url_id_example' # str |  (optional)
+    user_id = 'user_id_example' # str |  (optional)
+    anon_user_id = 'anon_user_id_example' # str |  (optional)
+    context_user_id = 'context_user_id_example' # str |  (optional)
+    hash_tag = 'hash_tag_example' # str |  (optional)
+    parent_id = 'parent_id_example' # str |  (optional)
+    direction = client.SortDirections() # SortDirections |  (optional)
+    from_date = 56 # int |  (optional)
+    to_date = 56 # int |  (optional)
 
     try:
-        api_response = api_instance.get_comments(tenant_id, page=page, limit=limit, skip=skip, as_tree=as_tree, skip_children=skip_children, limit_children=limit_children, max_tree_depth=max_tree_depth, url_id=url_id, user_id=user_id, anon_user_id=anon_user_id, context_user_id=context_user_id, hash_tag=hash_tag, parent_id=parent_id, direction=direction, from_date=from_date, to_date=to_date)
+        api_response = api_instance.get_comments(tenant_id, GetCommentsOptions(page=page, limit=limit, skip=skip, as_tree=as_tree, skip_children=skip_children, limit_children=limit_children, max_tree_depth=max_tree_depth, url_id=url_id, user_id=user_id, anon_user_id=anon_user_id, context_user_id=context_user_id, hash_tag=hash_tag, parent_id=parent_id, direction=direction, from_date=from_date, to_date=to_date))
         print("The response of DefaultApi->get_comments:\n")
         pprint(api_response)
     except Exception as e:

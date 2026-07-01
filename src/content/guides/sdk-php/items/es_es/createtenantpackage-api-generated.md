@@ -1,10 +1,10 @@
-## Parámetros
+## Parameters
 
 | Nombre | Tipo | Ubicación | Obligatorio | Descripción |
-|------|------|----------|----------|-------------|
+|--------|------|-----------|-------------|-------------|
 | tenantId | string | query | Sí |  |
 
-## Respuesta
+## Response
 
 Devuelve: [`CreateTenantPackageResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateTenantPackageResponse.php)
 
@@ -16,20 +16,22 @@ Devuelve: [`CreateTenantPackageResponse`](https://github.com/FastComments/fastco
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api_key
+// Configurar autorización de clave API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Descomente a continuación para configurar el prefijo (p.ej., Bearer) para la clave API, si es necesario
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // Si desea usar un cliente HTTP personalizado, pase su cliente que implemente `GuzzleHttp\ClientInterface`.
+    // Esto es opcional, `GuzzleHttp\Client` se usará por defecto.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $create_tenant_package_body = new \FastComments\Client\Model\CreateTenantPackageBody(); // \FastComments\Client\Model\CreateTenantPackageBody
+
 
 try {
     $result = $apiInstance->createTenantPackage($tenant_id, $create_tenant_package_body);

@@ -1,25 +1,26 @@
-## Параметри
+## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| batch_job_id | String | Не |  |
-| sso | String | Не |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenant_id | String | Yes |  |
+| batch_job_id | String | No |  |
+| sso | String | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/moderation_export_status_response.rs)
+Vraća: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/moderation_export_status_response.rs)
 
-## Примјер
+## Primjer
 
-[inline-code-attrs-start title = 'get_api_export_status Примјер'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer get_api_export_status'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn run() -> Result<(), Error> {
-    let params: GetApiExportStatusParams = GetApiExportStatusParams {
-        batch_job_id: Some("export-job-2026-06-19-001".to_string()),
-        sso: Some("acme-corp-tenant".to_string()),
+    let params = GetApiExportStatusParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        batch_job_id: Some("batch-2023-09-01".to_string()),
+        sso: Some("sso-token-xyz".to_string()),
     };
-    let status: ModerationExportStatusResponse = get_api_export_status(&configuration, params).await?;
-    println!("{:#?}", status);
+    let _status = get_api_export_status(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

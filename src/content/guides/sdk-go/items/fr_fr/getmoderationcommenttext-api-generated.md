@@ -2,16 +2,17 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Oui |  |
-| sso | string | query | Non |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| sso | string | query | No |  |
 
 ## Réponse
 
-Renvoie: [`GetCommentTextResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_comment_text_response.go)
+Retourne : [`GetCommentTextResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_comment_text_response.go)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de GetModerationCommentText'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple GetModerationCommentText'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,17 +24,18 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
-	sso := "sso_example" // string |  (optionnel)
+	sso := "sso_example" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetModerationCommentText(context.Background(), commentId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetModerationCommentText(context.Background(), commentId).TenantId(tenantId).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetModerationCommentText``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Erreur lors de l'appel `ModerationAPI.GetModerationCommentText``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Réponse HTTP complète: %v\n", r)
 	}
-	// réponse de `GetModerationCommentText`: GetCommentTextResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetModerationCommentText`: %v\n", resp)
+	// réponse de `GetModerationCommentText` : GetCommentTextResponse
+	fmt.Fprintf(os.Stdout, "Réponse de `ModerationAPI.GetModerationCommentText` : %v\n", resp)
 }
 [inline-code-end]

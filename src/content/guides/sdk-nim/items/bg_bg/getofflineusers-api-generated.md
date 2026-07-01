@@ -1,37 +1,30 @@
----
-Предишни коментатори на страницата, които НЕ са в момента онлайн. Подредени по displayName.
-Използвайте това след като сте изчерпали /users/online, за да визуализирате секция "Членове".
-Курсорна пагинация по commenterName: сървърът обхожда частичния {tenantId, urlId, commenterName}
-индекс от afterName напред чрез $gt, без разход за $skip.
+Past commenters on the page who are NOT currently online. Sorted by displayName.  
+Use this after exhausting /users/online to render a "Members" section.  
+Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName}  
+index from afterName forward via $gt, no $skip cost.
 
-## Параметри
+## Parameters
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| urlId | string | Да |  |
-| afterName | string | Не |  |
-| afterUserId | string | Не |  |
+| Име | Тип | Задължително | Описание |
+|------|------|--------------|----------|
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| options | GetOfflineUsersOptions | No |  |
 
-## Отговор
+## Response
 
-Връща: [`Option[PageUsersOfflineResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_offline_response.nim)
+Returns: [`Option[PageUsersOfflineResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_offline_response.nim)
 
-## Пример
+## Example
 
 [inline-code-attrs-start title = 'Пример за getOfflineUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getOfflineUsers(
+let (offlineResp, httpResponse) = client.getOfflineUsers(
   tenantId = "my-tenant-123",
-  urlId = "news/article-how-to-code",
-  afterName = "",
-  afterUserId = ""
+  urlId = "news/article-title",
+  options = GetOfflineUsersOptions()
 )
-
-if response.isSome:
-  let offlinePage = response.get()
-  echo "Received offline users page"
-  discard httpResponse.statusCode
+if offlineResp.isSome:
+  let offline = offlineResp.get()
+  echo offline)
 [inline-code-end]
-
----

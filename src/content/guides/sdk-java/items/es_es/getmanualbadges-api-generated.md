@@ -1,7 +1,8 @@
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Sí |  |
 | sso | string | query | No |  |
 
 ## Respuesta
@@ -10,7 +11,7 @@ Devuelve: [`GetTenantManualBadgesResponse`](https://github.com/FastComments/fast
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de getManualBadges'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getManualBadges Ejemplo'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importar clases:
 import com.fastcomments.invoker.ApiClient;
@@ -25,9 +26,10 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      GetTenantManualBadgesResponse result = apiInstance.getManualBadges()
+      GetTenantManualBadgesResponse result = apiInstance.getManualBadges(tenantId)
             .sso(sso)
             .execute();
       System.out.println(result);

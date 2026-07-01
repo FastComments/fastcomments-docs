@@ -1,6 +1,6 @@
-## Parameters
+## Parametri
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | limit | number | query | Ne |  |
@@ -11,13 +11,13 @@
 
 ## Odgovor
 
-Vrača: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetAuditLogsResponse.swift)
+Vrne: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetAuditLogsResponse.swift)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer getAuditLogs'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getAuditLogs Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Naslednji primeri kode so še v beta. Za kakršnokoli težavo, prosimo prijavite preko http://github.com/OpenAPITools/openapi-generator/issues/new
+// Naslednji vzorci kode so še v beta različici. V primeru težav prosimo sporočite na http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -27,7 +27,7 @@ let order = SORT_DIR() // SORTDIR |  (neobvezno)
 let after = 987 // Double |  (neobvezno)
 let before = 987 // Double |  (neobvezno)
 
-DefaultAPI.getAuditLogs(tenantId: tenantId, limit: limit, skip: skip, order: order, after: after, before: before) { (response, error) in
+DefaultAPI.getAuditLogs(tenantId: tenantId, options: DefaultAPI.GetAuditLogsOptions(limit: limit, skip: skip, order: order, after: after, before: before)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -38,3 +38,5 @@ DefaultAPI.getAuditLogs(tenantId: tenantId, limit: limit, skip: skip, order: ord
     }
 }
 [inline-code-end]
+
+---

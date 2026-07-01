@@ -2,35 +2,36 @@
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| questionId | string | 否 |  |
-| questionIds | Array<string> | 否 |  |
-| urlId | string | 否 |  |
-| startDate | Date | 否 |  |
-| forceRecalculate | boolean | 否 |  |
-| minValue | number | 否 |  |
-| maxValue | number | 否 |  |
-| limit | number | 否 |  |
+| tenantId | string | Yes |  |
+| questionId | string | No |  |
+| questionIds | Array<string> | No |  |
+| urlId | string | No |  |
+| startDate | Date | No |  |
+| forceRecalculate | boolean | No |  |
+| minValue | number | No |  |
+| maxValue | number | No |  |
+| limit | number | No |  |
 
 ## 回應
 
-回傳：[`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CombineQuestionResultsWithCommentsResponse.ts)
+回傳: [`CombineCommentsWithQuestionResultsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CombineCommentsWithQuestionResultsResponse.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'combineCommentsWithQuestionResults 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7c9f4b3a';
-const questionIds: string[] = ['q-4f8b2a1c', 'q-9d3e7b0f'];
-const urlId: string = 'url_93b2c1a7';
-const startDate: Date = new Date('2026-01-01T00:00:00Z');
-const forceRecalculate: boolean = true;
-const minValue: number = 0.2;
-const maxValue: number = 0.95;
-const limit: number = 100;
+const tenantId: string = "tenant_12345";
+const questionIds: string[] = ["question_1", "question_2"];
+const urlId: string = "article-9876";
+const startDate: Date = new Date("2023-01-01T00:00:00Z");
+const forceRecalculate: boolean = false;
+const minValue: number = 1;
+const maxValue: number = 5;
+const limit: number = 50;
 
-const combinedResult: CombineQuestionResultsWithCommentsResponse = await combineCommentsWithQuestionResults({
+const result: CombineCommentsWithQuestionResultsResponse = await combineCommentsWithQuestionResults(
   tenantId,
+  undefined,
   questionIds,
   urlId,
   startDate,
@@ -38,7 +39,5 @@ const combinedResult: CombineQuestionResultsWithCommentsResponse = await combine
   minValue,
   maxValue,
   limit
-});
+);
 [inline-code-end]
-
----

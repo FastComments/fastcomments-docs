@@ -1,28 +1,25 @@
-Массовая информация о пользователях для арендатора. По заданным userIds возвращает отображаемую информацию из User / SSOUser.
-Используется виджетом комментариев для обогащения пользователей, которые только что появились через событие присутствия.
-Нет контекста страницы: конфиденциальность соблюдается одинаково (закрытые профили маскируются).
+Массовая информация о пользователях для арендатора. По заданным userIds возвращается отображаемая информация из User / SSOUser.  
+Используется виджетом комментариев для обогащения пользователей, которые только что появились через событие присутствия.  
+Нет контекста страницы: конфиденциальность применяется единообразно (приватные профили маскируются).
 
-## Parameters
+## Параметры
 
-| Name | Type | Required | Description |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| ids | String | Да |  |
+| tenant_id | String | Yes |  |
+| ids | String | Yes |  |
 
-## Response
+## Ответ
 
 Возвращает: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_info_response.rs)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Пример get_users_info'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: GetUsersInfoParams = GetUsersInfoParams {
+let params = GetUsersInfoParams {
     tenant_id: "acme-corp-tenant".to_string(),
-    ids: "alice@example.com,bob@example.com,carol@example.com".to_string(),
-    page_size: Some(100),
+    ids: "user-1,user-2".to_string(),
 };
-let users_response: PageUsersInfoResponse = get_users_info(&configuration, params).await?;
+let page: PageUsersInfoResponse = get_users_info(&configuration, params).await?;
 [inline-code-end]
-
----

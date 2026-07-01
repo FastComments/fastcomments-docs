@@ -1,14 +1,14 @@
 ## Parámetros
 
-| Name | Tipo | Ubicación | Obligatorio | Descripción |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Sí |  |
-| questionId | string | query | No |  |
-| questionIds | array | query | No |  |
-| urlId | string | query | No |  |
-| timeBucket | string | query | No |  |
-| startDate | string | query | No |  |
-| forceRecalculate | boolean | query | No |  |
+| tenantId | string | consulta | Sí |  |
+| questionId | string | consulta | No |  |
+| questionIds | array | consulta | No |  |
+| urlId | string | consulta | No |  |
+| timeBucket | string | consulta | No |  |
+| startDate | string | consulta | No |  |
+| forceRecalculate | boolean | consulta | No |  |
 
 ## Respuesta
 
@@ -16,34 +16,35 @@ Devuelve: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/f
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de aggregate_question_results'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'aggregate_question_results Ejemplo'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import AggregateQuestionResultsOptions
 from client.models.aggregate_question_results_response import AggregateQuestionResultsResponse
 from client.models.aggregate_time_bucket import AggregateTimeBucket
 from client.rest import ApiException
 from pprint import pprint
 
 # Definir el host es opcional y por defecto es https://fastcomments.com
-# Consulte configuration.py para una lista de todos los parámetros de configuración compatibles.
+# Consulte configuration.py para obtener una lista de todos los parámetros de configuración compatibles.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # El cliente debe configurar los parámetros de autenticación y autorización
-# de acuerdo con la política de seguridad del servidor de la API.
-# A continuación se proporcionan ejemplos para cada método de autenticación; use el ejemplo que
+# de acuerdo con la política de seguridad del servidor API.
+# Se proporcionan ejemplos para cada método de autenticación a continuación, use el ejemplo que
 # satisfaga su caso de uso de autenticación.
 
-# Configure la autorización mediante clave API: api_key
+# Configurar la autorización mediante clave API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Descomente abajo para configurar el prefijo (p. ej. Bearer) para la clave API, si es necesario
+# Descomente a continuación para establecer el prefijo (p. ej., Bearer) para la clave API, si es necesario
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Entre en un contexto con una instancia del cliente de API
+# Entrar en un contexto con una instancia del cliente API
 with client.ApiClient(configuration) as api_client:
-    # Cree una instancia de la clase API
+    # Crear una instancia de la clase API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     question_id = 'question_id_example' # str |  (opcional)
@@ -54,11 +55,9 @@ with client.ApiClient(configuration) as api_client:
     force_recalculate = True # bool |  (opcional)
 
     try:
-        api_response = api_instance.aggregate_question_results(tenant_id, question_id=question_id, question_ids=question_ids, url_id=url_id, time_bucket=time_bucket, start_date=start_date, force_recalculate=force_recalculate)
+        api_response = api_instance.aggregate_question_results(tenant_id, AggregateQuestionResultsOptions(question_id=question_id, question_ids=question_ids, url_id=url_id, time_bucket=time_bucket, start_date=start_date, force_recalculate=force_recalculate))
         print("The response of DefaultApi->aggregate_question_results:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling DefaultApi->aggregate_question_results: %s\n" % e)
 [inline-code-end]
-
----

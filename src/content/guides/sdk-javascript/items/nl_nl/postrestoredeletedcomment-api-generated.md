@@ -1,25 +1,35 @@
 ## Parameters
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Naam | Type | Verplicht | Beschrijving |
+|------|------|-----------|--------------|
 | commentId | string | Ja |  |
+| broadcastId | string | Nee |  |
+| tenantId | string | Nee |  |
 | sso | string | Nee |  |
 
-## Antwoord
+## Response
 
-Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Retourneert: [`PostRestoreDeletedCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostRestoreDeletedCommentResponse.ts)
 
-## Voorbeeld
+## Example
 
-[inline-code-attrs-start title = 'postRestoreDeletedComment Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postRestoreDeletedComment voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const commentId: string = 'cmt_7f3b2a1e-54d3';
-  const resultWithoutSso: APIEmptyResponse = await postRestoreDeletedComment(commentId);
-  const ssoToken: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Njc4OSIsImlhdCI6MTYyMzQ1Njc4OX0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
-  const resultWithSso: APIEmptyResponse = await postRestoreDeletedComment(commentId, ssoToken);
-  console.log(resultWithoutSso, resultWithSso);
-})();
-[inline-code-end]
+async function restoreCommentDemo(): Promise<void> {
+    const commentId: string = "cmt_5f2a9b7e1234567890abcd";
+    const broadcastId: string | undefined = "brd_2023_09";
+    const tenantId: string | undefined = "tenant_42";
+    const sso: string | undefined = "sso_token_abcdef123456";
 
----
+    const response: PostRestoreDeletedCommentResponse = await postRestoreDeletedComment(
+        commentId,
+        broadcastId,
+        tenantId,
+        sso
+    );
+
+    console.log(response);
+}
+
+restoreCommentDemo();
+[inline-code-end]

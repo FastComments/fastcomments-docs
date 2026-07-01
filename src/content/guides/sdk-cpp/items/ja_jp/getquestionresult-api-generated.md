@@ -1,32 +1,27 @@
 ## パラメータ
 
-| 名前 | 型 | 必須 | 説明 |
+| 名前 | タイプ | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | はい |  |
-| id | string | はい |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
-## レスポンス
+## 応答
 
-戻り値: [`GetQuestionResultResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetQuestionResultResponse.h)
+返却: [`GetQuestionResultResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetQuestionResultResponse.h)
 
 ## 例
 
 [inline-code-attrs-start title = 'getQuestionResult の例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t questionId = U("question-789");
-boost::optional<utility::string_t> requestedBy = boost::optional<utility::string_t>(U("user@example.com"));
+auto tenantId = utility::string_t(U("my-tenant-123"));
+auto questionId = utility::string_t(U("question-789"));
+boost::optional<utility::string_t> optionalParam = boost::none;
 
 api->getQuestionResult(tenantId, questionId)
-.then([requestedBy](pplx::task<std::shared_ptr<GetQuestionResultResponse>> task) -> std::shared_ptr<GetQuestionResultResponse> {
-    try {
-        auto resp = task.get();
-        if (!resp) resp = std::make_shared<GetQuestionResultResponse>();
-        return resp;
-    } catch (...) {
-        return std::make_shared<GetQuestionResultResponse>();
-    }
-});
+    .then([](pplx::task<std::shared_ptr<GetQuestionResultResponse>> task) {
+        try {
+            auto response = task.get();
+        } catch (const std::exception&) {
+        }
+    });
 [inline-code-end]
-
----

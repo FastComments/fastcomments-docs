@@ -2,8 +2,9 @@
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Tak |  |
-| sso | string | query | Nie |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| sso | string | query | No |  |
 
 ## Odpowiedź
 
@@ -11,9 +12,9 @@ Zwraca: [`GetCommentTextResponse`](https://github.com/FastComments/fastcomments-
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład getModerationCommentText'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getModerationCommentText Przykład'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importowanie klas:
+// Importuj klasy:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      GetCommentTextResponse result = apiInstance.getModerationCommentText(commentId)
+      GetCommentTextResponse result = apiInstance.getModerationCommentText(tenantId, commentId)
             .sso(sso)
             .execute();
       System.out.println(result);

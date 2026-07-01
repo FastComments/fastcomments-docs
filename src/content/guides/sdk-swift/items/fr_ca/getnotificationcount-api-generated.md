@@ -1,7 +1,7 @@
-## Paramètres
+## Parameters
 
-| Nom | Type | Emplacement | Requis | Description |
-|------|------|----------|----------|-------------|
+| Nom | Type | Location | Obligatoire | Description |
+|------|------|----------|-------------|-------------|
 | tenantId | string | query | Oui |  |
 | userId | string | query | Non |  |
 | urlId | string | query | Non |  |
@@ -11,7 +11,7 @@
 
 ## Réponse
 
-Retourne : [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetNotificationCountResponse.swift)
+Renvoie : [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetNotificationCountResponse.swift)
 
 ## Exemple
 
@@ -27,7 +27,7 @@ let fromCommentId = "fromCommentId_example" // String |  (optionnel)
 let viewed = true // Bool |  (optionnel)
 let type = "type_example" // String |  (optionnel)
 
-DefaultAPI.getNotificationCount(tenantId: tenantId, userId: userId, urlId: urlId, fromCommentId: fromCommentId, viewed: viewed, type: type) { (response, error) in
+DefaultAPI.getNotificationCount(tenantId: tenantId, options: DefaultAPI.GetNotificationCountOptions(userId: userId, urlId: urlId, fromCommentId: fromCommentId, viewed: viewed, type: type)) { (response, error) in
     guard error == nil else {
         print(error)
         return

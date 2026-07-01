@@ -1,17 +1,17 @@
-## Параметры
+## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | путь | Да |  |
-| urlId | string | параметр запроса | Да |  |
+| Назва | Тип | Розташування | Обов’язково | Опис |
+|------|------|--------------|-------------|------|
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`GetV2PageReacts`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetV2PageReacts.php)
+Повертає: [`GetV2PageReacts`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetV2PageReacts.php)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример getV2PageReacts'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getV2PageReacts Приклад'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -19,12 +19,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Если вы хотите использовать пользовательский HTTP-клиент, передайте ваш клиент, который реализует `GuzzleHttp\ClientInterface`.
-    // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
+    // Якщо ви хочете використовувати власний HTTP‑клієнт, передайте ваш клієнт, який реалізує `GuzzleHttp\ClientInterface`.
+    // Це необов’язково, за замовчуванням буде використано `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // строка
-$url_id = 'url_id_example'; // строка
+
+$tenant_id = 'tenant_id_example'; // string
+$url_id = 'url_id_example'; // string
+
 
 try {
     $result = $apiInstance->getV2PageReacts($tenant_id, $url_id);
@@ -33,5 +35,3 @@ try {
     echo 'Exception when calling PublicApi->getV2PageReacts: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

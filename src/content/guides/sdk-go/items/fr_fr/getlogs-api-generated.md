@@ -1,13 +1,14 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Oui |  |
-| sso | string | query | Non |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| sso | string | query | No |  |
 
 ## Réponse
 
-Renvoie : [`ModerationAPIGetLogsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_api_get_logs_response.go)
+Renvoie : [`ModerationAPIGetLogsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_api_get_logs_response.go)
 
 ## Exemple
 
@@ -23,12 +24,13 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
-	sso := "sso_example" // string |  (optionnel)
+	sso := "sso_example" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetLogs(context.Background(), commentId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetLogs(context.Background(), commentId).TenantId(tenantId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetLogs``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -37,3 +39,5 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetLogs`: %v\n", resp)
 }
 [inline-code-end]
+
+---

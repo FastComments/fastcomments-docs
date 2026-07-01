@@ -3,33 +3,27 @@ The FastComments SDK provides three API clients:
 ### PublicAPI - Klientsikre metoder
 
 The `PublicAPI` contains methods that are safe to call from client-side code (iOS/macOS apps). These methods:
-- Do not require an API key
-- Can use SSO tokens for authentication
-- Are rate-limited per user/device
-- Are suitable for end-user facing applications
+- Do not require an API key → Kræver ikke en API-nøgle
+- Can use SSO tokens for authentication → Kan bruge SSO‑tokens til godkendelse
+- Are rate-limited per user/device → Er hastighedsbegrænset pr. bruger/enhed
+- Are suitable for end-user facing applications → Er egnet til slutbruger‑orienterede applikationer
 
-**Example use case**: Fetching and creating comments in your iOS app
+**Eksempel på brug**: Fetching and creating comments in your iOS app → Hentning og oprettelse af kommentarer i din iOS‑app
 
-### DefaultAPI - Server-side metoder
+### DefaultAPI - Server‑side metoder
 
 The `DefaultAPI` contains authenticated methods that require an API key. These methods:
-- Require your FastComments API key
-- Should ONLY be called from server-side code
-- Provide full access to your FastComments data
-- Are rate-limited per tenant
+- Require your FastComments API key → Kræver din FastComments API‑nøgle
+- Should ONLY be called from server-side code → Bør KUN kaldes fra server‑side kode
+- Provide full access to your FastComments data → Giver fuld adgang til dine FastComments‑data
+- Are rate-limited per tenant → Er hastighedsbegrænset pr. lejer
 
-**Example use case**: Administrative operations, bulk data export, user management
+**Eksempel på brug**: Administrative operations, bulk data export, user management → Administrative operationer, masse‑dataeksport, brugeradministration
 
-### ModerationAPI - Metoder til moderator-dashboardet
+### ModerationAPI - Moderatorsdashboard‑metoder
 
-The `ModerationAPI` contains methods that power the moderator dashboard. These methods cover:
-- **Comment moderation** - list, count, search, retrieve logs, and export comments
-- **Moderation actions** - remove/restore comments, flag, set review/spam/approval status, manage votes, and reopen/close threads
-- **Bans** - ban a user from a comment, undo bans, fetch pre-ban summaries, check ban status and preferences, and read banned-user counts
-- **Badges & trust** - award/remove badges, list manual badges, get/set a user's trust factor, and read a user's internal profile
+The `ModerationAPI` provides an extensive suite of live and fast moderation APIs. Every `ModerationAPI` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie. → `ModerationAPI` leverer en omfattende suite af live og hurtige moderations‑API'er. Hver `ModerationAPI`‑metode accepterer en `sso`‑parameter og kan autentificeres via SSO eller en FastComments.com‑sessions‑cookie.
 
-Every `ModerationAPI` method accepts an `sso` parameter so moderators can be authenticated via SSO.
+**Eksempel på brug**: Building a moderation experience for moderators of your community → Bygge en moderationsoplevelse for moderatorer af dit fællesskab
 
-**Example use case**: Building a moderation experience for moderators of your community
-
-**IMPORTANT**: Never expose your API key in client-side code. API keys should only be used server-side.
+**VIGTIGT**: Never expose your API key in client-side code. API keys should only be used server-side. → Udsæt aldrig din API‑nøgle i klient‑side kode. API‑nøgler bør kun bruges på server‑siden.

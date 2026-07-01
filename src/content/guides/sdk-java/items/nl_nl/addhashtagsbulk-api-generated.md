@@ -1,10 +1,10 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
+| Naam | Type | Locatie | Verplicht | Beschrijving |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Nee |  |
+| tenantId | string | query | Ja |  |
 
-## Response
+## Respons
 
 Retourneert: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/BulkCreateHashTagsResponse.java)
 
@@ -25,18 +25,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configureer API-sleutelautorisatie: api_key
+    // Configureer API-sleutel autorisatie: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Haal de volgende regel uit commentaar om een voorvoegsel voor de API-sleutel in te stellen, bijv. "Token" (standaard null)
+    // Verwijder het commentaar op de volgende regel om een prefix voor de API-sleutel in te stellen, bv. "Token" (standaard null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     BulkCreateHashTagsBody bulkCreateHashTagsBody = new BulkCreateHashTagsBody(); // BulkCreateHashTagsBody | 
     try {
-      BulkCreateHashTagsResponse result = apiInstance.addHashTagsBulk()
-            .tenantId(tenantId)
+      BulkCreateHashTagsResponse result = apiInstance.addHashTagsBulk(tenantId)
             .bulkCreateHashTagsBody(bulkCreateHashTagsBody)
             .execute();
       System.out.println(result);
@@ -50,5 +49,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

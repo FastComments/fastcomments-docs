@@ -1,18 +1,19 @@
----
-## Параметри
+## Parameters
 
 | Име | Тип | Местоположение | Задължително | Описание |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Да |  |
-| sso | string | query | Не |  |
+|------|------|----------------|--------------|----------|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
-## Отговор
+## Response
 
-Връща: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
+Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'Пример за PostUnFlagComment'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PostUnFlagComment Пример'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -24,12 +25,14 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
+	broadcastId := "broadcastId_example" // string |  (по избор)
 	sso := "sso_example" // string |  (по избор)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostUnFlagComment(context.Background(), commentId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostUnFlagComment(context.Background(), commentId).TenantId(tenantId).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostUnFlagComment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

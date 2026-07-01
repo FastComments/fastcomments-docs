@@ -1,9 +1,9 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tag | string | path | Да |  |
-| tenantId | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| tag | string | path | Yes |  |
 
 ## Ответ
 
@@ -23,9 +23,9 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	tag := "tag_example" // string | 
-	tenantId := "tenantId_example" // string |  (необязательно)
-	deleteHashTagRequestBody := *openapiclient.NewDeleteHashTagRequestBody() // DeleteHashTagRequestBody |  (необязательно)
+	deleteHashTagRequestBody := *openapiclient.NewDeleteHashTagRequestBody() // DeleteHashTagRequestBody |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -38,3 +38,5 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.DeleteHashTag`: %v\n", resp)
 }
 [inline-code-end]
+
+---

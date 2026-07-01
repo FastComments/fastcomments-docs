@@ -2,6 +2,7 @@
 
 | 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
+| tenant_id | String | 是 |  |
 | sso | String | 否 |  |
 
 ## 响应
@@ -12,14 +13,12 @@
 
 [inline-code-attrs-start title = 'get_counts 示例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_counts() -> Result<(), Error> {
-    let params: GetCountsParams = GetCountsParams {
-        sso: Some("acme-corp-tenant".to_string()),
+async fn run() -> Result<(), Error> {
+    let params = GetCountsParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        sso: Some("news/article".to_string()),
     };
-    let counts: GetBannedUsersCountResponse = get_counts(&configuration, params).await?;
-    println!("{:?}", counts);
+    let _response = get_counts(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

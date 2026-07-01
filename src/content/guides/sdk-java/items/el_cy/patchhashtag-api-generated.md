@@ -1,11 +1,11 @@
-## Parameters
+## Παράμετροι
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tag | string | path | Ναι |  |
-| tenantId | string | query | Όχι |  |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|-----------|-------------|
+| tenantId | string | ερώτημα | Ναι |  |
+| tag | string | διαδρομή | Ναι |  |
 
-## Response
+## Απάντηση
 
 Επιστρέφει: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateHashTagResponse.java)
 
@@ -29,16 +29,15 @@ public class Example {
     // Διαμόρφωση εξουσιοδότησης κλειδιού API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Αποσχολιάστε την παρακάτω γραμμή για να ορίσετε πρόθεμα για το API key, π.χ. "Token" (προεπιλογή: null)
+    // Καταργήστε το σχόλιο στην παρακάτω γραμμή για να ορίσετε πρόθεμα για το κλειδί API, π.χ. "Token" (προεπιλογή null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    String tag = "tag_example"; // String | 
     String tenantId = "tenantId_example"; // String | 
+    String tag = "tag_example"; // String | 
     UpdateHashTagBody updateHashTagBody = new UpdateHashTagBody(); // UpdateHashTagBody | 
     try {
-      UpdateHashTagResponse result = apiInstance.patchHashTag(tag)
-            .tenantId(tenantId)
+      UpdateHashTagResponse result = apiInstance.patchHashTag(tenantId, tag)
             .updateHashTagBody(updateHashTagBody)
             .execute();
       System.out.println(result);
@@ -52,5 +51,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

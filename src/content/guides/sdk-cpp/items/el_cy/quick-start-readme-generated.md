@@ -1,8 +1,8 @@
-### Χρήση Πιστοποιημένων API (DefaultAPI)
+### Χρήση Επικυρωμένων API (DefaultAPI)
 
 **Σημαντικό:**
-1. Πρέπει να ορίσετε το base URL (ο γεννήτορας cpp-restsdk δεν το διαβάζει από το OpenAPI spec)
-2. Πρέπει να ορίσετε το API key σας στο ApiClient πριν κάνετε πιστοποιημένα αιτήματα. Αν δεν το κάνετε, τα αιτήματα θα αποτύχουν με σφάλμα 401.
+1. Πρέπει να ορίσετε τη βασική URL (ο δημιουργός cpp-restsdk δεν την διαβάζει από το OpenAPI spec)
+2. Πρέπει να ορίσετε το κλειδί API στο ApiClient πριν κάνετε επικυρωμένα αιτήματα. Αν δεν το κάνετε, τα αιτήματα θα αποτύχουν με σφάλμα 401.
 
 ```cpp
 #include <iostream>
@@ -13,17 +13,17 @@
 int main() {
     auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
 
-    // ΑΠΑΙΤΕΙΤΑΙ: Ορίστε το base URL (επιλέξτε την περιοχή σας)
+    // ΑΠΑΙΤΟΥΜΕΝΟ: Ορίστε τη βασική URL (επιλέξτε την περιοχή σας)
     config->setBaseUrl(utility::conversions::to_string_t("https://fastcomments.com"));  // US
-    // OR: config->setBaseUrl(utility::conversions::to_string_t("https://eu.fastcomments.com"));  // EU
+    // Ή: config->setBaseUrl(utility::conversions::to_string_t("https://eu.fastcomments.com"));  // EU
 
-    // ΑΠΑΙΤΕΙΤΑΙ: Ορίστε το API key σας
+    // ΑΠΑΙΤΟΥΜΕΝΟ: Ορίστε το κλειδί API σας
     config->setApiKey(utility::conversions::to_string_t("api_key"), utility::conversions::to_string_t("YOUR_API_KEY_HERE"));
 
     auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
     org::openapitools::client::api::DefaultApi api(apiClient);
 
-    // Τώρα πραγματοποιήστε πιστοποιημένες κλήσεις στο API
+    // Τώρα κάντε επικυρωμένες κλήσεις API
     return 0;
 }
 ```
@@ -41,20 +41,20 @@ int main() {
 int main() {
     auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
 
-    // ΑΠΑΙΤΕΙΤΑΙ: Ορίστε το base URL
+    // ΑΠΑΙΤΟΥΜΕΝΟ: Ορίστε τη βασική URL
     config->setBaseUrl(utility::conversions::to_string_t("https://fastcomments.com"));
 
     auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
     org::openapitools::client::api::PublicApi publicApi(apiClient);
 
-    // Εκτελέστε δημόσιες κλήσεις API
+    // Κάντε δημόσιες κλήσεις API
     return 0;
 }
 ```
 
-### Χρήση Moderation APIs (ModerationApi)
+### Χρήση API Συντονισμού (ModerationApi)
 
-Το `ModerationApi` τροφοδοτεί τον πίνακα ελέγχου των διαχειριστών. Κάθε μέθοδος δέχεται παράμετρο `sso`, έτσι ώστε η κλήση να εκτελείται εκ μέρους ενός διαχειριστή που έχει αυθεντικοποιηθεί με SSO (δείτε την ενότητα SSO παρακάτω για το πώς να δημιουργήσετε ένα token):
+Το `ModerationApi` τροφοδοτεί τον πίνακα ελέγχου των συντονιστών. Κάθε μέθοδος δέχεται μια παράμετρο `sso` ώστε η κλήση να εκτελείται εκ μέρους ενός συντονιστή που έχει επικυρωθεί μέσω SSO (δείτε την ενότητα SSO παρακάτω για το πώς να δημιουργήσετε ένα token):
 
 ```cpp
 #include <iostream>
@@ -65,23 +65,19 @@ int main() {
 int main() {
     auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
 
-    // ΑΠΑΙΤΕΙΤΑΙ: Ορίστε το base URL
+    // ΑΠΑΙΤΟΥΜΕΝΟ: Ορίστε τη βασική URL
     config->setBaseUrl(utility::conversions::to_string_t("https://fastcomments.com"));
 
     auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
     org::openapitools::client::api::ModerationApi moderationApi(apiClient);
 
-    // Περάστε το SSO token του διαχειριστή για να αυθεντικοποιήσετε την κλήση
+    // Δώστε το SSO token του συντονιστή για να επικυρώσετε την κλήση
     auto ssoToken = utility::conversions::to_string_t("YOUR_MODERATOR_SSO_TOKEN");
 
-    auto response = moderationApi.getCount(
-        boost::none,  // textSearch
-        boost::none,  // byIPFromComment
-        boost::none,  // filter
-        boost::none,  // searchFilters
-        boost::none,  // demo
-        ssoToken      // sso
-    ).get();
+    org::openapitools::client::api::GetCountOptions options;
+    options.sso = ssoToken;
+
+    auto response = moderationApi.getCount(options).get();
 
     return 0;
 }
@@ -89,6 +85,6 @@ int main() {
 
 ### Συνηθισμένα Προβλήματα
 
-1. **"URI must contain a hostname" error**: Βεβαιωθείτε ότι καλείτε `config->setBaseUrl(utility::conversions::to_string_t("https://fastcomments.com"))` πριν δημιουργήσετε τον ApiClient. Ο γεννήτορας cpp-restsdk δεν διαβάζει αυτόματα το server URL από το OpenAPI spec.
-2. **401 "missing-api-key" error**: Βεβαιωθείτε ότι καλείτε `config->setApiKey(utility::conversions::to_string_t("api_key"), utility::conversions::to_string_t("YOUR_KEY"))` πριν δημιουργήσετε το παράδειγμα DefaultAPI.
-3. **Wrong API class**: Χρησιμοποιήστε `DefaultApi` για server-side πιστοποιημένα αιτήματα, `PublicApi` για client-side/δημόσια αιτήματα, και `ModerationApi` για αιτήματα του πίνακα ελέγχου διαχειριστή (πιστοποιημένα με SSO token διαχειριστή).
+1. **Σφάλμα "URI must contain a hostname"**: Βεβαιωθείτε ότι καλείτε `config->setBaseUrl(utility::conversions::to_string_t("https://fastcomments.com"))` πριν δημιουργήσετε το ApiClient. Ο δημιουργός cpp-restsdk δεν διαβάζει αυτόματα τη διεύθυνση του διακομιστή από το OpenAPI spec.  
+2. **Σφάλμα 401 "missing-api-key"**: Βεβαιωθείτε ότι καλείτε `config->setApiKey(utility::conversions::to_string_t("api_key"), utility::conversions::to_string_t("YOUR_KEY"))` πριν δημιουργήσετε την παρουσία DefaultAPI.  
+3. **Λάθος κλάση API**: Χρησιμοποιήστε `DefaultApi` για αιτήματα επικυρωμένα από τον διακομιστή, `PublicApi` για αιτήματα από την πλευρά του πελάτη/δημόσια, και `ModerationApi` για αιτήματα του πίνακα ελέγχου συντονιστών (επικυρωμένα με token SSO συντονιστή).

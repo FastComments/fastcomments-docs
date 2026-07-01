@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Nom | Type | Requis | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
 | tenant_id | String | Oui |  |
 | search | String | Oui |  |
@@ -10,24 +10,21 @@
 
 ## Réponse
 
-Renvoie : [`GetGifsSearchResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_gifs_search_response.rs)
+Retourne : [`GetGifsSearchResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_gifs_search_response.rs)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de get_gifs_search'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple get_gifs_search'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_gif_search() -> Result<(), Error> {
-    let params: GetGifsSearchParams = GetGifsSearchParams {
+async fn fetch_gifs(config: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetGifsSearchParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        search: "breaking news".to_string(),
+        search: "funny cats".to_string(),
         locale: Some("en-US".to_string()),
-        rating: Some("pg-13".to_string()),
+        rating: Some("pg".to_string()),
         page: Some(1.0),
     };
-    let response: GetGifsSearchResponse = get_gifs_search(&configuration, params).await?;
-    println!("{:#?}", response);
+    let _response = get_gifs_search(config, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

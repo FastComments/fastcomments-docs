@@ -1,51 +1,55 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Местоположение | Обязательно | Описание |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| commentId | string | query | Нет |  |
-| externalId | string | query | Нет |  |
-| eventType | string | query | Нет |  |
-| type | string | query | Нет |  |
-| domain | string | query | Нет |  |
-| attemptCountGT | number | query | Нет |  |
-| skip | number | query | Нет |  |
+| Назва | Тип | Розташування | Обов'язково | Опис |
+|------|------|--------------|-------------|------|
+| tenantId | string | query | Так |  |
+| commentId | string | query | Ні |  |
+| externalId | string | query | Ні |  |
+| eventType | string | query | Ні |  |
+| type | string | query | Ні |  |
+| domain | string | query | Ні |  |
+| attemptCountGT | number | query | Ні |  |
+| skip | number | query | Ні |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPendingWebhookEventsResponse.php)
+Повертає: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPendingWebhookEventsResponse.php)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример getPendingWebhookEvents'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад getPendingWebhookEvents'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Настройка авторизации API ключа: api_key
+// // Налаштування авторизації ключа API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// // Розкоментуйте нижче, щоб налаштувати префікс (наприклад, Bearer) для ключа API, якщо потрібно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Если вы хотите использовать кастомный HTTP-клиент, передайте клиент, который реализует `GuzzleHttp\ClientInterface`.
-    // Это необязательно, `GuzzleHttp\Client` будет использован как default.
+    // // Якщо ви хочете використати власний HTTP-клієнт, передайте свій клієнт, який реалізує `GuzzleHttp\ClientInterface`.
+    // // Це необов'язково, `GuzzleHttp\Client` буде використано за замовчуванням.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$comment_id = 'comment_id_example'; // string
-$external_id = 'external_id_example'; // string
-$event_type = 'event_type_example'; // string
-$type = 'type_example'; // string
-$domain = 'domain_example'; // string
-$attempt_count_gt = 3.4; // float
-$skip = 3.4; // float
+
+$tenant_id = 'tenant_id_example'; // рядок
+$options = [
+    'comment_id' => 'comment_id_example', // рядок
+    'external_id' => 'external_id_example', // рядок
+    'event_type' => 'event_type_example', // рядок
+    'type' => 'type_example', // рядок
+    'domain' => 'domain_example', // рядок
+    'attempt_count_gt' => 3.4, // число з плаваючою крапкою
+    'skip' => 3.4, // число з плаваючою крапкою
+];
+
 
 try {
-    $result = $apiInstance->getPendingWebhookEvents($tenant_id, $comment_id, $external_id, $event_type, $type, $domain, $attempt_count_gt, $skip);
+    $result = $apiInstance->getPendingWebhookEvents($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getPendingWebhookEvents: ', $e->getMessage(), PHP_EOL;

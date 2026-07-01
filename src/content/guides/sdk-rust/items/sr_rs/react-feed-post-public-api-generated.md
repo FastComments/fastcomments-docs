@@ -1,14 +1,13 @@
----
 ## Параметри
 
-| Име | Тип | Обавезно | Опис |
+| Име | Тип | Обавезно | Описание |
 |------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| post_id | String | Да |  |
-| react_body_params | models::ReactBodyParams | Да |  |
-| is_undo | bool | Не |  |
-| broadcast_id | String | Не |  |
-| sso | String | Не |  |
+| tenant_id | String | Yes |  |
+| post_id | String | Yes |  |
+| react_body_params | models::ReactBodyParams | Yes |  |
+| is_undo | bool | No |  |
+| broadcast_id | String | No |  |
+| sso | String | No |  |
 
 ## Одговор
 
@@ -16,24 +15,22 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'react_feed_post_public Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'react_feed_post_public Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let params: ReactFeedPostPublicParams = ReactFeedPostPublicParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        post_id: "news/article-2026-06-19".to_string(),
-        react_body_params: models::ReactBodyParams {
-            reaction: "like".to_string(),
-            user_id: "user-9876".to_string(),
-            metadata: None,
-        },
-        is_undo: Some(false),
-        broadcast_id: Some("broadcast-42".to_string()),
-        sso: Some("sso-token-abc123".to_string()),
+async fn example() -> Result<(), Error> {
+    let config = configuration::Configuration::default();
+    let react_body = models::ReactBodyParams {
+        reaction: "like".to_string(),
     };
-    let response: ReactFeedPostResponse = react_feed_post_public(&configuration, params).await?;
+    let params = ReactFeedPostPublicParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        post_id: "news/article/12345".to_string(),
+        react_body_params: react_body,
+        is_undo: Some(false),
+        broadcast_id: Some("broadcast-xyz".to_string()),
+        sso: Some("sso-token-abc".to_string()),
+    };
+    let _response: ReactFeedPostResponse = react_feed_post_public(&config, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

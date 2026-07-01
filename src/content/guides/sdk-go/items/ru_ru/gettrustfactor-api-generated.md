@@ -1,7 +1,8 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Имя | Тип | Местоположение | Обязательно | Описание |
+|------|------|----------------|-------------|----------|
+| tenantId | string | query | Да |  |
 | userId | string | query | Нет |  |
 | sso | string | query | Нет |  |
 
@@ -23,12 +24,13 @@ import (
 )
 
 func main() {
-	userId := "userId_example" // string |  (необязательно)
-	sso := "sso_example" // string |  (необязательно)
+	tenantId := "tenantId_example" // string | 
+	userId := "userId_example" // string |  (опционально)
+	sso := "sso_example" // string |  (опционально)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetTrustFactor(context.Background()).UserId(userId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetTrustFactor(context.Background()).TenantId(tenantId).UserId(userId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetTrustFactor``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -37,3 +39,5 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetTrustFactor`: %v\n", resp)
 }
 [inline-code-end]
+
+---

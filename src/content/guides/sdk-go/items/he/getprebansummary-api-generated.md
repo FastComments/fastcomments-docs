@@ -1,12 +1,13 @@
 ## פרמטרים
 
-| שם | טיפוס | מיקום | נדרש | תיאור |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| commentId | string | path | כן |  |
-| includeByUserIdAndEmail | boolean | query | לא |  |
-| includeByIP | boolean | query | לא |  |
-| includeByEmailDomain | boolean | query | לא |  |
-| sso | string | query | לא |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| includeByUserIdAndEmail | boolean | query | No |  |
+| includeByIP | boolean | query | No |  |
+| includeByEmailDomain | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## תגובה
 
@@ -14,7 +15,7 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-GetPreBanSummary'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת GetPreBanSummary'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -26,6 +27,7 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
 	includeByUserIdAndEmail := true // bool |  (אופציונלי)
 	includeByIP := true // bool |  (אופציונלי)
@@ -34,12 +36,12 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetPreBanSummary(context.Background(), commentId).IncludeByUserIdAndEmail(includeByUserIdAndEmail).IncludeByIP(includeByIP).IncludeByEmailDomain(includeByEmailDomain).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetPreBanSummary(context.Background(), commentId).TenantId(tenantId).IncludeByUserIdAndEmail(includeByUserIdAndEmail).IncludeByIP(includeByIP).IncludeByEmailDomain(includeByEmailDomain).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetPreBanSummary``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// תגובה מ-`GetPreBanSummary`: PreBanSummary
+	// response from `GetPreBanSummary`: PreBanSummary
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetPreBanSummary`: %v\n", resp)
 }
 [inline-code-end]

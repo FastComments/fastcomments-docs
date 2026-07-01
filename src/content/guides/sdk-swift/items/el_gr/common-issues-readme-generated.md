@@ -1,30 +1,39 @@
-### 401 Σφάλματα μη εξουσιοδότησης
+### 401 Unauthorized Errors
 
-Αν λαμβάνετε σφάλματα 401 όταν χρησιμοποιείτε το αυθεντικοποιημένο API:
+If you're getting 401 errors when using the authenticated API:
 
-1. **Ελέγξτε το κλειδί API σας**: Βεβαιωθείτε ότι χρησιμοποιείτε το σωστό κλειδί API από τον πίνακα ελέγχου (dashboard) του FastComments
-2. **Επαληθεύστε το tenant ID**: Βεβαιωθείτε ότι το tenant ID ταιριάζει με τον λογαριασμό σας
-3. **Μορφή κλειδιού API**: Το κλειδί API πρέπει να οριστεί στον API client:
+1. **Check your API key**: Ensure you're using the correct API key from your FastComments dashboard  
+   → **Ελέγξτε το κλειδί API σας**: Βεβαιωθείτε ότι χρησιμοποιείτε το σωστό κλειδί API από τον πίνακα ελέγχου FastComments σας
+2. **Verify the tenant ID**: Make sure the tenant ID matches your account  
+   → **Επιβεβαιώστε το tenant ID**: Βεβαιωθείτε ότι το tenant ID ταιριάζει με τον λογαριασμό σας
+3. **API key format**: The API key should be set as the `x-api-key` header on the shared configuration:  
+   → **Μορφή κλειδιού API**: Το κλειδί API πρέπει να οριστεί ως η κεφαλίδα `x-api-key` στη κοινή διαμόρφωση:
 
 ```swift
-let defaultApi = DefaultAPI()
-defaultApi.apiKey = "YOUR_API_KEY"
+FastCommentsSwiftAPIConfiguration.shared.customHeaders["x-api-key"] = "YOUR_API_KEY"
 ```
 
-4. **Χρήση λάθους API**: Βεβαιωθείτε ότι χρησιμοποιείτε `DefaultAPI` (όχι `PublicAPI`) για τις αυθεντικοποιημένες κλήσεις
+4. **Using the wrong API**: Make sure you're using `DefaultAPI` (not `PublicAPI`) for authenticated calls  
+   → **Χρήση λανθασμένου API**: Βεβαιωθείτε ότι χρησιμοποιείτε το `DefaultAPI` (όχι το `PublicAPI`) για αυθεντοποιημένες κλήσεις
 
-### Προβλήματα με τα SSO tokens
+### SSO Token Issues
 
-Αν τα SSO tokens δεν λειτουργούν:
+If SSO tokens aren't working:
 
-1. **Χρησιμοποιήστε ασφαλή λειτουργία στην παραγωγή**: Χρησιμοποιείτε πάντα `FastCommentsSSO.createSecure()` με το κλειδί API σας για παραγωγή
-2. **Μόνο από τον διακομιστή (server-side)**: Δημιουργείτε ασφαλή SSO tokens στον διακομιστή σας, μην εκθέτετε ποτέ το κλειδί API στους clients
-3. **Ελέγξτε τα δεδομένα χρήστη**: Βεβαιωθείτε ότι όλα τα απαιτούμενα πεδία (id, email, username) έχουν συμπληρωθεί
-4. **Λήξη token**: Τα ασφαλή SSO tokens περιλαμβάνουν χρονική σήμανση (timestamp) και μπορεί να λήξουν. Δημιουργήστε νέα tokens όταν χρειάζεται.
+1. **Use secure mode for production**: Always use `FastCommentsSSO.createSecure()` with your API key for production  
+   → **Χρησιμοποιήστε ασφαλή λειτουργία για παραγωγή**: Πάντα χρησιμοποιείτε το `FastCommentsSSO.createSecure()` με το κλειδί API σας για παραγωγή
+2. **Server-side only**: Generate secure SSO tokens on your server, never expose your API key to clients  
+   → **Μόνο στον διακομιστή**: Δημιουργήστε ασφαλή tokens SSO στον διακομιστή σας, μην εκθέτετε ποτέ το κλειδί API στους πελάτες
+3. **Check user data**: Ensure all required fields (id, email, username) are provided  
+   → **Ελέγξτε τα δεδομένα χρήστη**: Βεβαιωθείτε ότι όλα τα απαιτούμενα πεδία (id, email, username) παρέχονται
+4. **Token expiration**: Secure SSO tokens include a timestamp and may expire. Generate fresh tokens as needed.  
+   → **Λήξη token**: Τα ασφαλή tokens SSO περιλαμβάνουν χρονική σήμανση και μπορεί να λήξουν. Δημιουργήστε νέες εκδόσεις token όταν χρειάζεται.
 
-### Σφάλματα SSL/TLS
+### SSL/TLS Errors
 
-Αν αντιμετωπίσετε σφάλματα SSL/TLS:
+If you encounter SSL/TLS errors:
 
-1. Βεβαιωθείτε ότι το Info.plist της εφαρμογής σας επιτρέπει συνδέσεις HTTPS προς fastcomments.com
-2. Ελέγξτε ότι δεν χρησιμοποιείτε εξαιρέσεις App Transport Security που θα μπορούσαν να μπλοκάρουν τη σύνδεση
+1. Ensure your app's Info.plist allows HTTPS connections to fastcomments.com  
+   → **Βεβαιωθείτε ότι το Info.plist της εφαρμογής σας επιτρέπει συνδέσεις HTTPS προς το fastcomments.com**
+2. Check that you're not using App Transport Security exceptions that might block the connection  
+   → **Ελέγξτε ότι δεν χρησιμοποιείτε εξαιρέσεις App Transport Security που ίσως να μπλοκάρουν τη σύνδεση**

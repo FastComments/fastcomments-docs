@@ -29,9 +29,11 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
 $update_email_template_body = new \FastComments\Client\Model\UpdateEmailTemplateBody(); // \FastComments\Client\Model\UpdateEmailTemplateBody
+
 
 try {
     $result = $apiInstance->updateEmailTemplate($tenant_id, $id, $update_email_template_body);

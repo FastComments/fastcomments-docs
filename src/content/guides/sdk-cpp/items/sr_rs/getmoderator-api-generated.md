@@ -1,35 +1,25 @@
-## Параметри
+## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Da |  |
+| id | string | Da |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetModeratorResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetModeratorResponse.h)
+Vraća: [`GetModeratorResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetModeratorResponse.h)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример getModerator'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getModerator'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> tenant = utility::string_t(U("my-tenant-123"));
-boost::optional<utility::string_t> moderatorId = utility::string_t(U("moderator-456"));
-api->getModerator(tenant.value(), moderatorId.value())
-    .then([](pplx::task<std::shared_ptr<GetModeratorResponse>> task) {
+auto tenantId = utility::string_t(U("my-tenant-123"));
+auto moderatorId = utility::string_t(U("moderator-789"));
+api->getModerator(tenantId, moderatorId)
+    .then([](pplx::task<std::shared_ptr<GetModeratorResponse>> t) {
         try {
-            auto resp = task.get();
-            if (resp) return std::make_shared<GetModeratorResponse>(*resp);
-            return std::shared_ptr<GetModeratorResponse>();
-        } catch (...) {
-            return std::shared_ptr<GetModeratorResponse>();
-        }
-    })
-    .then([](std::shared_ptr<GetModeratorResponse> result) {
-        if (result) {
-            /* користите резултат */
+            auto response = t.get();
+        } catch (const std::exception&) {
         }
     });
 [inline-code-end]
-
----

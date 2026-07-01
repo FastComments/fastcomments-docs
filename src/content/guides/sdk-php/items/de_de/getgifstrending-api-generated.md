@@ -1,15 +1,15 @@
 ## Parameter
 
-| Name | Typ | Ort | Erforderlich | Beschreibung |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Ja |  |
-| locale | string | query | Nein |  |
-| rating | string | query | Nein |  |
-| page | number | query | Nein |  |
+| Name     | Typ    | Ort   | Erforderlich | Beschreibung |
+|----------|--------|-------|--------------|--------------|
+| tenantId | string | path  | Ja           |              |
+| locale   | string | query | Nein         |              |
+| rating   | string | query | Nein         |              |
+| page     | number | query | Nein         |              |
 
 ## Antwort
 
-Gibt zurück: [`GetGifsTrendingResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetGifsTrendingResponse.php)
+Rückgabe: [`GetGifsTrendingResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetGifsTrendingResponse.php)
 
 ## Beispiel
 
@@ -25,13 +25,17 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     // Dies ist optional, `GuzzleHttp\Client` wird standardmäßig verwendet.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$locale = 'locale_example'; // string
-$rating = 'rating_example'; // string
-$page = 3.4; // float
+
+$tenant_id = 'tenant_id_example'; // Zeichenkette
+$options = [
+    'locale' => 'locale_example', // Zeichenkette
+    'rating' => 'rating_example', // Zeichenkette
+    'page' => 3.4, // Fließkommazahl
+];
+
 
 try {
-    $result = $apiInstance->getGifsTrending($tenant_id, $locale, $rating, $page);
+    $result = $apiInstance->getGifsTrending($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getGifsTrending: ', $e->getMessage(), PHP_EOL;

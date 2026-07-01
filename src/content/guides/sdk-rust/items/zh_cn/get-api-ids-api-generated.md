@@ -1,36 +1,36 @@
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| text_search | String | 否 |  |
-| by_ip_from_comment | String | 否 |  |
-| filters | String | 否 |  |
-| search_filters | String | 否 |  |
-| after_id | String | 否 |  |
-| demo | bool | 否 |  |
-| sso | String | 否 |  |
+| tenant_id | String | Yes |  |
+| text_search | String | No |  |
+| by_ip_from_comment | String | No |  |
+| filters | String | No |  |
+| search_filters | String | No |  |
+| after_id | String | No |  |
+| demo | bool | No |  |
+| sso | String | No |  |
 
 ## 响应
 
-返回：[`ModerationApiGetCommentIdsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/moderation_api_get_comment_ids_response.rs)
+返回: [`ModerationApiGetCommentIdsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/moderation_api_get_comment_ids_response.rs)
 
 ## 示例
 
 [inline-code-attrs-start title = 'get_api_ids 示例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_example() -> Result<ModerationApiGetCommentIdsResponse, Error> {
-    let params: GetApiIdsParams = GetApiIdsParams {
-        text_search: Some("climate policy debate".to_string()),
-        by_ip_from_comment: Some("198.51.100.23".to_string()),
-        filters: Some("status:approved,section:opinion".to_string()),
-        search_filters: Some("author:guest".to_string()),
-        after_id: Some("cmt_000123abc".to_string()),
+async fn example() -> Result<(), Error> {
+    let params = GetApiIdsParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        text_search: Some("breaking news".to_string()),
+        by_ip_from_comment: None,
+        filters: Some("status:approved".to_string()),
+        search_filters: None,
+        after_id: None,
         demo: Some(false),
-        sso: Some("acme-corp-tenant".to_string()),
+        sso: Some("sso-token".to_string()),
     };
-    let response: ModerationApiGetCommentIdsResponse = get_api_ids(&configuration, params).await?;
-    Ok(response)
+    let _response = get_api_ids(&config, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

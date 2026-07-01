@@ -1,17 +1,18 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
-| value | string | query | No |  |
-| sso | string | query | No |  |
+|------|------|----------|------------|-----------|
+| tenantId | string | query | Ναι |  |
+| value | string | query | Όχι |  |
+| sso | string | query | Όχι |  |
 
-## Response
+## Απόκριση
 
 Επιστρέφει: [`ModerationPageSearchResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationPageSearchResponse.php)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'getSearchPages Παράδειγμα'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παράδειγμα getSearchPages'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -19,15 +20,20 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Εάν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε τον client σας που υλοποιεί `GuzzleHttp\ClientInterface`.
+    // Αν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε τον client σας που υλοποιεί το `GuzzleHttp\ClientInterface`.
     // Αυτό είναι προαιρετικό, το `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
     new GuzzleHttp\Client()
 );
-$value = 'value_example'; // συμβολοσειρά
-$sso = 'sso_example'; // συμβολοσειρά
+
+$tenant_id = 'tenant_id_example'; // string
+$options = [
+    'value' => 'value_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->getSearchPages($value, $sso);
+    $result = $apiInstance->getSearchPages($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getSearchPages: ', $e->getMessage(), PHP_EOL;

@@ -1,9 +1,11 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов'язковий | Опис |
 |------|------|----------|----------|-------------|
-| commentId | string | шлях | Yes |  |
-| sso | string | параметр запиту | No |  |
+| tenantId | string | query | Так |  |
+| commentId | string | path | Так |  |
+| broadcastId | string | query | Ні |  |
+| sso | string | query | Ні |  |
 
 ## Відповідь
 
@@ -11,7 +13,7 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад використання postSetCommentText'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postSetCommentText Приклад'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -19,20 +21,24 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Якщо ви хочете використовувати власний HTTP-клієнт, передайте свій клієнт, який реалізує `GuzzleHttp\ClientInterface`.
-    // Це необов'язково, за замовчуванням буде використано `GuzzleHttp\Client`.
+    // Якщо ви хочете використовувати власний HTTP-клієнт, передайте ваш клієнт, який реалізує `GuzzleHttp\ClientInterface`.
+    // Це необов’язково, `GuzzleHttp\Client` буде використано за замовчуванням.
     new GuzzleHttp\Client()
 );
+
+$tenant_id = 'tenant_id_example'; // string
 $comment_id = 'comment_id_example'; // string
 $set_comment_text_params = new \FastComments\Client\Model\SetCommentTextParams(); // \FastComments\Client\Model\SetCommentTextParams
-$sso = 'sso_example'; // string
+$options = [
+    'broadcast_id' => 'broadcast_id_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->postSetCommentText($comment_id, $set_comment_text_params, $sso);
+    $result = $apiInstance->postSetCommentText($tenant_id, $comment_id, $set_comment_text_params, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->postSetCommentText: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

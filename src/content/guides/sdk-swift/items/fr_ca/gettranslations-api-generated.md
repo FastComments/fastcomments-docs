@@ -1,15 +1,15 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
-| namespace | string | chemin | Oui |  |
-| component | string | chemin | Oui |  |
-| locale | string | requête | Non |  |
-| useFullTranslationIds | boolean | requête | Non |  |
+| namespace | string | path | Oui |  |
+| component | string | path | Oui |  |
+| locale | string | query | Non |  |
+| useFullTranslationIds | boolean | query | Non |  |
 
 ## Réponse
 
-Retourne : [`GetTranslationsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTranslationsResponse.swift)
+Retourne : [`GetTranslationsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTranslationsResponse.swift)
 
 ## Exemple
 
@@ -20,10 +20,10 @@ import FastCommentsSwift
 
 let namespace = "namespace_example" // String | 
 let component = "component_example" // String | 
-let locale = "locale_example" // String |  (facultatif)
-let useFullTranslationIds = true // Bool |  (facultatif)
+let locale = "locale_example" // String |  (optional)
+let useFullTranslationIds = true // Bool |  (optional)
 
-PublicAPI.getTranslations(namespace: namespace, component: component, locale: locale, useFullTranslationIds: useFullTranslationIds) { (response, error) in
+PublicAPI.getTranslations(namespace: namespace, component: component, options: PublicAPI.GetTranslationsOptions(locale: locale, useFullTranslationIds: useFullTranslationIds)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -34,5 +34,3 @@ PublicAPI.getTranslations(namespace: namespace, component: component, locale: lo
     }
 }
 [inline-code-end]
-
----

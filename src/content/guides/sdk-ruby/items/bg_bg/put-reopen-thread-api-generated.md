@@ -1,8 +1,8 @@
----
 ## Параметри
 
 | Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
 | urlId | string | query | Да |  |
 | sso | string | query | Не |  |
 
@@ -18,18 +18,17 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
-url_id = 'url_id_example' # String | 
+tenant_id = 'tenant_id_example' # Низ | 
+url_id = 'url_id_example' # Низ | 
 opts = {
-  sso: 'sso_example' # String | 
+  sso: 'sso_example' # Низ | 
 }
 
 begin
   
-  result = api_instance.put_reopen_thread(url_id, opts)
+  result = api_instance.put_reopen_thread(tenant_id, url_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
-  puts "Error when calling ModerationApi->put_reopen_thread: #{e}"
+  puts "Грешка при извикване на ModerationApi->put_reopen_thread: #{e}"
 end
 [inline-code-end]
-
----

@@ -1,8 +1,8 @@
----
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Da |  |
 | text-search | string | query | Ne |  |
 | byIPFromComment | string | query | Ne |  |
 | filters | string | query | Ne |  |
@@ -16,11 +16,12 @@ Vrne: [`ModerationExportResponse`](https://github.com/FastComments/fastcomments-
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer postApiExport'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postApiExport Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Naslednji primeri kode so še v beta različici. Za morebitne težave poročajte na http://github.com/OpenAPITools/openapi-generator/issues/new
+// Naslednji vzorci kode so še v beta različici. V primeru težav, prosimo, sporočite na http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let textSearch = "textSearch_example" // String |  (neobvezno)
 let byIPFromComment = "byIPFromComment_example" // String |  (neobvezno)
 let filters = "filters_example" // String |  (neobvezno)
@@ -28,7 +29,7 @@ let searchFilters = "searchFilters_example" // String |  (neobvezno)
 let sorts = "sorts_example" // String |  (neobvezno)
 let sso = "sso_example" // String |  (neobvezno)
 
-ModerationAPI.postApiExport(textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, sso: sso) { (response, error) in
+ModerationAPI.postApiExport(tenantId: tenantId, options: ModerationAPI.PostApiExportOptions(textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

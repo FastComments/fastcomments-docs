@@ -4,46 +4,46 @@ urlId
 
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Oui |  |
-| urlId | string | query | Oui |  |
-| page | integer | query | Non |  |
-| direction | string | query | Non |  |
-| sso | string | query | Non |  |
-| skip | integer | query | Non |  |
-| skipChildren | integer | query | Non |  |
-| limit | integer | query | Non |  |
-| limitChildren | integer | query | Non |  |
-| countChildren | boolean | query | Non |  |
-| fetchPageForCommentId | string | query | Non |  |
-| includeConfig | boolean | query | Non |  |
-| countAll | boolean | query | Non |  |
-| includei10n | boolean | query | Non |  |
-| locale | string | query | Non |  |
-| modules | string | query | Non |  |
-| isCrawler | boolean | query | Non |  |
-| includeNotificationCount | boolean | query | Non |  |
-| asTree | boolean | query | Non |  |
-| maxTreeDepth | integer | query | Non |  |
-| useFullTranslationIds | boolean | query | Non |  |
-| parentId | string | query | Non |  |
-| searchText | string | query | Non |  |
-| hashTags | array | query | Non |  |
-| userId | string | query | Non |  |
-| customConfigStr | string | query | Non |  |
-| afterCommentId | string | query | Non |  |
-| beforeCommentId | string | query | Non |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| page | integer | query | No |  |
+| direction | string | query | No |  |
+| sso | string | query | No |  |
+| skip | integer | query | No |  |
+| skipChildren | integer | query | No |  |
+| limit | integer | query | No |  |
+| limitChildren | integer | query | No |  |
+| countChildren | boolean | query | No |  |
+| fetchPageForCommentId | string | query | No |  |
+| includeConfig | boolean | query | No |  |
+| countAll | boolean | query | No |  |
+| includei10n | boolean | query | No |  |
+| locale | string | query | No |  |
+| modules | string | query | No |  |
+| isCrawler | boolean | query | No |  |
+| includeNotificationCount | boolean | query | No |  |
+| asTree | boolean | query | No |  |
+| maxTreeDepth | integer | query | No |  |
+| useFullTranslationIds | boolean | query | No |  |
+| parentId | string | query | No |  |
+| searchText | string | query | No |  |
+| hashTags | array | query | No |  |
+| userId | string | query | No |  |
+| customConfigStr | string | query | No |  |
+| afterCommentId | string | query | No |  |
+| beforeCommentId | string | query | No |  |
 
 ## Réponse
 
-Retourne: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetCommentsResponseWithPresencePublicComment.swift)
+Retourne : [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetCommentsResponseWithPresencePublicComment.swift)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple getCommentsPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Les exemples de code suivants sont encore en bêta. Pour tout problème, merci de le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Les échantillons de code suivants sont encore en version bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -75,7 +75,7 @@ let customConfigStr = "customConfigStr_example" // String |  (optionnel)
 let afterCommentId = "afterCommentId_example" // String |  (optionnel)
 let beforeCommentId = "beforeCommentId_example" // String |  (optionnel)
 
-PublicAPI.getCommentsPublic(tenantId: tenantId, urlId: urlId, page: page, direction: direction, sso: sso, skip: skip, skipChildren: skipChildren, limit: limit, limitChildren: limitChildren, countChildren: countChildren, fetchPageForCommentId: fetchPageForCommentId, includeConfig: includeConfig, countAll: countAll, includei10n: includei10n, locale: locale, modules: modules, isCrawler: isCrawler, includeNotificationCount: includeNotificationCount, asTree: asTree, maxTreeDepth: maxTreeDepth, useFullTranslationIds: useFullTranslationIds, parentId: parentId, searchText: searchText, hashTags: hashTags, userId: userId, customConfigStr: customConfigStr, afterCommentId: afterCommentId, beforeCommentId: beforeCommentId) { (response, error) in
+PublicAPI.getCommentsPublic(tenantId: tenantId, urlId: urlId, options: PublicAPI.GetCommentsPublicOptions(page: page, direction: direction, sso: sso, skip: skip, skipChildren: skipChildren, limit: limit, limitChildren: limitChildren, countChildren: countChildren, fetchPageForCommentId: fetchPageForCommentId, includeConfig: includeConfig, countAll: countAll, includei10n: includei10n, locale: locale, modules: modules, isCrawler: isCrawler, includeNotificationCount: includeNotificationCount, asTree: asTree, maxTreeDepth: maxTreeDepth, useFullTranslationIds: useFullTranslationIds, parentId: parentId, searchText: searchText, hashTags: hashTags, userId: userId, customConfigStr: customConfigStr, afterCommentId: afterCommentId, beforeCommentId: beforeCommentId)) { (response, error) in
     guard error == nil else {
         print(error)
         return

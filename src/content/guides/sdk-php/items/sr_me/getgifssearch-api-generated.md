@@ -1,20 +1,20 @@
-## Параметри
+## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| search | string | query | Да |  |
-| locale | string | query | Не |  |
-| rating | string | query | Не |  |
-| page | number | query | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | path | Da |  |
+| search | string | query | Da |  |
+| locale | string | query | Ne |  |
+| rating | string | query | Ne |  |
+| page | number | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetGifsSearchResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetGifsSearchResponse.php)
+Vraća: [`GetGifsSearchResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetGifsSearchResponse.php)
 
-## Примјер
+## Primer
 
-[inline-code-attrs-start title = 'getGifsSearch Примјер'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getGifsSearch Primer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -22,18 +22,22 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ако желите да користите прилагођеног HTTP клијента, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционално, као подразумевани биће коришћен `GuzzleHttp\Client`.
+    // Ako želite koristiti prilagođeni HTTP klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao podrazumevano.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // низ
-$search = 'search_example'; // низ
-$locale = 'locale_example'; // низ
-$rating = 'rating_example'; // низ
-$page = 3.4; // број (float)
+
+$tenant_id = 'tenant_id_example'; // string
+$search = 'search_example'; // string
+$options = [
+    'locale' => 'locale_example', // string
+    'rating' => 'rating_example', // string
+    'page' => 3.4, // float
+];
+
 
 try {
-    $result = $apiInstance->getGifsSearch($tenant_id, $search, $locale, $rating, $page);
+    $result = $apiInstance->getGifsSearch($tenant_id, $search, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getGifsSearch: ', $e->getMessage(), PHP_EOL;

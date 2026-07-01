@@ -1,7 +1,8 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язковий | Опис |
+| Назва | Тип | Розташування | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Так |  |
 | urlId | string | query | Так |  |
 | sso | string | query | Ні |  |
 
@@ -23,12 +24,13 @@ import (
 )
 
 func main() {
-	urlId := "urlId_example" // string | 
-	sso := "sso_example" // string |  (необов'язково)
+	tenantId := "tenantId_example" // string |
+	urlId := "urlId_example" // string |
+	sso := "sso_example" // string |  (необов'язковий)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PutReopenThread(context.Background()).UrlId(urlId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PutReopenThread(context.Background()).TenantId(tenantId).UrlId(urlId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PutReopenThread``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

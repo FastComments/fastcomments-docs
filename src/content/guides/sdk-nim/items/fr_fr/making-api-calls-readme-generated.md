@@ -1,6 +1,9 @@
-Toutes les méthodes d'API de ce SDK renvoient des tuples de `(Option[ResponseType], Response)`. Le premier élément contient la réponse parsée si elle a réussi, et le deuxième élément est la réponse HTTP brute.
+---
+Toutes les méthodes API de ce SDK renvoient des tuples de `(Option[ResponseType], Response)`. Le premier élément contient la réponse analysée en cas de succès, et le deuxième élément est la réponse HTTP brute.
 
-### Exemple : Récupération des commentaires
+Les paramètres obligatoires et le corps de la requête sont passés positionnellement. Les paramètres optionnels restants sont rassemblés dans un seul objet `Api<Operation>Options`, qui est le dernier argument. Les opérations sans paramètres optionnels ne prennent aucun objet d'options.
+
+### Exemple : Récupération des commentaires
 
 ```nim
 import httpclient
@@ -14,20 +17,10 @@ client.headers["x-api-key"] = "your-api-key"
 let (response, httpResponse) = getComments(
   httpClient = client,
   tenantId = "your-tenant-id",
-  page = 0,
-  limit = 0,
-  skip = 0,
-  asTree = false,
-  skipChildren = 0,
-  limitChildren = 0,
-  maxTreeDepth = 0,
-  urlId = "your-url-id",
-  userId = "",
-  anonUserId = "",
-  contextUserId = "",
-  hashTag = "",
-  parentId = "",
-  direction = SortDirections.DESC
+  options = GetCommentsOptions(
+    urlId: "your-url-id",
+    direction: SortDirections.DESC
+  )
 )
 
 if httpResponse.code == Http200:
@@ -36,3 +29,4 @@ if httpResponse.code == Http200:
     if resp.comments.isSome:
       echo "Found ", resp.comments.get().len, " comments"
 ```
+---

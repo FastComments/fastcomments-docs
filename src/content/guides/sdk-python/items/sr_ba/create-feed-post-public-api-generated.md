@@ -1,7 +1,7 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
 | tenantId | string | path | Yes |  |
 | broadcastId | string | query | No |  |
 | sso | string | query | No |  |
@@ -15,13 +15,14 @@ Vraća: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-
 [inline-code-attrs-start title = 'Primjer create_feed_post_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import CreateFeedPostPublicOptions
 from client.models.create_feed_post_params import CreateFeedPostParams
 from client.models.create_feed_post_response import CreateFeedPostResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # Definisanje hosta je opcionalno i podrazumijevano je https://fastcomments.com
-# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
+# Pogledajte configuration.py za listu svih podržanih konfiguracionih parametara.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -33,11 +34,11 @@ with client.ApiClient(configuration) as api_client:
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_feed_post_params = client.CreateFeedPostParams() # CreateFeedPostParams | 
-    broadcast_id = 'broadcast_id_example' # str |  (optional)
-    sso = 'sso_example' # str |  (optional)
+    broadcast_id = 'broadcast_id_example' # str |  (opcionalno)
+    sso = 'sso_example' # str |  (opcionalno)
 
     try:
-        api_response = api_instance.create_feed_post_public(tenant_id, create_feed_post_params, broadcast_id=broadcast_id, sso=sso)
+        api_response = api_instance.create_feed_post_public(tenant_id, create_feed_post_params, CreateFeedPostPublicOptions(broadcast_id=broadcast_id, sso=sso))
         print("The response of PublicApi->create_feed_post_public:\n")
         pprint(api_response)
     except Exception as e:

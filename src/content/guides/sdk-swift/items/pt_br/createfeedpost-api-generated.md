@@ -2,11 +2,11 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Sim |  |
-| broadcastId | string | query | Não |  |
-| isLive | boolean | query | Não |  |
-| doSpamCheck | boolean | query | Não |  |
-| skipDupCheck | boolean | query | Não |  |
+| tenantId | string | query | Yes |  |
+| broadcastId | string | query | No |  |
+| isLive | boolean | query | No |  |
+| doSpamCheck | boolean | query | No |  |
+| skipDupCheck | boolean | query | No |  |
 
 ## Resposta
 
@@ -14,9 +14,9 @@ Retorna: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomment
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de createFeedPost'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo createFeedPost'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Os exemplos de código a seguir ainda estão em beta. Para qualquer problema, por favor reporte via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Os exemplos de código a seguir ainda são beta. Para qualquer problema, por favor reporte via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -26,7 +26,7 @@ let isLive = true // Bool |  (opcional)
 let doSpamCheck = true // Bool |  (opcional)
 let skipDupCheck = true // Bool |  (opcional)
 
-DefaultAPI.createFeedPost(tenantId: tenantId, createFeedPostParams: createFeedPostParams, broadcastId: broadcastId, isLive: isLive, doSpamCheck: doSpamCheck, skipDupCheck: skipDupCheck) { (response, error) in
+DefaultAPI.createFeedPost(tenantId: tenantId, createFeedPostParams: createFeedPostParams, options: DefaultAPI.CreateFeedPostOptions(broadcastId: broadcastId, isLive: isLive, doSpamCheck: doSpamCheck, skipDupCheck: skipDupCheck)) { (response, error) in
     guard error == nil else {
         print(error)
         return

@@ -1,26 +1,35 @@
 ## パラメータ
 
-| Name | Type | 必須 | 説明 |
+| 名前 | タイプ | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | はい |  |
-| id | string | はい |  |
-| blockFromCommentParams | BlockFromCommentParams | はい |  |
-| userId | string | いいえ |  |
-| anonUserId | string | いいえ |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| blockFromCommentParams | BlockFromCommentParams | Yes |  |
+| userId | string | No |  |
+| anonUserId | string | No |  |
 
-## レスポンス
+## 応答
 
-返却: [`BlockSuccess`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BlockSuccess.ts)
+返り値: [`BlockUserFromCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BlockUserFromCommentResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'blockUserFromComment の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp';
-const id: string = '5f9a3b2c-1d3e-4b6f-8a9c-12d345ef6789';
-const blockFromCommentParams: BlockFromCommentParams = { reason: 'Repeated spam', durationDays: 30, notifyModerator: true };
-const userId: string = 'user-1024';
-const result: BlockSuccess = await blockUserFromComment(tenantId, id, blockFromCommentParams, userId);
-[inline-code-end]
+const tenantId: string = 'tenant_42';
+const commentId: string = 'cmt_20231101';
 
----
+const blockParams: BlockFromCommentParams = {
+  reason: 'spam',
+  blockDurationHours: 24,
+};
+
+const userId: string = 'user_123'; // optional parameter
+
+const response: BlockUserFromCommentResponse = await blockUserFromComment(
+  tenantId,
+  commentId,
+  blockParams,
+  userId
+);
+[inline-code-end]

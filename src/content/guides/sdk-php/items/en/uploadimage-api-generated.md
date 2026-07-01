@@ -26,13 +26,17 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $file = '/path/to/file.txt'; // \SplFileObject
-$size_preset = new \FastComments\Client\Model\\FastComments\Client\Model\SizePreset(); // \FastComments\Client\Model\SizePreset | Size preset: \"Default\" (1000x1000px) or \"CrossPlatform\" (creates sizes for popular devices)
-$url_id = 'url_id_example'; // string | Page id that upload is happening from, to configure
+$options = [
+    'size_preset' => new \FastComments\Client\Model\\FastComments\Client\Model\SizePreset(), // \FastComments\Client\Model\SizePreset | Size preset: \"Default\" (1000x1000px) or \"CrossPlatform\" (creates sizes for popular devices)
+    'url_id' => 'url_id_example', // string | Page id that upload is happening from, to configure
+];
+
 
 try {
-    $result = $apiInstance->uploadImage($tenant_id, $file, $size_preset, $url_id);
+    $result = $apiInstance->uploadImage($tenant_id, $file, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->uploadImage: ', $e->getMessage(), PHP_EOL;

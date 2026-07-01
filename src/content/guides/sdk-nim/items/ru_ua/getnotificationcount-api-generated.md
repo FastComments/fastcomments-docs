@@ -1,25 +1,20 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Обязательно | Описание |
+| Назва | Тип | Обов’язково | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| userId | string | Нет |  |
-| urlId | string | Да |  |
-| fromCommentId | string | Нет |  |
-| viewed | bool | Нет |  |
+| tenantId | string | Yes |  |
+| options | GetNotificationCountOptions | No |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`Option[GetNotificationCountResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_notification_count_response.nim)
+Повертає: [`Option[GetNotificationCountResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_notification_count_response.nim)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример getNotificationCount'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад getNotificationCount'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getNotificationCount(tenantId = "my-tenant-123", userId = "user-987", urlId = "news/2026/06/election-results", fromCommentId = "", viewed = false)
-if response.isSome:
-  let notifyData = response.get()
-  echo notifyData
+let (notifOpt, httpResp) = client.getNotificationCount(tenantId = "my-tenant-123", options = GetNotificationCountOptions())
+if notifOpt.isSome:
+  let notif = notifOpt.get()
+  echo notif
 [inline-code-end]
-
----

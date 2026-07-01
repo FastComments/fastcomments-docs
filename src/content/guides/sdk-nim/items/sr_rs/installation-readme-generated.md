@@ -1,23 +1,23 @@
-### Коришћење Nimble
+### Korišćenje Nimble
 
 ```bash
 nimble install fastcomments
 ```
 
-### Изградња из извора
+### Građenje iz izvornog koda
 
 ```bash
 nimble build
 ```
 
-### Садржај библиотеке
+### Sadržaj biblioteke
 
-Ова библиотека садржи генерисан API клијент и SSO алате који олакшавају рад са API-јем.
+Ova biblioteka sadrži generisanog API klijenta i SSO alate kako bi rad sa API‑jem bio jednostavniji.
 
 - [API Client Library Docs](https://github.com/FastComments/fastcomments-nim/blob/master/client/README.md)
 
-### Јавни и заштићени API-ји
+### Javni vs zaštićeni API‑ji
 
-За API клијента постоје три API модула, `api_default`, `api_public` и `api_moderation`. `api_default` садржи методе које захтевају ваш API кључ, а `api_public` обухвата API позиве које је могуће извршити директно из прегледача/мобилног уређаја/итд. без аутентификације. `api_moderation` модул садржи методе за модераторски контролни панел.
+Za klijenta API‑ja, postoje tri modula API‑ja, `api_default`, `api_public` i `api_moderation`. `api_default` sadrži metode koje zahtevaju vaš API ključ, a `api_public` sadrži API pozive koji se mogu izvršiti direktno iz pregledača/mobilnog uređaja/itd bez autentifikacije. `api_moderation` modul sadrži metode za moderacijsku kontrolnu tablu.
 
-`api_moderation` методе обухватају листање, бројање, претраживање и извоз коментара и њихових записа; модераторске акције као што су уклањање/враћање коментара, пријављивање, подешавање статуса за преглед/спам/одобрење, прилагођавање гласова и поновно отварање/затварање тема; забране (забрана корисника за коментар, поништавање забране, прегледи пре забране, статус и подешавања забране и број забрањених корисника); и значке и поверење (додела/уклањање значке, листање ручних значки, добијање/постављање фактора поверења корисника и преузимање унутрашњег профила корисника). Свака `api_moderation` метода прихвата `sso` параметар тако да је позив аутентификован као SSO модератор.
+`api_moderation` modul pruža opsežan skup live i brzih moderacijskih API‑ja. Svaka metoda `api_moderation` prihvata parametar `sso` i može da se autentifikuje putem SSO‑a ili FastComments.com sesijskog kolačića.

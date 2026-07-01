@@ -1,4 +1,4 @@
-## Parameter
+## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
@@ -6,11 +6,11 @@
 | postIds | array | query | Ja |  |
 | sso | string | query | Nein |  |
 
-## Antwort
+## Response
 
-Gibt zurück: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/FeedPostsStatsResponse.php)
+Rückgabe: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/FeedPostsStatsResponse.php)
 
-## Beispiel
+## Example
 
 [inline-code-attrs-start title = 'getFeedPostsStats Beispiel'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -24,9 +24,11 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     // Dies ist optional, `GuzzleHttp\Client` wird standardmäßig verwendet.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $post_ids = array('post_ids_example'); // string[]
 $sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->getFeedPostsStats($tenant_id, $post_ids, $sso);

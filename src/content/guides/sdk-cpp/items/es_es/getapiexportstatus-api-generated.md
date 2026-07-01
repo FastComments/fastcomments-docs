@@ -2,8 +2,8 @@
 
 | Nombre | Tipo | Obligatorio | Descripción |
 |------|------|----------|-------------|
-| batchJobId | string | No |  |
-| sso | string | No |  |
+| tenantId | string | Sí |  |
+| options | const GetApiExportStatusOptions& | Sí |  |
 
 ## Respuesta
 
@@ -11,14 +11,16 @@ Devuelve: [`ModerationExportStatusResponse`](https://github.com/FastComments/fas
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de getApiExportStatus'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo getApiExportStatus'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> batchId = utility::string_t(U("export-batch-2026-06-19"));
-boost::optional<utility::string_t> sso = utility::string_t(U("audit@my-tenant-123.com"));
-api->getApiExportStatus(batchId, sso)
-    .then([](std::shared_ptr<ModerationExportStatusResponse> resp) {
-        if (!resp) return;
-        auto statusCopy = std::make_shared<ModerationExportStatusResponse>(*resp);
+auto opts = GetApiExportStatusOptions{};
+opts.exportId = boost::make_optional<utility::string_t>(U("export-456"));
+api->getApiExportStatus(U("my-tenant-123"), opts)
+    .then([](pplx::task<std::shared_ptr<ModerationExportStatusResponse>> t){
+        try{
+            auto status = t.get();
+        }catch(const std::exception&){
+        }
     });
 [inline-code-end]
 

@@ -1,9 +1,9 @@
 ## Параметры
 
-| Имя | Тип | Обязательный | Описание |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
-| textSearch | string | Нет |  |
-| sso | string | Нет |  |
+| tenantId | string | Yes |  |
+| options | GetSearchSuggestOptions | No |  |
 
 ## Ответ
 
@@ -11,15 +11,14 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример getSearchSuggest'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSearchSuggest Приклад'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSearchSuggest(textSearch = "suspicious comment with spammy links", sso = "sso-user-789")
-if response.isSome:
-  let suggest = response.get()
-  echo "ModerationSuggestResponse:"
-  echo suggest
-else:
-  echo "No moderation suggestions returned. HTTP status: ", httpResponse.status
-[inline-code-end]
+let (suggestOpt, httpResp) = client.getSearchSuggest(
+  tenantId = "my-tenant-123",
+  options = GetSearchSuggestOptions(),
+)
 
----
+if suggestOpt.isSome:
+  let suggest = suggestOpt.get()
+  echo suggest
+[inline-code-end]

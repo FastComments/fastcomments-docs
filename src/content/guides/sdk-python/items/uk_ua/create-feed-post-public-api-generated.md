@@ -1,10 +1,10 @@
 ## Параметри
 
-| Назва | Type | Розташування | Обов'язково | Опис |
-|------|------|----------|----------|-------------|
-| tenantId | string | шлях | Так |  |
-| broadcastId | string | параметр запиту | Ні |  |
-| sso | string | параметр запиту | Ні |  |
+| Ім'я | Тип | Розташування | Обов'язково | Опис |
+|------|------|--------------|-------------|------|
+| tenantId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Відповідь
 
@@ -15,12 +15,13 @@
 [inline-code-attrs-start title = 'create_feed_post_public Приклад'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import CreateFeedPostPublicOptions
 from client.models.create_feed_post_params import CreateFeedPostParams
 from client.models.create_feed_post_response import CreateFeedPostResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Визначення хоста є необов'язковим і за замовчуванням дорівнює https://fastcomments.com
+# Визначення хоста є необов'язковим і за замовчуванням встановлює https://fastcomments.com
 # Див. configuration.py для списку всіх підтримуваних параметрів конфігурації.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -37,7 +38,7 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (необов'язково)
 
     try:
-        api_response = api_instance.create_feed_post_public(tenant_id, create_feed_post_params, broadcast_id=broadcast_id, sso=sso)
+        api_response = api_instance.create_feed_post_public(tenant_id, create_feed_post_params, CreateFeedPostPublicOptions(broadcast_id=broadcast_id, sso=sso))
         print("The response of PublicApi->create_feed_post_public:\n")
         pprint(api_response)
     except Exception as e:

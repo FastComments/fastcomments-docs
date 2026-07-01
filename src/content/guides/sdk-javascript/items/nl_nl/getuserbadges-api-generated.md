@@ -1,38 +1,43 @@
 ## Parameters
 
-| Naam | Type | Verplicht | Beschrijving |
+| Naam | Type | Vereist | Beschrijving |
 |------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| userId | string | Nee |  |
-| badgeId | string | Nee |  |
-| type | number | Nee |  |
-| displayedOnComments | boolean | Nee |  |
-| limit | number | Nee |  |
-| skip | number | Nee |  |
+| tenantId | string | Yes |  |
+| userId | string | No |  |
+| badgeId | string | No |  |
+| type | number | No |  |
+| displayedOnComments | boolean | No |  |
+| limit | number | No |  |
+| skip | number | No |  |
 
 ## Respons
 
-Geeft terug: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIGetUserBadgesResponse.ts)
+Retourneert: [`GetUserBadgesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserBadgesResponse.ts)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'getUserBadges Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7a1c9f2b";
-const userId: string = "user_4b2d1e9a";
-const badgeId: string = "badge_gold_01";
-const type: number = 2;
-const displayedOnComments: boolean = true;
-const limit: number = 25;
-const skip: number = 0;
+async function example() {
+  const tenantId: string = "tenant-01";
+  const userId: string = "user-42";
+  const badgeId: string = "badge-gold";
+  const type: number = 1;
+  const displayedOnComments: boolean = true;
+  const limit: number = 10;
+  const skip: number = 5;
 
-const response: APIGetUserBadgesResponse = await getUserBadges(
-  tenantId,
-  userId,
-  badgeId,
-  type,
-  displayedOnComments,
-  limit,
-  skip
-);
+  const fullResult: GetUserBadgesResponse = await getUserBadges(
+    tenantId,
+    userId,
+    badgeId,
+    type,
+    displayedOnComments,
+    limit,
+    skip
+  );
+
+  const minimalResult: GetUserBadgesResponse = await getUserBadges(tenantId);
+}
+example();
 [inline-code-end]

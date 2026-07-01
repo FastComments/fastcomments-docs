@@ -1,19 +1,19 @@
 ## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
-| tag | string | 路徑 | 是 |  |
-| tenantId | string | 查詢 | 否 |  |
+| tenantId | string | query | 是 |  |
+| tag | string | path | 是 |  |
 
 ## 回應
 
-回傳: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateHashTagResponse.java)
+返回：[`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateHashTagResponse.java)
 
 ## 範例
 
 [inline-code-attrs-start title = 'patchHashTag 範例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 匯入類別：
+// 匯入類別:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,19 +26,18 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // 設定 API 金鑰授權：api_key
+    // 設定 API 金鑰授權: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // 若要為 API 金鑰設定前綴（例如 "Token"），請取消註解下列程式行（預設為 null）
+    // 取消註解以下行以設定 API 金鑰的前綴，例如 "Token"（預設為 null）
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    String tag = "tag_example"; // String | 
     String tenantId = "tenantId_example"; // String | 
+    String tag = "tag_example"; // String | 
     UpdateHashTagBody updateHashTagBody = new UpdateHashTagBody(); // UpdateHashTagBody | 
     try {
-      UpdateHashTagResponse result = apiInstance.patchHashTag(tag)
-            .tenantId(tenantId)
+      UpdateHashTagResponse result = apiInstance.patchHashTag(tenantId, tag)
             .updateHashTagBody(updateHashTagBody)
             .execute();
       System.out.println(result);

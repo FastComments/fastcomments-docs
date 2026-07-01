@@ -1,11 +1,10 @@
----
-Агрегирует документы, группируя их (если указан groupBy) и применяя несколько операций.
-Поддерживаются различные операции (например sum, countDistinct, avg и т.д.).
+Агрегирует документы, группируя их (если указано `groupBy`) и применяя несколько операций.  
+Поддерживаются разные операции (например, `sum`, `countDistinct`, `avg` и т.д.).
 
 ## Параметры
 
 | Имя | Тип | Обязательно | Описание |
-|------|------|----------|-------------|
+|------|------|--------------|----------|
 | tenantId | string | Yes |  |
 | aggregationRequest | AggregationRequest | Yes |  |
 | parentTenantId | string | No |  |
@@ -17,22 +16,31 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример использования aggregate'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример агрегирования'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_72b3";
-const parentTenantId: string = "parent_acme_corp";
+const tenantId: string = "tenant-12345";
+
 const aggregationRequest: AggregationRequest = {
-  groupBy: ["postId"],
   predicates: [
-    { field: "status", operator: "EQ", value: { stringValue: "published" } as QueryPredicateValue }
+    {
+      field: "status",
+      operator: "eq",
+      value: { type: "string", value: "approved" }
+    }
   ],
   operations: [
-    { type: AggregationOpType.COUNT, field: "id", alias: "commentCount" } as AggregationOperation
+    { type: "count", field: "commentId" }
   ],
-  sort: [{ field: "commentCount", direction: "DESC" } as AggregationRequestSort],
-  limit: 25
+  sort: { field: "createdAt", direction: "desc" }
 };
-const response: AggregateResponse = await aggregate(tenantId, aggregationRequest, parentTenantId, true);
-[inline-code-end]
 
----
+const parentTenantId: string = "parent-001";
+const includeStats: boolean = true;
+
+const result: AggregateResponse = await aggregate(
+  tenantId,
+  aggregationRequest,
+  parentTenantId,
+  includeStats
+);
+[inline-code-end]

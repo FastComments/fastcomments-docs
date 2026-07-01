@@ -1,15 +1,15 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | はい |  |
-| commentId | string | path | はい |  |
-| isFlagged | boolean | query | はい |  |
-| sso | string | query | いいえ |  |
+| 名前 | 型 | ロケーション | 必須 | 説明 |
+|------|------|----------|------|-----|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| isFlagged | boolean | query | Yes |  |
+| sso | string | query | No |  |
 
 ## レスポンス
 
-戻り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
+Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
 ## 例
 
@@ -21,14 +21,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // カスタムのHTTPクライアントを使用する場合は、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
+    // カスタム HTTP クライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装したクライアントを渡してください。
     // これはオプションです。デフォルトでは `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string - 文字列
-$comment_id = 'comment_id_example'; // string - 文字列
-$is_flagged = True; // bool - ブール値
-$sso = 'sso_example'; // string - 文字列
+
+$tenant_id = 'tenant_id_example'; // 文字列
+$comment_id = 'comment_id_example'; // 文字列
+$is_flagged = True; // 真偽値
+$sso = 'sso_example'; // 文字列
+
 
 try {
     $result = $apiInstance->flagCommentPublic($tenant_id, $comment_id, $is_flagged, $sso);
@@ -37,5 +39,3 @@ try {
     echo 'Exception when calling PublicApi->flagCommentPublic: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

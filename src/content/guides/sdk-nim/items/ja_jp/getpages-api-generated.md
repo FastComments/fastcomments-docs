@@ -2,7 +2,7 @@
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | はい |  |
+| tenantId | string | Yes |  |
 
 ## レスポンス
 
@@ -12,10 +12,11 @@
 
 [inline-code-attrs-start title = 'getPages の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getPages(tenantId = "news-site-456")
-if response.isSome:
-  let pages = response.get()
-  echo "Received pages response: ", pages
+let (pagesOpt, httpResp) = client.getPages(tenantId = "my-tenant-123")
+if pagesOpt.isSome:
+  let pages = pagesOpt.get()
+  echo pages
 else:
-  echo "No pages returned. HTTP response: ", httpResponse
+  echo "No pages returned"
+echo httpResp
 [inline-code-end]

@@ -1,25 +1,22 @@
 ## Παράμετροι
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+|------|------|------------|-----------|
 | tenantId | string | Ναι |  |
 | id | string | Όχι |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`Option[GetQuestionResultResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_question_result_response.nim)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα getQuestionResult'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getQuestionResult Παράδειγμα'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getQuestionResult(tenantId = "my-tenant-123", id = "question-456")
-if response.isSome:
-  let result = response.get()
-  echo "Question result received:"
-  echo result
-else:
-  echo "No question result returned, HTTP status: ", $httpResponse.status
+let (optResult, httpResp) = client.getQuestionResult(tenantId = "my-tenant-123", id = "question-456")
+if optResult.isSome:
+  let result = optResult.get()
+  discard result
 [inline-code-end]
 
 ---

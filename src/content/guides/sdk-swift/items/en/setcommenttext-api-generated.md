@@ -26,7 +26,7 @@ let commentTextUpdateRequest = CommentTextUpdateRequest(comment: "comment_exampl
 let editKey = "editKey_example" // String |  (optional)
 let sso = "sso_example" // String |  (optional)
 
-PublicAPI.setCommentText(tenantId: tenantId, commentId: commentId, broadcastId: broadcastId, commentTextUpdateRequest: commentTextUpdateRequest, editKey: editKey, sso: sso) { (response, error) in
+PublicAPI.setCommentText(tenantId: tenantId, commentId: commentId, broadcastId: broadcastId, commentTextUpdateRequest: commentTextUpdateRequest, options: PublicAPI.SetCommentTextOptions(editKey: editKey, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

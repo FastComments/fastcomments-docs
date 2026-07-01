@@ -1,6 +1,6 @@
-## Параметри
+## Parameters
 
-| Назва | Тип | Обов'язково | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenant_id | String | Так |  |
 | comment_id | String | Так |  |
@@ -8,25 +8,23 @@
 | user_id | String | Ні |  |
 | anon_user_id | String | Ні |  |
 
-## Відповідь
+## Response
 
 Повертає: [`VoteResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/vote_response.rs)
 
-## Приклад
+## Example
 
 [inline-code-attrs-start title = 'Приклад create_vote'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<VoteResponse, Error> {
-    let params: CreateVoteParams = CreateVoteParams {
+async fn submit_vote() -> Result<(), Error> {
+    let params = CreateVoteParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        comment_id: "news/article/12345/comment-9876".to_string(),
+        comment_id: "news/article/12345".to_string(),
         direction: "up".to_string(),
         user_id: Some("user-42".to_string()),
-        anon_user_id: None,
+        anon_user_id: Some("anon-99".to_string()),
     };
-    let vote_response: VoteResponse = create_vote(&configuration, params).await?;
-    Ok(vote_response)
+    let _response = create_vote(&config, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

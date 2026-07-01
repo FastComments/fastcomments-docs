@@ -1,7 +1,8 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
 | badgesUserId | string | query | No |  |
 | commentId | string | query | No |  |
 | sso | string | query | No |  |
@@ -10,9 +11,9 @@
 
 Vraća: [`GetUserManualBadgesResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_manual_badges_response.go)
 
-## Primjer
+## Primer
 
-[inline-code-attrs-start title = 'Primjer za GetManualBadgesForUser'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer GetManualBadgesForUser'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -24,13 +25,14 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string |
 	badgesUserId := "badgesUserId_example" // string |  (opcionalno)
 	commentId := "commentId_example" // string |  (opcionalno)
 	sso := "sso_example" // string |  (opcionalno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetManualBadgesForUser(context.Background()).BadgesUserId(badgesUserId).CommentId(commentId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetManualBadgesForUser(context.Background()).TenantId(tenantId).BadgesUserId(badgesUserId).CommentId(commentId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetManualBadgesForUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

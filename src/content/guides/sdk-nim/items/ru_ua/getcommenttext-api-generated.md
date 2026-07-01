@@ -1,27 +1,25 @@
-## Параметры
+## Параметри
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| commentId | string | Да |  |
-| editKey | string | Нет |  |
-| sso | string | Нет |  |
+| Назва | Тип | Обов'язковий | Опис |
+|------|------|--------------|------|
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| options | GetCommentTextOptions | No |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`Option[PublicAPIGetCommentTextResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_public_api_get_comment_text_response.nim)
+Повертає: [`Option[PublicAPIGetCommentTextResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_public_api_get_comment_text_response.nim)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример getCommentText'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад getCommentText'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getCommentText(tenantId = "my-tenant-123", commentId = "cmt-987654321", editKey = "", sso = "")
+let (maybeResponse, httpResponse) = client.getCommentText(
+  tenantId = "my-tenant-123",
+  commentId = "comment-456",
+  options = GetCommentTextOptions()
+)
 
-if response.isSome:
-  let commentTextResp = response.get()
-  echo commentTextResp
-else:
-  echo "No comment text returned"
+if maybeResponse.isSome:
+  let response = maybeResponse.get()
 [inline-code-end]
-
----

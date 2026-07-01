@@ -1,7 +1,7 @@
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
 | tenant_id | String | Da |  |
 | id | String | Da |  |
 | update_tenant_body | models::UpdateTenantBody | Da |  |
@@ -12,30 +12,18 @@ Vraća: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/b
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer update_tenant'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'update_tenant Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn run() -> Result<(), Error> {
-    let params: UpdateTenantParams = UpdateTenantParams {
+    let params = UpdateTenantParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "site-1234".to_string(),
-        update_tenant_body: models::UpdateTenantBody {
-            name: Some("Acme Corp Comments".to_string()),
-            admin_email: Some("admin@acme.com".to_string()),
-            is_active: Some(true),
-            billing_info: Some(models::BillingInfo {
-                plan: "professional".to_string(),
-                contact_email: "billing@acme.com".to_string(),
-            }),
-            domain_configuration: Some(models::ApiDomainConfiguration {
-                primary_domain: "comments.acme.com".to_string(),
-            }),
+        id: "tenant-001".to_string(),
+        update_tenant_body: UpdateTenantBody {
+            description: Some("Primary tenant for Acme Corp".to_string()),
+            ..Default::default()
         },
     };
-
-    let response: ApiEmptyResponse = update_tenant(configuration, params).await?;
-    let _ = response;
+    let _ = update_tenant(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

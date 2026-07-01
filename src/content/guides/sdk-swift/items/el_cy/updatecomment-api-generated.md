@@ -1,22 +1,22 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
+|------|------|----------|-----------|------------|
 | tenantId | string | query | Ναι |  |
 | id | string | path | Ναι |  |
 | contextUserId | string | query | Όχι |  |
 | doSpamCheck | boolean | query | Όχι |  |
 | isLive | boolean | query | Όχι |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα updateComment'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateComment Παράδειγμα'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Τα παρακάτω δείγματα κώδικα είναι ακόμα σε beta. Για οποιοδήποτε πρόβλημα, παρακαλώ αναφέρετε μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
+// Τα παρακάτω παραδείγματα κώδικα είναι ακόμη σε beta. Για τυχόν πρόβλημα, παρακαλώ αναφέρετε το μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -26,7 +26,7 @@ let contextUserId = "contextUserId_example" // String |  (προαιρετικό
 let doSpamCheck = true // Bool |  (προαιρετικό)
 let isLive = true // Bool |  (προαιρετικό)
 
-DefaultAPI.updateComment(tenantId: tenantId, id: id, updatableCommentParams: updatableCommentParams, contextUserId: contextUserId, doSpamCheck: doSpamCheck, isLive: isLive) { (response, error) in
+DefaultAPI.updateComment(tenantId: tenantId, id: id, updatableCommentParams: updatableCommentParams, options: DefaultAPI.UpdateCommentOptions(contextUserId: contextUserId, doSpamCheck: doSpamCheck, isLive: isLive)) { (response, error) in
     guard error == nil else {
         print(error)
         return

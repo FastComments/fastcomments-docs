@@ -2,11 +2,11 @@
 go get github.com/fastcomments/fastcomments-go
 ```
 
-### Usando o API Client
+### Usando o Cliente da API
 
-#### Public API (Sem Autenticação)
+#### API Pública (Sem Autenticação)
 
-The PublicAPI allows unauthenticated access to public endpoints:
+A PublicAPI permite acesso não autenticado a endpoints públicos:
 
 ```go
 package main
@@ -21,7 +21,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // Obter comentários usando a PublicAPI
+    // Obter comentários usando PublicAPI
     response, httpResp, err := apiClient.PublicAPI.GetCommentsPublic(
         context.Background(),
         "your-tenant-id",
@@ -36,9 +36,9 @@ func main() {
 }
 ```
 
-#### Default API (Requer Chave de API)
+#### API Default (Requer Chave API)
 
-The DefaultAPI requires authentication using your API key:
+A DefaultAPI requer autenticação usando sua chave API:
 
 ```go
 package main
@@ -53,7 +53,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // Criar contexto autenticado com chave de API
+    // Criar contexto autenticado com chave API
     auth := context.WithValue(
         context.Background(),
         client.ContextAPIKeys,
@@ -77,15 +77,9 @@ func main() {
 }
 ```
 
-#### Moderation API (Painel do Moderador)
+#### API de Moderação (Painel do Moderador)
 
-The ModerationAPI powers the moderator dashboard. It provides methods for listing,
-counting, searching, and exporting comments, moderation actions (remove/restore,
-flag, set review/spam/approval status, votes, reopen/close threads), bans (ban from
-comment, undo, pre-ban summaries, ban status and preferences, banned-user counts),
-and badges & trust (award/remove badges, manual badges, get/set trust factor, user
-internal profile). All Moderation methods accept an `sso` parameter for
-SSO-authenticated moderators:
+A ModerationAPI fornece um conjunto extenso de APIs de moderação ao vivo e rápidas. Todos os métodos de moderação aceitam um parâmetro `sso` e podem autenticar via SSO ou um cookie de sessão do FastComments.com:
 
 ```go
 package main

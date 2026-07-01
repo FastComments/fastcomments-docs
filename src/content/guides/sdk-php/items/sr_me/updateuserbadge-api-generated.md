@@ -1,9 +1,9 @@
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| id | string | path | Da |  |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
 ## Odgovor
 
@@ -11,7 +11,7 @@ Vraća: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer za updateUserBadge'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer updateUserBadge'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -24,14 +24,16 @@ $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKe
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ako želite koristiti prilagođeni HTTP klijent, proslijedite klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opciono, `GuzzleHttp\Client` će biti korišćen po zadatim postavkama.
+    // Ako želite koristiti prilagođeni HTTP klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opciono, `GuzzleHttp\Client` će biti korišćen kao podrazumevani.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
 $update_user_badge_params = new \FastComments\Client\Model\UpdateUserBadgeParams(); // \FastComments\Client\Model\UpdateUserBadgeParams
+
 
 try {
     $result = $apiInstance->updateUserBadge($tenant_id, $id, $update_user_badge_params);

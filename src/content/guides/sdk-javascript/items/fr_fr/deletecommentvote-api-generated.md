@@ -1,7 +1,7 @@
 ## Paramètres
 
 | Nom | Type | Obligatoire | Description |
-|------|------|----------|-------------|
+|------|------|-------------|-------------|
 | tenantId | string | Oui |  |
 | commentId | string | Oui |  |
 | voteId | string | Oui |  |
@@ -12,18 +12,32 @@
 
 ## Réponse
 
-Renvoie: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/VoteDeleteResponse.ts)
+Retourne : [`DeleteCommentVoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteCommentVoteResponse.ts)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de deleteCommentVote'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteCommentVote Exemple'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_9f1b3c";
-const commentId: string = "comment_6a7b8c9d";
-const voteId: string = "vote_55a1";
-const urlId: string = "news/2026/06/19/typescript-updates";
-const broadcastId: string = "broadcast_20260619_live_01";
-const editKey: string = "edit_3f2a9b";
-const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.exampleSignature";
-const result: VoteDeleteResponse = await deleteCommentVote(tenantId, commentId, voteId, urlId, broadcastId, editKey, sso);
+async function removeVote() {
+  const tenantId: string = "tenant_12345";
+  const commentId: string = "cmt_98765";
+  const voteId: string = "vote_abcde";
+  const urlId: string = "url_56789";
+  const broadcastId: string = "brd_001";
+  const editKey: string = "edit_456";
+  // sso est optionnel et omis
+
+  const response: DeleteCommentVoteResponse = await deleteCommentVote(
+    tenantId,
+    commentId,
+    voteId,
+    urlId,
+    broadcastId,
+    editKey
+  );
+
+  console.log(response);
+}
+
+removeVote();
 [inline-code-end]

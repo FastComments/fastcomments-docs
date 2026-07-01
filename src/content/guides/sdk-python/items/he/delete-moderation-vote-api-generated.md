@@ -1,10 +1,12 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| commentId | string | path | כן |  |
-| voteId | string | path | כן |  |
-| sso | string | query | לא |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| voteId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## תגובה
 
@@ -12,30 +14,33 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-delete_moderation_vote'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת delete_moderation_vote'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import DeleteModerationVoteOptions
 from client.models.vote_delete_response import VoteDeleteResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת ה-host אופציונלית ומוגדרת כברירת מחדל ל- https://fastcomments.com
-# ראו configuration.py לרשימת כל פרמטרי התצורה הנתמכים.
+# הגדרת המארח היא אופציונלית ובברירת מחדל https://fastcomments.com
+# ראה configuration.py לקבלת רשימה של כל פרמטרי ההגדרה הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# כניסה להקשר עם מופע של ה-API client
+# היכנס להקשר עם מופע של לקוח ה‑API
 with client.ApiClient(configuration) as api_client:
-    # יצירת מופע של מחלקת ה-API
+    # צור מופע של מחלקת ה‑API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     vote_id = 'vote_id_example' # str | 
-    sso = 'sso_example' # str |  (אופציונלי)
+    broadcast_id = 'broadcast_id_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.delete_moderation_vote(comment_id, vote_id, sso=sso)
+        api_response = api_instance.delete_moderation_vote(tenant_id, comment_id, vote_id, DeleteModerationVoteOptions(broadcast_id=broadcast_id, sso=sso))
         print("The response of ModerationApi->delete_moderation_vote:\n")
         pprint(api_response)
     except Exception as e:

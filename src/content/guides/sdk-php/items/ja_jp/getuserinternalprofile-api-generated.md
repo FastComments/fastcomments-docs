@@ -1,13 +1,14 @@
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| commentId | string | クエリ | 任意 |  |
-| sso | string | クエリ | 任意 |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## レスポンス
 
-戻り値: [`GetUserInternalProfileResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetUserInternalProfileResponse.php)
+返却: [`GetUserInternalProfileResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetUserInternalProfileResponse.php)
 
 ## 例
 
@@ -19,15 +20,20 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // カスタムのHTTPクライアントを使用する場合は、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
-    // これは任意です。デフォルトでは `GuzzleHttp\Client` が使用されます。
+    // カスタム HTTP クライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装したクライアントを渡してください。
+    // これは任意で、デフォルトでは `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client()
 );
-$comment_id = 'comment_id_example'; // string
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // string
+$options = [
+    'comment_id' => 'comment_id_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->getUserInternalProfile($comment_id, $sso);
+    $result = $apiInstance->getUserInternalProfile($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getUserInternalProfile: ', $e->getMessage(), PHP_EOL;

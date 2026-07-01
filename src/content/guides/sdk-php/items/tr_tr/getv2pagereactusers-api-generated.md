@@ -1,10 +1,10 @@
-## Parametreler
+## Parameters
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Evet |  |
-| urlId | string | query | Evet |  |
-| id | string | query | Evet |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| id | string | query | Yes |  |
 
 ## Yanıt
 
@@ -20,13 +20,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Özel bir HTTP istemcisi kullanmak istiyorsanız, `GuzzleHttp\ClientInterface`'i uygulayan istemcinizi geçin.
+    // Özel bir HTTP istemcisi kullanmak istiyorsanız, `GuzzleHttp\ClientInterface` arayüzünü uygulayan istemcinizi geçin.
     // Bu isteğe bağlıdır, varsayılan olarak `GuzzleHttp\Client` kullanılacaktır.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $url_id = 'url_id_example'; // string
 $id = 'id_example'; // string
+
 
 try {
     $result = $apiInstance->getV2PageReactUsers($tenant_id, $url_id, $id);
@@ -35,5 +37,3 @@ try {
     echo 'Exception when calling PublicApi->getV2PageReactUsers: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

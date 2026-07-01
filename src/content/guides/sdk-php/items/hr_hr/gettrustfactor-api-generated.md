@@ -1,17 +1,18 @@
-## Parametri
+## Parameters
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Da |  |
 | userId | string | query | Ne |  |
 | sso | string | query | Ne |  |
 
-## Odgovor
+## Response
 
 Vraća: [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetUserTrustFactorResponse.php)
 
-## Primjer
+## Example
 
-[inline-code-attrs-start title = 'getTrustFactor Primjer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getTrustFactor'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -19,17 +20,24 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Ako želite koristiti prilagođeni HTTP klijent, proslijedite klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao zadani.
+    // Ako želite koristiti prilagođeni HTTP klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao zadano.
     new GuzzleHttp\Client()
 );
-$user_id = 'user_id_example'; // string
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // string
+$options = [
+    'user_id' => 'user_id_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->getTrustFactor($user_id, $sso);
+    $result = $apiInstance->getTrustFactor($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getTrustFactor: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

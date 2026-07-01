@@ -1,18 +1,18 @@
 ## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| commentIds | string | query | Ja | Eine durch Kommas getrennte Liste von Kommentar-IDs. |
-| sso | string | query | Nein |  |
+|------|------|-----|--------------|--------------|
+| tenantId | string | query | Yes |  |
+| commentIds | string | query | Yes | Eine kommagetrennte Liste von Kommentar-IDs. |
+| sso | string | query | No |  |
 
 ## Antwort
 
-Gibt zurück: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CheckBlockedCommentsResponse.php)
+Rückgabe: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CheckBlockedCommentsResponse.php)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'Beispiel für checkedCommentsForBlocked'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'checkedCommentsForBlocked Beispiel'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -21,12 +21,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
     // Wenn Sie einen benutzerdefinierten HTTP-Client verwenden möchten, übergeben Sie Ihren Client, der `GuzzleHttp\ClientInterface` implementiert.
-    // Dies ist optional; `GuzzleHttp\Client` wird standardmäßig verwendet.
+    // Dies ist optional, `GuzzleHttp\Client` wird standardmäßig verwendet.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$comment_ids = 'comment_ids_example'; // string | Eine durch Kommas getrennte Liste von Kommentar-IDs.
+$comment_ids = 'comment_ids_example'; // string | Eine kommagetrennte Liste von Kommentar-IDs.
 $sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->checkedCommentsForBlocked($tenant_id, $comment_ids, $sso);
@@ -35,5 +37,3 @@ try {
     echo 'Exception when calling PublicApi->checkedCommentsForBlocked: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

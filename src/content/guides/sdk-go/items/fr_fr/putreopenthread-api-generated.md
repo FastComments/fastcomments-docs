@@ -2,12 +2,13 @@
 
 | Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Oui |  |
 | urlId | string | query | Oui |  |
 | sso | string | query | Non |  |
 
 ## Réponse
 
-Renvoie: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
+Retourne : [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
 
 ## Exemple
 
@@ -23,17 +24,20 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	urlId := "urlId_example" // string | 
-	sso := "sso_example" // string |  (optionnel)
+	sso := "sso_example" // string |  (facultatif)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PutReopenThread(context.Background()).UrlId(urlId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PutReopenThread(context.Background()).TenantId(tenantId).UrlId(urlId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PutReopenThread``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// réponse de `PutReopenThread` : APIEmptyResponse
+	// réponse de `PutReopenThread` : APIEmptyResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PutReopenThread`: %v\n", resp)
 }
 [inline-code-end]
+
+---

@@ -2,10 +2,10 @@
 
 | Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| urlId | string | Да |  |
-| id | string | Не |  |
-| title | string | Не |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| id | string | No |  |
+| title | string = "" | No |  |
 
 ## Отговор
 
@@ -13,19 +13,16 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за createV2PageReact'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createV2PageReact пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.createV2PageReact(
+let (pageResult, httpResponse) = client.createV2PageReact(
   tenantId = "my-tenant-123",
-  urlId = "news/2026/06/fastcomments-release",
-  id = "",
-  title = ""
+  urlId = "news/article-title",
+  id = "page-456",
+  title = "Breaking News",
 )
-if response.isSome:
-  let react = response.get()
-  echo "Created page react: ", $react
-else:
-  echo "No react returned, HTTP status: ", $httpResponse.statusCode
-[inline-code-end]
 
----
+if pageResult.isSome:
+  let page = pageResult.get()
+  # използвайте `page` според нуждите
+[inline-code-end]

@@ -1,8 +1,9 @@
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| sso | string | Ne |  |
+|------|------|----------|------|
+| tenantId | string | Da |  |
+| sso | string = "" | Ne |  |
 
 ## Odgovor
 
@@ -12,12 +13,8 @@ Vraća: [`Option[APIModerateGetUserBanPreferencesResponse]`](https://github.com/
 
 [inline-code-attrs-start title = 'Primjer getUserBanPreference'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUserBanPreference(sso = "sso-jwt-7f3a9b")
-if response.isSome:
-  let prefs = response.get()
-  echo "User ban preferences:", prefs
-else:
-  echo "No ban preference found"
+let (maybePref, httpResp) = client.getUserBanPreference(tenantId = "my-tenant-123", sso = "")
+if maybePref.isSome:
+  let pref = maybePref.get()
+  echo pref
 [inline-code-end]
-
----

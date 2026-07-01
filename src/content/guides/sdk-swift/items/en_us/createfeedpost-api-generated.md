@@ -26,7 +26,7 @@ let isLive = true // Bool |  (optional)
 let doSpamCheck = true // Bool |  (optional)
 let skipDupCheck = true // Bool |  (optional)
 
-DefaultAPI.createFeedPost(tenantId: tenantId, createFeedPostParams: createFeedPostParams, broadcastId: broadcastId, isLive: isLive, doSpamCheck: doSpamCheck, skipDupCheck: skipDupCheck) { (response, error) in
+DefaultAPI.createFeedPost(tenantId: tenantId, createFeedPostParams: createFeedPostParams, options: DefaultAPI.CreateFeedPostOptions(broadcastId: broadcastId, isLive: isLive, doSpamCheck: doSpamCheck, skipDupCheck: skipDupCheck)) { (response, error) in
     guard error == nil else {
         print(error)
         return

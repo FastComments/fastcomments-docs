@@ -1,8 +1,9 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| sso | string | query | Ne |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -10,7 +11,7 @@ Vraća: [`GetTenantManualBadgesResponse`](https://github.com/FastComments/fastco
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer za GetManualBadges'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer GetManualBadges'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -22,16 +23,19 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	sso := "sso_example" // string |  (neobavezno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetManualBadges(context.Background()).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetManualBadges(context.Background()).TenantId(tenantId).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetManualBadges``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Greška prilikom pozivanja `ModerationAPI.GetManualBadges``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Puni HTTP odgovor: %v\n", r)
 	}
 	// odgovor od `GetManualBadges`: GetTenantManualBadgesResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetManualBadges`: %v\n", resp)
+	fmt.Fprintf(os.Stdout, "Odgovor od `ModerationAPI.GetManualBadges`: %v\n", resp)
 }
 [inline-code-end]
+
+---

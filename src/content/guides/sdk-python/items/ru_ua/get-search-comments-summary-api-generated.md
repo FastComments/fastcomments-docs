@@ -1,45 +1,50 @@
-## Параметры
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов’язковий | Опис |
 |------|------|----------|----------|-------------|
-| value | string | query | Нет |  |
-| filters | string | query | Нет |  |
-| searchFilters | string | query | Нет |  |
-| sso | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| value | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sso | string | query | No |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`ModerationCommentSearchResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/moderation_comment_search_response.py)
+Повертає: [`ModerationCommentSearchResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/moderation_comment_search_response.py)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример get_search_comments_summary'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад get_search_comments_summary'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetSearchCommentsSummaryOptions
 from client.models.moderation_comment_search_response import ModerationCommentSearchResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Указание host необязательно и по умолчанию — https://fastcomments.com
-# См. configuration.py для списка всех поддерживаемых параметров конфигурации.
+# Визначення хоста є необов’язковим і за замовчуванням https://fastcomments.com
+# Дивіться configuration.py для списку всіх підтримуваних параметрів конфігурації.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Откройте контекст с экземпляром API-клиента
+# Відкрийте контекст з інстансом API-клієнта
 with client.ApiClient(configuration) as api_client:
-    # Создайте экземпляр класса API
+    # Створіть інстанс класу API
     api_instance = client.ModerationApi(api_client)
-    value = 'value_example' # str |  (необязательно)
-    filters = 'filters_example' # str |  (необязательно)
-    search_filters = 'search_filters_example' # str |  (необязательно)
-    sso = 'sso_example' # str |  (необязательно)
+    tenant_id = 'tenant_id_example' # str | 
+    value = 'value_example' # str |  (необов’язковий)
+    filters = 'filters_example' # str |  (необов’язковий)
+    search_filters = 'search_filters_example' # str |  (необов’язковий)
+    sso = 'sso_example' # str |  (необов’язковий)
 
     try:
-        api_response = api_instance.get_search_comments_summary(value=value, filters=filters, search_filters=search_filters, sso=sso)
-        print("The response of ModerationApi->get_search_comments_summary:\n")
+        api_response = api_instance.get_search_comments_summary(tenant_id, GetSearchCommentsSummaryOptions(value=value, filters=filters, search_filters=search_filters, sso=sso))
+        print("Відповідь ModerationApi->get_search_comments_summary:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ModerationApi->get_search_comments_summary: %s\n" % e)
+        print("Виняток під час виклику ModerationApi->get_search_comments_summary: %s\n" % e)
 [inline-code-end]
+
+---

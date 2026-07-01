@@ -1,21 +1,22 @@
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| commentId | string | path | 是 |  |
-| banEmail | boolean | query | 否 |  |
-| banEmailDomain | boolean | query | 否 |  |
-| banIP | boolean | query | 否 |  |
-| deleteAllUsersComments | boolean | query | 否 |  |
-| bannedUntil | string | query | 否 |  |
-| isShadowBan | boolean | query | 否 |  |
-| updateId | string | query | 否 |  |
-| banReason | string | query | 否 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | 查询 | 是 |  |
+| commentId | string | 路径 | 是 |  |
+| banEmail | boolean | 查询 | 否 |  |
+| banEmailDomain | boolean | 查询 | 否 |  |
+| banIP | boolean | 查询 | 否 |  |
+| deleteAllUsersComments | boolean | 查询 | 否 |  |
+| bannedUntil | string | 查询 | 否 |  |
+| isShadowBan | boolean | 查询 | 否 |  |
+| updateId | string | 查询 | 否 |  |
+| banReason | string | 查询 | 否 |  |
+| sso | string | 查询 | 否 |  |
 
 ## 响应
 
-返回: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/BanUserFromCommentResult.php)
+返回：[`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/BanUserFromCommentResult.php)
 
 ## 示例
 
@@ -28,22 +29,27 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
     // 如果您想使用自定义 HTTP 客户端，请传入实现了 `GuzzleHttp\ClientInterface` 的客户端。
-    // 这是可选的，默认会使用 `GuzzleHttp\Client`。
+    // 这不是必需的，默认将使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client()
 );
+
+$tenant_id = 'tenant_id_example'; // string
 $comment_id = 'comment_id_example'; // string
-$ban_email = True; // bool
-$ban_email_domain = True; // bool
-$ban_ip = True; // bool
-$delete_all_users_comments = True; // bool
-$banned_until = 'banned_until_example'; // string
-$is_shadow_ban = True; // bool
-$update_id = 'update_id_example'; // string
-$ban_reason = 'ban_reason_example'; // string
-$sso = 'sso_example'; // string
+$options = [
+    'ban_email' => True, // bool
+    'ban_email_domain' => True, // bool
+    'ban_ip' => True, // bool
+    'delete_all_users_comments' => True, // bool
+    'banned_until' => 'banned_until_example', // string
+    'is_shadow_ban' => True, // bool
+    'update_id' => 'update_id_example', // string
+    'ban_reason' => 'ban_reason_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->postBanUserFromComment($comment_id, $ban_email, $ban_email_domain, $ban_ip, $delete_all_users_comments, $banned_until, $is_shadow_ban, $update_id, $ban_reason, $sso);
+    $result = $apiInstance->postBanUserFromComment($tenant_id, $comment_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->postBanUserFromComment: ', $e->getMessage(), PHP_EOL;

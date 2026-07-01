@@ -1,11 +1,12 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| includeByUserIdAndEmail | boolean | query | Не |  |
-| includeByIP | boolean | query | Не |  |
-| includeByEmailDomain | boolean | query | Не |  |
-| sso | string | query | Не |  |
+| tenantId | string | query | Yes |  |
+| includeByUserIdAndEmail | boolean | query | No |  |
+| includeByIP | boolean | query | No |  |
+| includeByEmailDomain | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Одговор
 
@@ -13,7 +14,7 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'postBulkPreBanSummary Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postBulkPreBanSummary Primer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Увези класе:
 import com.fastcomments.invoker.ApiClient;
@@ -28,13 +29,14 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     BulkPreBanParams bulkPreBanParams = new BulkPreBanParams(); // BulkPreBanParams | 
     Boolean includeByUserIdAndEmail = true; // Boolean | 
     Boolean includeByIP = true; // Boolean | 
     Boolean includeByEmailDomain = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      BulkPreBanSummary result = apiInstance.postBulkPreBanSummary(bulkPreBanParams)
+      BulkPreBanSummary result = apiInstance.postBulkPreBanSummary(tenantId, bulkPreBanParams)
             .includeByUserIdAndEmail(includeByUserIdAndEmail)
             .includeByIP(includeByIP)
             .includeByEmailDomain(includeByEmailDomain)

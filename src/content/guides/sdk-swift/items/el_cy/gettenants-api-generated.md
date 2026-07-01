@@ -1,7 +1,7 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
+|------|------|----------|-----------|------------|
 | tenantId | string | query | Ναι |  |
 | meta | string | query | Όχι |  |
 | skip | number | query | Όχι |  |
@@ -14,14 +14,14 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα getTenants'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Τα ακόλουθα δείγματα κώδικα είναι ακόμη beta. Για οποιοδήποτε πρόβλημα, παρακαλώ αναφέρετε μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
+// Τα παρακάτω παραδείγματα κώδικα είναι ακόμα σε beta. Για οποιοδήποτε ζήτημα, παρακαλώ αναφέρετε το μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let meta = "meta_example" // String |  (προαιρετικό)
 let skip = 987 // Double |  (προαιρετικό)
 
-DefaultAPI.getTenants(tenantId: tenantId, meta: meta, skip: skip) { (response, error) in
+DefaultAPI.getTenants(tenantId: tenantId, options: DefaultAPI.GetTenantsOptions(meta: meta, skip: skip)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -32,5 +32,3 @@ DefaultAPI.getTenants(tenantId: tenantId, meta: meta, skip: skip) { (response, e
     }
 }
 [inline-code-end]
-
----

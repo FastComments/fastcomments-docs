@@ -28,8 +28,10 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $create_tenant_package_body = new \FastComments\Client\Model\CreateTenantPackageBody(); // \FastComments\Client\Model\CreateTenantPackageBody
+
 
 try {
     $result = $apiInstance->createTenantPackage($tenant_id, $create_tenant_package_body);

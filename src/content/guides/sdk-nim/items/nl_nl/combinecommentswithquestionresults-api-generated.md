@@ -1,16 +1,9 @@
 ## Parameters
 
 | Naam | Type | Verplicht | Beschrijving |
-|------|------|----------|-------------|
+|------|------|-----------|--------------|
 | tenantId | string | Ja |  |
-| questionId | string | Nee |  |
-| questionIds | seq[string] | Nee |  |
-| urlId | string | Ja |  |
-| startDate | string | Nee |  |
-| forceRecalculate | bool | Nee |  |
-| minValue | float64 | Nee |  |
-| maxValue | float64 | Nee |  |
-| limit | float64 | Nee |  |
+| options | CombineCommentsWithQuestionResultsOptions | Nee |  |
 
 ## Respons
 
@@ -20,21 +13,13 @@ Retourneert: [`Option[CombineQuestionResultsWithCommentsResponse]`](https://gith
 
 [inline-code-attrs-start title = 'combineCommentsWithQuestionResults Voorbeeld'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.combineCommentsWithQuestionResults(
+let (combineOpt, httpResponse) = client.combineCommentsWithQuestionResults(
   tenantId = "my-tenant-123",
-  questionId = "",
-  questionIds = @[],
-  urlId = "news/article-2026-climate-change",
-  startDate = "",
-  forceRecalculate = false,
-  minValue = 0.0,
-  maxValue = 0.0,
-  limit = 0.0
+  options = default(CombineCommentsWithQuestionResultsOptions)
 )
 
-if response.isSome:
-  let combined = response.get()
-  echo "Combined results received for tenant:", " my-tenant-123"
-else:
-  echo "No combined results returned"
+if combineOpt.isSome:
+  let combineResult = combineOpt.get()
 [inline-code-end]
+
+---

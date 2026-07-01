@@ -1,24 +1,23 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Потребно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| skip | int | Не |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Da |  |
+| skip | int | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[GetSSOUsersResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_sso_users_response.nim)
+Vraća: [`Option[GetSSOUsersResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_sso_users_response.nim)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'Пример getSSOUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSSOUsers Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSSOUsers(tenantId = "my-tenant-123", skip = 0)
-if response.isSome:
-  let ssoUsers = response.get()
-  echo ssoUsers
+let (maybeResponse, httpResponse) = client.getSSOUsers(tenantId = "my-tenant-123", skip = 0)
+if maybeResponse.isSome:
+  let users = maybeResponse.get()
+  echo users
 else:
-  echo "No SSO users returned; HTTP response:", httpResponse
+  echo "No SSO users found"
+echo httpResponse.statusCode
 [inline-code-end]
-
----

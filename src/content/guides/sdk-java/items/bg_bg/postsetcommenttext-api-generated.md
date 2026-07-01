@@ -1,9 +1,10 @@
----
 ## Параметри
 
 | Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
 | commentId | string | path | Да |  |
+| broadcastId | string | query | Не |  |
 | sso | string | query | Не |  |
 
 ## Отговор
@@ -12,9 +13,9 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за postSetCommentText'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postSetCommentText Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Импортиране на класове:
+// Импорт на класове:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -27,11 +28,14 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     SetCommentTextParams setCommentTextParams = new SetCommentTextParams(); // SetCommentTextParams | 
+    String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      SetCommentTextResponse result = apiInstance.postSetCommentText(commentId, setCommentTextParams)
+      SetCommentTextResponse result = apiInstance.postSetCommentText(tenantId, commentId, setCommentTextParams)
+            .broadcastId(broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);

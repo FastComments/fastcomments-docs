@@ -2,9 +2,9 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| urlIdWS | string | query | Да |  |
-| userIds | string | query | Да |  |
+| tenantId | string | query | Yes |  |
+| urlIdWS | string | query | Yes |  |
+| userIds | string | query | Yes |  |
 
 ## Отговор
 
@@ -20,13 +20,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ако искате да използвате собствен HTTP клиент, предайте своя клиент, който имплементира `GuzzleHttp\ClientInterface`.
-    // Това е по избор; по подразбиране ще бъде използван `GuzzleHttp\Client`.
+    // Ако искате да използвате персонализиран HTTP клиент, предайте вашия клиент, който имплементира `GuzzleHttp\ClientInterface`.
+    // Това е по избор, `GuzzleHttp\Client` ще бъде използван по подразбиране.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $url_id_ws = 'url_id_ws_example'; // string
 $user_ids = 'user_ids_example'; // string
+
 
 try {
     $result = $apiInstance->getUserPresenceStatuses($tenant_id, $url_id_ws, $user_ids);
@@ -35,5 +37,3 @@ try {
     echo 'Exception when calling PublicApi->getUserPresenceStatuses: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

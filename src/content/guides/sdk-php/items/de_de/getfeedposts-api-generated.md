@@ -1,6 +1,6 @@
-req
-tenantId
-afterId
+Anfrage  
+tenantId  
+afterId  
 
 ## Parameter
 
@@ -13,7 +13,7 @@ afterId
 
 ## Antwort
 
-Gibt zurück: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetFeedPostsResponse.php)
+Rückgabe: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetFeedPostsResponse.php)
 
 ## Beispiel
 
@@ -23,25 +23,29 @@ Gibt zurück: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomme
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// API-Schlüssel-Authentifizierung konfigurieren: api_key
+// Konfiguriere API‑Schlüssel‑Authentifizierung: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Entkommentieren Sie unten, um ein Präfix (z. B. Bearer) für den API-Schlüssel einzurichten, falls erforderlich
+// Entferne den Kommentar unten, um das Präfix (z.B. Bearer) für den API‑Schlüssel einzurichten, falls nötig
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Wenn Sie einen benutzerdefinierten HTTP-Client verwenden möchten, übergeben Sie Ihren Client, der `GuzzleHttp\ClientInterface` implementiert.
+    // Wenn du einen benutzerdefinierten HTTP‑Client verwenden möchtest, übergebe deinen Client, der `GuzzleHttp\ClientInterface` implementiert.
     // Dies ist optional, `GuzzleHttp\Client` wird standardmäßig verwendet.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$after_id = 'after_id_example'; // string
-$limit = 56; // int
-$tags = array('tags_example'); // string[]
+$options = [
+    'after_id' => 'after_id_example', // string
+    'limit' => 56, // int
+    'tags' => array('tags_example'), // string[]
+];
+
 
 try {
-    $result = $apiInstance->getFeedPosts($tenant_id, $after_id, $limit, $tags);
+    $result = $apiInstance->getFeedPosts($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getFeedPosts: ', $e->getMessage(), PHP_EOL;

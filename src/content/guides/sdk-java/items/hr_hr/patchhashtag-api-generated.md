@@ -1,9 +1,9 @@
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
-| tag | string | path | Da |  |
-| tenantId | string | query | Ne |  |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| tag | string | path | Yes |  |
 
 ## Odgovor
 
@@ -11,7 +11,7 @@ Vraća: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-j
 
 ## Primjer
 
-[inline-code-attrs-start title = 'patchHashTag Primjer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer patchHashTag'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Uvezi klase:
 import com.fastcomments.invoker.ApiClient;
@@ -29,16 +29,15 @@ public class Example {
     // Konfiguriraj autorizaciju API ključa: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Odkomentirajte sljedeći redak da postavite prefiks za API ključ, npr. "Token" (zadano null)
+    // Otkomentiraj sljedeću liniju za postavljanje prefiksa za API ključ, npr. "Token" (zadano null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    String tag = "tag_example"; // String | 
     String tenantId = "tenantId_example"; // String | 
+    String tag = "tag_example"; // String | 
     UpdateHashTagBody updateHashTagBody = new UpdateHashTagBody(); // UpdateHashTagBody | 
     try {
-      UpdateHashTagResponse result = apiInstance.patchHashTag(tag)
-            .tenantId(tenantId)
+      UpdateHashTagResponse result = apiInstance.patchHashTag(tenantId, tag)
             .updateHashTagBody(updateHashTagBody)
             .execute();
       System.out.println(result);
@@ -52,3 +51,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

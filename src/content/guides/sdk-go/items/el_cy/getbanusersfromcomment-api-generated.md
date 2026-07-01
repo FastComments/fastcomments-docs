@@ -2,10 +2,11 @@
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Ναι |  |
-| sso | string | query | Όχι |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| sso | string | query | No |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`GetBannedUsersFromCommentResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_banned_users_from_comment_response.go)
 
@@ -23,17 +24,18 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
 	sso := "sso_example" // string |  (προαιρετικό)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetBanUsersFromComment(context.Background(), commentId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetBanUsersFromComment(context.Background(), commentId).TenantId(tenantId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetBanUsersFromComment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// απόκριση από `GetBanUsersFromComment`: GetBannedUsersFromCommentResponse
+	// απάντηση από `GetBanUsersFromComment`: GetBannedUsersFromCommentResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetBanUsersFromComment`: %v\n", resp)
 }
 [inline-code-end]

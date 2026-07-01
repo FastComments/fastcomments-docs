@@ -5,8 +5,8 @@ userIdWS
 
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
-|------|------|----------|----------|-------------|
+| Назва | Тип | Location | Required | Опис |
+|------|------|----------|----------|------|
 | tenantId | string | path | Так |  |
 | urlId | string | query | Так |  |
 | userIdWS | string | query | Так |  |
@@ -27,15 +27,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Якщо ви хочете використовувати власний HTTP-клієнт, передайте клієнт, який реалізує `GuzzleHttp\ClientInterface`.
-    // Це необов'язково, за замовчуванням буде використано `GuzzleHttp\Client`.
+    // Якщо ви хочете використати власний http-клієнт, передайте ваш клієнт, який реалізує `GuzzleHttp\ClientInterface`.
+    // Це необов’язково, за замовчуванням використовується `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // рядок
 $url_id = 'url_id_example'; // рядок
 $user_id_ws = 'user_id_ws_example'; // рядок
 $start_time = 56; // ціле число
 $end_time = 56; // ціле число
+
 
 try {
     $result = $apiInstance->getEventLog($tenant_id, $url_id, $user_id_ws, $start_time, $end_time);
@@ -44,3 +46,5 @@ try {
     echo 'Exception when calling PublicApi->getEventLog: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

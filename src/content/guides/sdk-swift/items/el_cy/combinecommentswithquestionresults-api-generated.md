@@ -1,17 +1,16 @@
----
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Ναι |  |
-| questionId | string | query | Όχι |  |
-| questionIds | array | query | Όχι |  |
-| urlId | string | query | Όχι |  |
-| startDate | string | query | Όχι |  |
-| forceRecalculate | boolean | query | Όχι |  |
-| minValue | number | query | Όχι |  |
-| maxValue | number | query | Όχι |  |
-| limit | number | query | Όχι |  |
+|------|------|----------|-----------|------------|
+| tenantId | string | ερώτημα | Ναι |  |
+| questionId | string | ερώτημα | Όχι |  |
+| questionIds | array | ερώτημα | Όχι |  |
+| urlId | string | ερώτημα | Όχι |  |
+| startDate | string | ερώτημα | Όχι |  |
+| forceRecalculate | boolean | ερώτημα | Όχι |  |
+| minValue | number | ερώτημα | Όχι |  |
+| maxValue | number | ερώτημα | Όχι |  |
+| limit | number | ερώτημα | Όχι |  |
 
 ## Απόκριση
 
@@ -21,7 +20,7 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα combineCommentsWithQuestionResults'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Τα παρακάτω παραδείγματα κώδικα είναι ακόμη σε beta. Για οποιοδήποτε πρόβλημα, παρακαλώ αναφέρετε μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
+// Τα παρακάτω δείγματα κώδικα είναι ακόμη σε beta. Για οποιοδήποτε πρόβλημα, παρακαλώ αναφέρετε το μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -34,7 +33,7 @@ let minValue = 987 // Double |  (προαιρετικό)
 let maxValue = 987 // Double |  (προαιρετικό)
 let limit = 987 // Double |  (προαιρετικό)
 
-DefaultAPI.combineCommentsWithQuestionResults(tenantId: tenantId, questionId: questionId, questionIds: questionIds, urlId: urlId, startDate: startDate, forceRecalculate: forceRecalculate, minValue: minValue, maxValue: maxValue, limit: limit) { (response, error) in
+DefaultAPI.combineCommentsWithQuestionResults(tenantId: tenantId, options: DefaultAPI.CombineCommentsWithQuestionResultsOptions(questionId: questionId, questionIds: questionIds, urlId: urlId, startDate: startDate, forceRecalculate: forceRecalculate, minValue: minValue, maxValue: maxValue, limit: limit)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -45,5 +44,3 @@ DefaultAPI.combineCommentsWithQuestionResults(tenantId: tenantId, questionId: qu
     }
 }
 [inline-code-end]
-
----

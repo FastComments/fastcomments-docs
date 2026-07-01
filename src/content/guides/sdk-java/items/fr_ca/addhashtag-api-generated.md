@@ -1,18 +1,18 @@
 ## Paramètres
 
 | Nom | Type | Emplacement | Obligatoire | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Non |  |
+|------|------|--------------|--------------|-------------|
+| tenantId | string | query | Oui |  |
 
 ## Réponse
 
-Retourne : [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateHashTagResponse.java)
+Renvoie : [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateHashTagResponse.java)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple pour addHashTag'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple addHashTag'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importer les classes :
+// Importer les classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -25,23 +25,23 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configurer l'authentification par clé API : api_key
+    // Configurer l'autorisation de clé API : api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Décommentez la ligne suivante pour définir un préfixe pour la clé API, p.ex. "Token" (par défaut null)
+    // Décommentez la ligne suivante pour définir un préfixe pour la clé API, p. ex. "Token" (valeur par défaut null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     CreateHashTagBody createHashTagBody = new CreateHashTagBody(); // CreateHashTagBody | 
     try {
-      CreateHashTagResponse result = apiInstance.addHashTag()
-            .tenantId(tenantId)
+      CreateHashTagResponse result = apiInstance.addHashTag(tenantId)
             .createHashTagBody(createHashTagBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DefaultApi#addHashTag");
+      System.err.println("Exception lors de l'appel à DefaultApi#addHashTag");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

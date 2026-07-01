@@ -1,9 +1,11 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Да |  |
-| sso | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Ответ
 
@@ -17,18 +19,18 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
-comment_id = 'comment_id_example' # String | 
+tenant_id = 'tenant_id_example' # Строка | 
+comment_id = 'comment_id_example' # Строка | 
 opts = {
-  sso: 'sso_example' # String | 
+  broadcast_id: 'broadcast_id_example', # Строка | 
+  sso: 'sso_example' # Строка | 
 }
 
 begin
   
-  result = api_instance.post_un_flag_comment(comment_id, opts)
+  result = api_instance.post_un_flag_comment(tenant_id, comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_un_flag_comment: #{e}"
 end
 [inline-code-end]
-
----

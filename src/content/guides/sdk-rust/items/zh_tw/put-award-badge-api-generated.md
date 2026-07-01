@@ -1,32 +1,32 @@
 ## 參數
 
-| 名稱 | 類型 | 必填 | 說明 |
+| 名稱 | 類型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| badge_id | String | 是 |  |
-| user_id | String | 否 |  |
-| comment_id | String | 否 |  |
-| broadcast_id | String | 否 |  |
-| sso | String | 否 |  |
+| tenant_id | String | Yes |  |
+| badge_id | String | Yes |  |
+| user_id | String | No |  |
+| comment_id | String | No |  |
+| broadcast_id | String | No |  |
+| sso | String | No |  |
 
 ## 回應
 
-回傳: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/award_user_badge_response.rs)
+返回: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/award_user_badge_response.rs)
 
 ## 範例
 
 [inline-code-attrs-start title = 'put_award_badge 範例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn award_badge_example() -> Result<AwardUserBadgeResponse, Error> {
-    let params: PutAwardBadgeParams = PutAwardBadgeParams {
-        badge_id: "community-champion".to_string(),
-        user_id: Some("user-4821".to_string()),
-        comment_id: Some("news/article/2026-06-18-comment-91".to_string()),
+async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = PutAwardBadgeParams {
+        tenant_id: "acme-corp".to_string(),
+        badge_id: "top-contributor".to_string(),
+        user_id: Some("user-42".to_string()),
+        comment_id: Some("comment-99".to_string()),
         broadcast_id: None,
-        sso: Some("acme-corp-sso-token-abc123".to_string()),
+        sso: Some("sso-abc123".to_string()),
     };
-    let response: AwardUserBadgeResponse = put_award_badge(&configuration, params).await?;
-    Ok(response)
+    let _response = put_award_badge(configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

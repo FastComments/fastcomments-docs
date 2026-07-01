@@ -1,6 +1,6 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язкове | Опис |
+| Назва | Тип | Розташування | Обов’язково | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Так |  |
 | urlId | string | query | Так |  |
@@ -20,13 +20,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Якщо ви хочете використовувати кастомний HTTP-клієнт, передайте ваш клієнт, який реалізує `GuzzleHttp\ClientInterface`.
-    // Це необов'язково, за замовчуванням буде використано `GuzzleHttp\Client`.
+    // Якщо ви хочете використовувати власний HTTP‑клієнт, передайте свій клієнт, який реалізує `GuzzleHttp\ClientInterface`.
+    // Це необов’язково, за замовчуванням буде використано `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$url_id = 'url_id_example'; // string
-$id = 'id_example'; // string
+
+$tenant_id = 'tenant_id_example'; // рядок
+$url_id = 'url_id_example'; // рядок
+$id = 'id_example'; // рядок
+
 
 try {
     $result = $apiInstance->deleteV2PageReact($tenant_id, $url_id, $id);

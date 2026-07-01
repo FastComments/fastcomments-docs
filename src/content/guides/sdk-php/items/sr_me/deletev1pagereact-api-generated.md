@@ -1,17 +1,17 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Обавезно | Опис |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| urlId | string | query | Да |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateV1PageReact.php)
+Vraća: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateV1PageReact.php)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'deleteV1PageReact Example'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteV1PageReact Primer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -19,12 +19,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ако желите да користите прилагођеног HTTP клијента, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционално, као подразумевано ће бити коришћен `GuzzleHttp\Client`.
+    // Ako želite koristiti prilagođeni HTTP klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao podrazumijevano.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $url_id = 'url_id_example'; // string
+
 
 try {
     $result = $apiInstance->deleteV1PageReact($tenant_id, $url_id);

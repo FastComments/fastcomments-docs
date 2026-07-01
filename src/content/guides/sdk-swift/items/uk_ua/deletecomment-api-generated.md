@@ -1,7 +1,6 @@
----
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов’язковий | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Так |  |
 | id | string | path | Так |  |
@@ -14,17 +13,17 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад deleteComment'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteComment Приклад'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Наведені приклади коду все ще є бета-версією. Якщо виникає проблема, будь ласка, повідомте через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наступні приклади коду ще у бета-версії. Якщо виникнуть проблеми, будь ласка, повідомте за посиланням http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let tenantId = "tenantId_example" // String | 
-let id = "id_example" // String | 
-let contextUserId = "contextUserId_example" // String |  (необов'язково)
-let isLive = true // Bool |  (необов'язково)
+let tenantId = "tenantId_example" // String |
+let id = "id_example" // String |
+let contextUserId = "contextUserId_example" // String |  (необов’язково)
+let isLive = true // Bool |  (необов’язково)
 
-DefaultAPI.deleteComment(tenantId: tenantId, id: id, contextUserId: contextUserId, isLive: isLive) { (response, error) in
+DefaultAPI.deleteComment(tenantId: tenantId, id: id, options: DefaultAPI.DeleteCommentOptions(contextUserId: contextUserId, isLive: isLive)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -35,5 +34,3 @@ DefaultAPI.deleteComment(tenantId: tenantId, id: id, contextUserId: contextUserI
     }
 }
 [inline-code-end]
-
----

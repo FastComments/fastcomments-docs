@@ -1,6 +1,6 @@
 ## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 是 |  |
 | postId | string | path | 是 |  |
@@ -10,7 +10,7 @@
 
 ## 回應
 
-回傳: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ReactFeedPostResponse.php)
+Returns: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ReactFeedPostResponse.php)
 
 ## 範例
 
@@ -22,19 +22,23 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // 如果您想使用自訂的 HTTP 用戶端，請傳入實作了 `GuzzleHttp\ClientInterface` 的用戶端。
+    // 如果您想使用自訂的 HTTP 客戶端，請傳入實作 `GuzzleHttp\ClientInterface` 的客戶端。
     // 這是可選的，預設會使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $post_id = 'post_id_example'; // string
 $react_body_params = new \FastComments\Client\Model\ReactBodyParams(); // \FastComments\Client\Model\ReactBodyParams
-$is_undo = True; // bool
-$broadcast_id = 'broadcast_id_example'; // string
-$sso = 'sso_example'; // string
+$options = [
+    'is_undo' => True, // bool
+    'broadcast_id' => 'broadcast_id_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->reactFeedPostPublic($tenant_id, $post_id, $react_body_params, $is_undo, $broadcast_id, $sso);
+    $result = $apiInstance->reactFeedPostPublic($tenant_id, $post_id, $react_body_params, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->reactFeedPostPublic: ', $e->getMessage(), PHP_EOL;

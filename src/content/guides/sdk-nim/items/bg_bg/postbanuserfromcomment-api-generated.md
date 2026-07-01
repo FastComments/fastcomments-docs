@@ -1,17 +1,10 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
-| commentId | string | Да |  |
-| banEmail | bool | Не |  |
-| banEmailDomain | bool | Не |  |
-| banIP | bool | Не |  |
-| deleteAllUsersComments | bool | Не |  |
-| bannedUntil | string | Не |  |
-| isShadowBan | bool | Не |  |
-| updateId | string | Не |  |
-| banReason | string | Не |  |
-| sso | string | Не |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| options | PostBanUserFromCommentOptions | No |  |
 
 ## Отговор
 
@@ -19,23 +12,15 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за postBanUserFromComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postBanUserFromComment пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postBanUserFromComment(
-  commentId = "cmt-8f3a1b",
-  banEmail = false,
-  banEmailDomain = false,
-  banIP = false,
-  deleteAllUsersComments = false,
-  bannedUntil = "",
-  isShadowBan = false,
-  updateId = "",
-  banReason = "",
-  sso = ""
+let (banResult, httpResp) = client.postBanUserFromComment(
+  tenantId = "my-tenant-123",
+  commentId = "cmt-456",
+  options = PostBanUserFromCommentOptions()
 )
-if response.isSome:
-  let banResult = response.get()
-  discard banResult
-else:
-  echo "No ban result returned"
+
+if banResult.isSome:
+  let result = banResult.get()
+  echo result
 [inline-code-end]

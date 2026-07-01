@@ -66,6 +66,31 @@ On top of those, React Native adds a few SDK-specific options via `FastCommentsR
 The main concepts to be aware of to get started are `tenantId` and `urlId`. `tenantId` is your FastComments.com account identifier. `urlId` is where comment threads
 will be tied to. This could be a page URL, or a product id, an article id, etc.
 
+### Localization
+
+All user-facing text in these widgets (button labels, placeholders, empty states, relative
+dates like "5 minutes ago", error messages, etc.) is **server-driven**. The components do not
+hard-code English strings; they render the translations FastComments serves for the requested
+locale.
+
+To request a locale, set `locale` in your config:
+
+```ts
+const config = {
+    tenantId: 'your-tenant-id',
+    urlId: 'some-page',
+    locale: 'de_de', // de_de, fr_fr, ja_jp, es_es, etc.
+};
+```
+
+When no `locale` is set, FastComments serves the tenant's default language.
+
+**Editing the text:** translations are managed in your FastComments dashboard, not in this SDK.
+To change wording, override the default copy, or add a language, edit the translations for your
+account in the dashboard - the change is picked up by the widgets automatically with no app
+release required. The SDK ships no English fallbacks, so any key you blank out in the dashboard
+renders empty; keep the keys populated for every locale you support.
+
 ### User Notifications
 
 FastComments supports notifications for [many scenarios](https://docs.fastcomments.com/guide-notifications.html). Notifications are configurable,

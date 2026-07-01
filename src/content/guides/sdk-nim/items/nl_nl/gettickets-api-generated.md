@@ -1,12 +1,9 @@
 ## Parameters
 
-| Naam | Type | Verplicht | Beschrijving |
-|------|------|----------|-------------|
+| Naam | Type | Vereist | Beschrijving |
+|------|------|----------|--------------|
 | tenantId | string | Ja |  |
-| userId | string | Nee |  |
-| state | float64 | Nee |  |
-| skip | float64 | Nee |  |
-| limit | float64 | Nee |  |
+| options | GetTicketsOptions | Nee |  |
 
 ## Respons
 
@@ -16,10 +13,8 @@ Retourneert: [`Option[GetTicketsResponse]`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'getTickets Voorbeeld'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTickets(tenantId = "my-tenant-123", userId = "user-789", state = 1.0, skip = 0.0, limit = 50.0)
-if response.isSome:
-  let tickets = response.get()
-  echo tickets
+let (ticketsOpt, httpResp) = client.getTickets(tenantId = "my-tenant-123", options = GetTicketsOptions())
+if ticketsOpt.isSome:
+  let tickets = ticketsOpt.get()
+  # gebruik tickets indien nodig
 [inline-code-end]
-
----

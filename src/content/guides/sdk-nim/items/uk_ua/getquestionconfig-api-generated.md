@@ -1,9 +1,9 @@
 ## Параметри
 
-| Назва | Тип | Обов'язкове | Опис |
+| Назва | Тип | Обов'язковий | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| id | string | Ні |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
 
 ## Відповідь
 
@@ -13,10 +13,8 @@
 
 [inline-code-attrs-start title = 'Приклад getQuestionConfig'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getQuestionConfig(tenantId = "my-tenant-123", id = "qst-456")
-if response.isSome:
-  let cfg = response.get()
-  discard cfg
+let (questionConfigOpt, httpResp) = client.getQuestionConfig(tenantId = "my-tenant-123", id = "question-987")
+if questionConfigOpt.isSome:
+  let config = questionConfigOpt.get()
+  echo config
 [inline-code-end]
-
----

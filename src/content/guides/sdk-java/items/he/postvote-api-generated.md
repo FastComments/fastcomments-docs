@@ -1,9 +1,11 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | כן |  |
 | commentId | string | path | כן |  |
 | direction | string | query | לא |  |
+| broadcastId | string | query | לא |  |
 | sso | string | query | לא |  |
 
 ## תגובה
@@ -12,9 +14,9 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-postVote'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postVote דוגמה'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// ייבוא מחלקות:
+// ייבא מחלקות:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -27,12 +29,15 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String direction = "direction_example"; // String | 
+    String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      VoteResponse result = apiInstance.postVote(commentId)
+      VoteResponse result = apiInstance.postVote(tenantId, commentId)
             .direction(direction)
+            .broadcastId(broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);

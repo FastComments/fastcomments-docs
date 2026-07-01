@@ -1,18 +1,19 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Ime | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| sso | string | query | Не |  |
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`APIModerateGetUserBanPreferencesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIModerateGetUserBanPreferencesResponse.java)
+Vraća: [`APIModerateGetUserBanPreferencesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIModerateGetUserBanPreferencesResponse.java)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'getUserBanPreference Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getUserBanPreference'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Увези класе:
+// Uvezi klase:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -25,9 +26,10 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      APIModerateGetUserBanPreferencesResponse result = apiInstance.getUserBanPreference()
+      APIModerateGetUserBanPreferencesResponse result = apiInstance.getUserBanPreference(tenantId)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -41,5 +43,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

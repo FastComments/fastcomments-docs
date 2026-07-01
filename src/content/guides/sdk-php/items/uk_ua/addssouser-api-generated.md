@@ -1,7 +1,7 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Назва | Тип | Розташування | Обов’язково | Опис |
+|------|------|--------------|--------------|------|
 | tenantId | string | query | Так |  |
 
 ## Відповідь
@@ -16,20 +16,22 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Налаштування авторизації API-ключа: api_key
+// Налаштуйте авторизацію за допомогою API-ключа: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Розкоментуйте нижче, щоб налаштувати префікс (наприклад, Bearer) для API-ключа, якщо потрібно
+// Розкоментуйте нижче, щоб встановити префікс (наприклад, Bearer) для API-ключа, якщо потрібно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Якщо ви хочете використовувати власний HTTP-клієнт, передайте клієнт, який реалізує `GuzzleHttp\ClientInterface`.
-    // Це необов'язково, за замовчуванням буде використано `GuzzleHttp\Client`.
+    // Якщо ви бажаєте використати власний HTTP-клієнт, передайте ваш клієнт, який реалізує `GuzzleHttp\ClientInterface`.
+    // Це опціонально, за замовчуванням буде використано `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // рядок
+
+$tenant_id = 'tenant_id_example'; // string
 $create_apisso_user_data = new \FastComments\Client\Model\CreateAPISSOUserData(); // \FastComments\Client\Model\CreateAPISSOUserData
+
 
 try {
     $result = $apiInstance->addSSOUser($tenant_id, $create_apisso_user_data);

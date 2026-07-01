@@ -1,7 +1,6 @@
----
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenant_id | String | Da |  |
 | id | String | Da |  |
@@ -13,26 +12,20 @@ Vraća: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/b
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer update_tenant_package'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'update_tenant_package Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_update_package() -> Result<(), Error> {
-    let params: UpdateTenantPackageParams = UpdateTenantPackageParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        id: "package-premium".to_string(),
-        update_tenant_package_body: models::UpdateTenantPackageBody {
-            name: Some("Premium".to_string()),
-            description: Some("Premium moderation and analytics package".to_string()),
-            price_cents: Some(2999),
-            features: Some(vec![
-                "moderation".to_string(),
-                "analytics".to_string(),
-                "priority-support".to_string(),
-            ]),
-            active: Some(true),
-        },
+async fn run_update(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let body = models::UpdateTenantPackageBody {
+        plan: Some("enterprise".to_string()),
+        renewal_date: Some("2024-12-31".to_string()),
+        ..Default::default()
     };
-
-    let _response: ApiEmptyResponse = update_tenant_package(&configuration, params).await?;
+    let params = UpdateTenantPackageParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "pkg-2024".to_string(),
+        update_tenant_package_body: body,
+    };
+    let _: ApiEmptyResponse = update_tenant_package(configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

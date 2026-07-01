@@ -1,8 +1,8 @@
-Sve API metode u ovom SDK-u vraćaju `pplx::task<std::shared_ptr<ResponseType>>` iz C++ REST SDK-a. Ovo vam daje fleksibilnost u načinu rukovanja odgovorima API-ja.
+All API methods in this SDK return `pplx::task<std::shared_ptr<ResponseType>>` from the C++ REST SDK. This gives you flexibility in how you handle API responses.
 
 ### Sinhroni pozivi sa `.get()`
 
-Koristite `.get()` da blokirate pozivajuću nit dok zahtjev ne bude završen i da sinhrono dobijete rezultat:
+Use `.get()` to block the calling thread until the request completes and retrieve the result synchronously:
 
 ```cpp
 auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
@@ -13,33 +13,24 @@ config->setApiKey(utility::conversions::to_string_t("api_key"),
 auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
 org::openapitools::client::api::DefaultApi api(apiClient);
 
-// Pozovite .get() da blokirate i dobijete rezultat sinhrono
+// Required parameters are positional; optional ones go in the options struct
+org::openapitools::client::api::GetCommentsOptions options;
+options.urlId = utility::conversions::to_string_t("your-url-id");
+
+// Call .get() to block and get the result synchronously
 auto response = api.getComments(
     utility::conversions::to_string_t("your-tenant-id"),
-    boost::none,  // page (stranica)
-    boost::none,  // limit (limit)
-    boost::none,  // skip (preskoči)
-    boost::none,  // asTree (kao stablo)
-    boost::none,  // skipChildren (preskoči potomke)
-    boost::none,  // limitChildren (ograniči potomke)
-    boost::none,  // maxTreeDepth (maksimalna dubina stabla)
-    utility::conversions::to_string_t("your-url-id"),  // urlId (urlId)
-    boost::none,  // userId (userId, ID korisnika)
-    boost::none,  // anonUserId (anonUserId, ID anonimnog korisnika)
-    boost::none,  // contextUserId (contextUserId, ID kontekstnog korisnika)
-    boost::none,  // hashTag (hashTag)
-    boost::none,  // parentId (parentId, ID roditelja)
-    boost::none   // direction (direction)
-).get();  // Blokira dok se HTTP zahtjev ne završi
+    options
+).get();  // Blocks until the HTTP request completes
 
 if (response && response->comments) {
     std::cout << "Found " << response->comments->size() << " comments" << std::endl;
 }
 ```
 
-### Asinhroni pozivi sa `.then()`
+### Asinkroni pozivi sa `.then()`
 
-Koristite `.then()` za neblokirajuće asinhrono izvršavanje sa callback-ovima:
+Use `.then()` for non-blocking asynchronous execution with callbacks:
 
 ```cpp
 auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
@@ -50,39 +41,40 @@ config->setApiKey(utility::conversions::to_string_t("api_key"),
 auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
 org::openapitools::client::api::DefaultApi api(apiClient);
 
-// Koristite .then() za asinhrono izvršavanje zasnovano na callback-ovima
+// Required parameters are positional; optional ones go in the options struct
+org::openapitools::client::api::GetCommentsOptions options;
+options.urlId = utility::conversions::to_string_t("your-url-id");
+
+// Use .then() for asynchronous callback-based execution
 api.getComments(
     utility::conversions::to_string_t("your-tenant-id"),
-    boost::none, boost::none, boost::none, boost::none, boost::none,
-    boost::none, boost::none,
-    utility::conversions::to_string_t("your-url-id"),
-    boost::none, boost::none, boost::none, boost::none, boost::none, boost::none
+    options
 ).then([](std::shared_ptr<GetComments_200_response> response) {
-    // Ovo se izvršava asinhrono kada se zahtjev završi
+    // This runs asynchronously when the request completes
     if (response && response->comments) {
         std::cout << "Found " << response->comments->size() << " comments" << std::endl;
     }
 });
 
-// Izvršavanje se nastavlja odmah bez blokiranja
+// Execution continues immediately without blocking
 std::cout << "Request sent, continuing..." << std::endl;
 ```
 
-### Izbor između sinhronog i asinhronog
+### Izbor između sinhronog i asinkronog
 
-Izbor zavisi od vašeg runtime okruženja i arhitekture aplikacije:
+The choice depends on your runtime environment and application architecture:
 
 **`.get()` (Sinhrono blokiranje)**
-- Blokira pozivajuću nit dok se HTTP zahtjev ne završi
-- Jednostavniji tok koda, lakše za razumijevanje
-- Pogodno za namjenske radne niti, batch obradu ili komandno-linijske alate
-- **Nije pogodno** za petlje događaja, GUI niti ili servere sa jednom niti
+- Blocks the calling thread until the HTTP request completes
+- Simpler code flow, easier to reason about
+- Suitable for dedicated worker threads, batch processing, or command-line tools
+- **Not suitable** for event loops, GUI threads, or single-threaded servers
 
-**`.then()` (Asinhrono, neblokirajuće)**
-- Vraća odmah, callback se izvršava kada se zahtjev završi
-- Ne blokira pozivajuću nit
-- Neophodno za arhitekture vođene događajima, GUI aplikacije ili petlje događaja sa jednom niti
-- Omogućava lančanje više operacija
-- Složeniji tok kontrole
+**`.then()` (Asinkrono neblokirajuće)**
+- Returns immediately, callback executes when request completes
+- Does not block the calling thread
+- Required for event-driven architectures, GUI applications, or single-threaded event loops
+- Allows chaining multiple operations
+- More complex control flow
 
-Testni paket SDK-a koristi isključivo `.get()`, što je prikladno za testno okruženje gdje je blokiranje prihvatljivo.
+The SDK's test suite uses `.get()` exclusively, but this is appropriate for the test environment where blocking is acceptable.

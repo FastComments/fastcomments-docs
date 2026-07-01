@@ -1,19 +1,21 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 描述 |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| commentId | string | 路径 | 是 |  |
-| sso | string | 查询 | 否 |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## 响应
 
-返回：[`AdjustVotesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AdjustVotesResponse.java)
+Returns: [`AdjustVotesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AdjustVotesResponse.java)
 
 ## 示例
 
 [inline-code-attrs-start title = 'postAdjustCommentVotes 示例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 导入类：
+// 导入类:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,15 +28,19 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     AdjustCommentVotesParams adjustCommentVotesParams = new AdjustCommentVotesParams(); // AdjustCommentVotesParams | 
+    String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      AdjustVotesResponse result = apiInstance.postAdjustCommentVotes(commentId, adjustCommentVotesParams)
+      AdjustVotesResponse result = apiInstance.postAdjustCommentVotes(tenantId, commentId, adjustCommentVotesParams)
+            .broadcastId(broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
+      // 调用 ModerationApi#postAdjustCommentVotes 时的异常
       System.err.println("Exception when calling ModerationApi#postAdjustCommentVotes");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
@@ -44,5 +50,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

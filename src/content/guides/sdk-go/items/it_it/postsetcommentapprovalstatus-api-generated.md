@@ -1,18 +1,20 @@
-## Parametri
+## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+|------|------|-----------|--------------|-------------|
+| tenantId | string | query | Sì |  |
 | commentId | string | path | Sì |  |
 | approved | boolean | query | No |  |
+| broadcastId | string | query | No |  |
 | sso | string | query | No |  |
 
-## Risposta
+## Response
 
 Restituisce: [`SetCommentApprovedResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_set_comment_approved_response.go)
 
-## Esempio
+## Example
 
-[inline-code-attrs-start title = 'Esempio di PostSetCommentApprovalStatus'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio PostSetCommentApprovalStatus'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -24,13 +26,15 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
 	approved := true // bool |  (opzionale)
+	broadcastId := "broadcastId_example" // string |  (opzionale)
 	sso := "sso_example" // string |  (opzionale)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostSetCommentApprovalStatus(context.Background(), commentId).Approved(approved).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostSetCommentApprovalStatus(context.Background(), commentId).TenantId(tenantId).Approved(approved).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostSetCommentApprovalStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

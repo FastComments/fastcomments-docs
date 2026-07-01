@@ -1,9 +1,10 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Да |  |
-| sso | string | query | Нет |  |
+| Имя | Тип | Местоположение | Обязательно | Описание |
+|------|------|----------------|-------------|----------|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| sso | string | query | No |  |
 
 ## Ответ
 
@@ -13,6 +14,7 @@
 
 [inline-code-attrs-start title = 'Пример getLogs'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
+// Import classes:
 // Импорт классов:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
@@ -26,18 +28,23 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationAPIGetLogsResponse result = apiInstance.getLogs(commentId)
+      ModerationAPIGetLogsResponse result = apiInstance.getLogs(tenantId, commentId)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ModerationApi#getLogs");
+      // Исключение при вызове ModerationApi#getLogs
       System.err.println("Status code: " + e.getCode());
+      // Код статуса: 
       System.err.println("Reason: " + e.getResponseBody());
+      // Причина: 
       System.err.println("Response headers: " + e.getResponseHeaders());
+      // Заголовки ответа: 
       e.printStackTrace();
     }
   }

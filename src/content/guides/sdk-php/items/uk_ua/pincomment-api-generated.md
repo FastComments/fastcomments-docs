@@ -1,6 +1,6 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язкове | Опис |
+| Назва | Тип | Розташування | Обов’язковий | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Так |  |
 | commentId | string | path | Так |  |
@@ -13,7 +13,7 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад pinComment'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'pinComment Приклад'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -21,14 +21,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Якщо ви хочете використати власний HTTP-клієнт, передайте клієнт, який реалізує `GuzzleHttp\ClientInterface`.
-    // Це необов'язково, за замовчуванням буде використано `GuzzleHttp\Client`.
+    // Якщо ви хочете використати власний HTTP‑клієнт, передайте ваш клієнт, який реалізує `GuzzleHttp\ClientInterface`.
+    // Це необов’язково, `GuzzleHttp\Client` буде використаний за замовчуванням.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$comment_id = 'comment_id_example'; // string
-$broadcast_id = 'broadcast_id_example'; // string
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // рядок
+$comment_id = 'comment_id_example'; // рядок
+$broadcast_id = 'broadcast_id_example'; // рядок
+$sso = 'sso_example'; // рядок
+
 
 try {
     $result = $apiInstance->pinComment($tenant_id, $comment_id, $broadcast_id, $sso);
@@ -37,3 +39,5 @@ try {
     echo 'Exception when calling PublicApi->pinComment: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

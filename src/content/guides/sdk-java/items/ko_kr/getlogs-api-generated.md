@@ -1,7 +1,8 @@
 ## 매개변수
 
-| 이름 | 형식 | 위치 | 필수 | 설명 |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | commentId | string | path | Yes |  |
 | sso | string | query | No |  |
 
@@ -13,7 +14,7 @@
 
 [inline-code-attrs-start title = 'getLogs 예제'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 클래스 임포트:
+// 클래스 가져오기:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,20 +27,23 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
-    String commentId = "commentId_example"; // 문자열 | 
-    String sso = "sso_example"; // 문자열 | 
+    String tenantId = "tenantId_example"; // String | 
+    String commentId = "commentId_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
-      ModerationAPIGetLogsResponse result = apiInstance.getLogs(commentId)
+      ModerationAPIGetLogsResponse result = apiInstance.getLogs(tenantId, commentId)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ModerationApi#getLogs");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("ModerationApi#getLogs 호출 중 예외 발생");
+      System.err.println("상태 코드: " + e.getCode());
+      System.err.println("이유: " + e.getResponseBody());
+      System.err.println("응답 헤더: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }
 }
 [inline-code-end]
+
+---

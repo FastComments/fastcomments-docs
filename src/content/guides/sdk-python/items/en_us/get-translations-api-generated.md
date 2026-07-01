@@ -16,6 +16,7 @@ Returns: [`GetTranslationsResponse`](https://github.com/FastComments/fastcomment
 [inline-code-attrs-start title = 'get_translations Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetTranslationsOptions
 from client.models.get_translations_response import GetTranslationsResponse
 from client.rest import ApiException
 from pprint import pprint
@@ -37,7 +38,7 @@ with client.ApiClient(configuration) as api_client:
     use_full_translation_ids = True # bool |  (optional)
 
     try:
-        api_response = api_instance.get_translations(namespace, component, locale=locale, use_full_translation_ids=use_full_translation_ids)
+        api_response = api_instance.get_translations(namespace, component, GetTranslationsOptions(locale=locale, use_full_translation_ids=use_full_translation_ids))
         print("The response of PublicApi->get_translations:\n")
         pprint(api_response)
     except Exception as e:

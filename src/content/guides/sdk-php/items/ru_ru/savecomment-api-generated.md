@@ -1,12 +1,12 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Имя | Тип | Местоположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| isLive | boolean | query | Нет |  |
-| doSpamCheck | boolean | query | Нет |  |
-| sendEmails | boolean | query | Нет |  |
-| populateNotifications | boolean | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| isLive | boolean | query | No |  |
+| doSpamCheck | boolean | query | No |  |
+| sendEmails | boolean | query | No |  |
+| populateNotifications | boolean | query | No |  |
 
 ## Ответ
 
@@ -27,20 +27,24 @@ $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKe
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Если вы хотите использовать кастомный HTTP-клиент, передайте ваш клиент, который реализует `GuzzleHttp\ClientInterface`.
-    // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
+    // Если вы хотите использовать собственный HTTP‑клиент, передайте ваш клиент, реализующий `GuzzleHttp\ClientInterface`.
+    // Это опционально, `GuzzleHttp\Client` будет использоваться по умолчанию.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
+
+$tenant_id = 'tenant_id_example'; // строка
 $create_comment_params = new \FastComments\Client\Model\CreateCommentParams(); // \FastComments\Client\Model\CreateCommentParams
-$is_live = True; // bool
-$do_spam_check = True; // bool
-$send_emails = True; // bool
-$populate_notifications = True; // bool
+$options = [
+    'is_live' => True, // логическое
+    'do_spam_check' => True, // логическое
+    'send_emails' => True, // логическое
+    'populate_notifications' => True, // логическое
+];
+
 
 try {
-    $result = $apiInstance->saveComment($tenant_id, $create_comment_params, $is_live, $do_spam_check, $send_emails, $populate_notifications);
+    $result = $apiInstance->saveComment($tenant_id, $create_comment_params, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->saveComment: ', $e->getMessage(), PHP_EOL;

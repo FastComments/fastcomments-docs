@@ -1,29 +1,28 @@
 ## Параметри
 
-| Име | Тип | Обавезно | Опис |
+| Име | Тип | Обавезан | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| sso | string | Не |  |
+| tenantId | string | Yes |  |
+| sso | string | No |  |
 
 ## Одговор
 
-Враћа: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ResetUserNotificationsResponse.ts)
+Враћа: [`ResetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ResetUserNotificationCountResponse.ts)
 
 ## Пример
 
-[inline-code-attrs-start title = 'resetUserNotificationCount Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'resetUserNotificationCount Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function example(): Promise<void> {
-  const tenantId: string = 'tenant_84f3b2';
-  const resetResultNoSso: ResetUserNotificationsResponse = await resetUserNotificationCount(tenantId);
+async function demoResetCount() {
+  const tenantId: string = "acme-corp-tenant";
+  const sso: string = "sso-user-9876";
 
-  const ssoToken: string = 'sso_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';
-  const resetResultWithSso: ResetUserNotificationsResponse = await resetUserNotificationCount(tenantId, ssoToken);
+  // Позив са опционим sso параметром
+  const resultWithSso: ResetUserNotificationCountResponse = await resetUserNotificationCount(tenantId, sso);
 
-  console.log(resetResultNoSso, resetResultWithSso);
+  // Позив без опционог sso параметра
+  const resultWithoutSso: ResetUserNotificationCountResponse = await resetUserNotificationCount(tenantId);
+
+  console.log(resultWithSso, resultWithoutSso);
 }
-
-example();
 [inline-code-end]
-
----

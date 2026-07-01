@@ -1,16 +1,9 @@
 ## Parametri
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
 | tenantId | string | Da |  |
-| questionId | string | Ne |  |
-| questionIds | seq[string] | Ne |  |
-| urlId | string | Da |  |
-| startDate | string | Ne |  |
-| forceRecalculate | bool | Ne |  |
-| minValue | float64 | Ne |  |
-| maxValue | float64 | Ne |  |
-| limit | float64 | Ne |  |
+| options | CombineCommentsWithQuestionResultsOptions | Ne |  |
 
 ## Odgovor
 
@@ -20,23 +13,11 @@ Vraća: [`Option[CombineQuestionResultsWithCommentsResponse]`](https://github.co
 
 [inline-code-attrs-start title = 'combineCommentsWithQuestionResults Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.combineCommentsWithQuestionResults(
+let (combineOpt, httpResponse) = client.combineCommentsWithQuestionResults(
   tenantId = "my-tenant-123",
-  questionId = "",
-  questionIds = @[],
-  urlId = "news/article-2026-climate-change",
-  startDate = "",
-  forceRecalculate = false,
-  minValue = 0.0,
-  maxValue = 0.0,
-  limit = 0.0
+  options = default(CombineCommentsWithQuestionResultsOptions)
 )
 
-if response.isSome:
-  let combined = response.get()
-  echo "Combined results received for tenant:", " my-tenant-123"
-else:
-  echo "No combined results returned"
+if combineOpt.isSome:
+  let combineResult = combineOpt.get()
 [inline-code-end]
-
----

@@ -1,12 +1,10 @@
 ## Parametri
 
-| Ime | Tip | Obvezno | Opis |
+| Ime | Vrsta | Obvezno | Opis |
 |------|------|----------|-------------|
+| tenantId | string | Da |  |
 | commentId | string | Da |  |
-| includeByUserIdAndEmail | bool | Ne |  |
-| includeByIP | bool | Ne |  |
-| includeByEmailDomain | bool | Ne |  |
-| sso | string | Ne |  |
+| options | GetPreBanSummaryOptions | Ne |  |
 
 ## Odgovor
 
@@ -14,21 +12,11 @@ Vrne: [`Option[PreBanSummary]`](https://github.com/FastComments/fastcomments-nim
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer getPreBanSummary'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getPreBanSummary Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let commentId = "cmt-7423"
-let (response, httpResponse) = client.getPreBanSummary(
-  commentId = commentId,
-  includeByUserIdAndEmail = false,
-  includeByIP = false,
-  includeByEmailDomain = false,
-  sso = ""
-)
-if response.isSome:
-  let preBanSummary = response.get()
-  discard preBanSummary
-else:
-  discard httpResponse
+let (preBanSummaryOpt, httpResponse) = client.getPreBanSummary(tenantId = "my-tenant-123", commentId = "cmt-456", options = GetPreBanSummaryOptions())
+if preBanSummaryOpt.isSome:
+  let summary = preBanSummaryOpt.get()
 [inline-code-end]
 
 ---

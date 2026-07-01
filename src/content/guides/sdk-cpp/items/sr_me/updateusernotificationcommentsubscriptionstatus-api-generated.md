@@ -1,36 +1,30 @@
-Омогућите или онемогућите обавештења за одређени коментар.
+Enable or disable notifications for a specific comment.
 
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| notificationId | string | Да |  |
-| optedInOrOut | string | Да |  |
-| commentId | string | Да |  |
-| sso | string | Не |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| notificationId | string | Yes |  |
+| optedInOrOut | string | Yes |  |
+| commentId | string | Yes |  |
+| sso | string | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UpdateUserNotificationCommentSubscriptionStatusResponse.h)
+Vraća: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UpdateUserNotificationCommentSubscriptionStatusResponse.h)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'updateUserNotificationCommentSubscriptionStatus Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer updateUserNotificationCommentSubscriptionStatus'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t notificationId = U("notif-456");
-utility::string_t optedInOrOut = U("opted_in");
-utility::string_t commentId = U("cmt-789");
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("sso-jwt-abc123"));
-api->updateUserNotificationCommentSubscriptionStatus(tenantId, notificationId, optedInOrOut, commentId, sso)
-.then([](pplx::task<std::shared_ptr<UpdateUserNotificationCommentSubscriptionStatusResponse>> t) {
-    try {
-        auto resp = t.get();
-        if(!resp) resp = std::make_shared<UpdateUserNotificationCommentSubscriptionStatusResponse>();
-        std::cout << "Subscription update completed" << std::endl;
-    } catch(const std::exception& e) {
-        std::cout << "Error updating subscription: " << e.what() << std::endl;
-    }
+auto updateTask = api->updateUserNotificationCommentSubscriptionStatus(
+    utility::conversions::to_string_t("my-tenant-123"),
+    utility::conversions::to_string_t("notif-456"),
+    utility::conversions::to_string_t("optedIn"),
+    utility::conversions::to_string_t("comment-789"),
+    boost::optional<utility::string_t>(utility::conversions::to_string_t("sso-token-abc"))
+).then([](std::shared_ptr<UpdateUserNotificationCommentSubscriptionStatusResponse> resp){
+    (void)resp;
 });
 [inline-code-end]

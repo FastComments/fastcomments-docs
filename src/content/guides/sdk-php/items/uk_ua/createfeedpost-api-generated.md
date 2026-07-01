@@ -1,7 +1,7 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
-|------|------|----------|----------|-------------|
+| Назва | Тип | Розташування | Обов'язковий | Опис |
+|------|------|--------------|--------------|------|
 | tenantId | string | query | Так |  |
 | broadcastId | string | query | Ні |  |
 | isLive | boolean | query | Ні |  |
@@ -19,28 +19,31 @@
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configure API key authorization: api_key
+// Налаштування авторизації ключа API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Розкоментуйте нижче, щоб налаштувати префікс (наприклад, Bearer) для ключа API, за потреби
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // Це необов'язково, `GuzzleHttp\Client` will be used as default.
+    // Якщо ви хочете використовувати власний HTTP-клієнт, передайте ваш клієнт, який реалізує `GuzzleHttp\ClientInterface`.
+    // Це необов'язково, за замовчуванням буде використано `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
+
+$tenant_id = 'tenant_id_example'; // рядок
 $create_feed_post_params = new \FastComments\Client\Model\CreateFeedPostParams(); // \FastComments\Client\Model\CreateFeedPostParams
-$broadcast_id = 'broadcast_id_example'; // string
-$is_live = True; // bool
-$do_spam_check = True; // bool
-$skip_dup_check = True; // bool
+$options = [
+    'broadcast_id' => 'broadcast_id_example', // рядок
+    'is_live' => True, // бул
+    'do_spam_check' => True, // бул
+    'skip_dup_check' => True, // бул
+];
+
 
 try {
-    $result = $apiInstance->createFeedPost($tenant_id, $create_feed_post_params, $broadcast_id, $is_live, $do_spam_check, $skip_dup_check);
+    $result = $apiInstance->createFeedPost($tenant_id, $create_feed_post_params, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->createFeedPost: ', $e->getMessage(), PHP_EOL;

@@ -1,14 +1,9 @@
 ## Paramètres
 
-| Name | Type | Requis | Description |
-|------|------|--------|-------------|
+| Nom | Type | Obligatoire | Description |
+|------|------|-------------|-------------|
 | tenantId | string | Oui |  |
-| urlId | string | Oui |  |
-| userId | string | No |  |
-| startDate | string | No |  |
-| questionId | string | No |  |
-| questionIds | string | No |  |
-| skip | float64 | Non |  |
+| options | GetQuestionResultsOptions | Non |  |
 
 ## Réponse
 
@@ -16,22 +11,16 @@ Renvoie : [`Option[GetQuestionResultsResponse]`](https://github.com/FastComments
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getQuestionResults'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getQuestionResults'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.getQuestionResults(
   tenantId = "my-tenant-123",
-  urlId = "news/2026/election-analysis",
-  userId = "user-42",
-  startDate = "2026-06-01T00:00:00Z",
-  questionId = "q-6789",
-  questionIds = @["q-6789", "q-6790"],
-  skip = 0.0
+  options = GetQuestionResultsOptions()
 )
+
 if response.isSome:
   let results = response.get()
-  echo "Received question results"
-else:
-  echo "No results returned"
+  echo results
 [inline-code-end]
 
 ---

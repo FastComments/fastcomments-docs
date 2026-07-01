@@ -1,10 +1,9 @@
----
 ## Parametre
 
-| Navn | Type | Påkrævet | Beskrivelse |
-|------|------|----------|-------------|
-| tenant_id | String | Ja |  |
-| id | String | Ja |  |
+| Navn | Type | Obligatorisk | Beskrivelse |
+|------|------|--------------|-------------|
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
 
 ## Svar
 
@@ -14,12 +13,12 @@ Returnerer: [`ApiEmptySuccessResponse`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'delete_user_badge Eksempel'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: DeleteUserBadgeParams = DeleteUserBadgeParams {
-    tenant_id: "acme-newsroom-tenant".to_string(),
-    id: "badge-moderator-001".to_string(),
-};
-let include_related: Option<bool> = Some(false);
-let result: ApiEmptySuccessResponse = delete_user_badge(&configuration, params).await?;
+async fn remove_badge(config: &configuration::Configuration) -> Result<(), Error> {
+    let params: DeleteUserBadgeParams = DeleteUserBadgeParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "badge-abcde".to_string(),
+    };
+    let _ = delete_user_badge(config, params).await?;
+    Ok(())
+}
 [inline-code-end]
-
----

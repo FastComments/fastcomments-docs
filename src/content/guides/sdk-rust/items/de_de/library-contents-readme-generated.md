@@ -1,22 +1,20 @@
----
 Das FastComments Rust SDK besteht aus mehreren Modulen:
 
-- **Client Module** - API-Client für die FastComments REST-APIs
-  - Vollständige Typdefinitionen für alle API-Modelle
-  - Drei API-Clients, die alle FastComments-Methoden abdecken:
-    - `default_api` (**DefaultApi**) - mit API-Schlüssel authentifizierte Methoden für die serverseitige Verwendung
-    - `public_api` (**PublicApi**) - öffentliche Methoden ohne API-Schlüssel, die sicher aus Browsern und mobilen Apps aufgerufen werden können
-    - `moderation_api` (**ModerationApi**) - Methoden für das Moderator-Dashboard, einschließlich Kommentar-Moderation (Auflisten, Zählen, Suchen, Protokolle, Export), Moderationsaktionen (entfernen/wiederherstellen, melden, Review-/Spam-/Genehmigungsstatus setzen, Stimmen, Thread wieder öffnen/schließen), Sperren (Sperre aufgrund eines Kommentars, rückgängig machen, Vor-Sperr-Zusammenfassungen, Sperrstatus/-einstellungen, Anzahl gesperrter Nutzer) sowie Abzeichen & Vertrauen (Abzeichen vergeben/entfernen, manuelle Abzeichen, Trust-Faktor abrufen/setzen, internes Nutzerprofil). Jede Moderationsmethode akzeptiert einen `sso`-Parameter, sodass der Aufruf im Namen eines per SSO authentifizierten Moderators erfolgen kann.
-  - Vollständige async/await-Unterstützung mit tokio
-  - Siehe [client/README.md](https://github.com/FastComments/fastcomments-rust/blob/main/client/README.md) für detaillierte API-Dokumentation
+- **Client‑Modul** – API‑Client für die FastComments REST‑APIs
+  - Vollständige Typdefinitionen für alle API‑Modelle
+  - Drei API‑Clients, die alle FastComments‑Methoden abdecken:
+    - `default_api` (**DefaultApi**) – API‑Key‑authentifizierte Methoden für die serverseitige Nutzung
+    - `public_api` (**PublicApi**) – öffentliche, keine API‑Key‑Methoden, die sicher aus Browsern und mobilen Apps aufgerufen werden können
+    - `moderation_api` (**ModerationApi**) – eine umfangreiche Suite von Live‑ und schnellen Moderations‑APIs. Jede Moderations‑Methode akzeptiert einen `sso`‑Parameter und kann über SSO oder ein FastComments.com‑Session‑Cookie authentifizieren.
+  - Vollständige async/await‑Unterstützung mit Tokio
+  - Siehe [client/README.md](https://github.com/FastComments/fastcomments-rust/blob/main/client/README.md) für die detaillierte API‑Dokumentation
 
-- **SSO Module** - Serverseitige Single Sign-On-Dienstprogramme
-  - Sichere Token-Erzeugung zur Benutzer-Authentifizierung
-  - Unterstützung für sowohl einfache als auch sichere SSO-Modi
-  - Token-Signierung basierend auf HMAC-SHA256
+- **SSO‑Modul** – serverseitige Single Sign‑On‑Hilfsmittel
+  - Sichere Token‑Erstellung für die Benutzer‑Authentifizierung
+  - Unterstützung für einfache und sichere SSO‑Modi
+  - Auf HMAC‑SHA256 basierende Token‑Signierung
 
-- **Core Types** - Gemeinsame Typdefinitionen und Hilfsfunktionen
-  - Kommentar-Modelle und Metadatenstrukturen
-  - Benutzer- und Mandantenkonfigurationen
-  - Hilfsfunktionen für häufige Operationen
----
+- **Core‑Typen** – gemeinsam genutzte Typdefinitionen und Hilfsprogramme
+  - Kommentarmodelle und Metadaten‑Strukturen
+  - Benutzer‑ und Mandanten‑Konfigurationen
+  - Hilfsfunktionen für gängige Vorgänge

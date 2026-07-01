@@ -1,10 +1,11 @@
+---
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
+| tenantId | string | Da |  |
 | tag | string | Da |  |
-| tenantId | string | Ne |  |
-| deleteHashTagRequestBody | DeleteHashTagRequestBody | Ne |  |
+| deleteHashTagRequestBody | DeleteHashTagRequestBody | Da |  |
 
 ## Odgovor
 
@@ -14,21 +15,14 @@ Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/bl
 
 [inline-code-attrs-start title = 'Primer deleteHashTag'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tag = U("launch");
-utility::string_t tenantId = U("my-tenant-123");
-DeleteHashTagRequestBody body;
-boost::optional<utility::string_t> optTenant(tenantId);
-boost::optional<DeleteHashTagRequestBody> optBody(body);
-api->deleteHashTag(tag, optTenant, optBody)
-.then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task){
-    try {
-        auto resp = task.get();
-        if (resp) {
-            auto copied = std::make_shared<APIEmptyResponse>(*resp);
-            (void)copied;
-        }
-    } catch (const std::exception &e) {
-        (void)e;
-    }
-});
+auto tenantId = utility::conversions::to_string_t("my-tenant-001");
+auto tag = utility::conversions::to_string_t("news");
+DeleteHashTagRequestBody requestBody;
+requestBody.userId = utility::conversions::to_string_t("user-42");
+requestBody.reason = boost::optional<utility::string_t>(utility::conversions::to_string_t("User request"));
+api->deleteHashTag(tenantId, tag, requestBody)
+    .then([](std::shared_ptr<APIEmptyResponse> resp) {
+    });
 [inline-code-end]
+
+---

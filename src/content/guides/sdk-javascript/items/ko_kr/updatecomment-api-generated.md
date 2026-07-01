@@ -1,32 +1,40 @@
-## 매개변수
+## Parameters
 
-| 이름 | 타입 | 필수 | 설명 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| id | string | 예 |  |
-| updatableCommentParams | UpdatableCommentParams | 예 |  |
-| contextUserId | string | 아니오 |  |
-| doSpamCheck | boolean | 아니오 |  |
-| isLive | boolean | 아니오 |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updatableCommentParams | UpdatableCommentParams | Yes |  |
+| contextUserId | string | No |  |
+| doSpamCheck | boolean | No |  |
+| isLive | boolean | No |  |
 
-## 응답
+## Response
 
-반환: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+반환: [`UpdateCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateCommentResponse.ts)
 
-## 예제
+## Example
 
-[inline-code-attrs-start title = 'updateComment 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateComment 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant-prod-01';
-const id: string = 'cmt-000127';
-const updatableCommentParams: UpdatableCommentParams = {
-  body: 'Thanks — I updated the steps to include the missing config flag.',
-  isHidden: false
-};
-const contextUserId: string = 'moderator_77';
-const doSpamCheck: boolean = true;
-const isLive: boolean = true;
-const result: APIEmptyResponse = await updateComment(tenantId, id, updatableCommentParams, contextUserId, doSpamCheck, isLive);
-[inline-code-end]
+const tenantId: string = "tenant_12345";
+const commentId: string = "cmt_98765";
 
----
+const updatableCommentParams: UpdatableCommentParams = {
+  // 예시 필드; 실제 형태는 API 정의에 따라 다릅니다
+  // 예: body: "Edited comment content",
+};
+
+const contextUserId: string = "user_abcde";
+const doSpamCheck: boolean = true;
+const isLive: boolean = false;
+
+const result: UpdateCommentResponse = await updateComment(
+  tenantId,
+  commentId,
+  updatableCommentParams,
+  contextUserId,
+  doSpamCheck,
+  isLive
+);
+[inline-code-end]

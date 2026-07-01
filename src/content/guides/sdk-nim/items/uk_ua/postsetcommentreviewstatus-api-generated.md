@@ -1,10 +1,10 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Назва | Тип | Обов'язковий | Опис |
 |------|------|----------|-------------|
+| tenantId | string | Так |  |
 | commentId | string | Так |  |
-| reviewed | bool | Ні |  |
-| sso | string | Ні |  |
+| options | PostSetCommentReviewStatusOptions | Ні |  |
 
 ## Відповідь
 
@@ -12,16 +12,17 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад postSetCommentReviewStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postSetCommentReviewStatus Приклад'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postSetCommentReviewStatus(
-  commentId = "cmt-98765-news-article",
-  reviewed = false,
-  sso = ""
+let (apiResp, httpResp) = client.postSetCommentReviewStatus(
+  tenantId = "my-tenant-123",
+  commentId = "cmt-7890",
+  options = PostSetCommentReviewStatusOptions()
 )
-if response.isSome:
-  let apiResp = response.get()
-  echo "Review status updated"
+
+if apiResp.isSome:
+  let _ = apiResp.get()
+  discard
 else:
-  echo "Failed to update review status: " & $httpResponse.status
+  discard
 [inline-code-end]

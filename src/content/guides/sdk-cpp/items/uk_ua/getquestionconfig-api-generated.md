@@ -1,7 +1,6 @@
----
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Так |  |
 | id | string | Так |  |
@@ -12,25 +11,18 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад getQuestionConfig'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getQuestionConfig Приклад'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t questionId = U("qstn-456");
-boost::optional<utility::string_t> ifNoneMatch = U("W/\"5a2f3c\"");
-api->getQuestionConfig(tenantId, questionId)
-.then([ifNoneMatch](pplx::task<std::shared_ptr<GetQuestionConfigResponse>> t){
-    try {
-        auto resp = t.get();
-        if (ifNoneMatch) {
-            auto etag = *ifNoneMatch;
-            (void)etag;
-        }
-        auto cfg = resp ? resp : std::make_shared<GetQuestionConfigResponse>();
-        (void)cfg;
-    } catch (const std::exception &ex) {
-        (void)ex;
-    }
-});
-[inline-code-end]
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto questionId = utility::conversions::to_string_t("question-456");
 
----
+api->getQuestionConfig(tenantId, questionId)
+    .then([](pplx::task<std::shared_ptr<GetQuestionConfigResponse>> task) {
+        try {
+            auto response = task.get();
+            // Використайте відповідь за потреби
+        } catch (const std::exception&) {
+            // Обробити помилку
+        }
+    });
+[inline-code-end]

@@ -1,10 +1,11 @@
 ## Parameter
 
-| Name | Typ | Erforderlich | Beschreibung |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
+| tenantId | string | Ja |  |
 | commentId | string | Ja |  |
 | setCommentTextParams | SetCommentTextParams | Ja |  |
-| sso | string | Nein |  |
+| options | const PostSetCommentTextOptions& | Ja |  |
 
 ## Antwort
 
@@ -12,22 +13,19 @@ Rückgabe: [`SetCommentTextResponse`](https://github.com/FastComments/fastcommen
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'Beispiel für postSetCommentText'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postSetCommentText Beispiel'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t commentId = U("cmt-9a8b7c6d");
-auto paramsPtr = std::make_shared<SetCommentTextParams>();
-paramsPtr->text = U("Updated comment: I've rephrased for clarity.");
-paramsPtr->editedBy = U("moderator@example.com");
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("sso-token-abc123"));
-
-api->postSetCommentText(commentId, *paramsPtr, sso)
-    .then([](pplx::task<std::shared_ptr<SetCommentTextResponse>> task) {
-        try {
-            auto resp = task.get();
-            if (resp) (void)resp;
-        } catch (const std::exception&) {
-        }
+auto tenantId = U("my-tenant-123");
+auto commentId = U("comment-456");
+SetCommentTextParams params;
+params.text = U("Revised comment content");
+PostSetCommentTextOptions options;
+options.requestId = boost::optional<utility::string_t>(U("req-987"));
+api->postSetCommentText(tenantId, commentId, params, options)
+    .then([](std::shared_ptr<SetCommentTextResponse> resp) {
+        auto updatedId = resp->commentId;
+    })
+    .then([](pplx::task<void> t) {
+        try { t.get(); } catch (const std::exception&) {}
     });
 [inline-code-end]
-
----

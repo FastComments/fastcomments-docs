@@ -1,7 +1,8 @@
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
+| tenantId | string | Da |  |
 | commentId | string | Da |  |
 | sso | string | Ne |  |
 
@@ -11,19 +12,18 @@ Vraća: [`GetCommentTextResponse`](https://github.com/FastComments/fastcomments-
 
 ## Primjer
 
-[inline-code-attrs-start title = 'getModerationCommentText Primjer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getModerationCommentText'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t commentId = U("cmt-987654321");
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
-api->getModerationCommentText(commentId, sso)
-.then([](pplx::task<std::shared_ptr<GetCommentTextResponse>> t) -> std::shared_ptr<GetCommentTextResponse> {
-    try {
-        auto resp = t.get();
-        return resp ? resp : std::make_shared<GetCommentTextResponse>();
-    } catch (...) {
-        return std::make_shared<GetCommentTextResponse>();
-    }
-});
-[inline-code-end]
+utility::string_t tenantId = U("my-tenant-123");
+utility::string_t commentId = U("cmt-987654");
+boost::optional<utility::string_t> sso = U("sso-token-abc");
 
----
+api->getModerationCommentText(tenantId, commentId, sno)
+    .then([](pplx::task<std::shared_ptr<GetCommentTextResponse>> t) {
+        try {
+            auto resp = t.get();
+            auto text = std::make_shared<std::string>(resp->commentText);
+        } catch (const std::exception&) {
+        }
+    });
+[inline-code-end]

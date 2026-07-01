@@ -1,8 +1,7 @@
----
-Прошлые комментаторы на странице, которые в настоящее время НЕ в сети. Отсортировано по displayName.
-Используйте это после исчерпания /users/online для отображения секции "Участники".
-Курсорная пагинация по commenterName: сервер проходит по частичному индексу {tenantId, urlId, commenterName}
-индекс от afterName вперёд через $gt, без затрат на $skip.
+Past commenters on the page who are NOT currently online. Sorted by displayName.  
+Use this after exhausting /users/online to render a "Members" section.  
+Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName}  
+index from afterName forward via $gt, no $skip cost.
 
 ## Параметры
 
@@ -10,8 +9,7 @@
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | urlId | string | Да |  |
-| afterName | string | Нет |  |
-| afterUserId | string | Нет |  |
+| options | const GetOfflineUsersOptions& | Да |  |
 
 ## Ответ
 
@@ -21,14 +19,17 @@
 
 [inline-code-attrs-start title = 'Пример getOfflineUsers'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-auto tenantId = utility::string_t(U("my-tenant-123"));
-auto urlId = utility::string_t(U("article-456"));
-boost::optional<utility::string_t> afterName = boost::optional<utility::string_t>(U("jane.doe@example.com"));
-boost::optional<utility::string_t> afterUserId = boost::optional<utility::string_t>(U("user-789"));
-api->getOfflineUsers(tenantId, urlId, afterName, afterUserId).then([](std::shared_ptr<PageUsersOfflineResponse> resp){
-    auto result = resp ? resp : std::make_shared<PageUsersOfflineResponse>();
-    (void)result;
-});
-[inline-code-end]
+utility::string_t tenantId = U("my-tenant-123");
+utility::string_t urlId = U("page-456");
+GetOfflineUsersOptions options;
+options.limit = boost::optional<int>(50);
+options.includeDetails = boost::optional<bool>(true);
 
----
+api->getOfflineUsers(tenantId, urlId, options)
+    .then([](pplx::task<std::shared_ptr<PageUsersOfflineResponse>> t) {
+        try {
+            auto response = t.get();
+        } catch (const std::exception&) {
+        }
+    });
+[inline-code-end]

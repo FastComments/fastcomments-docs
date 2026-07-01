@@ -1,13 +1,14 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| commentId | string | path | はい |  |
-| sso | string | query | いいえ |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| sso | string | query | No |  |
 
 ## レスポンス
 
-返却値: [`GetBannedUsersFromCommentResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetBannedUsersFromCommentResponse.java)
+返り値: [`GetBannedUsersFromCommentResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetBannedUsersFromCommentResponse.java)
 
 ## 例
 
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      GetBannedUsersFromCommentResponse result = apiInstance.getBanUsersFromComment(commentId)
+      GetBannedUsersFromCommentResponse result = apiInstance.getBanUsersFromComment(tenantId, commentId)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -43,5 +45,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

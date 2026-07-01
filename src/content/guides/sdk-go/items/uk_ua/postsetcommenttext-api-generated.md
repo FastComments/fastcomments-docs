@@ -1,13 +1,15 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов’язково | Опис |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | commentId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
 | sso | string | query | No |  |
 
 ## Відповідь
 
-Повертає: [`SetCommentTextResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_set_comment_text_response.go)
+Returns: [`SetCommentTextResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_set_comment_text_response.go)
 
 ## Приклад
 
@@ -23,18 +25,20 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
 	setCommentTextParams := *openapiclient.NewSetCommentTextParams("Comment_example") // SetCommentTextParams | 
-	sso := "sso_example" // string |  (необов'язково)
+	broadcastId := "broadcastId_example" // string |  (необов’язково)
+	sso := "sso_example" // string |  (необов’язково)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostSetCommentText(context.Background(), commentId).SetCommentTextParams(setCommentTextParams).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostSetCommentText(context.Background(), commentId).TenantId(tenantId).SetCommentTextParams(setCommentTextParams).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostSetCommentText``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Помилка під час виклику `ModerationAPI.PostSetCommentText``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Повна HTTP відповідь: %v\n", r)
 	}
-	// Відповідь від `PostSetCommentText`: SetCommentTextResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostSetCommentText`: %v\n", resp)
+	// відповідь від `PostSetCommentText`: SetCommentTextResponse
+	fmt.Fprintf(os.Stdout, "Відповідь від `ModerationAPI.PostSetCommentText`: %v\n", resp)
 }
 [inline-code-end]

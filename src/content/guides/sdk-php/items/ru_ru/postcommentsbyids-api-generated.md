@@ -1,7 +1,8 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
 | sso | string | query | Нет |  |
 
 ## Ответ
@@ -18,15 +19,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Если вы хотите использовать собственный HTTP-клиент, передайте клиент, который реализует `GuzzleHttp\ClientInterface`.
-    // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
+    // Если вы хотите использовать собственный HTTP‑клиент, передайте ваш клиент, реализующий `GuzzleHttp\ClientInterface`.
+    // Это опционально, по умолчанию будет использован `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
+
+$tenant_id = 'tenant_id_example'; // string
 $comments_by_ids_params = new \FastComments\Client\Model\CommentsByIdsParams(); // \FastComments\Client\Model\CommentsByIdsParams
 $sso = 'sso_example'; // string
 
+
 try {
-    $result = $apiInstance->postCommentsByIds($comments_by_ids_params, $sso);
+    $result = $apiInstance->postCommentsByIds($tenant_id, $comments_by_ids_params, $sso);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->postCommentsByIds: ', $e->getMessage(), PHP_EOL;

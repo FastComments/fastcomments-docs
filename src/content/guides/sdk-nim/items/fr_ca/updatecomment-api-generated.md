@@ -1,13 +1,11 @@
 ## Paramètres
 
 | Name | Type | Requis | Description |
-|------|------|----------|-------------|
+|------|------|--------|-------------|
 | tenantId | string | Oui |  |
 | id | string | Non |  |
 | updatableCommentParams | UpdatableCommentParams | Non |  |
-| contextUserId | string | Non |  |
-| doSpamCheck | bool | Non |  |
-| isLive | bool | Non |  |
+| options | UpdateCommentOptions | Non |  |
 
 ## Réponse
 
@@ -15,22 +13,18 @@ Retourne : [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomm
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de updateComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple updateComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateComment(
+let commentParams = UpdatableCommentParams(content: "Updated comment content")
+let updateOpts = UpdateCommentOptions(force: false)
+
+let (respOpt, httpResp) = client.updateComment(
   tenantId = "my-tenant-123",
-  id = "cmt-987654",
-  updatableCommentParams = UpdatableCommentParams(
-    text = "Updated comment: corrected facts and clarified wording.",
-    isApproved = true,
-    tags = @["news", "update"]
-  ),
-  contextUserId = "user-456",
-  doSpamCheck = true,
-  isLive = true
+  id = "comment-456",
+  updatableCommentParams = commentParams,
+  options = updateOpts
 )
 
-if response.isSome:
-  let apiResp = response.get()
-  discard apiResp
+if respOpt.isSome:
+  let resp = respOpt.get()
 [inline-code-end]

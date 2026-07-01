@@ -1,4 +1,4 @@
-## Parametre
+## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
@@ -6,11 +6,11 @@
 | urlIdWS | string | query | Ja |  |
 | userIds | string | query | Ja |  |
 
-## Svar
+## Response
 
 Returnerer: [`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetUserPresenceStatusesResponse.php)
 
-## Eksempel
+## Example
 
 [inline-code-attrs-start title = 'getUserPresenceStatuses Eksempel'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -20,13 +20,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Hvis du vil bruge en brugerdefineret HTTP-klient, skal du give din klient, som implementerer `GuzzleHttp\ClientInterface`.
-    // Dette er valgfrit; `GuzzleHttp\Client` vil blive brugt som standard.
+    // Hvis du vil bruge en tilpasset HTTP-klient, skal du give din klient, som implementerer `GuzzleHttp\ClientInterface`.
+    // Dette er valgfrit, `GuzzleHttp\Client` vil blive brugt som standard.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $url_id_ws = 'url_id_ws_example'; // string
 $user_ids = 'user_ids_example'; // string
+
 
 try {
     $result = $apiInstance->getUserPresenceStatuses($tenant_id, $url_id_ws, $user_ids);
@@ -35,3 +37,5 @@ try {
     echo 'Exception when calling PublicApi->getUserPresenceStatuses: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

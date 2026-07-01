@@ -1,32 +1,43 @@
-Lista stranica za tenant. Koristi FChat desktop klijent da popuni svoju listu soba.
-Zahteva da `enableFChat` bude true u razrešenoj prilagođenoj konfiguraciji za svaku stranicu.
-Stranice koje zahtevaju SSO se filtriraju prema grupnim pristupima korisnika koji šalje zahtev.
+Lista stranica za tenant. Koristi se od strane FChat desktop klijenta za popunjavanje liste soba.  
+Zahteva da `enableFChat` bude true u razrešenoj prilagođenoj konfiguraciji za svaku stranicu.  
+Stranice koje zahtevaju SSO se filtriraju prema grupnom pristupu korisnika koji traži.
 
 ## Parametri
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| tenantId | string | Da |  |
-| cursor | string | Ne |  |
-| limit | number | Ne |  |
-| q | string | Ne |  |
-| sortBy | PagesSortBy | Ne |  |
-| hasComments | boolean | Ne |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| cursor | string | No |  |
+| limit | number | No |  |
+| q | string | No |  |
+| sortBy | PagesSortBy | No |  |
+| hasComments | boolean | No |  |
 
 ## Odgovor
 
-Vraća: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPublicPagesResponse.ts)
+Vraća: [`GetPagesPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPagesPublicResponse.ts)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer getPagesPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7f9b2c";
-const cursor: string = "cursor_0001a2b3";
-const limit: number = 25;
-const q: string = "product page";
-const hasComments: boolean = true;
-const response: GetPublicPagesResponse = await getPagesPublic(tenantId, cursor, limit, q, undefined, hasComments);
-[inline-code-end]
+async function fetchPages() {
+  const tenantId: string = "tenant_12345";
+  const cursor: string = "nextPageToken";
+  const limit: number = 20;
+  const q: string = "blog";
+  const sortBy: PagesSortBy = "createdAt";
+  const hasComments: boolean = true;
 
----
+  const response: GetPagesPublicResponse = await getPagesPublic(
+    tenantId,
+    cursor,
+    limit,
+    q,
+    sortBy,
+    hasComments
+  );
+
+  console.log(response);
+}
+[inline-code-end]

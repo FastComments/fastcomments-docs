@@ -2,6 +2,7 @@
 
 | 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | text-search | string | query | No |  |
 | byIPFromComment | string | query | No |  |
 | filters | string | query | No |  |
@@ -11,7 +12,7 @@
 
 ## 回應
 
-回傳：[`ModerationExportResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_export_response.go)
+返回: [`ModerationExportResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_export_response.go)
 
 ## 範例
 
@@ -27,23 +28,22 @@ import (
 )
 
 func main() {
-	textSearch := "textSearch_example" // string |  (可選)
-	byIPFromComment := "byIPFromComment_example" // string |  (可選)
-	filters := "filters_example" // string |  (可選)
-	searchFilters := "searchFilters_example" // string |  (可選)
-	sorts := "sorts_example" // string |  (可選)
-	sso := "sso_example" // string |  (可選)
+	tenantId := "tenantId_example" // string | 
+	textSearch := "textSearch_example" // string |  (optional) -> (可選)
+	byIPFromComment := "byIPFromComment_example" // string |  (optional) -> (可選)
+	filters := "filters_example" // string |  (optional) -> (可選)
+	searchFilters := "searchFilters_example" // string |  (optional) -> (可選)
+	sorts := "sorts_example" // string |  (optional) -> (可選)
+	sso := "sso_example" // string |  (optional) -> (可選)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostApiExport(context.Background()).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).Sorts(sorts).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostApiExport(context.Background()).TenantId(tenantId).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).Sorts(sorts).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostApiExport``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// 從 `PostApiExport` 回傳的回應：ModerationExportResponse
+	// response from `PostApiExport`: ModerationExportResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostApiExport`: %v\n", resp)
 }
 [inline-code-end]
-
----

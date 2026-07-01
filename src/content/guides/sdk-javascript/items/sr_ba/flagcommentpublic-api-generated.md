@@ -1,25 +1,35 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| commentId | string | Да |  |
-| isFlagged | boolean | Да |  |
-| sso | string | Не |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Da |  |
+| commentId | string | Da |  |
+| isFlagged | boolean | Da |  |
+| sso | string | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Vraća: [`FlagCommentPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentPublicResponse.ts)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'flagCommentPublic Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'flagCommentPublic Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-inc-84";
-const commentId: string = "b7f3e9a1-4c2d-4f6b-9f2a-123456789abc";
-const isFlaggedOn: boolean = true;
-const isFlaggedOff: boolean = false;
-const ssoToken: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIn0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c";
-const resultWithoutSso: APIEmptyResponse = await flagCommentPublic(tenantId, commentId, isFlaggedOn);
-const resultWithSso: APIEmptyResponse = await flagCommentPublic(tenantId, commentId, isFlaggedOff, ssoToken);
+async function demoFlagComment() {
+    const tenantId: string = "acme-tenant-123";
+    const commentId: string = "comment-987654";
+    const isFlagged: boolean = true;
+    const sso: string = "sso-token-abc123";
+
+    const result: FlagCommentPublicResponse = await flagCommentPublic(
+        tenantId,
+        commentId,
+        isFlagged,
+        sso
+    );
+
+    console.log(result);
+}
+
+demoFlagComment();
 [inline-code-end]

@@ -1,24 +1,20 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| urlId | string | Да |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[GetV1PageLikes]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_v1_page_likes.nim)
+Vraća: [`Option[GetV1PageLikes]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_v1_page_likes.nim)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример getV1PageLikes'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getV1PageLikes Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getV1PageLikes(tenantId = "my-tenant-123", urlId = "news/how-to-train-your-dragon")
+let (response, httpResponse) = client.getV1PageLikes(tenantId = "my-tenant-123", urlId = "news/article-title")
 if response.isSome:
   let pageLikes = response.get()
-  echo "Fetched page likes for url:", "news/how-to-train-your-dragon"
-else:
-  echo "No likes returned for url:", "news/how-to-train-your-dragon"
+  # iskoristite pageLikes po potrebi
 [inline-code-end]
-
----

@@ -1,8 +1,7 @@
----
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
 | tenantId | string | Tak |  |
 | id | string | Nie |  |
 | updateUserBadgeParams | UpdateUserBadgeParams | Nie |  |
@@ -13,19 +12,10 @@ Zwraca: [`Option[APIEmptySuccessResponse]`](https://github.com/FastComments/fast
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład użycia updateUserBadge'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład updateUserBadge'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateUserBadge(
-  tenantId = "my-tenant-123",
-  id = "user-456",
-  updateUserBadgeParams = UpdateUserBadgeParams()
-)
-
-if response.isSome:
-  let success = response.get()
-  echo "Badge updated successfully"
-else:
-  echo "Badge update failed"
+let params = UpdateUserBadgeParams()
+let (maybeResp, httpResp) = client.updateUserBadge(tenantId = "my-tenant-123", id = "user-456", updateUserBadgeParams = params)
+if maybeResp.isSome:
+  let success = maybeResp.get()
 [inline-code-end]
-
----

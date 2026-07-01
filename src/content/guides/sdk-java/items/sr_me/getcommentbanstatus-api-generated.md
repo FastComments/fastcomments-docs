@@ -1,19 +1,20 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Да |  |
-| sso | string | query | Не |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| sso | string | query | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetCommentBanStatusResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetCommentBanStatusResponse.java)
+Vraća: [`GetCommentBanStatusResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetCommentBanStatusResponse.java)
 
-## Примјер
+## Primer
 
-[inline-code-attrs-start title = 'Примјер getCommentBanStatus'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getCommentBanStatus'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Увезите класе:
+// Uvezi klase:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,14 +27,16 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      GetCommentBanStatusResponse result = apiInstance.getCommentBanStatus(commentId)
+      GetCommentBanStatusResponse result = apiInstance.getCommentBanStatus(tenantId, commentId)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
+      // Izuzetak prilikom poziva ModerationApi#getCommentBanStatus
       System.err.println("Exception when calling ModerationApi#getCommentBanStatus");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());

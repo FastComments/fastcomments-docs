@@ -1,6 +1,6 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Ad | Tip | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Evet |  |
 | postIds | array | query | Evet |  |
@@ -20,13 +20,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Özel bir HTTP istemcisi kullanmak istiyorsanız, `GuzzleHttp\ClientInterface` uygulayan istemcinizi geçin.
-    // Bu isteğe bağlıdır, `GuzzleHttp\Client` varsayılan olarak kullanılacaktır.
+    // Özel bir HTTP istemcisi kullanmak istiyorsanız, `GuzzleHttp\ClientInterface` uygulayan istemcinizi geçirin.
+    // Bu isteğe bağlıdır, varsayılan olarak `GuzzleHttp\Client` kullanılacaktır.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $post_ids = array('post_ids_example'); // string[]
 $sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->getFeedPostsStats($tenant_id, $post_ids, $sso);
@@ -35,3 +37,5 @@ try {
     echo 'Exception when calling PublicApi->getFeedPostsStats: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

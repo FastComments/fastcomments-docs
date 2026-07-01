@@ -1,14 +1,14 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | タイプ | ロケーション | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | はい |  |
-| id | string | path | はい |  |
-| userId | string | query | いいえ |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| userId | string | query | No |  |
 
 ## レスポンス
 
-戻り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
+返却: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
 ## 例
 
@@ -18,22 +18,27 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// APIキー認証を設定: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// 必要に応じて、APIキーに接頭辞（例: Bearer）を設定するには下の行のコメントアウトを外してください
+// Configure API key authorization: api_key
+// API キー認証を設定: api_key
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// 必要に応じて下の行のコメントを外し、プレフィックス（例: Bearer）を設定します
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // カスタムのHTTPクライアントを使用したい場合は、`GuzzleHttp\ClientInterface`を実装するクライアントを渡してください。
-    // これはオプションです。デフォルトでは`GuzzleHttp\Client`が使用されます。
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // カスタム HTTP クライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装したクライアントを渡してください。
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // 省略可能です。デフォルトでは `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$id = 'id_example'; // string
+
+$tenant_id = 'tenant_id_example'; // 文字列
+$id = 'id_example'; // 文字列
 $update_notification_body = new \FastComments\Client\Model\UpdateNotificationBody(); // \FastComments\Client\Model\UpdateNotificationBody
-$user_id = 'user_id_example'; // string
+$user_id = 'user_id_example'; // 文字列
+
 
 try {
     $result = $apiInstance->updateNotification($tenant_id, $id, $update_notification_body, $user_id);
@@ -42,3 +47,5 @@ try {
     echo 'Exception when calling DefaultApi->updateNotification: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

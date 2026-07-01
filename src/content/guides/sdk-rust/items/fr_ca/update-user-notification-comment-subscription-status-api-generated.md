@@ -1,36 +1,32 @@
----
-Activer ou désactiver les notifications pour un commentaire spécifique.
+Enable or disable notifications for a specific comment.
 
 ## Paramètres
 
 | Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| notification_id | String | Yes |  |
-| opted_in_or_out | String | Yes |  |
-| comment_id | String | Yes |  |
-| sso | String | No |  |
+| tenant_id | String | Oui |  |
+| notification_id | String | Oui |  |
+| opted_in_or_out | String | Oui |  |
+| comment_id | String | Oui |  |
+| sso | String | Non |  |
 
 ## Réponse
 
-Retourne : [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/update_user_notification_comment_subscription_status_response.rs)
+Renvoie : [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/update_user_notification_comment_subscription_status_response.rs)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'update_user_notification_comment_subscription_status Exemple'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple de mise à jour du statut d\'abonnement aux notifications de commentaire'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example() -> Result<UpdateUserNotificationCommentSubscriptionStatusResponse, Error> {
-    let params: UpdateUserNotificationCommentSubscriptionStatusParams = UpdateUserNotificationCommentSubscriptionStatusParams {
+async fn run_example(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = UpdateUserNotificationCommentSubscriptionStatusParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        notification_id: "news/winter-2026-update".to_string(),
+        notification_id: "comment-reply".to_string(),
         opted_in_or_out: "opted_in".to_string(),
-        comment_id: "article-42-comment-7".to_string(),
-        sso: Some("user-123|eyJhbGciOi...".to_string()),
+        comment_id: "12345".to_string(),
+        sso: Some("user-sso-token".to_string()),
     };
-    let response: UpdateUserNotificationCommentSubscriptionStatusResponse =
-        update_user_notification_comment_subscription_status(&configuration, params).await?;
-    Ok(response)
+    let _response = update_user_notification_comment_subscription_status(configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

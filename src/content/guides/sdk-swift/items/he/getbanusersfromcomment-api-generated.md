@@ -1,9 +1,10 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| commentId | string | נתיב | כן |  |
-| sso | string | שאילתה | לא |  |
+| tenantId | string | query | כן |  |
+| commentId | string | path | כן |  |
+| sso | string | query | לא |  |
 
 ## תגובה
 
@@ -11,15 +12,16 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getBanUsersFromComment'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getBanUsersFromComment דוגמה'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// דוגמאות הקוד הבאות עדיין בטא. עבור כל בעיה, נא לדווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// קטעי הקוד הבאים עדיין במצב בטא. לכל בעיה, אנא דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
-let sso = "sso_example" // String |  (אופציונלי)
+let sso = "sso_example" // String |  (optional)
 
-ModerationAPI.getBanUsersFromComment(commentId: commentId, sso: sso) { (response, error) in
+ModerationAPI.getBanUsersFromComment(tenantId: tenantId, commentId: commentId, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -30,5 +32,3 @@ ModerationAPI.getBanUsersFromComment(commentId: commentId, sso: sso) { (response
     }
 }
 [inline-code-end]
-
----

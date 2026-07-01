@@ -1,8 +1,10 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Sí |  |
 | commentId | string | path | Sí |  |
+| broadcastId | string | query | No |  |
 | sso | string | query | No |  |
 
 ## Respuesta
@@ -26,10 +28,13 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
+    String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      APIEmptyResponse result = apiInstance.postRestoreDeletedComment(commentId)
+      APIEmptyResponse result = apiInstance.postRestoreDeletedComment(tenantId, commentId)
+            .broadcastId(broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);

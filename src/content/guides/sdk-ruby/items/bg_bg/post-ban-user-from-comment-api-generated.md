@@ -1,17 +1,18 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Yes |  |
-| banEmail | boolean | query | No |  |
-| banEmailDomain | boolean | query | No |  |
-| banIP | boolean | query | No |  |
-| deleteAllUsersComments | boolean | query | No |  |
-| bannedUntil | string | query | No |  |
-| isShadowBan | boolean | query | No |  |
-| updateId | string | query | No |  |
-| banReason | string | query | No |  |
-| sso | string | query | No |  |
+| Име | Тип | Местоположение | Задължително | Описание |
+|------|------|----------------|--------------|----------|
+| tenantId | string | запитване | Да |  |
+| commentId | string | път | Да |  |
+| banEmail | boolean | запитване | Не |  |
+| banEmailDomain | boolean | запитване | Не |  |
+| banIP | boolean | запитване | Не |  |
+| deleteAllUsersComments | boolean | запитване | Не |  |
+| bannedUntil | string | запитване | Не |  |
+| isShadowBan | boolean | запитване | Не |  |
+| updateId | string | запитване | Не |  |
+| banReason | string | запитване | Не |  |
+| sso | string | запитване | Не |  |
 
 ## Отговор
 
@@ -19,30 +20,31 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за post_ban_user_from_comment'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_ban_user_from_comment Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
-comment_id = 'comment_id_example' # Низ | 
+tenant_id = 'tenant_id_example' # String | 
+comment_id = 'comment_id_example' # String | 
 opts = {
-  ban_email: true, # Булев | 
-  ban_email_domain: true, # Булев | 
-  ban_ip: true, # Булев | 
-  delete_all_users_comments: true, # Булев | 
-  banned_until: 'banned_until_example', # Низ | 
-  is_shadow_ban: true, # Булев | 
-  update_id: 'update_id_example', # Низ | 
-  ban_reason: 'ban_reason_example', # Низ | 
-  sso: 'sso_example' # Низ | 
+  ban_email: true, # Boolean | 
+  ban_email_domain: true, # Boolean | 
+  ban_ip: true, # Boolean | 
+  delete_all_users_comments: true, # Boolean | 
+  banned_until: 'banned_until_example', # String | 
+  is_shadow_ban: true, # Boolean | 
+  update_id: 'update_id_example', # String | 
+  ban_reason: 'ban_reason_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.post_ban_user_from_comment(comment_id, opts)
+  result = api_instance.post_ban_user_from_comment(tenant_id, comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
-  puts "Error when calling ModerationApi->post_ban_user_from_comment: #{e}"
+  puts "Грешка при извикване на ModerationApi->post_ban_user_from_comment: #{e}"
 end
 [inline-code-end]

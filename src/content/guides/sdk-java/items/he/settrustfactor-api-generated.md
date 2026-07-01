@@ -1,20 +1,21 @@
-## פרמטרים
+## Parameters
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | כן |  |
 | userId | string | query | לא |  |
 | trustFactor | string | query | לא |  |
 | sso | string | query | לא |  |
 
-## תגובה
+## Response
 
 מחזיר: [`SetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SetUserTrustFactorResponse.java)
 
-## דוגמה
+## Example
 
-[inline-code-attrs-start title = 'דוגמה ל-setTrustFactor'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת setTrustFactor'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// יבוא מחלקות:
+// ייבא מחלקות:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -27,11 +28,12 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String userId = "userId_example"; // String | 
     String trustFactor = "trustFactor_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      SetUserTrustFactorResponse result = apiInstance.setTrustFactor()
+      SetUserTrustFactorResponse result = apiInstance.setTrustFactor(tenantId)
             .userId(userId)
             .trustFactor(trustFactor)
             .sso(sso)
@@ -47,5 +49,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

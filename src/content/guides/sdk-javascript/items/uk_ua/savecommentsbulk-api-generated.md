@@ -1,7 +1,7 @@
 ## Параметри
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Назва | Тип | Обов'язково | Опис |
+|------|------|-------------|------|
 | tenantId | string | Так |  |
 | createCommentParams | Array<CreateCommentParams> | Так |  |
 | isLive | boolean | Ні |  |
@@ -17,23 +17,29 @@
 
 [inline-code-attrs-start title = 'Приклад saveCommentsBulk'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme_corp_tenant_12';
-const createCommentParams: Array<CreateCommentParams> = [
+const tenantId: string = "tenant_9f8b7c6d";
+
+const bulkComments: CreateCommentParams[] = [
   {
-    content: 'Really helpful breakdown of the migration steps.',
-    threadId: 'thread_2026_08',
-    authorName: 'Maya Singh',
-    authorEmail: 'maya.singh@startup.io',
-    mentions: [{ userId: 'user_314', displayName: 'Leo Park' }],
-    hashtags: [{ tag: 'migration' }],
-    createdAt: '2026-06-19T12:00:00Z'
+    content: "Welcome to the new forum thread!",
+    authorId: "user_42",
+    mentions: [{ userId: "user_84", username: "alice" }],
+    hashtags: [{ tag: "intro" }]
+  },
+  {
+    content: "Please review the updated guidelines.",
+    authorId: "moderator_1",
+    mentions: [],
+    hashtags: [{ tag: "guidelines" }, { tag: "update" }]
   }
 ];
-const isLive: boolean = true;
-const doSpamCheck: boolean = true;
-const sendEmails: boolean = false;
-const populateNotifications: boolean = true;
-const responses: Array<SaveCommentsBulkResponse> = await saveCommentsBulk(tenantId, createCommentParams, isLive, doSpamCheck, sendEmails, populateNotifications);
-[inline-code-end]
 
----
+const results: SaveCommentsBulkResponse[] = await saveCommentsBulk(
+  tenantId,
+  bulkComments,
+  true,      // isLive
+  false,     // doSpamCheck
+  true,      // sendEmails
+  undefined  // populateNotifications (за замовчуванням)
+);
+[inline-code-end]

@@ -1,23 +1,27 @@
 ## Parametri
 
-| Ime | Tip | Zahtevano | Opis |
+| Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
-| commentId | string | Da |  |
-| adjustCommentVotesParams | AdjustCommentVotesParams | Ne |  |
-| sso | string | Ne |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| adjustCommentVotesParams | AdjustCommentVotesParams | No |  |
+| options | PostAdjustCommentVotesOptions | No |  |
 
-## Odziv
+## Odgovor
 
-Vrača: [`Option[AdjustVotesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_adjust_votes_response.nim)
+Vrne: [`Option[AdjustVotesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_adjust_votes_response.nim)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer postAdjustCommentVotes'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postAdjustCommentVotes(commentId = "cmt-987654", adjustCommentVotesParams = nil, sso = "sso-token-abc123")
-if response.isSome:
-  let adjusted = response.get()
-  discard adjusted
-[inline-code-end]
+let (adjustRespOpt, httpResp) = client.postAdjustCommentVotes(
+  tenantId = "my-tenant-123",
+  commentId = "cmt-789",
+  adjustCommentVotesParams = AdjustCommentVotesParams(),
+  options = PostAdjustCommentVotesOptions()
+)
 
----
+if adjustRespOpt.isSome:
+  let adjustResp = adjustRespOpt.get()
+[inline-code-end]

@@ -25,7 +25,7 @@ let monthNumber = 987 // Double |  (optional)
 let dayNumber = 987 // Double |  (optional)
 let skip = 987 // Double |  (optional)
 
-DefaultAPI.getTenantDailyUsages(tenantId: tenantId, yearNumber: yearNumber, monthNumber: monthNumber, dayNumber: dayNumber, skip: skip) { (response, error) in
+DefaultAPI.getTenantDailyUsages(tenantId: tenantId, options: DefaultAPI.GetTenantDailyUsagesOptions(yearNumber: yearNumber, monthNumber: monthNumber, dayNumber: dayNumber, skip: skip)) { (response, error) in
     guard error == nil else {
         print(error)
         return

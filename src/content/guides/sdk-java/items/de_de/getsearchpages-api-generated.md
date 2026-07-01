@@ -1,17 +1,18 @@
 ## Parameter
 
-| Name | Type | Location | Required | Description |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Ja |  |
 | value | string | query | Nein |  |
 | sso | string | query | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`ModerationPageSearchResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationPageSearchResponse.java)
+Rückgabe: [`ModerationPageSearchResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationPageSearchResponse.java)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'Beispiel für getSearchPages'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSearchPages Beispiel'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Klassen importieren:
 import com.fastcomments.invoker.ApiClient;
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String value = "value_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationPageSearchResponse result = apiInstance.getSearchPages()
+      ModerationPageSearchResponse result = apiInstance.getSearchPages(tenantId)
             .value(value)
             .sso(sso)
             .execute();
@@ -44,5 +46,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

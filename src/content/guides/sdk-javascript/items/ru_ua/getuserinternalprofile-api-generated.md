@@ -1,20 +1,28 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Обязательно | Описание |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| commentId | string | Нет |  |
-| sso | string | Нет |  |
+| commentId | string | Ні |  |
+| tenantId | string | Ні |  |
+| sso | string | Ні |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`GetUserInternalProfileResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserInternalProfileResponse.ts)
+Повертає: [`GetUserInternalProfileResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserInternalProfileResponse1.ts)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример getUserInternalProfile'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUserInternalProfile Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const profileByCommentId: GetUserInternalProfileResponse = await getUserInternalProfile('comment_5f1e8a3b9c2d4');
-const profileBySSOToken: GetUserInternalProfileResponse = await getUserInternalProfile(undefined, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.dummypayload.signature');
-[inline-code-end]
+(async () => {
+  const fullProfile: GetUserInternalProfileResponse1 = await getUserInternalProfile({
+    commentId: "cmt_12345",
+    tenantId: "tenant_67890",
+    sso: "sso_token_abcdef"
+  });
 
----
+  const partialProfile: GetUserInternalProfileResponse1 = await getUserInternalProfile({
+    commentId: "cmt_98765"
+  });
+})();
+[inline-code-end]

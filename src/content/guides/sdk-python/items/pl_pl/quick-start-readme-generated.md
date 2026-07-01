@@ -1,42 +1,39 @@
 ### Korzystanie z uwierzytelnionych API (DefaultApi)
 
-**Ważne:** Musisz ustawić swój klucz API w Configuration przed wykonaniem uwierzytelnionych żądań. Jeśli tego nie zrobisz, żądania zakończą się błędem 401.
+**Ważne:** Musisz ustawić swój klucz API w konfiguracji przed wykonywaniem uwierzytelnionych żądań. Jeśli tego nie zrobisz, żądania zakończą się błędem 401.
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
 from client.models import CreateAPISSOUserData
 
-# Create and configure the API client
+# Utwórz i skonfiguruj klienta API
 config = Configuration()
 config.host = "https://fastcomments.com/api"
 
-# REQUIRED: Set your API key (get this from your FastComments dashboard)
+# WYMAGANE: Ustaw swój klucz API (pobierz go z panelu FastComments)
 config.api_key = {"ApiKeyAuth": "YOUR_API_KEY_HERE"}
 
-# Create the API instance with the configured client
+# Utwórz instancję API z skonfigurowanym klientem
 api_client = ApiClient(configuration=config)
 api = DefaultApi(api_client)
 
-# Now you can make authenticated API calls
+# Teraz możesz wykonywać uwierzytelnione wywołania API
 try:
-    # Example: Add an SSO user
+    # Przykład: Dodaj użytkownika SSO
     user_data = CreateAPISSOUserData(
         id="user-123",
         email="user@example.com",
         display_name="John Doe"
     )
 
-    response = api.add_sso_user(
-        tenant_id="YOUR_TENANT_ID",
-        create_apisso_user_data=user_data
-    )
+    response = api.add_sso_user("YOUR_TENANT_ID", user_data)
     print(f"User created: {response}")
 
 except Exception as e:
     print(f"Error: {e}")
-    # Common errors:
-    # - 401: API key is missing or invalid
-    # - 400: Request validation failed
+    # Typowe błędy:
+    # - 401: Brak klucza API lub jest nieprawidłowy
+    # - 400: Niepowodzenie walidacji żądania
 ```
 
 ### Korzystanie z publicznych API (PublicApi)
@@ -53,10 +50,7 @@ api_client = ApiClient(configuration=config)
 public_api = PublicApi(api_client)
 
 try:
-    response = public_api.get_comments_public(
-        tenant_id="YOUR_TENANT_ID",
-        url_id="page-url-id"
-    )
+    response = public_api.get_comments_public("YOUR_TENANT_ID", "page-url-id")
     print(response)
 except Exception as e:
     print(f"Error: {e}")
@@ -64,10 +58,11 @@ except Exception as e:
 
 ### Korzystanie z panelu moderacji (ModerationApi)
 
-The `ModerationApi` powers the moderator dashboard. Methods are called on behalf of a moderator by passing an `sso` token:
+API `ModerationApi` napędza panel moderatora. Metody są wywoływane w imieniu moderatora poprzez przekazanie tokenu `sso`:
 
 ```python
 from client import ApiClient, Configuration, ModerationApi
+from client.api.moderation_api import GetCountOptions
 
 config = Configuration()
 config.host = "https://fastcomments.com/api"
@@ -76,8 +71,8 @@ api_client = ApiClient(configuration=config)
 moderation_api = ModerationApi(api_client)
 
 try:
-    # Count the comments awaiting moderation
-    response = moderation_api.get_count(sso="SSO_TOKEN")
+    # Zlicz komentarze czekające na moderację
+    response = moderation_api.get_count(GetCountOptions(sso="SSO_TOKEN"))
     print(response)
 except Exception as e:
     print(f"Error: {e}")
@@ -90,7 +85,7 @@ SDK zawiera narzędzia do generowania bezpiecznych tokenów SSO:
 ```python
 from sso import FastCommentsSSO, SecureSSOUserData
 
-# Create user data
+# Utwórz dane użytkownika
 user_data = SecureSSOUserData(
     user_id="user-123",
     email="user@example.com",
@@ -98,20 +93,20 @@ user_data = SecureSSOUserData(
     avatar="https://example.com/avatar.jpg"
 )
 
-# Create SSO instance with your API secret
+# Utwórz instancję SSO z Twoim sekretem API
 sso = FastCommentsSSO.new_secure(
     api_secret="YOUR_API_SECRET",
     user_data=user_data
 )
 
-# Generate the SSO token
+# Wygeneruj token SSO
 sso_token = sso.create_token()
 
-# Use this token in your frontend or pass to API calls
+# Użyj tego tokenu w frontendzie lub przekaż go w wywołaniach API
 print(f"SSO Token: {sso_token}")
 ```
 
-For simple SSO (less secure, for testing):
+Dla prostego SSO (mniej bezpieczne, do testów):
 
 ```python
 from sso import FastCommentsSSO, SimpleSSOUserData
@@ -127,8 +122,8 @@ sso_token = sso.create_token()
 
 ### Typowe problemy
 
-1. **401 "missing-api-key" error**: Upewnij się, że ustawisz `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` przed utworzeniem instancji DefaultApi.
-2. **Wrong API class**: Użyj `DefaultApi` dla uwierzytelnionych żądań po stronie serwera, `PublicApi` dla żądań klienckich/publicznych oraz `ModerationApi` dla żądań panelu moderatora.
-3. **Import errors**: Upewnij się, że importujesz z właściwego modułu:
-   - API client: `from client import ...`
-   - SSO utilities: `from sso import ...`
+1. **Błąd 401 "missing-api-key"**: Upewnij się, że ustawiłeś `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` przed utworzeniem instancji DefaultApi.
+2. **Nieprawidłowa klasa API**: Używaj `DefaultApi` do serwerowych uwierzytelnionych żądań, `PublicApi` do żądań po stronie klienta/publicznych oraz `ModerationApi` do żądań z panelu moderatora.
+3. **Błędy importu**: Upewnij się, że importujesz z właściwego modułu:
+   - Klient API: `from client import ...`
+   - Narzędzia SSO: `from sso import ...`

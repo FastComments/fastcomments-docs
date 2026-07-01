@@ -1,18 +1,18 @@
-## Параметри
+## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
 
-## Одговор
+## Response
 
-Враћа: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateHashTagResponse.java)
+Returns: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateHashTagResponse.java)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'addHashTag Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'addHashTag Primer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Увези класе:
+// Uvezi klase:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -25,18 +25,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Конфигуришите ауторизацију помоћу API кључа: api_key
+    // Konfiguriši autorizaciju API ključa: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Откоменатишите следећу линију да бисте поставили префикс за API кључ, нпр. "Token" (подразумевано је null)
+    // Otkomentarišite sledeću liniju da postavite prefiks za API ključ, npr. "Token" (podrazumevano null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     CreateHashTagBody createHashTagBody = new CreateHashTagBody(); // CreateHashTagBody | 
     try {
-      CreateHashTagResponse result = apiInstance.addHashTag()
-            .tenantId(tenantId)
+      CreateHashTagResponse result = apiInstance.addHashTag(tenantId)
             .createHashTagBody(createHashTagBody)
             .execute();
       System.out.println(result);

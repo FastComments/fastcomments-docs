@@ -1,7 +1,8 @@
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
 | text-search | string | query | Ne |  |
 | byIPFromComment | string | query | Ne |  |
 | filters | string | query | Ne |  |
@@ -21,6 +22,7 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 opts = {
   text_search: 'text_search_example', # String | 
   by_ip_from_comment: 'by_ip_from_comment_example', # String | 
@@ -32,9 +34,9 @@ opts = {
 
 begin
   
-  result = api_instance.post_api_export(opts)
+  result = api_instance.post_api_export(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
-  puts "Pogreška pri pozivanju ModerationApi->post_api_export: #{e}"
+  puts "Error when calling ModerationApi->post_api_export: #{e}"
 end
 [inline-code-end]

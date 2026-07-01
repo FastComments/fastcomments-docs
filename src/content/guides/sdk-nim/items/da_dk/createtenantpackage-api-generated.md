@@ -1,11 +1,11 @@
 ## Parametre
 
-| Name | Type | Påkrævet | Beskrivelse |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | createTenantPackageBody | CreateTenantPackageBody | Nej |  |
 
-## Svar
+## Respons
 
 Returnerer: [`Option[CreateTenantPackageResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_tenant_package_response.nim)
 
@@ -13,13 +13,11 @@ Returnerer: [`Option[CreateTenantPackageResponse]`](https://github.com/FastComme
 
 [inline-code-attrs-start title = 'createTenantPackage Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.createTenantPackage(tenantId = "my-tenant-123", createTenantPackageBody = CreateTenantPackageBody())
+let (responseOpt, httpResponse) = client.createTenantPackage(
+  tenantId = "my-tenant-123",
+  createTenantPackageBody = CreateTenantPackageBody()
+)
 
-if response.isSome:
-  let pkg = response.get()
-  echo "Created tenant package: ", $pkg
-else:
-  echo "Failed to create tenant package, HTTP response: ", $httpResponse
+if responseOpt.isSome:
+  let response = responseOpt.get()
 [inline-code-end]
-
----

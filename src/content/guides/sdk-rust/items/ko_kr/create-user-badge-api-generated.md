@@ -1,33 +1,30 @@
+---
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenant_id | String | 예 |  |
-| create_user_badge_params | models::CreateUserBadgeParams | 예 |  |
+| tenant_id | String | Yes |  |
+| create_user_badge_params | models::CreateUserBadgeParams | Yes |  |
 
 ## 응답
 
 반환: [`ApiCreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_create_user_badge_response.rs)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'create_user_badge 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_user_badge 예시'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let params: CreateUserBadgeParams = CreateUserBadgeParams {
+async fn example() -> Result<(), Error> {
+    let params = CreateUserBadgeParams {
         tenant_id: "acme-corp-tenant".to_string(),
         create_user_badge_params: models::CreateUserBadgeParams {
-            user_id: "user-7890".to_string(),
-            badge_key: "top-commenter".to_string(),
-            title: "Top Commenter".to_string(),
-            description: Some("Consistently provided insightful comments".to_string()),
-            image_url: Some("https://assets.news.example.com/badges/top-commenter.png".to_string()),
-            is_visible: Some(true),
+            badge_type: "premium".to_string(),
+            user_id: "user-123".to_string(),
+            description: Some("Top contributor".to_string()),
             expires_at: None,
         },
     };
-
-    let response: ApiCreateUserBadgeResponse = create_user_badge(&configuration, params).await?;
+    let _response = create_user_badge(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

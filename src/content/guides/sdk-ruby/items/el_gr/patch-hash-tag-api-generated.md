@@ -2,10 +2,10 @@
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| tag | string | path | Ναι |  |
-| tenantId | string | query | Όχι |  |
+| tenantId | string | query | Yes |  |
+| tag | string | path | Yes |  |
 
-## Απάντηση
+## Απόκριση
 
 Επιστρέφει: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_hash_tag_response.rb)
 
@@ -15,24 +15,22 @@
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Ρύθμιση εξουσιοδότησης
+# ρύθμιση εξουσιοδότησης
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # Διαμόρφωση εξουσιοδότησης κλειδιού API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Αποσχολιάστε την ακόλουθη γραμμή για να ορίσετε ένα πρόθεμα για το API key, π.χ. 'Bearer' (προεπιλογή nil)
+  # Απενεργοποιήστε το σχόλιο στην παρακάτω γραμμή για να ορίσετε ένα πρόθεμα για το κλειδί API, π.χ. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
+tenant_id = 'tenant_id_example' # String | 
 tag = 'tag_example' # String | 
-opts = {
-  tenant_id: 'tenant_id_example', # String | 
-  update_hash_tag_body: FastCommentsClient::UpdateHashTagBody.new # UpdateHashTagBody | 
-}
+update_hash_tag_body = FastCommentsClient::UpdateHashTagBody.new # UpdateHashTagBody | 
 
 begin
   
-  result = api_instance.patch_hash_tag(tag, opts)
+  result = api_instance.patch_hash_tag(tenant_id, tag, update_hash_tag_body)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->patch_hash_tag: #{e}"

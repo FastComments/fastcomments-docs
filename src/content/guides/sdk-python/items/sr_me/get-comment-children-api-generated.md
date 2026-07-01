@@ -1,40 +1,41 @@
----
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Обавезно | Опис |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Да |  |
-| sso | string | query | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | upit | Da |  |
+| commentId | string | put | Da |  |
+| sso | string | upit | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`ModerationAPIChildCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/moderation_api_child_comments_response.py)
+Vraća: [`ModerationAPIChildCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/moderation_api_child_comments_response.py)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'get_comment_children Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_comment_children Primjer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.models.moderation_api_child_comments_response import ModerationAPIChildCommentsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Подешавање host-а је опционално и подразумевано је https://fastcomments.com
-# Погледајте configuration.py за списак свих подржаних параметара конфигурације.
+# Definisanje hosta je opcionalno i podrazumijeva https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih konfiguracijskih parametara.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Уђите у контекст са инстанцом API клијента
+# Uđite u kontekst s instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Креирајте инстанцу класе API
+    # Kreirajte instancu API klase
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
-    sso = 'sso_example' # str |  (опционално)
+    sso = 'sso_example' # str |  (opcionalno)
 
     try:
-        api_response = api_instance.get_comment_children(comment_id, sso=sso)
+        api_response = api_instance.get_comment_children(tenant_id, comment_id, sso=sso)
         print("The response of ModerationApi->get_comment_children:\n")
         pprint(api_response)
     except Exception as e:

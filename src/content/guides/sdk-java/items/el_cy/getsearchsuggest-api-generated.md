@@ -1,9 +1,10 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Location | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Θέση | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| text-search | string | query | Όχι |  |
-| sso | string | query | Όχι |  |
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Απόκριση
 
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String textSearch = "textSearch_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationSuggestResponse result = apiInstance.getSearchSuggest()
+      ModerationSuggestResponse result = apiInstance.getSearchSuggest(tenantId)
             .textSearch(textSearch)
             .sso(sso)
             .execute();
@@ -44,5 +46,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

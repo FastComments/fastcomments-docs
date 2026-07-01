@@ -1,8 +1,8 @@
----
 ## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
-|------|------|----------|----------|-------------|
+|------|------|-----------|--------------|-------------|
+| tenantId | string | query | Sì |  |
 | commentId | string | path | Sì |  |
 | sso | string | query | No |  |
 
@@ -20,19 +20,20 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Se desideri usare un client HTTP personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
-    // Questo è opzionale, verrà usato `GuzzleHttp\Client` di default.
+    // Se desideri utilizzare un client HTTP personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
+    // Questo è opzionale, `GuzzleHttp\Client` sarà usato come predefinito.
     new GuzzleHttp\Client()
 );
+
+$tenant_id = 'tenant_id_example'; // string
 $comment_id = 'comment_id_example'; // string
 $sso = 'sso_example'; // string
 
+
 try {
-    $result = $apiInstance->getLogs($comment_id, $sso);
+    $result = $apiInstance->getLogs($tenant_id, $comment_id, $sso);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getLogs: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

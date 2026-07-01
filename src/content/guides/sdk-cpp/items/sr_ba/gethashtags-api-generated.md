@@ -1,6 +1,6 @@
 ## Parametri
 
-| Naziv | Type | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | page | double | Ne |  |
@@ -9,18 +9,20 @@
 
 Vraća: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetHashTagsResponse.h)
 
-## Primjer
+## Primer
 
-[inline-code-attrs-start title = 'Primjer getHashTags'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getHashTags Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-boost::optional<double> page = 1.0;
-api->getHashTags(tenantId, page).then([](pplx::task<std::shared_ptr<GetHashTagsResponse>> t) {
+auto tenantId = utility::string_t(U("my-tenant-123"));
+boost::optional<double> page = 2.0;
+
+api->getHashTags(tenantId, page).then([](pplx::task<std::shared_ptr<GetHashTagsResponse>> task) {
     try {
-        auto resp = t.get();
-        if (!resp) resp = std::make_shared<GetHashTagsResponse>();
+        auto resultPtr = task.get();
+        auto response = std::make_shared<GetHashTagsResponse>(*resultPtr);
+        // koristi odgovor
     } catch (const std::exception&) {
-        auto resp = std::make_shared<GetHashTagsResponse>();
+        // obradi grešku
     }
 });
 [inline-code-end]

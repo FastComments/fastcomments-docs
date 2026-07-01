@@ -1,7 +1,6 @@
----
 ## Parametri
 
-| Ime | Tip | Zahtevano | Opis |
+| Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | domain | string | Da |  |
@@ -15,18 +14,19 @@ Vrne: [`GetDomainConfigResponse`](https://github.com/FastComments/fastcomments-c
 [inline-code-attrs-start title = 'Primer getDomainConfig'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-boost::optional<utility::string_t> domainOpt = U("app.example.com");
-if (domainOpt) {
-    api->getDomainConfig(tenantId, *domainOpt)
-    .then([](pplx::task<std::shared_ptr<GetDomainConfigResponse>> t) {
-        try {
-            auto resp = t.get();
-            auto cfgCopy = std::make_shared<GetDomainConfigResponse>(*resp);
-            (void)cfgCopy;
-        } catch (const std::exception&) {
-        }
-    });
-}
-[inline-code-end]
+utility::string_t domain = U("myblog.example.com");
 
----
+api->getDomainConfig(tenantId, domain)
+    .then([](std::shared_ptr<GetDomainConfigResponse> response) {
+        if (!response) return;
+        boost::optional<bool> moderationEnabled = response->moderationEnabled;
+        boost::optional<std::string> theme = response->theme;
+        if (moderationEnabled && *moderationEnabled) {
+            // obravnava omogočeno moderiranje
+        }
+        if (theme) {
+            // uporabi vrednost teme
+        }
+    })
+    .wait();
+[inline-code-end]

@@ -1,7 +1,8 @@
-## פרמטרים
+## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | כן |  |
 | text-search | string | query | לא |  |
 | byIPFromComment | string | query | לא |  |
 | filters | string | query | לא |  |
@@ -16,24 +17,27 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-get_api_ids'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה get_api_ids'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetApiIdsOptions
 from client.models.moderation_api_get_comment_ids_response import ModerationAPIGetCommentIdsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת ה-host היא אופציונלית והברירת מחדל היא https://fastcomments.com
-# ראו configuration.py לרשימת כל פרמטרי התצורה הנתמכים.
+# הגדרת המארח היא אופציונלית ובברירת מחדל https://fastcomments.com
+# ראה configuration.py עבור רשימה של כל פרמטרי התצורה הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# כניסה להקשר עם מופע של ApiClient
+# היכנס להקשר עם מופע של לקוח ה-API
+# צור מופע של מחלקת ה-API
 with client.ApiClient(configuration) as api_client:
-    # יצירת מופע של מחלקת ה-API
+    # Create an instance of the API class
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     text_search = 'text_search_example' # str |  (אופציונלי)
     by_ip_from_comment = 'by_ip_from_comment_example' # str |  (אופציונלי)
     filters = 'filters_example' # str |  (אופציונלי)
@@ -43,9 +47,11 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (אופציונלי)
 
     try:
-        api_response = api_instance.get_api_ids(text_search=text_search, by_ip_from_comment=by_ip_from_comment, filters=filters, search_filters=search_filters, after_id=after_id, demo=demo, sso=sso)
+        api_response = api_instance.get_api_ids(tenant_id, GetApiIdsOptions(text_search=text_search, by_ip_from_comment=by_ip_from_comment, filters=filters, search_filters=search_filters, after_id=after_id, demo=demo, sso=sso))
         print("The response of ModerationApi->get_api_ids:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling ModerationApi->get_api_ids: %s\n" % e)
 [inline-code-end]
+
+---

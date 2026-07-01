@@ -1,7 +1,8 @@
 ## Parametre
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
+|------|------|-----------|----------|-------------|
+| tenantId | string | query | Ja |  |
 | badgeId | string | query | Ja |  |
 | userId | string | query | Nej |  |
 | commentId | string | query | Nej |  |
@@ -14,7 +15,7 @@ Returnerer: [`RemoveUserBadgeResponse`](https://github.com/FastComments/fastcomm
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'PutRemoveBadge-eksempel'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PutRemoveBadge Eksempel'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -26,6 +27,7 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	badgeId := "badgeId_example" // string | 
 	userId := "userId_example" // string |  (valgfri)
 	commentId := "commentId_example" // string |  (valgfri)
@@ -34,12 +36,12 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PutRemoveBadge(context.Background()).BadgeId(badgeId).UserId(userId).CommentId(commentId).BroadcastId(broadcastId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PutRemoveBadge(context.Background()).TenantId(tenantId).BadgeId(badgeId).UserId(userId).CommentId(commentId).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PutRemoveBadge``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// svar fra `PutRemoveBadge`: RemoveUserBadgeResponse
+	// respons fra `PutRemoveBadge`: RemoveUserBadgeResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PutRemoveBadge`: %v\n", resp)
 }
 [inline-code-end]

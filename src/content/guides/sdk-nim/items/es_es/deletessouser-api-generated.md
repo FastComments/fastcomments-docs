@@ -1,11 +1,10 @@
 ## Parámetros
 
-| Nombre | Tipo | Requerido | Descripción |
-|------|------|----------|-------------|
+| Nombre | Tipo | Obligatorio | Descripción |
+|--------|------|-------------|-------------|
 | tenantId | string | Sí |  |
 | id | string | No |  |
-| deleteComments | bool | No |  |
-| commentDeleteMode | string | No |  |
+| options | DeleteSSOUserOptions | No |  |
 
 ## Respuesta
 
@@ -13,14 +12,14 @@ Devuelve: [`Option[DeleteSSOUserAPIResponse]`](https://github.com/FastComments/f
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de deleteSSOUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo deleteSSOUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteSSOUser(tenantId = "my-tenant-123", id = "sso-user-9876", deleteComments = true, commentDeleteMode = "hard")
-if response.isSome:
-  let deleted = response.get()
-  discard deleted
-else:
-  discard httpResponse
-[inline-code-end]
+let (apiRespOpt, httpResp) = client.deleteSSOUser(
+  tenantId = "my-tenant-123",
+  id = "user-456",
+  options = DeleteSSOUserOptions()
+)
 
----
+if apiRespOpt.isSome:
+  let apiResp = apiRespOpt.get()
+[inline-code-end]

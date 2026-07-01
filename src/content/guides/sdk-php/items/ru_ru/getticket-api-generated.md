@@ -1,16 +1,16 @@
-## Parameters
+## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Местоположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | id | string | path | Да |  |
 | userId | string | query | Нет |  |
 
-## Response
+## Ответ
 
 Возвращает: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTicketResponse.php)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Пример getTicket'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -18,25 +18,23 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api_key
-// Настроить авторизацию по API-ключу: api_key
+// Настройте авторизацию ключа API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Раскомментируйте ниже, чтобы задать префикс (например, Bearer) для API-ключа, если требуется
+// Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для ключа API, если необходимо
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // Если вы хотите использовать собственный HTTP-клиент, передайте клиент, который реализует `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    // Это необязательно, по умолчанию будет использоваться `GuzzleHttp\Client`.
+    // Если вы хотите использовать пользовательский HTTP-клиент, передайте ваш клиент, реализующий `GuzzleHttp\ClientInterface`.
+    // Это опционально, `GuzzleHttp\Client` будет использоваться по умолчанию.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$id = 'id_example'; // string
-$user_id = 'user_id_example'; // string
+
+$tenant_id = 'tenant_id_example'; // строка
+$id = 'id_example'; // строка
+$user_id = 'user_id_example'; // строка
+
 
 try {
     $result = $apiInstance->getTicket($tenant_id, $id, $user_id);

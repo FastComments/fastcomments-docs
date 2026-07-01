@@ -1,7 +1,8 @@
----
-このSDKのすべてのAPIメソッドは `(Option[ResponseType], Response)` のタプルを返します。最初の要素には成功時のパース済みレスポンスが含まれ、2番目の要素は生のHTTPレスポンスです。
+このSDKのすべてのAPIメソッドは `(Option[ResponseType], Response)` のタプルを返します。最初の要素には成功した場合に解析されたレスポンスが含まれ、二番目の要素は生のHTTPレスポンスです。
 
-### 例: コメントの取得
+必須パラメータとリクエストボディは位置引数として渡されます。残りのオプションパラメータは単一の `Api<Operation>Options` オブジェクトにまとめられ、これが最後の引数となります。オプションパラメータがない操作はオプションオブジェクトを取らないことになります。
+
+### Example: Fetching Comments
 
 ```nim
 import httpclient
@@ -15,20 +16,10 @@ client.headers["x-api-key"] = "your-api-key"
 let (response, httpResponse) = getComments(
   httpClient = client,
   tenantId = "your-tenant-id",
-  page = 0,
-  limit = 0,
-  skip = 0,
-  asTree = false,
-  skipChildren = 0,
-  limitChildren = 0,
-  maxTreeDepth = 0,
-  urlId = "your-url-id",
-  userId = "",
-  anonUserId = "",
-  contextUserId = "",
-  hashTag = "",
-  parentId = "",
-  direction = SortDirections.DESC
+  options = GetCommentsOptions(
+    urlId: "your-url-id",
+    direction: SortDirections.DESC
+  )
 )
 
 if httpResponse.code == Http200:
@@ -37,4 +28,3 @@ if httpResponse.code == Http200:
     if resp.comments.isSome:
       echo "Found ", resp.comments.get().len, " comments"
 ```
----

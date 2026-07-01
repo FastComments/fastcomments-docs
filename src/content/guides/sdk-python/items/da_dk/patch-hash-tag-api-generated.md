@@ -1,10 +1,9 @@
----
 ## Parametre
 
-| Name | Type | Location | Required | Description |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Ja |  |
 | tag | string | path | Ja |  |
-| tenantId | string | query | Nej |  |
 
 ## Svar
 
@@ -20,37 +19,35 @@ from client.models.update_hash_tag_response import UpdateHashTagResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# At angive host er valgfrit og standardværdien er https://fastcomments.com
+# Definering af værten er valgfri og standard er https://fastcomments.com
 # Se configuration.py for en liste over alle understøttede konfigurationsparametre.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Klienten skal konfigurere autentifikations- og autorisationsparametrene
+# Klienten skal konfigurere godkendelses- og autorisationsparametrene
 # i overensstemmelse med API-serverens sikkerhedspolitik.
-# Eksempler for hver auth-metode er vist nedenfor; brug eksemplet der
-# passer til dit auth-brugstilfælde.
+# Eksempler for hver godkendelsesmetode er angivet nedenfor, brug det eksempel som
+# opfylder dit godkendelsesbrugstilfælde.
 
 # Konfigurer API-nøgleautorisation: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Fjern kommentaren nedenfor for at opsætte præfiks (f.eks. Bearer) for API-nøglen, hvis nødvendigt
+# Fjern kommentaren nedenfor for at opsætte præfiks (fx Bearer) for API-nøglen, hvis nødvendigt
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Gå ind i en kontekst med en instans af API-klienten
+# Indtast en kontekst med en instans af API-klienten
 with client.ApiClient(configuration) as api_client:
     # Opret en instans af API-klassen
     api_instance = client.DefaultApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     tag = 'tag_example' # str | 
-    tenant_id = 'tenant_id_example' # str |  (valgfri)
-    update_hash_tag_body = client.UpdateHashTagBody() # UpdateHashTagBody |  (valgfri)
+    update_hash_tag_body = client.UpdateHashTagBody() # UpdateHashTagBody |  (optional)
 
     try:
-        api_response = api_instance.patch_hash_tag(tag, tenant_id=tenant_id, update_hash_tag_body=update_hash_tag_body)
+        api_response = api_instance.patch_hash_tag(tenant_id, tag, update_hash_tag_body)
         print("The response of DefaultApi->patch_hash_tag:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling DefaultApi->patch_hash_tag: %s\n" % e)
 [inline-code-end]
-
----

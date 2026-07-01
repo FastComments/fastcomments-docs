@@ -4,8 +4,7 @@
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | id | string | Да |  |
-| userId | string | Не |  |
-| anonUserId | string | Не |  |
+| options | const FlagCommentOptions& | Да |  |
 
 ## Отговор
 
@@ -15,14 +14,14 @@
 
 [inline-code-attrs-start title = 'Пример за flagComment'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("cmt-98765");
-boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U("user@example.com"));
-boost::optional<utility::string_t> anonUserId = boost::none;
-api->flagComment(tenantId, commentId, userId, anonUserId)
-    .then([](std::shared_ptr<FlagCommentResponse> resp) -> std::shared_ptr<FlagCommentResponse> {
-        if (resp) return resp;
-        return std::make_shared<FlagCommentResponse>();
-    })
-    .wait();
+auto opts = std::make_shared<FlagCommentOptions>();
+opts->reason = utility::conversions::to_string_t("spam");
+opts->note = boost::optional<utility::string_t>(utility::conversions::to_string_t("User posted duplicate links"));
+
+api->flagComment(utility::conversions::to_string_t("my-tenant-123"),
+                 utility::conversions::to_string_t("comment-456"),
+                 *opts)
+    .then([](pplx::task<std::shared_ptr<FlagCommentResponse>> t) {
+        auto resp = t.get();
+    });
 [inline-code-end]

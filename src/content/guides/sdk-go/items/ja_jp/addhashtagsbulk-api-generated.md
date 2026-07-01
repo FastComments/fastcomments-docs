@@ -2,11 +2,11 @@
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | いいえ |  |
+| tenantId | string | query | Yes |  |
 
 ## レスポンス
 
-戻り値: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_bulk_create_hash_tags_response.go)
+返却: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_bulk_create_hash_tags_response.go)
 
 ## 例
 
@@ -22,8 +22,8 @@ import (
 )
 
 func main() {
-	tenantId := "tenantId_example" // string |  (任意)
-	bulkCreateHashTagsBody := *openapiclient.NewBulkCreateHashTagsBody([]openapiclient.BulkCreateHashTagsBodyTagsInner{*openapiclient.NewBulkCreateHashTagsBodyTagsInner("Tag_example")}) // BulkCreateHashTagsBody |  (任意)
+	tenantId := "tenantId_example" // string | 
+	bulkCreateHashTagsBody := *openapiclient.NewBulkCreateHashTagsBody([]openapiclient.BulkCreateHashTagsBodyTagsInner{*openapiclient.NewBulkCreateHashTagsBodyTagsInner("Tag_example")}) // BulkCreateHashTagsBody | （省略可）
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

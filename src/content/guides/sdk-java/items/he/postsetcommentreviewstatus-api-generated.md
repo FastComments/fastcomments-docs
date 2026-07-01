@@ -2,9 +2,11 @@
 
 | שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| commentId | string | path | כן |  |
-| reviewed | boolean | query | לא |  |
-| sso | string | query | לא |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| reviewed | boolean | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## תגובה
 
@@ -12,9 +14,9 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-postSetCommentReviewStatus'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postSetCommentReviewStatus דוגמה'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// ייבוא מחלקות:
+// ייבא מחלקות:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -27,12 +29,15 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     Boolean reviewed = true; // Boolean | 
+    String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      APIEmptyResponse result = apiInstance.postSetCommentReviewStatus(commentId)
+      APIEmptyResponse result = apiInstance.postSetCommentReviewStatus(tenantId, commentId)
             .reviewed(reviewed)
+            .broadcastId(broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -46,5 +51,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

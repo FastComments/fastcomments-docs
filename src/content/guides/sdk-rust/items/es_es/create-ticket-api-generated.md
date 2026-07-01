@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Nombre | Tipo | Requerido | Descripción |
+| Nombre | Tipo | Obligatorio | Descripción |
 |------|------|----------|-------------|
 | tenant_id | String | Sí |  |
 | user_id | String | Sí |  |
@@ -12,24 +12,20 @@ Devuelve: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de create_ticket'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo create_ticket'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn create_ticket_example() -> Result<CreateTicketResponse, Error> {
-    let params: CreateTicketParams = CreateTicketParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        user_id: "alice-7d9".to_string(),
-        create_ticket_body: models::CreateTicketBody {
-            subject: "Payment issue: double charge on subscription".to_string(),
-            message: "I was charged twice for the July subscription. Please refund one charge.".to_string(),
-            priority: Some("high".to_string()),
-            tags: Some(vec!["billing".to_string(), "subscription".to_string()]),
-            contact_email: Some("alice@acme-corp.com".to_string()),
-        },
+async fn example() -> Result<(), Error> {
+    let body = models::CreateTicketBody {
+        title: "Login Issue".to_string(),
+        description: "User cannot log in after password reset".to_string(),
+        priority: Some("high".to_string()),
     };
-
-    let response: CreateTicketResponse = create_ticket(&configuration, params).await?;
-    Ok(response)
+    let params = CreateTicketParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        user_id: "user-12345".to_string(),
+        create_ticket_body: body,
+    };
+    let _response: CreateTicketResponse = create_ticket(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

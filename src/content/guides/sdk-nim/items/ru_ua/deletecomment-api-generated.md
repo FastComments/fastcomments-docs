@@ -1,11 +1,10 @@
 ## Параметры
 
-| Имя | Тип | Обязательно | Описание |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | id | string | Нет |  |
-| contextUserId | string | Нет |  |
-| isLive | bool | Нет |  |
+| options | DeleteCommentOptions | Нет |  |
 
 ## Ответ
 
@@ -15,12 +14,15 @@
 
 [inline-code-attrs-start title = 'Пример deleteComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteComment(tenantId = "my-tenant-123", id = "cmt-98765", contextUserId = "user-456", isLive = true)
-if response.isSome:
-  let result = response.get()
-  echo "DeleteCommentResult received"
-else:
-  echo "No result, HTTP status: ", httpResponse.status
+let (delResult, httpResponse) = client.deleteComment(
+  tenantId = "my-tenant-123",
+  id = "comment-456",
+  options = DeleteCommentOptions()
+)
+
+if delResult.isSome:
+  let result = delResult.get()
+  echo result
 [inline-code-end]
 
 ---

@@ -1,9 +1,10 @@
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Ime | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Da |  |
-| sso | string | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -19,7 +20,7 @@ from client.rest import ApiException
 from pprint import pprint
 
 # Definiranje hosta je opcionalno i zadano je https://fastcomments.com
-# Pogledajte configuration.py za popis svih podržanih parametara konfiguracije.
+# Pogledajte configuration.py za popis svih podržanih konfiguracijskih parametara.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -27,13 +28,14 @@ configuration = client.Configuration(
 
 # Uđite u kontekst s instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Kreirajte instancu API klase
+    # Stvorite instancu API klase
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
-    sso = 'sso_example' # str |  (neobavezno)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_moderation_comment_text(comment_id, sso=sso)
+        api_response = api_instance.get_moderation_comment_text(tenant_id, comment_id, sso=sso)
         print("The response of ModerationApi->get_moderation_comment_text:\n")
         pprint(api_response)
     except Exception as e:

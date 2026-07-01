@@ -1,11 +1,11 @@
 ## Παράμετροι
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|------------|-----------|
+| tenantId | string | query | Ναι |  |
+| id | string | path | Ναι |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
@@ -17,21 +17,26 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_key
 // Ρύθμιση εξουσιοδότησης κλειδιού API: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Αποσχολιάστε παρακάτω για να ορίσετε πρόθεμα (π.χ. Bearer) για το κλειδί API, αν χρειάζεται
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Απενεργοποιήστε το σχόλιο παρακάτω για να ορίσετε πρόθεμα (π.χ. Bearer) για το κλειδί API, αν χρειάζεται
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Αν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε τον client σας που υλοποιεί `GuzzleHttp\ClientInterface`.
-    // Αυτό είναι προαιρετικό, θα χρησιμοποιηθεί ως προεπιλογή το `GuzzleHttp\Client`.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // Εάν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε τον πελάτη σας που υλοποιεί `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // Αυτό είναι προεραιτικό, το `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$id = 'id_example'; // string
+
+$tenant_id = 'tenant_id_example'; // αλφαριθμητικό
+$id = 'id_example'; // αλφαριθμητικό
 $replace_tenant_package_body = new \FastComments\Client\Model\ReplaceTenantPackageBody(); // \FastComments\Client\Model\ReplaceTenantPackageBody
+
 
 try {
     $result = $apiInstance->replaceTenantPackage($tenant_id, $id, $replace_tenant_package_body);

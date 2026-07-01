@@ -29,6 +29,7 @@ Returns: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments
 [inline-code-attrs-start title = 'get_comments Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetCommentsOptions
 from client.models.api_get_comments_response import APIGetCommentsResponse
 from client.models.sort_directions import SortDirections
 from client.rest import ApiException
@@ -74,7 +75,7 @@ with client.ApiClient(configuration) as api_client:
     to_date = 56 # int |  (optional)
 
     try:
-        api_response = api_instance.get_comments(tenant_id, page=page, limit=limit, skip=skip, as_tree=as_tree, skip_children=skip_children, limit_children=limit_children, max_tree_depth=max_tree_depth, url_id=url_id, user_id=user_id, anon_user_id=anon_user_id, context_user_id=context_user_id, hash_tag=hash_tag, parent_id=parent_id, direction=direction, from_date=from_date, to_date=to_date)
+        api_response = api_instance.get_comments(tenant_id, GetCommentsOptions(page=page, limit=limit, skip=skip, as_tree=as_tree, skip_children=skip_children, limit_children=limit_children, max_tree_depth=max_tree_depth, url_id=url_id, user_id=user_id, anon_user_id=anon_user_id, context_user_id=context_user_id, hash_tag=hash_tag, parent_id=parent_id, direction=direction, from_date=from_date, to_date=to_date))
         print("The response of DefaultApi->get_comments:\n")
         pprint(api_response)
     except Exception as e:

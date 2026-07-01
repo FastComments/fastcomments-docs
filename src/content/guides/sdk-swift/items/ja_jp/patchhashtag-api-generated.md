@@ -1,9 +1,9 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | はい |  |
 | tag | string | path | はい |  |
-| tenantId | string | query | いいえ |  |
 
 ## レスポンス
 
@@ -13,14 +13,14 @@
 
 [inline-code-attrs-start title = 'patchHashTag の例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 以下のコードサンプルはまだベータ版です。問題がある場合は http://github.com/OpenAPITools/openapi-generator/issues/new で報告してください
+// 以下のコードサンプルはまだベータ版です。問題がある場合は、http://github.com/OpenAPITools/openapi-generator/issues/new へ報告してください
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let tag = "tag_example" // String | 
-let tenantId = "tenantId_example" // String |  （オプション）
-let updateHashTagBody = UpdateHashTagBody(tenantId: "tenantId_example", url: "url_example", tag: "tag_example") // UpdateHashTagBody |  （オプション）
+let updateHashTagBody = UpdateHashTagBody(tenantId: "tenantId_example", url: "url_example", tag: "tag_example") // UpdateHashTagBody |  (オプション)
 
-DefaultAPI.patchHashTag(tag: tag, tenantId: tenantId, updateHashTagBody: updateHashTagBody) { (response, error) in
+DefaultAPI.patchHashTag(tenantId: tenantId, tag: tag, updateHashTagBody: updateHashTagBody) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -31,5 +31,3 @@ DefaultAPI.patchHashTag(tag: tag, tenantId: tenantId, updateHashTagBody: updateH
     }
 }
 [inline-code-end]
-
----

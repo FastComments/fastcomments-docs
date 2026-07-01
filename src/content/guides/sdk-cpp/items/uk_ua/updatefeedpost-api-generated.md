@@ -1,10 +1,10 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Так |  |
-| id | string | Так |  |
-| feedPost | FeedPost | Так |  |
+| Назва | Тип | Обов'язковий | Опис |
+|------|------|--------------|------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| feedPost | FeedPost | Yes |  |
 
 ## Відповідь
 
@@ -14,20 +14,19 @@
 
 [inline-code-attrs-start title = 'Приклад updateFeedPost'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-auto tenantId = utility::string_t(U("my-tenant-123"));
-auto postId = utility::string_t(U("feedpost-456"));
-auto post = std::make_shared<FeedPost>();
-post->title = utility::string_t(U("Weekly Update"));
-post->content = utility::string_t(U("This week's changes include bug fixes and performance improvements."));
-post->authorEmail = boost::optional<utility::string_t>(utility::string_t(U("author@example.com")));
-post->published = boost::optional<bool>(true);
-api->updateFeedPost(tenantId, postId, *post)
-.then([](pplx::task<std::shared_ptr<APIEmptyResponse>> t){
-    try {
-        auto resp = t.get();
-        (void)resp;
-    } catch (...) {}
-});
-[inline-code-end]
+utility::string_t tenantId = U"my-tenant-123";
+utility::string_t postId = U"post-456";
 
----
+FeedPost feedPost;
+feedPost.title = U"Breaking News";
+feedPost.content = U"Details of the update go here.";
+feedPost.imageUrl = boost::optional<utility::string_t>(U"https://example.com/image.jpg");
+
+api->updateFeedPost(tenantId, postId, feedPost)
+    .then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task) {
+        try {
+            auto response = task.get();
+        } catch (const std::exception& ex) {
+        }
+    });
+[inline-code-end]

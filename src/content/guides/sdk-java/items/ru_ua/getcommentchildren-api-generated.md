@@ -1,8 +1,8 @@
----
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | commentId | string | path | Yes |  |
 | sso | string | query | No |  |
 
@@ -14,7 +14,7 @@
 
 [inline-code-attrs-start title = 'Пример getCommentChildren'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Импорт классов:
+// Импортировать классы:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -27,18 +27,19 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationAPIChildCommentsResponse result = apiInstance.getCommentChildren(commentId)
+      ModerationAPIChildCommentsResponse result = apiInstance.getCommentChildren(tenantId, commentId)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ModerationApi#getCommentChildren");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("Исключение при вызове ModerationApi#getCommentChildren");
+      System.err.println("Код статуса: " + e.getCode());
+      System.err.println("Причина: " + e.getResponseBody());
+      System.err.println("Заголовки ответа: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }

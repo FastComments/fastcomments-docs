@@ -1,37 +1,39 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| id | string | path | Da |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
-## Odziv
+## Odgovor
 
 Vrne: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer updateQuestionConfig'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateQuestionConfig Primer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Konfigurirajte avtorizacijo API ključa: api_key
+// Nastavite pooblastitev ključa API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Če je potrebno, odkomentirajte spodnjo vrstico, da nastavite predpono (npr. Bearer) za API ključ
+// Odkomentirajte spodaj, če želite nastaviti predpono (npr. Bearer) za ključ API, po potrebi
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Če želite uporabiti prilagojen HTTP odjemalec, posredujte svoj odjemalec, ki implementira `GuzzleHttp\ClientInterface`.
-    // To je neobvezno; kot privzeti bo uporabljen `GuzzleHttp\Client`.
+    // Če želite uporabiti vlastni HTTP odjemalec, podajte svoj odjemalec, ki implementira `GuzzleHttp\ClientInterface`.
+    // To je neobvezno, `GuzzleHttp\Client` bo uporabljen kot privzeto.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$id = 'id_example'; // string
+
+$tenant_id = 'tenant_id_example'; // niz
+$id = 'id_example'; // niz
 $update_question_config_body = new \FastComments\Client\Model\UpdateQuestionConfigBody(); // \FastComments\Client\Model\UpdateQuestionConfigBody
+
 
 try {
     $result = $apiInstance->updateQuestionConfig($tenant_id, $id, $update_question_config_body);

@@ -1,6 +1,6 @@
 ## Параметри
 
-| Име | Тип | Задължително | Описание |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | commentId | string | Да |  |
@@ -9,17 +9,24 @@
 
 ## Отговор
 
-Връща: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UnblockSuccess.ts)
+Връща: [`UnBlockCommentPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UnBlockCommentPublicResponse.ts)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример за unBlockCommentPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-72';
-const commentId: string = 'cmt_5f9b3a2d';
-const publicBlockFromCommentParams: PublicBlockFromCommentParams = {};
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.sso_payload.sig';
-const result: UnblockSuccess = await unBlockCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso);
-[inline-code-end]
+const tenantId: string = "acme-corp-tenant";
+const commentId: string = "cmt-20230915-001";
+const unblockParams: PublicBlockFromCommentParams = {
+  reason: "User appealed and was cleared",
+  unblockExpiresAt: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString()
+};
+const ssoToken: string = "sso-3d9f8a7b";
 
----
+const result: UnBlockCommentPublicResponse = await unBlockCommentPublic(
+  tenantId,
+  commentId,
+  unblockParams,
+  ssoToken
+);
+[inline-code-end]

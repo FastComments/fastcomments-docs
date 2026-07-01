@@ -2,7 +2,7 @@
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Nie |  |
+| tenantId | string | query | Tak |  |
 
 ## Odpowiedź
 
@@ -10,26 +10,28 @@ Zwraca: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomme
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład addHashTagsBulk'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'addHashTagsBulk Przykład'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Konfiguracja autoryzacji klucza API: api_key
+// Configure API key authorization: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Odkomentuj poniższy wiersz, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli to konieczne
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Jeśli chcesz użyć niestandardowego klienta HTTP, przekaż klienta implementującego `GuzzleHttp\ClientInterface`.
-    // To jest opcjonalne, domyślnie zostanie użyty `GuzzleHttp\Client`.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $bulk_create_hash_tags_body = new \FastComments\Client\Model\BulkCreateHashTagsBody(); // \FastComments\Client\Model\BulkCreateHashTagsBody
+
 
 try {
     $result = $apiInstance->addHashTagsBulk($tenant_id, $bulk_create_hash_tags_body);
@@ -38,5 +40,3 @@ try {
     echo 'Exception when calling DefaultApi->addHashTagsBulk: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

@@ -1,23 +1,22 @@
----
 ## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Ja |  |
-| postId | string | path | Ja |  |
-| isUndo | boolean | query | Nein |  |
-| broadcastId | string | query | Nein |  |
-| sso | string | query | Nein |  |
+| tenantId | string | path | Yes |  |
+| postId | string | path | Yes |  |
+| isUndo | boolean | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Antwort
 
-Gibt zurück: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ReactFeedPostResponse.swift)
+Rückgabe: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ReactFeedPostResponse.swift)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'Beispiel für reactFeedPostPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'reactFeedPostPublic Beispiel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Die folgenden Codebeispiele befinden sich noch in der Beta. Bei Problemen melden Sie diese bitte unter http://github.com/OpenAPITools/openapi-generator/issues/new
+// Die folgenden Codebeispiele befinden sich noch in der Beta-Phase. Bei Problemen melden Sie diese bitte über http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -27,7 +26,7 @@ let isUndo = true // Bool |  (optional)
 let broadcastId = "broadcastId_example" // String |  (optional)
 let sso = "sso_example" // String |  (optional)
 
-PublicAPI.reactFeedPostPublic(tenantId: tenantId, postId: postId, reactBodyParams: reactBodyParams, isUndo: isUndo, broadcastId: broadcastId, sso: sso) { (response, error) in
+PublicAPI.reactFeedPostPublic(tenantId: tenantId, postId: postId, reactBodyParams: reactBodyParams, options: PublicAPI.ReactFeedPostPublicOptions(isUndo: isUndo, broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -38,5 +37,3 @@ PublicAPI.reactFeedPostPublic(tenantId: tenantId, postId: postId, reactBodyParam
     }
 }
 [inline-code-end]
-
----

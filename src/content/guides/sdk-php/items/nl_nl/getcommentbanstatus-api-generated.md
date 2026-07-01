@@ -1,7 +1,8 @@
 ## Parameters
 
 | Naam | Type | Locatie | Verplicht | Beschrijving |
-|------|------|----------|----------|-------------|
+|------|------|----------|-----------|--------------|
+| tenantId | string | query | Ja |  |
 | commentId | string | path | Ja |  |
 | sso | string | query | Nee |  |
 
@@ -11,7 +12,7 @@ Retourneert: [`GetCommentBanStatusResponse`](https://github.com/FastComments/fas
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'getCommentBanStatus Voorbeeld'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Voorbeeld getCommentBanStatus'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -19,17 +20,20 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Als u een aangepaste http-client wilt gebruiken, geef uw client door die `GuzzleHttp\ClientInterface` implementeert.
-    // Dit is optioneel, `GuzzleHttp\Client` wordt als standaard gebruikt.
+    // Als je een aangepaste http-client wilt gebruiken, geef je client door die `GuzzleHttp\ClientInterface` implementeert.
+    // Dit is optioneel, `GuzzleHttp\Client` wordt standaard gebruikt.
     new GuzzleHttp\Client()
 );
+
+$tenant_id = 'tenant_id_example'; // string
 $comment_id = 'comment_id_example'; // string
 $sso = 'sso_example'; // string
 
+
 try {
-    $result = $apiInstance->getCommentBanStatus($comment_id, $sso);
+    $result = $apiInstance->getCommentBanStatus($tenant_id, $comment_id, $sss);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ModerationApi->getCommentBanStatus: ', $e->getMessage(), PHP_EOL;
+    echo 'Exceptie bij het aanroepen van ModerationApi->getCommentBanStatus: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]

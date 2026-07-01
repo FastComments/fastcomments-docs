@@ -1,26 +1,27 @@
 ## Paramètres
 
-| Nom | Type | Requis | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
+| tenantId | string | Oui |  |
 | commentId | string | Oui |  |
 | setCommentTextParams | SetCommentTextParams | Non |  |
-| sso | string | Non |  |
+| options | PostSetCommentTextOptions | Non |  |
 
 ## Réponse
 
-Retourne: [`Option[SetCommentTextResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_set_comment_text_response.nim)
+Retourne : [`Option[SetCommentTextResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_set_comment_text_response.nim)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de postSetCommentText'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple postSetCommentText'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postSetCommentText(commentId = "comment-4821",
-  setCommentTextParams = SetCommentTextParams(text = "Updated comment to clarify the main point and fix a typo."),
-  sso = "sso-user-8f3b9c")
+let (responseOpt, httpResponse) = client.postSetCommentText(
+  tenantId = "my-tenant-123",
+  commentId = "comment-987654",
+  setCommentTextParams = SetCommentTextParams(),
+  options = PostSetCommentTextOptions()
+)
 
-if response.isSome:
-  let setCommentResp = response.get()
-  echo "Received SetCommentTextResponse"
+if responseOpt.isSome:
+  let updatedComment = responseOpt.get()
 [inline-code-end]
-
----

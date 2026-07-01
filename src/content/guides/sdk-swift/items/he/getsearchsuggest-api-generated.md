@@ -1,9 +1,10 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| text-search | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | כן |  |
+| text-search | string | query | לא |  |
+| sso | string | query | לא |  |
 
 ## תגובה
 
@@ -11,15 +12,16 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getSearchSuggest'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getSearchSuggest'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// דוגמאות הקוד הבאות עדיין בבטא. עבור כל בעיה, דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// הקוד הבא הוא עדיין בטא. לכל בעיה, אנא דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let textSearch = "textSearch_example" // String |  (אופציונלי)
 let sso = "sso_example" // String |  (אופציונלי)
 
-ModerationAPI.getSearchSuggest(textSearch: textSearch, sso: sso) { (response, error) in
+ModerationAPI.getSearchSuggest(tenantId: tenantId, options: ModerationAPI.GetSearchSuggestOptions(textSearch: textSearch, sSO: sSO)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -30,5 +32,3 @@ ModerationAPI.getSearchSuggest(textSearch: textSearch, sso: sso) { (response, er
     }
 }
 [inline-code-end]
-
----

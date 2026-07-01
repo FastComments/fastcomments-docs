@@ -24,13 +24,17 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $create_feed_post_params = new \FastComments\Client\Model\CreateFeedPostParams(); // \FastComments\Client\Model\CreateFeedPostParams
-$broadcast_id = 'broadcast_id_example'; // string
-$sso = 'sso_example'; // string
+$options = [
+    'broadcast_id' => 'broadcast_id_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->createFeedPostPublic($tenant_id, $create_feed_post_params, $broadcast_id, $sso);
+    $result = $apiInstance->createFeedPostPublic($tenant_id, $create_feed_post_params, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->createFeedPostPublic: ', $e->getMessage(), PHP_EOL;

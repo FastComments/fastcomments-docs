@@ -1,7 +1,8 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Posizione | Richiesto | Descrizione |
+|------|------|-----------|-----------|-------------|
+| tenantId | string | query | Sì |  |
 | commentId | string | path | Sì |  |
 | sso | string | query | No |  |
 
@@ -11,9 +12,9 @@ Restituisce: [`ModerationAPIChildCommentsResponse`](https://github.com/FastComme
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di getCommentChildren'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio getCommentChildren'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importa le classi:
+// Importa classi:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationAPIChildCommentsResponse result = apiInstance.getCommentChildren(commentId)
+      ModerationAPIChildCommentsResponse result = apiInstance.getCommentChildren(tenantId, commentId)
             .sso(sso)
             .execute();
       System.out.println(result);

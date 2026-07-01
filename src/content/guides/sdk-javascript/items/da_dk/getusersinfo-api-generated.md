@@ -1,8 +1,8 @@
-Bulk brugerinfo for en tenant. Givet userIds returneres visningsinformation fra User / SSOUser.
-Bruges af kommentar-widget til at berige brugere, der lige er dukket op via en presence-begivenhed.
+Massebrugerinfo for en lejer. Givet bruger-id'er returneres visningsinfo fra User / SSOUser.  
+Brugt af kommentarwidgeten til at berige brugere, der lige er dukket op via en tilstedeværelseshændelse.  
 Ingen sidekontekst: privatliv håndhæves ensartet (private profiler maskeres).
 
-## Parametre
+## Parameters
 
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
@@ -11,16 +11,17 @@ Ingen sidekontekst: privatliv håndhæves ensartet (private profiler maskeres).
 
 ## Svar
 
-Returnerer: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersInfoResponse.ts)
+Returnerer: [`GetUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUsersInfoResponse.ts)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'getUsersInfo Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_78f9';
-const ids: string = 'user_10234,user_10235,user_10236';
-const usersInfo: PageUsersInfoResponse = await getUsersInfo(tenantId, ids);
-// getUsersInfo kræver kun tenantId og ids; valgfrie parametre er ikke relevante her.
-[inline-code-end]
+const tenantId: string = "acme-corp-tenant";
+const ids: string = "user-1001,user-1002";
 
----
+const usersInfo: GetUsersInfoResponse = await getUsersInfo(tenantId, ids);
+
+// Optional fields in the response may be undefined
+const firstUser: PageUserEntry | undefined = usersInfo?.users?.[0];
+[inline-code-end]

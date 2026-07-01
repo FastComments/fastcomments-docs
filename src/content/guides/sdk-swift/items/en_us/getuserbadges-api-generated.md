@@ -29,7 +29,7 @@ let displayedOnComments = true // Bool |  (optional)
 let limit = 987 // Double |  (optional)
 let skip = 987 // Double |  (optional)
 
-DefaultAPI.getUserBadges(tenantId: tenantId, userId: userId, badgeId: badgeId, type: type, displayedOnComments: displayedOnComments, limit: limit, skip: skip) { (response, error) in
+DefaultAPI.getUserBadges(tenantId: tenantId, options: DefaultAPI.GetUserBadgesOptions(userId: userId, badgeId: badgeId, type: type, displayedOnComments: displayedOnComments, limit: limit, skip: skip)) { (response, error) in
     guard error == nil else {
         print(error)
         return

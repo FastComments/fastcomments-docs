@@ -2,9 +2,9 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| urlId | string | query | Да |  |
-| id | string | query | Да |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| id | string | query | Yes |  |
 
 ## Отговор
 
@@ -12,7 +12,7 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'getV2PageReactUsers Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за getV2PageReactUsers'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -20,13 +20,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ако искате да използвате потребителски HTTP клиент, предайте вашия клиент, който имплементира `GuzzleHttp\ClientInterface`.
-    // Това е по избор, по подразбиране ще се използва `GuzzleHttp\Client`.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $url_id = 'url_id_example'; // string
 $id = 'id_example'; // string
+
 
 try {
     $result = $apiInstance->getV2PageReactUsers($tenant_id, $url_id, $id);
@@ -35,5 +37,3 @@ try {
     echo 'Exception when calling PublicApi->getV2PageReactUsers: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

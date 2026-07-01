@@ -2,7 +2,8 @@
 
 | Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| sso | string | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -10,7 +11,7 @@ Vrne: [`APIModerateGetUserBanPreferencesResponse`](https://github.com/FastCommen
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer GetUserBanPreference'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GetUserBanPreference Primer'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -22,16 +23,17 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	sso := "sso_example" // string |  (neobvezno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetUserBanPreference(context.Background()).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetUserBanPreference(context.Background()).TenantId(tenantId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetUserBanPreference``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor iz `GetUserBanPreference`: APIModerateGetUserBanPreferencesResponse
+	// response from `GetUserBanPreference`: APIModerateGetUserBanPreferencesResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetUserBanPreference`: %v\n", resp)
 }
 [inline-code-end]

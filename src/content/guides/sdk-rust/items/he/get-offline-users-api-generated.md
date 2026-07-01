@@ -1,16 +1,16 @@
-מגיבים קודמים בעמוד שאינם מחוברים כעת. ממוינים לפי displayName.
-השתמש בזה לאחר שמיצית את /users/online כדי להציג מדור "Members".
-דפדוף בסמן על commenterName: השרת סורק את האינדקס החלקי {tenantId, urlId, commenterName}
-מהאינדקס החל מ-afterName קדימה באמצעות $gt, ללא עלות של $skip.
+Past commenters on the page who are NOT currently online. Sorted by displayName.  
+השתמשו בזה לאחר שנצלו /users/online כדי להציג סעיף "Members".  
+Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.  
+דפדוף עם סמן על commenterName: השרת מעביר את האינדקס החלקי {tenantId, urlId, commenterName} אחרי afterName קדימה באמצעות $gt, ללא עלות $skip.
 
 ## Parameters
 
-| שם | סוג | נדרש | תיאור |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | כן |  |
-| url_id | String | כן |  |
-| after_name | String | לא |  |
-| after_user_id | String | לא |  |
+| tenant_id | String | Yes |  |
+| url_id | String | Yes |  |
+| after_name | String | No |  |
+| after_user_id | String | No |  |
 
 ## Response
 
@@ -18,18 +18,16 @@
 
 ## Example
 
-[inline-code-attrs-start title = 'דוגמת get_offline_users'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_offline_users דוגמה'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_offline_users() -> Result<PageUsersOfflineResponse, Error> {
-    let params: GetOfflineUsersParams = GetOfflineUsersParams {
+async fn fetch_offline(config: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetOfflineUsersParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        url_id: "news/world/today".to_string(),
-        after_name: Some("jane.smith".to_string()),
-        after_user_id: Some("user-1024".to_string()),
+        url_id: "news/article".to_string(),
+        after_name: Some("alice".to_string()),
+        after_user_id: Some("user-42".to_string()),
     };
-    let response: PageUsersOfflineResponse = get_offline_users(&configuration, params).await?;
-    Ok(response)
+    let _response = get_offline_users(config, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

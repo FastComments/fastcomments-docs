@@ -1,30 +1,28 @@
-현재 페이지에 온라인 상태인 뷰어: 웹소켓 세션이 현재 해당 페이지에 구독되어 있는 사용자들입니다.
-익명 뷰어를 열거하지 않는 방 전체 구독자를 포함하여 anonCount + totalCount를 반환합니다.
+---
+현재 페이지에 온라인인 뷰어: 현재 페이지에 구독된 웹소켓 세션을 가진 사람들.
+익명 카운트와 전체 카운트(방 전체 구독자, 열거하지 않는 익명 뷰어 포함)를 반환합니다.
 
-## 매개변수
+## Parameters
 
-| 이름 | 타입 | 필수 | 설명 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| urlId | string | 예 |  |
-| afterName | string | 아니요 |  |
-| afterUserId | string | 아니요 |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| options | GetOnlineUsersOptions | No |  |
 
-## 응답
+## Response
 
 반환: [`Option[PageUsersOnlineResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_online_response.nim)
 
-## 예제
+## Example
 
-[inline-code-attrs-start title = 'getOnlineUsers 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getOnlineUsers 예시'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getOnlineUsers(tenantId = "my-tenant-123", urlId = "news/politics/top-story", afterName = "", afterUserId = "")
-if response.isSome:
-  let page = response.get()
-  echo "Received online users page:"
-  echo page
-else:
-  echo "No online users returned. HTTP status: ", httpResponse.statusCode
+let opts = GetOnlineUsersOptions()
+let (onlineUsersOpt, httpResp) = client.getOnlineUsers(tenantId = "my-tenant-123", urlId = "news/article-title", options = opts)
+if onlineUsersOpt.isSome:
+  let onlineUsers = onlineUsersOpt.get()
+  echo onlineUsers
 [inline-code-end]
 
 ---

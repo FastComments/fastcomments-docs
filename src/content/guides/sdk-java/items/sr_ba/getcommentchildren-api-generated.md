@@ -1,7 +1,8 @@
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
 | commentId | string | path | Yes |  |
 | sso | string | query | No |  |
 
@@ -9,9 +10,9 @@
 
 Vraća: [`ModerationAPIChildCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationAPIChildCommentsResponse.java)
 
-## Primjer
+## Primer
 
-[inline-code-attrs-start title = 'getCommentChildren Primjer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getCommentChildren'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Uvezi klase:
 import com.fastcomments.invoker.ApiClient;
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationAPIChildCommentsResponse result = apiInstance.getCommentChildren(commentId)
+      ModerationAPIChildCommentsResponse result = apiInstance.getCommentChildren(tenantId, commentId)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -43,3 +45,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

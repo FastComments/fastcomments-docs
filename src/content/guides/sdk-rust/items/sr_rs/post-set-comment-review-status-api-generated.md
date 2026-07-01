@@ -1,28 +1,30 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| comment_id | String | Да |  |
-| reviewed | bool | Не |  |
-| sso | String | Не |  |
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenant_id | String | Da |  |
+| comment_id | String | Da |  |
+| reviewed | bool | Ne |  |
+| broadcast_id | String | Ne |  |
+| sso | String | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
+Vraća: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'post_set_comment_review_status Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_set_comment_review_status Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn set_comment_review_status() -> Result<ApiEmptyResponse, Error> {
-    let params: PostSetCommentReviewStatusParams = PostSetCommentReviewStatusParams {
-        comment_id: "news/article-2026-06-18-cmt-9843".to_string(),
+async fn update_review_status(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = PostSetCommentReviewStatusParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: "comment-98765".to_string(),
         reviewed: Some(true),
-        sso: Some("acme-sso-session-7f2e9b".to_string()),
+        broadcast_id: Some("broadcast-2023-summer".to_string()),
+        sso: Some("sso-user-42".to_string()),
     };
-    let response: ApiEmptyResponse = post_set_comment_review_status(&configuration, params).await?;
-    Ok(response)
+    post_set_comment_review_status(configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

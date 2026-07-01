@@ -1,26 +1,26 @@
-Ζωντανή σχηματοποιημένη σχολιαστική λειτουργία με avatars, εμφωλευμένες απαντήσεις, ψήφους και τον ενσωματωμένο συντάκτη μορφοποιημένου κειμένου, καθώς και ένα σκοτεινό θέμα και ένα preset ζωντανής συνομιλίας (εμφανίζεται εδώ αποδοσμένο μέσω `react-native-web`):
+Live threaded commenting with avatars, nested replies, votes, and the built‑in rich‑text composer, plus a dark theme and a live‑chat preset (shown here rendered via `react-native-web`):
 
 <table>
   <tr>
-    <td align="center"><b>Ζωντανά Σχόλια</b><br/><img src="./demo-screenshots/light.png" width="260" alt="Ζωντανά σχόλια, φωτεινό θέμα"/></td>
-    <td align="center"><b>Σκοτεινό Θέμα</b><br/><img src="./demo-screenshots/dark.png" width="260" alt="Ζωντανά σχόλια, σκοτεινό θέμα"/></td>
-    <td align="center"><b>Ζωντανή Συνομιλία</b><br/><img src="./demo-screenshots/chat.png" width="260" alt="Preset ζωντανής συνομιλίας"/></td>
+    <td align="center"><b>Ζωντανός Σχολιασμός</b><br/><img src="./demo-screenshots/light.png" width="260" alt="Ζωντανός σχολιασμός, ανοιχτό θέμα"/></td>
+    <td align="center"><b>Σκοτεινό Θέμα</b><br/><img src="./demo-screenshots/dark.png" width="260" alt="Ζωντανός σχολιασμός, σκοτεινό θέμα"/></td>
+    <td align="center"><b>Ζωντανή Συνομιλία</b><br/><img src="./demo-screenshots/chat.png" width="260" alt="Προεπιλογή ζωντανής συνομιλίας"/></td>
   </tr>
 </table>
 
-### Συντάκτης Μορφοποιημένου Κειμένου
+### Rich Text Editor
 
-Αυτή η βιβλιοθήκη χρησιμοποιεί [`react-native-enriched`](https://github.com/software-mansion/react-native-enriched) για την επεξεργασία μορφοποιημένου κειμένου, που παρέχει μια ισχυρή WYSIWYG εμπειρία επεξεργασίας. Ο ίδιος επεξεργαστής τροφοδοτεί iOS, Android και τον ιστό (μέσω `react-native-web`), έτσι ο συντάκτης συμπεριφέρεται με συνέπεια σε κάθε πλατφόρμα με μία υλοποίηση.
+This library uses [`react-native-enriched`](https://github.com/software-mansion/react-native-enriched) for rich text editing, which provides a powerful WYSIWYG editing experience. The same editor powers iOS, Android, and the web (via `react-native-web`), so the composer behaves consistently across every platform with a single implementation.
 
-Το `react-native-enriched` απαιτεί τη Νέα Αρχιτεκτονική του React Native (Fabric) στις native πλατφόρμες (το προεπιλεγμένο από RN 0.76, προαιρετικό σε RN 0.72-0.75), και έναν bundler που επιλύει τις συνθήκες `exports` των πακέτων. Αυτό το SDK αναπτύσσεται και δοκιμάζεται ενάντια σε RN 0.81 / React 19. Ο ίδιος επεξεργαστής τρέχει επίσης στον ιστό μέσω του `react-native-web`; το web build του enriched επεξεργαστή εξακολουθεί να χαρακτηρίζεται πειραματικό από το upstream.
+`react-native-enriched` requires the React Native New Architecture (Fabric) on native (the default since RN 0.76, opt-in on RN 0.72-0.75), and a bundler that resolves package `exports` conditions. This SDK is developed and tested against RN 0.81 / React 19. The same editor also runs on web through `react-native-web`; the enriched editor's web build is still marked experimental upstream.
 
 ### Widgets
 
-Το SDK περιλαμβάνει τρία widgets, αντιστοιχώντας στο FastComments Android SDK:
+The SDK ships three widgets, mirroring the FastComments Android SDK:
 
-- `FastCommentsLiveCommenting` - σχολιασμός με νήματα, ψήφους, απαντήσεις, σελιδοποίηση, mentions, ειδοποιήσεις και ζωντανές ενημερώσεις.
-- `FastCommentsLiveChat` - ένα preset συνομιλίας πάνω στην ίδια μηχανή: χρονολογημένα μηνύματα με τα νεότερα στο κάτω μέρος, ο συντάκτης κάτω από τη λίστα, μια ζωντανή κεφαλίδα (σημείο σύνδεσης + πλήθος χρηστών), απεριόριστο ιστορικό που φορτώνεται με κύλιση προς τα πάνω, αυτόματο κύλισμα σε νέα μηνύματα, χωρίς ψήφους ή threading απαντήσεων. Κάθε preset μπορεί να παρεμβληθεί μέσω του `config`.
-- `FastCommentsFeed` - ένα κοινωνικό feed με συντάκτη δημοσίευσης, μέσα, αντιδράσεις, ακολουθίες και ζωντανές μπάνερ για νέες δημοσιεύσεις.
+- `FastCommentsLiveCommenting` - threaded commenting with votes, replies, pagination, mentions, notifications, and live updates.
+- `FastCommentsLiveChat` - a chat preset over the same engine: chronological messages with new ones at the bottom, the composer below the list, a live header strip (connection dot + user count), infinite history loaded by scrolling up, auto-scroll to new messages, no votes or reply threading. Every preset can be overridden via `config`.
+- `FastCommentsFeed` - a social feed with post composer, media, reactions, follows, and live new‑post banners.
 
 ```tsx
     <FastCommentsLiveChat config=\{{ tenantId: 'demo', urlId: 'my-room' }}/>
@@ -28,13 +28,13 @@
 
 ### Θεματοποίηση
 
-Η προεπιλεγμένη εμφάνιση παράγεται από ένα σύνολο σημειωτικών tokens σχεδίασης (`FastCommentsTheme`): χρώματα, αποστάσεις, ακτίνες, μεγέθη γραμματοσειρών, βάρη γραμματοσειρών και μεγέθη avatar. Δώστε μερικές αντικαταστάσεις tokens (typed `FastCommentsThemeOverrides`) μέσω της prop `theme` σε οποιοδήποτε widget και ολόκληρο το δέντρο στυλ θα ανανεωθεί συνεπώς:
+The default look is generated from a set of semantic design tokens (`FastCommentsTheme`): colors, spacing, radius, font sizes, font weights, and avatar sizes. Pass partial token overrides (typed `FastCommentsThemeOverrides`) through the `theme` prop on any widget and the entire style tree restyles consistently:
 
 ```tsx
     <FastCommentsLiveCommenting config={config} theme=\{{ colors: { primary: '#FF5500' } }}/>
 ```
 
-Το σκοτεινό θέμα είναι ένα σύνολο tokens μακριά:
+Dark mode is one token set away:
 
 ```tsx
     import { getDarkTheme } from 'fastcomments-react-native-sdk';
@@ -42,41 +42,71 @@
     <FastCommentsLiveCommenting config={config} theme={getDarkTheme()}/>
 ```
 
-Η prop `styles` εξακολουθεί να δέχεται ένα ακατέργαστο δέντρο `IFastCommentsStyles` για ενδελεχή έλεγχο. Όταν παρέχονται και `theme` και `styles`, τα ρητά στυλ υπερισχύουν του θεματικού δέντρου· όταν παρέχεται μόνο `styles`, αντικαθιστά πλήρως τις προεπιλογές (η αρχική συμπεριφορά, ώστε οι υπάρχουσες ενσωματώσεις και skins να μη θιγούν). Το `setupDarkModeSkin` είναι deprecated υπέρ της prop `theme`.
+The `styles` prop still accepts a raw `IFastCommentsStyles` tree for surgical control. When `theme` and `styles` are both provided, the explicit styles win over the themed tree; when only `styles` is provided, it replaces the defaults entirely (the original behavior, so existing integrations and skins are unaffected). `setupDarkModeSkin` is deprecated in favor of the `theme` prop.
 
 ### Επιλογές Διαμόρφωσης
 
-Αυτή η βιβλιοθήκη στοχεύει να υποστηρίζει όλες τις επιλογές διαμόρφωσης που ορίζονται στο [fastcomments-typescript](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts), όπως και η υλοποίηση για τον ιστό.
+This library aims to support all configuration options defined in [fastcomments-typescript](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts), just like the web implementation.
 
-Πέρα από αυτές, το React Native προσθέτει μερικές επιλογές ειδικές για το SDK μέσω του `FastCommentsRNConfig`:
+On top of those, React Native adds a few SDK‑specific options via `FastCommentsRNConfig`:
 
-- `hideTopBar` - απόκρυψη της λωρίδας με τον συνδεδεμένο χρήστη / εικονίδιο ειδοποιήσεων που εμφανίζεται πάνω από τον συντάκτη.
-- `usePressToEdit` - πατήστε και κρατήστε ένα σχόλιο για να ανοίξει το μενού του.
-- `disableDownVoting` - απόκρυψη κουμπιών κατά-ψήφου.
-- `renderCommentInline` - απόδοση των πληροφοριών του σχολιαστή μέσα στο ίδιο HTML μπλοκ με το περιεχόμενο του σχολίου.
-- `renderLikesToRight` - μετακίνηση της περιοχής ψήφων/likes δεξιά του σχολίου αντί κάτω από αυτό.
-- `renderDateBelowComment` - απόδοση της ημερομηνίας κάτω από το σχόλιο.
-- `showLiveStatus` - εμφάνιση της κεφαλίδας στυλ συνομιλίας "Live" + πλήθος χρηστών πάνω από τα σχόλια.
-- `useInlineSubmitButton` - απόδοση του κουμπιού υποβολής ως εικονίδιο μέσα στον συντάκτη.
-- `countAboveToggle` - με το `useShowCommentsToggle`, πόσα σχόλια εμφανίζονται πάνω από το κουμπί "Show Comments".
-- `preserveFeedScrollPosition` - το `FastCommentsFeed` θυμάται την απόσταση κύλισης του μεταξύ unmount/remount (προεπιλογή true).
+- `hideTopBar` - hide the logged‑in user / notification‑bell strip shown above the composer.
+- `usePressToEdit` - press‑and‑hold a comment to open its menu.
+- `disableDownVoting` - hide down‑vote buttons.
+- `renderCommentInline` - render commenter info inside the same HTML block as the comment content.
+- `renderLikesToRight` - move the vote/like area to the right of the comment instead of below it.
+- `renderDateBelowComment` - render the date below the comment.
+- `showLiveStatus` - show the chat‑style "Live" + user‑count header strip above comments.
+- `useInlineSubmitButton` - render the submit button as an icon inside the composer.
+- `countAboveToggle` - with `useShowCommentsToggle`, how many comments render above the "Show Comments" toggle.
+- `preserveFeedScrollPosition` - `FastCommentsFeed` remembers its scroll offset across unmount/remount (default true).
 
-### Βασικές έννοιες FastComments
+### FastComments Concepts
 
-Οι κύριες έννοιες που χρειάζεται να γνωρίζετε για να ξεκινήσετε είναι το `tenantId` και το `urlId`. Το `tenantId` είναι το αναγνωριστικό του λογαριασμού σας στο FastComments.com. Το `urlId` είναι το σημείο στο οποίο θα συνδεθούν τα νήματα σχολίων. Αυτό μπορεί να είναι ένα URL σελίδας, ένα id προϊόντος, ένα id άρθρου, κ.λπ.
+The main concepts to be aware of to get started are `tenantId` and `urlId`. `tenantId` is your FastComments.com account identifier. `urlId` is where comment threads
+will be tied to. This could be a page URL, or a product id, an article id, etc.
+
+### Τοπικοποίηση
+
+All user‑facing text in these widgets (button labels, placeholders, empty states, relative
+dates like "5 minutes ago", error messages, etc.) is **server‑driven**. The components do not
+hard‑code English strings; they render the translations FastComments serves for the requested
+locale.
+
+To request a locale, set `locale` in your config:
+
+```ts
+const config = {
+    tenantId: 'your-tenant-id',
+    urlId: 'some-page',
+    locale: 'de_de', // de_de, fr_fr, ja_jp, es_es, etc.
+};
+```
+
+When no `locale` is set, FastComments serves the tenant's default language.
+
+**Editing the text:** translations are managed in your FastComments dashboard, not in this SDK.
+To change wording, override the default copy, or add a language, edit the translations for your
+account in the dashboard - the change is picked up by the widgets automatically with no app
+release required. The SDK ships no English fallbacks, so any key you blank out in the dashboard
+renders empty; keep the keys populated for every locale you support.
 
 ### Ειδοποιήσεις Χρηστών
 
-Το FastComments υποστηρίζει ειδοποιήσεις για [πολλά σενάρια](https://docs.fastcomments.com/guide-notifications.html). Οι ειδοποιήσεις είναι παραμετροποιήσιμες, μπορούν να απενεργοποιηθούν παγκοσμίως ή σε επίπεδο ειδοποίησης/σχολίου, και υποστηρίζει εγγραφές σε επίπεδο σελίδας ώστε οι χρήστες να μπορούν να εγγραφούν σε νήματα μιας συγκεκριμένης σελίδας ή άρθρου.
+FastComments supports notifications for [many scenarios](https://docs.fastcomments.com/guide-notifications.html). Notifications are configurable,
+can be opted‑out globally or at a notification/comment level, and supports page‑level subscriptions so that users can subscribe to threads of a
+specific page or article.
 
-Για παράδειγμα, είναι δυνατό να χρησιμοποιηθεί Secure SSO για την πιστοποίηση του χρήστη και στη συνέχεια να γίνονται περιοδικά polling για μη αναγνώσμες ειδοποιήσεις και να τις προωθείτε στον χρήστη.
+For example, it is possible to use Secure SSO to authenticate the user and then periodically poll for unread notifications and push them to the user.
 
-Δείτε το [the example AppNotificationSecureSSO](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppNotificationsSecureSSO.tsx) για το πώς να λαμβάνετε και να μεταφράζετε τις μη αναγνωσμένες ειδοποιήσεις χρήστη.
+See [the example AppNotificationSecureSSO](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppNotificationsSecureSSO.tsx) for how to get and translate unread user notifications.
 
-### Περιηγητής GIF
+### Gif Browser
 
-Από προεπιλογή, δεν είναι ενεργοποιημένη καμία επιλογή εικόνας ή gif. Δείτε το [example/src/AppCommentingImageSelection.tsx](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppCommentingImageSelection.tsx) για το πώς να υποστηρίξετε ανέβασμα εικόνων και gif. Υπάρχει ένας Περιηγητής GIF που ανωνυμοποιεί τις αναζητήσεις και τις εικόνες που παρέχονται σε αυτή τη βιβλιοθήκη — απλά πρέπει να τον χρησιμοποιήσετε.
+By default, no image or gif selection is enabled. See [example/src/AppCommentingImageSelection.tsx](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppCommentingImageSelection.tsx) for how
+to support image and gif uploads. There is a Gif Browser that anonymizes searches and images provided in this library, you simply have to use it.
 
-### Επιδόσεις
+### Απόδοση
 
-Παρακαλώ ανοίξτε ένα ticket με ένα παράδειγμα αναπαραγωγής, συμπεριλαμβανομένης της συσκευής που χρησιμοποιήθηκε, αν εντοπίσετε οποιοδήποτε πρόβλημα επιδόσεων. Οι επιδόσεις είναι πρωταρχικής σημασίας σε όλες τις βιβλιοθήκες FastComments.
+Please open a ticket with an example to reproduce, including device used, if you identify any performance problems. Performance is a first‑class citizen
+of all FastComments libraries.

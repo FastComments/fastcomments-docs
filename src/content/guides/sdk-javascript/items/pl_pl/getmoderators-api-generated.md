@@ -7,20 +7,19 @@
 
 ## Odpowiedź
 
-Zwraca: [`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModeratorsResponse.ts)
+Zwraca: [`GetModeratorsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModeratorsResponse1.ts)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład użycia getModerators'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład getModerators'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function run(): Promise<void> {
-  const tenantId: string = "acme-tenant-98765";
-  const moderatorsResponse: GetModeratorsResponse = await getModerators(tenantId);
-  const skip: number = 25;
-  const pagedResponse: GetModeratorsResponse = await getModerators(tenantId, skip);
-  console.log(moderatorsResponse, pagedResponse);
+async function fetchModerators(): Promise<void> {
+  const tenantId: string = "tenant-9876";
+  const skip: number = 30; // opcjonalny offset paginacji
+  const moderators: GetModeratorsResponse1 = await getModerators(tenantId, skip);
+  // Przykład bez paginacji:
+  // const allModerators: GetModeratorsResponse1 = await getModerators(tenantId);
 }
-run();
 [inline-code-end]
 
 ---

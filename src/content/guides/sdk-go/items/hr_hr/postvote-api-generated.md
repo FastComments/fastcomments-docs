@@ -1,18 +1,20 @@
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Da |  |
-| direction | string | query | Ne |  |
-| sso | string | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| direction | string | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
-Vraća: [`VoteResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_vote_response.go)
+Returns: [`VoteResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_vote_response.go)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer PostVote'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PostVote Primjer'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -24,18 +26,20 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
 	direction := "direction_example" // string |  (neobavezno)
+	broadcastId := "broadcastId_example" // string |  (neobavezno)
 	sso := "sso_example" // string |  (neobavezno)
 
-	(configuration := openapiclient.NewConfiguration()
+	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostVote(context.Background(), commentId).Direction(direction).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostVote(context.Background(), commentId).TenantId(tenantId).Direction(direction).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostVote``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor iz `PostVote`: VoteResponse
+	// odgovor od `PostVote`: VoteResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostVote`: %v\n", resp)
 }
 [inline-code-end]

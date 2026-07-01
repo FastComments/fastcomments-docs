@@ -1,11 +1,12 @@
 ## Παράμετροι
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Ναι |  |
-| sso | string | query | Όχι |  |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|-----------|-----------|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| sso | string | query | No |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`GetCommentBanStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_comment_ban_status_response.rb)
 
@@ -17,6 +18,7 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 comment_id = 'comment_id_example' # String | 
 opts = {
   sso: 'sso_example' # String | 
@@ -24,11 +26,9 @@ opts = {
 
 begin
   
-  result = api_instance.get_comment_ban_status(comment_id, opts)
+  result = api_instance.get_comment_ban_status(tenant_id, comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_comment_ban_status: #{e}"
 end
 [inline-code-end]
-
----

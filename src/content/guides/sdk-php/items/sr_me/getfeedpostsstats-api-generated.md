@@ -1,18 +1,18 @@
-## Параметри
+## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| postIds | array | query | Да |  |
-| sso | string | query | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | path | Yes |  |
+| postIds | array | query | Yes |  |
+| sso | string | query | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/FeedPostsStatsResponse.php)
+Returns: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/FeedPostsStatsResponse.php)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'Пример getFeedPostsStats'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getFeedPostsStats'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -20,13 +20,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ако желите да користите прилагођени HTTP клијент, проследите свој клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опциони избор, `GuzzleHttp\Client` ће бити коришћен као подразумевани.
+    // Ako želite koristiti prilagođeni HTTP klijent, proslijedite vaš klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao podrazumevani.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $post_ids = array('post_ids_example'); // string[]
 $sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->getFeedPostsStats($tenant_id, $post_ids, $sso);

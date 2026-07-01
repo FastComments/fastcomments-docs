@@ -1,14 +1,14 @@
----
 ## Parameters
 
-| Naam | Type | Locatie | Verplicht | Beschrijving |
+| Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
-| userId | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Ja |  |
+| userId | string | query | Nee |  |
+| sso | string | query | Nee |  |
 
-## Respons
+## Response
 
-Geeft terug: [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_trust_factor_response.go)
+Retourneert: [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_trust_factor_response.go)
 
 ## Voorbeeld
 
@@ -24,19 +24,18 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	userId := "userId_example" // string |  (optioneel)
 	sso := "sso_example" // string |  (optioneel)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetTrustFactor(context.Background()).UserId(userId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetTrustFactor(context.Background()).TenantId(tenantId).UserId(userId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetTrustFactor``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// reactie van `GetTrustFactor`: GetUserTrustFactorResponse
+	// respons van `GetTrustFactor`: GetUserTrustFactorResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetTrustFactor`: %v\n", resp)
 }
 [inline-code-end]
-
----

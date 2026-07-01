@@ -1,10 +1,10 @@
 ## Parametri
 
-| Nome | Tipo | Posizione | Richiesto | Descrizione |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Sì |  |
-| commentId | string | path | Sì |  |
-| broadcastId | string | query | Sì |  |
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+|------|------|-----------|--------------|-------------|
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | Yes |  |
 | editKey | string | query | No |  |
 | sso | string | query | No |  |
 
@@ -14,7 +14,7 @@ Restituisce: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di setCommentText'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio setCommentText'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -22,19 +22,23 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Se vuoi usare un client HTTP personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
-    // Questo è opzionale, verrà usato `GuzzleHttp\Client` come impostazione predefinita.
+    // Se vuoi usare un client http personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
+    // Questo è opzionale, `GuzzleHttp\Client` verrà usato come predefinito.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $comment_id = 'comment_id_example'; // string
 $broadcast_id = 'broadcast_id_example'; // string
 $comment_text_update_request = new \FastComments\Client\Model\CommentTextUpdateRequest(); // \FastComments\Client\Model\CommentTextUpdateRequest
-$edit_key = 'edit_key_example'; // string
-$sso = 'sso_example'; // string
+$options = [
+    'edit_key' => 'edit_key_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->setCommentText($tenant_id, $comment_id, $broadcast_id, $comment_text_update_request, $edit_key, $sso);
+    $result = $apiInstance->setCommentText($tenant_id, $comment_id, $broadcast_id, $comment_text_update_request, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->setCommentText: ', $e->getMessage(), PHP_EOL;

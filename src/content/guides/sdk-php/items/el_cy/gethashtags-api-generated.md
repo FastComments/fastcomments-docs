@@ -1,11 +1,11 @@
 ## Παράμετροι
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|------------|-----------|
 | tenantId | string | query | Ναι |  |
 | page | number | query | Όχι |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetHashTagsResponse.php)
 
@@ -24,13 +24,15 @@ $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKe
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Αν θέλετε να χρησιμοποιήσετε προσαρμοσμένο HTTP client, περάστε τον client σας που υλοποιεί `GuzzleHttp\ClientInterface`.
-    // Αυτό είναι προαιρετικό, ο `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
+    // Εάν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε τον πελάτη σας που υλοποιεί `GuzzleHttp\ClientInterface`.
+    // Αυτό είναι προαιρετικό, το `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $page = 3.4; // float
+
 
 try {
     $result = $apiInstance->getHashTags($tenant_id, $page);

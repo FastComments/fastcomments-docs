@@ -1,7 +1,8 @@
 ## Parâmetros
 
 | Nome | Tipo | Localização | Obrigatório | Descrição |
-|------|------|----------|----------|-------------|
+|------|------|------------|-------------|-----------|
+| tenantId | string | query | Sim |  |
 | text-search | string | query | Não |  |
 | byIPFromComment | string | query | Não |  |
 | filter | string | query | Não |  |
@@ -15,7 +16,7 @@ Retorna: [`ModerationAPICountCommentsResponse`](https://github.com/FastComments/
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getCount'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo getCount'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importar classes:
 import com.fastcomments.invoker.ApiClient;
@@ -30,6 +31,7 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String textSearch = "textSearch_example"; // String | 
     String byIPFromComment = "byIPFromComment_example"; // String | 
     String filter = "filter_example"; // String | 
@@ -37,13 +39,13 @@ public class Example {
     Boolean demo = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationAPICountCommentsResponse result = apiInstance.getCount()
+      ModerationAPICountCommentsResponse result = apiInstance.getCount(tenantId)
             .textSearch(textSearch)
             .byIPFromComment(byIPFromComment)
             .filter(filter)
             .searchFilters(searchFilters)
             .demo(demo)
-            .sso(sso)
+            .sso(ssoa)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -56,5 +58,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

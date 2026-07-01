@@ -1,9 +1,9 @@
 ## Parâmetros
 
-| Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-----------|
-| tenantId | string | Sim |  |
-| createAPISSOUserData | CreateAPISSOUserData | Não |  |
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| createAPISSOUserData | CreateAPISSOUserData | No |  |
 
 ## Resposta
 
@@ -11,24 +11,9 @@ Retorna: [`Option[AddSSOUserAPIResponse]`](https://github.com/FastComments/fastc
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de addSSOUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo addSSOUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.addSSOUser(
-  tenantId = "my-tenant-123",
-  createAPISSOUserData = CreateAPISSOUserData(
-    id = "sso-456",
-    email = "alice.johnson@newsorg.com",
-    name = "Alice Johnson",
-    roles = @["editor", "contributor"],
-    isActive = true,
-    isAdmin = false
-  )
-)
-if response.isSome:
-  let apiResp = response.get()
-  discard apiResp
-else:
-  discard httpResponse
+let (optResp, httpResp) = client.addSSOUser(tenantId = "my-tenant-123", createAPISSOUserData = CreateAPISSOUserData())
+if optResp.isSome:
+  let userResp = optResp.get()
 [inline-code-end]
-
----

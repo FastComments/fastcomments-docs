@@ -3,34 +3,29 @@
 
 | 名称 | 类型 | 必需 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| id | string | 是 |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
 ## 响应
 
-返回: [`GetQuestionConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetQuestionConfigResponse.h)
+返回：[`GetQuestionConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetQuestionConfigResponse.h)
 
 ## 示例
 
 [inline-code-attrs-start title = 'getQuestionConfig 示例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t questionId = U("qstn-456");
-boost::optional<utility::string_t> ifNoneMatch = U("W/\"5a2f3c\"");
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto questionId = utility::conversions::to_string_t("question-456");
+
 api->getQuestionConfig(tenantId, questionId)
-.then([ifNoneMatch](pplx::task<std::shared_ptr<GetQuestionConfigResponse>> t){
-    try {
-        auto resp = t.get();
-        if (ifNoneMatch) {
-            auto etag = *ifNoneMatch;
-            (void)etag;
+    .then([](pplx::task<std::shared_ptr<GetQuestionConfigResponse>> task) {
+        try {
+            auto response = task.get();
+            // 根据需要使用响应
+        } catch (const std::exception&) {
+            // 处理错误
         }
-        auto cfg = resp ? resp : std::make_shared<GetQuestionConfigResponse>();
-        (void)cfg;
-    } catch (const std::exception &ex) {
-        (void)ex;
-    }
-});
+    });
 [inline-code-end]
 
 ---

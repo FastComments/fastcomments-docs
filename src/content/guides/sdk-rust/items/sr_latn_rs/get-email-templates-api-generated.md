@@ -1,6 +1,6 @@
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
+| Ime | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
 | tenant_id | String | Yes |  |
 | skip | f64 | No |  |
@@ -11,14 +11,14 @@ Vraća: [`GetEmailTemplatesResponse`](https://github.com/FastComments/fastcommen
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer get_email_templates'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_email_templates Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_templates() -> Result<GetEmailTemplatesResponse, Error> {
-    let params: GetEmailTemplatesParams = GetEmailTemplatesParams {
+async fn run() -> Result<(), Error> {
+    let params = GetEmailTemplatesParams {
         tenant_id: "acme-corp-tenant".to_string(),
         skip: Some(10.0),
     };
-    let response: GetEmailTemplatesResponse = get_email_templates(&configuration, params).await?;
-    Ok(response)
+    let _response = get_email_templates(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]

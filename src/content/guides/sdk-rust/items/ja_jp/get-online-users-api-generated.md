@@ -1,5 +1,6 @@
-現在オンラインのページ閲覧者: 現在そのページに対してWebSocketセッションを購読している人々。
-anonCount + totalCount を返します（ルーム全体の購読者、列挙しない匿名ビューアーを含む）。
+---
+現在オンラインのページ閲覧者: 現在そのページにサブスクライブされている WebSocket セッションを持つユーザーです。
+返却は anonCount と totalCount の合計です（部屋全体の購読者で、列挙しない匿名閲覧者も含みます）。
 
 ## パラメータ
 
@@ -12,21 +13,21 @@ anonCount + totalCount を返します（ルーム全体の購読者、列挙し
 
 ## レスポンス
 
-返り値: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_online_response.rs)
+返却: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_online_response.rs)
 
 ## 例
 
 [inline-code-attrs-start title = 'get_online_users の例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_online_users() -> Result<PageUsersOnlineResponse, Error> {
-    let params: GetOnlineUsersParams = GetOnlineUsersParams {
+async fn example() -> Result<(), Error> {
+    let params = GetOnlineUsersParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        url_id: "news/world/article-2026".to_string(),
-        after_name: Some("jane.doe".to_string()),
-        after_user_id: Some("user_98765".to_string()),
+        url_id: "news/article".to_string(),
+        after_name: Some("john_doe".to_string()),
+        after_user_id: Some("user-123".to_string()),
     };
-    let response: PageUsersOnlineResponse = get_online_users(&configuration, params).await?;
-    Ok(response)
+    let _response: PageUsersOnlineResponse = get_online_users(&config, params).await?;
+    Ok(())
 }
 [inline-code-end]
 

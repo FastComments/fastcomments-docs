@@ -1,6 +1,6 @@
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | userId | string | query | Ne |  |
@@ -16,9 +16,9 @@ Vraća: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomment
 
 ## Primer
 
-[inline-code-attrs-start title = 'getUserBadges Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getUserBadges'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sledeći primeri koda su još u beta fazi. Za bilo koji problem, prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledeći primeri koda su još u beta fazi. Za bilo koji problem, molimo prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -29,7 +29,7 @@ let displayedOnComments = true // Bool |  (opciono)
 let limit = 987 // Double |  (opciono)
 let skip = 987 // Double |  (opciono)
 
-DefaultAPI.getUserBadges(tenantId: tenantId, userId: userId, badgeId: badgeId, type: type, displayedOnComments: displayedOnComments, limit: limit, skip: skip) { (response, error) in
+DefaultAPI.getUserBadges(tenantId: tenantId, options: DefaultAPI.GetUserBadgesOptions(userId: userId, badgeId: badgeId, type: type, displayedOnComments: displayedOnComments, limit: limit, skip: skip)) { (response, error) in
     guard error == nil else {
         print(error)
         return

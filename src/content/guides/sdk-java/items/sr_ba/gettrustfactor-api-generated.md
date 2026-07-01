@@ -1,7 +1,8 @@
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
 | userId | string | query | No |  |
 | sso | string | query | No |  |
 
@@ -11,9 +12,9 @@ Vraća: [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastcomme
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer getTrustFactor'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getTrustFactor'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvoz klasa:
+// Uvezi klase:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String userId = "userId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      GetUserTrustFactorResponse result = apiInstance.getTrustFactor()
+      GetUserTrustFactorResponse result = apiInstance.getTrustFactor(tenantId)
             .userId(userId)
             .sso(sso)
             .execute();

@@ -1,29 +1,30 @@
 ## Parameter
 
-| Name | Typ | Ort | Erforderlich | Beschreibung |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Ja |  |
-| commentId | string | path | Ja |  |
-| urlId | string | query | Ja |  |
-| broadcastId | string | query | Ja |  |
-| sessionId | string | query | Nein |  |
-| sso | string | query | Nein |  |
+| Name      | Typ    | Ort    | Erforderlich | Beschreibung |
+|-----------|--------|--------|--------------|--------------|
+| tenantId  | string | path   | Ja           |  |
+| commentId | string | path   | Ja           |  |
+| urlId     | string | query  | Ja           |  |
+| broadcastId | string | query  | Ja           |  |
+| sessionId | string | query  | Nein         |  |
+| sso       | string | query  | Nein         |  |
 
 ## Antwort
 
-Gibt zurück: [`VoteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_response.py)
+Rückgabe: [`VoteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_response.py)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'vote_comment Beispiel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import VoteCommentOptions
 from client.models.vote_body_params import VoteBodyParams
 from client.models.vote_response import VoteResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Die Angabe des Hosts ist optional und der Standard ist https://fastcomments.com
+# Das Definieren des Hosts ist optional und standardmäßig https://fastcomments.com
 # Siehe configuration.py für eine Liste aller unterstützten Konfigurationsparameter.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -32,7 +33,7 @@ configuration = client.Configuration(
 
 # Einen Kontext mit einer Instanz des API-Clients öffnen
 with client.ApiClient(configuration) as api_client:
-    # Erstelle eine Instanz der API-Klasse
+    # Eine Instanz der API-Klasse erstellen
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
@@ -43,7 +44,7 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.vote_comment(tenant_id, comment_id, url_id, broadcast_id, vote_body_params, session_id=session_id, sso=sso)
+        api_response = api_instance.vote_comment(tenant_id, comment_id, url_id, broadcast_id, vote_body_params, VoteCommentOptions(session_id=session_id, sso=sso))
         print("The response of PublicApi->vote_comment:\n")
         pprint(api_response)
     except Exception as e:

@@ -1,8 +1,8 @@
----
 ## Parametre
 
-| Navn | Type | Placering | Obligatorisk | Beskrivelse |
-|------|------|----------|----------|-------------|
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
+|------|------|-----------|----------|-------------|
+| tenantId | string | query | Ja |  |
 | sso | string | query | Nej |  |
 
 ## Svar
@@ -13,13 +13,14 @@ Returnerer: [`ModerationAPIChildCommentsResponse`](https://github.com/FastCommen
 
 [inline-code-attrs-start title = 'postCommentsByIds Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Følgende kodeeksempler er stadig i beta. For eventuelle problemer, rapportér venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De følgende kodeeksempler er stadig i beta. For eventuelle problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentsByIdsParams = CommentsByIdsParams(ids: ["ids_example"]) // CommentsByIdsParams | 
-let sso = "sso_example" // String |  (valgfri)
+let sso = "sso_example" // String |  (optional)
 
-ModerationAPI.postCommentsByIds(commentsByIdsParams: commentsByIdsParams, sso: sso) { (response, error) in
+ModerationAPI.postCommentsByIds(tenantId: tenantId, commentsByIdsParams: commentsByIdsParams, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return

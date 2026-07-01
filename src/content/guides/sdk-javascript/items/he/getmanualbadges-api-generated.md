@@ -1,20 +1,30 @@
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
-| sso | string | לא |  |
+| tenantId | string | No |  |
+| sso | string | No |  |
 
-## תגובה
+## תשובה
 
-מחזיר: [`GetTenantManualBadgesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantManualBadgesResponse.ts)
+מחזיר: [`GetManualBadgesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetManualBadgesResponse.ts)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getManualBadges'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getManualBadges'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const ssoToken: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Njc4OSIsImlhdCI6MTYwOTQyNjQwMH0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c";
-const manualBadgesWithSso: GetTenantManualBadgesResponse = await getManualBadges(ssoToken);
-const manualBadgesWithoutSso: GetTenantManualBadgesResponse = await getManualBadges();
-[inline-code-end]
+async function fetchBadges() {
+  const tenantId: string = "tenant_987654321";
+  const ssoToken: string = "sso_ABCdef123456";
 
----
+  // קריאה עם שני הפרמטרים האופציונליים
+  const responseFull: GetManualBadgesResponse = await getManualBadges(tenantId, ssoToken);
+  console.log(responseFull);
+
+  // קריאה רק עם tenantId
+  const responseTenantOnly: GetManualBadgesResponse = await getManualBadges(tenantId);
+  console.log(responseTenantOnly);
+}
+
+fetchBadges();
+[inline-code-end]

@@ -2,10 +2,10 @@
 
 | שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| userId | string | לא |  |
-| id | string | לא |  |
-| changeTicketStateBody | ChangeTicketStateBody | לא |  |
+| tenantId | string | Yes |  |
+| userId | string | No |  |
+| id | string | No |  |
+| changeTicketStateBody | ChangeTicketStateBody | No |  |
 
 ## תגובה
 
@@ -13,13 +13,18 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה של changeTicketState'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'changeTicketState דוגמה'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let body = ChangeTicketStateBody()
-let (response, httpResponse) = client.changeTicketState(tenantId = "my-tenant-123", userId = "user-456", id = "ticket-789", changeTicketStateBody = body)
-if response.isSome:
-  let ticketResp = response.get()
-  echo "Ticket state changed:", ticketResp
+let (optResp, httpResp) = client.changeTicketState(
+  tenantId = "my-tenant-001",
+  userId = "user-42",
+  id = "ticket-12345",
+  changeTicketStateBody = ChangeTicketStateBody(state = "closed")
+)
+
+if optResp.isSome:
+  let resp = optResp.get()
+  echo resp
 [inline-code-end]
 
 ---

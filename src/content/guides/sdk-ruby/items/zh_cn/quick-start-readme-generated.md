@@ -1,23 +1,23 @@
-### 使用已认证的 API (DefaultApi)
+### 使用已认证的 API（DefaultApi）
 
-**重要：** 在发起需要认证的请求之前，您必须在 ApiClient 上设置您的 API 密钥。如果不设置，请求会返回 401 错误。
+**重要提示：** 在进行已认证请求之前，必须在 ApiClient 上设置您的 API 密钥。如果未设置，请求将返回 401 错误。
 
 ```ruby
 require 'fastcomments'
 
-# 创建并配置 API 客户端
+# Create and configure the API client
 config = FastCommentsClient::Configuration.new
 api_client = FastCommentsClient::ApiClient.new(config)
 
-# 必需：设置您的 API 密钥（从 FastComments 仪表板获取）
+# REQUIRED: Set your API key (get this from your FastComments dashboard)
 config.api_key['x-api-key'] = 'YOUR_API_KEY_HERE'
 
-# 使用已配置的客户端创建 API 实例
+# Create the API instance with the configured client
 api = FastCommentsClient::DefaultApi.new(api_client)
 
-# 现在您可以发起带认证的 API 调用
+# Now you can make authenticated API calls
 begin
-  # 示例：添加一个 SSO 用户
+  # Example: Add an SSO user
   user_data = {
     id: 'user-123',
     email: 'user@example.com',
@@ -29,15 +29,15 @@ begin
 
 rescue FastCommentsClient::ApiError => e
   puts "Error: #{e.response_body}"
-  # 常见错误：
-  # - 401：API 密钥缺失或无效
+  # Common errors:
+  # - 401：缺少或无效的 API 密钥
   # - 400：请求验证失败
 end
 ```
 
-### 使用公共 API (PublicApi)
+### 使用公共 API（PublicApi）
 
-公共端点不需要认证：
+公共端点无需认证：
 
 ```ruby
 require 'fastcomments'
@@ -46,8 +46,8 @@ public_api = FastCommentsClient::PublicApi.new
 
 begin
   response = public_api.get_comments_public(
-    tenant_id: 'YOUR_TENANT_ID',
-    url_id: 'page-url-id'
+    'YOUR_TENANT_ID',
+    'page-url-id'
   )
   puts response
 rescue FastCommentsClient::ApiError => e
@@ -55,9 +55,9 @@ rescue FastCommentsClient::ApiError => e
 end
 ```
 
-### 使用审核 API (ModerationApi)
+### 使用审查 API（ModerationApi）
 
-审核方法为审核者仪表板提供功能。传入 `sso` 令牌，使请求以经过 SSO 认证的审核者身份发出：
+审查方法为审查员仪表板提供功能。请传入 `sso` 令牌，以便代表已使用 SSO 认证的审查员发起请求：
 
 ```ruby
 require 'fastcomments'
@@ -65,7 +65,7 @@ require 'fastcomments'
 moderation_api = FastCommentsClient::ModerationApi.new
 
 begin
-  # 示例：列出审核队列中的评论
+  # Example: List comments in the moderation queue
   response = moderation_api.get_api_comments(
     sso: 'YOUR_MODERATOR_SSO_TOKEN'
   )
@@ -77,6 +77,6 @@ end
 
 ### 常见问题
 
-1. **401 "missing-api-key" 错误**：在创建 DefaultApi 实例之前，请确保已设置 `config.api_key['x-api-key'] = 'YOUR_KEY'`。
-2. **错误的 API 类**：对服务器端的带认证请求使用 `DefaultApi`，对客户端/公共请求使用 `PublicApi`，对审核者仪表板请求使用 `ModerationApi`。
-3. **API 密钥为 null**：如果 API 密钥为 null，SDK 将静默跳过认证，导致 401 错误。
+1. **401 “missing-api-key” 错误**：请确保在创建 DefaultApi 实例之前设置 `config.api_key['x-api-key'] = 'YOUR_KEY'`。
+2. **错误的 API 类**：对服务器端已认证请求使用 `DefaultApi`，对客户端/公共请求使用 `PublicApi`，对审查员仪表板请求使用 `ModerationApi`。
+3. **API 密钥为空**：如果 API 密钥为 null，SDK 将静默跳过认证，导致 401 错误。

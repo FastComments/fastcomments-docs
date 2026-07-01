@@ -1,9 +1,9 @@
 ## Parâmetros
 
-| Nome | Tipo | Local | Obrigatório | Descrição |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Localização | Obrigatório | Descrição |
+|------|------|--------------|-------------|-----------|
+| tenantId | string | query | Sim |  |
 | tag | string | path | Sim |  |
-| tenantId | string | query | Não |  |
 
 ## Resposta
 
@@ -11,7 +11,7 @@ Retorna: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/bl
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de DeleteHashTag'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo DeleteHashTag'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,9 +23,9 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	tag := "tag_example" // string | 
-	tenantId := "tenantId_example" // string |  (opcional)
-	deleteHashTagRequestBody := *openapiclient.NewDeleteHashTagRequestBody() // DeleteHashTagRequestBody |  (opcional)
+	deleteHashTagRequestBody := *openapiclient.NewDeleteHashTagRequestBody() // DeleteHashTagRequestBody |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

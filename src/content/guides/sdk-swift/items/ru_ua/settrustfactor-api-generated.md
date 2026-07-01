@@ -1,27 +1,29 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| userId | string | query | Нет |  |
-| trustFactor | string | query | Нет |  |
-| sso | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| trustFactor | string | query | No |  |
+| sso | string | query | No |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`SetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SetUserTrustFactorResponse.swift)
+Повертає: [`SetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SetUserTrustFactorResponse.swift)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример setTrustFactor'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад setTrustFactor'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие примеры кода всё ещё в бета-версии. В случае проблем, пожалуйста, сообщите через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наступні приклади коду ще перебувають у бета-версії. У випадку проблем, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let userId = "userId_example" // String |  (необязательно)
-let trustFactor = "trustFactor_example" // String |  (необязательно)
-let sso = "sso_example" // String |  (необязательно)
+let tenantId = "tenantId_example" // String | 
+let userId = "userId_example" // String |  (необов'язково)
+let trustFactor = "trustFactor_example" // String |  (необов'язково)
+let sso = "sso_example" // String |  (необов'язково)
 
-ModerationAPI.setTrustFactor(userId: userId, trustFactor: trustFactor, sso: sso) { (response, error) in
+ModerationAPI.setTrustFactor(tenantId: tenantId, options: ModerationAPI.SetTrustFactorOptions(userId: userId, trustFactor: trustFactor, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -32,5 +34,3 @@ ModerationAPI.setTrustFactor(userId: userId, trustFactor: trustFactor, sso: sso)
     }
 }
 [inline-code-end]
-
----

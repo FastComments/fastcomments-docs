@@ -1,12 +1,11 @@
 ## Parámetros
 
-| Nombre | Tipo | Requerido | Descripción |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Sí |  |
-| commentId | string | Sí |  |
-| broadcastId | string | Sí |  |
-| editKey | string | No |  |
-| sso | string | No |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| broadcastId | string | Yes |  |
+| options | const DeleteCommentPublicOptions& | Yes |  |
 
 ## Respuesta
 
@@ -14,21 +13,19 @@ Devuelve: [`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fas
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de deleteCommentPublic'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo deleteCommentPublic'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
-utility::string_t commentId = utility::conversions::to_string_t("cmt-456");
-utility::string_t broadcastId = utility::conversions::to_string_t("video-789");
-boost::optional<utility::string_t> editKey = boost::optional<utility::string_t>(utility::conversions::to_string_t("editkey-xyz"));
-boost::optional<utility::string_t> sso = boost::none;
-api->deleteCommentPublic(tenantId, commentId, broadcastId, editKey, sso)
-.then([](pplx::task<std::shared_ptr<PublicAPIDeleteCommentResponse>> t){
-    try {
-        auto resp = t.get();
-        auto finalResp = resp ? resp : std::make_shared<PublicAPIDeleteCommentResponse>();
-        (void)finalResp;
-    } catch (const std::exception&) {}
-});
+auto tenantId = utility::string_t(U("my-tenant-123"));
+auto commentId = utility::string_t(U("comment-456"));
+auto broadcastId = utility::string_t(U("broadcast-789"));
+DeleteCommentPublicOptions options;
+options.force = boost::optional<bool>(true);
+options.reason = boost::optional<utility::string_t>(U("Inappropriate content"));
+api->deleteCommentPublic(tenantId, commentId, broadcastId, options)
+    .then([](pplx::task<std::shared_ptr<PublicAPIDeleteCommentResponse>> t){
+        try{
+            auto resp = t.get();
+        }catch(const std::exception& e){
+        }
+    });
 [inline-code-end]
-
----

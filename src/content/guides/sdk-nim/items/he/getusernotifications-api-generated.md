@@ -1,19 +1,9 @@
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| שם | טיפוס | נדרש | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
-| urlId | string | כן |  |
-| pageSize | int | לא |  |
-| afterId | string | לא |  |
-| includeContext | bool | לא |  |
-| afterCreatedAt | int64 | לא |  |
-| unreadOnly | bool | לא |  |
-| dmOnly | bool | לא |  |
-| noDm | bool | לא |  |
-| includeTranslations | bool | לא |  |
-| includeTenantNotifications | bool | לא |  |
-| sso | string | לא |  |
+| options | GetUserNotificationsOptions | לא |  |
 
 ## תגובה
 
@@ -21,26 +11,9 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getUserNotifications'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל‑getUserNotifications'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUserNotifications(
-  tenantId = "my-tenant-123",
-  urlId = "news/article-title",
-  pageSize = 0,
-  afterId = "",
-  includeContext = false,
-  afterCreatedAt = 0,
-  unreadOnly = false,
-  dmOnly = false,
-  noDm = false,
-  includeTranslations = false,
-  includeTenantNotifications = false,
-  sso = ""
-)
-
-if response.isSome:
-  let notifications = response.get()
-  echo notifications
+let (maybeResponse, httpResponse) = client.getUserNotifications(tenantId = "my-tenant-123", options = GetUserNotificationsOptions())
+if maybeResponse.isSome:
+  let notifications = maybeResponse.get()
 [inline-code-end]
-
----

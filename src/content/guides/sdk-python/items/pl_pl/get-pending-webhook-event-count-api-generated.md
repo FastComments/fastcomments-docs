@@ -1,6 +1,6 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Tak |  |
 | commentId | string | query | Nie |  |
@@ -12,32 +12,33 @@
 
 ## Odpowiedź
 
-Zwraca: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_pending_webhook_event_count_response.py)
+Returns: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_pending_webhook_event_count_response.py)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład get_pending_webhook_event_count'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetPendingWebhookEventCountOptions
 from client.models.get_pending_webhook_event_count_response import GetPendingWebhookEventCountResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Określenie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
-# Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracji.
+# Definiowanie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
+# Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracyjnych.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Klient musi skonfigurować parametry uwierzytelniania i autoryzacji
 # zgodnie z polityką bezpieczeństwa serwera API.
-# Poniżej znajdują się przykłady dla każdej metody uwierzytelniania — użyj
-# przykładu, który odpowiada Twojemu przypadkowi użycia.
+# Przykłady dla każdej metody uwierzytelniania są podane poniżej, użyj przykładu, który
+# spełnia Twój przypadek użycia uwierzytelniania.
 
-# Skonfiguruj autoryzację kluczem API: api_key
+# Skonfiguruj autoryzację klucza API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli to konieczne
+# Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli jest potrzebny
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Wejdź w kontekst z instancją klienta API
@@ -45,15 +46,15 @@ with client.ApiClient(configuration) as api_client:
     # Utwórz instancję klasy API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    comment_id = 'comment_id_example' # str |  (optional)
-    external_id = 'external_id_example' # str |  (optional)
-    event_type = 'event_type_example' # str |  (optional)
-    type = 'type_example' # str |  (optional)
-    domain = 'domain_example' # str |  (optional)
-    attempt_count_gt = 3.4 # float |  (optional)
+    comment_id = 'comment_id_example' # str |  (opcjonalnie)
+    external_id = 'external_id_example' # str |  (opcjonalnie)
+    event_type = 'event_type_example' # str |  (opcjonalnie)
+    type = 'type_example' # str |  (opcjonalnie)
+    domain = 'domain_example' # str |  (opcjonalnie)
+    attempt_count_gt = 3.4 # float |  (opcjonalnie)
 
     try:
-        api_response = api_instance.get_pending_webhook_event_count(tenant_id, comment_id=comment_id, external_id=external_id, event_type=event_type, type=type, domain=domain, attempt_count_gt=attempt_count_gt)
+        api_response = api_instance.get_pending_webhook_event_count(tenant_id, GetPendingWebhookEventCountOptions(comment_id=comment_id, external_id=external_id, event_type=event_type, type=type, domain=domain, attempt_count_gt=attempt_count_gt))
         print("The response of DefaultApi->get_pending_webhook_event_count:\n")
         pprint(api_response)
     except Exception as e:

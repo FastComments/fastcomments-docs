@@ -1,6 +1,6 @@
 ### Maven
 
-Добавете хранилището Repsy към POM-а на вашия проект:
+Add the Repsy repository to your project's POM:
 
 ```xml
 <repositories>
@@ -12,7 +12,7 @@
 </repositories>
 ```
 
-След това добавете зависимостите, от които имате нужда:
+Then add the dependencies you need:
 
 ```xml
 <dependencies>
@@ -41,7 +41,7 @@
 
 ### Gradle
 
-Добавете хранилището Repsy във вашия файл build.gradle:
+Add the Repsy repository to your build.gradle file:
 
 ```groovy
 repositories {
@@ -63,16 +63,18 @@ dependencies {
 }
 ```
 
-### Съдържание на библиотеката
+### Library Contents
 
-Тази библиотека съдържа три модула. Генерираният API клиент, основната Java библиотека, която съдържа ръчно написани помощни средства за улесняване на работата с API, и модулът `pubsub`, който е библиотека за абониране за потоци с промени.
+This library contains three modules. The generated API client, the core Java library which contains hand-written utilities
+to make working with the API easier, and the `pubsub` module which is a library for subscribing to change feeds.
 
-- [Документация на API клиент библиотеката](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Документация на Core библиотеката, включително примери за SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [Документация на PubSub библиотеката](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [Документация за библиотеката на API клиента](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Документация за основната библиотека, включително примери за SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [Документация за PubSub библиотеката](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### Публични и защитени API
+### Public vs Secured APIs
 
-За API клиента има три класа, `DefaultApi`, `PublicApi` и `ModerationApi`. `DefaultApi` съдържа методи, които изискват вашия API ключ, а `PublicApi` съдържа методи, които могат да се извикват директно от браузър/мобилно устройство/и т.н. без удостоверяване.
+For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains methods
+that can be made directly from a browser/mobile device/etc without authentication.
 
-`ModerationApi` захранва таблото на модератора. Той съдържа методи за модериране на коментари (списък, брой, търсене, логове и експорт), модераторски действия (премахване/възстановяване, маркиране, задаване на статус преглед/спам/одобрение, гласове и повторно отваряне/затваряне на тема), забрани (блокиране от коментиране, отмяна на бан, обобщения преди бан, статус на бана и предпочитания, и брой блокирани потребители) и значки & доверие (присъждане/премахване на значка, ръчни значки, получаване/задаване на фактор на доверие и вътрешен профил на потребителя). Всеки метод на `ModerationApi` приема параметър `sso`, за да може повикването да се извърши от името на модератор, удостоверен чрез SSO.
+The `ModerationApi` provides an extensive suite of live and fast moderation APIs. Every `ModerationApi` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.

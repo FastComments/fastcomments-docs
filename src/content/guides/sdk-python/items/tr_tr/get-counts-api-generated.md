@@ -1,8 +1,9 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| sso | string | query | No |  |
+| tenantId | string | query | Evet |  |
+| sso | string | query | Hayır |  |
 
 ## Yanıt
 
@@ -17,25 +18,24 @@ from client.models.get_banned_users_count_response import GetBannedUsersCountRes
 from client.rest import ApiException
 from pprint import pprint
 
-# Host tanımlamak isteğe bağlıdır ve varsayılan https://fastcomments.com'dur
-# Tüm desteklenen yapılandırma parametrelerinin listesini görmek için configuration.py'ye bakın.
+# Hostu tanımlamak isteğe bağlıdır ve varsayılan olarak https://fastcomments.com adresine ayarlıdır
+# configuration.py dosyasını, desteklenen tüm yapılandırma parametrelerinin listesi için inceleyin.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# API istemcisinin bir örneği ile bir bağlam açın
+# API istemcisinin bir örneğiyle bir bağlam girin
 with client.ApiClient(configuration) as api_client:
-    # API sınıfının bir örneğini oluşturun
+    # API sınıfının bir örneğini oluştur
     api_instance = client.ModerationApi(api_client)
-    sso = 'sso_example' # str |  (isteğe bağlı)
+    tenant_id = 'tenant_id_example' # str | 
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_counts(sso=sso)
+        api_response = api_instance.get_counts(tenant_id, sso=sso)
         print("The response of ModerationApi->get_counts:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling ModerationApi->get_counts: %s\n" % e)
 [inline-code-end]
-
----

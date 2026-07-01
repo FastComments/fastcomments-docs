@@ -2,8 +2,8 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | tag | string | path | Yes |  |
-| tenantId | string | query | No |  |
 
 ## Response
 
@@ -16,11 +16,11 @@ Returns: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let tag = "tag_example" // String | 
-let tenantId = "tenantId_example" // String |  (optional)
 let updateHashTagBody = UpdateHashTagBody(tenantId: "tenantId_example", url: "url_example", tag: "tag_example") // UpdateHashTagBody |  (optional)
 
-DefaultAPI.patchHashTag(tag: tag, tenantId: tenantId, updateHashTagBody: updateHashTagBody) { (response, error) in
+DefaultAPI.patchHashTag(tenantId: tenantId, tag: tag, updateHashTagBody: updateHashTagBody) { (response, error) in
     guard error == nil else {
         print(error)
         return

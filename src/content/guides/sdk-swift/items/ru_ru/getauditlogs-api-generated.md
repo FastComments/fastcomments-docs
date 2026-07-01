@@ -2,12 +2,12 @@
 
 | Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| limit | number | query | Нет |  |
-| skip | number | query | Нет |  |
-| order | string | query | Нет |  |
-| after | number | query | Нет |  |
-| before | number | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| limit | number | query | No |  |
+| skip | number | query | No |  |
+| order | string | query | No |  |
+| after | number | query | No |  |
+| before | number | query | No |  |
 
 ## Ответ
 
@@ -17,7 +17,7 @@
 
 [inline-code-attrs-start title = 'Пример getAuditLogs'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие примеры кода все еще находятся в бета-версии. По любым проблемам сообщайте через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следующие примеры кода всё ещё находятся в бете. При возникновении проблем, пожалуйста, сообщайте по адресу http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -27,7 +27,7 @@ let order = SORT_DIR() // SORTDIR |  (необязательно)
 let after = 987 // Double |  (необязательно)
 let before = 987 // Double |  (необязательно)
 
-DefaultAPI.getAuditLogs(tenantId: tenantId, limit: limit, skip: skip, order: order, after: after, before: before) { (response, error) in
+DefaultAPI.getAuditLogs(tenantId: tenantId, options: DefaultAPI.GetAuditLogsOptions(limit: limit, skip: skip, order: order, after: after, before: before)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -38,5 +38,3 @@ DefaultAPI.getAuditLogs(tenantId: tenantId, limit: limit, skip: skip, order: ord
     }
 }
 [inline-code-end]
-
----

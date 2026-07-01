@@ -1,20 +1,20 @@
----
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Θέση | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| value | string | query | Όχι |  |
-| filters | string | query | Όχι |  |
-| searchFilters | string | query | Όχι |  |
-| sso | string | query | Όχι |  |
+| tenantId | string | query | Yes |  |
+| value | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sso | string | query | No |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`ModerationCommentSearchResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationCommentSearchResponse.java)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα getSearchCommentsSummary'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSearchCommentsSummary Παράδειγμα'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Εισαγωγή κλάσεων:
 import com.fastcomments.invoker.ApiClient;
@@ -29,12 +29,13 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String value = "value_example"; // String | 
     String filters = "filters_example"; // String | 
     String searchFilters = "searchFilters_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationCommentSearchResponse result = apiInstance.getSearchCommentsSummary()
+      ModerationCommentSearchResponse result = apiInstance.getSearchCommentsSummary(tenantId)
             .value(value)
             .filters(filters)
             .searchFilters(searchFilters)
@@ -51,5 +52,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

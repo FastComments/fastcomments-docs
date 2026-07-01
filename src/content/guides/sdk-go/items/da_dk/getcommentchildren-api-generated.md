@@ -1,7 +1,8 @@
 ## Parametre
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
-|------|------|----------|----------|-------------|
+|------|------|-----------|----------|-------------|
+| tenantId | string | query | Ja |  |
 | commentId | string | path | Ja |  |
 | sso | string | query | Nej |  |
 
@@ -23,12 +24,13 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
 	sso := "sso_example" // string |  (valgfri)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetCommentChildren(context.Background(), commentId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetCommentChildren(context.Background(), commentId).TenantId(tenantId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetCommentChildren``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

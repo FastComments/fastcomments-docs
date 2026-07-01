@@ -1,17 +1,17 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Обавезно | Опис |
-|------|------|----------|----------|-------------|
-| tag | string | path | Да |  |
-| tenantId | string | query | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| tag | string | path | Yes |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_update_hash_tag_response.go)
+Vraća: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_update_hash_tag_response.go)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'PatchHashTag Пример'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PatchHashTag primjer'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,18 +23,20 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	tag := "tag_example" // string | 
-	tenantId := "tenantId_example" // string |  (опционо)
-	updateHashTagBody := *openapiclient.NewUpdateHashTagBody() // UpdateHashTagBody |  (опционо)
+	updateHashTagBody := *openapiclient.NewUpdateHashTagBody() // UpdateHashTagBody |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 	resp, r, err := apiClient.DefaultAPI.PatchHashTag(context.Background(), tag).TenantId(tenantId).UpdateHashTagBody(updateHashTagBody).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PatchHashTag``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Greška pri pozivu `DefaultAPI.PatchHashTag``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Puni HTTP odgovor: %v\n", r)
 	}
-	// одговор од `PatchHashTag`: UpdateHashTagResponse
-	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PatchHashTag`: %v\n", resp)
+	// odgovor iz `PatchHashTag`: UpdateHashTagResponse
+	fmt.Fprintf(os.Stdout, "Odgovor iz `DefaultAPI.PatchHashTag`: %v\n", resp)
 }
 [inline-code-end]
+
+---

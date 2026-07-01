@@ -1,8 +1,8 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов'язковий | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ні |  |
+| tenantId | string | query | Так |  |
 
 ## Відповідь
 
@@ -12,7 +12,7 @@
 
 [inline-code-attrs-start title = 'addHashTagsBulk Приклад'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Імпортувати класи:
+// Імпорт класів:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -25,18 +25,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Налаштувати авторизацію за API-ключем: api_key
+    // Налаштування авторизації за допомогою API ключа: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Розкоментуйте наступний рядок, щоб встановити префікс для API-ключа, наприклад "Token" (за замовчуванням null)
+    // Розкоментуйте наступний рядок, щоб встановити префікс для API ключа, наприклад "Token" (за замовчуванням null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     BulkCreateHashTagsBody bulkCreateHashTagsBody = new BulkCreateHashTagsBody(); // BulkCreateHashTagsBody | 
     try {
-      BulkCreateHashTagsResponse result = apiInstance.addHashTagsBulk()
-            .tenantId(tenantId)
+      BulkCreateHashTagsResponse result = apiInstance.addHashTagsBulk(tenantId)
             .bulkCreateHashTagsBody(bulkCreateHashTagsBody)
             .execute();
       System.out.println(result);

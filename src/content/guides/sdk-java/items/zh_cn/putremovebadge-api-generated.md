@@ -1,7 +1,8 @@
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | 是 |  |
 | badgeId | string | query | 是 |  |
 | userId | string | query | 否 |  |
 | commentId | string | query | 否 |  |
@@ -29,13 +30,14 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String badgeId = "badgeId_example"; // String | 
     String userId = "userId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      RemoveUserBadgeResponse result = apiInstance.putRemoveBadge(badgeId)
+      RemoveUserBadgeResponse result = apiInstance.putRemoveBadge(tenantId, badgeId)
             .userId(userId)
             .commentId(commentId)
             .broadcastId(broadcastId)
@@ -52,5 +54,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

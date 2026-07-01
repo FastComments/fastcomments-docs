@@ -1,7 +1,7 @@
 ## Parâmetros
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Localização | Obrigatório | Descrição |
+|------|------|------------|-------------|-----------|
 | tenantId | string | path | Sim |  |
 | urlId | string | query | Sim |  |
 | usernameStartsWith | string | query | Não |  |
@@ -18,20 +18,21 @@ Retorna: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-pyth
 [inline-code-attrs-start title = 'Exemplo de search_users'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import SearchUsersOptions
 from client.models.search_users_result import SearchUsersResult
 from client.rest import ApiException
 from pprint import pprint
 
-# Definir o host é opcional e o padrão é https://fastcomments.com
-# Consulte configuration.py para uma lista de todos os parâmetros de configuração suportados.
+# Definir o host é opcional e padrão é https://fastcomments.com
+# Veja configuration.py para uma lista de todos os parâmetros de configuração suportados.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Entre em um contexto com uma instância do cliente da API
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Crie uma instância da classe da API
+    # Create an instance of the API class
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
@@ -41,9 +42,9 @@ with client.ApiClient(configuration) as api_client:
     search_section = 'search_section_example' # str |  (opcional)
 
     try:
-        api_response = api_instance.search_users(tenant_id, url_id, username_starts_with=username_starts_with, mention_group_ids=mention_group_ids, sso=sso, search_section=search_section)
-        print("The response of PublicApi->search_users:\n")
+        api_response = api_instance.search_users(tenant_id, url_id, SearchUsersOptions(username_starts_with=username_starts_with, mention_group_ids=mention_group_ids, sso=sso, search_section=search_section))
+        print("A resposta de PublicApi->search_users:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PublicApi->search_users: %s\n" % e)
+        print("Exceção ao chamar PublicApi->search_users: %s\n" % e)
 [inline-code-end]

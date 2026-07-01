@@ -2,7 +2,7 @@
 
 | Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | No |  |
+| tenantId | string | query | Да |  |
 
 ## Отговор
 
@@ -10,27 +10,25 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за add_hash_tag'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'add_hash_tag Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Настройване на удостоверяване
+# настройка на упълномощаване
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # Конфигуриране на упълномощаване с API ключ: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Разкоментирайте следния ред, за да зададете префикс за API ключа, например 'Bearer' (по подразбиране: nil)
+  # Разкоментирайте следния ред, за да зададете префикс за API ключа, напр. 'Bearer' (по подразбиране nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
-opts = {
-  tenant_id: 'tenant_id_example', # String | 
-  create_hash_tag_body: FastCommentsClient::CreateHashTagBody.new({tag: 'tag_example'}) # CreateHashTagBody | 
-}
+tenant_id = 'tenant_id_example' # String | 
+create_hash_tag_body = FastCommentsClient::CreateHashTagBody.new({tag: 'tag_example'}) # CreateHashTagBody | 
 
 begin
   
-  result = api_instance.add_hash_tag(opts)
+  result = api_instance.add_hash_tag(tenant_id, create_hash_tag_body)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->add_hash_tag: #{e}"

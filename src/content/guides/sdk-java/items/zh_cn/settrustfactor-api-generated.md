@@ -1,20 +1,21 @@
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| userId | string | query | 否 |  |
-| trustFactor | string | query | 否 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| trustFactor | string | query | No |  |
+| sso | string | query | No |  |
 
 ## 响应
 
-返回: [`SetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SetUserTrustFactorResponse.java)
+返回：[`SetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SetUserTrustFactorResponse.java)
 
 ## 示例
 
 [inline-code-attrs-start title = 'setTrustFactor 示例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 导入类：
+// 导入类:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -27,11 +28,12 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String userId = "userId_example"; // String | 
     String trustFactor = "trustFactor_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      SetUserTrustFactorResponse result = apiInstance.setTrustFactor()
+      SetUserTrustFactorResponse result = apiInstance.setTrustFactor(tenantId)
             .userId(userId)
             .trustFactor(trustFactor)
             .sso(sso)

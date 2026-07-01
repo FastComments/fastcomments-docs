@@ -1,21 +1,21 @@
-Массовая информация о пользователях для тенанта. По заданным userIds возвращает отображаемую информацию из User / SSOUser.
-Используется виджетом комментариев для обогащения пользователей, которые только что появились через событие присутствия.
-Без контекста страницы: политика приватности применяется одинаково (приватные профили маскируются).
+Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
+Used by the comment widget to enrich users that just appeared via a presence event.  
+No page context: privacy is enforced uniformly (private profiles are masked).
 
-## Параметры
+## Parameters
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| ids | string | query | Да | Список userIds, разделённых запятыми. |
+| tenantId | string | path | Yes |  |
+| ids | string | query | Yes | UserIds, розділені комами. |
 
-## Ответ
+## Response
 
-Возвращает: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersInfoResponse.php)
+Returns: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersInfoResponse.php)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'Пример getUsersInfo'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUsersInfo Приклад'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -23,12 +23,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Если вы хотите использовать собственный HTTP-клиент, передайте клиент, который реализует `GuzzleHttp\ClientInterface`.
-    // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
+    // Якщо ви хочете використовувати кастомний HTTP‑клієнт, передайте ваш клієнт, який реалізує `GuzzleHttp\ClientInterface`.
+    // Це необов’язково, за замовчуванням буде використано `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$ids = 'ids_example'; // string | Список userIds, разделённых запятыми.
+$ids = 'ids_example'; // string | UserIds, розділені комами.
+
 
 try {
     $result = $apiInstance->getUsersInfo($tenant_id, $ids);

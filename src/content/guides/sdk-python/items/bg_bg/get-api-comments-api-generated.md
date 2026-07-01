@@ -1,16 +1,17 @@
 ## Параметри
 
 | Име | Тип | Местоположение | Задължително | Описание |
-|------|------|----------|----------|-------------|
-| page | number | query | Не |  |
-| count | number | query | Не |  |
-| text-search | string | query | Не |  |
-| byIPFromComment | string | query | Не |  |
-| filters | string | query | Не |  |
-| searchFilters | string | query | Не |  |
-| sorts | string | query | Не |  |
-| demo | boolean | query | Не |  |
-| sso | string | query | Не |  |
+|------|------|----------------|--------------|----------|
+| tenantId | string | query | Yes |  |
+| page | number | query | No |  |
+| count | number | query | No |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sorts | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Отговор
 
@@ -21,21 +22,23 @@
 [inline-code-attrs-start title = 'get_api_comments Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetApiCommentsOptions
 from client.models.moderation_api_get_comments_response import ModerationAPIGetCommentsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Задаването на хост е по избор и по подразбиране е https://fastcomments.com
-# Вижте configuration.py за списък на всички поддържани параметри за конфигурация.
+# Дефинирането на хоста е по избор и по подразбиране е https://fastcomments.com
+# Вижте configuration.py за списък с всички поддържани параметри за конфигурация.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Влезте в контекст с инстанция на API клиента
+# Въведете контекст с екземпляр на API клиента
 with client.ApiClient(configuration) as api_client:
-    # Създайте инстанция на класа API
+    # Създайте екземпляр на API класа
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     page = 3.4 # float |  (по избор)
     count = 3.4 # float |  (по избор)
     text_search = 'text_search_example' # str |  (по избор)
@@ -44,10 +47,10 @@ with client.ApiClient(configuration) as api_client:
     search_filters = 'search_filters_example' # str |  (по избор)
     sorts = 'sorts_example' # str |  (по избор)
     demo = True # bool |  (по избор)
-    sso = 'sso_example' # str |  (по избор)
+    sso = 'sso_example' # str |  (по اختيار)
 
     try:
-        api_response = api_instance.get_api_comments(page=page, count=count, text_search=text_search, by_ip_from_comment=by_ip_from_comment, filters=filters, search_filters=search_filters, sorts=sorts, demo=demo, sso=sso)
+        api_response = api_instance.get_api_comments(tenant_id, GetApiCommentsOptions(page=page, count=count, text_search=text_search, by_ip_from_comment=by_ip_from_comment, filters=filters, search_filters=search_filters, sorts=sorts, demo=demo, sso=sso))
         print("The response of ModerationApi->get_api_comments:\n")
         pprint(api_response)
     except Exception as e:

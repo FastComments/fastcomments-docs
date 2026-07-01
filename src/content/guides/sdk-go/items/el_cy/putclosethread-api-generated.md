@@ -1,9 +1,10 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
-| urlId | string | query | Ναι |  |
-| sso | string | query | Όχι |  |
+|------|------|----------|------------|-----------|
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Απόκριση
 
@@ -23,12 +24,13 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	urlId := "urlId_example" // string | 
 	sso := "sso_example" // string |  (προαιρετικό)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PutCloseThread(context.Background()).UrlId(urlId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PutCloseThread(context.Background()).TenantId(tenantId).UrlId(urlId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PutCloseThread``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -37,3 +39,5 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PutCloseThread`: %v\n", resp)
 }
 [inline-code-end]
+
+---

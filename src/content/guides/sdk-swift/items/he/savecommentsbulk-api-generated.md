@@ -1,22 +1,22 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | חובה | תיאור |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | כן |  |
-| isLive | boolean | query | לא |  |
-| doSpamCheck | boolean | query | לא |  |
-| sendEmails | boolean | query | לא |  |
-| populateNotifications | boolean | query | לא |  |
+| tenantId | string | query | Yes |  |
+| isLive | boolean | query | No |  |
+| doSpamCheck | boolean | query | No |  |
+| sendEmails | boolean | query | No |  |
+| populateNotifications | boolean | query | No |  |
 
-## Response
+## תגובה
 
 מחזיר: [`[SaveCommentsBulkResponse]`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/[SaveCommentsBulkResponse].swift)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-saveCommentsBulk'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת saveCommentsBulk'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// דוגמאות הקוד הבאות עדיין בבטא. עבור כל בעיה, אנא דווחו דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// הקוד הבא עדיין בגירסת בטא. לכל בעיה, אנא דווח בכתובת http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -26,7 +26,7 @@ let doSpamCheck = true // Bool |  (אופציונלי)
 let sendEmails = true // Bool |  (אופציונלי)
 let populateNotifications = true // Bool |  (אופציונלי)
 
-DefaultAPI.saveCommentsBulk(tenantId: tenantId, createCommentParams: createCommentParams, isLive: isLive, doSpamCheck: doSpamCheck, sendEmails: sendEmails, populateNotifications: populateNotifications) { (response, error) in
+DefaultAPI.saveCommentsBulk(tenantId: tenantId, createCommentParams: createCommentParams, options: DefaultAPI.SaveCommentsBulkOptions(isLive: isLive, doSpamCheck: doSpamCheck, sendEmails: sendEmails, populateNotifications: populateNotifications)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -37,5 +37,3 @@ DefaultAPI.saveCommentsBulk(tenantId: tenantId, createCommentParams: createComme
     }
 }
 [inline-code-end]
-
----

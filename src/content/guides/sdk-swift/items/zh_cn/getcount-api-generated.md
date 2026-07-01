@@ -1,7 +1,8 @@
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | 是 |  |
 | text-search | string | query | 否 |  |
 | byIPFromComment | string | query | 否 |  |
 | filter | string | query | 否 |  |
@@ -11,7 +12,7 @@
 
 ## 响应
 
-返回: [`ModerationAPICountCommentsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationAPICountCommentsResponse.swift)
+返回：[`ModerationAPICountCommentsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationAPICountCommentsResponse.swift)
 
 ## 示例
 
@@ -20,14 +21,15 @@
 // 以下代码示例仍处于测试阶段。如有任何问题，请通过 http://github.com/OpenAPITools/openapi-generator/issues/new 报告
 import FastCommentsSwift
 
-let textSearch = "textSearch_example" // String | （可选）
-let byIPFromComment = "byIPFromComment_example" // String | （可选）
-let filter = "filter_example" // String | （可选）
-let searchFilters = "searchFilters_example" // String | （可选）
-let demo = true // Bool | （可选）
-let sso = "sso_example" // String | （可选）
+let tenantId = "tenantId_example" // String | 
+let textSearch = "textSearch_example" // String |  （可选）
+let byIPFromComment = "byIPFromComment_example" // String |  （可选）
+let filter = "filter_example" // String |  （可选）
+let searchFilters = "searchFilters_example" // String |  （可选）
+let demo = true // Bool |  （可选）
+let sso = "sso_example" // String |  （可选）
 
-ModerationAPI.getCount(textSearch: textSearch, byIPFromComment: byIPFromComment, filter: filter, searchFilters: searchFilters, demo: demo, sso: sso) { (response, error) in
+ModerationAPI.getCount(tenantId: tenantId, options: ModerationAPI.GetCountOptions(textSearch: textSearch, byIPFromComment: byIPFromComment, filter: filter, searchFilters: searchFilters, demo: demo, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

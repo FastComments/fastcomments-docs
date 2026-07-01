@@ -1,31 +1,32 @@
-Skupni podaci o korisnicima za zakupca. Na osnovu userIds, vraća informacije za prikaz iz User / SSOUser.
-Koristi widget komentara za obogaćivanje korisnika koji su se upravo pojavili putem događaja prisutnosti.
-Nema konteksta stranice: privatnost se primjenjuje jednako (privatni profili su maskirani).
+Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.
+Used by the comment widget to enrich users that just appeared via a presence event.
+No page context: privacy is enforced uniformly (private profiles are masked).
 
-## Parametri
+## Parameters
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
 | tenantId | string | Da |  |
 | ids | string | Da |  |
 
-## Odgovor
+## Response
 
 Vraća: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PageUsersInfoResponse.h)
 
-## Primjer
+## Primer
 
-[inline-code-attrs-start title = 'getUsersInfo Primjer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getUsersInfo'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 utility::string_t ids = U("alice@example.com,bob@example.com");
-boost::optional<utility::string_t> statusFilter = U("active");
+boost::optional<utility::string_t> locale = boost::make_optional(U("en-US"));
+
 api->getUsersInfo(tenantId, ids).then([](pplx::task<std::shared_ptr<PageUsersInfoResponse>> t){
-    try {
-        auto res = t.get();
-        if (res) {
-            auto responseCopy = std::make_shared<PageUsersInfoResponse>(*res);
-        }
-    } catch (const std::exception&) {}
+    try{
+        auto response = t.get();
+        // obradi odgovor
+    }catch(const std::exception&){
+        // obradi grešku
+    }
 });
 [inline-code-end]

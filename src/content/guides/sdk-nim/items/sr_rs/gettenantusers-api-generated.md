@@ -2,8 +2,8 @@
 
 | Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| skip | float64 | Не |  |
+| tenantId | string | Yes |  |
+| skip | float64 | No |  |
 
 ## Одговор
 
@@ -11,15 +11,10 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример getTenantUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTenantUsers Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.getTenantUsers(tenantId = "my-tenant-123", skip = 0.0)
-
 if response.isSome:
-  let tenantUsers = response.get()
-  echo "Retrieved tenant users"
-else:
-  echo "No tenant users returned"
+  let data = response.get()
+  echo data
 [inline-code-end]
-
----

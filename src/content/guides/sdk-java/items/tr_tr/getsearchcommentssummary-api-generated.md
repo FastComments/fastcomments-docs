@@ -2,6 +2,7 @@
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Evet |  |
 | value | string | query | Hayır |  |
 | filters | string | query | Hayır |  |
 | searchFilters | string | query | Hayır |  |
@@ -28,12 +29,13 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String value = "value_example"; // String | 
     String filters = "filters_example"; // String | 
     String searchFilters = "searchFilters_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationCommentSearchResponse result = apiInstance.getSearchCommentsSummary()
+      ModerationCommentSearchResponse result = apiInstance.getSearchCommentsSummary(tenantId)
             .value(value)
             .filters(filters)
             .searchFilters(searchFilters)
@@ -50,3 +52,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

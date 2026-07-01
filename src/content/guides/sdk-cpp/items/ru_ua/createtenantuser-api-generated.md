@@ -1,30 +1,29 @@
-## Параметры
+## Параметри
 
-| Name | Type | Требуется | Описание |
+| Назва | Тип | Обовʼязково | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| createTenantUserBody | CreateTenantUserBody | Да |  |
+| tenantId | string | Yes |  |
+| createTenantUserBody | CreateTenantUserBody | Yes |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`CreateTenantUserResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateTenantUserResponse.h)
+Повертає: [`CreateTenantUserResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateTenantUserResponse.h)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример createTenantUser'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createTenantUser Приклад'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-CreateTenantUserBody body;
-body.email = utility::string_t(U("jane.doe@example.com"));
-body.displayName = utility::string_t(U("Jane Doe"));
-body.role = utility::string_t(U("moderator"));
-body.sendInvite = boost::optional<bool>(true);
-api->createTenantUser(tenantId, body).then([](std::shared_ptr<CreateTenantUserResponse> resp) {
-    if (resp) {
-        auto created = std::make_shared<CreateTenantUserResponse>(*resp);
-        std::cout << "Created tenant user successfully" << std::endl;
-    } else {
-        std::cout << "Create tenant user returned null" << std::endl;
-    }
-});
+auto body = CreateTenantUserBody{};
+body.email = utility::conversions::to_string_t("newuser@example.com");
+body.firstName = utility::conversions::to_string_t("Alice");
+body.lastName = utility::conversions::to_string_t("Smith");
+body.role = boost::optional<utility::string_t>(utility::conversions::to_string_t("moderator"));
+
+api->createTenantUser(utility::conversions::to_string_t("my-tenant-123"), body)
+    .then([](pplx::task<std::shared_ptr<CreateTenantUserResponse>> task) {
+        try {
+            auto response = task.get();
+        } catch (const std::exception&) {
+        }
+    });
 [inline-code-end]

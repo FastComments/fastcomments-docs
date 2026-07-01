@@ -1,11 +1,11 @@
-req
-tenantId
-afterId
+请求  
+tenantId  
+afterId  
 
 ## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 描述 |
-|------|------|----------|----------|-------------|
+| 名称 | 类型 | 位置 | 必填 | 描述 |
+|------|------|----------|----------|-----|
 | tenantId | string | path | 是 |  |
 | afterId | string | query | 否 |  |
 | limit | integer | query | 否 |  |
@@ -20,36 +20,37 @@ afterId
 
 ## 示例
 
-[inline-code-attrs-start title = 'get_feed_posts_public 示例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
-[inline-code-start]
-import client
-from client.models.public_feed_posts_response import PublicFeedPostsResponse
-from client.rest import ApiException
-from pprint import pprint
+[inline-code-attrs-start title = 'get_feed_posts_public 示例'; type = 'python'; isFunctional = false; inline-code-attrs-end]  
+[inline-code-start]  
+import client  
+from client.api.public_api import GetFeedPostsPublicOptions  
+from client.models.public_feed_posts_response import PublicFeedPostsResponse  
+from client.rest import ApiException  
+from pprint import pprint  
 
-# 定义主机为可选，默认值为 https://fastcomments.com
-# 请参阅 configuration.py 获取所有支持的配置参数的列表。
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
+# 定义主机是可选的，默认值为 https://fastcomments.com  
+# 请参阅 configuration.py，获取所有受支持的配置参数列表。  
+configuration = client.Configuration(  
+    host = "https://fastcomments.com"  
+)  
 
 
-# 使用 API 客户端实例进入上下文
-with client.ApiClient(configuration) as api_client:
-    # 创建 API 类的实例
-    api_instance = client.PublicApi(api_client)
-    tenant_id = 'tenant_id_example' # str | 
-    after_id = 'after_id_example' # str |  (可选)
-    limit = 56 # int |  (可选)
-    tags = ['tags_example'] # List[str] |  (可选)
-    sso = 'sso_example' # str |  (可选)
-    is_crawler = True # bool |  (可选)
-    include_user_info = True # bool |  (可选)
+# 使用 API 客户端实例进入上下文  
+with client.ApiClient(configuration) as api_client:  
+    # 创建 API 类的实例  
+    api_instance = client.PublicApi(api_client)  
+    tenant_id = 'tenant_id_example' # str |  
+    after_id = 'after_id_example' # str |  (可选)  
+    limit = 56 # int |  (可选)  
+    tags = ['tags_example'] # List[str] |  (可选)  
+    sso = 'sso_example' # str |  (可选)  
+    is_crawler = True # bool |  (可选)  
+    include_user_info = True # bool |  (可选)  
 
-    try:
-        api_response = api_instance.get_feed_posts_public(tenant_id, after_id=after_id, limit=limit, tags=tags, sso=sso, is_crawler=is_crawler, include_user_info=include_user_info)
-        print("The response of PublicApi->get_feed_posts_public:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling PublicApi->get_feed_posts_public: %s\n" % e)
+    try:  
+        api_response = api_instance.get_feed_posts_public(tenant_id, GetFeedPostsPublicOptions(after_id=after_id, limit=limit, tags=tags, sso=sso, is_crawler=is_crawler, include_user_info=include_user_info))  
+        print("PublicApi->get_feed_posts_public 的响应：\n")  
+        pprint(api_response)  
+    except Exception as e:  
+        print("调用 PublicApi->get_feed_posts_public 时出现异常: %s\n" % e)  
 [inline-code-end]

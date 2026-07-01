@@ -2,8 +2,8 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | tag | string | path | Yes |  |
-| tenantId | string | query | No |  |
 
 ## Response
 
@@ -40,12 +40,12 @@ configuration.api_key['api_key'] = os.environ["API_KEY"]
 with client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     tag = 'tag_example' # str | 
-    tenant_id = 'tenant_id_example' # str |  (optional)
     delete_hash_tag_request_body = client.DeleteHashTagRequestBody() # DeleteHashTagRequestBody |  (optional)
 
     try:
-        api_response = api_instance.delete_hash_tag(tag, tenant_id=tenant_id, delete_hash_tag_request_body=delete_hash_tag_request_body)
+        api_response = api_instance.delete_hash_tag(tenant_id, tag, delete_hash_tag_request_body)
         print("The response of DefaultApi->delete_hash_tag:\n")
         pprint(api_response)
     except Exception as e:

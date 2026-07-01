@@ -1,14 +1,14 @@
----
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| commentId | string | pot | Da |  |
-| sso | string | poizvedba | Ne |  |
+| tenantId | string | query | Da |  |
+| commentId | string | path | Da |  |
+| sso | string | query | Ne |  |
 
-## Odgovor
+## Odziv
 
-Vrača: [`GetBannedUsersFromCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_banned_users_from_comment_response.py)
+Vrne: [`GetBannedUsersFromCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_banned_users_from_comment_response.py)
 
 ## Primer
 
@@ -19,8 +19,8 @@ from client.models.get_banned_users_from_comment_response import GetBannedUsersF
 from client.rest import ApiException
 from pprint import pprint
 
-# Določanje gostitelja je neobvezno in privzeto je https://fastcomments.com
-# Oglejte si configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
+# Določitev gostitelja je izbirna in privzeto nastavljena na https://fastcomments.com
+# Oglejte si konfiguracijo.py za seznam vseh podprtih konfiguracijskih parametrov.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -28,13 +28,14 @@ configuration = client.Configuration(
 
 # Vstopite v kontekst z instanco API odjemalca
 with client.ApiClient(configuration) as api_client:
-    # Ustvarite instanco razreda API
+    # Ustvarite instanco API razreda
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     sso = 'sso_example' # str |  (neobvezno)
 
     try:
-        api_response = api_instance.get_ban_users_from_comment(comment_id, sso=sso)
+        api_response = api_instance.get_ban_users_from_comment(tenant_id, comment_id, sso=sso)
         print("The response of ModerationApi->get_ban_users_from_comment:\n")
         pprint(api_response)
     except Exception as e:

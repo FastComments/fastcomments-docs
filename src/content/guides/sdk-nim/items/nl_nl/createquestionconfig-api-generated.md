@@ -1,32 +1,24 @@
 ## Parameters
 
-| Name | Type | Required | Description |
+| Naam | Type | Verplicht | Beschrijving |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | createQuestionConfigBody | CreateQuestionConfigBody | Nee |  |
 
-## Antwoord
+## Respons
 
-Retourneert: [`Option[CreateQuestionConfigResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_question_config_response.nim)
+Returns: [`Option[CreateQuestionConfigResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_question_config_response.nim)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'createQuestionConfig Voorbeeld'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.createQuestionConfig(
+let configBody = CreateQuestionConfigBody()
+let (maybeResp, httpResp) = client.createQuestionConfig(
   tenantId = "my-tenant-123",
-  createQuestionConfigBody = CreateQuestionConfigBody(
-    label = "Article Question",
-    required = true,
-    minLength = 20,
-    maxLength = 1000,
-    allowedTags = @["comment","question","feedback"],
-    notifyModerators = false
-  )
+  createQuestionConfigBody = configBody,
 )
-if response.isSome:
-  let cfg = response.get()
-  echo "Created question config id: ", cfg.id
+if maybeResp.isSome:
+  let resp = maybeResp.get()
+  # gebruik resp indien nodig
 [inline-code-end]
-
----

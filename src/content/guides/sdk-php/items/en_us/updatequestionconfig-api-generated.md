@@ -29,9 +29,11 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
 $update_question_config_body = new \FastComments\Client\Model\UpdateQuestionConfigBody(); // \FastComments\Client\Model\UpdateQuestionConfigBody
+
 
 try {
     $result = $apiInstance->updateQuestionConfig($tenant_id, $id, $update_question_config_body);

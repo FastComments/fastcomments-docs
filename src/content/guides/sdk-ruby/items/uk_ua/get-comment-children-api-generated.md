@@ -2,6 +2,7 @@
 
 | Назва | Тип | Розташування | Обов'язковий | Опис |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Так |  |
 | commentId | string | path | Так |  |
 | sso | string | query | Ні |  |
 
@@ -17,6 +18,7 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 comment_id = 'comment_id_example' # String | 
 opts = {
   sso: 'sso_example' # String | 
@@ -24,7 +26,7 @@ opts = {
 
 begin
   
-  result = api_instance.get_comment_children(comment_id, opts)
+  result = api_instance.get_comment_children(tenant_id, comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_comment_children: #{e}"

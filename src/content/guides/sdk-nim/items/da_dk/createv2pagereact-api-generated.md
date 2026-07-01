@@ -5,27 +5,24 @@
 | tenantId | string | Ja |  |
 | urlId | string | Ja |  |
 | id | string | Nej |  |
-| title | string | Nej |  |
+| title | string = "" | Nej |  |
 
-## Svar
+## Respons
 
 Returnerer: [`Option[CreateV1PageReact]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_v1_page_react.nim)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på createV2PageReact'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createV2PageReact Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.createV2PageReact(
+let (pageResult, httpResponse) = client.createV2PageReact(
   tenantId = "my-tenant-123",
-  urlId = "news/2026/06/fastcomments-release",
-  id = "",
-  title = ""
+  urlId = "news/article-title",
+  id = "page-456",
+  title = "Breaking News",
 )
-if response.isSome:
-  let react = response.get()
-  echo "Created page react: ", $react
-else:
-  echo "No react returned, HTTP status: ", $httpResponse.statusCode
-[inline-code-end]
 
----
+if pageResult.isSome:
+  let page = pageResult.get()
+  # brug `page` efter behov
+[inline-code-end]

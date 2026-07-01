@@ -1,12 +1,12 @@
 ## Parâmetros
 
 | Nome | Tipo | Localização | Obrigatório | Descrição |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Sim |  |
-| isLive | boolean | query | Não |  |
-| doSpamCheck | boolean | query | Não |  |
-| sendEmails | boolean | query | Não |  |
-| populateNotifications | boolean | query | Não |  |
+|------|------|-------------|-------------|-----------|
+| tenantId | string | query | Yes |  |
+| isLive | boolean | query | No |  |
+| doSpamCheck | boolean | query | No |  |
+| sendEmails | boolean | query | No |  |
+| populateNotifications | boolean | query | No |  |
 
 ## Resposta
 
@@ -14,9 +14,9 @@ Retorna: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de saveComment'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'saveComment Exemplo'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Os seguintes exemplos de código ainda estão em beta. Para qualquer problema, por favor reporte via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Os exemplos de código a seguir ainda estão em beta. Para qualquer problema, por favor reporte via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -26,7 +26,7 @@ let doSpamCheck = true // Bool |  (opcional)
 let sendEmails = true // Bool |  (opcional)
 let populateNotifications = true // Bool |  (opcional)
 
-DefaultAPI.saveComment(tenantId: tenantId, createCommentParams: createCommentParams, isLive: isLive, doSpamCheck: doSpamCheck, sendEmails: sendEmails, populateNotifications: populateNotifications) { (response, error) in
+DefaultAPI.saveComment(tenantId: tenantId, createCommentParams: createCommentParams, options: DefaultAPI.SaveCommentOptions(isLive: isLive, doSpamCheck: doSpamCheck, sendEmails: sendEmails, populateNotifications: populateNotifications)) { (response, error) in
     guard error == nil else {
         print(error)
         return

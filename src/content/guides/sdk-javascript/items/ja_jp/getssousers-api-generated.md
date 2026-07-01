@@ -1,6 +1,6 @@
 ## パラメータ
 
-| 名前 | 型 | 必須 | 説明 |
+| 名前 | タイプ | 必須 | 説明 |
 |------|------|----------|-------------|
 | tenantId | string | はい |  |
 | skip | number | いいえ |  |
@@ -13,10 +13,17 @@
 
 [inline-code-attrs-start title = 'getSSOUsers の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_8f3b2a1c";
-const usersWithoutSkip: GetSSOUsersResponse = await getSSOUsers(tenantId);
-const skip: number = 50;
-const usersWithSkip: GetSSOUsersResponse = await getSSOUsers(tenantId, skip);
-[inline-code-end]
+async function runExample(): Promise<void> {
+    const tenantId: string = "tenant_12345";
 
----
+    // オプションの `skip` を指定せずに呼び出す
+    const firstPage: GetSSOUsersResponse = await getSSOUsers(tenantId);
+
+    // オプションの `skip` を指定して呼び出す
+    const secondPage: GetSSOUsersResponse = await getSSOUsers(tenantId, 100);
+
+    console.log(firstPage, secondPage);
+}
+
+runExample();
+[inline-code-end]

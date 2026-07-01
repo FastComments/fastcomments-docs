@@ -1,11 +1,11 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαραίτητο | Περιγραφή |
-|------|------|----------|----------|-------------|
-| tag | string | path | Ναι |  |
-| tenantId | string | query | Όχι |  |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|------------|-----------|
+| tenantId | string | query | Yes |  |
+| tag | string | path | Yes |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
 
@@ -23,8 +23,8 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	tag := "tag_example" // string | 
-	tenantId := "tenantId_example" // string |  (προαιρετικό)
 	deleteHashTagRequestBody := *openapiclient.NewDeleteHashTagRequestBody() // DeleteHashTagRequestBody |  (προαιρετικό)
 
 	configuration := openapiclient.NewConfiguration()

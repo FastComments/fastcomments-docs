@@ -2,24 +2,26 @@
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| text-search | string | query | いいえ |  |
-| sso | string | query | いいえ |  |
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| sso | string | query | No |  |
 
 ## レスポンス
 
-戻り値: [`ModerationSuggestResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationSuggestResponse.swift)
+返却: [`ModerationSuggestResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationSuggestResponse.swift)
 
 ## 例
 
 [inline-code-attrs-start title = 'getSearchSuggest の例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 以下のコードサンプルはまだベータ版です。問題がある場合は http://github.com/OpenAPITools/openapi-generator/issues/new で報告してください
+// 以下のコードサンプルはまだベータ版です。問題がある場合は http://github.com/OpenAPITools/openapi-generator/issues/new へ報告してください
 import FastCommentsSwift
 
-let textSearch = "textSearch_example" // String |  (任意)
-let sso = "sso_example" // String |  (任意)
+let tenantId = "tenantId_example" // String | 
+let textSearch = "textSearch_example" // String |  (オプション)
+let sso = "sso_example" // String |  (オプション)
 
-ModerationAPI.getSearchSuggest(textSearch: textSearch, sso: sso) { (response, error) in
+ModerationAPI.getSearchSuggest(tenantId: tenantId, options: ModerationAPI.GetSearchSuggestOptions(textSearch: textSearch, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -30,5 +32,3 @@ ModerationAPI.getSearchSuggest(textSearch: textSearch, sso: sso) { (response, er
     }
 }
 [inline-code-end]
-
----

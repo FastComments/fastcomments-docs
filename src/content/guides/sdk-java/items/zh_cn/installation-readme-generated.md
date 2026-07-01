@@ -12,25 +12,25 @@
 </repositories>
 ```
 
-然后添加所需的依赖项：
+然后添加所需的依赖：
 
 ```xml
 <dependencies>
-    <!-- API 客户端 -->
+    <!-- API Client -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
         <version>2.0.0</version>
     </dependency>
     
-    <!-- 核心库（包含 SSO） -->
+    <!-- Core Library (includes SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
         <version>2.0.0</version>
     </dependency>
     
-    <!-- PubSub 库（用于实时事件） -->
+    <!-- PubSub Library (for live events) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
@@ -41,7 +41,7 @@
 
 ### Gradle
 
-将 Repsy 仓库添加到你的 build.gradle 文件：
+将 Repsy 仓库添加到 `build.gradle` 文件中：
 
 ```groovy
 repositories {
@@ -52,27 +52,27 @@ repositories {
 }
 
 dependencies {
-    // API 客户端
+    // API Client
     implementation "com.fastcomments:client:2.0.0"
     
-    // 核心库（包含 SSO）
+    // Core Library (includes SSO)
     implementation "com.fastcomments:core:2.0.0"
     
-    // PubSub 库（用于实时事件）
+    // PubSub Library (for live events)
     implementation "com.fastcomments:pubsub:2.0.0"
 }
 ```
 
-### Library Contents
+### 库内容
 
-此库包含三个模块。生成的 API 客户端、包含手写工具以简化与 API 交互的核心 Java 库，以及用于订阅变更流的 `pubsub` 模块库。
+此库包含三个模块：生成的 API 客户端、包含手写工具类以简化 API 使用的核心 Java 库，以及 `pubsub` 模块（用于订阅变更推送的库）。
 
-- [API 客户端库 文档](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [核心库文档，包含 SSO 示例](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [PubSub 库 文档](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [API 客户端库文档](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [核心库文档（含 SSO 示例）](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [PubSub 库文档](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### Public vs Secured APIs
+### 公共 API 与受保护 API
 
-对于 API 客户端，有三个类：`DefaultApi`、`PublicApi` 和 `ModerationApi`。`DefaultApi` 包含需要你的 API 密钥 的方法，`PublicApi` 包含可以直接从浏览器/移动设备/等无认证情况下调用的方法。
+对于 API 客户端，有三个类：`DefaultApi`、`PublicApi` 和 `ModerationApi`。`DefaultApi` 包含需要 API 密钥的方法，`PublicApi` 包含可以直接从浏览器、移动设备等无需身份验证调用的方法。
 
-`ModerationApi` 为版主控制面板提供支持。它包含评论审核的方法（列出、计数、搜索、日志和导出）、审核操作（删除/恢复、标记、设置审核/垃圾/通过 状态、投票，以及重新打开/关闭主题）、封禁（从评论中封禁、撤销封禁、封禁前摘要、封禁状态和偏好，以及被封用户计数）以及徽章与信任（授予/移除徽章、手动徽章、获取/设置信任因子和用户内部资料）。每个 `ModerationApi` 方法都接受一个 `sso` 参数，以便代表已通过 SSO 验证的版主执行调用。
+`ModerationApi` 提供了一个全面的实时快速审核 API 套件。每个 `ModerationApi` 方法都接受 `sso` 参数，并可通过 SSO 或 FastComments.com 会话 Cookie 进行身份验证。

@@ -1,10 +1,10 @@
 ## Parâmetros
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Sim |  |
-| id | string | Sim |  |
-| updateEmailTemplateBody | UpdateEmailTemplateBody | Sim |  |
+| Nome | Tipo | Obrigatório | Descrição |
+|------|------|--------------|-----------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updateEmailTemplateBody | UpdateEmailTemplateBody | Yes |  |
 
 ## Resposta
 
@@ -12,20 +12,19 @@ Retorna: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/b
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de updateEmailTemplate'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo updateEmailTemplate'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
-utility::string_t templateId = utility::conversions::to_string_t("tmpl_welcome_001");
-auto bodyPtr = std::make_shared<UpdateEmailTemplateBody>();
-bodyPtr->subject = boost::optional<utility::string_t>(utility::conversions::to_string_t("Welcome to ExampleApp"));
-bodyPtr->htmlBody = utility::conversions::to_string_t("<p>Hi \{{user.name}}, welcome to ExampleApp!</p>");
-bodyPtr->enabled = boost::optional<bool>(true);
-api->updateEmailTemplate(tenantId, templateId, *bodyPtr)
-.then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task){
-  try {
-    auto resp = task.get();
-    (void)resp;
-  } catch (const std::exception &e) {
-  }
-});
+utility::string_t tenantId = U("my-tenant-123");
+utility::string_t templateId = U("welcome-email");
+UpdateEmailTemplateBody body;
+body.subject = U("Welcome to Our Platform");
+body.content = U("<p>Hello \{{userName}}, welcome aboard!</p>");
+body.isActive = boost::optional<bool>(true);
+api->updateEmailTemplate(tenantId, templateId, body)
+    .then([](std::shared_ptr<APIEmptyResponse> response) {
+        // manipulação de sucesso
+    })
+    .then([](pplx::task<void> t) {
+        try { t.get(); } catch (const std::exception &) { /* manipulação de erro */ }
+    });
 [inline-code-end]

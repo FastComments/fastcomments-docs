@@ -1,11 +1,11 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tag | string | path | Yes |  |
-| tenantId | string | query | No |  |
+| tenantId | string | query | Evet |  |
+| tag | string | path | Evet |  |
 
-## Dönüş
+## Yanıt
 
 Döndürür: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_hash_tag_response.py)
 
@@ -19,33 +19,31 @@ from client.models.update_hash_tag_response import UpdateHashTagResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Sunucuyu tanımlamak isteğe bağlıdır ve varsayılan olarak https://fastcomments.com kullanılır
-# Tüm desteklenen yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.
+# Ana bilgisayarı tanımlamak isteğe bağlıdır ve varsayılan olarak https://fastcomments.com adresine ayarlanır
+# configuration.py dosyasında desteklenen tüm yapılandırma parametrelerinin bir listesi bulunur.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# İstemci, kimlik doğrulama ve yetkilendirme parametrelerini
-# API sunucusunun güvenlik politikasına uygun şekilde yapılandırmalıdır.
-# Her bir kimlik doğrulama yöntemi için örnekler aşağıda verilmiştir,
-# kimlik doğrulama durumunuza uyan örneği kullanın.
+# İstemcinin kimlik doğrulama ve yetkilendirme parametrelerini API sunucusunun güvenlik politikasına göre yapılandırması gerekir.
+# Aşağıda her kimlik doğrulama yöntemi için örnekler verilmiştir; kimlik doğrulama kullanım durumunuza uyan örneği kullanın.
 
-# API anahtarı yetkilendirmesini yapılandırın: api_key
+# API anahtarı yetkilendirmesini yapılandır: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Gerekirse API anahtarı için öneki (ör. Bearer) ayarlamak için aşağıdakilerin yorumunu kaldırın
+# Gerekirse, API anahtarı için önek (ör. Bearer) ayarlamak için aşağıdaki satırı yorum dışı bırakın
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API istemcisinin bir örneği ile bir bağlam girin
+# API istemcisi örneği ile bir bağlam girin
 with client.ApiClient(configuration) as api_client:
-    # API sınıfından bir örnek oluşturun
+    # API sınıfının bir örneğini oluştur
     api_instance = client.DefaultApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     tag = 'tag_example' # str | 
-    tenant_id = 'tenant_id_example' # str |  (optional)
-    update_hash_tag_body = client.UpdateHashTagBody() # UpdateHashTagBody |  (optional)
+    update_hash_tag_body = client.UpdateHashTagBody() # UpdateHashTagBody |  (isteğe bağlı)
 
     try:
-        api_response = api_instance.patch_hash_tag(tag, tenant_id=tenant_id, update_hash_tag_body=update_hash_tag_body)
+        api_response = api_instance.patch_hash_tag(tenant_id, tag, update_hash_tag_body)
         print("The response of DefaultApi->patch_hash_tag:\n")
         pprint(api_response)
     except Exception as e:

@@ -8,15 +8,15 @@
 | doSpamCheck | boolean | query | Nee |  |
 | isLive | boolean | query | Nee |  |
 
-## Antwoord
+## Response
 
-Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
+Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
 
-## Voorbeeld
+## Example
 
 [inline-code-attrs-start title = 'updateComment Voorbeeld'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// De volgende codevoorbeelden zijn nog in bèta. Voor problemen, meld dit via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De volgende codevoorbeelden zijn nog in beta. Meld eventuele problemen via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -26,7 +26,7 @@ let contextUserId = "contextUserId_example" // String |  (optioneel)
 let doSpamCheck = true // Bool |  (optioneel)
 let isLive = true // Bool |  (optioneel)
 
-DefaultAPI.updateComment(tenantId: tenantId, id: id, updatableCommentParams: updatableCommentParams, contextUserId: contextUserId, doSpamCheck: doSpamCheck, isLive: isLive) { (response, error) in
+DefaultAPI.updateComment(tenantId: tenantId, id: id, updatableCommentParams: updatableCommentParams, options: DefaultAPI.UpdateCommentOptions(contextUserId: contextUserId, doSpamCheck: doSpamCheck, isLive: isLive)) { (response, error) in
     guard error == nil else {
         print(error)
         return

@@ -1,24 +1,26 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| commentId | string | Да |  |
-| sso | string | Не |  |
+| tenantId | string | Da |  |
+| commentId | string | Da |  |
+| sso | string = "" | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[GetCommentTextResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_comment_text_response.nim)
+Vraća: [`Option[GetCommentTextResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_comment_text_response.nim)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'Пример getModerationCommentText'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getModerationCommentText'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getModerationCommentText(commentId = "comment-9f8b7a6c", sso = "")
-if response.isSome:
-  let commentData = response.get()
-  echo "Moderation comment text retrieved"
-else:
-  echo "No moderation comment text available"
-[inline-code-end]
+let (optResp, httpResp) = client.getModerationCommentText(
+  tenantId = "my-tenant-123",
+  commentId = "comment-456abc",
+  sso = ""
+)
 
----
+if optResp.isSome:
+  let resp = optResp.get()
+  echo resp
+[inline-code-end]

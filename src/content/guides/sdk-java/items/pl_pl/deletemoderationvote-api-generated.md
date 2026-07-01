@@ -1,18 +1,20 @@
-## Parametry
+## Parameters
 
-| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Tak |  |
 | commentId | string | path | Tak |  |
 | voteId | string | path | Tak |  |
+| broadcastId | string | query | Nie |  |
 | sso | string | query | Nie |  |
 
-## Odpowiedź
+## Response
 
 Zwraca: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/VoteDeleteResponse.java)
 
-## Przykład
+## Example
 
-[inline-code-attrs-start title = 'Przykład deleteModerationVote'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteModerationVote Przykład'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importuj klasy:
 import com.fastcomments.invoker.ApiClient;
@@ -27,11 +29,14 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String voteId = "voteId_example"; // String | 
+    String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      VoteDeleteResponse result = apiInstance.deleteModerationVote(commentId, voteId)
+      VoteDeleteResponse result = apiInstance.deleteModerationVote(tenantId, commentId, voteId)
+            .broadcastId(broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -45,5 +50,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

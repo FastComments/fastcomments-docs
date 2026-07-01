@@ -1,11 +1,12 @@
+Upload and resize an image
+
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
 | tenantId | string | Tak |  |
 | file | string | Nie |  |
-| sizePreset | SizePreset | Nie |  |
-| urlId | string | Tak |  |
+| options | UploadImageOptions | Nie |  |
 
 ## Odpowiedź
 
@@ -13,18 +14,17 @@ Zwraca: [`Option[UploadImageResponse]`](https://github.com/FastComments/fastcomm
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład uploadImage'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'uploadImage Przykład'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.uploadImage(
+let (uploadResult, httpResponse) = client.uploadImage(
   tenantId = "my-tenant-123",
-  file = "assets/images/comment-avatar.jpg",
-  sizePreset = SizePreset.small,
-  urlId = "news/article-2025-11-22"
+  file = "images/avatar.jpg",
+  options = UploadImageOptions()
 )
-if response.isSome:
-  let upload = response.get()
-  echo "Uploaded image id: ", upload.id
-  echo "Uploaded image url: ", upload.url
+
+if uploadResult.isSome:
+  let result = uploadResult.get()
+  # użyj wyniku w razie potrzeby
 [inline-code-end]
 
 ---

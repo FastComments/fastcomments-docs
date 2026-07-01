@@ -1,13 +1,14 @@
 ## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
-|------|------|----------|----------|-------------|
-| value | string | query | Nein |  |
-| sso | string | query | Nein |  |
+|------|------|-----|--------------|--------------|
+| tenantId | string | query | Yes |  |
+| value | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Antwort
 
-Gibt zurück: [`ModerationSiteSearchResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationSiteSearchResponse.php)
+Rückgabe: [`ModerationSiteSearchResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationSiteSearchResponse.php)
 
 ## Beispiel
 
@@ -23,11 +24,16 @@ $apiInstance = new FastComments\Client\Api\ModerationApi(
     // Dies ist optional, `GuzzleHttp\Client` wird standardmäßig verwendet.
     new GuzzleHttp\Client()
 );
-$value = 'value_example'; // string
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // Zeichenkette
+$options = [
+    'value' => 'value_example', // Zeichenkette
+    'sso' => 'sso_example', // Zeichenkette
+];
+
 
 try {
-    $result = $apiInstance->getSearchSites($value, $sso);
+    $result = $apiInstance->getSearchSites($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getSearchSites: ', $e->getMessage(), PHP_EOL;

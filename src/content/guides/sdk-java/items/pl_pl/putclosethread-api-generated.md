@@ -1,7 +1,8 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Tak |  |
 | urlId | string | query | Tak |  |
 | sso | string | query | Nie |  |
 
@@ -11,7 +12,7 @@ Zwraca: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/b
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład użycia putCloseThread'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putCloseThread Przykład'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Import klas:
 import com.fastcomments.invoker.ApiClient;
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      APIEmptyResponse result = apiInstance.putCloseThread(urlId)
+      APIEmptyResponse result = apiInstance.putCloseThread(tenantId, urlId)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -43,3 +45,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

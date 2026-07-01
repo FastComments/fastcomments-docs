@@ -1,32 +1,32 @@
-В настоящий момент онлайн просматривающие страницу: пользователи, чья websocket-сессия в данный момент подписана на страницу.
-Возвращает anonCount + totalCount (подписчики комнаты в целом, включая анонимных зрителей, которых мы не перечисляем).
+Currently-online viewers of a page: people whose websocket session is subscribed to the page right now.  
+Returns anonCount + totalCount (room-wide subscribers, including anon viewers we don't enumerate).
 
 ## Parameters
 
-| Имя | Тип | Расположение | Обязательный | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| urlId | string | query | Да | Идентификатор URL страницы (очищается на стороне сервера). |
-| afterName | string | query | Нет | Курсор: передайте nextAfterName из предыдущего ответа. |
-| afterUserId | string | query | Нет | Разрешитель ничьих для курсора: передайте nextAfterUserId из предыдущего ответа. Требуется, когда задан afterName, чтобы записи с одинаковыми именами не терялись. |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes | Идентификатор URL страницы (очищенный на сервере). |
+| afterName | string | query | No | Курсор: передать nextAfterName из предыдущего ответа. |
+| afterUserId | string | query | No | Разделитель курсора: передать nextAfterUserId из предыдущего ответа. Требуется, когда установлен afterName, чтобы при одинаковых именах записи не пропадали. |
 
 ## Response
 
 Возвращает: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PageUsersOnlineResponse.swift)
 
-## Пример
+## Example
 
 [inline-code-attrs-start title = 'Пример getOnlineUsers'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие примеры кода всё ещё находятся в бета-версии. В случае проблем, пожалуйста, сообщайте по адресу http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следующие образцы кода находятся в бета‑версии. При возникновении проблем, пожалуйста, сообщайте их по адресу http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let urlId = "urlId_example" // String | Идентификатор URL страницы (очищается на стороне сервера).
-let afterName = "afterName_example" // String | Курсор: передайте nextAfterName из предыдущего ответа. (необязательно)
-let afterUserId = "afterUserId_example" // String | Разрешитель ничьих для курсора: передайте nextAfterUserId из предыдущего ответа. Требуется, когда задан afterName, чтобы записи с одинаковыми именами не терялись. (необязательно)
+let urlId = "urlId_example" // String | Идентификатор URL страницы (очищенный на сервере).
+let afterName = "afterName_example" // String | Курсор: передать nextAfterName из предыдущего ответа. (optional)
+let afterUserId = "afterUserId_example" // String | Разделитель курсора: передать nextAfterUserId из предыдущего ответа. Требуется, когда установлен afterName, чтобы при одинаковых именах записи не пропадали. (optional)
 
-PublicAPI.getOnlineUsers(tenantId: tenantId, urlId: urlId, afterName: afterName, afterUserId: afterUserId) { (response, error) in
+PublicAPI.getOnlineUsers(tenantId: tenantId, urlId: urlId, options: PublicAPI.GetOnlineUsersOptions(afterName: afterName, afterUserId: afterUserId)) { (response, error) in
     guard error == nil else {
         print(error)
         return

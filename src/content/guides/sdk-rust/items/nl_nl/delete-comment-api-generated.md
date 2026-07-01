@@ -1,30 +1,28 @@
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
+| Naam | Type | Verplicht | Beschrijving |
 |------|------|----------|-------------|
-| tenant_id | String | Ja |  |
-| id | String | Ja |  |
-| context_user_id | String | Nee |  |
-| is_live | bool | Nee |  |
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
+| context_user_id | String | No |  |
+| is_live | bool | No |  |
 
-## Antwoord
+## Respons
 
-Retourneert: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/delete_comment_result.rs)
+Returns: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/delete_comment_result.rs)
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'delete_comment Voorbeeld'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_comment voorbeeld'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_delete() -> Result<DeleteCommentResult, Error> {
-    let params: DeleteCommentParams = DeleteCommentParams {
+async fn main() -> Result<(), Error> {
+    let params = DeleteCommentParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "comment-6f8a21b4".to_string(),
-        context_user_id: Some("editor-42".to_string()),
+        id: "comment-12345".to_string(),
+        context_user_id: Some("user-6789".to_string()),
         is_live: Some(true),
     };
-    let deleted: DeleteCommentResult = delete_comment(&configuration, params).await?;
-    Ok(deleted)
+    let _result = delete_comment(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

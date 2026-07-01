@@ -1,11 +1,11 @@
 ## Parametre
 
-| Navn | Type | Påkrævet | Beskrivelse |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| id | string | Nej |  |
-| updateAPISSOUserData | UpdateAPISSOUserData | Nej |  |
-| updateComments | bool | Nej |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| updateAPISSOUserData | UpdateAPISSOUserData | No |  |
+| updateComments | bool | No |  |
 
 ## Svar
 
@@ -13,25 +13,16 @@ Returnerer: [`Option[PatchSSOUserAPIResponse]`](https://github.com/FastComments/
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på patchSSOUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'patchSSOUser Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.patchSSOUser(
+let updateData = UpdateAPISSOUserData()
+let (responseOpt, httpResponse) = client.patchSSOUser(
   tenantId = "my-tenant-123",
   id = "user-789",
-  updateAPISSOUserData = UpdateAPISSOUserData(
-    externalId = "ext-987",
-    username = "j.smith",
-    email = "j.smith@news.example.com",
-    displayName = "John Smith",
-    roles = @["author", "editor"],
-    avatarUrl = "https://cdn.news.example.com/avatars/j.smith.png"
-  ),
-  updateComments = true
-)
-
-if response.isSome:
-  let patched = response.get()
-  echo patched
+  updateAPISSOUserData = updateData,
+  updateComments = true)
+if responseOpt.isSome:
+  let response = responseOpt.get()
+  echo response
+echo httpResponse.statusCode
 [inline-code-end]
-
----

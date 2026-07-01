@@ -5,7 +5,7 @@ afterId
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
+|------|------|----------|------------|-------------|
 | tenantId | string | query | Ναι |  |
 | afterId | string | query | Όχι |  |
 | limit | integer | query | Όχι |  |
@@ -20,28 +20,29 @@ afterId
 [inline-code-attrs-start title = 'Παράδειγμα get_feed_posts'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetFeedPostsOptions
 from client.models.get_feed_posts_response import GetFeedPostsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Ορισμός του host είναι προαιρετικός και προεπιλογή είναι το https://fastcomments.com
-# Δείτε το configuration.py για μια λίστα όλων των υποστηριζόμενων παραμέτρων διαμόρφωσης.
+# Ο ορισμός του host είναι προαιρετικός και η προεπιλογή είναι https://fastcomments.com
+# Δείτε το configuration.py για λίστα όλων των υποστηριζόμενων παραμέτρων διαμόρφωσης.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Ο πελάτης πρέπει να ρυθμίσει τις παραμέτρους πιστοποίησης και εξουσιοδότησης
-# σύμφωνα με την πολιτική ασφάλειας του διακομιστή API.
-# Παρέχονται παραδείγματα για κάθε μέθοδο αυθεντικοποίησης παρακάτω, χρησιμοποιήστε
-# το παράδειγμα που ικανοποιεί την περίπτωση χρήσης σας.
+# Ο πελάτης πρέπει να ρυθμίσει τις παραμέτρους αυθεντικοποίησης και εξουσιοδότησης
+# σύμφωνα με την πολιτική ασφαλείας του διακομιστή API.
+# Παρέχονται παραδείγματα για κάθε μέθοδο ταυτοποίησης παρακάτω, χρησιμοποιήστε το παράδειγμα που
+# ικανοποιεί την περίπτωση χρήσης αυθεντικοποίησης σας.
 
-# Configure API key authorization: api_key
+# Διαμορφώστε την εξουσιοδότηση κλειδιού API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Αποσχολιάστε παρακάτω για να ρυθμίσετε πρόθεμα (π.χ. Bearer) για το API key, αν χρειάζεται
+# Αποσχολιάστε παρακάτω για ρύθμιση προθέματος (π.χ. Bearer) για το κλειδί API, αν χρειάζεται
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Εισέλθετε σε ένα context με ένα στιγμιότυπο του API client
+# Εισέλθετε σε ένα πλαίσιο με ένα στιγμιότυπο του πελάτη API
 with client.ApiClient(configuration) as api_client:
     # Δημιουργήστε ένα στιγμιότυπο της κλάσης API
     api_instance = client.DefaultApi(api_client)
@@ -51,9 +52,11 @@ with client.ApiClient(configuration) as api_client:
     tags = ['tags_example'] # List[str] |  (προαιρετικό)
 
     try:
-        api_response = api_instance.get_feed_posts(tenant_id, after_id=after_id, limit=limit, tags=tags)
+        api_response = api_instance.get_feed_posts(tenant_id, GetFeedPostsOptions(after_id=after_id, limit=limit, tags=tags))
         print("The response of DefaultApi->get_feed_posts:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling DefaultApi->get_feed_posts: %s\n" % e)
 [inline-code-end]
+
+---

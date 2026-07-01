@@ -2,6 +2,7 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | value | string | query | No |  |
 | sso | string | query | No |  |
 
@@ -16,10 +17,11 @@ Returns: [`ModerationSiteSearchResponse`](https://github.com/FastComments/fastco
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let value = "value_example" // String |  (optional)
 let sso = "sso_example" // String |  (optional)
 
-ModerationAPI.getSearchSites(value: value, sso: sso) { (response, error) in
+ModerationAPI.getSearchSites(tenantId: tenantId, options: ModerationAPI.GetSearchSitesOptions(value: value, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

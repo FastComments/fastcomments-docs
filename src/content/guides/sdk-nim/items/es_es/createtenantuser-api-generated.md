@@ -1,27 +1,32 @@
 ## Parámetros
 
-| Nombre | Tipo | Obligatorio | Descripción |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Sí |  |
 | createTenantUserBody | CreateTenantUserBody | No |  |
 
 ## Respuesta
 
-Devuelve: [`Option[CreateTenantUserResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_tenant_user_response.nim)
+Returns: [`Option[CreateTenantUserResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_tenant_user_response.nim)
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de createTenantUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo createTenantUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.createTenantUser(tenantId = "my-tenant-123",
-  createTenantUserBody = CreateTenantUserBody(userId = "user-456",
-    email = "jane.doe@example.com",
-    displayName = "Jane Doe",
-    roles = @["editor"],
-    isAdmin = false))
-if response.isSome:
-  let created = response.get()
-  discard created
+let tenantId = "my-tenant-123"
+let userBody = CreateTenantUserBody(
+  email: "john.doe@example.com",
+  name: "John Doe",
+  password: "s3cr3tP@ss",
+  role: "admin"
+)
+let (optResp, httpResp) = client.createTenantUser(
+  tenantId = tenantId,
+  createTenantUserBody = userBody
+)
+if optResp.isSome:
+  let resp = optResp.get()
+  echo resp.userId
 [inline-code-end]
 
 ---

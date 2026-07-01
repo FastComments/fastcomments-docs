@@ -1,33 +1,28 @@
 ## Παράμετροι
 
-| Name | Type | Required | Description |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
-| tenantId | string | Ναι |  |
-| commentId | string | Ναι |  |
-| direction | string | Όχι |  |
-| userId | string | Όχι |  |
-| anonUserId | string | Όχι |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| direction | string | No |  |
+| options | CreateVoteOptions | No |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`Option[VoteResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_vote_response.nim)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα createVote'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createVote Παράδειγμα'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.createVote(
+let (voteOpt, httpResp) = client.createVote(
   tenantId = "my-tenant-123",
-  commentId = "cmt-987654",
+  commentId = "comment-7890",
   direction = "up",
-  userId = "user-42",
-  anonUserId = ""
+  options = CreateVoteOptions()
 )
-if response.isSome:
-  let vote = response.get()
-  echo "Vote created:", vote
-else:
-  echo "No vote returned"
-[inline-code-end]
 
----
+if voteOpt.isSome:
+  let vote = voteOpt.get()
+  echo vote
+[inline-code-end]

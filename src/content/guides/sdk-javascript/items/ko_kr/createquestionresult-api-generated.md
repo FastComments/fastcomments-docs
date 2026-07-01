@@ -2,30 +2,32 @@
 
 | 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| createQuestionResultBody | CreateQuestionResultBody | 예 |  |
+| tenantId | string | Yes |  |
+| createQuestionResultBody | CreateQuestionResultBody | Yes |  |
 
 ## 응답
 
-반환: [`CreateQuestionResultResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionResultResponse.ts)
+Returns: [`CreateQuestionResultResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionResultResponse1.ts)
 
-## 예제
+## 예시
 
 [inline-code-attrs-start title = 'createQuestionResult 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "tenant_5821b2";
-  const createQuestionResultBody: CreateQuestionResultBody = {
-    questionId: "q_9f3a7",
-    userId: "user_77",
-    score: 4.5,
-    feedback: "Answer was concise and addressed the core issue",
-    // 선택적 매개변수 예시
-    sessionId: "sess_a12f",
-    meta: [{ key: "device", value: "iPhone 13 Pro" }],
-    status: { code: 201, message: "Created" }
-  };
-  const result: CreateQuestionResultResponse = await createQuestionResult(tenantId, createQuestionResultBody);
-  console.log(result);
-})();
+const tenantId: string = "acme-corp-tenant";
+
+const metaItem: MetaItem = {
+  key: "campaign",
+  value: "spring-launch"
+};
+
+const questionResultBody: CreateQuestionResultBody = {
+  questionId: "question-42",
+  answer: "Positive",
+  metadata: [metaItem]
+  // notes와 같은 선택적 필드는 생략되었습니다
+};
+
+const result: CreateQuestionResultResponse1 = await createQuestionResult(tenantId, questionResultBody);
 [inline-code-end]
+
+---

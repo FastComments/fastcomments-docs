@@ -1,13 +1,13 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| urlId | string | query | Да |  |
-| usernameStartsWith | string | query | Нет |  |
-| mentionGroupIds | array | query | Нет |  |
-| sso | string | query | Нет |  |
-| searchSection | string | query | Нет |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| usernameStartsWith | string | query | No |  |
+| mentionGroupIds | array | query | No |  |
+| sso | string | query | No |  |
+| searchSection | string | query | No |  |
 
 ## Ответ
 
@@ -15,9 +15,9 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример использования searchUsers'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример searchUsers'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие примеры кода всё ещё в бета-версии. При возникновении проблем, пожалуйста, сообщите через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следующие образцы кода находятся в бета-версии. При любых проблемах, пожалуйста, сообщайте по адресу http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -27,7 +27,7 @@ let mentionGroupIds = ["inner_example"] // [String] |  (необязательн
 let sso = "sso_example" // String |  (необязательно)
 let searchSection = "searchSection_example" // String |  (необязательно)
 
-PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, usernameStartsWith: usernameStartsWith, mentionGroupIds: mentionGroupIds, sso: sso, searchSection: searchSection) { (response, error) in
+PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, options: PublicAPI.SearchUsersOptions(usernameStartsWith: usernameStartsWith, mentionGroupIds: mentionGroupIds, sso: sso, searchSection: searchSection)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -38,5 +38,3 @@ PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, usernameStartsWith: user
     }
 }
 [inline-code-end]
-
----

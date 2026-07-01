@@ -1,16 +1,16 @@
-Aktivér eller deaktiver notifikationer for en bestemt kommentar.
+Aktivér eller deaktiver notifikationer for en specifik kommentar.
 
 ## Parametre
 
-| Name | Type | Required | Description |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | notificationId | string | Nej |  |
 | optedInOrOut | string | Nej |  |
 | commentId | string | Ja |  |
-| sso | string | Nej |  |
+| sso | string = "" | Nej |  |
 
-## Respons
+## Svar
 
 Returnerer: [`Option[UpdateUserNotificationCommentSubscriptionStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_comment_subscription_status_response.nim)
 
@@ -18,15 +18,14 @@ Returnerer: [`Option[UpdateUserNotificationCommentSubscriptionStatusResponse]`](
 
 [inline-code-attrs-start title = 'updateUserNotificationCommentSubscriptionStatus Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateUserNotificationCommentSubscriptionStatus(
+let (optResp, httpResp) = client.updateUserNotificationCommentSubscriptionStatus(
   tenantId = "my-tenant-123",
-  notificationId = "",
-  optedInOrOut = "",
-  commentId = "cmt-789",
+  notificationId = "notif-456",
+  optedInOrOut = "opted-in",
+  commentId = "comment-789",
   sso = ""
 )
 
-if response.isSome:
-  let updateResp = response.get()
-  echo "Subscription update response: ", updateResp
+if optResp.isSome:
+  let resp = optResp.get()
 [inline-code-end]

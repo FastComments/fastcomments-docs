@@ -1,9 +1,9 @@
 ## Параметри
 
-| Назив | Тип | Обавезно | Опис |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Не |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
 
 ## Одговор
 
@@ -11,14 +11,10 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример getTenantUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTenantUser Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTenantUser(tenantId = "my-tenant-123", id = "user-789")
-if response.isSome:
-  let tenantUser = response.get()
-  echo "User fetched:", tenantUser
-else:
-  echo "No user found, HTTP status:", httpResponse.status
+let (maybeUser, httpResp) = client.getTenantUser(tenantId = "my-tenant-123", id = "user-456")
+if maybeUser.isSome:
+  let user = maybeUser.get()
+  echo user
 [inline-code-end]
-
----

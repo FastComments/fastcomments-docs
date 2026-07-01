@@ -1,37 +1,37 @@
-Получение списка страниц для тенанта. Используется десктоп-клиентом FChat для заполнения списка комнат.
-Требуется, чтобы в результирующей пользовательской конфигурации каждой страницы свойство `enableFChat` было true.
-Страницы, требующие SSO, фильтруются с учётом доступа групп запрашивающего пользователя.
+List pages for a tenant. Used by the FChat desktop client to populate its room list.
+Requires `enableFChat` to be true on the resolved custom config for each page.
+Pages that require SSO are filtered against the requesting user's group access.
 
-## Параметры
+## Parameters
 
-| Имя | Тип | Location | Обязательный | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| cursor | string | query | Нет | Непрозрачный курсор пагинации, возвращаемый как `nextCursor` в предыдущем запросе. Привязан к тому же `sortBy`. |
-| limit | integer | query | Нет | 1..200, по умолчанию 50 |
-| q | string | query | Нет | Необязательный регистронезависимый фильтр по префиксу заголовка. |
-| sortBy | string | query | Нет | Порядок сортировки. `updatedAt` (по умолчанию, сначала самые новые), `commentCount` (сначала страницы с наибольшим количеством комментариев) или `title` (по алфавиту). |
-| hasComments | boolean | query | Нет | Если true, возвращать только страницы с хотя бы одним комментарием. |
+| tenantId | string | path | Yes |  |
+| cursor | string | query | No | Необычный курсор пагинации, возвращённый как `nextCursor` из предыдущего запроса. Связан с тем же параметром `sortBy`. |
+| limit | integer | query | No | 1..200, default 50 |
+| q | string | query | No | Необязательный фильтр префикса названия без учёта регистра. |
+| sortBy | string | query | No | Порядок сортировки. `updatedAt` (по умолчанию, от новых к старым), `commentCount` (со сначала страницы с наибольшим количеством комментариев), или `title` (по алфавиту). |
+| hasComments | boolean | query | No | Если true, только возвращаются страницы, имеющие хотя бы один комментарий. |
 
-## Ответ
+## Response
 
-Возвращает: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPublicPagesResponse.swift)
+Returns: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPublicPagesResponse.swift)
 
-## Пример
+## Example
 
 [inline-code-attrs-start title = 'Пример getPagesPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие примеры кода всё ещё в бета-версии. По любым проблемам, пожалуйста, сообщите через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следующие примеры кода находятся в бета-версии. При возникновении проблем, пожалуйста, сообщайте по адресу http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let cursor = "cursor_example" // String | Непрозрачный курсор пагинации, возвращаемый как `nextCursor` в предыдущем запросе. Привязан к тому же `sortBy`. (необязательно)
-let limit = 987 // Int | 1..200, по умолчанию 50 (необязательно)
-let q = "q_example" // String | Необязательный регистронезависимый фильтр по префиксу заголовка. (необязательно)
-let sortBy = PagesSortBy() // PagesSortBy | Порядок сортировки. `updatedAt` (по умолчанию, сначала самые новые), `commentCount` (сначала страницы с наибольшим количеством комментариев) или `title` (по алфавиту). (необязательно)
-let hasComments = true // Bool | Если true, возвращать только страницы с хотя бы одним комментарием. (необязательно)
+let cursor = "cursor_example" // String | Необычный курсор пагинации, возвращённый как `nextCursor` из предыдущего запроса. Связан с тем же параметром `sortBy`. (необязательно)
+let limit = 987 // Int | 1..200, default 50 (необязательно)
+let q = "q_example" // String | Необязательный фильтр префикса названия без учёта регистра. (необязательно)
+let sortBy = PagesSortBy() // PagesSortBy | Порядок сортировки. `updatedAt` (по умолчанию, от новых к старым), `commentCount` (со сначала страницы с наибольшим количеством комментариев), или `title` (по алфавиту). (необязательно)
+let hasComments = true // Bool | Если true, только возвращаются страницы, имеющие хотя бы один комментарий. (необязательно)
 
-PublicAPI.getPagesPublic(tenantId: tenantId, cursor: cursor, limit: limit, q: q, sortBy: sortBy, hasComments: hasComments) { (response, error) in
+PublicAPI.getPagesPublic(tenantId: tenantId, options: PublicAPI.GetPagesPublicOptions(cursor: cursor, limit: limit, q: q, sortBy: sortBy, hasComments: hasComments)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -42,5 +42,3 @@ PublicAPI.getPagesPublic(tenantId: tenantId, cursor: cursor, limit: limit, q: q,
     }
 }
 [inline-code-end]
-
----

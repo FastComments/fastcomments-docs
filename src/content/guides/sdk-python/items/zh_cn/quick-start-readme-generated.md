@@ -1,6 +1,6 @@
-### 使用已认证的 API (DefaultApi)
+### 使用已认证的 API（DefaultApi）
 
-**重要：** 在进行需要认证的请求之前，您必须在 Configuration 上设置您的 API 密钥。如果不设置，请求会以 401 错误失败。
+**重要提示：** 在进行已认证请求之前，必须在 Configuration 上设置您的 API 密钥。如果不设置，请求将返回 401 错误。
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
@@ -10,14 +10,14 @@ from client.models import CreateAPISSOUserData
 config = Configuration()
 config.host = "https://fastcomments.com/api"
 
-# 必需：设置您的 API 密钥（从您的 FastComments 仪表板获取）
+# 必填：设置您的 API 密钥（从 FastComments 仪表板获取）
 config.api_key = {"ApiKeyAuth": "YOUR_API_KEY_HERE"}
 
-# 使用配置好的客户端创建 API 实例
+# 使用已配置的客户端创建 API 实例
 api_client = ApiClient(configuration=config)
 api = DefaultApi(api_client)
 
-# 现在您可以进行已认证的 API 调用
+# 现在可以进行已认证的 API 调用
 try:
     # 示例：添加一个 SSO 用户
     user_data = CreateAPISSOUserData(
@@ -26,22 +26,19 @@ try:
         display_name="John Doe"
     )
 
-    response = api.add_sso_user(
-        tenant_id="YOUR_TENANT_ID",
-        create_apisso_user_data=user_data
-    )
+    response = api.add_sso_user("YOUR_TENANT_ID", user_data)
     print(f"User created: {response}")
 
 except Exception as e:
     print(f"Error: {e}")
     # 常见错误：
-    # - 401：API 密钥丢失或无效
-    # - 400：请求验证失败
+    # - 401: API 密钥缺失或无效
+    # - 400: 请求验证失败
 ```
 
-### 使用公共 API (PublicApi)
+### 使用公共 API（PublicApi）
 
-公共端点不需要身份验证：
+公共端点不需要认证：
 
 ```python
 from client import ApiClient, Configuration, PublicApi
@@ -53,21 +50,19 @@ api_client = ApiClient(configuration=config)
 public_api = PublicApi(api_client)
 
 try:
-    response = public_api.get_comments_public(
-        tenant_id="YOUR_TENANT_ID",
-        url_id="page-url-id"
-    )
+    response = public_api.get_comments_public("YOUR_TENANT_ID", "page-url-id")
     print(response)
 except Exception as e:
     print(f"Error: {e}")
 ```
 
-### 使用审核仪表板 (ModerationApi)
+### 使用审核仪表板（ModerationApi）
 
-`ModerationApi` 为版主仪表板提供支持。通过传递 `sso` 令牌，方法会以版主的身份被调用：
+`ModerationApi` 为审核员仪表板提供功能。方法通过传递 `sso` 令牌以审核员身份调用：
 
 ```python
 from client import ApiClient, Configuration, ModerationApi
+from client.api.moderation_api import GetCountOptions
 
 config = Configuration()
 config.host = "https://fastcomments.com/api"
@@ -76,8 +71,8 @@ api_client = ApiClient(configuration=config)
 moderation_api = ModerationApi(api_client)
 
 try:
-    # 统计等待审核的评论数
-    response = moderation_api.get_count(sso="SSO_TOKEN")
+    # 统计待审核的评论数量
+    response = moderation_api.get_count(GetCountOptions(sso="SSO_TOKEN"))
     print(response)
 except Exception as e:
     print(f"Error: {e}")
@@ -85,7 +80,7 @@ except Exception as e:
 
 ### 使用 SSO（单点登录）
 
-SDK 包含用于生成安全 SSO 令牌的工具：
+SDK 包含用于生成安全 SSO 令牌的实用工具：
 
 ```python
 from sso import FastCommentsSSO, SecureSSOUserData
@@ -98,7 +93,7 @@ user_data = SecureSSOUserData(
     avatar="https://example.com/avatar.jpg"
 )
 
-# 使用您的 API 密钥创建 SSO 实例
+# 使用您的 API secret 创建 SSO 实例
 sso = FastCommentsSSO.new_secure(
     api_secret="YOUR_API_SECRET",
     user_data=user_data
@@ -111,7 +106,7 @@ sso_token = sso.create_token()
 print(f"SSO Token: {sso_token}")
 ```
 
-用于简单 SSO（安全性较低，仅用于测试）：
+对于简单 SSO（安全性较低，仅用于测试）：
 
 ```python
 from sso import FastCommentsSSO, SimpleSSOUserData
@@ -127,8 +122,8 @@ sso_token = sso.create_token()
 
 ### 常见问题
 
-1. **401 "missing-api-key" 错误**：确保在创建 DefaultApi 实例之前设置 `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}`。
-2. **错误的 API 类**：服务器端需认证的请求使用 `DefaultApi`，客户端/公共请求使用 `PublicApi`，版主仪表板请求使用 `ModerationApi`。
-3. **导入错误**：确保您从正确的模块导入：
-   - API 客户端: `from client import ...`
-   - SSO 工具: `from sso import ...`
+1. **401 “missing-api-key” 错误**：确保在创建 `DefaultApi` 实例之前设置 `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}`。
+2. **错误的 API 类**：使用 `DefaultApi` 进行服务器端已认证请求，使用 `PublicApi` 进行客户端/公共请求，使用 `ModerationApi` 进行审核员仪表板请求。
+3. **导入错误**：确保从正确的模块导入：
+   - API 客户端：`from client import ...`
+   - SSO 实用工具：`from sso import ...`

@@ -1,22 +1,22 @@
 ## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | 路徑 | 是 |  |
-| urlId | string | 查詢 | 是 |  |
-| broadcastId | string | 查詢 | 是 |  |
-| sessionId | string | 查詢 | 否 |  |
-| sso | string | 查詢 | 否 |  |
+| tenantId | string | path | 是 |  |
+| urlId | string | query | 是 |  |
+| broadcastId | string | query | 是 |  |
+| sessionId | string | query | 否 |  |
+| sso | string | query | 否 |  |
 
 ## 回應
 
-回傳: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SaveCommentsResponseWithPresence.swift)
+返回：[`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SaveCommentsResponseWithPresence.swift)
 
 ## 範例
 
 [inline-code-attrs-start title = 'createCommentPublic 範例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 下列程式碼範例仍為測試版。如有任何問題，請透過 http://github.com/OpenAPITools/openapi-generator/issues/new 回報
+// 以下程式碼範例仍處於測試階段。如有任何問題，請透過 http://github.com/OpenAPITools/openapi-generator/issues/new 回報
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -26,7 +26,7 @@ let commentData = CommentData(date: 123, localDateString: "localDateString_examp
 let sessionId = "sessionId_example" // String |  (可選)
 let sso = "sso_example" // String |  (可選)
 
-PublicAPI.createCommentPublic(tenantId: tenantId, urlId: urlId, broadcastId: broadcastId, commentData: commentData, sessionId: sessionId, sso: sso) { (response, error) in
+PublicAPI.createCommentPublic(tenantId: tenantId, urlId: urlId, broadcastId: broadcastId, commentData: commentData, options: PublicAPI.CreateCommentPublicOptions(sessionId: sessionId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

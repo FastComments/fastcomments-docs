@@ -1,15 +1,16 @@
-## Параметры
+## Parameters
 
-| Имя | Тип | Расположение | Обязательный | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
 | urlId | string | query | Да |  |
 | sso | string | query | Нет |  |
 
-## Ответ
+## Response
 
 Возвращает: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
-## Пример
+## Example
 
 [inline-code-attrs-start title = 'Пример putReopenThread'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -18,20 +19,22 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
+// Инициализируем объект API
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Если вы хотите использовать собственный HTTP-клиент, передайте ваш клиент, который реализует `GuzzleHttp\ClientInterface`.
+    // Если вы хотите использовать кастомный HTTP‑клиент, передайте свой клиент, реализующий `GuzzleHttp\ClientInterface`.
     // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
-$url_id = 'url_id_example'; // строка
-$sso = 'sso_example'; // строка
+
+$tenant_id = 'tenant_id_example'; // string
+$url_id = 'url_id_example'; // string
+$sso = 'sso_example'; // string
+
 
 try {
-    $result = $apiInstance->putReopenThread($url_id, $sso);
+    $result = $apiInstance->putReopenThread($tenant_id, $url_id, $sso);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->putReopenThread: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

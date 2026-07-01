@@ -1,17 +1,17 @@
-## Параметри
+## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tag | string | path | Так |  |
-| tenantId | string | query | Ні |  |
+| tenantId | string | query | Yes |  |
+| tag | string | path | Yes |  |
 
-## Відповідь
+## Response
 
-Повертає: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
+Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
-## Приклад
+## Example
 
-[inline-code-attrs-start title = 'Приклад deleteHashTag'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteHashTag Приклад'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Імпорт класів:
 import com.fastcomments.invoker.ApiClient;
@@ -26,19 +26,18 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Налаштування авторизації API-ключем: api_key
+    // Налаштувати авторизацію за допомогою API ключа: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Розкоментуйте наступний рядок, щоб встановити префікс для API-ключа, напр., "Token" (за замовчуванням null)
+    // Розкоментуйте наступний рядок, щоб встановити префікс для API ключа, напр. "Token" (за замовчуванням null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    String tag = "tag_example"; // String | 
     String tenantId = "tenantId_example"; // String | 
+    String tag = "tag_example"; // String | 
     DeleteHashTagRequestBody deleteHashTagRequestBody = new DeleteHashTagRequestBody(); // DeleteHashTagRequestBody | 
     try {
-      APIEmptyResponse result = apiInstance.deleteHashTag(tag)
-            .tenantId(tenantId)
+      APIEmptyResponse result = apiInstance.deleteHashTag(tenantId, tag)
             .deleteHashTagRequestBody(deleteHashTagRequestBody)
             .execute();
       System.out.println(result);

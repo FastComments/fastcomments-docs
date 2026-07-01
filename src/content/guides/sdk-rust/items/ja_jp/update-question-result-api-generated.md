@@ -1,7 +1,7 @@
 ---
 ## パラメータ
 
-| 名前 | 型 | 必須 | 説明 |
+| 名前 | タイプ | 必須 | 説明 |
 |------|------|----------|-------------|
 | tenant_id | String | Yes |  |
 | id | String | Yes |  |
@@ -9,25 +9,23 @@
 
 ## レスポンス
 
-返却値: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
+返り値: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
 ## 例
 
 [inline-code-attrs-start title = 'update_question_result の例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_update_question_result() -> Result<(), Error> {
-    let body: models::UpdateQuestionResultBody = models::UpdateQuestionResultBody {
-        answered: Some(true),
-        confidence: Some(0.92),
-        responder: Some("editor-zoe".to_string()),
-        notes: Some("Validated against article sources".to_string()),
+async fn example() -> Result<(), Error> {
+    let params = UpdateQuestionResultParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "question-9876".to_string(),
+        update_question_result_body: models::UpdateQuestionResultBody {
+            status: Some("approved".to_string()),
+            score: Some(95),
+            ..Default::default()
+        },
     };
-    let params: UpdateQuestionResultParams = UpdateQuestionResultParams {
-        tenant_id: "acme-news-tenant".to_string(),
-        id: "news/article/5621/question/12".to_string(),
-        update_question_result_body: body,
-    };
-    let _resp: ApiEmptyResponse = update_question_result(&configuration, params).await?;
+    let _ = update_question_result(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

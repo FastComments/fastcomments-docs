@@ -1,18 +1,19 @@
-## パラメータ
+## Parameters
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| 名前 | タイプ | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| sso | string | query | いいえ |  |
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
-## レスポンス
+## Response
 
-戻り値: [`GetTenantManualBadgesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantManualBadgesResponse.java)
+返却: [`GetTenantManualBadgesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantManualBadgesResponse.java)
 
-## 例
+## Example
 
 [inline-code-attrs-start title = 'getManualBadges の例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// クラスのインポート:
+// クラスをインポート:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -25,9 +26,10 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      GetTenantManualBadgesResponse result = apiInstance.getManualBadges()
+      GetTenantManualBadgesResponse result = apiInstance.getManualBadges(tenantId)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -41,5 +43,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

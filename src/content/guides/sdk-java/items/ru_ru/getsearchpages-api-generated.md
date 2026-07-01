@@ -1,17 +1,18 @@
-## Параметры
+## Parameters
 
-| Имя | Тип | Расположение | Обязательный | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
 | value | string | query | Нет |  |
 | sso | string | query | Нет |  |
 
-## Ответ
+## Response
 
-Возвращает: [`ModerationPageSearchResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationPageSearchResponse.java)
+Returns: [`ModerationPageSearchResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationPageSearchResponse.java)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'Пример использования getSearchPages'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getSearchPages'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Импорт классов:
 import com.fastcomments.invoker.ApiClient;
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String value = "value_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationPageSearchResponse result = apiInstance.getSearchPages()
+      ModerationPageSearchResponse result = apiInstance.getSearchPages(tenantId)
             .value(value)
             .sso(sso)
             .execute();

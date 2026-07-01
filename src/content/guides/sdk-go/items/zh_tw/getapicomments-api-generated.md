@@ -1,20 +1,21 @@
 ## 參數
 
-| 名稱 | 型別 | 位置 | 必填 | 描述 |
+| 名稱 | 型別 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
-| page | number | query | 否 |  |
-| count | number | query | 否 |  |
-| text-search | string | query | 否 |  |
-| byIPFromComment | string | query | 否 |  |
-| filters | string | query | 否 |  |
-| searchFilters | string | query | 否 |  |
-| sorts | string | query | 否 |  |
-| demo | boolean | query | 否 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| page | number | query | No |  |
+| count | number | query | No |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sorts | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## 回應
 
-回傳: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_api_get_comments_response.go)
+Returns: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_api_get_comments_response.go)
 
 ## 範例
 
@@ -30,6 +31,7 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string |
 	page := float64(1.2) // float64 |  (可選)
 	count := float64(1.2) // float64 |  (可選)
 	textSearch := "textSearch_example" // string |  (可選)
@@ -42,14 +44,12 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetApiComments(context.Background()).Page(page).Count(count).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).Sorts(sorts).Demo(demo).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetApiComments(context.Background()).TenantId(tenantId).Page(page).Count(count).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).Sorts(sorts).Demo(demo).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetApiComments``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "呼叫 `ModerationAPI.GetApiComments` 時發生錯誤: %v\n", err)
+		fmt.Fprintf(os.Stderr, "完整 HTTP 回應: %v\n", r)
 	}
 	// `GetApiComments` 的回應: ModerationAPIGetCommentsResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetApiComments`: %v\n", resp)
+	fmt.Fprintf(os.Stdout, "`ModerationAPI.GetApiComments` 的回應: %v\n", resp)
 }
 [inline-code-end]
-
----

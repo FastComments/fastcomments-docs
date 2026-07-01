@@ -1,9 +1,11 @@
 ## Παράμετροι
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Ναι |  |
-| sso | string | query | Όχι |  |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|-----------|------------|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Απόκριση
 
@@ -23,17 +25,19 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
+	broadcastId := "broadcastId_example" // string |  (προαιρετικό)
 	sso := "sso_example" // string |  (προαιρετικό)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostFlagComment(context.Background(), commentId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostFlagComment(context.Background(), commentId).TenantId(tenantId).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostFlagComment``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Σφάλμα κατά την κλήση `ModerationAPI.PostFlagComment``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Πλήρης HTTP απόκριση: %v\n", r)
 	}
-	// απόκριση από `PostFlagComment`: APIEmptyResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostFlagComment`: %v\n", resp)
+	// απάντηση από `PostFlagComment`: APIEmptyResponse
+	fmt.Fprintf(os.Stdout, "Απάντηση από `ModerationAPI.PostFlagComment`: %v\n", resp)
 }
 [inline-code-end]

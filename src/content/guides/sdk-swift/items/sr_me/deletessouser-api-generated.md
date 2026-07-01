@@ -1,29 +1,29 @@
-## Параметри
+## Parameters
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| id | string | path | Да |  |
-| deleteComments | boolean | query | Не |  |
-| commentDeleteMode | string | query | Не |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| deleteComments | boolean | query | No |  |
+| commentDeleteMode | string | query | No |  |
 
-## Одговор
+## Response
 
-Враћа: [`DeleteSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/DeleteSSOUserAPIResponse.swift)
+Vraća: [`DeleteSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/DeleteSSOUserAPIResponse.swift)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'deleteSSOUser Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteSSOUser Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи примјери кода су још у бета фази. За било који проблем, пријавите га на http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sljedeći uzorci koda su još u beta fazi. Za bilo koji problem, molimo prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let id = "id_example" // String | 
-let deleteComments = true // Bool |  (опционо)
-let commentDeleteMode = "commentDeleteMode_example" // String |  (опционо)
+let deleteComments = true // Bool |  (optional)
+let commentDeleteMode = "commentDeleteMode_example" // String |  (optional)
 
-DefaultAPI.deleteSSOUser(tenantId: tenantId, id: id, deleteComments: deleteComments, commentDeleteMode: commentDeleteMode) { (response, error) in
+DefaultAPI.deleteSSOUser(tenantId: tenantId, id: id, options: DefaultAPI.DeleteSSOUserOptions(deleteComments: deleteComments, commentDeleteMode: commentDeleteMode)) { (response, error) in
     guard error == nil else {
         print(error)
         return

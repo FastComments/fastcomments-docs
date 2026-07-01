@@ -2,16 +2,18 @@
 
 | Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Yes |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Da |  |
+| commentId | string | path | Da |  |
+| broadcastId | string | query | Ne |  |
+| sso | string | query | Ne |  |
 
 ## Odgovor
 
-Vrne: [`PostRemoveCommentResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_post_remove_comment_response.go)
+Vrne: [`PostRemoveCommentApiResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_post_remove_comment_api_response.go)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer PostRemoveComment'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PostRemoveComment Primer'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,19 +25,19 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
-	sso := "sso_example" // string |  (izbirno)
+	broadcastId := "broadcastId_example" // string |  (neobvezno)
+	sso := "sso_example" // string |  (neobvezno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostRemoveComment(context.Background(), commentId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostRemoveComment(context.Background(), commentId).TenantId(tenantId).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostRemoveComment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor od `PostRemoveComment`: PostRemoveCommentResponse
+	// odgovor iz `PostRemoveComment`: PostRemoveCommentApiResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostRemoveComment`: %v\n", resp)
 }
 [inline-code-end]
-
----

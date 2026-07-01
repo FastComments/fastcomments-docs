@@ -1,21 +1,25 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
-|------|------|----------|-------------|
-| tenantId | string | Ναι |  |
-| urlId | string | Ναι |  |
+|------|------|------------|-----------|
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
 
-## Απόκριση
+## Απάντηση
 
-Επιστρέφει: [`GetVotesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetVotesResponse.ts)
+Επιστρέφει: [`GetVotesResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetVotesResponse1.ts)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα getVotes'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_8421';
-const urlId: string | undefined = 'posts/2026/06/typescript-api-examples';
-const votes: GetVotesResponse = await getVotes(tenantId, urlId!);
-[inline-code-end]
+async function fetchVotes(): Promise<void> {
+  const tenantId: string = "acme-corp-01";
+  const urlId: string = "article-2024-05-15";
 
----
+  const response: GetVotesResponse1 = await getVotes(tenantId, urlId);
+
+  // Παράδειγμα πρόσβασης σε προαιρετικό πεδίο στην απάντηση
+  const firstVoteId: string | undefined = response?.votes?.[0]?.id;
+}
+[inline-code-end]

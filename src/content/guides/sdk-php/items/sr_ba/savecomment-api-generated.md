@@ -1,14 +1,14 @@
-## Parameters
+## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| isLive | boolean | query | Ne |  |
-| doSpamCheck | boolean | query | Ne |  |
-| sendEmails | boolean | query | Ne |  |
-| populateNotifications | boolean | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| isLive | boolean | query | No |  |
+| doSpamCheck | boolean | query | No |  |
+| sendEmails | boolean | query | No |  |
+| populateNotifications | boolean | query | No |  |
 
-## Response
+## Odgovor
 
 Vraća: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APISaveCommentResponse.php)
 
@@ -27,20 +27,24 @@ $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKe
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ako želite koristiti prilagođeni HTTP klijent, proslijedite klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opcionalno, `GuzzleHttp\Client` će biti korišten kao podrazumijevani.
+    // Ako želite koristiti prilagođeni HTTP klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opciono, `GuzzleHttp\Client` će se koristiti kao podrazumevano.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $create_comment_params = new \FastComments\Client\Model\CreateCommentParams(); // \FastComments\Client\Model\CreateCommentParams
-$is_live = True; // bool
-$do_spam_check = True; // bool
-$send_emails = True; // bool
-$populate_notifications = True; // bool
+$options = [
+    'is_live' => True, // bool
+    'do_spam_check' => True, // bool
+    'send_emails' => True, // bool
+    'populate_notifications' => True, // bool
+];
+
 
 try {
-    $result = $apiInstance->saveComment($tenant_id, $create_comment_params, $is_live, $do_spam_check, $send_emails, $populate_notifications);
+    $result = $apiInstance->saveComment($tenant_id, $create_comment_params, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->saveComment: ', $e->getMessage(), PHP_EOL;

@@ -31,13 +31,17 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
-$context_user_id = 'context_user_id_example'; // string
-$is_live = True; // bool
+$options = [
+    'context_user_id' => 'context_user_id_example', // string
+    'is_live' => True, // bool
+];
+
 
 try {
-    $result = $apiInstance->deleteComment($tenant_id, $id, $context_user_id, $is_live);
+    $result = $apiInstance->deleteComment($tenant_id, $id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->deleteComment: ', $e->getMessage(), PHP_EOL;

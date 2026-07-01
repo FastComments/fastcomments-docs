@@ -2,27 +2,27 @@
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | はい |  |
-| userId | string | はい |  |
-| createTicketBody | CreateTicketBody | はい |  |
+| tenantId | string | Yes |  |
+| userId | string | Yes |  |
+| createTicketBody | CreateTicketBody | Yes |  |
 
 ## レスポンス
 
-戻り値: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTicketResponse.ts)
+戻り値: [`CreateTicketResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTicketResponse1.ts)
 
 ## 例
 
-[inline-code-attrs-start title = 'createTicket の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createTicket 例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-enterprises";
-const userId: string = "user_12039";
-const createTicketBody: CreateTicketBody = {
-  subject: "Login failures for multiple users",
-  description: "Users report 500 error when authenticating since 2026-06-18 08:00 UTC. Affects web and mobile.",
-  priority: "urgent",
-  tags: ["authentication", "outage"]
-};
-const result: CreateTicketResponse = await createTicket(tenantId, userId, createTicketBody);
-[inline-code-end]
+const tenantId: string = "tenant_12345";
+const userId: string = "user_98765";
 
----
+const ticketBody: CreateTicketBody = {
+  subject: "Issue with payment processing"
+  // description?: string はオプションで、省略されています
+};
+
+const response: CreateTicketResponse1 = await createTicket(tenantId, userId, ticketBody);
+// 応答からオプションフィールドを使用する例
+// console.log(response.ticket?.id);
+[inline-code-end]

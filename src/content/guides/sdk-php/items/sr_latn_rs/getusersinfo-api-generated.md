@@ -1,14 +1,11 @@
----
-Masovni podaci o korisnicima za tenant. Za date userIds, vraća prikazne informacije iz User / SSOUser.
-Koristi se u widgetu komentara za obogaćivanje korisnika koji su se upravo pojavili putem događaja prisutnosti.
-Bez konteksta stranice: privatnost se sprovodi jednako (privatni profili su maskirani).
+Masovna informacija o korisnicima za tenant. Na osnovu userIds, vraća prikazne informacije iz User / SSOUser. Koristi se u widgetu za komentar da obogati korisnike koji su se upravo pojavili putem događaja prisutnosti. Bez konteksta stranice: privatnost se primenjuje uniformno (privatni profili su maskirani).
 
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
-| tenantId | string | putanja | Da |  |
-| ids | string | upit | Da | userIds odvojeni zarezima. |
+|------|------|----------|----------|------|
+| tenantId | string | path | Da |  |
+| ids | string | query | Da | UserIds odvojeni zarezom. |
 
 ## Odgovor
 
@@ -16,7 +13,7 @@ Vraća: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-p
 
 ## Primer
 
-[inline-code-attrs-start title = 'getUsersInfo Primer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getUsersInfo'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -24,12 +21,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ako želite da koristite prilagođeni http klijent, prosledite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opciono, `GuzzleHttp\Client` će biti korišćen kao podrazumevani.
+    // Ako želite da koristite prilagođeni HTTP klijent, prosledite vaš klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opciono, podrazumevano će se koristiti `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$ids = 'ids_example'; // string | userIds odvojeni zarezima.
+$ids = 'ids_example'; // string | UserIds odvojeni zarezom.
+
 
 try {
     $result = $apiInstance->getUsersInfo($tenant_id, $ids);
@@ -38,5 +37,3 @@ try {
     echo 'Exception when calling PublicApi->getUsersInfo: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

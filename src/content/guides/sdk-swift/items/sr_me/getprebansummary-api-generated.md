@@ -1,31 +1,33 @@
-## Параметри
+## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Да |  |
-| includeByUserIdAndEmail | boolean | query | Не |  |
-| includeByIP | boolean | query | Не |  |
-| includeByEmailDomain | boolean | query | Не |  |
-| sso | string | query | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
+| commentId | string | path | Da |  |
+| includeByUserIdAndEmail | boolean | query | Ne |  |
+| includeByIP | boolean | query | Ne |  |
+| includeByEmailDomain | boolean | query | Ne |  |
+| sso | string | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`PreBanSummary`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PreBanSummary.swift)
+Returns: [`PreBanSummary`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PreBanSummary.swift)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'getPreBanSummary Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getPreBanSummary'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи примјери кода су још увек у бета фази. За било који проблем пријавите га преко http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sljedeći uzorci koda su još u beta fazi. Za bilo koji problem, molimo prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
-let includeByUserIdAndEmail = true // Bool |  (опционо)
-let includeByIP = true // Bool |  (опционо)
-let includeByEmailDomain = true // Bool |  (опционо)
-let sso = "sso_example" // String |  (опционо)
+let includeByUserIdAndEmail = true // Bool |  (optional)
+let includeByIP = true // Bool |  (optional)
+let includeByEmailDomain = true // Bool |  (optional)
+let sso = "sso_example" // String |  (optional)
 
-ModerationAPI.getPreBanSummary(commentId: commentId, includeByUserIdAndEmail: includeByUserIdAndEmail, includeByIP: includeByIP, includeByEmailDomain: includeByEmailDomain, sso: sso) { (response, error) in
+ModerationAPI.getPreBanSummary(tenantId: tenantId, commentId: commentId, options: ModerationAPI.GetPreBanSummaryOptions(includeByUserIdAndEmail: includeByUserIdAndEmail, includeByIP: includeByIP, includeByEmailDomain: includeByEmailDomain, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

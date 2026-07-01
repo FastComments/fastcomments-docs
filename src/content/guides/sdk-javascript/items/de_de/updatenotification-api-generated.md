@@ -2,26 +2,40 @@
 
 | Name | Typ | Erforderlich | Beschreibung |
 |------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| id | string | Ja |  |
-| updateNotificationBody | UpdateNotificationBody | Ja |  |
-| userId | string | Nein |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updateNotificationBody | UpdateNotificationBody | Yes |  |
+| userId | string | No |  |
 
 ## Antwort
 
-Gibt zurück: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Rückgabe: [`UpdateNotificationResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateNotificationResponse.ts)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'Beispiel für updateNotification'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateNotification Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'd6f9b2a4-1b2c-4e5f-9a7b-3c2d1e4f5a6b';
-const id: string = 'notification-78f1c3e4';
-const updateNotificationBody: UpdateNotificationBody = {} as UpdateNotificationBody;
-const userId: string = 'user-9b3f2a1c';
+const tenantId: string = "tenant_5f4d2c";
+const notificationId: string = "notif_9b8a7c";
 
-const responseWithUser: APIEmptyResponse = await updateNotification(tenantId, id, updateNotificationBody, userId);
-const responseWithoutUser: APIEmptyResponse = await updateNotification(tenantId, id, updateNotificationBody);
+const updateBody: UpdateNotificationBody = {
+  enabled: false,
+  sendEmail: true,
+  schedule: "2023-12-01T08:00:00Z"
+};
+
+const userId: string = "user_123e4567";
+
+const responseWithUser: UpdateNotificationResponse = await updateNotification(
+  tenantId,
+  notificationId,
+  updateBody,
+  userId
+);
+
+const responseWithoutUser: UpdateNotificationResponse = await updateNotification(
+  tenantId,
+  notificationId,
+  updateBody
+);
 [inline-code-end]
-
----

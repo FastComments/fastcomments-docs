@@ -1,9 +1,10 @@
 ## Parâmetros
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| urlId | string | query | Sim |  |
-| sso | string | query | Não |  |
+| Nome | Tipo | Localização | Obrigatório | Descrição |
+|------|------|-------------|-------------|-----------|
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Resposta
 
@@ -11,7 +12,7 @@ Retorna: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo putReopenThread'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putReopenThread Exemplo'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importar classes:
 import com.fastcomments.invoker.ApiClient;
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      APIEmptyResponse result = apiInstance.putReopenThread(urlId)
+      APIEmptyResponse result = apiInstance.putReopenThread(tenantId, urlId)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -43,3 +45,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

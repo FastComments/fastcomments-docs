@@ -1,12 +1,12 @@
----
-## Parâmetros
+## Parameters
 
-| Nome | Tipo | Localização | Obrigatório | Descrição |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| commentId | string | query | Não |  |
-| sso | string | query | Não |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | query | No |  |
+| sso | string | query | No |  |
 
-## Resposta
+## Response
 
 Retorna: [`GetUserInternalProfileResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_internal_profile_response.go)
 
@@ -24,12 +24,13 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string |
 	commentId := "commentId_example" // string |  (opcional)
 	sso := "sso_example" // string |  (opcional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetUserInternalProfile(context.Background()).CommentId(commentId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetUserInternalProfile(context.Background()).TenantId(tenantId).CommentId(commentId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetUserInternalProfile``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -38,5 +39,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetUserInternalProfile`: %v\n", resp)
 }
 [inline-code-end]
-
----

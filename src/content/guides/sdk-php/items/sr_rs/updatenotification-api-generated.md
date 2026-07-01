@@ -1,10 +1,10 @@
 ## Параметри
 
-| Назив | Тип | Локација | Обавезно | Опис |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| id | string | path | Да |  |
-| userId | string | query | Не |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| userId | string | query | No |  |
 
 ## Одговор
 
@@ -12,28 +12,29 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'updateNotification Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer updateNotification'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Конфигуришите овлашћење API кључа: api_key
+// Konfigurišite autorizaciju API ključa: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Откоментирајте доле да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
+// Otkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, po potrebi
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ако желите да користите прилагођени http клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционално, подразумевано ће бити коришћен `GuzzleHttp\Client`.
+    // Ako želite koristiti prilagođeni http klijent, prosledite vaš klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opciono, `GuzzleHttp\Client` će se koristiti kao podrazumevano.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // стринг
-$id = 'id_example'; // стринг
+
+$tenant_id = 'tenant_id_example'; // string
+$id = 'id_example'; // string
 $update_notification_body = new \FastComments\Client\Model\UpdateNotificationBody(); // \FastComments\Client\Model\UpdateNotificationBody
-$user_id = 'user_id_example'; // стринг
+$user_id = 'user_id_example'; // string
+
 
 try {
     $result = $apiInstance->updateNotification($tenant_id, $id, $update_notification_body, $user_id);

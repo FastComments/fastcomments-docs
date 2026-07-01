@@ -1,6 +1,6 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | はい |  |
 | id | string | path | はい |  |
@@ -15,15 +15,15 @@
 
 [inline-code-attrs-start title = 'deleteTenantUser の例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 以下のコードサンプルはまだベータ版です。問題がある場合は http://github.com/OpenAPITools/openapi-generator/issues/new で報告してください
+// 以下のコードサンプルはまだベータ版です。問題がある場合は、http://github.com/OpenAPITools/openapi-generator/issues/new に報告してください
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let id = "id_example" // String | 
-let deleteComments = "deleteComments_example" // String |  (任意)
-let commentDeleteMode = "commentDeleteMode_example" // String |  (任意)
+let deleteComments = "deleteComments_example" // String |  （オプション）
+let commentDeleteMode = "commentDeleteMode_example" // String |  （オプション）
 
-DefaultAPI.deleteTenantUser(tenantId: tenantId, id: id, deleteComments: deleteComments, commentDeleteMode: commentDeleteMode) { (response, error) in
+DefaultAPI.deleteTenantUser(tenantId: tenantId, id: id, options: DefaultAPI.DeleteTenantUserOptions(deleteComments: deleteComments, commentDeleteMode: commentDeleteMode)) { (response, error) in
     guard error == nil else {
         print(error)
         return

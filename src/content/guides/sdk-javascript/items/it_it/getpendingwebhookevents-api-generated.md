@@ -1,4 +1,4 @@
-## Parametri
+## Parameters
 
 | Nome | Tipo | Obbligatorio | Descrizione |
 |------|------|--------------|-------------|
@@ -13,27 +13,35 @@
 
 ## Risposta
 
-Restituisce: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPendingWebhookEventsResponse.ts)
+Restituisce: [`GetPendingWebhookEventsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPendingWebhookEventsResponse1.ts)
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di getPendingWebhookEvents'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio getPendingWebhookEvents'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_a1b2c3';
-const commentId: string = 'cmt_9f8e7d';
-const eventType: string = 'comment.created';
-const domain: string = 'comments.acme-corp.com';
-const attemptCountGT: number = 2;
-const skip: number = 5;
+async function fetchPendingEvents(): Promise<void> {
+    const tenantId: string = "123e4567-e89b-12d3-a456-426614174000";
+    const commentId: string = "cmt-987654321";
+    const externalId: string = "ext-abc-123";
+    const eventType: string = "comment_created";
+    const type: string = "outbound";
+    const domain: string = "myblog.com";
+    const attemptCountGT: number = 3;
+    const skip: number = 0;
 
-const result: GetPendingWebhookEventsResponse = await getPendingWebhookEvents(
-  tenantId,
-  commentId,
-  undefined,
-  eventType,
-  undefined,
-  domain,
-  attemptCountGT,
-  skip
-);
+    const pending: GetPendingWebhookEventsResponse1 = await getPendingWebhookEvents(
+        tenantId,
+        commentId,
+        externalId,
+        eventType,
+        type,
+        domain,
+        attemptCountGT,
+        skip
+    );
+
+    console.log(pending);
+}
+
+fetchPendingEvents();
 [inline-code-end]

@@ -1,7 +1,8 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | はい |  |
 | commentId | string | path | はい |  |
 | includeEmail | boolean | query | いいえ |  |
 | includeIP | boolean | query | いいえ |  |
@@ -28,12 +29,13 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     Boolean includeEmail = true; // Boolean | 
     Boolean includeIP = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationAPICommentResponse result = apiInstance.getModerationComment(commentId)
+      ModerationAPICommentResponse result = apiInstance.getModerationComment(tenantId, commentId)
             .includeEmail(includeEmail)
             .includeIP(includeIP)
             .sso(sso)

@@ -1,7 +1,6 @@
----
-Массовая информация о пользователях для тенанта. По заданным userIds возвращает отображаемую информацию из User / SSOUser.
-Используется виджетом комментариев для обогащения данных пользователей, которые только что появились через событие присутствия.
-Без контекста страницы: политика конфиденциальности применяется единообразно (приватные профили скрыты).
+Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
+Used by the comment widget to enrich users that just appeared via a presence event.  
+No page context: privacy is enforced uniformly (private profiles are masked).
 
 ## Parameters
 
@@ -10,24 +9,25 @@
 | tenantId | string | Да |  |
 | ids | string | Да |  |
 
-## Ответ
+## Response
 
 Возвращает: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PageUsersInfoResponse.h)
 
-## Пример
+## Example
 
 [inline-code-attrs-start title = 'Пример getUsersInfo'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 utility::string_t ids = U("alice@example.com,bob@example.com");
-boost::optional<utility::string_t> statusFilter = U("active");
+boost::optional<utility::string_t> locale = boost::make_optional(U("en-US"));
+
 api->getUsersInfo(tenantId, ids).then([](pplx::task<std::shared_ptr<PageUsersInfoResponse>> t){
-    try {
-        auto res = t.get();
-        if (res) {
-            auto responseCopy = std::make_shared<PageUsersInfoResponse>(*res);
-        }
-    } catch (const std::exception&) {}
+    try{
+        auto response = t.get();
+        // обработать ответ
+    }catch(const std::exception&){
+        // обработать ошибку
+    }
 });
 [inline-code-end]
 

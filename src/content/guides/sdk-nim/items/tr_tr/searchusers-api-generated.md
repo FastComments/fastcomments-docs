@@ -1,13 +1,10 @@
 ## Parametreler
 
-| Name | Type | Required | Description |
+| Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
-| tenantId | string | Evet |  |
-| urlId | string | Evet |  |
-| usernameStartsWith | string | Hayır |  |
-| mentionGroupIds | seq[string] | Hayır |  |
-| sso | string | Hayır |  |
-| searchSection | string | Hayır |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| options | SearchUsersOptions | No |  |
 
 ## Yanıt
 
@@ -19,18 +16,12 @@ Döndürür: [`Option[SearchUsersResult]`](https://github.com/FastComments/fastc
 [inline-code-start]
 let (response, httpResponse) = client.searchUsers(
   tenantId = "my-tenant-123",
-  urlId = "news/top-story",
-  usernameStartsWith = "",
-  mentionGroupIds = @[],
-  sso = "",
-  searchSection = ""
+  urlId = "news/article-title",
+  options = SearchUsersOptions()
 )
 
 if response.isSome:
-  let searchResult = response.get()
-  echo "SearchUsersResult:", searchResult
-else:
-  echo "No result or error. HTTP response:", httpResponse
+  let result = response.get()
 [inline-code-end]
 
 ---

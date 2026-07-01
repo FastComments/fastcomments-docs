@@ -1,8 +1,8 @@
 ## Παράμετροι
 
-| Name | Type | Location | Required | Description |
+| Όνομα | Τύπος | Θέση | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ναι |  |
+| tenantId | string | query | Yes |  |
 
 ## Απάντηση
 
@@ -23,13 +23,15 @@ $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKe
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Εάν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε τον client σας που υλοποιεί την `GuzzleHttp\ClientInterface`.
-    // Αυτό είναι προαιρετικό, `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
+    // Αν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε το client σας που υλοποιεί `GuzzleHttp\ClientInterface`.
+    // Αυτό είναι προεραιτικό, `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $create_tenant_package_body = new \FastComments\Client\Model\CreateTenantPackageBody(); // \FastComments\Client\Model\CreateTenantPackageBody
+
 
 try {
     $result = $apiInstance->createTenantPackage($tenant_id, $create_tenant_package_body);
@@ -38,5 +40,3 @@ try {
     echo 'Exception when calling DefaultApi->createTenantPackage: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

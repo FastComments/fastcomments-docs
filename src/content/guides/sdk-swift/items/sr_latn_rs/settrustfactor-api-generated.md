@@ -1,7 +1,8 @@
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Da |  |
 | userId | string | query | Ne |  |
 | trustFactor | string | query | Ne |  |
 | sso | string | query | Ne |  |
@@ -12,16 +13,17 @@ Vraća: [`SetUserTrustFactorResponse`](https://github.com/FastComments/fastcomme
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer setTrustFactor'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'setTrustFactor Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sledeći primeri koda su i dalje u beta fazi. Za bilo koji problem, prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledeći uzorci koda su još u beta fazi. Za bilo koji problem, molimo prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let userId = "userId_example" // String |  (opciono)
 let trustFactor = "trustFactor_example" // String |  (opciono)
 let sso = "sso_example" // String |  (opciono)
 
-ModerationAPI.setTrustFactor(userId: userId, trustFactor: trustFactor, sso: sso) { (response, error) in
+ModerationAPI.setTrustFactor(tenantId: tenantId, options: ModerationAPI.SetTrustFactorOptions(userId: userId, trustFactor: trustFactor, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -32,3 +34,5 @@ ModerationAPI.setTrustFactor(userId: userId, trustFactor: trustFactor, sso: sso)
     }
 }
 [inline-code-end]
+
+---

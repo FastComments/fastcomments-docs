@@ -1,33 +1,28 @@
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| commentId | string | 예 |  |
-| direction | string | 아니요 |  |
-| userId | string | 아니요 |  |
-| anonUserId | string | 아니요 |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| direction | string | No |  |
+| options | CreateVoteOptions | No |  |
 
 ## 응답
 
 반환: [`Option[VoteResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_vote_response.nim)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'createVote 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createVote 예시'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.createVote(
+let (voteOpt, httpResp) = client.createVote(
   tenantId = "my-tenant-123",
-  commentId = "cmt-987654",
+  commentId = "comment-7890",
   direction = "up",
-  userId = "user-42",
-  anonUserId = ""
+  options = CreateVoteOptions()
 )
-if response.isSome:
-  let vote = response.get()
-  echo "Vote created:", vote
-else:
-  echo "No vote returned"
-[inline-code-end]
 
----
+if voteOpt.isSome:
+  let vote = voteOpt.get()
+  echo vote
+[inline-code-end]

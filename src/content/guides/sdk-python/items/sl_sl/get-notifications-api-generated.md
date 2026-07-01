@@ -1,48 +1,49 @@
-## Parameterji
+## Parametri
 
-| Ime | Tip | Location | Zahtevano | Opis |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| userId | string | query | Ne |  |
-| urlId | string | query | Ne |  |
-| fromCommentId | string | query | Ne |  |
-| viewed | boolean | query | Ne |  |
-| type | string | query | Ne |  |
-| skip | number | query | Ne |  |
+| tenantId | string | poizvedba | Da |  |
+| userId | string | poizvedba | Ne |  |
+| urlId | string | poizvedba | Ne |  |
+| fromCommentId | string | poizvedba | Ne |  |
+| viewed | boolean | poizvedba | Ne |  |
+| type | string | poizvedba | Ne |  |
+| skip | number | poizvedba | Ne |  |
 
 ## Odgovor
 
-Vrača: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notifications_response.py)
+Vrne: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notifications_response.py)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer get_notifications'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_notifications Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetNotificationsOptions
 from client.models.get_notifications_response import GetNotificationsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Določanje gostitelja je neobvezno in privzeto je https://fastcomments.com
-# Oglejte si configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
+# Definiranje gostitelja je neobvezno in privzeto nastavljeno na https://fastcomments.com
+# Oglejte si datoteko configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Odjemalec mora konfigurirati parametre za overjanje in pooblastila
-# v skladu s politiko varnosti API strežnika.
-# Spodaj so navedeni primeri za vsak način overjanja, uporabite tistega,
-# ki ustreza vašemu primeru uporabe.
+# Odjemalec mora nastaviti parametre za avtentikacijo in avtorizacijo
+# v skladu s politiko varnosti strežnika API.
+# Primeri za vsako metodo avtentikacije so navedeni spodaj, uporabite primer, ki
+# ustreza vašemu primeru uporabe avtentikacije.
 
-# Konfigurirajte avtorizacijo s API ključem: api_key
+# Nastavite avtorizacijo API ključa: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Odkomentirajte spodnje, če želite nastaviti predpono (npr. Bearer) za API ključ, če je potrebno
+# Odkomentirajte spodaj, da nastavite predpono (npr. Bearer) za API ključ, če je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Vstopite v kontekst z instanco API odjemalca
 with client.ApiClient(configuration) as api_client:
-    # Ustvarite instanco razreda API
+    # Ustvarite instanco API razreda
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     user_id = 'user_id_example' # str |  (neobvezno)
@@ -53,7 +54,7 @@ with client.ApiClient(configuration) as api_client:
     skip = 3.4 # float |  (neobvezno)
 
     try:
-        api_response = api_instance.get_notifications(tenant_id, user_id=user_id, url_id=url_id, from_comment_id=from_comment_id, viewed=viewed, type=type, skip=skip)
+        api_response = api_instance.get_notifications(tenant_id, GetNotificationsOptions(user_id=user_id, url_id=url_id, from_comment_id=from_comment_id, viewed=viewed, type=type, skip=skip))
         print("The response of DefaultApi->get_notifications:\n")
         pprint(api_response)
     except Exception as e:

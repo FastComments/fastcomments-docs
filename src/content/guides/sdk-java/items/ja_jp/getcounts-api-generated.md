@@ -2,11 +2,12 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| sso | string | クエリ | いいえ |  |
+| tenantId | string | query | はい |  |
+| sso | string | query | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`GetBannedUsersCountResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetBannedUsersCountResponse.java)
+返却: [`GetBannedUsersCountResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetBannedUsersCountResponse.java)
 
 ## 例
 
@@ -25,9 +26,10 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      GetBannedUsersCountResponse result = apiInstance.getCounts()
+      GetBannedUsersCountResponse result = apiInstance.getCounts(tenantId)
             .sso(sso)
             .execute();
       System.out.println(result);

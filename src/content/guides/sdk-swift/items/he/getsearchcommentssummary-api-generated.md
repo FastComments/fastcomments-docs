@@ -1,12 +1,12 @@
----
 ## פרמטרים
 
 | שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| value | string | query | לא |  |
-| filters | string | query | לא |  |
-| searchFilters | string | query | לא |  |
-| sso | string | query | לא |  |
+| tenantId | string | query | Yes |  |
+| value | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sso | string | query | No |  |
 
 ## תגובה
 
@@ -14,17 +14,18 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getSearchCommentsSummary'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getSearchCommentsSummary'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// דוגמאות הקוד הבאות עדיין בבטא. אם יש בעיה, נא לדווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// הקוד הבא עדיין בבטא. אם יש בעיה, אנא דווח באמצעות http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let value = "value_example" // String |  (אופציונלי)
 let filters = "filters_example" // String |  (אופציונלי)
 let searchFilters = "searchFilters_example" // String |  (אופציונלי)
 let sso = "sso_example" // String |  (אופציונלי)
 
-ModerationAPI.getSearchCommentsSummary(value: value, filters: filters, searchFilters: searchFilters, sso: sso) { (response, error) in
+ModerationAPI.getSearchCommentsSummary(tenantId: tenantId, options: ModerationAPI.GetSearchCommentsSummaryOptions(value: value, filters: filters, searchFilters: searchFilters, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -35,5 +36,3 @@ ModerationAPI.getSearchCommentsSummary(value: value, filters: filters, searchFil
     }
 }
 [inline-code-end]
-
----

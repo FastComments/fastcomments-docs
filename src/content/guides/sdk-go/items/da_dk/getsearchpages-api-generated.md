@@ -1,7 +1,8 @@
 ## Parametre
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
-|------|------|----------|----------|-------------|
+|------|------|-----------|----------|-------------|
+| tenantId | string | query | Ja |  |
 | value | string | query | Nej |  |
 | sso | string | query | Nej |  |
 
@@ -23,12 +24,13 @@ import (
 )
 
 func main() {
-	value := "value_example" // string |  (valgfri)
-	sso := "sso_example" // string |  (valgfri)
+	tenantId := "tenantId_example" // string | 
+	value := "value_example" // string | (valgfri)
+	sso := "sso_example" // string | (valgfri)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetSearchPages(context.Background()).Value(value).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetSearchPages(context.Background()).TenantId(tenantId).Value(value).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetSearchPages``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -37,3 +39,5 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetSearchPages`: %v\n", resp)
 }
 [inline-code-end]
+
+---

@@ -1,12 +1,13 @@
 ## Parameters
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
-|------|------|----------|----------|-------------|
-| badgeId | string | query | Ja |  |
-| userId | string | query | Nee |  |
-| commentId | string | query | Nee |  |
-| broadcastId | string | query | Nee |  |
-| sso | string | query | Nee |  |
+|------|------|----------|----------|---------------|
+| tenantId | string | query | Yes |  |
+| badgeId | string | query | Yes |  |
+| userId | string | query | No |  |
+| commentId | string | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Respons
 
@@ -26,20 +27,21 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	badgeId := "badgeId_example" // string | 
-	userId := "userId_example" // string |  (optioneel)
-	commentId := "commentId_example" // string |  (optioneel)
-	broadcastId := "broadcastId_example" // string |  (optioneel)
-	sso := "sso_example" // string |  (optioneel)
+	userId := "userId_example" // string |  (optional)
+	commentId := "commentId_example" // string |  (optional)
+	broadcastId := "broadcastId_example" // string |  (optional)
+	sso := "sso_example" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PutAwardBadge(context.Background()).BadgeId(badgeId).UserId(userId).CommentId(commentId).BroadcastId(broadcastId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PutAwardBadge(context.Background()).TenantId(tenantId).BadgeId(badgeId).UserId(userId).CommentId(commentId).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PutAwardBadge``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PutAwardBadge`: AwardUserBadgeResponse
+	// antwoord van `PutAwardBadge`: AwardUserBadgeResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PutAwardBadge`: %v\n", resp)
 }
 [inline-code-end]

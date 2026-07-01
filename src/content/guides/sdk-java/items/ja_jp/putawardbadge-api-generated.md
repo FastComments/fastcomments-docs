@@ -1,22 +1,23 @@
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| badgeId | string | query | Yes |  |
-| userId | string | query | No |  |
-| commentId | string | query | No |  |
-| broadcastId | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | はい |  |
+| badgeId | string | query | はい |  |
+| userId | string | query | いいえ |  |
+| commentId | string | query | いいえ |  |
+| broadcastId | string | query | いいえ |  |
+| sso | string | query | いいえ |  |
 
 ## レスポンス
 
-返却値: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AwardUserBadgeResponse.java)
+戻り値: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AwardUserBadgeResponse.java)
 
 ## 例
 
 [inline-code-attrs-start title = 'putAwardBadge の例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// クラスのインポート:
+// クラスをインポート:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,13 +30,14 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
-    String badgeId = "badgeId_example"; // String | 
-    String userId = "userId_example"; // String | 
-    String commentId = "commentId_example"; // String | 
-    String broadcastId = "broadcastId_example"; // String | 
-    String sso = "sso_example"; // String | 
+    String tenantId = "tenantId_example"; // 文字列 | 
+    String badgeId = "badgeId_example"; // 文字列 | 
+    String userId = "userId_example"; // 文字列 | 
+    String commentId = "commentId_example"; // 文字列 | 
+    String broadcastId = "broadcastId_example"; // 文字列 | 
+    String sso = "sso_example"; // 文字列 | 
     try {
-      AwardUserBadgeResponse result = apiInstance.putAwardBadge(badgeId)
+      AwardUserBadgeResponse result = apiInstance.putAwardBadge(tenantId, badgeId)
             .userId(userId)
             .commentId(commentId)
             .broadcastId(broadcastId)

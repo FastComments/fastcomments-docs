@@ -1,22 +1,22 @@
-## Параметры
+## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| afterId | string | query | Нет |  |
-| afterCreatedAt | integer | query | Нет |  |
-| unreadOnly | boolean | query | Нет |  |
-| dmOnly | boolean | query | Нет |  |
-| noDm | boolean | query | Нет |  |
-| sso | string | query | Нет |  |
+| Назва | Тип | Розташування | Обов’язковий | Опис |
+|------|------|--------------|--------------|------|
+| tenantId | string | query | Так |  |
+| afterId | string | query | Ні |  |
+| afterCreatedAt | integer | query | Ні |  |
+| unreadOnly | boolean | query | Ні |  |
+| dmOnly | boolean | query | Ні |  |
+| noDm | boolean | query | Ні |  |
+| sso | string | query | Ні |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ResetUserNotificationsResponse.php)
+Повертає: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ResetUserNotificationsResponse.php)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример resetUserNotifications'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад resetUserNotifications'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -24,20 +24,24 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Если вы хотите использовать пользовательский HTTP-клиент, передайте ваш клиент, который реализует `GuzzleHttp\ClientInterface`.
-    // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
+    // Якщо ви хочете використати власний HTTP‑клієнт, передайте свій клієнт, який реалізує `GuzzleHttp\ClientInterface`.
+    // Це необов’язково, за замовчуванням буде використано `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // строка
-$after_id = 'after_id_example'; // строка
-$after_created_at = 56; // целое
-$unread_only = True; // логическое
-$dm_only = True; // логическое
-$no_dm = True; // логическое
-$sso = 'sso_example'; // строка
+
+$tenant_id = 'tenant_id_example'; // рядок
+$options = [
+    'after_id' => 'after_id_example', // рядок
+    'after_created_at' => 56, // ціле
+    'unread_only' => True, // булевий
+    'dm_only' => True, // булевий
+    'no_dm' => True, // булевий
+    'sso' => 'sso_example', // рядок
+];
+
 
 try {
-    $result = $apiInstance->resetUserNotifications($tenant_id, $after_id, $after_created_at, $unread_only, $dm_only, $no_dm, $sso);
+    $result = $apiInstance->resetUserNotifications($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->resetUserNotifications: ', $e->getMessage(), PHP_EOL;

@@ -1,43 +1,46 @@
-## Параметри
+## Parameters
 
-| Назив | Тип | Локација | Обавезно | Опис |
-|------|------|----------|----------|-------------|
-| value | string | query | Не |  |
-| filters | string | query | Не |  |
-| searchFilters | string | query | Не |  |
-| sso | string | query | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| value | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sso | string | query | No |  |
 
-## Одговор
+## Response
 
-Враћа: [`ModerationCommentSearchResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/moderation_comment_search_response.py)
+Vraća: [`ModerationCommentSearchResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/moderation_comment_search_response.py)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'get_search_comments_summary Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer get_search_comments_summary'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetSearchCommentsSummaryOptions
 from client.models.moderation_comment_search_response import ModerationCommentSearchResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинисање host-а је опционо и подразумевано је https://fastcomments.com
-# Погледајте configuration.py за листу свих подржаних параметара конфигурације.
+# Definisanje hosta je opcionalno i podrazumevano je https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Уђите у контекст са инстанцом API клијента
+# Uđite u kontekst sa instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Креирајте инстанцу API класе
+    # Kreirajte instancu API klase
     api_instance = client.ModerationApi(api_client)
-    value = 'value_example' # str |  (опционо)
-    filters = 'filters_example' # str |  (опционо)
-    search_filters = 'search_filters_example' # str |  (опционо)
-    sso = 'sso_example' # str |  (опционо)
+    tenant_id = 'tenant_id_example' # str | 
+    value = 'value_example' # str |  (optional)
+    filters = 'filters_example' # str |  (optional)
+    search_filters = 'search_filters_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_search_comments_summary(value=value, filters=filters, search_filters=search_filters, sso=sso)
+        api_response = api_instance.get_search_comments_summary(tenant_id, GetSearchCommentsSummaryOptions(value=value, filters=filters, search_filters=search_filters, sso=sso))
         print("The response of ModerationApi->get_search_comments_summary:\n")
         pprint(api_response)
     except Exception as e:

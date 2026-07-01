@@ -4,8 +4,7 @@
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | id | string | Ja |  |
-| contextUserId | string | Nej |  |
-| isLive | bool | Nej |  |
+| options | const DeleteCommentOptions& | Ja |  |
 
 ## Svar
 
@@ -13,18 +12,17 @@ Returnerer: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på deleteComment'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteComment Eksempel'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("cmt-456789");
-boost::optional<utility::string_t> contextUserId = boost::optional<utility::string_t>(U("user@example.com"));
-boost::optional<bool> isLive = boost::optional<bool>(true);
-
-api->deleteComment(tenantId, commentId, contextUserId, isLive)
-    .then([](std::shared_ptr<DeleteCommentResult> result){
-        auto res = result ? result : std::make_shared<DeleteCommentResult>();
-        std::cout << "DeleteCommentResult ptr=" << static_cast<const void*>(res.get()) << std::endl;
-    });
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto commentId = utility::conversions::to_string_t("comment-789");
+DeleteCommentOptions options;
+options.reason = boost::optional<utility::string_t>(utility::conversions::to_string_t("Inappropriate content"));
+options.force = boost::optional<bool>(true);
+api->deleteComment(tenantId, commentId, options).then([](pplx::task<std::shared_ptr<DeleteCommentResult>> task){
+    try{
+        auto result = task.get();
+    }catch(const std::exception&){
+    }
+});
 [inline-code-end]
-
----

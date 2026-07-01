@@ -1,13 +1,14 @@
-Масова информация за потребители за един наемател. За дадени userIds връща информация за показване от User / SSOUser.
-Използва се от коментарния уиджет за обогатяване на потребители, които току-що са се появили чрез събитие за присъствие.
-Няма контекст на страницата: поверителността се прилага по единен начин (частните профили са маскирани).
+Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
+Използва се от уиджета за коментари за обогатяване на потребителите, които току-що са се появили чрез събитие за присъствие.  
+No page context: privacy is enforced uniformly (private profiles are masked).  
+Без контекст на страницата: поверителността се налага еднородно (частните профили се маскират).
 
 ## Параметри
 
 | Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| ids | string | No |  |
+| tenantId | string | Да |  |
+| ids | string | Не |  |
 
 ## Отговор
 
@@ -15,14 +16,9 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за getUsersInfo'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUsersInfo Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUsersInfo(tenantId = "my-tenant-123", ids = "user-42,user-87")
-if response.isSome:
-  let usersInfo = response.get()
-  echo "Retrieved users info:", usersInfo
-else:
-  echo "No users info returned. HTTP status:", httpResponse.status
+let (usersInfoOpt, httpResp) = client.getUsersInfo(tenantId = "my-tenant-123", ids = "user42")
+if usersInfoOpt.isSome:
+  let usersInfo = usersInfoOpt.get()
 [inline-code-end]
-
----

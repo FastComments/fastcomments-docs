@@ -1,25 +1,37 @@
 ## Parametri
 
-| Name | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| value | string | Ne |  |
-| filters | string | Ne |  |
-| searchFilters | string | Ne |  |
-| sso | string | Ne |  |
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| value | string | No |  |
+| filters | string | No |  |
+| searchFilters | string | No |  |
+| tenantId | string | No |  |
+| sso | string | No |  |
 
 ## Odgovor
 
-Vraća: [`ModerationCommentSearchResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationCommentSearchResponse.ts)
+Vraća: [`GetSearchCommentsSummaryResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetSearchCommentsSummaryResponse.ts)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer getSearchCommentsSummary'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const query: string = 'renewable energy incentives';
-const filters: string = 'status:approved AND created_at>2025-01-01';
-const searchFilters: string | undefined = undefined;
-const sso: string | undefined = undefined;
-const summary: ModerationCommentSearchResponse = await getSearchCommentsSummary(query, filters, searchFilters, sso);
-[inline-code-end]
+async function runExample(): Promise<void> {
+    const searchTerm: string = "fastcomments integration";
+    const filterString: string = "status:approved";
+    const searchFilterString: string = "author:jane";
+    const tenantId: string = "123e4567-e89b-12d3-a456-426614174000";
+    const ssoToken: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...";
 
----
+    const summary: GetSearchCommentsSummaryResponse = await getSearchCommentsSummary(
+        searchTerm,
+        filterString,
+        searchFilterString,
+        tenantId,
+        ssoToken
+    );
+
+    console.log(summary);
+}
+runExample();
+[inline-code-end]

@@ -1,15 +1,16 @@
-## 매개변수
+## Parameters
 
-| 이름 | 타입 | 위치 | 필수 | 설명 |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| value | string | query | 아니요 |  |
-| sso | string | query | 아니요 |  |
+| tenantId | string | query | 예 |  |
+| value | string | query | 아니오 |  |
+| sso | string | query | 아니오 |  |
 
-## 응답
+## Response
 
 반환: [`ModerationSiteSearchResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationSiteSearchResponse.java)
 
-## 예제
+## Example
 
 [inline-code-attrs-start title = 'getSearchSites 예제'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String value = "value_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationSiteSearchResponse result = apiInstance.getSearchSites()
+      ModerationSiteSearchResponse result = apiInstance.getSearchSites(tenantId)
             .value(value)
             .sso(sso)
             .execute();

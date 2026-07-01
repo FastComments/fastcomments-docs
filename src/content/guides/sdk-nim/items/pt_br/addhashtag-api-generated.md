@@ -1,7 +1,7 @@
 ## Parâmetros
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nome | Tipo | Obrigatório | Descrição |
+|------|------|-------------|-----------|
 | tenantId | string | Sim |  |
 | createHashTagBody | CreateHashTagBody | Não |  |
 
@@ -11,18 +11,13 @@ Retorna: [`Option[CreateHashTagResponse]`](https://github.com/FastComments/fastc
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de addHashTag'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'addHashTag Exemplo'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.addHashTag(tenantId = "my-tenant-123",
-  createHashTagBody = CreateHashTagBody(name = "Breaking News",
-    slug = "breaking-news",
-    description = "Major breaking news items",
-    color = "#ff0000",
-    isTrending = true,
-    aliases = @["breaking", "news"]))
-if response.isSome:
-  let created = response.get()
-  echo created
-[inline-code-end]
+let (hashTagOpt, httpResp) = client.addHashTag(
+  tenantId = "my-tenant-123",
+  createHashTagBody = CreateHashTagBody(),
+)
 
----
+if hashTagOpt.isSome:
+  let tag = hashTagOpt.get()
+[inline-code-end]

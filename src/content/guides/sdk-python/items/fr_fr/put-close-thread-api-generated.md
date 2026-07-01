@@ -1,43 +1,43 @@
-## Paramètres
+## Parameters
 
-| Nom | Type | Emplacement | Requis | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Oui |  |
 | urlId | string | query | Oui |  |
 | sso | string | query | Non |  |
 
 ## Réponse
 
-Renvoie: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
+Retourne : [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de put_close_thread'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple put_close_thread'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# La définition de l'hôte est optionnelle et la valeur par défaut est https://fastcomments.com
+# La définition de l'hôte est optionnelle et utilise https://fastcomments.com par défaut
 # Voir configuration.py pour la liste de tous les paramètres de configuration pris en charge.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Ouvrir un contexte avec une instance du client API
+# Entrer dans un contexte avec une instance du client API
 with client.ApiClient(configuration) as api_client:
     # Créer une instance de la classe API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
-    sso = 'sso_example' # str |  (optionnel)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.put_close_thread(url_id, sso=sso)
+        api_response = api_instance.put_close_thread(tenant_id, url_id, sso=sso)
         print("The response of ModerationApi->put_close_thread:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling ModerationApi->put_close_thread: %s\n" % e)
 [inline-code-end]
-
----

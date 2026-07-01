@@ -1,11 +1,9 @@
 ## Parametre
 
-| Name | Type | Påkrævet | Beskrivelse |
+| Navn | Type | Krævet | Beskrivelse |
 |------|------|----------|-------------|
-| value | string | Nej |  |
-| filters | string | Nej |  |
-| searchFilters | string | Nej |  |
-| sso | string | Nej |  |
+| tenantId | string | Ja |  |
+| options | GetSearchCommentsSummaryOptions | Nej |  |
 
 ## Svar
 
@@ -15,17 +13,12 @@ Returnerer: [`Option[ModerationCommentSearchResponse]`](https://github.com/FastC
 
 [inline-code-attrs-start title = 'getSearchCommentsSummary Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSearchCommentsSummary(
-  value = "news/climate-change-2026",
-  filters = "{\"tenantId\":\"my-tenant-123\",\"siteId\":\"main-site\",\"status\":\"approved\"}",
-  searchFilters = "author:journalist@news.com OR content:climate",
-  sso = "sso-xyz-7890"
+let (summaryOpt, httpResp) = client.getSearchCommentsSummary(
+  tenantId = "my-tenant-123",
+  options = GetSearchCommentsSummaryOptions()
 )
-if response.isSome:
-  let summary = response.get()
-  echo "Received summary: ", $summary
-else:
-  echo "No summary returned, HTTP response: ", $httpResponse
-[inline-code-end]
 
----
+if summaryOpt.isSome:
+  let summary = summaryOpt.get()
+  echo summary
+[inline-code-end]

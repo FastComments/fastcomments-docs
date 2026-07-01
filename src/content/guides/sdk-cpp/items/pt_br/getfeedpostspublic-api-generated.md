@@ -1,18 +1,13 @@
-req
-tenantId
-afterId
+req  
+tenantId  
+afterId  
 
 ## Parâmetros
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nome | Tipo | Obrigatório | Descrição |
+|------|------|-------------|-----------|
 | tenantId | string | Sim |  |
-| afterId | string | Não |  |
-| limit | int32_t | Não |  |
-| tags | vector<string | Não |  |
-| sso | string | Não |  |
-| isCrawler | bool | Não |  |
-| includeUserInfo | bool | Não |  |
+| options | const GetFeedPostsPublicOptions& | Sim |  |
 
 ## Resposta
 
@@ -20,26 +15,21 @@ Retorna: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomment
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getFeedPostsPublic'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
-[inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-boost::optional<utility::string_t> afterId = boost::optional<utility::string_t>(U("post_456"));
-boost::optional<int32_t> limit = boost::optional<int32_t>(25);
-std::vector<utility::string_t> tagList = { U("news"), U("announcement") };
-boost::optional<std::vector<utility::string_t>> tags = boost::optional<std::vector<utility::string_t>>(tagList);
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
-boost::optional<bool> isCrawler = boost::optional<bool>(false);
-boost::optional<bool> includeUserInfo = boost::optional<bool>(true);
+[inline-code-attrs-start title = 'Exemplo getFeedPostsPublic'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]  
+[inline-code-start]  
+auto options = GetFeedPostsPublicOptions{};  
+options.limit = boost::optional<int>{20};  
+options.before = boost::optional<utility::string_t>{U("2023-01-01T00:00:00Z")};  
 
-api->getFeedPostsPublic(tenantId, afterId, limit, tags, sso, isCrawler, includeUserInfo)
-    .then([](pplx::task<std::shared_ptr<PublicFeedPostsResponse>> t){
-        try {
-            auto resp = t.get();
-            if(!resp) resp = std::make_shared<PublicFeedPostsResponse>();
-        } catch (const std::exception&) {
-            auto fallback = std::make_shared<PublicFeedPostsResponse>();
-        }
-    });
-[inline-code-end]
+api->getFeedPostsPublic(U("my-tenant-123"), options).then([](pplx::task<std::shared_ptr<PublicFeedPostsResponse>> task){  
+    try{  
+        auto response = task.get();  
+        auto processed = std::make_shared<PublicFeedPostsResponse>(*response);  
+        // Use o processado conforme necessário  
+    }catch(const std::exception&){  
+        // Trate o erro  
+    }  
+});  
+[inline-code-end]  
 
 ---

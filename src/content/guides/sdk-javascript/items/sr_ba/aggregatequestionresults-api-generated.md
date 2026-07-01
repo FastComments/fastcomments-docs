@@ -1,6 +1,6 @@
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | questionId | string | Ne |  |
@@ -12,18 +12,33 @@
 
 ## Odgovor
 
-Vraća: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AggregateQuestionResultsResponse.ts)
+Vraća: [`AggregateQuestionResultsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AggregateQuestionResultsResponse1.ts)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer aggregateQuestionResults'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'aggregateQuestionResults Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8a4f7c2b';
-const questionIds: string[] = ['q_101', 'q_102', 'q_103'];
-const urlId: string = 'url_3f9b12';
-const startDate: Date = new Date('2026-01-01T00:00:00Z');
-const forceRecalculate: boolean = true;
-const result: AggregateQuestionResultsResponse = await aggregateQuestionResults(tenantId, undefined, questionIds, urlId, undefined, startDate, forceRecalculate);
+(async () => {
+  const tenantId: string = "acme-corp-123";
+  const questionId: string = "feedback-rating";
+  const questionIds: string[] = ["feedback-rating", "recommendation"];
+  const urlId: string = "https://myblog.com/articles/42";
+  const timeBucket: AggregateTimeBucket = "month";
+  const startDate: Date = new Date("2023-01-01T00:00:00Z");
+  const forceRecalculate: boolean = true;
+
+  const result: AggregateQuestionResultsResponse1 = await aggregateQuestionResults(
+    tenantId,
+    questionId,
+    questionIds,
+    urlId,
+    timeBucket,
+    startDate,
+    forceRecalculate
+  );
+
+  console.log(result);
+})();
 [inline-code-end]
 
 ---

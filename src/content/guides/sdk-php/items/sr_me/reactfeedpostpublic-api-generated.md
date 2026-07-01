@@ -1,20 +1,20 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Локација | Потребно | Опис |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| postId | string | path | Да |  |
-| isUndo | boolean | query | Не |  |
-| broadcastId | string | query | Не |  |
-| sso | string | query | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | path | Yes |  |
+| postId | string | path | Yes |  |
+| isUndo | boolean | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ReactFeedPostResponse.php)
+Vraća: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ReactFeedPostResponse.php)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'reactFeedPostPublic Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'reactFeedPostPublic Primjer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -22,19 +22,23 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ако желите да користите прилагођени HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционално, као подразумевани ће бити коришћен `GuzzleHttp\Client`.
+    // Ako želite koristiti prilagođeni HTTP klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opcionalno, `GuzzleHttp\Client` će biti korišten kao podrazumevani.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $post_id = 'post_id_example'; // string
 $react_body_params = new \FastComments\Client\Model\ReactBodyParams(); // \FastComments\Client\Model\ReactBodyParams
-$is_undo = True; // bool
-$broadcast_id = 'broadcast_id_example'; // string
-$sso = 'sso_example'; // string
+$options = [
+    'is_undo' => True, // bool
+    'broadcast_id' => 'broadcast_id_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->reactFeedPostPublic($tenant_id, $post_id, $react_body_params, $is_undo, $broadcast_id, $sso);
+    $result = $apiInstance->reactFeedPostPublic($tenant_id, $post_id, $react_body_params, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->reactFeedPostPublic: ', $e->getMessage(), PHP_EOL;

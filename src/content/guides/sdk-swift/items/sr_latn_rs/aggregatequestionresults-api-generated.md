@@ -18,18 +18,18 @@ Vraća: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'aggregateQuestionResults Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sledeći primeri koda su još uvek beta. Za bilo koji problem, prijavite na http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledeći primeri koda su i dalje beta. Za bilo koji problem, molimo prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let questionId = "questionId_example" // String |  (neobavezno)
-let questionIds = ["inner_example"] // [String] |  (neobavezno)
-let urlId = "urlId_example" // String |  (neobavezno)
-let timeBucket = AggregateTimeBucket() // AggregateTimeBucket |  (neobavezno)
-let startDate = Date() // Date |  (neobavezno)
-let forceRecalculate = true // Bool |  (neobavezno)
+let questionId = "questionId_example" // String |  (optional)
+let questionIds = ["inner_example"] // [String] |  (optional)
+let urlId = "urlId_example" // String |  (optional)
+let timeBucket = AggregateTimeBucket() // AggregateTimeBucket |  (optional)
+let startDate = Date() // Date |  (optional)
+let forceRecalculate = true // Bool |  (optional)
 
-DefaultAPI.aggregateQuestionResults(tenantId: tenantId, questionId: questionId, questionIds: questionIds, urlId: urlId, timeBucket: timeBucket, startDate: startDate, forceRecalculate: forceRecalculate) { (response, error) in
+DefaultAPI.aggregateQuestionResults(tenantId: tenantId, options: DefaultAPI.AggregateQuestionResultsOptions(questionId: questionId, questionIds: questionIds, urlId: urlId, timeBucket: timeBucket, startDate: startDate, forceRecalculate: forceRecalculate)) { (response, error) in
     guard error == nil else {
         print(error)
         return

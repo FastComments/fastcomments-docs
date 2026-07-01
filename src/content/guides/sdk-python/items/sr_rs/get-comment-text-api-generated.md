@@ -1,47 +1,46 @@
-## Параметри
+## Parameters
 
-| Име | Тип | Локација | Обавезно | Опис |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| commentId | string | path | Да |  |
-| editKey | string | query | Не |  |
-| sso | string | query | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| editKey | string | query | No |  |
+| sso | string | query | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`PublicAPIGetCommentTextResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/public_api_get_comment_text_response.py)
+Vraća: [`PublicAPIGetCommentTextResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/public_api_get_comment_text_response.py)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'get_comment_text Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer get_comment_text'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetCommentTextOptions
 from client.models.public_api_get_comment_text_response import PublicAPIGetCommentTextResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Подешавање host-а је опционално и подразумева https://fastcomments.com
-# Погледајте configuration.py за листу свих подржаних конфигурационих параметара.
+# Definisanje host-a je opcionalno i podrazumevano je https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Уђите у контекст са инстанцом API клијента
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Креирајте инстанцу API класе
+    # Kreirajte instancu API klase
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
-    edit_key = 'edit_key_example' # str |  (optional)
-    sso = 'sso_example' # str |  (optional)
+    edit_key = 'edit_key_example' # str |  (opcionalno)
+    sso = 'sso_example' # str |  (opcionalno)
 
     try:
-        api_response = api_instance.get_comment_text(tenant_id, comment_id, edit_key=edit_key, sso=sso)
+        api_response = api_instance.get_comment_text(tenant_id, comment_id, GetCommentTextOptions(edit_key=edit_key, sso=sso))
         print("The response of PublicApi->get_comment_text:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling PublicApi->get_comment_text: %s\n" % e)
 [inline-code-end]
-
----

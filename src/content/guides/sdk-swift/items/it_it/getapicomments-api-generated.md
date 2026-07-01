@@ -1,7 +1,8 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+|------|------|-----------|--------------|-------------|
+| tenantId | string | query | Yes |  |
 | page | number | query | No |  |
 | count | number | query | No |  |
 | text-search | string | query | No |  |
@@ -20,20 +21,21 @@ Restituisce: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComment
 
 [inline-code-attrs-start title = 'Esempio getApiComments'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// I seguenti esempi di codice sono ancora in beta. Per qualsiasi problema, segnalarlo tramite http://github.com/OpenAPITools/openapi-generator/issues/new
+// I seguenti esempi di codice sono ancora in beta. Per qualsiasi problema, si prega di segnalarlo via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let page = 987 // Double |  (opzionale)
-let count = 987 // Double |  (opzionale)
-let textSearch = "textSearch_example" // String |  (opzionale)
-let byIPFromComment = "byIPFromComment_example" // String |  (opzionale)
-let filters = "filters_example" // String |  (opzionale)
-let searchFilters = "searchFilters_example" // String |  (opzionale)
-let sorts = "sorts_example" // String |  (opzionale)
-let demo = true // Bool |  (opzionale)
-let sso = "sso_example" // String |  (opzionale)
+let tenantId = "tenantId_example" // String | 
+let page = 987 // Double |  (optional)
+let count = 987 // Double |  (optional)
+let textSearch = "textSearch_example" // String |  (optional)
+let byIPFromComment = "byIPFromComment_example" // String |  (optional)
+let filters = "filters_example" // String |  (optional)
+let searchFilters = "searchFilters_example" // String |  (optional)
+let sorts = "sorts_example" // String |  (optional)
+let demo = true // Bool |  (optional)
+let sso = "sso_example" // String |  (optional)
 
-ModerationAPI.getApiComments(page: page, count: count, textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, demo: demo, sso: sso) { (response, error) in
+ModerationAPI.getApiComments(tenantId: tenantId, options: ModerationAPI.GetApiCommentsOptions(page: page, count: count, textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, demo: demo, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -44,3 +46,5 @@ ModerationAPI.getApiComments(page: page, count: count, textSearch: textSearch, b
     }
 }
 [inline-code-end]
+
+---

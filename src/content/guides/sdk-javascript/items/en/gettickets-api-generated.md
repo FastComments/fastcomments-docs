@@ -10,16 +10,22 @@
 
 ## Response
 
-Returns: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTicketsResponse.ts)
+Returns: [`GetTicketsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTicketsResponse1.ts)
 
 ## Example
 
 [inline-code-attrs-start title = 'getTickets Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-enterprises";
-const userId: string | undefined = "u_56321";
-const state: number | undefined = 1;
-const skip: number = 0;
-const limit: number = 50;
-const response: GetTicketsResponse = await getTickets(tenantId, userId, state, skip, limit);
+async function loadTickets() {
+  const tenantId: string = "acme-corp";
+  const userId: string = "john.doe";
+  const state: number = 2; // e.g., closed
+  const skip: number = 10;
+  const limit: number = 5;
+
+  const ticketsFull: GetTicketsResponse1 = await getTickets(tenantId, userId, state, skip, limit);
+  const ticketsPartial: GetTicketsResponse1 = await getTickets(tenantId);
+}
+
+loadTickets();
 [inline-code-end]

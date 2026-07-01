@@ -1,7 +1,8 @@
 ## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
-|------|------|----------|----------|-------------|
+|------|------|-----------|--------------|-------------|
+| tenantId | string | query | Sì |  |
 | sso | string | query | No |  |
 
 ## Risposta
@@ -25,10 +26,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     BanUserUndoParams banUserUndoParams = new BanUserUndoParams(); // BanUserUndoParams | 
     String sso = "sso_example"; // String | 
     try {
-      APIEmptyResponse result = apiInstance.postBanUserUndo(banUserUndoParams)
+      APIEmptyResponse result = apiInstance.postBanUserUndo(tenantId, banUserUndoParams)
             .sso(sso)
             .execute();
       System.out.println(result);

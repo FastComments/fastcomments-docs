@@ -5,75 +5,88 @@ urlId
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-----------|
-| tenantId | string | Sim |  |
-| urlId | string | Sim |  |
-| page | number | Não |  |
-| direction | SortDirections | Não |  |
-| sso | string | Não |  |
-| skip | number | Não |  |
-| skipChildren | number | Não |  |
-| limit | number | Não |  |
-| limitChildren | number | Não |  |
-| countChildren | boolean | Não |  |
-| fetchPageForCommentId | string | Não |  |
-| includeConfig | boolean | Não |  |
-| countAll | boolean | Não |  |
-| includei10n | boolean | Não |  |
-| locale | string | Não |  |
-| modules | string | Não |  |
-| isCrawler | boolean | Não |  |
-| includeNotificationCount | boolean | Não |  |
-| asTree | boolean | Não |  |
-| maxTreeDepth | number | Não |  |
-| useFullTranslationIds | boolean | Não |  |
-| parentId | string | Não |  |
-| searchText | string | Não |  |
-| hashTags | Array<string> | Não |  |
-| userId | string | Não |  |
-| customConfigStr | string | Não |  |
-| afterCommentId | string | Não |  |
-| beforeCommentId | string | Não |  |
+|------|------|-------------|-----------|
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| page | number | No |  |
+| direction | SortDirections | No |  |
+| sso | string | No |  |
+| skip | number | No |  |
+| skipChildren | number | No |  |
+| limit | number | No |  |
+| limitChildren | number | No |  |
+| countChildren | boolean | No |  |
+| fetchPageForCommentId | string | No |  |
+| includeConfig | boolean | No |  |
+| countAll | boolean | No |  |
+| includei10n | boolean | No |  |
+| locale | string | No |  |
+| modules | string | No |  |
+| isCrawler | boolean | No |  |
+| includeNotificationCount | boolean | No |  |
+| asTree | boolean | No |  |
+| maxTreeDepth | number | No |  |
+| useFullTranslationIds | boolean | No |  |
+| parentId | string | No |  |
+| searchText | string | No |  |
+| hashTags | Array<string> | No |  |
+| userId | string | No |  |
+| customConfigStr | string | No |  |
+| afterCommentId | string | No |  |
+| beforeCommentId | string | No |  |
 
 ## Resposta
 
-Retorna: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsResponseWithPresencePublicComment.ts)
+Retorna: [`GetCommentsPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsPublicResponse.ts)
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getCommentsPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo getCommentsPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const response: GetCommentsResponseWithPresencePublicComment = await getCommentsPublic(
-    'news-tenant-42',
-    'article-2026-06-19-abc123',
-    1,
+async function fetchComments() {
+  const tenantId: string = 'acme-corp';
+  const urlId: string = 'blog/post-789';
+  const page: number = 1;
+  const direction: SortDirections = SortDirections.Desc;
+  const limit: number = 25;
+  const includeConfig: boolean = true;
+  const locale: string = 'en-GB';
+  const modules: string = 'reactions,attachments';
+  const isCrawler: boolean = false;
+  const includeNotificationCount: boolean = true;
+  const asTree: boolean = true;
+  const maxTreeDepth: number = 4;
+  const searchText: string = 'TypeScript';
+  const hashTags: string[] = ['typescript', 'api'];
+  const response: GetCommentsPublicResponse = await getCommentsPublic(
+    tenantId,
+    urlId,
+    page,
+    direction,
     undefined,
-    'sso_eyJhbGciOiJIUzI1Ni',
-    0,
-    0,
-    25,
-    5,
-    true,
     undefined,
-    true,
-    false,
-    true,
-    'en-US',
-    'reactions,moderation',
-    false,
-    true,
-    true,
-    3,
-    false,
     undefined,
-    'climate change',
-    ['environment', 'policy'],
-    'user-789',
+    limit,
+    undefined,
+    undefined,
+    undefined,
+    includeConfig,
+    undefined,
+    undefined,
+    locale,
+    modules,
+    isCrawler,
+    includeNotificationCount,
+    asTree,
+    maxTreeDepth,
+    undefined,
+    undefined,
+    searchText,
+    hashTags,
+    undefined,
     undefined,
     undefined,
     undefined
   );
-  console.log(response);
-})();
+}
 [inline-code-end]

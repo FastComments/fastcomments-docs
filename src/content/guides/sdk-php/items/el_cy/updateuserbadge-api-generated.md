@@ -1,17 +1,17 @@
-## Παράμετροι
+## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|------------|------------|
 | tenantId | string | query | Ναι |  |
 | id | string | path | Ναι |  |
 
-## Απόκριση
+## Response
 
 Επιστρέφει: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptySuccessResponse.php)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα updateUserBadge'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserBadge Παράδειγμα'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -24,14 +24,16 @@ $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKe
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // Αν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε τον client που υλοποιεί `GuzzleHttp\ClientInterface`.
+    // Αυτό είναι προαιρετικό, θα χρησιμοποιηθεί το `GuzzleHttp\Client` ως προεπιλογή.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
 $update_user_badge_params = new \FastComments\Client\Model\UpdateUserBadgeParams(); // \FastComments\Client\Model\UpdateUserBadgeParams
+
 
 try {
     $result = $apiInstance->updateUserBadge($tenant_id, $id, $update_user_badge_params);

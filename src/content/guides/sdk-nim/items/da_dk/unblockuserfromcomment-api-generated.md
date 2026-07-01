@@ -2,13 +2,12 @@
 
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| id | string | Nej |  |
-| unBlockFromCommentParams | UnBlockFromCommentParams | Nej |  |
-| userId | string | Nej |  |
-| anonUserId | string | Nej |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| unBlockFromCommentParams | UnBlockFromCommentParams | No |  |
+| options | UnBlockUserFromCommentOptions | No |  |
 
-## Svar
+## Response
 
 Returnerer: [`Option[UnblockSuccess]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_unblock_success.nim)
 
@@ -18,17 +17,11 @@ Returnerer: [`Option[UnblockSuccess]`](https://github.com/FastComments/fastcomme
 [inline-code-start]
 let (response, httpResponse) = client.unBlockUserFromComment(
   tenantId = "my-tenant-123",
-  id = "comment-9f3b2a",
-  unBlockFromCommentParams = UnBlockFromCommentParams(),
-  userId = "user-1024",
-  anonUserId = "anon-77b"
+  id = "comment-456",
+  unBlockFromCommentParams = UnBlockFromCommentParams(userId = "user-789", commentId = "cmt-321"),
+  options = UnBlockUserFromCommentOptions(),
 )
 
 if response.isSome:
-  let unblockResult = response.get()
-  echo unblockResult
-else:
-  echo "Unblock failed"
+  let unblockSuccess = response.get()
 [inline-code-end]
-
----

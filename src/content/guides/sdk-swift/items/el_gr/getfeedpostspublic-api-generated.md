@@ -4,7 +4,7 @@ afterId
 
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Υποχρεωτικό | Περιγραφή |
+| Όνομα | Τύπος | Θέση | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Ναι |  |
 | afterId | string | query | Όχι |  |
@@ -14,7 +14,7 @@ afterId
 | isCrawler | boolean | query | Όχι |  |
 | includeUserInfo | boolean | query | Όχι |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PublicFeedPostsResponse.swift)
 
@@ -22,7 +22,7 @@ afterId
 
 [inline-code-attrs-start title = 'Παράδειγμα getFeedPostsPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Τα ακόλουθα δείγματα κώδικα είναι ακόμα σε beta. Για οποιοδήποτε πρόβλημα, αναφέρετε μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
+// Τα παρακάτω δείγματα κώδικα είναι ακόμη beta. Για οποιοδήποτε πρόβλημα, παρακαλούμε να το αναφέρετε μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -33,7 +33,7 @@ let sso = "sso_example" // String |  (προαιρετικό)
 let isCrawler = true // Bool |  (προαιρετικό)
 let includeUserInfo = true // Bool |  (προαιρετικό)
 
-PublicAPI.getFeedPostsPublic(tenantId: tenantId, afterId: afterId, limit: limit, tags: tags, sso: sso, isCrawler: isCrawler, includeUserInfo: includeUserInfo) { (response, error) in
+PublicAPI.getFeedPostsPublic(tenantId: tenantId, options: PublicAPI.GetFeedPostsPublicOptions(afterId: afterId, limit: limit, tags: tags, sso: sso, isCrawler: isCrawler, includeUserInfo: includeUserInfo)) { (response, error) in
     guard error == nil else {
         print(error)
         return

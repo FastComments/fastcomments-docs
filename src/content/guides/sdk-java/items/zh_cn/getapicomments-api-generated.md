@@ -1,16 +1,17 @@
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| page | number | 查询 | 否 |  |
-| count | number | 查询 | 否 |  |
-| text-search | string | 查询 | 否 |  |
-| byIPFromComment | string | 查询 | 否 |  |
-| filters | string | 查询 | 否 |  |
-| searchFilters | string | 查询 | 否 |  |
-| sorts | string | 查询 | 否 |  |
-| demo | boolean | 查询 | 否 |  |
-| sso | string | 查询 | 否 |  |
+| tenantId | string | query | Yes |  |
+| page | number | query | No |  |
+| count | number | query | No |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sorts | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## 响应
 
@@ -20,7 +21,7 @@
 
 [inline-code-attrs-start title = 'getApiComments 示例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 导入类：
+// 导入类:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -33,6 +34,7 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     Double page = 3.4D; // Double | 
     Double count = 3.4D; // Double | 
     String textSearch = "textSearch_example"; // String | 
@@ -43,7 +45,7 @@ public class Example {
     Boolean demo = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationAPIGetCommentsResponse result = apiInstance.getApiComments()
+      ModerationAPIGetCommentsResponse result = apiInstance.getApiComments(tenantId)
             .page(page)
             .count(count)
             .textSearch(textSearch)
@@ -65,3 +67,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

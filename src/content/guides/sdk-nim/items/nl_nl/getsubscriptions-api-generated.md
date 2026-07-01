@@ -1,22 +1,20 @@
 ## Parameters
 
 | Naam | Type | Vereist | Beschrijving |
-|------|------|----------|-------------|
+|------|------|----------|--------------|
 | tenantId | string | Ja |  |
-| userId | string | Nee |  |
+| userId | string = "" | Nee |  |
 
 ## Respons
 
-Geeft terug: [`Option[GetSubscriptionsAPIResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_subscriptions_api_response.nim)
+Retourneert: [`Option[GetSubscriptionsAPIResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_subscriptions_api_response.nim)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'getSubscriptions Voorbeeld'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSubscriptions(tenantId = "my-tenant-123", userId = "")
-if response.isSome:
-  let subscriptions = response.get()
-  discard subscriptions
+let (subscriptionsOpt, httpResp) = client.getSubscriptions(tenantId = "my-tenant-123", userId = "user-456")
+if subscriptionsOpt.isSome:
+  let subscriptions = subscriptionsOpt.get()
+  echo subscriptions
 [inline-code-end]
-
----

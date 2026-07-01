@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Yes |  |
 | broadcastId | string | query | No |  |
@@ -12,32 +12,33 @@ Vrne: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-py
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer create_feed_post_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_feed_post_public Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import CreateFeedPostPublicOptions
 from client.models.create_feed_post_params import CreateFeedPostParams
 from client.models.create_feed_post_response import CreateFeedPostResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Določitev gostitelja je izbirna in privzeto je https://fastcomments.com
-# Oglejte si configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
+# Definiranje gostitelja je neobvezno in privzeto nastavljeno na https://fastcomments.com
+# Oglejte si configuration.py za seznam vseh podprtih parametrov konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Vstopite v kontekst z instanco API odjemalca
+# Vstop v kontekst z instanco API odjemalca
 with client.ApiClient(configuration) as api_client:
-    # Ustvarite instanco razreda API
+    # Ustvari instanco API razreda
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_feed_post_params = client.CreateFeedPostParams() # CreateFeedPostParams | 
-    broadcast_id = 'broadcast_id_example' # str |  (optional)
-    sso = 'sso_example' # str |  (optional)
+    broadcast_id = 'broadcast_id_example' # str |  (neobvezno)
+    sso = 'sso_example' # str |  (neobvezno)
 
     try:
-        api_response = api_instance.create_feed_post_public(tenant_id, create_feed_post_params, broadcast_id=broadcast_id, sso=sso)
+        api_response = api_instance.create_feed_post_public(tenant_id, create_feed_post_params, CreateFeedPostPublicOptions(broadcast_id=broadcast_id, sso=sso))
         print("The response of PublicApi->create_feed_post_public:\n")
         pprint(api_response)
     except Exception as e:

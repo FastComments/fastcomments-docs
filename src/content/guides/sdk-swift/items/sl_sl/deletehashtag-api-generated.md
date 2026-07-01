@@ -2,25 +2,25 @@
 
 | Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| tag | string | path | Da |  |
-| tenantId | string | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| tag | string | path | Yes |  |
 
-## Odziv
+## Odgovor
 
 Vrne: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer deleteHashTag'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteHashTag Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Naslednji primeri kode so še v beta fazi. Če naletite na težavo, jo prijavite preko http://github.com/OpenAPITools/openapi-generator/issues/new
+// Naslednji primeri kode so še v beta fazi. Za morebitne težave oddajte poročilo na http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let tag = "tag_example" // String | 
-let tenantId = "tenantId_example" // String |  (neobvezno)
-let deleteHashTagRequestBody = DeleteHashTagRequestBody(tenantId: "tenantId_example") // DeleteHashTagRequestBody |  (neobvezno)
+let deleteHashTagRequestBody = DeleteHashTagRequestBody(tenantId: "tenantId_example") // DeleteHashTagRequestBody | (neobvezno)
 
-DefaultAPI.deleteHashTag(tag: tag, tenantId: tenantId, deleteHashTagRequestBody: deleteHashTagRequestBody) { (response, error) in
+DefaultAPI.deleteHashTag(tenantId: tenantId, tag: tag, deleteHashTagRequestBody: deleteHashTagRequestBody) { (response, error) in
     guard error == nil else {
         print(error)
         return

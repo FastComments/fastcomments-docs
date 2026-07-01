@@ -1,17 +1,18 @@
 ## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| batchJobId | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | 是 |  |
+| batchJobId | string | query | 否 |  |
+| sso | string | query | 否 |  |
 
 ## 回應
 
-回傳: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_export_status_response.go)
+返回：[`ModerationExportStatusResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_export_status_response.go)
 
-## 範例
+## 示例
 
-[inline-code-attrs-start title = 'GetApiExportStatus 範例'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GetApiExportStatus 示例'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,19 +24,18 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	batchJobId := "batchJobId_example" // string |  (可選)
 	sso := "sso_example" // string |  (可選)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetApiExportStatus(context.Background()).BatchJobId(batchJobId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetApiExportStatus(context.Background()).TenantId(tenantId).BatchJobId(batchJobId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetApiExportStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// 來自 `GetApiExportStatus` 的回應：ModerationExportStatusResponse
+	// `GetApiExportStatus` 的回應: ModerationExportStatusResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetApiExportStatus`: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -1,25 +1,27 @@
-## Parametri
+## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| userId | string | query | Ne |  |
-| sso | string | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| sso | string | query | No |  |
 
-## Odgovor
+## Response
 
-Vraća: [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetUserTrustFactorResponse.swift)
+Returns: [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetUserTrustFactorResponse.swift)
 
-## Primjer
+## Example
 
-[inline-code-attrs-start title = 'getTrustFactor Primjer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getTrustFactor'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sljedeći primjeri koda su još u beta fazi. Za bilo koji problem, prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sljedeći primjeri koda su još uvijek beta. Za bilo koji problem, prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let userId = "userId_example" // String |  (opcionalno)
 let sso = "sso_example" // String |  (opcionalno)
 
-ModerationAPI.getTrustFactor(userId: userId, sso: sso) { (response, error) in
+ModerationAPI.getTrustFactor(tenantId: tenantId, options: ModerationAPI.GetTrustFactorOptions(userId: userId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -30,5 +32,3 @@ ModerationAPI.getTrustFactor(userId: userId, sso: sso) { (response, error) in
     }
 }
 [inline-code-end]
-
----

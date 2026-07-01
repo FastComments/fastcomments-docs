@@ -1,13 +1,14 @@
 ## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
-|------|------|----------|----------|-------------|
+|------|------|----------|----------------|-------------|
+| tenantId | string | query | Ja |  |
 | urlId | string | query | Ja |  |
 | sso | string | query | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
+Rückgabe: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## Beispiel
 
@@ -26,14 +27,16 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      APIEmptyResponse result = apiInstance.putReopenThread(urlId)
+      APIEmptyResponse result = apiInstance.putReopenThread(tenantId, urlId)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
+      // Ausnahme beim Aufruf von ModerationApi#putReopenThread
       System.err.println("Exception when calling ModerationApi#putReopenThread");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
@@ -43,5 +46,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

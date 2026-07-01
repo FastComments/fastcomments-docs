@@ -1,6 +1,6 @@
 ## Parametre
 
-| Name | Type | Påkrævet | Beskrivelse |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | id | string | Ja |  |
@@ -8,19 +8,18 @@
 
 ## Svar
 
-Returnerer: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Returnerer: [`DeleteModeratorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteModeratorResponse.ts)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på deleteModerator'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteModerator Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_8f3b2a7c';
-  const moderatorId: string = 'mod_4c12f9b2';
-  const responseWithoutEmail: APIEmptyResponse = await deleteModerator(tenantId, moderatorId);
-  const responseWithEmail: APIEmptyResponse = await deleteModerator(tenantId, moderatorId, 'true');
-  console.log(responseWithoutEmail, responseWithEmail);
-})();
-[inline-code-end]
+async function runDeleteModeratorExample() {
+  const tenantId: string = "tenant_2023";
+  const moderatorId: string = "mod_001";
+  const notificationEmail: string = "admin@mycompany.com";
 
----
+  const resultWithEmail: DeleteModeratorResponse = await deleteModerator(tenantId, moderatorId, notificationEmail);
+  const resultWithoutEmail: DeleteModeratorResponse = await deleteModerator(tenantId, moderatorId);
+}
+[inline-code-end]

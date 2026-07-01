@@ -1,7 +1,7 @@
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
-|------|------|---------|-------------|
+| Naam | Type | Verplicht | Beschrijving |
+|------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | commentId | string | Ja |  |
 | broadcastId | string | Ja |  |
@@ -9,15 +9,25 @@
 
 ## Respons
 
-Geeft terug: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Retourneert: [`UnLockCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UnLockCommentResponse.ts)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'unLockComment Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f3d2b';
-const commentId: string = 'cmt_5e8a1d';
-const broadcastId: string = 'bcast_4f2b7a';
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJ1c2VyX2QxMjMifQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
-const result: APIEmptyResponse = await unLockComment(tenantId, commentId, broadcastId, sso);
+const tenantId: string = "tenant_12345";
+const commentId: string = "cmt_9876";
+const broadcastId: string = "brd_001";
+const ssoToken: string | undefined = "sso_token_abc";
+
+async function run() {
+  const unlocked: UnLockCommentResponse = await unLockComment(tenantId, commentId, broadcastId, ssoToken);
+  console.log(unlocked);
+
+  // Aanroep zonder de optionele sso-parameter
+  const unlockedWithoutSso: UnLockCommentResponse = await unLockComment(tenantId, commentId, broadcastId);
+  console.log(unlockedWithoutSso);
+}
+
+run();
 [inline-code-end]

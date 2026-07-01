@@ -1,24 +1,20 @@
 ## Paramètres
 
 | Nom | Type | Obligatoire | Description |
-|------|------|----------|-------------|
+|------|------|-------------|-------------|
 | tenantId | string | Oui |  |
 | skip | float64 | Non |  |
 
 ## Réponse
 
-Renvoie : [`Option[GetModeratorsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_moderators_response.nim)
+Retourne : [`Option[GetModeratorsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_moderators_response.nim)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple d\'utilisation de getModerators'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getModerators'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getModerators(tenantId = "my-tenant-123", skip = 0.0)
-if response.isSome:
-  let moderators = response.get()
-  echo "Received moderators response:", moderators
-else:
-  echo "No moderators returned"
+let (moderatorsOpt, httpResp) = client.getModerators(tenantId = "my-tenant-123", skip = 0.0)
+if moderatorsOpt.isSome:
+  let moderators = moderatorsOpt.get()
+  echo moderators
 [inline-code-end]
-
----

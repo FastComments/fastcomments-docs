@@ -1,25 +1,30 @@
-## Параметри
+## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
-| userId | string | Не |  |
-| anonUserId | string | Не |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Da |  |
+| id | string | Da |  |
+| userId | string | Ne |  |
+| anonUserId | string | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentResponse.ts)
+Vraća: [`UnFlagCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UnFlagCommentResponse.ts)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'unFlagComment Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer unFlagComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-001';
-const id: string = 'cmt-9b8f7d6a5';
-const userId: string = 'user-42a7c9e1';
+const tenantId: string = "acme-corp";
+const commentId: string = "cmt_123456";
+const userId: string = "usr_98765";
 
-const result: FlagCommentResponse = await unFlagComment(tenantId, id, userId);
+const result: UnFlagCommentResponse = await unFlagComment(tenantId, commentId, userId);
+
+const anonCommentId: string = "cmt_123457";
+const anonUserId: string = "anon_abc123";
+
+const anonResult: UnFlagCommentResponse = await unFlagComment(tenantId, anonCommentId, undefined, anonUserId);
 [inline-code-end]
 
 ---

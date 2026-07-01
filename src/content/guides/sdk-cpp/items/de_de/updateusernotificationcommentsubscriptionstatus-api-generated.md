@@ -1,36 +1,32 @@
-Aktivieren oder Deaktivieren von Benachrichtigungen für einen bestimmten Kommentar.
+Aktivieren oder deaktivieren Sie Benachrichtigungen für einen bestimmten Kommentar.
 
-## Parameter
+## Parameters
 
-| Name | Typ | Erforderlich | Beschreibung |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| notificationId | string | Ja |  |
-| optedInOrOut | string | Ja |  |
-| commentId | string | Ja |  |
-| sso | string | Nein |  |
+| tenantId | string | Yes |  |
+| notificationId | string | Yes |  |
+| optedInOrOut | string | Yes |  |
+| commentId | string | Yes |  |
+| sso | string | No |  |
 
-## Antwort
+## Response
 
-Gibt zurück: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UpdateUserNotificationCommentSubscriptionStatusResponse.h)
+Rückgabe: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UpdateUserNotificationCommentSubscriptionStatusResponse.h)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'Beispiel für updateUserNotificationCommentSubscriptionStatus'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserNotificationCommentSubscriptionStatus Beispiel'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t notificationId = U("notif-456");
-utility::string_t optedInOrOut = U("opted_in");
-utility::string_t commentId = U("cmt-789");
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("sso-jwt-abc123"));
-api->updateUserNotificationCommentSubscriptionStatus(tenantId, notificationId, optedInOrOut, commentId, sso)
-.then([](pplx::task<std::shared_ptr<UpdateUserNotificationCommentSubscriptionStatusResponse>> t) {
-    try {
-        auto resp = t.get();
-        if(!resp) resp = std::make_shared<UpdateUserNotificationCommentSubscriptionStatusResponse>();
-        std::cout << "Subscription update completed" << std::endl;
-    } catch(const std::exception& e) {
-        std::cout << "Error updating subscription: " << e.what() << std::endl;
-    }
+auto updateTask = api->updateUserNotificationCommentSubscriptionStatus(
+    utility::conversions::to_string_t("my-tenant-123"),
+    utility::conversions::to_string_t("notif-456"),
+    utility::conversions::to_string_t("optedIn"),
+    utility::conversions::to_string_t("comment-789"),
+    boost::optional<utility::string_t>(utility::conversions::to_string_t("sso-token-abc"))
+).then([](std::shared_ptr<UpdateUserNotificationCommentSubscriptionStatusResponse> resp){
+    (void)resp;
 });
 [inline-code-end]
+
+---

@@ -4,10 +4,7 @@
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | urlId | string | Да |  |
-| usernameStartsWith | string | Не |  |
-| mentionGroupIds | seq[string] | Не |  |
-| sso | string | Не |  |
-| searchSection | string | Не |  |
+| options | SearchUsersOptions | Не |  |
 
 ## Отговор
 
@@ -15,22 +12,14 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'searchUsers Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за searchUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.searchUsers(
   tenantId = "my-tenant-123",
-  urlId = "news/top-story",
-  usernameStartsWith = "",
-  mentionGroupIds = @[],
-  sso = "",
-  searchSection = ""
+  urlId = "news/article-title",
+  options = SearchUsersOptions()
 )
 
 if response.isSome:
-  let searchResult = response.get()
-  echo "SearchUsersResult:", searchResult
-else:
-  echo "No result or error. HTTP response:", httpResponse
+  let result = response.get()
 [inline-code-end]
-
----

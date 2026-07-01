@@ -1,41 +1,46 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Местоположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Да |  |
-| reviewed | boolean | query | Нет |  |
-| sso | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| reviewed | boolean | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
-## Response
+## Ответ
 
-Возвращает: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
+Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример post_set_comment_review_status'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_set_comment_review_status Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import PostSetCommentReviewStatusOptions
 from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Указание host необязательно и по умолчанию равно https://fastcomments.com
-# См. configuration.py для списка всех поддерживаемых параметров конфигурации.
+# Определение хоста является необязательным и по умолчанию https://fastcomments.com
+# Смотрите configuration.py для списка всех поддерживаемых параметров конфигурации.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Входим в контекст с экземпляром API-клиента
+# Войдите в контекст с экземпляром клиента API
 with client.ApiClient(configuration) as api_client:
-    # Создаём экземпляр класса API
+    # Создайте экземпляр класса API
     api_instance = client.ModerationApi(api_client)
-    comment_id = 'comment_id_example' # str | 
+    tenant_id = 'tenant_id_example' # строка | 
+    comment_id = 'comment_id_example' # строка | 
     reviewed = True # bool |  (необязательно)
-    sso = 'sso_example' # str |  (необязательно)
+    broadcast_id = 'broadcast_id_example' # строка |  (необязательно)
+    sso = 'sso_example' # строка |  (необязательно)
 
     try:
-        api_response = api_instance.post_set_comment_review_status(comment_id, reviewed=reviewed, sso=sso)
+        api_response = api_instance.post_set_comment_review_status(tenant_id, comment_id, PostSetCommentReviewStatusOptions(reviewed=reviewed, broadcast_id=broadcast_id, sso=sso))
         print("The response of ModerationApi->post_set_comment_review_status:\n")
         pprint(api_response)
     except Exception as e:

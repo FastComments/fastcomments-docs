@@ -1,18 +1,20 @@
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
+| Naam | Type | Verplicht | Beschrijving |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 
-## Antwoord
+## Response
 
-Retourneert: [`GetEmailTemplateDefinitionsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplateDefinitionsResponse.ts)
+Retourneert: [`GetEmailTemplateDefinitionsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplateDefinitionsResponse1.ts)
 
-## Voorbeeld
+## Example
 
-[inline-code-attrs-start title = 'getEmailTemplateDefinitions Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Voorbeeld getEmailTemplateDefinitions'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_5f2c9b1a';
-const emailTemplatesResponse: GetEmailTemplateDefinitionsResponse = await getEmailTemplateDefinitions(tenantId);
-// Optionele parameters (indien ondersteund) kunnen als tweede argument worden meegegeven, bijvoorbeeld getEmailTemplateDefinitions(tenantId /*, { includeDrafts: true } */);
+(async () => {
+  const tenantId: string = "acme-corp-123";
+  const emailTemplateDefs: GetEmailTemplateDefinitionsResponse1 = await getEmailTemplateDefinitions(tenantId);
+  console.log(emailTemplateDefs);
+})();
 [inline-code-end]

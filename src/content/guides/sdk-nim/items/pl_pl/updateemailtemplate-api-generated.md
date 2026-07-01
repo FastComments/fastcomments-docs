@@ -1,10 +1,10 @@
 ## Parametry
 
-| Name | Type | Required | Description |
+| Nazwa | Typ | Wymagane | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Tak |  |
-| id | string | Nie |  |
-| updateEmailTemplateBody | UpdateEmailTemplateBody | Nie |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| updateEmailTemplateBody | UpdateEmailTemplateBody | No |  |
 
 ## Odpowiedź
 
@@ -12,19 +12,20 @@ Zwraca: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomment
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład updateEmailTemplate'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateEmailTemplate Przykład'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let updateBody = UpdateEmailTemplateBody(
-  subject = "Welcome to Newsly",
-  html = "<p>Thanks for joining Newsly! Visit https://newsly.example to get started.</p>",
-  fromAddress = "no-reply@newsly.example",
-  fromName = "Newsly Team",
-  enabled = true
+  subject: "Welcome to FastComments",
+  body: "Hello \{{user_name}}, thanks for joining!",
+  enabled: true,
 )
-let (response, httpResponse) = client.updateEmailTemplate(tenantId = "my-tenant-123", id = "welcome-email", updateEmailTemplateBody = updateBody)
-if response.isSome:
-  let result = response.get()
-  discard result
-else:
-  discard httpResponse.statusCode
+
+let (maybeResp, httpResp) = client.updateEmailTemplate(
+  tenantId = "my-tenant-123",
+  id = "welcome-email",
+  updateEmailTemplateBody = updateBody,
+)
+
+if maybeResp.isSome:
+  let resp = maybeResp.get()
 [inline-code-end]

@@ -1,16 +1,16 @@
-Omogućite ili onemogućite obavještenja za stranicu. Kada su korisnici pretplaćeni na stranicu, obavještenja se kreiraju
-za nove komentare prvog nivoa, i također
+Enable or disable notifications for a page. When users are subscribed to a page, notifications are created
+for new root comments, and also
 
 ## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| urlId | string | query | Da |  |
-| url | string | query | Da |  |
-| pageTitle | string | query | Da |  |
-| subscribedOrUnsubscribed | string | path | Da |  |
-| sso | string | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| url | string | query | Yes |  |
+| pageTitle | string | query | Yes |  |
+| subscribedOrUnsubscribed | string | path | Yes |  |
+| sso | string | query | No |  |
 
 ## Response
 
@@ -18,24 +18,26 @@ Vraća: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.
 
 ## Example
 
-[inline-code-attrs-start title = 'Primjer updateUserNotificationPageSubscriptionStatus'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus Primer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ako želite koristiti prilagođeni HTTP klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opcionalno, po defaultu će se koristiti `GuzzleHttp\Client`.
-    new GuzzleHttp\Client()
-);
+// $apiInstance = new FastComments\Client\Api\PublicApi(
+//     // Ako želite koristiti prilagođeni HTTP klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
+//     // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao podrazumevani.
+//     new GuzzleHttp\Client()
+// );
+
 $tenant_id = 'tenant_id_example'; // string
 $url_id = 'url_id_example'; // string
 $url = 'url_example'; // string
 $page_title = 'page_title_example'; // string
 $subscribed_or_unsubscribed = 'subscribed_or_unsubscribed_example'; // string
 $sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->updateUserNotificationPageSubscriptionStatus($tenant_id, $url_id, $url, $page_title, $subscribed_or_unsubscribed, $sso);

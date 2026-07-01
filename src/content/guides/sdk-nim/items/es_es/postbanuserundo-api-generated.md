@@ -2,8 +2,9 @@
 
 | Nombre | Tipo | Requerido | Descripción |
 |------|------|----------|-------------|
+| tenantId | string | Sí |  |
 | banUserUndoParams | BanUserUndoParams | No |  |
-| sso | string | No |  |
+| sso | string = "" | No |  |
 
 ## Respuesta
 
@@ -11,20 +12,14 @@ Devuelve: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomme
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de postBanUserUndo'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo postBanUserUndo'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let banParams = BanUserUndoParams(
+let (apiResp, httpResp) = client.postBanUserUndo(
   tenantId = "my-tenant-123",
-  userId = "user-987",
-  undoneBy = "moderator-42",
-  reason = "Reinstated after manual review"
+  banUserUndoParams = BanUserUndoParams(userId = "user-456"),
+  sso = ""
 )
-let (response, httpResponse) = client.postBanUserUndo(banUserUndoParams = banParams, sso = "sso-jwt-abc123")
-if response.isSome:
-  let apiResp = response.get()
-  echo "Ban undo succeeded, http status: " & $httpResponse.status
-else:
-  echo "Ban undo failed, http status: " & $httpResponse.status
-[inline-code-end]
 
----
+if apiResp.isSome:
+  let _ = apiResp.get()
+[inline-code-end]

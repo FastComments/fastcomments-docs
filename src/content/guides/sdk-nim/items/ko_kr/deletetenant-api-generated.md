@@ -2,23 +2,19 @@
 
 | 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| id | string | 아니요 |  |
-| sure | string | 아니요 |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| sure | string = "" | No |  |
 
 ## 응답
 
 반환: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'deleteTenant 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteTenant 예시'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteTenant(tenantId = "my-tenant-123", id = "", sure = "")
-if response.isSome:
-  let emptyResp = response.get()
-else:
-  discard httpResponse
+let (respOpt, httpResp) = client.deleteTenant(tenantId = "my-tenant-123", id = "tenant-to-delete", sure = "yes")
+if respOpt.isSome:
+  let emptyResp = respOpt.get()
 [inline-code-end]
-
----

@@ -1,6 +1,6 @@
 ## Параметры
 
-| Name | Type | Required | Description |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | domainToUpdate | string | Да |  |
@@ -12,16 +12,19 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример patchDomainConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'patchDomainConfig Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_8d9f3c4b";
-const domainToUpdate: string = "comments.newsroom.example.com";
-const patchDomainConfigParams: PatchDomainConfigParams = {
-  enabled: true,
-  enforceHttps: true, // необязательный параметр указан
-  allowedOrigins: ["https://newsroom.example.com"] // необязательный параметр указан
-};
-const result: PatchDomainConfigResponse = await patchDomainConfig(tenantId, domainToUpdate, patchDomainConfigParams);
-[inline-code-end]
+async function updateDomainConfig() {
+  const tenantId: string = "tenant_98765";
+  const domainToUpdate: string = "forum.mycompany.com";
+  const patchParams: PatchDomainConfigParams = {
+    enableComments: true,
+    moderationLevel: "strict",
+    allowAnonymous: false, // продемонстрирован необязательный параметр
+  };
+  const response: PatchDomainConfigResponse = await patchDomainConfig(tenantId, domainToUpdate, patchParams);
+  console.log(response);
+}
 
----
+updateDomainConfig();
+[inline-code-end]

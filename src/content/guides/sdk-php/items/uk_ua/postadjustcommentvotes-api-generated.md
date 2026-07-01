@@ -1,8 +1,10 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Назва | Тип | Розташування | Обов'язково | Опис |
+|------|------|--------------|-------------|------|
+| tenantId | string | query | Так |  |
 | commentId | string | path | Так |  |
+| broadcastId | string | query | Ні |  |
 | sso | string | query | Ні |  |
 
 ## Відповідь
@@ -19,16 +21,22 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Якщо ви хочете використовувати власний HTTP-клієнт, передайте ваш клієнт, який реалізує `GuzzleHttp\ClientInterface`.
-    // Це необов'язково — за замовчуванням буде використовуватись `GuzzleHttp\Client`.
+    // Якщо ви хочете використовувати кастомний HTTP-клієнт, передайте ваш клієнт, який реалізує `GuzzleHttp\ClientInterface`.
+    // Це необов'язково, за замовчуванням буде використано `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
-$comment_id = 'comment_id_example'; // string
+
+$tenant_id = 'tenant_id_example'; // рядок
+$comment_id = 'comment_id_example'; // рядок
 $adjust_comment_votes_params = new \FastComments\Client\Model\AdjustCommentVotesParams(); // \FastComments\Client\Model\AdjustCommentVotesParams
-$sso = 'sso_example'; // string
+$options = [
+    'broadcast_id' => 'broadcast_id_example', // рядок
+    'sso' => 'sso_example', // рядок
+];
+
 
 try {
-    $result = $apiInstance->postAdjustCommentVotes($comment_id, $adjust_comment_votes_params, $sso);
+    $result = $apiInstance->postAdjustCommentVotes($tenant_id, $comment_id, $adjust_comment_votes_params, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->postAdjustCommentVotes: ', $e->getMessage(), PHP_EOL;

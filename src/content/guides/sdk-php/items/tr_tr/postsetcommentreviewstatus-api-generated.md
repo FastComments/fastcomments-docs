@@ -1,10 +1,12 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Evet |  |
-| reviewed | boolean | query | Hayır |  |
-| sso | string | query | Hayır |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| reviewed | boolean | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Yanıt
 
@@ -20,16 +22,22 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Özel bir HTTP istemcisi kullanmak istiyorsanız, `GuzzleHttp\ClientInterface`'i uygulayan istemcinizi geçin.
+    // Özel bir HTTP istemcisi kullanmak istiyorsanız, `GuzzleHttp\ClientInterface`'i implemente eden istemcinizi geçirin.
     // Bu isteğe bağlıdır, varsayılan olarak `GuzzleHttp\Client` kullanılacaktır.
     new GuzzleHttp\Client()
 );
+
+$tenant_id = 'tenant_id_example'; // string
 $comment_id = 'comment_id_example'; // string
-$reviewed = True; // bool
-$sso = 'sso_example'; // string
+$options = [
+    'reviewed' => True, // bool
+    'broadcast_id' => 'broadcast_id_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->postSetCommentReviewStatus($comment_id, $reviewed, $sso);
+    $result = $apiInstance->postSetCommentReviewStatus($tenant_id, $comment_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->postSetCommentReviewStatus: ', $e->getMessage(), PHP_EOL;

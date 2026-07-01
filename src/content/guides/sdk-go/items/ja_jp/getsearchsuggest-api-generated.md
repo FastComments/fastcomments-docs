@@ -1,10 +1,10 @@
----
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| text-search | string | query | 任意 |  |
-| sso | string | query | 任意 |  |
+| 名前 | 型 | 場所 | 必須 | 説明 |
+|------|------|----------|------|-------------|
+| tenantId | string | query | はい |  |
+| text-search | string | query | いいえ |  |
+| sso | string | query | いいえ |  |
 
 ## レスポンス
 
@@ -24,12 +24,13 @@ import (
 )
 
 func main() {
-	textSearch := "textSearch_example" // string |  (任意)
-	sso := "sso_example" // string |  (任意)
+	tenantId := "tenantId_example" // string | 
+	textSearch := "textSearch_example" // string |  (optional)
+	sso := "sso_example" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetSearchSuggest(context.Background()).TextSearch(textSearch).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetSearchSuggest(context.Background()).TenantId(tenantId).TextSearch(textSearch).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetSearchSuggest``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -38,5 +39,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetSearchSuggest`: %v\n", resp)
 }
 [inline-code-end]
-
----

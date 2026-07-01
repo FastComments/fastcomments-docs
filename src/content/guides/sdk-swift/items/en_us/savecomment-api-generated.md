@@ -26,7 +26,7 @@ let doSpamCheck = true // Bool |  (optional)
 let sendEmails = true // Bool |  (optional)
 let populateNotifications = true // Bool |  (optional)
 
-DefaultAPI.saveComment(tenantId: tenantId, createCommentParams: createCommentParams, isLive: isLive, doSpamCheck: doSpamCheck, sendEmails: sendEmails, populateNotifications: populateNotifications) { (response, error) in
+DefaultAPI.saveComment(tenantId: tenantId, createCommentParams: createCommentParams, options: DefaultAPI.SaveCommentOptions(isLive: isLive, doSpamCheck: doSpamCheck, sendEmails: sendEmails, populateNotifications: populateNotifications)) { (response, error) in
     guard error == nil else {
         print(error)
         return

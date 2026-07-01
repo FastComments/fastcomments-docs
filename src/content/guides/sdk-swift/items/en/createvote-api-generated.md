@@ -25,7 +25,7 @@ let direction = "direction_example" // String |
 let userId = "userId_example" // String |  (optional)
 let anonUserId = "anonUserId_example" // String |  (optional)
 
-DefaultAPI.createVote(tenantId: tenantId, commentId: commentId, direction: direction, userId: userId, anonUserId: anonUserId) { (response, error) in
+DefaultAPI.createVote(tenantId: tenantId, commentId: commentId, direction: direction, options: DefaultAPI.CreateVoteOptions(userId: userId, anonUserId: anonUserId)) { (response, error) in
     guard error == nil else {
         print(error)
         return

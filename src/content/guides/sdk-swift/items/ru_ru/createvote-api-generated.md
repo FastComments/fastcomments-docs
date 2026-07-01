@@ -1,12 +1,12 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательный | Описание |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| commentId | string | query | Да |  |
-| direction | string | query | Да |  |
-| userId | string | query | Нет |  |
-| anonUserId | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | query | Yes |  |
+| direction | string | query | Yes |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
 
 ## Ответ
 
@@ -16,7 +16,7 @@
 
 [inline-code-attrs-start title = 'Пример createVote'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие примеры кода всё ещё находятся в бета-версии. Для любых проблем, пожалуйста, сообщите через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следующие образцы кода находятся в бета-версии. При любой проблеме, пожалуйста, сообщайте через http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -25,7 +25,7 @@ let direction = "direction_example" // String |
 let userId = "userId_example" // String |  (необязательно)
 let anonUserId = "anonUserId_example" // String |  (необязательно)
 
-DefaultAPI.createVote(tenantId: tenantId, commentId: commentId, direction: direction, userId: userId, anonUserId: anonUserId) { (response, error) in
+DefaultAPI.createVote(tenantId: tenantId, commentId: commentId, direction: direction, options: DefaultAPI.CreateVoteOptions(userId: userId, anonUserId: anonUserId)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -36,3 +36,5 @@ DefaultAPI.createVote(tenantId: tenantId, commentId: commentId, direction: direc
     }
 }
 [inline-code-end]
+
+---

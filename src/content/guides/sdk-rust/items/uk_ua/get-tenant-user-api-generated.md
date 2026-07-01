@@ -1,7 +1,7 @@
 ## Параметри
 
-| Назва | Тип | Обов'язкове | Опис |
-|------|------|----------|-------------|
+| Назва | Тип | Обов’язковий | Опис |
+|------|------|--------------|------|
 | tenant_id | String | Так |  |
 | id | String | Так |  |
 
@@ -11,17 +11,15 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад get_tenant_user'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_tenant_user Приклад'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_tenant_user() -> Result<GetTenantUserResponse, Error> {
-    let params: GetTenantUserParams = GetTenantUserParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        id: "user-7b9a2".to_string(),
-        include_profile: Some(true),
+async fn run() -> Result<(), Error> {
+    let config = configuration::Configuration::default();
+    let params = GetTenantUserParams {
+        tenant_id: "acme-corp-tenant".into(),
+        id: "user-42".into(),
     };
-    let response: GetTenantUserResponse = get_tenant_user(&configuration, params).await?;
-    Ok(response)
+    let _response = get_tenant_user(&config, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

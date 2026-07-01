@@ -1,30 +1,29 @@
----
 ## パラメータ
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| namespace | string | path | Yes |  |
-| component | string | path | Yes |  |
-| locale | string | query | No |  |
-| useFullTranslationIds | boolean | query | No |  |
+| namespace | string | path | はい |  |
+| component | string | path | はい |  |
+| locale | string | query | いいえ |  |
+| useFullTranslationIds | boolean | query | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`GetTranslationsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTranslationsResponse.swift)
+返却: [`GetTranslationsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTranslationsResponse.swift)
 
 ## 例
 
-[inline-code-attrs-start title = 'getTranslations の例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTranslations 例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 以下のコードサンプルはまだベータ版です。問題がある場合は http://github.com/OpenAPITools/openapi-generator/issues/new で報告してください
+// 以下のコードサンプルはまだベータです。問題がある場合は、http://github.com/OpenAPITools/openapi-generator/issues/new へ報告してください
 import FastCommentsSwift
 
 let namespace = "namespace_example" // String | 
 let component = "component_example" // String | 
-let locale = "locale_example" // String |  （オプション）
-let useFullTranslationIds = true // Bool |  （オプション）
+let locale = "locale_example" // String |  (オプション)
+let useFullTranslationIds = true // Bool |  (オプション)
 
-PublicAPI.getTranslations(namespace: namespace, component: component, locale: locale, useFullTranslationIds: useFullTranslationIds) { (response, error) in
+PublicAPI.getTranslations(namespace: namespace, component: component, options: PublicAPI.GetTranslationsOptions(locale: locale, useFullTranslationIds: useFullTranslationIds)) { (response, error) in
     guard error == nil else {
         print(error)
         return

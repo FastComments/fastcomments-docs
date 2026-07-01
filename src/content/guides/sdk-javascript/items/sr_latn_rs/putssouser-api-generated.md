@@ -1,7 +1,7 @@
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
 | tenantId | string | Da |  |
 | id | string | Da |  |
 | updateAPISSOUserData | UpdateAPISSOUserData | Da |  |
@@ -15,16 +15,16 @@ Vraća: [`PutSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-s
 
 [inline-code-attrs-start title = 'putSSOUser Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-enterprises-42';
-const id: string = 'usr-73a1b2';
-const updateAPISSOUserData: UpdateAPISSOUserData = {
-  email: 'marcus.ingram@acme.com',
-  givenName: 'Marcus',
-  familyName: 'Ingram',
-  roles: ['editor', 'project_owner'],
-  enabled: true
-};
-const result: PutSSOUserAPIResponse = await putSSOUser(tenantId, id, updateAPISSOUserData, true);
-[inline-code-end]
+(async () => {
+  const tenantId: string = "tenant_abc123";
+  const userId: string = "user_456def";
 
----
+  const updateData: UpdateAPISSOUserData = {
+    email: "jane.doe@example.com",
+    displayName: "Jane Doe",
+    isActive: true,
+  };
+
+  const response: PutSSOUserAPIResponse = await putSSOUser(tenantId, userId, updateData, true);
+})();
+[inline-code-end]

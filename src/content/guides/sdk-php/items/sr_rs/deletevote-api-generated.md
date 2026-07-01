@@ -1,10 +1,10 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| id | string | path | Да |  |
-| editKey | string | query | Не |  |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| editKey | string | query | No |  |
 
 ## Одговор
 
@@ -18,21 +18,23 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Конфигуришите API кључ за ауторизацију: api_key
+// Конфигуришите ауторизацију API кључа: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Откоментујте испод за подешавање префикса (нпр. Bearer) за API кључ, ако је потребно
+// Одкоментаришите испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ако желите да користите прилагођени HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционално, као подразумевано ће се користити `GuzzleHttp\Client`.
+    // Ако желите користити прилагођени HTTP клијент, проследите ваш клиент који имплементира `GuzzleHttp\ClientInterface`.
+    // Ово је опционо, `GuzzleHttp\Client` ће се користити као подразумевано.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$id = 'id_example'; // string
-$edit_key = 'edit_key_example'; // string
+
+$tenant_id = 'tenant_id_example'; // ниска
+$id = 'id_example'; // ниска
+$edit_key = 'edit_key_example'; // ниска
+
 
 try {
     $result = $apiInstance->deleteVote($tenant_id, $id, $edit_key);

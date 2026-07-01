@@ -1,7 +1,8 @@
 ## 매개변수
 
-| 이름 | 형식 | 위치 | 필수 | 설명 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | 예 |  |
 | value | string | query | 아니오 |  |
 | sso | string | query | 아니오 |  |
 
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String value = "value_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationPageSearchResponse result = apiInstance.getSearchPages()
+      ModerationPageSearchResponse result = apiInstance.getSearchPages(tenantId)
             .value(value)
             .sso(sso)
             .execute();

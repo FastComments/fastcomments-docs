@@ -1,19 +1,9 @@
 ## Parámetros
 
-| Nombre | Tipo | Obligatorio | Descripción |
+| Nombre | Tipo | Requerido | Descripción |
 |------|------|----------|-------------|
 | tenantId | string | Sí |  |
-| urlId | string | Sí |  |
-| pageSize | int | No |  |
-| afterId | string | No |  |
-| includeContext | bool | No |  |
-| afterCreatedAt | int64 | No |  |
-| unreadOnly | bool | No |  |
-| dmOnly | bool | No |  |
-| noDm | bool | No |  |
-| includeTranslations | bool | No |  |
-| includeTenantNotifications | bool | No |  |
-| sso | string | No |  |
+| options | GetUserNotificationsOptions | No |  |
 
 ## Respuesta
 
@@ -21,24 +11,9 @@ Devuelve: [`Option[GetMyNotificationsResponse]`](https://github.com/FastComments
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de getUserNotifications'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo getUserNotifications'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUserNotifications(
-  tenantId = "my-tenant-123",
-  urlId = "news/article-title",
-  pageSize = 0,
-  afterId = "",
-  includeContext = false,
-  afterCreatedAt = 0,
-  unreadOnly = false,
-  dmOnly = false,
-  noDm = false,
-  includeTranslations = false,
-  includeTenantNotifications = false,
-  sso = ""
-)
-
-if response.isSome:
-  let notifications = response.get()
-  echo notifications
+let (maybeResponse, httpResponse) = client.getUserNotifications(tenantId = "my-tenant-123", options = GetUserNotificationsOptions())
+if maybeResponse.isSome:
+  let notifications = maybeResponse.get()
 [inline-code-end]

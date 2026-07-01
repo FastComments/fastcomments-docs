@@ -1,16 +1,17 @@
 ## Параметри
 
-| Name | Type | Розташування | Обов'язково | Опис |
-|------|------|----------|----------|-------------|
-| page | number | query | No |  |
-| count | number | query | No |  |
-| text-search | string | query | No |  |
-| byIPFromComment | string | query | No |  |
-| filters | string | query | No |  |
-| searchFilters | string | query | No |  |
-| sorts | string | query | No |  |
-| demo | boolean | query | No |  |
-| sso | string | query | No |  |
+| Назва | Тип | Розташування | Обов’язковий | Опис |
+|------|------|--------------|--------------|------|
+| tenantId | string | query | Так |  |
+| page | number | query | Ні |  |
+| count | number | query | Ні |  |
+| text-search | string | query | Ні |  |
+| byIPFromComment | string | query | Ні |  |
+| filters | string | query | Ні |  |
+| searchFilters | string | query | Ні |  |
+| sorts | string | query | Ні |  |
+| demo | boolean | query | Ні |  |
+| sso | string | query | Ні |  |
 
 ## Відповідь
 
@@ -33,6 +34,7 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     Double page = 3.4D; // Double | 
     Double count = 3.4D; // Double | 
     String textSearch = "textSearch_example"; // String | 
@@ -43,7 +45,7 @@ public class Example {
     Boolean demo = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationAPIGetCommentsResponse result = apiInstance.getApiComments()
+      ModerationAPIGetCommentsResponse result = apiInstance.getApiComments(tenantId)
             .page(page)
             .count(count)
             .textSearch(textSearch)

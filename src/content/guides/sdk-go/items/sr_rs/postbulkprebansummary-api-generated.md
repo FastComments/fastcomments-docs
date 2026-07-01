@@ -1,19 +1,20 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Обавезно | Опис |
-|------|------|----------|----------|-------------|
-| includeByUserIdAndEmail | boolean | query | Не |  |
-| includeByIP | boolean | query | Не |  |
-| includeByEmailDomain | boolean | query | Не |  |
-| sso | string | query | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| includeByUserIdAndEmail | boolean | query | No |  |
+| includeByIP | boolean | query | No |  |
+| includeByEmailDomain | boolean | query | No |  |
+| sso | string | query | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`BulkPreBanSummary`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_bulk_pre_ban_summary.go)
+Vraća: [`BulkPreBanSummary`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_bulk_pre_ban_summary.go)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'PostBulkPreBanSummary Пример'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PostBulkPreBanSummary Primer'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -25,20 +26,21 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	bulkPreBanParams := *openapiclient.NewBulkPreBanParams([]string{"CommentIds_example"}) // BulkPreBanParams | 
-	includeByUserIdAndEmail := true // bool |  (необавезно)
-	includeByIP := true // bool |  (необавезно)
-	includeByEmailDomain := true // bool |  (необавезно)
-	sso := "sso_example" // string |  (необавезно)
+	includeByUserIdAndEmail := true // bool |  (opciono)
+	includeByIP := true // bool |  (opciono)
+	includeByEmailDomain := true // bool |  (opciono)
+	sso := "sso_example" // string |  (opciono)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostBulkPreBanSummary(context.Background()).BulkPreBanParams(bulkPreBanParams).IncludeByUserIdAndEmail(includeByUserIdAndEmail).IncludeByIP(includeByIP).IncludeByEmailDomain(includeByEmailDomain).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostBulkPreBanSummary(context.Background()).TenantId(tenantId).BulkPreBanParams(bulkPreBanParams).IncludeByUserIdAndEmail(includeByUserIdAndEmail).IncludeByIP(includeByIP).IncludeByEmailDomain(includeByEmailDomain).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostBulkPreBanSummary``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// одговор од `PostBulkPreBanSummary`: BulkPreBanSummary
+	// odgovor od `PostBulkPreBanSummary`: BulkPreBanSummary
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostBulkPreBanSummary`: %v\n", resp)
 }
 [inline-code-end]

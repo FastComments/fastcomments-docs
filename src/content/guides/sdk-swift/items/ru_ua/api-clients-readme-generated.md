@@ -1,35 +1,31 @@
-The FastComments SDK предоставляет три API-клиента:
+---
+FastComments SDK предоставляет три API‑клиента:
 
-### PublicAPI - Методы, безопасные для клиентского кода
+### PublicAPI — Методы, безопасные для клиента
 
-The `PublicAPI` contains methods that are safe to call from client-side code (iOS/macOS apps). These methods:
-- Do not require an API key
-- Can use SSO tokens for authentication
-- Are rate-limited per user/device
-- Are suitable for end-user facing applications
+`PublicAPI` содержит методы, которые безопасно вызывать из клиентского кода (iOS/macOS‑приложения). Эти методы:
+- Не требуют API‑ключа
+- Могут использовать SSO‑токены для аутентификации
+- Ограничены по скорости запросов для каждого пользователя/устройства
+- Подходят для приложений, ориентированных на конечных пользователей
 
-**Example use case**: Fetching and creating comments in your iOS app
+**Пример использования**: Получение и создание комментариев в вашем iOS‑приложении
 
-### DefaultAPI - Методы для серверного кода
+### DefaultAPI — Методы для серверной стороны
 
-The `DefaultAPI` contains authenticated methods that require an API key. These methods:
-- Require your FastComments API key
-- Should ONLY be called from server-side code
-- Provide full access to your FastComments data
-- Are rate-limited per tenant
+`DefaultAPI` содержит аутентифицированные методы, требующие API‑ключа. Эти методы:
+- Требуют ваш FastComments API‑ключ
+- ДОЛЖНЫ вызываться ТОЛЬКО из серверного кода
+- Предоставляют полный доступ к вашим данным FastComments
+- Ограничены по скорости запросов для каждого арендатора
 
-**Example use case**: Administrative operations, bulk data export, user management
+**Пример использования**: Административные операции, массовый экспорт данных, управление пользователями
 
-### ModerationAPI - Методы панели модерации
+### ModerationAPI — Методы панели модератора
 
-The `ModerationAPI` contains methods that power the moderator dashboard. These methods cover:
-- **Comment moderation** - list, count, search, retrieve logs, and export comments
-- **Moderation actions** - remove/restore comments, flag, set review/spam/approval status, manage votes, and reopen/close threads
-- **Bans** - ban a user from a comment, undo bans, fetch pre-ban summaries, check ban status and preferences, and read banned-user counts
-- **Badges & trust** - award/remove badges, list manual badges, get/set a user's trust factor, and read a user's internal profile
+`ModerationAPI` предоставляет обширный набор живых и быстрых API для модерации. Каждый метод `ModerationAPI` принимает параметр `sso` и может аутентифицироваться через SSO или cookie‑сессию FastComments.com.
 
-Every `ModerationAPI` method accepts an `sso` parameter so moderators can be authenticated via SSO.
+**Пример использования**: Создание интерфейса модерации для модераторов вашего сообщества
 
-**Example use case**: Building a moderation experience for moderators of your community
-
-**ВАЖНО**: Never expose your API key in client-side code. API keys should only be used server-side.
+**ВАЖНО**: Никогда не раскрывайте ваш API‑ключ в клиентском коде. API‑ключи должны использоваться только на сервере.
+---

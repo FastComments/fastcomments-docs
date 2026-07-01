@@ -2,11 +2,11 @@
 go get github.com/fastcomments/fastcomments-go
 ```
 
-### Χρήση του πελάτη API
+### Χρήση του Πελάτη API
 
-#### Δημόσιο API (Χωρίς Αυθεντικοποίηση)
+#### Δημόσιο API (Χωρίς Επαλήθευση)
 
-Η PublicAPI επιτρέπει μη αυθεντικοποιημένη πρόσβαση σε δημόσια endpoints:
+Το PublicAPI επιτρέπει μη πιστοποιημένη πρόσβαση σε δημόσια endpoints:
 
 ```go
 package main
@@ -21,7 +21,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // Λήψη σχολίων με χρήση της PublicAPI
+    // Λήψη σχολίων χρησιμοποιώντας το PublicAPI
     response, httpResp, err := apiClient.PublicAPI.GetCommentsPublic(
         context.Background(),
         "your-tenant-id",
@@ -36,9 +36,9 @@ func main() {
 }
 ```
 
-#### Default API (Απαιτεί Κλειδί API)
+#### Προεπιλεγμένο API (Απαιτεί Κλειδί API)
 
-Η DefaultAPI απαιτεί αυθεντικοποίηση χρησιμοποιώντας το κλειδί API σας:
+Το DefaultAPI απαιτεί έλεγχο ταυτότητας χρησιμοποιώντας το κλειδί API σας:
 
 ```go
 package main
@@ -53,7 +53,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // Δημιουργία αυθεντικοποιημένου context με κλειδί API
+    // Δημιουργία πιστοποιημένου context με κλειδί API
     auth := context.WithValue(
         context.Background(),
         client.ContextAPIKeys,
@@ -62,7 +62,7 @@ func main() {
         },
     )
 
-    // Λήψη σχολίων χρησιμοποιώντας την αυθεντικοποιημένη DefaultAPI
+    // Λήψη σχολίων χρησιμοποιώντας το πιστοποιημένο DefaultAPI
     response, httpResp, err := apiClient.DefaultAPI.GetComments(auth).
         TenantId("your-tenant-id").
         UrlId("your-page-url-id").
@@ -77,9 +77,9 @@ func main() {
 }
 ```
 
-#### Moderation API (Πίνακας Ελέγχου Συντονιστή)
+#### API Συμμόρφωσης (Πίνακας Διαχειριστή)
 
-Η ModerationAPI τροφοδοτεί τον πίνακα ελέγχου των συντονιστών. Παρέχει μεθόδους για την καταγραφή, μέτρηση, αναζήτηση και εξαγωγή σχολίων, ενέργειες εποπτείας (αφαίρεση/ανάκτηση, σήμανση, ορισμός κατάστασης ανασκόπησης/spam/έγκρισης, ψήφοι, επαναφορά/κλείσιμο νήματος), απαγορεύσεις (απαγόρευση σχολιασμού, αναίρεση, προ-συνοπτικές πληροφορίες περί απαγόρευσης, κατάσταση και προτιμήσεις απαγόρευσης, αριθμοί αποκλεισμένων χρηστών), και διακριτικά & εμπιστοσύνη (απονομή/αφαίρεση διακριτικών, χειροκίνητα διακριτικά, λήψη/ρύθμιση παράγοντα εμπιστοσύνης, εσωτερικό προφίλ χρήστη). Όλες οι μέθοδοι Moderation δέχονται παράμετρο `sso` για συντονιστές αυθεντικοποιημένους μέσω SSO:
+Το ModerationAPI παρέχει μια εκτενή σειρά ζωντανών και γρήγορων APIs συμμόρφωσης. Όλες οι μέθοδοι συμμόρφωσης δέχονται μια παράμετρο `sso` και μπορούν να πιστοποιηθούν μέσω SSO ή μέσω cookie συνεδρίας FastComments.com:
 
 ```go
 package main
@@ -94,7 +94,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // Λίστα σχολίων για εποπτεία χρησιμοποιώντας την ModerationAPI
+    // Κατάλογος σχολίων για συμμόρφωση χρησιμοποιώντας το ModerationAPI
     response, httpResp, err := apiClient.ModerationAPI.GetApiComments(
         context.Background(),
     ).Sso("your-sso-token").Execute()

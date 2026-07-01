@@ -2,6 +2,7 @@
 
 | 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | 是 |  |
 | page | number | query | 否 |  |
 | count | number | query | 否 |  |
 | text-search | string | query | 否 |  |
@@ -14,7 +15,7 @@
 
 ## 回應
 
-回傳：[`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationAPIGetCommentsResponse.php)
+返回：[`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationAPIGetCommentsResponse.php)
 
 ## 範例
 
@@ -26,26 +27,29 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // 如果要使用自訂的 HTTP 用戶端，請傳入實作 `GuzzleHttp\ClientInterface` 的用戶端。
-    // 這是可選的，預設會使用 `GuzzleHttp\Client`。
+    // 如果您想使用自訂的 HTTP 客戶端，請傳入實作 `GuzzleHttp\ClientInterface` 的客戶端。
+    // 這是可選的，預設將使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client()
 );
-$page = 3.4; // 浮點數
-$count = 3.4; // 浮點數
-$text_search = 'text_search_example'; // 字串
-$by_ip_from_comment = 'by_ip_from_comment_example'; // 字串
-$filters = 'filters_example'; // 字串
-$search_filters = 'search_filters_example'; // 字串
-$sorts = 'sorts_example'; // 字串
-$demo = True; // 布林值
-$sso = 'sso_example'; // 字串
+
+$tenant_id = 'tenant_id_example'; // string
+$options = [
+    'page' => 3.4, // float
+    'count' => 3.4, // float
+    'text_search' => 'text_search_example', // string
+    'by_ip_from_comment' => 'by_ip_from_comment_example', // string
+    'filters' => 'filters_example', // string
+    'search_filters' => 'search_filters_example', // string
+    'sorts' => 'sorts_example', // string
+    'demo' => True, // bool
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->getApiComments($page, $count, $text_search, $by_ip_from_comment, $filters, $search_filters, $sorts, $demo, $sso);
+    $result = $apiInstance->getApiComments($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getApiComments: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

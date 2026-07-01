@@ -1,17 +1,17 @@
-Bulk-brugerinformation for en tenant. Givet userIds returneres visningsoplysninger fra User / SSOUser.
-Bruges af comment widget til at berige brugere, der lige er dukket op via en tilstedeværelsesbegivenhed.
+Bulk brugerinfo for en lejer. Givet bruger‑ID'er, returneres visningsinfo fra User / SSOUser.  
+Bruges af kommentarfunktionen til at berige brugere, der netop er dukket op via en tilstedeværelseshændelse.  
 Ingen sidekontekst: privatliv håndhæves ensartet (private profiler maskeres).
 
 ## Parametre
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Ja |  |
-| ids | string | query | Ja | Komma-separerede userIds. |
+|------|------|-----------|----------|-------------|
+| tenantId | string | path | Yes |  |
+| ids | string | query | Yes | Komma‑adskilte bruger‑ID'er. |
 
 ## Svar
 
-Returnerer: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersInfoResponse.php)
+Returns: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersInfoResponse.php)
 
 ## Eksempel
 
@@ -23,12 +23,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Hvis du vil bruge en brugerdefineret HTTP-klient, angiv din klient, som implementerer `GuzzleHttp\ClientInterface`.
+    // Hvis du vil bruge en brugerdefineret HTTP-klient, skal du give din klient, som implementerer `GuzzleHttp\ClientInterface`.
     // Dette er valgfrit, `GuzzleHttp\Client` vil blive brugt som standard.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$ids = 'ids_example'; // string | Kommaseparerede userIds.
+
+$tenant_id = 'tenant_id_example'; // streng
+$ids = 'ids_example'; // streng | Komma‑adskilte bruger‑ID'er.
+
 
 try {
     $result = $apiInstance->getUsersInfo($tenant_id, $ids);

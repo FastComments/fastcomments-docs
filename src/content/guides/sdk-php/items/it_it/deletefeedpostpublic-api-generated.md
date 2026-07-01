@@ -1,7 +1,7 @@
-## Parametri
+## Parameters
 
-| Nome | Tipo | Posizione | Richiesto | Descrizione |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+|------|------|-----------|--------------|-------------|
 | tenantId | string | path | Sì |  |
 | postId | string | path | Sì |  |
 | broadcastId | string | query | No |  |
@@ -13,7 +13,7 @@ Restituisce: [`DeleteFeedPostPublicResponse`](https://github.com/FastComments/fa
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di deleteFeedPostPublic'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio deleteFeedPostPublic'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -21,17 +21,21 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Se vuoi usare un client HTTP personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
+    // Se desideri utilizzare un client HTTP personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
     // Questo è opzionale, `GuzzleHttp\Client` verrà usato come predefinito.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $post_id = 'post_id_example'; // string
-$broadcast_id = 'broadcast_id_example'; // string
-$sso = 'sso_example'; // string
+$options = [
+    'broadcast_id' => 'broadcast_id_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->deleteFeedPostPublic($tenant_id, $post_id, $broadcast_id, $sso);
+    $result = $apiInstance->deleteFeedPostPublic($tenant_id, $post_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->deleteFeedPostPublic: ', $e->getMessage(), PHP_EOL;

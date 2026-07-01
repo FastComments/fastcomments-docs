@@ -1,11 +1,11 @@
 ## Paramètres
 
-| Nom | Type | Requis | Description |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Oui |  |
-| urlId | string | Oui |  |
-| id | string | Oui |  |
-| title | string | Non |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| id | string | Yes |  |
+| title | string | No |  |
 
 ## Réponse
 
@@ -13,20 +13,16 @@ Renvoie : [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-cpp
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de createV2PageReact'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple createV2PageReact'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
-utility::string_t urlId = utility::conversions::to_string_t("homepage-landing");
-utility::string_t id = utility::conversions::to_string_t("user-987@example.com");
-boost::optional<utility::string_t> title = boost::optional<utility::string_t>(utility::conversions::to_string_t("Introducing FastComments"));
-
-api->createV2PageReact(tenantId, urlId, id, title)
-    .then([](std::shared_ptr<CreateV1PageReact> resp){
-        auto createdCopy = std::make_shared<CreateV1PageReact>(*resp);
-        return createdCopy;
-    })
-    .then([](std::shared_ptr<CreateV1PageReact> created){
-        (void)created;
-    })
-    .wait();
+api->createV2PageReact(
+    utility::string_t(U("my-tenant-789")),
+    utility::string_t(U("https://example.com/articles/12345")),
+    utility::string_t(U("user-42")),
+    boost::optional<utility::string_t>(U("Helpful"))
+).then([](pplx::task<std::shared_ptr<CreateV1PageReact>> task){
+    try{
+        auto response = task.get();
+    }catch(const std::exception&){ }
+});
 [inline-code-end]

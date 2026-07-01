@@ -2,7 +2,7 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | No |  |
+| tenantId | string | query | Yes |  |
 
 ## Response
 
@@ -22,7 +22,7 @@ import (
 )
 
 func main() {
-	tenantId := "tenantId_example" // string |  (optional)
+	tenantId := "tenantId_example" // string | 
 	bulkCreateHashTagsBody := *openapiclient.NewBulkCreateHashTagsBody([]openapiclient.BulkCreateHashTagsBodyTagsInner{*openapiclient.NewBulkCreateHashTagsBodyTagsInner("Tag_example")}) // BulkCreateHashTagsBody |  (optional)
 
 	configuration := openapiclient.NewConfiguration()

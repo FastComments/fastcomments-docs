@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | questionId | string | query | Non |  |
@@ -12,24 +12,24 @@
 
 ## Réponse
 
-Renvoie : [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AggregateQuestionResultsResponse.swift)
+Retourne : [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AggregateQuestionResultsResponse.swift)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple d\'aggregateQuestionResults'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'aggregateQuestionResults Exemple'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Les exemples de code suivants sont encore en version bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Les exemples de code suivants sont encore bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let questionId = "questionId_example" // String |  (optionnel)
-let questionIds = ["inner_example"] // [String] |  (optionnel)
-let urlId = "urlId_example" // String |  (optionnel)
-let timeBucket = AggregateTimeBucket() // AggregateTimeBucket |  (optionnel)
-let startDate = Date() // Date |  (optionnel)
-let forceRecalculate = true // Bool |  (optionnel)
+let questionId = "questionId_example" // String |  (optional)
+let questionIds = ["inner_example"] // [String] |  (optional)
+let urlId = "urlId_example" // String |  (optional)
+let timeBucket = AggregateTimeBucket() // AggregateTimeBucket |  (optional)
+let startDate = Date() // Date |  (optional)
+let forceRecalculate = true // Bool |  (optional)
 
-DefaultAPI.aggregateQuestionResults(tenantId: tenantId, questionId: questionId, questionIds: questionIds, urlId: urlId, timeBucket: timeBucket, startDate: startDate, forceRecalculate: forceRecalculate) { (response, error) in
+DefaultAPI.aggregateQuestionResults(tenantId: tenantId, options: DefaultAPI.AggregateQuestionResultsOptions(questionId: questionId, questionIds: questionIds, urlId: urlId, timeBucket: timeBucket, startDate: startDate, forceRecalculate: forceRecalculate)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -40,5 +40,3 @@ DefaultAPI.aggregateQuestionResults(tenantId: tenantId, questionId: questionId, 
     }
 }
 [inline-code-end]
-
----

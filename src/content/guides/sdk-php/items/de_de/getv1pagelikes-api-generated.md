@@ -1,13 +1,13 @@
 ## Parameter
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Ja |  |
-| urlId | string | query | Ja |  |
+| Name   | Typ   | Ort    | Erforderlich | Beschreibung |
+|--------|-------|--------|--------------|--------------|
+| tenantId | string | Pfad | Ja |  |
+| urlId   | string | Abfrage | Ja |  |
 
 ## Antwort
 
-Gibt zurück: [`GetV1PageLikes`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetV1PageLikes.php)
+Rückgabe: [`GetV1PageLikes`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetV1PageLikes.php)
 
 ## Beispiel
 
@@ -23,8 +23,10 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     // Dies ist optional, `GuzzleHttp\Client` wird standardmäßig verwendet.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $url_id = 'url_id_example'; // string
+
 
 try {
     $result = $apiInstance->getV1PageLikes($tenant_id, $url_id);

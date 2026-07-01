@@ -1,26 +1,26 @@
----
 ## 參數
 
-| 名稱 | 類型 | 必填 | 說明 |
+| 名稱 | 類型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| commentId | string | 是 |  |
-| sso | string | 否 |  |
+| commentId | string | Yes |  |
+| broadcastId | string | No |  |
+| tenantId | string | No |  |
+| sso | string | No |  |
 
 ## 回應
 
-回傳：[`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+返回：[`PostUnFlagCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostUnFlagCommentResponse.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'postUnFlagComment 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const commentId: string = '5f8d04b2-9c3a-4d13-bb8a-123456789abc';
-  const resultWithoutSso: APIEmptyResponse = await postUnFlagComment(commentId);
-  const ssoToken: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0NTY3OCJ9.signature';
-  const resultWithSso: APIEmptyResponse = await postUnFlagComment(commentId, ssoToken);
-  console.log(resultWithoutSso, resultWithSso);
-})();
+async () => {
+  const response: PostUnFlagCommentResponse = await postUnFlagComment(
+    "cmt_12345",          // commentId
+    "brd_67890",          // broadcastId (可選)
+    "tenant_abc",         // tenantId (可選)
+    "sso_user_token_789"  // sso (可選)
+  );
+};
 [inline-code-end]
-
----

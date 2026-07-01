@@ -1,7 +1,8 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | כן |  |
 | text-search | string | query | לא |  |
 | byIPFromComment | string | query | לא |  |
 | filters | string | query | לא |  |
@@ -15,11 +16,12 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת postApiExport'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postApiExport דוגמה'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// דוגמאות הקוד הבאות עדיין בגרסת בטא. לכל בעיה, דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// הדוגמאות הקוד הבאות עדיין בגרסת בטא. עבור כל בעיה, אנא דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let textSearch = "textSearch_example" // String |  (אופציונלי)
 let byIPFromComment = "byIPFromComment_example" // String |  (אופציונלי)
 let filters = "filters_example" // String |  (אופציונלי)
@@ -27,7 +29,7 @@ let searchFilters = "searchFilters_example" // String |  (אופציונלי)
 let sorts = "sorts_example" // String |  (אופציונלי)
 let sso = "sso_example" // String |  (אופציונלי)
 
-ModerationAPI.postApiExport(textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, sso: sso) { (response, error) in
+ModerationAPI.postApiExport(tenantId: tenantId, options: ModerationAPI.PostApiExportOptions(textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -38,5 +40,3 @@ ModerationAPI.postApiExport(textSearch: textSearch, byIPFromComment: byIPFromCom
     }
 }
 [inline-code-end]
-
----

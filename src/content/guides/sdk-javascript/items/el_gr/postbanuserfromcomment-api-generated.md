@@ -2,42 +2,49 @@
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
-| commentId | string | Ναι |  |
-| banEmail | boolean | Όχι |  |
-| banEmailDomain | boolean | Όχι |  |
-| banIP | boolean | Όχι |  |
-| deleteAllUsersComments | boolean | Όχι |  |
-| bannedUntil | string | Όχι |  |
-| isShadowBan | boolean | Όχι |  |
-| updateId | string | Όχι |  |
-| banReason | string | Όχι |  |
-| sso | string | Όχι |  |
+| commentId | string | Yes |  |
+| banEmail | boolean | No |  |
+| banEmailDomain | boolean | No |  |
+| banIP | boolean | No |  |
+| deleteAllUsersComments | boolean | No |  |
+| bannedUntil | string | No |  |
+| isShadowBan | boolean | No |  |
+| updateId | string | No |  |
+| banReason | string | No |  |
+| tenantId | string | No |  |
+| sso | string | No |  |
 
 ## Απάντηση
 
-Επιστρέφει: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BanUserFromCommentResult.ts)
+Επιστρέφει: [`PostBanUserFromCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostBanUserFromCommentResponse.ts)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα postBanUserFromComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postBanUserFromComment Παράδειγμα'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const commentId: string = "cmt_9f8a7b4e";
-const bannedUntil: string = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString();
-const sso: string = "sso-user-7f3b2c";
-const updateId: string = "upd_20260619_001";
-const banReason: string = "Repeated harassment across multiple threads";
-const result: BanUserFromCommentResult = await postBanUserFromComment(
-  commentId,
-  true,        // απαγόρευση email
-  false,       // απαγόρευση domain email
-  true,        // απαγόρευση IP
-  true,        // διαγραφή όλων των σχολίων του χρήστη
-  bannedUntil,
-  false,       // σκιώδης απαγόρευση
-  updateId,
-  banReason,
-  sso
-);
-[inline-code-end]
+async function runBan() {
+  const commentId: string = "cmt_5f8a2b3c";
+  const banEmail: boolean = true;
+  const banIP: boolean = false;
+  const deleteAllUsersComments: boolean = true;
+  const bannedUntil: string = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString();
+  const isShadowBan: boolean = false;
+  const banReason: string = "Repeated spam posting";
+  const tenantId: string = "tenant_12345";
 
----
+  const response: PostBanUserFromCommentResponse = await postBanUserFromComment(
+    commentId,
+    banEmail,
+    undefined,
+    banIP,
+    deleteAllUsersComments,
+    bannedUntil,
+    isShadowBan,
+    undefined,
+    banReason,
+    tenantId
+  );
+  console.log(response);
+}
+runBan();
+[inline-code-end]

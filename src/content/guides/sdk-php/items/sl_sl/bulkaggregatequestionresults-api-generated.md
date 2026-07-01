@@ -1,17 +1,17 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | forceRecalculate | boolean | query | Ne |  |
 
-## Odgovor
+## Odziv
 
 Vrne: [`BulkAggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/BulkAggregateQuestionResultsResponse.php)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer bulkAggregateQuestionResults'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'bulkAggregateQuestionResults Primer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -24,14 +24,16 @@ $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKe
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Če želite uporabiti lastni HTTP odjemalec, posredujte odjemalca, ki implementira `GuzzleHttp\ClientInterface`.
-    // To je neobvezno, kot privzeti bo uporabljen `GuzzleHttp\Client`.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $bulk_aggregate_question_results_request = new \FastComments\Client\Model\BulkAggregateQuestionResultsRequest(); // \FastComments\Client\Model\BulkAggregateQuestionResultsRequest
 $force_recalculate = True; // bool
+
 
 try {
     $result = $apiInstance->bulkAggregateQuestionResults($tenant_id, $bulk_aggregate_question_results_request, $force_recalculate);
@@ -40,5 +42,3 @@ try {
     echo 'Exception when calling DefaultApi->bulkAggregateQuestionResults: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

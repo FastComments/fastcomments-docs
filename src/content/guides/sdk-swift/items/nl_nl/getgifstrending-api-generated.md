@@ -1,7 +1,7 @@
 ## Parameters
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
-|------|------|----------|----------|-------------|
+|------|------|----------|----------|---------------|
 | tenantId | string | path | Ja |  |
 | locale | string | query | Nee |  |
 | rating | string | query | Nee |  |
@@ -15,15 +15,15 @@ Retourneert: [`GetGifsTrendingResponse`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'getGifsTrending Voorbeeld'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// De volgende codevoorbeelden zijn nog in bèta. Meld eventuele problemen via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De volgende codevoorbeelden zijn nog in bèta. Voor eventuele problemen, rapporteer via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let locale = "locale_example" // String |  (optioneel)
-let rating = "rating_example" // String |  (optioneel)
-let page = 987 // Double |  (optioneel)
+let locale = "locale_example" // String |  (optional)
+let rating = "rating_example" // String |  (optional)
+let page = 987 // Double |  (optional)
 
-PublicAPI.getGifsTrending(tenantId: tenantId, locale: locale, rating: rating, page: page) { (response, error) in
+PublicAPI.getGifsTrending(tenantId: tenantId, options: PublicAPI.GetGifsTrendingOptions(locale: locale, rating: rating, page: page)) { (response, error) in
     guard error == nil else {
         print(error)
         return

@@ -1,7 +1,6 @@
----
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | id | string | 否 |  |
@@ -14,12 +13,7 @@
 
 [inline-code-attrs-start title = 'deleteTenantPackage 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteTenantPackage(tenantId = "my-tenant-123", id = "package-987")
-if response.isSome:
-  let emptyResp = response.get()
-  echo emptyResp
-else:
-  echo "Failed to delete tenant package"
+let (apiResponse, httpResponse) = client.deleteTenantPackage(tenantId = "my-tenant-123", id = "pkg-456def")
+if apiResponse.isSome:
+  let emptyResponse = apiResponse.get()
 [inline-code-end]
-
----

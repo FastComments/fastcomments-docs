@@ -1,7 +1,8 @@
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Ime | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Da |  |
 | sso | string | query | Ne |  |
 
 ## Odgovor
@@ -22,16 +23,19 @@ import (
 )
 
 func main() {
-	sso := "sso_example" // string |  (neobavezno)
+	tenantId := "tenantId_example" // string | 
+	sso := "sso_example" // string | (neobavezno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetUserBanPreference(context.Background()).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetUserBanPreference(context.Background()).TenantId(tenantId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetUserBanPreference``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor iz `GetUserBanPreference`: APIModerateGetUserBanPreferencesResponse
+	// odgovor od `GetUserBanPreference`: APIModerateGetUserBanPreferencesResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetUserBanPreference`: %v\n", resp)
 }
 [inline-code-end]
+
+---

@@ -1,3 +1,4 @@
+---
 ## Parametreler
 
 | Ad | Tür | Gerekli | Açıklama |
@@ -14,14 +15,27 @@ Döndürür: [`GetGifsSearchResponse`](https://github.com/FastComments/fastcomme
 
 ## Örnek
 
-[inline-code-attrs-start title = 'getGifsSearch Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getGifsSearch Örnek'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-42';
-const search: string = 'golden hour sunset';
-const locale: string = 'en-US';
-const rating: string = 'pg';
-const page: number = 1;
-const result: GetGifsSearchResponse = await getGifsSearch(tenantId, search, locale, rating, page);
+async function demo() {
+  const tenantId: string = "tenant_9f8b7c";
+  const search: string = "funny cats";
+  const locale: string = "en-US";
+  const rating: string = "pg";
+  const page: number = 1;
+
+  const result: GetGifsSearchResponse = await getGifsSearch(
+    tenantId,
+    search,
+    locale,
+    rating,
+    page
+  );
+
+  console.log(result);
+}
+
+demo();
 [inline-code-end]
 
 ---

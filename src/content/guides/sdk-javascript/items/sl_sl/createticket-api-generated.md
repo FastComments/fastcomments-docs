@@ -1,28 +1,28 @@
-## Parametri
+## Parameters
 
-| Ime | Tip | Zahtevano | Opis |
+| Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | userId | string | Da |  |
 | createTicketBody | CreateTicketBody | Da |  |
 
-## Odgovor
+## Response
 
-Vrne: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTicketResponse.ts)
+Vrne: [`CreateTicketResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTicketResponse1.ts)
 
-## Primer
+## Example
 
-[inline-code-attrs-start title = 'Primer createTicket'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createTicket Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-enterprises";
-const userId: string = "user_12039";
-const createTicketBody: CreateTicketBody = {
-  subject: "Login failures for multiple users",
-  description: "Users report 500 error when authenticating since 2026-06-18 08:00 UTC. Affects web and mobile.",
-  priority: "urgent",
-  tags: ["authentication", "outage"]
-};
-const result: CreateTicketResponse = await createTicket(tenantId, userId, createTicketBody);
-[inline-code-end]
+const tenantId: string = "tenant_12345";
+const userId: string = "user_98765";
 
----
+const ticketBody: CreateTicketBody = {
+  subject: "Issue with payment processing"
+  // description?: string je neobvezen in je izpuščen
+};
+
+const response: CreateTicketResponse1 = await createTicket(tenantId, userId, ticketBody);
+// Primer uporabe neobveznega polja iz odgovora
+// console.log(response.ticket?.id);
+[inline-code-end]

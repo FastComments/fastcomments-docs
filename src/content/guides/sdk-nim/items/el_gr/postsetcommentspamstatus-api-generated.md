@@ -2,10 +2,9 @@
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
+| tenantId | string | Ναι |  |
 | commentId | string | Ναι |  |
-| spam | bool | Όχι |  |
-| permNotSpam | bool | Όχι |  |
-| sso | string | Όχι |  |
+| options | PostSetCommentSpamStatusOptions | Όχι |  |
 
 ## Απόκριση
 
@@ -13,17 +12,10 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα postSetCommentSpamStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postSetCommentSpamStatus Παράδειγμα'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postSetCommentSpamStatus(
-  commentId = "cmt-20250619-842",
-  spam = false,
-  permNotSpam = false,
-  sso = ""
-)
-if response.isSome:
-  let apiEmpty = response.get()
-  discard apiEmpty
+let defaultOpts = PostSetCommentSpamStatusOptions()
+let (maybeResp, httpResp) = client.postSetCommentSpamStatus(tenantId = "my-tenant-123", commentId = "cmt-456789", options = defaultOpts)
+if maybeResp.isSome:
+  let resp = maybeResp.get()
 [inline-code-end]
-
----

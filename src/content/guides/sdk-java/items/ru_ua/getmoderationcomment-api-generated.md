@@ -1,22 +1,22 @@
----
-## Parameters
+## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Yes |  |
-| includeEmail | boolean | query | No |  |
-| includeIP | boolean | query | No |  |
-| sso | string | query | No |  |
+| Назва | Тип | Location | Обов'язково | Опис |
+|------|------|----------|-------------|------|
+| tenantId | string | query | Так |  |
+| commentId | string | path | Так |  |
+| includeEmail | boolean | query | Ні |  |
+| includeIP | boolean | query | Ні |  |
+| sso | string | query | Ні |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationAPICommentResponse.java)
+Повертає: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationAPICommentResponse.java)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример getModerationComment'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад getModerationComment'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Импорт классов:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,12 +29,13 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     Boolean includeEmail = true; // Boolean | 
     Boolean includeIP = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationAPICommentResponse result = apiInstance.getModerationComment(commentId)
+      ModerationAPICommentResponse result = apiInstance.getModerationComment(tenantId, commentId)
             .includeEmail(includeEmail)
             .includeIP(includeIP)
             .sso(sso)
@@ -50,5 +51,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

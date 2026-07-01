@@ -25,13 +25,17 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $post_id = 'post_id_example'; // string
-$broadcast_id = 'broadcast_id_example'; // string
-$sso = 'sso_example'; // string
+$options = [
+    'broadcast_id' => 'broadcast_id_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->deleteFeedPostPublic($tenant_id, $post_id, $broadcast_id, $sso);
+    $result = $apiInstance->deleteFeedPostPublic($tenant_id, $post_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->deleteFeedPostPublic: ', $e->getMessage(), PHP_EOL;

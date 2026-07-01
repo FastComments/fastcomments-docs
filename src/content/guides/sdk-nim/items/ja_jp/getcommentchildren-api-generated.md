@@ -1,22 +1,21 @@
-## Parameters
+## パラメータ
 
-| 名前 | 型 | 必須 | 説明 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| commentId | string | はい |  |
-| sso | string | いいえ |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| sso | string = "" | No |  |
 
-## Response
+## レスポンス
 
-戻り値: [`Option[ModerationAPIChildCommentsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_api_child_comments_response.nim)
+Returns: [`Option[ModerationAPIChildCommentsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_api_child_comments_response.nim)
 
-## Example
+## 例
 
 [inline-code-attrs-start title = 'getCommentChildren の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getCommentChildren(commentId = "comment-98765", sso = "")
-if response.isSome:
-  let childResp = response.get()
-  discard childResp
+let (childRespOpt, httpResp) = client.getCommentChildren(tenantId = "my-tenant-123", commentId = "cmt-456789", sso = "")
+if childRespOpt.isSome:
+  let childResp = childRespOpt.get()
+  echo childResp
 [inline-code-end]
-
----

@@ -1,10 +1,12 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Υποχρεωτικό | Περιγραφή |
+| Όνομα | Τύπος | Θέση | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Ναι |  |
-| approved | boolean | query | Όχι |  |
-| sso | string | query | Όχι |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| approved | boolean | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Απόκριση
 
@@ -18,19 +20,19 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 comment_id = 'comment_id_example' # String | 
 opts = {
   approved: true, # Boolean | 
+  broadcast_id: 'broadcast_id_example', # String | 
   sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.post_set_comment_approval_status(comment_id, opts)
+  result = api_instance.post_set_comment_approval_status(tenant_id, comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
-  puts "Error when calling ModerationApi->post_set_comment_approval_status: #{e}"
+  puts "Σφάλμα κατά την κλήση του ModerationApi->post_set_comment_approval_status: #{e}"
 end
 [inline-code-end]
-
----

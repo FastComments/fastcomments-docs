@@ -1,8 +1,8 @@
----
-## Параметры
+## Parameters
 
 | Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
 | userId | string | query | Нет |  |
 | trustFactor | string | query | Нет |  |
 | sso | string | query | Нет |  |
@@ -21,20 +21,23 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Если вы хотите использовать собственный HTTP-клиент, передайте ваш клиент, который реализует `GuzzleHttp\ClientInterface`.
-    // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
+    // Если вы хотите использовать пользовательский HTTP‑клиент, передайте ваш клиент, реализующий `GuzzleHttp\ClientInterface`.
+    // Это опционально, по умолчанию будет использоваться `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
-$user_id = 'user_id_example'; // string
-$trust_factor = 'trust_factor_example'; // string
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // строка
+$options = [
+    'user_id' => 'user_id_example', // строка
+    'trust_factor' => 'trust_factor_example', // строка
+    'sso' => 'sso_example', // строка
+];
+
 
 try {
-    $result = $apiInstance->setTrustFactor($user_id, $trust_factor, $sso);
+    $result = $apiInstance->setTrustFactor($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->setTrustFactor: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

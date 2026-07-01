@@ -11,14 +11,9 @@ Döndürür: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastco
 
 ## Örnek
 
-[inline-code-attrs-start title = 'deleteTenantPackage Örneği'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteTenantPackage Örnek'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteTenantPackage(tenantId = "my-tenant-123", id = "package-987")
-if response.isSome:
-  let emptyResp = response.get()
-  echo emptyResp
-else:
-  echo "Failed to delete tenant package"
+let (apiResponse, httpResponse) = client.deleteTenantPackage(tenantId = "my-tenant-123", id = "pkg-456def")
+if apiResponse.isSome:
+  let emptyResponse = apiResponse.get()
 [inline-code-end]
-
----

@@ -2,15 +2,15 @@
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Ja |  |
-| commentId | string | path | Ja |  |
-| broadcastId | string | query | Ja |  |
-| editKey | string | query | Nein |  |
-| sso | string | query | Nein |  |
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | Yes |  |
+| editKey | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Antwort
 
-Gibt zurück: [`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PublicAPIDeleteCommentResponse.php)
+Rückgabe: [`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PublicAPIDeleteCommentResponse.php)
 
 ## Beispiel
 
@@ -26,14 +26,18 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     // Dies ist optional, `GuzzleHttp\Client` wird standardmäßig verwendet.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $comment_id = 'comment_id_example'; // string
 $broadcast_id = 'broadcast_id_example'; // string
-$edit_key = 'edit_key_example'; // string
-$sso = 'sso_example'; // string
+$options = [
+    'edit_key' => 'edit_key_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->deleteCommentPublic($tenant_id, $comment_id, $broadcast_id, $edit_key, $sso);
+    $result = $apiInstance->deleteCommentPublic($tenant_id, $comment_id, $broadcast_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->deleteCommentPublic: ', $e->getMessage(), PHP_EOL;

@@ -1,19 +1,21 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Имя | Тип | Местоположение | Обязательно | Описание |
+|------|------|----------------|-------------|----------|
+| tenantId | string | query | Да |  |
 | commentId | string | path | Да |  |
+| broadcastId | string | query | Нет |  |
 | sso | string | query | Нет |  |
 
 ## Ответ
 
-Возвращает: [`PostRemoveCommentResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/PostRemoveCommentResponse.java)
+Возвращает: [`PostRemoveCommentApiResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/PostRemoveCommentApiResponse.java)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример postRemoveComment'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postRemoveComment Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Импорт классов:
+// Импортировать классы:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,10 +28,13 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
+    String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      PostRemoveCommentResponse result = apiInstance.postRemoveComment(commentId)
+      PostRemoveCommentApiResponse result = apiInstance.postRemoveComment(tenantId, commentId)
+            .broadcastId(broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);

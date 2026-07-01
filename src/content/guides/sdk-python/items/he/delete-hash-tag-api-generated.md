@@ -1,9 +1,9 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | חובה | תיאור |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tag | string | path | כן |  |
-| tenantId | string | query | לא |  |
+| tenantId | string | query | Yes |  |
+| tag | string | path | Yes |  |
 
 ## תגובה
 
@@ -11,7 +11,7 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת delete_hash_tag'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_hash_tag דוגמה'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.models.api_empty_response import APIEmptyResponse
@@ -19,33 +19,29 @@ from client.models.delete_hash_tag_request_body import DeleteHashTagRequestBody
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת host היא אופציונלית ובברירת המחדל היא https://fastcomments.com
-# ראה configuration.py לרשימת כל פרמטרי התצורה הנתמכים.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
+# הגדרת המארח היא אופציונלית ומוגדרת כברירת מחדל ל-https://fastcomments.com
+# ראו configuration.py לקבלת רשימה של כל פרמטרי הקונפיגורציה הנתמכים.
+# הלקוח חייב להגדיר את פרמטי האימות וההרשאה
+# בהתאמה למדיניות האבטחה של שרת ה-API.
+# דוגמאות לכל שיטת אימות מסופקות למטה, השתמשו בדוגמה שה
+# מתאימה למקרה השימוש שלכם באימות.
 
-# על client להגדיר את פרמטרי האימות וההרשאות
-# בהתאם למדיניות האבטחה של שרת ה-API.
-# בדוגמאות להלן מופיעות דוגמאות לכל שיטת אימות; השתמש בדוגמה
-# שמתאימה למקרה השימוש שלך.
-
-# Configure API key authorization: api_key
+# הגדרת הרשאות למפתח API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# הסר את ההערה מהשורה למטה כדי להגדיר קידומת (למשל Bearer) עבור מפתח ה-API, אם נדרש
+# בטלו את ההערה למטה כדי להגדיר קידומת (למשל Bearer) למפתח API, אם נדרש
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# פתח הקשר עם מופע של ה-API client
+# הכנסו להקשר עם מופע של לקוח ה-API
 with client.ApiClient(configuration) as api_client:
-    # צור מופע של מחלקת ה-API
+    # צרו מופע של מחלקת ה-API
     api_instance = client.DefaultApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     tag = 'tag_example' # str | 
-    tenant_id = 'tenant_id_example' # str |  (אופציונלי)
-    delete_hash_tag_request_body = client.DeleteHashTagRequestBody() # DeleteHashTagRequestBody |  (אופציונלי)
+    delete_hash_tag_request_body = client.DeleteHashTagRequestBody() # DeleteHashTagRequestBody |  (optional)
 
     try:
-        api_response = api_instance.delete_hash_tag(tag, tenant_id=tenant_id, delete_hash_tag_request_body=delete_hash_tag_request_body)
+        api_response = api_instance.delete_hash_tag(tenant_id, tag, delete_hash_tag_request_body)
         print("The response of DefaultApi->delete_hash_tag:\n")
         pprint(api_response)
     except Exception as e:

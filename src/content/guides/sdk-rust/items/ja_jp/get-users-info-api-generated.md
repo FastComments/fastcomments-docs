@@ -1,29 +1,27 @@
----
-テナント向けの一括ユーザー情報。userIds を受け取り、User / SSOUser から表示情報を返します。
-コメントウィジェットが、プレゼンスイベントで新たに出現したユーザーを補強するために使用します。
-ページコンテキストがないため、プライバシーは一律に適用されます（非公開プロフィールはマスクされます）。
+Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
+Used by the comment widget to enrich users that just appeared via a presence event.  
+No page context: privacy is enforced uniformly (private profiles are masked).
 
-## パラメータ
+## Parameters
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
 | tenant_id | String | はい |  |
 | ids | String | はい |  |
 
-## レスポンス
+## Response
 
-戻り値: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_info_response.rs)
+返却: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_info_response.rs)
 
-## 例
+## Example
 
-[inline-code-attrs-start title = 'get_users_info の例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_users_info 例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: GetUsersInfoParams = GetUsersInfoParams {
+let params = GetUsersInfoParams {
     tenant_id: "acme-corp-tenant".to_string(),
-    ids: "alice@example.com,bob@example.com,carol@example.com".to_string(),
-    page_size: Some(100),
+    ids: "user-1,user-2".to_string(),
 };
-let users_response: PageUsersInfoResponse = get_users_info(&configuration, params).await?;
+let page: PageUsersInfoResponse = get_users_info(&configuration, params).await?;
 [inline-code-end]
 
 ---

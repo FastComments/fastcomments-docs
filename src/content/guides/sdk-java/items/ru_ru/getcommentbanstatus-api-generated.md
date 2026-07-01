@@ -1,7 +1,9 @@
+---
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
 | commentId | string | path | Да |  |
 | sso | string | query | Нет |  |
 
@@ -26,10 +28,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      GetCommentBanStatusResponse result = apiInstance.getCommentBanStatus(commentId)
+      GetCommentBanStatusResponse result = apiInstance.getCommentBanStatus(tenantId, commentId)
             .sso(sso)
             .execute();
       System.out.println(result);

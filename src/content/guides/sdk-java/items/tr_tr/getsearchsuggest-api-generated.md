@@ -1,7 +1,8 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Evet |  |
 | text-search | string | query | Hayır |  |
 | sso | string | query | Hayır |  |
 
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String textSearch = "textSearch_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationSuggestResponse result = apiInstance.getSearchSuggest()
+      ModerationSuggestResponse result = apiInstance.getSearchSuggest(tenantId)
             .textSearch(textSearch)
             .sso(sso)
             .execute();

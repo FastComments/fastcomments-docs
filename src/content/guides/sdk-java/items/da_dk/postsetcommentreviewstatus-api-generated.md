@@ -1,10 +1,12 @@
 ## Parametre
 
-| Name | Type | Location | Påkrævet | Beskrivelse |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Yes |  |
-| reviewed | boolean | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Ja |  |
+| commentId | string | path | Ja |  |
+| reviewed | boolean | query | Nej |  |
+| broadcastId | string | query | Nej |  |
+| sso | string | query | Nej |  |
 
 ## Svar
 
@@ -14,7 +16,7 @@ Returnerer: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ja
 
 [inline-code-attrs-start title = 'postSetCommentReviewStatus Eksempel'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importer klasser:
+// Importér klasser:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -27,12 +29,15 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     Boolean reviewed = true; // Boolean | 
+    String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      APIEmptyResponse result = apiInstance.postSetCommentReviewStatus(commentId)
+      APIEmptyResponse result = apiInstance.postSetCommentReviewStatus(tenantId, commentId)
             .reviewed(reviewed)
+            .broadcastId(broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);

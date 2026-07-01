@@ -1,14 +1,14 @@
-## Параметры
+## Parameters
 
-| Имя | Тип | Location | Обязательный | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
 
-## Ответ
+## Response
 
-Возвращает: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_bulk_create_hash_tags_response.go)
+Returns: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_bulk_create_hash_tags_response.go)
 
-## Пример
+## Example
 
 [inline-code-attrs-start title = 'Пример AddHashTagsBulk'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -22,8 +22,8 @@ import (
 )
 
 func main() {
-	tenantId := "tenantId_example" // string |  (необязательно)
-	bulkCreateHashTagsBody := *openapiclient.NewBulkCreateHashTagsBody([]openapiclient.BulkCreateHashTagsBodyTagsInner{*openapiclient.NewBulkCreateHashTagsBodyTagsInner("Tag_example")}) // BulkCreateHashTagsBody |  (необязательно)
+	tenantId := "tenantId_example" // string | 
+	bulkCreateHashTagsBody := *openapiclient.NewBulkCreateHashTagsBody([]openapiclient.BulkCreateHashTagsBodyTagsInner{*openapiclient.NewBulkCreateHashTagsBodyTagsInner("Tag_example")}) // BulkCreateHashTagsBody |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

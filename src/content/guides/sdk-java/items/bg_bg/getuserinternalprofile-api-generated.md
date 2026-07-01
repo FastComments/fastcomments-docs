@@ -1,9 +1,10 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
-| commentId | string | query | Не |  |
-| sso | string | query | Не |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Отговор
 
@@ -11,9 +12,9 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за getUserInternalProfile'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUserInternalProfile Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Импортиране на класове:
+// Импорт на класове:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      GetUserInternalProfileResponse result = apiInstance.getUserInternalProfile()
+      GetUserInternalProfileResponse result = apiInstance.getUserInternalProfile(tenantId)
             .commentId(commentId)
             .sso(sso)
             .execute();
@@ -44,5 +46,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

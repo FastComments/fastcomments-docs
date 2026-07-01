@@ -2,17 +2,17 @@
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | はい |  |
-| afterId | string | query | いいえ |  |
-| afterCreatedAt | integer | query | いいえ |  |
-| unreadOnly | boolean | query | いいえ |  |
-| dmOnly | boolean | query | いいえ |  |
-| noDm | boolean | query | いいえ |  |
-| sso | string | query | いいえ |  |
+| tenantId | string | query | Yes |  |
+| afterId | string | query | No |  |
+| afterCreatedAt | integer | query | No |  |
+| unreadOnly | boolean | query | No |  |
+| dmOnly | boolean | query | No |  |
+| noDm | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## レスポンス
 
-戻り値: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ResetUserNotificationsResponse.php)
+Returns: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ResetUserNotificationsResponse.php)
 
 ## 例
 
@@ -24,22 +24,28 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // カスタムのHTTPクライアントを使用したい場合、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
-    // これはオプションです。デフォルトでは `GuzzleHttp\Client` が使用されます。
+    // カスタム HTTP クライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
+    // これはオプションで、デフォルトでは `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$after_id = 'after_id_example'; // string
-$after_created_at = 56; // int
-$unread_only = True; // bool
-$dm_only = True; // bool
-$no_dm = True; // bool
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // 文字列
+$options = [
+    'after_id' => 'after_id_example', // 文字列
+    'after_created_at' => 56, // 整数
+    'unread_only' => True, // ブール
+    'dm_only' => True, // ブール
+    'no_dm' => True, // ブール
+    'sso' => 'sso_example', // 文字列
+];
+
 
 try {
-    $result = $apiInstance->resetUserNotifications($tenant_id, $after_id, $after_created_at, $unread_only, $dm_only, $no_dm, $sso);
+    $result = $apiInstance->resetUserNotifications($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->resetUserNotifications: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

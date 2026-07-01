@@ -22,13 +22,7 @@ The `DefaultAPI` contains authenticated methods that require an API key. These m
 
 ### ModerationAPI - Moderator Dashboard Methods
 
-The `ModerationAPI` contains methods that power the moderator dashboard. These methods cover:
-- **Comment moderation** - list, count, search, retrieve logs, and export comments
-- **Moderation actions** - remove/restore comments, flag, set review/spam/approval status, manage votes, and reopen/close threads
-- **Bans** - ban a user from a comment, undo bans, fetch pre-ban summaries, check ban status and preferences, and read banned-user counts
-- **Badges & trust** - award/remove badges, list manual badges, get/set a user's trust factor, and read a user's internal profile
-
-Every `ModerationAPI` method accepts an `sso` parameter so moderators can be authenticated via SSO.
+The `ModerationAPI` provides an extensive suite of live and fast moderation APIs. Every `ModerationAPI` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.
 
 **Example use case**: Building a moderation experience for moderators of your community
 

@@ -1,21 +1,25 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Назва | Тип | Обов’язковий | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Так |  |
 | urlId | string | Так |  |
 
 ## Відповідь
 
-Повертає: [`GetVotesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetVotesResponse.ts)
+Повертає: [`GetVotesResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetVotesResponse1.ts)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'Приклад getVotes'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_8421';
-const urlId: string | undefined = 'posts/2026/06/typescript-api-examples';
-const votes: GetVotesResponse = await getVotes(tenantId, urlId!);
-[inline-code-end]
+async function fetchVotes(): Promise<void> {
+  const tenantId: string = "acme-corp-01";
+  const urlId: string = "article-2024-05-15";
 
----
+  const response: GetVotesResponse1 = await getVotes(tenantId, urlId);
+
+  // Приклад отримання необов’язкового поля у відповіді
+  const firstVoteId: string | undefined = response?.votes?.[0]?.id;
+}
+[inline-code-end]

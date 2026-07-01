@@ -1,30 +1,27 @@
-Nuværende online-seere på en side: personer hvis websocket-session er abonneret på siden lige nu.
-Returnerer anonCount + totalCount (abonnenter for hele rummet, inklusive anonyme seere, som vi ikke opregner).
+Currently-online viewers of a page: people whose websocket session is subscribed to the page right now.  
+Returns anonCount + totalCount (room-wide subscribers, including anon viewers we don't enumerate).
 
-## Parametre
+## Parameters
 
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | urlId | string | Ja |  |
-| afterName | string | Nej |  |
-| afterUserId | string | Nej |  |
+| options | GetOnlineUsersOptions | Nej |  |
 
-## Svar
+## Response
 
-Returnerer: [`Option[PageUsersOnlineResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_online_response.nim)
+Returns: [`Option[PageUsersOnlineResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_online_response.nim)
 
-## Eksempel
+## Example
 
 [inline-code-attrs-start title = 'getOnlineUsers Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getOnlineUsers(tenantId = "my-tenant-123", urlId = "news/politics/top-story", afterName = "", afterUserId = "")
-if response.isSome:
-  let page = response.get()
-  echo "Received online users page:"
-  echo page
-else:
-  echo "No online users returned. HTTP status: ", httpResponse.statusCode
+let opts = GetOnlineUsersOptions()
+let (onlineUsersOpt, httpResp) = client.getOnlineUsers(tenantId = "my-tenant-123", urlId = "news/article-title", options = opts)
+if onlineUsersOpt.isSome:
+  let onlineUsers = onlineUsersOpt.get()
+  echo onlineUsers
 [inline-code-end]
 
 ---

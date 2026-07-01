@@ -1,35 +1,36 @@
 ## 매개변수
 
 | 이름 | 유형 | 필수 | 설명 |
-|------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| createQuestionConfigBody | CreateQuestionConfigBody | 예 |  |
+|------|------|------|------|
+| tenantId | string | Yes |  |
+| createQuestionConfigBody | CreateQuestionConfigBody | Yes |  |
 
 ## 응답
 
-반환: [`CreateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionConfigResponse.ts)
+반환: [`CreateQuestionConfigResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionConfigResponse1.ts)
 
-## 예제
+## 예시
 
 [inline-code-attrs-start title = 'createQuestionConfig 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "org-7b3d1e9f";
+const tenantId: string = "tenant_12345";
+
 const customOption: QuestionConfigCustomOptionsInner = {
-  key: "priority",
-  label: "Priority",
-  values: ["low", "medium", "high"],
-  defaultValue: "medium"
+  label: "Option A",
+  value: "a",
 };
+
 const createQuestionConfigBody: CreateQuestionConfigBody = {
-  name: "Customer Support Questions",
-  description: "Configuration for support-related question flows",
-  enabled: true,
-  moderation: { required: true, level: "manual" },
-  questionLimitPerUser: 5,
+  questionText: "What is your favorite color?",
+  isActive: true,
+  // 선택적 필드는 생략할 수 있습니다
   customOptions: [customOption],
-  allowAnonymous: false
 };
-const response: CreateQuestionConfigResponse = await createQuestionConfig(tenantId, createQuestionConfigBody);
+
+const response: CreateQuestionConfigResponse1 = await createQuestionConfig(
+  tenantId,
+  createQuestionConfigBody
+);
 [inline-code-end]
 
 ---

@@ -2,12 +2,13 @@
 
 | שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| text-search | string | query | לא |  |
-| byIPFromComment | string | query | לא |  |
-| filters | string | query | לא |  |
-| searchFilters | string | query | לא |  |
-| sorts | string | query | לא |  |
-| sso | string | query | לא |  |
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sorts | string | query | No |  |
+| sso | string | query | No |  |
 
 ## תגובה
 
@@ -15,9 +16,9 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-postApiExport'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת postApiExport'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Import classes:
+// ייבא מחלקות:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -30,6 +31,7 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String textSearch = "textSearch_example"; // String | 
     String byIPFromComment = "byIPFromComment_example"; // String | 
     String filters = "filters_example"; // String | 
@@ -37,7 +39,7 @@ public class Example {
     String sorts = "sorts_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationExportResponse result = apiInstance.postApiExport()
+      ModerationExportResponse result = apiInstance.postApiExport(tenantId)
             .textSearch(textSearch)
             .byIPFromComment(byIPFromComment)
             .filters(filters)

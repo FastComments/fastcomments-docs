@@ -1,21 +1,25 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| urlId | string | 예 |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
 
 ## 응답
 
-반환: [`GetVotesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetVotesResponse.ts)
+반환: [`GetVotesResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetVotesResponse1.ts)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'getVotes 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getVotes 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_8421';
-const urlId: string | undefined = 'posts/2026/06/typescript-api-examples';
-const votes: GetVotesResponse = await getVotes(tenantId, urlId!);
-[inline-code-end]
+async function fetchVotes(): Promise<void> {
+  const tenantId: string = "acme-corp-01";
+  const urlId: string = "article-2024-05-15";
 
----
+  const response: GetVotesResponse1 = await getVotes(tenantId, urlId);
+
+  // 응답에서 선택적 필드에 접근하는 예시
+  const firstVoteId: string | undefined = response?.votes?.[0]?.id;
+}
+[inline-code-end]

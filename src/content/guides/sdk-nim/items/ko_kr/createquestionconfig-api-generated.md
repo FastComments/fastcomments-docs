@@ -1,32 +1,24 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| createQuestionConfigBody | CreateQuestionConfigBody | 아니오 |  |
+| tenantId | string | Yes |  |
+| createQuestionConfigBody | CreateQuestionConfigBody | No |  |
 
 ## 응답
 
 반환: [`Option[CreateQuestionConfigResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_question_config_response.nim)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'createQuestionConfig 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createQuestionConfig 예시'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.createQuestionConfig(
+let configBody = CreateQuestionConfigBody()
+let (maybeResp, httpResp) = client.createQuestionConfig(
   tenantId = "my-tenant-123",
-  createQuestionConfigBody = CreateQuestionConfigBody(
-    label = "Article Question",
-    required = true,
-    minLength = 20,
-    maxLength = 1000,
-    allowedTags = @["comment","question","feedback"],
-    notifyModerators = false
-  )
+  createQuestionConfigBody = configBody,
 )
-if response.isSome:
-  let cfg = response.get()
-  echo "Created question config id: ", cfg.id
+if maybeResp.isSome:
+  let resp = maybeResp.get()
+  # 필요에 따라 resp 사용
 [inline-code-end]
-
----

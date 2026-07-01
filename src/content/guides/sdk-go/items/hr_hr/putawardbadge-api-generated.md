@@ -1,7 +1,8 @@
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
 | badgeId | string | query | Da |  |
 | userId | string | query | Ne |  |
 | commentId | string | query | Ne |  |
@@ -14,7 +15,7 @@ Vraća: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer PutAwardBadge'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PutAwardBadge Primjer'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -26,15 +27,16 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	badgeId := "badgeId_example" // string | 
-	userId := "userId_example" // string |  (neobavezno)
-	commentId := "commentId_example" // string |  (neobavezno)
-	broadcastId := "broadcastId_example" // string |  (neobavezno)
-	sso := "sso_example" // string |  (neobavezno)
+	userId := "userId_example" // string |  (opcionalno)
+	commentId := "commentId_example" // string |  (opcionalno)
+	broadcastId := "broadcastId_example" // string |  (opcionalno)
+	sso := "sso_example" // string |  (opcionalno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PutAwardBadge(context.Background()).BadgeId(badgeId).UserId(userId).CommentId(commentId).BroadcastId(broadcastId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PutAwardBadge(context.Background()).TenantId(tenantId).BadgeId(badgeId).UserId(userId).CommentId(commentId).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PutAwardBadge``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -43,5 +45,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PutAwardBadge`: %v\n", resp)
 }
 [inline-code-end]
-
----

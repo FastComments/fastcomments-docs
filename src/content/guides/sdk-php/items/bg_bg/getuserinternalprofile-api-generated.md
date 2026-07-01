@@ -1,9 +1,10 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
-| commentId | string | query | Не |  |
-| sso | string | query | Не |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Отговор
 
@@ -11,7 +12,7 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример getUserInternalProfile'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за getUserInternalProfile'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -19,15 +20,20 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Ако искате да използвате собствен HTTP клиент, предайте вашия клиент, който имплементира `GuzzleHttp\ClientInterface`.
-    // Това е незадължително, по подразбиране ще се използва `GuzzleHttp\Client`.
+    // Ако искате да използвате персонализиран HTTP клиент, предайте вашия клиент, който имплементира `GuzzleHttp\ClientInterface`.
+    // Това е опционално, по подразбиране ще се използва `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
-$comment_id = 'comment_id_example'; // string
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // string
+$options = [
+    'comment_id' => 'comment_id_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->getUserInternalProfile($comment_id, $sso);
+    $result = $apiInstance->getUserInternalProfile($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getUserInternalProfile: ', $e->getMessage(), PHP_EOL;

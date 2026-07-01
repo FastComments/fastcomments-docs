@@ -1,18 +1,19 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Θέση | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| page | number | query | Όχι |  |
-| count | number | query | Όχι |  |
-| text-search | string | query | Όχι |  |
-| byIPFromComment | string | query | Όχι |  |
-| filters | string | query | Όχι |  |
-| searchFilters | string | query | Όχι |  |
-| sorts | string | query | Όχι |  |
-| demo | boolean | query | Όχι |  |
-| sso | string | query | Όχι |  |
+| tenantId | string | query | Yes |  |
+| page | number | query | No |  |
+| count | number | query | No |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sorts | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_api_get_comments_response.go)
 
@@ -30,24 +31,25 @@ import (
 )
 
 func main() {
-	page := float64(1.2) // float64 |  (προαιρετικό)
-	count := float64(1.2) // float64 |  (προαιρετικό)
-	textSearch := "textSearch_example" // string |  (προαιρετικό)
-	byIPFromComment := "byIPFromComment_example" // string |  (προαιρετικό)
-	filters := "filters_example" // string |  (προαιρετικό)
-	searchFilters := "searchFilters_example" // string |  (προαιρετικό)
-	sorts := "sorts_example" // string |  (προαιρετικό)
-	demo := true // bool |  (προαιρετικό)
-	sso := "sso_example" // string |  (προαιρετικό)
+	tenantId := "tenantId_example" // string | 
+	page := float64(1.2) // float64 |  (optional)
+	count := float64(1.2) // float64 |  (optional)
+	textSearch := "textSearch_example" // string |  (optional)
+	byIPFromComment := "byIPFromComment_example" // string |  (optional)
+	filters := "filters_example" // string |  (optional)
+	searchFilters := "searchFilters_example" // string |  (optional)
+	sorts := "sorts_example" // string |  (optional)
+	demo := true // bool |  (optional)
+	sso := "sso_example" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetApiComments(context.Background()).Page(page).Count(count).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).Sorts(sorts).Demo(demo).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetApiComments(context.Background()).TenantId(tenantId).Page(page).Count(count).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).Sorts(sorts).Demo(demo).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetApiComments``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// απάντηση από `GetApiComments`: ModerationAPIGetCommentsResponse
+	// απόκριση από `GetApiComments`: ModerationAPIGetCommentsResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetApiComments`: %v\n", resp)
 }
 [inline-code-end]

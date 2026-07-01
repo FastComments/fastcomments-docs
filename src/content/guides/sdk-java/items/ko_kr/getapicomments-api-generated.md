@@ -1,24 +1,25 @@
-## 매개변수
+## Parameters
 
 | 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| page | number | query | 아니요 |  |
-| count | number | query | 아니요 |  |
-| text-search | string | query | 아니요 |  |
-| byIPFromComment | string | query | 아니요 |  |
-| filters | string | query | 아니요 |  |
-| searchFilters | string | query | 아니요 |  |
-| sorts | string | query | 아니요 |  |
-| demo | boolean | query | 아니요 |  |
-| sso | string | query | 아니요 |  |
+| tenantId | string | query | Yes |  |
+| page | number | query | No |  |
+| count | number | query | No |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sorts | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## 응답
 
 반환: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationAPIGetCommentsResponse.java)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'getApiComments 예제'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getApiComments 예시'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // 클래스 가져오기:
 import com.fastcomments.invoker.ApiClient;
@@ -33,6 +34,7 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     Double page = 3.4D; // Double | 
     Double count = 3.4D; // Double | 
     String textSearch = "textSearch_example"; // String | 
@@ -43,7 +45,7 @@ public class Example {
     Boolean demo = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationAPIGetCommentsResponse result = apiInstance.getApiComments()
+      ModerationAPIGetCommentsResponse result = apiInstance.getApiComments(tenantId)
             .page(page)
             .count(count)
             .textSearch(textSearch)
@@ -65,5 +67,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

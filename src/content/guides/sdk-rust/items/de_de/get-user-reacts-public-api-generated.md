@@ -1,31 +1,29 @@
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
-|------|------|----------|-------------|
+|------|------|--------------|---------------|
 | tenant_id | String | Ja |  |
 | post_ids | Vec<String> | Nein |  |
 | sso | String | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/user_reacts_response.rs)
+Rückgabe: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/user_reacts_response.rs)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'get_user_reacts_public Beispiel'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let params: GetUserReactsPublicParams = GetUserReactsPublicParams {
+async fn fetch_user_reacts() -> Result<(), Error> {
+    let params = GetUserReactsPublicParams {
         tenant_id: "acme-corp-tenant".to_string(),
         post_ids: Some(vec![
             "news/article-123".to_string(),
             "blog/post-456".to_string(),
         ]),
-        sso: Some("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9".to_string()),
+        sso: Some("sso-token-xyz".to_string()),
     };
-    let response: UserReactsResponse = get_user_reacts_public(&configuration, params).await?;
+    let _response = get_user_reacts_public(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

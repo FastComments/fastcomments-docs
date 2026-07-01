@@ -2,7 +2,8 @@
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| sso | string | query | Nej |  |
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Svar
 
@@ -18,22 +19,23 @@ from client.models.moderation_api_child_comments_response import ModerationAPICh
 from client.rest import ApiException
 from pprint import pprint
 
-# Det er valgfrit at angive host; standardværdien er https://fastcomments.com
+# Definere værten er valgfri og har standardværdien https://fastcomments.com
 # Se configuration.py for en liste over alle understøttede konfigurationsparametre.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Åbn en kontekst med en instans af API-klienten
+# Indtast en kontekst med en instans af API‑klienten
 with client.ApiClient(configuration) as api_client:
-    # Opret en instans af API-klassen
+    # Opret en instans af API‑klassen
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comments_by_ids_params = client.CommentsByIdsParams() # CommentsByIdsParams | 
-    sso = 'sso_example' # str |  (optional)
+    sso = 'sso_example' # str |  (valgfri)
 
     try:
-        api_response = api_instance.post_comments_by_ids(comments_by_ids_params, sso=sso)
+        api_response = api_instance.post_comments_by_ids(tenant_id, comments_by_ids_params, sso=sso)
         print("The response of ModerationApi->post_comments_by_ids:\n")
         pprint(api_response)
     except Exception as e:

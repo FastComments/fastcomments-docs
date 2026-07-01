@@ -1,12 +1,10 @@
----
 ## Параметри
 
-| Назва | Тип | Обов'язковий | Опис |
+| Назва | Тип | Обов’язково | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Так |  |
 | id | string | Ні |  |
-| deleteComments | string | Ні |  |
-| commentDeleteMode | string | Ні |  |
+| options | DeleteTenantUserOptions | Ні |  |
 
 ## Відповідь
 
@@ -14,14 +12,14 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад deleteTenantUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteTenantUser Приклад'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteTenantUser(tenantId = "my-tenant-123", id = "user-789", deleteComments = "true", commentDeleteMode = "soft")
+let (response, httpResponse) = client.deleteTenantUser(
+  tenantId = "my-tenant-123",
+  id = "user-456",
+  options = DeleteTenantUserOptions(),
+)
 if response.isSome:
-  let apiResp = response.get()
-  echo "Tenant user deleted, response: ", apiResp
-else:
-  echo "Failed to delete tenant user, HTTP status: ", $httpResponse.status
+  let empty = response.get()
+  echo "User successfully deleted"
 [inline-code-end]
-
----

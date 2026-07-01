@@ -1,7 +1,6 @@
----
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Sí |  |
 | postIds | array | query | Sí |  |
@@ -13,7 +12,7 @@ Devuelve: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomment
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de getFeedPostsStats'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo getFeedPostsStats'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -21,13 +20,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Si desea usar un cliente HTTP personalizado, pase su cliente que implemente `GuzzleHttp\ClientInterface`.
-    // Esto es opcional, se usará `GuzzleHttp\Client` por defecto.
+    // Si deseas usar un cliente HTTP personalizado, pasa tu cliente que implemente `GuzzleHttp\ClientInterface`.
+    // Esto es opcional, `GuzzleHttp\Client` se usará por defecto.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$post_ids = array('post_ids_example'); // string[]
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // cadena
+$post_ids = array('post_ids_example'); // cadena[]
+$sso = 'sso_example'; // cadena
+
 
 try {
     $result = $apiInstance->getFeedPostsStats($tenant_id, $post_ids, $sso);
@@ -36,5 +37,3 @@ try {
     echo 'Exception when calling PublicApi->getFeedPostsStats: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

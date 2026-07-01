@@ -1,7 +1,8 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Имя | Тип | Местоположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
 | commentId | string | path | Да |  |
 | sso | string | query | Нет |  |
 
@@ -13,7 +14,7 @@
 
 [inline-code-attrs-start title = 'Пример getModerationCommentText'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Импорт классов:
+// Импортировать классы:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      GetCommentTextResponse result = apiInstance.getModerationCommentText(commentId)
+      GetCommentTextResponse result = apiInstance.getModerationCommentText(tenantId, commentId)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -43,3 +45,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

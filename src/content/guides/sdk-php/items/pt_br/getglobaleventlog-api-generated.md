@@ -6,12 +6,12 @@ userIdWS
 ## Parâmetros
 
 | Nome | Tipo | Localização | Obrigatório | Descrição |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Sim |  |
-| urlId | string | query | Sim |  |
-| userIdWS | string | query | Sim |  |
-| startTime | integer | query | Sim |  |
-| endTime | integer | query | Não |  |
+|------|------|-------------|-------------|-----------|
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| userIdWS | string | query | Yes |  |
+| startTime | integer | query | Yes |  |
+| endTime | integer | query | No |  |
 
 ## Resposta
 
@@ -19,7 +19,7 @@ Retorna: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-ph
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getGlobalEventLog'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo getGlobalEventLog'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -28,14 +28,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
     // Se você quiser usar um cliente HTTP personalizado, passe seu cliente que implemente `GuzzleHttp\ClientInterface`.
-    // Isto é opcional, `GuzzleHttp\Client` será usado por padrão.
+    // Isto é opcional, `GuzzleHttp\Client` será usado como padrão.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $url_id = 'url_id_example'; // string
 $user_id_ws = 'user_id_ws_example'; // string
 $start_time = 56; // int
 $end_time = 56; // int
+
 
 try {
     $result = $apiInstance->getGlobalEventLog($tenant_id, $url_id, $user_id_ws, $start_time, $end_time);
@@ -44,3 +46,5 @@ try {
     echo 'Exception when calling PublicApi->getGlobalEventLog: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

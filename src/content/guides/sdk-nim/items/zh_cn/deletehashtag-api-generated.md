@@ -1,9 +1,9 @@
 ## 参数
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tag | string | 否 |  |
+| 名称 | 类型 | 必填 | 描述 |
+|------|------|------|------|
 | tenantId | string | 是 |  |
+| tag | string | 否 |  |
 | deleteHashTagRequestBody | DeleteHashTagRequestBody | 否 |  |
 
 ## 响应
@@ -14,15 +14,7 @@
 
 [inline-code-attrs-start title = 'deleteHashTag 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteHashTag(
-  tag = "",
-  tenantId = "my-tenant-123",
-  deleteHashTagRequestBody = DeleteHashTagRequestBody()
-)
-
-if response.isSome:
-  let emptyResp = response.get()
-  echo "Deleted hashtag for tenant my-tenant-123; response:", $emptyResp, " status:", $httpResponse.status
-else:
-  echo "No response body; status:", $httpResponse.status
+let (apiResp, httpResp) = client.deleteHashTag(tenantId = "my-tenant-123", tag = "sports", deleteHashTagRequestBody = DeleteHashTagRequestBody())
+if apiResp.isSome:
+  let emptyResp = apiResp.get()
 [inline-code-end]

@@ -16,6 +16,7 @@ Returns: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-py
 [inline-code-attrs-start title = 'flag_comment Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import FlagCommentOptions
 from client.models.flag_comment_response import FlagCommentResponse
 from client.rest import ApiException
 from pprint import pprint
@@ -47,7 +48,7 @@ with client.ApiClient(configuration) as api_client:
     anon_user_id = 'anon_user_id_example' # str |  (optional)
 
     try:
-        api_response = api_instance.flag_comment(tenant_id, id, user_id=user_id, anon_user_id=anon_user_id)
+        api_response = api_instance.flag_comment(tenant_id, id, FlagCommentOptions(user_id=user_id, anon_user_id=anon_user_id))
         print("The response of DefaultApi->flag_comment:\n")
         pprint(api_response)
     except Exception as e:

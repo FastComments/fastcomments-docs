@@ -1,57 +1,54 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Расположение | Обязательно | Описание |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| userId | string | query | Нет |  |
-| urlId | string | query | Нет |  |
-| fromCommentId | string | query | Нет |  |
-| viewed | boolean | query | Нет |  |
-| type | string | query | Нет |  |
+| Назва | Тип | Розташування | Обов’язковий | Опис |
+|------|------|--------------|--------------|------|
+| tenantId | string | query | Так |  |
+| userId | string | query | Ні |  |
+| urlId | string | query | Ні |  |
+| fromCommentId | string | query | Ні |  |
+| viewed | boolean | query | Ні |  |
+| type | string | query | Ні |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notification_count_response.py)
+Повертає: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notification_count_response.py)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример get_notification_count'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад get_notification_count'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetNotificationCountOptions
 from client.models.get_notification_count_response import GetNotificationCountResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Задание host необязательно, по умолчанию используется https://fastcomments.com
-# См. configuration.py для списка всех поддерживаемых параметров конфигурации.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
+# Визначення хоста є необов’язковим і за замовчуванням встановлюється https://fastcomments.com
+# Див. configuration.py для списку всіх підтримуваних параметрів конфігурації.
+# Клієнт повинен налаштувати параметри автентифікації та авторизації
+# згідно з політикою безпеки сервера API.
+# Приклади для кожного методу автентифікації подані нижче, використайте приклад, який
+# відповідає вашому випадку використання автентифікації.
 
-# Клиент должен настроить параметры аутентификации и авторизации
-# в соответствии с политикой безопасности API-сервера.
-# Ниже приведены примеры для каждого метода аутентификации, используйте
-# пример, который соответствует вашему способу аутентификации.
-
-# Настройте авторизацию с помощью API-ключа: api_key
+# Налаштуйте авторизацію за допомогою API ключа: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для API-ключа, если требуется
+# Розкоментуйте нижче, щоб встановити префікс (наприклад, Bearer) для API ключа, якщо потрібно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Откройте контекст с экземпляром API-клиента
+# Введіть контекст з екземпляром клієнта API
 with client.ApiClient(configuration) as api_client:
-    # Создайте экземпляр класса API
+    # Створіть екземпляр класу API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    user_id = 'user_id_example' # str |  (необязательно)
-    url_id = 'url_id_example' # str |  (необязательно)
-    from_comment_id = 'from_comment_id_example' # str |  (необязательно)
-    viewed = True # bool |  (необязательно)
-    type = 'type_example' # str |  (необязательно)
+    user_id = 'user_id_example' # str |  (optional)
+    url_id = 'url_id_example' # str |  (optional)
+    from_comment_id = 'from_comment_id_example' # str |  (optional)
+    viewed = True # bool |  (optional)
+    type = 'type_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_notification_count(tenant_id, user_id=user_id, url_id=url_id, from_comment_id=from_comment_id, viewed=viewed, type=type)
+        api_response = api_instance.get_notification_count(tenant_id, GetNotificationCountOptions(user_id=user_id, url_id=url_id, from_comment_id=from_comment_id, viewed=viewed, type=type))
         print("The response of DefaultApi->get_notification_count:\n")
         pprint(api_response)
     except Exception as e:

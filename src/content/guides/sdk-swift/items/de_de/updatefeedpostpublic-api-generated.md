@@ -1,21 +1,21 @@
-## Parameter
+## Parameters
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Ja |  |
-| postId | string | path | Ja |  |
-| broadcastId | string | query | Nein |  |
-| sso | string | query | Nein |  |
+|------|------|-----|--------------|---------------|
+| tenantId | string | path | Yes |  |
+| postId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
-## Antwort
+## Response
 
-Gibt zurück: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateFeedPostResponse.swift)
+Rückgabe: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateFeedPostResponse.swift)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'updateFeedPostPublic Beispiel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Die folgenden Codebeispiele befinden sich noch in der Beta-Phase. Bei Problemen bitte melden via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Der folgende Code ist noch in der Beta-Phase. Bei Problemen bitte melden über http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -24,7 +24,7 @@ let updateFeedPostParams = UpdateFeedPostParams(title: "title_example", contentH
 let broadcastId = "broadcastId_example" // String |  (optional)
 let sso = "sso_example" // String |  (optional)
 
-PublicAPI.updateFeedPostPublic(tenantId: tenantId, postId: postId, updateFeedPostParams: updateFeedPostParams, broadcastId: broadcastId, sso: sso) { (response, error) in
+PublicAPI.updateFeedPostPublic(tenantId: tenantId, postId: postId, updateFeedPostParams: updateFeedPostParams, options: PublicAPI.UpdateFeedPostPublicOptions(broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -35,5 +35,3 @@ PublicAPI.updateFeedPostPublic(tenantId: tenantId, postId: postId, updateFeedPos
     }
 }
 [inline-code-end]
-
----

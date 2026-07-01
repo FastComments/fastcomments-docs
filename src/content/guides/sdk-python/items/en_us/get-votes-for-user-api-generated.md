@@ -16,6 +16,7 @@ Returns: [`GetVotesForUserResponse`](https://github.com/FastComments/fastcomment
 [inline-code-attrs-start title = 'get_votes_for_user Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetVotesForUserOptions
 from client.models.get_votes_for_user_response import GetVotesForUserResponse
 from client.rest import ApiException
 from pprint import pprint
@@ -47,7 +48,7 @@ with client.ApiClient(configuration) as api_client:
     anon_user_id = 'anon_user_id_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_votes_for_user(tenant_id, url_id, user_id=user_id, anon_user_id=anon_user_id)
+        api_response = api_instance.get_votes_for_user(tenant_id, url_id, GetVotesForUserOptions(user_id=user_id, anon_user_id=anon_user_id))
         print("The response of DefaultApi->get_votes_for_user:\n")
         pprint(api_response)
     except Exception as e:

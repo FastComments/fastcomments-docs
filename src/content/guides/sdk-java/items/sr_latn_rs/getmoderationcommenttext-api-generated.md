@@ -1,7 +1,8 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
 | commentId | string | path | Da |  |
 | sso | string | query | Ne |  |
 
@@ -11,7 +12,7 @@ Vraća: [`GetCommentTextResponse`](https://github.com/FastComments/fastcomments-
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer getModerationCommentText'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getModerationCommentText Primer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Uvezi klase:
 import com.fastcomments.invoker.ApiClient;
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      GetCommentTextResponse result = apiInstance.getModerationCommentText(commentId)
+      GetCommentTextResponse result = apiInstance.getModerationCommentText(tenantId, commentId)
             .sso(sso)
             .execute();
       System.out.println(result);

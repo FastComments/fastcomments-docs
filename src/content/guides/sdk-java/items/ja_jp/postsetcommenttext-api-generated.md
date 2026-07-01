@@ -1,19 +1,21 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Yes |  |
-| sso | string | query | No |  |
+| 名前 | 型 | 場所 | 必須 | 説明 |
+|------|------|----------|------|-------------|
+| tenantId | string | query | はい |  |
+| commentId | string | path | はい |  |
+| broadcastId | string | query | いいえ |  |
+| sso | string | query | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`SetCommentTextResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SetCommentTextResponse.java)
+返却: [`SetCommentTextResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SetCommentTextResponse.java)
 
 ## 例
 
 [inline-code-attrs-start title = 'postSetCommentText の例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// クラスをインポート：
+// クラスをインポート:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,11 +28,14 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     SetCommentTextParams setCommentTextParams = new SetCommentTextParams(); // SetCommentTextParams | 
+    String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      SetCommentTextResponse result = apiInstance.postSetCommentText(commentId, setCommentTextParams)
+      SetCommentTextResponse result = apiInstance.postSetCommentText(tenantId, commentId, setCommentTextParams)
+            .broadcastId(broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);

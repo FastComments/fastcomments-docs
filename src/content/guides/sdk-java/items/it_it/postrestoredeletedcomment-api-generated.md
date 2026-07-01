@@ -1,8 +1,10 @@
 ## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
-|------|------|----------|----------|-------------|
+|------|------|-----------|--------------|-------------|
+| tenantId | string | query | Sì |  |
 | commentId | string | path | Sì |  |
+| broadcastId | string | query | No |  |
 | sso | string | query | No |  |
 
 ## Risposta
@@ -11,9 +13,9 @@ Restituisce: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-j
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di postRestoreDeletedComment'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postRestoreDeletedComment Esempio'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importa le classi:
+// Importa classi:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,10 +28,13 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
+    String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      APIEmptyResponse result = apiInstance.postRestoreDeletedComment(commentId)
+      APIEmptyResponse result = apiInstance.postRestoreDeletedComment(tenantId, commentId)
+            .broadcastId(broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -43,5 +48,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

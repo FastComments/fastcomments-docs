@@ -1,12 +1,9 @@
----
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| value | string | Ne |  |
-| filters | string | Ne |  |
-| searchFilters | string | Ne |  |
-| sso | string | Ne |  |
+| tenantId | string | Yes |  |
+| options | GetSearchCommentsSummaryOptions | No |  |
 
 ## Odgovor
 
@@ -16,17 +13,12 @@ Vraća: [`Option[ModerationCommentSearchResponse]`](https://github.com/FastComme
 
 [inline-code-attrs-start title = 'getSearchCommentsSummary Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSearchCommentsSummary(
-  value = "news/climate-change-2026",
-  filters = "{\"tenantId\":\"my-tenant-123\",\"siteId\":\"main-site\",\"status\":\"approved\"}",
-  searchFilters = "author:journalist@news.com OR content:climate",
-  sso = "sso-xyz-7890"
+let (summaryOpt, httpResp) = client.getSearchCommentsSummary(
+  tenantId = "my-tenant-123",
+  options = GetSearchCommentsSummaryOptions()
 )
-if response.isSome:
-  let summary = response.get()
-  echo "Received summary: ", $summary
-else:
-  echo "No summary returned, HTTP response: ", $httpResponse
-[inline-code-end]
 
----
+if summaryOpt.isSome:
+  let summary = summaryOpt.get()
+  echo summary
+[inline-code-end]

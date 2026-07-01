@@ -1,7 +1,8 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| İsim | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Evet |  |
 | sso | string | query | Hayır |  |
 
 ## Yanıt
@@ -17,21 +18,22 @@ from client.models.get_tenant_manual_badges_response import GetTenantManualBadge
 from client.rest import ApiException
 from pprint import pprint
 
-# Host'u tanımlamak isteğe bağlıdır ve varsayılan olarak https://fastcomments.com kullanılır
+# Host tanımlama isteğe bağlıdır ve varsayılan olarak https://fastcomments.com'dur
 # Tüm desteklenen yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# API istemcisi örneği ile bir bağlam açın
+# API istemcisinin bir örneğiyle bir bağlam girin
 with client.ApiClient(configuration) as api_client:
-    # API sınıfından bir örnek oluşturun
+    # API sınıfının bir örneğini oluştur
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     sso = 'sso_example' # str |  (isteğe bağlı)
 
     try:
-        api_response = api_instance.get_manual_badges(sso=sso)
+        api_response = api_instance.get_manual_badges(tenant_id, sso=sso)
         print("The response of ModerationApi->get_manual_badges:\n")
         pprint(api_response)
     except Exception as e:

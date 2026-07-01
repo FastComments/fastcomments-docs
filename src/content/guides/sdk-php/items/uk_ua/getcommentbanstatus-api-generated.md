@@ -1,9 +1,10 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Так |  |
-| sso | string | query | Ні |  |
+| Назва | Тип | Розташування | Обов'язково | Опис |
+|------|------|--------------|--------------|------|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| sso | string | query | No |  |
 
 ## Відповідь
 
@@ -19,19 +20,20 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Якщо ви хочете використовувати власний HTTP-клієнт, передайте ваш клієнт, який реалізує `GuzzleHttp\ClientInterface`.
-    // Це опціонально, за замовчуванням буде використано `GuzzleHttp\Client`.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+
+$tenant_id = 'tenant_id_example'; // string
 $comment_id = 'comment_id_example'; // string
 $sso = 'sso_example'; // string
 
+
 try {
-    $result = $apiInstance->getCommentBanStatus($comment_id, $sso);
+    $result = $apiInstance->getCommentBanStatus($tenant_id, $comment_id, $sso);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getCommentBanStatus: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

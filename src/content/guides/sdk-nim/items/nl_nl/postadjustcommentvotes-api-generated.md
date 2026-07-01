@@ -2,22 +2,26 @@
 
 | Naam | Type | Vereist | Beschrijving |
 |------|------|----------|-------------|
-| commentId | string | Ja |  |
-| adjustCommentVotesParams | AdjustCommentVotesParams | Nee |  |
-| sso | string | Nee |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| adjustCommentVotesParams | AdjustCommentVotesParams | No |  |
+| options | PostAdjustCommentVotesOptions | No |  |
 
-## Antwoord
+## Respons
 
 Retourneert: [`Option[AdjustVotesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_adjust_votes_response.nim)
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'postAdjustCommentVotes Voorbeeld'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postAdjustCommentVotes voorbeeld'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postAdjustCommentVotes(commentId = "cmt-987654", adjustCommentVotesParams = nil, sso = "sso-token-abc123")
-if response.isSome:
-  let adjusted = response.get()
-  discard adjusted
-[inline-code-end]
+let (adjustRespOpt, httpResp) = client.postAdjustCommentVotes(
+  tenantId = "my-tenant-123",
+  commentId = "cmt-789",
+  adjustCommentVotesParams = AdjustCommentVotesParams(),
+  options = PostAdjustCommentVotesOptions()
+)
 
----
+if adjustRespOpt.isSome:
+  let adjustResp = adjustRespOpt.get()
+[inline-code-end]

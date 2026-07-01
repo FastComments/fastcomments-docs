@@ -1,20 +1,22 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Обавезно | Опис |
-|------|------|----------|----------|-------------|
-| commentId | string | пут | Да |  |
-| direction | string | упит | Не |  |
-| sso | string | упит | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| direction | string | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`VoteResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/VoteResponse.java)
+Vraća: [`VoteResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/VoteResponse.java)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'postVote пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postVote Primer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Увези класе:
+// Uvezi klase:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -27,12 +29,15 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String direction = "direction_example"; // String | 
+    String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      VoteResponse result = apiInstance.postVote(commentId)
+      VoteResponse result = apiInstance.postVote(tenantId, commentId)
             .direction(direction)
+            .broadcastId(broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);

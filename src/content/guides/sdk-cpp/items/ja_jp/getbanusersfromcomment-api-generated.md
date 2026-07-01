@@ -2,26 +2,28 @@
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
+| tenantId | string | はい |  |
 | commentId | string | はい |  |
 | sso | string | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`GetBannedUsersFromCommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetBannedUsersFromCommentResponse.h)
+返される: [`GetBannedUsersFromCommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetBannedUsersFromCommentResponse.h)
 
 ## 例
 
 [inline-code-attrs-start title = 'getBanUsersFromComment の例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t commentId = U("comment-abc-123");
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
-std::shared_ptr<GetBannedUsersFromCommentResponse> result;
-api->getBanUsersFromComment(commentId, sso).then([&result](pplx::task<std::shared_ptr<GetBannedUsersFromCommentResponse>> t){
+auto tenantId = utility::string_t(U("my-tenant-123"));
+auto commentId = utility::string_t(U("comment-456"));
+boost::optional<utility::string_t> sso = boost::make_optional(utility::string_t(U("sso-token-abc")));
+
+api->getBanUsersFromComment(tenantId, commentId, sso).then([](pplx::task<std::shared_ptr<GetBannedUsersFromCommentResponse>> task) {
     try {
-        auto resp = t.get();
-        if (resp) result = std::make_shared<GetBannedUsersFromCommentResponse>(*resp);
+        auto response = task.get();
     } catch (const std::exception&) {
-        result.reset();
     }
 });
 [inline-code-end]
+
+---

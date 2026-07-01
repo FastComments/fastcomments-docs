@@ -1,17 +1,17 @@
----
-## Parametri
+## Parameters
 
 | Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Da |  |
 | sso | string | query | Ne |  |
 
-## Odgovor
+## Response
 
 Vrne: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
 
-## Primer
+## Example
 
-[inline-code-attrs-start title = 'Primer PostBanUserUndo'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PostBanUserUndo Primer'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,19 +23,18 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	banUserUndoParams := *openapiclient.NewBanUserUndoParams(*openapiclient.NewAPIBanUserChangeLog()) // BanUserUndoParams | 
-	sso := "sso_example" // string |  (optional)
+	sso := "sso_example" // string |  (neobvezno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostBanUserUndo(context.Background()).BanUserUndoParams(banUserUndoParams).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostBanUserUndo(context.Background()).TenantId(tenantId).BanUserUndoParams(banUserUndoParams).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostBanUserUndo``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Napaka pri klicu `ModerationAPI.PostBanUserUndo``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Poln HTTP odgovor: %v\n", r)
 	}
-	// response from `PostBanUserUndo`: APIEmptyResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostBanUserUndo`: %v\n", resp)
+	// odgovor iz `PostBanUserUndo`: APIEmptyResponse
+	fmt.Fprintf(os.Stdout, "Odgovor iz `ModerationAPI.PostBanUserUndo`: %v\n", resp)
 }
 [inline-code-end]
-
----

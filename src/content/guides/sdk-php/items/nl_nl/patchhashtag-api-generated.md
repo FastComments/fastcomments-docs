@@ -1,13 +1,13 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tag | string | path | Ja |  |
-| tenantId | string | query | Nee |  |
+| tenantId | string | query | Yes |  |
+| tag | string | path | Yes |  |
 
-## Antwoord
+## Respons
 
-Retourneert: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateHashTagResponse.php)
+Returns: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateHashTagResponse.php)
 
 ## Voorbeeld
 
@@ -17,24 +17,26 @@ Retourneert: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomme
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api_key
+// Configureer API-sleutel autorisatie: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Uncomment hieronder om prefix (bijv. Bearer) voor API-sleutel in te stellen, indien nodig
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // Als je een aangepaste http-client wilt gebruiken, geef je client door die `GuzzleHttp\ClientInterface` implementeert.
+    // Dit is optioneel, `GuzzleHttp\Client` wordt standaard gebruikt.
     new GuzzleHttp\Client(),
     $config
 );
-$tag = 'tag_example'; // string
+
 $tenant_id = 'tenant_id_example'; // string
+$tag = 'tag_example'; // string
 $update_hash_tag_body = new \FastComments\Client\Model\UpdateHashTagBody(); // \FastComments\Client\Model\UpdateHashTagBody
 
+
 try {
-    $result = $apiInstance->patchHashTag($tag, $tenant_id, $update_hash_tag_body);
+    $result = $apiInstance->patchHashTag($tenant_id, $tag, $update_hash_tag_body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->patchHashTag: ', $e->getMessage(), PHP_EOL;

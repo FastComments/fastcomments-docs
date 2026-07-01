@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | questionId | string | query | No |  |
@@ -20,7 +20,7 @@ Devuelve: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/Fast
 
 [inline-code-attrs-start title = 'Ejemplo de combineCommentsWithQuestionResults'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Los siguientes ejemplos de código aún están en beta. Para cualquier problema, por favor repórtelo en http://github.com/OpenAPITools/openapi-generator/issues/new
+// Los siguientes ejemplos de código aún están en beta. Para cualquier problema, por favor infórmelo en http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -33,7 +33,7 @@ let minValue = 987 // Double |  (opcional)
 let maxValue = 987 // Double |  (opcional)
 let limit = 987 // Double |  (opcional)
 
-DefaultAPI.combineCommentsWithQuestionResults(tenantId: tenantId, questionId: questionId, questionIds: questionIds, urlId: urlId, startDate: startDate, forceRecalculate: forceRecalculate, minValue: minValue, maxValue: maxValue, limit: limit) { (response, error) in
+DefaultAPI.combineCommentsWithQuestionResults(tenantId: tenantId, options: DefaultAPI.CombineCommentsWithQuestionResultsOptions(questionId: questionId, questionIds: questionIds, urlId: urlId, startDate: startDate, forceRecalculate: forceRecalculate, minValue: minValue, maxValue: maxValue, limit: limit)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -44,3 +44,5 @@ DefaultAPI.combineCommentsWithQuestionResults(tenantId: tenantId, questionId: qu
     }
 }
 [inline-code-end]
+
+---

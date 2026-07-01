@@ -1,7 +1,8 @@
 ## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 型別 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | 是 |  |
 | text-search | string | query | 否 |  |
 | byIPFromComment | string | query | 否 |  |
 | filters | string | query | 否 |  |
@@ -21,22 +22,21 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 opts = {
-  text_search: 'text_search_example', # 字串 | 
-  by_ip_from_comment: 'by_ip_from_comment_example', # 字串 | 
-  filters: 'filters_example', # 字串 | 
-  search_filters: 'search_filters_example', # 字串 | 
-  sorts: 'sorts_example', # 字串 | 
-  sso: 'sso_example' # 字串 | 
+  text_search: 'text_search_example', # String | 
+  by_ip_from_comment: 'by_ip_from_comment_example', # String | 
+  filters: 'filters_example', # String | 
+  search_filters: 'search_filters_example', # String | 
+  sorts: 'sorts_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.post_api_export(opts)
+  result = api_instance.post_api_export(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_api_export: #{e}"
 end
 [inline-code-end]
-
----

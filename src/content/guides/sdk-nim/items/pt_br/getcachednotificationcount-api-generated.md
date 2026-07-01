@@ -1,7 +1,7 @@
 ## Parâmetros
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nome | Tipo | Obrigatório | Descrição |
+|------|------|-------------|-----------|
 | tenantId | string | Sim |  |
 | id | string | Não |  |
 
@@ -11,14 +11,12 @@ Retorna: [`Option[GetCachedNotificationCountResponse]`](https://github.com/FastC
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getCachedNotificationCount'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo getCachedNotificationCount'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getCachedNotificationCount(tenantId = "my-tenant-123", id = "notification-789")
-if response.isSome:
-  let cached = response.get()
-  echo "Cached notification count: ", $cached
-else:
-  echo "No cached notification count"
+let (cachedCountOpt, httpResp) = client.getCachedNotificationCount(tenantId = "my-tenant-123", id = "article-456")
+if cachedCountOpt.isSome:
+  let cachedCount = cachedCountOpt.get()
+  echo cachedCount
 [inline-code-end]
 
 ---

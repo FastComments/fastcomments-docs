@@ -1,25 +1,39 @@
 ## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必需 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentId | string | Yes |  |
-| dir | number | Yes |  |
-| sso | string | No |  |
+| tenantId | string | 是 |  |
+| commentId | string | 是 |  |
+| dir | number | 是 |  |
+| sso | string | 否 |  |
 
 ## 响应
 
-返回：[`GetCommentVoteUserNamesSuccessResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentVoteUserNamesSuccessResponse.ts)
+返回：[`GetCommentVoteUserNamesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentVoteUserNamesResponse.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'getCommentVoteUserNames 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-7f9c';
-const commentId: string = 'bcd12345-6789-4ef0-9abc-0d1e2f3a4b5c';
-const dir: number = 1;
-const ssoToken: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ssoPayload.signature';
+async function demoGetCommentVoteUserNames() {
+  const tenantId: string = "acme-corp";
+  const commentId: string = "cmt_5f2a1e3b";
+  const dir: number = 1; // 升序
 
-const resultWithoutSso: GetCommentVoteUserNamesSuccessResponse = await getCommentVoteUserNames(tenantId, commentId, dir);
-const resultWithSso: GetCommentVoteUserNamesSuccessResponse = await getCommentVoteUserNames(tenantId, commentId, dir, ssoToken);
+  const votesWithoutSSO: GetCommentVoteUserNamesResponse = await getCommentVoteUserNames(
+    tenantId,
+    commentId,
+    dir
+  );
+
+  const ssoToken: string = "sso_abcdef123456";
+  const votesWithSSO: GetCommentVoteUserNamesResponse = await getCommentVoteUserNames(
+    tenantId,
+    commentId,
+    dir,
+    ssoToken
+  );
+
+  console.log(votesWithoutSSO, votesWithSSO);
+}
 [inline-code-end]

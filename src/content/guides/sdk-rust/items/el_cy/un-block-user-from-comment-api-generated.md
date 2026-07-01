@@ -1,13 +1,12 @@
----
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
-| tenant_id | String | Ναι |  |
-| id | String | Ναι |  |
-| un_block_from_comment_params | models::UnBlockFromCommentParams | Ναι |  |
-| user_id | String | Όχι |  |
-| anon_user_id | String | Όχι |  |
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
+| un_block_from_comment_params | models::UnBlockFromCommentParams | Yes |  |
+| user_id | String | No |  |
+| anon_user_id | String | No |  |
 
 ## Απάντηση
 
@@ -15,22 +14,17 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα un_block_user_from_comment'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'un_block_user_from_comment Παράδειγμα'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let params: UnBlockUserFromCommentParams = UnBlockUserFromCommentParams {
+async fn example(config: &configuration::Configuration) -> Result<UnblockSuccess, Error> {
+    let params = UnBlockUserFromCommentParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "news/article/comments/42".to_string(),
-        un_block_from_comment_params: models::UnBlockFromCommentParams {
-            reason: Some("mistaken moderation".to_string()),
-            unblock_children: Some(true),
-        },
-        user_id: Some("user-12345".to_string()),
-        anon_user_id: None,
+        id: "comment-12345".to_string(),
+        un_block_from_comment_params: models::UnBlockFromCommentParams::default(),
+        user_id: Some("user-67890".to_string()),
+        anon_user_id: Some("anon-abcde".to_string()),
     };
-    let success: UnblockSuccess = un_block_user_from_comment(&configuration, params).await?;
-    Ok(())
+    let result = un_block_user_from_comment(config, params).await?;
+    Ok(result)
 }
 [inline-code-end]
-
----

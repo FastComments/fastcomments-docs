@@ -2,8 +2,8 @@
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tag | string | いいえ |  |
 | tenantId | string | はい |  |
+| tag | string | いいえ |  |
 | updateHashTagBody | UpdateHashTagBody | いいえ |  |
 
 ## レスポンス
@@ -14,10 +14,15 @@
 
 [inline-code-attrs-start title = 'patchHashTag の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.patchHashTag(tag = "breaking-news", tenantId = "my-tenant-123", updateHashTagBody = UpdateHashTagBody())
-if response.isSome:
-  let updatedHashTag = response.get()
-  echo updatedHashTag
+let updateBody = UpdateHashTagBody()
+let (optResp, httpResp) = client.patchHashTag(
+  tenantId = "my-tenant-123",
+  tag = "news",
+  updateHashTagBody = updateBody
+)
+if optResp.isSome:
+  let resp = optResp.get()
+  echo resp
+else:
+  echo "No response"
 [inline-code-end]
-
----

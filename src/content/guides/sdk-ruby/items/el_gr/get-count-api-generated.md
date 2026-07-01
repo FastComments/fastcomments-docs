@@ -1,13 +1,14 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
-| text-search | string | query | Όχι |  |
-| byIPFromComment | string | query | Όχι |  |
-| filter | string | query | Όχι |  |
-| searchFilters | string | query | Όχι |  |
-| demo | boolean | query | Όχι |  |
-| sso | string | query | Όχι |  |
+|------|------|----------|------------|-------------|
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filter | string | query | No |  |
+| searchFilters | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Απόκριση
 
@@ -21,6 +22,7 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 opts = {
   text_search: 'text_search_example', # String | 
   by_ip_from_comment: 'by_ip_from_comment_example', # String | 
@@ -32,11 +34,9 @@ opts = {
 
 begin
   
-  result = api_instance.get_count(opts)
+  result = api_instance.get_count(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_count: #{e}"
 end
 [inline-code-end]
-
----

@@ -1,9 +1,11 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Location | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Θέση | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Ναι |  |
-| sso | string | query | Όχι |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Απάντηση
 
@@ -11,7 +13,7 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα PostUnFlagComment'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PostUnFlagComment Παράδειγμα'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,17 +25,19 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
-	sso := "sso_example" // string |  (optional)
+	broadcastId := "broadcastId_example" // string |  (προαιρετικό)
+	sso := "sso_example" // string |  (προαιρετικό)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostUnFlagComment(context.Background(), commentId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostUnFlagComment(context.Background(), commentId).TenantId(tenantId).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostUnFlagComment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostUnFlagComment`: APIEmptyResponse
+	// απάντηση από `PostUnFlagComment`: APIEmptyResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostUnFlagComment`: %v\n", resp)
 }
 [inline-code-end]

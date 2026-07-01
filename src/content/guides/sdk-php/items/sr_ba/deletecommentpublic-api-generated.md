@@ -1,20 +1,20 @@
-## Параметри
+## Parametri
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| commentId | string | path | Да |  |
-| broadcastId | string | query | Да |  |
-| editKey | string | query | Не |  |
-| sso | string | query | Не |  |
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | Yes |  |
+| editKey | string | query | No |  |
+| sso | string | query | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PublicAPIDeleteCommentResponse.php)
+Vraća: [`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PublicAPIDeleteCommentResponse.php)
 
-## Примјер
+## Primjer
 
-[inline-code-attrs-start title = 'deleteCommentPublic Примјер'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer deleteCommentPublic'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -22,18 +22,22 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ако желите користити прилагођени http клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционално, подразумевано ће се користити `GuzzleHttp\Client`.
+    // Ako želite koristiti prilagođeni http klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opciono, `GuzzleHttp\Client` će se koristiti kao podrazumevano.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $comment_id = 'comment_id_example'; // string
 $broadcast_id = 'broadcast_id_example'; // string
-$edit_key = 'edit_key_example'; // string
-$sso = 'sso_example'; // string
+$options = [
+    'edit_key' => 'edit_key_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->deleteCommentPublic($tenant_id, $comment_id, $broadcast_id, $edit_key, $sso);
+    $result = $apiInstance->deleteCommentPublic($tenant_id, $comment_id, $broadcast_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->deleteCommentPublic: ', $e->getMessage(), PHP_EOL;

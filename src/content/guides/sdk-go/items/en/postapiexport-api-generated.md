@@ -2,6 +2,7 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | text-search | string | query | No |  |
 | byIPFromComment | string | query | No |  |
 | filters | string | query | No |  |
@@ -27,6 +28,7 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	textSearch := "textSearch_example" // string |  (optional)
 	byIPFromComment := "byIPFromComment_example" // string |  (optional)
 	filters := "filters_example" // string |  (optional)
@@ -36,7 +38,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostApiExport(context.Background()).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).Sorts(sorts).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostApiExport(context.Background()).TenantId(tenantId).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).Sorts(sorts).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostApiExport``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

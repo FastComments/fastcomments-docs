@@ -1,33 +1,27 @@
----
-## Parametri
+## Parameters
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| tenantId | string | Da |  |
-| id | string | Da |  |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
-## Odgovor
+## Response
 
 Vraća: [`GetEmailTemplateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetEmailTemplateResponse.h)
 
-## Primjer
+## Example
 
 [inline-code-attrs-start title = 'Primjer getEmailTemplate'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t templateId = U("welcome-email-001");
-boost::optional<utility::string_t> locale = boost::optional<utility::string_t>(U("en-US"));
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto templateId = utility::conversions::to_string_t("welcome-email");
+boost::optional<utility::string_t> language = utility::conversions::to_string_t("en-US");
 
-api->getEmailTemplate(tenantId, templateId).then([locale](pplx::task<std::shared_ptr<GetEmailTemplateResponse>> t) {
-    try {
-        auto resp = t.get();
-        auto localCopy = std::make_shared<GetEmailTemplateResponse>(*resp);
-        std::cout << "Email template fetched: " << (resp ? "success" : "null") << std::endl;
-        if (locale) std::cout << "Locale: " << locale->c_str() << std::endl;
-    } catch (const std::exception &e) {
-        std::cerr << "Failed to get template: " << e.what() << std::endl;
-    }
-});
+api->getEmailTemplate(tenantId, templateId)
+    .then([=](pplx::task<std::shared_ptr<GetEmailTemplateResponse>> task) {
+        try {
+            auto response = task.get();
+        } catch (const std::exception&) {
+        }
+    });
 [inline-code-end]
-
----

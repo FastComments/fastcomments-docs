@@ -1,12 +1,13 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
-| badgeId | string | query | Oui |  |
-| userId | string | query | Non |  |
-| commentId | string | query | Non |  |
-| broadcastId | string | query | Non |  |
-| sso | string | query | Non |  |
+| tenantId | string | query | Yes |  |
+| badgeId | string | query | Yes |  |
+| userId | string | query | No |  |
+| commentId | string | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Réponse
 
@@ -14,9 +15,9 @@ Renvoie : [`RemoveUserBadgeResponse`](https://github.com/FastComments/fastcommen
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de putRemoveBadge'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple putRemoveBadge'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importation des classes:
+// Importer les classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,13 +30,14 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String badgeId = "badgeId_example"; // String | 
     String userId = "userId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      RemoveUserBadgeResponse result = apiInstance.putRemoveBadge(badgeId)
+      RemoveUserBadgeResponse result = apiInstance.putRemoveBadge(tenantId, badgeId)
             .userId(userId)
             .commentId(commentId)
             .broadcastId(broadcastId)

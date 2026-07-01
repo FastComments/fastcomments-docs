@@ -1,15 +1,15 @@
-## Параметри
+## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| domain | string | path | Yes |  |
+| tenantId | string | query | Да |  |
+| domain | string | path | Да |  |
 
-## Отговор
+## Response
 
 Връща: [`DeleteDomainConfigResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/DeleteDomainConfigResponse.php)
 
-## Пример
+## Example
 
 [inline-code-attrs-start title = 'Пример за deleteDomainConfig'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -17,20 +17,22 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Конфигуриране на удостоверяване чрез API ключ: api_key
+// Configure API key authorization: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Разкоментирайте долния ред за задаване на префикс (например Bearer) за API ключа, ако е необходимо
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ако искате да използвате персонализиран HTTP клиент, подайте ваш клиент, който имплементира `GuzzleHttp\ClientInterface`.
-    // Това е по избор, по подразбиране ще се използва `GuzzleHttp\Client`.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $domain = 'domain_example'; // string
+
 
 try {
     $result = $apiInstance->deleteDomainConfig($tenant_id, $domain);
@@ -39,3 +41,5 @@ try {
     echo 'Exception when calling DefaultApi->deleteDomainConfig: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

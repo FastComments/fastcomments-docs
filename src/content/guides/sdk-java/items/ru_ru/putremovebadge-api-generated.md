@@ -1,8 +1,8 @@
----
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
 | badgeId | string | query | Да |  |
 | userId | string | query | Нет |  |
 | commentId | string | query | Нет |  |
@@ -15,9 +15,9 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример putRemoveBadge'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putRemoveBadge Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Импорт классов:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -30,13 +30,14 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String badgeId = "badgeId_example"; // String | 
     String userId = "userId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      RemoveUserBadgeResponse result = apiInstance.putRemoveBadge(badgeId)
+      RemoveUserBadgeResponse result = apiInstance.putRemoveBadge(tenantId, badgeId)
             .userId(userId)
             .commentId(commentId)
             .broadcastId(broadcastId)
@@ -44,14 +45,12 @@ public class Example {
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ModerationApi#putRemoveBadge");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("Исключение при вызове ModerationApi#putRemoveBadge");
+      System.err.println("Код состояния: " + e.getCode());
+      System.err.println("Причина: " + e.getResponseBody());
+      System.err.println("Заголовки ответа: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }
 }
 [inline-code-end]
-
----

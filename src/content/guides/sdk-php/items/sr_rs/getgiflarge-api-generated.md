@@ -1,17 +1,17 @@
-## Параметри
+## Parameters
 
-| Име | Type | Location | Обавезно | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| largeInternalURLSanitized | string | query | Да |  |
+| tenantId | string | path | Yes |  |
+| largeInternalURLSanitized | string | query | Yes |  |
 
-## Одговор
+## Response
 
-Враћа: [`GifGetLargeResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GifGetLargeResponse.php)
+Vraća: [`GifGetLargeResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GifGetLargeResponse.php)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'getGifLarge Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getGifLarge'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -19,12 +19,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ако желите да користите прилагођени HTTP клијент, проследите свог клијента који реализује `GuzzleHttp\ClientInterface`.
-    // Ово је опцијоно, подразумевано ће бити коришћен `GuzzleHttp\Client`.
+    // Ako želite koristiti prilagođeni http klijent, prosledite vaš klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opciono, `GuzzleHttp\Client` će se koristiti kao podrazumevano.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $large_internal_url_sanitized = 'large_internal_url_sanitized_example'; // string
+
 
 try {
     $result = $apiInstance->getGifLarge($tenant_id, $large_internal_url_sanitized);

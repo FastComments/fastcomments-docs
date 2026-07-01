@@ -1,25 +1,27 @@
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
-|------|------|----------|-------------|
-| badgesUserId | string | Nee |  |
-| commentId | string | Nee |  |
-| sso | string | Nee |  |
+| Naam | Type | Verplicht | Beschrijving |
+|------|------|-----------|--------------|
+| badgesUserId | string | No |  |
+| commentId | string | No |  |
+| tenantId | string | No |  |
+| sso | string | No |  |
 
 ## Respons
 
-Retourneert: [`GetUserManualBadgesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserManualBadgesResponse.ts)
+Retourneert: [`GetManualBadgesForUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetManualBadgesForUserResponse.ts)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'getManualBadgesForUser Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const badgesUserId: string = 'user_83b2f4';
-const commentId: string = 'comment_9a1c7';
-const ssoToken: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.exampleSignature';
+(async () => {
+  const userId: string = "user_42";
+  const commentId: string = "comment_1001";
+  const tenantId: string = "tenant_acme";
+  const ssoToken: string = "sso_5f6g7h8i9j";
 
-const userBadges: GetUserManualBadgesResponse = await getManualBadgesForUser(badgesUserId);
-const commentBadges: GetUserManualBadgesResponse = await getManualBadgesForUser(badgesUserId, commentId, ssoToken);
+  const badges: GetManualBadgesForUserResponse = await getManualBadgesForUser(userId, commentId, tenantId, ssoToken);
+  const limitedBadges: GetManualBadgesForUserResponse = await getManualBadgesForUser(userId);
+})();
 [inline-code-end]
-
----

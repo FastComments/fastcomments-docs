@@ -1,4 +1,3 @@
----
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
@@ -15,18 +14,21 @@
 [inline-code-attrs-start title = 'Παράδειγμα getDomainConfig'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-boost::optional<utility::string_t> domainOpt = U("app.example.com");
-if (domainOpt) {
-    api->getDomainConfig(tenantId, *domainOpt)
-    .then([](pplx::task<std::shared_ptr<GetDomainConfigResponse>> t) {
-        try {
-            auto resp = t.get();
-            auto cfgCopy = std::make_shared<GetDomainConfigResponse>(*resp);
-            (void)cfgCopy;
-        } catch (const std::exception&) {
+utility::string_t domain = U("myblog.example.com");
+
+api->getDomainConfig(tenantId, domain)
+    .then([](std::shared_ptr<GetDomainConfigResponse> response) {
+        if (!response) return;
+        boost::optional<bool> moderationEnabled = response->moderationEnabled;
+        boost::optional<std::string> theme = response->theme;
+        if (moderationEnabled && *moderationEnabled) {
+            // χειρισμός ενεργοποιημένου moderation
         }
-    });
-}
+        if (theme) {
+            // χρήση τιμής theme
+        }
+    })
+    .wait();
 [inline-code-end]
 
 ---

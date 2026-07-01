@@ -1,7 +1,8 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Sí |  |
 | sso | string | query | No |  |
 
 ## Respuesta
@@ -10,7 +11,7 @@ Devuelve: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/b
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de PostBanUserUndo'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo PostBanUserUndo'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -22,17 +23,18 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // cadena | 
 	banUserUndoParams := *openapiclient.NewBanUserUndoParams(*openapiclient.NewAPIBanUserChangeLog()) // BanUserUndoParams | 
-	sso := "sso_example" // string |  (optional)
+	sso := "sso_example" // cadena |  (opcional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostBanUserUndo(context.Background()).BanUserUndoParams(banUserUndoParams).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostBanUserUndo(context.Background()).TenantId(tenantId).BanUserUndoParams(banUserUndoParams).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostBanUserUndo``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Error al llamar `ModerationAPI.PostBanUserUndo``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Respuesta HTTP completa: %v\n", r)
 	}
-	// response from `PostBanUserUndo`: APIEmptyResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostBanUserUndo`: %v\n", resp)
+	// respuesta de `PostBanUserUndo`: APIEmptyResponse
+	fmt.Fprintf(os.Stdout, "Respuesta de `ModerationAPI.PostBanUserUndo`: %v\n", resp)
 }
 [inline-code-end]

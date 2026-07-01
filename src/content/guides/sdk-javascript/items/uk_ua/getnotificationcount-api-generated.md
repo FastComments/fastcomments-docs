@@ -1,37 +1,43 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| userId | string | Ні |  |
-| urlId | string | Ні |  |
-| fromCommentId | string | Ні |  |
-| viewed | boolean | Ні |  |
-| type | string | Ні |  |
+| tenantId | string | Yes |  |
+| userId | string | No |  |
+| urlId | string | No |  |
+| fromCommentId | string | No |  |
+| viewed | boolean | No |  |
+| type | string | No |  |
 
 ## Відповідь
 
-Повертає: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetNotificationCountResponse.ts)
+Повертає: [`GetNotificationCountResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetNotificationCountResponse1.ts)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад getNotificationCount'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getNotificationCount Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f3b2a';
-const userId: string = 'user_7421';
-const urlId: string = 'https://news.example.com/articles/2026/06/19/ai-update';
-const fromCommentId: string = 'cmt_5a1d2f';
-const viewed: boolean = false;
-const type: string = 'mention';
+async function demoNotificationCount() {
+    const tenantId: string = "tenant_001";
+    const userId: string = "user_42";
+    const urlId: string = "url_9f8e7d";
+    const fromCommentId: string = "comment_12345";
+    const viewed: boolean = false;
+    const type: string = "mention";
 
-const notificationCount: GetNotificationCountResponse = await getNotificationCount(
-  tenantId,
-  userId,
-  urlId,
-  fromCommentId,
-  viewed,
-  type
-);
+    const result: GetNotificationCountResponse1 = await getNotificationCount(
+        tenantId,
+        userId,
+        urlId,
+        fromCommentId,
+        viewed,
+        type
+    );
+
+    console.log(result);
+}
+
+demoNotificationCount();
 [inline-code-end]
 
 ---

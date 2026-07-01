@@ -1,7 +1,7 @@
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
 | tenantId | string | Yes |  |
 | email | string | Yes |  |
 
@@ -11,21 +11,17 @@ Vraća: [`GetSSOUserByEmailAPIResponse`](https://github.com/FastComments/fastcom
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer getSSOUserByEmail'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSSOUserByEmail Primjer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t email = U("user@example.com");
-boost::optional<utility::string_t> includeInactive = boost::optional<utility::string_t>(U("false"));
-api->getSSOUserByEmail(tenantId, email).then([includeInactive](pplx::task<std::shared_ptr<GetSSOUserByEmailAPIResponse>> t) {
+auto correlationId = boost::optional<utility::string_t>(utility::conversions::to_string_t("corr-001"));
+
+api->getSSOUserByEmail(
+    utility::conversions::to_string_t("my-tenant-123"),
+    utility::conversions::to_string_t("user@example.com")
+).then([](pplx::task<std::shared_ptr<GetSSOUserByEmailAPIResponse>> t) {
     try {
-        auto resp = t.get();
-        return resp ? resp : std::make_shared<GetSSOUserByEmailAPIResponse>();
-    } catch (...) {
-        return std::make_shared<GetSSOUserByEmailAPIResponse>();
+        auto response = t.get();
+    } catch (const std::exception&) {
     }
-}).then([](std::shared_ptr<GetSSOUserByEmailAPIResponse> finalResp) {
-    (void)finalResp;
 });
 [inline-code-end]
-
----

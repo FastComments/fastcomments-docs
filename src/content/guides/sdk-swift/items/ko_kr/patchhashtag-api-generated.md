@@ -1,26 +1,26 @@
-## 매개변수
+## Parameters
 
-| 이름 | 형식 | 위치 | 필수 | 설명 |
+| 이름 | 타입 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| tag | string | path | 예 |  |
-| tenantId | string | query | 아니요 |  |
+| tenantId | string | query | Yes |  |
+| tag | string | path | Yes |  |
 
-## 응답
+## Response
 
 반환: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/UpdateHashTagResponse.swift)
 
-## 예제
+## Example
 
 [inline-code-attrs-start title = 'patchHashTag 예제'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 다음 코드 샘플은 아직 베타입니다. 문제가 있을 경우 http://github.com/OpenAPITools/openapi-generator/issues/new 에서 보고해 주세요
+// 다음 코드 샘플은 아직 베타 버전입니다. 문제가 있는 경우 http://github.com/OpenAPITools/openapi-generator/issues/new 를 통해 보고하십시오.
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let tag = "tag_example" // String | 
-let tenantId = "tenantId_example" // String |  (선택 사항)
-let updateHashTagBody = UpdateHashTagBody(tenantId: "tenantId_example", url: "url_example", tag: "tag_example") // UpdateHashTagBody |  (선택 사항)
+let updateHashTagBody = UpdateHashTagBody(tenantId: "tenantId_example", url: "url_example", tag: "tag_example") // UpdateHashTagBody |  (optional)
 
-DefaultAPI.patchHashTag(tag: tag, tenantId: tenantId, updateHashTagBody: updateHashTagBody) { (response, error) in
+DefaultAPI.patchHashTag(tenantId: tenantId, tag: tag, updateHashTagBody: updateHashTagBody) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -31,3 +31,5 @@ DefaultAPI.patchHashTag(tag: tag, tenantId: tenantId, updateHashTagBody: updateH
     }
 }
 [inline-code-end]
+
+---

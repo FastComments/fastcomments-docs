@@ -1,12 +1,11 @@
----
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|-------------|
-| tenantId | string | Tak |  |
-| commentId | string | Tak |  |
-| broadcastId | string | Nie |  |
-| sso | string | Nie |  |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| broadcastId | string | No |  |
+| sso | string = "" | No |  |
 
 ## Odpowiedź
 
@@ -16,19 +15,10 @@ Zwraca: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomment
 
 [inline-code-attrs-start title = 'Przykład unLockComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let tenantId = "my-tenant-123"
-let commentId = "cmt-987654321"
-let (response, httpResponse) = client.unLockComment(
-  tenantId = tenantId,
-  commentId = commentId,
-  broadcastId = "",
-  sso = ""
-)
-if response.isSome:
-  let apiResp = response.get()
-  echo "Unlocked comment ", commentId, " for tenant ", tenantId
+let (maybeEmpty, httpResp) = client.unLockComment(tenantId = "my-tenant-123", commentId = "comment-456", broadcastId = "", sso = "")
+if maybeEmpty.isSome:
+  let emptyResp = maybeEmpty.get()
+  echo "Comment unlocked"
 else:
-  echo "Unlock failed, HTTP status: ", $httpResponse.status
+  echo "Failed to unlock comment"
 [inline-code-end]
-
----

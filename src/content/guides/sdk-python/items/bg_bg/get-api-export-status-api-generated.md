@@ -2,8 +2,9 @@
 
 | Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
-| batchJobId | string | query | Не |  |
-| sso | string | query | Не |  |
+| tenantId | string | query | Yes |  |
+| batchJobId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Отговор
 
@@ -11,29 +12,31 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за get_api_export_status'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример get_api_export_status'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetApiExportStatusOptions
 from client.models.moderation_export_status_response import ModerationExportStatusResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинирането на host е по избор и по подразбиране е https://fastcomments.com
-# Вижте configuration.py за списък с всички поддържани параметри за конфигуриране.
+# Определянето на хоста е по избор и по подразбиране е https://fastcomments.com
+# Вижте configuration.py за списък с всички поддържани параметри на конфигурацията.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Влезте в контекст с инстанция на API клиента
+# Въведете контекст с инстанция на API клиента
 with client.ApiClient(configuration) as api_client:
-    # Създайте инстанция на класа API
+    # Създайте инстанция на API класа
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     batch_job_id = 'batch_job_id_example' # str |  (по избор)
     sso = 'sso_example' # str |  (по избор)
 
     try:
-        api_response = api_instance.get_api_export_status(batch_job_id=batch_job_id, sso=sso)
+        api_response = api_instance.get_api_export_status(tenant_id, GetApiExportStatusOptions(batch_job_id=batch_job_id, sso=sso))
         print("The response of ModerationApi->get_api_export_status:\n")
         pprint(api_response)
     except Exception as e:

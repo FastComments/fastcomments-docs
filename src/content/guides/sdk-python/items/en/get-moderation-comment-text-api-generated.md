@@ -2,6 +2,7 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | commentId | string | path | Yes |  |
 | sso | string | query | No |  |
 
@@ -29,11 +30,12 @@ configuration = client.Configuration(
 with client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_moderation_comment_text(comment_id, sso=sso)
+        api_response = api_instance.get_moderation_comment_text(tenant_id, comment_id, sso=sso)
         print("The response of ModerationApi->get_moderation_comment_text:\n")
         pprint(api_response)
     except Exception as e:

@@ -14,17 +14,13 @@ Returnerer: [`AddDomainConfigResponse`](https://github.com/FastComments/fastcomm
 [inline-code-attrs-start title = 'addDomainConfig Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
-  const tenantId: string = "acme-corp-72";
-  const addDomainConfigParams: AddDomainConfigParams = {
-    domain: "comments.acme-corp.com",
-    primary: true,
-    enforceHttps: true,                // valgfri parameter demonstreret
-    allowedOrigins: ["https://www.acme-corp.com", "https://app.acme-corp.com"],
-    cnameTarget: "fc-cname.fastcomments.net"
+  const tenantId: string = 'tenant_12345';
+  const config: AddDomainConfigParams = {
+    domain: 'myblog.example.com',
+    enabled: true,
+    // beskrivelsen er valgfri og udeladt her
   };
-  const result: AddDomainConfigResponse = await addDomainConfig(tenantId, addDomainConfigParams);
-  console.log(result);
+  const response: AddDomainConfigResponse = await addDomainConfig(tenantId, config);
+  console.log(response);
 })();
 [inline-code-end]
-
----

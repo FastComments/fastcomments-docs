@@ -1,8 +1,7 @@
----
 ## Parámetros
 
-| Nombre | Tipo | Requerido | Descripción |
-|------|------|----------|-------------|
+| Nombre | Tipo | Obligatorio | Descripción |
+|--------|------|-------------|-------------|
 | tenantId | string | Sí |  |
 | id | string | No |  |
 | errorId | string | No |  |
@@ -13,15 +12,14 @@ Devuelve: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomme
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de deleteEmailTemplateRenderError'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteEmailTemplateRenderError Ejemplo'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteEmailTemplateRenderError(tenantId = "my-tenant-123", id = "welcome-email-template", errorId = "err-20250615-01")
-if response.isSome:
-  let emptyResp = response.get()
-  echo "Deleted render error, tenant:", "my-tenant-123"
-  echo "HTTP status:", httpResponse.status
-else:
-  echo "No body returned, HTTP status:", httpResponse.status
-[inline-code-end]
+let (apiRes, httpRes) = client.deleteEmailTemplateRenderError(
+  tenantId = "my-tenant-123",
+  id = "welcome-email",
+  errorId = "render-err-456"
+)
 
----
+if apiRes.isSome:
+  let empty = apiRes.get()
+[inline-code-end]

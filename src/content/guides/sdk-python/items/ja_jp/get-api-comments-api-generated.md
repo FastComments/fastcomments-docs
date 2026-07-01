@@ -2,52 +2,55 @@
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| page | number | query | いいえ |  |
-| count | number | query | いいえ |  |
-| text-search | string | query | いいえ |  |
-| byIPFromComment | string | query | いいえ |  |
-| filters | string | query | いいえ |  |
-| searchFilters | string | query | いいえ |  |
-| sorts | string | query | いいえ |  |
-| demo | boolean | query | いいえ |  |
-| sso | string | query | いいえ |  |
+| tenantId | string | query | Yes |  |
+| page | number | query | No |  |
+| count | number | query | No |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sorts | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
-## レスポンス
+## 応答
 
-戻り値: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/moderation_api_get_comments_response.py)
+返却: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/moderation_api_get_comments_response.py)
 
 ## 例
 
 [inline-code-attrs-start title = 'get_api_comments の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetApiCommentsOptions
 from client.models.moderation_api_get_comments_response import ModerationAPIGetCommentsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# ホストの定義は任意で、デフォルトは https://fastcomments.com です
-# サポートされているすべての構成パラメータの一覧は configuration.py を参照してください。
+# ホストの定義はオプションで、デフォルトは https://fastcomments.com です
+# configuration.py を参照して、サポートされているすべての設定パラメータのリストをご確認ください
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# API クライアントのインスタンスでコンテキストに入る
+# API クライアントのインスタンスでコンテキストに入ります
 with client.ApiClient(configuration) as api_client:
-    # API クラスのインスタンスを作成する
+    # API クラスのインスタンスを作成します
     api_instance = client.ModerationApi(api_client)
-    page = 3.4 # float | （オプション）
-    count = 3.4 # float | （オプション）
-    text_search = 'text_search_example' # str | （オプション）
-    by_ip_from_comment = 'by_ip_from_comment_example' # str | （オプション）
-    filters = 'filters_example' # str | （オプション）
-    search_filters = 'search_filters_example' # str | （オプション）
-    sorts = 'sorts_example' # str | （オプション）
-    demo = True # bool | （オプション）
-    sso = 'sso_example' # str | （オプション）
+    tenant_id = 'tenant_id_example' # str | 
+    page = 3.4 # float |  (オプション)
+    count = 3.4 # float |  (オプション)
+    text_search = 'text_search_example' # str |  (オプション)
+    by_ip_from_comment = 'by_ip_from_comment_example' # str |  (オプション)
+    filters = 'filters_example' # str |  (オプション)
+    search_filters = 'search_filters_example' # str |  (オプション)
+    sorts = 'sorts_example' # str |  (オプション)
+    demo = True # bool |  (オプション)
+    sso = 'sso_example' # str |  (オプション)
 
     try:
-        api_response = api_instance.get_api_comments(page=page, count=count, text_search=text_search, by_ip_from_comment=by_ip_from_comment, filters=filters, search_filters=search_filters, sorts=sorts, demo=demo, sso=sso)
+        api_response = api_instance.get_api_comments(tenant_id, GetApiCommentsOptions(page=page, count=count, text_search=text_search, by_ip_from_comment=by_ip_from_comment, filters=filters, search_filters=search_filters, sorts=sorts, demo=demo, sso=sso))
         print("The response of ModerationApi->get_api_comments:\n")
         pprint(api_response)
     except Exception as e:

@@ -3,22 +3,7 @@
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
-| page | int | No |  |
-| limit | int | No |  |
-| skip | int | No |  |
-| asTree | bool | No |  |
-| skipChildren | int | No |  |
-| limitChildren | int | No |  |
-| maxTreeDepth | int | No |  |
-| urlId | string | Yes |  |
-| userId | string | No |  |
-| anonUserId | string | No |  |
-| contextUserId | string | No |  |
-| hashTag | string | No |  |
-| parentId | string | No |  |
-| direction | SortDirections | No |  |
-| fromDate | int64 | No |  |
-| toDate | int64 | No |  |
+| options | GetCommentsOptions | No |  |
 
 ## Response
 
@@ -28,26 +13,20 @@ Returns: [`Option[APIGetCommentsResponse]`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'getComments Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getComments(
-  tenantId = "my-tenant-123",
-  page = 1,
-  limit = 25,
-  skip = 0,
-  asTree = true,
-  skipChildren = 0,
-  limitChildren = 5,
-  maxTreeDepth = 3,
-  urlId = "news/2026-global-economy",
-  userId = "user-789",
-  anonUserId = "",
-  contextUserId = "",
-  hashTag = "economy",
-  parentId = "",
-  direction = SortDirections.Desc,
-  fromDate = 1710000000000'i64,
-  toDate = 1710100000000'i64
+let options = GetCommentsOptions(
+  urlId = "news/article-title",
+  page = 0,
+  pageSize = 20,
+  sort = "newest",
+  includeDeleted = false,
+  includeReplies = true,
+  userIds = @[],
+  tags = @[]
 )
+
+let (response, httpResponse) = client.getComments(tenantId = "my-tenant-123", options = options)
+
 if response.isSome:
-  let commentsResp = response.get()
-  discard commentsResp
+  let comments = response.get()
+  discard comments
 [inline-code-end]

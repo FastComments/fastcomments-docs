@@ -22,6 +22,7 @@ Returns: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments
 [inline-code-attrs-start title = 'get_pages_public Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetPagesPublicOptions
 from client.models.get_public_pages_response import GetPublicPagesResponse
 from client.models.pages_sort_by import PagesSortBy
 from client.rest import ApiException
@@ -46,7 +47,7 @@ with client.ApiClient(configuration) as api_client:
     has_comments = True # bool | If true, only return pages with at least one comment. (optional)
 
     try:
-        api_response = api_instance.get_pages_public(tenant_id, cursor=cursor, limit=limit, q=q, sort_by=sort_by, has_comments=has_comments)
+        api_response = api_instance.get_pages_public(tenant_id, GetPagesPublicOptions(cursor=cursor, limit=limit, q=q, sort_by=sort_by, has_comments=has_comments))
         print("The response of PublicApi->get_pages_public:\n")
         pprint(api_response)
     except Exception as e:

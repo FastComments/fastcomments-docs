@@ -1,26 +1,27 @@
 ## Paramètres
 
 | Nom | Type | Obligatoire | Description |
-|------|------|----------|-------------|
+|------|------|-------------|-------------|
+| tenant_id | String | Oui |  |
 | comment_id | String | Oui |  |
 | sso | String | Non |  |
 
 ## Réponse
 
-Renvoie: [`ModerationApiGetLogsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/moderation_api_get_logs_response.rs)
+Renvoie : [`ModerationApiGetLogsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/moderation_api_get_logs_response.rs)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de get_logs'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple get_logs'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let params: GetLogsParams = GetLogsParams {
-        comment_id: "news/article/2026/06/fastcomments-thread-12345".to_string(),
-        sso: Some("acme-corp|user:john.doe@example.com".to_string()),
+async fn example() -> Result<(), Error> {
+    let params = GetLogsParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: "news/article-12345".to_string(),
+        sso: Some("user@example.com".to_string()),
     };
-    let logs: ModerationApiGetLogsResponse = get_logs(&configuration, params).await?;
+    let response = get_logs(&configuration, params).await?;
+    let _ = response;
     Ok(())
 }
 [inline-code-end]
-
----

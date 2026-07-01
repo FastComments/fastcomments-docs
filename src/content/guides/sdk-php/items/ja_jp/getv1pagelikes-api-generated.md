@@ -2,12 +2,12 @@
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | はい |  |
-| urlId | string | query | はい |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
 
-## レスポンス
+## 応答
 
-戻り値: [`GetV1PageLikes`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetV1PageLikes.php)
+返却: [`GetV1PageLikes`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetV1PageLikes.php)
 
 ## 例
 
@@ -19,12 +19,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // カスタムHTTPクライアントを使用する場合は、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
-    // これはオプションです。デフォルトでは `GuzzleHttp\Client` が使用されます。
+    // カスタム HTTP クライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
+    // これはオプションで、デフォルトでは `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$url_id = 'url_id_example'; // string
+
+$tenant_id = 'tenant_id_example'; // 文字列
+$url_id = 'url_id_example'; // 文字列
+
 
 try {
     $result = $apiInstance->getV1PageLikes($tenant_id, $url_id);
@@ -33,5 +35,3 @@ try {
     echo 'Exception when calling PublicApi->getV1PageLikes: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

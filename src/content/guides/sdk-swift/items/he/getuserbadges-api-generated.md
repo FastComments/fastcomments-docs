@@ -1,35 +1,35 @@
-## פרמטרים
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | חובה | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | כן |  |
-| userId | string | query | לא |  |
-| badgeId | string | query | לא |  |
-| type | number | query | לא |  |
-| displayedOnComments | boolean | query | לא |  |
-| limit | number | query | לא |  |
-| skip | number | query | לא |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| badgeId | string | query | No |  |
+| type | number | query | No |  |
+| displayedOnComments | boolean | query | No |  |
+| limit | number | query | No |  |
+| skip | number | query | No |  |
 
-## תשובה
+## Response
 
-מחזיר: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIGetUserBadgesResponse.swift)
+Returns: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIGetUserBadgesResponse.swift)
 
-## דוגמה
+## Example
 
-[inline-code-attrs-start title = 'דוגמה ל-getUserBadges'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getUserBadges'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// דוגמאות הקוד הבאות עדיין בבטא. עבור כל בעיה, אנא דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// הדגימות הבאות עדיין בגרסת בטא. לכל בעיה, אנא דווח ב‑http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let userId = "userId_example" // String |  (אופציונלי)
-let badgeId = "badgeId_example" // String |  (אופציונלי)
-let type = 987 // Double |  (אופציונלי)
-let displayedOnComments = true // Bool |  (אופציונלי)
-let limit = 987 // Double |  (אופציונלי)
-let skip = 987 // Double |  (אופציונלי)
+let userId = "userId_example" // String |  (optional)
+let badgeId = "badgeId_example" // String |  (optional)
+let type = 987 // Double |  (optional)
+let displayedOnComments = true // Bool |  (optional)
+let limit = 987 // Double |  (optional)
+let skip = 987 // Double |  (optional)
 
-DefaultAPI.getUserBadges(tenantId: tenantId, userId: userId, badgeId: badgeId, type: type, displayedOnComments: displayedOnComments, limit: limit, skip: skip) { (response, error) in
+DefaultAPI.getUserBadges(tenantId: tenantId, options: DefaultAPI.GetUserBadgesOptions(userId: userId, badgeId: badgeId, type: type, displayedOnComments: displayedOnComments, limit: limit, skip: skip)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -40,3 +40,5 @@ DefaultAPI.getUserBadges(tenantId: tenantId, userId: userId, badgeId: badgeId, t
     }
 }
 [inline-code-end]
+
+---

@@ -1,12 +1,13 @@
-## Параметри
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
-| badgesUserId | string | query | No |  |
-| commentId | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Так |  |
+| badgesUserId | string | query | Ні |  |
+| commentId | string | query | Ні |  |
+| sso | string | query | Ні |  |
 
-## Відповідь
+## Response
 
 Повертає: [`GetUserManualBadgesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserManualBadgesResponse.java)
 
@@ -27,14 +28,15 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String badgesUserId = "badgesUserId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      GetUserManualBadgesResponse result = apiInstance.getManualBadgesForUser()
+      GetUserManualBadgesResponse result = apiInstance.getManualBadgesForUser(tenantId)
             .badgesUserId(badgesUserId)
             .commentId(commentId)
-            .sso(sso)
+            .sso(soto)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

@@ -2,9 +2,9 @@
 
 | Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Sí |  |
-| urlIdWS | string | query | Sí |  |
-| userIds | string | query | Sí |  |
+| tenantId | string | query | Yes |  |
+| urlIdWS | string | query | Yes |  |
+| userIds | string | query | Yes |  |
 
 ## Respuesta
 
@@ -12,7 +12,7 @@ Devuelve: [`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fa
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de getUserPresenceStatuses'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUserPresenceStatuses Ejemplo'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -24,9 +24,11 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     // Esto es opcional, se usará `GuzzleHttp\Client` por defecto.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$url_id_ws = 'url_id_ws_example'; // string
-$user_ids = 'user_ids_example'; // string
+
+$tenant_id = 'tenant_id_example'; // cadena
+$url_id_ws = 'url_id_ws_example'; // cadena
+$user_ids = 'user_ids_example'; // cadena
+
 
 try {
     $result = $apiInstance->getUserPresenceStatuses($tenant_id, $url_id_ws, $user_ids);

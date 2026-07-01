@@ -1,13 +1,13 @@
 ## Parameter
 
-| Name | Type | Location | Erforderlich | Beschreibung |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | urlId | string | query | Ja |  |
 
 ## Antwort
 
-Gibt zurück: [`GetPageByURLIdAPIResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPageByURLIdAPIResponse.php)
+Rückgabe: [`GetPageByURLIdAPIResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPageByURLIdAPIResponse.php)
 
 ## Beispiel
 
@@ -19,7 +19,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // API-Schlüssel-Autorisierung konfigurieren: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Dekommentieren Sie die nächste Zeile, um ein Präfix (z. B. Bearer) für den API-Schlüssel einzurichten, falls erforderlich
+// Entfernen Sie das Kommentarzeichen unten, um ein Präfix (z. B. Bearer) für den API-Schlüssel einzurichten, falls erforderlich
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
@@ -29,8 +29,10 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $url_id = 'url_id_example'; // string
+
 
 try {
     $result = $apiInstance->getPageByURLId($tenant_id, $url_id);

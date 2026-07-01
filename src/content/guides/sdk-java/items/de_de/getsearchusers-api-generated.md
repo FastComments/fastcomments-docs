@@ -1,13 +1,14 @@
 ## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
-|------|------|----------|----------|-------------|
-| value | string | query | Nein |  |
-| sso | string | query | Nein |  |
+|------|------|-----|--------------|---------------|
+| tenantId | string | query | Yes |  |
+| value | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Antwort
 
-Gibt zurück: [`ModerationUserSearchResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationUserSearchResponse.java)
+Rückgabe: [`ModerationUserSearchResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationUserSearchResponse.java)
 
 ## Beispiel
 
@@ -26,15 +27,17 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String value = "value_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationUserSearchResponse result = apiInstance.getSearchUsers()
+      ModerationUserSearchResponse result = apiInstance.getSearchUsers(tenantId)
             .value(value)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
+      // Ausnahme beim Aufruf von ModerationApi#getSearchUsers
       System.err.println("Exception when calling ModerationApi#getSearchUsers");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());

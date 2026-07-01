@@ -1,7 +1,8 @@
 ## Parâmetros
 
 | Nome | Tipo | Localização | Obrigatório | Descrição |
-|------|------|----------|----------|-------------|
+|------|------|-------------|-------------|-----------|
+| tenantId | string | query | Sim |  |
 | value | string | query | Não |  |
 | filters | string | query | Não |  |
 | searchFilters | string | query | Não |  |
@@ -13,31 +14,33 @@ Retorna: [`ModerationCommentSearchResponse`](https://github.com/FastComments/fas
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'get_search_comments_summary Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo get_search_comments_summary'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetSearchCommentsSummaryOptions
 from client.models.moderation_comment_search_response import ModerationCommentSearchResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://fastcomments.com
-# See configuration.py for a list of all supported configuration parameters.
+# Definir o host é opcional e o padrão é https://fastcomments.com
+# Veja configuration.py para uma lista de todos os parâmetros de configuração suportados.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Enter a context with an instance of the API client
+# Entrar em um contexto com uma instância do cliente API
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # Crie uma instância da classe API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     value = 'value_example' # str |  (opcional)
     filters = 'filters_example' # str |  (opcional)
     search_filters = 'search_filters_example' # str |  (opcional)
     sso = 'sso_example' # str |  (opcional)
 
     try:
-        api_response = api_instance.get_search_comments_summary(value=value, filters=filters, search_filters=search_filters, sso=sso)
+        api_response = api_instance.get_search_comments_summary(tenant_id, GetSearchCommentsSummaryOptions(value=value, filters=filters, search_filters=search_filters, sso=sso))
         print("The response of ModerationApi->get_search_comments_summary:\n")
         pprint(api_response)
     except Exception as e:

@@ -1,14 +1,15 @@
 ## Parametri
 
 | Ime | Tip | Lokacija | Obvezno | Opis |
-|------|------|----------|----------|-------------|
-| text-search | string | query | Ne |  |
-| byIPFromComment | string | query | Ne |  |
-| filters | string | query | Ne |  |
-| searchFilters | string | query | Ne |  |
-| afterId | string | query | Ne |  |
-| demo | boolean | query | Ne |  |
-| sso | string | query | Ne |  |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| afterId | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -16,12 +17,13 @@ Vrne: [`ModerationAPIGetCommentIdsResponse`](https://github.com/FastComments/fas
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer get_api_ids'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_api_ids Primer'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 opts = {
   text_search: 'text_search_example', # String | 
   by_ip_from_comment: 'by_ip_from_comment_example', # String | 
@@ -34,7 +36,7 @@ opts = {
 
 begin
   
-  result = api_instance.get_api_ids(opts)
+  result = api_instance.get_api_ids(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_api_ids: #{e}"

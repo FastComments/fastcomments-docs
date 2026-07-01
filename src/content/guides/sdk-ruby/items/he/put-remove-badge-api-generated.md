@@ -1,12 +1,13 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| badgeId | string | query | כן |  |
-| userId | string | query | לא |  |
-| commentId | string | query | לא |  |
-| broadcastId | string | query | לא |  |
-| sso | string | query | לא |  |
+| tenantId | string | query | Yes |  |
+| badgeId | string | query | Yes |  |
+| userId | string | query | No |  |
+| commentId | string | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## תגובה
 
@@ -14,27 +15,26 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה עבור put_remove_badge'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת put_remove_badge'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
-badge_id = 'badge_id_example' # מחרוזת | 
+tenant_id = 'tenant_id_example' # String | 
+badge_id = 'badge_id_example' # String | 
 opts = {
-  user_id: 'user_id_example', # מחרוזת | 
-  comment_id: 'comment_id_example', # מחרוזת | 
-  broadcast_id: 'broadcast_id_example', # מחרוזת | 
-  sso: 'sso_example' # מחרוזת | 
+  user_id: 'user_id_example', # String | 
+  comment_id: 'comment_id_example', # String | 
+  broadcast_id: 'broadcast_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.put_remove_badge(badge_id, opts)
+  result = api_instance.put_remove_badge(tenant_id, badge_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->put_remove_badge: #{e}"
 end
 [inline-code-end]
-
----

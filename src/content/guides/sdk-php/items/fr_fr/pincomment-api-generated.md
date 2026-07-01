@@ -1,16 +1,15 @@
----
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Oui |  |
-| commentId | string | path | Oui |  |
-| broadcastId | string | query | Oui |  |
-| sso | string | query | Non |  |
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Réponse
 
-Retourne : [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ChangeCommentPinStatusResponse.php)
+Retourne : [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ChangeCommentPinStatusResponse.php)
 
 ## Exemple
 
@@ -22,14 +21,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Si vous souhaitez utiliser un client HTTP personnalisé, passez votre client qui implémente `GuzzleHttp\ClientInterface`.
+    // Si vous voulez utiliser un client HTTP personnalisé, passez votre client qui implémente `GuzzleHttp\ClientInterface`.
     // Ceci est optionnel, `GuzzleHttp\Client` sera utilisé par défaut.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $comment_id = 'comment_id_example'; // string
 $broadcast_id = 'broadcast_id_example'; // string
 $sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->pinComment($tenant_id, $comment_id, $broadcast_id, $sso);

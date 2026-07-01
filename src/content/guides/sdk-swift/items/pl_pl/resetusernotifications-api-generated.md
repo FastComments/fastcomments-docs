@@ -1,14 +1,14 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Tak |  |
-| afterId | string | query | Nie |  |
-| afterCreatedAt | integer | query | Nie |  |
-| unreadOnly | boolean | query | Nie |  |
-| dmOnly | boolean | query | Nie |  |
-| noDm | boolean | query | Nie |  |
-| sso | string | query | Nie |  |
+| tenantId | string | query | Yes |  |
+| afterId | string | query | No |  |
+| afterCreatedAt | integer | query | No |  |
+| unreadOnly | boolean | query | No |  |
+| dmOnly | boolean | query | No |  |
+| noDm | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Odpowiedź
 
@@ -16,20 +16,20 @@ Zwraca: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastc
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład resetUserNotifications'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'resetUserNotifications Przykład'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Poniższe przykłady kodu są nadal w wersji beta. W przypadku problemu prosimy o zgłoszenie przez http://github.com/OpenAPITools/openapi-generator/issues/new
+// Następujące przykłady kodu są wciąż w wersji beta. W razie problemu, prosimy zgłosić je pod adresem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let afterId = "afterId_example" // String |  (opcjonalne)
-let afterCreatedAt = 987 // Int64 |  (opcjonalne)
-let unreadOnly = true // Bool |  (opcjonalne)
-let dmOnly = true // Bool |  (opcjonalne)
-let noDm = true // Bool |  (opcjonalne)
-let sso = "sso_example" // String |  (opcjonalne)
+let afterId = "afterId_example" // String |  (optional)
+let afterCreatedAt = 987 // Int64 |  (optional)
+let unreadOnly = true // Bool |  (optional)
+let dmOnly = true // Bool |  (optional)
+let noDm = true // Bool |  (optional)
+let sso = "sso_example" // String |  (optional)
 
-PublicAPI.resetUserNotifications(tenantId: tenantId, afterId: afterId, afterCreatedAt: afterCreatedAt, unreadOnly: unreadOnly, dmOnly: dmOnly, noDm: noDm, sso: sso) { (response, error) in
+PublicAPI.resetUserNotifications(tenantId: tenantId, options: PublicAPI.ResetUserNotificationsOptions(afterId: afterId, afterCreatedAt: afterCreatedAt, unreadOnly: unreadOnly, dmOnly: dmOnly, noDm: noDm, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

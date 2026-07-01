@@ -1,7 +1,7 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+|------|------|-----------|--------------|-------------|
 | tenantId | string | query | Sì |  |
 | id | string | path | Sì |  |
 
@@ -11,26 +11,28 @@ Restituisce: [`APIGetCommentResponse`](https://github.com/FastComments/fastcomme
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di getComment'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio getComment'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api_key
+// Configura l'autorizzazione della chiave API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Rimuovi il commento qui sotto per impostare il prefisso (es. Bearer) per la chiave API, se necessario
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // Se vuoi usare un client HTTP personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
+    // Questo è opzionale, `GuzzleHttp\Client` verrà usato come predefinito.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$id = 'id_example'; // string
+
+$tenant_id = 'tenant_id_example'; // stringa
+$id = 'id_example'; // stringa
+
 
 try {
     $result = $apiInstance->getComment($tenant_id, $id);
@@ -39,3 +41,5 @@ try {
     echo 'Exception when calling DefaultApi->getComment: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

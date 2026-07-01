@@ -1,11 +1,13 @@
+---
+Завантажити та змінити розмір зображення
+
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| file | string | Ні |  |
-| sizePreset | SizePreset | Ні |  |
-| urlId | string | Так |  |
+| tenantId | string | Yes |  |
+| file | string | No |  |
+| options | UploadImageOptions | No |  |
 
 ## Відповідь
 
@@ -13,16 +15,17 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад uploadImage'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'uploadImage Приклад'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.uploadImage(
+let (uploadResult, httpResponse) = client.uploadImage(
   tenantId = "my-tenant-123",
-  file = "assets/images/comment-avatar.jpg",
-  sizePreset = SizePreset.small,
-  urlId = "news/article-2025-11-22"
+  file = "images/avatar.jpg",
+  options = UploadImageOptions()
 )
-if response.isSome:
-  let upload = response.get()
-  echo "Uploaded image id: ", upload.id
-  echo "Uploaded image url: ", upload.url
+
+if uploadResult.isSome:
+  let result = uploadResult.get()
+  # use result as needed
 [inline-code-end]
+
+---

@@ -1,32 +1,42 @@
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 類型 | 必要 | 描述 |
 |------|------|----------|-------------|
-| page | number | 否 |  |
-| count | number | 否 |  |
-| textSearch | string | 否 |  |
-| byIPFromComment | string | 否 |  |
-| filters | string | 否 |  |
-| searchFilters | string | 否 |  |
-| sorts | string | 否 |  |
-| demo | boolean | 否 |  |
-| sso | string | 否 |  |
+| page | number | No |  |
+| count | number | No |  |
+| textSearch | string | No |  |
+| byIPFromComment | string | No |  |
+| filters | string | No |  |
+| searchFilters | string | No |  |
+| sorts | string | No |  |
+| demo | boolean | No |  |
+| tenantId | string | No |  |
+| sso | string | No |  |
 
-## 回傳
+## 回應
 
-回傳: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPIGetCommentsResponse.ts)
+回傳：[`GetApiCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetApiCommentsResponse.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getApiComments 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const page: number = 2;
-const count: number = 25;
-const textSearch: string = 'comments failing to load after posting';
-const filters: string = 'status:pending,moderation:required';
-const sorts: string = 'createdAt:desc';
-const demo: boolean = false;
-const sso: string = 'sso-usr-7f3b2a';
+async function loadComments() {
+  const fullResult: GetApiCommentsResponse = await getApiComments(
+    2,                     // 頁面
+    25,                    // 數量
+    "feedback",           // 文字搜尋
+    "192.168.1.100",      // 依IP取得評論
+    "approved",           // 篩選條件
+    "hasReplies",         // 搜尋篩選條件
+    "dateDesc",           // 排序
+    false,                // 示範
+    "tenant-abc123",      // 租戶ID
+    "sso-token-xyz"       // 單點登入
+  );
 
-const response: ModerationAPIGetCommentsResponse = await getApiComments(page, count, textSearch, undefined, filters, undefined, sorts, demo, sso);
+  const minimalResult: GetApiCommentsResponse = await getApiComments(undefined, 5);
+}
 [inline-code-end]
+
+---

@@ -1,24 +1,20 @@
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
-|------|------|----------|-------------|
-| value | string | Nein |  |
-| sso | string | Nein |  |
+|------|------|--------------|--------------|
+| tenantId | string | Ja |  |
+| options | GetSearchUsersOptions | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`Option[ModerationUserSearchResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_user_search_response.nim)
+Rückgabe: [`Option[ModerationUserSearchResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_user_search_response.nim)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'getSearchUsers Beispiel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSearchUsers(value = "john.doe@example.com", sso = "sso-acme-789")
-if response.isSome:
-  let searchRes = response.get()
-  echo "Search result:", searchRes
-else:
-  echo "No users found"
+let (searchRes, httpRes) = client.getSearchUsers(tenantId = "my-tenant-123", options = default(GetSearchUsersOptions))
+if searchRes.isSome:
+  let data = searchRes.get()
+  echo data
 [inline-code-end]
-
----

@@ -1,7 +1,8 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Zorunlu | Açıklama |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Evet |  |
 | userId | string | query | Hayır |  |
 | trustFactor | string | query | Hayır |  |
 | sso | string | query | Hayır |  |
@@ -18,6 +19,7 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 opts = {
   user_id: 'user_id_example', # String | 
   trust_factor: 'trust_factor_example', # String | 
@@ -26,7 +28,7 @@ opts = {
 
 begin
   
-  result = api_instance.set_trust_factor(opts)
+  result = api_instance.set_trust_factor(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->set_trust_factor: #{e}"

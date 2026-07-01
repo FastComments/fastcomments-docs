@@ -1,7 +1,8 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательный | Описание |
+| Имя | Тип | Местоположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
 | text-search | string | query | Нет |  |
 | byIPFromComment | string | query | Нет |  |
 | filters | string | query | Нет |  |
@@ -15,9 +16,9 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример postApiExport'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postApiExport Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Import classes:
+// Импорт классов:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -30,6 +31,7 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String textSearch = "textSearch_example"; // String | 
     String byIPFromComment = "byIPFromComment_example"; // String | 
     String filters = "filters_example"; // String | 
@@ -37,7 +39,7 @@ public class Example {
     String sorts = "sorts_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationExportResponse result = apiInstance.postApiExport()
+      ModerationExportResponse result = apiInstance.postApiExport(tenantId)
             .textSearch(textSearch)
             .byIPFromComment(byIPFromComment)
             .filters(filters)
@@ -47,14 +49,12 @@ public class Example {
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ModerationApi#postApiExport");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("Исключение при вызове ModerationApi#postApiExport");
+      System.err.println("Код состояния: " + e.getCode());
+      System.err.println("Причина: " + e.getResponseBody());
+      System.err.println("Заголовки ответа: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }
 }
 [inline-code-end]
-
----

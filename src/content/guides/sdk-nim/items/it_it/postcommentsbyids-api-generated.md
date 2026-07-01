@@ -1,9 +1,10 @@
 ## Parametri
 
-| Nome | Tipo | Richiesto | Descrizione |
-|------|------|----------|-------------|
+| Nome | Tipo | Obbligatorio | Descrizione |
+|------|------|--------------|-------------|
+| tenantId | string | Sì |  |
 | commentsByIdsParams | CommentsByIdsParams | No |  |
-| sso | string | No |  |
+| sso | string = "" | No |  |
 
 ## Risposta
 
@@ -11,13 +12,12 @@ Restituisce: [`Option[ModerationAPIChildCommentsResponse]`](https://github.com/F
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di postCommentsByIds'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postCommentsByIds Esempio'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let commentsParams = CommentsByIdsParams(ids = @["cmt-1001", "cmt-1002"], includeReplies = true, maxDepth = 2)
-let (response, httpResponse) = client.postCommentsByIds(commentsByIdsParams = commentsParams, sso = "sso-user-7f3a9b")
-if response.isSome:
-  let result = response.get()
-  echo "Received child comments response: ", result
+let tenantId = "my-tenant-123"
+let params = CommentsByIdsParams(commentIds = @["cmt-001", "cmt-002"])
+let (maybeResp, httpResp) = client.postCommentsByIds(tenantId = tenantId, commentsByIdsParams = params, sso = "")
+if maybeResp.isSome:
+  let resp = maybeResp.get()
+  # usa resp come necessario
 [inline-code-end]
-
----

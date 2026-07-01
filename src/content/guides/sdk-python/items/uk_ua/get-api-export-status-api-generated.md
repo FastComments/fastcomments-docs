@@ -1,9 +1,10 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язкове | Опис |
-|------|------|----------|----------|-------------|
-| batchJobId | string | query | Ні |  |
-| sso | string | query | Ні |  |
+| Назва | Тип | Розташування | Обов’язково | Опис |
+|------|------|--------------|-------------|------|
+| tenantId | string | query | Yes |  |
+| batchJobId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Відповідь
 
@@ -14,26 +15,28 @@
 [inline-code-attrs-start title = 'get_api_export_status Приклад'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetApiExportStatusOptions
 from client.models.moderation_export_status_response import ModerationExportStatusResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Визначення хоста необов'язкове й за замовчуванням встановлено на https://fastcomments.com
-# Дивіться configuration.py для списку всіх підтримуваних параметрів конфігурації.
+# Визначення хоста є необов’язковим і за замовчуванням https://fastcomments.com
+# Див. configuration.py для списку всіх підтримуваних параметрів конфігурації.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Відкрийте контекст з екземпляром клієнта API
+# Введіть контекст з екземпляром клієнта API
 with client.ApiClient(configuration) as api_client:
     # Створіть екземпляр класу API
     api_instance = client.ModerationApi(api_client)
-    batch_job_id = 'batch_job_id_example' # str |  (необов'язковий)
-    sso = 'sso_example' # str |  (необов'язковий)
+    tenant_id = 'tenant_id_example' # str |
+    batch_job_id = 'batch_job_id_example' # str |  (необов’язково)
+    sso = 'sso_example' # str |  (необов’язково)
 
     try:
-        api_response = api_instance.get_api_export_status(batch_job_id=batch_job_id, sso=sso)
+        api_response = api_instance.get_api_export_status(tenant_id, GetApiExportStatusOptions(batch_job_id=batch_job_id, sso=sso))
         print("The response of ModerationApi->get_api_export_status:\n")
         pprint(api_response)
     except Exception as e:

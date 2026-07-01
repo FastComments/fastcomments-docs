@@ -1,8 +1,9 @@
 ## Parâmetros
 
-| Nome | Tipo | Localização | Obrigatório | Descrição |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| sso | string | query | Não |  |
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Resposta
 
@@ -10,7 +11,7 @@ Retorna: [`GetBannedUsersCountResponse`](https://github.com/FastComments/fastcom
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getCounts'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo getCounts'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importar classes:
 import com.fastcomments.invoker.ApiClient;
@@ -25,9 +26,10 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      GetBannedUsersCountResponse result = apiInstance.getCounts()
+      GetBannedUsersCountResponse result = apiInstance.getCounts(tenantId)
             .sso(sso)
             .execute();
       System.out.println(result);

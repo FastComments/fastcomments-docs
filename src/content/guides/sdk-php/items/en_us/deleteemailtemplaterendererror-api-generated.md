@@ -30,9 +30,11 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
 $error_id = 'error_id_example'; // string
+
 
 try {
     $result = $apiInstance->deleteEmailTemplateRenderError($tenant_id, $id, $error_id);

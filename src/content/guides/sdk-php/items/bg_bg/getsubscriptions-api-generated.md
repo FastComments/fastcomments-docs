@@ -17,23 +17,22 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api_key
-// Конфигуриране на удостоверяване с API ключ: api_key
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Разкоментирайте по-долу, за да зададете префикс (напр. Bearer) за API ключа, ако е необходимо
+// Конфигуриране на авторизация за API ключ: api_key
+$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Разкоментирайте долния ред за настройка на префикс (например Bearer) за API ключа, ако е необходимо
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // Ако искате да използвате персонализиран HTTP клиент, подайте ваш клиент, който имплементира `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    // Това е незадължително, по подразбиране ще бъде използван `GuzzleHttp\Client`.
+    // Ако искате да използвате персонализиран HTTP клиент, предайте вашия клиент, който имплементира `GuzzleHttp\ClientInterface`.
+    // Това е незадължително, `GuzzleHttp\Client` ще се използва по подразбиране.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $user_id = 'user_id_example'; // string
+
 
 try {
     $result = $apiInstance->getSubscriptions($tenant_id, $user_id);

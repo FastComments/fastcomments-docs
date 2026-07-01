@@ -1,11 +1,10 @@
----
 ## פרמטרים
 
-| שם | סוג | מיקום | חובה | תיאור |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | כן |  |
-| id | string | path | כן |  |
-| editKey | string | query | לא |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| editKey | string | query | No |  |
 
 ## תגובה
 
@@ -13,27 +12,34 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-deleteVote'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת deleteVote'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// הגדרת הרשאת מפתח ה-API: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Configure API key authorization: api_key
+// הגדר הרשאת מפתח API: api_key
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// בטל את ההערה למטה כדי להגדיר קידומת (למשל Bearer) למפתח API, אם נדרש
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // אם ברצונך להשתמש בלקוח HTTP מותאם אישית, העבר את הלקוח שלך שמממש את `GuzzleHttp\ClientInterface`.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // אם ברצונך להשתמש בלקוח HTTP מותאם אישית, העבר את הלקוח שלך המממש `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
+    // זה אופציונלי, `GuzzleHttp\Client` ישמש כברירת מחדל.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // מחרוזת
-$id = 'id_example'; // מחרוזת
-$edit_key = 'edit_key_example'; // מחרוזת
+
+$tenant_id = 'tenant_id_example'; // string
+// מחרוזת
+$id = 'id_example'; // string
+// מחרוזת
+$edit_key = 'edit_key_example'; // string
+// מחרוזת
+
 
 try {
     $result = $apiInstance->deleteVote($tenant_id, $id, $edit_key);
@@ -42,5 +48,3 @@ try {
     echo 'Exception when calling DefaultApi->deleteVote: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

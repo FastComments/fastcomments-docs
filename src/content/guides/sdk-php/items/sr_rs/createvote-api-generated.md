@@ -2,11 +2,11 @@
 
 | Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| commentId | string | query | Да |  |
-| direction | string | query | Да |  |
-| userId | string | query | Не |  |
-| anonUserId | string | query | Не |  |
+| tenantId | string | упит | Да |  |
+| commentId | string | упит | Да |  |
+| direction | string | упит | Да |  |
+| userId | string | упит | Не |  |
+| anonUserId | string | упит | Не |  |
 
 ## Одговор
 
@@ -20,30 +20,32 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Конфигуришите ауторизацију API кључа: api_key
+// Конфигуриши ауторизацију API кључа: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Окоментаришите испод да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
+// Одкоментариши испод да подесиш префикс (нпр. Bearer) за API кључ, ако је потребно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ако желите да користите прилагођен HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционално, као подразумевано ће бити коришћен `GuzzleHttp\Client`.
+    // Ако желите да користите прилагођени http клијент, проследите клијент који имплементира `GuzzleHttp\ClientInterface`.
+    // Ово је опционално, `GuzzleHttp\Client` ће се користити као подразумевано.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $comment_id = 'comment_id_example'; // string
 $direction = 'direction_example'; // string
-$user_id = 'user_id_example'; // string
-$anon_user_id = 'anon_user_id_example'; // string
+$options = [
+    'user_id' => 'user_id_example', // string
+    'anon_user_id' => 'anon_user_id_example', // string
+];
+
 
 try {
-    $result = $apiInstance->createVote($tenant_id, $comment_id, $direction, $user_id, $anon_user_id);
+    $result = $apiInstance->createVote($tenant_id, $comment_id, $direction, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->createVote: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

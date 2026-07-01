@@ -2,8 +2,8 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | tag | string | path | Yes |  |
-| tenantId | string | query | No |  |
 
 ## Response
 
@@ -24,15 +24,13 @@ FastCommentsClient.configure do |config|
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
+tenant_id = 'tenant_id_example' # String | 
 tag = 'tag_example' # String | 
-opts = {
-  tenant_id: 'tenant_id_example', # String | 
-  delete_hash_tag_request_body: FastCommentsClient::DeleteHashTagRequestBody.new # DeleteHashTagRequestBody | 
-}
+delete_hash_tag_request_body = FastCommentsClient::DeleteHashTagRequestBody.new # DeleteHashTagRequestBody | 
 
 begin
   
-  result = api_instance.delete_hash_tag(tag, opts)
+  result = api_instance.delete_hash_tag(tenant_id, tag, delete_hash_tag_request_body)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->delete_hash_tag: #{e}"

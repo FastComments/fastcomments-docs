@@ -1,14 +1,14 @@
-Omogući ili onemogući obaveštenja za određeni komentar.
+Enable or disable notifications for a specific comment.
 
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| notificationId | string | path | Da |  |
-| optedInOrOut | string | path | Da |  |
-| commentId | string | query | Da |  |
-| sso | string | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| notificationId | string | path | Yes |  |
+| optedInOrOut | string | path | Yes |  |
+| commentId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -16,7 +16,7 @@ Vraća: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://gith
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer updateUserNotificationCommentSubscriptionStatus'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserNotificationCommentSubscriptionStatus Primer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -24,15 +24,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ako želite da koristite prilagođeni HTTP klijent, prosledite vaš klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opciono, `GuzzleHttp\Client` će biti korišćen kao podrazumevani.
+    // Ako želite koristiti prilagođeni http klijent, prosledite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao podrazumevani.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $notification_id = 'notification_id_example'; // string
 $opted_in_or_out = 'opted_in_or_out_example'; // string
 $comment_id = 'comment_id_example'; // string
 $sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->updateUserNotificationCommentSubscriptionStatus($tenant_id, $notification_id, $opted_in_or_out, $comment_id, $sso);
@@ -41,3 +43,5 @@ try {
     echo 'Exception when calling PublicApi->updateUserNotificationCommentSubscriptionStatus: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

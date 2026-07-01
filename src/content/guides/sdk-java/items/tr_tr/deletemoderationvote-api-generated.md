@@ -2,8 +2,10 @@
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Evet |  |
 | commentId | string | path | Evet |  |
 | voteId | string | path | Evet |  |
+| broadcastId | string | query | Hayır |  |
 | sso | string | query | Hayır |  |
 
 ## Yanıt
@@ -27,11 +29,14 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String voteId = "voteId_example"; // String | 
+    String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      VoteDeleteResponse result = apiInstance.deleteModerationVote(commentId, voteId)
+      VoteDeleteResponse result = apiInstance.deleteModerationVote(tenantId, commentId, voteId)
+            .broadcastId(broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);

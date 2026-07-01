@@ -1,33 +1,24 @@
+---
 ## Parameter
 
-| Name | Type | Erforderlich | Beschreibung |
-|------|------|--------------|-------------|
-| tenantId | string | Ja |  |
-| id | string | Ja |  |
-| userId | string | Nein |  |
+| Name | Typ | Erforderlich | Beschreibung |
+|------|------|--------------|---------------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| userId | string | No |  |
 
 ## Antwort
 
-Gibt zurück: [`DeleteSubscriptionAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/DeleteSubscriptionAPIResponse.h)
+Rückgabe: [`DeleteSubscriptionAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/DeleteSubscriptionAPIResponse.h)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'Beispiel für deleteSubscription'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteSubscription Beispiel'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t id = U("subscription-987");
-boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U("user@example.com"));
-auto defaultResp = std::make_shared<DeleteSubscriptionAPIResponse>();
-api->deleteSubscription(tenantId, id, userId)
-.then([defaultResp](pplx::task<std::shared_ptr<DeleteSubscriptionAPIResponse>> t){
-    try {
-        auto resp = t.get();
-        if (!resp) resp = defaultResp;
-        std::cout << "Delete completed\n";
-    } catch (const std::exception &e) {
-        std::cerr << "Delete failed: " << e.what() << '\n';
-    }
-});
+api->deleteSubscription(utility::string_t(U("my-tenant-123")), utility::string_t(U("sub-456")), boost::optional<utility::string_t>(utility::string_t(U("user@example.com"))))
+    .then([](std::shared_ptr<DeleteSubscriptionAPIResponse> resp){
+        if (resp) {
+        }
+    });
 [inline-code-end]
-
 ---

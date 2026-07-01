@@ -2,9 +2,11 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Так |  |
-| voteId | string | path | Так |  |
-| sso | string | query | Ні |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| voteId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Відповідь
 
@@ -12,7 +14,7 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад використання deleteModerationVote'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteModerationVote Приклад'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -20,18 +22,26 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Якщо ви хочете використовувати власний http-клієнт, передайте свій клієнт, який реалізує `GuzzleHttp\ClientInterface`.
-    // Це необов'язково, `GuzzleHttp\Client` буде використано за замовчуванням.
+    // Якщо ви хочете використати власний HTTP-клієнт, передайте свій клієнт, який реалізує `GuzzleHttp\ClientInterface`.
+    // Це необов'язково, за замовчуванням буде використано `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
-$comment_id = 'comment_id_example'; // рядок
-$vote_id = 'vote_id_example'; // рядок
-$sso = 'sso_example'; // рядок
+
+$tenant_id = 'tenant_id_example'; // string
+$comment_id = 'comment_id_example'; // string
+$vote_id = 'vote_id_example'; // string
+$options = [
+    'broadcast_id' => 'broadcast_id_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->deleteModerationVote($comment_id, $vote_id, $sso);
+    $result = $apiInstance->deleteModerationVote($tenant_id, $comment_id, $vote_id, $options);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ModerationApi->deleteModerationVote: ', $e->getMessage(), PHP_EOL;
+    echo 'Виняток при виклику ModerationApi->deleteModerationVote: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

@@ -1,10 +1,11 @@
+---
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | כן |  |
-| post_ids | Vec<String> | כן |  |
-| sso | String | לא |  |
+| tenant_id | String | Yes |  |
+| post_ids | Vec<String> | Yes |  |
+| sso | String | No |  |
 
 ## תגובה
 
@@ -12,19 +13,18 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-get_feed_posts_stats'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_feed_posts_stats דוגמה'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_main(configuration: &configuration::Configuration) -> Result<(), Error> {
-    let params: GetFeedPostsStatsParams = GetFeedPostsStatsParams {
+async fn fetch_feed_stats() -> Result<(), Error> {
+    let params = GetFeedPostsStatsParams {
         tenant_id: "acme-corp-tenant".to_string(),
         post_ids: vec![
-            "news/2026-product-launch".to_string(),
-            "blog/engineering-architecture".to_string()
+            "news/article/123".to_string(),
+            "blog/post/456".to_string(),
         ],
-        sso: Some("sso.jwt.token.eyJhbGci...".to_string()),
+        sso: Some("sso-token-xyz".to_string()),
     };
-    let stats: FeedPostsStatsResponse = get_feed_posts_stats(configuration, params).await?;
-    let _api_status: ApiStatus = /* use stats as needed */ stats.into();
+    let _response = get_feed_posts_stats(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

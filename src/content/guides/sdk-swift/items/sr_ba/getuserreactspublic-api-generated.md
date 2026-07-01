@@ -1,28 +1,27 @@
----
-## Параметри
+## Parameters
 
-| Назив | Тип | Локација | Обавезно | Опис |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| postIds | array | query | Не |  |
-| sso | string | query | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | path | Da |  |
+| postIds | array | query | Ne |  |
+| sso | string | query | Ne |  |
 
-## Одговор
+## Response
 
-Враћа: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/UserReactsResponse.swift)
+Vraća: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/UserReactsResponse.swift)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'getUserReactsPublic Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUserReactsPublic Primjer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи примјери кода су још у бета верзији. За било који проблем, пријавите га путем http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sljedeći primjeri koda su još u beta fazi. Za bilo koji problem, molimo prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let postIds = ["inner_example"] // [String] |  (необавезно)
-let sso = "sso_example" // String |  (необавезно)
+let postIds = ["inner_example"] // [String] |  (opcionalno)
+let sso = "sso_example" // String |  (opcionalno)
 
-PublicAPI.getUserReactsPublic(tenantId: tenantId, postIds: postIds, sso: sso) { (response, error) in
+PublicAPI.getUserReactsPublic(tenantId: tenantId, options: PublicAPI.GetUserReactsPublicOptions(postIds: postIds, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -33,5 +32,3 @@ PublicAPI.getUserReactsPublic(tenantId: tenantId, postIds: postIds, sso: sso) { 
     }
 }
 [inline-code-end]
-
----

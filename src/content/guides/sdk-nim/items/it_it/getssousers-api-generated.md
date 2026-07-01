@@ -2,7 +2,7 @@
 
 | Nome | Tipo | Obbligatorio | Descrizione |
 |------|------|--------------|-------------|
-| tenantId | string | Sì |  |
+| tenantId | string | Yes |  |
 | skip | int | No |  |
 
 ## Risposta
@@ -11,14 +11,15 @@ Restituisce: [`Option[GetSSOUsersResponse]`](https://github.com/FastComments/fas
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di getSSOUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio getSSOUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSSOUsers(tenantId = "my-tenant-123", skip = 0)
-if response.isSome:
-  let ssoUsers = response.get()
-  echo ssoUsers
+let (maybeResponse, httpResponse) = client.getSSOUsers(tenantId = "my-tenant-123", skip = 0)
+if maybeResponse.isSome:
+  let users = maybeResponse.get()
+  echo users
 else:
-  echo "No SSO users returned; HTTP response:", httpResponse
+  echo "No SSO users found"
+echo httpResponse.statusCode
 [inline-code-end]
 
 ---

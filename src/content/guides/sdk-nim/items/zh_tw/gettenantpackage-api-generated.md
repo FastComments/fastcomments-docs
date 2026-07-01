@@ -2,24 +2,19 @@
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| id | string | 否 |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
 
 ## 回應
 
-回傳: [`Option[GetTenantPackageResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_tenant_package_response.nim)
+返回: [`Option[GetTenantPackageResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_tenant_package_response.nim)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getTenantPackage 範例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTenantPackage(tenantId = "my-tenant-123", id = "premium-2026")
-if response.isSome:
-  let pkg = response.get()
-  echo "Retrieved tenant package:"
+let (pkgOpt, httpResp) = client.getTenantPackage(tenantId = "my-tenant-123", id = "premium-plan")
+if pkgOpt.isSome:
+  let pkg = pkgOpt.get()
   echo pkg
-else:
-  echo "Tenant package not found"
 [inline-code-end]
-
----

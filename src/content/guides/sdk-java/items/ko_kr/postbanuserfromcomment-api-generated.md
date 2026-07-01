@@ -1,25 +1,26 @@
 ## 매개변수
 
-| 이름 | 형식 | 위치 | 필수 | 설명 |
+| 이름 | 타입 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| commentId | string | path | 예 |  |
-| banEmail | boolean | query | 아니요 |  |
-| banEmailDomain | boolean | query | 아니요 |  |
-| banIP | boolean | query | 아니요 |  |
-| deleteAllUsersComments | boolean | query | 아니요 |  |
-| bannedUntil | string | query | 아니요 |  |
-| isShadowBan | boolean | query | 아니요 |  |
-| updateId | string | query | 아니요 |  |
-| banReason | string | query | 아니요 |  |
-| sso | string | query | 아니요 |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| banEmail | boolean | query | No |  |
+| banEmailDomain | boolean | query | No |  |
+| banIP | boolean | query | No |  |
+| deleteAllUsersComments | boolean | query | No |  |
+| bannedUntil | string | query | No |  |
+| isShadowBan | boolean | query | No |  |
+| updateId | string | query | No |  |
+| banReason | string | query | No |  |
+| sso | string | query | No |  |
 
 ## 응답
 
 반환: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/BanUserFromCommentResult.java)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'postBanUserFromComment 예제'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postBanUserFromComment 예시'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // 클래스 가져오기:
 import com.fastcomments.invoker.ApiClient;
@@ -34,6 +35,7 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     Boolean banEmail = true; // Boolean | 
     Boolean banEmailDomain = true; // Boolean | 
@@ -45,7 +47,7 @@ public class Example {
     String banReason = "banReason_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      BanUserFromCommentResult result = apiInstance.postBanUserFromComment(commentId)
+      BanUserFromCommentResult result = apiInstance.postBanUserFromComment(tenantId, commentId)
             .banEmail(banEmail)
             .banEmailDomain(banEmailDomain)
             .banIP(banIP)
@@ -54,7 +56,8 @@ public class Example {
             .isShadowBan(isShadowBan)
             .updateId(updateId)
             .banReason(banReason)
-            .sso(sso)
+            .sso(so
+            )
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

@@ -1,11 +1,11 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Evet |  |
-| id | string | path | Evet |  |
-| userId | string | query | Hayır |  |
-| anonUserId | string | query | Hayır |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
 
 ## Yanıt
 
@@ -16,40 +16,39 @@ Döndürür: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-pyt
 [inline-code-attrs-start title = 'un_block_user_from_comment Örneği'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import UnBlockUserFromCommentOptions
 from client.models.un_block_from_comment_params import UnBlockFromCommentParams
 from client.models.unblock_success import UnblockSuccess
 from client.rest import ApiException
 from pprint import pprint
 
-# Host'u tanımlamak isteğe bağlıdır ve varsayılan https://fastcomments.com'dur
+# Host'u tanımlamak isteğe bağlıdır ve varsayılan olarak https://fastcomments.com adresine ayarlıdır
 # Tüm desteklenen yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# İstemci, kimlik doğrulama ve yetkilendirme parametrelerini
-# API sunucusunun güvenlik politikasına uygun olarak yapılandırmalıdır.
-# Her kimlik doğrulama yöntemi için örnekler aşağıda verilmiştir; kullanım senaryonuza uygun
-# örneği kullanın.
+# İstemci, API sunucusunun güvenlik politikasına uygun olarak kimlik doğrulama ve yetkilendirme parametrelerini yapılandırmalıdır.
+# Aşağıda her kimlik doğrulama yöntemi için örnekler verilmiştir; kimlik doğrulama senaryonuza uyan örneği kullanın.
 
-# Configure API key authorization: api_key
+# API anahtarı yetkilendirmesini yapılandır: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Gerekirse API anahtarı için önek (ör. Bearer) ayarlamak amacıyla aşağıdaki satırın yorumunu kaldırın
+# Gerekirse API anahtarı için önek (ör. Bearer) ayarlamak için aşağıdaki satırın yorumunu kaldırın
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Enter a context with an instance of the API client
+# API istemcisi örneğiyle bir bağlam içine girin
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # API sınıfının bir örneğini oluştur
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
     un_block_from_comment_params = client.UnBlockFromCommentParams() # UnBlockFromCommentParams | 
-    user_id = 'user_id_example' # str |  (isteğe bağlı)
-    anon_user_id = 'anon_user_id_example' # str |  (isteğe bağlı)
+    user_id = 'user_id_example' # str |  (optional)
+    anon_user_id = 'anon_user_id_example' # str |  (optional)
 
     try:
-        api_response = api_instance.un_block_user_from_comment(tenant_id, id, un_block_from_comment_params, user_id=user_id, anon_user_id=anon_user_id)
+        api_response = api_instance.un_block_user_from_comment(tenant_id, id, un_block_from_comment_params, UnBlockUserFromCommentOptions(user_id=user_id, anon_user_id=anon_user_id))
         print("The response of DefaultApi->un_block_user_from_comment:\n")
         pprint(api_response)
     except Exception as e:

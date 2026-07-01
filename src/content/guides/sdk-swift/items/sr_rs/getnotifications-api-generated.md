@@ -1,35 +1,35 @@
-## Параметри
+## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| userId | string | query | Не |  |
-| urlId | string | query | Не |  |
-| fromCommentId | string | query | Не |  |
-| viewed | boolean | query | Не |  |
-| type | string | query | Не |  |
-| skip | number | query | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| urlId | string | query | No |  |
+| fromCommentId | string | query | No |  |
+| viewed | boolean | query | No |  |
+| type | string | query | No |  |
+| skip | number | query | No |  |
 
-## Одговор
+## Response
 
-Враћа: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetNotificationsResponse.swift)
+Vraća: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetNotificationsResponse.swift)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'Пример getNotifications'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getNotifications'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи примери кода су још у бета фази. За било који проблем, пријавите га преко http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledeći uzorci koda su i dalje beta. Za bilo koji problem, molimo prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let userId = "userId_example" // String |  (опционо)
-let urlId = "urlId_example" // String |  (опционо)
-let fromCommentId = "fromCommentId_example" // String |  (опционо)
-let viewed = true // Bool |  (опционо)
-let type = "type_example" // String |  (опционо)
-let skip = 987 // Double |  (опционо)
+let userId = "userId_example" // String |  (opcionalno)
+let urlId = "urlId_example" // String |  (opcionalno)
+let fromCommentId = "fromCommentId_example" // String |  (opcionalno)
+let viewed = true // Bool |  (opcionalno)
+let type = "type_example" // String |  (opcionalno)
+let skip = 987 // Double |  (opcionalno)
 
-DefaultAPI.getNotifications(tenantId: tenantId, userId: userId, urlId: urlId, fromCommentId: fromCommentId, viewed: viewed, type: type, skip: skip) { (response, error) in
+DefaultAPI.getNotifications(tenantId: tenantId, options: DefaultAPI.GetNotificationsOptions(userId: userId, urlId: urlId, fromCommentId: fromCommentId, viewed: viewed, type: type, skip: skip)) { (response, error) in
     guard error == nil else {
         print(error)
         return

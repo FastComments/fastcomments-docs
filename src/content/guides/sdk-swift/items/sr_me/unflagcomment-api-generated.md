@@ -1,29 +1,29 @@
-## Параметри
+## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| id | string | path | Да |  |
-| userId | string | query | Не |  |
-| anonUserId | string | query | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FlagCommentResponse.swift)
+Vraća: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FlagCommentResponse.swift)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'unFlagComment пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'unFlagComment Primjer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи примјери кода су још увек у бета фази. За било који проблем, пријавите га путем http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sljedeći primjeri koda su još u beta fazi. Za bilo koji problem, molimo da prijavite putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let id = "id_example" // String | 
-let userId = "userId_example" // String |  (необавезно)
-let anonUserId = "anonUserId_example" // String |  (необавезно)
+let userId = "userId_example" // String |  (opcionalno)
+let anonUserId = "anonUserId_example" // String |  (opcionalno)
 
-DefaultAPI.unFlagComment(tenantId: tenantId, id: id, userId: userId, anonUserId: anonUserId) { (response, error) in
+DefaultAPI.unFlagComment(tenantId: tenantId, id: id, options: DefaultAPI.UnFlagCommentOptions(userId: userId, anonUserId: anonUserId)) { (response, error) in
     guard error == nil else {
         print(error)
         return

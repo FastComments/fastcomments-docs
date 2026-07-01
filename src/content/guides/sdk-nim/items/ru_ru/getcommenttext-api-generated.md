@@ -1,11 +1,10 @@
 ## Параметры
 
-| Name | Type | Required | Description |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | commentId | string | Да |  |
-| editKey | string | Нет |  |
-| sso | string | Нет |  |
+| options | GetCommentTextOptions | Нет |  |
 
 ## Ответ
 
@@ -13,13 +12,14 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример использования getCommentText'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getCommentText'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getCommentText(tenantId = "my-tenant-123", commentId = "cmt-987654321", editKey = "", sso = "")
+let (maybeResponse, httpResponse) = client.getCommentText(
+  tenantId = "my-tenant-123",
+  commentId = "comment-456",
+  options = GetCommentTextOptions()
+)
 
-if response.isSome:
-  let commentTextResp = response.get()
-  echo commentTextResp
-else:
-  echo "No comment text returned"
+if maybeResponse.isSome:
+  let response = maybeResponse.get()
 [inline-code-end]

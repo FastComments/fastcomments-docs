@@ -1,12 +1,13 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| commentId | string | path | 是 |  |
-| includeByUserIdAndEmail | boolean | query | 否 |  |
-| includeByIP | boolean | query | 否 |  |
-| includeByEmailDomain | boolean | query | 否 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| includeByUserIdAndEmail | boolean | query | No |  |
+| includeByIP | boolean | query | No |  |
+| includeByEmailDomain | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## 响应
 
@@ -17,12 +18,13 @@
 [inline-code-attrs-start title = 'get_pre_ban_summary 示例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetPreBanSummaryOptions
 from client.models.pre_ban_summary import PreBanSummary
 from client.rest import ApiException
 from pprint import pprint
 
-# 定义主机是可选的，默认值为 https://fastcomments.com
-# 有关所有支持的配置参数的列表，请参见 configuration.py。
+# 定义 host 是可选的，默认值为 https://fastcomments.com
+# 请参阅 configuration.py 获取所有受支持的配置参数列表。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -32,14 +34,15 @@ configuration = client.Configuration(
 with client.ApiClient(configuration) as api_client:
     # 创建 API 类的实例
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
-    include_by_user_id_and_email = True # bool |  (可选)
-    include_by_ip = True # bool |  (可选)
-    include_by_email_domain = True # bool |  (可选)
-    sso = 'sso_example' # str |  (可选)
+    include_by_user_id_and_email = True # bool |  (optional)
+    include_by_ip = True # bool |  (optional)
+    include_by_email_domain = True # bool |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_pre_ban_summary(comment_id, include_by_user_id_and_email=include_by_user_id_and_email, include_by_ip=include_by_ip, include_by_email_domain=include_by_email_domain, sso=sso)
+        api_response = api_instance.get_pre_ban_summary(tenant_id, comment_id, GetPreBanSummaryOptions(include_by_user_id_and_email=include_by_user_id_and_email, include_by_ip=include_by_ip, include_by_email_domain=include_by_email_domain, sso=sso))
         print("The response of ModerationApi->get_pre_ban_summary:\n")
         pprint(api_response)
     except Exception as e:

@@ -4,9 +4,9 @@ go get github.com/fastcomments/fastcomments-go
 
 ### Brug af API-klienten
 
-#### Public API (Ingen autentificering)
+#### Offentlig API (Ingen godkendelse)
 
-PublicAPI tillader adgang til offentlige endpoints uden autentificering:
+PublicAPI tillader uautentificeret adgang til offentlige endpoints:
 
 ```go
 package main
@@ -36,9 +36,9 @@ func main() {
 }
 ```
 
-#### Default API (Kræver API-nøgle)
+#### Standard API (Kræver API-nøgle)
 
-DefaultAPI kræver autentificering ved hjælp af din API-nøgle:
+DefaultAPI kræver godkendelse ved brug af din API-nøgle:
 
 ```go
 package main
@@ -53,7 +53,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // Opret autentificeret kontekst med API-nøgle
+    // Opret autentikeret kontekst med API-nøgle
     auth := context.WithValue(
         context.Background(),
         client.ContextAPIKeys,
@@ -62,7 +62,7 @@ func main() {
         },
     )
 
-    // Hent kommentarer ved hjælp af autentificeret DefaultAPI
+    // Hent kommentarer ved hjælp af autentikeret DefaultAPI
     response, httpResp, err := apiClient.DefaultAPI.GetComments(auth).
         TenantId("your-tenant-id").
         UrlId("your-page-url-id").
@@ -77,9 +77,9 @@ func main() {
 }
 ```
 
-#### Moderation API (Moderator-dashboard)
+#### Modererings-API (Moderator-dashboard)
 
-ModerationAPI driver moderator-dashboardet. Den leverer metoder til at liste, tælle, søge i og eksportere kommentarer, moderationshandlinger (fjern/gendan, marker, sæt review/spam/approval-status, stemmer, genåbn/luk tråde), bans (blokér fra at kommentere, fortryd, præ-ban-sammendrag, banestatus og præferencer, antal blokerede brugere), og badges & tillid (tildel/fjern badges, manuelle badges, få/sæt tillidsfaktor, brugerintern profil). Alle Moderation-metoder accepterer en `sso`-parameter for SSO-godkendte moderatorer:
+ModerationAPI leverer en omfattende suite af live og hurtige moderations-API'er. Alle moderationsmetoder accepterer en `sso`-parameter og kan autentificere via SSO eller en FastComments.com session cookie:
 
 ```go
 package main
@@ -94,7 +94,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // Hent liste over kommentarer til moderation ved hjælp af ModerationAPI
+    // List kommentarer til moderering ved brug af ModerationAPI
     response, httpResp, err := apiClient.ModerationAPI.GetApiComments(
         context.Background(),
     ).Sso("your-sso-token").Execute()

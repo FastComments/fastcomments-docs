@@ -1,41 +1,46 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| commentId | string | パス | はい |  |
-| reviewed | boolean | クエリ | いいえ |  |
-| sso | string | クエリ | いいえ |  |
+| 名前 | 型 | 場所 | 必須 | 説明 |
+|------|------|----------|------|-------------|
+| tenantId | string | query | はい |  |
+| commentId | string | path | はい |  |
+| reviewed | boolean | query | いいえ |  |
+| broadcastId | string | query | いいえ |  |
+| sso | string | query | いいえ |  |
 
 ## レスポンス
 
-返却値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
+戻り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## 例
 
-[inline-code-attrs-start title = 'post_set_comment_review_status の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_set_comment_review_status 例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import PostSetCommentReviewStatusOptions
 from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# ホストの設定は任意で、省略した場合のデフォルトは https://fastcomments.com です
-# サポートされている設定パラメータの一覧は configuration.py を参照してください。
+# ホストの定義はオプションで、デフォルトは https://fastcomments.com です
+# すべてのサポートされている構成パラメータの一覧は configuration.py を参照してください。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# APIクライアントのインスタンスを使ってコンテキストに入ります
+# APIクライアントのインスタンスでコンテキストに入ります
 with client.ApiClient(configuration) as api_client:
-    # API クラスのインスタンスを作成します
+    # APIクラスのインスタンスを作成します
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
-    reviewed = True # bool |  (任意)
-    sso = 'sso_example' # str |  (任意)
+    reviewed = True # bool |  (optional)
+    broadcast_id = 'broadcast_id_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.post_set_comment_review_status(comment_id, reviewed=reviewed, sso=sso)
+        api_response = api_instance.post_set_comment_review_status(tenant_id, comment_id, PostSetCommentReviewStatusOptions(reviewed=reviewed, broadcast_id=broadcast_id, sso=sio))
         print("The response of ModerationApi->post_set_comment_review_status:\n")
         pprint(api_response)
     except Exception as e:

@@ -1,13 +1,15 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
-|------|------|----------|----------|-------------|
+| Naam | Type | Locatie | Verplicht | Beschrijving |
+|------|------|----------|-----------|--------------|
+| tenantId | string | query | Ja |  |
 | commentId | string | path | Ja |  |
 | spam | boolean | query | Nee |  |
 | permNotSpam | boolean | query | Nee |  |
+| broadcastId | string | query | Nee |  |
 | sso | string | query | Nee |  |
 
-## Antwoord
+## Respons
 
 Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
@@ -15,7 +17,7 @@ Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-j
 
 [inline-code-attrs-start title = 'postSetCommentSpamStatus Voorbeeld'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importeer klassen:
+// Klassen importeren:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -28,14 +30,17 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     Boolean spam = true; // Boolean | 
     Boolean permNotSpam = true; // Boolean | 
+    String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      APIEmptyResponse result = apiInstance.postSetCommentSpamStatus(commentId)
+      APIEmptyResponse result = apiInstance.postSetCommentSpamStatus(tenantId, commentId)
             .spam(spam)
             .permNotSpam(permNotSpam)
+            .broadcastId(broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -49,5 +54,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

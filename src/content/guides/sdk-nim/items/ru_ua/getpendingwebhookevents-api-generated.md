@@ -1,36 +1,25 @@
----
-## Параметры
+## Параметри
 
-| Название | Тип | Обязательно | Описание |
+| Назва | Тип | Обов’язковий | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| commentId | string | Да |  |
-| externalId | string | Нет |  |
-| eventType | string | Нет |  |
-| domain | string | Нет |  |
-| attemptCountGT | float64 | Нет |  |
-| skip | float64 | Нет |  |
+| tenantId | string | Yes |  |
+| options | GetPendingWebhookEventsOptions | No |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`Option[GetPendingWebhookEventsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_pending_webhook_events_response.nim)
+Повертає: [`Option[GetPendingWebhookEventsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_pending_webhook_events_response.nim)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример getPendingWebhookEvents'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getPendingWebhookEvents Приклад'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getPendingWebhookEvents(
+let (maybeResp, httpResp) = client.getPendingWebhookEvents(
   tenantId = "my-tenant-123",
-  commentId = "cmt-987654",
-  externalId = "",
-  eventType = "",
-  domain = "",
-  attemptCountGT = 0.0,
-  skip = 0.0
+  options = GetPendingWebhookEventsOptions()
 )
-if response.isSome:
-  let pending = response.get()
-  discard pending
+
+if maybeResp.isSome:
+  let resp = maybeResp.get()
 [inline-code-end]
 
 ---

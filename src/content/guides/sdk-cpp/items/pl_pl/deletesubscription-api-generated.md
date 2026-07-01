@@ -1,10 +1,10 @@
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|-------------|
-| tenantId | string | Tak |  |
-| id | string | Tak |  |
-| userId | string | Nie |  |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| userId | string | No |  |
 
 ## Odpowiedź
 
@@ -14,20 +14,9 @@ Zwraca: [`DeleteSubscriptionAPIResponse`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'Przykład deleteSubscription'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t id = U("subscription-987");
-boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U("user@example.com"));
-auto defaultResp = std::make_shared<DeleteSubscriptionAPIResponse>();
-api->deleteSubscription(tenantId, id, userId)
-.then([defaultResp](pplx::task<std::shared_ptr<DeleteSubscriptionAPIResponse>> t){
-    try {
-        auto resp = t.get();
-        if (!resp) resp = defaultResp;
-        std::cout << "Delete completed\n";
-    } catch (const std::exception &e) {
-        std::cerr << "Delete failed: " << e.what() << '\n';
-    }
-});
+api->deleteSubscription(utility::string_t(U("my-tenant-123")), utility::string_t(U("sub-456")), boost::optional<utility::string_t>(utility::string_t(U("user@example.com"))))
+    .then([](std::shared_ptr<DeleteSubscriptionAPIResponse> resp){
+        if (resp) {
+        }
+    });
 [inline-code-end]
-
----

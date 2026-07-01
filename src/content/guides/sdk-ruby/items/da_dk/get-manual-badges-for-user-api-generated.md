@@ -1,12 +1,14 @@
+---
 ## Parametre
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
-|------|------|----------|----------|-------------|
+|------|------|-----------|----------|-------------|
+| tenantId | string | query | Ja |  |
 | badgesUserId | string | query | Nej |  |
 | commentId | string | query | Nej |  |
 | sso | string | query | Nej |  |
 
-## Svar
+## Respons
 
 Returnerer: [`GetUserManualBadgesResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_manual_badges_response.rb)
 
@@ -18,6 +20,7 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 opts = {
   badges_user_id: 'badges_user_id_example', # String | 
   comment_id: 'comment_id_example', # String | 
@@ -26,7 +29,7 @@ opts = {
 
 begin
   
-  result = api_instance.get_manual_badges_for_user(opts)
+  result = api_instance.get_manual_badges_for_user(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_manual_badges_for_user: #{e}"

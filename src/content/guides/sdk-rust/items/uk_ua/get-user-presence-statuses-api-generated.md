@@ -1,10 +1,10 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Назва | Тип | Обов’язковий | Опис |
 |------|------|----------|-------------|
-| tenant_id | String | Так |  |
-| url_id_ws | String | Так |  |
-| user_ids | String | Так |  |
+| tenant_id | String | Yes |  |
+| url_id_ws | String | Yes |  |
+| user_ids | String | Yes |  |
 
 ## Відповідь
 
@@ -12,16 +12,15 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'get_user_presence_statuses Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_user_presence_statuses Приклад'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let cfg: &configuration::Configuration = &configuration;
-let params: GetUserPresenceStatusesParams = GetUserPresenceStatusesParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    url_id_ws: "news/article".to_string(),
-    user_ids: "user-123,user-456".to_string(),
-    include_offline: Some(false),
-};
-let response: GetUserPresenceStatusesResponse = get_user_presence_statuses(cfg, params).await?;
+async fn run() -> Result<(), Error> {
+    let params = GetUserPresenceStatusesParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        url_id_ws: "news/article".to_string(),
+        user_ids: "user123,user456".to_string(),
+    };
+    let _response = get_user_presence_statuses(&configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]
-
----

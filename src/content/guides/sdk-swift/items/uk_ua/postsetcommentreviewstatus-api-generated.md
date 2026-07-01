@@ -1,11 +1,12 @@
----
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язковий | Опис |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Так |  |
-| reviewed | boolean | query | Ні |  |
-| sso | string | query | Ні |  |
+| Назва | Тип | Розташування | Обов’язково | Опис |
+|------|------|--------------|-------------|------|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| reviewed | boolean | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Відповідь
 
@@ -15,14 +16,16 @@
 
 [inline-code-attrs-start title = 'postSetCommentReviewStatus Приклад'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Наведені приклади коду все ще перебувають у бета-версії. У разі проблем, будь ласка, повідомте через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наступні зразки коду все ще у бета-версії. У разі проблем, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
-let reviewed = true // Bool |  (необов'язково)
-let sso = "sso_example" // String |  (необов'язково)
+let reviewed = true // Bool |  (необов'язковий)
+let broadcastId = "broadcastId_example" // String |  (необов'язковий)
+let sso = "sso_example" // String |  (необов'язковий)
 
-ModerationAPI.postSetCommentReviewStatus(commentId: commentId, reviewed: reviewed, sso: sso) { (response, error) in
+ModerationAPI.postSetCommentReviewStatus(tenantId: tenantId, commentId: commentId, options: ModerationAPI.PostSetCommentReviewStatusOptions(reviewed: reviewed, broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -33,5 +36,3 @@ ModerationAPI.postSetCommentReviewStatus(commentId: commentId, reviewed: reviewe
     }
 }
 [inline-code-end]
-
----

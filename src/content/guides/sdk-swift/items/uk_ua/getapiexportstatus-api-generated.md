@@ -1,10 +1,10 @@
----
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
-|------|------|----------|----------|-------------|
-| batchJobId | string | query | Ні |  |
-| sso | string | query | Ні |  |
+| Назва | Тип | Розташування | Обов’язково | Опис |
+|------|------|--------------|--------------|------|
+| tenantId | string | query | Yes |  |
+| batchJobId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Відповідь
 
@@ -14,13 +14,14 @@
 
 [inline-code-attrs-start title = 'Приклад getApiExportStatus'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Наступні приклади коду ще в бета-версії. Якщо виникнуть проблеми, будь ласка, повідомте про них через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наступні приклади коду все ще у бета-версії. У разі будь‑якої проблеми, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let batchJobId = "batchJobId_example" // String |  (необов'язковий)
-let sso = "sso_example" // String |  (необов'язковий)
+let tenantId = "tenantId_example" // String | 
+let batchJobId = "batchJobId_example" // String |  (optional)
+let sso = "sso_example" // String |  (optional)
 
-ModerationAPI.getApiExportStatus(batchJobId: batchJobId, sso: sso) { (response, error) in
+ModerationAPI.getApiExportStatus(tenantId: tenantId, options: ModerationAPI.GetApiExportStatusOptions(batchJobId: batchJobId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -31,5 +32,3 @@ ModerationAPI.getApiExportStatus(batchJobId: batchJobId, sso: sso) { (response, 
     }
 }
 [inline-code-end]
-
----

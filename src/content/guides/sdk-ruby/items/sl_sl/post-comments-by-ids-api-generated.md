@@ -1,8 +1,8 @@
----
 ## Parametri
 
 | Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Da |  |
 | sso | string | query | Ne |  |
 
 ## Odgovor
@@ -11,12 +11,13 @@ Vrne: [`ModerationAPIChildCommentsResponse`](https://github.com/FastComments/fas
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer post_comments_by_ids'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_comments_by_ids Primer'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 comments_by_ids_params = FastCommentsClient::CommentsByIdsParams.new({ids: ['ids_example']}) # CommentsByIdsParams | 
 opts = {
   sso: 'sso_example' # String | 
@@ -24,11 +25,9 @@ opts = {
 
 begin
   
-  result = api_instance.post_comments_by_ids(comments_by_ids_params, opts)
+  result = api_instance.post_comments_by_ids(tenant_id, comments_by_ids_params, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_comments_by_ids: #{e}"
 end
 [inline-code-end]
-
----

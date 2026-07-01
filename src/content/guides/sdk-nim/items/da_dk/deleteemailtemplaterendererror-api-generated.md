@@ -12,15 +12,14 @@ Returnerer: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcom
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på deleteEmailTemplateRenderError'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteEmailTemplateRenderError Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteEmailTemplateRenderError(tenantId = "my-tenant-123", id = "welcome-email-template", errorId = "err-20250615-01")
-if response.isSome:
-  let emptyResp = response.get()
-  echo "Deleted render error, tenant:", "my-tenant-123"
-  echo "HTTP status:", httpResponse.status
-else:
-  echo "No body returned, HTTP status:", httpResponse.status
-[inline-code-end]
+let (apiRes, httpRes) = client.deleteEmailTemplateRenderError(
+  tenantId = "my-tenant-123",
+  id = "welcome-email",
+  errorId = "render-err-456"
+)
 
----
+if apiRes.isSome:
+  let empty = apiRes.get()
+[inline-code-end]

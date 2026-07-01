@@ -4,7 +4,7 @@
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | id | string | לא |  |
-| editKey | string | לא |  |
+| editKey | string = "" | לא |  |
 
 ## תגובה
 
@@ -12,14 +12,11 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-deleteVote'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת deleteVote'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteVote(tenantId = "my-tenant-123", id = "vote-7f3b2a", editKey = "")
-if response.isSome:
-  let voteDelete = response.get()
-  echo "Vote deleted successfully"
-else:
-  echo "Failed to delete vote"
+let (voteRespOpt, httpResp) = client.deleteVote(tenantId = "my-tenant-123", id = "comment-456", editKey = "")
+if voteRespOpt.isSome:
+  let voteResp = voteRespOpt.get()
+  discard voteResp
+  discard httpResp
 [inline-code-end]
-
----

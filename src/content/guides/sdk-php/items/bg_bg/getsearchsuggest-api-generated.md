@@ -1,7 +1,8 @@
-## Параметри
+## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Име | Тип | Местоположение | Задължително | Описание |
+|------|------|----------------|--------------|----------|
+| tenantId | string | query | Да |  |
 | text-search | string | query | Не |  |
 | sso | string | query | Не |  |
 
@@ -19,15 +20,20 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Ако искате да използвате собствен HTTP клиент, предайте своя клиент, който имплементира `GuzzleHttp\ClientInterface`.
+    // Ако искате да използвате персонализиран HTTP клиент, предайте вашия клиент, който имплементира `GuzzleHttp\ClientInterface`.
     // Това е по избор, `GuzzleHttp\Client` ще се използва по подразбиране.
     new GuzzleHttp\Client()
 );
-$text_search = 'text_search_example'; // стринг
-$sso = 'sso_example'; // стринг
+
+$tenant_id = 'tenant_id_example'; // string
+$options = [
+    'text_search' => 'text_search_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->getSearchSuggest($text_search, $sso);
+    $result = $apiInstance->getSearchSuggest($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getSearchSuggest: ', $e->getMessage(), PHP_EOL;

@@ -1,6 +1,6 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Tak |  |
 | page | integer | query | Nie |  |
@@ -32,38 +32,42 @@ Zwraca: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Konfiguracja autoryzacji kluczem API: api_key
+// Konfiguruj autoryzację klucza API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli to konieczne
+// Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli potrzebne
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Jeśli chcesz użyć niestandardowego klienta HTTP, przekaż klienta implementującego `GuzzleHttp\ClientInterface`.
-    // To jest opcjonalne — domyślnie zostanie użyty `GuzzleHttp\Client`.
+    // Jeśli chcesz użyć niestandardowego klienta HTTP, przekaż swój klient, który implementuje `GuzzleHttp\ClientInterface`.
+    // To jest opcjonalne, `GuzzleHttp\Client` będzie używany domyślnie.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$page = 56; // int
-$limit = 56; // int
-$skip = 56; // int
-$as_tree = True; // bool
-$skip_children = 56; // int
-$limit_children = 56; // int
-$max_tree_depth = 56; // int
-$url_id = 'url_id_example'; // string
-$user_id = 'user_id_example'; // string
-$anon_user_id = 'anon_user_id_example'; // string
-$context_user_id = 'context_user_id_example'; // string
-$hash_tag = 'hash_tag_example'; // string
-$parent_id = 'parent_id_example'; // string
-$direction = new \FastComments\Client\Model\\FastComments\Client\Model\SortDirections(); // \FastComments\Client\Model\SortDirections
-$from_date = 56; // int
-$to_date = 56; // int
+$options = [
+    'page' => 56, // int
+    'limit' => 56, // int
+    'skip' => 56, // int
+    'as_tree' => True, // bool
+    'skip_children' => 56, // int
+    'limit_children' => 56, // int
+    'max_tree_depth' => 56, // int
+    'url_id' => 'url_id_example', // string
+    'user_id' => 'user_id_example', // string
+    'anon_user_id' => 'anon_user_id_example', // string
+    'context_user_id' => 'context_user_id_example', // string
+    'hash_tag' => 'hash_tag_example', // string
+    'parent_id' => 'parent_id_example', // string
+    'direction' => new \FastComments\Client\Model\\FastComments\Client\Model\SortDirections(), // \FastComments\Client\Model\SortDirections
+    'from_date' => 56, // int
+    'to_date' => 56, // int
+];
+
 
 try {
-    $result = $apiInstance->getComments($tenant_id, $page, $limit, $skip, $as_tree, $skip_children, $limit_children, $max_tree_depth, $url_id, $user_id, $anon_user_id, $context_user_id, $hash_tag, $parent_id, $direction, $from_date, $to_date);
+    $result = $apiInstance->getComments($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getComments: ', $e->getMessage(), PHP_EOL;

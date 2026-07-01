@@ -1,15 +1,15 @@
-## Parametri
+## Parameters
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
+|------|------|----------|----------|------|
 | tenantId | string | query | Da |  |
 | id | string | path | Da |  |
 
-## Odgovor
+## Response
 
-Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
+Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
-## Primjer
+## Example
 
 [inline-code-attrs-start title = 'deleteNotificationCount Primjer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -25,12 +25,14 @@ $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKe
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
     // Ako želite koristiti prilagođeni HTTP klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao zadani.
+    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao zadano.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
+
 
 try {
     $result = $apiInstance->deleteNotificationCount($tenant_id, $id);

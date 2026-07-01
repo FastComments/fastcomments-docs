@@ -1,9 +1,10 @@
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
-| value | string | query | No |  |
-| sso | string | query | No |  |
+|------|------|----------|----------|------|
+| tenantId | string | upit | Da |  |
+| value | string | upit | Ne |  |
+| sso | string | upit | Ne |  |
 
 ## Odgovor
 
@@ -11,7 +12,7 @@ Vraća: [`ModerationSiteSearchResponse`](https://github.com/FastComments/fastcom
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer GetSearchSites'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GetSearchSites Primer'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,19 +24,18 @@ import (
 )
 
 func main() {
-	value := "value_example" // string |  (neobavezno)
-	sso := "sso_example" // string |  (neobavezno)
+	tenantId := "tenantId_example" // string | 
+	value := "value_example" // string |  (opcionalno)
+	sso := "sso_example" // string |  (opcionalno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetSearchSites(context.Background()).Value(value).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetSearchSites(context.Background()).TenantId(tenantId).Value(value).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetSearchSites``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Greška prilikom poziva `ModerationAPI.GetSearchSites``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Puni HTTP odgovor: %v\n", r)
 	}
 	// odgovor od `GetSearchSites`: ModerationSiteSearchResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetSearchSites`: %v\n", resp)
+	fmt.Fprintf(os.Stdout, "Odgovor od `ModerationAPI.GetSearchSites`: %v\n", resp)
 }
 [inline-code-end]
-
----

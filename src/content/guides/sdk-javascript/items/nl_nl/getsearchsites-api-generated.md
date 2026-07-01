@@ -1,22 +1,27 @@
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
-|------|------|----------|-------------|
-| value | string | Nee |  |
-| sso | string | Nee |  |
+| Naam | Type | Verplicht | Beschrijving |
+|------|------|------------|---------------|
+| value | string | No |  |
+| tenantId | string | No |  |
+| sso | string | No |  |
 
 ## Respons
 
-Retourneert: [`ModerationSiteSearchResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationSiteSearchResponse.ts)
+Retourneert: [`GetSearchSitesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetSearchSitesResponse.ts)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'getSearchSites Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const searchValue: string = 'fastcomments.com';
-const ssoToken: string = 'sso_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';
-const responseWithSSO: ModerationSiteSearchResponse = await getSearchSites(searchValue, ssoToken);
-const responseWithoutSSO: ModerationSiteSearchResponse = await getSearchSites('news.fastcompany.com');
+async function fetchSites() {
+  const value: string = "customer support"
+  const tenantId: string = "tenant-9876"
+  const sso: string = "sso-abc123"
+
+  const sites: GetSearchSitesResponse = await getSearchSites(value, tenantId, sso)
+  const sitesOnlyTenant: GetSearchSitesResponse = await getSearchSites(undefined, tenantId)
+}
 [inline-code-end]
 
 ---

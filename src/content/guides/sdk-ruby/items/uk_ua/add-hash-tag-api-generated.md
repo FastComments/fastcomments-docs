@@ -1,8 +1,8 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Назва | Тип | Розташування | Обов’язково | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ні |  |
+| tenantId | string | query | Так |  |
 
 ## Відповідь
 
@@ -16,21 +16,19 @@ require 'time'
 require 'fastcomments-client'
 # налаштування авторизації
 FastCommentsClient.configure do |config|
-  # Налаштуйте авторизацію за допомогою API-ключа: api_key
+  # Налаштування авторизації за допомогою API-ключа: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Розкоментуйте наступний рядок, щоб встановити префікс для API-ключа, наприклад 'Bearer' (за замовчуванням nil)
+  # Розкоментуйте наступний рядок, щоб встановити префікс для API-ключа, напр. 'Bearer' (за замовчуванням nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
-opts = {
-  tenant_id: 'tenant_id_example', # String | 
-  create_hash_tag_body: FastCommentsClient::CreateHashTagBody.new({tag: 'tag_example'}) # CreateHashTagBody | 
-}
+tenant_id = 'tenant_id_example' # String | 
+create_hash_tag_body = FastCommentsClient::CreateHashTagBody.new({tag: 'tag_example'}) # CreateHashTagBody | 
 
 begin
   
-  result = api_instance.add_hash_tag(opts)
+  result = api_instance.add_hash_tag(tenant_id, create_hash_tag_body)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->add_hash_tag: #{e}"

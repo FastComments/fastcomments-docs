@@ -1,8 +1,8 @@
----
 ## Parametre
 
-| Navn | Type | Location | Påkrævet | Beskrivelse |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Ja |  |
 | text-search | string | query | Nej |  |
 | byIPFromComment | string | query | Nej |  |
 | filters | string | query | Nej |  |
@@ -18,9 +18,10 @@ Returnerer: [`ModerationExportResponse`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'postApiExport Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Følgende kodeeksempler er stadig i beta. Hvis du opdager et problem, bedes du rapportere det via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De følgende kodeeksempler er stadig i beta. Ved eventuelle problemer bedes du rapportere via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let textSearch = "textSearch_example" // String |  (valgfri)
 let byIPFromComment = "byIPFromComment_example" // String |  (valgfri)
 let filters = "filters_example" // String |  (valgfri)
@@ -28,7 +29,7 @@ let searchFilters = "searchFilters_example" // String |  (valgfri)
 let sorts = "sorts_example" // String |  (valgfri)
 let sso = "sso_example" // String |  (valgfri)
 
-ModerationAPI.postApiExport(textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, sso: sso) { (response, error) in
+ModerationAPI.postApiExport(tenantId: tenantId, options: ModerationAPI.PostApiExportOptions(textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -39,5 +40,3 @@ ModerationAPI.postApiExport(textSearch: textSearch, byIPFromComment: byIPFromCom
     }
 }
 [inline-code-end]
-
----

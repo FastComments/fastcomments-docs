@@ -1,11 +1,11 @@
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| domain | string | Ja |  |
+| tenantId | string | Yes |  |
+| domain | string | Yes |  |
 
-## Response
+## Respons
 
 Retourneert: [`DeleteDomainConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteDomainConfigResponse.ts)
 
@@ -13,9 +13,11 @@ Retourneert: [`DeleteDomainConfigResponse`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'deleteDomainConfig Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "org_5b2f9c3a";
-const domain: string = "comments.acme-corp.com";
-const result: DeleteDomainConfigResponse = await deleteDomainConfig(tenantId, domain);
+async function runExample() {
+  const tenantId: string = 'acme-corp';
+  const domain: string = 'blog.acme.com';
+  const response: DeleteDomainConfigResponse = await deleteDomainConfig(tenantId, domain);
+  console.log(response);
+}
+runExample();
 [inline-code-end]
-
----

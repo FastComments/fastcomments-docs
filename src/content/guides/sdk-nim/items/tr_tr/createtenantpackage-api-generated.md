@@ -1,7 +1,6 @@
----
 ## Parametreler
 
-| Ad | Tür | Gerekli | Açıklama |
+| İsim | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | createTenantPackageBody | CreateTenantPackageBody | Hayır |  |
@@ -14,13 +13,13 @@ Döndürür: [`Option[CreateTenantPackageResponse]`](https://github.com/FastComm
 
 [inline-code-attrs-start title = 'createTenantPackage Örneği'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.createTenantPackage(tenantId = "my-tenant-123", createTenantPackageBody = CreateTenantPackageBody())
+let (responseOpt, httpResponse) = client.createTenantPackage(
+  tenantId = "my-tenant-123",
+  createTenantPackageBody = CreateTenantPackageBody()
+)
 
-if response.isSome:
-  let pkg = response.get()
-  echo "Created tenant package: ", $pkg
-else:
-  echo "Failed to create tenant package, HTTP response: ", $httpResponse
+if responseOpt.isSome:
+  let response = responseOpt.get()
 [inline-code-end]
 
 ---

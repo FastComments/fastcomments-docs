@@ -1,20 +1,21 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| badgeId | string | query | Da |  |
-| userId | string | query | Ne |  |
-| commentId | string | query | Ne |  |
-| broadcastId | string | query | Ne |  |
-| sso | string | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| badgeId | string | query | Yes |  |
+| userId | string | query | No |  |
+| commentId | string | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
-Vrača: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_award_user_badge_response.go)
+Vrne: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_award_user_badge_response.go)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer PutAwardBadge'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PutAwardBadge Primer'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -26,15 +27,16 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	badgeId := "badgeId_example" // string | 
-	userId := "userId_example" // string |  (izbirno)
-	commentId := "commentId_example" // string |  (izbirno)
-	broadcastId := "broadcastId_example" // string |  (izbirno)
-	sso := "sso_example" // string |  (izbirno)
+	userId := "userId_example" // string |  (neobvezno)
+	commentId := "commentId_example" // string |  (neobvezno)
+	broadcastId := "broadcastId_example" // string |  (neobvezno)
+	sso := "sso_example" // string |  (neobvezno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PutAwardBadge(context.Background()).BadgeId(badgeId).UserId(userId).CommentId(commentId).BroadcastId(broadcastId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PutAwardBadge(context.Background()).TenantId(tenantId).BadgeId(badgeId).UserId(userId).CommentId(commentId).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PutAwardBadge``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -43,3 +45,5 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PutAwardBadge`: %v\n", resp)
 }
 [inline-code-end]
+
+---

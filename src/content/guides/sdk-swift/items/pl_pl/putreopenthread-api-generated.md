@@ -2,8 +2,9 @@
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| urlId | string | query | Tak |  |
-| sso | string | query | Nie |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Odpowiedź
 
@@ -13,13 +14,14 @@ Zwraca: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/
 
 [inline-code-attrs-start title = 'Przykład putReopenThread'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Następujące przykłady kodu są nadal w wersji beta. W razie problemu zgłoś go pod adresem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Następujące przykłady kodu są wciąż w wersji beta. W razie jakichkolwiek problemów proszę zgłosić je pod adresem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
-let sso = "sso_example" // String |  (opcjonalne)
+let sso = "sso_example" // String |  (opcjonalnie)
 
-ModerationAPI.putReopenThread(urlId: urlId, sso: sso) { (response, error) in
+ModerationAPI.putReopenThread(tenantId: tenantId, urlId: urlId, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -30,5 +32,3 @@ ModerationAPI.putReopenThread(urlId: urlId, sso: sso) { (response, error) in
     }
 }
 [inline-code-end]
-
----

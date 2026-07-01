@@ -1,23 +1,23 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Обавезно | Опис |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| commentId | string | path | Да |  |
-| urlId | string | query | Да |  |
-| broadcastId | string | query | Да |  |
-| sessionId | string | query | Не |  |
-| sso | string | query | Не |  |
+| Ime | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | path | Da |  |
+| commentId | string | path | Da |  |
+| urlId | string | query | Da |  |
+| broadcastId | string | query | Da |  |
+| sessionId | string | query | Ne |  |
+| sso | string | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`VoteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/VoteResponse.swift)
+Vraća: [`VoteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/VoteResponse.swift)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'voteComment Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'voteComment Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи примери кода су још у бета фази. За било који проблем, пријавите га преко http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledeći primeri koda su i dalje beta. Za bilo koji problem, molimo vas da prijavite putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -25,10 +25,10 @@ let commentId = "commentId_example" // String |
 let urlId = "urlId_example" // String | 
 let broadcastId = "broadcastId_example" // String | 
 let voteBodyParams = VoteBodyParams(commenterEmail: "commenterEmail_example", commenterName: "commenterName_example", voteDir: "voteDir_example", url: "url_example") // VoteBodyParams | 
-let sessionId = "sessionId_example" // String |  (опционо)
-let sso = "sso_example" // String |  (опционо)
+let sessionId = "sessionId_example" // String |  (optional)
+let sso = "sso_example" // String |  (optional)
 
-PublicAPI.voteComment(tenantId: tenantId, commentId: commentId, urlId: urlId, broadcastId: broadcastId, voteBodyParams: voteBodyParams, sessionId: sessionId, sso: sso) { (response, error) in
+PublicAPI.voteComment(tenantId: tenantId, commentId: commentId, urlId: urlId, broadcastId: broadcastId, voteBodyParams: voteBodyParams, options: PublicAPI.VoteCommentOptions(sessionId: sessionId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -39,5 +39,3 @@ PublicAPI.voteComment(tenantId: tenantId, commentId: commentId, urlId: urlId, br
     }
 }
 [inline-code-end]
-
----

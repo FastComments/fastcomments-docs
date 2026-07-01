@@ -1,13 +1,12 @@
----
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 說明 |
+| 名稱 | 類型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 否 |  |
+| tenantId | string | query | Yes |  |
 
 ## 回應
 
-回傳: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateHashTagResponse.php)
+返回：[`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateHashTagResponse.php)
 
 ## 範例
 
@@ -29,8 +28,10 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
+
+$tenant_id = 'tenant_id_example'; // 字串
 $create_hash_tag_body = new \FastComments\Client\Model\CreateHashTagBody(); // \FastComments\Client\Model\CreateHashTagBody
+
 
 try {
     $result = $apiInstance->addHashTag($tenant_id, $create_hash_tag_body);
@@ -39,4 +40,3 @@ try {
     echo 'Exception when calling DefaultApi->addHashTag: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
----

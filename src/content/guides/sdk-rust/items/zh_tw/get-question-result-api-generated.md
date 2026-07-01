@@ -1,28 +1,25 @@
 ## 參數
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenant_id | String | 是 |  |
-| id | String | 是 |  |
+| 名稱 | 類型 | 必填 | 描述 |
+|------|------|------|------|
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
 
 ## 回應
 
-回傳: [`GetQuestionResultResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_question_result_response.rs)
+返回: [`GetQuestionResultResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_question_result_response.rs)
 
 ## 範例
 
 [inline-code-attrs-start title = 'get_question_result 範例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_call() -> Result<(), Error> {
-    let params: GetQuestionResultParams = GetQuestionResultParams {
+async fn fetch_question_result(config: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetQuestionResultParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "news/article-2026-07-poll-question-1".to_string(),
-        include_details: Some(true),
+        id: "question-12345".to_string(),
         locale: Some("en-US".to_string()),
     };
-    let result: GetQuestionResultResponse = get_question_result(&configuration, params).await?;
+    let _response: GetQuestionResultResponse = get_question_result(config, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

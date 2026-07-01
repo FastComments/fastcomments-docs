@@ -1,26 +1,24 @@
 ## Параметры
 
-| Имя | Тип | Обязательно | Описание |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| id | String | Да |  |
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
 
 ## Ответ
 
-Возвращает: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
+Returns: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример delete_question_config'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_question_config Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_delete_question_config() -> Result<(), Error> {
+async fn run() -> Result<(), Error> {
     let params: DeleteQuestionConfigParams = DeleteQuestionConfigParams {
-        tenant_id: "acme-corp-tenant".to_owned(),
-        id: "faq/general-2026".to_owned(),
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "question-456".to_string(),
     };
-    let _response: ApiEmptyResponse = delete_question_config(&configuration, params).await?;
+    delete_question_config(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

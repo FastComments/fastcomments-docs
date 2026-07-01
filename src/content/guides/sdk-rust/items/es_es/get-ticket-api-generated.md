@@ -1,10 +1,9 @@
----
 ## Parámetros
 
-| Name | Type | Required | Description |
+| Nombre | Tipo | Requerido | Descripción |
 |------|------|----------|-------------|
-| tenant_id | String | Sí |  |
-| id | String | Sí |  |
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
 | user_id | String | No |  |
 
 ## Respuesta
@@ -13,17 +12,15 @@ Devuelve: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-rus
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de get_ticket'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo get_ticket'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_ticket() -> Result<GetTicketResponse, Error> {
-    let params: GetTicketParams = GetTicketParams {
+async fn run() -> Result<(), Error> {
+    let params = GetTicketParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "TICKET-2026-045".to_string(),
-        user_id: Some("user-12345".to_string()),
+        id: "ticket-456".to_string(),
+        user_id: Some("user-123".to_string()),
     };
-    let ticket: GetTicketResponse = get_ticket(&configuration, params).await?;
-    Ok(ticket)
+    let _response: GetTicketResponse = get_ticket(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

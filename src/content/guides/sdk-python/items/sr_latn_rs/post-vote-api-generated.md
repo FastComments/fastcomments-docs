@@ -1,10 +1,13 @@
-## Parametri
+---
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Da |  |
-| direction | string | query | Ne |  |
-| sso | string | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| direction | string | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -12,15 +15,16 @@ Vraća: [`VoteResponse`](https://github.com/FastComments/fastcomments-python/blo
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer post_vote'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_vote Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import PostVoteOptions
 from client.models.vote_response import VoteResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definisanje hosta je neobavezno i podrazumevano je https://fastcomments.com
-# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
+# Definisanje hosta je opciono i podrazumevano je https://fastcomments.com
+# Pogledajte configuration.py za spisak svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -30,14 +34,18 @@ configuration = client.Configuration(
 with client.ApiClient(configuration) as api_client:
     # Kreirajte instancu API klase
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
-    direction = 'direction_example' # str |  (neobavezno)
-    sso = 'sso_example' # str |  (neobavezno)
+    direction = 'direction_example' # str |  (optional)
+    broadcast_id = 'broadcast_id_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.post_vote(comment_id, direction=direction, sso=sso)
+        api_response = api_instance.post_vote(tenant_id, comment_id, PostVoteOptions(direction=direction, broadcast_id=broadcast_id, sso=sso))
         print("The response of ModerationApi->post_vote:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling ModerationApi->post_vote: %s\n" % e)
 [inline-code-end]
+
+---

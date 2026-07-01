@@ -2,11 +2,11 @@
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Evet |  |
-| urlId | string | query | Evet |  |
-| broadcastId | string | query | Evet |  |
-| sessionId | string | query | Hayır |  |
-| sso | string | query | Hayır |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| broadcastId | string | query | Yes |  |
+| sessionId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Yanıt
 
@@ -14,22 +14,23 @@ Döndürür: [`SaveCommentsResponseWithPresence`](https://github.com/FastComment
 
 ## Örnek
 
-[inline-code-attrs-start title = 'create_comment_public Örnek'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_comment_public Örneği'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import CreateCommentPublicOptions
 from client.models.comment_data import CommentData
 from client.models.save_comments_response_with_presence import SaveCommentsResponseWithPresence
 from client.rest import ApiException
 from pprint import pprint
 
-# Sunucu tanımlaması isteğe bağlıdır ve varsayılan https://fastcomments.com'dur
-# Tüm desteklenen yapılandırma parametreleri için configuration.py dosyasına bakın.
+# Host tanımlama isteğe bağlıdır ve varsayılan olarak https://fastcomments.com
+# configuration.py dosyasında desteklenen tüm yapılandırma parametrelerinin bir listesine bakın.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# API istemcisinin bir örneği ile bir bağlam açın
+# API istemcisi örneğiyle bir bağlam girin
 with client.ApiClient(configuration) as api_client:
     # API sınıfının bir örneğini oluşturun
     api_instance = client.PublicApi(api_client)
@@ -37,11 +38,11 @@ with client.ApiClient(configuration) as api_client:
     url_id = 'url_id_example' # str | 
     broadcast_id = 'broadcast_id_example' # str | 
     comment_data = client.CommentData() # CommentData | 
-    session_id = 'session_id_example' # str |  (isteğe bağlı)
-    sso = 'sso_example' # str |  (isteğe bağlı)
+    session_id = 'session_id_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.create_comment_public(tenant_id, url_id, broadcast_id, comment_data, session_id=session_id, sso=sso)
+        api_response = api_instance.create_comment_public(tenant_id, url_id, broadcast_id, comment_data, CreateCommentPublicOptions(session_id=session_id, sso=sso))
         print("The response of PublicApi->create_comment_public:\n")
         pprint(api_response)
     except Exception as e:

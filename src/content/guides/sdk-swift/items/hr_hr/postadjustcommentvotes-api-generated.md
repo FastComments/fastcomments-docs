@@ -1,9 +1,11 @@
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Da |  |
-| sso | string | query | Ne |  |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -13,14 +15,16 @@ Vraća: [`AdjustVotesResponse`](https://github.com/FastComments/fastcomments-swi
 
 [inline-code-attrs-start title = 'postAdjustCommentVotes Primjer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sljedeći primjeri koda su još u beta fazi. Za bilo kakav problem, prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sljedeći uzorci koda su još beta. Za bilo koji problem, molimo prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
 let adjustCommentVotesParams = AdjustCommentVotesParams(adjustVoteAmount: 123) // AdjustCommentVotesParams | 
-let sso = "sso_example" // String |  (neobavezno)
+let broadcastId = "broadcastId_example" // String |  (opcionalno)
+let sso = "sso_example" // String |  (opcionalno)
 
-ModerationAPI.postAdjustCommentVotes(commentId: commentId, adjustCommentVotesParams: adjustCommentVotesParams, sso: sso) { (response, error) in
+ModerationAPI.postAdjustCommentVotes(tenantId: tenantId, commentId: commentId, adjustCommentVotesParams: adjustCommentVotesParams, options: ModerationAPI.PostAdjustCommentVotesOptions(broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -31,5 +35,3 @@ ModerationAPI.postAdjustCommentVotes(commentId: commentId, adjustCommentVotesPar
     }
 }
 [inline-code-end]
-
----

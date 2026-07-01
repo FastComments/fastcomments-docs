@@ -1,30 +1,29 @@
-### Erreurs 401 (Non autorisé)
+### Erreurs 401 Non autorisées
 
-Si vous obtenez des erreurs 401 lorsque vous utilisez l'API authentifiée :
+Si vous obtenez des erreurs 401 lors de l’utilisation de l’API authentifiée :
 
-1. **Vérifiez votre API key** : Assurez-vous d'utiliser la bonne API key depuis votre tableau de bord FastComments
-2. **Vérifiez le tenant ID** : Assurez-vous que le tenant ID correspond à votre compte
-3. **Format de l'API key** : L'API key doit être définie sur le client API :
+1. **Vérifiez votre clé API** : Assurez-vous d’utiliser la bonne clé API depuis votre tableau de bord FastComments
+2. **Vérifiez l’ID du locataire** : Assurez-vous que l’ID du locataire correspond à votre compte
+3. **Format de la clé API** : La clé API doit être définie dans l’en‑tête `x-api-key` de la configuration partagée :
 
 ```swift
-let defaultApi = DefaultAPI()
-defaultApi.apiKey = "YOUR_API_KEY"
+FastCommentsSwiftAPIConfiguration.shared.customHeaders["x-api-key"] = "YOUR_API_KEY"
 ```
 
-4. **Utilisation de la mauvaise API** : Assurez-vous d'utiliser `DefaultAPI` (et non `PublicAPI`) pour les appels authentifiés
+4. **Utilisation de la mauvaise API** : Assurez‑vous d’utiliser `DefaultAPI` (et non `PublicAPI`) pour les appels authentifiés
 
-### Problèmes de jetons SSO
+### Problèmes de jeton SSO
 
 Si les jetons SSO ne fonctionnent pas :
 
-1. **Utilisez le mode sécurisé en production** : Utilisez toujours `FastCommentsSSO.createSecure()` avec votre API key en production
-2. **Côté serveur uniquement** : Générez les jetons SSO sécurisés sur votre serveur, n'exposez jamais votre API key aux clients
-3. **Vérifiez les données utilisateur** : Assurez-vous que tous les champs requis (id, email, username) sont fournis
-4. **Expiration du token** : Les jetons SSO sécurisés incluent un horodatage et peuvent expirer. Générez de nouveaux jetons selon les besoins.
+1. **Utilisez le mode sécurisé en production** : Utilisez toujours `FastCommentsSSO.createSecure()` avec votre clé API en production
+2. **Serveur uniquement** : Générez les jetons SSO sécurisés sur votre serveur, ne jamais exposer votre clé API aux clients
+3. **Vérifiez les données utilisateur** : Assurez‑vous que tous les champs requis (id, email, nom d’utilisateur) sont fournis
+4. **Expiration du jeton** : Les jetons SSO sécurisés incluent un horodatage et peuvent expirer. Générez de nouveaux jetons au besoin.
 
 ### Erreurs SSL/TLS
 
 Si vous rencontrez des erreurs SSL/TLS :
 
-1. Assurez-vous que l'Info.plist de votre application autorise les connexions HTTPS vers fastcomments.com
-2. Vérifiez que vous n'utilisez pas d'exceptions App Transport Security susceptibles de bloquer la connexion
+1. Assurez‑vous que le fichier Info.plist de votre application autorise les connexions HTTPS vers fastcomments.com
+2. Vérifiez que vous n’utilisez pas d’exceptions App Transport Security qui pourraient bloquer la connexion

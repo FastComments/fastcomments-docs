@@ -1,15 +1,15 @@
-启用或禁用页面的通知。当用户订阅某个页面时，会为新的根评论创建通知，并且还
+Enable or disable notifications for a page. When users are subscribed to a page, notifications are created for new root comments, and also
 
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 是 |  |
-| urlId | string | query | 是 |  |
-| url | string | query | 是 |  |
-| pageTitle | string | query | 是 |  |
-| subscribedOrUnsubscribed | string | path | 是 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| url | string | query | Yes |  |
+| pageTitle | string | query | Yes |  |
+| subscribedOrUnsubscribed | string | path | Yes |  |
+| sso | string | query | No |  |
 
 ## 响应
 
@@ -25,16 +25,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // 如果您想使用自定义的 HTTP 客户端，请传入实现了 `GuzzleHttp\ClientInterface` 的客户端。
+    // 如果您想使用自定义 HTTP 客户端，请传入实现 `GuzzleHttp\ClientInterface` 的客户端。
     // 这是可选的，默认将使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // 字符串
-$url_id = 'url_id_example'; // 字符串
-$url = 'url_example'; // 字符串
-$page_title = 'page_title_example'; // 字符串
-$subscribed_or_unsubscribed = 'subscribed_or_unsubscribed_example'; // 字符串
-$sso = 'sso_example'; // 字符串
+
+$tenant_id = 'tenant_id_example'; // string
+$url_id = 'url_id_example'; // string
+$url = 'url_example'; // string
+$page_title = 'page_title_example'; // string
+$subscribed_or_unsubscribed = 'subscribed_or_unsubscribed_example'; // string
+$sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->updateUserNotificationPageSubscriptionStatus($tenant_id, $url_id, $url, $page_title, $subscribed_or_unsubscribed, $sso);

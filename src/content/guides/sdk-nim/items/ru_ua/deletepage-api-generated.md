@@ -1,9 +1,9 @@
-## Parameters
+## Параметры
 
 | Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Нет |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
 
 ## Ответ
 
@@ -13,12 +13,9 @@
 
 [inline-code-attrs-start title = 'Пример deletePage'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deletePage(tenantId = "site-tenant-456", id = "news/winter-updates-2025")
-if response.isSome:
-  let deleted = response.get()
-  echo "DeletePageAPIResponse:", deleted
-else:
-  echo "Delete failed, HTTP response:", httpResponse
+let (deleteRespOpt, httpResp) = client.deletePage(tenantId = "my-tenant-123", id = "news/article-title")
+if deleteRespOpt.isSome:
+  let deleteResp = deleteRespOpt.get()
+  discard deleteResp
+discard httpResp
 [inline-code-end]
-
----

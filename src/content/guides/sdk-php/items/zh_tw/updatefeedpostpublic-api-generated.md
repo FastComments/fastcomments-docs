@@ -9,7 +9,7 @@
 
 ## 回應
 
-回傳：[`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateFeedPostResponse.php)
+返回: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateFeedPostResponse.php)
 
 ## 範例
 
@@ -21,18 +21,22 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // 如果您想使用自訂的 HTTP 用戶端，傳入實作了 `GuzzleHttp\ClientInterface` 的用戶端。
-    // 這是可選的，預設會使用 `GuzzleHttp\Client`。
+    // 如果您想使用自訂 HTTP 客戶端，傳入實作 `GuzzleHttp\ClientInterface` 的客戶端。
+    // 這是可選的，預設會使用 `GuzzleHttp\Client` 。
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$post_id = 'post_id_example'; // string
+
+$tenant_id = 'tenant_id_example'; // 字串
+$post_id = 'post_id_example'; // 字串
 $update_feed_post_params = new \FastComments\Client\Model\UpdateFeedPostParams(); // \FastComments\Client\Model\UpdateFeedPostParams
-$broadcast_id = 'broadcast_id_example'; // string
-$sso = 'sso_example'; // string
+$options = [
+    'broadcast_id' => 'broadcast_id_example', // 字串
+    'sso' => 'sso_example', // 字串
+];
+
 
 try {
-    $result = $apiInstance->updateFeedPostPublic($tenant_id, $post_id, $update_feed_post_params, $broadcast_id, $sso);
+    $result = $apiInstance->updateFeedPostPublic($tenant_id, $post_id, $update_feed_post_params, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->updateFeedPostPublic: ', $e->getMessage(), PHP_EOL;

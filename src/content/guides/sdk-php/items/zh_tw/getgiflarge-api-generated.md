@@ -1,13 +1,13 @@
 ## 參數
 
-| 名稱 | 型別 | 位置 | 必填 | 說明 |
+| 名稱 | 類型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | 是 |  |
-| largeInternalURLSanitized | string | query | 是 |  |
+| tenantId | string | path | Yes |  |
+| largeInternalURLSanitized | string | query | Yes |  |
 
 ## 回應
 
-回傳: [`GifGetLargeResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GifGetLargeResponse.php)
+返回：[`GifGetLargeResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GifGetLargeResponse.php)
 
 ## 範例
 
@@ -19,12 +19,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // 如果您想使用自訂的 HTTP 用戶端，請傳入實作 `GuzzleHttp\ClientInterface` 的用戶端。
+    // 如果您想使用自訂的 HTTP 客戶端，請傳入實作 `GuzzleHttp\ClientInterface` 的客戶端。
     // 這是可選的，預設會使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $large_internal_url_sanitized = 'large_internal_url_sanitized_example'; // string
+
 
 try {
     $result = $apiInstance->getGifLarge($tenant_id, $large_internal_url_sanitized);
@@ -33,5 +35,3 @@ try {
     echo 'Exception when calling PublicApi->getGifLarge: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

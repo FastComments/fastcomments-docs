@@ -1,9 +1,9 @@
 ## Parametre
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | Yes |  |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
+|------|------|-----------|----------|-------------|
+| tenantId | string | query | Ja |  |
+| urlId | string | query | Ja |  |
 
 ## Svar
 
@@ -17,20 +17,22 @@ Returnerer: [`GetVotesResponse`](https://github.com/FastComments/fastcomments-ph
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api_key
+// Konfigurer API-nøgle autorisation: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Fjern kommentaren nedenfor for at opsætte præfiks (f.eks. Bearer) for API-nøgle, hvis nødvendigt
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // Hvis du vil bruge en brugerdefineret HTTP-klient, skal du videregive din klient som implementerer `GuzzleHttp\ClientInterface`.
     // Dette er valgfrit, `GuzzleHttp\Client` vil blive brugt som standard.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $url_id = 'url_id_example'; // string
+
 
 try {
     $result = $apiInstance->getVotes($tenant_id, $url_id);

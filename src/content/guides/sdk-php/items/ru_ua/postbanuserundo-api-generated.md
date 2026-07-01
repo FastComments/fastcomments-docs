@@ -1,16 +1,17 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| sso | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
+Повертає: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример postBanUserUndo'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postBanUserUndo Приклад'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -18,15 +19,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Если вы хотите использовать пользовательский HTTP-клиент, передайте ваш клиент, который реализует `GuzzleHttp\ClientInterface`.
-    // Это необязательно — по умолчанию будет использован `GuzzleHttp\Client`.
+    // Якщо ви хочете використовувати власний HTTP‑клієнт, передайте свій клієнт, який реалізує `GuzzleHttp\ClientInterface`.
+    // Це необов’язково, за замовчуванням буде використано `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
+
+$tenant_id = 'tenant_id_example'; // рядок
 $ban_user_undo_params = new \FastComments\Client\Model\BanUserUndoParams(); // \FastComments\Client\Model\BanUserUndoParams
-$sso = 'sso_example'; // string
+$sso = 'sso_example'; // рядок
+
 
 try {
-    $result = $apiInstance->postBanUserUndo($ban_user_undo_params, $sso);
+    $result = $apiInstance->postBanUserUndo($tenant_id, $ban_user_undo_params, $sso);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->postBanUserUndo: ', $e->getMessage(), PHP_EOL;

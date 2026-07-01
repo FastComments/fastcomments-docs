@@ -1,14 +1,11 @@
----
-Grupne informacije o korisnicima za tenant. Za zadate userIds vraća informacije za prikaz iz User / SSOUser.
-Koristi se u widgetu za komentare za obogaćivanje korisnika koji su se upravo pojavili putem događaja prisutnosti.
-Nema konteksta stranice: privatnost se dosledno primenjuje (privatni profili su maskirani).
+Masovne informacije o korisnicima za zakupca. Uz date userIds, vraća prikazne informacije iz User / SSOUser. Koristi se od strane widgeta za komentare da obogati korisnike koji su se upravo pojavili putem događaja prisustva. Bez konteksta stranice: privatnost se primenjuje uniformno (privatni profili su maskirani).
 
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| ids | String | Yes |  |
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenant_id | String | Da |  |
+| ids | String | Da |  |
 
 ## Odgovor
 
@@ -18,12 +15,9 @@ Vraća: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-r
 
 [inline-code-attrs-start title = 'Primer get_users_info'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: GetUsersInfoParams = GetUsersInfoParams {
+let params = GetUsersInfoParams {
     tenant_id: "acme-corp-tenant".to_string(),
-    ids: "alice@example.com,bob@example.com,carol@example.com".to_string(),
-    page_size: Some(100),
+    ids: "user-1,user-2".to_string(),
 };
-let users_response: PageUsersInfoResponse = get_users_info(&configuration, params).await?;
+let page: PageUsersInfoResponse = get_users_info(&configuration, params).await?;
 [inline-code-end]
-
----

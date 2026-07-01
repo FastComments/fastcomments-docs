@@ -1,20 +1,20 @@
-## Paramètres
+## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Oui |  |
-| isLive | boolean | query | Non |  |
-| doSpamCheck | boolean | query | Non |  |
-| sendEmails | boolean | query | Non |  |
-| populateNotifications | boolean | query | Non |  |
+| Nom | Type | Emplacement | Obligatoire | Description |
+|------|------|--------------|-------------|-------------|
+| tenantId | string | requête | Oui |  |
+| isLive | boolean | requête | Non |  |
+| doSpamCheck | boolean | requête | Non |  |
+| sendEmails | boolean | requête | Non |  |
+| populateNotifications | boolean | requête | Non |  |
 
-## Réponse
+## Response
 
-Retourne : [`[SaveCommentsBulkResponse]`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/[SaveCommentsBulkResponse].swift)
+Retourne : [`[SaveCommentsBulkResponse]`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/[SaveCommentsBulkResponse].swift)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de saveCommentsBulk'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple saveCommentsBulk'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Les exemples de code suivants sont encore en version bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
@@ -26,7 +26,7 @@ let doSpamCheck = true // Bool |  (optionnel)
 let sendEmails = true // Bool |  (optionnel)
 let populateNotifications = true // Bool |  (optionnel)
 
-DefaultAPI.saveCommentsBulk(tenantId: tenantId, createCommentParams: createCommentParams, isLive: isLive, doSpamCheck: doSpamCheck, sendEmails: sendEmails, populateNotifications: populateNotifications) { (response, error) in
+DefaultAPI.saveCommentsBulk(tenantId: tenantId, createCommentParams: createCommentParams, options: DefaultAPI.SaveCommentsBulkOptions(isLive: isLive, doSpamCheck: doSpamCheck, sendEmails: sendEmails, populateNotifications: populateNotifications)) { (response, error) in
     guard error == nil else {
         print(error)
         return

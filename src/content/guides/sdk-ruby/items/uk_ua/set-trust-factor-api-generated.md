@@ -1,7 +1,8 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язкове | Опис |
+| Назва | Тип | Розташування | Обов’язково | Опис |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Так |  |
 | userId | string | query | Ні |  |
 | trustFactor | string | query | Ні |  |
 | sso | string | query | Ні |  |
@@ -12,12 +13,13 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад set_trust_factor'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'set_trust_factor Приклад'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 opts = {
   user_id: 'user_id_example', # String | 
   trust_factor: 'trust_factor_example', # String | 
@@ -26,11 +28,9 @@ opts = {
 
 begin
   
-  result = api_instance.set_trust_factor(opts)
+  result = api_instance.set_trust_factor(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->set_trust_factor: #{e}"
 end
 [inline-code-end]
-
----

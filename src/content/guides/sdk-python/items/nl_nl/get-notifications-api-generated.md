@@ -1,6 +1,6 @@
 ## Parameters
 
-| Name | Type | Location | Required | Description |
+| Naam | Type | Locatie | Verplicht | Beschrijving |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | userId | string | query | Nee |  |
@@ -10,7 +10,7 @@
 | type | string | query | Nee |  |
 | skip | number | query | Nee |  |
 
-## Antwoord
+## Respons
 
 Retourneert: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notifications_response.py)
 
@@ -19,23 +19,25 @@ Retourneert: [`GetNotificationsResponse`](https://github.com/FastComments/fastco
 [inline-code-attrs-start title = 'get_notifications Voorbeeld'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetNotificationsOptions
 from client.models.get_notifications_response import GetNotificationsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Het definiëren van de host is optioneel en staat standaard op https://fastcomments.com
+# Het definiëren van de host is optioneel en standaard https://fastcomments.com
 # Zie configuration.py voor een lijst van alle ondersteunde configuratieparameters.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
-
 # De client moet de authenticatie- en autorisatieparameters configureren
 # in overeenstemming met het beveiligingsbeleid van de API-server.
-# Voorbeelden voor elke authenticatiemethode staan hieronder; gebruik het voorbeeld dat
-# past bij uw authenticatiegebruik.
+# Voorbeelden voor elke authenticatiemethode worden hieronder verstrekt; gebruik het voorbeeld dat
+# aansluit bij uw authenticatiegebruik.
+
 # Configureer API-sleutelautorisatie: api_key
-# Haal de commentaartekens weg hieronder om een prefix (bijv. Bearer) voor de API-sleutel in te stellen, indien nodig
-# Ga een context in met een instantie van de API-client
+configuration.api_key['api_key'] = os.environ["API_KEY"]
+
+# Verwijder commentaar hieronder om een prefix (bijv. Bearer) voor de API-sleutel in te stellen, indien nodig
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# Voer een context in met een instantie van de API-client
 with client.ApiClient(configuration) as api_client:
     # Maak een instantie van de API-klasse
     api_instance = client.DefaultApi(api_client)
@@ -48,7 +50,7 @@ with client.ApiClient(configuration) as api_client:
     skip = 3.4 # float |  (optional)
 
     try:
-        api_response = api_instance.get_notifications(tenant_id, user_id=user_id, url_id=url_id, from_comment_id=from_comment_id, viewed=viewed, type=type, skip=skip)
+        api_response = api_instance.get_notifications(tenant_id, GetNotificationsOptions(user_id=user_id, url_id=url_id, from_comment_id=from_comment_id, viewed=viewed, type=type, skip=skip))
         print("The response of DefaultApi->get_notifications:\n")
         pprint(api_response)
     except Exception as e:

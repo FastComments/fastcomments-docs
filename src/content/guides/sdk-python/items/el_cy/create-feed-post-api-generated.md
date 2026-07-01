@@ -1,14 +1,14 @@
 ## Παράμετροι
 
-| Name | Type | Location | Required | Description |
+| Όνομα | Τύπος | Θέση | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ναι |  |
-| broadcastId | string | query | Όχι |  |
-| isLive | boolean | query | Όχι |  |
-| doSpamCheck | boolean | query | Όχι |  |
-| skipDupCheck | boolean | query | Όχι |  |
+| tenantId | string | query | Yes |  |
+| broadcastId | string | query | No |  |
+| isLive | boolean | query | No |  |
+| doSpamCheck | boolean | query | No |  |
+| skipDupCheck | boolean | query | No |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_feed_posts_response.py)
 
@@ -17,31 +17,28 @@
 [inline-code-attrs-start title = 'Παράδειγμα create_feed_post'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import CreateFeedPostOptions
 from client.models.create_feed_post_params import CreateFeedPostParams
 from client.models.create_feed_posts_response import CreateFeedPostsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Ορισμός του host είναι προαιρετικός και έχει προεπιλογή το https://fastcomments.com
-# Δείτε το configuration.py για λίστα όλων των υποστηριζόμενων παραμέτρων ρύθμισης.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
+# Ο καθορισμός του host είναι προαιρετικός και προεπιλογή είναι https://fastcomments.com
+# Δείτε το configuration.py για μια λίστα με όλες τις υποστηριζόμενες παραμέτρους διαμόρφωσης.
+# Ο πελάτης πρέπει να ρυθμίσει τις παραμέτρους ελέγχου ταυτοποίησης και εξουσιοδότησης
+# σύμφωνα με την πολιτική ασφαλείας του διακομιστή API.
+# Παραδείγματα για κάθε μέθοδο ελέγχου ταυτοποίησης παρέχονται παρακάτω, χρησιμοποιήστε το παράδειγμα που
+# ικανοποιεί την περίπτωση χρήσης ελέγχου ταυτοποίησης σας.
 
-# Ο πελάτης πρέπει να ρυθμίσει τις παραμέτρους αυθεντικοποίησης και εξουσιοδότησης
-# σύμφωνα με την πολιτική ασφαλείας του API server.
-# Παρέχονται παραδείγματα για κάθε μέθοδο αυθεντικοποίησης παρακάτω, χρησιμοποιήστε το παράδειγμα που
-# καλύπτει την περίπτωσή σας.
-
-# Ρύθμιση εξουσιοδότησης με API key: api_key
+# Ρύθμιση εξουσιοδότησης κλειδιού API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Αποσχολιάστε παρακάτω για να ορίσετε πρόθεμα (π.χ. Bearer) για το API key, εάν χρειάζεται
+# Αποσχολιάστε παρακάτω για να ορίσετε πρόθεμα (π.χ. Bearer) για το κλειδί API, εάν χρειάζεται
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Εισέλθετε σε context με ένα instance του API client
+# Εισάγετε ένα context με μια παρουσία του πελάτη API
 with client.ApiClient(configuration) as api_client:
-    # Δημιουργία ενός instance της κλάσης API
+    # Δημιουργήστε μια παρουσία της κλάσης API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_feed_post_params = client.CreateFeedPostParams() # CreateFeedPostParams | 
@@ -51,7 +48,7 @@ with client.ApiClient(configuration) as api_client:
     skip_dup_check = True # bool |  (προαιρετικό)
 
     try:
-        api_response = api_instance.create_feed_post(tenant_id, create_feed_post_params, broadcast_id=broadcast_id, is_live=is_live, do_spam_check=do_spam_check, skip_dup_check=skip_dup_check)
+        api_response = api_instance.create_feed_post(tenant_id, create_feed_post_params, CreateFeedPostOptions(broadcast_id=broadcast_id, is_live=is_live, do_spam_check=do_spam_check, skip_dup_check=skip_dup_check))
         print("The response of DefaultApi->create_feed_post:\n")
         pprint(api_response)
     except Exception as e:

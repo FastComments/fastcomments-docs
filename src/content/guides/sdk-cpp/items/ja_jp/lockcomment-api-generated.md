@@ -2,33 +2,28 @@
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | はい |  |
-| commentId | string | はい |  |
-| broadcastId | string | はい |  |
-| sso | string | いいえ |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| broadcastId | string | Yes |  |
+| sso | string | No |  |
 
 ## レスポンス
 
-返却値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
+戻り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
 ## 例
 
 [inline-code-attrs-start title = 'lockComment の例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
-utility::string_t commentId = utility::conversions::to_string_t("cmt-987654321");
-utility::string_t broadcastId = utility::conversions::to_string_t("live-456");
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(utility::conversions::to_string_t("user@example.com"));
-auto lockTask = api->lockComment(tenantId, commentId, broadcastId, sso)
-    .then([](pplx::task<std::shared_ptr<APIEmptyResponse>> t) -> std::shared_ptr<APIEmptyResponse> {
-        try {
-            auto resp = t.get();
-            if (!resp) resp = std::make_shared<APIEmptyResponse>();
-            return resp;
-        } catch (...) {
-            return std::make_shared<APIEmptyResponse>();
-        }
-    });
-[inline-code-end]
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto commentId = utility::conversions::to_string_t("comment-987");
+auto broadcastId = utility::conversions::to_string_t("broadcast-654");
+boost::optional<utility::string_t> sso = utility::conversions::to_string_t("sso-token-xyz");
 
----
+api->lockComment(tenantId, commentId, broadcastId, sso).then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task){
+    try{
+        auto response = task.get();
+    }catch(const std::exception&){
+    }
+});
+[inline-code-end]

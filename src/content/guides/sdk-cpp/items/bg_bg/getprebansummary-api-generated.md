@@ -1,12 +1,10 @@
-## Параметри
+## Parameters
 
 | Име | Тип | Задължително | Описание |
-|------|------|----------|-------------|
+|------|------|--------------|----------|
+| tenantId | string | Да |  |
 | commentId | string | Да |  |
-| includeByUserIdAndEmail | bool | Не |  |
-| includeByIP | bool | Не |  |
-| includeByEmailDomain | bool | Не |  |
-| sso | string | Не |  |
+| options | const GetPreBanSummaryOptions& | Да |  |
 
 ## Отговор
 
@@ -16,19 +14,18 @@
 
 [inline-code-attrs-start title = 'Пример за getPreBanSummary'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t commentId = utility::conversions::to_string_t("cmt-987654321");
-boost::optional<bool> includeByUserIdAndEmail = true;
-boost::optional<bool> includeByIP = true;
-boost::optional<bool> includeByEmailDomain = false;
-boost::optional<utility::string_t> sso = utility::conversions::to_string_t("my-tenant-123-sso-token");
-api->getPreBanSummary(commentId, includeByUserIdAndEmail, includeByIP, includeByEmailDomain, sso)
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto commentId = utility::conversions::to_string_t("cmt-456789");
+GetPreBanSummaryOptions options;
+options.locale = boost::optional<utility::string_t>{utility::conversions::to_string_t("en-US")};
+
+api->getPreBanSummary(tenantId, commentId, options)
     .then([](pplx::task<std::shared_ptr<PreBanSummary>> t) {
         try {
             auto summary = t.get();
-            if (!summary) summary = std::make_shared<PreBanSummary>();
-            std::cout << "PreBanSummary retrieved" << std::endl;
-        } catch (const std::exception &e) {
-            std::cerr << "Error fetching PreBanSummary: " << e.what() << std::endl;
+            // обработи резюме
+        } catch (const std::exception&) {
+            // обработи грешка
         }
     });
 [inline-code-end]

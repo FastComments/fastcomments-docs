@@ -1,7 +1,7 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Υποχρεωτικό | Περιγραφή |
-|------|------|----------|----------|-------------|
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|------------|-----------|
 | tenantId | string | query | Ναι |  |
 | limit | number | query | Όχι |  |
 | skip | number | query | Όχι |  |
@@ -9,7 +9,7 @@
 | after | number | query | Όχι |  |
 | before | number | query | Όχι |  |
 
-## Απάντηση
+## Απόκριση
 
 Επιστρέφει: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetAuditLogsResponse.php)
 
@@ -20,28 +20,31 @@
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Διαμόρφωση εξουσιοδότησης κλειδιού API: api_key
+// Ρυθμίστε την εξουσιοδότηση API key: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Αποσχολιάστε την παρακάτω γραμμή για να ρυθμίσετε το πρόθεμα (π.χ. Bearer) για το κλειδί API, αν χρειάζεται
+// Αποσχολιάστε την παρακάτω γραμμή για να ορίσετε πρόθεμα (π.χ. Bearer) για το API key, εάν χρειάζεται
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Εάν θέλετε να χρησιμοποιήσετε προσαρμοσμένο HTTP client, περάστε τον client σας που υλοποιεί την `GuzzleHttp\ClientInterface`.
-    // Αυτό είναι προαιρετικό, η `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
+    // Αν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε το client σας που υλοποιεί `GuzzleHttp\ClientInterface`.
+    // Αυτό είναι προαιρετικό, `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$limit = 3.4; // float
-$skip = 3.4; // float
-$order = new \FastComments\Client\Model\\FastComments\Client\Model\SORTDIR(); // \FastComments\Client\Model\SORTDIR
-$after = 3.4; // float
-$before = 3.4; // float
+
+$tenant_id = 'tenant_id_example'; // συμβολοσειρά
+$options = [
+    'limit' => 3.4, // float
+    'skip' => 3.4, // float
+    'order' => new \FastComments\Client\Model\\FastComments\Client\Model\SORTDIR(), // \FastComments\Client\Model\SORTDIR
+    'after' => 3.4, // float
+    'before' => 3.4, // float
+];
+
 
 try {
-    $result = $apiInstance->getAuditLogs($tenant_id, $limit, $skip, $order, $after, $before);
+    $result = $apiInstance->getAuditLogs($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getAuditLogs: ', $e->getMessage(), PHP_EOL;

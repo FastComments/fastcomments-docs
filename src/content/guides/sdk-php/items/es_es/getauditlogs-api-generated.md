@@ -1,7 +1,7 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
+|--------|------|-----------|-----------|-------------|
 | tenantId | string | query | Sí |  |
 | limit | number | query | No |  |
 | skip | number | query | No |  |
@@ -15,37 +15,39 @@ Devuelve: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de getAuditLogs'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo getAuditLogs'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api_key
+// Configurar autorización de clave API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Descomenta a continuación para configurar el prefijo (p.ej., Bearer) para la clave API, si es necesario
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // Si deseas usar un cliente HTTP personalizado, pasa tu cliente que implemente `GuzzleHttp\ClientInterface`.
+    // Esto es opcional, `GuzzleHttp\Client` se usará por defecto.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$limit = 3.4; // float
-$skip = 3.4; // float
-$order = new \FastComments\Client\Model\\FastComments\Client\Model\SORTDIR(); // \FastComments\Client\Model\SORTDIR
-$after = 3.4; // float
-$before = 3.4; // float
+
+$tenant_id = 'tenant_id_example'; // cadena
+$options = [
+    'limit' => 3.4, // flotante
+    'skip' => 3.4, // flotante
+    'order' => new \FastComments\Client\Model\\FastComments\Client\Model\SORTDIR(), // \FastComments\Client\Model\SORTDIR
+    'after' => 3.4, // flotante
+    'before' => 3.4, // flotante
+];
+
 
 try {
-    $result = $apiInstance->getAuditLogs($tenant_id, $limit, $skip, $order, $after, $before);
+    $result = $apiInstance->getAuditLogs($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->getAuditLogs: ', $e->getMessage(), PHP_EOL;
+    echo 'Excepción al llamar a DefaultApi->getAuditLogs: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

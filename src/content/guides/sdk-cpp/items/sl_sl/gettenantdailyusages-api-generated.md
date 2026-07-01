@@ -1,36 +1,23 @@
 ## Parametri
 
-| Ime | Tip | Zahtevano | Opis |
+| Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
-| yearNumber | double | Ne |  |
-| monthNumber | double | Ne |  |
-| dayNumber | double | Ne |  |
-| skip | double | Ne |  |
+| options | const GetTenantDailyUsagesOptions& | Da |  |
 
 ## Odgovor
 
-Vrača: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetTenantDailyUsagesResponse.h)
+Vrne: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetTenantDailyUsagesResponse.h)
 
 ## Primer
 
 [inline-code-attrs-start title = 'getTenantDailyUsages Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-boost::optional<double> yearNumber = 2026;
-boost::optional<double> monthNumber = 6;
-boost::optional<double> dayNumber; 
-boost::optional<double> skip = 0;
-api->getTenantDailyUsages(tenantId, yearNumber, monthNumber, dayNumber, skip)
-.then([=](pplx::task<std::shared_ptr<GetTenantDailyUsagesResponse>> t){
-    try {
-        auto resp = t.get();
-        if(!resp) resp = std::make_shared<GetTenantDailyUsagesResponse>();
-        return resp;
-    } catch(...) {
-        return std::make_shared<GetTenantDailyUsagesResponse>();
-    }
-});
+GetTenantDailyUsagesOptions opts;
+opts.startDate = boost::optional<utility::datetime>(utility::datetime::from_string(U("2023-01-01T00:00:00Z")));
+opts.endDate   = boost::optional<utility::datetime>(utility::datetime::from_string(U("2023-01-31T23:59:59Z")));
+api->getTenantDailyUsages(tenantId, opts).then([](std::shared_ptr<GetTenantDailyUsagesResponse> resp){
+    auto result = std::make_shared<GetTenantDailyUsagesResponse>(*resp);
+}).wait();
 [inline-code-end]
-
----

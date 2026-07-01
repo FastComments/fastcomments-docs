@@ -1,9 +1,10 @@
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
-| batchJobId | string | query | Ne |  |
-| sso | string | query | Ne |  |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| batchJobId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -23,17 +24,18 @@ import (
 )
 
 func main() {
-	batchJobId := "batchJobId_example" // string |  (neobavezno)
-	sso := "sso_example" // string |  (neobavezno)
+	tenantId := "tenantId_example" // string | 
+	batchJobId := "batchJobId_example" // string |  (opcionalno)
+	sso := "sso_example" // string |  (opcionalno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetApiExportStatus(context.Background()).BatchJobId(batchJobId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetApiExportStatus(context.Background()).TenantId(tenantId).BatchJobId(batchJobId).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetApiExportStatus``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Greška pri pozivu `ModerationAPI.GetApiExportStatus``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Cjeli HTTP odgovor: %v\n", r)
 	}
-	// odgovor iz `GetApiExportStatus`: ModerationExportStatusResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetApiExportStatus`: %v\n", resp)
+	// odgovor od `GetApiExportStatus`: ModerationExportStatusResponse
+	fmt.Fprintf(os.Stdout, "Odgovor od `ModerationAPI.GetApiExportStatus`: %v\n", resp)
 }
 [inline-code-end]

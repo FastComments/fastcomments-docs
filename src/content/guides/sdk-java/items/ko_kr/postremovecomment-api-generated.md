@@ -1,13 +1,15 @@
 ## 매개변수
 
-| Name | Type | Location | Required | Description |
+| 이름 | 형식 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| commentId | string | path | 예 |  |
-| sso | string | query | 아니오 |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## 응답
 
-반환: [`PostRemoveCommentResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/PostRemoveCommentResponse.java)
+반환: [`PostRemoveCommentApiResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/PostRemoveCommentApiResponse.java)
 
 ## 예제
 
@@ -26,10 +28,13 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
+    String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      PostRemoveCommentResponse result = apiInstance.postRemoveComment(commentId)
+      PostRemoveCommentApiResponse result = apiInstance.postRemoveComment(tenantId, commentId)
+            .broadcastId(broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);

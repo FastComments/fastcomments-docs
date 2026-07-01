@@ -1,10 +1,10 @@
-Paketne informacije o uporabnikih za najemnika. Glede na userIds vrne prikazne informacije iz User / SSOUser.
-Uporablja se v widgetu za komentarje za obogatitev uporabnikov, ki so se pravkar pojavili preko dogodka prisotnosti.
-Brez konteksta strani: zasebnost je dosledno uveljavljena (zasebni profili so zamaskirani).
+Masovne informacije o uporabniku za najemnika. Glede na userIds vrne prikazne informacije iz User / SSOUser.  
+Uporablja se v pripomočku za komentarje za obogatitev uporabnikov, ki se pojavijo preko dogodka prisotnosti.  
+Ni konteksta strani: zasebnost je enotno uveljavljena (zasebni profili so maskirani).
 
 ## Parametri
 
-| Name | Type | Required | Description |
+| Ime | Vrsta | Obvezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | ids | string | Ne |  |
@@ -17,12 +17,7 @@ Vrne: [`Option[PageUsersInfoResponse]`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'Primer getUsersInfo'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUsersInfo(tenantId = "my-tenant-123", ids = "user-42,user-87")
-if response.isSome:
-  let usersInfo = response.get()
-  echo "Retrieved users info:", usersInfo
-else:
-  echo "No users info returned. HTTP status:", httpResponse.status
+let (usersInfoOpt, httpResp) = client.getUsersInfo(tenantId = "my-tenant-123", ids = "user42")
+if usersInfoOpt.isSome:
+  let usersInfo = usersInfoOpt.get()
 [inline-code-end]
-
----

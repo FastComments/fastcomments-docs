@@ -1,9 +1,10 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | חובה | תיאור |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| value | string | שאילתה | לא |  |
-| sso | string | שאילתה | לא |  |
+| tenantId | string | query | Yes |  |
+| value | string | query | No |  |
+| sso | string | query | No |  |
 
 ## תגובה
 
@@ -11,7 +12,7 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-GetSearchSites'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת GetSearchSites'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,12 +24,13 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	value := "value_example" // string |  (אופציונלי)
 	sso := "sso_example" // string |  (אופציונלי)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetSearchSites(context.Background()).Value(value).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetSearchSites(context.Background()).TenantId(tenantId).Value(value).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetSearchSites``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -37,5 +39,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetSearchSites`: %v\n", resp)
 }
 [inline-code-end]
-
----

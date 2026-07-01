@@ -1,29 +1,28 @@
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
 | tenantId | string | Da |  |
 | sso | string | Ne |  |
 
 ## Odgovor
 
-Vraća: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ResetUserNotificationsResponse.ts)
+Vraća: [`ResetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ResetUserNotificationCountResponse.ts)
 
 ## Primjer
 
 [inline-code-attrs-start title = 'resetUserNotificationCount Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function example(): Promise<void> {
-  const tenantId: string = 'tenant_84f3b2';
-  const resetResultNoSso: ResetUserNotificationsResponse = await resetUserNotificationCount(tenantId);
+async function demoResetCount() {
+  const tenantId: string = "acme-corp-tenant";
+  const sso: string = "sso-user-9876";
 
-  const ssoToken: string = 'sso_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';
-  const resetResultWithSso: ResetUserNotificationsResponse = await resetUserNotificationCount(tenantId, ssoToken);
+  // Poziv s opcionalnim sso parametrom
+  const resultWithSso: ResetUserNotificationCountResponse = await resetUserNotificationCount(tenantId, sso);
 
-  console.log(resetResultNoSso, resetResultWithSso);
+  // Poziv bez opcionalnog sso parametra
+  const resultWithoutSso: ResetUserNotificationCountResponse = await resetUserNotificationCount(tenantId);
+
+  console.log(resultWithSso, resultWithoutSso);
 }
-
-example();
 [inline-code-end]
-
----

@@ -1,7 +1,7 @@
 ## Paramètres
 
 | Nom | Type | Emplacement | Obligatoire | Description |
-|------|------|----------|----------|-------------|
+|------|------|-------------|-------------|-------------|
 | tenantId | string | query | Oui |  |
 | limit | number | query | Non |  |
 | skip | number | query | Non |  |
@@ -17,17 +17,17 @@ Renvoie : [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-
 
 [inline-code-attrs-start title = 'Exemple getAuditLogs'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Les exemples de code suivants sont encore en version bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Les extraits de code suivants sont encore en version bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let tenantId = "tenantId_example" // Chaîne | 
-let limit = 987 // Double |  (optionnel)
-let skip = 987 // Double |  (optionnel)
-let order = SORT_DIR() // SORTDIR |  (optionnel)
-let after = 987 // Double |  (optionnel)
-let before = 987 // Double |  (optionnel)
+let tenantId = "tenantId_example" // String | 
+let limit = 987 // Double |  (facultatif)
+let skip = 987 // Double |  (facultatif)
+let order = SORT_DIR() // SORTDIR |  (facultatif)
+let after = 987 // Double |  (facultatif)
+let before = 987 // Double |  (facultatif)
 
-DefaultAPI.getAuditLogs(tenantId: tenantId, limit: limit, skip: skip, order: order, after: after, before: before) { (response, error) in
+DefaultAPI.getAuditLogs(tenantId: tenantId, options: DefaultAPI.GetAuditLogsOptions(limit: limit, skip: skip, order: order, after: after, before: before)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -38,3 +38,5 @@ DefaultAPI.getAuditLogs(tenantId: tenantId, limit: limit, skip: skip, order: ord
     }
 }
 [inline-code-end]
+
+---

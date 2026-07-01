@@ -1,33 +1,40 @@
 ## 參數
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| 名稱 | 型別 | 必填 | 說明 |
+|------|------|------|------|
 | tenantId | string | 是 |  |
 | commentId | string | 是 |  |
 | urlId | string | 是 |  |
 | broadcastId | string | 是 |  |
 | voteBodyParams | VoteBodyParams | 是 |  |
-| sessionId | string | 否 |  |
-| sso | string | 否 |  |
+| options | const VoteCommentOptions& | 是 |  |
 
 ## 回應
 
-回傳：[`VoteResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/VoteResponse.h)
+返回：[`VoteResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/VoteResponse.h)
 
 ## 範例
 
-[inline-code-attrs-start title = 'voteComment 範例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'voteComment 示例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
-utility::string_t commentId = utility::conversions::to_string_t("comment-456");
-utility::string_t urlId = utility::conversions::to_string_t("/articles/how-to-cpp");
-utility::string_t broadcastId = utility::conversions::to_string_t("broadcast-001");
-VoteBodyParams voteBodyParams;
-boost::optional<utility::string_t> sessionId = boost::optional<utility::string_t>(utility::conversions::to_string_t("session-abc-123"));
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(utility::conversions::to_string_t("user@example.com"));
-api->voteComment(tenantId, commentId, urlId, broadcastId, voteBodyParams, sessionId, sso)
-.then([](std::shared_ptr<VoteResponse> resp){
-    auto safeResp = resp ? resp : std::make_shared<VoteResponse>();
-    return safeResp;
-});
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto commentId = utility::conversions::to_string_t("comment-7890");
+auto urlId = utility::conversions::to_string_t("article-456");
+auto broadcastId = utility::conversions::to_string_t("broadcast-321");
+
+VoteBodyParams voteParams;
+voteParams.upvote = true;
+voteParams.note = boost::optional<utility::string_t>(utility::conversions::to_string_t("Great insight"));
+
+VoteCommentOptions options;
+options.dryRun = boost::optional<bool>(false);
+
+api->voteComment(tenantId, commentId, urlId, broadcastId, voteParams, options)
+   .then([](pplx::task<std::shared_ptr<VoteResponse>> t) {
+       try {
+           auto response = t.get();
+           // 處理回應
+       } catch (const std::exception&) {
+       }
+   });
 [inline-code-end]

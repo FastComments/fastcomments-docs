@@ -4,11 +4,10 @@ If you're getting 401 errors when using the authenticated API:
 
 1. **Check your API key**: Ensure you're using the correct API key from your FastComments dashboard
 2. **Verify the tenant ID**: Make sure the tenant ID matches your account
-3. **API key format**: The API key should be set on the API client:
+3. **API key format**: The API key should be set as the `x-api-key` header on the shared configuration:
 
 ```swift
-let defaultApi = DefaultAPI()
-defaultApi.apiKey = "YOUR_API_KEY"
+FastCommentsSwiftAPIConfiguration.shared.customHeaders["x-api-key"] = "YOUR_API_KEY"
 ```
 
 4. **Using the wrong API**: Make sure you're using `DefaultAPI` (not `PublicAPI`) for authenticated calls

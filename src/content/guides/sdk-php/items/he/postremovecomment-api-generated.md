@@ -1,13 +1,15 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| commentId | string | path | כן |  |
-| sso | string | query | לא |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## תגובה
 
-מחזיר: [`PostRemoveCommentResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PostRemoveCommentResponse.php)
+מחזיר: [`PostRemoveCommentApiResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PostRemoveCommentApiResponse.php)
 
 ## דוגמה
 
@@ -19,15 +21,21 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // אם ברצונך להשתמש ב-client HTTP מותאם, העבר את ה-client שלך שמממש את `GuzzleHttp\ClientInterface`.
-    // זה אופציונלי, `GuzzleHttp\Client` ישמש כברירת מחדל.
+    // אם ברצונך להשתמש בלקוח HTTP מותאם אישית, העבר את הלקוח שלך המממש את `GuzzleHttp\ClientInterface`.
+    // זה אופציונלי, `GuzzleHttp\Client` ישמש ברירת מחדל.
     new GuzzleHttp\Client()
 );
-$comment_id = 'comment_id_example'; // string
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // מחרוזת
+$comment_id = 'comment_id_example'; // מחרוזת
+$options = [
+    'broadcast_id' => 'broadcast_id_example', // מחרוזת
+    'sso' => 'sso_example', // מחרוזת
+];
+
 
 try {
-    $result = $apiInstance->postRemoveComment($comment_id, $sso);
+    $result = $apiInstance->postRemoveComment($tenant_id, $comment_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->postRemoveComment: ', $e->getMessage(), PHP_EOL;

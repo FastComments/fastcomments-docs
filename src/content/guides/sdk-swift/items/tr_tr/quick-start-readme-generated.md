@@ -3,12 +3,9 @@
 ```swift
 import FastCommentsSwift
 
-// API istemcisi oluştur
-let publicApi = PublicAPI()
-
-// Bir sayfa için yorumları getir
+// Bir sayfa için yorumları al
 do {
-    let response = try await publicApi.getCommentsPublic(
+    let response = try await PublicAPI.getCommentsPublic(
         tenantId: "your-tenant-id",
         urlId: "page-url-id"
     )
@@ -22,20 +19,19 @@ do {
 }
 ```
 
-### Yetkilendirilmiş API'yi Kullanma
+### Kimlik Doğrulamalı API'yi Kullanma
 
 ```swift
 import FastCommentsSwift
 
-// API anahtarıyla yapılandırma oluştur
-let defaultApi = DefaultAPI()
-defaultApi.apiKey = "your-api-key"
+// Paylaşılan yapılandırmada API anahtarınızı ayarlayın (x-api-key başlığı olarak gönderilir)
+FastCommentsSwiftAPIConfiguration.shared.customHeaders["x-api-key"] = "your-api-key"
 
-// Kimlik doğrulanmış API'yi kullanarak yorumları getir
+// Kimlik doğrulamalı API kullanarak yorumları al
 do {
-    let response = try await defaultApi.getComments(
+    let response = try await DefaultAPI.getComments(
         tenantId: "your-tenant-id",
-        urlId: "page-url-id"
+        options: .init(urlId: "page-url-id")
     )
 
     print("Total comments: \(response.count ?? 0)")
@@ -52,13 +48,15 @@ do {
 ```swift
 import FastCommentsSwift
 
-// Moderasyon yöntemleri, görev yapan moderatör için bir `sso` tokeni ile yetkilendirilir
-// (bunu FastCommentsSSO ile oluşturun, yukarıdaki SSO bölümüne bakın).
+// Moderasyon yöntemleri, işlem yapan moderatör için bir `sso` tokenı ile yetkilendirilir
+// (FastCommentsSSO ile oluşturun, yukarıdaki SSO bölümüne bakın).
 do {
     let response = try await ModerationAPI.getApiComments(
-        page: 0,
-        count: 30,
-        sso: ssoToken
+        options: .init(
+            page: 0,
+            count: 30,
+            sso: ssoToken
+        )
     )
 
     print("Found \(response.comments.count) comments to moderate")
@@ -70,16 +68,16 @@ do {
 }
 ```
 
-### Kimlik Doğrulama için SSO Kullanma
+### Kimlik Doğrulama İçin SSO Kullanma
 
-#### Güvenli SSO (Üretim için Önerilir)
+#### Güvenli SSO (Üretim İçin Önerilir)
 
 ```swift
 import FastCommentsSwift
 
 let apiKey = "your-api-key"
 
-// Güvenli SSO kullanıcı verisi oluşturun (yalnızca sunucu tarafı!)
+// Güvenli SSO kullanıcı verilerini oluştur (sadece sunucu tarafında!)
 let userData = SecureSSOUserData(
     id: "user-123",              // Kullanıcı Kimliği
     email: "user@example.com",   // E-posta
@@ -93,18 +91,18 @@ do {
     let token = try sso.createToken()
 
     print("SSO Token: \(token ?? "")")
-    // Kimlik doğrulama için bu tokenı frontend'inize iletin
+    // Bu tokenı ön ucunuza kimlik doğrulama için gönderin
 } catch {
     print("Error creating SSO token: \(error)")
 }
 ```
 
-#### Basit SSO (Geliştirme/Test için)
+#### Basit SSO (Geliştirme/Test İçin)
 
 ```swift
 import FastCommentsSwift
 
-// Basit SSO kullanıcı verisi oluştur (API anahtarına gerek yok)
+// Basit SSO kullanıcı verilerini oluştur (API anahtarı gerekmez)
 let userData = SimpleSSOUserData(
     username: "johndoe",
     email: "user@example.com",

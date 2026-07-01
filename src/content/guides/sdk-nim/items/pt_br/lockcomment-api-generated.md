@@ -1,11 +1,11 @@
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-----------|
+|------|------|-------------|-----------|
 | tenantId | string | Sim |  |
 | commentId | string | Sim |  |
 | broadcastId | string | Não |  |
-| sso | string | Não |  |
+| sso | string = "" | Não |  |
 
 ## Resposta
 
@@ -13,12 +13,15 @@ Retorna: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcommen
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de lockComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo lockComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.lockComment(tenantId = "news-tenant-42", commentId = "cmt-8f3a2b9d", broadcastId = "", sso = "")
-if response.isSome:
-  let apiResp = response.get()
-  echo "Locked comment successfully for tenant news-tenant-42"
-else:
-  echo "Failed to lock comment, HTTP status: ", $httpResponse.status
+let (lockResult, httpRes) = client.lockComment(
+  tenantId = "my-tenant-123",
+  commentId = "comment-456",
+  broadcastId = "",
+  sso = "")
+
+if lockResult.isSome:
+  let resp = lockResult.get()
+  discard resp
 [inline-code-end]

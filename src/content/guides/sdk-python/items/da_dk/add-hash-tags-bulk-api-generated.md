@@ -1,8 +1,8 @@
 ## Parametre
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | No |  |
+| Navn | Type | Placering | Krævet | Beskrivelse |
+|------|------|-----------|--------|-------------|
+| tenantId | string | query | Ja |  |
 
 ## Svar
 
@@ -18,7 +18,7 @@ from client.models.bulk_create_hash_tags_response import BulkCreateHashTagsRespo
 from client.rest import ApiException
 from pprint import pprint
 
-# Definering af host er valgfri og standard er https://fastcomments.com
+# Definering af værten er valgfri og har som standard https://fastcomments.com
 # Se configuration.py for en liste over alle understøttede konfigurationsparametre.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -26,24 +26,24 @@ configuration = client.Configuration(
 
 # Klienten skal konfigurere godkendelses- og autorisationsparametre
 # i overensstemmelse med API-serverens sikkerhedspolitik.
-# Eksempler for hver godkendelsesmetode er angivet nedenfor, brug det eksempel der
-# opfylder dit godkendelsesbehov.
+# Eksempler på hver godkendelsesmetode er angivet nedenfor, brug det eksempel der
+# opfylder din godkendelsesbrugssag.
 
-# Configure API key authorization: api_key
+# Konfigurer API-nøgle autorisation: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Fjern kommentaren nedenfor for at opsætte præfiks (f.eks. Bearer) for API-nøgle, hvis nødvendigt
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Gå ind i en kontekst med en instans af API-klienten
+# Indtast en kontekst med en forekomst af API-klienten
 with client.ApiClient(configuration) as api_client:
-    # Opret en instans af API-klassen
+    # Opret en forekomst af API-klassen
     api_instance = client.DefaultApi(api_client)
-    tenant_id = 'tenant_id_example' # str |  (valgfri)
-    bulk_create_hash_tags_body = client.BulkCreateHashTagsBody() # BulkCreateHashTagsBody |  (valgfri)
+    tenant_id = 'tenant_id_example' # str | 
+    bulk_create_hash_tags_body = client.BulkCreateHashTagsBody() # BulkCreateHashTagsBody |  (optional)
 
     try:
-        api_response = api_instance.add_hash_tags_bulk(tenant_id=tenant_id, bulk_create_hash_tags_body=bulk_create_hash_tags_body)
+        api_response = api_instance.add_hash_tags_bulk(tenant_id, bulk_create_hash_tags_body)
         print("The response of DefaultApi->add_hash_tags_bulk:\n")
         pprint(api_response)
     except Exception as e:

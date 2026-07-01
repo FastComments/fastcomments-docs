@@ -1,17 +1,18 @@
-## Параметры
+## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| commentId | string | query | Нет |  |
-| sso | string | query | Нет |  |
+| Назва | Тип | Розташування | Обов’язково | Опис |
+|------|------|--------------|-------------|------|
+| tenantId | string | query | Yes |  |
+| commentId | string | query | No |  |
+| sso | string | query | No |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`GetUserInternalProfileResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_internal_profile_response.go)
+Повертає: [`GetUserInternalProfileResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_internal_profile_response.go)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример GetUserInternalProfile'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад GetUserInternalProfile'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,17 +24,18 @@ import (
 )
 
 func main() {
-	commentId := "commentId_example" // string |  (необязательно)
-	sso := "sso_example" // string |  (необязательно)
+	tenantId := "tenantId_example" // string | 
+	commentId := "commentId_example" // string |  (необов’язково)
+	sso := "sso_example" // string |  (необов’язково)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetUserInternalProfile(context.Background()).CommentId(commentId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetUserInternalProfile(context.Background()).TenantId(tenantId).CommentId(commentId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetUserInternalProfile``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// ответ от `GetUserInternalProfile`: GetUserInternalProfileResponse
+	// відповідь від `GetUserInternalProfile`: GetUserInternalProfileResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetUserInternalProfile`: %v\n", resp)
 }
 [inline-code-end]

@@ -1,7 +1,8 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Zorunlu | Açıklama |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Evet |  |
 | text-search | string | query | Hayır |  |
 | byIPFromComment | string | query | Hayır |  |
 | filter | string | query | Hayır |  |
@@ -17,17 +18,18 @@ Döndürür: [`ModerationAPICountCommentsResponse`](https://github.com/FastComme
 
 [inline-code-attrs-start title = 'getCount Örneği'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Aşağıdaki kod örnekleri hala beta sürümündedir. Herhangi bir sorun için lütfen şu adresten bildirin: http://github.com/OpenAPITools/openapi-generator/issues/new
+// Aşağıdaki kod örnekleri hâlâ beta sürümündedir. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new adresinden bildirin
 import FastCommentsSwift
 
-let textSearch = "textSearch_example" // String |  (isteğe bağlı)
-let byIPFromComment = "byIPFromComment_example" // String |  (isteğe bağlı)
-let filter = "filter_example" // String |  (isteğe bağlı)
-let searchFilters = "searchFilters_example" // String |  (isteğe bağlı)
-let demo = true // Bool |  (isteğe bağlı)
-let sso = "sso_example" // String |  (isteğe bağlı)
+let tenantId = "tenantId_example" // String | 
+let textSearch = "textSearch_example" // String |  (opsiyonel)
+let byIPFromComment = "byIPFromComment_example" // String |  (opsiyonel)
+let filter = "filter_example" // String |  (opsiyonel)
+let searchFilters = "searchFilters_example" // String |  (opsiyonel)
+let demo = true // Bool |  (opsiyonel)
+let sso = "sso_example" // String |  (opsiyonel)
 
-ModerationAPI.getCount(textSearch: textSearch, byIPFromComment: byIPFromComment, filter: filter, searchFilters: searchFilters, demo: demo, sso: sso) { (response, error) in
+ModerationAPI.getCount(tenantId: tenantId, options: ModerationAPI.GetCountOptions(textSearch: textSearch, byIPFromComment: byIPFromComment, filter: filter, searchFilters: searchFilters, demo: demo, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

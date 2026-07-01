@@ -2,11 +2,10 @@
 
 | שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| postId | string | לא |  |
-| updateFeedPostParams | UpdateFeedPostParams | לא |  |
-| broadcastId | string | לא |  |
-| sso | string | לא |  |
+| tenantId | string | Yes |  |
+| postId | string | No |  |
+| updateFeedPostParams | UpdateFeedPostParams | No |  |
+| options | UpdateFeedPostPublicOptions | No |  |
 
 ## תגובה
 
@@ -14,20 +13,15 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-updateFeedPostPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateFeedPostPublic דוגמה'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.updateFeedPostPublic(
   tenantId = "my-tenant-123",
-  postId = "post-456",
-  updateFeedPostParams = UpdateFeedPostParams(title = "Weekly Product Update", content = "Released bug fixes and performance improvements in v2.1.", tags = @["release", "product"], pinned = false),
-  broadcastId = "",
-  sso = ""
+  postId = "post-789",
+  updateFeedPostParams = UpdateFeedPostParams(),
+  options = UpdateFeedPostPublicOptions()
 )
-if response.isSome:
-  let created = response.get()
-  echo "Updated feed post id: ", created.postId
-else:
-  echo "Update failed with HTTP status: ", httpResponse.status
-[inline-code-end]
 
----
+if response.isSome:
+  let post = response.get()
+[inline-code-end]

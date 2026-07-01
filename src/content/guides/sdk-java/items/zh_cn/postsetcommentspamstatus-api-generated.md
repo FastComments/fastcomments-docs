@@ -1,21 +1,23 @@
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
-| commentId | string | path | 是 |  |
-| spam | boolean | query | 否 |  |
-| permNotSpam | boolean | query | 否 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| spam | boolean | query | No |  |
+| permNotSpam | boolean | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## 响应
 
-返回: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
+返回：[`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## 示例
 
 [inline-code-attrs-start title = 'postSetCommentSpamStatus 示例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 导入类：
+// 导入类:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -28,14 +30,17 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     Boolean spam = true; // Boolean | 
     Boolean permNotSpam = true; // Boolean | 
+    String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      APIEmptyResponse result = apiInstance.postSetCommentSpamStatus(commentId)
+      APIEmptyResponse result = apiInstance.postSetCommentSpamStatus(tenantId, commentId)
             .spam(spam)
             .permNotSpam(permNotSpam)
+            .broadcastId(broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);

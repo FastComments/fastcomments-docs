@@ -6,7 +6,7 @@ afterId
 ## Параметри
 
 | Име | Тип | Местоположение | Задължително | Описание |
-|------|------|----------|----------|-------------|
+|------|------|----------------|--------------|----------|
 | tenantId | string | path | Да |  |
 | afterId | string | query | Не |  |
 | limit | integer | query | Не |  |
@@ -29,20 +29,24 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ако искате да използвате персонализиран HTTP клиент, подайте ваш клиент, който имплементира `GuzzleHttp\ClientInterface`.
-    // Това е по избор, по подразбиране ще се използва `GuzzleHttp\Client`.
+    // Ако искате да използвате персонализиран HTTP клиент, предайте вашия клиент, който имплементира `GuzzleHttp\ClientInterface`.
+    // Това е опциионално, `GuzzleHttp\Client` ще бъде използван по подразбиране.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$after_id = 'after_id_example'; // string
-$limit = 56; // int
-$tags = array('tags_example'); // string[]
-$sso = 'sso_example'; // string
-$is_crawler = True; // bool
-$include_user_info = True; // bool
+$options = [
+    'after_id' => 'after_id_example', // string
+    'limit' => 56, // int
+    'tags' => array('tags_example'), // string[]
+    'sso' => 'sso_example', // string
+    'is_crawler' => True, // bool
+    'include_user_info' => True, // bool
+];
+
 
 try {
-    $result = $apiInstance->getFeedPostsPublic($tenant_id, $after_id, $limit, $tags, $sso, $is_crawler, $include_user_info);
+    $result = $apiInstance->getFeedPostsPublic($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getFeedPostsPublic: ', $e->getMessage(), PHP_EOL;

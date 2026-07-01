@@ -1,26 +1,19 @@
-## Параметри
+## Parameters
 
-| Назва | Тип | Обов'язково | Опис |
-|------|------|----------|-------------|
+| Назва | Тип | Обов’язково | Опис |
+|------|------|-------------|------|
 | tenantId | string | Так |  |
-| userId | string | Ні |  |
-| urlId | string | Так |  |
-| fromCommentId | string | Ні |  |
-| viewed | bool | Ні |  |
-| skip | float64 | Ні |  |
+| options | GetNotificationsOptions | Ні |  |
 
-## Відповідь
+## Response
 
 Повертає: [`Option[GetNotificationsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_notifications_response.nim)
 
-## Приклад
+## Example
 
 [inline-code-attrs-start title = 'Приклад getNotifications'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getNotifications(tenantId = "my-tenant-123", userId = "user-456", urlId = "news/article-title", fromCommentId = "cmt-789", viewed = false, skip = 0.0)
-if response.isSome:
-  let notifications = response.get()
-  echo notifications
+let (notifOpt, httpResp) = client.getNotifications(tenantId = "my-tenant-123", options = GetNotificationsOptions())
+if notifOpt.isSome:
+  let notifications = notifOpt.get()
 [inline-code-end]
-
----

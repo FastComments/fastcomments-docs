@@ -1,13 +1,13 @@
-## Παράμετροι
+## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Ναι |  |
-| commentId | string | path | Ναι |  |
-| isFlagged | boolean | query | Ναι |  |
-| sso | string | query | Όχι |  |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|-----------|-------------|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| isFlagged | boolean | query | Yes |  |
+| sso | string | query | No |  |
 
-## Απάντηση
+## Response
 
 Επιστρέφει: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
@@ -21,14 +21,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Εάν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε τον client σας που υλοποιεί την `GuzzleHttp\ClientInterface`.
-    // Αυτό είναι προαιρετικό, ο `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
+    // Αν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε το client σας που υλοποιεί `GuzzleHttp\ClientInterface`.
+    // Αυτό είναι προαιρετικό, `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$comment_id = 'comment_id_example'; // string
+
+$tenant_id = 'tenant_id_example'; // συμβολοσειρά
+$comment_id = 'comment_id_example'; // συμβολοσειρά
 $is_flagged = True; // bool
-$sso = 'sso_example'; // string
+$sso = 'sso_example'; // συμβολοσειρά
+
 
 try {
     $result = $apiInstance->flagCommentPublic($tenant_id, $comment_id, $is_flagged, $sso);

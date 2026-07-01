@@ -1,9 +1,9 @@
 ## Параметри
 
-| Назва | Type | Обов'язково | Опис |
+| Назва | Тип | Обов’язковий | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| id | string | Так |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
 ## Відповідь
 
@@ -13,18 +13,15 @@
 
 [inline-code-attrs-start title = 'Приклад getTenantUser'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> auditReason = U("admin-request");
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t id = U("john.doe@example.com");
-auto fallback = std::make_shared<GetTenantUserResponse>();
-api->getTenantUser(tenantId, id).then([fallback, auditReason](pplx::task<std::shared_ptr<GetTenantUserResponse>> t){
-    try {
-        auto resp = t.get();
-        if(!resp) resp = fallback;
-        (void)auditReason;
-    } catch(const std::exception&) {
-    }
-});
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto userId = utility::conversions::to_string_t("user@example.com");
+api->getTenantUser(tenantId, userId)
+    .then([](pplx::task<std::shared_ptr<GetTenantUserResponse>> task) {
+        try {
+            auto response = task.get();
+            // Використовуйте відповідь за потреби
+        } catch (const std::exception&) {
+            // Обробка помилок
+        }
+    });
 [inline-code-end]
-
----

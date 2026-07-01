@@ -1,7 +1,8 @@
 ## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
-|------|------|----------|----------|-------------|
+|------|------|-----------|--------------|-------------|
+| tenantId | string | query | Sì |  |
 | sso | string | query | No |  |
 
 ## Risposta
@@ -10,7 +11,7 @@ Restituisce: [`APIModerateGetUserBanPreferencesResponse`](https://github.com/Fas
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di GetUserBanPreference'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio GetUserBanPreference'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -22,11 +23,12 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string |
 	sso := "sso_example" // string |  (opzionale)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetUserBanPreference(context.Background()).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetUserBanPreference(context.Background()).TenantId(tenantId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetUserBanPreference``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -35,3 +37,5 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetUserBanPreference`: %v\n", resp)
 }
 [inline-code-end]
+
+---

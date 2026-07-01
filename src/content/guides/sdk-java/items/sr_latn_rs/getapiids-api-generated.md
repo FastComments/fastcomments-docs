@@ -1,14 +1,15 @@
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
-| text-search | string | query | Ne |  |
-| byIPFromComment | string | query | Ne |  |
-| filters | string | query | Ne |  |
-| searchFilters | string | query | Ne |  |
-| afterId | string | query | Ne |  |
-| demo | boolean | query | Ne |  |
-| sso | string | query | Ne |  |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| afterId | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -16,9 +17,9 @@ Vraća: [`ModerationAPIGetCommentIdsResponse`](https://github.com/FastComments/f
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer getApiIds'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getApiIds Primer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvoz klasa:
+// Uvezi klase:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -31,6 +32,7 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String textSearch = "textSearch_example"; // String | 
     String byIPFromComment = "byIPFromComment_example"; // String | 
     String filters = "filters_example"; // String | 
@@ -39,7 +41,7 @@ public class Example {
     Boolean demo = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationAPIGetCommentIdsResponse result = apiInstance.getApiIds()
+      ModerationAPIGetCommentIdsResponse result = apiInstance.getApiIds(tenantId)
             .textSearch(textSearch)
             .byIPFromComment(byIPFromComment)
             .filters(filters)
@@ -59,5 +61,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

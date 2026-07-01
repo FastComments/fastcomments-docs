@@ -13,7 +13,7 @@
 
 ## 示例
 
-[inline-code-attrs-start title = 'getCommentVoteUserNames 示例'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '获取评论投票用户名 示例'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -25,10 +25,12 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     // 这是可选的，默认将使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$comment_id = 'comment_id_example'; // string
-$dir = 56; // int
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // 字符串
+$comment_id = 'comment_id_example'; // 字符串
+$dir = 56; // 整数
+$sso = 'sso_example'; // 字符串
+
 
 try {
     $result = $apiInstance->getCommentVoteUserNames($tenant_id, $comment_id, $dir, $sso);
@@ -37,5 +39,3 @@ try {
     echo 'Exception when calling PublicApi->getCommentVoteUserNames: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

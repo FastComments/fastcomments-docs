@@ -2,17 +2,17 @@
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | いいえ |  |
+| tenantId | string | query | Yes |  |
 
-## レスポンス
+## 応答
 
-戻り値: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateHashTagResponse.java)
+返却: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateHashTagResponse.java)
 
 ## 例
 
-[inline-code-attrs-start title = 'addHashTag の例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'addHashTag 例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// クラスのインポート:
+// クラスをインポート:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -25,18 +25,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // APIキー認証の設定: api_key
+    // APIキー認証を設定: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // APIキーのプレフィックスを設定するには以下の行のコメントを外してください。例: "Token"（デフォルトは null）
+    // 以下の行のコメントを外すと、APIキーにプレフィックスを設定できます（例: "Token"、デフォルトはnull）
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     CreateHashTagBody createHashTagBody = new CreateHashTagBody(); // CreateHashTagBody | 
     try {
-      CreateHashTagResponse result = apiInstance.addHashTag()
-            .tenantId(tenantId)
+      CreateHashTagResponse result = apiInstance.addHashTag(tenantId)
             .createHashTagBody(createHashTagBody)
             .execute();
       System.out.println(result);

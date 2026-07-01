@@ -1,8 +1,10 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+|------|------|------------|----------|------|
+| tenantId | string | query | Tak |  |
 | commentId | string | path | Tak |  |
+| broadcastId | string | query | Nie |  |
 | sso | string | query | Nie |  |
 
 ## Odpowiedź
@@ -23,17 +25,19 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
-	sso := "sso_example" // string |  (opcjonalne)
+	broadcastId := "broadcastId_example" // string |  (opcjonalny)
+	sso := "sso_example" // string |  (opcjonalny)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostUnFlagComment(context.Background(), commentId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostUnFlagComment(context.Background(), commentId).TenantId(tenantId).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostUnFlagComment``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Błąd podczas wywoływania `ModerationAPI.PostUnFlagComment``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Pełna odpowiedź HTTP: %v\n", r)
 	}
-	// odpowiedź z `PostUnFlagComment`: APIEmptyResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostUnFlagComment`: %v\n", resp)
+	// response from `PostUnFlagComment`: APIEmptyResponse
+	fmt.Fprintf(os.Stdout, "Odpowiedź z `ModerationAPI.PostUnFlagComment`: %v\n", resp)
 }
 [inline-code-end]

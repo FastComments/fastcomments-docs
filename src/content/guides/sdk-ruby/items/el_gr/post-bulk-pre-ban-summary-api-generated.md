@@ -1,11 +1,12 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαραίτητο | Περιγραφή |
+| Όνομα | Τύπος | Θέση | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| includeByUserIdAndEmail | boolean | query | Όχι |  |
-| includeByIP | boolean | query | Όχι |  |
-| includeByEmailDomain | boolean | query | Όχι |  |
-| sso | string | query | Όχι |  |
+| tenantId | string | query | Yes |  |
+| includeByUserIdAndEmail | boolean | query | No |  |
+| includeByIP | boolean | query | No |  |
+| includeByEmailDomain | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Απάντηση
 
@@ -13,12 +14,13 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα post_bulk_pre_ban_summary'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_bulk_pre_ban_summary Παράδειγμα'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 bulk_pre_ban_params = FastCommentsClient::BulkPreBanParams.new({comment_ids: ['comment_ids_example']}) # BulkPreBanParams | 
 opts = {
   include_by_user_id_and_email: true, # Boolean | 
@@ -29,11 +31,9 @@ opts = {
 
 begin
   
-  result = api_instance.post_bulk_pre_ban_summary(bulk_pre_ban_params, opts)
+  result = api_instance.post_bulk_pre_ban_summary(tenant_id, bulk_pre_ban_params, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_bulk_pre_ban_summary: #{e}"
 end
 [inline-code-end]
-
----

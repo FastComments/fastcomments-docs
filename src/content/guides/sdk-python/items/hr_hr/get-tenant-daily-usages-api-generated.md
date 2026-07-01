@@ -1,12 +1,12 @@
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| yearNumber | number | query | Ne |  |
-| monthNumber | number | query | Ne |  |
-| dayNumber | number | query | Ne |  |
-| skip | number | query | Ne |  |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| yearNumber | number | query | No |  |
+| monthNumber | number | query | No |  |
+| dayNumber | number | query | No |  |
+| skip | number | query | No |  |
 
 ## Odgovor
 
@@ -17,39 +17,35 @@ Vraća: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcom
 [inline-code-attrs-start title = 'Primjer get_tenant_daily_usages'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetTenantDailyUsagesOptions
 from client.models.get_tenant_daily_usages_response import GetTenantDailyUsagesResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definiranje hosta je opcionalno i zadano je na https://fastcomments.com
-# Pogledajte configuration.py za popis svih podržanih konfiguracijskih parametara.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
-
-# Klijent mora konfigurirati parametre autentikacije i autorizacije
-# u skladu s politikom sigurnosti API poslužitelja.
-# Primjeri za svaku metodu autentikacije su prikazani u nastavku, upotrijebite onaj
-# koji zadovoljava vaš slučaj korištenja autentikacije.
-
-# Konfigurirajte autorizaciju API ključa: api_key
-configuration.api_key['api_key'] = os.environ["API_KEY"]
-
-# Otkomentirajte dolje da biste postavili prefiks (npr. Bearer) za API ključ, ako je potrebno
+# Definiranje hosta je opcionalno i zadano je https://fastcomments.com
+# Pogledajte configuration.py za popis svih podržanih parametara konfiguracije.
+# Klijent mora konfigurirati parametre autentifikacije i autorizacije
+# u skladu sa sigurnosnom politikom API poslužitelja.
+# Primjeri za svaku metodu autentifikacije su navedeni u nastavku, koristite primjer koji
+# zadovoljava vaš slučaj upotrebe autentifikacije.
+# Konfigurirajte autorizaciju API ključem: api_key
+# Odkomentirajte dolje za postavljanje prefiksa (npr. Bearer) za API ključ, ako je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Uđite u kontekst s instancom API klijenta
+# Enter a context with an instance of the API client
+# Unesite kontekst s instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Kreirajte instancu API klase
+    # Create an instance of the API class
+    # Stvorite instancu API klase
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    year_number = 3.4 # float |  (neobavezno)
-    month_number = 3.4 # float |  (neobavezno)
-    day_number = 3.4 # float |  (neobavezno)
-    skip = 3.4 # float |  (neobavezno)
+    year_number = 3.4 # float |  (optional)
+    month_number = 3.4 # float |  (optional)
+    day_number = 3.4 # float |  (optional)
+    skip = 3.4 # float |  (optional)
 
     try:
-        api_response = api_instance.get_tenant_daily_usages(tenant_id, year_number=year_number, month_number=month_number, day_number=day_number, skip=skip)
+        api_response = api_instance.get_tenant_daily_usages(tenant_id, GetTenantDailyUsagesOptions(year_number=year_number, month_number=month_number, day_number=day_number, skip=skip))
         print("The response of DefaultApi->get_tenant_daily_usages:\n")
         pprint(api_response)
     except Exception as e:

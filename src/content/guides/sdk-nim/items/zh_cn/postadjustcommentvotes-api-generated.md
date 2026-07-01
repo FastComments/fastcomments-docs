@@ -1,23 +1,27 @@
 ## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必需 | 描述 |
 |------|------|----------|-------------|
-| commentId | string | 是 |  |
-| adjustCommentVotesParams | AdjustCommentVotesParams | 否 |  |
-| sso | string | 否 |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| adjustCommentVotesParams | AdjustCommentVotesParams | No |  |
+| options | PostAdjustCommentVotesOptions | No |  |
 
 ## 响应
 
-返回：[`Option[AdjustVotesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_adjust_votes_response.nim)
+返回: [`Option[AdjustVotesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_adjust_votes_response.nim)
 
 ## 示例
 
 [inline-code-attrs-start title = 'postAdjustCommentVotes 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postAdjustCommentVotes(commentId = "cmt-987654", adjustCommentVotesParams = nil, sso = "sso-token-abc123")
-if response.isSome:
-  let adjusted = response.get()
-  discard adjusted
-[inline-code-end]
+let (adjustRespOpt, httpResp) = client.postAdjustCommentVotes(
+  tenantId = "my-tenant-123",
+  commentId = "cmt-789",
+  adjustCommentVotesParams = AdjustCommentVotesParams(),
+  options = PostAdjustCommentVotesOptions()
+)
 
----
+if adjustRespOpt.isSome:
+  let adjustResp = adjustRespOpt.get()
+[inline-code-end]

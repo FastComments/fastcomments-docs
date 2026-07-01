@@ -2,7 +2,7 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Sì |  |
+| tenantId | string | query | Yes |  |
 | userId | string | query | No |  |
 | badgeId | string | query | No |  |
 | type | number | query | No |  |
@@ -16,35 +16,45 @@ Restituisce: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastco
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di get_user_badges'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio get_user_badges'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetUserBadgesOptions
 from client.models.api_get_user_badges_response import APIGetUserBadgesResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# La definizione dell'host è facoltativa e predefinita a https://fastcomments.com
-# Vedi configuration.py per un elenco di tutti i parametri di configurazione supportati.
+# Definire l'host è opzionale e il valore predefinito è https://fastcomments.com
+# Vedere configuration.py per un elenco di tutti i parametri di configurazione supportati.
+configuration = client.Configuration(
+    host = "https://fastcomments.com"
+)
+
 # Il client deve configurare i parametri di autenticazione e autorizzazione
-# in conformità con la politica di sicurezza del server API.
-# Esempi per ogni metodo di autenticazione sono forniti di seguito, usa l'esempio che
+# in conformità con la policy di sicurezza del server API.
+# Esempi per ciascun metodo di autenticazione sono forniti sotto, usa l'esempio che
 # soddisfa il tuo caso d'uso di autenticazione.
-# Configura l'autorizzazione tramite API key: api_key
-# Rimuovi il commento qui sotto per impostare il prefisso (es. Bearer) per API key, se necessario
+
+# Configura l'autorizzazione della chiave API: api_key
+configuration.api_key['api_key'] = os.environ["API_KEY"]
+
+# Decommenta sotto per impostare il prefisso (es. Bearer) per la chiave API, se necessario
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
 # Entra in un contesto con un'istanza del client API
 with client.ApiClient(configuration) as api_client:
     # Crea un'istanza della classe API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    user_id = 'user_id_example' # str |  (opzionale)
-    badge_id = 'badge_id_example' # str |  (opzionale)
-    type = 3.4 # float |  (opzionale)
-    displayed_on_comments = True # bool |  (opzionale)
-    limit = 3.4 # float |  (opzionale)
-    skip = 3.4 # float |  (opzionale)
+    user_id = 'user_id_example' # str |  (optional)
+    badge_id = 'badge_id_example' # str |  (optional)
+    type = 3.4 # float |  (optional)
+    displayed_on_comments = True # bool |  (optional)
+    limit = 3.4 # float |  (optional)
+    skip = 3.4 # float |  (optional)
 
     try:
-        api_response = api_instance.get_user_badges(tenant_id, user_id=user_id, badge_id=badge_id, type=type, displayed_on_comments=displayed_on_comments, limit=limit, skip=skip)
+        api_response = api_instance.get_user_badges(tenant_id, GetUserBadgesOptions(user_id=user_id, badge_id=badge_id, type=type, displayed_on_comments=displayed_on_comments, limit=limit, skip=skip))
         print("The response of DefaultApi->get_user_badges:\n")
         pprint(api_response)
     except Exception as e:

@@ -1,7 +1,6 @@
----
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | urlIdWS | string | query | 是 |  |
@@ -9,7 +8,7 @@
 
 ## 响应
 
-返回：[`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetUserPresenceStatusesResponse.php)
+返回: [`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetUserPresenceStatusesResponse.php)
 
 ## 示例
 
@@ -21,13 +20,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // 如果您想使用自定义的 HTTP 客户端，请传入实现了 `GuzzleHttp\ClientInterface` 的客户端。
+    // 如果您想使用自定义 HTTP 客户端，请传入实现了 `GuzzleHttp\ClientInterface` 的客户端。
     // 这是可选的，默认将使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // 字符串
-$url_id_ws = 'url_id_ws_example'; // 字符串
-$user_ids = 'user_ids_example'; // 字符串
+
+$tenant_id = 'tenant_id_example'; // string
+$url_id_ws = 'url_id_ws_example'; // string
+$user_ids = 'user_ids_example'; // string
+
 
 try {
     $result = $apiInstance->getUserPresenceStatuses($tenant_id, $url_id_ws, $user_ids);
@@ -36,5 +37,3 @@ try {
     echo 'Exception when calling PublicApi->getUserPresenceStatuses: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

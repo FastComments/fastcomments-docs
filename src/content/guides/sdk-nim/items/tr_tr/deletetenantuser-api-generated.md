@@ -1,11 +1,10 @@
 ## Parametreler
 
-| Name | Type | Required | Description |
+| Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
-| tenantId | string | Evet |  |
-| id | string | Hayır |  |
-| deleteComments | string | Hayır |  |
-| commentDeleteMode | string | Hayır |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| options | DeleteTenantUserOptions | No |  |
 
 ## Yanıt
 
@@ -15,12 +14,12 @@ Döndürür: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'deleteTenantUser Örneği'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteTenantUser(tenantId = "my-tenant-123", id = "user-789", deleteComments = "true", commentDeleteMode = "soft")
+let (response, httpResponse) = client.deleteTenantUser(
+  tenantId = "my-tenant-123",
+  id = "user-456",
+  options = DeleteTenantUserOptions(),
+)
 if response.isSome:
-  let apiResp = response.get()
-  echo "Tenant user deleted, response: ", apiResp
-else:
-  echo "Failed to delete tenant user, HTTP status: ", $httpResponse.status
+  let empty = response.get()
+  echo "User successfully deleted"
 [inline-code-end]
-
----

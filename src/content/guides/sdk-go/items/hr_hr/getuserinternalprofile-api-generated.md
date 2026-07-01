@@ -1,7 +1,8 @@
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
 | commentId | string | query | Ne |  |
 | sso | string | query | Ne |  |
 
@@ -23,17 +24,20 @@ import (
 )
 
 func main() {
-	commentId := "commentId_example" // string |  (neobavezno)
-	sso := "sso_example" // string |  (neobavezno)
+	tenantId := "tenantId_example" // string | 
+	commentId := "commentId_example" // string | (opcionalno)
+	sso := "sso_example" // string | (opcionalno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetUserInternalProfile(context.Background()).CommentId(commentId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetUserInternalProfile(context.Background()).TenantId(tenantId).CommentId(commentId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetUserInternalProfile``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor iz `GetUserInternalProfile`: GetUserInternalProfileResponse
+	// odgovor od `GetUserInternalProfile`: GetUserInternalProfileResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetUserInternalProfile`: %v\n", resp)
 }
 [inline-code-end]
+
+---

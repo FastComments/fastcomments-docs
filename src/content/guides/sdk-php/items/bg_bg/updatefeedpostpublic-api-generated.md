@@ -2,10 +2,10 @@
 
 | Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| postId | string | path | Да |  |
-| broadcastId | string | query | Не |  |
-| sso | string | query | Не |  |
+| tenantId | string | path | Yes |  |
+| postId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Отговор
 
@@ -13,7 +13,7 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за updateFeedPostPublic'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateFeedPostPublic Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -21,20 +21,26 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ако искате да използвате персонализиран HTTP клиент, подайте вашия клиент, който реализира `GuzzleHttp\ClientInterface`.
-    // Това е по избор, по подразбиране ще се използва `GuzzleHttp\Client`.
+    // Ако искате да използвате персонализиран HTTP клиент, предайте ваш клиент, който реализира `GuzzleHttp\ClientInterface`.
+    // Това е опционално, `GuzzleHttp\Client` ще бъде използван по подразбиране.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $post_id = 'post_id_example'; // string
 $update_feed_post_params = new \FastComments\Client\Model\UpdateFeedPostParams(); // \FastComments\Client\Model\UpdateFeedPostParams
-$broadcast_id = 'broadcast_id_example'; // string
-$sso = 'sso_example'; // string
+$options = [
+    'broadcast_id' => 'broadcast_id_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->updateFeedPostPublic($tenant_id, $post_id, $update_feed_post_params, $broadcast_id, $sso);
+    $result = $apiInstance->updateFeedPostPublic($tenant_id, $post_id, $update_feed_post_params, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->updateFeedPostPublic: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

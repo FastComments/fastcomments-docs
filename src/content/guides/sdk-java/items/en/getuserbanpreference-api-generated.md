@@ -2,6 +2,7 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | sso | string | query | No |  |
 
 ## Response
@@ -25,9 +26,10 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      APIModerateGetUserBanPreferencesResponse result = apiInstance.getUserBanPreference()
+      APIModerateGetUserBanPreferencesResponse result = apiInstance.getUserBanPreference(tenantId)
             .sso(sso)
             .execute();
       System.out.println(result);

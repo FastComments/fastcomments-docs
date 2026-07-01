@@ -30,10 +30,12 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
 $update_notification_body = new \FastComments\Client\Model\UpdateNotificationBody(); // \FastComments\Client\Model\UpdateNotificationBody
 $user_id = 'user_id_example'; // string
+
 
 try {
     $result = $apiInstance->updateNotification($tenant_id, $id, $update_notification_body, $user_id);

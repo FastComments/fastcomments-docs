@@ -1,19 +1,20 @@
-## Параметры
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов’язково | Опис |
 |------|------|----------|----------|-------------|
-| urlId | string | query | Да |  |
-| sso | string | query | Нет |  |
+| tenantId | string | query | Так |  |
+| urlId | string | query | Так |  |
+| sso | string | query | Ні |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
+Повертає: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример putCloseThread'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад putCloseThread'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Импорт классов:
+// Імпорт класів:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      APIEmptyResponse result = apiInstance.putCloseThread(urlId)
+      APIEmptyResponse result = apiInstance.putCloseThread(tenantId, urlId)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -43,5 +45,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

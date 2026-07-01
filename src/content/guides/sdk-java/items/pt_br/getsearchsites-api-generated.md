@@ -1,7 +1,8 @@
 ## Parâmetros
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Localização | Obrigatório | Descrição |
+|------|------|-------------|-------------|-----------|
+| tenantId | string | query | Sim |  |
 | value | string | query | Não |  |
 | sso | string | query | Não |  |
 
@@ -11,7 +12,7 @@ Retorna: [`ModerationSiteSearchResponse`](https://github.com/FastComments/fastco
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getSearchSites'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo getSearchSites'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importar classes:
 import com.fastcomments.invoker.ApiClient;
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String value = "value_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationSiteSearchResponse result = apiInstance.getSearchSites()
+      ModerationSiteSearchResponse result = apiInstance.getSearchSites(tenantId)
             .value(value)
             .sso(sso)
             .execute();
@@ -44,5 +46,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

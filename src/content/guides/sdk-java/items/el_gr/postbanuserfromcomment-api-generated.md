@@ -1,7 +1,8 @@
-## Παράμετροι
+## Parameters
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Ναι |  |
 | commentId | string | path | Ναι |  |
 | banEmail | boolean | query | Όχι |  |
 | banEmailDomain | boolean | query | Όχι |  |
@@ -13,13 +14,13 @@
 | banReason | string | query | Όχι |  |
 | sso | string | query | Όχι |  |
 
-## Απόκριση
+## Response
 
 Επιστρέφει: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/BanUserFromCommentResult.java)
 
-## Παράδειγμα
+## Example
 
-[inline-code-attrs-start title = 'Παράδειγμα postBanUserFromComment'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postBanUserFromComment Παράδειγμα'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Εισαγωγή κλάσεων:
 import com.fastcomments.invoker.ApiClient;
@@ -34,18 +35,19 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
-    String commentId = "commentId_example"; // String | 
-    Boolean banEmail = true; // Boolean | 
-    Boolean banEmailDomain = true; // Boolean | 
-    Boolean banIP = true; // Boolean | 
-    Boolean deleteAllUsersComments = true; // Boolean | 
-    String bannedUntil = "bannedUntil_example"; // String | 
-    Boolean isShadowBan = true; // Boolean | 
-    String updateId = "updateId_example"; // String | 
-    String banReason = "banReason_example"; // String | 
-    String sso = "sso_example"; // String | 
+    String tenantId = "tenantId_example"; // String |
+    String commentId = "commentId_example"; // String |
+    Boolean banEmail = true; // Boolean |
+    Boolean banEmailDomain = true; // Boolean |
+    Boolean banIP = true; // Boolean |
+    Boolean deleteAllUsersComments = true; // Boolean |
+    String bannedUntil = "bannedUntil_example"; // String |
+    Boolean isShadowBan = true; // Boolean |
+    String updateId = "updateId_example"; // String |
+    String banReason = "banReason_example"; // String |
+    String sso = "sso_example"; // String |
     try {
-      BanUserFromCommentResult result = apiInstance.postBanUserFromComment(commentId)
+      BanUserFromCommentResult result = apiInstance.postBanUserFromComment(tenantId, commentId)
             .banEmail(banEmail)
             .banEmailDomain(banEmailDomain)
             .banIP(banIP)
@@ -67,5 +69,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

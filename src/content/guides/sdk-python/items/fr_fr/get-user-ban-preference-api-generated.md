@@ -1,7 +1,8 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Oui |  |
 | sso | string | query | Non |  |
 
 ## Réponse
@@ -10,15 +11,15 @@ Renvoie : [`APIModerateGetUserBanPreferencesResponse`](https://github.com/FastCo
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple get_user_ban_preference'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple de get_user_ban_preference'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.models.api_moderate_get_user_ban_preferences_response import APIModerateGetUserBanPreferencesResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# La définition de l'hôte est optionnelle et la valeur par défaut est https://fastcomments.com
-# Voir configuration.py pour la liste de tous les paramètres de configuration pris en charge.
+# Définir l'hôte est facultatif et par défaut https://fastcomments.com
+# Voir configuration.py pour une liste de tous les paramètres de configuration pris en charge.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -28,10 +29,11 @@ configuration = client.Configuration(
 with client.ApiClient(configuration) as api_client:
     # Créer une instance de la classe API
     api_instance = client.ModerationApi(api_client)
-    sso = 'sso_example' # str |  (optionnel)
+    tenant_id = 'tenant_id_example' # str | 
+    sso = 'sso_example' # str |  (facultatif)
 
     try:
-        api_response = api_instance.get_user_ban_preference(sso=sso)
+        api_response = api_instance.get_user_ban_preference(tenant_id, sso=sso)
         print("The response of ModerationApi->get_user_ban_preference:\n")
         pprint(api_response)
     except Exception as e:

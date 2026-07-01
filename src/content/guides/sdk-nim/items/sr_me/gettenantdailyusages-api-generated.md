@@ -1,32 +1,24 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| yearNumber | float64 | Не |  |
-| monthNumber | float64 | Не |  |
-| dayNumber | float64 | Не |  |
-| skip | float64 | Не |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Da |  |
+| options | GetTenantDailyUsagesOptions | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[GetTenantDailyUsagesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_tenant_daily_usages_response.nim)
+Vraća: [`Option[GetTenantDailyUsagesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_tenant_daily_usages_response.nim)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'getTenantDailyUsages Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getTenantDailyUsages'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTenantDailyUsages(
+let (respOpt, httpResp) = client.getTenantDailyUsages(
   tenantId = "my-tenant-123",
-  yearNumber = 2026.0,
-  monthNumber = 6.0,
-  dayNumber = 19.0,
-  skip = 0.0
+  options = default(GetTenantDailyUsagesOptions),
 )
-
-if response.isSome:
-  let usage = response.get()
-  discard usage
+if respOpt.isSome:
+  let usage = respOpt.get()
+  echo usage
+  echo httpResp.statusCode
 [inline-code-end]
-
----

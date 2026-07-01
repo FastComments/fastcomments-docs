@@ -1,27 +1,31 @@
-## Параметры
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов'язковий | Опис |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Да |  |
-| approved | boolean | query | Нет |  |
-| sso | string | query | Нет |  |
+| tenantId | string | query | Так |  |
+| commentId | string | path | Так |  |
+| approved | boolean | query | Ні |  |
+| broadcastId | string | query | Ні |  |
+| sso | string | query | Ні |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`SetCommentApprovedResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SetCommentApprovedResponse.swift)
+Повертає: [`SetCommentApprovedResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SetCommentApprovedResponse.swift)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'postSetCommentApprovalStatus Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад postSetCommentApprovalStatus'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Приведённые примеры кода всё ещё в бета-версии. Если возникли проблемы, пожалуйста, сообщите по адресу http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наступні приклади коду ще у бета-версії. У випадку будь‑якої проблеми, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
-let approved = true // Bool |  (необязательно)
-let sso = "sso_example" // String |  (необязательно)
+let approved = true // Bool |  (необов'язково)
+let broadcastId = "broadcastId_example" // String |  (необов'язково)
+let sso = "sso_example" // String |  (необов'язково)
 
-ModerationAPI.postSetCommentApprovalStatus(commentId: commentId, approved: approved, sso: sso) { (response, error) in
+ModerationAPI.postSetCommentApprovalStatus(tenantId: tenantId, commentId: commentId, options: ModerationAPI.PostSetCommentApprovalStatusOptions(approved: approved, broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

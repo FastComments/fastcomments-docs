@@ -12,14 +12,9 @@ Devuelve: [`Option[GetUserPresenceStatusesResponse]`](https://github.com/FastCom
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'getUserPresenceStatuses Ejemplo'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo getUserPresenceStatuses'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUserPresenceStatuses(tenantId = "my-tenant-123", urlIdWS = "news/article-title", userIds = "user-123,user-456")
-if response.isSome:
-  let presenceStatuses = response.get()
-  echo presenceStatuses
-else:
-  echo "No presence data"
+let (presenceOpt, httpResp) = client.getUserPresenceStatuses(tenantId = "my-tenant-123", urlIdWS = "news/article-title", userIds = "user42")
+if presenceOpt.isSome:
+  let presence = presenceOpt.get()
 [inline-code-end]
-
----

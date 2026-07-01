@@ -1,7 +1,7 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nom | Type | Emplacement | Obligatoire | Description |
+|------|------|--------------|-------------|-------------|
 | tenantId | string | path | Oui |  |
 | urlId | string | query | Oui |  |
 | id | string | query | Oui |  |
@@ -24,9 +24,11 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     // Ceci est optionnel, `GuzzleHttp\Client` sera utilisé par défaut.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $url_id = 'url_id_example'; // string
 $id = 'id_example'; // string
+
 
 try {
     $result = $apiInstance->getV2PageReactUsers($tenant_id, $url_id, $id);
@@ -35,3 +37,5 @@ try {
     echo 'Exception when calling PublicApi->getV2PageReactUsers: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

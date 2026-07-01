@@ -1,12 +1,12 @@
-## Parameters
+## Parametreler
 
-| İsim | Tür | Konum | Gerekli | Açıklama |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 | id | string | path | Evet |  |
 | redirectURL | string | query | Hayır |  |
 
-## Response
+## Yanıt
 
 Döndürür: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
@@ -18,24 +18,23 @@ Döndürür: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-p
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api_key
-// API anahtar yetkilendirmesini yapılandır: api_key
+// API anahtarı yetkilendirmesini yapılandır: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Gerekirse API anahtarı için önek (örn. Bearer) ayarı yapmak üzere aşağıdaki satırı yorumdan çıkarın
+// Aşağıdaki satırı yorumdan çıkararak, gerektiğinde API anahtarı için önek (ör. Bearer) ayarlayın
+// $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // Özel bir http istemcisi kullanmak isterseniz, `GuzzleHttp\ClientInterface` uygulayan istemcinizi iletin.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    // Bu isteğe bağlıdır, varsayılan olarak `GuzzleHttp\Client` kullanılacaktır.
+    // Özel bir HTTP istemcisi kullanmak istiyorsanız, `GuzzleHttp\ClientInterface`'i uygulayan istemcinizi geçin.
+    // Bu isteğe bağlıdır, `GuzzleHttp\Client` varsayılan olarak kullanılacaktır.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
 $redirect_url = 'redirect_url_example'; // string
+
 
 try {
     $result = $apiInstance->sendLoginLink($tenant_id, $id, $redirect_url);
@@ -44,3 +43,5 @@ try {
     echo 'Exception when calling DefaultApi->sendLoginLink: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

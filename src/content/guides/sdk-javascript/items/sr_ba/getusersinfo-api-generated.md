@@ -1,27 +1,27 @@
----
-Grupne informacije o korisnicima za tenant. Za navedene userIds, vraća prikazne informacije iz User / SSOUser.
-Koristi se u widgetu za komentare da obogati korisnike koji su se upravo pojavili putem događaja prisutnosti.
-Nema konteksta stranice: privatnost se provodi jednako (privatni profili su zamaskirani).
+Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
+Used by the comment widget to enrich users that just appeared via a presence event.  
+No page context: privacy is enforced uniformly (private profiles are masked).
 
-## Parametri
+## Parameters
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
 | tenantId | string | Da |  |
 | ids | string | Da |  |
 
-## Odgovor
+## Response
 
-Vraća: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersInfoResponse.ts)
+Vraća: [`GetUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUsersInfoResponse.ts)
 
-## Primjer
+## Primer
 
-[inline-code-attrs-start title = 'getUsersInfo Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getUsersInfo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_78f9';
-const ids: string = 'user_10234,user_10235,user_10236';
-const usersInfo: PageUsersInfoResponse = await getUsersInfo(tenantId, ids);
-// getUsersInfo only requires tenantId and ids; optional parameters are not applicable here.
-[inline-code-end]
+const tenantId: string = "acme-corp-tenant";
+const ids: string = "user-1001,user-1002";
 
----
+const usersInfo: GetUsersInfoResponse = await getUsersInfo(tenantId, ids);
+
+// Optional fields in the response may be undefined
+const firstUser: PageUserEntry | undefined = usersInfo?.users?.[0];
+[inline-code-end]

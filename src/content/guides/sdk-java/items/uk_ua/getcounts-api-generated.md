@@ -1,18 +1,19 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов’язковий | Опис |
 |------|------|----------|----------|-------------|
-| sso | string | query | No |  |
+| tenantId | string | query | Так |  |
+| sso | string | query | Ні |  |
 
-## Response
+## Відповідь
 
 Повертає: [`GetBannedUsersCountResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetBannedUsersCountResponse.java)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'getCounts Приклад'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад getCounts Example'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Імпортувати класи:
+// Імпорт класів:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -25,9 +26,10 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      GetBannedUsersCountResponse result = apiInstance.getCounts()
+      GetBannedUsersCountResponse result = apiInstance.getCounts(tenantId)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -41,3 +43,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

@@ -1,10 +1,11 @@
 ## Παράμετροι
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+|------|------|------------|------------|
+| tenantId | string | Ναι |  |
 | commentId | string | Ναι |  |
 | voteId | string | Όχι |  |
-| sso | string | Όχι |  |
+| options | DeleteModerationVoteOptions | Όχι |  |
 
 ## Απόκριση
 
@@ -12,14 +13,15 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα deleteModerationVote'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteModerationVote Παράδειγμα'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteModerationVote(commentId = "my-tenant-123/news/article-title/comment-987", voteId = "vote-456", sso = "sso-token-abc")
-if response.isSome:
-  let voteResp = response.get()
-  echo "Vote deleted:", voteResp
-else:
-  echo "Delete failed:", httpResponse
-[inline-code-end]
+let (respOpt, httpResp) = client.deleteModerationVote(
+  tenantId = "my-tenant-123",
+  commentId = "cmt-987654",
+  voteId = "vote-abc123",
+  options = DeleteModerationVoteOptions()
+)
 
----
+if respOpt.isSome:
+  let resp = respOpt.get()
+[inline-code-end]

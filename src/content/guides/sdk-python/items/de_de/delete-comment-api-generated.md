@@ -1,45 +1,42 @@
-## Parameter
+## Parameters
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| id | string | path | Ja |  |
-| contextUserId | string | query | Nein |  |
-| isLive | boolean | query | Nein |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| contextUserId | string | query | No |  |
+| isLive | boolean | query | No |  |
 
-## Antwort
+## Response
 
-Gibt zurück: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/delete_comment_result.py)
+Returns: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/delete_comment_result.py)
 
-## Beispiel
+## Example
 
 [inline-code-attrs-start title = 'delete_comment Beispiel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import DeleteCommentOptions
 from client.models.delete_comment_result import DeleteCommentResult
 from client.rest import ApiException
 from pprint import pprint
 
-# Die Angabe des Hosts ist optional und standardmäßig auf https://fastcomments.com gesetzt
+# Definieren des Hosts ist optional und standardmäßig https://fastcomments.com
 # Siehe configuration.py für eine Liste aller unterstützten Konfigurationsparameter.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
-
 # Der Client muss die Authentifizierungs- und Autorisierungsparameter
-# gemäß der Sicherheitsrichtlinie des API-Servers konfigurieren.
-# Beispiele für jede Auth-Methode sind unten angegeben. Verwenden Sie das
-# Beispiel, das Ihren Authentifizierungsanforderungen entspricht.
+# gemäß der Sicherheitsrichtlinie des API-Servers.
+# Beispiele für jede Auth-Methode werden unten bereitgestellt, verwenden Sie das Beispiel, das
+# Ihren Authentifizierungs-Anwendungsfall erfüllt.
 
-# API-Key-Authentifizierung konfigurieren: api_key
+# Konfigurieren Sie die API-Schlüssel-Authentifizierung: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Unten auskommentieren, um ein Präfix (z. B. Bearer) für den API-Key zu setzen, falls erforderlich
+# Entfernen Sie das Kommentarzeichen unten, um ein Präfix (z.B. Bearer) für den API-Schlüssel einzurichten, falls nötig
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Kontext mit einer Instanz des API-Clients öffnen
+# Betreten eines Kontexts mit einer Instanz des API-Clients
 with client.ApiClient(configuration) as api_client:
-    # Eine Instanz der API-Klasse erstellen
+    # Erstellen einer Instanz der API-Klasse
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
@@ -47,11 +44,9 @@ with client.ApiClient(configuration) as api_client:
     is_live = True # bool |  (optional)
 
     try:
-        api_response = api_instance.delete_comment(tenant_id, id, context_user_id=context_user_id, is_live=is_live)
+        api_response = api_instance.delete_comment(tenant_id, id, DeleteCommentOptions(context_user_id=context_user_id, is_live=is_live))
         print("The response of DefaultApi->delete_comment:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling DefaultApi->delete_comment: %s\n" % e)
 [inline-code-end]
-
----

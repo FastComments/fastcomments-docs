@@ -1,11 +1,10 @@
 ## Parámetros
 
-| Name | Type | Required | Description |
+| Nombre | Tipo | Obligatorio | Descripción |
 |------|------|----------|-------------|
 | tenantId | string | Sí |  |
 | urlId | string | Sí |  |
-| userId | string | No |  |
-| anonUserId | string | No |  |
+| options | GetVotesForUserOptions | No |  |
 
 ## Respuesta
 
@@ -13,19 +12,15 @@ Devuelve: [`Option[GetVotesForUserResponse]`](https://github.com/FastComments/fa
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de getVotesForUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo getVotesForUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getVotesForUser(
+let (optResp, httpResp) = client.getVotesForUser(
   tenantId = "my-tenant-123",
   urlId = "news/article-title",
-  userId = "user-789",
-  anonUserId = ""
+  options = GetVotesForUserOptions()
 )
-if response.isSome:
-  let votes = response.get()
-  echo "User votes retrieved"
-else:
-  echo "No votes found"
-[inline-code-end]
 
----
+if optResp.isSome:
+  let resp = optResp.get()
+  echo resp
+[inline-code-end]

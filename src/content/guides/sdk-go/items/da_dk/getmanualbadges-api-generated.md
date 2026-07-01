@@ -1,8 +1,8 @@
----
 ## Parametre
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
-|------|------|----------|----------|-------------|
+|------|------|-----------|----------|-------------|
+| tenantId | string | query | Ja |  |
 | sso | string | query | Nej |  |
 
 ## Svar
@@ -11,7 +11,7 @@ Returnerer: [`GetTenantManualBadgesResponse`](https://github.com/FastComments/fa
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'GetManualBadges Eksempel'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GetManualBadges eksempel'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,11 +23,12 @@ import (
 )
 
 func main() {
-	sso := "sso_example" // string |  (valgfri)
+	tenantId := "tenantId_example" // string | 
+	sso := "sso_example" // string | (valgfri)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetManualBadges(context.Background()).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetManualBadges(context.Background()).TenantId(tenantId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetManualBadges``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

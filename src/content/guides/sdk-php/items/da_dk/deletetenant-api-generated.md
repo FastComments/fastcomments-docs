@@ -1,5 +1,4 @@
----
-## Parameters
+## Parametre
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
@@ -19,21 +18,22 @@ Returnerer: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ph
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Konfigurer API-nøgleautorisering: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Fjern kommentaren nedenfor for at konfigurere præfiks (f.eks. Bearer) for API-nøglen, hvis nødvendigt
+// Konfigurer API-nøglegodkendelse: api_key
+// Fjern kommentaren nedenfor for at opsætte præfiks (f.eks. Bearer) for API-nøgle, hvis nødvendigt
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Hvis du vil bruge en brugerdefineret HTTP-klient, videregiv din klient, der implementerer `GuzzleHttp\ClientInterface`.
-    // Dette er valgfrit; `GuzzleHttp\Client` vil blive brugt som standard.
+    // Hvis du vil bruge en brugerdefineret HTTP-klient, skal du videregive din klient, som implementerer `GuzzleHttp\ClientInterface`.
+    // Dette er valgfrit, `GuzzleHttp\Client` vil blive brugt som standard.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
 $sure = 'sure_example'; // string
+
 
 try {
     $result = $apiInstance->deleteTenant($tenant_id, $id, $sure);
@@ -42,5 +42,3 @@ try {
     echo 'Exception when calling DefaultApi->deleteTenant: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

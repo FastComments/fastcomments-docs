@@ -1,14 +1,14 @@
 ## Parametre
 
-| Name | Type | Location | Required | Description |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| afterId | string | query | Nej |  |
-| afterCreatedAt | integer | query | Nej |  |
-| unreadOnly | boolean | query | Nej |  |
-| dmOnly | boolean | query | Nej |  |
-| noDm | boolean | query | Nej |  |
-| sso | string | query | Nej |  |
+| tenantId | string | query | Yes |  |
+| afterId | string | query | No |  |
+| afterCreatedAt | integer | query | No |  |
+| unreadOnly | boolean | query | No |  |
+| dmOnly | boolean | query | No |  |
+| noDm | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Svar
 
@@ -24,20 +24,24 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Hvis du vil bruge en brugerdefineret HTTP-klient, skal du give din klient, som implementerer `GuzzleHttp\ClientInterface`.
-    // Dette er valgfrit; `GuzzleHttp\Client` vil blive brugt som standard.
+    // Hvis du vil bruge en brugerdefineret http-klient, skal du videregive din klient, som implementerer `GuzzleHttp\ClientInterface`.
+    // Dette er valgfrit, `GuzzleHttp\Client` vil blive brugt som standard.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$after_id = 'after_id_example'; // string
-$after_created_at = 56; // int
-$unread_only = True; // bool
-$dm_only = True; // bool
-$no_dm = True; // bool
-$sso = 'sso_example'; // string
+$options = [
+    'after_id' => 'after_id_example', // string
+    'after_created_at' => 56, // int
+    'unread_only' => True, // bool
+    'dm_only' => True, // bool
+    'no_dm' => True, // bool
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->resetUserNotifications($tenant_id, $after_id, $after_created_at, $unread_only, $dm_only, $no_dm, $sso);
+    $result = $apiInstance->resetUserNotifications($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->resetUserNotifications: ', $e->getMessage(), PHP_EOL;

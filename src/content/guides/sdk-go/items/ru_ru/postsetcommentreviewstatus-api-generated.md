@@ -1,9 +1,11 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательный | Описание |
-|------|------|----------|----------|-------------|
+| Имя | Тип | Расположение | Обязательно | Описание |
+|------|------|--------------|-------------|----------|
+| tenantId | string | query | Да |  |
 | commentId | string | path | Да |  |
 | reviewed | boolean | query | Нет |  |
+| broadcastId | string | query | Нет |  |
 | sso | string | query | Нет |  |
 
 ## Ответ
@@ -24,13 +26,15 @@ import (
 )
 
 func main() {
-	commentId := "commentId_example" // string | 
-	reviewed := true // bool |  (необязательно)
-	sso := "sso_example" // string |  (необязательно)
+	tenantId := "tenantId_example" // строка | 
+	commentId := "commentId_example" // строка | 
+	reviewed := true // булево |  (необязательно)
+	broadcastId := "broadcastId_example" // строка |  (необязательно)
+	sso := "sso_example" // строка |  (необязательно)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostSetCommentReviewStatus(context.Background(), commentId).Reviewed(reviewed).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostSetCommentReviewStatus(context.Background(), commentId).TenantId(tenantId).Reviewed(reviewed).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostSetCommentReviewStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

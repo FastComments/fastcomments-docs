@@ -1,14 +1,15 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| badgesUserId | string | query | いいえ |  |
-| commentId | string | query | いいえ |  |
-| sso | string | query | いいえ |  |
+| tenantId | string | query | Yes |  |
+| badgesUserId | string | query | No |  |
+| commentId | string | query | No |  |
+| sso | string | query | No |  |
 
-## レスポンス
+## 応答
 
-戻り値: [`GetUserManualBadgesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetUserManualBadgesResponse.php)
+Returns: [`GetUserManualBadgesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetUserManualBadgesResponse.php)
 
 ## 例
 
@@ -20,16 +21,21 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // カスタムの HTTP クライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
-    // これは任意で、デフォルトでは `GuzzleHttp\Client` が使用されます。
+    // カスタム HTTP クライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
+    // これはオプションです。デフォルトでは `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client()
 );
-$badges_user_id = 'badges_user_id_example'; // string
-$comment_id = 'comment_id_example'; // string
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // 文字列
+$options = [
+    'badges_user_id' => 'badges_user_id_example', // 文字列
+    'comment_id' => 'comment_id_example', // 文字列
+    'sso' => 'sso_example', // 文字列
+];
+
 
 try {
-    $result = $apiInstance->getManualBadgesForUser($badges_user_id, $comment_id, $sso);
+    $result = $apiInstance->getManualBadgesForUser($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getManualBadgesForUser: ', $e->getMessage(), PHP_EOL;

@@ -1,11 +1,11 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Da |  |
-| commentId | string | path | Da |  |
-| dir | integer | query | Da |  |
-| sso | string | query | Ne |  |
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| dir | integer | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -13,22 +13,24 @@ Vraća: [`GetCommentVoteUserNamesSuccessResponse`](https://github.com/FastCommen
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer getCommentVoteUserNames'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getCommentVoteUserNames Primer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ako želite da koristite prilagođeni http klijent, prosledite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opciono, `GuzzleHttp\Client` će se koristiti kao podrazumevani.
-    new GuzzleHttp\Client()
-);
+// $apiInstance = new FastComments\Client\Api\PublicApi(
+//     // Ako želite koristiti prilagođeni http klijent, prosledite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
+//     // Ovo je opciono, `GuzzleHttp\Client` će se koristiti kao podrazumevano.
+//     new GuzzleHttp\Client()
+// );
+
 $tenant_id = 'tenant_id_example'; // string
 $comment_id = 'comment_id_example'; // string
 $dir = 56; // int
 $sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->getCommentVoteUserNames($tenant_id, $comment_id, $dir, $sso);

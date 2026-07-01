@@ -2,7 +2,7 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | No |  |
+| tenantId | string | query | Yes |  |
 
 ## Response
 
@@ -28,8 +28,10 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $create_hash_tag_body = new \FastComments\Client\Model\CreateHashTagBody(); // \FastComments\Client\Model\CreateHashTagBody
+
 
 try {
     $result = $apiInstance->addHashTag($tenant_id, $create_hash_tag_body);

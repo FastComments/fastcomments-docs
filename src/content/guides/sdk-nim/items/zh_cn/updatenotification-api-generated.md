@@ -1,11 +1,11 @@
 ## 参数
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| 名称 | 类型 | 必填 | 描述 |
+|------|------|------|------|
 | tenantId | string | 是 |  |
 | id | string | 否 |  |
 | updateNotificationBody | UpdateNotificationBody | 否 |  |
-| userId | string | 否 |  |
+| userId | string = "" | 否 |  |
 
 ## 响应
 
@@ -15,20 +15,13 @@
 
 [inline-code-attrs-start title = 'updateNotification 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateNotification(
+let body = UpdateNotificationBody(message: "Your comment was approved", isRead: false)
+let (optResp, httpResp) = client.updateNotification(
   tenantId = "my-tenant-123",
-  id = "notif-456",
-  updateNotificationBody = UpdateNotificationBody(
-    enabled = true,
-    channels = @["email", "push"],
-    frequency = "immediate"
-  ),
-  userId = "user-789"
+  id = "notif-789",
+  updateNotificationBody = body,
+  userId = "user-42"
 )
-
-if response.isSome:
-  let apiEmpty = response.get()
-  discard apiEmpty
+if optResp.isSome:
+  let _ = optResp.get()
 [inline-code-end]
-
----

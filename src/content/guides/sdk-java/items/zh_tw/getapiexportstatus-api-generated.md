@@ -1,20 +1,20 @@
----
 ## 參數
 
 | 名稱 | 類型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| batchJobId | string | query | 否 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| batchJobId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## 回應
 
-回傳: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationExportStatusResponse.java)
+返回：[`ModerationExportStatusResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationExportStatusResponse.java)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getApiExportStatus 範例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 匯入類別：
+// 匯入類別:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -27,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String batchJobId = "batchJobId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationExportStatusResponse result = apiInstance.getApiExportStatus()
+      ModerationExportStatusResponse result = apiInstance.getApiExportStatus(tenantId)
             .batchJobId(batchJobId)
             .sso(sso)
             .execute();

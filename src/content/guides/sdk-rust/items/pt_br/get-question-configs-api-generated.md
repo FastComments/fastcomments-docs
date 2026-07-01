@@ -1,7 +1,7 @@
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-------------|
+|------|------|-------------|-----------|
 | tenant_id | String | Sim |  |
 | skip | f64 | Não |  |
 
@@ -11,14 +11,14 @@ Retorna: [`GetQuestionConfigsResponse`](https://github.com/FastComments/fastcomm
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de get_question_configs'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo get_question_configs'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_question_configs() -> Result<GetQuestionConfigsResponse, Error> {
-    let params: GetQuestionConfigsParams = GetQuestionConfigsParams {
+async fn example() -> Result<(), Error> {
+    let params = GetQuestionConfigsParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        skip: Some(20.0),
+        skip: Some(10.0),
     };
-    let response: GetQuestionConfigsResponse = get_question_configs(&configuration, params).await?;
-    Ok(response)
+    let _response: GetQuestionConfigsResponse = get_question_configs(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]

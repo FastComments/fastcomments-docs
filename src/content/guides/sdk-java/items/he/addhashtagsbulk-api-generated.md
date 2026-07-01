@@ -2,7 +2,7 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | לא |  |
+| tenantId | string | query | Yes |  |
 
 ## תגובה
 
@@ -10,7 +10,7 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-addHashTagsBulk'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'addHashTagsBulk דוגמה'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Import classes:
 import com.fastcomments.invoker.ApiClient;
@@ -35,8 +35,7 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     BulkCreateHashTagsBody bulkCreateHashTagsBody = new BulkCreateHashTagsBody(); // BulkCreateHashTagsBody | 
     try {
-      BulkCreateHashTagsResponse result = apiInstance.addHashTagsBulk()
-            .tenantId(tenantId)
+      BulkCreateHashTagsResponse result = apiInstance.addHashTagsBulk(tenantId)
             .bulkCreateHashTagsBody(bulkCreateHashTagsBody)
             .execute();
       System.out.println(result);

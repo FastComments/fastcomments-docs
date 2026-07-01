@@ -1,11 +1,12 @@
+---
 ## Parameters
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Ja |  |
-| urlId | string | query | Ja |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
 
-## Respons
+## Response
 
 Retourneert: [`GetV1PageLikes`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetV1PageLikes.php)
 
@@ -19,12 +20,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Als u een aangepaste HTTP-client wilt gebruiken, geef uw client door die `GuzzleHttp\ClientInterface` implementeert.
-    // Dit is optioneel; `GuzzleHttp\Client` wordt standaard gebruikt.
+    // Als je een aangepaste HTTP-client wilt gebruiken, geef je client door die `GuzzleHttp\ClientInterface` implementeert.
+    // Dit is optioneel, `GuzzleHttp\Client` wordt standaard gebruikt.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $url_id = 'url_id_example'; // string
+
 
 try {
     $result = $apiInstance->getV1PageLikes($tenant_id, $url_id);
@@ -33,3 +36,5 @@ try {
     echo 'Exception when calling PublicApi->getV1PageLikes: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

@@ -1,6 +1,6 @@
 ### Maven
 
-Додайте репозиторій Repsy у POM вашого проекту:
+Add the Repsy repository to your project's POM:
 
 ```xml
 <repositories>
@@ -12,7 +12,7 @@
 </repositories>
 ```
 
-Потім додайте потрібні залежності:
+Then add the dependencies you need:
 
 ```xml
 <dependencies>
@@ -41,7 +41,7 @@
 
 ### Gradle
 
-Додайте репозиторій Repsy у файл build.gradle:
+Add the Repsy repository to your build.gradle file:
 
 ```groovy
 repositories {
@@ -65,7 +65,8 @@ dependencies {
 
 ### Вміст бібліотеки
 
-Ця бібліотека містить три модулі. Згенерований клієнт API, базова Java-бібліотека, яка містить вручну написані утиліти для спрощення роботи з API, та модуль `pubsub`, який є бібліотекою для підписки на стрічки змін.
+This library contains three modules. The generated API client, the core Java library which contains hand-written utilities
+to make working with the API easier, and the `pubsub` module which is a library for subscribing to change feeds.
 
 - [API Client Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
 - [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
@@ -73,6 +74,7 @@ dependencies {
 
 ### Публічні та захищені API
 
-Для клієнта API існують три класи: `DefaultApi`, `PublicApi` і `ModerationApi`. `DefaultApi` містить методи, які вимагають вашого API-ключа, а `PublicApi` містить методи, які можна викликати безпосередньо з браузера/мобільного пристрою тощо без автентифікації.
+For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains methods
+that can be made directly from a browser/mobile device/etc without authentication.
 
-`ModerationApi` забезпечує роботу панелі модерації. Він містить методи для модерації коментарів (перелік, підрахунок, пошук, журнали та експорт), дії модерації (видалення/відновлення, позначення, встановлення статусу на перегляд/спам/підтвердження, голоси та повторне відкриття/закриття треду), банів (заборона коментувати, скасування бану, підсумки перед баном, статус бану та налаштування, а також підрахунок заблокованих користувачів) та значків і довіри (нагородження/видалення значка, ручні значки, отримання/встановлення коефіцієнта довіри та внутрішній профіль користувача). Кожен метод `ModerationApi` приймає параметр `sso`, щоб виклик можна було виконати від імені модератора, автентифікованого через SSO.
+The `ModerationApi` provides an extensive suite of live and fast moderation APIs. Every `ModerationApi` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.

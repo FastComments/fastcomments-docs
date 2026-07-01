@@ -1,14 +1,14 @@
----
 ## Parametreler
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| text-search | string | query | Hayır |  |
-| byIPFromComment | string | query | Hayır |  |
-| filters | string | query | Hayır |  |
-| searchFilters | string | query | Hayır |  |
-| sorts | string | query | Hayır |  |
-| sso | string | query | Hayır |  |
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sorts | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Yanıt
 
@@ -28,6 +28,7 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	textSearch := "textSearch_example" // string |  (isteğe bağlı)
 	byIPFromComment := "byIPFromComment_example" // string |  (isteğe bağlı)
 	filters := "filters_example" // string |  (isteğe bağlı)
@@ -37,13 +38,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostApiExport(context.Background()).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).Sorts(sorts).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostApiExport(context.Background()).TenantId(tenantId).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).Sorts(sorts).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostApiExport``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "`ModerationAPI.PostApiExport` çağrılırken hata: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Tam HTTP yanıtı: %v\n", r)
 	}
-	// `PostApiExport`'tan gelen yanıt: ModerationExportResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostApiExport`: %v\n", resp)
+	// `PostApiExport` yanıtı: ModerationExportResponse
+	fmt.Fprintf(os.Stdout, "`ModerationAPI.PostApiExport`'ten Gelen Yanıt: %v\n", resp)
 }
 [inline-code-end]
 

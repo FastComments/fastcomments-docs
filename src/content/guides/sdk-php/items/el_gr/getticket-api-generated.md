@@ -1,12 +1,12 @@
-## Παράμετροι
+## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Ναι |  |
-| id | string | path | Ναι |  |
-| userId | string | query | Όχι |  |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|------------|-----------|
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| userId | string | query | No |  |
 
-## Απόκριση
+## Response
 
 Επιστρέφει: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTicketResponse.php)
 
@@ -17,22 +17,23 @@
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
 // Διαμόρφωση εξουσιοδότησης κλειδιού API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Αφαιρέστε το σχόλιο παρακάτω για να ορίσετε πρόθεμα (π.χ. Bearer) για το κλειδί API, αν χρειάζεται
+// Αποσχολιάστε παρακάτω για να ρυθμίσετε το πρόθεμα (π.χ. Bearer) για το κλειδί API, εάν χρειάζεται
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Εάν θέλετε να χρησιμοποιήσετε προσαρμοσμένο πελάτη HTTP, περάστε τον πελάτη σας που υλοποιεί την `GuzzleHttp\ClientInterface`.
-    // Αυτό είναι προαιρετικό — θα χρησιμοποιηθεί η `GuzzleHttp\Client` ως προεπιλογή.
+    // Εάν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε το client σας που υλοποιεί `GuzzleHttp\ClientInterface`.
+    // Αυτό είναι προαιρετικό, το `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
 $user_id = 'user_id_example'; // string
+
 
 try {
     $result = $apiInstance->getTicket($tenant_id, $id, $user_id);
@@ -41,5 +42,3 @@ try {
     echo 'Exception when calling DefaultApi->getTicket: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

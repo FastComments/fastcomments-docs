@@ -1,7 +1,7 @@
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
-|------|------|------|------|
+| 이름 | 유형 | 필요 여부 | 설명 |
+|------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | addDomainConfigParams | AddDomainConfigParams | 아니오 |  |
 
@@ -9,23 +9,15 @@
 
 반환: [`Option[AddDomainConfigResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_add_domain_config_response.nim)
 
-## 예제
+## 예시
 
 [inline-code-attrs-start title = 'addDomainConfig 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let config = AddDomainConfigParams(
-  domain: "comments.example-news.com",
-  enabled: true,
-  allowedOrigins: @["https://www.example-news.com", "https://m.example-news.com"],
-  commentsPath: "/news/world/election-coverage",
-  priority: 5
+let (respOpt, httpResp) = client.addDomainConfig(
+  tenantId = "my-tenant-123",
+  addDomainConfigParams = default(AddDomainConfigParams)
 )
-let (response, httpResponse) = client.addDomainConfig(tenantId = "my-tenant-123", addDomainConfigParams = config)
-if response.isSome:
-  let created = response.get()
-  echo "Created domain config:", created
-else:
-  echo "Failed to create domain config, HTTP status:", httpResponse.status.code
-[inline-code-end]
 
----
+if respOpt.isSome:
+  let cfg = respOpt.get()
+[inline-code-end]

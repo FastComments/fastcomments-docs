@@ -1,18 +1,19 @@
 ## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
-|------|------|----------|----------|-------------|
-| text-search | string | query | No |  |
-| byIPFromComment | string | query | No |  |
-| filters | string | query | No |  |
-| searchFilters | string | query | No |  |
-| afterId | string | query | No |  |
-| demo | boolean | query | No |  |
-| sso | string | query | No |  |
+|------|------|-----|--------------|--------------|
+| tenantId | string | query | Ja |  |
+| text-search | string | query | Nein |  |
+| byIPFromComment | string | query | Nein |  |
+| filters | string | query | Nein |  |
+| searchFilters | string | query | Nein |  |
+| afterId | string | query | Nein |  |
+| demo | boolean | query | Nein |  |
+| sso | string | query | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`ModerationAPIGetCommentIdsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationAPIGetCommentIdsResponse.java)
+Rückgabe: [`ModerationAPIGetCommentIdsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationAPIGetCommentIdsResponse.java)
 
 ## Beispiel
 
@@ -31,6 +32,7 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String textSearch = "textSearch_example"; // String | 
     String byIPFromComment = "byIPFromComment_example"; // String | 
     String filters = "filters_example"; // String | 
@@ -39,7 +41,7 @@ public class Example {
     Boolean demo = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationAPIGetCommentIdsResponse result = apiInstance.getApiIds()
+      ModerationAPIGetCommentIdsResponse result = apiInstance.getApiIds(tenantId)
             .textSearch(textSearch)
             .byIPFromComment(byIPFromComment)
             .filters(filters)
@@ -50,10 +52,10 @@ public class Example {
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ModerationApi#getApiIds");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("Ausnahme beim Aufrufen von ModerationApi#getApiIds");
+      System.err.println("Statuscode: " + e.getCode());
+      System.err.println("Grund: " + e.getResponseBody());
+      System.err.println("Antwort-Header: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }

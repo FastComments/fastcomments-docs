@@ -1,7 +1,7 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
+|------|------|----------|------------|-----------|
 | tenantId | string | path | Ναι |  |
 | postIds | array | query | Όχι |  |
 | sso | string | query | Όχι |  |
@@ -12,16 +12,16 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα getUserReactsPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUserReactsPublic Παράδειγμα'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Τα παρακάτω δείγματα κώδικα είναι ακόμα beta. Για οποιοδήποτε πρόβλημα, αναφέρετε μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
+// Τα παρακάτω δείγματα κώδικα είναι ακόμη σε beta. Για οποιοδήποτε πρόβλημα, παρακαλούμε αναφέρετε το μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let postIds = ["inner_example"] // [String] |  (προαιρετικό)
 let sso = "sso_example" // String |  (προαιρετικό)
 
-PublicAPI.getUserReactsPublic(tenantId: tenantId, postIds: postIds, sso: sso) { (response, error) in
+PublicAPI.getUserReactsPublic(tenantId: tenantId, options: PublicAPI.GetUserReactsPublicOptions(postIds: postIds, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -32,5 +32,3 @@ PublicAPI.getUserReactsPublic(tenantId: tenantId, postIds: postIds, sso: sso) { 
     }
 }
 [inline-code-end]
-
----

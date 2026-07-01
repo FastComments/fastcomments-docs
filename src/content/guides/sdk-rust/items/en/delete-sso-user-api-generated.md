@@ -15,14 +15,14 @@ Returns: [`DeleteSsoUserApiResponse`](https://github.com/FastComments/fastcommen
 
 [inline-code-attrs-start title = 'delete_sso_user Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_delete_sso_user() -> Result<DeleteSsoUserApiResponse, Error> {
-    let params: DeleteSsoUserParams = DeleteSsoUserParams {
+async fn example() -> Result<(), Error> {
+    let params = DeleteSsoUserParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "user-8f3b2a1".to_string(),
+        id: "user-42".to_string(),
         delete_comments: Some(true),
-        comment_delete_mode: Some("soft_delete".to_string()),
+        comment_delete_mode: Some("soft".to_string()),
     };
-    let response: DeleteSsoUserApiResponse = delete_sso_user(&configuration, params).await?;
-    Ok(response)
+    let _response: DeleteSsoUserApiResponse = delete_sso_user(&config, params).await?;
+    Ok(())
 }
 [inline-code-end]

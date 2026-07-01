@@ -1,9 +1,9 @@
 ## Параметры
 
 | Имя | Тип | Обязательно | Описание |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| urlId | string | Да |  |
+|------|------|--------------|----------|
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
 
 ## Ответ
 
@@ -11,14 +11,10 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример использования getVotes'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getVotes'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getVotes(tenantId = "my-tenant-123", urlId = "news/breaking-article-456")
-if response.isSome:
-  let votesResp = response.get()
-  echo "Received votes response:", $votesResp
-else:
-  echo "No votes returned, HTTP response:", $httpResponse
+let (optVotes, httpResp) = client.getVotes(tenantId = "my-tenant-123", urlId = "news/article-42")
+if optVotes.isSome:
+  let votes = optVotes.get()
+  discard votes
 [inline-code-end]
-
----

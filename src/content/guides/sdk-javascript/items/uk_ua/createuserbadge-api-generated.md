@@ -1,31 +1,25 @@
 ## Параметри
 
-| Назва | Тип | Обов'язкове | Опис |
+| Назва | Тип | Обов’язково | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| createUserBadgeParams | CreateUserBadgeParams | Так |  |
+| tenantId | string | Yes |  |
+| createUserBadgeParams | CreateUserBadgeParams | Yes |  |
 
-## Response
+## Відповідь
 
-Повертає: [`APICreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APICreateUserBadgeResponse.ts)
+Returns: [`CreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateUserBadgeResponse.ts)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'Приклад createUserBadge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_84a2c6b2';
-  const createUserBadgeParams: CreateUserBadgeParams = {
-    name: 'Early Supporter',
-    description: 'Awarded to users who joined during the alpha launch',
-    iconUrl: 'https://cdn.fastcomments.com/badges/early-supporter.png',
-    criteria: 'Joined before 2021-06-01',
-    isActive: true,
-    notifyUsers: true // необов'язковий параметр
-  };
-  const result: APICreateUserBadgeResponse = await createUserBadge(tenantId, createUserBadgeParams);
-  console.log(result);
-})();
-[inline-code-end]
+const tenantId: string = "company-42";
 
----
+const badgeParams: CreateUserBadgeParams = {
+  name: "Community Champion",
+  iconUrl: "https://assets.example.com/badges/champion.png",
+  // опис є необов’язковим і пропущений тут
+};
+
+const result: CreateUserBadgeResponse = await createUserBadge(tenantId, badgeParams);
+[inline-code-end]

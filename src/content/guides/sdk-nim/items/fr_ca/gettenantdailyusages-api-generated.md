@@ -1,32 +1,27 @@
+---
 ## Paramètres
 
-| Nom | Type | Requis | Description |
-|------|------|----------|-------------|
+| Nom | Type | Obligatoire | Description |
+|------|------|-------------|-------------|
 | tenantId | string | Oui |  |
-| yearNumber | float64 | Non |  |
-| monthNumber | float64 | Non |  |
-| dayNumber | float64 | Non |  |
-| skip | float64 | Non |  |
+| options | GetTenantDailyUsagesOptions | Non |  |
 
 ## Réponse
 
-Renvoie : [`Option[GetTenantDailyUsagesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_tenant_daily_usages_response.nim)
+Retourne : [`Option[GetTenantDailyUsagesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_tenant_daily_usages_response.nim)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getTenantDailyUsages'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getTenantDailyUsages'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTenantDailyUsages(
+let (respOpt, httpResp) = client.getTenantDailyUsages(
   tenantId = "my-tenant-123",
-  yearNumber = 2026.0,
-  monthNumber = 6.0,
-  dayNumber = 19.0,
-  skip = 0.0
+  options = default(GetTenantDailyUsagesOptions),
 )
-
-if response.isSome:
-  let usage = response.get()
-  discard usage
+if respOpt.isSome:
+  let usage = respOpt.get()
+  echo usage
+  echo httpResp.statusCode
 [inline-code-end]
 
 ---

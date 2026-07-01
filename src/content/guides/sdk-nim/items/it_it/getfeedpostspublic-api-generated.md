@@ -1,4 +1,3 @@
----
 req
 tenantId
 afterId
@@ -7,13 +6,8 @@ afterId
 
 | Nome | Tipo | Obbligatorio | Descrizione |
 |------|------|--------------|-------------|
-| tenantId | string | Sì |  |
-| afterId | string | No |  |
-| limit | int | No |  |
-| tags | seq[string] | No |  |
-| sso | string | No |  |
-| isCrawler | bool | No |  |
-| includeUserInfo | bool | No |  |
+| tenantId | string | Yes |  |
+| options | GetFeedPostsPublicOptions | No |  |
 
 ## Risposta
 
@@ -23,18 +17,7 @@ Restituisce: [`Option[PublicFeedPostsResponse]`](https://github.com/FastComments
 
 [inline-code-attrs-start title = 'Esempio getFeedPostsPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getFeedPostsPublic(
-  tenantId = "my-tenant-123",
-  afterId = "",
-  limit = 0,
-  tags = @[],
-  sso = "",
-  isCrawler = false,
-  includeUserInfo = false
-)
-if response.isSome:
-  let feed = response.get()
-  discard feed
+let (feedResponseOpt, httpResponse) = client.getFeedPostsPublic(tenantId = "my-tenant-123", options = GetFeedPostsPublicOptions())
+if feedResponseOpt.isSome:
+  let feedResponse = feedResponseOpt.get()
 [inline-code-end]
-
----

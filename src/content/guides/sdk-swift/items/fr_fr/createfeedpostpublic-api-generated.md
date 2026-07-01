@@ -1,20 +1,20 @@
-## Paramètres
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Oui |  |
-| broadcastId | string | query | Non |  |
-| sso | string | query | Non |  |
+| tenantId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
-## Réponse
+## Response
 
-Renvoie : [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateFeedPostResponse.swift)
+Retourne : [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateFeedPostResponse.swift)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de createFeedPostPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple createFeedPostPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Les exemples de code suivants sont encore en bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Les exemples de code suivants sont encore en version bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -22,7 +22,7 @@ let createFeedPostParams = CreateFeedPostParams(title: "title_example", contentH
 let broadcastId = "broadcastId_example" // String |  (optionnel)
 let sso = "sso_example" // String |  (optionnel)
 
-PublicAPI.createFeedPostPublic(tenantId: tenantId, createFeedPostParams: createFeedPostParams, broadcastId: broadcastId, sso: sso) { (response, error) in
+PublicAPI.createFeedPostPublic(tenantId: tenantId, createFeedPostParams: createFeedPostParams, options: PublicAPI.CreateFeedPostPublicOptions(broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -33,3 +33,5 @@ PublicAPI.createFeedPostPublic(tenantId: tenantId, createFeedPostParams: createF
     }
 }
 [inline-code-end]
+
+---

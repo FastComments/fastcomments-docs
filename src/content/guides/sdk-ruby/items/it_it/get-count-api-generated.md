@@ -1,7 +1,8 @@
 ## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
-|------|------|----------|----------|-------------|
+|------|------|-----------|--------------|-------------|
+| tenantId | string | query | Sì |  |
 | text-search | string | query | No |  |
 | byIPFromComment | string | query | No |  |
 | filter | string | query | No |  |
@@ -15,24 +16,25 @@ Restituisce: [`ModerationAPICountCommentsResponse`](https://github.com/FastComme
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di get_count'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_count Esempio'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 opts = {
-  text_search: 'text_search_example', # Stringa | 
-  by_ip_from_comment: 'by_ip_from_comment_example', # Stringa | 
-  filter: 'filter_example', # Stringa | 
-  search_filters: 'search_filters_example', # Stringa | 
-  demo: true, # Booleano | 
-  sso: 'sso_example' # Stringa | 
+  text_search: 'text_search_example', # String | 
+  by_ip_from_comment: 'by_ip_from_comment_example', # String | 
+  filter: 'filter_example', # String | 
+  search_filters: 'search_filters_example', # String | 
+  demo: true, # Boolean | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.get_count(opts)
+  result = api_instance.get_count(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_count: #{e}"

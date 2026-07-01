@@ -1,21 +1,21 @@
-Seiten für einen Mandanten auflisten. Wird vom FChat-Desktop-Client verwendet, um seine Raumliste zu befüllen.
-Erfordert, dass `enableFChat` in der aufgelösten benutzerdefinierten Konfiguration für jede Seite auf true gesetzt ist.
-Seiten, die SSO erfordern, werden anhand des Gruppen-Zugriffs des anfragenden Benutzers gefiltert.
+List pages for a tenant. Used by the FChat desktop client to populate its room list.  
+Requires `enableFChat` to be true on the resolved custom config for each page.  
+Pages that require SSO are filtered against the requesting user's group access.
 
 ## Parameter
 
-| Name | Typ | Ort | Erforderlich | Beschreibung |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Yes |  |
-| cursor | string | query | No | Opaker Paginierungs-Cursor, der als `nextCursor` von einer vorherigen Anfrage zurückgegeben wurde. Ist an dasselbe `sortBy` gebunden. |
+| cursor | string | query | No | Undurchsichtiger Pagination‑Cursor, zurückgegeben als `nextCursor` von einer vorherigen Anfrage. Gebunden an denselben `sortBy`. |
 | limit | integer | query | No | 1..200, Standard 50 |
-| q | string | query | No | Optionaler, groß-/kleinschreibungsunabhängiger Titel-Präfixfilter. |
-| sortBy | string | query | No | Sortierreihenfolge. `updatedAt` (Standard, neueste zuerst), `commentCount` (die meisten Kommentare zuerst), oder `title` (alphabetisch). |
-| hasComments | boolean | query | No | Wenn true, nur Seiten mit mindestens einem Kommentar zurückgeben. |
+| q | string | query | No | Optionaler, case‑insensitiver Titel‑Präfix‑Filter. |
+| sortBy | string | query | No | Sortierreihenfolge. `updatedAt` (Standard, neueste zuerst), `commentCount` (die meisten Kommentare zuerst) oder `title` (alphabetisch). |
+| hasComments | boolean | query | No | Wenn true, werden nur Seiten mit mindestens einem Kommentar zurückgegeben. |
 
 ## Antwort
 
-Gibt zurück: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPublicPagesResponse.php)
+Returns: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPublicPagesResponse.php)
 
 ## Beispiel
 
@@ -27,19 +27,23 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Wenn Sie einen benutzerdefinierten HTTP-Client verwenden möchten, übergeben Sie Ihren Client, der `GuzzleHttp\ClientInterface` implementiert.
-    // Dies ist optional, `GuzzleHttp\Client` wird standardmäßig verwendet.
+    // Wenn Sie einen benutzerdefinierten HTTP‑Client verwenden möchten, übergeben Sie Ihren Client, der `GuzzleHttp\ClientInterface` implementiert.
+    // Dies ist optional, `GuzzleHttp\Client` wird als Standard verwendet.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$cursor = 'cursor_example'; // string | Opaker Paginierungs-Cursor, der als `nextCursor` von einer vorherigen Anfrage zurückgegeben wurde. An dasselbe `sortBy` gebunden.
-$limit = 56; // int | 1..200, Standard 50
-$q = 'q_example'; // string | Optionaler, groß-/kleinschreibungsunabhängiger Titel-Präfixfilter.
-$sort_by = new \FastComments\Client\Model\\FastComments\Client\Model\PagesSortBy(); // \FastComments\Client\Model\PagesSortBy | Sortierreihenfolge. `updatedAt` (Standard, neueste zuerst), `commentCount` (die meisten Kommentare zuerst) oder `title` (alphabetisch).
-$has_comments = True; // bool | Wenn true, nur Seiten mit mindestens einem Kommentar zurückgeben.
+$options = [
+    'cursor' => 'cursor_example', // string | Undurchsichtiger Pagination‑Cursor, zurückgegeben als `nextCursor` von einer vorherigen Anfrage. Gebunden an denselben `sortBy`.
+    'limit' => 56, // int | 1..200, Standard 50
+    'q' => 'q_example', // string | Optionaler, case‑insensitiver Titel‑Präfix‑Filter.
+    'sort_by' => new \FastComments\Client\Model\\FastComments\Client\Model\PagesSortBy(), // \FastComments\Client\Model\PagesSortBy | Sortierreihenfolge. `updatedAt` (Standard, neueste zuerst), `commentCount` (die meisten Kommentare zuerst) oder `title` (alphabetisch).
+    'has_comments' => True, // bool | Wenn true, werden nur Seiten mit mindestens einem Kommentar zurückgegeben.
+];
+
 
 try {
-    $result = $apiInstance->getPagesPublic($tenant_id, $cursor, $limit, $q, $sort_by, $has_comments);
+    $result = $apiInstance->getPagesPublic($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getPagesPublic: ', $e->getMessage(), PHP_EOL;

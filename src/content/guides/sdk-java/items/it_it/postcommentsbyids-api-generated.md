@@ -1,16 +1,17 @@
 ## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
-|------|------|----------|----------|-------------|
+|------|------|-----------|--------------|-------------|
+| tenantId | string | query | Sì |  |
 | sso | string | query | No |  |
 
-## Response
+## Risposta
 
 Restituisce: [`ModerationAPIChildCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationAPIChildCommentsResponse.java)
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di postCommentsByIds'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postCommentsByIds Esempio'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importa le classi:
 import com.fastcomments.invoker.ApiClient;
@@ -25,10 +26,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     CommentsByIdsParams commentsByIdsParams = new CommentsByIdsParams(); // CommentsByIdsParams | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationAPIChildCommentsResponse result = apiInstance.postCommentsByIds(commentsByIdsParams)
+      ModerationAPIChildCommentsResponse result = apiInstance.postCommentsByIds(tenantId, commentsByIdsParams)
             .sso(sso)
             .execute();
       System.out.println(result);

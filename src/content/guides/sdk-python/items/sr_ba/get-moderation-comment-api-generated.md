@@ -1,7 +1,8 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
 | commentId | string | path | Da |  |
 | includeEmail | boolean | query | Ne |  |
 | includeIP | boolean | query | Ne |  |
@@ -13,31 +14,33 @@ Vraća: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcom
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer get_moderation_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_moderation_comment Primjer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetModerationCommentOptions
 from client.models.moderation_api_comment_response import ModerationAPICommentResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://fastcomments.com
-# See configuration.py for a list of all supported configuration parameters.
+# Definisanje hosta je opcionalno i podrazumijeva https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih konfiguracijskih parametara.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Enter a context with an instance of the API client
+# Uđite u kontekst s instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # Kreirajte instancu klase API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
-    include_email = True # bool |  (neobavezno)
-    include_ip = True # bool |  (neobavezno)
-    sso = 'sso_example' # str |  (neobavezno)
+    include_email = True # bool |  (optional)
+    include_ip = True # bool |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_moderation_comment(comment_id, include_email=include_email, include_ip=include_ip, sso=sso)
+        api_response = api_instance.get_moderation_comment(tenant_id, comment_id, GetModerationCommentOptions(include_email=include_email, include_ip=include_ip, sso=sso))
         print("The response of ModerationApi->get_moderation_comment:\n")
         pprint(api_response)
     except Exception as e:

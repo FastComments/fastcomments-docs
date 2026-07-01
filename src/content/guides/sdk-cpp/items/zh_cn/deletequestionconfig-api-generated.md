@@ -1,6 +1,6 @@
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | id | string | 是 |  |
@@ -13,21 +13,18 @@
 
 [inline-code-attrs-start title = 'deleteQuestionConfig 示例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t id = U("question-456");
-boost::optional<utility::string_t> correlationId = boost::optional<utility::string_t>(U("corr-12345"));
-auto placeholder = std::make_shared<APIEmptyResponse>();
-api->deleteQuestionConfig(tenantId, id)
-.then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task)
-{
-    try {
-        auto resp = task.get();
-        if (resp) std::cout << "Question config deleted\n";
-        else std::cout << "No response body\n";
-    } catch (const std::exception &e) {
-        std::cerr << "Delete failed: " << e.what() << '\n';
-    }
-});
-[inline-code-end]
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto configId = utility::conversions::to_string_t("question-config-456");
 
----
+api->deleteQuestionConfig(tenantId, configId)
+    .then([](std::shared_ptr<APIEmptyResponse> resp) {
+        // 处理成功删除
+    })
+    .then([](pplx::task<void> t) {
+        try {
+            t.get();
+        } catch (const std::exception&) {
+            // 处理错误
+        }
+    });
+[inline-code-end]

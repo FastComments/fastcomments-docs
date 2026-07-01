@@ -1,9 +1,11 @@
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Da |  |
-| sso | string | query | Ne |  |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -11,31 +13,34 @@ Vraća: [`SetCommentTextResponse`](https://github.com/FastComments/fastcomments-
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer post_set_comment_text'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_set_comment_text Primjer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import PostSetCommentTextOptions
 from client.models.set_comment_text_params import SetCommentTextParams
 from client.models.set_comment_text_response import SetCommentTextResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Postavljanje hosta je opcionalno i zadano je na https://fastcomments.com
-# Pogledajte configuration.py za popis svih podržanih konfiguracijskih parametara.
+# Definiranje hosta je opcionalno i zadano je na https://fastcomments.com
+# Pogledajte configuration.py za popis svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Uđite u kontekst s primjerkom API klijenta
+# Uđite u kontekst s instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Kreirajte instancu API klase
+    # Stvorite instancu API klase
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     set_comment_text_params = client.SetCommentTextParams() # SetCommentTextParams | 
-    sso = 'sso_example' # str |  (optional)
+    broadcast_id = 'broadcast_id_example' # str |  (opcionalno)
+    sso = 'sso_example' # str |  (opcionalno)
 
     try:
-        api_response = api_instance.post_set_comment_text(comment_id, set_comment_text_params, sso=sso)
+        api_response = api_instance.post_set_comment_text(tenant_id, comment_id, set_comment_text_params, PostSetCommentTextOptions(broadcast_id=broadcast_id, sso=sso))
         print("The response of ModerationApi->post_set_comment_text:\n")
         pprint(api_response)
     except Exception as e:

@@ -1,15 +1,15 @@
-## Parametre
+## Parameters
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| limit | number | query | Nej |  |
-| skip | number | query | Nej |  |
-| order | string | query | Nej |  |
-| after | number | query | Nej |  |
-| before | number | query | Nej |  |
+| tenantId | string | query | Yes |  |
+| limit | number | query | No |  |
+| skip | number | query | No |  |
+| order | string | query | No |  |
+| after | number | query | No |  |
+| before | number | query | No |  |
 
-## Svar
+## Response
 
 Returnerer: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetAuditLogsResponse.swift)
 
@@ -17,17 +17,17 @@ Returnerer: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomment
 
 [inline-code-attrs-start title = 'getAuditLogs Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Følgende kodeeksempler er stadig i beta. For eventuelle problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Følgende kodeeksempler er stadig i beta. Ved ethvert problem bedes du rapportere via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let limit = 987 // Double |  (valgfri)
-let skip = 987 // Double |  (valgfri)
-let order = SORT_DIR() // SORTDIR |  (valgfri)
-let after = 987 // Double |  (valgfri)
-let before = 987 // Double |  (valgfri)
+let limit = 987 // Double |  (optional)
+let skip = 987 // Double |  (optional)
+let order = SORT_DIR() // SORTDIR |  (optional)
+let after = 987 // Double |  (optional)
+let before = 987 // Double |  (optional)
 
-DefaultAPI.getAuditLogs(tenantId: tenantId, limit: limit, skip: skip, order: order, after: after, before: before) { (response, error) in
+DefaultAPI.getAuditLogs(tenantId: tenantId, options: DefaultAPI.GetAuditLogsOptions(limit: limit, skip: skip, order: order, after: after, before: before)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -38,3 +38,5 @@ DefaultAPI.getAuditLogs(tenantId: tenantId, limit: limit, skip: skip, order: ord
     }
 }
 [inline-code-end]
+
+---

@@ -1,17 +1,17 @@
-## Parametry
+## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Tak |  |
-| urlId | string | query | Tak |  |
+| tenantId | string | ścieżka | Tak |  |
+| urlId | string | zapytanie | Tak |  |
 
-## Odpowiedź
+## Response
 
 Zwraca: [`GetV2PageReacts`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetV2PageReacts.php)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład getV2PageReacts'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getV2PageReacts Przykład'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -19,12 +19,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Jeśli chcesz użyć niestandardowego klienta HTTP, przekaż klienta, który implementuje `GuzzleHttp\ClientInterface`.
-    // To jest opcjonalne, domyślnie zostanie użyty `GuzzleHttp\Client`.
+    // Jeśli chcesz użyć własnego klienta HTTP, przekaż swój klient implementujący `GuzzleHttp\ClientInterface`.
+    // To jest opcjonalne, jako domyślny zostanie użyty `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $url_id = 'url_id_example'; // string
+
 
 try {
     $result = $apiInstance->getV2PageReacts($tenant_id, $url_id);

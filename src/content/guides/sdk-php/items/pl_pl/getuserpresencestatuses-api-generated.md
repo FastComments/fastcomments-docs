@@ -1,4 +1,3 @@
----
 ## Parametry
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
@@ -21,13 +20,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Jeśli chcesz użyć niestandardowego klienta HTTP, przekaż klienta, który implementuje `GuzzleHttp\ClientInterface`.
-    // To jest opcjonalne, domyślnie zostanie użyty `GuzzleHttp\Client`.
+    // Jeśli chcesz użyć własnego klienta HTTP, przekaż swój klient implementujący `GuzzleHttp\ClientInterface`.
+    // To opcjonalne, `GuzzleHttp\Client` będzie użyty jako domyślny.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$url_id_ws = 'url_id_ws_example'; // string
-$user_ids = 'user_ids_example'; // string
+
+$tenant_id = 'tenant_id_example'; // ciąg
+$url_id_ws = 'url_id_ws_example'; // ciąg
+$user_ids = 'user_ids_example'; // ciąg
+
 
 try {
     $result = $apiInstance->getUserPresenceStatuses($tenant_id, $url_id_ws, $user_ids);
@@ -36,5 +37,3 @@ try {
     echo 'Exception when calling PublicApi->getUserPresenceStatuses: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

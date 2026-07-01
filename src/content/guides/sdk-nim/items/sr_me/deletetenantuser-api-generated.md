@@ -1,26 +1,25 @@
-## Параметри
+## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Не |  |
-| deleteComments | string | Не |  |
-| commentDeleteMode | string | Не |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| options | DeleteTenantUserOptions | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
+Vraća: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'deleteTenantUser Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteTenantUser Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteTenantUser(tenantId = "my-tenant-123", id = "user-789", deleteComments = "true", commentDeleteMode = "soft")
+let (response, httpResponse) = client.deleteTenantUser(
+  tenantId = "my-tenant-123",
+  id = "user-456",
+  options = DeleteTenantUserOptions(),
+)
 if response.isSome:
-  let apiResp = response.get()
-  echo "Tenant user deleted, response: ", apiResp
-else:
-  echo "Failed to delete tenant user, HTTP status: ", $httpResponse.status
+  let empty = response.get()
+  echo "User successfully deleted"
 [inline-code-end]
-
----

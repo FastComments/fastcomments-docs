@@ -1,26 +1,35 @@
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
-|------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| id | string | Ja |  |
-| blockFromCommentParams | BlockFromCommentParams | Ja |  |
-| userId | string | Nein |  |
-| anonUserId | string | Nein |  |
+|------|------|--------------|---------------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| blockFromCommentParams | BlockFromCommentParams | Yes |  |
+| userId | string | No |  |
+| anonUserId | string | No |  |
 
 ## Antwort
 
-Gibt zurück: [`BlockSuccess`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BlockSuccess.ts)
+Rückgabe: [`BlockUserFromCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BlockUserFromCommentResponse.ts)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'blockUserFromComment Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp';
-const id: string = '5f9a3b2c-1d3e-4b6f-8a9c-12d345ef6789';
-const blockFromCommentParams: BlockFromCommentParams = { reason: 'Repeated spam', durationDays: 30, notifyModerator: true };
-const userId: string = 'user-1024';
-const result: BlockSuccess = await blockUserFromComment(tenantId, id, blockFromCommentParams, userId);
-[inline-code-end]
+const tenantId: string = 'tenant_42';
+const commentId: string = 'cmt_20231101';
 
----
+const blockParams: BlockFromCommentParams = {
+  reason: 'spam',
+  blockDurationHours: 24,
+};
+
+const userId: string = 'user_123'; // optionaler Parameter
+
+const response: BlockUserFromCommentResponse = await blockUserFromComment(
+  tenantId,
+  commentId,
+  blockParams,
+  userId
+);
+[inline-code-end]

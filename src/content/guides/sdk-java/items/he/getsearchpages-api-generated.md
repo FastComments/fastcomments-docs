@@ -1,7 +1,8 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | חובה | תיאור |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | כן |  |
 | value | string | query | לא |  |
 | sso | string | query | לא |  |
 
@@ -11,9 +12,9 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getSearchPages'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getSearchPages'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// ייבוא מחלקות:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String value = "value_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationPageSearchResponse result = apiInstance.getSearchPages()
+      ModerationPageSearchResponse result = apiInstance.getSearchPages(tenantId)
             .value(value)
             .sso(sso)
             .execute();

@@ -1,7 +1,8 @@
 ## Parametri
 
 | Ime | Tip | Lokacija | Obvezno | Opis |
-|------|------|----------|----------|-------------|
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
 | batchJobId | string | query | Ne |  |
 | sso | string | query | Ne |  |
 
@@ -11,7 +12,7 @@ Vrne: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastcom
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer getApiExportStatus'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getApiExportStatus Primer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Uvozi razrede:
 import com.fastcomments.invoker.ApiClient;
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String batchJobId = "batchJobId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationExportStatusResponse result = apiInstance.getApiExportStatus()
+      ModerationExportStatusResponse result = apiInstance.getApiExportStatus(tenantId)
             .batchJobId(batchJobId)
             .sso(sso)
             .execute();

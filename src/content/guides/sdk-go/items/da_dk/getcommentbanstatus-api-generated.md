@@ -1,9 +1,10 @@
 ## Parametre
 
-| Navn | Type | Placering | Påkrævet | Beskrivelse |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Ja |  |
-| sso | string | query | Nej |  |
+| Navn | Type | Placering | Obligatorisk | Beskrivelse |
+|------|------|-----------|--------------|-------------|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| sso | string | query | No |  |
 
 ## Respons
 
@@ -11,7 +12,7 @@ Returnerer: [`GetCommentBanStatusResponse`](https://github.com/FastComments/fast
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på GetCommentBanStatus'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GetCommentBanStatus Eksempel'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,19 +24,18 @@ import (
 )
 
 func main() {
-	commentId := "commentId_example" // string | 
+	tenantId := "tenantId_example" // string |
+	commentId := "commentId_example" // string |
 	sso := "sso_example" // string |  (valgfri)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetCommentBanStatus(context.Background(), commentId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetCommentBanStatus(context.Background(), commentId).TenantId(tenantId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetCommentBanStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// respons fra `GetCommentBanStatus`: GetCommentBanStatusResponse
+	// svar fra `GetCommentBanStatus`: GetCommentBanStatusResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetCommentBanStatus`: %v\n", resp)
 }
 [inline-code-end]
-
----

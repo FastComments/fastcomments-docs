@@ -1,14 +1,14 @@
-Włącz lub wyłącz powiadomienia dla konkretnego komentarza.
+Włącz lub wyłącz powiadomienia dla określonego komentarza.
 
 ## Parametry
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Tak |  |
-| notificationId | string | Nie |  |
-| optedInOrOut | string | Nie |  |
-| commentId | string | Tak |  |
-| sso | string | Nie |  |
+| Nazwa | Typ | Wymagane | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| notificationId | string | No |  |
+| optedInOrOut | string | No |  |
+| commentId | string | Yes |  |
+| sso | string = "" | No |  |
 
 ## Odpowiedź
 
@@ -18,17 +18,14 @@ Zwraca: [`Option[UpdateUserNotificationCommentSubscriptionStatusResponse]`](http
 
 [inline-code-attrs-start title = 'Przykład updateUserNotificationCommentSubscriptionStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateUserNotificationCommentSubscriptionStatus(
+let (optResp, httpResp) = client.updateUserNotificationCommentSubscriptionStatus(
   tenantId = "my-tenant-123",
-  notificationId = "",
-  optedInOrOut = "",
-  commentId = "cmt-789",
+  notificationId = "notif-456",
+  optedInOrOut = "opted-in",
+  commentId = "comment-789",
   sso = ""
 )
 
-if response.isSome:
-  let updateResp = response.get()
-  echo "Subscription update response: ", updateResp
+if optResp.isSome:
+  let resp = optResp.get()
 [inline-code-end]
-
----

@@ -1,7 +1,8 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Oui |  |
 | sso | string | query | Non |  |
 
 ## Réponse
@@ -10,9 +11,9 @@ Renvoie : [`APIModerateGetUserBanPreferencesResponse`](https://github.com/FastCo
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getUserBanPreference'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getUserBanPreference'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importer les classes :
+// Importer les classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -25,9 +26,10 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      APIModerateGetUserBanPreferencesResponse result = apiInstance.getUserBanPreference()
+      APIModerateGetUserBanPreferencesResponse result = apiInstance.getUserBanPreference(tenantId)
             .sso(sso)
             .execute();
       System.out.println(result);

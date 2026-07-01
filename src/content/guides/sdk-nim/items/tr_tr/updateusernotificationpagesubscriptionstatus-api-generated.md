@@ -1,38 +1,35 @@
-Bir sayfa için bildirimleri etkinleştirir veya devre dışı bırakır. Kullanıcılar bir sayfaya abone olduğunda, yeni kök yorumlar için bildirimler oluşturulur ve ayrıca
+Enable or disable notifications for a page. When users are subscribed to a page, notifications are created
+for new root comments, and also
 
-## Parametreler
+## Parameters
 
-| Name | Type | Required | Description |
+| Ad | Tip | Gerekli | Açıklama |
 |------|------|----------|-------------|
-| tenantId | string | Evet |  |
-| urlId | string | Evet |  |
-| url | string | Hayır |  |
-| pageTitle | string | Hayır |  |
-| subscribedOrUnsubscribed | string | Hayır |  |
-| sso | string | Hayır |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| url | string | No |  |
+| pageTitle | string | No |  |
+| subscribedOrUnsubscribed | string | No |  |
+| sso | string = "" | No |  |
 
-## Yanıt
+## Response
 
-Döndürür: [`Option[UpdateUserNotificationPageSubscriptionStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_page_subscription_status_response.nim)
+Returns: [`Option[UpdateUserNotificationPageSubscriptionStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_page_subscription_status_response.nim)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus Örneği'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateUserNotificationPageSubscriptionStatus(
+let (optResp, httpResp) = client.updateUserNotificationPageSubscriptionStatus(
   tenantId = "my-tenant-123",
-  urlId = "news/economy/market-rally-2026-06-19",
-  url = "",
-  pageTitle = "",
-  subscribedOrUnsubscribed = "",
+  urlId = "news/article-456",
+  url = "https://example.com/news/article-456",
+  pageTitle = "Breaking News: Something Happened",
+  subscribedOrUnsubscribed = "subscribed",
   sso = ""
 )
 
-if response.isSome:
-  let updateResp = response.get()
-  echo "Subscription update received: ", updateResp
-else:
-  echo "No subscription update returned."
+if optResp.isSome:
+  let resp = optResp.get()
+  # resp ile daha fazla işleme
 [inline-code-end]
-
----

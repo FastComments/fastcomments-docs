@@ -1,9 +1,10 @@
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| comment_id | String | Ne |  |
-| sso | String | Ne |  |
+| tenant_id | String | Yes |  |
+| comment_id | String | No |  |
+| sso | String | No |  |
 
 ## Odgovor
 
@@ -13,14 +14,13 @@ Vraća: [`GetUserInternalProfileResponse`](https://github.com/FastComments/fastc
 
 [inline-code-attrs-start title = 'get_user_internal_profile Primjer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_profile() -> Result<GetUserInternalProfileResponse, Error> {
-    let params: GetUserInternalProfileParams = GetUserInternalProfileParams {
-        comment_id: Some(String::from("cmt-72a1f4")),
-        sso: Some(String::from("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidXNlcjEyMyJ9.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c")),
+async fn fetch_profile() -> Result<(), Error> {
+    let params = GetUserInternalProfileParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: Some("news/article".to_string()),
+        sso: Some("sso-user-xyz".to_string()),
     };
-    let profile: GetUserInternalProfileResponse = get_user_internal_profile(&configuration, params).await?;
-    Ok(profile)
+    let _response = get_user_internal_profile(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

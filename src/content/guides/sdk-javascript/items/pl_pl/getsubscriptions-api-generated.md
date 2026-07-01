@@ -1,7 +1,7 @@
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
 | tenantId | string | Tak |  |
 | userId | string | Nie |  |
 
@@ -11,12 +11,13 @@ Zwraca: [`GetSubscriptionsAPIResponse`](https://github.com/FastComments/fastcomm
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład użycia getSubscriptions'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład getSubscriptions'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "contoso-9a1b2c";
-const userId: string = "u-482f6";
-const subscriptions: GetSubscriptionsAPIResponse = await getSubscriptions(tenantId);
-const userSubscriptions: GetSubscriptionsAPIResponse = await getSubscriptions(tenantId, userId);
-[inline-code-end]
+(async () => {
+    const tenantId: string = "acme-corp-123";
+    const userId: string = "user-789";
 
----
+    const responseWithUser: GetSubscriptionsAPIResponse = await getSubscriptions(tenantId, userId);
+    const responseWithoutUser: GetSubscriptionsAPIResponse = await getSubscriptions(tenantId);
+})();
+[inline-code-end]

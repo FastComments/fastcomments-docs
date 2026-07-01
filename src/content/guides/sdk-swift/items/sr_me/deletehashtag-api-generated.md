@@ -1,26 +1,26 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Потребно | Опис |
-|------|------|----------|----------|-------------|
-| tag | string | path | Да |  |
-| tenantId | string | query | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
+| tag | string | path | Da |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
+Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
 
-## Примјер
+## Primjer
 
-[inline-code-attrs-start title = 'deleteHashTag Примјер'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer deleteHashTag'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Сљедећи примјери кода су још у бета фази. За било који проблем, пријавите га преко http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sljedeći uzorci koda su još u beta fazi. Za bilo koji problem, molimo prijavite putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let tag = "tag_example" // String | 
-let tenantId = "tenantId_example" // String |  (опционо)
-let deleteHashTagRequestBody = DeleteHashTagRequestBody(tenantId: "tenantId_example") // DeleteHashTagRequestBody |  (опционо)
+let deleteHashTagRequestBody = DeleteHashTagRequestBody(tenantId: "tenantId_example") // DeleteHashTagRequestBody |  (opcionalno)
 
-DefaultAPI.deleteHashTag(tag: tag, tenantId: tenantId, deleteHashTagRequestBody: deleteHashTagRequestBody) { (response, error) in
+DefaultAPI.deleteHashTag(tenantId: tenantId, tag: tag, deleteHashTagRequestBody: deleteHashTagRequestBody) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -31,3 +31,5 @@ DefaultAPI.deleteHashTag(tag: tag, tenantId: tenantId, deleteHashTagRequestBody:
     }
 }
 [inline-code-end]
+
+---

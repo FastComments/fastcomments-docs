@@ -1,11 +1,12 @@
-Elenca le pagine per un tenant. Utilizzato dal client desktop FChat per popolare la lista delle stanze.
-Richiede `enableFChat` to be true on the resolved custom config for each page.
-Le pagine che richiedono SSO vengono filtrate in base ai gruppi di accesso dell'utente che effettua la richiesta.
+---
+Elenca le pagine per un tenant. Utilizzato dal client desktop FChat per popolare l'elenco delle stanze.  
+Richiede che `enableFChat` sia true nella configurazione personalizzata risolta per ogni pagina.  
+Le pagine che richiedono SSO sono filtrate in base all'accesso ai gruppi dell'utente richiedente.
 
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nome | Tipo | Obbligatorio | Descrizione |
+|------|------|--------------|-------------|
 | tenant_id | String | Sì |  |
 | cursor | String | No |  |
 | limit | i32 | No |  |
@@ -19,17 +20,18 @@ Restituisce: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomm
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio get_pages_public'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_pages_public Esempio'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: GetPagesPublicParams = GetPagesPublicParams {
-    tenant_id: String::from("acme-corp-tenant"),
-    cursor: Some(String::from("cursor_eyJwZl9pZCI6IjEyMyJ9")),
-    limit: Some(50),
-    q: Some(String::from("tag:release status:published")),
-    sort_by: Some(models::PagesSortBy::CreatedAt),
-    has_comments: Some(true),
-};
-let response: GetPublicPagesResponse = get_pages_public(&configuration, params).await?;
+async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetPagesPublicParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        cursor: Some("page_20".to_string()),
+        limit: Some(50),
+        q: Some("news/article".to_string()),
+        sort_by: Some(models::PagesSortBy::CreatedDesc),
+        has_comments: Some(true),
+    };
+    let _response = get_pages_public(configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]
-
----

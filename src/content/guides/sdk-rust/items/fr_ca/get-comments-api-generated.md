@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Name | Type | Requis | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
 | tenant_id | String | Oui |  |
 | page | i32 | Non |  |
@@ -22,34 +22,33 @@
 
 ## Réponse
 
-Renvoie : [`ApiGetCommentsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_get_comments_response.rs)
+Renvoie : [`ApiGetCommentsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_get_comments_response.rs)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de get_comments'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple get_comments'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example() -> Result<(), Error> {
-    let params: GetCommentsParams = GetCommentsParams {
+async fn fetch_comments() -> Result<(), Error> {
+    let params = GetCommentsParams {
         tenant_id: "acme-corp-tenant".to_string(),
         page: Some(1),
-        limit: Some(25),
+        limit: Some(20),
         skip: Some(0),
         as_tree: Some(true),
-        skip_children: Some(0),
-        limit_children: Some(5),
+        skip_children: Some(5),
+        limit_children: Some(10),
         max_tree_depth: Some(3),
-        url_id: Some("news/article/2026/06/fast-rust".to_string()),
-        user_id: Some("user-1234".to_string()),
-        anon_user_id: Some("anon-5678".to_string()),
-        context_user_id: Some("context-999".to_string()),
-        hash_tag: Some("release".to_string()),
-        parent_id: Some("comment-9876".to_string()),
+        url_id: Some("news/article".to_string()),
+        user_id: Some("user-123".to_string()),
+        anon_user_id: Some("anon-456".to_string()),
+        context_user_id: Some("ctx-789".to_string()),
+        hash_tag: Some("rust".to_string()),
+        parent_id: Some("parent-001".to_string()),
         direction: Some(models::SortDirections::Desc),
-        from_date: Some(1_689_000_000_i64),
-        to_date: Some(1_689_086_400_i64),
+        from_date: Some(1_640_995_200),
+        to_date: Some(1_641_081_600),
     };
-
-    let response: ApiGetCommentsResponse = get_comments(configuration, params).await?;
+    let _response = get_comments(&config, params).await?;
     Ok(())
 }
 [inline-code-end]

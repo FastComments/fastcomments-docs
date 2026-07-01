@@ -1,35 +1,29 @@
-The FastComments SDK provides three API clients:
+FastComments SDK üç API istemcisi sağlar:
 
-### PublicAPI - Client-Safe Methods
+### PublicAPI - İstemci-Güvenli Yöntemler
 
-The `PublicAPI` contains methods that are safe to call from client-side code (iOS/macOS apps). These methods:
-- Do not require an API key
-- Can use SSO tokens for authentication
-- Are rate-limited per user/device
-- Are suitable for end-user facing applications
+`PublicAPI`, istemci tarafı kodundan (iOS/macOS uygulamaları) çağırılması güvenli olan yöntemler içerir. Bu yöntemler:
+- API anahtarı gerektirmez
+- Kimlik doğrulama için SSO belirteçlerini kullanabilir
+- Kullanıcı/cihaz başına oran sınırlamalıdır
+- Son kullanıcıya yönelik uygulamalar için uygundur
 
-**Example use case**: Fetching and creating comments in your iOS app
+**Örnek kullanım senaryosu**: iOS uygulamanızda yorumları getirme ve oluşturma
 
-### DefaultAPI - Server-Side Methods
+### DefaultAPI - Sunucu-Tarafı Yöntemler
 
-The `DefaultAPI` contains authenticated methods that require an API key. These methods:
-- Require your FastComments API key
-- Should ONLY be called from server-side code
-- Provide full access to your FastComments data
-- Are rate-limited per tenant
+`DefaultAPI`, bir API anahtarı gerektiren kimliği doğrulanmış yöntemler içerir. Bu yöntemler:
+- FastComments API anahtarınızı gerektirir
+- SADECE sunucu tarafı kodundan çağrılmalıdır
+- FastComments verilerinize tam erişim sağlar
+- Kiracı başına oran sınırlaması vardır
 
-**Example use case**: Administrative operations, bulk data export, user management
+**Örnek kullanım senaryosu**: Yönetim operasyonları, toplu veri dışa aktarımı, kullanıcı yönetimi
 
-### ModerationAPI - Moderator Dashboard Methods
+### ModerationAPI - Moderatör Kontrol Paneli Yöntemleri
 
-The `ModerationAPI` contains methods that power the moderator dashboard. These methods cover:
-- **Comment moderation** - list, count, search, retrieve logs, and export comments
-- **Moderation actions** - remove/restore comments, flag, set review/spam/approval status, manage votes, and reopen/close threads
-- **Bans** - ban a user from a comment, undo bans, fetch pre-ban summaries, check ban status and preferences, and read banned-user counts
-- **Badges & trust** - award/remove badges, list manual badges, get/set a user's trust factor, and read a user's internal profile
+`ModerationAPI`, canlı ve hızlı moderasyon API'lerinin kapsamlı bir paketini sunar. Her `ModerationAPI` yöntemi bir `sso` parametresi alır ve SSO veya bir FastComments.com oturum çerezi ile kimlik doğrulaması yapabilir.
 
-Every `ModerationAPI` method accepts an `sso` parameter so moderators can be authenticated via SSO.
+**Örnek kullanım senaryosu**: Topluluğunuzdaki moderatörler için bir moderasyon deneyimi oluşturma
 
-**Example use case**: Building a moderation experience for moderators of your community
-
-**IMPORTANT**: Never expose your API key in client-side code. API keys should only be used server-side.
+**ÖNEMLİ**: API anahtarınızı istemci tarafı kodda asla açığa çıkarmayın. API anahtarları yalnızca sunucu tarafında kullanılmalıdır.

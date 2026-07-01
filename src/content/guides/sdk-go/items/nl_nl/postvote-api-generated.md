@@ -2,13 +2,15 @@
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Ja |  |
-| direction | string | query | Nee |  |
-| sso | string | query | Nee |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| direction | string | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Respons
 
-Geeft terug: [`VoteResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_vote_response.go)
+Retourneert: [`VoteResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_vote_response.go)
 
 ## Voorbeeld
 
@@ -24,18 +26,20 @@ import (
 )
 
 func main() {
-	commentId := "commentId_example" // string | 
+	tenantId := "tenantId_example" // string |
+	commentId := "commentId_example" // string |
 	direction := "direction_example" // string |  (optioneel)
+	broadcastId := "broadcastId_example" // string |  (optioneel)
 	sso := "sso_example" // string |  (optioneel)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostVote(context.Background(), commentId).Direction(direction).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostVote(context.Background(), commentId).TenantId(tenantId).Direction(direction).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostVote``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// antwoord van `PostVote`: VoteResponse
+	// respons van `PostVote`: VoteResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostVote`: %v\n", resp)
 }
 [inline-code-end]

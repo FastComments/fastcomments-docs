@@ -2,8 +2,10 @@
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| commentId | string | path | はい |  |
-| sso | string | query | いいえ |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## レスポンス
 
@@ -11,7 +13,7 @@
 
 ## 例
 
-[inline-code-attrs-start title = 'postSetCommentText の例'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postSetCommentText 例'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -19,18 +21,24 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // カスタムのHTTPクライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
-    // これはオプションです。デフォルトでは `GuzzleHttp\Client` が使用されます。
+    // カスタム HTTP クライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装したクライアントを渡してください。
+    // これはオプションで、デフォルトでは `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client()
 );
-$comment_id = 'comment_id_example'; // string
+
+$tenant_id = 'tenant_id_example'; // 文字列
+$comment_id = 'comment_id_example'; // 文字列
 $set_comment_text_params = new \FastComments\Client\Model\SetCommentTextParams(); // \FastComments\Client\Model\SetCommentTextParams
-$sso = 'sso_example'; // string
+$options = [
+    'broadcast_id' => 'broadcast_id_example', // 文字列
+    'sso' => 'sso_example', // 文字列
+];
+
 
 try {
-    $result = $apiInstance->postSetCommentText($comment_id, $set_comment_text_params, $sso);
+    $result = $apiInstance->postSetCommentText($tenant_id, $comment_id, $set_comment_text_params, $options);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ModerationApi->postSetCommentText: ', $e->getMessage(), PHP_EOL;
+    echo 'ModerationApi->postSetCommentText の呼び出し時の例外: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]

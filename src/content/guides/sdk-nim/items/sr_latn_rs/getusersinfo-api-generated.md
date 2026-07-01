@@ -1,29 +1,23 @@
----
-Masovne informacije o korisnicima za tenant. Za zadate userIds, vraća prikazne informacije iz User / SSOUser.
-Koristi se u widgetu za komentare da obogati korisnike koji su se upravo pojavili putem presence event-a.
+Skup podataka o korisnicima za tenant. Na osnovu userIds, vraća prikazne informacije iz User / SSOUser.  
+Koristi se u widžetu za komentare kako bi se obogatili korisnici koji su se upravo pojavili putem presence događaja.  
 Bez konteksta stranice: privatnost se primenjuje uniformno (privatni profili su maskirani).
 
-## Parametri
+## Parameters
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
 | tenantId | string | Da |  |
 | ids | string | Ne |  |
 
-## Odgovor
+## Response
 
-Vraća: [`Option[PageUsersInfoResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_info_response.nim)
+Returns: [`Option[PageUsersInfoResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_info_response.nim)
 
-## Primer
+## Example
 
 [inline-code-attrs-start title = 'Primer getUsersInfo'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUsersInfo(tenantId = "my-tenant-123", ids = "user-42,user-87")
-if response.isSome:
-  let usersInfo = response.get()
-  echo "Retrieved users info:", usersInfo
-else:
-  echo "No users info returned. HTTP status:", httpResponse.status
+let (usersInfoOpt, httpResp) = client.getUsersInfo(tenantId = "my-tenant-123", ids = "user42")
+if usersInfoOpt.isSome:
+  let usersInfo = usersInfoOpt.get()
 [inline-code-end]
-
----

@@ -1,34 +1,25 @@
 ## Παράμετροι
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+|------|------|------------|------------|
 | tenantId | string | Ναι |  |
 | id | string | Όχι |  |
 | replaceTenantPackageBody | ReplaceTenantPackageBody | Όχι |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα replaceTenantPackage'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'replaceTenantPackage Παράδειγμα'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.replaceTenantPackage(
+let (optResp, httpResp) = client.replaceTenantPackage(
   tenantId = "my-tenant-123",
-  id = "pkg-987",
-  replaceTenantPackageBody = ReplaceTenantPackageBody(
-    name = "Premium Plan",
-    priceCents = 999,
-    seats = 50,
-    enabled = true,
-    features = @["moderation", "analytics", "priority-support"]
-  )
+  id = "pkg-456",
+  replaceTenantPackageBody = ReplaceTenantPackageBody()
 )
-
-if response.isSome:
-  let apiEmpty = response.get()
-  discard apiEmpty
+if optResp.isSome:
+  let resp = optResp.get()
+  discard resp
 [inline-code-end]
-
----

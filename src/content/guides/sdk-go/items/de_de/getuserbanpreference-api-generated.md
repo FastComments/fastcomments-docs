@@ -1,12 +1,13 @@
 ## Parameter
 
-| Name | Typ | Ort | Erforderlich | Beschreibung |
-|------|------|----------|----------|-------------|
-| sso | string | Abfrage | Nein |  |
+| Name     | Typ    | Ort      | Erforderlich | Beschreibung |
+|----------|--------|----------|--------------|--------------|
+| tenantId | string | query    | Ja           |  |
+| sso      | string | query    | Nein         |  |
 
 ## Antwort
 
-Gibt zurück: [`APIModerateGetUserBanPreferencesResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_moderate_get_user_ban_preferences_response.go)
+Rückgabe: [`APIModerateGetUserBanPreferencesResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_moderate_get_user_ban_preferences_response.go)
 
 ## Beispiel
 
@@ -22,11 +23,12 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	sso := "sso_example" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetUserBanPreference(context.Background()).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetUserBanPreference(context.Background()).TenantId(tenantId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetUserBanPreference``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -35,5 +37,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetUserBanPreference`: %v\n", resp)
 }
 [inline-code-end]
-
----

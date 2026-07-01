@@ -1,6 +1,7 @@
+---
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | limit | number | query | Ne |  |
@@ -9,50 +10,51 @@
 | after | number | query | Ne |  |
 | before | number | query | Ne |  |
 
-## Odziv
+## Odgovor
 
-Vrača: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_audit_logs_response.py)
+Vrne: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_audit_logs_response.py)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer get_audit_logs'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetAuditLogsOptions
 from client.models.get_audit_logs_response import GetAuditLogsResponse
 from client.models.sortdir import SORTDIR
 from client.rest import ApiException
 from pprint import pprint
 
-# Določitev gostitelja je neobvezna in privzeto je https://fastcomments.com
-# Za seznam vseh podprtih konfiguracijskih parametrov glej configuration.py.
+# Definiranje gostitelja je neobvezno in privzeto na https://fastcomments.com
+# Glej configuration.py za seznam vseh podprtih parametrov konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Odjemalec mora nastaviti parametre za overjanje in avtorizacijo
-# v skladu s varnostno politiko API strežnika.
-# Spodaj so primeri za vsak način avtentikacije; uporabi tistega,
-# ki ustreza tvojemu primeru uporabe.
+# Odjemalec mora konfigurirati parametre avtentikacije in avtorizacije
+# v skladu s varnostno politiko strežnika API.
+# Primeri za vsako metodo avtentikacije so na voljo spodaj, uporabite primer, ki
+# ustreza vašemu primeru uporabe avtentikacije.
 
-# Nastavi avtorizacijo z API ključem: api_key
+# Nastavi avtorizacijo API ključa: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Odkomentiraj spodnje, če želiš nastaviti predpono (npr. Bearer) za API ključ, če je potrebno
+# Odkomentirajte spodaj za nastavitev prefiksa (npr. Bearer) za API ključ, po potrebi
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Vstopi v kontekst z instanco API odjemalca
+# Vstopite v kontekst z instanco API odjemalca
 with client.ApiClient(configuration) as api_client:
-    # Ustvari instanco razreda API
+    # Ustvarite instanco API razreda
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    limit = 3.4 # float |  (neobvezno)
-    skip = 3.4 # float |  (neobvezno)
-    order = client.SORTDIR() # SORTDIR |  (neobvezno)
-    after = 3.4 # float |  (neobvezno)
-    before = 3.4 # float |  (neobvezno)
+    limit = 3.4 # float |  (optional)
+    skip = 3.4 # float |  (optional)
+    order = client.SORTDIR() # SORTDIR |  (optional)
+    after = 3.4 # float |  (optional)
+    before = 3.4 # float |  (optional)
 
     try:
-        api_response = api_instance.get_audit_logs(tenant_id, limit=limit, skip=skip, order=order, after=after, before=before)
+        api_response = api_instance.get_audit_logs(tenant_id, GetAuditLogsOptions(limit=limit, skip=skip, order=order, after=after, before=before))
         print("The response of DefaultApi->get_audit_logs:\n")
         pprint(api_response)
     except Exception as e:

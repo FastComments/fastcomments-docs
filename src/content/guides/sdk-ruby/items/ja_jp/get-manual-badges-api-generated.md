@@ -1,8 +1,8 @@
----
 ## パラメータ
 
-| 名称 | 型 | 場所 | 必須 | 説明 |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | はい |  |
 | sso | string | query | いいえ |  |
 
 ## レスポンス
@@ -17,17 +17,16 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # 文字列 | 
 opts = {
   sso: 'sso_example' # 文字列 | 
 }
 
 begin
   
-  result = api_instance.get_manual_badges(opts)
+  result = api_instance.get_manual_badges(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_manual_badges: #{e}"
 end
 [inline-code-end]
-
----

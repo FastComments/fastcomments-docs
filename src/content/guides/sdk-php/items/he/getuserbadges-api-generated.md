@@ -1,53 +1,57 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | כן |  |
-| userId | string | query | לא |  |
-| badgeId | string | query | לא |  |
-| type | number | query | לא |  |
-| displayedOnComments | boolean | query | לא |  |
-| limit | number | query | לא |  |
-| skip | number | query | לא |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| badgeId | string | query | No |  |
+| type | number | query | No |  |
+| displayedOnComments | boolean | query | No |  |
+| limit | number | query | No |  |
+| skip | number | query | No |  |
 
-## תשובה
+## תגובה
 
-מחזיר: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIGetUserBadgesResponse.php)
+מחזירה: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIGetUserBadgesResponse.php)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getUserBadges'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getUserBadges'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// הגדר הרשאת מפתח API: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// הסר את ההערה למטה כדי להגדיר קידומת (לדוגמה Bearer) למפתח ה-API, אם נדרש
-// $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// Configure API key authorization: api_key
+// קונפיגורציית אימות מפתח API: api_key
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// בטל את ההערה מטה כדי להגדיר קידומת (למשל Bearer) למפתח ה-API, אם נדרש
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // אם ברצונך להשתמש בלקוח HTTP מותאם, העבר את הלקוח שמממש את `GuzzleHttp\ClientInterface`.
-    // זה אופציונלי; `GuzzleHttp\Client` ישמש כברירת מחדל.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // אם ברצונך להשתמש בלקוח HTTP מותאם, העבר את הלקוח שלך שמממש `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // זה אופציונלי, `GuzzleHttp\Client` ישמש כברירת מחדל.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // מחרוזת
-$user_id = 'user_id_example'; // מחרוזת
-$badge_id = 'badge_id_example'; // מחרוזת
-$type = 3.4; // מספר עשרוני
-$displayed_on_comments = True; // בוליאני
-$limit = 3.4; // מספר עשרוני
-$skip = 3.4; // מספר עשרוני
+
+$tenant_id = 'tenant_id_example'; // string
+$options = [
+    'user_id' => 'user_id_example', // string
+    'badge_id' => 'badge_id_example', // string
+    'type' => 3.4, // float
+    'displayed_on_comments' => True, // bool
+    'limit' => 3.4, // float
+    'skip' => 3.4, // float
+];
+
 
 try {
-    $result = $apiInstance->getUserBadges($tenant_id, $user_id, $badge_id, $type, $displayed_on_comments, $limit, $skip);
+    $result = $apiInstance->getUserBadges($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getUserBadges: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

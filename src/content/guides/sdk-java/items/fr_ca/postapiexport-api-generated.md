@@ -1,7 +1,8 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Oui |  |
 | text-search | string | query | Non |  |
 | byIPFromComment | string | query | Non |  |
 | filters | string | query | Non |  |
@@ -15,7 +16,7 @@ Renvoie : [`ModerationExportResponse`](https://github.com/FastComments/fastcomme
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de postApiExport'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple postApiExport'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importer les classes :
 import com.fastcomments.invoker.ApiClient;
@@ -30,6 +31,7 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String textSearch = "textSearch_example"; // String | 
     String byIPFromComment = "byIPFromComment_example"; // String | 
     String filters = "filters_example"; // String | 
@@ -37,7 +39,7 @@ public class Example {
     String sorts = "sorts_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationExportResponse result = apiInstance.postApiExport()
+      ModerationExportResponse result = apiInstance.postApiExport(tenantId)
             .textSearch(textSearch)
             .byIPFromComment(byIPFromComment)
             .filters(filters)
@@ -47,6 +49,7 @@ public class Example {
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
+      // Exception lors de l'appel de ModerationApi#postApiExport
       System.err.println("Exception when calling ModerationApi#postApiExport");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());

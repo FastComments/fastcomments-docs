@@ -1,12 +1,10 @@
----
 ## Параметры
 
 | Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
-| commentId | string | Да |  |
-| spam | bool | Нет |  |
-| permNotSpam | bool | Нет |  |
-| sso | string | Нет |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| options | const PostSetCommentSpamStatusOptions& | Yes |  |
 
 ## Ответ
 
@@ -14,24 +12,19 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример использования postSetCommentSpamStatus'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postSetCommentSpamStatus Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t commentId = U("cmt-7890");
-boost::optional<bool> spam = true;
-boost::optional<bool> permNotSpam = false;
-boost::optional<utility::string_t> sso = U("user@example.com");
+auto options = PostSetCommentSpamStatusOptions{};
+options.isSpam = true;
+options.reason = boost::optional<utility::string_t>{U"User reported spam"};
 
-api->postSetCommentSpamStatus(commentId, spam, permNotSpam, sso)
-.then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task) {
-    try {
-        auto resp = task.get();
-        auto ack = std::make_shared<APIEmptyResponse>();
-        if (resp) *ack = *resp;
-        return ack;
-    } catch (...) {
-        return std::make_shared<APIEmptyResponse>();
-    }
-});
+api->postSetCommentSpamStatus(U("my-tenant-123"), U("comment-789"), options)
+    .then([](std::shared_ptr<APIEmptyResponse> resp) {
+        auto copy = std::make_shared<APIEmptyResponse>(*resp);
+    })
+    .then([](pplx::task<void> t) {
+        try { t.get(); } catch(const std::exception&) {}
+    });
 [inline-code-end]
 
 ---

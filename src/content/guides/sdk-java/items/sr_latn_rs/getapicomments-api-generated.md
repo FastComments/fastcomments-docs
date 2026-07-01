@@ -1,16 +1,17 @@
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Ime | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| page | number | query | Ne |  |
-| count | number | query | Ne |  |
-| text-search | string | query | Ne |  |
-| byIPFromComment | string | query | Ne |  |
-| filters | string | query | Ne |  |
-| searchFilters | string | query | Ne |  |
-| sorts | string | query | Ne |  |
-| demo | boolean | query | Ne |  |
-| sso | string | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| page | number | query | No |  |
+| count | number | query | No |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sorts | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -33,6 +34,7 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     Double page = 3.4D; // Double | 
     Double count = 3.4D; // Double | 
     String textSearch = "textSearch_example"; // String | 
@@ -43,7 +45,7 @@ public class Example {
     Boolean demo = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationAPIGetCommentsResponse result = apiInstance.getApiComments()
+      ModerationAPIGetCommentsResponse result = apiInstance.getApiComments(tenantId)
             .page(page)
             .count(count)
             .textSearch(textSearch)
@@ -65,5 +67,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

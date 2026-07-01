@@ -2,7 +2,8 @@
 
 | Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
-| sso | string | query | No |  |
+| tenantId | string | query | Да |  |
+| sso | string | query | Не |  |
 
 ## Отговор
 
@@ -12,7 +13,7 @@
 
 [inline-code-attrs-start title = 'Пример за getCounts'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Импортиране на класове:
+// Импорт на класове:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -25,9 +26,10 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      GetBannedUsersCountResponse result = apiInstance.getCounts()
+      GetBannedUsersCountResponse result = apiInstance.getCounts(tenantId)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -41,3 +43,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

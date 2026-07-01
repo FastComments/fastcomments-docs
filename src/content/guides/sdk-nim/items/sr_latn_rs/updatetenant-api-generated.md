@@ -1,7 +1,7 @@
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
 | tenantId | string | Da |  |
 | id | string | Ne |  |
 | updateTenantBody | UpdateTenantBody | Ne |  |
@@ -12,22 +12,23 @@ Vraća: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomment
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer upotrebe updateTenant'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateTenant Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateTenant(
-  tenantId = "my-tenant-123",
-  id = "settings",
-  updateTenantBody = UpdateTenantBody(
-    name = "My Tenant 123",
-    enableModeration = true,
-    allowedDomains = @["news.example.com", "blog.example.org"],
-    maxCommentLength = 1000
-  )
+let updateBody = UpdateTenantBody(
+  name: "My Tenant",
+  description: "Tenant for news site",
+  isActive: true,
+  allowedDomains: @["example.com", "news.com"]
 )
 
-if response.isSome:
-  let apiResp = response.get()
-  echo "Tenant updated successfully: ", apiResp
-else:
-  echo "Failed to update tenant, HTTP status: ", httpResponse.status
+let (apiResp, httpResp) = client.updateTenant(
+  tenantId = "my-tenant-123",
+  id = "tenant-456",
+  updateTenantBody = updateBody
+)
+
+if apiResp.isSome:
+  let emptyResp = apiResp.get()
 [inline-code-end]
+
+---

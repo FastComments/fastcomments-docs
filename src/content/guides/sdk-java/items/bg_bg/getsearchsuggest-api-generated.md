@@ -1,7 +1,8 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Име | Тип | Местоположение | Задължително | Описание |
+|------|------|----------------|--------------|----------|
+| tenantId | string | query | Да |  |
 | text-search | string | query | Не |  |
 | sso | string | query | Не |  |
 
@@ -11,7 +12,7 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за getSearchSuggest'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getSearchSuggest'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Импортиране на класове:
 import com.fastcomments.invoker.ApiClient;
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String textSearch = "textSearch_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationSuggestResponse result = apiInstance.getSearchSuggest()
+      ModerationSuggestResponse result = apiInstance.getSearchSuggest(tenantId)
             .textSearch(textSearch)
             .sso(sso)
             .execute();
@@ -44,5 +46,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

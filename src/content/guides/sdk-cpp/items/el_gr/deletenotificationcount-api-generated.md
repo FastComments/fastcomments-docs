@@ -1,32 +1,22 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
-|------|------|----------|-------------|
+|------|------|------------|-----------|
 | tenantId | string | Yes |  |
 | id | string | Yes |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα deleteNotificationCount'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteNotificationCount Παράδειγμα'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t countId = U("nc-00123");
-boost::optional<utility::string_t> requestedBy = U("admin@company.com");
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto notificationId = utility::conversions::to_string_t("notif-789");
 
-api->deleteNotificationCount(tenantId, countId)
-.then([requestedBy](pplx::task<std::shared_ptr<APIEmptyResponse>> task) -> std::shared_ptr<APIEmptyResponse> {
-    try {
-        auto resp = task.get();
-        (void)requestedBy;
-        return resp ? resp : std::make_shared<APIEmptyResponse>();
-    } catch (const std::exception&) {
-        return std::make_shared<APIEmptyResponse>();
-    }
-});
+api->deleteNotificationCount(tenantId, notificationId)
+    .then([](std::shared_ptr<APIEmptyResponse> resp) {})
+    .then([](pplx::task<void> t) { try { t.get(); } catch (const std::exception&) {} });
 [inline-code-end]
-
----

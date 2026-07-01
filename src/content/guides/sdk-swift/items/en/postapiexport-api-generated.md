@@ -2,6 +2,7 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | text-search | string | query | No |  |
 | byIPFromComment | string | query | No |  |
 | filters | string | query | No |  |
@@ -20,6 +21,7 @@ Returns: [`ModerationExportResponse`](https://github.com/FastComments/fastcommen
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let textSearch = "textSearch_example" // String |  (optional)
 let byIPFromComment = "byIPFromComment_example" // String |  (optional)
 let filters = "filters_example" // String |  (optional)
@@ -27,7 +29,7 @@ let searchFilters = "searchFilters_example" // String |  (optional)
 let sorts = "sorts_example" // String |  (optional)
 let sso = "sso_example" // String |  (optional)
 
-ModerationAPI.postApiExport(textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, sso: sso) { (response, error) in
+ModerationAPI.postApiExport(tenantId: tenantId, options: ModerationAPI.PostApiExportOptions(textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

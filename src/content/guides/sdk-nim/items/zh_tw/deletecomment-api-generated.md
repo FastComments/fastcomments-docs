@@ -1,26 +1,26 @@
 ## 參數
 
-| 名稱 | 類型 | 必填 | 描述 |
-|------|------|------|-------------|
+| 名稱 | 類型 | 必填 | 說明 |
+|------|------|------|------|
 | tenantId | string | 是 |  |
 | id | string | 否 |  |
-| contextUserId | string | 否 |  |
-| isLive | bool | 否 |  |
+| options | DeleteCommentOptions | 否 |  |
 
 ## 回應
 
-回傳：[`Option[DeleteCommentResult]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_delete_comment_result.nim)
+返回：[`Option[DeleteCommentResult]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_delete_comment_result.nim)
 
 ## 範例
 
 [inline-code-attrs-start title = 'deleteComment 範例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteComment(tenantId = "my-tenant-123", id = "cmt-98765", contextUserId = "user-456", isLive = true)
-if response.isSome:
-  let result = response.get()
-  echo "DeleteCommentResult received"
-else:
-  echo "No result, HTTP status: ", httpResponse.status
-[inline-code-end]
+let (delResult, httpResponse) = client.deleteComment(
+  tenantId = "my-tenant-123",
+  id = "comment-456",
+  options = DeleteCommentOptions()
+)
 
----
+if delResult.isSome:
+  let result = delResult.get()
+  echo result
+[inline-code-end]

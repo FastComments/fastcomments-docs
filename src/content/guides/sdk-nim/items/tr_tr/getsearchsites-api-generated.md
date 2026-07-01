@@ -1,10 +1,9 @@
----
 ## Parametreler
 
-| İsim | Tür | Gerekli | Açıklama |
+| Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
-| value | string | Hayır |  |
-| sso | string | Hayır |  |
+| tenantId | string | Evet |  |
+| options | GetSearchSitesOptions | Hayır |  |
 
 ## Yanıt
 
@@ -12,12 +11,9 @@ Döndürür: [`Option[ModerationSiteSearchResponse]`](https://github.com/FastCom
 
 ## Örnek
 
-[inline-code-attrs-start title = 'getSearchSites Örneği'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSearchSites Örnek'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSearchSites(value = "news/2026-olympics", sso = "sso-user-9876-token")
-if response.isSome:
-  let searchResponse: ModerationSiteSearchResponse = response.get()
-  echo "Found sites for search:", searchResponse
+let (searchResult, httpResp) = client.getSearchSites(tenantId = "my-tenant-123", options = GetSearchSitesOptions())
+if searchResult.isSome:
+  let siteResp = searchResult.get()
 [inline-code-end]
-
----

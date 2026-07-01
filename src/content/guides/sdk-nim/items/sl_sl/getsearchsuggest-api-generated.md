@@ -1,23 +1,24 @@
 ## Parametri
 
-| Ime | Tip | Obvezno | Opis |
+| Ime | Vrsta | Obvezno | Opis |
 |------|------|----------|-------------|
-| textSearch | string | Ne |  |
-| sso | string | Ne |  |
+| tenantId | string | Da |  |
+| options | GetSearchSuggestOptions | Ne |  |
 
 ## Odgovor
 
-Vrača: [`Option[ModerationSuggestResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_suggest_response.nim)
+Vrne: [`Option[ModerationSuggestResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_suggest_response.nim)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer getSearchSuggest'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSearchSuggest Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSearchSuggest(textSearch = "suspicious comment with spammy links", sso = "sso-user-789")
-if response.isSome:
-  let suggest = response.get()
-  echo "ModerationSuggestResponse:"
+let (suggestOpt, httpResp) = client.getSearchSuggest(
+  tenantId = "my-tenant-123",
+  options = GetSearchSuggestOptions(),
+)
+
+if suggestOpt.isSome:
+  let suggest = suggestOpt.get()
   echo suggest
-else:
-  echo "No moderation suggestions returned. HTTP status: ", httpResponse.status
 [inline-code-end]

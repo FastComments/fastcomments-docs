@@ -1,7 +1,8 @@
-## 매개변수
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | text-search | string | query | No |  |
 | byIPFromComment | string | query | No |  |
 | filter | string | query | No |  |
@@ -23,19 +24,24 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // 커스텀 HTTP 클라이언트를 사용하려면 `GuzzleHttp\ClientInterface`를 구현하는 클라이언트를 전달하세요.
-    // 선택 사항입니다. 기본적으로 `GuzzleHttp\Client`가 사용됩니다.
+    // 사용자 지정 HTTP 클라이언트를 사용하려면 `GuzzleHttp\ClientInterface`를 구현하는 클라이언트를 전달하십시오.
+    // 이는 선택 사항이며, 기본값으로 `GuzzleHttp\Client`가 사용됩니다.
     new GuzzleHttp\Client()
 );
-$text_search = 'text_search_example'; // string
-$by_ip_from_comment = 'by_ip_from_comment_example'; // string
-$filter = 'filter_example'; // string
-$search_filters = 'search_filters_example'; // string
-$demo = True; // bool
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // string
+$options = [
+    'text_search' => 'text_search_example', // string
+    'by_ip_from_comment' => 'by_ip_from_comment_example', // string
+    'filter' => 'filter_example', // string
+    'search_filters' => 'search_filters_example', // string
+    'demo' => True, // bool
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->getCount($text_search, $by_ip_from_comment, $filter, $search_filters, $demo, $sso);
+    $result = $apiInstance->getCount($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getCount: ', $e->getMessage(), PHP_EOL;

@@ -31,13 +31,17 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
-$user_id = 'user_id_example'; // string
-$anon_user_id = 'anon_user_id_example'; // string
+$options = [
+    'user_id' => 'user_id_example', // string
+    'anon_user_id' => 'anon_user_id_example', // string
+];
+
 
 try {
-    $result = $apiInstance->unFlagComment($tenant_id, $id, $user_id, $anon_user_id);
+    $result = $apiInstance->unFlagComment($tenant_id, $id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->unFlagComment: ', $e->getMessage(), PHP_EOL;

@@ -2,6 +2,7 @@
 
 | שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | כן |  |
 | text-search | string | query | לא |  |
 | byIPFromComment | string | query | לא |  |
 | filter | string | query | לא |  |
@@ -15,24 +16,26 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-get_count'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_count דוגמה'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetCountOptions
 from client.models.moderation_api_count_comments_response import ModerationAPICountCommentsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת host אופציונלית ובברירת מחדל היא https://fastcomments.com
-# ראה configuration.py לרשימה של כל פרמטרי התצורה הנתמכים.
+# הגדרת המארח היא אופציונלית ובברירת מחדל https://fastcomments.com
+# ראה configuration.py לקבלת רשימה של כל פרמטרי ההגדרה הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# הכנס להקשר עם מופע של לקוח ה-API
+# הכנס לקונטקסט עם מופע של לקוח ה-API
 with client.ApiClient(configuration) as api_client:
     # צור מופע של מחלקת ה-API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     text_search = 'text_search_example' # str |  (אופציונלי)
     by_ip_from_comment = 'by_ip_from_comment_example' # str |  (אופציונלי)
     filter = 'filter_example' # str |  (אופציונלי)
@@ -41,7 +44,7 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (אופציונלי)
 
     try:
-        api_response = api_instance.get_count(text_search=text_search, by_ip_from_comment=by_ip_from_comment, filter=filter, search_filters=search_filters, demo=demo, sso=sso)
+        api_response = api_instance.get_count(tenant_id, GetCountOptions(text_search=text_search, by_ip_from_comment=by_ip_from_comment, filter=filter, search_filters=search_filters, demo=demo, sso=sso))
         print("The response of ModerationApi->get_count:\n")
         pprint(api_response)
     except Exception as e:

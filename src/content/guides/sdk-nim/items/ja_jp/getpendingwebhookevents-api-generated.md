@@ -3,33 +3,21 @@
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
 | tenantId | string | はい |  |
-| commentId | string | はい |  |
-| externalId | string | いいえ |  |
-| eventType | string | いいえ |  |
-| domain | string | いいえ |  |
-| attemptCountGT | float64 | いいえ |  |
-| skip | float64 | いいえ |  |
+| options | GetPendingWebhookEventsOptions | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`Option[GetPendingWebhookEventsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_pending_webhook_events_response.nim)
+返り値: [`Option[GetPendingWebhookEventsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_pending_webhook_events_response.nim)
 
 ## 例
 
 [inline-code-attrs-start title = 'getPendingWebhookEvents の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getPendingWebhookEvents(
+let (maybeResp, httpResp) = client.getPendingWebhookEvents(
   tenantId = "my-tenant-123",
-  commentId = "cmt-987654",
-  externalId = "",
-  eventType = "",
-  domain = "",
-  attemptCountGT = 0.0,
-  skip = 0.0
+  options = GetPendingWebhookEventsOptions()
 )
-if response.isSome:
-  let pending = response.get()
-  discard pending
-[inline-code-end]
 
----
+if maybeResp.isSome:
+  let resp = maybeResp.get()
+[inline-code-end]

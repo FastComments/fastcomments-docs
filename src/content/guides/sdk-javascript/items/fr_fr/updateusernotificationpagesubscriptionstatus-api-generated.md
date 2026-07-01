@@ -1,9 +1,10 @@
-Activer ou désactiver les notifications pour une page. Lorsque des utilisateurs sont abonnés à une page, des notifications sont créées pour les nouveaux commentaires racine, et aussi
+Activer ou désactiver les notifications pour une page. Lorsque les utilisateurs sont abonnés à une page, des notifications sont créées
+pour les nouveaux commentaires racine, et aussi
 
-## Paramètres
+## Parameters
 
-| Nom | Type | Requis | Description |
-|------|------|----------|-------------|
+| Nom | Type | Obligatoire | Description |
+|------|------|------------|-------------|
 | tenantId | string | Oui |  |
 | urlId | string | Oui |  |
 | url | string | Oui |  |
@@ -11,25 +12,38 @@ Activer ou désactiver les notifications pour une page. Lorsque des utilisateurs
 | subscribedOrUnsubscribed | UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum | Oui |  |
 | sso | string | Non |  |
 
-## Réponse
+## Response
 
-Retourne: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateUserNotificationPageSubscriptionStatusResponse.ts)
+Returns: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateUserNotificationPageSubscriptionStatusResponse.ts)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple updateUserNotificationPageSubscriptionStatus'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "8a3f2b1c-4d6e-4f9b-9c2d-0a1b2c3d4e5f";
-const urlId: string = "article-2026-reliable-api";
-const url: string = "https://blog.companyexample.com/articles/reliable-api-patterns";
-const pageTitle: string = "Reliable API Patterns for Integrations";
-const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fake.payload";
-const result: UpdateUserNotificationPageSubscriptionStatusResponse = await updateUserNotificationPageSubscriptionStatus(
-  tenantId,
-  urlId,
-  url,
-  pageTitle,
-  UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum.Subscribed,
-  sso
-);
+(async () => {
+  const tenantId: string = "tenant-2024";
+  const urlId: string = "page-5678";
+  const url: string = "https://example.com/articles/typescript-tips";
+  const pageTitle: string = "Top TypeScript Tips";
+  const subscribedOrUnsubscribed: UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum =
+    UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum.Subscribed;
+  const sso: string = "sso-token-xyz";
+
+  const resultWithSso: UpdateUserNotificationPageSubscriptionStatusResponse = await updateUserNotificationPageSubscriptionStatus(
+    tenantId,
+    urlId,
+    url,
+    pageTitle,
+    subscribedOrUnsubscribed,
+    sso
+  );
+
+  const resultWithoutSso: UpdateUserNotificationPageSubscriptionStatusResponse = await updateUserNotificationPageSubscriptionStatus(
+    tenantId,
+    urlId,
+    url,
+    pageTitle,
+    subscribedOrUnsubscribed
+  );
+})();
 [inline-code-end]

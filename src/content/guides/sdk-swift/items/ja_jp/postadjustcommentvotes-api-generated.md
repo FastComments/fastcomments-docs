@@ -1,26 +1,30 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | タイプ | ロケーション | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| commentId | string | path | はい |  |
-| sso | string | query | いいえ |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
-## レスポンス
+## 応答
 
-戻り値: [`AdjustVotesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AdjustVotesResponse.swift)
+返却: [`AdjustVotesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AdjustVotesResponse.swift)
 
 ## 例
 
-[inline-code-attrs-start title = 'postAdjustCommentVotes の例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postAdjustCommentVotes 例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 以下のコードサンプルはまだベータ版です。問題がある場合は http://github.com/OpenAPITools/openapi-generator/issues/new へご報告ください
+// 以下のコードサンプルはまだベータ版です。問題がある場合は、http://github.com/OpenAPITools/openapi-generator/issues/new から報告してください
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
 let adjustCommentVotesParams = AdjustCommentVotesParams(adjustVoteAmount: 123) // AdjustCommentVotesParams | 
-let sso = "sso_example" // String |  （オプション）
+let broadcastId = "broadcastId_example" // String |  (optional)
+let sso = "sso_example" // String |  (optional)
 
-ModerationAPI.postAdjustCommentVotes(commentId: commentId, adjustCommentVotesParams: adjustCommentVotesParams, sso: sso) { (response, error) in
+ModerationAPI.postAdjustCommentVotes(tenantId: tenantId, commentId: commentId, adjustCommentVotesParams: adjustCommentVotesParams, options: ModerationAPI.PostAdjustCommentVotesOptions(broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -31,5 +35,3 @@ ModerationAPI.postAdjustCommentVotes(commentId: commentId, adjustCommentVotesPar
     }
 }
 [inline-code-end]
-
----

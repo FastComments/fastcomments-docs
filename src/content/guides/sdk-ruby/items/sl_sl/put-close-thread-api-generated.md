@@ -1,9 +1,10 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| urlId | string | query | Da |  |
-| sso | string | query | Ne |  |
+| Ime | Tip | Lokacija | Obvezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -17,14 +18,15 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
-url_id = 'url_id_example' # Niz | 
+tenant_id = 'tenant_id_example' # String | 
+url_id = 'url_id_example' # String | 
 opts = {
-  sso: 'sso_example' # Niz | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.put_close_thread(url_id, opts)
+  result = api_instance.put_close_thread(tenant_id, url_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->put_close_thread: #{e}"

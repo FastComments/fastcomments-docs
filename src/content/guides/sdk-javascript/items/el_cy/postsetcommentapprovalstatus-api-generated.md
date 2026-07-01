@@ -1,23 +1,39 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
-|------|------|----------|-------------|
-| commentId | string | Ναι |  |
-| approved | boolean | Όχι |  |
-| sso | string | Όχι |  |
+|------|------|-----------|-----------|
+| commentId | string | Yes |  |
+| approved | boolean | No |  |
+| broadcastId | string | No |  |
+| tenantId | string | No |  |
+| sso | string | No |  |
 
-## Απόκριση
+## Απάντηση
 
-Επιστρέφει: [`SetCommentApprovedResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SetCommentApprovedResponse.ts)
+Επιστρέφει: [`PostSetCommentApprovalStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostSetCommentApprovalStatusResponse.ts)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα postSetCommentApprovalStatus'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const commentId: string = 'cmt_4b8f2a1d';
-const approved: boolean = true;
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ssoSignature.example';
-const result: SetCommentApprovedResponse = await postSetCommentApprovalStatus(commentId, approved, sso);
-[inline-code-end]
+async function main() {
+  const commentIdOnly: string = "cmt_1001";
+  const resultOnly: PostSetCommentApprovalStatusResponse = await postSetCommentApprovalStatus(commentIdOnly);
 
----
+  const commentIdFull: string = "cmt_2002";
+  const approvedFull: boolean = true;
+  const broadcastIdFull: string = "brd_3003";
+  const tenantIdFull: string = "tenant_abc";
+  const ssoFull: string = "sso_token_xyz";
+  const resultFull: PostSetCommentApprovalStatusResponse = await postSetCommentApprovalStatus(
+    commentIdFull,
+    approvedFull,
+    broadcastIdFull,
+    tenantIdFull,
+    ssoFull
+  );
+
+  console.log(resultOnly, resultFull);
+}
+main();
+[inline-code-end]

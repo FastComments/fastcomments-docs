@@ -1,9 +1,10 @@
 ## Parametri
 
-| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
-|------|------|----------|----------|-------------|
-| urlId | string | query | Sì |  |
-| sso | string | query | No |  |
+| Nome    | Tipo   | Posizione | Obbligatorio | Descrizione |
+|---------|--------|-----------|--------------|-------------|
+| tenantId | string | query     | Sì           |  |
+| urlId    | string | query     | Sì           |  |
+| sso      | string | query     | No           |  |
 
 ## Risposta
 
@@ -11,9 +12,9 @@ Restituisce: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-j
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di putCloseThread'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio putCloseThread'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importa le classi:
+// Importa classi:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      APIEmptyResponse result = apiInstance.putCloseThread(urlId)
+      APIEmptyResponse result = apiInstance.putCloseThread(tenantId, urlId)
             .sso(sso)
             .execute();
       System.out.println(result);

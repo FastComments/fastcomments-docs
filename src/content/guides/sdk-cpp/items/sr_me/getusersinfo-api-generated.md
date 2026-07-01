@@ -1,34 +1,30 @@
----
-Skupne informacije o korisnicima za tenant. Za date userIds, vraća prikazne informacije iz User / SSOUser.
-Koristi ga widget za komentare da obogati korisnike koji su se upravo pojavili putem događaja prisutnosti.
-Bez konteksta stranice: privatnost se ujednačeno primjenjuje (privatni profili su maskirani).
+Bulk user info for a tenant. Given userIds, return display info from User / SSOUser. Used by the comment widget to enrich users that just appeared via a presence event. No page context: privacy is enforced uniformly (private profiles are masked).
 
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Da |  |
-| ids | string | Da |  |
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| ids | string | Yes |  |
 
 ## Odgovor
 
 Vraća: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PageUsersInfoResponse.h)
 
-## Primjer
+## Primer
 
-[inline-code-attrs-start title = 'getUsersInfo Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getUsersInfo'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 utility::string_t ids = U("alice@example.com,bob@example.com");
-boost::optional<utility::string_t> statusFilter = U("active");
+boost::optional<utility::string_t> locale = boost::make_optional(U("en-US"));
+
 api->getUsersInfo(tenantId, ids).then([](pplx::task<std::shared_ptr<PageUsersInfoResponse>> t){
-    try {
-        auto res = t.get();
-        if (res) {
-            auto responseCopy = std::make_shared<PageUsersInfoResponse>(*res);
-        }
-    } catch (const std::exception&) {}
+    try{
+        auto response = t.get();
+        // obradi odgovor
+    }catch(const std::exception&){
+        // obradi grešku
+    }
 });
 [inline-code-end]
-
----

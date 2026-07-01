@@ -1,32 +1,35 @@
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| urlId | string | כן |  |
-| broadcastId | string | כן |  |
-| commentData | CommentData | כן |  |
-| sessionId | string | לא |  |
-| sso | string | לא |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| broadcastId | string | Yes |  |
+| commentData | CommentData | Yes |  |
+| options | const CreateCommentPublicOptions& | Yes |  |
 
-## Response
+## תגובה
 
 מחזיר: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/SaveCommentsResponseWithPresence.h)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-createCommentPublic'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת createCommentPublic'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::string_t("my-tenant-123");
-utility::string_t urlId = utility::string_t("/articles/2026/new-feature");
-utility::string_t broadcastId = utility::string_t("broadcast-789");
-auto commentDataPtr = std::make_shared<CommentData>();
-commentDataPtr->content = utility::string_t("Great article! Thanks for sharing.");
-commentDataPtr->authorEmail = utility::string_t("reader@example.com");
-boost::optional<utility::string_t> sessionId = boost::optional<utility::string_t>(utility::string_t("sess-456"));
-boost::optional<utility::string_t> sso;
-api->createCommentPublic(tenantId, urlId, broadcastId, *commentDataPtr, sessionId, sso)
-    .then([](std::shared_ptr<SaveCommentsResponseWithPresence> resp){
-        (void)resp;
+auto comment = CommentData();
+comment.body = U("This is a test comment");
+comment.authorName = U("John Doe");
+comment.authorEmail = U("john.doe@example.com");
+
+CreateCommentPublicOptions opts;
+opts.replyToCommentId = boost::optional<utility::string_t>(U("parent-123"));
+
+api->createCommentPublic(
+    U("my-tenant-123"),
+    U("article-456"),
+    U("broadcast-789"),
+    comment,
+    opts).then([](std::shared_ptr<SaveCommentsResponseWithPresence> res){
+        auto commentId = res->commentId;
     });
 [inline-code-end]

@@ -1,40 +1,27 @@
 ## Parametreler
 
-| Name | Type | Required | Description |
+| Ad | Tip | Gerekli | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
-| questionId | string | Hayır |  |
-| questionIds | vector<string | Hayır |  |
-| urlId | string | Hayır |  |
-| timeBucket | AggregateTimeBucket | Hayır |  |
-| startDate | datetime | Hayır |  |
-| forceRecalculate | bool | Hayır |  |
+| options | const AggregateQuestionResultsOptions& | Evet |  |
 
 ## Yanıt
 
-Döndürür: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/AggregateQuestionResultsResponse.h)
+Döner: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/AggregateQuestionResultsResponse.h)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'aggregateQuestionResults Örneği'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-boost::optional<utility::string_t> questionId = boost::optional<utility::string_t>(U("question-42"));
-boost::optional<std::vector<utility::string_t>> questionIds = boost::optional<std::vector<utility::string_t>>(std::vector<utility::string_t>{U("question-42"), U("question-84")});
-boost::optional<utility::string_t> urlId = boost::optional<utility::string_t>(U("https://www.example.com/articles/123"));
-boost::optional<AggregateTimeBucket> timeBucket = boost::optional<AggregateTimeBucket>(AggregateTimeBucket::Daily);
-boost::optional<utility::datetime> startDate = boost::optional<utility::datetime>(utility::datetime::from_string(U("2024-06-01T00:00:00Z")));
-boost::optional<bool> forceRecalculate = boost::optional<bool>(true);
-
-api->aggregateQuestionResults(tenantId, questionId, questionIds, urlId, timeBucket, startDate, forceRecalculate)
-.then([](pplx::task<std::shared_ptr<AggregateQuestionResultsResponse>> task){
-    try {
-        auto resp = task.get();
-        auto safeResp = resp ? resp : std::make_shared<AggregateQuestionResultsResponse>();
-        (void)safeResp;
-    } catch (const std::exception&) {
-    }
-});
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+AggregateQuestionResultsOptions opts;
+opts.questionId = utility::conversions::to_string_t("question-789");
+opts.startDate = boost::optional<utility::datetime>(utility::datetime::from_string(U("2023-01-01T00:00:00Z"), utility::datetime::ISO_8601));
+opts.endDate = boost::optional<utility::datetime>(utility::datetime::from_string(U("2023-01-31T23:59:59Z"), utility::datetime::ISO_8601));
+api->aggregateQuestionResults(tenantId, opts)
+    .then([](std::shared_ptr<AggregateQuestionResultsResponse> resp) {
+        static_cast<void>(resp);
+    });
 [inline-code-end]
 
 ---

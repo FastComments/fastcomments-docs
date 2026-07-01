@@ -1,7 +1,8 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
 | value | string | query | Ne |  |
 | sso | string | query | Ne |  |
 
@@ -9,11 +10,11 @@
 
 Vraća: [`ModerationUserSearchResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationUserSearchResponse.java)
 
-## Primjer
+## Primer
 
-[inline-code-attrs-start title = 'Primjer getSearchUsers'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getSearchUsers'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvoz klasa:
+// Uvezi klase:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,19 +27,20 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String value = "value_example"; // String | 
-    String sso = "sso_example"; // String | 
+    String sgo = "sso_example"; // String | 
     try {
-      ModerationUserSearchResponse result = apiInstance.getSearchUsers()
+      ModerationUserSearchResponse result = apiInstance.getSearchUsers(tenantId)
             .value(value)
-            .sso(sso)
+            .sso(sgo)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ModerationApi#getSearchUsers");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("Izuzetak pri pozivanju ModerationApi#getSearchUsers");
+      System.err.println("Status kod: " + e.getCode());
+      System.err.println("Razlog: " + e.getResponseBody());
+      System.err.println("Zaglavlja odgovora: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }

@@ -1,7 +1,8 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
+|--------|------|-----------|-----------|-------------|
+| tenantId | string | query | Yes |  |
 | text-search | string | query | No |  |
 | byIPFromComment | string | query | No |  |
 | filters | string | query | No |  |
@@ -16,7 +17,7 @@ Devuelve: [`ModerationAPIGetCommentIdsResponse`](https://github.com/FastComments
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de getApiIds'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo getApiIds'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importar clases:
 import com.fastcomments.invoker.ApiClient;
@@ -31,6 +32,7 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String textSearch = "textSearch_example"; // String | 
     String byIPFromComment = "byIPFromComment_example"; // String | 
     String filters = "filters_example"; // String | 
@@ -39,7 +41,7 @@ public class Example {
     Boolean demo = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationAPIGetCommentIdsResponse result = apiInstance.getApiIds()
+      ModerationAPIGetCommentIdsResponse result = apiInstance.getApiIds(tenantId)
             .textSearch(textSearch)
             .byIPFromComment(byIPFromComment)
             .filters(filters)
@@ -59,5 +61,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

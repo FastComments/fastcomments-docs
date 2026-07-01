@@ -1,9 +1,10 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| urlId | string | параметр запроса | Да |  |
-| sso | string | параметр запроса | Нет |  |
+| tenantId | string | query | Да |  |
+| urlId | string | query | Да |  |
+| sso | string | query | Нет |  |
 
 ## Ответ
 
@@ -19,19 +20,20 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Если вы хотите использовать собственный HTTP-клиент, передайте клиент, который реализует `GuzzleHttp\ClientInterface`.
-    // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
+    // Если вы хотите использовать кастомный HTTP‑клиент, передайте ваш клиент, реализующий `GuzzleHttp\ClientInterface`.
+    // Это опционально, `GuzzleHttp\Client` будет использоваться по умолчанию.
     new GuzzleHttp\Client()
 );
+
+$tenant_id = 'tenant_id_example'; // строка
 $url_id = 'url_id_example'; // строка
 $sso = 'sso_example'; // строка
 
+
 try {
-    $result = $apiInstance->putReopenThread($url_id, $sso);
+    $result = $apiInstance->putReopenThread($tenant_id, $url_id, $sso);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->putReopenThread: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

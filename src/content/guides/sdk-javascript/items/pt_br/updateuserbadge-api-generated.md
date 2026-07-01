@@ -1,31 +1,32 @@
----
 ## Parâmetros
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Sim |  |
-| id | string | Sim |  |
-| updateUserBadgeParams | UpdateUserBadgeParams | Sim |  |
+| Nome | Tipo | Obrigatório | Descrição |
+|------|------|------------|-----------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updateUserBadgeParams | UpdateUserBadgeParams | Yes |  |
 
 ## Resposta
 
-Retorna: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptySuccessResponse.ts)
+Retorna: [`UpdateUserBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateUserBadgeResponse.ts)
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de updateUserBadge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserBadge Exemplo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-web-tenant-7";
-const id: string = "badge_48f2a9";
-const updateUserBadgeParams: UpdateUserBadgeParams = {
-  label: "Community Champion",
-  description: "Awarded for exceptional moderation and sustained helpful responses",
-  active: true,
-  expiresAt: "2026-12-31T23:59:59Z", // expiração opcional demonstrada
-  notifyUsers: true,
-  metadata: { awardedBy: "moderator_jane" }
-};
-const result: APIEmptySuccessResponse = await updateUserBadge(tenantId, id, updateUserBadgeParams);
-[inline-code-end]
+async function applyBadge() {
+    const tenantId: string = "acme-corp-tenant";
+    const userId: string = "user-98765";
 
----
+    const params: UpdateUserBadgeParams = {
+        badgeId: "gold-contributor",
+        // optional field example
+        expiresAt: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
+    };
+
+    const result: UpdateUserBadgeResponse = await updateUserBadge(tenantId, userId, params);
+    console.log(result);
+}
+
+applyBadge();
+[inline-code-end]

@@ -1,25 +1,27 @@
-## Parameters
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов'язковий | Опис |
 |------|------|----------|----------|-------------|
-| value | string | query | Нет |  |
-| sso | string | query | Нет |  |
+| tenantId | string | query | Так |  |
+| value | string | query | Ні |  |
+| sso | string | query | Ні |  |
 
-## Response
+## Відповідь
 
-Возвращает: [`ModerationPageSearchResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationPageSearchResponse.swift)
+Повертає: [`ModerationPageSearchResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationPageSearchResponse.swift)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример getSearchPages'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад getSearchPages'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие примеры кода всё ещё находятся в статусе бета. При возникновении проблем, пожалуйста, сообщите об этом по адресу http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наступні зразки коду ще в бета-версії. У випадку будь-яких проблем, будь ласка, повідомте за посиланням http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let value = "value_example" // String |  (необязательно)
-let sso = "sso_example" // String |  (необязательно)
+let tenantId = "tenantId_example" // String | 
+let value = "value_example" // String |  (необов'язковий)
+let sso = "sso_example" // String |  (необов'язковий)
 
-ModerationAPI.getSearchPages(value: value, sso: sso) { (response, error) in
+ModerationAPI.getSearchPages(tenantId: tenantId, options: ModerationAPI.GetSearchPagesOptions(value: value, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -30,5 +32,3 @@ ModerationAPI.getSearchPages(value: value, sso: sso) { (response, error) in
     }
 }
 [inline-code-end]
-
----

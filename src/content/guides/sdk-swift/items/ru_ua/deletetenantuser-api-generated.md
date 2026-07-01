@@ -1,29 +1,29 @@
-## Параметры
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| id | string | path | Да |  |
-| deleteComments | string | query | Нет |  |
-| commentDeleteMode | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| deleteComments | string | query | No |  |
+| commentDeleteMode | string | query | No |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
+Повертає: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример deleteTenantUser'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад deleteTenantUser'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие примеры кода всё ещё находятся в бета-версии. В случае проблемы, пожалуйста, сообщите по адресу http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наступні зразки коду ще у бета-версії. При будь-якій проблемі, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let id = "id_example" // String | 
-let deleteComments = "deleteComments_example" // String |  (необязательно)
-let commentDeleteMode = "commentDeleteMode_example" // String |  (необязательно)
+let deleteComments = "deleteComments_example" // String |  (необов'язково)
+let commentDeleteMode = "commentDeleteMode_example" // String |  (необов'язково)
 
-DefaultAPI.deleteTenantUser(tenantId: tenantId, id: id, deleteComments: deleteComments, commentDeleteMode: commentDeleteMode) { (response, error) in
+DefaultAPI.deleteTenantUser(tenantId: tenantId, id: id, options: DefaultAPI.DeleteTenantUserOptions(deleteComments: deleteComments, commentDeleteMode: commentDeleteMode)) { (response, error) in
     guard error == nil else {
         print(error)
         return

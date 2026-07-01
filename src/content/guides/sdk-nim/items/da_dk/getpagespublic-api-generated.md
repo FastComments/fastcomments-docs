@@ -1,17 +1,14 @@
-Lister sider for en tenant. Bruges af FChat desktop-klienten til at udfylde dens rumliste.
-Kræver, at `enableFChat` er true i den løste brugerdefinerede konfiguration for hver side.
-Sider, der kræver SSO, bliver filtreret i forhold til den anmodende brugers gruppeadgang.
+---
+Liste sider for en lejer. Bruges af FChat skrivebordsklienten til at udfylde sin rumliste.
+Kræver, at `enableFChat` er sand på den løste brugerdefinerede konfiguration for hver side.
+Sider, der kræver SSO, filtreres i forhold til den anmodende brugers gruppeadgang.
 
 ## Parametre
 
-| Name | Type | Required | Description |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
-| cursor | string | No |  |
-| limit | int | No |  |
-| q | string | No |  |
-| sortBy | PagesSortBy | No |  |
-| hasComments | bool | No |  |
+| options | GetPagesPublicOptions | No |  |
 
 ## Svar
 
@@ -21,18 +18,10 @@ Returnerer: [`Option[GetPublicPagesResponse]`](https://github.com/FastComments/f
 
 [inline-code-attrs-start title = 'getPagesPublic Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getPagesPublic(
-  tenantId = "my-tenant-123",
-  cursor = "",
-  limit = 0,
-  q = "",
-  sortBy = PagesSortBy(0),
-  hasComments = false
-)
-
+let (response, httpResponse) = client.getPagesPublic(tenantId = "my-tenant-123", options = GetPagesPublicOptions())
 if response.isSome:
   let pages = response.get()
-  echo "Retrieved public pages: ", $pages
-else:
-  echo "No pages returned, HTTP status: ", $httpResponse.status
+  echo pages
 [inline-code-end]
+
+---

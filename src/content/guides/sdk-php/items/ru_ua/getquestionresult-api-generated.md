@@ -1,7 +1,7 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Имя | Тип | Местоположение | Обязательно | Описание |
+|------|------|----------------|--------------|----------|
 | tenantId | string | query | Да |  |
 | id | string | path | Да |  |
 
@@ -17,20 +17,22 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Настройка авторизации по API-ключу: api_key
+// Настройте авторизацию с помощью API-ключа: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для API-ключа, если это необходимо
+// Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для API-ключа, если необходимо
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Если вы хотите использовать собственный HTTP-клиент, передайте клиент, который реализует `GuzzleHttp\ClientInterface`.
-    // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
+    // Если вы хотите использовать кастомный http-клиент, передайте ваш клиент, который реализует `GuzzleHttp\ClientInterface`.
+    // Это опционально, `GuzzleHttp\Client` будет использоваться по умолчанию.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$id = 'id_example'; // string
+
+$tenant_id = 'tenant_id_example'; // строка
+$id = 'id_example'; // строка
+
 
 try {
     $result = $apiInstance->getQuestionResult($tenant_id, $id);

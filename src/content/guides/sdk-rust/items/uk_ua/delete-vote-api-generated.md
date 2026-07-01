@@ -1,10 +1,10 @@
 ## Параметри
 
-| Назва | Тип | Обов'язковий | Опис |
-|------|------|----------|-------------|
-| tenant_id | String | Так |  |
-| id | String | Так |  |
-| edit_key | String | Ні |  |
+| Назва | Тип | Обов’язково | Опис |
+|------|------|-------------|------|
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
+| edit_key | String | No |  |
 
 ## Відповідь
 
@@ -12,15 +12,15 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад delete_vote'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_vote Приклад'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let params: DeleteVoteParams = DeleteVoteParams {
-        tenant_id: String::from("acme-corp-tenant"),
-        id: String::from("article-5678-comment-1234"),
-        edit_key: Some(String::from("editkey-9b2f4e")),
+async fn example() -> Result<(), Error> {
+    let params = DeleteVoteParams {
+        tenant_id: "acme-corp".to_string(),
+        id: "vote-12345".to_string(),
+        edit_key: Some("edit-key-abc".to_string()),
     };
-    let response: VoteDeleteResponse = delete_vote(&configuration, params).await?;
+    let _response: VoteDeleteResponse = delete_vote(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

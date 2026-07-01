@@ -1,9 +1,9 @@
----
 ## Parametre
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
-|------|------|----------|----------|-------------|
-| sso | string | forespørgsel | Nej |  |
+|------|------|-----------|----------|-------------|
+| tenantId | string | query | Ja |  |
+| sso | string | query | Nej |  |
 
 ## Svar
 
@@ -11,7 +11,7 @@ Returnerer: [`APIModerateGetUserBanPreferencesResponse`](https://github.com/Fast
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på GetUserBanPreference'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GetUserBanPreference Eksempel'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,11 +23,12 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	sso := "sso_example" // string |  (valgfri)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetUserBanPreference(context.Background()).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetUserBanPreference(context.Background()).TenantId(tenantId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetUserBanPreference``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

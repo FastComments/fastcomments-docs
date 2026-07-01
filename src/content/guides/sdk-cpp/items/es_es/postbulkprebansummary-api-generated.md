@@ -1,13 +1,10 @@
----
 ## Parámetros
 
-| Name | Type | Required | Description |
+| Nombre | Tipo | Requerido | Descripción |
 |------|------|----------|-------------|
-| bulkPreBanParams | BulkPreBanParams | Sí |  |
-| includeByUserIdAndEmail | bool | No |  |
-| includeByIP | bool | No |  |
-| includeByEmailDomain | bool | No |  |
-| sso | string | No |  |
+| tenantId | string | Yes |  |
+| bulkPreBanParams | BulkPreBanParams | Yes |  |
+| options | const PostBulkPreBanSummaryOptions& | Yes |  |
 
 ## Respuesta
 
@@ -15,25 +12,19 @@ Devuelve: [`BulkPreBanSummary`](https://github.com/FastComments/fastcomments-cpp
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de postBulkPreBanSummary'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postBulkPreBanSummary Ejemplo'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-BulkPreBanParams params;
-params.tenantId = utility::string_t(U("my-tenant-123"));
-params.emails = std::vector<utility::string_t>{ U("alice@example.com"), U("bob@example.org") };
-params.ipAddresses = std::vector<utility::string_t>{ U("203.0.113.45"), U("198.51.100.22") };
-boost::optional<bool> includeByUserIdAndEmail(true);
-boost::optional<bool> includeByIP(false);
-boost::optional<bool> includeByEmailDomain(true);
-boost::optional<utility::string_t> sso(utility::string_t(U("sso-token-xyz")));
-api->postBulkPreBanSummary(params, includeByUserIdAndEmail, includeByIP, includeByEmailDomain, sso)
-.then([](pplx::task<std::shared_ptr<BulkPreBanSummary>> t){
-    try {
-        auto summary = t.get();
-        if (summary) {
-            auto summaryCopy = std::make_shared<BulkPreBanSummary>(*summary);
-        }
-    } catch (const std::exception&) {}
-});
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+BulkPreBanParams bulkPreBanParams;
+bulkPreBanParams.emails = {
+    utility::conversions::to_string_t("spam1@example.com"),
+    utility::conversions::to_string_t("spam2@example.com")
+};
+bulkPreBanParams.reason = utility::conversions::to_string_t("spam");
+PostBulkPreBanSummaryOptions options;
+options.requestId = boost::optional<utility::string_t>(utility::conversions::to_string_t("req-456"));
+api->postBulkPreBanSummary(tenantId, bulkPreBanParams, options)
+    .then([](std::shared_ptr<BulkPreBanSummary> result) {
+        (void)result;
+    });
 [inline-code-end]
-
----

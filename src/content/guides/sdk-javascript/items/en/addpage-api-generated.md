@@ -13,14 +13,18 @@ Returns: [`AddPageAPIResponse`](https://github.com/FastComments/fastcomments-sdk
 
 [inline-code-attrs-start title = 'addPage Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9b3f2c1a';
-const createData: CreateAPIPageData = {
-  title: 'Q3 Product Roadmap',
-  slug: 'q3-product-roadmap',
-  content: '<h1>Goals</h1><p>Focus on performance and reliability improvements.</p>',
-  authorId: 'user_84c2',
-  published: false,            // optional flag demonstrated
-  tags: ['product', 'roadmap'] // optional metadata demonstrated
+const tenantId: string = "tenant_9f8432b1-4c2e-4f9d-8a5d-7bc9e2f6d9a0";
+
+const pageData: CreateAPIPageData = {
+    url: "https://example.com/articles/fastcomments-intro",
+    title: "FastComments Introduction",
+    description: "An introductory guide to FastComments API usage.",
+    tags: ["fastcomments", "api", "tutorial"],
+    metadata: {
+        author: "Jane Doe",
+        publishedAt: "2024-03-15T08:00:00Z"
+    }
 };
-const result: AddPageAPIResponse = await addPage(tenantId, createData);
+
+const response: AddPageAPIResponse = await addPage(tenantId, pageData);
 [inline-code-end]

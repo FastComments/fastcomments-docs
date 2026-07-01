@@ -1,27 +1,24 @@
----
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
-|------|------|---------|-------------|
+| Naam | Type | Verplicht | Beschrijving |
+|------|------|-----------|--------------|
 | tenant_id | String | Ja |  |
 | user_id | String | Nee |  |
 
-## Respons
+## Reactie
 
-Geeft terug: [`GetSubscriptionsApiResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_subscriptions_api_response.rs)
+Retourneert: [`GetSubscriptionsApiResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_subscriptions_api_response.rs)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'get_subscriptions Voorbeeld'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_subscriptions() -> Result<GetSubscriptionsApiResponse, Error> {
-    let params: GetSubscriptionsParams = GetSubscriptionsParams {
+async fn fetch_subscriptions(config: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetSubscriptionsParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        user_id: Some("user-9876".to_string()),
+        user_id: Some("user-12345".to_string()),
     };
-    let subscriptions: GetSubscriptionsApiResponse = get_subscriptions(&configuration, params).await?;
-    Ok(subscriptions)
+    let _response: GetSubscriptionsApiResponse = get_subscriptions(config, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

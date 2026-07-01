@@ -1,9 +1,10 @@
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Ime | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| urlId | string | query | Da |  |
-| sso | string | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      APIEmptyResponse result = apiInstance.putReopenThread(urlId)
+      APIEmptyResponse result = apiInstance.putReopenThread(tenantId, urlId)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -43,5 +45,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

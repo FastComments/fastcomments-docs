@@ -1,4 +1,4 @@
-Omogočite ali onemogočite obvestila za stran. Ko so uporabniki naročeni na stran, se ustvarijo obvestila za nove vrhnje komentarje, in tudi
+Omogoči ali onemogoči obvestila za stran. Ko so uporabniki naročeni na stran, se ustvarijo obvestila za nove korenske komentarje, in tudi
 
 ## Parametri
 
@@ -9,28 +9,26 @@ Omogočite ali onemogočite obvestila za stran. Ko so uporabniki naročeni na st
 | url | string | Ne |  |
 | pageTitle | string | Ne |  |
 | subscribedOrUnsubscribed | string | Ne |  |
-| sso | string | Ne |  |
+| sso | string = "" | Ne |  |
 
 ## Odgovor
 
-Vrne: [`Option[UpdateUserNotificationPageSubscriptionStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_page_subscription_status_response.nim)
+Returns: [`Option[UpdateUserNotificationPageSubscriptionStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_page_subscription_status_response.nim)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer updateUserNotificationPageSubscriptionStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateUserNotificationPageSubscriptionStatus(
+let (optResp, httpResp) = client.updateUserNotificationPageSubscriptionStatus(
   tenantId = "my-tenant-123",
-  urlId = "news/economy/market-rally-2026-06-19",
-  url = "",
-  pageTitle = "",
-  subscribedOrUnsubscribed = "",
+  urlId = "news/article-456",
+  url = "https://example.com/news/article-456",
+  pageTitle = "Breaking News: Something Happened",
+  subscribedOrUnsubscribed = "subscribed",
   sso = ""
 )
 
-if response.isSome:
-  let updateResp = response.get()
-  echo "Subscription update received: ", updateResp
-else:
-  echo "No subscription update returned."
+if optResp.isSome:
+  let resp = optResp.get()
+  # further processing with resp
 [inline-code-end]

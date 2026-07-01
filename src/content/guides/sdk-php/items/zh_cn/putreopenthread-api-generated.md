@@ -1,14 +1,14 @@
----
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| urlId | string | query | 是 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## 响应
 
-返回: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
+Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
 ## 示例
 
@@ -20,15 +20,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // 如果想使用自定义 HTTP 客户端，请传入实现 `GuzzleHttp\ClientInterface` 的客户端。
-    // 这是可选的，默认将使用 `GuzzleHttp\Client`。
+    // 如果您想使用自定义 HTTP 客户端，请传入实现 `GuzzleHttp\ClientInterface` 的客户端。
+    // 这是可选的，默认使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client()
 );
-$url_id = 'url_id_example'; // string
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // 字符串
+$url_id = 'url_id_example'; // 字符串
+$sso = 'sso_example'; // 字符串
+
 
 try {
-    $result = $apiInstance->putReopenThread($url_id, $sso);
+    $result = $apiInstance->putReopenThread($tenant_id, $url_id, $sso);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->putReopenThread: ', $e->getMessage(), PHP_EOL;

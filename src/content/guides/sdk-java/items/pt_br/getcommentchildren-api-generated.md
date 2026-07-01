@@ -1,7 +1,8 @@
 ## Parâmetros
 
-| Nome | Tipo | Local | Obrigatório | Descrição |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Localização | Obrigatório | Descrição |
+|------|------|-------------|-------------|-----------|
+| tenantId | string | query | Sim |  |
 | commentId | string | path | Sim |  |
 | sso | string | query | Não |  |
 
@@ -11,7 +12,7 @@ Retorna: [`ModerationAPIChildCommentsResponse`](https://github.com/FastComments/
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getCommentChildren'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo getCommentChildren'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importar classes:
 import com.fastcomments.invoker.ApiClient;
@@ -26,22 +27,21 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationAPIChildCommentsResponse result = apiInstance.getCommentChildren(commentId)
+      ModerationAPIChildCommentsResponse result = apiInstance.getCommentChildren(tenantId, commentId)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ModerationApi#getCommentChildren");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("Exceção ao chamar ModerationApi#getCommentChildren");
+      System.err.println("Código de status: " + e.getCode());
+      System.err.println("Motivo: " + e.getResponseBody());
+      System.err.println("Cabeçalhos da resposta: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }
 }
 [inline-code-end]
-
----

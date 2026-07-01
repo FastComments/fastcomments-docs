@@ -1,24 +1,24 @@
 ## Parameter
 
-| Name | Typ | Ort | Erforderlich | Beschreibung |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| commentId | string | query | Nein |  |
-| externalId | string | query | Nein |  |
-| eventType | string | query | Nein |  |
-| type | string | query | Nein |  |
-| domain | string | query | Nein |  |
-| attemptCountGT | number | query | Nein |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | query | No |  |
+| externalId | string | query | No |  |
+| eventType | string | query | No |  |
+| type | string | query | No |  |
+| domain | string | query | No |  |
+| attemptCountGT | number | query | No |  |
 
 ## Antwort
 
-Gibt zurück: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPendingWebhookEventCountResponse.swift)
+Rückgabe: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPendingWebhookEventCountResponse.swift)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'getPendingWebhookEventCount Beispiel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Die folgenden Codebeispiele sind noch Beta. Bei Problemen melden Sie diese bitte unter http://github.com/OpenAPITools/openapi-generator/issues/new
+// Die folgenden Codebeispiele sind noch in der Beta-Phase. Bei Problemen bitte melden über http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -29,7 +29,7 @@ let type = "type_example" // String |  (optional)
 let domain = "domain_example" // String |  (optional)
 let attemptCountGT = 987 // Double |  (optional)
 
-DefaultAPI.getPendingWebhookEventCount(tenantId: tenantId, commentId: commentId, externalId: externalId, eventType: eventType, type: type, domain: domain, attemptCountGT: attemptCountGT) { (response, error) in
+DefaultAPI.getPendingWebhookEventCount(tenantId: tenantId, options: DefaultAPI.GetPendingWebhookEventCountOptions(commentId: commentId, externalId: externalId, eventType: eventType, type: type, domain: domain, attemptCountGT: attemptCountGT)) { (response, error) in
     guard error == nil else {
         print(error)
         return

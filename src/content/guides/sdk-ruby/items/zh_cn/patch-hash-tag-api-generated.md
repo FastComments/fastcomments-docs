@@ -1,9 +1,9 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 描述 |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| tag | string | path | 是 |  |
-| tenantId | string | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| tag | string | path | Yes |  |
 
 ## 响应
 
@@ -19,22 +19,22 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # 配置 API 密钥授权: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # 取消注释以下行以为 API 密钥设置前缀，例如 'Bearer' (defaults to nil)
+  # 取消注释以下行以为 API 密钥设置前缀，例如 'Bearer'（默认值为 nil）
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
+tenant_id = 'tenant_id_example' # String | 
 tag = 'tag_example' # String | 
-opts = {
-  tenant_id: 'tenant_id_example', # String | 
-  update_hash_tag_body: FastCommentsClient::UpdateHashTagBody.new # UpdateHashTagBody | 
-}
+update_hash_tag_body = FastCommentsClient::UpdateHashTagBody.new # UpdateHashTagBody | 
 
 begin
   
-  result = api_instance.patch_hash_tag(tag, opts)
+  result = api_instance.patch_hash_tag(tenant_id, tag, update_hash_tag_body)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->patch_hash_tag: #{e}"
 end
 [inline-code-end]
+
+---

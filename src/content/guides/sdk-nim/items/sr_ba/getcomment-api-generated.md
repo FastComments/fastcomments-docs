@@ -1,24 +1,20 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| id | string | Ne |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[APIGetCommentResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_get_comment_response.nim)
+Враћа: [`Option[APIGetCommentResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_get_comment_response.nim)
 
-## Primjer
+## Пример
 
-[inline-code-attrs-start title = 'getComment Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getComment Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getComment(tenantId = "my-tenant-123", id = "cmt-7890")
+let (response, httpResponse) = client.getComment(tenantId = "my-tenant-123", id = "cmt-789")
 if response.isSome:
   let comment = response.get()
   discard comment
-else:
-  echo "Comment not found"
 [inline-code-end]
-
----

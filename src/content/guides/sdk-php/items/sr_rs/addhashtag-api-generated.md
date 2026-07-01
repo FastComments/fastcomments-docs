@@ -1,35 +1,37 @@
-## Параметри
+## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Не |  |
+| Ime | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateHashTagResponse.php)
+Vraća: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateHashTagResponse.php)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример addHashTag'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'addHashTag Primer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Конфигуришите ауторизацију API кључа: api_key
+// Konfiguriši autorizaciju API ključa: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Ако је потребно, уклоните коментар испод да бисте подесили префикс (нпр. Bearer) за API кључ
+// Otkomentarišite ispod da postaviš prefiks (npr. Bearer) za API ključ, po potrebi
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ако желите да користите прилагођени HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционо, `GuzzleHttp\Client` ће бити коришћен као подразумевани.
+    // Ako želiš koristiti prilagođeni http klijent, prosledi svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opciono, `GuzzleHttp\Client` će biti korišćen kao podrazumevani.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $create_hash_tag_body = new \FastComments\Client\Model\CreateHashTagBody(); // \FastComments\Client\Model\CreateHashTagBody
+
 
 try {
     $result = $apiInstance->addHashTag($tenant_id, $create_hash_tag_body);
@@ -38,3 +40,5 @@ try {
     echo 'Exception when calling DefaultApi->addHashTag: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

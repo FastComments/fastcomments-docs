@@ -1,6 +1,6 @@
 ## Параметри
 
-| Name | Type | Required | Опис |
+| Назва | Тип | Обов’язково | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Так |  |
 | id | string | Ні |  |
@@ -13,13 +13,8 @@
 
 [inline-code-attrs-start title = 'Приклад getQuestionResult'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getQuestionResult(tenantId = "my-tenant-123", id = "question-456")
-if response.isSome:
-  let result = response.get()
-  echo "Question result received:"
-  echo result
-else:
-  echo "No question result returned, HTTP status: ", $httpResponse.status
+let (optResult, httpResp) = client.getQuestionResult(tenantId = "my-tenant-123", id = "question-456")
+if optResult.isSome:
+  let result = optResult.get()
+  discard result
 [inline-code-end]
-
----

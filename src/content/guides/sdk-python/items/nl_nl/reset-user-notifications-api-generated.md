@@ -10,7 +10,7 @@
 | noDm | boolean | query | Nee |  |
 | sso | string | query | Nee |  |
 
-## Antwoord
+## Respons
 
 Retourneert: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/reset_user_notifications_response.py)
 
@@ -19,22 +19,23 @@ Retourneert: [`ResetUserNotificationsResponse`](https://github.com/FastComments/
 [inline-code-attrs-start title = 'reset_user_notifications Voorbeeld'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import ResetUserNotificationsOptions
 from client.models.reset_user_notifications_response import ResetUserNotificationsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Het instellen van de host is optioneel en standaard https://fastcomments.com
+# Het definiëren van de host is optioneel en standaard https://fastcomments.com
 # Zie configuration.py voor een lijst van alle ondersteunde configuratieparameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Ga in een context met een instantie van de API-client
+# Open een context met een instantie van de API-client
 with client.ApiClient(configuration) as api_client:
     # Maak een instantie van de API-klasse
     api_instance = client.PublicApi(api_client)
-    tenant_id = 'tenant_id_example' # str | 
+    tenant_id = 'tenant_id_example' # str |
     after_id = 'after_id_example' # str |  (optioneel)
     after_created_at = 56 # int |  (optioneel)
     unread_only = True # bool |  (optioneel)
@@ -43,7 +44,7 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (optioneel)
 
     try:
-        api_response = api_instance.reset_user_notifications(tenant_id, after_id=after_id, after_created_at=after_created_at, unread_only=unread_only, dm_only=dm_only, no_dm=no_dm, sso=sso)
+        api_response = api_instance.reset_user_notifications(tenant_id, ResetUserNotificationsOptions(after_id=after_id, after_created_at=after_created_at, unread_only=unread_only, dm_only=dm_only, no_dm=no_dm, sso=sso))
         print("The response of PublicApi->reset_user_notifications:\n")
         pprint(api_response)
     except Exception as e:

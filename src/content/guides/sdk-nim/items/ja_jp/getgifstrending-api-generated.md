@@ -1,11 +1,10 @@
+---
 ## パラメータ
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
 | tenantId | string | はい |  |
-| locale | string | いいえ |  |
-| rating | string | いいえ |  |
-| page | float64 | いいえ |  |
+| options | GetGifsTrendingOptions | いいえ |  |
 
 ## レスポンス
 
@@ -15,12 +14,14 @@
 
 [inline-code-attrs-start title = 'getGifsTrending の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getGifsTrending(tenantId = "my-tenant-123",
-  locale = "en-US",
-  rating = "pg-13",
-  page = 1.0)
-if response.isSome:
-  let trending = response.get()
+let (maybeResponse, httpResponse) = client.getGifsTrending(
+  tenantId = "my-tenant-123",
+  options = GetGifsTrendingOptions()
+)
+
+if maybeResponse.isSome:
+  let gifs = maybeResponse.get()
+  echo gifs
 [inline-code-end]
 
 ---

@@ -1,25 +1,25 @@
----
-## Параметры
+## Параметри
 
-| Имя | Тип | Обязательно | Описание |
+| Назва | Тип | Обов'язковий | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
+| tenantId | string | Так |  |
+| id | string | Так |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIGetUserBadgeProgressResponse.ts)
+Повертає: [`GetUserBadgeProgressByIdResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserBadgeProgressByIdResponse.ts)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример использования getUserBadgeProgressById'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUserBadgeProgressById Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-tenant-72b1";
-const badgeId: string = "badge-4d9f12";
-const result: APIGetUserBadgeProgressResponse = await getUserBadgeProgressById(tenantId, badgeId);
-const status: APIStatus | undefined = result?.status;
-const progressList: UserBadgeProgress[] | undefined = result?.progress;
-const firstProgress: UserBadgeProgress | undefined = progressList?.[0];
+async function demo(): Promise<void> {
+    const tenantId: string = "acme-corp";
+    const userId: string = "user-42";
+    const result: GetUserBadgeProgressByIdResponse = await getUserBadgeProgressById(tenantId, userId);
+    const progress: UserBadgeProgress | undefined = result.progress;
+    const earnedAt: Date | undefined = progress?.earnedAt;
+    console.log(`Badge earned at: ${earnedAt?.toISOString() ?? "not earned yet"}`);
+}
+demo();
 [inline-code-end]
-
----

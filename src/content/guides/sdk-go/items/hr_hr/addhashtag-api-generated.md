@@ -1,8 +1,8 @@
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Ne |  |
+| Ime | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
 
 ## Odgovor
 
@@ -22,8 +22,8 @@ import (
 )
 
 func main() {
-	tenantId := "tenantId_example" // string |  (neobavezno)
-	createHashTagBody := *openapiclient.NewCreateHashTagBody("Tag_example") // CreateHashTagBody |  (neobavezno)
+	tenantId := "tenantId_example" // string | 
+	createHashTagBody := *openapiclient.NewCreateHashTagBody("Tag_example") // CreateHashTagBody |  (opcionalno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -32,7 +32,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.AddHashTag``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor od `AddHashTag`: CreateHashTagResponse
+	// odgovor iz `AddHashTag`: CreateHashTagResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.AddHashTag`: %v\n", resp)
 }
 [inline-code-end]

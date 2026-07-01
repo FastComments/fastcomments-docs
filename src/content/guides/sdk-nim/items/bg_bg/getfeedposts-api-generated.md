@@ -7,9 +7,7 @@ afterId
 | Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
-| afterId | string | Не |  |
-| limit | int | Не |  |
-| tags | seq[string] | Не |  |
+| options | GetFeedPostsOptions | Не |  |
 
 ## Отговор
 
@@ -19,15 +17,8 @@ afterId
 
 [inline-code-attrs-start title = 'Пример за getFeedPosts'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getFeedPosts(
-  tenantId = "my-tenant-123",
-  afterId = "",
-  limit = 0,
-  tags = @[]
-)
-if response.isSome:
-  let feed = response.get()
-  echo "Feed retrieved for tenant my-tenant-123"
+let (feedResponseOpt, httpResp) = client.getFeedPosts(tenantId = "my-tenant-123", options = GetFeedPostsOptions())
+if feedResponseOpt.isSome:
+  let feedResponse = feedResponseOpt.get()
+  echo feedResponse
 [inline-code-end]
-
----

@@ -1,31 +1,33 @@
 ## Παράμετροι
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| badgeId | string | query | Ναι |  |
-| userId | string | query | Όχι |  |
-| commentId | string | query | Όχι |  |
-| broadcastId | string | query | Όχι |  |
-| sso | string | query | Όχι |  |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|------------|-----------|
+| tenantId | string | ερώτημα | Ναι |  |
+| badgeId | string | ερώτημα | Ναι |  |
+| userId | string | ερώτημα | Όχι |  |
+| commentId | string | ερώτημα | Όχι |  |
+| broadcastId | string | ερώτημα | Όχι |  |
+| sso | string | ερώτημα | Όχι |  |
 
 ## Απόκριση
 
-Επιστρέφει: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AwardUserBadgeResponse.swift)
+Returns: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AwardUserBadgeResponse.swift)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα putAwardBadge'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Τα ακόλουθα παραδείγματα κώδικα είναι ακόμα σε beta. Για οποιοδήποτε πρόβλημα, παρακαλώ αναφέρετε μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
+// Τα παρακάτω δείγματα κώδικα είναι ακόμα beta. Για οποιοδήποτε πρόβλημα, παρακαλούμε αναφέρετέ το μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let badgeId = "badgeId_example" // String | 
-let userId = "userId_example" // String |  (προαιρετικό)
-let commentId = "commentId_example" // String |  (προαιρετικό)
-let broadcastId = "broadcastId_example" // String |  (προαιρετικό)
-let sso = "sso_example" // String |  (προαιρετικό)
+let userId = "userId_example" // String |  (optional)
+let commentId = "commentId_example" // String |  (optional)
+let broadcastId = "broadcastId_example" // String |  (optional)
+let sso = "sso_example" // String |  (optional)
 
-ModerationAPI.putAwardBadge(badgeId: badgeId, userId: userId, commentId: commentId, broadcastId: broadcastId, sso: sso) { (response, error) in
+ModerationAPI.putAwardBadge(tenantId: tenantId, badgeId: badgeId, options: ModerationAPI.PutAwardBadgeOptions(userId: userId, commentId: commentId, broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -36,5 +38,3 @@ ModerationAPI.putAwardBadge(badgeId: badgeId, userId: userId, commentId: comment
     }
 }
 [inline-code-end]
-
----

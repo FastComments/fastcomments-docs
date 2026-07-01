@@ -1,11 +1,10 @@
----
 ## Параметри
 
 | Име | Тип | Задължително | Описание |
-|------|------|----------|-------------|
+|------|------|--------------|----------|
 | tenantId | string | Да |  |
 | commentIds | string | Не |  |
-| sso | string | Не |  |
+| sso | string = "" | Не |  |
 
 ## Отговор
 
@@ -13,18 +12,15 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за checkedCommentsForBlocked'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'checkedCommentsForBlocked Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.checkedCommentsForBlocked(
+let (maybeResponse, httpResponse) = client.checkedCommentsForBlocked(
   tenantId = "my-tenant-123",
-  commentIds = "",
+  commentIds = "cmt-1,cmt-2",
   sso = ""
 )
-if response.isSome:
-  let blockedResp = response.get()
-  echo "Received blocked comments response: ", blockedResp
-else:
-  echo "No response body; HTTP status: ", $httpResponse.status
-[inline-code-end]
 
----
+if maybeResponse.isSome:
+  let response = maybeResponse.get()
+  discard response
+[inline-code-end]

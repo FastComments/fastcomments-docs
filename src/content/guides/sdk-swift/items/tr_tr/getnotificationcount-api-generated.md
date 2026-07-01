@@ -1,4 +1,4 @@
-## Parametreler
+## Parameters
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
@@ -9,15 +9,15 @@
 | viewed | boolean | query | Hayır |  |
 | type | string | query | Hayır |  |
 
-## Yanıt
+## Response
 
 Döndürür: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetNotificationCountResponse.swift)
 
-## Örnek
+## Example
 
 [inline-code-attrs-start title = 'getNotificationCount Örneği'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Aşağıdaki kod örnekleri hâlâ beta durumundadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new adresinden bildirin
+// Aşağıdaki kod örnekleri hâlâ beta aşamasındadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new adresinden bildirin
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -27,7 +27,7 @@ let fromCommentId = "fromCommentId_example" // String |  (isteğe bağlı)
 let viewed = true // Bool |  (isteğe bağlı)
 let type = "type_example" // String |  (isteğe bağlı)
 
-DefaultAPI.getNotificationCount(tenantId: tenantId, userId: userId, urlId: urlId, fromCommentId: fromCommentId, viewed: viewed, type: type) { (response, error) in
+DefaultAPI.getNotificationCount(tenantId: tenantId, options: DefaultAPI.GetNotificationCountOptions(userId: userId, urlId: urlId, fromCommentId: fromCommentId, viewed: viewed, type: type)) { (response, error) in
     guard error == nil else {
         print(error)
         return

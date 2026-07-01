@@ -1,17 +1,18 @@
-## Параметры
+## Параметри
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Yes |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Так |  |
+| commentId | string | path | Так |  |
+| sso | string | query | Ні |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`GetCommentTextResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCommentTextResponse.php)
+Повертає: [`GetCommentTextResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCommentTextResponse.php)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример getModerationCommentText'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад getModerationCommentText'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -19,15 +20,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Если вы хотите использовать пользовательский HTTP-клиент, передайте клиент, который реализует `GuzzleHttp\ClientInterface`.
-    // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
+    // Якщо хочете використати власний HTTP-клієнт, передайте ваш клієнт, що реалізує `GuzzleHttp\ClientInterface`.
+    // Це необов’язково, за замовчуванням буде використаний `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
-$comment_id = 'comment_id_example'; // строка
-$sso = 'sso_example'; // строка
+
+$tenant_id = 'tenant_id_example'; // string
+$comment_id = 'comment_id_example'; // string
+$sso = 'sso_example'; // string
+
 
 try {
-    $result = $apiInstance->getModerationCommentText($comment_id, $sso);
+    $result = $apiInstance->getModerationCommentText($tenant_id, $comment_id, $sso);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getModerationCommentText: ', $e->getMessage(), PHP_EOL;

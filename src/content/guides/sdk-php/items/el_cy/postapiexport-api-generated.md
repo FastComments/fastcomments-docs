@@ -1,21 +1,22 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
-| text-search | string | query | Όχι |  |
-| byIPFromComment | string | query | Όχι |  |
-| filters | string | query | Όχι |  |
-| searchFilters | string | query | Όχι |  |
-| sorts | string | query | Όχι |  |
-| sso | string | query | Όχι |  |
+|------|------|----------|-----------|-----------|
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sorts | string | query | No |  |
+| sso | string | query | No |  |
 
-## Απάντηση
+## Απόκριση
 
 Επιστρέφει: [`ModerationExportResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationExportResponse.php)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα postApiExport'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postApiExport Παράδειγμα'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -23,19 +24,24 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Αν θέλετε να χρησιμοποιήσετε προσαρμοσμένο HTTP client, περάστε τον client σας που υλοποιεί `GuzzleHttp\ClientInterface`.
-    // Αυτό είναι προαιρετικό, ως προεπιλογή θα χρησιμοποιηθεί το `GuzzleHttp\Client`.
+    // Εάν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε τον client σας που υλοποιεί `GuzzleHttp\ClientInterface`.
+    // Αυτό είναι προαιρετικό, το `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
     new GuzzleHttp\Client()
 );
-$text_search = 'text_search_example'; // string
-$by_ip_from_comment = 'by_ip_from_comment_example'; // string
-$filters = 'filters_example'; // string
-$search_filters = 'search_filters_example'; // string
-$sorts = 'sorts_example'; // string
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // string
+$options = [
+    'text_search' => 'text_search_example', // string
+    'by_ip_from_comment' => 'by_ip_from_comment_example', // string
+    'filters' => 'filters_example', // string
+    'search_filters' => 'search_filters_example', // string
+    'sorts' => 'sorts_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->postApiExport($text_search, $by_ip_from_comment, $filters, $search_filters, $sorts, $sso);
+    $result = $apiInstance->postApiExport($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->postApiExport: ', $e->getMessage(), PHP_EOL;

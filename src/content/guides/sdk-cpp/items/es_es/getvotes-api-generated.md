@@ -1,7 +1,6 @@
----
 ## Parámetros
 
-| Nombre | Tipo | Requerido | Descripción |
+| Nombre | Tipo | Obligatorio | Descripción |
 |------|------|----------|-------------|
 | tenantId | string | Sí |  |
 | urlId | string | Sí |  |
@@ -12,20 +11,18 @@ Devuelve: [`GetVotesResponse`](https://github.com/FastComments/fastcomments-cpp/
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de getVotes'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo getVotes'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<int> limit = 50;
-auto fallback = std::make_shared<GetVotesResponse>();
-api->getVotes(utility::conversions::to_string_t("my-tenant-123"), utility::conversions::to_string_t("article-9876"))
-.then([fallback, limit](pplx::task<std::shared_ptr<GetVotesResponse>> t) {
+auto tenantId = utility::string_t(U("my-tenant-123"));
+auto urlId = utility::string_t(U("article-456"));
+boost::optional<utility::string_t> extraHeader = boost::none;
+
+api->getVotes(tenantId, urlId).then([=](pplx::task<std::shared_ptr<GetVotesResponse>> task) {
     try {
-        auto resp = t.get();
-        if (!resp) resp = fallback;
-        if (limit) {
-            auto processed = std::make_shared<GetVotesResponse>(*resp);
-        }
-    } catch (const std::exception& e) {
-        auto errorResp = std::make_shared<GetVotesResponse>();
+        auto original = task.get();
+        auto response = std::make_shared<GetVotesResponse>(*original);
+    } catch (...) {
+        // manejo de errores
     }
 });
 [inline-code-end]

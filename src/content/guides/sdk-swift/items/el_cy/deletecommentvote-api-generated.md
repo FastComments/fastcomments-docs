@@ -1,14 +1,14 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Ναι |  |
-| commentId | string | path | Ναι |  |
-| voteId | string | path | Ναι |  |
-| urlId | string | query | Ναι |  |
-| broadcastId | string | query | Ναι |  |
-| editKey | string | query | Όχι |  |
-| sso | string | query | Όχι |  |
+|------|------|----------|------------|-----------|
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| voteId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| broadcastId | string | query | Yes |  |
+| editKey | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Απάντηση
 
@@ -16,9 +16,9 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα deleteCommentVote'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteCommentVote Παράδειγμα'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Τα ακόλουθα δείγματα κώδικα είναι ακόμα πιλοτικά. Για οποιοδήποτε πρόβλημα, παρακαλώ αναφέρετε μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
+// Τα παρακάτω δείγματα κώδικα είναι ακόμη beta. Για οποιοδήποτε πρόβλημα, παρακαλώ αναφέρετέ το μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -29,7 +29,7 @@ let broadcastId = "broadcastId_example" // String |
 let editKey = "editKey_example" // String |  (προαιρετικό)
 let sso = "sso_example" // String |  (προαιρετικό)
 
-PublicAPI.deleteCommentVote(tenantId: tenantId, commentId: commentId, voteId: voteId, urlId: urlId, broadcastId: broadcastId, editKey: editKey, sso: sso) { (response, error) in
+PublicAPI.deleteCommentVote(tenantId: tenantId, commentId: commentId, voteId: voteId, urlId: urlId, broadcastId: broadcastId, options: PublicAPI.DeleteCommentVoteOptions(editKey: editKey, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

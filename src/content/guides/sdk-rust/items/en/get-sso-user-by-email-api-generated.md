@@ -13,12 +13,14 @@ Returns: [`GetSsoUserByEmailApiResponse`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'get_sso_user_by_email Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_sso_user() -> Result<GetSsoUserByEmailApiResponse, Error> {
-    let params: GetSsoUserByEmailParams = GetSsoUserByEmailParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        email: "jane.doe@acme.com".to_string(),
+async fn run_example(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let tenant_id = Some("acme-corp".to_string());
+    let email = Some("john.doe@example.com".to_string());
+    let params = GetSsoUserByEmailParams {
+        tenant_id: tenant_id.unwrap(),
+        email: email.unwrap(),
     };
-    let user: GetSsoUserByEmailApiResponse = get_sso_user_by_email(&configuration, params).await?;
-    Ok(user)
+    let _response = get_sso_user_by_email(configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]

@@ -1,7 +1,8 @@
 ## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | 是 |  |
 | page | number | query | 否 |  |
 | count | number | query | 否 |  |
 | text-search | string | query | 否 |  |
@@ -24,6 +25,7 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # 字串 | 
 opts = {
   page: 1.2, # 浮點數 | 
   count: 1.2, # 浮點數 | 
@@ -38,9 +40,11 @@ opts = {
 
 begin
   
-  result = api_instance.get_api_comments(opts)
+  result = api_instance.get_api_comments(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_api_comments: #{e}"
 end
 [inline-code-end]
+
+---

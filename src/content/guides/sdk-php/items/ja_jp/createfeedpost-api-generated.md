@@ -1,16 +1,16 @@
 ## パラメータ
 
-| 名前 | 型 | 位置 | 必須 | 説明 |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | はい |  |
-| broadcastId | string | query | いいえ |  |
-| isLive | boolean | query | いいえ |  |
-| doSpamCheck | boolean | query | いいえ |  |
-| skipDupCheck | boolean | query | いいえ |  |
+| tenantId | string | query | Yes |  |
+| broadcastId | string | query | No |  |
+| isLive | boolean | query | No |  |
+| doSpamCheck | boolean | query | No |  |
+| skipDupCheck | boolean | query | No |  |
 
 ## レスポンス
 
-返却: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateFeedPostsResponse.php)
+戻り値: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateFeedPostsResponse.php)
 
 ## 例
 
@@ -20,29 +20,35 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// API キー認証を設定: api_key
+// APIキー認証を設定: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// 必要に応じて、以下のコメントを解除して API キーの接頭辞（例: Bearer）を設定してください
+// 必要に応じて、APIキーのプレフィックス（例: Bearer）を設定するには、以下のコメントを解除してください
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // カスタムのHTTPクライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
-    // これはオプションです。デフォルトでは `GuzzleHttp\Client` が使用されます。
+    // カスタム HTTP クライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装したクライアントを渡してください。
+    // これはオプションで、デフォルトでは `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // 型: string
-$create_feed_post_params = new \FastComments\Client\Model\CreateFeedPostParams(); // 型: \FastComments\Client\Model\CreateFeedPostParams
-$broadcast_id = 'broadcast_id_example'; // 型: string
-$is_live = True; // 型: bool
-$do_spam_check = True; // 型: bool
-$skip_dup_check = True; // 型: bool
+
+$tenant_id = 'tenant_id_example'; // string
+$create_feed_post_params = new \FastComments\Client\Model\CreateFeedPostParams(); // \FastComments\Client\Model\CreateFeedPostParams
+$options = [
+    'broadcast_id' => 'broadcast_id_example', // string
+    'is_live' => True, // bool
+    'do_spam_check' => True, // bool
+    'skip_dup_check' => True, // bool
+];
+
 
 try {
-    $result = $apiInstance->createFeedPost($tenant_id, $create_feed_post_params, $broadcast_id, $is_live, $do_spam_check, $skip_dup_check);
+    $result = $apiInstance->createFeedPost($tenant_id, $create_feed_post_params, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->createFeedPost: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

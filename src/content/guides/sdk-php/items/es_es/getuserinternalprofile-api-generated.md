@@ -1,7 +1,8 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
+|--------|------|-----------|-----------|-------------|
+| tenantId | string | query | Sí |  |
 | commentId | string | query | No |  |
 | sso | string | query | No |  |
 
@@ -11,7 +12,7 @@ Devuelve: [`GetUserInternalProfileResponse`](https://github.com/FastComments/fas
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de getUserInternalProfile'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo getUserInternalProfile'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -19,15 +20,20 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Si desea usar un cliente HTTP personalizado, pase su cliente que implemente `GuzzleHttp\ClientInterface`.
-    // Esto es opcional, `GuzzleHttp\Client` se usará por defecto.
+    // Si deseas usar un cliente HTTP personalizado, pasa tu cliente que implemente `GuzzleHttp\ClientInterface`.
+    // Esto es opcional, se usará `GuzzleHttp\Client` por defecto.
     new GuzzleHttp\Client()
 );
-$comment_id = 'comment_id_example'; // string
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // string
+$options = [
+    'comment_id' => 'comment_id_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->getUserInternalProfile($comment_id, $sso);
+    $result = $apiInstance->getUserInternalProfile($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getUserInternalProfile: ', $e->getMessage(), PHP_EOL;

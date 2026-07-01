@@ -1,22 +1,22 @@
-## Параметры
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов'язковий | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | No |  |
+| tenantId | string | query | Yes |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateHashTagResponse.swift)
+Повертає: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateHashTagResponse.swift)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример использования addHashTag'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад addHashTag'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие примеры кода всё ещё в бета-версии. В случае проблем, пожалуйста, сообщите через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наступні зразки коду все ще бета. У разі проблем, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let tenantId = "tenantId_example" // String |  (необязательно)
-let createHashTagBody = CreateHashTagBody(tenantId: "tenantId_example", tag: "tag_example", url: "url_example") // CreateHashTagBody |  (необязательно)
+let tenantId = "tenantId_example" // String | 
+let createHashTagBody = CreateHashTagBody(tenantId: "tenantId_example", tag: "tag_example", url: "url_example") // CreateHashTagBody |  (необов'язково)
 
 DefaultAPI.addHashTag(tenantId: tenantId, createHashTagBody: createHashTagBody) { (response, error) in
     guard error == nil else {
@@ -29,5 +29,3 @@ DefaultAPI.addHashTag(tenantId: tenantId, createHashTagBody: createHashTagBody) 
     }
 }
 [inline-code-end]
-
----

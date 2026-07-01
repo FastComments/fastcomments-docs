@@ -1,9 +1,10 @@
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-------------|
+|------|------|------------|-----------|
+| tenantId | string | Sim |  |
 | commentId | string | Sim |  |
-| sso | string | Não |  |
+| sso | string = "" | Não |  |
 
 ## Resposta
 
@@ -11,12 +12,12 @@ Retorna: [`Option[ModerationAPIGetLogsResponse]`](https://github.com/FastComment
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getLogs'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo getLogs'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getLogs(commentId = "cmt-8471f2d3", sso = "")
-if response.isSome:
-  let logs = response.get()
-  echo "Fetched logs:", logs
+let (logsOpt, httpRes) = client.getLogs(tenantId = "my-tenant-123", commentId = "cmt-789", sso = "")
+if logsOpt.isSome:
+  let logs = logsOpt.get()
+  echo logs
 [inline-code-end]
 
 ---

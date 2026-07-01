@@ -1,22 +1,19 @@
-## 매개변수
+## Parameters
 
-| 이름 | 타입 | 필수 | 설명 |
-|------|------|------|------|
-| value | string | 아니요 |  |
-| sso | string | 아니요 |  |
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| options | GetSearchSitesOptions | No |  |
 
-## 응답
+## Response
 
-반환: [`Option[ModerationSiteSearchResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_site_search_response.nim)
+Returns: [`Option[ModerationSiteSearchResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_site_search_response.nim)
 
-## 예제
+## Example
 
-[inline-code-attrs-start title = 'getSearchSites 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSearchSites 예시'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSearchSites(value = "news/2026-olympics", sso = "sso-user-9876-token")
-if response.isSome:
-  let searchResponse: ModerationSiteSearchResponse = response.get()
-  echo "Found sites for search:", searchResponse
+let (searchResult, httpResp) = client.getSearchSites(tenantId = "my-tenant-123", options = GetSearchSitesOptions())
+if searchResult.isSome:
+  let siteResp = searchResult.get()
 [inline-code-end]
-
----

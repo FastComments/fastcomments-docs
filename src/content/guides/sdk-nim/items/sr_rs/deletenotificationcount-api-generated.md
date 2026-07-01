@@ -1,25 +1,19 @@
----
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Не |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| id | string | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
+Vraća: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'deleteNotificationCount Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteNotificationCount Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteNotificationCount(tenantId = "my-tenant-123", id = "notification-789")
-if response.isSome:
-  let emptyResp = response.get()
-  echo "Notification count deleted for tenant: ", "my-tenant-123"
-else:
-  echo "Failed to delete notification count, status: ", $httpResponse.statusCode
+let (apiRespOpt, httpResp) = client.deleteNotificationCount(tenantId = "my-tenant-123", id = "notif-456")
+if apiRespOpt.isSome:
+  let _ = apiRespOpt.get()
 [inline-code-end]
-
----

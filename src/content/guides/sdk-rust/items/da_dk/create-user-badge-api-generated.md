@@ -13,23 +13,17 @@ Returnerer: [`ApiCreateUserBadgeResponse`](https://github.com/FastComments/fastc
 
 [inline-code-attrs-start title = 'create_user_badge Eksempel'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let params: CreateUserBadgeParams = CreateUserBadgeParams {
+async fn example() -> Result<(), Error> {
+    let params = CreateUserBadgeParams {
         tenant_id: "acme-corp-tenant".to_string(),
         create_user_badge_params: models::CreateUserBadgeParams {
-            user_id: "user-7890".to_string(),
-            badge_key: "top-commenter".to_string(),
-            title: "Top Commenter".to_string(),
-            description: Some("Consistently provided insightful comments".to_string()),
-            image_url: Some("https://assets.news.example.com/badges/top-commenter.png".to_string()),
-            is_visible: Some(true),
+            badge_type: "premium".to_string(),
+            user_id: "user-123".to_string(),
+            description: Some("Top contributor".to_string()),
             expires_at: None,
         },
     };
-
-    let response: ApiCreateUserBadgeResponse = create_user_badge(&configuration, params).await?;
+    let _response = create_user_badge(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

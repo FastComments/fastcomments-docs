@@ -1,7 +1,8 @@
 ## Parametry
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
-|------|------|----------|----------|-------------|
+|------|------|------------|----------|------|
+| tenantId | string | query | Tak |  |
 | commentId | string | query | Nie |  |
 | sso | string | query | Nie |  |
 
@@ -14,30 +15,30 @@ Zwraca: [`GetUserInternalProfileResponse`](https://github.com/FastComments/fastc
 [inline-code-attrs-start title = 'Przykład get_user_internal_profile'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetUserInternalProfileOptions
 from client.models.get_user_internal_profile_response import GetUserInternalProfileResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Określenie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
+# Definiowanie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
 # Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracji.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Otwórz kontekst z instancją klienta API
+# Utwórz kontekst z instancją klienta API
 with client.ApiClient(configuration) as api_client:
     # Utwórz instancję klasy API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str |  (opcjonalne)
     sso = 'sso_example' # str |  (opcjonalne)
 
     try:
-        api_response = api_instance.get_user_internal_profile(comment_id=comment_id, sso=sso)
+        api_response = api_instance.get_user_internal_profile(tenant_id, GetUserInternalProfileOptions(comment_id=comment_id, sso=sso))
         print("The response of ModerationApi->get_user_internal_profile:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling ModerationApi->get_user_internal_profile: %s\n" % e)
 [inline-code-end]
-
----

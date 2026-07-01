@@ -1,13 +1,14 @@
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| commentId | string | 路徑 | 是 |  |
-| sso | string | 查詢 | 否 |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| sso | string | query | No |  |
 
 ## 回應
 
-回傳: [`ModerationAPIGetLogsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/moderation_api_get_logs_response.py)
+返回：[`ModerationAPIGetLogsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/moderation_api_get_logs_response.py)
 
 ## 範例
 
@@ -18,22 +19,23 @@ from client.models.moderation_api_get_logs_response import ModerationAPIGetLogsR
 from client.rest import ApiException
 from pprint import pprint
 
-# 定義主機為可選，預設為 https://fastcomments.com
-# 請參閱 configuration.py 以取得所有支援的設定參數清單。
+# 定義主機是可選的，預設為 https://fastcomments.com
+# 請參閱 configuration.py 以取得所有支援的設定參數列表。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# 使用 API 用戶端實例進入一個上下文
+# 以 API 客戶端實例建立 context
 with client.ApiClient(configuration) as api_client:
     # 建立 API 類別的實例
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
-    sso = 'sso_example' # str |  (選填)
+    sso = 'sso_example' # str |  (可選)
 
     try:
-        api_response = api_instance.get_logs(comment_id, sso=sso)
+        api_response = api_instance.get_logs(tenant_id, comment_id, sso=sso)
         print("The response of ModerationApi->get_logs:\n")
         pprint(api_response)
     except Exception as e:

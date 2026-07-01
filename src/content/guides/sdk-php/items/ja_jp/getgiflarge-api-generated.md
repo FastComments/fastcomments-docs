@@ -1,16 +1,15 @@
----
-## パラメータ
+## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| largeInternalURLSanitized | string | query | Yes |  |
+| 名前 | 型 | 場所 | 必須 | 説明 |
+|------|------|----------|------|------|
+| tenantId | string | path | はい |  |
+| largeInternalURLSanitized | string | query | はい |  |
 
-## レスポンス
+## Response
 
-戻り値: [`GifGetLargeResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GifGetLargeResponse.php)
+返り値: [`GifGetLargeResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GifGetLargeResponse.php)
 
-## 例
+## Example
 
 [inline-code-attrs-start title = 'getGifLarge の例'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -20,12 +19,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // カスタムのHTTPクライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
-    // これは任意です。デフォルトでは `GuzzleHttp\Client` が使用されます。
+    // カスタム HTTP クライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装したクライアントを渡してください。
+    // これはオプションです。デフォルトでは `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // 文字列
-$large_internal_url_sanitized = 'large_internal_url_sanitized_example'; // 文字列
+
+$tenant_id = 'tenant_id_example'; // string
+$large_internal_url_sanitized = 'large_internal_url_sanitized_example'; // string
+
 
 try {
     $result = $apiInstance->getGifLarge($tenant_id, $large_internal_url_sanitized);
@@ -34,5 +35,3 @@ try {
     echo 'Exception when calling PublicApi->getGifLarge: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

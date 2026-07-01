@@ -1,7 +1,8 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 描述 |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | 是 |  |
 | text-search | string | query | 否 |  |
 | byIPFromComment | string | query | 否 |  |
 | filters | string | query | 否 |  |
@@ -11,7 +12,7 @@
 
 ## 响应
 
-返回: [`ModerationExportResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/moderation_export_response.rb)
+返回：[`ModerationExportResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/moderation_export_response.rb)
 
 ## 示例
 
@@ -21,6 +22,7 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 opts = {
   text_search: 'text_search_example', # String | 
   by_ip_from_comment: 'by_ip_from_comment_example', # String | 
@@ -32,11 +34,9 @@ opts = {
 
 begin
   
-  result = api_instance.post_api_export(opts)
+  result = api_instance.post_api_export(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_api_export: #{e}"
 end
 [inline-code-end]
-
----

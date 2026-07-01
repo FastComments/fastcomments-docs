@@ -1,7 +1,7 @@
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
-|------|------|----------|----------|-------------|
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
+|--------|------|-----------|-----------|-------------|
 | tenantId | string | path | Sí |  |
 | commentId | string | path | Sí |  |
 | broadcastId | string | query | Sí |  |
@@ -21,14 +21,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Si desea usar un cliente HTTP personalizado, pase su cliente que implemente `GuzzleHttp\ClientInterface`.
+    // Si deseas usar un cliente HTTP personalizado, pasa tu cliente que implemente `GuzzleHttp\ClientInterface`.
     // Esto es opcional, se usará `GuzzleHttp\Client` por defecto.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$comment_id = 'comment_id_example'; // string
-$broadcast_id = 'broadcast_id_example'; // string
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // cadena
+$comment_id = 'comment_id_example'; // cadena
+$broadcast_id = 'broadcast_id_example'; // cadena
+$sso = 'sso_example'; // cadena
+
 
 try {
     $result = $apiInstance->unPinComment($tenant_id, $comment_id, $broadcast_id, $sso);

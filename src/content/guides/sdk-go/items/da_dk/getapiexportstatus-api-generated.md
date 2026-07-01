@@ -1,9 +1,10 @@
 ## Parametre
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| batchJobId | string | query | No |  |
-| sso | string | query | No |  |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
+|------|------|-----------|----------|-------------|
+| tenantId | string | query | Ja |  |
+| batchJobId | string | query | Nej |  |
+| sso | string | query | Nej |  |
 
 ## Svar
 
@@ -23,19 +24,18 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	batchJobId := "batchJobId_example" // string |  (valgfri)
 	sso := "sso_example" // string |  (valgfri)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetApiExportStatus(context.Background()).BatchJobId(batchJobId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetApiExportStatus(context.Background()).TenantId(tenantId).BatchJobId(batchJobId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetApiExportStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// svar fra `GetApiExportStatus`: ModerationExportStatusResponse
+	// respons fra `GetApiExportStatus`: ModerationExportStatusResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetApiExportStatus`: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -2,8 +2,8 @@
 
 | שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
+| tenantId | string | path | כן |  |
+| urlId | string | query | כן |  |
 
 ## תגובה
 
@@ -18,13 +18,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new FastComments\Client\Api\PublicApi(
-    // אם ברצונך להשתמש בלקוח HTTP מותאם אישית, העבר את הלקוח שלך שמממש את `GuzzleHttp\ClientInterface`.
+// $apiInstance = new FastComments\Client\Api\PublicApi(
+    // אם ברצונך להשתמש בלקוח HTTP מותאם, העבר את הלקוח שלך שמממש `GuzzleHttp\ClientInterface`.
     // זה אופציונלי, `GuzzleHttp\Client` ישמש כברירת מחדל.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // מחרוזת
-$url_id = 'url_id_example'; // מחרוזת
+
+$tenant_id = 'tenant_id_example'; // string
+$url_id = 'url_id_example'; // string
+
 
 try {
     $result = $apiInstance->deleteV1PageReact($tenant_id, $url_id);

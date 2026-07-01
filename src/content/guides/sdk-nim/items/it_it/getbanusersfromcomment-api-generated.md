@@ -1,9 +1,10 @@
 ## Parametri
 
-| Nome | Tipo | Richiesto | Descrizione |
-|------|------|----------|-------------|
+| Nome | Tipo | Obbligatorio | Descrizione |
+|------|------|--------------|-------------|
+| tenantId | string | Sì |  |
 | commentId | string | Sì |  |
-| sso | string | No |  |
+| sso | string = "" | No |  |
 
 ## Risposta
 
@@ -11,14 +12,10 @@ Restituisce: [`Option[GetBannedUsersFromCommentResponse]`](https://github.com/Fa
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di getBanUsersFromComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio getBanUsersFromComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getBanUsersFromComment(commentId = "comment-98765", sso = "")
+let (response, httpResponse) = client.getBanUsersFromComment(tenantId = "my-tenant-001", commentId = "cmt-123456", sso = "")
 if response.isSome:
-  let bannedResp = response.get()
-  discard bannedResp
-else:
-  echo "No banned users found or request failed"
+  let banInfo = response.get()
+  echo banInfo
 [inline-code-end]
-
----

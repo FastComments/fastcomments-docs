@@ -1,7 +1,8 @@
 ## Parametry
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
-|------|------|----------|----------|-------------|
+|------|------|--------------|----------|------|
+| tenantId | string | query | Tak |  |
 | commentId | string | path | Tak |  |
 | sso | string | query | Nie |  |
 
@@ -13,7 +14,7 @@ Zwraca: [`ModerationAPIGetLogsResponse`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'Przykład getLogs'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importowanie klas:
+// Importuj klasy:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,14 +27,16 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationAPIGetLogsResponse result = apiInstance.getLogs(commentId)
+      ModerationAPIGetLogsResponse result = apiInstance.getLogs(tenantId, commentId)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
+      // Wyjątek podczas wywoływania ModerationApi#getLogs
       System.err.println("Exception when calling ModerationApi#getLogs");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
@@ -43,5 +46,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

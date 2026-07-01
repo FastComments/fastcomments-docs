@@ -6,7 +6,7 @@
 | id | string | Nee |  |
 | updateModeratorBody | UpdateModeratorBody | Nee |  |
 
-## Antwoord
+## Respons
 
 Retourneert: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
@@ -14,20 +14,8 @@ Retourneert: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'updateModerator Voorbeeld'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let modBody: UpdateModeratorBody = UpdateModeratorBody(
-  displayName = "Alice Moderator",
-  email = "alice@newsdaily.com",
-  isActive = true,
-  permissions = @["delete_comments", "ban_users"]
-)
-
-let (response, httpResponse) = client.updateModerator(tenantId = "news-tenant-456", id = "moderator-789", updateModeratorBody = modBody)
-
-if response.isSome:
-  let apiEmpty = response.get()
-  echo "Moderator updated successfully. HTTP status: ", httpResponse.status
-else:
-  echo "Failed to update moderator. HTTP status: ", httpResponse.status
+let body = UpdateModeratorBody(name = "John Doe", email = "john@example.com", isActive = true)
+let (apiResult, httpResp) = client.updateModerator(tenantId = "my-tenant-123", id = "mod-456", updateModeratorBody = body)
+if apiResult.isSome:
+  let result = apiResult.get()
 [inline-code-end]
-
----

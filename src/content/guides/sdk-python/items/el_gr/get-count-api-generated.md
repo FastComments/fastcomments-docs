@@ -1,15 +1,16 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαραίτητο | Περιγραφή |
+| Όνομα | Τύπος | Θέση | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| text-search | string | query | Όχι |  |
-| byIPFromComment | string | query | Όχι |  |
-| filter | string | query | Όχι |  |
-| searchFilters | string | query | Όχι |  |
-| demo | boolean | query | Όχι |  |
-| sso | string | query | Όχι |  |
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filter | string | query | No |  |
+| searchFilters | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`ModerationAPICountCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/moderation_api_count_comments_response.py)
 
@@ -18,30 +19,32 @@
 [inline-code-attrs-start title = 'Παράδειγμα get_count'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetCountOptions
 from client.models.moderation_api_count_comments_response import ModerationAPICountCommentsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Ο καθορισμός του host είναι προαιρετικός και προεπιλεγμένο είναι το https://fastcomments.com
-# Δείτε το configuration.py για λίστα με όλες τις υποστηριζόμενες παραμέτρους ρύθμισης.
+# Ο καθορισμός του host είναι προαιρετικός και προεπιλογή είναι https://fastcomments.com
+# Δείτε το configuration.py για μια λίστα όλων των υποστηριζόμενων παραμέτρων διαμόρφωσης.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Εισέλθετε σε ένα περιβάλλον με ένα στιγμιότυπο του API client
+# Εισέλθετε σε ένα context με ένα στιγμιότυπο του πελάτη API
 with client.ApiClient(configuration) as api_client:
     # Δημιουργήστε ένα στιγμιότυπο της κλάσης API
     api_instance = client.ModerationApi(api_client)
-    text_search = 'text_search_example' # str |  (προαιρετικό)
-    by_ip_from_comment = 'by_ip_from_comment_example' # str |  (προαιρετικό)
-    filter = 'filter_example' # str |  (προαιρετικό)
-    search_filters = 'search_filters_example' # str |  (προαιρετικό)
-    demo = True # bool |  (προαιρετικό)
-    sso = 'sso_example' # str |  (προαιρετικό)
+    tenant_id = 'tenant_id_example' # str | 
+    text_search = 'text_search_example' # str |  (optional)
+    by_ip_from_comment = 'by_ip_from_comment_example' # str |  (optional)
+    filter = 'filter_example' # str |  (optional)
+    search_filters = 'search_filters_example' # str |  (optional)
+    demo = True # bool |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_count(text_search=text_search, by_ip_from_comment=by_ip_from_comment, filter=filter, search_filters=search_filters, demo=demo, sso=sso)
+        api_response = api_instance.get_count(tenant_id, GetCountOptions(text_search=text_search, by_ip_from_comment=by_ip_from_comment, filter=filter, search_filters=search_filters, demo=demo, sso=sso))
         print("The response of ModerationApi->get_count:\n")
         pprint(api_response)
     except Exception as e:

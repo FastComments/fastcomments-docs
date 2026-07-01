@@ -1,7 +1,8 @@
 ## Parámetros
 
 | Nombre | Tipo | Ubicación | Obligatorio | Descripción |
-|------|------|----------|----------|-------------|
+|--------|------|-----------|-------------|-------------|
+| tenantId | string | query | Sí |  |
 | badgesUserId | string | query | No |  |
 | commentId | string | query | No |  |
 | sso | string | query | No |  |
@@ -12,7 +13,7 @@ Devuelve: [`GetUserManualBadgesResponse`](https://github.com/FastComments/fastco
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de GetManualBadgesForUser'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo GetManualBadgesForUser'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -24,20 +25,19 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	badgesUserId := "badgesUserId_example" // string |  (opcional)
 	commentId := "commentId_example" // string |  (opcional)
 	sso := "sso_example" // string |  (opcional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetManualBadgesForUser(context.Background()).BadgesUserId(badgesUserId).CommentId(commentId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetManualBadgesForUser(context.Background()).TenantId(tenantId).BadgesUserId(badgesUserId).CommentId(commentId).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetManualBadgesForUser``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Error al llamar a `ModerationAPI.GetManualBadgesForUser``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Respuesta HTTP completa: %v\n", r)
 	}
 	// respuesta de `GetManualBadgesForUser`: GetUserManualBadgesResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetManualBadgesForUser`: %v\n", resp)
+	fmt.Fprintf(os.Stdout, "Respuesta de `ModerationAPI.GetManualBadgesForUser`: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -5,21 +5,20 @@
 | tenantId | string | 是 |  |
 | largeInternalURLSanitized | string | 否 |  |
 
-## 回傳
+## 回應
 
-回傳: [`Option[GifGetLargeResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_gif_get_large_response.nim)
+返回: [`Option[GifGetLargeResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_gif_get_large_response.nim)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getGifLarge 範例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getGifLarge(tenantId = "news-tenant-42", largeInternalURLSanitized = "")
-if response.isSome:
-  let gif = response.get()
-  echo "Received GifGetLargeResponse"
-  discard gif
-else:
-  echo "No gif returned, HTTP status: " & $httpResponse.status
+let (gifOpt, httpResp) = client.getGifLarge(
+  tenantId = "my-tenant-123",
+  largeInternalURLSanitized = "https://cdn.example.com/gifs/large123.gif")
+if gifOpt.isSome:
+  let gif = gifOpt.get()
+  echo gif
 [inline-code-end]
 
 ---

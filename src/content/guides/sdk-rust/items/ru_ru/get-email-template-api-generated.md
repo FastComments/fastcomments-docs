@@ -1,6 +1,6 @@
 ## Параметры
 
-| Name | Type | Required | Description |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
 | tenant_id | String | Да |  |
 | id | String | Да |  |
@@ -11,16 +11,14 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример get_email_template'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_email_template Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
+async fn fetch_template() -> Result<(), Error> {
     let params: GetEmailTemplateParams = GetEmailTemplateParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "marketing/welcome_v2".to_string(),
+        id: "welcome-email".to_string(),
     };
-    let template: GetEmailTemplateResponse = get_email_template(&configuration, params).await?;
+    let _response = get_email_template(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

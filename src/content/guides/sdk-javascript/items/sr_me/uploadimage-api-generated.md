@@ -1,17 +1,31 @@
----
-Отпреми и промијени величину слике
+Upload i promijenite veličinu slike
 
-## Параметри
+## Parametri
 
-| Назив | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| file | Blob | Да |  |
-| sizePreset | SizePreset | Не |  |
-| urlId | string | Не |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| file | Blob | Yes |  |
+| sizePreset | SizePreset | No |  |
+| urlId | string | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`UploadImageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UploadImageResponse.ts)
+Vraća: [`UploadImageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UploadImageResponse.ts)
+
+## Primjer
+
+[inline-code-attrs-start title = 'Primjer uploadImage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+const tenantId: string = "acme-tenant-01";
+const imageBlob: Blob = new Blob([new Uint8Array([137,80,78,71])], { type: "image/png" });
+
+const uploadResult1: UploadImageResponse = await uploadImage(tenantId, imageBlob);
+
+const sizePreset: SizePreset = { presetName: "medium" };
+const urlId: string = "article-9876";
+
+const uploadResult2: UploadImageResponse = await uploadImage(tenantId, imageBlob, sizePreset, urlId);
+[inline-code-end]
 
 ---

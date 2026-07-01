@@ -1,29 +1,31 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Локација | Обавезно | Опис |
-|------|------|----------|----------|-------------|
-| value | string | query | Не |  |
-| filters | string | query | Не |  |
-| searchFilters | string | query | Не |  |
-| sso | string | query | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| value | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sso | string | query | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`ModerationCommentSearchResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationCommentSearchResponse.swift)
+Vraća: [`ModerationCommentSearchResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationCommentSearchResponse.swift)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'getSearchCommentsSummary Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSearchCommentsSummary Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи примјери кода су још у бета фази. За било који проблем, пријавите га преко http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledeći primeri koda su još u beta fazi. Za bilo koji problem, molimo prijavite putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let value = "value_example" // String |  (опционо)
-let filters = "filters_example" // String |  (опционо)
-let searchFilters = "searchFilters_example" // String |  (опционо)
-let sso = "sso_example" // String |  (опционо)
+let tenantId = "tenantId_example" // String | 
+let value = "value_example" // String |  (opcionalno)
+let filters = "filters_example" // String |  (opcionalno)
+let searchFilters = "searchFilters_example" // String |  (opcionalno)
+let sso = "sso_example" // String |  (opcionalno)
 
-ModerationAPI.getSearchCommentsSummary(value: value, filters: filters, searchFilters: searchFilters, sso: sso) { (response, error) in
+ModerationAPI.getSearchCommentsSummary(tenantId: tenantId, options: ModerationAPI.GetSearchCommentsSummaryOptions(value: value, filters: filters, searchFilters: searchFilters, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

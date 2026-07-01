@@ -13,13 +13,15 @@ Returns: [`GetPageByURLIdAPIResponse`](https://github.com/FastComments/fastcomme
 
 [inline-code-attrs-start title = 'getPageByURLId Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t urlId = U("page-7a9f-12345");
-boost::optional<utility::string_t> locale = boost::optional<utility::string_t>(U("en-US"));
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto urlId = utility::conversions::to_string_t("page-456");
+boost::optional<utility::string_t> correlationId = boost::make_optional(utility::conversions::to_string_t("corr-789"));
+
 api->getPageByURLId(tenantId, urlId)
-    .then([=](std::shared_ptr<GetPageByURLIdAPIResponse> response) {
-        auto result = response ? response : std::make_shared<GetPageByURLIdAPIResponse>();
-        return result;
-    })
-    .wait();
+    .then([correlationId](pplx::task<std::shared_ptr<GetPageByURLIdAPIResponse>> task) {
+        try {
+            auto response = task.get();
+        } catch (const std::exception&) {
+        }
+    });
 [inline-code-end]

@@ -1,23 +1,26 @@
 ## 參數
 
-| 名稱 | 類型 | 是否必填 | 描述 |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
-| commentId | string | 是 |  |
-| approved | bool | 否 |  |
-| sso | string | 否 |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| options | PostSetCommentApprovalStatusOptions | No |  |
 
 ## 回應
 
-回傳: [`Option[SetCommentApprovedResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_set_comment_approved_response.nim)
+回傳：[`Option[SetCommentApprovedResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_set_comment_approved_response.nim)
 
 ## 範例
 
 [inline-code-attrs-start title = 'postSetCommentApprovalStatus 範例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postSetCommentApprovalStatus(commentId = "cmt-7890", approved = false, sso = "")
-if response.isSome:
-  let setResp = response.get()
-  discard setResp
-[inline-code-end]
+let (approvedOpt, httpResp) = client.postSetCommentApprovalStatus(
+  tenantId = "my-tenant-123",
+  commentId = "comment-7890",
+  options = PostSetCommentApprovalStatusOptions()
+)
 
----
+if approvedOpt.isSome:
+  let approved = approvedOpt.get()
+  echo approved
+[inline-code-end]

@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | commentId | string | path | Oui |  |
@@ -9,7 +9,7 @@
 
 ## Réponse
 
-Renvoie : [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
+Renvoie : [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
 ## Exemple
 
@@ -20,15 +20,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new FastComments\Client\Api\PublicApi(
-    // Si vous souhaitez utiliser un client HTTP personnalisé, passez votre client qui implémente `GuzzleHttp\ClientInterface`.
-    // Ceci est optionnel, `GuzzleHttp\Client` sera utilisé par défaut.
+// $apiInstance = new FastComments\Client\Api\PublicApi(
+    // Si vous souhaitez utiliser un client HTTP personnalisé, transmettez votre client qui implémente `GuzzleHttp\ClientInterface`.
+    // Ceci est facultatif, `GuzzleHttp\Client` sera utilisé par défaut.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $comment_id = 'comment_id_example'; // string
 $is_flagged = True; // bool
 $sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->flagCommentPublic($tenant_id, $comment_id, $is_flagged, $sso);

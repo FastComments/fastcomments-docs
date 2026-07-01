@@ -1,13 +1,13 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Zahtevano | Opis |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | id | string | path | Da |  |
 | userId | string | query | Ne |  |
 | anonUserId | string | query | Ne |  |
 
-## Odgovor
+## Odziv
 
 Vrne: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/UnblockSuccess.swift)
 
@@ -15,7 +15,7 @@ Vrne: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-swift/blob
 
 [inline-code-attrs-start title = 'unBlockUserFromComment Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Naslednji primeri kode so še v beta različici. Za kakršnokoli težavo poročajte preko http://github.com/OpenAPITools/openapi-generator/issues/new
+// Naslednji primeri kode so še beta. Za morebitne težave, prosimo, poročajte na http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -24,7 +24,7 @@ let unBlockFromCommentParams = UnBlockFromCommentParams(commentIdsToCheck: ["com
 let userId = "userId_example" // String |  (neobvezno)
 let anonUserId = "anonUserId_example" // String |  (neobvezno)
 
-DefaultAPI.unBlockUserFromComment(tenantId: tenantId, id: id, unBlockFromCommentParams: unBlockFromCommentParams, userId: userId, anonUserId: anonUserId) { (response, error) in
+DefaultAPI.unBlockUserFromComment(tenantId: tenantId, id: id, unBlockFromCommentParams: unBlockFromCommentParams, options: DefaultAPI.UnBlockUserFromCommentOptions(userId: userId, anonUserId: anonUserId)) { (response, error) in
     guard error == nil else {
         print(error)
         return

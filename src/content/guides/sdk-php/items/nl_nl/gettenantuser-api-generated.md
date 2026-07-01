@@ -5,9 +5,9 @@
 | tenantId | string | query | Ja |  |
 | id | string | path | Ja |  |
 
-## Respons
+## Response
 
-Geeft terug: [`GetTenantUserResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantUserResponse.php)
+Retourneert: [`GetTenantUserResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantUserResponse.php)
 
 ## Voorbeeld
 
@@ -17,20 +17,22 @@ Geeft terug: [`GetTenantUserResponse`](https://github.com/FastComments/fastcomme
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configureer API-sleutelautorisatie: api_key
+// Configureer API-sleutel autorisatie: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Haal hieronder de commentaar weg om een prefix in te stellen (bijv. Bearer) voor de API-sleutel, indien nodig
+// Ontcommentaar onderstaande regel om prefix (bijv. Bearer) voor API-sleutel in te stellen, indien nodig
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Als u een aangepaste HTTP-client wilt gebruiken, geef uw client door die `GuzzleHttp\ClientInterface` implementeert.
-    // Dit is optioneel, `GuzzleHttp\Client` zal standaard worden gebruikt.
+    // Als je een aangepaste http-client wilt gebruiken, geef dan je client door die `GuzzleHttp\ClientInterface` implementeert.
+    // Dit is optioneel, `GuzzleHttp\Client` wordt als standaard gebruikt.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
+
 
 try {
     $result = $apiInstance->getTenantUser($tenant_id, $id);
@@ -39,3 +41,5 @@ try {
     echo 'Exception when calling DefaultApi->getTenantUser: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

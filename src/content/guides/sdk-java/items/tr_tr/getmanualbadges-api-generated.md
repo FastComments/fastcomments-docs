@@ -1,7 +1,8 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| İsim | Tür | Konum | Gereklidir | Açıklama |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Evet |  |
 | sso | string | query | Hayır |  |
 
 ## Yanıt
@@ -25,17 +26,18 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      GetTenantManualBadgesResponse result = apiInstance.getManualBadges()
+      GetTenantManualBadgesResponse result = apiInstance.getManualBadges(tenantId)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ModerationApi#getManualBadges");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("ModerationApi#getManualBadges çağrılırken istisna oluştu");
+      System.err.println("Durum kodu: " + e.getCode());
+      System.err.println("Sebep: " + e.getResponseBody());
+      System.err.println("Yanıt başlıkları: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }

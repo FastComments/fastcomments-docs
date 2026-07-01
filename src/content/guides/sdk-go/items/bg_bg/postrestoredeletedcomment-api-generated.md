@@ -2,8 +2,10 @@
 
 | Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Да |  |
-| sso | string | query | Не |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Отговор
 
@@ -11,7 +13,7 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за PostRestoreDeletedComment'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PostRestoreDeletedComment пример'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,12 +25,14 @@ import (
 )
 
 func main() {
-	commentId := "commentId_example" // string | 
-	sso := "sso_example" // string |  (по избор)
+	tenantId := "tenantId_example" // низ | 
+	commentId := "commentId_example" // низ | 
+	broadcastId := "broadcastId_example" // низ |  (по избор)
+	sso := "sso_example" // низ |  (по избор)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostRestoreDeletedComment(context.Background(), commentId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostRestoreDeletedComment(context.Background(), commentId).TenantId(tenantId).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostRestoreDeletedComment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

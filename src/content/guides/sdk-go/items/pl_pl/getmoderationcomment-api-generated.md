@@ -1,7 +1,8 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Tak |  |
 | commentId | string | path | Tak |  |
 | includeEmail | boolean | query | Nie |  |
 | includeIP | boolean | query | Nie |  |
@@ -25,14 +26,15 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
-	includeEmail := true // bool |  (opcjonalne)
-	includeIP := true // bool |  (opcjonalne)
-	sso := "sso_example" // string |  (opcjonalne)
+	includeEmail := true // bool |  (opcjonalny)
+	includeIP := true // bool |  (opcjonalny)
+	sso := "sso_example" // string |  (opcjonalny)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetModerationComment(context.Background(), commentId).IncludeEmail(includeEmail).IncludeIP(includeIP).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetModerationComment(context.Background(), commentId).TenantId(tenantId).IncludeEmail(includeEmail).IncludeIP(includeIP).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetModerationComment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

@@ -1,10 +1,10 @@
 ## Parametreler
 
-| Ad | Tür | Gerekli | Açıklama |
+| Ad | Tür | Zorunlu | Açıklama |
 |------|------|----------|-------------|
+| tenantId | string | Evet |  |
 | commentId | string | Evet |  |
-| direction | string | Hayır |  |
-| sso | string | Hayır |  |
+| options | PostVoteOptions | Hayır |  |
 
 ## Yanıt
 
@@ -14,12 +14,12 @@ Döndürür: [`Option[VoteResponse]`](https://github.com/FastComments/fastcommen
 
 [inline-code-attrs-start title = 'postVote Örneği'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postVote(commentId = "comment-4f3a9e", direction = "up", sso = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidXNlci0xMjMifQ.signedPart")
-if response.isSome:
-  let vote = response.get()
-  echo "Vote recorded:", vote
-else:
-  echo "No vote returned"
-[inline-code-end]
+let (voteOpt, httpResp) = client.postVote(
+  tenantId = "my-tenant-123",
+  commentId = "comment-789",
+  options = default(PostVoteOptions)
+)
 
----
+if voteOpt.isSome:
+  let vote = voteOpt.get()
+[inline-code-end]

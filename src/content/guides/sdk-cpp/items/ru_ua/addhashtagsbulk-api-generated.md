@@ -1,32 +1,28 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Обязательно | Описание |
+| Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Нет |  |
-| bulkCreateHashTagsBody | BulkCreateHashTagsBody | Нет |  |
+| tenantId | string | Так |  |
+| bulkCreateHashTagsBody | BulkCreateHashTagsBody | Так |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/BulkCreateHashTagsResponse.h)
+Повертає: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/BulkCreateHashTagsResponse.h)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример addHashTagsBulk'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'addHashTagsBulk Приклад'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> tenantId(utility::conversions::to_string_t("my-tenant-123"));
-auto bodyPtr = std::make_shared<BulkCreateHashTagsBody>();
-boost::optional<BulkCreateHashTagsBody> bodyOpt(*bodyPtr);
-api->addHashTagsBulk(tenantId, bodyOpt)
-    .then([](pplx::task<std::shared_ptr<BulkCreateHashTagsResponse>> task) {
-        try {
-            auto resp = task.get();
-            if (resp) {
-                std::cout << "Bulk hashtags created successfully\n";
-            } else {
-                std::cout << "No response received\n";
-            }
-        } catch (const std::exception &e) {
-            std::cerr << "API error: " << e.what() << '\n';
-        }
-    });
+auto tenantId = utility::string_t(U("my-tenant-123"));
+BulkCreateHashTagsBody bulkBody;
+bulkBody.tags = { utility::string_t(U("announcement")), utility::string_t(U("feature-request")) };
+bulkBody.description = boost::optional<utility::string_t>(U("Bulk tag creation"));
+api->addHashTagsBulk(tenantId, bulkBody).then([](pplx::task<std::shared_ptr<BulkCreateHashTagsResponse>> task){
+    try{
+        auto resp = task.get();
+    }catch(const std::exception&){
+    }
+});
 [inline-code-end]
+
+---

@@ -29,7 +29,7 @@ let dmOnly = true // Bool |  (optional)
 let noDm = true // Bool |  (optional)
 let sso = "sso_example" // String |  (optional)
 
-PublicAPI.resetUserNotifications(tenantId: tenantId, afterId: afterId, afterCreatedAt: afterCreatedAt, unreadOnly: unreadOnly, dmOnly: dmOnly, noDm: noDm, sso: sso) { (response, error) in
+PublicAPI.resetUserNotifications(tenantId: tenantId, options: PublicAPI.ResetUserNotificationsOptions(afterId: afterId, afterCreatedAt: afterCreatedAt, unreadOnly: unreadOnly, dmOnly: dmOnly, noDm: noDm, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

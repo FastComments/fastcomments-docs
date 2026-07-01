@@ -1,6 +1,6 @@
 ## Parameter
 
-| Name | Typ | Ort | Erforderlich | Beschreibung |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | id | string | path | Ja |  |
@@ -9,13 +9,13 @@
 
 ## Antwort
 
-Gibt zurück: [`BlockSuccess`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/BlockSuccess.swift)
+Rückgabe: [`BlockSuccess`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/BlockSuccess.swift)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'blockUserFromComment Beispiel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Die folgenden Codebeispiele sind noch Beta. Bei Problemen melden Sie sich bitte unter http://github.com/OpenAPITools/openapi-generator/issues/new
+// Die folgenden Codebeispiele befinden sich noch in der Beta‑Phase. Für Probleme melden Sie bitte über http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -24,7 +24,7 @@ let blockFromCommentParams = BlockFromCommentParams(commentIdsToCheck: ["comment
 let userId = "userId_example" // String |  (optional)
 let anonUserId = "anonUserId_example" // String |  (optional)
 
-DefaultAPI.blockUserFromComment(tenantId: tenantId, id: id, blockFromCommentParams: blockFromCommentParams, userId: userId, anonUserId: anonUserId) { (response, error) in
+DefaultAPI.blockUserFromComment(tenantId: tenantId, id: id, blockFromCommentParams: blockFromCommentParams, options: DefaultAPI.BlockUserFromCommentOptions(userId: userId, anonUserId: anonUserId)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -35,5 +35,3 @@ DefaultAPI.blockUserFromComment(tenantId: tenantId, id: id, blockFromCommentPara
     }
 }
 [inline-code-end]
-
----

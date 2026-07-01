@@ -2,8 +2,8 @@
 
 | 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 是 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## 响应
 
@@ -19,12 +19,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // 如果您想使用自定义的 HTTP 客户端，请传入实现了 `GuzzleHttp\ClientInterface` 的客户端。
-    // 这是可选的，默认将使用 `GuzzleHttp\Client`。
+    // 如果您想使用自定义 http 客户端，传入实现了 `GuzzleHttp\ClientInterface` 的客户端。
+    // 这是可选的，默认使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->getUserNotificationCount($tenant_id, $sso);

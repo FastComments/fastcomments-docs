@@ -1,16 +1,17 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Oui |  |
 | sso | string | query | Non |  |
 
 ## Réponse
 
-Retourne: [`GetTenantManualBadgesResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_manual_badges_response.go)
+Retourne : [`GetTenantManualBadgesResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_manual_badges_response.go)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple d\'utilisation de GetManualBadges'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple GetManualBadges'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -22,16 +23,17 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	sso := "sso_example" // string |  (optionnel)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetManualBadges(context.Background()).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetManualBadges(context.Background()).TenantId(tenantId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetManualBadges``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// réponse de `GetManualBadges`: GetTenantManualBadgesResponse
+	// réponse de `GetManualBadges` : GetTenantManualBadgesResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetManualBadges`: %v\n", resp)
 }
 [inline-code-end]

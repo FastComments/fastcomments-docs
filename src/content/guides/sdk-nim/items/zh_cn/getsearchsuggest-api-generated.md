@@ -1,25 +1,27 @@
+---
 ## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| textSearch | string | 否 |  |
-| sso | string | 否 |  |
+| tenantId | string | 是 |  |
+| options | GetSearchSuggestOptions | 否 |  |
 
 ## 响应
 
-返回: [`Option[ModerationSuggestResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_suggest_response.nim)
+返回：[`Option[ModerationSuggestResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_suggest_response.nim)
 
 ## 示例
 
 [inline-code-attrs-start title = 'getSearchSuggest 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSearchSuggest(textSearch = "suspicious comment with spammy links", sso = "sso-user-789")
-if response.isSome:
-  let suggest = response.get()
-  echo "ModerationSuggestResponse:"
+let (suggestOpt, httpResp) = client.getSearchSuggest(
+  tenantId = "my-tenant-123",
+  options = GetSearchSuggestOptions(),
+)
+
+if suggestOpt.isSome:
+  let suggest = suggestOpt.get()
   echo suggest
-else:
-  echo "No moderation suggestions returned. HTTP status: ", httpResponse.status
 [inline-code-end]
 
 ---

@@ -1,25 +1,33 @@
-## Parametre
+## Parameters
 
-| Navn | Type | Påkrævet | Beskrivelse |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| locale | string | Nej |  |
-| rating | string | Nej |  |
-| page | number | Nej |  |
+| tenantId | string | Yes |  |
+| locale | string | No |  |
+| rating | string | No |  |
+| page | number | No |  |
 
-## Svar
+## Response
 
-Returnerer: [`GetGifsTrendingResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetGifsTrendingResponse.ts)
+Returns: [`GetGifsTrendingResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetGifsTrendingResponse.ts)
 
-## Eksempel
+## Example
 
-[inline-code-attrs-start title = 'getGifsTrending-eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getGifsTrending Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-media';
-const locale: string = 'en-US';
-const rating: string = 'pg-13';
-const page: number = 2;
-const trending: GetGifsTrendingResponse = await getGifsTrending(tenantId, locale, rating, page);
-[inline-code-end]
+async function runExample(): Promise<void> {
+  const tenantId: string = "tenant_9f8b7c6d";
+  const locale: string = "en-US";
+  const rating: string = "PG-13";
+  const page: number = 1;
 
----
+  const trendingAll: GetGifsTrendingResponse = await getGifsTrending(tenantId, locale, rating, page);
+  console.log(trendingAll);
+
+  // Bruger kun den påkrævede parameter
+  const trendingMinimal: GetGifsTrendingResponse = await getGifsTrending(tenantId);
+  console.log(trendingMinimal);
+}
+
+runExample();
+[inline-code-end]

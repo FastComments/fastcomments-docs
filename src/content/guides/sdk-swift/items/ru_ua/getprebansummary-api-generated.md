@@ -1,12 +1,13 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Местоположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Да |  |
-| includeByUserIdAndEmail | boolean | query | Нет |  |
-| includeByIP | boolean | query | Нет |  |
-| includeByEmailDomain | boolean | query | Нет |  |
-| sso | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| includeByUserIdAndEmail | boolean | query | No |  |
+| includeByIP | boolean | query | No |  |
+| includeByEmailDomain | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Ответ
 
@@ -16,16 +17,17 @@
 
 [inline-code-attrs-start title = 'Пример getPreBanSummary'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие примеры кода всё ещё находятся в бета-версии. По любым проблемам, пожалуйста, сообщите через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следующие образцы кода находятся в бета-версии. При возникновении проблем, пожалуйста, сообщите по адресу http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
-let includeByUserIdAndEmail = true // Bool |  (необязательно)
-let includeByIP = true // Bool |  (необязательно)
-let includeByEmailDomain = true // Bool |  (необязательно)
-let sso = "sso_example" // String |  (необязательно)
+let includeByUserIdAndEmail = true // Bool |  (опционально)
+let includeByIP = true // Bool |  (опционально)
+let includeByEmailDomain = true // Bool |  (опционально)
+let sso = "sso_example" // String |  (опционально)
 
-ModerationAPI.getPreBanSummary(commentId: commentId, includeByUserIdAndEmail: includeByUserIdAndEmail, includeByIP: includeByIP, includeByEmailDomain: includeByEmailDomain, sso: sso) { (response, error) in
+ModerationAPI.getPreBanSummary(tenantId: tenantId, commentId: commentId, options: ModerationAPI.GetPreBanSummaryOptions(includeByUserIdAndEmail: includeByUserIdAndEmail, includeByIP: includeByIP, includeByEmailDomain: includeByEmailDomain, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -36,5 +38,3 @@ ModerationAPI.getPreBanSummary(commentId: commentId, includeByUserIdAndEmail: in
     }
 }
 [inline-code-end]
-
----

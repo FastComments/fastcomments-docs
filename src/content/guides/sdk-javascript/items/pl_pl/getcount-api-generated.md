@@ -1,33 +1,33 @@
-## Parametry
+## Parameters
 
-| Nazwa | Typ | Wymagane | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| textSearch | string | Nie |  |
-| byIPFromComment | string | Nie |  |
-| filter | string | Nie |  |
-| searchFilters | string | Nie |  |
-| demo | boolean | Nie |  |
-| sso | string | Nie |  |
+| textSearch | string | No |  |
+| byIPFromComment | string | No |  |
+| filter | string | No |  |
+| searchFilters | string | No |  |
+| demo | boolean | No |  |
+| tenantId | string | No |  |
+| sso | string | No |  |
 
-## Odpowiedź
+## Response
 
-Zwraca: [`ModerationAPICountCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPICountCommentsResponse.ts)
+Zwraca: [`GetCountResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCountResponse.ts)
 
-## Przykład
+## Example
 
-[inline-code-attrs-start title = 'Przykład getCount'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getCount Przykład'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const countResult: ModerationAPICountCommentsResponse = await getCount(
-    "reported harassment",
-    "203.0.113.7",
-    "status:pending",
-    undefined,
-    false,
-    "sso_user_789.jwt.token"
-  );
-  console.log(countResult);
-})();
+async function main(): Promise<void> {
+  const count: GetCountResponse = await getCount({
+    textSearch: "order issue",
+    byIPFromComment: "198.51.100.23",
+    filter: "pending",
+    demo: true,
+    tenantId: "acme_corp",
+    sso: "sso_abcdef123456"
+  });
+  console.log(count);
+}
+main();
 [inline-code-end]
-
----

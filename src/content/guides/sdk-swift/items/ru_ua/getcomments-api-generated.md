@@ -1,55 +1,55 @@
-## Параметры
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов’язковий | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| page | integer | query | Нет |  |
-| limit | integer | query | Нет |  |
-| skip | integer | query | Нет |  |
-| asTree | boolean | query | Нет |  |
-| skipChildren | integer | query | Нет |  |
-| limitChildren | integer | query | Нет |  |
-| maxTreeDepth | integer | query | Нет |  |
-| urlId | string | query | Нет |  |
-| userId | string | query | Нет |  |
-| anonUserId | string | query | Нет |  |
-| contextUserId | string | query | Нет |  |
-| hashTag | string | query | Нет |  |
-| parentId | string | query | Нет |  |
-| direction | string | query | Нет |  |
-| fromDate | integer | query | Нет |  |
-| toDate | integer | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| page | integer | query | No |  |
+| limit | integer | query | No |  |
+| skip | integer | query | No |  |
+| asTree | boolean | query | No |  |
+| skipChildren | integer | query | No |  |
+| limitChildren | integer | query | No |  |
+| maxTreeDepth | integer | query | No |  |
+| urlId | string | query | No |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
+| contextUserId | string | query | No |  |
+| hashTag | string | query | No |  |
+| parentId | string | query | No |  |
+| direction | string | query | No |  |
+| fromDate | integer | query | No |  |
+| toDate | integer | query | No |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIGetCommentsResponse.swift)
+Повертає: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIGetCommentsResponse.swift)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример getComments'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад getComments'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие примеры кода все еще находятся в бета-версии. Если возникнут проблемы, пожалуйста, сообщите через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наступні приклади коду ще у бета-версії. Якщо є проблеми, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let page = 987 // Int |  (необязательно)
-let limit = 987 // Int |  (необязательно)
-let skip = 987 // Int |  (необязательно)
-let asTree = true // Bool |  (необязательно)
-let skipChildren = 987 // Int |  (необязательно)
-let limitChildren = 987 // Int |  (необязательно)
-let maxTreeDepth = 987 // Int |  (необязательно)
-let urlId = "urlId_example" // String |  (необязательно)
-let userId = "userId_example" // String |  (необязательно)
-let anonUserId = "anonUserId_example" // String |  (необязательно)
-let contextUserId = "contextUserId_example" // String |  (необязательно)
-let hashTag = "hashTag_example" // String |  (необязательно)
-let parentId = "parentId_example" // String |  (необязательно)
-let direction = SortDirections() // SortDirections |  (необязательно)
-let fromDate = 987 // Int64 |  (необязательно)
-let toDate = 987 // Int64 |  (необязательно)
+let page = 987 // Int |  (optional)
+let limit = 987 // Int |  (optional)
+let skip = 987 // Int |  (optional)
+let asTree = true // Bool |  (optional)
+let skipChildren = 987 // Int |  (optional)
+let limitChildren = 987 // Int |  (optional)
+let maxTreeDepth = 987 // Int |  (optional)
+let urlId = "urlId_example" // String |  (optional)
+let userId = "userId_example" // String |  (optional)
+let anonUserId = "anonUserId_example" // String |  (optional)
+let contextUserId = "contextUserId_example" // String |  (optional)
+let hashTag = "hashTag_example" // String |  (optional)
+let parentId = "parentId_example" // String |  (optional)
+let direction = SortDirections() // SortDirections |  (optional)
+let fromDate = 987 // Int64 |  (optional)
+let toDate = 987 // Int64 |  (optional)
 
-DefaultAPI.getComments(tenantId: tenantId, page: page, limit: limit, skip: skip, asTree: asTree, skipChildren: skipChildren, limitChildren: limitChildren, maxTreeDepth: maxTreeDepth, urlId: urlId, userId: userId, anonUserId: anonUserId, contextUserId: contextUserId, hashTag: hashTag, parentId: parentId, direction: direction, fromDate: fromDate, toDate: toDate) { (response, error) in
+DefaultAPI.getComments(tenantId: tenantId, options: DefaultAPI.GetCommentsOptions(page: page, limit: limit, skip: skip, asTree: asTree, skipChildren: skipChildren, limitChildren: limitChildren, maxTreeDepth: maxTreeDepth, urlId: urlId, userId: userId, anonUserId: anonUserId, contextUserId: contextUserId, hashTag: hashTag, parentId: parentId, direction: direction, fromDate: fromDate, toDate: toDate)) { (response, error) in
     guard error == nil else {
         print(error)
         return

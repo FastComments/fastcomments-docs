@@ -2,16 +2,17 @@
 
 | Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Да |  |
-| banEmail | boolean | query | Не |  |
-| banEmailDomain | boolean | query | Не |  |
-| banIP | boolean | query | Не |  |
-| deleteAllUsersComments | boolean | query | Не |  |
-| bannedUntil | string | query | Не |  |
-| isShadowBan | boolean | query | Не |  |
-| updateId | string | query | Не |  |
-| banReason | string | query | Не |  |
-| sso | string | query | Не |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| banEmail | boolean | query | No |  |
+| banEmailDomain | boolean | query | No |  |
+| banIP | boolean | query | No |  |
+| deleteAllUsersComments | boolean | query | No |  |
+| bannedUntil | string | query | No |  |
+| isShadowBan | boolean | query | No |  |
+| updateId | string | query | No |  |
+| banReason | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Отговор
 
@@ -31,6 +32,7 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
 	banEmail := true // bool |  (по избор)
 	banEmailDomain := true // bool |  (по избор)
@@ -44,7 +46,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostBanUserFromComment(context.Background(), commentId).BanEmail(banEmail).BanEmailDomain(banEmailDomain).BanIP(banIP).DeleteAllUsersComments(deleteAllUsersComments).BannedUntil(bannedUntil).IsShadowBan(isShadowBan).UpdateId(updateId).BanReason(banReason).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostBanUserFromComment(context.Background(), commentId).TenantId(tenantId).BanEmail(banEmail).BanEmailDomain(banEmailDomain).BanIP(banIP).DeleteAllUsersComments(deleteAllUsersComments).BannedUntil(bannedUntil).IsShadowBan(isShadowBan).UpdateId(updateId).BanReason(banReason).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostBanUserFromComment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

@@ -1,10 +1,12 @@
 ## Параметри
 
-| Име | Тип | Обавезно | Опис |
+| Име | Тип | Захтеван | Опис |
 |------|------|----------|-------------|
-| comment_id | String | Да |  |
-| direction | String | Не |  |
-| sso | String | Не |  |
+| tenant_id | String | Yes |  |
+| comment_id | String | Yes |  |
+| direction | String | No |  |
+| broadcast_id | String | No |  |
+| sso | String | No |  |
 
 ## Одговор
 
@@ -12,17 +14,18 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'post_vote пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_vote Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn submit_vote() -> Result<VoteResponse, Error> {
-    let params: PostVoteParams = PostVoteParams {
-        comment_id: String::from("news/article-1234/comment-5678"),
-        direction: Some(String::from("up")),
-        sso: Some(String::from("acme-corp-sso-token-abc123")),
+async fn example() -> Result<(), Error> {
+    let cfg = configuration::Configuration::default();
+    let params = PostVoteParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: "news/article-12345".to_string(),
+        direction: Some("up".to_string()),
+        broadcast_id: Some("broadcast-987".to_string()),
+        sso: None,
     };
-    let vote_response: VoteResponse = post_vote(&configuration, params).await?;
-    Ok(vote_response)
+    let _response = post_vote(&cfg, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

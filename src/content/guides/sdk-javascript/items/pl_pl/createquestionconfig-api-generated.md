@@ -1,35 +1,34 @@
-## Parametry
+## Parameters
 
-| Nazwa | Typ | Wymagane | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Tak |  |
 | createQuestionConfigBody | CreateQuestionConfigBody | Tak |  |
 
-## Odpowiedź
+## Response
 
-Zwraca: [`CreateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionConfigResponse.ts)
+Zwraca: [`CreateQuestionConfigResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionConfigResponse1.ts)
 
-## Przykład
+## Example
 
 [inline-code-attrs-start title = 'Przykład createQuestionConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "org-7b3d1e9f";
-const customOption: QuestionConfigCustomOptionsInner = {
-  key: "priority",
-  label: "Priority",
-  values: ["low", "medium", "high"],
-  defaultValue: "medium"
-};
-const createQuestionConfigBody: CreateQuestionConfigBody = {
-  name: "Customer Support Questions",
-  description: "Configuration for support-related question flows",
-  enabled: true,
-  moderation: { required: true, level: "manual" },
-  questionLimitPerUser: 5,
-  customOptions: [customOption],
-  allowAnonymous: false
-};
-const response: CreateQuestionConfigResponse = await createQuestionConfig(tenantId, createQuestionConfigBody);
-[inline-code-end]
+const tenantId: string = "tenant_12345";
 
----
+const customOption: QuestionConfigCustomOptionsInner = {
+  label: "Option A",
+  value: "a",
+};
+
+const createQuestionConfigBody: CreateQuestionConfigBody = {
+  questionText: "What is your favorite color?",
+  isActive: true,
+  // opcjonalne pola mogą być pominięte
+  customOptions: [customOption],
+};
+
+const response: CreateQuestionConfigResponse1 = await createQuestionConfig(
+  tenantId,
+  createQuestionConfigBody
+);
+[inline-code-end]

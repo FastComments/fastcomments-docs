@@ -1,26 +1,27 @@
----
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Потребно | Опис |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Да |  |
-| sso | string | query | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| sso | string | query | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`ModerationAPIChildCommentsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationAPIChildCommentsResponse.swift)
+Vraća: [`ModerationAPIChildCommentsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationAPIChildCommentsResponse.swift)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'getCommentChildren пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getCommentChildren'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи примери кода су још у бета верзији. За било који проблем, пријавите га путем http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledeći primeri koda su još u beta fazi. Za bilo koji problem, molimo prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
-let sso = "sso_example" // String |  (опционо)
+let sso = "sso_example" // String |  (optional)
 
-ModerationAPI.getCommentChildren(commentId: commentId, sso: sso) { (response, error) in
+ModerationAPI.getCommentChildren(tenantId: tenantId, commentId: commentId, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -31,5 +32,3 @@ ModerationAPI.getCommentChildren(commentId: commentId, sso: sso) { (response, er
     }
 }
 [inline-code-end]
-
----

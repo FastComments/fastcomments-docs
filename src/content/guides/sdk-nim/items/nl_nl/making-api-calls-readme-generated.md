@@ -1,6 +1,8 @@
-Alle API-methoden in deze SDK retourneren tuples van `(Option[ResponseType], Response)`. Het eerste element bevat de geparste response als deze succesvol is, en het tweede element is de ruwe HTTP-respons.
+Alle API-methoden in deze SDK retourneren tuples van `(Option[ResponseType], Response)`. Het eerste element bevat de geparseerde respons indien geslaagd, en het tweede element is de ruwe HTTP-respons.
 
-### Voorbeeld: Reacties ophalen
+Vereiste parameters en de request body worden positioneel doorgegeven. De resterende optionele parameters worden verzameld in één `Api<Operation>Options`-object, dat het laatste argument is. Operaties zonder optionele parameters nemen geen opties-object.
+
+### Voorbeeld: Opvragen van reacties
 
 ```nim
 import httpclient
@@ -14,20 +16,10 @@ client.headers["x-api-key"] = "your-api-key"
 let (response, httpResponse) = getComments(
   httpClient = client,
   tenantId = "your-tenant-id",
-  page = 0,
-  limit = 0,
-  skip = 0,
-  asTree = false,
-  skipChildren = 0,
-  limitChildren = 0,
-  maxTreeDepth = 0,
-  urlId = "your-url-id",
-  userId = "",
-  anonUserId = "",
-  contextUserId = "",
-  hashTag = "",
-  parentId = "",
-  direction = SortDirections.DESC
+  options = GetCommentsOptions(
+    urlId: "your-url-id",
+    direction: SortDirections.DESC
+  )
 )
 
 if httpResponse.code == Http200:

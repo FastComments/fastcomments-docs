@@ -1,7 +1,6 @@
----
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 是 |  |
 | urlId | string | query | 是 |  |
@@ -21,13 +20,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // 如果您想使用自定义 HTTP 客户端，请传入实现了 `GuzzleHttp\ClientInterface` 的客户端。
-    // 这是可选的，默认将使用 `GuzzleHttp\Client`。
+    // 如果您想使用自定义 HTTP 客户端，请传入实现 `GuzzleHttp\ClientInterface` 的客户端。
+    // 这一步是可选的，默认会使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$url_id = 'url_id_example'; // string
-$title = 'title_example'; // string
+
+$tenant_id = 'tenant_id_example'; // 字符串
+$url_id = 'url_id_example'; // 字符串
+$title = 'title_example'; // 字符串
+
 
 try {
     $result = $apiInstance->createV1PageReact($tenant_id, $url_id, $title);
@@ -36,5 +37,3 @@ try {
     echo 'Exception when calling PublicApi->createV1PageReact: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

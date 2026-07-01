@@ -2,8 +2,10 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | commentId | string | path | Yes |  |
 | reviewed | boolean | query | No |  |
+| broadcastId | string | query | No |  |
 | sso | string | query | No |  |
 
 ## Response
@@ -27,12 +29,15 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     Boolean reviewed = true; // Boolean | 
+    String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      APIEmptyResponse result = apiInstance.postSetCommentReviewStatus(commentId)
+      APIEmptyResponse result = apiInstance.postSetCommentReviewStatus(tenantId, commentId)
             .reviewed(reviewed)
+            .broadcastId(broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);

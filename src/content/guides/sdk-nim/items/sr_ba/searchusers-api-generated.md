@@ -1,34 +1,28 @@
-## Параметри
+---
+## Parametri
 
-| Назив | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| urlId | string | Да |  |
-| usernameStartsWith | string | Не |  |
-| mentionGroupIds | seq[string] | Не |  |
-| sso | string | Не |  |
-| searchSection | string | Не |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Da |  |
+| urlId | string | Da |  |
+| options | SearchUsersOptions | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[SearchUsersResult]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_search_users_result.nim)
+Vraća: [`Option[SearchUsersResult]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_search_users_result.nim)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример searchUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'searchUsers Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.searchUsers(
   tenantId = "my-tenant-123",
-  urlId = "news/top-story",
-  usernameStartsWith = "",
-  mentionGroupIds = @[],
-  sso = "",
-  searchSection = ""
+  urlId = "news/article-title",
+  options = SearchUsersOptions()
 )
 
 if response.isSome:
-  let searchResult = response.get()
-  echo "SearchUsersResult:", searchResult
-else:
-  echo "No result or error. HTTP response:", httpResponse
+  let result = response.get()
 [inline-code-end]
+
+---

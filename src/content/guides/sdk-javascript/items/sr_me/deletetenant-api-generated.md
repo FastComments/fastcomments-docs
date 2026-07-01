@@ -1,23 +1,32 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
-| sure | string | Не |  |
+| tenantId | string | Da |  |
+| id | string | Da |  |
+| sure | string | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Vraća: [`DeleteTenantResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteTenantResponse.ts)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'deleteTenant Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteTenant Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_5f2b9c8a';
-const id: string = 'site_9d4f2a1b';
-const confirmation: string = 'CONFIRM_DELETE';
-const result: APIEmptyResponse = await deleteTenant(tenantId, id, confirmation);
-[inline-code-end]
+async function runExample() {
+    const tenantId: string = "tenant_12345";
+    const id: string = "resource_98765";
+    const sure: string = "confirm";
 
----
+    // Poziv sa opcionim parametrom 'sure'
+    const responseWithSure: DeleteTenantResponse = await deleteTenant(tenantId, id, sure);
+    console.log(responseWithSure);
+
+    // Poziv bez opcionog parametra 'sure'
+    const responseWithoutSure: DeleteTenantResponse = await deleteTenant(tenantId, id);
+    console.log(responseWithoutSure);
+}
+
+runExample();
+[inline-code-end]

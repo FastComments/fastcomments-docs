@@ -2,11 +2,11 @@
 
 | Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | poizvedba | Da |  |
-| id | string | pot | Da |  |
-| updateComments | boolean | poizvedba | Ne |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| updateComments | boolean | query | No |  |
 
-## Odziv
+## Odgovor
 
 Vrne: [`PatchSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PatchSSOUserAPIResponse.php)
 
@@ -18,22 +18,24 @@ Vrne: [`PatchSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-p
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Konfigurirajte avtorizacijo API ključa: api_key
+// Konfiguriraj avtorizacijo API ključa: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Odkomentirajte spodnjo vrstico, da nastavite predpono (npr. Bearer) za API ključ, če je potrebno
+// Odkomentiraj spodaj, če želiš nastaviti predpono (npr. Bearer) za API ključ, po potrebi
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Če želite uporabiti svoj HTTP odjemalec, posredujte odjemalca, ki implementira `GuzzleHttp\ClientInterface`.
-    // To je opcijsko; kot privzeto bo uporabljen `GuzzleHttp\Client`.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
 $update_apisso_user_data = new \FastComments\Client\Model\UpdateAPISSOUserData(); // \FastComments\Client\Model\UpdateAPISSOUserData
 $update_comments = True; // bool
+
 
 try {
     $result = $apiInstance->patchSSOUser($tenant_id, $id, $update_apisso_user_data, $update_comments);

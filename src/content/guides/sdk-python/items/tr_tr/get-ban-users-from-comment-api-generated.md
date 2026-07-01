@@ -1,13 +1,14 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Evet |  |
-| sso | string | query | Hayır |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| sso | string | query | No |  |
 
 ## Yanıt
 
-Döndürür: [`GetBannedUsersFromCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_banned_users_from_comment_response.py)
+Returns: [`GetBannedUsersFromCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_banned_users_from_comment_response.py)
 
 ## Örnek
 
@@ -18,22 +19,23 @@ from client.models.get_banned_users_from_comment_response import GetBannedUsersF
 from client.rest import ApiException
 from pprint import pprint
 
-# Sunucu tanımı isteğe bağlıdır ve varsayılan https://fastcomments.com'tur
-# Desteklenen tüm yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.
+# Host tanımlaması isteğe bağlıdır ve varsayılan olarak https://fastcomments.com adresini kullanır
+# configuration.py dosyasına bakarak tüm desteklenen yapılandırma parametrelerinin listesini görebilirsiniz.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# API istemcisi örneği ile bir bağlam açın
+# API istemcisinin bir örneğiyle bir bağlam girin
 with client.ApiClient(configuration) as api_client:
     # API sınıfının bir örneğini oluşturun
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     sso = 'sso_example' # str |  (isteğe bağlı)
 
     try:
-        api_response = api_instance.get_ban_users_from_comment(comment_id, sso=sso)
+        api_response = api_instance.get_ban_users_from_comment(tenant_id, comment_id, sso=sso)
         print("The response of ModerationApi->get_ban_users_from_comment:\n")
         pprint(api_response)
     except Exception as e:

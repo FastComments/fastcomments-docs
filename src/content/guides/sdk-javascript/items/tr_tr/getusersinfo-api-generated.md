@@ -1,26 +1,29 @@
-Bir kiracı için toplu kullanıcı bilgisi. userIds verildiğinde, User / SSOUser'dan görüntü bilgilerini döndürür.
-Yorum bileşeni tarafından, presence olayı aracılığıyla yeni ortaya çıkan kullanıcıları zenginleştirmek için kullanılır.
-Sayfa bağlamı yok: gizlilik tutarlı şekilde uygulanır (özel profiller maskelenir).
+Bir kiracı için toplu kullanıcı bilgisi. userId'ler verildiğinde, User / SSOUser'dan görüntüleme bilgisi döndürür.  
+Yorum widget'ı tarafından, bir varlık etkinliğiyle yeni ortaya çıkan kullanıcıları zenginleştirmek için kullanılır.  
+Sayfa bağlamı yok: gizlilik tutarlı bir şekilde uygulanır (özel profiller maskelelenir).
 
 ## Parametreler
 
-| İsim | Tür | Gerekli | Açıklama |
+| İsim | Tür | Zorunlu | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | ids | string | Evet |  |
 
 ## Yanıt
 
-Döndürür: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersInfoResponse.ts)
+Döndürür: [`GetUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUsersInfoResponse.ts)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'getUsersInfo Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_78f9';
-const ids: string = 'user_10234,user_10235,user_10236';
-const usersInfo: PageUsersInfoResponse = await getUsersInfo(tenantId, ids);
-// getUsersInfo sadece tenantId ve ids'yi gerektirir; isteğe bağlı parametreler burada uygulanmaz.
+const tenantId: string = "acme-corp-tenant";
+const ids: string = "user-1001,user-1002";
+
+const usersInfo: GetUsersInfoResponse = await getUsersInfo(tenantId, ids);
+
+// Yanıt içindeki isteğe bağlı alanlar tanımsız olabilir
+const firstUser: PageUserEntry | undefined = usersInfo?.users?.[0];
 [inline-code-end]
 
 ---

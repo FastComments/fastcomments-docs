@@ -1,29 +1,31 @@
 ## Παράμετροι
 
-| Name | Type | Location | Required | Description |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Ναι |  |
-| banEmail | boolean | query | Όχι |  |
-| banEmailDomain | boolean | query | Όχι |  |
-| banIP | boolean | query | Όχι |  |
-| deleteAllUsersComments | boolean | query | Όχι |  |
-| bannedUntil | string | query | Όχι |  |
-| isShadowBan | boolean | query | Όχι |  |
-| updateId | string | query | Όχι |  |
-| banReason | string | query | Όχι |  |
-| sso | string | query | Όχι |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| banEmail | boolean | query | No |  |
+| banEmailDomain | boolean | query | No |  |
+| banIP | boolean | query | No |  |
+| deleteAllUsersComments | boolean | query | No |  |
+| bannedUntil | string | query | No |  |
+| isShadowBan | boolean | query | No |  |
+| updateId | string | query | No |  |
+| banReason | string | query | No |  |
+| sso | string | query | No |  |
 
-## Απάντηση
+## Απόκριση
 
 Επιστρέφει: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/BanUserFromCommentResult.swift)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα postBanUserFromComment'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postBanUserFromComment Παράδειγμα'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Τα ακόλουθα δείγματα κώδικα είναι ακόμα σε beta. Για οποιοδήποτε πρόβλημα, παρακαλώ αναφέρετε μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
+// Τα παρακάτω παραδείγματα κώδικα είναι ακόμα beta. Για οποιοδήποτε ζήτημα, παρακαλούμε αναφέρετε το μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
 let banEmail = true // Bool |  (προαιρετικό)
 let banEmailDomain = true // Bool |  (προαιρετικό)
@@ -35,7 +37,7 @@ let updateId = "updateId_example" // String |  (προαιρετικό)
 let banReason = "banReason_example" // String |  (προαιρετικό)
 let sso = "sso_example" // String |  (προαιρετικό)
 
-ModerationAPI.postBanUserFromComment(commentId: commentId, banEmail: banEmail, banEmailDomain: banEmailDomain, banIP: banIP, deleteAllUsersComments: deleteAllUsersComments, bannedUntil: bannedUntil, isShadowBan: isShadowBan, updateId: updateId, banReason: banReason, sso: sso) { (response, error) in
+ModerationAPI.postBanUserFromComment(tenantId: tenantId, commentId: commentId, options: ModerationAPI.PostBanUserFromCommentOptions(banEmail: banEmail, banEmailDomain: banEmailDomain, banIP: banIP, deleteAllUsersComments: deleteAllUsersComments, bannedUntil: bannedUntil, isShadowBan: isShadowBan, updateId: updateId, banReason: banReason, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -46,3 +48,5 @@ ModerationAPI.postBanUserFromComment(commentId: commentId, banEmail: banEmail, b
     }
 }
 [inline-code-end]
+
+---

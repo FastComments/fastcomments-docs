@@ -1,6 +1,6 @@
 ### Verwendung authentifizierter APIs (DefaultApi)
 
-**Wichtig:** Sie müssen Ihren API-Schlüssel im ApiClient setzen, bevor Sie authentifizierte Anfragen stellen. Wenn Sie dies nicht tun, schlagen die Anfragen mit einem 401-Fehler fehl.
+**Wichtig:** Sie müssen Ihren API-Schlüssel im ApiClient festlegen, bevor Sie authentifizierte Anfragen stellen. Wenn Sie dies nicht tun, schlagen die Anfragen mit einem 401-Fehler fehl.
 
 ```ruby
 require 'fastcomments'
@@ -9,13 +9,13 @@ require 'fastcomments'
 config = FastCommentsClient::Configuration.new
 api_client = FastCommentsClient::ApiClient.new(config)
 
-# ERFORDERLICH: Setzen Sie Ihren API-Schlüssel (diesen finden Sie im FastComments-Dashboard)
+# ERFORDERLICH: Setzen Sie Ihren API-Schlüssel (holen Sie ihn von Ihrem FastComments-Dashboard)
 config.api_key['x-api-key'] = 'YOUR_API_KEY_HERE'
 
 # Erstelle die API-Instanz mit dem konfigurierten Client
 api = FastCommentsClient::DefaultApi.new(api_client)
 
-# Jetzt können Sie authentifizierte API-Aufrufe durchführen
+# Jetzt können Sie authentifizierte API-Aufrufe tätigen
 begin
   # Beispiel: Einen SSO-Benutzer hinzufügen
   user_data = {
@@ -46,8 +46,8 @@ public_api = FastCommentsClient::PublicApi.new
 
 begin
   response = public_api.get_comments_public(
-    tenant_id: 'YOUR_TENANT_ID',
-    url_id: 'page-url-id'
+    'YOUR_TENANT_ID',
+    'page-url-id'
   )
   puts response
 rescue FastCommentsClient::ApiError => e
@@ -55,9 +55,9 @@ rescue FastCommentsClient::ApiError => e
 end
 ```
 
-### Verwendung der Moderations-APIs (ModerationApi)
+### Verwendung von Moderations-APIs (ModerationApi)
 
-Die Moderationsmethoden treiben das Moderatoren-Dashboard an. Übergeben Sie ein `sso`-Token, damit die Anfrage im Namen eines per SSO authentifizierten Moderators gestellt wird:
+Die Moderationsmethoden betreiben das Moderator‑Dashboard. Übergeben Sie ein `sso`‑Token, damit die Anfrage im Namen eines SSO‑authentifizierten Moderators gestellt wird:
 
 ```ruby
 require 'fastcomments'
@@ -77,6 +77,6 @@ end
 
 ### Häufige Probleme
 
-1. **401 "missing-api-key" Fehler**: Stellen Sie sicher, dass Sie `config.api_key['x-api-key'] = 'YOUR_KEY'` setzen, bevor Sie die DefaultApi-Instanz erstellen.
-2. **Falsche API-Klasse**: Verwenden Sie `DefaultApi` für serverseitige authentifizierte Anfragen, `PublicApi` für clientseitige/öffentliche Anfragen und `ModerationApi` für Anfragen des Moderatoren-Dashboards.
-3. **Null API-Schlüssel**: Das SDK überspringt die Authentifizierung stillschweigend, wenn der API-Schlüssel null ist, was zu 401-Fehlern führt.
+1. **401 "missing-api-key" Fehler**: Stellen Sie sicher, dass Sie `config.api_key['x-api-key'] = 'YOUR_KEY'` setzen, bevor Sie die DefaultApi-Instanz erstellen.  
+2. **Falsche API-Klasse**: Verwenden Sie `DefaultApi` für serverseitige authentifizierte Anfragen, `PublicApi` für clientseitige/öffentliche Anfragen und `ModerationApi` für Anfragen des Moderator‑Dashboards.  
+3. **Null API-Schlüssel**: Das SDK wird die Authentifizierung stillschweigend überspringen, wenn der API-Schlüssel null ist, was zu 401-Fehlern führt.

@@ -1,19 +1,20 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Oui |  |
 | commentId | string | path | Oui |  |
 | sso | string | query | Non |  |
 
 ## Réponse
 
-Renvoie: [`GetBannedUsersFromCommentResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetBannedUsersFromCommentResponse.java)
+Retourne : [`GetBannedUsersFromCommentResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetBannedUsersFromCommentResponse.java)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getBanUsersFromComment'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getBanUsersFromComment'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importer les classes :
+// Importer les classes :
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,18 +27,19 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
-    String commentId = "commentId_example"; // String | 
-    String sso = "sso_example"; // String | 
+    String tenantId = "tenantId_example"; // Chaîne | 
+    String commentId = "commentId_example"; // Chaîne | 
+    String sso = "sso_example"; // Chaîne | 
     try {
-      GetBannedUsersFromCommentResponse result = apiInstance.getBanUsersFromComment(commentId)
+      GetBannedUsersFromCommentResponse result = apiInstance.getBanUsersFromComment(tenantId, commentId)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ModerationApi#getBanUsersFromComment");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("Exception lors de l'appel de ModerationApi#getBanUsersFromComment");
+      System.err.println("Code d'état : " + e.getCode());
+      System.err.println("Raison : " + e.getResponseBody());
+      System.err.println("En-têtes de réponse : " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }

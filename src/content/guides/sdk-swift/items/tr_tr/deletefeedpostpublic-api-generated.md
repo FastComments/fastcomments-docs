@@ -1,6 +1,6 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| İsim | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Evet |  |
 | postId | string | path | Evet |  |
@@ -15,15 +15,15 @@ Döndürür: [`DeleteFeedPostPublicResponse`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'deleteFeedPostPublic Örneği'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Aşağıdaki kod örnekleri hala beta durumundadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new üzerinden bildirin
+// Aşağıdaki kod örnekleri hâlâ beta aşamasındadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new adresine bildirin
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let postId = "postId_example" // String | 
-let broadcastId = "broadcastId_example" // String |  (isteğe bağlı)
-let sso = "sso_example" // String |  (isteğe bağlı)
+let broadcastId = "broadcastId_example" // String |  (opsiyonel)
+let sso = "sso_example" // String |  (opsiyonel)
 
-PublicAPI.deleteFeedPostPublic(tenantId: tenantId, postId: postId, broadcastId: broadcastId, sso: sso) { (response, error) in
+PublicAPI.deleteFeedPostPublic(tenantId: tenantId, postId: postId, options: PublicAPI.DeleteFeedPostPublicOptions(broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

@@ -1,20 +1,20 @@
-FastComments Rust SDK はいくつかのモジュールで構成されています：
+FastComments Rust SDK は複数のモジュールで構成されています:
 
-- **Client Module** - FastComments REST API 用の API クライアント
-  - すべてのAPIモデルの完全な型定義
-  - FastComments のすべてのメソッドをカバーする3つのAPIクライアント：
-    - `default_api` (**DefaultApi**) - サーバー側での使用向けの API キー認証されたメソッド
-    - `public_api` (**PublicApi**) - パブリックで、API キー不要のメソッド。ブラウザやモバイルアプリから呼び出しても安全です
-    - `moderation_api` (**ModerationApi**) - モデレータダッシュボードを支えるメソッド群（コメントのモデレーション（一覧、集計、検索、ログ、エクスポート）、モデレーションアクション（削除/復元、フラグ、レビュー/スパム/承認ステータスの設定、投票、スレッドの再開/クローズ）、バン（コメントからのバン、取り消し、事前バンの要約、バン状況/設定、バンされたユーザーの集計）、バッジと信頼（バッジの付与/削除、手動バッジ、信頼係数の取得/設定、ユーザー内部プロファイル））。すべての Moderation メソッドは SSO 認証されたモデレータを代理して呼び出せるように `sso` パラメータを受け取ります。
-  - tokio を使った完全な async/await サポート
-  - 詳細なAPIドキュメントは [client/README.md](https://github.com/FastComments/fastcomments-rust/blob/main/client/README.md) を参照してください
+- **Client Module** - FastComments REST API の API クライアント
+  - すべての API モデルの完全な型定義
+  - FastComments のすべてのメソッドをカバーする 3 つの API クライアント:
+    - `default_api` (**DefaultApi**) - サーバーサイドで使用するための API キー認証メソッド
+    - `public_api` (**PublicApi**) - ブラウザやモバイルアプリから安全に呼び出せる、API キー不要の公開メソッド
+    - `moderation_api` (**ModerationApi**) - ライブかつ高速なモデレーション API の包括的スイート。すべての Moderation メソッドは `sso` パラメータを受け取り、SSO または FastComments.com のセッションクッキーで認証できます。
+  - tokio によるフル async/await サポート
+  - 詳細な API ドキュメントは [client/README.md](https://github.com/FastComments/fastcomments-rust/blob/main/client/README.md) を参照してください
 
-- **SSO Module** - サーバー側シングルサインオンユーティリティ
+- **SSO Module** - サーバーサイドのシングルサインオンユーティリティ
   - ユーザー認証のための安全なトークン生成
-  - シンプルおよびセキュアの両方の SSO モードをサポート
-  - HMAC-SHA256 によるトークン署名
+  - シンプルモードとセキュアモードの両方に対応
+  - HMAC-SHA256 に基づくトークン署名
 
-- **Core Types** - 共有の型定義とユーティリティ
+- **Core Types** - 共有型定義とユーティリティ
   - コメントモデルとメタデータ構造
-  - ユーザーおよびテナントの設定
-  - 一般的な操作のためのヘルパー関数
+  - ユーザーおよびテナント設定
+  - 共通操作のためのヘルパー関数

@@ -1,8 +1,8 @@
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Requerido | Descripción |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | No |  |
+| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
+|--------|------|-----------|--------------|-------------|
+| tenantId | string | query | Sí |  |
 
 ## Respuesta
 
@@ -10,7 +10,7 @@ Devuelve: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcom
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de AddHashTagsBulk'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo AddHashTagsBulk'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -22,7 +22,7 @@ import (
 )
 
 func main() {
-	tenantId := "tenantId_example" // string |  (opcional)
+	tenantId := "tenantId_example" // string | 
 	bulkCreateHashTagsBody := *openapiclient.NewBulkCreateHashTagsBody([]openapiclient.BulkCreateHashTagsBodyTagsInner{*openapiclient.NewBulkCreateHashTagsBodyTagsInner("Tag_example")}) // BulkCreateHashTagsBody |  (opcional)
 
 	configuration := openapiclient.NewConfiguration()

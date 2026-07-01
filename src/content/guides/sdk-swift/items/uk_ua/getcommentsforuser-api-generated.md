@@ -1,6 +1,6 @@
 ## Параметри
 
-| Назва | Type | Location | Обов'язковий | Опис |
+| Назва | Тип | Розташування | Обов’язковий | Опис |
 |------|------|----------|----------|-------------|
 | userId | string | query | Ні |  |
 | direction | string | query | Ні |  |
@@ -18,7 +18,7 @@
 
 [inline-code-attrs-start title = 'Приклад getCommentsForUser'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Наступні приклади коду все ще в бета-версії. Якщо виникнуть проблеми, будь ласка, повідомте через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наступні зразки коду все ще бета. При виникненні будь‑яких проблем, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let userId = "userId_example" // String |  (необов'язково)
@@ -29,7 +29,7 @@ let includei10n = true // Bool |  (необов'язково)
 let locale = "locale_example" // String |  (необов'язково)
 let isCrawler = true // Bool |  (необов'язково)
 
-PublicAPI.getCommentsForUser(userId: userId, direction: direction, repliesToUserId: repliesToUserId, page: page, includei10n: includei10n, locale: locale, isCrawler: isCrawler) { (response, error) in
+PublicAPI.getCommentsForUser(options: PublicAPI.GetCommentsForUserOptions(userId: userId, direction: direction, repliesToUserId: repliesToUserId, page: page, includei10n: includei10n, locale: locale, isCrawler: isCrawler)) { (response, error) in
     guard error == nil else {
         print(error)
         return

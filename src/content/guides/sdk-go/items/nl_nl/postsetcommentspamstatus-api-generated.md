@@ -1,17 +1,19 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Ja |  |
-| spam | boolean | query | Nee |  |
-| permNotSpam | boolean | query | Nee |  |
-| sso | string | query | Nee |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| spam | boolean | query | No |  |
+| permNotSpam | boolean | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
-## Respons
+## Response
 
-Geeft terug: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
+Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
 
-## Voorbeeld
+## Example
 
 [inline-code-attrs-start title = 'PostSetCommentSpamStatus Voorbeeld'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -25,19 +27,21 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
 	spam := true // bool |  (optioneel)
 	permNotSpam := true // bool |  (optioneel)
+	broadcastId := "broadcastId_example" // string |  (optioneel)
 	sso := "sso_example" // string |  (optioneel)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostSetCommentSpamStatus(context.Background(), commentId).Spam(spam).PermNotSpam(permNotSpam).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostSetCommentSpamStatus(context.Background(), commentId).TenantId(tenantId).Spam(spam).PermNotSpam(permNotSpam).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostSetCommentSpamStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// respons van `PostSetCommentSpamStatus`: APIEmptyResponse
+	// reactie van `PostSetCommentSpamStatus`: APIEmptyResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostSetCommentSpamStatus`: %v\n", resp)
 }
 [inline-code-end]

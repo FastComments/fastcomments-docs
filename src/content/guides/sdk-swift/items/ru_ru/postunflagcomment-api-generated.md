@@ -1,8 +1,10 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
 | commentId | string | path | Да |  |
+| broadcastId | string | query | Нет |  |
 | sso | string | query | Нет |  |
 
 ## Ответ
@@ -13,13 +15,15 @@
 
 [inline-code-attrs-start title = 'Пример postUnFlagComment'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие примеры кода все ещё находятся на стадии бета. Если возникнут проблемы, пожалуйста, сообщите об этом через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следующие образцы кода находятся в бета-версии. При возникновении проблем, пожалуйста, сообщайте их по адресу http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
-let sso = "sso_example" // String |  (необязательно)
+let broadcastId = "broadcastId_example" // String |  (optional)
+let sso = "sso_example" // String |  (optional)
 
-ModerationAPI.postUnFlagComment(commentId: commentId, sso: sso) { (response, error) in
+ModerationAPI.postUnFlagComment(tenantId: tenantId, commentId: commentId, options: ModerationAPI.PostUnFlagCommentOptions(broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -30,5 +34,3 @@ ModerationAPI.postUnFlagComment(commentId: commentId, sso: sso) { (response, err
     }
 }
 [inline-code-end]
-
----

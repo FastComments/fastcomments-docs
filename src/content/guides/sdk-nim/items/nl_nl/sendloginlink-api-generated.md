@@ -1,12 +1,12 @@
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
-|------|------|----------|-------------|
+| Naam | Type | Verplicht | Beschrijving |
+|------|------|-----------|--------------|
 | tenantId | string | Ja |  |
 | id | string | Nee |  |
-| redirectURL | string | Nee |  |
+| redirectURL | string = "" | Nee |  |
 
-## Antwoord
+## Respons
 
 Retourneert: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
@@ -14,12 +14,12 @@ Retourneert: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'sendLoginLink Voorbeeld'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.sendLoginLink(tenantId = "my-tenant-123", id = "user-456", redirectURL = "https://app.newsportal.com/welcome")
-if response.isSome:
-  let apiResp = response.get()
-  echo "Login link sent successfully"
-else:
-  echo "Failed to send login link, HTTP status: ", $httpResponse.status
-[inline-code-end]
+let (maybeResp, httpResp) = client.sendLoginLink(
+  tenantId = "my-tenant-123",
+  id = "user-456",
+  redirectURL = "https://myapp.example.com/login-success"
+)
 
----
+if maybeResp.isSome:
+  let emptyResp = maybeResp.get()
+[inline-code-end]

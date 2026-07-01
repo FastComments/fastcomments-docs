@@ -2,27 +2,27 @@
 
 | Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
+| tenant_id | String | Da |  |
 | badges_user_id | String | Ne |  |
 | comment_id | String | Ne |  |
 | sso | String | Ne |  |
 
 ## Odgovor
 
-Vrača: [`GetUserManualBadgesResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_user_manual_badges_response.rs)
+Vrne: [`GetUserManualBadgesResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_user_manual_badges_response.rs)
 
 ## Primer
 
-[inline-code-attrs-start title = 'get_manual_badges_for_user Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer get_manual_badges_for_user'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_manual_badges() -> Result<GetUserManualBadgesResponse, Error> {
-    let params: GetManualBadgesForUserParams = GetManualBadgesForUserParams {
-        badges_user_id: Some(String::from("acme-user-42")),
-        comment_id: Some(String::from("news/article-5678")),
-        sso: Some(String::from("sso-token-abc123")),
+async fn fetch_badges(config: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetManualBadgesForUserParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        badges_user_id: Some("user-42".to_string()),
+        comment_id: Some("comment-987".to_string()),
+        sso: Some("sso-abc123".to_string()),
     };
-    let response: GetUserManualBadgesResponse = get_manual_badges_for_user(&configuration, params).await?;
-    Ok(response)
+    let _response: GetUserManualBadgesResponse = get_manual_badges_for_user(config, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

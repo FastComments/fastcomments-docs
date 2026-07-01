@@ -1,12 +1,13 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | はい |  |
 | sso | string | query | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`APIModerateGetUserBanPreferencesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIModerateGetUserBanPreferencesResponse.java)
+Returns: [`APIModerateGetUserBanPreferencesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIModerateGetUserBanPreferencesResponse.java)
 
 ## 例
 
@@ -25,9 +26,10 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      APIModerateGetUserBanPreferencesResponse result = apiInstance.getUserBanPreference()
+      APIModerateGetUserBanPreferencesResponse result = apiInstance.getUserBanPreference(tenantId)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -41,5 +43,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

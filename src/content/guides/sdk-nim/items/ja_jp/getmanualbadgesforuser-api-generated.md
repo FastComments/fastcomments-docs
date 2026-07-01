@@ -1,10 +1,9 @@
 ## パラメータ
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| badgesUserId | string | 任意 |  |
-| commentId | string | 必須 |  |
-| sso | string | 任意 |  |
+| tenantId | string | はい |  |
+| options | GetManualBadgesForUserOptions | いいえ |  |
 
 ## レスポンス
 
@@ -14,15 +13,13 @@
 
 [inline-code-attrs-start title = 'getManualBadgesForUser の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getManualBadgesForUser(
-  badgesUserId = "user-98765",
-  commentId = "comment-0a1b2c3d",
-  sso = "sso-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
+let (userBadgesOpt, httpResp) = client.getManualBadgesForUser(
+  tenantId = "my-tenant-123",
+  options = GetManualBadgesForUserOptions()
 )
-if response.isSome:
-  let badges = response.get()
-  echo "Received manual badges for user"
-  echo "HTTP status: ", httpResponse.status
+if userBadgesOpt.isSome:
+  let badges = userBadgesOpt.get()
+  echo badges
 [inline-code-end]
 
 ---

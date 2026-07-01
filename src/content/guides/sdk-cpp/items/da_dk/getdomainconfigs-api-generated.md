@@ -1,9 +1,8 @@
----
 ## Parametre
 
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| tenantId | string | Ja |  |
+| tenantId | string | Yes |  |
 
 ## Svar
 
@@ -13,22 +12,13 @@ Returnerer: [`GetDomainConfigsResponse`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'getDomainConfigs Eksempel'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> region = boost::none;
 utility::string_t tenantId = U("my-tenant-123");
-api->getDomainConfigs(tenantId)
-.then([tenantId, region](std::shared_ptr<GetDomainConfigsResponse> resp) {
-    auto result = resp ? resp : std::make_shared<GetDomainConfigsResponse>();
-    std::cout << "Received domain configs for " << tenantId << std::endl;
-    return result;
-})
-.then([](std::shared_ptr<GetDomainConfigsResponse> finalResp) {
-    if (finalResp) {
-        std::cout << "Configs available" << std::endl;
-    } else {
-        std::cout << "No configs returned" << std::endl;
-    }
-})
-.wait();
+boost::optional<utility::string_t> optionalTenant = tenantId;
+api->getDomainConfigs(optionalTenant.value())
+    .then([](std::shared_ptr<GetDomainConfigsResponse> response) {
+        auto domains = response->getDomainList();
+        for (const auto& d : domains) {
+            std::cout << d << std::endl;
+        }
+    });
 [inline-code-end]
-
----

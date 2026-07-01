@@ -1,7 +1,7 @@
 ## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
-|------|------|----------|----------|-------------|
+|------|------|-----------|--------------|-------------|
 | tenantId | string | query | Sì |  |
 | commentId | string | path | Sì |  |
 | isFlagged | boolean | query | Sì |  |
@@ -13,7 +13,7 @@ Restituisce: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-p
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio flagCommentPublic'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'flagCommentPublic Esempio'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -21,14 +21,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Se vuoi usare un client HTTP personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
+    // Se vuoi usare un client http personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
     // Questo è opzionale, `GuzzleHttp\Client` verrà utilizzato come predefinito.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $comment_id = 'comment_id_example'; // string
 $is_flagged = True; // bool
 $sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->flagCommentPublic($tenant_id, $comment_id, $is_flagged, $sso);
@@ -37,3 +39,5 @@ try {
     echo 'Exception when calling PublicApi->flagCommentPublic: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

@@ -1,8 +1,10 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Назва | Тип | Розташування | Обов’язковий | Опис |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Так |  |
 | commentId | string | path | Так |  |
+| broadcastId | string | query | Ні |  |
 | sso | string | query | Ні |  |
 
 ## Відповідь
@@ -11,7 +13,7 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад PostUnFlagComment'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PostUnFlagComment Приклад'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,17 +25,19 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
-	sso := "sso_example" // string |  (необов'язково)
+	broadcastId := "broadcastId_example" // string |  (optional) // string |  (опціонально)
+	sso := "sso_example" // string |  (optional) // string |  (опціонально)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostUnFlagComment(context.Background(), commentId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostUnFlagComment(context.Background(), commentId).TenantId(tenantId).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostUnFlagComment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// відповідь з `PostUnFlagComment`: APIEmptyResponse
+	// response from `PostUnFlagComment`: APIEmptyResponse // відповідь від `PostUnFlagComment`: APIEmptyResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostUnFlagComment`: %v\n", resp)
 }
 [inline-code-end]

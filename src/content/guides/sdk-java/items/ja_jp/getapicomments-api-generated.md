@@ -1,22 +1,23 @@
-## パラメータ
+## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| page | number | query | No |  |
-| count | number | query | No |  |
-| text-search | string | query | No |  |
-| byIPFromComment | string | query | No |  |
-| filters | string | query | No |  |
-| searchFilters | string | query | No |  |
-| sorts | string | query | No |  |
-| demo | boolean | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | はい |  |
+| page | number | query | いいえ |  |
+| count | number | query | いいえ |  |
+| text-search | string | query | いいえ |  |
+| byIPFromComment | string | query | いいえ |  |
+| filters | string | query | いいえ |  |
+| searchFilters | string | query | いいえ |  |
+| sorts | string | query | いいえ |  |
+| demo | boolean | query | いいえ |  |
+| sso | string | query | いいえ |  |
 
-## レスポンス
+## Response
 
-返却値: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationAPIGetCommentsResponse.java)
+返り値: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationAPIGetCommentsResponse.java)
 
-## 例
+## Example
 
 [inline-code-attrs-start title = 'getApiComments の例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -33,6 +34,7 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     Double page = 3.4D; // Double | 
     Double count = 3.4D; // Double | 
     String textSearch = "textSearch_example"; // String | 
@@ -43,7 +45,7 @@ public class Example {
     Boolean demo = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationAPIGetCommentsResponse result = apiInstance.getApiComments()
+      ModerationAPIGetCommentsResponse result = apiInstance.getApiComments(tenantId)
             .page(page)
             .count(count)
             .textSearch(textSearch)

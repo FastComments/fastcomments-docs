@@ -1,11 +1,10 @@
----
-## Parametry
+## Parameters
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Nie |  |
+| tenantId | string | query | Tak |  |
 
-## Odpowiedź
+## Response
 
 Zwraca: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_hash_tag_response.go)
 
@@ -23,8 +22,8 @@ import (
 )
 
 func main() {
-	tenantId := "tenantId_example" // string |  (opcjonalne)
-	createHashTagBody := *openapiclient.NewCreateHashTagBody("Tag_example") // CreateHashTagBody |  (opcjonalne)
+	tenantId := "tenantId_example" // string | 
+	createHashTagBody := *openapiclient.NewCreateHashTagBody("Tag_example") // CreateHashTagBody |  (opcjonalnie)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -37,5 +36,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.AddHashTag`: %v\n", resp)
 }
 [inline-code-end]
-
----

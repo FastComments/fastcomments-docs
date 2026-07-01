@@ -1,39 +1,51 @@
----
-## Parâmetros
+## Parameters
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-----------|
+|------|------|-------------|-----------|
 | tenantId | string | Sim |  |
 | postId | string | Sim |  |
 | updateFeedPostParams | UpdateFeedPostParams | Sim |  |
 | broadcastId | string | Não |  |
 | sso | string | Não |  |
 
-## Resposta
+## Response
 
-Retorna: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateFeedPostResponse.ts)
+Retorna: [`UpdateFeedPostPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateFeedPostPublicResponse.ts)
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de updateFeedPostPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateFeedPostPublic Exemplo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_9b2f4a";
-const postId: string = "post_4f8c21";
-const updateFeedPostParams: UpdateFeedPostParams = {
-  title: "Weekly product update",
-  content: "We've shipped improvements to search relevance and mobile layout.",
-  media: [
-    {
-      type: "image",
-      assets: [{ url: "https://cdn.company.com/images/update-cover.jpg", width: 1200, height: 627 }]
-    }
-  ],
-  links: [{ url: "https://company.com/blog/release-notes", title: "Release notes" }],
-  published: true
-};
-const broadcastId: string = "broadcast_2026_06_19";
-const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.sso_payload.signature";
-const response: CreateFeedPostResponse = await updateFeedPostPublic(tenantId, postId, updateFeedPostParams, broadcastId, sso);
+async function updatePostExample() {
+  const tenantId: string = 'tenant-9f8b7c';
+  const postId: string = 'post-3a4d5e';
+  const updateParams: UpdateFeedPostParams = {
+    title: 'New Announcement',
+    content: 'We have updated our terms of service.',
+    media: [
+      {
+        url: 'https://cdn.example.com/assets/image.png',
+        type: 'image',
+        asset: {
+          width: 800,
+          height: 600,
+          size: 124000
+        } as FeedPostMediaItemAsset
+      } as FeedPostMediaItem
+    ],
+    link: {
+      url: 'https://example.com/terms',
+      title: 'Read the new TOS'
+    } as FeedPostLink
+  };
+  const broadcastId: string = 'broadcast-2023-09';
+  const sso: string = 'sso-abc123xyz';
+  const result: UpdateFeedPostPublicResponse = await updateFeedPostPublic(
+    tenantId,
+    postId,
+    updateParams,
+    broadcastId,
+    sso
+  );
+}
 [inline-code-end]
-
----

@@ -1,12 +1,13 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
-|------|------|----------|-------------|
-| commentId | string | Ναι |  |
-| voteId | string | Ναι |  |
-| sso | string | Όχι |  |
+|------|------|------------|-----------|
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| voteId | string | Yes |  |
+| options | const DeleteModerationVoteOptions& | Yes |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/VoteDeleteResponse.h)
 
@@ -14,20 +15,12 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα deleteModerationVote'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t commentId = U("comment-98765");
-utility::string_t voteId = U("vote-2468");
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
-auto task = api->deleteModerationVote(commentId, voteId, sso)
-    .then([](pplx::task<std::shared_ptr<VoteDeleteResponse>> t){
-        try {
-            auto resp = t.get();
-            if (resp) {
-                auto confirmation = resp;
-            } else {
-                auto fallback = std::make_shared<VoteDeleteResponse>();
-            }
-        } catch (const std::exception& e) {
-            auto errMsg = utility::conversions::to_string_t(e.what());
-        }
-    });
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto commentId = utility::conversions::to_string_t("comment-abc123");
+auto voteId = utility::conversions::to_string_t("vote-xyz789");
+DeleteModerationVoteOptions opts;
+opts.reason = utility::conversions::to_string_t("Offensive language");
+opts.hardDelete = boost::optional<bool>(true);
+api->deleteModerationVote(tenantId, commentId, voteId, opts)
+    .then([](std::shared_ptr<VoteDeleteResponse> resp){});
 [inline-code-end]

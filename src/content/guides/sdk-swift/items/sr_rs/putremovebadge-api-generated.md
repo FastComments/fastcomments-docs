@@ -1,31 +1,33 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Обавезно | Опис |
-|------|------|----------|----------|-------------|
-| badgeId | string | query | Да |  |
-| userId | string | query | Не |  |
-| commentId | string | query | Не |  |
-| broadcastId | string | query | Не |  |
-| sso | string | query | Не |  |
+| Ime | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
+| badgeId | string | query | Da |  |
+| userId | string | query | Ne |  |
+| commentId | string | query | Ne |  |
+| broadcastId | string | query | Ne |  |
+| sso | string | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`RemoveUserBadgeResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/RemoveUserBadgeResponse.swift)
+Vraća: [`RemoveUserBadgeResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/RemoveUserBadgeResponse.swift)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'putRemoveBadge Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putRemoveBadge Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи примери кода су још у бети. За било који проблем, пријавите на http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledeći uzorci koda su i dalje beta. Za bilo koji problem, molimo vas da prijavite putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let badgeId = "badgeId_example" // String | 
-let userId = "userId_example" // String |  (опционално)
-let commentId = "commentId_example" // String |  (опционално)
-let broadcastId = "broadcastId_example" // String |  (опционално)
-let sso = "sso_example" // String |  (опционално)
+let userId = "userId_example" // String |  (optional)
+let commentId = "commentId_example" // String |  (optional)
+let broadcastId = "broadcastId_example" // String |  (optional)
+let sso = "sso_example" // String |  (optional)
 
-ModerationAPI.putRemoveBadge(badgeId: badgeId, userId: userId, commentId: commentId, broadcastId: broadcastId, sso: sso) { (response, error) in
+ModerationAPI.putRemoveBadge(tenantId: tenantId, badgeId: badgeId, options: ModerationAPI.PutRemoveBadgeOptions(userId: userId, commentId: commentId, broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

@@ -2,6 +2,7 @@
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | commentId | string | path | Yes |  |
 | includeByUserIdAndEmail | boolean | query | No |  |
 | includeByIP | boolean | query | No |  |
@@ -10,13 +11,13 @@
 
 ## Yanıt
 
-Döndürür: [`PreBanSummary`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/PreBanSummary.java)
+Returns: [`PreBanSummary`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/PreBanSummary.java)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'getPreBanSummary Örneği'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sınıfları içe aktar:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,13 +30,14 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     Boolean includeByUserIdAndEmail = true; // Boolean | 
     Boolean includeByIP = true; // Boolean | 
     Boolean includeByEmailDomain = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      PreBanSummary result = apiInstance.getPreBanSummary(commentId)
+      PreBanSummary result = apiInstance.getPreBanSummary(tenantId, commentId)
             .includeByUserIdAndEmail(includeByUserIdAndEmail)
             .includeByIP(includeByIP)
             .includeByEmailDomain(includeByEmailDomain)

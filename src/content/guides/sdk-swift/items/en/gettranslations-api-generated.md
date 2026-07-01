@@ -23,7 +23,7 @@ let component = "component_example" // String |
 let locale = "locale_example" // String |  (optional)
 let useFullTranslationIds = true // Bool |  (optional)
 
-PublicAPI.getTranslations(namespace: namespace, component: component, locale: locale, useFullTranslationIds: useFullTranslationIds) { (response, error) in
+PublicAPI.getTranslations(namespace: namespace, component: component, options: PublicAPI.GetTranslationsOptions(locale: locale, useFullTranslationIds: useFullTranslationIds)) { (response, error) in
     guard error == nil else {
         print(error)
         return

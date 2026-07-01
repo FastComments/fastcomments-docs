@@ -1,12 +1,12 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Tak |  |
-| id | string | path | Tak |  |
-| contextUserId | string | query | Nie |  |
-| doSpamCheck | boolean | query | Nie |  |
-| isLive | boolean | query | Nie |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| contextUserId | string | query | No |  |
+| doSpamCheck | boolean | query | No |  |
+| isLive | boolean | query | No |  |
 
 ## Odpowiedź
 
@@ -16,7 +16,7 @@ Zwraca: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/
 
 [inline-code-attrs-start title = 'Przykład updateComment'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Następujące przykłady kodu są nadal w wersji beta. W razie problemów zgłoś je pod http://github.com/OpenAPITools/openapi-generator/issues/new
+// Poniższe przykłady kodu są nadal w wersji beta. W przypadku problemów prosimy zgłaszać je pod adresem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -26,7 +26,7 @@ let contextUserId = "contextUserId_example" // String |  (opcjonalne)
 let doSpamCheck = true // Bool |  (opcjonalne)
 let isLive = true // Bool |  (opcjonalne)
 
-DefaultAPI.updateComment(tenantId: tenantId, id: id, updatableCommentParams: updatableCommentParams, contextUserId: contextUserId, doSpamCheck: doSpamCheck, isLive: isLive) { (response, error) in
+DefaultAPI.updateComment(tenantId: tenantId, id: id, updatableCommentParams: updatableCommentParams, options: DefaultAPI.UpdateCommentOptions(contextUserId: contextUserId, doSpamCheck: doSpamCheck, isLive: isLive)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -37,5 +37,3 @@ DefaultAPI.updateComment(tenantId: tenantId, id: id, updatableCommentParams: upd
     }
 }
 [inline-code-end]
-
----

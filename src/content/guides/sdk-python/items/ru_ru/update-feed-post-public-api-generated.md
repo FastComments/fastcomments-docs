@@ -1,6 +1,6 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Yes |  |
 | postId | string | path | Yes |  |
@@ -16,21 +16,22 @@
 [inline-code-attrs-start title = 'Пример update_feed_post_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import UpdateFeedPostPublicOptions
 from client.models.create_feed_post_response import CreateFeedPostResponse
 from client.models.update_feed_post_params import UpdateFeedPostParams
 from client.rest import ApiException
 from pprint import pprint
 
-# Задание хоста необязательно, по умолчанию используется https://fastcomments.com
+# Определение хоста необязательно и по умолчанию https://fastcomments.com
 # См. configuration.py для списка всех поддерживаемых параметров конфигурации.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Войдите в контекст с экземпляром клиента API
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Создайте экземпляр класса API
+    # Create an instance of the API class
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     post_id = 'post_id_example' # str | 
@@ -39,7 +40,7 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (необязательно)
 
     try:
-        api_response = api_instance.update_feed_post_public(tenant_id, post_id, update_feed_post_params, broadcast_id=broadcast_id, sso=sso)
+        api_response = api_instance.update_feed_post_public(tenant_id, post_id, update_feed_post_params, UpdateFeedPostPublicOptions(broadcast_id=broadcast_id, sso=sso))
         print("The response of PublicApi->update_feed_post_public:\n")
         pprint(api_response)
     except Exception as e:

@@ -7,7 +7,7 @@
 | userId | string | query | Nee |  |
 | anonUserId | string | query | Nee |  |
 
-## Antwoord
+## Respons
 
 Retourneert: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FlagCommentResponse.swift)
 
@@ -20,10 +20,10 @@ import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let id = "id_example" // String | 
-let userId = "userId_example" // String |  (optioneel)
-let anonUserId = "anonUserId_example" // String |  (optioneel)
+let userId = "userId_example" // String |  (optional)
+let anonUserId = "anonUserId_example" // String |  (optional)
 
-DefaultAPI.flagComment(tenantId: tenantId, id: id, userId: userId, anonUserId: anonUserId) { (response, error) in
+DefaultAPI.flagComment(tenantId: tenantId, id: id, options: DefaultAPI.FlagCommentOptions(userId: userId, anonUserId: anonUserId)) { (response, error) in
     guard error == nil else {
         print(error)
         return

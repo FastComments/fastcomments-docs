@@ -1,36 +1,37 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Расположение | Обязательный | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| id | string | path | Да |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIGetUserBadgeProgressResponse.php)
+Повертає: [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIGetUserBadgeProgressResponse.php)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример getUserBadgeProgressById'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад getUserBadgeProgressById'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Настройка авторизации по API-ключу: api_key
+// Configure API key authorization: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для API-ключа, если это необходимо
+// Розкоментуйте нижче, щоб встановити префікс (наприклад Bearer) для API ключа, якщо потрібно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Если вы хотите использовать пользовательский HTTP-клиент, передайте клиент, который реализует `GuzzleHttp\ClientInterface`.
-    // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
+    // Якщо ви хочете використовувати власний HTTP-клієнт, передайте ваш клієнт, який реалізує `GuzzleHttp\ClientInterface`.
+    // Це необов’язково, за замовчуванням буде використано `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
+
 
 try {
     $result = $apiInstance->getUserBadgeProgressById($tenant_id, $id);
@@ -39,5 +40,3 @@ try {
     echo 'Exception when calling DefaultApi->getUserBadgeProgressById: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

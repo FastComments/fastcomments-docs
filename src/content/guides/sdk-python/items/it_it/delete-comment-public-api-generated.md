@@ -1,7 +1,7 @@
 ## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
-|------|------|----------|----------|-------------|
+|------|------|-----------|--------------|-------------|
 | tenantId | string | path | Sì |  |
 | commentId | string | path | Sì |  |
 | broadcastId | string | query | Sì |  |
@@ -10,27 +10,28 @@
 
 ## Risposta
 
-Restituisce: [`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/public_api_delete_comment_response.py)
+Returns: [`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/public_api_delete_comment_response.py)
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di delete_comment_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_comment_public Esempio'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import DeleteCommentPublicOptions
 from client.models.public_api_delete_comment_response import PublicAPIDeleteCommentResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definire l'host è opzionale e il valore predefinito è https://fastcomments.com
-# Vedi configuration.py per un elenco di tutti i parametri di configurazione supportati.
+# Definire l'host è opzionale e predefinito a https://fastcomments.com
+# Vedere configuration.py per un elenco di tutti i parametri di configurazione supportati.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Apri un contesto con un'istanza del client API
+# Entrare in un contesto con un'istanza del client API
 with client.ApiClient(configuration) as api_client:
-    # Crea un'istanza della classe API
+    # Creare un'istanza della classe API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
@@ -39,7 +40,7 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (opzionale)
 
     try:
-        api_response = api_instance.delete_comment_public(tenant_id, comment_id, broadcast_id, edit_key=edit_key, sso=sso)
+        api_response = api_instance.delete_comment_public(tenant_id, comment_id, broadcast_id, DeleteCommentPublicOptions(edit_key=edit_key, sso=sso))
         print("The response of PublicApi->delete_comment_public:\n")
         pprint(api_response)
     except Exception as e:

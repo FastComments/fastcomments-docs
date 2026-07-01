@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Nombre | Tipo | Requerido | Descripción |
+| Nombre | Tipo | Obligatorio | Descripción |
 |------|------|----------|-------------|
 | tenantId | string | Sí |  |
 | id | string | No |  |
@@ -14,10 +14,14 @@ Devuelve: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomme
 
 [inline-code-attrs-start title = 'Ejemplo de updateQuestionConfig'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateQuestionConfig(tenantId = "my-tenant-123", id = "question-config-456", updateQuestionConfigBody = default(UpdateQuestionConfigBody))
-if response.isSome:
-  let apiEmpty = response.get()
-  discard apiEmpty
+let (apiResp, httpResp) = client.updateQuestionConfig(
+  tenantId = "my-tenant-123",
+  id = "question-456",
+  updateQuestionConfigBody = UpdateQuestionConfigBody()
+)
+
+if apiResp.isSome:
+  let resp = apiResp.get()
 [inline-code-end]
 
 ---

@@ -1,7 +1,8 @@
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
 | page | number | query | Ne |  |
 | count | number | query | Ne |  |
 | text-search | string | query | Ne |  |
@@ -18,12 +19,13 @@ Vraća: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fas
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer get_api_comments'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_api_comments Primer'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 opts = {
   page: 1.2, # Float | 
   count: 1.2, # Float | 
@@ -38,9 +40,9 @@ opts = {
 
 begin
   
-  result = api_instance.get_api_comments(opts)
+  result = api_instance.get_api_comments(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
-  puts "Error when calling ModerationApi->get_api_comments: #{e}"
+  puts "Greška pri pozivanju ModerationApi->get_api_comments: #{e}"
 end
 [inline-code-end]

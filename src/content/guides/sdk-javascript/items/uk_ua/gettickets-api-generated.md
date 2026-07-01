@@ -1,6 +1,6 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Назва | Тип | Обов’язково | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Так |  |
 | userId | string | Ні |  |
@@ -10,18 +10,24 @@
 
 ## Відповідь
 
-Повертає: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTicketsResponse.ts)
+Повертає: [`GetTicketsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTicketsResponse1.ts)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'getTickets Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад getTickets'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-enterprises";
-const userId: string | undefined = "u_56321";
-const state: number | undefined = 1;
-const skip: number = 0;
-const limit: number = 50;
-const response: GetTicketsResponse = await getTickets(tenantId, userId, state, skip, limit);
+async function loadTickets() {
+  const tenantId: string = "acme-corp";
+  const userId: string = "john.doe";
+  const state: number = 2; // наприк., закритий
+  const skip: number = 10;
+  const limit: number = 5;
+
+  const ticketsFull: GetTicketsResponse1 = await getTickets(tenantId, userId, state, skip, limit);
+  const ticketsPartial: GetTicketsResponse1 = await getTickets(tenantId);
+}
+
+loadTickets();
 [inline-code-end]
 
 ---

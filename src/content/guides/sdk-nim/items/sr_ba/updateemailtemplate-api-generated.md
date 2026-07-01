@@ -1,30 +1,31 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Обавезно | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Не |  |
-| updateEmailTemplateBody | UpdateEmailTemplateBody | Не |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| updateEmailTemplateBody | UpdateEmailTemplateBody | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
+Vraća: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'updateEmailTemplate Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateEmailTemplate Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let updateBody = UpdateEmailTemplateBody(
-  subject = "Welcome to Newsly",
-  html = "<p>Thanks for joining Newsly! Visit https://newsly.example to get started.</p>",
-  fromAddress = "no-reply@newsly.example",
-  fromName = "Newsly Team",
-  enabled = true
+  subject: "Welcome to FastComments",
+  body: "Hello \{{user_name}}, thanks for joining!",
+  enabled: true,
 )
-let (response, httpResponse) = client.updateEmailTemplate(tenantId = "my-tenant-123", id = "welcome-email", updateEmailTemplateBody = updateBody)
-if response.isSome:
-  let result = response.get()
-  discard result
-else:
-  discard httpResponse.statusCode
+
+let (maybeResp, httpResp) = client.updateEmailTemplate(
+  tenantId = "my-tenant-123",
+  id = "welcome-email",
+  updateEmailTemplateBody = updateBody,
+)
+
+if maybeResp.isSome:
+  let resp = maybeResp.get()
 [inline-code-end]

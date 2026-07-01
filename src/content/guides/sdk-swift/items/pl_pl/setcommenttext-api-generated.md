@@ -2,11 +2,11 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Tak |  |
-| commentId | string | path | Tak |  |
-| broadcastId | string | query | Tak |  |
-| editKey | string | query | Nie |  |
-| sso | string | query | Nie |  |
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | Yes |  |
+| editKey | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Odpowiedź
 
@@ -14,19 +14,19 @@ Zwraca: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fast
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład użycia setCommentText'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład setCommentText'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Następujące przykłady kodu są nadal w wersji beta. W razie problemów zgłoś je pod adresem http://github.com/OpenAPITools/openapi-generator/issues/new
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
 let broadcastId = "broadcastId_example" // String | 
 let commentTextUpdateRequest = CommentTextUpdateRequest(comment: "comment_example", mentions: [CommentUserMentionInfo(id: "id_example", tag: "tag_example", rawTag: "rawTag_example", type: "type_example", sent: false)], hashTags: [CommentUserHashTagInfo(id: "id_example", tag: "tag_example", url: "url_example", retain: false)]) // CommentTextUpdateRequest | 
-let editKey = "editKey_example" // String |  (opcjonalne)
-let sso = "sso_example" // String |  (opcjonalne)
+let editKey = "editKey_example" // String |  (optional)
+let sso = "sso_example" // String |  (optional)
 
-PublicAPI.setCommentText(tenantId: tenantId, commentId: commentId, broadcastId: broadcastId, commentTextUpdateRequest: commentTextUpdateRequest, editKey: editKey, sso: sso) { (response, error) in
+PublicAPI.setCommentText(tenantId: tenantId, commentId: commentId, broadcastId: broadcastId, commentTextUpdateRequest: commentTextUpdateRequest, options: PublicAPI.SetCommentTextOptions(editKey: editKey, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

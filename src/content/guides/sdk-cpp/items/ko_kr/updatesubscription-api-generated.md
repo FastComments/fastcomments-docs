@@ -1,33 +1,31 @@
-## 매개변수
+## Parameters
 
-| 이름 | 유형 | 필수 | 설명 |
+| 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | id | string | 예 |  |
 | updateAPIUserSubscriptionData | UpdateAPIUserSubscriptionData | 예 |  |
-| userId | string | 아니요 |  |
+| userId | string | 아니오 |  |
 
-## 응답
+## Response
 
 반환: [`UpdateSubscriptionAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UpdateSubscriptionAPIResponse.h)
 
-## 예제
+## Example
 
-[inline-code-attrs-start title = 'updateSubscription 예제'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateSubscription 예시'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t subscriptionId = U("sub-456");
-UpdateAPIUserSubscriptionData updateData{};
-boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U("user-789"));
-api->updateSubscription(tenantId, subscriptionId, updateData, userId)
-.then([](pplx::task<std::shared_ptr<UpdateSubscriptionAPIResponse>> t){
-    try {
-        auto resp = t.get();
-        if (resp) {
-            auto copy = std::make_shared<UpdateSubscriptionAPIResponse>(*resp);
-        }
-    } catch (const std::exception&) {}
-}).wait();
-[inline-code-end]
+UpdateAPIUserSubscriptionData subscriptionData;
+subscriptionData.plan = utility::conversions::to_string_t("premium");
+subscriptionData.active = true;
 
----
+api->updateSubscription(
+    utility::conversions::to_string_t("my-tenant-123"),
+    utility::conversions::to_string_t("sub-987654"),
+    subscriptionData,
+    boost::optional<utility::string_t>(utility::conversions::to_string_t("admin-user-456"))
+).then([](std::shared_ptr<UpdateSubscriptionAPIResponse> response){
+    bool ok = response && response->isSuccess;
+    (void)ok;
+});
+[inline-code-end]

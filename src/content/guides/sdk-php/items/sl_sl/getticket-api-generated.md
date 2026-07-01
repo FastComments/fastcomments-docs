@@ -1,11 +1,10 @@
----
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| id | string | path | Da |  |
-| userId | string | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| userId | string | query | No |  |
 
 ## Odgovor
 
@@ -19,21 +18,23 @@ Vrne: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-php/blo
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Konfigurirajte avtorizacijo z API ključem: api_key
+// Nastavi avtorizacijo API ključa: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Odkomentirajte spodaj za nastavitev predpone (npr. Bearer) za API ključ, če je potrebno
+// Odkomentiraj spodaj za nastavitev predpone (npr. Bearer) za API ključ, po potrebi
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Če želite uporabiti lastnega HTTP odjemalca, predajte odjemalca, ki implementira `GuzzleHttp\ClientInterface`.
-    // To je neobvezno, kot privzeti bo uporabljen `GuzzleHttp\Client`.
+    // Če želiš uporabiti lastni HTTP odjemalec, podaj svoj odjemalec, ki implementira `GuzzleHttp\ClientInterface`.
+    // To je opcijsko, `GuzzleHttp\Client` bo uporabljen kot privzeto.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // niz
 $id = 'id_example'; // niz
 $user_id = 'user_id_example'; // niz
+
 
 try {
     $result = $apiInstance->getTicket($tenant_id, $id, $user_id);

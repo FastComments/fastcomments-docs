@@ -26,10 +26,7 @@ try:
         display_name="John Doe"
     )
 
-    response = api.add_sso_user(
-        tenant_id="YOUR_TENANT_ID",
-        create_apisso_user_data=user_data
-    )
+    response = api.add_sso_user("YOUR_TENANT_ID", user_data)
     print(f"User created: {response}")
 
 except Exception as e:
@@ -53,10 +50,7 @@ api_client = ApiClient(configuration=config)
 public_api = PublicApi(api_client)
 
 try:
-    response = public_api.get_comments_public(
-        tenant_id="YOUR_TENANT_ID",
-        url_id="page-url-id"
-    )
+    response = public_api.get_comments_public("YOUR_TENANT_ID", "page-url-id")
     print(response)
 except Exception as e:
     print(f"Error: {e}")
@@ -68,6 +62,7 @@ The `ModerationApi` powers the moderator dashboard. Methods are called on behalf
 
 ```python
 from client import ApiClient, Configuration, ModerationApi
+from client.api.moderation_api import GetCountOptions
 
 config = Configuration()
 config.host = "https://fastcomments.com/api"
@@ -77,7 +72,7 @@ moderation_api = ModerationApi(api_client)
 
 try:
     # Count the comments awaiting moderation
-    response = moderation_api.get_count(sso="SSO_TOKEN")
+    response = moderation_api.get_count(GetCountOptions(sso="SSO_TOKEN"))
     print(response)
 except Exception as e:
     print(f"Error: {e}")

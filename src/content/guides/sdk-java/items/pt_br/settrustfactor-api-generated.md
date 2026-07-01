@@ -1,7 +1,8 @@
 ## Parâmetros
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Localização | Obrigatório | Descrição |
+|------|------|-------------|-------------|-----------|
+| tenantId | string | query | Sim |  |
 | userId | string | query | Não |  |
 | trustFactor | string | query | Não |  |
 | sso | string | query | Não |  |
@@ -12,7 +13,7 @@ Retorna: [`SetUserTrustFactorResponse`](https://github.com/FastComments/fastcomm
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de setTrustFactor'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'setTrustFactor Exemplo'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importar classes:
 import com.fastcomments.invoker.ApiClient;
@@ -27,11 +28,12 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String userId = "userId_example"; // String | 
     String trustFactor = "trustFactor_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      SetUserTrustFactorResponse result = apiInstance.setTrustFactor()
+      SetUserTrustFactorResponse result = apiInstance.setTrustFactor(tenantId)
             .userId(userId)
             .trustFactor(trustFactor)
             .sso(sso)

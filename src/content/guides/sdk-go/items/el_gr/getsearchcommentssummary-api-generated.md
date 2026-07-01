@@ -1,14 +1,14 @@
----
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Θέση | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| value | string | query | Όχι |  |
-| filters | string | query | Όχι |  |
-| searchFilters | string | query | Όχι |  |
-| sso | string | query | Όχι |  |
+| tenantId | string | query | Yes |  |
+| value | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sso | string | query | No |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`ModerationCommentSearchResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_comment_search_response.go)
 
@@ -26,6 +26,7 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	value := "value_example" // string |  (προαιρετικό)
 	filters := "filters_example" // string |  (προαιρετικό)
 	searchFilters := "searchFilters_example" // string |  (προαιρετικό)
@@ -33,14 +34,12 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetSearchCommentsSummary(context.Background()).Value(value).Filters(filters).SearchFilters(searchFilters).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetSearchCommentsSummary(context.Background()).TenantId(tenantId).Value(value).Filters(filters).SearchFilters(searchFilters).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetSearchCommentsSummary``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Σφάλμα κατά την κλήση `ModerationAPI.GetSearchCommentsSummary``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Πλήρης απάντηση HTTP: %v\n", r)
 	}
 	// απόκριση από `GetSearchCommentsSummary`: ModerationCommentSearchResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetSearchCommentsSummary`: %v\n", resp)
+	fmt.Fprintf(os.Stdout, "Απάντηση από `ModerationAPI.GetSearchCommentsSummary`: %v\n", resp)
 }
 [inline-code-end]
-
----

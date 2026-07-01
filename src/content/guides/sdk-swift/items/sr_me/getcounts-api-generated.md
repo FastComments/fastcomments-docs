@@ -1,23 +1,25 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Потребно | Опис |
-|------|------|----------|----------|-------------|
-| sso | string | query | Не |  |
+| Ime | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetBannedUsersCountResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetBannedUsersCountResponse.swift)
+Vraća: [`GetBannedUsersCountResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetBannedUsersCountResponse.swift)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'getCounts пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getCounts Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи примери кода су још увек у бета фази. За било који проблем, пријавите га преко http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledeći kod primeri su još u beta fazi. Za bilo koji problem, molimo prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let sso = "sso_example" // String |  (опционо)
+let tenantId = "tenantId_example" // String | 
+let sso = "sso_example" // String |  (opcionalno)
 
-ModerationAPI.getCounts(sso: sso) { (response, error) in
+ModerationAPI.getCounts(tenantId: tenantId, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -28,5 +30,3 @@ ModerationAPI.getCounts(sso: sso) { (response, error) in
     }
 }
 [inline-code-end]
-
----

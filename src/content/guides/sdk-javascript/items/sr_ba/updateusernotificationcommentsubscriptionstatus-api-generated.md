@@ -1,29 +1,44 @@
-Омогућите или онемогућите обавештења за одређени коментар.
+Omogući ili onemogući obavijesti za određeni komentar.
 
-## Параметри
+## Parametri
 
-| Назив | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| notificationId | string | Да |  |
-| optedInOrOut | UpdateUserNotificationCommentSubscriptionStatusOptedInOrOutEnum | Да |  |
-| commentId | string | Да |  |
-| sso | string | Не |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| notificationId | string | Yes |  |
+| optedInOrOut | UpdateUserNotificationCommentSubscriptionStatusOptedInOrOutEnum | Yes |  |
+| commentId | string | Yes |  |
+| sso | string | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateUserNotificationCommentSubscriptionStatusResponse.ts)
+Vraća: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateUserNotificationCommentSubscriptionStatusResponse.ts)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'updateUserNotificationCommentSubscriptionStatus Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer updateUserNotificationCommentSubscriptionStatus'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_92a1c4';
-const notificationId: string = 'notif_3f7b2e9a-4d1b-11ec-8d3d-0242ac130003';
+const tenantId: string = "tenant_12345";
+const notificationId: string = "notif_9876";
+const commentId: string = "comment_abc123";
 const optedInOrOut: UpdateUserNotificationCommentSubscriptionStatusOptedInOrOutEnum =
-  UpdateUserNotificationCommentSubscriptionStatusOptedInOrOutEnum.OPTED_IN;
-const commentId: string = 'cmt_8f4b2e7a';
-const sso: string | undefined = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fake.payload';
-const response: UpdateUserNotificationCommentSubscriptionStatusResponse =
-  await updateUserNotificationCommentSubscriptionStatus(tenantId, notificationId, optedInOrOut, commentId, sso);
+  UpdateUserNotificationCommentSubscriptionStatusOptedInOrOutEnum.OptIn;
+const sso: string = "ssoTokenXYZ";
+
+const responseWithSso: UpdateUserNotificationCommentSubscriptionStatusResponse =
+  await updateUserNotificationCommentSubscriptionStatus(
+    tenantId,
+    notificationId,
+    optedInOrOut,
+    commentId,
+    sso
+  );
+
+const responseWithoutSso: UpdateUserNotificationCommentSubscriptionStatusResponse =
+  await updateUserNotificationCommentSubscriptionStatus(
+    tenantId,
+    notificationId,
+    optedInOrOut,
+    commentId
+  );
 [inline-code-end]

@@ -1,51 +1,56 @@
-## Параметри
+## Parameters
 
-| Име | Тип | Локација | Обавезно | Опис |
-|------|------|----------|----------|-------------|
-| text-search | string | query | Не |  |
-| byIPFromComment | string | query | Не |  |
-| filters | string | query | Не |  |
-| searchFilters | string | query | Не |  |
-| afterId | string | query | Не |  |
-| demo | boolean | query | Не |  |
-| sso | string | query | Не |  |
+| Ime | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| afterId | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
-## Одговор
+## Response
 
-Враћа: [`ModerationAPIGetCommentIdsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/moderation_api_get_comment_ids_response.py)
+Vraća: [`ModerationAPIGetCommentIdsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/moderation_api_get_comment_ids_response.py)
 
-## Примјер
+## Primjer
 
-[inline-code-attrs-start title = 'Примјер get_api_ids'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_api_ids Primjer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetApiIdsOptions
 from client.models.moderation_api_get_comment_ids_response import ModerationAPIGetCommentIdsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Подешавање хоста је опционално и подразумевано је на https://fastcomments.com
-# Погледајте configuration.py за списак свих подржаних конфигурационих параметара.
+# Definisanje hosta je opciono i podrazumevano je https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Уђите у контекст са инстанцом API клијента
+# Unesite kontekst sa instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Креирајте инстанцу API класе
+    # Kreirajte instancu API klase
     api_instance = client.ModerationApi(api_client)
-    text_search = 'text_search_example' # str |  (опционално)
-    by_ip_from_comment = 'by_ip_from_comment_example' # str |  (опционално)
-    filters = 'filters_example' # str |  (опционално)
-    search_filters = 'search_filters_example' # str |  (опционално)
-    after_id = 'after_id_example' # str |  (опционално)
-    demo = True # bool |  (опционално)
-    sso = 'sso_example' # str |  (опционално)
+    tenant_id = 'tenant_id_example' # str | 
+    text_search = 'text_search_example' # str |  (opcionalno)
+    by_ip_from_comment = 'by_ip_from_comment_example' # str |  (opcionalno)
+    filters = 'filters_example' # str |  (opcionalno)
+    search_filters = 'search_filters_example' # str |  (opcionalno)
+    after_id = 'after_id_example' # str |  (opcionalno)
+    demo = True # bool |  (opcionalno)
+    sso = 'sso_example' # str |  (opcionalno)
 
     try:
-        api_response = api_instance.get_api_ids(text_search=text_search, by_ip_from_comment=by_ip_from_comment, filters=filters, search_filters=search_filters, after_id=after_id, demo=demo, sso=sso)
+        api_response = api_instance.get_api_ids(tenant_id, GetApiIdsOptions(text_search=text_search, by_ip_from_comment=by_ip_from_comment, filters=filters, search_filters=search_filters, after_id=after_id, demo=demo, sso=sso))
         print("The response of ModerationApi->get_api_ids:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling ModerationApi->get_api_ids: %s\n" % e)
 [inline-code-end]
+
+---

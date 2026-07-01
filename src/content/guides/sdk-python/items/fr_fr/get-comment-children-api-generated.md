@@ -1,7 +1,8 @@
 ## Paramètres
 
 | Nom | Type | Emplacement | Obligatoire | Description |
-|------|------|----------|----------|-------------|
+|------|------|--------------|-------------|-------------|
+| tenantId | string | query | Oui |  |
 | commentId | string | path | Oui |  |
 | sso | string | query | Non |  |
 
@@ -11,14 +12,14 @@ Renvoie : [`ModerationAPIChildCommentsResponse`](https://github.com/FastComments
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de get_comment_children'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple get_comment_children'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.models.moderation_api_child_comments_response import ModerationAPIChildCommentsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# La définition de l'hôte est optionnelle et par défaut https://fastcomments.com
+# Définir l'hôte est facultatif et vaut par défaut https://fastcomments.com
 # Voir configuration.py pour la liste de tous les paramètres de configuration pris en charge.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -29,11 +30,12 @@ configuration = client.Configuration(
 with client.ApiClient(configuration) as api_client:
     # Créer une instance de la classe API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
-    sso = 'sso_example' # str |  (optionnel)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_comment_children(comment_id, sso=sso)
+        api_response = api_instance.get_comment_children(tenant_id, comment_id, sso=sso)
         print("The response of ModerationApi->get_comment_children:\n")
         pprint(api_response)
     except Exception as e:

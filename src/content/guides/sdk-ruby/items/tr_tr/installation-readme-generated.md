@@ -18,12 +18,12 @@ gem install fastcomments
 
 ### Kütüphane İçeriği
 
-Bu kütüphane, oluşturulmuş API istemcisini ve API ile çalışmayı kolaylaştırmak için SSO yardımcı araçlarını içerir.
+Bu kütüphane, API ile çalışmayı kolaylaştıran oluşturulmuş API istemcisi ve SSO yardımcı programlarını içerir.
 
-- [API İstemci Kütüphanesi Belgeleri](https://github.com/FastComments/fastcomments-ruby/blob/master/client/README.md)
+- [API İstemci Kütüphane Belgeleri](https://github.com/FastComments/fastcomments-ruby/blob/master/client/README.md)
 
-### Açık ve Güvenli API'ler
+### Genel ve Güvenli API'ler
 
-API istemcisi için üç sınıf vardır: `DefaultApi`, `PublicApi` ve `ModerationApi`. `DefaultApi` API anahtarınızı gerektiren yöntemleri içerir, `PublicApi` ise kimlik doğrulama olmadan doğrudan bir tarayıcı/taşınabilir cihaz vb. üzerinden yapılabilecek API çağrılarını içerir. `ModerationApi` moderatör panosunu sağlayan yöntemleri içerir.
+API istemcisi için üç sınıf vardır: `DefaultApi`, `PublicApi` ve `ModerationApi`. `DefaultApi`, API anahtarınızı gerektiren yöntemleri içerirken, `PublicApi` kimlik doğrulama gerektirmeden doğrudan bir tarayıcı/mobil cihaz vb. üzerinden yapılabilecek API çağrılarını içerir. `ModerationApi` ise moderatör kontrol panelini güçlendiren yöntemleri barındırır.
 
-`ModerationApi` yorum moderasyonunu (listeleme, sayma, arama, günlükler, dışa aktarma), moderasyon eylemlerini (kaldır/geri yükle, işaretle, inceleme/istenmeyen/onay durumunu ayarla, oylar, konuyu yeniden aç/kapat), yasakları (bir yorumdan yasaklama, geri alma, ön-yasak özetleri, yasak durumu/tercihleri, yasaklı kullanıcı sayıları) ve rozetler & güveni (rozet ver/kaldır, manuel rozetler, güven faktörünü al/ayarla, kullanıcı iç profili) kapsar. Her `ModerationApi` yöntemi bir `sso` parametresi kabul eder; böylece istek, SSO ile doğrulanmış bir moderatör adına yapılabilir.
+`ModerationApi`, canlı ve hızlı moderasyon API'lerinden oluşan kapsamlı bir set sunar. Her `ModerationApi` yöntemi bir `sso` parametresi kabul eder ve SSO ya da bir FastComments.com oturum çerezi aracılığıyla kimlik doğrulaması yapabilir.

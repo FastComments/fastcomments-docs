@@ -1,24 +1,27 @@
-## Parametri
+## Parameters
 
 | Nome | Tipo | Obbligatorio | Descrizione |
-|------|------|--------------|-------------|
+|------|------|---------------|-------------|
+| tenantId | string | Sì |  |
 | commentId | string | Sì |  |
-| sso | string | No |  |
+| options | PostRemoveCommentOptions | No |  |
 
-## Risposta
+## Response
 
-Restituisce: [`Option[PostRemoveCommentResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_post_remove_comment_response.nim)
+Restituisce: [`Option[PostRemoveCommentApiResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_post_remove_comment_api_response.nim)
 
-## Esempio
+## Example
 
-[inline-code-attrs-start title = 'Esempio di postRemoveComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio postRemoveComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postRemoveComment(commentId = "cmt-987654321", sso = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.abc123.signature")
-if response.isSome:
-  let removed = response.get()
-  echo "Comment removed:", removed
-else:
-  echo "Failed to remove comment, HTTP response:", httpResponse
+let (apiResponseOpt, httpResp) = client.postRemoveComment(
+  tenantId = "my-tenant-123",
+  commentId = "comment-987654",
+  options = PostRemoveCommentOptions()
+)
+
+if apiResponseOpt.isSome:
+  let apiResponse = apiResponseOpt.get()
 [inline-code-end]
 
 ---

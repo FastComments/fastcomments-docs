@@ -2,6 +2,7 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | batchJobId | string | query | No |  |
 | sso | string | query | No |  |
 
@@ -11,7 +12,7 @@ Devuelve: [`ModerationExportStatusResponse`](https://github.com/FastComments/fas
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de getApiExportStatus'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo getApiExportStatus'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importar clases:
 import com.fastcomments.invoker.ApiClient;
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String batchJobId = "batchJobId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationExportStatusResponse result = apiInstance.getApiExportStatus()
+      ModerationExportStatusResponse result = apiInstance.getApiExportStatus(tenantId)
             .batchJobId(batchJobId)
             .sso(sso)
             .execute();

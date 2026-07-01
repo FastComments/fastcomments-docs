@@ -1,22 +1,24 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Обавезно | Опис |
-|------|------|----------|----------|-------------|
-| urlId | string | query | Да |  |
-| sso | string | query | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
+| urlId | string | query | Da |  |
+| sso | string | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
+Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'put_reopen_thread Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'put_reopen_thread Primjer'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 url_id = 'url_id_example' # String | 
 opts = {
   sso: 'sso_example' # String | 
@@ -24,11 +26,9 @@ opts = {
 
 begin
   
-  result = api_instance.put_reopen_thread(url_id, opts)
+  result = api_instance.put_reopen_thread(tenant_id, url_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->put_reopen_thread: #{e}"
 end
 [inline-code-end]
-
----

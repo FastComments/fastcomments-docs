@@ -29,7 +29,7 @@ let questionId = "questionId_example" // String |  (optional)
 let questionIds = "questionIds_example" // String |  (optional)
 let skip = 987 // Double |  (optional)
 
-DefaultAPI.getQuestionResults(tenantId: tenantId, urlId: urlId, userId: userId, startDate: startDate, questionId: questionId, questionIds: questionIds, skip: skip) { (response, error) in
+DefaultAPI.getQuestionResults(tenantId: tenantId, options: DefaultAPI.GetQuestionResultsOptions(urlId: urlId, userId: userId, startDate: startDate, questionId: questionId, questionIds: questionIds, skip: skip)) { (response, error) in
     guard error == nil else {
         print(error)
         return

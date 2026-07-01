@@ -1,16 +1,9 @@
 ## Parámetros
 
-| Nombre | Tipo | Requerido | Descripción |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Sí |  |
-| questionId | string | No |  |
-| questionIds | seq[string] | No |  |
-| urlId | string | Sí |  |
-| startDate | string | No |  |
-| forceRecalculate | bool | No |  |
-| minValue | float64 | No |  |
-| maxValue | float64 | No |  |
-| limit | float64 | No |  |
+| tenantId | string | Yes |  |
+| options | CombineCommentsWithQuestionResultsOptions | No |  |
 
 ## Respuesta
 
@@ -18,25 +11,13 @@ Devuelve: [`Option[CombineQuestionResultsWithCommentsResponse]`](https://github.
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de combineCommentsWithQuestionResults'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'combineCommentsWithQuestionResults Ejemplo'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.combineCommentsWithQuestionResults(
+let (combineOpt, httpResponse) = client.combineCommentsWithQuestionResults(
   tenantId = "my-tenant-123",
-  questionId = "",
-  questionIds = @[],
-  urlId = "news/article-2026-climate-change",
-  startDate = "",
-  forceRecalculate = false,
-  minValue = 0.0,
-  maxValue = 0.0,
-  limit = 0.0
+  options = default(CombineCommentsWithQuestionResultsOptions)
 )
 
-if response.isSome:
-  let combined = response.get()
-  echo "Combined results received for tenant:", " my-tenant-123"
-else:
-  echo "No combined results returned"
+if combineOpt.isSome:
+  let combineResult = combineOpt.get()
 [inline-code-end]
-
----

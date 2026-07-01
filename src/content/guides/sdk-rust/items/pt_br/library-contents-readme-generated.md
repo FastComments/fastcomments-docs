@@ -1,20 +1,20 @@
-O SDK Rust do FastComments consiste em vários módulos:
+The FastComments Rust SDK consists of several modules:
 
-- **Client Module** - Cliente de API para as REST APIs do FastComments
-  - Definições de tipo completas para todos os modelos de API
-  - Três clientes de API cobrindo todos os métodos do FastComments:
-    - `default_api` (**DefaultApi**) - métodos autenticados por chave de API para uso do lado do servidor
-    - `public_api` (**PublicApi**) - métodos públicos, sem chave de API, seguros para serem chamados de navegadores e apps móveis
-    - `moderation_api` (**ModerationApi**) - métodos que suportam o painel de moderador, incluindo moderação de comentários (listagem, contagem, pesquisa, logs, exportação), ações de moderação (remover/restaurar, sinalizar, definir status de revisão/spam/aprovação, votos, reabrir/fechar tópico), banimentos (banir a partir de um comentário, desfazer, resumos pré-ban, status/preferências de ban, contagens de usuários banidos), e insígnias & confiança (conceder/remover insígnias, insígnias manuais, obter/definir fator de confiança, perfil interno do usuário). Cada método de Moderação aceita um parâmetro `sso` para que a chamada possa ser feita em nome de um moderador autenticado por SSO.
+- **Client Module** - Cliente API para as APIs REST do FastComments
+  - Definições completas de tipos para todos os modelos da API
+  - Três clientes API que cobrem todos os métodos do FastComments:
+    - `default_api` (**DefaultApi**) - Métodos autenticados por chave de API para uso no lado do servidor
+    - `public_api` (**PublicApi**) - Métodos públicos, sem chave de API, seguros para chamar a partir de navegadores e aplicativos móveis
+    - `moderation_api` (**ModerationApi**) - Um conjunto extenso de APIs de moderação ao vivo e rápidas. Cada método de Moderação aceita um parâmetro `sso` e pode autenticar via SSO ou um cookie de sessão da FastComments.com.
   - Suporte completo a async/await com tokio
-  - Consulte [client/README.md](https://github.com/FastComments/fastcomments-rust/blob/main/client/README.md) para documentação detalhada da API
+  - Veja [client/README.md](https://github.com/FastComments/fastcomments-rust/blob/main/client/README.md) para documentação detalhada da API
 
-- **SSO Module** - Utilitários de Single Sign-On (SSO) do lado do servidor
-  - Geração segura de tokens para autenticação de usuários
+- **SSO Module** - Utilitários de Single Sign-On do lado do servidor
+  - Geração segura de token para autenticação de usuário
   - Suporte para modos SSO simples e seguros
-  - Assinatura de tokens baseada em HMAC-SHA256
+  - Assinatura de token baseada em HMAC‑SHA256
 
 - **Core Types** - Definições de tipos compartilhados e utilitários
   - Modelos de comentário e estruturas de metadados
-  - Configurações de usuário e tenant
+  - Configurações de usuário e locatário
   - Funções auxiliares para operações comuns

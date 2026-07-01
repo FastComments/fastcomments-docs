@@ -2,6 +2,7 @@
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Ja |  |
 | commentId | string | path | Ja |  |
 | sso | string | query | Nee |  |
 
@@ -11,15 +12,16 @@ Retourneert: [`GetCommentTextResponse`](https://github.com/FastComments/fastcomm
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'getModerationCommentText Voorbeeld'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Voorbeeld getModerationCommentText'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// De volgende codevoorbeelden zijn nog in bèta. Als u een probleem ondervindt, meld het via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De volgende codevoorbeelden zijn nog in de bètafase. Meld eventuele problemen via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let commentId = "commentId_example" // String | 
+let tenantId = "tenantId_example" // String |
+let commentId = "commentId_example" // String |
 let sso = "sso_example" // String |  (optioneel)
 
-ModerationAPI.getModerationCommentText(commentId: commentId, sso: sso) { (response, error) in
+ModerationAPI.getModerationCommentText(tenantId: tenantId, commentId: commentId, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return

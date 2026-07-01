@@ -2,12 +2,14 @@
 
 | 名稱 | 類型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| commentId | string | path | 是 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## 回應
 
-回傳: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
+Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
 
 ## 範例
 
@@ -23,17 +25,19 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
-	sso := "sso_example" // string |  （可選）
+	broadcastId := "broadcastId_example" // string |  (optional)
+	sso := "sso_example" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostRestoreDeletedComment(context.Background(), commentId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostRestoreDeletedComment(context.Background(), commentId).TenantId(tenantId).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostRestoreDeletedComment``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "呼叫 `ModerationAPI.PostRestoreDeletedComment`` 時發生錯誤: %v\n", err)
+		fmt.Fprintf(os.Stderr, "完整的 HTTP 回應: %v\n", r)
 	}
-	// 從 `PostRestoreDeletedComment` 的回應: APIEmptyResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostRestoreDeletedComment`: %v\n", resp)
+	// `PostRestoreDeletedComment` 的回應: APIEmptyResponse
+	fmt.Fprintf(os.Stdout, "`ModerationAPI.PostRestoreDeletedComment` 的回應: %v\n", resp)
 }
 [inline-code-end]

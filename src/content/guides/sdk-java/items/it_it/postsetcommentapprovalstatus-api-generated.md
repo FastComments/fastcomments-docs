@@ -1,18 +1,20 @@
-## Parametri
+## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Sì |  |
+| Nome | Tipo | Posizione | Richiesto | Descrizione |
+|------|------|-----------|-----------|-------------|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
 | approved | boolean | query | No |  |
+| broadcastId | string | query | No |  |
 | sso | string | query | No |  |
 
-## Risposta
+## Response
 
 Restituisce: [`SetCommentApprovedResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SetCommentApprovedResponse.java)
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di postSetCommentApprovalStatus'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio postSetCommentApprovalStatus'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importa le classi:
 import com.fastcomments.invoker.ApiClient;
@@ -27,16 +29,20 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     Boolean approved = true; // Boolean | 
+    String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      SetCommentApprovedResponse result = apiInstance.postSetCommentApprovalStatus(commentId)
+      SetCommentApprovedResponse result = apiInstance.postSetCommentApprovalStatus(tenantId, commentId)
             .approved(approved)
+            .broadcastId(broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
+      // Eccezione durante la chiamata a ModerationApi#postSetCommentApprovalStatus
       System.err.println("Exception when calling ModerationApi#postSetCommentApprovalStatus");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
@@ -46,5 +52,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

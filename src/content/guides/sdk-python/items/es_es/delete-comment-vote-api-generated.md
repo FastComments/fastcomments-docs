@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Requerido | Descripción |
+| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Sí |  |
 | commentId | string | path | Sí |  |
@@ -16,15 +16,16 @@ Devuelve: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-py
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de delete_comment_vote'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_comment_vote Ejemplo'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import DeleteCommentVoteOptions
 from client.models.vote_delete_response import VoteDeleteResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # Definir el host es opcional y por defecto es https://fastcomments.com
-# Consulta configuration.py para una lista de todos los parámetros de configuración soportados.
+# Ver configuration.py para una lista de todos los parámetros de configuración soportados.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -43,7 +44,7 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (opcional)
 
     try:
-        api_response = api_instance.delete_comment_vote(tenant_id, comment_id, vote_id, url_id, broadcast_id, edit_key=edit_key, sso=sso)
+        api_response = api_instance.delete_comment_vote(tenant_id, comment_id, vote_id, url_id, broadcast_id, DeleteCommentVoteOptions(edit_key=edit_key, sso=sso))
         print("The response of PublicApi->delete_comment_vote:\n")
         pprint(api_response)
     except Exception as e:

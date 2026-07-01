@@ -2,20 +2,21 @@
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
-| commentId | string | pad | Ja |  |
-| banEmail | boolean | query | Nee |  |
-| banEmailDomain | boolean | query | Nee |  |
-| banIP | boolean | query | Nee |  |
-| deleteAllUsersComments | boolean | query | Nee |  |
-| bannedUntil | string | query | Nee |  |
-| isShadowBan | boolean | query | Nee |  |
-| updateId | string | query | Nee |  |
-| banReason | string | query | Nee |  |
-| sso | string | query | Nee |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| banEmail | boolean | query | No |  |
+| banEmailDomain | boolean | query | No |  |
+| banIP | boolean | query | No |  |
+| deleteAllUsersComments | boolean | query | No |  |
+| bannedUntil | string | query | No |  |
+| isShadowBan | boolean | query | No |  |
+| updateId | string | query | No |  |
+| banReason | string | query | No |  |
+| sso | string | query | No |  |
 
-## Antwoord
+## Respons
 
-Retourneert: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/ban_user_from_comment_result.rb)
+Returns: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/ban_user_from_comment_result.rb)
 
 ## Voorbeeld
 
@@ -25,6 +26,7 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 comment_id = 'comment_id_example' # String | 
 opts = {
   ban_email: true, # Boolean | 
@@ -40,11 +42,10 @@ opts = {
 
 begin
   
-  result = api_instance.post_ban_user_from_comment(comment_id, opts)
+  result = api_instance.post_ban_user_from_comment(tenant_id, comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
+  # Fout bij het aanroepen van ModerationApi->post_ban_user_from_comment: #{e}
   puts "Error when calling ModerationApi->post_ban_user_from_comment: #{e}"
 end
 [inline-code-end]
-
----

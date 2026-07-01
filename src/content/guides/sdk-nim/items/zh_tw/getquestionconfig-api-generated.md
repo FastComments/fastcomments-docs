@@ -1,22 +1,20 @@
 ## 參數
 
 | 名稱 | 類型 | 必填 | 描述 |
-|------|------|------|------|
-| tenantId | string | 是 |  |
-| id | string | 否 |  |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| id | string | No |  |
 
 ## 回應
 
-回傳：[`Option[GetQuestionConfigResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_question_config_response.nim)
+回傳: [`Option[GetQuestionConfigResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_question_config_response.nim)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getQuestionConfig 範例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getQuestionConfig(tenantId = "my-tenant-123", id = "qst-456")
-if response.isSome:
-  let cfg = response.get()
-  discard cfg
+let (questionConfigOpt, httpResp) = client.getQuestionConfig(tenantId = "my-tenant-123", id = "question-987")
+if questionConfigOpt.isSome:
+  let config = questionConfigOpt.get()
+  echo config
 [inline-code-end]
-
----

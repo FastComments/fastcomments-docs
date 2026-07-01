@@ -4,7 +4,7 @@ afterId
 
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | はい |  |
 | afterId | string | query | いいえ |  |
@@ -28,22 +28,28 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // カスタムのHTTPクライアントを使用する場合は、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
-    // これは任意です。デフォルトでは `GuzzleHttp\Client` が使用されます。
+    // カスタム HTTP クライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
+    // これはオプションです。デフォルトでは `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$after_id = 'after_id_example'; // string
-$limit = 56; // int
-$tags = array('tags_example'); // string[]
-$sso = 'sso_example'; // string
-$is_crawler = True; // bool
-$include_user_info = True; // bool
+
+$tenant_id = 'tenant_id_example'; // 文字列
+$options = [
+    'after_id' => 'after_id_example', // 文字列
+    'limit' => 56, // 整数
+    'tags' => array('tags_example'), // 文字列配列
+    'sso' => 'sso_example', // 文字列
+    'is_crawler' => True, // ブール
+    'include_user_info' => True, // ブール
+];
+
 
 try {
-    $result = $apiInstance->getFeedPostsPublic($tenant_id, $after_id, $limit, $tags, $sso, $is_crawler, $include_user_info);
+    $result = $apiInstance->getFeedPostsPublic($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getFeedPostsPublic: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

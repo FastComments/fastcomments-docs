@@ -1,24 +1,19 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| id | string | 아니요 |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
 
 ## 응답
 
 반환: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'deleteTenantPackage 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteTenantPackage 예시'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteTenantPackage(tenantId = "my-tenant-123", id = "package-987")
-if response.isSome:
-  let emptyResp = response.get()
-  echo emptyResp
-else:
-  echo "Failed to delete tenant package"
+let (apiResponse, httpResponse) = client.deleteTenantPackage(tenantId = "my-tenant-123", id = "pkg-456def")
+if apiResponse.isSome:
+  let emptyResponse = apiResponse.get()
 [inline-code-end]
-
----

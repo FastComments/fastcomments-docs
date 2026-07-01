@@ -1,14 +1,16 @@
+---
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| 名前 | タイプ | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| text-search | string | query | いいえ |  |
-| byIPFromComment | string | query | いいえ |  |
-| filters | string | query | いいえ |  |
-| searchFilters | string | query | いいえ |  |
-| afterId | string | query | いいえ |  |
-| demo | boolean | query | いいえ |  |
-| sso | string | query | いいえ |  |
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| afterId | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## レスポンス
 
@@ -24,22 +26,29 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // カスタムHTTPクライアントを使用する場合は、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
-    // これは任意です。デフォルトでは `GuzzleHttp\Client` が使用されます。
+    // カスタム HTTP クライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装したクライアントを渡してください。
+    // これはオプションで、デフォルトでは `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client()
 );
-$text_search = 'text_search_example'; // string
-$by_ip_from_comment = 'by_ip_from_comment_example'; // string
-$filters = 'filters_example'; // string
-$search_filters = 'search_filters_example'; // string
-$after_id = 'after_id_example'; // string
-$demo = True; // bool
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // string
+$options = [
+    'text_search' => 'text_search_example', // string
+    'by_ip_from_comment' => 'by_ip_from_comment_example', // string
+    'filters' => 'filters_example', // string
+    'search_filters' => 'search_filters_example', // string
+    'after_id' => 'after_id_example', // string
+    'demo' => True, // bool
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->getApiIds($text_search, $by_ip_from_comment, $filters, $search_filters, $after_id, $demo, $sso);
+    $result = $apiInstance->getApiIds($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getApiIds: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

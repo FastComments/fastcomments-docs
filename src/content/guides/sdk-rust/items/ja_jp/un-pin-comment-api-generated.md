@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | 名前 | 型 | 必須 | 説明 |
@@ -8,24 +7,22 @@
 | broadcast_id | String | はい |  |
 | sso | String | いいえ |  |
 
-## レスポンス
+## 応答
 
-戻り値: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/change_comment_pin_status_response.rs)
+返却: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/change_comment_pin_status_response.rs)
 
 ## 例
 
 [inline-code-attrs-start title = 'un_pin_comment の例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example() -> Result<ChangeCommentPinStatusResponse, Error> {
-    let params: UnPinCommentParams = UnPinCommentParams {
-        tenant_id: String::from("acme-corp-tenant"),
-        comment_id: String::from("cmt-8f3b2a1e"),
-        broadcast_id: String::from("news/2024/product-launch"),
-        sso: Some(String::from("sso-user-abcdef123456")),
+async fn unpin_example(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = UnPinCommentParams {
+        tenant_id: "acme-corp".to_string(),
+        comment_id: "comment-12345".to_string(),
+        broadcast_id: "news/article-6789".to_string(),
+        sso: Some("sso-token-xyz".to_string()),
     };
-    let response: ChangeCommentPinStatusResponse = un_pin_comment(&configuration, params).await?;
-    Ok(response)
+    let _response: ChangeCommentPinStatusResponse = un_pin_comment(configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

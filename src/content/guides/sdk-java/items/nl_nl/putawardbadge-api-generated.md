@@ -1,22 +1,23 @@
 ## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Naam | Type | Locatie | Vereist | Beschrijving |
+|------|------|----------|----------|---------------|
+| tenantId | string | query | Ja |  |
 | badgeId | string | query | Ja |  |
 | userId | string | query | Nee |  |
 | commentId | string | query | Nee |  |
 | broadcastId | string | query | Nee |  |
 | sso | string | query | Nee |  |
 
-## Antwoord
+## Response
 
 Retourneert: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AwardUserBadgeResponse.java)
 
-## Voorbeeld
+## Example
 
 [inline-code-attrs-start title = 'putAwardBadge Voorbeeld'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Klassen importeren:
+// Importeer klassen:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,13 +30,14 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String badgeId = "badgeId_example"; // String | 
     String userId = "userId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      AwardUserBadgeResponse result = apiInstance.putAwardBadge(badgeId)
+      AwardUserBadgeResponse result = apiInstance.putAwardBadge(tenantId, badgeId)
             .userId(userId)
             .commentId(commentId)
             .broadcastId(broadcastId)
@@ -43,6 +45,7 @@ public class Example {
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
+      // Exception bij het aanroepen van ModerationApi#putAwardBadge
       System.err.println("Exception when calling ModerationApi#putAwardBadge");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
@@ -52,5 +55,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

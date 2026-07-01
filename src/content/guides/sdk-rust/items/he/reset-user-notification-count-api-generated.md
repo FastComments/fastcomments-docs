@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| שם | סוג | חובה | תיאור |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | tenant_id | String | כן |  |
 | sso | String | לא |  |
@@ -11,16 +11,14 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-reset_user_notification_count'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה של reset_user_notification_count'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_reset() -> Result<ResetUserNotificationsResponse, Error> {
-    let params: ResetUserNotificationCountParams = ResetUserNotificationCountParams {
+async fn run_example(config: &configuration::Configuration) -> Result<(), Error> {
+    let params = ResetUserNotificationCountParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        sso: Some("https://sso.acme.com/session/abc123".to_string()),
+        sso: Some("john.doe".to_string()),
     };
-    let response: ResetUserNotificationsResponse = reset_user_notification_count(&configuration, params).await?;
-    Ok(response)
+    let _response: ResetUserNotificationsResponse = reset_user_notification_count(config, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

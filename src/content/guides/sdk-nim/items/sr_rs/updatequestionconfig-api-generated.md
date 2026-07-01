@@ -1,23 +1,25 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Не |  |
-| updateQuestionConfigBody | UpdateQuestionConfigBody | Не |  |
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| updateQuestionConfigBody | UpdateQuestionConfigBody | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
+Vraća: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример updateQuestionConfig'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateQuestionConfig Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateQuestionConfig(tenantId = "my-tenant-123", id = "question-config-456", updateQuestionConfigBody = default(UpdateQuestionConfigBody))
-if response.isSome:
-  let apiEmpty = response.get()
-  discard apiEmpty
-[inline-code-end]
+let (apiResp, httpResp) = client.updateQuestionConfig(
+  tenantId = "my-tenant-123",
+  id = "question-456",
+  updateQuestionConfigBody = UpdateQuestionConfigBody()
+)
 
----
+if apiResp.isSome:
+  let resp = apiResp.get()
+[inline-code-end]

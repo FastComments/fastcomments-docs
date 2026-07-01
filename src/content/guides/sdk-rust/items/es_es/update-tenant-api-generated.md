@@ -1,10 +1,10 @@
 ## Parámetros
 
-| Nombre | Tipo | Requerido | Descripción |
+| Nombre | Tipo | Obligatorio | Descripción |
 |------|------|----------|-------------|
-| tenant_id | String | Sí |  |
-| id | String | Sí |  |
-| update_tenant_body | models::UpdateTenantBody | Sí |  |
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
+| update_tenant_body | models::UpdateTenantBody | Yes |  |
 
 ## Respuesta
 
@@ -15,27 +15,15 @@ Devuelve: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust
 [inline-code-attrs-start title = 'Ejemplo de update_tenant'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn run() -> Result<(), Error> {
-    let params: UpdateTenantParams = UpdateTenantParams {
+    let params = UpdateTenantParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "site-1234".to_string(),
-        update_tenant_body: models::UpdateTenantBody {
-            name: Some("Acme Corp Comments".to_string()),
-            admin_email: Some("admin@acme.com".to_string()),
-            is_active: Some(true),
-            billing_info: Some(models::BillingInfo {
-                plan: "professional".to_string(),
-                contact_email: "billing@acme.com".to_string(),
-            }),
-            domain_configuration: Some(models::ApiDomainConfiguration {
-                primary_domain: "comments.acme.com".to_string(),
-            }),
+        id: "tenant-001".to_string(),
+        update_tenant_body: UpdateTenantBody {
+            description: Some("Primary tenant for Acme Corp".to_string()),
+            ..Default::default()
         },
     };
-
-    let response: ApiEmptyResponse = update_tenant(configuration, params).await?;
-    let _ = response;
+    let _ = update_tenant(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

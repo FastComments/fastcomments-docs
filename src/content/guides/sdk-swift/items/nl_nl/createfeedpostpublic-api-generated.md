@@ -1,20 +1,20 @@
 ## Parameters
 
-| Name | Type | Location | Required | Description |
+| Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Ja |  |
 | broadcastId | string | query | Nee |  |
 | sso | string | query | Nee |  |
 
-## Response
+## Respons
 
-Geeft terug: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateFeedPostResponse.swift)
+Retourneert: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateFeedPostResponse.swift)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'createFeedPostPublic Voorbeeld'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// De volgende codevoorbeelden zijn nog in bèta. Voor problemen, meld dit via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De volgende codevoorbeelden zijn nog in beta. Voor elk probleem, meld dit via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -22,7 +22,7 @@ let createFeedPostParams = CreateFeedPostParams(title: "title_example", contentH
 let broadcastId = "broadcastId_example" // String |  (optioneel)
 let sso = "sso_example" // String |  (optioneel)
 
-PublicAPI.createFeedPostPublic(tenantId: tenantId, createFeedPostParams: createFeedPostParams, broadcastId: broadcastId, sso: sso) { (response, error) in
+PublicAPI.createFeedPostPublic(tenantId: tenantId, createFeedPostParams: createFeedPostParams, options: PublicAPI.CreateFeedPostPublicOptions(broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

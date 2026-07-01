@@ -1,40 +1,40 @@
 ## パラメータ
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| page | f64 | いいえ |  |
-| count | f64 | いいえ |  |
-| text_search | String | いいえ |  |
-| by_ip_from_comment | String | いいえ |  |
-| filters | String | いいえ |  |
-| search_filters | String | いいえ |  |
-| sorts | String | いいえ |  |
-| demo | bool | いいえ |  |
-| sso | String | いいえ |  |
+| tenant_id | String | Yes |  |
+| page | f64 | No |  |
+| count | f64 | No |  |
+| text_search | String | No |  |
+| by_ip_from_comment | String | No |  |
+| filters | String | No |  |
+| search_filters | String | No |  |
+| sorts | String | No |  |
+| demo | bool | No |  |
+| sso | String | No |  |
 
 ## レスポンス
 
-戻り値: [`ModerationApiGetCommentsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/moderation_api_get_comments_response.rs)
+返却: [`ModerationApiGetCommentsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/moderation_api_get_comments_response.rs)
 
 ## 例
 
 [inline-code-attrs-start title = 'get_api_comments の例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run(configuration: &configuration::Configuration) -> Result<(), Error> {
-    let params: GetApiCommentsParams = GetApiCommentsParams {
+async fn run() -> Result<(), Error> {
+    let params = GetApiCommentsParams {
+        tenant_id: "acme-corp-tenant".to_string(),
         page: Some(1.0),
         count: Some(20.0),
-        text_search: Some(String::from("breaking election results")),
-        by_ip_from_comment: Some(String::from("203.0.113.45")),
-        filters: Some(String::from("status:approved,thread:news/article")),
-        search_filters: Some(String::from("author:john.doe@example.com")),
-        sorts: Some(String::from("-created_at")),
+        text_search: Some("rust".to_string()),
+        by_ip_from_comment: None,
+        filters: Some("status:approved".to_string()),
+        search_filters: Some("author:john".to_string()),
+        sorts: Some("date:desc".to_string()),
         demo: Some(false),
-        sso: Some(String::from("acme-corp-tenant")),
+        sso: None,
     };
-    let response: ModerationApiGetCommentsResponse = get_api_comments(configuration, params).await?;
+    let _response = get_api_comments(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

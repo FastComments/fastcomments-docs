@@ -1,9 +1,10 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| value | string | query | No |  |
-| sso | string | query | No |  |
+| Nom | Type | Emplacement | Obligatoire | Description |
+|------|------|-------------|------------|-------------|
+| tenantId | string | query | Oui |  |
+| value | string | query | Non |  |
+| sso | string | query | Non |  |
 
 ## Réponse
 
@@ -11,7 +12,7 @@ Renvoie : [`ModerationSiteSearchResponse`](https://github.com/FastComments/fastc
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getSearchSites'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSearchSites Exemple'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -19,15 +20,20 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Si vous souhaitez utiliser un client HTTP personnalisé, passez votre client qui implémente `GuzzleHttp\ClientInterface`.
+    // Si vous voulez utiliser un client HTTP personnalisé, passez votre client qui implémente `GuzzleHttp\ClientInterface`.
     // Ceci est optionnel, `GuzzleHttp\Client` sera utilisé par défaut.
     new GuzzleHttp\Client()
 );
-$value = 'value_example'; // chaîne
-$sso = 'sso_example'; // chaîne
+
+$tenant_id = 'tenant_id_example'; // chaîne
+$options = [
+    'value' => 'value_example', // chaîne
+    'sso' => 'sso_example', // chaîne
+];
+
 
 try {
-    $result = $apiInstance->getSearchSites($value, $sso);
+    $result = $apiInstance->getSearchSites($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getSearchSites: ', $e->getMessage(), PHP_EOL;

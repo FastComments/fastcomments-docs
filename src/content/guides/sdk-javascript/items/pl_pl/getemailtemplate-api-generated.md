@@ -1,24 +1,25 @@
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
 | tenantId | string | Tak |  |
 | id | string | Tak |  |
 
 ## Odpowiedź
 
-Zwraca: [`GetEmailTemplateResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplateResponse.ts)
+Zwraca: [`GetEmailTemplateResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplateResponse1.ts)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład użycia getEmailTemplate'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getEmailTemplate Przykład'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-enterprises-1";
-const templateId: string = "welcome-onboard-v2";
-const result: GetEmailTemplateResponse = await getEmailTemplate(tenantId, templateId);
-const status: APIStatus | undefined = result.status;
-const template: CustomEmailTemplate | undefined = result.template;
-const subject: string | undefined = template?.subject
+async function fetchTemplate(): Promise<void> {
+    const tenantId: string = "tenant-12345";
+    const templateId: string = "order-confirmation";
+    const response: GetEmailTemplateResponse1 = await getEmailTemplate(tenantId, templateId);
+    const emailTemplate: CustomEmailTemplate | undefined = response.customEmailTemplate;
+    const configParams: CustomConfigParameters | undefined = response.customConfigParameters;
+}
 [inline-code-end]
 
 ---

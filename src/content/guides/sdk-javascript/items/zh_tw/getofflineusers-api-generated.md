@@ -1,11 +1,11 @@
-在該頁面上過去曾發表評論但目前不在線上的使用者。依 displayName 排序。
-在用盡 /users/online 後使用此項以呈現「成員」區段。
-在 commenterName 上的 Cursor 分頁：伺服器會沿著部分索引 {tenantId, urlId, commenterName} 從 afterName 往前以 $gt 查詢，無需 $skip 成本。
+過去在頁面上的評論者目前 **未** 上線。依 displayName 排序。  
+在耗盡 `/users/online` 後使用此功能以呈現「成員」區段。  
+在 commenterName 上使用游標分頁：伺服器從部分 `{tenantId, urlId, commenterName}` 索引，透過 `$gt` 從 `afterName` 向前走，無 `$skip` 成本。
 
 ## 參數
 
-| 名稱 | 類型 | 必填 | 說明 |
-|------|------|----------|-------------|
+| 名稱 | 類型 | 必填 | 描述 |
+|------|------|------|------|
 | tenantId | string | 是 |  |
 | urlId | string | 是 |  |
 | afterName | string | 否 |  |
@@ -13,20 +13,27 @@
 
 ## 回應
 
-回傳: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOfflineResponse.ts)
+返回：[`GetOfflineUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOfflineUsersResponse.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getOfflineUsers 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant-9f4b2a6c';
-const urlId: string = 'articles/product-launch-2025';
+async function fetchOfflineUsers(): Promise<void> {
+    const tenantId: string = "tenant_12345";
+    const urlId: string = "thread_9876";
+    const afterName: string = "Jane Smith";
+    const afterUserId: string = "user_7f9b3c";
 
-const offlinePageFirst: PageUsersOfflineResponse = await getOfflineUsers(tenantId, urlId);
+    const offlineUsers: GetOfflineUsersResponse = await getOfflineUsers(
+        tenantId,
+        urlId,
+        afterName,
+        afterUserId
+    );
 
-const afterName: string = 'samantha.r';
-const afterUserId: string = 'user_7d3a21f9';
-const offlinePageNext: PageUsersOfflineResponse = await getOfflineUsers(tenantId, urlId, afterName, afterUserId);
+    console.log(offlineUsers);
+}
 [inline-code-end]
 
 ---

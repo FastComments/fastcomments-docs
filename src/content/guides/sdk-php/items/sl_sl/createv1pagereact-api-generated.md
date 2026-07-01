@@ -1,18 +1,18 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Da |  |
-| urlId | string | query | Da |  |
-| title | string | query | Ne |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| title | string | query | No |  |
 
-## Odgovor
+## Odziv
 
 Vrne: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateV1PageReact.php)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer createV1PageReact'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createV1PageReact Primer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -20,13 +20,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Če želite uporabiti lastnega HTTP odjemalca, posredujte odjemalca, ki implementira `GuzzleHttp\ClientInterface`.
-    // To je neobvezno; kot privzeti bo uporabljen `GuzzleHttp\Client`.
+    // Če želite uporabiti prilagojen HTTP odjemalec, podajte svoj odjemalec, ki implementira `GuzzleHttp\ClientInterface`.
+    // To je neobvezno, `GuzzleHttp\Client` bo uporabljen kot privzeto.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $url_id = 'url_id_example'; // string
 $title = 'title_example'; // string
+
 
 try {
     $result = $apiInstance->createV1PageReact($tenant_id, $url_id, $title);

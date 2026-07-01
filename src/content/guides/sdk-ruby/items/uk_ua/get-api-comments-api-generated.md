@@ -1,16 +1,17 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Назва | Тип | Розташування | Обов’язковий | Опис |
 |------|------|----------|----------|-------------|
-| page | number | query | Ні |  |
-| count | number | query | Ні |  |
-| text-search | string | query | Ні |  |
-| byIPFromComment | string | query | Ні |  |
-| filters | string | query | Ні |  |
-| searchFilters | string | query | Ні |  |
-| sorts | string | query | Ні |  |
-| demo | boolean | query | Ні |  |
-| sso | string | query | Ні |  |
+| tenantId | string | query | Yes |  |
+| page | number | query | No |  |
+| count | number | query | No |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sorts | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Відповідь
 
@@ -24,21 +25,22 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # Рядок | 
 opts = {
-  page: 1.2, # Float | 
-  count: 1.2, # Float | 
-  text_search: 'text_search_example', # String | 
-  by_ip_from_comment: 'by_ip_from_comment_example', # String | 
-  filters: 'filters_example', # String | 
-  search_filters: 'search_filters_example', # String | 
-  sorts: 'sorts_example', # String | 
-  demo: true, # Boolean | 
-  sso: 'sso_example' # String | 
+  page: 1.2, # Дробове | 
+  count: 1.2, # Дробове | 
+  text_search: 'text_search_example', # Рядок | 
+  by_ip_from_comment: 'by_ip_from_comment_example', # Рядок | 
+  filters: 'filters_example', # Рядок | 
+  search_filters: 'search_filters_example', # Рядок | 
+  sorts: 'sorts_example', # Рядок | 
+  demo: true, # Логічний | 
+  sso: 'sso_example' # Рядок | 
 }
 
 begin
   
-  result = api_instance.get_api_comments(opts)
+  result = api_instance.get_api_comments(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_api_comments: #{e}"

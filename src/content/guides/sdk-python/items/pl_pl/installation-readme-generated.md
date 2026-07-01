@@ -1,16 +1,26 @@
-### PyPI
+### Instalacja z GitHub
+
+Instaluj bezpośrednio z tagu wydania (zalecane, w pełni powtarzalne):
 
 ```bash
-pip install fastcomments
+pip install git+https://github.com/fastcomments/fastcomments-python.git@v3.0.0
 ```
 
-### Zawartość biblioteki
+Zaciągnij tag zamiast gałęzi, aby budowy były deterministyczne. Ten sam format działa w `requirements.txt`:
 
-Ta biblioteka zawiera dwa moduły: wygenerowanego klienta API oraz główną bibliotekę Python, która zawiera ręcznie napisane narzędzia ułatwiające pracę z API, w tym obsługę SSO.
+```
+fastcomments @ git+https://github.com/fastcomments/fastcomments-python.git@v3.0.0
+```
 
-- [Dokumentacja biblioteki klienta API](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
-- [Dokumentacja biblioteki głównej, w tym przykłady SSO](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
+Każde otagowane [GitHub Release](https://github.com/fastcomments/fastcomments-python/releases) ma również dołączony zbudowany wheel, jeśli wolisz zainstalować binarny artefakt bezpośrednio.
 
-### Publiczne vs zabezpieczone API
+### Zawartość Biblioteki
 
-Dla klienta API dostępne są trzy klasy: `DefaultApi`, `PublicApi` i `ModerationApi`. Klasa `DefaultApi` zawiera metody wymagające Twojego klucza API, natomiast `PublicApi` zawiera metody, które można wywoływać bezpośrednio z przeglądarki/urządzenia mobilnego itp. bez uwierzytelniania. Klasa `ModerationApi` zasila panel moderatora i zawiera metody do moderowania komentarzy (lista, zliczanie, wyszukiwanie, logi, eksport), akcji moderacyjnych (usuń/przywróć, oznacz, ustaw status do przeglądu/spam/zatwierdzenie, głosy, ponowne otwarcie/zamknięcie wątku), banów (zablokuj od komentowania, cofnij, podsumowania przed banem, status/preferencje bana, liczby zbanowanych użytkowników) oraz odznak i zaufania (przyznaj/usuń odznakę, odznaki ręczne, pobierz/ustaw współczynnik zaufania, wewnętrzny profil użytkownika). Każda metoda `ModerationApi` akceptuje parametr `sso`, dzięki czemu może być wywołana w imieniu moderatora uwierzytelnionego przez SSO.
+Ta biblioteka zawiera dwa moduły: wygenerowanego klienta API oraz rdzeniową bibliotekę Pythona, która zawiera ręcznie napisane narzędzia ułatwiające pracę z API, w tym obsługę SSO.
+
+- [API Client Library Docs](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
+- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
+
+### Publiczne vs Zabezpieczone API
+
+Dla klienta API dostępne są trzy klasy, `DefaultApi`, `PublicApi` i `ModerationApi`. `DefaultApi` zawiera metody, które wymagają Twojego klucza API, a `PublicApi` zawiera metody, które mogą być wywoływane bezpośrednio z przeglądarki/urządzenia mobilnego/etc bez uwierzytelnienia. `ModerationApi` zapewnia rozbudowany zestaw szybkich i działających w czasie rzeczywistym API moderacji. Każda metoda `ModerationApi` przyjmuje parametr `sso` i może uwierzytelnić się za pomocą SSO lub cookie sesji FastComments.com.

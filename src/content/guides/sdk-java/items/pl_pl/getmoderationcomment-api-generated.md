@@ -1,11 +1,12 @@
 ## Parametry
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
-|------|------|----------|----------|-------------|
-| commentId | string | ścieżka | Tak |  |
-| includeEmail | boolean | parametr zapytania | Nie |  |
-| includeIP | boolean | parametr zapytania | Nie |  |
-| sso | string | parametr zapytania | Nie |  |
+|------|------|-------------|----------|------|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| includeEmail | boolean | query | No |  |
+| includeIP | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Odpowiedź
 
@@ -13,7 +14,7 @@ Zwraca: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcom
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład użycia getModerationComment'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład getModerationComment'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importowanie klas:
 import com.fastcomments.invoker.ApiClient;
@@ -28,12 +29,13 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     Boolean includeEmail = true; // Boolean | 
     Boolean includeIP = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationAPICommentResponse result = apiInstance.getModerationComment(commentId)
+      ModerationAPICommentResponse result = apiInstance.getModerationComment(tenantId, commentId)
             .includeEmail(includeEmail)
             .includeIP(includeIP)
             .sso(sso)
@@ -49,3 +51,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

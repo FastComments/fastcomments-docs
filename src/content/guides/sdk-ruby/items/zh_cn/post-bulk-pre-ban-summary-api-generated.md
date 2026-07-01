@@ -1,7 +1,8 @@
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | includeByUserIdAndEmail | boolean | query | No |  |
 | includeByIP | boolean | query | No |  |
 | includeByEmailDomain | boolean | query | No |  |
@@ -19,17 +20,18 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 bulk_pre_ban_params = FastCommentsClient::BulkPreBanParams.new({comment_ids: ['comment_ids_example']}) # BulkPreBanParams | 
 opts = {
-  include_by_user_id_and_email: true, # 布尔 | 
-  include_by_ip: true, # 布尔 | 
-  include_by_email_domain: true, # 布尔 | 
-  sso: 'sso_example' # 字符串 | 
+  include_by_user_id_and_email: true, # Boolean | 
+  include_by_ip: true, # Boolean | 
+  include_by_email_domain: true, # Boolean | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.post_bulk_pre_ban_summary(bulk_pre_ban_params, opts)
+  result = api_instance.post_bulk_pre_ban_summary(tenant_id, bulk_pre_ban_params, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_bulk_pre_ban_summary: #{e}"

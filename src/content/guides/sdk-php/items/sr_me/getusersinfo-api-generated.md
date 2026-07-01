@@ -1,21 +1,21 @@
-Пакет информација о корисницима за закупца. За дате userIds, враћа информације за приказ из User / SSOUser.
-Користи га видгет коментара да обогати кориснике који су се управо појавили путем догађаја присутности.
-Нема контекста странице: приватност се примењује једнако (приватни профили су маскирани).
+Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
+Used by the comment widget to enrich users that just appeared via a presence event.  
+No page context: privacy is enforced uniformly (private profiles are masked).
 
-## Параметри
+## Parameters
 
-| Назив | Тип | Локација | Обавезно | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| ids | string | query | Да | userIds раздвојени зарезима. |
+| tenantId | string | path | Yes |  |
+| ids | string | query | Yes | UserId‑ovi odvojeni zarezom. |
 
-## Одговор
+## Response
 
-Враћа: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersInfoResponse.php)
+Returns: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersInfoResponse.php)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'getUsersInfo Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUsersInfo Primjer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -23,12 +23,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ако желите да користите прилагођени HTTP клијент, проследите клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционално, као подразумевани ће се користити `GuzzleHttp\Client`.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $ids = 'ids_example'; // string | Comma-delimited userIds.
+
 
 try {
     $result = $apiInstance->getUsersInfo($tenant_id, $ids);

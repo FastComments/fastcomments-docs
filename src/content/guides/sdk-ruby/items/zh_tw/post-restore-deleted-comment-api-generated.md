@@ -1,8 +1,10 @@
 ## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | 是 |  |
 | commentId | string | path | 是 |  |
+| broadcastId | string | query | 否 |  |
 | sso | string | query | 否 |  |
 
 ## 回應
@@ -17,14 +19,16 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
-comment_id = 'comment_id_example' # 字串 | 
+tenant_id = 'tenant_id_example' # String | 
+comment_id = 'comment_id_example' # String | 
 opts = {
-  sso: 'sso_example' # 字串 | 
+  broadcast_id: 'broadcast_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.post_restore_deleted_comment(comment_id, opts)
+  result = api_instance.post_restore_deleted_comment(tenant_id, comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_restore_deleted_comment: #{e}"

@@ -1,25 +1,27 @@
-## Параметри
+## Parameters
 
-| Име | Тип | Местоположение | Задължително | Описание |
-|------|------|----------|----------|-------------|
+| Име | Тип | Location | Задължително | Описание |
+|------|------|----------|--------------|-------------|
+| tenantId | string | query | Да |  |
 | commentId | string | path | Да |  |
 | sso | string | query | Не |  |
 
-## Отговор
+## Response
 
-Връща: [`GetCommentTextResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetCommentTextResponse.swift)
+Returns: [`GetCommentTextResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetCommentTextResponse.swift)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'Пример за getModerationCommentText'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getModerationCommentText Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следните примерни фрагменти от код все още са в бета. За проблеми, моля, докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следващите примерни кодове са все още бета. За всеки проблем, моля съобщете чрез http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
-let sso = "sso_example" // String |  (незадължително)
+let sso = "sso_example" // String |  (по избор)
 
-ModerationAPI.getModerationCommentText(commentId: commentId, sso: sso) { (response, error) in
+ModerationAPI.getModerationCommentText(tenantId: tenantId, commentId: commentId, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return

@@ -1,11 +1,11 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| id | string | path | Да |  |
-| userId | string | query | Нет |  |
-| anonUserId | string | query | Нет |  |
+| Имя | Тип | Местоположение | Обязательно | Описание |
+|------|------|----------------|-------------|----------|
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
 
 ## Ответ
 
@@ -18,30 +18,30 @@
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configure API key authorization: api_key
-// Настройка авторизации API-ключа: api_key
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для API-ключа, если необходимо
+// Настройте авторизацию ключом API: api_key
+$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для ключа API, если необходимо
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // Если вы хотите использовать пользовательский HTTP-клиент, передайте клиент, который реализует `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // Если вы хотите использовать пользовательский HTTP‑клиент, передайте ваш клиент, реализующий `GuzzleHttp\ClientInterface`.
     // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$id = 'id_example'; // string
+
+$tenant_id = 'tenant_id_example'; // строка
+$id = 'id_example'; // строка
 $block_from_comment_params = new \FastComments\Client\Model\BlockFromCommentParams(); // \FastComments\Client\Model\BlockFromCommentParams
-$user_id = 'user_id_example'; // string
-$anon_user_id = 'anon_user_id_example'; // string
+$options = [
+    'user_id' => 'user_id_example', // строка
+    'anon_user_id' => 'anon_user_id_example', // строка
+];
+
 
 try {
-    $result = $apiInstance->blockUserFromComment($tenant_id, $id, $block_from_comment_params, $user_id, $anon_user_id);
+    $result = $apiInstance->blockUserFromComment($tenant_id, $id, $block_from_comment_params, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->blockUserFromComment: ', $e->getMessage(), PHP_EOL;

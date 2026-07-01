@@ -1,30 +1,29 @@
 ### 401 Неовлашћене грешке
 
-Ако добијате 401 грешке приликом кориштења аутентификованог API-ја:
+If you're getting 401 errors when using the authenticated API:
 
-1. **Check your API key**: Осигурајте се да користите тачан API key са ваше FastComments контролне табле
-2. **Verify the tenant ID**: Убедите се да tenant ID одговара вашем налогу
-3. **API key format**: The API key should be set on the API client:
+1. **Provjerite svoj API ključ**: Ensure you're using the correct API key from your FastComments dashboard
+2. **Provjerite tenant ID**: Make sure the tenant ID matches your account
+3. **Format API ključa**: The API key should be set as the `x-api-key` header on the shared configuration:
 
 ```swift
-let defaultApi = DefaultAPI()
-defaultApi.apiKey = "YOUR_API_KEY"
+FastCommentsSwiftAPIConfiguration.shared.customHeaders["x-api-key"] = "YOUR_API_KEY"
 ```
 
-4. **Using the wrong API**: Осигурајте се да користите `DefaultAPI` (не `PublicAPI`) за аутентификоване позиве
+4. **Korištenje pogrešnog API-ja**: Make sure you're using `DefaultAPI` (not `PublicAPI`) for authenticated calls
 
-### Проблеми са SSO токеном
+### Problemi sa SSO tokenom
 
-Ако SSO токени не функционишу:
+If SSO tokens aren't working:
 
-1. **Use secure mode for production**: Увек користите `FastCommentsSSO.createSecure()` са вашим API key-ом за продукцију
-2. **Server-side only**: Генеришите сигурне SSO токене на вашем серверу, никада не откривајте ваш API key клијентима
-3. **Check user data**: Осигурајте да су сва обавезна поља (id, email, username) обезбеђена
-4. **Token expiration**: Сигурни SSO токени садрже временску ознаку и могу истећи. Генеришите нове токене по потреби.
+1. **Koristite sigurni način za produkciju**: Always use `FastCommentsSSO.createSecure()` with your API key for production
+2. **Samo na serveru**: Generate secure SSO tokens on your server, never expose your API key to clients
+3. **Provjerite korisničke podatke**: Ensure all required fields (id, email, username) are provided
+4. **Istek tokena**: Secure SSO tokens include a timestamp and may expire. Generate fresh tokens as needed.
 
-### SSL/TLS грешке
+### SSL/TLS greške
 
-Ако наиђете на SSL/TLS грешке:
+If you encounter SSL/TLS errors:
 
-1. Осигурајте да Info.plist ваше апликације дозвољава HTTPS везе према fastcomments.com
-2. Провјерите да не користите App Transport Security exceptions које би могле блокирати везу
+1. Ensure your app's Info.plist allows HTTPS connections to fastcomments.com
+2. Check that you're not using App Transport Security exceptions that might block the connection

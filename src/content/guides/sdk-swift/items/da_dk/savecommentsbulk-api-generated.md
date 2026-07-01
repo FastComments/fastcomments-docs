@@ -1,7 +1,7 @@
 ## Parametre
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
-|------|------|----------|----------|-------------|
+|------|------|-----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | isLive | boolean | query | Nej |  |
 | doSpamCheck | boolean | query | Nej |  |
@@ -16,7 +16,7 @@ Returnerer: [`[SaveCommentsBulkResponse]`](https://github.com/FastComments/fastc
 
 [inline-code-attrs-start title = 'saveCommentsBulk Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Følgende kodeeksempler er stadig i beta. Hvis du oplever problemer, så rapportér venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Følgende kodeeksempler er stadig i beta. For eventuelle problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -26,7 +26,7 @@ let doSpamCheck = true // Bool |  (valgfri)
 let sendEmails = true // Bool |  (valgfri)
 let populateNotifications = true // Bool |  (valgfri)
 
-DefaultAPI.saveCommentsBulk(tenantId: tenantId, createCommentParams: createCommentParams, isLive: isLive, doSpamCheck: doSpamCheck, sendEmails: sendEmails, populateNotifications: populateNotifications) { (response, error) in
+DefaultAPI.saveCommentsBulk(tenantId: tenantId, createCommentParams: createCommentParams, options: DefaultAPI.SaveCommentsBulkOptions(isLive: isLive, doSpamCheck: doSpamCheck, sendEmails: sendEmails, populateNotifications: populateNotifications)) { (response, error) in
     guard error == nil else {
         print(error)
         return

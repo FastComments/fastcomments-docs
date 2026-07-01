@@ -2,8 +2,8 @@
 
 | Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| domainToUpdate | string | path | Да |  |
+| tenantId | string | query | Yes |  |
+| domainToUpdate | string | path | Yes |  |
 
 ## Ответ
 
@@ -11,27 +11,28 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример использования patchDomainConfig'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример patchDomainConfig'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Настройка авторизации по API-ключу: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Раскомментируйте ниже, чтобы задать префикс (например, Bearer) для API-ключа, если требуется
+// Настройте авторизацию ключом API: api_key
+// Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для ключа API, если необходимо
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Если вы хотите использовать кастомный HTTP-клиент, передайте клиент, который реализует `GuzzleHttp\ClientInterface`.
-    // Это необязательно, по умолчанию будет использоваться `GuzzleHttp\Client`.
+    // Если хотите использовать пользовательский HTTP‑клиент, передайте ваш клиент, реализующий `GuzzleHttp\ClientInterface`.
+    // Это опционально, по умолчанию будет использован `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$domain_to_update = 'domain_to_update_example'; // string
+
+$tenant_id = 'tenant_id_example'; // строка
+$domain_to_update = 'domain_to_update_example'; // строка
 $patch_domain_config_params = new \FastComments\Client\Model\PatchDomainConfigParams(); // \FastComments\Client\Model\PatchDomainConfigParams
+
 
 try {
     $result = $apiInstance->patchDomainConfig($tenant_id, $domain_to_update, $patch_domain_config_params);

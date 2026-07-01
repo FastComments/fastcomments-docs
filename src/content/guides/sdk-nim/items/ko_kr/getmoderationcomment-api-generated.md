@@ -1,26 +1,28 @@
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
-|------|------|----------|-------------|
+| 이름 | 유형 | 필수 | 설명 |
+|------|------|------|------|
+| tenantId | string | 예 |  |
 | commentId | string | 예 |  |
-| includeEmail | bool | 아니요 |  |
-| includeIP | bool | 아니요 |  |
-| sso | string | 아니요 |  |
+| options | GetModerationCommentOptions | 아니오 |  |
 
 ## 응답
 
 반환: [`Option[ModerationAPICommentResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_api_comment_response.nim)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'getModerationComment 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getModerationComment 예시'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getModerationComment(commentId = "cmt-8f3b2a9d", includeEmail = false, includeIP = false, sso = "")
-if response.isSome:
-  let comment = response.get()
-  discard comment
-else:
-  echo "No moderation comment returned"
+let (maybeComment, httpResponse) = client.getModerationComment(
+  tenantId = "my-tenant-123",
+  commentId = "cmt-456789",
+  options = default(GetModerationCommentOptions)
+)
+
+if maybeComment.isSome:
+  let comment = maybeComment.get()
+  echo comment
 [inline-code-end]
 
 ---

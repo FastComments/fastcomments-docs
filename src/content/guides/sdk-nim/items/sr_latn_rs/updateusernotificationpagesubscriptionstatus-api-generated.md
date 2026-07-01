@@ -1,16 +1,15 @@
-Omogući ili onemogući obaveštenja za stranicu. Kada su korisnici pretplaćeni na stranicu, obaveštenja se kreiraju
-za nove root komentare, i takođe
+Omogućite ili onemogućite obaveštenja za stranicu. Kada su korisnici pretplaćeni na stranicu, obaveštenja se kreiraju za nove glavne komentare, i takođe
 
 ## Parameters
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Da |  |
-| urlId | string | Da |  |
-| url | string | Ne |  |
-| pageTitle | string | Ne |  |
-| subscribedOrUnsubscribed | string | Ne |  |
-| sso | string | Ne |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| url | string | No |  |
+| pageTitle | string | No |  |
+| subscribedOrUnsubscribed | string | No |  |
+| sso | string = "" | No |  |
 
 ## Response
 
@@ -20,20 +19,16 @@ Vraća: [`Option[UpdateUserNotificationPageSubscriptionStatusResponse]`](https:/
 
 [inline-code-attrs-start title = 'Primer updateUserNotificationPageSubscriptionStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateUserNotificationPageSubscriptionStatus(
+let (optResp, httpResp) = client.updateUserNotificationPageSubscriptionStatus(
   tenantId = "my-tenant-123",
-  urlId = "news/economy/market-rally-2026-06-19",
-  url = "",
-  pageTitle = "",
-  subscribedOrUnsubscribed = "",
+  urlId = "news/article-456",
+  url = "https://example.com/news/article-456",
+  pageTitle = "Breaking News: Something Happened",
+  subscribedOrUnsubscribed = "subscribed",
   sso = ""
 )
 
-if response.isSome:
-  let updateResp = response.get()
-  echo "Subscription update received: ", updateResp
-else:
-  echo "No subscription update returned."
+if optResp.isSome:
+  let resp = optResp.get()
+  # dalja obrada sa resp
 [inline-code-end]
-
----

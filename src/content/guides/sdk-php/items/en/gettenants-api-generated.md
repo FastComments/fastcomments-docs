@@ -30,12 +30,16 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$meta = 'meta_example'; // string
-$skip = 3.4; // float
+$options = [
+    'meta' => 'meta_example', // string
+    'skip' => 3.4, // float
+];
+
 
 try {
-    $result = $apiInstance->getTenants($tenant_id, $meta, $skip);
+    $result = $apiInstance->getTenants($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getTenants: ', $e->getMessage(), PHP_EOL;

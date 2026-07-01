@@ -1,26 +1,30 @@
 ## 參數
 
-| 名稱 | 型別 | 位置 | 必填 | 說明 |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
-| commentId | string | 路徑 | 是 |  |
-| sso | string | 查詢 | 否 |  |
+| tenantId | string | query | 是 |  |
+| commentId | string | path | 是 |  |
+| broadcastId | string | query | 否 |  |
+| sso | string | query | 否 |  |
 
 ## 回應
 
-回傳: [`AdjustVotesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AdjustVotesResponse.swift)
+返回：[`AdjustVotesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AdjustVotesResponse.swift)
 
 ## 範例
 
 [inline-code-attrs-start title = 'postAdjustCommentVotes 範例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 以下程式範例仍為測試版。若有任何問題，請透過 http://github.com/OpenAPITools/openapi-generator/issues/new 回報
+// 以下程式碼示例仍屬測試版。如有任何問題，請透過 http://github.com/OpenAPITools/openapi-generator/issues/new 回報
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
 let adjustCommentVotesParams = AdjustCommentVotesParams(adjustVoteAmount: 123) // AdjustCommentVotesParams | 
-let sso = "sso_example" // String |  (optional)
+let broadcastId = "broadcastId_example" // String |  (可選)
+let sso = "sso_example" // String |  (可選)
 
-ModerationAPI.postAdjustCommentVotes(commentId: commentId, adjustCommentVotesParams: adjustCommentVotesParams, sso: sso) { (response, error) in
+ModerationAPI.postAdjustCommentVotes(tenantId: tenantId, commentId: commentId, adjustCommentVotesParams: adjustCommentVotesParams, options: ModerationAPI.PostAdjustCommentVotesOptions(broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -31,5 +35,3 @@ ModerationAPI.postAdjustCommentVotes(commentId: commentId, adjustCommentVotesPar
     }
 }
 [inline-code-end]
-
----

@@ -18,6 +18,7 @@ Returns: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-p
 [inline-code-attrs-start title = 'get_audit_logs Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetAuditLogsOptions
 from client.models.get_audit_logs_response import GetAuditLogsResponse
 from client.models.sortdir import SORTDIR
 from client.rest import ApiException
@@ -52,7 +53,7 @@ with client.ApiClient(configuration) as api_client:
     before = 3.4 # float |  (optional)
 
     try:
-        api_response = api_instance.get_audit_logs(tenant_id, limit=limit, skip=skip, order=order, after=after, before=before)
+        api_response = api_instance.get_audit_logs(tenant_id, GetAuditLogsOptions(limit=limit, skip=skip, order=order, after=after, before=before))
         print("The response of DefaultApi->get_audit_logs:\n")
         pprint(api_response)
     except Exception as e:

@@ -1,13 +1,13 @@
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
+| Naam | Type | Verplicht | Beschrijving |
 |------|------|----------|-------------|
-| tenant_id | String | Ja |  |
-| limit | f64 | Nee |  |
-| skip | f64 | Nee |  |
-| order | models::SortDir | Nee |  |
-| after | f64 | Nee |  |
-| before | f64 | Nee |  |
+| tenant_id | String | Yes |  |
+| limit | f64 | No |  |
+| skip | f64 | No |  |
+| order | models::SortDir | No |  |
+| after | f64 | No |  |
+| before | f64 | No |  |
 
 ## Respons
 
@@ -17,18 +17,16 @@ Retourneert: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcommen
 
 [inline-code-attrs-start title = 'get_audit_logs Voorbeeld'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run(configuration: &configuration::Configuration) -> Result<(), Error> {
-    let params: GetAuditLogsParams = GetAuditLogsParams {
+async fn fetch_audit_logs(config: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetAuditLogsParams {
         tenant_id: "acme-corp-tenant".to_string(),
         limit: Some(100.0),
         skip: Some(0.0),
         order: Some(models::SortDir::Desc),
         after: Some(1622505600.0),
-        before: Some(1625097600.0),
+        before: None,
     };
-    let response: GetAuditLogsResponse = get_audit_logs(configuration, params).await?;
+    let _response: GetAuditLogsResponse = get_audit_logs(config, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

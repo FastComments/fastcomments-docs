@@ -1,17 +1,18 @@
 ## Parameters
 
-| Naam | Type | Location | Vereist | Beschrijving |
+| Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Ja |  |
 | batchJobId | string | query | Nee |  |
 | sso | string | query | Nee |  |
 
 ## Respons
 
-Geeft terug: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationExportStatusResponse.php)
+Retourneert: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationExportStatusResponse.php)
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'getApiExportStatus Voorbeeld'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Voorbeeld getApiExportStatus'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -19,19 +20,22 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Als u een eigen HTTP-client wilt gebruiken, geef dan uw client mee die `GuzzleHttp\ClientInterface` implementeert.
-    // Dit is optioneel; `GuzzleHttp\Client` zal als standaard worden gebruikt.
+    // Als je een aangepaste HTTP-client wilt gebruiken, geef je je client door die `GuzzleHttp\ClientInterface` implementeert.
+    // Dit is optioneel, `GuzzleHttp\Client` wordt standaard gebruikt.
     new GuzzleHttp\Client()
 );
-$batch_job_id = 'batch_job_id_example'; // string
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // string
+$options = [
+    'batch_job_id' => 'batch_job_id_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->getApiExportStatus($batch_job_id, $sso);
+    $result = $apiInstance->getApiExportStatus($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getApiExportStatus: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

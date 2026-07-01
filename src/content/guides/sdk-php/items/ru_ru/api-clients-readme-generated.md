@@ -1,9 +1,8 @@
----
-The SDK предоставляет три класса клиентских API:
+The SDK предоставляет три класса API‑клиентов:
 
-- **`DefaultApi`** — методы, аутентифицируемые с помощью API-ключа, для использования на сервере. Настройте API-ключ как показано в [Начало работы](#getting-started-readme-generated).
-- **`PublicApi`** — публичные методы, которые не требуют API-ключа; безопасно вызывать из браузеров и мобильных приложений.
-- **`ModerationApi`** — методы для панели модерации: просмотр списка, подсчёт, поиск, логирование и экспорт комментариев; действия модерации (удаление/восстановление, пометка, установка статуса на проверку/спам/одобрение, голоса, повторное открытие/закрытие темы); баны (забанить от комментирования, отмена, предварительные сводки перед баном, статус и настройки бана, количество забаненных пользователей); и бейджи & доверие (присвоение/удаление бейджа, ручные бейджи, получение/установка коэффициента доверия, внутренний профиль пользователя). Каждый метод `ModerationApi` принимает параметр `$sso` для аутентификации действующего модератора через SSO.
+- **`DefaultApi`** – методы, требующие аутентификации API‑ключом, предназначены для серверной стороны. Настройте API‑ключ, как показано в разделе [Getting Started](#getting-started-readme-generated).
+- **`PublicApi`** – публичные методы, не требующие API‑ключа, безопасные для вызова из браузеров и мобильных приложений.
+- **`ModerationApi`** – обширный набор быстрых и живых модерационных API. Каждый метод `ModerationApi` принимает параметр `$sso` и может аутентифицироваться через SSO или cookie‑сеанс FastComments.com.
 
 ### Использование PublicApi
 
@@ -11,12 +10,12 @@ The SDK предоставляет три класса клиентских API:
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Публичные методы не требуют API-ключа.
+// Публичные методы не требуют API‑ключа.
 $apiInstance = new FastComments\Client\Api\PublicApi(
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$url_id = 'url_id_example'; // string
+$tenant_id = 'tenant_id_example'; // строка
+$url_id = 'url_id_example'; // строка
 
 try {
     $result = $apiInstance->getCommentsPublic($tenant_id, $url_id);
@@ -35,13 +34,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new FastComments\Client\Api\ModerationApi(
     new GuzzleHttp\Client()
 );
-$sso = 'sso_example'; // string - SSO-пейлоад, аутентифицирующий модератора
+$sso = 'sso_example'; // строка – SSO‑полезная нагрузка, аутентифицирующая модератора
 
 try {
-    $result = $apiInstance->getCount(null, null, null, null, null, $sso);
+    $result = $apiInstance->getCount([
+        'sso' => $sso,
+    ]);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getCount: ', $e->getMessage(), PHP_EOL;
 }
 ```
----

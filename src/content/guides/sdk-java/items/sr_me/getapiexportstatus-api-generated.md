@@ -1,19 +1,20 @@
-## Параметри
+## Parameters
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| batchJobId | string | query | Не |  |
-| sso | string | query | Не |  |
+| tenantId | string | query | Yes |  |
+| batchJobId | string | query | No |  |
+| sso | string | query | No |  |
 
-## Одговор
+## Response
 
-Враћа: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationExportStatusResponse.java)
+Returns: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationExportStatusResponse.java)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'getApiExportStatus Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getApiExportStatus Primer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Увезите класе:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String batchJobId = "batchJobId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationExportStatusResponse result = apiInstance.getApiExportStatus()
+      ModerationExportStatusResponse result = apiInstance.getApiExportStatus(tenantId)
             .batchJobId(batchJobId)
             .sso(sso)
             .execute();
@@ -44,3 +46,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

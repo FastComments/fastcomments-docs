@@ -1,18 +1,18 @@
-## Параметры
+## Параметри
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| meta | string | query | Нет |  |
-| skip | number | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| meta | string | query | No |  |
+| skip | number | query | No |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantsResponse.php)
+Повертає: [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantsResponse.php)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример getTenants'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад getTenants'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -26,20 +26,22 @@ $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKe
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // Это необязательно, `GuzzleHttp\Client` will be used as default.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$meta = 'meta_example'; // string
-$skip = 3.4; // float
+$options = [
+    'meta' => 'meta_example', // string
+    'skip' => 3.4, // float
+];
+
 
 try {
-    $result = $apiInstance->getTenants($tenant_id, $meta, $skip);
+    $result = $apiInstance->getTenants($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getTenants: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

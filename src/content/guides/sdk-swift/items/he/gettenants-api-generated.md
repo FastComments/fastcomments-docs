@@ -1,12 +1,12 @@
-## פרמטרים
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | כן |  |
-| meta | string | query | לא |  |
-| skip | number | query | לא |  |
+| tenantId | מחרוזת | שאילתא | כן |  |
+| meta | מחרוזת | שאילתא | לא |  |
+| skip | מספר | שאילתא | לא |  |
 
-## תגובה
+## Response
 
 מחזיר: [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTenantsResponse.swift)
 
@@ -14,14 +14,14 @@
 
 [inline-code-attrs-start title = 'דוגמת getTenants'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// דוגמאות הקוד הבאות עדיין בגרסת בטא. לכל בעיה, דווח בבקשה דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// דגימות הקוד הבאות עדיין בגרסת בטא. לכל בעיה, אנא דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let tenantId = "tenantId_example" // String | 
-let meta = "meta_example" // String |  (אופציונלי)
-let skip = 987 // Double |  (אופציונלי)
+let tenantId = "tenantId_example" // מחרוזת | 
+let meta = "meta_example" // מחרוזת | (אופציונלי)
+let skip = 987 // Double | (אופציונלי)
 
-DefaultAPI.getTenants(tenantId: tenantId, meta: meta, skip: skip) { (response, error) in
+DefaultAPI.getTenants(tenantId: tenantId, options: DefaultAPI.GetTenantsOptions(meta: meta, skip: skip)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -32,5 +32,3 @@ DefaultAPI.getTenants(tenantId: tenantId, meta: meta, skip: skip) { (response, e
     }
 }
 [inline-code-end]
-
----

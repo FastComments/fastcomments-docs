@@ -1,29 +1,28 @@
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
+| tenantId | string | 是 |  |
+| id | string | 是 |  |
 
 ## 回應
 
-回傳: [`DeletePageAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/DeletePageAPIResponse.h)
+回傳：[`DeletePageAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/DeletePageAPIResponse.h)
 
 ## 範例
 
 [inline-code-attrs-start title = 'deletePage 範例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t pageId = U("page-456");
-boost::optional<utility::string_t> correlationId = boost::optional<utility::string_t>(U("corr-20251122"));
-auto task = api->deletePage(tenantId, pageId)
-    .then([correlationId](pplx::task<std::shared_ptr<DeletePageAPIResponse>> prev) -> std::shared_ptr<DeletePageAPIResponse> {
-        try {
-            auto resp = prev.get();
-            if (resp) return resp;
-            return std::make_shared<DeletePageAPIResponse>();
-        } catch (const std::exception&) {
-            return std::make_shared<DeletePageAPIResponse>();
-        }
-    });
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto pageId   = utility::conversions::to_string_t("page-456");
+
+api->deletePage(tenantId, pageId)
+   .then([](pplx::task<std::shared_ptr<DeletePageAPIResponse>> t) {
+       try {
+           auto response = t.get();
+           // 根據需要處理回應
+       } catch (const std::exception& ex) {
+           // 處理錯誤
+       }
+   });
 [inline-code-end]

@@ -1,38 +1,37 @@
-Abilita o disabilita le notifiche per una pagina. Quando gli utenti sono iscritti a una pagina, vengono create notifiche per nuovi commenti principali, e anche
+Abilita o disabilita le notifiche per una pagina. Quando gli utenti sono iscritti a una pagina, le notifiche vengono create
+per i nuovi commenti radice, e anche
 
-## Parametri
+## Parameters
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nome | Tipo | Obbligatorio | Descrizione |
+|------|------|--------------|-------------|
 | tenantId | string | Yes |  |
 | urlId | string | Yes |  |
 | url | string | No |  |
 | pageTitle | string | No |  |
 | subscribedOrUnsubscribed | string | No |  |
-| sso | string | No |  |
+| sso | string = "" | No |  |
 
-## Risposta
+## Response
 
 Restituisce: [`Option[UpdateUserNotificationPageSubscriptionStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_page_subscription_status_response.nim)
 
-## Esempio
+## Example
 
-[inline-code-attrs-start title = 'Esempio di updateUserNotificationPageSubscriptionStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio updateUserNotificationPageSubscriptionStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateUserNotificationPageSubscriptionStatus(
+let (optResp, httpResp) = client.updateUserNotificationPageSubscriptionStatus(
   tenantId = "my-tenant-123",
-  urlId = "news/economy/market-rally-2026-06-19",
-  url = "",
-  pageTitle = "",
-  subscribedOrUnsubscribed = "",
+  urlId = "news/article-456",
+  url = "https://example.com/news/article-456",
+  pageTitle = "Breaking News: Something Happened",
+  subscribedOrUnsubscribed = "subscribed",
   sso = ""
 )
 
-if response.isSome:
-  let updateResp = response.get()
-  echo "Subscription update received: ", updateResp
-else:
-  echo "No subscription update returned."
+if optResp.isSome:
+  let resp = optResp.get()
+  # further processing with resp
 [inline-code-end]
 
 ---

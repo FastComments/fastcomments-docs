@@ -1,15 +1,33 @@
----
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| tenant_id | String | 是 |  |
-| id | String | 是 |  |
-| update_apisso_user_data | models::UpdateApissoUserData | 是 |  |
-| update_comments | bool | 否 |  |
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
+| update_apisso_user_data | models::UpdateApissoUserData | Yes |  |
+| update_comments | bool | No |  |
 
 ## 响应
 
-返回: [`PatchSsoUserApiResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/patch_sso_user_api_response.rs)
+返回：[`PatchSsoUserApiResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/patch_sso_user_api_response.rs)
 
----
+## 示例
+
+[inline-code-attrs-start title = 'patch_sso_user 示例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+async fn run() -> Result<(), Error> {
+    let config = configuration::Configuration::default();
+    let update_data = models::UpdateApissoUserData {
+        email: Some("john.doe@example.com".to_string()),
+        name: Some("John Doe".to_string()),
+    };
+    let params = PatchSsoUserParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "user-12345".to_string(),
+        update_apisso_user_data: update_data,
+        update_comments: Some(true),
+    };
+    let _response: PatchSsoUserApiResponse = patch_sso_user(&config, params).await?;
+    Ok(())
+}
+[inline-code-end]

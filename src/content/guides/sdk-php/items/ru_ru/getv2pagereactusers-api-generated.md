@@ -1,10 +1,10 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| urlId | string | query | Да |  |
-| id | string | query | Да |  |
+| Имя | Тип | Расположение | Обязательно | Описание |
+|------|------|--------------|-------------|----------|
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| id | string | query | Yes |  |
 
 ## Ответ
 
@@ -20,13 +20,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Если вы хотите использовать пользовательский HTTP-клиент, передайте клиент, который реализует `GuzzleHttp\ClientInterface`.
-    // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
+    // Если вы хотите использовать пользовательский HTTP‑клиент, передайте ваш клиент, реализующий `GuzzleHttp\ClientInterface`.
+    // Это необязательно, `GuzzleHttp\Client` будет использоваться по умолчанию.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$url_id = 'url_id_example'; // string
-$id = 'id_example'; // string
+
+$tenant_id = 'tenant_id_example'; // строка
+$url_id = 'url_id_example'; // строка
+$id = 'id_example'; // строка
+
 
 try {
     $result = $apiInstance->getV2PageReactUsers($tenant_id, $url_id, $id);
@@ -35,5 +37,3 @@ try {
     echo 'Exception when calling PublicApi->getV2PageReactUsers: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

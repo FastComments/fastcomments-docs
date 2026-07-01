@@ -1,88 +1,74 @@
-## 매개변수
+## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 예 |  |
-| page | integer | query | 아니요 |  |
-| limit | integer | query | 아니요 |  |
-| skip | integer | query | 아니요 |  |
-| asTree | boolean | query | 아니요 |  |
-| skipChildren | integer | query | 아니요 |  |
-| limitChildren | integer | query | 아니요 |  |
-| maxTreeDepth | integer | query | 아니요 |  |
-| urlId | string | query | 아니요 |  |
-| userId | string | query | 아니요 |  |
-| anonUserId | string | query | 아니요 |  |
-| contextUserId | string | query | 아니요 |  |
-| hashTag | string | query | 아니요 |  |
-| parentId | string | query | 아니요 |  |
-| direction | string | query | 아니요 |  |
-| fromDate | integer | query | 아니요 |  |
-| toDate | integer | query | 아니요 |  |
+| tenantId | string | query | Yes |  |
+| page | integer | query | No |  |
+| limit | integer | query | No |  |
+| skip | integer | query | No |  |
+| asTree | boolean | query | No |  |
+| skipChildren | integer | query | No |  |
+| limitChildren | integer | query | No |  |
+| maxTreeDepth | integer | query | No |  |
+| urlId | string | query | No |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
+| contextUserId | string | query | No |  |
+| hashTag | string | query | No |  |
+| parentId | string | query | No |  |
+| direction | string | query | No |  |
+| fromDate | integer | query | No |  |
+| toDate | integer | query | No |  |
 
-## 응답
+## Response
 
 반환: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_comments_response.py)
 
-## 예제
+## Example
 
-[inline-code-attrs-start title = 'get_comments 예제'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_comments 예시'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetCommentsOptions
 from client.models.api_get_comments_response import APIGetCommentsResponse
 from client.models.sort_directions import SortDirections
 from client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://fastcomments.com
 # 호스트 정의는 선택 사항이며 기본값은 https://fastcomments.com 입니다
-# See configuration.py for a list of all supported configuration parameters.
-# 지원되는 모든 구성 매개변수 목록은 configuration.py를 참조하세요.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# 클라이언트는 API 서버 보안 정책에 따라 인증 및 권한 매개변수를 구성해야 합니다.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-# 각 인증 방법에 대한 예제가 아래에 제공되어 있으니, 본인의 인증 사용 사례에 맞는 예제를 사용하세요.
-
-# Configure API key authorization: api_key
+# 지원되는 모든 구성 매개변수 목록은 configuration.py에서 확인하세요.
+# 클라이언트는 인증 및 권한 부여 매개변수를 구성해야 합니다
+# API 서버 보안 정책에 따라 구성합니다.
+# 아래에 각 인증 방법에 대한 예제가 제공됩니다. 해당 인증 사용 사례에 맞는 예제를 사용하세요.
+# 해당 인증 사용 사례에 맞는 예제를 사용하세요.
 # API 키 인증 구성: api_key
-configuration.api_key['api_key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# 필요한 경우 API 키에 대한 접두사(예: Bearer)를 설정하려면 아래의 주석을 해제하세요
+# 필요에 따라 API 키에 대한 접두어(예: Bearer)를 설정하려면 아래 주석을 해제하세요
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-# API 클라이언트 인스턴스로 컨텍스트에 들어갑니다
 with client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    # API 클래스의 인스턴스를 생성합니다
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    page = 56 # int |  (선택 사항)
-    limit = 56 # int |  (선택 사항)
-    skip = 56 # int |  (선택 사항)
-    as_tree = True # bool |  (선택 사항)
-    skip_children = 56 # int |  (선택 사항)
-    limit_children = 56 # int |  (선택 사항)
-    max_tree_depth = 56 # int |  (선택 사항)
-    url_id = 'url_id_example' # str |  (선택 사항)
-    user_id = 'user_id_example' # str |  (선택 사항)
-    anon_user_id = 'anon_user_id_example' # str |  (선택 사항)
-    context_user_id = 'context_user_id_example' # str |  (선택 사항)
-    hash_tag = 'hash_tag_example' # str |  (선택 사항)
-    parent_id = 'parent_id_example' # str |  (선택 사항)
-    direction = client.SortDirections() # SortDirections |  (선택 사항)
-    from_date = 56 # int |  (선택 사항)
-    to_date = 56 # int |  (선택 사항)
+    page = 56 # int |  (optional)
+    limit = 56 # int |  (optional)
+    skip = 56 # int |  (optional)
+    as_tree = True # bool |  (optional)
+    skip_children = 56 # int |  (optional)
+    limit_children = 56 # int |  (optional)
+    max_tree_depth = 56 # int |  (optional)
+    url_id = 'url_id_example' # str |  (optional)
+    user_id = 'user_id_example' # str |  (optional)
+    anon_user_id = 'anon_user_id_example' # str |  (optional)
+    context_user_id = 'context_user_id_example' # str |  (optional)
+    hash_tag = 'hash_tag_example' # str |  (optional)
+    parent_id = 'parent_id_example' # str |  (optional)
+    direction = client.SortDirections() # SortDirections |  (optional)
+    from_date = 56 # int |  (optional)
+    to_date = 56 # int |  (optional)
 
     try:
-        api_response = api_instance.get_comments(tenant_id, page=page, limit=limit, skip=skip, as_tree=as_tree, skip_children=skip_children, limit_children=limit_children, max_tree_depth=max_tree_depth, url_id=url_id, user_id=user_id, anon_user_id=anon_user_id, context_user_id=context_user_id, hash_tag=hash_tag, parent_id=parent_id, direction=direction, from_date=from_date, to_date=to_date)
+        api_response = api_instance.get_comments(tenant_id, GetCommentsOptions(page=page, limit=limit, skip=skip, as_tree=as_tree, skip_children=skip_children, limit_children=limit_children, max_tree_depth=max_tree_depth, url_id=url_id, user_id=user_id, anon_user_id=anon_user_id, context_user_id=context_user_id, hash_tag=hash_tag, parent_id=parent_id, direction=direction, from_date=from_date, to_date=to_date))
         print("The response of DefaultApi->get_comments:\n")
         pprint(api_response)
     except Exception as e:

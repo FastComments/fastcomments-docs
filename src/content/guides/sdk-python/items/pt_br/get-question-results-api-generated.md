@@ -1,14 +1,14 @@
 ## Parâmetros
 
 | Nome | Tipo | Localização | Obrigatório | Descrição |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | No |  |
-| userId | string | query | No |  |
-| startDate | string | query | No |  |
-| questionId | string | query | No |  |
-| questionIds | string | query | No |  |
-| skip | number | query | No |  |
+|------|------|-------------|-------------|-----------|
+| tenantId | string | query | Sim |  |
+| urlId | string | query | Não |  |
+| userId | string | query | Não |  |
+| startDate | string | query | Não |  |
+| questionId | string | query | Não |  |
+| questionIds | string | query | Não |  |
+| skip | number | query | Não |  |
 
 ## Resposta
 
@@ -16,9 +16,10 @@ Retorna: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomm
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de get_question_results'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo get_question_results'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetQuestionResultsOptions
 from client.models.get_question_results_response import GetQuestionResultsResponse
 from client.rest import ApiException
 from pprint import pprint
@@ -30,17 +31,17 @@ configuration = client.Configuration(
 )
 
 # O cliente deve configurar os parâmetros de autenticação e autorização
-# de acordo com a política de segurança do servidor da API.
+# de acordo com a política de segurança do servidor API.
 # Exemplos para cada método de autenticação são fornecidos abaixo, use o exemplo que
 # atende ao seu caso de uso de autenticação.
 
-# Configure a autorização por chave de API: api_key
+# Configurar autorização de chave API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Descomente abaixo para configurar o prefixo (ex.: Bearer) para a chave de API, se necessário
+# Descomente abaixo para configurar o prefixo (ex.: Bearer) para a chave API, se necessário
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Entre em um contexto com uma instância do cliente da API
+# Entre em um contexto com uma instância do cliente API
 with client.ApiClient(configuration) as api_client:
     # Crie uma instância da classe API
     api_instance = client.DefaultApi(api_client)
@@ -53,9 +54,9 @@ with client.ApiClient(configuration) as api_client:
     skip = 3.4 # float |  (opcional)
 
     try:
-        api_response = api_instance.get_question_results(tenant_id, url_id=url_id, user_id=user_id, start_date=start_date, question_id=question_id, question_ids=question_ids, skip=skip)
-        print("The response of DefaultApi->get_question_results:\n")
+        api_response = api_instance.get_question_results(tenant_id, GetQuestionResultsOptions(url_id=url_id, user_id=user_id, start_date=start_date, question_id=question_id, question_ids=question_ids, skip=skip))
+        print("A resposta de DefaultApi->get_question_results:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DefaultApi->get_question_results: %s\n" % e)
+        print("Exceção ao chamar DefaultApi->get_question_results: %s\n" % e)
 [inline-code-end]

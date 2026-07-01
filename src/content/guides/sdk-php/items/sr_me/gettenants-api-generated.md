@@ -1,39 +1,45 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Локација | Обавезно | Опис |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| meta | string | query | Не |  |
-| skip | number | query | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| meta | string | query | No |  |
+| skip | number | query | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantsResponse.php)
+Vraća: [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantsResponse.php)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'getTenants примјер'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getTenants'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Конфигуришите ауторизацију API кључа: api_key
-// Ако је потребно, откоментаришите линију испод да бисте подесили префикс (нпр. Bearer) за API кључ
+// Konfigurišite autorizaciju API ključa: api_key
+$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Otkomentarišite dolje da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
+// $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ако желите користити прилагођени HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционално, `GuzzleHttp\Client` ће бити коришћен као подразумевани.
+    // Ako želite koristiti prilagođeni http klijent, proslijedite vaš klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opciono, `GuzzleHttp\Client` će se koristiti kao podrazumevano.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$meta = 'meta_example'; // string
-$skip = 3.4; // float
+$options = [
+    'meta' => 'meta_example', // string
+    'skip' => 3.4, // float
+];
+
 
 try {
-    $result = $apiInstance->getTenants($tenant_id, $meta, $skip);
+    $result = $apiInstance->getTenants($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getTenants: ', $e->getMessage(), PHP_EOL;

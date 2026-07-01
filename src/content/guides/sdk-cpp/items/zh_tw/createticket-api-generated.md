@@ -1,34 +1,32 @@
 ## 參數
 
-| 名稱 | 類型 | 必要 | 說明 |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| userId | string | 是 |  |
-| createTicketBody | CreateTicketBody | 是 |  |
+| tenantId | string | Yes |  |
+| userId | string | Yes |  |
+| createTicketBody | CreateTicketBody | Yes |  |
 
 ## 回應
 
-回傳: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateTicketResponse.h)
+返回: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateTicketResponse.h)
 
 ## 範例
 
 [inline-code-attrs-start title = 'createTicket 範例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t userId = U("user@example.com");
-CreateTicketBody createTicketBody;
-createTicketBody.subject = U("Unable to post comment");
-createTicketBody.description = U("Submitting a comment results in a spinner and no response on desktop Chrome.");
-createTicketBody.priority = boost::optional<utility::string_t>(U("high"));
-createTicketBody.requesterEmail = boost::optional<utility::string_t>(U("user@example.com"));
-auto context = std::make_shared<utility::string_t>(U("web-portal"));
-api->createTicket(tenantId, userId, createTicketBody)
-.then([context](pplx::task<std::shared_ptr<CreateTicketResponse>> t){
-    try {
-        auto resp = t.get();
-        if (resp) std::cout << "Ticket created successfully" << std::endl;
-    } catch (const std::exception &e) {
-        std::cerr << "createTicket failed: " << e.what() << std::endl;
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto userId = utility::conversions::to_string_t("john.doe@example.com");
+CreateTicketBody ticketBody;
+ticketBody.setSubject(utility::conversions::to_string_t("Login Issue"));
+ticketBody.setDescription(utility::conversions::to_string_t("Cannot log in after password reset."));
+boost::optional<int> priority = 2;
+ticketBody.setPriority(priority);
+api->createTicket(tenantId, userId, ticketBody).then([](pplx::task<std::shared_ptr<CreateTicketResponse>> task){
+    try{
+        auto response = task.get();
+        // 根據需要使用回應
+    }catch(const std::exception&){
+        // 處理錯誤
     }
 });
 [inline-code-end]

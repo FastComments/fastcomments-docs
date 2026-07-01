@@ -23,19 +23,23 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // 如果您想使用自定义的 HTTP 客户端，请传入实现了 `GuzzleHttp\ClientInterface` 的客户端。
-    // 这是可选的，默认将使用 `GuzzleHttp\Client`。
+    // 如果您想使用自定义 HTTP 客户端，请传入实现 `GuzzleHttp\ClientInterface` 的客户端。
+    // 这是可选的，默认使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // 字符串
-$url_id = 'url_id_example'; // 字符串
-$username_starts_with = 'username_starts_with_example'; // 字符串
-$mention_group_ids = array('mention_group_ids_example'); // 字符串[]
-$sso = 'sso_example'; // 字符串
-$search_section = 'search_section_example'; // 字符串
+
+$tenant_id = 'tenant_id_example'; // string
+$url_id = 'url_id_example'; // string
+$options = [
+    'username_starts_with' => 'username_starts_with_example', // string
+    'mention_group_ids' => array('mention_group_ids_example'), // string[]
+    'sso' => 'sso_example', // string
+    'search_section' => 'search_section_example', // string
+];
+
 
 try {
-    $result = $apiInstance->searchUsers($tenant_id, $url_id, $username_starts_with, $mention_group_ids, $sso, $search_section);
+    $result = $apiInstance->searchUsers($tenant_id, $url_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->searchUsers: ', $e->getMessage(), PHP_EOL;

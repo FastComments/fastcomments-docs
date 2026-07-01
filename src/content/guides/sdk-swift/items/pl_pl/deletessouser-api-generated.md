@@ -1,6 +1,6 @@
-## Parametry
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Tak |  |
 | id | string | path | Tak |  |
@@ -15,15 +15,15 @@ Zwraca: [`DeleteSSOUserAPIResponse`](https://github.com/FastComments/fastcomment
 
 [inline-code-attrs-start title = 'Przykład deleteSSOUser'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Następujące przykłady kodu są nadal w wersji beta. W razie problemu zgłoś go pod adresem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Poniższe przykłady kodu są nadal w wersji beta. W razie problemów proszę zgłosić je pod adresem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let id = "id_example" // String | 
-let deleteComments = true // Bool |  (opcjonalne)
-let commentDeleteMode = "commentDeleteMode_example" // String |  (opcjonalne)
+let deleteComments = true // Bool |  (opcjonalnie)
+let commentDeleteMode = "commentDeleteMode_example" // String |  (opcjonalnie)
 
-DefaultAPI.deleteSSOUser(tenantId: tenantId, id: id, deleteComments: deleteComments, commentDeleteMode: commentDeleteMode) { (response, error) in
+DefaultAPI.deleteSSOUser(tenantId: tenantId, id: id, options: DefaultAPI.DeleteSSOUserOptions(deleteComments: deleteComments, commentDeleteMode: commentDeleteMode)) { (response, error) in
     guard error == nil else {
         print(error)
         return

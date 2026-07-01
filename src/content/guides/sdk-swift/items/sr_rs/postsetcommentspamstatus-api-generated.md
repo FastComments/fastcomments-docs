@@ -1,29 +1,33 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Да |  |
-| spam | boolean | query | Не |  |
-| permNotSpam | boolean | query | Не |  |
-| sso | string | query | Не |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| spam | boolean | query | No |  |
+| permNotSpam | boolean | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
+Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'postSetCommentSpamStatus пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postSetCommentSpamStatus Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи примери кода још увек су у бета фази. За било који проблем, пријавите путем http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledeći primeri koda su još uvek beta. Za bilo koji problem, molimo prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
-let spam = true // Bool |  (опционо)
-let permNotSpam = true // Bool |  (опционо)
-let sso = "sso_example" // String |  (опционо)
+let spam = true // Bool |  (опционално)
+let permNotSpam = true // Bool |  (опционално)
+let broadcastId = "broadcastId_example" // String |  (опционално)
+let sso = "sso_example" // String |  (опционално)
 
-ModerationAPI.postSetCommentSpamStatus(commentId: commentId, spam: spam, permNotSpam: permNotSpam, sso: sso) { (response, error) in
+ModerationAPI.postSetCommentSpamStatus(tenantId: tenantId, commentId: commentId, options: ModerationAPI.PostSetCommentSpamStatusOptions(spam: spam, permNotSpam: permNotSpam, broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

@@ -1,5 +1,5 @@
-Aktuelt online besøgende af en side: personer hvis websocket-session er abonneret på siden lige nu.
-Returnerer anonCount + totalCount (abonnenter på hele rummet, inklusive anonyme seere, som vi ikke opregner).
+Aktuelt online seere af en side: personer, hvis websocket‑session er abonneret på siden lige nu.  
+Returnerer anonCount + totalCount (rum‑omfattende abonnenter, inklusive anonyme seere som vi ikke opregner).
 
 ## Parametre
 
@@ -10,7 +10,7 @@ Returnerer anonCount + totalCount (abonnenter på hele rummet, inklusive anonyme
 | after_name | String | Nej |  |
 | after_user_id | String | Nej |  |
 
-## Svar
+## Respons
 
 Returnerer: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_online_response.rs)
 
@@ -18,14 +18,14 @@ Returnerer: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'get_online_users Eksempel'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_online_users() -> Result<PageUsersOnlineResponse, Error> {
-    let params: GetOnlineUsersParams = GetOnlineUsersParams {
+async fn example() -> Result<(), Error> {
+    let params = GetOnlineUsersParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        url_id: "news/world/article-2026".to_string(),
-        after_name: Some("jane.doe".to_string()),
-        after_user_id: Some("user_98765".to_string()),
+        url_id: "news/article".to_string(),
+        after_name: Some("john_doe".to_string()),
+        after_user_id: Some("user-123".to_string()),
     };
-    let response: PageUsersOnlineResponse = get_online_users(&configuration, params).await?;
-    Ok(response)
+    let _response: PageUsersOnlineResponse = get_online_users(&config, params).await?;
+    Ok(())
 }
 [inline-code-end]

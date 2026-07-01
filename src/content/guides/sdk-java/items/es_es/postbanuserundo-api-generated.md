@@ -1,7 +1,8 @@
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Requerido | Descripción |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | sso | string | query | No |  |
 
 ## Respuesta
@@ -10,7 +11,7 @@ Devuelve: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de postBanUserUndo'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo postBanUserUndo'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importar clases:
 import com.fastcomments.invoker.ApiClient;
@@ -25,10 +26,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     BanUserUndoParams banUserUndoParams = new BanUserUndoParams(); // BanUserUndoParams | 
     String sso = "sso_example"; // String | 
     try {
-      APIEmptyResponse result = apiInstance.postBanUserUndo(banUserUndoParams)
+      APIEmptyResponse result = apiInstance.postBanUserUndo(tenantId, banUserUndoParams)
             .sso(sso)
             .execute();
       System.out.println(result);

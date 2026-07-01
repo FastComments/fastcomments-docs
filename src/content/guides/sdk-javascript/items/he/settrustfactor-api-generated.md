@@ -2,24 +2,26 @@
 
 | שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| userId | string | לא |  |
-| trustFactor | string | לא |  |
-| sso | string | לא |  |
+| userId | string | No |  |
+| trustFactor | string | No |  |
+| tenantId | string | No |  |
+| sso | string | No |  |
 
 ## תגובה
 
-מחזיר: [`SetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SetUserTrustFactorResponse.ts)
+מחזיר: [`SetTrustFactorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SetTrustFactorResponse.ts)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-setTrustFactor'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'setTrustFactor דוגמה'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const userId: string = 'user_74219';
-const trustFactor: string = 'high';
-const ssoToken: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyXzc0MjE5In0.signature';
+(async () => {
+  const userId: string = "user_8421";
+  const trustFactor: string = "high";
+  const tenantId: string = "tenant_33";
+  const ssoToken: string = "sso_7d9f";
 
-const responseWithoutSso: SetUserTrustFactorResponse = await setTrustFactor(userId, trustFactor);
-const responseWithSso: SetUserTrustFactorResponse = await setTrustFactor(userId, trustFactor, ssoToken);
+  const fullResult: SetTrustFactorResponse = await setTrustFactor(userId, trustFactor, tenantId, ssoToken);
+  const minimalResult: SetTrustFactorResponse = await setTrustFactor(userId, trustFactor);
+})();
 [inline-code-end]
-
----

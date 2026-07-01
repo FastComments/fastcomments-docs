@@ -4,7 +4,7 @@ afterId
 
 ## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | afterId | string | query | No |  |
@@ -17,17 +17,17 @@ Zwraca: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-sw
 
 ## Przykład
 
-[inline-code-attrs-start title = 'getFeedPosts Przykład'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład getFeedPosts'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Następujące przykłady kodu są nadal w wersji beta. W razie problemu proszę zgłosić na http://github.com/OpenAPITools/openapi-generator/issues/new
+// Poniższe próbki kodu są nadal w wersji beta. W przypadku jakichkolwiek problemów proszę zgłaszać je poprzez http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let afterId = "afterId_example" // String |  (opcjonalne)
-let limit = 987 // Int |  (opcjonalne)
-let tags = ["inner_example"] // [String] |  (opcjonalne)
+let afterId = "afterId_example" // String |  (opcjonalny)
+let limit = 987 // Int |  (opcjonalny)
+let tags = ["inner_example"] // [String] |  (opcjonalny)
 
-DefaultAPI.getFeedPosts(tenantId: tenantId, afterId: afterId, limit: limit, tags: tags) { (response, error) in
+DefaultAPI.getFeedPosts(tenantId: tenantId, options: DefaultAPI.GetFeedPostsOptions(afterId: afterId, limit: limit, tags: tags)) { (response, error) in
     guard error == nil else {
         print(error)
         return

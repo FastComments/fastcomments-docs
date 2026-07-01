@@ -17,6 +17,7 @@ Returns: [`GetGifsSearchResponse`](https://github.com/FastComments/fastcomments-
 [inline-code-attrs-start title = 'get_gifs_search Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetGifsSearchOptions
 from client.models.get_gifs_search_response import GetGifsSearchResponse
 from client.rest import ApiException
 from pprint import pprint
@@ -39,7 +40,7 @@ with client.ApiClient(configuration) as api_client:
     page = 3.4 # float |  (optional)
 
     try:
-        api_response = api_instance.get_gifs_search(tenant_id, search, locale=locale, rating=rating, page=page)
+        api_response = api_instance.get_gifs_search(tenant_id, search, GetGifsSearchOptions(locale=locale, rating=rating, page=page))
         print("The response of PublicApi->get_gifs_search:\n")
         pprint(api_response)
     except Exception as e:

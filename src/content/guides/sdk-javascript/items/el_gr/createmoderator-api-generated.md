@@ -1,26 +1,28 @@
-## Παράμετροι
+## Parameters
 
-| Όνομα | Τύπος | Απαραίτητο | Περιγραφή |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Ναι |  |
-| createModeratorBody | CreateModeratorBody | Ναι |  |
+| tenantId | string | Yes |  |
+| createModeratorBody | CreateModeratorBody | Yes |  |
 
-## Απόκριση
+## Response
 
-Επιστρέφει: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateModeratorResponse.ts)
+Returns: [`CreateModeratorResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateModeratorResponse1.ts)
 
-## Παράδειγμα
+## Example
 
-[inline-code-attrs-start title = 'Παράδειγμα createModerator'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createModerator Παράδειγμα'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_83f4b7a2';
-const createModeratorBody: CreateModeratorBody = {
-  email: 'renee.alvarez@acme-corp.com',
-  fullName: 'Renee Alvarez',
-  roles: ['content_moderator'],
-  notify: true // προαιρετική παράμετρος για επίδειξη
-};
-const result: CreateModeratorResponse = await createModerator(tenantId, createModeratorBody);
-[inline-code-end]
+async function runExample() {
+  const tenantId: string = "tenant_9876";
+  const moderatorPayload: CreateModeratorBody = {
+    name: "Alice Johnson",
+    email: "alice.johnson@example.com"
+    // προαιρετικά πεδία όπως η περιγραφή παραλείπονται
+  };
+  const result: CreateModeratorResponse1 = await createModerator(tenantId, moderatorPayload);
+  console.log(result);
+}
 
----
+runExample();
+[inline-code-end]

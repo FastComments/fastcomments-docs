@@ -1,6 +1,6 @@
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | userId | string | 是 |  |
@@ -14,21 +14,19 @@
 
 [inline-code-attrs-start title = 'createTicket 示例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t userId = U("user@example.com");
-CreateTicketBody createTicketBody;
-createTicketBody.subject = U("Unable to post comment");
-createTicketBody.description = U("Submitting a comment results in a spinner and no response on desktop Chrome.");
-createTicketBody.priority = boost::optional<utility::string_t>(U("high"));
-createTicketBody.requesterEmail = boost::optional<utility::string_t>(U("user@example.com"));
-auto context = std::make_shared<utility::string_t>(U("web-portal"));
-api->createTicket(tenantId, userId, createTicketBody)
-.then([context](pplx::task<std::shared_ptr<CreateTicketResponse>> t){
-    try {
-        auto resp = t.get();
-        if (resp) std::cout << "Ticket created successfully" << std::endl;
-    } catch (const std::exception &e) {
-        std::cerr << "createTicket failed: " << e.what() << std::endl;
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto userId = utility::conversions::to_string_t("john.doe@example.com");
+CreateTicketBody ticketBody;
+ticketBody.setSubject(utility::conversions::to_string_t("Login Issue"));
+ticketBody.setDescription(utility::conversions::to_string_t("Cannot log in after password reset."));
+boost::optional<int> priority = 2;
+ticketBody.setPriority(priority);
+api->createTicket(tenantId, userId, ticketBody).then([](pplx::task<std::shared_ptr<CreateTicketResponse>> task){
+    try{
+        auto response = task.get();
+        // 根据需要使用响应
+    }catch(const std::exception&){
+        // 处理错误
     }
 });
 [inline-code-end]

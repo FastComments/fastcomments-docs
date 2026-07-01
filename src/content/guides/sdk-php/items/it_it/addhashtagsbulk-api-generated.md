@@ -1,35 +1,37 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | No |  |
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+|------|------|-----------|--------------|-------------|
+| tenantId | string | query | Sì |  |
 
-## Response
+## Risposta
 
 Restituisce: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/BulkCreateHashTagsResponse.php)
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di addHashTagsBulk'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio addHashTagsBulk'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configura l'autorizzazione tramite API key: api_key
+// Configura l'autorizzazione della chiave API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Decommenta sotto per impostare il prefisso (e.g. Bearer) per API key, se necessario
+// Decommenta di seguito per impostare il prefisso (es. Bearer) per la chiave API, se necessario
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Se vuoi usare un client HTTP personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
+    // Se vuoi usare un client http personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
     // Questo è opzionale, `GuzzleHttp\Client` verrà usato come predefinito.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $bulk_create_hash_tags_body = new \FastComments\Client\Model\BulkCreateHashTagsBody(); // \FastComments\Client\Model\BulkCreateHashTagsBody
+
 
 try {
     $result = $apiInstance->addHashTagsBulk($tenant_id, $bulk_create_hash_tags_body);

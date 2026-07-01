@@ -1,9 +1,9 @@
 ## Parametri
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| url_id | String | Yes |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenant_id | String | Da |  |
+| url_id | String | Da |  |
 
 ## Odgovor
 
@@ -11,16 +11,15 @@ Vraća: [`GetPageByUrlidApiResponse`](https://github.com/FastComments/fastcommen
 
 ## Primer
 
-[inline-code-attrs-start title = 'get_page_by_urlid Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer get_page_by_urlid'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_page() -> Result<GetPageByUrlidApiResponse, Error> {
-    let params: GetPageByUrlidParams = GetPageByUrlidParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        url_id: "news/article/how-to-build-an-api".to_string(),
-        locale: Some("en-US".to_string()),
+async fn example() -> Result<(), Error> {
+    let params = GetPageByUrlidParams {
+        tenant_id: "acme-corp-tenant".into(),
+        url_id: "news/article".into(),
     };
-    let page: GetPageByUrlidApiResponse = get_page_by_urlid(&configuration, params).await?;
-    Ok(page)
+    let _response = get_page_by_urlid(&config, params).await?;
+    Ok(())
 }
 [inline-code-end]
 

@@ -1,8 +1,9 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Yes |  |
+| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
+|--------|------|-----------|-------------|-------------|
+| tenantId | string | query | Sí |  |
+| commentId | string | path | Sí |  |
 | banEmail | boolean | query | No |  |
 | banEmailDomain | boolean | query | No |  |
 | banIP | boolean | query | No |  |
@@ -34,6 +35,7 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     Boolean banEmail = true; // Boolean | 
     Boolean banEmailDomain = true; // Boolean | 
@@ -45,7 +47,7 @@ public class Example {
     String banReason = "banReason_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      BanUserFromCommentResult result = apiInstance.postBanUserFromComment(commentId)
+      BanUserFromCommentResult result = apiInstance.postBanUserFromComment(tenantId, commentId)
             .banEmail(banEmail)
             .banEmailDomain(banEmailDomain)
             .banIP(banIP)

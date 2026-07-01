@@ -1,16 +1,17 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| sso | string | query | Όχι |  |
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`ModerationAPIChildCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationAPIChildCommentsResponse.java)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα postCommentsByIds'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postCommentsByIds Παράδειγμα'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Εισαγωγή κλάσεων:
 import com.fastcomments.invoker.ApiClient;
@@ -25,10 +26,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     CommentsByIdsParams commentsByIdsParams = new CommentsByIdsParams(); // CommentsByIdsParams | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationAPIChildCommentsResponse result = apiInstance.postCommentsByIds(commentsByIdsParams)
+      ModerationAPIChildCommentsResponse result = apiInstance.postCommentsByIds(tenantId, commentsByIdsParams)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -42,5 +44,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

@@ -1,10 +1,10 @@
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| tenantId | string | Da |  |
-| id | string | Da |  |
-| fromName | string | Da |  |
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| fromName | string | Yes |  |
 
 ## Odgovor
 
@@ -12,21 +12,14 @@ Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/bl
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer sendInvite'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'sendInvite Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t id = U("user@example.com");
-utility::string_t fromName = U("Acme Support");
-boost::optional<utility::string_t> note = boost::optional<utility::string_t>(U("Invitation to join comments"));
-api->sendInvite(tenantId, id, fromName)
-    .then([](pplx::task<std::shared_ptr<APIEmptyResponse>> t){
-        try {
-            auto resp = t.get();
-            auto finalResp = resp ? resp : std::make_shared<APIEmptyResponse>();
-            (void)finalResp;
-        } catch (const std::exception&) {
-        }
-    });
+boost::optional<utility::string_t> cc = utility::conversions::to_string_t("cc@example.com");
+api->sendInvite(
+    utility::conversions::to_string_t("my-tenant-123"),
+    utility::conversions::to_string_t("invitee@example.com"),
+    utility::conversions::to_string_t("John Doe")
+).then([](std::shared_ptr<APIEmptyResponse> resp) {
+    // obradi uspešno slanje poziva
+});
 [inline-code-end]
-
----

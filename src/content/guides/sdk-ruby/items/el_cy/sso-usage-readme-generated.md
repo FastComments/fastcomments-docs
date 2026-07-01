@@ -2,9 +2,8 @@
 
 ```ruby
 require 'fastcomments'
-require 'fastcomments-client'
 
-# Δημιουργία token για το απλό SSO
+# Δημιουργία διακριτικού Simple SSO
 user = FastComments::SSO::SimpleSSOUserData.new(
   user_id: 'user-123',
   email: 'user@example.com',
@@ -16,14 +15,14 @@ token = sso.create_token
 
 puts "SSO Token: #{token}"
 
-# Χρησιμοποιήστε το SSO token για να κάνετε μια αυθεντικοποιημένη κλήση API
+# Χρήση του διακριτικού SSO για να κάνετε μια αυθεντικοποιημένη κλήση API
 config = FastCommentsClient::Configuration.new
 api_client = FastCommentsClient::ApiClient.new(config)
 public_api = FastCommentsClient::PublicApi.new(api_client)
 
 response = public_api.get_comments_public(
-  tenant_id: 'your-tenant-id',
-  url_id: 'your-page-url-id',
+  'your-tenant-id',
+  'your-page-url-id',
   sso: token
 )
 
@@ -34,9 +33,8 @@ puts "Status: #{response}"
 
 ```ruby
 require 'fastcomments'
-require 'fastcomments-client'
 
-# Δημιουργία token για το ασφαλές SSO
+# Δημιουργία διακριτικού Secure SSO
 user = FastComments::SSO::SecureSSOUserData.new(
   user_id: 'user-123',
   email: 'user@example.com',
@@ -50,14 +48,14 @@ token = sso.create_token
 
 puts "Secure SSO Token: #{token}"
 
-# Χρησιμοποιήστε το SSO token για να κάνετε μια αυθεντικοποιημένη κλήση API
+# Χρήση του διακριτικού SSO για να κάνετε μια αυθεντικοποιημένη κλήση API
 config = FastCommentsClient::Configuration.new
 api_client = FastCommentsClient::ApiClient.new(config)
 public_api = FastCommentsClient::PublicApi.new(api_client)
 
 response = public_api.get_comments_public(
-  tenant_id: 'your-tenant-id',
-  url_id: 'your-page-url-id',
+  'your-tenant-id',
+  'your-page-url-id',
   sso: token
 )
 

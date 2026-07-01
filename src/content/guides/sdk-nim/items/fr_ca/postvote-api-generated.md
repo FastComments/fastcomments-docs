@@ -1,25 +1,25 @@
 ## Paramètres
 
-| Nom | Type | Requis | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
+| tenantId | string | Oui |  |
 | commentId | string | Oui |  |
-| direction | string | Non |  |
-| sso | string | Non |  |
+| options | PostVoteOptions | Non |  |
 
 ## Réponse
 
-Renvoie: [`Option[VoteResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_vote_response.nim)
+Renvoie : [`Option[VoteResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_vote_response.nim)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de postVote'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postVote Exemple'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postVote(commentId = "comment-4f3a9e", direction = "up", sso = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidXNlci0xMjMifQ.signedPart")
-if response.isSome:
-  let vote = response.get()
-  echo "Vote recorded:", vote
-else:
-  echo "No vote returned"
-[inline-code-end]
+let (voteOpt, httpResp) = client.postVote(
+  tenantId = "my-tenant-123",
+  commentId = "comment-789",
+  options = default(PostVoteOptions)
+)
 
----
+if voteOpt.isSome:
+  let vote = voteOpt.get()
+[inline-code-end]

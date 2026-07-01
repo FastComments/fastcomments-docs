@@ -1,9 +1,11 @@
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
+| Ime | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
 | commentId | string | path | Da |  |
 | direction | string | query | Ne |  |
+| broadcastId | string | query | Ne |  |
 | sso | string | query | Ne |  |
 
 ## Odgovor
@@ -12,7 +14,7 @@ Vraća: [`VoteResponse`](https://github.com/FastComments/fastcomments-java/blob/
 
 ## Primer
 
-[inline-code-attrs-start title = 'postVote primer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postVote Primer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Uvezi klase:
 import com.fastcomments.invoker.ApiClient;
@@ -27,12 +29,15 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String direction = "direction_example"; // String | 
+    String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      VoteResponse result = apiInstance.postVote(commentId)
+      VoteResponse result = apiInstance.postVote(tenantId, commentId)
             .direction(direction)
+            .broadcastId(broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);

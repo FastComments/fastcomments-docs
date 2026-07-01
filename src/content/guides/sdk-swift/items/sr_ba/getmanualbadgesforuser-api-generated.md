@@ -1,27 +1,29 @@
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
-| badgesUserId | string | query | Ne |  |
-| commentId | string | query | Ne |  |
-| sso | string | query | Ne |  |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| badgesUserId | string | query | No |  |
+| commentId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
 Vraća: [`GetUserManualBadgesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetUserManualBadgesResponse.swift)
 
-## Primjer
+## Primer
 
-[inline-code-attrs-start title = 'getManualBadgesForUser Primjer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getManualBadgesForUser'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sljedeći primjeri koda su još u beta fazi. Za bilo koji problem, prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sljedeći primjeri koda su još u beta fazi. Za bilo koji problem, molimo prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let badgesUserId = "badgesUserId_example" // String |  (neobavezno)
-let commentId = "commentId_example" // String |  (neobavezno)
-let sso = "sso_example" // String |  (neobavezno)
+let tenantId = "tenantId_example" // String | 
+let badgesUserId = "badgesUserId_example" // String |  (opcionalno)
+let commentId = "commentId_example" // String |  (opcionalno)
+let sso = "sso_example" // String |  (opcionalno)
 
-ModerationAPI.getManualBadgesForUser(badgesUserId: badgesUserId, commentId: commentId, sso: sso) { (response, error) in
+ModerationAPI.getManualBadgesForUser(tenantId: tenantId, options: ModerationAPI.GetManualBadgesForUserOptions(badgesUserId: badgesUserId, commentId: commentId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

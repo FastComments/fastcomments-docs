@@ -1,14 +1,14 @@
----
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| batchJobId | string | query | いいえ |  |
-| sso | string | query | いいえ |  |
+| tenantId | string | query | Yes |  |
+| batchJobId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## レスポンス
 
-戻り値: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationExportStatusResponse.php)
+返却: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationExportStatusResponse.php)
 
 ## 例
 
@@ -20,19 +20,22 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // カスタムHTTPクライアントを使用する場合は、`GuzzleHttp\ClientInterface` を実装したクライアントを渡してください。
-    // これは任意です。デフォルトでは `GuzzleHttp\Client` が使用されます。
+    // カスタム HTTP クライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装したクライアントを渡してください。
+    // これはオプションで、デフォルトでは `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client()
 );
-$batch_job_id = 'batch_job_id_example'; // 文字列
-$sso = 'sso_example'; // 文字列
+
+$tenant_id = 'tenant_id_example'; // string
+$options = [
+    'batch_job_id' => 'batch_job_id_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->getApiExportStatus($batch_job_id, $sso);
+    $result = $apiInstance->getApiExportStatus($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getApiExportStatus: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

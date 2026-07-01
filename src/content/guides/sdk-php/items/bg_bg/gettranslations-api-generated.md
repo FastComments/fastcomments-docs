@@ -1,7 +1,7 @@
 ## Параметри
 
 | Име | Тип | Местоположение | Задължително | Описание |
-|------|------|----------|----------|-------------|
+|------|------|----------------|--------------|----------|
 | namespace | string | path | Да |  |
 | component | string | path | Да |  |
 | locale | string | query | Не |  |
@@ -13,7 +13,7 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за getTranslations'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getTranslations'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -21,19 +21,25 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ако искате да използвате персонализиран HTTP клиент, предайте клиент, който имплементира `GuzzleHttp\ClientInterface`.
-    // Това е по избор, като по подразбиране ще се използва `GuzzleHttp\Client`.
+    // Ако желаете да използвате персонализиран HTTP клиент, предайте вашия клиент, който имплементира `GuzzleHttp\ClientInterface`.
+    // Това е опционално, `GuzzleHttp\Client` ще се използва по подразбиране.
     new GuzzleHttp\Client()
 );
-$namespace = 'namespace_example'; // string
-$component = 'component_example'; // string
-$locale = 'locale_example'; // string
-$use_full_translation_ids = True; // bool
+
+$namespace = 'namespace_example'; // низ
+$component = 'component_example'; // низ
+$options = [
+    'locale' => 'locale_example', // низ
+    'use_full_translation_ids' => True, // бул
+];
+
 
 try {
-    $result = $apiInstance->getTranslations($namespace, $component, $locale, $use_full_translation_ids);
+    $result = $apiInstance->getTranslations($namespace, $component, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getTranslations: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

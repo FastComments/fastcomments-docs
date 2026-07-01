@@ -1,19 +1,20 @@
 ## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| value | string | query | 否 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| value | string | query | No |  |
+| sso | string | query | No |  |
 
 ## 回應
 
-回傳: [`ModerationSiteSearchResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationSiteSearchResponse.java)
+返回：[`ModerationSiteSearchResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationSiteSearchResponse.java)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getSearchSites 範例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 匯入類別：
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String value = "value_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationSiteSearchResponse result = apiInstance.getSearchSites()
+      ModerationSiteSearchResponse result = apiInstance.getSearchSites(tenantId)
             .value(value)
             .sso(sso)
             .execute();
@@ -44,3 +46,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

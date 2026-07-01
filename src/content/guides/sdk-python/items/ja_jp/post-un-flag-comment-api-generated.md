@@ -1,39 +1,44 @@
-## パラメータ
+## Parameters
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| commentId | string | path | はい |  |
-| sso | string | query | いいえ |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
-## レスポンス
+## Response
 
 戻り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
-## 例
+## Example
 
 [inline-code-attrs-start title = 'post_un_flag_comment の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import PostUnFlagCommentOptions
 from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# ホストの定義は任意で、デフォルトは https://fastcomments.com です
-# サポートされている全ての設定パラメータの一覧は configuration.py を参照してください。
+# ホストの定義はオプションで、デフォルトは https://fastcomments.com です
+# configuration.py でサポートされているすべての構成パラメータの一覧を確認してください。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# APIクライアントのインスタンスを用いてコンテキストに入ります
+# API クライアントのインスタンスでコンテキストを開始
 with client.ApiClient(configuration) as api_client:
-    # API クラスのインスタンスを作成します
+    # API クラスのインスタンスを作成
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
-    sso = 'sso_example' # str |  (任意)
+    broadcast_id = 'broadcast_id_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.post_un_flag_comment(comment_id, sso=sso)
+        api_response = api_instance.post_un_flag_comment(tenant_id, comment_id, PostUnFlagCommentOptions(broadcast_id=broadcast_id, sso=sso))
         print("The response of ModerationApi->post_un_flag_comment:\n")
         pprint(api_response)
     except Exception as e:

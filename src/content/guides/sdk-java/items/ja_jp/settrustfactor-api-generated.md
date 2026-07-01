@@ -1,10 +1,11 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | タイプ | ロケーション | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| userId | string | query | いいえ |  |
-| trustFactor | string | query | いいえ |  |
-| sso | string | query | いいえ |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| trustFactor | string | query | No |  |
+| sso | string | query | No |  |
 
 ## レスポンス
 
@@ -12,9 +13,9 @@
 
 ## 例
 
-[inline-code-attrs-start title = 'setTrustFactor の例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'setTrustFactor 例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// クラスのインポート:
+// クラスをインポート:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -27,11 +28,12 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String userId = "userId_example"; // String | 
     String trustFactor = "trustFactor_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      SetUserTrustFactorResponse result = apiInstance.setTrustFactor()
+      SetUserTrustFactorResponse result = apiInstance.setTrustFactor(tenantId)
             .userId(userId)
             .trustFactor(trustFactor)
             .sso(sso)

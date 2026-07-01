@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Yes |  |
 | commentId | string | path | Yes |  |
@@ -21,17 +21,21 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Če želite uporabiti prilagojen http odjemalec, posredujte svojega odjemalca, ki implementira `GuzzleHttp\ClientInterface`.
-    // To je neobvezno, za privzeto bo uporabljen `GuzzleHttp\Client`.
+    // Če želite uporabiti prilagojen HTTP odjemalec, podajte svoj odjemalec, ki implementira `GuzzleHttp\ClientInterface`.
+    // To je neobvezno, `GuzzleHttp\Client` bo uporabljen kot privzeto.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $comment_id = 'comment_id_example'; // string
-$edit_key = 'edit_key_example'; // string
-$sso = 'sso_example'; // string
+$options = [
+    'edit_key' => 'edit_key_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->getCommentText($tenant_id, $comment_id, $edit_key, $sso);
+    $result = $apiInstance->getCommentText($tenant_id, $comment_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getCommentText: ', $e->getMessage(), PHP_EOL;

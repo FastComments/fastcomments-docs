@@ -1,17 +1,17 @@
 ## Parameters
 
-| Name | Type | Location | Required | Description |
+| Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| commentId | string | query | Nee |  |
-| externalId | string | query | Nee |  |
-| eventType | string | query | Nee |  |
-| type | string | query | Nee |  |
-| domain | string | query | Nee |  |
-| attemptCountGT | number | query | Nee |  |
-| skip | number | query | Nee |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | query | No |  |
+| externalId | string | query | No |  |
+| eventType | string | query | No |  |
+| type | string | query | No |  |
+| domain | string | query | No |  |
+| attemptCountGT | number | query | No |  |
+| skip | number | query | No |  |
 
-## Antwoord
+## Respons
 
 Retourneert: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_pending_webhook_events_response.py)
 
@@ -20,42 +20,39 @@ Retourneert: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments
 [inline-code-attrs-start title = 'get_pending_webhook_events Voorbeeld'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetPendingWebhookEventsOptions
 from client.models.get_pending_webhook_events_response import GetPendingWebhookEventsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Het definiëren van de host is optioneel en standaard ingesteld op https://fastcomments.com
+# Het definiëren van de host is optioneel en standaard https://fastcomments.com
 # Zie configuration.py voor een lijst van alle ondersteunde configuratieparameters.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
-
 # De client moet de authenticatie- en autorisatieparameters configureren
 # in overeenstemming met het beveiligingsbeleid van de API-server.
-# Voorbeelden voor elke auth-methode staan hieronder; gebruik het voorbeeld dat
-# voldoet aan uw authenticatiegeval.
+# Voorbeelden voor elke auth‑methode worden hieronder gegeven, gebruik het voorbeeld dat
+# voldoet aan jouw auth‑use‑case.
 
-# Configureer API-sleutelautorisatie: api_key
+# Configureer API‑sleutelautorisatie: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Haal hieronder het commentaarteken weg om een voorvoegsel (bijv. Bearer) voor de API-sleutel in te stellen, indien nodig
+# Verwijder de commentaartekens hieronder om een prefix (bijv. Bearer) voor de API‑sleutel in te stellen, indien nodig
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Open een context met een instantie van de API-client
+# Open een context met een instantie van de API‑client
 with client.ApiClient(configuration) as api_client:
-    # Maak een instantie van de API-klasse
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    comment_id = 'comment_id_example' # str |  (optioneel)
-    external_id = 'external_id_example' # str |  (optioneel)
-    event_type = 'event_type_example' # str |  (optioneel)
-    type = 'type_example' # str |  (optioneel)
-    domain = 'domain_example' # str |  (optioneel)
-    attempt_count_gt = 3.4 # float |  (optioneel)
-    skip = 3.4 # float |  (optioneel)
+    comment_id = 'comment_id_example' # str |  (optional)
+    external_id = 'external_id_example' # str |  (optional)
+    event_type = 'event_type_example' # str |  (optional)
+    type = 'type_example' # str |  (optional)
+    domain = 'domain_example' # str |  (optional)
+    attempt_count_gt = 3.4 # float |  (optional)
+    skip = 3.4 # float |  (optional)
 
     try:
-        api_response = api_instance.get_pending_webhook_events(tenant_id, comment_id=comment_id, external_id=external_id, event_type=event_type, type=type, domain=domain, attempt_count_gt=attempt_count_gt, skip=skip)
+        api_response = api_instance.get_pending_webhook_events(tenant_id, GetPendingWebhookEventsOptions(comment_id=comment_id, external_id=external_id, event_type=event_type, type=type, domain=domain, attempt_count_gt=attempt_count_gt, skip=skip))
         print("The response of DefaultApi->get_pending_webhook_events:\n")
         pprint(api_response)
     except Exception as e:

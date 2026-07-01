@@ -4,9 +4,9 @@ go get github.com/fastcomments/fastcomments-go
 
 ### Korištenje API klijenta
 
-#### Javni API (bez autentikacije)
+#### Javni API (Bez autentifikacije)
 
-The PublicAPI allows unauthenticated access to public endpoints:
+PublicAPI omogućuje neautentificiran pristup javnim krajnjim točkama:
 
 ```go
 package main
@@ -36,9 +36,9 @@ func main() {
 }
 ```
 
-#### Default API (zahtijeva API ključ)
+#### Zadani API (Zahtijeva API ključ)
 
-The DefaultAPI requires authentication using your API key:
+DefaultAPI zahtijeva autentifikaciju koristeći vaš API ključ:
 
 ```go
 package main
@@ -53,7 +53,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // Stvori autentificirani kontekst pomoću API ključa
+    // Stvori autentificirani kontekst s API ključem
     auth := context.WithValue(
         context.Background(),
         client.ContextAPIKeys,
@@ -77,15 +77,9 @@ func main() {
 }
 ```
 
-#### Moderation API (Nadzorna ploča moderatora)
+#### Moderacijski API (Nadzorna ploča moderatora)
 
-The ModerationAPI powers the moderator dashboard. It provides methods for listing,
-counting, searching, and exporting comments, moderation actions (remove/restore,
-flag, set review/spam/approval status, votes, reopen/close threads), bans (ban from
-comment, undo, pre-ban summaries, ban status and preferences, banned-user counts),
-and badges & trust (award/remove badges, manual badges, get/set trust factor, user
-internal profile). All Moderation methods accept an `sso` parameter for
-SSO-authenticated moderators:
+ModerationAPI pruža opsežan skup API-ja za moderiranje uživo i brzo moderiranje. Sve metode moderiranja prihvaćaju parametar `sso` i mogu se autentificirati putem SSO-a ili kolačića sesije FastComments.com:
 
 ```go
 package main
@@ -100,7 +94,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // Nabavi popis komentara za moderaciju koristeći ModerationAPI
+    // Navedi komentare za moderiranje koristeći ModerationAPI
     response, httpResp, err := apiClient.ModerationAPI.GetApiComments(
         context.Background(),
     ).Sso("your-sso-token").Execute()

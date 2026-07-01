@@ -1,13 +1,9 @@
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
-| commentId | string | כן |  |
-| externalId | string | לא |  |
-| eventType | string | לא |  |
-| domain | string | לא |  |
-| attemptCountGT | float64 | לא |  |
+| options | GetPendingWebhookEventCountOptions | לא |  |
 
 ## תגובה
 
@@ -15,22 +11,12 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getPendingWebhookEventCount'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה getPendingWebhookEventCount'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getPendingWebhookEventCount(
-  tenantId = "my-tenant-123",
-  commentId = "cmt-456abc",
-  externalId = "ext-7890",
-  eventType = "comment_created",
-  domain = "news.example.com",
-  attemptCountGT = 2.0
-)
-
-if response.isSome:
-  let pending = response.get()
-  echo pending
-else:
-  echo "No pending webhook event count returned; HTTP status: ", httpResponse.status
+let (pendingCountOpt, httpResponse) = client.getPendingWebhookEventCount(tenantId = "my-tenant-123", options = GetPendingWebhookEventCountOptions())
+if pendingCountOpt.isSome:
+  let pendingCount = pendingCountOpt.get()
+  echo pendingCount
 [inline-code-end]
 
 ---

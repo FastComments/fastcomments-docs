@@ -1,30 +1,42 @@
 ## パラメータ
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | No |  |
-| userId | string | No |  |
-| startDate | string | No |  |
-| questionId | string | No |  |
-| questionIds | string | No |  |
-| skip | number | No |  |
+| tenantId | string | はい |  |
+| urlId | string | いいえ |  |
+| userId | string | いいえ |  |
+| startDate | string | いいえ |  |
+| questionId | string | いいえ |  |
+| questionIds | string | いいえ |  |
+| skip | number | いいえ |  |
 
 ## レスポンス
 
-返却値: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionResultsResponse.ts)
+戻り値: [`GetQuestionResultsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionResultsResponse1.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'getQuestionResults の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_42f6';
-const urlId: string = 'product-page-123';
-const userId: string = 'user_789';
-const startDate: string = '2024-05-01';
-const questionIds: string = 'q-112,q-113';
-const skip: number = 20;
-const results: GetQuestionResultsResponse = await getQuestionResults(tenantId, urlId, userId, startDate, undefined, questionIds, skip);
-[inline-code-end]
+(async () => {
+  const tenantId: string = "acme-corp-123";
+  const urlId: string = "post-456";
+  const userId: string = "user-789";
+  const startDate: string = "2023-09-01T00:00:00Z";
+  const questionId: string = "q-101";
+  const questionIds: string = "q-102,q-103";
+  const skip: number = 20;
 
----
+  const results: GetQuestionResultsResponse1 = await getQuestionResults(
+    tenantId,
+    urlId,
+    userId,
+    startDate,
+    questionId,
+    questionIds,
+    skip
+  );
+
+  console.log(results);
+})();
+[inline-code-end]

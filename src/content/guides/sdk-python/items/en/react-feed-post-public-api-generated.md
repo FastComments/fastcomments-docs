@@ -17,6 +17,7 @@ Returns: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-
 [inline-code-attrs-start title = 'react_feed_post_public Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import ReactFeedPostPublicOptions
 from client.models.react_body_params import ReactBodyParams
 from client.models.react_feed_post_response import ReactFeedPostResponse
 from client.rest import ApiException
@@ -41,7 +42,7 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.react_feed_post_public(tenant_id, post_id, react_body_params, is_undo=is_undo, broadcast_id=broadcast_id, sso=sso)
+        api_response = api_instance.react_feed_post_public(tenant_id, post_id, react_body_params, ReactFeedPostPublicOptions(is_undo=is_undo, broadcast_id=broadcast_id, sso=sso))
         print("The response of PublicApi->react_feed_post_public:\n")
         pprint(api_response)
     except Exception as e:

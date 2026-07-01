@@ -1,12 +1,12 @@
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| userId | string | query | Ne |  |
-| state | number | query | Ne |  |
-| skip | number | query | Ne |  |
-| limit | number | query | Ne |  |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| state | number | query | No |  |
+| skip | number | query | No |  |
+| limit | number | query | No |  |
 
 ## Odgovor
 
@@ -14,9 +14,10 @@ Vraća: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-pyth
 
 ## Primer
 
-[inline-code-attrs-start title = 'get_tickets Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer get_tickets'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetTicketsOptions
 from client.models.get_tickets_response import GetTicketsResponse
 from client.rest import ApiException
 from pprint import pprint
@@ -28,19 +29,19 @@ configuration = client.Configuration(
 )
 
 # Klijent mora da konfiguriše parametre autentifikacije i autorizacije
-# u skladu sa bezbednosnom politikom API servera.
+# u skladu sa sigurnosnom politikom API servera.
 # Primeri za svaki metod autentifikacije su dati ispod, koristite primer koji
-# odgovara vašem slučaju upotrebe autentifikacije.
+# zadovoljava vaše potrebe za autentifikacijom.
 
-# Konfigurišite autorizaciju API ključa: api_key
+# Konfigurišite autorizaciju API ključem: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Otkomentarišite ispod da biste podesili prefiks (npr. Bearer) za API ključ, ako je potrebno
+# Otkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Uđite u kontekst sa instancom API klijenta
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Kreirajte instancu API klase
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     user_id = 'user_id_example' # str |  (opciono)
@@ -49,7 +50,7 @@ with client.ApiClient(configuration) as api_client:
     limit = 3.4 # float |  (opciono)
 
     try:
-        api_response = api_instance.get_tickets(tenant_id, user_id=user_id, state=state, skip=skip, limit=limit)
+        api_response = api_instance.get_tickets(tenant_id, GetTicketsOptions(user_id=user_id, state=state, skip=skip, limit=limit))
         print("The response of DefaultApi->get_tickets:\n")
         pprint(api_response)
     except Exception as e:

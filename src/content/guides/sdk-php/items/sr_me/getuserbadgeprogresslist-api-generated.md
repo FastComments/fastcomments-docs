@@ -1,43 +1,47 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Локација | Обавезно | Опис |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| userId | string | query | Не |  |
-| limit | number | query | Не |  |
-| skip | number | query | Не |  |
+| tenantId | string | query | Da |  |
+| userId | string | query | Ne |  |
+| limit | number | query | Ne |  |
+| skip | number | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`APIGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIGetUserBadgeProgressListResponse.php)
+Vraća: [`APIGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIGetUserBadgeProgressListResponse.php)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'getUserBadgeProgressList Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getUserBadgeProgressList'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Конфигуришите ауторизацију API кључа: api_key
+// Konfigurišite autorizaciju API ključa: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Откоментирајте испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
+// Odkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ако желите да користите прилагођени http клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционално, `GuzzleHttp\Client` ће бити коришћен као подразумевани.
+    // Ako želite koristiti prilagođeni http klijent, proslijedite vaš klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opcionalno, `GuzzleHttp\Client` će biti korišten kao podrazumevani.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$user_id = 'user_id_example'; // string
-$limit = 3.4; // float
-$skip = 3.4; // float
+$options = [
+    'user_id' => 'user_id_example', // string
+    'limit' => 3.4, // float
+    'skip' => 3.4, // float
+];
+
 
 try {
-    $result = $apiInstance->getUserBadgeProgressList($tenant_id, $user_id, $limit, $skip);
+    $result = $apiInstance->getUserBadgeProgressList($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getUserBadgeProgressList: ', $e->getMessage(), PHP_EOL;

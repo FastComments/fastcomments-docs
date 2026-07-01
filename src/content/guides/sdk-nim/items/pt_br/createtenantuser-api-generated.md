@@ -1,9 +1,9 @@
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-----------|
-| tenantId | string | Sim |  |
-| createTenantUserBody | CreateTenantUserBody | Não |  |
+|------|------|-------------|-----------|
+| tenantId | string | Sim | |
+| createTenantUserBody | CreateTenantUserBody | Não | |
 
 ## Resposta
 
@@ -11,17 +11,20 @@ Retorna: [`Option[CreateTenantUserResponse]`](https://github.com/FastComments/fa
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de createTenantUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo createTenantUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.createTenantUser(tenantId = "my-tenant-123",
-  createTenantUserBody = CreateTenantUserBody(userId = "user-456",
-    email = "jane.doe@example.com",
-    displayName = "Jane Doe",
-    roles = @["editor"],
-    isAdmin = false))
-if response.isSome:
-  let created = response.get()
-  discard created
+let tenantId = "my-tenant-123"
+let userBody = CreateTenantUserBody(
+  email: "john.doe@example.com",
+  name: "John Doe",
+  password: "s3cr3tP@ss",
+  role: "admin"
+)
+let (optResp, httpResp) = client.createTenantUser(
+  tenantId = tenantId,
+  createTenantUserBody = userBody
+)
+if optResp.isSome:
+  let resp = optResp.get()
+  echo resp.userId
 [inline-code-end]
-
----

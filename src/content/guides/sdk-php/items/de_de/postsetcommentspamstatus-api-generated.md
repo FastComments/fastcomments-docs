@@ -1,15 +1,17 @@
 ## Parameter
 
-| Name | Type | Location | Required | Description |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Ja |  |
-| spam | boolean | query | Nein |  |
-| permNotSpam | boolean | query | Nein |  |
-| sso | string | query | Nein |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| spam | boolean | query | No |  |
+| permNotSpam | boolean | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Antwort
 
-Gibt zurück: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
+Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
 ## Beispiel
 
@@ -21,19 +23,27 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Wenn Sie einen eigenen HTTP-Client verwenden möchten, übergeben Sie Ihren Client, der `GuzzleHttp\ClientInterface` implementiert.
-    // Dies ist optional; `GuzzleHttp\Client` wird standardmäßig verwendet.
+    // Wenn Sie einen benutzerdefinierten HTTP-Client verwenden möchten, übergeben Sie Ihren Client, der `GuzzleHttp\ClientInterface` implementiert.
+    // Dies ist optional, `GuzzleHttp\Client` wird standardmäßig verwendet.
     new GuzzleHttp\Client()
 );
+
+$tenant_id = 'tenant_id_example'; // string
 $comment_id = 'comment_id_example'; // string
-$spam = True; // bool
-$perm_not_spam = True; // bool
-$sso = 'sso_example'; // string
+$options = [
+    'spam' => True, // bool
+    'perm_not_spam' => True, // bool
+    'broadcast_id' => 'broadcast_id_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->postSetCommentSpamStatus($comment_id, $spam, $perm_not_spam, $sso);
+    $result = $apiInstance->postSetCommentSpamStatus($tenant_id, $comment_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->postSetCommentSpamStatus: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

@@ -1,24 +1,19 @@
-## Parametreler
+## Parameters
 
-| Name | Type | Required | Description |
+| İsim | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
-| userId | string | Hayır |  |
-| urlId | string | Evet |  |
-| fromCommentId | string | Hayır |  |
-| viewed | bool | Hayır |  |
-| skip | float64 | Hayır |  |
+| options | GetNotificationsOptions | Hayır |  |
 
-## Yanıt
+## Response
 
 Döndürür: [`Option[GetNotificationsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_notifications_response.nim)
 
-## Örnek
+## Example
 
 [inline-code-attrs-start title = 'getNotifications Örneği'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getNotifications(tenantId = "my-tenant-123", userId = "user-456", urlId = "news/article-title", fromCommentId = "cmt-789", viewed = false, skip = 0.0)
-if response.isSome:
-  let notifications = response.get()
-  echo notifications
+let (notifOpt, httpResp) = client.getNotifications(tenantId = "my-tenant-123", options = GetNotificationsOptions())
+if notifOpt.isSome:
+  let notifications = notifOpt.get()
 [inline-code-end]

@@ -1,19 +1,20 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | はい |  |
 | batchJobId | string | query | いいえ |  |
 | sso | string | query | いいえ |  |
 
-## レスポンス
+## 応答
 
-戻り値: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationExportStatusResponse.java)
+返却: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationExportStatusResponse.java)
 
 ## 例
 
 [inline-code-attrs-start title = 'getApiExportStatus の例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// クラスのインポート:
+// クラスをインポート:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,15 +27,17 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
-    String batchJobId = "batchJobId_example"; // 型: String
-    String sso = "sso_example"; // 型: String
+    String tenantId = "tenantId_example"; // String | 
+    String batchJobId = "batchJobId_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
-      ModerationExportStatusResponse result = apiInstance.getApiExportStatus()
+      ModerationExportStatusResponse result = apiInstance.getApiExportStatus(tenantId)
             .batchJobId(batchJobId)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
+      // ModerationApi#getApiExportStatus の呼び出し時の例外
       System.err.println("Exception when calling ModerationApi#getApiExportStatus");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());

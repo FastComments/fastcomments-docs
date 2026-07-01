@@ -1,14 +1,15 @@
-## Παράμετροι
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| Όνομα | Τύπος | Θέση | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| badgeId | string | query | Ναι |  |
-| userId | string | query | Όχι |  |
-| commentId | string | query | Όχι |  |
-| broadcastId | string | query | Όχι |  |
-| sso | string | query | Όχι |  |
+| tenantId | string | query | Yes |  |
+| badgeId | string | query | Yes |  |
+| userId | string | query | No |  |
+| commentId | string | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`RemoveUserBadgeResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/RemoveUserBadgeResponse.php)
 
@@ -22,18 +23,23 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Εάν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε τον client σας που υλοποιεί το `GuzzleHttp\ClientInterface`.
-    // Αυτό είναι προαιρετικό, θα χρησιμοποιηθεί το `GuzzleHttp\Client` ως προεπιλογή.
+    // Εάν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http πελάτη, περάστε τον πελάτη σας που υλοποιεί το `GuzzleHttp\ClientInterface`.
+    // Αυτό είναι προαιρετικό, το `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
     new GuzzleHttp\Client()
 );
+
+$tenant_id = 'tenant_id_example'; // string
 $badge_id = 'badge_id_example'; // string
-$user_id = 'user_id_example'; // string
-$comment_id = 'comment_id_example'; // string
-$broadcast_id = 'broadcast_id_example'; // string
-$sso = 'sso_example'; // string
+$options = [
+    'user_id' => 'user_id_example', // string
+    'comment_id' => 'comment_id_example', // string
+    'broadcast_id' => 'broadcast_id_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->putRemoveBadge($badge_id, $user_id, $comment_id, $broadcast_id, $sso);
+    $result = $apiInstance->putRemoveBadge($tenant_id, $badge_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->putRemoveBadge: ', $e->getMessage(), PHP_EOL;

@@ -1,10 +1,10 @@
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| id | string | Ne |  |
-| updateAPIPageData | UpdateAPIPageData | Ne |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| updateAPIPageData | UpdateAPIPageData | No |  |
 
 ## Odgovor
 
@@ -12,25 +12,14 @@ Vraća: [`Option[PatchPageAPIResponse]`](https://github.com/FastComments/fastcom
 
 ## Primjer
 
-[inline-code-attrs-start title = 'patchPage Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer patchPage'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let updateData = UpdateAPIPageData(
-  title = "Breaking: Major Event Update",
-  urlId = "news/major-event-update",
-  visible = true,
-  tags = @["breaking", "headline"],
-  sortOrder = 5
-)
-
 let (response, httpResponse) = client.patchPage(
   tenantId = "my-tenant-123",
-  id = "news/major-event-update",
-  updateAPIPageData = updateData
+  id = "news/article-456",
+  updateAPIPageData = UpdateAPIPageData(title = "Updated article title", description = "Revised description")
 )
 
 if response.isSome:
-  let page = response.get()
-  discard page
+  let resp = response.get()
 [inline-code-end]
-
----

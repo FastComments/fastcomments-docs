@@ -1,20 +1,21 @@
 ## Parameter
 
-| Name | Typ | Location | Erforderlich | Beschreibung |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| page | number | query | Nein |  |
-| count | number | query | Nein |  |
-| text-search | string | query | Nein |  |
-| byIPFromComment | string | query | Nein |  |
-| filters | string | query | Nein |  |
-| searchFilters | string | query | Nein |  |
-| sorts | string | query | Nein |  |
-| demo | boolean | query | Nein |  |
-| sso | string | query | Nein |  |
+| tenantId | string | query | Yes |  |
+| page | number | query | No |  |
+| count | number | query | No |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sorts | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Antwort
 
-Gibt zurück: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationAPIGetCommentsResponse.php)
+Rückgabe: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationAPIGetCommentsResponse.php)
 
 ## Beispiel
 
@@ -30,18 +31,23 @@ $apiInstance = new FastComments\Client\Api\ModerationApi(
     // Dies ist optional, `GuzzleHttp\Client` wird standardmäßig verwendet.
     new GuzzleHttp\Client()
 );
-$page = 3.4; // float
-$count = 3.4; // float
-$text_search = 'text_search_example'; // string
-$by_ip_from_comment = 'by_ip_from_comment_example'; // string
-$filters = 'filters_example'; // string
-$search_filters = 'search_filters_example'; // string
-$sorts = 'sorts_example'; // string
-$demo = True; // bool
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // string
+$options = [
+    'page' => 3.4, // float
+    'count' => 3.4, // float
+    'text_search' => 'text_search_example', // string
+    'by_ip_from_comment' => 'by_ip_from_comment_example', // string
+    'filters' => 'filters_example', // string
+    'search_filters' => 'search_filters_example', // string
+    'sorts' => 'sorts_example', // string
+    'demo' => True, // bool
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->getApiComments($page, $count, $text_search, $by_ip_from_comment, $filters, $search_filters, $sorts, $demo, $sso);
+    $result = $apiInstance->getApiComments($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getApiComments: ', $e->getMessage(), PHP_EOL;

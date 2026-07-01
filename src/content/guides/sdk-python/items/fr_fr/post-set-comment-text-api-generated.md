@@ -1,41 +1,46 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nom | Type | Emplacement | Obligatoire | Description |
+|------|------|--------------|-------------|-------------|
+| tenantId | string | query | Oui |  |
 | commentId | string | path | Oui |  |
+| broadcastId | string | query | Non |  |
 | sso | string | query | Non |  |
 
 ## Réponse
 
-Renvoie : [`SetCommentTextResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/set_comment_text_response.py)
+Returns: [`SetCommentTextResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/set_comment_text_response.py)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de post_set_comment_text'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_set_comment_text Exemple'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import PostSetCommentTextOptions
 from client.models.set_comment_text_params import SetCommentTextParams
 from client.models.set_comment_text_response import SetCommentTextResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# La définition de l'hôte est optionnelle et par défaut vaut https://fastcomments.com
-# Consultez configuration.py pour la liste de tous les paramètres de configuration pris en charge.
+# Définir l'hôte est facultatif et utilise https://fastcomments.com par défaut
+# Voir configuration.py pour la liste de tous les paramètres de configuration pris en charge.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Entrez dans un contexte avec une instance du client API
+# Entrer dans un contexte avec une instance du client API
 with client.ApiClient(configuration) as api_client:
-    # Créez une instance de la classe API
+    # Créer une instance de la classe API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     set_comment_text_params = client.SetCommentTextParams() # SetCommentTextParams | 
-    sso = 'sso_example' # str |  (optionnel)
+    broadcast_id = 'broadcast_id_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.post_set_comment_text(comment_id, set_comment_text_params, sso=sso)
+        api_response = api_instance.post_set_comment_text(tenant_id, comment_id, set_comment_text_params, PostSetCommentTextOptions(broadcast_id=broadcast_id, sso=sso))
         print("The response of ModerationApi->post_set_comment_text:\n")
         pprint(api_response)
     except Exception as e:

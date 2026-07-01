@@ -1,12 +1,14 @@
-## Parametri
+## Parameters
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| comment_id | String | Da |  |
-| vote_id | String | Da |  |
-| sso | String | Ne |  |
+|------|------|----------|------|
+| tenant_id | String | Yes |  |
+| comment_id | String | Yes |  |
+| vote_id | String | Yes |  |
+| broadcast_id | String | No |  |
+| sso | String | No |  |
 
-## Odgovor
+## Response
 
 Vraća: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/vote_delete_response.rs)
 
@@ -14,15 +16,15 @@ Vraća: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-rust
 
 [inline-code-attrs-start title = 'Primer delete_moderation_vote'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let params: DeleteModerationVoteParams = DeleteModerationVoteParams {
-        comment_id: "news/article-2026-06-19-12345".to_string(),
-        vote_id: "vote-9a7c3b1d".to_string(),
-        sso: Some("user-9876@acme-corp".to_string()),
+async fn example() -> Result<(), Error> {
+    let params = DeleteModerationVoteParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: "news/article-42".to_string(),
+        vote_id: "vote-12345".to_string(),
+        broadcast_id: Some("broadcast-987".to_string()),
+        sso: None,
     };
-    let response: VoteDeleteResponse = delete_moderation_vote(&configuration, params).await?;
+    let _response: VoteDeleteResponse = delete_moderation_vote(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

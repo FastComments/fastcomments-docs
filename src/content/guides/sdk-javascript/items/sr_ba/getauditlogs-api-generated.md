@@ -1,7 +1,6 @@
----
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
+| Ime | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | limit | number | Ne |  |
@@ -12,19 +11,29 @@
 
 ## Odgovor
 
-Vraća: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetAuditLogsResponse.ts)
+Vraća: [`GetAuditLogsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetAuditLogsResponse1.ts)
 
-## Primjer
+## Primer
 
-[inline-code-attrs-start title = 'Primjer getAuditLogs'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getAuditLogs'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_87f9a4';
-const limit: number = 100;
-const skip: number = 0;
-const order: SORTDIR = SORTDIR.DESC;
-const after: number = Date.now() - 30 * 24 * 60 * 60 * 1000; // pre 30 dana
-const auditLogsResponse: GetAuditLogsResponse = await getAuditLogs(tenantId, limit, skip, order, after);
-console.log((auditLogsResponse as unknown) ? 'Audit logs fetched' : 'No logs');
+(async () => {
+  const tenantId: string = "tenant_42";
+  const limit: number = 100;
+  const skip: number = 10;
+  const order: SORTDIR = "desc";
+  const after: number = Date.now() - 3 * 24 * 60 * 60 * 1000; // pre 3 dana
+
+  const auditResponse: GetAuditLogsResponse1 = await getAuditLogs(
+    tenantId,
+    limit,
+    skip,
+    order,
+    after
+  );
+
+  console.log(auditResponse);
+})();
 [inline-code-end]
 
 ---

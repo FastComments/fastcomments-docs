@@ -1,11 +1,10 @@
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| postId | string | No |  |
-| broadcastId | string | No |  |
-| sso | string | No |  |
+| tenantId | string | כן |  |
+| postId | string | לא |  |
+| options | DeleteFeedPostPublicOptions | לא |  |
 
 ## תגובה
 
@@ -13,14 +12,14 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-deleteFeedPostPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteFeedPostPublic דוגמה'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteFeedPostPublic(tenantId = "my-tenant-123", postId = "", broadcastId = "", sso = "")
-if response.isSome:
-  let deleted = response.get()
-  echo "Delete successful"
-else:
-  echo "Delete failed"
-[inline-code-end]
+let (response, httpResponse) = client.deleteFeedPostPublic(
+  tenantId = "my-tenant-123",
+  postId = "news/article-42",
+  options = DeleteFeedPostPublicOptions()
+)
 
----
+if response.isSome:
+  let deleteResp = response.get()
+[inline-code-end]

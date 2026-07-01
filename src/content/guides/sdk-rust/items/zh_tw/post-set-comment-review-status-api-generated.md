@@ -1,28 +1,30 @@
-## 參數
+## Parameters
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| 名稱 | 類型 | 必填 | 說明 |
+|------|------|------|------|
+| tenant_id | String | 是 |  |
 | comment_id | String | 是 |  |
 | reviewed | bool | 否 |  |
+| broadcast_id | String | 否 |  |
 | sso | String | 否 |  |
 
-## 回應
+## Response
 
-回傳: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
+Returns: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
-## 範例
+## Example
 
 [inline-code-attrs-start title = 'post_set_comment_review_status 範例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn set_comment_review_status() -> Result<ApiEmptyResponse, Error> {
-    let params: PostSetCommentReviewStatusParams = PostSetCommentReviewStatusParams {
-        comment_id: "news/article-2026-06-18-cmt-9843".to_string(),
+async fn update_review_status(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = PostSetCommentReviewStatusParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: "comment-98765".to_string(),
         reviewed: Some(true),
-        sso: Some("acme-sso-session-7f2e9b".to_string()),
+        broadcast_id: Some("broadcast-2023-summer".to_string()),
+        sso: Some("sso-user-42".to_string()),
     };
-    let response: ApiEmptyResponse = post_set_comment_review_status(&configuration, params).await?;
-    Ok(response)
+    post_set_comment_review_status(configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

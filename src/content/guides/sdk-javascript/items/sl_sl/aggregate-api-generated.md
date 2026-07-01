@@ -1,15 +1,14 @@
----
-Agregira dokumente z njihovo grupiranjem (če je naveden groupBy) in z izvajanjem več operacij.
-Podprte so različne operacije (npr. sum, countDistinct, avg itd.).
+Aggregates documents by grouping them (if groupBy is provided) and applying multiple operations.  
+Različne operacije (npr. sum, countDistinct, avg, itd.) so podprte.
 
 ## Parametri
 
-| Name | Type | Required | Description |
+| Ime | Vrsta | Obvezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| aggregationRequest | AggregationRequest | Da |  |
-| parentTenantId | string | Ne |  |
-| includeStats | boolean | Ne |  |
+| tenantId | string | Yes |  |
+| aggregationRequest | AggregationRequest | Yes |  |
+| parentTenantId | string | No |  |
+| includeStats | boolean | No |  |
 
 ## Odgovor
 
@@ -17,22 +16,31 @@ Vrne: [`AggregateResponse`](https://github.com/FastComments/fastcomments-sdk-js/
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer uporabe aggregate'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer agregacije'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_72b3";
-const parentTenantId: string = "parent_acme_corp";
+const tenantId: string = "tenant-12345";
+
 const aggregationRequest: AggregationRequest = {
-  groupBy: ["postId"],
   predicates: [
-    { field: "status", operator: "EQ", value: { stringValue: "published" } as QueryPredicateValue }
+    {
+      field: "status",
+      operator: "eq",
+      value: { type: "string", value: "approved" }
+    }
   ],
   operations: [
-    { type: AggregationOpType.COUNT, field: "id", alias: "commentCount" } as AggregationOperation
+    { type: "count", field: "commentId" }
   ],
-  sort: [{ field: "commentCount", direction: "DESC" } as AggregationRequestSort],
-  limit: 25
+  sort: { field: "createdAt", direction: "desc" }
 };
-const response: AggregateResponse = await aggregate(tenantId, aggregationRequest, parentTenantId, true);
-[inline-code-end]
 
----
+const parentTenantId: string = "parent-001";
+const includeStats: boolean = true;
+
+const result: AggregateResponse = await aggregate(
+  tenantId,
+  aggregationRequest,
+  parentTenantId,
+  includeStats
+);
+[inline-code-end]

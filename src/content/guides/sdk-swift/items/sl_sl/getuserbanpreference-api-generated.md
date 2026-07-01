@@ -1,23 +1,25 @@
-## Parametri
+## Parameters
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Da |  |
 | sso | string | query | Ne |  |
 
-## Odgovor
+## Response
 
 Vrne: [`APIModerateGetUserBanPreferencesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIModerateGetUserBanPreferencesResponse.swift)
 
-## Primer
+## Example
 
-[inline-code-attrs-start title = 'getUserBanPreference Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getUserBanPreference'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Naslednji primeri kode so še v beta različici. Za kakršnokoli težavo, prosimo prijavite preko http://github.com/OpenAPITools/openapi-generator/issues/new
+// Naslednji vzorci kode so še v beta fazi. Če imate kakršnekoli težave, jih prosimo prijavite preko http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let sso = "sso_example" // Niz |  (neobvezno)
+let tenantId = "tenantId_example" // String | 
+let sso = "sso_example" // String |  (neobvezno)
 
-ModerationAPI.getUserBanPreference(sso: sso) { (response, error) in
+ModerationAPI.getUserBanPreference(tenantId: tenantId, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return

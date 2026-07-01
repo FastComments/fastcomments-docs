@@ -1,13 +1,14 @@
-## Параметри
+## Parameters
 
-| Име | Тип | Местоположение | Задължително | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
 | commentId | string | path | Да |  |
 | includeEmail | boolean | query | Не |  |
 | includeIP | boolean | query | Не |  |
 | sso | string | query | Не |  |
 
-## Отговор
+## Response
 
 Връща: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/moderation_api_comment_response.py)
 
@@ -16,28 +17,30 @@
 [inline-code-attrs-start title = 'Пример за get_moderation_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetModerationCommentOptions
 from client.models.moderation_api_comment_response import ModerationAPICommentResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Задаването на host е по избор и по подразбиране е https://fastcomments.com
-# Вижте configuration.py за списък с всички поддържани параметри за конфигурация.
+# Задаването на хоста е по избор и по подразбиране е https://fastcomments.com
+# Вижте configuration.py за списък с всички поддържани конфигурационни параметри.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Влезте в контекст с екземпляр на API клиента
+# Въведете контекст с екземпляр на API клиента
 with client.ApiClient(configuration) as api_client:
     # Създайте екземпляр на API класа
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
-    include_email = True # bool |  (по избор)
-    include_ip = True # bool |  (по избор)
-    sso = 'sso_example' # str |  (по избор)
+    include_email = True # bool |  (optional)
+    include_ip = True # bool |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_moderation_comment(comment_id, include_email=include_email, include_ip=include_ip, sso=sso)
+        api_response = api_instance.get_moderation_comment(tenant_id, comment_id, GetModerationCommentOptions(include_email=include_email, include_ip=include_ip, sso=sso))
         print("The response of ModerationApi->get_moderation_comment:\n")
         pprint(api_response)
     except Exception as e:

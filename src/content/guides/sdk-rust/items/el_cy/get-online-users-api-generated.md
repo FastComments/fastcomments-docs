@@ -1,7 +1,7 @@
-Τρέχοντες συνδεδεμένοι θεατές μιας σελίδας: άτομα των οποίων η websocket συνεδρία είναι εγγεγραμμένη στη σελίδα αυτή αυτή τη στιγμή.
-Επιστρέφει anonCount + totalCount (συνδρομητές σε επίπεδο δωματίου, συμπεριλαμβανομένων ανώνυμων θεατών που δεν απαριθμούμε).
+Τρέχοντες online θεατές μιας σελίδας: άτομα των οποίων η συνεδρία websocket είναι εγγεγραμμένη στη σελίδα αυτή τη στιγμή.  
+Επιστρέφει anonCount + totalCount (συνδρομητές σε όλο το δωμάτιο, συμπεριλαμβανομένων των ανώνυμων θεατών που δεν απαριθμούμε).
 
-## Παράμετροι
+## Parameters
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
@@ -10,24 +10,22 @@
 | after_name | String | No |  |
 | after_user_id | String | No |  |
 
-## Απόκριση
+## Response
 
 Επιστρέφει: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_online_response.rs)
 
-## Παράδειγμα
+## Example
 
 [inline-code-attrs-start title = 'Παράδειγμα get_online_users'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_online_users() -> Result<PageUsersOnlineResponse, Error> {
-    let params: GetOnlineUsersParams = GetOnlineUsersParams {
+async fn example() -> Result<(), Error> {
+    let params = GetOnlineUsersParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        url_id: "news/world/article-2026".to_string(),
-        after_name: Some("jane.doe".to_string()),
-        after_user_id: Some("user_98765".to_string()),
+        url_id: "news/article".to_string(),
+        after_name: Some("john_doe".to_string()),
+        after_user_id: Some("user-123".to_string()),
     };
-    let response: PageUsersOnlineResponse = get_online_users(&configuration, params).await?;
-    Ok(response)
+    let _response: PageUsersOnlineResponse = get_online_users(&config, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

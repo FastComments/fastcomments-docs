@@ -2,7 +2,9 @@
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Ja |  |
 | commentId | string | path | Ja |  |
+| broadcastId | string | query | Nej |  |
 | sso | string | query | Nej |  |
 
 ## Svar
@@ -11,15 +13,17 @@ Returnerer: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sw
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på postRestoreDeletedComment'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postRestoreDeletedComment Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Følgende kodeeksempler er stadig i beta. For eventuelle problemer, indberet venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De følgende kodeeksempler er stadig i beta. For eventuelle problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
+let broadcastId = "broadcastId_example" // String |  (valgfri)
 let sso = "sso_example" // String |  (valgfri)
 
-ModerationAPI.postRestoreDeletedComment(commentId: commentId, sso: sso) { (response, error) in
+ModerationAPI.postRestoreDeletedComment(tenantId: tenantId, commentId: commentId, options: ModerationAPI.PostRestoreDeletedCommentOptions(broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -30,5 +34,3 @@ ModerationAPI.postRestoreDeletedComment(commentId: commentId, sso: sso) { (respo
     }
 }
 [inline-code-end]
-
----

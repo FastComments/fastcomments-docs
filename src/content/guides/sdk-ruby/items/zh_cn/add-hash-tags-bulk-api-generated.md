@@ -1,13 +1,12 @@
----
 ## 参数
 
 | 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 否 |  |
+| tenantId | string | query | 是 |  |
 
 ## 响应
 
-返回: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/bulk_create_hash_tags_response.rb)
+返回：[`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/bulk_create_hash_tags_response.rb)
 
 ## 示例
 
@@ -19,23 +18,19 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # 配置 API 密钥授权: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # 取消注释下面的行以为 API 密钥设置前缀，例如 'Bearer'（默认为 nil）
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
-opts = {
-  tenant_id: 'tenant_id_example', # String | 
-  bulk_create_hash_tags_body: FastCommentsClient::BulkCreateHashTagsBody.new({tags: [FastCommentsClient::BulkCreateHashTagsBodyTagsInner.new({tag: 'tag_example'})]}) # BulkCreateHashTagsBody | 
-}
+tenant_id = 'tenant_id_example' # String | 
+bulk_create_hash_tags_body = FastCommentsClient::BulkCreateHashTagsBody.new({tags: [FastCommentsClient::BulkCreateHashTagsBodyTagsInner.new({tag: 'tag_example'})]}) # BulkCreateHashTagsBody | 
 
 begin
   
-  result = api_instance.add_hash_tags_bulk(opts)
+  result = api_instance.add_hash_tags_bulk(tenant_id, bulk_create_hash_tags_body)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->add_hash_tags_bulk: #{e}"
 end
 [inline-code-end]
-
----

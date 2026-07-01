@@ -1,12 +1,13 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
-| badgeId | string | query | Oui |  |
-| userId | string | query | Non |  |
-| commentId | string | query | Non |  |
-| broadcastId | string | query | Non |  |
-| sso | string | query | Non |  |
+| tenantId | string | query | Yes |  |
+| badgeId | string | query | Yes |  |
+| userId | string | query | No |  |
+| commentId | string | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Réponse
 
@@ -14,12 +15,13 @@ Renvoie : [`RemoveUserBadgeResponse`](https://github.com/FastComments/fastcommen
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de put_remove_badge'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'put_remove_badge Exemple'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 badge_id = 'badge_id_example' # String | 
 opts = {
   user_id: 'user_id_example', # String | 
@@ -30,11 +32,9 @@ opts = {
 
 begin
   
-  result = api_instance.put_remove_badge(badge_id, opts)
+  result = api_instance.put_remove_badge(tenant_id, badge_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->put_remove_badge: #{e}"
 end
 [inline-code-end]
-
----

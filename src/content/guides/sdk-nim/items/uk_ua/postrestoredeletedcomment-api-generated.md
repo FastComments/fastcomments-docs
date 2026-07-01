@@ -1,9 +1,11 @@
+---
 ## Параметри
 
-| Name | Type | Required | Description |
+| Назва | Тип | Обов’язково | Опис |
 |------|------|----------|-------------|
+| tenantId | string | Так |  |
 | commentId | string | Так |  |
-| sso | string | Ні |  |
+| options | PostRestoreDeletedCommentOptions | Ні |  |
 
 ## Відповідь
 
@@ -11,14 +13,17 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад postRestoreDeletedComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postRestoreDeletedComment Приклад'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postRestoreDeletedComment(commentId = "comment-8a7b6c5d", sso = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.SAMPLE_SIGNATURE")
-if response.isSome:
-  let apiResp = response.get()
-  echo "Comment restored:", apiResp
-else:
-  echo "Restore request failed"
+let (respOpt, httpResp) = client.postRestoreDeletedComment(
+  tenantId = "my-tenant-123",
+  commentId = "comment-456",
+  options = default(PostRestoreDeletedCommentOptions)
+)
+
+if respOpt.isSome:
+  let empty = respOpt.get()
+  echo "Comment restored"
 [inline-code-end]
 
 ---

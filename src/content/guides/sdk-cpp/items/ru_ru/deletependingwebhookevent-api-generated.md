@@ -1,3 +1,4 @@
+---
 ## Параметры
 
 | Имя | Тип | Обязательно | Описание |
@@ -11,16 +12,19 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'deletePendingWebhookEvent Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример deletePendingWebhookEvent'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t eventId = U("wh_ev_987654321");
-boost::optional<utility::string_t> requestId = U("req-20260619-01");
-api->deletePendingWebhookEvent(tenantId, eventId).then([requestId](std::shared_ptr<APIEmptyResponse> resp) {
-    if (resp) {
-        auto ack = std::make_shared<APIEmptyResponse>(*resp);
-    }
-});
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto eventId = utility::conversions::to_string_t("event-987654");
+boost::optional<utility::string_t> optTenant = tenantId;
+
+api->deletePendingWebhookEvent(optTenant.value(), eventId)
+    .then([](std::shared_ptr<APIEmptyResponse> resp) {
+        (void)resp;
+    })
+    .then([](pplx::task<void> t) {
+        try { t.get(); } catch (const std::exception& e) { }
+    });
 [inline-code-end]
 
 ---

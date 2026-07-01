@@ -10,18 +10,25 @@
 
 ## Yanıt
 
-Döndürür: [`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PublicAPIDeleteCommentResponse.ts)
+Döndürür: [`DeleteCommentPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteCommentPublicResponse.ts)
 
 ## Örnek
 
-[inline-code-attrs-start title = 'deleteCommentPublic Örnek'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteCommentPublic Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7a3b2c";
-const commentId: string = "f47ac10b-58cc-4372-a567-0e02b2c3d479";
-const broadcastId: string = "site:homepage";
-const editKey: string | undefined = "edk_9f8b7c6";
-const sso: string | undefined = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.dXNlcjoxMjM.zXlKaGJHY2lPaUpJVXpJMU5pSXNJbXRwWkNJNkltRnpaWEp0YjI1bFpTSTZJbU5zYjJOcGRHbHZiaUk2SW1Wa1pYTmpaWE5vWldGelpTMWZkR2x2TG05eVpXTm9iM0pwYjI0";
-const result: PublicAPIDeleteCommentResponse = await deleteCommentPublic(tenantId, commentId, broadcastId, editKey, sso);
-[inline-code-end]
+(async () => {
+  const tenantId: string = 'c6f9a2e3-9b1d-4f8a-b2d2-1a2b3c4d5e6f';
+  const commentId: string = '7d9f0b1c-2e3f-4a5b-6c7d-8e9f0a1b2c3d';
+  const broadcastId: string = 'live-2023-09-15';
+  const editKey: string = 'ed1tK3y1234567890';
+  const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.abc123';
 
----
+  const result: DeleteCommentPublicResponse = await deleteCommentPublic(
+    tenantId,
+    commentId,
+    broadcastId,
+    editKey,
+    sso
+  );
+})();
+[inline-code-end]

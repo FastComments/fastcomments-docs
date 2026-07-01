@@ -1,8 +1,9 @@
 ## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
-| sso | string | query | No |  |
+| tenantId | string | query | 是 |  |
+| sso | string | query | 否 |  |
 
 ## 回應
 
@@ -17,16 +18,20 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
+// 建立 FastComments 客戶端的 ModerationApi 物件
+// 如果您想使用自訂的 HTTP 客戶端，傳入實作 `GuzzleHttp\ClientInterface` 的客戶端。
+// 這是可選的，預設會使用 `GuzzleHttp\Client`。
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // 如果想使用自訂 http 用戶端，傳入實作了 `GuzzleHttp\ClientInterface` 的客戶端。
-    // 這是可選的，預設會使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client()
 );
+
+$tenant_id = 'tenant_id_example'; // string
 $ban_user_undo_params = new \FastComments\Client\Model\BanUserUndoParams(); // \FastComments\Client\Model\BanUserUndoParams
 $sso = 'sso_example'; // string
 
+
 try {
-    $result = $apiInstance->postBanUserUndo($ban_user_undo_params, $sso);
+    $result = $apiInstance->postBanUserUndo($tenant_id, $ban_user_undo_params, $sso);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->postBanUserUndo: ', $e->getMessage(), PHP_EOL;

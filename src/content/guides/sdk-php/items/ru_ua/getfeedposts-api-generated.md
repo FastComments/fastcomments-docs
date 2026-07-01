@@ -4,8 +4,8 @@ afterId
 
 ## Параметры
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Имя | Тип | Местоположение | Обязательно | Описание |
+|------|------|----------------|-------------|----------|
 | tenantId | string | query | Да |  |
 | afterId | string | query | Нет |  |
 | limit | integer | query | Нет |  |
@@ -31,19 +31,25 @@ $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKe
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // Это опционально, `GuzzleHttp\Client` will be used as default.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$after_id = 'after_id_example'; // string
-$limit = 56; // int
-$tags = array('tags_example'); // string[]
+
+$tenant_id = 'tenant_id_example'; // строка
+$options = [
+    'after_id' => 'after_id_example', // строка
+    'limit' => 56, // int
+    'tags' => array('tags_example'), // string[]
+];
+
 
 try {
-    $result = $apiInstance->getFeedPosts($tenant_id, $after_id, $limit, $tags);
+    $result = $apiInstance->getFeedPosts($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getFeedPosts: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

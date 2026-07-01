@@ -1,27 +1,22 @@
-## Параметры
+## Parameters
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | Да |  |
+| tenant_id | String | Yes |  |
 
-## Ответ
+## Response
 
 Возвращает: [`GetEmailTemplateDefinitionsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_email_template_definitions_response.rs)
 
-## Пример
+## Example
 
 [inline-code-attrs-start title = 'Пример get_email_template_definitions'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_templates() -> Result<(), Error> {
-    let params: GetEmailTemplateDefinitionsParams = GetEmailTemplateDefinitionsParams {
+async fn run() -> Result<(), Error> {
+    let params = GetEmailTemplateDefinitionsParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        locale: Some("en-US".to_string()),
     };
-    let response: GetEmailTemplateDefinitionsResponse =
-        get_email_template_definitions(&configuration, params).await?;
-    println!("{:#?}", response);
+    let _response = get_email_template_definitions(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

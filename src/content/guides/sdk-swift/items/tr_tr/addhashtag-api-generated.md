@@ -1,8 +1,8 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Hayır |  |
+| tenantId | string | query | Evet |  |
 
 ## Yanıt
 
@@ -12,10 +12,10 @@ Döndürür: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomme
 
 [inline-code-attrs-start title = 'addHashTag Örneği'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Aşağıdaki kod örnekleri hala beta aşamasındadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new adresinden bildirin
+// Aşağıdaki kod örnekleri hâlâ betadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new adresinden raporlayın
 import FastCommentsSwift
 
-let tenantId = "tenantId_example" // String |  (isteğe bağlı)
+let tenantId = "tenantId_example" // String | 
 let createHashTagBody = CreateHashTagBody(tenantId: "tenantId_example", tag: "tag_example", url: "url_example") // CreateHashTagBody |  (isteğe bağlı)
 
 DefaultAPI.addHashTag(tenantId: tenantId, createHashTagBody: createHashTagBody) { (response, error) in

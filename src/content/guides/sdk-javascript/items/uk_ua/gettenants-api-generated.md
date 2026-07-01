@@ -1,23 +1,24 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| meta | string | Ні |  |
-| skip | number | Ні |  |
+| tenantId | string | Yes |  |
+| meta | string | No |  |
+| skip | number | No |  |
 
 ## Відповідь
 
-Повертає: [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantsResponse.ts)
+Повертає: [`GetTenantsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantsResponse1.ts)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'Приклад getTenants'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-72b';
-const meta: string = 'include=domains,billing';
-const skip: number = 20;
-const result: GetTenantsResponse = await getTenants(tenantId, meta, skip);
+(async () => {
+  const tenantId: string = "tenant-9f8e7d6c";
+  const resultOnlyId: GetTenantsResponse1 = await getTenants(tenantId);
+  const resultWithMeta: GetTenantsResponse1 = await getTenants(tenantId, "full");
+  const resultAllParams: GetTenantsResponse1 = await getTenants(tenantId, "full", 15);
+  console.log(resultOnlyId, resultWithMeta, resultAllParams);
+})();
 [inline-code-end]
-
----

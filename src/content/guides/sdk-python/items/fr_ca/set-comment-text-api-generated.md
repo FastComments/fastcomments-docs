@@ -10,26 +10,27 @@
 
 ## Réponse
 
-Renvoie: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/public_api_set_comment_text_response.py)
+Returns: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/public_api_set_comment_text_response.py)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de set_comment_text'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple set_comment_text'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import SetCommentTextOptions
 from client.models.comment_text_update_request import CommentTextUpdateRequest
 from client.models.public_api_set_comment_text_response import PublicAPISetCommentTextResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# La définition de l'hôte est optionnelle et par défaut https://fastcomments.com
+# Définir l'hôte est optionnel et par défaut https://fastcomments.com
 # Voir configuration.py pour une liste de tous les paramètres de configuration pris en charge.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Ouvrir un contexte avec une instance du client API
+# Entrer dans un contexte avec une instance du client API
 with client.ApiClient(configuration) as api_client:
     # Créer une instance de la classe API
     api_instance = client.PublicApi(api_client)
@@ -37,11 +38,11 @@ with client.ApiClient(configuration) as api_client:
     comment_id = 'comment_id_example' # str | 
     broadcast_id = 'broadcast_id_example' # str | 
     comment_text_update_request = client.CommentTextUpdateRequest() # CommentTextUpdateRequest | 
-    edit_key = 'edit_key_example' # str |  (optionnel)
-    sso = 'sso_example' # str |  (optionnel)
+    edit_key = 'edit_key_example' # str |  (facultatif)
+    sso = 'sso_example' # str |  (facultatif)
 
     try:
-        api_response = api_instance.set_comment_text(tenant_id, comment_id, broadcast_id, comment_text_update_request, edit_key=edit_key, sso=sso)
+        api_response = api_instance.set_comment_text(tenant_id, comment_id, broadcast_id, comment_text_update_request, SetCommentTextOptions(edit_key=edit_key, sso=sso))
         print("The response of PublicApi->set_comment_text:\n")
         pprint(api_response)
     except Exception as e:

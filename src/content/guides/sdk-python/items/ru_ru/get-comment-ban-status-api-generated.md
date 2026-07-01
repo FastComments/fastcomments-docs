@@ -1,7 +1,8 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Имя | Тип | Местоположение | Обязательно | Описание |
+|------|------|----------------|-------------|----------|
+| tenantId | string | query | Да |  |
 | commentId | string | path | Да |  |
 | sso | string | query | Нет |  |
 
@@ -18,22 +19,23 @@ from client.models.get_comment_ban_status_response import GetCommentBanStatusRes
 from client.rest import ApiException
 from pprint import pprint
 
-# Указание хоста необязательно и по умолчанию используется https://fastcomments.com
-# См. configuration.py для списка всех поддерживаемых параметров конфигурации.
+# Определение host необязательно и по умолчанию https://fastcomments.com
+# Смотрите configuration.py для списка всех поддерживаемых параметров конфигурации.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Войдите в контекст с экземпляром API-клиента
+# Войти в контекст с экземпляром API-клиента
 with client.ApiClient(configuration) as api_client:
-    # Создайте экземпляр класса API
+    # Создать экземпляр класса API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     sso = 'sso_example' # str |  (необязательно)
 
     try:
-        api_response = api_instance.get_comment_ban_status(comment_id, sso=sso)
+        api_response = api_instance.get_comment_ban_status(tenant_id, comment_id, sso=sso)
         print("The response of ModerationApi->get_comment_ban_status:\n")
         pprint(api_response)
     except Exception as e:

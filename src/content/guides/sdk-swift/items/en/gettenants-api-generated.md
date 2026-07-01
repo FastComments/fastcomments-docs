@@ -21,7 +21,7 @@ let tenantId = "tenantId_example" // String |
 let meta = "meta_example" // String |  (optional)
 let skip = 987 // Double |  (optional)
 
-DefaultAPI.getTenants(tenantId: tenantId, meta: meta, skip: skip) { (response, error) in
+DefaultAPI.getTenants(tenantId: tenantId, options: DefaultAPI.GetTenantsOptions(meta: meta, skip: skip)) { (response, error) in
     guard error == nil else {
         print(error)
         return

@@ -1,7 +1,8 @@
 ## Параметри
 
-| Име | Тип | Location | Задължително | Описание |
-|------|------|----------|----------|-------------|
+| Име | Тип | Местоположение | Задължително | Описание |
+|------|------|----------------|--------------|----------|
+| tenantId | string | query | Да |  |
 | commentId | string | path | Да |  |
 | sso | string | query | Не |  |
 
@@ -11,30 +12,31 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за get_moderation_comment_text'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_moderation_comment_text Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.models.get_comment_text_response import GetCommentTextResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинирането на хоста е незадължително и по подразбиране е https://fastcomments.com
-# Вижте configuration.py за списък на всички поддържани параметри за конфигурация.
+# Дефинирането на хоста е опционално и по подразбиране е https://fastcomments.com
+# Вижте configuration.py за списък на всички поддържани конфигурационни параметри.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Влезте в контекст с инстанция на API клиента
+# Въведете контекст с екземпляр на API клиента
 with client.ApiClient(configuration) as api_client:
-    # Създайте инстанция на API класа
+    # Създайте екземпляр на API класа
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
-    sso = 'sso_example' # str |  (незадължително)
+    sso = 'sso_example' # str |  (по избор)
 
     try:
-        api_response = api_instance.get_moderation_comment_text(comment_id, sso=sso)
-        print("The response of ModerationApi->get_moderation_comment_text:\n")
+        api_response = api_instance.get_moderation_comment_text(tenant_id, comment_id, sso=sso)
+        print("Отговорът от ModerationApi->get_moderation_comment_text:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling ModerationApi->get_moderation_comment_text: %s\n" % e)

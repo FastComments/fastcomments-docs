@@ -1,32 +1,24 @@
 ## パラメータ
 
-| 名前 | 型 | 必須 | 説明 |
+| 名前 | タイプ | 必須 | 説明 |
 |------|------|----------|-------------|
 | tenantId | string | はい |  |
 | createQuestionConfigBody | CreateQuestionConfigBody | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`Option[CreateQuestionConfigResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_question_config_response.nim)
+返却: [`Option[CreateQuestionConfigResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_question_config_response.nim)
 
 ## 例
 
-[inline-code-attrs-start title = 'createQuestionConfig の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createQuestionConfig 例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.createQuestionConfig(
+let configBody = CreateQuestionConfigBody()
+let (maybeResp, httpResp) = client.createQuestionConfig(
   tenantId = "my-tenant-123",
-  createQuestionConfigBody = CreateQuestionConfigBody(
-    label = "Article Question",
-    required = true,
-    minLength = 20,
-    maxLength = 1000,
-    allowedTags = @["comment","question","feedback"],
-    notifyModerators = false
-  )
+  createQuestionConfigBody = configBody,
 )
-if response.isSome:
-  let cfg = response.get()
-  echo "Created question config id: ", cfg.id
+if maybeResp.isSome:
+  let resp = maybeResp.get()
+  # 必要に応じて resp を使用
 [inline-code-end]
-
----

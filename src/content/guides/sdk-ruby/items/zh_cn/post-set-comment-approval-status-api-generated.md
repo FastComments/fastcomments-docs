@@ -1,14 +1,16 @@
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | commentId | string | path | Yes |  |
 | approved | boolean | query | No |  |
+| broadcastId | string | query | No |  |
 | sso | string | query | No |  |
 
 ## 响应
 
-返回: [`SetCommentApprovedResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/set_comment_approved_response.rb)
+返回：[`SetCommentApprovedResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/set_comment_approved_response.rb)
 
 ## 示例
 
@@ -18,15 +20,17 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 comment_id = 'comment_id_example' # String | 
 opts = {
   approved: true, # Boolean | 
+  broadcast_id: 'broadcast_id_example', # String | 
   sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.post_set_comment_approval_status(comment_id, opts)
+  result = api_instance.post_set_comment_approval_status(tenant_id, comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_set_comment_approval_status: #{e}"

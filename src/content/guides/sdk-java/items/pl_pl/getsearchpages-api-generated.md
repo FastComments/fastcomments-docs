@@ -1,15 +1,16 @@
-## Parametry
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| value | string | query | Nie |  |
-| sso | string | query | Nie |  |
+| tenantId | string | query | Yes |  |
+| value | string | query | No |  |
+| sso | string | query | No |  |
 
-## Odpowiedź
+## Response
 
 Zwraca: [`ModerationPageSearchResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationPageSearchResponse.java)
 
-## Przykład
+## Example
 
 [inline-code-attrs-start title = 'Przykład getSearchPages'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String value = "value_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationPageSearchResponse result = apiInstance.getSearchPages()
+      ModerationPageSearchResponse result = apiInstance.getSearchPages(tenantId)
             .value(value)
             .sso(sso)
             .execute();
@@ -44,3 +46,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

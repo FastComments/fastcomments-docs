@@ -1,7 +1,8 @@
 ## Parametre
 
-| Navn | Type | Location | Påkrævet | Beskrivelse |
-|------|------|----------|----------|-------------|
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
+|------|------|-----------|----------|--------------|
+| tenantId | string | query | Ja |  |
 | page | number | query | Nej |  |
 | count | number | query | Nej |  |
 | text-search | string | query | Nej |  |
@@ -20,7 +21,7 @@ Returnerer: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments
 
 [inline-code-attrs-start title = 'getApiComments Eksempel'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importer klasser:
+// Importér klasser:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -33,6 +34,7 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     Double page = 3.4D; // Double | 
     Double count = 3.4D; // Double | 
     String textSearch = "textSearch_example"; // String | 
@@ -43,7 +45,7 @@ public class Example {
     Boolean demo = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationAPIGetCommentsResponse result = apiInstance.getApiComments()
+      ModerationAPIGetCommentsResponse result = apiInstance.getApiComments(tenantId)
             .page(page)
             .count(count)
             .textSearch(textSearch)

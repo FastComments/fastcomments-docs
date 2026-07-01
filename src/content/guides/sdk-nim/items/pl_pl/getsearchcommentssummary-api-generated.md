@@ -1,11 +1,9 @@
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|-------------|
-| value | string | Nie |  |
-| filters | string | Nie |  |
-| searchFilters | string | Nie |  |
-| sso | string | Nie |  |
+|------|------|----------|------|
+| tenantId | string | Tak |  |
+| options | GetSearchCommentsSummaryOptions | Nie |  |
 
 ## Odpowiedź
 
@@ -13,19 +11,14 @@ Zwraca: [`Option[ModerationCommentSearchResponse]`](https://github.com/FastComme
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład użycia getSearchCommentsSummary'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSearchCommentsSummary Przykład'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSearchCommentsSummary(
-  value = "news/climate-change-2026",
-  filters = "{\"tenantId\":\"my-tenant-123\",\"siteId\":\"main-site\",\"status\":\"approved\"}",
-  searchFilters = "author:journalist@news.com OR content:climate",
-  sso = "sso-xyz-7890"
+let (summaryOpt, httpResp) = client.getSearchCommentsSummary(
+  tenantId = "my-tenant-123",
+  options = GetSearchCommentsSummaryOptions()
 )
-if response.isSome:
-  let summary = response.get()
-  echo "Received summary: ", $summary
-else:
-  echo "No summary returned, HTTP response: ", $httpResponse
-[inline-code-end]
 
----
+if summaryOpt.isSome:
+  let summary = summaryOpt.get()
+  echo summary
+[inline-code-end]

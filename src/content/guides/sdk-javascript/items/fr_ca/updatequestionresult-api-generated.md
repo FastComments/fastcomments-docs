@@ -1,30 +1,39 @@
 ## Paramètres
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| updateQuestionResultBody | UpdateQuestionResultBody | Yes |  |
+| Nom | Type | Obligatoire | Description |
+|------|------|-------------|-------------|
+| tenantId | string | Oui |  |
+| id | string | Oui |  |
+| updateQuestionResultBody | UpdateQuestionResultBody | Oui |  |
 
 ## Réponse
 
-Renvoie: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Retourne : [`UpdateQuestionResultResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateQuestionResultResponse.ts)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple d\'utilisation de updateQuestionResult'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple updateQuestionResult'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_acme-corp_01";
-const id: string = "question_9f2d1b";
-const metaItem: MetaItem = { key: "platform", value: "web" };
-const status: APIStatus = { code: 0, message: "scored" };
-const updateQuestionResultBody: UpdateQuestionResultBody = {
-  score: 92,
-  passed: true,
-  status,
-  meta: [metaItem] // champ optionnel démontré
-};
-const result: APIEmptyResponse = await updateQuestionResult(tenantId, id, updateQuestionResultBody);
-[inline-code-end]
+async function runUpdate() {
+    const tenantId: string = "acme-corp-01";
+    const id: string = "qr-20230915-001";
 
----
+    const updateQuestionResultBody: UpdateQuestionResultBody = {
+        // champs requis
+        answer: "No",
+        // champs optionnels
+        comment: "User clarified their response",
+        // anotherOptionalField?: value,
+    };
+
+    const result: UpdateQuestionResultResponse = await updateQuestionResult(
+        tenantId,
+        id,
+        updateQuestionResultBody
+    );
+
+    console.log(result);
+}
+
+runUpdate();
+[inline-code-end]

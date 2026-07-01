@@ -1,4 +1,4 @@
-## Παράμετροι
+## Parameters
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
@@ -6,23 +6,23 @@
 | userId | string | Ναι |  |
 | createTicketBody | CreateTicketBody | Ναι |  |
 
-## Απόκριση
+## Response
 
-Επιστρέφει: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTicketResponse.ts)
+Επιστρέφει: [`CreateTicketResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTicketResponse1.ts)
 
-## Παράδειγμα
+## Example
 
-[inline-code-attrs-start title = 'Παράδειγμα createTicket'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createTicket Παράδειγμα'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-enterprises";
-const userId: string = "user_12039";
-const createTicketBody: CreateTicketBody = {
-  subject: "Login failures for multiple users",
-  description: "Users report 500 error when authenticating since 2026-06-18 08:00 UTC. Affects web and mobile.",
-  priority: "urgent",
-  tags: ["authentication", "outage"]
-};
-const result: CreateTicketResponse = await createTicket(tenantId, userId, createTicketBody);
-[inline-code-end]
+const tenantId: string = "tenant_12345";
+const userId: string = "user_98765";
 
----
+const ticketBody: CreateTicketBody = {
+  subject: "Issue with payment processing"
+  // description?: string είναι προαιρετικό και παραλείπεται
+};
+
+const response: CreateTicketResponse1 = await createTicket(tenantId, userId, ticketBody);
+// Παράδειγμα χρήσης ενός προαιρετικού πεδίου από την απόκριση
+// console.log(response.ticket?.id);
+[inline-code-end]

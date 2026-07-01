@@ -1,10 +1,12 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Ναι |  |
-| direction | string | query | Όχι |  |
-| sso | string | query | Όχι |  |
+|------|------|----------|------------|-----------|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| direction | string | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Απόκριση
 
@@ -24,18 +26,20 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
 	direction := "direction_example" // string |  (προαιρετικό)
+	broadcastId := "broadcastId_example" // string |  (προαιρετικό)
 	sso := "sso_example" // string |  (προαιρετικό)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostVote(context.Background(), commentId).Direction(direction).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostVote(context.Background(), commentId).TenantId(tenantId).Direction(direction).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostVote``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// απόκριση από `PostVote`: VoteResponse
+	// response from `PostVote`: VoteResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostVote`: %v\n", resp)
 }
 [inline-code-end]

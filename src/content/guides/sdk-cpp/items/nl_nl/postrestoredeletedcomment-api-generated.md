@@ -1,10 +1,10 @@
----
 ## Parameters
 
 | Naam | Type | Vereist | Beschrijving |
 |------|------|----------|-------------|
-| commentId | string | Ja |  |
-| sso | string | Nee |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| options | const PostRestoreDeletedCommentOptions& | Yes |  |
 
 ## Respons
 
@@ -14,15 +14,12 @@ Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-c
 
 [inline-code-attrs-start title = 'postRestoreDeletedComment Voorbeeld'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t commentId = U("comment-8b3f4a2d");
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
-api->postRestoreDeletedComment(commentId, sso).then([](pplx::task<std::shared_ptr<APIEmptyResponse>> t){
-    try {
-        std::shared_ptr<APIEmptyResponse> resp = t.get();
-        if (!resp) resp = std::make_shared<APIEmptyResponse>();
-    } catch (const std::exception&) {
-    }
-});
+utility::string_t tenantId = U("my-tenant-123");
+utility::string_t commentId = U("cmt-987654");
+PostRestoreDeletedCommentOptions options;
+options.reason = boost::optional<utility::string_t>(U("Restoring after accidental delete"));
+options.notifyUser = boost::optional<bool>(true);
+api->postRestoreDeletedComment(tenantId, commentId, options)
+    .then([](std::shared_ptr<APIEmptyResponse> resp){
+    });
 [inline-code-end]
-
----

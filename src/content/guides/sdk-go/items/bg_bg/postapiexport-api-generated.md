@@ -1,13 +1,14 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
-| text-search | string | query | Не |  |
-| byIPFromComment | string | query | Не |  |
-| filters | string | query | Не |  |
-| searchFilters | string | query | Не |  |
-| sorts | string | query | Не |  |
-| sso | string | query | Не |  |
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sorts | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Отговор
 
@@ -15,7 +16,7 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за PostApiExport'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PostApiExport Пример'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -27,6 +28,7 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	textSearch := "textSearch_example" // string |  (по избор)
 	byIPFromComment := "byIPFromComment_example" // string |  (по избор)
 	filters := "filters_example" // string |  (по избор)
@@ -36,14 +38,12 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostApiExport(context.Background()).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).Sorts(sorts).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostApiExport(context.Background()).TenantId(tenantId).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).Sorts(sorts).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostApiExport``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 	// отговор от `PostApiExport`: ModerationExportResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostApiExport`: %v\n", resp)
+	fmt.Fprintf(os.Stdout, "Отговор от `ModerationAPI.PostApiExport`: %v\n", resp)
 }
 [inline-code-end]
-
----

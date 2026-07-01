@@ -1,16 +1,16 @@
-## Parámetros
+## Parameters
 
-| Nombre | Tipo | Ubicación | Requerido | Descripción |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | No |  |
+| tenantId | string | query | Yes |  |
 
-## Respuesta
+## Response
 
-Devuelve: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateHashTagResponse.java)
+Returns: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateHashTagResponse.java)
 
-## Ejemplo
+## Example
 
-[inline-code-attrs-start title = 'Ejemplo de addHashTag'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo addHashTag'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importar clases:
 import com.fastcomments.invoker.ApiClient;
@@ -28,15 +28,14 @@ public class Example {
     // Configurar autorización de clave API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Descomente la siguiente línea para establecer un prefijo para la clave API, p. ej. "Token" (por defecto null)
+    // Descomente la siguiente línea para establecer un prefijo para la clave API, p. ej. "Token" (el valor predeterminado es null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     CreateHashTagBody createHashTagBody = new CreateHashTagBody(); // CreateHashTagBody | 
     try {
-      CreateHashTagResponse result = apiInstance.addHashTag()
-            .tenantId(tenantId)
+      CreateHashTagResponse result = apiInstance.addHashTag(tenantId)
             .createHashTagBody(createHashTagBody)
             .execute();
       System.out.println(result);
@@ -50,3 +49,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

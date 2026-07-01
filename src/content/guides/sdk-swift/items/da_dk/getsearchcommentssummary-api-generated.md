@@ -1,11 +1,12 @@
 ## Parametre
 
-| Name | Type | Location | Required | Description |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| value | string | query | Nej |  |
-| filters | string | query | Nej |  |
-| searchFilters | string | query | Nej |  |
-| sso | string | query | Nej |  |
+| tenantId | string | query | Yes |  |
+| value | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Svar
 
@@ -15,15 +16,16 @@ Returnerer: [`ModerationCommentSearchResponse`](https://github.com/FastComments/
 
 [inline-code-attrs-start title = 'getSearchCommentsSummary Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Følgende kodeeksempler er stadig i beta. For eventuelle problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De følgende kodeeksempler er stadig i beta. For eventuelle problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let value = "value_example" // String |  (valgfri)
 let filters = "filters_example" // String |  (valgfri)
 let searchFilters = "searchFilters_example" // String |  (valgfri)
 let sso = "sso_example" // String |  (valgfri)
 
-ModerationAPI.getSearchCommentsSummary(value: value, filters: filters, searchFilters: searchFilters, sso: sso) { (response, error) in
+ModerationAPI.getSearchCommentsSummary(tenantId: tenantId, options: ModerationAPI.GetSearchCommentsSummaryOptions(value: value, filters: filters, searchFilters: searchFilters, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -34,3 +36,5 @@ ModerationAPI.getSearchCommentsSummary(value: value, filters: filters, searchFil
     }
 }
 [inline-code-end]
+
+---

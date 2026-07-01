@@ -1,12 +1,12 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| שם | טיפוס | מיקום | חובה | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | כן |  |
-| postId | string | path | כן |  |
-| isUndo | boolean | query | לא |  |
-| broadcastId | string | query | לא |  |
-| sso | string | query | לא |  |
+| tenantId | string | path | Yes |  |
+| postId | string | path | Yes |  |
+| isUndo | boolean | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## תגובה
 
@@ -22,19 +22,23 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // אם ברצונך להשתמש בלקוח HTTP מותאם אישית, העבר את הלקוח שמממש את `GuzzleHttp\ClientInterface`.
-    // זה אופציונלי; `GuzzleHttp\Client` ישמש כברירת מחדל.
+    // אם ברצונך להשתמש בלקוח HTTP מותאם, העבר את הלקוח שלך שמממש `GuzzleHttp\ClientInterface`.
+    // זה אופציונלי, `GuzzleHttp\Client` יהיה בשימוש כברירת מחדל.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $post_id = 'post_id_example'; // string
 $react_body_params = new \FastComments\Client\Model\ReactBodyParams(); // \FastComments\Client\Model\ReactBodyParams
-$is_undo = True; // bool
-$broadcast_id = 'broadcast_id_example'; // string
-$sso = 'sso_example'; // string
+$options = [
+    'is_undo' => True, // bool
+    'broadcast_id' => 'broadcast_id_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->reactFeedPostPublic($tenant_id, $post_id, $react_body_params, $is_undo, $broadcast_id, $sso);
+    $result = $apiInstance->reactFeedPostPublic($tenant_id, $post_id, $react_body_params, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->reactFeedPostPublic: ', $e->getMessage(), PHP_EOL;

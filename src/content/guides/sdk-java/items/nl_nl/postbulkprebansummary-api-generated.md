@@ -2,14 +2,15 @@
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
-| includeByUserIdAndEmail | boolean | query | No |  |
-| includeByIP | boolean | query | No |  |
-| includeByEmailDomain | boolean | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Ja |  |
+| includeByUserIdAndEmail | boolean | query | Nee |  |
+| includeByIP | boolean | query | Nee |  |
+| includeByEmailDomain | boolean | query | Nee |  |
+| sso | string | query | Nee |  |
 
-## Respons
+## Reactie
 
-Geeft terug: [`BulkPreBanSummary`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/BulkPreBanSummary.java)
+Retourneert: [`BulkPreBanSummary`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/BulkPreBanSummary.java)
 
 ## Voorbeeld
 
@@ -28,13 +29,14 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     BulkPreBanParams bulkPreBanParams = new BulkPreBanParams(); // BulkPreBanParams | 
     Boolean includeByUserIdAndEmail = true; // Boolean | 
     Boolean includeByIP = true; // Boolean | 
     Boolean includeByEmailDomain = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      BulkPreBanSummary result = apiInstance.postBulkPreBanSummary(bulkPreBanParams)
+      BulkPreBanSummary result = apiInstance.postBulkPreBanSummary(tenantId, bulkPreBanParams)
             .includeByUserIdAndEmail(includeByUserIdAndEmail)
             .includeByIP(includeByIP)
             .includeByEmailDomain(includeByEmailDomain)

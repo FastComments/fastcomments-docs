@@ -1,34 +1,29 @@
 ## Parametri
 
-| Name | Tip | Obvezno | Opis |
+| Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| createAPIPageData | CreateAPIPageData | Da |  |
+| tenantId | string | Yes |  |
+| createAPIPageData | CreateAPIPageData | Yes |  |
 
 ## Odgovor
 
-Vrne: [`AddPageAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/AddPageAPIResponse.h)
+Returns: [`AddPageAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/AddPageAPIResponse.h)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer addPage'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'addPage Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-auto pageData = std::make_shared<CreateAPIPageData>();
-pageData->url = utility::string_t(U("https://example.com/articles/2025-modern-cpp"));
-pageData->title = utility::string_t(U("Modern C++ Patterns"));
-pageData->description = boost::optional<utility::string_t>(utility::string_t(U("Practical patterns for modern C++ development")));
-pageData->authorEmail = boost::optional<utility::string_t>(utility::string_t(U("dev@company.com")));
-pageData->published = boost::optional<bool>(true);
+auto createData = CreateAPIPageData{};
+createData.title = utility::string_t(U("Welcome Page"));
+createData.url = utility::string_t(U("https://example.com/welcome"));
+createData.description = boost::optional<utility::string_t>(utility::string_t(U("Landing page for new users")));
 
-api->addPage(utility::string_t(U("my-tenant-123")), *pageData)
-.then([](pplx::task<std::shared_ptr<AddPageAPIResponse>> t){
-    try {
-        auto resp = t.get();
-        return resp;
-    } catch (...) {
-        throw;
-    }
-});
+api->addPage(utility::string_t(U("my-tenant-123")), createData)
+    .then([](std::shared_ptr<AddPageAPIResponse> response) {
+        if (response && response->success) {
+            // obravnava uspešno dodajanje
+        } else {
+            // obravnava napako
+        }
+    });
 [inline-code-end]
-
----

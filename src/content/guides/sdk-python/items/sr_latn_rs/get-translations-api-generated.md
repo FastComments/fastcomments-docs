@@ -1,7 +1,7 @@
 ## Parametri
 
-| Naziv | Tip | Location | Obavezno | Opis |
-|------|------|----------|----------|-------------|
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
 | namespace | string | path | Da |  |
 | component | string | path | Da |  |
 | locale | string | query | Ne |  |
@@ -13,9 +13,10 @@ Vraća: [`GetTranslationsResponse`](https://github.com/FastComments/fastcomments
 
 ## Primer
 
-[inline-code-attrs-start title = 'get_translations Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer get_translations'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetTranslationsOptions
 from client.models.get_translations_response import GetTranslationsResponse
 from client.rest import ApiException
 from pprint import pprint
@@ -33,11 +34,11 @@ with client.ApiClient(configuration) as api_client:
     api_instance = client.PublicApi(api_client)
     namespace = 'namespace_example' # str | 
     component = 'component_example' # str | 
-    locale = 'locale_example' # str |  (opciono)
-    use_full_translation_ids = True # bool |  (opciono)
+    locale = 'locale_example' # str |  (optional)
+    use_full_translation_ids = True # bool |  (optional)
 
     try:
-        api_response = api_instance.get_translations(namespace, component, locale=locale, use_full_translation_ids=use_full_translation_ids)
+        api_response = api_instance.get_translations(namespace, component, GetTranslationsOptions(locale=locale, use_full_translation_ids=use_full_translation_ids))
         print("The response of PublicApi->get_translations:\n")
         pprint(api_response)
     except Exception as e:

@@ -4,36 +4,36 @@ urlId
 
 ## Parametre
 
-| Name | Type | Placering | Påkrævet | Beskrivelse |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Ja |  |
-| urlId | string | query | Ja |  |
-| page | integer | query | Nej |  |
-| direction | string | query | Nej |  |
-| sso | string | query | Nej |  |
-| skip | integer | query | Nej |  |
-| skipChildren | integer | query | Nej |  |
-| limit | integer | query | Nej |  |
-| limitChildren | integer | query | Nej |  |
-| countChildren | boolean | query | Nej |  |
-| fetchPageForCommentId | string | query | Nej |  |
-| includeConfig | boolean | query | Nej |  |
-| countAll | boolean | query | Nej |  |
-| includei10n | boolean | query | Nej |  |
-| locale | string | query | Nej |  |
-| modules | string | query | Nej |  |
-| isCrawler | boolean | query | Nej |  |
-| includeNotificationCount | boolean | query | Nej |  |
-| asTree | boolean | query | Nej |  |
-| maxTreeDepth | integer | query | Nej |  |
-| useFullTranslationIds | boolean | query | Nej |  |
-| parentId | string | query | Nej |  |
-| searchText | string | query | Nej |  |
-| hashTags | array | query | Nej |  |
-| userId | string | query | Nej |  |
-| customConfigStr | string | query | Nej |  |
-| afterCommentId | string | query | Nej |  |
-| beforeCommentId | string | query | Nej |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| page | integer | query | No |  |
+| direction | string | query | No |  |
+| sso | string | query | No |  |
+| skip | integer | query | No |  |
+| skipChildren | integer | query | No |  |
+| limit | integer | query | No |  |
+| limitChildren | integer | query | No |  |
+| countChildren | boolean | query | No |  |
+| fetchPageForCommentId | string | query | No |  |
+| includeConfig | boolean | query | No |  |
+| countAll | boolean | query | No |  |
+| includei10n | boolean | query | No |  |
+| locale | string | query | No |  |
+| modules | string | query | No |  |
+| isCrawler | boolean | query | No |  |
+| includeNotificationCount | boolean | query | No |  |
+| asTree | boolean | query | No |  |
+| maxTreeDepth | integer | query | No |  |
+| useFullTranslationIds | boolean | query | No |  |
+| parentId | string | query | No |  |
+| searchText | string | query | No |  |
+| hashTags | array | query | No |  |
+| userId | string | query | No |  |
+| customConfigStr | string | query | No |  |
+| afterCommentId | string | query | No |  |
+| beforeCommentId | string | query | No |  |
 
 ## Svar
 
@@ -43,7 +43,7 @@ Returnerer: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/
 
 [inline-code-attrs-start title = 'getCommentsPublic Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Følgende kodeeksempler er stadig i beta. Hvis du oplever problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De følgende kodeeksempler er stadig beta. For eventuelle problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -75,7 +75,7 @@ let customConfigStr = "customConfigStr_example" // String |  (valgfri)
 let afterCommentId = "afterCommentId_example" // String |  (valgfri)
 let beforeCommentId = "beforeCommentId_example" // String |  (valgfri)
 
-PublicAPI.getCommentsPublic(tenantId: tenantId, urlId: urlId, page: page, direction: direction, sso: sso, skip: skip, skipChildren: skipChildren, limit: limit, limitChildren: limitChildren, countChildren: countChildren, fetchPageForCommentId: fetchPageForCommentId, includeConfig: includeConfig, countAll: countAll, includei10n: includei10n, locale: locale, modules: modules, isCrawler: isCrawler, includeNotificationCount: includeNotificationCount, asTree: asTree, maxTreeDepth: maxTreeDepth, useFullTranslationIds: useFullTranslationIds, parentId: parentId, searchText: searchText, hashTags: hashTags, userId: userId, customConfigStr: customConfigStr, afterCommentId: afterCommentId, beforeCommentId: beforeCommentId) { (response, error) in
+PublicAPI.getCommentsPublic(tenantId: tenantId, urlId: urlId, options: PublicAPI.GetCommentsPublicOptions(page: page, direction: direction, sso: sss, skip: skip, skipChildren: skipChildren, limit: limit, limitChildren: limitChildren, countChildren: countChildren, fetchPageForCommentId: fetchPageForCommentId, includeConfig: includeConfig, countAll: countAll, includei10n: includei10n, locale: locale, modules: modules, isCrawler: isCrawler, includeNotificationCount: includeNotificationCount, asTree: asTree, maxTreeDepth: maxTreeDepth, useFullTranslationIds: useFullTranslationIds, parentId: parentId, searchText: searchText, hashTags: hashTags, userId: userId, customConfigStr: customConfigStr, afterCommentId: afterCommentId, beforeCommentId: beforeCommentId)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -86,3 +86,5 @@ PublicAPI.getCommentsPublic(tenantId: tenantId, urlId: urlId, page: page, direct
     }
 }
 [inline-code-end]
+
+---

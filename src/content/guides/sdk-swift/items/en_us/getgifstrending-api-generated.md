@@ -23,7 +23,7 @@ let locale = "locale_example" // String |  (optional)
 let rating = "rating_example" // String |  (optional)
 let page = 987 // Double |  (optional)
 
-PublicAPI.getGifsTrending(tenantId: tenantId, locale: locale, rating: rating, page: page) { (response, error) in
+PublicAPI.getGifsTrending(tenantId: tenantId, options: PublicAPI.GetGifsTrendingOptions(locale: locale, rating: rating, page: page)) { (response, error) in
     guard error == nil else {
         print(error)
         return

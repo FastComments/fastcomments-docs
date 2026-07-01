@@ -2,8 +2,9 @@
 
 | שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| urlId | string | query | כן |  |
-| sso | string | query | לא |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## תגובה
 
@@ -19,19 +20,20 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // אם ברצונך להשתמש בלקוח HTTP מותאם אישית, העבר את הלקוח שלך שמממש את `GuzzleHttp\ClientInterface`.
-    // זה אופציונלי, `GuzzleHttp\Client` ישמש כברירת מחדל.
+    // אם אתה רוצה להשתמש בלקוח HTTP מותאם, העבר את הלקוח שלך שממומש `GuzzleHttp\ClientInterface`.
+    // זה אופציונלי, `GuzzleHttp\Client` ישמש ברירת מחדל.
     new GuzzleHttp\Client()
 );
-$url_id = 'url_id_example'; // string
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // מחרוזת
+$url_id = 'url_id_example'; // מחרוזת
+$sso = 'sso_example'; // מחרוזת
+
 
 try {
-    $result = $apiInstance->putReopenThread($url_id, $sso);
+    $result = $apiInstance->putReopenThread($tenant_id, $url_id, $sso);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->putReopenThread: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

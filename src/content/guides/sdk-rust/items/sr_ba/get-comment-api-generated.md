@@ -1,26 +1,28 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| id | String | Да |  |
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`ApiGetCommentResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_get_comment_response.rs)
+Vraća: [`ApiGetCommentResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_get_comment_response.rs)
 
-## Примјер
+## Primer
 
-[inline-code-attrs-start title = 'get_comment Примјер'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_comment Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_comment() -> Result<(), Error> {
-    let params: GetCommentParams = GetCommentParams {
+async fn fetch_comment() -> Result<(), Error> {
+    let params = GetCommentParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "news/article-2026-06-19/comment-742".to_string(),
-        include_replies: Some(true),
+        id: "comment-12345".to_string(),
+        include_deleted: Some(false),
     };
-    let comment: ApiGetCommentResponse = get_comment(&configuration, params).await?;
-    println!("{:#?}", comment);
+
+    let _response: ApiGetCommentResponse = get_comment(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
+
+---

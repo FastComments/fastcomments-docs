@@ -1,50 +1,33 @@
-Συγκεντρώνει έγγραφα ομαδοποιώντας τα (αν παρέχεται το groupBy) και εφαρμόζοντας πολλαπλές λειτουργίες.
-Υποστηρίζονται διάφορες λειτουργίες (π.χ. sum, countDistinct, avg, κ.λπ.).
+Συγκεντρώνει έγγραφα ομαδοποιώντας τα (εάν παρέχεται groupBy) και εφαρμόζοντας πολλαπλές λειτουργίες.  
+Διαφορετικές λειτουργίες (π.χ. sum, countDistinct, avg, κ.λπ.) υποστηρίζονται.
 
 ## Παράμετροι
 
-| Name | Type | Required | Description |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
-| tenant_id | String | Ναι |  |
-| aggregation_request | models::AggregationRequest | Ναι |  |
-| parent_tenant_id | String | Όχι |  |
-| include_stats | bool | Όχι |  |
+| tenant_id | String | Yes |  |
+| aggregation_request | models::AggregationRequest | Yes |  |
+| parent_tenant_id | String | No |  |
+| include_stats | bool | No |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`AggregateResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/aggregate_response.rs)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα aggregate'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παράδειγμα Συγκέντρωσης'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params = AggregateParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    aggregation_request: models::AggregationRequest {
-        predicates: Some(vec![
-            models::QueryPredicate {
-                field: "path".to_string(),
-                operator: "EQUALS".to_string(),
-                values: Some(vec![
-                    models::QueryPredicateValue { value: "news/article".to_string() }
-                ]),
-            }
-        ]),
-        operations: vec![
-            models::AggregationOperation {
-                op_type: models::AggregationOpType::COUNT,
-                field: Some("comment_id".to_string()),
-                alias: Some("total_comments".to_string()),
-            }
-        ],
-        sort: Some(vec![
-            models::AggregationRequestSort { field: "total_comments".to_string(), direction: "DESC".to_string() }
-        ]),
-    },
-    parent_tenant_id: Some("acme-parent-tenant".to_string()),
-    include_stats: Some(true),
-};
-let aggregate_response: AggregateResponse = aggregate(&configuration, params).await?;
+async fn example() -> Result<(), Error> {
+    let config = configuration::Configuration::default();
+    let aggregation_request = models::AggregationRequest::default();
+    let params = AggregateParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        aggregation_request,
+        parent_tenant_id: Some("global-tenant".to_string()),
+        include_stats: Some(true),
+    };
+    let _response = aggregate(&config, params).await?;
+    Ok(())
+}
 [inline-code-end]
-
----

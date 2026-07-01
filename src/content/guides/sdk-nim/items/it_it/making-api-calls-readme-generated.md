@@ -1,4 +1,6 @@
-Tutti i metodi API in questo SDK restituiscono tuple di `(Option[ResponseType], Response)`. Il primo elemento contiene la risposta analizzata se ha successo, e il secondo elemento è la risposta HTTP grezza.
+All API methods in this SDK return tuples of `(Option[ResponseType], Response)`. The first element contains the parsed response if successful, and the second element is the raw HTTP response.
+
+I parametri obbligatori e il corpo della richiesta vengono passati positionalmente. I restanti parametri opzionali vengono raccolti in un unico oggetto `Api<Operation>Options`, che è l'ultimo argomento. Le operazioni senza parametri opzionali non richiedono alcun oggetto di opzioni.
 
 ### Esempio: Recupero dei commenti
 
@@ -14,20 +16,10 @@ client.headers["x-api-key"] = "your-api-key"
 let (response, httpResponse) = getComments(
   httpClient = client,
   tenantId = "your-tenant-id",
-  page = 0,
-  limit = 0,
-  skip = 0,
-  asTree = false,
-  skipChildren = 0,
-  limitChildren = 0,
-  maxTreeDepth = 0,
-  urlId = "your-url-id",
-  userId = "",
-  anonUserId = "",
-  contextUserId = "",
-  hashTag = "",
-  parentId = "",
-  direction = SortDirections.DESC
+  options = GetCommentsOptions(
+    urlId: "your-url-id",
+    direction: SortDirections.DESC
+  )
 )
 
 if httpResponse.code == Http200:
@@ -36,3 +28,4 @@ if httpResponse.code == Http200:
     if resp.comments.isSome:
       echo "Found ", resp.comments.get().len, " comments"
 ```
+---

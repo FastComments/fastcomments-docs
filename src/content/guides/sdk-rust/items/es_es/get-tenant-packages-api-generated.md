@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Name | Type | Required | Description |
+| Nombre | Tipo | Obligatorio | Descripción |
 |------|------|----------|-------------|
 | tenant_id | String | Sí |  |
 | skip | f64 | No |  |
@@ -11,16 +11,14 @@ Devuelve: [`GetTenantPackagesResponse`](https://github.com/FastComments/fastcomm
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de get_tenant_packages'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo get_tenant_packages'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let params: GetTenantPackagesParams = GetTenantPackagesParams {
-        tenant_id: String::from("acme-corp-tenant"),
-        skip: Some(10.0),
+async fn example() -> Result<(), Error> {
+    let params = GetTenantPackagesParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        skip: Some(5.0),
     };
-    let response: GetTenantPackagesResponse = get_tenant_packages(&configuration, params).await?;
+    let _resp = get_tenant_packages(&config, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

@@ -1,7 +1,7 @@
 ## Parametri
 
 | Nome | Tipo | Obbligatorio | Descrizione |
-|------|------|----------|-------------|
+|------|------|--------------|-------------|
 | tenantId | string | Sì |  |
 | bulkAggregateQuestionResultsRequest | BulkAggregateQuestionResultsRequest | No |  |
 | forceRecalculate | bool | No |  |
@@ -12,17 +12,16 @@ Restituisce: [`Option[BulkAggregateQuestionResultsResponse]`](https://github.com
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di bulkAggregateQuestionResults'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'bulkAggregateQuestionResults Esempio'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.bulkAggregateQuestionResults(
+let request = BulkAggregateQuestionResultsRequest()
+let (maybeResult, httpResp) = client.bulkAggregateQuestionResults(
   tenantId = "my-tenant-123",
-  bulkAggregateQuestionResultsRequest = BulkAggregateQuestionResultsRequest(),
-  forceRecalculate = false
-)
+  bulkAggregateQuestionResultsRequest = request,
+  forceRecalculate = false)
 
-if response.isSome:
-  let aggregated = response.get()
-  echo "Aggregated question results received"
+if maybeResult.isSome:
+  let result = maybeResult.get()
 [inline-code-end]
 
 ---

@@ -1,11 +1,10 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Ім'я | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Так |  |
 | id | string | Ні |  |
-| userId | string | Ні |  |
-| anonUserId | string | Ні |  |
+| options | UnFlagCommentOptions | Ні |  |
 
 ## Відповідь
 
@@ -13,18 +12,9 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад unFlagComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'unFlagComment Приклад'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.unFlagComment(tenantId = "my-tenant-123",
-  id = "comment-98765",
-  userId = "user-12345",
-  anonUserId = "")
-
-if response.isSome:
-  let flagResp = response.get()
-  echo "Unflagged comment response:", flagResp
-else:
-  echo "Unflag failed, HTTP status:", httpResponse.status
+let (flagRespOpt, httpResp) = client.unFlagComment(tenantId = "my-tenant-123", id = "comment-456", options = UnFlagCommentOptions())
+if flagRespOpt.isSome:
+  let flagResp = flagRespOpt.get()
 [inline-code-end]
-
----

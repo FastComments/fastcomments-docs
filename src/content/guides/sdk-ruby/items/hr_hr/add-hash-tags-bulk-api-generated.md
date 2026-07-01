@@ -1,8 +1,8 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | No |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
 
 ## Odgovor
 
@@ -16,21 +16,19 @@ require 'time'
 require 'fastcomments-client'
 # postavljanje autorizacije
 FastCommentsClient.configure do |config|
-  # Konfigurirajte autorizaciju putem API ključa: api_key
+  # Konfiguriraj autorizaciju API ključa: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Uklonite komentar sljedeće linije kako biste postavili prefiks za API ključ, npr. 'Bearer' (zadano: nil)
+  # Odkomentiraj sljedeći redak da postaviš prefiks za API ključ, npr. 'Bearer' (zadano nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
-opts = {
-  tenant_id: 'tenant_id_example', # String | 
-  bulk_create_hash_tags_body: FastCommentsClient::BulkCreateHashTagsBody.new({tags: [FastCommentsClient::BulkCreateHashTagsBodyTagsInner.new({tag: 'tag_example'})]}) # BulkCreateHashTagsBody | 
-}
+tenant_id = 'tenant_id_example' # String | 
+bulk_create_hash_tags_body = FastCommentsClient::BulkCreateHashTagsBody.new({tags: [FastCommentsClient::BulkCreateHashTagsBodyTagsInner.new({tag: 'tag_example'})]}) # BulkCreateHashTagsBody | 
 
 begin
   
-  result = api_instance.add_hash_tags_bulk(opts)
+  result = api_instance.add_hash_tags_bulk(tenant_id, bulk_create_hash_tags_body)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->add_hash_tags_bulk: #{e}"

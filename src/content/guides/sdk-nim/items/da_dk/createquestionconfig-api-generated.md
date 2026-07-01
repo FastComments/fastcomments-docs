@@ -1,32 +1,26 @@
-## Parametre
+## Parameters
 
-| Navn | Type | Påkrævet | Beskrivelse |
+| Navn | Type | Krævet | Beskrivelse |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | createQuestionConfigBody | CreateQuestionConfigBody | Nej |  |
 
-## Respons
+## Response
 
 Returnerer: [`Option[CreateQuestionConfigResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_question_config_response.nim)
 
-## Eksempel
+## Example
 
-[inline-code-attrs-start title = 'Eksempel på createQuestionConfig'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createQuestionConfig Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.createQuestionConfig(
+let configBody = CreateQuestionConfigBody()
+let (maybeResp, httpResp) = client.createQuestionConfig(
   tenantId = "my-tenant-123",
-  createQuestionConfigBody = CreateQuestionConfigBody(
-    label = "Article Question",
-    required = true,
-    minLength = 20,
-    maxLength = 1000,
-    allowedTags = @["comment","question","feedback"],
-    notifyModerators = false
-  )
+  createQuestionConfigBody = configBody,
 )
-if response.isSome:
-  let cfg = response.get()
-  echo "Created question config id: ", cfg.id
+if maybeResp.isSome:
+  let resp = maybeResp.get()
+  # brug resp efter behov
 [inline-code-end]
 
 ---

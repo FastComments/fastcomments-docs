@@ -1,11 +1,11 @@
 ## Paramètres
 
 | Nom | Type | Obligatoire | Description |
-|------|------|----------|-------------|
+|------|------|------------|-------------|
 | tenantId | string | Oui |  |
 | notificationId | string | Non |  |
 | newStatus | string | Non |  |
-| sso | string | Non |  |
+| sso | string = "" | Non |  |
 
 ## Réponse
 
@@ -15,17 +15,12 @@ Renvoie : [`Option[UpdateUserNotificationStatusResponse]`](https://github.com/Fa
 
 [inline-code-attrs-start title = 'Exemple de updateUserNotificationStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateUserNotificationStatus(
+let (respOpt, httpResponse) = client.updateUserNotificationStatus(
   tenantId = "my-tenant-123",
   notificationId = "notif-456",
   newStatus = "read",
-  sso = "sso-token-abc123"
+  sso = ""
 )
-if response.isSome:
-  let updated = response.get()
-  echo "Notification status updated successfully"
-else:
-  echo "No update response received"
+if respOpt.isSome:
+  let status = respOpt.get()
 [inline-code-end]
-
----

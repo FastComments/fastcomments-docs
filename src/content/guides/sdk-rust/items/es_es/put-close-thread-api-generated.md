@@ -1,8 +1,8 @@
----
 ## Parámetros
 
 | Nombre | Tipo | Requerido | Descripción |
-|------|------|----------|-------------|
+|--------|------|-----------|-------------|
+| tenant_id | String | Sí |  |
 | url_id | String | Sí |  |
 | sso | String | No |  |
 
@@ -12,16 +12,16 @@ Devuelve: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de put_close_thread'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo put_close_thread'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn close_thread() -> Result<(), Error> {
-    let params: PutCloseThreadParams = PutCloseThreadParams {
-        url_id: String::from("news/2026/07/acme-launch-coverage"),
-        sso: Some(String::from("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.sso_payload.signature")),
+async fn example() -> Result<(), Error> {
+    let config = configuration::Configuration::default();
+    let params = PutCloseThreadParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        url_id: "news/article-123".to_string(),
+        sso: Some("sso-token-abc".to_string()),
     };
-    let response: ApiEmptyResponse = put_close_thread(&configuration, params).await?;
+    put_close_thread(&config, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

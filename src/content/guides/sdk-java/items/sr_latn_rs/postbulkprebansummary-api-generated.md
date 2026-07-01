@@ -1,11 +1,12 @@
 ## Parametri
 
-| Naziv | Type | Location | Obavezno | Description |
-|------|------|----------|----------|-------------|
-| includeByUserIdAndEmail | boolean | query | Ne |  |
-| includeByIP | boolean | query | Ne |  |
-| includeByEmailDomain | boolean | query | Ne |  |
-| sso | string | query | Ne |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| includeByUserIdAndEmail | boolean | query | No |  |
+| includeByIP | boolean | query | No |  |
+| includeByEmailDomain | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -13,9 +14,9 @@ Vraća: [`BulkPreBanSummary`](https://github.com/FastComments/fastcomments-java/
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer postBulkPreBanSummary'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postBulkPreBanSummary Primer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvezi klase:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -28,13 +29,14 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     BulkPreBanParams bulkPreBanParams = new BulkPreBanParams(); // BulkPreBanParams | 
     Boolean includeByUserIdAndEmail = true; // Boolean | 
     Boolean includeByIP = true; // Boolean | 
     Boolean includeByEmailDomain = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      BulkPreBanSummary result = apiInstance.postBulkPreBanSummary(bulkPreBanParams)
+      BulkPreBanSummary result = apiInstance.postBulkPreBanSummary(tenantId, bulkPreBanParams)
             .includeByUserIdAndEmail(includeByUserIdAndEmail)
             .includeByIP(includeByIP)
             .includeByEmailDomain(includeByEmailDomain)
@@ -51,5 +53,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

@@ -1,10 +1,10 @@
 ## Parametre
 
-| Name | Type | Påkrævet | Beskrivelse |
-|------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| id | string | Nej |  |
-| sendEmail | string | Nej |  |
+| Navn | Type | Obligatorisk | Beskrivelse |
+|------|------|--------------|-------------|
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| sendEmail | string = "" | No |  |
 
 ## Svar
 
@@ -12,14 +12,15 @@ Returnerer: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcom
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på deleteModerator'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteModerator Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteModerator(tenantId = "my-tenant-123", id = "", sendEmail = "")
-if response.isSome:
-  let apiEmpty = response.get()
-  echo "Moderator deleted successfully for tenant my-tenant-123"
-else:
-  echo "No response returned; inspect httpResponse"
-[inline-code-end]
+let (apiResp, httpResp) = client.deleteModerator(
+  tenantId = "my-tenant-123",
+  id = "mod-789",
+  sendEmail = "admin@mydomain.com",
+)
 
----
+if apiResp.isSome:
+  let empty = apiResp.get()
+  echo "Moderator removed"
+[inline-code-end]

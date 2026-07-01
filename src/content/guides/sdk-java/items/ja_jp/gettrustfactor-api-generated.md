@@ -1,13 +1,14 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | はい |  |
 | userId | string | query | いいえ |  |
 | sso | string | query | いいえ |  |
 
-## レスポンス
+## 応答
 
-戻り値: [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserTrustFactorResponse.java)
+Returns: [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserTrustFactorResponse.java)
 
 ## 例
 
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String userId = "userId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      GetUserTrustFactorResponse result = apiInstance.getTrustFactor()
+      GetUserTrustFactorResponse result = apiInstance.getTrustFactor(tenantId)
             .userId(userId)
             .sso(sso)
             .execute();

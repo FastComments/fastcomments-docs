@@ -1,21 +1,24 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Назва | Тип | Обов'язковий | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| id | string | Так |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
 ## Відповідь
 
-Повертає: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Returns: [`DeleteQuestionResultResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteQuestionResultResponse.ts)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад deleteQuestionResult'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteQuestionResult Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-publishing-01';
-const id: string = 'qres-7a3d9f45-2b6e-4c9a-8f1b-0d3f2c9a1e6b';
-const result: APIEmptyResponse = await deleteQuestionResult(tenantId, id);
-[inline-code-end]
+async function runDeletion(): Promise<void> {
+    const tenantId: string = "tenant-001";
+    const resultId: string = "c9f2a5b3-7e6d-4c9a-8b1f-2d3e4f5a6b7c";
+    const result: DeleteQuestionResultResponse = await deleteQuestionResult(tenantId, resultId);
+    console.log(result);
+}
 
----
+runDeletion();
+[inline-code-end]

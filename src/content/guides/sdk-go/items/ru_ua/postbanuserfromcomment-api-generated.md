@@ -1,17 +1,18 @@
 ## Параметры
 
-| Имя | Тип | Location | Обязательно | Описание |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Да |  |
-| banEmail | boolean | query | Нет |  |
-| banEmailDomain | boolean | query | Нет |  |
-| banIP | boolean | query | Нет |  |
-| deleteAllUsersComments | boolean | query | Нет |  |
-| bannedUntil | string | query | Нет |  |
-| isShadowBan | boolean | query | Нет |  |
-| updateId | string | query | Нет |  |
-| banReason | string | query | Нет |  |
-| sso | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| banEmail | boolean | query | No |  |
+| banEmailDomain | boolean | query | No |  |
+| banIP | boolean | query | No |  |
+| deleteAllUsersComments | boolean | query | No |  |
+| bannedUntil | string | query | No |  |
+| isShadowBan | boolean | query | No |  |
+| updateId | string | query | No |  |
+| banReason | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Ответ
 
@@ -31,6 +32,7 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
 	banEmail := true // bool |  (необязательно)
 	banEmailDomain := true // bool |  (необязательно)
@@ -44,12 +46,14 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostBanUserFromComment(context.Background(), commentId).BanEmail(banEmail).BanEmailDomain(banEmailDomain).BanIP(banIP).DeleteAllUsersComments(deleteAllUsersComments).BannedUntil(bannedUntil).IsShadowBan(isShadowBan).UpdateId(updateId).BanReason(banReason).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostBanUserFromComment(context.Background(), commentId).TenantId(tenantId).BanEmail(banEmail).BanEmailDomain(banEmailDomain).BanIP(banIP).DeleteAllUsersComments(deleteAllUsersComments).BannedUntil(bannedUntil).IsShadowBan(isShadowBan).UpdateId(updateId).BanReason(banReason).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostBanUserFromComment``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Ошибка при вызове `ModerationAPI.PostBanUserFromComment``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Полный HTTP-ответ: %v\n", r)
 	}
 	// ответ от `PostBanUserFromComment`: BanUserFromCommentResult
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostBanUserFromComment`: %v\n", resp)
+	fmt.Fprintf(os.Stdout, "Ответ от `ModerationAPI.PostBanUserFromComment`: %v\n", resp)
 }
 [inline-code-end]
+
+---

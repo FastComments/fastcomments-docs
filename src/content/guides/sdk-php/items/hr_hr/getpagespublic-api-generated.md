@@ -1,17 +1,17 @@
-Popis stranica za tenant. Koristi se od strane FChat desktop klijenta za popunjavanje njegovog popisa soba.
-Zahtijeva da `enableFChat` bude true u razriješenoj prilagođenoj konfiguraciji za svaku stranicu.
-Stranice koje zahtijevaju SSO filtriraju se prema pristupnim grupama korisnika koji šalje zahtjev.
+List pages for a tenant. Used by the FChat desktop client to populate its room list.
+Requires `enableFChat` to be true on the resolved custom config for each page.
+Pages that require SSO are filtered against the requesting user's group access.
 
 ## Parametri
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| cursor | string | query | No | Nečitljiv paginacijski kursor vraćen kao `nextCursor` iz prethodnog zahtjeva. Povezan s istim `sortBy`. |
-| limit | integer | query | No | 1..200, zadano 50 |
-| q | string | query | No | Neobavezni prefiks naslova koji ne razlikuje velika/mala slova. |
-| sortBy | string | query | No | Redoslijed sortiranja. `updatedAt` (zadano, najnovije prvo), `commentCount` (stranice s najviše komentara prve), ili `title` (abecedno). |
-| hasComments | boolean | query | No | Ako je true, vraćaju se samo stranice s barem jednim komentarom. |
+| tenantId | string | path | Da |  |
+| cursor | string | query | Ne | Neprozirni kursorski pokazivač za paginaciju vraćen kao `nextCursor` iz prethodnog zahtjeva. Povezano s istim `sortBy`. |
+| limit | integer | query | Ne | 1..200, zadano 50 |
+| q | string | query | Ne | Opcionalni filter prefiksa naslova koji ne razlikuje veličinu slova. |
+| sortBy | string | query | Ne | Redoslijed sortiranja. `updatedAt` (zadano, najnoviji prvi), `commentCount` (najviše komentara prvi), ili `title` (abecedno). |
+| hasComments | boolean | query | Ne | Ako je true, vrati samo stranice s barem jednim komentarom. |
 
 ## Odgovor
 
@@ -28,20 +28,26 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
     // Ako želite koristiti prilagođeni HTTP klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opcionalno, kao zadani će se koristiti `GuzzleHttp\Client`.
+    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao zadano.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$cursor = 'cursor_example'; // string | Nečitljiv paginacijski kursor vraćen kao `nextCursor` iz prethodnog zahtjeva. Povezan s istim `sortBy`.
-$limit = 56; // int | 1..200, zadano 50
-$q = 'q_example'; // string | Neobavezni prefiks naslova koji ne razlikuje velika/mala slova.
-$sort_by = new \FastComments\Client\Model\\FastComments\Client\Model\PagesSortBy(); // \FastComments\Client\Model\PagesSortBy | Redoslijed sortiranja. `updatedAt` (zadano, najnovije prvo), `commentCount` (stranice s najviše komentara prve), ili `title` (abecedno).
-$has_comments = True; // bool | Ako je true, vraćaju se samo stranice s barem jednim komentarom.
+$options = [
+    'cursor' => 'cursor_example', // string | Neprozirni kursorski pokazivač za paginaciju vraćen kao `nextCursor` iz prethodnog zahtjeva. Povezano s istim `sortBy`.
+    'limit' => 56, // int | 1..200, zadano 50
+    'q' => 'q_example', // string | Opcionalni filter prefiksa naslova koji ne razlikuje veličinu slova.
+    'sort_by' => new \FastComments\Client\Model\\FastComments\Client\Model\PagesSortBy(), // \FastComments\Client\Model\PagesSortBy | Redoslijed sortiranja. `updatedAt` (zadano, najnoviji prvi), `commentCount` (najviše komentara prvi), ili `title` (abecedno).
+    'has_comments' => True, // bool | Ako je true, vrati samo stranice s barem jednim komentarom.
+];
+
 
 try {
-    $result = $apiInstance->getPagesPublic($tenant_id, $cursor, $limit, $q, $sort_by, $has_comments);
+    $result = $apiInstance->getPagesPublic($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getPagesPublic: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

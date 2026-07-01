@@ -1,7 +1,8 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
+|------|------|----------|------------|-----------|
+| tenantId | string | query | Ναι |  |
 | text-search | string | query | Όχι |  |
 | byIPFromComment | string | query | Όχι |  |
 | filters | string | query | Όχι |  |
@@ -16,7 +17,7 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα GetApiIds'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GetApiIds Παράδειγμα'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -28,6 +29,7 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	textSearch := "textSearch_example" // string |  (προαιρετικό)
 	byIPFromComment := "byIPFromComment_example" // string |  (προαιρετικό)
 	filters := "filters_example" // string |  (προαιρετικό)
@@ -38,7 +40,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetApiIds(context.Background()).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).AfterId(afterId).Demo(demo).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetApiIds(context.Background()).TenantId(tenantId).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).AfterId(afterId).Demo(demo).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetApiIds``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

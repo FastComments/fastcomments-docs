@@ -1,25 +1,26 @@
-## פרמטרים
+## Parameters
 
-| Name | Type | Required | Description |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | commentId | string | כן |  |
 | broadcastId | string | לא |  |
-| editKey | string | לא |  |
-| sso | string | לא |  |
+| options | DeleteCommentPublicOptions | לא |  |
 
-## תגובה
+## Response
 
 מחזיר: [`Option[PublicAPIDeleteCommentResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_public_api_delete_comment_response.nim)
 
-## דוגמה
+## Example
 
-[inline-code-attrs-start title = 'דוגמה ל-deleteCommentPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת deleteCommentPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteCommentPublic(tenantId = "my-tenant-123", commentId = "cmt-987654321", broadcastId = "", editKey = "", sso = "")
-if response.isSome:
-  let deleted = response.get()
-  echo "Delete acknowledged, HTTP status: ", httpResponse.status
+let (responseOpt, httpResp) = client.deleteCommentPublic(
+  tenantId = "my-tenant-123",
+  commentId = "cmt-456789",
+  broadcastId = "",
+  options = DeleteCommentPublicOptions())
+if responseOpt.isSome:
+  let resp = responseOpt.get()
+  echo resp
 [inline-code-end]
-
----

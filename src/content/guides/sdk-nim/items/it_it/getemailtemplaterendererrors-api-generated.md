@@ -1,7 +1,7 @@
 ## Parametri
 
-| Nome | Tipo | Richiesto | Descrizione |
-|------|------|----------|-------------|
+| Nome | Tipo | Obbligatorio | Descrizione |
+|------|------|--------------|-------------|
 | tenantId | string | Sì |  |
 | id | string | No |  |
 | skip | float64 | No |  |
@@ -12,14 +12,18 @@ Restituisce: [`Option[GetEmailTemplateRenderErrorsResponse]`](https://github.com
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di getEmailTemplateRenderErrors'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getEmailTemplateRenderErrors Esempio'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getEmailTemplateRenderErrors(tenantId = "my-tenant-123", id = "", skip = 0.0)
-if response.isSome:
-  let templateErrors = response.get()
-  discard templateErrors
-else:
-  discard httpResponse
-[inline-code-end]
+let (optResp, httpResp) = client.getEmailTemplateRenderErrors(
+  tenantId = "my-tenant-123",
+  id = "welcome-template",
+  skip = 0.0
+)
 
----
+if optResp.isSome:
+  let resp = optResp.get()
+  # use resp as needed
+else:
+  # handle missing response
+  discard
+[inline-code-end]

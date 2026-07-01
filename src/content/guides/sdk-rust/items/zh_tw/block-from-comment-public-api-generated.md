@@ -1,33 +1,28 @@
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
-| tenant_id | String | 是 |  |
-| comment_id | String | 是 |  |
-| public_block_from_comment_params | models::PublicBlockFromCommentParams | 是 |  |
-| sso | String | 否 |  |
+| tenant_id | String | Yes |  |
+| comment_id | String | Yes |  |
+| public_block_from_comment_params | models::PublicBlockFromCommentParams | Yes |  |
+| sso | String | No |  |
 
 ## 回應
 
-回傳: [`BlockSuccess`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/block_success.rs)
+返回：[`BlockSuccess`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/block_success.rs)
 
 ## 範例
 
 [inline-code-attrs-start title = 'block_from_comment_public 範例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_block_comment() -> Result<(), Error> {
-    let params: BlockFromCommentPublicParams = BlockFromCommentPublicParams {
+async fn example() -> Result<(), Error> {
+    let params = BlockFromCommentPublicParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        comment_id: "cmt-news-20250615-9876".to_string(),
-        public_block_from_comment_params: models::PublicBlockFromCommentParams {
-            reason: "Repeated harassment and targeted insults".to_string(),
-            duration_hours: Some(24),
-        },
-        sso: Some("sso:eyJhbGciOiJIUzI1Ni...".to_string()),
+        comment_id: "cmt-98765".to_string(),
+        public_block_from_comment_params: models::PublicBlockFromCommentParams::default(),
+        sso: Some("sso-token-xyz".to_string()),
     };
-    let block_result: BlockSuccess = block_from_comment_public(&configuration, params).await?;
+    let _result: BlockSuccess = block_from_comment_public(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

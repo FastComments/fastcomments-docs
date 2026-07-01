@@ -1,9 +1,10 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Tak |  |
-| sso | string | query | Nie |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| sso | string | query | No |  |
 
 ## Odpowiedź
 
@@ -13,13 +14,14 @@ Zwraca: [`GetCommentBanStatusResponse`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'Przykład getCommentBanStatus'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Poniższe przykłady kodu są nadal w wersji beta. W przypadku problemu prosimy zgłaszać go przez http://github.com/OpenAPITools/openapi-generator/issues/new
+// Następujące próbki kodu są wciąż wersją beta. W razie jakichkolwiek problemów, proszę zgłaszać je poprzez http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
-let sso = "sso_example" // String |  (opcjonalne)
+let sso = "sso_example" // String |  (opcjonalny)
 
-ModerationAPI.getCommentBanStatus(commentId: commentId, sso: sso) { (response, error) in
+ModerationAPI.getCommentBanStatus(tenantId: tenantId, commentId: commentId, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -30,5 +32,3 @@ ModerationAPI.getCommentBanStatus(commentId: commentId, sso: sso) { (response, e
     }
 }
 [inline-code-end]
-
----

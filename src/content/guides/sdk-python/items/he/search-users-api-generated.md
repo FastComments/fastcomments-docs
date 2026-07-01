@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | חובה | תיאור |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | כן |  |
 | urlId | string | query | כן |  |
@@ -15,23 +15,24 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-search_users'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת search_users'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import SearchUsersOptions
 from client.models.search_users_result import SearchUsersResult
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת ה-host אופציונלית וברירת המחדל היא https://fastcomments.com
-# ראה את configuration.py לרשימת כל הפרמטרים הנתמכים.
+# הגדרת המארח היא אופציונלית ומוגדרת כברירת מחדל ל‑https://fastcomments.com
+# ראה configuration.py עבור רשימת כל פרמטרי התצורה הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# כניסה להקשר (context) עם מופע של ApiClient
+# היכנס להקשר עם מופע של לקוח ה‑API
 with client.ApiClient(configuration) as api_client:
-    # צור מופע של מחלקת ה-API
+    # צור מופע של מחלקת ה‑API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
@@ -41,7 +42,7 @@ with client.ApiClient(configuration) as api_client:
     search_section = 'search_section_example' # str |  (אופציונלי)
 
     try:
-        api_response = api_instance.search_users(tenant_id, url_id, username_starts_with=username_starts_with, mention_group_ids=mention_group_ids, sso=sso, search_section=search_section)
+        api_response = api_instance.search_users(tenant_id, url_id, SearchUsersOptions(username_starts_with=username_starts_with, mention_group_ids=mention_group_ids, sso=sso, search_section=search_section))
         print("The response of PublicApi->search_users:\n")
         pprint(api_response)
     except Exception as e:

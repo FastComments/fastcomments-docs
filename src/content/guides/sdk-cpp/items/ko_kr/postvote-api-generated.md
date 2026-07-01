@@ -1,31 +1,30 @@
----
 ## 매개변수
 
-| 이름 | 타입 | 필수 | 설명 |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
+| tenantId | string | 예 |  |
 | commentId | string | 예 |  |
-| direction | string | 아니오 |  |
-| sso | string | 아니오 |  |
+| options | const PostVoteOptions& | 예 |  |
 
 ## 응답
 
 반환: [`VoteResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/VoteResponse.h)
 
-## 예제
+## 예시
 
 [inline-code-attrs-start title = 'postVote 예제'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t commentId = U("cmt-987654321");
-boost::optional<utility::string_t> direction = U("up");
-boost::optional<utility::string_t> sso = U("sso-token-abc123");
-api->postVote(commentId, direction, sso)
-.then([](pplx::task<std::shared_ptr<VoteResponse>> task) {
-    try {
-        auto resp = task.get();
-        if (!resp) resp = std::make_shared<VoteResponse>();
-    } catch (const std::exception&) {
-    }
-});
+utility::string_t tenantId = U("my-tenant-123");
+utility::string_t commentId = U("cmt-456789");
+PostVoteOptions options;
+options.upvote = boost::make_optional(true);
+options.reason = boost::make_optional<std::string>("Inappropriate content");
+api->postVote(tenantId, commentId, options)
+    .then([](pplx::task<std::shared_ptr<VoteResponse>> t) {
+        try {
+            auto resp = t.get();
+            auto count = resp->voteCount;
+        } catch (const std::exception& e) {
+        }
+    });
 [inline-code-end]
-
----

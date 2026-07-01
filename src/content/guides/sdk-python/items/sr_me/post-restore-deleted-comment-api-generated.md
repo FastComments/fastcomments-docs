@@ -1,41 +1,48 @@
-## Параметри
+## Parameters
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Ime | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| commentId | string | пут | Да |  |
-| sso | string | упит | Не |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
-## Одговор
+## Response
 
-Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
+Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'post_restore_deleted_comment пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_restore_deleted_comment Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import PostRestoreDeletedCommentOptions
 from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинисање хоста је опционално и по подразумевању је https://fastcomments.com
-# Погледајте configuration.py за списак свих подржаних конфигурационих параметара.
+# Definisanje hosta je opcionalno i podrazumevano je https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih konfiguracionih parametara.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Уђите у контекст са инстанцом API клијента
+# Uđite u kontekst sa instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Креирајте инстанцу API класе
+    # Kreirajte instancu API klase
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
-    sso = 'sso_example' # str |  (необавезно)
+    broadcast_id = 'broadcast_id_example' # str |  (opcionalno)
+    sso = 'sso_example' # str |  (opcionalno)
 
     try:
-        api_response = api_instance.post_restore_deleted_comment(comment_id, sso=sso)
+        api_response = api_instance.post_restore_deleted_comment(tenant_id, comment_id, PostRestoreDeletedCommentOptions(broadcast_id=broadcast_id, sso=sso))
         print("The response of ModerationApi->post_restore_deleted_comment:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling ModerationApi->post_restore_deleted_comment: %s\n" % e)
 [inline-code-end]
+
+---

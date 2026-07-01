@@ -2,14 +2,14 @@
 
 | Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| commentId | string | query | Ne |  |
-| externalId | string | query | Ne |  |
-| eventType | string | query | Ne |  |
-| type | string | query | Ne |  |
-| domain | string | query | Ne |  |
-| attemptCountGT | number | query | Ne |  |
-| skip | number | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | query | No |  |
+| externalId | string | query | No |  |
+| eventType | string | query | No |  |
+| type | string | query | No |  |
+| domain | string | query | No |  |
+| attemptCountGT | number | query | No |  |
+| skip | number | query | No |  |
 
 ## Odgovor
 
@@ -17,45 +17,42 @@ Vrne: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastco
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer get_pending_webhook_events'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_pending_webhook_events Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetPendingWebhookEventsOptions
 from client.models.get_pending_webhook_events_response import GetPendingWebhookEventsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Določitev gostitelja je opcijska in privzeto je https://fastcomments.com
-# Oglejte si configuration.py za seznam vseh podprtih parametrov konfiguracije.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
+# Definiranje gostitelja je neobvezno in privzeto nastavljeno na https://fastcomments.com
+# Oglejte si configuration.py za seznam vseh podprtih parametrov nastavitve.
+# Odjemalec mora konfigurirati parametre avtentikacije in avtorizacije
+# v skladu s politiko varnosti strežnika API.
+# Primeri za vsako metodo avtentikacije so navedeni spodaj, uporabite primer,
+# ki ustreza vašemu primeru uporabe avtentikacije.
 
-# Odjemalec mora konfigurirati parametre overjanja in avtorizacije
-# v skladu s politiko varnosti API strežnika.
-# Primeri za vsako metodo overjanja so podani spodaj; uporabite primer,
-# ki ustreza vašemu primeru uporabe.
-
-# Nastavite avtorizacijo s ključem API: api_key
+# Konfigurirajte avtorizacijo s ključem API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Odkomentirajte spodnjo vrstico za nastavitev prefiksa (npr. Bearer) za ključ API, če je potrebno
+# Odkomentirajte spodaj, da nastavite predpono (npr. Bearer) za ključ API, po potrebi
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Vstopite v kontekst z instanco API odjemalca
+# Vstopite v kontekst s primerek API odjemalca
 with client.ApiClient(configuration) as api_client:
-    # Ustvarite instanco API razreda
+    # Ustvarite primerek API razreda
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    comment_id = 'comment_id_example' # str |  (izbirno)
-    external_id = 'external_id_example' # str |  (izbirno)
-    event_type = 'event_type_example' # str |  (izbirno)
-    type = 'type_example' # str |  (izbirno)
-    domain = 'domain_example' # str |  (izbirno)
-    attempt_count_gt = 3.4 # float |  (izbirno)
-    skip = 3.4 # float |  (izbirno)
+    comment_id = 'comment_id_example' # str |  (neobvezno)
+    external_id = 'external_id_example' # str |  (neobvezno)
+    event_type = 'event_type_example' # str |  (neobvezno)
+    type = 'type_example' # str |  (neobvezno)
+    domain = 'domain_example' # str |  (neobvezno)
+    attempt_count_gt = 3.4 # float |  (neobvezno)
+    skip = 3.4 # float |  (neobvezno)
 
     try:
-        api_response = api_instance.get_pending_webhook_events(tenant_id, comment_id=comment_id, external_id=external_id, event_type=event_type, type=type, domain=domain, attempt_count_gt=attempt_count_gt, skip=skip)
+        api_response = api_instance.get_pending_webhook_events(tenant_id, GetPendingWebhookEventsOptions(comment_id=comment_id, external_id=external_id, event_type=event_type, type=type, domain=domain, attempt_count_gt=attempt_count_gt, skip=skip))
         print("The response of DefaultApi->get_pending_webhook_events:\n")
         pprint(api_response)
     except Exception as e:

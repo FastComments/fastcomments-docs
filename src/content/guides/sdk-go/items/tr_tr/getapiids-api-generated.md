@@ -2,6 +2,7 @@
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Evet |  |
 | text-search | string | query | Hayır |  |
 | byIPFromComment | string | query | Hayır |  |
 | filters | string | query | Hayır |  |
@@ -28,22 +29,23 @@ import (
 )
 
 func main() {
-	textSearch := "textSearch_example" // string |  (isteğe bağlı)
-	byIPFromComment := "byIPFromComment_example" // string |  (isteğe bağlı)
-	filters := "filters_example" // string |  (isteğe bağlı)
-	searchFilters := "searchFilters_example" // string |  (isteğe bağlı)
-	afterId := "afterId_example" // string |  (isteğe bağlı)
-	demo := true // bool |  (isteğe bağlı)
-	sso := "sso_example" // string |  (isteğe bağlı)
+	tenantId := "tenantId_example" // string | 
+	textSearch := "textSearch_example" // string |  (opsiyonel)
+	byIPFromComment := "byIPFromComment_example" // string |  (opsiyonel)
+	filters := "filters_example" // string |  (opsiyonel)
+	searchFilters := "searchFilters_example" // string |  (opsiyonel)
+	afterId := "afterId_example" // string |  (opsiyonel)
+	demo := true // bool |  (opsiyonel)
+	sso := "sso_example" // string |  (opsiyonel)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetApiIds(context.Background()).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).AfterId(afterId).Demo(demo).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetApiIds(context.Background()).TenantId(tenantId).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).AfterId(afterId).Demo(demo).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetApiIds``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `GetApiIds`'den gelen yanıt: ModerationAPIGetCommentIdsResponse
+	// `GetApiIds`'den yanıt: ModerationAPIGetCommentIdsResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetApiIds`: %v\n", resp)
 }
 [inline-code-end]

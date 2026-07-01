@@ -13,13 +13,12 @@ Returns: [`DeletePageApiResponse`](https://github.com/FastComments/fastcomments-
 
 [inline-code-attrs-start title = 'delete_page Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_delete_page() -> Result<DeletePageApiResponse, Error> {
-    let params: DeletePageParams = DeletePageParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        id: "news/2026/launch-announcement".to_string(),
-        cascade: Some(true),
+async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = DeletePageParams {
+        tenant_id: "acme-corp-tenant".into(),
+        id: "news/article".into(),
     };
-    let deleted: DeletePageApiResponse = delete_page(&configuration, params).await?;
-    Ok(deleted)
+    let _resp = delete_page(configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]

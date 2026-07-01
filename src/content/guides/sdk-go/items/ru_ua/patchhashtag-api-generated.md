@@ -1,17 +1,17 @@
-## Параметры
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов’язково | Опис |
 |------|------|----------|----------|-------------|
-| tag | string | path | Да |  |
-| tenantId | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| tag | string | path | Yes |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_update_hash_tag_response.go)
+Повертає: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_update_hash_tag_response.go)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример PatchHashTag'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад PatchHashTag'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,9 +23,9 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	tag := "tag_example" // string | 
-	tenantId := "tenantId_example" // string |  (необязательно)
-	updateHashTagBody := *openapiclient.NewUpdateHashTagBody() // UpdateHashTagBody |  (необязательно)
+	updateHashTagBody := *openapiclient.NewUpdateHashTagBody() // UpdateHashTagBody |  (опційно)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -34,9 +34,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PatchHashTag``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// ответ от `PatchHashTag`: UpdateHashTagResponse
+	// відповідь від `PatchHashTag`: UpdateHashTagResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PatchHashTag`: %v\n", resp)
 }
 [inline-code-end]
-
----

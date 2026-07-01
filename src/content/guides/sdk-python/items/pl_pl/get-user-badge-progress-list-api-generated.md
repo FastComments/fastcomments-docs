@@ -1,6 +1,6 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Tak |  |
 | userId | string | query | Nie |  |
@@ -16,25 +16,26 @@ Zwraca: [`APIGetUserBadgeProgressListResponse`](https://github.com/FastComments/
 [inline-code-attrs-start title = 'Przykład get_user_badge_progress_list'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetUserBadgeProgressListOptions
 from client.models.api_get_user_badge_progress_list_response import APIGetUserBadgeProgressListResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Określenie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
-# Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracji.
+# Definiowanie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
+# Zobacz configuration.py po listę wszystkich obsługiwanych parametrów konfiguracyjnych.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Klient musi skonfigurować parametry uwierzytelniania i autoryzacji
 # zgodnie z polityką bezpieczeństwa serwera API.
-# Poniżej podano przykłady dla każdej metody uwierzytelniania; użyj przykładu, który
-# odpowiada Twojemu przypadkowi użycia uwierzytelniania.
+# Przykłady dla każdej metody uwierzytelniania są podane poniżej, użyj przykładu, który
+# spełnia Twój przypadek użycia uwierzytelniania.
 
-# Skonfiguruj autoryzację kluczem API: api_key
+# Skonfiguruj autoryzację klucza API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli to konieczne
+# Odkomentuj poniższe, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli potrzebny
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Wejdź w kontekst z instancją klienta API
@@ -47,7 +48,7 @@ with client.ApiClient(configuration) as api_client:
     skip = 3.4 # float |  (optional)
 
     try:
-        api_response = api_instance.get_user_badge_progress_list(tenant_id, user_id=user_id, limit=limit, skip=skip)
+        api_response = api_instance.get_user_badge_progress_list(tenant_id, GetUserBadgeProgressListOptions(user_id=user_id, limit=limit, skip=skip))
         print("The response of DefaultApi->get_user_badge_progress_list:\n")
         pprint(api_response)
     except Exception as e:

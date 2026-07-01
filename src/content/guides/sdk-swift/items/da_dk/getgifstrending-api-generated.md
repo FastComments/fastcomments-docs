@@ -1,21 +1,21 @@
-## Parametre
+## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Ja |  |
-| locale | string | query | Nej |  |
-| rating | string | query | Nej |  |
-| page | number | query | Nej |  |
+| tenantId | string | path | Yes |  |
+| locale | string | query | No |  |
+| rating | string | query | No |  |
+| page | number | query | No |  |
 
-## Svar
+## Response
 
 Returnerer: [`GetGifsTrendingResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetGifsTrendingResponse.swift)
 
-## Eksempel
+## Example
 
 [inline-code-attrs-start title = 'getGifsTrending Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Følgende kodeeksempler er stadig i beta. Ved problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De følgende kodeeksempler er stadig beta. Ved eventuelle problemer, rapportér venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -23,7 +23,7 @@ let locale = "locale_example" // String |  (valgfri)
 let rating = "rating_example" // String |  (valgfri)
 let page = 987 // Double |  (valgfri)
 
-PublicAPI.getGifsTrending(tenantId: tenantId, locale: locale, rating: rating, page: page) { (response, error) in
+PublicAPI.getGifsTrending(tenantId: tenantId, options: PublicAPI.GetGifsTrendingOptions(locale: locale, rating: rating, page: page)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -34,5 +34,3 @@ PublicAPI.getGifsTrending(tenantId: tenantId, locale: locale, rating: rating, pa
     }
 }
 [inline-code-end]
-
----

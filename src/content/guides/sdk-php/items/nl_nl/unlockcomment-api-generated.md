@@ -1,7 +1,7 @@
 ## Parameters
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
-|------|------|----------|----------|-------------|
+|------|------|----------|----------|--------------|
 | tenantId | string | path | Ja |  |
 | commentId | string | path | Ja |  |
 | broadcastId | string | query | Ja |  |
@@ -21,14 +21,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Als u een aangepaste HTTP-client wilt gebruiken, geeft u uw client door die `GuzzleHttp\ClientInterface` implementeert.
+    // Als je een aangepaste http-client wilt gebruiken, geef je client door die `GuzzleHttp\ClientInterface` implementeert.
     // Dit is optioneel, `GuzzleHttp\Client` wordt standaard gebruikt.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $comment_id = 'comment_id_example'; // string
 $broadcast_id = 'broadcast_id_example'; // string
 $sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->unLockComment($tenant_id, $comment_id, $broadcast_id, $sso);
@@ -37,3 +39,5 @@ try {
     echo 'Exception when calling PublicApi->unLockComment: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

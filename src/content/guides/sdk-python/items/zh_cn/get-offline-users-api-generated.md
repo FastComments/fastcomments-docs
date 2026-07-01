@@ -1,31 +1,37 @@
-页面上已发表评论但当前不在线的用户。按 displayName 排序。
-在用尽 /users/online 后使用此接口以呈现 "Members" 部分。
-基于 commenterName 的游标分页：服务器沿着部分 {tenantId, urlId, commenterName} 索引从 afterName 向前通过 $gt 遍历，无 $skip 成本。
+Past commenters on the page who are NOT currently online. Sorted by displayName.  
+页面上过去的评论者（当前不在线）。按 displayName 排序。
 
-## 参数
+Use this after exhausting /users/online to render a "Members" section.  
+在耗尽 /users/online 后使用此接口来渲染 “Members”（成员） 部分。
 
-| Name | Type | Location | Required | Description |
+Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.  
+基于 commenterName 的游标分页：服务器从 afterName 起向前遍历部分 {tenantId, urlId, commenterName} 索引，使用 $gt，无需 $skip 开销。
+
+## Parameters
+
+| 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Yes |  |
-| urlId | string | query | Yes | 页面 URL 标识符（服务器端已清理）。 |
-| afterName | string | query | No | 游标：传入上一响应中的 nextAfterName。 |
-| afterUserId | string | query | No | 游标平局判定器：传入上一响应中的 nextAfterUserId。当设置了 afterName 时需要传入，以避免同名导致条目丢失。 |
+| urlId | string | query | Yes | 页面 URL 标识符（已在服务器端清理）。 |
+| afterName | string | query | No | 游标：传入上一次响应中的 nextAfterName。 |
+| afterUserId | string | query | No | 游标平局破拆：传入上一次响应中的 nextAfterUserId。若 afterName 已设置，则此项为必需，以防名称相同导致条目被丢弃。 |
 
-## 响应
+## Response
 
 返回: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/page_users_offline_response.py)
 
-## 示例
+## Example
 
 [inline-code-attrs-start title = 'get_offline_users 示例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetOfflineUsersOptions
 from client.models.page_users_offline_response import PageUsersOfflineResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # 定义主机是可选的，默认值为 https://fastcomments.com
-# 有关所有支持的配置参数的列表，请参见 configuration.py。
+# 请参阅 configuration.py 了解所有受支持的配置参数列表。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -33,15 +39,15 @@ configuration = client.Configuration(
 
 # 使用 API 客户端实例进入上下文
 with client.ApiClient(configuration) as api_client:
-    # 创建 API 类的一个实例
+    # 创建 API 类的实例
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    url_id = 'url_id_example' # str | 页面 URL 标识符（服务器端已清理）。
-    after_name = 'after_name_example' # str | 游标：传入上一响应中的 nextAfterName。（可选）
-    after_user_id = 'after_user_id_example' # str | 游标平局判定器：传入上一响应中的 nextAfterUserId。当设置了 afterName 时需要传入，以避免同名导致条目丢失。（可选）
+    url_id = 'url_id_example' # str | 页面 URL 标识符（已在服务器端清理）。
+    after_name = 'after_name_example' # str | 游标：传入上一次响应中的 nextAfterName。（可选）
+    after_user_id = 'after_user_id_example' # str | 游标平局破拆：传入上一次响应中的 nextAfterUserId。若 afterName 已设置，则此项为必需，以防名称相同导致条目被丢弃。（可选）
 
     try:
-        api_response = api_instance.get_offline_users(tenant_id, url_id, after_name=after_name, after_user_id=after_user_id)
+        api_response = api_instance.get_offline_users(tenant_id, url_id, GetOfflineUsersOptions(after_name=after_name, after_user_id=after_user_id))
         print("The response of PublicApi->get_offline_users:\n")
         pprint(api_response)
     except Exception as e:

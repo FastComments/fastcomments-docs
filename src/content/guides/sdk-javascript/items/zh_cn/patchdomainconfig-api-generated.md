@@ -1,6 +1,6 @@
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | domainToUpdate | string | 是 |  |
@@ -8,20 +8,25 @@
 
 ## 响应
 
-返回：[`PatchDomainConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PatchDomainConfigResponse.ts)
+返回: [`PatchDomainConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PatchDomainConfigResponse.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'patchDomainConfig 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_8d9f3c4b";
-const domainToUpdate: string = "comments.newsroom.example.com";
-const patchDomainConfigParams: PatchDomainConfigParams = {
-  enabled: true,
-  enforceHttps: true, // 包含可选参数
-  allowedOrigins: ["https://newsroom.example.com"] // 包含可选参数
-};
-const result: PatchDomainConfigResponse = await patchDomainConfig(tenantId, domainToUpdate, patchDomainConfigParams);
+async function updateDomainConfig() {
+  const tenantId: string = "tenant_98765";
+  const domainToUpdate: string = "forum.mycompany.com";
+  const patchParams: PatchDomainConfigParams = {
+    enableComments: true,
+    moderationLevel: "strict",
+    allowAnonymous: false, // 演示的可选参数
+  };
+  const response: PatchDomainConfigResponse = await patchDomainConfig(tenantId, domainToUpdate, patchParams);
+  console.log(response);
+}
+
+updateDomainConfig();
 [inline-code-end]
 
 ---

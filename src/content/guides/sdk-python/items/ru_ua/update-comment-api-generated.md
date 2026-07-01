@@ -1,57 +1,52 @@
-## Параметры
+## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Назва | Тип | Розташування | Обов'язково | Опис |
+|------|------|--------------|-------------|------|
 | tenantId | string | query | Yes |  |
 | id | string | path | Yes |  |
 | contextUserId | string | query | No |  |
 | doSpamCheck | boolean | query | No |  |
 | isLive | boolean | query | No |  |
 
-## Ответ
+## Response
 
-Возвращает: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
+Повертає: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'Пример update_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'update_comment Приклад'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import UpdateCommentOptions
 from client.models.api_empty_response import APIEmptyResponse
 from client.models.updatable_comment_params import UpdatableCommentParams
 from client.rest import ApiException
 from pprint import pprint
 
-# Указание параметра host необязательно — по умолчанию используется https://fastcomments.com
-# См. configuration.py для списка всех поддерживаемых параметров конфигурации.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
+# Визначення хосту є необов'язковим і за замовчуванням https://fastcomments.com
+# Дивіться configuration.py для списку всіх підтримуваних параметрів конфігурації.
+# Клієнт повинен налаштувати параметри автентифікації та авторизації згідно з політикою безпеки сервера API.
+# Приклади для кожного методу автентифікації наведено нижче, використайте приклад, який відповідає вашому випадку використання автентифікації.
 
-# Клиент должен настроить параметры аутентификации и авторизации
-# в соответствии с политикой безопасности сервера API.
-# Примеры для каждого метода аутентификации приведены ниже, используйте тот,
-# который соответствует вашему сценарию использования аутентификации.
-
-# Настройка авторизации по API-ключу: api_key
+# Налаштування авторизації за допомогою API ключа: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Раскомментируйте ниже, чтобы задать префикс (например, Bearer) для API-ключа, если необходимо
+# Розкоментуйте нижче, щоб встановити префікс (наприклад, Bearer) для API ключа, якщо потрібно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Откройте контекст с экземпляром API-клиента
+# Відкрийте контекст із екземпляром API клієнта
 with client.ApiClient(configuration) as api_client:
-    # Создайте экземпляр класса API
+    # Створіть екземпляр класу API
     api_instance = client.DefaultApi(api_client)
-    tenant_id = 'tenant_id_example' # str | 
-    id = 'id_example' # str | 
-    updatable_comment_params = client.UpdatableCommentParams() # UpdatableCommentParams | 
-    context_user_id = 'context_user_id_example' # str |  (необязательно)
-    do_spam_check = True # bool |  (необязательно)
-    is_live = True # bool |  (необязательно)
+    tenant_id = 'tenant_id_example' # str |
+    id = 'id_example' # str |
+    updatable_comment_params = client.UpdatableCommentParams() # UpdatableCommentParams |
+    context_user_id = 'context_user_id_example' # str |  (необов’язково)
+    do_spam_check = True # bool |  (необов’язково)
+    is_live = True # bool |  (необов’язково)
 
     try:
-        api_response = api_instance.update_comment(tenant_id, id, updatable_comment_params, context_user_id=context_user_id, do_spam_check=do_spam_check, is_live=is_live)
+        api_response = api_instance.update_comment(tenant_id, id, updatable_comment_params, UpdateCommentOptions(context_user_id=context_user_id, do_spam_check=do_spam_check, is_live=is_live))
         print("The response of DefaultApi->update_comment:\n")
         pprint(api_response)
     except Exception as e:

@@ -1,9 +1,10 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Назва | Тип | Розташування | Обов’язково | Опис |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Так |  |
-| sso | string | query | Ні |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| sso | string | query | No |  |
 
 ## Відповідь
 
@@ -17,6 +18,7 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 comment_id = 'comment_id_example' # String | 
 opts = {
   sso: 'sso_example' # String | 
@@ -24,11 +26,9 @@ opts = {
 
 begin
   
-  result = api_instance.get_logs(comment_id, opts)
+  result = api_instance.get_logs(tenant_id, comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_logs: #{e}"
 end
 [inline-code-end]
-
----

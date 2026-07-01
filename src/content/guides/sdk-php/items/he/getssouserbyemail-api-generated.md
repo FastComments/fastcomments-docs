@@ -1,36 +1,38 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | כן |  |
-| email | string | path | כן |  |
+| tenantId | string | שאילתה | כן |  |
+| email | string | נתיב | כן |  |
 
 ## תגובה
 
 מחזיר: [`GetSSOUserByEmailAPIResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetSSOUserByEmailAPIResponse.php)
 
-## דוגמה
+## דוגמת getSSOUserByEmail
 
-[inline-code-attrs-start title = 'דוגמה ל-getSSOUserByEmail'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getSSOUserByEmail'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// קביעת אישור מפתח ה-API: api_key
+// הגדר הרשאת מפתח API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// הסר את ההערה למטה כדי להגדיר קידומת (למשל Bearer) עבור מפתח ה-API, אם נדרש
+// בטל את ההערה למטה כדי להגדיר קידומת (למשל Bearer) למפתח API, אם נדרש
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // אם ברצונך להשתמש בלקוח HTTP מותאם, העבר את הלקוח שלך שמממש את `GuzzleHttp\ClientInterface`.
-    // זה אופציונלי, `GuzzleHttp\Client` ישמש כברירת מחדל.
+    // אם ברצונך להשתמש בלקוח http מותאם, העבר את הלקוח שלך שמיישם `GuzzleHttp\ClientInterface`.
+    // זה אופציונלי, `GuzzleHttp\Client` ישמש ברירת מחדל.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // מחרוזת
 $email = 'email_example'; // מחרוזת
+
 
 try {
     $result = $apiInstance->getSSOUserByEmail($tenant_id, $email);

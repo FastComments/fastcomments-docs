@@ -1,11 +1,11 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | חובה | תיאור |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | כן |  |
-| locale | string | query | לא |  |
-| rating | string | query | לא |  |
-| page | number | query | לא |  |
+| tenantId | string | path | Yes |  |
+| locale | string | query | No |  |
+| rating | string | query | No |  |
+| page | number | query | No |  |
 
 ## תגובה
 
@@ -15,7 +15,7 @@
 
 [inline-code-attrs-start title = 'דוגמת getGifsTrending'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// דוגמאות הקוד הבאות עדיין בבטא. לכל בעיה, אנא דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// הקוד למטה עדיין בגרסת בטא. עבור כל בעיה, אנא דווח באמצעות http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -23,7 +23,7 @@ let locale = "locale_example" // String |  (אופציונלי)
 let rating = "rating_example" // String |  (אופציונלי)
 let page = 987 // Double |  (אופציונלי)
 
-PublicAPI.getGifsTrending(tenantId: tenantId, locale: locale, rating: rating, page: page) { (response, error) in
+PublicAPI.getGifsTrending(tenantId: tenantId, options: PublicAPI.GetGifsTrendingOptions(locale: locale, rating: rating, page: page)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -34,5 +34,3 @@ PublicAPI.getGifsTrending(tenantId: tenantId, locale: locale, rating: rating, pa
     }
 }
 [inline-code-end]
-
----

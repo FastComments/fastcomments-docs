@@ -1,8 +1,7 @@
----
 ## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Име | Тип | Местоположение | Задължително | Описание |
+|------|------|----------------|--------------|----------|
 | tenantId | string | query | Да |  |
 | skip | number | query | Не |  |
 
@@ -18,20 +17,22 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Конфигуриране на авторизация с API ключ: api_key
+// Конфигуриране на API ключ за авторизация: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Разкоментирайте долния ред, за да зададете префикс (напр. Bearer) за API ключа, ако е необходимо
+// Разкоментирайте по-долу, за да зададете префикс (например Bearer) за API ключа, ако е необходимо
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ако искате да използвате собствен HTTP клиент, подайте вашия клиент, който имплементира `GuzzleHttp\ClientInterface`.
-    // Това е по избор, по подразбиране ще се използва `GuzzleHttp\Client`.
+    // Ако искате да използвате персонализиран HTTP клиент, предайте вашия клиент, който имплементира `GuzzleHttp\ClientInterface`.
+    // Това е по избор, `GuzzleHttp\Client` ще се използва по подразбиране.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $skip = 3.4; // float
+
 
 try {
     $result = $apiInstance->getModerators($tenant_id, $skip);
@@ -40,5 +41,3 @@ try {
     echo 'Exception when calling DefaultApi->getModerators: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

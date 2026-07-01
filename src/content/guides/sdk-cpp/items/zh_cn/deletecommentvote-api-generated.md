@@ -1,39 +1,36 @@
 ## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必需 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | commentId | string | Yes |  |
 | voteId | string | Yes |  |
 | urlId | string | Yes |  |
 | broadcastId | string | Yes |  |
-| editKey | string | No |  |
-| sso | string | No |  |
+| options | const DeleteCommentVoteOptions& | Yes |  |
 
 ## 响应
 
-返回： [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/VoteDeleteResponse.h)
+返回：[`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/VoteDeleteResponse.h)
 
 ## 示例
 
 [inline-code-attrs-start title = 'deleteCommentVote 示例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("cmt-987654321");
-utility::string_t voteId = U("vote-abc123");
-utility::string_t urlId = U("https://example.com/articles/42");
-utility::string_t broadcastId = U("bcast-001");
-boost::optional<utility::string_t> editKey = boost::optional<utility::string_t>(U("edit-key-789"));
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
-api->deleteCommentVote(tenantId, commentId, voteId, urlId, broadcastId, editKey, sso)
-.then([](pplx::task<std::shared_ptr<VoteDeleteResponse>> t){
-    try {
-        auto respPtr = t.get();
-        std::shared_ptr<VoteDeleteResponse> result = respPtr ? std::make_shared<VoteDeleteResponse>(*respPtr) : std::make_shared<VoteDeleteResponse>();
-        (void)result;
-    } catch (const std::exception&) {
+auto options = DeleteCommentVoteOptions{};
+options.reason = boost::optional<utility::string_t>(U("spam"));
+options.adminOverride = boost::optional<bool>(true);
+
+api->deleteCommentVote(
+    U("my-tenant-123"),
+    U("cmt-456789"),
+    U("vote-987"),
+    U("url-abc123"),
+    U("broadcast-001"),
+    options
+).then([](std::shared_ptr<VoteDeleteResponse> resp){
+    if (resp) {
+        std::cout << "Deleted vote, code: " << resp->code << std::endl;
     }
 });
 [inline-code-end]
-
----

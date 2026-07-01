@@ -1,8 +1,10 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Θέση | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Ναι |  |
 | commentId | string | path | Ναι |  |
+| broadcastId | string | query | Όχι |  |
 | sso | string | query | Όχι |  |
 
 ## Απόκριση
@@ -13,14 +15,16 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα postSetCommentText'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Τα παρακάτω δείγματα κώδικα είναι ακόμα σε beta. Για οποιοδήποτε πρόβλημα, αναφέρετε το μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
+// Τα παρακάτω δείγματα κώδικα είναι ακόμη beta. Για οποιοδήποτε πρόβλημα, παρακαλούμε αναφέρετε το μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
 let setCommentTextParams = SetCommentTextParams(comment: "comment_example") // SetCommentTextParams | 
+let broadcastId = "broadcastId_example" // String |  (προαιρετικό)
 let sso = "sso_example" // String |  (προαιρετικό)
 
-ModerationAPI.postSetCommentText(commentId: commentId, setCommentTextParams: setCommentTextParams, sso: sso) { (response, error) in
+ModerationAPI.postSetCommentText(tenantId: tenantId, commentId: commentId, setCommentTextParams: setCommentTextParams, options: ModerationAPI.PostSetCommentTextOptions(broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

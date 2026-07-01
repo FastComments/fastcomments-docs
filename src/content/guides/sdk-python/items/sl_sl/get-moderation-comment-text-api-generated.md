@@ -1,9 +1,10 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Da |  |
-| sso | string | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -18,22 +19,23 @@ from client.models.get_comment_text_response import GetCommentTextResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Določanje gostitelja je izbirno in privzeto nastavljeno na https://fastcomments.com
-# Oglejte si configuration.py za seznam vseh podprtih parametrov konfiguracije.
+# Definiranje gostitelja je neobvezno in privzeto nastavljeno na https://fastcomments.com
+# Oglejte si configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Vstopite v kontekst z instanco API odjemalca
+# Vstopite v kontekst s primerek API odjemalca
 with client.ApiClient(configuration) as api_client:
-    # Ustvarite instanco API razreda
+    # Ustvarite primerek API razreda
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
-    sso = 'sso_example' # str |  (izbirno)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_moderation_comment_text(comment_id, sso=sso)
+        api_response = api_instance.get_moderation_comment_text(tenant_id, comment_id, sso=sso)
         print("The response of ModerationApi->get_moderation_comment_text:\n")
         pprint(api_response)
     except Exception as e:

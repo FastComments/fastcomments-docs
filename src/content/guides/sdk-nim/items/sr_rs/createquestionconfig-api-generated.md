@@ -2,31 +2,23 @@
 
 | Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| createQuestionConfigBody | CreateQuestionConfigBody | Не |  |
+| tenantId | string | Yes |  |
+| createQuestionConfigBody | CreateQuestionConfigBody | No |  |
 
 ## Одговор
 
-Враћа: [`Option[CreateQuestionConfigResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_question_config_response.nim)
+Returns: [`Option[CreateQuestionConfigResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_question_config_response.nim)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример createQuestionConfig'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createQuestionConfig пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.createQuestionConfig(
+let configBody = CreateQuestionConfigBody()
+let (maybeResp, httpResp) = client.createQuestionConfig(
   tenantId = "my-tenant-123",
-  createQuestionConfigBody = CreateQuestionConfigBody(
-    label = "Article Question",
-    required = true,
-    minLength = 20,
-    maxLength = 1000,
-    allowedTags = @["comment","question","feedback"],
-    notifyModerators = false
-  )
+  createQuestionConfigBody = configBody,
 )
-if response.isSome:
-  let cfg = response.get()
-  echo "Created question config id: ", cfg.id
+if maybeResp.isSome:
+  let resp = maybeResp.get()
+  # користите одговор по потреби
 [inline-code-end]
-
----

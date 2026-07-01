@@ -1,42 +1,32 @@
-## 매개변수
+## Parameters
 
-| 이름 | 유형 | 필수 | 설명 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | 예 |  |
-| create_feed_post_params | models::CreateFeedPostParams | 예 |  |
-| broadcast_id | String | 아니오 |  |
-| sso | String | 아니오 |  |
+| tenant_id | String | Yes |  |
+| create_feed_post_params | models::CreateFeedPostParams | Yes |  |
+| broadcast_id | String | No |  |
+| sso | String | No |  |
 
-## 응답
+## Response
 
 반환: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_feed_post_response.rs)
 
-## 예제
+## Example
 
-[inline-code-attrs-start title = 'create_feed_post_public 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_feed_post_public 예시'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<CreateFeedPostResponse, Error> {
-    let params: CreateFeedPostPublicParams = CreateFeedPostPublicParams {
+async fn run_example(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = CreateFeedPostPublicParams {
         tenant_id: "acme-corp-tenant".to_string(),
         create_feed_post_params: models::CreateFeedPostParams {
-            title: "Acme Product Launch".to_string(),
-            content: "We're excited to launch our new product line today.".to_string(),
-            path: "news/product-launch".to_string(),
-            media: vec![models::FeedPostMediaItem {
-                asset: models::FeedPostMediaItemAsset {
-                    url: "https://cdn.acme.com/images/launch.jpg".to_string(),
-                    mime_type: Some("image/jpeg".to_string()),
-                },
-                caption: Some("Launch hero image".to_string()),
-            }],
+            title: "Breaking News".to_string(),
+            body: "Details about the news...".to_string(),
             ..Default::default()
         },
-        broadcast_id: Some("broadcast-2026-06".to_string()),
-        sso: Some("sso-user-jane-xyz".to_string()),
+        broadcast_id: Some("news/article".to_string()),
+        sso: Some("sso-token-abc".to_string()),
     };
-    let response: CreateFeedPostResponse = create_feed_post_public(&configuration, params).await?;
-    Ok(response)
+    let _response = create_feed_post_public(configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

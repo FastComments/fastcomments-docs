@@ -1,35 +1,31 @@
 The FastComments SDK provides three API clients:
 
-### PublicAPI - Методе сигурне за клијентску страну
+### PublicAPI - Metode sigurne za klijenta
 
-The `PublicAPI` contains methods that are safe to call from client-side code (iOS/macOS apps). These methods:
-- Do not require an API key
-- Can use SSO tokens for authentication
-- Are rate-limited per user/device
-- Are suitable for end-user facing applications
+The `PublicAPI` contains methods that are safe to call from client‑side code (iOS/macOS apps). These methods:
+- Do not require an API key → Ne zahtijevaju API ključ
+- Can use SSO tokens for authentication → Mogu koristiti SSO tokene za autentifikaciju
+- Are rate‑limited per user/device → Ograničeni su po brzini po korisniku/uređaju
+- Are suitable for end‑user facing applications → Pogodni su za aplikacije usmjerene prema krajnjim korisnicima
 
-**Example use case**: Fetching and creating comments in your iOS app
+**Example use case**: Fetching and creating comments in your iOS app → **Primjer upotrebe**: Preuzimanje i kreiranje komentara u vašoj iOS aplikaciji
 
-### DefaultAPI - Методе за серверску страну
+### DefaultAPI - Metode na serveru
 
 The `DefaultAPI` contains authenticated methods that require an API key. These methods:
-- Require your FastComments API key
-- Should ONLY be called from server-side code
-- Provide full access to your FastComments data
-- Are rate-limited per tenant
+- Require your FastComments API key → Zahtijevaju vaš FastComments API ključ
+- Should ONLY be called from server‑side code → Treba ih pozivati SAMO iz server‑side koda
+- Provide full access to your FastComments data → Omogućavaju puni pristup vašim FastComments podacima
+- Are rate‑limited per tenant → Ograničeni su po brzini po tenantu
 
-**Example use case**: Administrative operations, bulk data export, user management
+**Example use case**: Administrative operations, bulk data export, user management → **Primjer upotrebe**: Administrativne operacije, izvoz podataka u bulk‑u, upravljanje korisnicima
 
-### ModerationAPI - Методе за контролну таблу модератора
+### ModerationAPI - Metode za moderacijski dashboard
 
-The `ModerationAPI` contains methods that power the moderator dashboard. These methods cover:
-- **Comment moderation** - list, count, search, retrieve logs, and export comments
-- **Moderation actions** - remove/restore comments, flag, set review/spam/approval status, manage votes, and reopen/close threads
-- **Bans** - ban a user from a comment, undo bans, fetch pre-ban summaries, check ban status and preferences, and read banned-user counts
-- **Badges & trust** - award/remove badges, list manual badges, get/set a user's trust factor, and read a user's internal profile
+The `ModerationAPI` provides an extensive suite of live and fast moderation APIs. Every `ModerationAPI` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.
 
-Every `ModerationAPI` method accepts an `sso` parameter so moderators can be authenticated via SSO.
+`ModerationAPI` pruža opsežan set živih i brzih API‑ja za moderaciju. Svaka `ModerationAPI` metoda prihvata `sso` parametar i može se autentifikovati putem SSO ili FastComments.com sesijskog kolačića.
 
-**Example use case**: Building a moderation experience for moderators of your community
+**Example use case**: Building a moderation experience for moderators of your community → **Primjer upotrebe**: Izgradnja iskustva moderacije za moderatore vaše zajednice
 
-**IMPORTANT**: Never expose your API key in client-side code. API keys should only be used server-side.
+**IMPORTANT**: Never expose your API key in client‑side code. API keys should only be used server‑side. → **VAŽNO**: Nikada ne izlažite vaš API ključ u kodu na klijentskoj strani. API ključeve treba koristiti samo na serveru.

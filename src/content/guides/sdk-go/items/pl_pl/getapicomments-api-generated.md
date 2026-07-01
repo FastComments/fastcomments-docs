@@ -1,24 +1,25 @@
-## Parametry
+## Parameters
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
-|------|------|----------|----------|-------------|
-| page | number | query | Nie |  |
-| count | number | query | Nie |  |
-| text-search | string | query | Nie |  |
-| byIPFromComment | string | query | Nie |  |
-| filters | string | query | Nie |  |
-| searchFilters | string | query | Nie |  |
-| sorts | string | query | Nie |  |
-| demo | boolean | query | Nie |  |
-| sso | string | query | Nie |  |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| page | number | query | No |  |
+| count | number | query | No |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sorts | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
-## Odpowiedź
+## Response
 
 Zwraca: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_api_get_comments_response.go)
 
-## Przykład
+## Example
 
-[inline-code-attrs-start title = 'Przykład GetApiComments'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GetApiComments Przykład'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -30,19 +31,20 @@ import (
 )
 
 func main() {
-	page := float64(1.2) // float64 |  (opcjonalne)
-	count := float64(1.2) // float64 |  (opcjonalne)
-	textSearch := "textSearch_example" // string |  (opcjonalne)
-	byIPFromComment := "byIPFromComment_example" // string |  (opcjonalne)
-	filters := "filters_example" // string |  (opcjonalne)
-	searchFilters := "searchFilters_example" // string |  (opcjonalne)
-	sorts := "sorts_example" // string |  (opcjonalne)
-	demo := true // bool |  (opcjonalne)
-	sso := "sso_example" // string |  (opcjonalne)
+	tenantId := "tenantId_example" // string | 
+	page := float64(1.2) // float64 |  (opcjonalnie)
+	count := float64(1.2) // float64 |  (opcjonalnie)
+	textSearch := "textSearch_example" // string |  (opcjonalnie)
+	byIPFromComment := "byIPFromComment_example" // string |  (opcjonalnie)
+	filters := "filters_example" // string |  (opcjonalnie)
+	searchFilters := "searchFilters_example" // string |  (opcjonalnie)
+	sorts := "sorts_example" // string |  (opcjonalnie)
+	demo := true // bool |  (opcjonalnie)
+	sso := "sso_example" // string |  (opcjonalnie)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetApiComments(context.Background()).Page(page).Count(count).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).Sorts(sorts).Demo(demo).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetApiComments(context.Background()).TenantId(tenantId).Page(page).Count(count).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).Sorts(sorts).Demo(demo).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetApiComments``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

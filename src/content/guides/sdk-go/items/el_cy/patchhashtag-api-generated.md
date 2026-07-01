@@ -1,11 +1,11 @@
-## Παράμετροι
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| Όνομα | Τύπος | Θέση | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Ναι |  |
 | tag | string | path | Ναι |  |
-| tenantId | string | query | Όχι |  |
 
-## Απόκριση
+## Response
 
 Επιστρέφει: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_update_hash_tag_response.go)
 
@@ -23,20 +23,18 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	tag := "tag_example" // string | 
-	tenantId := "tenantId_example" // string |  (προαιρετικό)
 	updateHashTagBody := *openapiclient.NewUpdateHashTagBody() // UpdateHashTagBody |  (προαιρετικό)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 	resp, r, err := apiClient.DefaultAPI.PatchHashTag(context.Background(), tag).TenantId(tenantId).UpdateHashTagBody(updateHashTagBody).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PatchHashTag``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Σφάλμα κατά την κλήση `DefaultAPI.PatchHashTag``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Πλήρης ανταπόκριση HTTP: %v\n", r)
 	}
-	// απόκριση από `PatchHashTag`: UpdateHashTagResponse
-	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PatchHashTag`: %v\n", resp)
+	// απάντηση από `PatchHashTag`: UpdateHashTagResponse
+	fmt.Fprintf(os.Stdout, "Απάντηση από `DefaultAPI.PatchHashTag`: %v\n", resp)
 }
 [inline-code-end]
-
----

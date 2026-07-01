@@ -4,7 +4,7 @@ afterId
 
 ## Параметры
 
-| Имя | Тип | Обязательный | Описание |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | afterId | string | Нет |  |
@@ -13,15 +13,20 @@ afterId
 
 ## Ответ
 
-Возвращает: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetFeedPostsResponse.ts)
+Возвращает: [`GetFeedPostsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetFeedPostsResponse1.ts)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример getFeedPosts'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-01';
-const afterId: string | undefined = 'post_20250601_89';
-const limit: number = 20;
-const tags: string[] = ['product-update', 'engineering'];
-const result: GetFeedPostsResponse = await getFeedPosts(tenantId, afterId, limit, tags);
+(async () => {
+  const tenantId: string = 'tenant_12345';
+  const afterId: string = 'post_9876';
+  const limit: number = 20;
+  const tags: string[] = ['news', 'sports'];
+
+  const feedResult: GetFeedPostsResponse1 = await getFeedPosts(tenantId, afterId, limit, tags);
+})();
 [inline-code-end]
+
+---

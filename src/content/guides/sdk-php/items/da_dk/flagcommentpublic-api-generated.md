@@ -1,7 +1,7 @@
 ## Parametre
 
-| Name | Type | Location | Påkrævet | Beskrivelse |
-|------|------|----------|----------|-------------|
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
+|------|------|-----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | commentId | string | path | Ja |  |
 | isFlagged | boolean | query | Ja |  |
@@ -21,14 +21,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Hvis du vil bruge en brugerdefineret HTTP-klient, giv din klient, som implementerer `GuzzleHttp\ClientInterface`.
+    // Hvis du vil bruge en brugerdefineret HTTP-klient, skal du videregive din klient, som implementerer `GuzzleHttp\ClientInterface`.
     // Dette er valgfrit, `GuzzleHttp\Client` vil blive brugt som standard.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $comment_id = 'comment_id_example'; // string
 $is_flagged = True; // bool
 $sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->flagCommentPublic($tenant_id, $comment_id, $is_flagged, $sso);

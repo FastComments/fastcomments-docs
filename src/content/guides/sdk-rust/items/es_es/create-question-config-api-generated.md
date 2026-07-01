@@ -11,21 +11,21 @@ Devuelve: [`CreateQuestionConfigResponse`](https://github.com/FastComments/fastc
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de create_question_config'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_question_config Ejemplo'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: CreateQuestionConfigParams = CreateQuestionConfigParams {
+let params = CreateQuestionConfigParams {
     tenant_id: "acme-corp-tenant".to_string(),
     create_question_config_body: models::CreateQuestionConfigBody {
-        slug: "news/article".to_string(),
-        title: "Article Comments".to_string(),
-        description: Some("Questions configuration for news articles".to_string()),
-        enabled: Some(true),
-        allow_anonymous: Some(false),
-        moderation_level: Some("pre_moderation".to_string()),
+        description: Some("Survey for news article feedback".to_string()),
         custom_options: Some(vec![
-            models::QuestionConfigCustomOptionsInner { key: "max_length".to_string(), value: "500".to_string() }
+            QuestionConfigCustomOptionsInner {
+                option_key: "allow_multiple".to_string(),
+                option_value: "true".to_string(),
+            },
         ]),
+        ..Default::default()
     },
 };
-let response: CreateQuestionConfigResponse = create_question_config(&configuration, params).await?;
+
+let response = create_question_config(&configuration, params).await?;
 [inline-code-end]

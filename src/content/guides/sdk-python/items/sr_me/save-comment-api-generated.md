@@ -1,47 +1,48 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Обавезно | Опис |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| isLive | boolean | query | Не |  |
-| doSpamCheck | boolean | query | Не |  |
-| sendEmails | boolean | query | Не |  |
-| populateNotifications | boolean | query | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| isLive | boolean | query | No |  |
+| doSpamCheck | boolean | query | No |  |
+| sendEmails | boolean | query | No |  |
+| populateNotifications | boolean | query | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_save_comment_response.py)
+Vraća: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_save_comment_response.py)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'Пример save_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer save_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import SaveCommentOptions
 from client.models.api_save_comment_response import APISaveCommentResponse
 from client.models.create_comment_params import CreateCommentParams
 from client.rest import ApiException
 from pprint import pprint
 
-# Подешавање хоста је опционо и подразумева се на https://fastcomments.com
-# Погледајте configuration.py за списак свих подржаних конфигурационих параметара.
+# Definisanje hosta je opcionalno i podrazumevano je https://fastcomments.com
+# Pogledajte configuration.py za kompletnu listu svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клијент мора да конфигурише параметре аутентификације и овлашћивања
-# у складу са безбедносном политиком API сервера.
-# Примери за сваки метод аутентификације су дати у наставку, употребите пример који
-# одговара вашем случају употребе за аутификацију.
+# Klijent mora konfigurisati parametre autentifikacije i autorizacije
+# u skladu sa sigurnosnom politikom API servera.
+# Primjeri za svaki metod autentifikacije su prikazani ispod, koristite onaj koji
+# odgovara vašem slučaju upotrebe.
 
-# Конфигуришите API кључ за ауторизацију: api_key
+# Konfigurišite autorizaciju API ključem: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Раскоментаришите линију испод да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
+# Odkomentarišite ispod da biste postavili prefiks (npr. Bearer) za API ključ, ako je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Уђите у контекст са инстанцом API клијента
+# Unesite kontekst sa instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Креирајте инстанцу API класе
+    # Kreirajte instancu API klase
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_comment_params = client.CreateCommentParams() # CreateCommentParams | 
@@ -51,7 +52,7 @@ with client.ApiClient(configuration) as api_client:
     populate_notifications = True # bool |  (optional)
 
     try:
-        api_response = api_instance.save_comment(tenant_id, create_comment_params, is_live=is_live, do_spam_check=do_spam_check, send_emails=send_emails, populate_notifications=populate_notifications)
+        api_response = api_instance.save_comment(tenant_id, create_comment_params, SaveCommentOptions(is_live=is_live, do_spam_check=do_spam_check, send_emails=send_emails, populate_notifications=populate_notifications))
         print("The response of DefaultApi->save_comment:\n")
         pprint(api_response)
     except Exception as e:

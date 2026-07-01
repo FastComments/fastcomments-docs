@@ -1,22 +1,24 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Ime | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | commentId | string | query | No |  |
 | sso | string | query | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetUserInternalProfileResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_internal_profile_response.rb)
+Vraća: [`GetUserInternalProfileResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_internal_profile_response.rb)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'get_user_internal_profile Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_user_internal_profile Primer'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 opts = {
   comment_id: 'comment_id_example', # String | 
   sso: 'sso_example' # String | 
@@ -24,11 +26,9 @@ opts = {
 
 begin
   
-  result = api_instance.get_user_internal_profile(opts)
+  result = api_instance.get_user_internal_profile(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_user_internal_profile: #{e}"
 end
 [inline-code-end]
-
----

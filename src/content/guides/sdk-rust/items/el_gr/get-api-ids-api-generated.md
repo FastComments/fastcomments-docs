@@ -1,14 +1,15 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
-|------|------|----------|-------------|
-| text_search | String | Όχι |  |
-| by_ip_from_comment | String | Όχι |  |
-| filters | String | Όχι |  |
-| search_filters | String | Όχι |  |
-| after_id | String | Όχι |  |
-| demo | bool | Όχι |  |
-| sso | String | Όχι |  |
+|------|------|------------|-----------|
+| tenant_id | String | Yes |  |
+| text_search | String | No |  |
+| by_ip_from_comment | String | No |  |
+| filters | String | No |  |
+| search_filters | String | No |  |
+| after_id | String | No |  |
+| demo | bool | No |  |
+| sso | String | No |  |
 
 ## Απόκριση
 
@@ -18,19 +19,18 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα get_api_ids'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_example() -> Result<ModerationApiGetCommentIdsResponse, Error> {
-    let params: GetApiIdsParams = GetApiIdsParams {
-        text_search: Some("climate policy debate".to_string()),
-        by_ip_from_comment: Some("198.51.100.23".to_string()),
-        filters: Some("status:approved,section:opinion".to_string()),
-        search_filters: Some("author:guest".to_string()),
-        after_id: Some("cmt_000123abc".to_string()),
+async fn example() -> Result<(), Error> {
+    let params = GetApiIdsParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        text_search: Some("breaking news".to_string()),
+        by_ip_from_comment: None,
+        filters: Some("status:approved".to_string()),
+        search_filters: None,
+        after_id: None,
         demo: Some(false),
-        sso: Some("acme-corp-tenant".to_string()),
+        sso: Some("sso-token".to_string()),
     };
-    let response: ModerationApiGetCommentIdsResponse = get_api_ids(&configuration, params).await?;
-    Ok(response)
+    let _response = get_api_ids(&config, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

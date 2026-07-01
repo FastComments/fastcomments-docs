@@ -1,18 +1,17 @@
-Omogućite ili onemogućite obaveštenja za stranicu. Kada su korisnici pretplaćeni na stranicu, obaveštenja se kreiraju
-za nove korenske komentare, i takođe
+Enable or disable notifications for a page. When users are subscribed to a page, notifications are created for new root comments, and also
 
-## Parametri
+## Parameters
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| urlId | string | Da |  |
-| url | string | Da |  |
-| pageTitle | string | Da |  |
-| subscribedOrUnsubscribed | string | Da |  |
-| sso | string | Ne |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| url | string | Yes |  |
+| pageTitle | string | Yes |  |
+| subscribedOrUnsubscribed | string | Yes |  |
+| sso | string | No |  |
 
-## Odgovor
+## Response
 
 Vraća: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UpdateUserNotificationPageSubscriptionStatusResponse.h)
 
@@ -20,19 +19,17 @@ Vraća: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.
 
 [inline-code-attrs-start title = 'Primer updateUserNotificationPageSubscriptionStatus'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> sso(utility::conversions::to_string_t("sso-token-abc123"));
-api->updateUserNotificationPageSubscriptionStatus(
-    utility::conversions::to_string_t("my-tenant-123"),
-    utility::conversions::to_string_t("article-456"),
-    utility::conversions::to_string_t("https://www.example.com/posts/456"),
-    utility::conversions::to_string_t("How to Test C++ SDK"),
-    utility::conversions::to_string_t("subscribed"),
-    sso
-).then([](pplx::task<std::shared_ptr<UpdateUserNotificationPageSubscriptionStatusResponse>> t){
-    try {
-        auto resp = t.get();
-        auto copy = std::make_shared<UpdateUserNotificationPageSubscriptionStatusResponse>(*resp);
-        (void)copy;
-    } catch (const std::exception&) { }
-});
+utility::string_t tenantId = U("my-tenant-123");
+utility::string_t urlId = U("page-456");
+utility::string_t url = U("https://example.com/articles/awesome-article");
+utility::string_t pageTitle = U("Awesome Article");
+utility::string_t subscription = U("subscribed");
+boost::optional<utility::string_t> sso = boost::make_optional<utility::string_t>(U("sso-token-789"));
+
+api->updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscription, sso)
+    .then([](std::shared_ptr<UpdateUserNotificationPageSubscriptionStatusResponse> resp) {
+        // process resp if needed
+    });
 [inline-code-end]
+
+---

@@ -1,17 +1,17 @@
-## Paramètres
+## Parameters
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Oui |  |
-| largeInternalURLSanitized | string | query | Oui |  |
+| tenantId | string | path | Yes |  |
+| largeInternalURLSanitized | string | query | Yes |  |
 
-## Réponse
+## Response
 
-Retourne : [`GifGetLargeResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GifGetLargeResponse.php)
+Returns: [`GifGetLargeResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GifGetLargeResponse.php)
 
-## Exemple
+## Example
 
-[inline-code-attrs-start title = 'Exemple de getGifLarge'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getGifLarge'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -19,12 +19,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Si vous souhaitez utiliser un client http personnalisé, passez votre client qui implémente `GuzzleHttp\ClientInterface`.
+    // Si vous voulez utiliser un client HTTP personnalisé, transmettez votre client qui implémente `GuzzleHttp\ClientInterface`.
     // Ceci est optionnel, `GuzzleHttp\Client` sera utilisé par défaut.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $large_internal_url_sanitized = 'large_internal_url_sanitized_example'; // string
+
 
 try {
     $result = $apiInstance->getGifLarge($tenant_id, $large_internal_url_sanitized);

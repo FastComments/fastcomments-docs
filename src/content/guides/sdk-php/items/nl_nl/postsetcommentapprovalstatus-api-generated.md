@@ -1,9 +1,11 @@
 ## Parameters
 
-| Name | Type | Location | Required | Description |
+| Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Ja |  |
 | commentId | string | path | Ja |  |
 | approved | boolean | query | Nee |  |
+| broadcastId | string | query | Nee |  |
 | sso | string | query | Nee |  |
 
 ## Respons
@@ -12,7 +14,7 @@ Retourneert: [`SetCommentApprovedResponse`](https://github.com/FastComments/fast
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'postSetCommentApprovalStatus Voorbeeld'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postSetCommentApprovalStatus voorbeeld'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -20,16 +22,22 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Als u een aangepaste HTTP-client wilt gebruiken, geef dan uw client door die `GuzzleHttp\ClientInterface` implementeert.
-    // Dit is optioneel; `GuzzleHttp\Client` wordt standaard gebruikt.
+    // Als je een aangepaste http-client wilt gebruiken, geef je client door die `GuzzleHttp\ClientInterface` implementeert.
+    // Dit is optioneel, `GuzzleHttp\Client` wordt standaard gebruikt.
     new GuzzleHttp\Client()
 );
+
+$tenant_id = 'tenant_id_example'; // string
 $comment_id = 'comment_id_example'; // string
-$approved = True; // bool
-$sso = 'sso_example'; // string
+$options = [
+    'approved' => True, // bool
+    'broadcast_id' => 'broadcast_id_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->postSetCommentApprovalStatus($comment_id, $approved, $sso);
+    $result = $apiInstance->postSetCommentApprovalStatus($tenant_id, $comment_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->postSetCommentApprovalStatus: ', $e->getMessage(), PHP_EOL;

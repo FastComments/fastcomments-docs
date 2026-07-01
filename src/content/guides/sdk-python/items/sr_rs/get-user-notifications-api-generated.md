@@ -1,59 +1,60 @@
-## Параметри
+## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| urlId | string | query | Не | Користи се за утврђивање да ли је тренутна страница претплаћена. |
-| pageSize | integer | query | Не |  |
-| afterId | string | query | Не |  |
-| includeContext | boolean | query | Не |  |
-| afterCreatedAt | integer | query | Не |  |
-| unreadOnly | boolean | query | Не |  |
-| dmOnly | boolean | query | Не |  |
-| noDm | boolean | query | Не |  |
-| includeTranslations | boolean | query | Не |  |
-| includeTenantNotifications | boolean | query | Не |  |
-| sso | string | query | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| urlId | string | query | No | Koristi se da se utvrdi da li je trenutna stranica pretplaćena. |
+| pageSize | integer | query | No |  |
+| afterId | string | query | No |  |
+| includeContext | boolean | query | No |  |
+| afterCreatedAt | integer | query | No |  |
+| unreadOnly | boolean | query | No |  |
+| dmOnly | boolean | query | No |  |
+| noDm | boolean | query | No |  |
+| includeTranslations | boolean | query | No |  |
+| includeTenantNotifications | boolean | query | No |  |
+| sso | string | query | No |  |
 
-## Одговор
+## Response
 
-Враћа: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_my_notifications_response.py)
+Vraća: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_my_notifications_response.py)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'get_user_notifications пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer get_user_notifications'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetUserNotificationsOptions
 from client.models.get_my_notifications_response import GetMyNotificationsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинисање host-а је опционо и подразумевано је https://fastcomments.com
-# Погледајте configuration.py за листу свих подржаних параметара конфигурације.
+# Definisanje host-a je opciono i podrazumevano je https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Отворите контекст са инстанцом API клијента
+# Uđite u kontekst sa instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Направите инстанцу API класе
+    # Kreirajte instancu API klase
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    url_id = 'url_id_example' # str | Користи се да би се утврдило да ли је тренутна страница претплаћена. (опционо)
-    page_size = 56 # int |  (опционо)
-    after_id = 'after_id_example' # str |  (опционо)
-    include_context = True # bool |  (опционо)
-    after_created_at = 56 # int |  (опционо)
-    unread_only = True # bool |  (опционо)
-    dm_only = True # bool |  (опционо)
-    no_dm = True # bool |  (опционо)
-    include_translations = True # bool |  (опционо)
-    include_tenant_notifications = True # bool |  (опционо)
-    sso = 'sso_example' # str |  (опционо)
+    url_id = 'url_id_example' # str | Koristi se da se utvrdi da li je trenutna stranica pretplaćena. (opcionalno)
+    page_size = 56 # int |  (opcionalno)
+    after_id = 'after_id_example' # str |  (opcionalno)
+    include_context = True # bool |  (opcionalno)
+    after_created_at = 56 # int |  (opcionalno)
+    unread_only = True # bool |  (opcionalno)
+    dm_only = True # bool |  (opcionalno)
+    no_dm = True # bool |  (opcionalno)
+    include_translations = True # bool |  (opcionalno)
+    include_tenant_notifications = True # bool |  (opcionalno)
+    sso = 'sso_example' # str |  (opcionalno)
 
     try:
-        api_response = api_instance.get_user_notifications(tenant_id, url_id=url_id, page_size=page_size, after_id=after_id, include_context=include_context, after_created_at=after_created_at, unread_only=unread_only, dm_only=dm_only, no_dm=no_dm, include_translations=include_translations, include_tenant_notifications=include_tenant_notifications, sso=sso)
+        api_response = api_instance.get_user_notifications(tenant_id, GetUserNotificationsOptions(url_id=url_id, page_size=page_size, after_id=after_id, include_context=include_context, after_created_at=after_created_at, unread_only=unread_only, dm_only=dm_only, no_dm=no_dm, include_translations=include_translations, include_tenant_notifications=include_tenant_notifications, sso=sso))
         print("The response of PublicApi->get_user_notifications:\n")
         pprint(api_response)
     except Exception as e:

@@ -2,8 +2,8 @@
 
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| textSearch | string | Nej |  |
-| sso | string | Nej |  |
+| tenantId | string | Ja |  |
+| options | const GetSearchSuggestOptions& | Ja |  |
 
 ## Svar
 
@@ -13,18 +13,14 @@ Returnerer: [`ModerationSuggestResponse`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'getSearchSuggest Eksempel'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> textSearch = utility::string_t(U("preventing spam in comments"));
-boost::optional<utility::string_t> sso = utility::string_t(U("user@example.com"));
-api->getSearchSuggest(textSearch, sso)
-    .then([](pplx::task<std::shared_ptr<ModerationSuggestResponse>> t) {
-        try {
-            auto resp = t.get();
-            if (resp) {
-                auto copy = std::make_shared<ModerationSuggestResponse>(*resp);
-            }
-        } catch (const std::exception&) {
-        }
-    });
+utility::string_t tenantId = U("my-tenant-123");
+GetSearchSuggestOptions opts;
+opts.query = U("search term");
+opts.limit = boost::optional<int>(5);
+opts.includeInactive = boost::optional<bool>(false);
+api->getSearchSuggest(tenantId, opts).then([](pplx::task<std::shared_ptr<ModerationSuggestResponse>> t){
+    try{
+        auto resp = t.get();
+    }catch(const std::exception&){ }
+}).wait();
 [inline-code-end]
-
----

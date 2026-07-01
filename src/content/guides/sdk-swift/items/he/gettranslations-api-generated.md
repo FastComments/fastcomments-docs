@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
 | namespace | string | path | כן |  |
 | component | string | path | כן |  |
@@ -13,9 +13,9 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getTranslations'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getTranslations'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// דוגמאות הקוד שלהלן עדיין בבטא. במקרה של בעיה, אנא דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// דוגמאות הקוד הבאות עדיין בבטא. עבור כל בעיה, אנא דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let namespace = "namespace_example" // String | 
@@ -23,7 +23,7 @@ let component = "component_example" // String |
 let locale = "locale_example" // String |  (אופציונלי)
 let useFullTranslationIds = true // Bool |  (אופציונלי)
 
-PublicAPI.getTranslations(namespace: namespace, component: component, locale: locale, useFullTranslationIds: useFullTranslationIds) { (response, error) in
+PublicAPI.getTranslations(namespace: namespace, component: component, options: PublicAPI.GetTranslationsOptions(locale: locale, useFullTranslationIds: useFullTranslationIds)) { (response, error) in
     guard error == nil else {
         print(error)
         return

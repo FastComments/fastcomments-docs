@@ -1,12 +1,12 @@
 ## Parametry
 
-| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Tak |  |
-| search | string | query | Tak |  |
-| locale | string | query | Nie |  |
-| rating | string | query | Nie |  |
-| page | number | query | Nie |  |
+| tenantId | string | path | Yes |  |
+| search | string | query | Yes |  |
+| locale | string | query | No |  |
+| rating | string | query | No |  |
+| page | number | query | No |  |
 
 ## Odpowiedź
 
@@ -14,21 +14,22 @@ Zwraca: [`GetGifsSearchResponse`](https://github.com/FastComments/fastcomments-p
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład get_gifs_search'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_gifs_search Przykład'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetGifsSearchOptions
 from client.models.get_gifs_search_response import GetGifsSearchResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Określenie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
-# Zobacz plik configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracji.
+# Definiowanie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
+# Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracyjnych.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Otwórz kontekst z instancją klienta API
+# Wejdź w kontekst z instancją klienta API
 with client.ApiClient(configuration) as api_client:
     # Utwórz instancję klasy API
     api_instance = client.PublicApi(api_client)
@@ -39,7 +40,7 @@ with client.ApiClient(configuration) as api_client:
     page = 3.4 # float |  (opcjonalne)
 
     try:
-        api_response = api_instance.get_gifs_search(tenant_id, search, locale=locale, rating=rating, page=page)
+        api_response = api_instance.get_gifs_search(tenant_id, search, GetGifsSearchOptions(locale=locale, rating=rating, page=page))
         print("The response of PublicApi->get_gifs_search:\n")
         pprint(api_response)
     except Exception as e:

@@ -1,8 +1,10 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
-|------|------|----------|----------|-------------|
+| Ім'я | Тип | Розташування | Обов'язково | Опис |
+|------|------|--------------|-------------|------|
+| tenantId | string | query | Так |  |
 | commentId | string | path | Так |  |
+| broadcastId | string | query | Ні |  |
 | sso | string | query | Ні |  |
 
 ## Відповідь
@@ -11,7 +13,7 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад postFlagComment'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postFlagComment Приклад'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Імпорт класів:
 import com.fastcomments.invoker.ApiClient;
@@ -26,18 +28,21 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
+    String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      APIEmptyResponse result = apiInstance.postFlagComment(commentId)
+      APIEmptyResponse result = apiInstance.postFlagComment(tenantId, commentId)
+            .broadcastId(broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ModerationApi#postFlagComment");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("Виключення при виклику ModerationApi#postFlagComment");
+      System.err.println("Код статусу: " + e.getCode());
+      System.err.println("Причина: " + e.getResponseBody());
+      System.err.println("Заголовки відповіді: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }

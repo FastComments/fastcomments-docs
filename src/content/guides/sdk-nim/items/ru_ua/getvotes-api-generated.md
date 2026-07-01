@@ -1,22 +1,20 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Обязательно | Описание |
+| Назва | Тип | Обов’язково | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| urlId | string | Да |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`Option[GetVotesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_votes_response.nim)
+Повертає: [`Option[GetVotesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_votes_response.nim)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример getVotes'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад getVotes'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getVotes(tenantId = "my-tenant-123", urlId = "news/breaking-article-456")
-if response.isSome:
-  let votesResp = response.get()
-  echo "Received votes response:", $votesResp
-else:
-  echo "No votes returned, HTTP response:", $httpResponse
+let (optVotes, httpResp) = client.getVotes(tenantId = "my-tenant-123", urlId = "news/article-42")
+if optVotes.isSome:
+  let votes = optVotes.get()
+  discard votes
 [inline-code-end]

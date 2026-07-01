@@ -1,11 +1,11 @@
-## Parametreler
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 | skip | integer | query | Hayır |  |
 
-## Yanıt
+## Response
 
 Döndürür: [`GetSSOUsersResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetSSOUsersResponse.php)
 
@@ -17,20 +17,22 @@ Döndürür: [`GetSSOUsersResponse`](https://github.com/FastComments/fastcomment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// API anahtarı yetkilendirmesini yapılandırın: api_key
+// API anahtarı yetkilendirmesini yapılandır: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Gerekirse, API anahtarı için öneki (ör. Bearer) ayarlamak üzere aşağıyı yorum dışı bırakın
+// Gerekirse aşağıdaki satırı iptal etmeyi kaldırarak API anahtarı için önek (ör. Bearer) ayarlayın
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Özel bir HTTP istemcisi kullanmak istiyorsanız, `GuzzleHttp\ClientInterface` uygulayan istemcinizi iletin.
-    // Bu isteğe bağlıdır, varsayılan olarak `GuzzleHttp\Client` kullanılacaktır.
+    // Özel bir HTTP istemcisi kullanmak istiyorsanız, `GuzzleHttp\ClientInterface` arayüzünü uygulayan istemcinizi geçirin.
+    // Bu isteğe bağlıdır, varsayılan olarak `GuzzleHttp\Client` kullanılacak.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $skip = 56; // int
+
 
 try {
     $result = $apiInstance->getSSOUsers($tenant_id, $skip);

@@ -1,33 +1,37 @@
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
-|------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| createCommentParams | CreateCommentParams | Ja |  |
-| isLive | boolean | Nein |  |
-| doSpamCheck | boolean | Nein |  |
-| sendEmails | boolean | Nein |  |
-| populateNotifications | boolean | Nein |  |
+|------|------|--------------|--------------|
+| tenantId | string | Yes |  |
+| createCommentParams | CreateCommentParams | Yes |  |
+| isLive | boolean | No |  |
+| doSpamCheck | boolean | No |  |
+| sendEmails | boolean | No |  |
+| populateNotifications | boolean | No |  |
 
 ## Antwort
 
-Gibt zurück: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APISaveCommentResponse.ts)
+Rückgabe: [`SaveCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SaveCommentResponse.ts)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'saveComment Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_98765";
-const createCommentParams: CreateCommentParams = {
-  content: "This fixed my build pipeline — switching the environment variable resolved the missing dependency.",
-  threadId: "blog-post-2026-06-19-ci-troubleshooting",
-  userSession: { userId: "user_7542", displayName: "Aisha Khan", email: "aisha.k@example.com" }
-};
-const isLive: boolean = true;
-const doSpamCheck: boolean = true;
-const sendEmails: boolean = false;
-const populateNotifications: boolean = true;
-const response: APISaveCommentResponse = await saveComment(tenantId, createCommentParams, isLive, doSpamCheck, sendEmails, populateNotifications);
+async function submitComment() {
+  const tenantId: string = "tenant_9f8e7d6c";
+  const commentParams: CreateCommentParams = {
+    text: "Great post, thanks for sharing!",
+    authorId: "user_123abc",
+    mentions: [] as CommentUserMentionInfo[],
+    hashtags: [] as CommentUserHashTagInfo[]
+  };
+  const response: SaveCommentResponse = await saveComment(
+    tenantId,
+    commentParams,
+    true,   // istLive
+    false   // Spam‑Prüfung
+  );
+  console.log(response);
+}
+submitComment();
 [inline-code-end]
-
----

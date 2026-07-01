@@ -1,30 +1,31 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
-|------|------|----------|-------------|
-| tenantId | string | Ναι |  |
-| bulkAggregateQuestionResultsRequest | BulkAggregateQuestionResultsRequest | Ναι |  |
-| forceRecalculate | boolean | Όχι |  |
+|------|------|------------|-----------|
+| tenantId | string | Yes |  |
+| bulkAggregateQuestionResultsRequest | BulkAggregateQuestionResultsRequest | Yes |  |
+| forceRecalculate | boolean | No |  |
 
 ## Απάντηση
 
-Επιστρέφει: [`BulkAggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BulkAggregateQuestionResultsResponse.ts)
+Επιστρέφει: [`BulkAggregateQuestionResultsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BulkAggregateQuestionResultsResponse1.ts)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα bulkAggregateQuestionResults'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'bulkAggregateQuestionResults Παράδειγμα'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_3f9b2c1a';
-const items: BulkAggregateQuestionItem[] = [
-  {
-    questionId: 'q_92f1b7',
-    metrics: ['responses', 'upvotes'],
-    timeBuckets: [
-      { start: '2026-05-01T00:00:00Z', end: '2026-05-07T23:59:59Z', interval: 'day' }
-    ]
-  }
-];
-const bulkAggregateQuestionResultsRequest: BulkAggregateQuestionResultsRequest = { items };
-const forceRecalculate: boolean = true;
-const result: BulkAggregateQuestionResultsResponse = await bulkAggregateQuestionResults(tenantId, bulkAggregateQuestionResultsRequest, forceRecalculate);
+const tenantId: string = "acme-corp";
+
+const request: BulkAggregateQuestionResultsRequest = {
+  questionIds: ["product-satisfaction", "feature-usage"],
+  startDate: "2024-01-01T00:00:00Z",
+  endDate: "2024-01-31T23:59:59Z",
+  timeBucket: "day"
+};
+
+const result: BulkAggregateQuestionResultsResponse1 = await bulkAggregateQuestionResults(
+  tenantId,
+  request,
+  true
+);
 [inline-code-end]

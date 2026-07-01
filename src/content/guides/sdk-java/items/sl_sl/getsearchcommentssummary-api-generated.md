@@ -2,18 +2,19 @@
 
 | Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| value | string | query | Ne |  |
-| filters | string | query | Ne |  |
-| searchFilters | string | query | Ne |  |
-| sso | string | query | Ne |  |
+| tenantId | string | poizvedba | Da |  |
+| value | string | poizvedba | Ne |  |
+| filters | string | poizvedba | Ne |  |
+| searchFilters | string | poizvedba | Ne |  |
+| sso | string | poizvedba | Ne |  |
 
 ## Odgovor
 
-Vrača: [`ModerationCommentSearchResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationCommentSearchResponse.java)
+Vrne: [`ModerationCommentSearchResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationCommentSearchResponse.java)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer getSearchCommentsSummary'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSearchCommentsSummary Primer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Uvozi razrede:
 import com.fastcomments.invoker.ApiClient;
@@ -28,12 +29,13 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String value = "value_example"; // String | 
     String filters = "filters_example"; // String | 
     String searchFilters = "searchFilters_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationCommentSearchResponse result = apiInstance.getSearchCommentsSummary()
+      ModerationCommentSearchResponse result = apiInstance.getSearchCommentsSummary(tenantId)
             .value(value)
             .filters(filters)
             .searchFilters(searchFilters)

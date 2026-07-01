@@ -1,25 +1,20 @@
----
-## Параметры
+## Параметри
 
-| Имя | Тип | Обязательно | Описание |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| urlId | string | Да |  |
+| Назва | Тип | Обов’язковий | Опис |
+|------|------|--------------|------|
+| tenantId | string | Так |  |
+| urlId | string | Так |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`Option[GetV2PageReacts]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_v2_page_reacts.nim)
+Returns: [`Option[GetV2PageReacts]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_v2_page_reacts.nim)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример getV2PageReacts'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад getV2PageReacts'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getV2PageReacts(tenantId = "my-tenant-123", urlId = "news/elections/2026/us-primary-results")
-if response.isSome:
-  let reacts = response.get()
-  echo "Received reacts: ", $reacts
-else:
-  echo "No reacts available"
+let (reactsOpt, httpResp) = client.getV2PageReacts(tenantId = "my-tenant-123", urlId = "news/article-title")
+if reactsOpt.isSome:
+  let reacts = reactsOpt.get()
+  echo reacts
 [inline-code-end]
-
----

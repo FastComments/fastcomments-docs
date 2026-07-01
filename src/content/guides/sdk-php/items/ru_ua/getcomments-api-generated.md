@@ -1,24 +1,24 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| page | integer | query | Нет |  |
-| limit | integer | query | Нет |  |
-| skip | integer | query | Нет |  |
-| asTree | boolean | query | Нет |  |
-| skipChildren | integer | query | Нет |  |
-| limitChildren | integer | query | Нет |  |
-| maxTreeDepth | integer | query | Нет |  |
-| urlId | string | query | Нет |  |
-| userId | string | query | Нет |  |
-| anonUserId | string | query | Нет |  |
-| contextUserId | string | query | Нет |  |
-| hashTag | string | query | Нет |  |
-| parentId | string | query | Нет |  |
-| direction | string | query | Нет |  |
-| fromDate | integer | query | Нет |  |
-| toDate | integer | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| page | integer | query | No |  |
+| limit | integer | query | No |  |
+| skip | integer | query | No |  |
+| asTree | boolean | query | No |  |
+| skipChildren | integer | query | No |  |
+| limitChildren | integer | query | No |  |
+| maxTreeDepth | integer | query | No |  |
+| urlId | string | query | No |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
+| contextUserId | string | query | No |  |
+| hashTag | string | query | No |  |
+| parentId | string | query | No |  |
+| direction | string | query | No |  |
+| fromDate | integer | query | No |  |
+| toDate | integer | query | No |  |
 
 ## Ответ
 
@@ -32,37 +32,42 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Настройка авторизации по API-ключу: api_key
-// Раскомментируйте ниже, чтобы задать префикс (например, Bearer) для API-ключа, если это необходимо
+// Настройте авторизацию API‑ключа: api_key
+$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для API‑ключа, если необходимо
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Если вы хотите использовать пользовательский HTTP-клиент, передайте ваш клиент, который реализует `GuzzleHttp\ClientInterface`.
+    // Если вы хотите использовать пользовательский HTTP‑клиент, передайте ваш клиент, реализующий `GuzzleHttp\ClientInterface`.
     // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$page = 56; // int
-$limit = 56; // int
-$skip = 56; // int
-$as_tree = True; // bool
-$skip_children = 56; // int
-$limit_children = 56; // int
-$max_tree_depth = 56; // int
-$url_id = 'url_id_example'; // string
-$user_id = 'user_id_example'; // string
-$anon_user_id = 'anon_user_id_example'; // string
-$context_user_id = 'context_user_id_example'; // string
-$hash_tag = 'hash_tag_example'; // string
-$parent_id = 'parent_id_example'; // string
-$direction = new \FastComments\Client\Model\\FastComments\Client\Model\SortDirections(); // \FastComments\Client\Model\SortDirections
-$from_date = 56; // int
-$to_date = 56; // int
+$options = [
+    'page' => 56, // int
+    'limit' => 56, // int
+    'skip' => 56, // int
+    'as_tree' => True, // bool
+    'skip_children' => 56, // int
+    'limit_children' => 56, // int
+    'max_tree_depth' => 56, // int
+    'url_id' => 'url_id_example', // string
+    'user_id' => 'user_id_example', // string
+    'anon_user_id' => 'anon_user_id_example', // string
+    'context_user_id' => 'context_user_id_example', // string
+    'hash_tag' => 'hash_tag_example', // string
+    'parent_id' => 'parent_id_example', // string
+    'direction' => new \FastComments\Client\Model\\FastComments\Client\Model\SortDirections(), // \FastComments\Client\Model\SortDirections
+    'from_date' => 56, // int
+    'to_date' => 56, // int
+];
+
 
 try {
-    $result = $apiInstance->getComments($tenant_id, $page, $limit, $skip, $as_tree, $skip_children, $limit_children, $max_tree_depth, $url_id, $user_id, $anon_user_id, $context_user_id, $hash_tag, $parent_id, $direction, $from_date, $to_date);
+    $result = $apiInstance->getComments($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getComments: ', $e->getMessage(), PHP_EOL;

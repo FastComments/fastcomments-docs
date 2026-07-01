@@ -13,16 +13,17 @@ Returns: [`GetSubscriptionsAPIResponse`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'getSubscriptions Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U("user@example.com"));
-api->getSubscriptions(tenantId, userId)
-.then([](pplx::task<std::shared_ptr<GetSubscriptionsAPIResponse>> t){
-    try {
-        auto resp = t.get();
-        if (resp) {
-            auto copy = std::make_shared<GetSubscriptionsAPIResponse>(*resp);
+auto tenant = utility::conversions::to_string_t("my-tenant-123");
+boost::optional<utility::string_t> user = utility::conversions::to_string_t("user@example.com");
+
+api->getSubscriptions(tenant, user).then(
+    [](pplx::task<std::shared_ptr<GetSubscriptionsAPIResponse>> t) {
+        try {
+            auto response = t.get();
+            // process response
+        } catch (const std::exception& e) {
+            // handle error
         }
-    } catch (const std::exception&) {
     }
-});
+);
 [inline-code-end]

@@ -1,9 +1,10 @@
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
-| commentId | string | ruta | Sí |  |
-| sso | string | consulta | No |  |
+| tenantId | string | query | Sí |  |
+| commentId | string | path | Sí |  |
+| sso | string | query | No |  |
 
 ## Respuesta
 
@@ -11,7 +12,7 @@ Devuelve: [`ModerationAPIGetLogsResponse`](https://github.com/FastComments/fastc
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de GetLogs'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo GetLogs'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,17 +24,20 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
 	sso := "sso_example" // string |  (opcional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetLogs(context.Background(), commentId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetLogs(context.Background(), commentId).TenantId(tenantId).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetLogs``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Error al llamar `ModerationAPI.GetLogs``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Respuesta HTTP completa: %v\n", r)
 	}
 	// respuesta de `GetLogs`: ModerationAPIGetLogsResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetLogs`: %v\n", resp)
+	fmt.Fprintf(os.Stdout, "Respuesta de `ModerationAPI.GetLogs`: %v\n", resp)
 }
 [inline-code-end]
+
+---

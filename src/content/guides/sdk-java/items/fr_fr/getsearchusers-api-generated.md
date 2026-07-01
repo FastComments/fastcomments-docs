@@ -1,17 +1,18 @@
-## Parameters
+## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Oui |  |
 | value | string | query | Non |  |
 | sso | string | query | Non |  |
 
-## Response
+## Réponse
 
-Renvoie : [`ModerationUserSearchResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationUserSearchResponse.java)
+Returns: [`ModerationUserSearchResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationUserSearchResponse.java)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getSearchUsers'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSearchUsers Exemple'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importer les classes :
 import com.fastcomments.invoker.ApiClient;
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String value = "value_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationUserSearchResponse result = apiInstance.getSearchUsers()
+      ModerationUserSearchResponse result = apiInstance.getSearchUsers(tenantId)
             .value(value)
             .sso(sso)
             .execute();

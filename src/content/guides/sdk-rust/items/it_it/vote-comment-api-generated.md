@@ -16,18 +16,27 @@ Restituisce: [`VoteResponse`](https://github.com/FastComments/fastcomments-rust/
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di vote_comment'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio vote_comment'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: VoteCommentParams = VoteCommentParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    comment_id: "cmt_8392a1".to_string(),
-    url_id: "news/article-2026-06-19-rust-release".to_string(),
-    broadcast_id: "broadcast_2026_06".to_string(),
-    vote_body_params: models::VoteBodyParams { value: 1 },
-    session_id: Some("sess_4f9b2c".to_string()),
-    sso: Some("sso_token_abcd1234".to_string()),
-};
-let response: VoteResponse = vote_comment(&configuration, params).await?;
-[inline-code-end]
+async fn run() -> Result<(), Error> {
+    let config = configuration::Configuration::default();
 
----
+    let vote_body = models::VoteBodyParams {
+        vote_type: "upvote".to_string(),
+        weight: 1,
+    };
+
+    let params = VoteCommentParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: "comment-12345".to_string(),
+        url_id: "news/article".to_string(),
+        broadcast_id: "broadcast-67890".to_string(),
+        vote_body_params: vote_body,
+        session_id: Some("session-abcde".to_string()),
+        sso: None,
+    };
+
+    let _response = vote_comment(&config, params).await?;
+    Ok(())
+}
+[inline-code-end]

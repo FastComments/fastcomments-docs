@@ -3,22 +3,20 @@
 | Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
-| sso | string | Ne |  |
+| sso | string = "" | Ne |  |
 
 ## Odgovor
 
-Vrne: [`Option[ResetUserNotificationsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_reset_user_notifications_response.nim)
+Returns: [`Option[ResetUserNotificationsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_reset_user_notifications_response.nim)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer uporabe resetUserNotificationCount'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer resetUserNotificationCount'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.resetUserNotificationCount(tenantId = "my-tenant-123", sso = "user-sso-token-456")
-if response.isSome:
-  let result = response.get()
-  echo "ResetUserNotificationsResponse:", result
+let (resetRespOpt, httpResp) = client.resetUserNotificationCount(tenantId = "my-tenant-123", sso = "user-456")
+if resetRespOpt.isSome:
+  let resetResp = resetRespOpt.get()
+  echo resetResp
 else:
-  echo "Reset failed, HTTP response:", httpResponse
+  echo "Reset notification count response not available"
 [inline-code-end]
-
----

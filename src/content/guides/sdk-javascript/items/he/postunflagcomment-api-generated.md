@@ -1,26 +1,28 @@
----
-## פרמטרים
+## Parameters
 
 | שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | commentId | string | כן |  |
+| broadcastId | string | לא |  |
+| tenantId | string | לא |  |
 | sso | string | לא |  |
 
-## תגובה
+## Response
 
-מחזיר: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+מחזיר: [`PostUnFlagCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostUnFlagCommentResponse.ts)
 
-## דוגמה
+## Example
 
-[inline-code-attrs-start title = 'דוגמה ל-postUnFlagComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת postUnFlagComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const commentId: string = '5f8d04b2-9c3a-4d13-bb8a-123456789abc';
-  const resultWithoutSso: APIEmptyResponse = await postUnFlagComment(commentId);
-  const ssoToken: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0NTY3OCJ9.signature';
-  const resultWithSso: APIEmptyResponse = await postUnFlagComment(commentId, ssoToken);
-  console.log(resultWithoutSso, resultWithSso);
-})();
+async () => {
+  const response: PostUnFlagCommentResponse = await postUnFlagComment(
+    "cmt_12345",          // commentId
+    "brd_67890",          // broadcastId (optional)
+    "tenant_abc",         // tenantId (optional)
+    "sso_user_token_789"  // sso (optional)
+  );
+};
 [inline-code-end]
 
 ---

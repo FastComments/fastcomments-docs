@@ -1,36 +1,38 @@
-## Parámetros
+## Parameters
 
 | Nombre | Tipo | Ubicación | Obligatorio | Descripción |
-|------|------|----------|----------|-------------|
+|--------|------|-----------|-------------|-------------|
 | tenantId | string | query | Sí |  |
 | page | number | query | No |  |
 
-## Respuesta
+## Response
 
 Devuelve: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetHashTagsResponse.php)
 
-## Ejemplo
+## Example
 
-[inline-code-attrs-start title = 'Ejemplo de getHashTags'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo getHashTags'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api_key
+// Configurar autorización de clave API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Descomente a continuación para configurar el prefijo (p. ej., Bearer) para la clave API, si es necesario
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
     // Si desea usar un cliente HTTP personalizado, pase su cliente que implemente `GuzzleHttp\ClientInterface`.
-    // Esto es opcional, `GuzzleHttp\Client` se usará por defecto.
+    // Esto es opcional, se usará `GuzzleHttp\Client` por defecto.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$page = 3.4; // float
+
+$tenant_id = 'tenant_id_example'; // cadena
+$page = 3.4; // flotante
+
 
 try {
     $result = $apiInstance->getHashTags($tenant_id, $page);

@@ -1,20 +1,20 @@
-## Parametry
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Tak |  |
-| commentId | string | path | Tak |  |
-| broadcastId | string | query | Tak |  |
-| editKey | string | query | Nie |  |
-| sso | string | query | Nie |  |
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | Yes |  |
+| editKey | string | query | No |  |
+| sso | string | query | No |  |
 
-## Odpowiedź
+## Response
 
 Zwraca: [`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PublicAPIDeleteCommentResponse.php)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład deleteCommentPublic'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteCommentPublic Przykład'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -22,20 +22,24 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Jeśli chcesz użyć niestandardowego klienta HTTP, przekaż klienta, który implementuje `GuzzleHttp\ClientInterface`.
-    // To jest opcjonalne, domyślnie używany będzie `GuzzleHttp\Client`.
+    // Jeśli chcesz użyć własnego klienta HTTP, przekaż swój klient implementujący `GuzzleHttp\ClientInterface`.
+    // To opcjonalne, domyślnie zostanie użyty `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $comment_id = 'comment_id_example'; // string
 $broadcast_id = 'broadcast_id_example'; // string
-$edit_key = 'edit_key_example'; // string
-$sso = 'sso_example'; // string
+$options = [
+    'edit_key' => 'edit_key_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->deleteCommentPublic($tenant_id, $comment_id, $broadcast_id, $edit_key, $sso);
+    $result = $apiInstance->deleteCommentPublic($tenant_id, $comment_id, $broadcast_id, $options);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PublicApi->deleteCommentPublic: ', $e->getMessage(), PHP_EOL;
+    echo 'Wyjątek podczas wywoływania PublicApi->deleteCommentPublic: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]

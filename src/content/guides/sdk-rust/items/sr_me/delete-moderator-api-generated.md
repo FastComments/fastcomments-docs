@@ -1,28 +1,26 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| id | String | Да |  |
-| send_email | String | Не |  |
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
+| send_email | String | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
+Vraća: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
-## Примјер
+## Primjer
 
-[inline-code-attrs-start title = 'delete_moderator Примјер'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_moderator Primjer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn run() -> Result<(), Error> {
-    let params: DeleteModeratorParams = DeleteModeratorParams {
-        tenant_id: String::from("acme-corp-tenant"),
-        id: String::from("moderator-93b1f"),
-        send_email: Some(String::from("moderator@acme-corp.com")),
+    let params = DeleteModeratorParams {
+        tenant_id: "acme-corp".to_string(),
+        id: "moderator-123".to_string(),
+        send_email: Some("admin@acme.com".to_string()),
     };
-    let _response: ApiEmptyResponse = delete_moderator(&configuration, params).await?;
+    let _ = delete_moderator(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

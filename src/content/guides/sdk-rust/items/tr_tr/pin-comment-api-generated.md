@@ -1,12 +1,11 @@
----
 ## Parametreler
 
-| Ad | Tür | Gerekli | Açıklama |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | Evet |  |
-| comment_id | String | Evet |  |
-| broadcast_id | String | Evet |  |
-| sso | String | Hayır |  |
+| tenant_id | String | Yes |  |
+| comment_id | String | Yes |  |
+| broadcast_id | String | Yes |  |
+| sso | String | No |  |
 
 ## Yanıt
 
@@ -16,16 +15,14 @@ Döndürür: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/
 
 [inline-code-attrs-start title = 'pin_comment Örneği'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_pin() -> Result<ChangeCommentPinStatusResponse, Error> {
-    let params: PinCommentParams = PinCommentParams {
-        tenant_id: "acme-news".to_string(),
-        comment_id: "cmt-9f8b7d6".to_string(),
-        broadcast_id: "news/article/2026/06/19/article-12345".to_string(),
-        sso: Some("user-ssotoken-abc123".to_string()),
+async fn example() -> Result<(), Error> {
+    let params = PinCommentParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: "comment-12345".to_string(),
+        broadcast_id: "news/article".to_string(),
+        sso: Some("sso-token-xyz".to_string()),
     };
-    let response: ChangeCommentPinStatusResponse = pin_comment(configuration, params).await?;
-    Ok(response)
+    let _response = pin_comment(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

@@ -1,13 +1,14 @@
 ## 參數
 
-| 名稱 | 類型 | Location | 必填 | 說明 |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | 是 |  |
 | commentId | string | path | 是 |  |
 | sso | string | query | 否 |  |
 
 ## 回應
 
-回傳: [`ModerationAPIGetLogsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationAPIGetLogsResponse.java)
+Returns: [`ModerationAPIGetLogsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationAPIGetLogsResponse.java)
 
 ## 範例
 
@@ -26,18 +27,19 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
-    String commentId = "commentId_example"; // 字串 | 
-    String sso = "sso_example"; // 字串 | 
+    String tenantId = "tenantId_example"; // String | 
+    String commentId = "commentId_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
-      ModerationAPIGetLogsResponse result = apiInstance.getLogs(commentId)
+      ModerationAPIGetLogsResponse result = apiInstance.getLogs(tenantId, commentId)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ModerationApi#getLogs");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("呼叫 ModerationApi#getLogs 時發生例外");
+      System.err.println("狀態碼: " + e.getCode());
+      System.err.println("原因: " + e.getResponseBody());
+      System.err.println("回應標頭: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }

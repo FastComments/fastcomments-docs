@@ -1,7 +1,8 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Υποχρεωτικό | Περιγραφή |
-|------|------|----------|----------|-------------|
+| Όνομα | Τύπος | Τοποθεσία | Απαιτούμενο | Περιγραφή |
+|------|------|----------|------------|------------|
+| tenantId | string | query | Ναι |  |
 | commentId | string | path | Ναι |  |
 | sso | string | query | Όχι |  |
 
@@ -11,33 +12,32 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα get_comment_ban_status'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_comment_ban_status Παράδειγμα'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.models.get_comment_ban_status_response import GetCommentBanStatusResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Ορισμός του host είναι προαιρετικός και προεπιλεγμένο το https://fastcomments.com
-# Δείτε το configuration.py για λίστα με όλες τις υποστηριζόμενες παραμέτρους ρυθμίσεων.
+# Ο ορισμός του host είναι προαιρετικός και έχει προεπιλογή https://fastcomments.com
+# Δείτε το configuration.py για μια λίστα με όλες τις υποστηριζόμενες παραμέτρους διαμόρφωσης.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Εισέλθετε σε context με ένα στιγμιότυπο του API client
+# Εισάγετε ένα context με ένα στιγμιότυπο του πελάτη API
 with client.ApiClient(configuration) as api_client:
-    # Δημιουργήστε ένα instance της κλάσης API
+    # Δημιουργήστε ένα στιγμιότυπο της κλάσης API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
-    sso = 'sso_example' # str |  (προαιρετικό)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_comment_ban_status(comment_id, sso=sso)
+        api_response = api_instance.get_comment_ban_status(tenant_id, comment_id, sso=sso)
         print("The response of ModerationApi->get_comment_ban_status:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling ModerationApi->get_comment_ban_status: %s\n" % e)
 [inline-code-end]
-
----

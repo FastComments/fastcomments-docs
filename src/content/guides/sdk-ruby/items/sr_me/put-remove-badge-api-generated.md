@@ -1,25 +1,27 @@
-## Параметри
+## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| badgeId | string | query | Да |  |
-| userId | string | query | Не |  |
-| commentId | string | query | Не |  |
-| broadcastId | string | query | Не |  |
-| sso | string | query | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| badgeId | string | query | Yes |  |
+| userId | string | query | No |  |
+| commentId | string | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`RemoveUserBadgeResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/remove_user_badge_response.rb)
+Vraća: [`RemoveUserBadgeResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/remove_user_badge_response.rb)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'put_remove_badge Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'put_remove_badge Primjer'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 badge_id = 'badge_id_example' # String | 
 opts = {
   user_id: 'user_id_example', # String | 
@@ -30,9 +32,11 @@ opts = {
 
 begin
   
-  result = api_instance.put_remove_badge(badge_id, opts)
+  result = api_instance.put_remove_badge(tenant_id, badge_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->put_remove_badge: #{e}"
 end
 [inline-code-end]
+
+---

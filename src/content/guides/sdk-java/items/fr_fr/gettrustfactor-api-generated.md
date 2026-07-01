@@ -1,19 +1,20 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Oui |  |
 | userId | string | query | Non |  |
 | sso | string | query | Non |  |
 
 ## Réponse
 
-Renvoie: [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserTrustFactorResponse.java)
+Retourne : [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserTrustFactorResponse.java)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getTrustFactor'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getTrustFactor'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importer les classes :
+// Importer les classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,12 +27,13 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String userId = "userId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      GetUserTrustFactorResponse result = apiInstance.getTrustFactor()
+      GetUserTrustFactorResponse result = apiInstance.getTrustFactor(tenantId)
             .userId(userId)
-            .sso(sso)
+            .sso(sno)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -44,3 +46,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Da |  |
 | commentId | string | path | Da |  |
@@ -22,13 +22,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
     // Ako želite koristiti prilagođeni HTTP klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opcionalno, kao zadani će se koristiti `GuzzleHttp\Client`.
+    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao zadano.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $comment_id = 'comment_id_example'; // string
 $broadcast_id = 'broadcast_id_example'; // string
 $sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->lockComment($tenant_id, $comment_id, $broadcast_id, $sso);

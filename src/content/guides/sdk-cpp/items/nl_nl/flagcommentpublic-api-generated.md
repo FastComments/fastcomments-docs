@@ -2,12 +2,12 @@
 
 | Naam | Type | Vereist | Beschrijving |
 |------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| commentId | string | Ja |  |
-| isFlagged | bool | Ja |  |
-| sso | string | Nee |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| isFlagged | bool | Yes |  |
+| sso | string | No |  |
 
-## Antwoord
+## Respons
 
 Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
@@ -15,16 +15,16 @@ Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-c
 
 [inline-code-attrs-start title = 'flagCommentPublic Voorbeeld'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("cmt-456789");
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto commentId = utility::conversions::to_string_t("cmt-456789");
 bool isFlagged = true;
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
+boost::optional<utility::string_t> sso = utility::conversions::to_string_t("sso-token-abc");
 
 api->flagCommentPublic(tenantId, commentId, isFlagged, sso)
-    .then([](std::shared_ptr<APIEmptyResponse> resp){
-        auto result = resp ? resp : std::make_shared<APIEmptyResponse>();
-        std::cout << "Flag update completed\n";
+    .then([](pplx::task<std::shared_ptr<APIEmptyResponse>> t){
+        try{
+            auto resp = t.get();
+        }catch(const std::exception&){
+        }
     });
 [inline-code-end]
-
----

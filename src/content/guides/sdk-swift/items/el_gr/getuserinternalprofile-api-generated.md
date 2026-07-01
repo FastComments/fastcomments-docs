@@ -1,25 +1,27 @@
-## Παράμετροι
+## Parameters
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
+|------|------|----------|-----------|-------------|
+| tenantId | string | query | Ναι |  |
 | commentId | string | query | Όχι |  |
 | sso | string | query | Όχι |  |
 
-## Απόκριση
+## Response
 
 Επιστρέφει: [`GetUserInternalProfileResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetUserInternalProfileResponse.swift)
 
-## Παράδειγμα
+## Example
 
 [inline-code-attrs-start title = 'Παράδειγμα getUserInternalProfile'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Τα παρακάτω δείγματα κώδικα είναι ακόμα beta. Για οποιοδήποτε πρόβλημα, αναφέρετέ το μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
+// Τα παρακάτω δείγματα κώδικα είναι ακόμη beta. Για οποιοδήποτε πρόβλημα, παρακαλούμε αναφέρετέ το μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String |
 let commentId = "commentId_example" // String |  (προαιρετικό)
 let sso = "sso_example" // String |  (προαιρετικό)
 
-ModerationAPI.getUserInternalProfile(commentId: commentId, sso: sso) { (response, error) in
+ModerationAPI.getUserInternalProfile(tenantId: tenantId, options: ModerationAPI.GetUserInternalProfileOptions(commentId: commentId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -30,3 +32,5 @@ ModerationAPI.getUserInternalProfile(commentId: commentId, sso: sso) { (response
     }
 }
 [inline-code-end]
+
+---

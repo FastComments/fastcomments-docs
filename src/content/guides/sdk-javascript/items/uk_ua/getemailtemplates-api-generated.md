@@ -1,22 +1,27 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Назва | Тип | Обов'язковий | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| skip | number | Ні |  |
+| tenantId | string | Yes |  |
+| skip | number | No |  |
 
 ## Відповідь
 
-Повертає: [`GetEmailTemplatesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplatesResponse.ts)
+Повертає: [`GetEmailTemplatesResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplatesResponse1.ts)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'Приклад getEmailTemplates'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8f3b2a9c';
-const templatesPage1: GetEmailTemplatesResponse = await getEmailTemplates(tenantId);
-const templatesPage2: GetEmailTemplatesResponse = await getEmailTemplates(tenantId, 25);
-console.log(templatesPage1, templatesPage2);
+(async () => {
+  const tenantId: string = "tenant_12345";
+
+  // Виклик без необов'язкового 'skip'
+  const templates: GetEmailTemplatesResponse1 = await getEmailTemplates(tenantId);
+
+  // Виклик з необов'язковим параметром 'skip'
+  const pagedTemplates: GetEmailTemplatesResponse1 = await getEmailTemplates(tenantId, 20);
+})();
 [inline-code-end]
 
 ---

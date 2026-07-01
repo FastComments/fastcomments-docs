@@ -1,6 +1,6 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Назва | Тип | Обов'язковий | Опис |
 |------|------|----------|-------------|
 | tenant_id | String | Так |  |
 | id | String | Так |  |
@@ -11,18 +11,16 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад get_comment'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_comment Приклад'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_comment() -> Result<(), Error> {
-    let params: GetCommentParams = GetCommentParams {
+async fn fetch_comment() -> Result<(), Error> {
+    let params = GetCommentParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "news/article-2026-06-19/comment-742".to_string(),
-        include_replies: Some(true),
+        id: "comment-12345".to_string(),
+        include_deleted: Some(false),
     };
-    let comment: ApiGetCommentResponse = get_comment(&configuration, params).await?;
-    println!("{:#?}", comment);
+
+    let _response: ApiGetCommentResponse = get_comment(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

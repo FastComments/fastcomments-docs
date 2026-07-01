@@ -2,9 +2,9 @@
 
 | Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Нет |  |
-| editKey | string | Нет |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| editKey | string = "" | No |  |
 
 ## Ответ
 
@@ -12,14 +12,11 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример deleteVote'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteVote Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteVote(tenantId = "my-tenant-123", id = "vote-7f3b2a", editKey = "")
-if response.isSome:
-  let voteDelete = response.get()
-  echo "Vote deleted successfully"
-else:
-  echo "Failed to delete vote"
+let (voteRespOpt, httpResp) = client.deleteVote(tenantId = "my-tenant-123", id = "comment-456", editKey = "")
+if voteRespOpt.isSome:
+  let voteResp = voteRespOpt.get()
+  discard voteResp
+  discard httpResp
 [inline-code-end]
-
----

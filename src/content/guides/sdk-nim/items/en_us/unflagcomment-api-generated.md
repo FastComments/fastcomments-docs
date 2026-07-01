@@ -4,8 +4,7 @@
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | id | string | No |  |
-| userId | string | No |  |
-| anonUserId | string | No |  |
+| options | UnFlagCommentOptions | No |  |
 
 ## Response
 
@@ -15,14 +14,7 @@ Returns: [`Option[FlagCommentResponse]`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'unFlagComment Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.unFlagComment(tenantId = "my-tenant-123",
-  id = "comment-98765",
-  userId = "user-12345",
-  anonUserId = "")
-
-if response.isSome:
-  let flagResp = response.get()
-  echo "Unflagged comment response:", flagResp
-else:
-  echo "Unflag failed, HTTP status:", httpResponse.status
+let (flagRespOpt, httpResp) = client.unFlagComment(tenantId = "my-tenant-123", id = "comment-456", options = UnFlagCommentOptions())
+if flagRespOpt.isSome:
+  let flagResp = flagRespOpt.get()
 [inline-code-end]

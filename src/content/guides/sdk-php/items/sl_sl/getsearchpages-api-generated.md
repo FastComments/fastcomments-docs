@@ -1,9 +1,10 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| value | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Da |  |
+| value | string | query | Ne |  |
+| sso | string | query | Ne |  |
 
 ## Odgovor
 
@@ -19,19 +20,22 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Če želite uporabiti lastnega HTTP odjemalca, posredujte odjemalca, ki implementira `GuzzleHttp\ClientInterface`.
-    // To ni obvezno, `GuzzleHttp\Client` bo uporabljen kot privzeta izbira.
+    // Če želite uporabiti svoj HTTP odjemalec, podajte odjemalca, ki implementira `GuzzleHttp\ClientInterface`.
+    // To je neobvezno, privzeto bo uporabljen `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
-$value = 'value_example'; // string
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // string
+$options = [
+    'value' => 'value_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->getSearchPages($value, $sso);
+    $result = $apiInstance->getSearchPages($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getSearchPages: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

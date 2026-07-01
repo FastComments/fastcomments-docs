@@ -1,25 +1,28 @@
----
-## 參數
+## Parameters
 
-| 名稱 | 類型 | 必填 | 說明 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | skip | number | 否 |  |
 
-## 回應
+## Response
 
-回傳: [`GetQuestionConfigsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionConfigsResponse.ts)
+Returns: [`GetQuestionConfigsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionConfigsResponse1.ts)
 
-## 範例
+## Example
 
-[inline-code-attrs-start title = 'getQuestionConfigs 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getQuestionConfigs 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async (): Promise<void> => {
-  const tenantId: string = 'acme-corp-78';
-  const responseWithoutSkip: GetQuestionConfigsResponse = await getQuestionConfigs(tenantId);
-  const responseWithSkip: GetQuestionConfigsResponse = await getQuestionConfigs(tenantId, 25);
-  console.log(responseWithoutSkip, responseWithSkip);
-})();
-[inline-code-end]
+async function fetchQuestionConfigs() {
+    const tenantId: string = "tenant-9876";
 
----
+    // 呼叫（不含可選的 'skip' 參數）
+    const configsWithoutSkip: GetQuestionConfigsResponse1 = await getQuestionConfigs(tenantId);
+
+    // 呼叫（含可選的 'skip' 參數）
+    const skip: number = 10;
+    const configsWithSkip: GetQuestionConfigsResponse1 = await getQuestionConfigs(tenantId, skip);
+
+    console.log(configsWithoutSkip, configsWithSkip);
+}
+[inline-code-end]

@@ -2,7 +2,7 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | No |  |
+| tenantId | string | query | Yes |  |
 
 ## Resposta
 
@@ -10,7 +10,7 @@ Retorna: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomm
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de addHashTagsBulk'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'addHashTagsBulk Exemplo'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importar classes:
 import com.fastcomments.invoker.ApiClient;
@@ -25,18 +25,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configurar autenticação por api_key
+    // Configurar autorização da chave API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Descomente a linha a seguir para definir um prefixo para a API key, por exemplo "Token" (padrão: null)
+    // Descomente a linha a seguir para definir um prefixo para a chave API, por exemplo "Token" (padrão é nulo)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     BulkCreateHashTagsBody bulkCreateHashTagsBody = new BulkCreateHashTagsBody(); // BulkCreateHashTagsBody | 
     try {
-      BulkCreateHashTagsResponse result = apiInstance.addHashTagsBulk()
-            .tenantId(tenantId)
+      BulkCreateHashTagsResponse result = apiInstance.addHashTagsBulk(tenantId)
             .bulkCreateHashTagsBody(bulkCreateHashTagsBody)
             .execute();
       System.out.println(result);
@@ -50,3 +49,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

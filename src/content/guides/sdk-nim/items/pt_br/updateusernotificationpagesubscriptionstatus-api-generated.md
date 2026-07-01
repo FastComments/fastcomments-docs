@@ -1,15 +1,16 @@
-Ative ou desative notificações para uma página. Quando usuários estão inscritos em uma página, notificações são criadas para novos comentários raiz, e também
+Habilite ou desabilite notificações para uma página. Quando os usuários estão inscritos em uma página, notificações são criadas  
+para novos comentários principais, e também
 
 ## Parâmetros
 
-| Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-------------|
-| tenantId | string | Sim |  |
-| urlId | string | Sim |  |
-| url | string | Não |  |
-| pageTitle | string | Não |  |
-| subscribedOrUnsubscribed | string | Não |  |
-| sso | string | Não |  |
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| url | string | No |  |
+| pageTitle | string | No |  |
+| subscribedOrUnsubscribed | string | No |  |
+| sso | string = "" | No |  |
 
 ## Resposta
 
@@ -17,22 +18,18 @@ Retorna: [`Option[UpdateUserNotificationPageSubscriptionStatusResponse]`](https:
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de updateUserNotificationPageSubscriptionStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus Exemplo'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateUserNotificationPageSubscriptionStatus(
+let (optResp, httpResp) = client.updateUserNotificationPageSubscriptionStatus(
   tenantId = "my-tenant-123",
-  urlId = "news/economy/market-rally-2026-06-19",
-  url = "",
-  pageTitle = "",
-  subscribedOrUnsubscribed = "",
+  urlId = "news/article-456",
+  url = "https://example.com/news/article-456",
+  pageTitle = "Breaking News: Something Happened",
+  subscribedOrUnsubscribed = "subscribed",
   sso = ""
 )
 
-if response.isSome:
-  let updateResp = response.get()
-  echo "Subscription update received: ", updateResp
-else:
-  echo "No subscription update returned."
+if optResp.isSome:
+  let resp = optResp.get()
+  # processamento adicional com resp
 [inline-code-end]
-
----

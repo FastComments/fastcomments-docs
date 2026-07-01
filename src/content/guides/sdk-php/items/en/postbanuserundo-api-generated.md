@@ -2,6 +2,7 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | sso | string | query | No |  |
 
 ## Response
@@ -22,11 +23,14 @@ $apiInstance = new FastComments\Client\Api\ModerationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+
+$tenant_id = 'tenant_id_example'; // string
 $ban_user_undo_params = new \FastComments\Client\Model\BanUserUndoParams(); // \FastComments\Client\Model\BanUserUndoParams
 $sso = 'sso_example'; // string
 
+
 try {
-    $result = $apiInstance->postBanUserUndo($ban_user_undo_params, $sso);
+    $result = $apiInstance->postBanUserUndo($tenant_id, $ban_user_undo_params, $sso);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->postBanUserUndo: ', $e->getMessage(), PHP_EOL;

@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Requerido | Descripción |
+| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sí |  |
 | sso | string | query | No |  |
@@ -19,12 +19,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Si desea usar un cliente HTTP personalizado, pase su cliente que implemente `GuzzleHttp\ClientInterface`.
-    // Esto es opcional; se utilizará `GuzzleHttp\Client` por defecto.
+    // Si deseas usar un cliente HTTP personalizado, pasa tu cliente que implemente `GuzzleHttp\ClientInterface`.
+    // Esto es opcional, se usará `GuzzleHttp\Client` por defecto.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // cadena
-$sso = 'sso_example'; // cadena
+
+$tenant_id = 'tenant_id_example'; // string
+$sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->resetUserNotificationCount($tenant_id, $sso);

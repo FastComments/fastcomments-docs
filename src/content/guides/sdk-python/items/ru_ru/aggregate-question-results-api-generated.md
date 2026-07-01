@@ -1,14 +1,14 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательный | Описание |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| questionId | string | query | Нет |  |
-| questionIds | array | query | Нет |  |
-| urlId | string | query | Нет |  |
-| timeBucket | string | query | Нет |  |
-| startDate | string | query | Нет |  |
-| forceRecalculate | boolean | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| questionId | string | query | No |  |
+| questionIds | array | query | No |  |
+| urlId | string | query | No |  |
+| timeBucket | string | query | No |  |
+| startDate | string | query | No |  |
+| forceRecalculate | boolean | query | No |  |
 
 ## Ответ
 
@@ -16,34 +16,31 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример aggregate_question_results'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'aggregate_question_results Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import AggregateQuestionResultsOptions
 from client.models.aggregate_question_results_response import AggregateQuestionResultsResponse
 from client.models.aggregate_time_bucket import AggregateTimeBucket
 from client.rest import ApiException
 from pprint import pprint
 
-# Определение хоста необязательно и по умолчанию https://fastcomments.com
-# Смотрите configuration.py для списка всех поддерживаемых параметров конфигурации.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
-
+# Определение хоста является необязательным и по умолчанию равно https://fastcomments.com
+# См. файл configuration.py для списка всех поддерживаемых параметров конфигурации.
 # Клиент должен настроить параметры аутентификации и авторизации
 # в соответствии с политикой безопасности сервера API.
-# Примеры для каждого метода аутентификации приведены ниже, используйте пример, который
-# соответствует вашему сценарию аутентификации.
+# Примеры для каждого метода аутентификации приведены ниже, используйте пример,
+# который соответствует вашему сценарию использования.
 
-# Настройка авторизации по API-ключу: api_key
+# Настройка авторизации с помощью API-ключа: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для API-ключа, если это необходимо
+# Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для API-ключа, если необходимо
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Войдите в контекст с экземпляром API-клиента
+# Войдите в контекст с экземпляром клиента API
 with client.ApiClient(configuration) as api_client:
-    # Создайте экземпляр класса API
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     question_id = 'question_id_example' # str |  (необязательно)
@@ -54,7 +51,7 @@ with client.ApiClient(configuration) as api_client:
     force_recalculate = True # bool |  (необязательно)
 
     try:
-        api_response = api_instance.aggregate_question_results(tenant_id, question_id=question_id, question_ids=question_ids, url_id=url_id, time_bucket=time_bucket, start_date=start_date, force_recalculate=force_recalculate)
+        api_response = api_instance.aggregate_question_results(tenant_id, AggregateQuestionResultsOptions(question_id=question_id, question_ids=question_ids, url_id=url_id, time_bucket=time_bucket, start_date=start_date, force_recalculate=force_recalculate))
         print("The response of DefaultApi->aggregate_question_results:\n")
         pprint(api_response)
     except Exception as e:

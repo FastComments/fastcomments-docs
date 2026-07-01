@@ -1,12 +1,13 @@
 ## Параметри
 
-| Назва | Тип | Location | Обов'язково | Опис |
-|------|------|----------|----------|-------------|
-| badgeId | string | query | Так |  |
-| userId | string | query | Ні |  |
-| commentId | string | query | Ні |  |
-| broadcastId | string | query | Ні |  |
-| sso | string | query | Ні |  |
+| Назва | Тип | Розташування | Обов'язковий | Опис |
+|------|------|--------------|--------------|------|
+| tenantId | string | query | Yes |  |
+| badgeId | string | query | Yes |  |
+| userId | string | query | No |  |
+| commentId | string | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Відповідь
 
@@ -26,15 +27,16 @@ import (
 )
 
 func main() {
-	badgeId := "badgeId_example" // string | 
-	userId := "userId_example" // string |  (необов'язково)
-	commentId := "commentId_example" // string |  (необов'язково)
-	broadcastId := "broadcastId_example" // string |  (необов'язково)
-	sso := "sso_example" // string |  (необов'язково)
+	tenantId := "tenantId_example" // рядок | 
+	badgeId := "badgeId_example" // рядок | 
+	userId := "userId_example" // рядок |  (необов'язково)
+	commentId := "commentId_example" // рядок |  (необов'язково)
+	broadcastId := "broadcastId_example" // рядок |  (необов'язково)
+	sso := "sso_example" // рядок |  (необов'язково)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PutRemoveBadge(context.Background()).BadgeId(badgeId).UserId(userId).CommentId(commentId).BroadcastId(broadcastId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PutRemoveBadge(context.Background()).TenantId(tenantId).BadgeId(badgeId).UserId(userId).CommentId(commentId).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PutRemoveBadge``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

@@ -1,27 +1,24 @@
----
-## Параметры
+## Параметри
 
-| Name | Type | Required | Description |
+| Назва | Тип | Обов’язково | Опис |
 |------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| id | String | Да |  |
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`GetEmailTemplateResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_email_template_response.rs)
+Returns: [`GetEmailTemplateResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_email_template_response.rs)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример get_email_template'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад get_email_template'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
+async fn fetch_template() -> Result<(), Error> {
     let params: GetEmailTemplateParams = GetEmailTemplateParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "marketing/welcome_v2".to_string(),
+        id: "welcome-email".to_string(),
     };
-    let template: GetEmailTemplateResponse = get_email_template(&configuration, params).await?;
+    let _response = get_email_template(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

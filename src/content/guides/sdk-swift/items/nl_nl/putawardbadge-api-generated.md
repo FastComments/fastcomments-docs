@@ -1,7 +1,8 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
-|------|------|----------|----------|-------------|
+| Naam | Type | Locatie | Verplicht | Beschrijving |
+|------|------|----------|-----------|--------------|
+| tenantId | string | query | Ja |  |
 | badgeId | string | query | Ja |  |
 | userId | string | query | Nee |  |
 | commentId | string | query | Nee |  |
@@ -16,16 +17,17 @@ Retourneert: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'putAwardBadge Voorbeeld'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// De volgende codevoorbeelden zijn nog in bèta. Meld eventuele problemen via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De volgende codevoorbeelden zijn nog in beta. Voor eventuele problemen, meld dit via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let badgeId = "badgeId_example" // String | 
 let userId = "userId_example" // String |  (optioneel)
 let commentId = "commentId_example" // String |  (optioneel)
 let broadcastId = "broadcastId_example" // String |  (optioneel)
 let sso = "sso_example" // String |  (optioneel)
 
-ModerationAPI.putAwardBadge(badgeId: badgeId, userId: userId, commentId: commentId, broadcastId: broadcastId, sso: sso) { (response, error) in
+ModerationAPI.putAwardBadge(tenantId: tenantId, badgeId: badgeId, options: ModerationAPI.PutAwardBadgeOptions(userId: userId, commentId: commentId, broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -36,3 +38,5 @@ ModerationAPI.putAwardBadge(badgeId: badgeId, userId: userId, commentId: comment
     }
 }
 [inline-code-end]
+
+---

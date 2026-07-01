@@ -1,12 +1,13 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| badgeId | string | query | Da |  |
-| userId | string | query | Ne |  |
-| commentId | string | query | Ne |  |
-| broadcastId | string | query | Ne |  |
-| sso | string | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| badgeId | string | query | Yes |  |
+| userId | string | query | No |  |
+| commentId | string | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -14,7 +15,7 @@ Vraća: [`RemoveUserBadgeResponse`](https://github.com/FastComments/fastcomments
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer PutRemoveBadge'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PutRemoveBadge Primer'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -26,20 +27,21 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	badgeId := "badgeId_example" // string | 
-	userId := "userId_example" // string |  (neobavezno)
-	commentId := "commentId_example" // string |  (neobavezno)
-	broadcastId := "broadcastId_example" // string |  (neobavezno)
-	sso := "sso_example" // string |  (neobavezno)
+	userId := "userId_example" // string |  (opcionalno)
+	commentId := "commentId_example" // string |  (opcionalno)
+	broadcastId := "broadcastId_example" // string |  (opcionalno)
+	sso := "sso_example" // string |  (opcionalno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PutRemoveBadge(context.Background()).BadgeId(badgeId).UserId(userId).CommentId(commentId).BroadcastId(broadcastId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PutRemoveBadge(context.Background()).TenantId(tenantId).BadgeId(badgeId).UserId(userId).CommentId(commentId).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PutRemoveBadge``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Greška pri pozivu `ModerationAPI.PutRemoveBadge``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Ceo HTTP odgovor: %v\n", r)
 	}
-	// odgovor od `PutRemoveBadge`: RemoveUserBadgeResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PutRemoveBadge`: %v\n", resp)
+	// response from `PutRemoveBadge`: RemoveUserBadgeResponse
+	fmt.Fprintf(os.Stdout, "Odgovor od `ModerationAPI.PutRemoveBadge`: %v\n", resp)
 }
 [inline-code-end]

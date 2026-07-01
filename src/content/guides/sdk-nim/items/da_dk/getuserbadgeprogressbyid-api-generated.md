@@ -1,11 +1,11 @@
 ## Parametre
 
-| Name | Type | Påkrævet | Beskrivelse |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | id | string | Nej |  |
 
-## Respons
+## Svar
 
 Returnerer: [`Option[APIGetUserBadgeProgressResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_get_user_badge_progress_response.nim)
 
@@ -13,12 +13,10 @@ Returnerer: [`Option[APIGetUserBadgeProgressResponse]`](https://github.com/FastC
 
 [inline-code-attrs-start title = 'getUserBadgeProgressById Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUserBadgeProgressById(tenantId = "my-tenant-123", id = "")
-if response.isSome:
-  let badgeProgress = response.get()
+let (badgeProgressOpt, httpResp) = client.getUserBadgeProgressById(tenantId = "my-tenant-123", id = "badge-456")
+if badgeProgressOpt.isSome:
+  let badgeProgress = badgeProgressOpt.get()
   echo badgeProgress
-else:
-  echo "No badge progress found"
 [inline-code-end]
 
 ---

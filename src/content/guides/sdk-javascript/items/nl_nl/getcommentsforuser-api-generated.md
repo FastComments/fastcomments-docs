@@ -1,31 +1,41 @@
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
-|------|------|----------|-------------|
-| userId | string | No |  |
-| direction | SortDirections | No |  |
-| repliesToUserId | string | No |  |
-| page | number | No |  |
-| includei10n | boolean | No |  |
-| locale | string | No |  |
-| isCrawler | boolean | No |  |
+| Naam | Type | Verplicht | Beschrijving |
+|------|------|-----------|--------------|
+| userId | string | Nee |  |
+| direction | SortDirections | Nee |  |
+| repliesToUserId | string | Nee |  |
+| page | number | Nee |  |
+| includei10n | boolean | Nee |  |
+| locale | string | Nee |  |
+| isCrawler | boolean | Nee |  |
 
-## Respons
+## Response
 
-Retourneert: [`GetCommentsForUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsForUserResponse.ts)
+Retourneert: [`GetCommentsForUserResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsForUserResponse1.ts)
 
-## Voorbeeld
+## Example
 
 [inline-code-attrs-start title = 'getCommentsForUser Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const userId: string = 'user_7421';
-  const direction: SortDirections = SortDirections.Newest;
-  const page: number = 2;
-  const includei10n: boolean = true;
-  const locale: string = 'en-GB';
-  const isCrawler: boolean = false;
-  const response: GetCommentsForUserResponse = await getCommentsForUser(userId, direction, undefined, page, includei10n, locale, isCrawler);
-  console.log(response);
-})();
+async function demo() {
+    const userId: string = "user-12345";
+    const direction: SortDirections = "desc";
+    const page: number = 1;
+    const includei10n: boolean = true;
+    const locale: string = "en-US";
+    const isCrawler: boolean = false;
+
+    const response: GetCommentsForUserResponse1 = await getCommentsForUser(
+        userId,
+        direction,
+        undefined,
+        page,
+        includei10n,
+        locale,
+        isCrawler
+    );
+
+    console.log(response);
+}
 [inline-code-end]

@@ -1,19 +1,20 @@
 ## Paramètres
 
 | Nom | Type | Emplacement | Obligatoire | Description |
-|------|------|----------|----------|-------------|
-| commentId | string | chemin | Oui |  |
-| sso | string | requête | Non |  |
+|------|------|--------------|-------------|-------------|
+| tenantId | string | query | Oui |  |
+| commentId | string | path | Oui |  |
+| sso | string | query | Non |  |
 
 ## Réponse
 
-Renvoie: [`GetCommentBanStatusResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetCommentBanStatusResponse.java)
+Retourne : [`GetCommentBanStatusResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetCommentBanStatusResponse.java)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getCommentBanStatus'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getCommentBanStatus'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importer les classes :
+// Importer les classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      GetCommentBanStatusResponse result = apiInstance.getCommentBanStatus(commentId)
+      GetCommentBanStatusResponse result = apiInstance.getCommentBanStatus(tenantId, commentId)
             .sso(sso)
             .execute();
       System.out.println(result);

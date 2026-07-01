@@ -1,13 +1,14 @@
 ## Παράμετροι
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| text-search | string | query | Όχι |  |
-| byIPFromComment | string | query | Όχι |  |
-| filters | string | query | Όχι |  |
-| searchFilters | string | query | Όχι |  |
-| sorts | string | query | Όχι |  |
-| sso | string | query | Όχι |  |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|------------|-----------|
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sorts | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Απόκριση
 
@@ -27,6 +28,7 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	textSearch := "textSearch_example" // string |  (προαιρετικό)
 	byIPFromComment := "byIPFromComment_example" // string |  (προαιρετικό)
 	filters := "filters_example" // string |  (προαιρετικό)
@@ -36,12 +38,12 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostApiExport(context.Background()).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).Sorts(sorts).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostApiExport(context.Background()).TenantId(tenantId).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).Sorts(sorts).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostApiExport``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Σφάλμα κατά την κλήση `ModerationAPI.PostApiExport``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Πλήρης απόκριση HTTP: %v\n", r)
 	}
 	// απόκριση από `PostApiExport`: ModerationExportResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostApiExport`: %v\n", resp)
+	fmt.Fprintf(os.Stdout, "Απόκριση από `ModerationAPI.PostApiExport`: %v\n", resp)
 }
 [inline-code-end]

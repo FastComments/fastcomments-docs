@@ -1,8 +1,8 @@
----
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов’язковий | Опис |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | text-search | string | query | No |  |
 | byIPFromComment | string | query | No |  |
 | filters | string | query | No |  |
@@ -12,11 +12,11 @@
 
 ## Відповідь
 
-Повертає: [`ModerationExportResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_export_response.go)
+Returns: [`ModerationExportResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_export_response.go)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад PostApiExport'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PostApiExport Приклад'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -28,23 +28,22 @@ import (
 )
 
 func main() {
-	textSearch := "textSearch_example" // string |  (необов'язково)
-	byIPFromComment := "byIPFromComment_example" // string |  (необов'язково)
-	filters := "filters_example" // string |  (необов'язково)
-	searchFilters := "searchFilters_example" // string |  (необов'язково)
-	sorts := "sorts_example" // string |  (необов'язково)
-	sso := "sso_example" // string |  (необов'язково)
+	tenantId := "tenantId_example" // рядок |
+	textSearch := "textSearch_example" // рядок |  (необов’язково)
+	byIPFromComment := "byIPFromComment_example" // рядок |  (необов’язково)
+	filters := "filters_example" // рядок |  (необов’язково)
+	searchFilters := "searchFilters_example" // рядок |  (необов’язково)
+	sorts := "sorts_example" // рядок |  (необов’язково)
+	sso := "sso_example" // рядок |  (необов’язково)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostApiExport(context.Background()).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).Sorts(sorts).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostApiExport(context.Background()).TenantId(tenantId).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).Sorts(sorts).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostApiExport``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Помилка під час виклику `ModerationAPI.PostApiExport``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Повна HTTP відповідь: %v\n", r)
 	}
 	// відповідь від `PostApiExport`: ModerationExportResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostApiExport`: %v\n", resp)
+	fmt.Fprintf(os.Stdout, "Відповідь від `ModerationAPI.PostApiExport`: %v\n", resp)
 }
 [inline-code-end]
-
----

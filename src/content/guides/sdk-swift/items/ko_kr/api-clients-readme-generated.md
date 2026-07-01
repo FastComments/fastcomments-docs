@@ -1,35 +1,29 @@
-The FastComments SDK는 세 가지 API 클라이언트를 제공합니다:
+The FastComments SDK는 세 개의 API 클라이언트를 제공합니다:
 
 ### PublicAPI - 클라이언트 안전 메서드
 
-The `PublicAPI` contains methods that are safe to call from client-side code (iOS/macOS apps). These methods:
-- Do not require an API key
-- Can use SSO tokens for authentication
-- Are rate-limited per user/device
-- Are suitable for end-user facing applications
+`PublicAPI`는 클라이언트 측 코드(iOS/macOS 앱)에서 호출해도 안전한 메서드를 포함합니다. 이러한 메서드:
+- API 키가 필요하지 않습니다
+- 인증을 위해 SSO 토큰을 사용할 수 있습니다
+- 사용자/디바이스당 속도 제한이 적용됩니다
+- 최종 사용자용 애플리케이션에 적합합니다
 
-**Example use case**: Fetching and creating comments in your iOS app
+**Example use case**: iOS 앱에서 댓글을 가져오고 생성하기
 
 ### DefaultAPI - 서버 측 메서드
 
-The `DefaultAPI` contains authenticated methods that require an API key. These methods:
-- Require your FastComments API key
-- Should ONLY be called from server-side code
-- Provide full access to your FastComments data
-- Are rate-limited per tenant
+`DefaultAPI`는 인증된 메서드를 포함하며 API 키가 필요합니다. 이러한 메서드:
+- FastComments API 키가 필요합니다
+- 서버 측 코드에서만 호출되어야 합니다
+- FastComments 데이터에 대한 전체 접근 권한을 제공합니다
+- 테넌트당 속도 제한이 적용됩니다
 
-**Example use case**: Administrative operations, bulk data export, user management
+**Example use case**: 관리 작업, 대량 데이터 내보내기, 사용자 관리
 
-### ModerationAPI - 모더레이터 대시보드 메서드
+### ModerationAPI - 중재자 대시보드 메서드
 
-The `ModerationAPI` contains methods that power the moderator dashboard. These methods cover:
-- **Comment moderation** - list, count, search, retrieve logs, and export comments
-- **Moderation actions** - remove/restore comments, flag, set review/spam/approval status, manage votes, and reopen/close threads
-- **Bans** - ban a user from a comment, undo bans, fetch pre-ban summaries, check ban status and preferences, and read banned-user counts
-- **Badges & trust** - award/remove badges, list manual badges, get/set a user's trust factor, and read a user's internal profile
+`ModerationAPI`는 실시간 및 빠른 중재 API의 광범위한 스위트를 제공합니다. 모든 `ModerationAPI` 메서드는 `sso` 매개변수를 받아들이며 SSO 또는 FastComments.com 세션 쿠키를 통해 인증할 수 있습니다.
 
-Every `ModerationAPI` method accepts an `sso` parameter so moderators can be authenticated via SSO.
+**Example use case**: 커뮤니티 중재자를 위한 중재 경험 구축
 
-**Example use case**: Building a moderation experience for moderators of your community
-
-**IMPORTANT**: Never expose your API key in client-side code. API keys should only be used server-side.
+**IMPORTANT**: 절대 클라이언트 측 코드에 API 키를 노출하지 마세요. API 키는 서버 측에서만 사용해야 합니다.

@@ -1,9 +1,8 @@
----
-The SDK izlaže tri API klijentske klase:
+The SDK izlaže tri klase klijenta API-ja:
 
-- **`DefaultApi`** — API-key-authenticated methods for server-side use. Configure an API key as shown in [Getting Started](#getting-started-readme-generated).
-- **`PublicApi`** — javne metode koje ne zahtevaju API ključ, bezbedno ih je pozivati iz pregledača i mobilnih aplikacija.
-- **`ModerationApi`** — metode za moderatorski kontrolni panel: listanje, brojanje, pretraga, logovanje i izvoz komentara; moderatorske akcije (ukloni/vrati, prijavi, postavi status za pregled/šaljivinu/odobrenje, glasovi, ponovo otvori/zatvori nit); zabrane (zabrani od komentarisanja, poništi zabranu, sažeci pre-zabrane, status i podešavanja zabrane, brojevi zabranjenih korisnika); i značke & poverenje (dodeli/ukloni značku, ručne značke, dohvati/postavi faktor poverenja, interni profil korisnika). Svaka metoda `ModerationApi` prihvata parametar `$sso` za autentifikaciju moderatora putem SSO.
+- **`DefaultApi`** - Metode autentifikovane API ključem za upotrebu na serveru. Konfigurišite API ključ kako je prikazano u [Getting Started](#getting-started-readme-generated).
+- **`PublicApi`** - Javne metode koje ne zahtevaju API ključ, bezbedne za pozivanje iz pregledača i mobilnih aplikacija.
+- **`ModerationApi`** - Opsežni skup uživo i brzih moderacijskih API-ja. Svaka metoda `ModerationApi` prihvata parametar `$sso` i može se autentifikovati putem SSO-a ili sesijskog kolačića FastComments.com.
 
 ### Korišćenje PublicApi
 
@@ -38,10 +37,11 @@ $apiInstance = new FastComments\Client\Api\ModerationApi(
 $sso = 'sso_example'; // string - SSO payload koji autentifikuje moderatora
 
 try {
-    $result = $apiInstance->getCount(null, null, null, null, null, $sso);
+    $result = $apiInstance->getCount([
+        'sso' => $sso,
+    ]);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getCount: ', $e->getMessage(), PHP_EOL;
 }
 ```
----

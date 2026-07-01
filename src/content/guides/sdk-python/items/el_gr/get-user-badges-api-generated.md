@@ -1,16 +1,16 @@
 ## Παράμετροι
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Ναι |  |
-| userId | string | query | Όχι |  |
-| badgeId | string | query | Όχι |  |
-| type | number | query | Όχι |  |
-| displayedOnComments | boolean | query | Όχι |  |
-| limit | number | query | Όχι |  |
-| skip | number | query | Όχι |  |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|------------|------------|
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| badgeId | string | query | No |  |
+| type | number | query | No |  |
+| displayedOnComments | boolean | query | No |  |
+| limit | number | query | No |  |
+| skip | number | query | No |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_user_badges_response.py)
 
@@ -19,30 +19,31 @@
 [inline-code-attrs-start title = 'Παράδειγμα get_user_badges'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetUserBadgesOptions
 from client.models.api_get_user_badges_response import APIGetUserBadgesResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Ορισμός του host είναι προαιρετικός και έχει προεπιλεγμένη τιμή https://fastcomments.com
-# Δείτε το configuration.py για λίστα με όλες τις υποστηριζόμενες παραμέτρους διαμόρφωσης.
+# Ο καθορισμός του host είναι προαιρετικός και προεπιλογή είναι https://fastcomments.com
+# Δείτε το configuration.py για μια λίστα όλων των υποστηριζόμενων παραμέτρων διαμόρφωσης.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Ο πελάτης πρέπει να διαμορφώσει τις παραμέτρους ελέγχου ταυτότητας και εξουσιοδότησης
-# σύμφωνα με την πολιτική ασφάλειας του API server.
-# Παραδείγματα για κάθε μέθοδο ελέγχου ταυτότητας παρέχονται παρακάτω, χρησιμοποιήστε το παράδειγμα που
-# καλύπτει την περίπτωσή χρήσης σας.
+# Ο πελάτης πρέπει να ρυθμίσει τις παραμέτρους ταυτοποίησης και εξουσιοδότησης
+# σύμφωνα με την πολιτική ασφαλείας του διακομιστή API.
+# Παράδειγμα για κάθε μέθοδο ταυτοποίησης παρέχεται παρακάτω, χρησιμοποιήστε το παράδειγμα που
+# εξυπηρετεί την περίπτωση χρήσης σας.
 
-# Configure API key authorization: api_key
+# Ρύθμιση εξουσιοδότησης με κλειδί API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Ανασχολίαση παρακάτω για ρύθμιση προθέματος (π.χ. Bearer) για το κλειδί API, εάν χρειάζεται
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Enter a context with an instance of the API client
+# Εισαγωγή ενός πλαισίου με μια παρουσία του πελάτη API
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # Δημιουργία μιας παρουσίας της κλάσης API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     user_id = 'user_id_example' # str |  (προαιρετικό)
@@ -53,11 +54,9 @@ with client.ApiClient(configuration) as api_client:
     skip = 3.4 # float |  (προαιρετικό)
 
     try:
-        api_response = api_instance.get_user_badges(tenant_id, user_id=user_id, badge_id=badge_id, type=type, displayed_on_comments=displayed_on_comments, limit=limit, skip=skip)
+        api_response = api_instance.get_user_badges(tenant_id, GetUserBadgesOptions(user_id=user_id, badge_id=badge_id, type=type, displayed_on_comments=displayed_on_comments, limit=limit, skip=skip))
         print("The response of DefaultApi->get_user_badges:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling DefaultApi->get_user_badges: %s\n" % e)
 [inline-code-end]
-
----

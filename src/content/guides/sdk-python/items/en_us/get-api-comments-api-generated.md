@@ -2,6 +2,7 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | page | number | query | No |  |
 | count | number | query | No |  |
 | text-search | string | query | No |  |
@@ -21,6 +22,7 @@ Returns: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fa
 [inline-code-attrs-start title = 'get_api_comments Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetApiCommentsOptions
 from client.models.moderation_api_get_comments_response import ModerationAPIGetCommentsResponse
 from client.rest import ApiException
 from pprint import pprint
@@ -36,6 +38,7 @@ configuration = client.Configuration(
 with client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     page = 3.4 # float |  (optional)
     count = 3.4 # float |  (optional)
     text_search = 'text_search_example' # str |  (optional)
@@ -47,7 +50,7 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_api_comments(page=page, count=count, text_search=text_search, by_ip_from_comment=by_ip_from_comment, filters=filters, search_filters=search_filters, sorts=sorts, demo=demo, sso=sso)
+        api_response = api_instance.get_api_comments(tenant_id, GetApiCommentsOptions(page=page, count=count, text_search=text_search, by_ip_from_comment=by_ip_from_comment, filters=filters, search_filters=search_filters, sorts=sorts, demo=demo, sso=sso))
         print("The response of ModerationApi->get_api_comments:\n")
         pprint(api_response)
     except Exception as e:

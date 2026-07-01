@@ -1,7 +1,8 @@
-## Παράμετροι
+## Παραμέτρους
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
+|------|------|----------|-----------|-----------|
+| tenantId | string | query | Ναι |  |
 | commentId | string | path | Ναι |  |
 | includeByUserIdAndEmail | boolean | query | Όχι |  |
 | includeByIP | boolean | query | Όχι |  |
@@ -14,12 +15,13 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα get_pre_ban_summary'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_pre_ban_summary Παράδειγμα'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 comment_id = 'comment_id_example' # String | 
 opts = {
   include_by_user_id_and_email: true, # Boolean | 
@@ -30,11 +32,9 @@ opts = {
 
 begin
   
-  result = api_instance.get_pre_ban_summary(comment_id, opts)
+  result = api_instance.get_pre_ban_summary(tenant_id, comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_pre_ban_summary: #{e}"
 end
 [inline-code-end]
-
----

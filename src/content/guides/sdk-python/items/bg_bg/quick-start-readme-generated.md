@@ -1,6 +1,6 @@
-### Използване на автентифицирани API (DefaultApi)
+### Използване на удостоверени API (DefaultApi)
 
-**Важно:** Трябва да зададете вашия API ключ в Configuration преди да правите автентифицирани заявки. Ако не го направите, заявките ще се провалят с грешка 401.
+**Важно:** Трябва да зададете вашия API ключ в Configuration преди да правите удостоверени заявки. Ако не го направите, заявките ще се провалят с грешка 401.
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
@@ -26,10 +26,7 @@ try:
         display_name="John Doe"
     )
 
-    response = api.add_sso_user(
-        tenant_id="YOUR_TENANT_ID",
-        create_apisso_user_data=user_data
-    )
+    response = api.add_sso_user("YOUR_TENANT_ID", user_data)
     print(f"User created: {response}")
 
 except Exception as e:
@@ -41,7 +38,7 @@ except Exception as e:
 
 ### Използване на публични API (PublicApi)
 
-Публичните крайни точки не изискват автентикация:
+Публичните крайни точки не изискват удостоверяване:
 
 ```python
 from client import ApiClient, Configuration, PublicApi
@@ -53,21 +50,19 @@ api_client = ApiClient(configuration=config)
 public_api = PublicApi(api_client)
 
 try:
-    response = public_api.get_comments_public(
-        tenant_id="YOUR_TENANT_ID",
-        url_id="page-url-id"
-    )
+    response = public_api.get_comments_public("YOUR_TENANT_ID", "page-url-id")
     print(response)
 except Exception as e:
     print(f"Error: {e}")
 ```
 
-### Използване на таблото за модерация (ModerationApi)
+### Използване на таблото за модериране (ModerationApi)
 
-`ModerationApi` захранва таблото за модерация. Методите се извикват от име на модератор чрез предаване на `sso` токен:
+`ModerationApi` захранва таблото за модератори. Методите се извикват от името на модератор, като се предава `sso` токен:
 
 ```python
 from client import ApiClient, Configuration, ModerationApi
+from client.api.moderation_api import GetCountOptions
 
 config = Configuration()
 config.host = "https://fastcomments.com/api"
@@ -77,7 +72,7 @@ moderation_api = ModerationApi(api_client)
 
 try:
     # Count the comments awaiting moderation
-    response = moderation_api.get_count(sso="SSO_TOKEN")
+    response = moderation_api.get_count(GetCountOptions(sso="SSO_TOKEN"))
     print(response)
 except Exception as e:
     print(f"Error: {e}")
@@ -85,7 +80,7 @@ except Exception as e:
 
 ### Използване на SSO (Single Sign-On)
 
-SDK включва помощни средства за генериране на сигурни SSO токени:
+SDK‑то включва помощни функции за генериране на сигурни SSO токени:
 
 ```python
 from sso import FastCommentsSSO, SecureSSOUserData
@@ -111,7 +106,7 @@ sso_token = sso.create_token()
 print(f"SSO Token: {sso_token}")
 ```
 
-За прост SSO (по-малко сигурен, за тестване):
+За прост SSO (по‑малко сигурен, за тестове):
 
 ```python
 from sso import FastCommentsSSO, SimpleSSOUserData
@@ -125,10 +120,10 @@ sso = FastCommentsSSO.new_simple(user_data)
 sso_token = sso.create_token()
 ```
 
-### Често срещани проблеми
+### Чести проблеми
 
-1. **401 "missing-api-key" грешка**: Уверете се, че сте задали `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` преди да създадете екземпляра на DefaultApi.
-2. **Неправилен API клас**: Използвайте `DefaultApi` за сървърни автентифицирани заявки, `PublicApi` за клиентски/публични заявки, и `ModerationApi` за заявки на таблото за модерация.
-3. **Грешки при импорт**: Уверете се, че импортирате от правилния модул:
-   - API клиент: `from client import ...`
-   - SSO помощни средства: `from sso import ...`
+1. **401 "missing-api-key" грешка**: Уверете се, че сте задали `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` преди създаването на инстанцията DefaultApi.  
+2. **Грешен API клас**: Използвайте `DefaultApi` за сървърно‑странични удостоверени заявки, `PublicApi` за клиентско/публично заявки и `ModerationApi` за заявки от таблото за модериране.  
+3. **Грешки при импортиране**: Уверете се, че импортирате от правилния модул:  
+   - API клиент: `from client import ...`  
+   - SSO помощни функции: `from sso import ...`

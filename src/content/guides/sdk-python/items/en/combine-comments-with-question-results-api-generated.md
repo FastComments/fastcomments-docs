@@ -21,6 +21,7 @@ Returns: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastC
 [inline-code-attrs-start title = 'combine_comments_with_question_results Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import CombineCommentsWithQuestionResultsOptions
 from client.models.combine_question_results_with_comments_response import CombineQuestionResultsWithCommentsResponse
 from client.rest import ApiException
 from pprint import pprint
@@ -57,7 +58,7 @@ with client.ApiClient(configuration) as api_client:
     limit = 3.4 # float |  (optional)
 
     try:
-        api_response = api_instance.combine_comments_with_question_results(tenant_id, question_id=question_id, question_ids=question_ids, url_id=url_id, start_date=start_date, force_recalculate=force_recalculate, min_value=min_value, max_value=max_value, limit=limit)
+        api_response = api_instance.combine_comments_with_question_results(tenant_id, CombineCommentsWithQuestionResultsOptions(question_id=question_id, question_ids=question_ids, url_id=url_id, start_date=start_date, force_recalculate=force_recalculate, min_value=min_value, max_value=max_value, limit=limit))
         print("The response of DefaultApi->combine_comments_with_question_results:\n")
         pprint(api_response)
     except Exception as e:

@@ -1,8 +1,8 @@
----
 ## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
-|------|------|----------|----------|-------------|
+|------|------|-----|--------------|--------------|
+| tenantId | string | query | Ja |  |
 | text-search | string | query | Nein |  |
 | byIPFromComment | string | query | Nein |  |
 | filters | string | query | Nein |  |
@@ -12,7 +12,7 @@
 
 ## Antwort
 
-Gibt zurück: [`ModerationExportResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationExportResponse.php)
+Rückgabe: [`ModerationExportResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationExportResponse.php)
 
 ## Beispiel
 
@@ -25,22 +25,25 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
     // Wenn Sie einen benutzerdefinierten HTTP-Client verwenden möchten, übergeben Sie Ihren Client, der `GuzzleHttp\ClientInterface` implementiert.
-    // Dies ist optional; `GuzzleHttp\Client` wird standardmäßig verwendet.
+    // Dies ist optional, `GuzzleHttp\Client` wird standardmäßig verwendet.
     new GuzzleHttp\Client()
 );
-$text_search = 'text_search_example'; // string
-$by_ip_from_comment = 'by_ip_from_comment_example'; // string
-$filters = 'filters_example'; // string
-$search_filters = 'search_filters_example'; // string
-$sorts = 'sorts_example'; // string
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // string
+$options = [
+    'text_search' => 'text_search_example', // string
+    'by_ip_from_comment' => 'by_ip_from_comment_example', // string
+    'filters' => 'filters_example', // string
+    'search_filters' => 'search_filters_example', // string
+    'sorts' => 'sorts_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->postApiExport($text_search, $by_ip_from_comment, $filters, $search_filters, $sorts, $sso);
+    $result = $apiInstance->postApiExport($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->postApiExport: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

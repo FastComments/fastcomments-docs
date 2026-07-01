@@ -1,9 +1,11 @@
 ## Parâmetros
 
 | Nome | Tipo | Localização | Obrigatório | Descrição |
-|------|------|----------|----------|-------------|
+|------|------|-------------|-------------|-----------|
+| tenantId | string | query | Sim |  |
 | commentId | string | path | Sim |  |
 | reviewed | boolean | query | Não |  |
+| broadcastId | string | query | Não |  |
 | sso | string | query | Não |  |
 
 ## Resposta
@@ -18,19 +20,19 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 comment_id = 'comment_id_example' # String | 
 opts = {
   reviewed: true, # Boolean | 
+  broadcast_id: 'broadcast_id_example', # String | 
   sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.post_set_comment_review_status(comment_id, opts)
+  result = api_instance.post_set_comment_review_status(tenant_id, comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_set_comment_review_status: #{e}"
 end
 [inline-code-end]
-
----

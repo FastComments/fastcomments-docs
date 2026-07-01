@@ -1,30 +1,30 @@
-## Παράμετροι
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ναι |  |
-| id | string | path | Ναι |  |
-| userId | string | query | Όχι |  |
-| anonUserId | string | query | Όχι |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
 
-## Απόκριση
+## Response
 
 Επιστρέφει: [`BlockSuccess`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/BlockSuccess.swift)
 
-## Παράδειγμα
+## Example
 
-[inline-code-attrs-start title = 'Παράδειγμα blockUserFromComment'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'blockUserFromComment Παράδειγμα'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Τα ακόλουθα δείγματα κώδικα είναι ακόμα σε beta. Για οποιοδήποτε θέμα, παρακαλούμε αναφέρετέ το μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
+// Τα παρακάτω παραδείγματα κώδικα είναι ακόμη beta. Για οποιοδήποτε πρόβλημα, παρακαλούμε να το αναφέρετε via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let id = "id_example" // String | 
 let blockFromCommentParams = BlockFromCommentParams(commentIdsToCheck: ["commentIdsToCheck_example"]) // BlockFromCommentParams | 
-let userId = "userId_example" // String |  (προαιρετικό)
-let anonUserId = "anonUserId_example" // String |  (προαιρετικό)
+let userId = "userId_example" // String |  (optional)
+let anonUserId = "anonUserId_example" // String |  (optional)
 
-DefaultAPI.blockUserFromComment(tenantId: tenantId, id: id, blockFromCommentParams: blockFromCommentParams, userId: userId, anonUserId: anonUserId) { (response, error) in
+DefaultAPI.blockUserFromComment(tenantId: tenantId, id: id, blockFromCommentParams: blockFromCommentParams, options: DefaultAPI.BlockUserFromCommentOptions(userId: userId, anonUserId: anonUserId)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -35,5 +35,3 @@ DefaultAPI.blockUserFromComment(tenantId: tenantId, id: id, blockFromCommentPara
     }
 }
 [inline-code-end]
-
----

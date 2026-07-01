@@ -1,15 +1,16 @@
 ## Παράμετροι
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| text-search | string | query | Όχι |  |
-| byIPFromComment | string | query | Όχι |  |
-| filter | string | query | Όχι |  |
-| searchFilters | string | query | Όχι |  |
-| demo | boolean | query | Όχι |  |
-| sso | string | query | Όχι |  |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|------------|------------|
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filter | string | query | No |  |
+| searchFilters | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`ModerationAPICountCommentsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationAPICountCommentsResponse.php)
 
@@ -23,19 +24,24 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Εάν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε τον client σας που υλοποιεί `GuzzleHttp\ClientInterface`.
-    // Αυτό είναι προαιρετικό, θα χρησιμοποιηθεί ως προεπιλογή η `GuzzleHttp\Client`.
+    // Αν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε τον client σας που υλοποιεί `GuzzleHttp\ClientInterface`.
+    // Αυτό είναι προαιρετικό, `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
     new GuzzleHttp\Client()
 );
-$text_search = 'text_search_example'; // string
-$by_ip_from_comment = 'by_ip_from_comment_example'; // string
-$filter = 'filter_example'; // string
-$search_filters = 'search_filters_example'; // string
-$demo = True; // bool
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // συμβολοσειρά
+$options = [
+    'text_search' => 'text_search_example', // συμβολοσειρά
+    'by_ip_from_comment' => 'by_ip_from_comment_example', // συμβολοσειρά
+    'filter' => 'filter_example', // συμβολοσειρά
+    'search_filters' => 'search_filters_example', // συμβολοσειρά
+    'demo' => True, // boolean
+    'sso' => 'sso_example', // συμβολοσειρά
+];
+
 
 try {
-    $result = $apiInstance->getCount($text_search, $by_ip_from_comment, $filter, $search_filters, $demo, $sso);
+    $result = $apiInstance->getCount($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getCount: ', $e->getMessage(), PHP_EOL;

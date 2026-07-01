@@ -2,18 +2,20 @@
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Ja |  |
 | commentId | string | path | Ja |  |
+| broadcastId | string | query | Nee |  |
 | sso | string | query | Nee |  |
 
-## Respons
+## Response
 
 Retourneert: [`SetCommentTextResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SetCommentTextResponse.java)
 
-## Voorbeeld
+## Example
 
 [inline-code-attrs-start title = 'postSetCommentText Voorbeeld'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importeer klassen:
+// Klassen importeren:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,11 +28,14 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     SetCommentTextParams setCommentTextParams = new SetCommentTextParams(); // SetCommentTextParams | 
+    String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      SetCommentTextResponse result = apiInstance.postSetCommentText(commentId, setCommentTextParams)
+      SetCommentTextResponse result = apiInstance.postSetCommentText(tenantId, commentId, setCommentTextParams)
+            .broadcastId(broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);

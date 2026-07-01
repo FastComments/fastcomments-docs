@@ -1,7 +1,8 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
 | badgesUserId | string | query | Ne |  |
 | commentId | string | query | Ne |  |
 | sso | string | query | Ne |  |
@@ -12,7 +13,7 @@ Vraća: [`GetUserManualBadgesResponse`](https://github.com/FastComments/fastcomm
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer GetManualBadgesForUser'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GetManualBadgesForUser Primer'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -24,18 +25,19 @@ import (
 )
 
 func main() {
-	badgesUserId := "badgesUserId_example" // string |  (neobavezno)
-	commentId := "commentId_example" // string |  (neobavezno)
-	sso := "sso_example" // string |  (neobavezno)
+	tenantId := "tenantId_example" // string | 
+	badgesUserId := "badgesUserId_example" // string |  (opcionalno)
+	commentId := "commentId_example" // string |  (opcionalno)
+	sso := "sso_example" // string |  (opcionalno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetManualBadgesForUser(context.Background()).BadgesUserId(badgesUserId).CommentId(commentId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetManualBadgesForUser(context.Background()).TenantId(tenantId).BadgesUserId(badgesUserId).CommentId(commentId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetManualBadgesForUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor od `GetManualBadgesForUser`: GetUserManualBadgesResponse
+	// odgovor iz `GetManualBadgesForUser`: GetUserManualBadgesResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetManualBadgesForUser`: %v\n", resp)
 }
 [inline-code-end]

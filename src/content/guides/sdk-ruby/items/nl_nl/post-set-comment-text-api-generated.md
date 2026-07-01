@@ -1,15 +1,17 @@
 ## Parameters
 
-| Name | Type | Location | Required | Description |
+| Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Ja |  |
-| sso | string | query | Nee |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
-## Response
+## Respons
 
 Retourneert: [`SetCommentTextResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/set_comment_text_response.rb)
 
-## Example
+## Voorbeeld
 
 [inline-code-attrs-start title = 'post_set_comment_text Voorbeeld'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -17,15 +19,17 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 comment_id = 'comment_id_example' # String | 
 set_comment_text_params = FastCommentsClient::SetCommentTextParams.new({comment: 'comment_example'}) # SetCommentTextParams | 
 opts = {
+  broadcast_id: 'broadcast_id_example', # String | 
   sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.post_set_comment_text(comment_id, set_comment_text_params, opts)
+  result = api_instance.post_set_comment_text(tenant_id, comment_id, set_comment_text_params, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_set_comment_text: #{e}"

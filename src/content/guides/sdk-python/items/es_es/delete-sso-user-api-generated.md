@@ -1,9 +1,9 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Sí |  |
-| id | string | path | Sí |  |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
+|--------|------|-----------|-----------|--------------|
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 | deleteComments | boolean | query | No |  |
 | commentDeleteMode | string | query | No |  |
 
@@ -13,45 +13,44 @@ Devuelve: [`DeleteSSOUserAPIResponse`](https://github.com/FastComments/fastcomme
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de delete_sso_user'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_sso_user Ejemplo'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import DeleteSsoUserOptions
 from client.models.delete_sso_user_api_response import DeleteSSOUserAPIResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://fastcomments.com
-# Consulte configuration.py para una lista de todos los parámetros de configuración compatibles.
+# Definir el host es opcional y por defecto es https://fastcomments.com
+# Ver configuration.py para obtener una lista de todos los parámetros de configuración admitidos.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# A continuación se proporcionan ejemplos para cada método de autenticación, use el ejemplo que
+# El cliente debe configurar los parámetros de autenticación y autorización
+# de acuerdo con la política de seguridad del servidor API.
+# Se proporcionan ejemplos para cada método de autenticación a continuación, use el ejemplo que
 # satisfaga su caso de uso de autenticación.
 
-# Configure API key authorization: api_key
+# Configurar la autorización de clave API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Descomente a continuación para configurar el prefijo (p.ej., Bearer) para la clave API, si es necesario
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Enter a context with an instance of the API client
+# Ingrese un contexto con una instancia del cliente API
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # Crear una instancia de la clase API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
-    delete_comments = True # bool |  (opcional)
-    comment_delete_mode = 'comment_delete_mode_example' # str |  (opcional)
+    delete_comments = True # bool |  (optional)
+    comment_delete_mode = 'comment_delete_mode_example' # str |  (optional)
 
     try:
-        api_response = api_instance.delete_sso_user(tenant_id, id, delete_comments=delete_comments, comment_delete_mode=comment_delete_mode)
+        api_response = api_instance.delete_sso_user(tenant_id, id, DeleteSsoUserOptions(delete_comments=delete_comments, comment_delete_mode=comment_delete_mode))
         print("The response of DefaultApi->delete_sso_user:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling DefaultApi->delete_sso_user: %s\n" % e)
 [inline-code-end]
-
----

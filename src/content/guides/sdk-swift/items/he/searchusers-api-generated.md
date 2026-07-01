@@ -1,23 +1,23 @@
-## פרמטרים
+## Parameters
 
 | שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | כן |  |
-| urlId | string | query | כן |  |
-| usernameStartsWith | string | query | לא |  |
-| mentionGroupIds | array | query | לא |  |
-| sso | string | query | לא |  |
-| searchSection | string | query | לא |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| usernameStartsWith | string | query | No |  |
+| mentionGroupIds | array | query | No |  |
+| sso | string | query | No |  |
+| searchSection | string | query | No |  |
 
-## תגובה
+## Response
 
 מחזיר: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SearchUsersResult.swift)
 
-## דוגמה
+## Example
 
-[inline-code-attrs-start title = 'דוגמה ל-searchUsers'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'searchUsers דוגמה'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// דוגמאות הקוד שלהלן עדיין בבטא. אם יש בעיה, דווחו דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// דגימות הקוד הבאות עדיין ב‑beta. לכל בעיה, אנא דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -27,7 +27,7 @@ let mentionGroupIds = ["inner_example"] // [String] |  (אופציונלי)
 let sso = "sso_example" // String |  (אופציונלי)
 let searchSection = "searchSection_example" // String |  (אופציונלי)
 
-PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, usernameStartsWith: usernameStartsWith, mentionGroupIds: mentionGroupIds, sso: sso, searchSection: searchSection) { (response, error) in
+PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, options: PublicAPI.SearchUsersOptions(usernameStartsWith: usernameStartsWith, mentionGroupIds: mentionGroupIds, sso: sso, searchSection: searchSection)) { (response, error) in
     guard error == nil else {
         print(error)
         return

@@ -1,12 +1,14 @@
 ## Παράμετροι
 
-| Name | Type | Location | Required | Description |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | commentId | string | path | Yes |  |
 | voteId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
 | sso | string | query | No |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/VoteDeleteResponse.java)
 
@@ -27,12 +29,15 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String voteId = "voteId_example"; // String | 
+    String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      VoteDeleteResponse result = apiInstance.deleteModerationVote(commentId, voteId)
-            .sso(sso)
+      VoteDeleteResponse result = apiInstance.deleteModerationVote(tenantId, commentId, voteId)
+            .broadcastId(broadcastId)
+            .sss(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

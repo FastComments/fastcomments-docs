@@ -1,14 +1,30 @@
-Een afbeelding uploaden en schalen
+# Afbeelding uploaden en verkleinen
 
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
-|------|------|----------|-------------|
+| Naam | Type | Verplicht | Beschrijving |
+|------|------|-----------|--------------|
 | tenant_id | String | Ja |  |
 | file | std::path::PathBuf | Ja |  |
 | size_preset | models::SizePreset | Nee |  |
 | url_id | String | Nee |  |
 
-## Respons
+## Response
 
-Retourneert: [`UploadImageResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/upload_image_response.rs)
+Returns: [`UploadImageResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/upload_image_response.rs)
+
+## Example
+
+[inline-code-attrs-start title = 'upload_image Voorbeeld'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+async fn example() -> Result<(), Error> {
+    let params = UploadImageParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        file: std::path::PathBuf::from("/tmp/photo.jpg"),
+        size_preset: Some(models::SizePreset::Medium),
+        url_id: Some("news/article".to_string()),
+    };
+    let _response = upload_image(&configuration, params).await?;
+    Ok(())
+}
+[inline-code-end]

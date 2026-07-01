@@ -1,45 +1,57 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נחוץ | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | כן |  |
-| id | string | path | כן |  |
-| deleteComments | string | query | לא |  |
-| commentDeleteMode | string | query | לא |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| deleteComments | string | query | No |  |
+| commentDeleteMode | string | query | No |  |
 
 ## תגובה
 
-מחזיר: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
+מחזירים: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-deleteTenantUser'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteTenantUser דוגמה'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_key
 // הגדר הרשאת מפתח API: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// הסר את ההערה למטה כדי להגדיר קידומת (למשל Bearer) עבור מפתח ה-API, במידת הצורך
-// $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// בטל את ההערה למטה כדי להגדיר קידומת (למשל Bearer) למפתח API, אם נדרש
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // אם ברצונך להשתמש ב-client HTTP מותאם אישית, העבר את ה-client שלך שמממש את `GuzzleHttp\ClientInterface`.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // אם אתה רוצה להשתמש בלקוח http מותאם, העבר את הלקוח שלך שמממש `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     // זה אופציונלי, `GuzzleHttp\Client` ישמש כברירת מחדל.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // מחרוזת
-$id = 'id_example'; // מחרוזת
-$delete_comments = 'delete_comments_example'; // מחרוזת
-$comment_delete_mode = 'comment_delete_mode_example'; // מחרוזת
+
+$tenant_id = 'tenant_id_example'; // string
+// מחרוזת
+$id = 'id_example'; // string
+// מחרוזת
+$options = [
+    'delete_comments' => 'delete_comments_example', // string
+    // מחרוזת
+    'comment_delete_mode' => 'comment_delete_mode_example', // string
+    // מחרוזת
+];
+
 
 try {
-    $result = $apiInstance->deleteTenantUser($tenant_id, $id, $delete_comments, $comment_delete_mode);
+    $result = $apiInstance->deleteTenantUser($tenant_id, $id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->deleteTenantUser: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

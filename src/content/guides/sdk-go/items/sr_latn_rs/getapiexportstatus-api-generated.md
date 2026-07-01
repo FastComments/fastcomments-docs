@@ -1,8 +1,8 @@
----
-## Parametri
+## Parameters
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
 | batchJobId | string | query | Ne |  |
 | sso | string | query | Ne |  |
 
@@ -12,7 +12,7 @@ Vraća: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastc
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer GetApiExportStatus'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GetApiExportStatus Primer'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -24,19 +24,18 @@ import (
 )
 
 func main() {
-	batchJobId := "batchJobId_example" // string |  (neobavezno)
-	sso := "sso_example" // string |  (neobavezno)
+	tenantId := "tenantId_example" // string | 
+	batchJobId := "batchJobId_example" // string |  (opcionalno)
+	sso := "sso_example" // string |  (opcionalno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetApiExportStatus(context.Background()).BatchJobId(batchJobId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetApiExportStatus(context.Background()).TenantId(tenantId).BatchJobId(batchJobId).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetApiExportStatus``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Greška pri pozivanju `ModerationAPI.GetApiExportStatus``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Puni HTTP odgovor: %v\n", r)
 	}
 	// odgovor od `GetApiExportStatus`: ModerationExportStatusResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetApiExportStatus`: %v\n", resp)
+	fmt.Fprintf(os.Stdout, "Odgovor od `ModerationAPI.GetApiExportStatus`: %v\n", resp)
 }
 [inline-code-end]
-
----

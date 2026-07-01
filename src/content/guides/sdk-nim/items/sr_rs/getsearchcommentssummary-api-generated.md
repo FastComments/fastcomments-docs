@@ -1,29 +1,24 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| value | string | Не |  |
-| filters | string | Не |  |
-| searchFilters | string | Не |  |
-| sso | string | Не |  |
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Da |  |
+| options | GetSearchCommentsSummaryOptions | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[ModerationCommentSearchResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_comment_search_response.nim)
+Vraća: [`Option[ModerationCommentSearchResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_comment_search_response.nim)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'getSearchCommentsSummary Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSearchCommentsSummary Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSearchCommentsSummary(
-  value = "news/climate-change-2026",
-  filters = "{\"tenantId\":\"my-tenant-123\",\"siteId\":\"main-site\",\"status\":\"approved\"}",
-  searchFilters = "author:journalist@news.com OR content:climate",
-  sso = "sso-xyz-7890"
+let (summaryOpt, httpResp) = client.getSearchCommentsSummary(
+  tenantId = "my-tenant-123",
+  options = GetSearchCommentsSummaryOptions()
 )
-if response.isSome:
-  let summary = response.get()
-  echo "Received summary: ", $summary
-else:
-  echo "No summary returned, HTTP response: ", $httpResponse
+
+if summaryOpt.isSome:
+  let summary = summaryOpt.get()
+  echo summary
 [inline-code-end]

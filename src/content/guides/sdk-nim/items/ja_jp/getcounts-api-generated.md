@@ -2,7 +2,8 @@
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| sso | string | 任意 |  |
+| tenantId | string | Yes |  |
+| sso | string = "" | No |  |
 
 ## レスポンス
 
@@ -12,10 +13,10 @@
 
 [inline-code-attrs-start title = 'getCounts の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getCounts(sso = "sso_my-tenant-123_token_AbCdEf123456")
-if response.isSome:
-  let counts = response.get()
+let (maybeCounts, httpRes) = client.getCounts(tenantId = "my-tenant-123", sso = "")
+if maybeCounts.isSome:
+  let counts = maybeCounts.get()
   echo counts
 else:
-  echo "Request failed with status:", httpResponse.status
+  echo "No counts returned"
 [inline-code-end]

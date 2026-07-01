@@ -1,20 +1,22 @@
 ## Παράμετροι
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+|------|------|------------|-----------|
 | tenantId | string | Ναι |  |
 
 ## Απάντηση
 
-Επιστρέφει: [`GetEmailTemplateDefinitionsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplateDefinitionsResponse.ts)
+Επιστρέφει: [`GetEmailTemplateDefinitionsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplateDefinitionsResponse1.ts)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα getEmailTemplateDefinitions'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getEmailTemplateDefinitions Παράδειγμα'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_5f2c9b1a';
-const emailTemplatesResponse: GetEmailTemplateDefinitionsResponse = await getEmailTemplateDefinitions(tenantId);
-// Προαιρετικές παράμετροι (αν υποστηρίζονται) μπορούν να περαστούν ως δεύτερο όρισμα, π.χ. getEmailTemplateDefinitions(tenantId /*, { includeDrafts: true } */);
+(async () => {
+  const tenantId: string = "acme-corp-123";
+  const emailTemplateDefs: GetEmailTemplateDefinitionsResponse1 = await getEmailTemplateDefinitions(tenantId);
+  console.log(emailTemplateDefs);
+})();
 [inline-code-end]
 
 ---

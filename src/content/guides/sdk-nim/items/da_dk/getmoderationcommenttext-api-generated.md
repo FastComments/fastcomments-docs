@@ -1,10 +1,10 @@
----
-## Parametre
+## Parameters
 
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
+| tenantId | string | Ja |  |
 | commentId | string | Ja |  |
-| sso | string | Nej |  |
+| sso | string = "" | Nej |  |
 
 ## Response
 
@@ -14,12 +14,15 @@ Returnerer: [`Option[GetCommentTextResponse]`](https://github.com/FastComments/f
 
 [inline-code-attrs-start title = 'getModerationCommentText Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getModerationCommentText(commentId = "comment-9f8b7a6c", sso = "")
-if response.isSome:
-  let commentData = response.get()
-  echo "Moderation comment text retrieved"
-else:
-  echo "No moderation comment text available"
+let (optResp, httpResp) = client.getModerationCommentText(
+  tenantId = "my-tenant-123",
+  commentId = "comment-456abc",
+  sso = ""
+)
+
+if optResp.isSome:
+  let resp = optResp.get()
+  echo resp
 [inline-code-end]
 
 ---

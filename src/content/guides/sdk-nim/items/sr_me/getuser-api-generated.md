@@ -1,21 +1,22 @@
-## Параметри
+---
+## Parameters
 
-| Name | Type | Required | Description |
+| Ime | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Не |  |
+| tenantId | string | Da |  |
+| id | string | Ne |  |
 
-## Одговор
+## Response
 
-Враћа: [`Option[GetUserResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user_response.nim)
+Vraća: [`Option[GetUserResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user_response.nim)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'getUser Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUser Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUser(tenantId = "my-tenant-123", id = "user-456")
-if response.isSome:
-  let user = response.get()
+let (userOpt, httpResp) = client.getUser(tenantId = "my-tenant-123", id = "user-456")
+if userOpt.isSome:
+  let user = userOpt.get()
   echo user
 else:
   echo "User not found"

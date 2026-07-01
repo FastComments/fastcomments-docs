@@ -1,13 +1,14 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Ad | Tip | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Evet |  |
 | commentId | string | path | Evet |  |
 | sso | string | query | Hayır |  |
 
 ## Yanıt
 
-Döndürür: [`ModerationAPIChildCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationAPIChildCommentsResponse.java)
+Döner: [`ModerationAPIChildCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationAPIChildCommentsResponse.java)
 
 ## Örnek
 
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
-    String commentId = "commentId_example"; // Dize | 
-    String sso = "sso_example"; // Dize | 
+    String tenantId = "tenantId_example"; // String | 
+    String commentId = "commentId_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
-      ModerationAPIChildCommentsResponse result = apiInstance.getCommentChildren(commentId)
+      ModerationAPIChildCommentsResponse result = apiInstance.getCommentChildren(tenantId, commentId)
             .sso(sso)
             .execute();
       System.out.println(result);

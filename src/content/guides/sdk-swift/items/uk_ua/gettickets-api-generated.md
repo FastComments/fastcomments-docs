@@ -1,6 +1,6 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов’язковий | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Так |  |
 | userId | string | query | Ні |  |
@@ -14,18 +14,18 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад getTickets'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTickets Приклад'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Наступні приклади коду все ще в бета-версії. Якщо виникне проблема, будь ласка, повідомте через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наступні приклади коду ще перебувають у бета-версії. У разі виникнення проблем, будь ласка, повідомте про це за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let userId = "userId_example" // String |  (необов'язково)
-let state = 987 // Double |  (необов'язково)
-let skip = 987 // Double |  (необов'язково)
-let limit = 987 // Double |  (необов'язково)
+let userId = "userId_example" // String |  (необов’язковий)
+let state = 987 // Double |  (необов’язковий)
+let skip = 987 // Double |  (необов’язковий)
+let limit = 987 // Double |  (необов’язковий)
 
-DefaultAPI.getTickets(tenantId: tenantId, userId: userId, state: state, skip: skip, limit: limit) { (response, error) in
+DefaultAPI.getTickets(tenantId: tenantId, options: DefaultAPI.GetTicketsOptions(userId: userId, state: state, skip: skip, limit: limit)) { (response, error) in
     guard error == nil else {
         print(error)
         return

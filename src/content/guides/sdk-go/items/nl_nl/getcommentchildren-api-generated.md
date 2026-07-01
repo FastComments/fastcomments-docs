@@ -1,13 +1,14 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
-|------|------|----------|----------|-------------|
+| Naam | Type | Locatie | Verplicht | Beschrijving |
+|------|------|----------|-----------|--------------|
+| tenantId | string | query | Ja |  |
 | commentId | string | path | Ja |  |
 | sso | string | query | Nee |  |
 
-## Antwoord
+## Respons
 
-Geeft terug: [`ModerationAPIChildCommentsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_api_child_comments_response.go)
+Retourneert: [`ModerationAPIChildCommentsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_api_child_comments_response.go)
 
 ## Voorbeeld
 
@@ -23,17 +24,18 @@ import (
 )
 
 func main() {
-	commentId := "commentId_example" // string | 
+	tenantId := "tenantId_example" // string |
+	commentId := "commentId_example" // string |
 	sso := "sso_example" // string |  (optioneel)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetCommentChildren(context.Background(), commentId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetCommentChildren(context.Background(), commentId).TenantId(tenantId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetCommentChildren``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// antwoord van `GetCommentChildren`: ModerationAPIChildCommentsResponse
+	// reactie van `GetCommentChildren`: ModerationAPIChildCommentsResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetCommentChildren`: %v\n", resp)
 }
 [inline-code-end]

@@ -1,59 +1,60 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Evet |  |
-| urlId | string | query | Hayır |  |
-| userId | string | query | Hayır |  |
-| startDate | string | query | Hayır |  |
-| questionId | string | query | Hayır |  |
-| questionIds | string | query | Hayır |  |
-| skip | number | query | Hayır |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | No |  |
+| userId | string | query | No |  |
+| startDate | string | query | No |  |
+| questionId | string | query | No |  |
+| questionIds | string | query | No |  |
+| skip | number | query | No |  |
 
 ## Yanıt
 
-Dönüş: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_question_results_response.py)
+Döndürür: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_question_results_response.py)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'get_question_results Örneği'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetQuestionResultsOptions
 from client.models.get_question_results_response import GetQuestionResultsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://fastcomments.com
-# See configuration.py for a list of all supported configuration parameters.
+# Host tanımlama isteğe bağlıdır ve varsayılan olarak https://fastcomments.com adresine yönlendirilir
+# Desteklenen tüm yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# İstemci, kimlik doğrulama ve yetkilendirme parametrelerini yapılandırmalıdır
+# API sunucusunun güvenlik politikasına uygun olarak.
+# Aşağıda her kimlik doğrulama yöntemi için örnekler verilmiştir, ihtiyacınıza uyan örneği kullanın.
+# kimlik doğrulama kullanım durumunuzu karşılar.
 
-# Configure API key authorization: api_key
+# API anahtarı yetkilendirmesini yapılandırın: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Gerekirse API anahtarı için ön ek (ör. Bearer) ayarlamak için aşağıdaki satırın yorumunu kaldırın
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Enter a context with an instance of the API client
+# API istemcisinin bir örneğiyle bir bağlam girin
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # API sınıfının bir örneğini oluşturun
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    url_id = 'url_id_example' # str |  (optional)
-    user_id = 'user_id_example' # str |  (optional)
-    start_date = 'start_date_example' # str |  (optional)
-    question_id = 'question_id_example' # str |  (optional)
-    question_ids = 'question_ids_example' # str |  (optional)
-    skip = 3.4 # float |  (optional)
+    url_id = 'url_id_example' # str |  (isteğe bağlı)
+    user_id = 'user_id_example' # str |  (isteğe bağlı)
+    start_date = 'start_date_example' # str |  (isteğe bağlı)
+    question_id = 'question_id_example' # str |  (isteğe bağlı)
+    question_ids = 'question_ids_example' # str |  (isteğe bağlı)
+    skip = 3.4 # float |  (isteğe bağlı)
 
     try:
-        api_response = api_instance.get_question_results(tenant_id, url_id=url_id, user_id=user_id, start_date=start_date, question_id=question_id, question_ids=question_ids, skip=skip)
+        api_response = api_instance.get_question_results(tenant_id, GetQuestionResultsOptions(url_id=url_id, user_id=user_id, start_date=start_date, question_id=question_id, question_ids=question_ids, skip=skip))
         print("The response of DefaultApi->get_question_results:\n")
         pprint(api_response)
     except Exception as e:

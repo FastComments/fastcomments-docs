@@ -1,11 +1,11 @@
-req
+リクエスト
 tenantId
 urlId
 userIdWS
 
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | はい |  |
 | urlId | string | query | はい |  |
@@ -15,7 +15,7 @@ userIdWS
 
 ## レスポンス
 
-戻り値: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetEventLogResponse.php)
+返却: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetEventLogResponse.php)
 
 ## 例
 
@@ -27,15 +27,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // カスタムの HTTP クライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
-    // これはオプションです。デフォルトでは `GuzzleHttp\Client` が使用されます。
+    // カスタム HTTP クライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装したクライアントを渡してください。
+    // これはオプションで、デフォルトでは `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$url_id = 'url_id_example'; // string
-$user_id_ws = 'user_id_ws_example'; // string
+
+$tenant_id = 'tenant_id_example'; // 文字列
+$url_id = 'url_id_example'; // 文字列
+$user_id_ws = 'user_id_ws_example'; // 文字列
 $start_time = 56; // int
 $end_time = 56; // int
+
 
 try {
     $result = $apiInstance->getEventLog($tenant_id, $url_id, $user_id_ws, $start_time, $end_time);
@@ -44,3 +46,5 @@ try {
     echo 'Exception when calling PublicApi->getEventLog: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

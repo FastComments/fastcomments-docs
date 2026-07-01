@@ -1,22 +1,32 @@
 ## Parametre
 
-| Navn | Type | Påkrævet | Beskrivelse |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| sso | string | Nej |  |
+| tenantId | string | Yes |  |
+| sso | string | No |  |
 
-## Respons
+## Svar
 
-Returnerer: [`GetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserNotificationCountResponse.ts)
+Returnerer: [`GetUserNotificationCountResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserNotificationCountResponse1.ts)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på getUserNotificationCount'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUserNotificationCount Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_3f47a2b9-6c4d-4e8a-9f2b-0a1b2c3d4e5f';
-const ssoToken: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Njc4OTAiLCJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20ifQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
-const notificationCount: GetUserNotificationCountResponse = await getUserNotificationCount(tenantId);
-const notificationCountWithSso: GetUserNotificationCountResponse = await getUserNotificationCount(tenantId, ssoToken);
-[inline-code-end]
+async function demoGetUserNotificationCount() {
+    const tenantId: string = "acme-corp-01";
 
----
+    // Kald med valgfri SSO-token
+    const countWithSSO: GetUserNotificationCountResponse1 = await getUserNotificationCount(
+        tenantId,
+        "sso-token-abc123"
+    );
+
+    // Kald uden SSO-token
+    const countWithoutSSO: GetUserNotificationCountResponse1 = await getUserNotificationCount(
+        tenantId
+    );
+
+    console.log(countWithSSO, countWithoutSSO);
+}
+[inline-code-end]

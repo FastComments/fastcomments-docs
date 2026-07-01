@@ -2,6 +2,7 @@
 
 | Nombre | Tipo | Ubicación | Obligatorio | Descripción |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Sí |  |
 | commentId | string | path | Sí |  |
 | sso | string | query | No |  |
 
@@ -11,7 +12,7 @@ Devuelve: [`GetCommentBanStatusResponse`](https://github.com/FastComments/fastco
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de getCommentBanStatus'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo getCommentBanStatus'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importar clases:
 import com.fastcomments.invoker.ApiClient;
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      GetCommentBanStatusResponse result = apiInstance.getCommentBanStatus(commentId)
+      GetCommentBanStatusResponse result = apiInstance.getCommentBanStatus(tenantId, commentId)
             .sso(sso)
             .execute();
       System.out.println(result);

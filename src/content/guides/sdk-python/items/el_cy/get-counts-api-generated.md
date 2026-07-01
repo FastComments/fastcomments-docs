@@ -1,15 +1,15 @@
----
-## Παράμετροι
+## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Όνομα | Τύπος | Θέση | Απαιτείται | Περιγραφή |
+|------|------|------|------------|-----------|
+| tenantId | string | query | Ναι |  |
 | sso | string | query | Όχι |  |
 
-## Απάντηση
+## Response
 
 Επιστρέφει: [`GetBannedUsersCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_banned_users_count_response.py)
 
-## Παράδειγμα
+## Example
 
 [inline-code-attrs-start title = 'Παράδειγμα get_counts'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -18,25 +18,24 @@ from client.models.get_banned_users_count_response import GetBannedUsersCountRes
 from client.rest import ApiException
 from pprint import pprint
 
-# Ορισμός του host είναι προαιρετικός και προεπιλεγμένο το https://fastcomments.com
-# Δείτε το configuration.py για λίστα με όλες τις υποστηριζόμενες παραμέτρους διαμόρφωσης.
+# Ο καθορισμός του host είναι προαιρετικός και προεπιλεγμένο στο https://fastcomments.com
+# Δείτε το configuration.py για μια λίστα με όλες τις υποστηριζόμενες παραμέτρους διαμόρφωσης.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Εισέλθετε σε context με ένα στιγμιότυπο του API client
+# Εισάγετε ένα context με ένα αντικείμενο του API client
 with client.ApiClient(configuration) as api_client:
-    # Δημιουργήστε ένα στιγμιότυπο της κλάσης API
+    # Δημιουργήστε μια παρουσία της κλάσης API
     api_instance = client.ModerationApi(api_client)
-    sso = 'sso_example' # str |  (προαιρετικό)
+    tenant_id = 'tenant_id_example' # str | 
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_counts(sso=sso)
+        api_response = api_instance.get_counts(tenant_id, sso=sso)
         print("The response of ModerationApi->get_counts:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling ModerationApi->get_counts: %s\n" % e)
 [inline-code-end]
-
----

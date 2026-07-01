@@ -1,23 +1,24 @@
-### Використання Nimble
+### Using Nimble
 
 ```bash
 nimble install fastcomments
 ```
 
-### Побудова з вихідного коду
+### Building from Source
 
 ```bash
 nimble build
 ```
 
-### Зміст бібліотеки
+### Library Contents
 
-Ця бібліотека містить згенерований клієнт API та утиліти SSO, щоб спростити роботу з API.
+This library contains the generated API client and the SSO utilities to make working with the API easier.
 
-- [Документація бібліотеки клієнта API](https://github.com/FastComments/fastcomments-nim/blob/master/client/README.md)
+- [API Client Library Docs](https://github.com/FastComments/fastcomments-nim/blob/master/client/README.md)
 
-### Публічні та захищені API
+### Public vs Secured APIs
 
-Для клієнта API існує три модулі API, `api_default`, `api_public`, and `api_moderation`. Модуль `api_default` містить методи, що вимагають вашого API-ключа, а `api_public` містить виклики API, які можна виконувати безпосередньо з браузера/мобільного пристрою тощо без автентифікації. Модуль `api_moderation` містить методи для панелі модератора.
+For the API client, there are three API modules, `api_default`, `api_public`, and `api_moderation`. The `api_default` contains methods that require your API key, and `api_public` contains api calls
+that can be made directly from a browser/mobile device/etc without authentication. The `api_moderation` module contains methods for the moderator dashboard.
 
-Методи `api_moderation` охоплюють перелік, підрахунок, пошук і експорт коментарів та їхніх журналів; дії модерації, такі як видалення/відновлення коментарів, позначення, встановлення статусу на перегляд/спам/погодження, коригування голосів, та повторне відкриття/закриття тем; бані (заборона користувача від коментування, скасування бану, підсумки перед баном, статуси та налаштування бану, та підрахунок забанених користувачів); та бейджі й довіра (надання/зняття бейджу, перелік ручних бейджів, отримання/встановлення коефіцієнта довіри користувача, та отримання внутрішнього профілю користувача). Кожен метод `api_moderation` приймає параметр `sso`, щоб виклик був автентифікований як SSO-модератор.
+The `api_moderation` module provides an extensive suite of live and fast moderation APIs. Every `api_moderation` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.

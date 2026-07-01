@@ -1,7 +1,7 @@
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
-|------|------|----------|----------|-------------|
+| 名前 | 型 | ロケーション | 必須 | 説明 |
+|------|------|--------------|------|------|
 | tenantId | string | query | はい |  |
 | isLive | boolean | query | いいえ |  |
 | doSpamCheck | boolean | query | いいえ |  |
@@ -20,31 +20,33 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// API キー認証を設定: api_key
+// APIキー認証を設定: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// 必要に応じて、API キーのプレフィックス（例: Bearer）を設定するには以下の行のコメントを外してください
+// 必要に応じて、APIキーのプレフィックス（例: Bearer）を設定するには、以下のコメントを外してください
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // カスタムの HTTP クライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装したクライアントを渡してください。
-    // これはオプションです。デフォルトでは `GuzzleHttp\Client` が使用されます。
+    // カスタム HTTP クライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装したクライアントを渡してください。
+    // これはオプションで、デフォルトとして `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
+
+$tenant_id = 'tenant_id_example'; // 文字列
 $create_comment_params = array(new \FastComments\Client\Model\CreateCommentParams()); // \FastComments\Client\Model\CreateCommentParams[]
-$is_live = True; // bool
-$do_spam_check = True; // bool
-$send_emails = True; // bool
-$populate_notifications = True; // bool
+$options = [
+    'is_live' => True, // bool
+    'do_spam_check' => True, // bool
+    'send_emails' => True, // bool
+    'populate_notifications' => True, // bool
+];
+
 
 try {
-    $result = $apiInstance->saveCommentsBulk($tenant_id, $create_comment_params, $is_live, $do_spam_check, $send_emails, $populate_notifications);
+    $result = $apiInstance->saveCommentsBulk($tenant_id, $create_comment_params, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->saveCommentsBulk: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

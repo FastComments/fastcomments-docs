@@ -1,7 +1,7 @@
 ## Parametre
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
+|------|------|-----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | userId | string | query | Nej |  |
 | urlId | string | query | Nej |  |
@@ -29,7 +29,7 @@ let viewed = true // Bool |  (valgfri)
 let type = "type_example" // String |  (valgfri)
 let skip = 987 // Double |  (valgfri)
 
-DefaultAPI.getNotifications(tenantId: tenantId, userId: userId, urlId: urlId, fromCommentId: fromCommentId, viewed: viewed, type: type, skip: skip) { (response, error) in
+DefaultAPI.getNotifications(tenantId: tenantId, options: DefaultAPI.GetNotificationsOptions(userId: userId, urlId: urlId, fromCommentId: fromCommentId, viewed: viewed, type: type, skip: skip)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -40,3 +40,5 @@ DefaultAPI.getNotifications(tenantId: tenantId, userId: userId, urlId: urlId, fr
     }
 }
 [inline-code-end]
+
+---

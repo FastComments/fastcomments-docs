@@ -1,27 +1,27 @@
-## Parâmetros
+## Parameters
 
 | Nome | Tipo | Localização | Obrigatório | Descrição |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Sim |  |
-| postIds | array | query | Não |  |
-| sso | string | query | Não |  |
+|------|------|-------------|-------------|-----------|
+| tenantId | string | path | Yes |  |
+| postIds | array | query | No |  |
+| sso | string | query | No |  |
 
-## Resposta
+## Response
 
 Retorna: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/UserReactsResponse.swift)
 
-## Exemplo
+## Example
 
-[inline-code-attrs-start title = 'getUserReactsPublic Example'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo getUserReactsPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Os exemplos de código a seguir ainda estão em beta. Para qualquer problema, por favor reporte via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Os seguintes exemplos de código ainda estão em beta. Para qualquer problema, por favor reporte via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let postIds = ["inner_example"] // [String] |  (opcional)
-let sso = "sso_example" // String |  (opcional)
+let postIds = ["inner_example"] // [String] |  (optional)
+let sso = "sso_example" // String |  (optional)
 
-PublicAPI.getUserReactsPublic(tenantId: tenantId, postIds: postIds, sso: sso) { (response, error) in
+PublicAPI.getUserReactsPublic(tenantId: tenantId, options: PublicAPI.GetUserReactsPublicOptions(postIds: postIds, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -32,5 +32,3 @@ PublicAPI.getUserReactsPublic(tenantId: tenantId, postIds: postIds, sso: sso) { 
     }
 }
 [inline-code-end]
-
----

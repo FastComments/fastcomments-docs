@@ -2,6 +2,7 @@
 
 | 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | 是 |  |
 | value | string | query | 否 |  |
 | filters | string | query | 否 |  |
 | searchFilters | string | query | 否 |  |
@@ -9,7 +10,7 @@
 
 ## 回應
 
-回傳: [`ModerationCommentSearchResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_comment_search_response.go)
+返回: [`ModerationCommentSearchResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_comment_search_response.go)
 
 ## 範例
 
@@ -25,6 +26,7 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	value := "value_example" // string |  (可選)
 	filters := "filters_example" // string |  (可選)
 	searchFilters := "searchFilters_example" // string |  (可選)
@@ -32,12 +34,12 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetSearchCommentsSummary(context.Background()).Value(value).Filters(filters).SearchFilters(searchFilters).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetSearchCommentsSummary(context.Background()).TenantId(tenantId).Value(value).Filters(filters).SearchFilters(searchFilters).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetSearchCommentsSummary``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// 從 `GetSearchCommentsSummary` 的回應: ModerationCommentSearchResponse
+	// 來自 `GetSearchCommentsSummary` 的回應: ModerationCommentSearchResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetSearchCommentsSummary`: %v\n", resp)
 }
 [inline-code-end]

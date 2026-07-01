@@ -1,11 +1,10 @@
----
-### Swift Package Manager
+### Διαχειριστής Πακέτων Swift
 
-Προσθέστε τα ακόλουθα στο αρχείο `Package.swift` σας:
+Προσθέστε τα παρακάτω στο αρχείο `Package.swift` σας:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "2.0.0")
+    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "3.0.0")
 ]
 ```
 
@@ -18,4 +17,3 @@ dependencies: [
 
 - Swift 5.9+
 - iOS 13.0+ / macOS 10.15+ / tvOS 13.0+ / watchOS 6.0+
----

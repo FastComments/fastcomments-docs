@@ -1,34 +1,42 @@
 ## 매개변수
 
 | 이름 | 유형 | 필수 | 설명 |
-|------|------|----------|-------------|
-| page | number | 아니요 |  |
-| count | number | 아니요 |  |
-| textSearch | string | 아니요 |  |
-| byIPFromComment | string | 아니요 |  |
-| filters | string | 아니요 |  |
-| searchFilters | string | 아니요 |  |
-| sorts | string | 아니요 |  |
-| demo | boolean | 아니요 |  |
-| sso | string | 아니요 |  |
+|------|------|------|------|
+| page | number | No |  |
+| count | number | No |  |
+| textSearch | string | No |  |
+| byIPFromComment | string | No |  |
+| filters | string | No |  |
+| searchFilters | string | No |  |
+| sorts | string | No |  |
+| demo | boolean | No |  |
+| tenantId | string | No |  |
+| sso | string | No |  |
 
 ## 응답
 
-반환: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPIGetCommentsResponse.ts)
+Returns: [`GetApiCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetApiCommentsResponse.ts)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'getApiComments 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getApiComments 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const page: number = 2;
-const count: number = 25;
-const textSearch: string = 'comments failing to load after posting';
-const filters: string = 'status:pending,moderation:required';
-const sorts: string = 'createdAt:desc';
-const demo: boolean = false;
-const sso: string = 'sso-usr-7f3b2a';
+async function loadComments() {
+  const fullResult: GetApiCommentsResponse = await getApiComments(
+    2,                     // 페이지
+    25,                    // 카운트
+    "feedback",           // 텍스트 검색
+    "192.168.1.100",      // 댓글 IP
+    "approved",           // 필터
+    "hasReplies",         // 검색 필터
+    "dateDesc",           // 정렬
+    false,                // 데모
+    "tenant-abc123",      // 테넌트 ID
+    "sso-token-xyz"       // SSO
+  );
 
-const response: ModerationAPIGetCommentsResponse = await getApiComments(page, count, textSearch, undefined, filters, undefined, sorts, demo, sso);
+  const minimalResult: GetApiCommentsResponse = await getApiComments(undefined, 5);
+}
 [inline-code-end]
 
 ---

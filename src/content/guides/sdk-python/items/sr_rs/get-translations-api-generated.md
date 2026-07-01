@@ -2,10 +2,10 @@
 
 | Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| namespace | string | path | Да |  |
-| component | string | path | Да |  |
-| locale | string | query | Не |  |
-| useFullTranslationIds | boolean | query | Не |  |
+| namespace | string | path | Yes |  |
+| component | string | path | Yes |  |
+| locale | string | query | No |  |
+| useFullTranslationIds | boolean | query | No |  |
 
 ## Одговор
 
@@ -13,31 +13,32 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'get_translations Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_translations Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetTranslationsOptions
 from client.models.get_translations_response import GetTranslationsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинисање домаћина је опционално и подразумевано је https://fastcomments.com
-# Погледајте configuration.py за листу свих подржаних параметара конфигурације.
+# Definisanje host-a je opciono i podrazumevano je https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih konfiguracionih parametara.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Отворите контекст са инстанцом API клијента
+# Uđite u kontekst sa instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Креирајте инстанцу API класе
+    # Kreirajte instancu API klase
     api_instance = client.PublicApi(api_client)
     namespace = 'namespace_example' # str | 
     component = 'component_example' # str | 
-    locale = 'locale_example' # str |  (опционо)
-    use_full_translation_ids = True # bool |  (опционо)
+    locale = 'locale_example' # str |  (opciono)
+    use_full_translation_ids = True # bool |  (opciono)
 
     try:
-        api_response = api_instance.get_translations(namespace, component, locale=locale, use_full_translation_ids=use_full_translation_ids)
+        api_response = api_instance.get_translations(namespace, component, GetTranslationsOptions(locale=locale, use_full_translation_ids=use_full_translation_ids))
         print("The response of PublicApi->get_translations:\n")
         pprint(api_response)
     except Exception as e:

@@ -1,33 +1,27 @@
-## Параметри
+## Parametri
 
-| Name | Type | Required | Description |
+| Ime | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| postId | string | Не |  |
-| updateFeedPostParams | UpdateFeedPostParams | Не |  |
-| broadcastId | string | Не |  |
-| sso | string | Не |  |
+| tenantId | string | Da |  |
+| postId | string | Ne |  |
+| updateFeedPostParams | UpdateFeedPostParams | Ne |  |
+| options | UpdateFeedPostPublicOptions | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[CreateFeedPostResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_feed_post_response.nim)
+Vraća: [`Option[CreateFeedPostResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_feed_post_response.nim)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример updateFeedPostPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateFeedPostPublic Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.updateFeedPostPublic(
   tenantId = "my-tenant-123",
-  postId = "post-456",
-  updateFeedPostParams = UpdateFeedPostParams(title = "Weekly Product Update", content = "Released bug fixes and performance improvements in v2.1.", tags = @["release", "product"], pinned = false),
-  broadcastId = "",
-  sso = ""
+  postId = "post-789",
+  updateFeedPostParams = UpdateFeedPostParams(),
+  options = UpdateFeedPostPublicOptions()
 )
-if response.isSome:
-  let created = response.get()
-  echo "Updated feed post id: ", created.postId
-else:
-  echo "Update failed with HTTP status: ", httpResponse.status
-[inline-code-end]
 
----
+if response.isSome:
+  let post = response.get()
+[inline-code-end]

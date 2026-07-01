@@ -1,10 +1,11 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| userId | string | query | Ні |  |
-| trustFactor | string | query | Ні |  |
-| sso | string | query | Ні |  |
+| Назва | Тип | Розташування | Обов’язково | Опис |
+|------|------|--------------|--------------|------|
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| trustFactor | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Відповідь
 
@@ -12,7 +13,7 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'setTrustFactor Приклад'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад setTrustFactor'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Імпорт класів:
 import com.fastcomments.invoker.ApiClient;
@@ -27,11 +28,12 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String userId = "userId_example"; // String | 
     String trustFactor = "trustFactor_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      SetUserTrustFactorResponse result = apiInstance.setTrustFactor()
+      SetUserTrustFactorResponse result = apiInstance.setTrustFactor(tenantId)
             .userId(userId)
             .trustFactor(trustFactor)
             .sso(sso)

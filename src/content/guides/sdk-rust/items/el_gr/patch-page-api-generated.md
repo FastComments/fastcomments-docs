@@ -1,35 +1,31 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
-|------|------|----------|-------------|
-| tenant_id | String | Ναι |  |
-| id | String | Ναι |  |
-| update_api_page_data | models::UpdateApiPageData | Ναι |  |
+|------|------|-----------|------------|
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
+| update_api_page_data | models::UpdateApiPageData | Yes |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`PatchPageApiResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/patch_page_api_response.rs)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα patch_page'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'patch_page Παράδειγμα'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn update_page() -> Result<PatchPageApiResponse, Error> {
-    let params: PatchPageParams = PatchPageParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        id: "news/product-update-2026".to_string(),
-        update_api_page_data: models::UpdateApiPageData {
-            title: Some("June 2026 Product Update".to_string()),
-            slug: Some("news/product-update-2026".to_string()),
-            description: Some("Summarizes June releases and roadmap changes".to_string()),
-            is_published: Some(true),
-            content: Some("<p>We shipped performance improvements and new integrations.</p>".to_string()),
-        },
+async fn run_patch_page() -> Result<(), Error> {
+    let update = models::UpdateApiPageData {
+        title: Some("Breaking News".into()),
+        content: Some("Updated article content".into()),
+        ..Default::default()
     };
-
-    let response: PatchPageApiResponse = patch_page(&configuration, params).await?;
-    Ok(response)
+    let params = PatchPageParams {
+        tenant_id: "acme-corp-tenant".into(),
+        id: "news/article".into(),
+        update_api_page_data: update,
+    };
+    let _resp: PatchPageApiResponse = patch_page(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

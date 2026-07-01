@@ -1,10 +1,10 @@
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|-------------|
-| tenant_id | String | Tak |  |
-| render_email_template_body | models::RenderEmailTemplateBody | Tak |  |
-| locale | String | Nie |  |
+|------|------|----------|------|
+| tenant_id | String | Yes |  |
+| render_email_template_body | models::RenderEmailTemplateBody | Yes |  |
+| locale | String | No |  |
 
 ## Odpowiedź
 
@@ -14,26 +14,20 @@ Zwraca: [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'Przykład render_email_template'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let render_body: models::RenderEmailTemplateBody = models::RenderEmailTemplateBody {
-        template_id: "notifications/comment_reply".to_string(),
-        subject: "Someone replied to your comment".to_string(),
-        recipient: "jane.doe@example.com".to_string(),
-        variables: std::collections::HashMap::from([
-            ("commenter".to_string(), "Alice".to_string()),
-            ("post_title".to_string(), "How to Rust".to_string()),
-        ]),
-    };
+let mut vars = std::collections::HashMap::new();
+vars.insert("article_title".to_string(), "Breaking News".to_string());
+vars.insert("author".to_string(), "Jane Smith".to_string());
 
-    let params: RenderEmailTemplateParams = RenderEmailTemplateParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        render_email_template_body: render_body,
-        locale: Some("en-US".to_string()),
-    };
+let body = models::RenderEmailTemplateBody {
+    template_id: "newsletter".to_string(),
+    variables: vars,
+};
 
-    let response: RenderEmailTemplateResponse = render_email_template(&configuration, params).await?;
-    Ok(())
-}
+let params = RenderEmailTemplateParams {
+    tenant_id: "acme-corp-tenant".to_string(),
+    render_email_template_body: body,
+    locale: Some("en-US".to_string()),
+};
+
+let response = render_email_template(&configuration, params).await?;
 [inline-code-end]
-
----

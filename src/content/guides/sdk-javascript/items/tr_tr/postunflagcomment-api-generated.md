@@ -1,26 +1,26 @@
----
-## Parametreler
+## Parameters
 
 | Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
 | commentId | string | Evet |  |
+| broadcastId | string | Hayır |  |
+| tenantId | string | Hayır |  |
 | sso | string | Hayır |  |
 
-## Yanıt
+## Response
 
-Döndürür: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Döndürür: [`PostUnFlagCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostUnFlagCommentResponse.ts)
 
-## Örnek
+## Example
 
 [inline-code-attrs-start title = 'postUnFlagComment Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const commentId: string = '5f8d04b2-9c3a-4d13-bb8a-123456789abc';
-  const resultWithoutSso: APIEmptyResponse = await postUnFlagComment(commentId);
-  const ssoToken: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0NTY3OCJ9.signature';
-  const resultWithSso: APIEmptyResponse = await postUnFlagComment(commentId, ssoToken);
-  console.log(resultWithoutSso, resultWithSso);
-})();
+async () => {
+  const response: PostUnFlagCommentResponse = await postUnFlagComment(
+    "cmt_12345",          // commentId
+    "brd_67890",          // broadcastId (isteğe bağlı)
+    "tenant_abc",         // tenantId (isteğe bağlı)
+    "sso_user_token_789"  // sso (isteğe bağlı)
+  );
+};
 [inline-code-end]
-
----

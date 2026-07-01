@@ -1,7 +1,8 @@
 ## Parâmetros
 
 | Nome | Tipo | Localização | Obrigatório | Descrição |
-|------|------|----------|----------|-------------|
+|------|------|-------------|-------------|-----------|
+| tenantId | string | query | Sim |  |
 | batchJobId | string | query | Não |  |
 | sso | string | query | Não |  |
 
@@ -11,7 +12,7 @@ Retorna: [`ModerationExportStatusResponse`](https://github.com/FastComments/fast
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de GetApiExportStatus'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo GetApiExportStatus'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,12 +24,13 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string |
 	batchJobId := "batchJobId_example" // string |  (opcional)
 	sso := "sso_example" // string |  (opcional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetApiExportStatus(context.Background()).BatchJobId(batchJobId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetApiExportStatus(context.Background()).TenantId(tenantId).BatchJobId(batchJobId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetApiExportStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

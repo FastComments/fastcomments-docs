@@ -1,13 +1,13 @@
 ## Parâmetros
 
-| Nome | Tipo | Localização | Obrigatório | Descrição |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Sim |  |
-| userId | string | query | Não |  |
-| urlId | string | query | Não |  |
-| fromCommentId | string | query | Não |  |
-| viewed | boolean | query | Não |  |
-| type | string | query | Não |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| urlId | string | query | No |  |
+| fromCommentId | string | query | No |  |
+| viewed | boolean | query | No |  |
+| type | string | query | No |  |
 
 ## Resposta
 
@@ -15,9 +15,9 @@ Retorna: [`GetNotificationCountResponse`](https://github.com/FastComments/fastco
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getNotificationCount'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo getNotificationCount'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Os exemplos de código a seguir ainda estão em beta. Para qualquer problema, por favor reporte via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Os seguintes exemplos de código ainda estão em beta. Para qualquer problema, reporte via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -27,7 +27,7 @@ let fromCommentId = "fromCommentId_example" // String |  (opcional)
 let viewed = true // Bool |  (opcional)
 let type = "type_example" // String |  (opcional)
 
-DefaultAPI.getNotificationCount(tenantId: tenantId, userId: userId, urlId: urlId, fromCommentId: fromCommentId, viewed: viewed, type: type) { (response, error) in
+DefaultAPI.getNotificationCount(tenantId: tenantId, options: DefaultAPI.GetNotificationCountOptions(userId: userId, urlId: urlId, fromCommentId: fromCommentId, viewed: viewed, type: type)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -38,5 +38,3 @@ DefaultAPI.getNotificationCount(tenantId: tenantId, userId: userId, urlId: urlId
     }
 }
 [inline-code-end]
-
----

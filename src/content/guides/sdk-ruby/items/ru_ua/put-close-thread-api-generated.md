@@ -1,7 +1,8 @@
 ## Параметры
 
 | Имя | Тип | Местоположение | Обязательно | Описание |
-|------|------|----------|----------|-------------|
+|------|------|----------------|-------------|----------|
+| tenantId | string | query | Да |  |
 | urlId | string | query | Да |  |
 | sso | string | query | Нет |  |
 
@@ -11,20 +12,21 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример вызова put_close_thread'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример put_close_thread'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
-url_id = 'url_id_example' # String | 
+tenant_id = 'tenant_id_example' # Строка | 
+url_id = 'url_id_example' # Строка | 
 opts = {
-  sso: 'sso_example' # String | 
+  sso: 'sso_example' # Строка | 
 }
 
 begin
   
-  result = api_instance.put_close_thread(url_id, opts)
+  result = api_instance.put_close_thread(tenant_id, url_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->put_close_thread: #{e}"

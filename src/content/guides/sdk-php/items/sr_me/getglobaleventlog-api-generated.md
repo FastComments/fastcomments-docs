@@ -3,23 +3,23 @@ tenantId
 urlId
 userIdWS
 
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Обавезно | Опис |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| urlId | string | query | Да |  |
-| userIdWS | string | query | Да |  |
-| startTime | integer | query | Да |  |
-| endTime | integer | query | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| userIdWS | string | query | Yes |  |
+| startTime | integer | query | Yes |  |
+| endTime | integer | query | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetEventLogResponse.php)
+Vraća: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetEventLogResponse.php)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'getGlobalEventLog Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getGlobalEventLog'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -27,15 +27,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ако желите да користите прилагођен HTTP клијент, проследите клијента који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционално, као подразумевани ће бити коришћен `GuzzleHttp\Client`.
+    // Ako želite koristiti prilagođeni http klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao podrazumevano.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $url_id = 'url_id_example'; // string
 $user_id_ws = 'user_id_ws_example'; // string
 $start_time = 56; // int
 $end_time = 56; // int
+
 
 try {
     $result = $apiInstance->getGlobalEventLog($tenant_id, $url_id, $user_id_ws, $start_time, $end_time);

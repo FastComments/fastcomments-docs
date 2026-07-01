@@ -1,49 +1,52 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Обавезно | Опис |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| urlId | string | query | Не |  |
-| userId | string | query | Не |  |
-| startDate | string | query | Не |  |
-| questionId | string | query | Не |  |
-| questionIds | string | query | Не |  |
-| skip | number | query | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| urlId | string | query | No |  |
+| userId | string | query | No |  |
+| startDate | string | query | No |  |
+| questionId | string | query | No |  |
+| questionIds | string | query | No |  |
+| skip | number | query | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetQuestionResultsResponse.php)
+Vraća: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetQuestionResultsResponse.php)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'getQuestionResults Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getQuestionResults'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Конфигуришите овлашћење API кључа: api_key
+// Konfiguriši autorizaciju API ključa: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Откоментирајте доле да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
+// Otkomentari ispod da postaviš prefiks (npr. Bearer) za API ključ, ako je potrebno
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ако желите користити прилагођени HTTP клијент, проследите клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционално, подразумевано ће бити кориштен `GuzzleHttp\Client`.
+    // Ako želiš koristiti prilagođeni http klijent, proslijedi svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao podrazumevani.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$url_id = 'url_id_example'; // string
-$user_id = 'user_id_example'; // string
-$start_date = 'start_date_example'; // string
-$question_id = 'question_id_example'; // string
-$question_ids = 'question_ids_example'; // string
-$skip = 3.4; // float
+$options = [
+    'url_id' => 'url_id_example', // string
+    'user_id' => 'user_id_example', // string
+    'start_date' => 'start_date_example', // string
+    'question_id' => 'question_id_example', // string
+    'question_ids' => 'question_ids_example', // string
+    'skip' => 3.4, // float
+];
+
 
 try {
-    $result = $apiInstance->getQuestionResults($tenant_id, $url_id, $user_id, $start_date, $question_id, $question_ids, $skip);
+    $result = $apiInstance->getQuestionResults($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getQuestionResults: ', $e->getMessage(), PHP_EOL;

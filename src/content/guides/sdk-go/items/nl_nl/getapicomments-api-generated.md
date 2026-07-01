@@ -2,6 +2,7 @@
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Ja |  |
 | page | number | query | Nee |  |
 | count | number | query | Nee |  |
 | text-search | string | query | Nee |  |
@@ -30,6 +31,7 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	page := float64(1.2) // float64 |  (optioneel)
 	count := float64(1.2) // float64 |  (optioneel)
 	textSearch := "textSearch_example" // string |  (optioneel)
@@ -42,12 +44,12 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetApiComments(context.Background()).Page(page).Count(count).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).Sorts(sorts).Demo(demo).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetApiComments(context.Background()).TenantId(tenantId).Page(page).Count(count).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).Sorts(sorts).Demo(demo).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetApiComments``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Fout bij het aanroepen van `ModerationAPI.GetApiComments``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Volledige HTTP-respons: %v\n", r)
 	}
-	// antwoord van `GetApiComments`: ModerationAPIGetCommentsResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetApiComments`: %v\n", resp)
+	// respons van `GetApiComments`: ModerationAPIGetCommentsResponse
+	fmt.Fprintf(os.Stdout, "Respons van `ModerationAPI.GetApiComments`: %v\n", resp)
 }
 [inline-code-end]

@@ -1,28 +1,26 @@
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenant_id | String | 예 |  |
-| id | String | 예 |  |
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
 
 ## 응답
 
-반환값: [`ApiGetCommentResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_get_comment_response.rs)
+반환: [`ApiGetCommentResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_get_comment_response.rs)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'get_comment 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_comment 예시'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_comment() -> Result<(), Error> {
-    let params: GetCommentParams = GetCommentParams {
+async fn fetch_comment() -> Result<(), Error> {
+    let params = GetCommentParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "news/article-2026-06-19/comment-742".to_string(),
-        include_replies: Some(true),
+        id: "comment-12345".to_string(),
+        include_deleted: Some(false),
     };
-    let comment: ApiGetCommentResponse = get_comment(&configuration, params).await?;
-    println!("{:#?}", comment);
+
+    let _response: ApiGetCommentResponse = get_comment(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

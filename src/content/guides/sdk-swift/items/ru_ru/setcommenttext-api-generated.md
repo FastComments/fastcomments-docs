@@ -1,7 +1,6 @@
----
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательный | Описание |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Да |  |
 | commentId | string | path | Да |  |
@@ -17,7 +16,7 @@
 
 [inline-code-attrs-start title = 'Пример setCommentText'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие примеры кода все еще находятся в бета-версии. Если возникнут проблемы, пожалуйста, сообщите через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следующие образцы кода всё ещё находятся в бета-версии. При возникновении проблем, пожалуйста, сообщите по адресу http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -27,7 +26,7 @@ let commentTextUpdateRequest = CommentTextUpdateRequest(comment: "comment_exampl
 let editKey = "editKey_example" // String |  (необязательно)
 let sso = "sso_example" // String |  (необязательно)
 
-PublicAPI.setCommentText(tenantId: tenantId, commentId: commentId, broadcastId: broadcastId, commentTextUpdateRequest: commentTextUpdateRequest, editKey: editKey, sso: sso) { (response, error) in
+PublicAPI.setCommentText(tenantId: tenantId, commentId: commentId, broadcastId: broadcastId, commentTextUpdateRequest: commentTextUpdateRequest, options: PublicAPI.SetCommentTextOptions(editKey: editKey, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -38,5 +37,3 @@ PublicAPI.setCommentText(tenantId: tenantId, commentId: commentId, broadcastId: 
     }
 }
 [inline-code-end]
-
----

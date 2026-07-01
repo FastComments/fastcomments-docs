@@ -29,7 +29,7 @@ let viewed = true // Bool |  (optional)
 let type = "type_example" // String |  (optional)
 let skip = 987 // Double |  (optional)
 
-DefaultAPI.getNotifications(tenantId: tenantId, userId: userId, urlId: urlId, fromCommentId: fromCommentId, viewed: viewed, type: type, skip: skip) { (response, error) in
+DefaultAPI.getNotifications(tenantId: tenantId, options: DefaultAPI.GetNotificationsOptions(userId: userId, urlId: urlId, fromCommentId: fromCommentId, viewed: viewed, type: type, skip: skip)) { (response, error) in
     guard error == nil else {
         print(error)
         return

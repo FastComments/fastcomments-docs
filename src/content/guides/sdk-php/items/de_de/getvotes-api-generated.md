@@ -1,14 +1,13 @@
----
 ## Parameter
 
-| Name | Typ | Ort | Erforderlich | Beschreibung |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| urlId | string | query | Ja |  |
+| Name     | Typ    | Ort   | Erforderlich | Beschreibung |
+|----------|--------|-------|--------------|--------------|
+| tenantId | string | query | Ja           |  |
+| urlId    | string | query | Ja           |  |
 
 ## Antwort
 
-Gibt zurück: [`GetVotesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetVotesResponse.php)
+Rückgabe: [`GetVotesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetVotesResponse.php)
 
 ## Beispiel
 
@@ -18,20 +17,22 @@ Gibt zurück: [`GetVotesResponse`](https://github.com/FastComments/fastcomments-
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// API-Schlüssel-Autorisierung konfigurieren: api_key
+// API-Schlüssel-Authentifizierung konfigurieren: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Entfernen Sie das Kommentierungszeichen unten, um ein Präfix (z. B. Bearer) für den API-Schlüssel zu setzen, falls erforderlich
+// Entkommentiere die nachfolgende Zeile, um ein Präfix (z.B. Bearer) für den API-Schlüssel festzulegen, falls nötig
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Wenn Sie einen benutzerdefinierten HTTP-Client verwenden möchten, übergeben Sie Ihren Client, der `GuzzleHttp\ClientInterface` implementiert.
-    // Dies ist optional; `GuzzleHttp\Client` wird standardmäßig verwendet.
+    // Wenn du einen benutzerdefinierten HTTP-Client verwenden möchtest, übergebe deinen Client, der `GuzzleHttp\ClientInterface` implementiert.
+    // Dies ist optional, `GuzzleHttp\Client` wird standardmäßig verwendet.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $url_id = 'url_id_example'; // string
+
 
 try {
     $result = $apiInstance->getVotes($tenant_id, $url_id);
@@ -40,5 +41,3 @@ try {
     echo 'Exception when calling DefaultApi->getVotes: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

@@ -1,7 +1,8 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Назва | Тип | Розташування | Обов’язковий | Опис |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Так |  |
 | sso | string | query | Ні |  |
 
 ## Відповідь
@@ -12,7 +13,7 @@
 
 [inline-code-attrs-start title = 'Приклад postCommentsByIds'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Імпортувати класи:
+// Імпорт класів:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -25,14 +26,16 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     CommentsByIdsParams commentsByIdsParams = new CommentsByIdsParams(); // CommentsByIdsParams | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationAPIChildCommentsResponse result = apiInstance.postCommentsByIds(commentsByIdsParams)
+      ModerationAPIChildCommentsResponse result = apiInstance.postCommentsByIds(tenantId, commentsByIdsParams)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
+      // Виняток під час виклику ModerationApi#postCommentsByIds
       System.err.println("Exception when calling ModerationApi#postCommentsByIds");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());

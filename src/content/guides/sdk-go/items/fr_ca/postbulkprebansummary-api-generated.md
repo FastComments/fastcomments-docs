@@ -1,7 +1,8 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Oui |  |
 | includeByUserIdAndEmail | boolean | query | Non |  |
 | includeByIP | boolean | query | Non |  |
 | includeByEmailDomain | boolean | query | Non |  |
@@ -9,11 +10,11 @@
 
 ## Réponse
 
-Renvoie : [`BulkPreBanSummary`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_bulk_pre_ban_summary.go)
+Retourne : [`BulkPreBanSummary`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_bulk_pre_ban_summary.go)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de PostBulkPreBanSummary'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple PostBulkPreBanSummary'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -25,20 +26,21 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	bulkPreBanParams := *openapiclient.NewBulkPreBanParams([]string{"CommentIds_example"}) // BulkPreBanParams | 
-	includeByUserIdAndEmail := true // bool |  (optionnel)
-	includeByIP := true // bool |  (optionnel)
-	includeByEmailDomain := true // bool |  (optionnel)
-	sso := "sso_example" // string |  (optionnel)
+	includeByUserIdAndEmail := true // bool |  (facultatif)
+	includeByIP := true // bool |  (facultatif)
+	includeByEmailDomain := true // bool |  (facultatif)
+	sso := "sso_example" // string |  (facultatif)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostBulkPreBanSummary(context.Background()).BulkPreBanParams(bulkPreBanParams).IncludeByUserIdAndEmail(includeByUserIdAndEmail).IncludeByIP(includeByIP).IncludeByEmailDomain(includeByEmailDomain).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostBulkPreBanSummary(context.Background()).TenantId(tenantId).BulkPreBanParams(bulkPreBanParams).IncludeByUserIdAndEmail(includeByUserIdAndEmail).IncludeByIP(includeByIP).IncludeByEmailDomain(includeByEmailDomain).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostBulkPreBanSummary``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// réponse de `PostBulkPreBanSummary`: BulkPreBanSummary
+	// réponse de `PostBulkPreBanSummary` : BulkPreBanSummary
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostBulkPreBanSummary`: %v\n", resp)
 }
 [inline-code-end]

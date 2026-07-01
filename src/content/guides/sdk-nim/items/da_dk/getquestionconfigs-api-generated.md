@@ -1,10 +1,9 @@
----
 ## Parametre
 
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| skip | float64 | Nej |  |
+| tenantId | string | Yes |  |
+| skip | float64 | No |  |
 
 ## Svar
 
@@ -17,10 +16,5 @@ Returnerer: [`Option[GetQuestionConfigsResponse]`](https://github.com/FastCommen
 let (response, httpResponse) = client.getQuestionConfigs(tenantId = "my-tenant-123", skip = 0.0)
 if response.isSome:
   let configs = response.get()
-  echo "Received question configs for tenant my-tenant-123"
   echo configs
-else:
-  echo "No question configs returned"
 [inline-code-end]
-
----

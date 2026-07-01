@@ -1,7 +1,7 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
-|------|------|----------|----------|-------------|
+| Naam | Type | Locatie | Verplicht | Beschrijving |
+|------|------|----------|-----------|--------------|
 | tenantId | string | query | Ja |  |
 
 ## Respons
@@ -16,19 +16,21 @@ Retourneert: [`GetPagesAPIResponse`](https://github.com/FastComments/fastcomment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configureer autorisatie met API-sleutel: api_key
+// Configure API key authorization: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Haal de onderstaande commentaar weg om een prefix (bijv. Bearer) voor de API-sleutel in te stellen, indien nodig
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Als u een aangepaste HTTP-client wilt gebruiken, geef uw client door die `GuzzleHttp\ClientInterface` implementeert.
-    // Dit is optioneel; `GuzzleHttp\Client` wordt standaard gebruikt.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
+
 
 try {
     $result = $apiInstance->getPages($tenant_id);
@@ -37,5 +39,3 @@ try {
     echo 'Exception when calling DefaultApi->getPages: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

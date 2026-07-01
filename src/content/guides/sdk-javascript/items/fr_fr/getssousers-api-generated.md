@@ -1,22 +1,29 @@
 ## Paramètres
 
-| Name | Type | Obligatoire | Description |
-|------|------|------------|-------------|
+| Nom | Type | Obligatoire | Description |
+|------|------|----------|-------------|
 | tenantId | string | Oui |  |
 | skip | number | Non |  |
 
 ## Réponse
 
-Retourne: [`GetSSOUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetSSOUsersResponse.ts)
+Retourne : [`GetSSOUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetSSOUsersResponse.ts)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getSSOUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getSSOUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_8f3b2a1c";
-const usersWithoutSkip: GetSSOUsersResponse = await getSSOUsers(tenantId);
-const skip: number = 50;
-const usersWithSkip: GetSSOUsersResponse = await getSSOUsers(tenantId, skip);
-[inline-code-end]
+async function runExample(): Promise<void> {
+    const tenantId: string = "tenant_12345";
 
----
+    // Appel sans l'optionnel `skip`
+    const firstPage: GetSSOUsersResponse = await getSSOUsers(tenantId);
+
+    // Appel avec l'optionnel `skip`
+    const secondPage: GetSSOUsersResponse = await getSSOUsers(tenantId, 100);
+
+    console.log(firstPage, secondPage);
+}
+
+runExample();
+[inline-code-end]

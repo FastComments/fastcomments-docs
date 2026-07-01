@@ -2,12 +2,13 @@
 
 | Назва | Тип | Розташування | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
-| text-search | string | query | Ні |  |
-| byIPFromComment | string | query | Ні |  |
-| filters | string | query | Ні |  |
-| searchFilters | string | query | Ні |  |
-| sorts | string | query | Ні |  |
-| sso | string | query | Ні |  |
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sorts | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Відповідь
 
@@ -15,7 +16,7 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад postApiExport'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postApiExport Приклад'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Імпорт класів:
 import com.fastcomments.invoker.ApiClient;
@@ -30,6 +31,7 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String textSearch = "textSearch_example"; // String | 
     String byIPFromComment = "byIPFromComment_example"; // String | 
     String filters = "filters_example"; // String | 
@@ -37,7 +39,7 @@ public class Example {
     String sorts = "sorts_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationExportResponse result = apiInstance.postApiExport()
+      ModerationExportResponse result = apiInstance.postApiExport(tenantId)
             .textSearch(textSearch)
             .byIPFromComment(byIPFromComment)
             .filters(filters)
@@ -47,6 +49,7 @@ public class Example {
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
+      // Виняток під час виклику ModerationApi#postApiExport
       System.err.println("Exception when calling ModerationApi#postApiExport");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());

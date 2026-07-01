@@ -2,22 +2,22 @@
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| commentId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| broadcastId | string | query | Yes |  |
-| sessionId | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | path | Ja |  |
+| commentId | string | path | Ja |  |
+| urlId | string | query | Ja |  |
+| broadcastId | string | query | Ja |  |
+| sessionId | string | query | Nein |  |
+| sso | string | query | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`VoteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/VoteResponse.swift)
+Rückgabe: [`VoteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/VoteResponse.swift)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'voteComment Beispiel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Die folgenden Codebeispiele sind noch Beta. Bei Problemen melden Sie diese bitte über http://github.com/OpenAPITools/openapi-generator/issues/new
+// Die folgenden Codebeispiele sind noch in der Beta-Version. Bei Problemen bitte melden via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -28,7 +28,7 @@ let voteBodyParams = VoteBodyParams(commenterEmail: "commenterEmail_example", co
 let sessionId = "sessionId_example" // String |  (optional)
 let sso = "sso_example" // String |  (optional)
 
-PublicAPI.voteComment(tenantId: tenantId, commentId: commentId, urlId: urlId, broadcastId: broadcastId, voteBodyParams: voteBodyParams, sessionId: sessionId, sso: sso) { (response, error) in
+PublicAPI.voteComment(tenantId: tenantId, commentId: commentId, urlId: urlId, broadcastId: broadcastId, voteBodyParams: voteBodyParams, options: PublicAPI.VoteCommentOptions(sessionId: sessionId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -39,5 +39,3 @@ PublicAPI.voteComment(tenantId: tenantId, commentId: commentId, urlId: urlId, br
     }
 }
 [inline-code-end]
-
----

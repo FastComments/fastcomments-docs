@@ -1,25 +1,27 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Расположение | Обязательный | Описание |
-|------|------|----------|----------|-------------|
-| userId | string | query | Нет |  |
-| sso | string | query | Нет |  |
+| Назва | Тип | Розташування | Обов’язковий | Опис |
+|------|------|--------------|--------------|------|
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| sso | string | query | No |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetUserTrustFactorResponse.swift)
+Повертає: [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetUserTrustFactorResponse.swift)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример getTrustFactor'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад getTrustFactor'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие примеры кода всё ещё находятся в бета-версии. В случае проблем, пожалуйста, сообщите по адресу http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наведені приклади коду ще є бета-версією. У разі будь-яких проблем, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let userId = "userId_example" // String |  (необязательно)
-let sso = "sso_example" // String |  (необязательно)
+let tenantId = "tenantId_example" // String | 
+let userId = "userId_example" // String |  (необов’язково)
+let sso = "sso_example" // String |  (необов’язково)
 
-ModerationAPI.getTrustFactor(userId: userId, sso: sso) { (response, error) in
+ModerationAPI.getTrustFactor(tenantId: tenantId, options: ModerationAPI.GetTrustFactorOptions(userId: userId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

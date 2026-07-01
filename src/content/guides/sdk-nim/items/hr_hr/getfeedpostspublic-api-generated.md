@@ -4,15 +4,10 @@ afterId
 
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
 | tenantId | string | Da |  |
-| afterId | string | Ne |  |
-| limit | int | Ne |  |
-| tags | seq[string] | Ne |  |
-| sso | string | Ne |  |
-| isCrawler | bool | Ne |  |
-| includeUserInfo | bool | Ne |  |
+| options | GetFeedPostsPublicOptions | Ne |  |
 
 ## Odgovor
 
@@ -20,18 +15,9 @@ Vraća: [`Option[PublicFeedPostsResponse]`](https://github.com/FastComments/fast
 
 ## Primjer
 
-[inline-code-attrs-start title = 'getFeedPostsPublic Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getFeedPostsPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getFeedPostsPublic(
-  tenantId = "my-tenant-123",
-  afterId = "",
-  limit = 0,
-  tags = @[],
-  sso = "",
-  isCrawler = false,
-  includeUserInfo = false
-)
-if response.isSome:
-  let feed = response.get()
-  discard feed
+let (feedResponseOpt, httpResponse) = client.getFeedPostsPublic(tenantId = "my-tenant-123", options = GetFeedPostsPublicOptions())
+if feedResponseOpt.isSome:
+  let feedResponse = feedResponseOpt.get()
 [inline-code-end]

@@ -1,8 +1,10 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
-|------|------|----------|----------|-------------|
+| Naam | Type | Locatie | Verplicht | Beschrijving |
+|------|------|----------|-----------|--------------|
+| tenantId | string | query | Ja |  |
 | commentId | string | path | Ja |  |
+| broadcastId | string | query | Nee |  |
 | sso | string | query | Nee |  |
 
 ## Respons
@@ -13,14 +15,16 @@ Retourneert: [`SetCommentTextResponse`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'postSetCommentText Voorbeeld'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// De volgende codevoorbeelden zijn nog in bèta. Voor problemen, rapporteer via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De volgende codevoorbeelden zijn nog in de bèta. Meld een probleem via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let commentId = "commentId_example" // String | 
-let setCommentTextParams = SetCommentTextParams(comment: "comment_example") // SetCommentTextParams | 
+let tenantId = "tenantId_example" // String |
+let commentId = "commentId_example" // String |
+let setCommentTextParams = SetCommentTextParams(comment: "comment_example") // SetCommentTextParams |
+let broadcastId = "broadcastId_example" // String |  (optioneel)
 let sso = "sso_example" // String |  (optioneel)
 
-ModerationAPI.postSetCommentText(commentId: commentId, setCommentTextParams: setCommentTextParams, sso: sso) { (response, error) in
+ModerationAPI.postSetCommentText(tenantId: tenantId, commentId: commentId, setCommentTextParams: setCommentTextParams, options: ModerationAPI.PostSetCommentTextOptions(broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

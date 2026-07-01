@@ -1,8 +1,8 @@
----
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
+| tenant_id | String | Tak |  |
 | sso | String | Nie |  |
 
 ## Odpowiedź
@@ -13,14 +13,12 @@ Zwraca: [`GetBannedUsersCountResponse`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'Przykład get_counts'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_counts() -> Result<(), Error> {
-    let params: GetCountsParams = GetCountsParams {
-        sso: Some("acme-corp-tenant".to_string()),
+async fn run() -> Result<(), Error> {
+    let params = GetCountsParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        sso: Some("news/article".to_string()),
     };
-    let counts: GetBannedUsersCountResponse = get_counts(&configuration, params).await?;
-    println!("{:?}", counts);
+    let _response = get_counts(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

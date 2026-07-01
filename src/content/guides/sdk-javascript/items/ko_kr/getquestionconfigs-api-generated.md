@@ -1,24 +1,28 @@
 ## 매개변수
 
-| 이름 | 타입 | 필수 | 설명 |
-|------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| skip | number | 아니오 |  |
+| 이름 | 유형 | 필수 | 설명 |
+|------|------|------|------|
+| tenantId | string | Yes |  |
+| skip | number | No |  |
 
 ## 응답
 
-반환: [`GetQuestionConfigsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionConfigsResponse.ts)
+반환: [`GetQuestionConfigsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionConfigsResponse1.ts)
 
-## 예제
+## 예시
 
 [inline-code-attrs-start title = 'getQuestionConfigs 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async (): Promise<void> => {
-  const tenantId: string = 'acme-corp-78';
-  const responseWithoutSkip: GetQuestionConfigsResponse = await getQuestionConfigs(tenantId);
-  const responseWithSkip: GetQuestionConfigsResponse = await getQuestionConfigs(tenantId, 25);
-  console.log(responseWithoutSkip, responseWithSkip);
-})();
-[inline-code-end]
+async function fetchQuestionConfigs() {
+    const tenantId: string = "tenant-9876";
 
----
+    // 선택적 'skip' 매개변수 없이 호출
+    const configsWithoutSkip: GetQuestionConfigsResponse1 = await getQuestionConfigs(tenantId);
+
+    // 선택적 'skip' 매개변수와 함께 호출
+    const skip: number = 10;
+    const configsWithSkip: GetQuestionConfigsResponse1 = await getQuestionConfigs(tenantId, skip);
+
+    console.log(configsWithoutSkip, configsWithSkip);
+}
+[inline-code-end]

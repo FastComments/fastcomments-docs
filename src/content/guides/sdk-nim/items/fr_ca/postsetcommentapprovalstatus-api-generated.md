@@ -1,10 +1,10 @@
 ## Paramètres
 
-| Nom | Type | Requis | Description |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
+| tenantId | string | Oui |  |
 | commentId | string | Oui |  |
-| approved | bool | Non |  |
-| sso | string | Non |  |
+| options | PostSetCommentApprovalStatusOptions | Non |  |
 
 ## Réponse
 
@@ -14,10 +14,13 @@ Renvoie : [`Option[SetCommentApprovedResponse]`](https://github.com/FastComments
 
 [inline-code-attrs-start title = 'Exemple de postSetCommentApprovalStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postSetCommentApprovalStatus(commentId = "cmt-7890", approved = false, sso = "")
-if response.isSome:
-  let setResp = response.get()
-  discard setResp
-[inline-code-end]
+let (approvedOpt, httpResp) = client.postSetCommentApprovalStatus(
+  tenantId = "my-tenant-123",
+  commentId = "comment-7890",
+  options = PostSetCommentApprovalStatusOptions()
+)
 
----
+if approvedOpt.isSome:
+  let approved = approvedOpt.get()
+  echo approved
+[inline-code-end]

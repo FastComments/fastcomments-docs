@@ -1,9 +1,9 @@
 ## Parâmetros
 
 | Nome | Tipo | Localização | Obrigatório | Descrição |
-|------|------|----------|----------|-------------|
+|------|------|-------------|-------------|-----------|
+| tenantId | string | query | Sim |  |
 | tag | string | path | Sim |  |
-| tenantId | string | query | Não |  |
 
 ## Resposta
 
@@ -11,7 +11,7 @@ Retorna: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de PatchHashTag'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo PatchHashTag'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,9 +23,9 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	tag := "tag_example" // string | 
-	tenantId := "tenantId_example" // string |  (opcional)
-	updateHashTagBody := *openapiclient.NewUpdateHashTagBody() // UpdateHashTagBody |  (opcional)
+	updateHashTagBody := *openapiclient.NewUpdateHashTagBody() // UpdateHashTagBody |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -34,7 +34,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PatchHashTag``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// resposta de `PatchHashTag`: UpdateHashTagResponse
+	// response from `PatchHashTag`: UpdateHashTagResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PatchHashTag`: %v\n", resp)
 }
 [inline-code-end]

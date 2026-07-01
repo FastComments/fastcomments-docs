@@ -1,34 +1,34 @@
----
-Претходни коментатори на страници који тренутно нису на мрежи. Сортирано по displayName.
-Користите ово након исцрпљивања /users/online да бисте приказали "Чланови" одељак.
-Курсорска пагинација по commenterName: сервер пролази делимични {tenantId, urlId, commenterName}
-индекс од afterName унапред коришћењем $gt, без трошка $skip.
+Past komentari na stranici koji NISU trenutno online. Sortirani po displayName.  
+Koristite ovo nakon što potrošite /users/online kako biste prikazali sekciju „Members“.  
+Kursor paginacija po commenterName: server prolazi kroz delimični indeks {tenantId, urlId, commenterName} od afterName napred korišćenjem $gt, bez troška $skip.
 
-## Параметри
+## Parameters
 
-| Име | Тип | Потребно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| urlId | string | Да |  |
-| afterName | string | Не |  |
-| afterUserId | string | Не |  |
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| options | const GetOfflineUsersOptions& | Yes |  |
 
-## Одговор
+## Response
 
-Враћа: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PageUsersOfflineResponse.h)
+Vraća: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PageUsersOfflineResponse.h)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'Пример getOfflineUsers'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getOfflineUsers Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-auto tenantId = utility::string_t(U("my-tenant-123"));
-auto urlId = utility::string_t(U("article-456"));
-boost::optional<utility::string_t> afterName = boost::optional<utility::string_t>(U("jane.doe@example.com"));
-boost::optional<utility::string_t> afterUserId = boost::optional<utility::string_t>(U("user-789"));
-api->getOfflineUsers(tenantId, urlId, afterName, afterUserId).then([](std::shared_ptr<PageUsersOfflineResponse> resp){
-    auto result = resp ? resp : std::make_shared<PageUsersOfflineResponse>();
-    (void)result;
-});
-[inline-code-end]
+utility::string_t tenantId = U("my-tenant-123");
+utility::string_t urlId = U("page-456");
+GetOfflineUsersOptions options;
+options.limit = boost::optional<int>(50);
+options.includeDetails = boost::optional<bool>(true);
 
----
+api->getOfflineUsers(tenantId, urlId, options)
+    .then([](pplx::task<std::shared_ptr<PageUsersOfflineResponse>> t) {
+        try {
+            auto response = t.get();
+        } catch (const std::exception&) {
+        }
+    });
+[inline-code-end]

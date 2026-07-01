@@ -1,15 +1,13 @@
----
-### 401 Neavtorizirane napake
+### 401 napake nepooblaščene
 
-Če prejemate 401 napake pri uporabi avtenticiranega API-ja:
+Če dobivate napake 401 pri uporabi avtenticiranega API-ja:
 
-1. **Preverite svoj API ključ**: Prepričajte se, da uporabljate pravilen API ključ iz svojega FastComments nadzornega panela
-2. **Preverite tenant ID**: Prepričajte se, da se tenant ID ujema z vašim računom
-3. **Oblika API ključa**: API ključ mora biti nastavljen na API client:
+1. **Preverite svoj API ključ**: Prepričajte se, da uporabljate pravilen API ključ iz vašega nadzornega plošča FastComments
+2. **Preverite ID najemnika**: Prepričajte se, da se ID najemnika ujema z vašim računom
+3. **Oblika API ključa**: API ključ naj bo nastavljen kot glava `x-api-key` v skupni konfiguraciji:
 
 ```swift
-let defaultApi = DefaultAPI()
-defaultApi.apiKey = "YOUR_API_KEY"
+FastCommentsSwiftAPIConfiguration.shared.customHeaders["x-api-key"] = "YOUR_API_KEY"
 ```
 
 4. **Uporaba napačnega API-ja**: Prepričajte se, da uporabljate `DefaultAPI` (ne `PublicAPI`) za avtenticirane klice
@@ -18,15 +16,14 @@ defaultApi.apiKey = "YOUR_API_KEY"
 
 Če SSO žetoni ne delujejo:
 
-1. **Uporabite varen način za produkcijo**: Vedno uporabite `FastCommentsSSO.createSecure()` z vašim API ključem za produkcijo
-2. **Samo na strežniku**: Ustvarjajte varne SSO žetone na vašem strežniku, nikoli ne izpostavljajte svojega API ključa klientom
-3. **Preverite podatke uporabnika**: Poskrbite, da so zagotovljena vsa zahtevana polja (id, email, username)
-4. **Potek veljavnosti žetona**: Varnim SSO žetonom je priložen časovni žig in lahko potečejo. Po potrebi ustvarite nove žetone.
+1. **Uporabite varen način za produkcijo**: Vedno uporabljajte `FastCommentsSSO.createSecure()` s svojim API ključem za produkcijo
+2. **Samo strežniška stran**: Generirajte varne SSO žetone na vašem strežniku, nikoli ne razkrivajte svojega API ključa odjemalcem
+3. **Preverite podatke uporabnika**: Prepričajte se, da so zagotovljena vsa obvezna polja (id, e-pošta, uporabniško ime)
+4. **Iztek žetona**: Varni SSO žetoni vsebujejo časovni žig in lahko potečejo. Po potrebi ustvarite sveže žetone.
 
 ### SSL/TLS napake
 
 Če naletite na SSL/TLS napake:
 
-1. Prepričajte se, da Info.plist vaše aplikacije dovoljuje povezave HTTPS do fastcomments.com
+1. Prepričajte se, da vaša datoteka Info.plist aplikacije dovoljuje HTTPS povezave do fastcomments.com
 2. Preverite, da ne uporabljate izjem App Transport Security, ki bi lahko blokirale povezavo
----

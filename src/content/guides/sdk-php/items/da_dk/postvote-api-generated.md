@@ -2,11 +2,13 @@
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Ja |  |
-| direction | string | query | Nej |  |
-| sso | string | query | Nej |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| direction | string | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
-## Respons
+## Svar
 
 Returnerer: [`VoteResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/VoteResponse.php)
 
@@ -20,16 +22,22 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Hvis du vil bruge en tilpasset HTTP-klient, skal du give din klient, som implementerer `GuzzleHttp\ClientInterface`.
-    // Dette er valgfrit; `GuzzleHttp\Client` bruges som standard.
+    // Hvis du vil bruge en tilpasset HTTP-klient, skal du sende din klient, som implementerer `GuzzleHttp\ClientInterface`.
+    // Dette er valgfrit, `GuzzleHttp\Client` vil blive brugt som standard.
     new GuzzleHttp\Client()
 );
-$comment_id = 'comment_id_example'; // streng
-$direction = 'direction_example'; // streng
-$sso = 'sso_example'; // streng
+
+$tenant_id = 'tenant_id_example'; // string
+$comment_id = 'comment_id_example'; // string
+$options = [
+    'direction' => 'direction_example', // string
+    'broadcast_id' => 'broadcast_id_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->postVote($comment_id, $direction, $sso);
+    $result = $apiInstance->postVote($tenant_id, $comment_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->postVote: ', $e->getMessage(), PHP_EOL;

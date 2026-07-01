@@ -2,20 +2,20 @@
 
 | Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Oui |  |
-| postId | string | path | Oui |  |
-| broadcastId | string | query | Non |  |
-| sso | string | query | Non |  |
+| tenantId | string | path | Yes |  |
+| postId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Réponse
 
-Renvoie : [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateFeedPostResponse.swift)
+Retourne : [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateFeedPostResponse.swift)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple updateFeedPostPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Les exemples de code suivants sont encore en bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Les exemples de code suivants sont encore en version bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -24,7 +24,7 @@ let updateFeedPostParams = UpdateFeedPostParams(title: "title_example", contentH
 let broadcastId = "broadcastId_example" // String |  (optionnel)
 let sso = "sso_example" // String |  (optionnel)
 
-PublicAPI.updateFeedPostPublic(tenantId: tenantId, postId: postId, updateFeedPostParams: updateFeedPostParams, broadcastId: broadcastId, sso: sso) { (response, error) in
+PublicAPI.updateFeedPostPublic(tenantId: tenantId, postId: postId, updateFeedPostParams: updateFeedPostParams, options: PublicAPI.UpdateFeedPostPublicOptions(broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

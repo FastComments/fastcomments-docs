@@ -1,25 +1,26 @@
-## Параметри
+## Parameters
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| urlId | string | Да |  |
-| id | string | Не |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| id | string | No |  |
 
-## Одговор
+## Response
 
-Враћа: [`Option[GetV2PageReactUsersResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_v2_page_react_users_response.nim)
+Vraća: [`Option[GetV2PageReactUsersResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_v2_page_react_users_response.nim)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'getV2PageReactUsers Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getV2PageReactUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getV2PageReactUsers(tenantId = "my-tenant-123", urlId = "news/article-title", id = "")
-if response.isSome:
-  let usersResp = response.get()
-  echo repr(usersResp)
-else:
-  echo "No page react users returned. HTTP response: ", repr(httpResponse)
-[inline-code-end]
+let (maybeResponse, httpResponse) = client.getV2PageReactUsers(
+  tenantId = "my-tenant-123",
+  urlId = "news/article-title",
+  id = "user-456"
+)
 
----
+if maybeResponse.isSome:
+  let resp = maybeResponse.get()
+  echo resp
+[inline-code-end]

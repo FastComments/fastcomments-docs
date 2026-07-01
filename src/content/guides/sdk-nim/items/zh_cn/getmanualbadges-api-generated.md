@@ -1,8 +1,9 @@
 ## 参数
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| sso | string | No |  |
+| 名称 | 类型 | 必需 | 描述 |
+|------|------|------|------|
+| tenantId | string | 是 |  |
+| sso | string = "" | 否 |  |
 
 ## 响应
 
@@ -12,12 +13,8 @@
 
 [inline-code-attrs-start title = 'getManualBadges 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getManualBadges(sso = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9")
-if response.isSome:
-  let badges = response.get()
-  echo "Manual badges received:"
-  echo badges
-else:
-  echo "No manual badges returned."
-  echo httpResponse
+let (manualBadgesOpt, httpResponse) = client.getManualBadges(tenantId = "my-tenant-123", sso = "")
+if manualBadgesOpt.isSome:
+  let manualBadges = manualBadgesOpt.get()
+  echo manualBadges
 [inline-code-end]

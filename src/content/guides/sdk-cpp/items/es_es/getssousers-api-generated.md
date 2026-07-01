@@ -1,7 +1,6 @@
----
 ## Parámetros
 
-| Nombre | Tipo | Requerido | Descripción |
+| Nombre | Tipo | Obligatorio | Descripción |
 |------|------|----------|-------------|
 | tenantId | string | Sí |  |
 | skip | int32_t | No |  |
@@ -12,20 +11,14 @@ Devuelve: [`GetSSOUsersResponse`](https://github.com/FastComments/fastcomments-c
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de getSSOUsers'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo getSSOUsers'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 boost::optional<int32_t> skip = 25;
-api->getSSOUsers(tenantId, skip)
-    .then([](pplx::task<std::shared_ptr<GetSSOUsersResponse>> task) {
-        try {
-            auto resp = task.get();
-            if (!resp) resp = std::make_shared<GetSSOUsersResponse>();
-            (void)resp;
-        } catch (const std::exception& ex) {
-            (void)ex;
-        }
-    });
+api->getSSOUsers(tenantId, skip).then([](pplx::task<std::shared_ptr<GetSSOUsersResponse>> t) {
+    try {
+        auto response = t.get();
+    } catch (const std::exception&) {
+    }
+});
 [inline-code-end]
-
----

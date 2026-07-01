@@ -1,28 +1,24 @@
----
-## Parameters
+## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenant_id | String | 예 |  |
-| domain | String | 예 |  |
+| tenant_id | String | Yes |  |
+| domain | String | Yes |  |
 
-## Response
+## 응답
 
-반환: [`DeleteDomainConfigResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/delete_domain_config_response.rs)
+Returns: [`DeleteDomainConfigResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/delete_domain_config_response.rs)
 
-## Example
+## 예시
 
-[inline-code-attrs-start title = 'delete_domain_config 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_domain_config 예시'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_delete_domain_config() -> Result<DeleteDomainConfigResponse, Error> {
+async fn run_example(configuration: &configuration::Configuration) -> Result<(), Error> {
     let params = DeleteDomainConfigParams {
-        tenant_id: "acme-corp-tenant".to_owned(),
-        domain: "news/acme-corp".to_owned(),
-        force: Some(true),
+        tenant_id: "acme-corp-tenant".to_string(),
+        domain: "news/article".to_string(),
     };
-    let response: DeleteDomainConfigResponse = delete_domain_config(&configuration, params).await?;
-    Ok(response)
+    let _response: DeleteDomainConfigResponse = delete_domain_config(configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

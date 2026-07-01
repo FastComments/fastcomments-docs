@@ -14,23 +14,12 @@ Returnerer: [`Option[PatchPageAPIResponse]`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'patchPage Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let updateData = UpdateAPIPageData(
-  title = "Breaking: Major Event Update",
-  urlId = "news/major-event-update",
-  visible = true,
-  tags = @["breaking", "headline"],
-  sortOrder = 5
-)
-
 let (response, httpResponse) = client.patchPage(
   tenantId = "my-tenant-123",
-  id = "news/major-event-update",
-  updateAPIPageData = updateData
+  id = "news/article-456",
+  updateAPIPageData = UpdateAPIPageData(title = "Updated article title", description = "Revised description")
 )
 
 if response.isSome:
-  let page = response.get()
-  discard page
+  let resp = response.get()
 [inline-code-end]
-
----

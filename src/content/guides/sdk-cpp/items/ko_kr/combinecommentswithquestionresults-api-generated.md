@@ -1,50 +1,29 @@
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
-| questionId | string | No |  |
-| questionIds | vector<string | No |  |
-| urlId | string | No |  |
-| startDate | datetime | No |  |
-| forceRecalculate | bool | No |  |
-| minValue | double | No |  |
-| maxValue | double | No |  |
-| limit | double | No |  |
+| options | const CombineCommentsWithQuestionResultsOptions& | Yes |  |
 
 ## 응답
 
 반환: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CombineQuestionResultsWithCommentsResponse.h)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'combineCommentsWithQuestionResults 예제'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'combineCommentsWithQuestionResults 예시'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
-boost::optional<utility::string_t> questionId = utility::conversions::to_string_t("q-456");
-std::vector<utility::string_t> qlist = { utility::conversions::to_string_t("q-101"), utility::conversions::to_string_t("q-102") };
-boost::optional<std::vector<utility::string_t>> questionIds = qlist;
-boost::optional<utility::string_t> urlId = utility::conversions::to_string_t("page-789");
-boost::optional<utility::datetime> startDate = utility::datetime::from_string(utility::conversions::to_string_t("2025-01-01T00:00:00Z"));
-boost::optional<bool> forceRecalculate = true;
-boost::optional<double> minValue = 0.0;
-boost::optional<double> maxValue = 5.0;
-boost::optional<double> limit = 100.0;
-
-api->combineCommentsWithQuestionResults(
-    tenantId,
-    questionId,
-    questionIds,
-    urlId,
-    startDate,
-    forceRecalculate,
-    minValue,
-    maxValue,
-    limit
-).then([](std::shared_ptr<CombineQuestionResultsWithCommentsResponse> resp){
-    auto result = resp ? resp : std::make_shared<CombineQuestionResultsWithCommentsResponse>();
-    return result;
-});
+utility::string_t tenantId = utility::string_t("my-tenant-123");
+CombineCommentsWithQuestionResultsOptions options;
+options.questionId = utility::string_t("question-789");
+options.maxComments = boost::optional<int>(50);
+api->combineCommentsWithQuestionResults(tenantId, options).then(
+    [](pplx::task<std::shared_ptr<CombineQuestionResultsWithCommentsResponse>> task){
+        try{
+            auto respPtr = task.get();
+            auto combined = std::make_shared<CombineQuestionResultsWithCommentsResponse>(*respPtr);
+            // 필요에 따라 combined 사용
+        }catch(const std::exception&){
+        }
+    });
 [inline-code-end]
-
----

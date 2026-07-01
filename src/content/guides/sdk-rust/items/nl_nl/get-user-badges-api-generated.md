@@ -1,13 +1,13 @@
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
-|------|------|---------|--------------|
-| tenant_id | String | Ja |  |
-| user_id | String | Nee |  |
-| badge_id | String | Nee |  |
-| displayed_on_comments | bool | Nee |  |
-| limit | f64 | Nee |  |
-| skip | f64 | Nee |  |
+| Naam | Type | Verplicht | Beschrijving |
+|------|------|-----------|--------------|
+| tenant_id | String | Yes |  |
+| user_id | String | No |  |
+| badge_id | String | No |  |
+| displayed_on_comments | bool | No |  |
+| limit | f64 | No |  |
+| skip | f64 | No |  |
 
 ## Respons
 
@@ -17,18 +17,16 @@ Retourneert: [`ApiGetUserBadgesResponse`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'get_user_badges Voorbeeld'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_user_badges() -> Result<ApiGetUserBadgesResponse, Error> {
-    let params: GetUserBadgesParams = GetUserBadgesParams {
+async fn fetch_badges(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetUserBadgesParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        user_id: Some("user_7890".to_string()),
+        user_id: Some("user-12345".to_string()),
         badge_id: Some("top-commenter".to_string()),
         displayed_on_comments: Some(true),
-        limit: Some(25.0),
+        limit: Some(50.0),
         skip: Some(0.0),
     };
-    let response: ApiGetUserBadgesResponse = get_user_badges(&configuration, params).await?;
-    Ok(response)
+    let _response = get_user_badges(configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

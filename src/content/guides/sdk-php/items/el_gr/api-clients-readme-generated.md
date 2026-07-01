@@ -1,8 +1,8 @@
-Το SDK παρέχει τρεις κλάσεις πελατών API:
+Το SDK εκθέτει τρεις κλάσεις πελάτη API:
 
-- **`DefaultApi`** — μέθοδοι αυθεντικοποιημένες με API key για χρήση στο server-side. Διαμορφώστε ένα API key όπως φαίνεται στο [Εισαγωγή](#getting-started-readme-generated).
-- **`PublicApi`** — δημόσιες μέθοδοι που δεν απαιτούν API key, ασφαλείς για κλήση από προγράμματα περιήγησης και εφαρμογές για κινητά.
-- **`ModerationApi`** — μέθοδοι για τον πίνακα ελέγχου των διαχειριστών: λίστα, καταμέτρηση, αναζήτηση, καταγραφή και εξαγωγή σχολίων; ενέργειες εποπτείας (αφαίρεση/επαναφορά, σημαία, ορισμός κατάστασης ανασκόπησης/spam/έγκρισης, ψήφοι, επανανοίγμα/κλείσιμο νήματος); αποκλεισμοί (αποκλεισμός χρήστη από το σχολιασμό, αναίρεση αποκλεισμού, προ-συνοπτικές αναφορές πριν από αποκλεισμό, κατάσταση και προτιμήσεις αποκλεισμού, πλήθος αποκλεισμένων χρηστών); και σήματα & εμπιστοσύνη (απονομή/αφαίρεση σήματος, χειροκίνητα σήματα, λήψη/ορισμός παράγοντα εμπιστοσύνης, εσωτερικό προφίλ χρήστη). Κάθε μέθοδος του `ModerationApi` δέχεται παράμετρο `$sso` για να αυθεντικοποιήσει τον ενεργούντα διαχειριστή μέσω SSO.
+- **`DefaultApi`** - Μέθοδοι με αυθεντικοποίηση μέσω κλειδιού API για χρήση στην πλευρά του διακομιστή. Διαμορφώστε ένα κλειδί API όπως φαίνεται στην ενότητα [Getting Started](#getting-started-readme-generated).
+- **`PublicApi`** - Δημόσιες μέθοδοι που δεν απαιτούν κλειδί API, ασφαλείς για κλήση από προγράμματα περιήγησης και κινητές εφαρμογές.
+- **`ModerationApi`** - Ένα εκτενές σύνολο ζωντανών και γρήγορων API μετριασμού. Κάθε μέθοδος `ModerationApi` δέχεται μια παράμετρο `$sso` και μπορεί να αυθεντοποιηθεί μέσω SSO ή ενός cookie συνεδρίας FastComments.com.
 
 ### Χρήση του PublicApi
 
@@ -10,7 +10,7 @@
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Οι δημόσιες μέθοδοι δεν απαιτούν API key.
+// Οι δημόσιες μέθοδοι δεν απαιτούν κλειδί API.
 $apiInstance = new FastComments\Client\Api\PublicApi(
     new GuzzleHttp\Client()
 );
@@ -34,10 +34,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new FastComments\Client\Api\ModerationApi(
     new GuzzleHttp\Client()
 );
-$sso = 'sso_example'; // string - δεδομένα SSO που αυθεντικοποιούν τον διαχειριστή
+$sso = 'sso_example'; // string - Φορτίο SSO που αυθεντικοποιεί τον συντονιστή
 
 try {
-    $result = $apiInstance->getCount(null, null, null, null, null, $sso);
+    $result = $apiInstance->getCount([
+        'sso' => $sso,
+    ]);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getCount: ', $e->getMessage(), PHP_EOL;

@@ -1,8 +1,10 @@
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | 是 |  |
 | commentId | string | path | 是 |  |
+| broadcastId | string | query | 否 |  |
 | sso | string | query | 否 |  |
 
 ## 响应
@@ -23,18 +25,22 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
 	adjustCommentVotesParams := *openapiclient.NewAdjustCommentVotesParams(float64(123)) // AdjustCommentVotesParams | 
-	sso := "sso_example" // string |  (可选)
+	broadcastId := "broadcastId_example" // string |  (optional)
+	sso := "sso_example" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostAdjustCommentVotes(context.Background(), commentId).AdjustCommentVotesParams(adjustCommentVotesParams).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostAdjustCommentVotes(context.Background(), commentId).TenantId(tenantId).AdjustCommentVotesParams(adjustCommentVotesParams).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostAdjustCommentVotes``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// 来自 `PostAdjustCommentVotes` 的响应: AdjustVotesResponse
+	// `PostAdjustCommentVotes` 的响应: AdjustVotesResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostAdjustCommentVotes`: %v\n", resp)
 }
 [inline-code-end]
+
+---

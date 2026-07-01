@@ -1,9 +1,9 @@
 ## Parámetros
 
-| Nombre | Tipo | Requerido | Descripción |
+| Nombre | Tipo | Obligatorio | Descripción |
 |------|------|----------|-------------|
-| tenant_id | String | Sí |  |
-| comment_id | String | Sí |  |
+| tenant_id | String | Yes |  |
+| comment_id | String | Yes |  |
 | edit_key | String | No |  |
 | sso | String | No |  |
 
@@ -13,18 +13,16 @@ Devuelve: [`PublicApiGetCommentTextResponse`](https://github.com/FastComments/fa
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de get_comment_text'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo get_comment_text'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_comment_text() -> Result<PublicApiGetCommentTextResponse, Error> {
+async fn example() -> Result<(), Error> {
     let params = GetCommentTextParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        comment_id: "news/article-2026-06-19#cmt-8421".to_string(),
-        edit_key: Some("editkey-73a1b2c".to_string()),
-        sso: Some("sso.jwt.token.eyJhbGci".to_string()),
+        comment_id: "comment-12345".to_string(),
+        edit_key: Some("edit-key-abc".to_string()),
+        sso: Some("sso-token-xyz".to_string()),
     };
-    let response: PublicApiGetCommentTextResponse = get_comment_text(&configuration, params).await?;
-    Ok(response)
+    let _response = get_comment_text(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

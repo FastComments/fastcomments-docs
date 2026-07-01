@@ -1,35 +1,37 @@
-Набраја странице за тенанта. Користи га FChat десктоп клијент да попуни своју листу соба. Захтијева да `enableFChat` буде true у разрешеном прилагођеном конфигу за сваку страницу. Странице које захтијевају SSO филтрују се према приступним групама корисника који прави захтјев.
+List pages for a tenant. Used by the FChat desktop client to populate its room list.  
+Requires `enableFChat` to be true on the resolved custom config for each page.  
+Pages that require SSO are filtered against the requesting user's group access.
 
-## Параметри
+## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| cursor | string | query | No | Непрозирни курсор пагинације враћен као `nextCursor` из претходног захтјева. Повезан са истим `sortBy`. |
-| limit | integer | query | No | 1..200, подразумевано 50 |
-| q | string | query | No | Опциони префикс филтер по наслову који не прави разлику између великих и малих слова. |
-| sortBy | string | query | No | Редослијед сортирања. `updatedAt` (подразумевано, најновије прво), `commentCount` (највише коментара прво) или `title` (абецедни редослијед). |
-| hasComments | boolean | query | No | Ако је true, враћају се само странице са бар једним коментаром. |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | path | Da |  |
+| cursor | string | query | Ne | Neprozirni kursor za paginaciju vraćen kao `nextCursor` iz prethodnog zahtjeva. Vezan za isti `sortBy`. |
+| limit | integer | query | Ne | 1..200, podrazumijevano 50 |
+| q | string | query | Ne | Opcionalni filter prefiksa naslova, neosjetljiv na veličinu slova. |
+| sortBy | string | query | Ne | Redoslijed sortiranja. `updatedAt` (podrazumijevano, najnoviji prvo), `commentCount` (najviše komentara prvo), ili `title` (azbučni). |
+| hasComments | boolean | query | Ne | Ako je true, vraća se samo stranice koje imaju barem jedan komentar. |
 
-## Response
+## Odgovor
 
-Враћа: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPublicPagesResponse.swift)
+Vraća: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPublicPagesResponse.swift)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'getPagesPublic Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getPagesPublic Primjer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи примјери кода су још у бета фази. За било који проблем, пријавите га преко http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sljedeći primjeri koda su još u beta fazi. Za bilo koji problem, molimo prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let cursor = "cursor_example" // String | Непрозирни курсор пагинације враћен као `nextCursor` из претходног захтјева. Повезан са истим `sortBy`. (опционо)
-let limit = 987 // Int | 1..200, подразумевано 50 (опционо)
-let q = "q_example" // String | Опциони префикс филтер по наслову који не прави разлику између великих и малих слова. (опционо)
-let sortBy = PagesSortBy() // PagesSortBy | Редослијед сортирања. `updatedAt` (подразумевано, најновије прво), `commentCount` (највише коментара прво), или `title` (абецедни редослијед). (опционо)
-let hasComments = true // Bool | Ако је true, враћају се само странице са најмање једним коментаром. (опционо)
+let cursor = "cursor_example" // String | Neprozirni kursor za paginaciju vraćen kao `nextCursor` iz prethodnog zahtjeva. Vezan za isti `sortBy`. (optional)
+let limit = 987 // Int | 1..200, podrazumijevano 50 (optional)
+let q = "q_example" // String | Opcionalni filter prefiksa naslova, neosjetljiv na veličinu slova. (optional)
+let sortBy = PagesSortBy() // PagesSortBy | Redoslijed sortiranja. `updatedAt` (podrazumijevano, najnoviji prvo), `commentCount` (najviše komentara prvo), ili `title` (azbučni). (optional)
+let hasComments = true // Bool | Ako je true, vraća se samo stranice koje imaju barem jedan komentar. (optional)
 
-PublicAPI.getPagesPublic(tenantId: tenantId, cursor: cursor, limit: limit, q: q, sortBy: sortBy, hasComments: hasComments) { (response, error) in
+PublicAPI.getPagesPublic(tenantId: tenantId, options: PublicAPI.GetPagesPublicOptions(cursor: cursor, limit: limit, q: q, sortBy: sortBy, hasComments: hasComments)) { (response, error) in
     guard error == nil else {
         print(error)
         return

@@ -1,13 +1,13 @@
 ## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 是 |  |
-| domainToUpdate | string | path | 是 |  |
+| tenantId | string | query | Yes |  |
+| domainToUpdate | string | path | Yes |  |
 
 ## 回應
 
-回傳：[`PutDomainConfigResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PutDomainConfigResponse.php)
+返回：[`PutDomainConfigResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PutDomainConfigResponse.php)
 
 ## 範例
 
@@ -17,21 +17,26 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// 設定 API key 授權：api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// 如有需要，取消註解以下程式碼以設定 API key 的前綴（例如 Bearer）
+// Configure API key authorization: api_key
+// 配置 API 金鑰授權：api_key
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// 取消註解以下行以設定 API 金鑰的前綴（例如 Bearer），若需要
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // 如果要使用自訂的 http client，傳入實作 `GuzzleHttp\ClientInterface` 的 client。
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // 如果您想使用自訂的 HTTP 客戶端，傳入實作 `GuzzleHttp\ClientInterface` 的客戶端。
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     // 這是可選的，預設會使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // 字串
-$domain_to_update = 'domain_to_update_example'; // 字串
+
+$tenant_id = 'tenant_id_example'; // string
+$domain_to_update = 'domain_to_update_example'; // string
 $update_domain_config_params = new \FastComments\Client\Model\UpdateDomainConfigParams(); // \FastComments\Client\Model\UpdateDomainConfigParams
+
 
 try {
     $result = $apiInstance->putDomainConfig($tenant_id, $domain_to_update, $update_domain_config_params);
@@ -40,5 +45,3 @@ try {
     echo 'Exception when calling DefaultApi->putDomainConfig: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

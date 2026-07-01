@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sí |  |
 | commentId | string | query | No |  |
@@ -17,9 +17,9 @@ Devuelve: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fa
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de getPendingWebhookEvents'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo getPendingWebhookEvents'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Los siguientes ejemplos de código aún están en beta. Para cualquier problema, por favor repórtelo vía http://github.com/OpenAPITools/openapi-generator/issues/new
+// Los siguientes ejemplos de código todavía están en beta. Para cualquier problema, por favor informe a http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -31,7 +31,7 @@ let domain = "domain_example" // String |  (opcional)
 let attemptCountGT = 987 // Double |  (opcional)
 let skip = 987 // Double |  (opcional)
 
-DefaultAPI.getPendingWebhookEvents(tenantId: tenantId, commentId: commentId, externalId: externalId, eventType: eventType, type: type, domain: domain, attemptCountGT: attemptCountGT, skip: skip) { (response, error) in
+DefaultAPI.getPendingWebhookEvents(tenantId: tenantId, options: DefaultAPI.GetPendingWebhookEventsOptions(commentId: commentId, externalId: externalId, eventType: eventType, type: type, domain: domain, attemptCountGT: attemptCountGT, skip: skip)) { (response, error) in
     guard error == nil else {
         print(error)
         return

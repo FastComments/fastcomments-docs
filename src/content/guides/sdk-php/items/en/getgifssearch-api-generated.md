@@ -26,14 +26,18 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $search = 'search_example'; // string
-$locale = 'locale_example'; // string
-$rating = 'rating_example'; // string
-$page = 3.4; // float
+$options = [
+    'locale' => 'locale_example', // string
+    'rating' => 'rating_example', // string
+    'page' => 3.4, // float
+];
+
 
 try {
-    $result = $apiInstance->getGifsSearch($tenant_id, $search, $locale, $rating, $page);
+    $result = $apiInstance->getGifsSearch($tenant_id, $search, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getGifsSearch: ', $e->getMessage(), PHP_EOL;

@@ -1,9 +1,11 @@
 ## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
-|------|------|----------|----------|-------------|
+|------|------|-----------|--------------|-------------|
+| tenantId | string | query | Sì |  |
 | commentId | string | path | Sì |  |
 | reviewed | boolean | query | No |  |
+| broadcastId | string | query | No |  |
 | sso | string | query | No |  |
 
 ## Risposta
@@ -12,7 +14,7 @@ Restituisce: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-g
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di PostSetCommentReviewStatus'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio PostSetCommentReviewStatus'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -24,13 +26,15 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
 	reviewed := true // bool |  (opzionale)
+	broadcastId := "broadcastId_example" // string |  (opzionale)
 	sso := "sso_example" // string |  (opzionale)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostSetCommentReviewStatus(context.Background(), commentId).Reviewed(reviewed).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostSetCommentReviewStatus(context.Background(), commentId).TenantId(tenantId).Reviewed(reviewed).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostSetCommentReviewStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -39,3 +43,5 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostSetCommentReviewStatus`: %v\n", resp)
 }
 [inline-code-end]
+
+---

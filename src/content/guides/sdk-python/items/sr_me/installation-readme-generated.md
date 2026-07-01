@@ -1,16 +1,26 @@
-### PyPI
+### Instaliraj sa GitHub-a
+
+Instalirajte direktno sa oznake izdanja (preporučeno, potpuno reproducibilno):
 
 ```bash
-pip install fastcomments
+pip install git+https://github.com/fastcomments/fastcomments-python.git@v3.0.0
 ```
+
+Zakačite oznaku umjesto grane kako bi gradnje bile determinističke. Isti oblik radi u `requirements.txt`:
+
+```
+fastcomments @ git+https://github.com/fastcomments/fastcomments-python.git@v3.0.0
+```
+
+Svaki označeni [GitHub Release](https://github.com/fastcomments/fastcomments-python/releases) takođe ima priložen wheel fajl ako radije instalirate binarni artefakt direktno.
 
 ### Sadržaj biblioteke
 
-Ova biblioteka sadrži dva modula: generisani API klijent i osnovnu Python biblioteku koja sadrži ručno napisane pomoćne alate koji olakšavaju rad sa API-jem, uključujući podršku za SSO.
+Ova biblioteka sadrži dva modula: generisani API klijent i osnovnu Python biblioteku koja sadrži ručno napisane alate kako bi rad s API‑jem bio jednostavniji, uključujući podršku za SSO.
 
-- [Dokumentacija API klijentske biblioteke](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
-- [Dokumentacija osnovne biblioteke, uključujući SSO primjere](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
+- [API Client Library Docs](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
+- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
 
-### Javni naspram zaštićenih API-ja
+### Javni vs Zaštićeni API‑ji
 
-Za API klijent postoje tri klase, `DefaultApi`, `PublicApi`, i `ModerationApi`. `DefaultApi` sadrži metode koje zahtevaju vaš API ključ, a `PublicApi` sadrži metode koje se mogu pozivati direktno iz pregledača/mobilnog uređaja/itd. bez autentifikacije. `ModerationApi` pokreće kontrolnu tablu moderatora i sadrži metode za moderaciju komentara (lista, brojanje, pretraga, zapisi, izvoz), akcije moderacije (ukloni/vrati, prijavi, postavi status za pregled/spam/odobrenje, glasovi, ponovo otvori/zatvori nit), zabrane (zabrana komentarisanja, poništi, rezimei pre-banovanja, status/preferencije zabrane, brojevi zabranjenih korisnika), i značke & poverenje (dodeli/ukloni značku, ručne značke, preuzmi/postavi faktor poverenja, interna korisnička profil). Svaka metoda `ModerationApi` prihvata parametar `sso` kako bi mogla biti pozvana u ime moderatora autentifikovanog putem SSO.
+Za API klijent postoje tri klase, `DefaultApi`, `PublicApi` i `ModerationApi`. `DefaultApi` sadrži metode koje zahtijevaju vaš API ključ, a `PublicApi` sadrži metode koje se mogu pozivati direktno iz pregledača/mobilnog uređaja/etc. bez autentifikacije. `ModerationApi` pruža opsežan skup live i brzih API‑ja za moderaciju. Svaka metoda `ModerationApi` prima parametar `sso` i može se autentifikovati putem SSO‑a ili sesijskog kolačića FastComments.com.

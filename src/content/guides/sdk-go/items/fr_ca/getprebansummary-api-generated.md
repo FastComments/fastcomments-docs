@@ -1,20 +1,21 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Oui |  |
-| includeByUserIdAndEmail | boolean | query | Non |  |
-| includeByIP | boolean | query | Non |  |
-| includeByEmailDomain | boolean | query | Non |  |
-| sso | string | query | Non |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| includeByUserIdAndEmail | boolean | query | No |  |
+| includeByIP | boolean | query | No |  |
+| includeByEmailDomain | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Réponse
 
-Retourne : [`PreBanSummary`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_pre_ban_summary.go)
+Renvoie : [`PreBanSummary`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_pre_ban_summary.go)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de GetPreBanSummary'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple GetPreBanSummary'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -26,20 +27,21 @@ import (
 )
 
 func main() {
-	commentId := "commentId_example" // string | 
-	includeByUserIdAndEmail := true // bool |  (optionnel)
-	includeByIP := true // bool |  (optionnel)
-	includeByEmailDomain := true // bool |  (optionnel)
-	sso := "sso_example" // string |  (optionnel)
+	tenantId := "tenantId_example" // chaîne | 
+	commentId := "commentId_example" // chaîne | 
+	includeByUserIdAndEmail := true // booléen |  (facultatif)
+	includeByIP := true // booléen |  (facultatif)
+	includeByEmailDomain := true // booléen |  (facultatif)
+	sso := "sso_example" // chaîne |  (facultatif)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetPreBanSummary(context.Background(), commentId).IncludeByUserIdAndEmail(includeByUserIdAndEmail).IncludeByIP(includeByIP).IncludeByEmailDomain(includeByEmailDomain).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetPreBanSummary(context.Background(), commentId).TenantId(tenantId).IncludeByUserIdAndEmail(includeByUserIdAndEmail).IncludeByIP(includeByIP).IncludeByEmailDomain(includeByEmailDomain).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetPreBanSummary``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetPreBanSummary`: PreBanSummary
+	// réponse de `GetPreBanSummary` : PreBanSummary
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetPreBanSummary`: %v\n", resp)
 }
 [inline-code-end]

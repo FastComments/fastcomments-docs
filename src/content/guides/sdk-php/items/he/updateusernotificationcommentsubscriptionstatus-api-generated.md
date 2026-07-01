@@ -1,17 +1,16 @@
----
-הפעל או השבת התראות עבור תגובה ספציפית.
+Enable or disable notifications for a specific comment.
 
-## פרמטרים
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | כן |  |
-| notificationId | string | path | כן |  |
-| optedInOrOut | string | path | כן |  |
-| commentId | string | query | כן |  |
-| sso | string | query | לא |  |
+| tenantId | string | query | Yes |  |
+| notificationId | string | path | Yes |  |
+| optedInOrOut | string | path | Yes |  |
+| commentId | string | query | Yes |  |
+| sso | string | query | No |  |
 
-## תגובה
+## Response
 
 מחזיר: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationCommentSubscriptionStatusResponse.php)
 
@@ -25,15 +24,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // אם ברצונך להשתמש בלקוח HTTP מותאם אישית, העבר את הלקוח שלך שמממש את `GuzzleHttp\ClientInterface`.
+    // אם אתה רוצה להשתמש בלקוח HTTP מותאם, העבר את הלקוח שלך שמממש `GuzzleHttp\ClientInterface`.
     // זה אופציונלי, `GuzzleHttp\Client` ישמש כברירת מחדל.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // מחרוזת
-$notification_id = 'notification_id_example'; // מחרוזת
-$opted_in_or_out = 'opted_in_or_out_example'; // מחרוזת
-$comment_id = 'comment_id_example'; // מחרוזת
-$sso = 'sso_example'; // מחרוזת
+
+$tenant_id = 'tenant_id_example'; // string
+$notification_id = 'notification_id_example'; // string
+$opted_in_or_out = 'opted_in_or_out_example'; // string
+$comment_id = 'comment_id_example'; // string
+$sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->updateUserNotificationCommentSubscriptionStatus($tenant_id, $notification_id, $opted_in_or_out, $comment_id, $sso);

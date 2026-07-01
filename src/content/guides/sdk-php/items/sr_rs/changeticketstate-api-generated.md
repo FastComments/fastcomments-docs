@@ -1,10 +1,10 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| userId | string | query | Да |  |
-| id | string | path | Да |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
 ## Одговор
 
@@ -12,28 +12,30 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'changeTicketState Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'changeTicketState Primer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Конфигуришите аутентификацију API кључа: api_key
+// Конфигуриши ауторизацију API кључа: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Ако је потребно, откоментаришите испод да бисте подесили префикс (нпр. Bearer) за API кључ
+// Одкоментарирај испод да подесиш префикс (нпр. Bearer) за API кључ, ако је потребно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ако желите да користите прилагођени HTTP клијент, проследите ваш клијент који реализује `GuzzleHttp\ClientInterface`.
-    // Ово је опционално, као подразумевани ће бити коришћен `GuzzleHttp\Client`.
+    // Ако желиш користити прилагођени http клијент, проследи свој клијент који имплементира `GuzzleHttp\ClientInterface`.
+    // Ово је опционо, `GuzzleHttp\Client` ће се користити као подразумевано.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$user_id = 'user_id_example'; // string
-$id = 'id_example'; // string
+
+$tenant_id = 'tenant_id_example'; // стринг
+$user_id = 'user_id_example'; // стринг
+$id = 'id_example'; // стринг
 $change_ticket_state_body = new \FastComments\Client\Model\ChangeTicketStateBody(); // \FastComments\Client\Model\ChangeTicketStateBody
+
 
 try {
     $result = $apiInstance->changeTicketState($tenant_id, $user_id, $id, $change_ticket_state_body);
@@ -42,3 +44,5 @@ try {
     echo 'Exception when calling DefaultApi->changeTicketState: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

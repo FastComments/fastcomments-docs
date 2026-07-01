@@ -1,8 +1,8 @@
 ## Parámetros
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenant_id | String | Sí |  |
+| Nombre | Tipo | Requerido | Descripción |
+|--------|------|-----------|--------------|
+| tenant_id | String | Yes |  |
 | limit | f64 | No |  |
 | skip | f64 | No |  |
 | order | models::SortDir | No |  |
@@ -15,18 +15,18 @@ Devuelve: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de get_audit_logs'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo get_audit_logs'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run(configuration: &configuration::Configuration) -> Result<(), Error> {
-    let params: GetAuditLogsParams = GetAuditLogsParams {
+async fn fetch_audit_logs(config: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetAuditLogsParams {
         tenant_id: "acme-corp-tenant".to_string(),
         limit: Some(100.0),
         skip: Some(0.0),
         order: Some(models::SortDir::Desc),
         after: Some(1622505600.0),
-        before: Some(1625097600.0),
+        before: None,
     };
-    let response: GetAuditLogsResponse = get_audit_logs(configuration, params).await?;
+    let _response: GetAuditLogsResponse = get_audit_logs(config, params).await?;
     Ok(())
 }
 [inline-code-end]

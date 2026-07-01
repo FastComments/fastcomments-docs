@@ -1,7 +1,7 @@
 ## Параметри
 
-| Назва | Тип | Обов'язковий | Опис |
-|------|------|----------|-------------|
+| Назва | Тип | Обов’язково | Опис |
+|------|------|--------------|------|
 | tenantId | string | Так |  |
 | addDomainConfigParams | AddDomainConfigParams | Так |  |
 
@@ -11,20 +11,16 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад addDomainConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'addDomainConfig Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
-  const tenantId: string = "acme-corp-72";
-  const addDomainConfigParams: AddDomainConfigParams = {
-    domain: "comments.acme-corp.com",
-    primary: true,
-    enforceHttps: true,                // продемонстровано необов'язковий параметр
-    allowedOrigins: ["https://www.acme-corp.com", "https://app.acme-corp.com"],
-    cnameTarget: "fc-cname.fastcomments.net"
+  const tenantId: string = 'tenant_12345';
+  const config: AddDomainConfigParams = {
+    domain: 'myblog.example.com',
+    enabled: true,
+    // опис є необов’язковим і пропущений тут
   };
-  const result: AddDomainConfigResponse = await addDomainConfig(tenantId, addDomainConfigParams);
-  console.log(result);
+  const response: AddDomainConfigResponse = await addDomainConfig(tenantId, config);
+  console.log(response);
 })();
 [inline-code-end]
-
----

@@ -1,11 +1,12 @@
 ## Параметри
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Ime | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| value | string | query | Не |  |
-| filters | string | query | Не |  |
-| searchFilters | string | query | Не |  |
-| sso | string | query | Не |  |
+| tenantId | string | query | Da |  |
+| value | string | query | Ne |  |
+| filters | string | query | Ne |  |
+| searchFilters | string | query | Ne |  |
+| sso | string | query | Ne |  |
 
 ## Одговор
 
@@ -13,12 +14,13 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'get_search_comments_summary Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_search_comments_summary Primer'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 opts = {
   value: 'value_example', # String | 
   filters: 'filters_example', # String | 
@@ -28,11 +30,9 @@ opts = {
 
 begin
   
-  result = api_instance.get_search_comments_summary(opts)
+  result = api_instance.get_search_comments_summary(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_search_comments_summary: #{e}"
 end
 [inline-code-end]
-
----

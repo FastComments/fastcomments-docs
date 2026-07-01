@@ -1,11 +1,9 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Назва | Тип | Обов'язковий | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| userId | string | Ні |  |
-| limit | float64 | Ні |  |
-| skip | float64 | Ні |  |
+| tenantId | string | Yes |  |
+| options | GetUserBadgeProgressListOptions | No |  |
 
 ## Відповідь
 
@@ -15,18 +13,9 @@
 
 [inline-code-attrs-start title = 'Приклад getUserBadgeProgressList'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUserBadgeProgressList(
-  tenantId = "my-tenant-123",
-  userId = "user-789",
-  limit = 25.0,
-  skip = 0.0
-)
-
+let (response, httpResponse) = client.getUserBadgeProgressList(tenantId = "my-tenant-123", options = GetUserBadgeProgressListOptions())
 if response.isSome:
   let badgeProgress = response.get()
-  echo "Received badge progress:", badgeProgress
-else:
-  echo "No badge progress; HTTP status: ", $httpResponse.status
 [inline-code-end]
 
 ---

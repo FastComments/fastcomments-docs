@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Name | Type | Required | Description |
+| Nombre | Tipo | Obligatorio | Descripción |
 |------|------|----------|-------------|
 | tenantId | string | Sí |  |
 | addDomainConfigParams | AddDomainConfigParams | Sí |  |
@@ -11,18 +11,16 @@ Devuelve: [`AddDomainConfigResponse`](https://github.com/FastComments/fastcommen
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de addDomainConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'addDomainConfig Ejemplo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
-  const tenantId: string = "acme-corp-72";
-  const addDomainConfigParams: AddDomainConfigParams = {
-    domain: "comments.acme-corp.com",
-    primary: true,
-    enforceHttps: true,                // parámetro opcional demostrado
-    allowedOrigins: ["https://www.acme-corp.com", "https://app.acme-corp.com"],
-    cnameTarget: "fc-cname.fastcomments.net"
+  const tenantId: string = 'tenant_12345';
+  const config: AddDomainConfigParams = {
+    domain: 'myblog.example.com',
+    enabled: true,
+    // la descripción es opcional y se omite aquí
   };
-  const result: AddDomainConfigResponse = await addDomainConfig(tenantId, addDomainConfigParams);
-  console.log(result);
+  const response: AddDomainConfigResponse = await addDomainConfig(tenantId, config);
+  console.log(response);
 })();
 [inline-code-end]

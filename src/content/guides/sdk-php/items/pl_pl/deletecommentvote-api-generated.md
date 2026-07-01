@@ -1,14 +1,14 @@
 ## Parametry
 
-| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | ścieżka | Tak |  |
-| commentId | string | ścieżka | Tak |  |
-| voteId | string | ścieżka | Tak |  |
-| urlId | string | zapytanie | Tak |  |
-| broadcastId | string | zapytanie | Tak |  |
-| editKey | string | zapytanie | Nie |  |
-| sso | string | zapytanie | Nie |  |
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| voteId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| broadcastId | string | query | Yes |  |
+| editKey | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Odpowiedź
 
@@ -16,7 +16,7 @@ Zwraca: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-php/
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład deleteCommentVote'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteCommentVote Przykład'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -24,20 +24,24 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Jeśli chcesz użyć niestandardowego klienta HTTP, przekaż klienta implementującego `GuzzleHttp\ClientInterface`.
+    // Jeśli chcesz użyć własnego klienta HTTP, przekaż swój klient implementujący `GuzzleHttp\ClientInterface`.
     // To jest opcjonalne, `GuzzleHttp\Client` zostanie użyty jako domyślny.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $comment_id = 'comment_id_example'; // string
 $vote_id = 'vote_id_example'; // string
 $url_id = 'url_id_example'; // string
 $broadcast_id = 'broadcast_id_example'; // string
-$edit_key = 'edit_key_example'; // string
-$sso = 'sso_example'; // string
+$options = [
+    'edit_key' => 'edit_key_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->deleteCommentVote($tenant_id, $comment_id, $vote_id, $url_id, $broadcast_id, $edit_key, $sso);
+    $result = $apiInstance->deleteCommentVote($tenant_id, $comment_id, $vote_id, $url_id, $broadcast_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->deleteCommentVote: ', $e->getMessage(), PHP_EOL;

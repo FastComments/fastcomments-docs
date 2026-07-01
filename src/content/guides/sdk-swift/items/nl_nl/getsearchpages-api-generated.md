@@ -2,10 +2,11 @@
 
 | Naam | Type | Locatie | Verplicht | Beschrijving |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Ja |  |
 | value | string | query | Nee |  |
 | sso | string | query | Nee |  |
 
-## Antwoord
+## Respons
 
 Retourneert: [`ModerationPageSearchResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationPageSearchResponse.swift)
 
@@ -16,10 +17,11 @@ Retourneert: [`ModerationPageSearchResponse`](https://github.com/FastComments/fa
 // De volgende codevoorbeelden zijn nog in bèta. Meld eventuele problemen via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let value = "value_example" // String |  (optioneel)
 let sso = "sso_example" // String |  (optioneel)
 
-ModerationAPI.getSearchPages(value: value, sso: sso) { (response, error) in
+ModerationAPI.getSearchPages(tenantId: tenantId, options: ModerationAPI.GetSearchPagesOptions(value: value, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

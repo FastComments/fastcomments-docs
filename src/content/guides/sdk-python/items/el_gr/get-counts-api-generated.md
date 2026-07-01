@@ -1,8 +1,9 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Θέση | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| sso | string | query | Όχι |  |
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Απόκριση
 
@@ -17,21 +18,22 @@ from client.models.get_banned_users_count_response import GetBannedUsersCountRes
 from client.rest import ApiException
 from pprint import pprint
 
-# Ορισμός του host είναι προαιρετικός και προεπιλεγμένο το https://fastcomments.com
-# Δείτε το configuration.py για λίστα με όλες τις υποστηριζόμενες παραμέτρους ρύθμισης.
+# Ο ορισμός του host είναι προαιρετικός και προεπιλεγμένος σε https://fastcomments.com
+# Δείτε το configuration.py για μια λίστα με όλες τις υποστηριζόμενες παραμέτρους διαμόρφωσης.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Εισέλθετε σε ένα context με ένα στιγμιότυπο του API client
+# Εισαγάγετε ένα context με μια παρουσία του πελάτη API
 with client.ApiClient(configuration) as api_client:
-    # Δημιουργήστε ένα στιγμιότυπο της κλάσης API
+    # Δημιουργήστε μια παρουσία της κλάσης API
     api_instance = client.ModerationApi(api_client)
-    sso = 'sso_example' # str | (προαιρετικό)
+    tenant_id = 'tenant_id_example' # str | 
+    sso = 'sso_example' # str |  (προαιρετικό)
 
     try:
-        api_response = api_instance.get_counts(sso=sso)
+        api_response = api_instance.get_counts(tenant_id, sso=sso)
         print("The response of ModerationApi->get_counts:\n")
         pprint(api_response)
     except Exception as e:

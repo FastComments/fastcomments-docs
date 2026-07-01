@@ -1,23 +1,23 @@
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 描述 |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | 是 |  |
-| commentId | string | path | 是 |  |
-| urlId | string | query | 是 |  |
-| broadcastId | string | query | 是 |  |
-| sessionId | string | query | 否 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| broadcastId | string | query | Yes |  |
+| sessionId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## 回應
 
-回傳：[`VoteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/VoteResponse.swift)
+返回：[`VoteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/VoteResponse.swift)
 
 ## 範例
 
 [inline-code-attrs-start title = 'voteComment 範例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 以下程式碼範例仍處於測試階段。如有任何問題，請透過 http://github.com/OpenAPITools/openapi-generator/issues/new 回報
+// 以下程式碼範例仍屬測試版。如有任何問題，請透過 http://github.com/OpenAPITools/openapi-generator/issues/new 回報
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -28,7 +28,7 @@ let voteBodyParams = VoteBodyParams(commenterEmail: "commenterEmail_example", co
 let sessionId = "sessionId_example" // String |  (可選)
 let sso = "sso_example" // String |  (可選)
 
-PublicAPI.voteComment(tenantId: tenantId, commentId: commentId, urlId: urlId, broadcastId: broadcastId, voteBodyParams: voteBodyParams, sessionId: sessionId, sso: sso) { (response, error) in
+PublicAPI.voteComment(tenantId: tenantId, commentId: commentId, urlId: urlId, broadcastId: broadcastId, voteBodyParams: voteBodyParams, options: PublicAPI.VoteCommentOptions(sessionId: sessionId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

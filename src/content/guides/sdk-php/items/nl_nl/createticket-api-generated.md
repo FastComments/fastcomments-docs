@@ -1,13 +1,13 @@
 ## Parameters
 
-| Name | Type | Location | Required | Description |
+| Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | userId | string | query | Ja |  |
 
-## Response
+## Respons
 
-Retourneert: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateTicketResponse.php)
+Returns: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateTicketResponse.php)
 
 ## Voorbeeld
 
@@ -17,9 +17,9 @@ Retourneert: [`CreateTicketResponse`](https://github.com/FastComments/fastcommen
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configureer API-sleutelautorisatie: api_key
+// Configureer API-sleutautorisatie: api_key
+// Verwijder de commentaar op de onderstaande regel om een prefix (bijv. Bearer) voor de API-sleutel in te stellen, indien nodig
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Haal de volgende regel uit commentaar om een prefix in te stellen (bijv. Bearer) voor de API-sleutel, indien nodig
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
@@ -29,9 +29,11 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $user_id = 'user_id_example'; // string
 $create_ticket_body = new \FastComments\Client\Model\CreateTicketBody(); // \FastComments\Client\Model\CreateTicketBody
+
 
 try {
     $result = $apiInstance->createTicket($tenant_id, $user_id, $create_ticket_body);

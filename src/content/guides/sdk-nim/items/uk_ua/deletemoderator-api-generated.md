@@ -1,10 +1,10 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
-|------|------|----------|-------------|
+| Назва | Тип | Обов’язковий | Опис |
+|------|------|---------------|------|
 | tenantId | string | Так |  |
 | id | string | Ні |  |
-| sendEmail | string | Ні |  |
+| sendEmail | string = "" | Ні |  |
 
 ## Відповідь
 
@@ -12,14 +12,15 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'deleteModerator Приклад'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад deleteModerator'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteModerator(tenantId = "my-tenant-123", id = "", sendEmail = "")
-if response.isSome:
-  let apiEmpty = response.get()
-  echo "Moderator deleted successfully for tenant my-tenant-123"
-else:
-  echo "No response returned; inspect httpResponse"
-[inline-code-end]
+let (apiResp, httpResp) = client.deleteModerator(
+  tenantId = "my-tenant-123",
+  id = "mod-789",
+  sendEmail = "admin@mydomain.com",
+)
 
----
+if apiResp.isSome:
+  let empty = apiResp.get()
+  echo "Moderator removed"
+[inline-code-end]

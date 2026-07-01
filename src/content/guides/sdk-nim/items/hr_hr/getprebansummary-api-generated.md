@@ -1,12 +1,10 @@
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| commentId | string | Da |  |
-| includeByUserIdAndEmail | bool | Ne |  |
-| includeByIP | bool | Ne |  |
-| includeByEmailDomain | bool | Ne |  |
-| sso | string | Ne |  |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| options | GetPreBanSummaryOptions | No |  |
 
 ## Odgovor
 
@@ -14,21 +12,9 @@ Vraća: [`Option[PreBanSummary]`](https://github.com/FastComments/fastcomments-n
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer getPreBanSummary'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getPreBanSummary Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let commentId = "cmt-7423"
-let (response, httpResponse) = client.getPreBanSummary(
-  commentId = commentId,
-  includeByUserIdAndEmail = false,
-  includeByIP = false,
-  includeByEmailDomain = false,
-  sso = ""
-)
-if response.isSome:
-  let preBanSummary = response.get()
-  discard preBanSummary
-else:
-  discard httpResponse
+let (preBanSummaryOpt, httpResponse) = client.getPreBanSummary(tenantId = "my-tenant-123", commentId = "cmt-456", options = GetPreBanSummaryOptions())
+if preBanSummaryOpt.isSome:
+  let summary = preBanSummaryOpt.get()
 [inline-code-end]
-
----

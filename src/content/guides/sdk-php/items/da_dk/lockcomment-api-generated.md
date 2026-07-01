@@ -1,19 +1,19 @@
-## Parametre
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Ja |  |
-| commentId | string | path | Ja |  |
-| broadcastId | string | query | Ja |  |
-| sso | string | query | Nej |  |
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | Yes |  |
+| sso | string | query | No |  |
 
-## Svar
+## Response
 
 Returnerer: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
-## Eksempel
+## Example
 
-[inline-code-attrs-start title = 'Eksempel på lockComment'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'lockComment Eksempel'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -21,14 +21,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Hvis du vil bruge en brugerdefineret HTTP-klient, skal du angive din klient, som implementerer `GuzzleHttp\ClientInterface`.
-    // Dette er valgfrit; `GuzzleHttp\Client` vil blive brugt som standard.
+    // Hvis du vil bruge en brugerdefineret HTTP-klient, skal du give din klient, som implementerer `GuzzleHttp\ClientInterface`.
+    // Dette er valgfrit, `GuzzleHttp\Client` vil blive brugt som standard.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $comment_id = 'comment_id_example'; // string
 $broadcast_id = 'broadcast_id_example'; // string
 $sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->lockComment($tenant_id, $comment_id, $broadcast_id, $sso);

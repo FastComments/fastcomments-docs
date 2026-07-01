@@ -1,11 +1,11 @@
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|----------|-------------|
+|------|------|-------------|-----------|
 | tenantId | string | Sim |  |
 | commentId | string | Sim |  |
 | isFlagged | bool | Não |  |
-| sso | string | Não |  |
+| sso | string = "" | Não |  |
 
 ## Resposta
 
@@ -15,18 +15,14 @@ Retorna: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcommen
 
 [inline-code-attrs-start title = 'Exemplo de flagCommentPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.flagCommentPublic(
+let (optResp, httpResp) = client.flagCommentPublic(
   tenantId = "my-tenant-123",
   commentId = "cmt-456789",
   isFlagged = true,
   sso = ""
 )
 
-if response.isSome:
-  let apiResp = response.get()
-  discard apiResp
-else:
-  discard httpResponse
+if optResp.isSome:
+  let empty = optResp.get()
+  discard empty
 [inline-code-end]
-
----

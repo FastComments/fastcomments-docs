@@ -2,6 +2,7 @@
 
 | Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Da |  |
 | text-search | string | query | Ne |  |
 | byIPFromComment | string | query | Ne |  |
 | filters | string | query | Ne |  |
@@ -12,7 +13,7 @@
 
 ## Odgovor
 
-Vrača: [`ModerationAPIGetCommentIdsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_api_get_comment_ids_response.go)
+Vrne: [`ModerationAPIGetCommentIdsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_api_get_comment_ids_response.go)
 
 ## Primer
 
@@ -28,17 +29,18 @@ import (
 )
 
 func main() {
-	textSearch := "textSearch_example" // string |  (neobvezno)
-	byIPFromComment := "byIPFromComment_example" // string |  (neobvezno)
-	filters := "filters_example" // string |  (neobvezno)
-	searchFilters := "searchFilters_example" // string |  (neobvezno)
-	afterId := "afterId_example" // string |  (neobvezno)
-	demo := true // bool |  (neobvezno)
-	sso := "sso_example" // string |  (neobvezno)
+	tenantId := "tenantId_example" // string | 
+	textSearch := "textSearch_example" // string |  (opcijsko)
+	byIPFromComment := "byIPFromComment_example" // string |  (opcijsko)
+	filters := "filters_example" // string |  (opcijsko)
+	searchFilters := "searchFilters_example" // string |  (opcijsko)
+	afterId := "afterId_example" // string |  (opcijsko)
+	demo := true // bool |  (opcijsko)
+	sso := "sso_example" // string |  (opcijsko)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetApiIds(context.Background()).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).AfterId(afterId).Demo(demo).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetApiIds(context.Background()).TenantId(tenantId).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).AfterId(afterId).Demo(demo).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetApiIds``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

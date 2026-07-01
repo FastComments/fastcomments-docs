@@ -2,6 +2,7 @@
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Evet |  |
 | commentId | string | query | Hayır |  |
 | sso | string | query | Hayır |  |
 
@@ -14,26 +15,28 @@ Döndürür: [`GetUserInternalProfileResponse`](https://github.com/FastComments/
 [inline-code-attrs-start title = 'get_user_internal_profile Örneği'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetUserInternalProfileOptions
 from client.models.get_user_internal_profile_response import GetUserInternalProfileResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Sunucu adresini tanımlamak isteğe bağlıdır ve varsayılan https://fastcomments.com'dur
-# Tüm desteklenen yapılandırma parametrelerinin listesini görmek için configuration.py dosyasına bakın.
+# Host tanımlaması isteğe bağlıdır ve varsayılan olarak https://fastcomments.com adresine ayarlanır
+# Tüm desteklenen yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# API istemcisi örneği ile bir bağlam açın
+# API istemcisi örneğiyle bir bağlam gir
 with client.ApiClient(configuration) as api_client:
-    # API sınıfından bir örnek oluşturun
+    # API sınıfının bir örneğini oluştur
     api_instance = client.ModerationApi(api_client)
-    comment_id = 'comment_id_example' # str |  (isteğe bağlı)
-    sso = 'sso_example' # str |  (isteğe bağlı)
+    tenant_id = 'tenant_id_example' # str | 
+    comment_id = 'comment_id_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_user_internal_profile(comment_id=comment_id, sso=sso)
+        api_response = api_instance.get_user_internal_profile(tenant_id, GetUserInternalProfileOptions(comment_id=comment_id, sso=sso))
         print("The response of ModerationApi->get_user_internal_profile:\n")
         pprint(api_response)
     except Exception as e:

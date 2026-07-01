@@ -1,17 +1,17 @@
-## פרמטרים
+## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | כן |  |
-| sso | string | query | לא |  |
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
-## תגובה
+## Response
 
-מחזיר: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ResetUserNotificationsResponse.php)
+Returns: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ResetUserNotificationsResponse.php)
 
-## דוגמה
+## Example
 
-[inline-code-attrs-start title = 'דוגמה ל-resetUserNotificationCount'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה resetUserNotificationCount'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -19,12 +19,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // אם ברצונך להשתמש בלקוח HTTP מותאם אישית, העבר את הלקוח שלך שמממש את `GuzzleHttp\ClientInterface`.
-    // זה אופציונלי; ישתמש ב-`GuzzleHttp\Client` כברירת מחדל.
+    // אם תרצה להשתמש ב‑לקוח http מותאם, העבר את הלקוח שלך שמממש `GuzzleHttp\ClientInterface`.
+    // זה אופציונלי, `GuzzleHttp\Client` ישמש כברירת מחדל.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // מחרוזת
-$sso = 'sso_example'; // מחרוזת
+
+$tenant_id = 'tenant_id_example'; // string
+$sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->resetUserNotificationCount($tenant_id, $sso);
@@ -33,5 +35,3 @@ try {
     echo 'Exception when calling PublicApi->resetUserNotificationCount: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

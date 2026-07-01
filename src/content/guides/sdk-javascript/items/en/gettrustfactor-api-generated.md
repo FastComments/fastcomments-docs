@@ -3,18 +3,21 @@
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
 | userId | string | No |  |
+| tenantId | string | No |  |
 | sso | string | No |  |
 
 ## Response
 
-Returns: [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserTrustFactorResponse.ts)
+Returns: [`GetTrustFactorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTrustFactorResponse.ts)
 
 ## Example
 
 [inline-code-attrs-start title = 'getTrustFactor Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const userId: string = '550e8400-e29b-41d4-a716-446655440000';
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.VXNlckRhdGE.signature';
-const trustFactor: GetUserTrustFactorResponse = await getTrustFactor(userId, sso);
-const trustFactorAnonymous: GetUserTrustFactorResponse = await getTrustFactor();
+async function runDemo(): Promise<void> {
+    const trustFull: GetTrustFactorResponse = await getTrustFactor("user_12345", "tenant_abc", "sso_token_987");
+    const trustUserOnly: GetTrustFactorResponse = await getTrustFactor("user_12345");
+    console.log(trustFull, trustUserOnly);
+}
+runDemo();
 [inline-code-end]

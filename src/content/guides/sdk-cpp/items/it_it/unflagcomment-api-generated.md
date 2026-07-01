@@ -1,36 +1,33 @@
----
-## Parametri
+## Parameters
 
 | Nome | Tipo | Obbligatorio | Descrizione |
-|------|------|----------|-------------|
-| tenantId | string | Sì |  |
-| id | string | Sì |  |
-| userId | string | No |  |
-| anonUserId | string | No |  |
+|------|------|--------------|-------------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| options | const UnFlagCommentOptions& | Yes |  |
 
-## Risposta
+## Response
 
 Restituisce: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/FlagCommentResponse.h)
 
-## Esempio
+## Example
 
-[inline-code-attrs-start title = 'Esempio di unFlagComment'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio unFlagComment'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("comment-7890");
-boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U("user@example.com"));
-boost::optional<utility::string_t> anonUserId;
-api->unFlagComment(tenantId, commentId, userId, anonUserId)
-.then([](pplx::task<std::shared_ptr<FlagCommentResponse>> t) {
-    try {
-        auto resp = t.get();
-        auto fallback = std::make_shared<FlagCommentResponse>();
-        if (!resp) resp = fallback;
-        (void)resp;
-    } catch (const std::exception &e) {
-        (void)e;
-    }
-});
+auto options = UnFlagCommentOptions{};
+options.reason = boost::optional<utility::string_t>(U("Resolved by moderator"));
+api->unFlagComment(U("my-tenant-123"), U("comment-456"), options)
+    .then([](std::shared_ptr<FlagCommentResponse> response) {
+        if (response) {
+            auto status = response->status;
+            // elaborare lo stato se necessario
+        }
+    })
+    .then([](pplx::task<void> previous) {
+        try {
+            previous.get();
+        } catch (const std::exception& e) {
+            // gestire l'errore
+        }
+    });
 [inline-code-end]
-
----

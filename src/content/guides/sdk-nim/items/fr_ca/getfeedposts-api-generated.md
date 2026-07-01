@@ -1,31 +1,27 @@
+---
 req
 tenantId
 afterId
 
 ## Paramètres
 
-| Nom | Type | Requis | Description |
-|------|------|----------|-------------|
+| Nom | Type | Obligatoire | Description |
+|------|------|-------------|-------------|
 | tenantId | string | Oui |  |
-| afterId | string | Non |  |
-| limit | int | Non |  |
-| tags | seq[string] | Non |  |
+| options | GetFeedPostsOptions | Non |  |
 
 ## Réponse
 
-Renvoie: [`Option[GetFeedPostsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_feed_posts_response.nim)
+Retourne : [`Option[GetFeedPostsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_feed_posts_response.nim)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple getFeedPosts'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getFeedPosts(
-  tenantId = "my-tenant-123",
-  afterId = "",
-  limit = 0,
-  tags = @[]
-)
-if response.isSome:
-  let feed = response.get()
-  echo "Feed retrieved for tenant my-tenant-123"
+let (feedResponseOpt, httpResp) = client.getFeedPosts(tenantId = "my-tenant-123", options = GetFeedPostsOptions())
+if feedResponseOpt.isSome:
+  let feedResponse = feedResponseOpt.get()
+  echo feedResponse
 [inline-code-end]
+
+---

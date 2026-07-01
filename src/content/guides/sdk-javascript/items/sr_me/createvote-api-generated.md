@@ -1,26 +1,33 @@
-## Параметри
+---
+## Parametri
 
-| Назив | Тип | Обавезно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| commentId | string | Да |  |
-| direction | CreateVoteDirectionEnum | Да |  |
-| userId | string | Не |  |
-| anonUserId | string | Не |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| direction | CreateVoteDirectionEnum | Yes |  |
+| userId | string | No |  |
+| anonUserId | string | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`VoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/VoteResponse.ts)
+Vraća: [`CreateVoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateVoteResponse.ts)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'Пример createVote'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer createVote'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_82a1c4b7';
-const commentId: string = 'cmt_5f4d3a2b1c';
-const direction: CreateVoteDirectionEnum = CreateVoteDirectionEnum.UP;
-const anonUserId: string = 'anon_9f8e7d6c';
-const voteResponse: VoteResponse = await createVote(tenantId, commentId, direction, undefined, anonUserId);
+const tenantId: string = "tenant_12345";
+const commentId: string = "comment_987654";
+const direction: CreateVoteDirectionEnum = CreateVoteDirectionEnum.Upvote;
+const userId: string = "user_7f9a2b";
+
+const voteResult: CreateVoteResponse = await createVote(
+  tenantId,
+  commentId,
+  direction,
+  userId
+);
 [inline-code-end]
 
 ---

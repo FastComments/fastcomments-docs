@@ -1,10 +1,9 @@
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
-| postIds | seq[string] | לא |  |
-| sso | string | לא |  |
+| options | GetUserReactsPublicOptions | לא |  |
 
 ## תגובה
 
@@ -12,16 +11,19 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getUserReactsPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getUserReactsPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
+let opts = GetUserReactsPublicOptions(
+  limit = 20,
+  offset = 0,
+  includeDeleted = false
+)
+
 let (response, httpResponse) = client.getUserReactsPublic(
   tenantId = "my-tenant-123",
-  postIds = @["news/article-2026", "blog/opinion-987"],
-  sso = ""
+  options = opts
 )
-if response.isSome:
-  let reacts = response.get()
-  echo "Received user reacts for tenant: ", "my-tenant-123"
-[inline-code-end]
 
----
+if response.isSome:
+  let userReacts = response.get()
+[inline-code-end]

@@ -1,11 +1,11 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| id | string | path | Da |  |
-| userId | string | query | Ne |  |
-| anonUserId | string | query | Ne |  |
+| Naziv | Tip | Lokacija | Potrebno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
 
 ## Odgovor
 
@@ -13,41 +13,38 @@ Vraća: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-pyt
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer un_flag_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'un_flag_comment Primjer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import UnFlagCommentOptions
 from client.models.flag_comment_response import FlagCommentResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definiranje hosta je opcionalno i zadano je na https://fastcomments.com
+# Definiranje hosta je opcionalno i zadano je https://fastcomments.com
 # Pogledajte configuration.py za popis svih podržanih parametara konfiguracije.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
-
-# Klijent mora konfigurirati parametre autentikacije i autorizacije
+# Klijent mora konfigurirati parametre autentifikacije i autorizacije
 # u skladu s politikom sigurnosti API poslužitelja.
-# Primjeri za svaku metodu autentikacije navedeni su u nastavku, upotrijebite primjer koji
-# odgovara vašem slučaju upotrebe autentikacije.
+# Primjeri za svaku metodu autentifikacije navedeni su ispod, koristite primjer koji
+# zadovoljava vaš slučaj korištenja autentifikacije.
 
-# Configure API key authorization: api_key
+# Konfigurirajte autorizaciju API ključem: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Otkomentirajte dolje za postavljanje prefiksa (npr. Bearer) za API ključ, po potrebi
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Uđite u kontekst s instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Kreirajte instancu API klase
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
-    user_id = 'user_id_example' # str |  (neobavezno)
-    anon_user_id = 'anon_user_id_example' # str |  (neobavezno)
+    user_id = 'user_id_example' # str |  (optional)
+    anon_user_id = 'anon_user_id_example' # str |  (optional)
 
     try:
-        api_response = api_instance.un_flag_comment(tenant_id, id, user_id=user_id, anon_user_id=anon_user_id)
+        api_response = api_instance.un_flag_comment(tenant_id, id, UnFlagCommentOptions(user_id=user_id, anon_user_id=anon_user_id))
         print("The response of DefaultApi->un_flag_comment:\n")
         pprint(api_response)
     except Exception as e:

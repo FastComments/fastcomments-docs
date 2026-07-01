@@ -1,17 +1,17 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | כן |  |
-| largeInternalURLSanitized | string | query | כן |  |
+| tenantId | string | path | Yes |  |
+| largeInternalURLSanitized | string | query | Yes |  |
 
 ## תגובה
 
-מחזיר: [`GifGetLargeResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GifGetLargeResponse.php)
+Returns: [`GifGetLargeResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GifGetLargeResponse.php)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getGifLarge'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getGifLarge דוגמה'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -19,12 +19,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // אם ברצונך להשתמש בלקוח HTTP מותאם אישית, העבר את הלקוח שלך שמממש את `GuzzleHttp\ClientInterface`.
+    // אם ברצונך להשתמש ב‑client HTTP מותאם, העבר את ה‑client שלך שמממש `GuzzleHttp\ClientInterface`.
     // זה אופציונלי, `GuzzleHttp\Client` ישמש כברירת מחדל.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // מחרוזת
-$large_internal_url_sanitized = 'large_internal_url_sanitized_example'; // מחרוזת
+
+$tenant_id = 'tenant_id_example'; // string
+$large_internal_url_sanitized = 'large_internal_url_sanitized_example'; // string
+
 
 try {
     $result = $apiInstance->getGifLarge($tenant_id, $large_internal_url_sanitized);
@@ -33,5 +35,3 @@ try {
     echo 'Exception when calling PublicApi->getGifLarge: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

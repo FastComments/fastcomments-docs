@@ -1,9 +1,10 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
-|------|------|----------|-------------|
-| commentId | string | Ναι |  |
-| sso | string | Όχι |  |
+|------|------|------------|-----------|
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| sso | string = "" | No |  |
 
 ## Απόκριση
 
@@ -13,8 +14,8 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα getLogs'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getLogs(commentId = "cmt-8471f2d3", sso = "")
-if response.isSome:
-  let logs = response.get()
-  echo "Fetched logs:", logs
+let (logsOpt, httpRes) = client.getLogs(tenantId = "my-tenant-123", commentId = "cmt-789", sso = "")
+if logsOpt.isSome:
+  let logs = logsOpt.get()
+  echo logs
 [inline-code-end]

@@ -2,12 +2,12 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| userId | string | query | Ne |  |
-| urlId | string | query | Ne |  |
-| fromCommentId | string | query | Ne |  |
-| viewed | boolean | query | Ne |  |
-| type | string | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| urlId | string | query | No |  |
+| fromCommentId | string | query | No |  |
+| viewed | boolean | query | No |  |
+| type | string | query | No |  |
 
 ## Odgovor
 
@@ -15,19 +15,19 @@ Vraća: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcom
 
 ## Primer
 
-[inline-code-attrs-start title = 'getNotificationCount Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getNotificationCount'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sledeći primeri koda su još uvek beta. Za bilo kakav problem, prijavite preko http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledeći primeri koda su još u beta fazi. Za bilo koji problem, molimo prijavite ga via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let userId = "userId_example" // String |  (opciono)
-let urlId = "urlId_example" // String |  (opciono)
-let fromCommentId = "fromCommentId_example" // String |  (opciono)
-let viewed = true // Bool |  (opciono)
-let type = "type_example" // String |  (opciono)
+let userId = "userId_example" // String |  (opcionalno)
+let urlId = "urlId_example" // String |  (opcionalno)
+let fromCommentId = "fromCommentId_example" // String |  (opcionalno)
+let viewed = true // Bool |  (opcionalno)
+let type = "type_example" // String |  (opcionalno)
 
-DefaultAPI.getNotificationCount(tenantId: tenantId, userId: userId, urlId: urlId, fromCommentId: fromCommentId, viewed: viewed, type: type) { (response, error) in
+DefaultAPI.getNotificationCount(tenantId: tenantId, options: DefaultAPI.GetNotificationCountOptions(userId: userId, urlId: urlId, fromCommentId: fromCommentId, viewed: viewed, type: type)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -38,5 +38,3 @@ DefaultAPI.getNotificationCount(tenantId: tenantId, userId: userId, urlId: urlId
     }
 }
 [inline-code-end]
-
----

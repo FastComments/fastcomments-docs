@@ -1,15 +1,15 @@
-## Parametri
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| limit | number | query | Ne |  |
-| skip | number | query | Ne |  |
-| order | string | query | Ne |  |
-| after | number | query | Ne |  |
-| before | number | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| limit | number | query | No |  |
+| skip | number | query | No |  |
+| order | string | query | No |  |
+| after | number | query | No |  |
+| before | number | query | No |  |
 
-## Odgovor
+## Response
 
 Vrne: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetAuditLogsResponse.php)
 
@@ -21,29 +21,35 @@ Vrne: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-php/
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Konfigurirajte avtorizacijo API ključa: api_key
+// Configure API key authorization: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Odkomentirajte spodnjo vrstico za nastavitev predpone (npr. Bearer) za API ključ, če je potrebno
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Če želite uporabiti lastnega HTTP klienta, posredujte vaš klient, ki implementira `GuzzleHttp\ClientInterface`.
-    // To je opcijsko; kot privzeti bo uporabljen `GuzzleHttp\Client`.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$limit = 3.4; // float
-$skip = 3.4; // float
-$order = new \FastComments\Client\Model\\FastComments\Client\Model\SORTDIR(); // \FastComments\Client\Model\SORTDIR
-$after = 3.4; // float
-$before = 3.4; // float
+$options = [
+    'limit' => 3.4, // float
+    'skip' => 3.4, // float
+    'order' => new \FastComments\Client\Model\\FastComments\Client\Model\SORTDIR(), // \FastComments\Client\Model\SORTDIR
+    'after' => 3.4, // float
+    'before' => 3.4, // float
+];
+
 
 try {
-    $result = $apiInstance->getAuditLogs($tenant_id, $limit, $skip, $order, $after, $before);
+    $result = $apiInstance->getAuditLogs($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getAuditLogs: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

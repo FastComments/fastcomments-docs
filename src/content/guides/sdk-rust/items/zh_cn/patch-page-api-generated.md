@@ -1,6 +1,6 @@
 ## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenant_id | String | 是 |  |
 | id | String | 是 |  |
@@ -14,22 +14,18 @@
 
 [inline-code-attrs-start title = 'patch_page 示例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn update_page() -> Result<PatchPageApiResponse, Error> {
-    let params: PatchPageParams = PatchPageParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        id: "news/product-update-2026".to_string(),
-        update_api_page_data: models::UpdateApiPageData {
-            title: Some("June 2026 Product Update".to_string()),
-            slug: Some("news/product-update-2026".to_string()),
-            description: Some("Summarizes June releases and roadmap changes".to_string()),
-            is_published: Some(true),
-            content: Some("<p>We shipped performance improvements and new integrations.</p>".to_string()),
-        },
+async fn run_patch_page() -> Result<(), Error> {
+    let update = models::UpdateApiPageData {
+        title: Some("Breaking News".into()),
+        content: Some("Updated article content".into()),
+        ..Default::default()
     };
-
-    let response: PatchPageApiResponse = patch_page(&configuration, params).await?;
-    Ok(response)
+    let params = PatchPageParams {
+        tenant_id: "acme-corp-tenant".into(),
+        id: "news/article".into(),
+        update_api_page_data: update,
+    };
+    let _resp: PatchPageApiResponse = patch_page(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

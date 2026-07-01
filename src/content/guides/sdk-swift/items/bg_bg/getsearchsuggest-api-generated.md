@@ -1,7 +1,8 @@
-## Параметри
+## Parameters
 
 | Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
 | text-search | string | query | Не |  |
 | sso | string | query | Не |  |
 
@@ -11,15 +12,16 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за getSearchSuggest'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSearchSuggest Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следните примери с код все още са в бета. При проблем, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следващите кодови примери все още са в бета. При каквито и да е проблеми, моля съобщете чрез http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let textSearch = "textSearch_example" // String |  (незадължително)
-let sso = "sso_example" // String |  (незадължително)
+let tenantId = "tenantId_example" // String | 
+let textSearch = "textSearch_example" // String |  (по избор)
+let sso = "sso_example" // String |  (по избор)
 
-ModerationAPI.getSearchSuggest(textSearch: textSearch, sso: sso) { (response, error) in
+ModerationAPI.getSearchSuggest(tenantId: tenantId, options: ModerationAPI.GetSearchSuggestOptions(textSearch: textSearch, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

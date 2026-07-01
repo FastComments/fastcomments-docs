@@ -1,39 +1,41 @@
-## 参数
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
-| commentId | string | 路径 | 是 |  |
-| sso | string | 查询 | 否 |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| sso | string | query | No |  |
 
-## 响应
+## Response
 
-返回：[`GetBannedUsersFromCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_banned_users_from_comment_response.py)
+Returns: [`GetBannedUsersFromCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_banned_users_from_comment_response.py)
 
-## 示例
+## Example
 
-[inline-code-attrs-start title = 'get_ban_users_from_comment 示例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '获取被封禁用户从评论 示例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.models.get_banned_users_from_comment_response import GetBannedUsersFromCommentResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# 指定主机是可选的，默认值为 https://fastcomments.com
-# 有关所有支持的配置参数列表，请参阅 configuration.py。
+# 定义主机是可选的，默认值为 https://fastcomments.com
+# 请参阅 configuration.py 获取所有支持的配置参数列表。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# 使用 API 客户端实例进入上下文
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # 创建 API 类的实例
+    # Create an instance of the API class
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
-    sso = 'sso_example' # str |  (可选)
+    sso = 'sso_example' # str |  （可选）
 
     try:
-        api_response = api_instance.get_ban_users_from_comment(comment_id, sso=sso)
+        api_response = api_instance.get_ban_users_from_comment(tenant_id, comment_id, sso=sso)
         print("The response of ModerationApi->get_ban_users_from_comment:\n")
         pprint(api_response)
     except Exception as e:

@@ -1,12 +1,11 @@
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Da |  |
-| id | string | Da |  |
-| unBlockFromCommentParams | UnBlockFromCommentParams | Da |  |
-| userId | string | Ne |  |
-| anonUserId | string | Ne |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| unBlockFromCommentParams | UnBlockFromCommentParams | Yes |  |
+| options | const UnBlockUserFromCommentOptions& | Yes |  |
 
 ## Odgovor
 
@@ -16,19 +15,16 @@ Vraća: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-cpp/blob
 
 [inline-code-attrs-start title = 'Primjer unBlockUserFromComment'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("cmt-456789");
-UnBlockFromCommentParams params;
-boost::optional<utility::string_t> userId = utility::string_t(U("user@example.com"));
-boost::optional<utility::string_t> anonUserId = utility::string_t(U("anon-98765"));
-auto unblockTask = api->unBlockUserFromComment(tenantId, commentId, params, userId, anonUserId)
-    .then([](pplx::task<std::shared_ptr<UnblockSuccess>> t) -> std::shared_ptr<UnblockSuccess> {
-        try {
+auto params = std::make_shared<UnBlockFromCommentParams>();
+params->commentId = U("cmt-12345");
+params->reason = U("resolved");
+UnBlockUserFromCommentOptions opts;
+opts.notifyUser = boost::optional<bool>(true);
+api->unBlockUserFromComment(U("my-tenant-123"), U("user-456"), *params, opts)
+    .then([](pplx::task<std::shared_ptr<UnblockSuccess>> t){
+        try{
             auto result = t.get();
-            return result ? result : std::make_shared<UnblockSuccess>();
-        } catch (...) {
-            return std::make_shared<UnblockSuccess>();
-        }
+        }catch(...){}
     });
 [inline-code-end]
 

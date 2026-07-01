@@ -1,19 +1,20 @@
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Yes |  |
-| sso | string | query | No |  |
+| tenantId | string | query | 是 |  |
+| commentId | string | path | 是 |  |
+| sso | string | query | 否 |  |
 
 ## 响应
 
-返回: [`ModerationAPIChildCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationAPIChildCommentsResponse.java)
+返回：[`ModerationAPIChildCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationAPIChildCommentsResponse.java)
 
 ## 示例
 
-[inline-code-attrs-start title = 'getCommentChildren 示例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '获取评论子项 示例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 导入类：
+// 导入类:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
-    String commentId = "commentId_example"; // 字符串 | 
-    String sso = "sso_example"; // 字符串 | 
+    String tenantId = "tenantId_example"; // String | 
+    String commentId = "commentId_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
-      ModerationAPIChildCommentsResponse result = apiInstance.getCommentChildren(commentId)
+      ModerationAPIChildCommentsResponse result = apiInstance.getCommentChildren(tenantId, commentId)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -43,3 +45,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

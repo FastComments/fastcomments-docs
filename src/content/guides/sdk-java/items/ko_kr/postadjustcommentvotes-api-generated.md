@@ -1,17 +1,19 @@
-## 매개변수
+## Parameters
 
-| 이름 | 형식 | 위치 | 필수 | 설명 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| commentId | string | path | 예 |  |
-| sso | string | query | 아니요 |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
-## 응답
+## Response
 
 반환: [`AdjustVotesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AdjustVotesResponse.java)
 
-## 예제
+## Example
 
-[inline-code-attrs-start title = 'postAdjustCommentVotes 예제'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postAdjustCommentVotes 예시'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // 클래스 가져오기:
 import com.fastcomments.invoker.ApiClient;
@@ -26,11 +28,14 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
-    String commentId = "commentId_example"; // String | 
-    AdjustCommentVotesParams adjustCommentVotesParams = new AdjustCommentVotesParams(); // AdjustCommentVotesParams | 
-    String sso = "sso_example"; // String | 
+    String tenantId = "tenantId_example"; // String |
+    String commentId = "commentId_example"; // String |
+    AdjustCommentVotesParams adjustCommentVotesParams = new AdjustCommentVotesParams(); // AdjustCommentVotesParams |
+    String broadcastId = "broadcastId_example"; // String |
+    String sso = "sso_example"; // String |
     try {
-      AdjustVotesResponse result = apiInstance.postAdjustCommentVotes(commentId, adjustCommentVotesParams)
+      AdjustVotesResponse result = apiInstance.postAdjustCommentVotes(tenantId, commentId, adjustCommentVotesParams)
+            .broadcastId(broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);

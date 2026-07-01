@@ -1,4 +1,5 @@
-Агрегира документи чрез групиране (ако е предоставен groupBy) и прилагане на множество операции. Поддържат се различни операции (например sum, countDistinct, avg и т.н.).
+Aggregates documents by grouping them (if groupBy is provided) and applying multiple operations.  
+Different operations (e.g. sum, countDistinct, avg, etc.) are supported.
 
 ## Параметри
 
@@ -6,8 +7,7 @@
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | aggregationRequest | AggregationRequest | Не |  |
-| parentTenantId | string | Не |  |
-| includeStats | bool | Не |  |
+| options | AggregateOptions | Не |  |
 
 ## Отговор
 
@@ -15,18 +15,11 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за aggregate'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за агрегиране'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.aggregate(
-  tenantId = "my-tenant-123",
-  aggregationRequest = AggregationRequest(groupBy = @["articleId"], metrics = @["commentCount"], filters = @[], limit = 0),
-  parentTenantId = "",
-  includeStats = false
-)
-
-if response.isSome:
-  let agg = response.get()
-  discard agg
+let (aggResp, httpResp) = client.aggregate(tenantId = "my-tenant-123", aggregationRequest = AggregationRequest(), options = AggregateOptions())
+if aggResp.isSome:
+  let response = aggResp.get()
+  echo response
+echo httpResp
 [inline-code-end]
-
----

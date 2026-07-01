@@ -2,34 +2,35 @@
 
 | 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| createQuestionConfigBody | CreateQuestionConfigBody | 是 |  |
+| tenantId | string | Yes |  |
+| createQuestionConfigBody | CreateQuestionConfigBody | Yes |  |
 
 ## 回應
 
-回傳：[`CreateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionConfigResponse.ts)
+回傳: [`CreateQuestionConfigResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionConfigResponse1.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'createQuestionConfig 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "org-7b3d1e9f";
+const tenantId: string = "tenant_12345";
+
 const customOption: QuestionConfigCustomOptionsInner = {
-  key: "priority",
-  label: "Priority",
-  values: ["low", "medium", "high"],
-  defaultValue: "medium"
+  label: "Option A",
+  value: "a",
 };
+
 const createQuestionConfigBody: CreateQuestionConfigBody = {
-  name: "Customer Support Questions",
-  description: "Configuration for support-related question flows",
-  enabled: true,
-  moderation: { required: true, level: "manual" },
-  questionLimitPerUser: 5,
+  questionText: "What is your favorite color?",
+  isActive: true,
+  // 可選欄位可省略
   customOptions: [customOption],
-  allowAnonymous: false
 };
-const response: CreateQuestionConfigResponse = await createQuestionConfig(tenantId, createQuestionConfigBody);
+
+const response: CreateQuestionConfigResponse1 = await createQuestionConfig(
+  tenantId,
+  createQuestionConfigBody
+);
 [inline-code-end]
 
 ---

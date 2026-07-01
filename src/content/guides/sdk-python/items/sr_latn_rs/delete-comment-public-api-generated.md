@@ -1,27 +1,28 @@
-## Parametri
+## Parameters
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Da |  |
-| commentId | string | path | Da |  |
-| broadcastId | string | query | Da |  |
-| editKey | string | query | Ne |  |
-| sso | string | query | Ne |  |
+|------|------|----------|----------|------|
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | Yes |  |
+| editKey | string | query | No |  |
+| sso | string | query | No |  |
 
-## Odgovor
+## Response
 
 Vraća: [`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/public_api_delete_comment_response.py)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer delete_comment_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_comment_public Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import DeleteCommentPublicOptions
 from client.models.public_api_delete_comment_response import PublicAPIDeleteCommentResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definisanje hosta je opciono i podrazumevano je https://fastcomments.com
+# Definisanje hosta je opcionalno i podrazumevano je https://fastcomments.com
 # Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -39,9 +40,11 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (opciono)
 
     try:
-        api_response = api_instance.delete_comment_public(tenant_id, comment_id, broadcast_id, edit_key=edit_key, sso=sso)
+        api_response = api_instance.delete_comment_public(tenant_id, comment_id, broadcast_id, DeleteCommentPublicOptions(edit_key=edit_key, sso=sso))
         print("The response of PublicApi->delete_comment_public:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling PublicApi->delete_comment_public: %s\n" % e)
 [inline-code-end]
+
+---

@@ -1,9 +1,9 @@
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
+| 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
-| value | string | 아니요 |  |
-| sso | string | 아니요 |  |
+| tenantId | string | 예 |  |
+| options | const GetSearchSitesOptions& | 예 |  |
 
 ## 응답
 
@@ -13,12 +13,21 @@
 
 [inline-code-attrs-start title = 'getSearchSites 예제'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> valueOpt = boost::optional<utility::string_t>(U("my-tenant-123"));
-boost::optional<utility::string_t> ssoOpt = boost::optional<utility::string_t>(U("user@example.com"));
-api->getSearchSites(valueOpt, ssoOpt)
-    .then([](std::shared_ptr<ModerationSiteSearchResponse> resp){
-        auto response = resp ? resp : std::make_shared<ModerationSiteSearchResponse>();
-        (void)response;
-    })
-    .wait();
+auto tenantId = utility::string_t(U("my-tenant-123"));
+GetSearchSitesOptions options;
+options.query = boost::make_optional(utility::string_t(U("example query")));
+options.limit = boost::make_optional(25);
+
+api->getSearchSites(tenantId, options)
+   .then([](pplx::task<std::shared_ptr<ModerationSiteSearchResponse>> t) {
+       try {
+           auto response = t.get();
+           auto respPtr = std::make_shared<ModerationSiteSearchResponse>(*response);
+           for (const auto& site : respPtr->sites) {
+               // 처리 로직
+           }
+       } catch (const std::exception&) {
+           // 오류 처리
+       }
+   });
 [inline-code-end]

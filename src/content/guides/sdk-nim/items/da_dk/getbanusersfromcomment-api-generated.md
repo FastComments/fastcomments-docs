@@ -1,9 +1,10 @@
 ## Parametre
 
-| Navn | Type | Påkrævet | Beskrivelse |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
+| tenantId | string | Ja |  |
 | commentId | string | Ja |  |
-| sso | string | Nej |  |
+| sso | string = "" | Nej |  |
 
 ## Svar
 
@@ -13,12 +14,10 @@ Returnerer: [`Option[GetBannedUsersFromCommentResponse]`](https://github.com/Fas
 
 [inline-code-attrs-start title = 'getBanUsersFromComment Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getBanUsersFromComment(commentId = "comment-98765", sso = "")
+let (response, httpResponse) = client.getBanUsersFromComment(tenantId = "my-tenant-001", commentId = "cmt-123456", sso = "")
 if response.isSome:
-  let bannedResp = response.get()
-  discard bannedResp
-else:
-  echo "No banned users found or request failed"
+  let banInfo = response.get()
+  echo banInfo
 [inline-code-end]
 
 ---

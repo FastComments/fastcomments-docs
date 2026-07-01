@@ -1,6 +1,6 @@
 ## Parametreler
 
-| Name | Type | Required | Description |
+| İsim | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | createAPIUserSubscriptionData | CreateAPIUserSubscriptionData | Hayır |  |
@@ -13,18 +13,11 @@ Döndürür: [`Option[CreateSubscriptionAPIResponse]`](https://github.com/FastCo
 
 [inline-code-attrs-start title = 'createSubscription Örneği'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let createData = CreateAPIUserSubscriptionData(
-  subscriberId = "user-987",
-  email = "jane.doe@newsreader.com",
-  urlId = "news/local-weather",
-  active = true,
-  tags = @["weather", "local"],
-  frequency = "immediate"
+let (respOpt, httpResp) = client.createSubscription(
+  tenantId = "my-tenant-123",
+  createAPIUserSubscriptionData = default(CreateAPIUserSubscriptionData),
 )
-let (response, httpResponse) = client.createSubscription(tenantId = "my-tenant-123", createAPIUserSubscriptionData = createData)
-if response.isSome:
-  let created = response.get()
-  echo "Created subscription id: ", created.id
-[inline-code-end]
 
----
+if respOpt.isSome:
+  let resp = respOpt.get()
+[inline-code-end]

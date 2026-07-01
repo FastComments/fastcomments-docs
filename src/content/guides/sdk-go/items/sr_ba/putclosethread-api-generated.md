@@ -1,9 +1,10 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
-| urlId | string | query | Da |  |
-| sso | string | query | Ne |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -11,7 +12,7 @@ Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blo
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer PutCloseThread'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PutCloseThread primjer'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,17 +24,20 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	urlId := "urlId_example" // string | 
-	sso := "sso_example" // string |  (neobavezno)
+	sso := "sso_example" // string |  (opcionalno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PutCloseThread(context.Background()).UrlId(urlId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PutCloseThread(context.Background()).TenantId(tenantId).UrlId(urlId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PutCloseThread``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor od `PutCloseThread`: APIEmptyResponse
+	// response from `PutCloseThread`: APIEmptyResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PutCloseThread`: %v\n", resp)
 }
 [inline-code-end]
+
+---

@@ -1,58 +1,55 @@
----
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ναι |  |
-| urlId | string | query | Ναι |  |
-| userId | string | query | Όχι |  |
-| anonUserId | string | query | Όχι |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`GetVotesForUserResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_votes_for_user_response.py)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα για get_votes_for_user'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παράδειγμα get_votes_for_user'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetVotesForUserOptions
 from client.models.get_votes_for_user_response import GetVotesForUserResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Ορισμός του host είναι προαιρετικός και το προεπιλεγμένο είναι https://fastcomments.com
-# Δείτε το configuration.py για μια λίστα με όλες τις υποστηριζόμενες παραμέτρους διαμόρφωσης.
+# Ο καθορισμός του host είναι προαιρετικός και η προεπιλογή είναι https://fastcomments.com
+# Δείτε το configuration.py για μια λίστα όλων των υποστηριζόμενων παραμέτρων ρυθμίσεων.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Ο client πρέπει να ρυθμίσει τις παραμέτρους αυθεντικοποίησης και εξουσιοδότησης
-# σύμφωνα με την πολιτική ασφαλείας του API server.
-# Παρακάτω παρέχονται παραδείγματα για κάθε μέθοδο αυθεντικοποίησης, χρησιμοποιήστε
-# το παράδειγμα που ικανοποιεί το σενάριο αυθεντικοποίησής σας.
+# Ο πελάτης πρέπει να διαμορφώσει τις παραμέτρους αυθεντικοποίησης και εξουσιοδότησης σε συμφωνία με την πολιτική ασφαλείας του διακομιστή API.
+# Παραδείγματα για κάθε μέθοδο αυθεντικοποίησης παρέχονται παρακάτω, χρησιμοποιήστε το παράδειγμα που
+# ικανοποιεί την περίπτωση χρήσης σας.
 
-# Διαμόρφωση εξουσιοδότησης με API key: api_key
+# Διαμόρφωση εξουσιοδότησης κλειδιού API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Αποσχολιάστε παρακάτω για να ορίσετε πρόθεμα (π.χ. Bearer) για το API key, αν χρειάζεται
+# Αποσχολιάστε παρακάτω για να ρυθμίσετε το πρόθεμα (π.χ. Bearer) για το κλειδί API, εάν χρειάζεται
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Εισέλθετε σε ένα context με ένα instance του API client
+# Εισάγετε ένα context με μια παρουσία του πελάτη API
 with client.ApiClient(configuration) as api_client:
-    # Δημιουργήστε ένα instance της κλάσης API
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
-    user_id = 'user_id_example' # str |  (προαιρετικό)
-    anon_user_id = 'anon_user_id_example' # str |  (προαιρετικό)
+    user_id = 'user_id_example' # str |  (optional)
+    anon_user_id = 'anon_user_id_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_votes_for_user(tenant_id, url_id, user_id=user_id, anon_user_id=anon_user_id)
+        api_response = api_instance.get_votes_for_user(tenant_id, url_id, GetVotesForUserOptions(user_id=user_id, anon_user_id=anon_user_id))
         print("The response of DefaultApi->get_votes_for_user:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling DefaultApi->get_votes_for_user: %s\n" % e)
 [inline-code-end]
-
----

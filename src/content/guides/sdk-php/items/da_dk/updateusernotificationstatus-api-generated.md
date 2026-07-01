@@ -21,14 +21,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Hvis du ønsker at bruge en brugerdefineret http-klient, giv din klient som implementerer `GuzzleHttp\ClientInterface`.
+    // Hvis du vil bruge en brugerdefineret HTTP-klient, skal du videregive din klient, som implementerer `GuzzleHttp\ClientInterface`.
     // Dette er valgfrit, `GuzzleHttp\Client` vil blive brugt som standard.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$notification_id = 'notification_id_example'; // string
-$new_status = 'new_status_example'; // string
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // streng
+$notification_id = 'notification_id_example'; // streng
+$new_status = 'new_status_example'; // streng
+$sso = 'sso_example'; // streng
+
 
 try {
     $result = $apiInstance->updateUserNotificationStatus($tenant_id, $notification_id, $new_status, $sso);

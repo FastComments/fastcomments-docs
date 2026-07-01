@@ -4,10 +4,7 @@
 |------|------|------------|-----------|
 | tenantId | string | Sim |  |
 | createCommentParams | CreateCommentParams | Não |  |
-| isLive | bool | Não |  |
-| doSpamCheck | bool | Não |  |
-| sendEmails | bool | Não |  |
-| populateNotifications | bool | Não |  |
+| options | SaveCommentOptions | Não |  |
 
 ## Resposta
 
@@ -15,27 +12,30 @@ Retorna: [`Option[APISaveCommentResponse]`](https://github.com/FastComments/fast
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de saveComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo saveComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let createCommentParams = CreateCommentParams(
-  urlId = "news/2026/major-policy-change",
-  content = "This is a thoughtful comment on the policy change and its potential impacts.",
-  authorName = "Morgan Lee",
-  authorEmail = "morgan.lee@example.org",
-  tags = @["policy","analysis"],
-  extraData = @[])
+let commentParams = CreateCommentParams(
+  body: "Great read, thanks!",
+  name: "Alice Smith",
+  email: "alice@example.com",
+  parentId: ""
+)
 
-let (response, httpResponse) = client.saveComment(
+let saveOpts = SaveCommentOptions(
+  isPreview: false,
+  isApproved: true,
+  skipSpamCheck: false
+)
+
+let (apiResponse, httpResponse) = client.saveComment(
   tenantId = "my-tenant-123",
-  createCommentParams = createCommentParams,
-  isLive = true,
-  doSpamCheck = true,
-  sendEmails = false,
-  populateNotifications = true)
+  createCommentParams = commentParams,
+  options = saveOpts
+)
 
-if response.isSome:
-  let saved = response.get()
-  discard saved
+if apiResponse.isSome:
+  let saved = apiResponse.get()
+  echo saved
 [inline-code-end]
 
 ---

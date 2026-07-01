@@ -1,9 +1,9 @@
 ## Параметри
 
-| Име | Тип | Задължителен | Описание |
-|------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| domain | String | Да |  |
+| Име | Тип | Задължително | Описание |
+|------|------|--------------|----------|
+| tenant_id | String | Yes |  |
+| domain | String | Yes |  |
 
 ## Отговор
 
@@ -11,17 +11,14 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за delete_domain_config'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_domain_config Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_delete_domain_config() -> Result<DeleteDomainConfigResponse, Error> {
+async fn run_example(configuration: &configuration::Configuration) -> Result<(), Error> {
     let params = DeleteDomainConfigParams {
-        tenant_id: "acme-corp-tenant".to_owned(),
-        domain: "news/acme-corp".to_owned(),
-        force: Some(true),
+        tenant_id: "acme-corp-tenant".to_string(),
+        domain: "news/article".to_string(),
     };
-    let response: DeleteDomainConfigResponse = delete_domain_config(&configuration, params).await?;
-    Ok(response)
+    let _response: DeleteDomainConfigResponse = delete_domain_config(configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

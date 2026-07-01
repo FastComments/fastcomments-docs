@@ -1,16 +1,16 @@
 ## Παράμετροι
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Ναι |  |
-| commentId | string | query | Όχι |  |
-| externalId | string | query | Όχι |  |
-| eventType | string | query | Όχι |  |
-| type | string | query | Όχι |  |
-| domain | string | query | Όχι |  |
-| attemptCountGT | number | query | Όχι |  |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|------------|------------|
+| tenantId | string | query | Yes |  |
+| commentId | string | query | No |  |
+| externalId | string | query | No |  |
+| eventType | string | query | No |  |
+| type | string | query | No |  |
+| domain | string | query | No |  |
+| attemptCountGT | number | query | No |  |
 
-## Απάντηση
+## Απόκριση
 
 Επιστρέφει: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_pending_webhook_event_count_response.py)
 
@@ -19,30 +19,31 @@
 [inline-code-attrs-start title = 'Παράδειγμα get_pending_webhook_event_count'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetPendingWebhookEventCountOptions
 from client.models.get_pending_webhook_event_count_response import GetPendingWebhookEventCountResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Ορισμός του host είναι προαιρετικός και προεπιλογή είναι το https://fastcomments.com
-# Δείτε το configuration.py για λίστα με όλες τις υποστηριζόμενες παραμέτρους ρυθμίσεων.
+# Ο ορισμός του host είναι προαιρετικός και προεπιλογή είναι https://fastcomments.com
+# Δείτε το configuration.py για λίστα όλων των υποστηριζόμενων παραμέτρων ρυθμίσεων.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Ο πελάτης πρέπει να διαμορφώσει τις παραμέτρους αυθεντικοποίησης και εξουσιοδότησης
-# σύμφωνα με την πολιτική ασφαλείας του API server.
-# Παρακάτω παρέχονται παραδείγματα για κάθε μέθοδο αυθεντικοποίησης, χρησιμοποιήστε
-# το παράδειγμα που ικανοποιεί το σενάριό σας.
+# Ο πελάτης πρέπει να ρυθμίσει τις παραμέτρους αυθεντικοποίησης και εξουσιοδότησης
+# σύμφωνα με την πολιτική ασφαλείας του διακομιστή API.
+# Παράδειγμα για κάθε μέθοδο αυθεντικοποίησης παρέχεται παρακάτω, χρησιμοποιήστε το παράδειγμα που
+# καλύπτει την περίπτωση χρήσης αυθεντικοποίησης σας.
 
-# Διαμορφώστε την εξουσιοδότηση με API key: api_key
+# Διαμόρφωση εξουσιοδότησης με κλειδί API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Αποσχολιάστε παρακάτω για να ορίσετε πρόθεμα (π.χ. Bearer) για το API key, αν χρειάζεται
+# Ξεσχολιάστε παρακάτω για να ορίσετε πρόθεμα (π.χ. Bearer) για το κλειδί API, εάν χρειάζεται
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Εισέλθετε σε context με ένα στιγμιότυπο του API client
+# Εισαγωγή ενός context με μια παρουσία του πελάτη API
 with client.ApiClient(configuration) as api_client:
-    # Δημιουργήστε ένα στιγμιότυπο της κλάσης API
+    # Δημιουργία μιας παρουσίας της κλάσης API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str |  (προαιρετικό)
@@ -53,7 +54,7 @@ with client.ApiClient(configuration) as api_client:
     attempt_count_gt = 3.4 # float |  (προαιρετικό)
 
     try:
-        api_response = api_instance.get_pending_webhook_event_count(tenant_id, comment_id=comment_id, external_id=external_id, event_type=event_type, type=type, domain=domain, attempt_count_gt=attempt_count_gt)
+        api_response = api_instance.get_pending_webhook_event_count(tenant_id, GetPendingWebhookEventCountOptions(comment_id=comment_id, external_id=external_id, event_type=event_type, type=type, domain=domain, attempt_count_gt=attempt_count_gt))
         print("The response of DefaultApi->get_pending_webhook_event_count:\n")
         pprint(api_response)
     except Exception as e:

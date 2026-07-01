@@ -1,14 +1,11 @@
-### Utilizzo dell'API pubblica
+### Utilizzo dell'API Pubblica
 
 ```swift
 import FastCommentsSwift
 
-// Crea il client API
-let publicApi = PublicAPI()
-
 // Recupera i commenti per una pagina
 do {
-    let response = try await publicApi.getCommentsPublic(
+    let response = try await PublicAPI.getCommentsPublic(
         tenantId: "your-tenant-id",
         urlId: "page-url-id"
     )
@@ -22,20 +19,19 @@ do {
 }
 ```
 
-### Utilizzo dell'API autenticata
+### Utilizzo dell'API Autenticata
 
 ```swift
 import FastCommentsSwift
 
-// Crea la configurazione con la chiave API
-let defaultApi = DefaultAPI()
-defaultApi.apiKey = "your-api-key"
+// Configura la tua chiave API nella configurazione condivisa (inviata come intestazione x-api-key)
+FastCommentsSwiftAPIConfiguration.shared.customHeaders["x-api-key"] = "your-api-key"
 
-// Recupera commenti usando l'API autenticata
+// Recupera i commenti usando l'API autenticata
 do {
-    let response = try await defaultApi.getComments(
+    let response = try await DefaultAPI.getComments(
         tenantId: "your-tenant-id",
-        urlId: "page-url-id"
+        options: .init(urlId: "page-url-id")
     )
 
     print("Total comments: \(response.count ?? 0)")
@@ -47,7 +43,7 @@ do {
 }
 ```
 
-### Utilizzo dell'API di moderazione
+### Utilizzo dell'API di Moderazione
 
 ```swift
 import FastCommentsSwift
@@ -56,9 +52,11 @@ import FastCommentsSwift
 // (generalo con FastCommentsSSO, vedi la sezione SSO sopra).
 do {
     let response = try await ModerationAPI.getApiComments(
-        page: 0,
-        count: 30,
-        sso: ssoToken
+        options: .init(
+            page: 0,
+            count: 30,
+            sso: ssoToken
+        )
     )
 
     print("Found \(response.comments.count) comments to moderate")
@@ -70,24 +68,24 @@ do {
 }
 ```
 
-### Utilizzo di SSO per l'autenticazione
+### Utilizzo di SSO per l'Autenticazione
 
-#### SSO sicuro (consigliato per la produzione)
+#### SSO Sicuro (Consigliato per la Produzione)
 
 ```swift
 import FastCommentsSwift
 
 let apiKey = "your-api-key"
 
-// Crea i dati utente SSO sicuri (solo lato server!)
+// Crea dati utente SSO sicuri (solo lato server!)
 let userData = SecureSSOUserData(
-    id: "user-123",              // ID utente
+    id: "user-123",              // ID Utente
     email: "user@example.com",   // Email
     username: "johndoe",         // Nome utente
-    avatar: "https://example.com/avatar.jpg" // URL dell'avatar
+    avatar: "https://example.com/avatar.jpg" // URL Avatar
 )
 
-// Genera il token SSO
+// Genera token SSO
 do {
     let sso = try FastCommentsSSO.createSecure(apiKey: apiKey, secureSSOUserData: userData)
     let token = try sso.createToken()
@@ -99,19 +97,19 @@ do {
 }
 ```
 
-#### SSO semplice (per sviluppo/test)
+#### SSO Semplice (Per Sviluppo/Test)
 
 ```swift
 import FastCommentsSwift
 
-// Crea i dati utente SSO semplici (non è necessaria una chiave API)
+// Crea dati utente SSO semplici (non è necessaria una chiave API)
 let userData = SimpleSSOUserData(
     username: "johndoe",
     email: "user@example.com",
     avatar: "https://example.com/avatar.jpg"
 )
 
-// Genera il token SSO semplice
+// Genera token SSO semplice
 let sso = FastCommentsSSO.createSimple(simpleSSOUserData: userData)
 do {
     let token = try sso.createToken()

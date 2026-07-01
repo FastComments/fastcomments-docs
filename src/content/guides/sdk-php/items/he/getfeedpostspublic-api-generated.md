@@ -1,19 +1,18 @@
----
 req
 tenantId
 afterId
 
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | כן |  |
-| afterId | string | query | לא |  |
-| limit | integer | query | לא |  |
-| tags | array | query | לא |  |
-| sso | string | query | לא |  |
-| isCrawler | boolean | query | לא |  |
-| includeUserInfo | boolean | query | לא |  |
+| tenantId | string | path | Yes |  |
+| afterId | string | query | No |  |
+| limit | integer | query | No |  |
+| tags | array | query | No |  |
+| sso | string | query | No |  |
+| isCrawler | boolean | query | No |  |
+| includeUserInfo | boolean | query | No |  |
 
 ## תגובה
 
@@ -21,7 +20,7 @@ afterId
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getFeedPostsPublic'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getFeedPostsPublic'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -29,20 +28,24 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // אם ברצונך להשתמש בלקוח http מותאם אישית, העבר את הלקוח שלך שמממש את `GuzzleHttp\ClientInterface`.
+    // אם אתה רוצה להשתמש בלקוח HTTP מותאם, העבר את הלקוח שלך שמיישם `GuzzleHttp\ClientInterface`.
     // זה אופציונלי, `GuzzleHttp\Client` ישמש כברירת מחדל.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$after_id = 'after_id_example'; // string
-$limit = 56; // int
-$tags = array('tags_example'); // string[]
-$sso = 'sso_example'; // string
-$is_crawler = True; // bool
-$include_user_info = True; // bool
+$options = [
+    'after_id' => 'after_id_example', // string
+    'limit' => 56, // int
+    'tags' => array('tags_example'), // string[]
+    'sso' => 'sso_example', // string
+    'is_crawler' => True, // bool
+    'include_user_info' => True, // bool
+];
+
 
 try {
-    $result = $apiInstance->getFeedPostsPublic($tenant_id, $after_id, $limit, $tags, $sso, $is_crawler, $include_user_info);
+    $result = $apiInstance->getFeedPostsPublic($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getFeedPostsPublic: ', $e->getMessage(), PHP_EOL;

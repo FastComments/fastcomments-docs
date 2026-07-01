@@ -1,11 +1,13 @@
+---
+画像のアップロードとリサイズ
+
 ## パラメータ
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | はい |  |
-| file | string | いいえ |  |
-| sizePreset | SizePreset | いいえ |  |
-| urlId | string | はい |  |
+| tenantId | string | Yes |  |
+| file | string | No |  |
+| options | UploadImageOptions | No |  |
 
 ## レスポンス
 
@@ -15,16 +17,15 @@
 
 [inline-code-attrs-start title = 'uploadImage の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.uploadImage(
+let (uploadResult, httpResponse) = client.uploadImage(
   tenantId = "my-tenant-123",
-  file = "assets/images/comment-avatar.jpg",
-  sizePreset = SizePreset.small,
-  urlId = "news/article-2025-11-22"
+  file = "images/avatar.jpg",
+  options = UploadImageOptions()
 )
-if response.isSome:
-  let upload = response.get()
-  echo "Uploaded image id: ", upload.id
-  echo "Uploaded image url: ", upload.url
+
+if uploadResult.isSome:
+  let result = uploadResult.get()
+  # 必要に応じて結果を使用
 [inline-code-end]
 
 ---

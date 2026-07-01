@@ -1,19 +1,20 @@
----
 ## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
-| sso | string | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## 回應
 
-回傳: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
+返回：[`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## 範例
 
 [inline-code-attrs-start title = 'postBanUserUndo 範例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 匯入類別：
+// Import classes:
+// 匯入類別:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,18 +27,23 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     BanUserUndoParams banUserUndoParams = new BanUserUndoParams(); // BanUserUndoParams | 
     String sso = "sso_example"; // String | 
     try {
-      APIEmptyResponse result = apiInstance.postBanUserUndo(banUserUndoParams)
+      APIEmptyResponse result = apiInstance.postBanUserUndo(tenantId, banUserUndoParams)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ModerationApi#postBanUserUndo");
+      // 呼叫 ModerationApi#postBanUserUndo 時發生例外
       System.err.println("Status code: " + e.getCode());
+      // 狀態碼: 
       System.err.println("Reason: " + e.getResponseBody());
+      // 原因: 
       System.err.println("Response headers: " + e.getResponseHeaders());
+      // 回應標頭: 
       e.printStackTrace();
     }
   }

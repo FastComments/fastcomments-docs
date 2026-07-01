@@ -2,16 +2,17 @@
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Da |  |
-| banEmail | boolean | query | Ne |  |
-| banEmailDomain | boolean | query | Ne |  |
-| banIP | boolean | query | Ne |  |
-| deleteAllUsersComments | boolean | query | Ne |  |
-| bannedUntil | string | query | Ne |  |
-| isShadowBan | boolean | query | Ne |  |
-| updateId | string | query | Ne |  |
-| banReason | string | query | Ne |  |
-| sso | string | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| banEmail | boolean | query | No |  |
+| banEmailDomain | boolean | query | No |  |
+| banIP | boolean | query | No |  |
+| deleteAllUsersComments | boolean | query | No |  |
+| bannedUntil | string | query | No |  |
+| isShadowBan | boolean | query | No |  |
+| updateId | string | query | No |  |
+| banReason | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -19,7 +20,7 @@ Vraća: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomment
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer PostBanUserFromComment'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PostBanUserFromComment Primjer'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -31,25 +32,26 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
-	banEmail := true // bool |  (neobavezno)
-	banEmailDomain := true // bool |  (neobavezno)
-	banIP := true // bool |  (neobavezno)
-	deleteAllUsersComments := true // bool |  (neobavezno)
-	bannedUntil := "bannedUntil_example" // string |  (neobavezno)
-	isShadowBan := true // bool |  (neobavezno)
-	updateId := "updateId_example" // string |  (neobavezno)
-	banReason := "banReason_example" // string |  (neobavezno)
-	sso := "sso_example" // string |  (neobavezno)
+	banEmail := true // bool |  (opcionalno)
+	banEmailDomain := true // bool |  (opcionalno)
+	banIP := true // bool |  (opcionalno)
+	deleteAllUsersComments := true // bool |  (opcionalno)
+	bannedUntil := "bannedUntil_example" // string |  (opcionalno)
+	isShadowBan := true // bool |  (opcionalno)
+	updateId := "updateId_example" // string |  (opcionalno)
+	banReason := "banReason_example" // string |  (opcionalno)
+	sso := "sso_example" // string |  (opcionalno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostBanUserFromComment(context.Background(), commentId).BanEmail(banEmail).BanEmailDomain(banEmailDomain).BanIP(banIP).DeleteAllUsersComments(deleteAllUsersComments).BannedUntil(bannedUntil).IsShadowBan(isShadowBan).UpdateId(updateId).BanReason(banReason).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostBanUserFromComment(context.Background(), commentId).TenantId(tenantId).BanEmail(banEmail).BanEmailDomain(banEmailDomain).BanIP(banIP).DeleteAllUsersComments(deleteAllUsersComments).BannedUntil(bannedUntil).IsShadowBan(isShadowBan).UpdateId(updateId).BanReason(banReason).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostBanUserFromComment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor iz `PostBanUserFromComment`: BanUserFromCommentResult
+	// response from `PostBanUserFromComment`: BanUserFromCommentResult
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostBanUserFromComment`: %v\n", resp)
 }
 [inline-code-end]

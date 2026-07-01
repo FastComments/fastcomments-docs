@@ -1,10 +1,10 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Так |  |
-| userId | string | query | Так |  |
-| id | string | path | Так |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
 ## Відповідь
 
@@ -12,28 +12,30 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад changeTicketState'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'changeTicketState Приклад'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api_key
+// Налаштування авторизації ключа API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Розкоментуйте нижче, щоб налаштувати префікс (наприклад, Bearer) для ключа API, якщо потрібно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // Якщо ви хочете використати власний HTTP-клієнт, передайте свій клієнт, що реалізує `GuzzleHttp\ClientInterface`.
+    // Це необов'язково, за замовчуванням буде використано `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $user_id = 'user_id_example'; // string
 $id = 'id_example'; // string
 $change_ticket_state_body = new \FastComments\Client\Model\ChangeTicketStateBody(); // \FastComments\Client\Model\ChangeTicketStateBody
+
 
 try {
     $result = $apiInstance->changeTicketState($tenant_id, $user_id, $id, $change_ticket_state_body);

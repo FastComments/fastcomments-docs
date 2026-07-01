@@ -1,31 +1,31 @@
-צופים המחוברים כרגע לעמוד: אנשים שה-session של ה-websocket שלהם מנוי לעמוד.
-מחזיר anonCount + totalCount (מנויים ברחבי החדר, כולל צופים אנונימיים שאותם איננו מפרטים).
+צופים מקוונים של דף ברגע זה: אנשים שהחיבור WebSocket שלהם מנוי לדף כעת.  
+מחזיר anonCount + totalCount (מנויים בחדר כולו, כולל צופים אנונימיים שאינם נספרים).
 
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | כן |  |
-| url_id | String | כן |  |
-| after_name | String | לא |  |
-| after_user_id | String | לא |  |
+| tenant_id | String | Yes |  |
+| url_id | String | Yes |  |
+| after_name | String | No |  |
+| after_user_id | String | No |  |
 
 ## תגובה
 
-מחזיר: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_online_response.rs)
+Returns: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_online_response.rs)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-get_online_users'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_online_users דוגמה'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_online_users() -> Result<PageUsersOnlineResponse, Error> {
-    let params: GetOnlineUsersParams = GetOnlineUsersParams {
+async fn example() -> Result<(), Error> {
+    let params = GetOnlineUsersParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        url_id: "news/world/article-2026".to_string(),
-        after_name: Some("jane.doe".to_string()),
-        after_user_id: Some("user_98765".to_string()),
+        url_id: "news/article".to_string(),
+        after_name: Some("john_doe".to_string()),
+        after_user_id: Some("user-123".to_string()),
     };
-    let response: PageUsersOnlineResponse = get_online_users(&configuration, params).await?;
-    Ok(response)
+    let _response: PageUsersOnlineResponse = get_online_users(&config, params).await?;
+    Ok(())
 }
 [inline-code-end]

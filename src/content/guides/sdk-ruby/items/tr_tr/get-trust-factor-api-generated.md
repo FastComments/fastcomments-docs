@@ -1,9 +1,10 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| userId | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Evet |  |
+| userId | string | query | Hayır |  |
+| sso | string | query | Hayır |  |
 
 ## Yanıt
 
@@ -17,18 +18,17 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # Dize | 
 opts = {
-  user_id: 'user_id_example', # String | 
-  sso: 'sso_example' # String | 
+  user_id: 'user_id_example', # Dize | 
+  sso: 'sso_example' # Dize | 
 }
 
 begin
   
-  result = api_instance.get_trust_factor(opts)
+  result = api_instance.get_trust_factor(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_trust_factor: #{e}"
 end
 [inline-code-end]
-
----

@@ -1,12 +1,12 @@
 ## Parametri
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
 | tenantId | string | Da |  |
 | postIds | vector<string | Da |  |
 | sso | string | Ne |  |
 
-## Response
+## Odgovor
 
 Vraća: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/FeedPostsStatsResponse.h)
 
@@ -14,16 +14,15 @@ Vraća: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-
 
 [inline-code-attrs-start title = 'Primjer getFeedPostsStats'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-std::vector<utility::string_t> postIds = { U("post-1001"), U("post-1002"), U("post-1003") };
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+std::vector<utility::string_t> postIds = {
+    utility::conversions::to_string_t("post-001"),
+    utility::conversions::to_string_t("post-002")
+};
+boost::optional<utility::string_t> sso = utility::conversions::to_string_t("user@example.com");
+
 api->getFeedPostsStats(tenantId, postIds, sso)
-    .then([](pplx::task<std::shared_ptr<FeedPostsStatsResponse>> previous) {
-        try {
-            auto stats = previous.get();
-            if (!stats) stats = std::make_shared<FeedPostsStatsResponse>();
-            // obradi statistiku ovdje (npr. pregledaj polja, ažuriraj korisničko sučelje)
-        } catch (const std::exception&) {
-        }
+    .then([](std::shared_ptr<FeedPostsStatsResponse> response) {
+        (void)response;
     });
 [inline-code-end]

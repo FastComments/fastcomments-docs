@@ -1,11 +1,10 @@
 ## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | id | string | 是 |  |
-| userId | string | 否 |  |
-| anonUserId | string | 否 |  |
+| options | const UnFlagCommentOptions& | 是 |  |
 
 ## 响应
 
@@ -15,21 +14,20 @@
 
 [inline-code-attrs-start title = 'unFlagComment 示例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("comment-7890");
-boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U("user@example.com"));
-boost::optional<utility::string_t> anonUserId;
-api->unFlagComment(tenantId, commentId, userId, anonUserId)
-.then([](pplx::task<std::shared_ptr<FlagCommentResponse>> t) {
-    try {
-        auto resp = t.get();
-        auto fallback = std::make_shared<FlagCommentResponse>();
-        if (!resp) resp = fallback;
-        (void)resp;
-    } catch (const std::exception &e) {
-        (void)e;
-    }
-});
+auto options = UnFlagCommentOptions{};
+options.reason = boost::optional<utility::string_t>(U("Resolved by moderator"));
+api->unFlagComment(U("my-tenant-123"), U("comment-456"), options)
+    .then([](std::shared_ptr<FlagCommentResponse> response) {
+        if (response) {
+            auto status = response->status;
+            // 如有需要，处理状态
+        }
+    })
+    .then([](pplx::task<void> previous) {
+        try {
+            previous.get();
+        } catch (const std::exception& e) {
+            // 处理错误
+        }
+    });
 [inline-code-end]
-
----

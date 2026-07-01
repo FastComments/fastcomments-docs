@@ -2,17 +2,18 @@
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| page | number | query | Nej |  |
-| count | number | query | Nej |  |
-| text-search | string | query | Nej |  |
-| byIPFromComment | string | query | Nej |  |
-| filters | string | query | Nej |  |
-| searchFilters | string | query | Nej |  |
-| sorts | string | query | Nej |  |
-| demo | boolean | query | Nej |  |
-| sso | string | query | Nej |  |
+| tenantId | string | query | Yes |  |
+| page | number | query | No |  |
+| count | number | query | No |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sorts | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
-## Respons
+## Svar
 
 Returnerer: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/moderation_a_p_i_get_comments_response.rb)
 
@@ -24,6 +25,7 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 opts = {
   page: 1.2, # Float | 
   count: 1.2, # Float | 
@@ -38,7 +40,7 @@ opts = {
 
 begin
   
-  result = api_instance.get_api_comments(opts)
+  result = api_instance.get_api_comments(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_api_comments: #{e}"

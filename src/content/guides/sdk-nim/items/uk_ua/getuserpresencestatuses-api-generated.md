@@ -1,10 +1,10 @@
 ## Параметри
 
-| Name | Type | Обов'язково | Опис |
-|------|------|-------------|------|
-| tenantId | string | Так |  |
-| urlIdWS | string | Ні |  |
-| userIds | string | Ні |  |
+| Ім'я | Тип | Обов'язковий | Опис |
+|------|------|--------------|------|
+| tenantId | string | Yes |  |
+| urlIdWS | string | No |  |
+| userIds | string | No |  |
 
 ## Відповідь
 
@@ -12,12 +12,9 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад getUserPresenceStatuses'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUserPresenceStatuses Приклад'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUserPresenceStatuses(tenantId = "my-tenant-123", urlIdWS = "news/article-title", userIds = "user-123,user-456")
-if response.isSome:
-  let presenceStatuses = response.get()
-  echo presenceStatuses
-else:
-  echo "No presence data"
+let (presenceOpt, httpResp) = client.getUserPresenceStatuses(tenantId = "my-tenant-123", urlIdWS = "news/article-title", userIds = "user42")
+if presenceOpt.isSome:
+  let presence = presenceOpt.get()
 [inline-code-end]

@@ -16,31 +16,32 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-get_question_results'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת get_question_results'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetQuestionResultsOptions
 from client.models.get_question_results_response import GetQuestionResultsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת ה-host אופציונלית וברירת המחדל היא https://fastcomments.com
-# ראה את configuration.py עבור רשימת כל פרמטרי התצורה הנתמכים.
+# הגדרת המארח היא אופציונלית ובברירת מחדל https://fastcomments.com
+# ראו configuration.py עבור רשימת כל פרמטרי התצורה הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # על הלקוח להגדיר את פרמטרי האימות וההרשאה
 # בהתאם למדיניות האבטחה של שרת ה-API.
-# דוגמאות לכל שיטת אימות מסופקות למטה, השתמש בדוגמה
-# שמתאימה למקרה השימוש שלך.
+# דוגמאות לכל שיטת אימות ניתנות למטה, השתמשו בדוגמה המתאימה
+# שתואמת למקרה השימוש שלכם.
 
-# הגדר אישור באמצעות מפתח API: api_key
+# הגדר הרשאת מפתח API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# הסר את ההערה שלהלן כדי להגדיר קידומת (למשל Bearer) עבור מפתח ה-API, אם יש צורך
+# בטלו את ההשמטה למטה כדי להגדיר קידומת (למשל Bearer) למפתח ה-API, אם נדרש
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# הכנס להקשר עם מופע של לקוח ה-API
+# היכנסו להקשר עם מופע של לקוח ה-API
 with client.ApiClient(configuration) as api_client:
     # צור מופע של מחלקת ה-API
     api_instance = client.DefaultApi(api_client)
@@ -53,7 +54,7 @@ with client.ApiClient(configuration) as api_client:
     skip = 3.4 # float |  (אופציונלי)
 
     try:
-        api_response = api_instance.get_question_results(tenant_id, url_id=url_id, user_id=user_id, start_date=start_date, question_id=question_id, question_ids=question_ids, skip=skip)
+        api_response = api_instance.get_question_results(tenant_id, GetQuestionResultsOptions(url_id=url_id, user_id=user_id, start_date=start_date, question_id=question_id, question_ids=question_ids, skip=skip))
         print("The response of DefaultApi->get_question_results:\n")
         pprint(api_response)
     except Exception as e:

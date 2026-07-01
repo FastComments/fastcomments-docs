@@ -3,7 +3,7 @@
 | Nome | Tipo | Obbligatorio | Descrizione |
 |------|------|--------------|-------------|
 | tenantId | string | Sì |  |
-| sso | string | No |  |
+| sso | string = "" | No |  |
 
 ## Risposta
 
@@ -11,14 +11,10 @@ Restituisce: [`Option[GetUserNotificationCountResponse]`](https://github.com/Fas
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di getUserNotificationCount'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio getUserNotificationCount'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUserNotificationCount(tenantId = "news-tenant-123", sso = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyLTI0NyIsImlhdCI6MTYw945600fQ.sflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c")
-if response.isSome:
-  let countResp = response.get()
-  echo "Received user notification count response: ", countResp
-else:
-  echo "No notification count returned"
+let (optResp, httpResp) = client.getUserNotificationCount(tenantId = "my-tenant-123", sso = "")
+if optResp.isSome:
+  let resp = optResp.get()
+  echo resp
 [inline-code-end]
-
----

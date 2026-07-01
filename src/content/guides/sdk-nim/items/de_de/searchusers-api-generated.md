@@ -1,17 +1,14 @@
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
-|------|------|--------------|-------------|
-| tenantId | string | Ja |  |
-| urlId | string | Ja |  |
-| usernameStartsWith | string | Nein |  |
-| mentionGroupIds | seq[string] | Nein |  |
-| sso | string | Nein |  |
-| searchSection | string | Nein |  |
+|------|------|--------------|--------------|
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| options | SearchUsersOptions | No |  |
 
 ## Antwort
 
-Gibt zurück: [`Option[SearchUsersResult]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_search_users_result.nim)
+Rückgabe: [`Option[SearchUsersResult]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_search_users_result.nim)
 
 ## Beispiel
 
@@ -19,16 +16,10 @@ Gibt zurück: [`Option[SearchUsersResult]`](https://github.com/FastComments/fast
 [inline-code-start]
 let (response, httpResponse) = client.searchUsers(
   tenantId = "my-tenant-123",
-  urlId = "news/top-story",
-  usernameStartsWith = "",
-  mentionGroupIds = @[],
-  sso = "",
-  searchSection = ""
+  urlId = "news/article-title",
+  options = SearchUsersOptions()
 )
 
 if response.isSome:
-  let searchResult = response.get()
-  echo "SearchUsersResult:", searchResult
-else:
-  echo "No result or error. HTTP response:", httpResponse
+  let result = response.get()
 [inline-code-end]

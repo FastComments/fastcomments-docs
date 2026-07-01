@@ -1,24 +1,24 @@
 ## パラメータ
 
-| Name | Type | 必須 | 説明 |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenant_id | String | はい |  |
-| id | String | はい |  |
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
 
 ## レスポンス
 
-戻り値: [`GetEmailTemplateResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_email_template_response.rs)
+返却: [`GetEmailTemplateResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_email_template_response.rs)
 
 ## 例
 
 [inline-code-attrs-start title = 'get_email_template の例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
+async fn fetch_template() -> Result<(), Error> {
     let params: GetEmailTemplateParams = GetEmailTemplateParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "marketing/welcome_v2".to_string(),
+        id: "welcome-email".to_string(),
     };
-    let template: GetEmailTemplateResponse = get_email_template(&configuration, params).await?;
+    let _response = get_email_template(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

@@ -2,8 +2,9 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Так |  |
-| sso | string | query | Ні |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| sso | string | query | No |  |
 
 ## Відповідь
 
@@ -11,15 +12,16 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'getModerationCommentText Приклад'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад getModerationCommentText'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Наведені приклади коду все ще в бета-версії. У разі проблеми, будь ласка, повідомте через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наступні зразки коду все ще в бета-версії. У разі будь-яких проблем, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
-let sso = "sso_example" // String |  (необов'язково)
+let sso = "sso_example" // String |  (optional)
 
-ModerationAPI.getModerationCommentText(commentId: commentId, sso: sso) { (response, error) in
+ModerationAPI.getModerationCommentText(tenantId: tenantId, commentId: commentId, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -30,3 +32,5 @@ ModerationAPI.getModerationCommentText(commentId: commentId, sso: sso) { (respon
     }
 }
 [inline-code-end]
+
+---

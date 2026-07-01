@@ -1,9 +1,11 @@
 ## Параметры
 
-| Имя | Тип | Местоположение | Обязательно | Описание |
-|------|------|----------|----------|-------------|
+| Имя | Тип | Расположение | Обязательно | Описание |
+|------|------|--------------|-------------|----------|
+| tenantId | string | query | Да |  |
 | commentId | string | path | Да |  |
 | voteId | string | path | Да |  |
+| broadcastId | string | query | Нет |  |
 | sso | string | query | Нет |  |
 
 ## Ответ
@@ -24,18 +26,20 @@ import (
 )
 
 func main() {
-	commentId := "commentId_example" // string | 
-	voteId := "voteId_example" // string | 
-	sso := "sso_example" // string |  (необязательно)
+	tenantId := "tenantId_example" // строка | 
+	commentId := "commentId_example" // строка | 
+	voteId := "voteId_example" // строка | 
+	broadcastId := "broadcastId_example" // строка |  (необязательно)
+	sso := "sso_example" // строка |  (необязательно)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.DeleteModerationVote(context.Background(), commentId, voteId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.DeleteModerationVote(context.Background(), commentId, voteId).TenantId(tenantId).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.DeleteModerationVote``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// ответ от `DeleteModerationVote`: VoteDeleteResponse
+	// response from `DeleteModerationVote`: VoteDeleteResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.DeleteModerationVote`: %v\n", resp)
 }
 [inline-code-end]

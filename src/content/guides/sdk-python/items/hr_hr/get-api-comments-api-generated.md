@@ -2,6 +2,7 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Da |  |
 | page | number | query | Ne |  |
 | count | number | query | Ne |  |
 | text-search | string | query | Ne |  |
@@ -21,11 +22,12 @@ Vraća: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fas
 [inline-code-attrs-start title = 'Primjer get_api_comments'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetApiCommentsOptions
 from client.models.moderation_api_get_comments_response import ModerationAPIGetCommentsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definiranje hosta je opcionalno i zadano na https://fastcomments.com
+# Definiranje hosta je opcionalno i zadano je https://fastcomments.com
 # Pogledajte configuration.py za popis svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -34,20 +36,21 @@ configuration = client.Configuration(
 
 # Uđite u kontekst s instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Napravite instancu API klase
+    # Stvorite instancu API klase
     api_instance = client.ModerationApi(api_client)
-    page = 3.4 # float |  (neobavezno)
-    count = 3.4 # float |  (neobavezno)
-    text_search = 'text_search_example' # str |  (neobavezno)
-    by_ip_from_comment = 'by_ip_from_comment_example' # str |  (neobavezno)
-    filters = 'filters_example' # str |  (neobavezno)
-    search_filters = 'search_filters_example' # str |  (neobavezno)
-    sorts = 'sorts_example' # str |  (neobavezno)
-    demo = True # bool |  (neobavezno)
-    sso = 'sso_example' # str |  (neobavezno)
+    tenant_id = 'tenant_id_example' # str | 
+    page = 3.4 # float |  (opcionalno)
+    count = 3.4 # float |  (opcionalno)
+    text_search = 'text_search_example' # str |  (opcionalno)
+    by_ip_from_comment = 'by_ip_from_comment_example' # str |  (opcionalno)
+    filters = 'filters_example' # str |  (opcionalno)
+    search_filters = 'search_filters_example' # str |  (opcionalno)
+    sorts = 'sorts_example' # str |  (opcionalno)
+    demo = True # bool |  (opcionalno)
+    sso = 'sso_example' # str |  (opcionalno)
 
     try:
-        api_response = api_instance.get_api_comments(page=page, count=count, text_search=text_search, by_ip_from_comment=by_ip_from_comment, filters=filters, search_filters=search_filters, sorts=sorts, demo=demo, sso=sso)
+        api_response = api_instance.get_api_comments(tenant_id, GetApiCommentsOptions(page=page, count=count, text_search=text_search, by_ip_from_comment=by_ip_from_comment, filters=filters, search_filters=search_filters, sorts=sorts, demo=demo, sso=sso))
         print("The response of ModerationApi->get_api_comments:\n")
         pprint(api_response)
     except Exception as e:

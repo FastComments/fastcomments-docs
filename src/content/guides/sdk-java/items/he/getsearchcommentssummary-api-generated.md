@@ -1,21 +1,22 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | חובה | תיאור |
 |------|------|----------|----------|-------------|
-| value | string | query | No |  |
-| filters | string | query | No |  |
-| searchFilters | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | כן |  |
+| value | string | query | לא |  |
+| filters | string | query | לא |  |
+| searchFilters | string | query | לא |  |
+| sso | string | query | לא |  |
 
-## Response
+## תגובה
 
 מחזיר: [`ModerationCommentSearchResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationCommentSearchResponse.java)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getSearchCommentsSummary'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה getSearchCommentsSummary'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// ייבוא מחלקות:
+// ייבא מחלקות:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -28,12 +29,13 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String value = "value_example"; // String | 
     String filters = "filters_example"; // String | 
     String searchFilters = "searchFilters_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationCommentSearchResponse result = apiInstance.getSearchCommentsSummary()
+      ModerationCommentSearchResponse result = apiInstance.getSearchCommentsSummary(tenantId)
             .value(value)
             .filters(filters)
             .searchFilters(searchFilters)
@@ -50,5 +52,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

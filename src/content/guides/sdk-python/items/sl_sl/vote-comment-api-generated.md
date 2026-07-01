@@ -1,30 +1,31 @@
-## Parametri
+## Parameters
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Da |  |
-| commentId | string | path | Da |  |
-| urlId | string | query | Da |  |
-| broadcastId | string | query | Da |  |
-| sessionId | string | query | Ne |  |
-| sso | string | query | Ne |  |
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| broadcastId | string | query | Yes |  |
+| sessionId | string | query | No |  |
+| sso | string | query | No |  |
 
-## Odziv
+## Response
 
 Vrne: [`VoteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_response.py)
 
-## Primer
+## Example
 
-[inline-code-attrs-start title = 'Primer vote_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'vote_comment Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import VoteCommentOptions
 from client.models.vote_body_params import VoteBodyParams
 from client.models.vote_response import VoteResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Določitev gostitelja je neobvezna in privzeto uporablja https://fastcomments.com
-# Oglejte si configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
+# Določitev gostitelja je neobvezna in privzeto nastavljena na https://fastcomments.com
+# Glejte datoteko configuration.py za seznam vseh podprtih parametrov konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -39,11 +40,11 @@ with client.ApiClient(configuration) as api_client:
     url_id = 'url_id_example' # str | 
     broadcast_id = 'broadcast_id_example' # str | 
     vote_body_params = client.VoteBodyParams() # VoteBodyParams | 
-    session_id = 'session_id_example' # str |  (izbirno)
-    sso = 'sso_example' # str |  (izbirno)
+    session_id = 'session_id_example' # str |  (neobvezno)
+    sso = 'sso_example' # str |  (neobvezno)
 
     try:
-        api_response = api_instance.vote_comment(tenant_id, comment_id, url_id, broadcast_id, vote_body_params, session_id=session_id, sso=sso)
+        api_response = api_instance.vote_comment(tenant_id, comment_id, url_id, broadcast_id, vote_body_params, VoteCommentOptions(session_id=session_id, sso=sso))
         print("The response of PublicApi->vote_comment:\n")
         pprint(api_response)
     except Exception as e:

@@ -1,26 +1,35 @@
-## Параметри
+## Parameters
 
-| Име | Тип | Задължително | Описание |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| value | string | Не |  |
-| sso | string | Не |  |
+| tenantId | string | Yes |  |
+| options | const GetSearchSitesOptions& | Yes |  |
 
-## Отговор
+## Response
 
-Връща: [`ModerationSiteSearchResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ModerationSiteSearchResponse.h)
+Returns: [`ModerationSiteSearchResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ModerationSiteSearchResponse.h)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'Пример за getSearchSites'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSearchSites Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> valueOpt = boost::optional<utility::string_t>(U("my-tenant-123"));
-boost::optional<utility::string_t> ssoOpt = boost::optional<utility::string_t>(U("user@example.com"));
-api->getSearchSites(valueOpt, ssoOpt)
-    .then([](std::shared_ptr<ModerationSiteSearchResponse> resp){
-        auto response = resp ? resp : std::make_shared<ModerationSiteSearchResponse>();
-        (void)response;
-    })
-    .wait();
+auto tenantId = utility::string_t(U("my-tenant-123"));
+GetSearchSitesOptions options;
+options.query = boost::make_optional(utility::string_t(U("example query")));
+options.limit = boost::make_optional(25);
+
+api->getSearchSites(tenantId, options)
+   .then([](pplx::task<std::shared_ptr<ModerationSiteSearchResponse>> t) {
+       try {
+           auto response = t.get();
+           auto respPtr = std::make_shared<ModerationSiteSearchResponse>(*response);
+           for (const auto& site : respPtr->sites) {
+               // обработка
+           }
+       } catch (const std::exception&) {
+           // обработка на грешки
+       }
+   });
 [inline-code-end]
 
 ---

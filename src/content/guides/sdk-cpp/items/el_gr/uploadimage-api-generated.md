@@ -1,13 +1,13 @@
-Μεταφόρτωση και αλλαγή μεγέθους εικόνας
+---
+Ανέβασμα και αλλαγή μεγέθους εικόνας
 
 ## Παράμετροι
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Ναι |  |
-| file | HttpContent | Ναι |  |
-| sizePreset | SizePreset | Όχι |  |
-| urlId | string | Όχι |  |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+|------|------|------------|-----------|
+| tenantId | string | Yes |  |
+| file | HttpContent | Yes |  |
+| options | const UploadImageOptions& | Yes |  |
 
 ## Απόκριση
 
@@ -15,21 +15,17 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα uploadImage'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'uploadImage Παράδειγμα'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-auto fileBytes = std::vector<unsigned char>{0x89,0x50,0x4E,0x47,0x0D,0x0A,0x1A,0x0A};
-auto file = std::make_shared<HttpContent>(fileBytes, U("image/png"), U("avatar.png"));
-boost::optional<SizePreset> sizePreset = boost::optional<SizePreset>(SizePreset::MEDIUM);
-boost::optional<utility::string_t> urlId = boost::optional<utility::string_t>(U("user-avatar-987"));
-api->uploadImage(tenantId, file, sizePreset, urlId)
-    .then([](pplx::task<std::shared_ptr<UploadImageResponse>> task) {
-        try {
-            return task.get();
-        } catch (...) {
-            return std::shared_ptr<UploadImageResponse>();
-        }
-    });
+auto fileStream = concurrency::streams::fstream::open_istream(U("avatar.png"), std::ios::in).get();
+HttpContent file(fileStream, U("image/png"));
+UploadImageOptions options;
+options.description = boost::optional<utility::string_t>(U("Profile picture"));
+options.width = boost::optional<int>(256);
+options.height = boost::optional<int>(256);
+api->uploadImage(U("my-tenant-123"), file, options).then([](pplx::task<std::shared_ptr<UploadImageResponse>> t){
+    auto resp = t.get();
+});
 [inline-code-end]
 
 ---

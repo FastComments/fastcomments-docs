@@ -1,7 +1,7 @@
 ## Parametre
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
-|------|------|----------|----------|-------------|
+|------|------|-----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 
 ## Svar
@@ -16,20 +16,22 @@ Returnerer: [`CreateTenantResponse`](https://github.com/FastComments/fastcomment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Konfigurér API-nøgleautorisering: api_key
+// Konfigurer API-nøgle autorisation: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Fjern kommentaren nedenfor for at opsætte præfiks (f.eks. Bearer) for API-nøglen, hvis nødvendigt
+// Fjern kommentaren nedenfor for at opsætte præfiks (f.eks. Bearer) for API-nøglen, om nødvendigt
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Hvis du vil bruge en tilpasset HTTP-klient, angiv din klient, som implementerer `GuzzleHttp\ClientInterface`.
-    // Dette er valgfrit; `GuzzleHttp\Client` bruges som standard.
+    // Hvis du vil bruge en tilpasset HTTP-klient, skal du videregive din klient, som implementerer `GuzzleHttp\ClientInterface`.
+    // Dette er valgfrit, `GuzzleHttp\Client` vil blive brugt som standard.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $create_tenant_body = new \FastComments\Client\Model\CreateTenantBody(); // \FastComments\Client\Model\CreateTenantBody
+
 
 try {
     $result = $apiInstance->createTenant($tenant_id, $create_tenant_body);
@@ -38,3 +40,5 @@ try {
     echo 'Exception when calling DefaultApi->createTenant: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

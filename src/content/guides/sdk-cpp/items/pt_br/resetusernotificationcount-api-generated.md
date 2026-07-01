@@ -1,7 +1,7 @@
 ## Parâmetros
 
-| Name | Type | Obrigatório | Descrição |
-|------|------|----------|-------------|
+| Nome | Tipo | Obrigatório | Descrição |
+|------|------|-------------|-----------|
 | tenantId | string | Sim |  |
 | sso | string | Não |  |
 
@@ -11,15 +11,11 @@ Retorna: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fast
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de resetUserNotificationCount'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo resetUserNotificationCount'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
-api->resetUserNotificationCount(tenantId, sso)
-    .then([](std::shared_ptr<ResetUserNotificationsResponse> resp){
-        if(!resp) resp = std::make_shared<ResetUserNotificationsResponse>();
-    })
-    .wait();
+auto resetTask = api->resetUserNotificationCount(
+    U("my-tenant-123"),
+    boost::optional<utility::string_t>(U("user@example.com"))
+).then([](std::shared_ptr<ResetUserNotificationsResponse> resp){
+});
 [inline-code-end]
-
----

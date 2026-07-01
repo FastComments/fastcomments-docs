@@ -1,16 +1,16 @@
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
-|------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| after_id | String | No |  |
-| after_created_at | i64 | No |  |
-| unread_only | bool | No |  |
-| dm_only | bool | No |  |
-| no_dm | bool | No |  |
-| sso | String | No |  |
+| Naam | Type | Verplicht | Beschrijving |
+|------|------|-----------|--------------|
+| tenant_id | String | Ja |  |
+| after_id | String | Nee |  |
+| after_created_at | i64 | Nee |  |
+| unread_only | bool | Nee |  |
+| dm_only | bool | Nee |  |
+| no_dm | bool | Nee |  |
+| sso | String | Nee |  |
 
-## Antwoord
+## Respons
 
 Retourneert: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/reset_user_notifications_response.rs)
 
@@ -18,20 +18,18 @@ Retourneert: [`ResetUserNotificationsResponse`](https://github.com/FastComments/
 
 [inline-code-attrs-start title = 'reset_user_notifications Voorbeeld'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_reset() -> Result<(), Error> {
-    let params: ResetUserNotificationsParams = ResetUserNotificationsParams {
+async fn example() -> Result<(), Error> {
+    let params = ResetUserNotificationsParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        after_id: Some("notif-20260619-0001".to_string()),
-        after_created_at: Some(1_787_400_000i64),
+        after_id: Some("notif-12345".to_string()),
+        after_created_at: Some(1_640_995_200),
         unread_only: Some(true),
         dm_only: Some(false),
-        no_dm: Some(false),
-        sso: Some("saml".to_string()),
+        no_dm: Some(true),
+        sso: Some("sso-provider".to_string()),
     };
-    let response: ResetUserNotificationsResponse =
+    let _response: ResetUserNotificationsResponse =
         reset_user_notifications(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

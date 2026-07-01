@@ -1,6 +1,6 @@
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | domainToUpdate | string | 是 |  |
@@ -14,15 +14,19 @@
 
 [inline-code-attrs-start title = 'putDomainConfig 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "7f12c9a4-3b6e-4d2f-9a1c-5f8b2e0a91c4";
-const domainToUpdate: string = "comments.newsroom-prod.com";
-const updateParams: UpdateDomainConfigParams = {
-  forceHttps: true,
-  enableCORS: true,               // 可选标志（示例可选参数）
-  corsAllowedOrigins: ["https://newsroom-prod.com"]
-};
-const response: PutDomainConfigResponse = await putDomainConfig(tenantId, domainToUpdate, updateParams);
-console.log(response);
+async function runExample() {
+  const tenantId: string = 'tenant-9f8c7b1a';
+  const domainToUpdate: string = 'comments.mywebsite.org';
+  const updateDomainConfigParams: UpdateDomainConfigParams = {
+    enableModeration: true,
+    // 可选字段已省略，例如，maxCommentLength?: number
+  };
+  const result: PutDomainConfigResponse = await putDomainConfig(
+    tenantId,
+    domainToUpdate,
+    updateDomainConfigParams,
+  );
+  console.log(result);
+}
+runExample();
 [inline-code-end]
-
----

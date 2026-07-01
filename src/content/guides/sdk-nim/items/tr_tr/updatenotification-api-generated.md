@@ -1,35 +1,27 @@
----
-## Parametreler
+## Parameters
 
-| Name | Type | Required | Description |
+| Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | id | string | No |  |
 | updateNotificationBody | UpdateNotificationBody | No |  |
-| userId | string | No |  |
+| userId | string = "" | No |  |
 
-## Yanıt
+## Response
 
 Döndürür: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
-## Örnek
+## Example
 
 [inline-code-attrs-start title = 'updateNotification Örneği'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateNotification(
+let body = UpdateNotificationBody(message: "Your comment was approved", isRead: false)
+let (optResp, httpResp) = client.updateNotification(
   tenantId = "my-tenant-123",
-  id = "notif-456",
-  updateNotificationBody = UpdateNotificationBody(
-    enabled = true,
-    channels = @["email", "push"],
-    frequency = "immediate"
-  ),
-  userId = "user-789"
+  id = "notif-789",
+  updateNotificationBody = body,
+  userId = "user-42"
 )
-
-if response.isSome:
-  let apiEmpty = response.get()
-  discard apiEmpty
+if optResp.isSome:
+  let _ = optResp.get()
 [inline-code-end]
-
----

@@ -1,25 +1,27 @@
-## Параметри
+## Parameters
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| commentId | string | Да |  |
-| voteId | string | Не |  |
-| sso | string | Не |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Da |  |
+| commentId | string | Da |  |
+| voteId | string | Ne |  |
+| options | DeleteModerationVoteOptions | Ne |  |
 
-## Одговор
+## Response
 
-Враћа: [`Option[VoteDeleteResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_vote_delete_response.nim)
+Vraća: [`Option[VoteDeleteResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_vote_delete_response.nim)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'deleteModerationVote Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteModerationVote Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteModerationVote(commentId = "my-tenant-123/news/article-title/comment-987", voteId = "vote-456", sso = "sso-token-abc")
-if response.isSome:
-  let voteResp = response.get()
-  echo "Vote deleted:", voteResp
-else:
-  echo "Delete failed:", httpResponse
-[inline-code-end]
+let (respOpt, httpResp) = client.deleteModerationVote(
+  tenantId = "my-tenant-123",
+  commentId = "cmt-987654",
+  voteId = "vote-abc123",
+  options = DeleteModerationVoteOptions()
+)
 
----
+if respOpt.isSome:
+  let resp = respOpt.get()
+[inline-code-end]

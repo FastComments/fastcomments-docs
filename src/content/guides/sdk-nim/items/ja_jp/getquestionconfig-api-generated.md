@@ -1,6 +1,7 @@
+---
 ## パラメータ
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
 | tenantId | string | はい |  |
 | id | string | いいえ |  |
@@ -13,10 +14,10 @@
 
 [inline-code-attrs-start title = 'getQuestionConfig の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getQuestionConfig(tenantId = "my-tenant-123", id = "qst-456")
-if response.isSome:
-  let cfg = response.get()
-  discard cfg
+let (questionConfigOpt, httpResp) = client.getQuestionConfig(tenantId = "my-tenant-123", id = "question-987")
+if questionConfigOpt.isSome:
+  let config = questionConfigOpt.get()
+  echo config
 [inline-code-end]
 
 ---

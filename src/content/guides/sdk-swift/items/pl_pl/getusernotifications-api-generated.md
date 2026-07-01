@@ -1,19 +1,19 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Tak |  |
-| urlId | string | query | Nie | Służy do określenia, czy bieżąca strona jest zasubskrybowana. |
-| pageSize | integer | query | Nie |  |
-| afterId | string | query | Nie |  |
-| includeContext | boolean | query | Nie |  |
-| afterCreatedAt | integer | query | Nie |  |
-| unreadOnly | boolean | query | Nie |  |
-| dmOnly | boolean | query | Nie |  |
-| noDm | boolean | query | Nie |  |
-| includeTranslations | boolean | query | Nie |  |
-| includeTenantNotifications | boolean | query | Nie |  |
-| sso | string | query | Nie |  |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| urlId | string | query | No | Używane do określenia, czy bieżąca strona jest subskrybowana. |
+| pageSize | integer | query | No |  |
+| afterId | string | query | No |  |
+| includeContext | boolean | query | No |  |
+| afterCreatedAt | integer | query | No |  |
+| unreadOnly | boolean | query | No |  |
+| dmOnly | boolean | query | No |  |
+| noDm | boolean | query | No |  |
+| includeTranslations | boolean | query | No |  |
+| includeTenantNotifications | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Odpowiedź
 
@@ -23,23 +23,23 @@ Zwraca: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomme
 
 [inline-code-attrs-start title = 'Przykład getUserNotifications'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Następujące przykłady kodu są nadal w fazie beta. W razie problemu zgłoś na http://github.com/OpenAPITools/openapi-generator/issues/new
+// Poniższe przykłady kodu są wciąż w wersji beta. W razie jakichkolwiek problemów prosimy zgłaszać je pod adresem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let urlId = "urlId_example" // String | Służy do określenia, czy bieżąca strona jest zasubskrybowana. (opcjonalne)
-let pageSize = 987 // Int |  (opcjonalne)
-let afterId = "afterId_example" // String |  (opcjonalne)
-let includeContext = true // Bool |  (opcjonalne)
-let afterCreatedAt = 987 // Int64 |  (opcjonalne)
-let unreadOnly = true // Bool |  (opcjonalne)
-let dmOnly = true // Bool |  (opcjonalne)
-let noDm = true // Bool |  (opcjonalne)
-let includeTranslations = true // Bool |  (opcjonalne)
-let includeTenantNotifications = true // Bool |  (opcjonalne)
-let sso = "sso_example" // String |  (opcjonalne)
+let urlId = "urlId_example" // String | Używane do określenia, czy bieżąca strona jest subskrybowana. (opcjonalnie)
+let pageSize = 987 // Int |  (opcjonalnie)
+let afterId = "afterId_example" // String |  (opcjonalnie)
+let includeContext = true // Bool |  (opcjonalnie)
+let afterCreatedAt = 987 // Int64 |  (opcjonalnie)
+let unreadOnly = true // Bool |  (opcjonalnie)
+let dmOnly = true // Bool |  (opcjonalnie)
+let noDm = true // Bool |  (opcjonalnie)
+let includeTranslations = true // Bool |  (opcjonalnie)
+let includeTenantNotifications = true // Bool |  (opcjonalnie)
+let sso = "sso_example" // String |  (opcjonalnie)
 
-PublicAPI.getUserNotifications(tenantId: tenantId, urlId: urlId, pageSize: pageSize, afterId: afterId, includeContext: includeContext, afterCreatedAt: afterCreatedAt, unreadOnly: unreadOnly, dmOnly: dmOnly, noDm: noDm, includeTranslations: includeTranslations, includeTenantNotifications: includeTenantNotifications, sso: sso) { (response, error) in
+PublicAPI.getUserNotifications(tenantId: tenantId, options: PublicAPI.GetUserNotificationsOptions(urlId: urlId, pageSize: pageSize, afterId: afterId, includeContext: includeContext, afterCreatedAt: afterCreatedAt, unreadOnly: unreadOnly, dmOnly: dmOnly, noDm: noDm, includeTranslations: includeTranslations, includeTenantNotifications: includeTenantNotifications, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -50,5 +50,3 @@ PublicAPI.getUserNotifications(tenantId: tenantId, urlId: urlId, pageSize: pageS
     }
 }
 [inline-code-end]
-
----

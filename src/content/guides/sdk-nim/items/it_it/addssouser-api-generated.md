@@ -1,7 +1,7 @@
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nome | Tipo | Obbligatorio | Descrizione |
+|------|------|--------------|-------------|
 | tenantId | string | Sì |  |
 | createAPISSOUserData | CreateAPISSOUserData | No |  |
 
@@ -11,24 +11,11 @@ Restituisce: [`Option[AddSSOUserAPIResponse]`](https://github.com/FastComments/f
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di addSSOUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio addSSOUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.addSSOUser(
-  tenantId = "my-tenant-123",
-  createAPISSOUserData = CreateAPISSOUserData(
-    id = "sso-456",
-    email = "alice.johnson@newsorg.com",
-    name = "Alice Johnson",
-    roles = @["editor", "contributor"],
-    isActive = true,
-    isAdmin = false
-  )
-)
-if response.isSome:
-  let apiResp = response.get()
-  discard apiResp
-else:
-  discard httpResponse
+let (optResp, httpResp) = client.addSSOUser(tenantId = "my-tenant-123", createAPISSOUserData = CreateAPISSOUserData())
+if optResp.isSome:
+  let userResp = optResp.get()
 [inline-code-end]
 
 ---

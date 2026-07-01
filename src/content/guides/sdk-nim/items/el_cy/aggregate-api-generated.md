@@ -1,33 +1,25 @@
-Συγκεντρώνει έγγραφα ομαδοποιώντας τα (αν παρέχεται groupBy) και εφαρμόζοντας πολλαπλές λειτουργίες.
-Υποστηρίζονται διάφορες λειτουργίες (π.χ. sum, countDistinct, avg, κ.λπ.).
+Συγκεντρώνει έγγραφα ομαδοποιώντας τα (εάν παρέχεται το groupBy) και εφαρμόζοντας πολλαπλές λειτουργίες.  
+Διαφορετικές λειτουργίες (π.χ. sum, countDistinct, avg, κ.λπ.) υποστηρίζονται.
 
-## Παράμετροι
+## Parameters
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
-| tenantId | string | Ναι |  |
-| aggregationRequest | AggregationRequest | Όχι |  |
-| parentTenantId | string | Όχι |  |
-| includeStats | bool | Όχι |  |
+| tenantId | string | Yes |  |
+| aggregationRequest | AggregationRequest | No |  |
+| options | AggregateOptions | No |  |
 
-## Απόκριση
+## Response
 
 Επιστρέφει: [`Option[AggregateResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_aggregate_response.nim)
 
-## Παράδειγμα
+## Example
 
-[inline-code-attrs-start title = 'Παράδειγμα aggregate'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παράδειγμα Συγκέντρωσης'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.aggregate(
-  tenantId = "my-tenant-123",
-  aggregationRequest = AggregationRequest(groupBy = @["articleId"], metrics = @["commentCount"], filters = @[], limit = 0),
-  parentTenantId = "",
-  includeStats = false
-)
-
-if response.isSome:
-  let agg = response.get()
-  discard agg
+let (aggResp, httpResp) = client.aggregate(tenantId = "my-tenant-123", aggregationRequest = AggregationRequest(), options = AggregateOptions())
+if aggResp.isSome:
+  let response = aggResp.get()
+  echo response
+echo httpResp
 [inline-code-end]
-
----

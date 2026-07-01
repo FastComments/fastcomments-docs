@@ -1,5 +1,4 @@
----
-## パラメーター
+## パラメータ
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
@@ -7,28 +6,42 @@
 | includeByUserIdAndEmail | boolean | いいえ |  |
 | includeByIP | boolean | いいえ |  |
 | includeByEmailDomain | boolean | いいえ |  |
+| tenantId | string | いいえ |  |
 | sso | string | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`BulkPreBanSummary`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BulkPreBanSummary.ts)
+返却: [`PostBulkPreBanSummaryResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostBulkPreBanSummaryResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'postBulkPreBanSummary の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const bulkParams: BulkPreBanParams = {
-  accounts: [
-    { userId: 'u_8729', email: 'bot123@malicious.com', ip: '192.0.2.55' },
-    { userId: 'u_9901', email: 'spam.sender@cheapmeds.co', ip: '198.51.100.12' }
-  ],
-  reason: 'Automated pre-ban candidate import'
-};
-const includeByUserIdAndEmail: boolean = true;
-const includeByIP: boolean = true;
-const includeByEmailDomain: boolean = false;
-const sso: string = 'sso_58fd3b2c-token';
-const result: BulkPreBanSummary = await postBulkPreBanSummary(bulkParams, includeByUserIdAndEmail, includeByIP, includeByEmailDomain, sso);
-[inline-code-end]
+async function runExample() {
+  const bulkPreBanParams: BulkPreBanParams = {
+    userIds: [10234, 56789],
+    emails: ["spam_user@example.com", "abuse@badsite.org"],
+    ips: ["203.0.113.45", "198.51.100.22"],
+    emailDomains: ["maliciousdomain.com"]
+  };
 
----
+  const includeByUserIdAndEmail: boolean = true;
+  const includeByIP: boolean = false;
+  const includeByEmailDomain: boolean = true;
+  const tenantId: string = "tenant_8f4b2c1a";
+  const sso: string = "sso-3948abf0";
+
+  const summary: PostBulkPreBanSummaryResponse = await postBulkPreBanSummary(
+    bulkPreBanParams,
+    includeByUserIdAndEmail,
+    includeByIP,
+    includeByEmailDomain,
+    tenantId,
+    sso
+  );
+
+  console.log(summary);
+}
+
+runExample();
+[inline-code-end]

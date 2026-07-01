@@ -1,14 +1,14 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Так |  |
-| userId | string | query | Ні |  |
-| urlId | string | query | Ні |  |
-| fromCommentId | string | query | Ні |  |
-| viewed | boolean | query | Ні |  |
-| type | string | query | Ні |  |
-| skip | number | query | Ні |  |
+| Назва | Тип | Розташування | Обов’язковий | Опис |
+|------|------|--------------|--------------|------|
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| urlId | string | query | No |  |
+| fromCommentId | string | query | No |  |
+| viewed | boolean | query | No |  |
+| type | string | query | No |  |
+| skip | number | query | No |  |
 
 ## Відповідь
 
@@ -18,18 +18,18 @@
 
 [inline-code-attrs-start title = 'Приклад getNotifications'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Наступні приклади коду все ще в бета-версії. У разі проблем, будь ласка, повідомте через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наведені зразки коду ще у бета-версії. У разі проблем, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let userId = "userId_example" // String |  (необов'язково)
-let urlId = "urlId_example" // String |  (необов'язково)
-let fromCommentId = "fromCommentId_example" // String |  (необов'язково)
-let viewed = true // Bool |  (необов'язково)
-let type = "type_example" // String |  (необов'язково)
-let skip = 987 // Double |  (необов'язково)
+let userId = "userId_example" // String |  (необов’язковий)
+let urlId = "urlId_example" // String |  (необов’язковий)
+let fromCommentId = "fromCommentId_example" // String |  (необов’язковий)
+let viewed = true // Bool |  (необов’язковий)
+let type = "type_example" // String |  (необов’язковий)
+let skip = 987 // Double |  (необов’язковий)
 
-DefaultAPI.getNotifications(tenantId: tenantId, userId: userId, urlId: urlId, fromCommentId: fromCommentId, viewed: viewed, type: type, skip: skip) { (response, error) in
+DefaultAPI.getNotifications(tenantId: tenantId, options: DefaultAPI.GetNotificationsOptions(userId: userId, urlId: urlId, fromCommentId: fromCommentId, viewed: viewed, type: type, skip: skip)) { (response, error) in
     guard error == nil else {
         print(error)
         return

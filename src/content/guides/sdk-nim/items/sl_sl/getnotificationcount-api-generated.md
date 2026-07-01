@@ -1,13 +1,9 @@
----
 ## Parametri
 
-| Ime | Tip | Obvezno | Opis |
-|------|------|----------|-------------|
+| Ime | Vrsta | Obvezno | Opis |
+|------|------|----------|-------|
 | tenantId | string | Da |  |
-| userId | string | Ne |  |
-| urlId | string | Da |  |
-| fromCommentId | string | Ne |  |
-| viewed | bool | Ne |  |
+| options | GetNotificationCountOptions | Ne |  |
 
 ## Odgovor
 
@@ -15,12 +11,10 @@ Vrne: [`Option[GetNotificationCountResponse]`](https://github.com/FastComments/f
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer getNotificationCount'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getNotificationCount Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getNotificationCount(tenantId = "my-tenant-123", userId = "user-987", urlId = "news/2026/06/election-results", fromCommentId = "", viewed = false)
-if response.isSome:
-  let notifyData = response.get()
-  echo notifyData
+let (notifOpt, httpResp) = client.getNotificationCount(tenantId = "my-tenant-123", options = GetNotificationCountOptions())
+if notifOpt.isSome:
+  let notif = notifOpt.get()
+  echo notif
 [inline-code-end]
-
----

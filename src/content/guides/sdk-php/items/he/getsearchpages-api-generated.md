@@ -1,17 +1,18 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| שם | סוג | מיקום | חובה | תיאור |
 |------|------|----------|----------|-------------|
-| value | string | query | לא |  |
-| sso | string | query | לא |  |
+| tenantId | string | query | Yes |  |
+| value | string | query | No |  |
+| sso | string | query | No |  |
 
 ## תגובה
 
-מחזיר: [`ModerationPageSearchResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationPageSearchResponse.php)
+Returns: [`ModerationPageSearchResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationPageSearchResponse.php)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getSearchPages'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSearchPages דוגמה'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -19,19 +20,22 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // אם ברצונך להשתמש בלקוח HTTP מותאם אישית, העבר את הלקוח שלך שמממש את `GuzzleHttp\ClientInterface`.
+    // אם ברצונך להשתמש בלקוח HTTP מותאם, העבר את הלקוח שלך המיישם `GuzzleHttp\ClientInterface`.
     // זה אופציונלי, `GuzzleHttp\Client` ישמש כברירת מחדל.
     new GuzzleHttp\Client()
 );
-$value = 'value_example'; // מחרוזת
-$sso = 'sso_example'; // מחרוזת
+
+$tenant_id = 'tenant_id_example'; // string
+$options = [
+    'value' => 'value_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->getSearchPages($value, $sso);
+    $result = $apiInstance->getSearchPages($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ModerationApi->getSearchPages: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception בעת קריאה ל-ModerationApi->getSearchPages: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

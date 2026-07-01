@@ -1,8 +1,8 @@
-Bu SDK'daki tüm API yöntemleri C++ REST SDK'dan `pplx::task<std::shared_ptr<ResponseType>>` döndürür. Bu, API yanıtlarını nasıl ele alacağınıza ilişkin esneklik sağlar.
+All API methods in this SDK return `pplx::task<std::shared_ptr<ResponseType>>` from the C++ REST SDK. This gives you flexibility in how you handle API responses.
 
-### Eşzamanlı Çağrılar `.get()` ile
+### `.get()` ile Eşzamanlı Çağrılar
 
-İstek tamamlanana kadar çağıran iş parçacığını engellemek ve sonucu eşzamanlı olarak almak için `.get()` kullanın:
+Use `.get()` to block the calling thread until the request completes and retrieve the result synchronously:
 
 ```cpp
 auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
@@ -13,33 +13,24 @@ config->setApiKey(utility::conversions::to_string_t("api_key"),
 auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
 org::openapitools::client::api::DefaultApi api(apiClient);
 
-// İsteğin tamamlanmasına kadar engellemek ve sonucu eşzamanlı almak için .get() çağırın
+// Required parameters are positional; optional ones go in the options struct
+org::openapitools::client::api::GetCommentsOptions options;
+options.urlId = utility::conversions::to_string_t("your-url-id");
+
+// Call .get() to block and get the result synchronously
 auto response = api.getComments(
     utility::conversions::to_string_t("your-tenant-id"),
-    boost::none,  // sayfa
-    boost::none,  // limit
-    boost::none,  // atla
-    boost::none,  // ağaç olarak
-    boost::none,  // çocukları atla
-    boost::none,  // çocuk limiti
-    boost::none,  // maksimum ağaç derinliği
-    utility::conversions::to_string_t("your-url-id"),  // urlId
-    boost::none,  // userId
-    boost::none,  // anonUserId
-    boost::none,  // contextUserId
-    boost::none,  // hashTag
-    boost::none,  // parentId
-    boost::none   // direction
-).get();  // HTTP isteği tamamlanana kadar engeller
+    options
+).get();  // Blocks until the HTTP request completes
 
 if (response && response->comments) {
     std::cout << "Found " << response->comments->size() << " comments" << std::endl;
 }
 ```
 
-### Asenkron Çağrılar `.then()` ile
+### `.then()` ile Asenkron Çağrılar
 
-Geri arama tabanlı, bloklamayan asenkron yürütme için `.then()` kullanın:
+Use `.then()` for non-blocking asynchronous execution with callbacks:
 
 ```cpp
 auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
@@ -50,39 +41,40 @@ config->setApiKey(utility::conversions::to_string_t("api_key"),
 auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
 org::openapitools::client::api::DefaultApi api(apiClient);
 
-// Geri arama tabanlı asenkron yürütme için .then() kullanın
+// Required parameters are positional; optional ones go in the options struct
+org::openapitools::client::api::GetCommentsOptions options;
+options.urlId = utility::conversions::to_string_t("your-url-id");
+
+// Use .then() for asynchronous callback-based execution
 api.getComments(
     utility::conversions::to_string_t("your-tenant-id"),
-    boost::none, boost::none, boost::none, boost::none, boost::none,
-    boost::none, boost::none,
-    utility::conversions::to_string_t("your-url-id"),
-    boost::none, boost::none, boost::none, boost::none, boost::none, boost::none
+    options
 ).then([](std::shared_ptr<GetComments_200_response> response) {
-    // İstek tamamlandığında bu asenkron olarak çalışır
+    // This runs asynchronously when the request completes
     if (response && response->comments) {
         std::cout << "Found " << response->comments->size() << " comments" << std::endl;
     }
 });
 
-// Bloklamadan yürütme hemen devam eder
+// Execution continues immediately without blocking
 std::cout << "Request sent, continuing..." << std::endl;
 ```
 
-### Eşzamanlı ile Asenkron Arasında Seçim Yapma
+### Eşzamanlı ve Asenkron Arasında Seçim Yapmak
 
-Seçim, çalışma zamanı ortamınıza ve uygulama mimarinize bağlıdır:
+The choice depends on your runtime environment and application architecture:
 
-**`.get()` (Eşzamanlı bloklama)**
-- HTTP isteği tamamlanana kadar çağıran iş parçacığını engeller
+**`.get()` (Synchronous blocking)**
+- Çağıran iş parçacığını HTTP isteği tamamlanana kadar engeller
 - Daha basit kod akışı, anlaşılması daha kolay
-- Özel işçi iş parçacıkları, toplu işleme veya komut satırı araçları için uygundur
-- Olay döngüleri, GUI iş parçacıkları veya tek iş parçacıklı sunucular için **uygun değildir**
+- Ayrı çalışan iş parçacıkları, toplu işlem veya komut satırı araçları için uygundur
+- **Uygun değildir** olay döngüleri, GUI iş parçacıkları veya tek iş parçacıklı sunucular için
 
-**`.then()` (Asenkron bloklamayan)**
-- Hemen döner, istek tamamlandığında geri arama yürütülür
+**`.then()` (Asynchronous non-blocking)**
+- Hemen döner, geri çağrı istek tamamlandığında çalışır
 - Çağıran iş parçacığını engellemez
-- Olay tabanlı mimariler, GUI uygulamaları veya tek iş parçacıklı olay döngüleri için gereklidir
-- Birden çok işlemi zincirleme olanağı sağlar
-- Kontrol akışı daha karmaşıktır
+- Olay odaklı mimariler, GUI uygulamaları veya tek iş parçacıklı olay döngüleri için gereklidir
+- Birden fazla işlemi zincirleme imkanı sağlar
+- Daha karmaşık kontrol akışı
 
-SDK'nın test paketi yalnızca `.get()` kullanır, ancak bu, bloklamanın kabul edilebilir olduğu test ortamı için uygundur.
+The SDK's test suite uses `.get()` exclusively, but this is appropriate for the test environment where blocking is acceptable.

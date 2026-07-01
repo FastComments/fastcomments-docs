@@ -1,12 +1,13 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必填 | 描述 |
+| 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
-| badgeId | string | query | 是 |  |
-| userId | string | query | 否 |  |
-| commentId | string | query | 否 |  |
-| broadcastId | string | query | 否 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| badgeId | string | query | Yes |  |
+| userId | string | query | No |  |
+| commentId | string | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## 响应
 
@@ -16,7 +17,7 @@
 
 [inline-code-attrs-start title = 'putAwardBadge 示例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 导入类：
+// 导入类:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,13 +30,14 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String badgeId = "badgeId_example"; // String | 
     String userId = "userId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      AwardUserBadgeResponse result = apiInstance.putAwardBadge(badgeId)
+      AwardUserBadgeResponse result = apiInstance.putAwardBadge(tenantId, badgeId)
             .userId(userId)
             .commentId(commentId)
             .broadcastId(broadcastId)
@@ -43,7 +45,7 @@ public class Example {
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ModerationApi#putAwardBadge");
+      System.err.println("调用 ModerationApi#putAwardBadge 时的异常");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -52,5 +54,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

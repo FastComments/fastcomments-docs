@@ -1,10 +1,10 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Так |  |
-| id | string | Ні |  |
-| skip | float64 | Ні |  |
+| Назва | Тип | Обов'язковий | Опис |
+|------|------|--------------|------|
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| skip | float64 | No |  |
 
 ## Відповідь
 
@@ -14,10 +14,16 @@
 
 [inline-code-attrs-start title = 'getEmailTemplateRenderErrors Приклад'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getEmailTemplateRenderErrors(tenantId = "my-tenant-123", id = "", skip = 0.0)
-if response.isSome:
-  let templateErrors = response.get()
-  discard templateErrors
+let (optResp, httpResp) = client.getEmailTemplateRenderErrors(
+  tenantId = "my-tenant-123",
+  id = "welcome-template",
+  skip = 0.0
+)
+
+if optResp.isSome:
+  let resp = optResp.get()
+  # використати resp за потребою
 else:
-  discard httpResponse
+  # обробити відсутню відповідь
+  discard
 [inline-code-end]

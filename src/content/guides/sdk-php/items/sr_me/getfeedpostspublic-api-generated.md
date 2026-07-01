@@ -2,25 +2,25 @@ req
 tenantId
 afterId
 
-## Параметри
+## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| afterId | string | query | Не |  |
-| limit | integer | query | Не |  |
-| tags | array | query | Не |  |
-| sso | string | query | Не |  |
-| isCrawler | boolean | query | Не |  |
-| includeUserInfo | boolean | query | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | putanja | Da |  |
+| afterId | string | upit | Ne |  |
+| limit | integer | upit | Ne |  |
+| tags | array | upit | Ne |  |
+| sso | string | upit | Ne |  |
+| isCrawler | boolean | upit | Ne |  |
+| includeUserInfo | boolean | upit | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PublicFeedPostsResponse.php)
+Vraća: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PublicFeedPostsResponse.php)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'Пример getFeedPostsPublic'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getFeedPostsPublic Primjer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -28,20 +28,24 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ако желите да користите прилагођени http клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционално, `GuzzleHttp\Client` ће бити коришћен као подразумевани.
+    // Ako želite koristiti prilagođeni HTTP klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao podrazumevani.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$after_id = 'after_id_example'; // string
-$limit = 56; // int
-$tags = array('tags_example'); // string[]
-$sso = 'sso_example'; // string
-$is_crawler = True; // bool
-$include_user_info = True; // bool
+$options = [
+    'after_id' => 'after_id_example', // string
+    'limit' => 56, // int
+    'tags' => array('tags_example'), // string[]
+    'sso' => 'sso_example', // string
+    'is_crawler' => True, // bool
+    'include_user_info' => True, // bool
+];
+
 
 try {
-    $result = $apiInstance->getFeedPostsPublic($tenant_id, $after_id, $limit, $tags, $sso, $is_crawler, $include_user_info);
+    $result = $apiInstance->getFeedPostsPublic($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getFeedPostsPublic: ', $e->getMessage(), PHP_EOL;

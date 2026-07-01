@@ -1,17 +1,10 @@
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
+| tenantId | string | Tak |  |
 | commentId | string | Tak |  |
-| banEmail | bool | Nie |  |
-| banEmailDomain | bool | Nie |  |
-| banIP | bool | Nie |  |
-| deleteAllUsersComments | bool | Nie |  |
-| bannedUntil | string | Nie |  |
-| isShadowBan | bool | Nie |  |
-| updateId | string | Nie |  |
-| banReason | string | Nie |  |
-| sso | string | Nie |  |
+| options | PostBanUserFromCommentOptions | Nie |  |
 
 ## Odpowiedź
 
@@ -21,23 +14,13 @@ Zwraca: [`Option[BanUserFromCommentResult]`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'Przykład postBanUserFromComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postBanUserFromComment(
-  commentId = "cmt-8f3a1b",
-  banEmail = false,
-  banEmailDomain = false,
-  banIP = false,
-  deleteAllUsersComments = false,
-  bannedUntil = "",
-  isShadowBan = false,
-  updateId = "",
-  banReason = "",
-  sso = ""
+let (banResult, httpResp) = client.postBanUserFromComment(
+  tenantId = "my-tenant-123",
+  commentId = "cmt-456",
+  options = PostBanUserFromCommentOptions()
 )
-if response.isSome:
-  let banResult = response.get()
-  discard banResult
-else:
-  echo "No ban result returned"
-[inline-code-end]
 
----
+if banResult.isSome:
+  let result = banResult.get()
+  echo result
+[inline-code-end]

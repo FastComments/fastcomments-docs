@@ -1,6 +1,6 @@
-## Parametri
+## Parameters
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Ime | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Da |  |
 | commentId | string | path | Da |  |
@@ -16,17 +16,17 @@ Vraća: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'setCommentText Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sledeći uzorci koda su još u beta fazi. Za bilo koji problem, prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledeći primeri koda su još u beta fazi. Za bilo koji problem, molimo prijavite preko http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
 let broadcastId = "broadcastId_example" // String | 
 let commentTextUpdateRequest = CommentTextUpdateRequest(comment: "comment_example", mentions: [CommentUserMentionInfo(id: "id_example", tag: "tag_example", rawTag: "rawTag_example", type: "type_example", sent: false)], hashTags: [CommentUserHashTagInfo(id: "id_example", tag: "tag_example", url: "url_example", retain: false)]) // CommentTextUpdateRequest | 
-let editKey = "editKey_example" // String |  (neobavezno)
-let sso = "sso_example" // String |  (neobavezno)
+let editKey = "editKey_example" // String |  (opcionalno)
+let sso = "sso_example" // String |  (opcionalno)
 
-PublicAPI.setCommentText(tenantId: tenantId, commentId: commentId, broadcastId: broadcastId, commentTextUpdateRequest: commentTextUpdateRequest, editKey: editKey, sso: sso) { (response, error) in
+PublicAPI.setCommentText(tenantId: tenantId, commentId: commentId, broadcastId: broadcastId, commentTextUpdateRequest: commentTextUpdateRequest, options: PublicAPI.SetCommentTextOptions(editKey: editKey, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -37,5 +37,3 @@ PublicAPI.setCommentText(tenantId: tenantId, commentId: commentId, broadcastId: 
     }
 }
 [inline-code-end]
-
----

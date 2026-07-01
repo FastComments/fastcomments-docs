@@ -1,13 +1,9 @@
 ## Paramètres
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nom | Type | Obligatoire | Description |
+|------|------|-------------|-------------|
 | tenantId | string | Oui |  |
-| userId | string | Non |  |
-| urlId | string | Oui |  |
-| fromCommentId | string | Non |  |
-| viewed | bool | Non |  |
-| skip | float64 | Non |  |
+| options | GetNotificationsOptions | Non |  |
 
 ## Réponse
 
@@ -15,12 +11,9 @@ Retourne : [`Option[GetNotificationsResponse]`](https://github.com/FastComments/
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getNotifications'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getNotifications'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getNotifications(tenantId = "my-tenant-123", userId = "user-456", urlId = "news/article-title", fromCommentId = "cmt-789", viewed = false, skip = 0.0)
-if response.isSome:
-  let notifications = response.get()
-  echo notifications
+let (notifOpt, httpResp) = client.getNotifications(tenantId = "my-tenant-123", options = GetNotificationsOptions())
+if notifOpt.isSome:
+  let notifications = notifOpt.get()
 [inline-code-end]
-
----

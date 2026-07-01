@@ -1,57 +1,61 @@
-Агрегира документе групишући их (ако је обезбеђен groupBy) и примењујући више операција. Подржавају се различите операције (нпр. sum, countDistinct, avg, итд.).
+Aggregates documents by grouping them (if groupBy is provided) and applying multiple operations.  
+Различите операције (нпр. sum, countDistinct, avg, итд.) су подржане.
 
-## Параметри
+## Parameters
 
-| Име | Тип | Локација | Обавезно | Опис |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| parentTenantId | string | query | Не |  |
-| includeStats | boolean | query | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| parentTenantId | string | query | No |  |
+| includeStats | boolean | query | No |  |
 
-## Одговор
+## Response
 
-Враћа: [`AggregateResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/aggregate_response.py)
+Returns: [`AggregateResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/aggregate_response.py)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'Пример агрегирања'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'agregat Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import AggregateOptions
 from client.models.aggregate_response import AggregateResponse
 from client.models.aggregation_request import AggregationRequest
 from client.rest import ApiException
 from pprint import pprint
 
-# Постављање host-а је опционално и по подразумеваној вредности је https://fastcomments.com
-# Погледајте configuration.py за списак свих подржаних конфигурационих параметара.
+# Definisanje host-a je opciono i podrazumevano je https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клијент мора да конфигурише параметре аутентификације и овлашћења
-# у складу са политиком безбедности API сервера.
-# Примери за сваки метод аутентификације су датe испод, користите пример који
-# одговара вашем случају коришћења аутентификације.
+# Klijent mora da konfiguriše parametre autentikacije i autorizacije
+# u skladu sa politikom sigurnosti API servera.
+# Primeri za svaki metod autentikacije su dati ispod, koristite primer koji
+# zadovoljava vaš slučaj upotrebe autentikacije.
 
-# Configure API key authorization: api_key
+# Konfigurišite autorizaciju API ključa: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Откоментирајте следеће да бисте подесили префикс (нпр. Bearer) за API key, ако је потребно
+# Otkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Уђите у контекст са инстанцом API клијента
+# Unesite kontekst sa instancijom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Креирајте инстанцу API класе
+    # Kreirajte instancu API klase
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     aggregation_request = client.AggregationRequest() # AggregationRequest | 
-    parent_tenant_id = 'parent_tenant_id_example' # str |  (опционо)
-    include_stats = True # bool |  (опционо)
+    parent_tenant_id = 'parent_tenant_id_example' # str |  (optional)
+    include_stats = True # bool |  (optional)
 
     try:
-        api_response = api_instance.aggregate(tenant_id, aggregation_request, parent_tenant_id=parent_tenant_id, include_stats=include_stats)
+        api_response = api_instance.aggregate(tenant_id, aggregation_request, AggregateOptions(parent_tenant_id=parent_tenant_id, include_stats=include_stats))
         print("The response of DefaultApi->aggregate:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling DefaultApi->aggregate: %s\n" % e)
 [inline-code-end]
+
+---

@@ -1,28 +1,30 @@
----
 ## Parametreler
 
 | Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
-| comment_id | String | Evet |  |
-| approved | bool | Hayır |  |
-| sso | String | Hayır |  |
+| tenant_id | String | Yes |  |
+| comment_id | String | Yes |  |
+| approved | bool | No |  |
+| broadcast_id | String | No |  |
+| sso | String | No |  |
 
 ## Yanıt
 
-Dönüş değeri: [`SetCommentApprovedResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/set_comment_approved_response.rs)
+Döndürür: [`SetCommentApprovedResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/set_comment_approved_response.rs)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'post_set_comment_approval_status Örneği'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let params: PostSetCommentApprovalStatusParams = PostSetCommentApprovalStatusParams {
-        comment_id: String::from("news/article/2026-06-19/post-42/comment-128"),
+async fn approve_comment(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = PostSetCommentApprovalStatusParams {
+        tenant_id: "acme-corp".to_string(),
+        comment_id: "cmt-9876".to_string(),
         approved: Some(true),
-        sso: Some(String::from("sso:user:acme:eyJhbGciOiJIUzI1Ni")),
+        broadcast_id: Some("broadcast-2023".to_string()),
+        sso: None,
     };
-    let response: SetCommentApprovedResponse = post_set_comment_approval_status(&configuration, params).await?;
-    let _response = response;
+    let _response = post_set_comment_approval_status(configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

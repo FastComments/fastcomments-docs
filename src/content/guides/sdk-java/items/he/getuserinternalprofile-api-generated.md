@@ -1,9 +1,10 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | חובה | תיאור |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| commentId | string | query | לא |  |
-| sso | string | query | לא |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## תגובה
 
@@ -11,9 +12,9 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getUserInternalProfile'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getUserInternalProfile'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// ייבוא מחלקות:
+// ייבא את המחלקות:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
-    String commentId = "commentId_example"; // מחרוזת | 
-    String sso = "sso_example"; // מחרוזת | 
+    String tenantId = "tenantId_example"; // String | 
+    String commentId = "commentId_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
-      GetUserInternalProfileResponse result = apiInstance.getUserInternalProfile()
+      GetUserInternalProfileResponse result = apiInstance.getUserInternalProfile(tenantId)
             .commentId(commentId)
             .sso(sso)
             .execute();
@@ -44,3 +46,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

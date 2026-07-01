@@ -1,7 +1,7 @@
 ## Parametri
 
-| Naziv | Type | Obavezno | Opis |
-|------|------|----------|-------------|
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
 | tenantId | string | Da |  |
 | id | string | Ne |  |
 
@@ -11,11 +11,11 @@ Vraća: [`Option[GetUserResponse]`](https://github.com/FastComments/fastcomments
 
 ## Primjer
 
-[inline-code-attrs-start title = 'getUser Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUser(tenantId = "my-tenant-123", id = "user-456")
-if response.isSome:
-  let user = response.get()
+let (userOpt, httpResp) = client.getUser(tenantId = "my-tenant-123", id = "user-456")
+if userOpt.isSome:
+  let user = userOpt.get()
   echo user
 else:
   echo "User not found"

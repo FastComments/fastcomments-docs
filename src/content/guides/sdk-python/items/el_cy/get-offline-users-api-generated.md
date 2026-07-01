@@ -1,48 +1,48 @@
-Προηγούμενοι σχολιαστές στη σελίδα που ΔΕΝ είναι αυτή τη στιγμή συνδεδεμένοι. Ταξινομούνται κατά displayName.
-Χρησιμοποιήστε αυτό μετά την εξάντληση του /users/online για να αποδώσετε μια ενότητα "Members".
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName}
-index from afterName forward via $gt, no $skip cost.
+Past commenters on the page who are NOT currently online. Sorted by displayName.  
+Use this after exhausting /users/online to render a "Members" section.  
+Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.
 
-## Παράμετροι
+## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Ναι |  |
-| urlId | string | query | Ναι | Page URL identifier (cleaned server-side). |
-| afterName | string | query | Όχι | Cursor: pass nextAfterName from the previous response. |
-| afterUserId | string | query | Όχι | Cursor tiebreaker: pass nextAfterUserId from the previous response. Required when afterName is set so name-ties don't drop entries. |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes | Αναγνωριστικό URL σελίδας (καθαρισμένο από τον διακομιστή). |
+| afterName | string | query | No | Κέρσορας: περάστε το nextAfterName από την προηγούμενη απόκριση. |
+| afterUserId | string | query | No | Διαχωριστικό κέρσορα: περάστε το nextAfterUserId από την προηγούμενη απόκριση. Απαιτείται όταν afterName έχει οριστεί ώστε τα ισοδύναμα ονόματα να μην αφαιρεθούν. |
 
-## Απόκριση
+## Response
 
-Επιστρέφει: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/page_users_offline_response.py)
+Returns: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/page_users_offline_response.py)
 
-## Παράδειγμα
+## Example
 
 [inline-code-attrs-start title = 'Παράδειγμα get_offline_users'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetOfflineUsersOptions
 from client.models.page_users_offline_response import PageUsersOfflineResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Ορισμός του host είναι προαιρετικός και έχει προεπιλεγμένη τιμή https://fastcomments.com
-# Δείτε το configuration.py για λίστα με όλες τις υποστηριζόμενες παραμέτρους ρύθμισης.
+# Ο ορισμός του host είναι προαιρετικός και προεπιλεγμένος στο https://fastcomments.com
+# Δείτε το configuration.py για τη λίστα όλων των υποστηριζόμενων παραμέτρων διαμόρφωσης.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Εισέλθετε σε πλαίσιο με ένα στιγμιότυπο του API client
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Δημιουργήστε ένα στιγμιότυπο της κλάσης API
+    # Create an instance of the API class
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    url_id = 'url_id_example' # str | Αναγνωριστικό διεύθυνσης URL της σελίδας (καθαρίζεται από τον διακομιστή).
-    after_name = 'after_name_example' # str | Δείκτης: περάστε το nextAfterName από την προηγούμενη απόκριση. (προαιρετικό)
-    after_user_id = 'after_user_id_example' # str | Διαχωριστικό ισοβαθμίας δείκτη: περάστε το nextAfterUserId από την προηγούμενη απόκριση. Απαιτείται όταν έχει οριστεί το afterName ώστε οι ισοβαθμίες ονομάτων να μην παραλείπουν καταχωρήσεις. (προαιρετικό)
+    url_id = 'url_id_example' # str | Αναγνωριστικό URL σελίδας (καθαρισμένο από τον διακομιστή).
+    after_name = 'after_name_example' # str | Κέρσορας: περάστε το nextAfterName από την προηγούμενη απόκριση. (προαιρετικό)
+    after_user_id = 'after_user_id_example' # str | Διαχωριστικό κέρσορα: περάστε το nextAfterUserId από την προηγούμενη απόκριση. Απαιτείται όταν afterName έχει οριστεί ώστε τα ισοδύναμα ονόματα να μην αφαιρεθούν. (προαιρετικό)
 
     try:
-        api_response = api_instance.get_offline_users(tenant_id, url_id, after_name=after_name, after_user_id=after_user_id)
+        api_response = api_instance.get_offline_users(tenant_id, url_id, GetOfflineUsersOptions(after_name=after_name, after_user_id=after_user_id))
         print("The response of PublicApi->get_offline_users:\n")
         pprint(api_response)
     except Exception as e:

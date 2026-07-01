@@ -1,12 +1,10 @@
 ## Параметри
 
-| Име | Тип | Задължително | Описание |
+| Име | Тип | Задължителен | Описание |
 |------|------|----------|-------------|
+| tenantId | string | Да |  |
 | badgeId | string | Не |  |
-| userId | string | Не |  |
-| commentId | string | Да |  |
-| broadcastId | string | Не |  |
-| sso | string | Не |  |
+| options | PutAwardBadgeOptions | Не |  |
 
 ## Отговор
 
@@ -14,20 +12,14 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за putAwardBadge'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putAwardBadge Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.putAwardBadge(
-  badgeId = "gold-contributor",
-  userId = "user-8723",
-  commentId = "cmt-54a3b2",
-  broadcastId = "",
-  sso = ""
+  tenantId = "my-tenant-123",
+  badgeId = "gold-badge",
+  options = PutAwardBadgeOptions()
 )
+
 if response.isSome:
   let award = response.get()
-  echo "Awarded badge received"
-else:
-  echo "No award response"
 [inline-code-end]
-
----

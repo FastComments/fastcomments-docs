@@ -1,7 +1,8 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Sí |  |
 | text-search | string | query | No |  |
 | byIPFromComment | string | query | No |  |
 | filters | string | query | No |  |
@@ -15,28 +16,27 @@ Devuelve: [`ModerationExportResponse`](https://github.com/FastComments/fastcomme
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de post_api_export'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_api_export Ejemplo'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 opts = {
-  text_search: 'text_search_example', # Cadena | 
-  by_ip_from_comment: 'by_ip_from_comment_example', # Cadena | 
-  filters: 'filters_example', # Cadena | 
-  search_filters: 'search_filters_example', # Cadena | 
-  sorts: 'sorts_example', # Cadena | 
-  sso: 'sso_example' # Cadena | 
+  text_search: 'text_search_example', # String | 
+  by_ip_from_comment: 'by_ip_from_comment_example', # String | 
+  filters: 'filters_example', # String | 
+  search_filters: 'search_filters_example', # String | 
+  sorts: 'sorts_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.post_api_export(opts)
+  result = api_instance.post_api_export(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_api_export: #{e}"
 end
 [inline-code-end]
-
----

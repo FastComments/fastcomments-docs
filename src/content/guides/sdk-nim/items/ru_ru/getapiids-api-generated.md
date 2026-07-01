@@ -1,14 +1,9 @@
 ## Параметры
 
-| Name | Type | Обязательно | Описание |
-|------|------|----------|-------------|
-| textSearch | string | Нет |  |
-| byIPFromComment | string | Нет |  |
-| filters | string | Нет |  |
-| searchFilters | string | Нет |  |
-| afterId | string | Нет |  |
-| demo | bool | Нет |  |
-| sso | string | Нет |  |
+| Имя | Тип | Обязательно | Описание |
+|------|------|--------------|----------|
+| tenantId | string | Да |  |
+| options | GetApiIdsOptions | Нет |  |
 
 ## Ответ
 
@@ -16,21 +11,11 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'getApiIds Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getApiIds'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getApiIds(
-  textSearch = "urgent moderation review",
-  byIPFromComment = "203.0.113.45",
-  filters = "status:pending,flagged",
-  searchFilters = "author:jane.doe@example.com",
-  afterId = "cmt_9f8e7d6a",
-  demo = false,
-  sso = "sso-token-6b7f9a"
-)
-
-if response.isSome:
-  let idsResp = response.get()
-  echo idsResp
+let opts = GetApiIdsOptions()
+let (maybeResponse, httpResponse) = client.getApiIds(tenantId = "my-tenant-123", options = opts)
+if maybeResponse.isSome:
+  let response = maybeResponse.get()
+  echo response
 [inline-code-end]
-
----

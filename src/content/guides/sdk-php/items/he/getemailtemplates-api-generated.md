@@ -1,13 +1,13 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | הכרחי | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | skip | number | query | No |  |
 
 ## תגובה
 
-מחזיר: [`GetEmailTemplatesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetEmailTemplatesResponse.php)
+מחזירה: [`GetEmailTemplatesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetEmailTemplatesResponse.php)
 
 ## דוגמה
 
@@ -17,20 +17,22 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// הגדרת הרשאת מפתח ה-API: api_key
+// הגדרות הרשאת מפתח API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// הסר את ההערה למטה כדי להגדיר קידומת (למשל Bearer) עבור מפתח ה-API, אם נדרש
+// בטלו את ההערה למטה כדי להגדיר קידומת (למשל Bearer) למפתח ה-API, אם נדרש
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // אם ברצונך להשתמש בלקוח HTTP מותאם אישית, העבר את הלקוח שלך שמממש את `GuzzleHttp\ClientInterface`.
-    // זה אופציונלי, `GuzzleHttp\Client` ישמש כברירת מחדל.
+    // אם ברצונך להשתמש במנוע HTTP מותאם, העבר את הלקוח שלך שמממש `GuzzleHttp\ClientInterface`.
+    // זה אופציונלי, `GuzzleHttp\Client` ישמש ברירת מחדל.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$skip = 3.4; // float
+
+$tenant_id = 'tenant_id_example'; // מחרוזת
+$skip = 3.4; // מספר עשרוני
+
 
 try {
     $result = $apiInstance->getEmailTemplates($tenant_id, $skip);

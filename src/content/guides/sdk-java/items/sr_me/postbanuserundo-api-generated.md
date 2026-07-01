@@ -1,18 +1,19 @@
-## Параметри
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| sso | string | query | Не |  |
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
+Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'postBanUserUndo Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postBanUserUndo Primjer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Увези класе:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -25,17 +26,22 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     BanUserUndoParams banUserUndoParams = new BanUserUndoParams(); // BanUserUndoParams | 
     String sso = "sso_example"; // String | 
     try {
-      APIEmptyResponse result = apiInstance.postBanUserUndo(banUserUndoParams)
+      APIEmptyResponse result = apiInstance.postBanUserUndo(tenantId, banUserUndoParams)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
+      // Exception when calling ModerationApi#postBanUserUndo
       System.err.println("Exception when calling ModerationApi#postBanUserUndo");
+      // Status code: 
       System.err.println("Status code: " + e.getCode());
+      // Reason: 
       System.err.println("Reason: " + e.getResponseBody());
+      // Response headers: 
       System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }

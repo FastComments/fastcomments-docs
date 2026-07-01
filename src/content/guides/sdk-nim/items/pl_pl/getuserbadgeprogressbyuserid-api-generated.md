@@ -1,9 +1,9 @@
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| userId | string | No |  |
+|------|------|----------|------|
+| tenantId | string | Tak |  |
+| userId | string | Nie |  |
 
 ## Odpowiedź
 
@@ -13,13 +13,8 @@ Zwraca: [`Option[APIGetUserBadgeProgressResponse]`](https://github.com/FastComme
 
 [inline-code-attrs-start title = 'Przykład getUserBadgeProgressByUserId'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let tenantId = "my-tenant-123"
-let userId = "user-456"
-let (response, httpResponse) = client.getUserBadgeProgressByUserId(tenantId = tenantId, userId = userId)
-if response.isSome:
-  let badgeProgress = response.get()
-  echo "Badge progress retrieved for ", userId
-  discard badgeProgress
+let (badgeProgressOpt, httpResp) = client.getUserBadgeProgressByUserId(tenantId = "my-tenant-123", userId = "user-456")
+if badgeProgressOpt.isSome:
+  let progress = badgeProgressOpt.get()
+  echo progress
 [inline-code-end]
-
----

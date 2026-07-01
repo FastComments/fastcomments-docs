@@ -1,14 +1,9 @@
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
-|------|------|----------|-------------|
-| textSearch | string | No |  |
-| byIPFromComment | string | No |  |
-| filters | string | No |  |
-| searchFilters | string | No |  |
-| afterId | string | No |  |
-| demo | bool | No |  |
-| sso | string | No |  |
+| Naam | Type | Verplicht | Beschrijving |
+|------|------|-----------|--------------|
+| tenantId | string | Ja |  |
+| options | GetApiIdsOptions | Nee |  |
 
 ## Response
 
@@ -18,19 +13,9 @@ Retourneert: [`Option[ModerationAPIGetCommentIdsResponse]`](https://github.com/F
 
 [inline-code-attrs-start title = 'getApiIds Voorbeeld'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getApiIds(
-  textSearch = "urgent moderation review",
-  byIPFromComment = "203.0.113.45",
-  filters = "status:pending,flagged",
-  searchFilters = "author:jane.doe@example.com",
-  afterId = "cmt_9f8e7d6a",
-  demo = false,
-  sso = "sso-token-6b7f9a"
-)
-
-if response.isSome:
-  let idsResp = response.get()
-  echo idsResp
+let opts = GetApiIdsOptions()
+let (maybeResponse, httpResponse) = client.getApiIds(tenantId = "my-tenant-123", options = opts)
+if maybeResponse.isSome:
+  let response = maybeResponse.get()
+  echo response
 [inline-code-end]
-
----

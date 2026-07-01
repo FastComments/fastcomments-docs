@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | tenant_id | String | כן |  |
 | url_id | String | כן |  |
@@ -15,23 +15,17 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-create_comment_public'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_comment_public דוגמה'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn post_public_comment(configuration: &configuration::Configuration) -> Result<SaveCommentsResponseWithPresence, Error> {
-    let params: CreateCommentPublicParams = CreateCommentPublicParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        url_id: "news/world/economic-update-2026".to_string(),
-        broadcast_id: "broadcast-2026-06-19-001".to_string(),
-        comment_data: models::CommentData {
-            content: "Great analysis — this clarified a lot of the market dynamics.".to_string(),
-            ..Default::default()
-        },
-        session_id: Some("sess-9f8e7d6c".to_string()),
-        sso: Some("sso-jwt-eyJhbGciOi...".to_string()),
-    };
-    let response: SaveCommentsResponseWithPresence = create_comment_public(configuration, params).await?;
-    Ok(response)
-}
+let params = CreateCommentPublicParams {
+    tenant_id: "acme-corp-tenant".to_string(),
+    url_id: "news/article-123".to_string(),
+    broadcast_id: "broadcast-2023-09-01".to_string(),
+    comment_data: models::CommentData {
+        text: "Great read!".to_string(),
+    },
+    session_id: Some("session-abc123".to_string()),
+    sso: Some("sso-token-xyz".to_string()),
+};
+let response = create_comment_public(&configuration, params).await?;
 [inline-code-end]
-
----

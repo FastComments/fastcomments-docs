@@ -11,16 +11,15 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'get_user דוגמה'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת get_user'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_user() -> Result<(), Error> {
+async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {
     let params = GetUserParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "user-7b9a2c".to_string(),
-        include_roles: Some(true),
+        id: "user-123".to_string(),
+        include_details: Some(true),
     };
-    let user: GetUserResponse = get_user(&configuration, params).await?;
-    println!("{:#?}", user);
+    let _response = get_user(configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

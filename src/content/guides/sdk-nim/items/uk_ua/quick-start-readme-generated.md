@@ -1,6 +1,6 @@
 ### Використання автентифікованих API (DefaultAPI)
 
-**Важливо:** Автентифіковані кінцеві точки вимагають встановлення вашого API-ключа в заголовку `x-api-key`.
+**Important:** Автентифіковані кінцеві точки потребують, щоб ваш API ключ був встановлений у заголовок `x-api-key`.
 
 ```nim
 import httpclient
@@ -11,24 +11,16 @@ import fastcomments/models/model_comment_data
 let client = newHttpClient()
 client.headers["x-api-key"] = "your-api-key"
 
-# Виконати автентифіковані виклики API
+# Make authenticated API calls.
+# Required parameters (and the request body) are positional; optional
+# parameters are passed via the operation's options object.
 let (response, httpResponse) = getComments(
   httpClient = client,
   tenantId = "your-tenant-id",
-  page = 0,
-  limit = 0,
-  skip = 0,
-  asTree = false,
-  skipChildren = 0,
-  limitChildren = 0,
-  maxTreeDepth = 0,
-  urlId = "your-url-id",
-  userId = "",
-  anonUserId = "",
-  contextUserId = "",
-  hashTag = "",
-  parentId = "",
-  direction = SortDirections.DESC
+  options = GetCommentsOptions(
+    urlId: "your-url-id",
+    direction: SortDirections.DESC
+  )
 )
 
 if response.isSome:
@@ -48,37 +40,15 @@ import fastcomments/apis/api_public
 
 let client = newHttpClient()
 
-# Виконати публічні виклики API
+# Make public API calls.
+# tenantId and urlId are required (positional); everything else is optional.
 let (response, httpResponse) = getCommentsPublic(
   httpClient = client,
   tenantId = "your-tenant-id",
   urlId = "your-url-id",
-  page = 0,
-  direction = SortDirections.DESC,
-  sso = "",
-  skip = 0,
-  skipChildren = 0,
-  limit = 0,
-  limitChildren = 0,
-  countChildren = false,
-  fetchPageForCommentId = "",
-  includeConfig = false,
-  countAll = false,
-  includei10n = false,
-  locale = "",
-  modules = "",
-  isCrawler = false,
-  includeNotificationCount = false,
-  asTree = false,
-  maxTreeDepth = 0,
-  useFullTranslationIds = false,
-  parentId = "",
-  searchText = "",
-  hashTags = @[],
-  userId = "",
-  customConfigStr = "",
-  afterCommentId = "",
-  beforeCommentId = ""
+  options = GetCommentsPublicOptions(
+    direction: SortDirections.DESC
+  )
 )
 
 if response.isSome:
@@ -89,7 +59,7 @@ if response.isSome:
 
 ### Використання модераційних API (ModerationAPI)
 
-Модераційні кінцеві точки забезпечують роботу панелі модератора та автентифікуються за допомогою SSO-токена для поточного модератора:
+Модераційні кінцеві точки живлять панель модератора і автентифіковані за допомогою SSO токена для діючого модератора:
 
 ```nim
 import httpclient
@@ -98,18 +68,15 @@ import fastcomments/apis/api_moderation
 
 let client = newHttpClient()
 
-# Перелік коментарів у панелі модератора
+# List comments in the moderation dashboard.
+# This operation has no required parameters, so everything is optional.
 let (response, httpResponse) = getApiComments(
   httpClient = client,
-  page = 0,
-  count = 30,
-  textSearch = "",
-  byIPFromComment = "",
-  filters = "",
-  searchFilters = "",
-  sorts = "",
-  demo = false,
-  sso = "your-sso-token"
+  options = GetApiCommentsOptions(
+    count: 30,
+    tenantId: "your-tenant-id",
+    sso: "your-sso-token"
+  )
 )
 
 if response.isSome:
@@ -117,7 +84,7 @@ if response.isSome:
   echo "Found ", resp.comments.len, " comments"
 ```
 
-### Типові проблеми
+### Поширені проблеми
 
-1. **401 помилка автентифікації**: Переконайтеся, що ви встановили заголовок `x-api-key` на вашому HttpClient перед виконанням запитів DefaultAPI: `client.headers["x-api-key"] = "your-api-key"`
-2. **Неправильний клас API**: Використовуйте `api_default` для серверних автентифікованих запитів, `api_public` для клієнтських/публічних запитів, та `api_moderation` для запитів панелі модератора.
+1. **401 authentication error**: Переконайтеся, що ви встановили заголовок `x-api-key` у вашому HttpClient перед виконанням запитів DefaultAPI: `client.headers["x-api-key"] = "your-api-key"`
+2. **Wrong API class**: Використовуйте `api_default` для серверних автентифікованих запитів, `api_public` для клієнтських/публічних запитів, і `api_moderation` для запитів панелі модератора.

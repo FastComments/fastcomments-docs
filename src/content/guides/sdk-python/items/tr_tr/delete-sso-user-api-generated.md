@@ -1,11 +1,11 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| İsim | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Evet |  |
-| id | string | path | Evet |  |
-| deleteComments | boolean | query | Hayır |  |
-| commentDeleteMode | string | query | Hayır |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| deleteComments | boolean | query | No |  |
+| commentDeleteMode | string | query | No |  |
 
 ## Yanıt
 
@@ -13,40 +13,31 @@ Döndürür: [`DeleteSSOUserAPIResponse`](https://github.com/FastComments/fastco
 
 ## Örnek
 
-[inline-code-attrs-start title = 'delete_sso_user Örneği'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_sso_user Örnek'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import DeleteSsoUserOptions
 from client.models.delete_sso_user_api_response import DeleteSSOUserAPIResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Host tanımlamak isteğe bağlıdır ve varsayılan https://fastcomments.com'dur
-# Tüm desteklenen yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
-
-# İstemci, kimlik doğrulama ve yetkilendirme parametrelerini
-# API sunucusunun güvenlik politikasına uygun şekilde yapılandırmalıdır.
-# Her kimlik doğrulama yöntemi için örnekler aşağıda verilmiştir; kullanım durumunuza uyan örneği kullanın.
-
+# Host tanımlama isteğe bağlıdır ve varsayılan olarak https://fastcomments.com adresine yöneliktir
+# configuration.py dosyasında desteklenen tüm yapılandırma parametrelerinin listesi bulunur.
+# İstemci, API sunucusunun güvenlik politikasıyla uyumlu şekilde kimlik doğrulama ve yetkilendirme parametrelerini yapılandırmalıdır.
+# Her kimlik doğrulama yöntemi için örnekler aşağıda verilmiştir, kullanım durumunuza uygun örneği kullanın.
 # API anahtarı yetkilendirmesini yapılandır: api_key
-configuration.api_key['api_key'] = os.environ["API_KEY"]
-
-# Gerekirse API anahtarı için önek (örn. Bearer) ayarlamak için aşağıdaki yorumu kaldırın
-# configuration.api_key_prefix['api_key'] = 'Bearer'
-
-# Bir API istemcisi örneği ile bir bağlama girin
+# Gerekirse API anahtarı için ön ek (örn. Bearer) ayarlamak için aşağıdaki satırı yorum dışı bırakın
+# API istemcisinin bir örneğiyle bir bağlam girin
 with client.ApiClient(configuration) as api_client:
-    # API sınıfının bir örneğini oluşturun
+    # API sınıfının bir örneğini oluştur
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
-    delete_comments = True # bool |  (isteğe bağlı)
-    comment_delete_mode = 'comment_delete_mode_example' # str |  (isteğe bağlı)
+    delete_comments = True # bool |  (optional)
+    comment_delete_mode = 'comment_delete_mode_example' # str |  (optional)
 
     try:
-        api_response = api_instance.delete_sso_user(tenant_id, id, delete_comments=delete_comments, comment_delete_mode=comment_delete_mode)
+        api_response = api_instance.delete_sso_user(tenant_id, id, DeleteSsoUserOptions(delete_comments=delete_comments, comment_delete_mode=comment_delete_mode))
         print("The response of DefaultApi->delete_sso_user:\n")
         pprint(api_response)
     except Exception as e:

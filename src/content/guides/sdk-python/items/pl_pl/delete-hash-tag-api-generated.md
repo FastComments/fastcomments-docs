@@ -1,9 +1,9 @@
 ## Parametry
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
-|------|------|----------|----------|-------------|
-| tag | string | path | Tak |  |
-| tenantId | string | query | Nie |  |
+|------|------|------------|----------|------|
+| tenantId | string | query | Yes |  |
+| tag | string | path | Yes |  |
 
 ## Odpowiedź
 
@@ -11,7 +11,7 @@ Zwraca: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład delete_hash_tag'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_hash_tag Przykład'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.models.api_empty_response import APIEmptyResponse
@@ -19,33 +19,27 @@ from client.models.delete_hash_tag_request_body import DeleteHashTagRequestBody
 from client.rest import ApiException
 from pprint import pprint
 
-# Określenie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
-# Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracji.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
-
+# Definiowanie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
+# Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracyjnych.
 # Klient musi skonfigurować parametry uwierzytelniania i autoryzacji
 # zgodnie z zasadami bezpieczeństwa serwera API.
-# Poniżej znajdują się przykłady dla każdej metody uwierzytelniania; użyj tego, który
-# spełnia Twój przypadek użycia uwierzytelniania.
+# Przykłady dla każdej metody uwierzytelniania znajdują się poniżej; użyj przykładu,
+# który spełnia Twoje wymagania dotyczące uwierzytelniania.
 
-# Skonfiguruj autoryzację przy użyciu klucza API: api_key
-configuration.api_key['api_key'] = os.environ["API_KEY"]
-
-# Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli jest to potrzebne
+# Konfiguracja autoryzacji przy użyciu klucza API: api_key
+# Odkomentuj poniższą linię, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli jest potrzebny
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Wejdź w kontekst z instancją klienta API
 with client.ApiClient(configuration) as api_client:
     # Utwórz instancję klasy API
     api_instance = client.DefaultApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     tag = 'tag_example' # str | 
-    tenant_id = 'tenant_id_example' # str |  (opcjonalne)
-    delete_hash_tag_request_body = client.DeleteHashTagRequestBody() # DeleteHashTagRequestBody |  (opcjonalne)
+    delete_hash_tag_request_body = client.DeleteHashTagRequestBody() # DeleteHashTagRequestBody |  (optional)
 
     try:
-        api_response = api_instance.delete_hash_tag(tag, tenant_id=tenant_id, delete_hash_tag_request_body=delete_hash_tag_request_body)
+        api_response = api_instance.delete_hash_tag(tenant_id, tag, delete_hash_tag_request_body)
         print("The response of DefaultApi->delete_hash_tag:\n")
         pprint(api_response)
     except Exception as e:

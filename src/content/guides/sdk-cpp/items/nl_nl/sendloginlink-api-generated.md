@@ -6,25 +6,18 @@
 | id | string | Ja |  |
 | redirectURL | string | Nee |  |
 
-## Respons
+## Response
 
 Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
-## Voorbeeld
+## Example
 
-[inline-code-attrs-start title = 'Voorbeeld sendLoginLink'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'sendLoginLink Voorbeeld'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t userId = U("user@example.com");
-boost::optional<utility::string_t> redirectUrl = boost::optional<utility::string_t>(U("https://app.example.com/welcome"));
-api->sendLoginLink(tenantId, userId, redirectUrl).then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task) {
-    try {
-        auto resp = task.get();
-        auto finalResp = resp ? resp : std::make_shared<APIEmptyResponse>();
-        (void)finalResp;
-    } catch (...) {
-        auto fallback = std::make_shared<APIEmptyResponse>();
-        (void)fallback;
-    }
+api->sendLoginLink(
+    U("my-tenant-123"),
+    U("user@example.com"),
+    boost::make_optional(U("https://myapp.com/auth/callback"))
+).then([](std::shared_ptr<APIEmptyResponse> resp) {
 });
 [inline-code-end]

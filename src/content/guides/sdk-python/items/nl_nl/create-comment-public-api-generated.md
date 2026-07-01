@@ -1,7 +1,7 @@
 ## Parameters
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
-|------|------|----------|----------|-------------|
+|------|------|----------|----------|---------------|
 | tenantId | string | path | Ja |  |
 | urlId | string | query | Ja |  |
 | broadcastId | string | query | Ja |  |
@@ -17,13 +17,14 @@ Retourneert: [`SaveCommentsResponseWithPresence`](https://github.com/FastComment
 [inline-code-attrs-start title = 'create_comment_public Voorbeeld'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import CreateCommentPublicOptions
 from client.models.comment_data import CommentData
 from client.models.save_comments_response_with_presence import SaveCommentsResponseWithPresence
 from client.rest import ApiException
 from pprint import pprint
 
-# Het instellen van de host is optioneel en staat standaard op https://fastcomments.com
-# Zie configuration.py voor een lijst van alle ondersteunde configuratieparameters.
+# Het definiëren van de host is optioneel en standaard https://fastcomments.com
+# Zie configuration.py voor een lijst met alle ondersteunde configuratieparameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -41,7 +42,7 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (optioneel)
 
     try:
-        api_response = api_instance.create_comment_public(tenant_id, url_id, broadcast_id, comment_data, session_id=session_id, sso=sso)
+        api_response = api_instance.create_comment_public(tenant_id, url_id, broadcast_id, comment_data, CreateCommentPublicOptions(session_id=session_id, sso=sso))
         print("The response of PublicApi->create_comment_public:\n")
         pprint(api_response)
     except Exception as e:

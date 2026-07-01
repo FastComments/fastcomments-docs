@@ -1,9 +1,9 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Назва | Тип | Обов’язковий | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| createAPISSOUserData | CreateAPISSOUserData | Ні |  |
+| tenantId | string | Yes |  |
+| createAPISSOUserData | CreateAPISSOUserData | No |  |
 
 ## Відповідь
 
@@ -11,24 +11,11 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад addSSOUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'addSSOUser Приклад'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.addSSOUser(
-  tenantId = "my-tenant-123",
-  createAPISSOUserData = CreateAPISSOUserData(
-    id = "sso-456",
-    email = "alice.johnson@newsorg.com",
-    name = "Alice Johnson",
-    roles = @["editor", "contributor"],
-    isActive = true,
-    isAdmin = false
-  )
-)
-if response.isSome:
-  let apiResp = response.get()
-  discard apiResp
-else:
-  discard httpResponse
+let (optResp, httpResp) = client.addSSOUser(tenantId = "my-tenant-123", createAPISSOUserData = CreateAPISSOUserData())
+if optResp.isSome:
+  let userResp = optResp.get()
 [inline-code-end]
 
 ---

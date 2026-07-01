@@ -1,7 +1,7 @@
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
 | tenantId | string | Da |  |
 | id | string | Ne |  |
 
@@ -13,12 +13,10 @@ Vraća: [`Option[GetCachedNotificationCountResponse]`](https://github.com/FastCo
 
 [inline-code-attrs-start title = 'getCachedNotificationCount Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getCachedNotificationCount(tenantId = "my-tenant-123", id = "notification-789")
-if response.isSome:
-  let cached = response.get()
-  echo "Cached notification count: ", $cached
-else:
-  echo "No cached notification count"
+let (cachedCountOpt, httpResp) = client.getCachedNotificationCount(tenantId = "my-tenant-123", id = "article-456")
+if cachedCountOpt.isSome:
+  let cachedCount = cachedCountOpt.get()
+  echo cachedCount
 [inline-code-end]
 
 ---

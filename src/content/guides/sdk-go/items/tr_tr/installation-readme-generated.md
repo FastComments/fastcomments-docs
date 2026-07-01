@@ -2,11 +2,11 @@
 go get github.com/fastcomments/fastcomments-go
 ```
 
-### API İstemcisinin Kullanımı
+### API İstemcisini Kullanma
 
-#### Public API (Kimlik Doğrulama Yok)
+#### Genel API (Kimlik Doğrulama Yok)
 
-PublicAPI, kimlik doğrulaması gerektirmeyen genel uç noktalara erişim sağlar:
+PublicAPI, genel uç noktalara kimlik doğrulama gerektirmeden erişim sağlar:
 
 ```go
 package main
@@ -36,9 +36,9 @@ func main() {
 }
 ```
 
-#### Default API (API Anahtarı Gerektirir)
+#### Varsayılan API (API Anahtarı Gerektirir)
 
-DefaultAPI, API anahtarınızı kullanarak kimlik doğrulaması gerektirir:
+DefaultAPI, API anahtarınızı kullanarak kimlik doğrulama gerektirir:
 
 ```go
 package main
@@ -53,7 +53,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // API anahtarı ile kimlik doğrulamalı bağlam oluştur
+    // API anahtarı ile kimliği doğrulanmış bağlam oluştur
     auth := context.WithValue(
         context.Background(),
         client.ContextAPIKeys,
@@ -62,7 +62,7 @@ func main() {
         },
     )
 
-    // Kimlik doğrulamalı DefaultAPI kullanarak yorumları al
+    // Kimliği doğrulanmış DefaultAPI kullanarak yorumları al
     response, httpResp, err := apiClient.DefaultAPI.GetComments(auth).
         TenantId("your-tenant-id").
         UrlId("your-page-url-id").
@@ -77,9 +77,9 @@ func main() {
 }
 ```
 
-#### Moderation API (Moderatör Paneli)
+#### Moderasyon API (Moderatör Kontrol Paneli)
 
-ModerationAPI, moderatör panelini çalıştırır. Yorumları listeleme, sayma, arama ve dışa aktarma; moderasyon işlemleri (kaldır/geri yükle, işaretle, inceleme/spam/onay durumunu ayarla, oylar, konuları tekrar aç/kapat); yasaklar (yorumu yasaklama, geri al, ön-yasak özetleri, yasak durumu ve tercihleri, yasaklı kullanıcı sayıları); ve rozetler & güven (rozet ver/kaldır, manuel rozetler, güven faktörünü al/ayar, kullanıcı iç profili) için yöntemler sağlar. Tüm Moderation yöntemleri SSO ile doğrulanmış moderatörler için `sso` parametresini kabul eder:
+ModerasyonAPI, canlı ve hızlı moderasyon API'lerinin kapsamlı bir paketini sunar. Tüm moderasyon metodları bir `sso` parametresi kabul eder ve SSO veya bir FastComments.com oturum çerezi aracılığıyla kimlik doğrulayabilir:
 
 ```go
 package main
@@ -94,7 +94,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // ModerationAPI kullanarak moderasyon için yorumları listele
+    // ModerasyonAPI kullanarak moderasyon için yorumları listele
     response, httpResp, err := apiClient.ModerationAPI.GetApiComments(
         context.Background(),
     ).Sso("your-sso-token").Execute()

@@ -1,13 +1,14 @@
-Агрегира документи чрез групиране (ако е подаден groupBy) и прилагане на няколко операции.
-Поддържат се различни операции (напр. sum, countDistinct, avg и т.н.).
+---
+Агрегира документи чрез групиране (ако е предоставен groupBy) и прилагане на множество операции.  
+Поддържат се различни операции (например sum, countDistinct, avg и др.).
 
 ## Параметри
 
 | Име | Тип | Местоположение | Задължително | Описание |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| parentTenantId | string | query | Не |  |
-| includeStats | boolean | query | Не |  |
+|------|------|----------------|--------------|----------|
+| tenantId | string | query | Yes |  |
+| parentTenantId | string | query | No |  |
+| includeStats | boolean | query | No |  |
 
 ## Отговор
 
@@ -15,29 +16,26 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за aggregate'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за агрегиране'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import AggregateOptions
 from client.models.aggregate_response import AggregateResponse
 from client.models.aggregation_request import AggregationRequest
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинирането на хоста е по избор и по подразбиране е https://fastcomments.com
-# Вижте configuration.py за списък с всички поддържани параметри за конфигуриране.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
-
-# Клиентът трябва да конфигурира параметрите за автентикация и авторизация
+# Дефинирането на хоста е опционално и по подразбиране е https://fastcomments.com
+# Вижте configuration.py за списък с всички поддържани конфигурационни параметри.
+# Клиентът трябва да конфигурира параметрите за автентикация и оторизация
 # в съответствие с политиката за сигурност на API сървъра.
-# Примерите за всеки метод на удостоверяване са показани по-долу, използвайте примера, който
-# отговаря на вашия сценарий на използване.
+# Примери за всеки метод за автентикация са предоставени по-долу, използвайте примера, който
+# отговаря на вашия случай на използване.
 
-# Configure API key authorization: api_key
+# Конфигуриране на упълномощаване с API ключ: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Разкоментирайте по-долу, за да зададете префикс (напр. Bearer) за API ключа, ако е необходимо
+# Разкоментирайте по-долу, за да зададете префикс (например Bearer) за API ключа, ако е необходимо
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Влезте в контекст с инстанция на API клиента
@@ -46,11 +44,11 @@ with client.ApiClient(configuration) as api_client:
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     aggregation_request = client.AggregationRequest() # AggregationRequest | 
-    parent_tenant_id = 'parent_tenant_id_example' # str |  (по избор)
-    include_stats = True # bool |  (по избор)
+    parent_tenant_id = 'parent_tenant_id_example' # str |  (optional)
+    include_stats = True # bool |  (optional)
 
     try:
-        api_response = api_instance.aggregate(tenant_id, aggregation_request, parent_tenant_id=parent_tenant_id, include_stats=include_stats)
+        api_response = api_instance.aggregate(tenant_id, aggregation_request, AggregateOptions(parent_tenant_id=parent_tenant_id, include_stats=include_stats))
         print("The response of DefaultApi->aggregate:\n")
         pprint(api_response)
     except Exception as e:

@@ -1,13 +1,10 @@
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 類型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | urlId | string | Yes |  |
-| usernameStartsWith | string | No |  |
-| mentionGroupIds | seq[string] | No |  |
-| sso | string | No |  |
-| searchSection | string | No |  |
+| options | SearchUsersOptions | No |  |
 
 ## 回應
 
@@ -19,18 +16,12 @@
 [inline-code-start]
 let (response, httpResponse) = client.searchUsers(
   tenantId = "my-tenant-123",
-  urlId = "news/top-story",
-  usernameStartsWith = "",
-  mentionGroupIds = @[],
-  sso = "",
-  searchSection = ""
+  urlId = "news/article-title",
+  options = SearchUsersOptions()
 )
 
 if response.isSome:
-  let searchResult = response.get()
-  echo "SearchUsersResult:", searchResult
-else:
-  echo "No result or error. HTTP response:", httpResponse
+  let result = response.get()
 [inline-code-end]
 
 ---

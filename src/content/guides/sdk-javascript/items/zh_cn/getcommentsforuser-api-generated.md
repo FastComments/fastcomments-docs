@@ -1,6 +1,6 @@
 ## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必需 | 描述 |
 |------|------|----------|-------------|
 | userId | string | 否 |  |
 | direction | SortDirections | 否 |  |
@@ -12,22 +12,32 @@
 
 ## 响应
 
-返回: [`GetCommentsForUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsForUserResponse.ts)
+返回：[`GetCommentsForUserResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsForUserResponse1.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'getCommentsForUser 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const userId: string = 'user_7421';
-  const direction: SortDirections = SortDirections.Newest;
-  const page: number = 2;
-  const includei10n: boolean = true;
-  const locale: string = 'en-GB';
-  const isCrawler: boolean = false;
-  const response: GetCommentsForUserResponse = await getCommentsForUser(userId, direction, undefined, page, includei10n, locale, isCrawler);
-  console.log(response);
-})();
+async function demo() {
+    const userId: string = "user-12345";
+    const direction: SortDirections = "desc";
+    const page: number = 1;
+    const includei10n: boolean = true;
+    const locale: string = "en-US";
+    const isCrawler: boolean = false;
+
+    const response: GetCommentsForUserResponse1 = await getCommentsForUser(
+        userId,
+        direction,
+        undefined,
+        page,
+        includei10n,
+        locale,
+        isCrawler
+    );
+
+    console.log(response);
+}
 [inline-code-end]
 
 ---

@@ -1,7 +1,8 @@
 ## パラメータ
 
-| 名前 | 型 | Location | 必須 | 説明 |
+| 名前 | 種類 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | はい |  |
 | commentId | string | path | はい |  |
 | banEmail | boolean | query | いいえ |  |
 | banEmailDomain | boolean | query | いいえ |  |
@@ -15,7 +16,7 @@
 
 ## レスポンス
 
-返却値: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/ban_user_from_comment_result.rb)
+戻り値: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/ban_user_from_comment_result.rb)
 
 ## 例
 
@@ -25,26 +26,25 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
-comment_id = 'comment_id_example' # String | 
+tenant_id = 'tenant_id_example' # 文字列 | 
+comment_id = 'comment_id_example' # 文字列 | 
 opts = {
-  ban_email: true, # Boolean | 
-  ban_email_domain: true, # Boolean | 
-  ban_ip: true, # Boolean | 
-  delete_all_users_comments: true, # Boolean | 
-  banned_until: 'banned_until_example', # String | 
-  is_shadow_ban: true, # Boolean | 
-  update_id: 'update_id_example', # String | 
-  ban_reason: 'ban_reason_example', # String | 
-  sso: 'sso_example' # String | 
+  ban_email: true, # 真偽値 | 
+  ban_email_domain: true, # 真偽値 | 
+  ban_ip: true, # 真偽値 | 
+  delete_all_users_comments: true, # 真偽値 | 
+  banned_until: 'banned_until_example', # 文字列 | 
+  is_shadow_ban: true, # 真偽値 | 
+  update_id: 'update_id_example', # 文字列 | 
+  ban_reason: 'ban_reason_example', # 文字列 | 
+  sso: 'sso_example' # 文字列 | 
 }
 
 begin
   
-  result = api_instance.post_ban_user_from_comment(comment_id, opts)
+  result = api_instance.post_ban_user_from_comment(tenant_id, comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_ban_user_from_comment: #{e}"
 end
 [inline-code-end]
-
----

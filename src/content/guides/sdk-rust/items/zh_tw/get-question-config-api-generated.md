@@ -2,28 +2,23 @@
 
 | 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
-| tenant_id | String | 是 |  |
-| id | String | 是 |  |
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
 
 ## 回應
 
-回傳: [`GetQuestionConfigResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_question_config_response.rs)
+返回: [`GetQuestionConfigResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_question_config_response.rs)
 
 ## 範例
 
 [inline-code-attrs-start title = 'get_question_config 範例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_question_config() -> Result<GetQuestionConfigResponse, Error> {
-    let configuration: configuration::Configuration = configuration::Configuration::default();
-    let optional_tenant: Option<String> = Some("acme-corp-tenant".to_string());
-    let tenant_id: String = optional_tenant.unwrap_or_else(|| "acme-default".to_string());
+async fn example() -> Result<(), Error> {
     let params = GetQuestionConfigParams {
-        tenant_id,
-        id: "news/article/2026-06-18".to_string(),
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "news/article".to_string(),
     };
-    let response: GetQuestionConfigResponse = get_question_config(&configuration, params).await?;
-    Ok(response)
+    let _response = get_question_config(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

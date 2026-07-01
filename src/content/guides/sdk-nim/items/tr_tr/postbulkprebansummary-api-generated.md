@@ -1,12 +1,11 @@
+---
 ## Parametreler
 
-| Ad | Tür | Gerekli | Açıklama |
+| İsim | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
+| tenantId | string | Evet |  |
 | bulkPreBanParams | BulkPreBanParams | Hayır |  |
-| includeByUserIdAndEmail | bool | Hayır |  |
-| includeByIP | bool | Hayır |  |
-| includeByEmailDomain | bool | Hayır |  |
-| sso | string | Hayır |  |
+| options | PostBulkPreBanSummaryOptions | Hayır |  |
 
 ## Yanıt
 
@@ -16,25 +15,11 @@ Döndürür: [`Option[BulkPreBanSummary]`](https://github.com/FastComments/fastc
 
 [inline-code-attrs-start title = 'postBulkPreBanSummary Örneği'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let bulkParams = BulkPreBanParams(
-  tenantId = "my-tenant-123",
-  userIds = @["user-456", "user-789"],
-  emails = @["spammer@example.com", "bot@malicious.org"],
-  ipAddresses = @["203.0.113.5", "198.51.100.42"],
-  emailDomains = @["malicious.org"]
-)
-
-let (response, httpResponse) = client.postBulkPreBanSummary(
-  bulkPreBanParams = bulkParams,
-  includeByUserIdAndEmail = true,
-  includeByIP = true,
-  includeByEmailDomain = false,
-  sso = "sso-token-abc123"
-)
-
-if response.isSome:
-  let summary = response.get()
-  echo "Pre-ban summary:", summary
+let bulkParams = BulkPreBanParams(emailAddresses: @["spam@example.com"], ipAddresses: @["203.0.113.5"])
+let opt = PostBulkPreBanSummaryOptions(dryRun: false, maxResults: 0)
+let (summaryOpt, httpResp) = client.postBulkPreBanSummary(tenantId = "my-tenant-123", bulkPreBanParams = bulkParams, options = opt)
+if summaryOpt.isSome:
+  let _ = summaryOpt.get()
 [inline-code-end]
 
 ---

@@ -1,8 +1,8 @@
----
 ## Parâmetros
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Localização | Obrigatório | Descrição |
+|------|------|-------------|-------------|-----------|
+| tenantId | string | query | Sim |  |
 | value | string | query | Não |  |
 | filters | string | query | Não |  |
 | searchFilters | string | query | Não |  |
@@ -14,29 +14,32 @@ Retorna: [`ModerationCommentSearchResponse`](https://github.com/FastComments/fas
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getSearchCommentsSummary'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSearchCommentsSummary Exemplo'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Se quiser usar um cliente HTTP personalizado, passe seu cliente que implemente `GuzzleHttp\ClientInterface`.
-    // Isso é opcional, `GuzzleHttp\Client` será usado como padrão.
-    new GuzzleHttp\Client()
-);
-$value = 'value_example'; // string
-$filters = 'filters_example'; // string
-$search_filters = 'search_filters_example'; // string
-$sso = 'sso_example'; // string
+// $apiInstance = new FastComments\Client\Api\ModerationApi(
+//     // Se você quiser usar um cliente http personalizado, passe seu cliente que implementa `GuzzleHttp\ClientInterface`.
+//     // Isto é opcional, `GuzzleHttp\Client` será usado como padrão.
+//     new GuzzleHttp\Client()
+// );
+
+$tenant_id = 'tenant_id_example'; // string
+$options = [
+    'value' => 'value_example', // string
+    'filters' => 'filters_example', // string
+    'search_filters' => 'search_filters_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->getSearchCommentsSummary($value, $filters, $search_filters, $sso);
+    $result = $apiInstance->getSearchCommentsSummary($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getSearchCommentsSummary: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

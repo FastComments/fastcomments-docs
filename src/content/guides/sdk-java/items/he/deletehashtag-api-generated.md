@@ -1,18 +1,19 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | חובה | תיאור |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tag | string | נתיב | כן |  |
-| tenantId | string | שאילתה | לא |  |
+| tenantId | string | query | כן |  |
+| tag | string | path | כן |  |
 
 ## תגובה
 
-מחזיר: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
+Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמה ל-deleteHashTag'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
+// Import classes:
 // ייבא מחלקות:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
@@ -26,19 +27,20 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // הגדר הרשאת מפתח API: api_key
+    // Configure API key authorization: api_key
+    // הגדר הרשאה של מפתח API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // הסר את ההערה מהשורה הבאה כדי להגדיר קידומת למפתח ה-API, לדוגמה "Token" (ברירת המחדל הוא null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    // בטל את ההערה בשורה הבאה כדי להגדיר קידומת למפתח API, למשל "Token" (ברירת מחדל היא null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    String tag = "tag_example"; // String | 
     String tenantId = "tenantId_example"; // String | 
+    String tag = "tag_example"; // String | 
     DeleteHashTagRequestBody deleteHashTagRequestBody = new DeleteHashTagRequestBody(); // DeleteHashTagRequestBody | 
     try {
-      APIEmptyResponse result = apiInstance.deleteHashTag(tag)
-            .tenantId(tenantId)
+      APIEmptyResponse result = apiInstance.deleteHashTag(tenantId, tag)
             .deleteHashTagRequestBody(deleteHashTagRequestBody)
             .execute();
       System.out.println(result);
@@ -52,3 +54,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

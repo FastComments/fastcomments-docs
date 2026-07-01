@@ -2,8 +2,8 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | tag | string | path | Yes |  |
-| tenantId | string | query | No |  |
 
 ## Response
 
@@ -29,12 +29,14 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$tag = 'tag_example'; // string
+
 $tenant_id = 'tenant_id_example'; // string
+$tag = 'tag_example'; // string
 $delete_hash_tag_request_body = new \FastComments\Client\Model\DeleteHashTagRequestBody(); // \FastComments\Client\Model\DeleteHashTagRequestBody
 
+
 try {
-    $result = $apiInstance->deleteHashTag($tag, $tenant_id, $delete_hash_tag_request_body);
+    $result = $apiInstance->deleteHashTag($tenant_id, $tag, $delete_hash_tag_request_body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->deleteHashTag: ', $e->getMessage(), PHP_EOL;

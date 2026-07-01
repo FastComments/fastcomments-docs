@@ -1,6 +1,6 @@
 ### Maven
 
-Προσθέστε το αποθετήριο Repsy στο POM του έργου σας:
+Add the Repsy repository to your project's POM:
 
 ```xml
 <repositories>
@@ -12,7 +12,7 @@
 </repositories>
 ```
 
-Στη συνέχεια, προσθέστε τις εξαρτήσεις που χρειάζεστε:
+Then add the dependencies you need:
 
 ```xml
 <dependencies>
@@ -41,7 +41,7 @@
 
 ### Gradle
 
-Προσθέστε το αποθετήριο Repsy στο αρχείο build.gradle σας:
+Add the Repsy repository to your build.gradle file:
 
 ```groovy
 repositories {
@@ -63,16 +63,18 @@ dependencies {
 }
 ```
 
-### Περιεχόμενα βιβλιοθήκης
+### Library Contents
 
-Αυτή η βιβλιοθήκη περιέχει τρεις μονάδες. Ο παραγόμενος client API, η βασική βιβλιοθήκη Java η οποία περιέχει χειροποίητα βοηθητικά εργαλεία για να διευκολύνει την εργασία με το API, και το module `pubsub` που είναι μια βιβλιοθήκη για εγγραφή σε ροές αλλαγών.
+This library contains three modules. The generated API client, the core Java library which contains hand-written utilities
+to make working with the API easier, and the `pubsub` module which is a library for subscribing to change feeds.
 
-- [Τεκμηρίωση βιβλιοθήκης API Πελάτη](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Τεκμηρίωση βασικής βιβλιοθήκης, συμπεριλαμβανομένων παραδειγμάτων SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [Τεκμηρίωση βιβλιοθήκης PubSub](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [API Client Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [PubSub Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### Δημόσια έναντι Προστατευμένων API
+### Public vs Secured APIs
 
-Για τον πελάτη API, υπάρχουν τρεις κλάσεις, `DefaultApi`, `PublicApi`, και `ModerationApi`. Η `DefaultApi` περιέχει μεθόδους που απαιτούν το κλειδί API σας, και η `PublicApi` περιέχει μεθόδους που μπορούν να γίνουν απευθείας από ένα πρόγραμμα περιήγησης/κινητή συσκευή/κ.λπ. χωρίς πιστοποίηση.
+For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains methods
+that can be made directly from a browser/mobile device/etc without authentication.
 
-Η `ModerationApi` τροφοδοτεί τον πίνακα ελέγχου (dashboard) του διαχειριστή. Περιέχει μεθόδους για την επιτήρηση σχολίων (λίστα, καταμέτρηση, αναζήτηση, αρχεία καταγραφής και εξαγωγή), ενέργειες επιτήρησης (αφαίρεση/επαναφορά, σήμανση, ορισμός κατάστασης αναθεώρησης/spam/έγκρισης, ψήφοι, και επαναφορά/κλείσιμο νήματος), αποκλεισμούς (απαγόρευση σχολιασμού, άρση αποκλεισμού, προ-αποκλειστικές περιλήψεις, κατάσταση και προτιμήσεις αποκλεισμού, και αριθμοί αποκλεισμένων χρηστών), και διακριτικά & εμπιστοσύνη (απονομή/αφαίρεση διακριτικού, χειροκίνητα διακριτικά, λήψη/ρύθμιση παράγοντα εμπιστοσύνης, και εσωτερικό προφίλ χρήστη). Κάθε μέθοδος της `ModerationApi` δέχεται παράμετρο `sso`, ώστε η κλήση να μπορεί να εκτελεστεί εκ μέρους ενός διαχειριστή που έχει πιστοποιηθεί μέσω SSO.
+The `ModerationApi` provides an extensive suite of live and fast moderation APIs. Every `ModerationApi` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.

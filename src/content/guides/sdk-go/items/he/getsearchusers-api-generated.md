@@ -1,9 +1,10 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | חובה | תיאור |
 |------|------|----------|----------|-------------|
-| value | string | query | לא |  |
-| sso | string | query | לא |  |
+| tenantId | string | query | Yes |  |
+| value | string | query | No |  |
+| sso | string | query | No |  |
 
 ## תגובה
 
@@ -11,7 +12,7 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-GetSearchUsers'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GetSearchUsers דוגמה'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,19 +24,18 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	value := "value_example" // string |  (אופציונלי)
 	sso := "sso_example" // string |  (אופציונלי)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetSearchUsers(context.Background()).Value(value).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetSearchUsers(context.Background()).TenantId(tenantId).Value(value).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetSearchUsers``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "שגיאה בעת קריאה ל`ModerationAPI.GetSearchUsers``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "תגובה מלאה של HTTP: %v\n", r)
 	}
-	// תגובה מ-`GetSearchUsers`: ModerationUserSearchResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetSearchUsers`: %v\n", resp)
+	// תגובה מ`GetSearchUsers`: ModerationUserSearchResponse
+	fmt.Fprintf(os.Stdout, "תגובה מ`ModerationAPI.GetSearchUsers`: %v\n", resp)
 }
 [inline-code-end]
-
----

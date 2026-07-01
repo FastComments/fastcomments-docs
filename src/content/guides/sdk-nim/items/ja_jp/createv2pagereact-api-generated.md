@@ -2,30 +2,27 @@
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | はい |  |
-| urlId | string | はい |  |
-| id | string | いいえ |  |
-| title | string | いいえ |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| id | string | No |  |
+| title | string = "" | No |  |
 
 ## レスポンス
 
-戻り値: [`Option[CreateV1PageReact]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_v1_page_react.nim)
+返り値: [`Option[CreateV1PageReact]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_v1_page_react.nim)
 
 ## 例
 
 [inline-code-attrs-start title = 'createV2PageReact の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.createV2PageReact(
+let (pageResult, httpResponse) = client.createV2PageReact(
   tenantId = "my-tenant-123",
-  urlId = "news/2026/06/fastcomments-release",
-  id = "",
-  title = ""
+  urlId = "news/article-title",
+  id = "page-456",
+  title = "Breaking News",
 )
-if response.isSome:
-  let react = response.get()
-  echo "Created page react: ", $react
-else:
-  echo "No react returned, HTTP status: ", $httpResponse.statusCode
-[inline-code-end]
 
----
+if pageResult.isSome:
+  let page = pageResult.get()
+  # 必要に応じて `page` を使用
+[inline-code-end]

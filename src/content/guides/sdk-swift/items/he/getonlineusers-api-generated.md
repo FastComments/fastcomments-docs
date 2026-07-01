@@ -1,32 +1,32 @@
-צופים מחוברים כרגע בעמוד: אנשים שסשן ה-websocket שלהם מנוי לעמוד ברגע זה.
-מחזיר anonCount + totalCount (מנויים בחדר כולו, כולל צופים אנונימיים שאותם איננו מפרטים).
+Currently-online viewers of a page: people whose websocket session is subscribed to the page right now.  
+Returns anonCount + totalCount (room-wide subscribers, including anon viewers we don't enumerate).
 
 ## Parameters
 
-| שם | סוג | מיקום | חובה | תיאור |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | נתיב | כן |  |
-| urlId | string | שאילתה | כן | מזהה URL של העמוד (מנוקה בצד השרת). |
-| afterName | string | שאילתה | לא | מצביע: העבר את nextAfterName מהתגובה הקודמת. |
-| afterUserId | string | שאילתה | לא | מפסק שוויון של המצביע: העבר את nextAfterUserId מהתגובה הקודמת. נדרש כאשר afterName מוגדר כדי שמקרים של שמות זהים לא יגרמו להשמטת פריטים. |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes | מזהה URL של הדף (מנוקה בצד השרת). |
+| afterName | string | query | No | סמן: העבר nextAfterName מהתגובה הקודמת. |
+| afterUserId | string | query | No | מחלקת קישוריות של סמן: העבר nextAfterUserId מהתגובה הקודמת. נדרש כאשר afterName מוגדר כדי שהקשרים על שם לא יפספסו ערכים. |
 
 ## Response
 
-מחזיר: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PageUsersOnlineResponse.swift)
+Returns: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PageUsersOnlineResponse.swift)
 
 ## Example
 
-[inline-code-attrs-start title = 'דוגמה ל-getOnlineUsers'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getOnlineUsers'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// דוגמאות הקוד הבאות עדיין בבטא. לכל בעיה, נא דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// הדוגמאות של הקוד שלהלן עדיין בגרסת בטא. עבור כל בעיה, אנא דווח בכתובת http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let urlId = "urlId_example" // String | מזהה URL של העמוד (מנוקה בצד השרת).
-let afterName = "afterName_example" // String | מצביע: העבר את nextAfterName מהתגובה הקודמת. (אופציונלי)
-let afterUserId = "afterUserId_example" // String | מפסק-שוויון של המצביע: העבר את nextAfterUserId מהתגובה הקודמת. נדרש כאשר afterName מוגדר כדי שמקרים של שמות זהים לא יגרמו להשמטת פריטים. (אופציונלי)
+let urlId = "urlId_example" // String | מזהה URL של הדף (מנוקה בצד השרת).
+let afterName = "afterName_example" // String | סמן: העבר nextAfterName מהתגובה הקודמת. (optional)
+let afterUserId = "afterUserId_example" // String | מחלקת קישוריות של סמן: העבר nextAfterUserId מהתגובה הקודמת. נדרש כאשר afterName מוגדר כדי שהקשרים על שם לא יפספסו ערכים. (optional)
 
-PublicAPI.getOnlineUsers(tenantId: tenantId, urlId: urlId, afterName: afterName, afterUserId: afterUserId) { (response, error) in
+PublicAPI.getOnlineUsers(tenantId: tenantId, urlId: urlId, options: PublicAPI.GetOnlineUsersOptions(afterName: afterName, afterUserId: afterUserId)) { (response, error) in
     guard error == nil else {
         print(error)
         return

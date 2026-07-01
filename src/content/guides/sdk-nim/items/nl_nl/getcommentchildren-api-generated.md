@@ -1,9 +1,10 @@
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
+| tenantId | string | Ja |  |
 | commentId | string | Ja |  |
-| sso | string | Nee |  |
+| sso | string = "" | Nee |  |
 
 ## Respons
 
@@ -11,12 +12,10 @@ Retourneert: [`Option[ModerationAPIChildCommentsResponse]`](https://github.com/F
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'getCommentChildren Voorbeeld'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Voorbeeld getCommentChildren'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getCommentChildren(commentId = "comment-98765", sso = "")
-if response.isSome:
-  let childResp = response.get()
-  discard childResp
+let (childRespOpt, httpResp) = client.getCommentChildren(tenantId = "my-tenant-123", commentId = "cmt-456789", sso = "")
+if childRespOpt.isSome:
+  let childResp = childRespOpt.get()
+  echo childResp
 [inline-code-end]
-
----

@@ -1,30 +1,29 @@
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|-------------|
-| tenant_id | String | Tak |  |
-| create_moderator_body | models::CreateModeratorBody | Tak |  |
+|------|------|----------|------|
+| tenant_id | String | Yes |  |
+| create_moderator_body | models::CreateModeratorBody | Yes |  |
 
 ## Odpowiedź
 
-Zwraca: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_moderator_response.rs)
+Returns: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_moderator_response.rs)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'create_moderator Przykład'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: CreateModeratorParams = CreateModeratorParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    create_moderator_body: models::CreateModeratorBody {
-        email: "jane.doe@acme-corp.com".to_string(),
-        display_name: Some("Jane Doe".to_string()),
-        username: Some("jdoe".to_string()),
-        role: Some("moderator".to_string()),
-        sections: Some(vec!["news/article".to_string(), "tech/reviews".to_string()]),
-        notify: Some(true),
-    },
-};
-let response: CreateModeratorResponse = create_moderator(&configuration, params).await?;
+async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = CreateModeratorParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        create_moderator_body: models::CreateModeratorBody {
+            email: "mod@example.com".to_string(),
+            username: Some("mod_user".to_string()),
+            permissions: vec!["delete".to_string(), "edit".to_string()],
+            ..Default::default()
+        },
+    };
+    let _response = create_moderator(configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]
-
----

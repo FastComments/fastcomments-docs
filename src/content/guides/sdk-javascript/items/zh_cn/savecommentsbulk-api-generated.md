@@ -1,6 +1,6 @@
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | createCommentParams | Array<CreateCommentParams> | 是 |  |
@@ -17,21 +17,29 @@
 
 [inline-code-attrs-start title = 'saveCommentsBulk 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme_corp_tenant_12';
-const createCommentParams: Array<CreateCommentParams> = [
+const tenantId: string = "tenant_9f8b7c6d";
+
+const bulkComments: CreateCommentParams[] = [
   {
-    content: 'Really helpful breakdown of the migration steps.',
-    threadId: 'thread_2026_08',
-    authorName: 'Maya Singh',
-    authorEmail: 'maya.singh@startup.io',
-    mentions: [{ userId: 'user_314', displayName: 'Leo Park' }],
-    hashtags: [{ tag: 'migration' }],
-    createdAt: '2026-06-19T12:00:00Z'
+    content: "Welcome to the new forum thread!",
+    authorId: "user_42",
+    mentions: [{ userId: "user_84", username: "alice" }],
+    hashtags: [{ tag: "intro" }]
+  },
+  {
+    content: "Please review the updated guidelines.",
+    authorId: "moderator_1",
+    mentions: [],
+    hashtags: [{ tag: "guidelines" }, { tag: "update" }]
   }
 ];
-const isLive: boolean = true;
-const doSpamCheck: boolean = true;
-const sendEmails: boolean = false;
-const populateNotifications: boolean = true;
-const responses: Array<SaveCommentsBulkResponse> = await saveCommentsBulk(tenantId, createCommentParams, isLive, doSpamCheck, sendEmails, populateNotifications);
+
+const results: SaveCommentsBulkResponse[] = await saveCommentsBulk(
+  tenantId,
+  bulkComments,
+  true,      // 是否实时
+  false,     // 是否进行垃圾邮件检查
+  true,      // 发送电子邮件
+  undefined  // populateNotifications（使用默认值）
+);
 [inline-code-end]

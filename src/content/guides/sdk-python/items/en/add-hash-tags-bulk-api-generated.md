@@ -2,7 +2,7 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | No |  |
+| tenantId | string | query | Yes |  |
 
 ## Response
 
@@ -39,11 +39,11 @@ configuration.api_key['api_key'] = os.environ["API_KEY"]
 with client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
-    tenant_id = 'tenant_id_example' # str |  (optional)
+    tenant_id = 'tenant_id_example' # str | 
     bulk_create_hash_tags_body = client.BulkCreateHashTagsBody() # BulkCreateHashTagsBody |  (optional)
 
     try:
-        api_response = api_instance.add_hash_tags_bulk(tenant_id=tenant_id, bulk_create_hash_tags_body=bulk_create_hash_tags_body)
+        api_response = api_instance.add_hash_tags_bulk(tenant_id, bulk_create_hash_tags_body)
         print("The response of DefaultApi->add_hash_tags_bulk:\n")
         pprint(api_response)
     except Exception as e:

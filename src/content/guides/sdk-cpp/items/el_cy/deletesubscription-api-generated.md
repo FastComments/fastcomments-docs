@@ -1,33 +1,24 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
-|------|------|----------|-------------|
+|------|------|------------|-----------|
 | tenantId | string | Ναι |  |
 | id | string | Ναι |  |
 | userId | string | Όχι |  |
 
-## Απόκριση
+## Απάντηση
 
-Επιστρέφει: [`DeleteSubscriptionAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/DeleteSubscriptionAPIResponse.h)
+Returns: [`DeleteSubscriptionAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/DeleteSubscriptionAPIResponse.h)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα deleteSubscription'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t id = U("subscription-987");
-boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U("user@example.com"));
-auto defaultResp = std::make_shared<DeleteSubscriptionAPIResponse>();
-api->deleteSubscription(tenantId, id, userId)
-.then([defaultResp](pplx::task<std::shared_ptr<DeleteSubscriptionAPIResponse>> t){
-    try {
-        auto resp = t.get();
-        if (!resp) resp = defaultResp;
-        std::cout << "Delete completed\n";
-    } catch (const std::exception &e) {
-        std::cerr << "Delete failed: " << e.what() << '\n';
-    }
-});
+api->deleteSubscription(utility::string_t(U("my-tenant-123")), utility::string_t(U("sub-456")), boost::optional<utility::string_t>(utility::string_t(U("user@example.com"))))
+    .then([](std::shared_ptr<DeleteSubscriptionAPIResponse> resp){
+        if (resp) {
+        }
+    });
 [inline-code-end]
 
 ---

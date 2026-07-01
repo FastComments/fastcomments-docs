@@ -1,23 +1,32 @@
 ## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| id | string | 是 |  |
-| errorId | string | 是 |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| errorId | string | Yes |  |
 
 ## 响应
 
-返回: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+返回: [`DeleteEmailTemplateRenderErrorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteEmailTemplateRenderErrorResponse.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'deleteEmailTemplateRenderError 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'fastcomments-7f3a2b';
-const templateId: string = 'tmpl-9c3e1a2b';
-const errorId: string = 'err-2026-06-19-001';
-const result: APIEmptyResponse = await deleteEmailTemplateRenderError(tenantId, templateId, errorId);
-[inline-code-end]
+async function executeDelete() {
+  const tenantId: string = "tenant_12345";
+  const templateId: string = "email_tpl_001";
+  const errorId: string = "render_err_2023";
 
----
+  const result: DeleteEmailTemplateRenderErrorResponse = await deleteEmailTemplateRenderError(
+    tenantId,
+    templateId,
+    errorId
+  );
+
+  console.log(result);
+}
+
+executeDelete();
+[inline-code-end]

@@ -1,7 +1,6 @@
----
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
 | userId | string | query | Нет |  |
 | direction | string | query | Нет |  |
@@ -17,24 +16,25 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример использования get_comments_for_user'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример get_comments_for_user'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetCommentsForUserOptions
 from client.models.get_comments_for_user_response import GetCommentsForUserResponse
 from client.models.sort_directions import SortDirections
 from client.rest import ApiException
 from pprint import pprint
 
-# Указание хоста необязательно, по умолчанию используется https://fastcomments.com
+# Определение хоста необязательно и по умолчанию https://fastcomments.com
 # См. configuration.py для списка всех поддерживаемых параметров конфигурации.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Откройте контекст с экземпляром API-клиента
+# Войдите в контекст с экземпляром клиента API
 with client.ApiClient(configuration) as api_client:
-    # Создайте экземпляр класса API
+    # Создать экземпляр класса API
     api_instance = client.PublicApi(api_client)
     user_id = 'user_id_example' # str |  (необязательно)
     direction = client.SortDirections() # SortDirections |  (необязательно)
@@ -45,7 +45,7 @@ with client.ApiClient(configuration) as api_client:
     is_crawler = True # bool |  (необязательно)
 
     try:
-        api_response = api_instance.get_comments_for_user(user_id=user_id, direction=direction, replies_to_user_id=replies_to_user_id, page=page, includei10n=includei10n, locale=locale, is_crawler=is_crawler)
+        api_response = api_instance.get_comments_for_user(GetCommentsForUserOptions(user_id=user_id, direction=direction, replies_to_user_id=replies_to_user_id, page=page, includei10n=includei10n, locale=locale, is_crawler=is_crawler))
         print("The response of PublicApi->get_comments_for_user:\n")
         pprint(api_response)
     except Exception as e:

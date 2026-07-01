@@ -1,38 +1,40 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| id | string | path | Ja |  |
-| sure | string | query | Nee |  |
+| Naam | Type | Locatie | Verplicht | Beschrijving |
+|------|------|----------|-----------|--------------|
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| sure | string | query | No |  |
 
-## Antwoord
+## Response
 
 Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
-## Voorbeeld
+## Example
 
-[inline-code-attrs-start title = 'deleteTenant Example'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteTenant Voorbeeld'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configureer API-sleutelautorisatie: api_key
+// Configureer API-sleutelauthorisatie: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Haal hieronder de commentaarstreep weg om een prefix in te stellen (bijv. Bearer) voor de API-sleutel, indien nodig
+// Verwijder commentaar hieronder om prefix (bijv. Bearer) voor API-sleutel in te stellen, indien nodig
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Als u een aangepaste HTTP-client wilt gebruiken, geef uw client door die `GuzzleHttp\ClientInterface` implementeert.
+    // Als je een aangepaste http-client wilt gebruiken, geef je client door die `GuzzleHttp\ClientInterface` implementeert.
     // Dit is optioneel, `GuzzleHttp\Client` wordt standaard gebruikt.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
 $sure = 'sure_example'; // string
+
 
 try {
     $result = $apiInstance->deleteTenant($tenant_id, $id, $sure);
@@ -41,5 +43,3 @@ try {
     echo 'Exception when calling DefaultApi->deleteTenant: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

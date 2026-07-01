@@ -1,9 +1,10 @@
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
-| commentId | string | query | Ne |  |
-| sso | string | query | Ne |  |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| commentId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -13,13 +14,14 @@ Vraća: [`GetUserInternalProfileResponse`](https://github.com/FastComments/fastc
 
 [inline-code-attrs-start title = 'Primjer getUserInternalProfile'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sljedeći primjeri koda su još u beta fazi. Za bilo koji problem prijavite na http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sljedeći primjeri koda su još u beta fazi. Za bilo kakav problem, molimo prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let commentId = "commentId_example" // String |  (optional)
-let sso = "sso_example" // String |  (optional)
+let tenantId = "tenantId_example" // String |
+let commentId = "commentId_example" // String |  (opcionalno)
+let sso = "sso_example" // String |  (opcionalno)
 
-ModerationAPI.getUserInternalProfile(commentId: commentId, sso: sso) { (response, error) in
+ModerationAPI.getUserInternalProfile(tenantId: tenantId, options: ModerationAPI.GetUserInternalProfileOptions(commentId: commentId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -30,5 +32,3 @@ ModerationAPI.getUserInternalProfile(commentId: commentId, sso: sso) { (response
     }
 }
 [inline-code-end]
-
----

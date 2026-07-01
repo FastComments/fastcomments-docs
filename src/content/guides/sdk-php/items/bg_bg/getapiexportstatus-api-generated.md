@@ -1,15 +1,16 @@
-## Параметри
+## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| batchJobId | string | query | Не |  |
-| sso | string | query | Не |  |
+| tenantId | string | query | Yes |  |
+| batchJobId | string | query | No |  |
+| sso | string | query | No |  |
 
-## Отговор
+## Response
 
-Връща: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationExportStatusResponse.php)
+Returns: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationExportStatusResponse.php)
 
-## Пример
+## Example
 
 [inline-code-attrs-start title = 'getApiExportStatus Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -19,15 +20,20 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Ако искате да използвате персонализиран HTTP клиент, подайте вашия клиент, който имплементира `GuzzleHttp\ClientInterface`.
-    // Това е опционално, по подразбиране ще бъде използван `GuzzleHttp\Client`.
+    // Ако искате да използвате персонализиран HTTP клиент, предайте клиент, който имплементира `GuzzleHttp\ClientInterface`.
+    // Това е незадължително, по подразбиране ще се използва `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
-$batch_job_id = 'batch_job_id_example'; // string
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // низ
+$options = [
+    'batch_job_id' => 'batch_job_id_example', // низ
+    'sso' => 'sso_example', // низ
+];
+
 
 try {
-    $result = $apiInstance->getApiExportStatus($batch_job_id, $sso);
+    $result = $apiInstance->getApiExportStatus($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getApiExportStatus: ', $e->getMessage(), PHP_EOL;

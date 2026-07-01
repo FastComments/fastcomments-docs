@@ -1,14 +1,13 @@
-Agrega documentos agrupándolos (si se proporciona groupBy) y aplicando múltiples operaciones.
-Se admiten distintas operaciones (p. ej. sum, countDistinct, avg, etc.).
+Aggrega documentos agrupándolos (si se proporciona `groupBy`) y aplicando múltiples operaciones.  
+Se admiten diferentes operaciones (p. ej., sum, countDistinct, avg, etc.).
 
 ## Parámetros
 
-| Name | Type | Required | Description |
+| Nombre | Tipo | Obligatorio | Descripción |
 |------|------|----------|-------------|
 | tenantId | string | Sí |  |
 | aggregationRequest | AggregationRequest | No |  |
-| parentTenantId | string | No |  |
-| includeStats | bool | No |  |
+| options | AggregateOptions | No |  |
 
 ## Respuesta
 
@@ -16,16 +15,11 @@ Devuelve: [`Option[AggregateResponse]`](https://github.com/FastComments/fastcomm
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de aggregate'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo de agregación'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.aggregate(
-  tenantId = "my-tenant-123",
-  aggregationRequest = AggregationRequest(groupBy = @["articleId"], metrics = @["commentCount"], filters = @[], limit = 0),
-  parentTenantId = "",
-  includeStats = false
-)
-
-if response.isSome:
-  let agg = response.get()
-  discard agg
+let (aggResp, httpResp) = client.aggregate(tenantId = "my-tenant-123", aggregationRequest = AggregationRequest(), options = AggregateOptions())
+if aggResp.isSome:
+  let response = aggResp.get()
+  echo response
+echo httpResp
 [inline-code-end]

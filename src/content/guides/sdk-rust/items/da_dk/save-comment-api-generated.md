@@ -1,16 +1,15 @@
----
 ## Parametre
 
-| Name | Type | Påkrævet | Beskrivelse |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| tenant_id | String | Ja |  |
-| create_comment_params | models::CreateCommentParams | Ja |  |
-| is_live | bool | Nej |  |
-| do_spam_check | bool | Nej |  |
-| send_emails | bool | Nej |  |
-| populate_notifications | bool | Nej |  |
+| tenant_id | String | Yes |  |
+| create_comment_params | models::CreateCommentParams | Yes |  |
+| is_live | bool | No |  |
+| do_spam_check | bool | No |  |
+| send_emails | bool | No |  |
+| populate_notifications | bool | No |  |
 
-## Svar
+## Respons
 
 Returnerer: [`ApiSaveCommentResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_save_comment_response.rs)
 
@@ -18,26 +17,20 @@ Returnerer: [`ApiSaveCommentResponse`](https://github.com/FastComments/fastcomme
 
 [inline-code-attrs-start title = 'save_comment Eksempel'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<ApiSaveCommentResponse, Error> {
-    let create_comment_params: models::CreateCommentParams = models::CreateCommentParams {
-        content: "Great in-depth coverage of the Rust 2026 release!".to_string(),
-        author_id: Some("user-4821".to_string()),
-        author_name: Some("Jamie Morgan".to_string()),
-        permalink: Some("https://news.example.com/articles/2026/rust-release".to_string()),
-        parent_id: None,
-        metadata: None,
-    };
-    let params: SaveCommentParams = SaveCommentParams {
+async fn run() -> Result<(), Error> {
+    let params = SaveCommentParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        create_comment_params,
+        create_comment_params: models::CreateCommentParams {
+            body: "Great insights on the latest tech trends.".to_string(),
+            user_id: "user-789".to_string(),
+            ..Default::default()
+        },
         is_live: Some(true),
         do_spam_check: Some(true),
         send_emails: Some(false),
         populate_notifications: Some(true),
     };
-    let response: ApiSaveCommentResponse = save_comment(configuration, params).await?;
-    Ok(response)
+    let _response = save_comment(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

@@ -1,32 +1,42 @@
 ## Parametre
 
-| Navn | Type | Påkrævet | Beskrivelse |
-|------|------|----------|-------------|
-| page | number | No |  |
-| count | number | No |  |
-| textSearch | string | No |  |
-| byIPFromComment | string | No |  |
-| filters | string | No |  |
-| searchFilters | string | No |  |
-| sorts | string | No |  |
-| demo | boolean | No |  |
-| sso | string | No |  |
+| Navn | Type | Obligatory | Beskrivelse |
+|------|------|------------|-------------|
+| page | number | Nej |  |
+| count | number | Nej |  |
+| textSearch | string | Nej |  |
+| byIPFromComment | string | Nej |  |
+| filters | string | Nej |  |
+| searchFilters | string | Nej |  |
+| sorts | string | Nej |  |
+| demo | boolean | Nej |  |
+| tenantId | string | Nej |  |
+| sso | string | Nej |  |
 
-## Respons
+## Svar
 
-Returnerer: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPIGetCommentsResponse.ts)
+Returns: [`GetApiCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetApiCommentsResponse.ts)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'getApiComments Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const page: number = 2;
-const count: number = 25;
-const textSearch: string = 'comments failing to load after posting';
-const filters: string = 'status:pending,moderation:required';
-const sorts: string = 'createdAt:desc';
-const demo: boolean = false;
-const sso: string = 'sso-usr-7f3b2a';
+async function loadComments() {
+  const fullResult: GetApiCommentsResponse = await getApiComments(
+    2,                     // side
+    25,                    // antal
+    "feedback",           // tekstSøgning
+    "192.168.1.100",      // efterIPFraKommentar
+    "approved",           // filtre
+    "hasReplies",         // søgeFiltre
+    "dateDesc",           // sorteringer
+    false,                // demo
+    "tenant-abc123",      // lejerId
+    "sso-token-xyz"       // sso
+  );
 
-const response: ModerationAPIGetCommentsResponse = await getApiComments(page, count, textSearch, undefined, filters, undefined, sorts, demo, sso);
+  const minimalResult: GetApiCommentsResponse = await getApiComments(undefined, 5);
+}
 [inline-code-end]
+
+---

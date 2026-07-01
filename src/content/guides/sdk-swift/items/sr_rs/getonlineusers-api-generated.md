@@ -1,32 +1,35 @@
-Тренутно онлајн гледаоци странице: људи чија websocket сесија је тренутно претплаћена на страницу.
-Враћа anonCount + totalCount (претплатници у целој соби, укључујући анонимне гледаоце које не набрајамо).
+Currently-online viewers of a page: people whose websocket session is subscribed to the page right now.  
+Тренутно онлајн посматрачи странице: људи чија је вебсокет сесија тренутно претплаћена на страницу.
 
-## Параметри
+Returns anonCount + totalCount (room-wide subscribers, including anon viewers we don't enumerate).  
+Враћа anonCount + totalCount (претплатнике у соби, укључујући анонимне посматраче које не набрајамо).
 
-| Име | Тип | Локација | Потребно | Опис |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| urlId | string | query | Да | Идентификатор URL странице (очишћен на серверу). |
-| afterName | string | query | Не | Курсор: проследите nextAfterName из претходног одговора. |
-| afterUserId | string | query | Не | Курсор за разликовање везаних случајева: проследите nextAfterUserId из претходног одговора. Потребно када је afterName подешен да би се спречило изостављање записа при истим именима. |
+## Parameters
 
-## Одговор
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|------|
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes | Идентификатор URL странице (очишћен на серверу). |
+| afterName | string | query | No | Курзор: проследите nextAfterName из претходног одговора. |
+| afterUserId | string | query | No | Курзор решавач везног разлога: проследите nextAfterUserId из претходног одговора. Обавезно када је afterName постављен како називне везе не би изгубиле уносе. |
 
-Враћа: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PageUsersOnlineResponse.swift)
+## Response
 
-## Пример
+Returns: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PageUsersOnlineResponse.swift)
 
-[inline-code-attrs-start title = 'getOnlineUsers Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+## Example
+
+[inline-code-attrs-start title = 'Primer getOnlineUsers'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи примери кода су још увек у бета фази. За било који проблем, пријавите на http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следећи пример кода је још у бета фази. За било који проблем, пријавите га на http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | Идентификатор URL странице (очишћен на серверу).
-let afterName = "afterName_example" // String | Курсор: проследите nextAfterName из претходног одговора. (опционо)
-let afterUserId = "afterUserId_example" // String | Курсор за разликовање везаних случајева: проследите nextAfterUserId из претходног одговора. Потребно када је afterName подешен да би се спречило изостављање записа при истим именима. (опционо)
+let afterName = "afterName_example" // String | Курзор: проследите nextAfterName из претходног одговора. (опционо)
+let afterUserId = "afterUserId_example" // String | Курзор решавач везног разлога: проследите nextAfterUserId из претходног одговора. Обавезно када је afterName постављен како називне везе не би изгубиле уносе. (опционо)
 
-PublicAPI.getOnlineUsers(tenantId: tenantId, urlId: urlId, afterName: afterName, afterUserId: afterUserId) { (response, error) in
+PublicAPI.getOnlineUsers(tenantId: tenantId, urlId: urlId, options: PublicAPI.GetOnlineUsersOptions(afterName: afterName, afterUserId: afterUserId)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -37,3 +40,5 @@ PublicAPI.getOnlineUsers(tenantId: tenantId, urlId: urlId, afterName: afterName,
     }
 }
 [inline-code-end]
+
+---

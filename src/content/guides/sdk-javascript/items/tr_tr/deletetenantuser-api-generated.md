@@ -1,25 +1,33 @@
 ## Parametreler
 
-| Ad | Tür | Gerekli | Açıklama |
+| İsim | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| deleteComments | string | No |  |
-| commentDeleteMode | string | No |  |
+| tenantId | string | Evet |  |
+| id | string | Evet |  |
+| deleteComments | string | Hayır |  |
+| commentDeleteMode | string | Hayır |  |
 
 ## Yanıt
 
-Döndürür: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Döndürür: [`DeleteTenantUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteTenantUserResponse.ts)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'deleteTenantUser Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_4b7a9f2c";
-const id: string = "user_9d3f1b6a";
-const deleteComments: string = "true";
-const commentDeleteMode: string = "permanent";
-const result: APIEmptyResponse = await deleteTenantUser(tenantId, id, deleteComments, commentDeleteMode);
-[inline-code-end]
+async function demoDeleteTenantUser() {
+  const tenantId: string = "acme-corp-tenant";
+  const userId: string = "user-9876";
 
----
+  // Kullanıcıyı ve tüm yorumlarını, kalıcı silme modunu kullanarak sil
+  const resultWithOptions: DeleteTenantUserResponse = await deleteTenantUser(
+    tenantId,
+    userId,
+    "true",
+    "hard"
+  );
+
+  // Yorumları kaldırmadan kullanıcıyı sil (varsayılan davranış)
+  const resultBasic: DeleteTenantUserResponse = await deleteTenantUser(tenantId, userId);
+}
+[inline-code-end]

@@ -1,25 +1,20 @@
----
 ## パラメータ
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | はい |  |
-| skip | float64 | いいえ |  |
+| tenantId | string | Yes |  |
+| skip | float64 | No |  |
 
-## レスポンス
+## 応答
 
 戻り値: [`Option[GetEmailTemplatesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_email_templates_response.nim)
 
 ## 例
 
-[inline-code-attrs-start title = 'getEmailTemplates の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getEmailTemplates 例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getEmailTemplates(tenantId = "my-tenant-123", skip = 0.0)
-if response.isSome:
-  let templates = response.get()
+let (emailTemplatesOpt, httpResp) = client.getEmailTemplates(tenantId = "my-tenant-123", skip = 0.0)
+if emailTemplatesOpt.isSome:
+  let templates = emailTemplatesOpt.get()
   echo templates
-else:
-  echo "No email templates available"
 [inline-code-end]
-
----

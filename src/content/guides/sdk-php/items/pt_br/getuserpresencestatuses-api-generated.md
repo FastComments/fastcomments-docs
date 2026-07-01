@@ -1,10 +1,10 @@
 ## Parâmetros
 
-| Nome | Tipo | Local | Obrigatório | Descrição |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Sim |  |
-| urlIdWS | string | query | Sim |  |
-| userIds | string | query | Sim |  |
+| Nome | Tipo | Localização | Obrigatório | Descrição |
+|------|------|-------------|-------------|-----------|
+| tenantId | string | query | Yes |  |
+| urlIdWS | string | query | Yes |  |
+| userIds | string | query | Yes |  |
 
 ## Resposta
 
@@ -12,7 +12,7 @@ Retorna: [`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fas
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getUserPresenceStatuses'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo getUserPresenceStatuses'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -20,13 +20,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Se você quiser usar um cliente HTTP personalizado, passe seu cliente que implemente `GuzzleHttp\ClientInterface`.
-    // Isso é opcional, `GuzzleHttp\Client` será usado por padrão.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $url_id_ws = 'url_id_ws_example'; // string
 $user_ids = 'user_ids_example'; // string
+
 
 try {
     $result = $apiInstance->getUserPresenceStatuses($tenant_id, $url_id_ws, $user_ids);
@@ -35,5 +37,3 @@ try {
     echo 'Exception when calling PublicApi->getUserPresenceStatuses: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

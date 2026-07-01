@@ -1,14 +1,14 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| userId | string | query | Ne |  |
-| urlId | string | query | Ne |  |
-| fromCommentId | string | query | Ne |  |
-| viewed | boolean | query | Ne |  |
-| type | string | query | Ne |  |
-| skip | number | query | Ne |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| urlId | string | query | No |  |
+| fromCommentId | string | query | No |  |
+| viewed | boolean | query | No |  |
+| type | string | query | No |  |
+| skip | number | query | No |  |
 
 ## Odgovor
 
@@ -19,37 +19,27 @@ Vraća: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomment
 [inline-code-attrs-start title = 'Primjer get_notifications'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetNotificationsOptions
 from client.models.get_notifications_response import GetNotificationsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://fastcomments.com
-# Pogledajte configuration.py za popis svih podržanih konfiguracijskih parametara.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
-
-# The client must configure the authentication and authorization parameters
+# Definiranje hosta je opcionalno i zadano je https://fastcomments.com
+# Pogledajte configuration.py za popis svih podržanih parametara konfiguracije.
 # Klijent mora konfigurirati parametre autentifikacije i autorizacije
-# in accordance with the API server security policy.
-# u skladu s politikom sigurnosti API servera.
-# Examples for each auth method are provided below, use the example that
-# Primjeri za svaku metodu autentifikacije dane su u nastavku, koristite primjer koji
-# satisfies your auth use case.
-# odgovara vašem slučaju korištenja autentifikacije.
+# u skladu s politikom sigurnosti API poslužitelja.
+# Primjeri za svaki način autentifikacije navedeni su u nastavku, upotrijebite onaj koji
+# zadovoljava vaš slučaj korištenja autentifikacije.
 
-# Configure API key authorization: api_key
 # Konfigurirajte autorizaciju API ključa: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# Ako je potrebno, otkomentirajte dolje da postavite prefiks (npr. Bearer) za API ključ
+# Otkomentirajte dolje za postavljanje prefiksa (npr. Bearer) za API ključ, po potrebi
+# configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Enter a context with an instance of the API client
 # Uđite u kontekst s instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    # Kreirajte instancu API klase
+    # Stvorite instancu API klase
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     user_id = 'user_id_example' # str |  (neobavezno)
@@ -60,7 +50,7 @@ with client.ApiClient(configuration) as api_client:
     skip = 3.4 # float |  (neobavezno)
 
     try:
-        api_response = api_instance.get_notifications(tenant_id, user_id=user_id, url_id=url_id, from_comment_id=from_comment_id, viewed=viewed, type=type, skip=skip)
+        api_response = api_instance.get_notifications(tenant_id, GetNotificationsOptions(user_id=user_id, url_id=url_id, from_comment_id=from_comment_id, viewed=viewed, type=type, skip=skip))
         print("The response of DefaultApi->get_notifications:\n")
         pprint(api_response)
     except Exception as e:

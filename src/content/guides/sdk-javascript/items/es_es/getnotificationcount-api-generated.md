@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Name | Type | Required | Description |
+| Nombre | Tipo | Requerido | Descripción |
 |------|------|----------|-------------|
 | tenantId | string | Sí |  |
 | userId | string | No |  |
@@ -11,27 +11,31 @@
 
 ## Respuesta
 
-Devuelve: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetNotificationCountResponse.ts)
+Devuelve: [`GetNotificationCountResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetNotificationCountResponse1.ts)
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de getNotificationCount'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo getNotificationCount'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f3b2a';
-const userId: string = 'user_7421';
-const urlId: string = 'https://news.example.com/articles/2026/06/19/ai-update';
-const fromCommentId: string = 'cmt_5a1d2f';
-const viewed: boolean = false;
-const type: string = 'mention';
+async function demoNotificationCount() {
+    const tenantId: string = "tenant_001";
+    const userId: string = "user_42";
+    const urlId: string = "url_9f8e7d";
+    const fromCommentId: string = "comment_12345";
+    const viewed: boolean = false;
+    const type: string = "mention";
 
-const notificationCount: GetNotificationCountResponse = await getNotificationCount(
-  tenantId,
-  userId,
-  urlId,
-  fromCommentId,
-  viewed,
-  type
-);
+    const result: GetNotificationCountResponse1 = await getNotificationCount(
+        tenantId,
+        userId,
+        urlId,
+        fromCommentId,
+        viewed,
+        type
+    );
+
+    console.log(result);
+}
+
+demoNotificationCount();
 [inline-code-end]
-
----

@@ -1,23 +1,24 @@
 ## Параметры
 
-| Name | Type | Required | Description |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| meta | string | Нет |  |
-| skip | number | Нет |  |
+| tenantId | string | Yes |  |
+| meta | string | No |  |
+| skip | number | No |  |
 
 ## Ответ
 
-Возвращает: [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantsResponse.ts)
+Возвращает: [`GetTenantsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantsResponse1.ts)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример использования getTenants'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getTenants'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-72b';
-const meta: string = 'include=domains,billing';
-const skip: number = 20;
-const result: GetTenantsResponse = await getTenants(tenantId, meta, skip);
+(async () => {
+  const tenantId: string = "tenant-9f8e7d6c";
+  const resultOnlyId: GetTenantsResponse1 = await getTenants(tenantId);
+  const resultWithMeta: GetTenantsResponse1 = await getTenants(tenantId, "full");
+  const resultAllParams: GetTenantsResponse1 = await getTenants(tenantId, "full", 15);
+  console.log(resultOnlyId, resultWithMeta, resultAllParams);
+})();
 [inline-code-end]
-
----

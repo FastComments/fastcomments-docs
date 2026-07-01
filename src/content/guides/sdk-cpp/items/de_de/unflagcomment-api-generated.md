@@ -1,35 +1,33 @@
 ## Parameter
 
-| Name | Typ | Erforderlich | Beschreibung |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| userId | string | No |  |
-| anonUserId | string | No |  |
+| tenantId | string | Ja |  |
+| id | string | Ja |  |
+| options | const UnFlagCommentOptions& | Ja |  |
 
 ## Antwort
 
-Gibt zurück: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/FlagCommentResponse.h)
+Rückgabe: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/FlagCommentResponse.h)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'Beispiel für unFlagComment'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'unFlagComment Beispiel'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("comment-7890");
-boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U("user@example.com"));
-boost::optional<utility::string_t> anonUserId;
-api->unFlagComment(tenantId, commentId, userId, anonUserId)
-.then([](pplx::task<std::shared_ptr<FlagCommentResponse>> t) {
-    try {
-        auto resp = t.get();
-        auto fallback = std::make_shared<FlagCommentResponse>();
-        if (!resp) resp = fallback;
-        (void)resp;
-    } catch (const std::exception &e) {
-        (void)e;
-    }
-});
+auto options = UnFlagCommentOptions{};
+options.reason = boost::optional<utility::string_t>(U("Resolved by moderator"));
+api->unFlagComment(U("my-tenant-123"), U("comment-456"), options)
+    .then([](std::shared_ptr<FlagCommentResponse> response) {
+        if (response) {
+            auto status = response->status;
+            // Status bei Bedarf verarbeiten
+        }
+    })
+    .then([](pplx::task<void> previous) {
+        try {
+            previous.get();
+        } catch (const std::exception& e) {
+            // Fehler behandeln
+        }
+    });
 [inline-code-end]
-
----

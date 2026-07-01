@@ -1,6 +1,6 @@
 ## Parametry
 
-| Name | Typ | Lokalizacja | Wymagane | Opis |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
 | userId | string | query | Nie |  |
 | direction | string | query | Nie |  |
@@ -18,18 +18,18 @@ Zwraca: [`GetCommentsForUserResponse`](https://github.com/FastComments/fastcomme
 
 [inline-code-attrs-start title = 'Przykład getCommentsForUser'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Poniższe przykłady kodu są nadal w wersji beta. W przypadku problemów zgłoś je przez http://github.com/OpenAPITools/openapi-generator/issues/new
+// Następujące przykłady kodu są wciąż w wersji beta. W przypadku jakichkolwiek problemów, prosimy zgłaszać je pod adresem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let userId = "userId_example" // String |  (opcjonalne)
-let direction = SortDirections() // SortDirections |  (opcjonalne)
-let repliesToUserId = "repliesToUserId_example" // String |  (opcjonalne)
-let page = 987 // Double |  (opcjonalne)
-let includei10n = true // Bool |  (opcjonalne)
-let locale = "locale_example" // String |  (opcjonalne)
-let isCrawler = true // Bool |  (opcjonalne)
+let userId = "userId_example" // String |  (opcjonalnie)
+let direction = SortDirections() // SortDirections |  (opcjonalnie)
+let repliesToUserId = "repliesToUserId_example" // String |  (opcjonalnie)
+let page = 987 // Double |  (opcjonalnie)
+let includei10n = true // Bool |  (opcjonalnie)
+let locale = "locale_example" // String |  (opcjonalnie)
+let isCrawler = true // Bool |  (opcjonalnie)
 
-PublicAPI.getCommentsForUser(userId: userId, direction: direction, repliesToUserId: repliesToUserId, page: page, includei10n: includei10n, locale: locale, isCrawler: isCrawler) { (response, error) in
+PublicAPI.getCommentsForUser(options: PublicAPI.GetCommentsForUserOptions(userId: userId, direction: direction, repliesToUserId: repliesToUserId, page: page, includei10n: includei10n, locale: locale, isCrawler: isCrawler)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -40,3 +40,5 @@ PublicAPI.getCommentsForUser(userId: userId, direction: direction, repliesToUser
     }
 }
 [inline-code-end]
+
+---

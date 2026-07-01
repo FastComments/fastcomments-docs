@@ -1,7 +1,8 @@
 ## Parametre
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
-|------|------|----------|----------|-------------|
+|------|------|-----------|----------|-------------|
+| tenantId | string | query | Ja |  |
 | commentId | string | path | Ja |  |
 | banEmail | boolean | query | Nej |  |
 | banEmailDomain | boolean | query | Nej |  |
@@ -25,6 +26,7 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 comment_id = 'comment_id_example' # String | 
 opts = {
   ban_email: true, # Boolean | 
@@ -40,11 +42,9 @@ opts = {
 
 begin
   
-  result = api_instance.post_ban_user_from_comment(comment_id, opts)
+  result = api_instance.post_ban_user_from_comment(tenant_id, comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
-  puts "Error when calling ModerationApi->post_ban_user_from_comment: #{e}"
+  puts "Fejl ved kald af ModerationApi->post_ban_user_from_comment: #{e}"
 end
 [inline-code-end]
-
----

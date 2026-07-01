@@ -6,20 +6,17 @@
 
 ## Réponse
 
-Renvoie : [`GetDomainConfigsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_domain_configs_response.rs)
+Retourne : [`GetDomainConfigsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_domain_configs_response.rs)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de get_domain_configs'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple get_domain_configs'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_get_domain_configs_example() -> Result<GetDomainConfigsResponse, Error> {
-    let params: GetDomainConfigsParams = GetDomainConfigsParams {
+async fn example() -> Result<(), Error> {
+    let params = GetDomainConfigsParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        domain_filter: Some("news.example.com".to_string()),
     };
-    let response: GetDomainConfigsResponse = get_domain_configs(&configuration, params).await?;
-    Ok(response)
+    let _response = get_domain_configs(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

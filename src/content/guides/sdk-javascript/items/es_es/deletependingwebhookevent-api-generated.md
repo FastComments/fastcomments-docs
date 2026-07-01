@@ -1,25 +1,23 @@
 ## Parámetros
 
-| Nombre | Tipo | Requerido | Descripción |
+| Nombre | Tipo | Obligatorio | Descripción |
 |------|------|----------|-------------|
-| tenantId | string | Sí |  |
-| id | string | Sí |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
 ## Respuesta
 
-Devuelve: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Devuelve: [`DeletePendingWebhookEventResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeletePendingWebhookEventResponse.ts)
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de deletePendingWebhookEvent'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo deletePendingWebhookEvent'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function removePendingWebhookEvent(tenantId?: string): Promise<APIEmptyResponse | undefined> {
-  if (!tenantId) return;
-  const tenant: string = tenantId;
-  const eventId: string = 'evt_7f2c1a9b';
-  const response: APIEmptyResponse = await deletePendingWebhookEvent(tenant, eventId);
-  return response;
+async function runDemo() {
+  const tenantId: string = 'c3f5e9d2-1a2b-4c3d-9e7f-1234567890ab';
+  const eventId: string = 'event_987654321';
+  const response: DeletePendingWebhookEventResponse = await deletePendingWebhookEvent(tenantId, eventId);
+  console.log(response);
 }
+runDemo();
 [inline-code-end]
-
----

@@ -5,7 +5,7 @@ userIdWS
 
 ## Parametri
 
-| Ime | Tip | Obvezno | Opis |
+| Ime | Vrsta | Obvezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | urlId | string | Da |  |
@@ -13,7 +13,7 @@ userIdWS
 | startTime | int64_t | Da |  |
 | endTime | int64_t | Ne |  |
 
-## Odgovor
+## Odziv
 
 Vrne: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetEventLogResponse.h)
 
@@ -21,20 +21,13 @@ Vrne: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-cpp/b
 
 [inline-code-attrs-start title = 'Primer getGlobalEventLog'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t urlId = U("article-456");
-utility::string_t userIdWS = U("user@example.com");
-int64_t startTime = 1622505600000LL;
-boost::optional<int64_t> endTime = boost::optional<int64_t>(1622592000000LL);
-auto task = api->getGlobalEventLog(tenantId, urlId, userIdWS, startTime, endTime)
-    .then([](pplx::task<std::shared_ptr<GetEventLogResponse>> t){
-        try {
-            auto resp = t.get();
-            auto result = resp ? resp : std::make_shared<GetEventLogResponse>();
-        } catch (const std::exception& e) {
-            (void)e;
-        }
-    });
+api->getGlobalEventLog(
+    U("my-tenant-123"),
+    U("article-456"),
+    U("user@example.com"),
+    1622505600,
+    boost::optional<int64_t>(1625097600)
+).then([](std::shared_ptr<GetEventLogResponse> resp) {
+    (void)resp;
+});
 [inline-code-end]
-
----

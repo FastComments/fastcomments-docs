@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | questionId | string | query | Non |  |
@@ -16,7 +16,7 @@ Renvoie : [`AggregateQuestionResultsResponse`](https://github.com/FastComments/f
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple aggregateQuestionResults'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'aggregateQuestionResults Exemple'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Les exemples de code suivants sont encore en version bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
@@ -29,7 +29,7 @@ let timeBucket = AggregateTimeBucket() // AggregateTimeBucket |  (optionnel)
 let startDate = Date() // Date |  (optionnel)
 let forceRecalculate = true // Bool |  (optionnel)
 
-DefaultAPI.aggregateQuestionResults(tenantId: tenantId, questionId: questionId, questionIds: questionIds, urlId: urlId, timeBucket: timeBucket, startDate: startDate, forceRecalculate: forceRecalculate) { (response, error) in
+DefaultAPI.aggregateQuestionResults(tenantId: tenantId, options: DefaultAPI.AggregateQuestionResultsOptions(questionId: questionId, questionIds: questionIds, urlId: urlId, timeBucket: timeBucket, startDate: startDate, forceRecalculate: forceRecalculate)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -40,3 +40,5 @@ DefaultAPI.aggregateQuestionResults(tenantId: tenantId, questionId: questionId, 
     }
 }
 [inline-code-end]
+
+---

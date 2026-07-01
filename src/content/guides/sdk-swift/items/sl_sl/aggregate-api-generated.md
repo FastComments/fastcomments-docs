@@ -1,23 +1,22 @@
-Agregira dokumente z združevanjem (če je podano groupBy) in z izvajanjem več operacij.
-Podprte so različne operacije (npr. sum, countDistinct, avg itd.).
+Aggregira dokumente z njihovim grupiranjem (če je podan parameter **groupBy**) in uporabo več operacij. Podprte so različne operacije (npr. sum, countDistinct, avg itd.).
 
 ## Parametri
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | parentTenantId | string | query | Ne |  |
 | includeStats | boolean | query | Ne |  |
 
-## Odgovor
+## Odziv
 
-Vrača: [`AggregateResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AggregateResponse.swift)
+Vrne: [`AggregateResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AggregateResponse.swift)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer agregacije'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer združevanja'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Naslednji primeri kode so še v beta fazi. Za morebitne težave jih prijavite preko http://github.com/OpenAPITools/openapi-generator/issues/new
+// Naslednji primeri kode so še vedno v beta različici. Pri kakršnihkoli težavah, prosimo, poročajte na http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -25,7 +24,7 @@ let aggregationRequest = AggregationRequest(query: [QueryPredicate(key: "key_exa
 let parentTenantId = "parentTenantId_example" // String |  (neobvezno)
 let includeStats = true // Bool |  (neobvezno)
 
-DefaultAPI.aggregate(tenantId: tenantId, aggregationRequest: aggregationRequest, parentTenantId: parentTenantId, includeStats: includeStats) { (response, error) in
+DefaultAPI.aggregate(tenantId: tenantId, aggregationRequest: aggregationRequest, options: DefaultAPI.AggregateOptions(parentTenantId: parentTenantId, includeStats: includeStats)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -36,5 +35,3 @@ DefaultAPI.aggregate(tenantId: tenantId, aggregationRequest: aggregationRequest,
     }
 }
 [inline-code-end]
-
----

@@ -1,7 +1,7 @@
 ## Parametre
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
+|------|------|-----------|----------|-------------|
 | tenantId | string | path | Ja |  |
 | postId | string | path | Ja |  |
 | broadcastId | string | query | Nej |  |
@@ -15,7 +15,7 @@ Returnerer: [`DeleteFeedPostPublicResponse`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'deleteFeedPostPublic Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Følgende kodeeksempler er stadig i beta. For problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De følgende kodeeksempler er stadig i beta. For eventuelle problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -23,7 +23,7 @@ let postId = "postId_example" // String |
 let broadcastId = "broadcastId_example" // String |  (valgfri)
 let sso = "sso_example" // String |  (valgfri)
 
-PublicAPI.deleteFeedPostPublic(tenantId: tenantId, postId: postId, broadcastId: broadcastId, sso: sso) { (response, error) in
+PublicAPI.deleteFeedPostPublic(tenantId: tenantId, postId: postId, options: PublicAPI.DeleteFeedPostPublicOptions(broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

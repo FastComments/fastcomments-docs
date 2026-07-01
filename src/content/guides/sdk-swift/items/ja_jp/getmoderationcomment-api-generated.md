@@ -2,12 +2,13 @@
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| commentId | string | path | はい |  |
-| includeEmail | boolean | query | いいえ |  |
-| includeIP | boolean | query | いいえ |  |
-| sso | string | query | いいえ |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| includeEmail | boolean | query | No |  |
+| includeIP | boolean | query | No |  |
+| sso | string | query | No |  |
 
-## レスポンス
+## 応答
 
 戻り値: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationAPICommentResponse.swift)
 
@@ -15,15 +16,16 @@
 
 [inline-code-attrs-start title = 'getModerationComment の例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 以下のコードサンプルはまだベータ版です。問題がある場合は http://github.com/OpenAPITools/openapi-generator/issues/new で報告してください
+// 以下のコードサンプルはまだベータ版です。問題がある場合は、http://github.com/OpenAPITools/openapi-generator/issues/new へ報告してください
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
-let includeEmail = true // Bool |  (任意)
-let includeIP = true // Bool |  (任意)
-let sso = "sso_example" // String |  (任意)
+let includeEmail = true // Bool |  (optional)
+let includeIP = true // Bool |  (optional)
+let sso = "sso_example" // String |  (optional)
 
-ModerationAPI.getModerationComment(commentId: commentId, includeEmail: includeEmail, includeIP: includeIP, sso: sso) { (response, error) in
+ModerationAPI.getModerationComment(tenantId: tenantId, commentId: commentId, options: ModerationAPI.GetModerationCommentOptions(includeEmail: includeEmail, includeIP: includeIP, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -34,5 +36,3 @@ ModerationAPI.getModerationComment(commentId: commentId, includeEmail: includeEm
     }
 }
 [inline-code-end]
-
----

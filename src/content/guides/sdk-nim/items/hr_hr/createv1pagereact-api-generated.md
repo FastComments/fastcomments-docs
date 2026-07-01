@@ -1,10 +1,11 @@
+---
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
 | tenantId | string | Da |  |
 | urlId | string | Da |  |
-| title | string | Ne |  |
+| title | string = "" | Ne |  |
 
 ## Odgovor
 
@@ -12,19 +13,18 @@ Vraća: [`Option[CreateV1PageReact]`](https://github.com/FastComments/fastcommen
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer createV1PageReact'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createV1PageReact primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.createV1PageReact(
+let (pageOpt, httpResp) = client.createV1PageReact(
   tenantId = "my-tenant-123",
-  urlId = "news/2026/market-rally",
-  title = "Breaking News: Markets Rally Today"
+  urlId = "news/article-456",
+  title = "Breaking News: Nim Takes Over"
 )
 
-if response.isSome:
-  let pageReact = response.get()
-  echo "Page react created: ", pageReact
-else:
-  echo "Failed to create page react: ", httpResponse
+if pageOpt.isSome:
+  let page = pageOpt.get()
+  discard page
+  discard httpResp
 [inline-code-end]
 
 ---

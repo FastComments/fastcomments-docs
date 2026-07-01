@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Sí |  |
 | isLive | boolean | query | No |  |
@@ -14,9 +14,9 @@ Devuelve: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomment
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de saveComment'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'saveComment Ejemplo'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Los siguientes ejemplos de código aún están en beta. Para cualquier problema, repórtelo vía http://github.com/OpenAPITools/openapi-generator/issues/new
+// Los siguientes ejemplos de código siguen en beta. Para cualquier problema, por favor informes a http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -26,7 +26,7 @@ let doSpamCheck = true // Bool |  (opcional)
 let sendEmails = true // Bool |  (opcional)
 let populateNotifications = true // Bool |  (opcional)
 
-DefaultAPI.saveComment(tenantId: tenantId, createCommentParams: createCommentParams, isLive: isLive, doSpamCheck: doSpamCheck, sendEmails: sendEmails, populateNotifications: populateNotifications) { (response, error) in
+DefaultAPI.saveComment(tenantId: tenantId, createCommentParams: createCommentParams, options: DefaultAPI.SaveCommentOptions(isLive: isLive, doSpamCheck: doSpamCheck, sendEmails: sendEmails, populateNotifications: populateNotifications)) { (response, error) in
     guard error == nil else {
         print(error)
         return

@@ -1,10 +1,10 @@
 ## Parametri
 
 | Nome | Tipo | Obbligatorio | Descrizione |
-|------|------|----------|-------------|
-| tenant_id | String | Sì |  |
-| id | String | Sì |  |
-| update_question_config_body | models::UpdateQuestionConfigBody | Sì |  |
+|------|------|--------------|-------------|
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
+| update_question_config_body | models::UpdateQuestionConfigBody | Yes |  |
 
 ## Risposta
 
@@ -12,28 +12,25 @@ Restituisce: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-r
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di update_question_config'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio update_question_config'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let params: UpdateQuestionConfigParams = UpdateQuestionConfigParams {
+async fn example() -> Result<(), Error> {
+    let params = UpdateQuestionConfigParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "question-config-789".to_string(),
-        update_question_config_body: models::UpdateQuestionConfigBody {
-            label: Some("Article feedback".to_string()),
-            enabled: Some(true),
-            require_login: Some(false),
-            custom_options: Some(vec![
-                models::QuestionConfigCustomOptionsInner {
-                    key: "category".to_string(),
-                    value: "news".to_string(),
+        id: "news/article".to_string(),
+        update_question_config_body: UpdateQuestionConfigBody {
+            title: "Breaking News".to_string(),
+            is_active: true,
+            custom_options: vec![
+                QuestionConfigCustomOptionsInner {
+                    key: "priority".to_string(),
+                    value: "high".to_string(),
                 },
-            ]),
+            ],
+            description: Some("Config for breaking news article".to_string()),
         },
     };
-
-    let _response: ApiEmptyResponse = update_question_config(&configuration, params).await?;
+    update_question_config(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

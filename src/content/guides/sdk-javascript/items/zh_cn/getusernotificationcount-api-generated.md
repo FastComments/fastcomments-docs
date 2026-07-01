@@ -2,21 +2,31 @@
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| sso | string | 否 |  |
+| tenantId | string | Yes |  |
+| sso | string | No |  |
 
 ## 响应
 
-返回：[`GetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserNotificationCountResponse.ts)
+Returns: [`GetUserNotificationCountResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserNotificationCountResponse1.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'getUserNotificationCount 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_3f47a2b9-6c4d-4e8a-9f2b-0a1b2c3d4e5f';
-const ssoToken: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Njc4OTAiLCJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20ifQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
-const notificationCount: GetUserNotificationCountResponse = await getUserNotificationCount(tenantId);
-const notificationCountWithSso: GetUserNotificationCountResponse = await getUserNotificationCount(tenantId, ssoToken);
-[inline-code-end]
+async function demoGetUserNotificationCount() {
+    const tenantId: string = "acme-corp-01";
 
----
+    // 使用可选的 SSO 令牌调用
+    const countWithSSO: GetUserNotificationCountResponse1 = await getUserNotificationCount(
+        tenantId,
+        "sso-token-abc123"
+    );
+
+    // 调用时不使用 SSO 令牌
+    const countWithoutSSO: GetUserNotificationCountResponse1 = await getUserNotificationCount(
+        tenantId
+    );
+
+    console.log(countWithSSO, countWithoutSSO);
+}
+[inline-code-end]

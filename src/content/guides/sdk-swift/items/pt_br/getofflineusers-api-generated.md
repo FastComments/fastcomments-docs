@@ -1,23 +1,24 @@
-Comentadores anteriores na página que NÃO estão atualmente online. Ordenado por displayName.
-Use isto depois de esgotar /users/online para renderizar uma seção "Membros".
-Paginação por cursor em commenterName: o servidor percorre o índice parcial {tenantId, urlId, commenterName} a partir de afterName para frente usando $gt, sem custo de $skip.
+Past commenters on the page who are NOT currently online. Sorted by displayName.  
+Use this after exhausting /users/online to render a "Members" section.  
+Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName}  
+index from afterName forward via $gt, no $skip cost.
 
 ## Parâmetros
 
 | Nome | Tipo | Localização | Obrigatório | Descrição |
-|------|------|------------|------------|-----------|
+|------|------|-------------|-------------|-----------|
 | tenantId | string | path | Sim |  |
 | urlId | string | query | Sim | Identificador da URL da página (limpo no servidor). |
 | afterName | string | query | Não | Cursor: passe nextAfterName da resposta anterior. |
-| afterUserId | string | query | Não | Desempate de cursor: passe nextAfterUserId da resposta anterior. Obrigatório quando afterName estiver definido para que empates de nome não descartem entradas. |
+| afterUserId | string | query | Não | Desempate de cursor: passe nextAfterUserId da resposta anterior. Obrigatório quando afterName for definido para que empates de nome não removam entradas. |
 
 ## Resposta
 
-Retorna: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PageUsersOfflineResponse.swift)
+Returns: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PageUsersOfflineResponse.swift)
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getOfflineUsers'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo getOfflineUsers'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Os seguintes exemplos de código ainda estão em beta. Para qualquer problema, por favor reporte via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
@@ -25,9 +26,9 @@ import FastCommentsSwift
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | Identificador da URL da página (limpo no servidor).
 let afterName = "afterName_example" // String | Cursor: passe nextAfterName da resposta anterior. (opcional)
-let afterUserId = "afterUserId_example" // String | Desempate de cursor: passe nextAfterUserId da resposta anterior. Obrigatório quando afterName estiver definido para que empates de nome não descartem entradas. (opcional)
+let afterUserId = "afterUserId_example" // String | Desempate de cursor: passe nextAfterUserId da resposta anterior. Obrigatório quando afterName for definido para que empates de nome não removam entradas. (opcional)
 
-PublicAPI.getOfflineUsers(tenantId: tenantId, urlId: urlId, afterName: afterName, afterUserId: afterUserId) { (response, error) in
+PublicAPI.getOfflineUsers(tenantId: tenantId, urlId: urlId, options: PublicAPI.GetOfflineUsersOptions(afterName: afterName, afterUserId: afterUserId)) { (response, error) in
     guard error == nil else {
         print(error)
         return

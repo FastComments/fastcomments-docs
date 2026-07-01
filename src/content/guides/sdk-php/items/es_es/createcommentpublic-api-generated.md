@@ -1,7 +1,7 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
+|--------|------|-----------|-----------|-------------|
 | tenantId | string | path | Sí |  |
 | urlId | string | query | Sí |  |
 | broadcastId | string | query | Sí |  |
@@ -14,7 +14,7 @@ Devuelve: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/f
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de createCommentPublic'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo createCommentPublic'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -22,19 +22,23 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Si desea usar un cliente HTTP personalizado, pase su cliente que implemente `GuzzleHttp\ClientInterface`.
+    // Si deseas usar un cliente HTTP personalizado, pasa tu cliente que implemente `GuzzleHttp\ClientInterface`.
     // Esto es opcional, `GuzzleHttp\Client` se usará por defecto.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $url_id = 'url_id_example'; // string
 $broadcast_id = 'broadcast_id_example'; // string
 $comment_data = new \FastComments\Client\Model\CommentData(); // \FastComments\Client\Model\CommentData
-$session_id = 'session_id_example'; // string
-$sso = 'sso_example'; // string
+$options = [
+    'session_id' => 'session_id_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->createCommentPublic($tenant_id, $url_id, $broadcast_id, $comment_data, $session_id, $sso);
+    $result = $apiInstance->createCommentPublic($tenant_id, $url_id, $broadcast_id, $comment_data, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->createCommentPublic: ', $e->getMessage(), PHP_EOL;

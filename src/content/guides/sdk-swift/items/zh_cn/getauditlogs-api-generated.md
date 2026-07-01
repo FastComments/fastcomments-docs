@@ -1,6 +1,6 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 描述 |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | limit | number | query | 否 |  |
@@ -17,17 +17,17 @@
 
 [inline-code-attrs-start title = 'getAuditLogs 示例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 以下代码示例仍处于测试版。若遇到任何问题，请通过 http://github.com/OpenAPITools/openapi-generator/issues/new 报告
+// 以下代码示例仍处于 beta 阶段。如有任何问题，请通过 http://github.com/OpenAPITools/openapi-generator/issues/new 报告
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let limit = 987 // Double |  （可选）
-let skip = 987 // Double |  （可选）
-let order = SORT_DIR() // SORTDIR |  （可选）
-let after = 987 // Double |  （可选）
-let before = 987 // Double |  （可选）
+let limit = 987 // Double |  (可选)
+let skip = 987 // Double |  (可选)
+let order = SORT_DIR() // SORTDIR |  (可选)
+let after = 987 // Double |  (可选)
+let before = 987 // Double |  (可选)
 
-DefaultAPI.getAuditLogs(tenantId: tenantId, limit: limit, skip: skip, order: order, after: after, before: before) { (response, error) in
+DefaultAPI.getAuditLogs(tenantId: tenantId, options: DefaultAPI.GetAuditLogsOptions(limit: limit, skip: skip, order: order, after: after, before: before)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -38,3 +38,5 @@ DefaultAPI.getAuditLogs(tenantId: tenantId, limit: limit, skip: skip, order: ord
     }
 }
 [inline-code-end]
+
+---

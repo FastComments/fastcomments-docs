@@ -1,14 +1,14 @@
 ## Параметры
 
-| Name | Type | Location | Обязательно | Описание |
-|------|------|----------|------------|-------------|
-| tenantId | string | path | Да |  |
-| commentId | string | path | Да |  |
-| voteId | string | path | Да |  |
-| urlId | string | query | Да |  |
-| broadcastId | string | query | Да |  |
-| editKey | string | query | Нет |  |
-| sso | string | query | Нет |  |
+| Имя | Тип | Местоположение | Обязательно | Описание |
+|------|------|----------------|-------------|----------|
+| tenantId | string | путь | Да |  |
+| commentId | string | путь | Да |  |
+| voteId | string | путь | Да |  |
+| urlId | string | запрос | Да |  |
+| broadcastId | string | запрос | Да |  |
+| editKey | string | запрос | Нет |  |
+| sso | string | запрос | Нет |  |
 
 ## Ответ
 
@@ -16,9 +16,9 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример deleteCommentVote'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteCommentVote Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие примеры кода все ещё в бета-версии. По любым проблемам сообщите через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следующие примеры кода всё ещё в бета-версии. При любой проблеме, пожалуйста, сообщите по адресу http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -29,7 +29,7 @@ let broadcastId = "broadcastId_example" // String |
 let editKey = "editKey_example" // String |  (необязательно)
 let sso = "sso_example" // String |  (необязательно)
 
-PublicAPI.deleteCommentVote(tenantId: tenantId, commentId: commentId, voteId: voteId, urlId: urlId, broadcastId: broadcastId, editKey: editKey, sso: sso) { (response, error) in
+PublicAPI.deleteCommentVote(tenantId: tenantId, commentId: commentId, voteId: voteId, urlId: urlId, broadcastId: broadcastId, options: PublicAPI.DeleteCommentVoteOptions(editKey: editKey, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -40,3 +40,5 @@ PublicAPI.deleteCommentVote(tenantId: tenantId, commentId: commentId, voteId: vo
     }
 }
 [inline-code-end]
+
+---

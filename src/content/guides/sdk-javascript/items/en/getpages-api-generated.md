@@ -12,7 +12,11 @@ Returns: [`GetPagesAPIResponse`](https://github.com/FastComments/fastcomments-sd
 
 [inline-code-attrs-start title = 'getPages Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_3f8d9b2a";
-const options: { page?: number; pageSize?: number } = { page: 1, pageSize: 25 };
-const pagesResponse: GetPagesAPIResponse = await getPages(tenantId, options);
+const tenantId: string = "tenant_12345";
+
+(async () => {
+  const response: GetPagesAPIResponse = await getPages(tenantId);
+  const firstPage: APIPage | undefined = response.pages?.[0];
+  console.log(firstPage?.title);
+})();
 [inline-code-end]

@@ -1,12 +1,9 @@
 ## Parametreler
 
-| Ad | Tür | Gerekli | Açıklama |
+| İsim | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
-| tenantId | string | Evet |  |
-| yearNumber | float64 | Hayır |  |
-| monthNumber | float64 | Hayır |  |
-| dayNumber | float64 | Hayır |  |
-| skip | float64 | Hayır |  |
+| tenantId | string | Yes |  |
+| options | GetTenantDailyUsagesOptions | No |  |
 
 ## Yanıt
 
@@ -16,17 +13,12 @@ Döndürür: [`Option[GetTenantDailyUsagesResponse]`](https://github.com/FastCom
 
 [inline-code-attrs-start title = 'getTenantDailyUsages Örneği'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTenantDailyUsages(
+let (respOpt, httpResp) = client.getTenantDailyUsages(
   tenantId = "my-tenant-123",
-  yearNumber = 2026.0,
-  monthNumber = 6.0,
-  dayNumber = 19.0,
-  skip = 0.0
+  options = default(GetTenantDailyUsagesOptions),
 )
-
-if response.isSome:
-  let usage = response.get()
-  discard usage
+if respOpt.isSome:
+  let usage = respOpt.get()
+  echo usage
+  echo httpResp.statusCode
 [inline-code-end]
-
----

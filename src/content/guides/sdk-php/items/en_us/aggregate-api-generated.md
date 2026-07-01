@@ -33,13 +33,17 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $aggregation_request = new \FastComments\Client\Model\AggregationRequest(); // \FastComments\Client\Model\AggregationRequest
-$parent_tenant_id = 'parent_tenant_id_example'; // string
-$include_stats = True; // bool
+$options = [
+    'parent_tenant_id' => 'parent_tenant_id_example', // string
+    'include_stats' => True, // bool
+];
+
 
 try {
-    $result = $apiInstance->aggregate($tenant_id, $aggregation_request, $parent_tenant_id, $include_stats);
+    $result = $apiInstance->aggregate($tenant_id, $aggregation_request, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->aggregate: ', $e->getMessage(), PHP_EOL;

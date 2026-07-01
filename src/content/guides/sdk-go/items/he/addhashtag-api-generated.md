@@ -1,9 +1,8 @@
----
 ## פרמטרים
 
 | שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | לא |  |
+| tenantId | string | query | Yes |  |
 
 ## תגובה
 
@@ -11,7 +10,7 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-AddHashTag'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'AddHashTag דוגמה'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,8 +22,8 @@ import (
 )
 
 func main() {
-	tenantId := "tenantId_example" // string |  (אופציונלי)
-	createHashTagBody := *openapiclient.NewCreateHashTagBody("Tag_example") // CreateHashTagBody |  (אופציונלי)
+	tenantId := "tenantId_example" // string | 
+	createHashTagBody := *openapiclient.NewCreateHashTagBody("Tag_example") // CreateHashTagBody |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -37,5 +36,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.AddHashTag`: %v\n", resp)
 }
 [inline-code-end]
-
----

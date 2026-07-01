@@ -1,35 +1,37 @@
-## Параметри
+## Parametri
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
+| tenantId | string | query | Yes |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`CreateTenantUserResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateTenantUserResponse.php)
+Vraća: [`CreateTenantUserResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateTenantUserResponse.php)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'createTenantUser Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createTenantUser Primer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Конфигуришите ауторизацију API кључа: api_key
+// Konfigurišite autorizaciju API ključa: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Раскоментаришите испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
+// Otkomentarišite dolje da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ако желите да користите прилагођени HTTP клијент, проследите клијента који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционално, `GuzzleHttp\Client` ће бити коришћен као подразумевани.
+    // Ako želite koristiti prilagođeni http klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao podrazumevani.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $create_tenant_user_body = new \FastComments\Client\Model\CreateTenantUserBody(); // \FastComments\Client\Model\CreateTenantUserBody
+
 
 try {
     $result = $apiInstance->createTenantUser($tenant_id, $create_tenant_user_body);

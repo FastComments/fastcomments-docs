@@ -1,11 +1,10 @@
----
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
-|------|------|----------|-------------|
-| tenant_id | String | 예 |  |
-| url_id_ws | String | 예 |  |
-| user_ids | String | 예 |  |
+| 이름 | 유형 | 필수 | 설명 |
+|------|------|------|------|
+| tenant_id | String | Yes |  |
+| url_id_ws | String | Yes |  |
+| user_ids | String | Yes |  |
 
 ## 응답
 
@@ -15,14 +14,15 @@
 
 [inline-code-attrs-start title = 'get_user_presence_statuses 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let cfg: &configuration::Configuration = &configuration;
-let params: GetUserPresenceStatusesParams = GetUserPresenceStatusesParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    url_id_ws: "news/article".to_string(),
-    user_ids: "user-123,user-456".to_string(),
-    include_offline: Some(false),
-};
-let response: GetUserPresenceStatusesResponse = get_user_presence_statuses(cfg, params).await?;
+async fn run() -> Result<(), Error> {
+    let params = GetUserPresenceStatusesParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        url_id_ws: "news/article".to_string(),
+        user_ids: "user123,user456".to_string(),
+    };
+    let _response = get_user_presence_statuses(&configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]
 
 ---

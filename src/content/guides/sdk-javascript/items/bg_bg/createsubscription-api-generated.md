@@ -13,16 +13,17 @@
 
 [inline-code-attrs-start title = 'Пример за createSubscription'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-tenant-123";
-const createAPIUserSubscriptionData: CreateAPIUserSubscriptionData = {
-  userId: "user_98765",
-  planId: "pro_monthly",
-  paymentMethod: { type: "card", cardId: "card_abc123" },
-  autoRenew: true,
-  trialDays: 14, // демонстриран незадължителен параметър
-  metadata: { campaign: "spring_launch" } // демонстриран незадължителен параметър
-};
-const result: CreateSubscriptionAPIResponse = await createSubscription(tenantId, createAPIUserSubscriptionData);
-[inline-code-end]
+(async () => {
+    const tenantId: string = "acme-corp-123";
 
----
+    const subscriptionData: CreateAPIUserSubscriptionData = {
+        userId: "user-456",
+        planId: "premium-monthly",
+        startDate: new Date(),
+        trialPeriodDays: 14 // optional field
+    };
+
+    const result: CreateSubscriptionAPIResponse = await createSubscription(tenantId, subscriptionData);
+    console.log(result);
+})();
+[inline-code-end]

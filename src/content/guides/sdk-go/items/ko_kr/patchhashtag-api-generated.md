@@ -2,8 +2,8 @@
 
 | 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | 예 |  |
 | tag | string | path | 예 |  |
-| tenantId | string | query | 아니요 |  |
 
 ## 응답
 
@@ -23,9 +23,9 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	tag := "tag_example" // string | 
-	tenantId := "tenantId_example" // string |  (선택 사항)
-	updateHashTagBody := *openapiclient.NewUpdateHashTagBody() // UpdateHashTagBody |  (선택 사항)
+	updateHashTagBody := *openapiclient.NewUpdateHashTagBody() // UpdateHashTagBody |  (옵션)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

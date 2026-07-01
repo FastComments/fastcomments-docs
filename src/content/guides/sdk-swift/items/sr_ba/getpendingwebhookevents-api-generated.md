@@ -1,7 +1,7 @@
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
+|------|------|----------|----------|------|
 | tenantId | string | query | Da |  |
 | commentId | string | query | Ne |  |
 | externalId | string | query | Ne |  |
@@ -19,7 +19,7 @@ Vraća: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'getPendingWebhookEvents Primjer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sljedeći primjeri koda su još u beta fazi. Za bilo koji problem, prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sljedeći kod uzorci su još u beta fazi. Za bilo koji problem, molimo prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -31,7 +31,7 @@ let domain = "domain_example" // String |  (opcionalno)
 let attemptCountGT = 987 // Double |  (opcionalno)
 let skip = 987 // Double |  (opcionalno)
 
-DefaultAPI.getPendingWebhookEvents(tenantId: tenantId, commentId: commentId, externalId: externalId, eventType: eventType, type: type, domain: domain, attemptCountGT: attemptCountGT, skip: skip) { (response, error) in
+DefaultAPI.getPendingWebhookEvents(tenantId: tenantId, options: DefaultAPI.GetPendingWebhookEventsOptions(commentId: commentId, externalId: externalId, eventType: eventType, type: type, domain: domain, attemptCountGT: attemptCountGT, skip: skip)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -42,3 +42,5 @@ DefaultAPI.getPendingWebhookEvents(tenantId: tenantId, commentId: commentId, ext
     }
 }
 [inline-code-end]
+
+---

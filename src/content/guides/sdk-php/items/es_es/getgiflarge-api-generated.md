@@ -1,9 +1,9 @@
 ## Parámetros
 
-| Name | Tipo | Ubicación | Requerido | Descripción |
-|------|------|----------|----------|-------------|
-| tenantId | string | ruta | Sí |  |
-| largeInternalURLSanitized | string | consulta | Sí |  |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
+|--------|------|-----------|-----------|-------------|
+| tenantId | string | path | Yes |  |
+| largeInternalURLSanitized | string | query | Yes |  |
 
 ## Respuesta
 
@@ -11,7 +11,7 @@ Devuelve: [`GifGetLargeResponse`](https://github.com/FastComments/fastcomments-p
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de getGifLarge'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo getGifLarge'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -23,8 +23,10 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     // Esto es opcional, `GuzzleHttp\Client` se usará por defecto.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$large_internal_url_sanitized = 'large_internal_url_sanitized_example'; // string
+
+$tenant_id = 'tenant_id_example'; // cadena
+$large_internal_url_sanitized = 'large_internal_url_sanitized_example'; // cadena
+
 
 try {
     $result = $apiInstance->getGifLarge($tenant_id, $large_internal_url_sanitized);
@@ -33,5 +35,3 @@ try {
     echo 'Exception when calling PublicApi->getGifLarge: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

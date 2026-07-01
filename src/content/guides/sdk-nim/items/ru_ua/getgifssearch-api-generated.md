@@ -1,32 +1,22 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Обязательное | Описание |
+| Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| search | string | Нет |  |
-| locale | string | Нет |  |
-| rating | string | Нет |  |
-| page | float64 | Нет |  |
+| tenantId | string | Yes |  |
+| search | string | No |  |
+| options | GetGifsSearchOptions | No |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`Option[GetGifsSearchResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_gifs_search_response.nim)
+Повертає: [`Option[GetGifsSearchResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_gifs_search_response.nim)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример getGifsSearch'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад getGifsSearch'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getGifsSearch(
-  tenantId = "my-tenant-123",
-  search = "funny cat",
-  locale = "en-US",
-  rating = "PG",
-  page = 1.0
-)
-
-if response.isSome:
-  let gifs = response.get()
-  echo "Fetched GIFs response:", gifs
+let opts = GetGifsSearchOptions(limit = 10, rating = "g")
+let (responseOpt, httpResponse) = client.getGifsSearch(tenantId = "my-tenant-123", search = "funny cats", options = opts)
+if responseOpt.isSome:
+  let resp = responseOpt.get()
+  # використовуйте resp за потреби
 [inline-code-end]
-
----

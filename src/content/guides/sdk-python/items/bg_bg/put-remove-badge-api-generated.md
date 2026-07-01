@@ -1,13 +1,13 @@
----
 ## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| badgeId | string | query | Да |  |
-| userId | string | query | Не |  |
-| commentId | string | query | Не |  |
-| broadcastId | string | query | Не |  |
-| sso | string | query | Не |  |
+| Име | Тип | Местоположение | Задължително | Описание |
+|------|------|----------------|--------------|----------|
+| tenantId | string | query | Yes |  |
+| badgeId | string | query | Yes |  |
+| userId | string | query | No |  |
+| commentId | string | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Отговор
 
@@ -15,36 +15,36 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за put_remove_badge'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'put_remove_badge Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import PutRemoveBadgeOptions
 from client.models.remove_user_badge_response import RemoveUserBadgeResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Задаването на host е незадължително и по подразбиране е https://fastcomments.com
-# Вижте configuration.py за списък с всички поддържани конфигурационни параметри.
+# Определянето на хоста е по избор и по подразбиране е https://fastcomments.com
+# Вижте configuration.py за списък на всички поддържани конфигурационни параметри.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Влезте в контекст със екземпляр на API клиента
+# Въведете контекст с инстанция на API клиента
 with client.ApiClient(configuration) as api_client:
-    # Създайте екземпляр на API класа
+    # Създайте инстанция на API класа
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     badge_id = 'badge_id_example' # str | 
-    user_id = 'user_id_example' # str |  (незадължително)
-    comment_id = 'comment_id_example' # str |  (незадължително)
-    broadcast_id = 'broadcast_id_example' # str |  (незадължително)
-    sso = 'sso_example' # str |  (незадължително)
+    user_id = 'user_id_example' # str |  (optional)
+    comment_id = 'comment_id_example' # str |  (optional)
+    broadcast_id = 'broadcast_id_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.put_remove_badge(badge_id, user_id=user_id, comment_id=comment_id, broadcast_id=broadcast_id, sso=sso)
+        api_response = api_instance.put_remove_badge(tenant_id, badge_id, PutRemoveBadgeOptions(user_id=user_id, comment_id=comment_id, broadcast_id=broadcast_id, sso=sso))
         print("The response of ModerationApi->put_remove_badge:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling ModerationApi->put_remove_badge: %s\n" % e)
 [inline-code-end]
-
----

@@ -1,6 +1,6 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Da |  |
 | commentId | string | path | Da |  |
@@ -9,13 +9,13 @@
 | sessionId | string | query | Ne |  |
 | sso | string | query | Ne |  |
 
-## Odgovor
+## Odziv
 
-Vrača: [`VoteResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/VoteResponse.php)
+Vrne: [`VoteResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/VoteResponse.php)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer voteComment'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'voteComment Primer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -24,19 +24,23 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
     // Če želite uporabiti prilagojen HTTP odjemalec, posredujte svoj odjemalec, ki implementira `GuzzleHttp\ClientInterface`.
-    // To je neobvezno, kot privzeto bo uporabljen `GuzzleHttp\Client`.
+    // To je neobvezno, `GuzzleHttp\Client` bo uporabljen kot privzeto.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $comment_id = 'comment_id_example'; // string
 $url_id = 'url_id_example'; // string
 $broadcast_id = 'broadcast_id_example'; // string
 $vote_body_params = new \FastComments\Client\Model\VoteBodyParams(); // \FastComments\Client\Model\VoteBodyParams
-$session_id = 'session_id_example'; // string
-$sso = 'sso_example'; // string
+$options = [
+    'session_id' => 'session_id_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->voteComment($tenant_id, $comment_id, $url_id, $broadcast_id, $vote_body_params, $session_id, $sso);
+    $result = $apiInstance->voteComment($tenant_id, $comment_id, $url_id, $broadcast_id, $vote_body_params, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->voteComment: ', $e->getMessage(), PHP_EOL;

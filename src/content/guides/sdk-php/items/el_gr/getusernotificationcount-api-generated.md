@@ -1,10 +1,9 @@
----
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Ναι |  |
-| sso | string | query | Όχι |  |
+|------|------|----------|------------|-------------|
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Απόκριση
 
@@ -20,12 +19,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Αν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε τον client σας που υλοποιεί `GuzzleHttp\ClientInterface`.
+    // Εάν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε τον client σας που υλοποιεί `GuzzleHttp\ClientInterface`.
     // Αυτό είναι προαιρετικό, `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->getUserNotificationCount($tenant_id, $sso);
@@ -34,5 +35,3 @@ try {
     echo 'Exception when calling PublicApi->getUserNotificationCount: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

@@ -1,8 +1,10 @@
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
 | commentId | string | path | Da |  |
+| broadcastId | string | query | Ne |  |
 | sso | string | query | Ne |  |
 
 ## Odgovor
@@ -11,7 +13,7 @@ Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blo
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer PostRestoreDeletedComment'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PostRestoreDeletedComment Primer'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,19 +25,19 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
-	sso := "sso_example" // string |  (neobavezno)
+	broadcastId := "broadcastId_example" // string |  (opciono)
+	sso := "sso_example" // string |  (opciono)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostRestoreDeletedComment(context.Background(), commentId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostRestoreDeletedComment(context.Background(), commentId).TenantId(tenantId).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostRestoreDeletedComment``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Greška prilikom poziva `ModerationAPI.PostRestoreDeletedComment``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Puni HTTP odgovor: %v\n", r)
 	}
 	// odgovor od `PostRestoreDeletedComment`: APIEmptyResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostRestoreDeletedComment`: %v\n", resp)
+	fmt.Fprintf(os.Stdout, "Odgovor od `ModerationAPI.PostRestoreDeletedComment`: %v\n", resp)
 }
 [inline-code-end]
-
----

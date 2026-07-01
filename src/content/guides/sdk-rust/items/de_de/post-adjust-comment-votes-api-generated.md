@@ -1,28 +1,30 @@
 ## Parameter
 
-| Name | Type | Erforderlich | Beschreibung |
-|------|------|--------------|-------------|
+| Name | Typ | Erforderlich | Beschreibung |
+|------|------|--------------|---------------|
+| tenant_id | String | Ja |  |
 | comment_id | String | Ja |  |
 | adjust_comment_votes_params | models::AdjustCommentVotesParams | Ja |  |
+| broadcast_id | String | Nein |  |
 | sso | String | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`AdjustVotesResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/adjust_votes_response.rs)
+Rückgabe: [`AdjustVotesResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/adjust_votes_response.rs)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'post_adjust_comment_votes Beispiel'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: PostAdjustCommentVotesParams = PostAdjustCommentVotesParams {
-    comment_id: String::from("cmt-news-2026-0042"),
-    adjust_comment_votes_params: models::AdjustCommentVotesParams {
-        delta: 1,
-        reason: Some(String::from("Added supporting source")),
-    },
-    sso: Some(String::from("sso-acme-corp-tenant-xyz123")),
-};
-let response: AdjustVotesResponse = post_adjust_comment_votes(&configuration, params).await?;
+async fn adjust_votes_example(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = PostAdjustCommentVotesParams {
+        tenant_id: "acme-corp".to_string(),
+        comment_id: "comment-9876".to_string(),
+        adjust_comment_votes_params: models::AdjustCommentVotesParams::default(),
+        broadcast_id: Some("broadcast-2023-11".to_string()),
+        sso: Some("sso-xyz".to_string()),
+    };
+    let _response = post_adjust_comment_votes(configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]
-
----

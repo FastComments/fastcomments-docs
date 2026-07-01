@@ -1,9 +1,9 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
-| commentIds | string | query | Да | Списък от id-та на коментари, разделени със запетая. |
+| commentIds | string | query | Да | Списък от идентификатори на коментари, разделени със запетая. |
 | sso | string | query | Не |  |
 
 ## Отговор
@@ -12,7 +12,7 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за checkedCommentsForBlocked'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'checkedCommentsForBlocked Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -20,13 +20,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ако искате да използвате персонализиран HTTP клиент, подайте вашия клиент, който реализира `GuzzleHttp\ClientInterface`.
-    // Това е незадължително, по подразбиране ще се използва `GuzzleHttp\Client`.
+    // Ако желаете да използвате персонализиран HTTP клиент, предайте вашия клиент, който имплементира `GuzzleHttp\ClientInterface`.
+    // Това е по избор, `GuzzleHttp\Client` ще бъде използван по подразбиране.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$comment_ids = 'comment_ids_example'; // string | Списък с id-та на коментарите, разделени със запетая.
+$comment_ids = 'comment_ids_example'; // string | Списък от идентификатори на коментари, разделени със запетая.
 $sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->checkedCommentsForBlocked($tenant_id, $comment_ids, $sso);
@@ -35,5 +37,3 @@ try {
     echo 'Exception when calling PublicApi->checkedCommentsForBlocked: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

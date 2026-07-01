@@ -1,10 +1,12 @@
 ## Parametre
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Ja |  |
-| direction | string | query | Nej |  |
-| sso | string | query | Nej |  |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
+|------|------|-----------|----------|-------------|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| direction | string | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Svar
 
@@ -12,7 +14,7 @@ Returnerer: [`VoteResponse`](https://github.com/FastComments/fastcomments-go/blo
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'PostVote-eksempel'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PostVote Eksempel'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -24,18 +26,20 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
 	direction := "direction_example" // string |  (valgfri)
+	broadcastId := "broadcastId_example" // string |  (valgfri)
 	sso := "sso_example" // string |  (valgfri)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostVote(context.Background(), commentId).Direction(direction).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostVote(context.Background(), commentId).TenantId(tenantId).Direction(direction).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostVote``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Fejl ved kald af `ModerationAPI.PostVote``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Fuld HTTP-respons: %v\n", r)
 	}
-	// svar fra `PostVote`: VoteResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostVote`: %v\n", resp)
+	// response from `PostVote`: VoteResponse
+	fmt.Fprintf(os.Stdout, "Respons fra `ModerationAPI.PostVote`: %v\n", resp)
 }
 [inline-code-end]

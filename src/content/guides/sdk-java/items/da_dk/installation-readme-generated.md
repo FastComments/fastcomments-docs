@@ -63,21 +63,16 @@ dependencies {
 }
 ```
 
-### Bibliotekets indhold
+### Library Contents
 
-Dette bibliotek indeholder tre moduler. Den genererede API-klient, det centrale Java-bibliotek som indeholder håndskrevne værktøjer
-til at gøre arbejdet med API'et lettere, og `pubsub`-modulet som er et bibliotek til abonnement på ændringsfeeds.
+Dette bibliotek indeholder tre moduler. Den genererede API-klient, kernebiblioteket til Java, som indeholder håndskrevne værktøjer for at gøre arbejdet med API'et lettere, og `pubsub`-modulet, som er et bibliotek til at abonnere på ændringsfeeds.
 
-- [Dokumentation for API-klientbiblioteket](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Dokumentation for Core-biblioteket, inklusive SSO-eksempler](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [Dokumentation for PubSub-biblioteket](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [API Client Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [PubSub Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### Offentlige vs. Sikrede API'er
+### Public vs Secured APIs
 
-For API-klienten er der tre klasser, `DefaultApi`, `PublicApi`, og `ModerationApi`. `DefaultApi` indeholder metoder, der kræver din API-nøgle, og `PublicApi` indeholder metoder
-der kan kaldes direkte fra en browser/mobile enhed/etc uden autentificering.
+For API-klienten findes der tre klasser, `DefaultApi`, `PublicApi` og `ModerationApi`. `DefaultApi` indeholder metoder, der kræver din API-nøgle, og `PublicApi` indeholder metoder, som kan kaldes direkte fra en browser/mobil enhed osv. uden autentificering.
 
-`ModerationApi` driver moderatorens kontrolpanel. Den indeholder metoder til kommentarmoderation (liste, optælling, søgning, logfiler, og eksport), moderatorhandlinger (fjern/gendan,
-flag, sæt gennemgang/spam/godkendelsesstatus, stemmer, og genåbn/luk tråd), udelukkelser (udeluk fra at kommentere, fortryd en udelukkelse, forud-udelukkelsesresuméer, udelukkelsesstatus og præferencer, og antal udelukkede brugere),
-og badges & tillid (tildel/fjern et badge, manuelle badges, hent/sæt tillidsfaktor, og brugerens interne profil). Hver `ModerationApi`-metode accepterer en `sso`-parameter så kaldet kan være
-udført på vegne af en SSO-autentificeret moderator.
+`ModerationApi` leverer en omfattende række af live- og hurtige moderations-API'er. Hver `ModerationApi`-metode accepterer en `sso`-parameter og kan autentificere via SSO eller en FastComments.com-session cookie.

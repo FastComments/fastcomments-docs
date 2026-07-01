@@ -1,11 +1,12 @@
 ## Parametri
 
-| Name | Tip | Lokacija | Obvezno | Opis |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| includeByUserIdAndEmail | boolean | query | Ne |  |
-| includeByIP | boolean | query | Ne |  |
-| includeByEmailDomain | boolean | query | Ne |  |
-| sso | string | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| includeByUserIdAndEmail | boolean | query | No |  |
+| includeByIP | boolean | query | No |  |
+| includeByEmailDomain | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -13,18 +14,19 @@ Vrne: [`BulkPreBanSummary`](https://github.com/FastComments/fastcomments-swift/b
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer postBulkPreBanSummary'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postBulkPreBanSummary Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Naslednji primeri kode so še v beta fazi. Za morebitne težave, prosimo prijavite preko http://github.com/OpenAPITools/openapi-generator/issues/new
+// Naslednji vzorci kode so še v beta fazi. Za morebitne težave jih prosimo prijavite prek http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let bulkPreBanParams = BulkPreBanParams(commentIds: ["commentIds_example"]) // BulkPreBanParams | 
-let includeByUserIdAndEmail = true // Bool |  (izbirno)
-let includeByIP = true // Bool |  (izbirno)
-let includeByEmailDomain = true // Bool |  (izbirno)
-let sso = "sso_example" // String |  (izbirno)
+let includeByUserIdAndEmail = true // Bool | (neobvezno)
+let includeByIP = true // Bool | (neobvezno)
+let includeByEmailDomain = true // Bool | (neobvezno)
+let sso = "sso_example" // String | (neobvezno)
 
-ModerationAPI.postBulkPreBanSummary(bulkPreBanParams: bulkPreBanParams, includeByUserIdAndEmail: includeByUserIdAndEmail, includeByIP: includeByIP, includeByEmailDomain: includeByEmailDomain, sso: sso) { (response, error) in
+ModerationAPI.postBulkPreBanSummary(tenantId: tenantId, bulkPreBanParams: bulkPreBanParams, options: ModerationAPI.PostBulkPreBanSummaryOptions(includeByUserIdAndEmail: includeByUserIdAndEmail, includeByIP: includeByIP, includeByEmailDomain: includeByEmailDomain, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

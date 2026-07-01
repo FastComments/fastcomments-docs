@@ -1,11 +1,9 @@
----
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| userId | string | 否 |  |
-| trustFactor | string | 否 |  |
-| sso | string | 否 |  |
+| tenantId | string | 是 |  |
+| options | SetTrustFactorOptions | 否 |  |
 
 ## 响应
 
@@ -15,12 +13,8 @@
 
 [inline-code-attrs-start title = 'setTrustFactor 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.setTrustFactor(userId = "user-9876", trustFactor = "high", sso = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyLTk4NzYiLCJpYXQiOjE2MjQwMDAwMDB9.signature")
-if response.isSome:
-  let resultObj = response.get()
-  echo resultObj
-else:
-  echo "No response received"
+let opts = SetTrustFactorOptions(userId = "user-456", trustFactor = 5, reason = "spam detection")
+let (trustResponse, httpResponse) = client.setTrustFactor(tenantId = "my-tenant-123", options = opts)
+if trustResponse.isSome:
+  let result = trustResponse.get()
 [inline-code-end]
-
----

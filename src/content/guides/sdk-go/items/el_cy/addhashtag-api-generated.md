@@ -1,9 +1,8 @@
----
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Όχι |  |
+| tenantId | string | query | Yes |  |
 
 ## Απάντηση
 
@@ -23,7 +22,7 @@ import (
 )
 
 func main() {
-	tenantId := "tenantId_example" // string |  (προαιρετικό)
+	tenantId := "tenantId_example" // string | 
 	createHashTagBody := *openapiclient.NewCreateHashTagBody("Tag_example") // CreateHashTagBody |  (προαιρετικό)
 
 	configuration := openapiclient.NewConfiguration()

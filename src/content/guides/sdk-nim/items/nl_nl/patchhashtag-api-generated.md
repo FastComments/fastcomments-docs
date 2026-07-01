@@ -1,23 +1,28 @@
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
-|------|------|---------|-------------|
-| tag | string | Nee |  |
-| tenantId | string | Ja |  |
-| updateHashTagBody | UpdateHashTagBody | Nee |  |
+| Naam | Type | Verplicht | Beschrijving |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| tag | string | No |  |
+| updateHashTagBody | UpdateHashTagBody | No |  |
 
-## Antwoord
+## Reactie
 
-Retourneert: [`Option[UpdateHashTagResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_hash_tag_response.nim)
+Geeft terug: [`Option[UpdateHashTagResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_hash_tag_response.nim)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'patchHashTag Voorbeeld'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.patchHashTag(tag = "breaking-news", tenantId = "my-tenant-123", updateHashTagBody = UpdateHashTagBody())
-if response.isSome:
-  let updatedHashTag = response.get()
-  echo updatedHashTag
+let updateBody = UpdateHashTagBody()
+let (optResp, httpResp) = client.patchHashTag(
+  tenantId = "my-tenant-123",
+  tag = "news",
+  updateHashTagBody = updateBody
+)
+if optResp.isSome:
+  let resp = optResp.get()
+  echo resp
+else:
+  echo "No response"
 [inline-code-end]
-
----

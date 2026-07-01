@@ -2,8 +2,8 @@
 
 | Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
 | tag | string | path | Да |  |
-| tenantId | string | query | Не |  |
 
 ## Отговор
 
@@ -11,7 +11,7 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за DeleteHashTag'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'DeleteHashTag Пример'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,20 +23,18 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	tag := "tag_example" // string | 
-	tenantId := "tenantId_example" // string |  (по избор)
 	deleteHashTagRequestBody := *openapiclient.NewDeleteHashTagRequestBody() // DeleteHashTagRequestBody |  (по избор)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 	resp, r, err := apiClient.DefaultAPI.DeleteHashTag(context.Background(), tag).TenantId(tenantId).DeleteHashTagRequestBody(deleteHashTagRequestBody).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.DeleteHashTag``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Грешка при извикване `DefaultAPI.DeleteHashTag``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Пълен HTTP отговор: %v\n", r)
 	}
-	// response from `DeleteHashTag`: APIEmptyResponse
-	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.DeleteHashTag`: %v\n", resp)
+	// отговор от `DeleteHashTag`: APIEmptyResponse
+	fmt.Fprintf(os.Stdout, "Отговор от `DefaultAPI.DeleteHashTag`: %v\n", resp)
 }
 [inline-code-end]
-
----

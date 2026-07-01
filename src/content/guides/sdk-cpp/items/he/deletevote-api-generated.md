@@ -1,10 +1,10 @@
 ## פרמטרים
 
-| שם | סוג | חובה | תיאור |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| id | string | כן |  |
-| editKey | string | לא |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| editKey | string | No |  |
 
 ## תגובה
 
@@ -12,20 +12,18 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-deleteVote'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת deleteVote'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t id = U("vote-987654321");
-boost::optional<utility::string_t> editKey = boost::optional<utility::string_t>(U("edit-key-abc123"));
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto voteId = utility::conversions::to_string_t("vote-9876");
+boost::optional<utility::string_t> editKey = utility::conversions::to_string_t("edit-abc123");
 
-api->deleteVote(tenantId, id, editKey).then([](pplx::task<std::shared_ptr<VoteDeleteResponse>> t){
+api->deleteVote(tenantId, voteId, editKey).then([](pplx::task<std::shared_ptr<VoteDeleteResponse>> task) {
     try {
-        auto resp = t.get();
-        auto finalResp = resp ? resp : std::make_shared<VoteDeleteResponse>();
-        (void)finalResp;
-    } catch (...) {
-        auto errorResp = std::make_shared<VoteDeleteResponse>();
-        (void)errorResp;
+        auto response = task.get();
+        // יש לעבד את התגובה כנדרש
+    } catch (const std::exception&) {
+        // טיפול ב‑שגיאה
     }
 });
 [inline-code-end]

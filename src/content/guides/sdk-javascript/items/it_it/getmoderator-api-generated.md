@@ -7,18 +7,19 @@
 
 ## Risposta
 
-Restituisce: [`GetModeratorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModeratorResponse.ts)
+Ritorna: [`GetModeratorResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModeratorResponse1.ts)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'Esempio getModerator'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-enterprises-72';
-const id: string = 'mod_4b2f9a';
-const response: GetModeratorResponse = await getModerator(tenantId, id);
-const status: APIStatus | undefined = response.status;
-const moderator: Moderator | undefined = response.moderator;
-const moderatorEmail: string | undefined = response.moderator?.email;
-[inline-code-end]
+(async () => {
+  const tenantId: string = "acme-corp-001";
+  const id: string = "mod-12345";
 
----
+  const result: GetModeratorResponse1 = await getModerator(tenantId, id);
+
+  const moderatorName: string | undefined = result.moderator?.name;
+  console.log(moderatorName);
+})();
+[inline-code-end]

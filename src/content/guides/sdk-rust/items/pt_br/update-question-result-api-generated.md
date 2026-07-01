@@ -1,10 +1,10 @@
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-----------|
-| tenant_id | String | Sim |  |
-| id | String | Sim |  |
-| update_question_result_body | models::UpdateQuestionResultBody | Sim |  |
+|------|------|-------------|-----------|
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
+| update_question_result_body | models::UpdateQuestionResultBody | Yes |  |
 
 ## Resposta
 
@@ -12,21 +12,19 @@ Retorna: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de update_question_result'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'update_question_result Exemplo'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_update_question_result() -> Result<(), Error> {
-    let body: models::UpdateQuestionResultBody = models::UpdateQuestionResultBody {
-        answered: Some(true),
-        confidence: Some(0.92),
-        responder: Some("editor-zoe".to_string()),
-        notes: Some("Validated against article sources".to_string()),
+async fn example() -> Result<(), Error> {
+    let params = UpdateQuestionResultParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "question-9876".to_string(),
+        update_question_result_body: models::UpdateQuestionResultBody {
+            status: Some("approved".to_string()),
+            score: Some(95),
+            ..Default::default()
+        },
     };
-    let params: UpdateQuestionResultParams = UpdateQuestionResultParams {
-        tenant_id: "acme-news-tenant".to_string(),
-        id: "news/article/5621/question/12".to_string(),
-        update_question_result_body: body,
-    };
-    let _resp: ApiEmptyResponse = update_question_result(&configuration, params).await?;
+    let _ = update_question_result(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

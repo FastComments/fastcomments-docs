@@ -14,9 +14,9 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getGifsSearch'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה של getGifsSearch'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// דוגמאות הקוד הבאות עדיין בבטא. עבור כל בעיה, דווחו דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// הקוד הבא הוא עדיין בטא. עבור כל בעיה, אנא דווח ב‑http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -25,7 +25,7 @@ let locale = "locale_example" // String |  (אופציונלי)
 let rating = "rating_example" // String |  (אופציונלי)
 let page = 987 // Double |  (אופציונלי)
 
-PublicAPI.getGifsSearch(tenantId: tenantId, search: search, locale: locale, rating: rating, page: page) { (response, error) in
+PublicAPI.getGifsSearch(tenantId: tenantId, search: search, options: PublicAPI.GetGifsSearchOptions(locale: locale, rating: rating, page: page)) { (response, error) in
     guard error == nil else {
         print(error)
         return

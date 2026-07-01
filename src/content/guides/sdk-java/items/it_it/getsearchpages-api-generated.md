@@ -1,7 +1,8 @@
 ## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
-|------|------|----------|----------|-------------|
+|------|------|-----------|--------------|-------------|
+| tenantId | string | query | Yes |  |
 | value | string | query | No |  |
 | sso | string | query | No |  |
 
@@ -11,7 +12,7 @@ Restituisce: [`ModerationPageSearchResponse`](https://github.com/FastComments/fa
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di getSearchPages'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio getSearchPages'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importa classi:
 import com.fastcomments.invoker.ApiClient;
@@ -26,15 +27,17 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
-    String value = "value_example"; // String | 
-    String sso = "sso_example"; // String | 
+    String tenantId = "tenantId_example"; // Stringa | 
+    String value = "value_example"; // Stringa | 
+    String sso = "sso_example"; // Stringa | 
     try {
-      ModerationPageSearchResponse result = apiInstance.getSearchPages()
+      ModerationPageSearchResponse result = apiInstance.getSearchPages(tenantId)
             .value(value)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
+      // Eccezione durante la chiamata a ModerationApi#getSearchPages
       System.err.println("Exception when calling ModerationApi#getSearchPages");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());

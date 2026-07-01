@@ -1,7 +1,7 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
-|------|------|----------|-------------|
+| Назва | Тип | Обов’язково | Опис |
+|------|------|--------------|------|
 | tenantId | string | Так |  |
 | id | string | Так |  |
 | updateUserBadgeParams | UpdateUserBadgeParams | Так |  |
@@ -12,23 +12,18 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад updateUserBadge'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserBadge Приклад'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t userId = U("user@example.com");
-auto params = std::make_shared<UpdateUserBadgeParams>();
-params->badgeId = U("badge-987");
-params->label = boost::optional<utility::string_t>(U("Top Contributor"));
-params->expiresAt = boost::optional<utility::string_t>(U("2026-12-31T23:59:59Z"));
-params->active = boost::optional<bool>(true);
-api->updateUserBadge(tenantId, userId, *params)
-    .then([](pplx::task<std::shared_ptr<APIEmptySuccessResponse>> t){
-        try {
-            auto resp = t.get();
-            (void)resp;
-        } catch (const std::exception&) {
-        }
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto userId = utility::conversions::to_string_t("user@example.com");
+UpdateUserBadgeParams params;
+params.badgeId = utility::conversions::to_string_t("vip-badge");
+params.expiration = boost::optional<utility::datetime>(utility::datetime::from_string(U("2024-12-31T23:59:59Z")));
+api->updateUserBadge(tenantId, userId, params)
+    .then([](std::shared_ptr<APIEmptySuccessResponse> resp){
+        std::cout << "Badge updated successfully\n";
+    })
+    .catch([](std::exception const& e){
+        std::cerr << "Error updating badge: " << e.what() << "\n";
     });
 [inline-code-end]
-
----

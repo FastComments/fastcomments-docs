@@ -1,7 +1,8 @@
 ## Παράμετροι
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|-----------|------------|
+| tenantId | string | query | Ναι |  |
 | text-search | string | query | Όχι |  |
 | byIPFromComment | string | query | Όχι |  |
 | filter | string | query | Όχι |  |
@@ -9,7 +10,7 @@
 | demo | boolean | query | Όχι |  |
 | sso | string | query | Όχι |  |
 
-## Απάντηση
+## Απόκριση
 
 Επιστρέφει: [`ModerationAPICountCommentsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_api_count_comments_response.go)
 
@@ -27,16 +28,17 @@ import (
 )
 
 func main() {
-	textSearch := "textSearch_example" // string |  (προαιρετικό)
-	byIPFromComment := "byIPFromComment_example" // string |  (προαιρετικό)
-	filter := "filter_example" // string |  (προαιρετικό)
-	searchFilters := "searchFilters_example" // string |  (προαιρετικό)
-	demo := true // bool |  (προαιρετικό)
-	sso := "sso_example" // string |  (προαιρετικό)
+	tenantId := "tenantId_example" // string |
+	textSearch := "textSearch_example" // string | (προαιρετικό)
+	byIPFromComment := "byIPFromComment_example" // string | (προαιρετικό)
+	filter := "filter_example" // string | (προαιρετικό)
+	searchFilters := "searchFilters_example" // string | (προαιρετικό)
+	demo := true // bool | (προαιρετικό)
+	sso := "sso_example" // string | (προαιρετικό)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetCount(context.Background()).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filter(filter).SearchFilters(searchFilters).Demo(demo).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetCount(context.Background()).TenantId(tenantId).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filter(filter).SearchFilters(searchFilters).Demo(demo).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetCount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

@@ -16,6 +16,7 @@ Returns: [`GetGifsTrendingResponse`](https://github.com/FastComments/fastcomment
 [inline-code-attrs-start title = 'get_gifs_trending Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetGifsTrendingOptions
 from client.models.get_gifs_trending_response import GetGifsTrendingResponse
 from client.rest import ApiException
 from pprint import pprint
@@ -37,7 +38,7 @@ with client.ApiClient(configuration) as api_client:
     page = 3.4 # float |  (optional)
 
     try:
-        api_response = api_instance.get_gifs_trending(tenant_id, locale=locale, rating=rating, page=page)
+        api_response = api_instance.get_gifs_trending(tenant_id, GetGifsTrendingOptions(locale=locale, rating=rating, page=page))
         print("The response of PublicApi->get_gifs_trending:\n")
         pprint(api_response)
     except Exception as e:

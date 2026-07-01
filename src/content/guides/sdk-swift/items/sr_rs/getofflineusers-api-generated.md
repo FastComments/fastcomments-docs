@@ -1,34 +1,34 @@
----
-Претходни коментатори на страници који нису тренутно онлајн. Сортирано по displayName.
-Користите ово након исцрпљивања /users/online да бисте приказали одељак "Чланови".
-Курсорска пагинација по commenterName: сервер пролази парцијални индекс {tenantId, urlId, commenterName} од afterName унапред помоћу $gt, без $skip трошка.
+Past commenters on the page who are NOT currently online. Sorted by displayName.  
+Use this after exhausting /users/online to render a "Members" section.  
+Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.
 
-## Параметри
+## Parameters
 
-| Име | Тип | Локација | Обавезно | Опис |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes | Идентификатор URL странице (очишћен на серверу). |
-| afterName | string | query | No | Курсор: проследите nextAfterName из претходног одговора. |
-| afterUserId | string | query | No | Курсор као разрешење: проследите nextAfterUserId из претходног одговора. Захтевано када је afterName подешен тако да се при истим именима записи не би изгубили. |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | path | Da |  |
+| urlId | string | query | Da | Identifikator URL-a stranice (čišćen na serveru). |
+| afterName | string | query | Ne | Kursor: prosledite nextAfterName iz prethodnog odgovora. |
+| afterUserId | string | query | Ne | Kursor razdvajanje: prosledite nextAfterUserId iz prethodnog odgovora. Potrebno kada je afterName postavljen kako imena koja se podudaraju ne bi isključila stavke. |
 
-## Одговор
+## Response
 
-Враћа: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PageUsersOfflineResponse.swift)
+Vraća: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PageUsersOfflineResponse.swift)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'getOfflineUsers Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getOfflineUsers'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи пример кода још увек је у бети. За било који проблем, пријавите га преко http://github.com/OpenAPITools/openapi-generator/issues/new
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledeći primeri koda su još u beta fazi. Za bilo koji problem, molimo prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let urlId = "urlId_example" // String | Идентификатор URL странице (очишћен на серверу).
-let afterName = "afterName_example" // String | Курсор: проследите nextAfterName из претходног одговора. (опционо)
-let afterUserId = "afterUserId_example" // String | Курсор као разрешење: проследите nextAfterUserId из претходног одговора. Захтевано када је afterName подешен тако да се при истим именима записи не би изгубили. (опционо)
+let urlId = "urlId_example" // String | Identifikator URL-a stranice (čišćen na serveru).
+let afterName = "afterName_example" // String | Kursor: prosledite nextAfterName iz prethodnog odgovora. (opciono)
+let afterUserId = "afterUserId_example" // String | Kursor razdvajanje: prosledite nextAfterUserId iz prethodnog odgovora. Potrebno kada je afterName postavljen kako imena koja se podudaraju ne bi isključila stavke. (opciono)
 
-PublicAPI.getOfflineUsers(tenantId: tenantId, urlId: urlId, afterName: afterName, afterUserId: afterUserId) { (response, error) in
+PublicAPI.getOfflineUsers(tenantId: tenantId, urlId: urlId, options: PublicAPI.GetOfflineUsersOptions(afterName: afterName, afterUserId: afterUserId)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -39,5 +39,3 @@ PublicAPI.getOfflineUsers(tenantId: tenantId, urlId: urlId, afterName: afterName
     }
 }
 [inline-code-end]
-
----

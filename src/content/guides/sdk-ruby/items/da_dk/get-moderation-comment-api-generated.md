@@ -1,11 +1,12 @@
 ## Parametre
 
-| Name | Type | Location | Required | Description |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Yes |  |
-| includeEmail | boolean | query | No |  |
-| includeIP | boolean | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Ja |  |
+| commentId | string | path | Ja |  |
+| includeEmail | boolean | query | Nej |  |
+| includeIP | boolean | query | Nej |  |
+| sso | string | query | Nej |  |
 
 ## Svar
 
@@ -19,6 +20,7 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 comment_id = 'comment_id_example' # String | 
 opts = {
   include_email: true, # Boolean | 
@@ -28,9 +30,11 @@ opts = {
 
 begin
   
-  result = api_instance.get_moderation_comment(comment_id, opts)
+  result = api_instance.get_moderation_comment(tenant_id, comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_moderation_comment: #{e}"
 end
 [inline-code-end]
+
+---

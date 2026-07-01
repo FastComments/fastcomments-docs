@@ -1,7 +1,8 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
-|------|------|----------|----------|-------------|
+| Ім'я | Тип | Розташування | Обов’язково | Опис |
+|------|------|--------------|-------------|------|
+| tenantId | string | query | Так |  |
 | commentId | string | path | Так |  |
 | sso | string | query | Ні |  |
 
@@ -11,29 +12,30 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад get_moderation_comment_text'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_moderation_comment_text Приклад'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.models.get_comment_text_response import GetCommentTextResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Визначення хоста є необов'язковим та за замовчуванням https://fastcomments.com
+# Визначення хоста є необов’язковим і за замовчуванням вказує https://fastcomments.com
 # Див. configuration.py для списку всіх підтримуваних параметрів конфігурації.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Відкриває контекст з екземпляром API-клієнта
+# Відкрити контекст з екземпляром API клієнта
 with client.ApiClient(configuration) as api_client:
-    # Створіть екземпляр класу API
+    # Створити екземпляр API класу
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
-    sso = 'sso_example' # str |  (необов'язковий)
+    sso = 'sso_example' # str |  (опціонально)
 
     try:
-        api_response = api_instance.get_moderation_comment_text(comment_id, sso=sso)
+        api_response = api_instance.get_moderation_comment_text(tenant_id, comment_id, sso=sso)
         print("The response of ModerationApi->get_moderation_comment_text:\n")
         pprint(api_response)
     except Exception as e:

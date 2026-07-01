@@ -1,9 +1,8 @@
----
 ## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | No |  |
+|------|------|-----------|--------------|-------------|
+| tenantId | string | query | Sì |  |
 
 ## Risposta
 
@@ -11,7 +10,7 @@ Restituisce: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomme
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di AddHashTag'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio AddHashTag'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,7 +22,7 @@ import (
 )
 
 func main() {
-	tenantId := "tenantId_example" // string |  (opzionale)
+	tenantId := "tenantId_example" // string | 
 	createHashTagBody := *openapiclient.NewCreateHashTagBody("Tag_example") // CreateHashTagBody |  (opzionale)
 
 	configuration := openapiclient.NewConfiguration()
@@ -37,5 +36,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.AddHashTag`: %v\n", resp)
 }
 [inline-code-end]
-
----

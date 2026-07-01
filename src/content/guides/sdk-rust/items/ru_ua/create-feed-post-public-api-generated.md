@@ -1,42 +1,32 @@
-## Параметры
+## Параметри
 
-| Name | Type | Required | Description |
+| Назва | Тип | Обов’язковий | Опис |
 |------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| create_feed_post_params | models::CreateFeedPostParams | Да |  |
-| broadcast_id | String | Нет |  |
-| sso | String | Нет |  |
+| tenant_id | String | Yes |  |
+| create_feed_post_params | models::CreateFeedPostParams | Yes |  |
+| broadcast_id | String | No |  |
+| sso | String | No |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_feed_post_response.rs)
+Повертає: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_feed_post_response.rs)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример create_feed_post_public'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_feed_post_public Приклад'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<CreateFeedPostResponse, Error> {
-    let params: CreateFeedPostPublicParams = CreateFeedPostPublicParams {
+async fn run_example(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = CreateFeedPostPublicParams {
         tenant_id: "acme-corp-tenant".to_string(),
         create_feed_post_params: models::CreateFeedPostParams {
-            title: "Acme Product Launch".to_string(),
-            content: "We're excited to launch our new product line today.".to_string(),
-            path: "news/product-launch".to_string(),
-            media: vec![models::FeedPostMediaItem {
-                asset: models::FeedPostMediaItemAsset {
-                    url: "https://cdn.acme.com/images/launch.jpg".to_string(),
-                    mime_type: Some("image/jpeg".to_string()),
-                },
-                caption: Some("Launch hero image".to_string()),
-            }],
+            title: "Breaking News".to_string(),
+            body: "Details about the news...".to_string(),
             ..Default::default()
         },
-        broadcast_id: Some("broadcast-2026-06".to_string()),
-        sso: Some("sso-user-jane-xyz".to_string()),
+        broadcast_id: Some("news/article".to_string()),
+        sso: Some("sso-token-abc".to_string()),
     };
-    let response: CreateFeedPostResponse = create_feed_post_public(&configuration, params).await?;
-    Ok(response)
+    let _response = create_feed_post_public(configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

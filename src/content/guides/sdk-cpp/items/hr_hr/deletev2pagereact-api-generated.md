@@ -1,29 +1,26 @@
-## Parametri
+## Parameters
 
-| Naziv | Type | Obavezno | Opis |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | urlId | string | Da |  |
 | id | string | Da |  |
 
-## Odgovor
+## Response
 
 Vraća: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateV1PageReact.h)
 
-## Primjer
+## Example
 
 [inline-code-attrs-start title = 'Primjer deleteV2PageReact'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> reason(U("cleanup"));
-utility::string_t tenantId(U("my-tenant-123"));
-utility::string_t urlId(U("blog/post-2024"));
-utility::string_t id(U("react-0a1b2c3d"));
-auto deleteTask = api->deleteV2PageReact(tenantId, urlId, id)
-    .then([](std::shared_ptr<CreateV1PageReact> result){
-        auto out = result ? result : std::make_shared<CreateV1PageReact>();
-        return out;
-    });
-deleteTask.wait();
-[inline-code-end]
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto urlId = utility::conversions::to_string_t("page-456");
+auto reactId = utility::conversions::to_string_t("react-789");
+boost::optional<utility::string_t> correlationId = utility::conversions::to_string_t("corr-001");
 
----
+api->deleteV2PageReact(tenantId, urlId, reactId)
+   .then([](pplx::task<std::shared_ptr<CreateV1PageReact>> t) {
+        auto result = t.get();
+    });
+[inline-code-end]

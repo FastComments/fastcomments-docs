@@ -1,8 +1,18 @@
-### PyPI
+### Install from GitHub
+
+Install directly from a release tag (recommended, fully reproducible):
 
 ```bash
-pip install fastcomments
+pip install git+https://github.com/fastcomments/fastcomments-python.git@v3.0.0
 ```
+
+Pin the tag rather than a branch so builds are deterministic. The same form works in `requirements.txt`:
+
+```
+fastcomments @ git+https://github.com/fastcomments/fastcomments-python.git@v3.0.0
+```
+
+Each tagged [GitHub Release](https://github.com/fastcomments/fastcomments-python/releases) also has a built wheel attached if you prefer to install a binary artifact directly.
 
 ### Library Contents
 
@@ -13,4 +23,4 @@ This library contains two modules: the generated API client and the core Python 
 
 ### Public vs Secured APIs
 
-For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains methods that can be made directly from a browser/mobile device/etc without authentication. The `ModerationApi` powers the moderator dashboard and contains methods for moderating comments (list, count, search, logs, export), moderation actions (remove/restore, flag, set review/spam/approval status, votes, reopen/close thread), bans (ban from comment, undo, pre-ban summaries, ban status/preferences, banned-user counts), and badges & trust (award/remove badge, manual badges, get/set trust factor, user internal profile). Every `ModerationApi` method accepts an `sso` parameter so it can be called on behalf of an SSO-authenticated moderator.
+For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains methods that can be made directly from a browser/mobile device/etc without authentication. The `ModerationApi` provides an extensive suite of live and fast moderation APIs. Every `ModerationApi` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.

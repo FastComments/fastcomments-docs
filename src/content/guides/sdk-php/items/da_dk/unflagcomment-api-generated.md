@@ -1,7 +1,7 @@
 ## Parametre
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
-|------|------|----------|----------|-------------|
+|------|------|-----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | id | string | path | Ja |  |
 | userId | string | query | Nej |  |
@@ -19,25 +19,29 @@ Returnerer: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Konfigurer API-nøgleautorisation: api_key
+// Konfigurer API-nøglegodkendelse: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Fjern kommentaren nedenfor for at konfigurere præfiks (f.eks. Bearer) til API-nøglen, hvis det er nødvendigt
+// Fjern kommentaren nedenunder for at opsætte præfiks (f.eks. Bearer) for API-nøglen, hvis nødvendigt
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
     // Hvis du vil bruge en brugerdefineret HTTP-klient, skal du videregive din klient, som implementerer `GuzzleHttp\ClientInterface`.
-    // Dette er valgfrit; `GuzzleHttp\Client` vil blive brugt som standard.
+    // Dette er valgfrit, `GuzzleHttp\Client` vil blive brugt som standard.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
-$user_id = 'user_id_example'; // string
-$anon_user_id = 'anon_user_id_example'; // string
+$options = [
+    'user_id' => 'user_id_example', // string
+    'anon_user_id' => 'anon_user_id_example', // string
+];
+
 
 try {
-    $result = $apiInstance->unFlagComment($tenant_id, $id, $user_id, $anon_user_id);
+    $result = $apiInstance->unFlagComment($tenant_id, $id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->unFlagComment: ', $e->getMessage(), PHP_EOL;

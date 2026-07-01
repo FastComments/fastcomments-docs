@@ -1,8 +1,10 @@
-## Parametri
+## Parameters
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Ime | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Da |  |
 | commentId | string | path | Da |  |
+| broadcastId | string | query | Ne |  |
 | sso | string | query | Ne |  |
 
 ## Odgovor
@@ -11,9 +13,9 @@ Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/b
 
 ## Primjer
 
-[inline-code-attrs-start title = 'postFlagComment Primjer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postFlagComment Primer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvoz klasa:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,10 +28,13 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
+    String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      APIEmptyResponse result = apiInstance.postFlagComment(commentId)
+      APIEmptyResponse result = apiInstance.postFlagComment(tenantId, commentId)
+            .broadcastId(broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);

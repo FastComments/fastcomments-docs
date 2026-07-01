@@ -1,6 +1,6 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | urlId | string | Yes |  |
@@ -9,20 +9,12 @@
 
 반환: [`Option[GetPageByURLIdAPIResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_page_by_urlid_api_response.nim)
 
-## 예제
+## 예시
 
 [inline-code-attrs-start title = 'getPageByURLId 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getPageByURLId(tenantId = "my-tenant-123", urlId = "news/article-title")
-if response.isSome:
-  let page = response.get()
-  echo "Page ID: ", page.id
-  echo "Title: ", page.title
-  echo "URL: ", page.url
-  echo "Published: ", $page.published
-  echo "Tags: ", $page.tags
-else:
-  echo "No page found. HTTP status: ", httpResponse.statusCode
+let (pageOpt, httpRes) = client.getPageByURLId(tenantId = "my-tenant-123", urlId = "news/article-title")
+if pageOpt.isSome:
+  let page = pageOpt.get()
+  echo page
 [inline-code-end]
-
----

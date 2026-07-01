@@ -1,37 +1,35 @@
-列出租户的页面。由 FChat 桌面客户端用于填充其房间列表。
-要求每个页面解析后的自定义配置中的 `enableFChat` 为 true。
-需要 SSO 的页面会根据请求用户的组访问权限进行筛选。
+---
+列出租户的页面。供 FChat 桌面客户端填充其房间列表使用。  
+每个页面的解析自定义配置中，需要将 `enableFChat` 设置为 true。  
+需要 SSO 的页面将根据请求用户的组访问权限进行过滤。
 
 ## 参数
 
 | 名称 | 类型 | 必需 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| cursor | string | No |  |
-| limit | int32_t | No |  |
-| q | string | No |  |
-| sortBy | PagesSortBy | No |  |
-| hasComments | bool | No |  |
+| tenantId | string | 是 |  |
+| options | const GetPagesPublicOptions& | 是 |  |
 
 ## 响应
 
-返回: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetPublicPagesResponse.h)
+返回：[`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetPublicPagesResponse.h)
 
 ## 示例
 
 [inline-code-attrs-start title = 'getPagesPublic 示例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-auto tenantId = utility::string_t(U("my-tenant-123"));
-boost::optional<utility::string_t> cursor = utility::string_t(U("cursor_abc"));
-boost::optional<int32_t> limit = 50;
-boost::optional<utility::string_t> q = utility::string_t(U("status:published"));
-boost::optional<PagesSortBy> sortBy = PagesSortBy::NEWEST;
-boost::optional<bool> hasComments = true;
-api->getPagesPublic(tenantId, cursor, limit, q, sortBy, hasComments)
-.then([](std::shared_ptr<GetPublicPagesResponse> resp){
-    if (!resp) resp = std::make_shared<GetPublicPagesResponse>();
-})
-.wait();
+utility::string_t tenantId = U("my-tenant-123");
+GetPagesPublicOptions options;
+options.limit = boost::optional<int>(50);
+options.cursor = boost::optional<utility::string_t>(U("cursor-token"));
+api->getPagesPublic(tenantId, options).then([](pplx::task<std::shared_ptr<GetPublicPagesResponse>> task){
+    try{
+        auto response = task.get();
+        // process response if needed
+    }catch(const std::exception&){
+        // handle error if needed
+    }
+});
 [inline-code-end]
 
 ---

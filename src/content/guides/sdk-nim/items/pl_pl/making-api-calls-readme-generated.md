@@ -1,4 +1,6 @@
-Wszystkie metody API w tym SDK zwracają krotki `(Option[ResponseType], Response)`. Pierwszy element zawiera sparsowaną odpowiedź w przypadku powodzenia, a drugi element to surowa odpowiedź HTTP.
+Wszystkie metody API w tym SDK zwracają krotki `(Option[ResponseType], Response)`. Pierwszy element zawiera sparsowaną odpowiedź w przypadku sukcesu, a drugi element to surowa odpowiedź HTTP.
+
+Wymagane parametry i ciało żądania są przekazywane pozycyjnie. Pozostałe opcjonalne parametry są zbierane w pojedynczy obiekt `Api<Operation>Options`, który jest ostatnim argumentem. Operacje bez parametrów opcjonalnych nie przyjmują obiektu opcji.
 
 ### Przykład: Pobieranie komentarzy
 
@@ -14,20 +16,10 @@ client.headers["x-api-key"] = "your-api-key"
 let (response, httpResponse) = getComments(
   httpClient = client,
   tenantId = "your-tenant-id",
-  page = 0,
-  limit = 0,
-  skip = 0,
-  asTree = false,
-  skipChildren = 0,
-  limitChildren = 0,
-  maxTreeDepth = 0,
-  urlId = "your-url-id",
-  userId = "",
-  anonUserId = "",
-  contextUserId = "",
-  hashTag = "",
-  parentId = "",
-  direction = SortDirections.DESC
+  options = GetCommentsOptions(
+    urlId: "your-url-id",
+    direction: SortDirections.DESC
+  )
 )
 
 if httpResponse.code == Http200:

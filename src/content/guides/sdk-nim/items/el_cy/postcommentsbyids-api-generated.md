@@ -1,23 +1,23 @@
 ## Παράμετροι
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+|------|------|------------|------------|
+| tenantId | string | Ναι |  |
 | commentsByIdsParams | CommentsByIdsParams | Όχι |  |
-| sso | string | Όχι |  |
+| sso | string = "" | Όχι |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`Option[ModerationAPIChildCommentsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_api_child_comments_response.nim)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα postCommentsByIds'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postCommentsByIds Παράδειγμα'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let commentsParams = CommentsByIdsParams(ids = @["cmt-1001", "cmt-1002"], includeReplies = true, maxDepth = 2)
-let (response, httpResponse) = client.postCommentsByIds(commentsByIdsParams = commentsParams, sso = "sso-user-7f3a9b")
-if response.isSome:
-  let result = response.get()
-  echo "Received child comments response: ", result
+let tenantId = "my-tenant-123"
+let params = CommentsByIdsParams(commentIds = @["cmt-001", "cmt-002"])
+let (maybeResp, httpResp) = client.postCommentsByIds(tenantId = tenantId, commentsByIdsParams = params, sso = "")
+if maybeResp.isSome:
+  let resp = maybeResp.get()
+  # χρήση του resp όπως απαιτείται
 [inline-code-end]
-
----

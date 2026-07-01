@@ -1,7 +1,7 @@
 ## Parametri
 
-| Nome | Tipo | Posizione | Richiesto | Descrizione |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+|------|------|-----------|--------------|-------------|
 | tenantId | string | query | Sì |  |
 | forceRecalculate | boolean | query | No |  |
 
@@ -11,27 +11,29 @@ Restituisce: [`BulkAggregateQuestionResultsResponse`](https://github.com/FastCom
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio bulkAggregateQuestionResults'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'bulkAggregateQuestionResults Esempio'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configura l'autorizzazione tramite chiave API: api_key
+// Configura l'autorizzazione della chiave API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Decommenta la riga sottostante per impostare un prefisso (es. Bearer) per la chiave API, se necessario
+// Decommenta qui sotto per impostare il prefisso (es. Bearer) per la chiave API, se necessario
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Se vuoi usare un client HTTP personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
-    // Questo è opzionale; `GuzzleHttp\Client` verrà usato come impostazione predefinita.
+    // Se vuoi usare un client http personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
+    // Questo è opzionale, `GuzzleHttp\Client` sarà usato come predefinito.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $bulk_aggregate_question_results_request = new \FastComments\Client\Model\BulkAggregateQuestionResultsRequest(); // \FastComments\Client\Model\BulkAggregateQuestionResultsRequest
 $force_recalculate = True; // bool
+
 
 try {
     $result = $apiInstance->bulkAggregateQuestionResults($tenant_id, $bulk_aggregate_question_results_request, $force_recalculate);
@@ -40,3 +42,5 @@ try {
     echo 'Exception when calling DefaultApi->bulkAggregateQuestionResults: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

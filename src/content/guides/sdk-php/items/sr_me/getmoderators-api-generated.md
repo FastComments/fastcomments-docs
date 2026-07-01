@@ -1,36 +1,37 @@
-## Параметри
+## Parametri
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| skip | number | query | Не |  |
+| tenantId | string | query | Da |  |
+| skip | number | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetModeratorsResponse.php)
+Vraća: [`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetModeratorsResponse.php)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'Пример getModerators'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getModerators Primjer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Подесите ауторизацију API кључа: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Konfigurišite autorizaciju API ključa: api_key
+// Okomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ако желите да користите прилагођени HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционо; по подразумевању ће бити коришћен `GuzzleHttp\Client`.
+    // Ako želite koristiti prilagođeni http klijent, proslijedite vaš klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao podrazumevani.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $skip = 3.4; // float
+
 
 try {
     $result = $apiInstance->getModerators($tenant_id, $skip);

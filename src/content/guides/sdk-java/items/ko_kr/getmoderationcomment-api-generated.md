@@ -1,19 +1,20 @@
-## 매개변수
+## Parameters
 
 | 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| commentId | string | 경로 | 예 |  |
-| includeEmail | boolean | 쿼리 | 아니오 |  |
-| includeIP | boolean | 쿼리 | 아니오 |  |
-| sso | string | 쿼리 | 아니오 |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| includeEmail | boolean | query | No |  |
+| includeIP | boolean | query | No |  |
+| sso | string | query | No |  |
 
-## 응답
+## Response
 
 반환: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationAPICommentResponse.java)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'getModerationComment 예제'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getModerationComment 예시'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // 클래스 가져오기:
 import com.fastcomments.invoker.ApiClient;
@@ -28,18 +29,20 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
-    String commentId = "commentId_example"; // 문자열 | 
-    Boolean includeEmail = true; // 불리언 | 
-    Boolean includeIP = true; // 불리언 | 
-    String sso = "sso_example"; // 문자열 | 
+    String tenantId = "tenantId_example"; // String | 
+    String commentId = "commentId_example"; // String | 
+    Boolean includeEmail = true; // Boolean | 
+    Boolean includeIP = true; // Boolean | 
+    String sso = "sso_example"; // String | 
     try {
-      ModerationAPICommentResponse result = apiInstance.getModerationComment(commentId)
+      ModerationAPICommentResponse result = apiInstance.getModerationComment(tenantId, commentId)
             .includeEmail(includeEmail)
             .includeIP(includeIP)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
+      // Exception when calling ModerationApi#getModerationComment
       System.err.println("Exception when calling ModerationApi#getModerationComment");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());

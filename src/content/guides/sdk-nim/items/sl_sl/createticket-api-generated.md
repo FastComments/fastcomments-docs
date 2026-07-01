@@ -2,9 +2,9 @@
 
 | Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| userId | string | Ne |  |
-| createTicketBody | CreateTicketBody | Ne |  |
+| tenantId | string | Yes |  |
+| userId | string | No |  |
+| createTicketBody | CreateTicketBody | No |  |
 
 ## Odgovor
 
@@ -14,17 +14,10 @@ Vrne: [`Option[CreateTicketResponse]`](https://github.com/FastComments/fastcomme
 
 [inline-code-attrs-start title = 'Primer createTicket'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let body = CreateTicketBody(
-  subject = "Comment moderation issue",
-  message = "Several abusive comments reported on article, please review and moderate.",
-  tags = @["moderation", "abuse", "urgent"],
-  url = "https://news.example.com/world/2026-election",
-  priority = "high"
-)
-
-let (response, httpResponse) = client.createTicket(tenantId = "my-tenant-123", userId = "user-789", createTicketBody = body)
-
-if response.isSome:
-  let ticket = response.get()
-  echo "Created ticket ID: ", ticket.id
+let tenantId = "my-tenant-123"
+let userId = "user-456"
+let ticketBody = CreateTicketBody()
+let (responseOpt, httpResponse) = client.createTicket(tenantId = tenantId, userId = userId, createTicketBody = ticketBody)
+if responseOpt.isSome:
+  let ticketResponse = responseOpt.get()
 [inline-code-end]

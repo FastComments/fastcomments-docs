@@ -1,7 +1,8 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Evet |  |
 | value | string | query | Hayır |  |
 | sso | string | query | Hayır |  |
 
@@ -13,13 +14,14 @@ Döndürür: [`ModerationUserSearchResponse`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'getSearchUsers Örneği'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Aşağıdaki kod örnekleri hâlâ beta aşamasındadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new üzerinden bildirin
+// Aşağıdaki kod örnekleri hâlâ beta sürümündedir. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new adresine bildirin
 import FastCommentsSwift
 
-let value = "value_example" // String |  (isteğe bağlı)
-let sso = "sso_example" // String |  (isteğe bağlı)
+let tenantId = "tenantId_example" // String | 
+let value = "value_example" // String |  (opsiyonel)
+let sso = "sso_example" // String |  (opsiyonel)
 
-ModerationAPI.getSearchUsers(value: value, sso: sso) { (response, error) in
+ModerationAPI.getSearchUsers(tenantId: tenantId, options: ModerationAPI.GetSearchUsersOptions(value: value, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -30,5 +32,3 @@ ModerationAPI.getSearchUsers(value: value, sso: sso) { (response, error) in
     }
 }
 [inline-code-end]
-
----

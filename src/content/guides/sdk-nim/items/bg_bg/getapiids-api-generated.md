@@ -2,13 +2,8 @@
 
 | Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
-| textSearch | string | Не |  |
-| byIPFromComment | string | Не |  |
-| filters | string | Не |  |
-| searchFilters | string | Не |  |
-| afterId | string | Не |  |
-| demo | bool | Не |  |
-| sso | string | Не |  |
+| tenantId | string | Yes |  |
+| options | GetApiIdsOptions | No |  |
 
 ## Отговор
 
@@ -16,21 +11,11 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за getApiIds'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getApiIds Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getApiIds(
-  textSearch = "urgent moderation review",
-  byIPFromComment = "203.0.113.45",
-  filters = "status:pending,flagged",
-  searchFilters = "author:jane.doe@example.com",
-  afterId = "cmt_9f8e7d6a",
-  demo = false,
-  sso = "sso-token-6b7f9a"
-)
-
-if response.isSome:
-  let idsResp = response.get()
-  echo idsResp
+let opts = GetApiIdsOptions()
+let (maybeResponse, httpResponse) = client.getApiIds(tenantId = "my-tenant-123", options = opts)
+if maybeResponse.isSome:
+  let response = maybeResponse.get()
+  echo response
 [inline-code-end]
-
----

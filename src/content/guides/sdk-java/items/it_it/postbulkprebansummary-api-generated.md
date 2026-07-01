@@ -1,7 +1,8 @@
 ## Parametri
 
-| Nome | Tipo | Posizione | Richiesto | Descrizione |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+|------|------|----------|--------------|-------------|
+| tenantId | string | query | Sì |  |
 | includeByUserIdAndEmail | boolean | query | No |  |
 | includeByIP | boolean | query | No |  |
 | includeByEmailDomain | boolean | query | No |  |
@@ -13,7 +14,7 @@ Restituisce: [`BulkPreBanSummary`](https://github.com/FastComments/fastcomments-
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio postBulkPreBanSummary'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postBulkPreBanSummary Esempio'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importa classi:
 import com.fastcomments.invoker.ApiClient;
@@ -28,13 +29,14 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     BulkPreBanParams bulkPreBanParams = new BulkPreBanParams(); // BulkPreBanParams | 
     Boolean includeByUserIdAndEmail = true; // Boolean | 
     Boolean includeByIP = true; // Boolean | 
     Boolean includeByEmailDomain = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      BulkPreBanSummary result = apiInstance.postBulkPreBanSummary(bulkPreBanParams)
+      BulkPreBanSummary result = apiInstance.postBulkPreBanSummary(tenantId, bulkPreBanParams)
             .includeByUserIdAndEmail(includeByUserIdAndEmail)
             .includeByIP(includeByIP)
             .includeByEmailDomain(includeByEmailDomain)

@@ -1,57 +1,58 @@
-## Παράμετροι
+## Parameters
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Θέση | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ναι |  |
-| isLive | boolean | query | Όχι |  |
-| doSpamCheck | boolean | query | Όχι |  |
-| sendEmails | boolean | query | Όχι |  |
-| populateNotifications | boolean | query | Όχι |  |
+| tenantId | string | query | Yes |  |
+| isLive | boolean | query | No |  |
+| doSpamCheck | boolean | query | No |  |
+| sendEmails | boolean | query | No |  |
+| populateNotifications | boolean | query | No |  |
 
-## Απόκριση
+## Response
 
 Επιστρέφει: [`SaveCommentsBulkResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/save_comments_bulk_response.py)
 
-## Παράδειγμα
+## Example
 
 [inline-code-attrs-start title = 'Παράδειγμα save_comments_bulk'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import SaveCommentsBulkOptions
 from client.models.create_comment_params import CreateCommentParams
 from client.models.save_comments_bulk_response import SaveCommentsBulkResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Ορισμός του host είναι προαιρετικός και εξ ορισμού είναι το https://fastcomments.com
-# Δείτε το configuration.py για λίστα με όλες τις υποστηριζόμενες παραμέτρους ρύθμισης.
+# Ο ορισμός του host είναι προαιρετικός και προεπιλεγμένος στο https://fastcomments.com
+# Δείτε το configuration.py για μια λίστα με όλες τις υποστηριζόμενες παραμέτρους ρυθμίσεων.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Το client πρέπει να ρυθμίσει τις παραμέτρους αυθεντικοποίησης και εξουσιοδότησης
-# σύμφωνα με την πολιτική ασφάλειας του API server.
-# Παρακάτω παρέχονται παραδείγματα για κάθε μέθοδο αυθεντικοποίησης — χρησιμοποιήστε αυτό που
-# καλύπτει την περίπτωση χρήσης αυθεντικοποίησής σας.
+# Ο πελάτης πρέπει να ρυθμίσει τις παραμέτρους ταυτοποίησης και εξουσιοδότησης
+# σύμφωνα με την πολιτική ασφαλείας του διακομιστή API.
+# Παρέχονται παραδείγματα για κάθε μέθοδο αυθεντικοποίησης παρακάτω, χρησιμοποιήστε το παράδειγμα που
+# ικανοποιεί την περίπτωσή σας.
 
-# Configure API key authorization: api_key
+# Ρύθμιση εξουσιοδότησης με κλειδί API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Αποσχολιάστε παρακάτω για να ορίσετε πρόθεμα (π.χ. Bearer) για το API key, αν χρειάζεται
+# Αποσχολιάστε παρακάτω για να ορίσετε πρόθεμα (π.χ. Bearer) για το κλειδί API, αν χρειάζεται
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Μπείτε σε ένα context με ένα instance του API client
+# Εισέλθετε σε ένα περιβάλλον με ένα στιγμιότυπο του πελάτη API
 with client.ApiClient(configuration) as api_client:
-    # Δημιουργήστε ένα instance της κλάσης API
+    # Δημιουργήστε ένα στιγμιότυπο της κλάσης API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_comment_params = [client.CreateCommentParams()] # List[CreateCommentParams] | 
-    is_live = True # bool |  (προαιρετικό)
-    do_spam_check = True # bool |  (προαιρετικό)
-    send_emails = True # bool |  (προαιρετικό)
-    populate_notifications = True # bool |  (προαιρετικό)
+    is_live = True # bool |  (optional)
+    do_spam_check = True # bool |  (optional)
+    send_emails = True # bool |  (optional)
+    populate_notifications = True # bool |  (optional)
 
     try:
-        api_response = api_instance.save_comments_bulk(tenant_id, create_comment_params, is_live=is_live, do_spam_check=do_spam_check, send_emails=send_emails, populate_notifications=populate_notifications)
+        api_response = api_instance.save_comments_bulk(tenant_id, create_comment_params, SaveCommentsBulkOptions(is_live=is_live, do_spam_check=do_spam_check, send_emails=send_emails, populate_notifications=populate_notifications))
         print("The response of DefaultApi->save_comments_bulk:\n")
         pprint(api_response)
     except Exception as e:

@@ -1,10 +1,10 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| id | string | path | Да |  |
-| userId | string | query | Нет |  |
+| Имя | Тип | Местоположение | Обязательно | Описание |
+|------|------|----------------|-------------|----------|
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| userId | string | query | No |  |
 
 ## Ответ
 
@@ -17,23 +17,24 @@
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Настройка авторизации по API-ключу: api_key
+// Настройте авторизацию ключа API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Раскомментируйте ниже, чтобы задать префикс (например, Bearer) для API-ключа, если это необходимо
+// Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для ключа API, если необходимо
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Если вы хотите использовать собственный HTTP-клиент, передайте клиент, который реализует `GuzzleHttp\ClientInterface`.
-    // Это необязательно, по умолчанию будет использоваться `GuzzleHttp\Client`.
+    // Если вы хотите использовать кастомный HTTP-клиент, передайте ваш клиент, реализующий `GuzzleHttp\ClientInterface`.
+    // Это необязательно, `GuzzleHttp\Client` будет использоваться по умолчанию.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // строка
-$id = 'id_example'; // строка
+
+$tenant_id = 'tenant_id_example'; // string
+$id = 'id_example'; // string
 $update_notification_body = new \FastComments\Client\Model\UpdateNotificationBody(); // \FastComments\Client\Model\UpdateNotificationBody
-$user_id = 'user_id_example'; // строка
+$user_id = 'user_id_example'; // string
+
 
 try {
     $result = $apiInstance->updateNotification($tenant_id, $id, $update_notification_body, $user_id);

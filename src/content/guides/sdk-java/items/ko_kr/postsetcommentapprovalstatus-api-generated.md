@@ -1,18 +1,20 @@
 ## 매개변수
 
-| 이름 | 형식 | 위치 | 필수 | 설명 |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| commentId | string | path | 예 |  |
-| approved | boolean | query | 아니요 |  |
-| sso | string | query | 아니요 |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| approved | boolean | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## 응답
 
 반환: [`SetCommentApprovedResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SetCommentApprovedResponse.java)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'postSetCommentApprovalStatus 예제'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postSetCommentApprovalStatus 예시'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // 클래스 가져오기:
 import com.fastcomments.invoker.ApiClient;
@@ -27,12 +29,15 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     Boolean approved = true; // Boolean | 
+    String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      SetCommentApprovedResponse result = apiInstance.postSetCommentApprovalStatus(commentId)
+      SetCommentApprovedResponse result = apiInstance.postSetCommentApprovalStatus(tenantId, commentId)
             .approved(approved)
+            .broadcastId(broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);

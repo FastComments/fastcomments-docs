@@ -12,10 +12,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Özel bir http istemcisi kullanmak isterseniz, `GuzzleHttp\ClientInterface` uygulayan istemcinizi geçin.
-    // Bu isteğe bağlıdır, varsayılan olarak `GuzzleHttp\Client` kullanılacaktır.
+    // Özel bir HTTP istemcisi kullanmak isterseniz, `GuzzleHttp\ClientInterface` arayüzünü uygulayan istemcinizi geçirin.
+    // Bu isteğe bağlıdır, `GuzzleHttp\Client` varsayılan olarak kullanılacaktır.
     new GuzzleHttp\Client()
 );
+
+
 
 try {
     $result = $apiInstance->logoutPublic();
@@ -24,3 +26,5 @@ try {
     echo 'Exception when calling PublicApi->logoutPublic: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

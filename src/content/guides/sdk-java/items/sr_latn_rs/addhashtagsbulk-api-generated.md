@@ -1,8 +1,8 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Ne |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
 
 ## Odgovor
 
@@ -10,9 +10,9 @@ Vraća: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomme
 
 ## Primer
 
-[inline-code-attrs-start title = 'addHashTagsBulk primer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer addHashTagsBulk'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvezi klase:
+// Uvoz klasa:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -28,15 +28,14 @@ public class Example {
     // Konfiguriši autorizaciju API ključa: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Otkomentarišite sledeći red da postavite prefiks za API ključ, npr. "Token" (podrazumevano je null)
+    // Otkomentariši sledeću liniju da postaviš prefiks za API ključ, npr. "Token" (podrazumevano null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     BulkCreateHashTagsBody bulkCreateHashTagsBody = new BulkCreateHashTagsBody(); // BulkCreateHashTagsBody | 
     try {
-      BulkCreateHashTagsResponse result = apiInstance.addHashTagsBulk()
-            .tenantId(tenantId)
+      BulkCreateHashTagsResponse result = apiInstance.addHashTagsBulk(tenantId)
             .bulkCreateHashTagsBody(bulkCreateHashTagsBody)
             .execute();
       System.out.println(result);

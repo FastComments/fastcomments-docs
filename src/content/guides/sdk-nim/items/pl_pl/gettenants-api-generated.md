@@ -1,11 +1,9 @@
----
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|-------------|
-| tenantId | string | Tak |  |
-| meta | string | Nie |  |
-| skip | float64 | Nie |  |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| options | GetTenantsOptions | No |  |
 
 ## Odpowiedź
 
@@ -13,15 +11,10 @@ Zwraca: [`Option[GetTenantsResponse]`](https://github.com/FastComments/fastcomme
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład getTenants'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTenants Przykład'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTenants(tenantId = "my-tenant-123", meta = "env=production", skip = 0.0)
-if response.isSome:
-  let tenantsResp = response.get()
-  discard tenantsResp
-  echo "Tenants fetched successfully"
-else:
-  echo "Request failed with status ", httpResponse.status
+let (maybeResp, httpResp) = client.getTenants(tenantId = "my-tenant-123", options = GetTenantsOptions())
+if maybeResp.isSome:
+  let resp = maybeResp.get()
+  echo resp
 [inline-code-end]
-
----

@@ -2,15 +2,16 @@
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| page | number | query | Hayır |  |
-| count | number | query | Hayır |  |
-| text-search | string | query | Hayır |  |
-| byIPFromComment | string | query | Hayır |  |
-| filters | string | query | Hayır |  |
-| searchFilters | string | query | Hayır |  |
-| sorts | string | query | Hayır |  |
-| demo | boolean | query | Hayır |  |
-| sso | string | query | Hayır |  |
+| tenantId | string | query | Yes |  |
+| page | number | query | No |  |
+| count | number | query | No |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sorts | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Yanıt
 
@@ -24,6 +25,7 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 opts = {
   page: 1.2, # Float | 
   count: 1.2, # Float | 
@@ -38,11 +40,9 @@ opts = {
 
 begin
   
-  result = api_instance.get_api_comments(opts)
+  result = api_instance.get_api_comments(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_api_comments: #{e}"
 end
 [inline-code-end]
-
----

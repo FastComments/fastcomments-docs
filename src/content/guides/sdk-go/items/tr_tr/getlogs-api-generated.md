@@ -2,8 +2,9 @@
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| commentId | string | yol | Evet |  |
-| sso | string | sorgu | Hayır |  |
+| tenantId | string | query | Evet |  |
+| commentId | string | path | Evet |  |
+| sso | string | query | Hayır |  |
 
 ## Yanıt
 
@@ -23,17 +24,18 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
 	sso := "sso_example" // string |  (isteğe bağlı)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetLogs(context.Background(), commentId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetLogs(context.Background(), commentId).TenantId(tenantId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetLogs``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `GetLogs`'den gelen yanıt: ModerationAPIGetLogsResponse
+	// `GetLogs` yanıtı: ModerationAPIGetLogsResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetLogs`: %v\n", resp)
 }
 [inline-code-end]

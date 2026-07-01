@@ -1,11 +1,11 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Evet |  |
-| id | string | path | Evet |  |
-| deleteComments | string | query | Hayır |  |
-| commentDeleteMode | string | query | Hayır |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| deleteComments | string | query | No |  |
+| commentDeleteMode | string | query | No |  |
 
 ## Yanıt
 
@@ -16,38 +16,37 @@ Döndürür: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-p
 [inline-code-attrs-start title = 'delete_tenant_user Örneği'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import DeleteTenantUserOptions
 from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Host tanımlamak isteğe bağlıdır ve varsayılan olarak https://fastcomments.com adresidir
-# Tüm desteklenen yapılandırma parametrelerinin listesini görmek için configuration.py dosyasına bakın.
+# Host tanımlama isteğe bağlıdır ve varsayılan olarak https://fastcomments.com adresini kullanır
+# configuration.py dosyasında desteklenen tüm yapılandırma parametrelerinin bir listesini bulabilirsiniz.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# İstemci kimlik doğrulama ve yetkilendirme parametrelerini yapılandırmalıdır
-# API sunucusunun güvenlik politikasına uygun olarak.
-# Her kimlik doğrulama yöntemi için örnekler aşağıda verilmiştir, 
-# kimlik doğrulama kullanım durumunuza uyan örneği kullanın.
+# İstemci, kimlik doğrulama ve yetkilendirme parametrelerini API sunucusunun güvenlik politikasına uygun olarak yapılandırmalıdır.
+# Her kimlik doğrulama yöntemi için örnekler aşağıda sağlanmıştır; kullanım durumunuza uygun örneği kullanın.
 
-# Configure API key authorization: api_key
+# API anahtarı yetkilendirmesini yapılandır: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Gerekirse API anahtarı için önek (ör. Bearer) ayarlamak amacıyla aşağıdakinin yorumunu kaldırın
+# Gerekiyorsa API anahtarı için önek (ör. Bearer) ayarlamak için aşağıdaki satırı yorum dışı bırakın
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API istemcisi örneği ile bir bağlam girin
+# API istemcisinin bir örneğiyle bir bağlam girin
 with client.ApiClient(configuration) as api_client:
-    # API sınıfından bir örnek oluşturun
+    # API sınıfının bir örneğini oluşturun
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
-    delete_comments = 'delete_comments_example' # str |  (isteğe bağlı)
-    comment_delete_mode = 'comment_delete_mode_example' # str |  (isteğe bağlı)
+    delete_comments = 'delete_comments_example' # str |  (optional)
+    comment_delete_mode = 'comment_delete_mode_example' # str |  (optional)
 
     try:
-        api_response = api_instance.delete_tenant_user(tenant_id, id, delete_comments=delete_comments, comment_delete_mode=comment_delete_mode)
+        api_response = api_instance.delete_tenant_user(tenant_id, id, DeleteTenantUserOptions(delete_comments=delete_comments, comment_delete_mode=comment_delete_mode))
         print("The response of DefaultApi->delete_tenant_user:\n")
         pprint(api_response)
     except Exception as e:

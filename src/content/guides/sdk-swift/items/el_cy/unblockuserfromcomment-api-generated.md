@@ -1,14 +1,13 @@
----
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Θέση | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ναι |  |
-| id | string | path | Ναι |  |
-| userId | string | query | Όχι |  |
-| anonUserId | string | query | Όχι |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/UnblockSuccess.swift)
 
@@ -16,7 +15,7 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα unBlockUserFromComment'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Τα παρακάτω δείγματα κώδικα είναι ακόμα beta. Για οποιοδήποτε ζήτημα, αναφέρετέ το μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
+// Τα παρακάτω παραδείγματα κώδικα βρίσκονται ακόμη σε beta. Για οποιοδήποτε πρόβλημα, παρακαλούμε να το αναφέρετε μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -25,7 +24,7 @@ let unBlockFromCommentParams = UnBlockFromCommentParams(commentIdsToCheck: ["com
 let userId = "userId_example" // String |  (προαιρετικό)
 let anonUserId = "anonUserId_example" // String |  (προαιρετικό)
 
-DefaultAPI.unBlockUserFromComment(tenantId: tenantId, id: id, unBlockFromCommentParams: unBlockFromCommentParams, userId: userId, anonUserId: anonUserId) { (response, error) in
+DefaultAPI.unBlockUserFromComment(tenantId: tenantId, id: id, unBlockFromCommentParams: unBlockFromCommentParams, options: DefaultAPI.UnBlockUserFromCommentOptions(userId: userId, anonUserId: anonUserId)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -36,5 +35,3 @@ DefaultAPI.unBlockUserFromComment(tenantId: tenantId, id: id, unBlockFromComment
     }
 }
 [inline-code-end]
-
----

@@ -1,38 +1,39 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Location | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ναι |  |
-| afterId | string | query | Όχι |  |
-| afterCreatedAt | integer | query | Όχι |  |
-| unreadOnly | boolean | query | Όχι |  |
-| dmOnly | boolean | query | Όχι |  |
-| noDm | boolean | query | Όχι |  |
-| sso | string | query | Όχι |  |
+| tenantId | string | query | Yes |  |
+| afterId | string | query | No |  |
+| afterCreatedAt | integer | query | No |  |
+| unreadOnly | boolean | query | No |  |
+| dmOnly | boolean | query | No |  |
+| noDm | boolean | query | No |  |
+| sso | string | query | No |  |
 
-## Απάντηση
+## Απόκριση
 
-Επιστρέφει: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/reset_user_notifications_response.py)
+Returns: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/reset_user_notifications_response.py)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα reset_user_notifications'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'reset_user_notifications Παράδειγμα'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import ResetUserNotificationsOptions
 from client.models.reset_user_notifications_response import ResetUserNotificationsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Ορισμός του host είναι προαιρετικός και η προεπιλεγμένη τιμή είναι https://fastcomments.com
-# Δείτε το configuration.py για λίστα με όλες τις υποστηριζόμενες παραμέτρους διαμόρφωσης.
+# Ο καθορισμός του host είναι προαιρετικός και προεπιλεγεί στο https://fastcomments.com
+# Δείτε το configuration.py για μια λίστα με όλες τις υποστηριζόμενες παραμέτρους ρύθμισης.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Εισέλθετε σε context με ένα στιγμιότυπο του πελάτη API
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Δημιουργία στιγμιότυπου της κλάσης API
+    # Create an instance of the API class
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     after_id = 'after_id_example' # str |  (προαιρετικό)
@@ -43,7 +44,7 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (προαιρετικό)
 
     try:
-        api_response = api_instance.reset_user_notifications(tenant_id, after_id=after_id, after_created_at=after_created_at, unread_only=unread_only, dm_only=dm_only, no_dm=no_dm, sso=sso)
+        api_response = api_instance.reset_user_notifications(tenant_id, ResetUserNotificationsOptions(after_id=after_id, after_created_at=after_created_at, unread_only=unread_only, dm_only=dm_only, no_dm=no_dm, sso=sso))
         print("The response of PublicApi->reset_user_notifications:\n")
         pprint(api_response)
     except Exception as e:

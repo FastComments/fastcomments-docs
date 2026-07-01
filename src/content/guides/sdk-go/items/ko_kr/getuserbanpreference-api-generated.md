@@ -1,17 +1,17 @@
----
-## 매개변수
+## Parameters
 
-| 이름 | 타입 | 위치 | 필수 | 설명 |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| sso | string | query | 아니오 |  |
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
-## 응답
+## Response
 
 반환: [`APIModerateGetUserBanPreferencesResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_moderate_get_user_ban_preferences_response.go)
 
-## 예제
+## Example
 
-[inline-code-attrs-start title = 'GetUserBanPreference 예제'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GetUserBanPreference 예시'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,18 +23,17 @@ import (
 )
 
 func main() {
-	sso := "sso_example" // string |  (선택 사항)
+	tenantId := "tenantId_example" // string |
+	sso := "sso_example" // string |  (옵션)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetUserBanPreference(context.Background()).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetUserBanPreference(context.Background()).TenantId(tenantId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetUserBanPreference``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `GetUserBanPreference`의 응답: APIModerateGetUserBanPreferencesResponse
+	// `GetUserBanPreference`에 대한 응답: APIModerateGetUserBanPreferencesResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetUserBanPreference`: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -1,15 +1,15 @@
----
 ## Parameters
 
-| Name | Type | Location | Required | Description |
+| Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Ja |  |
 | sso | string | query | Nee |  |
 
-## Antwoord
+## Response
 
 Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
 
-## Voorbeeld
+## Example
 
 [inline-code-attrs-start title = 'PostBanUserUndo Voorbeeld'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -23,19 +23,18 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	banUserUndoParams := *openapiclient.NewBanUserUndoParams(*openapiclient.NewAPIBanUserChangeLog()) // BanUserUndoParams | 
 	sso := "sso_example" // string |  (optioneel)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostBanUserUndo(context.Background()).BanUserUndoParams(banUserUndoParams).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostBanUserUndo(context.Background()).TenantId(tenantId).BanUserUndoParams(banUserUndoParams).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostBanUserUndo``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// antwoord van `PostBanUserUndo`: APIEmptyResponse
+	// respons van `PostBanUserUndo`: APIEmptyResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostBanUserUndo`: %v\n", resp)
 }
 [inline-code-end]
-
----

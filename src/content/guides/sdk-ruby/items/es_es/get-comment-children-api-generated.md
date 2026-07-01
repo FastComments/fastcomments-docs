@@ -1,7 +1,8 @@
 ## Parámetros
 
 | Nombre | Tipo | Ubicación | Requerido | Descripción |
-|------|------|----------|----------|-------------|
+|--------|------|-----------|-----------|-------------|
+| tenantId | string | query | Sí |  |
 | commentId | string | path | Sí |  |
 | sso | string | query | No |  |
 
@@ -11,20 +12,21 @@ Devuelve: [`ModerationAPIChildCommentsResponse`](https://github.com/FastComments
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de get_comment_children'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo get_comment_children'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
-comment_id = 'comment_id_example' # Cadena | 
+tenant_id = 'tenant_id_example' # String | 
+comment_id = 'comment_id_example' # String | 
 opts = {
-  sso: 'sso_example' # Cadena | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.get_comment_children(comment_id, opts)
+  result = api_instance.get_comment_children(tenant_id, comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_comment_children: #{e}"

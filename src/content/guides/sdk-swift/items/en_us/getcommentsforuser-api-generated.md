@@ -29,7 +29,7 @@ let includei10n = true // Bool |  (optional)
 let locale = "locale_example" // String |  (optional)
 let isCrawler = true // Bool |  (optional)
 
-PublicAPI.getCommentsForUser(userId: userId, direction: direction, repliesToUserId: repliesToUserId, page: page, includei10n: includei10n, locale: locale, isCrawler: isCrawler) { (response, error) in
+PublicAPI.getCommentsForUser(options: PublicAPI.GetCommentsForUserOptions(userId: userId, direction: direction, repliesToUserId: repliesToUserId, page: page, includei10n: includei10n, locale: locale, isCrawler: isCrawler)) { (response, error) in
     guard error == nil else {
         print(error)
         return

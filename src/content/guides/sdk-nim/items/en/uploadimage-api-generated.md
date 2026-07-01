@@ -6,8 +6,7 @@ Upload and resize an image
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | file | string | No |  |
-| sizePreset | SizePreset | No |  |
-| urlId | string | Yes |  |
+| options | UploadImageOptions | No |  |
 
 ## Response
 
@@ -17,16 +16,13 @@ Returns: [`Option[UploadImageResponse]`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'uploadImage Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.uploadImage(
+let (uploadResult, httpResponse) = client.uploadImage(
   tenantId = "my-tenant-123",
-  file = "/var/www/uploads/headline-image.jpg",
-  sizePreset = SizePreset.Medium,
-  urlId = "news/article-title"
+  file = "images/avatar.jpg",
+  options = UploadImageOptions()
 )
 
-if response.isSome:
-  let upload = response.get()
-  echo "Upload response received"
-else:
-  echo "No upload response received"
+if uploadResult.isSome:
+  let result = uploadResult.get()
+  # use result as needed
 [inline-code-end]

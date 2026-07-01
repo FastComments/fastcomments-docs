@@ -1,33 +1,25 @@
-Агрегує документи шляхом групування (якщо вказано groupBy) та застосування кількох операцій.
-Підтримуються різні операції (наприклад sum, countDistinct, avg тощо).
+Агрегує документи, групуючи їх (якщо зазначено groupBy) і застосовуючи кілька операцій.  
+Різні операції (наприклад, sum, countDistinct, avg тощо) підтримуються.
 
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Так |  |
-| aggregationRequest | AggregationRequest | Ні |  |
-| parentTenantId | string | Ні |  |
-| includeStats | bool | Ні |  |
+| Назва | Тип | Обов’язково | Опис |
+|------|------|--------------|------|
+| tenantId | string | Yes |  |
+| aggregationRequest | AggregationRequest | No |  |
+| options | AggregateOptions | No |  |
 
 ## Відповідь
 
-Повертає: [`Option[AggregateResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_aggregate_response.nim)
+Returns: [`Option[AggregateResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_aggregate_response.nim)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад aggregate'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'aggregate Приклад'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.aggregate(
-  tenantId = "my-tenant-123",
-  aggregationRequest = AggregationRequest(groupBy = @["articleId"], metrics = @["commentCount"], filters = @[], limit = 0),
-  parentTenantId = "",
-  includeStats = false
-)
-
-if response.isSome:
-  let agg = response.get()
-  discard agg
+let (aggResp, httpResp) = client.aggregate(tenantId = "my-tenant-123", aggregationRequest = AggregationRequest(), options = AggregateOptions())
+if aggResp.isSome:
+  let response = aggResp.get()
+  echo response
+echo httpResp
 [inline-code-end]
-
----

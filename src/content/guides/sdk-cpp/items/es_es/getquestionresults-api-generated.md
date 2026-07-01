@@ -1,14 +1,9 @@
 ## Parámetros
 
-| Nombre | Tipo | Requerido | Descripción |
+| Nombre | Tipo | Obligatorio | Descripción |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | No |  |
-| userId | string | No |  |
-| startDate | string | No |  |
-| questionId | string | No |  |
-| questionIds | string | No |  |
-| skip | double | No |  |
+| tenantId | string | Sí |  |
+| options | const GetQuestionResultsOptions& | Sí |  |
 
 ## Respuesta
 
@@ -16,25 +11,17 @@ Devuelve: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcom
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de getQuestionResults'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getQuestionResults Ejemplo'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-auto tenantId = utility::string_t(U("my-tenant-123"));
-boost::optional<utility::string_t> urlId(U("page-456"));
-boost::optional<utility::string_t> userId(U("user@example.com"));
-boost::optional<utility::string_t> startDate(U("2023-01-01T00:00:00Z"));
-boost::optional<utility::string_t> questionId(U("q-789"));
-boost::optional<utility::string_t> questionIds(U("q-789,q-790"));
-boost::optional<double> skip(10.0);
-api->getQuestionResults(tenantId, urlId, userId, startDate, questionId, questionIds, skip)
-.then([](pplx::task<std::shared_ptr<GetQuestionResultsResponse>> t) {
-    try {
-        auto resp = t.get();
-        if (!resp) resp = std::make_shared<GetQuestionResultsResponse>();
-        return resp;
-    } catch (...) {
-        return std::make_shared<GetQuestionResultsResponse>();
-    }
-});
+utility::string_t tenantId = U("my-tenant-123");
+GetQuestionResultsOptions options;
+options.questionId = boost::optional<utility::string_t>(U("question-456"));
+options.includeDeleted = boost::optional<bool>(false);
+api->getQuestionResults(tenantId, options)
+    .then([](pplx::task<std::shared_ptr<GetQuestionResultsResponse>> t) {
+        auto response = t.get();
+        // manejar la respuesta
+    });
 [inline-code-end]
 
 ---

@@ -1,11 +1,11 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Ναι |  |
-| id | string | path | Ναι |  |
-| contextUserId | string | query | Όχι |  |
-| isLive | boolean | query | Όχι |  |
+|------|------|----------|------------|-----------|
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| contextUserId | string | query | No |  |
+| isLive | boolean | query | No |  |
 
 ## Απόκριση
 
@@ -16,30 +16,27 @@
 [inline-code-attrs-start title = 'Παράδειγμα delete_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import DeleteCommentOptions
 from client.models.delete_comment_result import DeleteCommentResult
 from client.rest import ApiException
 from pprint import pprint
 
-# Ορισμός του host είναι προαιρετικός και εξ ορισμού είναι το https://fastcomments.com
-# Δείτε το configuration.py για μια λίστα με όλες τις υποστηριζόμενες παραμέτρους ρυθμίσεων.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
-
+# Ο ορισμός του κεντρικού υπολογιστή είναι προαιρετικός και προεπιλογή είναι https://fastcomments.com
+# Δείτε το configuration.py για λίστα όλων των υποστηριζόμενων παραμέτρων διαμόρφωσης.
 # Ο πελάτης πρέπει να ρυθμίσει τις παραμέτρους αυθεντικοποίησης και εξουσιοδότησης
-# σύμφωνα με την πολιτική ασφάλειας του διακομιστή API.
-# Παρακάτω δίνονται παραδείγματα για κάθε μέθοδο αυθεντικοποίησης, χρησιμοποιήστε το παράδειγμα που
-# καλύπτει την περίπτωση χρήσης αυθεντικοποίησής σας.
+# σύμφωνα με την πολιτική ασφαλείας του διακομιστή API.
+# Παραδείγματα για κάθε μέθοδο αυθεντικοποίησης παρέχονται παρακάτω, χρησιμοποιήστε το παράδειγμα που
+# ικανοποιεί τη χρήση αυθεντικοποίησής σας.
 
-# Ρυθμίστε την αυθεντικοποίηση με API key: api_key
+# Ρύθμιση εξουσιοδότησης κλειδιού API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Αποσχολιάστε παρακάτω για να ορίσετε πρόθεμα (π.χ. Bearer) για το API key, αν χρειάζεται
+# Ξεσχολιάστε παρακάτω για να ρυθμίσετε πρόθεμα (π.χ. Bearer) για το κλειδί API, εάν χρειάζεται
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Χρησιμοποιήστε context με ένα στιγμιότυπο του API client
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Δημιουργήστε ένα στιγμιότυπο της κλάσης API
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
@@ -47,7 +44,7 @@ with client.ApiClient(configuration) as api_client:
     is_live = True # bool |  (προαιρετικό)
 
     try:
-        api_response = api_instance.delete_comment(tenant_id, id, context_user_id=context_user_id, is_live=is_live)
+        api_response = api_instance.delete_comment(tenant_id, id, DeleteCommentOptions(context_user_id=context_user_id, is_live=is_live))
         print("The response of DefaultApi->delete_comment:\n")
         pprint(api_response)
     except Exception as e:

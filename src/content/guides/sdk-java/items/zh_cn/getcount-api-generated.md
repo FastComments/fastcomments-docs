@@ -1,8 +1,8 @@
----
 ## 参数
 
 | 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | 是 |  |
 | text-search | string | query | 否 |  |
 | byIPFromComment | string | query | 否 |  |
 | filter | string | query | 否 |  |
@@ -18,7 +18,7 @@
 
 [inline-code-attrs-start title = 'getCount 示例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 导入类：
+// 导入类:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -31,14 +31,15 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
-    String textSearch = "textSearch_example"; // 字符串 | 
-    String byIPFromComment = "byIPFromComment_example"; // 字符串 | 
-    String filter = "filter_example"; // 字符串 | 
-    String searchFilters = "searchFilters_example"; // 字符串 | 
-    Boolean demo = true; // 布尔 | 
-    String sso = "sso_example"; // 字符串 | 
+    String tenantId = "tenantId_example"; // String | 
+    String textSearch = "textSearch_example"; // String | 
+    String byIPFromComment = "byIPFromComment_example"; // String | 
+    String filter = "filter_example"; // String | 
+    String searchFilters = "searchFilters_example"; // String | 
+    Boolean demo = true; // Boolean | 
+    String sso = "sso_example"; // String | 
     try {
-      ModerationAPICountCommentsResponse result = apiInstance.getCount()
+      ModerationAPICountCommentsResponse result = apiInstance.getCount(tenantId)
             .textSearch(textSearch)
             .byIPFromComment(byIPFromComment)
             .filter(filter)
@@ -57,5 +58,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

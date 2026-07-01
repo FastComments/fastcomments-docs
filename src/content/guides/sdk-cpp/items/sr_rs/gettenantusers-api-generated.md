@@ -1,26 +1,27 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Ime | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| skip | double | Не |  |
+| tenantId | string | Da |  |
+| skip | double | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetTenantUsersResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetTenantUsersResponse.h)
+Vraća: [`GetTenantUsersResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetTenantUsersResponse.h)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'getTenantUsers Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTenantUsers Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-boost::optional<double> skip = 20;
-auto defaultResp = std::make_shared<GetTenantUsersResponse>();
-api->getTenantUsers(tenantId, skip)
-.then([defaultResp](std::shared_ptr<GetTenantUsersResponse> resp){
-    auto result = resp ? resp : defaultResp;
-    std::cout << (resp ? "Tenant users retrieved successfully\n" : "Using default response\n");
-}).wait();
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+boost::optional<double> skip = 10;
+
+api->getTenantUsers(tenantId, skip).then([](pplx::task<std::shared_ptr<GetTenantUsersResponse>> t){
+    try {
+        auto resp = t.get();
+    } catch (const std::exception&) {
+    }
+});
 [inline-code-end]
 
 ---

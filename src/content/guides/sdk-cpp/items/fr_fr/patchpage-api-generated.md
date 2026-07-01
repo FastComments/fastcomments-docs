@@ -1,37 +1,31 @@
 ## Paramètres
 
-| Name | Type | Required | Description |
+| Nom | Type | Requis | Description |
 |------|------|----------|-------------|
-| tenantId | string | Oui |  |
-| id | string | Oui |  |
-| updateAPIPageData | UpdateAPIPageData | Oui |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updateAPIPageData | UpdateAPIPageData | Yes |  |
 
 ## Réponse
 
-Retourne : [`PatchPageAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PatchPageAPIResponse.h)
+Renvoie : [`PatchPageAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PatchPageAPIResponse.h)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de patchPage'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'patchPage Exemple'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-utility::string_t pageId = U("page-9876");
-auto updatePtr = std::make_shared<UpdateAPIPageData>();
-updatePtr->title = utility::string_t(U("About Our Team"));
-updatePtr->slug = utility::string_t(U("about-our-team"));
-updatePtr->enabled = boost::optional<bool>(true);
-updatePtr->description = boost::optional<utility::string_t>(U("Updated team overview and contact information"));
-api->patchPage(tenantId, pageId, *updatePtr)
-.then([](pplx::task<std::shared_ptr<PatchPageAPIResponse>> t){
-    try {
-        auto resp = t.get();
-        if (resp) {
-            std::cout << "Patch successful, page id: " << resp->id << std::endl;
+utility::string_t pageId = U("page-789");
+UpdateAPIPageData update;
+update.title = boost::optional<utility::string_t>(U("Updated Page Title"));
+update.metadata = boost::optional<utility::string_t>(U("{\"author\":\"jane.doe@example.com\"}"));
+api->patchPage(tenantId, pageId, update)
+    .then([](std::shared_ptr<PatchPageAPIResponse> response) {
+        if (response && response->isSuccess) {
+            // gérer le succès
         }
-    } catch (const std::exception &e) {
-        std::cerr << "Patch failed: " << e.what() << std::endl;
-    }
-});
+    })
+    .then([](pplx::task<void> t) {
+        try { t.get(); } catch (const std::exception&) {}
+    });
 [inline-code-end]
-
----

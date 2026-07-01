@@ -1,10 +1,13 @@
+---
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenant_id | String | Da |  |
 | comment_id | String | Da |  |
 | spam | bool | Ne |  |
 | perm_not_spam | bool | Ne |  |
+| broadcast_id | String | Ne |  |
 | sso | String | Ne |  |
 
 ## Odgovor
@@ -15,14 +18,18 @@ Vraća: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/b
 
 [inline-code-attrs-start title = 'post_set_comment_spam_status Primjer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_set_spam_status() -> Result<(), Error> {
-    let params: PostSetCommentSpamStatusParams = PostSetCommentSpamStatusParams {
-        comment_id: String::from("acme-news/2026/06/19/article-84/comment-1023"),
+async fn example() -> Result<(), Error> {
+    let params = PostSetCommentSpamStatusParams {
+        tenant_id: "acme-corp-tenant".into(),
+        comment_id: "comment-12345".into(),
         spam: Some(true),
         perm_not_spam: Some(false),
-        sso: Some(String::from("jwt:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fakepayload")),
+        broadcast_id: Some("broadcast-678".into()),
+        sso: Some("user@example.com".into()),
     };
-    let response: ApiEmptyResponse = post_set_comment_spam_status(configuration, params).await?;
+    post_set_comment_spam_status(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
+
+---

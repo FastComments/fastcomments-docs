@@ -1,14 +1,9 @@
 ## Παράμετροι
 
-| Name | Type | Required | Περιγραφή |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
-| tenantId | string | Ναι |  |
-| commentId | string | Ναι |  |
-| externalId | string | Όχι |  |
-| eventType | string | Όχι |  |
-| domain | string | Όχι |  |
-| attemptCountGT | float64 | Όχι |  |
-| skip | float64 | Όχι |  |
+| tenantId | string | Yes |  |
+| options | GetPendingWebhookEventsOptions | No |  |
 
 ## Απόκριση
 
@@ -18,18 +13,11 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα getPendingWebhookEvents'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getPendingWebhookEvents(
+let (maybeResp, httpResp) = client.getPendingWebhookEvents(
   tenantId = "my-tenant-123",
-  commentId = "cmt-987654",
-  externalId = "",
-  eventType = "",
-  domain = "",
-  attemptCountGT = 0.0,
-  skip = 0.0
+  options = GetPendingWebhookEventsOptions()
 )
-if response.isSome:
-  let pending = response.get()
-  discard pending
-[inline-code-end]
 
----
+if maybeResp.isSome:
+  let resp = maybeResp.get()
+[inline-code-end]

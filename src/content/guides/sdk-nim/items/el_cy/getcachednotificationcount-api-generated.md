@@ -5,7 +5,7 @@
 | tenantId | string | Ναι |  |
 | id | string | Όχι |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`Option[GetCachedNotificationCountResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_cached_notification_count_response.nim)
 
@@ -13,12 +13,10 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα getCachedNotificationCount'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getCachedNotificationCount(tenantId = "my-tenant-123", id = "notification-789")
-if response.isSome:
-  let cached = response.get()
-  echo "Cached notification count: ", $cached
-else:
-  echo "No cached notification count"
+let (cachedCountOpt, httpResp) = client.getCachedNotificationCount(tenantId = "my-tenant-123", id = "article-456")
+if cachedCountOpt.isSome:
+  let cachedCount = cachedCountOpt.get()
+  echo cachedCount
 [inline-code-end]
 
 ---

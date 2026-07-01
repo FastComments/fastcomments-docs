@@ -1,7 +1,7 @@
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|----------|-------------|
+|------|------|-------------|-----------|
 | tenantId | string | Sim |  |
 | urlId | string | Sim |  |
 
@@ -11,14 +11,10 @@ Retorna: [`Option[GetV2PageReacts]`](https://github.com/FastComments/fastcomment
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getV2PageReacts'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo getV2PageReacts'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getV2PageReacts(tenantId = "my-tenant-123", urlId = "news/elections/2026/us-primary-results")
-if response.isSome:
-  let reacts = response.get()
-  echo "Received reacts: ", $reacts
-else:
-  echo "No reacts available"
+let (reactsOpt, httpResp) = client.getV2PageReacts(tenantId = "my-tenant-123", urlId = "news/article-title")
+if reactsOpt.isSome:
+  let reacts = reactsOpt.get()
+  echo reacts
 [inline-code-end]
-
----

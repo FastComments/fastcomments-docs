@@ -1,9 +1,10 @@
+---
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+|------|------|-----------|--------------|-------------|
 | tenantId | string | query | Sì |  |
-| commentIds | string | query | Sì | Una lista separata da virgole di id dei commenti. |
+| commentIds | string | query | Sì | Un elenco separato da virgole di ID dei commenti. |
 | sso | string | query | No |  |
 
 ## Risposta
@@ -12,7 +13,7 @@ Restituisce: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fa
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di checkedCommentsForBlocked'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio checkedCommentsForBlocked'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -20,13 +21,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Se desideri usare un client HTTP personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
-    // Questo è opzionale, `GuzzleHttp\Client` verrà usato come predefinito.
+    // Se vuoi usare un client HTTP personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
+    // Questo è opzionale, `GuzzleHttp\Client` sarà usato come predefinito.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$comment_ids = 'comment_ids_example'; // string | Una lista separata da virgole di id dei commenti.
+$comment_ids = 'comment_ids_example'; // string | Un elenco separato da virgole di ID dei commenti.
 $sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->checkedCommentsForBlocked($tenant_id, $comment_ids, $sso);
@@ -35,3 +38,5 @@ try {
     echo 'Exception when calling PublicApi->checkedCommentsForBlocked: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

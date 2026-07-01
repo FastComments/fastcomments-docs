@@ -1,6 +1,6 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Zahtevano | Opis |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | id | string | path | Da |  |
@@ -12,28 +12,33 @@ Vrne: [`PutSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-php
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer putSSOUser'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putSSOUser Primer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Konfigurirajte avtorizacijo z API ključem: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Odkomentirajte spodnje za nastavitev predpone (npr. Bearer) za API ključ, če je potrebno
+// Configure API key authorization: api_key
+// Nastavi avtentikacijo s ključem API: api_key
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Odkomentirajte spodaj, da nastavite predpono (npr. Bearer) za ključ API, po potrebi
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Če želite uporabiti prilagojen HTTP klient, posredujte svojega klienta, ki implementira `GuzzleHttp\ClientInterface`.
-    // To je izbirno, privzeto bo uporabljen `GuzzleHttp\Client`.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // Če želite uporabiti lastnega HTTP odjemalca, podajte svoj odjemalec, ki implementira `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // To je neobvezno, `GuzzleHttp\Client` bo uporabljen kot privzeto.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
 $update_apisso_user_data = new \FastComments\Client\Model\UpdateAPISSOUserData(); // \FastComments\Client\Model\UpdateAPISSOUserData
 $update_comments = True; // bool
+
 
 try {
     $result = $apiInstance->putSSOUser($tenant_id, $id, $update_apisso_user_data, $update_comments);

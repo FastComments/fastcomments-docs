@@ -1,46 +1,50 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Oui |  |
-| broadcastId | string | query | Non |  |
-| isLive | boolean | query | Non |  |
-| doSpamCheck | boolean | query | Non |  |
-| skipDupCheck | boolean | query | Non |  |
+| Nom | Type | Emplacement | Obligatoire | Description |
+|------|------|-------------|-------------|-------------|
+| tenantId | string | query | Yes |  |
+| broadcastId | string | query | No |  |
+| isLive | boolean | query | No |  |
+| doSpamCheck | boolean | query | No |  |
+| skipDupCheck | boolean | query | No |  |
 
 ## Réponse
 
-Renvoie: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateFeedPostsResponse.php)
+Renvoie : [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateFeedPostResponse.php)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de createFeedPost'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createFeedPost Exemple'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api_key
+// Configurer l'autorisation de la clé API : api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Décommentez ci‑dessous pour configurer le préfixe (ex. Bearer) pour la clé API, si nécessaire
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // Si vous voulez utiliser un client HTTP personnalisé, passez votre client qui implémente `GuzzleHttp\ClientInterface`.
     // Ceci est optionnel, `GuzzleHttp\Client` sera utilisé par défaut.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
+
+$tenant_id = 'tenant_id_example'; // chaîne
 $create_feed_post_params = new \FastComments\Client\Model\CreateFeedPostParams(); // \FastComments\Client\Model\CreateFeedPostParams
-$broadcast_id = 'broadcast_id_example'; // string
-$is_live = True; // bool
-$do_spam_check = True; // bool
-$skip_dup_check = True; // bool
+$options = [
+    'broadcast_id' => 'broadcast_id_example', // chaîne
+    'is_live' => True, // booléen
+    'do_spam_check' => True, // booléen
+    'skip_dup_check' => True, // booléen
+];
+
 
 try {
-    $result = $apiInstance->createFeedPost($tenant_id, $create_feed_post_params, $broadcast_id, $is_live, $do_spam_check, $skip_dup_check);
+    $result = $apiInstance->createFeedPost($tenant_id, $create_feed_post_params, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->createFeedPost: ', $e->getMessage(), PHP_EOL;

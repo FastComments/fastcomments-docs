@@ -1,12 +1,10 @@
----
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nome | Tipo | Obbligatorio | Descrizione |
+|------|------|--------------|-------------|
 | tenantId | string | Sì |  |
 | createFeedPostParams | CreateFeedPostParams | Sì |  |
-| broadcastId | string | No |  |
-| sso | string | No |  |
+| options | const CreateFeedPostPublicOptions& | Sì |  |
 
 ## Risposta
 
@@ -14,25 +12,22 @@ Restituisce: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomm
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di createFeedPostPublic'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio createFeedPostPublic'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-auto params = std::make_shared<CreateFeedPostParams>();
-params->title = U("New feature release");
-params->content = U("We launched the new comment moderation feature today.");
-params->authorEmail = U("alice@example.com");
-boost::optional<utility::string_t> broadcastId = boost::optional<utility::string_t>(U("broadcast-456"));
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("alice@example.com"));
-api->createFeedPostPublic(tenantId, *params, broadcastId, sso)
-.then([](pplx::task<std::shared_ptr<CreateFeedPostResponse>> t){
-    try {
-        auto resp = t.get();
-        if (resp) {
-            utility::string_t postId = resp->postId;
-        }
-    } catch (const std::exception&) {
-    }
-});
-[inline-code-end]
 
----
+CreateFeedPostParams params;
+params.title = U("Introducing Our New Feature");
+params.content = U("We are excited to announce the release of our latest update.");
+params.authorEmail = boost::optional<utility::string_t>(U("user@example.com"));
+params.tags = boost::optional<std::vector<utility::string_t>>({U("announcement"), U("release")});
+
+CreateFeedPostPublicOptions options;
+
+api->createFeedPostPublic(tenantId, params, options)
+    .then([](std::shared_ptr<CreateFeedPostResponse> resp) {
+        if (resp) {
+            std::wcout << U("Post created with ID: ") << resp->postId << std::endl;
+        }
+    });
+[inline-code-end]

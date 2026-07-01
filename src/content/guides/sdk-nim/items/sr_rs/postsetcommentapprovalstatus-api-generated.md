@@ -1,23 +1,26 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| commentId | string | Да |  |
-| approved | bool | Не |  |
-| sso | string | Не |  |
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Da |  |
+| commentId | string | Da |  |
+| options | PostSetCommentApprovalStatusOptions | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[SetCommentApprovedResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_set_comment_approved_response.nim)
+Vraća: [`Option[SetCommentApprovedResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_set_comment_approved_response.nim)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'postSetCommentApprovalStatus Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postSetCommentApprovalStatus Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postSetCommentApprovalStatus(commentId = "cmt-7890", approved = false, sso = "")
-if response.isSome:
-  let setResp = response.get()
-  discard setResp
-[inline-code-end]
+let (approvedOpt, httpResp) = client.postSetCommentApprovalStatus(
+  tenantId = "my-tenant-123",
+  commentId = "comment-7890",
+  options = PostSetCommentApprovalStatusOptions()
+)
 
----
+if approvedOpt.isSome:
+  let approved = approvedOpt.get()
+  echo approved
+[inline-code-end]

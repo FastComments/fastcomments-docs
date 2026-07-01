@@ -1,6 +1,6 @@
-## パラメーター
+## パラメータ
 
-| Name | Type | 必須 | 説明 |
+| 名前 | タイプ | 必須 | 説明 |
 |------|------|----------|-------------|
 | commentId | string | はい |  |
 | banEmail | boolean | いいえ |  |
@@ -11,33 +11,40 @@
 | isShadowBan | boolean | いいえ |  |
 | updateId | string | いいえ |  |
 | banReason | string | いいえ |  |
+| tenantId | string | いいえ |  |
 | sso | string | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BanUserFromCommentResult.ts)
+返却: [`PostBanUserFromCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostBanUserFromCommentResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'postBanUserFromComment の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const commentId: string = "cmt_9f8a7b4e";
-const bannedUntil: string = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString();
-const sso: string = "sso-user-7f3b2c";
-const updateId: string = "upd_20260619_001";
-const banReason: string = "Repeated harassment across multiple threads";
-const result: BanUserFromCommentResult = await postBanUserFromComment(
-  commentId,
-  true,        // banEmail（メールアドレスを禁止する）
-  false,       // banEmailDomain（メールドメインを禁止する）
-  true,        // banIP（IPを禁止する）
-  true,        // deleteAllUsersComments（ユーザーの全コメントを削除する）
-  bannedUntil,
-  false,       // isShadowBan（シャドウバンにする）
-  updateId,
-  banReason,
-  sso
-);
-[inline-code-end]
+async function runBan() {
+  const commentId: string = "cmt_5f8a2b3c";
+  const banEmail: boolean = true;
+  const banIP: boolean = false;
+  const deleteAllUsersComments: boolean = true;
+  const bannedUntil: string = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString();
+  const isShadowBan: boolean = false;
+  const banReason: string = "Repeated spam posting";
+  const tenantId: string = "tenant_12345";
 
----
+  const response: PostBanUserFromCommentResponse = await postBanUserFromComment(
+    commentId,
+    banEmail,
+    undefined,
+    banIP,
+    deleteAllUsersComments,
+    bannedUntil,
+    isShadowBan,
+    undefined,
+    banReason,
+    tenantId
+  );
+  console.log(response);
+}
+runBan();
+[inline-code-end]

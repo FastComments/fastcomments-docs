@@ -2,10 +2,10 @@
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| id | string | path | Ja |  |
-| userId | string | query | Nej |  |
-| anonUserId | string | query | Nej |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
 
 ## Svar
 
@@ -15,7 +15,7 @@ Returnerer: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-swif
 
 [inline-code-attrs-start title = 'unBlockUserFromComment Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Følgende kodeeksempler er stadig i beta. Hvis der er problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De følgende kodeeksempler er stadig i beta. For eventuelle problemer, rapportér venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -24,7 +24,7 @@ let unBlockFromCommentParams = UnBlockFromCommentParams(commentIdsToCheck: ["com
 let userId = "userId_example" // String |  (valgfri)
 let anonUserId = "anonUserId_example" // String |  (valgfri)
 
-DefaultAPI.unBlockUserFromComment(tenantId: tenantId, id: id, unBlockFromCommentParams: unBlockFromCommentParams, userId: userId, anonUserId: anonUserId) { (response, error) in
+DefaultAPI.unBlockUserFromComment(tenantId: tenantId, id: id, unBlockFromCommentParams: unBlockFromCommentParams, options: DefaultAPI.UnBlockUserFromCommentOptions(userId: userId, anonUserId: anonUserId)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -35,3 +35,5 @@ DefaultAPI.unBlockUserFromComment(tenantId: tenantId, id: id, unBlockFromComment
     }
 }
 [inline-code-end]
+
+---

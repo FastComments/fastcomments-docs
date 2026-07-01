@@ -2,10 +2,10 @@
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| namespace | String | Да |  |
-| component | String | Да |  |
-| locale | String | Нет |  |
-| use_full_translation_ids | bool | Нет |  |
+| namespace | String | Yes |  |
+| component | String | Yes |  |
+| locale | String | No |  |
+| use_full_translation_ids | bool | No |  |
 
 ## Ответ
 
@@ -16,13 +16,13 @@
 [inline-code-attrs-start title = 'Пример get_translations'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn fetch_translations() -> Result<(), Error> {
-    let params: GetTranslationsParams = GetTranslationsParams {
+    let params = GetTranslationsParams {
         namespace: "acme-corp-tenant".to_string(),
         component: "news/article".to_string(),
         locale: Some("en-US".to_string()),
         use_full_translation_ids: Some(true),
     };
-    let translations: GetTranslationsResponse = get_translations(configuration, params).await?;
+    let _response: GetTranslationsResponse = get_translations(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

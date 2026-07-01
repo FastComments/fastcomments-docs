@@ -1,9 +1,9 @@
 ## Parámetros
 
-| Nombre | Tipo | Requerido | Descripción |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | Sí |  |
-| create_tenant_package_body | models::CreateTenantPackageBody | Sí |  |
+| tenant_id | String | Yes |  |
+| create_tenant_package_body | models::CreateTenantPackageBody | Yes |  |
 
 ## Respuesta
 
@@ -11,26 +11,19 @@ Devuelve: [`CreateTenantPackageResponse`](https://github.com/FastComments/fastco
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de create_tenant_package'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo create_tenant_package'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<CreateTenantPackageResponse, Error> {
-    let create_tenant_package_body: models::CreateTenantPackageBody = models::CreateTenantPackageBody {
-        name: "Premium Support".to_string(),
-        plan: "enterprise".to_string(),
-        seats: Some(50),
-        price_cents: Some(19900),
-        currency: Some("USD".to_string()),
-        features: Some(vec!["priority-support".to_string(), "white-label".to_string()]),
-        auto_renew: Some(true),
-        notes: Some("Includes monthly account review".to_string()),
-    };
-    let params: CreateTenantPackageParams = CreateTenantPackageParams {
+async fn example() -> Result<(), Error> {
+    let params = CreateTenantPackageParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        create_tenant_package_body,
+        create_tenant_package_body: models::CreateTenantPackageBody {
+            package_name: "Standard".to_string(),
+            package_type: "news/article".to_string(),
+            description: Some("Package for news articles".to_string()),
+            ..Default::default()
+        },
     };
-    let response: CreateTenantPackageResponse = create_tenant_package(&configuration, params).await?;
-    Ok(response)
+    let _response = create_tenant_package(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

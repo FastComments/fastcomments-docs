@@ -1,9 +1,11 @@
 ## Parametry
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
-|------|------|----------|----------|-------------|
+|------|------|------------|----------|------|
+| tenantId | string | query | Tak |  |
 | commentId | string | path | Tak |  |
 | reviewed | boolean | query | Nie |  |
+| broadcastId | string | query | Nie |  |
 | sso | string | query | Nie |  |
 
 ## Odpowiedź
@@ -24,13 +26,15 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
-	reviewed := true // bool |  (opcjonalne)
-	sso := "sso_example" // string |  (opcjonalne)
+	reviewed := true // bool |  (opcjonalnie)
+	broadcastId := "broadcastId_example" // string |  (opcjonalnie)
+	sso := "sso_example" // string |  (opcjonalnie)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostSetCommentReviewStatus(context.Background(), commentId).Reviewed(reviewed).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostSetCommentReviewStatus(context.Background(), commentId).TenantId(tenantId).Reviewed(reviewed).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostSetCommentReviewStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

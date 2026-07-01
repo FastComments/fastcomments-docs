@@ -1,8 +1,9 @@
 ## Parametri
 
-| Name | Tipo | Posizione | Obbligatorio | Descrizione |
-|------|------|----------|----------|-------------|
-| badgeId | string | query | Sì |  |
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+|------|------|-----------|--------------|-------------|
+| tenantId | string | query | Yes |  |
+| badgeId | string | query | Yes |  |
 | userId | string | query | No |  |
 | commentId | string | query | No |  |
 | broadcastId | string | query | No |  |
@@ -14,7 +15,7 @@ Restituisce: [`RemoveUserBadgeResponse`](https://github.com/FastComments/fastcom
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di putRemoveBadge'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio putRemoveBadge'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importa classi:
 import com.fastcomments.invoker.ApiClient;
@@ -29,13 +30,14 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String badgeId = "badgeId_example"; // String | 
     String userId = "userId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      RemoveUserBadgeResponse result = apiInstance.putRemoveBadge(badgeId)
+      RemoveUserBadgeResponse result = apiInstance.putRemoveBadge(tenantId, badgeId)
             .userId(userId)
             .commentId(commentId)
             .broadcastId(broadcastId)
@@ -43,6 +45,7 @@ public class Example {
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
+      // Eccezione durante la chiamata a ModerationApi#putRemoveBadge
       System.err.println("Exception when calling ModerationApi#putRemoveBadge");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());

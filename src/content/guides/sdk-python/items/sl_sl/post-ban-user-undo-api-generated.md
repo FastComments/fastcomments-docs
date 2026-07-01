@@ -2,15 +2,16 @@
 
 | Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Da |  |
 | sso | string | query | Ne |  |
 
-## Odgovor
+## Odziv
 
 Vrne: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer post_ban_user_undo'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_ban_user_undo Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.models.api_empty_response import APIEmptyResponse
@@ -18,8 +19,8 @@ from client.models.ban_user_undo_params import BanUserUndoParams
 from client.rest import ApiException
 from pprint import pprint
 
-# Določitev gostitelja je neobvezna in privzeto je https://fastcomments.com
-# Za seznam vseh podprtih konfiguracijskih parametrov si oglejte configuration.py.
+# Določanje gostitelja je neobvezno in privzeto nastavljeno na https://fastcomments.com
+# Oglejte si configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -27,13 +28,14 @@ configuration = client.Configuration(
 
 # Vstopite v kontekst z instanco API odjemalca
 with client.ApiClient(configuration) as api_client:
-    # Ustvarite instanco razreda API
+    # Ustvarite instanco API razreda
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     ban_user_undo_params = client.BanUserUndoParams() # BanUserUndoParams | 
-    sso = 'sso_example' # str |  (neobvezno)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.post_ban_user_undo(ban_user_undo_params, sso=sso)
+        api_response = api_instance.post_ban_user_undo(tenant_id, ban_user_undo_params, sso=sso)
         print("The response of ModerationApi->post_ban_user_undo:\n")
         pprint(api_response)
     except Exception as e:

@@ -1,9 +1,9 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+|------|------|-----------|--------------|-------------|
+| tenantId | string | query | Sì |  |
+| id | string | path | Sì |  |
 | sendEmail | string | query | No |  |
 
 ## Risposta
@@ -12,27 +12,29 @@ Restituisce: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-p
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di deleteModerator'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio deleteModerator'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configura l'autorizzazione con la chiave API: api_key
+// Configura l'autorizzazione della chiave API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Rimuovi il commento qui sotto per impostare un prefisso (es. Bearer) per la chiave API, se necessario
+// Decommenta qui sotto per impostare il prefisso (ad es. Bearer) per la chiave API, se necessario
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Se vuoi usare un client HTTP personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
+    // Se vuoi usare un client http personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
     // Questo è opzionale, `GuzzleHttp\Client` verrà usato come predefinito.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
 $send_email = 'send_email_example'; // string
+
 
 try {
     $result = $apiInstance->deleteModerator($tenant_id, $id, $send_email);
@@ -41,3 +43,5 @@ try {
     echo 'Exception when calling DefaultApi->deleteModerator: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

@@ -1,13 +1,13 @@
 ## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
-|------|------|----------|----------|-------------|
+|------|------|-----|--------------|--------------|
 | tenantId | string | query | Ja |  |
 | id | string | path | Ja |  |
 
 ## Antwort
 
-Gibt zurück: [`GetCachedNotificationCountResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCachedNotificationCountResponse.php)
+Rückgabe: [`GetCachedNotificationCountResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCachedNotificationCountResponse.php)
 
 ## Beispiel
 
@@ -16,10 +16,9 @@ Gibt zurück: [`GetCachedNotificationCountResponse`](https://github.com/FastComm
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// API-Schlüssel-Autorisierung konfigurieren: api_key
+// Konfigurieren Sie die API-Schlüssel-Authentifizierung: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Entfernen Sie die Kommentierung unten, um ein Präfix (z. B. Bearer) für den API-Schlüssel einzurichten, falls erforderlich
+// Entfernen Sie die Auskommentierung unten, um ein Präfix (z. B. Bearer) für den API‑Schlüssel einzurichten, falls erforderlich
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
@@ -29,8 +28,10 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
+
 
 try {
     $result = $apiInstance->getCachedNotificationCount($tenant_id, $id);

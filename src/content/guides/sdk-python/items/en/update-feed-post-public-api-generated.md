@@ -16,6 +16,7 @@ Returns: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments
 [inline-code-attrs-start title = 'update_feed_post_public Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import UpdateFeedPostPublicOptions
 from client.models.create_feed_post_response import CreateFeedPostResponse
 from client.models.update_feed_post_params import UpdateFeedPostParams
 from client.rest import ApiException
@@ -39,7 +40,7 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.update_feed_post_public(tenant_id, post_id, update_feed_post_params, broadcast_id=broadcast_id, sso=sso)
+        api_response = api_instance.update_feed_post_public(tenant_id, post_id, update_feed_post_params, UpdateFeedPostPublicOptions(broadcast_id=broadcast_id, sso=sso))
         print("The response of PublicApi->update_feed_post_public:\n")
         pprint(api_response)
     except Exception as e:

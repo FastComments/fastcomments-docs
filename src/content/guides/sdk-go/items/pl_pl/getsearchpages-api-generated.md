@@ -1,7 +1,8 @@
 ## Parametry
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
-|------|------|----------|----------|-------------|
+|------|------|-------------|----------|------|
+| tenantId | string | query | Tak |  |
 | value | string | query | Nie |  |
 | sso | string | query | Nie |  |
 
@@ -11,7 +12,7 @@ Zwraca: [`ModerationPageSearchResponse`](https://github.com/FastComments/fastcom
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład użycia GetSearchPages'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład GetSearchPages'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,12 +24,13 @@ import (
 )
 
 func main() {
-	value := "value_example" // string |  (opcjonalny)
-	sso := "sso_example" // string |  (opcjonalny)
+	tenantId := "tenantId_example" // string | 
+	value := "value_example" // string |  (opcjonalnie)
+	sso := "sso_example" // string |  (opcjonalnie)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetSearchPages(context.Background()).Value(value).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetSearchPages(context.Background()).TenantId(tenantId).Value(value).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetSearchPages``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

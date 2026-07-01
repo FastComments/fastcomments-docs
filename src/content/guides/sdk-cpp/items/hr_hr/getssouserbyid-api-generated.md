@@ -1,9 +1,9 @@
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| tenantId | string | Da |  |
-| id | string | Da |  |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
 ## Odgovor
 
@@ -11,27 +11,18 @@ Vraća: [`GetSSOUserByIdAPIResponse`](https://github.com/FastComments/fastcommen
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer getSSOUserById'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSSOUserById Primjer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> optId = U("user-42@example.com");
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t id = optId.value_or(U("user-42@example.com"));
-api->getSSOUserById(tenantId, id).then([](pplx::task<std::shared_ptr<GetSSOUserByIdAPIResponse>> task){
-    try {
-        auto resp = task.get();
-        if (resp) {
-            auto out = resp;
-            (void)out;
-        } else {
-            auto fallback = std::make_shared<GetSSOUserByIdAPIResponse>();
-            (void)fallback;
+auto tenantId = U("my-tenant-123");
+auto ssoUserId = U("user-789");
+api->getSSOUserById(tenantId, ssoUserId)
+    .then([](std::shared_ptr<GetSSOUserByIdAPIResponse> resp) {
+        boost::optional<utility::string_t> email;
+        if (resp && resp->email) email = resp->email;
+        if (email) {
+            auto e = *email;
         }
-    } catch (const std::exception& ex) {
-        auto fallback = std::make_shared<GetSSOUserByIdAPIResponse>();
-        (void)ex;
-        (void)fallback;
-    }
-});
+    });
 [inline-code-end]
 
 ---

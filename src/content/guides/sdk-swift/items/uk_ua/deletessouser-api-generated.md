@@ -1,11 +1,11 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язковий | Опис |
+| Назва | Тип | Розташування | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Так |  |
-| id | string | path | Так |  |
-| deleteComments | boolean | query | Ні |  |
-| commentDeleteMode | string | query | Ні |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| deleteComments | boolean | query | No |  |
+| commentDeleteMode | string | query | No |  |
 
 ## Відповідь
 
@@ -13,9 +13,9 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'deleteSSOUser Приклад'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад deleteSSOUser'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Наступні приклади коду все ще у бета-версії. Якщо виникнуть проблеми, будь ласка, повідомте про них через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наведені зразки коду все ще у бета-версії. У разі будь-яких проблем, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -23,7 +23,7 @@ let id = "id_example" // String |
 let deleteComments = true // Bool |  (необов'язково)
 let commentDeleteMode = "commentDeleteMode_example" // String |  (необов'язково)
 
-DefaultAPI.deleteSSOUser(tenantId: tenantId, id: id, deleteComments: deleteComments, commentDeleteMode: commentDeleteMode) { (response, error) in
+DefaultAPI.deleteSSOUser(tenantId: tenantId, id: id, options: DefaultAPI.DeleteSSOUserOptions(deleteComments: deleteComments, commentDeleteMode: commentDeleteMode)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -34,5 +34,3 @@ DefaultAPI.deleteSSOUser(tenantId: tenantId, id: id, deleteComments: deleteComme
     }
 }
 [inline-code-end]
-
----

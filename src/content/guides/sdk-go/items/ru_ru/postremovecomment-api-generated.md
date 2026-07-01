@@ -1,13 +1,15 @@
 ## Параметры
 
-| Имя | Тип | Местоположение | Обязательно | Описание |
-|------|------|----------|----------|-------------|
+| Имя | Тип | Расположение | Обязательно | Описание |
+|------|------|--------------|--------------|----------|
+| tenantId | string | query | Да |  |
 | commentId | string | path | Да |  |
+| broadcastId | string | query | Нет |  |
 | sso | string | query | Нет |  |
 
 ## Ответ
 
-Возвращает: [`PostRemoveCommentResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_post_remove_comment_response.go)
+Returns: [`PostRemoveCommentApiResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_post_remove_comment_api_response.go)
 
 ## Пример
 
@@ -23,19 +25,19 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
+	broadcastId := "broadcastId_example" // string |  (необязательно)
 	sso := "sso_example" // string |  (необязательно)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostRemoveComment(context.Background(), commentId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostRemoveComment(context.Background(), commentId).TenantId(tenantId).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostRemoveComment``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Ошибка при вызове `ModerationAPI.PostRemoveComment``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Полный HTTP‑ответ: %v\n", r)
 	}
-	// ответ от `PostRemoveComment`: PostRemoveCommentResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostRemoveComment`: %v\n", resp)
+	// ответ от `PostRemoveComment`: PostRemoveCommentApiResponse
+	fmt.Fprintf(os.Stdout, "Ответ от `ModerationAPI.PostRemoveComment`: %v\n", resp)
 }
 [inline-code-end]
-
----

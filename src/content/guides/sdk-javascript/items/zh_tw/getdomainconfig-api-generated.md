@@ -1,26 +1,23 @@
 ## 參數
 
-| 名稱 | 類型 | 必填 | 說明 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| domain | string | 是 |  |
+| tenantId | string | Yes |  |
+| domain | string | Yes |  |
 
 ## 回應
 
-回傳: [`GetDomainConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetDomainConfigResponse.ts)
+返回：[`GetDomainConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetDomainConfigResponse.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getDomainConfig 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-type DomainModeration = { moderation?: { enabled?: boolean; mode?: string } };
-
-const tenantId: string = "tc_4b6f9d2a9e1f";
-const domain: string = "comments.newsdaily.com";
-const config: GetDomainConfigResponse = await getDomainConfig(tenantId, domain);
-
-const moderationEnabled: boolean | undefined = (config as unknown as DomainModeration).moderation?.enabled;
-const moderationMode: string | undefined = (config as unknown as DomainModeration).moderation?.mode;
+async function main() {
+  const tenantId: string = "acme-corp-123";
+  const domain: string = "blog.acme.com";
+  const config: GetDomainConfigResponse = await getDomainConfig(tenantId, domain);
+  console.log(config);
+}
+main();
 [inline-code-end]
-
----

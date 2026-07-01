@@ -1,7 +1,7 @@
 ## Parametre
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
-|------|------|----------|----------|-------------|
+|------|------|-----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | userId | string | query | Nej |  |
 | badgeId | string | query | Nej |  |
@@ -16,9 +16,9 @@ Returnerer: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcom
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'getUserBadges Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Eksempel på getUserBadges'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Følgende kodeeksempler er stadig i beta. For problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De følgende kodeeksempler er stadig i beta. For eventuelle problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -29,7 +29,7 @@ let displayedOnComments = true // Bool |  (valgfri)
 let limit = 987 // Double |  (valgfri)
 let skip = 987 // Double |  (valgfri)
 
-DefaultAPI.getUserBadges(tenantId: tenantId, userId: userId, badgeId: badgeId, type: type, displayedOnComments: displayedOnComments, limit: limit, skip: skip) { (response, error) in
+DefaultAPI.getUserBadges(tenantId: tenantId, options: DefaultAPI.GetUserBadgesOptions(userId: userId, badgeId: badgeId, type: type, displayedOnComments: displayedOnComments, limit: limit, skip: skip)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -40,5 +40,3 @@ DefaultAPI.getUserBadges(tenantId: tenantId, userId: userId, badgeId: badgeId, t
     }
 }
 [inline-code-end]
-
----

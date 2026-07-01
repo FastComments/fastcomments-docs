@@ -2,8 +2,8 @@
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| skip | number | query | Nej |  |
+| tenantId | string | query | Yes |  |
+| skip | number | query | No |  |
 
 ## Svar
 
@@ -11,26 +11,28 @@ Returnerer: [`GetTenantUsersResponse`](https://github.com/FastComments/fastcomme
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'getTenantUsers-eksempel'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTenantUsers Eksempel'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Konfigurer API-nøglegodkendelse: api_key
+// Konfigurer autorisation af API-nøgle: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Fjern kommentaren nedenfor for at opsætte præfiks (f.eks. Bearer) for API-nøglen, hvis nødvendigt
+// Fjern kommentaren nedenfor for at opsætte præfiks (f.eks. Bearer) for API-nøgle, hvis nødvendigt
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Hvis du vil bruge en tilpasset HTTP-klient, skal du give din klient, som implementerer `GuzzleHttp\ClientInterface`.
+    // Hvis du vil bruge en brugerdefineret http-klient, skal du passere din klient som implementerer `GuzzleHttp\ClientInterface`.
     // Dette er valgfrit, `GuzzleHttp\Client` vil blive brugt som standard.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $skip = 3.4; // float
+
 
 try {
     $result = $apiInstance->getTenantUsers($tenant_id, $skip);
@@ -39,5 +41,3 @@ try {
     echo 'Exception when calling DefaultApi->getTenantUsers: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

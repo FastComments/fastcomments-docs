@@ -1,33 +1,30 @@
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
-|------|------|----------|-------------|
+|------|------|--------------|--------------|
 | tenantId | string | Ja |  |
 | commentId | string | Ja |  |
 | direction | string | Nein |  |
-| userId | string | Nein |  |
-| anonUserId | string | Nein |  |
+| options | CreateVoteOptions | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`Option[VoteResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_vote_response.nim)
+Rückgabe: [`Option[VoteResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_vote_response.nim)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'createVote Beispiel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.createVote(
+let (voteOpt, httpResp) = client.createVote(
   tenantId = "my-tenant-123",
-  commentId = "cmt-987654",
+  commentId = "comment-7890",
   direction = "up",
-  userId = "user-42",
-  anonUserId = ""
+  options = CreateVoteOptions()
 )
-if response.isSome:
-  let vote = response.get()
-  echo "Vote created:", vote
-else:
-  echo "No vote returned"
+
+if voteOpt.isSome:
+  let vote = voteOpt.get()
+  echo vote
 [inline-code-end]
 
 ---

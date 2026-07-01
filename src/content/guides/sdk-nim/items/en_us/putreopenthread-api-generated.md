@@ -2,8 +2,9 @@
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
+| tenantId | string | Yes |  |
 | urlId | string | Yes |  |
-| sso | string | No |  |
+| sso | string = "" | No |  |
 
 ## Response
 
@@ -13,10 +14,13 @@ Returns: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcommen
 
 [inline-code-attrs-start title = 'putReopenThread Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.putReopenThread(urlId = "news/2026-election-analysis", sso = "")
-if response.isSome:
-  let apiResp = response.get()
-  echo "Reopen succeeded, response: ", apiResp
-else:
-  echo "Reopen failed, HTTP status: ", httpResponse.status
+let (apiRespOpt, httpResp) = client.putReopenThread(
+  tenantId = "my-tenant-123",
+  urlId = "news/article-title",
+  sso = ""
+)
+
+if apiRespOpt.isSome:
+  let emptyResp = apiRespOpt.get()
+  discard
 [inline-code-end]

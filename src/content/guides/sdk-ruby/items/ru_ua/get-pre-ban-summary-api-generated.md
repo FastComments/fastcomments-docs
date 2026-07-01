@@ -1,37 +1,38 @@
----
-## Параметры
+## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Да |  |
-| includeByUserIdAndEmail | boolean | query | Нет |  |
-| includeByIP | boolean | query | Нет |  |
-| includeByEmailDomain | boolean | query | Нет |  |
-| sso | string | query | Нет |  |
+| Ім'я | Тип | Місцезнаходження | Обов'язково | Опис |
+|------|------|------------------|-------------|------|
+| tenantId | string | query | Так |  |
+| commentId | string | path | Так |  |
+| includeByUserIdAndEmail | boolean | query | Ні |  |
+| includeByIP | boolean | query | Ні |  |
+| includeByEmailDomain | boolean | query | Ні |  |
+| sso | string | query | Ні |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`PreBanSummary`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/pre_ban_summary.rb)
+Повертає: [`PreBanSummary`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/pre_ban_summary.rb)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример get_pre_ban_summary'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад get_pre_ban_summary'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
-comment_id = 'comment_id_example' # Строка | 
+tenant_id = 'tenant_id_example' # String | 
+comment_id = 'comment_id_example' # String | 
 opts = {
-  include_by_user_id_and_email: true, # Логическое | 
-  include_by_ip: true, # Логическое | 
-  include_by_email_domain: true, # Логическое | 
-  sso: 'sso_example' # Строка | 
+  include_by_user_id_and_email: true, # Boolean | 
+  include_by_ip: true, # Boolean | 
+  include_by_email_domain: true, # Boolean | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.get_pre_ban_summary(comment_id, opts)
+  result = api_instance.get_pre_ban_summary(tenant_id, comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_pre_ban_summary: #{e}"

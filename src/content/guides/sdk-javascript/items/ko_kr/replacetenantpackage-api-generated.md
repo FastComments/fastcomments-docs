@@ -8,22 +8,27 @@
 
 ## 응답
 
-반환: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+반환: [`ReplaceTenantPackageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ReplaceTenantPackageResponse.ts)
 
 ## 예제
 
 [inline-code-attrs-start title = 'replaceTenantPackage 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f3b1c';
-const id: string = 'pkg_pro_2026';
-const replaceTenantPackageBody: ReplaceTenantPackageBody = {
-  planCode: 'pro_annual',
-  seats: 12,
-  expiresAt: '2027-01-01T00:00:00Z',
-  autoRenew: true, // 선택적 매개변수를 나타내는 선택적 플래그
-  notes: 'Upgrade for team collaboration'
-};
-const result: APIEmptyResponse = await replaceTenantPackage(tenantId, id, replaceTenantPackageBody);
-[inline-code-end]
+(async () => {
+    const tenantId: string = "acme-corp-tenant-01";
+    const packageId: string = "pkg-2024-annual";
 
----
+    const config: CustomConfigParameters = {
+        // 여기 사용자 정의 구성 필드
+    };
+
+    const body: ReplaceTenantPackageBody = {
+        name: "Enterprise Package",
+        // 선택적 사용자 정의 구성
+        customConfig: config,
+    };
+
+    const response: ReplaceTenantPackageResponse = await replaceTenantPackage(tenantId, packageId, body);
+    console.log(response);
+})();
+[inline-code-end]

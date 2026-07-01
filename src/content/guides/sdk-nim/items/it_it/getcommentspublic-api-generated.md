@@ -1,39 +1,14 @@
-req
-tenantId
-urlId
+req  
+tenantId  
+urlId  
 
 ## Parametri
 
-| Name | Type | Obbligatorio | Descrizione |
+| Nome | Tipo | Obbligatorio | Descrizione |
 |------|------|--------------|-------------|
 | tenantId | string | Sì |  |
 | urlId | string | Sì |  |
-| page | int | No |  |
-| direction | SortDirections | No |  |
-| sso | string | No |  |
-| skip | int | No |  |
-| skipChildren | int | No |  |
-| limit | int | No |  |
-| limitChildren | int | No |  |
-| countChildren | bool | No |  |
-| fetchPageForCommentId | string | No |  |
-| includeConfig | bool | No |  |
-| countAll | bool | No |  |
-| includei10n | bool | No |  |
-| locale | string | No |  |
-| modules | string | No |  |
-| isCrawler | bool | No |  |
-| includeNotificationCount | bool | No |  |
-| asTree | bool | No |  |
-| maxTreeDepth | int | No |  |
-| useFullTranslationIds | bool | No |  |
-| parentId | string | No |  |
-| searchText | string | No |  |
-| hashTags | seq[string] | No |  |
-| userId | string | No |  |
-| customConfigStr | string | No |  |
-| afterCommentId | string | No |  |
-| beforeCommentId | string | No |  |
+| options | GetCommentsPublicOptions | No |  |
 
 ## Risposta
 
@@ -41,43 +16,20 @@ Restituisce: [`Option[GetCommentsResponseWithPresencePublicComment]`](https://gi
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di getCommentsPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
-[inline-code-start]
-let (response, httpResponse) = client.getCommentsPublic(
+[inline-code-attrs-start title = 'getCommentsPublic Esempio'; type = 'nim'; isFunctional = false; inline-code-attrs-end]  
+[inline-code-start]  
+let (optResp, httpResp) = client.getCommentsPublic(
   tenantId = "my-tenant-123",
   urlId = "news/article-title",
-  page = 2,
-  direction = SortDirections.Descending,
-  sso = "",
-  skip = 0,
-  skipChildren = 0,
-  limit = 25,
-  limitChildren = 5,
-  countChildren = false,
-  fetchPageForCommentId = "",
-  includeConfig = true,
-  countAll = false,
-  includei10n = true,
-  locale = "en-US",
-  modules = "reactions,moderation",
-  isCrawler = false,
-  includeNotificationCount = true,
-  asTree = true,
-  maxTreeDepth = 3,
-  useFullTranslationIds = false,
-  parentId = "",
-  searchText = "climate change",
-  hashTags = @["climate", "research"],
-  userId = "user-789",
-  customConfigStr = "",
-  afterCommentId = "",
-  beforeCommentId = ""
+  options = GetCommentsPublicOptions(
+    page = 0,
+    pageSize = 10,
+    includeDeleted = false,
+    tags = @[]
+  )
 )
 
-if response.isSome:
-  let commentsResp = response.get()
-  echo "Received comments response:"
-  echo commentsResp
-else:
-  echo "No comments returned. HTTP status:", httpResponse.status
+if optResp.isSome:
+  let resp = optResp.get()
+  echo resp
 [inline-code-end]

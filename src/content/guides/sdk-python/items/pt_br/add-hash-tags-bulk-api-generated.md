@@ -1,9 +1,8 @@
----
 ## Parâmetros
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Não |  |
+| Name | Type | Location | Required | Descrição |
+|------|------|----------|----------|-----------|
+| tenantId | string | query | Yes |  |
 
 ## Resposta
 
@@ -11,7 +10,7 @@ Retorna: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomm
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de add_hash_tags_bulk'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo add_hash_tags_bulk'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.models.bulk_create_hash_tags_body import BulkCreateHashTagsBody
@@ -26,29 +25,27 @@ configuration = client.Configuration(
 )
 
 # O cliente deve configurar os parâmetros de autenticação e autorização
-# de acordo com a política de segurança do servidor da API.
-# Exemplos para cada método de autenticação são fornecidos abaixo; use o exemplo que
+# de acordo com a política de segurança do servidor API.
+# Exemplos para cada método de autenticação são fornecidos abaixo, use o exemplo que
 # atenda ao seu caso de uso de autenticação.
 
-# Configure a autorização por chave de API: api_key
+# Configurar autorização de chave API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Descomente abaixo para configurar o prefixo (ex.: Bearer) para a chave de API, se necessário
+# Descomente abaixo para definir o prefixo (ex.: Bearer) para a chave API, se necessário
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Entre em um contexto com uma instância do cliente da API
+# Entre em um contexto com uma instância do cliente API
 with client.ApiClient(configuration) as api_client:
     # Crie uma instância da classe API
     api_instance = client.DefaultApi(api_client)
-    tenant_id = 'tenant_id_example' # str | (opcional)
-    bulk_create_hash_tags_body = client.BulkCreateHashTagsBody() # BulkCreateHashTagsBody | (opcional)
+    tenant_id = 'tenant_id_example' # str | 
+    bulk_create_hash_tags_body = client.BulkCreateHashTagsBody() # BulkCreateHashTagsBody |  (optional)
 
     try:
-        api_response = api_instance.add_hash_tags_bulk(tenant_id=tenant_id, bulk_create_hash_tags_body=bulk_create_hash_tags_body)
+        api_response = api_instance.add_hash_tags_bulk(tenant_id, bulk_create_hash_tags_body)
         print("The response of DefaultApi->add_hash_tags_bulk:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling DefaultApi->add_hash_tags_bulk: %s\n" % e)
 [inline-code-end]
-
----

@@ -1,34 +1,19 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| textSearch | string | Не |  |
-| byIPFromComment | string | Не |  |
-| filter | string | Не |  |
-| searchFilters | string | Не |  |
-| demo | bool | Не |  |
-| sso | string | Не |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Da |  |
+| options | GetCountOptions | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[ModerationAPICountCommentsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_api_count_comments_response.nim)
+Vraća: [`Option[ModerationAPICountCommentsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_api_count_comments_response.nim)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'getCount Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getCount Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getCount(
-  textSearch = "climate change",
-  byIPFromComment = "203.0.113.5",
-  filter = "status:approved",
-  searchFilters = "author:john.doe@example.com;tag:opinion",
-  demo = false,
-  sso = "sso_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
-)
-if response.isSome:
-  let countResp = response.get()
-  discard countResp
-  echo "Count response received"
-else:
-  echo "No count data returned"
+let (countOpt, httpResponse) = client.getCount(tenantId = "my-tenant-123", options = GetCountOptions())
+if countOpt.isSome:
+  let count = countOpt.get()
 [inline-code-end]

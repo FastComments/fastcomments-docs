@@ -1,10 +1,10 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Местоположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| urlId | string | query | Да |  |
-| title | string | query | Нет |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| title | string | query | No |  |
 
 ## Ответ
 
@@ -20,13 +20,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Если вы хотите использовать кастомный HTTP-клиент, передайте ваш клиент, который реализует `GuzzleHttp\ClientInterface`.
+    // Если вы хотите использовать пользовательский HTTP‑клиент, передайте ваш клиент, реализующий `GuzzleHttp\ClientInterface`.
     // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$url_id = 'url_id_example'; // string
-$title = 'title_example'; // string
+
+$tenant_id = 'tenant_id_example'; // строка
+$url_id = 'url_id_example'; // строка
+$title = 'title_example'; // строка
+
 
 try {
     $result = $apiInstance->createV1PageReact($tenant_id, $url_id, $title);
@@ -35,5 +37,3 @@ try {
     echo 'Exception when calling PublicApi->createV1PageReact: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

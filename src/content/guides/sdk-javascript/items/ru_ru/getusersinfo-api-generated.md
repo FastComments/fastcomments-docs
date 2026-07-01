@@ -1,26 +1,27 @@
-Информация о нескольких пользователях для тенанта. По заданным userIds возвращает отображаемую информацию из User / SSOUser.
-Используется виджетом комментариев для обогащения пользователей, которые только что появились через событие присутствия.
-Нет контекста страницы: приватность применяется единообразно (закрытые профили маскируются).
+Массовая информация о пользователях для арендатора. По заданным userIds возвращается отображаемая информация из User / SSOUser.  
+Используется виджетом комментариев для обогащения пользователей, которые только что появились через событие присутствия.  
+Без контекста страницы: конфиденциальность применяется одинаково (приватные профили маскируются).
 
-## Параметры
+## Parameters
 
 | Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| ids | string | Да |  |
+| tenantId | string | Yes |  |
+| ids | string | Yes |  |
 
 ## Ответ
 
-Возвращает: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersInfoResponse.ts)
+Возвращает: [`GetUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUsersInfoResponse.ts)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример getUsersInfo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_78f9';
-const ids: string = 'user_10234,user_10235,user_10236';
-const usersInfo: PageUsersInfoResponse = await getUsersInfo(tenantId, ids);
-// getUsersInfo требует только tenantId и ids; необязательные параметры тут не применимы.
-[inline-code-end]
+const tenantId: string = "acme-corp-tenant";
+const ids: string = "user-1001,user-1002";
 
----
+const usersInfo: GetUsersInfoResponse = await getUsersInfo(tenantId, ids);
+
+// Optional fields in the response may be undefined
+const firstUser: PageUserEntry | undefined = usersInfo?.users?.[0];
+[inline-code-end]

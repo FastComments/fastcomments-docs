@@ -1,8 +1,10 @@
 ## Parameters
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
-|------|------|----------|----------|-------------|
+|------|------|----------|----------|---------------|
+| tenantId | string | query | Ja |  |
 | commentId | string | path | Ja |  |
+| broadcastId | string | query | Nee |  |
 | sso | string | query | Nee |  |
 
 ## Respons
@@ -14,26 +16,29 @@ Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-p
 [inline-code-attrs-start title = 'post_restore_deleted_comment Voorbeeld'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import PostRestoreDeletedCommentOptions
 from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Het instellen van de host is optioneel en staat standaard op https://fastcomments.com
-# Zie configuration.py voor een lijst van alle ondersteunde configuratieparameters.
+# Het definiëren van de host is optioneel en standaard https://fastcomments.com
+# Zie configuration.py voor een lijst met alle ondersteunde configuratieparameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Ga een context in met een instantie van de API-client
+# Open een context met een instantie van de API-client
 with client.ApiClient(configuration) as api_client:
     # Maak een instantie van de API-klasse
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
+    broadcast_id = 'broadcast_id_example' # str |  (optioneel)
     sso = 'sso_example' # str |  (optioneel)
 
     try:
-        api_response = api_instance.post_restore_deleted_comment(comment_id, sso=sso)
+        api_response = api_instance.post_restore_deleted_comment(tenant_id, comment_id, PostRestoreDeletedCommentOptions(broadcast_id=broadcast_id, sso=sso))
         print("The response of ModerationApi->post_restore_deleted_comment:\n")
         pprint(api_response)
     except Exception as e:

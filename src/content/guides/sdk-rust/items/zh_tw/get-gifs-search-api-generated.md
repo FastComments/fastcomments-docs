@@ -1,6 +1,6 @@
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 類型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenant_id | String | 是 |  |
 | search | String | 是 |  |
@@ -10,22 +10,21 @@
 
 ## 回應
 
-回傳: [`GetGifsSearchResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_gifs_search_response.rs)
+返回：[`GetGifsSearchResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_gifs_search_response.rs)
 
 ## 範例
 
 [inline-code-attrs-start title = 'get_gifs_search 範例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_gif_search() -> Result<(), Error> {
-    let params: GetGifsSearchParams = GetGifsSearchParams {
+async fn fetch_gifs(config: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetGifsSearchParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        search: "breaking news".to_string(),
+        search: "funny cats".to_string(),
         locale: Some("en-US".to_string()),
-        rating: Some("pg-13".to_string()),
+        rating: Some("pg".to_string()),
         page: Some(1.0),
     };
-    let response: GetGifsSearchResponse = get_gifs_search(&configuration, params).await?;
-    println!("{:#?}", response);
+    let _response = get_gifs_search(config, params).await?;
     Ok(())
 }
 [inline-code-end]

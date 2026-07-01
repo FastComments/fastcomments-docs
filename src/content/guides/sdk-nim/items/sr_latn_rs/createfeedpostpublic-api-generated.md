@@ -2,10 +2,9 @@
 
 | Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| createFeedPostParams | CreateFeedPostParams | Ne |  |
-| broadcastId | string | Ne |  |
-| sso | string | Ne |  |
+| tenantId | string | Yes |  |
+| createFeedPostParams | CreateFeedPostParams | No |  |
+| options | CreateFeedPostPublicOptions | No |  |
 
 ## Odgovor
 
@@ -16,20 +15,24 @@ Vraća: [`Option[CreateFeedPostResponse]`](https://github.com/FastComments/fastc
 [inline-code-attrs-start title = 'createFeedPostPublic Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let params = CreateFeedPostParams(
-  title = "Breaking: Major Update on Product X",
-  content = "Today we released Product X v2.0 with performance improvements and bug fixes.",
-  author = "jane.doe",
-  tags = @["product", "release", "v2"],
-  isPinned = false
+  urlId: "news/big-event",
+  title: "Big Event Happened",
+  content: "Full article content goes here.",
+  tags: @["news", "event"]
 )
 
-let (response, httpResponse) = client.createFeedPostPublic(tenantId = "my-tenant-123", createFeedPostParams = params, broadcastId = "", sso = "")
+let opts = CreateFeedPostPublicOptions(
+  sendNotifications: false,
+  allowComments: true
+)
+
+let (response, httpResponse) = client.createFeedPostPublic(
+  tenantId = "my-tenant-123",
+  createFeedPostParams = params,
+  options = opts
+)
 
 if response.isSome:
-  let created = response.get()
-  echo "Created feed post:", created
-else:
-  echo "Failed to create feed post; HTTP status:", httpResponse.status
+  let post = response.get()
+  echo post
 [inline-code-end]
-
----

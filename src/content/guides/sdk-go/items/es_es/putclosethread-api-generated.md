@@ -1,8 +1,8 @@
----
 ## Parámetros
 
 | Nombre | Tipo | Ubicación | Requerido | Descripción |
-|------|------|----------|----------|-------------|
+|--------|------|-----------|-----------|-------------|
+| tenantId | string | query | Sí |  |
 | urlId | string | query | Sí |  |
 | sso | string | query | No |  |
 
@@ -12,7 +12,7 @@ Devuelve: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/b
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de PutCloseThread'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo PutCloseThread'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -24,19 +24,18 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	urlId := "urlId_example" // string | 
 	sso := "sso_example" // string |  (opcional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PutCloseThread(context.Background()).UrlId(urlId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PutCloseThread(context.Background()).TenantId(tenantId).UrlId(urlId).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PutCloseThread``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Error al llamar a `ModerationAPI.PutCloseThread``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Respuesta HTTP completa: %v\n", r)
 	}
 	// respuesta de `PutCloseThread`: APIEmptyResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PutCloseThread`: %v\n", resp)
+	fmt.Fprintf(os.Stdout, "Respuesta de `ModerationAPI.PutCloseThread`: %v\n", resp)
 }
 [inline-code-end]
-
----

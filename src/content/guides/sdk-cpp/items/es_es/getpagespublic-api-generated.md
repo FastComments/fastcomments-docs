@@ -1,38 +1,32 @@
----
-Lista las páginas de un tenant. Usado por el cliente de escritorio FChat para rellenar su lista de salas.
-Requiere que `enableFChat` sea true en la configuración personalizada resuelta para cada página.
-Las páginas que requieren SSO se filtran según el acceso de grupo del usuario solicitante.
+List pages for a tenant. Used by the FChat desktop client to populate its room list.  
+Requires `enableFChat` to be true on the resolved custom config for each page.  
+Pages that require SSO are filtered against the requesting user's group access.
 
-## Parámetros
+## Parameters
 
-| Nombre | Tipo | Requerido | Descripción |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Sí |  |
-| cursor | string | No |  |
-| limit | int32_t | No |  |
-| q | string | No |  |
-| sortBy | PagesSortBy | No |  |
-| hasComments | bool | No |  |
+| tenantId | string | Yes |  |
+| options | const GetPagesPublicOptions& | Yes |  |
 
-## Respuesta
+## Response
 
-Devuelve: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetPublicPagesResponse.h)
+Returns: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetPublicPagesResponse.h)
 
-## Ejemplo
+## Example
 
-[inline-code-attrs-start title = 'Ejemplo de getPagesPublic'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo getPagesPublic'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-auto tenantId = utility::string_t(U("my-tenant-123"));
-boost::optional<utility::string_t> cursor = utility::string_t(U("cursor_abc"));
-boost::optional<int32_t> limit = 50;
-boost::optional<utility::string_t> q = utility::string_t(U("status:published"));
-boost::optional<PagesSortBy> sortBy = PagesSortBy::NEWEST;
-boost::optional<bool> hasComments = true;
-api->getPagesPublic(tenantId, cursor, limit, q, sortBy, hasComments)
-.then([](std::shared_ptr<GetPublicPagesResponse> resp){
-    if (!resp) resp = std::make_shared<GetPublicPagesResponse>();
-})
-.wait();
+utility::string_t tenantId = U("my-tenant-123");
+GetPagesPublicOptions options;
+options.limit = boost::optional<int>(50);
+options.cursor = boost::optional<utility::string_t>(U("cursor-token"));
+api->getPagesPublic(tenantId, options).then([](pplx::task<std::shared_ptr<GetPublicPagesResponse>> task){
+    try{
+        auto response = task.get();
+        // procesar la respuesta si es necesario
+    }catch(const std::exception&){
+        // manejar el error si es necesario
+    }
+});
 [inline-code-end]
-
----

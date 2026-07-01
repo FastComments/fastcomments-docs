@@ -1,22 +1,25 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| skip | number | Не |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Da |  |
+| skip | number | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetEmailTemplatesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplatesResponse.ts)
+Vraća: [`GetEmailTemplatesResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplatesResponse1.ts)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример getEmailTemplates'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getEmailTemplates'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8f3b2a9c';
-const templatesPage1: GetEmailTemplatesResponse = await getEmailTemplates(tenantId);
-const templatesPage2: GetEmailTemplatesResponse = await getEmailTemplates(tenantId, 25);
-console.log(templatesPage1, templatesPage2);
-[inline-code-end]
+(async () => {
+  const tenantId: string = "tenant_12345";
 
----
+  // Call without optional 'skip'
+  const templates: GetEmailTemplatesResponse1 = await getEmailTemplates(tenantId);
+
+  // Call with optional 'skip' parameter
+  const pagedTemplates: GetEmailTemplatesResponse1 = await getEmailTemplates(tenantId, 20);
+})();
+[inline-code-end]

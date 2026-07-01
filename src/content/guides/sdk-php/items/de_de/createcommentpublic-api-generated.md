@@ -2,15 +2,15 @@
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Ja |  |
-| urlId | string | query | Ja |  |
-| broadcastId | string | query | Ja |  |
-| sessionId | string | query | Nein |  |
-| sso | string | query | Nein |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| broadcastId | string | query | Yes |  |
+| sessionId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Antwort
 
-Gibt zurück: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SaveCommentsResponseWithPresence.php)
+Rückgabe: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SaveCommentsResponseWithPresence.php)
 
 ## Beispiel
 
@@ -26,15 +26,19 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     // Dies ist optional, `GuzzleHttp\Client` wird standardmäßig verwendet.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $url_id = 'url_id_example'; // string
 $broadcast_id = 'broadcast_id_example'; // string
 $comment_data = new \FastComments\Client\Model\CommentData(); // \FastComments\Client\Model\CommentData
-$session_id = 'session_id_example'; // string
-$sso = 'sso_example'; // string
+$options = [
+    'session_id' => 'session_id_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->createCommentPublic($tenant_id, $url_id, $broadcast_id, $comment_data, $session_id, $sso);
+    $result = $apiInstance->createCommentPublic($tenant_id, $url_id, $broadcast_id, $comment_data, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->createCommentPublic: ', $e->getMessage(), PHP_EOL;

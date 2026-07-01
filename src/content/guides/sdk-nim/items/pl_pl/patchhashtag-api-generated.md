@@ -1,9 +1,9 @@
 ## Parametry
 
-| Name | Type | Wymagane | Opis |
-|------|------|----------|-------------|
-| tag | string | Nie |  |
+| Nazwa | Typ | Wymagane | Opis |
+|------|------|----------|------|
 | tenantId | string | Tak |  |
+| tag | string | Nie |  |
 | updateHashTagBody | UpdateHashTagBody | Nie |  |
 
 ## Odpowiedź
@@ -12,12 +12,17 @@ Zwraca: [`Option[UpdateHashTagResponse]`](https://github.com/FastComments/fastco
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład patchHashTag'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'patchHashTag Przykład'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.patchHashTag(tag = "breaking-news", tenantId = "my-tenant-123", updateHashTagBody = UpdateHashTagBody())
-if response.isSome:
-  let updatedHashTag = response.get()
-  echo updatedHashTag
+let updateBody = UpdateHashTagBody()
+let (optResp, httpResp) = client.patchHashTag(
+  tenantId = "my-tenant-123",
+  tag = "news",
+  updateHashTagBody = updateBody
+)
+if optResp.isSome:
+  let resp = optResp.get()
+  echo resp
+else:
+  echo "No response"
 [inline-code-end]
-
----

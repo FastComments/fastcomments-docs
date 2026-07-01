@@ -1,25 +1,25 @@
 ## 參數
 
-| 名稱 | 類型 | 必填 | 說明 |
+| 名稱 | 類型 | 必須 | 描述 |
 |------|------|----------|-------------|
+| tenantId | string | 是 |  |
 | commentId | string | 是 |  |
-| direction | string | 否 |  |
-| sso | string | 否 |  |
+| options | PostVoteOptions | 否 |  |
 
 ## 回應
 
-回傳：[`Option[VoteResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_vote_response.nim)
+返回：[`Option[VoteResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_vote_response.nim)
 
 ## 範例
 
 [inline-code-attrs-start title = 'postVote 範例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postVote(commentId = "comment-4f3a9e", direction = "up", sso = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidXNlci0xMjMifQ.signedPart")
-if response.isSome:
-  let vote = response.get()
-  echo "Vote recorded:", vote
-else:
-  echo "No vote returned"
-[inline-code-end]
+let (voteOpt, httpResp) = client.postVote(
+  tenantId = "my-tenant-123",
+  commentId = "comment-789",
+  options = default(PostVoteOptions)
+)
 
----
+if voteOpt.isSome:
+  let vote = voteOpt.get()
+[inline-code-end]

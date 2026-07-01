@@ -1,10 +1,10 @@
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| id | string | כן |  |
-| updateModeratorBody | UpdateModeratorBody | כן |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updateModeratorBody | UpdateModeratorBody | Yes |  |
 
 ## תגובה
 
@@ -12,18 +12,15 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-updateModerator'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateModerator דוגמה'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-auto updateBody = std::make_shared<UpdateModeratorBody>();
-updateBody->email = utility::string_t(U("moderator@example.com"));
-updateBody->displayName = boost::optional<utility::string_t>(utility::string_t(U("Jane Moderator")));
-updateBody->role = boost::optional<utility::string_t>(utility::string_t(U("senior-moderator")));
-updateBody->active = boost::optional<bool>(true);
-api->updateModerator(utility::string_t(U("my-tenant-123")), utility::string_t(U("moderator-456")), *updateBody)
-    .then([](std::shared_ptr<APIEmptyResponse> resp){
-        if (resp) {
-            auto result = resp;
-        }
-        return resp;
-    });
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto moderatorId = utility::conversions::to_string_t("mod-789");
+UpdateModeratorBody body;
+body.email = utility::conversions::to_string_t("moderator@example.com");
+body.isActive = true;
+body.notes = boost::optional<utility::string_t>(utility::conversions::to_string_t("Senior moderator"));
+api->updateModerator(tenantId, moderatorId, body)
+    .then([](std::shared_ptr<APIEmptyResponse>) {})
+    .then([](pplx::task<void> t) { try { t.get(); } catch (const std::exception&) {} });
 [inline-code-end]

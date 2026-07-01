@@ -1,10 +1,12 @@
 ## Παράμετροι
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Ναι |  |
-| reviewed | boolean | query | Όχι |  |
-| sso | string | query | Όχι |  |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|------------|-----------|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| reviewed | boolean | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Απόκριση
 
@@ -15,27 +17,30 @@
 [inline-code-attrs-start title = 'post_set_comment_review_status Παράδειγμα'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import PostSetCommentReviewStatusOptions
 from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Ορισμός του host είναι προαιρετικός και προεπιλεγμένο είναι το https://fastcomments.com
-# Δείτε το configuration.py για λίστα με όλες τις υποστηριζόμενες παραμέτρους ρυθμίσεων.
+# Ο ορισμός του host είναι προαιρετικός και προεπιλεγμένο στην https://fastcomments.com
+# Δείτε το configuration.py για τη λίστα όλων των υποστηριζόμενων παραμέτρων παραμετροποίησης.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Μπείτε σε context με ένα στιγμιότυπο του API client
+# Εισέρχεστε σε ένα πλαίσιο με μια παρουσία του πελάτη API
 with client.ApiClient(configuration) as api_client:
-    # Δημιουργήστε ένα στιγμιότυπο της κλάσης API
+    # Δημιουργήστε μια παρουσία της κλάσης API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     reviewed = True # bool |  (προαιρετικό)
+    broadcast_id = 'broadcast_id_example' # str |  (προαιρετικό)
     sso = 'sso_example' # str |  (προαιρετικό)
 
     try:
-        api_response = api_instance.post_set_comment_review_status(comment_id, reviewed=reviewed, sso=sso)
+        api_response = api_instance.post_set_comment_review_status(tenant_id, comment_id, PostSetCommentReviewStatusOptions(reviewed=reviewed, broadcast_id=broadcast_id, sso=sso))
         print("The response of ModerationApi->post_set_comment_review_status:\n")
         pprint(api_response)
     except Exception as e:

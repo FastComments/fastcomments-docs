@@ -1,12 +1,13 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 描述 |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| sso | string | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## 响应
 
-返回: [`ModerationAPIChildCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/moderation_api_child_comments_response.py)
+返回：[`ModerationAPIChildCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/moderation_api_child_comments_response.py)
 
 ## 示例
 
@@ -18,22 +19,23 @@ from client.models.moderation_api_child_comments_response import ModerationAPICh
 from client.rest import ApiException
 from pprint import pprint
 
-# 定义主机是可选的，默认为 https://fastcomments.com
-# 有关所有支持的配置参数列表，请参见 configuration.py。
+# 定义主机是可选的，默认值为 https://fastcomments.com
+# 请参阅 configuration.py 获取所有支持的配置参数列表。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# 在上下文中使用 API 客户端实例
+# 使用 API 客户端实例进入上下文
 with client.ApiClient(configuration) as api_client:
     # 创建 API 类的实例
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comments_by_ids_params = client.CommentsByIdsParams() # CommentsByIdsParams | 
-    sso = 'sso_example' # str |  （可选）
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.post_comments_by_ids(comments_by_ids_params, sso=sso)
+        api_response = api_instance.post_comments_by_ids(tenant_id, comments_by_ids_params, sso=sso)
         print("The response of ModerationApi->post_comments_by_ids:\n")
         pprint(api_response)
     except Exception as e:

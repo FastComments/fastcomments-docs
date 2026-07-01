@@ -1,4 +1,3 @@
----
 ## Parametry
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
@@ -16,15 +15,15 @@ Zwraca: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-swi
 
 [inline-code-attrs-start title = 'Przykład deleteComment'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Następujące przykłady kodu są nadal w wersji beta. W razie problemów zgłoś to przez http://github.com/OpenAPITools/openapi-generator/issues/new
+// Następujące próbki kodu są wciąż wersją beta. W przypadku jakichkolwiek problemów proszę zgłosić je pod adresem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let id = "id_example" // String | 
-let contextUserId = "contextUserId_example" // String |  (opcjonalne)
-let isLive = true // Bool |  (opcjonalne)
+let contextUserId = "contextUserId_example" // String |  (opcjonalnie)
+let isLive = true // Bool |  (opcjonalnie)
 
-DefaultAPI.deleteComment(tenantId: tenantId, id: id, contextUserId: contextUserId, isLive: isLive) { (response, error) in
+DefaultAPI.deleteComment(tenantId: tenantId, id: id, options: DefaultAPI.DeleteCommentOptions(contextUserId: contextUserId, isLive: isLive)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -35,5 +34,3 @@ DefaultAPI.deleteComment(tenantId: tenantId, id: id, contextUserId: contextUserI
     }
 }
 [inline-code-end]
-
----

@@ -1,11 +1,10 @@
----
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Назва | Тип | Обов'язковий | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Так |  |
 | id | string | Ні |  |
-| userId | string | Ні |  |
+| userId | string = "" | Ні |  |
 
 ## Відповідь
 
@@ -15,12 +14,8 @@
 
 [inline-code-attrs-start title = 'Приклад getTicket'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTicket(tenantId = "my-tenant-123", id = "ticket-456", userId = "user-789")
-if response.isSome:
-  let ticket = response.get()
-  echo "Got ticket:", ticket
-else:
-  echo "No ticket returned; HTTP response:", httpResponse
+let (ticketOpt, httpResp) = client.getTicket(tenantId = "my-tenant-123", id = "ticket-456", userId = "")
+if ticketOpt.isSome:
+  let ticket = ticketOpt.get()
+  discard ticket
 [inline-code-end]
-
----

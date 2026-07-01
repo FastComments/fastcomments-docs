@@ -1,13 +1,13 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Da |  |
 | urlId | string | query | Da |  |
 
-## Odgovor
+## Odziv
 
-Vrne: [`GetV1PageLikes`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetV1PageLikes.php)
+Returns: [`GetV1PageLikes`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetV1PageLikes.php)
 
 ## Primer
 
@@ -19,12 +19,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Če želite uporabiti prilagojen HTTP odjemalec, posredujte odjemalca, ki implementira `GuzzleHttp\ClientInterface`.
-    // To je opcijsko, privzeto se bo uporabil `GuzzleHttp\Client`.
+    // Če želite uporabiti prilagojeni HTTP odjemalec, podajte svoj odjemalec, ki implementira `GuzzleHttp\ClientInterface`.
+    // To je neobvezno, po privzetku bo uporabljen `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $url_id = 'url_id_example'; // string
+
 
 try {
     $result = $apiInstance->getV1PageLikes($tenant_id, $url_id);

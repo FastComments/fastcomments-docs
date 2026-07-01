@@ -1,9 +1,11 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Sì |  |
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+|------|------|-----------|--------------|-------------|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
 | direction | string | query | No |  |
+| broadcastId | string | query | No |  |
 | sso | string | query | No |  |
 
 ## Risposta
@@ -12,9 +14,9 @@ Restituisce: [`VoteResponse`](https://github.com/FastComments/fastcomments-java/
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di postVote'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio postVote'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importa classi:
+// Importa le classi:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -27,20 +29,23 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
-    String commentId = "commentId_example"; // String | 
-    String direction = "direction_example"; // String | 
-    String sso = "sso_example"; // String | 
+    String tenantId = "tenantId_example"; // Stringa | 
+    String commentId = "commentId_example"; // Stringa | 
+    String direction = "direction_example"; // Stringa | 
+    String broadcastId = "broadcastId_example"; // Stringa | 
+    String sso = "sso_example"; // Stringa | 
     try {
-      VoteResponse result = apiInstance.postVote(commentId)
+      VoteResponse result = apiInstance.postVote(tenantId, commentId)
             .direction(direction)
+            .broadcastId(broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ModerationApi#postVote");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("Eccezione durante la chiamata a ModerationApi#postVote");
+      System.err.println("Codice di stato: " + e.getCode());
+      System.err.println("Motivo: " + e.getResponseBody());
+      System.err.println("Intestazioni della risposta: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }

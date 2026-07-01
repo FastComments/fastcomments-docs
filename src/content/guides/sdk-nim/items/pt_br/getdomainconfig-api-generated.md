@@ -1,7 +1,7 @@
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|----------|-------------|
+|------|------|-------------|-----------|
 | tenantId | string | Sim |  |
 | domain | string | Não |  |
 
@@ -11,12 +11,10 @@ Retorna: [`Option[GetDomainConfigResponse]`](https://github.com/FastComments/fas
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getDomainConfig'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo getDomainConfig'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getDomainConfig(tenantId = "my-tenant-123", domain = "news/top-story-2026")
-if response.isSome:
-  let cfg = response.get()
+let (configOpt, httpResp) = client.getDomainConfig(tenantId = "my-tenant-123", domain = "news.example.com")
+if configOpt.isSome:
+  let cfg = configOpt.get()
   discard cfg
-else:
-  discard httpResponse
 [inline-code-end]

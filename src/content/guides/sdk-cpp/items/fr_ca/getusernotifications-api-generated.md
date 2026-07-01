@@ -1,51 +1,25 @@
----
 ## Paramètres
 
-| Name | Type | Required | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
 | tenantId | string | Oui |  |
-| urlId | string | Non |  |
-| pageSize | int32_t | Non |  |
-| afterId | string | Non |  |
-| includeContext | bool | Non |  |
-| afterCreatedAt | int64_t | Non |  |
-| unreadOnly | bool | Non |  |
-| dmOnly | bool | Non |  |
-| noDm | bool | Non |  |
-| includeTranslations | bool | Non |  |
-| includeTenantNotifications | bool | Non |  |
-| sso | string | Non |  |
+| options | const GetUserNotificationsOptions& | Oui |  |
 
 ## Réponse
 
-Retourne : [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetMyNotificationsResponse.h)
+Renvoie : [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetMyNotificationsResponse.h)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getUserNotifications'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getUserNotifications'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-auto tenantId = U("my-tenant-123");
-api->getUserNotifications(
-    tenantId,
-    boost::optional<utility::string_t>(U("post-456")),
-    boost::optional<int32_t>(50),
-    boost::optional<utility::string_t>(U("notif-789")),
-    boost::optional<bool>(true),
-    boost::optional<int64_t>(1625097600000LL),
-    boost::optional<bool>(true),
-    boost::optional<bool>(false),
-    boost::optional<bool>(false),
-    boost::optional<bool>(true),
-    boost::optional<bool>(false),
-    boost::optional<utility::string_t>(U("user@example.com"))
-).then([](pplx::task<std::shared_ptr<GetMyNotificationsResponse>> t){
-    try {
-        auto resp = t.get();
-        if(!resp) resp = std::make_shared<GetMyNotificationsResponse>();
-        // utiliser resp, p. ex. inspecter les champs
-    } catch(const std::exception &e) {
-    }
-});
+utility::string_t tenantId = utility::string_t("my-tenant-123");
+GetUserNotificationsOptions options;
+options.limit = boost::optional<int>(20);
+options.unreadOnly = boost::optional<bool>(true);
+api->getUserNotifications(tenantId, options)
+    .then([](pplx::task<std::shared_ptr<GetMyNotificationsResponse>> task){
+        auto resp = task.get();
+        auto notifications = std::make_shared<GetMyNotificationsResponse>(*resp);
+    });
 [inline-code-end]
-
----

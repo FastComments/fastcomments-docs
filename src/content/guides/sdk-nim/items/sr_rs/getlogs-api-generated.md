@@ -1,23 +1,21 @@
----
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| commentId | string | Да |  |
-| sso | string | Не |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| sso | string = "" | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[ModerationAPIGetLogsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_api_get_logs_response.nim)
+Vraća: [`Option[ModerationAPIGetLogsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_api_get_logs_response.nim)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'getLogs Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getLogs'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getLogs(commentId = "cmt-8471f2d3", sso = "")
-if response.isSome:
-  let logs = response.get()
-  echo "Fetched logs:", logs
+let (logsOpt, httpRes) = client.getLogs(tenantId = "my-tenant-123", commentId = "cmt-789", sso = "")
+if logsOpt.isSome:
+  let logs = logsOpt.get()
+  echo logs
 [inline-code-end]
-
----

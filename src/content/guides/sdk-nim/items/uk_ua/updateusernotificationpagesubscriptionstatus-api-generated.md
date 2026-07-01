@@ -1,16 +1,16 @@
-Увімкнути або вимкнути сповіщення для сторінки. Коли користувачі підписані на сторінку, сповіщення створюються
-для нових кореневих коментарів, а також
+---
+Увімкнути або вимкнути сповіщення для сторінки. Коли користувачі підписані на сторінку, створюються сповіщення про нові кореневі коментарі, а також
 
 ## Параметри
 
-| Name | Type | Required | Description |
+| Назва | Тип | Обов’язковий | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| urlId | string | Так |  |
-| url | string | Ні |  |
-| pageTitle | string | Ні |  |
-| subscribedOrUnsubscribed | string | Ні |  |
-| sso | string | Ні |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| url | string | No |  |
+| pageTitle | string | No |  |
+| subscribedOrUnsubscribed | string | No |  |
+| sso | string = "" | No |  |
 
 ## Відповідь
 
@@ -18,20 +18,20 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад updateUserNotificationPageSubscriptionStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus Приклад'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateUserNotificationPageSubscriptionStatus(
+let (optResp, httpResp) = client.updateUserNotificationPageSubscriptionStatus(
   tenantId = "my-tenant-123",
-  urlId = "news/economy/market-rally-2026-06-19",
-  url = "",
-  pageTitle = "",
-  subscribedOrUnsubscribed = "",
+  urlId = "news/article-456",
+  url = "https://example.com/news/article-456",
+  pageTitle = "Breaking News: Something Happened",
+  subscribedOrUnsubscribed = "subscribed",
   sso = ""
 )
 
-if response.isSome:
-  let updateResp = response.get()
-  echo "Subscription update received: ", updateResp
-else:
-  echo "No subscription update returned."
+if optResp.isSome:
+  let resp = optResp.get()
+  # подальша обробка з resp
 [inline-code-end]
+
+---

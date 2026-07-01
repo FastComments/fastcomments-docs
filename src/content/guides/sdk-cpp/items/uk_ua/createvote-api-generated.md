@@ -1,12 +1,11 @@
 ## Параметри
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Назва | Тип | Обов’язковий | Опис |
+|------|------|--------------|------|
 | tenantId | string | Так |  |
 | commentId | string | Так |  |
 | direction | string | Так |  |
-| userId | string | Ні |  |
-| anonUserId | string | Ні |  |
+| options | const CreateVoteOptions& | Так |  |
 
 ## Відповідь
 
@@ -14,17 +13,14 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'createVote приклад'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createVote Приклад'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> userId(U("alice@example.com"));
-boost::optional<utility::string_t> anonUserId;
-api->createVote(U("my-tenant-123"), U("cmt-456"), U("upvote"), userId, anonUserId)
-.then([](pplx::task<std::shared_ptr<VoteResponse>> t) {
-    try {
-        auto resp = t.get();
-        if (!resp) resp = std::make_shared<VoteResponse>();
-    } catch (const std::exception&) {
-        auto fallback = std::make_shared<VoteResponse>();
-    }
-});
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto commentId = utility::conversions::to_string_t("cmt-456");
+auto direction = utility::conversions::to_string_t("up");
+auto optionsPtr = std::make_shared<CreateVoteOptions>();
+optionsPtr->userId = utility::conversions::to_string_t("user-789");
+optionsPtr->ipAddress = boost::optional<utility::string_t>(utility::conversions::to_string_t("192.168.1.100"));
+api->createVote(tenantId, commentId, direction, *optionsPtr)
+    .then([](std::shared_ptr<VoteResponse> resp){});
 [inline-code-end]

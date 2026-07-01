@@ -2,6 +2,7 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | commentId | string | path | Yes |  |
 | banEmail | boolean | query | No |  |
 | banEmailDomain | boolean | query | No |  |
@@ -24,6 +25,7 @@ Returns: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcommen
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
 let banEmail = true // Bool |  (optional)
 let banEmailDomain = true // Bool |  (optional)
@@ -35,7 +37,7 @@ let updateId = "updateId_example" // String |  (optional)
 let banReason = "banReason_example" // String |  (optional)
 let sso = "sso_example" // String |  (optional)
 
-ModerationAPI.postBanUserFromComment(commentId: commentId, banEmail: banEmail, banEmailDomain: banEmailDomain, banIP: banIP, deleteAllUsersComments: deleteAllUsersComments, bannedUntil: bannedUntil, isShadowBan: isShadowBan, updateId: updateId, banReason: banReason, sso: sso) { (response, error) in
+ModerationAPI.postBanUserFromComment(tenantId: tenantId, commentId: commentId, options: ModerationAPI.PostBanUserFromCommentOptions(banEmail: banEmail, banEmailDomain: banEmailDomain, banIP: banIP, deleteAllUsersComments: deleteAllUsersComments, bannedUntil: bannedUntil, isShadowBan: isShadowBan, updateId: updateId, banReason: banReason, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

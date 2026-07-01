@@ -16,7 +16,7 @@ Retourneert: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'saveComment Voorbeeld'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// De volgende codevoorbeelden zijn nog in bèta. Bij problemen, graag melden via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De volgende codevoorbeelden zijn nog in beta. Voor eventuele problemen, rapporteer via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -26,7 +26,7 @@ let doSpamCheck = true // Bool |  (optioneel)
 let sendEmails = true // Bool |  (optioneel)
 let populateNotifications = true // Bool |  (optioneel)
 
-DefaultAPI.saveComment(tenantId: tenantId, createCommentParams: createCommentParams, isLive: isLive, doSpamCheck: doSpamCheck, sendEmails: sendEmails, populateNotifications: populateNotifications) { (response, error) in
+DefaultAPI.saveComment(tenantId: tenantId, createCommentParams: createCommentParams, options: DefaultAPI.SaveCommentOptions(isLive: isLive, doSpamCheck: doSpamCheck, sendEmails: sendEmails, populateNotifications: populateNotifications)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -37,3 +37,5 @@ DefaultAPI.saveComment(tenantId: tenantId, createCommentParams: createCommentPar
     }
 }
 [inline-code-end]
+
+---

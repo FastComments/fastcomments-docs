@@ -1,13 +1,13 @@
 ## Parametreler
 
-| Ad | Tür | Gerekli | Açıklama |
+| İsim | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
-| tenantId | string | Evet |  |
-| createCommentParams | Array<CreateCommentParams> | Evet |  |
-| isLive | boolean | Hayır |  |
-| doSpamCheck | boolean | Hayır |  |
-| sendEmails | boolean | Hayır |  |
-| populateNotifications | boolean | Hayır |  |
+| tenantId | string | Yes |  |
+| createCommentParams | Array<CreateCommentParams> | Yes |  |
+| isLive | boolean | No |  |
+| doSpamCheck | boolean | No |  |
+| sendEmails | boolean | No |  |
+| populateNotifications | boolean | No |  |
 
 ## Yanıt
 
@@ -17,21 +17,29 @@ Döndürür: `Array<SaveCommentsBulkResponse`
 
 [inline-code-attrs-start title = 'saveCommentsBulk Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme_corp_tenant_12';
-const createCommentParams: Array<CreateCommentParams> = [
+const tenantId: string = "tenant_9f8b7c6d";
+
+const bulkComments: CreateCommentParams[] = [
   {
-    content: 'Really helpful breakdown of the migration steps.',
-    threadId: 'thread_2026_08',
-    authorName: 'Maya Singh',
-    authorEmail: 'maya.singh@startup.io',
-    mentions: [{ userId: 'user_314', displayName: 'Leo Park' }],
-    hashtags: [{ tag: 'migration' }],
-    createdAt: '2026-06-19T12:00:00Z'
+    content: "Welcome to the new forum thread!",
+    authorId: "user_42",
+    mentions: [{ userId: "user_84", username: "alice" }],
+    hashtags: [{ tag: "intro" }]
+  },
+  {
+    content: "Please review the updated guidelines.",
+    authorId: "moderator_1",
+    mentions: [],
+    hashtags: [{ tag: "guidelines" }, { tag: "update" }]
   }
 ];
-const isLive: boolean = true;
-const doSpamCheck: boolean = true;
-const sendEmails: boolean = false;
-const populateNotifications: boolean = true;
-const responses: Array<SaveCommentsBulkResponse> = await saveCommentsBulk(tenantId, createCommentParams, isLive, doSpamCheck, sendEmails, populateNotifications);
+
+const results: SaveCommentsBulkResponse[] = await saveCommentsBulk(
+  tenantId,
+  bulkComments,
+  true,      // isLive
+  false,     // doSpamCheck
+  true,      // sendEmails
+  undefined  // populateNotifications (using default)
+);
 [inline-code-end]

@@ -1,35 +1,27 @@
 ## Paramètres
 
-| Nom | Type | Requis | Description |
-|------|------|----------|-------------|
-| tenantId | string | Oui |  |
-| id | string | Non |  |
-| updateTenantUserBody | UpdateTenantUserBody | Non |  |
-| updateComments | string | Non |  |
+| Nom | Type | Obligatoire | Description |
+|------|------|-------------|-------------|
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| updateTenantUserBody | UpdateTenantUserBody | No |  |
+| updateComments | string = "" | No |  |
 
 ## Réponse
 
-Retourne: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
+Renvoie : [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de updateTenantUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateTenantUser(
+let updateBody = UpdateTenantUserBody()
+let (optResp, httpResp) = client.updateTenantUser(
   tenantId = "my-tenant-123",
-  id = "user-987",
-  updateTenantUserBody = UpdateTenantUserBody(
-    displayName = "Jane Doe",
-    email = "jane.doe@example.com",
-    roles = @["moderator", "editor"],
-    isActive = true
-  ),
-  updateComments = "true"
+  id = "user-456",
+  updateTenantUserBody = updateBody,
+  updateComments = "Changed role to moderator",
 )
-
-if response.isSome:
-  let apiEmpty = response.get()
-  discard apiEmpty
+if optResp.isSome:
+  let _ = optResp.get()
 [inline-code-end]
-
----

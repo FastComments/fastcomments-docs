@@ -1,3 +1,4 @@
+---
 req
 tenantId
 urlId
@@ -5,7 +6,7 @@ userIdWS
 
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Yes |  |
 | urlId | string | query | Yes |  |
@@ -19,7 +20,7 @@ userIdWS
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getGlobalEventLog'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה getGlobalEventLog'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -27,15 +28,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // אם ברצונך להשתמש בלקוח HTTP מותאם אישית, העבר את הלקוח שלך שמממש את `GuzzleHttp\ClientInterface`.
-    // זה אופציונלי; `GuzzleHttp\Client` ישמש כברירת מחדל.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // מחרוזת
-$url_id = 'url_id_example'; // מחרוזת
-$user_id_ws = 'user_id_ws_example'; // מחרוזת
-$start_time = 56; // מספר שלם
-$end_time = 56; // מספר שלם
+
+$tenant_id = 'tenant_id_example'; // string
+$url_id = 'url_id_example'; // string
+$user_id_ws = 'user_id_ws_example'; // string
+$start_time = 56; // int
+$end_time = 56; // int
+
 
 try {
     $result = $apiInstance->getGlobalEventLog($tenant_id, $url_id, $user_id_ws, $start_time, $end_time);
@@ -44,3 +47,5 @@ try {
     echo 'Exception when calling PublicApi->getGlobalEventLog: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

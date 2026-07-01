@@ -1,25 +1,25 @@
-Набраја странице за тенанта. Користи се од стране FChat десктоп клијента за попуњавање његове листе соба.
-Захтева да у решеном прилагођеном конфигу за сваку страницу `enableFChat` буде true.
-Странице које захтијевају SSO филтриране су у складу са приступом групе корисника који шаље захтев.
+List pages for a tenant. Used by the FChat desktop client to populate its room list.  
+Requires `enableFChat` to be true on the resolved custom config for each page.  
+Pages that require SSO are filtered against the requesting user's group access.
 
-## Параметри
+## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
 | tenantId | string | path | Yes |  |
-| cursor | string | query | No | Непрозирни курсор пагинације који се враћа као `nextCursor` из претходног захтјева. Везан за исти `sortBy`. |
-| limit | integer | query | No | 1..200, подразумевано 50 |
-| q | string | query | No | Опционо, филтер префикса наслова који није осетљив на велика/мала слова. |
-| sortBy | string | query | No | Редослијед сортирања. `updatedAt` (подразумевано, најновије прво), `commentCount` (странице са највише коментара прво), или `title` (абецедно). |
-| hasComments | boolean | query | No | Ако је true, враћају се само странице са најмање једним коментаром. |
+| cursor | string | query | No | Neproziran kursorski pokazivač za paginaciju koji se vraća kao `nextCursor` iz prethodnog zahtjeva. Povezano je sa istim `sortBy`. |
+| limit | integer | query | No | 1..200, podrazumevano 50 |
+| q | string | query | No | Opcionalni filter prefiksa naslova koji ne razlikuje velika i mala slova. |
+| sortBy | string | query | No | Redoslijed sortiranja. `updatedAt` (podrazumevano, najnovije prvo), `commentCount` (najviše komentara prvo), ili `title` (abecedno). |
+| hasComments | boolean | query | No | Ako je true, vraća samo stranice koje imaju bar jedan komentar. |
 
-## Одговор
+## Response
 
-Враћа: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPublicPagesResponse.php)
+Returns: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPublicPagesResponse.php)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'getPagesPublic Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getPagesPublic'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -27,19 +27,23 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ако желите да користите прилагођени http клијент, проследите свој клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционално, `GuzzleHttp\Client` ће бити коришћен као подразумевани.
+    // Ako želite koristiti prilagođeni http klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti podrazumevano.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$cursor = 'cursor_example'; // string | Непрозирни курсор пагинације који се враћа као `nextCursor` из претходног захтева. Везан за исти `sortBy`.
-$limit = 56; // int | 1..200, подразумевано 50
-$q = 'q_example'; // string | Опционо, филтер префикса наслова који није осетљив на велика/мала слова.
-$sort_by = new \FastComments\Client\Model\\FastComments\Client\Model\PagesSortBy(); // \FastComments\Client\Model\PagesSortBy | Редослијед сортирања. `updatedAt` (подразумевано, најновије прво), `commentCount` (странице са највише коментара прво), или `title` (абецедно).
-$has_comments = True; // bool | Ако је true, враћају се само странице са најмање једним коментаром.
+$options = [
+    'cursor' => 'cursor_example', // string | Neproziran kursorski pokazivač za paginaciju koji se vraća kao `nextCursor` iz prethodnog zahtjeva. Povezano je sa istim `sortBy`.
+    'limit' => 56, // int | 1..200, podrazumevano 50
+    'q' => 'q_example', // string | Opcionalni filter prefiksa naslova koji ne razlikuje velika i mala slova.
+    'sort_by' => new \FastComments\Client\Model\\FastComments\Client\Model\PagesSortBy(), // \FastComments\Client\Model\PagesSortBy | Redoslijed sortiranja. `updatedAt` (podrazumevano, najnovije prvo), `commentCount` (najviše komentara prvo), ili `title` (abecedno).
+    'has_comments' => True, // bool | Ako je true, vraća samo stranice koje imaju bar jedan komentar.
+];
+
 
 try {
-    $result = $apiInstance->getPagesPublic($tenant_id, $cursor, $limit, $q, $sort_by, $has_comments);
+    $result = $apiInstance->getPagesPublic($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getPagesPublic: ', $e->getMessage(), PHP_EOL;

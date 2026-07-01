@@ -1,16 +1,16 @@
-## Parâmetros
+## Parameters
 
-| Nome | Tipo | Localização | Obrigatório | Descrição |
-|------|------|------------|------------|-----------|
-| tenantId | string | query | Não |  |
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 
-## Resposta
+## Response
 
 Retorna: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/BulkCreateHashTagsResponse.php)
 
-## Exemplo
+## Example
 
-[inline-code-attrs-start title = 'Exemplo addHashTagsBulk'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'addHashTagsBulk Exemplo'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -28,8 +28,10 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $bulk_create_hash_tags_body = new \FastComments\Client\Model\BulkCreateHashTagsBody(); // \FastComments\Client\Model\BulkCreateHashTagsBody
+
 
 try {
     $result = $apiInstance->addHashTagsBulk($tenant_id, $bulk_create_hash_tags_body);

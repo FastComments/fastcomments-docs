@@ -1,8 +1,7 @@
----
 ## Параметры
 
-| Name | Type | Обязательно | Описание |
-|------|------|----------|-------------|
+| Имя | Тип | Обязательно | Описание |
+|------|------|--------------|----------|
 | tenantId | string | Да |  |
 | page | double | Нет |  |
 
@@ -14,16 +13,16 @@
 
 [inline-code-attrs-start title = 'Пример getHashTags'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-boost::optional<double> page = 1.0;
-api->getHashTags(tenantId, page).then([](pplx::task<std::shared_ptr<GetHashTagsResponse>> t) {
+auto tenantId = utility::string_t(U("my-tenant-123"));
+boost::optional<double> page = 2.0;
+
+api->getHashTags(tenantId, page).then([](pplx::task<std::shared_ptr<GetHashTagsResponse>> task) {
     try {
-        auto resp = t.get();
-        if (!resp) resp = std::make_shared<GetHashTagsResponse>();
+        auto resultPtr = task.get();
+        auto response = std::make_shared<GetHashTagsResponse>(*resultPtr);
+        // использовать response
     } catch (const std::exception&) {
-        auto resp = std::make_shared<GetHashTagsResponse>();
+        // обработать ошибку
     }
 });
 [inline-code-end]
-
----

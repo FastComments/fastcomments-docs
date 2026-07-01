@@ -1,28 +1,39 @@
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
-|------|------|----------|-------------|
+|------|-----|---------------|--------------|
 | tenantId | string | Ja |  |
 | id | string | Ja |  |
 | updateQuestionResultBody | UpdateQuestionResultBody | Ja |  |
 
 ## Antwort
 
-Gibt zurück: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Rückgabe: [`UpdateQuestionResultResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateQuestionResultResponse.ts)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'updateQuestionResult Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_acme-corp_01";
-const id: string = "question_9f2d1b";
-const metaItem: MetaItem = { key: "platform", value: "web" };
-const status: APIStatus = { code: 0, message: "scored" };
-const updateQuestionResultBody: UpdateQuestionResultBody = {
-  score: 92,
-  passed: true,
-  status,
-  meta: [metaItem] // optionales Feld demonstriert
-};
-const result: APIEmptyResponse = await updateQuestionResult(tenantId, id, updateQuestionResultBody);
+async function runUpdate() {
+    const tenantId: string = "acme-corp-01";
+    const id: string = "qr-20230915-001";
+
+    const updateQuestionResultBody: UpdateQuestionResultBody = {
+        // erforderliche Felder
+        answer: "No",
+        // optionale Felder
+        comment: "User clarified their response",
+        // anotherOptionalField?: Wert,
+    };
+
+    const result: UpdateQuestionResultResponse = await updateQuestionResult(
+        tenantId,
+        id,
+        updateQuestionResultBody
+    );
+
+    console.log(result);
+}
+
+runUpdate();
 [inline-code-end]

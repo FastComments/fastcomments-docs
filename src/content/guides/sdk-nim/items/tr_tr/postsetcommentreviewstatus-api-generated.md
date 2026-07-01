@@ -1,10 +1,10 @@
 ## Parametreler
 
-| Ad | Tür | Gerekli | Açıklama |
+| Ad | Tür | Zorunlu | Açıklama |
 |------|------|----------|-------------|
+| tenantId | string | Evet |  |
 | commentId | string | Evet |  |
-| reviewed | bool | Hayır |  |
-| sso | string | Hayır |  |
+| options | PostSetCommentReviewStatusOptions | Hayır |  |
 
 ## Yanıt
 
@@ -14,16 +14,15 @@ Döndürür: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'postSetCommentReviewStatus Örneği'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postSetCommentReviewStatus(
-  commentId = "cmt-98765-news-article",
-  reviewed = false,
-  sso = ""
+let (apiResp, httpResp) = client.postSetCommentReviewStatus(
+  tenantId = "my-tenant-123",
+  commentId = "cmt-7890",
+  options = PostSetCommentReviewStatusOptions()
 )
-if response.isSome:
-  let apiResp = response.get()
-  echo "Review status updated"
-else:
-  echo "Failed to update review status: " & $httpResponse.status
-[inline-code-end]
 
----
+if apiResp.isSome:
+  let _ = apiResp.get()
+  discard
+else:
+  discard
+[inline-code-end]

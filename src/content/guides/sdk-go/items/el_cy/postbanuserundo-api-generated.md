@@ -1,8 +1,9 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
-| sso | string | query | Όχι |  |
+|------|------|----------|-----------|-------------|
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Απάντηση
 
@@ -22,17 +23,18 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	banUserUndoParams := *openapiclient.NewBanUserUndoParams(*openapiclient.NewAPIBanUserChangeLog()) // BanUserUndoParams | 
 	sso := "sso_example" // string |  (προαιρετικό)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostBanUserUndo(context.Background()).BanUserUndoParams(banUserUndoParams).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostBanUserUndo(context.Background()).TenantId(tenantId).BanUserUndoParams(banUserUndoParams).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostBanUserUndo``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Σφάλμα κατά την κλήση του `ModerationAPI.PostBanUserUndo``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Πλήρης HTTP απόκριση: %v\n", r)
 	}
-	// απάντηση από `PostBanUserUndo`: APIEmptyResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostBanUserUndo`: %v\n", resp)
+	// απόκριση από `PostBanUserUndo`: APIEmptyResponse
+	fmt.Fprintf(os.Stdout, "Απόκριση από `ModerationAPI.PostBanUserUndo`: %v\n", resp)
 }
 [inline-code-end]

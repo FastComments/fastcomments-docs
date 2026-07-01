@@ -1,9 +1,9 @@
-Agrega documentos agrupándolos (si se proporciona groupBy) y aplicando múltiples operaciones.
-Se admiten diferentes operaciones (por ejemplo sum, countDistinct, avg, etc.).
+Agrupa documentos agrupándolos (si se proporciona groupBy) y aplicando múltiples operaciones.  
+Se admiten diferentes operaciones (p. ej., sum, countDistinct, avg, etc.).
 
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Requerido | Descripción |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | parentTenantId | string | query | No |  |
@@ -17,7 +17,7 @@ Devuelve: [`AggregateResponse`](https://github.com/FastComments/fastcomments-swi
 
 [inline-code-attrs-start title = 'Ejemplo de agregación'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Los siguientes ejemplos de código aún están en beta. Si tiene algún problema, infórmelo en http://github.com/OpenAPITools/openapi-generator/issues/new
+// Las siguientes muestras de código aún están en beta. Para cualquier problema, por favor repórtelo via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -25,7 +25,7 @@ let aggregationRequest = AggregationRequest(query: [QueryPredicate(key: "key_exa
 let parentTenantId = "parentTenantId_example" // String |  (opcional)
 let includeStats = true // Bool |  (opcional)
 
-DefaultAPI.aggregate(tenantId: tenantId, aggregationRequest: aggregationRequest, parentTenantId: parentTenantId, includeStats: includeStats) { (response, error) in
+DefaultAPI.aggregate(tenantId: tenantId, aggregationRequest: aggregationRequest, options: DefaultAPI.AggregateOptions(parentTenantId: parentTenantId, includeStats: includeStats)) { (response, error) in
     guard error == nil else {
         print(error)
         return

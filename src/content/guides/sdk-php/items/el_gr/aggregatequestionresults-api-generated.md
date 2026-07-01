@@ -1,49 +1,56 @@
-## Παράμετροι
+## Parameters
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Ναι |  |
-| questionId | string | query | Όχι |  |
-| questionIds | array | query | Όχι |  |
-| urlId | string | query | Όχι |  |
-| timeBucket | string | query | Όχι |  |
-| startDate | string | query | Όχι |  |
-| forceRecalculate | boolean | query | Όχι |  |
+|------|------|----------|------------|------------|
+| tenantId | string | query | Yes |  |
+| questionId | string | query | No |  |
+| questionIds | array | query | No |  |
+| urlId | string | query | No |  |
+| timeBucket | string | query | No |  |
+| startDate | string | query | No |  |
+| forceRecalculate | boolean | query | No |  |
 
-## Απόκριση
+## Response
 
 Επιστρέφει: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AggregateQuestionResultsResponse.php)
 
-## Παράδειγμα
+## Example
 
-[inline-code-attrs-start title = 'Παράδειγμα aggregateQuestionResults'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'aggregateQuestionResults Παράδειγμα'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Διαμόρφωση εξουσιοδότησης κλειδιού API: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Αποσχολιάστε παρακάτω για να ρυθμίσετε το πρόθεμα (π.χ. Bearer) για το κλειδί API, αν χρειάζεται
+// Configure API key authorization: api_key
+// Διαμορφώστε εξουσιοδότηση κλειδιού API: api_key
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Αποσχολιάστε παρακάτω για να ορίσετε πρόθεμα (π.χ. Bearer) για το κλειδί API, εάν χρειάζεται
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Αν θέλετε να χρησιμοποιήσετε προσαρμοσμένο HTTP client, περάστε τον πελάτη σας που υλοποιεί το `GuzzleHttp\ClientInterface`.
-    // Αυτό είναι προαιρετικό, `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // Εάν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε τον πελάτη σας που υλοποιεί `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // Αυτό είναι προαιρετικό, το `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$question_id = 'question_id_example'; // string
-$question_ids = array('question_ids_example'); // string[]
-$url_id = 'url_id_example'; // string
-$time_bucket = new \FastComments\Client\Model\\FastComments\Client\Model\AggregateTimeBucket(); // \FastComments\Client\Model\AggregateTimeBucket
-$start_date = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime
-$force_recalculate = True; // bool
+$options = [
+    'question_id' => 'question_id_example', // string
+    'question_ids' => array('question_ids_example'), // string[]
+    'url_id' => 'url_id_example', // string
+    'time_bucket' => new \FastComments\Client\Model\\FastComments\Client\Model\AggregateTimeBucket(), // \FastComments\Client\Model\AggregateTimeBucket
+    'start_date' => new \DateTime('2013-10-20T19:20:30+01:00'), // \DateTime
+    'force_recalculate' => True, // bool
+];
+
 
 try {
-    $result = $apiInstance->aggregateQuestionResults($tenant_id, $question_id, $question_ids, $url_id, $time_bucket, $start_date, $force_recalculate);
+    $result = $apiInstance->aggregateQuestionResults($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->aggregateQuestionResults: ', $e->getMessage(), PHP_EOL;

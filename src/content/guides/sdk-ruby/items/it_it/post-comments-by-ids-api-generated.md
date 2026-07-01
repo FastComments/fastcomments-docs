@@ -1,7 +1,8 @@
 ## Parametri
 
-| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Sì |  |
 | sso | string | query | No |  |
 
 ## Risposta
@@ -10,12 +11,13 @@ Restituisce: [`ModerationAPIChildCommentsResponse`](https://github.com/FastComme
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di post_comments_by_ids'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio post_comments_by_ids'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 comments_by_ids_params = FastCommentsClient::CommentsByIdsParams.new({ids: ['ids_example']}) # CommentsByIdsParams | 
 opts = {
   sso: 'sso_example' # String | 
@@ -23,7 +25,7 @@ opts = {
 
 begin
   
-  result = api_instance.post_comments_by_ids(comments_by_ids_params, opts)
+  result = api_instance.post_comments_by_ids(tenant_id, comments_by_ids_params, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_comments_by_ids: #{e}"

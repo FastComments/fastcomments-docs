@@ -1,6 +1,6 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | commentId | string | 예 |  |
@@ -11,25 +11,17 @@
 
 반환: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ChangeCommentPinStatusResponse.h)
 
-## 예제
+## 예시
 
 [inline-code-attrs-start title = 'unPinComment 예제'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("cmt-987654321");
-utility::string_t broadcastId = U("broadcast-42");
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
-
-api->unPinComment(tenantId, commentId, broadcastId, sso)
-.then([](pplx::task<std::shared_ptr<ChangeCommentPinStatusResponse>> t) {
-    try {
-        auto resp = t.get();
-        if (!resp) resp = std::make_shared<ChangeCommentPinStatusResponse>();
-        std::cout << "Unpin operation completed\n";
-    } catch (const std::exception& e) {
-        std::cerr << "Unpin failed: " << e.what() << '\n';
-    }
+auto task = api->unPinComment(
+    utility::conversions::to_string_t("my-tenant-123"),
+    utility::conversions::to_string_t("cmt-456789"),
+    utility::conversions::to_string_t("broadcast-001"),
+    boost::optional<utility::string_t>(utility::conversions::to_string_t("user@example.com"))
+);
+task.then([](std::shared_ptr<ChangeCommentPinStatusResponse> resp){
+    auto result = std::make_shared<ChangeCommentPinStatusResponse>(*resp);
 });
 [inline-code-end]
-
----

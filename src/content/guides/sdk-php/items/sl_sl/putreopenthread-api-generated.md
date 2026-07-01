@@ -2,8 +2,9 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| urlId | string | query | Da |  |
-| sso | string | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -19,19 +20,20 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Če želite uporabiti lasten HTTP odjemalec, posredujte odjemalca, ki implementira `GuzzleHttp\ClientInterface`.
-    // To je neobvezno, privzeto bo uporabljen `GuzzleHttp\Client`.
+    // Če želite uporabiti svoj HTTP klient, podajte svoj klient, ki implementira `GuzzleHttp\ClientInterface`.
+    // To je neobvezno, `GuzzleHttp\Client` bo uporabljen kot privzeti.
     new GuzzleHttp\Client()
 );
+
+$tenant_id = 'tenant_id_example'; // string
 $url_id = 'url_id_example'; // string
 $sso = 'sso_example'; // string
 
+
 try {
-    $result = $apiInstance->putReopenThread($url_id, $sso);
+    $result = $apiInstance->putReopenThread($tenant_id, $url_id, $sso);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->putReopenThread: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

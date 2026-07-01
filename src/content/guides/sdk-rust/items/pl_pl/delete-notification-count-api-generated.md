@@ -1,9 +1,9 @@
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|-------------|
-| tenant_id | String | Tak |  |
-| id | String | Tak |  |
+|------|------|----------|------|
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
 
 ## Odpowiedź
 
@@ -13,15 +13,12 @@ Zwraca: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/b
 
 [inline-code-attrs-start title = 'delete_notification_count Przykład'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn delete_notification_count_example() -> Result<(), Error> {
+async fn example() -> Result<(), Error> {
     let params = DeleteNotificationCountParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "news/article/notification-827b".to_string(),
-        if_match: Some("W/\"etag-827b\"".to_string()),
+        id: "news/article-123".to_string(),
     };
     let _response: ApiEmptyResponse = delete_notification_count(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

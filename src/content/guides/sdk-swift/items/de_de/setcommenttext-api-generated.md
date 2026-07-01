@@ -1,22 +1,22 @@
 ## Parameter
 
-| Name | Type | Location | Required | Description |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Ja |  |
-| commentId | string | path | Ja |  |
-| broadcastId | string | query | Ja |  |
-| editKey | string | query | Nein |  |
-| sso | string | query | Nein |  |
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | Yes |  |
+| editKey | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Antwort
 
-Gibt zurück: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PublicAPISetCommentTextResponse.swift)
+Returns: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PublicAPISetCommentTextResponse.swift)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'setCommentText Beispiel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Die folgenden Codebeispiele sind noch Beta. Bei Problemen melden Sie sich bitte unter http://github.com/OpenAPITools/openapi-generator/issues/new
+// Der folgende Code ist noch in der Beta-Phase. Bei Problemen bitte über http://github.com/OpenAPITools/openapi-generator/issues/new melden
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -26,7 +26,7 @@ let commentTextUpdateRequest = CommentTextUpdateRequest(comment: "comment_exampl
 let editKey = "editKey_example" // String |  (optional)
 let sso = "sso_example" // String |  (optional)
 
-PublicAPI.setCommentText(tenantId: tenantId, commentId: commentId, broadcastId: broadcastId, commentTextUpdateRequest: commentTextUpdateRequest, editKey: editKey, sso: sso) { (response, error) in
+PublicAPI.setCommentText(tenantId: tenantId, commentId: commentId, broadcastId: broadcastId, commentTextUpdateRequest: commentTextUpdateRequest, options: PublicAPI.SetCommentTextOptions(editKey: editKey, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

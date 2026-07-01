@@ -1,31 +1,26 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| urlId | string | Да |  |
-| userId | string | Не |  |
-| anonUserId | string | Не |  |
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Da |  |
+| urlId | string | Da |  |
+| options | GetVotesForUserOptions | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[GetVotesForUserResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_votes_for_user_response.nim)
+Vraća: [`Option[GetVotesForUserResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_votes_for_user_response.nim)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'getVotesForUser Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getVotesForUser Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getVotesForUser(
+let (optResp, httpResp) = client.getVotesForUser(
   tenantId = "my-tenant-123",
   urlId = "news/article-title",
-  userId = "user-789",
-  anonUserId = ""
+  options = GetVotesForUserOptions()
 )
-if response.isSome:
-  let votes = response.get()
-  echo "User votes retrieved"
-else:
-  echo "No votes found"
-[inline-code-end]
 
----
+if optResp.isSome:
+  let resp = optResp.get()
+  echo resp
+[inline-code-end]

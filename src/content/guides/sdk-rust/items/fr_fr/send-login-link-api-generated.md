@@ -1,29 +1,26 @@
----
 ## Paramètres
 
-| Name | Type | Obligatoire | Description |
-|------|------|------------|-------------|
-| tenant_id | String | Oui |  |
-| id | String | Oui |  |
-| redirect_url | String | Non |  |
+| Nom | Type | Obligatoire | Description |
+|------|------|----------|-------------|
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
+| redirect_url | String | No |  |
 
 ## Réponse
 
-Renvoie : [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
+Renvoie : [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de send_login_link'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'send_login_link Exemple'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn send_link_example() -> Result<(), Error> {
-    let params: SendLoginLinkParams = SendLoginLinkParams {
+async fn run_example(config: &configuration::Configuration) -> Result<(), Error> {
+    let params = SendLoginLinkParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "user-9876".to_string(),
-        redirect_url: Some("https://acme.example.com/welcome".to_string()),
+        id: "news/article".to_string(),
+        redirect_url: Some("https://acme.com/after-login".to_string()),
     };
-    let response: ApiEmptyResponse = send_login_link(&configuration, params).await?;
+    send_login_link(config, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

@@ -1,8 +1,8 @@
----
 ## Параметри
 
 | Име | Тип | Местоположение | Задължително | Описание |
-|------|------|----------|----------|-------------|
+|------|------|----------------|--------------|----------|
+| tenantId | string | query | Да |  |
 | sso | string | query | Не |  |
 
 ## Отговор
@@ -19,26 +19,25 @@ from client.models.ban_user_undo_params import BanUserUndoParams
 from client.rest import ApiException
 from pprint import pprint
 
-# Задаването на host е по избор и по подразбиране е https://fastcomments.com
-# Вижте configuration.py за списък на всички поддържани параметри за конфигурация.
+# Дефинирането на хоста е опционално и по подразбиране е https://fastcomments.com
+# Вижте configuration.py за списък на всички поддържани параметри на конфигурацията.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Влезте в контекст с инстанция на API клиента
+# Въведете контекст с инстанция на API клиента
 with client.ApiClient(configuration) as api_client:
-    # Създайте инстанция на класа API
+    # Създайте инстанция на API класа
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     ban_user_undo_params = client.BanUserUndoParams() # BanUserUndoParams | 
-    sso = 'sso_example' # str | (по избор)
+    sso = 'sso_example' # str |  (опционално)
 
     try:
-        api_response = api_instance.post_ban_user_undo(ban_user_undo_params, sso=sso)
+        api_response = api_instance.post_ban_user_undo(tenant_id, ban_user_undo_params, sso=sso)
         print("The response of ModerationApi->post_ban_user_undo:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling ModerationApi->post_ban_user_undo: %s\n" % e)
 [inline-code-end]
-
----

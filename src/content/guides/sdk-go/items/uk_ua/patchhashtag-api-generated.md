@@ -1,9 +1,9 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Назва | Тип | Розташування | Обов’язково | Опис |
 |------|------|----------|----------|-------------|
-| tag | string | path | Так |  |
-| tenantId | string | query | Ні |  |
+| tenantId | string | query | Yes |  |
+| tag | string | path | Yes |  |
 
 ## Відповідь
 
@@ -23,8 +23,8 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	tag := "tag_example" // string | 
-	tenantId := "tenantId_example" // string |  (необов'язково)
 	updateHashTagBody := *openapiclient.NewUpdateHashTagBody() // UpdateHashTagBody |  (необов'язково)
 
 	configuration := openapiclient.NewConfiguration()
@@ -38,5 +38,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PatchHashTag`: %v\n", resp)
 }
 [inline-code-end]
-
----

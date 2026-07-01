@@ -1,8 +1,8 @@
----
 ## Parametri
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Da |  |
 | sso | string | query | Ne |  |
 
 ## Odgovor
@@ -11,14 +11,15 @@ Vrne: [`GetTenantManualBadgesResponse`](https://github.com/FastComments/fastcomm
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer getManualBadges'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getManualBadges Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Naslednji primeri kode so še v beta. Za morebitne težave jih prijavite preko http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledeči primeri kode so še beta. Za morebitne težave prosimo sporočite preko http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let sso = "sso_example" // String | (neobvezno)
+let tenantId = "tenantId_example" // String | 
+let sso = "sso_example" // String |  (neobvezno)
 
-ModerationAPI.getManualBadges(sso: sso) { (response, error) in
+ModerationAPI.getManualBadges(tenantId: tenantId, sso: sss) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -29,5 +30,3 @@ ModerationAPI.getManualBadges(sso: sso) { (response, error) in
     }
 }
 [inline-code-end]
-
----

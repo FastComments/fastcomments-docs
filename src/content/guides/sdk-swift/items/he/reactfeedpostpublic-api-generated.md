@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | כן |  |
 | postId | string | path | כן |  |
@@ -8,15 +8,15 @@
 | broadcastId | string | query | לא |  |
 | sso | string | query | לא |  |
 
-## תשובה
+## תגובה
 
-מחזיר: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ReactFeedPostResponse.swift)
+Returns: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ReactFeedPostResponse.swift)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-reactFeedPostPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'reactFeedPostPublic דוגמה'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// דגימות הקוד הבאות הן עדיין בגרסת בטא. לכל בעיה, נא לדווח בכתובת http://github.com/OpenAPITools/openapi-generator/issues/new
+// קטעי הקוד הבאים עדיין בבטא. לכל בעיה, אנא דווח via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -26,7 +26,7 @@ let isUndo = true // Bool |  (אופציונלי)
 let broadcastId = "broadcastId_example" // String |  (אופציונלי)
 let sso = "sso_example" // String |  (אופציונלי)
 
-PublicAPI.reactFeedPostPublic(tenantId: tenantId, postId: postId, reactBodyParams: reactBodyParams, isUndo: isUndo, broadcastId: broadcastId, sso: sso) { (response, error) in
+PublicAPI.reactFeedPostPublic(tenantId: tenantId, postId: postId, reactBodyParams: reactBodyParams, options: PublicAPI.ReactFeedPostPublicOptions(isUndo: isUndo, broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

@@ -1,8 +1,8 @@
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | No |  |
+| tenantId | string | query | Sí |  |
 
 ## Respuesta
 
@@ -10,27 +10,25 @@ Devuelve: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de add_hash_tag'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo add_hash_tag'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 # configurar autorización
 FastCommentsClient.configure do |config|
-  # Configurar la autorización con clave API: api_key
+  # Configurar la autorización de la clave API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Descomenta la siguiente línea para establecer un prefijo para la clave API, p. ej. 'Bearer' (por defecto nil)
+  # Descomente la siguiente línea para establecer un prefijo para la clave API, p. ej. 'Bearer' (el valor predeterminado es nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
-opts = {
-  tenant_id: 'tenant_id_example', # String | 
-  create_hash_tag_body: FastCommentsClient::CreateHashTagBody.new({tag: 'tag_example'}) # CreateHashTagBody | 
-}
+tenant_id = 'tenant_id_example' # String | 
+create_hash_tag_body = FastCommentsClient::CreateHashTagBody.new({tag: 'tag_example'}) # CreateHashTagBody | 
 
 begin
   
-  result = api_instance.add_hash_tag(opts)
+  result = api_instance.add_hash_tag(tenant_id, create_hash_tag_body)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->add_hash_tag: #{e}"

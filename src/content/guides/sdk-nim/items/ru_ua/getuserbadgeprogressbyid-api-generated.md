@@ -1,10 +1,9 @@
----
 ## Параметры
 
-| Имя | Тип | Обязательно | Описание |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Нет |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
 
 ## Ответ
 
@@ -12,14 +11,10 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример использования getUserBadgeProgressById'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getUserBadgeProgressById'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUserBadgeProgressById(tenantId = "my-tenant-123", id = "")
-if response.isSome:
-  let badgeProgress = response.get()
+let (badgeProgressOpt, httpResp) = client.getUserBadgeProgressById(tenantId = "my-tenant-123", id = "badge-456")
+if badgeProgressOpt.isSome:
+  let badgeProgress = badgeProgressOpt.get()
   echo badgeProgress
-else:
-  echo "No badge progress found"
 [inline-code-end]
-
----

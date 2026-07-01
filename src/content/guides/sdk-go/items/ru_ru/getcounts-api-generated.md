@@ -1,7 +1,8 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
 | sso | string | query | Нет |  |
 
 ## Ответ
@@ -22,18 +23,17 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	sso := "sso_example" // string |  (необязательно)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetCounts(context.Background()).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetCounts(context.Background()).TenantId(tenantId).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetCounts``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Ошибка при вызове `ModerationAPI.GetCounts``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Полный HTTP‑ответ: %v\n", r)
 	}
 	// ответ от `GetCounts`: GetBannedUsersCountResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetCounts`: %v\n", resp)
+	fmt.Fprintf(os.Stdout, "Ответ от `ModerationAPI.GetCounts`: %v\n", resp)
 }
 [inline-code-end]
-
----

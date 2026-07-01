@@ -1,11 +1,11 @@
 ## Parámetros
 
-| Name | Type | Required | Description |
+| Nombre | Tipo | Requerido | Descripción |
 |------|------|----------|-------------|
 | tenantId | string | Sí |  |
 | commentId | string | Sí |  |
 | dir | int | No |  |
-| sso | string | No |  |
+| sso | string = "" | No |  |
 
 ## Respuesta
 
@@ -15,8 +15,14 @@ Devuelve: [`Option[GetCommentVoteUserNamesSuccessResponse]`](https://github.com/
 
 [inline-code-attrs-start title = 'Ejemplo de getCommentVoteUserNames'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getCommentVoteUserNames(tenantId = "my-tenant-123", commentId = "cmt-987654", dir = 0, sso = "")
-if response.isSome:
-  let success: GetCommentVoteUserNamesSuccessResponse = response.get()
-  discard success
+let (voteNamesOpt, httpRes) = client.getCommentVoteUserNames(
+  tenantId = "my-tenant-123",
+  commentId = "cmt-987654321",
+  dir = 0,
+  sso = ""
+)
+
+if voteNamesOpt.isSome:
+  let voteNames = voteNamesOpt.get()
+  echo voteNames
 [inline-code-end]

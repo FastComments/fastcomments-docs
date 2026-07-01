@@ -1,27 +1,25 @@
----
 ## Параметры
 
-| Name | Type | Required | Description |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
 | value | string | Нет |  |
+| tenantId | string | Нет |  |
 | sso | string | Нет |  |
 
 ## Ответ
 
-Возвращает: [`ModerationUserSearchResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationUserSearchResponse.ts)
+Возвращает: [`GetSearchUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetSearchUsersResponse.ts)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример getSearchUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const searchValue: string = 'jane.doe@acme-corp.com';
-  const ssoToken: string = 'sso_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';
-  const responseWithSso: ModerationUserSearchResponse = await getSearchUsers(searchValue, ssoToken);
-  const searchValue2: string = 'michael.brown';
-  const responseWithoutSso: ModerationUserSearchResponse = await getSearchUsers(searchValue2);
-  console.log(responseWithSso, responseWithoutSso);
-})();
-[inline-code-end]
+async function demoSearch() {
+    const query: string = "john.doe@example.com";
+    const tenantId: string = "tenant_12345";
+    const ssoToken: string = "sso_token_abc";
 
----
+    const resultWithSso: GetSearchUsersResponse = await getSearchUsers(query, tenantId, ssoToken);
+    const resultWithoutSso: GetSearchUsersResponse = await getSearchUsers(query, tenantId);
+}
+[inline-code-end]

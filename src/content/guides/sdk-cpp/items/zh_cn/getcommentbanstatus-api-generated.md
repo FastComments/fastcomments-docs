@@ -2,8 +2,9 @@
 
 | 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| commentId | string | 是 |  |
-| sso | string | 否 |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| sso | string | No |  |
 
 ## 响应
 
@@ -13,18 +14,13 @@
 
 [inline-code-attrs-start title = 'getCommentBanStatus 示例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> sso = utility::string_t(U("user@example.com"));
-utility::string_t commentId = utility::string_t(U("comment-98765"));
+auto tenantId = utility::string_t(U"my-tenant-123");
+auto commentId = utility::string_t(U"comment-456");
+boost::optional<utility::string_t> sso = utility::string_t(U"user@example.com");
 
-api->getCommentBanStatus(commentId, sso)
-    .then([](pplx::task<std::shared_ptr<GetCommentBanStatusResponse>> task){
-        try {
-            auto resp = task.get();
-            auto copy = std::make_shared<GetCommentBanStatusResponse>(*resp);
-            (void)copy;
-        } catch (const std::exception&) {
-        }
-    });
+api->getCommentBanStatus(tenantId, commentId, sso).then([](pplx::task<std::shared_ptr<GetCommentBanStatusResponse>> t){
+    try{
+        auto response = t.get();
+    }catch(const std::exception&){ }
+});
 [inline-code-end]
-
----

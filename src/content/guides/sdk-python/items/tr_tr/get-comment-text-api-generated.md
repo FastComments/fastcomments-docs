@@ -1,6 +1,6 @@
 ## Parametreler
 
-| Ad | Tip | Konum | Gerekli | Açıklama |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Yes |  |
 | commentId | string | path | Yes |  |
@@ -16,30 +16,33 @@ Döndürür: [`PublicAPIGetCommentTextResponse`](https://github.com/FastComments
 [inline-code-attrs-start title = 'get_comment_text Örneği'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetCommentTextOptions
 from client.models.public_api_get_comment_text_response import PublicAPIGetCommentTextResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Sunucuyu tanımlamak isteğe bağlıdır ve varsayılan https://fastcomments.com'dur
-# Tüm desteklenen yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.
+# Host'i tanımlamak isteğe bağlıdır ve varsayılan olarak https://fastcomments.com
+# Tüm desteklenen yapılandırma parametrelerinin listesini görmek için configuration.py dosyasına bakın.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# API istemcisi örneği ile bir bağlama girin
+# API istemcisinin bir örneğiyle bir bağlam içine girin
 with client.ApiClient(configuration) as api_client:
-    # API sınıfından bir örnek oluşturun
+    # API sınıfının bir örneğini oluştur
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
-    edit_key = 'edit_key_example' # str |  (isteğe bağlı)
-    sso = 'sso_example' # str |  (isteğe bağlı)
+    edit_key = 'edit_key_example' # str |  (opsiyonel)
+    sso = 'sso_example' # str |  (opsiyonel)
 
     try:
-        api_response = api_instance.get_comment_text(tenant_id, comment_id, edit_key=edit_key, sso=sso)
+        api_response = api_instance.get_comment_text(tenant_id, comment_id, GetCommentTextOptions(edit_key=edit_key, sso=sso))
         print("The response of PublicApi->get_comment_text:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling PublicApi->get_comment_text: %s\n" % e)
 [inline-code-end]
+
+---

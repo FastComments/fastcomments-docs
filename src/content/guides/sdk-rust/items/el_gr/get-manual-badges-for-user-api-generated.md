@@ -1,12 +1,14 @@
-## Παράμετροι
+---
+## Parameters
 
-| Name | Type | Required | Description |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
+| tenant_id | String | Ναι |  |
 | badges_user_id | String | Όχι |  |
 | comment_id | String | Όχι |  |
 | sso | String | Όχι |  |
 
-## Απάντηση
+## Response
 
 Επιστρέφει: [`GetUserManualBadgesResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_user_manual_badges_response.rs)
 
@@ -14,14 +16,15 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα get_manual_badges_for_user'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_manual_badges() -> Result<GetUserManualBadgesResponse, Error> {
-    let params: GetManualBadgesForUserParams = GetManualBadgesForUserParams {
-        badges_user_id: Some(String::from("acme-user-42")),
-        comment_id: Some(String::from("news/article-5678")),
-        sso: Some(String::from("sso-token-abc123")),
+async fn fetch_badges(config: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetManualBadgesForUserParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        badges_user_id: Some("user-42".to_string()),
+        comment_id: Some("comment-987".to_string()),
+        sso: Some("sso-abc123".to_string()),
     };
-    let response: GetUserManualBadgesResponse = get_manual_badges_for_user(&configuration, params).await?;
-    Ok(response)
+    let _response: GetUserManualBadgesResponse = get_manual_badges_for_user(config, params).await?;
+    Ok(())
 }
 [inline-code-end]
 

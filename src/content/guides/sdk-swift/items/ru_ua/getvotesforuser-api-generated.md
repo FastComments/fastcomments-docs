@@ -1,29 +1,29 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Расположение | Обязательно | Описание |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| urlId | string | query | Да |  |
-| userId | string | query | Нет |  |
-| anonUserId | string | query | Нет |  |
+| Ім'я | Тип | Розташування | Обов'язково | Опис |
+|------|------|--------------|-------------|------|
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`GetVotesForUserResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetVotesForUserResponse.swift)
+Повертає: [`GetVotesForUserResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetVotesForUserResponse.swift)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример getVotesForUser'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад getVotesForUser'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие примеры кода все еще находятся в бета-версии. Если обнаружите проблему, пожалуйста, сообщите через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наведені приклади коду ще у бета-версії. Якщо виникли проблеми, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
-let userId = "userId_example" // String |  (необязательно)
-let anonUserId = "anonUserId_example" // String |  (необязательно)
+let userId = "userId_example" // String |  (необов'язково)
+let anonUserId = "anonUserId_example" // String |  (необов'язково)
 
-DefaultAPI.getVotesForUser(tenantId: tenantId, urlId: urlId, userId: userId, anonUserId: anonUserId) { (response, error) in
+DefaultAPI.getVotesForUser(tenantId: tenantId, urlId: urlId, options: DefaultAPI.GetVotesForUserOptions(userId: userId, anonUserId: anonUserId)) { (response, error) in
     guard error == nil else {
         print(error)
         return

@@ -1,43 +1,30 @@
-## Параметри
+## Parameters
 
-| Name | Type | Required | Description |
+| Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
-| commentId | string | Да |  |
-| banEmail | bool | Не |  |
-| banEmailDomain | bool | Не |  |
-| banIP | bool | Не |  |
-| deleteAllUsersComments | bool | Не |  |
-| bannedUntil | string | Не |  |
-| isShadowBan | bool | Не |  |
-| updateId | string | Не |  |
-| banReason | string | Не |  |
-| sso | string | Не |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| options | const PostBanUserFromCommentOptions& | Yes |  |
 
-## Отговор
+## Response
 
 Връща: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/BanUserFromCommentResult.h)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'Пример за postBanUserFromComment'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postBanUserFromComment Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t commentId = U("comment-98765");
-auto continuation = api->postBanUserFromComment(
-    commentId,
-    boost::optional<bool>(true),
-    boost::optional<bool>(true),
-    boost::optional<bool>(false),
-    boost::optional<bool>(true),
-    boost::optional<utility::string_t>(U("2026-12-31T23:59:59Z")),
-    boost::optional<bool>(false),
-    boost::optional<utility::string_t>(U("update-abc123")),
-    boost::optional<utility::string_t>(U("User posted spam links")),
-    boost::optional<utility::string_t>(U("sso-token-7f3"))
-).then([](pplx::task<std::shared_ptr<BanUserFromCommentResult>> t){
-    try {
-        auto result = t.get();
-        if (!result) result = std::make_shared<BanUserFromCommentResult>();
-    } catch (...) {}
-});
-continuation.wait();
+utility::string_t tenantId = U("my-tenant-123");
+utility::string_t commentId = U("comment-456789");
+PostBanUserFromCommentOptions options;
+options.reason = boost::optional<utility::string_t>(U("spam"));
+options.durationDays = boost::optional<int>(30);
+
+api->postBanUserFromComment(tenantId, commentId, options)
+    .then([](std::shared_ptr<BanUserFromCommentResult> result) {
+        // обработка на резултата
+    })
+    .then([](pplx::task<void> t) {
+        try { t.get(); } catch (const std::exception& e) { /* обработка на грешка */ }
+    });
 [inline-code-end]

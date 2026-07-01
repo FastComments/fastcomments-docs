@@ -3,8 +3,7 @@
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
-| meta | string | Nej |  |
-| skip | float64 | Nej |  |
+| options | GetTenantsOptions | Nej |  |
 
 ## Svar
 
@@ -14,11 +13,8 @@ Returnerer: [`Option[GetTenantsResponse]`](https://github.com/FastComments/fastc
 
 [inline-code-attrs-start title = 'getTenants Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTenants(tenantId = "my-tenant-123", meta = "env=production", skip = 0.0)
-if response.isSome:
-  let tenantsResp = response.get()
-  discard tenantsResp
-  echo "Tenants fetched successfully"
-else:
-  echo "Request failed with status ", httpResponse.status
+let (maybeResp, httpResp) = client.getTenants(tenantId = "my-tenant-123", options = GetTenantsOptions())
+if maybeResp.isSome:
+  let resp = maybeResp.get()
+  echo resp
 [inline-code-end]

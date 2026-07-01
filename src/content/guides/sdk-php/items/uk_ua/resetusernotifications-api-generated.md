@@ -1,14 +1,14 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Назва | Тип | Розташування | Обов’язковий | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Так |  |
-| afterId | string | query | Ні |  |
-| afterCreatedAt | integer | query | Ні |  |
-| unreadOnly | boolean | query | Ні |  |
-| dmOnly | boolean | query | Ні |  |
-| noDm | boolean | query | Ні |  |
-| sso | string | query | Ні |  |
+| tenantId | string | query | Yes |  |
+| afterId | string | query | No |  |
+| afterCreatedAt | integer | query | No |  |
+| unreadOnly | boolean | query | No |  |
+| dmOnly | boolean | query | No |  |
+| noDm | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Відповідь
 
@@ -16,7 +16,7 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад resetUserNotifications'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'resetUserNotifications Приклад'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -24,24 +24,26 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Якщо ви хочете використовувати власний HTTP-клієнт, передайте клієнт, який реалізує `GuzzleHttp\ClientInterface`.
-    // Це необов'язково, за замовчуванням буде використовуватись `GuzzleHttp\Client`.
+    // Якщо ви хочете використовувати власний HTTP‑клієнт, передайте ваш клієнт, який реалізує `GuzzleHttp\ClientInterface`.
+    // Це необов’язково, за замовчуванням буде використано `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$after_id = 'after_id_example'; // string
-$after_created_at = 56; // int
-$unread_only = True; // bool
-$dm_only = True; // bool
-$no_dm = True; // bool
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // рядок
+$options = [
+    'after_id' => 'after_id_example', // рядок
+    'after_created_at' => 56, // ціле
+    'unread_only' => True, // логічний
+    'dm_only' => True, // логічний
+    'no_dm' => True, // логічний
+    'sso' => 'sso_example', // рядок
+];
+
 
 try {
-    $result = $apiInstance->resetUserNotifications($tenant_id, $after_id, $after_created_at, $unread_only, $dm_only, $no_dm, $sso);
+    $result = $apiInstance->resetUserNotifications($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PublicApi->resetUserNotifications: ', $e->getMessage(), PHP_EOL;
+    echo 'Виняток під час виклику PublicApi->resetUserNotifications: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

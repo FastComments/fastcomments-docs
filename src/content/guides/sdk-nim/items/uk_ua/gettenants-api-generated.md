@@ -1,10 +1,9 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
-|------|------|----------|-------------|
+| Ім'я | Тип | Обов’язково | Опис |
+|------|------|--------------|------|
 | tenantId | string | Так |  |
-| meta | string | Ні |  |
-| skip | float64 | Ні |  |
+| options | GetTenantsOptions | Ні |  |
 
 ## Відповідь
 
@@ -14,13 +13,10 @@
 
 [inline-code-attrs-start title = 'Приклад getTenants'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTenants(tenantId = "my-tenant-123", meta = "env=production", skip = 0.0)
-if response.isSome:
-  let tenantsResp = response.get()
-  discard tenantsResp
-  echo "Tenants fetched successfully"
-else:
-  echo "Request failed with status ", httpResponse.status
+let (maybeResp, httpResp) = client.getTenants(tenantId = "my-tenant-123", options = GetTenantsOptions())
+if maybeResp.isSome:
+  let resp = maybeResp.get()
+  echo resp
 [inline-code-end]
 
 ---

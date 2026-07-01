@@ -1,7 +1,7 @@
 ## Παράμετροι
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|-----------|------------|
 | tenantId | string | query | Ναι |  |
 | userId | string | query | Όχι |  |
 | badgeId | string | query | Όχι |  |
@@ -22,27 +22,32 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Διαμόρφωση εξουσιοδότησης κλειδιού API: api_key
-// Αποσχολιάστε πιο κάτω για να ρυθμίσετε πρόθεμα (π.χ. Bearer) για το κλειδί API, εάν χρειάζεται
+// Διαμορφώστε εξουσιοδότηση κλειδιού API: api_key
+$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Ξεσχολιάστε παρακάτω για να ορίσετε πρόθεμα (π.χ. Bearer) για το κλειδί API, αν χρειάζεται
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Εάν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε τον client σας που υλοποιεί `GuzzleHttp\ClientInterface`.
-    // Αυτό είναι προαιρετικό, ο `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
+    // Εάν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε το client σας το οποίο υλοποιεί `GuzzleHttp\ClientInterface`.
+    // Αυτό είναι προαιρετικό, θα χρησιμοποιηθεί το `GuzzleHttp\Client` ως προεπιλογή.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$user_id = 'user_id_example'; // string
-$badge_id = 'badge_id_example'; // string
-$type = 3.4; // float
-$displayed_on_comments = True; // bool
-$limit = 3.4; // float
-$skip = 3.4; // float
+$options = [
+    'user_id' => 'user_id_example', // string
+    'badge_id' => 'badge_id_example', // string
+    'type' => 3.4, // float
+    'displayed_on_comments' => True, // bool
+    'limit' => 3.4, // float
+    'skip' => 3.4, // float
+];
+
 
 try {
-    $result = $apiInstance->getUserBadges($tenant_id, $user_id, $badge_id, $type, $displayed_on_comments, $limit, $skip);
+    $result = $apiInstance->getUserBadges($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getUserBadges: ', $e->getMessage(), PHP_EOL;

@@ -1,7 +1,8 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Локация | Задължително | Описание |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
 | userId | string | query | Не |  |
 | trustFactor | string | query | Не |  |
 | sso | string | query | Не |  |
@@ -12,7 +13,7 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за SetTrustFactor'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'SetTrustFactor Пример'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -24,13 +25,14 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	userId := "userId_example" // string |  (по избор)
 	trustFactor := "trustFactor_example" // string |  (по избор)
 	sso := "sso_example" // string |  (по избор)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.SetTrustFactor(context.Background()).UserId(userId).TrustFactor(trustFactor).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.SetTrustFactor(context.Background()).TenantId(tenantId).UserId(userId).TrustFactor(trustFactor).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.SetTrustFactor``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

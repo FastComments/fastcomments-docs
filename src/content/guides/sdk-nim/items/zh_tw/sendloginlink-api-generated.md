@@ -1,25 +1,27 @@
 ## 參數
 
-| 名稱 | 類型 | 必要 | 描述 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| id | string | 否 |  |
-| redirectURL | string | 否 |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| redirectURL | string = "" | No |  |
 
 ## 回應
 
-回傳: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
+Returns: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## 範例
 
 [inline-code-attrs-start title = 'sendLoginLink 範例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.sendLoginLink(tenantId = "my-tenant-123", id = "user-456", redirectURL = "https://app.newsportal.com/welcome")
-if response.isSome:
-  let apiResp = response.get()
-  echo "Login link sent successfully"
-else:
-  echo "Failed to send login link, HTTP status: ", $httpResponse.status
+let (maybeResp, httpResp) = client.sendLoginLink(
+  tenantId = "my-tenant-123",
+  id = "user-456",
+  redirectURL = "https://myapp.example.com/login-success"
+)
+
+if maybeResp.isSome:
+  let emptyResp = maybeResp.get()
 [inline-code-end]
 
 ---

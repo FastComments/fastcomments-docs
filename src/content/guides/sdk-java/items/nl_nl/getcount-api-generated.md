@@ -2,22 +2,23 @@
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
-| text-search | string | query | Nee |  |
-| byIPFromComment | string | query | Nee |  |
-| filter | string | query | Nee |  |
-| searchFilters | string | query | Nee |  |
-| demo | boolean | query | Nee |  |
-| sso | string | query | Nee |  |
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filter | string | query | No |  |
+| searchFilters | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Respons
 
-Geeft terug: [`ModerationAPICountCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationAPICountCommentsResponse.java)
+Retourneert: [`ModerationAPICountCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationAPICountCommentsResponse.java)
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'getCount Voorbeeld'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getCount voorbeeld'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importeer klassen:
+// Klassen importeren:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -30,6 +31,7 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String textSearch = "textSearch_example"; // String | 
     String byIPFromComment = "byIPFromComment_example"; // String | 
     String filter = "filter_example"; // String | 
@@ -37,7 +39,7 @@ public class Example {
     Boolean demo = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationAPICountCommentsResponse result = apiInstance.getCount()
+      ModerationAPICountCommentsResponse result = apiInstance.getCount(tenantId)
             .textSearch(textSearch)
             .byIPFromComment(byIPFromComment)
             .filter(filter)
@@ -56,5 +58,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

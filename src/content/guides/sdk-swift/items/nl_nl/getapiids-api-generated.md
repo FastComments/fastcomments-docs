@@ -1,16 +1,18 @@
+---
 ## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| text-search | string | query | Nee |  |
-| byIPFromComment | string | query | Nee |  |
-| filters | string | query | Nee |  |
-| searchFilters | string | query | Nee |  |
-| afterId | string | query | Nee |  |
-| demo | boolean | query | Nee |  |
-| sso | string | query | Nee |  |
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| afterId | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
-## Respons
+## Response
 
 Retourneert: [`ModerationAPIGetCommentIdsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationAPIGetCommentIdsResponse.swift)
 
@@ -18,9 +20,10 @@ Retourneert: [`ModerationAPIGetCommentIdsResponse`](https://github.com/FastComme
 
 [inline-code-attrs-start title = 'getApiIds Voorbeeld'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// De onderstaande codevoorbeelden zijn nog in bèta. Meld eventuele problemen via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De volgende codevoorbeelden zijn nog in beta. Voor eventuele problemen, meld deze via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let textSearch = "textSearch_example" // String |  (optioneel)
 let byIPFromComment = "byIPFromComment_example" // String |  (optioneel)
 let filters = "filters_example" // String |  (optioneel)
@@ -29,7 +32,7 @@ let afterId = "afterId_example" // String |  (optioneel)
 let demo = true // Bool |  (optioneel)
 let sso = "sso_example" // String |  (optioneel)
 
-ModerationAPI.getApiIds(textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, afterId: afterId, demo: demo, sso: sso) { (response, error) in
+ModerationAPI.getApiIds(tenantId: tenantId, options: ModerationAPI.GetApiIdsOptions(textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, afterId: afterId, demo: demo, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -40,3 +43,5 @@ ModerationAPI.getApiIds(textSearch: textSearch, byIPFromComment: byIPFromComment
     }
 }
 [inline-code-end]
+
+---

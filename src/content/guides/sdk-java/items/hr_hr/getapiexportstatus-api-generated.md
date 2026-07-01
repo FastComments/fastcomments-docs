@@ -1,9 +1,10 @@
-## Parametri
+## Parameters
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
-| batchJobId | string | query | No |  |
-| sso | string | query | No |  |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
+| batchJobId | string | query | Ne |  |
+| sso | string | query | Ne |  |
 
 ## Odgovor
 
@@ -11,9 +12,9 @@ Vraća: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastc
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer getApiExportStatus'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getApiExportStatus Primjer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvoz klasa:
+// Uvezi klase:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String batchJobId = "batchJobId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationExportStatusResponse result = apiInstance.getApiExportStatus()
+      ModerationExportStatusResponse result = apiInstance.getApiExportStatus(tenantId)
             .batchJobId(batchJobId)
             .sso(sso)
             .execute();
@@ -44,5 +46,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

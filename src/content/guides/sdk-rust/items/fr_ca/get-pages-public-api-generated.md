@@ -1,8 +1,8 @@
-Lister les pages d'un locataire. Utilisé par le client de bureau FChat pour remplir sa liste de salons. Nécessite que `enableFChat` soit défini sur true dans la configuration personnalisée résolue pour chaque page. Les pages qui nécessitent SSO sont filtrées en fonction des accès de groupe de l'utilisateur demandeur.
+Liste les pages pour un locataire. Utilisé par le client de bureau FChat pour remplir sa liste de salles. Nécessite `enableFChat` à vrai dans la configuration personnalisée résolue pour chaque page. Les pages qui nécessitent SSO sont filtrées en fonction de l'accès aux groupes de l'utilisateur demandeur.
 
-## Paramètres
+## Parameters
 
-| Name | Type | Required | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
 | tenant_id | String | Yes |  |
 | cursor | String | No |  |
@@ -11,23 +11,24 @@ Lister les pages d'un locataire. Utilisé par le client de bureau FChat pour rem
 | sort_by | models::PagesSortBy | No |  |
 | has_comments | bool | No |  |
 
-## Réponse
+## Response
 
-Renvoie : [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_public_pages_response.rs)
+Retourne : [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_public_pages_response.rs)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de get_pages_public'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple get_pages_public'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: GetPagesPublicParams = GetPagesPublicParams {
-    tenant_id: String::from("acme-corp-tenant"),
-    cursor: Some(String::from("cursor_eyJwZl9pZCI6IjEyMyJ9")),
-    limit: Some(50),
-    q: Some(String::from("tag:release status:published")),
-    sort_by: Some(models::PagesSortBy::CreatedAt),
-    has_comments: Some(true),
-};
-let response: GetPublicPagesResponse = get_pages_public(&configuration, params).await?;
+async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetPagesPublicParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        cursor: Some("page_20".to_string()),
+        limit: Some(50),
+        q: Some("news/article".to_string()),
+        sort_by: Some(models::PagesSortBy::CreatedDesc),
+        has_comments: Some(true),
+    };
+    let _response = get_pages_public(configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]
-
----

@@ -1,9 +1,9 @@
 ## Parametry
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Tak |  |
-| id | string | Tak |  |
+| Nazwa | Typ | Wymagane | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
 ## Odpowiedź
 
@@ -13,15 +13,12 @@ Zwraca: [`GetTenantPackageResponse`](https://github.com/FastComments/fastcomment
 
 [inline-code-attrs-start title = 'Przykład getTenantPackage'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t id = U("pkg-basic-001");
-boost::optional<utility::string_t> requestedBy = U("admin@example.com");
-auto task = api->getTenantPackage(tenantId, id)
-    .then([requestedBy](std::shared_ptr<GetTenantPackageResponse> resp) -> std::shared_ptr<GetTenantPackageResponse> {
-        if(!resp) return std::make_shared<GetTenantPackageResponse>();
-        if(requestedBy) {}
-        return std::make_shared<GetTenantPackageResponse>(*resp);
-    });
+auto tenantId = U("my-tenant-123");
+auto packageId = U("pkg-456");
+api->getTenantPackage(tenantId, packageId).then([](pplx::task<std::shared_ptr<GetTenantPackageResponse>> task){
+    try{
+        auto resp = task.get();
+        auto result = std::make_shared<GetTenantPackageResponse>(*resp);
+    }catch(...){}
+});
 [inline-code-end]
-
----

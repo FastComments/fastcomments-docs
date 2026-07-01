@@ -1,6 +1,6 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Tak |  |
 | id | string | path | Tak |  |
@@ -11,27 +11,29 @@ Zwraca: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/bl
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład replaceTenantPackage'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'replaceTenantPackage Przykład'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Konfiguracja autoryzacji kluczem API: api_key
+// Skonfiguruj autoryzację klucza API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli potrzebny
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Jeśli chcesz użyć niestandardowego klienta HTTP, przekaż klienta implementującego `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // Jeśli chcesz użyć własnego klienta HTTP, przekaż swój klient, który implementuje `GuzzleHttp\ClientInterface`.
+    // To jest opcjonalne, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
 $replace_tenant_package_body = new \FastComments\Client\Model\ReplaceTenantPackageBody(); // \FastComments\Client\Model\ReplaceTenantPackageBody
+
 
 try {
     $result = $apiInstance->replaceTenantPackage($tenant_id, $id, $replace_tenant_package_body);
@@ -40,3 +42,5 @@ try {
     echo 'Exception when calling DefaultApi->replaceTenantPackage: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

@@ -1,7 +1,8 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
-|------|------|----------|----------|-------------|
+| Naam | Type | Locatie | Verplicht | Beschrijving |
+|------|------|----------|-----------|--------------|
+| tenantId | string | query | Ja |  |
 | page | number | query | Nee |  |
 | count | number | query | Nee |  |
 | text-search | string | query | Nee |  |
@@ -12,17 +13,18 @@
 | demo | boolean | query | Nee |  |
 | sso | string | query | Nee |  |
 
-## Respons
+## Response
 
-Geeft terug: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationAPIGetCommentsResponse.swift)
+Retourneert: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationAPIGetCommentsResponse.swift)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'getApiComments Voorbeeld'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// De volgende codevoorbeelden zijn nog in bèta. Bij problemen kunt u dit melden via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De volgende codevoorbeelden zijn nog beta. Meld eventuele problemen via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let page = 987 // Double |  (optioneel)
 let count = 987 // Double |  (optioneel)
 let textSearch = "textSearch_example" // String |  (optioneel)
@@ -33,7 +35,7 @@ let sorts = "sorts_example" // String |  (optioneel)
 let demo = true // Bool |  (optioneel)
 let sso = "sso_example" // String |  (optioneel)
 
-ModerationAPI.getApiComments(page: page, count: count, textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, demo: demo, sso: sso) { (response, error) in
+ModerationAPI.getApiComments(tenantId: tenantId, options: ModerationAPI.GetApiCommentsOptions(page: page, count: count, textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, demo: demo, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

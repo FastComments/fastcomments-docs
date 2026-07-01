@@ -1,14 +1,11 @@
-### パブリックAPIの使用
+### パブリック API の使用
 
 ```swift
 import FastCommentsSwift
 
-// APIクライアントを作成
-let publicApi = PublicAPI()
-
 // ページのコメントを取得
 do {
-    let response = try await publicApi.getCommentsPublic(
+    let response = try await PublicAPI.getCommentsPublic(
         tenantId: "your-tenant-id",
         urlId: "page-url-id"
     )
@@ -22,20 +19,19 @@ do {
 }
 ```
 
-### 認証済みAPIの使用
+### 認証済み API の使用
 
 ```swift
 import FastCommentsSwift
 
-// APIキーで設定を作成
-let defaultApi = DefaultAPI()
-defaultApi.apiKey = "your-api-key"
+// 共有設定に API キーを設定 (x-api-key ヘッダーとして送信されます)
+FastCommentsSwiftAPIConfiguration.shared.customHeaders["x-api-key"] = "your-api-key"
 
-// 認証済みAPIを使用してコメントを取得
+// 認証済み API を使用してコメントを取得
 do {
-    let response = try await defaultApi.getComments(
+    let response = try await DefaultAPI.getComments(
         tenantId: "your-tenant-id",
-        urlId: "page-url-id"
+        options: .init(urlId: "page-url-id")
     )
 
     print("Total comments: \(response.count ?? 0)")
@@ -47,18 +43,20 @@ do {
 }
 ```
 
-### モデレーションAPIの使用
+### モデレーション API の使用
 
 ```swift
 import FastCommentsSwift
 
-// モデレーションメソッドは、実際にモデレーターとして動作する者のための `sso` トークンで認可されます
-// （FastCommentsSSOで生成します。詳細は上記のSSOセクション参照）。
+// モデレーションメソッドは、実行モデレーター用の `sso` トークンで認可されます
+// (FastCommentsSSO で生成し、上記の SSO セクションを参照してください)。
 do {
     let response = try await ModerationAPI.getApiComments(
-        page: 0,
-        count: 30,
-        sso: ssoToken
+        options: .init(
+            page: 0,
+            count: 30,
+            sso: ssoToken
+        )
     )
 
     print("Found \(response.comments.count) comments to moderate")
@@ -70,48 +68,48 @@ do {
 }
 ```
 
-### 認証にSSOを使用する
+### 認証に SSO を使用
 
-#### セキュアSSO（本番に推奨）
+#### セキュア SSO（本番環境推奨）
 
 ```swift
 import FastCommentsSwift
 
 let apiKey = "your-api-key"
 
-// セキュアSSOユーザーデータを作成する（サーバー側のみ！）
+// セキュア SSO ユーザーデータを作成 (サーバー側のみ!)
 let userData = SecureSSOUserData(
-    id: "user-123",              // ユーザーID
-    email: "user@example.com",   // メール
-    username: "johndoe",         // ユーザー名
-    avatar: "https://example.com/avatar.jpg" // アバターのURL
+    id: "user-123",              // User ID
+    email: "user@example.com",   // Email
+    username: "johndoe",         // Username
+    avatar: "https://example.com/avatar.jpg" // Avatar URL
 )
 
-// SSOトークンを生成
+// SSO トークンを生成
 do {
     let sso = try FastCommentsSSO.createSecure(apiKey: apiKey, secureSSOUserData: userData)
     let token = try sso.createToken()
 
     print("SSO Token: \(token ?? "")")
-    // このトークンを認証のためにフロントエンドに渡す
+    // このトークンをフロントエンドに渡して認証に使用
 } catch {
     print("Error creating SSO token: \(error)")
 }
 ```
 
-#### シンプルSSO（開発／テスト用）
+#### シンプル SSO（開発/テスト用）
 
 ```swift
 import FastCommentsSwift
 
-// シンプルSSOユーザーデータを作成（APIキー不要）
+// シンプル SSO ユーザーデータを作成 (API キーは不要)
 let userData = SimpleSSOUserData(
     username: "johndoe",
     email: "user@example.com",
     avatar: "https://example.com/avatar.jpg"
 )
 
-// シンプルSSOトークンを生成
+// シンプル SSO トークンを生成
 let sso = FastCommentsSSO.createSimple(simpleSSOUserData: userData)
 do {
     let token = try sso.createToken()

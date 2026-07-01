@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Nom | Type | Requis | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
 | tenantId | string | Oui |  |
 | userId | string | Non |  |
@@ -9,20 +9,27 @@
 
 ## Réponse
 
-Renvoie: [`APIGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIGetUserBadgeProgressListResponse.ts)
+Retourne : [`GetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserBadgeProgressListResponse.ts)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getUserBadgeProgressList'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getUserBadgeProgressList'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "acme-corp-tenant-01";
-  const userId: string | undefined = "user-9e12b4";
-  const limit: number | undefined = 20;
-  const skip: number | undefined = 0;
-  const result: APIGetUserBadgeProgressListResponse = await getUserBadgeProgressList(tenantId, userId, limit, skip);
-  console.log(result);
-})();
-[inline-code-end]
+async function fetchBadgeProgress() {
+  const tenantId: string = "acme-corp";
+  const userId: string = "john.doe@example.com";
+  const limit: number = 10;
+  const skip: number = 5;
 
----
+  const fullList: GetUserBadgeProgressListResponse = await getUserBadgeProgressList(
+    tenantId,
+    userId,
+    limit,
+    skip
+  );
+
+  const simpleList: GetUserBadgeProgressListResponse = await getUserBadgeProgressList(tenantId);
+}
+
+fetchBadgeProgress();
+[inline-code-end]

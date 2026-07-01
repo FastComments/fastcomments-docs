@@ -1,7 +1,8 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
 | batchJobId | string | query | Нет |  |
 | sso | string | query | Нет |  |
 
@@ -19,19 +20,22 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Если вы хотите использовать пользовательский HTTP-клиент, передайте ваш клиент, который реализует `GuzzleHttp\ClientInterface`.
-    // Это необязательно, в качестве значения по умолчанию будет использован `GuzzleHttp\Client`.
+    // Если вы хотите использовать кастомный HTTP‑клиент, передайте ваш клиент, реализующий `GuzzleHttp\ClientInterface`.
+    // Это опционально, по умолчанию будет использован `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
-$batch_job_id = 'batch_job_id_example'; // строка
-$sso = 'sso_example'; // строка
+
+$tenant_id = 'tenant_id_example'; // string
+$options = [
+    'batch_job_id' => 'batch_job_id_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->getApiExportStatus($batch_job_id, $sso);
+    $result = $apiInstance->getApiExportStatus($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getApiExportStatus: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

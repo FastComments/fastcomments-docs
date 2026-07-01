@@ -15,15 +15,15 @@ Vraća: [`DeleteSSOUserAPIResponse`](https://github.com/FastComments/fastcomment
 
 [inline-code-attrs-start title = 'deleteSSOUser Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sledeći primeri koda su još u beta fazi. Za bilo koji problem, prijavite ga preko http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledeći uzorci koda su i dalje beta. Za svaki problem, molimo da ga prijavite na http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let id = "id_example" // String | 
-let deleteComments = true // Bool |  (opciono)
-let commentDeleteMode = "commentDeleteMode_example" // String |  (opciono)
+let deleteComments = true // Bool |  (optional)
+let commentDeleteMode = "commentDeleteMode_example" // String |  (optional)
 
-DefaultAPI.deleteSSOUser(tenantId: tenantId, id: id, deleteComments: deleteComments, commentDeleteMode: commentDeleteMode) { (response, error) in
+DefaultAPI.deleteSSOUser(tenantId: tenantId, id: id, options: DefaultAPI.DeleteSSOUserOptions(deleteComments: deleteComments, commentDeleteMode: commentDeleteMode)) { (response, error) in
     guard error == nil else {
         print(error)
         return

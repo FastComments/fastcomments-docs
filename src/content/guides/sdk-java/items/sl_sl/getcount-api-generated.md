@@ -1,7 +1,8 @@
-## Parametri
+## Parameters
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Da |  |
 | text-search | string | query | Ne |  |
 | byIPFromComment | string | query | Ne |  |
 | filter | string | query | Ne |  |
@@ -9,15 +10,15 @@
 | demo | boolean | query | Ne |  |
 | sso | string | query | Ne |  |
 
-## Odgovor
+## Response
 
-Vrne: [`ModerationAPICountCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationAPICountCommentsResponse.java)
+Returns: [`ModerationAPICountCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationAPICountCommentsResponse.java)
 
-## Primer
+## Example
 
 [inline-code-attrs-start title = 'Primer getCount'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvozi razrede:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -30,6 +31,7 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String textSearch = "textSearch_example"; // String | 
     String byIPFromComment = "byIPFromComment_example"; // String | 
     String filter = "filter_example"; // String | 
@@ -37,7 +39,7 @@ public class Example {
     Boolean demo = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationAPICountCommentsResponse result = apiInstance.getCount()
+      ModerationAPICountCommentsResponse result = apiInstance.getCount(tenantId)
             .textSearch(textSearch)
             .byIPFromComment(byIPFromComment)
             .filter(filter)

@@ -1,34 +1,27 @@
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
-|------|------|----------|-------------|
+|------|------|--------------|--------------|
 | tenantId | string | Ja |  |
 | id | string | Nein |  |
 | unBlockFromCommentParams | UnBlockFromCommentParams | Nein |  |
-| userId | string | Nein |  |
-| anonUserId | string | Nein |  |
+| options | UnBlockUserFromCommentOptions | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`Option[UnblockSuccess]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_unblock_success.nim)
+Rückgabe: [`Option[UnblockSuccess]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_unblock_success.nim)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'Beispiel für unBlockUserFromComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'unBlockUserFromComment Beispiel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.unBlockUserFromComment(
   tenantId = "my-tenant-123",
-  id = "comment-9f3b2a",
-  unBlockFromCommentParams = UnBlockFromCommentParams(),
-  userId = "user-1024",
-  anonUserId = "anon-77b"
+  id = "comment-456",
+  unBlockFromCommentParams = UnBlockFromCommentParams(userId = "user-789", commentId = "cmt-321"),
+  options = UnBlockUserFromCommentOptions(),
 )
 
 if response.isSome:
-  let unblockResult = response.get()
-  echo unblockResult
-else:
-  echo "Unblock failed"
+  let unblockSuccess = response.get()
 [inline-code-end]
-
----

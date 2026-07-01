@@ -1,12 +1,14 @@
-## Παράμετροι
+## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|------------|------------|
+| tenantId | string | query | Ναι |  |
 | commentId | string | path | Ναι |  |
 | voteId | string | path | Ναι |  |
+| broadcastId | string | query | Όχι |  |
 | sso | string | query | Όχι |  |
 
-## Απόκριση
+## Response
 
 Επιστρέφει: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/VoteDeleteResponse.java)
 
@@ -14,7 +16,8 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα deleteModerationVote'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Εισαγωγή κλάσεων:
+// Import classes:
+/* Εισαγωγή κλάσεων: */
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -27,19 +30,22 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String voteId = "voteId_example"; // String | 
+    String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      VoteDeleteResponse result = apiInstance.deleteModerationVote(commentId, voteId)
+      VoteDeleteResponse result = apiInstance.deleteModerationVote(tenantId, commentId, voteId)
+            .broadcastId(broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ModerationApi#deleteModerationVote");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("Εξαίρεση κατά την κλήση του ModerationApi#deleteModerationVote");
+      System.err.println("Κωδικός κατάστασης: " + e.getCode());
+      System.err.println("Αιτία: " + e.getResponseBody());
+      System.err.println("Κεφαλίδες απόκρισης: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }

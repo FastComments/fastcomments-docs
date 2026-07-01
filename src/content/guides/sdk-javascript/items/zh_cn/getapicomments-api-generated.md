@@ -1,6 +1,6 @@
 ## 参数
 
-| 名称 | 类型 | 必填 | 描述 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | page | number | 否 |  |
 | count | number | 否 |  |
@@ -10,25 +10,31 @@
 | searchFilters | string | 否 |  |
 | sorts | string | 否 |  |
 | demo | boolean | 否 |  |
+| tenantId | string | 否 |  |
 | sso | string | 否 |  |
 
 ## 响应
 
-返回：[`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPIGetCommentsResponse.ts)
+返回: [`GetApiCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetApiCommentsResponse.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'getApiComments 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const page: number = 2;
-const count: number = 25;
-const textSearch: string = 'comments failing to load after posting';
-const filters: string = 'status:pending,moderation:required';
-const sorts: string = 'createdAt:desc';
-const demo: boolean = false;
-const sso: string = 'sso-usr-7f3b2a';
+async function loadComments() {
+  const fullResult: GetApiCommentsResponse = await getApiComments(
+    2,                     // 页码
+    25,                    // 条数
+    "feedback",           // 文本搜索
+    "192.168.1.100",      // 来自评论的IP
+    "approved",           // 过滤器
+    "hasReplies",         // 搜索过滤器
+    "dateDesc",           // 排序
+    false,                // 演示
+    "tenant-abc123",      // 租户ID
+    "sso-token-xyz"       // 单点登录
+  );
 
-const response: ModerationAPIGetCommentsResponse = await getApiComments(page, count, textSearch, undefined, filters, undefined, sorts, demo, sso);
+  const minimalResult: GetApiCommentsResponse = await getApiComments(undefined, 5);
+}
 [inline-code-end]
-
----

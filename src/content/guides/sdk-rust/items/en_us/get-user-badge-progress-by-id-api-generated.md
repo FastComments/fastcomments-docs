@@ -13,15 +13,12 @@ Returns: [`ApiGetUserBadgeProgressResponse`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'get_user_badge_progress_by_id Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let params: GetUserBadgeProgressByIdParams = GetUserBadgeProgressByIdParams {
-        tenant_id: "acme-corp-tenant".to_owned(),
-        id: "badge-gold-2026".to_owned(),
-        user_id: Some("user-987".to_owned()),
+async fn example() -> Result<(), Error> {
+    let params = GetUserBadgeProgressByIdParams {
+        tenant_id: "acme-corp".to_string(),
+        id: "user-12345".to_string(),
     };
-    let badge_progress: ApiGetUserBadgeProgressResponse =
-        get_user_badge_progress_by_id(&configuration, params).await?;
-    println!("{:#?}", badge_progress);
+    let _response = get_user_badge_progress_by_id(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

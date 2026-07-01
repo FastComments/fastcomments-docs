@@ -1,7 +1,8 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Da |  |
 | text-search | string | query | Ne |  |
 | sso | string | query | Ne |  |
 
@@ -11,7 +12,7 @@ Vrne: [`ModerationSuggestResponse`](https://github.com/FastComments/fastcomments
 
 ## Primer
 
-[inline-code-attrs-start title = 'getSearchSuggest Primer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getSearchSuggest'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Uvozi razrede:
 import com.fastcomments.invoker.ApiClient;
@@ -26,19 +27,20 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String textSearch = "textSearch_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationSuggestResponse result = apiInstance.getSearchSuggest()
+      ModerationSuggestResponse result = apiInstance.getSearchSuggest(tenantId)
             .textSearch(textSearch)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ModerationApi#getSearchSuggest");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("Izjema pri klicanju ModerationApi#getSearchSuggest");
+      System.err.println("Koda statusa: " + e.getCode());
+      System.err.println("Razlog: " + e.getResponseBody());
+      System.err.println("Glave odgovora: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }

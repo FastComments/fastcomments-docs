@@ -1,7 +1,8 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Име | Тип | Местоположение | Задължително | Описание |
+|------|------|----------------|--------------|-----------|
+| tenantId | string | query | Да |  |
 | badgesUserId | string | query | Не |  |
 | commentId | string | query | Не |  |
 | sso | string | query | Не |  |
@@ -12,16 +13,17 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример getManualBadgesForUser'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за getManualBadgesForUser'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следните примери на код все още са бета. За всеки проблем, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следващите примерни кодове все още са в бета версия. За каквито и да е проблеми, моля съобщете ги чрез http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let badgesUserId = "badgesUserId_example" // String |  (незадължително)
-let commentId = "commentId_example" // String |  (незадължително)
-let sso = "sso_example" // String |  (незадължително)
+let tenantId = "tenantId_example" // String | 
+let badgesUserId = "badgesUserId_example" // String |  (по избор)
+let commentId = "commentId_example" // String |  (по избор)
+let sso = "sso_example" // String |  (по избор)
 
-ModerationAPI.getManualBadgesForUser(badgesUserId: badgesUserId, commentId: commentId, sso: sso) { (response, error) in
+ModerationAPI.getManualBadgesForUser(tenantId: tenantId, options: ModerationAPI.GetManualBadgesForUserOptions(badgesUserId: badgesUserId, commentId: commentId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -32,5 +34,3 @@ ModerationAPI.getManualBadgesForUser(badgesUserId: badgesUserId, commentId: comm
     }
 }
 [inline-code-end]
-
----

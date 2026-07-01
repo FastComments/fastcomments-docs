@@ -1,23 +1,26 @@
 ## Paramètres
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| commentId | string | Oui |  |
-| sso | string | Non |  |
+| Nom | Type | Obligatoire | Description |
+|------|------|--------------|-------------|
+| commentId | string | Yes |  |
+| broadcastId | string | No |  |
+| tenantId | string | No |  |
+| sso | string | No |  |
 
 ## Réponse
 
-Renvoie : [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Retourne : [`PostUnFlagCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostUnFlagCommentResponse.ts)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de postUnFlagComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple postUnFlagComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const commentId: string = '5f8d04b2-9c3a-4d13-bb8a-123456789abc';
-  const resultWithoutSso: APIEmptyResponse = await postUnFlagComment(commentId);
-  const ssoToken: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0NTY3OCJ9.signature';
-  const resultWithSso: APIEmptyResponse = await postUnFlagComment(commentId, ssoToken);
-  console.log(resultWithoutSso, resultWithSso);
-})();
+async () => {
+  const response: PostUnFlagCommentResponse = await postUnFlagComment(
+    "cmt_12345",          // commentId
+    "brd_67890",          // broadcastId (optionnel)
+    "tenant_abc",         // tenantId (optionnel)
+    "sso_user_token_789"  // sso (optionnel)
+  );
+};
 [inline-code-end]

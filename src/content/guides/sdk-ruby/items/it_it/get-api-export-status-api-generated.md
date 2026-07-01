@@ -1,7 +1,8 @@
 ## Parametri
 
-| Nome | Tipo | Location | Required | Descrizione |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+|------|------|-----------|--------------|-------------|
+| tenantId | string | query | Sì |  |
 | batchJobId | string | query | No |  |
 | sso | string | query | No |  |
 
@@ -11,20 +12,21 @@ Restituisce: [`ModerationExportStatusResponse`](https://github.com/FastComments/
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di get_api_export_status'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_api_export_status Esempio'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 opts = {
-  batch_job_id: 'batch_job_id_example', # Stringa | 
-  sso: 'sso_example' # Stringa | 
+  batch_job_id: 'batch_job_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.get_api_export_status(opts)
+  result = api_instance.get_api_export_status(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_api_export_status: #{e}"

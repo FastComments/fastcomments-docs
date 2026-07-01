@@ -1,24 +1,23 @@
-Ativar ou desativar notificações para uma página. Quando usuários estão inscritos em uma página, notificações são criadas
-para novos comentários raiz, e também
+Enable ou desativar notificações para uma página. Quando os usuários estão assinados a uma página, notificações são criadas para novos comentários raiz, e também
 
-## Parâmetros
+## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Sim |  |
-| urlId | string | query | Sim |  |
-| url | string | query | Sim |  |
-| pageTitle | string | query | Sim |  |
-| subscribedOrUnsubscribed | string | path | Sim |  |
-| sso | string | query | Não |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| url | string | query | Yes |  |
+| pageTitle | string | query | Yes |  |
+| subscribedOrUnsubscribed | string | path | Yes |  |
+| sso | string | query | No |  |
 
-## Resposta
+## Response
 
 Retorna: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationPageSubscriptionStatusResponse.php)
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus Example'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo de updateUserNotificationPageSubscriptionStatus'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -26,16 +25,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Se você quiser usar um cliente HTTP personalizado, passe seu cliente que implementa `GuzzleHttp\ClientInterface`.
-    // Isso é opcional; `GuzzleHttp\Client` será usado por padrão.
+    // Se você quiser usar um cliente HTTP personalizado, passe seu cliente que implemente `GuzzleHttp\ClientInterface`.
+    // Isso é opcional, `GuzzleHttp\Client` será usado como padrão.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $url_id = 'url_id_example'; // string
 $url = 'url_example'; // string
 $page_title = 'page_title_example'; // string
 $subscribed_or_unsubscribed = 'subscribed_or_unsubscribed_example'; // string
 $sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->updateUserNotificationPageSubscriptionStatus($tenant_id, $url_id, $url, $page_title, $subscribed_or_unsubscribed, $sso);

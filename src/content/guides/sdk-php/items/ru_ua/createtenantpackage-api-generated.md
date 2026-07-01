@@ -16,20 +16,22 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Настроить авторизацию API-ключа: api_key
+// Настройте авторизацию ключом API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для API-ключа, если это необходимо
+// Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для API‑ключа, если это необходимо
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Если вы хотите использовать собственный HTTP-клиент, передайте клиент, реализующий `GuzzleHttp\ClientInterface`.
-    // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
+    // Если вы хотите использовать пользовательский HTTP‑клиент, передайте ваш клиент, реализующий `GuzzleHttp\ClientInterface`.
+    // Это опционально, по умолчанию будет использован `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // строка
+
+$tenant_id = 'tenant_id_example'; // string
 $create_tenant_package_body = new \FastComments\Client\Model\CreateTenantPackageBody(); // \FastComments\Client\Model\CreateTenantPackageBody
+
 
 try {
     $result = $apiInstance->createTenantPackage($tenant_id, $create_tenant_package_body);
@@ -38,3 +40,5 @@ try {
     echo 'Exception when calling DefaultApi->createTenantPackage: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

@@ -1,6 +1,6 @@
 ## Parametreler
 
-| Ad | Tür | Zorunlu | Açıklama |
+| Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | domain | string | Evet |  |
@@ -14,18 +14,21 @@ Döndürür: [`GetDomainConfigResponse`](https://github.com/FastComments/fastcom
 [inline-code-attrs-start title = 'getDomainConfig Örneği'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-boost::optional<utility::string_t> domainOpt = U("app.example.com");
-if (domainOpt) {
-    api->getDomainConfig(tenantId, *domainOpt)
-    .then([](pplx::task<std::shared_ptr<GetDomainConfigResponse>> t) {
-        try {
-            auto resp = t.get();
-            auto cfgCopy = std::make_shared<GetDomainConfigResponse>(*resp);
-            (void)cfgCopy;
-        } catch (const std::exception&) {
+utility::string_t domain = U("myblog.example.com");
+
+api->getDomainConfig(tenantId, domain)
+    .then([](std::shared_ptr<GetDomainConfigResponse> response) {
+        if (!response) return;
+        boost::optional<bool> moderationEnabled = response->moderationEnabled;
+        boost::optional<std::string> theme = response->theme;
+        if (moderationEnabled && *moderationEnabled) {
+            // etkin moderasyonu ele al
         }
-    });
-}
+        if (theme) {
+            // tema değerini kullan
+        }
+    })
+    .wait();
 [inline-code-end]
 
 ---

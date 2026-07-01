@@ -1,13 +1,13 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Θέση | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Ναι |  |
-| commentId | string | path | Ναι |  |
-| dir | integer | query | Ναι |  |
-| sso | string | query | Όχι |  |
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| dir | integer | query | Yes |  |
+| sso | string | query | No |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`GetCommentVoteUserNamesSuccessResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCommentVoteUserNamesSuccessResponse.php)
 
@@ -21,14 +21,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Αν θέλετε να χρησιμοποιήσετε προσαρμοσμένο HTTP client, περάστε τον client σας που υλοποιεί `GuzzleHttp\ClientInterface`.
-    // Αυτό είναι προαιρετικό, ως προεπιλογή θα χρησιμοποιηθεί το `GuzzleHttp\Client`.
+    // Εάν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε τον client σας που υλοποιεί το `GuzzleHttp\ClientInterface`.
+    // Αυτό είναι προαιρετικό, το `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $comment_id = 'comment_id_example'; // string
 $dir = 56; // int
 $sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->getCommentVoteUserNames($tenant_id, $comment_id, $dir, $sso);

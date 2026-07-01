@@ -7,7 +7,7 @@
 
 ## Réponse
 
-Renvoie : [`GetEmailTemplateResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetEmailTemplateResponse.php)
+Retourne : [`GetEmailTemplateResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetEmailTemplateResponse.php)
 
 ## Exemple
 
@@ -17,9 +17,9 @@ Renvoie : [`GetEmailTemplateResponse`](https://github.com/FastComments/fastcomme
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api_key
+// Configurer l’autorisation de la clé API : api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Décommentez ci-dessous pour configurer un préfixe (par ex. Bearer) pour la clé API, si nécessaire
+// Décommentez ci‑dessus pour configurer le préfixe (par ex. Bearer) de la clé API, si nécessaire
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
@@ -29,8 +29,10 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$id = 'id_example'; // string
+
+$tenant_id = 'tenant_id_example'; // chaîne
+$id = 'id_example'; // chaîne
+
 
 try {
     $result = $apiInstance->getEmailTemplate($tenant_id, $id);

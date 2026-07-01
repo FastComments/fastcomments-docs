@@ -1,30 +1,28 @@
 ## Parametreler
 
-| Name | Type | Required | Description |
+| Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | id | string | Evet |  |
-| contextUserId | string | Hayır |  |
-| isLive | bool | Hayır |  |
+| options | const DeleteCommentOptions& | Evet |  |
 
-## Response
+## Yanıt
 
-Döndürür: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/DeleteCommentResult.h)
+Geri döner: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/DeleteCommentResult.h)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'deleteComment Örneği'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("cmt-456789");
-boost::optional<utility::string_t> contextUserId = boost::optional<utility::string_t>(U("user@example.com"));
-boost::optional<bool> isLive = boost::optional<bool>(true);
-
-api->deleteComment(tenantId, commentId, contextUserId, isLive)
-    .then([](std::shared_ptr<DeleteCommentResult> result){
-        auto res = result ? result : std::make_shared<DeleteCommentResult>();
-        std::cout << "DeleteCommentResult ptr=" << static_cast<const void*>(res.get()) << std::endl;
-    });
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto commentId = utility::conversions::to_string_t("comment-789");
+DeleteCommentOptions options;
+options.reason = boost::optional<utility::string_t>(utility::conversions::to_string_t("Inappropriate content"));
+options.force = boost::optional<bool>(true);
+api->deleteComment(tenantId, commentId, options).then([](pplx::task<std::shared_ptr<DeleteCommentResult>> task){
+    try{
+        auto result = task.get();
+    }catch(const std::exception&){
+    }
+});
 [inline-code-end]
-
----

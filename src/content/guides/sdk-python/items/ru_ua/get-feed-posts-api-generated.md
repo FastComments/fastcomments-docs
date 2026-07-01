@@ -2,56 +2,58 @@ req
 tenantId
 afterId
 
-## Параметры
+## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| afterId | string | query | Нет |  |
-| limit | integer | query | Нет |  |
-| tags | array | query | Нет |  |
+| Назва | Тип | Розташування | Обов'язково | Опис |
+|------|------|--------------|--------------|------|
+| tenantId | string | query | Так |  |
+| afterId | string | query | Ні |  |
+| limit | integer | query | Ні |  |
+| tags | array | query | Ні |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_feed_posts_response.py)
+Повертає: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_feed_posts_response.py)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример get_feed_posts'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад get_feed_posts'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetFeedPostsOptions
 from client.models.get_feed_posts_response import GetFeedPostsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Указание host необязательно и по умолчанию равно https://fastcomments.com
-# Смотрите configuration.py для списка всех поддерживаемых параметров конфигурации.
+# Визначення хоста є необов’язковим і за замовчуванням https://fastcomments.com
+# Див. configuration.py для списку всіх підтримуваних параметрів конфігурації.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клиент должен настроить параметры аутентификации и авторизации
-# в соответствии с политикой безопасности API сервера.
-# Примеры для каждого метода аутентификации приведены ниже, используйте пример,
-# который соответствует вашему случаю использования аутентификации.
+# Клієнт повинен налаштувати параметри автентифікації та авторизації
+# відповідно до політики безпеки API сервера.
+# Приклади для кожного методу автентифікації надані нижче, використайте приклад,
+# який відповідає вашому випадку використання.
 
-# Настройте авторизацию с помощью API-ключа: api_key
+# Налаштуйте авторизацію за ключем API: api_key
+# Розкоментуйте нижче, щоб встановити префікс (наприклад, Bearer) для ключа API, якщо потрібно
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Раскомментируйте ниже, чтобы установить префикс (e.g. Bearer) для API-ключа, если требуется
+# Розкоментуйте нижче, щоб встановити префікс (наприклад, Bearer) для ключа API, якщо потрібно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Войдите в контекст с экземпляром клиента API
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Создайте экземпляр класса API
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    after_id = 'after_id_example' # str |  (необязательно)
-    limit = 56 # int |  (необязательно)
-    tags = ['tags_example'] # List[str] |  (необязательно)
+    after_id = 'after_id_example' # str |  (необов'язковий)
+    limit = 56 # int |  (необов'язковий)
+    tags = ['tags_example'] # List[str] |  (необов'язковий)
 
     try:
-        api_response = api_instance.get_feed_posts(tenant_id, after_id=after_id, limit=limit, tags=tags)
+        api_response = api_instance.get_feed_posts(tenant_id, GetFeedPostsOptions(after_id=after_id, limit=limit, tags=tags))
         print("The response of DefaultApi->get_feed_posts:\n")
         pprint(api_response)
     except Exception as e:

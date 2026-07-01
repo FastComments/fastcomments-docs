@@ -10,20 +10,21 @@
 | limit | number | query | Nee |  |
 | skip | number | query | Nee |  |
 
-## Antwoord
+## Response
 
 Retourneert: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_user_badges_response.py)
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'get_user_badges Voorbeeld'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Voorbeeld get_user_badges'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetUserBadgesOptions
 from client.models.api_get_user_badges_response import APIGetUserBadgesResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Het definiëren van de host is optioneel en standaard ingesteld op https://fastcomments.com
+# Het definiëren van de host is optioneel en standaard https://fastcomments.com
 # Zie configuration.py voor een lijst van alle ondersteunde configuratieparameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -31,16 +32,16 @@ configuration = client.Configuration(
 
 # De client moet de authenticatie- en autorisatieparameters configureren
 # in overeenstemming met het beveiligingsbeleid van de API-server.
-# Voorbeelden voor elke auth-methode staan hieronder; gebruik het voorbeeld dat
-# voldoet aan uw authenticatiegeval.
+# Voorbeelden voor elke authenticatiemethode worden hieronder gegeven, gebruik het voorbeeld dat
+# voldoet aan jouw authenticatiegebruiksgeval.
 
-# Configureer API-sleutelautorisatie: api_key
+# Configureer API-sleutel autorisatie: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Haal de commentaarteken weg hieronder om een voorvoegsel (bijv. Bearer) voor de API-sleutel in te stellen, indien nodig
+# Verwijder commentaar hieronder om een prefix (bijv. Bearer) voor de API-sleutel in te stellen, indien nodig
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Ga een context in met een instantie van de API-client
+# Open een context met een instantie van de API-client
 with client.ApiClient(configuration) as api_client:
     # Maak een instantie van de API-klasse
     api_instance = client.DefaultApi(api_client)
@@ -53,7 +54,7 @@ with client.ApiClient(configuration) as api_client:
     skip = 3.4 # float |  (optioneel)
 
     try:
-        api_response = api_instance.get_user_badges(tenant_id, user_id=user_id, badge_id=badge_id, type=type, displayed_on_comments=displayed_on_comments, limit=limit, skip=skip)
+        api_response = api_instance.get_user_badges(tenant_id, GetUserBadgesOptions(user_id=user_id, badge_id=badge_id, type=type, displayed_on_comments=displayed_on_comments, limit=limit, skip=skip))
         print("The response of DefaultApi->get_user_badges:\n")
         pprint(api_response)
     except Exception as e:

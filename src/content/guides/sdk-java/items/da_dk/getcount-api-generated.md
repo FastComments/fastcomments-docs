@@ -1,19 +1,20 @@
-## Parametre
+## Parameters
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
-|------|------|----------|----------|-------------|
-| text-search | string | query | Nej |  |
-| byIPFromComment | string | query | Nej |  |
-| filter | string | query | Nej |  |
-| searchFilters | string | query | Nej |  |
-| demo | boolean | query | Nej |  |
-| sso | string | query | Nej |  |
+|------|------|-----------|----------|-------------|
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filter | string | query | No |  |
+| searchFilters | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
-## Svar
+## Response
 
 Returnerer: [`ModerationAPICountCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationAPICountCommentsResponse.java)
 
-## Eksempel
+## Example
 
 [inline-code-attrs-start title = 'getCount Eksempel'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -30,6 +31,7 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String textSearch = "textSearch_example"; // String | 
     String byIPFromComment = "byIPFromComment_example"; // String | 
     String filter = "filter_example"; // String | 
@@ -37,7 +39,7 @@ public class Example {
     Boolean demo = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationAPICountCommentsResponse result = apiInstance.getCount()
+      ModerationAPICountCommentsResponse result = apiInstance.getCount(tenantId)
             .textSearch(textSearch)
             .byIPFromComment(byIPFromComment)
             .filter(filter)
@@ -56,5 +58,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

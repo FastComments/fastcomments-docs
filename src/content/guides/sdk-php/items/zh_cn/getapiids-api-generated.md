@@ -1,14 +1,15 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 描述 |
-|------|------|------|------|------|
-| text-search | string | query | 否 |  |
-| byIPFromComment | string | query | 否 |  |
-| filters | string | query | 否 |  |
-| searchFilters | string | query | 否 |  |
-| afterId | string | query | 否 |  |
-| demo | boolean | query | 否 |  |
-| sso | string | query | 否 |  |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| afterId | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## 响应
 
@@ -24,22 +25,29 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // 如果您想使用自定义的 HTTP 客户端，请传入实现了 `GuzzleHttp\ClientInterface` 的客户端。
-    // 这是可选的，默认将使用 `GuzzleHttp\Client`。
+    // 如果您想使用自定义 HTTP 客户端，请传入实现 `GuzzleHttp\ClientInterface` 的客户端。
+    // 这是可选的，默认使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client()
 );
-$text_search = 'text_search_example'; // string
-$by_ip_from_comment = 'by_ip_from_comment_example'; // string
-$filters = 'filters_example'; // string
-$search_filters = 'search_filters_example'; // string
-$after_id = 'after_id_example'; // string
-$demo = True; // bool
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // string
+$options = [
+    'text_search' => 'text_search_example', // string
+    'by_ip_from_comment' => 'by_ip_from_comment_example', // string
+    'filters' => 'filters_example', // string
+    'search_filters' => 'search_filters_example', // string
+    'after_id' => 'after_id_example', // string
+    'demo' => True, // bool
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->getApiIds($text_search, $by_ip_from_comment, $filters, $search_filters, $after_id, $demo, $sso);
+    $result = $apiInstance->getApiIds($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getApiIds: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

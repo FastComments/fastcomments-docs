@@ -1,36 +1,44 @@
-## Parametri
+## Parameters
 
-| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Sì |  |
-| commentId | string | query | Sì |  |
-| direction | string | query | Sì |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | query | Yes |  |
+| direction | string | query | Yes |  |
 | userId | string | query | No |  |
 | anonUserId | string | query | No |  |
 
-## Risposta
+## Response
 
 Restituisce: [`VoteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_response.py)
 
-## Esempio
+## Example
 
-[inline-code-attrs-start title = 'Esempio di create_vote'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio create_vote'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import CreateVoteOptions
 from client.models.vote_response import VoteResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# La definizione dell'host è opzionale e predefinita a https://fastcomments.com
-# Vedi configuration.py per un elenco di tutti i parametri di configurazione supportati.
+# Definire l'host è opzionale e per impostazione predefinita è https://fastcomments.com
+# Vedere configuration.py per un elenco di tutti i parametri di configurazione supportati.
+# Il client deve configurare i parametri di autenticazione e autorizzazione
+# in conformità con la politica di sicurezza del server API.
+# Esempi per ciascun metodo di autenticazione sono forniti di seguito, usa l'esempio che
+# soddisfa il tuo caso d'uso di autenticazione.
+# Configura l'autorizzazione con chiave API: api_key
+# Decommenta la riga seguente per impostare un prefisso (ad es. Bearer) per la chiave API, se necessario
+# Entra in un contesto con un'istanza del client API
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Il client deve configurare i parametri di autenticazione e autorizzazione
-# in conformità con la policy di sicurezza del server API.
-# Esempi per ogni metodo di autenticazione sono riportati sotto; usa l'esempio che
-# soddisfa il tuo caso d'uso di autenticazione.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
@@ -38,18 +46,18 @@ configuration.api_key['api_key'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Entra in un contesto con un'istanza del client API
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
     # Crea un'istanza della classe API
     api_instance = client.DefaultApi(api_client)
-    tenant_id = 'tenant_id_example' # str | 
-    comment_id = 'comment_id_example' # str | 
-    direction = 'direction_example' # str | 
-    user_id = 'user_id_example' # str |  (optional)
-    anon_user_id = 'anon_user_id_example' # str |  (optional)
+    tenant_id = 'tenant_id_example' # str |
+    comment_id = 'comment_id_example' # str |
+    direction = 'direction_example' # str |
+    user_id = 'user_id_example' # str |  (opzionale)
+    anon_user_id = 'anon_user_id_example' # str |  (opzionale)
 
     try:
-        api_response = api_instance.create_vote(tenant_id, comment_id, direction, user_id=user_id, anon_user_id=anon_user_id)
+        api_response = api_instance.create_vote(tenant_id, comment_id, direction, CreateVoteOptions(user_id=user_id, anon_user_id=anon_user_id))
         print("The response of DefaultApi->create_vote:\n")
         pprint(api_response)
     except Exception as e:

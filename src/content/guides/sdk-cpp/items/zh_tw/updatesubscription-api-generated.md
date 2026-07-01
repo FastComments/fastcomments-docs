@@ -1,33 +1,31 @@
 ## 參數
 
-| 名稱 | 類型 | 必填 | 描述 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| id | string | 是 |  |
-| updateAPIUserSubscriptionData | UpdateAPIUserSubscriptionData | 是 |  |
-| userId | string | 否 |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updateAPIUserSubscriptionData | UpdateAPIUserSubscriptionData | Yes |  |
+| userId | string | No |  |
 
 ## 回應
 
-回傳: [`UpdateSubscriptionAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UpdateSubscriptionAPIResponse.h)
+返回: [`UpdateSubscriptionAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UpdateSubscriptionAPIResponse.h)
 
 ## 範例
 
 [inline-code-attrs-start title = 'updateSubscription 範例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t subscriptionId = U("sub-456");
-UpdateAPIUserSubscriptionData updateData{};
-boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U("user-789"));
-api->updateSubscription(tenantId, subscriptionId, updateData, userId)
-.then([](pplx::task<std::shared_ptr<UpdateSubscriptionAPIResponse>> t){
-    try {
-        auto resp = t.get();
-        if (resp) {
-            auto copy = std::make_shared<UpdateSubscriptionAPIResponse>(*resp);
-        }
-    } catch (const std::exception&) {}
-}).wait();
-[inline-code-end]
+UpdateAPIUserSubscriptionData subscriptionData;
+subscriptionData.plan = utility::conversions::to_string_t("premium");
+subscriptionData.active = true;
 
----
+api->updateSubscription(
+    utility::conversions::to_string_t("my-tenant-123"),
+    utility::conversions::to_string_t("sub-987654"),
+    subscriptionData,
+    boost::optional<utility::string_t>(utility::conversions::to_string_t("admin-user-456"))
+).then([](std::shared_ptr<UpdateSubscriptionAPIResponse> response){
+    bool ok = response && response->isSuccess;
+    (void)ok;
+});
+[inline-code-end]

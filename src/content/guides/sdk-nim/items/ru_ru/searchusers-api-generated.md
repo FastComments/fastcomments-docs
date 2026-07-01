@@ -2,12 +2,9 @@
 
 | Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| urlId | string | Да |  |
-| usernameStartsWith | string | Нет |  |
-| mentionGroupIds | seq[string] | Нет |  |
-| sso | string | Нет |  |
-| searchSection | string | Нет |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| options | SearchUsersOptions | No |  |
 
 ## Ответ
 
@@ -19,18 +16,10 @@
 [inline-code-start]
 let (response, httpResponse) = client.searchUsers(
   tenantId = "my-tenant-123",
-  urlId = "news/top-story",
-  usernameStartsWith = "",
-  mentionGroupIds = @[],
-  sso = "",
-  searchSection = ""
+  urlId = "news/article-title",
+  options = SearchUsersOptions()
 )
 
 if response.isSome:
-  let searchResult = response.get()
-  echo "SearchUsersResult:", searchResult
-else:
-  echo "No result or error. HTTP response:", httpResponse
+  let result = response.get()
 [inline-code-end]
-
----

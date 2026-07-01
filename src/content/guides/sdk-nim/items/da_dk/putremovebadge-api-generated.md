@@ -2,11 +2,9 @@
 
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| badgeId | string | Nej |  |
-| userId | string | Nej |  |
-| commentId | string | Ja |  |
-| broadcastId | string | Nej |  |
-| sso | string | Nej |  |
+| tenantId | string | Yes |  |
+| badgeId | string | No |  |
+| options | PutRemoveBadgeOptions | No |  |
 
 ## Svar
 
@@ -14,19 +12,14 @@ Returnerer: [`Option[RemoveUserBadgeResponse]`](https://github.com/FastComments/
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'putRemoveBadge-eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putRemoveBadge Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.putRemoveBadge(badgeId = "verified-journalist",
-  userId = "user-7890",
-  commentId = "comment-98765",
-  broadcastId = "",
-  sso = "")
+let (maybeResp, httpResp) = client.putRemoveBadge(
+  tenantId = "my-tenant-123",
+  badgeId = "badge-456",
+  options = PutRemoveBadgeOptions()
+)
 
-if response.isSome:
-  let removeResp = response.get()
-  discard removeResp
-else:
-  discard httpResponse
+if maybeResp.isSome:
+  let badgeResp = maybeResp.get()
 [inline-code-end]
-
----

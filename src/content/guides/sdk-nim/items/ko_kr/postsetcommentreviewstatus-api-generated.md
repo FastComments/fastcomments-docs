@@ -2,28 +2,27 @@
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| commentId | string | 예 |  |
-| reviewed | bool | 아니오 |  |
-| sso | string | 아니오 |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| options | PostSetCommentReviewStatusOptions | No |  |
 
 ## 응답
 
-반환: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
+Returns: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'postSetCommentReviewStatus 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postSetCommentReviewStatus 예시'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postSetCommentReviewStatus(
-  commentId = "cmt-98765-news-article",
-  reviewed = false,
-  sso = ""
+let (apiResp, httpResp) = client.postSetCommentReviewStatus(
+  tenantId = "my-tenant-123",
+  commentId = "cmt-7890",
+  options = PostSetCommentReviewStatusOptions()
 )
-if response.isSome:
-  let apiResp = response.get()
-  echo "Review status updated"
-else:
-  echo "Failed to update review status: " & $httpResponse.status
-[inline-code-end]
 
----
+if apiResp.isSome:
+  let _ = apiResp.get()
+  discard
+else:
+  discard
+[inline-code-end]

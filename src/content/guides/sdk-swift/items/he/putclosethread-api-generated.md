@@ -2,8 +2,9 @@
 
 | שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| urlId | string | query | כן |  |
-| sso | string | query | לא |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## תגובה
 
@@ -11,15 +12,16 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-putCloseThread'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putCloseThread דוגמה'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// דוגמאות הקוד הבאות עדיין בבטא. לכל בעיה, דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// הקוד הבא עדיין בגרסת בטא. עבור כל בעיה, אנא דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
-let sso = "sso_example" // String |  (אופציונלי)
+let sso = "sso_example" // String |  (optional)
 
-ModerationAPI.putCloseThread(urlId: urlId, sso: sso) { (response, error) in
+ModerationAPI.putCloseThread(tenantId: tenantId, urlId: urlId, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -30,5 +32,3 @@ ModerationAPI.putCloseThread(urlId: urlId, sso: sso) { (response, error) in
     }
 }
 [inline-code-end]
-
----

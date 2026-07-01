@@ -1,10 +1,11 @@
----
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Назва | Тип | Обов’язковий | Опис |
 |------|------|----------|-------------|
+| tenant_id | String | Так |  |
 | comment_id | String | Так |  |
 | reviewed | bool | Ні |  |
+| broadcast_id | String | Ні |  |
 | sso | String | Ні |  |
 
 ## Відповідь
@@ -13,17 +14,17 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад post_set_comment_review_status'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_set_comment_review_status Приклад'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn set_comment_review_status() -> Result<ApiEmptyResponse, Error> {
-    let params: PostSetCommentReviewStatusParams = PostSetCommentReviewStatusParams {
-        comment_id: "news/article-2026-06-18-cmt-9843".to_string(),
+async fn update_review_status(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = PostSetCommentReviewStatusParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: "comment-98765".to_string(),
         reviewed: Some(true),
-        sso: Some("acme-sso-session-7f2e9b".to_string()),
+        broadcast_id: Some("broadcast-2023-summer".to_string()),
+        sso: Some("sso-user-42".to_string()),
     };
-    let response: ApiEmptyResponse = post_set_comment_review_status(&configuration, params).await?;
-    Ok(response)
+    post_set_comment_review_status(configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

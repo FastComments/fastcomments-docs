@@ -5,14 +5,9 @@ afterId
 ## Параметры
 
 | Имя | Тип | Обязательно | Описание |
-|------|------|----------|-------------|
+|------|------|--------------|----------|
 | tenantId | string | Да |  |
-| afterId | string | Нет |  |
-| limit | int | Нет |  |
-| tags | seq[string] | Нет |  |
-| sso | string | Нет |  |
-| isCrawler | bool | Нет |  |
-| includeUserInfo | bool | Нет |  |
+| options | GetFeedPostsPublicOptions | Нет |  |
 
 ## Ответ
 
@@ -22,18 +17,7 @@ afterId
 
 [inline-code-attrs-start title = 'Пример getFeedPostsPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getFeedPostsPublic(
-  tenantId = "my-tenant-123",
-  afterId = "",
-  limit = 0,
-  tags = @[],
-  sso = "",
-  isCrawler = false,
-  includeUserInfo = false
-)
-if response.isSome:
-  let feed = response.get()
-  discard feed
+let (feedResponseOpt, httpResponse) = client.getFeedPostsPublic(tenantId = "my-tenant-123", options = GetFeedPostsPublicOptions())
+if feedResponseOpt.isSome:
+  let feedResponse = feedResponseOpt.get()
 [inline-code-end]
-
----

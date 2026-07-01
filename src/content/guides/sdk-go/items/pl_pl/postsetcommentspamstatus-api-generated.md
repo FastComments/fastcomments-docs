@@ -1,10 +1,12 @@
 ## Parametry
 
-| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
-|------|------|----------|----------|-------------|
+| Nazwa | Typ | Lokalizacja | Wymagany | Opis |
+|------|------|------------|----------|------|
+| tenantId | string | query | Tak |  |
 | commentId | string | path | Tak |  |
 | spam | boolean | query | Nie |  |
 | permNotSpam | boolean | query | Nie |  |
+| broadcastId | string | query | Nie |  |
 | sso | string | query | Nie |  |
 
 ## Odpowiedź
@@ -25,14 +27,16 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
-	spam := true // bool |  (opcjonalne)
-	permNotSpam := true // bool |  (opcjonalne)
-	sso := "sso_example" // string |  (opcjonalne)
+	spam := true // bool |  (opcjonalnie)
+	permNotSpam := true // bool |  (opcjonalnie)
+	broadcastId := "broadcastId_example" // string |  (opcjonalnie)
+	sso := "sso_example" // string |  (opcjonalnie)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostSetCommentSpamStatus(context.Background(), commentId).Spam(spam).PermNotSpam(permNotSpam).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostSetCommentSpamStatus(context.Background(), commentId).TenantId(tenantId).Spam(spam).PermNotSpam(permNotSpam).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostSetCommentSpamStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

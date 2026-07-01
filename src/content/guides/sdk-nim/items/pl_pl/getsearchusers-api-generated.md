@@ -1,10 +1,9 @@
----
 ## Parametry
 
-| Name | Type | Wymagane | Opis |
-|------|------|----------|-------------|
-| value | string | Nie |  |
-| sso | string | Nie |  |
+| Nazwa | Typ | Wymagane | Opis |
+|------|------|----------|------|
+| tenantId | string | Tak |  |
+| options | GetSearchUsersOptions | Nie |  |
 
 ## Odpowiedź
 
@@ -14,12 +13,8 @@ Zwraca: [`Option[ModerationUserSearchResponse]`](https://github.com/FastComments
 
 [inline-code-attrs-start title = 'Przykład getSearchUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSearchUsers(value = "john.doe@example.com", sso = "sso-acme-789")
-if response.isSome:
-  let searchRes = response.get()
-  echo "Search result:", searchRes
-else:
-  echo "No users found"
+let (searchRes, httpRes) = client.getSearchUsers(tenantId = "my-tenant-123", options = default(GetSearchUsersOptions))
+if searchRes.isSome:
+  let data = searchRes.get()
+  echo data
 [inline-code-end]
-
----

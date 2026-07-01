@@ -1,26 +1,24 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| skip | f64 | Не |  |
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenant_id | String | Da |  |
+| skip | f64 | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetTenantPackagesResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_tenant_packages_response.rs)
+Vraća: [`GetTenantPackagesResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_tenant_packages_response.rs)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример get_tenant_packages'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer get_tenant_packages'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let params: GetTenantPackagesParams = GetTenantPackagesParams {
-        tenant_id: String::from("acme-corp-tenant"),
-        skip: Some(10.0),
+async fn example() -> Result<(), Error> {
+    let params = GetTenantPackagesParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        skip: Some(5.0),
     };
-    let response: GetTenantPackagesResponse = get_tenant_packages(&configuration, params).await?;
+    let _resp = get_tenant_packages(&config, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

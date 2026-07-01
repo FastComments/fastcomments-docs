@@ -1,11 +1,10 @@
----
-## Parametri
+## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| commentIds | string | query | Da | Zarezom odvojeni popis ID-jeva komentara. |
-| sso | string | query | Ne |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| commentIds | string | query | Yes | Lista ID‑ova komentara odvojenih zarezom. |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -21,13 +20,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ako želite koristiti prilagođeni HTTP klijent, proslijedite klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opcionalno, kao zadani bit će korišten `GuzzleHttp\Client`.
+    // Ako želite koristiti prilagođeni HTTP klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao zadano.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$comment_ids = 'comment_ids_example'; // string | Zarezom odvojeni popis ID-jeva komentara.
+$comment_ids = 'comment_ids_example'; // string | Lista ID‑ova komentara odvojenih zarezom.
 $sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->checkedCommentsForBlocked($tenant_id, $comment_ids, $sso);
@@ -36,5 +37,3 @@ try {
     echo 'Exception when calling PublicApi->checkedCommentsForBlocked: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

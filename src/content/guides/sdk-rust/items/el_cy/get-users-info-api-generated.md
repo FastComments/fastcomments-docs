@@ -1,11 +1,9 @@
-Μαζικές πληροφορίες χρήστη για έναν tenant. Δεδομένων των userIds, επιστρέφει πληροφορίες εμφάνισης από User / SSOUser.
-Χρησιμοποιείται από το comment widget για να εμπλουτίσει χρήστες που μόλις εμφανίστηκαν μέσω ενός presence event.
-Δεν υπάρχει πλαίσιο σελίδας: το απόρρητο εφαρμόζεται ομοιόμορφα (τα ιδιωτικά προφίλ αποκρύπτονται).
+Bulk user info for a tenant. Given userIds, return display info from User / SSOUser. Used by the comment widget to enrich users that just appeared via a presence event. No page context: privacy is enforced uniformly (private profiles are masked).
 
 ## Παράμετροι
 
-| Όνομα | Τύπος | Απαραίτητο | Περιγραφή |
-|------|------|----------|-------------|
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+|------|------|------------|-----------|
 | tenant_id | String | Yes |  |
 | ids | String | Yes |  |
 
@@ -17,12 +15,9 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα get_users_info'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: GetUsersInfoParams = GetUsersInfoParams {
+let params = GetUsersInfoParams {
     tenant_id: "acme-corp-tenant".to_string(),
-    ids: "alice@example.com,bob@example.com,carol@example.com".to_string(),
-    page_size: Some(100),
+    ids: "user-1,user-2".to_string(),
 };
-let users_response: PageUsersInfoResponse = get_users_info(&configuration, params).await?;
+let page: PageUsersInfoResponse = get_users_info(&configuration, params).await?;
 [inline-code-end]
-
----

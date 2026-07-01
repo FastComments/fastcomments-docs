@@ -1,30 +1,20 @@
 ## Paramètres
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Oui |  |
-| id | string | Non |  |
-| userId | string | Non |  |
-| anonUserId | string | Non |  |
+| Nom | Type | Obligatoire | Description |
+|------|------|--------------|-------------|
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| options | UnFlagCommentOptions | No |  |
 
 ## Réponse
 
-Renvoie : [`Option[FlagCommentResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_flag_comment_response.nim)
+Renvoie : [`Option[FlagCommentResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_flag_comment_response.nim)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple d\'unFlagComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple unFlagComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.unFlagComment(tenantId = "my-tenant-123",
-  id = "comment-98765",
-  userId = "user-12345",
-  anonUserId = "")
-
-if response.isSome:
-  let flagResp = response.get()
-  echo "Unflagged comment response:", flagResp
-else:
-  echo "Unflag failed, HTTP status:", httpResponse.status
+let (flagRespOpt, httpResp) = client.unFlagComment(tenantId = "my-tenant-123", id = "comment-456", options = UnFlagCommentOptions())
+if flagRespOpt.isSome:
+  let flagResp = flagRespOpt.get()
 [inline-code-end]
-
----

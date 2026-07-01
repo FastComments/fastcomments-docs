@@ -1,9 +1,10 @@
 ## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
-| urlId | string | query | 是 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## 回應
 
@@ -13,13 +14,14 @@
 
 [inline-code-attrs-start title = 'putCloseThread 範例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 下列程式碼範例仍屬 beta。如有任何問題，請透過 http://github.com/OpenAPITools/openapi-generator/issues/new 回報
+// 以下程式碼範例仍屬測試版。如有任何問題，請透過 http://github.com/OpenAPITools/openapi-generator/issues/new 回報
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
-let sso = "sso_example" // String |  (選填)
+let sso = "sso_example" // String |  (可選)
 
-ModerationAPI.putCloseThread(urlId: urlId, sso: sso) { (response, error) in
+ModerationAPI.putCloseThread(tenantId: tenantId, urlId: urlId, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return

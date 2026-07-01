@@ -1,9 +1,10 @@
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Ime | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| urlId | string | query | Da |  |
-| sso | string | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -29,11 +30,12 @@ configuration = client.Configuration(
 with client.ApiClient(configuration) as api_client:
     # Kreirajte instancu API klase
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
-    sso = 'sso_example' # str |  (opciono)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.put_close_thread(url_id, sso=sso)
+        api_response = api_instance.put_close_thread(tenant_id, url_id, sso=sso)
         print("The response of ModerationApi->put_close_thread:\n")
         pprint(api_response)
     except Exception as e:

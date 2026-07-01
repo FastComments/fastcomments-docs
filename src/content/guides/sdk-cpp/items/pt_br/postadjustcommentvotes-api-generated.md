@@ -1,10 +1,11 @@
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|----------|-------------|
+|------|------|-------------|-----------|
+| tenantId | string | Sim |  |
 | commentId | string | Sim |  |
 | adjustCommentVotesParams | AdjustCommentVotesParams | Sim |  |
-| sso | string | Não |  |
+| options | const PostAdjustCommentVotesOptions& | Sim |  |
 
 ## Resposta
 
@@ -12,24 +13,20 @@ Retorna: [`AdjustVotesResponse`](https://github.com/FastComments/fastcomments-cp
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de postAdjustCommentVotes'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo postAdjustCommentVotes'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto commentId = utility::conversions::to_string_t("cmt-456789");
 AdjustCommentVotesParams params;
-params.userId = utility::string_t(U("user-742"));
-params.adjustment = 1;
-params.reason = utility::string_t(U("Marked as helpful"));
-
-boost::optional<utility::string_t> sso = utility::string_t(U("sso-token-98765"));
-
-api->postAdjustCommentVotes(utility::string_t(U("comment-5f3a9b2")), params, sso)
-.then([](pplx::task<std::shared_ptr<AdjustVotesResponse>> t) {
-    try {
+params.voteDelta = 1;
+params.userIdentifier = utility::conversions::to_string_t("user@example.com");
+params.reason = boost::optional<utility::string_t>(utility::conversions::to_string_t("Helpful"));
+PostAdjustCommentVotesOptions opts;
+opts.timeout = boost::optional<int>(30);
+api->postAdjustCommentVotes(tenantId, commentId, params, opts).then([](pplx::task<std::shared_ptr<AdjustVotesResponse>> t){
+    try{
         auto resp = t.get();
-        auto finalResp = resp ? resp : std::make_shared<AdjustVotesResponse>();
-        (void)finalResp;
-    } catch (const std::exception&) {
+    }catch(const std::exception& e){
     }
 });
 [inline-code-end]
-
----

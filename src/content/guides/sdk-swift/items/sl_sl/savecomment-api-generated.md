@@ -1,7 +1,6 @@
----
 ## Parametri
 
-| Ime | Tip | Lokacija | Zahtevano | Opis |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | isLive | boolean | query | Ne |  |
@@ -9,15 +8,15 @@
 | sendEmails | boolean | query | Ne |  |
 | populateNotifications | boolean | query | Ne |  |
 
-## Odgovor
+## Odziv
 
 Vrne: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APISaveCommentResponse.swift)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer saveComment'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'saveComment Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Naslednji primeri kode so še v beta različici. Za težave poročajte na http://github.com/OpenAPITools/openapi-generator/issues/new
+// Naslednji vzorci kode so še v beta različici. Za kakršnekoli težave, prosimo, sporočite na http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -27,7 +26,7 @@ let doSpamCheck = true // Bool |  (neobvezno)
 let sendEmails = true // Bool |  (neobvezno)
 let populateNotifications = true // Bool |  (neobvezno)
 
-DefaultAPI.saveComment(tenantId: tenantId, createCommentParams: createCommentParams, isLive: isLive, doSpamCheck: doSpamCheck, sendEmails: sendEmails, populateNotifications: populateNotifications) { (response, error) in
+DefaultAPI.saveComment(tenantId: tenantId, createCommentParams: createCommentParams, options: DefaultAPI.SaveCommentOptions(isLive: isLive, doSpamCheck: doSpamCheck, sendEmails: sendEmails, populateNotifications: populateNotifications)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -38,5 +37,3 @@ DefaultAPI.saveComment(tenantId: tenantId, createCommentParams: createCommentPar
     }
 }
 [inline-code-end]
-
----

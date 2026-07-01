@@ -1,8 +1,7 @@
----
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
 | tenantId | string | Da |  |
 | id | string | Ne |  |
 | updateEmailTemplateBody | UpdateEmailTemplateBody | Ne |  |
@@ -13,21 +12,22 @@ Vraća: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomment
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer za updateEmailTemplate'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateEmailTemplate Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let updateBody = UpdateEmailTemplateBody(
-  subject = "Welcome to Newsly",
-  html = "<p>Thanks for joining Newsly! Visit https://newsly.example to get started.</p>",
-  fromAddress = "no-reply@newsly.example",
-  fromName = "Newsly Team",
-  enabled = true
+  subject: "Welcome to FastComments",
+  body: "Hello \{{user_name}}, thanks for joining!",
+  enabled: true,
 )
-let (response, httpResponse) = client.updateEmailTemplate(tenantId = "my-tenant-123", id = "welcome-email", updateEmailTemplateBody = updateBody)
-if response.isSome:
-  let result = response.get()
-  discard result
-else:
-  discard httpResponse.statusCode
+
+let (maybeResp, httpResp) = client.updateEmailTemplate(
+  tenantId = "my-tenant-123",
+  id = "welcome-email",
+  updateEmailTemplateBody = updateBody,
+)
+
+if maybeResp.isSome:
+  let resp = maybeResp.get()
 [inline-code-end]
 
 ---

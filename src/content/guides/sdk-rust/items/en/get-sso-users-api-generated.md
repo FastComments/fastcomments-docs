@@ -13,12 +13,12 @@ Returns: [`GetSsoUsersResponse`](https://github.com/FastComments/fastcomments-ru
 
 [inline-code-attrs-start title = 'get_sso_users Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<GetSsoUsersResponse, Error> {
-    let params: GetSsoUsersParams = GetSsoUsersParams {
-        tenant_id: String::from("acme-corp-tenant"),
+async fn example() -> Result<(), Error> {
+    let params = GetSsoUsersParams {
+        tenant_id: "acme-corp-tenant".to_string(),
         skip: Some(10),
     };
-    let sso_users: GetSsoUsersResponse = get_sso_users(&configuration, params).await?;
-    Ok(sso_users)
+    let _response = get_sso_users(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]

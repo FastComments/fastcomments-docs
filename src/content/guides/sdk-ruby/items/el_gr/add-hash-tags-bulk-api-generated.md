@@ -1,10 +1,10 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαραίτητο | Περιγραφή |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Όχι |  |
+| tenantId | string | query | Yes |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/bulk_create_hash_tags_response.rb)
 
@@ -16,21 +16,19 @@ require 'time'
 require 'fastcomments-client'
 # ρύθμιση εξουσιοδότησης
 FastCommentsClient.configure do |config|
-  # Διαμόρφωση εξουσιοδότησης με κλειδί API: api_key
+  # Διαμόρφωση εξουσιοδότησης κλειδιού API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Αποσχολιάστε την παρακάτω γραμμή για να ορίσετε ένα πρόθεμα για το κλειδί API, π.χ. 'Bearer' (εξ ορισμού nil)
+  # Ξεσχολιάστε την παρακάτω γραμμή για να ορίσετε πρόθεμα για το κλειδί API, π.χ. 'Bearer' (προεπιλογές είναι nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
-opts = {
-  tenant_id: 'tenant_id_example', # String | 
-  bulk_create_hash_tags_body: FastCommentsClient::BulkCreateHashTagsBody.new({tags: [FastCommentsClient::BulkCreateHashTagsBodyTagsInner.new({tag: 'tag_example'})]}) # BulkCreateHashTagsBody | 
-}
+tenant_id = 'tenant_id_example' # String | 
+bulk_create_hash_tags_body = FastCommentsClient::BulkCreateHashTagsBody.new({tags: [FastCommentsClient::BulkCreateHashTagsBodyTagsInner.new({tag: 'tag_example'})]}) # BulkCreateHashTagsBody | 
 
 begin
   
-  result = api_instance.add_hash_tags_bulk(opts)
+  result = api_instance.add_hash_tags_bulk(tenant_id, bulk_create_hash_tags_body)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->add_hash_tags_bulk: #{e}"

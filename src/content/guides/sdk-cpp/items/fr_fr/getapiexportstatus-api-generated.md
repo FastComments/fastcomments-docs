@@ -1,24 +1,26 @@
-## Parameters
+## Paramètres
 
 | Nom | Type | Obligatoire | Description |
-|------|------|----------|-------------|
-| batchJobId | string | Non |  |
-| sso | string | Non |  |
+|------|------|-------------|-------------|
+| tenantId | string | Oui |  |
+| options | const GetApiExportStatusOptions& | Oui |  |
 
-## Response
+## Réponse
 
-Retourne: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ModerationExportStatusResponse.h)
+Renvoie : [`ModerationExportStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ModerationExportStatusResponse.h)
 
-## Example
+## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getApiExportStatus'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getApiExportStatus'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> batchId = utility::string_t(U("export-batch-2026-06-19"));
-boost::optional<utility::string_t> sso = utility::string_t(U("audit@my-tenant-123.com"));
-api->getApiExportStatus(batchId, sso)
-    .then([](std::shared_ptr<ModerationExportStatusResponse> resp) {
-        if (!resp) return;
-        auto statusCopy = std::make_shared<ModerationExportStatusResponse>(*resp);
+auto opts = GetApiExportStatusOptions{};
+opts.exportId = boost::make_optional<utility::string_t>(U("export-456"));
+api->getApiExportStatus(U("my-tenant-123"), opts)
+    .then([](pplx::task<std::shared_ptr<ModerationExportStatusResponse>> t){
+        try{
+            auto status = t.get();
+        }catch(const std::exception&){
+        }
     });
 [inline-code-end]
 

@@ -2,28 +2,30 @@
 
 | 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| text-search | string | query | 아니요 |  |
-| byIPFromComment | string | query | 아니요 |  |
-| filter | string | query | 아니요 |  |
-| searchFilters | string | query | 아니요 |  |
-| demo | boolean | query | 아니요 |  |
-| sso | string | query | 아니요 |  |
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filter | string | query | No |  |
+| searchFilters | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## 응답
 
 반환: [`ModerationAPICountCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/moderation_api_count_comments_response.py)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'get_count 예제'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_count 예시'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetCountOptions
 from client.models.moderation_api_count_comments_response import ModerationAPICountCommentsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# 호스트 정의는 선택 사항이며 기본값은 https://fastcomments.com
-# 지원되는 모든 구성 매개변수 목록은 configuration.py를 참조하세요.
+# 호스트를 정의하는 것은 선택 사항이며 기본값은 https://fastcomments.com 입니다.
+# configuration.py에서 지원되는 모든 구성 매개변수 목록을 확인하세요.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -33,15 +35,16 @@ configuration = client.Configuration(
 with client.ApiClient(configuration) as api_client:
     # API 클래스의 인스턴스를 생성합니다
     api_instance = client.ModerationApi(api_client)
-    text_search = 'text_search_example' # str |  (선택 사항)
-    by_ip_from_comment = 'by_ip_from_comment_example' # str |  (선택 사항)
-    filter = 'filter_example' # str |  (선택 사항)
-    search_filters = 'search_filters_example' # str |  (선택 사항)
-    demo = True # bool |  (선택 사항)
-    sso = 'sso_example' # str |  (선택 사항)
+    tenant_id = 'tenant_id_example' # str | 
+    text_search = 'text_search_example' # str |  (optional)
+    by_ip_from_comment = 'by_ip_from_comment_example' # str |  (optional)
+    filter = 'filter_example' # str |  (optional)
+    search_filters = 'search_filters_example' # str |  (optional)
+    demo = True # bool |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_count(text_search=text_search, by_ip_from_comment=by_ip_from_comment, filter=filter, search_filters=search_filters, demo=demo, sso=sso)
+        api_response = api_instance.get_count(tenant_id, GetCountOptions(text_search=text_search, by_ip_from_comment=by_ip_from_comment, filter=filter, search_filters=search_filters, demo=demo, sso=sso))
         print("The response of ModerationApi->get_count:\n")
         pprint(api_response)
     except Exception as e:

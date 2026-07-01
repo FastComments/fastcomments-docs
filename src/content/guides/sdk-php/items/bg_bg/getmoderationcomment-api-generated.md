@@ -1,7 +1,8 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Име | Тип | Местоположение | Задължително | Описание |
+|------|------|----------------|--------------|----------|
+| tenantId | string | query | Да |  |
 | commentId | string | path | Да |  |
 | includeEmail | boolean | query | Не |  |
 | includeIP | boolean | query | Не |  |
@@ -13,7 +14,7 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример getModerationComment'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getModerationComment Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -21,17 +22,22 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Ако искате да използвате собствен HTTP клиент, предайте вашия клиент, който имплементира `GuzzleHttp\ClientInterface`.
-    // Това е по избор, `GuzzleHttp\Client` ще бъде използван по подразбиране.
+    // Ако искате да използвате персонализиран HTTP клиент, предайте вашия клиент, който имплементира `GuzzleHttp\ClientInterface`.
+    // Това е опционално, `GuzzleHttp\Client` ще бъде използван като по подразбиране.
     new GuzzleHttp\Client()
 );
-$comment_id = 'comment_id_example'; // низ
-$include_email = True; // булев
-$include_ip = True; // булев
-$sso = 'sso_example'; // низ
+
+$tenant_id = 'tenant_id_example'; // string
+$comment_id = 'comment_id_example'; // string
+$options = [
+    'include_email' => True, // bool
+    'include_ip' => True, // bool
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->getModerationComment($comment_id, $include_email, $include_ip, $sso);
+    $result = $apiInstance->getModerationComment($tenant_id, $comment_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getModerationComment: ', $e->getMessage(), PHP_EOL;

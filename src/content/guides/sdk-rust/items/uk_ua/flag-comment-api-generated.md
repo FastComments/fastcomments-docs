@@ -1,11 +1,11 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Назва | Тип | Обов’язковий | Опис |
 |------|------|----------|-------------|
-| tenant_id | String | Так |  |
-| id | String | Так |  |
-| user_id | String | Ні |  |
-| anon_user_id | String | Ні |  |
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
+| user_id | String | No |  |
+| anon_user_id | String | No |  |
 
 ## Відповідь
 
@@ -13,18 +13,16 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад flag_comment'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'flag_comment Приклад'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let params: FlagCommentParams = FlagCommentParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        id: "news/article-2026-06-19/comment-98765".to_string(),
+async fn example() -> Result<(), Error> {
+    let params = FlagCommentParams {
+        tenant_id: "acme-corp".to_string(),
+        id: "comment-9876".to_string(),
         user_id: Some("user-42".to_string()),
         anon_user_id: None,
     };
-    let response: FlagCommentResponse = flag_comment(&configuration, params).await?;
+    let _response = flag_comment(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

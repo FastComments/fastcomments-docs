@@ -1,10 +1,12 @@
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| comment_id | String | 是 |  |
-| adjust_comment_votes_params | models::AdjustCommentVotesParams | 是 |  |
-| sso | String | 否 |  |
+| tenant_id | String | Yes |  |
+| comment_id | String | Yes |  |
+| adjust_comment_votes_params | models::AdjustCommentVotesParams | Yes |  |
+| broadcast_id | String | No |  |
+| sso | String | No |  |
 
 ## 响应
 
@@ -14,15 +16,15 @@
 
 [inline-code-attrs-start title = 'post_adjust_comment_votes 示例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: PostAdjustCommentVotesParams = PostAdjustCommentVotesParams {
-    comment_id: String::from("cmt-news-2026-0042"),
-    adjust_comment_votes_params: models::AdjustCommentVotesParams {
-        delta: 1,
-        reason: Some(String::from("Added supporting source")),
-    },
-    sso: Some(String::from("sso-acme-corp-tenant-xyz123")),
-};
-let response: AdjustVotesResponse = post_adjust_comment_votes(&configuration, params).await?;
+async fn adjust_votes_example(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = PostAdjustCommentVotesParams {
+        tenant_id: "acme-corp".to_string(),
+        comment_id: "comment-9876".to_string(),
+        adjust_comment_votes_params: models::AdjustCommentVotesParams::default(),
+        broadcast_id: Some("broadcast-2023-11".to_string()),
+        sso: Some("sso-xyz".to_string()),
+    };
+    let _response = post_adjust_comment_votes(configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]
-
----

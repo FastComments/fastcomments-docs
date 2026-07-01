@@ -1,30 +1,32 @@
-## Параметри
+## Parameters
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Ime | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Да |  |
-| banEmail | boolean | query | Не |  |
-| banEmailDomain | boolean | query | Не |  |
-| banIP | boolean | query | Не |  |
-| deleteAllUsersComments | boolean | query | Не |  |
-| bannedUntil | string | query | Не |  |
-| isShadowBan | boolean | query | Не |  |
-| updateId | string | query | Не |  |
-| banReason | string | query | Не |  |
-| sso | string | query | Не |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| banEmail | boolean | query | No |  |
+| banEmailDomain | boolean | query | No |  |
+| banIP | boolean | query | No |  |
+| deleteAllUsersComments | boolean | query | No |  |
+| bannedUntil | string | query | No |  |
+| isShadowBan | boolean | query | No |  |
+| updateId | string | query | No |  |
+| banReason | string | query | No |  |
+| sso | string | query | No |  |
 
-## Одговор
+## Response
 
-Враћа: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/ban_user_from_comment_result.rb)
+Vraća: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/ban_user_from_comment_result.rb)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'post_ban_user_from_comment Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_ban_user_from_comment Primjer'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 comment_id = 'comment_id_example' # String | 
 opts = {
   ban_email: true, # Boolean | 
@@ -40,11 +42,9 @@ opts = {
 
 begin
   
-  result = api_instance.post_ban_user_from_comment(comment_id, opts)
+  result = api_instance.post_ban_user_from_comment(tenant_id, comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_ban_user_from_comment: #{e}"
 end
 [inline-code-end]
-
----

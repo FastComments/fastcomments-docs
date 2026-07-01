@@ -1,15 +1,17 @@
-## Параметры
+## Parameters
 
 | Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| commentId | string | путь | Да |  |
-| sso | string | параметр запроса | Нет |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
-## Ответ
+## Response
 
 Возвращает: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
-## Пример
+## Example
 
 [inline-code-attrs-start title = 'post_un_flag_comment Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -17,14 +19,16 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
-comment_id = 'comment_id_example' # Строка | 
+tenant_id = 'tenant_id_example' # String | 
+comment_id = 'comment_id_example' # String | 
 opts = {
-  sso: 'sso_example' # Строка | 
+  broadcast_id: 'broadcast_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.post_un_flag_comment(comment_id, opts)
+  result = api_instance.post_un_flag_comment(tenant_id, comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_un_flag_comment: #{e}"

@@ -1,4 +1,4 @@
-## 參數
+## Parameters
 
 | 名稱 | 類型 | 位置 | 必要 | 描述 |
 |------|------|----------|----------|-------------|
@@ -10,15 +10,15 @@
 | editKey | string | query | 否 |  |
 | sso | string | query | 否 |  |
 
-## 回應
+## Response
 
-回傳: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/VoteDeleteResponse.swift)
+返回: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/VoteDeleteResponse.swift)
 
-## 範例
+## Example
 
 [inline-code-attrs-start title = 'deleteCommentVote 範例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 下列程式範例仍為測試階段。如有任何問題，請透過 http://github.com/OpenAPITools/openapi-generator/issues/new 回報
+// 以下程式碼範例仍屬測試版。如有任何問題，請透過 http://github.com/OpenAPITools/openapi-generator/issues/new 回報
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -29,7 +29,7 @@ let broadcastId = "broadcastId_example" // String |
 let editKey = "editKey_example" // String |  (可選)
 let sso = "sso_example" // String |  (可選)
 
-PublicAPI.deleteCommentVote(tenantId: tenantId, commentId: commentId, voteId: voteId, urlId: urlId, broadcastId: broadcastId, editKey: editKey, sso: sso) { (response, error) in
+PublicAPI.deleteCommentVote(tenantId: tenantId, commentId: commentId, voteId: voteId, urlId: urlId, broadcastId: broadcastId, options: PublicAPI.DeleteCommentVoteOptions(editKey: editKey, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

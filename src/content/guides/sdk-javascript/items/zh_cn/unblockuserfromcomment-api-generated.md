@@ -1,24 +1,41 @@
 ## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| id | string | 是 |  |
-| unBlockFromCommentParams | UnBlockFromCommentParams | 是 |  |
-| userId | string | 否 |  |
-| anonUserId | string | 否 |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| unBlockFromCommentParams | UnBlockFromCommentParams | Yes |  |
+| userId | string | No |  |
+| anonUserId | string | No |  |
 
 ## 响应
 
-返回: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UnblockSuccess.ts)
+返回: [`UnBlockUserFromCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UnBlockUserFromCommentResponse.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'unBlockUserFromComment 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8b4a2f9c';
-const id: string = 'cmt_5f3b2a9e';
-const unBlockFromCommentParams: UnBlockFromCommentParams = { reason: 'Appeal accepted', effectiveAt: '2026-06-19T12:00:00Z' };
-const userId: string = 'user_42f7';
-const result: UnblockSuccess = await unBlockUserFromComment(tenantId, id, unBlockFromCommentParams, userId);
+async function demoUnblock() {
+  const tenantId: string = "acme-corp-tenant";
+  const commentId: string = "cmt_9f8b7a6d";
+
+  const params: UnBlockFromCommentParams = {
+    reason: "User resolved the issue",
+    notifyUser: true
+  };
+
+  const userId: string = "usr_12345";
+
+  const result: UnBlockUserFromCommentResponse = await unBlockUserFromComment(
+    tenantId,
+    commentId,
+    params,
+    userId
+    // anonUserId omitted
+  );
+
+  console.log(result);
+}
+demoUnblock();
 [inline-code-end]

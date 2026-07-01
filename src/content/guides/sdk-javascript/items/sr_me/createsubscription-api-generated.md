@@ -1,28 +1,31 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Потребно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| createAPIUserSubscriptionData | CreateAPIUserSubscriptionData | Да |  |
+| tenantId | string | Da |  |
+| createAPIUserSubscriptionData | CreateAPIUserSubscriptionData | Da |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`CreateSubscriptionAPIResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateSubscriptionAPIResponse.ts)
+Vraća: [`CreateSubscriptionAPIResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateSubscriptionAPIResponse.ts)
 
-## Примјер
+## Primjer
 
-[inline-code-attrs-start title = 'createSubscription примјер'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer createSubscription'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-tenant-123";
-const createAPIUserSubscriptionData: CreateAPIUserSubscriptionData = {
-  userId: "user_98765",
-  planId: "pro_monthly",
-  paymentMethod: { type: "card", cardId: "card_abc123" },
-  autoRenew: true,
-  trialDays: 14, // необавезни параметар (примјер)
-  metadata: { campaign: "spring_launch" } // необавезни параметар (примјер)
-};
-const result: CreateSubscriptionAPIResponse = await createSubscription(tenantId, createAPIUserSubscriptionData);
+(async () => {
+    const tenantId: string = "acme-corp-123";
+
+    const subscriptionData: CreateAPIUserSubscriptionData = {
+        userId: "user-456",
+        planId: "premium-monthly",
+        startDate: new Date(),
+        trialPeriodDays: 14 // optional field
+    };
+
+    const result: CreateSubscriptionAPIResponse = await createSubscription(tenantId, subscriptionData);
+    console.log(result);
+})();
 [inline-code-end]
 
 ---

@@ -2,18 +2,20 @@
 
 | 名稱 | 類型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | 是 |  |
 | commentId | string | path | 是 |  |
+| broadcastId | string | query | 否 |  |
 | sso | string | query | 否 |  |
 
 ## 回應
 
-傳回：[`PostRemoveCommentResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/PostRemoveCommentResponse.java)
+返回：[`PostRemoveCommentApiResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/PostRemoveCommentApiResponse.java)
 
 ## 範例
 
 [inline-code-attrs-start title = 'postRemoveComment 範例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 匯入類別：
+// 匯入類別:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,10 +28,13 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
-    String commentId = "commentId_example"; // 字串 | 
-    String sso = "sso_example"; // 字串 | 
+    String tenantId = "tenantId_example"; // String | 
+    String commentId = "commentId_example"; // String | 
+    String broadcastId = "broadcastId_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
-      PostRemoveCommentResponse result = apiInstance.postRemoveComment(commentId)
+      PostRemoveCommentApiResponse result = apiInstance.postRemoveComment(tenantId, commentId)
+            .broadcastId(broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -43,5 +48,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

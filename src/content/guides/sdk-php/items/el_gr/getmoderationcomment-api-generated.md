@@ -1,7 +1,8 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
+|------|------|----------|------------|-------------|
+| tenantId | string | query | Ναι |  |
 | commentId | string | path | Ναι |  |
 | includeEmail | boolean | query | Όχι |  |
 | includeIP | boolean | query | Όχι |  |
@@ -9,7 +10,7 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationAPICommentResponse.php)
+Returns: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationAPICommentResponse.php)
 
 ## Παράδειγμα
 
@@ -21,19 +22,26 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Εάν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε τον client σας που υλοποιεί την `GuzzleHttp\ClientInterface`.
-    // Αυτό είναι προαιρετικό, η `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
+    // Εάν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε το client σας που υλοποιεί `GuzzleHttp\ClientInterface`.
+    // Αυτό είναι προαιρετικό, `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
     new GuzzleHttp\Client()
 );
+
+$tenant_id = 'tenant_id_example'; // string
 $comment_id = 'comment_id_example'; // string
-$include_email = True; // bool
-$include_ip = True; // bool
-$sso = 'sso_example'; // string
+$options = [
+    'include_email' => True, // bool
+    'include_ip' => True, // bool
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->getModerationComment($comment_id, $include_email, $include_ip, $sso);
+    $result = $apiInstance->getModerationComment($tenant_id, $comment_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getModerationComment: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

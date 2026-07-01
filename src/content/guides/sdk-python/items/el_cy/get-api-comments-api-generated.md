@@ -1,18 +1,19 @@
 ## Παράμετροι
 
-| Όνομα | Type | Location | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| page | number | query | Όχι |  |
-| count | number | query | Όχι |  |
-| text-search | string | query | Όχι |  |
-| byIPFromComment | string | query | Όχι |  |
-| filters | string | query | Όχι |  |
-| searchFilters | string | query | Όχι |  |
-| sorts | string | query | Όχι |  |
-| demo | boolean | query | Όχι |  |
-| sso | string | query | Όχι |  |
+| tenantId | string | query | Yes |  |
+| page | number | query | No |  |
+| count | number | query | No |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sorts | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/moderation_api_get_comments_response.py)
 
@@ -21,33 +22,35 @@
 [inline-code-attrs-start title = 'Παράδειγμα get_api_comments'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetApiCommentsOptions
 from client.models.moderation_api_get_comments_response import ModerationAPIGetCommentsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Ορισμός του host είναι προαιρετικός και προεπιλεγμένος στο https://fastcomments.com
-# Δείτε το configuration.py για λίστα με όλες τις υποστηριζόμενες παραμέτρους διαμόρφωσης.
+# Ο ορισμός του host είναι προαιρετικός και προεπιλεγμένος στο https://fastcomments.com
+# Δείτε το configuration.py για μια λίστα όλων των υποστηριζόμενων παραμέτρων διαμόρφωσης.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Μπείτε σε ένα context με ένα στιγμιότυπο (instance) του API client
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Δημιουργήστε ένα στιγμιότυπο της κλάσης API
+    # Create an instance of the API class
     api_instance = client.ModerationApi(api_client)
-    page = 3.4 # float |  (προαιρετικό)
-    count = 3.4 # float |  (προαιρετικό)
-    text_search = 'text_search_example' # str |  (προαιρετικό)
-    by_ip_from_comment = 'by_ip_from_comment_example' # str |  (προαιρετικό)
-    filters = 'filters_example' # str |  (προαιρετικό)
-    search_filters = 'search_filters_example' # str |  (προαιρετικό)
-    sorts = 'sorts_example' # str |  (προαιρετικό)
-    demo = True # bool |  (προαιρετικό)
-    sso = 'sso_example' # str |  (προαιρετικό)
+    tenant_id = 'tenant_id_example' # str | 
+    page = 3.4 # float |  (optional)
+    count = 3.4 # float |  (optional)
+    text_search = 'text_search_example' # str |  (optional)
+    by_ip_from_comment = 'by_ip_from_comment_example' # str |  (optional)
+    filters = 'filters_example' # str |  (optional)
+    search_filters = 'search_filters_example' # str |  (optional)
+    sorts = 'sorts_example' # str |  (optional)
+    demo = True # bool |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_api_comments(page=page, count=count, text_search=text_search, by_ip_from_comment=by_ip_from_comment, filters=filters, search_filters=search_filters, sorts=sorts, demo=demo, sso=sso)
+        api_response = api_instance.get_api_comments(tenant_id, GetApiCommentsOptions(page=page, count=count, text_search=text_search, by_ip_from_comment=by_ip_from_comment, filters=filters, search_filters=search_filters, sorts=sorts, demo=demo, sso=sso))
         print("The response of ModerationApi->get_api_comments:\n")
         pprint(api_response)
     except Exception as e:

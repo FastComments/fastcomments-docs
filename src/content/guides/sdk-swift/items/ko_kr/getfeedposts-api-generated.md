@@ -4,30 +4,30 @@ afterId
 
 ## 매개변수
 
-| 이름 | 형식 | 위치 | 필수 | 설명 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 예 |  |
-| afterId | string | query | 아니오 |  |
-| limit | integer | query | 아니오 |  |
-| tags | array | query | 아니오 |  |
+| tenantId | string | query | Yes |  |
+| afterId | string | query | No |  |
+| limit | integer | query | No |  |
+| tags | array | query | No |  |
 
 ## 응답
 
 반환: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetFeedPostsResponse.swift)
 
-## 예제
+## 예시
 
 [inline-code-attrs-start title = 'getFeedPosts 예제'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 다음 코드 샘플은 아직 베타입니다. 문제 발생 시 http://github.com/OpenAPITools/openapi-generator/issues/new 통해 보고해 주세요
+// 다음 코드 샘플은 아직 베타 버전입니다. 문제가 있으면 http://github.com/OpenAPITools/openapi-generator/issues/new 에 보고해 주세요
 import FastCommentsSwift
 
-let tenantId = "tenantId_example" // 문자열 | 
-let afterId = "afterId_example" // 문자열 |  (선택 사항)
-let limit = 987 // 정수 |  (선택 사항)
-let tags = ["inner_example"] // [문자열] |  (선택 사항)
+let tenantId = "tenantId_example" // String | 
+let afterId = "afterId_example" // String |  (옵션)
+let limit = 987 // Int |  (옵션)
+let tags = ["inner_example"] // [String] |  (옵션)
 
-DefaultAPI.getFeedPosts(tenantId: tenantId, afterId: afterId, limit: limit, tags: tags) { (response, error) in
+DefaultAPI.getFeedPosts(tenantId: tenantId, options: DefaultAPI.GetFeedPostsOptions(afterId: afterId, limit: limit, tags: tags)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -38,3 +38,5 @@ DefaultAPI.getFeedPosts(tenantId: tenantId, afterId: afterId, limit: limit, tags
     }
 }
 [inline-code-end]
+
+---

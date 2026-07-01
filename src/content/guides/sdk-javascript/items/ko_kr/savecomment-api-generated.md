@@ -1,34 +1,37 @@
----
 ## 매개변수
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| 이름 | 유형 | 필수 | 설명 |
+|------|------|------|------|
 | tenantId | string | 예 |  |
 | createCommentParams | CreateCommentParams | 예 |  |
-| isLive | boolean | 아니요 |  |
-| doSpamCheck | boolean | 아니요 |  |
-| sendEmails | boolean | 아니요 |  |
-| populateNotifications | boolean | 아니요 |  |
+| isLive | boolean | 아니오 |  |
+| doSpamCheck | boolean | 아니오 |  |
+| sendEmails | boolean | 아니오 |  |
+| populateNotifications | boolean | 아니오 |  |
 
 ## 응답
 
-반환: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APISaveCommentResponse.ts)
+반환: [`SaveCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SaveCommentResponse.ts)
 
-## 예제
+## 예시
 
 [inline-code-attrs-start title = 'saveComment 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_98765";
-const createCommentParams: CreateCommentParams = {
-  content: "This fixed my build pipeline — switching the environment variable resolved the missing dependency.",
-  threadId: "blog-post-2026-06-19-ci-troubleshooting",
-  userSession: { userId: "user_7542", displayName: "Aisha Khan", email: "aisha.k@example.com" }
-};
-const isLive: boolean = true;
-const doSpamCheck: boolean = true;
-const sendEmails: boolean = false;
-const populateNotifications: boolean = true;
-const response: APISaveCommentResponse = await saveComment(tenantId, createCommentParams, isLive, doSpamCheck, sendEmails, populateNotifications);
+async function submitComment() {
+  const tenantId: string = "tenant_9f8e7d6c";
+  const commentParams: CreateCommentParams = {
+    text: "Great post, thanks for sharing!",
+    authorId: "user_123abc",
+    mentions: [] as CommentUserMentionInfo[],
+    hashtags: [] as CommentUserHashTagInfo[]
+  };
+  const response: SaveCommentResponse = await saveComment(
+    tenantId,
+    commentParams,
+    true,   // 실시간 여부
+    false   // 스팸 검사 수행
+  );
+  console.log(response);
+}
+submitComment();
 [inline-code-end]
-
----

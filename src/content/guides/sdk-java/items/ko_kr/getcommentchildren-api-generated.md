@@ -1,9 +1,10 @@
 ## 매개변수
 
-| Name | Type | Location | Required | Description |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| commentId | string | path | 예 |  |
-| sso | string | query | 아니오 |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| sso | string | query | No |  |
 
 ## 응답
 
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
-    String commentId = "commentId_example"; // 문자열 | 
-    String sso = "sso_example"; // 문자열 | 
+    String tenantId = "tenantId_example"; // String |
+    String commentId = "commentId_example"; // String |
+    String sso = "sso_example"; // String |
     try {
-      ModerationAPIChildCommentsResponse result = apiInstance.getCommentChildren(commentId)
+      ModerationAPIChildCommentsResponse result = apiInstance.getCommentChildren(tenantId, commentId)
             .sso(sso)
             .execute();
       System.out.println(result);

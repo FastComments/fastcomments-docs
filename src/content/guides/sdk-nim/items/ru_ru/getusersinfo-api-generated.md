@@ -1,14 +1,12 @@
 ---
-Массовая информация о пользователях для тенанта. По списку userIds возвращает информацию для отображения из User / SSOUser.
-Используется виджетом комментариев для обогащения пользователей, которые только что появились через событие присутствия.
-Нет контекста страницы: конфиденциальность соблюдается единообразно (закрытые профили скрываются).
+Пакетная информация о пользователях для арендатора. По заданным userIds возвращается отображаемая информация из User / SSOUser. Используется виджетом комментариев для обогащения пользователей, которые только что появились через событие присутствия. Без контекста страницы: конфиденциальность соблюдается единообразно (личные профили маскируются).
 
 ## Параметры
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| ids | string | Нет |  |
+| tenantId | string | Yes |  |
+| ids | string | No |  |
 
 ## Ответ
 
@@ -16,14 +14,11 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример использования getUsersInfo'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getUsersInfo'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUsersInfo(tenantId = "my-tenant-123", ids = "user-42,user-87")
-if response.isSome:
-  let usersInfo = response.get()
-  echo "Retrieved users info:", usersInfo
-else:
-  echo "No users info returned. HTTP status:", httpResponse.status
+let (usersInfoOpt, httpResp) = client.getUsersInfo(tenantId = "my-tenant-123", ids = "user42")
+if usersInfoOpt.isSome:
+  let usersInfo = usersInfoOpt.get()
 [inline-code-end]
 
 ---

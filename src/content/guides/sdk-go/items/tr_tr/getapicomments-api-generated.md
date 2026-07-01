@@ -1,7 +1,8 @@
 ## Parametreler
 
-| Name | Type | Location | Gerekli | Açıklama |
+| Ad | Tür | Yer | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Evet |  |
 | page | number | query | Hayır |  |
 | count | number | query | Hayır |  |
 | text-search | string | query | Hayır |  |
@@ -30,24 +31,25 @@ import (
 )
 
 func main() {
-	page := float64(1.2) // float64 |  (isteğe bağlı)
-	count := float64(1.2) // float64 |  (isteğe bağlı)
-	textSearch := "textSearch_example" // string |  (isteğe bağlı)
-	byIPFromComment := "byIPFromComment_example" // string |  (isteğe bağlı)
-	filters := "filters_example" // string |  (isteğe bağlı)
-	searchFilters := "searchFilters_example" // string |  (isteğe bağlı)
-	sorts := "sorts_example" // string |  (isteğe bağlı)
-	demo := true // bool |  (isteğe bağlı)
-	sso := "sso_example" // string |  (isteğe bağlı)
+	tenantId := "tenantId_example" // string | 
+	page := float64(1.2) // float64 |  (opsiyonel)
+	count := float64(1.2) // float64 |  (opsiyonel)
+	textSearch := "textSearch_example" // string |  (opsiyonel)
+	byIPFromComment := "byIPFromComment_example" // string |  (opsiyonel)
+	filters := "filters_example" // string |  (opsiyonel)
+	searchFilters := "searchFilters_example" // string |  (opsiyonel)
+	sorts := "sorts_example" // string |  (opsiyonel)
+	demo := true // bool |  (opsiyonel)
+	sso := "sso_example" // string |  (opsiyonel)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetApiComments(context.Background()).Page(page).Count(count).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).Sorts(sorts).Demo(demo).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetApiComments(context.Background()).TenantId(tenantId).Page(page).Count(count).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).Sorts(sorts).Demo(demo).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetApiComments``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "`ModerationAPI.GetApiComments` çağrısı sırasında hata: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Tam HTTP yanıtı: %v\n", r)
 	}
-	// response from `GetApiComments`: ModerationAPIGetCommentsResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetApiComments`: %v\n", resp)
+	// `GetApiComments`'den gelen yanıt: ModerationAPIGetCommentsResponse
+	fmt.Fprintf(os.Stdout, "`ModerationAPI.GetApiComments`'ten gelen yanıt: %v\n", resp)
 }
 [inline-code-end]

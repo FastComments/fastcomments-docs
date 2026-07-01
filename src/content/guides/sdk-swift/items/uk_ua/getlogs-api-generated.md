@@ -1,9 +1,10 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Назва | Тип | Розташування | Обов’язково | Опис |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Yes |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Так |  |
+| commentId | string | path | Так |  |
+| sso | string | query | Ні |  |
 
 ## Відповідь
 
@@ -13,13 +14,14 @@
 
 [inline-code-attrs-start title = 'Приклад getLogs'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Наступні приклади коду все ще на стадії бета. Якщо знайдете проблему, будь ласка, повідомте через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наступні приклади коду все ще у бета-версії. У разі будь‑якої проблеми, будь ласка, повідомте за допомогою http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
-let sso = "sso_example" // String |  (необов'язково)
+let sso = "sso_example" // String |  (необов’язково)
 
-ModerationAPI.getLogs(commentId: commentId, sso: sso) { (response, error) in
+ModerationAPI.getLogs(tenantId: tenantId, commentId: commentId, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return

@@ -1,28 +1,36 @@
-Користувачі, які зараз онлайн на сторінці: люди, чиї websocket-сесії підписані на цю сторінку в цей момент.
-Повертає anonCount + totalCount (підписники кімнати в цілому, включно з анонімними глядачами, яких ми не перераховуємо).
+Currently‑online viewers of a page: people whose websocket session is subscribed to the page right now.  
+Повертає anonCount + totalCount (room‑wide subscribers, including anon viewers we don't enumerate).  
 
-## Параметри
+## Parameters
 
-| Назва | Тип | Обов'язково | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| urlId | string | Так |  |
-| afterName | string | Ні |  |
-| afterUserId | string | Ні |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| afterName | string | No |  |
+| afterUserId | string | No |  |
 
-## Відповідь
+## Response
 
-Повертає: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOnlineResponse.ts)
+Returns: [`GetOnlineUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOnlineUsersResponse.ts)
 
-## Приклад
+## Example
 
 [inline-code-attrs-start title = 'Приклад getOnlineUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8f3c2b7';
-const urlId: string = 'article-2026-06-19-site-update';
-const afterName: string = 'michael.hansen';
-const afterUserId: string = 'user_00421';
-const onlineUsers: PageUsersOnlineResponse = await getOnlineUsers(tenantId, urlId, afterName, afterUserId);
-[inline-code-end]
+async function demoOnlineUsers() {
+  const tenantId: string = "tenant_12345";
+  const urlId: string = "url_98765";
 
----
+  // З необов’язковими параметрами пагінації
+  const pagedResult: GetOnlineUsersResponse = await getOnlineUsers(
+    tenantId,
+    urlId,
+    "alice_smith",
+    "user_9"
+  );
+
+  // Без необов’язкових параметрів пагінації
+  const fullResult: GetOnlineUsersResponse = await getOnlineUsers(tenantId, urlId);
+}
+[inline-code-end]

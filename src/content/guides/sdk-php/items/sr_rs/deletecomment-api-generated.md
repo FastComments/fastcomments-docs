@@ -1,43 +1,46 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| id | string | path | Да |  |
-| contextUserId | string | query | Не |  |
-| isLive | boolean | query | Не |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| contextUserId | string | query | No |  |
+| isLive | boolean | query | No |  |
 
 ## Одговор
 
-Враћа: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/DeleteCommentResult.php)
+Vraća: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/DeleteCommentResult.php)
 
 ## Пример
 
-[inline-code-attrs-start title = 'deleteComment Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteComment Primer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Конфигуришите овлашћење API кључа: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Откомунтујте испод да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
-// $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
-
+// Configure API key authorization: api_key => // Конфигуришите ауторизацију API кључа: api_key
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed => // Одкоментаришите испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
+// If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`. => // Ако желите да користите прилагођени HTTP клиент, проследите ваш клиент који имплементира `GuzzleHttp\ClientInterface`.
+// This is optional, `GuzzleHttp\Client` will be used as default. => // Ово је опционално, `GuzzleHttp\Client` ће се користити као подразумевани.
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ако желите да користите прилагођени http клиент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционално, `GuzzleHttp\Client` ће бити коришћен као подразумевани.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`. => // Ако желите да користите прилагођени HTTP клиент, проследите ваш клиент који имплементира `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default. => // Ово је опционално, `GuzzleHttp\Client` ће се користити као подразумевани.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$id = 'id_example'; // string
-$context_user_id = 'context_user_id_example'; // string
-$is_live = True; // bool
+
+$tenant_id = 'tenant_id_example'; // стринг
+$id = 'id_example'; // стринг
+$options = [
+    'context_user_id' => 'context_user_id_example', // стринг
+    'is_live' => True, // бул
+];
+
 
 try {
-    $result = $apiInstance->deleteComment($tenant_id, $id, $context_user_id, $is_live);
+    $result = $apiInstance->deleteComment($tenant_id, $id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->deleteComment: ', $e->getMessage(), PHP_EOL;

@@ -1,10 +1,10 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
-| updateTenantBody | UpdateTenantBody | Да |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updateTenantBody | UpdateTenantBody | Yes |  |
 
 ## Отговор
 
@@ -12,22 +12,16 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за updateTenant'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateTenant Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t id = U("admin-user-456");
-auto updateTenantBody = std::make_shared<UpdateTenantBody>();
-updateTenantBody->name = U("Acme Corporation");
-updateTenantBody->ownerEmail = boost::optional<utility::string_t>(U("owner@acme.com"));
-updateTenantBody->isActive = boost::optional<bool>(true);
-api->updateTenant(tenantId, id, updateTenantBody)
-.then([](pplx::task<std::shared_ptr<APIEmptyResponse>> t) {
-    try {
-        auto resp = t.get();
-        (void)resp;
-    } catch (const std::exception&) {
-    }
+auto tenantId = utility::string_t(U("my-tenant-123"));
+auto recordId = utility::string_t(U("tenant-456"));
+UpdateTenantBody body;
+body.name = boost::optional<utility::string_t>(U("Acme Corp"));
+body.contactEmail = boost::optional<utility::string_t>(U("admin@acme.com"));
+api->updateTenant(tenantId, recordId, body).then([](std::shared_ptr<APIEmptyResponse> resp) {
+    auto log = std::make_shared<utility::string_t>(U("Tenant update succeeded"));
+    (void)resp;
+    (void)log;
 });
 [inline-code-end]
-
----

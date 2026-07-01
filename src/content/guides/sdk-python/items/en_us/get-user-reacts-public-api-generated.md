@@ -15,6 +15,7 @@ Returns: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-pyt
 [inline-code-attrs-start title = 'get_user_reacts_public Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetUserReactsPublicOptions
 from client.models.user_reacts_response import UserReactsResponse
 from client.rest import ApiException
 from pprint import pprint
@@ -35,7 +36,7 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_user_reacts_public(tenant_id, post_ids=post_ids, sso=sso)
+        api_response = api_instance.get_user_reacts_public(tenant_id, GetUserReactsPublicOptions(post_ids=post_ids, sso=sso))
         print("The response of PublicApi->get_user_reacts_public:\n")
         pprint(api_response)
     except Exception as e:

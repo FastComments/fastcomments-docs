@@ -1,7 +1,7 @@
 ## Parámetros
 
 | Nombre | Tipo | Ubicación | Obligatorio | Descripción |
-|------|------|----------|----------|-------------|
+|--------|------|-----------|-------------|-------------|
 | tenantId | string | path | Yes |  |
 | postId | string | path | Yes |  |
 | isUndo | boolean | query | No |  |
@@ -14,9 +14,9 @@ Devuelve: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de reactFeedPostPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo reactFeedPostPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Los siguientes ejemplos de código todavía están en beta. Para cualquier problema, notifíquelo en http://github.com/OpenAPITools/openapi-generator/issues/new
+// Los siguientes ejemplos de código siguen en beta. Para cualquier problema, por favor informe vía http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -26,7 +26,7 @@ let isUndo = true // Bool |  (opcional)
 let broadcastId = "broadcastId_example" // String |  (opcional)
 let sso = "sso_example" // String |  (opcional)
 
-PublicAPI.reactFeedPostPublic(tenantId: tenantId, postId: postId, reactBodyParams: reactBodyParams, isUndo: isUndo, broadcastId: broadcastId, sso: sso) { (response, error) in
+PublicAPI.reactFeedPostPublic(tenantId: tenantId, postId: postId, reactBodyParams: reactBodyParams, options: PublicAPI.ReactFeedPostPublicOptions(isUndo: isUndo, broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -37,5 +37,3 @@ PublicAPI.reactFeedPostPublic(tenantId: tenantId, postId: postId, reactBodyParam
     }
 }
 [inline-code-end]
-
----

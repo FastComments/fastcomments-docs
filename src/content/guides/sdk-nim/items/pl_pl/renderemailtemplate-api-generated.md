@@ -1,10 +1,10 @@
 ## Parametry
 
-| Nazwa | Typ | Wymagane | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Tak |  |
-| renderEmailTemplateBody | RenderEmailTemplateBody | Nie |  |
-| locale | string | Nie |  |
+| tenantId | string | Yes |  |
+| renderEmailTemplateBody | RenderEmailTemplateBody | No |  |
+| locale | string = "" | No |  |
 
 ## Odpowiedź
 
@@ -12,17 +12,14 @@ Zwraca: [`Option[RenderEmailTemplateResponse]`](https://github.com/FastComments/
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład renderEmailTemplate'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'renderEmailTemplate Przykład'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.renderEmailTemplate(
-  tenantId = "my-tenant-123",
-  renderEmailTemplateBody = RenderEmailTemplateBody(),
-  locale = "en-US"
-)
-
-if response.isSome:
-  let rendered = response.get()
-  echo rendered
+let body = RenderEmailTemplateBody()
+let (responseOpt, httpResponse) = client.renderEmailTemplate(tenantId = "my-tenant-123", renderEmailTemplateBody = body, locale = "en-US")
+if responseOpt.isSome:
+  let response = responseOpt.get()
+  discard response
+discard httpResponse
 [inline-code-end]
 
 ---

@@ -1,7 +1,8 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Sí |  |
 | urlId | string | query | Sí |  |
 | sso | string | query | No |  |
 
@@ -11,12 +12,13 @@ Devuelve: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de put_close_thread'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo put_close_thread'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 url_id = 'url_id_example' # String | 
 opts = {
   sso: 'sso_example' # String | 
@@ -24,7 +26,7 @@ opts = {
 
 begin
   
-  result = api_instance.put_close_thread(url_id, opts)
+  result = api_instance.put_close_thread(tenant_id, url_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->put_close_thread: #{e}"

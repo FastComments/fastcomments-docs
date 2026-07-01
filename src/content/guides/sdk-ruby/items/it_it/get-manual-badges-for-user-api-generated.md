@@ -1,7 +1,8 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+|------|------|-----------|--------------|-------------|
+| tenantId | string | query | Sì |  |
 | badgesUserId | string | query | No |  |
 | commentId | string | query | No |  |
 | sso | string | query | No |  |
@@ -12,12 +13,13 @@ Restituisce: [`GetUserManualBadgesResponse`](https://github.com/FastComments/fas
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di get_manual_badges_for_user'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio get_manual_badges_for_user'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 opts = {
   badges_user_id: 'badges_user_id_example', # String | 
   comment_id: 'comment_id_example', # String | 
@@ -26,11 +28,9 @@ opts = {
 
 begin
   
-  result = api_instance.get_manual_badges_for_user(opts)
+  result = api_instance.get_manual_badges_for_user(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_manual_badges_for_user: #{e}"
 end
 [inline-code-end]
-
----

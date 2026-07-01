@@ -32,14 +32,18 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$user_id = 'user_id_example'; // string
-$state = 3.4; // float
-$skip = 3.4; // float
-$limit = 3.4; // float
+$options = [
+    'user_id' => 'user_id_example', // string
+    'state' => 3.4, // float
+    'skip' => 3.4, // float
+    'limit' => 3.4, // float
+];
+
 
 try {
-    $result = $apiInstance->getTickets($tenant_id, $user_id, $state, $skip, $limit);
+    $result = $apiInstance->getTickets($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getTickets: ', $e->getMessage(), PHP_EOL;

@@ -1,9 +1,10 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательный | Описание |
+| Название | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| urlId | string | query | Да |  |
-| sso | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Ответ
 
@@ -19,19 +20,20 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Если вы хотите использовать пользовательский HTTP-клиент, передайте ваш клиент, который реализует `GuzzleHttp\ClientInterface`.
-    // Это необязательно — по умолчанию будет использован `GuzzleHttp\Client`.
+    // Если вы хотите использовать пользовательский HTTP‑клиент, передайте ваш клиент, реализующий `GuzzleHttp\ClientInterface`.
+    // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
-$url_id = 'url_id_example'; // строка
-$sso = 'sso_example'; // строка
+
+$tenant_id = 'tenant_id_example'; // string
+$url_id = 'url_id_example'; // string
+$sso = 'sso_example'; // string
+
 
 try {
-    $result = $apiInstance->putCloseThread($url_id, $sso);
+    $result = $apiInstance->putCloseThread($tenant_id, $url_id, $sso);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->putCloseThread: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

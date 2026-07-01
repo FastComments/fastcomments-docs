@@ -1,15 +1,15 @@
-Προηγούμενοι σχολιαστές στη σελίδα που ΔΕΝ είναι αυτήν τη στιγμή σε σύνδεση. Ταξινομημένα κατά displayName.
-Χρησιμοποιήστε αυτό μετά την εξάντληση του /users/online για να εμφανίσετε μια ενότητα "Μέλη".
-Σελιδοποίηση με δείκτη (cursor) στο commenterName: ο server διασχίζει το μερικό {tenantId, urlId, commenterName} index από το afterName προς τα εμπρός μέσω $gt, χωρίς κόστος $skip.
+Past commenters on the page who are NOT currently online. Sorted by displayName.  
+Use this after exhausting /users/online to render a “Members” section.  
+Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.
 
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
-| tenant_id | String | Ναι |  |
-| url_id | String | Ναι |  |
-| after_name | String | Όχι |  |
-| after_user_id | String | Όχι |  |
+| tenant_id | String | Yes |  |
+| url_id | String | Yes |  |
+| after_name | String | No |  |
+| after_user_id | String | No |  |
 
 ## Απόκριση
 
@@ -19,16 +19,14 @@
 
 [inline-code-attrs-start title = 'get_offline_users Παράδειγμα'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_offline_users() -> Result<PageUsersOfflineResponse, Error> {
-    let params: GetOfflineUsersParams = GetOfflineUsersParams {
+async fn fetch_offline(config: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetOfflineUsersParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        url_id: "news/world/today".to_string(),
-        after_name: Some("jane.smith".to_string()),
-        after_user_id: Some("user-1024".to_string()),
+        url_id: "news/article".to_string(),
+        after_name: Some("alice".to_string()),
+        after_user_id: Some("user-42".to_string()),
     };
-    let response: PageUsersOfflineResponse = get_offline_users(&configuration, params).await?;
-    Ok(response)
+    let _response = get_offline_users(config, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

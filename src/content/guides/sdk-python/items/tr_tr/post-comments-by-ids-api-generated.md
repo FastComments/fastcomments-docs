@@ -1,8 +1,9 @@
 ## Parametreler
 
-| İsim | Tür | Konum | Gerekli | Açıklama |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| sso | string | query | Hayır |  |
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Yanıt
 
@@ -18,22 +19,23 @@ from client.models.moderation_api_child_comments_response import ModerationAPICh
 from client.rest import ApiException
 from pprint import pprint
 
-# Sunucunun tanımlanması isteğe bağlıdır ve varsayılan olarak https://fastcomments.com kullanılır
-# Tüm desteklenen yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.
+# Host'i tanımlamak isteğe bağlıdır ve varsayılan olarak https://fastcomments.com kullanılır.
+# configuration.py dosyasında desteklenen tüm yapılandırma parametrelerinin bir listesini görebilirsiniz.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# API istemcisinin bir örneğiyle bir bağlam açın
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # API sınıfından bir örnek oluşturun
+    # Create an instance of the API class
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comments_by_ids_params = client.CommentsByIdsParams() # CommentsByIdsParams | 
-    sso = 'sso_example' # str |  (isteğe bağlı)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.post_comments_by_ids(comments_by_ids_params, sso=sso)
+        api_response = api_instance.post_comments_by_ids(tenant_id, comments_by_ids_params, sso=sso)
         print("The response of ModerationApi->post_comments_by_ids:\n")
         pprint(api_response)
     except Exception as e:

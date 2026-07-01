@@ -1,10 +1,10 @@
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| commentId | string | Da |  |
-| approved | bool | Ne |  |
-| sso | string | Ne |  |
+| Ime | Tip | Potrebno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| options | PostSetCommentApprovalStatusOptions | No |  |
 
 ## Odgovor
 
@@ -12,12 +12,15 @@ Vraća: [`Option[SetCommentApprovedResponse]`](https://github.com/FastComments/f
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer postSetCommentApprovalStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postSetCommentApprovalStatus Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postSetCommentApprovalStatus(commentId = "cmt-7890", approved = false, sso = "")
-if response.isSome:
-  let setResp = response.get()
-  discard setResp
-[inline-code-end]
+let (approvedOpt, httpResp) = client.postSetCommentApprovalStatus(
+  tenantId = "my-tenant-123",
+  commentId = "comment-7890",
+  options = PostSetCommentApprovalStatusOptions()
+)
 
----
+if approvedOpt.isSome:
+  let approved = approvedOpt.get()
+  echo approved
+[inline-code-end]

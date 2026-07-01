@@ -2,39 +2,42 @@
 
 | Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
-| tenantId | string | Oui |  |
-| userId | string | Non |  |
-| badgeId | string | Non |  |
-| type | number | Non |  |
-| displayedOnComments | boolean | Non |  |
-| limit | number | Non |  |
-| skip | number | Non |  |
+| tenantId | string | Yes |  |
+| userId | string | No |  |
+| badgeId | string | No |  |
+| type | number | No |  |
+| displayedOnComments | boolean | No |  |
+| limit | number | No |  |
+| skip | number | No |  |
 
 ## Réponse
 
-Retourne : [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIGetUserBadgesResponse.ts)
+Retourne : [`GetUserBadgesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserBadgesResponse.ts)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple getUserBadges'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7a1c9f2b";
-const userId: string = "user_4b2d1e9a";
-const badgeId: string = "badge_gold_01";
-const type: number = 2;
-const displayedOnComments: boolean = true;
-const limit: number = 25;
-const skip: number = 0;
+async function example() {
+  const tenantId: string = "tenant-01";
+  const userId: string = "user-42";
+  const badgeId: string = "badge-gold";
+  const type: number = 1;
+  const displayedOnComments: boolean = true;
+  const limit: number = 10;
+  const skip: number = 5;
 
-const response: APIGetUserBadgesResponse = await getUserBadges(
-  tenantId,
-  userId,
-  badgeId,
-  type,
-  displayedOnComments,
-  limit,
-  skip
-);
+  const fullResult: GetUserBadgesResponse = await getUserBadges(
+    tenantId,
+    userId,
+    badgeId,
+    type,
+    displayedOnComments,
+    limit,
+    skip
+  );
+
+  const minimalResult: GetUserBadgesResponse = await getUserBadges(tenantId);
+}
+example();
 [inline-code-end]
-
----

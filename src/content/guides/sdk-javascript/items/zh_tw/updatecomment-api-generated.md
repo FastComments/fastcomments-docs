@@ -2,31 +2,39 @@
 
 | 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| id | string | 是 |  |
-| updatableCommentParams | UpdatableCommentParams | 是 |  |
-| contextUserId | string | 否 |  |
-| doSpamCheck | boolean | 否 |  |
-| isLive | boolean | 否 |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updatableCommentParams | UpdatableCommentParams | Yes |  |
+| contextUserId | string | No |  |
+| doSpamCheck | boolean | No |  |
+| isLive | boolean | No |  |
 
 ## 回應
 
-回傳: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+返回: [`UpdateCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateCommentResponse.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'updateComment 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant-prod-01';
-const id: string = 'cmt-000127';
-const updatableCommentParams: UpdatableCommentParams = {
-  body: 'Thanks — I updated the steps to include the missing config flag.',
-  isHidden: false
-};
-const contextUserId: string = 'moderator_77';
-const doSpamCheck: boolean = true;
-const isLive: boolean = true;
-const result: APIEmptyResponse = await updateComment(tenantId, id, updatableCommentParams, contextUserId, doSpamCheck, isLive);
-[inline-code-end]
+const tenantId: string = "tenant_12345";
+const commentId: string = "cmt_98765";
 
----
+const updatableCommentParams: UpdatableCommentParams = {
+  // 範例欄位；實際結構取決於 API 定義
+  // 例如，body: "Edited comment content",
+};
+
+const contextUserId: string = "user_abcde";
+const doSpamCheck: boolean = true;
+const isLive: boolean = false;
+
+const result: UpdateCommentResponse = await updateComment(
+  tenantId,
+  commentId,
+  updatableCommentParams,
+  contextUserId,
+  doSpamCheck,
+  isLive
+);
+[inline-code-end]

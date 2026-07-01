@@ -1,10 +1,11 @@
+---
 req
 tenantId
 afterId
 
 ## Parametre
 
-| Name | Type | Location | Required | Description |
+| Navn | Type | Placering | Krævet | Beskrivelse |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Ja |  |
 | afterId | string | query | Nej |  |
@@ -16,13 +17,13 @@ afterId
 
 ## Svar
 
-Returnerer: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PublicFeedPostsResponse.swift)
+Returns: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PublicFeedPostsResponse.swift)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'getFeedPostsPublic Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Følgende kodeeksempler er stadig i beta. For eventuelle problemer, rapportér venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De følgende kodeeksempler er stadig i beta. For eventuelle problemer, rapportér venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -33,7 +34,7 @@ let sso = "sso_example" // String |  (valgfri)
 let isCrawler = true // Bool |  (valgfri)
 let includeUserInfo = true // Bool |  (valgfri)
 
-PublicAPI.getFeedPostsPublic(tenantId: tenantId, afterId: afterId, limit: limit, tags: tags, sso: sso, isCrawler: isCrawler, includeUserInfo: includeUserInfo) { (response, error) in
+PublicAPI.getFeedPostsPublic(tenantId: tenantId, options: PublicAPI.GetFeedPostsPublicOptions(afterId: afterId, limit: limit, tags: tags, sso: sso, isCrawler: isCrawler, includeUserInfo: includeUserInfo)) { (response, error) in
     guard error == nil else {
         print(error)
         return

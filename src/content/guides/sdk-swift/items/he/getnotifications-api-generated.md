@@ -1,24 +1,24 @@
 ## פרמטרים
 
-| שם | סוג | Location | חובה | תיאור |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | כן |  |
-| userId | string | query | לא |  |
-| urlId | string | query | לא |  |
-| fromCommentId | string | query | לא |  |
-| viewed | boolean | query | לא |  |
-| type | string | query | לא |  |
-| skip | number | query | לא |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| urlId | string | query | No |  |
+| fromCommentId | string | query | No |  |
+| viewed | boolean | query | No |  |
+| type | string | query | No |  |
+| skip | number | query | No |  |
 
-## תגובה
+## תשובה
 
-מחזיר: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetNotificationsResponse.swift)
+Returns: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetNotificationsResponse.swift)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getNotifications'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getNotifications'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// דוגמאות הקוד הבאות עדיין בבטא. לכל בעיה, דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// הדוגמת קוד הבאות עדיין ב‑beta. לכל בעיה, אנא דווח באמצעות http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -29,7 +29,7 @@ let viewed = true // Bool |  (אופציונלי)
 let type = "type_example" // String |  (אופציונלי)
 let skip = 987 // Double |  (אופציונלי)
 
-DefaultAPI.getNotifications(tenantId: tenantId, userId: userId, urlId: urlId, fromCommentId: fromCommentId, viewed: viewed, type: type, skip: skip) { (response, error) in
+DefaultAPI.getNotifications(tenantId: tenantId, options: DefaultAPI.GetNotificationsOptions(userId: userId, urlId: urlId, fromCommentId: fromCommentId, viewed: viewed, type: type, skip: skip)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -40,3 +40,5 @@ DefaultAPI.getNotifications(tenantId: tenantId, userId: userId, urlId: urlId, fr
     }
 }
 [inline-code-end]
+
+---

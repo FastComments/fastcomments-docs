@@ -1,12 +1,12 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Υποχρεωτικό | Περιγραφή |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Ναι |  |
-| commentId | string | path | Ναι |  |
-| broadcastId | string | query | Ναι |  |
-| editKey | string | query | Όχι |  |
-| sso | string | query | Όχι |  |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|------------|-----------|
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | Yes |  |
+| editKey | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Απόκριση
 
@@ -14,32 +14,33 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα delete_comment_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_comment_public Παράδειγμα'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import DeleteCommentPublicOptions
 from client.models.public_api_delete_comment_response import PublicAPIDeleteCommentResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Ο ορισμός του host είναι προαιρετικός και η προεπιλεγμένη τιμή είναι https://fastcomments.com
-# Δείτε το configuration.py για λίστα όλων των υποστηριζόμενων παραμέτρων ρυθμίσεων.
+# Ο ορισμός του host είναι προαιρετικός και προεπιλεγμένος σε https://fastcomments.com
+# Δείτε το configuration.py για μια λίστα με όλες τις υποστηριζόμενες παραμέτρους διαμόρφωσης.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Εισέλθετε σε ένα context με ένα αντικείμενο του API client
+# Εισαγωγή ενός context με ένα στιγμιότυπο του πελάτη API
 with client.ApiClient(configuration) as api_client:
-    # Δημιουργήστε ένα αντικείμενο της κλάσης API
+    # Δημιουργία ενός στιγμιότυπου της κλάσης API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     broadcast_id = 'broadcast_id_example' # str | 
-    edit_key = 'edit_key_example' # str |  (προαιρετικό)
-    sso = 'sso_example' # str |  (προαιρετικό)
+    edit_key = 'edit_key_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.delete_comment_public(tenant_id, comment_id, broadcast_id, edit_key=edit_key, sso=sso)
+        api_response = api_instance.delete_comment_public(tenant_id, comment_id, broadcast_id, DeleteCommentPublicOptions(edit_key=edit_key, sso=sso))
         print("The response of PublicApi->delete_comment_public:\n")
         pprint(api_response)
     except Exception as e:

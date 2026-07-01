@@ -2,33 +2,30 @@ Omogočite ali onemogočite obvestila za določen komentar.
 
 ## Parametri
 
-| Name | Type | Required | Description |
+| Ime | Vrsta | Obvezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | notificationId | string | No |  |
 | optedInOrOut | string | No |  |
 | commentId | string | Yes |  |
-| sso | string | No |  |
+| sso | string = "" | No |  |
 
 ## Odgovor
 
-Vrača: [`Option[UpdateUserNotificationCommentSubscriptionStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_comment_subscription_status_response.nim)
+Vrne: [`Option[UpdateUserNotificationCommentSubscriptionStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_comment_subscription_status_response.nim)
 
 ## Primer
 
 [inline-code-attrs-start title = 'updateUserNotificationCommentSubscriptionStatus Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateUserNotificationCommentSubscriptionStatus(
+let (optResp, httpResp) = client.updateUserNotificationCommentSubscriptionStatus(
   tenantId = "my-tenant-123",
-  notificationId = "",
-  optedInOrOut = "",
-  commentId = "cmt-789",
+  notificationId = "notif-456",
+  optedInOrOut = "opted-in",
+  commentId = "comment-789",
   sso = ""
 )
 
-if response.isSome:
-  let updateResp = response.get()
-  echo "Subscription update response: ", updateResp
+if optResp.isSome:
+  let resp = optResp.get()
 [inline-code-end]
-
----

@@ -19,6 +19,7 @@ Returns: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-pyt
 [inline-code-attrs-start title = 'delete_comment_vote Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import DeleteCommentVoteOptions
 from client.models.vote_delete_response import VoteDeleteResponse
 from client.rest import ApiException
 from pprint import pprint
@@ -43,7 +44,7 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.delete_comment_vote(tenant_id, comment_id, vote_id, url_id, broadcast_id, edit_key=edit_key, sso=sso)
+        api_response = api_instance.delete_comment_vote(tenant_id, comment_id, vote_id, url_id, broadcast_id, DeleteCommentVoteOptions(edit_key=edit_key, sso=sso))
         print("The response of PublicApi->delete_comment_vote:\n")
         pprint(api_response)
     except Exception as e:

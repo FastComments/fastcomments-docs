@@ -1,34 +1,27 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| userId | string | Не |  |
-| direction | SortDirections | Не |  |
-| repliesToUserId | string | Не |  |
-| page | float64 | Не |  |
-| includei10n | bool | Не |  |
-| locale | string | Не |  |
-| isCrawler | bool | Не |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| options | GetCommentsForUserOptions | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[GetCommentsForUserResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_comments_for_user_response.nim)
+Vraća: [`Option[GetCommentsForUserResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_comments_for_user_response.nim)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'getCommentsForUser Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getCommentsForUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getCommentsForUser(
-  userId = "user-8421",
-  direction = SortDirections.Newest,
-  repliesToUserId = "",
-  page = 1.0,
-  includei10n = true,
-  locale = "en-US",
-  isCrawler = false
-)
+let (maybeResp, httpResp) = client.getCommentsForUser(options = GetCommentsForUserOptions(
+  tenantId = "my-tenant-123",
+  userId = "user-456",
+  page = 0,
+  pageSize = 20,
+  includeDeleted = false,
+  commentIds = @[]
+))
 
-if response.isSome:
-  let comments = response.get()
-  discard comments
+if maybeResp.isSome:
+  let resp = maybeResp.get()
+  discard resp
 [inline-code-end]

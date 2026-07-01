@@ -1,35 +1,37 @@
-Commentateurs précédents de la page qui ne sont pas actuellement en ligne. Triés par displayName.
-Utilisez ceci après avoir épuisé /users/online pour afficher une section "Membres".
-Pagination par curseur sur commenterName : le serveur parcourt la clé partielle {tenantId, urlId, commenterName}
-Index à partir de afterName vers l'avant via $gt, sans coût $skip.
+Past commenters on the page who are NOT currently online. Sorted by displayName.  
+Commentateurs précédents sur la page qui ne sont PAS actuellement en ligne. Triés par displayName.
 
-## Paramètres
+Use this after exhausting /users/online to render a "Members" section.  
+Utilisez ceci après avoir épuisé /users/online pour afficher une section « Membres ».
 
-| Nom | Type | Requis | Description |
-|------|------|----------|-------------|
-| tenant_id | String | Oui |  |
-| url_id | String | Oui |  |
-| after_name | String | Non |  |
-| after_user_id | String | Non |  |
+Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.  
+Pagination par curseur sur commenterName : le serveur parcourt le fragment {tenantId, urlId, commenterName} à partir de afterName vers l’avant via $gt, sans coût $skip.
 
-## Réponse
+## Parameters
 
-Renvoie : [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_offline_response.rs)
+| Nom | Type | Obligatoire | Description |
+|------|------|-------------|-------------|
+| tenant_id | String | Yes |  |
+| url_id | String | Yes |  |
+| after_name | String | No |  |
+| after_user_id | String | No |  |
 
-## Exemple
+## Response
 
-[inline-code-attrs-start title = 'Exemple de get_offline_users'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+Retourne : [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_offline_response.rs)
+
+## Example
+
+[inline-code-attrs-start title = 'Exemple get_offline_users'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_offline_users() -> Result<PageUsersOfflineResponse, Error> {
-    let params: GetOfflineUsersParams = GetOfflineUsersParams {
+async fn fetch_offline(config: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetOfflineUsersParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        url_id: "news/world/today".to_string(),
-        after_name: Some("jane.smith".to_string()),
-        after_user_id: Some("user-1024".to_string()),
+        url_id: "news/article".to_string(),
+        after_name: Some("alice".to_string()),
+        after_user_id: Some("user-42".to_string()),
     };
-    let response: PageUsersOfflineResponse = get_offline_users(&configuration, params).await?;
-    Ok(response)
+    let _response = get_offline_users(config, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

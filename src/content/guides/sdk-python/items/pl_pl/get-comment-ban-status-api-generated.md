@@ -1,13 +1,14 @@
-## Parametry
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Yes |  |
-| sso | string | query | No |  |
+| tenantId | string | zapytanie | Tak |  |
+| commentId | string | ścieżka | Tak |  |
+| sso | string | zapytanie | Nie |  |
 
-## Odpowiedź
+## Response
 
-Zwraca: [`GetCommentBanStatusResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comment_ban_status_response.py)
+Returns: [`GetCommentBanStatusResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comment_ban_status_response.py)
 
 ## Przykład
 
@@ -18,22 +19,23 @@ from client.models.get_comment_ban_status_response import GetCommentBanStatusRes
 from client.rest import ApiException
 from pprint import pprint
 
-# Definiowanie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
-# Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracji.
+# Definiowanie hosta jest opcjonalne i domyślnie ustawia https://fastcomments.com
+# Zobacz configuration.py, aby zobaczyć listę wszystkich obsługiwanych parametrów konfiguracji.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Wejdź w kontekst z instancją klienta API
+# Wejście w kontekst z instancją klienta API
 with client.ApiClient(configuration) as api_client:
     # Utwórz instancję klasy API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     sso = 'sso_example' # str |  (opcjonalne)
 
     try:
-        api_response = api_instance.get_comment_ban_status(comment_id, sso=sso)
+        api_response = api_instance.get_comment_ban_status(tenant_id, comment_id, sso=sso)
         print("The response of ModerationApi->get_comment_ban_status:\n")
         pprint(api_response)
     except Exception as e:

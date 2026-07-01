@@ -1,7 +1,7 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
+|------|------|----------|------------|-----------|
 | tenantId | string | path | Ναι |  |
 | urlId | string | query | Ναι |  |
 | usernameStartsWith | string | query | Όχι |  |
@@ -9,7 +9,7 @@
 | sso | string | query | Όχι |  |
 | searchSection | string | query | Όχι |  |
 
-## Response
+## Απόκριση
 
 Επιστρέφει: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SearchUsersResult.swift)
 
@@ -17,17 +17,17 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα searchUsers'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Τα ακόλουθα δείγματα κώδικα είναι ακόμα beta. Για οποιοδήποτε πρόβλημα, παρακαλώ αναφέρετε μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
+// Τα παρακάτω παραδείγματα κώδικα είναι ακόμη beta. Για οποιοδήποτε πρόβλημα, παρακαλούμε αναφέρετε το μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
-let usernameStartsWith = "usernameStartsWith_example" // String |  (optional)
-let mentionGroupIds = ["inner_example"] // [String] |  (optional)
-let sso = "sso_example" // String |  (optional)
-let searchSection = "searchSection_example" // String |  (optional)
+let usernameStartsWith = "usernameStartsWith_example" // String |  (προαιρετικό)
+let mentionGroupIds = ["inner_example"] // [String] |  (προαιρετικό)
+let sso = "sso_example" // String |  (προαιρετικό)
+let searchSection = "searchSection_example" // String |  (προαιρετικό)
 
-PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, usernameStartsWith: usernameStartsWith, mentionGroupIds: mentionGroupIds, sso: sso, searchSection: searchSection) { (response, error) in
+PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, options: PublicAPI.SearchUsersOptions(usernameStartsWith: usernameStartsWith, mentionGroupIds: mentionGroupIds, sso: sso, searchSection: searchSection)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -38,5 +38,3 @@ PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, usernameStartsWith: user
     }
 }
 [inline-code-end]
-
----

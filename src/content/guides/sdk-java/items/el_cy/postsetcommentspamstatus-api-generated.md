@@ -1,19 +1,21 @@
-## Παράμετροι
+## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Ναι |  |
-| spam | boolean | query | Όχι |  |
-| permNotSpam | boolean | query | Όχι |  |
-| sso | string | query | Όχι |  |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|-----------|-------------|
+| tenantId | string | ερώτημα | Ναι |  |
+| commentId | string | διαδρομή | Ναι |  |
+| spam | boolean | ερώτημα | Όχι |  |
+| permNotSpam | boolean | ερώτημα | Όχι |  |
+| broadcastId | string | ερώτημα | Όχι |  |
+| sso | string | ερώτημα | Όχι |  |
 
-## Απόκριση
+## Response
 
 Επιστρέφει: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
-## Παράδειγμα
+## Example
 
-[inline-code-attrs-start title = 'Παράδειγμα postSetCommentSpamStatus'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postSetCommentSpamStatus Παράδειγμα'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Εισαγωγή κλάσεων:
 import com.fastcomments.invoker.ApiClient;
@@ -28,14 +30,17 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     Boolean spam = true; // Boolean | 
     Boolean permNotSpam = true; // Boolean | 
+    String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      APIEmptyResponse result = apiInstance.postSetCommentSpamStatus(commentId)
+      APIEmptyResponse result = apiInstance.postSetCommentSpamStatus(tenantId, commentId)
             .spam(spam)
             .permNotSpam(permNotSpam)
+            .broadcastId(broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);

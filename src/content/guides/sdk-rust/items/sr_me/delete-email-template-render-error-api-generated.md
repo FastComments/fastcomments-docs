@@ -1,10 +1,10 @@
 ## Parametri
 
 | Ime | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| tenant_id | String | Da |  |
-| id | String | Da |  |
-| error_id | String | Da |  |
+|------|------|----------|------|
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
+| error_id | String | Yes |  |
 
 ## Odgovor
 
@@ -14,14 +14,13 @@ Vraća: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/b
 
 [inline-code-attrs-start title = 'delete_email_template_render_error Primjer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: DeleteEmailTemplateRenderErrorParams = DeleteEmailTemplateRenderErrorParams {
-    tenant_id: String::from("acme-corp-tenant"),
-    id: String::from("marketing/newsletter/welcome"),
-    error_id: String::from("render_err_2026-06-15-7a3f"),
-    request_id: Some(String::from("req-83b2f9a1")),
-};
-
-let response: ApiEmptyResponse = delete_email_template_render_error(&configuration, params).await?;
+async fn example(config: &configuration::Configuration) -> Result<(), Error> {
+    let params = DeleteEmailTemplateRenderErrorParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "welcome-email".to_string(),
+        error_id: "render-failure-123".to_string(),
+    };
+    let _ = delete_email_template_render_error(config, params).await?;
+    Ok(())
+}
 [inline-code-end]
-
----

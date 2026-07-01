@@ -3,12 +3,9 @@
 ```swift
 import FastCommentsSwift
 
-// 创建 API 客户端
-let publicApi = PublicAPI()
-
 // 获取页面的评论
 do {
-    let response = try await publicApi.getCommentsPublic(
+    let response = try await PublicAPI.getCommentsPublic(
         tenantId: "your-tenant-id",
         urlId: "page-url-id"
     )
@@ -22,20 +19,19 @@ do {
 }
 ```
 
-### 使用已认证的 API
+### 使用已认证 API
 
 ```swift
 import FastCommentsSwift
 
-// 使用 API 密钥创建配置
-let defaultApi = DefaultAPI()
-defaultApi.apiKey = "your-api-key"
+// 在共享配置上设置您的 API 密钥（作为 x-api-key 头发送）
+FastCommentsSwiftAPIConfiguration.shared.customHeaders["x-api-key"] = "your-api-key"
 
-// 使用已认证的 API 获取评论
+// 使用已认证 API 获取评论
 do {
-    let response = try await defaultApi.getComments(
+    let response = try await DefaultAPI.getComments(
         tenantId: "your-tenant-id",
-        urlId: "page-url-id"
+        options: .init(urlId: "page-url-id")
     )
 
     print("Total comments: \(response.count ?? 0)")
@@ -47,18 +43,19 @@ do {
 }
 ```
 
-### 使用审核 API
+### 使用审查 API
 
 ```swift
 import FastCommentsSwift
 
-// 管理方法需由执行审核的管理员使用 `sso` 令牌授权
-// （使用 FastCommentsSSO 生成，参见上面的 SSO 部分）。
+// 审核方法需要使用 `sso` 令牌进行授权（使用 FastCommentsSSO 生成，参见上面的 SSO 部分）。
 do {
     let response = try await ModerationAPI.getApiComments(
-        page: 0,
-        count: 30,
-        sso: ssoToken
+        options: .init(
+            page: 0,
+            count: 30,
+            sso: ssoToken
+        )
     )
 
     print("Found \(response.comments.count) comments to moderate")
@@ -72,19 +69,19 @@ do {
 
 ### 使用 SSO 进行身份验证
 
-#### 安全 SSO（推荐用于生产）
+#### 安全 SSO（推荐用于生产环境）
 
 ```swift
 import FastCommentsSwift
 
 let apiKey = "your-api-key"
 
-// 创建安全 SSO 用户数据（仅限服务器端！）
+// 创建安全的 SSO 用户数据（仅限服务器端！）
 let userData = SecureSSOUserData(
-    id: "user-123",              // 用户 ID
-    email: "user@example.com",   // 电子邮件
-    username: "johndoe",         // 用户名
-    avatar: "https://example.com/avatar.jpg" // 头像 URL
+    id: "user-123",              // User ID
+    email: "user@example.com",   // Email
+    username: "johndoe",         // Username
+    avatar: "https://example.com/avatar.jpg" // Avatar URL
 )
 
 // 生成 SSO 令牌
@@ -93,7 +90,7 @@ do {
     let token = try sso.createToken()
 
     print("SSO Token: \(token ?? "")")
-    // 将此令牌传递给前端以进行身份验证
+    // 将此令牌传递给前端进行身份验证
 } catch {
     print("Error creating SSO token: \(error)")
 }
@@ -104,7 +101,7 @@ do {
 ```swift
 import FastCommentsSwift
 
-// 创建简单 SSO 用户数据（不需要 API 密钥）
+// 创建简单的 SSO 用户数据（无需 API 密钥）
 let userData = SimpleSSOUserData(
     username: "johndoe",
     email: "user@example.com",

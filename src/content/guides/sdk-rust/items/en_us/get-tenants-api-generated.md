@@ -14,14 +14,13 @@ Returns: [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-rus
 
 [inline-code-attrs-start title = 'get_tenants Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_get_tenants() -> Result<(), Error> {
-    let params: GetTenantsParams = GetTenantsParams {
+async fn example(config: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetTenantsParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        meta: Some("include=domains,billing".to_string()),
+        meta: Some("news/article".to_string()),
         skip: Some(10.0),
     };
-    let tenants: GetTenantsResponse = get_tenants(&configuration, params).await?;
-    println!("{:#?}", tenants);
+    let _response = get_tenants(config, params).await?;
     Ok(())
 }
 [inline-code-end]

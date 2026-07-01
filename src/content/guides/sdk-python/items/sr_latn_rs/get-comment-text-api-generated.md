@@ -1,11 +1,11 @@
-## Parametri
+## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Da |  |
-| commentId | string | path | Da |  |
-| editKey | string | query | Ne |  |
-| sso | string | query | Ne |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| editKey | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -13,9 +13,10 @@ Vraća: [`PublicAPIGetCommentTextResponse`](https://github.com/FastComments/fast
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer get_comment_text'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_comment_text Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetCommentTextOptions
 from client.models.public_api_get_comment_text_response import PublicAPIGetCommentTextResponse
 from client.rest import ApiException
 from pprint import pprint
@@ -33,11 +34,11 @@ with client.ApiClient(configuration) as api_client:
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
-    edit_key = 'edit_key_example' # str |  (neobavezno)
-    sso = 'sso_example' # str |  (neobavezno)
+    edit_key = 'edit_key_example' # str |  (opciono)
+    sso = 'sso_example' # str |  (opciono)
 
     try:
-        api_response = api_instance.get_comment_text(tenant_id, comment_id, edit_key=edit_key, sso=sso)
+        api_response = api_instance.get_comment_text(tenant_id, comment_id, GetCommentTextOptions(edit_key=edit_key, sso=sso))
         print("The response of PublicApi->get_comment_text:\n")
         pprint(api_response)
     except Exception as e:

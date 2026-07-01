@@ -1,15 +1,14 @@
-Agregira dokumente grupisanjem (ako je dostavljen groupBy) i primjenom više operacija.
-Podržane su različite operacije (npr. sum, countDistinct, avg, itd.).
+Aggregates documents by grouping them (if groupBy is provided) and applying multiple operations. Different operations (e.g. sum, countDistinct, avg, etc.) are supported.
 
-## Parametri
+## Parameters
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| parentTenantId | string | query | Ne |  |
-| includeStats | boolean | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| parentTenantId | string | query | No |  |
+| includeStats | boolean | query | No |  |
 
-## Odgovor
+## Response
 
 Vraća: [`AggregateResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AggregateResponse.swift)
 
@@ -17,15 +16,15 @@ Vraća: [`AggregateResponse`](https://github.com/FastComments/fastcomments-swift
 
 [inline-code-attrs-start title = 'aggregate Primjer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sljedeći primjeri koda su još u beta fazi. Za bilo koji problem, prijavite putem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sljedeći primjeri koda su još u beta fazi. Za bilo koji problem, molimo prijavite putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let aggregationRequest = AggregationRequest(query: [QueryPredicate(key: "key_example", value: QueryPredicate_value(), _operator: "_operator_example")], resourceName: "resourceName_example", groupBy: ["groupBy_example"], operations: [AggregationOperation(field: "field_example", op: AggregationOpType(), alias: "alias_example", expandArray: false)], sort: AggregationRequest_sort(dir: "dir_example", field: "field_example")) // AggregationRequest | 
-let parentTenantId = "parentTenantId_example" // String |  (neobavezno)
-let includeStats = true // Bool |  (neobavezno)
+let parentTenantId = "parentTenantId_example" // String |  (opcionalno)
+let includeStats = true // Bool |  (opcionalno)
 
-DefaultAPI.aggregate(tenantId: tenantId, aggregationRequest: aggregationRequest, parentTenantId: parentTenantId, includeStats: includeStats) { (response, error) in
+DefaultAPI.aggregate(tenantId: tenantId, aggregationRequest: aggregationRequest, options: DefaultAPI.AggregateOptions(parentTenantId: parentTenantId, includeStats: includeStats)) { (response, error) in
     guard error == nil else {
         print(error)
         return

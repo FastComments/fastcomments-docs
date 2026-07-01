@@ -1,44 +1,46 @@
----
 ## פרמטרים
 
 | שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| commentId | string | path | כן |  |
-| sso | string | query | לא |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## תגובה
 
-מחזיר: [`PostRemoveCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/post_remove_comment_response.py)
+Returns: [`PostRemoveCommentApiResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/post_remove_comment_api_response.py)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-post_remove_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה post_remove_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.post_remove_comment_response import PostRemoveCommentResponse
+from client.api.moderation_api import PostRemoveCommentOptions
+from client.models.post_remove_comment_api_response import PostRemoveCommentApiResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת ה-host אופציונלית וברירת המחדל היא https://fastcomments.com
-# ראה את configuration.py לרשימת כל פרמטרי התצורה הנתמכים.
+# הגדרת המארח היא אופציונלית ומוגדרת כברירת מחדל ל‑https://fastcomments.com
+# ראו configuration.py עבור רשימה של כל פרמטרי ההגדרה הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# פתח הקשר עם מופע של לקוח ה-API
+# הכנסו להקשר עם מופע של לקוח ה‑API
 with client.ApiClient(configuration) as api_client:
-    # צור מופע של מחלקת ה-API
+    # יצירת מופע של מחלקת ה‑API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
+    broadcast_id = 'broadcast_id_example' # str |  (אופציונלי)
     sso = 'sso_example' # str |  (אופציונלי)
 
     try:
-        api_response = api_instance.post_remove_comment(comment_id, sso=sso)
+        api_response = api_instance.post_remove_comment(tenant_id, comment_id, PostRemoveCommentOptions(broadcast_id=broadcast_id, sso=sso))
         print("The response of ModerationApi->post_remove_comment:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling ModerationApi->post_remove_comment: %s\n" % e)
 [inline-code-end]
-
----

@@ -1,14 +1,9 @@
 ## Paramètres
 
-| Name | Type | Obligatoire | Description |
-|------|------|------------|-------------|
-| textSearch | string | Non |  |
-| byIPFromComment | string | Non |  |
-| filters | string | Non |  |
-| searchFilters | string | Non |  |
-| afterId | string | Non |  |
-| demo | bool | Non |  |
-| sso | string | Non |  |
+| Nom | Type | Obligatoire | Description |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| options | GetApiIdsOptions | No |  |
 
 ## Réponse
 
@@ -16,21 +11,11 @@ Renvoie : [`Option[ModerationAPIGetCommentIdsResponse]`](https://github.com/Fast
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getApiIds'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getApiIds'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getApiIds(
-  textSearch = "urgent moderation review",
-  byIPFromComment = "203.0.113.45",
-  filters = "status:pending,flagged",
-  searchFilters = "author:jane.doe@example.com",
-  afterId = "cmt_9f8e7d6a",
-  demo = false,
-  sso = "sso-token-6b7f9a"
-)
-
-if response.isSome:
-  let idsResp = response.get()
-  echo idsResp
+let opts = GetApiIdsOptions()
+let (maybeResponse, httpResponse) = client.getApiIds(tenantId = "my-tenant-123", options = opts)
+if maybeResponse.isSome:
+  let response = maybeResponse.get()
+  echo response
 [inline-code-end]
-
----

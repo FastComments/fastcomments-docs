@@ -1,7 +1,8 @@
-## Параметри
+## Parameters
 
-| Назва | Тип | Розташування | Обов'язковий | Опис |
-|------|------|----------|----------|-------------|
+| Назва | Тип | Розташування | Обов'язково | Опис |
+|------|------|--------------|-------------|------|
+| tenantId | string | query | Так |  |
 | text-search | string | query | Ні |  |
 | byIPFromComment | string | query | Ні |  |
 | filter | string | query | Ні |  |
@@ -9,11 +10,11 @@
 | demo | boolean | query | Ні |  |
 | sso | string | query | Ні |  |
 
-## Відповідь
+## Response
 
 Повертає: [`ModerationAPICountCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationAPICountCommentsResponse.java)
 
-## Приклад
+## Example
 
 [inline-code-attrs-start title = 'Приклад getCount'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -30,6 +31,7 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String textSearch = "textSearch_example"; // String | 
     String byIPFromComment = "byIPFromComment_example"; // String | 
     String filter = "filter_example"; // String | 
@@ -37,7 +39,7 @@ public class Example {
     Boolean demo = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationAPICountCommentsResponse result = apiInstance.getCount()
+      ModerationAPICountCommentsResponse result = apiInstance.getCount(tenantId)
             .textSearch(textSearch)
             .byIPFromComment(byIPFromComment)
             .filter(filter)
@@ -56,5 +58,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

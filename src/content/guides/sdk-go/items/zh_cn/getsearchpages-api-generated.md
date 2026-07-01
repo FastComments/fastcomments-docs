@@ -2,12 +2,13 @@
 
 | 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
-| value | string | query | 否 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| value | string | query | No |  |
+| sso | string | query | No |  |
 
 ## 响应
 
-返回: [`ModerationPageSearchResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_page_search_response.go)
+返回：[`ModerationPageSearchResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_page_search_response.go)
 
 ## 示例
 
@@ -23,17 +24,18 @@ import (
 )
 
 func main() {
-	value := "value_example" // string | （可选）
-	sso := "sso_example" // string | （可选）
+	tenantId := "tenantId_example" // string | 
+	value := "value_example" // string |  （可选）
+	sso := "sso_example" // string |  （可选）
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetSearchPages(context.Background()).Value(value).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetSearchPages(context.Background()).TenantId(tenantId).Value(value).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetSearchPages``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "调用 `ModerationAPI.GetSearchPages`` 时出错: %v\n", err)
+		fmt.Fprintf(os.Stderr, "完整的 HTTP 响应: %v\n", r)
 	}
-	// response from `GetSearchPages`: ModerationPageSearchResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetSearchPages`: %v\n", resp)
+	// 来自 `GetSearchPages` 的响应: ModerationPageSearchResponse
+	fmt.Fprintf(os.Stdout, "来自 `ModerationAPI.GetSearchPages` 的响应: %v\n", resp)
 }
 [inline-code-end]

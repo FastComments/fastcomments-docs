@@ -1,7 +1,8 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+|------|------|------------|----------|------|
+| tenantId | string | query | Tak |  |
 | sso | string | query | Nie |  |
 
 ## Odpowiedź
@@ -19,21 +20,22 @@ from client.rest import ApiException
 from pprint import pprint
 
 # Definiowanie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
-# Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracji.
+# Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracyjnych.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Otwórz kontekst z instancją klienta API
+# Wejdź w kontekst z instancją klienta API
 with client.ApiClient(configuration) as api_client:
     # Utwórz instancję klasy API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comments_by_ids_params = client.CommentsByIdsParams() # CommentsByIdsParams | 
-    sso = 'sso_example' # str |  (opcjonalne)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.post_comments_by_ids(comments_by_ids_params, sso=sso)
+        api_response = api_instance.post_comments_by_ids(tenant_id, comments_by_ids_params, sso=sso)
         print("The response of ModerationApi->post_comments_by_ids:\n")
         pprint(api_response)
     except Exception as e:

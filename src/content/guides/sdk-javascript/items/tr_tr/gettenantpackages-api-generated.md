@@ -2,20 +2,24 @@
 
 | Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
-| tenantId | string | Evet |  |
-| skip | number | Hayır |  |
+| tenantId | string | Yes |  |
+| skip | number | No |  |
 
 ## Yanıt
 
-Döndürür: [`GetTenantPackagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantPackagesResponse.ts)
+Döndürür: [`GetTenantPackagesResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantPackagesResponse1.ts)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'getTenantPackages Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-9f3b";
-const packagesPage1: GetTenantPackagesResponse = await getTenantPackages(tenantId);
-const packagesPage2: GetTenantPackagesResponse = await getTenantPackages(tenantId, 10);
-[inline-code-end]
+(async () => {
+  const tenantId: string = 'tenant_67890';
+  const skip: number = 30;
 
----
+  const packagesWithSkip: GetTenantPackagesResponse1 = await getTenantPackages(tenantId, skip);
+  const packagesWithoutSkip: GetTenantPackagesResponse1 = await getTenantPackages(tenantId);
+
+  console.log(packagesWithSkip, packagesWithoutSkip);
+})();
+[inline-code-end]

@@ -13,18 +13,15 @@ Returns: [`GetSSOUserByEmailAPIResponse`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'getSSOUserByEmail Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> tenantOpt(U("my-tenant-123"));
-utility::string_t tenantId = tenantOpt.value_or(U("my-tenant-123"));
-utility::string_t email = U("alice@example.com");
+auto correlationId = boost::optional<utility::string_t>(utility::conversions::to_string_t("corr-001"));
 
-api->getSSOUserByEmail(tenantId, email)
-    .then([](pplx::task<std::shared_ptr<GetSSOUserByEmailAPIResponse>> t) {
-        try {
-            auto resp = t.get();
-            if (resp) {
-                auto userCopy = std::make_shared<GetSSOUserByEmailAPIResponse>(*resp);
-            }
-        } catch (const std::exception&) {
-        }
-    });
+api->getSSOUserByEmail(
+    utility::conversions::to_string_t("my-tenant-123"),
+    utility::conversions::to_string_t("user@example.com")
+).then([](pplx::task<std::shared_ptr<GetSSOUserByEmailAPIResponse>> t) {
+    try {
+        auto response = t.get();
+    } catch (const std::exception&) {
+    }
+});
 [inline-code-end]

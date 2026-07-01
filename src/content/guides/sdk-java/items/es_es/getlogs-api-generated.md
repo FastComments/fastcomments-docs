@@ -1,7 +1,9 @@
+---
 ## Parámetros
 
 | Nombre | Tipo | Ubicación | Requerido | Descripción |
-|------|------|----------|----------|-------------|
+|--------|------|-----------|-----------|-------------|
+| tenantId | string | query | Sí |  |
 | commentId | string | path | Sí |  |
 | sso | string | query | No |  |
 
@@ -11,7 +13,7 @@ Devuelve: [`ModerationAPIGetLogsResponse`](https://github.com/FastComments/fastc
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de getLogs'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo getLogs'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importar clases:
 import com.fastcomments.invoker.ApiClient;
@@ -26,10 +28,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationAPIGetLogsResponse result = apiInstance.getLogs(commentId)
+      ModerationAPIGetLogsResponse result = apiInstance.getLogs(tenantId, commentId)
             .sso(sso)
             .execute();
       System.out.println(result);

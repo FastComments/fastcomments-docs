@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Obbligatorio | Descrizione |
+| Nome | Tipo | Obbligatorio | Descrizione |
 |------|------|--------------|-------------|
 | tenantId | string | Sì |  |
 | id | string | Sì |  |
@@ -9,17 +9,20 @@
 
 ## Risposta
 
-Restituisce: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentResponse.ts)
+Restituisce: [`UnFlagCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UnFlagCommentResponse.ts)
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di unFlagComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio unFlagComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-001';
-const id: string = 'cmt-9b8f7d6a5';
-const userId: string = 'user-42a7c9e1';
+const tenantId: string = "acme-corp";
+const commentId: string = "cmt_123456";
+const userId: string = "usr_98765";
 
-const result: FlagCommentResponse = await unFlagComment(tenantId, id, userId);
+const result: UnFlagCommentResponse = await unFlagComment(tenantId, commentId, userId);
+
+const anonCommentId: string = "cmt_123457";
+const anonUserId: string = "anon_abc123";
+
+const anonResult: UnFlagCommentResponse = await unFlagComment(tenantId, anonCommentId, undefined, anonUserId);
 [inline-code-end]
-
----

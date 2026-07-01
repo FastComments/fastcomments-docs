@@ -1,16 +1,13 @@
----
 req
 tenantId
 afterId
 
 ## Параметри
 
-| Назва | Тип | Обов'язковий | Опис |
+| Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Так |  |
-| afterId | string | Ні |  |
-| limit | int | Ні |  |
-| tags | seq[string] | Ні |  |
+| options | GetFeedPostsOptions | Ні |  |
 
 ## Відповідь
 
@@ -18,17 +15,10 @@ afterId
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад getFeedPosts'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getFeedPosts Приклад'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getFeedPosts(
-  tenantId = "my-tenant-123",
-  afterId = "",
-  limit = 0,
-  tags = @[]
-)
-if response.isSome:
-  let feed = response.get()
-  echo "Feed retrieved for tenant my-tenant-123"
+let (feedResponseOpt, httpResp) = client.getFeedPosts(tenantId = "my-tenant-123", options = GetFeedPostsOptions())
+if feedResponseOpt.isSome:
+  let feedResponse = feedResponseOpt.get()
+  echo feedResponse
 [inline-code-end]
-
----

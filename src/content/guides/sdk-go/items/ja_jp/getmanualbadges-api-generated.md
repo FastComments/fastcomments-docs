@@ -2,11 +2,12 @@
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| sso | string | query | No |  |
+| tenantId | string | query | はい |  |
+| sso | string | query | いいえ |  |
 
-## レスポンス
+## 応答
 
-戻り値: [`GetTenantManualBadgesResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_manual_badges_response.go)
+返却: [`GetTenantManualBadgesResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_manual_badges_response.go)
 
 ## 例
 
@@ -22,16 +23,17 @@ import (
 )
 
 func main() {
-	sso := "sso_example" // string |  (オプション)
+	tenantId := "tenantId_example" // string | 
+	sso := "sso_example" // string | (オプション)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetManualBadges(context.Background()).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetManualBadges(context.Background()).TenantId(tenantId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetManualBadges``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `GetManualBadges` からのレスポンス: GetTenantManualBadgesResponse
+	// response from `GetManualBadges`: GetTenantManualBadgesResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetManualBadges`: %v\n", resp)
 }
 [inline-code-end]

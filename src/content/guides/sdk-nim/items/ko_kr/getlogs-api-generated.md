@@ -2,21 +2,20 @@
 
 | 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| commentId | string | 예 |  |
-| sso | string | 아니요 |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| sso | string = "" | No |  |
 
 ## 응답
 
 반환: [`Option[ModerationAPIGetLogsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_api_get_logs_response.nim)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'getLogs 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getLogs 예시'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getLogs(commentId = "cmt-8471f2d3", sso = "")
-if response.isSome:
-  let logs = response.get()
-  echo "Fetched logs:", logs
+let (logsOpt, httpRes) = client.getLogs(tenantId = "my-tenant-123", commentId = "cmt-789", sso = "")
+if logsOpt.isSome:
+  let logs = logsOpt.get()
+  echo logs
 [inline-code-end]
-
----

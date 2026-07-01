@@ -4,9 +4,9 @@ go get github.com/fastcomments/fastcomments-go
 
 ### Използване на API клиента
 
-#### Public API (без удостоверяване)
+#### Публичен API (Без удостоверяване)
 
-PublicAPI позволява неавторизиран достъп до публични крайни точки:
+PublicAPI позволява неавтентициран достъп до публичните крайни точки:
 
 ```go
 package main
@@ -21,7 +21,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // Получаване на коментари чрез PublicAPI
+    // Get comments using PublicAPI
     response, httpResp, err := apiClient.PublicAPI.GetCommentsPublic(
         context.Background(),
         "your-tenant-id",
@@ -36,9 +36,9 @@ func main() {
 }
 ```
 
-#### Default API (Изисква API ключ)
+#### По подразбиране API (Изисква API ключ)
 
-DefaultAPI изисква удостоверяване чрез вашия API ключ:
+DefaultAPI изисква удостоверяване с вашия API ключ:
 
 ```go
 package main
@@ -53,7 +53,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // Създаване на удостоверен контекст с API ключ
+    // Create authenticated context with API key
     auth := context.WithValue(
         context.Background(),
         client.ContextAPIKeys,
@@ -62,7 +62,7 @@ func main() {
         },
     )
 
-    // Получаване на коментари чрез удостоверения DefaultAPI
+    // Get comments using authenticated DefaultAPI
     response, httpResp, err := apiClient.DefaultAPI.GetComments(auth).
         TenantId("your-tenant-id").
         UrlId("your-page-url-id").
@@ -77,15 +77,9 @@ func main() {
 }
 ```
 
-#### Moderation API (Табло на модератора)
+#### Модерационен API (Табло за модератори)
 
-ModerationAPI захранва таблото на модератора. Той предоставя методи за изброяване,
-броене, търсене и експортиране на коментари, модераторски действия (премахване/възстановяване,
-маркиране, задаване на статус преглед/спам/одобрение, гласове, повторно отваряне/затваряне на нишки), забрани (забрана за
-коментиране, отмяна, предварителни резюмета преди забрана, статус и предпочитания за забрана, брой на забранени потребители),
-и значки и доверие (награждаване/премахване на значки, ръчни значки, получаване/задаване на фактор на доверие, вътрешен
-профил на потребителя). Всички модераторски методи приемат параметър `sso` за
-модератори, удостоверени чрез SSO:
+ModerationAPI предоставя обширен набор от живи и бързи модерационни API-та. Всички модерационни методи приемат параметър `sso` и могат да се удостоверяват чрез SSO или cookie сесия на FastComments.com:
 
 ```go
 package main
@@ -100,7 +94,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // Извличане на коментари за модериране чрез ModerationAPI
+    // List comments for moderation using ModerationAPI
     response, httpResp, err := apiClient.ModerationAPI.GetApiComments(
         context.Background(),
     ).Sso("your-sso-token").Execute()

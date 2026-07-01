@@ -2,9 +2,11 @@
 
 | Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Да |  |
-| voteId | string | path | Да |  |
-| sso | string | query | Не |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| voteId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Одговор
 
@@ -12,16 +14,18 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'deleteModerationVote Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteModerationVote Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи примери кода су још у бети. За било који проблем, пријавите га преко http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следећи пример кода је још у бета фази. За било који проблем, пријавите га путем http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
 let voteId = "voteId_example" // String | 
-let sso = "sso_example" // String |  (опционо)
+let broadcastId = "broadcastId_example" // String |  (опционално)
+let sso = "sso_example" // String |  (опционално)
 
-ModerationAPI.deleteModerationVote(commentId: commentId, voteId: voteId, sso: sso) { (response, error) in
+ModerationAPI.deleteModerationVote(tenantId: tenantId, commentId: commentId, voteId: voteId, options: ModerationAPI.DeleteModerationVoteOptions(broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -32,5 +36,3 @@ ModerationAPI.deleteModerationVote(commentId: commentId, voteId: voteId, sso: ss
     }
 }
 [inline-code-end]
-
----

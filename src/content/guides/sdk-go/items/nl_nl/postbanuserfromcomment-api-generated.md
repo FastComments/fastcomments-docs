@@ -1,26 +1,26 @@
----
 ## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Ja |  |
-| banEmail | boolean | query | Nee |  |
-| banEmailDomain | boolean | query | Nee |  |
-| banIP | boolean | query | Nee |  |
-| deleteAllUsersComments | boolean | query | Nee |  |
-| bannedUntil | string | query | Nee |  |
-| isShadowBan | boolean | query | Nee |  |
-| updateId | string | query | Nee |  |
-| banReason | string | query | Nee |  |
-| sso | string | query | Nee |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| banEmail | boolean | query | No |  |
+| banEmailDomain | boolean | query | No |  |
+| banIP | boolean | query | No |  |
+| deleteAllUsersComments | boolean | query | No |  |
+| bannedUntil | string | query | No |  |
+| isShadowBan | boolean | query | No |  |
+| updateId | string | query | No |  |
+| banReason | string | query | No |  |
+| sso | string | query | No |  |
 
-## Antwoord
+## Response
 
-Retourneert: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_ban_user_from_comment_result.go)
+Returns: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_ban_user_from_comment_result.go)
 
-## Voorbeeld
+## Example
 
-[inline-code-attrs-start title = 'Voorbeeld PostBanUserFromComment'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PostBanUserFromComment Voorbeeld'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -32,6 +32,7 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
 	banEmail := true // bool |  (optioneel)
 	banEmailDomain := true // bool |  (optioneel)
@@ -45,14 +46,12 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostBanUserFromComment(context.Background(), commentId).BanEmail(banEmail).BanEmailDomain(banEmailDomain).BanIP(banIP).DeleteAllUsersComments(deleteAllUsersComments).BannedUntil(bannedUntil).IsShadowBan(isShadowBan).UpdateId(updateId).BanReason(banReason).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostBanUserFromComment(context.Background(), commentId).TenantId(tenantId).BanEmail(banEmail).BanEmailDomain(banEmailDomain).BanIP(banIP).DeleteAllUsersComments(deleteAllUsersComments).BannedUntil(bannedUntil).IsShadowBan(isShadowBan).UpdateId(updateId).BanReason(banReason).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostBanUserFromComment``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Fout bij het aanroepen van `ModerationAPI.PostBanUserFromComment``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Volledige HTTP-response: %v\n", r)
 	}
-	// antwoord van `PostBanUserFromComment`: BanUserFromCommentResult
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostBanUserFromComment`: %v\n", resp)
+	// respons van `PostBanUserFromComment`: BanUserFromCommentResult
+	fmt.Fprintf(os.Stdout, "Respons van `ModerationAPI.PostBanUserFromComment`: %v\n", resp)
 }
 [inline-code-end]
-
----

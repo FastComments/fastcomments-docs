@@ -1,9 +1,8 @@
----
 ## Parametri
 
 | Nome | Tipo | Obbligatorio | Descrizione |
 |------|------|--------------|-------------|
-| tenantId | string | Sì |  |
+| tenantId | string | Yes |  |
 | skip | double | No |  |
 
 ## Risposta
@@ -12,16 +11,12 @@ Restituisce: [`GetEmailTemplatesResponse`](https://github.com/FastComments/fastc
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di getEmailTemplates'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio getEmailTemplates'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-boost::optional<double> skip = boost::optional<double>(0.0);
+auto tenantId = utility::string_t(U("my-tenant-123"));
+boost::optional<double> skip = 10.0;
 api->getEmailTemplates(tenantId, skip)
-.then([](std::shared_ptr<GetEmailTemplatesResponse> resp) -> std::shared_ptr<GetEmailTemplatesResponse> {
-    auto finalResp = resp ? resp : std::make_shared<GetEmailTemplatesResponse>();
-    return finalResp;
-})
-.wait();
+    .then([](std::shared_ptr<GetEmailTemplatesResponse> resp) {
+        (void)resp;
+    });
 [inline-code-end]
-
----

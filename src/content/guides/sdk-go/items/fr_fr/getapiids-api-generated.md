@@ -1,7 +1,8 @@
-## Paramètres
+## Parameters
 
-| Nom | Type | Emplacement | Requis | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Oui |  |
 | text-search | string | query | Non |  |
 | byIPFromComment | string | query | Non |  |
 | filters | string | query | Non |  |
@@ -10,9 +11,9 @@
 | demo | boolean | query | Non |  |
 | sso | string | query | Non |  |
 
-## Réponse
+## Response
 
-Renvoie : [`ModerationAPIGetCommentIdsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_api_get_comment_ids_response.go)
+Retourne : [`ModerationAPIGetCommentIdsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_api_get_comment_ids_response.go)
 
 ## Exemple
 
@@ -28,22 +29,23 @@ import (
 )
 
 func main() {
-	textSearch := "textSearch_example" // string |  (optionnel)
-	byIPFromComment := "byIPFromComment_example" // string |  (optionnel)
-	filters := "filters_example" // string |  (optionnel)
-	searchFilters := "searchFilters_example" // string |  (optionnel)
-	afterId := "afterId_example" // string |  (optionnel)
-	demo := true // bool |  (optionnel)
-	sso := "sso_example" // string |  (optionnel)
+	tenantId := "tenantId_example" // string | 
+	textSearch := "textSearch_example" // string |  (facultatif)
+	byIPFromComment := "byIPFromComment_example" // string |  (facultatif)
+	filters := "filters_example" // string |  (facultatif)
+	searchFilters := "searchFilters_example" // string |  (facultatif)
+	afterId := "afterId_example" // string |  (facultatif)
+	demo := true // bool |  (facultatif)
+	sso := "sso_example" // string |  (facultatif)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetApiIds(context.Background()).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).AfterId(afterId).Demo(demo).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetApiIds(context.Background()).TenantId(tenantId).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).AfterId(afterId).Demo(demo).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetApiIds``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Erreur lors de l'appel `ModerationAPI.GetApiIds``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Réponse HTTP complète : %v\n", r)
 	}
 	// réponse de `GetApiIds` : ModerationAPIGetCommentIdsResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetApiIds`: %v\n", resp)
+	fmt.Fprintf(os.Stdout, "Réponse de `ModerationAPI.GetApiIds` : %v\n", resp)
 }
 [inline-code-end]

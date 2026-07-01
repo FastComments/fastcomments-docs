@@ -1,4 +1,4 @@
-## Παράμετροι
+## Parameters
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
@@ -6,8 +6,7 @@
 | commentId | string | Ναι |  |
 | broadcastId | string | Όχι |  |
 | commentTextUpdateRequest | CommentTextUpdateRequest | Όχι |  |
-| editKey | string | Όχι |  |
-| sso | string | Όχι |  |
+| options | SetCommentTextOptions | Όχι |  |
 
 ## Απάντηση
 
@@ -15,19 +14,16 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα setCommentText'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'setCommentText Παράδειγμα'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
+let commentUpdate = CommentTextUpdateRequest(text: "Updated comment text")
+let opts = SetCommentTextOptions()
 let (response, httpResponse) = client.setCommentText(
   tenantId = "my-tenant-123",
-  commentId = "cmt-456789",
-  broadcastId = "",
-  commentTextUpdateRequest = CommentTextUpdateRequest(text: "Updated comment text to fix a typo and clarify meaning."),
-  editKey = "",
-  sso = ""
-)
+  commentId = "cmt-456",
+  broadcastId = "broadcast-789",
+  commentTextUpdateRequest = commentUpdate,
+  options = opts)
 if response.isSome:
   let result = response.get()
-  discard result
 [inline-code-end]
-
----

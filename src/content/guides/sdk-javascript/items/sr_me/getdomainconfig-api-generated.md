@@ -1,26 +1,23 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| domain | string | Да |  |
+| tenantId | string | Yes |  |
+| domain | string | Yes |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetDomainConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetDomainConfigResponse.ts)
+Returns: [`GetDomainConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetDomainConfigResponse.ts)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'getDomainConfig Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getDomainConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-type DomainModeration = { moderation?: { enabled?: boolean; mode?: string } };
-
-const tenantId: string = "tc_4b6f9d2a9e1f";
-const domain: string = "comments.newsdaily.com";
-const config: GetDomainConfigResponse = await getDomainConfig(tenantId, domain);
-
-const moderationEnabled: boolean | undefined = (config as unknown as DomainModeration).moderation?.enabled;
-const moderationMode: string | undefined = (config as unknown as DomainModeration).moderation?.mode;
+async function main() {
+  const tenantId: string = "acme-corp-123";
+  const domain: string = "blog.acme.com";
+  const config: GetDomainConfigResponse = await getDomainConfig(tenantId, domain);
+  console.log(config);
+}
+main();
 [inline-code-end]
-
----

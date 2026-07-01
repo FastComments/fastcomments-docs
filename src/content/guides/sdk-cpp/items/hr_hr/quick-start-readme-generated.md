@@ -1,8 +1,8 @@
 ### Korištenje autentificiranih API-ja (DefaultAPI)
 
 **Važno:**
-1. Morate postaviti osnovni URL (generator cpp-restsdk ga ne čita iz OpenAPI specifikacije)
-2. Morate postaviti svoj API ključ na ApiClient prije slanja autentificiranih zahtjeva. Ako to ne učinite, zahtjevi će završiti s greškom 401.
+1. Morate postaviti osnovni URL (cpp-restsdk generator ne čita ga iz OpenAPI specifikacije)
+2. Morate postaviti svoj API ključ na ApiClient prije nego što izvršite autentificirane zahtjeve. Ako to ne učinite, zahtjevi će propasti s 401 greškom.
 
 ```cpp
 #include <iostream>
@@ -23,14 +23,14 @@ int main() {
     auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
     org::openapitools::client::api::DefaultApi api(apiClient);
 
-    // Sada napravite autentificirane API pozive
+    // Sada izvršite autentificirane API pozive
     return 0;
 }
 ```
 
 ### Korištenje javnih API-ja (PublicAPI)
 
-Javni endpointi ne zahtijevaju autentifikaciju:
+Javni krajnji točke ne zahtijevaju autentifikaciju:
 
 ```cpp
 #include <iostream>
@@ -47,15 +47,14 @@ int main() {
     auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
     org::openapitools::client::api::PublicApi publicApi(apiClient);
 
-    // Napravite javne API pozive
+    // Izvršite javne API pozive
     return 0;
 }
 ```
 
 ### Korištenje moderacijskih API-ja (ModerationApi)
 
-The `ModerationApi` powers the moderator dashboard. Every method accepts an `sso` parameter so the call runs on behalf of an SSO-authenticated moderator (see the SSO section below
-for how to create a token):
+`ModerationApi` pokreće moderacijski nadzorno ploču. Svaka metoda prihvaća `sso` parametar kako bi se poziv izvršio u ime moderatora autentificiranog putem SSO (pogledajte odjeljak SSO ispod za način stvaranja tokena):
 
 ```cpp
 #include <iostream>
@@ -75,21 +74,17 @@ int main() {
     // Proslijedite SSO token moderatora za autentifikaciju poziva
     auto ssoToken = utility::conversions::to_string_t("YOUR_MODERATOR_SSO_TOKEN");
 
-    auto response = moderationApi.getCount(
-        boost::none,  // textSearch
-        boost::none,  // byIPFromComment
-        boost::none,  // filter
-        boost::none,  // searchFilters
-        boost::none,  // demo
-        ssoToken      // sso
-    ).get();
+    org::openapitools::client::api::GetCountOptions options;
+    options.sso = ssoToken;
+
+    auto response = moderationApi.getCount(options).get();
 
     return 0;
 }
 ```
 
-### Uobičajeni problemi
+### Česte poteškoće
 
-1. **"URI must contain a hostname" greška**: Provjerite da pozivate `config->setBaseUrl(utility::conversions::to_string_t("https://fastcomments.com"))` prije kreiranja ApiClienta. Generator cpp-restsdk automatski ne čita URL servera iz OpenAPI specifikacije.
-2. **401 "missing-api-key" greška**: Provjerite da pozivate `config->setApiKey(utility::conversions::to_string_t("api_key"), utility::conversions::to_string_t("YOUR_KEY"))` prije kreiranja instance DefaultAPI.
-3. **Pogrešna API klasa**: Koristite `DefaultApi` za autentificirane zahtjeve na strani poslužitelja, `PublicApi` za zahtjeve s klijentske strane/javne zahtjeve, i `ModerationApi` za zahtjeve nadzorne ploče moderatora (autentificirane SSO tokenom moderatora).
+1. **"URI mora sadržavati naziv hosta" greška**: Provjerite da pozovete `config->setBaseUrl(utility::conversions::to_string_t("https://fastcomments.com"))` prije stvaranja ApiClient-a. cpp-restsdk generator ne čita automatski URL poslužitelja iz OpenAPI specifikacije.
+2. **401 "missing-api-key" greška**: Provjerite da pozovete `config->setApiKey(utility::conversions::to_string_t("api_key"), utility::conversions::to_string_t("YOUR_KEY"))` prije stvaranja DefaultAPI instance.
+3. **Pogrešna API klasa**: Koristite `DefaultApi` za autentificirane zahtjeve na strani poslužitelja, `PublicApi` za zahtjeve na klijentskoj strani/javni zahtjevi i `ModerationApi` za zahtjeve nadzorne ploče moderatora (autentificirano s SSO tokenom moderatora).

@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | broadcastId | string | query | Ne |  |
@@ -8,7 +8,7 @@
 | doSpamCheck | boolean | query | Ne |  |
 | skipDupCheck | boolean | query | Ne |  |
 
-## Odziv
+## Odgovor
 
 Vrne: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateFeedPostsResponse.swift)
 
@@ -16,7 +16,7 @@ Vrne: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-s
 
 [inline-code-attrs-start title = 'createFeedPost Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Naslednji primeri kode so še v beta fazi. Za katerokoli težavo, poročajte preko http://github.com/OpenAPITools/openapi-generator/issues/new
+// Naslednji vzorci kode so še beta. Za morebitne težave, prosimo poročajte preko http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -26,7 +26,7 @@ let isLive = true // Bool |  (neobvezno)
 let doSpamCheck = true // Bool |  (neobvezno)
 let skipDupCheck = true // Bool |  (neobvezno)
 
-DefaultAPI.createFeedPost(tenantId: tenantId, createFeedPostParams: createFeedPostParams, broadcastId: broadcastId, isLive: isLive, doSpamCheck: doSpamCheck, skipDupCheck: skipDupCheck) { (response, error) in
+DefaultAPI.createFeedPost(tenantId: tenantId, createFeedPostParams: createFeedPostParams, options: DefaultAPI.CreateFeedPostOptions(broadcastId: broadcastId, isLive: isLive, doSpamCheck: doSpamCheck, skipDupCheck: skipDupCheck)) { (response, error) in
     guard error == nil else {
         print(error)
         return

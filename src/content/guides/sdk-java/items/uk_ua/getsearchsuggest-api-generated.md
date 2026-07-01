@@ -1,9 +1,10 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
-| text-search | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Так |  |
+| text-search | string | query | Ні |  |
+| sso | string | query | Ні |  |
 
 ## Відповідь
 
@@ -13,7 +14,7 @@
 
 [inline-code-attrs-start title = 'Приклад getSearchSuggest'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Імпорт класів:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,19 +27,20 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String textSearch = "textSearch_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationSuggestResponse result = apiInstance.getSearchSuggest()
+      ModerationSuggestResponse result = apiInstance.getSearchSuggest(tenantId)
             .textSearch(textSearch)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ModerationApi#getSearchSuggest");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("Виключення при виклику ModerationApi#getSearchSuggest");
+      System.err.println("Код статусу: " + e.getCode());
+      System.err.println("Причина: " + e.getResponseBody());
+      System.err.println("Заголовки відповіді: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }

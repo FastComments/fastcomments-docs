@@ -1,30 +1,20 @@
-## 매개변수
+## Parameters
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tag | string | 아니오 |  |
-| tenantId | string | 예 |  |
-| deleteHashTagRequestBody | DeleteHashTagRequestBody | 아니오 |  |
+| 이름 | 타입 | 필수 | 설명 |
+|------|------|------|------|
+| tenantId | string | Yes |  |
+| tag | string | No |  |
+| deleteHashTagRequestBody | DeleteHashTagRequestBody | No |  |
 
-## 응답
+## Response
 
 반환: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'deleteHashTag 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteHashTag 예시'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteHashTag(
-  tag = "",
-  tenantId = "my-tenant-123",
-  deleteHashTagRequestBody = DeleteHashTagRequestBody()
-)
-
-if response.isSome:
-  let emptyResp = response.get()
-  echo "Deleted hashtag for tenant my-tenant-123; response:", $emptyResp, " status:", $httpResponse.status
-else:
-  echo "No response body; status:", $httpResponse.status
+let (apiResp, httpResp) = client.deleteHashTag(tenantId = "my-tenant-123", tag = "sports", deleteHashTagRequestBody = DeleteHashTagRequestBody())
+if apiResp.isSome:
+  let emptyResp = apiResp.get()
 [inline-code-end]
-
----

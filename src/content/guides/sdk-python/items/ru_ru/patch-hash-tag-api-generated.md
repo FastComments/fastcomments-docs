@@ -1,15 +1,15 @@
-## Параметры
+## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tag | string | path | Да |  |
-| tenantId | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| tag | string | path | Yes |  |
 
-## Ответ
+## Response
 
-Возвращает: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_hash_tag_response.py)
+Returns: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_hash_tag_response.py)
 
-## Пример
+## Example
 
 [inline-code-attrs-start title = 'Пример patch_hash_tag'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -19,33 +19,29 @@ from client.models.update_hash_tag_response import UpdateHashTagResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Указание host необязательно и по умолчанию — https://fastcomments.com
-# См. configuration.py для списка всех поддерживаемых параметров конфигурации.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
-
+# Определение хоста необязательно и по умолчанию равно https://fastcomments.com
+# См. файл configuration.py для списка всех поддерживаемых параметров конфигурации.
 # Клиент должен настроить параметры аутентификации и авторизации
-# в соответствии с политикой безопасности API-сервера.
-# Ниже приведены примеры для каждого метода аутентификации, используйте пример, который
-# соответствует вашему сценарию использования.
+# в соответствии с политикой безопасности сервера API.
+# Примеры для каждого метода аутентификации представлены ниже, используйте пример,
+# который соответствует вашему случаю использования аутентификации.
 
 # Настройка авторизации с помощью API-ключа: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для API-ключа, если требуется
+# Раскомментируйте ниже, чтобы задать префикс (например, Bearer) для API-ключа, если необходимо
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Откройте контекст с экземпляром API-клиента
+# Войдите в контекст с экземпляром клиента API
 with client.ApiClient(configuration) as api_client:
-    # Создайте экземпляр класса API
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     tag = 'tag_example' # str | 
-    tenant_id = 'tenant_id_example' # str |  (необязательно)
-    update_hash_tag_body = client.UpdateHashTagBody() # UpdateHashTagBody |  (необязательно)
+    update_hash_tag_body = client.UpdateHashTagBody() # UpdateHashTagBody |  (optional)
 
     try:
-        api_response = api_instance.patch_hash_tag(tag, tenant_id=tenant_id, update_hash_tag_body=update_hash_tag_body)
+        api_response = api_instance.patch_hash_tag(tenant_id, tag, update_hash_tag_body)
         print("The response of DefaultApi->patch_hash_tag:\n")
         pprint(api_response)
     except Exception as e:

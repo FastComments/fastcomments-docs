@@ -1,8 +1,8 @@
----
 ## Parametreler
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Evet |  |
 | commentId | string | path | Evet |  |
 | banEmail | boolean | query | Hayır |  |
 | banEmailDomain | boolean | query | Hayır |  |
@@ -20,12 +20,13 @@ Döndürür: [`BanUserFromCommentResult`](https://github.com/FastComments/fastco
 
 ## Örnek
 
-[inline-code-attrs-start title = 'post_ban_user_from_comment Örneği'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_ban_user_from_comment Örnek'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 comment_id = 'comment_id_example' # String | 
 opts = {
   ban_email: true, # Boolean | 
@@ -41,11 +42,9 @@ opts = {
 
 begin
   
-  result = api_instance.post_ban_user_from_comment(comment_id, opts)
+  result = api_instance.post_ban_user_from_comment(tenant_id, comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_ban_user_from_comment: #{e}"
 end
 [inline-code-end]
-
----

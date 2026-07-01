@@ -1,32 +1,31 @@
-## Параметри
+## Parameters
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| bulkAggregateQuestionResultsRequest | BulkAggregateQuestionResultsRequest | Да |  |
-| forceRecalculate | boolean | Не |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Da |  |
+| bulkAggregateQuestionResultsRequest | BulkAggregateQuestionResultsRequest | Da |  |
+| forceRecalculate | boolean | Ne |  |
 
-## Одговор
+## Response
 
-Враћа: [`BulkAggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BulkAggregateQuestionResultsResponse.ts)
+Vraća: [`BulkAggregateQuestionResultsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BulkAggregateQuestionResultsResponse1.ts)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример bulkAggregateQuestionResults'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'bulkAggregateQuestionResults Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_3f9b2c1a';
-const items: BulkAggregateQuestionItem[] = [
-  {
-    questionId: 'q_92f1b7',
-    metrics: ['responses', 'upvotes'],
-    timeBuckets: [
-      { start: '2026-05-01T00:00:00Z', end: '2026-05-07T23:59:59Z', interval: 'day' }
-    ]
-  }
-];
-const bulkAggregateQuestionResultsRequest: BulkAggregateQuestionResultsRequest = { items };
-const forceRecalculate: boolean = true;
-const result: BulkAggregateQuestionResultsResponse = await bulkAggregateQuestionResults(tenantId, bulkAggregateQuestionResultsRequest, forceRecalculate);
-[inline-code-end]
+const tenantId: string = "acme-corp";
 
----
+const request: BulkAggregateQuestionResultsRequest = {
+  questionIds: ["product-satisfaction", "feature-usage"],
+  startDate: "2024-01-01T00:00:00Z",
+  endDate: "2024-01-31T23:59:59Z",
+  timeBucket: "day"
+};
+
+const result: BulkAggregateQuestionResultsResponse1 = await bulkAggregateQuestionResults(
+  tenantId,
+  request,
+  true
+);
+[inline-code-end]

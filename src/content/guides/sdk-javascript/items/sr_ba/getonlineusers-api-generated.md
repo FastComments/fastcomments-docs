@@ -1,28 +1,36 @@
-Trenutno online gledaoci stranice: osobe čija je websocket sesija trenutno pretplaćena na stranicu.
-Vraća anonCount + totalCount (pretplatnici cijele sobe, uključujući anonimne gledaoce koje ne navodimo).
+Trenutno aktivni gledatelji stranice: ljudi čija je WebSocket sesija trenutno pretplaćena na stranicu.  
+Vraća anonCount + totalCount (pretplatnici u cijeloj sobi, uključujući anonimne gledatelje koje ne navodimo).
 
-## Parametri
+## Parameters
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| urlId | string | Da |  |
-| afterName | string | Ne |  |
-| afterUserId | string | Ne |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| afterName | string | No |  |
+| afterUserId | string | No |  |
 
-## Odgovor
+## Response
 
-Vraća: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOnlineResponse.ts)
+Returns: [`GetOnlineUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOnlineUsersResponse.ts)
 
-## Primjer
+## Example
 
-[inline-code-attrs-start title = 'getOnlineUsers Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getOnlineUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8f3c2b7';
-const urlId: string = 'article-2026-06-19-site-update';
-const afterName: string = 'michael.hansen';
-const afterUserId: string = 'user_00421';
-const onlineUsers: PageUsersOnlineResponse = await getOnlineUsers(tenantId, urlId, afterName, afterUserId);
-[inline-code-end]
+async function demoOnlineUsers() {
+  const tenantId: string = "tenant_12345";
+  const urlId: string = "url_98765";
 
----
+  // With optional pagination parameters
+  const pagedResult: GetOnlineUsersResponse = await getOnlineUsers(
+    tenantId,
+    urlId,
+    "alice_smith",
+    "user_9"
+  );
+
+  // Without optional pagination parameters
+  const fullResult: GetOnlineUsersResponse = await getOnlineUsers(tenantId, urlId);
+}
+[inline-code-end]

@@ -1,7 +1,8 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Име | Тип | Местоположение | Задължително | Описание |
+|------|------|----------------|--------------|----------|
+| tenantId | string | query | Да |  |
 | includeByUserIdAndEmail | boolean | query | Не |  |
 | includeByIP | boolean | query | Не |  |
 | includeByEmailDomain | boolean | query | Не |  |
@@ -13,18 +14,19 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за postBulkPreBanSummary'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postBulkPreBanSummary Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следните примерни фрагменти от код все още са в бета. За всеки проблем, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следващите примерни кодове все още са бета. За каквито и да е проблеми, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let bulkPreBanParams = BulkPreBanParams(commentIds: ["commentIds_example"]) // BulkPreBanParams | 
-let includeByUserIdAndEmail = true // Bool |  (незадължително)
-let includeByIP = true // Bool |  (незадължително)
-let includeByEmailDomain = true // Bool |  (незадължително)
-let sso = "sso_example" // String |  (незадължително)
+let includeByUserIdAndEmail = true // Bool |  (по избор)
+let includeByIP = true // Bool |  (по избор)
+let includeByEmailDomain = true // Bool |  (по избор)
+let sso = "sso_example" // String |  (по избор)
 
-ModerationAPI.postBulkPreBanSummary(bulkPreBanParams: bulkPreBanParams, includeByUserIdAndEmail: includeByUserIdAndEmail, includeByIP: includeByIP, includeByEmailDomain: includeByEmailDomain, sso: sso) { (response, error) in
+ModerationAPI.postBulkPreBanSummary(tenantId: tenantId, bulkPreBanParams: bulkPreBanParams, options: ModerationAPI.PostBulkPreBanSummaryOptions(includeByUserIdAndEmail: includeByUserIdAndEmail, includeByIP: includeByIP, includeByEmailDomain: includeByEmailDomain, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -35,5 +37,3 @@ ModerationAPI.postBulkPreBanSummary(bulkPreBanParams: bulkPreBanParams, includeB
     }
 }
 [inline-code-end]
-
----

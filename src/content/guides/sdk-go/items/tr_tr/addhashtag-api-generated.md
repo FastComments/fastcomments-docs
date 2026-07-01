@@ -1,12 +1,12 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Zorunlu | Açıklama |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Hayır |  |
+| tenantId | string | query | Yes |  |
 
 ## Yanıt
 
-Dönüş değeri: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_hash_tag_response.go)
+Döndürür: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_hash_tag_response.go)
 
 ## Örnek
 
@@ -22,7 +22,7 @@ import (
 )
 
 func main() {
-	tenantId := "tenantId_example" // string |  (isteğe bağlı)
+	tenantId := "tenantId_example" // string | 
 	createHashTagBody := *openapiclient.NewCreateHashTagBody("Tag_example") // CreateHashTagBody |  (isteğe bağlı)
 
 	configuration := openapiclient.NewConfiguration()
@@ -32,7 +32,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.AddHashTag``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `AddHashTag`'tan gelen yanıt: CreateHashTagResponse
+	// `AddHashTag` yanıtı: CreateHashTagResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.AddHashTag`: %v\n", resp)
 }
 [inline-code-end]

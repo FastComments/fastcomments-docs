@@ -1,8 +1,9 @@
 ## 매개변수
 
-| Name | Type | Location | Required | Description |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| sso | string | query | 아니요 |  |
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## 응답
 
@@ -22,16 +23,17 @@ import (
 )
 
 func main() {
-	sso := "sso_example" // string |  (선택 사항)
+	tenantId := "tenantId_example" // string | 
+	sso := "sso_example" // string |  (옵션)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetCounts(context.Background()).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetCounts(context.Background()).TenantId(tenantId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetCounts``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `GetCounts`의 응답: GetBannedUsersCountResponse
+	// response from `GetCounts`: GetBannedUsersCountResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetCounts`: %v\n", resp)
 }
 [inline-code-end]

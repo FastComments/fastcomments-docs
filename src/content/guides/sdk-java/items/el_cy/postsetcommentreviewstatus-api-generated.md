@@ -1,12 +1,14 @@
-## Παράμετροι
+## Παραμέτρους
 
-| Όνομα | Τύπος | Location | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|------------|------------|
+| tenantId | string | query | Ναι |  |
 | commentId | string | path | Ναι |  |
 | reviewed | boolean | query | Όχι |  |
+| broadcastId | string | query | Όχι |  |
 | sso | string | query | Όχι |  |
 
-## Απάντηση
+## Απόκριση
 
 Επιστρέφει: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
@@ -27,12 +29,15 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     Boolean reviewed = true; // Boolean | 
+    String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      APIEmptyResponse result = apiInstance.postSetCommentReviewStatus(commentId)
+      APIEmptyResponse result = apiInstance.postSetCommentReviewStatus(tenantId, commentId)
             .reviewed(reviewed)
+            .broadcastId(broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -46,5 +51,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

@@ -2,6 +2,7 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | value | string | query | No |  |
 | sso | string | query | No |  |
 
@@ -11,7 +12,7 @@ Zwraca: [`ModerationUserSearchResponse`](https://github.com/FastComments/fastcom
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład getSearchUsers'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSearchUsers Przykład'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -19,19 +20,22 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Jeśli chcesz użyć niestandardowego klienta HTTP, przekaż klienta, który implementuje `GuzzleHttp\ClientInterface`.
-    // To opcjonalne, domyślnie używany będzie `GuzzleHttp\Client`.
+    // Jeśli chcesz użyć własnego klienta HTTP, przekaż swój klient, który implementuje `GuzzleHttp\ClientInterface`.
+    // To jest opcjonalne, `GuzzleHttp\Client` zostanie użyty jako domyślny.
     new GuzzleHttp\Client()
 );
-$value = 'value_example'; // string
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // string
+$options = [
+    'value' => 'value_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->getSearchUsers($value, $sso);
+    $result = $apiInstance->getSearchUsers($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getSearchUsers: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

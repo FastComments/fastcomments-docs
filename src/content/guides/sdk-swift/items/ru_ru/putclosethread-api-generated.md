@@ -1,10 +1,10 @@
----
 ## Параметры
 
 | Имя | Тип | Местоположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| urlId | string | query | Да |  |
-| sso | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Ответ
 
@@ -12,15 +12,16 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'putCloseThread Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример putCloseThread'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие примеры кода всё ещё находятся в стадии бета. Если возникнут проблемы, пожалуйста, сообщите через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следующие образцы кода все еще находятся в бета-версии. При любых проблемах, пожалуйста, сообщайте через http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
 let sso = "sso_example" // String |  (необязательно)
 
-ModerationAPI.putCloseThread(urlId: urlId, sso: sso) { (response, error) in
+ModerationAPI.putCloseThread(tenantId: tenantId, urlId: urlId, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -31,5 +32,3 @@ ModerationAPI.putCloseThread(urlId: urlId, sso: sso) { (response, error) in
     }
 }
 [inline-code-end]
-
----

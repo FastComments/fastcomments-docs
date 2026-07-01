@@ -1,36 +1,33 @@
-啟用或停用特定留言的通知。
+---
+為特定評論啟用或停用通知。
 
 ## 參數
 
-| 名稱 | 類型 | 必填 | 說明 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| notificationId | string | 是 |  |
-| optedInOrOut | string | 是 |  |
-| commentId | string | 是 |  |
-| sso | string | 否 |  |
+| tenantId | string | Yes |  |
+| notificationId | string | Yes |  |
+| optedInOrOut | string | Yes |  |
+| commentId | string | Yes |  |
+| sso | string | No |  |
 
 ## 回應
 
-回傳：[`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UpdateUserNotificationCommentSubscriptionStatusResponse.h)
+返回：[`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UpdateUserNotificationCommentSubscriptionStatusResponse.h)
 
 ## 範例
 
 [inline-code-attrs-start title = 'updateUserNotificationCommentSubscriptionStatus 範例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t notificationId = U("notif-456");
-utility::string_t optedInOrOut = U("opted_in");
-utility::string_t commentId = U("cmt-789");
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("sso-jwt-abc123"));
-api->updateUserNotificationCommentSubscriptionStatus(tenantId, notificationId, optedInOrOut, commentId, sso)
-.then([](pplx::task<std::shared_ptr<UpdateUserNotificationCommentSubscriptionStatusResponse>> t) {
-    try {
-        auto resp = t.get();
-        if(!resp) resp = std::make_shared<UpdateUserNotificationCommentSubscriptionStatusResponse>();
-        std::cout << "Subscription update completed" << std::endl;
-    } catch(const std::exception& e) {
-        std::cout << "Error updating subscription: " << e.what() << std::endl;
-    }
+auto updateTask = api->updateUserNotificationCommentSubscriptionStatus(
+    utility::conversions::to_string_t("my-tenant-123"),
+    utility::conversions::to_string_t("notif-456"),
+    utility::conversions::to_string_t("optedIn"),
+    utility::conversions::to_string_t("comment-789"),
+    boost::optional<utility::string_t>(utility::conversions::to_string_t("sso-token-abc"))
+).then([](std::shared_ptr<UpdateUserNotificationCommentSubscriptionStatusResponse> resp){
+    (void)resp;
 });
 [inline-code-end]
+
+---

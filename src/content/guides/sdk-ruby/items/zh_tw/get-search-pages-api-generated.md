@@ -1,13 +1,14 @@
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 描述 |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | 是 |  |
 | value | string | query | 否 |  |
 | sso | string | query | 否 |  |
 
 ## 回應
 
-回傳: [`ModerationPageSearchResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/moderation_page_search_response.rb)
+Returns: [`ModerationPageSearchResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/moderation_page_search_response.rb)
 
 ## 範例
 
@@ -17,6 +18,7 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # 字串 | 
 opts = {
   value: 'value_example', # 字串 | 
   sso: 'sso_example' # 字串 | 
@@ -24,11 +26,9 @@ opts = {
 
 begin
   
-  result = api_instance.get_search_pages(opts)
+  result = api_instance.get_search_pages(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_search_pages: #{e}"
 end
 [inline-code-end]
-
----

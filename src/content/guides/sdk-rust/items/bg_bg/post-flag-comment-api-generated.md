@@ -1,9 +1,10 @@
----
 ## Параметри
 
-| Име | Тип | Задължителен | Описание |
-|------|------|----------|-------------|
+| Име | Тип | Задължително | Описание |
+|------|------|--------------|----------|
+| tenant_id | String | Да |  |
 | comment_id | String | Да |  |
+| broadcast_id | String | Не |  |
 | sso | String | Не |  |
 
 ## Отговор
@@ -12,16 +13,16 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'post_flag_comment Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за post_flag_comment'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let params: PostFlagCommentParams = PostFlagCommentParams {
-        comment_id: String::from("news/acme-corp/article-237/comment-8421"),
-        sso: Some(String::from("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.acme-sso-payload")),
+async fn flag_comment_example() -> Result<(), Error> {
+    let params = PostFlagCommentParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: "comment-9f8e7d".to_string(),
+        broadcast_id: Some("broadcast-2024-01".to_string()),
+        sso: Some("sso-uid-12345".to_string()),
     };
-    let response: ApiEmptyResponse = post_flag_comment(&configuration, params).await?;
+    post_flag_comment(&config, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

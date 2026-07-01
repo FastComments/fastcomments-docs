@@ -1,11 +1,11 @@
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| namespace | string | path | 是 |  |
-| component | string | path | 是 |  |
-| locale | string | query | 否 |  |
-| useFullTranslationIds | boolean | query | 否 |  |
+| namespace | string | path | Yes |  |
+| component | string | path | Yes |  |
+| locale | string | query | No |  |
+| useFullTranslationIds | boolean | query | No |  |
 
 ## 响应
 
@@ -21,17 +21,21 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // 如果您想使用自定义的 HTTP 客户端，请传入实现 `GuzzleHttp\ClientInterface` 的客户端。
-    // 这是可选的，默认将使用 `GuzzleHttp\Client`。
+    // 如果您想使用自定义 HTTP 客户端，请传入实现 `GuzzleHttp\ClientInterface` 的客户端。
+    // 这是可选的，默认使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client()
 );
-$namespace = 'namespace_example'; // 字符串
-$component = 'component_example'; // 字符串
-$locale = 'locale_example'; // 字符串
-$use_full_translation_ids = True; // 布尔值
+
+$namespace = 'namespace_example'; // string
+$component = 'component_example'; // string
+$options = [
+    'locale' => 'locale_example', // string
+    'use_full_translation_ids' => True, // bool
+];
+
 
 try {
-    $result = $apiInstance->getTranslations($namespace, $component, $locale, $use_full_translation_ids);
+    $result = $apiInstance->getTranslations($namespace, $component, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getTranslations: ', $e->getMessage(), PHP_EOL;

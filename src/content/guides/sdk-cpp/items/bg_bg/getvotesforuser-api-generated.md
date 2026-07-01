@@ -4,8 +4,7 @@
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | urlId | string | Да |  |
-| userId | string | Не |  |
-| anonUserId | string | Не |  |
+| options | const GetVotesForUserOptions& | Да |  |
 
 ## Отговор
 
@@ -13,19 +12,16 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за getVotesForUser'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getVotesForUser'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t urlId = U("/articles/2026/06/new-features");
-boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U("user@example.com"));
-boost::optional<utility::string_t> anonUserId;
-api->getVotesForUser(tenantId, urlId, userId, anonUserId)
-.then([](pplx::task<std::shared_ptr<GetVotesForUserResponse>> t){
-    try {
-        auto resp = t.get();
-        if (!resp) resp = std::make_shared<GetVotesForUserResponse>();
-        (void)resp;
-    } catch (const std::exception&) {
+auto tenantId = utility::string_t(U("my-tenant-123"));
+auto urlId = utility::string_t(U("post-456"));
+GetVotesForUserOptions options;
+options.page = boost::optional<int>(2);
+options.pageSize = boost::optional<int>(50);
+api->getVotesForUser(tenantId, urlId, options).then([](std::shared_ptr<GetVotesForUserResponse> response) {
+    if (response) {
+        // обработи отговора, напр., обхождай гласовете
     }
 });
 [inline-code-end]

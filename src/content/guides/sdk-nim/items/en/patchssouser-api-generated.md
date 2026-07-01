@@ -15,22 +15,14 @@ Returns: [`Option[PatchSSOUserAPIResponse]`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'patchSSOUser Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let updateData: UpdateAPISSOUserData = UpdateAPISSOUserData(
-  name = "Alice Johnson",
-  email = "alice.johnson@newsorg.com",
-  externalId = "user-789",
-  roles = @["subscriber"],
-  avatarUrl = "https://cdn.newsorg.com/avatars/user-789.png"
-)
-
-let (response, httpResponse) = client.patchSSOUser(
+let updateData = UpdateAPISSOUserData()
+let (responseOpt, httpResponse) = client.patchSSOUser(
   tenantId = "my-tenant-123",
   id = "user-789",
   updateAPISSOUserData = updateData,
-  updateComments = true
-)
-
-if response.isSome:
-  let patched = response.get()
-  echo patched, " ", httpResponse.statusCode
+  updateComments = true)
+if responseOpt.isSome:
+  let response = responseOpt.get()
+  echo response
+echo httpResponse.statusCode
 [inline-code-end]

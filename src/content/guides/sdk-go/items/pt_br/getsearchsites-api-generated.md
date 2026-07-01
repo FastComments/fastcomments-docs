@@ -1,7 +1,8 @@
 ## Parâmetros
 
 | Nome | Tipo | Localização | Obrigatório | Descrição |
-|------|------|----------|----------|-------------|
+|------|------|-------------|--------------|-----------|
+| tenantId | string | query | Sim |  |
 | value | string | query | Não |  |
 | sso | string | query | Não |  |
 
@@ -11,7 +12,7 @@ Retorna: [`ModerationSiteSearchResponse`](https://github.com/FastComments/fastco
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de GetSearchSites'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo GetSearchSites'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,17 +24,18 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	value := "value_example" // string |  (opcional)
 	sso := "sso_example" // string |  (opcional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetSearchSites(context.Background()).Value(value).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetSearchSites(context.Background()).TenantId(tenantId).Value(value).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetSearchSites``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Erro ao chamar `ModerationAPI.GetSearchSites``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Resposta HTTP completa: %v\n", r)
 	}
 	// resposta de `GetSearchSites`: ModerationSiteSearchResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetSearchSites`: %v\n", resp)
+	fmt.Fprintf(os.Stdout, "Resposta de `ModerationAPI.GetSearchSites`: %v\n", resp)
 }
 [inline-code-end]

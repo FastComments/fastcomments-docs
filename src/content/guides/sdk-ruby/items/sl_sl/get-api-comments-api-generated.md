@@ -1,7 +1,8 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Ime | Tip | Lokacija | Obvezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
 | page | number | query | Ne |  |
 | count | number | query | Ne |  |
 | text-search | string | query | Ne |  |
@@ -24,6 +25,7 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 opts = {
   page: 1.2, # Float | 
   count: 1.2, # Float | 
@@ -38,11 +40,9 @@ opts = {
 
 begin
   
-  result = api_instance.get_api_comments(opts)
+  result = api_instance.get_api_comments(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
-  puts "Error when calling ModerationApi->get_api_comments: #{e}"
+  puts "Napaka pri klicu ModerationApi->get_api_comments: #{e}"
 end
 [inline-code-end]
-
----

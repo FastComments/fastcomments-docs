@@ -1,11 +1,11 @@
-## Parametry
+## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Tak |  |
-| id | string | path | Tak |  |
-| deleteComments | string | query | Nie |  |
-| commentDeleteMode | string | query | Nie |  |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| deleteComments | string | query | No |  |
+| commentDeleteMode | string | query | No |  |
 
 ## Odpowiedź
 
@@ -13,17 +13,17 @@ Zwraca: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład deleteTenantUser'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteTenantUser Przykład'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Poniższe przykłady kodu są nadal w wersji beta. W przypadku problemu zgłoś go przez http://github.com/OpenAPITools/openapi-generator/issues/new
+// Poniższe przykłady kodu są nadal w wersji beta. W razie problemów prosimy zgłaszać je pod adresem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let id = "id_example" // String | 
-let deleteComments = "deleteComments_example" // String |  (opcjonalnie)
-let commentDeleteMode = "commentDeleteMode_example" // String |  (opcjonalnie)
+let deleteComments = "deleteComments_example" // String |  (optional)
+let commentDeleteMode = "commentDeleteMode_example" // String |  (optional)
 
-DefaultAPI.deleteTenantUser(tenantId: tenantId, id: id, deleteComments: deleteComments, commentDeleteMode: commentDeleteMode) { (response, error) in
+DefaultAPI.deleteTenantUser(tenantId: tenantId, id: id, options: DefaultAPI.DeleteTenantUserOptions(deleteComments: deleteComments, commentDeleteMode: commentDeleteMode)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -34,5 +34,3 @@ DefaultAPI.deleteTenantUser(tenantId: tenantId, id: id, deleteComments: deleteCo
     }
 }
 [inline-code-end]
-
----

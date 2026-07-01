@@ -2,6 +2,7 @@
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Ja |  |
 | text-search | string | query | Nej |  |
 | byIPFromComment | string | query | Nej |  |
 | filter | string | query | Nej |  |
@@ -15,12 +16,13 @@ Returnerer: [`ModerationAPICountCommentsResponse`](https://github.com/FastCommen
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på get_count'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_count Eksempel'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 opts = {
   text_search: 'text_search_example', # String | 
   by_ip_from_comment: 'by_ip_from_comment_example', # String | 
@@ -32,7 +34,7 @@ opts = {
 
 begin
   
-  result = api_instance.get_count(opts)
+  result = api_instance.get_count(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_count: #{e}"

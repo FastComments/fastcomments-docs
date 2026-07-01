@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Name | Type | Required | Description |
+| Nombre | Tipo | Obligatorio | Descripción |
 |------|------|----------|-------------|
 | tenant_id | String | Sí |  |
 | id | String | Sí |  |
@@ -11,14 +11,16 @@ Devuelve: [`ApiEmptySuccessResponse`](https://github.com/FastComments/fastcommen
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de delete_user_badge'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo delete_user_badge'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: DeleteUserBadgeParams = DeleteUserBadgeParams {
-    tenant_id: "acme-newsroom-tenant".to_string(),
-    id: "badge-moderator-001".to_string(),
-};
-let include_related: Option<bool> = Some(false);
-let result: ApiEmptySuccessResponse = delete_user_badge(&configuration, params).await?;
+async fn remove_badge(config: &configuration::Configuration) -> Result<(), Error> {
+    let params: DeleteUserBadgeParams = DeleteUserBadgeParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "badge-abcde".to_string(),
+    };
+    let _ = delete_user_badge(config, params).await?;
+    Ok(())
+}
 [inline-code-end]
 
 ---

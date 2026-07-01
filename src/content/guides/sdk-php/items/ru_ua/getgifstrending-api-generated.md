@@ -1,19 +1,19 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Назва | Тип | Розташування | Обов’язково | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| locale | string | query | Нет |  |
-| rating | string | query | Нет |  |
-| page | number | query | Нет |  |
+| tenantId | string | path | Так |  |
+| locale | string | query | Ні |  |
+| rating | string | query | Ні |  |
+| page | number | query | Ні |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`GetGifsTrendingResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetGifsTrendingResponse.php)
+Повертає: [`GetGifsTrendingResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetGifsTrendingResponse.php)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример getGifsTrending'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад getGifsTrending'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -21,17 +21,21 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Если вы хотите использовать собственный HTTP-клиент, передайте клиент, который реализует `GuzzleHttp\ClientInterface`.
-    // Это необязательно, по умолчанию будет использоваться `GuzzleHttp\Client`.
+    // Якщо ви хочете використовувати власний HTTP-клієнт, передайте ваш клієнт, який реалізує `GuzzleHttp\ClientInterface`.
+    // Це необов’язково, за замовчуванням буде використано `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$locale = 'locale_example'; // string
-$rating = 'rating_example'; // string
-$page = 3.4; // float
+
+$tenant_id = 'tenant_id_example'; // рядок
+$options = [
+    'locale' => 'locale_example', // рядок
+    'rating' => 'rating_example', // рядок
+    'page' => 3.4, // float
+];
+
 
 try {
-    $result = $apiInstance->getGifsTrending($tenant_id, $locale, $rating, $page);
+    $result = $apiInstance->getGifsTrending($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getGifsTrending: ', $e->getMessage(), PHP_EOL;

@@ -1,37 +1,39 @@
-## Параметри
+## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| sso | string | query | Не |  |
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Response
 
-Враћа: [`GetTenantManualBadgesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenant_manual_badges_response.py)
+Returns: [`GetTenantManualBadgesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenant_manual_badges_response.py)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'Пример get_manual_badges'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer get_manual_badges'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.models.get_tenant_manual_badges_response import GetTenantManualBadgesResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинисање host-а је опционално и подразумевано је https://fastcomments.com
-# Погледајте configuration.py за листу подржаних параметара конфигурације.
+# Definisanje host-a je opciono i podrazumevano je https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih konfiguracionih parametara.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Уђите у контекст са инстанцом API клијента
+# Uđite u kontekst sa instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Креирајте инстанцу API класе
+    # Kreirajte instancu API klase
     api_instance = client.ModerationApi(api_client)
-    sso = 'sso_example' # str |  (опционо)
+    tenant_id = 'tenant_id_example' # str | 
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_manual_badges(sso=sso)
+        api_response = api_instance.get_manual_badges(tenant_id, sso=sso)
         print("The response of ModerationApi->get_manual_badges:\n")
         pprint(api_response)
     except Exception as e:

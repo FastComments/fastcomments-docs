@@ -1,14 +1,9 @@
+---
 ## Параметри
 
-| Name | Type | Required | Description |
+| Назва | Тип | Обов’язковий | Опис |
 |------|------|----------|-------------|
-| userId | string | Ні |  |
-| direction | SortDirections | Ні |  |
-| repliesToUserId | string | Ні |  |
-| page | float64 | Ні |  |
-| includei10n | bool | Ні |  |
-| locale | string | Ні |  |
-| isCrawler | bool | Ні |  |
+| options | GetCommentsForUserOptions | No |  |
 
 ## Відповідь
 
@@ -18,19 +13,18 @@
 
 [inline-code-attrs-start title = 'Приклад getCommentsForUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getCommentsForUser(
-  userId = "user-8421",
-  direction = SortDirections.Newest,
-  repliesToUserId = "",
-  page = 1.0,
-  includei10n = true,
-  locale = "en-US",
-  isCrawler = false
-)
+let (maybeResp, httpResp) = client.getCommentsForUser(options = GetCommentsForUserOptions(
+  tenantId = "my-tenant-123",
+  userId = "user-456",
+  page = 0,
+  pageSize = 20,
+  includeDeleted = false,
+  commentIds = @[]
+))
 
-if response.isSome:
-  let comments = response.get()
-  discard comments
+if maybeResp.isSome:
+  let resp = maybeResp.get()
+  discard resp
 [inline-code-end]
 
 ---

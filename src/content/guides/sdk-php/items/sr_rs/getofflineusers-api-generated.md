@@ -1,41 +1,45 @@
-Претходни коментатори на страници који тренутно нису на мрежи. Сортирано по displayName.
-Користите ово након што исцрпите /users/online да бисте приказали "Members" секцију.
-Курсорска пагинација по commenterName: сервер пролази делимични индекс {tenantId, urlId, commenterName} од afterName унапред користећи $gt, без трошкова $skip.
+Past komentatori na stranici koji NISU trenutno online. Sortirani po displayName.  
+Koristite ovo nakon što iscrpite /users/online da prikažete sekciju „Članovi“.  
+Kursor paginacija po commenterName: server prolazi kroz parcijalni {tenantId, urlId, commenterName} indeks od afterName napred putem $gt, bez troška $skip.
 
-## Параметри
+## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes | Идентификатор URL странице (очишћен на серверу). |
-| afterName | string | query | No | Курсор: проследите nextAfterName из претходног одговора. |
-| afterUserId | string | query | No | Курсор за разрешење везе: проследите nextAfterUserId из претходног одговора. Захтевано када је afterName подешен тако да везе по имену не испусте уносе. |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | path | Da |  |
+| urlId | string | query | Da | Identifikator URL-a stranice (čišćen na serveru). |
+| afterName | string | query | Ne | Kursor: prosledite nextAfterName iz prethodnog odgovora. |
+| afterUserId | string | query | Ne | Kursor razdvajač: prosledite nextAfterUserId iz prethodnog odgovora. Obavezno kada je afterName postavljen kako vezani nazivi ne bi izostavili unose. |
 
-## Одговор
+## Odgovor
 
-Враћа: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersOfflineResponse.php)
+Vraća: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersOfflineResponse.php)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример getOfflineUsers'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getOfflineUsers'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ако желите да користите прилагођени HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционо, подразумевано ће бити коришћен `GuzzleHttp\Client`.
+// $apiInstance = new FastComments\Client\Api\PublicApi(
+    // Ako želite koristiti prilagođeni http klijent, prosledite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opciono, podrazumevano će se koristiti `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$url_id = 'url_id_example'; // string | Идентификатор URL странице (очишћен на серверу).
-$after_name = 'after_name_example'; // string | Курсор: проследите nextAfterName из претходног одговора.
-$after_user_id = 'after_user_id_example'; // string | Курсор за разрешење везе: проследите nextAfterUserId из претходног одговора. Обавезно када је afterName подешен, како би везе по имену не испустиле уносе.
+$url_id = 'url_id_example'; // string | Identifikator URL-a stranice (čišćen na serveru).
+$options = [
+    'after_name' => 'after_name_example', // string | Kursor: prosledite nextAfterName iz prethodnog odgovora.
+    'after_user_id' => 'after_user_id_example', // string | Kursor razdvajač: prosledite nextAfterUserId iz prethodnog odgovora. Obavezno kada je afterName postavljen kako vezani nazivi ne bi izostavili unose.
+];
+
 
 try {
-    $result = $apiInstance->getOfflineUsers($tenant_id, $url_id, $after_name, $after_user_id);
+    $result = $apiInstance->getOfflineUsers($tenant_id, $url_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getOfflineUsers: ', $e->getMessage(), PHP_EOL;

@@ -1,9 +1,10 @@
 ## Parametreler
 
-| Ad | Tip | Konum | Gerekli | Açıklama |
-|------|------|----------|----------|-------------|
+| Ad      | Tip    | Konum | Gerekli | Açıklama |
+|---------|--------|-------|---------|----------|
+| tenantId | string | query | Evet |  |
 | commentId | string | path | Evet |  |
-| sso | string | query | Hayır |  |
+| sso      | string | query | Hayır |  |
 
 ## Yanıt
 
@@ -11,7 +12,7 @@ Döndürür: [`GetCommentBanStatusResponse`](https://github.com/FastComments/fas
 
 ## Örnek
 
-[inline-code-attrs-start title = 'GetCommentBanStatus Örneği'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GetCommentBanStatus Örnek'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,17 +24,18 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
 	sso := "sso_example" // string |  (isteğe bağlı)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetCommentBanStatus(context.Background(), commentId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetCommentBanStatus(context.Background(), commentId).TenantId(tenantId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetCommentBanStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `GetCommentBanStatus`'tan yanıt: GetCommentBanStatusResponse
+	// `GetCommentBanStatus`'dan yanıt: GetCommentBanStatusResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetCommentBanStatus`: %v\n", resp)
 }
 [inline-code-end]

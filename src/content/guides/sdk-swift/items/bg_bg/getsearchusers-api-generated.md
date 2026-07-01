@@ -1,9 +1,10 @@
 ## Параметри
 
-| Име | Тип | Местоположение | Задължително | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| value | string | query | Не |  |
-| sso | string | query | Не |  |
+| tenantId | string | query | Yes |  |
+| value | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Отговор
 
@@ -13,13 +14,14 @@
 
 [inline-code-attrs-start title = 'Пример за getSearchUsers'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следните примери с код все още са в бета. За всеки проблем, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следващите примерни кодове все още са в бета. При какъвто и да е проблем, моля, подайте доклад чрез http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let value = "value_example" // String |  (незадължително)
-let sso = "sso_example" // String |  (незадължително)
+let tenantId = "tenantId_example" // String | 
+let value = "value_example" // String |  (по избор)
+let sso = "sso_example" // String |  (по избор)
 
-ModerationAPI.getSearchUsers(value: value, sso: sso) { (response, error) in
+ModerationAPI.getSearchUsers(tenantId: tenantId, options: ModerationAPI.GetSearchUsersOptions(value: value, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

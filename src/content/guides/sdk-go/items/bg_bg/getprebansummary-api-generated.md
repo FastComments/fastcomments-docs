@@ -1,13 +1,13 @@
----
 ## Параметри
 
 | Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Да |  |
-| includeByUserIdAndEmail | boolean | query | Не |  |
-| includeByIP | boolean | query | Не |  |
-| includeByEmailDomain | boolean | query | Не |  |
-| sso | string | query | Не |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| includeByUserIdAndEmail | boolean | query | No |  |
+| includeByIP | boolean | query | No |  |
+| includeByEmailDomain | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Отговор
 
@@ -15,7 +15,7 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за GetPreBanSummary'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GetPreBanSummary пример'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -27,22 +27,21 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
-	includeByUserIdAndEmail := true // bool |  (по избор)
-	includeByIP := true // bool |  (по избор)
-	includeByEmailDomain := true // bool |  (по избор)
-	sso := "sso_example" // string |  (по избор)
+	includeByUserIdAndEmail := true // bool |  (optional)
+	includeByIP := true // bool |  (optional)
+	includeByEmailDomain := true // bool |  (optional)
+	sso := "sso_example" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetPreBanSummary(context.Background(), commentId).IncludeByUserIdAndEmail(includeByUserIdAndEmail).IncludeByIP(includeByIP).IncludeByEmailDomain(includeByEmailDomain).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetPreBanSummary(context.Background(), commentId).TenantId(tenantId).IncludeByUserIdAndEmail(includeByUserIdAndEmail).IncludeByIP(includeByIP).IncludeByEmailDomain(includeByEmailDomain).Sso(sgo).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetPreBanSummary``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// отговор от `GetPreBanSummary`: PreBanSummary
+	// response from `GetPreBanSummary`: PreBanSummary
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetPreBanSummary`: %v\n", resp)
 }
 [inline-code-end]
-
----

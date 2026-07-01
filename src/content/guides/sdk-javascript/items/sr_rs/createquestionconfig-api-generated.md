@@ -1,36 +1,36 @@
----
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| createQuestionConfigBody | CreateQuestionConfigBody | Да |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| createQuestionConfigBody | CreateQuestionConfigBody | Yes |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`CreateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionConfigResponse.ts)
+Vraća: [`CreateQuestionConfigResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionConfigResponse1.ts)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример createQuestionConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createQuestionConfig Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "org-7b3d1e9f";
+const tenantId: string = "tenant_12345";
+
 const customOption: QuestionConfigCustomOptionsInner = {
-  key: "priority",
-  label: "Priority",
-  values: ["low", "medium", "high"],
-  defaultValue: "medium"
+  label: "Option A",
+  value: "a",
 };
+
 const createQuestionConfigBody: CreateQuestionConfigBody = {
-  name: "Customer Support Questions",
-  description: "Configuration for support-related question flows",
-  enabled: true,
-  moderation: { required: true, level: "manual" },
-  questionLimitPerUser: 5,
+  questionText: "What is your favorite color?",
+  isActive: true,
+  // opcionalna polja se mogu izostaviti
   customOptions: [customOption],
-  allowAnonymous: false
 };
-const response: CreateQuestionConfigResponse = await createQuestionConfig(tenantId, createQuestionConfigBody);
+
+const response: CreateQuestionConfigResponse1 = await createQuestionConfig(
+  tenantId,
+  createQuestionConfigBody
+);
 [inline-code-end]
 
 ---

@@ -2,12 +2,13 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| value | string | query | Ні |  |
-| sso | string | query | Ні |  |
+| tenantId | string | query | Yes |  |
+| value | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Відповідь
 
-Повертає: [`ModerationPageSearchResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_page_search_response.go)
+Returns: [`ModerationPageSearchResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_page_search_response.go)
 
 ## Приклад
 
@@ -23,17 +24,18 @@ import (
 )
 
 func main() {
-	value := "value_example" // string |  (необов'язково)
-	sso := "sso_example" // string |  (необов'язково)
+	tenantId := "tenantId_example" // string | 
+	value := "value_example" // string |  (необов’язково)
+	sso := "sso_example" // string |  (необов’язково)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetSearchPages(context.Background()).Value(value).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetSearchPages(context.Background()).TenantId(tenantId).Value(value).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetSearchPages``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// відповідь від `GetSearchPages`: ModerationPageSearchResponse
+	// response from `GetSearchPages`: ModerationPageSearchResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetSearchPages`: %v\n", resp)
 }
 [inline-code-end]

@@ -1,33 +1,41 @@
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| userId | string | Ne |  |
-| direction | SortDirections | Ne |  |
-| repliesToUserId | string | Ne |  |
-| page | number | Ne |  |
-| includei10n | boolean | Ne |  |
-| locale | string | Ne |  |
-| isCrawler | boolean | Ne |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| userId | string | No |  |
+| direction | SortDirections | No |  |
+| repliesToUserId | string | No |  |
+| page | number | No |  |
+| includei10n | boolean | No |  |
+| locale | string | No |  |
+| isCrawler | boolean | No |  |
 
 ## Odgovor
 
-Vraća: [`GetCommentsForUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsForUserResponse.ts)
+Vraća: [`GetCommentsForUserResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsForUserResponse1.ts)
 
 ## Primjer
 
 [inline-code-attrs-start title = 'Primjer getCommentsForUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const userId: string = 'user_7421';
-  const direction: SortDirections = SortDirections.Newest;
-  const page: number = 2;
-  const includei10n: boolean = true;
-  const locale: string = 'en-GB';
-  const isCrawler: boolean = false;
-  const response: GetCommentsForUserResponse = await getCommentsForUser(userId, direction, undefined, page, includei10n, locale, isCrawler);
-  console.log(response);
-})();
-[inline-code-end]
+async function demo() {
+    const userId: string = "user-12345";
+    const direction: SortDirections = "desc";
+    const page: number = 1;
+    const includei10n: boolean = true;
+    const locale: string = "en-US";
+    const isCrawler: boolean = false;
 
----
+    const response: GetCommentsForUserResponse1 = await getCommentsForUser(
+        userId,
+        direction,
+        undefined,
+        page,
+        includei10n,
+        locale,
+        isCrawler
+    );
+
+    console.log(response);
+}
+[inline-code-end]

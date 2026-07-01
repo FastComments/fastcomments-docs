@@ -1,26 +1,27 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| comment_id | String | Да |  |
-| sso | String | Не |  |
+| tenant_id | String | Yes |  |
+| comment_id | String | Yes |  |
+| sso | String | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`ModerationApiGetLogsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/moderation_api_get_logs_response.rs)
+Vraća: [`ModerationApiGetLogsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/moderation_api_get_logs_response.rs)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'get_logs Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer get_logs'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let params: GetLogsParams = GetLogsParams {
-        comment_id: "news/article/2026/06/fastcomments-thread-12345".to_string(),
-        sso: Some("acme-corp|user:john.doe@example.com".to_string()),
+async fn example() -> Result<(), Error> {
+    let params = GetLogsParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: "news/article-12345".to_string(),
+        sso: Some("user@example.com".to_string()),
     };
-    let logs: ModerationApiGetLogsResponse = get_logs(&configuration, params).await?;
+    let response = get_logs(&configuration, params).await?;
+    let _ = response;
     Ok(())
 }
 [inline-code-end]
-
----

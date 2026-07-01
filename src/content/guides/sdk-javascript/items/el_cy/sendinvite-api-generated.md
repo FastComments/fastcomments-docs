@@ -1,24 +1,22 @@
-## Παράμετροι
+## Parameters
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+|------|------|------------|-----------|
 | tenantId | string | Ναι |  |
 | id | string | Ναι |  |
 | fromName | string | Ναι |  |
 
-## Απόκριση
+## Response
 
-Επιστρέφει: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Επιστρέφει: [`SendInviteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SendInviteResponse.ts)
 
-## Παράδειγμα
+## Example
 
-[inline-code-attrs-start title = 'Παράδειγμα sendInvite'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'sendInvite Παράδειγμα'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'bright-media-12';
-const id: string = 'user-8f4d2';
-const fromName: string = 'Sofia Park';
-const optionalNote: string | undefined = undefined;
-const result: APIEmptyResponse = await sendInvite(tenantId, id, fromName);
-[inline-code-end]
+const tenantId: string = "acme-corp-tenant";
+const inviteId: string = "invite-12345";
+const fromName: string = "John Doe";
 
----
+const inviteResult: SendInviteResponse = await sendInvite(tenantId, inviteId, fromName);
+[inline-code-end]

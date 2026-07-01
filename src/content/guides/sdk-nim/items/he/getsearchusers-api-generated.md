@@ -1,9 +1,9 @@
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
-| value | string | לא |  |
-| sso | string | לא |  |
+| tenantId | string | כן |  |
+| options | GetSearchUsersOptions | לא |  |
 
 ## תגובה
 
@@ -11,14 +11,10 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getSearchUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSearchUsers דוגמה'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSearchUsers(value = "john.doe@example.com", sso = "sso-acme-789")
-if response.isSome:
-  let searchRes = response.get()
-  echo "Search result:", searchRes
-else:
-  echo "No users found"
+let (searchRes, httpRes) = client.getSearchUsers(tenantId = "my-tenant-123", options = default(GetSearchUsersOptions))
+if searchRes.isSome:
+  let data = searchRes.get()
+  echo data
 [inline-code-end]
-
----

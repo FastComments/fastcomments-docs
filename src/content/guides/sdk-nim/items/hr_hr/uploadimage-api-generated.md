@@ -1,30 +1,30 @@
-## Parametri
+Prenesi i promijeni veličinu slike
 
-| Ime | Tip | Obavezno | Opis |
+## Parameters
+
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| file | string | Ne |  |
-| sizePreset | SizePreset | Ne |  |
-| urlId | string | Da |  |
+| tenantId | string | Yes |  |
+| file | string | No |  |
+| options | UploadImageOptions | No |  |
 
-## Odgovor
+## Response
 
 Vraća: [`Option[UploadImageResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_upload_image_response.nim)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'uploadImage Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer uploadImage'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.uploadImage(
+let (uploadResult, httpResponse) = client.uploadImage(
   tenantId = "my-tenant-123",
-  file = "assets/images/comment-avatar.jpg",
-  sizePreset = SizePreset.small,
-  urlId = "news/article-2025-11-22"
+  file = "images/avatar.jpg",
+  options = UploadImageOptions()
 )
-if response.isSome:
-  let upload = response.get()
-  echo "Uploaded image id: ", upload.id
-  echo "Uploaded image url: ", upload.url
+
+if uploadResult.isSome:
+  let result = uploadResult.get()
+  # koristi rezultat prema potrebi
 [inline-code-end]
 
 ---

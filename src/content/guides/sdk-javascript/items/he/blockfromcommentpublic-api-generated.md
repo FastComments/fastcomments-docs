@@ -2,29 +2,42 @@
 
 | שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| commentId | string | כן |  |
-| publicBlockFromCommentParams | PublicBlockFromCommentParams | כן |  |
-| sso | string | לא |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| publicBlockFromCommentParams | PublicBlockFromCommentParams | Yes |  |
+| sso | string | No |  |
 
 ## תגובה
 
-מחזיר: [`BlockSuccess`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BlockSuccess.ts)
+מחזירה: [`BlockFromCommentPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BlockFromCommentPublicResponse.ts)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-blockFromCommentPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה של blockFromCommentPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_52b9f3a1";
-const commentId: string = "cmt_4f9d2a7b";
-const publicBlockFromCommentParams: PublicBlockFromCommentParams = {
-  reason: "spam",
-  moderatorId: "mod_783",
-  durationMinutes: 1440,
-  notifyUser: true
-};
-const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example";
-const result: BlockSuccess = await blockFromCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso);
-[inline-code-end]
+async function demo() {
+  const tenantId: string = "tenant_9f8b7c";
+  const commentId: string = "cmt_1234567890";
+  const blockParams: PublicBlockFromCommentParams = {
+    reason: "spam",
+    durationHours: 24,
+  };
+  const ssoToken: string = "sso_ABCDEF123456";
 
----
+  const responseWithSso: BlockFromCommentPublicResponse = await blockFromCommentPublic(
+    tenantId,
+    commentId,
+    blockParams,
+    ssoToken
+  );
+
+  const responseWithoutSso: BlockFromCommentPublicResponse = await blockFromCommentPublic(
+    tenantId,
+    commentId,
+    blockParams
+  );
+
+  console.log(responseWithSso, responseWithoutSso);
+}
+demo();
+[inline-code-end]

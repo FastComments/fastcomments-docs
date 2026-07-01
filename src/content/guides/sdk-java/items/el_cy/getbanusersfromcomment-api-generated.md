@@ -1,12 +1,12 @@
----
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
+|------|------|----------|-----------|-----------|
+| tenantId | string | query | Ναι |  |
 | commentId | string | path | Ναι |  |
 | sso | string | query | Όχι |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`GetBannedUsersFromCommentResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetBannedUsersFromCommentResponse.java)
 
@@ -27,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      GetBannedUsersFromCommentResponse result = apiInstance.getBanUsersFromComment(commentId)
+      GetBannedUsersFromCommentResponse result = apiInstance.getBanUsersFromComment(tenantId, commentId)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -44,5 +45,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

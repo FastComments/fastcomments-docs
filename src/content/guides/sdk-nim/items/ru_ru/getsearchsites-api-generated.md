@@ -1,10 +1,9 @@
----
 ## Параметры
 
 | Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
-| value | string | Нет |  |
-| sso | string | Нет |  |
+| tenantId | string | Да |  |
+| options | GetSearchSitesOptions | Нет |  |
 
 ## Ответ
 
@@ -12,12 +11,9 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример getSearchSites'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSearchSites Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSearchSites(value = "news/2026-olympics", sso = "sso-user-9876-token")
-if response.isSome:
-  let searchResponse: ModerationSiteSearchResponse = response.get()
-  echo "Found sites for search:", searchResponse
+let (searchResult, httpResp) = client.getSearchSites(tenantId = "my-tenant-123", options = GetSearchSitesOptions())
+if searchResult.isSome:
+  let siteResp = searchResult.get()
 [inline-code-end]
-
----

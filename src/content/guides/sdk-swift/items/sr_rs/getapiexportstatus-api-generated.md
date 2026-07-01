@@ -1,26 +1,27 @@
----
-## Параметри
+## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| batchJobId | string | query | Не |  |
-| sso | string | query | Не |  |
+| tenantId | string | query | Yes |  |
+| batchJobId | string | query | No |  |
+| sso | string | query | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationExportStatusResponse.swift)
+Vraća: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationExportStatusResponse.swift)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример getApiExportStatus'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getApiExportStatus'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи примери кода су још у бети. За било који проблем, пријавите га преко http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledeći kod primeri su i dalje beta. Za bilo koji problem, molimo prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let batchJobId = "batchJobId_example" // String |  (опционо)
-let sso = "sso_example" // String |  (опционо)
+let tenantId = "tenantId_example" // String | 
+let batchJobId = "batchJobId_example" // String |  (optional)
+let sso = "sso_example" // String |  (optional)
 
-ModerationAPI.getApiExportStatus(batchJobId: batchJobId, sso: sso) { (response, error) in
+ModerationAPI.getApiExportStatus(tenantId: tenantId, options: ModerationAPI.GetApiExportStatusOptions(batchJobId: batchJobId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -31,5 +32,3 @@ ModerationAPI.getApiExportStatus(batchJobId: batchJobId, sso: sso) { (response, 
     }
 }
 [inline-code-end]
-
----

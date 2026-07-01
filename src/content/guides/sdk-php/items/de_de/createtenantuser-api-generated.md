@@ -6,7 +6,7 @@
 
 ## Antwort
 
-Gibt zurück: [`CreateTenantUserResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateTenantUserResponse.php)
+Rückgabe: [`CreateTenantUserResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateTenantUserResponse.php)
 
 ## Beispiel
 
@@ -16,20 +16,22 @@ Gibt zurück: [`CreateTenantUserResponse`](https://github.com/FastComments/fastc
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// API-Schlüssel-Autorisierung konfigurieren: api_key
+// Configure API key authorization: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Entfernen Sie die Kommentarzeichen unten, um das Präfix einzurichten (z. B. Bearer) für den API-Schlüssel, falls erforderlich
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Wenn Sie einen benutzerdefinierten HTTP-Client verwenden möchten, übergeben Sie Ihren Client, der `GuzzleHttp\ClientInterface` implementiert.
-    // Dies ist optional, `GuzzleHttp\Client` wird standardmäßig verwendet.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $create_tenant_user_body = new \FastComments\Client\Model\CreateTenantUserBody(); // \FastComments\Client\Model\CreateTenantUserBody
+
 
 try {
     $result = $apiInstance->createTenantUser($tenant_id, $create_tenant_user_body);
@@ -38,3 +40,5 @@ try {
     echo 'Exception when calling DefaultApi->createTenantUser: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

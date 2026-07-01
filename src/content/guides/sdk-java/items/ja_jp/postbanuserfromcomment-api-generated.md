@@ -2,6 +2,7 @@
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | はい |  |
 | commentId | string | path | はい |  |
 | banEmail | boolean | query | いいえ |  |
 | banEmailDomain | boolean | query | いいえ |  |
@@ -21,7 +22,7 @@
 
 [inline-code-attrs-start title = 'postBanUserFromComment の例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Import classes:
+// クラスをインポート:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -34,6 +35,7 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     Boolean banEmail = true; // Boolean | 
     Boolean banEmailDomain = true; // Boolean | 
@@ -45,7 +47,7 @@ public class Example {
     String banReason = "banReason_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      BanUserFromCommentResult result = apiInstance.postBanUserFromComment(commentId)
+      BanUserFromCommentResult result = apiInstance.postBanUserFromComment(tenantId, commentId)
             .banEmail(banEmail)
             .banEmailDomain(banEmailDomain)
             .banIP(banIP)
@@ -67,5 +69,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

@@ -29,9 +29,11 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $render_email_template_body = new \FastComments\Client\Model\RenderEmailTemplateBody(); // \FastComments\Client\Model\RenderEmailTemplateBody
 $locale = 'locale_example'; // string
+
 
 try {
     $result = $apiInstance->renderEmailTemplate($tenant_id, $render_email_template_body, $locale);

@@ -1,15 +1,15 @@
 ## Параметри
 
 | Име | Тип | Местоположение | Задължително | Описание |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| commentId | string | query | Не |  |
-| externalId | string | query | Не |  |
-| eventType | string | query | Не |  |
-| type | string | query | Не |  |
-| domain | string | query | Не |  |
-| attemptCountGT | number | query | Не |  |
-| skip | number | query | Не |  |
+|------|------|----------------|--------------|----------|
+| tenantId | низ | заявка | Да |  |
+| commentId | низ | заявка | Не |  |
+| externalId | низ | заявка | Не |  |
+| eventType | низ | заявка | Не |  |
+| type | низ | заявка | Не |  |
+| domain | низ | заявка | Не |  |
+| attemptCountGT | число | заявка | Не |  |
+| skip | число | заявка | Не |  |
 
 ## Отговор
 
@@ -17,45 +17,46 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример get_pending_webhook_events'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_pending_webhook_events Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetPendingWebhookEventsOptions
 from client.models.get_pending_webhook_events_response import GetPendingWebhookEventsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Задаването на host е по избор и по подразбиране е https://fastcomments.com
-# Вижте configuration.py за списък с всички поддържани конфигурационни параметри.
+# Определянето на хоста е опционално и по подразбиране е https://fastcomments.com
+# Вижте configuration.py за списък на всички поддържани параметри на конфигурацията.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клиентът трябва да конфигурира параметрите за удостоверяване и разрешение
-# в съответствие с политиката за сигурност на API сървъра.
-# Примерите за всеки метод на удостоверяване са дадени по-долу, използвайте примера, който
-# отговаря на вашия случай на използване за удостоверяване.
+# Клиентът трябва да конфигурира параметрите за автентикация и упълномощаване
+# в съответствие с политиката за безопасност на API сървъра.
+# Примери за всеки метод за автентикация са предоставени по-долу, използвайте примера, който
+# отговаря на вашия сценарий за автентикация.
 
-# Конфигурирайте упълномощаване с API ключ: api_key
+# Конфигуриране на упълномощаване с API ключ: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Разкоментирайте по-долу, за да зададете префикс (напр. Bearer) за API ключа, ако е необходимо
+# Разкоментирайте по-долу, за да зададете префикс (например Bearer) за API ключ, ако е необходимо
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Влезте в контекст с инстанция на API клиента
+# Въведете контекст с инстанция на API клиента
 with client.ApiClient(configuration) as api_client:
-    # Създайте инстанция на API класа
+    # Създаване на инстанция на API класа
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    comment_id = 'comment_id_example' # str |  (незадължително)
-    external_id = 'external_id_example' # str |  (незадължително)
-    event_type = 'event_type_example' # str |  (незадължително)
-    type = 'type_example' # str |  (незадължително)
-    domain = 'domain_example' # str |  (незадължително)
-    attempt_count_gt = 3.4 # float |  (незадължително)
-    skip = 3.4 # float |  (незадължително)
+    comment_id = 'comment_id_example' # str |  (по избор)
+    external_id = 'external_id_example' # str |  (по избор)
+    event_type = 'event_type_example' # str |  (по избор)
+    type = 'type_example' # str |  (по избор)
+    domain = 'domain_example' # str |  (по избор)
+    attempt_count_gt = 3.4 # float |  (по избор)
+    skip = 3.4 # float |  (по избор)
 
     try:
-        api_response = api_instance.get_pending_webhook_events(tenant_id, comment_id=comment_id, external_id=external_id, event_type=event_type, type=type, domain=domain, attempt_count_gt=attempt_count_gt, skip=skip)
+        api_response = api_instance.get_pending_webhook_events(tenant_id, GetPendingWebhookEventsOptions(comment_id=comment_id, external_id=external_id, event_type=event_type, type=type, domain=domain, attempt_count_gt=attempt_count_gt, skip=skip))
         print("The response of DefaultApi->get_pending_webhook_events:\n")
         pprint(api_response)
     except Exception as e:

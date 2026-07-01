@@ -1,12 +1,11 @@
----
-## Parametry
+## Parameters
 
 | Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
 | tenantId | string | Tak |  |
 | createEmailTemplateBody | CreateEmailTemplateBody | Tak |  |
 
-## Odpowiedź
+## Response
 
 Zwraca: [`CreateEmailTemplateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateEmailTemplateResponse.h)
 
@@ -14,23 +13,16 @@ Zwraca: [`CreateEmailTemplateResponse`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'Przykład createEmailTemplate'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-auto bodyPtr = std::make_shared<CreateEmailTemplateBody>();
-bodyPtr->name = U("Welcome Email");
-bodyPtr->subject = U("Welcome to MyApp");
-bodyPtr->fromEmail = U("no-reply@myapp.com");
-bodyPtr->htmlTemplate = U("<h1>Welcome, \{{user.name}}!</h1>");
-bodyPtr->plainText = boost::optional<utility::string_t>(U("Welcome, \{{user.name}}!"));
-bodyPtr->replyTo = boost::optional<utility::string_t>(U("support@myapp.com"));
-api->createEmailTemplate(tenantId, *bodyPtr)
-.then([](pplx::task<std::shared_ptr<CreateEmailTemplateResponse>> t){
-    try {
-        auto resp = t.get();
-        if (resp) std::cout << "Created template ID: " << resp->id << std::endl;
-    } catch (const std::exception &e) {
-        std::cerr << "Create failed: " << e.what() << std::endl;
-    }
-});
+auto body = std::make_shared<CreateEmailTemplateBody>();
+body->subject = utility::string_t("Welcome Email");
+body->htmlContent = utility::string_t("<h1>Welcome!</h1><p>Thanks for joining.</p>");
+body->fromEmail = utility::string_t("no-reply@myapp.com");
+body->replyTo = boost::optional<utility::string_t>(utility::string_t("support@myapp.com"));
+body->cc = boost::none;
+api->createEmailTemplate(utility::string_t("my-tenant-123"), *body)
+    .then([](std::shared_ptr<CreateEmailTemplateResponse> resp) {
+        std::cout << "Created template ID: " << resp->id << std::endl;
+    });
 [inline-code-end]
 
 ---

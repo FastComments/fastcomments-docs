@@ -1,11 +1,10 @@
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
 | tenantId | string | Da |  |
 | commentId | string | Da |  |
-| editKey | string | Ne |  |
-| sso | string | Ne |  |
+| options | GetCommentTextOptions | Ne |  |
 
 ## Odgovor
 
@@ -15,13 +14,12 @@ Vraća: [`Option[PublicAPIGetCommentTextResponse]`](https://github.com/FastComme
 
 [inline-code-attrs-start title = 'Primer getCommentText'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getCommentText(tenantId = "my-tenant-123", commentId = "cmt-987654321", editKey = "", sso = "")
+let (maybeResponse, httpResponse) = client.getCommentText(
+  tenantId = "my-tenant-123",
+  commentId = "comment-456",
+  options = GetCommentTextOptions()
+)
 
-if response.isSome:
-  let commentTextResp = response.get()
-  echo commentTextResp
-else:
-  echo "No comment text returned"
+if maybeResponse.isSome:
+  let response = maybeResponse.get()
 [inline-code-end]
-
----

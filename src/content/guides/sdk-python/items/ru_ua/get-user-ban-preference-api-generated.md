@@ -1,14 +1,15 @@
-## Параметры
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов’язковий | Опис |
 |------|------|----------|----------|-------------|
-| sso | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`APIModerateGetUserBanPreferencesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_moderate_get_user_ban_preferences_response.py)
+Повертає: [`APIModerateGetUserBanPreferencesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_moderate_get_user_ban_preferences_response.py)
 
-## Пример
+## Приклад
 
 [inline-code-attrs-start title = 'Пример get_user_ban_preference'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -17,21 +18,22 @@ from client.models.api_moderate_get_user_ban_preferences_response import APIMode
 from client.rest import ApiException
 from pprint import pprint
 
-# Указание хоста необязательно и по умолчанию — https://fastcomments.com
-# См. configuration.py для списка всех поддерживаемых параметров конфигурации.
+# Визначення хоста є необов’язковим і за замовчуванням дорівнює https://fastcomments.com
+# Дивіться configuration.py для списку всіх підтримуваних параметрів конфігурації.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Войдите в контекст с экземпляром API-клиента
+# Відкрийте контекст з екземпляром API‑клієнта
 with client.ApiClient(configuration) as api_client:
-    # Создайте экземпляр класса API
+    # Створіть екземпляр класу API
     api_instance = client.ModerationApi(api_client)
-    sso = 'sso_example' # str |  (необязательно)
+    tenant_id = 'tenant_id_example' # str | 
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_user_ban_preference(sso=sso)
+        api_response = api_instance.get_user_ban_preference(tenant_id, sso=sso)
         print("The response of ModerationApi->get_user_ban_preference:\n")
         pprint(api_response)
     except Exception as e:

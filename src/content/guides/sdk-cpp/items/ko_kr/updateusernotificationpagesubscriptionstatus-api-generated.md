@@ -1,41 +1,33 @@
----
-페이지에 대한 알림을 활성화하거나 비활성화합니다. 사용자가 페이지를 구독하면 알림이 생성됩니다
-새 최상위 댓글에 대해, 그리고 또한
+Enable or disable notifications for a page. When users are subscribed to a page, notifications are created for new root comments, and also
 
-## 매개변수
+## Parameters
 
 | 이름 | 유형 | 필수 | 설명 |
-|------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| urlId | string | 예 |  |
-| url | string | 예 |  |
-| pageTitle | string | 예 |  |
-| subscribedOrUnsubscribed | string | 예 |  |
-| sso | string | 아니오 |  |
+|------|------|------|------|
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| url | string | Yes |  |
+| pageTitle | string | Yes |  |
+| subscribedOrUnsubscribed | string | Yes |  |
+| sso | string | No |  |
 
-## 응답
+## Response
 
 반환: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UpdateUserNotificationPageSubscriptionStatusResponse.h)
 
-## 예제
+## Example
 
 [inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus 예제'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> sso(utility::conversions::to_string_t("sso-token-abc123"));
-api->updateUserNotificationPageSubscriptionStatus(
-    utility::conversions::to_string_t("my-tenant-123"),
-    utility::conversions::to_string_t("article-456"),
-    utility::conversions::to_string_t("https://www.example.com/posts/456"),
-    utility::conversions::to_string_t("How to Test C++ SDK"),
-    utility::conversions::to_string_t("subscribed"),
-    sso
-).then([](pplx::task<std::shared_ptr<UpdateUserNotificationPageSubscriptionStatusResponse>> t){
-    try {
-        auto resp = t.get();
-        auto copy = std::make_shared<UpdateUserNotificationPageSubscriptionStatusResponse>(*resp);
-        (void)copy;
-    } catch (const std::exception&) { }
-});
-[inline-code-end]
+utility::string_t tenantId = U("my-tenant-123");
+utility::string_t urlId = U("page-456");
+utility::string_t url = U("https://example.com/articles/awesome-article");
+utility::string_t pageTitle = U("Awesome Article");
+utility::string_t subscription = U("subscribed");
+boost::optional<utility::string_t> sso = boost::make_optional<utility::string_t>(U("sso-token-789"));
 
----
+api->updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscription, sso)
+    .then([](std::shared_ptr<UpdateUserNotificationPageSubscriptionStatusResponse> resp) {
+        // 필요에 따라 resp를 처리
+    });
+[inline-code-end]

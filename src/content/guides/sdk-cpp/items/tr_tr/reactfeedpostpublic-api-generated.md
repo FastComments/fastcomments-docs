@@ -1,33 +1,28 @@
 ## Parametreler
 
-| Name | Type | Required | Description |
+| Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
-| tenantId | string | Evet |  |
-| postId | string | Evet |  |
-| reactBodyParams | ReactBodyParams | Evet |  |
-| isUndo | bool | Hayır |  |
-| broadcastId | string | Hayır |  |
-| sso | string | Hayır |  |
+| tenantId | string | Yes |  |
+| postId | string | Yes |  |
+| reactBodyParams | ReactBodyParams | Yes |  |
+| options | const ReactFeedPostPublicOptions& | Yes |  |
 
 ## Yanıt
 
-Döndürür: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ReactFeedPostResponse.h)
+Returns: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ReactFeedPostResponse.h)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'reactFeedPostPublic Örneği'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t postId = U("feed-post-456");
-ReactBodyParams reactBodyParams;
-reactBodyParams.reaction = U("like");
-boost::optional<bool> isUndo = false;
-boost::optional<utility::string_t> broadcastId = boost::optional<utility::string_t>(U("broadcast-01"));
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
-api->reactFeedPostPublic(tenantId, postId, reactBodyParams, isUndo, broadcastId, sso)
-.then([](std::shared_ptr<ReactFeedPostResponse> resp) {
-    if (resp) {
-        auto resultCopy = std::make_shared<ReactFeedPostResponse>(*resp);
-    }
-});
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto postId = utility::conversions::to_string_t("post-987");
+ReactBodyParams reactBody;
+reactBody.reaction = utility::conversions::to_string_t("love");
+reactBody.userId = utility::conversions::to_string_t("user@example.com");
+ReactFeedPostPublicOptions options;
+options.metadata = boost::optional<utility::string_t>(utility::conversions::to_string_t("mobile"));
+api->reactFeedPostPublic(tenantId, postId, reactBody, options)
+    .then([](std::shared_ptr<ReactFeedPostResponse> resp) {
+    });
 [inline-code-end]

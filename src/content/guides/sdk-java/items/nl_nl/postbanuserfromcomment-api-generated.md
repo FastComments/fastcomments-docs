@@ -1,7 +1,8 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
-|------|------|----------|----------|-------------|
+| Naam | Type | Locatie | Verplicht | Beschrijving |
+|------|------|----------|-----------|--------------|
+| tenantId | string | query | Ja |  |
 | commentId | string | path | Ja |  |
 | banEmail | boolean | query | Nee |  |
 | banEmailDomain | boolean | query | Nee |  |
@@ -19,7 +20,7 @@ Retourneert: [`BanUserFromCommentResult`](https://github.com/FastComments/fastco
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'Voorbeeld van postBanUserFromComment'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postBanUserFromComment Voorbeeld'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importeer klassen:
 import com.fastcomments.invoker.ApiClient;
@@ -34,6 +35,7 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     Boolean banEmail = true; // Boolean | 
     Boolean banEmailDomain = true; // Boolean | 
@@ -45,7 +47,7 @@ public class Example {
     String banReason = "banReason_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      BanUserFromCommentResult result = apiInstance.postBanUserFromComment(commentId)
+      BanUserFromCommentResult result = apiInstance.postBanUserFromComment(tenantId, commentId)
             .banEmail(banEmail)
             .banEmailDomain(banEmailDomain)
             .banIP(banIP)

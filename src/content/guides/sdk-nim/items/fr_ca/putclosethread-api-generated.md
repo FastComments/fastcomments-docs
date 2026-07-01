@@ -1,24 +1,21 @@
 ## Paramètres
 
-| Nom | Type | Requis | Description |
-|------|------|----------|-------------|
+| Nom | Type | Obligatoire | Description |
+|------|------|-------------|-------------|
+| tenantId | string | Oui |  |
 | urlId | string | Oui |  |
-| sso | string | Non |  |
+| sso | string = "" | Non |  |
 
 ## Réponse
 
-Retourne: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
+Returns: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple pour putCloseThread'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple putCloseThread'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.putCloseThread(urlId = "news/article-title", sso = "")
-if response.isSome:
-  let apiResp = response.get()
-  echo "Thread closed successfully:", $apiResp
-else:
-  echo "Failed to close thread, HTTP response:", $httpResponse
+let (respOpt, httpResp) = client.putCloseThread(tenantId = "my-tenant-123", urlId = "news/fastcomments-integration", sso = "")
+if respOpt.isSome:
+  let empty = respOpt.get()
+  echo "Thread successfully closed"
 [inline-code-end]
-
----

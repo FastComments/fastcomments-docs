@@ -1,13 +1,15 @@
 ## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
-|------|------|----------|----------|-------------|
-| commentId | string | Pfad | Ja |  |
-| sso | string | Abfrage | Nein |  |
+|------|------|-----|--------------|--------------|
+| tenantId | string | query | Ja |  |
+| commentId | string | path | Ja |  |
+| broadcastId | string | query | Nein |  |
+| sso | string | query | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`SetCommentTextResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_set_comment_text_response.go)
+Rückgabe: [`SetCommentTextResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_set_comment_text_response.go)
 
 ## Beispiel
 
@@ -23,13 +25,15 @@ import (
 )
 
 func main() {
-	commentId := "commentId_example" // string | 
-	setCommentTextParams := *openapiclient.NewSetCommentTextParams("Comment_example") // SetCommentTextParams | 
+	tenantId := "tenantId_example" // string |
+	commentId := "commentId_example" // string |
+	setCommentTextParams := *openapiclient.NewSetCommentTextParams("Comment_example") // SetCommentTextParams |
+	broadcastId := "broadcastId_example" // string |  (optional)
 	sso := "sso_example" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostSetCommentText(context.Background(), commentId).SetCommentTextParams(setCommentTextParams).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostSetCommentText(context.Background(), commentId).TenantId(tenantId).SetCommentTextParams(setCommentTextParams).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostSetCommentText``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

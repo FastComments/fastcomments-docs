@@ -1,6 +1,6 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenant_id | String | Так |  |
 | skip | f64 | Ні |  |
@@ -13,14 +13,12 @@
 
 [inline-code-attrs-start title = 'Приклад get_email_templates'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_templates() -> Result<GetEmailTemplatesResponse, Error> {
-    let params: GetEmailTemplatesParams = GetEmailTemplatesParams {
+async fn run() -> Result<(), Error> {
+    let params = GetEmailTemplatesParams {
         tenant_id: "acme-corp-tenant".to_string(),
         skip: Some(10.0),
     };
-    let response: GetEmailTemplatesResponse = get_email_templates(&configuration, params).await?;
-    Ok(response)
+    let _response = get_email_templates(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

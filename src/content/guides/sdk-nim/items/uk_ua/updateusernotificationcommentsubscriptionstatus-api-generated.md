@@ -1,14 +1,14 @@
-Увімкнути або вимкнути сповіщення для конкретного коментаря.
+Enable or disable notifications for a specific comment.
 
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Назва | Тип | Обов’язково | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Так |  |
 | notificationId | string | Ні |  |
 | optedInOrOut | string | Ні |  |
 | commentId | string | Так |  |
-| sso | string | Ні |  |
+| sso | string = "" | Ні |  |
 
 ## Відповідь
 
@@ -18,17 +18,14 @@
 
 [inline-code-attrs-start title = 'Приклад updateUserNotificationCommentSubscriptionStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateUserNotificationCommentSubscriptionStatus(
+let (optResp, httpResp) = client.updateUserNotificationCommentSubscriptionStatus(
   tenantId = "my-tenant-123",
-  notificationId = "",
-  optedInOrOut = "",
-  commentId = "cmt-789",
+  notificationId = "notif-456",
+  optedInOrOut = "opted-in",
+  commentId = "comment-789",
   sso = ""
 )
 
-if response.isSome:
-  let updateResp = response.get()
-  echo "Subscription update response: ", updateResp
+if optResp.isSome:
+  let resp = optResp.get()
 [inline-code-end]
-
----

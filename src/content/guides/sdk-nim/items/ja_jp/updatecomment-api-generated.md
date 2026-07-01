@@ -1,38 +1,30 @@
 ## パラメータ
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | はい |  |
-| id | string | いいえ |  |
-| updatableCommentParams | UpdatableCommentParams | いいえ |  |
-| contextUserId | string | いいえ |  |
-| doSpamCheck | bool | いいえ |  |
-| isLive | bool | いいえ |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| updatableCommentParams | UpdatableCommentParams | No |  |
+| options | UpdateCommentOptions | No |  |
 
-## レスポンス
+## 応答
 
 返却値: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## 例
 
-[inline-code-attrs-start title = 'updateCommentの例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateComment の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateComment(
+let commentParams = UpdatableCommentParams(content: "Updated comment content")
+let updateOpts = UpdateCommentOptions(force: false)
+
+let (respOpt, httpResp) = client.updateComment(
   tenantId = "my-tenant-123",
-  id = "cmt-987654",
-  updatableCommentParams = UpdatableCommentParams(
-    text = "Updated comment: corrected facts and clarified wording.",
-    isApproved = true,
-    tags = @["news", "update"]
-  ),
-  contextUserId = "user-456",
-  doSpamCheck = true,
-  isLive = true
+  id = "comment-456",
+  updatableCommentParams = commentParams,
+  options = updateOpts
 )
 
-if response.isSome:
-  let apiResp = response.get()
-  discard apiResp
+if respOpt.isSome:
+  let resp = respOpt.get()
 [inline-code-end]
-
----

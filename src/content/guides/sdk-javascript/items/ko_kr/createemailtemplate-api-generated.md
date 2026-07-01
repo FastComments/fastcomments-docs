@@ -1,37 +1,31 @@
 ## 매개변수
 
-| 이름 | 타입 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | createEmailTemplateBody | CreateEmailTemplateBody | 예 |  |
 
 ## 응답
 
-반환: [`CreateEmailTemplateResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateEmailTemplateResponse.ts)
+반환: [`CreateEmailTemplateResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateEmailTemplateResponse1.ts)
 
-## 예제
+## 예시
 
 [inline-code-attrs-start title = 'createEmailTemplate 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_prod_7f9b2a";
+const tenantId: string = "tenant_9f8e7d6c";
 
-const customTemplate: CustomEmailTemplate = {
-  id: "custtmpl_01",
-  name: "MinimalTransactional",
-  html: "<div style=\"font-family:Arial,Helvetica,sans-serif\">\{{body}}</div>"
+const emailTemplate: CreateEmailTemplateBody = {
+  name: "Account Activation",
+  subject: "Activate Your New Account",
+  htmlContent: "<p>Welcome! Please click <a href=\"\{{activationLink}}\">here</a> to activate.</p>",
+  // textContent, isActive와 같은 선택적 필드는 선택적 매개변수를 보여주기 위해 생략되었습니다
 };
 
-const createEmailTemplateBody: CreateEmailTemplateBody = {
-  name: "User Welcome - Web",
-  subject: "Welcome to Acme — Get Started",
-  html: "<p>Hi \{{firstName}}, welcome to Acme!</p>",
-  previewText: "Start exploring your new Acme account",
-  enabled: true,
-  replyTo: "support@acme.com",
-  customTemplate // optional parameter demonstrated
-};
+const result: CreateEmailTemplateResponse1 = await createEmailTemplate(
+  tenantId,
+  emailTemplate
+);
 
-const result: CreateEmailTemplateResponse = await createEmailTemplate(tenantId, createEmailTemplateBody);
+console.log(result);
 [inline-code-end]
-
----

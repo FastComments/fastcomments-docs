@@ -1,12 +1,13 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Местоположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| badgeId | string | query | Да |  |
-| userId | string | query | Нет |  |
-| commentId | string | query | Нет |  |
-| broadcastId | string | query | Нет |  |
-| sso | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| badgeId | string | query | Yes |  |
+| userId | string | query | No |  |
+| commentId | string | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Ответ
 
@@ -14,27 +15,26 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'put_remove_badge Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример put_remove_badge'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
-badge_id = 'badge_id_example' # Строка | 
+tenant_id = 'tenant_id_example' # String | 
+badge_id = 'badge_id_example' # String | 
 opts = {
-  user_id: 'user_id_example', # Строка | 
-  comment_id: 'comment_id_example', # Строка | 
-  broadcast_id: 'broadcast_id_example', # Строка | 
-  sso: 'sso_example' # Строка | 
+  user_id: 'user_id_example', # String | 
+  comment_id: 'comment_id_example', # String | 
+  broadcast_id: 'broadcast_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.put_remove_badge(badge_id, opts)
+  result = api_instance.put_remove_badge(tenant_id, badge_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->put_remove_badge: #{e}"
 end
 [inline-code-end]
-
----

@@ -1,13 +1,22 @@
----
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| id | string | 예 |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
 ## 응답
 
-반환: [`GetSSOUserByIdAPIResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetSSOUserByIdAPIResponse.ts)
+Returns: [`GetSSOUserByIdAPIResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetSSOUserByIdAPIResponse.ts)
 
----
+## 예제
+
+[inline-code-attrs-start title = 'getSSOUserById 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+async function fetchUser() {
+  const tenantId: string = "tenant-987654321";
+  const userId: string = "sso-user-abc123";
+  const result: GetSSOUserByIdAPIResponse = await getSSOUserById(tenantId, userId);
+  const ssoUser: APISSOUser = result.user;
+}
+[inline-code-end]

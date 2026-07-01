@@ -1,12 +1,12 @@
 ## Parâmetros
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Sim |  |
-| search | string | query | Sim |  |
-| locale | string | query | Não |  |
-| rating | string | query | Não |  |
-| page | number | query | Não |  |
+| Nome | Tipo | Localização | Obrigatório | Descrição |
+|------|------|-------------|--------------|-----------|
+| tenantId | string | path | Yes |  |
+| search | string | query | Yes |  |
+| locale | string | query | No |  |
+| rating | string | query | No |  |
+| page | number | query | No |  |
 
 ## Resposta
 
@@ -14,9 +14,10 @@ Retorna: [`GetGifsSearchResponse`](https://github.com/FastComments/fastcomments-
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de get_gifs_search'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo get_gifs_search'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetGifsSearchOptions
 from client.models.get_gifs_search_response import GetGifsSearchResponse
 from client.rest import ApiException
 from pprint import pprint
@@ -39,7 +40,7 @@ with client.ApiClient(configuration) as api_client:
     page = 3.4 # float |  (opcional)
 
     try:
-        api_response = api_instance.get_gifs_search(tenant_id, search, locale=locale, rating=rating, page=page)
+        api_response = api_instance.get_gifs_search(tenant_id, search, GetGifsSearchOptions(locale=locale, rating=rating, page=page))
         print("The response of PublicApi->get_gifs_search:\n")
         pprint(api_response)
     except Exception as e:

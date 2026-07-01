@@ -7,27 +7,29 @@
 
 ## Réponse
 
-Retourne : [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BulkCreateHashTagsResponse.ts)
+Retourne : [`AddHashTagsBulkResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AddHashTagsBulkResponse.ts)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple d\'utilisation de addHashTagsBulk'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'addHashTagsBulk Exemple'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_001';
-const customConfig: CustomConfigParameters = { displayColor: '#3178C6', priority: 1 };
-const tags: BulkCreateHashTagsBodyTagsInner[] = [
-  {
-    name: 'typescript',
-    slug: 'typescript',
-    description: 'Questions and examples for TypeScript usage',
-    isActive: true,
-    customConfig
-  }
-];
-const body: BulkCreateHashTagsBody = { tags };
-
-const responseWithTenant: BulkCreateHashTagsResponse = await addHashTagsBulk(tenantId, body);
-const responseWithoutTenant: BulkCreateHashTagsResponse = await addHashTagsBulk(undefined, body);
+async () => {
+    const tenantId: string | undefined = "tenant_9f8b7c6d";
+    const bulkCreateHashTagsBody: BulkCreateHashTagsBody = {
+        tags: [
+            {
+                name: "typescript",
+                description: "Discussions about TypeScript",
+                color: "#3178c6"
+            },
+            {
+                name: "fastcomments",
+                description: "Tags for FastComments integration",
+                color: "#00aaff"
+            }
+        ]
+    };
+    const result: AddHashTagsBulkResponse = await addHashTagsBulk(tenantId, bulkCreateHashTagsBody);
+    console.log(result);
+}();
 [inline-code-end]
-
----

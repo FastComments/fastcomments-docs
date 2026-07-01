@@ -1,10 +1,11 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| userId | string | query | No |  |
-| trustFactor | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Tak |  |
+| userId | string | query | Nie |  |
+| trustFactor | string | query | Nie |  |
+| sso | string | query | Nie |  |
 
 ## Odpowiedź
 
@@ -12,7 +13,7 @@ Zwraca: [`SetUserTrustFactorResponse`](https://github.com/FastComments/fastcomme
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład użycia setTrustFactor'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'setTrustFactor Przykład'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -20,18 +21,25 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Jeśli chcesz użyć niestandardowego klienta HTTP, przekaż klienta, który implementuje `GuzzleHttp\ClientInterface`.
+    // Jeśli chcesz użyć własnego klienta HTTP, przekaż swój klient implementujący `GuzzleHttp\ClientInterface`.
     // To jest opcjonalne, domyślnie zostanie użyty `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
-$user_id = 'user_id_example'; // string
-$trust_factor = 'trust_factor_example'; // string
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // string
+$options = [
+    'user_id' => 'user_id_example', // string
+    'trust_factor' => 'trust_factor_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->setTrustFactor($user_id, $trust_factor, $sso);
+    $result = $apiInstance->setTrustFactor($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->setTrustFactor: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

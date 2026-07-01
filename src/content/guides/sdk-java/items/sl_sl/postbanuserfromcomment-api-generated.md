@@ -1,17 +1,18 @@
 ## Parametri
 
 | Ime | Tip | Lokacija | Obvezno | Opis |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Da |  |
-| banEmail | boolean | query | Ne |  |
-| banEmailDomain | boolean | query | Ne |  |
-| banIP | boolean | query | Ne |  |
-| deleteAllUsersComments | boolean | query | Ne |  |
-| bannedUntil | string | query | Ne |  |
-| isShadowBan | boolean | query | Ne |  |
-| updateId | string | query | Ne |  |
-| banReason | string | query | Ne |  |
-| sso | string | query | Ne |  |
+|------|------|----------|----------|-----|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| banEmail | boolean | query | No |  |
+| banEmailDomain | boolean | query | No |  |
+| banIP | boolean | query | No |  |
+| deleteAllUsersComments | boolean | query | No |  |
+| bannedUntil | string | query | No |  |
+| isShadowBan | boolean | query | No |  |
+| updateId | string | query | No |  |
+| banReason | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -19,9 +20,9 @@ Vrne: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer postBanUserFromComment'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postBanUserFromComment Primer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvoz razredov:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -34,6 +35,7 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     Boolean banEmail = true; // Boolean | 
     Boolean banEmailDomain = true; // Boolean | 
@@ -45,7 +47,7 @@ public class Example {
     String banReason = "banReason_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      BanUserFromCommentResult result = apiInstance.postBanUserFromComment(commentId)
+      BanUserFromCommentResult result = apiInstance.postBanUserFromComment(tenantId, commentId)
             .banEmail(banEmail)
             .banEmailDomain(banEmailDomain)
             .banIP(banIP)

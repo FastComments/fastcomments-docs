@@ -1,13 +1,13 @@
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | id | string | path | 是 |  |
 
 ## 响应
 
-返回：[`GetQuestionResultResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetQuestionResultResponse.php)
+Returns: [`GetQuestionResultResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetQuestionResultResponse.php)
 
 ## 示例
 
@@ -19,18 +19,20 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // 配置 API 密钥授权: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// 如有需要，请取消注释下面的行以设置 API 密钥的前缀（例如 Bearer）
+// 取消注释以下代码以设置前缀（例如 Bearer）用于 API 密钥，如有需要
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
     // 如果您想使用自定义 HTTP 客户端，请传入实现 `GuzzleHttp\ClientInterface` 的客户端。
-    // 这是可选的，默认会使用 `GuzzleHttp\Client`。
+    // 这不是必需的，默认将使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
+
 
 try {
     $result = $apiInstance->getQuestionResult($tenant_id, $id);

@@ -8,14 +8,25 @@
 
 ## Response
 
-Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Returns: [`DeleteTenantResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteTenantResponse.ts)
 
 ## Example
 
 [inline-code-attrs-start title = 'deleteTenant Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_5f2b9c8a';
-const id: string = 'site_9d4f2a1b';
-const confirmation: string = 'CONFIRM_DELETE';
-const result: APIEmptyResponse = await deleteTenant(tenantId, id, confirmation);
+async function runExample() {
+    const tenantId: string = "tenant_12345";
+    const id: string = "resource_98765";
+    const sure: string = "confirm";
+
+    // Call with optional 'sure' parameter
+    const responseWithSure: DeleteTenantResponse = await deleteTenant(tenantId, id, sure);
+    console.log(responseWithSure);
+
+    // Call without optional 'sure' parameter
+    const responseWithoutSure: DeleteTenantResponse = await deleteTenant(tenantId, id);
+    console.log(responseWithoutSure);
+}
+
+runExample();
 [inline-code-end]

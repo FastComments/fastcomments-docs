@@ -3,12 +3,9 @@
 ```swift
 import FastCommentsSwift
 
-// Create API client
-let publicApi = PublicAPI()
-
 // Fetch comments for a page
 do {
-    let response = try await publicApi.getCommentsPublic(
+    let response = try await PublicAPI.getCommentsPublic(
         tenantId: "your-tenant-id",
         urlId: "page-url-id"
     )
@@ -27,15 +24,14 @@ do {
 ```swift
 import FastCommentsSwift
 
-// Create configuration with API key
-let defaultApi = DefaultAPI()
-defaultApi.apiKey = "your-api-key"
+// Configure your API key on the shared configuration (sent as the x-api-key header)
+FastCommentsSwiftAPIConfiguration.shared.customHeaders["x-api-key"] = "your-api-key"
 
 // Fetch comments using authenticated API
 do {
-    let response = try await defaultApi.getComments(
+    let response = try await DefaultAPI.getComments(
         tenantId: "your-tenant-id",
-        urlId: "page-url-id"
+        options: .init(urlId: "page-url-id")
     )
 
     print("Total comments: \(response.count ?? 0)")
@@ -56,9 +52,11 @@ import FastCommentsSwift
 // (generate it with FastCommentsSSO, see the SSO section above).
 do {
     let response = try await ModerationAPI.getApiComments(
-        page: 0,
-        count: 30,
-        sso: ssoToken
+        options: .init(
+            page: 0,
+            count: 30,
+            sso: ssoToken
+        )
     )
 
     print("Found \(response.comments.count) comments to moderate")

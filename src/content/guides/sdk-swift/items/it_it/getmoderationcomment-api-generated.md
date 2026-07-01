@@ -1,8 +1,9 @@
 ## Parametri
 
-| Nome | Tipo | Posizione | Richiesto | Descrizione |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Sì |  |
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+|------|------|----------|--------------|-------------|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
 | includeEmail | boolean | query | No |  |
 | includeIP | boolean | query | No |  |
 | sso | string | query | No |  |
@@ -13,17 +14,18 @@ Restituisce: [`ModerationAPICommentResponse`](https://github.com/FastComments/fa
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di getModerationComment'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio getModerationComment'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// I seguenti esempi di codice sono ancora in beta. Per qualsiasi problema, segnalalo tramite http://github.com/OpenAPITools/openapi-generator/issues/new
+// Il seguente esempio di codice è ancora beta. Per eventuali problemi, si prega di segnalare via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
 let includeEmail = true // Bool |  (opzionale)
 let includeIP = true // Bool |  (opzionale)
 let sso = "sso_example" // String |  (opzionale)
 
-ModerationAPI.getModerationComment(commentId: commentId, includeEmail: includeEmail, includeIP: includeIP, sso: sso) { (response, error) in
+ModerationAPI.getModerationComment(tenantId: tenantId, commentId: commentId, options: ModerationAPI.GetModerationCommentOptions(includeEmail: includeEmail, includeIP: includeIP, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -34,5 +36,3 @@ ModerationAPI.getModerationComment(commentId: commentId, includeEmail: includeEm
     }
 }
 [inline-code-end]
-
----

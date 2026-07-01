@@ -1,11 +1,10 @@
 ## Параметры
 
-| Name | Type | Required | Description |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | id | string | Нет |  |
-| userId | string | Нет |  |
-| anonUserId | string | Нет |  |
+| options | FlagCommentOptions | Нет |  |
 
 ## Ответ
 
@@ -15,18 +14,9 @@
 
 [inline-code-attrs-start title = 'Пример flagComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.flagComment(
-  tenantId = "my-tenant-123",
-  id = "cmt-98765",
-  userId = "user-12345",
-  anonUserId = ""
-)
-
-if response.isSome:
-  let flagResp = response.get()
-  echo "Flag response received"
-else:
-  echo "No flag response returned"
+let options = FlagCommentOptions(reason: "spam content", note: "Automated posting detected", isSpam: true, categories: @["spam"])
+let (flagRes, httpRes) = client.flagComment(tenantId = "my-tenant-123", id = "cmt-789", options = options)
+if flagRes.isSome:
+  let res = flagRes.get()
+  discard res
 [inline-code-end]
-
----

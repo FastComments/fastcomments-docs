@@ -1,14 +1,14 @@
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-----------|
-| user_id | String | Não |  |
-| direction | models::SortDirections | Não |  |
-| replies_to_user_id | String | Não |  |
-| page | f64 | Não |  |
-| includei10n | bool | Não |  |
-| locale | String | Não |  |
-| is_crawler | bool | Não |  |
+|------|------|--------------|-----------|
+| user_id | String | No |  |
+| direction | models::SortDirections | No |  |
+| replies_to_user_id | String | No |  |
+| page | f64 | No |  |
+| includei10n | bool | No |  |
+| locale | String | No |  |
+| is_crawler | bool | No |  |
 
 ## Resposta
 
@@ -16,22 +16,19 @@ Retorna: [`GetCommentsForUserResponse`](https://github.com/FastComments/fastcomm
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'get_comments_for_user Exemplo'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo get_comments_for_user'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example() -> Result<(), Error> {
-    let params: GetCommentsForUserParams = GetCommentsForUserParams {
-        user_id: Some("alice@acme-corp".to_string()),
-        direction: Some(models::SortDirections::Descending),
-        replies_to_user_id: Some("editor-202".to_string()),
+async fn fetch_user_comments() -> Result<(), Error> {
+    let params = GetCommentsForUserParams {
+        user_id: Some("user-42".to_string()),
+        direction: Some(models::SortDirections::Desc),
+        replies_to_user_id: Some("reply-to-42".to_string()),
         page: Some(1.0),
         includei10n: Some(true),
         locale: Some("en-US".to_string()),
         is_crawler: Some(false),
     };
-    let response: GetCommentsForUserResponse = get_comments_for_user(configuration, params).await?;
-    let _ = response;
+    let _response = get_comments_for_user(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

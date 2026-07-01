@@ -1,33 +1,29 @@
-## Параметры
+## Параметри
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| commentId | string | Да |  |
-| reviewed | bool | Нет |  |
-| sso | string | Нет |  |
+| Назва | Тип | Обов’язковий | Опис |
+|------|------|--------------|------|
+| tenantId | string | Так |  |
+| commentId | string | Так |  |
+| options | const PostSetCommentReviewStatusOptions& | Так |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
+Повертає: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример postSetCommentReviewStatus'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postSetCommentReviewStatus Приклад'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t commentId = U("cmt-2026-0001");
-boost::optional<bool> reviewed = true;
-boost::optional<utility::string_t> sso = U("user@example.com");
-auto fallback = std::make_shared<APIEmptyResponse>();
-api->postSetCommentReviewStatus(commentId, reviewed, sso)
-    .then([fallback](pplx::task<std::shared_ptr<APIEmptyResponse>> t) {
-        try {
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto commentId = utility::conversions::to_string_t("cmt-456789");
+PostSetCommentReviewStatusOptions opts;
+opts.status = utility::conversions::to_string_t("approved");
+opts.note = boost::optional<utility::string_t>(utility::conversions::to_string_t("Looks good"));
+api->postSetCommentReviewStatus(tenantId, commentId, opts)
+    .then([](pplx::task<std::shared_ptr<APIEmptyResponse>> t){
+        try{
             auto resp = t.get();
-            if (!resp) resp = fallback;
-            std::cout << "Comment review status updated\n";
-        } catch (const std::exception &e) {
-            std::cerr << "Failed to set review status: " << e.what() << '\n';
+        }catch(const std::exception& e){
         }
     });
 [inline-code-end]
-
----

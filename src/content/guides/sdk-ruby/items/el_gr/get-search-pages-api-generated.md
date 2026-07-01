@@ -1,9 +1,10 @@
 ## Παράμετροι
 
-| Name | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| value | string | query | Όχι |  |
-| sso | string | query | Όχι |  |
+| tenantId | string | query | Yes |  |
+| value | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Απάντηση
 
@@ -17,16 +18,19 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # Σειρά | 
 opts = {
-  value: 'value_example', # Συμβολοσειρά | 
-  sso: 'sso_example' # Συμβολοσειρά | 
+  value: 'value_example', # Σειρά | 
+  sso: 'sso_example' # Σειρά | 
 }
 
 begin
   
-  result = api_instance.get_search_pages(opts)
+  result = api_instance.get_search_pages(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_search_pages: #{e}"
 end
 [inline-code-end]
+
+---

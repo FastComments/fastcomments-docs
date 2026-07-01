@@ -2,7 +2,7 @@
 
 | שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | כן |  |
+| tenantId | string | query | Yes |  |
 
 ## תגובה
 
@@ -10,25 +10,29 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getEmailTemplateDefinitions'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getEmailTemplateDefinitions'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// הגדר הרשאת מפתח API: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// בטל את ההערה שלמטה כדי להגדיר קידומת (למשל Bearer) עבור מפתח ה-API, אם נדרש
-// $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// Configure API key authorization: api_key
+// קבע אישור מפתח API: api_key
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// בטל את ההערה למטה כדי להגדיר קידומת (למשל Bearer) למפתח API, אם נדרש
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // אם ברצונך להשתמש בלקוח HTTP מותאם אישית, העבר את הלקוח שלך שמממש את `GuzzleHttp\ClientInterface`.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // אם אתה רוצה להשתמש במלקוח http מותאם, העבר את המלקוח שלך שמיישם `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     // זה אופציונלי, `GuzzleHttp\Client` ישמש כברירת מחדל.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // מחרוזת
+
 
 try {
     $result = $apiInstance->getEmailTemplateDefinitions($tenant_id);

@@ -1,19 +1,19 @@
-## パラメーター
+## パラメータ
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tag | string | path | はい |  |
-| tenantId | string | query | いいえ |  |
+| tenantId | string | query | Yes |  |
+| tag | string | path | Yes |  |
 
-## レスポンス
+## 応答
 
-戻り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
+返却: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## 例
 
 [inline-code-attrs-start title = 'deleteHashTag の例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// クラスのインポート:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,19 +26,18 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // APIキー認証を設定: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // 次の行のコメントを外して、APIキーの接頭辞（例: "Token"）を設定します（デフォルトは null）
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    String tag = "tag_example"; // String | 
     String tenantId = "tenantId_example"; // String | 
+    String tag = "tag_example"; // String | 
     DeleteHashTagRequestBody deleteHashTagRequestBody = new DeleteHashTagRequestBody(); // DeleteHashTagRequestBody | 
     try {
-      APIEmptyResponse result = apiInstance.deleteHashTag(tag)
-            .tenantId(tenantId)
+      APIEmptyResponse result = apiInstance.deleteHashTag(tenantId, tag)
             .deleteHashTagRequestBody(deleteHashTagRequestBody)
             .execute();
       System.out.println(result);
@@ -52,3 +51,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

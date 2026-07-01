@@ -4,8 +4,8 @@ afterId
 
 ## Parametre
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
+|------|------|-----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | afterId | string | query | Nej |  |
 | limit | integer | query | Nej |  |
@@ -19,15 +19,15 @@ Returnerer: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomment
 
 [inline-code-attrs-start title = 'getFeedPosts Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// De følgende kodeeksempler er stadig i beta. For ethvert problem, rapportér venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Følgende kodeeksempler er stadig beta. For eventuelle problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let tenantId = "tenantId_example" // String | 
+let tenantId = "tenantId_example" // String |
 let afterId = "afterId_example" // String |  (valgfri)
 let limit = 987 // Int |  (valgfri)
 let tags = ["inner_example"] // [String] |  (valgfri)
 
-DefaultAPI.getFeedPosts(tenantId: tenantId, afterId: afterId, limit: limit, tags: tags) { (response, error) in
+DefaultAPI.getFeedPosts(tenantId: tenantId, options: DefaultAPI.GetFeedPostsOptions(afterId: afterId, limit: limit, tags: tags)) { (response, error) in
     guard error == nil else {
         print(error)
         return

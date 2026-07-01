@@ -1,7 +1,7 @@
 ## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Naam | Type | Locatie | Verplicht | Beschrijving |
+|------|------|----------|-----------|--------------|
 | tenantId | string | query | Ja |  |
 | urlId | string | query | Nee |  |
 | userId | string | query | Nee |  |
@@ -10,7 +10,7 @@
 | questionIds | string | query | Nee |  |
 | skip | number | query | Nee |  |
 
-## Response
+## Respons
 
 Retourneert: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetQuestionResultsResponse.php)
 
@@ -22,28 +22,32 @@ Retourneert: [`GetQuestionResultsResponse`](https://github.com/FastComments/fast
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configureer autorisatie voor API-sleutel: api_key
+// Configureer API-sleutel autorisatie: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Haal onderstaande regel uit commentaar om een voorvoegsel in te stellen (bijv. Bearer) voor de API-sleutel, indien nodig
+// Verwijder commentaar hieronder om prefix in te stellen (bijv. Bearer) voor API-sleutel, indien nodig
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Als u een aangepaste HTTP-client wilt gebruiken, geef uw client door die `GuzzleHttp\ClientInterface` implementeert.
+    // Als je een aangepaste http-client wilt gebruiken, geef je client door die `GuzzleHttp\ClientInterface` implementeert.
     // Dit is optioneel, `GuzzleHttp\Client` wordt standaard gebruikt.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$url_id = 'url_id_example'; // string
-$user_id = 'user_id_example'; // string
-$start_date = 'start_date_example'; // string
-$question_id = 'question_id_example'; // string
-$question_ids = 'question_ids_example'; // string
-$skip = 3.4; // float
+$options = [
+    'url_id' => 'url_id_example', // string
+    'user_id' => 'user_id_example', // string
+    'start_date' => 'start_date_example', // string
+    'question_id' => 'question_id_example', // string
+    'question_ids' => 'question_ids_example', // string
+    'skip' => 3.4, // float
+];
+
 
 try {
-    $result = $apiInstance->getQuestionResults($tenant_id, $url_id, $user_id, $start_date, $question_id, $question_ids, $skip);
+    $result = $apiInstance->getQuestionResults($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getQuestionResults: ', $e->getMessage(), PHP_EOL;

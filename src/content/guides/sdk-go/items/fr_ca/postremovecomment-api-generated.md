@@ -1,13 +1,15 @@
 ## Paramètres
 
 | Nom | Type | Emplacement | Obligatoire | Description |
-|------|------|----------|----------|-------------|
+|------|------|--------------|-------------|-------------|
+| tenantId | string | query | Oui |  |
 | commentId | string | path | Oui |  |
+| broadcastId | string | query | Non |  |
 | sso | string | query | Non |  |
 
 ## Réponse
 
-Renvoie: [`PostRemoveCommentResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_post_remove_comment_response.go)
+Retourne : [`PostRemoveCommentApiResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_post_remove_comment_api_response.go)
 
 ## Exemple
 
@@ -23,17 +25,21 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
-	sso := "sso_example" // string |  (optionnel)
+	broadcastId := "broadcastId_example" // string |  (facultatif)
+	sso := "sso_example" // string |  (facultatif)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostRemoveComment(context.Background(), commentId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostRemoveComment(context.Background(), commentId).TenantId(tenantId).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostRemoveComment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// réponse de `PostRemoveComment`: PostRemoveCommentResponse
+	// réponse de `PostRemoveComment` : PostRemoveCommentApiResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostRemoveComment`: %v\n", resp)
 }
 [inline-code-end]
+
+---

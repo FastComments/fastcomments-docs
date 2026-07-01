@@ -1,30 +1,26 @@
 ## 매개변수
 
-| Name | Type | 필수 | 설명 |
-|------|------|------|-------------|
-| commentId | string | 예 |  |
-| sso | string | 아니오 |  |
+| 이름 | 유형 | 필수 | 설명 |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| sso | string | No |  |
 
 ## 응답
 
 반환: [`GetCommentBanStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetCommentBanStatusResponse.h)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'getCommentBanStatus 예제'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getCommentBanStatus 예시'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> sso = utility::string_t(U("user@example.com"));
-utility::string_t commentId = utility::string_t(U("comment-98765"));
+auto tenantId = utility::string_t(U"my-tenant-123");
+auto commentId = utility::string_t(U"comment-456");
+boost::optional<utility::string_t> sso = utility::string_t(U"user@example.com");
 
-api->getCommentBanStatus(commentId, sso)
-    .then([](pplx::task<std::shared_ptr<GetCommentBanStatusResponse>> task){
-        try {
-            auto resp = task.get();
-            auto copy = std::make_shared<GetCommentBanStatusResponse>(*resp);
-            (void)copy;
-        } catch (const std::exception&) {
-        }
-    });
+api->getCommentBanStatus(tenantId, commentId, sso).then([](pplx::task<std::shared_ptr<GetCommentBanStatusResponse>> t){
+    try{
+        auto response = t.get();
+    }catch(const std::exception&){ }
+});
 [inline-code-end]
-
----

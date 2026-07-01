@@ -1,31 +1,31 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| createAPIPageData | CreateAPIPageData | Не |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| createAPIPageData | CreateAPIPageData | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[AddPageAPIResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_add_page_api_response.nim)
+Vraća: [`Option[AddPageAPIResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_add_page_api_response.nim)
 
-## Примјер
+## Primjer
 
-[inline-code-attrs-start title = 'Примјер addPage'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'addPage Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-var createData: CreateAPIPageData
-createData.url = "news/nim-4-release"
-createData.title = "Nim 4 Release Coverage"
-createData.path = "/news/nim-4-release"
-createData.isEnabled = true
-createData.tags = @["nim", "release"]
-createData.description = "Coverage of Nim 4 release"
+let pageData = CreateAPIPageData(
+  urlId = "news/article-2024",
+  title = "Breaking News: Nim Takes Over",
+  description = "An in-depth article about Nim's rise.",
+  tags = @["nim", "programming", "news"]
+)
 
-let (response, httpResponse) = client.addPage(tenantId = "my-tenant-123", createAPIPageData = createData)
+let (addPageResp, httpResp) = client.addPage(
+  tenantId = "my-tenant-123",
+  createAPIPageData = pageData
+)
 
-if response.isSome:
-  let pageResp = response.get()
-  echo pageResp
+if addPageResp.isSome:
+  let resp = addPageResp.get()
+  echo resp
 [inline-code-end]
-
----

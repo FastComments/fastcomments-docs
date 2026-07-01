@@ -1,20 +1,20 @@
-FastComments Rust SDK се састоји од неколико модула:
+The FastComments Rust SDK se sastoji od nekoliko modula:
 
-- **Клијентски модул** - API клијент за FastComments REST API-је
-  - Комплетне дефиниције типова за све API моделе
-  - Три API клијента који покривају све FastComments методе:
-    - `default_api` (**DefaultApi**) - методе аутентификоване API кључем за серверску употребу
-    - `public_api` (**PublicApi**) - јавне методе без API кључа које је сигурно позивати из прегледача и мобилних апликација
-    - `moderation_api` (**ModerationApi**) - методе које подржавају модераторску контролну таблу, укључујући модерацију коментара (листање, бројање, претрага, логови, извоз), акције модерације (уклони/врати, означи, подеси статус преглед/спам/одобрење, гласови, поновно отварање/затварање нити), забране (забрана на основу коментара, поништавање, сажетци пре-забране, статус/подешавања забране, бројеви забрањених корисника), и значке и поверење (додели/уклони значке, ручне значке, добиј/постави фактор поверења, унутрашњи профил корисника). Свака модерацијска метода прихвата параметар `sso` тако да се позив може обавити у име модератора аутентификованог преко SSO.
-  - Пуна подршка за async/await са tokio
-  - Погледајте [client/README.md](https://github.com/FastComments/fastcomments-rust/blob/main/client/README.md) за детаљну API документацију
+- **Client Module** - API klijent za FastComments REST API-je
+  - Potpuna definicija tipova za sve API modele
+  - Tri API klijenta koji pokrivaju sve FastComments metode:
+    - `default_api` (**DefaultApi**) - Metode autentifikovane API ključem za upotrebu na serveru
+    - `public_api` (**PublicApi**) - javne, metode bez API ključa koje su sigurne za pozivanje iz preglednika i mobilnih aplikacija
+    - `moderation_api` (**ModerationApi**) - opsežan paket live i brzih moderacijskih API‑ja. Svaka Moderation metoda prima `sso` parametar i može se autentifikovati putem SSO ili FastComments.com sesijskog kolačića.
+  - Potpuna podrška za async/await uz tokio
+  - Pogledajte [client/README.md](https://github.com/FastComments/fastcomments-rust/blob/main/client/README.md) za detaljnu API dokumentaciju
 
-- **SSO модул** - Серверске алатке за једнократну пријаву (SSO)
-  - Сигурно генерисање токена за аутентификацију корисника
-  - Подршка за једноставне и сигурне SSO режиме
-  - Потписивање токена засновано на HMAC-SHA256
+- **SSO Module** - Server‑side Single Sign-On (SSO) alati
+  - Sigurno generisanje tokena za autentifikaciju korisnika
+  - Podrška za oba, jednostavna i sigurna SSO moda
+  - Potpisivanje tokena bazirano na HMAC‑SHA256
 
-- **Основни типови** - Заједничке дефиниције типова и помоћни алати
-  - Модели коментара и структуре метаподатака
-  - Конфигурације корисника и тенанта
-  - Помоћне функције за уобичајене операције
+- **Core Types** - Zajedničke definicije tipova i alati
+  - Modeli komentara i strukture metapodataka
+  - Konfiguracije korisnika i najamnika
+  - Pomoćne funkcije za uobičajene operacije

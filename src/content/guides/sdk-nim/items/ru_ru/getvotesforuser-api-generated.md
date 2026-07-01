@@ -1,11 +1,10 @@
 ## Параметры
 
-| Имя | Тип | Обязательно | Описание |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | urlId | string | Yes |  |
-| userId | string | No |  |
-| anonUserId | string | No |  |
+| options | GetVotesForUserOptions | No |  |
 
 ## Ответ
 
@@ -13,19 +12,17 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример getVotesForUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getVotesForUser Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getVotesForUser(
+let (optResp, httpResp) = client.getVotesForUser(
   tenantId = "my-tenant-123",
   urlId = "news/article-title",
-  userId = "user-789",
-  anonUserId = ""
+  options = GetVotesForUserOptions()
 )
-if response.isSome:
-  let votes = response.get()
-  echo "User votes retrieved"
-else:
-  echo "No votes found"
+
+if optResp.isSome:
+  let resp = optResp.get()
+  echo resp
 [inline-code-end]
 
 ---

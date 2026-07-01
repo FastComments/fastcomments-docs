@@ -1,11 +1,12 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
-|------|------|----------|----------|-------------|
+| Naam | Type | Locatie | Verplicht | Beschrijving |
+|------|------|----------|-----------|--------------|
+| tenantId | string | query | Ja |  |
 | commentId | string | query | Nee |  |
 | sso | string | query | Nee |  |
 
-## Antwoord
+## Respons
 
 Retourneert: [`GetUserInternalProfileResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserInternalProfileResponse.java)
 
@@ -13,7 +14,7 @@ Retourneert: [`GetUserInternalProfileResponse`](https://github.com/FastComments/
 
 [inline-code-attrs-start title = 'getUserInternalProfile Voorbeeld'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importeer klassen:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      GetUserInternalProfileResponse result = apiInstance.getUserInternalProfile()
+      GetUserInternalProfileResponse result = apiInstance.getUserInternalProfile(tenantId)
             .commentId(commentId)
             .sso(sso)
             .execute();

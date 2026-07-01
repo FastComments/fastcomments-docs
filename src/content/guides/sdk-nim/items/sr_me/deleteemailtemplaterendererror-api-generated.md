@@ -1,24 +1,25 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Потребно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Не |  |
-| errorId | string | Не |  |
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| errorId | string | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
+Vraća: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'deleteEmailTemplateRenderError Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteEmailTemplateRenderError Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteEmailTemplateRenderError(tenantId = "my-tenant-123", id = "welcome-email-template", errorId = "err-20250615-01")
-if response.isSome:
-  let emptyResp = response.get()
-  echo "Deleted render error, tenant:", "my-tenant-123"
-  echo "HTTP status:", httpResponse.status
-else:
-  echo "No body returned, HTTP status:", httpResponse.status
+let (apiRes, httpRes) = client.deleteEmailTemplateRenderError(
+  tenantId = "my-tenant-123",
+  id = "welcome-email",
+  errorId = "render-err-456"
+)
+
+if apiRes.isSome:
+  let empty = apiRes.get()
 [inline-code-end]

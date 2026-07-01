@@ -1,28 +1,37 @@
 ## Parámetros
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Sí |  |
-| id | string | Sí |  |
-| updateTenantPackageBody | UpdateTenantPackageBody | Sí |  |
+| Nombre | Tipo | Requerido | Descripción |
+|--------|------|-----------|-------------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updateTenantPackageBody | UpdateTenantPackageBody | Yes |  |
 
 ## Respuesta
 
-Devuelve: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Devuelve: [`UpdateTenantPackageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateTenantPackageResponse.ts)
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de updateTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateTenantPackage Ejemplo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_4b7c9a2f";
-const id: string = "pkg_91f2d3b8";
-const updateTenantPackageBody: UpdateTenantPackageBody = {
-  planId: "business_annual",
-  seats: 50,
-  autoRenew: true,
-  couponCode: "WELCOME2025" // parámetro opcional demostrado
+const tenantId: string = "tenant-9876";
+const packageId: string = "pkg-2023";
+
+const customConfig: CustomConfigParameters = {
+  enableSpamFilter: true,
+  spamRatingThreshold: 4,
 };
-const result: APIEmptyResponse = await updateTenantPackage(tenantId, id, updateTenantPackageBody);
+
+const updateBody: UpdateTenantPackageBody = {
+  displayName: "Enterprise Pro",
+  customConfig,
+};
+
+const response: UpdateTenantPackageResponse = await updateTenantPackage(
+  tenantId,
+  packageId,
+  updateBody
+);
 [inline-code-end]
 
 ---

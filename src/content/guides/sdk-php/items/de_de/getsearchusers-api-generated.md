@@ -1,13 +1,14 @@
 ## Parameter
 
-| Name | Typ | Location | Erforderlich | Beschreibung |
-|------|------|----------|----------|-------------|
-| value | string | query | Nein |  |
-| sso | string | query | Nein |  |
+| Name     | Typ    | Ort   | Erforderlich | Beschreibung |
+|----------|--------|-------|--------------|--------------|
+| tenantId | string | query | Ja           |  |
+| value    | string | query | Nein         |  |
+| sso      | string | query | Nein         |  |
 
 ## Antwort
 
-Gibt zurück: [`ModerationUserSearchResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationUserSearchResponse.php)
+Returns: [`ModerationUserSearchResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationUserSearchResponse.php)
 
 ## Beispiel
 
@@ -23,15 +24,18 @@ $apiInstance = new FastComments\Client\Api\ModerationApi(
     // Dies ist optional, `GuzzleHttp\Client` wird standardmäßig verwendet.
     new GuzzleHttp\Client()
 );
-$value = 'value_example'; // string
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // string
+$options = [
+    'value' => 'value_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->getSearchUsers($value, $sso);
+    $result = $apiInstance->getSearchUsers($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getSearchUsers: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

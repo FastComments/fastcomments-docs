@@ -1,14 +1,14 @@
-Attualmente i visualizzatori online di una pagina: persone la cui sessione websocket è sottoscritta alla pagina in questo momento.
-Restituisce anonCount + totalCount (iscritti alla room in generale, inclusi i visualizzatori anonimi che non elenchiamo).
+---
+Visualizzatori attualmente online di una pagina: persone la cui sessione websocket è iscritta alla pagina in questo momento.  
+Restituisce anonCount + totalCount (sottoscrittori dell’intera stanza, inclusi visualizzatori anonimi che non elenchiamo).
 
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nome | Tipo | Obbligatorio | Descrizione |
+|------|------|--------------|-------------|
 | tenantId | string | Sì |  |
 | urlId | string | Sì |  |
-| afterName | string | No |  |
-| afterUserId | string | No |  |
+| options | GetOnlineUsersOptions | No |  |
 
 ## Risposta
 
@@ -16,15 +16,11 @@ Restituisce: [`Option[PageUsersOnlineResponse]`](https://github.com/FastComments
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di getOnlineUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio getOnlineUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getOnlineUsers(tenantId = "my-tenant-123", urlId = "news/politics/top-story", afterName = "", afterUserId = "")
-if response.isSome:
-  let page = response.get()
-  echo "Received online users page:"
-  echo page
-else:
-  echo "No online users returned. HTTP status: ", httpResponse.statusCode
+let opts = GetOnlineUsersOptions()
+let (onlineUsersOpt, httpResp) = client.getOnlineUsers(tenantId = "my-tenant-123", urlId = "news/article-title", options = opts)
+if onlineUsersOpt.isSome:
+  let onlineUsers = onlineUsersOpt.get()
+  echo onlineUsers
 [inline-code-end]
-
----

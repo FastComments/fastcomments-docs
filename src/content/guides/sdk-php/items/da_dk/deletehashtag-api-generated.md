@@ -1,9 +1,9 @@
 ## Parametre
 
-| Navn | Type | Location | Påkrævet | Beskrivelse |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Ja |  |
 | tag | string | path | Ja |  |
-| tenantId | string | query | Nej |  |
 
 ## Svar
 
@@ -17,24 +17,28 @@ Returnerer: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ph
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Konfigurer API-nøgleautorisation: api_key
+// Konfigurer API-nøglegodkendelse: api_key
+// Fjern kommentar nedenfor for at indstille præfiks (fx Bearer) for API-nøgle, hvis nødvendigt
+// Dette er valgfrit, `GuzzleHttp\Client` vil blive brugt som standard.
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Fjern kommentar nedenfor for at sætte præfiks (f.eks. Bearer) for API-nøglen, hvis nødvendigt
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Hvis du vil bruge en brugerdefineret HTTP-klient, skal du sende din klient, som implementerer `GuzzleHttp\ClientInterface`.
-    // Dette er valgfrit, `GuzzleHttp\Client` vil blive brugt som standard.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$tag = 'tag_example'; // string
+
 $tenant_id = 'tenant_id_example'; // string
+$tag = 'tag_example'; // string
 $delete_hash_tag_request_body = new \FastComments\Client\Model\DeleteHashTagRequestBody(); // \FastComments\Client\Model\DeleteHashTagRequestBody
 
+
 try {
-    $result = $apiInstance->deleteHashTag($tag, $tenant_id, $delete_hash_tag_request_body);
+    $result = $apiInstance->deleteHashTag($tenant_id, $tag, $delete_hash_tag_request_body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->deleteHashTag: ', $e->getMessage(), PHP_EOL;

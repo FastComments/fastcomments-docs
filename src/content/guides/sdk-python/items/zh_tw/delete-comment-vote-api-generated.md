@@ -1,6 +1,6 @@
 ## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必需 | 說明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 是 |  |
 | commentId | string | path | 是 |  |
@@ -12,25 +12,26 @@
 
 ## 回應
 
-回傳: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_delete_response.py)
+返回：[`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_delete_response.py)
 
 ## 範例
 
 [inline-code-attrs-start title = 'delete_comment_vote 範例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import DeleteCommentVoteOptions
 from client.models.vote_delete_response import VoteDeleteResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# 設定主機為可選，預設為 https://fastcomments.com
-# 查看 configuration.py 以取得所有支援的設定參數清單。
+# 定義主機是可選的，預設為 https://fastcomments.com
+# 請參閱 configuration.py 以取得所有支援的設定參數清單。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# 以 API 客戶端實例進入上下文
+# 使用 API 客戶端的實例進入上下文
 with client.ApiClient(configuration) as api_client:
     # 建立 API 類別的實例
     api_instance = client.PublicApi(api_client)
@@ -39,11 +40,11 @@ with client.ApiClient(configuration) as api_client:
     vote_id = 'vote_id_example' # str | 
     url_id = 'url_id_example' # str | 
     broadcast_id = 'broadcast_id_example' # str | 
-    edit_key = 'edit_key_example' # str |  (可選)
-    sso = 'sso_example' # str |  (可選)
+    edit_key = 'edit_key_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.delete_comment_vote(tenant_id, comment_id, vote_id, url_id, broadcast_id, edit_key=edit_key, sso=sso)
+        api_response = api_instance.delete_comment_vote(tenant_id, comment_id, vote_id, url_id, broadcast_id, DeleteCommentVoteOptions(edit_key=edit_key, sso=sso))
         print("The response of PublicApi->delete_comment_vote:\n")
         pprint(api_response)
     except Exception as e:

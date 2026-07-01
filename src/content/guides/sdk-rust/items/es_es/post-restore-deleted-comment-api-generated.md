@@ -1,8 +1,10 @@
 ## Parámetros
 
-| Nombre | Tipo | Requerido | Descripción |
+| Nombre | Tipo | Obligatorio | Descripción |
 |------|------|----------|-------------|
+| tenant_id | String | Sí |  |
 | comment_id | String | Sí |  |
+| broadcast_id | String | No |  |
 | sso | String | No |  |
 
 ## Respuesta
@@ -11,16 +13,17 @@ Devuelve: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'post_restore_deleted_comment Ejemplo'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo post_restore_deleted_comment'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
+async fn restore_comment() -> Result<(), Error> {
+    let config: &configuration::Configuration = get_configuration();
     let params = PostRestoreDeletedCommentParams {
-        comment_id: String::from("news/article-2024-06-19/comment-8932"),
-        sso: Some(String::from("user-session-9f8e7d")),
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: "comment-12345".to_string(),
+        broadcast_id: Some("broadcast-987".to_string()),
+        sso: Some("user@example.com".to_string()),
     };
-    let response: ApiEmptyResponse = post_restore_deleted_comment(&configuration, params).await?;
+    let _response = post_restore_deleted_comment(config, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

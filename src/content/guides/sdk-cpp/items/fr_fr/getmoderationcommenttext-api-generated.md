@@ -1,29 +1,31 @@
 ## Paramètres
 
-| Name | Type | Required | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
+| tenantId | string | Yes |  |
 | commentId | string | Yes |  |
 | sso | string | No |  |
 
-## Response
+## Réponse
 
-Renvoie: [`GetCommentTextResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetCommentTextResponse.h)
+Retourne : [`GetCommentTextResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetCommentTextResponse.h)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getModerationCommentText'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getModerationCommentText'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t commentId = U("cmt-987654321");
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
-api->getModerationCommentText(commentId, sso)
-.then([](pplx::task<std::shared_ptr<GetCommentTextResponse>> t) -> std::shared_ptr<GetCommentTextResponse> {
-    try {
-        auto resp = t.get();
-        return resp ? resp : std::make_shared<GetCommentTextResponse>();
-    } catch (...) {
-        return std::make_shared<GetCommentTextResponse>();
-    }
-});
+utility::string_t tenantId = U("my-tenant-123");
+utility::string_t commentId = U("cmt-987654");
+boost::optional<utility::string_t> sso = U("sso-token-abc");
+
+api->getModerationCommentText(tenantId, commentId, sso)
+    .then([](pplx::task<std::shared_ptr<GetCommentTextResponse>> t) {
+        try {
+            auto resp = t.get();
+            auto text = std::make_shared<std::string>(resp->commentText);
+        } catch (const std::exception&) {
+        }
+    });
 [inline-code-end]
 
 ---

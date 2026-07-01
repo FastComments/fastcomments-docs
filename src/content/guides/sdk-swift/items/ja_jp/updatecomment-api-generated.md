@@ -2,21 +2,21 @@
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | はい |  |
-| id | string | path | はい |  |
-| contextUserId | string | query | いいえ |  |
-| doSpamCheck | boolean | query | いいえ |  |
-| isLive | boolean | query | いいえ |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| contextUserId | string | query | No |  |
+| doSpamCheck | boolean | query | No |  |
+| isLive | boolean | query | No |  |
 
-## レスポンス
+## 応答
 
-返却値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
+返却: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
 
 ## 例
 
 [inline-code-attrs-start title = 'updateComment の例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 下記のコードサンプルはまだベータ版です。問題がある場合は http://github.com/OpenAPITools/openapi-generator/issues/new へ報告してください
+// 以下のコードサンプルはまだベータ版です。問題がある場合は、http://github.com/OpenAPITools/openapi-generator/issues/new へ報告してください
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -26,7 +26,7 @@ let contextUserId = "contextUserId_example" // String |  (optional)
 let doSpamCheck = true // Bool |  (optional)
 let isLive = true // Bool |  (optional)
 
-DefaultAPI.updateComment(tenantId: tenantId, id: id, updatableCommentParams: updatableCommentParams, contextUserId: contextUserId, doSpamCheck: doSpamCheck, isLive: isLive) { (response, error) in
+DefaultAPI.updateComment(tenantId: tenantId, id: id, updatableCommentParams: updatableCommentParams, options: DefaultAPI.UpdateCommentOptions(contextUserId: contextUserId, doSpamCheck: doSpamCheck, isLive: isLive)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -37,5 +37,3 @@ DefaultAPI.updateComment(tenantId: tenantId, id: id, updatableCommentParams: upd
     }
 }
 [inline-code-end]
-
----

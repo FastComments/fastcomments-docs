@@ -1,13 +1,9 @@
 ## Paramètres
 
-| Name | Type | Requis | Description |
-|------|------|--------|-------------|
+| Nom | Type | Obligatoire | Description |
+|------|------|-------------|-------------|
 | tenantId | string | Oui |  |
-| userId | string | Non |  |
-| badgeId | string | Non |  |
-| displayedOnComments | bool | Non |  |
-| limit | float64 | Non |  |
-| skip | float64 | Non |  |
+| options | GetUserBadgesOptions | Non |  |
 
 ## Réponse
 
@@ -15,20 +11,12 @@ Renvoie : [`Option[APIGetUserBadgesResponse]`](https://github.com/FastComments/f
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getUserBadges'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getUserBadges'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUserBadges(
-  tenantId = "my-tenant-123",
-  userId = "user-9876",
-  badgeId = "top-commenter",
-  displayedOnComments = true,
-  limit = 20.0,
-  skip = 0.0
-)
-
-if response.isSome:
-  let badges = response.get()
-  echo "Badges response:", badges
-else:
-  echo "No badges found (HTTP status: ", httpResponse.status, ")"
+let opts = GetUserBadgesOptions()
+let (badgesOpt, httpResp) = client.getUserBadges(tenantId = "my-tenant-123", options = opts)
+if badgesOpt.isSome:
+  let badges = badgesOpt.get()
 [inline-code-end]
+
+---

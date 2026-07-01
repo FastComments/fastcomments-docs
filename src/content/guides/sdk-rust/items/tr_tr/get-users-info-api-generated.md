@@ -1,14 +1,14 @@
----
-Bir kiracı için toplu kullanıcı bilgisi. Given userIds, User / SSOUser'dan görüntüleme bilgilerini döndürür.
-Yorum bileşeni, presence event ile yeni görünen kullanıcıları zenginleştirmek için kullanılır.
-Sayfa bağlamı yok: gizlilik tutarlı olarak uygulanır (özel profiller maskelenir).
+---  
+Kiracı için toplu kullanıcı bilgisi. Verilen userIds ile User / SSOUser'dan görüntüleme bilgisi döndürülür.  
+Yorum widget'ı tarafından, varlık olayıyla yeni görünen kullanıcıları zenginleştirmek için kullanılır.  
+Sayfa bağlamı yok: gizlilik tutarlı bir şekilde uygulanır (özel profiller maskeleştirilir).
 
-## Parametreler
+## Parameters
 
 | Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
-| tenant_id | String | Evet |  |
-| ids | String | Evet |  |
+| tenant_id | String | Yes |  |
+| ids | String | Yes |  |
 
 ## Yanıt
 
@@ -16,12 +16,13 @@ Döndürür: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomme
 
 ## Örnek
 
-[inline-code-attrs-start title = 'get_users_info Örneği'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
-[inline-code-start]
-let params: GetUsersInfoParams = GetUsersInfoParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    ids: "alice@example.com,bob@example.com,carol@example.com".to_string(),
-    page_size: Some(100),
-};
-let users_response: PageUsersInfoResponse = get_users_info(&configuration, params).await?;
-[inline-code-end]
+[inline-code-attrs-start title = 'get_users_info Örneği'; type = 'rust'; isFunctional = false; inline-code-attrs-end]  
+[inline-code-start]  
+let params = GetUsersInfoParams {  
+    tenant_id: "acme-corp-tenant".to_string(),  
+    ids: "user-1,user-2".to_string(),  
+};  
+let page: PageUsersInfoResponse = get_users_info(&configuration, params).await?;  
+[inline-code-end]  
+
+---

@@ -1,10 +1,9 @@
----
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
-|------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| id | string | Nein |  |
+|------|------|--------------|--------------|
+| tenantId | string | Yes |  |
+| id | string | No |  |
 
 ## Antwort
 
@@ -14,10 +13,8 @@ Rückgabe: [`Option[GetQuestionConfigResponse]`](https://github.com/FastComments
 
 [inline-code-attrs-start title = 'getQuestionConfig Beispiel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getQuestionConfig(tenantId = "my-tenant-123", id = "qst-456")
-if response.isSome:
-  let cfg = response.get()
-  discard cfg
+let (questionConfigOpt, httpResp) = client.getQuestionConfig(tenantId = "my-tenant-123", id = "question-987")
+if questionConfigOpt.isSome:
+  let config = questionConfigOpt.get()
+  echo config
 [inline-code-end]
-
----

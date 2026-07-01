@@ -17,23 +17,22 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api_key
-// APIキー認証を設定します: api_key
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// 必要に応じて、APIキーにプレフィックス（例: Bearer）を設定するには下記のコメントを外してください
+// APIキー認証を設定: api_key
+$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// 必要に応じて、APIキーのプレフィックス（例: Bearer）を設定するには以下のコメントを解除してください
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // カスタムHTTPクライアントを使用する場合は、`GuzzleHttp\ClientInterface`を実装するクライアントを渡してください。
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    // これはオプションです。デフォルトでは`GuzzleHttp\Client`が使用されます。
+    // カスタムHTTPクライアントを使用する場合は、`GuzzleHttp\ClientInterface` を実装したクライアントを渡してください。
+    // これはオプションです。デフォルトで `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
+
 
 try {
     $result = $apiInstance->getUserBadge($tenant_id, $id);

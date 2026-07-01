@@ -11,31 +11,40 @@
 | isShadowBan | boolean | Nej |  |
 | updateId | string | Nej |  |
 | banReason | string | Nej |  |
+| tenantId | string | Nej |  |
 | sso | string | Nej |  |
 
 ## Svar
 
-Returnerer: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BanUserFromCommentResult.ts)
+Returnerer: [`PostBanUserFromCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostBanUserFromCommentResponse.ts)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'postBanUserFromComment Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const commentId: string = "cmt_9f8a7b4e";
-const bannedUntil: string = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString();
-const sso: string = "sso-user-7f3b2c";
-const updateId: string = "upd_20260619_001";
-const banReason: string = "Repeated harassment across multiple threads";
-const result: BanUserFromCommentResult = await postBanUserFromComment(
-  commentId,
-  true,        // banEmail — forbyd e-mailadressen
-  false,       // banEmailDomain — forbyd e-maildomænet
-  true,        // banIP — forbyd IP-adressen
-  true,        // deleteAllUsersComments — slet alle brugerens kommentarer
-  bannedUntil,
-  false,       // isShadowBan — skyggebanning (brugeren opdager det ikke)
-  updateId,
-  banReason,
-  sso
-);
+async function runBan() {
+  const commentId: string = "cmt_5f8a2b3c";
+  const banEmail: boolean = true;
+  const banIP: boolean = false;
+  const deleteAllUsersComments: boolean = true;
+  const bannedUntil: string = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString();
+  const isShadowBan: boolean = false;
+  const banReason: string = "Repeated spam posting";
+  const tenantId: string = "tenant_12345";
+
+  const response: PostBanUserFromCommentResponse = await postBanUserFromComment(
+    commentId,
+    banEmail,
+    undefined,
+    banIP,
+    deleteAllUsersComments,
+    bannedUntil,
+    isShadowBan,
+    undefined,
+    banReason,
+    tenantId
+  );
+  console.log(response);
+}
+runBan();
 [inline-code-end]

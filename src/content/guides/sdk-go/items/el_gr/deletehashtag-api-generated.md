@@ -1,10 +1,9 @@
----
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
+|------|------|----------|------------|-----------|
+| tenantId | string | query | Ναι |  |
 | tag | string | path | Ναι |  |
-| tenantId | string | query | Όχι |  |
 
 ## Απόκριση
 
@@ -24,8 +23,8 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	tag := "tag_example" // string | 
-	tenantId := "tenantId_example" // string |  (προαιρετικό)
 	deleteHashTagRequestBody := *openapiclient.NewDeleteHashTagRequestBody() // DeleteHashTagRequestBody |  (προαιρετικό)
 
 	configuration := openapiclient.NewConfiguration()
@@ -35,9 +34,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.DeleteHashTag``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// Απάντηση από `DeleteHashTag`: APIEmptyResponse
+	// απόκριση από `DeleteHashTag`: APIEmptyResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.DeleteHashTag`: %v\n", resp)
 }
 [inline-code-end]
-
----

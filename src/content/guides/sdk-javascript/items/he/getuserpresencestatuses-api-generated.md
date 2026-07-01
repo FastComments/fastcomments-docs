@@ -1,25 +1,32 @@
----
 ## פרמטרים
 
 | שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| urlIdWS | string | כן |  |
-| userIds | string | כן |  |
+| tenantId | string | Yes |  |
+| urlIdWS | string | Yes |  |
+| userIds | string | Yes |  |
 
 ## תגובה
 
-מחזיר: [`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserPresenceStatusesResponse.ts)
+מחזיר: [`GetUserPresenceStatusesResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserPresenceStatusesResponse1.ts)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getUserPresenceStatuses'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getUserPresenceStatuses'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acct_7c9b21';
-const urlIdWS: string = 'wss://ws.fastcomments.com/presence/room-231';
-const userIds: string = 'user_102,user_203';
-const presence: GetUserPresenceStatusesResponse = await getUserPresenceStatuses(tenantId, urlIdWS, userIds);
-const firstStatus: APIStatus | undefined = (presence as unknown as { statuses?: APIStatus[] }).statuses?.[0];
+async function fetchUserPresences() {
+  const tenantId: string = "tenant_9f8e2d";
+  const urlIdWS: string = "blog.mycompany.com/thread/12345";
+  const userIds: string = "alice,bob,carol";
+
+  const result: GetUserPresenceStatusesResponse1 = await getUserPresenceStatuses(
+    tenantId,
+    urlIdWS,
+    userIds
+  );
+
+  console.log(result);
+}
 [inline-code-end]
 
 ---

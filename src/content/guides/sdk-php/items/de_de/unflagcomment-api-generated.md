@@ -1,7 +1,7 @@
 ## Parameter
 
-| Name | Typ | Location | Erforderlich | Beschreibung |
-|------|------|----------|----------|-------------|
+| Name | Typ | Ort | Erforderlich | Beschreibung |
+|------|------|-----|--------------|--------------|
 | tenantId | string | query | Ja |  |
 | id | string | path | Ja |  |
 | userId | string | query | Nein |  |
@@ -9,7 +9,7 @@
 
 ## Antwort
 
-Gibt zurück: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/FlagCommentResponse.php)
+Rückgabe: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/FlagCommentResponse.php)
 
 ## Beispiel
 
@@ -21,7 +21,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // API-Schlüssel-Autorisierung konfigurieren: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Entfernen Sie das Kommentarzeichen unten, um ein Präfix (z. B. Bearer) für den API-Schlüssel festzulegen, falls erforderlich
+// Entfernen Sie den Kommentar unten, um einen Präfix (z. B. Bearer) für den API-Schlüssel festzulegen, falls erforderlich
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
@@ -31,13 +31,17 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
-$user_id = 'user_id_example'; // string
-$anon_user_id = 'anon_user_id_example'; // string
+$options = [
+    'user_id' => 'user_id_example', // string
+    'anon_user_id' => 'anon_user_id_example', // string
+];
+
 
 try {
-    $result = $apiInstance->unFlagComment($tenant_id, $id, $user_id, $anon_user_id);
+    $result = $apiInstance->unFlagComment($tenant_id, $id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->unFlagComment: ', $e->getMessage(), PHP_EOL;

@@ -1,8 +1,9 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | חובה | תיאור |
 |------|------|----------|----------|-------------|
-| sso | string | query | No |  |
+| tenantId | string | query | כן |  |
+| sso | string | query | לא |  |
 
 ## תגובה
 
@@ -10,7 +11,7 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-GetManualBadges'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת GetManualBadges'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -22,11 +23,12 @@ import (
 )
 
 func main() {
-	sso := "sso_example" // string | (אופציונלי)
+	tenantId := "tenantId_example" // מחרוזת | 
+	sso := "sso_example" // מחרוזת |  (אופציונלי)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetManualBadges(context.Background()).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetManualBadges(context.Background()).TenantId(tenantId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetManualBadges``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

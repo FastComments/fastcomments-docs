@@ -1,9 +1,10 @@
 ## פרמטרים
 
-| שם | סוג | חובה | תיאור |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
+| tenantId | string | כן |  |
 | urlId | string | כן |  |
-| sso | string | לא |  |
+| sso | string = "" | לא |  |
 
 ## תגובה
 
@@ -11,14 +12,15 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-putReopenThread'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת putReopenThread'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.putReopenThread(urlId = "news/2026-election-analysis", sso = "")
-if response.isSome:
-  let apiResp = response.get()
-  echo "Reopen succeeded, response: ", apiResp
-else:
-  echo "Reopen failed, HTTP status: ", httpResponse.status
-[inline-code-end]
+let (apiRespOpt, httpResp) = client.putReopenThread(
+  tenantId = "my-tenant-123",
+  urlId = "news/article-title",
+  sso = ""
+)
 
----
+if apiRespOpt.isSome:
+  let emptyResp = apiRespOpt.get()
+  discard
+[inline-code-end]

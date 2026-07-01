@@ -1,6 +1,6 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Yer | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 | userId | string | query | Hayır |  |
@@ -17,23 +17,22 @@ Döndürür: [`GetSubscriptionsAPIResponse`](https://github.com/FastComments/fas
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api_key
+// API anahtarı yetkilendirmesini yapılandır: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Gerekirse API anahtarı için ön eki (ör. Bearer) ayarlamak için aşağıdaki yorum işaretini kaldırın
+// Gerekirse API anahtarı için önek (ör. Bearer) ayarlamak için aşağıdakini yorumdan çıkarın
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // Özel bir HTTP istemcisi kullanmak isterseniz, `GuzzleHttp\ClientInterface` uygulayan istemcinizi iletin.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    // Bu isteğe bağlıdır, varsayılan olarak `GuzzleHttp\Client` kullanılacaktır.
+    // Özel bir HTTP istemcisi kullanmak istiyorsanız, `GuzzleHttp\ClientInterface`'i uygulayan istemcinizi geçirin.
+    // Bu isteğe bağlıdır, `GuzzleHttp\Client` varsayılan olarak kullanılacaktır.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $user_id = 'user_id_example'; // string
+
 
 try {
     $result = $apiInstance->getSubscriptions($tenant_id, $user_id);

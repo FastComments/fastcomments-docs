@@ -1,8 +1,8 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Nie |  |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Tak |  |
 
 ## Odpowiedź
 
@@ -28,15 +28,14 @@ public class Example {
     // Skonfiguruj autoryzację klucza API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Odkomentuj poniższą linię, aby ustawić prefiks dla klucza API, np. "Token" (domyślnie null)
+    // Odkomentuj następującą linię, aby ustawić prefiks dla klucza API, np. "Token" (wartość domyślna null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     BulkCreateHashTagsBody bulkCreateHashTagsBody = new BulkCreateHashTagsBody(); // BulkCreateHashTagsBody | 
     try {
-      BulkCreateHashTagsResponse result = apiInstance.addHashTagsBulk()
-            .tenantId(tenantId)
+      BulkCreateHashTagsResponse result = apiInstance.addHashTagsBulk(tenantId)
             .bulkCreateHashTagsBody(bulkCreateHashTagsBody)
             .execute();
       System.out.println(result);

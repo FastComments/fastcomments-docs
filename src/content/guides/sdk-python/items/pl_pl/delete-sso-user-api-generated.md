@@ -1,6 +1,6 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Tak |  |
 | id | string | path | Tak |  |
@@ -13,41 +13,38 @@ Zwraca: [`DeleteSSOUserAPIResponse`](https://github.com/FastComments/fastcomment
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład delete_sso_user'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_sso_user Przykład'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import DeleteSsoUserOptions
 from client.models.delete_sso_user_api_response import DeleteSSOUserAPIResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # Określenie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
-# Zobacz configuration.py dla listy wszystkich obsługiwanych parametrów konfiguracji.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
-
+# Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracyjnych.
 # Klient musi skonfigurować parametry uwierzytelniania i autoryzacji
 # zgodnie z polityką bezpieczeństwa serwera API.
-# Poniżej podano przykłady dla każdej metody uwierzytelniania, użyj przykładu, który
+# Przykłady dla każdej metody uwierzytelniania są podane poniżej; użyj przykładu, który
 # spełnia Twoje potrzeby uwierzytelniania.
 
-# Skonfiguruj uwierzytelnianie kluczem API: api_key
+# Skonfiguruj autoryzację kluczem API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli to konieczne
+# Odkomentuj poniższy wiersz, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli potrzebny
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Otwórz kontekst z instancją klienta API
+# Wejdź w kontekst z instancją klienta API
 with client.ApiClient(configuration) as api_client:
     # Utwórz instancję klasy API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
-    delete_comments = True # bool |  (opcjonalne)
-    comment_delete_mode = 'comment_delete_mode_example' # str |  (opcjonalne)
+    delete_comments = True # bool |  (optional)
+    comment_delete_mode = 'comment_delete_mode_example' # str |  (optional)
 
     try:
-        api_response = api_instance.delete_sso_user(tenant_id, id, delete_comments=delete_comments, comment_delete_mode=comment_delete_mode)
+        api_response = api_instance.delete_sso_user(tenant_id, id, DeleteSsoUserOptions(delete_comments=delete_comments, comment_delete_mode=comment_delete_mode))
         print("The response of DefaultApi->delete_sso_user:\n")
         pprint(api_response)
     except Exception as e:

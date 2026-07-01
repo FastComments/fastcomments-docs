@@ -1,7 +1,8 @@
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-----------|
+|------|------|----------|-------------|
+| tenant_id | String | Sim |  |
 | url_id | String | Sim |  |
 | sso | String | Não |  |
 
@@ -11,17 +12,15 @@ Retorna: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de put_reopen_thread'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'put_reopen_thread Exemplo'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_reopen_thread() -> Result<(), Error> {
-    let params: PutReopenThreadParams = PutReopenThreadParams {
-        url_id: String::from("acme-corp/news/article-2026-06-19"),
-        sso: Some(String::from("sso-token-9f8e7d6c")),
+async fn reopen_thread_example(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = PutReopenThreadParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        url_id: "news/article-123".to_string(),
+        sso: Some("user-42".to_string()),
     };
-    let response: ApiEmptyResponse = put_reopen_thread(configuration, params).await?;
-    let _response = response;
+    let _response: ApiEmptyResponse = put_reopen_thread(configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

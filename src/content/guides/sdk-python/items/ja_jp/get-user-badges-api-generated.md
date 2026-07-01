@@ -1,48 +1,51 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | はい |  |
-| userId | string | query | いいえ |  |
-| badgeId | string | query | いいえ |  |
-| type | number | query | いいえ |  |
-| displayedOnComments | boolean | query | いいえ |  |
-| limit | number | query | いいえ |  |
-| skip | number | query | いいえ |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| badgeId | string | query | No |  |
+| type | number | query | No |  |
+| displayedOnComments | boolean | query | No |  |
+| limit | number | query | No |  |
+| skip | number | query | No |  |
 
 ## レスポンス
 
-戻り値: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_user_badges_response.py)
+返却: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_user_badges_response.py)
 
 ## 例
 
 [inline-code-attrs-start title = 'get_user_badges の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetUserBadgesOptions
 from client.models.api_get_user_badges_response import APIGetUserBadgesResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # ホストの定義は任意で、デフォルトは https://fastcomments.com です
-# 対応しているすべての設定パラメータの一覧は configuration.py を参照してください。
+# すべてのサポートされている設定パラメータの一覧は configuration.py を参照してください。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# クライアントは API サーバーのセキュリティポリシーに従って認証および認可パラメータを設定する必要があります。
-# 各認証方式の例を以下に示します。自分のユースケースに合う例を使用してください。
+# クライアントは認証および認可パラメータを構成する必要があります
+# API サーバーのセキュリティポリシーに従って
+# 各認証方法の例が以下に提供されています。
+# ご自身の認証ユースケースに合致する例を使用してください。
 
-# Configure API key authorization: api_key
+# API キー認証を設定します: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# 必要に応じて API キーのプレフィックス（例: Bearer）を設定するには、以下の行のコメントを解除してください。
+# 必要に応じて、API キーのプレフィックス（例: Bearer）を設定するには、下の行のコメントを外してください
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API クライアントのインスタンスを使ってコンテキストに入ります
+# API クライアントのインスタンスでコンテキストに入ります
 with client.ApiClient(configuration) as api_client:
-    # API クラスのインスタンスを作成
+    # API クラスのインスタンスを作成します
     api_instance = client.DefaultApi(api_client)
-    tenant_id = 'tenant_id_example' # str | 
+    tenant_id = 'tenant_id_example' # str |
     user_id = 'user_id_example' # str |  (オプション)
     badge_id = 'badge_id_example' # str |  (オプション)
     type = 3.4 # float |  (オプション)
@@ -51,7 +54,7 @@ with client.ApiClient(configuration) as api_client:
     skip = 3.4 # float |  (オプション)
 
     try:
-        api_response = api_instance.get_user_badges(tenant_id, user_id=user_id, badge_id=badge_id, type=type, displayed_on_comments=displayed_on_comments, limit=limit, skip=skip)
+        api_response = api_instance.get_user_badges(tenant_id, GetUserBadgesOptions(user_id=user_id, badge_id=badge_id, type=type, displayed_on_comments=displayed_on_comments, limit=limit, skip=skip))
         print("The response of DefaultApi->get_user_badges:\n")
         pprint(api_response)
     except Exception as e:

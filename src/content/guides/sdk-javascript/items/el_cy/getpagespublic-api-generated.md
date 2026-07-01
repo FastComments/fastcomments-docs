@@ -1,7 +1,6 @@
----
-Λίστα σελίδων για έναν tenant. Χρησιμοποιείται από τον FChat desktop client για να συμπληρώσει τη λίστα δωματίων του.
-Απαιτεί το `enableFChat` να είναι true στην επιλυμένη custom config για κάθε σελίδα.
-Οι σελίδες που απαιτούν SSO φιλτράρονται με βάση την πρόσβαση ομάδας του χρήστη που κάνει το αίτημα.
+Λίστα σελίδων για έναν ενοικιαστή. Χρησιμοποιείται από τον επιτραπέζιο πελάτη FChat για την πλήρωση της λίστας δωματίων του.  
+Απαιτεί το `enableFChat` να είναι true στην επιλυμένη προσαρμοσμένη ρύθμιση για κάθε σελίδα.  
+Οι σελίδες που απαιτούν SSO φιλτράρονται βάσει της πρόσβασης ομάδας του ζητώντος χρήστη.
 
 ## Παράμετροι
 
@@ -14,20 +13,31 @@
 | sortBy | PagesSortBy | Όχι |  |
 | hasComments | boolean | Όχι |  |
 
-## Απόκριση
+## Απάντηση
 
-Επιστρέφει: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPublicPagesResponse.ts)
+Επιστρέφει: [`GetPagesPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPagesPublicResponse.ts)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα getPagesPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7f9b2c";
-const cursor: string = "cursor_0001a2b3";
-const limit: number = 25;
-const q: string = "product page";
-const hasComments: boolean = true;
-const response: GetPublicPagesResponse = await getPagesPublic(tenantId, cursor, limit, q, undefined, hasComments);
-[inline-code-end]
+async function fetchPages() {
+  const tenantId: string = "tenant_12345";
+  const cursor: string = "nextPageToken";
+  const limit: number = 20;
+  const q: string = "blog";
+  const sortBy: PagesSortBy = "createdAt";
+  const hasComments: boolean = true;
 
----
+  const response: GetPagesPublicResponse = await getPagesPublic(
+    tenantId,
+    cursor,
+    limit,
+    q,
+    sortBy,
+    hasComments
+  );
+
+  console.log(response);
+}
+[inline-code-end]

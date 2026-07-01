@@ -1,7 +1,8 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Sí |  |
 | commentId | string | path | Sí |  |
 | includeByUserIdAndEmail | boolean | query | No |  |
 | includeByIP | boolean | query | No |  |
@@ -14,18 +15,19 @@ Devuelve: [`PreBanSummary`](https://github.com/FastComments/fastcomments-swift/b
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de getPreBanSummary'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo getPreBanSummary'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Los siguientes ejemplos de código aún están en beta. Si encuentra algún problema, repórtelo en http://github.com/OpenAPITools/openapi-generator/issues/new
+// Los siguientes ejemplos de código están todavía en beta. Para cualquier problema, por favor reportelo vía http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
 let includeByUserIdAndEmail = true // Bool |  (opcional)
 let includeByIP = true // Bool |  (opcional)
 let includeByEmailDomain = true // Bool |  (opcional)
 let sso = "sso_example" // String |  (opcional)
 
-ModerationAPI.getPreBanSummary(commentId: commentId, includeByUserIdAndEmail: includeByUserIdAndEmail, includeByIP: includeByIP, includeByEmailDomain: includeByEmailDomain, sso: sso) { (response, error) in
+ModerationAPI.getPreBanSummary(tenantId: tenantId, commentId: commentId, options: ModerationAPI.GetPreBanSummaryOptions(includeByUserIdAndEmail: includeByUserIdAndEmail, includeByIP: includeByIP, includeByEmailDomain: includeByEmailDomain, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

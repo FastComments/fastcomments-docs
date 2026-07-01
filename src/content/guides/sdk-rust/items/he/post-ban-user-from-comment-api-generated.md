@@ -1,39 +1,42 @@
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
-| comment_id | String | כן |  |
-| ban_email | bool | לא |  |
-| ban_email_domain | bool | לא |  |
-| ban_ip | bool | לא |  |
-| delete_all_users_comments | bool | לא |  |
-| banned_until | String | לא |  |
-| is_shadow_ban | bool | לא |  |
-| update_id | String | לא |  |
-| ban_reason | String | לא |  |
-| sso | String | לא |  |
+| tenant_id | String | Yes |  |
+| comment_id | String | Yes |  |
+| ban_email | bool | No |  |
+| ban_email_domain | bool | No |  |
+| ban_ip | bool | No |  |
+| delete_all_users_comments | bool | No |  |
+| banned_until | String | No |  |
+| is_shadow_ban | bool | No |  |
+| update_id | String | No |  |
+| ban_reason | String | No |  |
+| sso | String | No |  |
 
 ## תגובה
 
-מחזיר: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/ban_user_from_comment_result.rs)
+מחזירים: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/ban_user_from_comment_result.rs)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'post_ban_user_from_comment דוגמה'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: PostBanUserFromCommentParams = PostBanUserFromCommentParams {
-    comment_id: "news-article-98765-comment-123".to_string(),
-    ban_email: Some(true),
-    ban_email_domain: Some(false),
-    ban_ip: Some(true),
-    delete_all_users_comments: Some(true),
-    banned_until: Some("2026-12-31T23:59:59Z".to_string()),
-    is_shadow_ban: Some(false),
-    update_id: Some("moderator-42".to_string()),
-    ban_reason: Some("Repeated spam and abusive language".to_string()),
-    sso: Some("sso-user-token-8a7f".to_string()),
-};
-let ban_result: BanUserFromCommentResult = post_ban_user_from_comment(&configuration, params).await?;
+async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = PostBanUserFromCommentParams {
+        tenant_id: "acme-corp".to_string(),
+        comment_id: "cmt-12345".to_string(),
+        ban_email: Some(true),
+        ban_email_domain: Some(false),
+        ban_ip: Some(true),
+        delete_all_users_comments: Some(false),
+        banned_until: Some("2024-12-31T23:59:59Z".to_string()),
+        is_shadow_ban: Some(false),
+        update_id: Some("upd-987".to_string()),
+        ban_reason: Some("spam".to_string()),
+        sso: Some("sso-provider".to_string()),
+    };
+    let _result: BanUserFromCommentResult = post_ban_user_from_comment(configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]
-
----

@@ -1,11 +1,12 @@
----
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
-| commentId | string | putanja | Da |  |
-| approved | boolean | upit | Ne |  |
-| sso | string | upit | Ne |  |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
+| commentId | string | path | Da |  |
+| approved | boolean | query | Ne |  |
+| broadcastId | string | query | Ne |  |
+| sso | string | query | Ne |  |
 
 ## Odgovor
 
@@ -15,14 +16,16 @@ Vraća: [`SetCommentApprovedResponse`](https://github.com/FastComments/fastcomme
 
 [inline-code-attrs-start title = 'postSetCommentApprovalStatus Primjer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sljedeći primjeri koda su još u beta fazi. Za bilo koji problem, prijavite na http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sljedeći kod primjeri su još u beta fazi. Za bilo koji problem, molimo da prijavite putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
-let approved = true // Bool |  (neobavezno)
-let sso = "sso_example" // String |  (neobavezno)
+let approved = true // Bool |  (opcionalno)
+let broadcastId = "broadcastId_example" // String |  (opcionalno)
+let sso = "sso_example" // String |  (opcionalno)
 
-ModerationAPI.postSetCommentApprovalStatus(commentId: commentId, approved: approved, sso: sso) { (response, error) in
+ModerationAPI.postSetCommentApprovalStatus(tenantId: tenantId, commentId: commentId, options: ModerationAPI.PostSetCommentApprovalStatusOptions(approved: approved, broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -33,5 +36,3 @@ ModerationAPI.postSetCommentApprovalStatus(commentId: commentId, approved: appro
     }
 }
 [inline-code-end]
-
----

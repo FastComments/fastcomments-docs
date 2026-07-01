@@ -1,14 +1,15 @@
 ## Parametri
 
-| Name | Type | Location | Obvezno | Description |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Da |  |
-| includeByUserIdAndEmail | boolean | query | Ne |  |
-| includeByIP | boolean | query | Ne |  |
-| includeByEmailDomain | boolean | query | Ne |  |
-| sso | string | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| includeByUserIdAndEmail | boolean | query | No |  |
+| includeByIP | boolean | query | No |  |
+| includeByEmailDomain | boolean | query | No |  |
+| sso | string | query | No |  |
 
-## Odgovor
+## Odziv
 
 Vrne: [`PreBanSummary`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PreBanSummary.php)
 
@@ -22,18 +23,23 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Če želite uporabiti lastnega HTTP odjemalca, posredujte odjemalca, ki implementira `GuzzleHttp\ClientInterface`.
-    // To ni obvezno, uporabljen bo privzeti `GuzzleHttp\Client`.
+    // Če želite uporabiti prilagojen HTTP odjemalec, posredujte svoj odjemalec, ki implementira `GuzzleHttp\ClientInterface`.
+    // To je neobvezno, `GuzzleHttp\Client` bo uporabljen kot privzeto.
     new GuzzleHttp\Client()
 );
+
+$tenant_id = 'tenant_id_example'; // string
 $comment_id = 'comment_id_example'; // string
-$include_by_user_id_and_email = True; // bool
-$include_by_ip = True; // bool
-$include_by_email_domain = True; // bool
-$sso = 'sso_example'; // string
+$options = [
+    'include_by_user_id_and_email' => True, // bool
+    'include_by_ip' => True, // bool
+    'include_by_email_domain' => True, // bool
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->getPreBanSummary($comment_id, $include_by_user_id_and_email, $include_by_ip, $include_by_email_domain, $sso);
+    $result = $apiInstance->getPreBanSummary($tenant_id, $comment_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getPreBanSummary: ', $e->getMessage(), PHP_EOL;

@@ -2,6 +2,7 @@
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Ja |  |
 | commentId | string | path | Ja |  |
 | sso | string | query | Nej |  |
 
@@ -13,13 +14,14 @@ Returnerer: [`GetCommentBanStatusResponse`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'getCommentBanStatus Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Følgende kodeeksempler er stadig i beta. Ved problemer, rapportér venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De følgende kodeeksempler er stadig i beta. For eventuelle problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let commentId = "commentId_example" // String | 
-let sso = "sso_example" // String |  (valgfri)
+let tenantId = "tenantId_example" // String |
+let commentId = "commentId_example" // String |
+let sso = "sso_example" // String |  (optional)
 
-ModerationAPI.getCommentBanStatus(commentId: commentId, sso: sso) { (response, error) in
+ModerationAPI.getCommentBanStatus(tenantId: tenantId, commentId: commentId, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return

@@ -2,11 +2,12 @@
 
 | Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| badgeId | string | query | Да |  |
-| userId | string | query | Не |  |
-| commentId | string | query | Не |  |
-| broadcastId | string | query | Не |  |
-| sso | string | query | Не |  |
+| tenantId | string | query | Yes |  |
+| badgeId | string | query | Yes |  |
+| userId | string | query | No |  |
+| commentId | string | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Одговор
 
@@ -14,18 +15,19 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'putAwardBadge Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putAwardBadge Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи примери кода су још увек у бета фази. За било који проблем, пријавите га путем http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следећи пример кода је још у бета фази. За било који проблем, молимо пријавите га на http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let badgeId = "badgeId_example" // String | 
-let userId = "userId_example" // String |  (опционо)
-let commentId = "commentId_example" // String |  (опционо)
-let broadcastId = "broadcastId_example" // String |  (опционо)
-let sso = "sso_example" // String |  (опционо)
+let userId = "userId_example" // String |  (опционално)
+let commentId = "commentId_example" // String |  (опционално)
+let broadcastId = "broadcastId_example" // String |  (опционално)
+let sso = "sso_example" // String |  (опционално)
 
-ModerationAPI.putAwardBadge(badgeId: badgeId, userId: userId, commentId: commentId, broadcastId: broadcastId, sso: sso) { (response, error) in
+ModerationAPI.putAwardBadge(tenantId: tenantId, badgeId: badgeId, options: ModerationAPI.PutAwardBadgeOptions(userId: userId, commentId: commentId, broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

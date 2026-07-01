@@ -1,7 +1,6 @@
----
 ## Parametre
 
-| Name | Type | Påkrævet | Beskrivelse |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | id | string | Ja |  |
@@ -9,21 +8,30 @@
 
 ## Svar
 
-Returnerer: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Returnerer: [`UpdateEmailTemplateResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateEmailTemplateResponse.ts)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'updateEmailTemplate Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_acme_82b1f";
-const id: string = "emailTemplate_9f3b2c";
-const updateEmailTemplateBody: UpdateEmailTemplateBody = {
-  name: "Comment Notification",
-  subject: "New comment on your article",
-  html: "<p>Hello,</p><p>You have a new comment on your article. <a href=\"https://example.com\">View</a></p>",
-  enabled: true
-};
-const result: APIEmptyResponse = await updateEmailTemplate(tenantId, id, updateEmailTemplateBody);
-[inline-code-end]
+(async () => {
+  const tenantId: string = "tenant_12345";
+  const templateId: string = "email_tpl_67890";
 
----
+  const updateBody: UpdateEmailTemplateBody = {
+    subject: "Comment reply notification",
+    htmlContent: "<p>Someone replied to your comment.</p>",
+    plainTextContent: "Someone replied to your comment.",
+    // valgfrit felt eksempel
+    isActive: true,
+  };
+
+  const result: UpdateEmailTemplateResponse = await updateEmailTemplate(
+    tenantId,
+    templateId,
+    updateBody
+  );
+
+  console.log(result);
+})();
+[inline-code-end]

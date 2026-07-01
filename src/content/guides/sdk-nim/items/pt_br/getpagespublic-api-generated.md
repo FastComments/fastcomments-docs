@@ -1,41 +1,24 @@
----
-Lista de páginas para um tenant. Usado pelo cliente desktop FChat para preencher a sua lista de salas.
-Requer que `enableFChat` seja true na configuração customizada resolvida para cada página.
-Páginas que requerem SSO são filtradas de acordo com o acesso de grupo do usuário solicitante.
+List pages for a tenant. Used by the FChat desktop client to populate its room list.  
+Requer que `enableFChat` seja true na configuração customizada resolvida para cada página.  
+Páginas que requerem SSO são filtradas de acordo com o acesso ao grupo do usuário solicitante.
 
-## Parâmetros
+## Parameters
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Sim |  |
-| cursor | string | Não |  |
-| limit | int | Não |  |
-| q | string | Não |  |
-| sortBy | PagesSortBy | Não |  |
-| hasComments | bool | Não |  |
+| tenantId | string | Yes |  |
+| options | GetPagesPublicOptions | No |  |
 
-## Resposta
+## Response
 
 Retorna: [`Option[GetPublicPagesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_public_pages_response.nim)
 
-## Exemplo
+## Example
 
-[inline-code-attrs-start title = 'Exemplo de getPagesPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo getPagesPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getPagesPublic(
-  tenantId = "my-tenant-123",
-  cursor = "",
-  limit = 0,
-  q = "",
-  sortBy = PagesSortBy(0),
-  hasComments = false
-)
-
+let (response, httpResponse) = client.getPagesPublic(tenantId = "my-tenant-123", options = GetPagesPublicOptions())
 if response.isSome:
   let pages = response.get()
-  echo "Retrieved public pages: ", $pages
-else:
-  echo "No pages returned, HTTP status: ", $httpResponse.status
+  echo pages
 [inline-code-end]
-
----

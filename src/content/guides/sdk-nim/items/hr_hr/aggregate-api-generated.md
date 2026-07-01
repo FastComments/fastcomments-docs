@@ -1,13 +1,13 @@
-Agregira dokumente grupiranjem (ako je groupBy naveden) i primjenom više operacija. Podržane su različite operacije (npr. sum, countDistinct, avg, itd.).
+Aggregates documents by grouping them (if groupBy is provided) and applying multiple operations.  
+Different operations (e.g. sum, countDistinct, avg, etc.) are supported.
 
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Naziv | Tip | Obavezno | Opis |
+|-------|-----|----------|------|
 | tenantId | string | Da |  |
 | aggregationRequest | AggregationRequest | Ne |  |
-| parentTenantId | string | Ne |  |
-| includeStats | bool | Ne |  |
+| options | AggregateOptions | Ne |  |
 
 ## Odgovor
 
@@ -15,18 +15,13 @@ Vraća: [`Option[AggregateResponse]`](https://github.com/FastComments/fastcommen
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer aggregate'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'aggregate Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.aggregate(
-  tenantId = "my-tenant-123",
-  aggregationRequest = AggregationRequest(groupBy = @["articleId"], metrics = @["commentCount"], filters = @[], limit = 0),
-  parentTenantId = "",
-  includeStats = false
-)
-
-if response.isSome:
-  let agg = response.get()
-  discard agg
+let (aggResp, httpResp) = client.aggregate(tenantId = "my-tenant-123", aggregationRequest = AggregationRequest(), options = AggregateOptions())
+if aggResp.isSome:
+  let response = aggResp.get()
+  echo response
+echo httpResp
 [inline-code-end]
 
 ---

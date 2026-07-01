@@ -1,32 +1,40 @@
-## Параметри
+## Parameters
 
-| Назва | Тип | Обов'язково | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| page | number | Ні |  |
-| count | number | Ні |  |
-| textSearch | string | Ні |  |
-| byIPFromComment | string | Ні |  |
-| filters | string | Ні |  |
-| searchFilters | string | Ні |  |
-| sorts | string | Ні |  |
-| demo | boolean | Ні |  |
-| sso | string | Ні |  |
+| page | number | No |  |
+| count | number | No |  |
+| textSearch | string | No |  |
+| byIPFromComment | string | No |  |
+| filters | string | No |  |
+| searchFilters | string | No |  |
+| sorts | string | No |  |
+| demo | boolean | No |  |
+| tenantId | string | No |  |
+| sso | string | No |  |
 
-## Відповідь
+## Response
 
-Повертає: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPIGetCommentsResponse.ts)
+Повертає: [`GetApiCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetApiCommentsResponse.ts)
 
-## Приклад
+## Example
 
 [inline-code-attrs-start title = 'Приклад getApiComments'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const page: number = 2;
-const count: number = 25;
-const textSearch: string = 'comments failing to load after posting';
-const filters: string = 'status:pending,moderation:required';
-const sorts: string = 'createdAt:desc';
-const demo: boolean = false;
-const sso: string = 'sso-usr-7f3b2a';
+async function loadComments() {
+  const fullResult: GetApiCommentsResponse = await getApiComments(
+    2,                     // сторінка
+    25,                    // кількість
+    "feedback",           // текстовий пошук
+    "192.168.1.100",      // за IP з коментаря
+    "approved",           // фільтри
+    "hasReplies",         // фільтри пошуку
+    "dateDesc",           // сортування
+    false,                // демо
+    "tenant-abc123",      // ідентифікатор орендаря
+    "sso-token-xyz"       // sso
+  );
 
-const response: ModerationAPIGetCommentsResponse = await getApiComments(page, count, textSearch, undefined, filters, undefined, sorts, demo, sso);
+  const minimalResult: GetApiCommentsResponse = await getApiComments(undefined, 5);
+}
 [inline-code-end]

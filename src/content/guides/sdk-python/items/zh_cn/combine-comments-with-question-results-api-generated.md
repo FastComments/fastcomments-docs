@@ -1,16 +1,16 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 描述 |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 是 |  |
-| questionId | string | query | 否 |  |
-| questionIds | array | query | 否 |  |
-| urlId | string | query | 否 |  |
-| startDate | string | query | 否 |  |
-| forceRecalculate | boolean | query | 否 |  |
-| minValue | number | query | 否 |  |
-| maxValue | number | query | 否 |  |
-| limit | number | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| questionId | string | query | No |  |
+| questionIds | array | query | No |  |
+| urlId | string | query | No |  |
+| startDate | string | query | No |  |
+| forceRecalculate | boolean | query | No |  |
+| minValue | number | query | No |  |
+| maxValue | number | query | No |  |
+| limit | number | query | No |  |
 
 ## 响应
 
@@ -21,29 +21,25 @@
 [inline-code-attrs-start title = 'combine_comments_with_question_results 示例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import CombineCommentsWithQuestionResultsOptions
 from client.models.combine_question_results_with_comments_response import CombineQuestionResultsWithCommentsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# 定义主机是可选的，默认为 https://fastcomments.com
-# 有关所有支持的配置参数列表，请参见 configuration.py。
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
+# 定义 host 是可选的，默认值为 https://fastcomments.com
+# 请参阅 configuration.py 获取所有受支持的配置参数列表。
+# 客户端必须根据 API 服务器的安全策略配置身份验证和授权参数。
+# 为每种认证方式提供了示例，请使用符合您认证使用场景的示例。
 
-# 客户端必须配置认证和授权参数
-# 以符合 API 服务器的安全策略。
-# 下方提供了每种认证方法的示例，请使用
-# 能满足您认证用例的示例。
-# Configure API key authorization: api_key
+# 配置 API 密钥授权：api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# 如有需要，取消注释以下代码以为 API 密钥设置前缀（例如 Bearer）。
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# 使用 ApiClient 的实例进入上下文
+# 使用 API 客户端实例进入上下文
 with client.ApiClient(configuration) as api_client:
-    # 创建 API 类的实例
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     question_id = 'question_id_example' # str |  (optional)
@@ -56,7 +52,7 @@ with client.ApiClient(configuration) as api_client:
     limit = 3.4 # float |  (optional)
 
     try:
-        api_response = api_instance.combine_comments_with_question_results(tenant_id, question_id=question_id, question_ids=question_ids, url_id=url_id, start_date=start_date, force_recalculate=force_recalculate, min_value=min_value, max_value=max_value, limit=limit)
+        api_response = api_instance.combine_comments_with_question_results(tenant_id, CombineCommentsWithQuestionResultsOptions(question_id=question_id, question_ids=question_ids, url_id=url_id, start_date=start_date, force_recalculate=force_recalculate, min_value=min_value, max_value=max_value, limit=limit))
         print("The response of DefaultApi->combine_comments_with_question_results:\n")
         pprint(api_response)
     except Exception as e:

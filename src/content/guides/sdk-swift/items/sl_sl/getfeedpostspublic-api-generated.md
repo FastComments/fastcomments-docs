@@ -1,18 +1,18 @@
-zahteva
+req
 tenantId
 afterId
 
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Da |  |
-| afterId | string | query | Ne |  |
-| limit | integer | query | Ne |  |
-| tags | array | query | Ne |  |
-| sso | string | query | Ne |  |
-| isCrawler | boolean | query | Ne |  |
-| includeUserInfo | boolean | query | Ne |  |
+| tenantId | string | path | Yes |  |
+| afterId | string | query | No |  |
+| limit | integer | query | No |  |
+| tags | array | query | No |  |
+| sso | string | query | No |  |
+| isCrawler | boolean | query | No |  |
+| includeUserInfo | boolean | query | No |  |
 
 ## Odgovor
 
@@ -20,9 +20,9 @@ Vrne: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-s
 
 ## Primer
 
-[inline-code-attrs-start title = 'getFeedPostsPublic Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getFeedPostsPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Naslednji primeri kode so še v beta različici. Če naletite na težave, prosimo poročajte preko http://github.com/OpenAPITools/openapi-generator/issues/new
+// Naslednji primeri kode so še beta. Če se pojavi kakršna koli težava, jo prosimo sporočite na http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -33,7 +33,7 @@ let sso = "sso_example" // String |  (neobvezno)
 let isCrawler = true // Bool |  (neobvezno)
 let includeUserInfo = true // Bool |  (neobvezno)
 
-PublicAPI.getFeedPostsPublic(tenantId: tenantId, afterId: afterId, limit: limit, tags: tags, sso: sso, isCrawler: isCrawler, includeUserInfo: includeUserInfo) { (response, error) in
+PublicAPI.getFeedPostsPublic(tenantId: tenantId, options: PublicAPI.GetFeedPostsPublicOptions(afterId: afterId, limit: limit, tags: tags, sso: sso, isCrawler: isCrawler, includeUserInfo: includeUserInfo)) { (response, error) in
     guard error == nil else {
         print(error)
         return

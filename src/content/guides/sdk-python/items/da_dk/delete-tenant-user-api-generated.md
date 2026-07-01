@@ -1,7 +1,7 @@
 ## Parametre
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
+|------|------|-----------|----------|--------------|
 | tenantId | string | query | Ja |  |
 | id | string | path | Ja |  |
 | deleteComments | string | query | Nej |  |
@@ -16,11 +16,12 @@ Returnerer: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-py
 [inline-code-attrs-start title = 'delete_tenant_user Eksempel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import DeleteTenantUserOptions
 from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# At definere host er valgfrit og standardværdien er https://fastcomments.com
+# Angivelse af værten er valgfri og standard er https://fastcomments.com
 # Se configuration.py for en liste over alle understøttede konfigurationsparametre.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -28,28 +29,30 @@ configuration = client.Configuration(
 
 # Klienten skal konfigurere autentificerings- og autorisationsparametrene
 # i overensstemmelse med API-serverens sikkerhedspolitik.
-# Eksempler for hver auth-metode er angivet nedenfor, brug det eksempel som
-# opfylder dit autentificeringsbrugstilfælde.
+# Eksempler for hver godkendelsesmetode er angivet nedenfor, brug det eksempel der
+# opfylder dit godkendelsesbrugssag.
 
 # Konfigurer API-nøgleautorisation: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Fjern kommentaren nedenfor for at sætte præfiks (f.eks. Bearer) for API-nøglen, hvis nødvendigt
+# Fjern kommentaren nedenfor for at opsætte præfiks (fx Bearer) til API-nøglen, hvis nødvendigt
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Åbn en kontekst med en instans af API-klienten
+# Indtast en kontekst med en forekomst af API-klienten
 with client.ApiClient(configuration) as api_client:
-    # Opret en instans af API-klassen
+    # Opret en forekomst af API-klassen
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
-    delete_comments = 'delete_comments_example' # str |  (valgfri)
-    comment_delete_mode = 'comment_delete_mode_example' # str |  (valgfri)
+    delete_comments = 'delete_comments_example' # str |  (optional)
+    comment_delete_mode = 'comment_delete_mode_example' # str |  (optional)
 
     try:
-        api_response = api_instance.delete_tenant_user(tenant_id, id, delete_comments=delete_comments, comment_delete_mode=comment_delete_mode)
+        api_response = api_instance.delete_tenant_user(tenant_id, id, DeleteTenantUserOptions(delete_comments=delete_comments, comment_delete_mode=comment_delete_mode))
         print("The response of DefaultApi->delete_tenant_user:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling DefaultApi->delete_tenant_user: %s\n" % e)
 [inline-code-end]
+
+---

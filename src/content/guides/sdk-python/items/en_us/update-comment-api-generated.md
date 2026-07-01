@@ -17,6 +17,7 @@ Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-pytho
 [inline-code-attrs-start title = 'update_comment Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import UpdateCommentOptions
 from client.models.api_empty_response import APIEmptyResponse
 from client.models.updatable_comment_params import UpdatableCommentParams
 from client.rest import ApiException
@@ -51,7 +52,7 @@ with client.ApiClient(configuration) as api_client:
     is_live = True # bool |  (optional)
 
     try:
-        api_response = api_instance.update_comment(tenant_id, id, updatable_comment_params, context_user_id=context_user_id, do_spam_check=do_spam_check, is_live=is_live)
+        api_response = api_instance.update_comment(tenant_id, id, updatable_comment_params, UpdateCommentOptions(context_user_id=context_user_id, do_spam_check=do_spam_check, is_live=is_live))
         print("The response of DefaultApi->update_comment:\n")
         pprint(api_response)
     except Exception as e:

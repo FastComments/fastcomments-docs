@@ -19,6 +19,7 @@ Returns: [`GetNotificationsResponse`](https://github.com/FastComments/fastcommen
 [inline-code-attrs-start title = 'get_notifications Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetNotificationsOptions
 from client.models.get_notifications_response import GetNotificationsResponse
 from client.rest import ApiException
 from pprint import pprint
@@ -53,7 +54,7 @@ with client.ApiClient(configuration) as api_client:
     skip = 3.4 # float |  (optional)
 
     try:
-        api_response = api_instance.get_notifications(tenant_id, user_id=user_id, url_id=url_id, from_comment_id=from_comment_id, viewed=viewed, type=type, skip=skip)
+        api_response = api_instance.get_notifications(tenant_id, GetNotificationsOptions(user_id=user_id, url_id=url_id, from_comment_id=from_comment_id, viewed=viewed, type=type, skip=skip))
         print("The response of DefaultApi->get_notifications:\n")
         pprint(api_response)
     except Exception as e:

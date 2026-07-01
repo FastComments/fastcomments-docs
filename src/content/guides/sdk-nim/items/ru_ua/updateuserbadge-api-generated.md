@@ -1,30 +1,23 @@
-## Параметры
+## Параметри
 
-| Name | Type | Required | Description |
+| Назва | Тип | Обов'язковий | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | No |  |
-| updateUserBadgeParams | UpdateUserBadgeParams | No |  |
+| tenantId | string | Так |  |
+| id | string | Ні |  |
+| updateUserBadgeParams | UpdateUserBadgeParams | Ні |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`Option[APIEmptySuccessResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_success_response.nim)
+Повертає: [`Option[APIEmptySuccessResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_success_response.nim)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример updateUserBadge'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад updateUserBadge'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateUserBadge(
-  tenantId = "my-tenant-123",
-  id = "user-456",
-  updateUserBadgeParams = UpdateUserBadgeParams()
-)
-
-if response.isSome:
-  let success = response.get()
-  echo "Badge updated successfully"
-else:
-  echo "Badge update failed"
+let params = UpdateUserBadgeParams()
+let (maybeResp, httpResp) = client.updateUserBadge(tenantId = "my-tenant-123", id = "user-456", updateUserBadgeParams = params)
+if maybeResp.isSome:
+  let success = maybeResp.get()
 [inline-code-end]
 
 ---

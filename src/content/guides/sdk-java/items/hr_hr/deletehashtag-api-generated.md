@@ -2,8 +2,8 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Da |  |
 | tag | string | path | Da |  |
-| tenantId | string | query | Ne |  |
 
 ## Odgovor
 
@@ -13,7 +13,7 @@ Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/b
 
 [inline-code-attrs-start title = 'Primjer deleteHashTag'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvoz klasa:
+// Uvezi klase:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,16 +29,15 @@ public class Example {
     // Konfiguriraj autorizaciju API ključa: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Otkomentirajte sljedeći redak da postavite prefiks za API ključ, npr. "Token" (zadano null)
+    // Otkomentiraj sljedeći red kako bi postavio prefiks za API ključ, npr. "Token" (zadano je null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    String tag = "tag_example"; // String | 
     String tenantId = "tenantId_example"; // String | 
+    String tag = "tag_example"; // String | 
     DeleteHashTagRequestBody deleteHashTagRequestBody = new DeleteHashTagRequestBody(); // DeleteHashTagRequestBody | 
     try {
-      APIEmptyResponse result = apiInstance.deleteHashTag(tag)
-            .tenantId(tenantId)
+      APIEmptyResponse result = apiInstance.deleteHashTag(tenantId, tag)
             .deleteHashTagRequestBody(deleteHashTagRequestBody)
             .execute();
       System.out.println(result);

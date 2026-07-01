@@ -4,30 +4,30 @@ afterId
 
 ## Parametri
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
+| Ime | Tip | Lokacija | Zahtevano | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | afterId | string | query | Ne |  |
 | limit | integer | query | Ne |  |
 | tags | array | query | Ne |  |
 
-## Odziv
+## Odgovor
 
 Vrne: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetFeedPostsResponse.swift)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer getFeedPosts'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getFeedPosts Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Naslednji primeri kode so še v beta. Za kakršnokoli težavo, prosimo prijavite na http://github.com/OpenAPITools/openapi-generator/issues/new
+// Naslednji vzorci kode so še v beta fazi. Za morebitne težave prosimo, da jih sporočite na http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let tenantId = "tenantId_example" // String | 
-let afterId = "afterId_example" // String |  (izbirno)
-let limit = 987 // Int |  (izbirno)
-let tags = ["inner_example"] // [String] |  (izbirno)
+let tenantId = "tenantId_example" // String |
+let afterId = "afterId_example" // String |  (neobvezno)
+let limit = 987 // Int |  (neobvezno)
+let tags = ["inner_example"] // [String] |  (neobvezno)
 
-DefaultAPI.getFeedPosts(tenantId: tenantId, afterId: afterId, limit: limit, tags: tags) { (response, error) in
+DefaultAPI.getFeedPosts(tenantId: tenantId, options: DefaultAPI.GetFeedPostsOptions(afterId: afterId, limit: limit, tags: tags)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -38,3 +38,5 @@ DefaultAPI.getFeedPosts(tenantId: tenantId, afterId: afterId, limit: limit, tags
     }
 }
 [inline-code-end]
+
+---

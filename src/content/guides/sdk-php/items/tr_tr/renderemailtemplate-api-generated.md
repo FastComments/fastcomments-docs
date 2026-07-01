@@ -1,11 +1,11 @@
-## Parametreler
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 | locale | string | query | Hayır |  |
 
-## Yanıt
+## Response
 
 Döndürür: [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/RenderEmailTemplateResponse.php)
 
@@ -17,21 +17,23 @@ Döndürür: [`RenderEmailTemplateResponse`](https://github.com/FastComments/fas
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// API anahtar yetkilendirmesini yapılandırın: api_key
+// API anahtarı yetkilendirmesini yapılandır: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Gerekirse API anahtarı için öneki (ör. Bearer) ayarlamak için aşağıdaki satırın başındaki yorum satırını kaldırın
+// Aşağıdaki satırı yorumdan çıkararak API anahtarı için önek ayarlayın (örn. Bearer), gerekirse
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Özel bir http istemcisi kullanmak istiyorsanız, `GuzzleHttp\ClientInterface` uygulayan istemcinizi geçin.
-    // Bu isteğe bağlıdır, varsayılan olarak `GuzzleHttp\Client` kullanılacaktır.
+    // Özel bir HTTP istemcisi kullanmak istiyorsanız, `GuzzleHttp\ClientInterface` arayüzünü uygulayan istemcinizi geçirin.
+    // Bu isteğe bağlıdır, `GuzzleHttp\Client` varsayılan olarak kullanılacaktır.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $render_email_template_body = new \FastComments\Client\Model\RenderEmailTemplateBody(); // \FastComments\Client\Model\RenderEmailTemplateBody
 $locale = 'locale_example'; // string
+
 
 try {
     $result = $apiInstance->renderEmailTemplate($tenant_id, $render_email_template_body, $locale);

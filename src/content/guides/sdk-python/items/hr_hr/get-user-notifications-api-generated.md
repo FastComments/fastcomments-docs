@@ -2,18 +2,18 @@
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| urlId | string | query | Ne | Koristi se za određivanje je li trenutna stranica pretplaćena. |
-| pageSize | integer | query | Ne |  |
-| afterId | string | query | Ne |  |
-| includeContext | boolean | query | Ne |  |
-| afterCreatedAt | integer | query | Ne |  |
-| unreadOnly | boolean | query | Ne |  |
-| dmOnly | boolean | query | Ne |  |
-| noDm | boolean | query | Ne |  |
-| includeTranslations | boolean | query | Ne |  |
-| includeTenantNotifications | boolean | query | Ne |  |
-| sso | string | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | No | Koristi se za određivanje je li trenutna stranica pretplaćena. |
+| pageSize | integer | query | No |  |
+| afterId | string | query | No |  |
+| includeContext | boolean | query | No |  |
+| afterCreatedAt | integer | query | No |  |
+| unreadOnly | boolean | query | No |  |
+| dmOnly | boolean | query | No |  |
+| noDm | boolean | query | No |  |
+| includeTranslations | boolean | query | No |  |
+| includeTenantNotifications | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -21,23 +21,24 @@ Vraća: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomme
 
 ## Primjer
 
-[inline-code-attrs-start title = 'get_user_notifications Primjer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer get_user_notifications'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetUserNotificationsOptions
 from client.models.get_my_notifications_response import GetMyNotificationsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definiranje hosta je opcionalno i zadano na https://fastcomments.com
-# Pogledajte configuration.py za popis svih podržanih konfiguracijskih parametara.
+# Definiranje hosta je opcionalno i zadano je https://fastcomments.com
+# Pogledajte configuration.py za popis svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Uđite u kontekst s instancom API klijenta
+# Unesite kontekst s instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Kreirajte instancu API klase
+    # Stvorite instancu API klase
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | Koristi se za određivanje je li trenutna stranica pretplaćena. (neobavezno)
@@ -53,7 +54,7 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (neobavezno)
 
     try:
-        api_response = api_instance.get_user_notifications(tenant_id, url_id=url_id, page_size=page_size, after_id=after_id, include_context=include_context, after_created_at=after_created_at, unread_only=unread_only, dm_only=dm_only, no_dm=no_dm, include_translations=include_translations, include_tenant_notifications=include_tenant_notifications, sso=sso)
+        api_response = api_instance.get_user_notifications(tenant_id, GetUserNotificationsOptions(url_id=url_id, page_size=page_size, after_id=after_id, include_context=include_context, after_created_at=after_created_at, unread_only=unread_only, dm_only=dm_only, no_dm=no_dm, include_translations=include_translations, include_tenant_notifications=include_tenant_notifications, sso=sso))
         print("The response of PublicApi->get_user_notifications:\n")
         pprint(api_response)
     except Exception as e:

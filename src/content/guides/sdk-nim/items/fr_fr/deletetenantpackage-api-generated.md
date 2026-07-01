@@ -1,24 +1,21 @@
 ## Paramètres
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nom | Type | Obligatoire | Description |
+|------|------|-------------|-------------|
 | tenantId | string | Oui |  |
 | id | string | Non |  |
 
 ## Réponse
 
-Renvoie: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
+Renvoie : [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de deleteTenantPackage'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple deleteTenantPackage'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteTenantPackage(tenantId = "my-tenant-123", id = "package-987")
-if response.isSome:
-  let emptyResp = response.get()
-  echo emptyResp
-else:
-  echo "Failed to delete tenant package"
+let (apiResponse, httpResponse) = client.deleteTenantPackage(tenantId = "my-tenant-123", id = "pkg-456def")
+if apiResponse.isSome:
+  let emptyResponse = apiResponse.get()
 [inline-code-end]
 
 ---

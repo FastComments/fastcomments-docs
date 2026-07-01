@@ -1,7 +1,7 @@
 ## Parametri
 
-| Name | Type | Obavezno | Opis |
-|------|------|----------|-------------|
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
 | tenantId | string | Da |  |
 | id | string | Da |  |
 | editKey | string | Ne |  |
@@ -10,22 +10,20 @@
 
 Vraća: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/VoteDeleteResponse.h)
 
-## Primjer
+## Primer
 
-[inline-code-attrs-start title = 'Primjer deleteVote'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteVote Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t id = U("vote-987654321");
-boost::optional<utility::string_t> editKey = boost::optional<utility::string_t>(U("edit-key-abc123"));
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto voteId = utility::conversions::to_string_t("vote-9876");
+boost::optional<utility::string_t> editKey = utility::conversions::to_string_t("edit-abc123");
 
-api->deleteVote(tenantId, id, editKey).then([](pplx::task<std::shared_ptr<VoteDeleteResponse>> t){
+api->deleteVote(tenantId, voteId, editKey).then([](pplx::task<std::shared_ptr<VoteDeleteResponse>> task) {
     try {
-        auto resp = t.get();
-        auto finalResp = resp ? resp : std::make_shared<VoteDeleteResponse>();
-        (void)finalResp;
-    } catch (...) {
-        auto errorResp = std::make_shared<VoteDeleteResponse>();
-        (void)errorResp;
+        auto response = task.get();
+        // Process response as needed
+    } catch (const std::exception&) {
+        // Handle error
     }
 });
 [inline-code-end]

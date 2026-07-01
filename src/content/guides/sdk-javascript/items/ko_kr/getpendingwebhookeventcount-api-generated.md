@@ -1,44 +1,38 @@
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| commentId | string | 아니오 |  |
-| externalId | string | 아니오 |  |
-| eventType | string | 아니오 |  |
-| type | string | 아니오 |  |
-| domain | string | 아니오 |  |
-| attemptCountGT | number | 아니오 |  |
+| tenantId | string | Yes |  |
+| commentId | string | No |  |
+| externalId | string | No |  |
+| eventType | string | No |  |
+| type | string | No |  |
+| domain | string | No |  |
+| attemptCountGT | number | No |  |
 
 ## 응답
 
-반환: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPendingWebhookEventCountResponse.ts)
+반환: [`GetPendingWebhookEventCountResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPendingWebhookEventCountResponse1.ts)
 
-## 예제
+## 예시
 
 [inline-code-attrs-start title = 'getPendingWebhookEventCount 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
-  const tenantId: string = 'd5c7e8b4-3a1f-4b2e-9f6c-12ab34cd56ef';
-  const commentId: string = 'cmt_000842';
-  const externalId: string = 'post-77f4';
-  const eventType: string = 'comment.updated';
-  const typeParam: string = 'delivery';
-  const domain: string = 'myblog.example.net';
-  const attemptCountGT: number = 2;
+  const tenantId: string = "tenant_001";
 
-  const result: GetPendingWebhookEventCountResponse = await getPendingWebhookEventCount(
+  const responseAll: GetPendingWebhookEventCountResponse1 = await getPendingWebhookEventCount(
     tenantId,
-    commentId,
-    externalId,
-    eventType,
-    typeParam,
-    domain,
-    attemptCountGT
+    "comment_456",
+    "ext_789",
+    "comment.updated",
+    "webhook",
+    "mydomain.com",
+    3
   );
 
-  console.log(result);
+  const responseMinimal: GetPendingWebhookEventCountResponse1 = await getPendingWebhookEventCount(tenantId);
+
+  console.log(responseAll, responseMinimal);
 })();
 [inline-code-end]
-
----

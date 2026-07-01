@@ -4,8 +4,8 @@ afterId
 
 ## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Naam | Type | Locatie | Vereist | Beschrijving |
+|------|------|----------|----------|---------------|
 | tenantId | string | path | Ja |  |
 | afterId | string | query | Nee |  |
 | limit | integer | query | Nee |  |
@@ -14,15 +14,15 @@ afterId
 | isCrawler | boolean | query | Nee |  |
 | includeUserInfo | boolean | query | Nee |  |
 
-## Response
+## Respons
 
 Retourneert: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PublicFeedPostsResponse.swift)
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'getFeedPostsPublic Voorbeeld'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Voorbeeld getFeedPostsPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// De volgende codevoorbeelden zijn nog in bèta. Meld eventuele problemen via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De volgende codevoorbeelden zijn nog in beta. Meld eventuele problemen via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -33,7 +33,7 @@ let sso = "sso_example" // String |  (optioneel)
 let isCrawler = true // Bool |  (optioneel)
 let includeUserInfo = true // Bool |  (optioneel)
 
-PublicAPI.getFeedPostsPublic(tenantId: tenantId, afterId: afterId, limit: limit, tags: tags, sso: sso, isCrawler: isCrawler, includeUserInfo: includeUserInfo) { (response, error) in
+PublicAPI.getFeedPostsPublic(tenantId: tenantId, options: PublicAPI.GetFeedPostsPublicOptions(afterId: afterId, limit: limit, tags: tags, sso: sso, isCrawler: isCrawler, includeUserInfo: includeUserInfo)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -44,3 +44,5 @@ PublicAPI.getFeedPostsPublic(tenantId: tenantId, afterId: afterId, limit: limit,
     }
 }
 [inline-code-end]
+
+---

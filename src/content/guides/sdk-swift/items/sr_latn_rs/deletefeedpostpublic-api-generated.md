@@ -1,7 +1,7 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
 | tenantId | string | path | Da |  |
 | postId | string | path | Da |  |
 | broadcastId | string | query | Ne |  |
@@ -15,15 +15,15 @@ Vraća: [`DeleteFeedPostPublicResponse`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'deleteFeedPostPublic Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sledeći primeri koda su još u beta fazi. Za bilo koji problem, prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledeći primeri koda su i dalje beta. Za sve probleme, molimo da prijavite putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let tenantId = "tenantId_example" // String | 
-let postId = "postId_example" // String | 
-let broadcastId = "broadcastId_example" // String |  (neobavezno)
-let sso = "sso_example" // String |  (neobavezno)
+let tenantId = "tenantId_example" // String |
+let postId = "postId_example" // String |
+let broadcastId = "broadcastId_example" // String |  (opciono)
+let sso = "sso_example" // String |  (opciono)
 
-PublicAPI.deleteFeedPostPublic(tenantId: tenantId, postId: postId, broadcastId: broadcastId, sso: sso) { (response, error) in
+PublicAPI.deleteFeedPostPublic(tenantId: tenantId, postId: postId, options: PublicAPI.DeleteFeedPostPublicOptions(broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

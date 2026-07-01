@@ -1,22 +1,30 @@
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | commentId | string | 是 |  |
+| tenantId | string | 否 |  |
 | sso | string | 否 |  |
 
 ## 响应
 
-返回: [`GetCommentTextResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentTextResponse.ts)
+返回：[`GetModerationCommentTextResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModerationCommentTextResponse.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'getModerationCommentText 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const commentId: string = "cmt_9f3a2b7d6e1c4a5b";
-const ssoToken: string | undefined = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NDMyMSJ9.DUMMY_SIGNATURE";
-const commentResponse: GetCommentTextResponse = await getModerationCommentText(commentId);
-const commentResponseWithSso: GetCommentTextResponse = await getModerationCommentText(commentId, ssoToken);
+async function exampleUsage(): Promise<void> {
+  const commentId: string = "cmt_9f8e7d6c5b4a3b2c1d0e";
+  const tenantId: string = "tenant_67890";
+  const sso: string = "sso_token_abc123";
+
+  // 仅使用必需参数进行调用
+  const result1: GetModerationCommentTextResponse = await getModerationCommentText(commentId);
+
+  // 使用可选参数进行调用
+  const result2: GetModerationCommentTextResponse = await getModerationCommentText(commentId, tenantId, sso);
+}
 [inline-code-end]
 
 ---

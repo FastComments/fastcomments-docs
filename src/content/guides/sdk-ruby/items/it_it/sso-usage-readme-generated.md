@@ -2,7 +2,6 @@
 
 ```ruby
 require 'fastcomments'
-require 'fastcomments-client'
 
 # Crea token SSO semplice
 user = FastComments::SSO::SimpleSSOUserData.new(
@@ -22,8 +21,8 @@ api_client = FastCommentsClient::ApiClient.new(config)
 public_api = FastCommentsClient::PublicApi.new(api_client)
 
 response = public_api.get_comments_public(
-  tenant_id: 'your-tenant-id',
-  url_id: 'your-page-url-id',
+  'your-tenant-id',
+  'your-page-url-id',
   sso: token
 )
 
@@ -34,7 +33,6 @@ puts "Status: #{response}"
 
 ```ruby
 require 'fastcomments'
-require 'fastcomments-client'
 
 # Crea token SSO sicuro
 user = FastComments::SSO::SecureSSOUserData.new(
@@ -56,10 +54,11 @@ api_client = FastCommentsClient::ApiClient.new(config)
 public_api = FastCommentsClient::PublicApi.new(api_client)
 
 response = public_api.get_comments_public(
-  tenant_id: 'your-tenant-id',
-  url_id: 'your-page-url-id',
+  'your-tenant-id',
+  'your-page-url-id',
   sso: token
 )
 
 puts "Status: #{response}"
 ```
+---

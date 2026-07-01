@@ -1,7 +1,8 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαραίτητο | Περιγραφή |
-|------|------|----------|----------|-------------|
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|------------|-------------|
+| tenantId | string | query | Ναι |  |
 | value | string | query | Όχι |  |
 | sso | string | query | Όχι |  |
 
@@ -17,14 +18,15 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 opts = {
-  value: 'value_example', # Συμβολοσειρά | 
-  sso: 'sso_example' # Συμβολοσειρά | 
+  value: 'value_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.get_search_sites(opts)
+  result = api_instance.get_search_sites(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_search_sites: #{e}"

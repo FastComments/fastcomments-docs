@@ -1,7 +1,7 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язковий | Опис |
-|------|------|----------|----------|-------------|
+| Назва | Тип | Розташування | Обов'язково | Опис |
+|------|------|--------------|-------------|------|
 | tenantId | string | query | Так |  |
 | commentId | string | query | Ні |  |
 | externalId | string | query | Ні |  |
@@ -20,28 +20,29 @@
 [inline-code-attrs-start title = 'Приклад get_pending_webhook_events'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetPendingWebhookEventsOptions
 from client.models.get_pending_webhook_events_response import GetPendingWebhookEventsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Визначення host необов'язкове і за замовчуванням = https://fastcomments.com
-# Див. configuration.py для списку всіх підтримуваних параметрів конфігурації.
+# Визначення хоста є необов'язковим і за замовчуванням встановлено https://fastcomments.com
+# Дивіться configuration.py для списку всіх підтримуваних параметрів конфігурації.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клієнт має налаштувати параметри автентифікації та авторизації
-# відповідно до політики безпеки API-сервера.
-# Нижче наведено приклади для кожного методу автентифікації, використайте приклад, який
+# Клієнт повинен налаштувати параметри автентифікації та авторизації
+# згідно з політикою безпеки API сервера.
+# Приклади для кожного методу автентифікації наведено нижче, використайте приклад, який
 # відповідає вашому випадку використання автентифікації.
 
-# Налаштуйте авторизацію через API-ключ: api_key
+# Налаштування авторизації за допомогою API ключа: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Розкоментуйте нижче, щоб встановити префікс (наприклад, Bearer) для API-ключа, якщо потрібно
+# Розкоментуйте нижче, щоб встановити префікс (наприклад, Bearer) для API ключа, якщо потрібно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Відкрийте контекст з екземпляром API-клієнта
+# Відкрийте контекст з екземпляром API клієнта
 with client.ApiClient(configuration) as api_client:
     # Створіть екземпляр класу API
     api_instance = client.DefaultApi(api_client)
@@ -55,7 +56,7 @@ with client.ApiClient(configuration) as api_client:
     skip = 3.4 # float |  (optional)
 
     try:
-        api_response = api_instance.get_pending_webhook_events(tenant_id, comment_id=comment_id, external_id=external_id, event_type=event_type, type=type, domain=domain, attempt_count_gt=attempt_count_gt, skip=skip)
+        api_response = api_instance.get_pending_webhook_events(tenant_id, GetPendingWebhookEventsOptions(comment_id=comment_id, external_id=external_id, event_type=event_type, type=type, domain=domain, attempt_count_gt=attempt_count_gt, skip=skip))
         print("The response of DefaultApi->get_pending_webhook_events:\n")
         pprint(api_response)
     except Exception as e:

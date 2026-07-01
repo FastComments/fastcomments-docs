@@ -4,12 +4,12 @@ afterId
 
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| afterId | string | query | Не |  |
-| limit | integer | query | Не |  |
-| tags | array | query | Не |  |
+| tenantId | string | query | Yes |  |
+| afterId | string | query | No |  |
+| limit | integer | query | No |  |
+| tags | array | query | No |  |
 
 ## Отговор
 
@@ -20,30 +20,31 @@ afterId
 [inline-code-attrs-start title = 'Пример за get_feed_posts'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetFeedPostsOptions
 from client.models.get_feed_posts_response import GetFeedPostsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Задаването на host е незадължително и по подразбиране е https://fastcomments.com
-# Вижте configuration.py за списък с всички поддържани конфигурационни параметри.
+# Дефинирането на хоста е опционално и по подразбиране е https://fastcomments.com
+# Вижте configuration.py за списък с всички поддържани параметри на конфигурацията.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клиентът трябва да конфигурира параметрите за удостоверяване и упълномощаване
-# в съответствие с политиката за сигурност на API сървъра.
-# Примерите за всеки метод на удостоверяване са показани по-долу — използвайте примера, който
-# отговаря на вашия случай на използване за удостоверяване.
+# Клиентът трябва да конфигурира параметрите за автентикация и оторизация
+# съобразно политиката за сигурност на API сървъра.
+# Примери за всеки метод на автентикация са дадени по-долу, използвайте примера, който
+# отговаря на вашия случай на използване.
 
-# Configure API key authorization: api_key
+# Конфигуриране на авторизация с API ключ: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Откоментирайте долното, за да настроите префикс (например Bearer) за API ключ, ако е необходимо
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Влезте в контекст с екземпляр на API клиента
+# Влезте в контекст с инстанция на API клиента
 with client.ApiClient(configuration) as api_client:
-    # Създайте екземпляр на API класа
+    # Създаване на инстанция на API класа
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     after_id = 'after_id_example' # str |  (optional)
@@ -51,7 +52,7 @@ with client.ApiClient(configuration) as api_client:
     tags = ['tags_example'] # List[str] |  (optional)
 
     try:
-        api_response = api_instance.get_feed_posts(tenant_id, after_id=after_id, limit=limit, tags=tags)
+        api_response = api_instance.get_feed_posts(tenant_id, GetFeedPostsOptions(after_id=after_id, limit=limit, tags=tags))
         print("The response of DefaultApi->get_feed_posts:\n")
         pprint(api_response)
     except Exception as e:

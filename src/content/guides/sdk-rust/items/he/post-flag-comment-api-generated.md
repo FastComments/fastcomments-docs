@@ -1,9 +1,11 @@
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| comment_id | String | כן |  |
-| sso | String | לא |  |
+| tenant_id | String | Yes |  |
+| comment_id | String | Yes |  |
+| broadcast_id | String | No |  |
+| sso | String | No |  |
 
 ## תגובה
 
@@ -11,14 +13,16 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת post_flag_comment'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_flag_comment דוגמה'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let params: PostFlagCommentParams = PostFlagCommentParams {
-        comment_id: String::from("news/acme-corp/article-237/comment-8421"),
-        sso: Some(String::from("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.acme-sso-payload")),
+async fn flag_comment_example() -> Result<(), Error> {
+    let params = PostFlagCommentParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: "comment-9f8e7d".to_string(),
+        broadcast_id: Some("broadcast-2024-01".to_string()),
+        sso: Some("sso-uid-12345".to_string()),
     };
-    let response: ApiEmptyResponse = post_flag_comment(&configuration, params).await?;
+    post_flag_comment(&config, params).await?;
     Ok(())
 }
 [inline-code-end]

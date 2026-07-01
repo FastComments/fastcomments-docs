@@ -2,24 +2,32 @@
 
 | Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
-| tenantId | string | Evet |  |
-| locale | string | Hayır |  |
-| rating | string | Hayır |  |
-| page | number | Hayır |  |
+| tenantId | string | Yes |  |
+| locale | string | No |  |
+| rating | string | No |  |
+| page | number | No |  |
 
 ## Yanıt
 
-Döndürür: [`GetGifsTrendingResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetGifsTrendingResponse.ts)
+Döner: [`GetGifsTrendingResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetGifsTrendingResponse.ts)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'getGifsTrending Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-media';
-const locale: string = 'en-US';
-const rating: string = 'pg-13';
-const page: number = 2;
-const trending: GetGifsTrendingResponse = await getGifsTrending(tenantId, locale, rating, page);
-[inline-code-end]
+async function runExample(): Promise<void> {
+  const tenantId: string = "tenant_9f8b7c6d";
+  const locale: string = "en-US";
+  const rating: string = "PG-13";
+  const page: number = 1;
 
----
+  const trendingAll: GetGifsTrendingResponse = await getGifsTrending(tenantId, locale, rating, page);
+  console.log(trendingAll);
+
+  // Yalnızca gerekli parametreyi kullanarak
+  const trendingMinimal: GetGifsTrendingResponse = await getGifsTrending(tenantId);
+  console.log(trendingMinimal);
+}
+
+runExample();
+[inline-code-end]

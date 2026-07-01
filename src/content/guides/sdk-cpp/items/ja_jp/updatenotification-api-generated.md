@@ -1,33 +1,27 @@
----
 ## パラメータ
 
-| 名前 | 型 | 必須 | 説明 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | はい |  |
-| id | string | はい |  |
-| updateNotificationBody | UpdateNotificationBody | はい |  |
-| userId | string | いいえ |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updateNotificationBody | UpdateNotificationBody | Yes |  |
+| userId | string | No |  |
 
 ## レスポンス
 
-戻り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
+返却: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
 ## 例
 
 [inline-code-attrs-start title = 'updateNotification の例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
-utility::string_t notificationId = utility::conversions::to_string_t("notif-456");
-auto updateBodyPtr = std::make_shared<UpdateNotificationBody>();
-boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(utility::conversions::to_string_t("user@example.com"));
-api->updateNotification(tenantId, notificationId, *updateBodyPtr, userId)
-    .then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task) {
-        try {
-            auto resp = task.get();
-            (void)resp;
-        } catch (...) {
-        }
-    });
+auto updateBody = std::make_shared<UpdateNotificationBody>();
+updateBody->title = utility::conversions::to_string_t("System Maintenance");
+updateBody->message = utility::conversions::to_string_t("Scheduled downtime at 02:00 UTC.");
+api->updateNotification(
+    utility::conversions::to_string_t("my-tenant-123"),
+    utility::conversions::to_string_t("notif-456"),
+    updateBody,
+    boost::optional<utility::string_t>(utility::conversions::to_string_t("admin-user"))
+).then([](std::shared_ptr<APIEmptyResponse>){});
 [inline-code-end]
-
----

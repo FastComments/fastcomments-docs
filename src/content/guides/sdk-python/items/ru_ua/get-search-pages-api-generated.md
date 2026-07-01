@@ -1,39 +1,42 @@
-## Параметры
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
-| value | string | query | Нет |  |
-| sso | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| value | string | query | No |  |
+| sso | string | query | No |  |
 
-## Ответ
+## Response
 
-Возвращает: [`ModerationPageSearchResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/moderation_page_search_response.py)
+Returns: [`ModerationPageSearchResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/moderation_page_search_response.py)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'Пример get_search_pages'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_search_pages Приклад'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetSearchPagesOptions
 from client.models.moderation_page_search_response import ModerationPageSearchResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Указание параметра host необязательно; по умолчанию используется https://fastcomments.com
-# См. configuration.py для списка всех поддерживаемых параметров конфигурации.
+# Визначення хоста є необов'язковим і за замовчуванням встановлює https://fastcomments.com
+# Дивіться configuration.py для списку всіх підтримуваних параметрів конфігурації.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Откройте контекст с экземпляром API-клиента
+# Введіть контекст з екземпляром API-клієнта
 with client.ApiClient(configuration) as api_client:
-    # Создайте экземпляр класса API
+    # Створіть екземпляр класу API
     api_instance = client.ModerationApi(api_client)
-    value = 'value_example' # str |  (необязательно)
-    sso = 'sso_example' # str |  (необязательно)
+    tenant_id = 'tenant_id_example' # str | 
+    value = 'value_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_search_pages(value=value, sso=sso)
+        api_response = api_instance.get_search_pages(tenant_id, GetSearchPagesOptions(value=value, sso=sso))
         print("The response of ModerationApi->get_search_pages:\n")
         pprint(api_response)
     except Exception as e:

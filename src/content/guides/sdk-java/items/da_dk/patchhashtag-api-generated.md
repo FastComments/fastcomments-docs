@@ -1,9 +1,9 @@
 ## Parametre
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tag | string | path | Yes |  |
-| tenantId | string | query | No |  |
+| Navn | Type | Placering | Krævet | Beskrivelse |
+|------|------|----------|--------|-------------|
+| tenantId | string | query | Ja |  |
+| tag | string | path | Ja |  |
 
 ## Respons
 
@@ -13,7 +13,7 @@ Returnerer: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcommen
 
 [inline-code-attrs-start title = 'patchHashTag Eksempel'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importer klasser:
+// Importér klasser:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,27 +26,26 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Konfigurer API-nøgle-godkendelse: api_key
+    // Konfigurer API-nøgle autorisation: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    // Fjern kommentaren fra følgende linje for at sætte et præfiks for API-nøglen, f.eks. "Token" (standard er null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    String tag = "tag_example"; // String | 
     String tenantId = "tenantId_example"; // String | 
+    String tag = "tag_example"; // String | 
     UpdateHashTagBody updateHashTagBody = new UpdateHashTagBody(); // UpdateHashTagBody | 
     try {
-      UpdateHashTagResponse result = apiInstance.patchHashTag(tag)
-            .tenantId(tenantId)
+      UpdateHashTagResponse result = apiInstance.patchHashTag(tenantId, tag)
             .updateHashTagBody(updateHashTagBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Undtagelse ved kald af DefaultApi#patchHashTag");
-      System.err.println("Statuskode: " + e.getCode());
-      System.err.println("Årsag: " + e.getResponseBody());
-      System.err.println("Respons-headere: " + e.getResponseHeaders());
+      System.err.println("Exception when calling DefaultApi#patchHashTag");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }

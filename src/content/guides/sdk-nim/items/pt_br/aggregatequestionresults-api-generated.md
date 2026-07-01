@@ -1,15 +1,9 @@
----
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-------------|
-| tenantId | string | Sim |  |
-| questionId | string | Não |  |
-| questionIds | seq[string] | Não |  |
-| urlId | string | Sim |  |
-| timeBucket | AggregateTimeBucket | Não |  |
-| startDate | string | Não |  |
-| forceRecalculate | bool | Não |  |
+|------|------|-------------|-----------|
+| tenantId | string | Yes |  |
+| options | AggregateQuestionResultsOptions | No |  |
 
 ## Resposta
 
@@ -17,21 +11,10 @@ Retorna: [`Option[AggregateQuestionResultsResponse]`](https://github.com/FastCom
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de aggregateQuestionResults'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'aggregateQuestionResults Exemplo'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.aggregateQuestionResults(
-  tenantId = "my-tenant-123",
-  questionId = "",
-  questionIds = @[],
-  urlId = "news/article-title",
-  timeBucket = AggregateTimeBucket(0),
-  startDate = "",
-  forceRecalculate = false
-)
-
-if response.isSome:
-  let results = response.get()
-  discard results
+let opts = AggregateQuestionResultsOptions()
+let (aggResultOpt, httpResp) = client.aggregateQuestionResults(tenantId = "my-tenant-123", options = opts)
+if aggResultOpt.isSome:
+  let aggResult = aggResultOpt.get()
 [inline-code-end]
-
----

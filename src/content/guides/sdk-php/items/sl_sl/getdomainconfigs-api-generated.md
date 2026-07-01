@@ -15,20 +15,21 @@ Vrne: [`GetDomainConfigsResponse`](https://github.com/FastComments/fastcomments-
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Nastavite avtorizacijo API ključa: api_key
+// Nastavi avtorizacijo API ključa: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Odkomentirajte spodaj za nastavitev predpone (npr. Bearer) za API ključ, če je potrebno
+// Odkomentiraj spodaj za nastavitev predpone (npr. Bearer) za API ključ, po potrebi
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Če želite uporabiti prilagojen HTTP odjemalec, posredujte odjemalca, ki implementira `GuzzleHttp\ClientInterface`.
-    // To je neobvezno; kot privzeti bo uporabljen `GuzzleHttp\Client`.
+    // Če želiš uporabiti lasten HTTP odjemalec, podaj svoj odjemalec, ki implementira `GuzzleHttp\ClientInterface`.
+    // To je neobvezno, `GuzzleHttp\Client` bo uporabljen kot privzeto.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
+
 
 try {
     $result = $apiInstance->getDomainConfigs($tenant_id);

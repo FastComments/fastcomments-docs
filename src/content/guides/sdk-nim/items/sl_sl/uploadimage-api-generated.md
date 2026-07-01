@@ -1,11 +1,13 @@
+---
+Naloži in spremeni velikost slike
+
 ## Parametri
 
-| Ime | Tip | Obvezno | Opis |
+| Ime | Vrsta | Obvezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | file | string | Ne |  |
-| sizePreset | SizePreset | Ne |  |
-| urlId | string | Da |  |
+| options | UploadImageOptions | Ne |  |
 
 ## Odgovor
 
@@ -13,16 +15,17 @@ Vrne: [`Option[UploadImageResponse]`](https://github.com/FastComments/fastcommen
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer uploadImage'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'uploadImage Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.uploadImage(
+let (uploadResult, httpResponse) = client.uploadImage(
   tenantId = "my-tenant-123",
-  file = "assets/images/comment-avatar.jpg",
-  sizePreset = SizePreset.small,
-  urlId = "news/article-2025-11-22"
+  file = "images/avatar.jpg",
+  options = UploadImageOptions()
 )
-if response.isSome:
-  let upload = response.get()
-  echo "Uploaded image id: ", upload.id
-  echo "Uploaded image url: ", upload.url
+
+if uploadResult.isSome:
+  let result = uploadResult.get()
+  # uporabi rezultat po potrebi
 [inline-code-end]
+
+---

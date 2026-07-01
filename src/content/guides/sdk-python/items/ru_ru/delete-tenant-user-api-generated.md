@@ -2,10 +2,10 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| id | string | path | Да |  |
-| deleteComments | string | query | Нет |  |
-| commentDeleteMode | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| deleteComments | string | query | No |  |
+| commentDeleteMode | string | query | No |  |
 
 ## Ответ
 
@@ -16,11 +16,12 @@
 [inline-code-attrs-start title = 'Пример delete_tenant_user'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import DeleteTenantUserOptions
 from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Указание хоста необязательно; по умолчанию https://fastcomments.com
+# Определение хоста является опциональным и по умолчанию https://fastcomments.com
 # См. configuration.py для списка всех поддерживаемых параметров конфигурации.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -29,17 +30,17 @@ configuration = client.Configuration(
 # Клиент должен настроить параметры аутентификации и авторизации
 # в соответствии с политикой безопасности сервера API.
 # Ниже приведены примеры для каждого метода аутентификации, используйте пример,
-# который соответствует вашему сценарию аутентификации.
+# который соответствует вашему случаю использования аутентификации.
 
-# Настройка авторизации по API-ключу: api_key
+# Настройка авторизации по API‑ключу: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Раскомментируйте ниже, чтобы установить префикс (e.g. Bearer) для API-ключа, если это необходимо
+# Раскомментировать ниже для установки префикса (например, Bearer) для API‑ключа, если необходимо
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Входим в контекст с экземпляром API-клиента
+# Войдите в контекст с экземпляром API‑клиента
 with client.ApiClient(configuration) as api_client:
-    # Создаём экземпляр класса API
+    # Создать экземпляр класса API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
@@ -47,7 +48,7 @@ with client.ApiClient(configuration) as api_client:
     comment_delete_mode = 'comment_delete_mode_example' # str |  (optional)
 
     try:
-        api_response = api_instance.delete_tenant_user(tenant_id, id, delete_comments=delete_comments, comment_delete_mode=comment_delete_mode)
+        api_response = api_instance.delete_tenant_user(tenant_id, id, DeleteTenantUserOptions(delete_comments=delete_comments, comment_delete_mode=comment_delete_mode))
         print("The response of DefaultApi->delete_tenant_user:\n")
         pprint(api_response)
     except Exception as e:

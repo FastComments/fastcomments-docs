@@ -17,25 +17,27 @@ Retourneert: [`APIGetUserBadgeResponse`](https://github.com/FastComments/fastcom
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configureer API-sleutel autorisatie: api_key
+// Configureer API-sleutelauthorisatie: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Haal onderstaande regel uit commentaar om een prefix (bijv. Bearer) voor de API-sleutel in te stellen, indien nodig
+// Uncomment hieronder om een prefix in te stellen (bijv. Bearer) voor de API-sleutel, indien nodig
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Als u een aangepaste HTTP-client wilt gebruiken, geef dan uw client mee die `GuzzleHttp\ClientInterface` implementeert.
-    // Dit is optioneel; `GuzzleHttp\Client` wordt standaard gebruikt.
+    // Als je een aangepaste http-client wilt gebruiken, geef dan jouw client door die `GuzzleHttp\ClientInterface` implementeert.
+    // Dit is optioneel, `GuzzleHttp\Client` wordt standaard gebruikt.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
+
 
 try {
     $result = $apiInstance->getUserBadge($tenant_id, $id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->getUserBadge: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception bij het aanroepen van DefaultApi->getUserBadge: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]

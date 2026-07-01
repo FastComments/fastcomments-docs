@@ -1,14 +1,14 @@
 ## Παράμετροι
 
-| Όνομα | Type | Location | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Ναι |  |
-| userId | string | query | Όχι |  |
-| badgeId | string | query | Όχι |  |
-| type | number | query | Όχι |  |
-| displayedOnComments | boolean | query | Όχι |  |
-| limit | number | query | Όχι |  |
-| skip | number | query | Όχι |  |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|------------|-----------|
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| badgeId | string | query | No |  |
+| type | number | query | No |  |
+| displayedOnComments | boolean | query | No |  |
+| limit | number | query | No |  |
+| skip | number | query | No |  |
 
 ## Απόκριση
 
@@ -16,34 +16,38 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα getUserBadges'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUserBadges Παράδειγμα'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Διαμόρφωση εξουσιοδότησης κλειδιού API: api_key
+// Ρύθμιση εξουσιοδότησης κλειδιού API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Αποσχολιάστε την παρακάτω γραμμή για να ορίσετε πρόθεμα (π.χ. Bearer) για το κλειδί API, εάν χρειάζεται
+// Ξεσχολιάστε παρακάτω για να ρυθμίσετε πρόθεμα (π.χ. Bearer) για το κλειδί API, εάν χρειάζεται
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Εάν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε τον client σας που υλοποιεί την `GuzzleHttp\ClientInterface`.
-    // Αυτό είναι προαιρετικό, η `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
+    // Εάν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε το client σας που υλοποιεί `GuzzleHttp\ClientInterface`.
+    // Αυτό είναι προαιρετικό, το `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$user_id = 'user_id_example'; // string
-$badge_id = 'badge_id_example'; // string
-$type = 3.4; // float
-$displayed_on_comments = True; // bool
-$limit = 3.4; // float
-$skip = 3.4; // float
+
+$tenant_id = 'tenant_id_example'; // συμβολοσειρά
+$options = [
+    'user_id' => 'user_id_example', // συμβολοσειρά
+    'badge_id' => 'badge_id_example', // συμβολοσειρά
+    'type' => 3.4, // αριθμός κινητής υποδιαστολής
+    'displayed_on_comments' => True, // λογική
+    'limit' => 3.4, // αριθμός κινητής υποδιαστολής
+    'skip' => 3.4, // αριθμός κινητής υποδιαστολής
+];
+
 
 try {
-    $result = $apiInstance->getUserBadges($tenant_id, $user_id, $badge_id, $type, $displayed_on_comments, $limit, $skip);
+    $result = $apiInstance->getUserBadges($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getUserBadges: ', $e->getMessage(), PHP_EOL;

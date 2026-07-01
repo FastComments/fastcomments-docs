@@ -1,12 +1,12 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| isLive | boolean | query | Не |  |
-| doSpamCheck | boolean | query | Не |  |
-| sendEmails | boolean | query | Не |  |
-| populateNotifications | boolean | query | Не |  |
+| Име | Тип | Местоположение | Задължително | Описание |
+|------|------|----------------|--------------|----------|
+| tenantId | string | query | Yes |  |
+| isLive | boolean | query | No |  |
+| doSpamCheck | boolean | query | No |  |
+| sendEmails | boolean | query | No |  |
+| populateNotifications | boolean | query | No |  |
 
 ## Отговор
 
@@ -17,31 +17,28 @@
 [inline-code-attrs-start title = 'Пример за save_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import SaveCommentOptions
 from client.models.api_save_comment_response import APISaveCommentResponse
 from client.models.create_comment_params import CreateCommentParams
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинирането на хоста е по избор и по подразбиране е https://fastcomments.com
-# Вижте configuration.py за списък с всички поддържани параметри на конфигурацията.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
-
-# Клиентът трябва да конфигурира параметрите за автентикация и авторизация
+# Дефинирането на хоста е опционално и по подразбиране е https://fastcomments.com
+# Вижте configuration.py за списък на всички поддържани конфигурационни параметри.
+# Клиентът трябва да конфигурира параметрите за удостоверяване и оторизация
 # в съответствие с политиката за сигурност на API сървъра.
-# Примерите за всеки метод на удостоверяване са дадени по-долу, използвайте примера, който
-# отговаря на вашия сценарий за автентикация.
+# Примери за всеки метод на удостоверяване са предоставени по-долу, използвайте примера, който
+# отговаря на вашия случай на употреба.
 
-# Configure API key authorization: api_key
+# Конфигуриране на API ключ за авторизация: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Разкоментирайте по-долу, за да зададете префикс (например Bearer) за API ключ, ако е необходимо
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Отворете контекст с екземпляр на API клиента
+# Въведете контекст с инстанция на API клиента
 with client.ApiClient(configuration) as api_client:
-    # Създайте екземпляр на класа API
+    # Създайте инстанция на API класа
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_comment_params = client.CreateCommentParams() # CreateCommentParams | 
@@ -51,7 +48,7 @@ with client.ApiClient(configuration) as api_client:
     populate_notifications = True # bool |  (optional)
 
     try:
-        api_response = api_instance.save_comment(tenant_id, create_comment_params, is_live=is_live, do_spam_check=do_spam_check, send_emails=send_emails, populate_notifications=populate_notifications)
+        api_response = api_instance.save_comment(tenant_id, create_comment_params, SaveCommentOptions(is_live=is_live, do_spam_check=do_spam_check, send_emails=send_emails, populate_notifications=populate_notifications))
         print("The response of DefaultApi->save_comment:\n")
         pprint(api_response)
     except Exception as e:

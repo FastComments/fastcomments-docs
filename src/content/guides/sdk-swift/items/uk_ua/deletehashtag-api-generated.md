@@ -2,8 +2,8 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tag | string | path | Так |  |
-| tenantId | string | query | Ні |  |
+| tenantId | string | query | Yes |  |
+| tag | string | path | Yes |  |
 
 ## Відповідь
 
@@ -13,14 +13,14 @@
 
 [inline-code-attrs-start title = 'Приклад deleteHashTag'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Наведені приклади коду все ще перебувають у бета-версії. Якщо виникне проблема, будь ласка, повідомте через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наведені приклади коду ще у бета-версії. У разі будь‑яких проблем, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let tag = "tag_example" // String | 
-let tenantId = "tenantId_example" // String |  (необов'язково)
-let deleteHashTagRequestBody = DeleteHashTagRequestBody(tenantId: "tenantId_example") // DeleteHashTagRequestBody |  (необов'язково)
+let deleteHashTagRequestBody = DeleteHashTagRequestBody(tenantId: "tenantId_example") // DeleteHashTagRequestBody |  (необов’язковий)
 
-DefaultAPI.deleteHashTag(tag: tag, tenantId: tenantId, deleteHashTagRequestBody: deleteHashTagRequestBody) { (response, error) in
+DefaultAPI.deleteHashTag(tenantId: tenantId, tag: tag, deleteHashTagRequestBody: deleteHashTagRequestBody) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -31,5 +31,3 @@ DefaultAPI.deleteHashTag(tag: tag, tenantId: tenantId, deleteHashTagRequestBody:
     }
 }
 [inline-code-end]
-
----

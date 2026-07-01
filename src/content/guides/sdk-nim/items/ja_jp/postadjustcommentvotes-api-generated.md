@@ -1,13 +1,13 @@
----
 ## パラメータ
 
-| 名前 | 型 | 必須 | 説明 |
+| 名前 | タイプ | 必須 | 説明 |
 |------|------|----------|-------------|
+| tenantId | string | はい |  |
 | commentId | string | はい |  |
 | adjustCommentVotesParams | AdjustCommentVotesParams | いいえ |  |
-| sso | string | いいえ |  |
+| options | PostAdjustCommentVotesOptions | いいえ |  |
 
-## レスポンス
+## 応答
 
 戻り値: [`Option[AdjustVotesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_adjust_votes_response.nim)
 
@@ -15,10 +15,13 @@
 
 [inline-code-attrs-start title = 'postAdjustCommentVotes の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postAdjustCommentVotes(commentId = "cmt-987654", adjustCommentVotesParams = nil, sso = "sso-token-abc123")
-if response.isSome:
-  let adjusted = response.get()
-  discard adjusted
-[inline-code-end]
+let (adjustRespOpt, httpResp) = client.postAdjustCommentVotes(
+  tenantId = "my-tenant-123",
+  commentId = "cmt-789",
+  adjustCommentVotesParams = AdjustCommentVotesParams(),
+  options = PostAdjustCommentVotesOptions()
+)
 
----
+if adjustRespOpt.isSome:
+  let adjustResp = adjustRespOpt.get()
+[inline-code-end]

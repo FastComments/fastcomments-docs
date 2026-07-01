@@ -1,15 +1,16 @@
----
-## Parameters
+## Parametri
 
-| Ime | Tip | Location | Obvezno | Opis |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Da |  |
-| direction | string | query | Ne |  |
-| sso | string | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| direction | string | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
-## Odgovor
+## Odziv
 
-Vrača: [`VoteResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_vote_response.go)
+Vračanje: [`VoteResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_vote_response.go)
 
 ## Primer
 
@@ -25,20 +26,20 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
 	direction := "direction_example" // string |  (neobvezno)
+	broadcastId := "broadcastId_example" // string |  (neobvezno)
 	sso := "sso_example" // string |  (neobvezno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostVote(context.Background(), commentId).Direction(direction).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostVote(context.Background(), commentId).TenantId(tenantId).Direction(direction).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostVote``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Napaka pri klicu `ModerationAPI.PostVote``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Poln HTTP odziv: %v\n", r)
 	}
 	// odgovor iz `PostVote`: VoteResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostVote`: %v\n", resp)
+	fmt.Fprintf(os.Stdout, "Odziv iz `ModerationAPI.PostVote`: %v\n", resp)
 }
 [inline-code-end]
-
----

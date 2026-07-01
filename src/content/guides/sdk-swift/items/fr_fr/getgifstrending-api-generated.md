@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Oui |  |
 | locale | string | query | Non |  |
@@ -9,7 +9,7 @@
 
 ## Réponse
 
-Renvoie: [`GetGifsTrendingResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetGifsTrendingResponse.swift)
+Renvoie : [`GetGifsTrendingResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetGifsTrendingResponse.swift)
 
 ## Exemple
 
@@ -19,11 +19,11 @@ Renvoie: [`GetGifsTrendingResponse`](https://github.com/FastComments/fastcomment
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let locale = "locale_example" // String |  (optionnel)
-let rating = "rating_example" // String |  (optionnel)
-let page = 987 // Double |  (optionnel)
+let locale = "locale_example" // String |  (facultatif)
+let rating = "rating_example" // String |  (facultatif)
+let page = 987 // Double |  (facultatif)
 
-PublicAPI.getGifsTrending(tenantId: tenantId, locale: locale, rating: rating, page: page) { (response, error) in
+PublicAPI.getGifsTrending(tenantId: tenantId, options: PublicAPI.GetGifsTrendingOptions(locale: locale, rating: rating, page: page)) { (response, error) in
     guard error == nil else {
         print(error)
         return

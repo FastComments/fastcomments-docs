@@ -1,23 +1,24 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| text-search | string | query | Non |  |
-| byIPFromComment | string | query | Non |  |
-| filter | string | query | Non |  |
-| searchFilters | string | query | Non |  |
-| demo | boolean | query | Non |  |
-| sso | string | query | Non |  |
+| Nom | Type | Emplacement | Obligatoire | Description |
+|------|------|-------------|-------------|-------------|
+| tenantId | string | requête | Oui |  |
+| text-search | string | requête | Non |  |
+| byIPFromComment | string | requête | Non |  |
+| filter | string | requête | Non |  |
+| searchFilters | string | requête | Non |  |
+| demo | boolean | requête | Non |  |
+| sso | string | requête | Non |  |
 
 ## Réponse
 
-Renvoie : [`ModerationAPICountCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationAPICountCommentsResponse.java)
+Renvoie : [`ModerationAPICountCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationAPICountCommentsResponse.java)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getCount'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getCount'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importer les classes :
+// Importer les classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -30,6 +31,7 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String textSearch = "textSearch_example"; // String | 
     String byIPFromComment = "byIPFromComment_example"; // String | 
     String filter = "filter_example"; // String | 
@@ -37,7 +39,7 @@ public class Example {
     Boolean demo = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationAPICountCommentsResponse result = apiInstance.getCount()
+      ModerationAPICountCommentsResponse result = apiInstance.getCount(tenantId)
             .textSearch(textSearch)
             .byIPFromComment(byIPFromComment)
             .filter(filter)
@@ -56,5 +58,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

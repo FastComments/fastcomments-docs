@@ -1,9 +1,10 @@
 ## Paramètres
 
 | Nom | Type | Obligatoire | Description |
-|------|------|------------|-------------|
+|------|------|----------|-------------|
+| tenantId | string | Oui |  |
 | commentId | string | Oui |  |
-| sso | string | Non |  |
+| options | PostUnFlagCommentOptions | Non |  |
 
 ## Réponse
 
@@ -11,14 +12,14 @@ Retourne : [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomm
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de postUnFlagComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postUnFlagComment Exemple'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postUnFlagComment(commentId = "comment-8f3a2b4e", sso = "")
-if response.isSome:
-  let apiEmpty = response.get()
-  echo "Comment unflagged successfully, response: ", apiEmpty
-else:
-  echo "Failed to unflag comment. HTTP response: ", httpResponse
-[inline-code-end]
+let (maybeResp, httpResp) = client.postUnFlagComment(
+  tenantId = "my-tenant-123",
+  commentId = "cmt-456789",
+  options = default(PostUnFlagCommentOptions)
+)
 
----
+if maybeResp.isSome:
+  let emptyResp = maybeResp.get()
+[inline-code-end]

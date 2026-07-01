@@ -1,13 +1,13 @@
 ## Parametri
 
 | Ime | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| tenant_id | String | Da |  |
-| comment_id | String | Da |  |
-| broadcast_id | String | Da |  |
-| comment_text_update_request | models::CommentTextUpdateRequest | Da |  |
-| edit_key | String | Ne |  |
-| sso | String | Ne |  |
+|------|------|----------|------|
+| tenant_id | String | Yes |  |
+| comment_id | String | Yes |  |
+| broadcast_id | String | Yes |  |
+| comment_text_update_request | models::CommentTextUpdateRequest | Yes |  |
+| edit_key | String | No |  |
+| sso | String | No |  |
 
 ## Odgovor
 
@@ -15,21 +15,23 @@ Vraća: [`PublicApiSetCommentTextResponse`](https://github.com/FastComments/fast
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer za set_comment_text'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'set_comment_text Primjer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn update_comment() -> Result<PublicApiSetCommentTextResponse, Error> {
-    let params: SetCommentTextParams = SetCommentTextParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        comment_id: "cmt-72f3a9".to_string(),
-        broadcast_id: "news/article/2026/06/19/product-launch".to_string(),
-        comment_text_update_request: models::CommentTextUpdateRequest {
-            text: "Updated: Congratulations on the launch! Clarified a few points.".to_string(),
-        },
-        edit_key: Some("edit-key-9f8b".to_string()),
-        sso: Some("sso-token-user-abc123".to_string()),
+async fn example() -> Result<(), Error> {
+    let comment_text_update_request = models::CommentTextUpdateRequest {
+        text: "Edited comment text after moderation".to_string(),
+        ..Default::default()
     };
-    let response = set_comment_text(&configuration, params).await?;
-    Ok(response)
+    let params = SetCommentTextParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: "cmt-98765".to_string(),
+        broadcast_id: "news/article".to_string(),
+        comment_text_update_request,
+        edit_key: Some("edit-key-2024".to_string()),
+        sso: Some("sso-token-789".to_string()),
+    };
+    let _response = set_comment_text(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
 

@@ -1,7 +1,8 @@
-## Parameter
+## Parameters
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Ja |  |
 | text-search | string | query | Nein |  |
 | byIPFromComment | string | query | Nein |  |
 | filters | string | query | Nein |  |
@@ -9,9 +10,9 @@
 | sorts | string | query | Nein |  |
 | sso | string | query | Nein |  |
 
-## Antwort
+## Response
 
-Gibt zurück: [`ModerationExportResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_export_response.go)
+Rückgabe: [`ModerationExportResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_export_response.go)
 
 ## Beispiel
 
@@ -27,6 +28,7 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	textSearch := "textSearch_example" // string |  (optional)
 	byIPFromComment := "byIPFromComment_example" // string |  (optional)
 	filters := "filters_example" // string |  (optional)
@@ -36,12 +38,12 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostApiExport(context.Background()).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).Sorts(sorts).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostApiExport(context.Background()).TenantId(tenantId).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).Sorts(sorts).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostApiExport``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Fehler beim Aufruf von `ModerationAPI.PostApiExport``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Vollständige HTTP-Antwort: %v\n", r)
 	}
 	// Antwort von `PostApiExport`: ModerationExportResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostApiExport`: %v\n", resp)
+	fmt.Fprintf(os.Stdout, "Antwort von `ModerationAPI.PostApiExport`: %v\n", resp)
 }
 [inline-code-end]

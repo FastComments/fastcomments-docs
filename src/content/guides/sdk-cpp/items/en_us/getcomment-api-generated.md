@@ -13,16 +13,13 @@ Returns: [`APIGetCommentResponse`](https://github.com/FastComments/fastcomments-
 
 [inline-code-attrs-start title = 'getComment Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("cmt-987654321");
-boost::optional<utility::string_t> include = boost::optional<utility::string_t>(U("author,replies"));
-
-api->getComment(tenantId, commentId).then([include](std::shared_ptr<APIGetCommentResponse> resp) {
-    if (resp) {
-        auto copy = std::make_shared<APIGetCommentResponse>(*resp);
-        std::cout << "Comment retrieved for tenant" << std::endl;
-    } else {
-        std::cout << "Comment not found" << std::endl;
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto commentId = utility::conversions::to_string_t("comment-456");
+boost::optional<int> maxDepth = boost::none;
+api->getComment(tenantId, commentId).then([](pplx::task<std::shared_ptr<APIGetCommentResponse>> t){
+    try{
+        auto resp = t.get();
+    }catch(const std::exception&){
     }
 });
 [inline-code-end]

@@ -23,7 +23,7 @@ let id = "id_example" // String |
 let deleteComments = "deleteComments_example" // String |  (optional)
 let commentDeleteMode = "commentDeleteMode_example" // String |  (optional)
 
-DefaultAPI.deleteTenantUser(tenantId: tenantId, id: id, deleteComments: deleteComments, commentDeleteMode: commentDeleteMode) { (response, error) in
+DefaultAPI.deleteTenantUser(tenantId: tenantId, id: id, options: DefaultAPI.DeleteTenantUserOptions(deleteComments: deleteComments, commentDeleteMode: commentDeleteMode)) { (response, error) in
     guard error == nil else {
         print(error)
         return

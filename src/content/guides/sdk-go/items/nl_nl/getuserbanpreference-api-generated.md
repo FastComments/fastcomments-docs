@@ -1,16 +1,17 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| sso | string | query | Nee |  |
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
-## Antwoord
+## Response
 
-Retourneert: [`APIModerateGetUserBanPreferencesResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_moderate_get_user_ban_preferences_response.go)
+Returns: [`APIModerateGetUserBanPreferencesResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_moderate_get_user_ban_preferences_response.go)
 
-## Voorbeeld
+## Example
 
-[inline-code-attrs-start title = 'GetUserBanPreference Voorbeeld'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GetUserBanPreference voorbeeld'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -22,18 +23,17 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	sso := "sso_example" // string |  (optioneel)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetUserBanPreference(context.Background()).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetUserBanPreference(context.Background()).TenantId(tenantId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetUserBanPreference``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// antwoord van `GetUserBanPreference`: APIModerateGetUserBanPreferencesResponse
+	// respons van `GetUserBanPreference`: APIModerateGetUserBanPreferencesResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetUserBanPreference`: %v\n", resp)
 }
 [inline-code-end]
-
----

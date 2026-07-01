@@ -1,12 +1,12 @@
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Da |  |
-| postId | string | path | Da |  |
-| isUndo | boolean | query | Ne |  |
-| broadcastId | string | query | Ne |  |
-| sso | string | query | Ne |  |
+|------|------|----------|----------|------|
+| tenantId | string | path | Yes |  |
+| postId | string | path | Yes |  |
+| isUndo | boolean | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -16,17 +16,17 @@ Vraća: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-s
 
 [inline-code-attrs-start title = 'reactFeedPostPublic Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sledeći primeri koda su još uvek u beta fazi. Za bilo koji problem, prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledeći primeri koda su još u beta fazi. Za bilo koji problem, molimo prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let postId = "postId_example" // String | 
 let reactBodyParams = ReactBodyParams(reactType: "reactType_example") // ReactBodyParams | 
-let isUndo = true // Bool |  (neobavezno)
-let broadcastId = "broadcastId_example" // String |  (neobavezno)
-let sso = "sso_example" // String |  (neobavezno)
+let isUndo = true // Bool |  (optional)
+let broadcastId = "broadcastId_example" // String |  (optional)
+let sso = "sso_example" // String |  (optional)
 
-PublicAPI.reactFeedPostPublic(tenantId: tenantId, postId: postId, reactBodyParams: reactBodyParams, isUndo: isUndo, broadcastId: broadcastId, sso: sso) { (response, error) in
+PublicAPI.reactFeedPostPublic(tenantId: tenantId, postId: postId, reactBodyParams: reactBodyParams, options: PublicAPI.ReactFeedPostPublicOptions(isUndo: isUndo, broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -37,3 +37,5 @@ PublicAPI.reactFeedPostPublic(tenantId: tenantId, postId: postId, reactBodyParam
     }
 }
 [inline-code-end]
+
+---

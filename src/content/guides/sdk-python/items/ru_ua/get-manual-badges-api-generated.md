@@ -1,8 +1,9 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Местоположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| sso | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Ответ
 
@@ -17,25 +18,24 @@ from client.models.get_tenant_manual_badges_response import GetTenantManualBadge
 from client.rest import ApiException
 from pprint import pprint
 
-# Указание host необязательно и по умолчанию равно https://fastcomments.com
-# Смотрите configuration.py для списка всех поддерживаемых параметров конфигурации.
+# Определение хоста необязательно и по умолчанию https://fastcomments.com
+# См. configuration.py для списка всех поддерживаемых параметров конфигурации.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Откройте контекст с экземпляром API-клиента
+# Войти в контекст с экземпляром клиента API
 with client.ApiClient(configuration) as api_client:
-    # Создайте экземпляр API-класса
+    # Создать экземпляр класса API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     sso = 'sso_example' # str |  (необязательно)
 
     try:
-        api_response = api_instance.get_manual_badges(sso=sso)
+        api_response = api_instance.get_manual_badges(tenant_id, sso=sso)
         print("The response of ModerationApi->get_manual_badges:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling ModerationApi->get_manual_badges: %s\n" % e)
 [inline-code-end]
-
----

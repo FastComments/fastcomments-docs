@@ -1,13 +1,14 @@
 ## Parametre
 
-| Name | Type | Required | Description |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| text_search | String | Nej |  |
-| by_ip_from_comment | String | Nej |  |
-| filter | String | Nej |  |
-| search_filters | String | Nej |  |
-| demo | bool | Nej |  |
-| sso | String | Nej |  |
+| tenant_id | String | Yes |  |
+| text_search | String | No |  |
+| by_ip_from_comment | String | No |  |
+| filter | String | No |  |
+| search_filters | String | No |  |
+| demo | bool | No |  |
+| sso | String | No |  |
 
 ## Svar
 
@@ -17,17 +18,18 @@ Returnerer: [`ModerationApiCountCommentsResponse`](https://github.com/FastCommen
 
 [inline-code-attrs-start title = 'get_count Eksempel'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_count() -> Result<ModerationApiCountCommentsResponse, Error> {
-    let params: GetCountParams = GetCountParams {
-        text_search: Some("breaking election coverage".to_string()),
-        by_ip_from_comment: Some("203.0.113.45".to_string()),
+async fn example() -> Result<(), Error> {
+    let params = GetCountParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        text_search: Some("breaking news".to_string()),
+        by_ip_from_comment: Some("192.168.1.1".to_string()),
         filter: Some("status:approved".to_string()),
-        search_filters: Some("section:politics tag:analysis".to_string()),
+        search_filters: Some("author:john".to_string()),
         demo: Some(false),
-        sso: Some("acme-corp-tenant".to_string()),
+        sso: Some("sso-token-123".to_string()),
     };
-    let response: ModerationApiCountCommentsResponse = get_count(&configuration, params).await?;
-    Ok(response)
+    let _response = get_count(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
 

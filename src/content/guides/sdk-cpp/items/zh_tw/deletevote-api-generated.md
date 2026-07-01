@@ -1,33 +1,29 @@
 ## 參數
 
-| 名稱 | 類型 | 必填 | 描述 |
-|------|------|----------|-------------|
+| 名稱 | 類型 | 必需 | 說明 |
+|------|------|------|------|
 | tenantId | string | 是 |  |
 | id | string | 是 |  |
 | editKey | string | 否 |  |
 
 ## 回應
 
-回傳：[`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/VoteDeleteResponse.h)
+返回：[`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/VoteDeleteResponse.h)
 
 ## 範例
 
 [inline-code-attrs-start title = 'deleteVote 範例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t id = U("vote-987654321");
-boost::optional<utility::string_t> editKey = boost::optional<utility::string_t>(U("edit-key-abc123"));
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto voteId = utility::conversions::to_string_t("vote-9876");
+boost::optional<utility::string_t> editKey = utility::conversions::to_string_t("edit-abc123");
 
-api->deleteVote(tenantId, id, editKey).then([](pplx::task<std::shared_ptr<VoteDeleteResponse>> t){
+api->deleteVote(tenantId, voteId, editKey).then([](pplx::task<std::shared_ptr<VoteDeleteResponse>> task) {
     try {
-        auto resp = t.get();
-        auto finalResp = resp ? resp : std::make_shared<VoteDeleteResponse>();
-        (void)finalResp;
-    } catch (...) {
-        auto errorResp = std::make_shared<VoteDeleteResponse>();
-        (void)errorResp;
+        auto response = task.get();
+        // 按需求處理回應
+    } catch (const std::exception&) {
+        // 處理錯誤
     }
 });
 [inline-code-end]
-
----

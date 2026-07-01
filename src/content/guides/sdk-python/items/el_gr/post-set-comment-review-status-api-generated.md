@@ -1,10 +1,12 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Θέση | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Ναι |  |
-| reviewed | boolean | query | Όχι |  |
-| sso | string | query | Όχι |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| reviewed | boolean | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Απόκριση
 
@@ -12,30 +14,33 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα post_set_comment_review_status'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_set_comment_review_status Παράδειγμα'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import PostSetCommentReviewStatusOptions
 from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Ορισμός του host είναι προαιρετικός και προεπιλεγμένος σε https://fastcomments.com
-# Δείτε configuration.py για λίστα με όλες τις υποστηριζόμενες παραμέτρους διαμόρφωσης.
+# Ο καθορισμός του host είναι προαιρετικός και προεπιλεγμένα είναι https://fastcomments.com
+# Δείτε το configuration.py για μια λίστα όλων των υποστηριζόμενων παραμέτρων διαμόρφωσης.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Μπείτε σε ένα context με ένα στιγμιότυπο του API client
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Δημιουργήστε ένα στιγμιότυπο της API κλάσης
+    # Create an instance of the API class
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
-    reviewed = True # bool |  (optional)
-    sso = 'sso_example' # str |  (optional)
+    reviewed = True # bool |  (προαιρετικό)
+    broadcast_id = 'broadcast_id_example' # str |  (προαιρετικό)
+    sso = 'sso_example' # str |  (προαιρετικό)
 
     try:
-        api_response = api_instance.post_set_comment_review_status(comment_id, reviewed=reviewed, sso=sso)
+        api_response = api_instance.post_set_comment_review_status(tenant_id, comment_id, PostSetCommentReviewStatusOptions(reviewed=reviewed, broadcast_id=broadcast_id, sso=sso))
         print("The response of ModerationApi->post_set_comment_review_status:\n")
         pprint(api_response)
     except Exception as e:

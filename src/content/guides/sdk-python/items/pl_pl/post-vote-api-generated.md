@@ -1,41 +1,46 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Yes |  |
-| direction | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Tak |  |
+| commentId | string | path | Tak |  |
+| direction | string | query | Nie |  |
+| broadcastId | string | query | Nie |  |
+| sso | string | query | Nie |  |
 
 ## Odpowiedź
 
-Zwraca: [`VoteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_response.py)
+Returns: [`VoteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_response.py)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład post_vote'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_vote Przykład'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import PostVoteOptions
 from client.models.vote_response import VoteResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Określenie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
-# Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracji.
+# Definiowanie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
+# Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracyjnych.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Otwórz kontekst z instancją klienta API
+# Wejdź w kontekst z instancją klienta API
 with client.ApiClient(configuration) as api_client:
     # Utwórz instancję klasy API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
-    direction = 'direction_example' # str |  (opcjonalne)
-    sso = 'sso_example' # str |  (opcjonalne)
+    direction = 'direction_example' # str |  (optional)
+    broadcast_id = 'broadcast_id_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.post_vote(comment_id, direction=direction, sso=sso)
+        api_response = api_instance.post_vote(tenant_id, comment_id, PostVoteOptions(direction=direction, broadcast_id=broadcast_id, sso=sso))
         print("The response of ModerationApi->post_vote:\n")
         pprint(api_response)
     except Exception as e:

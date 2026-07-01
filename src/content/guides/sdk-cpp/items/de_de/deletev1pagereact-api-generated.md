@@ -1,32 +1,25 @@
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
-|------|------|----------|-------------|
+|------|------|--------------|--------------|
 | tenantId | string | Ja |  |
 | urlId | string | Ja |  |
 
 ## Antwort
 
-Gibt zurück: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateV1PageReact.h)
+Rückgabe: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateV1PageReact.h)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'deleteV1PageReact Beispiel'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t urlId = U("page-9876");
-boost::optional<utility::string_t> requestId = U("req-456");
-auto task = api->deleteV1PageReact(tenantId, urlId)
-    .then([requestId](pplx::task<std::shared_ptr<CreateV1PageReact>> t) {
-        try {
-            auto result = t.get();
-            if (!result) result = std::make_shared<CreateV1PageReact>();
-            return result;
-        } catch (const std::exception&) {
-            return std::make_shared<CreateV1PageReact>();
-        }
-    });
-task.wait();
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto urlId = utility::conversions::to_string_t("page-abc-456");
+api->deleteV1PageReact(tenantId, urlId).then([](pplx::task<std::shared_ptr<CreateV1PageReact>> task){
+    try{
+        auto response = task.get();
+        boost::optional<std::shared_ptr<CreateV1PageReact>> optResponse = response;
+    }catch(...){
+    }
+});
 [inline-code-end]
-
----

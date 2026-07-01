@@ -1,31 +1,28 @@
----
 ## Paramètres
 
-| Nom | Type | Requis | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
-| tenant_id | String | Oui |  |
-| id | String | Oui |  |
-| user_id | String | Non |  |
-| anon_user_id | String | Non |  |
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
+| user_id | String | No |  |
+| anon_user_id | String | No |  |
 
 ## Réponse
 
-Renvoie: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_response.rs)
+Retourne : [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_response.rs)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de un_flag_comment'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'un_flag_comment Exemple'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn unflag_example() -> Result<FlagCommentResponse, Error> {
-    let params: UnFlagCommentParams = UnFlagCommentParams {
+async fn example() -> Result<(), Error> {
+    let params = UnFlagCommentParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "comment-98765".to_string(),
-        user_id: Some("user-42".to_string()),
+        id: "comment-12345".to_string(),
+        user_id: Some("user-67890".to_string()),
         anon_user_id: None,
     };
-    let response: FlagCommentResponse = un_flag_comment(configuration, params).await?;
-    Ok(response)
+    let _response = un_flag_comment(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

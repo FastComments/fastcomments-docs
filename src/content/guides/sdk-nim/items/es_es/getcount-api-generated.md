@@ -1,14 +1,9 @@
----
 ## Parámetros
 
-| Nombre | Tipo | Requerido | Descripción |
+| Nombre | Tipo | Obligatorio | Descripción |
 |------|------|----------|-------------|
-| textSearch | string | No |  |
-| byIPFromComment | string | No |  |
-| filter | string | No |  |
-| searchFilters | string | No |  |
-| demo | bool | No |  |
-| sso | string | No |  |
+| tenantId | string | Sí |  |
+| options | GetCountOptions | No |  |
 
 ## Respuesta
 
@@ -18,20 +13,7 @@ Devuelve: [`Option[ModerationAPICountCommentsResponse]`](https://github.com/Fast
 
 [inline-code-attrs-start title = 'Ejemplo de getCount'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getCount(
-  textSearch = "climate change",
-  byIPFromComment = "203.0.113.5",
-  filter = "status:approved",
-  searchFilters = "author:john.doe@example.com;tag:opinion",
-  demo = false,
-  sso = "sso_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
-)
-if response.isSome:
-  let countResp = response.get()
-  discard countResp
-  echo "Count response received"
-else:
-  echo "No count data returned"
+let (countOpt, httpResponse) = client.getCount(tenantId = "my-tenant-123", options = GetCountOptions())
+if countOpt.isSome:
+  let count = countOpt.get()
 [inline-code-end]
-
----

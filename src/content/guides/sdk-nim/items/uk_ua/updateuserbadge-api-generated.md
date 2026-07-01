@@ -1,7 +1,7 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
-|------|------|----------|-------------|
+| Назва | Тип | Обов’язково | Опис |
+|------|------|--------------|------|
 | tenantId | string | Так |  |
 | id | string | Ні |  |
 | updateUserBadgeParams | UpdateUserBadgeParams | Ні |  |
@@ -12,19 +12,12 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад використання updateUserBadge'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserBadge Приклад'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateUserBadge(
-  tenantId = "my-tenant-123",
-  id = "user-456",
-  updateUserBadgeParams = UpdateUserBadgeParams()
-)
-
-if response.isSome:
-  let success = response.get()
-  echo "Badge updated successfully"
-else:
-  echo "Badge update failed"
+let params = UpdateUserBadgeParams()
+let (maybeResp, httpResp) = client.updateUserBadge(tenantId = "my-tenant-123", id = "user-456", updateUserBadgeParams = params)
+if maybeResp.isSome:
+  let success = maybeResp.get()
 [inline-code-end]
 
 ---

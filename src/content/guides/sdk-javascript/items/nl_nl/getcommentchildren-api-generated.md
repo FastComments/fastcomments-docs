@@ -1,23 +1,25 @@
----
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
+| Naam | Type | Verplicht | Beschrijving |
 |------|------|----------|-------------|
 | commentId | string | Ja |  |
+| tenantId | string | Nee |  |
 | sso | string | Nee |  |
 
-## Antwoord
+## Response
 
-Retourneert: [`ModerationAPIChildCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPIChildCommentsResponse.ts)
+Retourneert: [`GetCommentChildrenResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentChildrenResponse.ts)
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'getCommentChildren Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getCommentChildren voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const commentId: string = "5f8d0a2e-3b9f-4c2b-9a37-1f4e6b2c7d8f";
-const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1Njc4OSJ9.signature";
-const childrenResponse: ModerationAPIChildCommentsResponse = await getCommentChildren(commentId);
-const childrenResponseWithSso: ModerationAPIChildCommentsResponse = await getCommentChildren(commentId, sso);
+const commentId: string = "cmt_12345";
+const tenantId: string = "tenant_xyz";
+const sso: string = "sso_987654";
+
+const fullResponse: GetCommentChildrenResponse = await getCommentChildren(commentId, tenantId, sso);
+const minimalResponse: GetCommentChildrenResponse = await getCommentChildren(commentId);
 [inline-code-end]
 
 ---

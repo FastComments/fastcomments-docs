@@ -1,24 +1,21 @@
 ## Parametri
 
-| Ime | Tip | Obvezno | Opis |
+| Ime | Vrsta | Obvezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | id | string | Ne |  |
 
 ## Odgovor
 
-Vrača: [`Option[DeletePageAPIResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_delete_page_api_response.nim)
+Vrne: [`Option[DeletePageAPIResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_delete_page_api_response.nim)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer deletePage'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deletePage Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deletePage(tenantId = "site-tenant-456", id = "news/winter-updates-2025")
-if response.isSome:
-  let deleted = response.get()
-  echo "DeletePageAPIResponse:", deleted
-else:
-  echo "Delete failed, HTTP response:", httpResponse
+let (deleteRespOpt, httpResp) = client.deletePage(tenantId = "my-tenant-123", id = "news/article-title")
+if deleteRespOpt.isSome:
+  let deleteResp = deleteRespOpt.get()
+  discard deleteResp
+discard httpResp
 [inline-code-end]
-
----

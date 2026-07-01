@@ -1,26 +1,25 @@
 ## 參數
 
-| 名稱 | 類型 | 必填 | 說明 |
+| 名稱 | 類型 | 必要 | 描述 |
 |------|------|----------|-------------|
-| value | string | 否 |  |
-| sso | string | 否 |  |
+| value | string | No |  |
+| tenantId | string | No |  |
+| sso | string | No |  |
 
 ## 回應
 
-回傳：[`ModerationUserSearchResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationUserSearchResponse.ts)
+返回：[`GetSearchUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetSearchUsersResponse.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getSearchUsers 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const searchValue: string = 'jane.doe@acme-corp.com';
-  const ssoToken: string = 'sso_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';
-  const responseWithSso: ModerationUserSearchResponse = await getSearchUsers(searchValue, ssoToken);
-  const searchValue2: string = 'michael.brown';
-  const responseWithoutSso: ModerationUserSearchResponse = await getSearchUsers(searchValue2);
-  console.log(responseWithSso, responseWithoutSso);
-})();
-[inline-code-end]
+async function demoSearch() {
+    const query: string = "john.doe@example.com";
+    const tenantId: string = "tenant_12345";
+    const ssoToken: string = "sso_token_abc";
 
----
+    const resultWithSso: GetSearchUsersResponse = await getSearchUsers(query, tenantId, ssoToken);
+    const resultWithoutSso: GetSearchUsersResponse = await getSearchUsers(query, tenantId);
+}
+[inline-code-end]

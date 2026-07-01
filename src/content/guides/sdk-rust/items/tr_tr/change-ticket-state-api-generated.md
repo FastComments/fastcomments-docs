@@ -1,6 +1,6 @@
 ## Parametreler
 
-| Name | Type | Required | Description |
+| Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
 | tenant_id | String | Yes |  |
 | user_id | String | Yes |  |
@@ -15,18 +15,20 @@ Döndürür: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastc
 
 [inline-code-attrs-start title = 'change_ticket_state Örneği'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let change_ticket_state_body: models::ChangeTicketStateBody = models::ChangeTicketStateBody {
-    state: Some("resolved".to_string()),
-    comment: Some("Fixed in release 1.2.3".to_string()),
-    notify_subscribers: Some(true),
-};
-
-let params: ChangeTicketStateParams = ChangeTicketStateParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    user_id: "john.doe@acme.com".to_string(),
-    id: "ticket-98765".to_string(),
-    change_ticket_state_body,
-};
-
-let response: ChangeTicketStateResponse = change_ticket_state(configuration, params).await?;
+async fn example(config: &configuration::Configuration) -> Result<(), Error> {
+    let body = models::ChangeTicketStateBody {
+        state: Some("closed".to_string()),
+        comment: Some("Issue resolved".to_string()),
+    };
+    let params = ChangeTicketStateParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        user_id: "user-1234".to_string(),
+        id: "ticket-5678".to_string(),
+        change_ticket_state_body: body,
+    };
+    let _response: ChangeTicketStateResponse = change_ticket_state(config, params).await?;
+    Ok(())
+}
 [inline-code-end]
+
+---

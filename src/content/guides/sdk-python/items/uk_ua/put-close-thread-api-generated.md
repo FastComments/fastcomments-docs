@@ -1,9 +1,10 @@
 ## Параметри
 
-| Назва | Type | Location | Обов'язково | Опис |
+| Назва | Тип | Розташування | Обов'язковий | Опис |
 |------|------|----------|----------|-------------|
-| urlId | string | query | Так |  |
-| sso | string | query | Ні |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Відповідь
 
@@ -18,22 +19,23 @@ from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Визначення хоста необов'язкове і за замовчуванням використовує https://fastcomments.com
-# Див. configuration.py для списку всіх підтримуваних параметрів конфігурації.
+# Визначення хоста є необов'язковим і за замовчуванням встановлює https://fastcomments.com
+# Дивіться configuration.py для списку всіх підтримуваних параметрів конфігурації.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Увійдіть у контекст із екземпляром клієнта API
+# Відкрити контекст з екземпляром API‑клієнта
 with client.ApiClient(configuration) as api_client:
-    # Створіть екземпляр класу API
+    # Створити екземпляр класу API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
-    sso = 'sso_example' # str |  (необов'язково)
+    sso = 'sso_example' # str |  (опціонально)
 
     try:
-        api_response = api_instance.put_close_thread(url_id, sso=sso)
+        api_response = api_instance.put_close_thread(tenant_id, url_id, sso=sso)
         print("The response of ModerationApi->put_close_thread:\n")
         pprint(api_response)
     except Exception as e:

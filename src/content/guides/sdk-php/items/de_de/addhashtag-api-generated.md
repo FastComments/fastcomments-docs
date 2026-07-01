@@ -1,12 +1,12 @@
 ## Parameter
 
-| Name | Typ | Ort | Erforderlich | Beschreibung |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Nein |  |
+| tenantId | string | query | Yes |  |
 
 ## Antwort
 
-Gibt zurück: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateHashTagResponse.php)
+Rückgabe: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateHashTagResponse.php)
 
 ## Beispiel
 
@@ -16,20 +16,22 @@ Gibt zurück: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomm
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Konfigurieren der API-Schlüssel-Authentifizierung: api_key
+// Configure API key authorization: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Unten auskommentieren, um bei Bedarf ein Präfix (z. B. Bearer) für den API-Schlüssel zu setzen
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Wenn Sie einen benutzerdefinierten HTTP-Client verwenden möchten, übergeben Sie Ihren Client, der `GuzzleHttp\ClientInterface` implementiert.
-    // Dies ist optional, standardmäßig wird `GuzzleHttp\Client` verwendet.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $create_hash_tag_body = new \FastComments\Client\Model\CreateHashTagBody(); // \FastComments\Client\Model\CreateHashTagBody
+
 
 try {
     $result = $apiInstance->addHashTag($tenant_id, $create_hash_tag_body);

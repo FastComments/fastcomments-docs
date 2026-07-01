@@ -2,10 +2,11 @@
 
 | 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
-| commentId | string | path | 是 |  |
-| includeEmail | boolean | query | 否 |  |
-| includeIP | boolean | query | 否 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| includeEmail | boolean | query | No |  |
+| includeIP | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## 响应
 
@@ -19,20 +20,19 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
-comment_id = 'comment_id_example' # 字符串 | 
+tenant_id = 'tenant_id_example' # String | 
+comment_id = 'comment_id_example' # String | 
 opts = {
-  include_email: true, # 布尔 | 
-  include_ip: true, # 布尔 | 
-  sso: 'sso_example' # 字符串 | 
+  include_email: true, # Boolean | 
+  include_ip: true, # Boolean | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.get_moderation_comment(comment_id, opts)
+  result = api_instance.get_moderation_comment(tenant_id, comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_moderation_comment: #{e}"
 end
 [inline-code-end]
-
----

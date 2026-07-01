@@ -1,31 +1,29 @@
----
 ## 매개변수
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | 예 |  |
-| create_moderator_body | models::CreateModeratorBody | 예 |  |
+| tenant_id | String | Yes |  |
+| create_moderator_body | models::CreateModeratorBody | Yes |  |
 
 ## 응답
 
-반환: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_moderator_response.rs)
+Returns: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_moderator_response.rs)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'create_moderator 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_moderator 예시'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: CreateModeratorParams = CreateModeratorParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    create_moderator_body: models::CreateModeratorBody {
-        email: "jane.doe@acme-corp.com".to_string(),
-        display_name: Some("Jane Doe".to_string()),
-        username: Some("jdoe".to_string()),
-        role: Some("moderator".to_string()),
-        sections: Some(vec!["news/article".to_string(), "tech/reviews".to_string()]),
-        notify: Some(true),
-    },
-};
-let response: CreateModeratorResponse = create_moderator(&configuration, params).await?;
+async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = CreateModeratorParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        create_moderator_body: models::CreateModeratorBody {
+            email: "mod@example.com".to_string(),
+            username: Some("mod_user".to_string()),
+            permissions: vec!["delete".to_string(), "edit".to_string()],
+            ..Default::default()
+        },
+    };
+    let _response = create_moderator(configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]
-
----

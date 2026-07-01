@@ -4,8 +4,8 @@ afterId
 
 ## Parâmetros
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Localização | Obrigatório | Descrição |
+|------|------|------------|-------------|-----------|
 | tenantId | string | query | Sim |  |
 | afterId | string | query | Não |  |
 | limit | integer | query | Não |  |
@@ -22,28 +22,33 @@ Retorna: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-p
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar autorização da chave da API: api_key
+// Configura a autorização da chave de API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Descomente abaixo para configurar o prefixo (ex.: Bearer) para a chave da API, se necessário
+// Descomente abaixo para configurar o prefixo (ex.: Bearer) da chave de API, se necessário
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Se você quiser usar um cliente HTTP personalizado, passe seu cliente que implemente `GuzzleHttp\ClientInterface`.
-    // Isso é opcional, `GuzzleHttp\Client` será usado como padrão.
+    // Se você quiser usar um cliente HTTP personalizado, passe seu cliente que implementa `GuzzleHttp\ClientInterface`.
+    // Isto é opcional, `GuzzleHttp\Client` será usado como padrão.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$after_id = 'after_id_example'; // string
-$limit = 56; // int
-$tags = array('tags_example'); // string[]
+$options = [
+    'after_id' => 'after_id_example', // string
+    'limit' => 56, // int
+    'tags' => array('tags_example'), // string[]
+];
+
 
 try {
-    $result = $apiInstance->getFeedPosts($tenant_id, $after_id, $limit, $tags);
+    $result = $apiInstance->getFeedPosts($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getFeedPosts: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

@@ -1,12 +1,10 @@
 ## Параметры
 
-| Name | Type | Required | Description |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | search | string | Нет |  |
-| locale | string | Нет |  |
-| rating | string | Нет |  |
-| page | float64 | Нет |  |
+| options | GetGifsSearchOptions | Нет |  |
 
 ## Ответ
 
@@ -16,17 +14,11 @@
 
 [inline-code-attrs-start title = 'Пример getGifsSearch'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getGifsSearch(
-  tenantId = "my-tenant-123",
-  search = "funny cat",
-  locale = "en-US",
-  rating = "PG",
-  page = 1.0
-)
-
-if response.isSome:
-  let gifs = response.get()
-  echo "Fetched GIFs response:", gifs
+let opts = GetGifsSearchOptions(limit = 10, rating = "g")
+let (responseOpt, httpResponse) = client.getGifsSearch(tenantId = "my-tenant-123", search = "funny cats", options = opts)
+if responseOpt.isSome:
+  let resp = responseOpt.get()
+  # использовать resp по необходимости
 [inline-code-end]
 
 ---

@@ -1,13 +1,13 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
-|------|------|----------|----------|-------------|
+| Naam | Type | Locatie | Verplicht | Beschrijving |
+|------|------|----------|-----------|--------------|
+| tenantId | string | query | Ja |  |
 | tag | string | path | Ja |  |
-| tenantId | string | query | Nee |  |
 
-## Antwoord
+## Reactie
 
-Geeft terug: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
+Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
 ## Voorbeeld
 
@@ -17,24 +17,24 @@ require 'time'
 require 'fastcomments-client'
 # autorisatie instellen
 FastCommentsClient.configure do |config|
-  # Configureer API-sleutelautorisatie: api_key
+  # Configureer API-sleutel autorisatie: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Haal het commentaar van de volgende regel weg om een voorvoegsel voor de API-sleutel in te stellen, bijv. 'Bearer' (standaard: nil)
+  # Verwijder de commentaartekens van de volgende regel om een prefix voor de API-sleutel in te stellen, bijv. 'Bearer' (standaard nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
+tenant_id = 'tenant_id_example' # String | 
 tag = 'tag_example' # String | 
-opts = {
-  tenant_id: 'tenant_id_example', # String | 
-  delete_hash_tag_request_body: FastCommentsClient::DeleteHashTagRequestBody.new # DeleteHashTagRequestBody | 
-}
+delete_hash_tag_request_body = FastCommentsClient::DeleteHashTagRequestBody.new # DeleteHashTagRequestBody | 
 
 begin
   
-  result = api_instance.delete_hash_tag(tag, opts)
+  result = api_instance.delete_hash_tag(tenant_id, tag, delete_hash_tag_request_body)
   p result
 rescue FastCommentsClient::ApiError => e
-  puts "Fout bij het aanroepen van DefaultApi->delete_hash_tag: #{e}"
+  puts "Error when calling DefaultApi->delete_hash_tag: #{e}"
 end
 [inline-code-end]
+
+---

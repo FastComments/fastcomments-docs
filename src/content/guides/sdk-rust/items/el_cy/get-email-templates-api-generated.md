@@ -1,10 +1,9 @@
----
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
-| tenant_id | String | Ναι |  |
-| skip | f64 | Όχι |  |
+| tenant_id | String | Yes |  |
+| skip | f64 | No |  |
 
 ## Απόκριση
 
@@ -12,16 +11,14 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα get_email_templates'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_email_templates Παράδειγμα'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_templates() -> Result<GetEmailTemplatesResponse, Error> {
-    let params: GetEmailTemplatesParams = GetEmailTemplatesParams {
+async fn run() -> Result<(), Error> {
+    let params = GetEmailTemplatesParams {
         tenant_id: "acme-corp-tenant".to_string(),
         skip: Some(10.0),
     };
-    let response: GetEmailTemplatesResponse = get_email_templates(&configuration, params).await?;
-    Ok(response)
+    let _response = get_email_templates(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

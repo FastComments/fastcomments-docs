@@ -1,30 +1,25 @@
-Atualmente, visualizadores online de uma página: pessoas cuja sessão WebSocket está inscrita na página agora.
-Retorna anonCount + totalCount (assinantes da sala inteira, incluindo visualizadores anônimos que não enumeramos).
+Currently-online viewers of a page: people whose websocket session is subscribed to the page right now.  
+Returns anonCount + totalCount (room-wide subscribers, including anon viewers we don't enumerate).
 
-## Parâmetros
+## Parameters
 
-| Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-----------|
-| tenantId | string | Sim |  |
-| urlId | string | Sim |  |
-| afterName | string | Não |  |
-| afterUserId | string | Não |  |
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| options | GetOnlineUsersOptions | No |  |
 
-## Resposta
+## Response
 
-Retorna: [`Option[PageUsersOnlineResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_online_response.nim)
+Returns: [`Option[PageUsersOnlineResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_online_response.nim)
 
-## Exemplo
+## Example
 
-[inline-code-attrs-start title = 'Exemplo de getOnlineUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
-[inline-code-start]
-let (response, httpResponse) = client.getOnlineUsers(tenantId = "my-tenant-123", urlId = "news/politics/top-story", afterName = "", afterUserId = "")
-if response.isSome:
-  let page = response.get()
-  echo "Received online users page:"
-  echo page
-else:
-  echo "No online users returned. HTTP status: ", httpResponse.statusCode
+[inline-code-attrs-start title = 'Exemplo getOnlineUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]  
+[inline-code-start]  
+let opts = GetOnlineUsersOptions()  
+let (onlineUsersOpt, httpResp) = client.getOnlineUsers(tenantId = "my-tenant-123", urlId = "news/article-title", options = opts)  
+if onlineUsersOpt.isSome:  
+  let onlineUsers = onlineUsersOpt.get()  
+  echo onlineUsers  
 [inline-code-end]
-
----

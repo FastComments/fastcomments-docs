@@ -1,11 +1,13 @@
 ## Parametreler
 
-| İsim | Tür | Konum | Gerekli | Açıklama |
+| İsim | Tip | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| commentId | string | yol | Evet |  |
-| spam | boolean | sorgu | Hayır |  |
-| permNotSpam | boolean | sorgu | Hayır |  |
-| sso | string | sorgu | Hayır |  |
+| tenantId | string | query | Evet |  |
+| commentId | string | path | Evet |  |
+| spam | boolean | query | Hayır |  |
+| permNotSpam | boolean | query | Hayır |  |
+| broadcastId | string | query | Hayır |  |
+| sso | string | query | Hayır |  |
 
 ## Yanıt
 
@@ -15,15 +17,17 @@ Döndürür: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-s
 
 [inline-code-attrs-start title = 'postSetCommentSpamStatus Örneği'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Aşağıdaki kod örnekleri hâlâ beta durumundadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new üzerinden bildirin
+// Aşağıdaki kod örnekleri hâlâ beta sürümündedir. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new adresine bildirin
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
-let spam = true // Bool |  (isteğe bağlı)
-let permNotSpam = true // Bool |  (isteğe bağlı)
-let sso = "sso_example" // String |  (isteğe bağlı)
+let spam = true // Bool |  (opsiyonel)
+let permNotSpam = true // Bool |  (opsiyonel)
+let broadcastId = "broadcastId_example" // String |  (opsiyonel)
+let sso = "sso_example" // String |  (opsiyonel)
 
-ModerationAPI.postSetCommentSpamStatus(commentId: commentId, spam: spam, permNotSpam: permNotSpam, sso: sso) { (response, error) in
+ModerationAPI.postSetCommentSpamStatus(tenantId: tenantId, commentId: commentId, options: ModerationAPI.PostSetCommentSpamStatusOptions(spam: spam, permNotSpam: permNotSpam, broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

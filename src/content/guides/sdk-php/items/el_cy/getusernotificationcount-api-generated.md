@@ -1,11 +1,11 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
+|------|------|----------|-----------|-------------|
 | tenantId | string | query | Ναι |  |
 | sso | string | query | Όχι |  |
 
-## Απάντηση
+## Απόκριση
 
 Επιστρέφει: [`GetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetUserNotificationCountResponse.php)
 
@@ -19,12 +19,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Αν θέλετε να χρησιμοποιήσετε προσαρμοσμένο πελάτη http, περάστε τον πελάτη σας που υλοποιεί την `GuzzleHttp\ClientInterface`.
-    // Αυτό είναι προαιρετικό, ως προεπιλογή θα χρησιμοποιηθεί η `GuzzleHttp\Client`.
+    // Αν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε το client σας που υλοποιεί `GuzzleHttp\ClientInterface`.
+    // Αυτό είναι προαιρετικό, το `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->getUserNotificationCount($tenant_id, $sso);

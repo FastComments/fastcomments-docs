@@ -2,8 +2,9 @@
 
 | שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
+| tenantId | string | כן |  |
 | commentId | string | כן |  |
-| sso | string | לא |  |
+| sso | string = "" | לא |  |
 
 ## תגובה
 
@@ -11,15 +12,14 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getCommentBanStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה getCommentBanStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getCommentBanStatus(commentId = "cmt-987654321", sso = "")
+let (banStatusOpt, httpResp) = client.getCommentBanStatus(
+  tenantId = "my-tenant-123",
+  commentId = "cmt-456789",
+  sso = "")
 
-if response.isSome:
-  let banStatus = response.get()
-  echo "Ban status for comment cmt-987654321: ", banStatus
-else:
-  echo "No ban status returned for comment cmt-987654321"
+if banStatusOpt.isSome:
+  let banStatus = banStatusOpt.get()
+  echo banStatus
 [inline-code-end]
-
----

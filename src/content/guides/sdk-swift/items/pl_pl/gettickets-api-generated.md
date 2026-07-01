@@ -1,12 +1,12 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | zapytanie | Tak |  |
-| userId | string | zapytanie | Nie |  |
-| state | number | zapytanie | Nie |  |
-| skip | number | zapytanie | Nie |  |
-| limit | number | zapytanie | Nie |  |
+| tenantId | string | query | Tak |  |
+| userId | string | query | Nie |  |
+| state | number | query | Nie |  |
+| skip | number | query | Nie |  |
+| limit | number | query | Nie |  |
 
 ## Odpowiedź
 
@@ -16,16 +16,16 @@ Zwraca: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-swif
 
 [inline-code-attrs-start title = 'Przykład getTickets'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Następujące przykłady kodu są nadal w wersji beta. W razie problemu zgłoś to przez http://github.com/OpenAPITools/openapi-generator/issues/new
+// Poniższe przykłady kodu są wciąż w fazie beta. W razie jakichkolwiek problemów, proszę zgłaszać je pod adresem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let userId = "userId_example" // String |  (opcjonalne)
-let state = 987 // Double |  (opcjonalne)
-let skip = 987 // Double |  (opcjonalne)
-let limit = 987 // Double |  (opcjonalne)
+let userId = "userId_example" // String |  (opcjonalny)
+let state = 987 // Double |  (opcjonalny)
+let skip = 987 // Double |  (opcjonalny)
+let limit = 987 // Double |  (opcjonalny)
 
-DefaultAPI.getTickets(tenantId: tenantId, userId: userId, state: state, skip: skip, limit: limit) { (response, error) in
+DefaultAPI.getTickets(tenantId: tenantId, options: DefaultAPI.GetTicketsOptions(userId: userId, state: state, skip: skip, limit: limit)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -36,5 +36,3 @@ DefaultAPI.getTickets(tenantId: tenantId, userId: userId, state: state, skip: sk
     }
 }
 [inline-code-end]
-
----

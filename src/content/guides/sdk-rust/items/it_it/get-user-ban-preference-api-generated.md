@@ -1,8 +1,8 @@
----
 ## Parametri
 
 | Nome | Tipo | Obbligatorio | Descrizione |
 |------|------|--------------|-------------|
+| tenant_id | String | Yes |  |
 | sso | String | No |  |
 
 ## Risposta
@@ -11,15 +11,14 @@ Restituisce: [`ApiModerateGetUserBanPreferencesResponse`](https://github.com/Fas
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di get_user_ban_preference'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_user_ban_preference Esempio'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example() -> Result<(), Error> {
-    let params: GetUserBanPreferenceParams = GetUserBanPreferenceParams {
-        sso: Some("acme-corp-tenant".to_string()),
+async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetUserBanPreferenceParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        sso: Some("user123".to_string()),
     };
-    let response: ApiModerateGetUserBanPreferencesResponse =
-        get_user_ban_preference(&configuration, params).await?;
-    println!("{:#?}", response);
+    let _response = get_user_ban_preference(configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

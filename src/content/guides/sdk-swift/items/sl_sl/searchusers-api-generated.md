@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Da |  |
 | urlId | string | query | Da |  |
@@ -9,25 +9,25 @@
 | sso | string | query | Ne |  |
 | searchSection | string | query | Ne |  |
 
-## Odgovor
+## Odziv
 
 Vrne: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SearchUsersResult.swift)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer searchUsers'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'searchUsers Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Naslednji primeri kode so še v beta fazi. Za vsakršno težavo prijavite na http://github.com/OpenAPITools/openapi-generator/issues/new
+// Naslednji primeri kode so še v beta različici. Za morebitne težave, prosimo, poročajte na http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
-let usernameStartsWith = "usernameStartsWith_example" // String |  (neobvezno)
-let mentionGroupIds = ["inner_example"] // [String] |  (neobvezno)
-let sso = "sso_example" // String |  (neobvezno)
-let searchSection = "searchSection_example" // String |  (neobvezno)
+let usernameStartsWith = "usernameStartsWith_example" // String |  (optional)
+let mentionGroupIds = ["inner_example"] // [String] |  (optional)
+let sso = "sso_example" // String |  (optional)
+let searchSection = "searchSection_example" // String |  (optional)
 
-PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, usernameStartsWith: usernameStartsWith, mentionGroupIds: mentionGroupIds, sso: sso, searchSection: searchSection) { (response, error) in
+PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, options: PublicAPI.SearchUsersOptions(usernameStartsWith: usernameStartsWith, mentionGroupIds: mentionGroupIds, sso: sso, searchSection: searchSection)) { (response, error) in
     guard error == nil else {
         print(error)
         return

@@ -1,13 +1,13 @@
 ## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
-|------|------|----------|----------|-------------|
+|------|------|-----|--------------|---------------|
 | tenantId | string | query | Ja |  |
 | skip | number | query | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`GetTenantUsersResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantUsersResponse.php)
+Rückgabe: [`GetTenantUsersResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantUsersResponse.php)
 
 ## Beispiel
 
@@ -17,9 +17,9 @@ Gibt zurück: [`GetTenantUsersResponse`](https://github.com/FastComments/fastcom
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// API-Schlüssel-Authentifizierung konfigurieren: api_key
+// Konfiguriere API-Key-Autorisierung: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Entfernen Sie das Kommentarzeichen unten, um ein Präfix (z. B. Bearer) für den API-Schlüssel einzurichten, falls erforderlich
+// Entfernen Sie den Kommentar darunter, um ein Präfix (z.B. Bearer) für den API-Key einzurichten, falls nötig
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
@@ -29,8 +29,10 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $skip = 3.4; // float
+
 
 try {
     $result = $apiInstance->getTenantUsers($tenant_id, $skip);

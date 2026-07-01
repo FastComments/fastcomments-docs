@@ -1,32 +1,40 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| page | number | Не |  |
-| count | number | Не |  |
-| textSearch | string | Не |  |
-| byIPFromComment | string | Не |  |
-| filters | string | Не |  |
-| searchFilters | string | Не |  |
-| sorts | string | Не |  |
-| demo | boolean | Не |  |
-| sso | string | Не |  |
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| page | number | No |  |
+| count | number | No |  |
+| textSearch | string | No |  |
+| byIPFromComment | string | No |  |
+| filters | string | No |  |
+| searchFilters | string | No |  |
+| sorts | string | No |  |
+| demo | boolean | No |  |
+| tenantId | string | No |  |
+| sso | string | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPIGetCommentsResponse.ts)
+Vraća: [`GetApiCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetApiCommentsResponse.ts)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'getApiComments Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getApiComments Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const page: number = 2;
-const count: number = 25;
-const textSearch: string = 'comments failing to load after posting';
-const filters: string = 'status:pending,moderation:required';
-const sorts: string = 'createdAt:desc';
-const demo: boolean = false;
-const sso: string = 'sso-usr-7f3b2a';
+async function loadComments() {
+  const fullResult: GetApiCommentsResponse = await getApiComments(
+    2,                     // strana
+    25,                    // broj
+    "feedback",           // pretragaTeksta
+    "192.168.1.100",      // poIPuIzKomentara
+    "approved",           // filteri
+    "hasReplies",         // filteriPretrage
+    "dateDesc",           // sortiranje
+    false,                // demo
+    "tenant-abc123",      // tenantId
+    "sso-token-xyz"       // sso
+  );
 
-const response: ModerationAPIGetCommentsResponse = await getApiComments(page, count, textSearch, undefined, filters, undefined, sorts, demo, sso);
+  const minimalResult: GetApiCommentsResponse = await getApiComments(undefined, 5);
+}
 [inline-code-end]

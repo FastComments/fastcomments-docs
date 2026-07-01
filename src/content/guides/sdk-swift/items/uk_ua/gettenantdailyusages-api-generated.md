@@ -1,12 +1,13 @@
+---
 ## Параметри
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Так |  |
-| yearNumber | number | query | Ні |  |
-| monthNumber | number | query | Ні |  |
-| dayNumber | number | query | Ні |  |
-| skip | number | query | Ні |  |
+| tenantId | string | query | Yes |  |
+| yearNumber | number | query | No |  |
+| monthNumber | number | query | No |  |
+| dayNumber | number | query | No |  |
+| skip | number | query | No |  |
 
 ## Відповідь
 
@@ -14,9 +15,9 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад getTenantDailyUsages'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTenantDailyUsages Приклад'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Наступні приклади коду все ще в бета-версії. У разі будь-яких проблем, будь ласка, повідомте через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наступні зразки коду ще у бета-версії. У разі виникнення проблем, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -25,7 +26,7 @@ let monthNumber = 987 // Double |  (необов'язково)
 let dayNumber = 987 // Double |  (необов'язково)
 let skip = 987 // Double |  (необов'язково)
 
-DefaultAPI.getTenantDailyUsages(tenantId: tenantId, yearNumber: yearNumber, monthNumber: monthNumber, dayNumber: dayNumber, skip: skip) { (response, error) in
+DefaultAPI.getTenantDailyUsages(tenantId: tenantId, options: DefaultAPI.GetTenantDailyUsagesOptions(yearNumber: yearNumber, monthNumber: monthNumber, dayNumber: dayNumber, skip: skip)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -36,3 +37,5 @@ DefaultAPI.getTenantDailyUsages(tenantId: tenantId, yearNumber: yearNumber, mont
     }
 }
 [inline-code-end]
+
+---

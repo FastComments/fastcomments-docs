@@ -1,7 +1,8 @@
 ## Параметри
 
 | Име | Тип | Локација | Обавезно | Опис |
-|------|------|----------|----------|-------------|
+|------|------|----------|----------|------|
+| tenantId | string | query | Да |  |
 | text-search | string | query | Не |  |
 | byIPFromComment | string | query | Не |  |
 | filters | string | query | Не |  |
@@ -16,29 +17,28 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'get_api_ids Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_api_ids Primer'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # Ниска | 
 opts = {
-  text_search: 'text_search_example', # String | 
-  by_ip_from_comment: 'by_ip_from_comment_example', # String | 
-  filters: 'filters_example', # String | 
-  search_filters: 'search_filters_example', # String | 
-  after_id: 'after_id_example', # String | 
-  demo: true, # Boolean | 
-  sso: 'sso_example' # String | 
+  text_search: 'text_search_example', # Ниска | 
+  by_ip_from_comment: 'by_ip_from_comment_example', # Ниска | 
+  filters: 'filters_example', # Ниска | 
+  search_filters: 'search_filters_example', # Ниска | 
+  after_id: 'after_id_example', # Ниска | 
+  demo: true, # Булеан | 
+  sso: 'sso_example' # Ниска | 
 }
 
 begin
   
-  result = api_instance.get_api_ids(opts)
+  result = api_instance.get_api_ids(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_api_ids: #{e}"
 end
 [inline-code-end]
-
----

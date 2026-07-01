@@ -1,34 +1,39 @@
 ## Παράμετροι
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Ναι |  |
-| postId | string | Ναι |  |
-| reactBodyParams | ReactBodyParams | Ναι |  |
-| isUndo | boolean | Όχι |  |
-| broadcastId | string | Όχι |  |
-| sso | string | Όχι |  |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+|------|------|-----------|-----------|
+| tenantId | string | Yes |  |
+| postId | string | Yes |  |
+| reactBodyParams | ReactBodyParams | Yes |  |
+| isUndo | boolean | No |  |
+| broadcastId | string | No |  |
+| sso | string | No |  |
 
-## Απόκριση
+## Απάντηση
 
-Επιστρέφει: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ReactFeedPostResponse.ts)
+Επιστρέφει: [`ReactFeedPostPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ReactFeedPostPublicResponse.ts)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα reactFeedPostPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'reactFeedPostPublic Παράδειγμα'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8f3b2c9a';
-const postId: string = 'post_97a4d2c1';
-const reactBodyParams: ReactBodyParams = {
-  reaction: 'heart',
-  userId: 'user_42',
-  timestamp: new Date().toISOString(),
-  context: { device: 'mobile', appVersion: '5.3.1' }
-};
-const isUndo: boolean = false;
-const broadcastId: string = 'broadcast_5f1b8';
-const sso: string = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiJ1c2VyXzQyIn0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
-const result: ReactFeedPostResponse = await reactFeedPostPublic(tenantId, postId, reactBodyParams, isUndo, broadcastId, sso);
-[inline-code-end]
+(async () => {
+  const tenantId: string = 'tenant_12345';
+  const postId: string = 'post_98765';
+  const reactBodyParams: ReactBodyParams = { reaction: 'thumbs_up' };
+  const isUndo: boolean = false;
+  const broadcastId: string = 'broadcast_abcde';
+  const sso: string = 'sso_token_xyz';
 
----
+  const response: ReactFeedPostPublicResponse = await reactFeedPostPublic(
+    tenantId,
+    postId,
+    reactBodyParams,
+    isUndo,
+    broadcastId,
+    sso
+  );
+
+  console.log(response);
+})();
+[inline-code-end]

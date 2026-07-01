@@ -1,28 +1,25 @@
-Momenteel online kijkers van een pagina: mensen wiens websocket session op dit moment op de pagina geabonneerd is.
-Retourneert anonCount + totalCount (kamer-brede abonnees, inclusief anonieme kijkers die we niet opsommen).
+Currently-online viewers of a page: people whose websocket session is subscribed to the page right now.  
+Returns anonCount + totalCount (room-wide subscribers, including anon viewers we don't enumerate).
 
 ## Parameters
 
 | Naam | Type | Vereist | Beschrijving |
-|------|------|----------|-------------|
+|------|------|----------|--------------|
 | tenantId | string | Ja |  |
 | urlId | string | Ja |  |
-| afterName | string | Nee |  |
-| afterUserId | string | Nee |  |
+| options | GetOnlineUsersOptions | Nee |  |
 
-## Response
+## Respons
 
-Retourneert: [`Option[PageUsersOnlineResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_online_response.nim)
+Returns: [`Option[PageUsersOnlineResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_online_response.nim)
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'getOnlineUsers Voorbeeld'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Voorbeeld getOnlineUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getOnlineUsers(tenantId = "my-tenant-123", urlId = "news/politics/top-story", afterName = "", afterUserId = "")
-if response.isSome:
-  let page = response.get()
-  echo "Received online users page:"
-  echo page
-else:
-  echo "No online users returned. HTTP status: ", httpResponse.statusCode
+let opts = GetOnlineUsersOptions()
+let (onlineUsersOpt, httpResp) = client.getOnlineUsers(tenantId = "my-tenant-123", urlId = "news/article-title", options = opts)
+if onlineUsersOpt.isSome:
+  let onlineUsers = onlineUsersOpt.get()
+  echo onlineUsers
 [inline-code-end]

@@ -1,7 +1,8 @@
 ## Parâmetros
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nome | Tipo | Obrigatório | Descrição |
+|------|------|-------------|-----------|
+| tenant_id | String | Sim |  |
 | text_search | String | Não |  |
 | by_ip_from_comment | String | Não |  |
 | filter | String | Não |  |
@@ -15,20 +16,19 @@ Retorna: [`ModerationApiCountCommentsResponse`](https://github.com/FastComments/
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de get_count'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo get_count'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_count() -> Result<ModerationApiCountCommentsResponse, Error> {
-    let params: GetCountParams = GetCountParams {
-        text_search: Some("breaking election coverage".to_string()),
-        by_ip_from_comment: Some("203.0.113.45".to_string()),
+async fn example() -> Result<(), Error> {
+    let params = GetCountParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        text_search: Some("breaking news".to_string()),
+        by_ip_from_comment: Some("192.168.1.1".to_string()),
         filter: Some("status:approved".to_string()),
-        search_filters: Some("section:politics tag:analysis".to_string()),
+        search_filters: Some("author:john".to_string()),
         demo: Some(false),
-        sso: Some("acme-corp-tenant".to_string()),
+        sso: Some("sso-token-123".to_string()),
     };
-    let response: ModerationApiCountCommentsResponse = get_count(&configuration, params).await?;
-    Ok(response)
+    let _response = get_count(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

@@ -8,36 +8,39 @@
 
 ## Odpowiedź
 
-Zwraca: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/user_reacts_response.py)
+Returns: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/user_reacts_response.py)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład get_user_reacts_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetUserReactsPublicOptions
 from client.models.user_reacts_response import UserReactsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Określenie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
+# Definiowanie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
 # Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracji.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Użyj kontekstu z instancją klienta API
+# Wejdź w kontekst z instancją klienta API
 with client.ApiClient(configuration) as api_client:
     # Utwórz instancję klasy API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    post_ids = ['post_ids_example'] # List[str] |  (opcjonalne)
-    sso = 'sso_example' # str |  (opcjonalne)
+    post_ids = ['post_ids_example'] # List[str] |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_user_reacts_public(tenant_id, post_ids=post_ids, sso=sso)
+        api_response = api_instance.get_user_reacts_public(tenant_id, GetUserReactsPublicOptions(post_ids=post_ids, sso=sso))
         print("The response of PublicApi->get_user_reacts_public:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling PublicApi->get_user_reacts_public: %s\n" % e)
 [inline-code-end]
+
+---

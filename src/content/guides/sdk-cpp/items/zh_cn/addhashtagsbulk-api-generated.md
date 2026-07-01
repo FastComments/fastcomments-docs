@@ -1,34 +1,26 @@
 ## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | 否 |  |
-| bulkCreateHashTagsBody | BulkCreateHashTagsBody | 否 |  |
+| tenantId | string | 是 |  |
+| bulkCreateHashTagsBody | BulkCreateHashTagsBody | 是 |  |
 
 ## 响应
 
-返回： [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/BulkCreateHashTagsResponse.h)
+返回: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/BulkCreateHashTagsResponse.h)
 
 ## 示例
 
 [inline-code-attrs-start title = 'addHashTagsBulk 示例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> tenantId(utility::conversions::to_string_t("my-tenant-123"));
-auto bodyPtr = std::make_shared<BulkCreateHashTagsBody>();
-boost::optional<BulkCreateHashTagsBody> bodyOpt(*bodyPtr);
-api->addHashTagsBulk(tenantId, bodyOpt)
-    .then([](pplx::task<std::shared_ptr<BulkCreateHashTagsResponse>> task) {
-        try {
-            auto resp = task.get();
-            if (resp) {
-                std::cout << "Bulk hashtags created successfully\n";
-            } else {
-                std::cout << "No response received\n";
-            }
-        } catch (const std::exception &e) {
-            std::cerr << "API error: " << e.what() << '\n';
-        }
-    });
+auto tenantId = utility::string_t(U("my-tenant-123"));
+BulkCreateHashTagsBody bulkBody;
+bulkBody.tags = { utility::string_t(U("announcement")), utility::string_t(U("feature-request")) };
+bulkBody.description = boost::optional<utility::string_t>(U("Bulk tag creation"));
+api->addHashTagsBulk(tenantId, bulkBody).then([](pplx::task<std::shared_ptr<BulkCreateHashTagsResponse>> task){
+    try{
+        auto resp = task.get();
+    }catch(const std::exception&){
+    }
+});
 [inline-code-end]
-
----

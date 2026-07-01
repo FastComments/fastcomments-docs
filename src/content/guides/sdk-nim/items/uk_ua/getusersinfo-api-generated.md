@@ -1,28 +1,21 @@
-Пакетна інформація про користувачів для орендаря. За заданими userIds повертає інформацію для відображення з User / SSOUser.
-Використовується віджетом коментарів для збагачення користувачів, які щойно з'явилися через подію присутності.
-Без контексту сторінки: приватність застосовується однаково (приватні профілі приховуються).
+Пакетна інформація про користувачів для орендаря. За заданими userIds повертає інформацію для відображення з User / SSOUser. Використовується віджетом коментарів для збагачення користувачів, які лише‑що з’явилися через подію присутності. Без контексту сторінки: конфіденційність застосовується уніфіковано (приватні профілі маскуються).
 
-## Параметри
+## Parameters
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| ids | string | Ні |  |
+| tenantId | string | Yes |  |
+| ids | string | No |  |
 
-## Відповідь
+## Response
 
-Повертає: [`Option[PageUsersInfoResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_info_response.nim)
+Returns: [`Option[PageUsersInfoResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_info_response.nim)
 
-## Приклад
+## Example
 
-[inline-code-attrs-start title = 'Приклад використання getUsersInfo'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад getUsersInfo'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUsersInfo(tenantId = "my-tenant-123", ids = "user-42,user-87")
-if response.isSome:
-  let usersInfo = response.get()
-  echo "Retrieved users info:", usersInfo
-else:
-  echo "No users info returned. HTTP status:", httpResponse.status
+let (usersInfoOpt, httpResp) = client.getUsersInfo(tenantId = "my-tenant-123", ids = "user42")
+if usersInfoOpt.isSome:
+  let usersInfo = usersInfoOpt.get()
 [inline-code-end]
-
----

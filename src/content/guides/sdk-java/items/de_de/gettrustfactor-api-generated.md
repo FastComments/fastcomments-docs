@@ -1,7 +1,8 @@
 ## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
-|------|------|----------|----------|-------------|
+|------|------|-----|--------------|--------------|
+| tenantId | string | query | Ja |  |
 | userId | string | query | Nein |  |
 | sso | string | query | Nein |  |
 
@@ -11,7 +12,7 @@ Rückgabe: [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastco
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'getTrustFactor-Beispiel'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTrustFactor Beispiel'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Klassen importieren:
 import com.fastcomments.invoker.ApiClient;
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String userId = "userId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      GetUserTrustFactorResponse result = apiInstance.getTrustFactor()
+      GetUserTrustFactorResponse result = apiInstance.getTrustFactor(tenantId)
             .userId(userId)
             .sso(sso)
             .execute();

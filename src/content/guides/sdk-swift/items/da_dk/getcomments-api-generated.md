@@ -2,23 +2,23 @@
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| page | integer | query | Nej |  |
-| limit | integer | query | Nej |  |
-| skip | integer | query | Nej |  |
-| asTree | boolean | query | Nej |  |
-| skipChildren | integer | query | Nej |  |
-| limitChildren | integer | query | Nej |  |
-| maxTreeDepth | integer | query | Nej |  |
-| urlId | string | query | Nej |  |
-| userId | string | query | Nej |  |
-| anonUserId | string | query | Nej |  |
-| contextUserId | string | query | Nej |  |
-| hashTag | string | query | Nej |  |
-| parentId | string | query | Nej |  |
-| direction | string | query | Nej |  |
-| fromDate | integer | query | Nej |  |
-| toDate | integer | query | Nej |  |
+| tenantId | string | query | Yes |  |
+| page | integer | query | No |  |
+| limit | integer | query | No |  |
+| skip | integer | query | No |  |
+| asTree | boolean | query | No |  |
+| skipChildren | integer | query | No |  |
+| limitChildren | integer | query | No |  |
+| maxTreeDepth | integer | query | No |  |
+| urlId | string | query | No |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
+| contextUserId | string | query | No |  |
+| hashTag | string | query | No |  |
+| parentId | string | query | No |  |
+| direction | string | query | No |  |
+| fromDate | integer | query | No |  |
+| toDate | integer | query | No |  |
 
 ## Svar
 
@@ -28,10 +28,10 @@ Returnerer: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomme
 
 [inline-code-attrs-start title = 'getComments Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Følgende kodeeksempler er stadig i beta. Hvis du oplever problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Følgende kodeeksempler er stadig beta. For eventuelle problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let tenantId = "tenantId_example" // String | 
+let tenantId = "tenantId_example" // String |
 let page = 987 // Int |  (valgfri)
 let limit = 987 // Int |  (valgfri)
 let skip = 987 // Int |  (valgfri)
@@ -49,7 +49,7 @@ let direction = SortDirections() // SortDirections |  (valgfri)
 let fromDate = 987 // Int64 |  (valgfri)
 let toDate = 987 // Int64 |  (valgfri)
 
-DefaultAPI.getComments(tenantId: tenantId, page: page, limit: limit, skip: skip, asTree: asTree, skipChildren: skipChildren, limitChildren: limitChildren, maxTreeDepth: maxTreeDepth, urlId: urlId, userId: userId, anonUserId: anonUserId, contextUserId: contextUserId, hashTag: hashTag, parentId: parentId, direction: direction, fromDate: fromDate, toDate: toDate) { (response, error) in
+DefaultAPI.getComments(tenantId: tenantId, options: DefaultAPI.GetCommentsOptions(page: page, limit: limit, skip: skip, asTree: asTree, skipChildren: skipChildren, limitChildren: limitChildren, maxTreeDepth: maxTreeDepth, urlId: urlId, userId: userId, anonUserId: anonUserId, contextUserId: contextUserId, hashTag: hashTag, parentId: parentId, direction: direction, fromDate: fromDate, toDate: toDate)) { (response, error) in
     guard error == nil else {
         print(error)
         return

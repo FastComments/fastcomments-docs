@@ -17,6 +17,8 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     new GuzzleHttp\Client()
 );
 
+
+
 try {
     $result = $apiInstance->logoutPublic();
     print_r($result);

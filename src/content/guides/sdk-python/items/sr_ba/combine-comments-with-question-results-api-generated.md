@@ -1,7 +1,7 @@
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
+| Ime | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
 | tenantId | string | query | Da |  |
 | questionId | string | query | Ne |  |
 | questionIds | array | query | Ne |  |
@@ -12,52 +12,47 @@
 | maxValue | number | query | Ne |  |
 | limit | number | query | Ne |  |
 
-## Vraća
+## Odgovor
 
 Vraća: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/combine_question_results_with_comments_response.py)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer combine_comments_with_question_results'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'combine_comments_with_question_results Primjer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import CombineCommentsWithQuestionResultsOptions
 from client.models.combine_question_results_with_comments_response import CombineQuestionResultsWithCommentsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definisanje hosta je opciono i podrazumijeva https://fastcomments.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
+# Definisanje hosta je opcionalno i podrazumevano je https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
+# Klijent mora da konfiguriše parametre autentifikacije i autorizacije u skladu sa sigurnosnom politikom API servera.
+# Primeri za svaki metod autentifikacije su dati ispod, koristite primer koji zadovoljava vaš slučaj upotrebe autentifikacije.
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: api_key
+# Konfigurišite autorizaciju API ključem: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Odkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Enter a context with an instance of the API client
+# Uđite u kontekst sa instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # Kreirajte instancu API klase
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    question_id = 'question_id_example' # str |  (optional)
-    question_ids = ['question_ids_example'] # List[str] |  (optional)
-    url_id = 'url_id_example' # str |  (optional)
-    start_date = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
-    force_recalculate = True # bool |  (optional)
-    min_value = 3.4 # float |  (optional)
-    max_value = 3.4 # float |  (optional)
-    limit = 3.4 # float |  (optional)
+    question_id = 'question_id_example' # str |  (opcionalno)
+    question_ids = ['question_ids_example'] # List[str] |  (opcionalno)
+    url_id = 'url_id_example' # str |  (opcionalno)
+    start_date = '2013-10-20T19:20:30+01:00' # datetime |  (opcionalno)
+    force_recalculate = True # bool |  (opcionalno)
+    min_value = 3.4 # float |  (opcionalno)
+    max_value = 3.4 # float |  (opcionalno)
+    limit = 3.4 # float |  (opcionalno)
 
     try:
-        api_response = api_instance.combine_comments_with_question_results(tenant_id, question_id=question_id, question_ids=question_ids, url_id=url_id, start_date=start_date, force_recalculate=force_recalculate, min_value=min_value, max_value=max_value, limit=limit)
+        api_response = api_instance.combine_comments_with_question_results(tenant_id, CombineCommentsWithQuestionResultsOptions(question_id=question_id, question_ids=question_ids, url_id=url_id, start_date=start_date, force_recalculate=force_recalculate, min_value=min_value, max_value=max_value, limit=limit))
         print("The response of DefaultApi->combine_comments_with_question_results:\n")
         pprint(api_response)
     except Exception as e:

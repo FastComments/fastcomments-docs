@@ -1,32 +1,31 @@
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| createFeedPostParams | CreateFeedPostParams | 是 |  |
-| broadcastId | string | 否 |  |
-| isLive | boolean | 否 |  |
-| doSpamCheck | boolean | 否 |  |
-| skipDupCheck | boolean | 否 |  |
+| tenantId | string | Yes |  |
+| createFeedPostParams | CreateFeedPostParams | Yes |  |
+| broadcastId | string | No |  |
+| isLive | boolean | No |  |
+| doSpamCheck | boolean | No |  |
+| skipDupCheck | boolean | No |  |
 
-## Response
+## 回應
 
-回傳： [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateFeedPostsResponse.ts)
+返回：[`CreateFeedPostResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateFeedPostResponse1.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'createFeedPost 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_82b4a1";
-const asset: FeedPostMediaItemAsset = { url: "https://cdn.company.com/uploads/launch.jpg", mimeType: "image/jpeg", width: 1200, height: 800 };
-const mediaItem: FeedPostMediaItem = { type: "image", caption: "Launch screenshot", assets: [asset] };
-const link: FeedPostLink = { url: "https://company.com/blog/launch-offline-sync", title: "Offline sync release notes" };
-const createFeedPostParams: CreateFeedPostParams = { message: "Offline sync is now available — try it on mobile for faster access.", media: [mediaItem], links: [link], visibility: "public" };
-const broadcastId: string = "brdcst_20260619_01";
-const isLive: boolean = false;
-const doSpamCheck: boolean = true;
-const skipDupCheck: boolean = false;
-const result: CreateFeedPostsResponse = await createFeedPost(tenantId, createFeedPostParams, broadcastId, isLive, doSpamCheck, skipDupCheck);
+async function run() {
+  const tenantId = "tenant-12345";
+  const feedParams: CreateFeedPostParams = {
+    text: "New product launch!",
+    mediaItems: [{ type: "image", asset: { url: "https://cdn.example.com/img.jpg", width: 800, height: 600 } as FeedPostMediaItemAsset } as FeedPostMediaItem],
+    link: { url: "https://example.com/product", title: "Product" } as FeedPostLink
+  };
+  const result: CreateFeedPostResponse1 = await createFeedPost(tenantId, feedParams, "broadcast-987", true, false, true);
+  console.log(result);
+}
+run();
 [inline-code-end]
-
----

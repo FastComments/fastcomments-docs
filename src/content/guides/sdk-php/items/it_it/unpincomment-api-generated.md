@@ -1,19 +1,19 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Sì |  |
-| commentId | string | path | Sì |  |
-| broadcastId | string | query | Sì |  |
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+|------|------|----------|--------------|-------------|
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | Yes |  |
 | sso | string | query | No |  |
 
-## Response
+## Risposta
 
 Restituisce: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ChangeCommentPinStatusResponse.php)
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di unPinComment'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'unPinComment Esempio'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -22,13 +22,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
     // Se desideri utilizzare un client HTTP personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
-    // Questo è opzionale, `GuzzleHttp\Client` verrà utilizzato come impostazione predefinita.
+    // Questo è opzionale, `GuzzleHttp\Client` sarà usato come default.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $comment_id = 'comment_id_example'; // string
 $broadcast_id = 'broadcast_id_example'; // string
 $sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->unPinComment($tenant_id, $comment_id, $broadcast_id, $sso);
@@ -37,3 +39,5 @@ try {
     echo 'Exception when calling PublicApi->unPinComment: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

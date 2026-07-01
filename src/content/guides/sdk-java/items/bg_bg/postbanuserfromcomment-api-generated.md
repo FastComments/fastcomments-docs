@@ -1,7 +1,8 @@
 ## Параметри
 
 | Име | Тип | Местоположение | Задължително | Описание |
-|------|------|----------|----------|-------------|
+|------|------|----------------|--------------|----------|
+| tenantId | string | query | Да |  |
 | commentId | string | path | Да |  |
 | banEmail | boolean | query | Не |  |
 | banEmailDomain | boolean | query | Не |  |
@@ -19,7 +20,7 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за postBanUserFromComment'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postBanUserFromComment Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Импортиране на класове:
 import com.fastcomments.invoker.ApiClient;
@@ -34,6 +35,7 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     Boolean banEmail = true; // Boolean | 
     Boolean banEmailDomain = true; // Boolean | 
@@ -45,7 +47,7 @@ public class Example {
     String banReason = "banReason_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      BanUserFromCommentResult result = apiInstance.postBanUserFromComment(commentId)
+      BanUserFromCommentResult result = apiInstance.postBanUserFromComment(tenantId, commentId)
             .banEmail(banEmail)
             .banEmailDomain(banEmailDomain)
             .banIP(banIP)
@@ -67,5 +69,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

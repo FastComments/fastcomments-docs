@@ -1,37 +1,24 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Обязательно | Описание |
+| Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| urlId | string | Да |  |
-| userId | string | Нет |  |
-| startDate | string | Нет |  |
-| questionId | string | Нет |  |
-| questionIds | string | Нет |  |
-| skip | float64 | Нет |  |
+| tenantId | string | Так |  |
+| options | GetQuestionResultsOptions | Ні |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`Option[GetQuestionResultsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_question_results_response.nim)
+Повертає: [`Option[GetQuestionResultsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_question_results_response.nim)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример getQuestionResults'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад getQuestionResults'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.getQuestionResults(
   tenantId = "my-tenant-123",
-  urlId = "news/2026/election-analysis",
-  userId = "user-42",
-  startDate = "2026-06-01T00:00:00Z",
-  questionId = "q-6789",
-  questionIds = @["q-6789", "q-6790"],
-  skip = 0.0
+  options = GetQuestionResultsOptions()
 )
+
 if response.isSome:
   let results = response.get()
-  echo "Received question results"
-else:
-  echo "No results returned"
+  echo results
 [inline-code-end]
-
----

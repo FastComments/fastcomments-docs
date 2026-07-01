@@ -1,14 +1,15 @@
-## Παράμετροι
+## Parameters
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
-| badgeId | string | query | Yes |  |
-| userId | string | query | No |  |
-| commentId | string | query | No |  |
-| broadcastId | string | query | No |  |
-| sso | string | query | No |  |
+| Όνομα | Τύπος | Location | Απαιτείται | Περιγραφή |
+|------|------|----------|------------|-------------|
+| tenantId | string | query | Ναι |  |
+| badgeId | string | query | Ναι |  |
+| userId | string | query | Όχι |  |
+| commentId | string | query | Όχι |  |
+| broadcastId | string | query | Όχι |  |
+| sso | string | query | Όχι |  |
 
-## Απόκριση
+## Response
 
 Επιστρέφει: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_award_user_badge_response.go)
 
@@ -26,6 +27,7 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	badgeId := "badgeId_example" // string | 
 	userId := "userId_example" // string |  (προαιρετικό)
 	commentId := "commentId_example" // string |  (προαιρετικό)
@@ -34,7 +36,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PutAwardBadge(context.Background()).BadgeId(badgeId).UserId(userId).CommentId(commentId).BroadcastId(broadcastId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PutAwardBadge(context.Background()).TenantId(tenantId).BadgeId(badgeId).UserId(userId).CommentId(commentId).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PutAwardBadge``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

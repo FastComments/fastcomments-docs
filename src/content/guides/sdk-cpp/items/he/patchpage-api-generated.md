@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| שם | סוג | חובה | תיאור |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | id | string | כן |  |
@@ -12,26 +12,20 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-patchPage'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'patchPage דוגמה'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-utility::string_t pageId = U("page-9876");
-auto updatePtr = std::make_shared<UpdateAPIPageData>();
-updatePtr->title = utility::string_t(U("About Our Team"));
-updatePtr->slug = utility::string_t(U("about-our-team"));
-updatePtr->enabled = boost::optional<bool>(true);
-updatePtr->description = boost::optional<utility::string_t>(U("Updated team overview and contact information"));
-api->patchPage(tenantId, pageId, *updatePtr)
-.then([](pplx::task<std::shared_ptr<PatchPageAPIResponse>> t){
-    try {
-        auto resp = t.get();
-        if (resp) {
-            std::cout << "Patch successful, page id: " << resp->id << std::endl;
+utility::string_t pageId = U("page-789");
+UpdateAPIPageData update;
+update.title = boost::optional<utility::string_t>(U("Updated Page Title"));
+update.metadata = boost::optional<utility::string_t>(U("{\"author\":\"jane.doe@example.com\"}"));
+api->patchPage(tenantId, pageId, update)
+    .then([](std::shared_ptr<PatchPageAPIResponse> response) {
+        if (response && response->isSuccess) {
+            // טיפול בהצלחה
         }
-    } catch (const std::exception &e) {
-        std::cerr << "Patch failed: " << e.what() << std::endl;
-    }
-});
+    })
+    .then([](pplx::task<void> t) {
+        try { t.get(); } catch (const std::exception&) {}
+    });
 [inline-code-end]
-
----

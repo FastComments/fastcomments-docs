@@ -14,12 +14,18 @@
 
 [inline-code-attrs-start title = 'getEmailTemplateRenderErrors Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getEmailTemplateRenderErrors(tenantId = "my-tenant-123", id = "", skip = 0.0)
-if response.isSome:
-  let templateErrors = response.get()
-  discard templateErrors
+let (optResp, httpResp) = client.getEmailTemplateRenderErrors(
+  tenantId = "my-tenant-123",
+  id = "welcome-template",
+  skip = 0.0
+)
+
+if optResp.isSome:
+  let resp = optResp.get()
+  # използвайте resp както е необходимо
 else:
-  discard httpResponse
+  # обработете липсващия отговор
+  discard
 [inline-code-end]
 
 ---

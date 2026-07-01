@@ -1,27 +1,28 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Ja |  |
-| commentId | string | path | Ja |  |
-| broadcastId | string | query | Ja |  |
-| editKey | string | query | Nee |  |
-| sso | string | query | Nee |  |
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | Yes |  |
+| editKey | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Respons
 
-Retourneert: [`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/public_api_delete_comment_response.py)
+Returns: [`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/public_api_delete_comment_response.py)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'delete_comment_public Voorbeeld'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import DeleteCommentPublicOptions
 from client.models.public_api_delete_comment_response import PublicAPIDeleteCommentResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Het opgeven van de host is optioneel en staat standaard op https://fastcomments.com
+# Het definiëren van de host is optioneel en standaard https://fastcomments.com
 # Zie configuration.py voor een lijst van alle ondersteunde configuratieparameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -35,11 +36,11 @@ with client.ApiClient(configuration) as api_client:
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     broadcast_id = 'broadcast_id_example' # str | 
-    edit_key = 'edit_key_example' # str |  (optioneel)
-    sso = 'sso_example' # str |  (optioneel)
+    edit_key = 'edit_key_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.delete_comment_public(tenant_id, comment_id, broadcast_id, edit_key=edit_key, sso=sso)
+        api_response = api_instance.delete_comment_public(tenant_id, comment_id, broadcast_id, DeleteCommentPublicOptions(edit_key=edit_key, sso=sso))
         print("The response of PublicApi->delete_comment_public:\n")
         pprint(api_response)
     except Exception as e:

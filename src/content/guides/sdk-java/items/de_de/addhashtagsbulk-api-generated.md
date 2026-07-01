@@ -1,12 +1,12 @@
 ## Parameter
 
-| Name | Typ | Location | Erforderlich | Beschreibung |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Nein |  |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
+|------|------|-----|--------------|--------------|
+| tenantId | string | query | Ja |  |
 
 ## Antwort
 
-Gibt zurück: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/BulkCreateHashTagsResponse.java)
+Rückgabe: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/BulkCreateHashTagsResponse.java)
 
 ## Beispiel
 
@@ -28,27 +28,24 @@ public class Example {
     // API-Schlüssel-Authentifizierung konfigurieren: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Entfernen Sie das Kommentarzeichen der folgenden Zeile, um ein Präfix für den API-Schlüssel festzulegen, z. B. "Token" (Standard: null)
+    // Kommentieren Sie die folgende Zeile aus, um ein Präfix für den API-Schlüssel festzulegen, z. B. "Token" (Standard ist null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     BulkCreateHashTagsBody bulkCreateHashTagsBody = new BulkCreateHashTagsBody(); // BulkCreateHashTagsBody | 
     try {
-      BulkCreateHashTagsResponse result = apiInstance.addHashTagsBulk()
-            .tenantId(tenantId)
+      BulkCreateHashTagsResponse result = apiInstance.addHashTagsBulk(tenantId)
             .bulkCreateHashTagsBody(bulkCreateHashTagsBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling DefaultApi#addHashTagsBulk");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("Ausnahme beim Aufruf von DefaultApi#addHashTagsBulk");
+      System.err.println("Statuscode: " + e.getCode());
+      System.err.println("Grund: " + e.getResponseBody());
+      System.err.println("Antwort-Header: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }
 }
 [inline-code-end]
-
----

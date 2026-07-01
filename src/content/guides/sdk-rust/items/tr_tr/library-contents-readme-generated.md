@@ -1,20 +1,20 @@
-The FastComments Rust SDK birkaç modülden oluşur:
+FastComments Rust SDK'sı birkaç modülden oluşur:
 
 - **Client Module** - FastComments REST API'leri için API istemcisi
-  - Tüm API modelleri için eksiksiz tip tanımları
+  - Tüm API modelleri için tam tip tanımları
   - Tüm FastComments yöntemlerini kapsayan üç API istemcisi:
-    - `default_api` (**DefaultApi**) - sunucu tarafı kullanım için API anahtarıyla doğrulanan yöntemler
-    - `public_api` (**PublicApi**) - tarayıcılardan ve mobil uygulamalardan güvenle çağrılabilecek, API anahtarı gerektirmeyen genel yöntemler
-    - `moderation_api` (**ModerationApi**) - moderatör panosunu destekleyen yöntemler; yorum moderasyonu (listeleme, sayma, arama, günlükler, dışa aktarma), moderasyon işlemleri (kaldır/geri al, işaretle, inceleme/spam/onay durumunu ayarla, oylar, konu yeniden aç/kapat), yasaklar (bir yorumdan yasaklama, geri alma, ön-yasak özetleri, yasak durumu/tercihleri, yasaklı kullanıcı sayıları) ve rozetler & güven (rozet verme/kaldırma, manuel rozetler, güven faktörünü alma/ayarlama, kullanıcı iç profili). Her Moderation yöntemi bir `sso` parametresi kabul eder, böylece çağrı SSO ile kimlik doğrulanmış bir moderatör adına yapılabilir.
+    - `default_api` (**DefaultApi**) - Sunucu tarafı kullanım için API anahtarı ile kimlik doğrulamalı yöntemler
+    - `public_api` (**PublicApi**) - Tarayıcılar ve mobil uygulamalardan güvenli bir şekilde çağrılabilen, API anahtarı gerektirmeyen genel yöntemler
+    - `moderation_api` (**ModerationApi**) - Canlı ve hızlı denetleme API'lerinin kapsamlı bir paketi. Her Denetleme yöntemi bir `sso` parametresi alır ve SSO veya bir FastComments.com oturum çerezi ile kimlik doğrulaması yapabilir.
   - tokio ile tam async/await desteği
-  - Ayrıntılı API dökümantasyonu için bkz. [client/README.md](https://github.com/FastComments/fastcomments-rust/blob/main/client/README.md)
+  - Ayrıntılı API belgeleri için [client/README.md](https://github.com/FastComments/fastcomments-rust/blob/main/client/README.md) sayfasına bakın
 
-- **SSO Module** - Sunucu tarafı Single Sign-On yardımcıları
+- **SSO Module** - Sunucu tarafı Tek Oturum Açma (Single Sign-On) yardımcı programları
   - Kullanıcı kimlik doğrulaması için güvenli token oluşturma
-  - Basit ve güvenli SSO modlarını destekleme
+  - Hem basit hem de güvenli SSO modları için destek
   - HMAC-SHA256 tabanlı token imzalama
 
-- **Core Types** - Paylaşılan tip tanımları ve yardımcılar
+- **Core Types** - Paylaşılan tip tanımları ve yardımcı programlar
   - Yorum modelleri ve meta veri yapıları
-  - Kullanıcı ve tenant yapılandırmaları
-  - Yaygın işlemler için yardımcı fonksiyonlar
+  - Kullanıcı ve kiracı (tenant) yapılandırmaları
+  - Yaygın işlemler için yardımcı işlevler

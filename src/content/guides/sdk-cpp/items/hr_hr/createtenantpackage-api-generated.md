@@ -1,7 +1,7 @@
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
 | tenantId | string | Da |  |
 | createTenantPackageBody | CreateTenantPackageBody | Da |  |
 
@@ -13,22 +13,16 @@ Vraća: [`CreateTenantPackageResponse`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'Primjer createTenantPackage'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
 CreateTenantPackageBody body;
-body.name = U("Premium Support");
-body.contactEmail = U("admin@example.com");
-body.seats = boost::optional<int>(25);
-body.expiresAt = boost::optional<utility::string_t>(U("2026-12-31"));
-
-api->createTenantPackage(tenantId, body)
-.then([](std::shared_ptr<CreateTenantPackageResponse> resp){
-    auto pkg = std::make_shared<CreateTenantPackageResponse>();
-    if (resp) pkg = resp;
-    return pkg;
-})
-.then([](std::shared_ptr<CreateTenantPackageResponse> finalResp){
-    (void)finalResp;
+body.name = utility::conversions::to_string_t("Pro Plan");
+body.maxUsers = 100;
+body.expiryDate = boost::optional<utility::datetime>(utility::datetime::utc_now() + std::chrono::hours(24 * 30));
+body.notes = boost::none;
+api->createTenantPackage(tenantId, body).then([](pplx::task<std::shared_ptr<CreateTenantPackageResponse>> t){
+    try{
+        auto resp = t.get();
+    }catch(const std::exception&){
+    }
 });
 [inline-code-end]
-
----

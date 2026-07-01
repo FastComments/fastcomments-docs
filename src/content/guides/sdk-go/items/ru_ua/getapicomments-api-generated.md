@@ -1,24 +1,25 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Назва | Тип | Розташування | Обов’язковий | Опис |
 |------|------|----------|----------|-------------|
-| page | number | query | Нет |  |
-| count | number | query | Нет |  |
-| text-search | string | query | Нет |  |
-| byIPFromComment | string | query | Нет |  |
-| filters | string | query | Нет |  |
-| searchFilters | string | query | Нет |  |
-| sorts | string | query | Нет |  |
-| demo | boolean | query | Нет |  |
-| sso | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| page | number | query | No |  |
+| count | number | query | No |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sorts | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_api_get_comments_response.go)
+Returns: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_api_get_comments_response.go)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример GetApiComments'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад GetApiComments'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -30,24 +31,25 @@ import (
 )
 
 func main() {
-	page := float64(1.2) // float64 |  (необязательно)
-	count := float64(1.2) // float64 |  (необязательно)
-	textSearch := "textSearch_example" // string |  (необязательно)
-	byIPFromComment := "byIPFromComment_example" // string |  (необязательно)
-	filters := "filters_example" // string |  (необязательно)
-	searchFilters := "searchFilters_example" // string |  (необязательно)
-	sorts := "sorts_example" // string |  (необязательно)
-	demo := true // bool |  (необязательно)
-	sso := "sso_example" // string |  (необязательно)
+	tenantId := "tenantId_example" // string | 
+	page := float64(1.2) // float64 |  (необов'язково)
+	count := float64(1.2) // float64 |  (необов'язково)
+	textSearch := "textSearch_example" // string |  (необов'язково)
+	byIPFromComment := "byIPFromComment_example" // string |  (необов'язково)
+	filters := "filters_example" // string |  (необов'язково)
+	searchFilters := "searchFilters_example" // string |  (необов'язково)
+	sorts := "sorts_example" // string |  (необов'язково)
+	demo := true // bool |  (необов'язково)
+	sso := "sso_example" // string |  (необов'язково)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetApiComments(context.Background()).Page(page).Count(count).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).Sorts(sorts).Demo(demo).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetApiComments(context.Background()).TenantId(tenantId).Page(page).Count(count).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).Sorts(sorts).Demo(demo).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetApiComments``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Помилка при виклику `ModerationAPI.GetApiComments``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Повна HTTP-відповідь: %v\n", r)
 	}
-	// ответ от `GetApiComments`: ModerationAPIGetCommentsResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetApiComments`: %v\n", resp)
+	// відповідь від `GetApiComments`: ModerationAPIGetCommentsResponse
+	fmt.Fprintf(os.Stdout, "Відповідь від `ModerationAPI.GetApiComments`: %v\n", resp)
 }
 [inline-code-end]

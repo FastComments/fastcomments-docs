@@ -1,7 +1,8 @@
 ## Параметри
 
 | Име | Тип | Местоположение | Задължително | Описание |
-|------|------|----------|----------|-------------|
+|------|------|----------------|-------------|----------|
+| tenantId | string | query | Да |  |
 | badgeId | string | query | Да |  |
 | userId | string | query | Не |  |
 | commentId | string | query | Не |  |
@@ -14,7 +15,7 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за putRemoveBadge'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putRemoveBadge Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Импортиране на класове:
 import com.fastcomments.invoker.ApiClient;
@@ -29,13 +30,14 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String badgeId = "badgeId_example"; // String | 
     String userId = "userId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      RemoveUserBadgeResponse result = apiInstance.putRemoveBadge(badgeId)
+      RemoveUserBadgeResponse result = apiInstance.putRemoveBadge(tenantId, badgeId)
             .userId(userId)
             .commentId(commentId)
             .broadcastId(broadcastId)
@@ -52,5 +54,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

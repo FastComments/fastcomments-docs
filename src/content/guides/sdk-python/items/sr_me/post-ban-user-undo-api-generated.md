@@ -1,17 +1,17 @@
----
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Ime | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| sso | string | query | Не |  |
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
+Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'post_ban_user_undo Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_ban_user_undo Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.models.api_empty_response import APIEmptyResponse
@@ -19,26 +19,25 @@ from client.models.ban_user_undo_params import BanUserUndoParams
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинисање host-а је опционално и подразумевано је https://fastcomments.com
-# Погледајте configuration.py за листу свих подржаних параметара конфигурације.
+# Definisanje hosta je opcionalno i po defaultu je https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih konfiguracionih parametara.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Уђите у контекст са инстанцом API клијента
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Креирајте инстанцу API класе
+    # Create an instance of the API class
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     ban_user_undo_params = client.BanUserUndoParams() # BanUserUndoParams | 
-    sso = 'sso_example' # str | (опционо)
+    sso = 'sso_example' # str |  (opcionalno)
 
     try:
-        api_response = api_instance.post_ban_user_undo(ban_user_undo_params, sso=sso)
+        api_response = api_instance.post_ban_user_undo(tenant_id, ban_user_undo_params, sso=sso)
         print("The response of ModerationApi->post_ban_user_undo:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling ModerationApi->post_ban_user_undo: %s\n" % e)
 [inline-code-end]
-
----

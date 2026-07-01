@@ -1,11 +1,10 @@
----
 ## Parâmetros
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Sim |  |
-| meta | string | query | Não |  |
-| skip | number | query | Não |  |
+| Nome | Tipo | Localização | Obrigatório | Descrição |
+|------|------|-------------|-------------|-----------|
+| tenantId | string | query | Yes |  |
+| meta | string | query | No |  |
+| skip | number | query | No |  |
 
 ## Resposta
 
@@ -13,44 +12,35 @@ Retorna: [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-pyt
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de get_tenants'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo get_tenants'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetTenantsOptions
 from client.models.get_tenants_response import GetTenantsResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # Definir o host é opcional e o padrão é https://fastcomments.com
 # Veja configuration.py para uma lista de todos os parâmetros de configuração suportados.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
-
 # O cliente deve configurar os parâmetros de autenticação e autorização
-# de acordo com a política de segurança do servidor da API.
+# de acordo com a política de segurança do servidor API.
 # Exemplos para cada método de autenticação são fornecidos abaixo, use o exemplo que
-# satisfaça seu caso de uso de autenticação.
+# atenda ao seu caso de uso de autenticação.
 
-# Configure a autorização por chave de API: api_key
-configuration.api_key['api_key'] = os.environ["API_KEY"]
-
-# Descomente abaixo para configurar um prefixo (por exemplo Bearer) para a chave de API, se necessário
-# configuration.api_key_prefix['api_key'] = 'Bearer'
-
-# Entre em um contexto com uma instância do cliente da API
+# Configurar autorização por chave de API: api_key
+# Descomente abaixo para definir o prefixo (ex.: Bearer) para a chave de API, se necessário
+# Entrar em um contexto com uma instância do cliente API
 with client.ApiClient(configuration) as api_client:
-    # Crie uma instância da classe da API
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     meta = 'meta_example' # str |  (optional)
     skip = 3.4 # float |  (optional)
 
     try:
-        api_response = api_instance.get_tenants(tenant_id, meta=meta, skip=skip)
+        api_response = api_instance.get_tenants(tenant_id, GetTenantsOptions(meta=meta, skip=skip))
         print("The response of DefaultApi->get_tenants:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling DefaultApi->get_tenants: %s\n" % e)
 [inline-code-end]
-
----

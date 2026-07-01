@@ -1,8 +1,7 @@
----
 ## Параметры
 
 | Имя | Тип | Обязательно | Описание |
-|------|------|----------|-------------|
+|------|------|------------|----------|
 | tenant_id | String | Да |  |
 | comment_id | String | Да |  |
 | is_flagged | bool | Да |  |
@@ -14,19 +13,16 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример flag_comment_public'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'flag_comment_public Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_flag_comment() -> Result<(), Error> {
-    let params: FlagCommentPublicParams = FlagCommentPublicParams {
-        tenant_id: String::from("acme-corp-tenant"),
-        comment_id: String::from("comment-89b3"),
+async fn run(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = FlagCommentPublicParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: "comment-12345".to_string(),
         is_flagged: true,
-        sso: Some(String::from("sso-uid-7a2f")),
+        sso: Some("user-sso-token".to_string()),
     };
-
-    let _response: ApiEmptyResponse = flag_comment_public(&configuration, params).await?;
+    flag_comment_public(configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

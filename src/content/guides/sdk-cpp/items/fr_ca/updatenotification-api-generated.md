@@ -1,32 +1,27 @@
 ## Paramètres
 
-| Nom | Type | Requis | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
-| tenantId | string | Oui |  |
-| id | string | Oui |  |
-| updateNotificationBody | UpdateNotificationBody | Oui |  |
-| userId | string | Non |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updateNotificationBody | UpdateNotificationBody | Yes |  |
+| userId | string | No |  |
 
 ## Réponse
 
-Retourne : [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
+Renvoie : [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple d\'updateNotification'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple de updateNotification'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
-utility::string_t notificationId = utility::conversions::to_string_t("notif-456");
-auto updateBodyPtr = std::make_shared<UpdateNotificationBody>();
-boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(utility::conversions::to_string_t("user@example.com"));
-api->updateNotification(tenantId, notificationId, *updateBodyPtr, userId)
-    .then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task) {
-        try {
-            auto resp = task.get();
-            (void)resp;
-        } catch (...) {
-        }
-    });
+auto updateBody = std::make_shared<UpdateNotificationBody>();
+updateBody->title = utility::conversions::to_string_t("System Maintenance");
+updateBody->message = utility::conversions::to_string_t("Scheduled downtime at 02:00 UTC.");
+api->updateNotification(
+    utility::conversions::to_string_t("my-tenant-123"),
+    utility::conversions::to_string_t("notif-456"),
+    updateBody,
+    boost::optional<utility::string_t>(utility::conversions::to_string_t("admin-user"))
+).then([](std::shared_ptr<APIEmptyResponse>){});
 [inline-code-end]
-
----

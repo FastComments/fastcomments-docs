@@ -1,11 +1,11 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Tak |  |
-| urlId | string | query | Tak |  |
-| userId | string | query | Nie |  |
-| anonUserId | string | query | Nie |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
 
 ## Odpowiedź
 
@@ -15,15 +15,15 @@ Zwraca: [`GetVotesForUserResponse`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'Przykład getVotesForUser'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Następujące przykłady kodu są nadal w wersji beta. W razie problemu prosimy zgłaszać na http://github.com/OpenAPITools/openapi-generator/issues/new
+// Poniższe przykłady kodu są nadal w wersji beta. W przypadku problemów prosimy zgłaszać je pod adresem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
-let userId = "userId_example" // String |  (opcjonalne)
-let anonUserId = "anonUserId_example" // String |  (opcjonalne)
+let userId = "userId_example" // String |  (opcjonalny)
+let anonUserId = "anonUserId_example" // String |  (opcjonalny)
 
-DefaultAPI.getVotesForUser(tenantId: tenantId, urlId: urlId, userId: userId, anonUserId: anonUserId) { (response, error) in
+DefaultAPI.getVotesForUser(tenantId: tenantId, urlId: urlId, options: DefaultAPI.GetVotesForUserOptions(userId: userId, anonUserId: anonUserId)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -34,5 +34,3 @@ DefaultAPI.getVotesForUser(tenantId: tenantId, urlId: urlId, userId: userId, ano
     }
 }
 [inline-code-end]
-
----

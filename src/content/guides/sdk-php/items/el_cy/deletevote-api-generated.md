@@ -1,13 +1,12 @@
----
-## Parameters
+## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Θέση | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ναι |  |
-| id | string | path | Ναι |  |
-| editKey | string | query | Όχι |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| editKey | string | query | No |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/VoteDeleteResponse.php)
 
@@ -19,21 +18,23 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Διαμόρφωση εξουσιοδότησης με κλειδί API: api_key
+// Διαμόρφωση εξουσιοδότησης κλειδιού API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Καταργήστε το σχόλιο παρακάτω για να ορίσετε πρόθεμα (π.χ. Bearer) για το κλειδί API, εφόσον χρειάζεται
+// Αποσχολιάστε παρακάτω για να ρυθμίσετε πρόθεμα (π.χ. Bearer) για το κλειδί API, εάν χρειάζεται
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Εάν θέλετε να χρησιμοποιήσετε προσαρμοσμένο πελάτη HTTP, περάστε αυτόν που υλοποιεί `GuzzleHttp\ClientInterface`.
-    // Αυτό είναι προαιρετικό, ο `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
+    // Αν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε τον client σας που υλοποιεί `GuzzleHttp\ClientInterface`.
+    // Αυτό είναι προαιρετικό, `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
 $edit_key = 'edit_key_example'; // string
+
 
 try {
     $result = $apiInstance->deleteVote($tenant_id, $id, $edit_key);
@@ -42,5 +43,3 @@ try {
     echo 'Exception when calling DefaultApi->deleteVote: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

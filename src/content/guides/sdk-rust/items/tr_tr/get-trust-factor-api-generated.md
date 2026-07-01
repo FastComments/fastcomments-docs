@@ -1,9 +1,10 @@
-## Parametreler
+## Parameters
 
 | Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
-| user_id | String | Hayır |  |
-| sso | String | Hayır |  |
+| tenant_id | String | Yes |  |
+| user_id | String | No |  |
+| sso | String | No |  |
 
 ## Yanıt
 
@@ -13,15 +14,13 @@ Döndürür: [`GetUserTrustFactorResponse`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'get_trust_factor Örneği'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_trust_factor() -> Result<(), Error> {
-    let params: GetTrustFactorParams = GetTrustFactorParams {
-        user_id: Some(String::from("journalist-984")),
-        sso: Some(String::from("google-oauth2|1029384756")),
+async fn run() -> Result<(), Error> {
+    let params = GetTrustFactorParams {
+        tenant_id: "acme-corp-tenant".into(),
+        user_id: Some("user-12345".into()),
+        sso: Some("sso-provider".into()),
     };
-    let trust_response: GetUserTrustFactorResponse = get_trust_factor(&configuration, params).await?;
-    println!("{:#?}", trust_response);
+    let _response = get_trust_factor(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

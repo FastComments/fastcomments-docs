@@ -1,12 +1,12 @@
 ## Parameter
 
-| Name | Typ | Location | Erforderlich | Beschreibung |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Nein |  |
+| tenantId | string | query | Ja |  |
 
 ## Antwort
 
-Gibt zurück: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_hash_tag_response.go)
+Rückgabe: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_hash_tag_response.go)
 
 ## Beispiel
 
@@ -22,7 +22,7 @@ import (
 )
 
 func main() {
-	tenantId := "tenantId_example" // string |  (optional)
+	tenantId := "tenantId_example" // string | 
 	createHashTagBody := *openapiclient.NewCreateHashTagBody("Tag_example") // CreateHashTagBody |  (optional)
 
 	configuration := openapiclient.NewConfiguration()

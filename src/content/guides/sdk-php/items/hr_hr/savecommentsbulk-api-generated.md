@@ -1,12 +1,12 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | upit | Da |  |
-| isLive | boolean | upit | Ne |  |
-| doSpamCheck | boolean | upit | Ne |  |
-| sendEmails | boolean | upit | Ne |  |
-| populateNotifications | boolean | upit | Ne |  |
+| Ime | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
+| isLive | boolean | query | Ne |  |
+| doSpamCheck | boolean | query | Ne |  |
+| sendEmails | boolean | query | Ne |  |
+| populateNotifications | boolean | query | Ne |  |
 
 ## Odgovor
 
@@ -20,29 +20,35 @@ Vraća: [`SaveCommentsBulkResponse`](https://github.com/FastComments/fastcomment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api_key
+// Konfiguriraj autorizaciju API ključa: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Odkomentirajte dolje za postavljanje prefiksa (npr. Bearer) za API ključ, po potrebi
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // Ako želite koristiti prilagođen HTTP klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao zadano.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $create_comment_params = array(new \FastComments\Client\Model\CreateCommentParams()); // \FastComments\Client\Model\CreateCommentParams[]
-$is_live = True; // bool
-$do_spam_check = True; // bool
-$send_emails = True; // bool
-$populate_notifications = True; // bool
+$options = [
+    'is_live' => True, // bool
+    'do_spam_check' => True, // bool
+    'send_emails' => True, // bool
+    'populate_notifications' => True, // bool
+];
+
 
 try {
-    $result = $apiInstance->saveCommentsBulk($tenant_id, $create_comment_params, $is_live, $do_spam_check, $send_emails, $populate_notifications);
+    $result = $apiInstance->saveCommentsBulk($tenant_id, $create_comment_params, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->saveCommentsBulk: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

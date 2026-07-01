@@ -1,20 +1,22 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
+| tenantId | string | Da |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetEmailTemplateDefinitionsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplateDefinitionsResponse.ts)
+Vraća: [`GetEmailTemplateDefinitionsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplateDefinitionsResponse1.ts)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'getEmailTemplateDefinitions Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getEmailTemplateDefinitions Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_5f2c9b1a';
-const emailTemplatesResponse: GetEmailTemplateDefinitionsResponse = await getEmailTemplateDefinitions(tenantId);
-// Опционални параметри (ако се подржавају) могу бити прослеђени као други аргумент, нпр. getEmailTemplateDefinitions(tenantId /*, { includeDrafts: true } */);
+(async () => {
+  const tenantId: string = "acme-corp-123";
+  const emailTemplateDefs: GetEmailTemplateDefinitionsResponse1 = await getEmailTemplateDefinitions(tenantId);
+  console.log(emailTemplateDefs);
+})();
 [inline-code-end]
 
 ---

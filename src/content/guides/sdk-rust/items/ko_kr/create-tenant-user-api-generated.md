@@ -1,30 +1,34 @@
-## 매개변수
+## Parameters
 
-| 이름 | 타입 | 필수 | 설명 |
-|------|------|----------|-------------|
+| 이름 | 유형 | 필수 | 설명 |
+|------|------|------|------|
 | tenant_id | String | 예 |  |
 | create_tenant_user_body | models::CreateTenantUserBody | 예 |  |
 
-## 응답
+## Response
 
 반환: [`CreateTenantUserResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_tenant_user_response.rs)
 
-## 예제
+## Example
 
-[inline-code-attrs-start title = 'create_tenant_user 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_tenant_user 예시'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: CreateTenantUserParams = CreateTenantUserParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    create_tenant_user_body: models::CreateTenantUserBody {
-        email: "jane.doe@acme.com".to_string(),
-        display_name: Some("Jane Doe".to_string()),
-        role: Some("moderator".to_string()),
-        locale: Some("en-US".to_string()),
-        digest_email_frequency: Some(DigestEmailFrequency::Daily),
-        imported_agent_approval_notification_frequency: Some(ImportedAgentApprovalNotificationFrequency::Immediate),
-    },
-};
-let created: CreateTenantUserResponse = create_tenant_user(&configuration, params).await?;
+async fn example() -> Result<(), Error> {
+    let params = CreateTenantUserParams {
+        tenant_id: "acme-corp".to_string(),
+        create_tenant_user_body: models::CreateTenantUserBody {
+            email: "john.doe@example.com".to_string(),
+            role: "admin".to_string(),
+            first_name: Some("John".to_string()),
+            last_name: Some("Doe".to_string()),
+            digest_email_frequency: Some(DigestEmailFrequency::Daily),
+            imported_agent_approval_notification_frequency: Some(ImportedAgentApprovalNotificationFrequency::Weekly),
+            ..Default::default()
+        },
+    };
+    let _response: CreateTenantUserResponse = create_tenant_user(&configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]
 
 ---

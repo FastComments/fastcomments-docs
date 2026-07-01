@@ -1,9 +1,9 @@
 ## 参数
 
-| 名称 | Type | Location | 必需 | 描述 |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | 是 |  |
 | tag | string | path | 是 |  |
-| tenantId | string | query | 否 |  |
 
 ## 响应
 
@@ -13,14 +13,14 @@
 
 [inline-code-attrs-start title = 'patchHashTag 示例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 以下代码示例仍处于测试阶段。如有任何问题，请通过 http://github.com/OpenAPITools/openapi-generator/issues/new 报告
+// 以下代码示例仍处于 beta 阶段。如有任何问题，请通过 http://github.com/OpenAPITools/openapi-generator/issues/new 报告
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let tag = "tag_example" // String | 
-let tenantId = "tenantId_example" // String |  （可选）
-let updateHashTagBody = UpdateHashTagBody(tenantId: "tenantId_example", url: "url_example", tag: "tag_example") // UpdateHashTagBody |  （可选）
+let updateHashTagBody = UpdateHashTagBody(tenantId: "tenantId_example", url: "url_example", tag: "tag_example") // UpdateHashTagBody | (可选)
 
-DefaultAPI.patchHashTag(tag: tag, tenantId: tenantId, updateHashTagBody: updateHashTagBody) { (response, error) in
+DefaultAPI.patchHashTag(tenantId: tenantId, tag: tag, updateHashTagBody: updateHashTagBody) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -31,5 +31,3 @@ DefaultAPI.patchHashTag(tag: tag, tenantId: tenantId, updateHashTagBody: updateH
     }
 }
 [inline-code-end]
-
----

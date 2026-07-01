@@ -1,19 +1,19 @@
-## Параметри
+## Parameters
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tag | string | path | Так |  |
-| tenantId | string | query | Ні |  |
+| tenantId | string | query | Yes |  |
+| tag | string | path | Yes |  |
 
-## Відповідь
+## Response
 
 Повертає: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateHashTagResponse.java)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад patchHashTag'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'patchHashTag Приклад'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Імпорт класів:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,19 +26,18 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Налаштуйте авторизацію API-ключем: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Розкоментуйте наступний рядок, щоб встановити префікс для API-ключа, наприклад "Token" (за замовчуванням null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    String tag = "tag_example"; // String | 
     String tenantId = "tenantId_example"; // String | 
+    String tag = "tag_example"; // String | 
     UpdateHashTagBody updateHashTagBody = new UpdateHashTagBody(); // UpdateHashTagBody | 
     try {
-      UpdateHashTagResponse result = apiInstance.patchHashTag(tag)
-            .tenantId(tenantId)
+      UpdateHashTagResponse result = apiInstance.patchHashTag(tenantId, tag)
             .updateHashTagBody(updateHashTagBody)
             .execute();
       System.out.println(result);
@@ -52,5 +51,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

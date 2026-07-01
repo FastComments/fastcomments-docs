@@ -1,9 +1,11 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Evet |  |
-| sso | string | query | Hayır |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Yanıt
 
@@ -14,26 +16,29 @@ Döndürür: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-p
 [inline-code-attrs-start title = 'post_flag_comment Örneği'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import PostFlagCommentOptions
 from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Sunucu tanımlaması isteğe bağlıdır ve varsayılan https://fastcomments.com
-# Desteklenen tüm yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.
+# Host'u tanımlamak isteğe bağlıdır ve varsayılan olarak https://fastcomments.com adresine ayarlanır
+# supported configuration parameters listesi için configuration.py dosyasına bakın.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# API istemcisi örneği ile bir bağlam açın
+# API istemcisi örneğiyle bir bağlam girin
 with client.ApiClient(configuration) as api_client:
-    # API sınıfından bir örnek oluşturun
+    # API sınıfının bir örneğini oluştur
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
-    sso = 'sso_example' # str |  (isteğe bağlı)
+    broadcast_id = 'broadcast_id_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.post_flag_comment(comment_id, sso=sso)
+        api_response = api_instance.post_flag_comment(tenant_id, comment_id, PostFlagCommentOptions(broadcast_id=broadcast_id, sso=sso))
         print("The response of ModerationApi->post_flag_comment:\n")
         pprint(api_response)
     except Exception as e:

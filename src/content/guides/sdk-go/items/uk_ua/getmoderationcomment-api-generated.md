@@ -1,15 +1,16 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Так |  |
-| includeEmail | boolean | query | Ні |  |
-| includeIP | boolean | query | Ні |  |
-| sso | string | query | Ні |  |
+| Назва | Тип | Розташування | Обов’язковий | Опис |
+|------|------|--------------|--------------|------|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| includeEmail | boolean | query | No |  |
+| includeIP | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Відповідь
 
-Повертає: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_api_comment_response.go)
+Returns: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_api_comment_response.go)
 
 ## Приклад
 
@@ -25,14 +26,15 @@ import (
 )
 
 func main() {
-	commentId := "commentId_example" // string | 
-	includeEmail := true // bool |  (необов'язково)
-	includeIP := true // bool |  (необов'язково)
-	sso := "sso_example" // string |  (необов'язково)
+	tenantId := "tenantId_example" // рядок | 
+	commentId := "commentId_example" // рядок | 
+	includeEmail := true // булевий |  (необов’язковий)
+	includeIP := true // булевий |  (необов’язковий)
+	sso := "sso_example" // рядок |  (необов’язковий)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetModerationComment(context.Background(), commentId).IncludeEmail(includeEmail).IncludeIP(includeIP).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetModerationComment(context.Background(), commentId).TenantId(tenantId).IncludeEmail(includeEmail).IncludeIP(includeIP).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetModerationComment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

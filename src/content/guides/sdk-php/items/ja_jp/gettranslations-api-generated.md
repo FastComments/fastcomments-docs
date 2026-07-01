@@ -1,4 +1,4 @@
-## パラメータ
+## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
@@ -7,11 +7,11 @@
 | locale | string | query | No |  |
 | useFullTranslationIds | boolean | query | No |  |
 
-## レスポンス
+## Response
 
-戻り値: [`GetTranslationsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTranslationsResponse.php)
+Returns: [`GetTranslationsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTranslationsResponse.php)
 
-## 例
+## Example
 
 [inline-code-attrs-start title = 'getTranslations の例'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -21,17 +21,21 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // カスタムの HTTP クライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
-    // これはオプションです。デフォルトでは `GuzzleHttp\Client` が使用されます。
+    // カスタム HTTP クライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装したクライアントを渡してください。
+    // これはオプションで、デフォルトでは `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client()
 );
-$namespace = 'namespace_example'; // string
-$component = 'component_example'; // string
-$locale = 'locale_example'; // string
-$use_full_translation_ids = True; // bool
+
+$namespace = 'namespace_example'; // 文字列
+$component = 'component_example'; // 文字列
+$options = [
+    'locale' => 'locale_example', // 文字列
+    'use_full_translation_ids' => True, // ブール
+];
+
 
 try {
-    $result = $apiInstance->getTranslations($namespace, $component, $locale, $use_full_translation_ids);
+    $result = $apiInstance->getTranslations($namespace, $component, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getTranslations: ', $e->getMessage(), PHP_EOL;

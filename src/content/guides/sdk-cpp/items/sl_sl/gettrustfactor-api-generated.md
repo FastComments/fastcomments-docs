@@ -1,9 +1,9 @@
 ## Parametri
 
-| Ime | Tip | Obvezno | Opis |
-|------|------|----------|-------------|
-| userId | string | Ne |  |
-| sso | string | Ne |  |
+| Ime | Tip | Zahtevano | Opis |
+|------|------|----------|------|
+| tenantId | string | Da |  |
+| options | const GetTrustFactorOptions& | Da |  |
 
 ## Odgovor
 
@@ -13,15 +13,13 @@ Vrne: [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastcomment
 
 [inline-code-attrs-start title = 'Primer getTrustFactor'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> userId{ U("user@example.com") };
-boost::optional<utility::string_t> sso{ U("my-tenant-123") };
-api->getTrustFactor(userId, sso)
-    .then([](std::shared_ptr<GetUserTrustFactorResponse> resp) {
-        if (resp) {
-            auto tag = std::make_shared<utility::string_t>(U("trust-check"));
-            (void)tag;
-        }
-    });
+auto tenantId = utility::string_t(U("my-tenant-123"));
+GetTrustFactorOptions options;
+options.userEmail = boost::optional<utility::string_t>(U("user@example.com"));
+options.ipAddress = boost::optional<utility::string_t>(U("203.0.113.42"));
+api->getTrustFactor(tenantId, options).then([](std::shared_ptr<GetUserTrustFactorResponse> resp) {
+    if (resp) {
+        std::cout << "Trust factor: " << resp->trustFactor << std::endl;
+    }
+});
 [inline-code-end]
-
----

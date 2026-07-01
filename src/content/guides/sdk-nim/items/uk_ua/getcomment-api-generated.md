@@ -1,9 +1,9 @@
 ## Параметри
 
-| Назва | Тип | Обов'язковий | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| id | string | Ні |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
 
 ## Відповідь
 
@@ -11,14 +11,12 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад використання getComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад getComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getComment(tenantId = "my-tenant-123", id = "cmt-7890")
+let (response, httpResponse) = client.getComment(tenantId = "my-tenant-123", id = "cmt-789")
 if response.isSome:
   let comment = response.get()
   discard comment
-else:
-  echo "Comment not found"
 [inline-code-end]
 
 ---

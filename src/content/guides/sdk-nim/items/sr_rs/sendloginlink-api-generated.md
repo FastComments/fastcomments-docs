@@ -1,25 +1,25 @@
-## Параметри
+## Parameters
 
-| Име | Тип | Обавезно | Опис |
+| Ime | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Не |  |
-| redirectURL | string | Не |  |
+| tenantId | string | Da |  |
+| id | string | Ne |  |
+| redirectURL | string = "" | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
+Vraća: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'sendLoginLink Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'sendLoginLink Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.sendLoginLink(tenantId = "my-tenant-123", id = "user-456", redirectURL = "https://app.newsportal.com/welcome")
-if response.isSome:
-  let apiResp = response.get()
-  echo "Login link sent successfully"
-else:
-  echo "Failed to send login link, HTTP status: ", $httpResponse.status
-[inline-code-end]
+let (maybeResp, httpResp) = client.sendLoginLink(
+  tenantId = "my-tenant-123",
+  id = "user-456",
+  redirectURL = "https://myapp.example.com/login-success"
+)
 
----
+if maybeResp.isSome:
+  let emptyResp = maybeResp.get()
+[inline-code-end]

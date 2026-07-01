@@ -1,12 +1,11 @@
 ## Παράμετροι
 
-| Name | Type | Required | Description |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
-| userId | string | Όχι |  |
-| trustFactor | string | Όχι |  |
-| sso | string | Όχι |  |
+| tenantId | string | Ναι |  |
+| options | SetTrustFactorOptions | Όχι |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`Option[SetUserTrustFactorResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_set_user_trust_factor_response.nim)
 
@@ -14,10 +13,10 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα setTrustFactor'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.setTrustFactor(userId = "user-9876", trustFactor = "high", sso = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyLTk4NzYiLCJpYXQiOjE2MjQwMDAwMDB9.signature")
-if response.isSome:
-  let resultObj = response.get()
-  echo resultObj
-else:
-  echo "No response received"
+let opts = SetTrustFactorOptions(userId = "user-456", trustFactor = 5, reason = "spam detection")
+let (trustResponse, httpResponse) = client.setTrustFactor(tenantId = "my-tenant-123", options = opts)
+if trustResponse.isSome:
+  let result = trustResponse.get()
 [inline-code-end]
+
+---

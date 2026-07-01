@@ -1,28 +1,28 @@
-Momentan online befindliche Betrachter einer Seite: Personen, deren WebSocket-Sitzung zurzeit auf die Seite abonniert ist.
-Gibt anonCount + totalCount zurück (raumweite Abonnenten, einschließlich anonymer Betrachter, die wir nicht aufzählen).
+---
+Derzeit online Viewer einer Seite: Personen, deren Websocket‑Session gerade auf die Seite abonniert ist.  
+Gibt anonCount + totalCount zurück (raumweite Abonnenten, einschließlich anonymer Viewer, die wir nicht aufzählen).
 
-## Parameter
+## Parameters
 
-| Name | Typ | Erforderlich | Beschreibung |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| urlId | string | Ja |  |
-| afterName | string | Nein |  |
-| afterUserId | string | Nein |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| options | GetOnlineUsersOptions | No |  |
 
-## Antwort
+## Response
 
-Gibt zurück: [`Option[PageUsersOnlineResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_online_response.nim)
+Returns: [`Option[PageUsersOnlineResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_online_response.nim)
 
-## Beispiel
+## Example
 
 [inline-code-attrs-start title = 'getOnlineUsers Beispiel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getOnlineUsers(tenantId = "my-tenant-123", urlId = "news/politics/top-story", afterName = "", afterUserId = "")
-if response.isSome:
-  let page = response.get()
-  echo "Received online users page:"
-  echo page
-else:
-  echo "No online users returned. HTTP status: ", httpResponse.statusCode
+let opts = GetOnlineUsersOptions()
+let (onlineUsersOpt, httpResp) = client.getOnlineUsers(tenantId = "my-tenant-123", urlId = "news/article-title", options = opts)
+if onlineUsersOpt.isSome:
+  let onlineUsers = onlineUsersOpt.get()
+  echo onlineUsers
 [inline-code-end]
+
+---

@@ -1,19 +1,19 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Ime | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tag | string | path | Да |  |
-| tenantId | string | query | Не |  |
+| tenantId | string | query | Da |  |
+| tag | string | path | Da |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateHashTagResponse.java)
+Vraća: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateHashTagResponse.java)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'patchHashTag пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'patchHashTag Primer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Увези класе:
+// Uvezi klase:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,19 +26,18 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Конфигуриши ауторизацију API кључа: api_key
+    // Konfiguriši autorizaciju API ključa: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Откоментирајте следећи ред да бисте поставили префикс за API кључ, нпр. "Token" (подразумевано null)
+    // Odkomentariši sledeću liniju da postaviš prefiks za API ključ, npr. "Token" (podrazumevano null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    String tag = "tag_example"; // String | 
-    String tenantId = "tenantId_example"; // String | 
-    UpdateHashTagBody updateHashTagBody = new UpdateHashTagBody(); // UpdateHashTagBody | 
+    String tenantId = "tenantId_example"; // String |
+    String tag = "tag_example"; // String |
+    UpdateHashTagBody updateHashTagBody = new UpdateHashTagBody(); // UpdateHashTagBody |
     try {
-      UpdateHashTagResponse result = apiInstance.patchHashTag(tag)
-            .tenantId(tenantId)
+      UpdateHashTagResponse result = apiInstance.patchHashTag(tenantId, tag)
             .updateHashTagBody(updateHashTagBody)
             .execute();
       System.out.println(result);

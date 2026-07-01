@@ -1,9 +1,10 @@
 ## Παράμετροι
 
-| Name | Type | Required | Description |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
-| commentId | string | Ναι |  |
-| sso | string | Όχι |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| sso | string = "" | No |  |
 
 ## Απόκριση
 
@@ -11,12 +12,10 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα getBanUsersFromComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getBanUsersFromComment Παράδειγμα'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getBanUsersFromComment(commentId = "comment-98765", sso = "")
+let (response, httpResponse) = client.getBanUsersFromComment(tenantId = "my-tenant-001", commentId = "cmt-123456", sso = "")
 if response.isSome:
-  let bannedResp = response.get()
-  discard bannedResp
-else:
-  echo "No banned users found or request failed"
+  let banInfo = response.get()
+  echo banInfo
 [inline-code-end]

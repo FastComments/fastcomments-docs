@@ -1,14 +1,34 @@
 ## Параметри
 
-| Назва | Type | Обов'язково | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Так |  |
-| id | string | Так |  |
-| deleteComments | boolean | Ні |  |
-| commentDeleteMode | string | Ні |  |
+| Назва | Тип | Обов'язковий | Опис |
+|------|------|--------------|------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| deleteComments | boolean | No |  |
+| commentDeleteMode | string | No |  |
 
 ## Відповідь
 
 Повертає: [`DeleteSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteSSOUserAPIResponse.ts)
 
----
+## Приклад
+
+[inline-code-attrs-start title = 'Приклад deleteSSOUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+const tenantId: string = "acme-corp-tenant";
+const userId: string = "sso-user-42";
+const deleteComments: boolean = true;
+const commentDeleteMode: string = "hard";
+
+const detailedResult: DeleteSSOUserAPIResponse = await deleteSSOUser(
+  tenantId,
+  userId,
+  deleteComments,
+  commentDeleteMode
+);
+
+const simpleResult: DeleteSSOUserAPIResponse = await deleteSSOUser(
+  tenantId,
+  userId
+);
+[inline-code-end]

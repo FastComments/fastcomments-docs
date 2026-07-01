@@ -2,8 +2,9 @@
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
+| tenantId | string | Yes |  |
 | commentId | string | Yes |  |
-| sso | string | No |  |
+| options | const PostFlagCommentOptions& | Yes |  |
 
 ## Response
 
@@ -13,15 +14,18 @@ Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/b
 
 [inline-code-attrs-start title = 'postFlagComment Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t commentId = utility::conversions::to_string_t("cmt-8f3a2b9e");
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(utility::conversions::to_string_t("user@example.com"));
-api->postFlagComment(commentId, sso).then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task){
-    try {
-        std::shared_ptr<APIEmptyResponse> resp = task.get();
-        if (resp) {
-            auto copy = std::make_shared<APIEmptyResponse>(*resp);
+PostFlagCommentOptions options;
+options.reason = boost::optional<utility::string_t>(U("spam"));
+options.reportedBy = boost::optional<utility::string_t>(U("moderator@example.com"));
+
+api->postFlagComment(U("my-tenant-123"), U("comment-456"), options)
+    .then([](std::shared_ptr<APIEmptyResponse> resp){
+        (void)resp;
+    })
+    .then([](pplx::task<void> t){
+        try{
+            t.get();
+        }catch(const std::exception&){
         }
-    } catch (const std::exception&) {
-    }
-});
+    });
 [inline-code-end]

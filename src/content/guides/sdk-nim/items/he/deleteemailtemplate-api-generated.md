@@ -1,4 +1,3 @@
----
 ## פרמטרים
 
 | שם | סוג | נדרש | תיאור |
@@ -12,19 +11,12 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-deleteEmailTemplate'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteEmailTemplate דוגמה'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteEmailTemplate(
-  tenantId = "my-tenant-123",
-  id = "welcome-email-template-001"
-)
-
-if response.isSome:
-  let apiEmpty = response.get()
-  discard apiEmpty
-  echo "Email template deleted successfully"
+let (respOpt, httpResp) = client.deleteEmailTemplate(tenantId = "my-tenant-123", id = "welcome-email")
+if respOpt.isSome:
+  let emptyResp = respOpt.get()
+  echo "Email template deleted"
 else:
-  echo "No response body"
+  echo "Failed to delete email template"
 [inline-code-end]
-
----

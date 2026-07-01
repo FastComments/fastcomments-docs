@@ -1,7 +1,8 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | page | number | query | No |  |
 | count | number | query | No |  |
 | text-search | string | query | No |  |
@@ -27,21 +28,26 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
     // Якщо ви хочете використовувати власний HTTP-клієнт, передайте свій клієнт, який реалізує `GuzzleHttp\ClientInterface`.
-    // Це необов'язково — за замовчуванням буде використано `GuzzleHttp\Client`.
+    // Це необов'язково, `GuzzleHttp\Client` буде використаний за замовчуванням.
     new GuzzleHttp\Client()
 );
-$page = 3.4; // float
-$count = 3.4; // float
-$text_search = 'text_search_example'; // string
-$by_ip_from_comment = 'by_ip_from_comment_example'; // string
-$filters = 'filters_example'; // string
-$search_filters = 'search_filters_example'; // string
-$sorts = 'sorts_example'; // string
-$demo = True; // bool
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // рядок
+$options = [
+    'page' => 3.4, // дробове число
+    'count' => 3.4, // дробове число
+    'text_search' => 'text_search_example', // рядок
+    'by_ip_from_comment' => 'by_ip_from_comment_example', // рядок
+    'filters' => 'filters_example', // рядок
+    'search_filters' => 'search_filters_example', // рядок
+    'sorts' => 'sorts_example', // рядок
+    'demo' => True, // булевий
+    'sso' => 'sso_example', // рядок
+];
+
 
 try {
-    $result = $apiInstance->getApiComments($page, $count, $text_search, $by_ip_from_comment, $filters, $search_filters, $sorts, $demo, $sso);
+    $result = $apiInstance->getApiComments($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getApiComments: ', $e->getMessage(), PHP_EOL;

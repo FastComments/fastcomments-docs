@@ -1,8 +1,9 @@
 ## Параметри
 
-| Име | Тип | Задължително | Описание |
+| Име | Тип | Задължителен | Описание |
 |------|------|----------|-------------|
-| sso | string | Не |  |
+| tenantId | string | Yes |  |
+| sso | string | No |  |
 
 ## Отговор
 
@@ -12,14 +13,13 @@
 
 [inline-code-attrs-start title = 'Пример за getCounts'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("my-tenant-123"));
-api->getCounts(sso).then([](pplx::task<std::shared_ptr<GetBannedUsersCountResponse>> task) {
-    try {
-        auto resp = task.get();
-        if(!resp) resp = std::make_shared<GetBannedUsersCountResponse>();
-    } catch(...) {
+api->getCounts(
+    utility::conversions::to_string_t("my-tenant-123"),
+    boost::optional<utility::string_t>(utility::conversions::to_string_t("john.doe@example.com"))
+).then([](pplx::task<std::shared_ptr<GetBannedUsersCountResponse>> t){
+    try{
+        auto response = t.get();
+    }catch(const std::exception&){
     }
 });
 [inline-code-end]
-
----

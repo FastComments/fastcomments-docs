@@ -1,9 +1,9 @@
 ## Parámetros
 
-| Name | Type | Required | Description |
+| Nombre | Tipo | Requerido | Descripción |
 |------|------|----------|-------------|
-| tenant_id | String | Sí |  |
-| large_internal_url_sanitized | String | Sí |  |
+| tenant_id | String | Yes |  |
+| large_internal_url_sanitized | String | Yes |  |
 
 ## Respuesta
 
@@ -11,17 +11,12 @@ Devuelve: [`GifGetLargeResponse`](https://github.com/FastComments/fastcomments-r
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de get_gif_large'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo get_gif_large'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example() -> Result<GifGetLargeResponse, Error> {
-    let params: GetGifLargeParams = GetGifLargeParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        large_internal_url_sanitized: "gifs/news/article/welcome-gif".to_string(),
-        referrer: Some("https://news.example.com/article/123".to_string()),
-    };
-    let response: GifGetLargeResponse = get_gif_large(&configuration, params).await?;
-    Ok(response)
-}
-[inline-code-end]
+let params: GetGifLargeParams = GetGifLargeParams {
+    tenant_id: "acme-corp-tenant".into(),
+    large_internal_url_sanitized: "news/article/gif123".into(),
+};
 
----
+let response: GifGetLargeResponse = get_gif_large(&configuration, params).await?;
+[inline-code-end]

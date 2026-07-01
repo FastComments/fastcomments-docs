@@ -1,26 +1,23 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Не |  |
+| tenantId | string | Da |  |
+| id | string | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[APIGetUserBadgeResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_get_user_badge_response.nim)
+Vraća: [`Option[APIGetUserBadgeResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_get_user_badge_response.nim)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'getUserBadge Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUserBadge Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUserBadge(tenantId = "my-tenant-123", id = "badge-9876")
-if response.isSome:
-  let badge = response.get()
-  echo "Fetched badge:"
+let (badgeOpt, httpResp) = client.getUserBadge(tenantId = "my-tenant-123", id = "user-789")
+if badgeOpt.isSome:
+  let badge = badgeOpt.get()
   echo badge
 else:
   echo "No badge found"
-  echo httpResponse
+echo httpResp.statusCode
 [inline-code-end]
-
----

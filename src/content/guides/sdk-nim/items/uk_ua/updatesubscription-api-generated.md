@@ -1,12 +1,11 @@
----
 ## Параметри
 
 | Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| id | string | Ні |  |
-| updateAPIUserSubscriptionData | UpdateAPIUserSubscriptionData | Ні |  |
-| userId | string | Ні |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| updateAPIUserSubscriptionData | UpdateAPIUserSubscriptionData | No |  |
+| userId | string = "" | No |  |
 
 ## Відповідь
 
@@ -16,21 +15,19 @@
 
 [inline-code-attrs-start title = 'Приклад updateSubscription'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateSubscription(
-  tenantId = "my-tenant-123",
-  id = "sub-456",
-  updateAPIUserSubscriptionData = UpdateAPIUserSubscriptionData(
-    subscribed = true,
-    channels = @["email", "push"]
-  ),
-  userId = "user-789"
+let subscriptionData = UpdateAPIUserSubscriptionData(
+  planId = "premium-plan",
+  isActive = true,
+  expiresAt = "2025-01-01",
 )
 
-if response.isSome:
-  let updated = response.get()
-  echo "Subscription updated:", updated
-else:
-  echo "Update failed, HTTP response:", httpResponse
-[inline-code-end]
+let (responseOpt, httpResponse) = client.updateSubscription(
+  tenantId = "my-tenant-123",
+  id = "sub-456",
+  updateAPIUserSubscriptionData = subscriptionData,
+  userId = "user-789",
+)
 
----
+if responseOpt.isSome:
+  let subscriptionResult = responseOpt.get()
+[inline-code-end]

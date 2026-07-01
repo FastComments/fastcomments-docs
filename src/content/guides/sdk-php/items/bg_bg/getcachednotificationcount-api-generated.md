@@ -1,7 +1,7 @@
 ## Параметри
 
 | Име | Тип | Местоположение | Задължително | Описание |
-|------|------|----------|----------|-------------|
+|------|------|----------------|--------------|----------|
 | tenantId | string | query | Да |  |
 | id | string | path | Да |  |
 
@@ -17,20 +17,22 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Конфигуриране на авторизацията с API ключ: api_key
+// Конфигуриране на упълномощаване с API ключ: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Разкоментирайте по-долу, за да зададете префикс (напр. Bearer) за API ключа, ако е необходимо
+// Разкоментирайте по-долу, за да зададете префикс (например Bearer) за API ключа, ако е необходимо
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ако искате да използвате собствен HTTP клиент, подайте клиент, който имплементира `GuzzleHttp\ClientInterface`.
-    // Това е незадължително, по подразбиране ще се използва `GuzzleHttp\Client`.
+    // Ако искате да използвате персонализиран HTTP клиент, предайте вашия клиент, който имплементира `GuzzleHttp\ClientInterface`.
+    // Това е опционално, `GuzzleHttp\Client` ще се използва като по подразбиране.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
+
 
 try {
     $result = $apiInstance->getCachedNotificationCount($tenant_id, $id);
@@ -39,5 +41,3 @@ try {
     echo 'Exception when calling DefaultApi->getCachedNotificationCount: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

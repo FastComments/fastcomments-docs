@@ -1,12 +1,10 @@
----
 ## Παράμετροι
 
-| Όνομα | Τύπος | Απαραίτητο | Περιγραφή |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
-| tenantId | string | Ναι |  |
-| id | string | Όχι |  |
-| deleteComments | bool | Όχι |  |
-| commentDeleteMode | string | Όχι |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| options | DeleteSSOUserOptions | No |  |
 
 ## Απόκριση
 
@@ -16,12 +14,12 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα deleteSSOUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteSSOUser(tenantId = "my-tenant-123", id = "sso-user-9876", deleteComments = true, commentDeleteMode = "hard")
-if response.isSome:
-  let deleted = response.get()
-  discard deleted
-else:
-  discard httpResponse
-[inline-code-end]
+let (apiRespOpt, httpResp) = client.deleteSSOUser(
+  tenantId = "my-tenant-123",
+  id = "user-456",
+  options = DeleteSSOUserOptions()
+)
 
----
+if apiRespOpt.isSome:
+  let apiResp = apiRespOpt.get()
+[inline-code-end]

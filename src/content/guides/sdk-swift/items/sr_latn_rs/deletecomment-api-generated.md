@@ -2,10 +2,10 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| id | string | path | Da |  |
-| contextUserId | string | query | Ne |  |
-| isLive | boolean | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| contextUserId | string | query | No |  |
+| isLive | boolean | query | No |  |
 
 ## Odgovor
 
@@ -15,15 +15,15 @@ Vraća: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-swi
 
 [inline-code-attrs-start title = 'deleteComment Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sledeći primeri koda su još uvek u beta fazi. Za bilo koji problem, prijavite ga preko http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledeći primeri koda su još u beta fazi. Za bilo koji problem, prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let id = "id_example" // String | 
-let contextUserId = "contextUserId_example" // String |  (opciono)
-let isLive = true // Bool |  (opciono)
+let contextUserId = "contextUserId_example" // String |  (optional)
+let isLive = true // Bool |  (optional)
 
-DefaultAPI.deleteComment(tenantId: tenantId, id: id, contextUserId: contextUserId, isLive: isLive) { (response, error) in
+DefaultAPI.deleteComment(tenantId: tenantId, id: id, options: DefaultAPI.DeleteCommentOptions(contextUserId: contextUserId, isLive: isLive)) { (response, error) in
     guard error == nil else {
         print(error)
         return

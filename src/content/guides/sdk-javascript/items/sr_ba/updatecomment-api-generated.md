@@ -1,32 +1,40 @@
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| tenantId | string | Da |  |
-| id | string | Da |  |
-| updatableCommentParams | UpdatableCommentParams | Da |  |
-| contextUserId | string | Ne |  |
-| doSpamCheck | boolean | Ne |  |
-| isLive | boolean | Ne |  |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updatableCommentParams | UpdatableCommentParams | Yes |  |
+| contextUserId | string | No |  |
+| doSpamCheck | boolean | No |  |
+| isLive | boolean | No |  |
 
 ## Odgovor
 
-Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Vraća: [`UpdateCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateCommentResponse.ts)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer updateComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateComment Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant-prod-01';
-const id: string = 'cmt-000127';
-const updatableCommentParams: UpdatableCommentParams = {
-  body: 'Thanks — I updated the steps to include the missing config flag.',
-  isHidden: false
-};
-const contextUserId: string = 'moderator_77';
-const doSpamCheck: boolean = true;
-const isLive: boolean = true;
-const result: APIEmptyResponse = await updateComment(tenantId, id, updatableCommentParams, contextUserId, doSpamCheck, isLive);
-[inline-code-end]
+const tenantId: string = "tenant_12345";
+const commentId: string = "cmt_98765";
 
----
+const updatableCommentParams: UpdatableCommentParams = {
+  // primjer polja; stvarni oblik zavisi od definicije API-ja
+  // npr., body: "Edited comment content",
+};
+
+const contextUserId: string = "user_abcde";
+const doSpamCheck: boolean = true;
+const isLive: boolean = false;
+
+const result: UpdateCommentResponse = await updateComment(
+  tenantId,
+  commentId,
+  updatableCommentParams,
+  contextUserId,
+  doSpamCheck,
+  isLive
+);
+[inline-code-end]

@@ -1,59 +1,62 @@
-## Параметри
+## Parametri
 
-| Назив | Type | Location | Обавезно | Опис |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| userId | string | query | Не |  |
-| urlId | string | query | Не |  |
-| fromCommentId | string | query | Не |  |
-| viewed | boolean | query | Не |  |
-| type | string | query | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
+| userId | string | query | Ne |  |
+| urlId | string | query | Ne |  |
+| fromCommentId | string | query | Ne |  |
+| viewed | boolean | query | Ne |  |
+| type | string | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notification_count_response.py)
+Vraća: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notification_count_response.py)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'get_notification_count Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_notification_count Primjer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetNotificationCountOptions
 from client.models.get_notification_count_response import GetNotificationCountResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Постављање host-а је опционo и подразумевано је https://fastcomments.com
-# Погледајте configuration.py за списак свих подржаних параметара конфигурације.
+# Definisanje hosta je opciono i podrazumijeva https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih konfiguracijskih parametara.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клијент мора конфигурисати параметре аутентификације и овлашћења
-# у складу са безбедносном политиком API сервера.
-# Испод су дати примјери за сваки метод аутентификације, користите примјер који
-# одговара вашем сценарију аутентификације.
+# Klijent mora konfigurisati parametre autentifikacije i autorizacije
+# u skladu sa sigurnosnom politikom API servera.
+# Primjeri za svaki metod autentifikacije su dati ispod, koristite primjer koji
+# odgovara vašem slučaju upotrebe autentifikacije.
 
-# Конфигуришите ауторизацију API кључем: api_key
+# Konfigurišite autorizaciju API ključem: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Откоментаришите доле да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
+# Otkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Уђите у контекст са инстанцом API клијента
+# Uđite u kontekst sa instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Креирајте инстанцу API класе
+    # Kreirajte instancu API klase
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    user_id = 'user_id_example' # str |  (опционо)
-    url_id = 'url_id_example' # str |  (опционо)
-    from_comment_id = 'from_comment_id_example' # str |  (опционо)
-    viewed = True # bool |  (опционо)
-    type = 'type_example' # str |  (опционо)
+    user_id = 'user_id_example' # str |  (optional)
+    url_id = 'url_id_example' # str |  (optional)
+    from_comment_id = 'from_comment_id_example' # str |  (optional)
+    viewed = True # bool |  (optional)
+    type = 'type_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_notification_count(tenant_id, user_id=user_id, url_id=url_id, from_comment_id=from_comment_id, viewed=viewed, type=type)
+        api_response = api_instance.get_notification_count(tenant_id, GetNotificationCountOptions(user_id=user_id, url_id=url_id, from_comment_id=from_comment_id, viewed=viewed, type=type))
         print("The response of DefaultApi->get_notification_count:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling DefaultApi->get_notification_count: %s\n" % e)
 [inline-code-end]
+
+---

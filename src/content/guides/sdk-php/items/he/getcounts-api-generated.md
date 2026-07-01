@@ -1,16 +1,17 @@
-## פרמטרים
+## Parameters
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| שם | סוג | מיקום | חובה | תיאור |
 |------|------|----------|----------|-------------|
-| sso | string | query | לא |  |
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
-## תגובה
+## Response
 
 מחזיר: [`GetBannedUsersCountResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetBannedUsersCountResponse.php)
 
-## דוגמה
+## Example
 
-[inline-code-attrs-start title = 'דוגמה ל-getCounts'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getCounts'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -18,14 +19,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // אם ברצונך להשתמש בלקוח HTTP מותאם אישית, העבר את הלקוח שלך שמממש את `GuzzleHttp\ClientInterface`.
-    // זה אופציונלי — ישתמש ב-`GuzzleHttp\Client` כברירת מחדל.
+    // אם ברצונך להשתמש בלקוח HTTP מותאם, העבר את הלקוח שלך שמממש `GuzzleHttp\ClientInterface`.
+    // זה אופציונלי, `GuzzleHttp\Client` ישמש כברירת מחדל.
     new GuzzleHttp\Client()
 );
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // מחרוזת
+$sso = 'sso_example'; // מחרוזת
+
 
 try {
-    $result = $apiInstance->getCounts($sso);
+    $result = $apiInstance->getCounts($tenant_id, $sso);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getCounts: ', $e->getMessage(), PHP_EOL;

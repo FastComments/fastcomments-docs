@@ -16,7 +16,7 @@ Gibt zurück: [`SaveCommentsResponseWithPresence`](https://github.com/FastCommen
 
 [inline-code-attrs-start title = 'createCommentPublic Beispiel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Die folgenden Codebeispiele sind noch Beta. Bei Problemen bitte melden über http://github.com/OpenAPITools/openapi-generator/issues/new
+// Die folgenden Codebeispiele sind noch Beta. Bei Problemen bitte melden via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -26,7 +26,7 @@ let commentData = CommentData(date: 123, localDateString: "localDateString_examp
 let sessionId = "sessionId_example" // String |  (optional)
 let sso = "sso_example" // String |  (optional)
 
-PublicAPI.createCommentPublic(tenantId: tenantId, urlId: urlId, broadcastId: broadcastId, commentData: commentData, sessionId: sessionId, sso: sso) { (response, error) in
+PublicAPI.createCommentPublic(tenantId: tenantId, urlId: urlId, broadcastId: broadcastId, commentData: commentData, options: PublicAPI.CreateCommentPublicOptions(sessionId: sessionId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

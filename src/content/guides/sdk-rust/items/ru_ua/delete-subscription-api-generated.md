@@ -1,14 +1,26 @@
----
-## Параметры
+## Параметри
 
-| Имя | Тип | Обязательно | Описание |
+| Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| id | String | Да |  |
-| user_id | String | Нет |  |
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
+| user_id | String | No |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`DeleteSubscriptionApiResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/delete_subscription_api_response.rs)
+Повертає: [`DeleteSubscriptionApiResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/delete_subscription_api_response.rs)
 
----
+## Приклад
+
+[inline-code-attrs-start title = 'delete_subscription Приклад'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+async fn run() -> Result<(), Error> {
+    let params = DeleteSubscriptionParams {
+        tenant_id: "acme-corp".to_string(),
+        id: "sub-2024-09".to_string(),
+        user_id: Some("user-42".to_string()),
+    };
+    let _response = delete_subscription(&config, params).await?;
+    Ok(())
+}
+[inline-code-end]

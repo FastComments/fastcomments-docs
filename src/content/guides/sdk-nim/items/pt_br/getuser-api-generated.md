@@ -1,10 +1,9 @@
----
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-------------|
-| tenantId | string | Yes |  |
-| id | string | No |  |
+|------|------|-------------|-----------|
+| tenantId | string | Sim |  |
+| id | string | Não |  |
 
 ## Resposta
 
@@ -14,12 +13,10 @@ Retorna: [`Option[GetUserResponse]`](https://github.com/FastComments/fastcomment
 
 [inline-code-attrs-start title = 'Exemplo getUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUser(tenantId = "my-tenant-123", id = "user-456")
-if response.isSome:
-  let user = response.get()
+let (userOpt, httpResp) = client.getUser(tenantId = "my-tenant-123", id = "user-456")
+if userOpt.isSome:
+  let user = userOpt.get()
   echo user
 else:
   echo "User not found"
 [inline-code-end]
-
----

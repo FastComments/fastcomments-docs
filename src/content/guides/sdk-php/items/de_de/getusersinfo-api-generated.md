@@ -1,17 +1,17 @@
-Massenbenutzerinformationen für einen Mandanten. Gegeben userIds, werden Anzeigeinformationen von User / SSOUser zurückgegeben.
-Vom Kommentar-Widget verwendet, um Benutzer anzureichern, die gerade durch ein Präsenz-Ereignis erschienen sind.
-Kein Seitenkontext: Datenschutz wird einheitlich durchgesetzt (private Profile werden maskiert).
+Bulk‑Benutzerinformationen für einen Mandanten. Bei gegebenen userIds werden Anzeigeinformationen aus User / SSOUser zurückgegeben.  
+Wird vom Kommentar‑Widget verwendet, um Benutzer, die gerade über ein Präsenz‑Ereignis erschienen sind, anzureichern.  
+Kein Seiten‑Kontext: Datenschutz wird einheitlich durchgesetzt (private Profile werden maskiert).
 
 ## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| ids | string | query | Yes | Komma-getrennte userIds. |
+|------|-----|-----|--------------|--------------|
+| tenantId | string | path | Ja |  |
+| ids | string | query | Ja | Durch Kommas getrennte userIds. |
 
 ## Antwort
 
-Gibt zurück: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersInfoResponse.php)
+Returns: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersInfoResponse.php)
 
 ## Beispiel
 
@@ -23,12 +23,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Wenn Sie einen benutzerdefinierten HTTP-Client verwenden möchten, übergeben Sie Ihren Client, der `GuzzleHttp\ClientInterface` implementiert.
+    // Wenn Sie einen benutzerdefinierten HTTP‑Client verwenden möchten, übergeben Sie Ihren Client, der `GuzzleHttp\ClientInterface` implementiert.
     // Dies ist optional, `GuzzleHttp\Client` wird standardmäßig verwendet.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$ids = 'ids_example'; // string | Komma-getrennte userIds.
+$ids = 'ids_example'; // string | Durch Kommas getrennte userIds.
+
 
 try {
     $result = $apiInstance->getUsersInfo($tenant_id, $ids);

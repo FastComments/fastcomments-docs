@@ -2,13 +2,8 @@
 
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| commentId | string | Ja |  |
-| externalId | string | Nej |  |
-| eventType | string | Nej |  |
-| domain | string | Nej |  |
-| attemptCountGT | float64 | Nej |  |
-| skip | float64 | Nej |  |
+| tenantId | string | Yes |  |
+| options | GetPendingWebhookEventsOptions | No |  |
 
 ## Svar
 
@@ -16,20 +11,13 @@ Returnerer: [`Option[GetPendingWebhookEventsResponse]`](https://github.com/FastC
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på getPendingWebhookEvents'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getPendingWebhookEvents Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getPendingWebhookEvents(
+let (maybeResp, httpResp) = client.getPendingWebhookEvents(
   tenantId = "my-tenant-123",
-  commentId = "cmt-987654",
-  externalId = "",
-  eventType = "",
-  domain = "",
-  attemptCountGT = 0.0,
-  skip = 0.0
+  options = GetPendingWebhookEventsOptions()
 )
-if response.isSome:
-  let pending = response.get()
-  discard pending
-[inline-code-end]
 
----
+if maybeResp.isSome:
+  let resp = maybeResp.get()
+[inline-code-end]

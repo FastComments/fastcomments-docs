@@ -1,13 +1,13 @@
----
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
-| badgeId | string | query | Oui |  |
-| userId | string | query | Non |  |
-| commentId | string | query | Non |  |
-| broadcastId | string | query | Non |  |
-| sso | string | query | Non |  |
+| tenantId | string | query | Yes |  |
+| badgeId | string | query | Yes |  |
+| userId | string | query | No |  |
+| commentId | string | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Réponse
 
@@ -27,22 +27,21 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	badgeId := "badgeId_example" // string | 
-	userId := "userId_example" // string |  (optionnel)
-	commentId := "commentId_example" // string |  (optionnel)
-	broadcastId := "broadcastId_example" // string |  (optionnel)
-	sso := "sso_example" // string |  (optionnel)
+	userId := "userId_example" // string |  (facultatif)
+	commentId := "commentId_example" // string |  (facultatif)
+	broadcastId := "broadcastId_example" // string |  (facultatif)
+	sso := "sso_example" // string |  (facultatif)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PutAwardBadge(context.Background()).BadgeId(badgeId).UserId(userId).CommentId(commentId).BroadcastId(broadcastId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PutAwardBadge(context.Background()).TenantId(tenantId).BadgeId(badgeId).UserId(userId).CommentId(commentId).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PutAwardBadge``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// réponse de `PutAwardBadge`: AwardUserBadgeResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PutAwardBadge`: %v\n", resp)
+	// réponse de `PutAwardBadge` : AwardUserBadgeResponse
+	fmt.Fprintf(os.Stdout, "Réponse de `ModerationAPI.PutAwardBadge` : %v\n", resp)
 }
 [inline-code-end]
-
----

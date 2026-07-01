@@ -1,10 +1,9 @@
----
 ## Parametre
 
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| value | string | Nej |  |
-| sso | string | Nej |  |
+| tenantId | string | Ja |  |
+| options | const GetSearchUsersOptions& | Ja |  |
 
 ## Svar
 
@@ -12,14 +11,18 @@ Returnerer: [`ModerationUserSearchResponse`](https://github.com/FastComments/fas
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'getSearchUsers-eksempel'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSearchUsers Eksempel'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> value(boost::optional<utility::string_t>(U("john.doe@example.com")));
-boost::optional<utility::string_t> sso(boost::optional<utility::string_t>(U("my-tenant-123")));
-api->getSearchUsers(value, sso).then([](std::shared_ptr<ModerationUserSearchResponse> resp){
-    if (!resp) return;
-    auto copy = std::make_shared<ModerationUserSearchResponse>(*resp);
-});
-[inline-code-end]
+auto tenantId = utility::string_t(U("my-tenant-123"));
+GetSearchUsersOptions opts;
+opts.query = utility::string_t(U("john.doe@example.com"));
+opts.page = boost::optional<int>(1);
+opts.pageSize = boost::optional<int>(20);
 
----
+api->getSearchUsers(tenantId, opts)
+    .then([](std::shared_ptr<ModerationUserSearchResponse> resp) {
+        for (const auto& user : resp->users) {
+            std::wcout << user.id << L" - " << user.email << std::endl;
+        }
+    });
+[inline-code-end]

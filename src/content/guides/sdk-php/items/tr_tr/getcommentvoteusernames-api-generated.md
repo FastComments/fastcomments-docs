@@ -1,15 +1,16 @@
+---
 ## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Evet |  |
-| commentId | string | path | Evet |  |
-| dir | integer | query | Evet |  |
-| sso | string | query | Hayır |  |
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| dir | integer | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Yanıt
 
-Dönüş değeri: [`GetCommentVoteUserNamesSuccessResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCommentVoteUserNamesSuccessResponse.php)
+Döndürür: [`GetCommentVoteUserNamesSuccessResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCommentVoteUserNamesSuccessResponse.php)
 
 ## Örnek
 
@@ -21,14 +22,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Özel bir HTTP istemcisi kullanmak isterseniz, `GuzzleHttp\ClientInterface` arayüzünü uygulayan istemcinizi geçin.
-    // Bu isteğe bağlıdır, `GuzzleHttp\Client` varsayılan olarak kullanılacaktır.
+    // Özel bir HTTP istemcisi kullanmak istiyorsanız, `GuzzleHttp\ClientInterface` arayüzünü uygulayan istemcinizi iletin.
+    // Bu isteğe bağlıdır, varsayılan olarak `GuzzleHttp\Client` kullanılacaktır.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $comment_id = 'comment_id_example'; // string
 $dir = 56; // int
 $sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->getCommentVoteUserNames($tenant_id, $comment_id, $dir, $sso);
@@ -37,5 +40,4 @@ try {
     echo 'Exception when calling PublicApi->getCommentVoteUserNames: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
 ---

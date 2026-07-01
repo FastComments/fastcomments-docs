@@ -1,9 +1,10 @@
 ## 参数
 
-| 名称 | 类型 | 必填 | 描述 |
-|------|------|------|-------------|
+| 名称 | 类型 | 必需 | 描述 |
+|------|------|----------|-------------|
+| tenantId | string | 是 |  |
 | commentId | string | 是 |  |
-| sso | string | 否 |  |
+| options | const PostRestoreDeletedCommentOptions& | 是 |  |
 
 ## 响应
 
@@ -13,15 +14,12 @@
 
 [inline-code-attrs-start title = 'postRestoreDeletedComment 示例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t commentId = U("comment-8b3f4a2d");
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
-api->postRestoreDeletedComment(commentId, sso).then([](pplx::task<std::shared_ptr<APIEmptyResponse>> t){
-    try {
-        std::shared_ptr<APIEmptyResponse> resp = t.get();
-        if (!resp) resp = std::make_shared<APIEmptyResponse>();
-    } catch (const std::exception&) {
-    }
-});
+utility::string_t tenantId = U("my-tenant-123");
+utility::string_t commentId = U("cmt-987654");
+PostRestoreDeletedCommentOptions options;
+options.reason = boost::optional<utility::string_t>(U("Restoring after accidental delete"));
+options.notifyUser = boost::optional<bool>(true);
+api->postRestoreDeletedComment(tenantId, commentId, options)
+    .then([](std::shared_ptr<APIEmptyResponse> resp){
+    });
 [inline-code-end]
-
----

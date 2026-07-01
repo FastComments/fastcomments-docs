@@ -1,31 +1,26 @@
 ## Parametre
 
-| Name | Type | Påkrævet | Beskrivelse |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | notificationId | string | Nej |  |
 | newStatus | string | Nej |  |
-| sso | string | Nej |  |
+| sso | string = "" | Nej |  |
 
-## Respons
+## Svar
 
 Returnerer: [`Option[UpdateUserNotificationStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_status_response.nim)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på updateUserNotificationStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserNotificationStatus Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateUserNotificationStatus(
+let (respOpt, httpResponse) = client.updateUserNotificationStatus(
   tenantId = "my-tenant-123",
   notificationId = "notif-456",
   newStatus = "read",
-  sso = "sso-token-abc123"
+  sso = ""
 )
-if response.isSome:
-  let updated = response.get()
-  echo "Notification status updated successfully"
-else:
-  echo "No update response received"
+if respOpt.isSome:
+  let status = respOpt.get()
 [inline-code-end]
-
----

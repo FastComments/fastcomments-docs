@@ -1,11 +1,10 @@
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
-|------|------|----------|-------------|
+| Naam | Type | Verplicht | Beschrijving |
+|------|------|-----------|--------------|
 | tenantId | string | Ja |  |
 | id | string | Ja |  |
-| userId | string | Nee |  |
-| anonUserId | string | Nee |  |
+| options | const UnFlagCommentOptions& | Ja |  |
 
 ## Respons
 
@@ -13,23 +12,22 @@ Retourneert: [`FlagCommentResponse`](https://github.com/FastComments/fastcomment
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'unFlagComment Voorbeeld'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'unFlagComment voorbeeld'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("comment-7890");
-boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U("user@example.com"));
-boost::optional<utility::string_t> anonUserId;
-api->unFlagComment(tenantId, commentId, userId, anonUserId)
-.then([](pplx::task<std::shared_ptr<FlagCommentResponse>> t) {
-    try {
-        auto resp = t.get();
-        auto fallback = std::make_shared<FlagCommentResponse>();
-        if (!resp) resp = fallback;
-        (void)resp;
-    } catch (const std::exception &e) {
-        (void)e;
-    }
-});
+auto options = UnFlagCommentOptions{};
+options.reason = boost::optional<utility::string_t>(U("Resolved by moderator"));
+api->unFlagComment(U("my-tenant-123"), U("comment-456"), options)
+    .then([](std::shared_ptr<FlagCommentResponse> response) {
+        if (response) {
+            auto status = response->status;
+            // verwerk status indien nodig
+        }
+    })
+    .then([](pplx::task<void> previous) {
+        try {
+            previous.get();
+        } catch (const std::exception& e) {
+            // verwerk fout
+        }
+    });
 [inline-code-end]
-
----

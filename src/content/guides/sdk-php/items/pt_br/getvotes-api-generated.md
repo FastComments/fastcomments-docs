@@ -1,8 +1,7 @@
----
 ## Parâmetros
 
 | Nome | Tipo | Localização | Obrigatório | Descrição |
-|------|------|----------|----------|-------------|
+|------|------|-------------|-------------|-----------|
 | tenantId | string | query | Sim |  |
 | urlId | string | query | Sim |  |
 
@@ -12,26 +11,28 @@ Retorna: [`GetVotesResponse`](https://github.com/FastComments/fastcomments-php/b
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getVotes'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo getVotes'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configurar autorização da chave de API: api_key
+// Configurar autorização da chave API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Descomente abaixo para configurar prefixo (e.g. Bearer) para a chave de API, se necessário
+// Descomente abaixo para configurar o prefixo (ex.: Bearer) para a chave API, se necessário
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
     // Se você quiser usar um cliente HTTP personalizado, passe seu cliente que implemente `GuzzleHttp\ClientInterface`.
-    // Isso é opcional, `GuzzleHttp\Client` será usado como padrão.
+    // Isto é opcional, `GuzzleHttp\Client` será usado como padrão.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $url_id = 'url_id_example'; // string
+
 
 try {
     $result = $apiInstance->getVotes($tenant_id, $url_id);
@@ -40,5 +41,3 @@ try {
     echo 'Exception when calling DefaultApi->getVotes: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

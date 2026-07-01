@@ -1,53 +1,49 @@
-## Parametre
+## Parameters
 
-| Navn | Type | Placering | Påkrævet | Beskrivelse |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| userId | string | query | Nej |  |
-| limit | number | query | Nej |  |
-| skip | number | query | Nej |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| limit | number | query | No |  |
+| skip | number | query | No |  |
 
-## Respons
+## Response
 
-Returnerer: [`APIGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_user_badge_progress_list_response.py)
+Returns: [`APIGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_user_badge_progress_list_response.py)
 
-## Eksempel
+## Example
 
 [inline-code-attrs-start title = 'get_user_badge_progress_list Eksempel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetUserBadgeProgressListOptions
 from client.models.api_get_user_badge_progress_list_response import APIGetUserBadgeProgressListResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Det er valgfrit at definere host, og standarden er https://fastcomments.com
+# Definering af værten er valgfri og har standardværdien https://fastcomments.com
 # Se configuration.py for en liste over alle understøttede konfigurationsparametre.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
+# Klienten skal konfigurere godkendelses- og autorisationsparametrene i overensstemmelse med API-serverens sikkerhedspolitik.
+# Eksempler for hver autentificeringsmetode er angivet nedenfor, brug det eksempel der
+# opfylder dit autentificeringsbehov.
 
-# Klienten skal konfigurere autentificerings- og autorisationsparametre
-# i overensstemmelse med API-serverens sikkerhedspolitik.
-# Eksempler for hver auth-metode er angivet nedenfor; brug det eksempel,
-# der passer til din auth-brugssag.
-
-# Konfigurer API-nøgleautorisering: api_key
+# Konfigurer API-nøgle autorisation: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Fjern kommentaren nedenfor for at sætte præfiks (f.eks. Bearer) for API-nøglen, hvis nødvendigt
+# Fjern kommentaren nedenfor for at opsætte præfiks (fx Bearer) for API-nøglen, hvis nødvendigt
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Gå ind i en kontekst med en instans af API-klienten
+# Indtast en kontekst med en forekomst af API-klienten
 with client.ApiClient(configuration) as api_client:
-    # Opret en instans af API-klassen
+    # Opret en forekomst af API-klassen
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    user_id = 'user_id_example' # str |  (valgfri)
-    limit = 3.4 # float |  (valgfri)
-    skip = 3.4 # float |  (valgfri)
+    user_id = 'user_id_example' # str |  (optional)
+    limit = 3.4 # float |  (optional)
+    skip = 3.4 # float |  (optional)
 
     try:
-        api_response = api_instance.get_user_badge_progress_list(tenant_id, user_id=user_id, limit=limit, skip=skip)
+        api_response = api_instance.get_user_badge_progress_list(tenant_id, GetUserBadgeProgressListOptions(user_id=user_id, limit=limit, skip=skip))
         print("The response of DefaultApi->get_user_badge_progress_list:\n")
         pprint(api_response)
     except Exception as e:

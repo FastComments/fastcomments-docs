@@ -1,12 +1,13 @@
 ## Παράμετροι
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| badgeId | string | query | Ναι |  |
-| userId | string | query | Όχι |  |
-| commentId | string | query | Όχι |  |
-| broadcastId | string | query | Όχι |  |
-| sso | string | query | Όχι |  |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|-----------|-------------|
+| tenantId | string | ερώτημα | Ναι |  |
+| badgeId | string | ερώτημα | Ναι |  |
+| userId | string | ερώτημα | Όχι |  |
+| commentId | string | ερώτημα | Όχι |  |
+| broadcastId | string | ερώτημα | Όχι |  |
+| sso | string | ερώτημα | Όχι |  |
 
 ## Απόκριση
 
@@ -29,13 +30,14 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String badgeId = "badgeId_example"; // String | 
     String userId = "userId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      AwardUserBadgeResponse result = apiInstance.putAwardBadge(badgeId)
+      AwardUserBadgeResponse result = apiInstance.putAwardBadge(tenantId, badgeId)
             .userId(userId)
             .commentId(commentId)
             .broadcastId(broadcastId)

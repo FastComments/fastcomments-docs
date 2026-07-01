@@ -1,25 +1,28 @@
 ## פרמטרים
 
-| שם | סוג | חובה | תיאור |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| id | string | כן |  |
-| userId | string | לא |  |
-| anonUserId | string | לא |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| userId | string | No |  |
+| anonUserId | string | No |  |
 
 ## תגובה
 
-מחזיר: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentResponse.ts)
+מחזיר: [`UnFlagCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UnFlagCommentResponse.ts)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-unFlagComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'unFlagComment דוגמה'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-001';
-const id: string = 'cmt-9b8f7d6a5';
-const userId: string = 'user-42a7c9e1';
+const tenantId: string = "acme-corp";
+const commentId: string = "cmt_123456";
+const userId: string = "usr_98765";
 
-const result: FlagCommentResponse = await unFlagComment(tenantId, id, userId);
+const result: UnFlagCommentResponse = await unFlagComment(tenantId, commentId, userId);
+
+const anonCommentId: string = "cmt_123457";
+const anonUserId: string = "anon_abc123";
+
+const anonResult: UnFlagCommentResponse = await unFlagComment(tenantId, anonCommentId, undefined, anonUserId);
 [inline-code-end]
-
----

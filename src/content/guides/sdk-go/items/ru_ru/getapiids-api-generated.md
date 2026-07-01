@@ -1,7 +1,8 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательный | Описание |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
 | text-search | string | query | Нет |  |
 | byIPFromComment | string | query | Нет |  |
 | filters | string | query | Нет |  |
@@ -12,7 +13,7 @@
 
 ## Ответ
 
-Возвращает: [`ModerationAPIGetCommentIdsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_api_get_comment_ids_response.go)
+Returns: [`ModerationAPIGetCommentIdsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_api_get_comment_ids_response.go)
 
 ## Пример
 
@@ -28,6 +29,7 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	textSearch := "textSearch_example" // string |  (необязательно)
 	byIPFromComment := "byIPFromComment_example" // string |  (необязательно)
 	filters := "filters_example" // string |  (необязательно)
@@ -38,14 +40,12 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetApiIds(context.Background()).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).AfterId(afterId).Demo(demo).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetApiIds(context.Background()).TenantId(tenantId).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).AfterId(afterId).Demo(demo).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetApiIds``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Ошибка при вызове `ModerationAPI.GetApiIds``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Полный HTTP-ответ: %v\n", r)
 	}
 	// ответ от `GetApiIds`: ModerationAPIGetCommentIdsResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetApiIds`: %v\n", resp)
+	fmt.Fprintf(os.Stdout, "Ответ от `ModerationAPI.GetApiIds`: %v\n", resp)
 }
 [inline-code-end]
-
----

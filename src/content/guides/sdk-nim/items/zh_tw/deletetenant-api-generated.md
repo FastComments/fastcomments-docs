@@ -2,9 +2,9 @@
 
 | 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| id | string | 否 |  |
-| sure | string | 否 |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| sure | string = "" | No |  |
 
 ## 回應
 
@@ -14,11 +14,9 @@
 
 [inline-code-attrs-start title = 'deleteTenant 範例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteTenant(tenantId = "my-tenant-123", id = "", sure = "")
-if response.isSome:
-  let emptyResp = response.get()
-else:
-  discard httpResponse
+let (respOpt, httpResp) = client.deleteTenant(tenantId = "my-tenant-123", id = "tenant-to-delete", sure = "yes")
+if respOpt.isSome:
+  let emptyResp = respOpt.get()
 [inline-code-end]
 
 ---

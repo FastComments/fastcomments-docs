@@ -1,22 +1,22 @@
-Włącz lub wyłącz powiadomienia dla konkretnego komentarza.
+Enable or disable notifications for a specific comment.
 
 ## Parametry
 
-| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Tak |  |
-| notificationId | string | path | Tak |  |
-| optedInOrOut | string | path | Tak |  |
-| commentId | string | query | Tak |  |
-| sso | string | query | Nie |  |
+| tenantId | string | query | Yes |  |
+| notificationId | string | path | Yes |  |
+| optedInOrOut | string | path | Yes |  |
+| commentId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Odpowiedź
 
-Zwraca: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationCommentSubscriptionStatusResponse.php)
+Returns: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationCommentSubscriptionStatusResponse.php)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład updateUserNotificationCommentSubscriptionStatus'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserNotificationCommentSubscriptionStatus Przykład'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -24,15 +24,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Jeśli chcesz użyć niestandardowego klienta HTTP, przekaż klienta implementującego `GuzzleHttp\ClientInterface`.
-    // To jest opcjonalne, `GuzzleHttp\Client` zostanie użyty jako domyślny.
+    // Jeśli chcesz używać własnego klienta HTTP, przekaż swój klient implementujący `GuzzleHttp\ClientInterface`.
+    // Jest to opcjonalne, domyślnie zostanie użyty `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $notification_id = 'notification_id_example'; // string
 $opted_in_or_out = 'opted_in_or_out_example'; // string
 $comment_id = 'comment_id_example'; // string
 $sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->updateUserNotificationCommentSubscriptionStatus($tenant_id, $notification_id, $opted_in_or_out, $comment_id, $sso);

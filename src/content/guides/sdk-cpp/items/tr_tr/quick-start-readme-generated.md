@@ -1,8 +1,8 @@
-### Kimlik Doğrulamalı API'lerin Kullanımı (DefaultAPI)
+### Kimlik Doğrulamalı API'leri Kullanma (DefaultAPI)
 
 **Önemli:**
-1. Taban URL'yi ayarlamanız gerekir (cpp-restsdk jeneratörü bunu OpenAPI spesifikasyonundan okumaz)
-2. Kimlik doğrulamalı istekler yapmadan önce ApiClient üzerinde API anahtarınızı ayarlamanız gerekir. Yapmazsanız, istekler 401 hatası ile başarısız olur.
+1. Temel URL'yi ayarlamalısınız (cpp-restsdk üreticisi bunu OpenAPI spec'ten okumaz)
+2. Kimlik doğrulamalı istekler yapmadan önce ApiClient üzerinde API anahtarınızı ayarlamalısınız. Bunu yapmazsanız, istekler 401 hatasıyla başarısız olur.
 
 ```cpp
 #include <iostream>
@@ -14,8 +14,8 @@ int main() {
     auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
 
     // GEREKLİ: Temel URL'yi ayarlayın (bölgenizi seçin)
-    config->setBaseUrl(utility::conversions::to_string_t("https://fastcomments.com"));  // ABD
-    // OR: config->setBaseUrl(utility::conversions::to_string_t("https://eu.fastcomments.com"));  // AB
+    config->setBaseUrl(utility::conversions::to_string_t("https://fastcomments.com"));  // US
+    // VEYA: config->setBaseUrl(utility::conversions::to_string_t("https://eu.fastcomments.com"));  // EU
 
     // GEREKLİ: API anahtarınızı ayarlayın
     config->setApiKey(utility::conversions::to_string_t("api_key"), utility::conversions::to_string_t("YOUR_API_KEY_HERE"));
@@ -23,12 +23,12 @@ int main() {
     auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
     org::openapitools::client::api::DefaultApi api(apiClient);
 
-    // Artık kimlik doğrulamalı API çağrıları yapın
+    // Şimdi kimlik doğrulamalı API çağrılarını yapın
     return 0;
 }
 ```
 
-### Genel Halka Açık API'lerin Kullanımı (PublicAPI)
+### Genel API'leri Kullanma (PublicAPI)
 
 Genel uç noktalar kimlik doğrulama gerektirmez:
 
@@ -47,14 +47,14 @@ int main() {
     auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
     org::openapitools::client::api::PublicApi publicApi(apiClient);
 
-    // Genel halka açık API çağrıları yapın
+    // Genel API çağrıları yapın
     return 0;
 }
 ```
 
-### Moderasyon API'lerinin Kullanımı (ModerationApi)
+### Moderatör API'lerini Kullanma (ModerationApi)
 
-`ModerationApi` moderatör panelini sağlar. Her yöntem bir `sso` parametresini kabul eder, böylece çağrı bir SSO ile kimlik doğrulanmış moderatör adına çalışır (bir belirteç oluşturma hakkında bilgi için aşağıdaki SSO bölümüne bakın):
+`ModerationApi`, moderatör panosunu güçlendirir. Her yöntem bir `sso` parametresi alır; böylece çağrı SSO ile kimlik doğrulamalı bir moderatör adına çalıştırılır (aşağıdaki SSO bölümünde token oluşturma hakkında bilgi bulabilirsiniz):
 
 ```cpp
 #include <iostream>
@@ -71,24 +71,20 @@ int main() {
     auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
     org::openapitools::client::api::ModerationApi moderationApi(apiClient);
 
-    // Çağrıyı kimlik doğrulamak için moderatörün SSO belirtecini iletin
+    // Moderatörün SSO token'ını çağrıyı kimlik doğrulamak için geçin
     auto ssoToken = utility::conversions::to_string_t("YOUR_MODERATOR_SSO_TOKEN");
 
-    auto response = moderationApi.getCount(
-        boost::none,  // textSearch
-        boost::none,  // byIPFromComment
-        boost::none,  // filter
-        boost::none,  // searchFilters
-        boost::none,  // demo
-        ssoToken      // sso
-    ).get();
+    org::openapitools::client::api::GetCountOptions options;
+    options.sso = ssoToken;
+
+    auto response = moderationApi.getCount(options).get();
 
     return 0;
 }
 ```
 
-### Yaygın Sorunlar
+### Ortak Sorunlar
 
-1. **"URI must contain a hostname" hatası**: ApiClient'ı oluşturmadan önce `config->setBaseUrl(utility::conversions::to_string_t("https://fastcomments.com"))` çağrısını yaptığınızdan emin olun. cpp-restsdk jeneratörü sunucu URL'sini OpenAPI spec'ten otomatik olarak okumaz.
-2. **401 "missing-api-key" hatası**: DefaultAPI örneğini oluşturmadan önce `config->setApiKey(utility::conversions::to_string_t("api_key"), utility::conversions::to_string_t("YOUR_KEY"))` çağrısını yaptığınızdan emin olun.
-3. **Yanlış API sınıfı**: Sunucu tarafı kimlik doğrulamalı istekler için `DefaultApi`'yi, istemci tarafı/genel istekler için `PublicApi`'yi ve moderatör paneli istekleri için (moderator SSO belirteci ile kimlik doğrulanan) `ModerationApi`'yi kullanın.
+1. **"URI must contain a hostname" hatası**: `ApiClient` oluşturulmadan önce `config->setBaseUrl(utility::conversions::to_string_t("https://fastcomments.com"))` çağrısını yaptığınızdan emin olun. cpp-restsdk üreticisi sunucu URL'sini OpenAPI spec'ten otomatik olarak okumaz.
+2. **401 "missing-api-key" hatası**: `DefaultAPI` örneği oluşturulmadan önce `config->setApiKey(utility::conversions::to_string_t("api_key"), utility::conversions::to_string_t("YOUR_KEY"))` çağrısını yaptığınızdan emin olun.
+3. **Yanlış API sınıfı**: Sunucu tarafı kimlik doğrulamalı istekler için `DefaultApi`, istemci/halka açık istekler için `PublicApi` ve moderatör paneli istekleri (moderatör SSO token'ı ile kimlik doğrulamalı) için `ModerationApi` kullanın.

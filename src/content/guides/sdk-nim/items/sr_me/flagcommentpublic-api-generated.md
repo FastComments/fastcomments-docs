@@ -1,30 +1,28 @@
-## Параметри
+## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| commentId | string | Да |  |
-| isFlagged | bool | Не |  |
-| sso | string | Не |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| isFlagged | bool | No |  |
+| sso | string = "" | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
+Vraća: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'flagCommentPublic Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'flagCommentPublic Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.flagCommentPublic(
+let (optResp, httpResp) = client.flagCommentPublic(
   tenantId = "my-tenant-123",
   commentId = "cmt-456789",
   isFlagged = true,
   sso = ""
 )
 
-if response.isSome:
-  let apiResp = response.get()
-  discard apiResp
-else:
-  discard httpResponse
+if optResp.isSome:
+  let empty = optResp.get()
+  discard empty
 [inline-code-end]

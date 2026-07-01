@@ -1,39 +1,28 @@
----
-Seznam strani za najemnika. Uporablja ga namizni odjemalec FChat za napolnitev svojega seznama sob. Zahteva, da ima `enableFChat` vrednost true v razrešeni prilagojeni konfiguraciji za vsako stran. Strani, ki zahtevajo SSO, so filtrirane glede na dostop skupin uporabnika, ki poizveduje.
+List pages for a tenant. Used by the FChat desktop client to populate its room list.
+Requires `enableFChat` to be true on the resolved custom config for each page.
+Pages that require SSO are filtered against the requesting user's group access.
 
-## Parametri
+Seznam strani za najemnika. Uporablja ga namizni odjemalec FChat za napolnitev seznama sob.  
+Zahteva, da je `enableFChat` nastavljen na true v razrešenih prilagojenih nastavitvah za vsako stran.  
+Strani, ki zahtevajo SSO, so filtrirane glede na dostop do skupine zahtevajočega uporabnika.
 
-| Ime | Tip | Obvezno | Opis |
+## Parameters
+
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| cursor | string | Ne |  |
-| limit | int | Ne |  |
-| q | string | Ne |  |
-| sortBy | PagesSortBy | Ne |  |
-| hasComments | bool | Ne |  |
+| tenantId | string | Yes |  |
+| options | GetPagesPublicOptions | No |  |
 
-## Odgovor
+## Response
 
-Vrne: [`Option[GetPublicPagesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_public_pages_response.nim)
+Returns: [`Option[GetPublicPagesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_public_pages_response.nim)
 
-## Primer
+## Example
 
 [inline-code-attrs-start title = 'Primer getPagesPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getPagesPublic(
-  tenantId = "my-tenant-123",
-  cursor = "",
-  limit = 0,
-  q = "",
-  sortBy = PagesSortBy(0),
-  hasComments = false
-)
-
+let (response, httpResponse) = client.getPagesPublic(tenantId = "my-tenant-123", options = GetPagesPublicOptions())
 if response.isSome:
   let pages = response.get()
-  echo "Retrieved public pages: ", $pages
-else:
-  echo "No pages returned, HTTP status: ", $httpResponse.status
+  echo pages
 [inline-code-end]
-
----

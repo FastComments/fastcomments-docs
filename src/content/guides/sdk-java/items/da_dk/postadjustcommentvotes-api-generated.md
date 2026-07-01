@@ -2,7 +2,9 @@
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Ja |  |
 | commentId | string | path | Ja |  |
+| broadcastId | string | query | Nej |  |
 | sso | string | query | Nej |  |
 
 ## Svar
@@ -11,7 +13,7 @@ Returnerer: [`AdjustVotesResponse`](https://github.com/FastComments/fastcomments
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på postAdjustCommentVotes'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postAdjustCommentVotes Eksempel'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importer klasser:
 import com.fastcomments.invoker.ApiClient;
@@ -26,15 +28,19 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     AdjustCommentVotesParams adjustCommentVotesParams = new AdjustCommentVotesParams(); // AdjustCommentVotesParams | 
+    String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      AdjustVotesResponse result = apiInstance.postAdjustCommentVotes(commentId, adjustCommentVotesParams)
+      AdjustVotesResponse result = apiInstance.postAdjustCommentVotes(tenantId, commentId, adjustCommentVotesParams)
+            .broadcastId(broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
+      // Undtagelse ved kald af ModerationApi#postAdjustCommentVotes
       System.err.println("Exception when calling ModerationApi#postAdjustCommentVotes");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());

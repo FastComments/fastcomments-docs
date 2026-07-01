@@ -1,59 +1,58 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Местоположение | Обязательный | Описание |
+| Назва | Тип | Розташування | Обов’язковий | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| userId | string | query | Нет |  |
-| state | number | query | Нет |  |
-| skip | number | query | Нет |  |
-| limit | number | query | Нет |  |
+| tenantId | string | query | Так |  |
+| userId | string | query | Ні |  |
+| state | number | query | Ні |  |
+| skip | number | query | Ні |  |
+| limit | number | query | Ні |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tickets_response.py)
+Returns: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tickets_response.py)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример get_tickets'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад get_tickets'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetTicketsOptions
 from client.models.get_tickets_response import GetTicketsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Указание хоста необязательно — по умолчанию используется https://fastcomments.com
-# См. configuration.py для списка всех поддерживаемых параметров конфигурации.
+# Визначення хоста є необов’язковим і за замовчуванням встановлює https://fastcomments.com
+# Дивіться configuration.py для списку всіх підтримуваних параметрів конфігурації.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клиент должен настроить параметры аутентификации и авторизации
-# в соответствии с политикой безопасности сервера API.
-# Ниже приведены примеры для каждого метода аутентификации, используйте пример, который
-# соответствует вашему сценарию использования аутентификации.
+# Клієнт повинен налаштувати параметри автентифікації та авторизації
+# відповідно до політики безпеки сервера API.
+# Приклади для кожного методу автентифікації наведені нижче, використайте приклад, який
+# відповідає вашому випадку використання автентифікації.
 
-# Настройка авторизации с помощью API-ключа: api_key
+# Налаштування авторизації за API ключем: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для API-ключа, если это необходимо
+# Розкоментуйте нижче, щоб встановити префікс (наприклад, Bearer) для API ключа, якщо потрібно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Откройте контекст с экземпляром клиента API
+# Відкрити контекст з екземпляром API клієнта
 with client.ApiClient(configuration) as api_client:
-    # Создайте экземпляр класса API
+    # Створити екземпляр класу API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    user_id = 'user_id_example' # str |  (необязательно)
-    state = 3.4 # float |  (необязательно)
-    skip = 3.4 # float |  (необязательно)
-    limit = 3.4 # float |  (необязательно)
+    user_id = 'user_id_example' # str |  (необов’язковий)
+    state = 3.4 # float |  (необов’язковий)
+    skip = 3.4 # float |  (необов’язковий)
+    limit = 3.4 # float |  (необов’язковий)
 
     try:
-        api_response = api_instance.get_tickets(tenant_id, user_id=user_id, state=state, skip=skip, limit=limit)
+        api_response = api_instance.get_tickets(tenant_id, GetTicketsOptions(user_id=user_id, state=state, skip=skip, limit=limit))
         print("The response of DefaultApi->get_tickets:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling DefaultApi->get_tickets: %s\n" % e)
 [inline-code-end]
-
----

@@ -1,6 +1,6 @@
-### Utiliser les API authentifiées (DefaultApi)
+### Utilisation des API authentifiées (DefaultApi)
 
-**Important :** Vous devez définir votre clé API sur Configuration avant d'effectuer des requêtes authentifiées. Si vous ne le faites pas, les requêtes échoueront avec une erreur 401.
+**Important :** Vous devez définir votre clé API dans la Configuration avant d'effectuer des requêtes authentifiées. Sinon, les requêtes échoueront avec une erreur 401.
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
@@ -26,10 +26,7 @@ try:
         display_name="John Doe"
     )
 
-    response = api.add_sso_user(
-        tenant_id="YOUR_TENANT_ID",
-        create_apisso_user_data=user_data
-    )
+    response = api.add_sso_user("YOUR_TENANT_ID", user_data)
     print(f"User created: {response}")
 
 except Exception as e:
@@ -39,9 +36,9 @@ except Exception as e:
     # - 400: Request validation failed
 ```
 
-### Utiliser les API publiques (PublicApi)
+### Utilisation des API publiques (PublicApi)
 
-Les endpoints publics ne nécessitent pas d'authentification :
+Les points de terminaison publics ne nécessitent pas d'authentification :
 
 ```python
 from client import ApiClient, Configuration, PublicApi
@@ -53,21 +50,19 @@ api_client = ApiClient(configuration=config)
 public_api = PublicApi(api_client)
 
 try:
-    response = public_api.get_comments_public(
-        tenant_id="YOUR_TENANT_ID",
-        url_id="page-url-id"
-    )
+    response = public_api.get_comments_public("YOUR_TENANT_ID", "page-url-id")
     print(response)
 except Exception as e:
     print(f"Error: {e}")
 ```
 
-### Utiliser le tableau de bord de modération (ModerationApi)
+### Utilisation du tableau de bord de modération (ModerationApi)
 
-L'API `ModerationApi` alimente le tableau de bord des modérateurs. Les méthodes sont appelées au nom d'un modérateur en passant un jeton `sso` :
+`ModerationApi` alimente le tableau de bord des modérateurs. Les méthodes sont appelées au nom d'un modérateur en transmettant un jeton `sso` :
 
 ```python
 from client import ApiClient, Configuration, ModerationApi
+from client.api.moderation_api import GetCountOptions
 
 config = Configuration()
 config.host = "https://fastcomments.com/api"
@@ -77,15 +72,15 @@ moderation_api = ModerationApi(api_client)
 
 try:
     # Count the comments awaiting moderation
-    response = moderation_api.get_count(sso="SSO_TOKEN")
+    response = moderation_api.get_count(GetCountOptions(sso="SSO_TOKEN"))
     print(response)
 except Exception as e:
     print(f"Error: {e}")
 ```
 
-### Utiliser SSO (Single Sign-On)
+### Utilisation du SSO (Single Sign-On)
 
-Le SDK inclut des utilitaires pour générer des tokens SSO sécurisés :
+Le SDK inclut des utilitaires pour générer des jetons SSO sécurisés :
 
 ```python
 from sso import FastCommentsSSO, SecureSSOUserData
@@ -111,7 +106,7 @@ sso_token = sso.create_token()
 print(f"SSO Token: {sso_token}")
 ```
 
-For simple SSO (less secure, for testing):
+Pour un SSO simple (moins sécurisé, à des fins de test) :
 
 ```python
 from sso import FastCommentsSSO, SimpleSSOUserData
@@ -127,8 +122,8 @@ sso_token = sso.create_token()
 
 ### Problèmes courants
 
-1. **Erreur 401 « missing-api-key »** : Assurez-vous de définir `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` avant de créer l'instance DefaultApi.
-2. **Mauvaise classe API** : Utilisez `DefaultApi` pour les requêtes authentifiées côté serveur, `PublicApi` pour les requêtes côté client/publiques, et `ModerationApi` pour les requêtes du tableau de bord de modération.
-3. **Erreurs d'importation** : Assurez-vous d'importer depuis le bon module :
-   - API client: `from client import ...`
-   - SSO utilities: `from sso import ...`
+1. **Erreur 401 « missing-api-key »** : Assurez‑vous de définir `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` avant de créer l'instance DefaultApi.  
+2. **Classe d'API incorrecte** : Utilisez `DefaultApi` pour les requêtes authentifiées côté serveur, `PublicApi` pour les requêtes côté client/public, et `ModerationApi` pour les requêtes du tableau de bord des modérateurs.  
+3. **Erreurs d'importation** : Assurez‑vous d'importer depuis le bon module :  
+   - Client API : `from client import ...`  
+   - Utilitaires SSO : `from sso import ...`

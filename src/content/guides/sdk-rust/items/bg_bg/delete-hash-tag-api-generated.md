@@ -2,9 +2,9 @@
 
 | Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
-| tag | String | Да |  |
-| tenant_id | String | Не |  |
-| delete_hash_tag_request_body | models::DeleteHashTagRequestBody | Не |  |
+| tenant_id | String | Yes |  |
+| tag | String | Yes |  |
+| delete_hash_tag_request_body | models::DeleteHashTagRequestBody | No |  |
 
 ## Отговор
 
@@ -14,12 +14,13 @@
 
 [inline-code-attrs-start title = 'delete_hash_tag Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: DeleteHashTagParams = DeleteHashTagParams {
-    tag: "news/article".to_string(),
-    tenant_id: Some("acme-corp-tenant".to_string()),
-    delete_hash_tag_request_body: Some(DeleteHashTagRequestBody {}),
-};
-let response: ApiEmptyResponse = delete_hash_tag(&configuration, params).await?;
+async fn example() -> Result<(), Error> {
+    let params = DeleteHashTagParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        tag: "news/article".to_string(),
+        delete_hash_tag_request_body: Some(models::DeleteHashTagRequestBody {}),
+    };
+    delete_hash_tag(&configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]
-
----

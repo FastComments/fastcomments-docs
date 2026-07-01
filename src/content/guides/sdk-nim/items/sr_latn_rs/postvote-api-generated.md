@@ -1,10 +1,10 @@
 ## Parametri
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Da |  |
 | commentId | string | Da |  |
-| direction | string | Ne |  |
-| sso | string | Ne |  |
+| options | PostVoteOptions | Ne |  |
 
 ## Odgovor
 
@@ -12,14 +12,16 @@ Vraća: [`Option[VoteResponse]`](https://github.com/FastComments/fastcomments-ni
 
 ## Primer
 
-[inline-code-attrs-start title = 'postVote primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postVote Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postVote(commentId = "comment-4f3a9e", direction = "up", sso = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidXNlci0xMjMifQ.signedPart")
-if response.isSome:
-  let vote = response.get()
-  echo "Vote recorded:", vote
-else:
-  echo "No vote returned"
+let (voteOpt, httpResp) = client.postVote(
+  tenantId = "my-tenant-123",
+  commentId = "comment-789",
+  options = default(PostVoteOptions)
+)
+
+if voteOpt.isSome:
+  let vote = voteOpt.get()
 [inline-code-end]
 
 ---

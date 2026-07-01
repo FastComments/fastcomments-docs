@@ -1,10 +1,10 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
-|------|------|----------|----------|-------------|
+| Naam | Type | Locatie | Verplicht | Beschrijving |
+|------|------|----------|-----------|--------------|
 | tenantId | string | query | Ja |  |
 
-## Antwoord
+## Respons
 
 Retourneert: [`CreateEmailTemplateResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateEmailTemplateResponse.php)
 
@@ -16,20 +16,22 @@ Retourneert: [`CreateEmailTemplateResponse`](https://github.com/FastComments/fas
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configureer API-sleutelautorisatie: api_key
+// Configureer API-sleutel autorisatie: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Haal de onderstaande regel uit commentaar om een voorvoegsel in te stellen (bijv. Bearer) voor de API-sleutel, indien nodig
+// Uncomment hieronder om prefix in te stellen (bijv. Bearer) voor API-sleutel, indien nodig
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Als u een aangepaste HTTP-client wilt gebruiken, geef dan uw client door die `GuzzleHttp\ClientInterface` implementeert.
-    // Dit is optioneel; `GuzzleHttp\Client` wordt standaard gebruikt.
+    // Als je een aangepaste http-client wilt gebruiken, geef je je client door die `GuzzleHttp\ClientInterface` implementeert.
+    // Dit is optioneel, `GuzzleHttp\Client` zal als standaard worden gebruikt.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $create_email_template_body = new \FastComments\Client\Model\CreateEmailTemplateBody(); // \FastComments\Client\Model\CreateEmailTemplateBody
+
 
 try {
     $result = $apiInstance->createEmailTemplate($tenant_id, $create_email_template_body);
@@ -38,3 +40,5 @@ try {
     echo 'Exception when calling DefaultApi->createEmailTemplate: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

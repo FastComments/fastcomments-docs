@@ -1,6 +1,6 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | id | string | 아니오 |  |
@@ -10,26 +10,23 @@
 
 반환: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'updateTenant 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateTenant 예시'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateTenant(
-  tenantId = "my-tenant-123",
-  id = "settings",
-  updateTenantBody = UpdateTenantBody(
-    name = "My Tenant 123",
-    enableModeration = true,
-    allowedDomains = @["news.example.com", "blog.example.org"],
-    maxCommentLength = 1000
-  )
+let updateBody = UpdateTenantBody(
+  name: "My Tenant",
+  description: "Tenant for news site",
+  isActive: true,
+  allowedDomains: @["example.com", "news.com"]
 )
 
-if response.isSome:
-  let apiResp = response.get()
-  echo "Tenant updated successfully: ", apiResp
-else:
-  echo "Failed to update tenant, HTTP status: ", httpResponse.status
-[inline-code-end]
+let (apiResp, httpResp) = client.updateTenant(
+  tenantId = "my-tenant-123",
+  id = "tenant-456",
+  updateTenantBody = updateBody
+)
 
----
+if apiResp.isSome:
+  let emptyResp = apiResp.get()
+[inline-code-end]

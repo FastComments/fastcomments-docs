@@ -1,7 +1,8 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательный | Описание |
-|------|------|----------|----------|-------------|
+| Имя | Тип | Местоположение | Обязательно | Описание |
+|------|------|----------------|--------------|----------|
+| tenantId | string | query | Да |  |
 | urlId | string | query | Да |  |
 | sso | string | query | Нет |  |
 
@@ -11,29 +12,30 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример put_reopen_thread'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'put_reopen_thread Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Указание host необязательно и по умолчанию равно https://fastcomments.com
-# Смотрите configuration.py для списка всех поддерживаемых параметров конфигурации.
+# Определение хоста необязательно и по умолчанию https://fastcomments.com
+# См. configuration.py для списка всех поддерживаемых параметров конфигурации.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Войдите в контекст с экземпляром API-клиента
+# Войдите в контекст с экземпляром клиента API
 with client.ApiClient(configuration) as api_client:
     # Создайте экземпляр класса API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
     sso = 'sso_example' # str |  (необязательно)
 
     try:
-        api_response = api_instance.put_reopen_thread(url_id, sso=sso)
+        api_response = api_instance.put_reopen_thread(tenant_id, url_id, sso=sso)
         print("The response of ModerationApi->put_reopen_thread:\n")
         pprint(api_response)
     except Exception as e:

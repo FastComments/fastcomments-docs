@@ -1,13 +1,14 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| text-search | string | query | Nie |  |
-| byIPFromComment | string | query | Nie |  |
-| filters | string | query | Nie |  |
-| searchFilters | string | query | Nie |  |
-| sorts | string | query | Nie |  |
-| sso | string | query | Nie |  |
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sorts | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Odpowiedź
 
@@ -15,12 +16,13 @@ Zwraca: [`ModerationExportResponse`](https://github.com/FastComments/fastcomment
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład post_api_export'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_api_export Przykład'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 opts = {
   text_search: 'text_search_example', # String | 
   by_ip_from_comment: 'by_ip_from_comment_example', # String | 
@@ -32,11 +34,9 @@ opts = {
 
 begin
   
-  result = api_instance.post_api_export(opts)
+  result = api_instance.post_api_export(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_api_export: #{e}"
 end
 [inline-code-end]
-
----

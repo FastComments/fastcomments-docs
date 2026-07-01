@@ -8,9 +8,7 @@ afterId
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
-| afterId | string | No |  |
-| limit | int32_t | No |  |
-| tags | vector<string | No |  |
+| options | const GetFeedPostsOptions& | Yes |  |
 
 ## Response
 
@@ -20,18 +18,10 @@ Returns: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-c
 
 [inline-code-attrs-start title = 'getFeedPosts Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-boost::optional<utility::string_t> afterId = boost::optional<utility::string_t>(U("post_987"));
-boost::optional<int32_t> limit = boost::optional<int32_t>(50);
-boost::optional<std::vector<utility::string_t>> tags = boost::optional<std::vector<utility::string_t>>(std::vector<utility::string_t>{ U("release"), U("security") });
-api->getFeedPosts(tenantId, afterId, limit, tags)
-    .then([](pplx::task<std::shared_ptr<GetFeedPostsResponse>> t) {
-        try {
-            auto resp = t.get();
-            auto result = resp ? resp : std::make_shared<GetFeedPostsResponse>();
-            std::cout << "Received feed response" << std::endl;
-        } catch (const std::exception& ex) {
-            std::cerr << "getFeedPosts failed: " << ex.what() << std::endl;
-        }
-    });
+auto opts = std::make_shared<GetFeedPostsOptions>();
+opts->maxResults = boost::optional<int>(50);
+opts->cursor = boost::optional<utility::string_t>(U("next-cursor"));
+api->getFeedPosts(U("my-tenant-123"), *opts).then([](std::shared_ptr<GetFeedPostsResponse> resp) {
+    auto count = resp->posts.size();
+});
 [inline-code-end]

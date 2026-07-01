@@ -1,22 +1,24 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Oui |  |
 | value | string | query | Non |  |
 | sso | string | query | Non |  |
 
 ## Réponse
 
-Retourne: [`ModerationPageSearchResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/moderation_page_search_response.rb)
+Renvoie : [`ModerationPageSearchResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/moderation_page_search_response.rb)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de get_search_pages'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple get_search_pages'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # Chaîne | 
 opts = {
   value: 'value_example', # Chaîne | 
   sso: 'sso_example' # Chaîne | 
@@ -24,11 +26,9 @@ opts = {
 
 begin
   
-  result = api_instance.get_search_pages(opts)
+  result = api_instance.get_search_pages(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_search_pages: #{e}"
 end
 [inline-code-end]
-
----

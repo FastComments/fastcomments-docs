@@ -2,10 +2,10 @@
 
 | Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| commentId | string | Да |  |
-| broadcastId | string | Не |  |
-| sso | string | Не |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| broadcastId | string | No |  |
+| sso | string = "" | No |  |
 
 ## Одговор
 
@@ -13,14 +13,16 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'pinComment пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'pinComment Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.pinComment(tenantId = "my-tenant-123", commentId = "cmt-98765", broadcastId = "", sso = "")
-if response.isSome:
-  let pinnedResp = response.get()
-  echo "Pin status updated for comment cmt-98765"
-else:
-  echo "No response received"
-[inline-code-end]
+let (pinResult, httpResp) = client.pinComment(
+  tenantId = "my-tenant-123",
+  commentId = "cmt-456789",
+  broadcastId = "broadcast-001",
+  sso = "",
+)
 
----
+if pinResult.isSome:
+  let response = pinResult.get()
+  echo response
+[inline-code-end]

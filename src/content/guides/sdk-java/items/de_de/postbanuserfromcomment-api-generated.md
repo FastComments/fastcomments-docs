@@ -1,26 +1,26 @@
----
 ## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Ja |  |
-| banEmail | boolean | query | Nein |  |
-| banEmailDomain | boolean | query | Nein |  |
-| banIP | boolean | query | Nein |  |
-| deleteAllUsersComments | boolean | query | Nein |  |
-| bannedUntil | string | query | Nein |  |
-| isShadowBan | boolean | query | Nein |  |
-| updateId | string | query | Nein |  |
-| banReason | string | query | Nein |  |
-| sso | string | query | Nein |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| banEmail | boolean | query | No |  |
+| banEmailDomain | boolean | query | No |  |
+| banIP | boolean | query | No |  |
+| deleteAllUsersComments | boolean | query | No |  |
+| bannedUntil | string | query | No |  |
+| isShadowBan | boolean | query | No |  |
+| updateId | string | query | No |  |
+| banReason | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Antwort
 
-Gibt zurück: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/BanUserFromCommentResult.java)
+Rückgabe: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/BanUserFromCommentResult.java)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'Beispiel für postBanUserFromComment'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postBanUserFromComment Beispiel'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Klassen importieren:
 import com.fastcomments.invoker.ApiClient;
@@ -35,6 +35,7 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     Boolean banEmail = true; // Boolean | 
     Boolean banEmailDomain = true; // Boolean | 
@@ -46,7 +47,7 @@ public class Example {
     String banReason = "banReason_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      BanUserFromCommentResult result = apiInstance.postBanUserFromComment(commentId)
+      BanUserFromCommentResult result = apiInstance.postBanUserFromComment(tenantId, commentId)
             .banEmail(banEmail)
             .banEmailDomain(banEmailDomain)
             .banIP(banIP)
@@ -68,5 +69,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

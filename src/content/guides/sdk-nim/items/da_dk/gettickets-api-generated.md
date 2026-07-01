@@ -1,14 +1,11 @@
 ## Parametre
 
-| Name | Type | Påkrævet | Beskrivelse |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
-| userId | string | Nej |  |
-| state | float64 | Nej |  |
-| skip | float64 | Nej |  |
-| limit | float64 | Nej |  |
+| options | GetTicketsOptions | Nej |  |
 
-## Respons
+## Svar
 
 Returnerer: [`Option[GetTicketsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_tickets_response.nim)
 
@@ -16,10 +13,8 @@ Returnerer: [`Option[GetTicketsResponse]`](https://github.com/FastComments/fastc
 
 [inline-code-attrs-start title = 'getTickets Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTickets(tenantId = "my-tenant-123", userId = "user-789", state = 1.0, skip = 0.0, limit = 50.0)
-if response.isSome:
-  let tickets = response.get()
-  echo tickets
+let (ticketsOpt, httpResp) = client.getTickets(tenantId = "my-tenant-123", options = GetTicketsOptions())
+if ticketsOpt.isSome:
+  let tickets = ticketsOpt.get()
+  # brug tickets efter behov
 [inline-code-end]
-
----

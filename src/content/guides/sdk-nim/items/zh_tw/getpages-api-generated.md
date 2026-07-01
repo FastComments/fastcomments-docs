@@ -1,23 +1,22 @@
 ## 參數
 
-| 名稱 | 類型 | 必填 | 描述 |
-|------|------|----------|-------------|
-| tenantId | string | 是 |  |
+| 名稱 | 類型 | 必填 | 說明 |
+|------|------|------|------|
+| tenantId | string | Yes |  |
 
 ## 回應
 
-回傳: [`Option[GetPagesAPIResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_pages_api_response.nim)
+Returns: [`Option[GetPagesAPIResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_pages_api_response.nim)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getPages 範例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getPages(tenantId = "news-site-456")
-if response.isSome:
-  let pages = response.get()
-  echo "Received pages response: ", pages
+let (pagesOpt, httpResp) = client.getPages(tenantId = "my-tenant-123")
+if pagesOpt.isSome:
+  let pages = pagesOpt.get()
+  echo pages
 else:
-  echo "No pages returned. HTTP response: ", httpResponse
+  echo "No pages returned"
+echo httpResp
 [inline-code-end]
-
----

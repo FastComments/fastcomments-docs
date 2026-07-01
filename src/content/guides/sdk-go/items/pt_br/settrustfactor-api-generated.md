@@ -1,18 +1,19 @@
-## Parâmetros
+## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Localização | Obrigatório | Descrição |
+|------|------|-------------|-------------|-----------|
+| tenantId | string | query | Sim |  |
 | userId | string | query | Não |  |
 | trustFactor | string | query | Não |  |
 | sso | string | query | Não |  |
 
-## Resposta
+## Response
 
 Retorna: [`SetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_set_user_trust_factor_response.go)
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de SetTrustFactor'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo SetTrustFactor'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -24,18 +25,19 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	userId := "userId_example" // string |  (opcional)
 	trustFactor := "trustFactor_example" // string |  (opcional)
 	sso := "sso_example" // string |  (opcional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.SetTrustFactor(context.Background()).UserId(userId).TrustFactor(trustFactor).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.SetTrustFactor(context.Background()).TenantId(tenantId).UserId(userId).TrustFactor(trustFactor).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.SetTrustFactor``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Erro ao chamar `ModerationAPI.SetTrustFactor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Resposta HTTP completa: %v\n", r)
 	}
 	// resposta de `SetTrustFactor`: SetUserTrustFactorResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.SetTrustFactor`: %v\n", resp)
+	fmt.Fprintf(os.Stdout, "Resposta de `ModerationAPI.SetTrustFactor`: %v\n", resp)
 }
 [inline-code-end]

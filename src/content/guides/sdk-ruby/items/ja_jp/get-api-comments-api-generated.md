@@ -1,22 +1,23 @@
-## パラメータ
+## Parameters
 
-| 名前 | 型 | Location | 必須 | 説明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| page | number | query | いいえ |  |
-| count | number | query | いいえ |  |
-| text-search | string | query | いいえ |  |
-| byIPFromComment | string | query | いいえ |  |
-| filters | string | query | いいえ |  |
-| searchFilters | string | query | いいえ |  |
-| sorts | string | query | いいえ |  |
-| demo | boolean | query | いいえ |  |
-| sso | string | query | いいえ |  |
+| tenantId | string | query | Yes |  |
+| page | number | query | No |  |
+| count | number | query | No |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sorts | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
-## レスポンス
+## Response
 
-戻り値: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/moderation_a_p_i_get_comments_response.rb)
+Returns: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/moderation_a_p_i_get_comments_response.rb)
 
-## 例
+## Example
 
 [inline-code-attrs-start title = 'get_api_comments の例'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -24,6 +25,7 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 opts = {
   page: 1.2, # Float | 
   count: 1.2, # Float | 
@@ -38,7 +40,7 @@ opts = {
 
 begin
   
-  result = api_instance.get_api_comments(opts)
+  result = api_instance.get_api_comments(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_api_comments: #{e}"

@@ -16,15 +16,15 @@ Returns: [`UploadImageResponse`](https://github.com/FastComments/fastcomments-sw
 
 [inline-code-attrs-start title = 'uploadImage Example'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// The following code samples are still in beta. If you encounter any issues, please report them at http://github.com/OpenAPITools/openapi-generator/issues/new
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let file = URL(string: "https://example.com")! // URL | 
-let sizePreset = SizePreset() // SizePreset | Size preset: \"Default\" (1000x1000px) or \"CrossPlatform\" (generates sizes for common devices) (optional)
-let urlId = "urlId_example" // String | Page ID that the upload is originating from, used for configuration (optional)
+let sizePreset = SizePreset() // SizePreset | Size preset: \"Default\" (1000x1000px) or \"CrossPlatform\" (creates sizes for popular devices) (optional)
+let urlId = "urlId_example" // String | Page id that upload is happening from, to configure (optional)
 
-PublicAPI.uploadImage(tenantId: tenantId, file: file, sizePreset: sizePreset, urlId: urlId) { (response, error) in
+PublicAPI.uploadImage(tenantId: tenantId, file: file, options: PublicAPI.UploadImageOptions(sizePreset: sizePreset, urlId: urlId)) { (response, error) in
     guard error == nil else {
         print(error)
         return

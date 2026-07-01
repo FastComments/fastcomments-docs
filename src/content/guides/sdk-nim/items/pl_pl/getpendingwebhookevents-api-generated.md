@@ -1,15 +1,9 @@
----
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
 | tenantId | string | Tak |  |
-| commentId | string | Tak |  |
-| externalId | string | Nie |  |
-| eventType | string | Nie |  |
-| domain | string | Nie |  |
-| attemptCountGT | float64 | Nie |  |
-| skip | float64 | Nie |  |
+| options | GetPendingWebhookEventsOptions | Nie |  |
 
 ## Odpowiedź
 
@@ -17,20 +11,13 @@ Zwraca: [`Option[GetPendingWebhookEventsResponse]`](https://github.com/FastComme
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład użycia getPendingWebhookEvents'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getPendingWebhookEvents Przykład'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getPendingWebhookEvents(
+let (maybeResp, httpResp) = client.getPendingWebhookEvents(
   tenantId = "my-tenant-123",
-  commentId = "cmt-987654",
-  externalId = "",
-  eventType = "",
-  domain = "",
-  attemptCountGT = 0.0,
-  skip = 0.0
+  options = GetPendingWebhookEventsOptions()
 )
-if response.isSome:
-  let pending = response.get()
-  discard pending
-[inline-code-end]
 
----
+if maybeResp.isSome:
+  let resp = maybeResp.get()
+[inline-code-end]

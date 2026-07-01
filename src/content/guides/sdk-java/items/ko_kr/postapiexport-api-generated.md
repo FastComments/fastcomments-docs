@@ -2,12 +2,13 @@
 
 | 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| text-search | string | query | No |  |
-| byIPFromComment | string | query | No |  |
-| filters | string | query | No |  |
-| searchFilters | string | query | No |  |
-| sorts | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | 예 |  |
+| text-search | string | query | 아니오 |  |
+| byIPFromComment | string | query | 아니오 |  |
+| filters | string | query | 아니오 |  |
+| searchFilters | string | query | 아니오 |  |
+| sorts | string | query | 아니오 |  |
+| sso | string | query | 아니오 |  |
 
 ## 응답
 
@@ -30,6 +31,7 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String textSearch = "textSearch_example"; // String | 
     String byIPFromComment = "byIPFromComment_example"; // String | 
     String filters = "filters_example"; // String | 
@@ -37,7 +39,7 @@ public class Example {
     String sorts = "sorts_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationExportResponse result = apiInstance.postApiExport()
+      ModerationExportResponse result = apiInstance.postApiExport(tenantId)
             .textSearch(textSearch)
             .byIPFromComment(byIPFromComment)
             .filters(filters)

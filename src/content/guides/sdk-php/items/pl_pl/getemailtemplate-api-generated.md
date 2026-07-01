@@ -1,9 +1,9 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Tak |  |
-| id | string | path | Tak |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
 ## Odpowiedź
 
@@ -11,7 +11,7 @@ Zwraca: [`GetEmailTemplateResponse`](https://github.com/FastComments/fastcomment
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład getEmailTemplate'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getEmailTemplate Przykład'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -24,13 +24,15 @@ $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKe
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Jeśli chcesz użyć niestandardowego klienta HTTP, przekaż klienta implementującego `GuzzleHttp\ClientInterface`.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
+
 
 try {
     $result = $apiInstance->getEmailTemplate($tenant_id, $id);
@@ -39,5 +41,3 @@ try {
     echo 'Exception when calling DefaultApi->getEmailTemplate: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

@@ -1,24 +1,24 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| page | integer | query | Не |  |
-| limit | integer | query | Не |  |
-| skip | integer | query | Не |  |
-| asTree | boolean | query | Не |  |
-| skipChildren | integer | query | Не |  |
-| limitChildren | integer | query | Не |  |
-| maxTreeDepth | integer | query | Не |  |
-| urlId | string | query | Не |  |
-| userId | string | query | Не |  |
-| anonUserId | string | query | Не |  |
-| contextUserId | string | query | Не |  |
-| hashTag | string | query | Не |  |
-| parentId | string | query | Не |  |
-| direction | string | query | Не |  |
-| fromDate | integer | query | Не |  |
-| toDate | integer | query | Не |  |
+| tenantId | string | query | Yes |  |
+| page | integer | query | No |  |
+| limit | integer | query | No |  |
+| skip | integer | query | No |  |
+| asTree | boolean | query | No |  |
+| skipChildren | integer | query | No |  |
+| limitChildren | integer | query | No |  |
+| maxTreeDepth | integer | query | No |  |
+| urlId | string | query | No |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
+| contextUserId | string | query | No |  |
+| hashTag | string | query | No |  |
+| parentId | string | query | No |  |
+| direction | string | query | No |  |
+| fromDate | integer | query | No |  |
+| toDate | integer | query | No |  |
 
 ## Отговор
 
@@ -26,9 +26,9 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за getComments'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getComments Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следните примерни фрагменти от код все още са в бета. За проблем, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следващите примерни кодове все още са бета. При какъвто и да е проблем, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -49,7 +49,7 @@ let direction = SortDirections() // SortDirections |  (по избор)
 let fromDate = 987 // Int64 |  (по избор)
 let toDate = 987 // Int64 |  (по избор)
 
-DefaultAPI.getComments(tenantId: tenantId, page: page, limit: limit, skip: skip, asTree: asTree, skipChildren: skipChildren, limitChildren: limitChildren, maxTreeDepth: maxTreeDepth, urlId: urlId, userId: userId, anonUserId: anonUserId, contextUserId: contextUserId, hashTag: hashTag, parentId: parentId, direction: direction, fromDate: fromDate, toDate: toDate) { (response, error) in
+DefaultAPI.getComments(tenantId: tenantId, options: DefaultAPI.GetCommentsOptions(page: page, limit: limit, skip: skip, asTree: asTree, skipChildren: skipChildren, limitChildren: limitChildren, maxTreeDepth: maxTreeDepth, urlId: urlId, userId: userId, anonUserId: anonUserId, contextUserId: contextUserId, hashTag: hashTag, parentId: parentId, direction: direction, fromDate: fromDate, toDate: toDate)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -60,3 +60,5 @@ DefaultAPI.getComments(tenantId: tenantId, page: page, limit: limit, skip: skip,
     }
 }
 [inline-code-end]
+
+---

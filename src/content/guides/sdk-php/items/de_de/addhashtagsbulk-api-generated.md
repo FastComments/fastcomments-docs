@@ -2,11 +2,11 @@
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Nein |  |
+| tenantId | string | query | Ja |  |
 
 ## Antwort
 
-Gibt zurück: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/BulkCreateHashTagsResponse.php)
+Rückgabe: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/BulkCreateHashTagsResponse.php)
 
 ## Beispiel
 
@@ -16,9 +16,9 @@ Gibt zurück: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fas
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// API-Schlüssel-Authentifizierung konfigurieren: api_key
+// Konfigurieren Sie die API-Schlüsselautorisierung: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Entfernen Sie das Kommentarzeichen unten, um ein Präfix (z. B. Bearer) für den API-Schlüssel zu setzen, falls erforderlich
+// Entkommentieren Sie unten, um ein Präfix (z. B. Bearer) für den API-Schlüssel einzurichten, falls nötig
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
@@ -28,8 +28,10 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $bulk_create_hash_tags_body = new \FastComments\Client\Model\BulkCreateHashTagsBody(); // \FastComments\Client\Model\BulkCreateHashTagsBody
+
 
 try {
     $result = $apiInstance->addHashTagsBulk($tenant_id, $bulk_create_hash_tags_body);

@@ -1,15 +1,16 @@
----
 ## 參數
 
 | 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
-| commentId | string | path | 是 |  |
-| approved | boolean | query | 否 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| approved | boolean | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## 回應
 
-回傳： [`SetCommentApprovedResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_set_comment_approved_response.go)
+返回：[`SetCommentApprovedResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_set_comment_approved_response.go)
 
 ## 範例
 
@@ -25,20 +26,20 @@ import (
 )
 
 func main() {
-	commentId := "commentId_example" // string | 
-	approved := true // bool |  (可選)
-	sso := "sso_example" // string |  (可選)
+	tenantId := "tenantId_example" // string |
+	commentId := "commentId_example" // string |
+	approved := true // bool |  （可選）
+	broadcastId := "broadcastId_example" // string |  （可選）
+	sso := "sso_example" // string |  （可選）
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostSetCommentApprovalStatus(context.Background(), commentId).Approved(approved).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostSetCommentApprovalStatus(context.Background(), commentId).TenantId(tenantId).Approved(approved).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostSetCommentApprovalStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// 回應自 `PostSetCommentApprovalStatus`: SetCommentApprovedResponse
+	// 回應自 `PostSetCommentApprovalStatus`：SetCommentApprovedResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostSetCommentApprovalStatus`: %v\n", resp)
 }
 [inline-code-end]
-
----

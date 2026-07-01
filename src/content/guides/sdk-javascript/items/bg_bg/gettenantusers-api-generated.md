@@ -1,23 +1,24 @@
-## Параметри
+## Parameters
 
-| Име | Тип | Задължителен | Описание |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | skip | number | Не |  |
 
-## Отговор
+## Response
 
-Връща: [`GetTenantUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantUsersResponse.ts)
+Връща: [`GetTenantUsersResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantUsersResponse1.ts)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'Пример на getTenantUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTenantUsers Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
-  const tenantId: string = 'tenant_7f3b2a9c';
-  const skip: number = 20; // демонстриран незадължителен параметър
-  const result: GetTenantUsersResponse = await getTenantUsers(tenantId, skip);
-  console.log(result);
+  const tenantId: string = "tenant_9f7a2c";
+  const skip: number = 25;
+
+  const usersPage: GetTenantUsersResponse1 = await getTenantUsers(tenantId, skip);
+  const allUsers: GetTenantUsersResponse1 = await getTenantUsers(tenantId);
 })();
 [inline-code-end]
 

@@ -1,21 +1,26 @@
----
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| batchJobId | string | Не |  |
-| sso | string | Не |  |
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| batchJobId | string | Ne |  |
+| tenantId | string | Ne |  |
+| sso | string | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationExportStatusResponse.ts)
+Vraća: [`GetApiExportStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetApiExportStatusResponse.ts)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример getApiExportStatus'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getApiExportStatus Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const statusByBatch: ModerationExportStatusResponse = await getApiExportStatus('export_20260615_84c2');
-const statusBySso: ModerationExportStatusResponse = await getApiExportStatus(undefined, 'sso_84c2f1b2');
-[inline-code-end]
+async function demoExportStatus() {
+    const batchJobId: string = "exportBatch-20231101-001";
+    const tenantId: string = "tenant-abc123";
+    const ssoToken: string = "sso-xyz789";
 
----
+    const fullStatus: GetApiExportStatusResponse = await getApiExportStatus(batchJobId, tenantId, ssoToken);
+    const simpleStatus: GetApiExportStatusResponse = await getApiExportStatus(batchJobId);
+    console.log(fullStatus, simpleStatus);
+}
+[inline-code-end]

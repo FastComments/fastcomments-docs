@@ -1,14 +1,13 @@
 ## Parámetros
 
-| Name | Type | Obligatorio | Descripción |
-|------|------|------------|-------------|
+| Nombre | Tipo | Obligatorio | Descripción |
+|--------|------|-------------|-------------|
 | tenantId | string | Sí |  |
 | commentId | string | Sí |  |
 | urlId | string | Sí |  |
 | broadcastId | string | No |  |
 | voteBodyParams | VoteBodyParams | No |  |
-| sessionId | string | No |  |
-| sso | string | No |  |
+| options | VoteCommentOptions | No |  |
 
 ## Respuesta
 
@@ -16,23 +15,17 @@ Devuelve: [`Option[VoteResponse]`](https://github.com/FastComments/fastcomments-
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de voteComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo voteComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.voteComment(
+let (voteRespOpt, httpResp) = client.voteComment(
   tenantId = "my-tenant-123",
-  commentId = "cmt-987654321",
-  urlId = "news/article-2026-inflation",
+  commentId = "comment-98765",
+  urlId = "blog/how-to-code",
   broadcastId = "",
   voteBodyParams = VoteBodyParams(),
-  sessionId = "",
-  sso = ""
+  options = VoteCommentOptions()
 )
 
-if response.isSome:
-  let voteResp = response.get()
-  discard voteResp
-else:
-  discard httpResponse
+if voteRespOpt.isSome:
+  let voteResp = voteRespOpt.get()
 [inline-code-end]
-
----

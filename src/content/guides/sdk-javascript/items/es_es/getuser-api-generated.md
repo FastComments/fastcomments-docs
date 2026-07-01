@@ -1,25 +1,21 @@
 ## Parámetros
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Sí |  |
-| id | string | Sí |  |
+| Nombre | Tipo | Requerido | Descripción |
+|--------|------|-----------|-------------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
 ## Respuesta
 
-Devuelve: [`GetUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserResponse.ts)
+Devuelve: [`GetUserResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserResponse1.ts)
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de getUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo getUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_8f2c1b4a";
-const id: string = "user_5a3b2c1d";
-const result: GetUserResponse = await getUser(tenantId, id);
-const status: APIStatus | undefined = result.status;
-const user: User | undefined = result.user;
-const digestFrequency: DigestEmailFrequency | undefined = user?.digestEmailFrequency;
-const importedAgentFrequency: ImportedAgentApprovalNotificationFrequency | undefined = user?.importedAgentApprovalNotificationFrequency;
+(async () => {
+  const tenantId: string = "tenant_12345";
+  const userId: string = "user_98765";
+  const result: GetUserResponse1 = await getUser(tenantId, userId);
+})();
 [inline-code-end]
-
----

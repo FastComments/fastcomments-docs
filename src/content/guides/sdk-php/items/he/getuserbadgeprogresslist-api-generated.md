@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | userId | string | query | No |  |
@@ -13,31 +13,42 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getUserBadgeProgressList'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה getUserBadgeProgressList'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// הגדר את אישור מפתח ה-API: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// הסר את ההערה להלן כדי להגדיר קידומת (למשל Bearer) עבור מפתח ה-API, אם נדרש
+// Configure API key authorization: api_key
+// קונפיגורציית הרשאת מפתח API: api_key
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// בטל את ההערה למטה כדי להגדיר קידומת (לדוגמה Bearer) למפתח ה‑API, אם נדרש
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // אם ברצונך להשתמש בלקוח HTTP מותאם אישית, העבר את הלקוח שמממש את `GuzzleHttp\ClientInterface`.
-    // זה אופציונלי, `GuzzleHttp\Client` ישמש כברירת מחדל.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // אם ברצונך להשתמש ב‑client HTTP מותאם, העבר את ה‑client שלך שמממש `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // זאת אפשרות, `GuzzleHttp\Client` ישמש כברירת מחדל.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // מחרוזת
-$user_id = 'user_id_example'; // מחרוזת
-$limit = 3.4; // מספר עשרוני
-$skip = 3.4; // מספר עשרוני
+
+$tenant_id = 'tenant_id_example'; // string
+// מחרוזת
+$options = [
+    'user_id' => 'user_id_example', // string
+    // מחרוזת
+    'limit' => 3.4, // float
+    // float
+    'skip' => 3.4, // float
+    // float
+];
+
 
 try {
-    $result = $apiInstance->getUserBadgeProgressList($tenant_id, $user_id, $limit, $skip);
+    $result = $apiInstance->getUserBadgeProgressList($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getUserBadgeProgressList: ', $e->getMessage(), PHP_EOL;

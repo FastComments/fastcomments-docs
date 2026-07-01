@@ -1,20 +1,20 @@
-ה-FastComments Rust SDK מורכב ממספר מודולים:
+The FastComments Rust SDK consists of several modules:
 
 - **Client Module** - לקוח API עבור FastComments REST APIs
-  - הגדרות טיפוס מלאות לכל דגמי ה-API
+  - הגדרות סוגים מלאות עבור כל מודלי ה-API
   - שלושה לקוחות API המכסים את כל השיטות של FastComments:
-    - `default_api` (**DefaultApi**) - שיטות המאומתות באמצעות מפתח API לשימוש בצד השרת
-    - `public_api` (**PublicApi**) - שיטות ציבוריות, ללא מפתח API, שניתן לקרוא מהדפדפנים ומאפליקציות ניידות בבטחה
-    - `moderation_api` (**ModerationApi**) - שיטות התומכות בלוח הבקרה של המודרטור, כולל ניהול הערות (רשימה, ספירה, חיפוש, יומנים, ייצוא), פעולות מודרציה (הסרה/שחזור, דיווח/הדגלה, קביעת מצב לבדיקה/ספאם/אישור, הצבעות, פתיחה מחדש/סגירת שרשור), איסורים (חסימה מתוך תגובה, ביטול, סיכומי טרום-חסימה, מצב/העדפות חסימה, ספירות משתמשים שחוסמו), וסמלים ואמון (הענקה/הסרה של סמלים, סמלים ידניים, קבלת/הגדרת גורם אמון, פרופיל פנימי של משתמש). כל שיטת Moderation מקבלת פרמטר `sso` כך שהקריאה יכולה להתבצע בשם מודרטור שאומת באמצעות SSO.
-  - תמיכה מלאה ב-async/await באמצעות tokio
-  - ראה [client/README.md](https://github.com/FastComments/fastcomments-rust/blob/main/client/README.md) לתיעוד מפורט של ה-API
+    - `default_api` (**DefaultApi**) - שיטות מאומתות במפתח API לשימוש בצד השרת
+    - `public_api` (**PublicApi**) - שיטות ציבוריות, ללא מפתח API, בטוחות לשימוש מדפדפנים ואפליקציות מובייל
+    - `moderation_api` (**ModerationApi**) - חבילה נרחבת של API של מודרציה בזמן אמת ומהירה. כל שיטת מודרציה מקבלת פרמטר `sso` ויכולה לאמת באמצעות SSO או עוגיית סשן של FastComments.com.
+  - תמיכה מלאה ב-async/await עם tokio
+  - ראה [client/README.md](https://github.com/FastComments/fastcomments-rust/blob/main/client/README.md) לתיעוד API מפורט
 
-- **SSO Module** - כלים של Single Sign-On בצד השרת
+- **SSO Module** - כלי Single Sign-On בצד השרת
   - יצירת אסימון מאובטח לאימות משתמש
-  - תמיכה גם במצב SSO פשוט וגם במצב SSO מאובטח
-  - חתימת אסימונים מבוססת HMAC-SHA256
+  - תמיכה במצב SSO פשוט ומאובטח
+  - חתימת אסימון מבוססת HMAC-SHA256
 
-- **Core Types** - הגדרות טיפוס וכלים משותפים
-  - דגמי תגובות ומבני מטא-נתונים
-  - הגדרות משתמש ושוכרים
+- **Core Types** - הגדרות סוג משותפות וכלים
+  - מודלים של תגובות ומבני מטא-דאטה
+  - הגדרות משתמש ודייר
   - פונקציות עזר לפעולות נפוצות

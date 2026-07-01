@@ -1,11 +1,11 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| locale | string | query | Нет |  |
-| rating | string | query | Нет |  |
-| page | number | query | Нет |  |
+| Имя | Тип | Местоположение | Обязательно | Описание |
+|------|------|----------------|--------------|----------|
+| tenantId | string | путь | Да |  |
+| locale | string | запрос | Нет |  |
+| rating | string | запрос | Нет |  |
+| page | number | запрос | Нет |  |
 
 ## Ответ
 
@@ -16,18 +16,19 @@
 [inline-code-attrs-start title = 'Пример get_gifs_trending'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetGifsTrendingOptions
 from client.models.get_gifs_trending_response import GetGifsTrendingResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Указание host необязательно и по умолчанию равно https://fastcomments.com
+# Определение хоста является необязательным и по умолчанию https://fastcomments.com
 # См. configuration.py для списка всех поддерживаемых параметров конфигурации.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Откройте контекст с экземпляром клиента API
+# Войдите в контекст с экземпляром клиента API
 with client.ApiClient(configuration) as api_client:
     # Создайте экземпляр класса API
     api_instance = client.PublicApi(api_client)
@@ -37,7 +38,7 @@ with client.ApiClient(configuration) as api_client:
     page = 3.4 # float |  (необязательно)
 
     try:
-        api_response = api_instance.get_gifs_trending(tenant_id, locale=locale, rating=rating, page=page)
+        api_response = api_instance.get_gifs_trending(tenant_id, GetGifsTrendingOptions(locale=locale, rating=rating, page=page))
         print("The response of PublicApi->get_gifs_trending:\n")
         pprint(api_response)
     except Exception as e:

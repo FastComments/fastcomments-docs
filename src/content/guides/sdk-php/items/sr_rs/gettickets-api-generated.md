@@ -1,6 +1,6 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Локација | Обавезно | Опис |
+| Ime | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | userId | string | query | No |  |
@@ -8,42 +8,44 @@
 | skip | number | query | No |  |
 | limit | number | query | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTicketsResponse.php)
+Vraća: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTicketsResponse.php)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'getTickets пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getTickets'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Конфигуришите ауторизацију API кључа: api_key
+// Configure API key authorization: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Откоментаришите доле како бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ако желите да користите прилагођени http клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционално, подразумевано ће бити коришћен `GuzzleHttp\Client`.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$user_id = 'user_id_example'; // string
-$state = 3.4; // float
-$skip = 3.4; // float
-$limit = 3.4; // float
+$options = [
+    'user_id' => 'user_id_example', // string
+    'state' => 3.4, // float
+    'skip' => 3.4, // float
+    'limit' => 3.4, // float
+];
+
 
 try {
-    $result = $apiInstance->getTickets($tenant_id, $user_id, $state, $skip, $limit);
+    $result = $apiInstance->getTickets($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getTickets: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

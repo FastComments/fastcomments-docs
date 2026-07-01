@@ -1,15 +1,16 @@
-## Parameters
+## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| commentId | string | path | はい |  |
-| sso | string | query | いいえ |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| sso | string | query | No |  |
 
-## Response
+## レスポンス
 
-戻り値: [`GetCommentTextResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comment_text_response.py)
+返却: [`GetCommentTextResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comment_text_response.py)
 
-## Example
+## 例
 
 [inline-code-attrs-start title = 'get_moderation_comment_text の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -19,21 +20,22 @@ from client.rest import ApiException
 from pprint import pprint
 
 # ホストの定義はオプションで、デフォルトは https://fastcomments.com です
-# サポートされているすべての設定パラメータの一覧は configuration.py を参照してください。
+# configuration.py でサポートされているすべての設定パラメータの一覧を確認できます。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# APIクライアントのインスタンスを使用してコンテキストに入ります
+# API クライアントのインスタンスでコンテキストに入ります
 with client.ApiClient(configuration) as api_client:
     # API クラスのインスタンスを作成します
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
-    sso = 'sso_example' # str |  (オプション)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_moderation_comment_text(comment_id, sso=sso)
+        api_response = api_instance.get_moderation_comment_text(tenant_id, comment_id, sso=sso)
         print("The response of ModerationApi->get_moderation_comment_text:\n")
         pprint(api_response)
     except Exception as e:

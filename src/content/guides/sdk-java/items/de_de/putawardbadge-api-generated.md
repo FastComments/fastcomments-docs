@@ -1,7 +1,8 @@
 ## Parameter
 
-| Name | Type | Location | Erforderlich | Beschreibung |
-|------|------|----------|--------------|--------------|
+| Name | Typ | Ort | Erforderlich | Beschreibung |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Ja |  |
 | badgeId | string | query | Ja |  |
 | userId | string | query | Nein |  |
 | commentId | string | query | Nein |  |
@@ -10,7 +11,7 @@
 
 ## Antwort
 
-Gibt zurück: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AwardUserBadgeResponse.java)
+Rückgabe: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AwardUserBadgeResponse.java)
 
 ## Beispiel
 
@@ -29,13 +30,14 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String badgeId = "badgeId_example"; // String | 
     String userId = "userId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      AwardUserBadgeResponse result = apiInstance.putAwardBadge(badgeId)
+      AwardUserBadgeResponse result = apiInstance.putAwardBadge(tenantId, badgeId)
             .userId(userId)
             .commentId(commentId)
             .broadcastId(broadcastId)

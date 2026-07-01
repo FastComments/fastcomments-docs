@@ -1,7 +1,8 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Oui |  |
 | userId | string | query | Non |  |
 | sso | string | query | Non |  |
 
@@ -11,24 +12,23 @@ Renvoie : [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastcom
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de get_trust_factor'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_trust_factor Exemple'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 opts = {
-  user_id: 'user_id_example', # Chaîne | 
-  sso: 'sso_example' # Chaîne | 
+  user_id: 'user_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.get_trust_factor(opts)
+  result = api_instance.get_trust_factor(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_trust_factor: #{e}"
 end
 [inline-code-end]
-
----

@@ -1,4 +1,4 @@
-## Parametri
+## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
@@ -8,30 +8,31 @@
 | sessionId | string | query | No |  |
 | sso | string | query | No |  |
 
-## Odgovor
+## Response
 
-Vrne: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/save_comments_response_with_presence.py)
+Returns: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/save_comments_response_with_presence.py)
 
-## Primer
+## Example
 
-[inline-code-attrs-start title = 'Primer create_comment_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_comment_public Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import CreateCommentPublicOptions
 from client.models.comment_data import CommentData
 from client.models.save_comments_response_with_presence import SaveCommentsResponseWithPresence
 from client.rest import ApiException
 from pprint import pprint
 
-# Določitev gostitelja je neobvezna in privzeto nastavljena na https://fastcomments.com
-# Glejte configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
+# Definiranje gostitelja je neobvezno in privzeto je https://fastcomments.com
+# Glej configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Vstopite v kontekst z instanco API odjemalca
+# Vstopi v kontekst s primerek API odjemalca
 with client.ApiClient(configuration) as api_client:
-    # Ustvarite instanco razreda API
+    # Ustvari primerek razreda API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
@@ -41,7 +42,7 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (neobvezno)
 
     try:
-        api_response = api_instance.create_comment_public(tenant_id, url_id, broadcast_id, comment_data, session_id=session_id, sso=sso)
+        api_response = api_instance.create_comment_public(tenant_id, url_id, broadcast_id, comment_data, CreateCommentPublicOptions(session_id=session_id, sso=sso))
         print("The response of PublicApi->create_comment_public:\n")
         pprint(api_response)
     except Exception as e:

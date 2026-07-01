@@ -2,8 +2,8 @@
 
 | Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
-| textSearch | string | Hayır |  |
-| sso | string | Hayır |  |
+| tenantId | string | Yes |  |
+| options | GetSearchSuggestOptions | No |  |
 
 ## Yanıt
 
@@ -13,13 +13,12 @@ Döndürür: [`Option[ModerationSuggestResponse]`](https://github.com/FastCommen
 
 [inline-code-attrs-start title = 'getSearchSuggest Örneği'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSearchSuggest(textSearch = "suspicious comment with spammy links", sso = "sso-user-789")
-if response.isSome:
-  let suggest = response.get()
-  echo "ModerationSuggestResponse:"
-  echo suggest
-else:
-  echo "No moderation suggestions returned. HTTP status: ", httpResponse.status
-[inline-code-end]
+let (suggestOpt, httpResp) = client.getSearchSuggest(
+  tenantId = "my-tenant-123",
+  options = GetSearchSuggestOptions(),
+)
 
----
+if suggestOpt.isSome:
+  let suggest = suggestOpt.get()
+  echo suggest
+[inline-code-end]

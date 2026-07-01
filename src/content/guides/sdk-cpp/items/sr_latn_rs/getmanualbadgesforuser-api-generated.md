@@ -1,10 +1,9 @@
 ## Parametri
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| badgesUserId | string | Ne |  |
-| commentId | string | Ne |  |
-| sso | string | Ne |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| options | const GetManualBadgesForUserOptions& | Yes |  |
 
 ## Odgovor
 
@@ -12,21 +11,16 @@ Vraća: [`GetUserManualBadgesResponse`](https://github.com/FastComments/fastcomm
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer getManualBadgesForUser'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getManualBadgesForUser Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> badgesUserId(boost::optional<utility::string_t>(U("user@example.com")));
-boost::optional<utility::string_t> commentId(boost::optional<utility::string_t>(U("cmt-789")));
-boost::optional<utility::string_t> sso(boost::optional<utility::string_t>(U("my-tenant-123|sso-token-abc")));
-auto task = api->getManualBadgesForUser(badgesUserId, commentId, sso)
-.then([](pplx::task<std::shared_ptr<GetUserManualBadgesResponse>> t) {
-    try {
-        auto resp = t.get();
-        if (!resp) resp = std::make_shared<GetUserManualBadgesResponse>();
-        return resp;
-    } catch (...) {
-        return std::make_shared<GetUserManualBadgesResponse>();
+utility::string_t tenantId = U("my-tenant-123");
+GetManualBadgesForUserOptions options;
+options.userEmail = boost::optional<utility::string_t>(U("user@example.com"));
+options.includeInactive = boost::optional<bool>(true);
+api->getManualBadgesForUser(tenantId, options).then([](pplx::task<std::shared_ptr<GetUserManualBadgesResponse>> task){
+    try{
+        auto response = task.get();
+    }catch(const std::exception&){
     }
 });
 [inline-code-end]
-
----

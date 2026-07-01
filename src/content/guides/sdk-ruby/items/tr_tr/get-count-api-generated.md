@@ -1,13 +1,14 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| text-search | string | query | Hayır |  |
-| byIPFromComment | string | query | Hayır |  |
-| filter | string | query | Hayır |  |
-| searchFilters | string | query | Hayır |  |
-| demo | boolean | query | Hayır |  |
-| sso | string | query | Hayır |  |
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filter | string | query | No |  |
+| searchFilters | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Yanıt
 
@@ -21,18 +22,19 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # Dize | 
 opts = {
   text_search: 'text_search_example', # Dize | 
   by_ip_from_comment: 'by_ip_from_comment_example', # Dize | 
   filter: 'filter_example', # Dize | 
   search_filters: 'search_filters_example', # Dize | 
-  demo: true, # Mantıksal | 
+  demo: true, # Boolean | 
   sso: 'sso_example' # Dize | 
 }
 
 begin
   
-  result = api_instance.get_count(opts)
+  result = api_instance.get_count(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_count: #{e}"

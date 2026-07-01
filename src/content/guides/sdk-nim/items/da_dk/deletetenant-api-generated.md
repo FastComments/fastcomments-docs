@@ -2,9 +2,9 @@
 
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| id | string | Nej |  |
-| sure | string | Nej |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| sure | string = "" | No |  |
 
 ## Svar
 
@@ -12,13 +12,9 @@ Returnerer: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcom
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på deleteTenant'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteTenant Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteTenant(tenantId = "my-tenant-123", id = "", sure = "")
-if response.isSome:
-  let emptyResp = response.get()
-else:
-  discard httpResponse
+let (respOpt, httpResp) = client.deleteTenant(tenantId = "my-tenant-123", id = "tenant-to-delete", sure = "yes")
+if respOpt.isSome:
+  let emptyResp = respOpt.get()
 [inline-code-end]
-
----

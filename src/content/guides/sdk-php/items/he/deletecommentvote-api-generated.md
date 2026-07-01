@@ -16,7 +16,7 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-deleteCommentVote'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת deleteCommentVote'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -24,20 +24,24 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // אם ברצונך להשתמש בלקוח HTTP מותאם, העבר את הלקוח שלך שמממש את `GuzzleHttp\ClientInterface`.
+    // אם ברצונך להשתמש ב‑http client מותאם, העבר את ה‑client שלך שמממש `GuzzleHttp\ClientInterface`.
     // זה אופציונלי, `GuzzleHttp\Client` ישמש כברירת מחדל.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // מחרוזת
 $comment_id = 'comment_id_example'; // מחרוזת
 $vote_id = 'vote_id_example'; // מחרוזת
 $url_id = 'url_id_example'; // מחרוזת
 $broadcast_id = 'broadcast_id_example'; // מחרוזת
-$edit_key = 'edit_key_example'; // מחרוזת
-$sso = 'sso_example'; // מחרוזת
+$options = [
+    'edit_key' => 'edit_key_example', // מחרוזת
+    'sso' => 'sso_example', // מחרוזת
+];
+
 
 try {
-    $result = $apiInstance->deleteCommentVote($tenant_id, $comment_id, $vote_id, $url_id, $broadcast_id, $edit_key, $sso);
+    $result = $apiInstance->deleteCommentVote($tenant_id, $comment_id, $vote_id, $url_id, $broadcast_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->deleteCommentVote: ', $e->getMessage(), PHP_EOL;

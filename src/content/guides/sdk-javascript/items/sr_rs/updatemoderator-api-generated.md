@@ -1,32 +1,31 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
-| updateModeratorBody | UpdateModeratorBody | Да |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Da |  |
+| id | string | Da |  |
+| updateModeratorBody | UpdateModeratorBody | Da |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Returns: [`UpdateModeratorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateModeratorResponse.ts)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'updateModerator пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer updateModerator'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'acme-corp-tenant-92';
-  const id: string = '9f3b2c1a-4d6e-11ec-81d3-0242ac130003';
-  const updateModeratorBody: UpdateModeratorBody = {
-    email: 'moderator.lead@acmecorp.com',
-    displayName: 'Alex Rivera',
-    roles: ['moderator', 'team_lead'],
-    active: true,
-    notify: true // опциони флаг да обавести модератора о променама
-  };
-  const result: APIEmptyResponse = await updateModerator(tenantId, id, updateModeratorBody);
-  console.log(result);
-})();
-[inline-code-end]
+async function demoUpdateModerator(): Promise<void> {
+    const tenantId: string = "tenant_42abc";
+    const moderatorId: string = "moderator_8f9e";
+    const updateBody: UpdateModeratorBody = {
+        isActive: true,
+        role: "admin",
+        // opcionalno polje
+        notes: "Promoted to senior moderator"
+    };
+    const result: UpdateModeratorResponse = await updateModerator(tenantId, moderatorId, updateBody);
+    console.log(result);
+}
 
----
+demoUpdateModerator();
+[inline-code-end]

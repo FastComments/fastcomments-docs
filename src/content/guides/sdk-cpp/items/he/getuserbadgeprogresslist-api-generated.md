@@ -1,35 +1,30 @@
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| userId | string | לא |  |
-| limit | double | לא |  |
-| skip | double | לא |  |
+| tenantId | string | Yes |  |
+| options | const GetUserBadgeProgressListOptions& | Yes |  |
 
-## Response
+## תגובה
 
 מחזיר: [`APIGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIGetUserBadgeProgressListResponse.h)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getUserBadgeProgressList'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getUserBadgeProgressList'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-boost::optional<utility::string_t> userId = utility::string_t(U("user@example.com"));
-boost::optional<double> limit = 50.0;
-boost::optional<double> skip = 0.0;
-auto defaultResp = std::make_shared<APIGetUserBadgeProgressListResponse>();
-api->getUserBadgeProgressList(tenantId, userId, limit, skip)
-.then([defaultResp](pplx::task<std::shared_ptr<APIGetUserBadgeProgressListResponse>> t){
-    try {
-        auto resp = t.get();
-        auto finalResp = resp ? resp : defaultResp;
-        (void)finalResp;
-    } catch (const std::exception& e) {
-        std::cerr << "Error: " << e.what() << std::endl;
-    }
-});
+GetUserBadgeProgressListOptions options;
+options.userId = U("user@example.com");
+options.page = boost::optional<int>(1);
+options.pageSize = boost::optional<int>(20);
+api->getUserBadgeProgressList(tenantId, options)
+    .then([](std::shared_ptr<APIGetUserBadgeProgressListResponse> resp) {
+        if (!resp) return;
+        for (const auto& badge : resp->badges) {
+            // לעבד תג
+        }
+    });
 [inline-code-end]
 
 ---

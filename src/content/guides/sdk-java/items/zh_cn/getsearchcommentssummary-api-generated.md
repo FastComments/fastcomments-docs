@@ -1,11 +1,12 @@
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
-| value | string | query | No |  |
-| filters | string | query | No |  |
-| searchFilters | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | 是 |  |
+| value | string | query | 否 |  |
+| filters | string | query | 否 |  |
+| searchFilters | string | query | 否 |  |
+| sso | string | query | 否 |  |
 
 ## 响应
 
@@ -15,7 +16,7 @@
 
 [inline-code-attrs-start title = 'getSearchCommentsSummary 示例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 导入类：
+// 导入类:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -28,12 +29,13 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String value = "value_example"; // String | 
     String filters = "filters_example"; // String | 
     String searchFilters = "searchFilters_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationCommentSearchResponse result = apiInstance.getSearchCommentsSummary()
+      ModerationCommentSearchResponse result = apiInstance.getSearchCommentsSummary(tenantId)
             .value(value)
             .filters(filters)
             .searchFilters(searchFilters)

@@ -1,22 +1,22 @@
-## Параметры
+## Параметри
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Нет |  |
+| tenantId | string | Так |  |
+| id | string | Ні |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`Option[GetQuestionConfigResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_question_config_response.nim)
+Повертає: [`Option[GetQuestionConfigResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_question_config_response.nim)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример getQuestionConfig'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getQuestionConfig Приклад'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getQuestionConfig(tenantId = "my-tenant-123", id = "qst-456")
-if response.isSome:
-  let cfg = response.get()
-  discard cfg
+let (questionConfigOpt, httpResp) = client.getQuestionConfig(tenantId = "my-tenant-123", id = "question-987")
+if questionConfigOpt.isSome:
+  let config = questionConfigOpt.get()
+  echo config
 [inline-code-end]
 
 ---

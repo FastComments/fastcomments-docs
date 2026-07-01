@@ -9,14 +9,19 @@
 
 ## 回應
 
-回傳: [`GetTranslationsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTranslationsResponse.ts)
+Returns: [`GetTranslationsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTranslationsResponse1.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getTranslations 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const translationsFull: GetTranslationsResponse = await getTranslations("site-comments", "comment-form", "fr-FR", true);
-const translationsDefault: GetTranslationsResponse = await getTranslations("admin-dashboard", "notification-center");
-[inline-code-end]
+(async () => {
+  const namespace: string = 'blog';
+  const component: string = 'comment-editor';
+  const locale: string = 'fr-FR';
+  const useFullTranslationIds: boolean = true;
 
----
+  const basicTranslations: GetTranslationsResponse1 = await getTranslations(namespace, component);
+  const fullTranslations: GetTranslationsResponse1 = await getTranslations(namespace, component, locale, useFullTranslationIds);
+})();
+[inline-code-end]

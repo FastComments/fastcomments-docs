@@ -1,8 +1,8 @@
----
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | 是 |  |
 | value | string | query | 否 |  |
 | filters | string | query | 否 |  |
 | searchFilters | string | query | 否 |  |
@@ -10,7 +10,7 @@
 
 ## 响应
 
-返回: [`ModerationCommentSearchResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/moderation_comment_search_response.rb)
+返回：[`ModerationCommentSearchResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/moderation_comment_search_response.rb)
 
 ## 示例
 
@@ -20,6 +20,7 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 opts = {
   value: 'value_example', # String | 
   filters: 'filters_example', # String | 
@@ -29,7 +30,7 @@ opts = {
 
 begin
   
-  result = api_instance.get_search_comments_summary(opts)
+  result = api_instance.get_search_comments_summary(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_search_comments_summary: #{e}"

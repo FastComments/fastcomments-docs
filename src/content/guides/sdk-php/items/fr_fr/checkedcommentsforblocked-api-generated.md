@@ -1,18 +1,18 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Oui |  |
-| commentIds | string | query | Oui | Une liste d'identifiants de commentaires séparés par des virgules. |
-| sso | string | query | Non |  |
+| tenantId | string | query | Yes |  |
+| commentIds | string | query | Yes | Une liste d’identifiants de commentaire séparés par des virgules. |
+| sso | string | query | No |  |
 
 ## Réponse
 
-Renvoie : [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CheckBlockedCommentsResponse.php)
+Returns: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CheckBlockedCommentsResponse.php)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de checkedCommentsForBlocked'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple checkedCommentsForBlocked'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -24,9 +24,11 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     // Ceci est optionnel, `GuzzleHttp\Client` sera utilisé par défaut.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$comment_ids = 'comment_ids_example'; // string | Une liste d'identifiants de commentaires séparés par des virgules.
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // chaîne
+$comment_ids = 'comment_ids_example'; // chaîne | Une liste d’identifiants de commentaire séparés par des virgules.
+$sso = 'sso_example'; // chaîne
+
 
 try {
     $result = $apiInstance->checkedCommentsForBlocked($tenant_id, $comment_ids, $sso);

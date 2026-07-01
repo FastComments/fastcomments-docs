@@ -8,21 +8,18 @@
 
 ## レスポンス
 
-戻り値: [`Option[BulkAggregateQuestionResultsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_bulk_aggregate_question_results_response.nim)
+返り値: [`Option[BulkAggregateQuestionResultsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_bulk_aggregate_question_results_response.nim)
 
 ## 例
 
 [inline-code-attrs-start title = 'bulkAggregateQuestionResults の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.bulkAggregateQuestionResults(
+let request = BulkAggregateQuestionResultsRequest()
+let (maybeResult, httpResp) = client.bulkAggregateQuestionResults(
   tenantId = "my-tenant-123",
-  bulkAggregateQuestionResultsRequest = BulkAggregateQuestionResultsRequest(),
-  forceRecalculate = false
-)
+  bulkAggregateQuestionResultsRequest = request,
+  forceRecalculate = false)
 
-if response.isSome:
-  let aggregated = response.get()
-  echo "Aggregated question results received"
+if maybeResult.isSome:
+  let result = maybeResult.get()
 [inline-code-end]
-
----

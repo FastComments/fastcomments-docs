@@ -1,12 +1,11 @@
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-------------|
-| tenantId | string | Sim |  |
-| id | string | Não |  |
-| blockFromCommentParams | BlockFromCommentParams | Não |  |
-| userId | string | Não |  |
-| anonUserId | string | Não |  |
+|------|------|-------------|-----------|
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| blockFromCommentParams | BlockFromCommentParams | No |  |
+| options | BlockUserFromCommentOptions | No |  |
 
 ## Resposta
 
@@ -14,24 +13,17 @@ Retorna: [`Option[BlockSuccess]`](https://github.com/FastComments/fastcomments-n
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de blockUserFromComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'blockUserFromComment Exemplo'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.blockUserFromComment(
+let params = BlockFromCommentParams()
+let opts = BlockUserFromCommentOptions()
+let (blockResult, httpResp) = client.blockUserFromComment(
   tenantId = "my-tenant-123",
-  id = "cmt-7890",
-  blockFromCommentParams = BlockFromCommentParams(
-    reason = "Repeated abusive language",
-    durationMinutes = 1440,
-    notifyUser = true,
-    tags = @["abuse", "automated"]
-  ),
-  userId = "user-456",
-  anonUserId = ""
+  id = "comment-456",
+  blockFromCommentParams = params,
+  options = opts
 )
-
-if response.isSome:
-  let result = response.get()
-  discard result
-else:
-  discard httpResponse
+if blockResult.isSome:
+  let success = blockResult.get()
+  discard success
 [inline-code-end]

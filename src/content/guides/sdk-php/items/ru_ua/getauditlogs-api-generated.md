@@ -1,47 +1,51 @@
-## Параметры
+## Parameters
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| limit | number | query | Нет |  |
-| skip | number | query | Нет |  |
-| order | string | query | Нет |  |
-| after | number | query | Нет |  |
-| before | number | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| limit | number | query | No |  |
+| skip | number | query | No |  |
+| order | string | query | No |  |
+| after | number | query | No |  |
+| before | number | query | No |  |
 
-## Ответ
+## Response
 
-Возвращает: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetAuditLogsResponse.php)
+Returns: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetAuditLogsResponse.php)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'Пример getAuditLogs'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад getAuditLogs'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Конфигурация авторизации по API-ключу: api_key
+// Налаштування авторизації ключа API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Раскомментируйте ниже, чтобы задать префикс (например, Bearer) для API-ключа, если это необходимо
+// Розкоментуйте нижче, щоб налаштувати префікс (наприклад, Bearer) для ключа API, якщо потрібно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Если вы хотите использовать собственный HTTP-клиент, передайте клиент, реализующий `GuzzleHttp\ClientInterface`.
-    // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
+    // Якщо ви хочете використати власний HTTP‑клієнт, передайте ваш клієнт, що реалізує `GuzzleHttp\ClientInterface`.
+    // Це необов’язково, за замовчуванням буде використано `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$limit = 3.4; // float
-$skip = 3.4; // float
-$order = new \FastComments\Client\Model\\FastComments\Client\Model\SORTDIR(); // \FastComments\Client\Model\SORTDIR
-$after = 3.4; // float
-$before = 3.4; // float
+
+$tenant_id = 'tenant_id_example'; // рядок
+$options = [
+    'limit' => 3.4, // float
+    'skip' => 3.4, // float
+    'order' => new \FastComments\Client\Model\\FastComments\Client\Model\SORTDIR(), // \FastComments\Client\Model\SORTDIR
+    'after' => 3.4, // float
+    'before' => 3.4, // float
+];
+
 
 try {
-    $result = $apiInstance->getAuditLogs($tenant_id, $limit, $skip, $order, $after, $before);
+    $result = $apiInstance->getAuditLogs($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getAuditLogs: ', $e->getMessage(), PHP_EOL;

@@ -1,33 +1,29 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | id | string | 예 |  |
-| editKey | string | 아니요 |  |
+| editKey | string | 아니오 |  |
 
 ## 응답
 
 반환: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/VoteDeleteResponse.h)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'deleteVote 예제'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteVote 예시'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t id = U("vote-987654321");
-boost::optional<utility::string_t> editKey = boost::optional<utility::string_t>(U("edit-key-abc123"));
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto voteId = utility::conversions::to_string_t("vote-9876");
+boost::optional<utility::string_t> editKey = utility::conversions::to_string_t("edit-abc123");
 
-api->deleteVote(tenantId, id, editKey).then([](pplx::task<std::shared_ptr<VoteDeleteResponse>> t){
+api->deleteVote(tenantId, voteId, editKey).then([](pplx::task<std::shared_ptr<VoteDeleteResponse>> task) {
     try {
-        auto resp = t.get();
-        auto finalResp = resp ? resp : std::make_shared<VoteDeleteResponse>();
-        (void)finalResp;
-    } catch (...) {
-        auto errorResp = std::make_shared<VoteDeleteResponse>();
-        (void)errorResp;
+        auto response = task.get();
+        // 필요한 경우 응답 처리
+    } catch (const std::exception&) {
+        // 오류 처리
     }
 });
 [inline-code-end]
-
----

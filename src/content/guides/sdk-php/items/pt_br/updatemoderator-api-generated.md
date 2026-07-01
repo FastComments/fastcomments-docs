@@ -1,9 +1,9 @@
 ## Parâmetros
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Localização | Obrigatório | Descrição |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Sim |  |
-| id | string | path | Sim |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
 ## Resposta
 
@@ -29,9 +29,11 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
 $update_moderator_body = new \FastComments\Client\Model\UpdateModeratorBody(); // \FastComments\Client\Model\UpdateModeratorBody
+
 
 try {
     $result = $apiInstance->updateModerator($tenant_id, $id, $update_moderator_body);

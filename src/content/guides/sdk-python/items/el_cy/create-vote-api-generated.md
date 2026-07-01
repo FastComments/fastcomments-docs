@@ -1,6 +1,6 @@
-## Παράμετροι
+## Parameters
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Θέση | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ναι |  |
 | commentId | string | query | Ναι |  |
@@ -8,48 +8,49 @@
 | userId | string | query | Όχι |  |
 | anonUserId | string | query | Όχι |  |
 
-## Απάντηση
+## Response
 
 Επιστρέφει: [`VoteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_response.py)
 
-## Παράδειγμα
+## Example
 
-[inline-code-attrs-start title = 'Παράδειγμα create_vote'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_vote Παράδειγμα'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import CreateVoteOptions
 from client.models.vote_response import VoteResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Ορισμός του host είναι προαιρετικός και προεπιλογή είναι το https://fastcomments.com
-# Δείτε το configuration.py για λίστα με όλες τις υποστηριζόμενες παραμέτρους ρύθμισης.
+# Ο καθορισμός του host είναι προαιρετικός και χρησιμοποιεί ως προεπιλογή το https://fastcomments.com
+# Δείτε το configuration.py για λίστα όλων των υποστηριζόμενων παραμέτρων διαμόρφωσης.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Ο client πρέπει να ρυθμίσει τις παραμέτρους αυθεντικοποίησης και εξουσιοδότησης
-# σύμφωνα με την πολιτική ασφάλειας του API server.
-# Παρακάτω δίνονται παραδείγματα για κάθε μέθοδο πιστοποίησης, χρησιμοποιήστε αυτό που
-# ταιριάζει στην περίπτωση χρήσης σας.
+# Ο πελάτης πρέπει να ρυθμίσει τις παραμέτρους αυθεντικοποίησης και εξουσιοδότησης
+# σύμφωνα με την πολιτική ασφαλείας του διακομιστή API.
+# Παραδείγματα για κάθε μέθοδο αυθεντικοποίησης παρέχονται παρακάτω, χρησιμοποιήστε το παράδειγμα που
+# καλύπτει τη δική σας περίπτωση χρήσης.
 
-# Ρυθμίστε την εξουσιοδότηση με κλειδί API: api_key
+# Ρύθμιση εξουσιοδότησης με κλειδί API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Αποσχολιάστε πιο κάτω για να ρυθμίσετε πρόθεμα (π.χ. Bearer) για το κλειδί API, αν χρειάζεται
+# Αποσχολιάστε παρακάτω για να ορίσετε πρόθεμα (π.χ. Bearer) για το κλειδί API, εάν χρειάζεται
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Εισέλθετε σε context με ένα στιγμιότυπο του API client
+# Εισάγετε ένα context με μια παρουσία του πελάτη API
 with client.ApiClient(configuration) as api_client:
-    # Δημιουργήστε ένα στιγμιότυπο της κλάσης API
+    # Δημιουργήστε μια παρουσία της κλάσης API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     direction = 'direction_example' # str | 
-    user_id = 'user_id_example' # str |  (προαιρετικό)
-    anon_user_id = 'anon_user_id_example' # str |  (προαιρετικό)
+    user_id = 'user_id_example' # str |  (optional)
+    anon_user_id = 'anon_user_id_example' # str |  (optional)
 
     try:
-        api_response = api_instance.create_vote(tenant_id, comment_id, direction, user_id=user_id, anon_user_id=anon_user_id)
+        api_response = api_instance.create_vote(tenant_id, comment_id, direction, CreateVoteOptions(user_id=user_id, anon_user_id=anon_user_id))
         print("The response of DefaultApi->create_vote:\n")
         pprint(api_response)
     except Exception as e:

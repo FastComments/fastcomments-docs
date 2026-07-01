@@ -1,8 +1,7 @@
----
 ## Παράμετροι
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|------------|-------------|
 | tenantId | string | query | Ναι |  |
 | urlId | string | query | Ναι |  |
 | userId | string | query | Όχι |  |
@@ -16,7 +15,7 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα getVotesForUser'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Τα παρακάτω δείγματα κώδικα είναι ακόμη σε beta. Για οποιοδήποτε ζήτημα, αναφέρετέ το μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
+// Τα παρακάτω παραδείγματα κώδικα είναι ακόμη σε beta. Για οποιοδήποτε πρόβλημα, παρακαλούμε αναφέρετε το μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -24,7 +23,7 @@ let urlId = "urlId_example" // String |
 let userId = "userId_example" // String |  (προαιρετικό)
 let anonUserId = "anonUserId_example" // String |  (προαιρετικό)
 
-DefaultAPI.getVotesForUser(tenantId: tenantId, urlId: urlId, userId: userId, anonUserId: anonUserId) { (response, error) in
+DefaultAPI.getVotesForUser(tenantId: tenantId, urlId: urlId, options: DefaultAPI.GetVotesForUserOptions(userId: userId, anonUserId: anonUserId)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -35,5 +34,3 @@ DefaultAPI.getVotesForUser(tenantId: tenantId, urlId: urlId, userId: userId, ano
     }
 }
 [inline-code-end]
-
----

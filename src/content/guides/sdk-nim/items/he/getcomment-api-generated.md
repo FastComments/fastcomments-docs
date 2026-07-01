@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| שם | סוג | חובה | תיאור |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | id | string | לא |  |
@@ -11,14 +11,12 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getComment(tenantId = "my-tenant-123", id = "cmt-7890")
+let (response, httpResponse) = client.getComment(tenantId = "my-tenant-123", id = "cmt-789")
 if response.isSome:
   let comment = response.get()
   discard comment
-else:
-  echo "Comment not found"
 [inline-code-end]
 
 ---

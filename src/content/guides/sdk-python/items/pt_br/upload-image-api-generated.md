@@ -1,12 +1,13 @@
-Carregar e redimensionar uma imagem
+Upload and resize an image
+==========================
 
 ## Parâmetros
 
 | Nome | Tipo | Localização | Obrigatório | Descrição |
-|------|------|----------|----------|-------------|
+|------|------|--------------|-------------|-----------|
 | tenantId | string | path | Sim |  |
 | sizePreset | string | query | Não | Predefinição de tamanho: "Default" (1000x1000px) ou "CrossPlatform" (cria tamanhos para dispositivos populares) |
-| urlId | string | query | Não | ID da página de onde o upload está sendo feito, para configurar |
+| urlId | string | query | Não | ID da página de onde o upload está acontecendo, para configurar |
 
 ## Resposta
 
@@ -14,9 +15,10 @@ Retorna: [`UploadImageResponse`](https://github.com/FastComments/fastcomments-py
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de upload_image'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'upload_image Exemplo'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import UploadImageOptions
 from client.models.size_preset import SizePreset
 from client.models.upload_image_response import UploadImageResponse
 from client.rest import ApiException
@@ -34,12 +36,12 @@ with client.ApiClient(configuration) as api_client:
     # Crie uma instância da classe da API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    file = None # bytearray | 
+    file = None # bytes | 
     size_preset = client.SizePreset() # SizePreset | Predefinição de tamanho: \"Default\" (1000x1000px) ou \"CrossPlatform\" (cria tamanhos para dispositivos populares) (opcional)
-    url_id = 'url_id_example' # str | ID da página de onde o upload está sendo feito, para configurar (opcional)
+    url_id = 'url_id_example' # str | ID da página de onde o upload está acontecendo, para configurar (opcional)
 
     try:
-        api_response = api_instance.upload_image(tenant_id, file, size_preset=size_preset, url_id=url_id)
+        api_response = api_instance.upload_image(tenant_id, file, UploadImageOptions(size_preset=size_preset, url_id=url_id))
         print("The response of PublicApi->upload_image:\n")
         pprint(api_response)
     except Exception as e:

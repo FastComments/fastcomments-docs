@@ -1,7 +1,8 @@
 ## 매개변수
 
-| Name | Type | Location | Required | Description |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | badgeId | string | query | Yes |  |
 | userId | string | query | No |  |
 | commentId | string | query | No |  |
@@ -12,9 +13,9 @@
 
 반환: [`RemoveUserBadgeResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/RemoveUserBadgeResponse.java)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'putRemoveBadge 예제'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putRemoveBadge 예시'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // 클래스 가져오기:
 import com.fastcomments.invoker.ApiClient;
@@ -29,13 +30,14 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
-    String badgeId = "badgeId_example"; // 문자열 | 
-    String userId = "userId_example"; // 문자열 | 
-    String commentId = "commentId_example"; // 문자열 | 
-    String broadcastId = "broadcastId_example"; // 문자열 | 
-    String sso = "sso_example"; // 문자열 | 
+    String tenantId = "tenantId_example"; // String | 
+    String badgeId = "badgeId_example"; // String | 
+    String userId = "userId_example"; // String | 
+    String commentId = "commentId_example"; // String | 
+    String broadcastId = "broadcastId_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
-      RemoveUserBadgeResponse result = apiInstance.putRemoveBadge(badgeId)
+      RemoveUserBadgeResponse result = apiInstance.putRemoveBadge(tenantId, badgeId)
             .userId(userId)
             .commentId(commentId)
             .broadcastId(broadcastId)

@@ -1,15 +1,15 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Ja |  |
-| urlId | string | query | Ja |  |
-| usernameStartsWith | string | query | Nee |  |
-| mentionGroupIds | array | query | Nee |  |
-| sso | string | query | Nee |  |
-| searchSection | string | query | Nee |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| usernameStartsWith | string | query | No |  |
+| mentionGroupIds | array | query | No |  |
+| sso | string | query | No |  |
+| searchSection | string | query | No |  |
 
-## Antwoord
+## Respons
 
 Retourneert: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SearchUsersResult.swift)
 
@@ -17,17 +17,17 @@ Retourneert: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-
 
 [inline-code-attrs-start title = 'searchUsers Voorbeeld'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// De volgende codevoorbeelden zijn nog in bèta. Voor problemen, meld dit via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De volgende codevoorbeelden zijn nog in bèta. Meld eventuele problemen via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
-let usernameStartsWith = "usernameStartsWith_example" // String |  (optioneel)
-let mentionGroupIds = ["inner_example"] // [String] |  (optioneel)
-let sso = "sso_example" // String |  (optioneel)
-let searchSection = "searchSection_example" // String |  (optioneel)
+let usernameStartsWith = "usernameStartsWith_example" // String |  (optional)
+let mentionGroupIds = ["inner_example"] // [String] |  (optional)
+let sso = "sso_example" // String |  (optional)
+let searchSection = "searchSection_example" // String |  (optional)
 
-PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, usernameStartsWith: usernameStartsWith, mentionGroupIds: mentionGroupIds, sso: sso, searchSection: searchSection) { (response, error) in
+PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, options: PublicAPI.SearchUsersOptions(usernameStartsWith: usernameStartsWith, mentionGroupIds: mentionGroupIds, sso: sso, searchSection: searchSection)) { (response, error) in
     guard error == nil else {
         print(error)
         return

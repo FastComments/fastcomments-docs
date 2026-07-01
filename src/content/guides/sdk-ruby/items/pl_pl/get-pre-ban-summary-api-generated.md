@@ -1,7 +1,8 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Tak |  |
 | commentId | string | path | Tak |  |
 | includeByUserIdAndEmail | boolean | query | Nie |  |
 | includeByIP | boolean | query | Nie |  |
@@ -14,12 +15,13 @@ Zwraca: [`PreBanSummary`](https://github.com/FastComments/fastcomments-ruby/blob
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład użycia get_pre_ban_summary'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_pre_ban_summary Przykład'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 comment_id = 'comment_id_example' # String | 
 opts = {
   include_by_user_id_and_email: true, # Boolean | 
@@ -30,7 +32,7 @@ opts = {
 
 begin
   
-  result = api_instance.get_pre_ban_summary(comment_id, opts)
+  result = api_instance.get_pre_ban_summary(tenant_id, comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_pre_ban_summary: #{e}"

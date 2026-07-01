@@ -1,9 +1,11 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов’язково | Опис |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Так |  |
 | commentId | string | path | Так |  |
 | reviewed | boolean | query | Ні |  |
+| broadcastId | string | query | Ні |  |
 | sso | string | query | Ні |  |
 
 ## Відповідь
@@ -12,7 +14,7 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад PostSetCommentReviewStatus'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PostSetCommentReviewStatus Приклад'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -24,15 +26,17 @@ import (
 )
 
 func main() {
-	commentId := "commentId_example" // string | 
-	reviewed := true // bool |  (необов'язково)
-	sso := "sso_example" // string |  (необов'язково)
+	tenantId := "tenantId_example" // рядок | 
+	commentId := "commentId_example" // рядок | 
+	reviewed := true // логічний |  (необов’язковий)
+	broadcastId := "broadcastId_example" // рядок |  (необов’язковий)
+	sso := "sso_example" // рядок |  (необов’язковий)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostSetCommentReviewStatus(context.Background(), commentId).Reviewed(reviewed).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostSetCommentReviewStatus(context.Background(), commentId).TenantId(tenantId).Reviewed(reviewed).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostSetCommentReviewStatus``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Помилка під час виклику `ModerationAPI.PostSetCommentReviewStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 	// відповідь від `PostSetCommentReviewStatus`: APIEmptyResponse

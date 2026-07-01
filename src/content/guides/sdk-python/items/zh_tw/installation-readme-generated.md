@@ -1,16 +1,26 @@
-### PyPI
+### 從 GitHub 安裝
+
+直接從發布標籤安裝（推薦，完全可重現）：
 
 ```bash
-pip install fastcomments
+pip install git+https://github.com/fastcomments/fastcomments-python.git@v3.0.0
 ```
 
-### 函式庫內容
+將標籤固定而不是分支，以確保構建具有決定性。同樣的寫法也可用於 `requirements.txt`：
 
-此函式庫包含兩個模組：產生的 API 用戶端，以及包含手寫工具的核心 Python 函式庫，這些工具可讓使用 API 更加方便，包括 SSO 支援。
+```
+fastcomments @ git+https://github.com/fastcomments/fastcomments-python.git@v3.0.0
+```
 
-- [API 用戶端函式庫文件](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
-- [核心函式庫文件，包含 SSO 範例](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
+每個帶標籤的 [GitHub Release](https://github.com/fastcomments/fastcomments-python/releases) 也附有已編譯的 wheel，如果你想直接安裝二進位制套件，可使用它。
 
-### 公開與受保護的 API
+### 程式庫內容
 
-對於 API 用戶端，包含三個類別：`DefaultApi`、`PublicApi` 與 `ModerationApi`。`DefaultApi` 包含需要 API 金鑰的方法，`PublicApi` 則包含可直接從瀏覽器、行動裝置等在未驗證情況下呼叫的方法。`ModerationApi` 提供管理者儀表板的功能，包含用於管理留言的方法（列出、計數、搜尋、日誌、匯出）、審核動作（移除/還原、標記、設定審查/垃圾/核准狀態、投票、重新開啟/關閉討論串）、封禁相關功能（對留言封禁、復原、預先封禁摘要、封禁狀態/偏好、被封禁使用者數量）、以及徽章與信任（授予/移除徽章、手動徽章、取得/設定信任因子、使用者內部資料）。每個 `ModerationApi` 方法都接受一個 `sso` 參數，允許以經 SSO 驗證的管理者身分呼叫。
+此程式庫包含兩個模組：產生的 API 客戶端以及包含手寫工具函式的核心 Python 程式庫，讓使用 API 更加便利，並支援 SSO。
+
+- [API 客戶端程式庫文件](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
+- [核心程式庫文件，含 SSO 範例](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
+
+### 公開與保護 API
+
+對於 API 客戶端，有三個類別，`DefaultApi`、`PublicApi` 與 `ModerationApi`。`DefaultApi` 包含需要 API 金鑰的方法，`PublicApi` 包含可直接從瀏覽器／行動裝置等無需驗證即可呼叫的方法。`ModerationApi` 提供完整且快速的即時審查 API 套件。每個 `ModerationApi` 方法都接受 `sso` 參數，並可透過 SSO 或 FastComments.com 的會話 cookie 進行驗證。

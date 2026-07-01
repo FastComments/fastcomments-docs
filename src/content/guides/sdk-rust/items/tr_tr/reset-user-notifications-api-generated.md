@@ -1,14 +1,14 @@
 ## Parametreler
 
-| Name | Type | Required | Description |
+| Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
-| tenant_id | String | Evet |  |
-| after_id | String | Hayır |  |
-| after_created_at | i64 | Hayır |  |
-| unread_only | bool | Hayır |  |
-| dm_only | bool | Hayır |  |
-| no_dm | bool | Hayır |  |
-| sso | String | Hayır |  |
+| tenant_id | String | Yes |  |
+| after_id | String | No |  |
+| after_created_at | i64 | No |  |
+| unread_only | bool | No |  |
+| dm_only | bool | No |  |
+| no_dm | bool | No |  |
+| sso | String | No |  |
 
 ## Yanıt
 
@@ -18,17 +18,17 @@ Döndürür: [`ResetUserNotificationsResponse`](https://github.com/FastComments/
 
 [inline-code-attrs-start title = 'reset_user_notifications Örneği'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_reset() -> Result<(), Error> {
-    let params: ResetUserNotificationsParams = ResetUserNotificationsParams {
+async fn example() -> Result<(), Error> {
+    let params = ResetUserNotificationsParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        after_id: Some("notif-20260619-0001".to_string()),
-        after_created_at: Some(1_787_400_000i64),
+        after_id: Some("notif-12345".to_string()),
+        after_created_at: Some(1_640_995_200),
         unread_only: Some(true),
         dm_only: Some(false),
-        no_dm: Some(false),
-        sso: Some("saml".to_string()),
+        no_dm: Some(true),
+        sso: Some("sso-provider".to_string()),
     };
-    let response: ResetUserNotificationsResponse =
+    let _response: ResetUserNotificationsResponse =
         reset_user_notifications(&configuration, params).await?;
     Ok(())
 }

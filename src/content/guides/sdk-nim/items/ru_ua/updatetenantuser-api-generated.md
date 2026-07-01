@@ -1,35 +1,27 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Обязательный | Описание |
+| Назва | Тип | Обов’язковий | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Нет |  |
-| updateTenantUserBody | UpdateTenantUserBody | Нет |  |
-| updateComments | string | Нет |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| updateTenantUserBody | UpdateTenantUserBody | No |  |
+| updateComments | string = "" | No |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
+Повертає: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример updateTenantUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад updateTenantUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateTenantUser(
+let updateBody = UpdateTenantUserBody()
+let (optResp, httpResp) = client.updateTenantUser(
   tenantId = "my-tenant-123",
-  id = "user-987",
-  updateTenantUserBody = UpdateTenantUserBody(
-    displayName = "Jane Doe",
-    email = "jane.doe@example.com",
-    roles = @["moderator", "editor"],
-    isActive = true
-  ),
-  updateComments = "true"
+  id = "user-456",
+  updateTenantUserBody = updateBody,
+  updateComments = "Changed role to moderator",
 )
-
-if response.isSome:
-  let apiEmpty = response.get()
-  discard apiEmpty
+if optResp.isSome:
+  let _ = optResp.get()
 [inline-code-end]
-
----

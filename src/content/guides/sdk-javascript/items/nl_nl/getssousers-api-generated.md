@@ -1,20 +1,29 @@
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
+| Name | Type | Vereist | Beschrijving |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | skip | number | Nee |  |
 
 ## Respons
 
-Geeft terug: [`GetSSOUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetSSOUsersResponse.ts)
+Retourneert: [`GetSSOUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetSSOUsersResponse.ts)
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'getSSOUsers Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Voorbeeld getSSOUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_8f3b2a1c";
-const usersWithoutSkip: GetSSOUsersResponse = await getSSOUsers(tenantId);
-const skip: number = 50;
-const usersWithSkip: GetSSOUsersResponse = await getSSOUsers(tenantId, skip);
+async function runExample(): Promise<void> {
+    const tenantId: string = "tenant_12345";
+
+    // Aanroep zonder optionele `skip`
+    const firstPage: GetSSOUsersResponse = await getSSOUsers(tenantId);
+
+    // Aanroep met optionele `skip`
+    const secondPage: GetSSOUsersResponse = await getSSOUsers(tenantId, 100);
+
+    console.log(firstPage, secondPage);
+}
+
+runExample();
 [inline-code-end]

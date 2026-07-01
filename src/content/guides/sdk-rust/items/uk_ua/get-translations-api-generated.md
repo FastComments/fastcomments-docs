@@ -1,6 +1,6 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Назва | Тип | Обов’язковий | Опис |
 |------|------|----------|-------------|
 | namespace | String | Так |  |
 | component | String | Так |  |
@@ -13,18 +13,16 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад get_translations'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_translations Приклад'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn fetch_translations() -> Result<(), Error> {
-    let params: GetTranslationsParams = GetTranslationsParams {
+    let params = GetTranslationsParams {
         namespace: "acme-corp-tenant".to_string(),
         component: "news/article".to_string(),
         locale: Some("en-US".to_string()),
         use_full_translation_ids: Some(true),
     };
-    let translations: GetTranslationsResponse = get_translations(configuration, params).await?;
+    let _response: GetTranslationsResponse = get_translations(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

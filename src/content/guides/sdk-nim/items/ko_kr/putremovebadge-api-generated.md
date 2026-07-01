@@ -1,32 +1,25 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| 이름 | 유형 | 필수 | 설명 |
+|------|------|------|------|
+| tenantId | string | 예 |  |
 | badgeId | string | 아니오 |  |
-| userId | string | 아니오 |  |
-| commentId | string | 예 |  |
-| broadcastId | string | 아니오 |  |
-| sso | string | 아니오 |  |
+| options | PutRemoveBadgeOptions | 아니오 |  |
 
 ## 응답
 
 반환: [`Option[RemoveUserBadgeResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_remove_user_badge_response.nim)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'putRemoveBadge 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putRemoveBadge 예시'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.putRemoveBadge(badgeId = "verified-journalist",
-  userId = "user-7890",
-  commentId = "comment-98765",
-  broadcastId = "",
-  sso = "")
+let (maybeResp, httpResp) = client.putRemoveBadge(
+  tenantId = "my-tenant-123",
+  badgeId = "badge-456",
+  options = PutRemoveBadgeOptions()
+)
 
-if response.isSome:
-  let removeResp = response.get()
-  discard removeResp
-else:
-  discard httpResponse
+if maybeResp.isSome:
+  let badgeResp = maybeResp.get()
 [inline-code-end]
-
----

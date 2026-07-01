@@ -1,33 +1,31 @@
----
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| createTenantUserBody | CreateTenantUserBody | 是 |  |
+| tenantId | string | Yes |  |
+| createTenantUserBody | CreateTenantUserBody | Yes |  |
 
 ## 响应
 
-返回：[`CreateTenantUserResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateTenantUserResponse.h)
+返回: [`CreateTenantUserResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateTenantUserResponse.h)
 
 ## 示例
 
 [inline-code-attrs-start title = 'createTenantUser 示例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-CreateTenantUserBody body;
-body.email = utility::string_t(U("jane.doe@example.com"));
-body.displayName = utility::string_t(U("Jane Doe"));
-body.role = utility::string_t(U("moderator"));
-body.sendInvite = boost::optional<bool>(true);
-api->createTenantUser(tenantId, body).then([](std::shared_ptr<CreateTenantUserResponse> resp) {
-    if (resp) {
-        auto created = std::make_shared<CreateTenantUserResponse>(*resp);
-        std::cout << "Created tenant user successfully" << std::endl;
-    } else {
-        std::cout << "Create tenant user returned null" << std::endl;
-    }
-});
+auto body = CreateTenantUserBody{};
+body.email = utility::conversions::to_string_t("newuser@example.com");
+body.firstName = utility::conversions::to_string_t("Alice");
+body.lastName = utility::conversions::to_string_t("Smith");
+body.role = boost::optional<utility::string_t>(utility::conversions::to_string_t("moderator"));
+
+api->createTenantUser(utility::conversions::to_string_t("my-tenant-123"), body)
+    .then([](pplx::task<std::shared_ptr<CreateTenantUserResponse>> task) {
+        try {
+            auto response = task.get();
+        } catch (const std::exception&) {
+        }
+    });
 [inline-code-end]
 
 ---

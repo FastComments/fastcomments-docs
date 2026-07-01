@@ -7,21 +7,18 @@
 
 ## 响应
 
-返回: [`DeleteDomainConfigResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/delete_domain_config_response.rs)
+返回：[`DeleteDomainConfigResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/delete_domain_config_response.rs)
 
 ## 示例
 
 [inline-code-attrs-start title = 'delete_domain_config 示例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_delete_domain_config() -> Result<DeleteDomainConfigResponse, Error> {
+async fn run_example(configuration: &configuration::Configuration) -> Result<(), Error> {
     let params = DeleteDomainConfigParams {
-        tenant_id: "acme-corp-tenant".to_owned(),
-        domain: "news/acme-corp".to_owned(),
-        force: Some(true),
+        tenant_id: "acme-corp-tenant".to_string(),
+        domain: "news/article".to_string(),
     };
-    let response: DeleteDomainConfigResponse = delete_domain_config(&configuration, params).await?;
-    Ok(response)
+    let _response: DeleteDomainConfigResponse = delete_domain_config(configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

@@ -1,7 +1,8 @@
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
 | commentId | string | path | Yes |  |
 | includeEmail | boolean | query | No |  |
 | includeIP | boolean | query | No |  |
@@ -16,6 +17,7 @@ Vraća: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcom
 [inline-code-attrs-start title = 'Primer get_moderation_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetModerationCommentOptions
 from client.models.moderation_api_comment_response import ModerationAPICommentResponse
 from client.rest import ApiException
 from pprint import pprint
@@ -27,17 +29,18 @@ configuration = client.Configuration(
 )
 
 
-# Uđite u kontekst sa instancom API klijenta
+# Unesite kontekst s instancom API klijenta
 with client.ApiClient(configuration) as api_client:
     # Kreirajte instancu API klase
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     include_email = True # bool |  (opciono)
     include_ip = True # bool |  (opciono)
     sso = 'sso_example' # str |  (opciono)
 
     try:
-        api_response = api_instance.get_moderation_comment(comment_id, include_email=include_email, include_ip=include_ip, sso=sso)
+        api_response = api_instance.get_moderation_comment(tenant_id, comment_id, GetModerationCommentOptions(include_email=include_email, include_ip=include_ip, sso=sso))
         print("The response of ModerationApi->get_moderation_comment:\n")
         pprint(api_response)
     except Exception as e:

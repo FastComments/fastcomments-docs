@@ -1,6 +1,6 @@
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | questionId | string | query | 否 |  |
@@ -14,13 +14,13 @@
 
 ## 响应
 
-返回: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CombineQuestionResultsWithCommentsResponse.swift)
+返回：[`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CombineQuestionResultsWithCommentsResponse.swift)
 
 ## 示例
 
 [inline-code-attrs-start title = 'combineCommentsWithQuestionResults 示例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 以下代码示例仍处于测试版。若有任何问题，请通过 http://github.com/OpenAPITools/openapi-generator/issues/new 报告
+// 以下代码示例仍处于测试阶段。如有任何问题，请通过 http://github.com/OpenAPITools/openapi-generator/issues/new 提交报告
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -33,7 +33,7 @@ let minValue = 987 // Double |  (可选)
 let maxValue = 987 // Double |  (可选)
 let limit = 987 // Double |  (可选)
 
-DefaultAPI.combineCommentsWithQuestionResults(tenantId: tenantId, questionId: questionId, questionIds: questionIds, urlId: urlId, startDate: startDate, forceRecalculate: forceRecalculate, minValue: minValue, maxValue: maxValue, limit: limit) { (response, error) in
+DefaultAPI.combineCommentsWithQuestionResults(tenantId: tenantId, options: DefaultAPI.CombineCommentsWithQuestionResultsOptions(questionId: questionId, questionIds: questionIds, urlId: urlId, startDate: startDate, forceRecalculate: forceRecalculate, minValue: minValue, maxValue: maxValue, limit: limit)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -44,5 +44,3 @@ DefaultAPI.combineCommentsWithQuestionResults(tenantId: tenantId, questionId: qu
     }
 }
 [inline-code-end]
-
----

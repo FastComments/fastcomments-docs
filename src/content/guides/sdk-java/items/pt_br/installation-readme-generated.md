@@ -1,6 +1,6 @@
 ### Maven
 
-Adicione o repositório Repsy ao POM do seu projeto:
+Adicione o repositório Repsy ao **POM** do seu projeto:
 
 ```xml
 <repositories>
@@ -12,7 +12,7 @@ Adicione o repositório Repsy ao POM do seu projeto:
 </repositories>
 ```
 
-Then add the dependencies you need:
+Em seguida, adicione as dependências que você precisa:
 
 ```xml
 <dependencies>
@@ -41,7 +41,7 @@ Then add the dependencies you need:
 
 ### Gradle
 
-Adicione o repositório Repsy ao seu arquivo build.gradle:
+Adicione o repositório Repsy ao seu arquivo **build.gradle**:
 
 ```groovy
 repositories {
@@ -63,16 +63,16 @@ dependencies {
 }
 ```
 
-### Library Contents
+### Conteúdo da Biblioteca
 
-Esta biblioteca contém três módulos. O cliente de API gerado, a biblioteca Java core que contém utilitários escritos à mão para facilitar o trabalho com a API, e o módulo `pubsub`, que é uma biblioteca para assinar feeds de alterações.
+Esta biblioteca contém três módulos. O cliente de API gerado, a biblioteca central Java que contém utilitários escritos à mão para facilitar o trabalho com a API, e o módulo `pubsub`, que é uma biblioteca para assinatura de feeds de alterações.
 
-- [Documentação da API Client Library](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Documentação da Core Library, incluindo exemplos de SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [Documentação da PubSub Library](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [Documentação da Biblioteca do Cliente de API](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Documentação da Biblioteca Central, Incluindo Exemplos de SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [Documentação da Biblioteca PubSub](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### Public vs Secured APIs
+### APIs Públicas vs Seguras
 
-Para o cliente de API, há três classes, `DefaultApi`, `PublicApi`, e `ModerationApi`. O `DefaultApi` contém métodos que requerem sua chave de API, e o `PublicApi` contém métodos que podem ser executados diretamente de um navegador/dispositivo móvel/etc sem autenticação.
+Para o cliente de API, existem três classes, `DefaultApi`, `PublicApi` e `ModerationApi`. O `DefaultApi` contém métodos que requerem sua chave de API, e o `PublicApi` contém métodos que podem ser chamados diretamente de um navegador/dispositivo móvel/etc. sem autenticação.
 
-O `ModerationApi` alimenta o painel do moderador. Ele contém métodos para moderação de comentários (listar, contar, pesquisar, registros e exportar), ações de moderação (remover/restaurar, sinalizar, definir status de revisão/spam/aprovação, votos, e reabrir/fechar thread), banimentos (banir de comentar, desfazer um banimento, resumos pré-banimento, status e preferências de banimento, e contagens de usuários banidos), e badges & trust (conceder/remover um badge, badges manuais, obter/definir fator de confiança, e perfil interno do usuário). Todo método do `ModerationApi` aceita um parâmetro `sso` para que a chamada possa ser realizada em nome de um moderador autenticado via SSO.
+O `ModerationApi` fornece um conjunto extenso de APIs de moderação ao vivo e rápidas. Cada método do `ModerationApi` aceita um parâmetro `sso` e pode autenticar via SSO ou um cookie de sessão do FastComments.com.

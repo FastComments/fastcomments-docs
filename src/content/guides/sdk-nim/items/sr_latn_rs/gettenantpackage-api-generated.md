@@ -1,6 +1,6 @@
 ## Parametri
 
-| Ime | Tip | Obavezno | Opis |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | id | string | Ne |  |
@@ -11,15 +11,10 @@ Vraća: [`Option[GetTenantPackageResponse]`](https://github.com/FastComments/fas
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer getTenantPackage'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTenantPackage Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTenantPackage(tenantId = "my-tenant-123", id = "premium-2026")
-if response.isSome:
-  let pkg = response.get()
-  echo "Retrieved tenant package:"
+let (pkgOpt, httpResp) = client.getTenantPackage(tenantId = "my-tenant-123", id = "premium-plan")
+if pkgOpt.isSome:
+  let pkg = pkgOpt.get()
   echo pkg
-else:
-  echo "Tenant package not found"
 [inline-code-end]
-
----

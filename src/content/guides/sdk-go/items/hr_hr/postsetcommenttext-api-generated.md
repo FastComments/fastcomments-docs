@@ -1,9 +1,11 @@
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
-| commentId | string | putanja | Da |  |
-| sso | string | upit | Ne |  |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
+| commentId | string | path | Da |  |
+| broadcastId | string | query | Ne |  |
+| sso | string | query | Ne |  |
 
 ## Odgovor
 
@@ -11,7 +13,7 @@ Vraća: [`SetCommentTextResponse`](https://github.com/FastComments/fastcomments-
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer PostSetCommentText'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PostSetCommentText Primjer'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,18 +25,20 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
 	setCommentTextParams := *openapiclient.NewSetCommentTextParams("Comment_example") // SetCommentTextParams | 
+	broadcastId := "broadcastId_example" // string |  (neobavezno)
 	sso := "sso_example" // string |  (neobavezno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostSetCommentText(context.Background(), commentId).SetCommentTextParams(setCommentTextParams).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostSetCommentText(context.Background(), commentId).TenantId(tenantId).SetCommentTextParams(setCommentTextParams).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostSetCommentText``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Greška pri pozivu `ModerationAPI.PostSetCommentText``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Cijeli HTTP odgovor: %v\n", r)
 	}
 	// odgovor od `PostSetCommentText`: SetCommentTextResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostSetCommentText`: %v\n", resp)
+	fmt.Fprintf(os.Stdout, "Odgovor od `ModerationAPI.PostSetCommentText`: %v\n", resp)
 }
 [inline-code-end]

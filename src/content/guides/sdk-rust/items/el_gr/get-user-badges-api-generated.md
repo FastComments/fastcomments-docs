@@ -1,7 +1,7 @@
 ## Παράμετροι
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+|------|------|------------|-----------|
 | tenant_id | String | Ναι |  |
 | user_id | String | Όχι |  |
 | badge_id | String | Όχι |  |
@@ -9,7 +9,7 @@
 | limit | f64 | Όχι |  |
 | skip | f64 | Όχι |  |
 
-## Response
+## Απόκριση
 
 Επιστρέφει: [`ApiGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_get_user_badges_response.rs)
 
@@ -17,18 +17,16 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα get_user_badges'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_user_badges() -> Result<ApiGetUserBadgesResponse, Error> {
-    let params: GetUserBadgesParams = GetUserBadgesParams {
+async fn fetch_badges(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetUserBadgesParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        user_id: Some("user_7890".to_string()),
+        user_id: Some("user-12345".to_string()),
         badge_id: Some("top-commenter".to_string()),
         displayed_on_comments: Some(true),
-        limit: Some(25.0),
+        limit: Some(50.0),
         skip: Some(0.0),
     };
-    let response: ApiGetUserBadgesResponse = get_user_badges(&configuration, params).await?;
-    Ok(response)
+    let _response = get_user_badges(configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

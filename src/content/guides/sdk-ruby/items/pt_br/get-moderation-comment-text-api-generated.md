@@ -1,7 +1,8 @@
 ## Parâmetros
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Localização | Obrigatório | Descrição |
+|------|------|-------------|-------------|-----------|
+| tenantId | string | query | Sim |  |
 | commentId | string | path | Sim |  |
 | sso | string | query | Não |  |
 
@@ -11,12 +12,13 @@ Retorna: [`GetCommentTextResponse`](https://github.com/FastComments/fastcomments
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de get_moderation_comment_text'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_moderation_comment_text Exemplo'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 comment_id = 'comment_id_example' # String | 
 opts = {
   sso: 'sso_example' # String | 
@@ -24,7 +26,7 @@ opts = {
 
 begin
   
-  result = api_instance.get_moderation_comment_text(comment_id, opts)
+  result = api_instance.get_moderation_comment_text(tenant_id, comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_moderation_comment_text: #{e}"

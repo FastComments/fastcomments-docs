@@ -1,15 +1,9 @@
 ## Parametri
 
 | Nome | Tipo | Obbligatorio | Descrizione |
-|------|------|----------|-------------|
-| tenantId | string | Sì |  |
-| commentId | string | No |  |
-| externalId | string | No |  |
-| eventType | string | No |  |
-| type | string | No |  |
-| domain | string | No |  |
-| attemptCountGT | double | No |  |
-| skip | double | No |  |
+|------|------|--------------|-------------|
+| tenantId | string | Yes |  |
+| options | const GetPendingWebhookEventsOptions& | Yes |  |
 
 ## Risposta
 
@@ -17,25 +11,19 @@ Restituisce: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di getPendingWebhookEvents'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio getPendingWebhookEvents'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-boost::optional<utility::string_t> commentId = boost::optional<utility::string_t>{ U("cmt-98765") };
-boost::optional<utility::string_t> externalId = boost::optional<utility::string_t>{ U("ext-456") };
-boost::optional<utility::string_t> eventType = boost::optional<utility::string_t>{ U("delivery_failed") };
-boost::optional<utility::string_t> typeOpt = boost::optional<utility::string_t>{ U("webhook") };
-boost::optional<utility::string_t> domain = boost::optional<utility::string_t>{ U("app.example.com") };
-boost::optional<double> attemptCountGT = boost::optional<double>{ 1.0 };
-boost::optional<double> skip = boost::optional<double>{ 0.0 };
-api->getPendingWebhookEvents(tenantId, commentId, externalId, eventType, typeOpt, domain, attemptCountGT, skip)
-.then([](pplx::task<std::shared_ptr<GetPendingWebhookEventsResponse>> t){
-    try {
-        auto resp = t.get();
-        auto localCopy = std::make_shared<GetPendingWebhookEventsResponse>(*resp);
-        (void)localCopy;
-    } catch (const std::exception&) {
-    }
-});
+auto tenantId = utility::string_t(U("my-tenant-123"));
+GetPendingWebhookEventsOptions opts;
+opts.pageSize = boost::optional<int>(100);
+opts.startAfter = boost::optional<utility::string_t>(U("event-abc-456"));
+api->getPendingWebhookEvents(tenantId, opts)
+    .then([](pplx::task<std::shared_ptr<GetPendingWebhookEventsResponse>> task) {
+        try {
+            auto resp = task.get();
+            auto copy = std::make_shared<GetPendingWebhookEventsResponse>(*resp);
+        } catch (const std::exception&) {}
+    });
 [inline-code-end]
 
 ---

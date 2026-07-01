@@ -1,38 +1,30 @@
 ## Παράμετροι
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Ναι |  |
-| id | string | Όχι |  |
-| updatableCommentParams | UpdatableCommentParams | Όχι |  |
-| contextUserId | string | Όχι |  |
-| doSpamCheck | bool | Όχι |  |
-| isLive | bool | Όχι |  |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+|------|------|-----------|-----------|
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| updatableCommentParams | UpdatableCommentParams | No |  |
+| options | UpdateCommentOptions | No |  |
 
-## Απάντηση
+## Απόκριση
 
-Επιστρέφει: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
+Returns: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'updateComment Παράδειγμα'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateComment(
+let commentParams = UpdatableCommentParams(content: "Updated comment content")
+let updateOpts = UpdateCommentOptions(force: false)
+
+let (respOpt, httpResp) = client.updateComment(
   tenantId = "my-tenant-123",
-  id = "cmt-987654",
-  updatableCommentParams = UpdatableCommentParams(
-    text = "Updated comment: corrected facts and clarified wording.",
-    isApproved = true,
-    tags = @["news", "update"]
-  ),
-  contextUserId = "user-456",
-  doSpamCheck = true,
-  isLive = true
+  id = "comment-456",
+  updatableCommentParams = commentParams,
+  options = updateOpts
 )
 
-if response.isSome:
-  let apiResp = response.get()
-  discard apiResp
+if respOpt.isSome:
+  let resp = respOpt.get()
 [inline-code-end]
-
----

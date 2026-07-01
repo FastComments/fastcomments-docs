@@ -1,7 +1,7 @@
 ## Parâmetros
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Localização | Obrigatório | Descrição |
+|------|------|-------------|-------------|-----------|
 | tenantId | string | query | Sim |  |
 | commentId | string | query | Não |  |
 | externalId | string | query | Não |  |
@@ -17,31 +17,32 @@ Retorna: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fas
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de get_pending_webhook_events'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo get_pending_webhook_events'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetPendingWebhookEventsOptions
 from client.models.get_pending_webhook_events_response import GetPendingWebhookEventsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definir o host é opcional e o padrão é https://fastcomments.com
+# Definir o host é opcional e padrão para https://fastcomments.com
 # Veja configuration.py para uma lista de todos os parâmetros de configuração suportados.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # O cliente deve configurar os parâmetros de autenticação e autorização
-# de acordo com a política de segurança do servidor da API.
+# de acordo com a política de segurança do servidor API.
 # Exemplos para cada método de autenticação são fornecidos abaixo, use o exemplo que
-# satisfaça seu caso de uso de autenticação.
+# atenda ao seu caso de uso de autenticação.
 
 # Configurar autorização por chave de API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Descomente abaixo para configurar o prefixo (por exemplo, Bearer) para a chave da API, se necessário
+# Descomente abaixo para definir o prefixo (ex.: Bearer) para a chave de API, se necessário
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Entre em um contexto com uma instância do cliente da API
+# Entre em um contexto com uma instância do cliente API
 with client.ApiClient(configuration) as api_client:
     # Crie uma instância da classe API
     api_instance = client.DefaultApi(api_client)
@@ -55,7 +56,7 @@ with client.ApiClient(configuration) as api_client:
     skip = 3.4 # float |  (opcional)
 
     try:
-        api_response = api_instance.get_pending_webhook_events(tenant_id, comment_id=comment_id, external_id=external_id, event_type=event_type, type=type, domain=domain, attempt_count_gt=attempt_count_gt, skip=skip)
+        api_response = api_instance.get_pending_webhook_events(tenant_id, GetPendingWebhookEventsOptions(comment_id=comment_id, external_id=external_id, event_type=event_type, type=type, domain=domain, attempt_count_gt=attempt_count_gt, skip=skip))
         print("The response of DefaultApi->get_pending_webhook_events:\n")
         pprint(api_response)
     except Exception as e:

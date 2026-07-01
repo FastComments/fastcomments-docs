@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| שם | סוג | מיקום | חובה | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | כן |  |
 | postIds | array | query | לא |  |
@@ -12,16 +12,16 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getUserReactsPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה getUserReactsPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// דגימות הקוד הבאות עדיין בגרסת בטא. בכל בעיה, דווחו דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// הקוד הבא עדיין במצב בטא. לכל תקלה, אנא דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let postIds = ["inner_example"] // [String] |  (אופציונלי)
 let sso = "sso_example" // String |  (אופציונלי)
 
-PublicAPI.getUserReactsPublic(tenantId: tenantId, postIds: postIds, sso: sso) { (response, error) in
+PublicAPI.getUserReactsPublic(tenantId: tenantId, options: PublicAPI.GetUserReactsPublicOptions(postIds: postIds, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

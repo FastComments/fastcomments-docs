@@ -1,9 +1,9 @@
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| batchJobId | string | Ne |  |
-| sso | string | Ne |  |
+|------|------|----------|------|
+| tenantId | string | Da |  |
+| options | const GetApiExportStatusOptions& | Da |  |
 
 ## Odgovor
 
@@ -11,15 +11,15 @@ Vraća: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastc
 
 ## Primjer
 
-[inline-code-attrs-start title = 'getApiExportStatus Primjer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getApiExportStatus'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> batchId = utility::string_t(U("export-batch-2026-06-19"));
-boost::optional<utility::string_t> sso = utility::string_t(U("audit@my-tenant-123.com"));
-api->getApiExportStatus(batchId, sso)
-    .then([](std::shared_ptr<ModerationExportStatusResponse> resp) {
-        if (!resp) return;
-        auto statusCopy = std::make_shared<ModerationExportStatusResponse>(*resp);
+auto opts = GetApiExportStatusOptions{};
+opts.exportId = boost::make_optional<utility::string_t>(U("export-456"));
+api->getApiExportStatus(U("my-tenant-123"), opts)
+    .then([](pplx::task<std::shared_ptr<ModerationExportStatusResponse>> t){
+        try{
+            auto status = t.get();
+        }catch(const std::exception&){
+        }
     });
 [inline-code-end]
-
----

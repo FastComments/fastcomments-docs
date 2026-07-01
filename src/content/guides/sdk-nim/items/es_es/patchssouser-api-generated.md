@@ -1,37 +1,31 @@
-## Parámetros
+---
+## Parameters
 
-| Nombre | Tipo | Requerido | Descripción |
+| Nombre | Tipo | Obligatorio | Descripción |
 |------|------|----------|-------------|
 | tenantId | string | Sí |  |
 | id | string | No |  |
 | updateAPISSOUserData | UpdateAPISSOUserData | No |  |
 | updateComments | bool | No |  |
 
-## Respuesta
+## Response
 
 Devuelve: [`Option[PatchSSOUserAPIResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_patch_sso_user_api_response.nim)
 
-## Ejemplo
+## Example
 
 [inline-code-attrs-start title = 'Ejemplo de patchSSOUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.patchSSOUser(
+let updateData = UpdateAPISSOUserData()
+let (responseOpt, httpResponse) = client.patchSSOUser(
   tenantId = "my-tenant-123",
   id = "user-789",
-  updateAPISSOUserData = UpdateAPISSOUserData(
-    externalId = "ext-987",
-    username = "j.smith",
-    email = "j.smith@news.example.com",
-    displayName = "John Smith",
-    roles = @["author", "editor"],
-    avatarUrl = "https://cdn.news.example.com/avatars/j.smith.png"
-  ),
-  updateComments = true
-)
-
-if response.isSome:
-  let patched = response.get()
-  echo patched
+  updateAPISSOUserData = updateData,
+  updateComments = true)
+if responseOpt.isSome:
+  let response = responseOpt.get()
+  echo response
+echo httpResponse.statusCode
 [inline-code-end]
 
 ---

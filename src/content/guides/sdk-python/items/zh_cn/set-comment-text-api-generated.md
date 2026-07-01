@@ -1,13 +1,12 @@
----
 ## 参数
 
 | 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| tenantId | string | 路径 | 是 |  |
-| commentId | string | 路径 | 是 |  |
-| broadcastId | string | 查询 | 是 |  |
-| editKey | string | 查询 | 否 |  |
-| sso | string | 查询 | 否 |  |
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | Yes |  |
+| editKey | string | query | No |  |
+| sso | string | query | No |  |
 
 ## 响应
 
@@ -18,13 +17,14 @@
 [inline-code-attrs-start title = 'set_comment_text 示例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import SetCommentTextOptions
 from client.models.comment_text_update_request import CommentTextUpdateRequest
 from client.models.public_api_set_comment_text_response import PublicAPISetCommentTextResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # 定义主机是可选的，默认值为 https://fastcomments.com
-# 有关所有支持的配置参数的列表，请参阅 configuration.py。
+# 请参阅 configuration.py 以获取所有受支持的配置参数列表。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -42,11 +42,9 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (可选)
 
     try:
-        api_response = api_instance.set_comment_text(tenant_id, comment_id, broadcast_id, comment_text_update_request, edit_key=edit_key, sso=sso)
+        api_response = api_instance.set_comment_text(tenant_id, comment_id, broadcast_id, comment_text_update_request, SetCommentTextOptions(edit_key=edit_key, sso=sso))
         print("The response of PublicApi->set_comment_text:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling PublicApi->set_comment_text: %s\n" % e)
 [inline-code-end]
-
----

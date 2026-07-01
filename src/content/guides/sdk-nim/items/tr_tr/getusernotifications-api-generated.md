@@ -1,20 +1,9 @@
----
 ## Parametreler
 
-| Ad | Type | Gerekli | Açıklama |
+| İsim | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
-| tenantId | string | Evet |  |
-| urlId | string | Evet |  |
-| pageSize | int | Hayır |  |
-| afterId | string | Hayır |  |
-| includeContext | bool | Hayır |  |
-| afterCreatedAt | int64 | Hayır |  |
-| unreadOnly | bool | Hayır |  |
-| dmOnly | bool | Hayır |  |
-| noDm | bool | Hayır |  |
-| includeTranslations | bool | Hayır |  |
-| includeTenantNotifications | bool | Hayır |  |
-| sso | string | Hayır |  |
+| tenantId | string | Yes |  |
+| options | GetUserNotificationsOptions | No |  |
 
 ## Yanıt
 
@@ -24,24 +13,7 @@ Döndürür: [`Option[GetMyNotificationsResponse]`](https://github.com/FastComme
 
 [inline-code-attrs-start title = 'getUserNotifications Örneği'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUserNotifications(
-  tenantId = "my-tenant-123",
-  urlId = "news/article-title",
-  pageSize = 0,
-  afterId = "",
-  includeContext = false,
-  afterCreatedAt = 0,
-  unreadOnly = false,
-  dmOnly = false,
-  noDm = false,
-  includeTranslations = false,
-  includeTenantNotifications = false,
-  sso = ""
-)
-
-if response.isSome:
-  let notifications = response.get()
-  echo notifications
+let (maybeResponse, httpResponse) = client.getUserNotifications(tenantId = "my-tenant-123", options = GetUserNotificationsOptions())
+if maybeResponse.isSome:
+  let notifications = maybeResponse.get()
 [inline-code-end]
-
----

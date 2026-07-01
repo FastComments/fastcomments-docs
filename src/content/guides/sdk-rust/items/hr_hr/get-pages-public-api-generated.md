@@ -1,11 +1,11 @@
-Popis stranica za tenant. Koristi se u FChat desktop klijentu za popunjavanje popisa soba.
-Za svaku stranicu zahtijeva se da je `enableFChat` postavljen na true u razriješenoj prilagođenoj konfiguraciji.
-Stranice koje zahtijevaju SSO filtriraju se prema pristupu grupa korisnika koji šalje zahtjev.
+Popis stranica za tenant. Koristi FChat desktop klijent za popunjavanje popisa soba.  
+Zahtijeva da `enableFChat` bude true u razriješenoj prilagođenoj konfiguraciji za svaku stranicu.  
+Stranice koje zahtijevaju SSO filtriraju se prema grupnom pristupu traženog korisnika.
 
-## Parametri
+## Parameters
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
 | tenant_id | String | Yes |  |
 | cursor | String | No |  |
 | limit | i32 | No |  |
@@ -21,15 +21,16 @@ Vraća: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-
 
 [inline-code-attrs-start title = 'get_pages_public Primjer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: GetPagesPublicParams = GetPagesPublicParams {
-    tenant_id: String::from("acme-corp-tenant"),
-    cursor: Some(String::from("cursor_eyJwZl9pZCI6IjEyMyJ9")),
-    limit: Some(50),
-    q: Some(String::from("tag:release status:published")),
-    sort_by: Some(models::PagesSortBy::CreatedAt),
-    has_comments: Some(true),
-};
-let response: GetPublicPagesResponse = get_pages_public(&configuration, params).await?;
+async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetPagesPublicParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        cursor: Some("page_20".to_string()),
+        limit: Some(50),
+        q: Some("news/article".to_string()),
+        sort_by: Some(models::PagesSortBy::CreatedDesc),
+        has_comments: Some(true),
+    };
+    let _response = get_pages_public(configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]
-
----

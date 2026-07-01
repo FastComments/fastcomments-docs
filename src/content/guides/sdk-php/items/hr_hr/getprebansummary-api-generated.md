@@ -1,7 +1,8 @@
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
+| Naziv | Tip | Lokacija | Obligatorno | Opis |
+|------|------|----------|-------------|------|
+| tenantId | string | query | Da |  |
 | commentId | string | path | Da |  |
 | includeByUserIdAndEmail | boolean | query | Ne |  |
 | includeByIP | boolean | query | Ne |  |
@@ -23,17 +24,22 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
     // Ako želite koristiti prilagođeni HTTP klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opcionalno, kao zadani klijent će se koristiti `GuzzleHttp\Client`.
+    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao zadano.
     new GuzzleHttp\Client()
 );
+
+$tenant_id = 'tenant_id_example'; // string
 $comment_id = 'comment_id_example'; // string
-$include_by_user_id_and_email = True; // bool
-$include_by_ip = True; // bool
-$include_by_email_domain = True; // bool
-$sso = 'sso_example'; // string
+$options = [
+    'include_by_user_id_and_email' => True, // bool
+    'include_by_ip' => True, // bool
+    'include_by_email_domain' => True, // bool
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->getPreBanSummary($comment_id, $include_by_user_id_and_email, $include_by_ip, $include_by_email_domain, $sso);
+    $result = $apiInstance->getPreBanSummary($tenant_id, $comment_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getPreBanSummary: ', $e->getMessage(), PHP_EOL;

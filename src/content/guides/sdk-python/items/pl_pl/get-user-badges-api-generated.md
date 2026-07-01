@@ -1,14 +1,14 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Tak |  |
-| userId | string | query | Nie |  |
-| badgeId | string | query | Nie |  |
-| type | number | query | Nie |  |
-| displayedOnComments | boolean | query | Nie |  |
-| limit | number | query | Nie |  |
-| skip | number | query | Nie |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| badgeId | string | query | No |  |
+| type | number | query | No |  |
+| displayedOnComments | boolean | query | No |  |
+| limit | number | query | No |  |
+| skip | number | query | No |  |
 
 ## Odpowiedź
 
@@ -16,15 +16,16 @@ Zwraca: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomment
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład użycia get_user_badges'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład get_user_badges'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetUserBadgesOptions
 from client.models.api_get_user_badges_response import APIGetUserBadgesResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Określenie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
-# Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracji.
+# Definiowanie hosta jest opcjonalne i domyślnie wskazuje https://fastcomments.com
+# Zobacz configuration.py, aby zobaczyć listę wszystkich obsługiwanych parametrów konfiguracyjnych.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -32,15 +33,15 @@ configuration = client.Configuration(
 # Klient musi skonfigurować parametry uwierzytelniania i autoryzacji
 # zgodnie z polityką bezpieczeństwa serwera API.
 # Przykłady dla każdej metody uwierzytelniania są podane poniżej, użyj przykładu, który
-# odpowiada Twojemu przypadkowi użycia uwierzytelniania.
+# spełnia Twoje wymagania dotyczące uwierzytelniania.
 
-# Skonfiguruj autoryzację kluczem API: api_key
+# Skonfiguruj autoryzację klucza API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli to konieczne
+# Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli potrzebny
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Otwórz kontekst z instancją klienta API
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
     # Utwórz instancję klasy API
     api_instance = client.DefaultApi(api_client)
@@ -53,7 +54,7 @@ with client.ApiClient(configuration) as api_client:
     skip = 3.4 # float |  (opcjonalne)
 
     try:
-        api_response = api_instance.get_user_badges(tenant_id, user_id=user_id, badge_id=badge_id, type=type, displayed_on_comments=displayed_on_comments, limit=limit, skip=skip)
+        api_response = api_instance.get_user_badges(tenant_id, GetUserBadgesOptions(user_id=user_id, badge_id=badge_id, type=type, displayed_on_comments=displayed_on_comments, limit=limit, skip=skip))
         print("The response of DefaultApi->get_user_badges:\n")
         pprint(api_response)
     except Exception as e:

@@ -1,31 +1,47 @@
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
 | bulkPreBanParams | BulkPreBanParams | Da |  |
 | includeByUserIdAndEmail | boolean | Ne |  |
 | includeByIP | boolean | Ne |  |
 | includeByEmailDomain | boolean | Ne |  |
+| tenantId | string | Ne |  |
 | sso | string | Ne |  |
 
 ## Odgovor
 
-Vraća: [`BulkPreBanSummary`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BulkPreBanSummary.ts)
+Vraća: [`PostBulkPreBanSummaryResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostBulkPreBanSummaryResponse.ts)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer postBulkPreBanSummary'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postBulkPreBanSummary Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const bulkParams: BulkPreBanParams = {
-  accounts: [
-    { userId: 'u_8729', email: 'bot123@malicious.com', ip: '192.0.2.55' },
-    { userId: 'u_9901', email: 'spam.sender@cheapmeds.co', ip: '198.51.100.12' }
-  ],
-  reason: 'Automated pre-ban candidate import'
-};
-const includeByUserIdAndEmail: boolean = true;
-const includeByIP: boolean = true;
-const includeByEmailDomain: boolean = false;
-const sso: string = 'sso_58fd3b2c-token';
-const result: BulkPreBanSummary = await postBulkPreBanSummary(bulkParams, includeByUserIdAndEmail, includeByIP, includeByEmailDomain, sso);
+async function runExample() {
+  const bulkPreBanParams: BulkPreBanParams = {
+    userIds: [10234, 56789],
+    emails: ["spam_user@example.com", "abuse@badsite.org"],
+    ips: ["203.0.113.45", "198.51.100.22"],
+    emailDomains: ["maliciousdomain.com"]
+  };
+
+  const includeByUserIdAndEmail: boolean = true;
+  const includeByIP: boolean = false;
+  const includeByEmailDomain: boolean = true;
+  const tenantId: string = "tenant_8f4b2c1a";
+  const sso: string = "sso-3948abf0";
+
+  const summary: PostBulkPreBanSummaryResponse = await postBulkPreBanSummary(
+    bulkPreBanParams,
+    includeByUserIdAndEmail,
+    includeByIP,
+    includeByEmailDomain,
+    tenantId,
+    sso
+  );
+
+  console.log(summary);
+}
+
+runExample();
 [inline-code-end]

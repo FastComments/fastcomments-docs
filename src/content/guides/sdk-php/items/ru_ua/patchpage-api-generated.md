@@ -1,38 +1,38 @@
----
-## Параметры
+## Параметри
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Назва | Тип | Розташування | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| id | string | path | Да |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`PatchPageAPIResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PatchPageAPIResponse.php)
+Returns: [`PatchPageAPIResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PatchPageAPIResponse.php)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример patchPage'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад patchPage'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Настройка авторизации по API-ключу: api_key
+// Налаштуйте авторизацію ключа API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Розкоментуйте нижче, щоб встановити префікс (наприклад Bearer) для ключа API, за потреби
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Если хотите использовать пользовательский HTTP-клиент, передайте клиент, который реализует `GuzzleHttp\ClientInterface`.
-    // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
+    // Якщо ви хочете використати власний HTTP-клієнт, передайте ваш клієнт, який реалізує `GuzzleHttp\ClientInterface`.
+    // Це необов'язково, `GuzzleHttp\Client` буде використаний за замовчуванням.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$id = 'id_example'; // string
+
+$tenant_id = 'tenant_id_example'; // рядок
+$id = 'id_example'; // рядок
 $update_api_page_data = new \FastComments\Client\Model\UpdateAPIPageData(); // \FastComments\Client\Model\UpdateAPIPageData
+
 
 try {
     $result = $apiInstance->patchPage($tenant_id, $id, $update_api_page_data);
@@ -41,5 +41,3 @@ try {
     echo 'Exception when calling DefaultApi->patchPage: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

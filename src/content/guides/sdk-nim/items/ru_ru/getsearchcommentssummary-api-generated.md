@@ -2,10 +2,8 @@
 
 | Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
-| value | string | Нет |  |
-| filters | string | Нет |  |
-| searchFilters | string | Нет |  |
-| sso | string | Нет |  |
+| tenantId | string | Да |  |
+| options | GetSearchCommentsSummaryOptions | Нет |  |
 
 ## Ответ
 
@@ -13,19 +11,16 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример использования getSearchCommentsSummary'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getSearchCommentsSummary'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSearchCommentsSummary(
-  value = "news/climate-change-2026",
-  filters = "{\"tenantId\":\"my-tenant-123\",\"siteId\":\"main-site\",\"status\":\"approved\"}",
-  searchFilters = "author:journalist@news.com OR content:climate",
-  sso = "sso-xyz-7890"
+let (summaryOpt, httpResp) = client.getSearchCommentsSummary(
+  tenantId = "my-tenant-123",
+  options = GetSearchCommentsSummaryOptions()
 )
-if response.isSome:
-  let summary = response.get()
-  echo "Received summary: ", $summary
-else:
-  echo "No summary returned, HTTP response: ", $httpResponse
+
+if summaryOpt.isSome:
+  let summary = summaryOpt.get()
+  echo summary
 [inline-code-end]
 
 ---

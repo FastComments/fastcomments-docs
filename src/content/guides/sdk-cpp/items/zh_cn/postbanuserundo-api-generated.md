@@ -1,33 +1,26 @@
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| banUserUndoParams | BanUserUndoParams | 是 |  |
-| sso | string | 否 |  |
+| tenantId | string | Yes |  |
+| banUserUndoParams | BanUserUndoParams | Yes |  |
+| sso | string | No |  |
 
 ## 响应
 
-返回： [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
+返回: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
 ## 示例
 
 [inline-code-attrs-start title = 'postBanUserUndo 示例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-auto paramsPtr = std::make_shared<BanUserUndoParams>();
-paramsPtr->setTenantId(U("my-tenant-123"));
-paramsPtr->setUserEmail(U("jane.doe@example.com"));
-paramsPtr->setModeratorId(U("mod-456"));
-boost::optional<utility::string_t> sso = utility::string_t(U("https://sso.mycompany.com/session-token"));
-api->postBanUserUndo(*paramsPtr, sso)
-    .then([](pplx::task<std::shared_ptr<APIEmptyResponse>> t) {
-        try {
-            auto resp = t.get();
-            if (resp) std::cout << "Ban undone successfully\n";
-            else std::cout << "Ban undo returned empty response\n";
-        } catch (const std::exception& e) {
-            std::cout << "postBanUserUndo failed: " << e.what() << '\n';
-        }
-    });
-[inline-code-end]
+auto tenantId = utility::string_t(U("my-tenant-123"));
+BanUserUndoParams banParams;
+banParams.userId = utility::string_t(U("user-567"));
+banParams.reason = utility::string_t(U("reinstated"));
+boost::optional<utility::string_t> sso = utility::string_t(U("sso-token-abc"));
 
----
+api->postBanUserUndo(tenantId, banParams, sso).then([](std::shared_ptr<APIEmptyResponse> resp){
+    // handle success
+});
+[inline-code-end]

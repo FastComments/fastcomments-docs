@@ -1,12 +1,11 @@
----
 ## Параметри
 
 | Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| post_id | String | Да |  |
-| broadcast_id | String | Не |  |
-| sso | String | Не |  |
+| tenant_id | String | Yes |  |
+| post_id | String | Yes |  |
+| broadcast_id | String | No |  |
+| sso | String | No |  |
 
 ## Отговор
 
@@ -16,15 +15,15 @@
 
 [inline-code-attrs-start title = 'delete_feed_post_public Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run(configuration: &configuration::Configuration) -> Result<DeleteFeedPostPublicResponse, Error> {
-    let params: DeleteFeedPostPublicParams = DeleteFeedPostPublicParams {
+async fn example() -> Result<(), Error> {
+    let params = DeleteFeedPostPublicParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        post_id: "news/article-2026-06-19".to_string(),
-        broadcast_id: Some("broadcast-789".to_string()),
-        sso: Some("sso-token-abc123".to_string()),
+        post_id: "news/article-123".to_string(),
+        broadcast_id: Some("broadcast-456".to_string()),
+        sso: Some("sso-token-789".to_string()),
     };
-    let response: DeleteFeedPostPublicResponse = delete_feed_post_public(configuration, params).await?;
-    Ok(response)
+    let _response: DeleteFeedPostPublicResponse = delete_feed_post_public(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
 

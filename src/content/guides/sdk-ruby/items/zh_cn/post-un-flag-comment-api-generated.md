@@ -1,13 +1,15 @@
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | 是 |  |
 | commentId | string | path | 是 |  |
+| broadcastId | string | query | 否 |  |
 | sso | string | query | 否 |  |
 
 ## 响应
 
-返回: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
+返回：[`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
 ## 示例
 
@@ -17,14 +19,16 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
-comment_id = 'comment_id_example' # String | 
+tenant_id = 'tenant_id_example' # 字符串 | 
+comment_id = 'comment_id_example' # 字符串 | 
 opts = {
-  sso: 'sso_example' # String | 
+  broadcast_id: 'broadcast_id_example', # 字符串 | 
+  sso: 'sso_example' # 字符串 | 
 }
 
 begin
   
-  result = api_instance.post_un_flag_comment(comment_id, opts)
+  result = api_instance.post_un_flag_comment(tenant_id, comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_un_flag_comment: #{e}"

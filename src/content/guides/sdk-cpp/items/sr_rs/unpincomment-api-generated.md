@@ -1,35 +1,27 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| commentId | string | Да |  |
-| broadcastId | string | Да |  |
-| sso | string | Не |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| broadcastId | string | Yes |  |
+| sso | string | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ChangeCommentPinStatusResponse.h)
+Vraća: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ChangeCommentPinStatusResponse.h)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример unPinComment'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'unPinComment Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("cmt-987654321");
-utility::string_t broadcastId = U("broadcast-42");
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
-
-api->unPinComment(tenantId, commentId, broadcastId, sso)
-.then([](pplx::task<std::shared_ptr<ChangeCommentPinStatusResponse>> t) {
-    try {
-        auto resp = t.get();
-        if (!resp) resp = std::make_shared<ChangeCommentPinStatusResponse>();
-        std::cout << "Unpin operation completed\n";
-    } catch (const std::exception& e) {
-        std::cerr << "Unpin failed: " << e.what() << '\n';
-    }
+auto task = api->unPinComment(
+    utility::conversions::to_string_t("my-tenant-123"),
+    utility::conversions::to_string_t("cmt-456789"),
+    utility::conversions::to_string_t("broadcast-001"),
+    boost::optional<utility::string_t>(utility::conversions::to_string_t("user@example.com"))
+);
+task.then([](std::shared_ptr<ChangeCommentPinStatusResponse> resp){
+    auto result = std::make_shared<ChangeCommentPinStatusResponse>(*resp);
 });
 [inline-code-end]
-
----

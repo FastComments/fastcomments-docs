@@ -1,12 +1,13 @@
 ---
+Качване и преоразмеряване на изображение
+
 ## Параметри
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Име | Тип | Задължителен | Описание |
+|------|------|--------------|----------|
 | tenantId | string | Да |  |
 | file | string | Не |  |
-| sizePreset | SizePreset | Не |  |
-| urlId | string | Да |  |
+| options | UploadImageOptions | Не |  |
 
 ## Отговор
 
@@ -14,18 +15,17 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за uploadImage'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'uploadImage Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.uploadImage(
+let (uploadResult, httpResponse) = client.uploadImage(
   tenantId = "my-tenant-123",
-  file = "assets/images/comment-avatar.jpg",
-  sizePreset = SizePreset.small,
-  urlId = "news/article-2025-11-22"
+  file = "images/avatar.jpg",
+  options = UploadImageOptions()
 )
-if response.isSome:
-  let upload = response.get()
-  echo "Uploaded image id: ", upload.id
-  echo "Uploaded image url: ", upload.url
+
+if uploadResult.isSome:
+  let result = uploadResult.get()
+  # използвайте резултата, както е необходимо
 [inline-code-end]
 
 ---

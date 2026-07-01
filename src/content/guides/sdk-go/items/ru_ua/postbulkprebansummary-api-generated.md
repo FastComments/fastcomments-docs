@@ -1,19 +1,20 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Назва | Тип | Розташування | Обов’язково | Опис |
 |------|------|----------|----------|-------------|
-| includeByUserIdAndEmail | boolean | query | Нет |  |
-| includeByIP | boolean | query | Нет |  |
-| includeByEmailDomain | boolean | query | Нет |  |
-| sso | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| includeByUserIdAndEmail | boolean | query | No |  |
+| includeByIP | boolean | query | No |  |
+| includeByEmailDomain | boolean | query | No |  |
+| sso | string | query | No |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`BulkPreBanSummary`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_bulk_pre_ban_summary.go)
+Повертає: [`BulkPreBanSummary`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_bulk_pre_ban_summary.go)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример PostBulkPreBanSummary'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад PostBulkPreBanSummary'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -25,20 +26,21 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	bulkPreBanParams := *openapiclient.NewBulkPreBanParams([]string{"CommentIds_example"}) // BulkPreBanParams | 
-	includeByUserIdAndEmail := true // bool |  (необязательно)
-	includeByIP := true // bool |  (необязательно)
-	includeByEmailDomain := true // bool |  (необязательно)
-	sso := "sso_example" // string |  (необязательно)
+	includeByUserIdAndEmail := true // bool |  (опціонально)
+	includeByIP := true // bool |  (опціонально)
+	includeByEmailDomain := true // bool |  (опціонально)
+	sso := "sso_example" // string |  (опціонально)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostBulkPreBanSummary(context.Background()).BulkPreBanParams(bulkPreBanParams).IncludeByUserIdAndEmail(includeByUserIdAndEmail).IncludeByIP(includeByIP).IncludeByEmailDomain(includeByEmailDomain).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostBulkPreBanSummary(context.Background()).TenantId(tenantId).BulkPreBanParams(bulkPreBanParams).IncludeByUserIdAndEmail(includeByUserIdAndEmail).IncludeByIP(includeByIP).IncludeByEmailDomain(includeByEmailDomain).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostBulkPreBanSummary``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Помилка під час виклику `ModerationAPI.PostBulkPreBanSummary``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Повна HTTP відповідь: %v\n", r)
 	}
-	// ответ от `PostBulkPreBanSummary`: BulkPreBanSummary
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostBulkPreBanSummary`: %v\n", resp)
+	// відповідь від `PostBulkPreBanSummary`: BulkPreBanSummary
+	fmt.Fprintf(os.Stdout, "Відповідь від `ModerationAPI.PostBulkPreBanSummary`: %v\n", resp)
 }
 [inline-code-end]

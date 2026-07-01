@@ -1,7 +1,8 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Zorunlu | Açıklama |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Evet |  |
 | text-search | string | query | Hayır |  |
 | byIPFromComment | string | query | Hayır |  |
 | filters | string | query | Hayır |  |
@@ -15,12 +16,13 @@ Döndürür: [`ModerationExportResponse`](https://github.com/FastComments/fastco
 
 ## Örnek
 
-[inline-code-attrs-start title = 'post_api_export Örneği'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_api_export Örnek'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 opts = {
   text_search: 'text_search_example', # String | 
   by_ip_from_comment: 'by_ip_from_comment_example', # String | 
@@ -32,7 +34,7 @@ opts = {
 
 begin
   
-  result = api_instance.post_api_export(opts)
+  result = api_instance.post_api_export(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_api_export: #{e}"

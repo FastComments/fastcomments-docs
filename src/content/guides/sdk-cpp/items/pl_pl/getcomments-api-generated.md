@@ -1,24 +1,9 @@
 ## Parametry
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nazwa | Typ | Wymagane | Opis |
+|------|------|----------|------|
 | tenantId | string | Tak |  |
-| page | int32_t | Nie |  |
-| limit | int32_t | Nie |  |
-| skip | int32_t | Nie |  |
-| asTree | bool | Nie |  |
-| skipChildren | int32_t | Nie |  |
-| limitChildren | int32_t | Nie |  |
-| maxTreeDepth | int32_t | Nie |  |
-| urlId | string | Nie |  |
-| userId | string | Nie |  |
-| anonUserId | string | Nie |  |
-| contextUserId | string | Nie |  |
-| hashTag | string | Nie |  |
-| parentId | string | Nie |  |
-| direction | SortDirections | Nie |  |
-| fromDate | int64_t | Nie |  |
-| toDate | int64_t | Nie |  |
+| options | const GetCommentsOptions& | Tak |  |
 
 ## Odpowiedź
 
@@ -28,36 +13,18 @@ Zwraca: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-
 
 [inline-code-attrs-start title = 'Przykład getComments'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId(U("my-tenant-123"));
-boost::optional<int32_t> page = 1;
-boost::optional<int32_t> limit = 50;
-boost::optional<bool> asTree = true;
-boost::optional<utility::string_t> userId = utility::string_t(U("user@example.com"));
-boost::optional<int64_t> fromDate = 1622505600LL;
-boost::optional<int64_t> toDate = 1625097600LL;
-
-api->getComments(tenantId,
-                 page,
-                 limit,
-                 boost::optional<int32_t>(),
-                 asTree,
-                 boost::optional<int32_t>(),
-                 boost::optional<int32_t>(),
-                 boost::optional<int32_t>(),
-                 boost::optional<utility::string_t>(),
-                 userId,
-                 boost::optional<utility::string_t>(),
-                 boost::optional<utility::string_t>(),
-                 boost::optional<utility::string_t>(),
-                 boost::optional<utility::string_t>(),
-                 boost::optional<SortDirections>(),
-                 fromDate,
-                 toDate)
-.then([](pplx::task<std::shared_ptr<APIGetCommentsResponse>> t){
+utility::string_t tenantId = U("my-tenant-123");
+GetCommentsOptions options;
+options.page = 1;
+options.limit = 50;
+options.sort = U("newest");
+options.authorEmail = boost::optional<utility::string_t>(U("user@example.com"));
+api->getComments(tenantId, options).then([](pplx::task<std::shared_ptr<APIGetCommentsResponse>> task) {
     try {
-        auto resp = t.get();
-        auto holder = std::make_shared<std::shared_ptr<APIGetCommentsResponse>>(resp);
-        (void)holder;
-    } catch (...) {}
+        auto response = task.get();
+        // użyj odpowiedzi w razie potrzeby
+    } catch (const std::exception& e) {
+        // obsłuż błąd
+    }
 });
 [inline-code-end]

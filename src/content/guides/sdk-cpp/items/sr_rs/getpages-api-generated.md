@@ -1,3 +1,4 @@
+---
 ## Параметри
 
 | Име | Тип | Обавезно | Опис |
@@ -10,25 +11,17 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'getPages Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getPages'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-int main()
-{
-    utility::string_t tenantId = U("my-tenant-123");
-    boost::optional<utility::string_t> statusFilter = U("published");
-    boost::optional<int> pageNumber = 1;
-    auto placeholder = std::make_shared<GetPagesAPIResponse>();
-    api->getPages(tenantId)
-       .then([placeholder](std::shared_ptr<GetPagesAPIResponse> resp) {
-           if (resp) {
-               *placeholder = *resp;
-               auto refs = resp.use_count();
-               (void)refs;
-           }
-       })
-       .wait();
-    return 0;
-}
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+api->getPages(tenantId)
+    .then([](pplx::task<std::shared_ptr<GetPagesAPIResponse>> task) {
+        try {
+            auto response = task.get();
+            boost::optional<utility::string_t> nextCursor = response->nextCursor;
+        } catch (const std::exception&) {
+        }
+    });
 [inline-code-end]
 
 ---

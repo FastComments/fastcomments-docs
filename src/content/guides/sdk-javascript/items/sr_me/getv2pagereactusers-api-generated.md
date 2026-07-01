@@ -1,25 +1,25 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| urlId | string | Да |  |
-| id | string | Да |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| id | string | Yes |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetV2PageReactUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetV2PageReactUsersResponse.ts)
+Vraća: [`GetV2PageReactUsersResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetV2PageReactUsersResponse1.ts)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'getV2PageReactUsers Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getV2PageReactUsers Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "fc_tenant_7b4c9d1";
-const rawUrlId: string | undefined = undefined; // може доћи из параметара руте
-const urlId: string = rawUrlId ?? "page-home-9a3f2b";
-const id: string = "user_823b5c";
-
-const response: GetV2PageReactUsersResponse = await getV2PageReactUsers(tenantId, urlId, id);
+async function fetchReactUsers() {
+  const tenantId: string = 'tenant_12345';
+  const urlId: string = 'article-9876';
+  const id: string = 'user_abcde';
+  const response: GetV2PageReactUsersResponse1 = await getV2PageReactUsers(tenantId, urlId, id);
+  console.log(response);
+}
+fetchReactUsers();
 [inline-code-end]
-
----

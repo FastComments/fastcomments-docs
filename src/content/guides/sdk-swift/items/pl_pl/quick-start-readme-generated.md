@@ -1,14 +1,11 @@
-### Korzystanie z Publicznego API
+### Using the Public API
 
 ```swift
 import FastCommentsSwift
 
-// Utwórz klienta API
-let publicApi = PublicAPI()
-
 // Pobierz komentarze dla strony
 do {
-    let response = try await publicApi.getCommentsPublic(
+    let response = try await PublicAPI.getCommentsPublic(
         tenantId: "your-tenant-id",
         urlId: "page-url-id"
     )
@@ -22,20 +19,19 @@ do {
 }
 ```
 
-### Korzystanie z Uwierzytelnionego API
+### Using the Authenticated API
 
 ```swift
 import FastCommentsSwift
 
-// Utwórz konfigurację z kluczem API
-let defaultApi = DefaultAPI()
-defaultApi.apiKey = "your-api-key"
+// Skonfiguruj swój klucz API w udostępnionej konfiguracji (wysyłany jako nagłówek x-api-key)
+FastCommentsSwiftAPIConfiguration.shared.customHeaders["x-api-key"] = "your-api-key"
 
-// Pobierz komentarze korzystając z uwierzytelnionego API
+// Pobierz komentarze przy użyciu uwierzytelnionego API
 do {
-    let response = try await defaultApi.getComments(
+    let response = try await DefaultAPI.getComments(
         tenantId: "your-tenant-id",
-        urlId: "page-url-id"
+        options: .init(urlId: "page-url-id")
     )
 
     print("Total comments: \(response.count ?? 0)")
@@ -47,18 +43,20 @@ do {
 }
 ```
 
-### Korzystanie z API Moderacji
+### Using the Moderation API
 
 ```swift
 import FastCommentsSwift
 
 // Metody moderacji są autoryzowane tokenem `sso` dla działającego moderatora
-// (wygeneruj go przy użyciu FastCommentsSSO, zobacz sekcję SSO powyżej).
+// (wygeneruj go za pomocą FastCommentsSSO, zobacz sekcję SSO powyżej).
 do {
     let response = try await ModerationAPI.getApiComments(
-        page: 0,
-        count: 30,
-        sso: ssoToken
+        options: .init(
+            page: 0,
+            count: 30,
+            sso: ssoToken
+        )
     )
 
     print("Found \(response.comments.count) comments to moderate")
@@ -70,9 +68,9 @@ do {
 }
 ```
 
-### Korzystanie z SSO do uwierzytelniania
+### Using SSO for Authentication
 
-#### Bezpieczne SSO (zalecane do produkcji)
+#### Secure SSO (Recommended for Production)
 
 ```swift
 import FastCommentsSwift
@@ -84,7 +82,7 @@ let userData = SecureSSOUserData(
     id: "user-123",              // ID użytkownika
     email: "user@example.com",   // E-mail
     username: "johndoe",         // Nazwa użytkownika
-    avatar: "https://example.com/avatar.jpg" // Adres URL avatara
+    avatar: "https://example.com/avatar.jpg" // URL awatara
 )
 
 // Wygeneruj token SSO
@@ -99,12 +97,12 @@ do {
 }
 ```
 
-#### Proste SSO (do rozwoju/testowania)
+#### Simple SSO (For Development/Testing)
 
 ```swift
 import FastCommentsSwift
 
-// Utwórz proste dane użytkownika SSO (klucz API nie jest wymagany)
+// Utwórz proste dane użytkownika SSO (klucz API nie jest potrzebny)
 let userData = SimpleSSOUserData(
     username: "johndoe",
     email: "user@example.com",

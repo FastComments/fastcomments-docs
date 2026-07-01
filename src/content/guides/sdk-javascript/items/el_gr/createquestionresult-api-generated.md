@@ -1,33 +1,31 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
-|------|------|----------|-------------|
-| tenantId | string | Ναι |  |
-| createQuestionResultBody | CreateQuestionResultBody | Ναι |  |
+|------|------|------------|-----------|
+| tenantId | string | Yes |  |
+| createQuestionResultBody | CreateQuestionResultBody | Yes |  |
 
-## Απόκριση
+## Απάντηση
 
-Επιστρέφει: [`CreateQuestionResultResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionResultResponse.ts)
+Επιστρέφει: [`CreateQuestionResultResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionResultResponse1.ts)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα createQuestionResult'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "tenant_5821b2";
-  const createQuestionResultBody: CreateQuestionResultBody = {
-    questionId: "q_9f3a7",
-    userId: "user_77",
-    score: 4.5,
-    feedback: "Answer was concise and addressed the core issue",
-    // επιδεικνύονται προαιρετικές παράμετροι
-    sessionId: "sess_a12f",
-    meta: [{ key: "device", value: "iPhone 13 Pro" }],
-    status: { code: 201, message: "Created" }
-  };
-  const result: CreateQuestionResultResponse = await createQuestionResult(tenantId, createQuestionResultBody);
-  console.log(result);
-})();
-[inline-code-end]
+const tenantId: string = "acme-corp-tenant";
 
----
+const metaItem: MetaItem = {
+  key: "campaign",
+  value: "spring-launch"
+};
+
+const questionResultBody: CreateQuestionResultBody = {
+  questionId: "question-42",
+  answer: "Positive",
+  metadata: [metaItem]
+  // προαιρετικά πεδία όπως σημειώσεις παραλείπονται
+};
+
+const result: CreateQuestionResultResponse1 = await createQuestionResult(tenantId, questionResultBody);
+[inline-code-end]

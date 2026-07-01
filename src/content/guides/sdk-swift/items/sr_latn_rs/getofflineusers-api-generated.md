@@ -1,34 +1,33 @@
-Prethodni komentatori na stranici koji trenutno NISU online. Sortirano po displayName.
-Koristite ovo nakon što iscrpite /users/online da biste prikazali sekciju „Članovi“.
-Paginacija kursorom po commenterName: server pretražuje parcijalni indeks {tenantId, urlId, commenterName}
-indeks od afterName unapred putem $gt, bez $skip troška.
+Past commenters on the page who are NOT currently online. Sorted by displayName.  
+Use this after exhausting /users/online to render a "Members" section.  
+Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.
 
-## Parametri
+## Parameters
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Da |  |
-| urlId | string | query | Da | Identifikator URL stranice (obrađen na serverskoj strani). |
+| urlId | string | query | Da | Identifikator URL-a stranice (čišćen na serveru). |
 | afterName | string | query | Ne | Kursor: prosledite nextAfterName iz prethodnog odgovora. |
-| afterUserId | string | query | Ne | Tiebreaker kursora: prosledite nextAfterUserId iz prethodnog odgovora. Obavezno kada je afterName postavljen kako duplikati imena ne bi bili izostavljeni. |
+| afterUserId | string | query | Ne | Kursor razbijanje vezanosti: prosledite nextAfterUserId iz prethodnog odgovora. Potrebno kada je afterName postavljen kako bi se izbeglo izostavljanje unosa pri podudaranju imena. |
 
-## Odgovor
+## Response
 
 Vraća: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PageUsersOfflineResponse.swift)
 
-## Primer
+## Example
 
 [inline-code-attrs-start title = 'Primer getOfflineUsers'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sledeći primeri koda su još u beta fazi. Za bilo koji problem, prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledeći kod primeri su još u beta fazi. Za sve probleme, molimo vas da ih prijavite putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let urlId = "urlId_example" // String | Identifikator URL stranice (obrađen na serverskoj strani).
+let urlId = "urlId_example" // String | Identifikator URL-a stranice (čišćen na serveru).
 let afterName = "afterName_example" // String | Kursor: prosledite nextAfterName iz prethodnog odgovora. (opciono)
-let afterUserId = "afterUserId_example" // String | Tiebreaker kursora: prosledite nextAfterUserId iz prethodnog odgovora. Obavezno kada je afterName postavljen kako duplikati imena ne bi bili izostavljeni. (opciono)
+let afterUserId = "afterUserId_example" // String | Kursor razbijanje vezanosti: prosledite nextAfterUserId iz prethodnog odgovora. Potrebno kada je afterName postavljen kako bi se izbeglo izostavljanje unosa pri podudaranju imena. (opciono)
 
-PublicAPI.getOfflineUsers(tenantId: tenantId, urlId: urlId, afterName: afterName, afterUserId: afterUserId) { (response, error) in
+PublicAPI.getOfflineUsers(tenantId: tenantId, urlId: urlId, options: PublicAPI.GetOfflineUsersOptions(afterName: afterName, afterUserId: afterUserId)) { (response, error) in
     guard error == nil else {
         print(error)
         return

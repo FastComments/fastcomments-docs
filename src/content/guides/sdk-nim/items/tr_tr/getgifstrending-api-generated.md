@@ -3,9 +3,7 @@
 | Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
-| locale | string | Hayır |  |
-| rating | string | Hayır |  |
-| page | float64 | Hayır |  |
+| options | GetGifsTrendingOptions | Hayır |  |
 
 ## Yanıt
 
@@ -15,12 +13,14 @@ Döndürür: [`Option[GetGifsTrendingResponse]`](https://github.com/FastComments
 
 [inline-code-attrs-start title = 'getGifsTrending Örneği'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getGifsTrending(tenantId = "my-tenant-123",
-  locale = "en-US",
-  rating = "pg-13",
-  page = 1.0)
-if response.isSome:
-  let trending = response.get()
+let (maybeResponse, httpResponse) = client.getGifsTrending(
+  tenantId = "my-tenant-123",
+  options = GetGifsTrendingOptions()
+)
+
+if maybeResponse.isSome:
+  let gifs = maybeResponse.get()
+  echo gifs
 [inline-code-end]
 
 ---

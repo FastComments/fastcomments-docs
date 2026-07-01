@@ -27,8 +27,10 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $ids = 'ids_example'; // string | Comma-delimited userIds.
+
 
 try {
     $result = $apiInstance->getUsersInfo($tenant_id, $ids);

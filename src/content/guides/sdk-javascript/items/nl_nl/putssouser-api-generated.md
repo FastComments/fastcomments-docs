@@ -1,13 +1,13 @@
 ## Parameters
 
 | Naam | Type | Vereist | Beschrijving |
-|------|------|----------|-------------|
+|------|------|----------|--------------|
 | tenantId | string | Ja |  |
 | id | string | Ja |  |
 | updateAPISSOUserData | UpdateAPISSOUserData | Ja |  |
 | updateComments | boolean | Nee |  |
 
-## Respons
+## Reactie
 
 Retourneert: [`PutSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PutSSOUserAPIResponse.ts)
 
@@ -15,16 +15,18 @@ Retourneert: [`PutSSOUserAPIResponse`](https://github.com/FastComments/fastcomme
 
 [inline-code-attrs-start title = 'putSSOUser Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-enterprises-42';
-const id: string = 'usr-73a1b2';
-const updateAPISSOUserData: UpdateAPISSOUserData = {
-  email: 'marcus.ingram@acme.com',
-  givenName: 'Marcus',
-  familyName: 'Ingram',
-  roles: ['editor', 'project_owner'],
-  enabled: true
-};
-const result: PutSSOUserAPIResponse = await putSSOUser(tenantId, id, updateAPISSOUserData, true);
+(async () => {
+  const tenantId: string = "tenant_abc123";
+  const userId: string = "user_456def";
+
+  const updateData: UpdateAPISSOUserData = {
+    email: "jane.doe@example.com",
+    displayName: "Jane Doe",
+    isActive: true,
+  };
+
+  const response: PutSSOUserAPIResponse = await putSSOUser(tenantId, userId, updateData, true);
+})();
 [inline-code-end]
 
 ---

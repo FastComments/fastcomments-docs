@@ -1,35 +1,35 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Обавезно | Опис |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| questionId | string | query | Не |  |
-| questionIds | array | query | Не |  |
-| urlId | string | query | Не |  |
-| timeBucket | string | query | Не |  |
-| startDate | string | query | Не |  |
-| forceRecalculate | boolean | query | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| questionId | string | query | No |  |
+| questionIds | array | query | No |  |
+| urlId | string | query | No |  |
+| timeBucket | string | query | No |  |
+| startDate | string | query | No |  |
+| forceRecalculate | boolean | query | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AggregateQuestionResultsResponse.swift)
+Vraća: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AggregateQuestionResultsResponse.swift)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример aggregateQuestionResults'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'aggregateQuestionResults Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи примери кода су још у бета фази. За било који проблем, пријавите на http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledeći primeri koda su i dalje beta. Za bilo koji problem, molimo prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let questionId = "questionId_example" // String |  (опционо)
-let questionIds = ["inner_example"] // [String] |  (опционо)
-let urlId = "urlId_example" // String |  (опционо)
-let timeBucket = AggregateTimeBucket() // AggregateTimeBucket |  (опционо)
-let startDate = Date() // Date |  (опционо)
-let forceRecalculate = true // Bool |  (опционо)
+let questionId = "questionId_example" // String |  (optional)
+let questionIds = ["inner_example"] // [String] |  (optional)
+let urlId = "urlId_example" // String |  (optional)
+let timeBucket = AggregateTimeBucket() // AggregateTimeBucket |  (optional)
+let startDate = Date() // Date |  (optional)
+let forceRecalculate = true // Bool |  (optional)
 
-DefaultAPI.aggregateQuestionResults(tenantId: tenantId, questionId: questionId, questionIds: questionIds, urlId: urlId, timeBucket: timeBucket, startDate: startDate, forceRecalculate: forceRecalculate) { (response, error) in
+DefaultAPI.aggregateQuestionResults(tenantId: tenantId, options: DefaultAPI.AggregateQuestionResultsOptions(questionId: questionId, questionIds: questionIds, urlId: urlId, timeBucket: timeBucket, startDate: startDate, forceRecalculate: forceRecalculate)) { (response, error) in
     guard error == nil else {
         print(error)
         return

@@ -1,10 +1,10 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Назва | Тип | Розташування | Обов'язковий | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Так |  |
-| meta | string | query | Ні |  |
-| skip | number | query | Ні |  |
+| tenantId | string | query | Yes |  |
+| meta | string | query | No |  |
+| skip | number | query | No |  |
 
 ## Відповідь
 
@@ -14,14 +14,14 @@
 
 [inline-code-attrs-start title = 'Приклад getTenants'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Наведені нижче приклади коду все ще є бета-версіями. У разі проблеми, будь ласка, повідомте через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наступні зразки коду ще в бета-версії. У разі будь-яких проблем, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let meta = "meta_example" // String |  (необов'язково)
-let skip = 987 // Double |  (необов'язково)
+let meta = "meta_example" // String |  (необов'язковий)
+let skip = 987 // Double |  (необов'язковий)
 
-DefaultAPI.getTenants(tenantId: tenantId, meta: meta, skip: skip) { (response, error) in
+DefaultAPI.getTenants(tenantId: tenantId, options: DefaultAPI.GetTenantsOptions(meta: meta, skip: skip)) { (response, error) in
     guard error == nil else {
         print(error)
         return

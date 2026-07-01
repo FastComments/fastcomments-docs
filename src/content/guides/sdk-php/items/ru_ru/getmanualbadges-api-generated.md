@@ -2,6 +2,7 @@
 
 | Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
 | sso | string | query | Нет |  |
 
 ## Ответ
@@ -18,18 +19,19 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Если вы хотите использовать собственный HTTP-клиент, передайте клиент, который реализует `GuzzleHttp\ClientInterface`.
+    // Если вы хотите использовать свой HTTP‑клиент, передайте клиент, реализующий `GuzzleHttp\ClientInterface`.
     // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // строка
+$sso = 'sso_example'; // строка
+
 
 try {
-    $result = $apiInstance->getManualBadges($sso);
+    $result = $apiInstance->getManualBadges($tenant_id, $sso);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getManualBadges: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

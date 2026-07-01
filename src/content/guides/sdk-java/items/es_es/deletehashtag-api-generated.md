@@ -1,9 +1,9 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
+|--------|------|-----------|-----------|-------------|
+| tenantId | string | query | Sí |  |
 | tag | string | path | Sí |  |
-| tenantId | string | query | No |  |
 
 ## Respuesta
 
@@ -11,7 +11,7 @@ Devuelve: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de deleteHashTag'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo deleteHashTag'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importar clases:
 import com.fastcomments.invoker.ApiClient;
@@ -26,29 +26,30 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configurar la autorización por clave API: api_key
+    // Configurar autorización de clave API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Descomenta la siguiente línea para establecer un prefijo para la clave API, p. ej. "Token" (por defecto: null)
+    // Descomente la siguiente línea para establecer un prefijo para la clave API, p. ej. "Token" (valor predeterminado null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    String tag = "tag_example"; // String | 
     String tenantId = "tenantId_example"; // String | 
+    String tag = "tag_example"; // String | 
     DeleteHashTagRequestBody deleteHashTagRequestBody = new DeleteHashTagRequestBody(); // DeleteHashTagRequestBody | 
     try {
-      APIEmptyResponse result = apiInstance.deleteHashTag(tag)
-            .tenantId(tenantId)
+      APIEmptyResponse result = apiInstance.deleteHashTag(tenantId, tag)
             .deleteHashTagRequestBody(deleteHashTagRequestBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling DefaultApi#deleteHashTag");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("Excepción al llamar a DefaultApi#deleteHashTag");
+      System.err.println("Código de estado: " + e.getCode());
+      System.err.println("Razón: " + e.getResponseBody());
+      System.err.println("Encabezados de respuesta: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }
 }
 [inline-code-end]
+
+---

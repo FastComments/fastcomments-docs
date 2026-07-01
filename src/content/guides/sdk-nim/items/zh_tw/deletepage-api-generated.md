@@ -1,9 +1,9 @@
 ## 參數
 
-| 名稱 | 型別 | 必填 | 說明 |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| id | string | 否 |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
 
 ## 回應
 
@@ -13,12 +13,9 @@
 
 [inline-code-attrs-start title = 'deletePage 範例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deletePage(tenantId = "site-tenant-456", id = "news/winter-updates-2025")
-if response.isSome:
-  let deleted = response.get()
-  echo "DeletePageAPIResponse:", deleted
-else:
-  echo "Delete failed, HTTP response:", httpResponse
+let (deleteRespOpt, httpResp) = client.deletePage(tenantId = "my-tenant-123", id = "news/article-title")
+if deleteRespOpt.isSome:
+  let deleteResp = deleteRespOpt.get()
+  discard deleteResp
+discard httpResp
 [inline-code-end]
-
----

@@ -1,7 +1,7 @@
 ## 參數
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| 名稱 | 類型 | 必填 | 描述 |
+|------|------|----------|------|
 | tenant_id | String | 是 |  |
 | id | String | 是 |  |
 | un_block_from_comment_params | models::UnBlockFromCommentParams | 是 |  |
@@ -10,24 +10,21 @@
 
 ## 回應
 
-回傳: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/unblock_success.rs)
+返回：[`UnblockSuccess`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/unblock_success.rs)
 
-## 範例
+## 示例
 
 [inline-code-attrs-start title = 'un_block_user_from_comment 範例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let params: UnBlockUserFromCommentParams = UnBlockUserFromCommentParams {
+async fn example(config: &configuration::Configuration) -> Result<UnblockSuccess, Error> {
+    let params = UnBlockUserFromCommentParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "news/article/comments/42".to_string(),
-        un_block_from_comment_params: models::UnBlockFromCommentParams {
-            reason: Some("mistaken moderation".to_string()),
-            unblock_children: Some(true),
-        },
-        user_id: Some("user-12345".to_string()),
-        anon_user_id: None,
+        id: "comment-12345".to_string(),
+        un_block_from_comment_params: models::UnBlockFromCommentParams::default(),
+        user_id: Some("user-67890".to_string()),
+        anon_user_id: Some("anon-abcde".to_string()),
     };
-    let success: UnblockSuccess = un_block_user_from_comment(&configuration, params).await?;
-    Ok(())
+    let result = un_block_user_from_comment(config, params).await?;
+    Ok(result)
 }
 [inline-code-end]

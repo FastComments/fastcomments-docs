@@ -1,63 +1,60 @@
-## Parametreler
+## Parameters
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Evet |  |
-| isLive | boolean | query | Hayır |  |
-| doSpamCheck | boolean | query | Hayır |  |
-| sendEmails | boolean | query | Hayır |  |
-| populateNotifications | boolean | query | Hayır |  |
+| tenantId | string | query | Yes |  |
+| isLive | boolean | query | No |  |
+| doSpamCheck | boolean | query | No |  |
+| sendEmails | boolean | query | No |  |
+| populateNotifications | boolean | query | No |  |
 
-## Yanıt
+## Response
 
-Döndürür: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_save_comment_response.py)
+Returns: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_save_comment_response.py)
 
-## Örnek
+## Example
 
 [inline-code-attrs-start title = 'save_comment Örneği'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import SaveCommentOptions
 from client.models.api_save_comment_response import APISaveCommentResponse
 from client.models.create_comment_params import CreateCommentParams
 from client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://fastcomments.com
-# Desteklenen tüm yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.
+# Ana bilgisayarın tanımlanması isteğe bağlıdır ve varsayılan olarak https://fastcomments.com adresine ayarlanır
+# Tüm desteklenen yapılandırma parametrelerinin listesini görmek için configuration.py dosyasına bakın.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
 # İstemci, kimlik doğrulama ve yetkilendirme parametrelerini yapılandırmalıdır
-# API sunucusunun güvenlik politikasına uygun olarak.
-# Her kimlik doğrulama yöntemi için örnekler aşağıda verilmiştir;
-# kullanım durumunuza uygun olanı kullanın.
-# Configure API key authorization: api_key
-# API anahtarı yetkilendirmesini yapılandırın: api_key
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# Gerekliyse API anahtarı için öneki (ör. Bearer) ayarlamak üzere aşağıdaki satırın yorumunu kaldırın
+# API sunucusunun güvenlik politikasıyla uyumlu olarak.
+# Her kimlik doğrulama yöntemi için örnekler aşağıda sağlanmıştır, aşağıdakilerden birini kullanın
+# kimlik doğrulama kullanım durumunuza uyan.
+
+# API anahtarı yetkilendirmesini yapılandır: api_key
+configuration.api_key['api_key'] = os.environ["API_KEY"]
+
+# Gerekirse API anahtarı için önek (ör. Bearer) ayarlamak için aşağıdaki satırın yorumunu kaldırın
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Enter a context with an instance of the API client
+# API istemcisinin bir örneğiyle bir bağlam girin
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    # API istemcisi örneği ile bir bağlam açın
+    # API sınıfının bir örneğini oluştur
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_comment_params = client.CreateCommentParams() # CreateCommentParams | 
-    is_live = True # bool |  (isteğe bağlı)
-    do_spam_check = True # bool |  (isteğe bağlı)
-    send_emails = True # bool |  (isteğe bağlı)
-    populate_notifications = True # bool |  (isteğe bağlı)
+    is_live = True # bool |  (optional)
+    do_spam_check = True # bool |  (optional)
+    send_emails = True # bool |  (optional)
+    populate_notifications = True # bool |  (optional)
 
     try:
-        api_response = api_instance.save_comment(tenant_id, create_comment_params, is_live=is_live, do_spam_check=do_spam_check, send_emails=send_emails, populate_notifications=populate_notifications)
+        api_response = api_instance.save_comment(tenant_id, create_comment_params, SaveCommentOptions(is_live=is_live, do_spam_check=do_spam_check, send_emails=send_emails, populate_notifications=populate_notifications))
         print("The response of DefaultApi->save_comment:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling DefaultApi->save_comment: %s\n" % e)
 [inline-code-end]
-
----

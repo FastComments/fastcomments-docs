@@ -2,24 +2,34 @@
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
-| tenantId | string | Ναι |  |
-| id | string | Ναι |  |
-| deleteComments | string | Όχι |  |
-| commentDeleteMode | string | Όχι |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| deleteComments | string | No |  |
+| commentDeleteMode | string | No |  |
 
-## Απόκριση
+## Απάντηση
 
-Επιστρέφει: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Επιστρέφει: [`DeleteTenantUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteTenantUserResponse.ts)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα deleteTenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_4b7a9f2c";
-const id: string = "user_9d3f1b6a";
-const deleteComments: string = "true";
-const commentDeleteMode: string = "permanent";
-const result: APIEmptyResponse = await deleteTenantUser(tenantId, id, deleteComments, commentDeleteMode);
+async function demoDeleteTenantUser() {
+  const tenantId: string = "acme-corp-tenant";
+  const userId: string = "user-9876";
+
+  // Διαγραφή του χρήστη και όλων των σχολίων του, χρησιμοποιώντας τη μέθοδο σκληρής διαγραφής
+  const resultWithOptions: DeleteTenantUserResponse = await deleteTenantUser(
+    tenantId,
+    userId,
+    "true",
+    "hard"
+  );
+
+  // Διαγραφή του χρήστη χωρίς να αφαιρεθούν τα σχόλια (προεπιλεγμένη συμπεριφορά)
+  const resultBasic: DeleteTenantUserResponse = await deleteTenantUser(tenantId, userId);
+}
 [inline-code-end]
 
 ---

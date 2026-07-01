@@ -1,31 +1,28 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`DeletePageAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/DeletePageAPIResponse.h)
+Vraća: [`DeletePageAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/DeletePageAPIResponse.h)
 
-## Примјер
+## Primjer
 
-[inline-code-attrs-start title = 'deletePage Примјер'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deletePage Primjer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t pageId = U("page-456");
-boost::optional<utility::string_t> correlationId = boost::optional<utility::string_t>(U("corr-20251122"));
-auto task = api->deletePage(tenantId, pageId)
-    .then([correlationId](pplx::task<std::shared_ptr<DeletePageAPIResponse>> prev) -> std::shared_ptr<DeletePageAPIResponse> {
-        try {
-            auto resp = prev.get();
-            if (resp) return resp;
-            return std::make_shared<DeletePageAPIResponse>();
-        } catch (const std::exception&) {
-            return std::make_shared<DeletePageAPIResponse>();
-        }
-    });
-[inline-code-end]
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto pageId   = utility::conversions::to_string_t("page-456");
 
----
+api->deletePage(tenantId, pageId)
+   .then([](pplx::task<std::shared_ptr<DeletePageAPIResponse>> t) {
+       try {
+           auto response = t.get();
+           // obradi odgovor po potrebi
+       } catch (const std::exception& ex) {
+           // rukuj greškom
+       }
+   });
+[inline-code-end]

@@ -2,6 +2,7 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | sso | string | query | No |  |
 
 ## Response
@@ -29,11 +30,12 @@ configuration = client.Configuration(
 with client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     ban_user_undo_params = client.BanUserUndoParams() # BanUserUndoParams | 
     sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.post_ban_user_undo(ban_user_undo_params, sso=sso)
+        api_response = api_instance.post_ban_user_undo(tenant_id, ban_user_undo_params, sso=sso)
         print("The response of ModerationApi->post_ban_user_undo:\n")
         pprint(api_response)
     except Exception as e:

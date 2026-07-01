@@ -1,47 +1,48 @@
-## Paramètres
+## Parameters
 
-| Nom | Type | Location | Requis | Description |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Oui |  |
-| urlId | string | query | Oui |  |
-| broadcastId | string | query | Oui |  |
-| sessionId | string | query | Non |  |
-| sso | string | query | Non |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| broadcastId | string | query | Yes |  |
+| sessionId | string | query | No |  |
+| sso | string | query | No |  |
 
-## Réponse
+## Response
 
-Renvoie : [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/save_comments_response_with_presence.py)
+Returns: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/save_comments_response_with_presence.py)
 
-## Exemple
+## Example
 
-[inline-code-attrs-start title = 'Exemple de create_comment_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple create_comment_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import CreateCommentPublicOptions
 from client.models.comment_data import CommentData
 from client.models.save_comments_response_with_presence import SaveCommentsResponseWithPresence
 from client.rest import ApiException
 from pprint import pprint
 
-# Définir l'hôte est optionnel et a pour valeur par défaut https://fastcomments.com
-# Voir configuration.py pour la liste de tous les paramètres de configuration pris en charge.
+# La définition de l'hôte est facultative et utilise https://fastcomments.com par défaut
+# Voir configuration.py pour une liste de tous les paramètres de configuration pris en charge.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Entrer dans un contexte avec une instance du client API
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Créer une instance de la classe API
+    # Create an instance of the API class
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
     broadcast_id = 'broadcast_id_example' # str | 
     comment_data = client.CommentData() # CommentData | 
-    session_id = 'session_id_example' # str |  (optionnel)
-    sso = 'sso_example' # str |  (optionnel)
+    session_id = 'session_id_example' # str |  (facultatif)
+    sso = 'sso_example' # str |  (facultatif)
 
     try:
-        api_response = api_instance.create_comment_public(tenant_id, url_id, broadcast_id, comment_data, session_id=session_id, sso=sso)
+        api_response = api_instance.create_comment_public(tenant_id, url_id, broadcast_id, comment_data, CreateCommentPublicOptions(session_id=session_id, sso=sso))
         print("The response of PublicApi->create_comment_public:\n")
         pprint(api_response)
     except Exception as e:

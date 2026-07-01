@@ -1,11 +1,10 @@
----
 ## Parametri
 
-| Ime | Tip | Obvezno | Opis |
+| Ime | Vrsta | Obvezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| id | string | Ne |  |
-| updateModeratorBody | UpdateModeratorBody | Ne |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| updateModeratorBody | UpdateModeratorBody | No |  |
 
 ## Odgovor
 
@@ -15,20 +14,8 @@ Vrne: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-
 
 [inline-code-attrs-start title = 'Primer updateModerator'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let modBody: UpdateModeratorBody = UpdateModeratorBody(
-  displayName = "Alice Moderator",
-  email = "alice@newsdaily.com",
-  isActive = true,
-  permissions = @["delete_comments", "ban_users"]
-)
-
-let (response, httpResponse) = client.updateModerator(tenantId = "news-tenant-456", id = "moderator-789", updateModeratorBody = modBody)
-
-if response.isSome:
-  let apiEmpty = response.get()
-  echo "Moderator updated successfully. HTTP status: ", httpResponse.status
-else:
-  echo "Failed to update moderator. HTTP status: ", httpResponse.status
+let body = UpdateModeratorBody(name = "John Doe", email = "john@example.com", isActive = true)
+let (apiResult, httpResp) = client.updateModerator(tenantId = "my-tenant-123", id = "mod-456", updateModeratorBody = body)
+if apiResult.isSome:
+  let result = apiResult.get()
 [inline-code-end]
-
----

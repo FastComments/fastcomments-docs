@@ -1,16 +1,14 @@
 <a name="documentation-for-api-endpoints"></a>
-## API Uç Noktaları için Dokümantasyon
+## API Uç Noktaları İçin Dokümantasyon
 
-Tüm URI’ler *https://fastcomments.com* adresine göredir
-
-| Sınıf | Metot | HTTP isteği | Açıklama |
+| Sınıf | Metod | HTTP isteği | Açıklama |
 |------------ | ------------- | ------------- | -------------|
 | *DefaultApi* | [**addDomainConfig**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/DefaultApi.md#addDomainConfig) | **POST** /api/v1/domain-configs |  |
 *DefaultApi* | [**addHashTag**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/DefaultApi.md#addHashTag) | **POST** /api/v1/hash-tags |  |
 *DefaultApi* | [**addHashTagsBulk**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/DefaultApi.md#addHashTagsBulk) | **POST** /api/v1/hash-tags/bulk |  |
 *DefaultApi* | [**addPage**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/DefaultApi.md#addPage) | **POST** /api/v1/pages |  |
 *DefaultApi* | [**addSSOUser**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/DefaultApi.md#addSSOUser) | **POST** /api/v1/sso-users |  |
-*DefaultApi* | [**aggregate**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/DefaultApi.md#aggregate) | **POST** /api/v1/aggregate | Belgeleri gruplandırarak (eğer groupBy sağlanırsa) ve birden fazla işlem uygulayarak toplar. Farklı işlemler (örneğin, toplam, countDistinct, ortalama vb.) desteklenir. |
+*DefaultApi* | [**aggregate**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/DefaultApi.md#aggregate) | **POST** /api/v1/aggregate | Belgeleri, grupBy sağlanmışsa gruplayarak ve birden fazla işlem uygulayarak toplar. Farklı işlemler (ör. toplam, benzersizSayım, ortalama, vb.) desteklenir. |
 *DefaultApi* | [**aggregateQuestionResults**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/DefaultApi.md#aggregateQuestionResults) | **GET** /api/v1/question-results-aggregation |  |
 *DefaultApi* | [**blockUserFromComment**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/DefaultApi.md#blockUserFromComment) | **POST** /api/v1/comments/{id}/block |  |
 *DefaultApi* | [**bulkAggregateQuestionResults**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/DefaultApi.md#bulkAggregateQuestionResults) | **POST** /api/v1/question-results-aggregation/bulk |  |
@@ -57,7 +55,7 @@ Tüm URI’ler *https://fastcomments.com* adresine göredir
 *DefaultApi* | [**getEmailTemplateDefinitions**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/DefaultApi.md#getEmailTemplateDefinitions) | **GET** /api/v1/email-templates/definitions |  |
 *DefaultApi* | [**getEmailTemplateRenderErrors**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/DefaultApi.md#getEmailTemplateRenderErrors) | **GET** /api/v1/email-templates/{id}/render-errors |  |
 *DefaultApi* | [**getEmailTemplates**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/DefaultApi.md#getEmailTemplates) | **GET** /api/v1/email-templates |  |
-*DefaultApi* | [**getFeedPosts**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/DefaultApi.md#getFeedPosts) | **GET** /api/v1/feed-posts |  gerekli tenantId afterId |
+*DefaultApi* | [**getFeedPosts**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/DefaultApi.md#getFeedPosts) | **GET** /api/v1/feed-posts |  req tenantId afterId |
 *DefaultApi* | [**getHashTags**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/DefaultApi.md#getHashTags) | **GET** /api/v1/hash-tags |  |
 *DefaultApi* | [**getModerator**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/DefaultApi.md#getModerator) | **GET** /api/v1/moderators/{id} |  |
 *DefaultApi* | [**getModerators**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/DefaultApi.md#getModerators) | **GET** /api/v1/moderators |  |
@@ -119,49 +117,49 @@ Tüm URI’ler *https://fastcomments.com* adresine göredir
 *DefaultApi* | [**updateTenantPackage**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/DefaultApi.md#updateTenantPackage) | **PATCH** /api/v1/tenant-packages/{id} |  |
 *DefaultApi* | [**updateTenantUser**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/DefaultApi.md#updateTenantUser) | **PATCH** /api/v1/tenant-users/{id} |  |
 *DefaultApi* | [**updateUserBadge**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/DefaultApi.md#updateUserBadge) | **PUT** /api/v1/user-badges/{id} |  |
-| *ModerationApi* | [**deleteModerationVote**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#deleteModerationVote) | **DELETE** /auth/my-account/moderate-comments/vote/{commentId}/{voteId} |  |
-*ModerationApi* | [**getApiComments**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getApiComments) | **GET** /auth/my-account/moderate-comments/api/comments |  |
-*ModerationApi* | [**getApiExportStatus**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getApiExportStatus) | **GET** /auth/my-account/moderate-comments/api/export/status |  |
-*ModerationApi* | [**getApiIds**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getApiIds) | **GET** /auth/my-account/moderate-comments/api/ids |  |
-*ModerationApi* | [**getBanUsersFromComment**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getBanUsersFromComment) | **GET** /auth/my-account/moderate-comments/ban-users/from-comment/{commentId} |  |
-*ModerationApi* | [**getCommentBanStatus**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getCommentBanStatus) | **GET** /auth/my-account/moderate-comments/get-comment-ban-status/{commentId} |  |
-*ModerationApi* | [**getCommentChildren**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getCommentChildren) | **GET** /auth/my-account/moderate-comments/comment-children/{commentId} |  |
-*ModerationApi* | [**getCount**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getCount) | **GET** /auth/my-account/moderate-comments/count |  |
-*ModerationApi* | [**getCounts**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getCounts) | **GET** /auth/my-account/moderate-comments/banned-users/counts |  |
-*ModerationApi* | [**getLogs**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getLogs) | **GET** /auth/my-account/moderate-comments/logs/{commentId} |  |
-*ModerationApi* | [**getManualBadges**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getManualBadges) | **GET** /auth/my-account/moderate-comments/get-manual-badges |  |
-*ModerationApi* | [**getManualBadgesForUser**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getManualBadgesForUser) | **GET** /auth/my-account/moderate-comments/get-manual-badges-for-user |  |
-*ModerationApi* | [**getModerationComment**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getModerationComment) | **GET** /auth/my-account/moderate-comments/comment/{commentId} |  |
-*ModerationApi* | [**getModerationCommentText**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getModerationCommentText) | **GET** /auth/my-account/moderate-comments/get-comment-text/{commentId} |  |
-*ModerationApi* | [**getPreBanSummary**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getPreBanSummary) | **GET** /auth/my-account/moderate-comments/pre-ban-summary/{commentId} |  |
-*ModerationApi* | [**getSearchCommentsSummary**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getSearchCommentsSummary) | **GET** /auth/my-account/moderate-comments/search/comments/summary |  |
-*ModerationApi* | [**getSearchPages**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getSearchPages) | **GET** /auth/my-account/moderate-comments/search/pages |  |
-*ModerationApi* | [**getSearchSites**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getSearchSites) | **GET** /auth/my-account/moderate-comments/search/sites |  |
-*ModerationApi* | [**getSearchSuggest**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getSearchSuggest) | **GET** /auth/my-account/moderate-comments/search/suggest |  |
-*ModerationApi* | [**getSearchUsers**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getSearchUsers) | **GET** /auth/my-account/moderate-comments/search/users |  |
-*ModerationApi* | [**getTrustFactor**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getTrustFactor) | **GET** /auth/my-account/moderate-comments/get-trust-factor |  |
-*ModerationApi* | [**getUserBanPreference**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getUserBanPreference) | **GET** /auth/my-account/moderate-comments/user-ban-preference |  |
-*ModerationApi* | [**getUserInternalProfile**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getUserInternalProfile) | **GET** /auth/my-account/moderate-comments/get-user-internal-profile |  |
-*ModerationApi* | [**postAdjustCommentVotes**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#postAdjustCommentVotes) | **POST** /auth/my-account/moderate-comments/adjust-comment-votes/{commentId} |  |
-*ModerationApi* | [**postApiExport**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#postApiExport) | **POST** /auth/my-account/moderate-comments/api/export |  |
-*ModerationApi* | [**postBanUserFromComment**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#postBanUserFromComment) | **POST** /auth/my-account/moderate-comments/ban-user/from-comment/{commentId} |  |
-*ModerationApi* | [**postBanUserUndo**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#postBanUserUndo) | **POST** /auth/my-account/moderate-comments/ban-user/undo |  |
-*ModerationApi* | [**postBulkPreBanSummary**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#postBulkPreBanSummary) | **POST** /auth/my-account/moderate-comments/bulk-pre-ban-summary |  |
-*ModerationApi* | [**postCommentsByIds**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#postCommentsByIds) | **POST** /auth/my-account/moderate-comments/comments-by-ids |  |
-*ModerationApi* | [**postFlagComment**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#postFlagComment) | **POST** /auth/my-account/moderate-comments/flag-comment/{commentId} |  |
-*ModerationApi* | [**postRemoveComment**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#postRemoveComment) | **POST** /auth/my-account/moderate-comments/remove-comment/{commentId} |  |
-*ModerationApi* | [**postRestoreDeletedComment**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#postRestoreDeletedComment) | **POST** /auth/my-account/moderate-comments/restore-deleted-comment/{commentId} |  |
-*ModerationApi* | [**postSetCommentApprovalStatus**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#postSetCommentApprovalStatus) | **POST** /auth/my-account/moderate-comments/set-comment-approval-status/{commentId} |  |
-*ModerationApi* | [**postSetCommentReviewStatus**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#postSetCommentReviewStatus) | **POST** /auth/my-account/moderate-comments/set-comment-review-status/{commentId} |  |
-*ModerationApi* | [**postSetCommentSpamStatus**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#postSetCommentSpamStatus) | **POST** /auth/my-account/moderate-comments/set-comment-spam-status/{commentId} |  |
-*ModerationApi* | [**postSetCommentText**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#postSetCommentText) | **POST** /auth/my-account/moderate-comments/set-comment-text/{commentId} |  |
-*ModerationApi* | [**postUnFlagComment**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#postUnFlagComment) | **POST** /auth/my-account/moderate-comments/un-flag-comment/{commentId} |  |
-*ModerationApi* | [**postVote**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#postVote) | **POST** /auth/my-account/moderate-comments/vote/{commentId} |  |
-*ModerationApi* | [**putAwardBadge**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#putAwardBadge) | **PUT** /auth/my-account/moderate-comments/award-badge |  |
-*ModerationApi* | [**putCloseThread**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#putCloseThread) | **PUT** /auth/my-account/moderate-comments/close-thread |  |
-*ModerationApi* | [**putRemoveBadge**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#putRemoveBadge) | **PUT** /auth/my-account/moderate-comments/remove-badge |  |
-*ModerationApi* | [**putReopenThread**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#putReopenThread) | **PUT** /auth/my-account/moderate-comments/reopen-thread |  |
-*ModerationApi* | [**setTrustFactor**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#setTrustFactor) | **PUT** /auth/my-account/moderate-comments/set-trust-factor |  |
+| *ModerationApi* | [**deleteModerationVote**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#deleteModerationVote) | **DELETE** /auth/my-account/moderate-comments/mod_api/vote/{commentId}/{voteId} |  |
+*ModerationApi* | [**getApiComments**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getApiComments) | **GET** /auth/my-account/moderate-comments/mod_api/api/comments |  |
+*ModerationApi* | [**getApiExportStatus**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getApiExportStatus) | **GET** /auth/my-account/moderate-comments/mod_api/api/export/status |  |
+*ModerationApi* | [**getApiIds**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getApiIds) | **GET** /auth/my-account/moderate-comments/mod_api/api/ids |  |
+*ModerationApi* | [**getBanUsersFromComment**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getBanUsersFromComment) | **GET** /auth/my-account/moderate-comments/mod_api/ban-users/from-comment/{commentId} |  |
+*ModerationApi* | [**getCommentBanStatus**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getCommentBanStatus) | **GET** /auth/my-account/moderate-comments/mod_api/get-comment-ban-status/{commentId} |  |
+*ModerationApi* | [**getCommentChildren**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getCommentChildren) | **GET** /auth/my-account/moderate-comments/mod_api/comment-children/{commentId} |  |
+*ModerationApi* | [**getCount**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getCount) | **GET** /auth/my-account/moderate-comments/mod_api/count |  |
+*ModerationApi* | [**getCounts**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getCounts) | **GET** /auth/my-account/moderate-comments/banned-users/mod_api/counts |  |
+*ModerationApi* | [**getLogs**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getLogs) | **GET** /auth/my-account/moderate-comments/mod_api/logs/{commentId} |  |
+*ModerationApi* | [**getManualBadges**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getManualBadges) | **GET** /auth/my-account/moderate-comments/mod_api/get-manual-badges |  |
+*ModerationApi* | [**getManualBadgesForUser**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getManualBadgesForUser) | **GET** /auth/my-account/moderate-comments/mod_api/get-manual-badges-for-user |  |
+*ModerationApi* | [**getModerationComment**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getModerationComment) | **GET** /auth/my-account/moderate-comments/mod_api/comment/{commentId} |  |
+*ModerationApi* | [**getModerationCommentText**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getModerationCommentText) | **GET** /auth/my-account/moderate-comments/mod_api/get-comment-text/{commentId} |  |
+*ModerationApi* | [**getPreBanSummary**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getPreBanSummary) | **GET** /auth/my-account/moderate-comments/mod_api/pre-ban-summary/{commentId} |  |
+*ModerationApi* | [**getSearchCommentsSummary**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getSearchCommentsSummary) | **GET** /auth/my-account/moderate-comments/mod_api/search/comments/summary |  |
+*ModerationApi* | [**getSearchPages**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getSearchPages) | **GET** /auth/my-account/moderate-comments/mod_api/search/pages |  |
+*ModerationApi* | [**getSearchSites**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getSearchSites) | **GET** /auth/my-account/moderate-comments/mod_api/search/sites |  |
+*ModerationApi* | [**getSearchSuggest**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getSearchSuggest) | **GET** /auth/my-account/moderate-comments/mod_api/search/suggest |  |
+*ModerationApi* | [**getSearchUsers**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getSearchUsers) | **GET** /auth/my-account/moderate-comments/mod_api/search/users |  |
+*ModerationApi* | [**getTrustFactor**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getTrustFactor) | **GET** /auth/my-account/moderate-comments/mod_api/get-trust-factor |  |
+*ModerationApi* | [**getUserBanPreference**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getUserBanPreference) | **GET** /auth/my-account/moderate-comments/mod_api/user-ban-preference |  |
+*ModerationApi* | [**getUserInternalProfile**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#getUserInternalProfile) | **GET** /auth/my-account/moderate-comments/mod_api/get-user-internal-profile |  |
+*ModerationApi* | [**postAdjustCommentVotes**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#postAdjustCommentVotes) | **POST** /auth/my-account/moderate-comments/mod_api/adjust-comment-votes/{commentId} |  |
+*ModerationApi* | [**postApiExport**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#postApiExport) | **POST** /auth/my-account/moderate-comments/mod_api/api/export |  |
+*ModerationApi* | [**postBanUserFromComment**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#postBanUserFromComment) | **POST** /auth/my-account/moderate-comments/mod_api/ban-user/from-comment/{commentId} |  |
+*ModerationApi* | [**postBanUserUndo**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#postBanUserUndo) | **POST** /auth/my-account/moderate-comments/mod_api/ban-user/undo |  |
+*ModerationApi* | [**postBulkPreBanSummary**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#postBulkPreBanSummary) | **POST** /auth/my-account/moderate-comments/mod_api/bulk-pre-ban-summary |  |
+*ModerationApi* | [**postCommentsByIds**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#postCommentsByIds) | **POST** /auth/my-account/moderate-comments/mod_api/comments-by-ids |  |
+*ModerationApi* | [**postFlagComment**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#postFlagComment) | **POST** /auth/my-account/moderate-comments/mod_api/flag-comment/{commentId} |  |
+*ModerationApi* | [**postRemoveComment**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#postRemoveComment) | **POST** /auth/my-account/moderate-comments/mod_api/remove-comment/{commentId} |  |
+*ModerationApi* | [**postRestoreDeletedComment**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#postRestoreDeletedComment) | **POST** /auth/my-account/moderate-comments/mod_api/restore-deleted-comment/{commentId} |  |
+*ModerationApi* | [**postSetCommentApprovalStatus**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#postSetCommentApprovalStatus) | **POST** /auth/my-account/moderate-comments/mod_api/set-comment-approval-status/{commentId} |  |
+*ModerationApi* | [**postSetCommentReviewStatus**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#postSetCommentReviewStatus) | **POST** /auth/my-account/moderate-comments/mod_api/set-comment-review-status/{commentId} |  |
+*ModerationApi* | [**postSetCommentSpamStatus**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#postSetCommentSpamStatus) | **POST** /auth/my-account/moderate-comments/mod_api/set-comment-spam-status/{commentId} |  |
+*ModerationApi* | [**postSetCommentText**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#postSetCommentText) | **POST** /auth/my-account/moderate-comments/mod_api/set-comment-text/{commentId} |  |
+*ModerationApi* | [**postUnFlagComment**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#postUnFlagComment) | **POST** /auth/my-account/moderate-comments/mod_api/un-flag-comment/{commentId} |  |
+*ModerationApi* | [**postVote**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#postVote) | **POST** /auth/my-account/moderate-comments/mod_api/vote/{commentId} |  |
+*ModerationApi* | [**putAwardBadge**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#putAwardBadge) | **PUT** /auth/my-account/moderate-comments/mod_api/award-badge |  |
+*ModerationApi* | [**putCloseThread**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#putCloseThread) | **PUT** /auth/my-account/moderate-comments/mod_api/close-thread |  |
+*ModerationApi* | [**putRemoveBadge**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#putRemoveBadge) | **PUT** /auth/my-account/moderate-comments/mod_api/remove-badge |  |
+*ModerationApi* | [**putReopenThread**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#putReopenThread) | **PUT** /auth/my-account/moderate-comments/mod_api/reopen-thread |  |
+*ModerationApi* | [**setTrustFactor**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/ModerationApi.md#setTrustFactor) | **PUT** /auth/my-account/moderate-comments/mod_api/set-trust-factor |  |
 | *PublicApi* | [**blockFromCommentPublic**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#blockFromCommentPublic) | **POST** /block-from-comment/{commentId} |  |
 *PublicApi* | [**checkedCommentsForBlocked**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#checkedCommentsForBlocked) | **GET** /check-blocked-comments |  |
 *PublicApi* | [**createCommentPublic**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#createCommentPublic) | **POST** /comments/{tenantId} |  |
@@ -177,42 +175,22 @@ Tüm URI’ler *https://fastcomments.com* adresine göredir
 *PublicApi* | [**getCommentText**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#getCommentText) | **GET** /comments/{tenantId}/{commentId}/text |  |
 *PublicApi* | [**getCommentVoteUserNames**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#getCommentVoteUserNames) | **GET** /comments/{tenantId}/{commentId}/votes |  |
 *PublicApi* | [**getCommentsForUser**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#getCommentsForUser) | **GET** /comments-for-user |  |
-*PublicApi* | [**getCommentsPublic**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#getCommentsPublic) | **GET** /comments/{tenantId} |  gerekli tenantId urlId |
-*PublicApi* | [**getEventLog**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#getEventLog) | **GET** /event-log/{tenantId} |  gerekli tenantId urlId userIdWS |
-*PublicApi* | [**getFeedPostsPublic**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#getFeedPostsPublic) | **GET** /feed-posts/{tenantId} |  gerekli tenantId afterId |
+*PublicApi* | [**getCommentsPublic**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#getCommentsPublic) | **GET** /comments/{tenantId} |  req tenantId urlId |
+*PublicApi* | [**getEventLog**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#getEventLog) | **GET** /event-log/{tenantId} |  req tenantId urlId userIdWS |
+*PublicApi* | [**getFeedPostsPublic**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#getFeedPostsPublic) | **GET** /feed-posts/{tenantId} |  req tenantId afterId |
 *PublicApi* | [**getFeedPostsStats**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#getFeedPostsStats) | **GET** /feed-posts/{tenantId}/stats |  |
 *PublicApi* | [**getGifLarge**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#getGifLarge) | **GET** /gifs/get-large/{tenantId} |  |
 *PublicApi* | [**getGifsSearch**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#getGifsSearch) | **GET** /gifs/search/{tenantId} |  |
 *PublicApi* | [**getGifsTrending**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#getGifsTrending) | **GET** /gifs/trending/{tenantId} |  |
-*PublicApi* | [**getGlobalEventLog**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#getGlobalEventLog) | **GET** /event-log/global/{tenantId} |  gerekli tenantId urlId userIdWS |
-*PublicApi* | [**getOfflineUsers**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#getOfflineUsers) | **GET** /pages/{tenantId}/users/offline | Şu anda çevrim dışı olan, geçmişte sayfada yorum yapmış kullanıcılar. displayName değerine göre sıralanır. /users/online üzerinden çevrim içi üyeler bittiğinde bir "Üyeler" bölümü oluşturmak için kullanılır. Yorumcu adı için kursor paginasyonu: sunucu {tenantId, urlId, commenterName} kısmî indeksini afterName değerinden sonra $gt ile tarar, $skip maliyeti yoktur. |
-*PublicApi* | [**getOnlineUsers**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#getOnlineUsers) | **GET** /pages/{tenantId}/users/online | Bir sayfanın şu anda çevrim içi olan izleyicileri: An itibariyle bu sayfaya websocket oturumu ile abone olan kişiler. anonCount + totalCount döndürür (odadaki tüm aboneler, anonim kullanıcılar dâhil, ayrı ayrı listelenmez). |
-*PublicApi* | [**getPagesPublic**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#getPagesPublic) | **GET** /pages/{tenantId} | Bir kiracı için sayfa listesini döndürür. FChat masaüstü istemcisinin oda listesini doldurmasında kullanılır. Tüm sayfalar için resolved custom config içinde `enableFChat` değerinin true olması gerekir. SSO gerektiren sayfalar, isteyen kullanıcının grup erişimine göre süzülür. |
-*PublicApi* | [**getTranslations**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#getTranslations) | **GET** /translations/{namespace}/{component} |  |
+*PublicApi* | [**getGlobalEventLog**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#getGlobalEventLog) | **GET** /event-log/global/{tenantId} |  req tenantId urlId userIdWS |
+*PublicApi* | [**getOfflineUsers**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#getOfflineUsers) | **GET** /pages/{tenantId}/users/offline | Sayfadaki daha önce yorum yapmış ancak şu anda çevrim dışı olan yorumcular. displayName göre sıralanır. /users/online sorgusunu tüketince "Members" bölümü oluşturmak için bunu kullanın. commenterName üzerine cursor sayfalama: sunucu, {tenantId, urlId, commenterName} kısmı indeksini afterName'den $gt ile ileri yürütür, $skip maliyeti yok. |
+*PublicApi* | [**getOnlineUsers**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#getOnlineUsers) | **GET** /pages/{tenantId}/users/online | Şu anda bir sayfayı izleyen çevrimiçi izleyiciler: websoket oturumu sayfaya şu anda abone olan kişiler. anonCount + totalCount (odadaki tüm aboneler, içinde sıralamadığımız anonim izleyiciler dahil) döner. |
+*PublicApi* | [**getPagesPublic**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#getPagesPublic) | **GET** /pages/{tenantId} | Bir tenant için sayfaları listeler. FChat masaüstü istemcisi tarafından oda listesini doldurmak için kullanılır. Her sayfanın çözümlenen özel yapılandırmasında `enableFChat` true olmalıdır. SSO gerektiren sayfalar, istek yapan kullanıcının grup erişimine göre filtrelenir. |
 *PublicApi* | [**getUserNotificationCount**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#getUserNotificationCount) | **GET** /user-notifications/get-count |  |
-*PublicApi* | [**getUserNotifications**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#getUserNotifications) | **GET** /user-notifications |  |
-*PublicApi* | [**getUserPresenceStatuses**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#getUserPresenceStatuses) | **GET** /user-presence-status |  |
-*PublicApi* | [**getUserReactsPublic**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#getUserReactsPublic) | **GET** /feed-posts/{tenantId}/user-reacts |  |
-*PublicApi* | [**getUsersInfo**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#getUsersInfo) | **GET** /pages/{tenantId}/users/info | Bir kiracı için toplu kullanıcı bilgisi. Kullanıcı kimlikleri verildiğinde, User / SSOUser’dan görünen bilgiyi döndürür. Presence etkinliğiyle az önce gelen kullanıcıları zenginleştirmek için yorum widget'ı tarafından kullanılır. Sayfa bağlamı yoktur: gizlilik tüm kullanıcılar için aynı şekilde sağlanır (özel profiller maskelenir). |
-*PublicApi* | [**getV1PageLikes**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#getV1PageLikes) | **GET** /page-reacts/v1/likes/{tenantId} |  |
-*PublicApi* | [**getV2PageReactUsers**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#getV2PageReactUsers) | **GET** /page-reacts/v2/{tenantId}/list |  |
-*PublicApi* | [**getV2PageReacts**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#getV2PageReacts) | **GET** /page-reacts/v2/{tenantId} |  |
-*PublicApi* | [**lockComment**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#lockComment) | **POST** /comments/{tenantId}/{commentId}/lock |  |
-*PublicApi* | [**logoutPublic**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#logoutPublic) | **PUT** /auth/logout |  |
-*PublicApi* | [**pinComment**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#pinComment) | **POST** /comments/{tenantId}/{commentId}/pin |  |
-*PublicApi* | [**reactFeedPostPublic**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#reactFeedPostPublic) | **POST** /feed-posts/{tenantId}/react/{postId} |  |
-*PublicApi* | [**resetUserNotificationCount**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#resetUserNotificationCount) | **POST** /user-notifications/reset-count |  |
-*PublicApi* | [**resetUserNotifications**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#resetUserNotifications) | **POST** /user-notifications/reset |  |
-*PublicApi* | [**searchUsers**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#searchUsers) | **GET** /user-search/{tenantId} |  |
-*PublicApi* | [**setCommentText**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#setCommentText) | **POST** /comments/{tenantId}/{commentId}/update-text |  |
-*PublicApi* | [**unBlockCommentPublic**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#unBlockCommentPublic) | **DELETE** /block-from-comment/{commentId} |  |
-*PublicApi* | [**unLockComment**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#unLockComment) | **POST** /comments/{tenantId}/{commentId}/unlock |  |
-*PublicApi* | [**unPinComment**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#unPinComment) | **POST** /comments/{tenantId}/{commentId}/unpin |  |
-*PublicApi* | [**updateFeedPostPublic**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#updateFeedPostPublic) | **PUT** /feed-posts/{tenantId}/{postId} |  |
 *PublicApi* | [**updateUserNotificationCommentSubscriptionStatus**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#updateUserNotificationCommentSubscriptionStatus) | **POST** /user-notifications/{notificationId}/mark-opted/{optedInOrOut} | Belirli bir yorum için bildirimleri etkinleştirir veya devre dışı bırakır. |
-*PublicApi* | [**updateUserNotificationPageSubscriptionStatus**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#updateUserNotificationPageSubscriptionStatus) | **POST** /user-notifications/set-subscription-state/{subscribedOrUnsubscribed} | Bir sayfanın bildirimlerini etkinleştirir veya devre dışı bırakır. Kullanıcılar bir sayfaya abone olduğunda, yeni kök yorumlar için bildirimler oluşturulur ve ayrıca |
+*PublicApi* | [**updateUserNotificationPageSubscriptionStatus**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#updateUserNotificationPageSubscriptionStatus) | **POST** /user-notifications/set-subscription-state/{subscribedOrUnsubscribed} | Bir sayfa için bildirimleri etkinleştirir veya devre dışı bırakır. Kullanıcılar bir sayfaya abone olduğunda, yeni kök yorumlar için bildirimler oluşturulur ve ayrıca |
 *PublicApi* | [**updateUserNotificationStatus**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#updateUserNotificationStatus) | **POST** /user-notifications/{notificationId}/mark/{newStatus} |  |
-*PublicApi* | [**uploadImage**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#uploadImage) | **POST** /upload-image/{tenantId} | Bir görsel yükleyip yeniden boyutlandırır |
+*PublicApi* | [**uploadImage**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#uploadImage) | **POST** /upload-image/{tenantId} | Bir resmi yükler ve yeniden boyutlandırır. |
 *PublicApi* | [**voteComment**](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Apis/PublicApi.md#voteComment) | **POST** /comments/{tenantId}/{commentId}/vote |  |
 
 
@@ -304,46 +282,3 @@ Tüm URI’ler *https://fastcomments.com* adresine göredir
  - [CommentQuestionsRequired](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/CommentQuestionsRequired.md)
  - [CommentTextUpdateRequest](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/CommentTextUpdateRequest.md)
  - [CommentThreadDeletionMode](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/CommentThreadDeletionMode.md)
- - [CommentUserBadgeInfo](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/CommentUserBadgeInfo.md)
- - [CommentUserHashTagInfo](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/CommentUserHashTagInfo.md)
- - [CommentUserMentionInfo](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/CommentUserMentionInfo.md)
- - [CommenterNameFormats](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/CommenterNameFormats.md)
- - [CommentsByIdsParams](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/CommentsByIdsParams.md)
- - [CreateAPIPageData](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/CreateAPIPageData.md)
- - [CreateAPISSOUserData](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/CreateAPISSOUserData.md)
- - [CreateAPIUserSubscriptionData](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/CreateAPIUserSubscriptionData.md)
- - [CreateCommentParams](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/CreateCommentParams.md)
- - [CreateEmailTemplateBody](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/CreateEmailTemplateBody.md)
- - [CreateEmailTemplateResponse](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/CreateEmailTemplateResponse.md)
- - [CreateFeedPostParams](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/CreateFeedPostParams.md)
- - [CreateFeedPostResponse](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/CreateFeedPostResponse.md)
- - [CreateFeedPostsResponse](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/CreateFeedPostsResponse.md)
- - [CreateHashTagBody](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/CreateHashTagBody.md)
- - [CreateHashTagResponse](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/CreateHashTagResponse.md)
- - [CreateModeratorBody](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/CreateModeratorBody.md)
- - [CreateModeratorResponse](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/CreateModeratorResponse.md)
- - [CreateQuestionConfigBody](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/CreateQuestionConfigBody.md)
- - [CreateQuestionConfigResponse](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/CreateQuestionConfigResponse.md)
- - [CreateQuestionResultBody](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/CreateQuestionResultBody.md)
- - [CreateQuestionResultResponse](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/CreateQuestionResultResponse.md)
- - [CreateSubscriptionAPIResponse](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/CreateSubscriptionAPIResponse.md)
- - [CreateTenantBody](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/CreateTenantBody.md)
- - [CreateTenantPackageBody](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/CreateTenantPackageBody.md)
- - [CreateTenantPackageResponse](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/CreateTenantPackageResponse.md)
- - [CreateTenantResponse](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/CreateTenantResponse.md)
- - [CreateTenantUserBody](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/CreateTenantUserBody.md)
- - [CreateTenantUserResponse](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/CreateTenantUserResponse.md)
- - [CreateTicketBody](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/CreateTicketBody.md)
- - [CreateTicketResponse](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/CreateTicketResponse.md)
- - [CreateUserBadgeParams](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/CreateUserBadgeParams.md)
- - [CreateV1PageReact](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/CreateV1PageReact.md)
- - [CustomConfigParameters](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/CustomConfigParameters.md)
- - [CustomEmailTemplate](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/CustomEmailTemplate.md)
- - [DeleteCommentAction](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/DeleteCommentAction.md)
- - [DeleteCommentResult](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/DeleteCommentResult.md)
- - [DeleteDomainConfigResponse](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/DeleteDomainConfigResponse.md)
- - [DeleteFeedPostPublicResponse](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/DeleteFeedPostPublicResponse.md)
- - [DeleteHashTagRequestBody](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/DeleteHashTagRequestBody.md)
- - [DeletePageAPIResponse](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/DeletePageAPIResponse.md)
- - [DeleteSSOUserAPIResponse](https://github.com/FastComments/fastcomments-cpp/blob/master/docs/Models/DeleteSSOUserAPIResponse.md)
- - [DeleteSubscription

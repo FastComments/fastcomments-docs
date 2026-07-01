@@ -1,10 +1,9 @@
----
 ## Parametri
 
-| Ime | Tip | Obvezno | Opis |
+| Ime | Vrsta | Obvezno | Opis |
 |------|------|----------|-------------|
-| value | string | Ne |  |
-| sso | string | Ne |  |
+| tenantId | string | Da |  |
+| options | GetSearchUsersOptions | Ne |  |
 
 ## Odgovor
 
@@ -14,12 +13,10 @@ Vrne: [`Option[ModerationUserSearchResponse]`](https://github.com/FastComments/f
 
 [inline-code-attrs-start title = 'getSearchUsers Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSearchUsers(value = "john.doe@example.com", sso = "sso-acme-789")
-if response.isSome:
-  let searchRes = response.get()
-  echo "Search result:", searchRes
-else:
-  echo "No users found"
+let (searchRes, httpRes) = client.getSearchUsers(tenantId = "my-tenant-123", options = default(GetSearchUsersOptions))
+if searchRes.isSome:
+  let data = searchRes.get()
+  echo data
 [inline-code-end]
 
 ---

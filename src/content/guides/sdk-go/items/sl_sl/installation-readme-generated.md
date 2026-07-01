@@ -4,9 +4,9 @@ go get github.com/fastcomments/fastcomments-go
 
 ### Uporaba API odjemalca
 
-#### Javni API (brez overjanja)
+#### Javni API (Brez avtentikacije)
 
-PublicAPI omogoča neavtenticiran dostop do javnih končnih točk:
+Javni API omogoča neavtentikiran dostop do javnih koncnih točk:
 
 ```go
 package main
@@ -36,9 +36,9 @@ func main() {
 }
 ```
 
-#### Privzeti API (zahteva API ključ)
+#### Privzeti API (Zahteva API ključ)
 
-DefaultAPI zahteva avtentikacijo z vašim API ključem:
+Privzeti API zahteva avtentikacijo z uporabo vašega API ključa:
 
 ```go
 package main
@@ -53,7 +53,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // Ustvarite avtenticiran kontekst z API ključem
+    // Ustvari avtenticirani kontekst z API ključem
     auth := context.WithValue(
         context.Background(),
         client.ContextAPIKeys,
@@ -62,7 +62,7 @@ func main() {
         },
     )
 
-    // Pridobite komentarje z uporabo avtenticiranega DefaultAPI
+    // Pridobite komentarje z avtenticiranim DefaultAPI
     response, httpResp, err := apiClient.DefaultAPI.GetComments(auth).
         TenantId("your-tenant-id").
         UrlId("your-page-url-id").
@@ -77,14 +77,9 @@ func main() {
 }
 ```
 
-#### Moderation API (nadzorna plošča moderatorja)
+#### Moderacijski API (Nadzorna plošča moderatorja)
 
-ModerationAPI poganja nadzorno ploščo moderatorja. Ponuja metode za seznam,
-štetje, iskanje in izvoz komentarjev, moderacijske ukrepe (odstrani/obnovi,
-označi, nastavi status pregleda/špama/odobritve, glasovanja, ponovno odpri/zaključi niti), prepovedi (prepoved komentiranja,
-razveljavitev, povzetki pred prepovedjo, status in nastavitve prepovedi, število prepovedanih uporabnikov),
-ter značke in zaupanje (podeljevanje/odstranjevanje značk, ročne značke, pridobitev/nastavitev faktorja zaupanja, notranji profil uporabnika). Vse Moderation metode sprejemajo parameter `sso` za
-moderatorje, avtenticirane prek SSO:
+Moderacijski API nudi obsežen nabor živih in hitrih moderacijskih API-jev. Vse metode moderacije sprejmejo parameter `sso` in se lahko avtenticirajo prek SSO ali FastComments.com sejnega piškotka:
 
 ```go
 package main
@@ -99,7 +94,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // Pridobite komentarje za moderacijo z uporabo ModerationAPI
+    // Naštej komentarje za moderacijo z uporabo Moderacijski API
     response, httpResp, err := apiClient.ModerationAPI.GetApiComments(
         context.Background(),
     ).Sso("your-sso-token").Execute()

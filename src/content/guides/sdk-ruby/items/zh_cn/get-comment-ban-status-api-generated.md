@@ -1,9 +1,10 @@
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| commentId | string | 路径 | 是 |  |
-| sso | string | 查询 | 否 |  |
+| tenantId | string | query | 是 |  |
+| commentId | string | path | 是 |  |
+| sso | string | query | 否 |  |
 
 ## 响应
 
@@ -17,18 +18,17 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
-comment_id = 'comment_id_example' # 字符串 | 
+tenant_id = 'tenant_id_example' # String | 
+comment_id = 'comment_id_example' # String | 
 opts = {
-  sso: 'sso_example' # 字符串 | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.get_comment_ban_status(comment_id, opts)
+  result = api_instance.get_comment_ban_status(tenant_id, comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_comment_ban_status: #{e}"
 end
 [inline-code-end]
-
----

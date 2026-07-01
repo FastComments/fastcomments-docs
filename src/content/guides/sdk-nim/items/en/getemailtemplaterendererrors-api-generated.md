@@ -14,10 +14,16 @@ Returns: [`Option[GetEmailTemplateRenderErrorsResponse]`](https://github.com/Fas
 
 [inline-code-attrs-start title = 'getEmailTemplateRenderErrors Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getEmailTemplateRenderErrors(tenantId = "my-tenant-123", id = "", skip = 0.0)
-if response.isSome:
-  let templateErrors = response.get()
-  discard templateErrors
+let (optResp, httpResp) = client.getEmailTemplateRenderErrors(
+  tenantId = "my-tenant-123",
+  id = "welcome-template",
+  skip = 0.0
+)
+
+if optResp.isSome:
+  let resp = optResp.get()
+  # use resp as needed
 else:
-  discard httpResponse
+  # handle missing response
+  discard
 [inline-code-end]

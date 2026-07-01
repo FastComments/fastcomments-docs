@@ -2,9 +2,9 @@
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| commentId | string | כן |  |
-| approved | bool | לא |  |
-| sso | string | לא |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| options | PostSetCommentApprovalStatusOptions | No |  |
 
 ## תגובה
 
@@ -12,12 +12,15 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה עבור postSetCommentApprovalStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postSetCommentApprovalStatus דוגמה'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postSetCommentApprovalStatus(commentId = "cmt-7890", approved = false, sso = "")
-if response.isSome:
-  let setResp = response.get()
-  discard setResp
-[inline-code-end]
+let (approvedOpt, httpResp) = client.postSetCommentApprovalStatus(
+  tenantId = "my-tenant-123",
+  commentId = "comment-7890",
+  options = PostSetCommentApprovalStatusOptions()
+)
 
----
+if approvedOpt.isSome:
+  let approved = approvedOpt.get()
+  echo approved
+[inline-code-end]

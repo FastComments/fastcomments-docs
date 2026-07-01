@@ -13,10 +13,19 @@
 
 [inline-code-attrs-start title = 'getSSOUsers 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_8f3b2a1c";
-const usersWithoutSkip: GetSSOUsersResponse = await getSSOUsers(tenantId);
-const skip: number = 50;
-const usersWithSkip: GetSSOUsersResponse = await getSSOUsers(tenantId, skip);
+async function runExample(): Promise<void> {
+    const tenantId: string = "tenant_12345";
+
+    // 调用时不使用可选的 `skip`
+    const firstPage: GetSSOUsersResponse = await getSSOUsers(tenantId);
+
+    // 调用时使用可选的 `skip`
+    const secondPage: GetSSOUsersResponse = await getSSOUsers(tenantId, 100);
+
+    console.log(firstPage, secondPage);
+}
+
+runExample();
 [inline-code-end]
 
 ---

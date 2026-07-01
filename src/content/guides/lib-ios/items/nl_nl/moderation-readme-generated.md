@@ -1,36 +1,37 @@
-### Acties beschikbaar voor alle gebruikers
+---
+### Acties Beschikbaar voor Alle Gebruikers
 
-- **Melden/Ontmelden** -- rapporteer een reactie ter beoordeling
+- **Markeren/Demarkeren** -- een opmerking melden voor beoordeling
 
 ```swift
 try await sdk.flagComment(commentId: commentId)
 try await sdk.unflagComment(commentId: commentId)
 ```
 
-- **Blokkeren/Deblokkeren** -- verberg alle reacties van een gebruiker (per kijker)
+- **Blokkeren/De-blokkeren** -- verberg alle opmerkingen van een gebruiker (per kijker)
 
 ```swift
 try await sdk.blockUser(commentId: commentId)
 try await sdk.unblockUser(commentId: commentId)
 ```
 
-### Alleen voor beheerders
+### Alleen voor Beheerders
 
-- **Vastpinnen/Lospinnen** -- zet een reactie vast bovenaan de draad
+- **Vastzetten/Losmaken** -- een opmerking bovenaan de thread vastzetten
 
 ```swift
 try await sdk.pinComment(commentId: commentId)
 try await sdk.unpinComment(commentId: commentId)
 ```
 
-- **Vergrendelen/Ontgrendelen** -- voorkom nieuwe antwoorden op een reactie
+- **Vergrendelen/Ontgrendelen** -- voorkom nieuwe antwoorden op een opmerking, en blokkeer bewerkingen en verwijderingen tot het is ontgrendeld (geldt voor iedereen, inclusief moderators)
 
 ```swift
 try await sdk.lockComment(commentId: commentId)
 try await sdk.unlockComment(commentId: commentId)
 ```
 
-Alle moderatieacties zijn ook beschikbaar via het contextmenu van de reactie in de UI. Beheerderacties verschijnen alleen wanneer de huidige gebruiker een sitebeheerder is (ingesteld via de SSO `isAdmin` vlag of de dashboardconfiguratie).
+Alle moderatie‑acties zijn ook beschikbaar via het contextmenu van de opmerking in de UI. Beheerdersacties verschijnen alleen wanneer de huidige gebruiker een site‑beheerder is (ingesteld via SSO `isAdmin` vlag of dashboardconfiguratie).
 
 ---
 ---

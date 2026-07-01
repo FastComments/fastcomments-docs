@@ -1,36 +1,33 @@
-מגיבים קודמים בעמוד שאינם מחוברים כרגע. ממוין לפי displayName.
-יש להשתמש בזה לאחר שמיצית את /users/online כדי להציג את מדור 'חברים'.
-דפדוף בעמודים (cursor pagination) לפי commenterName: השרת סורק את האינדקס החלקי {tenantId, urlId, commenterName}
-מ-afterName קדימה באמצעות $gt, ללא עלות $skip.
+---
+המתגירים הקודמים בדף שאינם מחוברים כעת. ממוין לפי displayName.  
+השתמש בזה לאחר שניצלו /users/online כדי להציג חלק "Members".  
+דף אינדקס עם cursor על commenterName: השרת מתנהל על החלק החלקי {tenantId, urlId, commenterName}  
+מאינדקס אחרי שם באמצעות $gt, ללא עלות $skip.
 
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| urlId | string | כן |  |
-| afterName | string | לא |  |
-| afterUserId | string | לא |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| options | GetOfflineUsersOptions | No |  |
 
 ## תגובה
 
 מחזיר: [`Option[PageUsersOfflineResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_offline_response.nim)
 
-## דוגמה
+## דוגמא
 
-[inline-code-attrs-start title = 'דוגמה ל-getOfflineUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getOfflineUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getOfflineUsers(
+let (offlineResp, httpResponse) = client.getOfflineUsers(
   tenantId = "my-tenant-123",
-  urlId = "news/article-how-to-code",
-  afterName = "",
-  afterUserId = ""
+  urlId = "news/article-title",
+  options = GetOfflineUsersOptions()
 )
-
-if response.isSome:
-  let offlinePage = response.get()
-  echo "Received offline users page"
-  discard httpResponse.statusCode
+if offlineResp.isSome:
+  let offline = offlineResp.get()
+  echo offline)
 [inline-code-end]
 
 ---

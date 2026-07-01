@@ -1,9 +1,10 @@
 ## Parâmetros
 
 | Nome | Tipo | Localização | Obrigatório | Descrição |
-|------|------|----------|----------|-------------|
-| value | string | query | Não |  |
-| sso | string | query | Não |  |
+|------|------|------------|-------------|-----------|
+| tenantId | string | query | Yes |  |
+| value | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Resposta
 
@@ -11,9 +12,10 @@ Retorna: [`ModerationUserSearchResponse`](https://github.com/FastComments/fastco
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de get_search_users'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_search_users Exemplo'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetSearchUsersOptions
 from client.models.moderation_user_search_response import ModerationUserSearchResponse
 from client.rest import ApiException
 from pprint import pprint
@@ -25,15 +27,16 @@ configuration = client.Configuration(
 )
 
 
-# Entre em um contexto com uma instância do cliente da API
+# Entre em um contexto com uma instância do cliente API
 with client.ApiClient(configuration) as api_client:
-    # Crie uma instância da classe da API
+    # Crie uma instância da classe API
     api_instance = client.ModerationApi(api_client)
-    value = 'value_example' # str | (opcional)
-    sso = 'sso_example' # str | (opcional)
+    tenant_id = 'tenant_id_example' # str | 
+    value = 'value_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_search_users(value=value, sso=sso)
+        api_response = api_instance.get_search_users(tenant_id, GetSearchUsersOptions(value=value, sso=sso))
         print("The response of ModerationApi->get_search_users:\n")
         pprint(api_response)
     except Exception as e:

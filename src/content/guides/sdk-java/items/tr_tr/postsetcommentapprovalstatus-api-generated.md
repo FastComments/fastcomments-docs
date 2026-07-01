@@ -1,18 +1,20 @@
-## Parametreler
+## Parameters
 
-| İsim | Tür | Konum | Gerekli | Açıklama |
+| İsim | Tip | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Evet |  |
 | commentId | string | path | Evet |  |
 | approved | boolean | query | Hayır |  |
+| broadcastId | string | query | Hayır |  |
 | sso | string | query | Hayır |  |
 
-## Yanıt
+## Response
 
 Döndürür: [`SetCommentApprovedResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SetCommentApprovedResponse.java)
 
 ## Örnek
 
-[inline-code-attrs-start title = 'postSetCommentApprovalStatus Örneği'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postSetCommentApprovalStatus Örnek'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Sınıfları içe aktar:
 import com.fastcomments.invoker.ApiClient;
@@ -27,12 +29,15 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     Boolean approved = true; // Boolean | 
+    String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      SetCommentApprovedResponse result = apiInstance.postSetCommentApprovalStatus(commentId)
+      SetCommentApprovedResponse result = apiInstance.postSetCommentApprovalStatus(tenantId, commentId)
             .approved(approved)
+            .broadcastId(broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);

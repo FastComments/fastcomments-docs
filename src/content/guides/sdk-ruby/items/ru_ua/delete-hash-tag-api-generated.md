@@ -1,38 +1,36 @@
-## Параметры
+## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tag | string | path | Да |  |
-| tenantId | string | query | Нет |  |
+| Назва | Тип | Розташування | Обов’язковий | Опис |
+|------|------|--------------|--------------|------|
+| tenantId | string | query | Так |  |
+| tag | string | path | Так |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
+Повертає: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример delete_hash_tag'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад delete_hash_tag'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# настройка авторизации
+# налаштування авторизації
 FastCommentsClient.configure do |config|
-  # Настройка авторизации по API-ключу: api_key
+  # Налаштуйте авторизацію за допомогою API-ключа: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Раскомментируйте следующую строку, чтобы задать префикс для API-ключа, например 'Bearer' (по умолчанию nil)
+  # Розкоментуйте наступний рядок, щоб встановити префікс для API-ключа, наприклад 'Bearer' (за замовчуванням nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
+tenant_id = 'tenant_id_example' # String | 
 tag = 'tag_example' # String | 
-opts = {
-  tenant_id: 'tenant_id_example', # String | 
-  delete_hash_tag_request_body: FastCommentsClient::DeleteHashTagRequestBody.new # DeleteHashTagRequestBody | 
-}
+delete_hash_tag_request_body = FastCommentsClient::DeleteHashTagRequestBody.new # DeleteHashTagRequestBody | 
 
 begin
   
-  result = api_instance.delete_hash_tag(tag, opts)
+  result = api_instance.delete_hash_tag(tenant_id, tag, delete_hash_tag_request_body)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->delete_hash_tag: #{e}"

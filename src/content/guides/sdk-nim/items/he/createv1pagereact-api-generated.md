@@ -1,30 +1,27 @@
-## פרמטרים
+## Parameters
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | urlId | string | כן |  |
-| title | string | לא |  |
+| title | string = "" | לא |  |
 
-## תשובה
+## תגובה
 
 מחזיר: [`Option[CreateV1PageReact]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_v1_page_react.nim)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה של createV1PageReact'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createV1PageReact דוגמה'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.createV1PageReact(
+let (pageOpt, httpResp) = client.createV1PageReact(
   tenantId = "my-tenant-123",
-  urlId = "news/2026/market-rally",
-  title = "Breaking News: Markets Rally Today"
+  urlId = "news/article-456",
+  title = "Breaking News: Nim Takes Over"
 )
 
-if response.isSome:
-  let pageReact = response.get()
-  echo "Page react created: ", pageReact
-else:
-  echo "Failed to create page react: ", httpResponse
+if pageOpt.isSome:
+  let page = pageOpt.get()
+  discard page
+  discard httpResp
 [inline-code-end]
-
----

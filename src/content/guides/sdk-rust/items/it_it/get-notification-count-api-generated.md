@@ -1,7 +1,7 @@
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nome | Tipo | Obbligatorio | Descrizione |
+|------|------|--------------|-------------|
 | tenant_id | String | Sì |  |
 | user_id | String | No |  |
 | url_id | String | No |  |
@@ -14,16 +14,17 @@ Restituisce: [`GetNotificationCountResponse`](https://github.com/FastComments/fa
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di get_notification_count'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio get_notification_count'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: GetNotificationCountParams = GetNotificationCountParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    user_id: Some("user-123".to_string()),
-    url_id: Some("news/article/2026/06/19".to_string()),
-    from_comment_id: Some("cmt-98765".to_string()),
-    viewed: Some(false),
-};
-let notification_count: GetNotificationCountResponse = get_notification_count(configuration, params).await?;
+async fn example() -> Result<(), Error> {
+    let params = GetNotificationCountParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        user_id: Some("john.doe".to_string()),
+        url_id: Some("blog/post-123".to_string()),
+        from_comment_id: Some("comment789".to_string()),
+        viewed: Some(true),
+    };
+    let _response = get_notification_count(&configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]
-
----

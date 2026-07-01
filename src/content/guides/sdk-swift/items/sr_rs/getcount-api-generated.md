@@ -2,6 +2,7 @@
 
 | Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
 | text-search | string | query | Не |  |
 | byIPFromComment | string | query | Не |  |
 | filter | string | query | Не |  |
@@ -15,19 +16,20 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'getCount пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getCount'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи примери кода су још у бета фази. За било који проблем, пријавите га путем http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledeći primeri koda su i dalje beta. Za bilo koji problem, molimo prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let textSearch = "textSearch_example" // String |  (опционо)
-let byIPFromComment = "byIPFromComment_example" // String |  (опционо)
-let filter = "filter_example" // String |  (опционо)
-let searchFilters = "searchFilters_example" // String |  (опционо)
-let demo = true // Bool |  (опционо)
-let sso = "sso_example" // String |  (опционо)
+let tenantId = "tenantId_example" // String | 
+let textSearch = "textSearch_example" // String |  (opcionalno)
+let byIPFromComment = "byIPFromComment_example" // String |  (opcionalno)
+let filter = "filter_example" // String |  (opcionalno)
+let searchFilters = "searchFilters_example" // String |  (opcionalno)
+let demo = true // Bool |  (opcionalno)
+let sso = "sso_example" // String |  (opcionalno)
 
-ModerationAPI.getCount(textSearch: textSearch, byIPFromComment: byIPFromComment, filter: filter, searchFilters: searchFilters, demo: demo, sso: sso) { (response, error) in
+ModerationAPI.getCount(tenantId: tenantId, options: ModerationAPI.GetCountOptions(textSearch: textSearch, byIPFromComment: byIPFromComment, filter: filter, searchFilters: searchFilters, demo: demo, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -38,5 +40,3 @@ ModerationAPI.getCount(textSearch: textSearch, byIPFromComment: byIPFromComment,
     }
 }
 [inline-code-end]
-
----

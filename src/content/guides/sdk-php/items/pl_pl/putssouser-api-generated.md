@@ -1,7 +1,7 @@
 ## Parametry
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
-|------|------|----------|----------|-------------|
+|------|------|-------------|----------|------|
 | tenantId | string | query | Tak |  |
 | id | string | path | Tak |  |
 | updateComments | boolean | query | Nie |  |
@@ -18,22 +18,24 @@ Zwraca: [`PutSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-p
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Skonfiguruj autoryzację klucza API: api_key
+// Skonfiguruj autoryzację kluczem API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli to konieczne
+// Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli jest potrzebny
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Jeśli chcesz użyć niestandardowego klienta HTTP, przekaż klienta implementującego `GuzzleHttp\ClientInterface`.
-    // To jest opcjonalne, domyślnie zostanie użyty `GuzzleHttp\Client`.
+    // Jeśli chcesz użyć własnego klienta HTTP, przekaż swój klient implementujący `GuzzleHttp\ClientInterface`.
+    // To jest opcjonalne, domyślnie używany będzie `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
 $update_apisso_user_data = new \FastComments\Client\Model\UpdateAPISSOUserData(); // \FastComments\Client\Model\UpdateAPISSOUserData
 $update_comments = True; // bool
+
 
 try {
     $result = $apiInstance->putSSOUser($tenant_id, $id, $update_apisso_user_data, $update_comments);
@@ -42,5 +44,3 @@ try {
     echo 'Exception when calling DefaultApi->putSSOUser: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

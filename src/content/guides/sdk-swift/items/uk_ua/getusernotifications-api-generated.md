@@ -1,9 +1,9 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Назва | Тип | Розташування | Обов'язково | Опис |
+|------|------|--------------|-------------|------|
 | tenantId | string | query | Так |  |
-| urlId | string | query | Ні | Використовується для визначення, чи підписана поточна сторінка. |
+| urlId | string | query | Ні | Використовується для визначення, чи підписана поточна сторінка. (необов'язково) |
 | pageSize | integer | query | Ні |  |
 | afterId | string | query | Ні |  |
 | includeContext | boolean | query | Ні |  |
@@ -17,29 +17,29 @@
 
 ## Відповідь
 
-Повертає: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetMyNotificationsResponse.swift)
+Returns: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetMyNotificationsResponse.swift)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад getUserNotifications'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUserNotifications Приклад'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Наведені приклади коду все ще в бета-версії. Якщо виникне проблема, будь ласка, повідомте через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наступні приклади коду ще у beta-версії. У разі проблем, будь ласка, повідомляйте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | Використовується для визначення, чи підписана поточна сторінка. (необов'язково)
-let pageSize = 987 // Int |  (необов'язково)
-let afterId = "afterId_example" // String |  (необов'язково)
-let includeContext = true // Bool |  (необов'язково)
-let afterCreatedAt = 987 // Int64 |  (необов'язково)
-let unreadOnly = true // Bool |  (необов'язково)
-let dmOnly = true // Bool |  (необов'язково)
-let noDm = true // Bool |  (необов'язково)
-let includeTranslations = true // Bool |  (необов'язково)
-let includeTenantNotifications = true // Bool |  (необов'язково)
-let sso = "sso_example" // String |  (необов'язково)
+let pageSize = 987 // Int |  (optional)
+let afterId = "afterId_example" // String |  (optional)
+let includeContext = true // Bool |  (optional)
+let afterCreatedAt = 987 // Int64 |  (optional)
+let unreadOnly = true // Bool |  (optional)
+let dmOnly = true // Bool |  (optional)
+let noDm = true // Bool |  (optional)
+let includeTranslations = true // Bool |  (optional)
+let includeTenantNotifications = true // Bool |  (optional)
+let sso = "sso_example" // String |  (optional)
 
-PublicAPI.getUserNotifications(tenantId: tenantId, urlId: urlId, pageSize: pageSize, afterId: afterId, includeContext: includeContext, afterCreatedAt: afterCreatedAt, unreadOnly: unreadOnly, dmOnly: dmOnly, noDm: noDm, includeTranslations: includeTranslations, includeTenantNotifications: includeTenantNotifications, sso: sso) { (response, error) in
+PublicAPI.getUserNotifications(tenantId: tenantId, options: PublicAPI.GetUserNotificationsOptions(urlId: urlId, pageSize: pageSize, afterId: afterId, includeContext: includeContext, afterCreatedAt: afterCreatedAt, unreadOnly: unreadOnly, dmOnly: dmOnly, noDm: noDm, includeTranslations: includeTranslations, includeTenantNotifications: includeTenantNotifications, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

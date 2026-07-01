@@ -1,12 +1,12 @@
 ## Параметри
 
-| Име | Тип | Потребно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| search | string | Да |  |
-| locale | string | Не |  |
-| rating | string | Не |  |
-| page | number | Не |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| search | string | Yes |  |
+| locale | string | No |  |
+| rating | string | No |  |
+| page | number | No |  |
 
 ## Одговор
 
@@ -14,14 +14,25 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'getGifsSearch Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getGifsSearch Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-42';
-const search: string = 'golden hour sunset';
-const locale: string = 'en-US';
-const rating: string = 'pg';
-const page: number = 1;
-const result: GetGifsSearchResponse = await getGifsSearch(tenantId, search, locale, rating, page);
-[inline-code-end]
+async function demo() {
+  const tenantId: string = "tenant_9f8b7c";
+  const search: string = "funny cats";
+  const locale: string = "en-US";
+  const rating: string = "pg";
+  const page: number = 1;
 
----
+  const result: GetGifsSearchResponse = await getGifsSearch(
+    tenantId,
+    search,
+    locale,
+    rating,
+    page
+  );
+
+  console.log(result);
+}
+
+demo();
+[inline-code-end]

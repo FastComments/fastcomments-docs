@@ -5,11 +5,11 @@ afterId
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Ναι |  |
-| afterId | string | query | Όχι |  |
-| limit | integer | query | Όχι |  |
-| tags | array | query | Όχι |  |
+|------|------|----------|-----------|-----------|
+| tenantId | string | query | Yes |  |
+| afterId | string | query | No |  |
+| limit | integer | query | No |  |
+| tags | array | query | No |  |
 
 ## Απόκριση
 
@@ -19,15 +19,15 @@ afterId
 
 [inline-code-attrs-start title = 'Παράδειγμα getFeedPosts'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Τα ακόλουθα παραδείγματα κώδικα είναι ακόμη beta. Για οποιοδήποτε πρόβλημα, παρακαλώ αναφέρετε μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
+// Τα παρακάτω παραδείγματα κώδικα είναι ακόμη beta. Για οποιοδήποτε πρόβλημα, παρακαλώ αναφέρετέ το μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let afterId = "afterId_example" // String |  (προαιρετικό)
-let limit = 987 // Int |  (προαιρετικό)
-let tags = ["inner_example"] // [String] |  (προαιρετικό)
+let afterId = "afterId_example" // String |  (optional)
+let limit = 987 // Int |  (optional)
+let tags = ["inner_example"] // [String] |  (optional)
 
-DefaultAPI.getFeedPosts(tenantId: tenantId, afterId: afterId, limit: limit, tags: tags) { (response, error) in
+DefaultAPI.getFeedPosts(tenantId: tenantId, options: DefaultAPI.GetFeedPostsOptions(afterId: afterId, limit: limit, tags: tags)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -38,3 +38,5 @@ DefaultAPI.getFeedPosts(tenantId: tenantId, afterId: afterId, limit: limit, tags
     }
 }
 [inline-code-end]
+
+---

@@ -1,14 +1,14 @@
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| 名前 | タイプ | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | はい |  |
-| commentId | string | path | はい |  |
-| voteId | string | path | はい |  |
-| urlId | string | query | はい |  |
-| broadcastId | string | query | はい |  |
-| editKey | string | query | いいえ |  |
-| sso | string | query | いいえ |  |
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| voteId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| broadcastId | string | query | Yes |  |
+| editKey | string | query | No |  |
+| sso | string | query | No |  |
 
 ## レスポンス
 
@@ -19,20 +19,21 @@
 [inline-code-attrs-start title = 'delete_comment_vote の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import DeleteCommentVoteOptions
 from client.models.vote_delete_response import VoteDeleteResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# ホストの定義は任意で、省略した場合は https://fastcomments.com がデフォルトになります
-# サポートされているすべての設定パラメータは configuration.py を参照してください。
+# ホストの定義はオプションで、デフォルトは https://fastcomments.com です
+# configuration.py でサポートされているすべての設定パラメータの一覧をご確認ください
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# API クライアントのインスタンスを使ってコンテキストに入る
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # API クラスのインスタンスを作成する
+    # API クラスのインスタンスを作成します
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
@@ -43,9 +44,11 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (オプション)
 
     try:
-        api_response = api_instance.delete_comment_vote(tenant_id, comment_id, vote_id, url_id, broadcast_id, edit_key=edit_key, sso=sso)
+        api_response = api_instance.delete_comment_vote(tenant_id, comment_id, vote_id, url_id, broadcast_id, DeleteCommentVoteOptions(edit_key=edit_key, sso=sso))
         print("The response of PublicApi->delete_comment_vote:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling PublicApi->delete_comment_vote: %s\n" % e)
 [inline-code-end]
+
+---

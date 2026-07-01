@@ -1,29 +1,26 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| commentIds | string | 아니요 |  |
-| sso | string | 아니요 |  |
+| tenantId | string | Yes |  |
+| commentIds | string | No |  |
+| sso | string = "" | No |  |
 
 ## 응답
 
 반환: [`Option[CheckBlockedCommentsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_check_blocked_comments_response.nim)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'checkedCommentsForBlocked 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'checkedCommentsForBlocked 예시'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.checkedCommentsForBlocked(
+let (maybeResponse, httpResponse) = client.checkedCommentsForBlocked(
   tenantId = "my-tenant-123",
-  commentIds = "",
+  commentIds = "cmt-1,cmt-2",
   sso = ""
 )
-if response.isSome:
-  let blockedResp = response.get()
-  echo "Received blocked comments response: ", blockedResp
-else:
-  echo "No response body; HTTP status: ", $httpResponse.status
-[inline-code-end]
 
----
+if maybeResponse.isSome:
+  let response = maybeResponse.get()
+  discard response
+[inline-code-end]

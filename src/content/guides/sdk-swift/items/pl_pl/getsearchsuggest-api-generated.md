@@ -2,8 +2,9 @@
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| text-search | string | query | Nie |  |
-| sso | string | query | Nie |  |
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Odpowiedź
 
@@ -11,15 +12,16 @@ Zwraca: [`ModerationSuggestResponse`](https://github.com/FastComments/fastcommen
 
 ## Przykład
 
-[inline-code-attrs-start title = 'getSearchSuggest Przykład'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład getSearchSuggest'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Następujące przykłady kodu są nadal w wersji beta. W razie problemów zgłoś je pod adresem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Poniższe przykłady kodu są nadal w wersji beta. W przypadku jakichkolwiek problemów prosimy zgłaszać je pod adresem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let textSearch = "textSearch_example" // String |  (opcjonalne)
-let sso = "sso_example" // String |  (opcjonalne)
+let tenantId = "tenantId_example" // String | 
+let textSearch = "textSearch_example" // String |  (opcjonalnie)
+let sso = "sso_example" // String |  (opcjonalnie)
 
-ModerationAPI.getSearchSuggest(textSearch: textSearch, sso: sso) { (response, error) in
+ModerationAPI.getSearchSuggest(tenantId: tenantId, options: ModerationAPI.GetSearchSuggestOptions(textSearch: textSearch, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -30,5 +32,3 @@ ModerationAPI.getSearchSuggest(textSearch: textSearch, sso: sso) { (response, er
     }
 }
 [inline-code-end]
-
----

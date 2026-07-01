@@ -2,7 +2,9 @@
 
 | Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
 | commentId | string | path | Да |  |
+| broadcastId | string | query | Не |  |
 | sso | string | query | Не |  |
 
 ## Отговор
@@ -11,16 +13,17 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за post_set_comment_text'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_set_comment_text Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import PostSetCommentTextOptions
 from client.models.set_comment_text_params import SetCommentTextParams
 from client.models.set_comment_text_response import SetCommentTextResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинирането на хоста е по избор и по подразбиране е https://fastcomments.com
-# Вижте configuration.py за списък с всички поддържани параметри на конфигурацията.
+# Дефинирането на хоста е незадължително и по подразбиране е https://fastcomments.com
+# Вижте configuration.py за списък на всички поддържани конфигурационни параметри.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -30,14 +33,18 @@ configuration = client.Configuration(
 with client.ApiClient(configuration) as api_client:
     # Създайте инстанция на API класа
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     set_comment_text_params = client.SetCommentTextParams() # SetCommentTextParams | 
-    sso = 'sso_example' # str |  (по избор)
+    broadcast_id = 'broadcast_id_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.post_set_comment_text(comment_id, set_comment_text_params, sso=sso)
+        api_response = api_instance.post_set_comment_text(tenant_id, comment_id, set_comment_text_params, PostSetCommentTextOptions(broadcast_id=broadcast_id, sso=sso))
         print("The response of ModerationApi->post_set_comment_text:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling ModerationApi->post_set_comment_text: %s\n" % e)
 [inline-code-end]
+
+---

@@ -1,5 +1,4 @@
----
-### Uso de Nimble
+### Usando Nimble
 
 ```bash
 nimble install fastcomments
@@ -13,14 +12,12 @@ nimble build
 
 ### Contenido de la biblioteca
 
-Esta biblioteca contiene el cliente de la API generado y las utilidades SSO para facilitar el trabajo con la API.
+Esta biblioteca contiene el cliente API generado y las utilidades SSO para facilitar el trabajo con la API.
 
-- [Documentación de la biblioteca del cliente API](https://github.com/FastComments/fastcomments-nim/blob/master/client/README.md)
+- [API Client Library Docs](https://github.com/FastComments/fastcomments-nim/blob/master/client/README.md)
 
-### APIs públicas vs protegidas
+### APIs públicas vs seguras
 
-Para el cliente de la API, hay tres módulos de API, `api_default`, `api_public` y `api_moderation`. El `api_default` contiene métodos que requieren tu clave de API, y `api_public` contiene llamadas a la API
-que se pueden realizar directamente desde un navegador/dispositivo móvil/etc. sin autenticación. El módulo `api_moderation` contiene métodos para el panel de moderación.
+Para el cliente API, existen tres módulos API, `api_default`, `api_public` y `api_moderation`. El módulo `api_default` contiene métodos que requieren tu clave API, y `api_public` contiene llamadas API que pueden realizarse directamente desde un navegador/dispositivo móvil/etc. sin autenticación. El módulo `api_moderation` contiene métodos para el panel de moderador.
 
-Los métodos de `api_moderation` abarcan el listado, el conteo, la búsqueda y la exportación de comentarios y sus registros; acciones de moderación como eliminar/restaurar comentarios, marcar, establecer el estado de revisión/spam/aprobación, ajustar votos y reabrir/cerrar hilos; prohibiciones (prohibir a un usuario de un comentario, deshacer una prohibición, resúmenes previos a la prohibición, estado y preferencias de la prohibición, y recuentos de usuarios prohibidos); e insignias y confianza (otorgar/quitar una insignia, listar insignias manuales, obtener/establecer el factor de confianza de un usuario, y obtener el perfil interno de un usuario). Cada método de `api_moderation` acepta un parámetro `sso` para que la llamada esté autenticada como moderador SSO.
----
+El módulo `api_moderation` ofrece una amplia suite de APIs de moderación en tiempo real y rápidas. Cada método `api_moderation` acepta un parámetro `sso` y puede autenticarse mediante SSO o una cookie de sesión de FastComments.com.

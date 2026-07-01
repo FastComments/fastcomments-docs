@@ -1,12 +1,13 @@
 ## Parâmetros
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Sim |  |
-| includeByUserIdAndEmail | boolean | query | Não |  |
-| includeByIP | boolean | query | Não |  |
-| includeByEmailDomain | boolean | query | Não |  |
-| sso | string | query | Não |  |
+| Nome | Tipo | Localização | Obrigatório | Descrição |
+|------|------|-------------|-------------|-----------|
+| tenantId | string | consulta | Sim |  |
+| commentId | string | caminho | Sim |  |
+| includeByUserIdAndEmail | boolean | consulta | Não |  |
+| includeByIP | boolean | consulta | Não |  |
+| includeByEmailDomain | boolean | consulta | Não |  |
+| sso | string | consulta | Não |  |
 
 ## Resposta
 
@@ -14,7 +15,7 @@ Retorna: [`PreBanSummary`](https://github.com/FastComments/fastcomments-php/blob
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getPreBanSummary'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo getPreBanSummary'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -22,18 +23,23 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Se você quiser usar um cliente HTTP personalizado, passe seu cliente que implemente `GuzzleHttp\ClientInterface`.
-    // Isso é opcional, `GuzzleHttp\Client` será usado como padrão.
+    // Se você quiser usar um cliente HTTP personalizado, passe seu cliente que implementa `GuzzleHttp\ClientInterface`.
+    // Isto é opcional, `GuzzleHttp\Client` será usado como padrão.
     new GuzzleHttp\Client()
 );
+
+$tenant_id = 'tenant_id_example'; // string
 $comment_id = 'comment_id_example'; // string
-$include_by_user_id_and_email = True; // bool
-$include_by_ip = True; // bool
-$include_by_email_domain = True; // bool
-$sso = 'sso_example'; // string
+$options = [
+    'include_by_user_id_and_email' => True, // bool
+    'include_by_ip' => True, // bool
+    'include_by_email_domain' => True, // bool
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->getPreBanSummary($comment_id, $include_by_user_id_and_email, $include_by_ip, $include_by_email_domain, $sso);
+    $result = $apiInstance->getPreBanSummary($tenant_id, $comment_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getPreBanSummary: ', $e->getMessage(), PHP_EOL;

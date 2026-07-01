@@ -1,27 +1,29 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
-|------|------|----------|----------|-------------|
-| includeByUserIdAndEmail | boolean | query | Ne |  |
-| includeByIP | boolean | query | Ne |  |
-| includeByEmailDomain | boolean | query | Ne |  |
-| sso | string | query | Ne |  |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| includeByUserIdAndEmail | boolean | query | No |  |
+| includeByIP | boolean | query | No |  |
+| includeByEmailDomain | boolean | query | No |  |
+| sso | string | query | No |  |
 
-## Odgovor
+## Odziv
 
 Vrne: [`BulkPreBanSummary`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/bulk_pre_ban_summary.py)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer post_bulk_pre_ban_summary'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_bulk_pre_ban_summary Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import PostBulkPreBanSummaryOptions
 from client.models.bulk_pre_ban_params import BulkPreBanParams
 from client.models.bulk_pre_ban_summary import BulkPreBanSummary
 from client.rest import ApiException
 from pprint import pprint
 
-# Določitev gostitelja je neobvezna in privzeto je https://fastcomments.com
+# Definiranje gostitelja je neobvezno in privzeto nastavljeno na https://fastcomments.com
 # Oglejte si configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -30,16 +32,17 @@ configuration = client.Configuration(
 
 # Vstopite v kontekst z instanco API odjemalca
 with client.ApiClient(configuration) as api_client:
-    # Ustvarite instanco razreda API
+    # Ustvari instanco API razreda
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     bulk_pre_ban_params = client.BulkPreBanParams() # BulkPreBanParams | 
-    include_by_user_id_and_email = True # bool |  (neobvezno)
-    include_by_ip = True # bool |  (neobvezno)
-    include_by_email_domain = True # bool |  (neobvezno)
-    sso = 'sso_example' # str |  (neobvezno)
+    include_by_user_id_and_email = True # bool |  (optional)
+    include_by_ip = True # bool |  (optional)
+    include_by_email_domain = True # bool |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.post_bulk_pre_ban_summary(bulk_pre_ban_params, include_by_user_id_and_email=include_by_user_id_and_email, include_by_ip=include_by_ip, include_by_email_domain=include_by_email_domain, sso=sso)
+        api_response = api_instance.post_bulk_pre_ban_summary(tenant_id, bulk_pre_ban_params, PostBulkPreBanSummaryOptions(include_by_user_id_and_email=include_by_user_id_and_email, include_by_ip=include_by_ip, include_by_email_domain=include_by_email_domain, sso=sso))
         print("The response of ModerationApi->post_bulk_pre_ban_summary:\n")
         pprint(api_response)
     except Exception as e:

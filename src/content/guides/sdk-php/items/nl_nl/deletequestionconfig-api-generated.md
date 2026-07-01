@@ -1,15 +1,15 @@
 ## Parameters
 
-| Name | Type | Location | Required | Description |
+| Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| id | string | path | Ja |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
-## Response
+## Respons
 
-Geeft terug: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
+Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
-## Example
+## Voorbeeld
 
 [inline-code-attrs-start title = 'deleteQuestionConfig Voorbeeld'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -17,20 +17,27 @@ Geeft terug: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-p
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configureer API-sleutel autorisatie: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Haal de commentaarregel hieronder weg om het voorvoegsel in te stellen (bijv. Bearer) voor de API-sleutel, indien nodig
+// Configure API key authorization: api_key
+// Configureer API-sleutelautorisatie: api_key
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Uncomment hieronder om een prefix (bijv. Bearer) voor de API-sleutel in te stellen, indien nodig
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Als u een aangepaste HTTP-client wilt gebruiken, geef uw client door die `GuzzleHttp\ClientInterface` implementeert.
-    // Dit is optioneel; `GuzzleHttp\Client` wordt standaard gebruikt.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // Als je een aangepaste HTTP-client wilt gebruiken, geef je client door die `GuzzleHttp\ClientInterface` implementeert.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // Dit is optioneel, `GuzzleHttp\Client` wordt standaard gebruikt.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
+// string
 $id = 'id_example'; // string
+// string
+
 
 try {
     $result = $apiInstance->deleteQuestionConfig($tenant_id, $id);

@@ -1,8 +1,7 @@
----
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
+|------|------|----------|-----------|-------------|
 | tenantId | string | query | Ναι |  |
 | questionId | string | query | Όχι |  |
 | questionIds | array | query | Όχι |  |
@@ -17,9 +16,9 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'aggregateQuestionResults Παράδειγμα'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παράδειγμα aggregateQuestionResults'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Τα ακόλουθα δείγματα κώδικα είναι ακόμα beta. Για οποιοδήποτε ζήτημα, παρακαλώ αναφέρετε μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
+// Ο παρακάτω κώδικας είναι ακόμη σε έκδοση beta. Για οποιοδήποτε πρόβλημα, παρακαλώ αναφέρετε το στο http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -30,7 +29,7 @@ let timeBucket = AggregateTimeBucket() // AggregateTimeBucket |  (προαιρε
 let startDate = Date() // Date |  (προαιρετικό)
 let forceRecalculate = true // Bool |  (προαιρετικό)
 
-DefaultAPI.aggregateQuestionResults(tenantId: tenantId, questionId: questionId, questionIds: questionIds, urlId: urlId, timeBucket: timeBucket, startDate: startDate, forceRecalculate: forceRecalculate) { (response, error) in
+DefaultAPI.aggregateQuestionResults(tenantId: tenantId, options: DefaultAPI.AggregateQuestionResultsOptions(questionId: questionId, questionIds: questionIds, urlId: urlId, timeBucket: timeBucket, startDate: startDate, forceRecalculate: forceRecalculate)) { (response, error) in
     guard error == nil else {
         print(error)
         return

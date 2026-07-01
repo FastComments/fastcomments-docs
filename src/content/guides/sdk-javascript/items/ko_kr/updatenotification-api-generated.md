@@ -1,28 +1,41 @@
----
 ## 매개변수
 
 | 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| id | string | 예 |  |
-| updateNotificationBody | UpdateNotificationBody | 예 |  |
-| userId | string | 아니요 |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updateNotificationBody | UpdateNotificationBody | Yes |  |
+| userId | string | No |  |
 
 ## 응답
 
-반환: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+반환: [`UpdateNotificationResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateNotificationResponse.ts)
 
 ## 예제
 
 [inline-code-attrs-start title = 'updateNotification 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'd6f9b2a4-1b2c-4e5f-9a7b-3c2d1e4f5a6b';
-const id: string = 'notification-78f1c3e4';
-const updateNotificationBody: UpdateNotificationBody = {} as UpdateNotificationBody;
-const userId: string = 'user-9b3f2a1c';
+const tenantId: string = "tenant_5f4d2c";
+const notificationId: string = "notif_9b8a7c";
 
-const responseWithUser: APIEmptyResponse = await updateNotification(tenantId, id, updateNotificationBody, userId);
-const responseWithoutUser: APIEmptyResponse = await updateNotification(tenantId, id, updateNotificationBody);
+const updateBody: UpdateNotificationBody = {
+  enabled: false,
+  sendEmail: true,
+  schedule: "2023-12-01T08:00:00Z"
+};
+
+const userId: string = "user_123e4567";
+
+const responseWithUser: UpdateNotificationResponse = await updateNotification(
+  tenantId,
+  notificationId,
+  updateBody,
+  userId
+);
+
+const responseWithoutUser: UpdateNotificationResponse = await updateNotification(
+  tenantId,
+  notificationId,
+  updateBody
+);
 [inline-code-end]
-
----

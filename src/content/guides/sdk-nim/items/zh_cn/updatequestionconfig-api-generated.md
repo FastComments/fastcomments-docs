@@ -1,7 +1,7 @@
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
-|------|------|----------|-------------|
+| 名称 | 类型 | 必填 | 描述 |
+|------|------|------|------|
 | tenantId | string | 是 |  |
 | id | string | 否 |  |
 | updateQuestionConfigBody | UpdateQuestionConfigBody | 否 |  |
@@ -14,10 +14,12 @@
 
 [inline-code-attrs-start title = 'updateQuestionConfig 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateQuestionConfig(tenantId = "my-tenant-123", id = "question-config-456", updateQuestionConfigBody = default(UpdateQuestionConfigBody))
-if response.isSome:
-  let apiEmpty = response.get()
-  discard apiEmpty
-[inline-code-end]
+let (apiResp, httpResp) = client.updateQuestionConfig(
+  tenantId = "my-tenant-123",
+  id = "question-456",
+  updateQuestionConfigBody = UpdateQuestionConfigBody()
+)
 
----
+if apiResp.isSome:
+  let resp = apiResp.get()
+[inline-code-end]

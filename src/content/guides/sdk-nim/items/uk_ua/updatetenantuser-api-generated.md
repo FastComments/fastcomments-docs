@@ -1,11 +1,11 @@
 ## Параметри
 
-| Назва | Тип | Обов'язковий | Опис |
+| Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Так |  |
 | id | string | Ні |  |
 | updateTenantUserBody | UpdateTenantUserBody | Ні |  |
-| updateComments | string | Ні |  |
+| updateComments | string = "" | Ні |  |
 
 ## Відповідь
 
@@ -13,23 +13,15 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад використання updateTenantUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateTenantUser Приклад'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateTenantUser(
+let updateBody = UpdateTenantUserBody()
+let (optResp, httpResp) = client.updateTenantUser(
   tenantId = "my-tenant-123",
-  id = "user-987",
-  updateTenantUserBody = UpdateTenantUserBody(
-    displayName = "Jane Doe",
-    email = "jane.doe@example.com",
-    roles = @["moderator", "editor"],
-    isActive = true
-  ),
-  updateComments = "true"
+  id = "user-456",
+  updateTenantUserBody = updateBody,
+  updateComments = "Changed role to moderator",
 )
-
-if response.isSome:
-  let apiEmpty = response.get()
-  discard apiEmpty
+if optResp.isSome:
+  let _ = optResp.get()
 [inline-code-end]
-
----

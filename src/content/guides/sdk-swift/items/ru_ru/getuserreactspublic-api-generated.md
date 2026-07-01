@@ -1,10 +1,10 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| postIds | array | query | Нет |  |
-| sso | string | query | Нет |  |
+| tenantId | string | path | Yes |  |
+| postIds | array | query | No |  |
+| sso | string | query | No |  |
 
 ## Ответ
 
@@ -12,16 +12,16 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример getUserReactsPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUserReactsPublic Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие примеры кода всё ещё находятся в бета-версии. При возникновении проблем сообщите об этом через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следующие примеры кода находятся в бета-версии. При любых проблемах, пожалуйста, сообщайте через http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let postIds = ["inner_example"] // [String] |  (необязательно)
 let sso = "sso_example" // String |  (необязательно)
 
-PublicAPI.getUserReactsPublic(tenantId: tenantId, postIds: postIds, sso: sso) { (response, error) in
+PublicAPI.getUserReactsPublic(tenantId: tenantId, options: PublicAPI.GetUserReactsPublicOptions(postIds: postIds, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -32,5 +32,3 @@ PublicAPI.getUserReactsPublic(tenantId: tenantId, postIds: postIds, sso: sso) { 
     }
 }
 [inline-code-end]
-
----

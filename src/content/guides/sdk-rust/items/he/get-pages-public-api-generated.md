@@ -1,10 +1,10 @@
-רשימת דפים לשוכר. משמשת את לקוח השולחן עבודה של FChat למילוי רשימת החדרים שלו.
-נדרש ש-`enableFChat` יהיה true בתצורת ה-custom שנפתרה עבור כל דף.
-דפים שדורשים SSO מסוננים לפי גישת הקבוצה של המשתמש המבקש.
+List pages for a tenant. Used by the FChat desktop client to populate its room list.
+Requires `enableFChat` to be true on the resolved custom config for each page.
+Pages that require SSO are filtered against the requesting user's group access.
 
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | tenant_id | String | כן |  |
 | cursor | String | לא |  |
@@ -19,17 +19,18 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-get_pages_public'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_pages_public דוגמה'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: GetPagesPublicParams = GetPagesPublicParams {
-    tenant_id: String::from("acme-corp-tenant"),
-    cursor: Some(String::from("cursor_eyJwZl9pZCI6IjEyMyJ9")),
-    limit: Some(50),
-    q: Some(String::from("tag:release status:published")),
-    sort_by: Some(models::PagesSortBy::CreatedAt),
-    has_comments: Some(true),
-};
-let response: GetPublicPagesResponse = get_pages_public(&configuration, params).await?;
+async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetPagesPublicParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        cursor: Some("page_20".to_string()),
+        limit: Some(50),
+        q: Some("news/article".to_string()),
+        sort_by: Some(models::PagesSortBy::CreatedDesc),
+        has_comments: Some(true),
+    };
+    let _response = get_pages_public(configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]
-
----

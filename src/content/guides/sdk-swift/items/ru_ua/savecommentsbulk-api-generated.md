@@ -1,6 +1,6 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Имя | Тип | Местоположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | isLive | boolean | query | Нет |  |
@@ -14,9 +14,9 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример saveCommentsBulk'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'saveCommentsBulk Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие примеры кода всё ещё находятся в бета-версии. Если возникнет проблема, пожалуйста, сообщите через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Последующие примеры кода находятся в бета‑версии. При любой проблеме, пожалуйста, сообщайте через http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -26,7 +26,7 @@ let doSpamCheck = true // Bool |  (необязательно)
 let sendEmails = true // Bool |  (необязательно)
 let populateNotifications = true // Bool |  (необязательно)
 
-DefaultAPI.saveCommentsBulk(tenantId: tenantId, createCommentParams: createCommentParams, isLive: isLive, doSpamCheck: doSpamCheck, sendEmails: sendEmails, populateNotifications: populateNotifications) { (response, error) in
+DefaultAPI.saveCommentsBulk(tenantId: tenantId, createCommentParams: createCommentParams, options: DefaultAPI.SaveCommentsBulkOptions(isLive: isLive, doSpamCheck: doSpamCheck, sendEmails: sendEmails, populateNotifications: populateNotifications)) { (response, error) in
     guard error == nil else {
         print(error)
         return

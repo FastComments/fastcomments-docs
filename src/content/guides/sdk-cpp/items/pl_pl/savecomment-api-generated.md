@@ -1,13 +1,10 @@
 ## Parametry
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Tak |  |
-| createCommentParams | CreateCommentParams | Tak |  |
-| isLive | bool | Nie |  |
-| doSpamCheck | bool | Nie |  |
-| sendEmails | bool | Nie |  |
-| populateNotifications | bool | Nie |  |
+| Nazwa | Typ | Wymagane | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| createCommentParams | CreateCommentParams | Yes |  |
+| options | const SaveCommentOptions& | Yes |  |
 
 ## Odpowiedź
 
@@ -15,27 +12,18 @@ Zwraca: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład użycia saveComment'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład saveComment'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-CreateCommentParams createParams;
-createParams.threadId = utility::string_t(U("thread-789"));
-createParams.body = utility::string_t(U("This is a test comment posted via SDK."));
-createParams.authorEmail = utility::string_t(U("user@example.com"));
-createParams.authorName = utility::string_t(U("Jane Developer"));
-boost::optional<bool> isLive(true);
-boost::optional<bool> doSpamCheck(false);
-boost::optional<bool> sendEmails(true);
-boost::optional<bool> populateNotifications(true);
-api->saveComment(tenantId, createParams, isLive, doSpamCheck, sendEmails, populateNotifications)
-.then([](pplx::task<std::shared_ptr<APISaveCommentResponse>> t){
-    try {
-        auto resp = t.get();
-        auto marker = std::make_shared<bool>(true);
-        (void)resp;
-        (void)marker;
-    } catch (const std::exception&) {}
-});
-[inline-code-end]
+CreateCommentParams commentParams;
+commentParams.body = utility::string_t(U("Great article!"));
+commentParams.author = utility::string_t(U("jane.doe@example.com"));
+commentParams.parentId = boost::optional<utility::string_t>(utility::string_t(U("parent-789")));
 
----
+SaveCommentOptions options;
+options.preview = boost::optional<bool>(false);
+
+api->saveComment(utility::string_t(U("my-tenant-123")), commentParams, options)
+    .then([](std::shared_ptr<APISaveCommentResponse> response) {
+        auto commentId = response->commentId;
+    });
+[inline-code-end]

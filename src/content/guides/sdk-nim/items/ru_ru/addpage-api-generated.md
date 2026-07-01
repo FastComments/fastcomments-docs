@@ -1,9 +1,9 @@
 ## Параметры
 
-| Name | Type | Required | Description |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| createAPIPageData | CreateAPIPageData | Нет |  |
+| tenantId | string | Yes |  |
+| createAPIPageData | CreateAPIPageData | No |  |
 
 ## Ответ
 
@@ -13,19 +13,19 @@
 
 [inline-code-attrs-start title = 'Пример addPage'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-var createData: CreateAPIPageData
-createData.url = "news/nim-4-release"
-createData.title = "Nim 4 Release Coverage"
-createData.path = "/news/nim-4-release"
-createData.isEnabled = true
-createData.tags = @["nim", "release"]
-createData.description = "Coverage of Nim 4 release"
+let pageData = CreateAPIPageData(
+  urlId = "news/article-2024",
+  title = "Breaking News: Nim Takes Over",
+  description = "An in-depth article about Nim's rise.",
+  tags = @["nim", "programming", "news"]
+)
 
-let (response, httpResponse) = client.addPage(tenantId = "my-tenant-123", createAPIPageData = createData)
+let (addPageResp, httpResp) = client.addPage(
+  tenantId = "my-tenant-123",
+  createAPIPageData = pageData
+)
 
-if response.isSome:
-  let pageResp = response.get()
-  echo pageResp
+if addPageResp.isSome:
+  let resp = addPageResp.get()
+  echo resp
 [inline-code-end]
-
----

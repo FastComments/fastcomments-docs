@@ -1,15 +1,15 @@
-## Parametreler
+## Parameters
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Evet |  |
-| id | string | path | Evet |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
-## Yanıt
+## Response
 
-Dönüş: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
+Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
-## Örnek
+## Example
 
 [inline-code-attrs-start title = 'updateModerator Örneği'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -17,21 +17,26 @@ Dönüş: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// API anahtar yetkilendirmesini yapılandırın: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Gerekirse API anahtarı için önek (ör. Bearer) ayarlamak için aşağıdaki yorum satırını kaldırın
+// Configure API key authorization: api_key
+// API anahtarı yetkilendirmesini yapılandır: api_key
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Gerekirse API anahtarı için önek (örn. Bearer) ayarlamak için aşağıdaki satırın yorumunu kaldırın
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Özel bir HTTP istemcusu kullanmak isterseniz, `GuzzleHttp\ClientInterface`'i uygulayan istemcinizi aktarın.
-    // Bu isteğe bağlıdır, `GuzzleHttp\Client` varsayılan olarak kullanılacaktır.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // Özel bir HTTP istemcisi kullanmak istiyorsanız, `GuzzleHttp\ClientInterface` arayüzünü uygulayan istemcinizi geçirin.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // Bu isteğe bağlıdır, varsayılan olarak `GuzzleHttp\Client` kullanılacaktır.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
 $update_moderator_body = new \FastComments\Client\Model\UpdateModeratorBody(); // \FastComments\Client\Model\UpdateModeratorBody
+
 
 try {
     $result = $apiInstance->updateModerator($tenant_id, $id, $update_moderator_body);

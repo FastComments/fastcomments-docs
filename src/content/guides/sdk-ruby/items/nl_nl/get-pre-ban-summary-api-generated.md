@@ -1,25 +1,27 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
-|------|------|----------|----------|-------------|
+| Naam | Type | Locatie | Verplicht | Beschrijving |
+|------|------|----------|-----------|--------------|
+| tenantId | string | query | Ja |  |
 | commentId | string | path | Ja |  |
 | includeByUserIdAndEmail | boolean | query | Nee |  |
 | includeByIP | boolean | query | Nee |  |
 | includeByEmailDomain | boolean | query | Nee |  |
 | sso | string | query | Nee |  |
 
-## Response
+## Respons
 
 Retourneert: [`PreBanSummary`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/pre_ban_summary.rb)
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'get_pre_ban_summary Voorbeeld'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Voorbeeld get_pre_ban_summary'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 comment_id = 'comment_id_example' # String | 
 opts = {
   include_by_user_id_and_email: true, # Boolean | 
@@ -30,7 +32,7 @@ opts = {
 
 begin
   
-  result = api_instance.get_pre_ban_summary(comment_id, opts)
+  result = api_instance.get_pre_ban_summary(tenant_id, comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_pre_ban_summary: #{e}"

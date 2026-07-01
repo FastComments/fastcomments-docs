@@ -1,11 +1,11 @@
----
-## Параметри
+## Parameters
 
-| Име | Тип | Местоположение | Задължително | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| sso | string | query | Не |  |
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
-## Отговор
+## Response
 
 Връща: [`GetTenantManualBadgesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTenantManualBadgesResponse.swift)
 
@@ -13,12 +13,13 @@
 
 [inline-code-attrs-start title = 'getManualBadges Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следващите примерни фрагменти от код все още са в бета. За всеки проблем, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следващите примерни кодове все още са бета. За всякакъв проблем, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let sso = "sso_example" // String |  (незадължително)
+let tenantId = "tenantId_example" // String | 
+let sso = "sso_example" // String |  (опционално)
 
-ModerationAPI.getManualBadges(sso: sso) { (response, error) in
+ModerationAPI.getManualBadges(tenantId: tenantId, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return

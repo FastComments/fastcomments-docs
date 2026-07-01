@@ -1,24 +1,24 @@
-## Параметры
+## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| commentId | string | path | Да |  |
-| voteId | string | path | Да |  |
-| urlId | string | query | Да |  |
-| broadcastId | string | query | Да |  |
-| editKey | string | query | Нет |  |
-| sso | string | query | Нет |  |
+| Ім'я | Тип | Розташування | Обов'язковий | Опис |
+|------|------|--------------|--------------|------|
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| voteId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| broadcastId | string | query | Yes |  |
+| editKey | string | query | No |  |
+| sso | string | query | No |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/VoteDeleteResponse.swift)
+Повертає: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/VoteDeleteResponse.swift)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример deleteCommentVote'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад deleteCommentVote'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие примеры кода всё ещё находятся в бета-версии. Для любых проблем, пожалуйста, сообщайте через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наступні приклади коду ще у бета-версії. У випадку проблем, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -26,10 +26,10 @@ let commentId = "commentId_example" // String |
 let voteId = "voteId_example" // String | 
 let urlId = "urlId_example" // String | 
 let broadcastId = "broadcastId_example" // String | 
-let editKey = "editKey_example" // String |  (необязательно)
-let sso = "sso_example" // String |  (необязательно)
+let editKey = "editKey_example" // String |  (необов'язково)
+let sso = "sso_example" // String |  (необов'язково)
 
-PublicAPI.deleteCommentVote(tenantId: tenantId, commentId: commentId, voteId: voteId, urlId: urlId, broadcastId: broadcastId, editKey: editKey, sso: sso) { (response, error) in
+PublicAPI.deleteCommentVote(tenantId: tenantId, commentId: commentId, voteId: voteId, urlId: urlId, broadcastId: broadcastId, options: PublicAPI.DeleteCommentVoteOptions(editKey: editKey, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

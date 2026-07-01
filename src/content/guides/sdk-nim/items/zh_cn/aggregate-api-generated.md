@@ -1,14 +1,12 @@
-通过对文档进行分组（如果提供了 groupBy）并应用多个操作来聚合文档。
-支持不同的操作（例如 sum、countDistinct、avg 等）。
+Aggregates documents by grouping them (if groupBy is provided) and applying multiple operations. Different operations (e.g. sum, countDistinct, avg, etc.) are supported.
 
 ## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必需 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| aggregationRequest | AggregationRequest | 否 |  |
-| parentTenantId | string | 否 |  |
-| includeStats | bool | 否 |  |
+| tenantId | string | Yes |  |
+| aggregationRequest | AggregationRequest | No |  |
+| options | AggregateOptions | No |  |
 
 ## 响应
 
@@ -16,18 +14,11 @@
 
 ## 示例
 
-[inline-code-attrs-start title = 'aggregate 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '聚合示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.aggregate(
-  tenantId = "my-tenant-123",
-  aggregationRequest = AggregationRequest(groupBy = @["articleId"], metrics = @["commentCount"], filters = @[], limit = 0),
-  parentTenantId = "",
-  includeStats = false
-)
-
-if response.isSome:
-  let agg = response.get()
-  discard agg
+let (aggResp, httpResp) = client.aggregate(tenantId = "my-tenant-123", aggregationRequest = AggregationRequest(), options = AggregateOptions())
+if aggResp.isSome:
+  let response = aggResp.get()
+  echo response
+echo httpResp
 [inline-code-end]
-
----

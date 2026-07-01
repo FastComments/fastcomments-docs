@@ -1,7 +1,7 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Назва | Тип | Розташування | Обов’язково | Опис |
+|------|------|--------------|-------------|------|
 | tenantId | string | query | Так |  |
 | limit | number | query | Ні |  |
 | skip | number | query | Ні |  |
@@ -15,19 +15,19 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад getAuditLogs'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getAuditLogs Приклад'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Наведені приклади коду ще в бета-версії. Якщо виникнуть проблеми, повідомте на http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наступні приклади коду все ще у бета-версії. У разі проблеми, будь ласка, повідомте про це за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let limit = 987 // Double |  (необов'язково)
-let skip = 987 // Double |  (необов'язково)
-let order = SORT_DIR() // SORTDIR |  (необов'язково)
-let after = 987 // Double |  (необов'язково)
-let before = 987 // Double |  (необов'язково)
+let limit = 987 // Double |  (optional)
+let skip = 987 // Double |  (optional)
+let order = SORT_DIR() // SORTDIR |  (optional)
+let after = 987 // Double |  (optional)
+let before = 987 // Double |  (optional)
 
-DefaultAPI.getAuditLogs(tenantId: tenantId, limit: limit, skip: skip, order: order, after: after, before: before) { (response, error) in
+DefaultAPI.getAuditLogs(tenantId: tenantId, options: DefaultAPI.GetAuditLogsOptions(limit: limit, skip: skip, order: order, after: after, before: before)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -38,5 +38,3 @@ DefaultAPI.getAuditLogs(tenantId: tenantId, limit: limit, skip: skip, order: ord
     }
 }
 [inline-code-end]
-
----

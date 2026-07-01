@@ -1,9 +1,10 @@
 ## Параметры
 
 | Имя | Тип | Обязательно | Описание |
-|------|------|----------|-------------|
+|------|------|--------------|----------|
+| tenantId | string | Да |  |
 | urlId | string | Да |  |
-| sso | string | Нет |  |
+| sso | string = "" | Нет |  |
 
 ## Ответ
 
@@ -13,12 +14,8 @@
 
 [inline-code-attrs-start title = 'Пример putCloseThread'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.putCloseThread(urlId = "news/article-title", sso = "")
-if response.isSome:
-  let apiResp = response.get()
-  echo "Thread closed successfully:", $apiResp
-else:
-  echo "Failed to close thread, HTTP response:", $httpResponse
+let (respOpt, httpResp) = client.putCloseThread(tenantId = "my-tenant-123", urlId = "news/fastcomments-integration", sso = "")
+if respOpt.isSome:
+  let empty = respOpt.get()
+  echo "Thread successfully closed"
 [inline-code-end]
-
----

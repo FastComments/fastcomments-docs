@@ -1,30 +1,22 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Обязательно | Описание |
+| Назва | Тип | Обов’язковий | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| postIds | vector<string | Нет |  |
-| sso | string | Нет |  |
+| tenantId | string | Так |  |
+| options | const GetUserReactsPublicOptions& | Так |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UserReactsResponse.h)
+Повертає: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UserReactsResponse.h)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример getUserReactsPublic'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUserReactsPublic Приклад'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-boost::optional<std::vector<utility::string_t>> postIds = std::vector<utility::string_t>{ U("post-7f3a"), U("post-b2c9") };
-boost::optional<utility::string_t> sso = U("user@example.com");
-api->getUserReactsPublic(tenantId, postIds, sso)
-    .then([](pplx::task<std::shared_ptr<UserReactsResponse>> task) {
-        try {
-            auto resp = task.get();
-            if (!resp) resp = std::make_shared<UserReactsResponse>();
-        } catch (const std::exception&) {
-        }
-    });
+auto options = GetUserReactsPublicOptions{};
+options.userId = boost::optional<utility::string_t>(U("user@example.com"));
+options.limit = boost::optional<int>(50);
+api->getUserReactsPublic(U("my-tenant-123"), options).then([](pplx::task<std::shared_ptr<UserReactsResponse>> t){
+    auto response = t.get();
+});
 [inline-code-end]
-
----

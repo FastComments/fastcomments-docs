@@ -1,9 +1,10 @@
-## Parametri
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| urlId | string | query | Da |  |
-| sso | string | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -18,16 +19,19 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Ako želite koristiti prilagođeni HTTP klijent, prosledite klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opciono, podrazumevano će biti korišćen `GuzzleHttp\Client`.
-    new GuzzleHttp\Client()
-);
+// $apiInstance = new FastComments\Client\Api\ModerationApi(
+//     // Ako želite koristiti prilagođeni http klijent, prosledite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
+//     // Ovo je opciono, `GuzzleHttp\Client` će se koristiti kao podrazumevano.
+//     new GuzzleHttp\Client()
+// );
+
+$tenant_id = 'tenant_id_example'; // string
 $url_id = 'url_id_example'; // string
 $sso = 'sso_example'; // string
 
+
 try {
-    $result = $apiInstance->putReopenThread($url_id, $sso);
+    $result = $apiInstance->putReopenThread($tenant_id, $url_id, $sso);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->putReopenThread: ', $e->getMessage(), PHP_EOL;

@@ -1,7 +1,8 @@
 ## Parámetros
 
 | Nombre | Tipo | Ubicación | Obligatorio | Descripción |
-|------|------|----------|----------|-------------|
+|--------|------|-----------|-------------|-------------|
+| tenantId | string | query | Sí |  |
 | userId | string | query | No |  |
 | trustFactor | string | query | No |  |
 | sso | string | query | No |  |
@@ -12,7 +13,7 @@ Devuelve: [`SetUserTrustFactorResponse`](https://github.com/FastComments/fastcom
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de setTrustFactor'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo setTrustFactor'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -20,16 +21,21 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Si desea usar un cliente HTTP personalizado, pase su cliente que implemente `GuzzleHttp\ClientInterface`.
+    // Si quieres usar un cliente HTTP personalizado, pasa tu cliente que implemente `GuzzleHttp\ClientInterface`.
     // Esto es opcional, `GuzzleHttp\Client` se usará por defecto.
     new GuzzleHttp\Client()
 );
-$user_id = 'user_id_example'; // string
-$trust_factor = 'trust_factor_example'; // string
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // string
+$options = [
+    'user_id' => 'user_id_example', // string
+    'trust_factor' => 'trust_factor_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->setTrustFactor($user_id, $trust_factor, $sso);
+    $result = $apiInstance->setTrustFactor($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->setTrustFactor: ', $e->getMessage(), PHP_EOL;

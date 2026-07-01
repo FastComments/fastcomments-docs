@@ -1,49 +1,50 @@
-## Parameter
+## Parameters
 
-| Name | Type | Location | Erforderlich | Beschreibung |
-|------|------|----------|-------------|--------------|
-| tenantId | string | query | Ja |  |
-| commentId | string | query | Nein |  |
-| externalId | string | query | Nein |  |
-| eventType | string | query | Nein |  |
-| type | string | query | Nein |  |
-| domain | string | query | Nein |  |
-| attemptCountGT | number | query | Nein |  |
-| skip | number | query | Nein |  |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
+| commentId | string | query | No |  |
+| externalId | string | query | No |  |
+| eventType | string | query | No |  |
+| type | string | query | No |  |
+| domain | string | query | No |  |
+| attemptCountGT | number | query | No |  |
+| skip | number | query | No |  |
 
-## Antwort
+## Response
 
-Gibt zurück: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_pending_webhook_events_response.py)
+Rückgabe: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_pending_webhook_events_response.py)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'get_pending_webhook_events Beispiel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetPendingWebhookEventsOptions
 from client.models.get_pending_webhook_events_response import GetPendingWebhookEventsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://fastcomments.com
-# See configuration.py for a list of all supported configuration parameters.
+# Das Definieren des Hosts ist optional und verwendet standardmäßig https://fastcomments.com
+# Siehe configuration.py für eine Liste aller unterstützten Konfigurationsparameter.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Der Client muss die Authentifizierungs- und Autorisierungsparameter konfigurieren
+# gemäß der Sicherheitsrichtlinie des API-Servers.
+# Beispiele für jede Authentifizierungsmethode werden unten bereitgestellt, verwenden Sie das Beispiel, das
+# Ihren Anwendungsfall erfüllt.
 
-# Configure API key authorization: api_key
+# API-Schlüssel-Authentifizierung konfigurieren: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Kommentieren Sie die folgende Zeile aus, um bei Bedarf ein Präfix (z. B. Bearer) für den API-Schlüssel festzulegen
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Enter a context with an instance of the API client
+# Einen Kontext mit einer Instanz des API-Clients betreten
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # Eine Instanz der API-Klasse erstellen
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str |  (optional)
@@ -55,7 +56,7 @@ with client.ApiClient(configuration) as api_client:
     skip = 3.4 # float |  (optional)
 
     try:
-        api_response = api_instance.get_pending_webhook_events(tenant_id, comment_id=comment_id, external_id=external_id, event_type=event_type, type=type, domain=domain, attempt_count_gt=attempt_count_gt, skip=skip)
+        api_response = api_instance.get_pending_webhook_events(tenant_id, GetPendingWebhookEventsOptions(comment_id=comment_id, external_id=external_id, event_type=event_type, type=type, domain=domain, attempt_count_gt=attempt_count_gt, skip=skip))
         print("The response of DefaultApi->get_pending_webhook_events:\n")
         pprint(api_response)
     except Exception as e:

@@ -1,7 +1,7 @@
-## Параметри
+## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Назва | Тип | Розташування | Обов'язково | Опис |
+|------|------|--------------|-------------|------|
 | tenantId | string | path | Так |  |
 | postIds | array | query | Так |  |
 | sso | string | query | Ні |  |
@@ -10,9 +10,9 @@
 
 Повертає: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/FeedPostsStatsResponse.php)
 
-## Приклад
+## Example
 
-[inline-code-attrs-start title = 'Приклад getFeedPostsStats'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getFeedPostsStats Приклад'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -20,13 +20,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Якщо ви хочете використовувати власний HTTP-клієнт, передайте клієнт, який реалізує `GuzzleHttp\ClientInterface`.
-    // Це необов'язково, `GuzzleHttp\Client` will be used as default.
+    // Якщо ви хочете використовувати власний HTTP‑клієнт, передайте ваш клієнт, який реалізує `GuzzleHttp\ClientInterface`.
+    // Це необов'язково, `GuzzleHttp\Client` буде використано за замовчуванням.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$post_ids = array('post_ids_example'); // string[]
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // рядок
+$post_ids = array('post_ids_example'); // рядок[]
+$sso = 'sso_example'; // рядок
+
 
 try {
     $result = $apiInstance->getFeedPostsStats($tenant_id, $post_ids, $sso);

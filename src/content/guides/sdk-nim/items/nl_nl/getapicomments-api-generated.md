@@ -2,15 +2,8 @@
 
 | Naam | Type | Verplicht | Beschrijving |
 |------|------|----------|-------------|
-| page | float64 | Nee |  |
-| count | float64 | Nee |  |
-| textSearch | string | Nee |  |
-| byIPFromComment | string | Nee |  |
-| filters | string | Nee |  |
-| searchFilters | string | Nee |  |
-| sorts | string | Nee |  |
-| demo | bool | Nee |  |
-| sso | string | Nee |  |
+| tenantId | string | Ja |  |
+| options | GetApiCommentsOptions | Nee |  |
 
 ## Respons
 
@@ -20,21 +13,8 @@ Retourneert: [`Option[ModerationAPIGetCommentsResponse]`](https://github.com/Fas
 
 [inline-code-attrs-start title = 'getApiComments Voorbeeld'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getApiComments(
-  page = 1.0,
-  count = 25.0,
-  textSearch = "opinion on climate summit",
-  byIPFromComment = "198.51.100.23",
-  filters = "status:approved",
-  searchFilters = "section:world",
-  sorts = "-createdAt",
-  demo = false,
-  sso = "sso-user-982bf"
-)
-
-if response.isSome:
-  let commentsResp = response.get()
-  echo "Retrieved comments response"
-else:
-  echo "No comments returned, HTTP status: ", httpResponse.status
+let (maybeResp, httpResp) = client.getApiComments(tenantId = "my-tenant-123", options = GetApiCommentsOptions())
+if maybeResp.isSome:
+  let resp = maybeResp.get()
+  # verdere verwerking kan worden gedaan met `resp`
 [inline-code-end]

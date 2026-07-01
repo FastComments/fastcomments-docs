@@ -1,11 +1,12 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| commentId | string | נתיב | כן |  |
-| includeEmail | boolean | שאילתה | לא |  |
-| includeIP | boolean | שאילתה | לא |  |
-| sso | string | שאילתה | לא |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| includeEmail | boolean | query | No |  |
+| includeIP | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## תגובה
 
@@ -13,26 +14,25 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-get_moderation_comment'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_moderation_comment דוגמה'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
-comment_id = 'comment_id_example' # מחרוזת | 
+tenant_id = 'tenant_id_example' # String | 
+comment_id = 'comment_id_example' # String | 
 opts = {
-  include_email: true, # בוליאני | 
-  include_ip: true, # בוליאני | 
-  sso: 'sso_example' # מחרוזת | 
+  include_email: true, # Boolean | 
+  include_ip: true, # Boolean | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.get_moderation_comment(comment_id, opts)
+  result = api_instance.get_moderation_comment(tenant_id, comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_moderation_comment: #{e}"
 end
 [inline-code-end]
-
----

@@ -1,7 +1,8 @@
+---
 ## Parametri
 
 | Nome | Tipo | Obbligatorio | Descrizione |
-|------|------|----------|-------------|
+|------|------|--------------|-------------|
 | tenantId | string | Sì |  |
 | userId | string | No |  |
 
@@ -11,16 +12,21 @@ Restituisce: [`GetSubscriptionsAPIResponse`](https://github.com/FastComments/fas
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di getSubscriptions'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio getSubscriptions'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
-boost::optional<utility::string_t> userId = utility::conversions::to_string_t("user@example.com");
-api->getSubscriptions(tenantId, userId)
-.then([](std::shared_ptr<GetSubscriptionsAPIResponse> resp){
-    if(!resp) return;
-    auto copy = std::make_shared<GetSubscriptionsAPIResponse>(*resp);
-})
-.wait();
+auto tenant = utility::conversions::to_string_t("my-tenant-123");
+boost::optional<utility::string_t> user = utility::conversions::to_string_t("user@example.com");
+
+api->getSubscriptions(tenant, user).then(
+    [](pplx::task<std::shared_ptr<GetSubscriptionsAPIResponse>> t) {
+        try {
+            auto response = t.get();
+            // elabora la risposta
+        } catch (const std::exception& e) {
+            // gestisci l'errore
+        }
+    }
+);
 [inline-code-end]
 
 ---

@@ -1,10 +1,10 @@
 ## Parametry
 
-| Name | Type | Wymagane | Opis |
-|------|------|----------|-------------|
-| tenantId | string | Tak |  |
-| id | string | Nie |  |
-| replaceTenantPackageBody | ReplaceTenantPackageBody | Nie |  |
+| Nazwa | Typ | Wymagane | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| replaceTenantPackageBody | ReplaceTenantPackageBody | No |  |
 
 ## Odpowiedź
 
@@ -12,23 +12,14 @@ Zwraca: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomment
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład replaceTenantPackage'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'replaceTenantPackage Przykład'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.replaceTenantPackage(
+let (optResp, httpResp) = client.replaceTenantPackage(
   tenantId = "my-tenant-123",
-  id = "pkg-987",
-  replaceTenantPackageBody = ReplaceTenantPackageBody(
-    name = "Premium Plan",
-    priceCents = 999,
-    seats = 50,
-    enabled = true,
-    features = @["moderation", "analytics", "priority-support"]
-  )
+  id = "pkg-456",
+  replaceTenantPackageBody = ReplaceTenantPackageBody()
 )
-
-if response.isSome:
-  let apiEmpty = response.get()
-  discard apiEmpty
+if optResp.isSome:
+  let resp = optResp.get()
+  discard resp
 [inline-code-end]
-
----

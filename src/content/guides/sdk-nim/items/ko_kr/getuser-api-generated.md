@@ -1,9 +1,9 @@
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| id | string | 아니요 |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
 
 ## 응답
 
@@ -13,9 +13,9 @@
 
 [inline-code-attrs-start title = 'getUser 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUser(tenantId = "my-tenant-123", id = "user-456")
-if response.isSome:
-  let user = response.get()
+let (userOpt, httpResp) = client.getUser(tenantId = "my-tenant-123", id = "user-456")
+if userOpt.isSome:
+  let user = userOpt.get()
   echo user
 else:
   echo "User not found"

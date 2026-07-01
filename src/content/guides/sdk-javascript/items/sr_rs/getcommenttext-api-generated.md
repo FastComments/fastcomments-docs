@@ -1,25 +1,29 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Ime | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| commentId | string | Да |  |
-| editKey | string | Не |  |
-| sso | string | Не |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| editKey | string | No |  |
+| sso | string | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`PublicAPIGetCommentTextResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PublicAPIGetCommentTextResponse.ts)
+Vraća: [`GetCommentTextResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentTextResponse1.ts)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример getCommentText'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getCommentText'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_prod_01';
-const commentId: string = 'cmt_5f2d9b8a-3e7c-4a1b';
-const editKey: string = 'edit_8b3f6c2d4a9e';
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example.signature';
-const response: PublicAPIGetCommentTextResponse = await getCommentText(tenantId, commentId, editKey, sso);
-[inline-code-end]
+async function run() {
+  const tenantId: string = "acme-corp-tenant";
+  const commentId: string = "cmt-5f2e9a1b";
+  const editKey: string = "edk-9b7c3";
+  const ssoToken: string = "sso-xyz789";
 
----
+  const commentOnly: GetCommentTextResponse1 = await getCommentText(tenantId, commentId);
+  const commentWithEdit: GetCommentTextResponse1 = await getCommentText(tenantId, commentId, editKey);
+  const commentFull: GetCommentTextResponse1 = await getCommentText(tenantId, commentId, editKey, ssoToken);
+}
+run();
+[inline-code-end]

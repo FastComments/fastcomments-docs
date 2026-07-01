@@ -1,7 +1,8 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | חובה | תיאור |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | כן |  |
 | badgeId | string | query | כן |  |
 | userId | string | query | לא |  |
 | commentId | string | query | לא |  |
@@ -14,24 +15,26 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-put_remove_badge'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'put_remove_badge דוגמה'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import PutRemoveBadgeOptions
 from client.models.remove_user_badge_response import RemoveUserBadgeResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת ה-host היא אופציונלית וברירת המחדל היא https://fastcomments.com
-# ראה configuration.py לרשימת כל פרמטרי התצורה הנתמכים.
+# הגדרת המארח היא אופציונלית ומוגדרת כברירת מחדל ל-https://fastcomments.com
+# ראה קובץ configuration.py לקבלת רשימת כל פרמטרי הקונפיגורציה הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# כניסה להקשר באמצעות מופע של לקוח ה-API
+# הכנס הקשר עם מופע של לקוח ה-API
 with client.ApiClient(configuration) as api_client:
-    # יצירת מופע של מחלקת ה-API
+    # צור מופע של מחלקת ה-API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     badge_id = 'badge_id_example' # str | 
     user_id = 'user_id_example' # str |  (אופציונלי)
     comment_id = 'comment_id_example' # str |  (אופציונלי)
@@ -39,7 +42,7 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (אופציונלי)
 
     try:
-        api_response = api_instance.put_remove_badge(badge_id, user_id=user_id, comment_id=comment_id, broadcast_id=broadcast_id, sso=sso)
+        api_response = api_instance.put_remove_badge(tenant_id, badge_id, PutRemoveBadgeOptions(user_id=user_id, comment_id=comment_id, broadcast_id=broadcast_id, sso=sso))
         print("The response of ModerationApi->put_remove_badge:\n")
         pprint(api_response)
     except Exception as e:

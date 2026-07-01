@@ -1,39 +1,40 @@
-## Παράμετροι
+## Parameters
 
-| Όνομα | Τύπος | Τοποθεσία | Υποχρεωτικό | Περιγραφή |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| userId | string | query | Όχι |  |
-| direction | string | query | Όχι |  |
-| repliesToUserId | string | query | Όχι |  |
-| page | number | query | Όχι |  |
-| includei10n | boolean | query | Όχι |  |
-| locale | string | query | Όχι |  |
-| isCrawler | boolean | query | Όχι |  |
+| userId | string | query | No |  |
+| direction | string | query | No |  |
+| repliesToUserId | string | query | No |  |
+| page | number | query | No |  |
+| includei10n | boolean | query | No |  |
+| locale | string | query | No |  |
+| isCrawler | boolean | query | No |  |
 
-## Απόκριση
+## Response
 
 Επιστρέφει: [`GetCommentsForUserResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comments_for_user_response.py)
 
-## Παράδειγμα
+## Example
 
 [inline-code-attrs-start title = 'Παράδειγμα get_comments_for_user'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetCommentsForUserOptions
 from client.models.get_comments_for_user_response import GetCommentsForUserResponse
 from client.models.sort_directions import SortDirections
 from client.rest import ApiException
 from pprint import pprint
 
-# Ο καθορισμός του host είναι προαιρετικός και προεπιλογή είναι το https://fastcomments.com
-# Δείτε το configuration.py για λίστα με όλες τις υποστηριζόμενες παραμέτρους ρυθμίσεων.
+# Ο ορισμός του host είναι προαιρετικός και προεπιλεγμένος στο https://fastcomments.com
+# Δείτε το configuration.py για λίστα όλων των υποστηριζόμενων παραμέτρων ρυθμίσεων.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Εισέλθετε σε ένα context με ένα instance του API client
+# Εισάγετε ένα context με μια παρουσία του API client
 with client.ApiClient(configuration) as api_client:
-    # Δημιουργήστε ένα instance της κλάσης API
+    # Δημιουργήστε μια παρουσία της κλάσης API
     api_instance = client.PublicApi(api_client)
     user_id = 'user_id_example' # str |  (προαιρετικό)
     direction = client.SortDirections() # SortDirections |  (προαιρετικό)
@@ -44,7 +45,7 @@ with client.ApiClient(configuration) as api_client:
     is_crawler = True # bool |  (προαιρετικό)
 
     try:
-        api_response = api_instance.get_comments_for_user(user_id=user_id, direction=direction, replies_to_user_id=replies_to_user_id, page=page, includei10n=includei10n, locale=locale, is_crawler=is_crawler)
+        api_response = api_instance.get_comments_for_user(GetCommentsForUserOptions(user_id=user_id, direction=direction, replies_to_user_id=replies_to_user_id, page=page, includei10n=includei10n, locale=locale, is_crawler=is_crawler))
         print("The response of PublicApi->get_comments_for_user:\n")
         pprint(api_response)
     except Exception as e:

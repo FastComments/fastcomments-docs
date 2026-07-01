@@ -1,7 +1,7 @@
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|----------|-------------|
+|------|------|-------------|-----------|
 | tenantId | string | Sim |  |
 | commentId | string | Sim |  |
 | publicBlockFromCommentParams | PublicBlockFromCommentParams | Sim |  |
@@ -13,19 +13,16 @@ Retorna: [`BlockSuccess`](https://github.com/FastComments/fastcomments-cpp/blob/
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de blockFromCommentPublic'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo blockFromCommentPublic'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("cmt-789");
-PublicBlockFromCommentParams publicBlockFromCommentParams;
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("sso-token-abc"));
-api->blockFromCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso)
-    .then([](pplx::task<std::shared_ptr<BlockSuccess>> t){
-        try {
-            std::shared_ptr<BlockSuccess> res = t.get();
-            auto copy = std::make_shared<BlockSuccess>(*res);
-        } catch (const std::exception&) {}
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto commentId = utility::conversions::to_string_t("comment-987654");
+PublicBlockFromCommentParams blockParams;
+blockParams.reason = utility::conversions::to_string_t("spam");
+blockParams.durationHours = 24;
+boost::optional<utility::string_t> sso = utility::conversions::to_string_t("sso-token-abc123");
+api->blockFromCommentPublic(tenantId, commentId, blockParams, sso)
+    .then([](std::shared_ptr<BlockSuccess> result){
+        auto successCopy = std::make_shared<BlockSuccess>(*result);
     });
 [inline-code-end]
-
----

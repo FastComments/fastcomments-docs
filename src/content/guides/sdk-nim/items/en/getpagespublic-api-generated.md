@@ -7,11 +7,7 @@ Pages that require SSO are filtered against the requesting user's group access.
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
-| cursor | string | No |  |
-| limit | int | No |  |
-| q | string | No |  |
-| sortBy | PagesSortBy | No |  |
-| hasComments | bool | No |  |
+| options | GetPagesPublicOptions | No |  |
 
 ## Response
 
@@ -21,18 +17,8 @@ Returns: [`Option[GetPublicPagesResponse]`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'getPagesPublic Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getPagesPublic(
-  tenantId = "my-tenant-123",
-  cursor = "",
-  limit = 0,
-  q = "",
-  sortBy = PagesSortBy(0),
-  hasComments = false
-)
-
+let (response, httpResponse) = client.getPagesPublic(tenantId = "my-tenant-123", options = GetPagesPublicOptions())
 if response.isSome:
   let pages = response.get()
-  echo "Retrieved public pages: ", $pages
-else:
-  echo "No pages returned, HTTP status: ", $httpResponse.status
+  echo pages
 [inline-code-end]

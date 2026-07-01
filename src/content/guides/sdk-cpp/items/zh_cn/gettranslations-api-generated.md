@@ -4,8 +4,7 @@
 |------|------|----------|-------------|
 | r_namespace | string | 是 |  |
 | component | string | 是 |  |
-| locale | string | 否 |  |
-| useFullTranslationIds | bool | 否 |  |
+| options | const GetTranslationsOptions& | 是 |  |
 
 ## 响应
 
@@ -15,19 +14,16 @@
 
 [inline-code-attrs-start title = 'getTranslations 示例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> locale(U("en-US"));
-boost::optional<bool> useFullTranslationIds(true);
-api->getTranslations(U("my-tenant-123"), U("comment-widget"), locale, useFullTranslationIds)
-.then([](pplx::task<std::shared_ptr<GetTranslationsResponse>> task){
-    try {
-        auto resp = task.get();
-        if (resp) {
-            auto copied = std::make_shared<GetTranslationsResponse>(*resp);
+utility::string_t ns = U("my-tenant-123");
+utility::string_t comp = U("comments");
+auto optsPtr = std::make_shared<GetTranslationsOptions>();
+optsPtr->language = boost::make_optional(U("en"));
+optsPtr->fallback = boost::none;
+api->getTranslations(ns, comp, *optsPtr)
+    .then([](pplx::task<std::shared_ptr<GetTranslationsResponse>> t) {
+        try {
+            auto resp = t.get();
+        } catch (const std::exception& e) {
         }
-    } catch (const std::exception&) {
-        throw;
-    }
-});
+    });
 [inline-code-end]
-
----

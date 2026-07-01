@@ -1,25 +1,29 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
 | commentId | string | path | Да |  |
+| broadcastId | string | query | Нет |  |
 | sso | string | query | Нет |  |
 
 ## Ответ
 
-Возвращает: [`PostRemoveCommentResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PostRemoveCommentResponse.swift)
+Возвращает: [`PostRemoveCommentApiResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PostRemoveCommentApiResponse.swift)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример postRemoveComment'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
-[inline-code-start]
-// Следующие примеры кода всё ещё находятся в бета-версии. Если возникнут проблемы, сообщите через http://github.com/OpenAPITools/openapi-generator/issues/new
+[inline-code-attrs-start title = 'postRemoveComment Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+```swift
+// Следующие образцы кода всё ещё находятся в бета-версии. При любой проблеме, пожалуйста, сообщайте через http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
-let sso = "sso_example" // String |  (необязательно)
+let broadcastId = "broadcastId_example" // String |  (опционально)
+let sso = "sso_example" // String |  (опционально)
 
-ModerationAPI.postRemoveComment(commentId: commentId, sso: sso) { (response, error) in
+ModerationAPI.postRemoveComment(tenantId: tenantId, commentId: commentId, options: ModerationAPI.PostRemoveCommentOptions(broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -29,4 +33,5 @@ ModerationAPI.postRemoveComment(commentId: commentId, sso: sso) { (response, err
         dump(response)
     }
 }
+```
 [inline-code-end]

@@ -1,15 +1,15 @@
-## Parametry
+## Parameters
 
-| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tag | string | path | Tak |  |
-| tenantId | string | query | Nie |  |
+| tenantId | string | query | Yes |  |
+| tag | string | path | Yes |  |
 
-## Odpowiedź
+## Response
 
-Zwraca: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
+Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
-## Przykład
+## Example
 
 [inline-code-attrs-start title = 'Przykład deleteHashTag'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -26,19 +26,18 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Skonfiguruj autoryzację kluczem API: api_key
+    // Skonfiguruj autoryzację klucza API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Odkomentuj poniższą linię, aby ustawić prefiks dla klucza API, np. "Token" (domyślnie null)
+    // Odkomentuj następującą linię, aby ustawić prefiks dla klucza API, np. "Token" (domyślnie null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    String tag = "tag_example"; // String | 
     String tenantId = "tenantId_example"; // String | 
+    String tag = "tag_example"; // String | 
     DeleteHashTagRequestBody deleteHashTagRequestBody = new DeleteHashTagRequestBody(); // DeleteHashTagRequestBody | 
     try {
-      APIEmptyResponse result = apiInstance.deleteHashTag(tag)
-            .tenantId(tenantId)
+      APIEmptyResponse result = apiInstance.deleteHashTag(tenantId, tag)
             .deleteHashTagRequestBody(deleteHashTagRequestBody)
             .execute();
       System.out.println(result);

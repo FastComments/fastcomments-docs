@@ -1,10 +1,10 @@
 ## Παράμετροι
 
-| Name | Type | Required | Description |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
-| tenantId | string | Ναι |  |
-| id | string | Όχι |  |
-| editKey | string | Όχι |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| editKey | string = "" | No |  |
 
 ## Απόκριση
 
@@ -14,12 +14,9 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα deleteVote'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteVote(tenantId = "my-tenant-123", id = "vote-7f3b2a", editKey = "")
-if response.isSome:
-  let voteDelete = response.get()
-  echo "Vote deleted successfully"
-else:
-  echo "Failed to delete vote"
+let (voteRespOpt, httpResp) = client.deleteVote(tenantId = "my-tenant-123", id = "comment-456", editKey = "")
+if voteRespOpt.isSome:
+  let voteResp = voteRespOpt.get()
+  discard voteResp
+  discard httpResp
 [inline-code-end]
-
----

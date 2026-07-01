@@ -2,24 +2,35 @@
 
 | Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
-| commentId | string | Да |  |
-| reviewed | boolean | Не |  |
-| sso | string | Не |  |
+| commentId | string | Yes |  |
+| reviewed | boolean | No |  |
+| broadcastId | string | No |  |
+| tenantId | string | No |  |
+| sso | string | No |  |
 
 ## Отговор
 
-Връща: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Връща: [`PostSetCommentReviewStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostSetCommentReviewStatusResponse.ts)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример за postSetCommentReviewStatus'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const commentIdSimple: string = "cmt_93a2b1d4";
-const resultSimple: APIEmptyResponse = await postSetCommentReviewStatus(commentIdSimple);
+async function updateCommentReviewStatus(): Promise<void> {
+  const commentId: string = "cmt_9f8a7b6c5d4e3f2a1b0c";
+  const reviewed: boolean = true;
+  const broadcastId: string = "broadcast_2024Q1";
+  const tenantId: string = "tenant_1001";
+  const sso: string = "alice@example.com";
 
-const commentIdWithOptions: string = "cmt_7a8f2b6c";
-const ssoToken: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0MjMifQ.signature";
-const resultWithOptions: APIEmptyResponse = await postSetCommentReviewStatus(commentIdWithOptions, true, ssoToken);
+  const response: PostSetCommentReviewStatusResponse = await postSetCommentReviewStatus(
+    commentId,
+    reviewed,
+    broadcastId,
+    tenantId,
+    sso
+  );
+
+  console.log(response);
+}
 [inline-code-end]
-
----

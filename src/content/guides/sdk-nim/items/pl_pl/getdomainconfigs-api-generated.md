@@ -1,7 +1,7 @@
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
 | tenantId | string | Tak |  |
 
 ## Odpowiedź
@@ -12,13 +12,8 @@ Zwraca: [`Option[GetDomainConfigsResponse]`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'Przykład getDomainConfigs'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getDomainConfigs(tenantId = "my-tenant-123")
-if response.isSome:
-  let domainConfigs = response.get()
-  echo "Received domain configs for tenant my-tenant-123"
+let (domainConfigsOpt, httpResponse) = client.getDomainConfigs(tenantId = "my-tenant-123")
+if domainConfigsOpt.isSome:
+  let domainConfigs = domainConfigsOpt.get()
   echo domainConfigs
-else:
-  echo "No domain configs returned"
 [inline-code-end]
-
----

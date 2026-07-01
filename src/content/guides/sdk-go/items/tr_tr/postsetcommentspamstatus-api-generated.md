@@ -1,15 +1,17 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Evet |  |
 | commentId | string | path | Evet |  |
 | spam | boolean | query | Hayır |  |
 | permNotSpam | boolean | query | Hayır |  |
+| broadcastId | string | query | Hayır |  |
 | sso | string | query | Hayır |  |
 
 ## Yanıt
 
-Döndürür: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
+Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
 
 ## Örnek
 
@@ -25,19 +27,21 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
 	spam := true // bool |  (isteğe bağlı)
 	permNotSpam := true // bool |  (isteğe bağlı)
+	broadcastId := "broadcastId_example" // string |  (isteğe bağlı)
 	sso := "sso_example" // string |  (isteğe bağlı)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostSetCommentSpamStatus(context.Background(), commentId).Spam(spam).PermNotSpam(permNotSpam).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostSetCommentSpamStatus(context.Background(), commentId).TenantId(tenantId).Spam(spam).PermNotSpam(permNotSpam).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostSetCommentSpamStatus``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "`ModerationAPI.PostSetCommentSpamStatus` çağrılırken hata: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Tam HTTP yanıtı: %v\n", r)
 	}
-	// `PostSetCommentSpamStatus`'ten gelen yanıt: APIEmptyResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostSetCommentSpamStatus`: %v\n", resp)
+	// `PostSetCommentSpamStatus` yanıtı: APIEmptyResponse
+	fmt.Fprintf(os.Stdout, "`ModerationAPI.PostSetCommentSpamStatus` yanıtı: %v\n", resp)
 }
 [inline-code-end]

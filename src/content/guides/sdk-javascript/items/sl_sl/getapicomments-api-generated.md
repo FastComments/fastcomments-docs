@@ -1,34 +1,40 @@
-## Parametri
+## Parameters
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| page | number | Ne |  |
-| count | number | Ne |  |
-| textSearch | string | Ne |  |
-| byIPFromComment | string | Ne |  |
-| filters | string | Ne |  |
-| searchFilters | string | Ne |  |
-| sorts | string | Ne |  |
-| demo | boolean | Ne |  |
-| sso | string | Ne |  |
+| Ime | Tip | Obvezno | Opis |
+|------|------|----------|------|
+| page | number | No |  |
+| count | number | No |  |
+| textSearch | string | No |  |
+| byIPFromComment | string | No |  |
+| filters | string | No |  |
+| searchFilters | string | No |  |
+| sorts | string | No |  |
+| demo | boolean | No |  |
+| tenantId | string | No |  |
+| sso | string | No |  |
 
-## Odziv
+## Response
 
-Vrne: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPIGetCommentsResponse.ts)
+Vrne: [`GetApiCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetApiCommentsResponse.ts)
 
-## Primer
+## Example
 
 [inline-code-attrs-start title = 'Primer getApiComments'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const page: number = 2;
-const count: number = 25;
-const textSearch: string = 'comments failing to load after posting';
-const filters: string = 'status:pending,moderation:required';
-const sorts: string = 'createdAt:desc';
-const demo: boolean = false;
-const sso: string = 'sso-usr-7f3b2a';
+async function loadComments() {
+  const fullResult: GetApiCommentsResponse = await getApiComments(
+    2,                     // stran
+    25,                    // število
+    "feedback",           // iskanje besedila
+    "192.168.1.100",      // poIPIzKomentarja
+    "approved",           // filtri
+    "hasReplies",         // filtriIskanja
+    "dateDesc",           // razvrščanje
+    false,                // demo
+    "tenant-abc123",      // ID najemnika
+    "sso-token-xyz"       // sso
+  );
 
-const response: ModerationAPIGetCommentsResponse = await getApiComments(page, count, textSearch, undefined, filters, undefined, sorts, demo, sso);
+  const minimalResult: GetApiCommentsResponse = await getApiComments(undefined, 5);
+}
 [inline-code-end]
-
----

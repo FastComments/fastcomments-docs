@@ -1,16 +1,17 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Назва | Тип | Розташування | Обов’язково | Опис |
 |------|------|----------|----------|-------------|
-| page | number | query | Ні |  |
-| count | number | query | Ні |  |
-| text-search | string | query | Ні |  |
-| byIPFromComment | string | query | Ні |  |
-| filters | string | query | Ні |  |
-| searchFilters | string | query | Ні |  |
-| sorts | string | query | Ні |  |
-| demo | boolean | query | Ні |  |
-| sso | string | query | Ні |  |
+| tenantId | string | query | Yes |  |
+| page | number | query | No |  |
+| count | number | query | No |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sorts | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Відповідь
 
@@ -18,7 +19,7 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад GetApiComments'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GetApiComments Приклад'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -30,19 +31,20 @@ import (
 )
 
 func main() {
-	page := float64(1.2) // float64 |  (необов'язково)
-	count := float64(1.2) // float64 |  (необов'язково)
-	textSearch := "textSearch_example" // string |  (необов'язково)
-	byIPFromComment := "byIPFromComment_example" // string |  (необов'язково)
-	filters := "filters_example" // string |  (необов'язково)
-	searchFilters := "searchFilters_example" // string |  (необов'язково)
-	sorts := "sorts_example" // string |  (необов'язково)
-	demo := true // bool |  (необов'язково)
-	sso := "sso_example" // string |  (необов'язково)
+	tenantId := "tenantId_example" // string | 
+	page := float64(1.2) // float64 |  (необов’язковий)
+	count := float64(1.2) // float64 |  (необов’язковий)
+	textSearch := "textSearch_example" // string |  (необов’язковий)
+	byIPFromComment := "byIPFromComment_example" // string |  (необов’язковий)
+	filters := "filters_example" // string |  (необов’язковий)
+	searchFilters := "searchFilters_example" // string |  (необов’язковий)
+	sorts := "sorts_example" // string |  (необов’язковий)
+	demo := true // bool |  (необов’язковий)
+	sso := "sso_example" // string |  (необов’язковий)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetApiComments(context.Background()).Page(page).Count(count).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).Sorts(sorts).Demo(demo).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetApiComments(context.Background()).TenantId(tenantId).Page(page).Count(count).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).Sorts(sorts).Demo(demo).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetApiComments``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

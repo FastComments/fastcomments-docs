@@ -15,15 +15,15 @@
 
 [inline-code-attrs-start title = 'Приклад getGifsTrending'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Наведені приклади коду досі в бета-версії. У випадку проблеми, будь ласка, повідомте через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наступні зразки коду все ще бета. У разі будь‑якої проблеми, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let locale = "locale_example" // String |  (необов'язково)
-let rating = "rating_example" // String |  (необов'язково)
-let page = 987 // Double |  (необов'язково)
+let locale = "locale_example" // String |  (необов’язковий)
+let rating = "rating_example" // String |  (необов’язковий)
+let page = 987 // Double |  (необов’язковий)
 
-PublicAPI.getGifsTrending(tenantId: tenantId, locale: locale, rating: rating, page: page) { (response, error) in
+PublicAPI.getGifsTrending(tenantId: tenantId, options: PublicAPI.GetGifsTrendingOptions(locale: locale, rating: rating, page: page)) { (response, error) in
     guard error == nil else {
         print(error)
         return

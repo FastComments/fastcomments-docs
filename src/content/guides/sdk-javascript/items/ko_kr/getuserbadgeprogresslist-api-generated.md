@@ -1,28 +1,35 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| userId | string | 아니요 |  |
-| limit | number | 아니요 |  |
-| skip | number | 아니요 |  |
+| tenantId | string | Yes |  |
+| userId | string | No |  |
+| limit | number | No |  |
+| skip | number | No |  |
 
 ## 응답
 
-반환: [`APIGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIGetUserBadgeProgressListResponse.ts)
+반환: [`GetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserBadgeProgressListResponse.ts)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'getUserBadgeProgressList 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUserBadgeProgressList 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "acme-corp-tenant-01";
-  const userId: string | undefined = "user-9e12b4";
-  const limit: number | undefined = 20;
-  const skip: number | undefined = 0;
-  const result: APIGetUserBadgeProgressListResponse = await getUserBadgeProgressList(tenantId, userId, limit, skip);
-  console.log(result);
-})();
-[inline-code-end]
+async function fetchBadgeProgress() {
+  const tenantId: string = "acme-corp";
+  const userId: string = "john.doe@example.com";
+  const limit: number = 10;
+  const skip: number = 5;
 
----
+  const fullList: GetUserBadgeProgressListResponse = await getUserBadgeProgressList(
+    tenantId,
+    userId,
+    limit,
+    skip
+  );
+
+  const simpleList: GetUserBadgeProgressListResponse = await getUserBadgeProgressList(tenantId);
+}
+
+fetchBadgeProgress();
+[inline-code-end]

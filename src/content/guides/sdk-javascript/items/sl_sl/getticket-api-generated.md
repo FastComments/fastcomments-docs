@@ -1,21 +1,23 @@
 ## Parametri
 
-| Name | Type | Required | Description |
+| Ime | Vrsta | Obvezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| id | string | Da |  |
-| userId | string | Ne |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| userId | string | No |  |
 
 ## Odgovor
 
-Vrne: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTicketResponse.ts)
+Vrne: [`GetTicketResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTicketResponse1.ts)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer getTicket'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const ticketResponse: GetTicketResponse = await getTicket("fc_tenant_1a2b3c", "TK-20260619-0042", "user_2481");
-const ticketResponseNoUser: GetTicketResponse = await getTicket("fc_tenant_1a2b3c", "TK-20260619-0043");
-[inline-code-end]
+const tenantId: string = "acme-inc";
+const ticketId: string = "ticket-3421";
+const userId: string = "alice.smith";
 
----
+const ticketWithUser: GetTicketResponse1 = await getTicket(tenantId, ticketId, userId);
+const ticketWithoutUser: GetTicketResponse1 = await getTicket(tenantId, ticketId);
+[inline-code-end]

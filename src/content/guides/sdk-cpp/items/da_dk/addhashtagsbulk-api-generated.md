@@ -2,8 +2,8 @@
 
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| tenantId | string | Nej |  |
-| bulkCreateHashTagsBody | BulkCreateHashTagsBody | Nej |  |
+| tenantId | string | Ja |  |
+| bulkCreateHashTagsBody | BulkCreateHashTagsBody | Ja |  |
 
 ## Svar
 
@@ -11,22 +11,16 @@ Returnerer: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastc
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'addHashTagsBulk Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'addHashTagsBulk Eksempel'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> tenantId(utility::conversions::to_string_t("my-tenant-123"));
-auto bodyPtr = std::make_shared<BulkCreateHashTagsBody>();
-boost::optional<BulkCreateHashTagsBody> bodyOpt(*bodyPtr);
-api->addHashTagsBulk(tenantId, bodyOpt)
-    .then([](pplx::task<std::shared_ptr<BulkCreateHashTagsResponse>> task) {
-        try {
-            auto resp = task.get();
-            if (resp) {
-                std::cout << "Bulk hashtags created successfully\n";
-            } else {
-                std::cout << "No response received\n";
-            }
-        } catch (const std::exception &e) {
-            std::cerr << "API error: " << e.what() << '\n';
-        }
-    });
+auto tenantId = utility::string_t(U("my-tenant-123"));
+BulkCreateHashTagsBody bulkBody;
+bulkBody.tags = { utility::string_t(U("announcement")), utility::string_t(U("feature-request")) };
+bulkBody.description = boost::optional<utility::string_t>(U("Bulk tag creation"));
+api->addHashTagsBulk(tenantId, bulkBody).then([](pplx::task<std::shared_ptr<BulkCreateHashTagsResponse>> task){
+    try{
+        auto resp = task.get();
+    }catch(const std::exception&){
+    }
+});
 [inline-code-end]

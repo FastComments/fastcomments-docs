@@ -31,7 +31,7 @@ let q = "q_example" // String | Optional case-insensitive title prefix filter. (
 let sortBy = PagesSortBy() // PagesSortBy | Sort order. `updatedAt` (default, newest first), `commentCount` (most comments first), or `title` (alphabetical). (optional)
 let hasComments = true // Bool | If true, only return pages with at least one comment. (optional)
 
-PublicAPI.getPagesPublic(tenantId: tenantId, cursor: cursor, limit: limit, q: q, sortBy: sortBy, hasComments: hasComments) { (response, error) in
+PublicAPI.getPagesPublic(tenantId: tenantId, options: PublicAPI.GetPagesPublicOptions(cursor: cursor, limit: limit, q: q, sortBy: sortBy, hasComments: hasComments)) { (response, error) in
     guard error == nil else {
         print(error)
         return

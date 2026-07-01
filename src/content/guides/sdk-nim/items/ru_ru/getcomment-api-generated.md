@@ -11,12 +11,10 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример использования getComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getComment(tenantId = "my-tenant-123", id = "cmt-7890")
+let (response, httpResponse) = client.getComment(tenantId = "my-tenant-123", id = "cmt-789")
 if response.isSome:
   let comment = response.get()
   discard comment
-else:
-  echo "Comment not found"
 [inline-code-end]

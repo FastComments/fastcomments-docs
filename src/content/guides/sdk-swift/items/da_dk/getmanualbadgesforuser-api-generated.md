@@ -1,10 +1,11 @@
 ## Parametre
 
-| Name | Type | Location | Required | Description |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| badgesUserId | string | query | Nej |  |
-| commentId | string | query | Nej |  |
-| sso | string | query | Nej |  |
+| tenantId | string | query | Yes |  |
+| badgesUserId | string | query | No |  |
+| commentId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Svar
 
@@ -14,14 +15,15 @@ Returnerer: [`GetUserManualBadgesResponse`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'getManualBadgesForUser Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Følgende kodeeksempler er stadig i beta. For problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De følgende kodeeksempler er stadig i beta. For eventuelle problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let badgesUserId = "badgesUserId_example" // String |  (valgfri)
-let commentId = "commentId_example" // String |  (valgfri)
-let sso = "sso_example" // String |  (valgfri)
+let tenantId = "tenantId_example" // String | 
+let badgesUserId = "badgesUserId_example" // String |  (optional)
+let commentId = "commentId_example" // String |  (optional)
+let sso = "sso_example" // String |  (optional)
 
-ModerationAPI.getManualBadgesForUser(badgesUserId: badgesUserId, commentId: commentId, sso: sso) { (response, error) in
+ModerationAPI.getManualBadgesForUser(tenantId: tenantId, options: ModerationAPI.GetManualBadgesForUserOptions(badgesUserId: badgesUserId, commentId: commentId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -32,5 +34,3 @@ ModerationAPI.getManualBadgesForUser(badgesUserId: badgesUserId, commentId: comm
     }
 }
 [inline-code-end]
-
----

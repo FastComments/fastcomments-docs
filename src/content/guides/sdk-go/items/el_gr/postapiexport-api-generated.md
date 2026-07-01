@@ -1,7 +1,8 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
+|------|------|----------|------------|-----------|
+| tenantId | string | query | Ναι |  |
 | text-search | string | query | Όχι |  |
 | byIPFromComment | string | query | Όχι |  |
 | filters | string | query | Όχι |  |
@@ -11,7 +12,7 @@
 
 ## Απάντηση
 
-Επιστρέφει: [`ModerationExportResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_export_response.go)
+Returns: [`ModerationExportResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_export_response.go)
 
 ## Παράδειγμα
 
@@ -27,16 +28,17 @@ import (
 )
 
 func main() {
-	textSearch := "textSearch_example" // string |  (προαιρετικό)
-	byIPFromComment := "byIPFromComment_example" // string |  (προαιρετικό)
-	filters := "filters_example" // string |  (προαιρετικό)
-	searchFilters := "searchFilters_example" // string |  (προαιρετικό)
-	sorts := "sorts_example" // string |  (προαιρετικό)
-	sso := "sso_example" // string |  (προαιρετικό)
+	tenantId := "tenantId_example" // string | 
+	textSearch := "textSearch_example" // string | (προαιρετικό)
+	byIPFromComment := "byIPFromComment_example" // string | (προαιρετικό)
+	filters := "filters_example" // string | (προαιρετικό)
+	searchFilters := "searchFilters_example" // string | (προαιρετικό)
+	sorts := "sorts_example" // string | (προαιρετικό)
+	sso := "sso_example" // string | (προαιρετικό)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostApiExport(context.Background()).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).Sorts(sorts).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostApiExport(context.Background()).TenantId(tenantId).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).Sorts(sorts).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostApiExport``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -45,5 +47,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostApiExport`: %v\n", resp)
 }
 [inline-code-end]
-
----

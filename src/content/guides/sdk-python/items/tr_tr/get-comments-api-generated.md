@@ -1,6 +1,6 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 | page | integer | query | Hayır |  |
@@ -29,55 +29,53 @@ Döndürür: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomm
 [inline-code-attrs-start title = 'get_comments Örneği'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetCommentsOptions
 from client.models.api_get_comments_response import APIGetCommentsResponse
 from client.models.sort_directions import SortDirections
 from client.rest import ApiException
 from pprint import pprint
 
-# Sunucunun tanımlanması isteğe bağlıdır ve varsayılan https://fastcomments.com'dur
+# Host tanımlaması isteğe bağlıdır ve varsayılan olarak https://fastcomments.com adresine yönlendirilir
 # Tüm desteklenen yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# İstemci, kimlik doğrulama ve yetkilendirme parametrelerini
-# API sunucusunun güvenlik politikasına göre yapılandırmalıdır.
-# Her kimlik doğrulama yöntemi için örnekler aşağıda verilmiştir, kullanın
-# ihtiyaçlarınıza uygun olan örneği.
-# Configure API key authorization: api_key
+# İstemci, kimlik doğrulama ve yetkilendirme parametrelerini API sunucusunun güvenlik politikasına göre yapılandırmalıdır.
+# Aşağıda her kimlik doğrulama yöntemi için örnekler sağlanmıştır; kimlik doğrulama senaryonuza uyan örneği kullanın.
+
+# API anahtarı yetkilendirmesini yapılandır: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Gerekirse API anahtarı için öneki (ör. Bearer) ayarlamak için aşağıdaki satırı yorumdan çıkarın
+# Gerekirse API anahtarı için önek (örn. Bearer) ayarlamak için aşağıdaki satırın yorumunu kaldırın
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API istemcisinin bir örneği ile bir bağlam girin
+# API istemcisi bir örnekle bir bağlam içine girin
 with client.ApiClient(configuration) as api_client:
-    # API sınıfının bir örneğini oluşturun
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    page = 56 # int |  (isteğe bağlı)
-    limit = 56 # int |  (isteğe bağlı)
-    skip = 56 # int |  (isteğe bağlı)
-    as_tree = True # bool |  (isteğe bağlı)
-    skip_children = 56 # int |  (isteğe bağlı)
-    limit_children = 56 # int |  (isteğe bağlı)
-    max_tree_depth = 56 # int |  (isteğe bağlı)
-    url_id = 'url_id_example' # str |  (isteğe bağlı)
-    user_id = 'user_id_example' # str |  (isteğe bağlı)
-    anon_user_id = 'anon_user_id_example' # str |  (isteğe bağlı)
-    context_user_id = 'context_user_id_example' # str |  (isteğe bağlı)
-    hash_tag = 'hash_tag_example' # str |  (isteğe bağlı)
-    parent_id = 'parent_id_example' # str |  (isteğe bağlı)
-    direction = client.SortDirections() # SortDirections |  (isteğe bağlı)
-    from_date = 56 # int |  (isteğe bağlı)
-    to_date = 56 # int |  (isteğe bağlı)
+    page = 56 # int |  (optional)
+    limit = 56 # int |  (optional)
+    skip = 56 # int |  (optional)
+    as_tree = True # bool |  (optional)
+    skip_children = 56 # int |  (optional)
+    limit_children = 56 # int |  (optional)
+    max_tree_depth = 56 # int |  (optional)
+    url_id = 'url_id_example' # str |  (optional)
+    user_id = 'user_id_example' # str |  (optional)
+    anon_user_id = 'anon_user_id_example' # str |  (optional)
+    context_user_id = 'context_user_id_example' # str |  (optional)
+    hash_tag = 'hash_tag_example' # str |  (optional)
+    parent_id = 'parent_id_example' # str |  (optional)
+    direction = client.SortDirections() # SortDirections |  (optional)
+    from_date = 56 # int |  (optional)
+    to_date = 56 # int |  (optional)
 
     try:
-        api_response = api_instance.get_comments(tenant_id, page=page, limit=limit, skip=skip, as_tree=as_tree, skip_children=skip_children, limit_children=limit_children, max_tree_depth=max_tree_depth, url_id=url_id, user_id=user_id, anon_user_id=anon_user_id, context_user_id=context_user_id, hash_tag=hash_tag, parent_id=parent_id, direction=direction, from_date=from_date, to_date=to_date)
+        api_response = api_instance.get_comments(tenant_id, GetCommentsOptions(page=page, limit=limit, skip=skip, as_tree=as_tree, skip_children=skip_children, limit_children=limit_children, max_tree_depth=max_tree_depth, url_id=url_id, user_id=user_id, anon_user_id=anon_user_id, context_user_id=context_user_id, hash_tag=hash_tag, parent_id=parent_id, direction=direction, from_date=from_date, to_date=to_date))
         print("The response of DefaultApi->get_comments:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling DefaultApi->get_comments: %s\n" % e)
 [inline-code-end]
-
----

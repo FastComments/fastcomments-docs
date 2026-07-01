@@ -1,11 +1,11 @@
 ## Parametre
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
-|------|------|----------|----------|-------------|
-| tag | string | path | Ja |  |
-| tenantId | string | query | Nej |  |
+|------|------|-----------|----------|-------------|
+| tenantId | string | query | Yes |  |
+| tag | string | path | Yes |  |
 
-## Respons
+## Svar
 
 Returnerer: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/UpdateHashTagResponse.swift)
 
@@ -13,14 +13,14 @@ Returnerer: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcommen
 
 [inline-code-attrs-start title = 'patchHashTag Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Følgende kodeeksempler er stadig i beta. Hvis der opstår problemer, rapportér venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De følgende kodeeksempler er stadig beta. For eventuelle problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let tag = "tag_example" // String | 
-let tenantId = "tenantId_example" // String |  (valgfri)
-let updateHashTagBody = UpdateHashTagBody(tenantId: "tenantId_example", url: "url_example", tag: "tag_example") // UpdateHashTagBody |  (valgfri)
+let updateHashTagBody = UpdateHashTagBody(tenantId: "tenantId_example", url: "url_example", tag: "tag_example") // UpdateHashTagBody |  (optional)
 
-DefaultAPI.patchHashTag(tag: tag, tenantId: tenantId, updateHashTagBody: updateHashTagBody) { (response, error) in
+DefaultAPI.patchHashTag(tenantId: tenantId, tag: tag, updateHashTagBody: updateHashTagBody) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -31,5 +31,3 @@ DefaultAPI.patchHashTag(tag: tag, tenantId: tenantId, updateHashTagBody: updateH
     }
 }
 [inline-code-end]
-
----

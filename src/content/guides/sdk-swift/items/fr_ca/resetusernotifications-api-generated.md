@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | afterId | string | query | Non |  |
@@ -16,7 +16,7 @@ Retourne : [`ResetUserNotificationsResponse`](https://github.com/FastComments/fa
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de resetUserNotifications'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'resetUserNotifications Exemple'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Les exemples de code suivants sont encore en version bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
@@ -29,7 +29,7 @@ let dmOnly = true // Bool |  (optionnel)
 let noDm = true // Bool |  (optionnel)
 let sso = "sso_example" // String |  (optionnel)
 
-PublicAPI.resetUserNotifications(tenantId: tenantId, afterId: afterId, afterCreatedAt: afterCreatedAt, unreadOnly: unreadOnly, dmOnly: dmOnly, noDm: noDm, sso: sso) { (response, error) in
+PublicAPI.resetUserNotifications(tenantId: tenantId, options: PublicAPI.ResetUserNotificationsOptions(afterId: afterId, afterCreatedAt: afterCreatedAt, unreadOnly: unreadOnly, dmOnly: dmOnly, noDm: noDm, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

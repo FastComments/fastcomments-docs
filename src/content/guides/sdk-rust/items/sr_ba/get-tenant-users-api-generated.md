@@ -1,27 +1,24 @@
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| tenant_id | String | Da |  |
-| skip | f64 | Ne |  |
+|------|------|----------|------|
+| tenant_id | String | Yes |  |
+| skip | f64 | No |  |
 
 ## Odgovor
 
-Vraća: [`GetTenantUsersResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_tenant_users_response.rs)
+Returns: [`GetTenantUsersResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_tenant_users_response.rs)
 
-## Primjer
+## Primer
 
-[inline-code-attrs-start title = 'get_tenant_users Primjer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer get_tenant_users'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example() -> Result<(), Error> {
-    let params: GetTenantUsersParams = GetTenantUsersParams {
+    let params = GetTenantUsersParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        skip: Some(20.0),
+        skip: Some(10.0),
     };
-    let response: GetTenantUsersResponse = get_tenant_users(&configuration, params).await?;
-    let _users: GetTenantUsersResponse = response;
+    let _response = get_tenant_users(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

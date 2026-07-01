@@ -2,23 +2,21 @@
 
 | Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
-| userId | string | Non |  |
-| sso | string | Non |  |
+| tenantId | string | Oui |  |
+| options | GetTrustFactorOptions | Non |  |
 
 ## Réponse
 
-Renvoie: [`Option[GetUserTrustFactorResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user_trust_factor_response.nim)
+Renvoie : [`Option[GetUserTrustFactorResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user_trust_factor_response.nim)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getTrustFactor'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getTrustFactor'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTrustFactor(userId = "user-1001", sso = "sso-token-6f7d9c")
-if response.isSome:
-  let trust = response.get()
-  echo "Received trust factor for user-1001"
-else:
-  echo "No trust factor returned, HTTP status: ", $httpResponse.status
+let (trustOpt, httpResp) = client.getTrustFactor(tenantId = "my-tenant-123", options = GetTrustFactorOptions())
+if trustOpt.isSome:
+  let trust = trustOpt.get()
+  discard trust
 [inline-code-end]
 
 ---

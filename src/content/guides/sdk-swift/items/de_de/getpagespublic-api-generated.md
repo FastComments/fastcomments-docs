@@ -1,35 +1,37 @@
-Listet Seiten für einen Mandanten. Wird vom FChat-Desktop-Client verwendet, um dessen Raumliste zu füllen. Erfordert, dass `enableFChat` in der aufgelösten benutzerdefinierten Konfiguration für jede Seite auf true gesetzt ist. Seiten, die SSO erfordern, werden anhand des Gruppen-Zugriffs des anfragenden Benutzers gefiltert.
+List pages for a tenant. Used by the FChat desktop client to populate its room list.  
+Requires `enableFChat` to be true on the resolved custom config for each page.  
+Pages that require SSO are filtered against the requesting user's group access.
 
-## Parameter
+## Parameters
 
-| Name | Typ | Location | Erforderlich | Beschreibung |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Ja |  |
-| cursor | string | query | Nein | Opaker Paginierungscursor, der als `nextCursor` aus einer vorherigen Anfrage zurückgegeben wurde. Ist an denselben `sortBy` gebunden. |
-| limit | integer | query | Nein | 1..200, Standard 50 |
-| q | string | query | Nein | Optionaler Titel-Präfixfilter ohne Berücksichtigung der Groß-/Kleinschreibung. |
-| sortBy | string | query | Nein | Sortierreihenfolge. `updatedAt` (Standard, neueste zuerst), `commentCount` (meiste Kommentare zuerst), oder `title` (alphabetisch). |
-| hasComments | boolean | query | Nein | Wenn true, werden nur Seiten zurückgegeben, die mindestens einen Kommentar haben. |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
+|------|-----|-----|--------------|--------------|
+| tenantId | string | path | Yes |  |
+| cursor | string | query | No | Undurchsichtiger Pagination-Cursor, zurückgegeben als `nextCursor` von einer vorherigen Anfrage. Gebunden an das gleiche `sortBy`. |
+| limit | integer | query | No | 1..200, Standard 50 |
+| q | string | query | No | Optionaler, nicht case-sensitiver Titel-Präfix-Filter. |
+| sortBy | string | query | No | Sortierreihenfolge. `updatedAt` (Standard, neueste zuerst), `commentCount` (die meisten Kommentare zuerst) oder `title` (alphabetisch). |
+| hasComments | boolean | query | No | Falls true, nur Seiten zurückgeben, die mindestens einen Kommentar enthalten. |
 
-## Antwort
+## Response
 
-Gibt zurück: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPublicPagesResponse.swift)
+Rückgabe: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPublicPagesResponse.swift)
 
-## Beispiel
+## Example
 
 [inline-code-attrs-start title = 'getPagesPublic Beispiel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Die folgenden Codebeispiele sind noch Beta. Bei Problemen melden Sie sich bitte unter http://github.com/OpenAPITools/openapi-generator/issues/new
+// Die folgenden Codebeispiele sind noch in Beta. Bei Problemen bitte melden über http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let cursor = "cursor_example" // String | Opaker Paginierungscursor, der als `nextCursor` aus einer vorherigen Anfrage zurückgegeben wurde. Ist an denselben `sortBy` gebunden. (optional)
+let cursor = "cursor_example" // String | Undurchsichtiger Pagination-Cursor, zurückgegeben als `nextCursor` von einer vorherigen Anfrage. Gebunden an das gleiche `sortBy`. (optional)
 let limit = 987 // Int | 1..200, Standard 50 (optional)
-let q = "q_example" // String | Optionaler Titel-Präfixfilter ohne Berücksichtigung der Groß-/Kleinschreibung. (optional)
-let sortBy = PagesSortBy() // PagesSortBy | Sortierreihenfolge. `updatedAt` (Standard, neueste zuerst), `commentCount` (meiste Kommentare zuerst), oder `title` (alphabetisch). (optional)
-let hasComments = true // Bool | Wenn true, werden nur Seiten zurückgegeben, die mindestens einen Kommentar haben. (optional)
+let q = "q_example" // String | Optionaler, nicht case-sensitiver Titel-Präfix-Filter. (optional)
+let sortBy = PagesSortBy() // PagesSortBy | Sortierreihenfolge. `updatedAt` (Standard, neueste zuerst), `commentCount` (die meisten Kommentare zuerst) oder `title` (alphabetisch). (optional)
+let hasComments = true // Bool | Falls true, nur Seiten zurückgeben, die mindestens einen Kommentar enthalten. (optional)
 
-PublicAPI.getPagesPublic(tenantId: tenantId, cursor: cursor, limit: limit, q: q, sortBy: sortBy, hasComments: hasComments) { (response, error) in
+PublicAPI.getPagesPublic(tenantId: tenantId, options: PublicAPI.GetPagesPublicOptions(cursor: cursor, limit: limit, q: q, sortBy: sortBy, hasComments: hasComments)) { (response, error) in
     guard error == nil else {
         print(error)
         return

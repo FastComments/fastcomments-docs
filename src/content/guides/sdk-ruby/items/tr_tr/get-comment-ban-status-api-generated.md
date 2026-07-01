@@ -1,7 +1,8 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| İsim | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Evet |  |
 | commentId | string | path | Evet |  |
 | sso | string | query | Hayır |  |
 
@@ -11,12 +12,13 @@ Döndürür: [`GetCommentBanStatusResponse`](https://github.com/FastComments/fas
 
 ## Örnek
 
-[inline-code-attrs-start title = 'get_comment_ban_status Örneği'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_comment_ban_status Örnek'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 comment_id = 'comment_id_example' # String | 
 opts = {
   sso: 'sso_example' # String | 
@@ -24,7 +26,7 @@ opts = {
 
 begin
   
-  result = api_instance.get_comment_ban_status(comment_id, opts)
+  result = api_instance.get_comment_ban_status(tenant_id, comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_comment_ban_status: #{e}"

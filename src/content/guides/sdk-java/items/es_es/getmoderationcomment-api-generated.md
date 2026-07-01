@@ -1,17 +1,18 @@
-## Parámetros
+## Parameters
 
-| Nombre | Tipo | Ubicación | Requerido | Descripción |
-|------|------|----------|----------|-------------|
+| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
+|--------|------|-----------|-------------|-------------|
+| tenantId | string | query | Sí |  |
 | commentId | string | path | Sí |  |
 | includeEmail | boolean | query | No |  |
 | includeIP | boolean | query | No |  |
 | sso | string | query | No |  |
 
-## Respuesta
+## Response
 
 Devuelve: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationAPICommentResponse.java)
 
-## Ejemplo
+## Example
 
 [inline-code-attrs-start title = 'Ejemplo de getModerationComment'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -28,12 +29,13 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     Boolean includeEmail = true; // Boolean | 
     Boolean includeIP = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationAPICommentResponse result = apiInstance.getModerationComment(commentId)
+      ModerationAPICommentResponse result = apiInstance.getModerationComment(tenantId, commentId)
             .includeEmail(includeEmail)
             .includeIP(includeIP)
             .sso(sso)

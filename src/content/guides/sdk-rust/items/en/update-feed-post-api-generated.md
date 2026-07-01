@@ -14,28 +14,35 @@ Returns: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/
 
 [inline-code-attrs-start title = 'update_feed_post Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let _response: ApiEmptyResponse = update_feed_post(&configuration, UpdateFeedPostParams {
-        tenant_id: String::from("acme-corp-tenant"),
-        id: String::from("news/quarterly-product-update"),
-        feed_post: models::FeedPost {
-            title: Some(String::from("Quarterly Product Update")),
-            content: Some(String::from("We shipped new features and improvements across the platform.")),
-            tags: Some(vec![String::from("product"), String::from("release")]),
-            media: Some(vec![models::FeedPostMediaItem {
-                asset: Some(models::FeedPostMediaItemAsset {
-                    url: String::from("https://cdn.acme.com/images/update.jpg"),
-                    mime_type: Some(String::from("image/jpeg")),
-                }),
-                caption: Some(String::from("New dashboard view")),
-                order: Some(0),
-            }]),
-            links: Some(vec![models::FeedPostLink {
-                url: String::from("https://acme.com/blog/product-update"),
-                title: Some(String::from("Read the full post")),
-            }]),
-        },
-    }).await?;
+async fn example() -> Result<(), Error> {
+    let feed_post = models::FeedPost {
+        title: "Acme Corp Quarterly Update".to_string(),
+        content: Some("Q2 results exceeded expectations with a 15% revenue growth.".to_string()),
+        media: Some(vec![
+            models::FeedPostMediaItem {
+                asset: models::FeedPostMediaItemAsset {
+                    url: "https://cdn.acme.com/media/q2-report.png".to_string(),
+                    mime_type: Some("image/png".to_string()),
+                    ..Default::default()
+                },
+                ..Default::default()
+            },
+        ]),
+        link: Some(models::FeedPostLink {
+            url: "https://www.acme.com/reports/q2".to_string(),
+            title: Some("Full Report".to_string()),
+            ..Default::default()
+        }),
+        ..Default::default()
+    };
+
+    let params = UpdateFeedPostParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "news/q2-update".to_string(),
+        feed_post,
+    };
+
+    update_feed_post(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

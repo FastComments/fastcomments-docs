@@ -1,7 +1,7 @@
 ## Parâmetros
 
-| Nome | Tipo | Local | Obrigatório | Descrição |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Localização | Obrigatório | Descrição |
+|------|------|-------------|-------------|-----------|
 | tenantId | string | path | Sim |  |
 | commentId | string | path | Sim |  |
 | urlId | string | query | Sim |  |
@@ -15,7 +15,7 @@ Retorna: [`VoteResponse`](https://github.com/FastComments/fastcomments-swift/blo
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de voteComment'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo voteComment'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Os exemplos de código a seguir ainda estão em beta. Para qualquer problema, por favor reporte via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
@@ -28,7 +28,7 @@ let voteBodyParams = VoteBodyParams(commenterEmail: "commenterEmail_example", co
 let sessionId = "sessionId_example" // String |  (opcional)
 let sso = "sso_example" // String |  (opcional)
 
-PublicAPI.voteComment(tenantId: tenantId, commentId: commentId, urlId: urlId, broadcastId: broadcastId, voteBodyParams: voteBodyParams, sessionId: sessionId, sso: sso) { (response, error) in
+PublicAPI.voteComment(tenantId: tenantId, commentId: commentId, urlId: urlId, broadcastId: broadcastId, voteBodyParams: voteBodyParams, options: PublicAPI.VoteCommentOptions(sessionId: sessionId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

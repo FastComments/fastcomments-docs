@@ -2,9 +2,9 @@
 
 | Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Sí |  |
-| notificationId | string | path | Sí |  |
-| newStatus | string | path | Sí |  |
+| tenantId | string | query | Yes |  |
+| notificationId | string | path | Yes |  |
+| newStatus | string | path | Yes |  |
 | sso | string | query | No |  |
 
 ## Respuesta
@@ -13,7 +13,7 @@ Devuelve: [`UpdateUserNotificationStatusResponse`](https://github.com/FastCommen
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de updateUserNotificationStatus'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo updateUserNotificationStatus'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -21,14 +21,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Si desea usar un cliente HTTP personalizado, pase su cliente que implemente `GuzzleHttp\ClientInterface`.
+    // Si deseas usar un cliente HTTP personalizado, pasa tu cliente que implemente `GuzzleHttp\ClientInterface`.
     // Esto es opcional, `GuzzleHttp\Client` se usará por defecto.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // cadena
 $notification_id = 'notification_id_example'; // cadena
 $new_status = 'new_status_example'; // cadena
 $sso = 'sso_example'; // cadena
+
 
 try {
     $result = $apiInstance->updateUserNotificationStatus($tenant_id, $notification_id, $new_status, $sso);

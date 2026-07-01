@@ -1,7 +1,7 @@
 ## Parametre
 
-| Name | Type | Location | Påkrævet | Beskrivelse |
-|------|------|----------|----------|-------------|
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
+|------|------|-----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | id | string | path | Ja |  |
 | contextUserId | string | query | Nej |  |
@@ -17,31 +17,25 @@ Returnerer: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-py
 [inline-code-attrs-start title = 'update_comment Eksempel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import UpdateCommentOptions
 from client.models.api_empty_response import APIEmptyResponse
 from client.models.updatable_comment_params import UpdatableCommentParams
 from client.rest import ApiException
 from pprint import pprint
 
-# Angivelse af host er valgfri og standard er https://fastcomments.com
+# Definering af værten er valgfri og standard er https://fastcomments.com
 # Se configuration.py for en liste over alle understøttede konfigurationsparametre.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
-
-# Client'en skal konfigurere godkendelses- og autorisationsparametrene
+# Klienten skal konfigurere autentifikations- og autorisationsparametrene
 # i overensstemmelse med API-serverens sikkerhedspolitik.
-# Eksempler for hver godkendelsesmetode er angivet nedenfor, brug det eksempel der
-# opfylder dit godkendelsesbrugsscenarie.
-
-# Configure API key authorization: api_key
-configuration.api_key['api_key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Eksempler på hver godkendelsesmetode er angivet nedenfor, brug det eksempel der
+# opfylder dit autentificeringsbrugstilfælde.
+# Konfigurer API-nøglegodkendelse: api_key
+# Fjern kommentaren nedenfor for at opsætte præfiks (fx Bearer) for API-nøglen, hvis nødvendigt
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Opret en kontekst med en forekomst af API-klienten
+# Indtast en kontekst med en forekomst af API-klienten
 with client.ApiClient(configuration) as api_client:
-    # Opret en instans af API-klassen
+    # Opret en forekomst af API-klassen
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
@@ -51,7 +45,7 @@ with client.ApiClient(configuration) as api_client:
     is_live = True # bool |  (optional)
 
     try:
-        api_response = api_instance.update_comment(tenant_id, id, updatable_comment_params, context_user_id=context_user_id, do_spam_check=do_spam_check, is_live=is_live)
+        api_response = api_instance.update_comment(tenant_id, id, updatable_comment_params, UpdateCommentOptions(context_user_id=context_user_id, do_spam_check=do_spam_check, is_live=is_live))
         print("The response of DefaultApi->update_comment:\n")
         pprint(api_response)
     except Exception as e:

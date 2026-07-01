@@ -2,10 +2,9 @@
 
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
+| tenantId | string | Ja |  |
 | commentId | string | Ja |  |
-| includeEmail | bool | Nej |  |
-| includeIP | bool | Nej |  |
-| sso | string | Nej |  |
+| options | const GetModerationCommentOptions& | Ja |  |
 
 ## Svar
 
@@ -15,19 +14,18 @@ Returnerer: [`ModerationAPICommentResponse`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'getModerationComment Eksempel'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t commentId = U("cmt-987654");
-boost::optional<bool> includeEmail = boost::optional<bool>(true);
-boost::optional<bool> includeIP = boost::optional<bool>(false);
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
-
-api->getModerationComment(commentId, includeEmail, includeIP, sso)
-.then([](std::shared_ptr<ModerationAPICommentResponse> resp) {
-    auto result = resp ? resp : std::make_shared<ModerationAPICommentResponse>();
-    if (resp)
-        std::cout << "Comment fetched successfully" << std::endl;
-    else
-        std::cout << "No comment returned; using placeholder" << std::endl;
-}).wait();
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto commentId = utility::conversions::to_string_t("comment-456");
+GetModerationCommentOptions options;
+options.includeDeleted = boost::optional<bool>(true);
+options.locale = boost::optional<utility::string_t>(utility::conversions::to_string_t("en-US"));
+api->getModerationComment(tenantId, commentId, options)
+    .then([](pplx::task<std::shared_ptr<ModerationAPICommentResponse>> task) {
+        try {
+            auto response = task.get();
+            // Behandl svaret efter behov
+        } catch (const std::exception& ex) {
+            // Håndter fejl
+        }
+    });
 [inline-code-end]
-
----

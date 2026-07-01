@@ -1,36 +1,38 @@
-## פרמטרים
+## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | כן |  |
-| urlId | string | query | כן |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
 
-## תגובה
+## Response
 
-מחזיר: [`GetPageByURLIdAPIResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPageByURLIdAPIResponse.php)
+Returns: [`GetPageByURLIdAPIResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPageByURLIdAPIResponse.php)
 
-## דוגמה
+## Example
 
-[inline-code-attrs-start title = 'דוגמה ל-getPageByURLId'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה של getPageByURLId'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// הגדר הרשאת מפתח ה-API: api_key
+// הגדר הרשאת מפתח API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// הסר את ההערה שלמטה כדי להגדיר קידומת (למשל Bearer) עבור מפתח ה-API, אם נדרש
+// בטל את ההערה למטה כדי להגדיר קידומת (למשל Bearer) למפתח API, אם נדרש
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // אם ברצונך להשתמש בלקוח HTTP מותאם אישית, העבר את הלקוח שלך שמממש את `GuzzleHttp\ClientInterface`.
-    // זה אופציונלי; `GuzzleHttp\Client` ישמש כברירת מחדל.
+    // אם ברצונך להשתמש ב‑http client מותאם, ספק את ה‑client שלך המיישם `GuzzleHttp\ClientInterface`.
+    // זה אופציונלי, `GuzzleHttp\Client` ישמש כברירת מחדל.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $url_id = 'url_id_example'; // string
+
 
 try {
     $result = $apiInstance->getPageByURLId($tenant_id, $url_id);

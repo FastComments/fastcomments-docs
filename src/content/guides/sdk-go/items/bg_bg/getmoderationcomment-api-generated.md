@@ -1,17 +1,18 @@
-## Параметри
+## Parameters
 
 | Име | Тип | Местоположение | Задължително | Описание |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Да |  |
-| includeEmail | boolean | query | Не |  |
-| includeIP | boolean | query | Не |  |
-| sso | string | query | Не |  |
+|------|------|----------------|--------------|----------|
+| tenantId | string | запитване | Да |  |
+| commentId | string | път | Да |  |
+| includeEmail | boolean | запитване | Не |  |
+| includeIP | boolean | запитване | Не |  |
+| sso | string | запитване | Не |  |
 
-## Отговор
+## Response
 
-Връща: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_api_comment_response.go)
+Returns: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_api_comment_response.go)
 
-## Пример
+## Example
 
 [inline-code-attrs-start title = 'Пример за GetModerationComment'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -25,14 +26,15 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
-	includeEmail := true // bool |  (не е задължително)
-	includeIP := true // bool |  (не е задължително)
-	sso := "sso_example" // string |  (не е задължително)
+	includeEmail := true // bool |  (по избор)
+	includeIP := true // bool |  (по избор)
+	sso := "sso_example" // string |  (по избор)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetModerationComment(context.Background(), commentId).IncludeEmail(includeEmail).IncludeIP(includeIP).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetModerationComment(context.Background(), commentId).TenantId(tenantId).IncludeEmail(includeEmail).IncludeIP(includeIP).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetModerationComment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

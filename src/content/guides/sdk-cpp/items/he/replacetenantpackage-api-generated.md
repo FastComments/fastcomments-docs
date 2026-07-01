@@ -1,35 +1,27 @@
----
-## Parameters
+## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | id | string | כן |  |
 | replaceTenantPackageBody | ReplaceTenantPackageBody | כן |  |
 
-## Response
+## תגובה
 
 מחזיר: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
-## Example
+## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-replaceTenantPackage'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'replaceTenantPackage דוגמה'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t packageId = U("pkg-456");
-auto replaceBody = std::make_shared<ReplaceTenantPackageBody>();
-replaceBody->name = U("Pro Plan");
-replaceBody->description = boost::optional<utility::string_t>(U("Enterprise package with enhanced support"));
-replaceBody->maxSeats = boost::optional<int>(500);
-api->replaceTenantPackage(tenantId, packageId, *replaceBody)
-.then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task){
-    try {
-        auto resp = task.get();
-        std::cout << "Package replaced successfully\n";
-    } catch (const std::exception &e) {
-        std::cerr << "Error replacing package: " << e.what() << '\n';
-    }
-});
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto pkgId = utility::conversions::to_string_t("pkg-456");
+ReplaceTenantPackageBody body;
+body.planId = utility::conversions::to_string_t("enterprise");
+body.notes = boost::optional<utility::string_t>(utility::conversions::to_string_t("Upgrade request"));
+api->replaceTenantPackage(tenantId, pkgId, body)
+    .then([](std::shared_ptr<APIEmptyResponse>) { })
+    .then([](pplx::task<void> t) {
+        try { t.get(); } catch (const std::exception&) { }
+    });
 [inline-code-end]
-
----

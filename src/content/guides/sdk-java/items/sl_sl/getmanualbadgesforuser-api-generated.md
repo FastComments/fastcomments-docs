@@ -1,14 +1,15 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
-|------|------|----------|----------|-------------|
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
 | badgesUserId | string | query | Ne |  |
 | commentId | string | query | Ne |  |
 | sso | string | query | Ne |  |
 
-## Odgovor
+## Odziv
 
-Vrača: [`GetUserManualBadgesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserManualBadgesResponse.java)
+Vrne: [`GetUserManualBadgesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserManualBadgesResponse.java)
 
 ## Primer
 
@@ -27,11 +28,12 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String badgesUserId = "badgesUserId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      GetUserManualBadgesResponse result = apiInstance.getManualBadgesForUser()
+      GetUserManualBadgesResponse result = apiInstance.getManualBadgesForUser(tenantId)
             .badgesUserId(badgesUserId)
             .commentId(commentId)
             .sso(sso)
@@ -47,5 +49,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

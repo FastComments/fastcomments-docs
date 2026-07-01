@@ -1,19 +1,20 @@
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| 名前 | 種類 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | value | string | query | No |  |
 | sso | string | query | No |  |
 
 ## レスポンス
 
-戻り値: [`ModerationSiteSearchResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationSiteSearchResponse.java)
+返却: [`ModerationSiteSearchResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationSiteSearchResponse.java)
 
 ## 例
 
 [inline-code-attrs-start title = 'getSearchSites の例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// クラスをインポート
+// クラスをインポート:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
-    String value = "value_example"; // 文字列 | 
-    String sso = "sso_example"; // 文字列 | 
+    String tenantId = "tenantId_example"; // 文字列 |
+    String value = "value_example"; // 文字列 |
+    String sso = "sso_example"; // 文字列 |
     try {
-      ModerationSiteSearchResponse result = apiInstance.getSearchSites()
+      ModerationSiteSearchResponse result = apiInstance.getSearchSites(tenantId)
             .value(value)
             .sso(sso)
             .execute();

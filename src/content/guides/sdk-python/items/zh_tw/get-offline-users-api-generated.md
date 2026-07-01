@@ -1,48 +1,49 @@
-過去在該頁面發表過評論但目前不在線上的使用者。依 displayName 排序。
-在使用完 /users/online 後使用此來呈現「成員」區段。
-對 commenterName 的游標分頁：伺服器會遍歷部分索引 {tenantId, urlId, commenterName}
-從 afterName 之後使用 $gt 向前索引，無 $skip 成本。
+Past commenters on the page who are NOT currently online. Sorted by displayName.  
+使用此端點於已耗盡 /users/online 後，渲染「Members」區段。  
+Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.  
+在 commenterName 上使用游標分頁：伺服器從 afterName 起，透過 $gt 前進走訪部分 {tenantId, urlId, commenterName} 索引，無需 $skip 成本。
 
-## 參數
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 是 |  |
-| urlId | string | query | 是 | 頁面 URL 識別符（在伺服器端清理）。 |
-| afterName | string | query | 否 | 游標：從先前的回應傳入 nextAfterName。 |
-| afterUserId | string | query | 否 | 游標決勝鍵：從先前的回應傳入 nextAfterUserId。當設定 afterName 時需要提供，以免同名導致遺失項目。 |
+| urlId | string | query | 是 | 頁面 URL 識別碼（在伺服器端已清理）。 |
+| afterName | string | query | 否 | 游標：從前一次回應傳遞 nextAfterName。 |
+| afterUserId | string | query | 否 | 游標平手解決：從前一次回應傳遞 nextAfterUserId。當 afterName 被設定時，為必填，以避免名稱相同的項目被遺漏。 |
 
-## 回應
+## Response
 
-回傳：[`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/page_users_offline_response.py)
+返回：[`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/page_users_offline_response.py)
 
-## 範例
+## Example
 
 [inline-code-attrs-start title = 'get_offline_users 範例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetOfflineUsersOptions
 from client.models.page_users_offline_response import PageUsersOfflineResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# 定義 host 是可選的，預設為 https://fastcomments.com
+# 定義主機是可選的，預設為 https://fastcomments.com
 # 請參閱 configuration.py 以取得所有支援的設定參數清單。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# 使用 API 客戶端實例進入一個上下文
+# 以 API 客戶端實例進入情境
 with client.ApiClient(configuration) as api_client:
     # 建立 API 類別的實例
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    url_id = 'url_id_example' # str | 頁面 URL 識別符（在伺服器端清理）。
-    after_name = 'after_name_example' # str | 游標：從先前的回應傳入 nextAfterName。 (optional)
-    after_user_id = 'after_user_id_example' # str | 游標決勝鍵：從先前的回應傳入 nextAfterUserId。當設定 afterName 時需要提供，以免同名導致遺失項目。 (optional)
+    url_id = 'url_id_example' # str | 頁面 URL 識別碼（在伺服器端已清理）。
+    after_name = 'after_name_example' # str | 游標：從前一次回應傳遞 nextAfterName。（可選）
+    after_user_id = 'after_user_id_example' # str | 游標平手解決：從前一次回應傳遞 nextAfterUserId。當 afterName 被設定時，為必填，以避免名稱相同的項目被遺漏。（可選）
 
     try:
-        api_response = api_instance.get_offline_users(tenant_id, url_id, after_name=after_name, after_user_id=after_user_id)
+        api_response = api_instance.get_offline_users(tenant_id, url_id, GetOfflineUsersOptions(after_name=after_name, after_user_id=after_user_id))
         print("The response of PublicApi->get_offline_users:\n")
         pprint(api_response)
     except Exception as e:

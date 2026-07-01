@@ -1,12 +1,11 @@
----
 ## パラメータ
 
-| 名前 | 型 | 必須 | 説明 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | はい |  |
-| id | string | いいえ |  |
-| replaceTenantUserBody | ReplaceTenantUserBody | いいえ |  |
-| updateComments | string | いいえ |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| replaceTenantUserBody | ReplaceTenantUserBody | No |  |
+| updateComments | string = "" | No |  |
 
 ## レスポンス
 
@@ -16,25 +15,14 @@
 
 [inline-code-attrs-start title = 'replaceTenantUser の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let body = ReplaceTenantUserBody(
-  displayName = "Jane Doe",
-  email = "jane.doe@example.com",
-  externalId = "jdoe-789",
-  admin = false,
-  enabled = true,
-  tags = @["editor", "subscriber"]
-)
-
+let replaceBody = ReplaceTenantUserBody()
 let (response, httpResponse) = client.replaceTenantUser(
   tenantId = "my-tenant-123",
   id = "user-456",
-  replaceTenantUserBody = body,
-  updateComments = "true"
-)
-
+  replaceTenantUserBody = replaceBody,
+  updateComments = "")
 if response.isSome:
-  let apiEmpty = response.get()
-  echo "ReplaceTenantUser succeeded, http status:", httpResponse.status
+  let empty = response.get()
 [inline-code-end]
 
 ---

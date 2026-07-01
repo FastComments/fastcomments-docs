@@ -1,16 +1,26 @@
-### PyPI
+### Install from GitHub
+
+Instalirajte direktno sa oznake izdanja (preporučeno, potpuno reproduktivno):
 
 ```bash
-pip install fastcomments
+pip install git+https://github.com/fastcomments/fastcomments-python.git@v3.0.0
 ```
 
-### Sadržaj biblioteke
+Zakačite oznaku umjesto grane kako bi izgradnje bile determinističke. Isti oblik radi u `requirements.txt`:
 
-Ova biblioteka sadrži dva modula: generisani API klijent i osnovnu Python biblioteku koja sadrži ručno napisane pomoćne funkcije koje olakšavaju rad sa API-jem, uključujući podršku za SSO.
+```
+fastcomments @ git+https://github.com/fastcomments/fastcomments-python.git@v3.0.0
+```
 
-- [Dokumentacija API klijentske biblioteke](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
-- [Dokumentacija osnovne biblioteke, uključujući primjere SSO](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
+Svako označeno [GitHub Release](https://github.com/fastcomments/fastcomments-python/releases) također ima priložen izgrađeni wheel ako radije instalirate binarni artefakt direktno.
 
-### Javni i zaštićeni API-ji
+### Library Contents
 
-Za API klijenta postoje tri klase, `DefaultApi`, `PublicApi` i `ModerationApi`. `DefaultApi` sadrži metode koje zahtevaju vaš API ključ, a `PublicApi` sadrži metode koje se mogu pozvati direktno iz pregledača/mobilnog uređaja/itd. bez autentifikacije. `ModerationApi` pokreće moderatorski kontrolni panel i sadrži metode za moderisanje komentara (lista, brojanje, pretraga, logovi, izvoz), akcije moderiranja (uklanjanje/obnavljanje, prijava, postavljanje statusa pregleda/spama/odobravanja, glasovi, ponovno otvaranje/zatvaranje teme), zabrane (zabrana komentarisanja, poništavanje, sažeci prije zabrane, status/preferencije zabrane, broj zabranjenih korisnika) i značke i povjerenje (dodjela/uklanjanje značke, ručne značke, dohvatanje/postavljanje faktora povjerenja, interni korisnički profil). Svaka metoda `ModerationApi` prihvata parametar `sso` tako da se može pozvati u ime moderatora autentifikovanog preko SSO.
+Ova biblioteka sadrži dva modula: generirani API klijent i jezgru Python biblioteke koja sadrži ručno napisane alate za olakšavanje rada s API‑jem, uključujući SSO podršku.
+
+- [API Client Library Docs](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
+- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
+
+### Public vs Secured APIs
+
+Za API klijent postoje tri klase, `DefaultApi`, `PublicApi` i `ModerationApi`. `DefaultApi` sadrži metode koje zahtijevaju vaš API ključ, a `PublicApi` sadrži metode koje se mogu pozvati direktno iz pregledača/mobilnog uređaja itd. bez autentifikacije. `ModerationApi` pruža opsežan skup API‑ja za brzu i trenutnu moderaciju. Svaka metoda `ModerationApi` prihvata `sso` parametar i može se autentifikovati putem SSO‑a ili FastComments.com sesijske kolačiće.

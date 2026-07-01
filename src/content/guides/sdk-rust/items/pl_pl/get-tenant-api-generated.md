@@ -1,8 +1,7 @@
----
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
 | tenant_id | String | Tak |  |
 | id | String | Tak |  |
 
@@ -12,16 +11,15 @@ Zwraca: [`GetTenantResponse`](https://github.com/FastComments/fastcomments-rust/
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład get_tenant'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_tenant Przykład'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_tenant() -> Result<(), Error> {
-    let params: GetTenantParams = GetTenantParams {
+async fn example() -> Result<(), Error> {
+    let params = GetTenantParams {
         tenant_id: "acme-corp-tenant".to_string(),
         id: "news/article".to_string(),
+        include_billing: Some(true),
     };
-    let include_subdomains: Option<bool> = Some(true);
-    let tenant: GetTenantResponse = get_tenant(&configuration, params).await?;
-    println!("{:#?}", tenant);
+    let _response: GetTenantResponse = get_tenant(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

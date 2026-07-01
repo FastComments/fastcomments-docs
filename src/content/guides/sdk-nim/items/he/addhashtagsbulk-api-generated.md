@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| שם | סוג | דרוש | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | bulkCreateHashTagsBody | BulkCreateHashTagsBody | לא |  |
@@ -11,14 +11,15 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-addHashTagsBulk'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'addHashTagsBulk דוגמה'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.addHashTagsBulk(tenantId = "my-tenant-123", bulkCreateHashTagsBody = BulkCreateHashTagsBody(hashTags = @["news", "breaking", "politics"], replaceExisting = false))
-if response.isSome:
-  let result = response.get()
-  echo "Bulk tags response:", result
-else:
-  echo "No response body, HTTP status:", httpResponse.statusCode
-[inline-code-end]
+let (optResp, httpResp) = client.addHashTagsBulk(
+  tenantId = "my-tenant-123",
+  bulkCreateHashTagsBody = BulkCreateHashTagsBody(
+    hashTags = @["news", "technology"]
+  )
+)
 
----
+if optResp.isSome:
+  let resp = optResp.get()
+[inline-code-end]

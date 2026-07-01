@@ -5,34 +5,31 @@ userIdWS
 
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenant_id | String | 예 |  |
-| url_id | String | 예 |  |
-| user_id_ws | String | 예 |  |
-| start_time | i64 | 예 |  |
-| end_time | i64 | 아니오 |  |
+| tenant_id | String | Yes |  |
+| url_id | String | Yes |  |
+| user_id_ws | String | Yes |  |
+| start_time | i64 | Yes |  |
+| end_time | i64 | No |  |
 
 ## 응답
 
-반환: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_event_log_response.rs)
+Returns: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_event_log_response.rs)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'get_event_log 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_event_log 예시'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_event_log() -> Result<(), Error> {
+async fn fetch_event_log(configuration: &configuration::Configuration) -> Result<(), Error> {
     let params = GetEventLogParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        url_id: "news/article/2024-product-launch".to_string(),
-        user_id_ws: "user_98765_ws".to_string(),
-        start_time: 1710700800i64,
-        end_time: Some(1710787200i64),
+        url_id: "news/article".to_string(),
+        user_id_ws: "user-12345".to_string(),
+        start_time: 1_640_995_200,
+        end_time: Some(1_640_995_300),
     };
-    let response: GetEventLogResponse = get_event_log(&configuration, params).await?;
-    println!("{:#?}", response);
+    let _response: GetEventLogResponse = get_event_log(configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

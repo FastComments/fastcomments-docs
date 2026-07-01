@@ -1,7 +1,7 @@
 ## Параметри
 
 | Име | Тип | Задължително | Описание |
-|------|------|----------|-------------|
+|------|------|--------------|----------|
 | tenantId | string | Да |  |
 | skip | float64 | Не |  |
 
@@ -13,13 +13,9 @@
 
 [inline-code-attrs-start title = 'getTenantPackages Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTenantPackages(tenantId = "my-tenant-123", skip = 0.0)
-if response.isSome:
-  let packages = response.get()
-  echo "Received tenant packages:"
+let (maybeResp, httpResp) = client.getTenantPackages(tenantId = "my-tenant-123", skip = 0.0)
+if maybeResp.isSome:
+  let packages = maybeResp.get()
   echo packages
-else:
-  echo "No packages found for tenant 'my-tenant-123'"
+  echo httpResp.statusCode
 [inline-code-end]
-
----

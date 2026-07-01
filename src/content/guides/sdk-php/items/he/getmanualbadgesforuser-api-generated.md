@@ -1,7 +1,8 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | badgesUserId | string | query | No |  |
 | commentId | string | query | No |  |
 | sso | string | query | No |  |
@@ -12,7 +13,7 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getManualBadgesForUser'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל‑getManualBadgesForUser'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -20,16 +21,21 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // אם ברצונך להשתמש בלקוח HTTP מותאם אישית, העבר את הלקוח שלך שמממש את `GuzzleHttp\ClientInterface`.
+    // אם ברצונך להשתמש בלקוח HTTP מותאם, העבר את הלקוח שלך המיישם `GuzzleHttp\ClientInterface`.
     // זה אופציונלי, `GuzzleHttp\Client` ישמש כברירת מחדל.
     new GuzzleHttp\Client()
 );
-$badges_user_id = 'badges_user_id_example'; // מחרוזת
-$comment_id = 'comment_id_example'; // מחרוזת
-$sso = 'sso_example'; // מחרוזת
+
+$tenant_id = 'tenant_id_example'; // מחרוזת
+$options = [
+    'badges_user_id' => 'badges_user_id_example', // מחרוזת
+    'comment_id' => 'comment_id_example', // מחרוזת
+    'sso' => 'sso_example', // מחרוזת
+];
+
 
 try {
-    $result = $apiInstance->getManualBadgesForUser($badges_user_id, $comment_id, $sso);
+    $result = $apiInstance->getManualBadgesForUser($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getManualBadgesForUser: ', $e->getMessage(), PHP_EOL;

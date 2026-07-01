@@ -1,17 +1,16 @@
----
 ## Parameters
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Nee |  |
+|------|------|----------|----------|---------------|
+| tenantId | string | query | Ja |  |
 
-## Antwoord
+## Respons
 
-Geeft terug: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_bulk_create_hash_tags_response.go)
+Retourneert: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_bulk_create_hash_tags_response.go)
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'AddHashTagsBulk Voorbeeld'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Voorbeeld AddHashTagsBulk'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,7 +22,7 @@ import (
 )
 
 func main() {
-	tenantId := "tenantId_example" // string |  (optioneel)
+	tenantId := "tenantId_example" // string | 
 	bulkCreateHashTagsBody := *openapiclient.NewBulkCreateHashTagsBody([]openapiclient.BulkCreateHashTagsBodyTagsInner{*openapiclient.NewBulkCreateHashTagsBodyTagsInner("Tag_example")}) // BulkCreateHashTagsBody |  (optioneel)
 
 	configuration := openapiclient.NewConfiguration()
@@ -33,9 +32,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.AddHashTagsBulk``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// antwoord van `AddHashTagsBulk`: BulkCreateHashTagsResponse
+	// reactie van `AddHashTagsBulk`: BulkCreateHashTagsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.AddHashTagsBulk`: %v\n", resp)
 }
 [inline-code-end]
-
----

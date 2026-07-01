@@ -1,11 +1,13 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Назва | Тип | Розташування | Обов'язковий | Опис |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Так |  |
-| spam | boolean | query | Ні |  |
-| permNotSpam | boolean | query | Ні |  |
-| sso | string | query | Ні |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| spam | boolean | query | No |  |
+| permNotSpam | boolean | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Відповідь
 
@@ -19,16 +21,18 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
-comment_id = 'comment_id_example' # Рядок | 
+tenant_id = 'tenant_id_example' # String | 
+comment_id = 'comment_id_example' # String | 
 opts = {
-  spam: true, # Булевий | 
-  perm_not_spam: true, # Булевий | 
-  sso: 'sso_example' # Рядок | 
+  spam: true, # Boolean | 
+  perm_not_spam: true, # Boolean | 
+  broadcast_id: 'broadcast_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.post_set_comment_spam_status(comment_id, opts)
+  result = api_instance.post_set_comment_spam_status(tenant_id, comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_set_comment_spam_status: #{e}"

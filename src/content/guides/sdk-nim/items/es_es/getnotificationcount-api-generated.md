@@ -1,12 +1,9 @@
 ## Parámetros
 
-| Name | Type | Requerido | Descripción |
+| Nombre | Tipo | Requerido | Descripción |
 |------|------|----------|-------------|
 | tenantId | string | Sí |  |
-| userId | string | No |  |
-| urlId | string | Sí |  |
-| fromCommentId | string | No |  |
-| viewed | bool | No |  |
+| options | GetNotificationCountOptions | No |  |
 
 ## Respuesta
 
@@ -14,12 +11,10 @@ Devuelve: [`Option[GetNotificationCountResponse]`](https://github.com/FastCommen
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de getNotificationCount'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo getNotificationCount'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getNotificationCount(tenantId = "my-tenant-123", userId = "user-987", urlId = "news/2026/06/election-results", fromCommentId = "", viewed = false)
-if response.isSome:
-  let notifyData = response.get()
-  echo notifyData
+let (notifOpt, httpResp) = client.getNotificationCount(tenantId = "my-tenant-123", options = GetNotificationCountOptions())
+if notifOpt.isSome:
+  let notif = notifOpt.get()
+  echo notif
 [inline-code-end]
-
----

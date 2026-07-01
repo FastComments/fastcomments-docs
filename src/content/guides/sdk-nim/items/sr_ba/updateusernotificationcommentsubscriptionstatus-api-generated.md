@@ -1,34 +1,31 @@
-Omogući ili onemogući obavještenja za određeni komentar.
+Omogući ili onemogući obavijesti za određeni komentar.
 
-## Parametri
+## Parameters
 
-| Ime | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| notificationId | string | Ne |  |
-| optedInOrOut | string | Ne |  |
-| commentId | string | Da |  |
-| sso | string | Ne |  |
+| tenantId | string | Yes |  |
+| notificationId | string | No |  |
+| optedInOrOut | string | No |  |
+| commentId | string | Yes |  |
+| sso | string = "" | No |  |
 
-## Odgovor
+## Response
 
-Vraća: [`Option[UpdateUserNotificationCommentSubscriptionStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_comment_subscription_status_response.nim)
+Returns: [`Option[UpdateUserNotificationCommentSubscriptionStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_comment_subscription_status_response.nim)
 
-## Primjer
+## Example
 
-[inline-code-attrs-start title = 'Primjer updateUserNotificationCommentSubscriptionStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserNotificationCommentSubscriptionStatus Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateUserNotificationCommentSubscriptionStatus(
+let (optResp, httpResp) = client.updateUserNotificationCommentSubscriptionStatus(
   tenantId = "my-tenant-123",
-  notificationId = "",
-  optedInOrOut = "",
-  commentId = "cmt-789",
+  notificationId = "notif-456",
+  optedInOrOut = "opted-in",
+  commentId = "comment-789",
   sso = ""
 )
 
-if response.isSome:
-  let updateResp = response.get()
-  echo "Subscription update response: ", updateResp
+if optResp.isSome:
+  let resp = optResp.get()
 [inline-code-end]
-
----

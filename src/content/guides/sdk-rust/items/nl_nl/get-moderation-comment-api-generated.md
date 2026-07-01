@@ -2,6 +2,7 @@
 
 | Naam | Type | Vereist | Beschrijving |
 |------|------|----------|-------------|
+| tenant_id | String | Ja |  |
 | comment_id | String | Ja |  |
 | include_email | bool | Nee |  |
 | include_ip | bool | Nee |  |
@@ -15,16 +16,15 @@ Retourneert: [`ModerationApiCommentResponse`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'get_moderation_comment Voorbeeld'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_comment() -> Result<ModerationApiCommentResponse, Error> {
-    let params: GetModerationCommentParams = GetModerationCommentParams {
-        comment_id: String::from("cmt-48291"),
+async fn example() -> Result<(), Error> {
+    let params = GetModerationCommentParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: "news/article-6789".to_string(),
         include_email: Some(true),
-        include_ip: Some(false),
-        sso: Some(String::from("sso-acme-corp-2026-token")),
+        include_ip: Some(true),
+        sso: Some("sso-user-42".to_string()),
     };
-    let response: ModerationApiCommentResponse = get_moderation_comment(&configuration, params).await?;
-    Ok(response)
+    let _response = get_moderation_comment(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

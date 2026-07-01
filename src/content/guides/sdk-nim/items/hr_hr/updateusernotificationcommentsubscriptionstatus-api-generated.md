@@ -3,12 +3,12 @@ Omogućite ili onemogućite obavijesti za određeni komentar.
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
 | tenantId | string | Da |  |
 | notificationId | string | Ne |  |
 | optedInOrOut | string | Ne |  |
 | commentId | string | Da |  |
-| sso | string | Ne |  |
+| sso | string = "" | Ne |  |
 
 ## Odgovor
 
@@ -18,17 +18,16 @@ Vraća: [`Option[UpdateUserNotificationCommentSubscriptionStatusResponse]`](http
 
 [inline-code-attrs-start title = 'Primjer updateUserNotificationCommentSubscriptionStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateUserNotificationCommentSubscriptionStatus(
+let (optResp, httpResp) = client.updateUserNotificationCommentSubscriptionStatus(
   tenantId = "my-tenant-123",
-  notificationId = "",
-  optedInOrOut = "",
-  commentId = "cmt-789",
+  notificationId = "notif-456",
+  optedInOrOut = "opted-in",
+  commentId = "comment-789",
   sso = ""
 )
 
-if response.isSome:
-  let updateResp = response.get()
-  echo "Subscription update response: ", updateResp
+if optResp.isSome:
+  let resp = optResp.get()
 [inline-code-end]
 
 ---

@@ -1,27 +1,30 @@
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
-|------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| domainToUpdate | string | 예 |  |
-| patchDomainConfigParams | PatchDomainConfigParams | 예 |  |
+| 이름 | 유형 | 필수 | 설명 |
+|------|------|------|------|
+| tenantId | string | Yes |  |
+| domainToUpdate | string | Yes |  |
+| patchDomainConfigParams | PatchDomainConfigParams | Yes |  |
 
 ## 응답
 
-반환: [`PatchDomainConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PatchDomainConfigResponse.ts)
+Returns: [`PatchDomainConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PatchDomainConfigResponse.ts)
 
 ## 예제
 
 [inline-code-attrs-start title = 'patchDomainConfig 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_8d9f3c4b";
-const domainToUpdate: string = "comments.newsroom.example.com";
-const patchDomainConfigParams: PatchDomainConfigParams = {
-  enabled: true,
-  enforceHttps: true, // 선택적 매개변수 포함
-  allowedOrigins: ["https://newsroom.example.com"] // 선택적 매개변수 포함
-};
-const result: PatchDomainConfigResponse = await patchDomainConfig(tenantId, domainToUpdate, patchDomainConfigParams);
-[inline-code-end]
+async function updateDomainConfig() {
+  const tenantId: string = "tenant_98765";
+  const domainToUpdate: string = "forum.mycompany.com";
+  const patchParams: PatchDomainConfigParams = {
+    enableComments: true,
+    moderationLevel: "strict",
+    allowAnonymous: false, // 선택적 매개변수 시연
+  };
+  const response: PatchDomainConfigResponse = await patchDomainConfig(tenantId, domainToUpdate, patchParams);
+  console.log(response);
+}
 
----
+updateDomainConfig();
+[inline-code-end]

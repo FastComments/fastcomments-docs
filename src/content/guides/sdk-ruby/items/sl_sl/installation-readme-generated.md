@@ -1,34 +1,29 @@
----
-Dodajte to vrstico v Gemfile vaše aplikacije:
+Add this line to your application's Gemfile:
 
 ```ruby
 gem 'fastcomments'
 ```
 
-Nato izvedite:
+And then execute:
 
 ```bash
 bundle install
 ```
 
-Ali ga namestite sami z:
+Or install it yourself as:
 
 ```bash
 gem install fastcomments
 ```
 
-### Vsebina knjižnice
+### Library Contents
 
-Ta knjižnica vsebuje generiran odjemalec API in SSO pripomočke, ki olajšajo delo z API-jem.
+This library contains the generated API client and the SSO utilities to make working with the API easier.
 
 - [API Client Library Docs](https://github.com/FastComments/fastcomments-ruby/blob/master/client/README.md)
 
-### Javni in zavarovani API-ji
+### Public vs Secured APIs
 
-Za odjemalca API so na voljo tri razrede, `DefaultApi`, `PublicApi` in `ModerationApi`. `DefaultApi` vsebuje metode, ki zahtevajo vaš API ključ, `PublicApi` pa vsebuje klice API,
-ki jih je mogoče izvesti neposredno iz brskalnika/mobilne naprave/itd. brez overjanja. `ModerationApi` vsebuje metode, ki poganjajo nadzorno ploščo moderatorja.
+For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains api calls that can be made directly from a browser/mobile device/etc without authentication. The `ModerationApi` contains the methods that power the moderator dashboard.
 
-`ModerationApi` zajema moderiranje komentarjev (seznam, štetje, iskanje, dnevniki, izvoz), ukrepe moderiranja (odstrani/obnovi, prijavi, nastavi status pregleda/spama/odobritve, glasovi, ponovno odpri/zapri nit),
-prepovedi (prepoved na podlagi komentarja, razveljavitev, povzetki pred prepovedjo, status/nastavitve prepovedi, število prepovedanih uporabnikov), in značke & zaupanje (podeli/odstrani značko, ročne značke, pridobi/nastavi dejavnik zaupanja, notranji profil uporabnika).
-Vsaka metoda `ModerationApi` sprejme parameter `sso`, tako da je lahko zahteva izvedena v imenu moderatorja, avtenticiranega preko SSO.
----
+The `ModerationApi` provides an extensive suite of live and fast moderation APIs. Every `ModerationApi` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.

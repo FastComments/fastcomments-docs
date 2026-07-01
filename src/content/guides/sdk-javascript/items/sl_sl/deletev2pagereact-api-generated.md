@@ -1,30 +1,24 @@
----
-## Parametri
+## Parameters
 
-| Ime | Tip | Obvezno | Opis |
+| Ime | Vrsta | Obvezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| urlId | string | Da |  |
-| id | string | Da |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| id | string | Yes |  |
 
 ## Odgovor
 
-Vrne: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateV1PageReact.ts)
+Vrne: [`DeleteV2PageReactResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteV2PageReactResponse.ts)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer deleteV2PageReact'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteV2PageReact Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-interface APIStatus { code: number; message?: string }
-interface CreateV1PageReact { id: string; pageUrl: string; userId?: string; status?: APIStatus; deleted?: boolean }
+const tenantId: string = "tenant_12345";
+const urlId: string = "page_98765";
+const reactionId: string = "react_abcde";
 
-const tenantId: string = 'tenant_prod_8621'
-const urlId: string = 'page_home_001'
-const id: string = 'react_5f9b1c3a'
-
-const result: CreateV1PageReact = await deleteV2PageReact(tenantId, urlId, id)
-const statusCode: number | undefined = result.status?.code
-console.log('Deleted reaction id:', result.id, 'statusCode:', statusCode)
+const deleteResult: DeleteV2PageReactResponse = await deleteV2PageReact(tenantId, urlId, reactionId);
 [inline-code-end]
 
 ---

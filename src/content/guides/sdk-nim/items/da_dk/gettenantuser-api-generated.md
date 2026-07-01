@@ -11,14 +11,12 @@ Returnerer: [`Option[GetTenantUserResponse]`](https://github.com/FastComments/fa
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'getTenantUser-eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTenantUser Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTenantUser(tenantId = "my-tenant-123", id = "user-789")
-if response.isSome:
-  let tenantUser = response.get()
-  echo "User fetched:", tenantUser
-else:
-  echo "No user found, HTTP status:", httpResponse.status
+let (maybeUser, httpResp) = client.getTenantUser(tenantId = "my-tenant-123", id = "user-456")
+if maybeUser.isSome:
+  let user = maybeUser.get()
+  echo user
 [inline-code-end]
 
 ---

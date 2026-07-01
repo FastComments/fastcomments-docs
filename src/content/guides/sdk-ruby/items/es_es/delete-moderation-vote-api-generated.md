@@ -1,9 +1,11 @@
 ## Parámetros
 
 | Nombre | Tipo | Ubicación | Requerido | Descripción |
-|------|------|----------|----------|-------------|
+|--------|------|-----------|-----------|-------------|
+| tenantId | string | query | Sí |  |
 | commentId | string | path | Sí |  |
 | voteId | string | path | Sí |  |
+| broadcastId | string | query | No |  |
 | sso | string | query | No |  |
 
 ## Respuesta
@@ -12,25 +14,25 @@ Devuelve: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-ru
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de delete_moderation_vote'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo delete_moderation_vote'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 comment_id = 'comment_id_example' # String | 
 vote_id = 'vote_id_example' # String | 
 opts = {
+  broadcast_id: 'broadcast_id_example', # String | 
   sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.delete_moderation_vote(comment_id, vote_id, opts)
+  result = api_instance.delete_moderation_vote(tenant_id, comment_id, vote_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
-  puts "Error when calling ModerationApi->delete_moderation_vote: #{e}"
+  puts "Error al llamar a ModerationApi->delete_moderation_vote: #{e}"
 end
 [inline-code-end]
-
----

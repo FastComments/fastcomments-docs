@@ -1,36 +1,36 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Обязательно | Описание |
+| Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| comment_id | String | Да |  |
-| broadcast_id | String | Да |  |
-| comment_text_update_request | models::CommentTextUpdateRequest | Да |  |
-| edit_key | String | Нет |  |
-| sso | String | Нет |  |
+| tenant_id | String | Yes |  |
+| comment_id | String | Yes |  |
+| broadcast_id | String | Yes |  |
+| comment_text_update_request | models::CommentTextUpdateRequest | Yes |  |
+| edit_key | String | No |  |
+| sso | String | No |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`PublicApiSetCommentTextResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/public_api_set_comment_text_response.rs)
+Повертає: [`PublicApiSetCommentTextResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/public_api_set_comment_text_response.rs)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример set_comment_text'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'set_comment_text Приклад'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn update_comment() -> Result<PublicApiSetCommentTextResponse, Error> {
-    let params: SetCommentTextParams = SetCommentTextParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        comment_id: "cmt-72f3a9".to_string(),
-        broadcast_id: "news/article/2026/06/19/product-launch".to_string(),
-        comment_text_update_request: models::CommentTextUpdateRequest {
-            text: "Updated: Congratulations on the launch! Clarified a few points.".to_string(),
-        },
-        edit_key: Some("edit-key-9f8b".to_string()),
-        sso: Some("sso-token-user-abc123".to_string()),
+async fn example() -> Result<(), Error> {
+    let comment_text_update_request = models::CommentTextUpdateRequest {
+        text: "Edited comment text after moderation".to_string(),
+        ..Default::default()
     };
-    let response = set_comment_text(&configuration, params).await?;
-    Ok(response)
+    let params = SetCommentTextParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: "cmt-98765".to_string(),
+        broadcast_id: "news/article".to_string(),
+        comment_text_update_request,
+        edit_key: Some("edit-key-2024".to_string()),
+        sso: Some("sso-token-789".to_string()),
+    };
+    let _response = set_comment_text(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

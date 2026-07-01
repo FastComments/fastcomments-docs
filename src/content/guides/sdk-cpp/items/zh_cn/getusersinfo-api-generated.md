@@ -1,13 +1,11 @@
-租户的批量用户信息。给定 userIds，返回来自 User / SSOUser 的显示信息。
-由评论小部件使用，以丰富通过 presence event 刚出现的用户。
-无页面上下文：隐私被统一强制执行（私人配置文件将被屏蔽）。
+Bulk user info for a tenant. Given userIds, return display info from User / SSOUser. Used by the comment widget to enrich users that just appeared via a presence event. No page context: privacy is enforced uniformly (private profiles are masked).
 
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| ids | string | 是 |  |
+| tenantId | string | Yes |  |
+| ids | string | Yes |  |
 
 ## 响应
 
@@ -19,15 +17,14 @@
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 utility::string_t ids = U("alice@example.com,bob@example.com");
-boost::optional<utility::string_t> statusFilter = U("active");
+boost::optional<utility::string_t> locale = boost::make_optional(U("en-US"));
+
 api->getUsersInfo(tenantId, ids).then([](pplx::task<std::shared_ptr<PageUsersInfoResponse>> t){
-    try {
-        auto res = t.get();
-        if (res) {
-            auto responseCopy = std::make_shared<PageUsersInfoResponse>(*res);
-        }
-    } catch (const std::exception&) {}
+    try{
+        auto response = t.get();
+        // 处理响应
+    }catch(const std::exception&){
+        // 处理错误
+    }
 });
 [inline-code-end]
-
----

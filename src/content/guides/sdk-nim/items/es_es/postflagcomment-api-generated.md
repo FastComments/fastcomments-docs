@@ -1,10 +1,11 @@
 ---
 ## Parámetros
 
-| Nombre | Tipo | Requerido | Descripción |
+| Nombre | Tipo | Obligatorio | Descripción |
 |------|------|----------|-------------|
+| tenantId | string | Sí |  |
 | commentId | string | Sí |  |
-| sso | string | No |  |
+| options | PostFlagCommentOptions | No |  |
 
 ## Respuesta
 
@@ -12,14 +13,16 @@ Devuelve: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomme
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de postFlagComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postFlagComment Ejemplo'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postFlagComment(commentId = "comment-742", sso = "")
+let opts = PostFlagCommentOptions()
+let (response, httpResponse) = client.postFlagComment(
+  tenantId = "my-tenant-123",
+  commentId = "comment-987654",
+  options = opts,
+)
 if response.isSome:
-  let apiResp = response.get()
-  echo "Comment flagged successfully"
-else:
-  echo "Failed to flag comment"
+  let result = response.get()
 [inline-code-end]
 
 ---

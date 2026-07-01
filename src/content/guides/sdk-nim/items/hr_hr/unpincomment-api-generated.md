@@ -5,7 +5,7 @@
 | tenantId | string | Da |  |
 | commentId | string | Da |  |
 | broadcastId | string | Ne |  |
-| sso | string | Ne |  |
+| sso | string = "" | Ne |  |
 
 ## Odgovor
 
@@ -15,12 +15,14 @@ Vraća: [`Option[ChangeCommentPinStatusResponse]`](https://github.com/FastCommen
 
 [inline-code-attrs-start title = 'Primjer unPinComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.unPinComment(tenantId = "my-tenant-123", commentId = "cmt-987654321", broadcastId = "", sso = "")
-if response.isSome:
-  let result = response.get()
-  echo "Unpinned comment:", $result
-else:
-  echo "Unpin failed, HTTP status:", $httpResponse.status
-[inline-code-end]
+let (responseOpt, httpResponse) = client.unPinComment(
+  tenantId = "my-tenant-123",
+  commentId = "cmt-456789",
+  broadcastId = "broadcast-001",
+  sso = ""
+)
 
----
+if responseOpt.isSome:
+  let resp = responseOpt.get()
+  echo resp
+[inline-code-end]

@@ -1,9 +1,8 @@
-הפעל או השבת התראות עבור דף. כאשר משתמשים מנויים לדף, נוצרים התראות
-for new root comments, and also
+Enable או בטל התראות עבור עמוד. כאשר משתמשים מנויים לעמוד, נוצרות התראות על תגובות ראשיות חדשות, וגם
 
 ## פרמטרים
 
-| שם | Type | נדרש | תיאור |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
 | tenant_id | String | כן |  |
 | url_id | String | כן |  |
@@ -18,19 +17,19 @@ for new root comments, and also
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-update_user_notification_page_subscription_status'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'update_user_notification_page_subscription_status דוגמה'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example() -> Result<UpdateUserNotificationPageSubscriptionStatusResponse, Error> {
-    let params: UpdateUserNotificationPageSubscriptionStatusParams = UpdateUserNotificationPageSubscriptionStatusParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        url_id: "news/rocket-launch-2026".to_string(),
-        url: "https://acme.example.com/news/rocket-launch-2026".to_string(),
-        page_title: "Acme Rocket Launch — June 2026".to_string(),
-        subscribed_or_unsubscribed: "subscribed".to_string(),
-        sso: Some("user:alice@acme.com".to_string()),
+    let params = UpdateUserNotificationPageSubscriptionStatusParams {
+        tenant_id: "acme-corp-tenant".to_owned(),
+        url_id: "news-article-2024".to_owned(),
+        url: "https://news.example.com/articles/rust".to_owned(),
+        page_title: "Rust Dominates the Programming World".to_owned(),
+        subscribed_or_unsubscribed: "subscribed".to_owned(),
+        sso: Some("sso-token-abc".to_owned()),
     };
-    let response: UpdateUserNotificationPageSubscriptionStatusResponse =
-        update_user_notification_page_subscription_status(&configuration, params).await?;
-    Ok(response)
+    update_user_notification_page_subscription_status(&configuration, params).await
 }
 [inline-code-end]
+
+---

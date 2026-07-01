@@ -1,28 +1,25 @@
-מידע מאסיבי על משתמשים עבור tenant. בהינתן userIds, החזר מידע תצוגה מתוך User / SSOUser.
-משמש על ידי רכיב התגובות כדי להעשיר משתמשים שהופיעו זה עתה באמצעות אירוע נוכחות.
-אין הקשר של עמוד: פרטיות נאכפת באופן אחיד (פרופילים פרטיים מוסתרים).
+Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
+Used by the comment widget to enrich users that just appeared via a presence event.  
+No page context: privacy is enforced uniformly (private profiles are masked).
 
-## פרמטרים
+## Parameters
 
-| Name | Type | Required | Description |
+| שם | סוג | דרוש | תיאור |
 |------|------|----------|-------------|
-| tenant_id | String | כן |  |
-| ids | String | כן |  |
+| tenant_id | String | Yes |  |
+| ids | String | Yes |  |
 
-## תגובה
+## Response
 
 מחזיר: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_info_response.rs)
 
-## דוגמה
+## Example
 
-[inline-code-attrs-start title = 'דוגמה ל-get_users_info'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת get_users_info'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: GetUsersInfoParams = GetUsersInfoParams {
+let params = GetUsersInfoParams {
     tenant_id: "acme-corp-tenant".to_string(),
-    ids: "alice@example.com,bob@example.com,carol@example.com".to_string(),
-    page_size: Some(100),
+    ids: "user-1,user-2".to_string(),
 };
-let users_response: PageUsersInfoResponse = get_users_info(&configuration, params).await?;
+let page: PageUsersInfoResponse = get_users_info(&configuration, params).await?;
 [inline-code-end]
-
----

@@ -1,7 +1,8 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язковий | Опис |
+| Назва | Тип | Розташування | Обов’язковий | Опис |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Так |  |
 | badgesUserId | string | query | Ні |  |
 | commentId | string | query | Ні |  |
 | sso | string | query | Ні |  |
@@ -15,27 +16,29 @@
 [inline-code-attrs-start title = 'Приклад get_manual_badges_for_user'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetManualBadgesForUserOptions
 from client.models.get_user_manual_badges_response import GetUserManualBadgesResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Визначення хоста необов'язкове й за замовчуванням — https://fastcomments.com
+# Визначення хоста не є обов’язковим і за замовчуванням https://fastcomments.com
 # Див. configuration.py для списку всіх підтримуваних параметрів конфігурації.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Відкрийте контекст з екземпляром API-клієнта
+# Відкрийте контекст з екземпляром клієнта API
 with client.ApiClient(configuration) as api_client:
     # Створіть екземпляр класу API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     badges_user_id = 'badges_user_id_example' # str |  (optional)
     comment_id = 'comment_id_example' # str |  (optional)
     sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_manual_badges_for_user(badges_user_id=badges_user_id, comment_id=comment_id, sso=sso)
+        api_response = api_instance.get_manual_badges_for_user(tenant_id, GetManualBadgesForUserOptions(badges_user_id=badges_user_id, comment_id=comment_id, sso=sso))
         print("The response of ModerationApi->get_manual_badges_for_user:\n")
         pprint(api_response)
     except Exception as e:

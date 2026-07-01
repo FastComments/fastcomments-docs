@@ -1,7 +1,8 @@
-## Parametreler
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Evet |  |
 | value | string | query | Hayır |  |
 | sso | string | query | Hayır |  |
 
@@ -14,26 +15,28 @@ Döndürür: [`ModerationUserSearchResponse`](https://github.com/FastComments/fa
 [inline-code-attrs-start title = 'get_search_users Örneği'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetSearchUsersOptions
 from client.models.moderation_user_search_response import ModerationUserSearchResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Host tanımlamak isteğe bağlıdır ve varsayılan https://fastcomments.com'dur
-# Tüm desteklenen yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.
+# Host tanımlaması isteğe bağlıdır ve varsayılan olarak https://fastcomments.com adresine ayarlanır
+# configuration.py dosyasında desteklenen tüm yapılandırma parametrelerinin listesi bulunur.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# API istemcisi örneğiyle bir bağlam girin
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # API sınıfının bir örneğini oluşturun
+    # Create an instance of the API class
     api_instance = client.ModerationApi(api_client)
-    value = 'value_example' # str |  (isteğe bağlı)
-    sso = 'sso_example' # str |  (isteğe bağlı)
+    tenant_id = 'tenant_id_example' # str | 
+    value = 'value_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_search_users(value=value, sso=sso)
+        api_response = api_instance.get_search_users(tenant_id, GetSearchUsersOptions(value=value, sso=sso))
         print("The response of ModerationApi->get_search_users:\n")
         pprint(api_response)
     except Exception as e:

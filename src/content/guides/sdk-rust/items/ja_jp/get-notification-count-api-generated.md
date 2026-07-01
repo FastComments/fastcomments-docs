@@ -1,29 +1,30 @@
 ## パラメータ
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenant_id | String | はい |  |
-| user_id | String | いいえ |  |
-| url_id | String | いいえ |  |
-| from_comment_id | String | いいえ |  |
-| viewed | bool | いいえ |  |
+| tenant_id | String | Yes |  |
+| user_id | String | No |  |
+| url_id | String | No |  |
+| from_comment_id | String | No |  |
+| viewed | bool | No |  |
 
 ## レスポンス
 
-返却値: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_notification_count_response.rs)
+戻り値: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_notification_count_response.rs)
 
 ## 例
 
 [inline-code-attrs-start title = 'get_notification_count の例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: GetNotificationCountParams = GetNotificationCountParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    user_id: Some("user-123".to_string()),
-    url_id: Some("news/article/2026/06/19".to_string()),
-    from_comment_id: Some("cmt-98765".to_string()),
-    viewed: Some(false),
-};
-let notification_count: GetNotificationCountResponse = get_notification_count(configuration, params).await?;
+async fn example() -> Result<(), Error> {
+    let params = GetNotificationCountParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        user_id: Some("john.doe".to_string()),
+        url_id: Some("blog/post-123".to_string()),
+        from_comment_id: Some("comment789".to_string()),
+        viewed: Some(true),
+    };
+    let _response = get_notification_count(&configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]
-
----

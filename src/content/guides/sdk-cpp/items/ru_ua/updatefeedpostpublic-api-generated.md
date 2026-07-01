@@ -1,36 +1,29 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Обязательно | Описание |
+| Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| postId | string | Да |  |
-| updateFeedPostParams | UpdateFeedPostParams | Да |  |
-| broadcastId | string | Нет |  |
-| sso | string | Нет |  |
+| tenantId | string | Так |  |
+| postId | string | Так |  |
+| updateFeedPostParams | UpdateFeedPostParams | Так |  |
+| options | const UpdateFeedPostPublicOptions& | Так |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateFeedPostResponse.h)
+Повертає: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateFeedPostResponse.h)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример updateFeedPostPublic'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад updateFeedPostPublic'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 utility::string_t postId = U("post-456");
-UpdateFeedPostParams updateFeedPostParams;
-boost::optional<utility::string_t> broadcastId = boost::optional<utility::string_t>(U("broadcast-789"));
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
-api->updateFeedPostPublic(tenantId, postId, updateFeedPostParams, broadcastId, sso)
-.then([](pplx::task<std::shared_ptr<CreateFeedPostResponse>> t) {
-    try {
-        auto resp = t.get();
-        if (resp) {
-            auto updatedCopy = std::make_shared<CreateFeedPostResponse>(*resp);
-        }
-    } catch (const std::exception& e) {
-    }
-});
+UpdateFeedPostParams params;
+params.title = boost::optional<utility::string_t>(U("Updated Title"));
+params.body = boost::optional<utility::string_t>(U("Updated content of the post."));
+UpdateFeedPostPublicOptions options;
+options.notifyFollowers = boost::optional<bool>(true);
+api->updateFeedPostPublic(tenantId, postId, params, options)
+    .then([](std::shared_ptr<CreateFeedPostResponse> resp) {
+        auto result = resp;
+    });
 [inline-code-end]
-
----

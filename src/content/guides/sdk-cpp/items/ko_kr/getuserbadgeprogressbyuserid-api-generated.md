@@ -1,9 +1,9 @@
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
-|------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| userId | string | 예 |  |
+| 이름 | 타입 | 필수 | 설명 |
+|------|------|------|------|
+| tenantId | string | Yes |  |
+| userId | string | Yes |  |
 
 ## 응답
 
@@ -13,22 +13,17 @@
 
 [inline-code-attrs-start title = 'getUserBadgeProgressByUserId 예제'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t userId = U("user@example.com");
-boost::optional<utility::string_t> locale;
-api->getUserBadgeProgressByUserId(tenantId, userId)
-.then([=](pplx::task<std::shared_ptr<APIGetUserBadgeProgressResponse>> t) {
-    try {
-        auto resp = t.get();
-        if (!resp) resp = std::make_shared<APIGetUserBadgeProgressResponse>();
-        return resp;
-    } catch (...) {
-        return std::shared_ptr<APIGetUserBadgeProgressResponse>(nullptr);
-    }
-})
-.then([](std::shared_ptr<APIGetUserBadgeProgressResponse> resp) {
-    (void)resp;
-});
+boost::optional<std::shared_ptr<APIGetUserBadgeProgressResponse>> responseOpt;
+api->getUserBadgeProgressByUserId(
+    utility::conversions::to_string_t("my-tenant-123"),
+    utility::conversions::to_string_t("user@example.com"))
+    .then([&responseOpt](pplx::task<std::shared_ptr<APIGetUserBadgeProgressResponse>> t) {
+        try {
+            responseOpt = t.get();
+        } catch (...) {
+            responseOpt = boost::none;
+        }
+    });
 [inline-code-end]
 
 ---

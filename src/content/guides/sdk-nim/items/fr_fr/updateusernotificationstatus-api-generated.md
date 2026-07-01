@@ -1,31 +1,28 @@
 ## Paramètres
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nom | Type | Obligatoire | Description |
+|------|------|-------------|-------------|
 | tenantId | string | Oui |  |
 | notificationId | string | Non |  |
 | newStatus | string | Non |  |
-| sso | string | Non |  |
+| sso | string = "" | Non |  |
 
 ## Réponse
 
-Renvoie: [`Option[UpdateUserNotificationStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_status_response.nim)
+Renvoie : [`Option[UpdateUserNotificationStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_status_response.nim)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple updateUserNotificationStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserNotificationStatus Exemple'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateUserNotificationStatus(
+let (respOpt, httpResponse) = client.updateUserNotificationStatus(
   tenantId = "my-tenant-123",
   notificationId = "notif-456",
   newStatus = "read",
-  sso = "sso-token-abc123"
+  sso = ""
 )
-if response.isSome:
-  let updated = response.get()
-  echo "Notification status updated successfully"
-else:
-  echo "No update response received"
+if respOpt.isSome:
+  let status = respOpt.get()
 [inline-code-end]
 
 ---

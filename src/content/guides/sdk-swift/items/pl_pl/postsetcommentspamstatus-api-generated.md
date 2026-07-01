@@ -1,12 +1,13 @@
----
 ## Parametry
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Tak |  |
-| spam | boolean | query | Nie |  |
-| permNotSpam | boolean | query | Nie |  |
-| sso | string | query | Nie |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| spam | boolean | query | No |  |
+| permNotSpam | boolean | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Odpowiedź
 
@@ -14,17 +15,19 @@ Zwraca: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład postSetCommentSpamStatus'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postSetCommentSpamStatus Przykład'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Następujące przykłady kodu są nadal w wersji beta. W przypadku problemów zgłoś je przez http://github.com/OpenAPITools/openapi-generator/issues/new
+// Poniższe próbki kodu są wciąż w wersji beta. W razie jakichkolwiek problemów proszę zgłosić je pod adresem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
-let spam = true // Bool |  (opcjonalne)
-let permNotSpam = true // Bool |  (opcjonalne)
-let sso = "sso_example" // String |  (opcjonalne)
+let spam = true // Bool |  (opcjonalnie)
+let permNotSpam = true // Bool |  (opcjonalnie)
+let broadcastId = "broadcastId_example" // String |  (opcjonalnie)
+let sso = "sso_example" // String |  (opcjonalnie)
 
-ModerationAPI.postSetCommentSpamStatus(commentId: commentId, spam: spam, permNotSpam: permNotSpam, sso: sso) { (response, error) in
+ModerationAPI.postSetCommentSpamStatus(tenantId: tenantId, commentId: commentId, options: ModerationAPI.PostSetCommentSpamStatusOptions(spam: spam, permNotSpam: permNotSpam, broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -35,5 +38,3 @@ ModerationAPI.postSetCommentSpamStatus(commentId: commentId, spam: spam, permNot
     }
 }
 [inline-code-end]
-
----

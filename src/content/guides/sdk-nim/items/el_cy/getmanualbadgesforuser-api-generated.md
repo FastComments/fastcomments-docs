@@ -1,28 +1,23 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
-|------|------|----------|-------------|
-| badgesUserId | string | Όχι |  |
-| commentId | string | Ναι |  |
-| sso | string | Όχι |  |
+|------|------|------------|-----------|
+| tenantId | string | Ναι |  |
+| options | GetManualBadgesForUserOptions | Όχι |  |
 
-## Απόκριση
+## Απάντηση
 
-Επιστρέφει: [`Option[GetUserManualBadgesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user_manual_badges_response.nim)
+Returns: [`Option[GetUserManualBadgesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user_manual_badges_response.nim)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα getManualBadgesForUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getManualBadgesForUser Παράδειγμα'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getManualBadgesForUser(
-  badgesUserId = "user-98765",
-  commentId = "comment-0a1b2c3d",
-  sso = "sso-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
+let (userBadgesOpt, httpResp) = client.getManualBadgesForUser(
+  tenantId = "my-tenant-123",
+  options = GetManualBadgesForUserOptions()
 )
-if response.isSome:
-  let badges = response.get()
-  echo "Received manual badges for user"
-  echo "HTTP status: ", httpResponse.status
+if userBadgesOpt.isSome:
+  let badges = userBadgesOpt.get()
+  echo badges
 [inline-code-end]
-
----

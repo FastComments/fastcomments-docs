@@ -1,23 +1,32 @@
 ## פרמטרים
 
-| שם | סוג | חובה | תיאור |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| id | string | כן |  |
-| sure | string | לא |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| sure | string | No |  |
 
 ## תגובה
 
-מחזיר: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+מחזיר: [`DeleteTenantResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteTenantResponse.ts)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-deleteTenant'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteTenant דוגמה'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_5f2b9c8a';
-const id: string = 'site_9d4f2a1b';
-const confirmation: string = 'CONFIRM_DELETE';
-const result: APIEmptyResponse = await deleteTenant(tenantId, id, confirmation);
-[inline-code-end]
+async function runExample() {
+    const tenantId: string = "tenant_12345";
+    const id: string = "resource_98765";
+    const sure: string = "confirm";
 
----
+    // קריאה עם פרמטר 'sure' אופציונלי
+    const responseWithSure: DeleteTenantResponse = await deleteTenant(tenantId, id, sure);
+    console.log(responseWithSure);
+
+    // קריאה ללא פרמטר 'sure' אופציונלי
+    const responseWithoutSure: DeleteTenantResponse = await deleteTenant(tenantId, id);
+    console.log(responseWithoutSure);
+}
+
+runExample();
+[inline-code-end]

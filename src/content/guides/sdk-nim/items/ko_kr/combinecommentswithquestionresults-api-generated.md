@@ -1,42 +1,26 @@
+---
 ## 매개변수
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| questionId | string | 아니오 |  |
-| questionIds | seq[string] | 아니오 |  |
-| urlId | string | 예 |  |
-| startDate | string | 아니오 |  |
-| forceRecalculate | bool | 아니오 |  |
-| minValue | float64 | 아니오 |  |
-| maxValue | float64 | 아니오 |  |
-| limit | float64 | 아니오 |  |
+| 이름 | 형식 | 필수 | 설명 |
+|------|------|------|------|
+| tenantId | string | Yes |  |
+| options | CombineCommentsWithQuestionResultsOptions | No |  |
 
 ## 응답
 
 반환: [`Option[CombineQuestionResultsWithCommentsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_combine_question_results_with_comments_response.nim)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'combineCommentsWithQuestionResults 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'combineCommentsWithQuestionResults 예시'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.combineCommentsWithQuestionResults(
+let (combineOpt, httpResponse) = client.combineCommentsWithQuestionResults(
   tenantId = "my-tenant-123",
-  questionId = "",
-  questionIds = @[],
-  urlId = "news/article-2026-climate-change",
-  startDate = "",
-  forceRecalculate = false,
-  minValue = 0.0,
-  maxValue = 0.0,
-  limit = 0.0
+  options = default(CombineCommentsWithQuestionResultsOptions)
 )
 
-if response.isSome:
-  let combined = response.get()
-  echo "Combined results received for tenant:", " my-tenant-123"
-else:
-  echo "No combined results returned"
+if combineOpt.isSome:
+  let combineResult = combineOpt.get()
 [inline-code-end]
 
 ---

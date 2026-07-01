@@ -1,6 +1,6 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Так |  |
 | yearNumber | number | query | Ні |  |
@@ -20,30 +20,34 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api_key
-// Конфігурація авторизації API-ключа: api_key
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Налаштування авторизації API ключа: api_key
+$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Розкоментуйте нижче, щоб налаштувати префікс (наприклад, Bearer) для API ключа, якщо потрібно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // Якщо ви хочете використати власний HTTP-клієнт, передайте клієнт, який реалізує `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    // Це необов'язково, за замовчуванням буде використано `GuzzleHttp\Client`.
+    // Якщо ви хочете використовувати власний HTTP-клієнт, передайте ваш клієнт, який реалізує `GuzzleHttp\ClientInterface`.
+    // Це необов'язково, `GuzzleHttp\Client` буде використано за замовчуванням.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$year_number = 3.4; // float
-$month_number = 3.4; // float
-$day_number = 3.4; // float
-$skip = 3.4; // float
+$options = [
+    'year_number' => 3.4, // float
+    'month_number' => 3.4, // float
+    'day_number' => 3.4, // float
+    'skip' => 3.4, // float
+];
+
 
 try {
-    $result = $apiInstance->getTenantDailyUsages($tenant_id, $year_number, $month_number, $day_number, $skip);
+    $result = $apiInstance->getTenantDailyUsages($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getTenantDailyUsages: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

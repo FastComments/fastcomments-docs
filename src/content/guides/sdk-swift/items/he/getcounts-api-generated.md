@@ -1,8 +1,9 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| sso | string | query | לא |  |
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## תגובה
 
@@ -10,14 +11,15 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getCounts'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getCounts'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// הדוגמאות הבאות של הקוד עדיין בבטא. עבור כל בעיה, נא דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// הקוד הבא עדיין בשלבי בטא. עבור כל בעיה, אנא דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let sso = "sso_example" // String |  (אופציונלי)
+let tenantId = "tenantId_example" // String | 
+let sso = "sso_example" // String |  (optional)
 
-ModerationAPI.getCounts(sso: sso) { (response, error) in
+ModerationAPI.getCounts(tenantId: tenantId, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return

@@ -1,17 +1,18 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Yes |  |
-| banEmail | boolean | query | No |  |
-| banEmailDomain | boolean | query | No |  |
-| banIP | boolean | query | No |  |
-| deleteAllUsersComments | boolean | query | No |  |
-| bannedUntil | string | query | No |  |
-| isShadowBan | boolean | query | No |  |
-| updateId | string | query | No |  |
-| banReason | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Evet |  |
+| commentId | string | path | Evet |  |
+| banEmail | boolean | query | Hayır |  |
+| banEmailDomain | boolean | query | Hayır |  |
+| banIP | boolean | query | Hayır |  |
+| deleteAllUsersComments | boolean | query | Hayır |  |
+| bannedUntil | string | query | Hayır |  |
+| isShadowBan | boolean | query | Hayır |  |
+| updateId | string | query | Hayır |  |
+| banReason | string | query | Hayır |  |
+| sso | string | query | Hayır |  |
 
 ## Yanıt
 
@@ -27,23 +28,28 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Özel bir HTTP istemcisi kullanmak isterseniz, `GuzzleHttp\ClientInterface` uygulayan istemcinizi geçin.
-    // Bu isteğe bağlıdır, `GuzzleHttp\Client` varsayılan olarak kullanılacaktır.
+    // Özel bir HTTP istemcisi kullanmak istiyorsanız, `GuzzleHttp\ClientInterface`'i uygulayan istemcinizi geçirin.
+    // Bu isteğe bağlıdır, varsayılan olarak `GuzzleHttp\Client` kullanılacaktır.
     new GuzzleHttp\Client()
 );
+
+$tenant_id = 'tenant_id_example'; // string
 $comment_id = 'comment_id_example'; // string
-$ban_email = True; // bool
-$ban_email_domain = True; // bool
-$ban_ip = True; // bool
-$delete_all_users_comments = True; // bool
-$banned_until = 'banned_until_example'; // string
-$is_shadow_ban = True; // bool
-$update_id = 'update_id_example'; // string
-$ban_reason = 'ban_reason_example'; // string
-$sso = 'sso_example'; // string
+$options = [
+    'ban_email' => True, // bool
+    'ban_email_domain' => True, // bool
+    'ban_ip' => True, // bool
+    'delete_all_users_comments' => True, // bool
+    'banned_until' => 'banned_until_example', // string
+    'is_shadow_ban' => True, // bool
+    'update_id' => 'update_id_example', // string
+    'ban_reason' => 'ban_reason_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->postBanUserFromComment($comment_id, $ban_email, $ban_email_domain, $ban_ip, $delete_all_users_comments, $banned_until, $is_shadow_ban, $update_id, $ban_reason, $sso);
+    $result = $apiInstance->postBanUserFromComment($tenant_id, $comment_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->postBanUserFromComment: ', $e->getMessage(), PHP_EOL;

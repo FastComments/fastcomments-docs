@@ -1,28 +1,41 @@
----
 ## パラメータ
 
-| Name | 型 | 必須 | 説明 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | はい |  |
-| id | string | はい |  |
-| updateNotificationBody | UpdateNotificationBody | はい |  |
-| userId | string | いいえ |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updateNotificationBody | UpdateNotificationBody | Yes |  |
+| userId | string | No |  |
 
-## レスポンス
+## 応答
 
-戻り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+返り値: [`UpdateNotificationResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateNotificationResponse.ts)
 
 ## 例
 
-[inline-code-attrs-start title = 'updateNotification の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateNotification 例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'd6f9b2a4-1b2c-4e5f-9a7b-3c2d1e4f5a6b';
-const id: string = 'notification-78f1c3e4';
-const updateNotificationBody: UpdateNotificationBody = {} as UpdateNotificationBody;
-const userId: string = 'user-9b3f2a1c';
+const tenantId: string = "tenant_5f4d2c";
+const notificationId: string = "notif_9b8a7c";
 
-const responseWithUser: APIEmptyResponse = await updateNotification(tenantId, id, updateNotificationBody, userId);
-const responseWithoutUser: APIEmptyResponse = await updateNotification(tenantId, id, updateNotificationBody);
+const updateBody: UpdateNotificationBody = {
+  enabled: false,
+  sendEmail: true,
+  schedule: "2023-12-01T08:00:00Z"
+};
+
+const userId: string = "user_123e4567";
+
+const responseWithUser: UpdateNotificationResponse = await updateNotification(
+  tenantId,
+  notificationId,
+  updateBody,
+  userId
+);
+
+const responseWithoutUser: UpdateNotificationResponse = await updateNotification(
+  tenantId,
+  notificationId,
+  updateBody
+);
 [inline-code-end]
-
----

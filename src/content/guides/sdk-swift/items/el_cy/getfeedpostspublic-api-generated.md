@@ -1,39 +1,39 @@
-req
-tenantId
-afterId
+req  
+tenantId  
+afterId  
 
-## Παράμετροι
+## Παράμετρος
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Ναι |  |
-| afterId | string | query | Όχι |  |
-| limit | integer | query | Όχι |  |
-| tags | array | query | Όχι |  |
-| sso | string | query | Όχι |  |
-| isCrawler | boolean | query | Όχι |  |
-| includeUserInfo | boolean | query | Όχι |  |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|------------|-----------|
+| tenantId | string | path | Yes |  |
+| afterId | string | query | No |  |
+| limit | integer | query | No |  |
+| tags | array | query | No |  |
+| sso | string | query | No |  |
+| isCrawler | boolean | query | No |  |
+| includeUserInfo | boolean | query | No |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PublicFeedPostsResponse.swift)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα getFeedPostsPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getFeedPostsPublic Παράδειγμα'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Τα ακόλουθα δείγματα κώδικα είναι ακόμα beta. Για οποιοδήποτε πρόβλημα, παρακαλώ αναφέρετέ το στο http://github.com/OpenAPITools/openapi-generator/issues/new
+// Τα παρακάτω δείγματα κώδικα είναι ακόμα σε beta. Για οποιοδήποτε πρόβλημα, παρακαλούμε αναφέρετέ το μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let afterId = "afterId_example" // String |  (προαιρετικό)
-let limit = 987 // Int |  (προαιρετικό)
-let tags = ["inner_example"] // [String] |  (προαιρετικό)
-let sso = "sso_example" // String |  (προαιρετικό)
-let isCrawler = true // Bool |  (προαιρετικό)
-let includeUserInfo = true // Bool |  (προαιρετικό)
+let afterId = "afterId_example" // String |  (optional)
+let limit = 987 // Int |  (optional)
+let tags = ["inner_example"] // [String] |  (optional)
+let sso = "sso_example" // String |  (optional)
+let isCrawler = true // Bool |  (optional)
+let includeUserInfo = true // Bool |  (optional)
 
-PublicAPI.getFeedPostsPublic(tenantId: tenantId, afterId: afterId, limit: limit, tags: tags, sso: sso, isCrawler: isCrawler, includeUserInfo: includeUserInfo) { (response, error) in
+PublicAPI.getFeedPostsPublic(tenantId: tenantId, options: PublicAPI.GetFeedPostsPublicOptions(afterId: afterId, limit: limit, tags: tags, sso: sso, isCrawler: isCrawler, includeUserInfo: includeUserInfo)) { (response, error) in
     guard error == nil else {
         print(error)
         return

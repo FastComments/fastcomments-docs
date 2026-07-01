@@ -1,37 +1,23 @@
----
 ## Paramètres
 
-| Nom | Type | Requis | Description |
-|------|------|----------|-------------|
+| Nom | Type | Obligatoire | Description |
+|------|------|--------------|-------------|
 | tenantId | string | Oui |  |
-| yearNumber | double | Non |  |
-| monthNumber | double | Non |  |
-| dayNumber | double | Non |  |
-| skip | double | Non |  |
+| options | const GetTenantDailyUsagesOptions& | Oui |  |
 
 ## Réponse
 
-Renvoie : [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetTenantDailyUsagesResponse.h)
+Retourne : [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetTenantDailyUsagesResponse.h)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de getTenantDailyUsages'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-boost::optional<double> yearNumber = 2026;
-boost::optional<double> monthNumber = 6;
-boost::optional<double> dayNumber; 
-boost::optional<double> skip = 0;
-api->getTenantDailyUsages(tenantId, yearNumber, monthNumber, dayNumber, skip)
-.then([=](pplx::task<std::shared_ptr<GetTenantDailyUsagesResponse>> t){
-    try {
-        auto resp = t.get();
-        if(!resp) resp = std::make_shared<GetTenantDailyUsagesResponse>();
-        return resp;
-    } catch(...) {
-        return std::make_shared<GetTenantDailyUsagesResponse>();
-    }
-});
+GetTenantDailyUsagesOptions opts;
+opts.startDate = boost::optional<utility::datetime>(utility::datetime::from_string(U("2023-01-01T00:00:00Z")));
+opts.endDate   = boost::optional<utility::datetime>(utility::datetime::from_string(U("2023-01-31T23:59:59Z")));
+api->getTenantDailyUsages(tenantId, opts).then([](std::shared_ptr<GetTenantDailyUsagesResponse> resp){
+    auto result = std::make_shared<GetTenantDailyUsagesResponse>(*resp);
+}).wait();
 [inline-code-end]
-
----

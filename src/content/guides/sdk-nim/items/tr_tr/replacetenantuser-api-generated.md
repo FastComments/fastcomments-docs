@@ -1,11 +1,11 @@
-## Parametreler
+## Parameters
 
 | Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | id | string | Hayır |  |
 | replaceTenantUserBody | ReplaceTenantUserBody | Hayır |  |
-| updateComments | string | Hayır |  |
+| updateComments | string = "" | Hayır |  |
 
 ## Yanıt
 
@@ -15,23 +15,12 @@ Döndürür: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'replaceTenantUser Örneği'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let body = ReplaceTenantUserBody(
-  displayName = "Jane Doe",
-  email = "jane.doe@example.com",
-  externalId = "jdoe-789",
-  admin = false,
-  enabled = true,
-  tags = @["editor", "subscriber"]
-)
-
+let replaceBody = ReplaceTenantUserBody()
 let (response, httpResponse) = client.replaceTenantUser(
   tenantId = "my-tenant-123",
   id = "user-456",
-  replaceTenantUserBody = body,
-  updateComments = "true"
-)
-
+  replaceTenantUserBody = replaceBody,
+  updateComments = "")
 if response.isSome:
-  let apiEmpty = response.get()
-  echo "ReplaceTenantUser succeeded, http status:", httpResponse.status
+  let empty = response.get()
 [inline-code-end]

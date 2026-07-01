@@ -1,7 +1,6 @@
----
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | yearNumber | number | query | No |  |
@@ -15,9 +14,9 @@ Döndürür: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fa
 
 ## Örnek
 
-[inline-code-attrs-start title = 'getTenantDailyUsages Örneği'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTenantDailyUsages Örnek'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Aşağıdaki kod örnekleri hala beta durumundadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new üzerinden bildirin
+// Aşağıdaki kod örnekleri hâlâ beta aşamasındadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new adresinden bildirin
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -26,7 +25,7 @@ let monthNumber = 987 // Double |  (isteğe bağlı)
 let dayNumber = 987 // Double |  (isteğe bağlı)
 let skip = 987 // Double |  (isteğe bağlı)
 
-DefaultAPI.getTenantDailyUsages(tenantId: tenantId, yearNumber: yearNumber, monthNumber: monthNumber, dayNumber: dayNumber, skip: skip) { (response, error) in
+DefaultAPI.getTenantDailyUsages(tenantId: tenantId, options: DefaultAPI.GetTenantDailyUsagesOptions(yearNumber: yearNumber, monthNumber: monthNumber, dayNumber: dayNumber, skip: skip)) { (response, error) in
     guard error == nil else {
         print(error)
         return

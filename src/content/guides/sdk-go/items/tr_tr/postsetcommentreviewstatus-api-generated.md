@@ -1,10 +1,12 @@
 ## Parametreler
 
-| Adı | Tür | Location | Gerekli | Açıklama |
+| Ad | Tip | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Evet |  |
-| reviewed | boolean | query | Hayır |  |
-| sso | string | query | Hayır |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| reviewed | boolean | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Yanıt
 
@@ -24,18 +26,20 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
-	reviewed := true // bool |  (isteğe bağlı)
-	sso := "sso_example" // string |  (isteğe bağlı)
+	reviewed := true // bool |  (opsiyonel)
+	broadcastId := "broadcastId_example" // string |  (opsiyonel)
+	sso := "sso_example" // string |  (opsiyonel)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostSetCommentReviewStatus(context.Background(), commentId).Reviewed(reviewed).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostSetCommentReviewStatus(context.Background(), commentId).TenantId(tenantId).Reviewed(reviewed).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostSetCommentReviewStatus``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Çağrı sırasında hata `ModerationAPI.PostSetCommentReviewStatus``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Tam HTTP yanıtı: %v\n", r)
 	}
-	// `PostSetCommentReviewStatus`'ten yanıt: APIEmptyResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostSetCommentReviewStatus`: %v\n", resp)
+	// `PostSetCommentReviewStatus`'den yanıt: APIEmptyResponse
+	fmt.Fprintf(os.Stdout, "`ModerationAPI.PostSetCommentReviewStatus`'den yanıt: %v\n", resp)
 }
 [inline-code-end]

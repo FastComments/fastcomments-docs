@@ -1,31 +1,33 @@
 ## פרמטרים
 
-| שם | Type | נדרש | תיאור |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
-| textSearch | string | לא |  |
-| byIPFromComment | string | לא |  |
-| filter | string | לא |  |
-| searchFilters | string | לא |  |
-| demo | boolean | לא |  |
-| sso | string | לא |  |
+| textSearch | string | No |  |
+| byIPFromComment | string | No |  |
+| filter | string | No |  |
+| searchFilters | string | No |  |
+| demo | boolean | No |  |
+| tenantId | string | No |  |
+| sso | string | No |  |
 
 ## תגובה
 
-מחזיר: [`ModerationAPICountCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPICountCommentsResponse.ts)
+מחזיר: [`GetCountResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCountResponse.ts)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getCount'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getCount'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const countResult: ModerationAPICountCommentsResponse = await getCount(
-    "reported harassment",
-    "203.0.113.7",
-    "status:pending",
-    undefined,
-    false,
-    "sso_user_789.jwt.token"
-  );
-  console.log(countResult);
-})();
+async function main(): Promise<void> {
+  const count: GetCountResponse = await getCount({
+    textSearch: "order issue",
+    byIPFromComment: "198.51.100.23",
+    filter: "pending",
+    demo: true,
+    tenantId: "acme_corp",
+    sso: "sso_abcdef123456"
+  });
+  console.log(count);
+}
+main();
 [inline-code-end]

@@ -1,10 +1,11 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| badgesUserId | string | query | Ne |  |
-| commentId | string | query | Ne |  |
-| sso | string | query | Ne |  |
+| Ime | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | upit | Da |  |
+| badgesUserId | string | upit | Ne |  |
+| commentId | string | upit | Ne |  |
+| sso | string | upit | Ne |  |
 
 ## Odgovor
 
@@ -12,9 +13,9 @@ Vraća: [`GetUserManualBadgesResponse`](https://github.com/FastComments/fastcomm
 
 ## Primjer
 
-[inline-code-attrs-start title = 'getManualBadgesForUser Primjer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getManualBadgesForUser'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvezi klase:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -27,11 +28,12 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String badgesUserId = "badgesUserId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      GetUserManualBadgesResponse result = apiInstance.getManualBadgesForUser()
+      GetUserManualBadgesResponse result = apiInstance.getManualBadgesForUser(tenantId)
             .badgesUserId(badgesUserId)
             .commentId(commentId)
             .sso(sso)
@@ -47,3 +49,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

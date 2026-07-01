@@ -1,25 +1,20 @@
----
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Не |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[GetTenantUserResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_tenant_user_response.nim)
+Returns: [`Option[GetTenantUserResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_tenant_user_response.nim)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример getTenantUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTenantUser Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTenantUser(tenantId = "my-tenant-123", id = "user-789")
-if response.isSome:
-  let tenantUser = response.get()
-  echo "User fetched:", tenantUser
-else:
-  echo "No user found, HTTP status:", httpResponse.status
+let (maybeUser, httpResp) = client.getTenantUser(tenantId = "my-tenant-123", id = "user-456")
+if maybeUser.isSome:
+  let user = maybeUser.get()
+  echo user
 [inline-code-end]
-
----

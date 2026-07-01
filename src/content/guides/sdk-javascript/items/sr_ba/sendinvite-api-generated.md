@@ -1,22 +1,22 @@
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
 | tenantId | string | Da |  |
 | id | string | Da |  |
 | fromName | string | Da |  |
 
 ## Odgovor
 
-Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Vraća: [`SendInviteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SendInviteResponse.ts)
 
 ## Primjer
 
 [inline-code-attrs-start title = 'Primjer sendInvite'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'bright-media-12';
-const id: string = 'user-8f4d2';
-const fromName: string = 'Sofia Park';
-const optionalNote: string | undefined = undefined;
-const result: APIEmptyResponse = await sendInvite(tenantId, id, fromName);
+const tenantId: string = "acme-corp-tenant";
+const inviteId: string = "invite-12345";
+const fromName: string = "John Doe";
+
+const inviteResult: SendInviteResponse = await sendInvite(tenantId, inviteId, fromName);
 [inline-code-end]

@@ -2,7 +2,8 @@
 
 | Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
-| sso | String | Ne |  |
+| tenant_id | String | Yes |  |
+| sso | String | No |  |
 
 ## Odgovor
 
@@ -10,16 +11,14 @@ Vrne: [`GetBannedUsersCountResponse`](https://github.com/FastComments/fastcommen
 
 ## Primer
 
-[inline-code-attrs-start title = 'get_counts Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer get_counts'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_counts() -> Result<(), Error> {
-    let params: GetCountsParams = GetCountsParams {
-        sso: Some("acme-corp-tenant".to_string()),
+async fn run() -> Result<(), Error> {
+    let params = GetCountsParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        sso: Some("news/article".to_string()),
     };
-    let counts: GetBannedUsersCountResponse = get_counts(&configuration, params).await?;
-    println!("{:?}", counts);
+    let _response = get_counts(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

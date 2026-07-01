@@ -7,7 +7,7 @@
 
 ## Antwort
 
-Gibt zurück: [`GetSubscriptionsAPIResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetSubscriptionsAPIResponse.php)
+Rückgabe: [`GetSubscriptionsAPIResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetSubscriptionsAPIResponse.php)
 
 ## Beispiel
 
@@ -17,9 +17,9 @@ Gibt zurück: [`GetSubscriptionsAPIResponse`](https://github.com/FastComments/fa
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// API-Schlüssel-Authentifizierung konfigurieren: api_key
+// Konfiguriere API-Schlüssel-Authorisierung: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Unten auskommentieren, um Präfix einzurichten (z. B. Bearer) für den API-Schlüssel, falls nötig
+// Entfernen Sie das Kommentarzeichen unten, um ein Präfix (z.B. Bearer) für den API-Schlüssel einzurichten, falls erforderlich
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
@@ -29,8 +29,10 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $user_id = 'user_id_example'; // string
+
 
 try {
     $result = $apiInstance->getSubscriptions($tenant_id, $user_id);

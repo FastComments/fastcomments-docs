@@ -1,30 +1,30 @@
-Отпремите и промијените величину слике
+Upload and resize an image
 
-## Параметри
+## Parameters
 
-| Назив | Тип | Локација | Обавезно | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| sizePreset | string | query | Не | Подешавање величине: "Default" (1000x1000px) или "CrossPlatform" (креира величине за популарне уређаје) |
-| urlId | string | query | Не | ИД странице са које се врши отпремање, за конфигурацију |
+| tenantId | string | path | Yes |  |
+| sizePreset | string | query | No | Size preset: "Default" (1000x1000px) or "CrossPlatform" (creates sizes for popular devices) |
+| urlId | string | query | No | Page id that upload is happening from, to configure |
 
-## Одговор
+## Response
 
-Враћа: [`UploadImageResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/UploadImageResponse.swift)
+Returns: [`UploadImageResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/UploadImageResponse.swift)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'uploadImage пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'uploadImage Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи примери кода су још у бета фази. За било који проблем, пријавите на http://github.com/OpenAPITools/openapi-generator/issues/new
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let file = URL(string: "https://example.com")! // URL | 
-let sizePreset = SizePreset() // SizePreset | Подешавање величине: \"Default\" (1000x1000px) или \"CrossPlatform\" (креира величине за популарне уређаје) (опционо)
-let urlId = "urlId_example" // String | ИД странице са које се врши отпремање, за конфигурацију (опционо)
+let sizePreset = SizePreset() // SizePreset | Size preset: \"Default\" (1000x1000px) or \"CrossPlatform\" (creates sizes for popular devices) (optional)
+let urlId = "urlId_example" // String | Page id that upload is happening from, to configure (optional)
 
-PublicAPI.uploadImage(tenantId: tenantId, file: file, sizePreset: sizePreset, urlId: urlId) { (response, error) in
+PublicAPI.uploadImage(tenantId: tenantId, file: file, options: PublicAPI.UploadImageOptions(sizePreset: sizePreset, urlId: urlId)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -35,5 +35,3 @@ PublicAPI.uploadImage(tenantId: tenantId, file: file, sizePreset: sizePreset, ur
     }
 }
 [inline-code-end]
-
----

@@ -1,15 +1,15 @@
-## Parametry
+## Parameters
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| tag | string | ścieżka | Tak |  |
-| tenantId | string | zapytanie | Nie |  |
+| tenantId | string | query | Yes |  |
+| tag | string | path | Yes |  |
 
-## Odpowiedź
+## Response
 
 Zwraca: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
 
-## Przykład
+## Example
 
 [inline-code-attrs-start title = 'Przykład DeleteHashTag'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -23,9 +23,9 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	tag := "tag_example" // string | 
-	tenantId := "tenantId_example" // string |  (opcjonalne)
-	deleteHashTagRequestBody := *openapiclient.NewDeleteHashTagRequestBody() // DeleteHashTagRequestBody |  (opcjonalne)
+	deleteHashTagRequestBody := *openapiclient.NewDeleteHashTagRequestBody() // DeleteHashTagRequestBody |  (opcjonalny)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -38,5 +38,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.DeleteHashTag`: %v\n", resp)
 }
 [inline-code-end]
-
----

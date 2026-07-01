@@ -1,21 +1,22 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
+| tenantId | string | Да |  |
+| id | string | Да |  |
 
 ## Отговор
 
-Връща: [`GetCachedNotificationCountResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCachedNotificationCountResponse.ts)
+Връща: [`GetCachedNotificationCountResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCachedNotificationCountResponse1.ts)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример за getCachedNotificationCount'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7f3a2b4c";
-const id: string = "user_9812b";
-const result: GetCachedNotificationCountResponse = await getCachedNotificationCount(tenantId, id);
-[inline-code-end]
+const tenantId: string = "e3f1a9b2-4c5d-6e7f-8a9b-0c1d2e3f4a5b";
+const userId: string = "u-20231101-001";
 
----
+const notificationResult: GetCachedNotificationCountResponse1 = await getCachedNotificationCount(tenantId, userId);
+
+console.log(notificationResult);
+[inline-code-end]

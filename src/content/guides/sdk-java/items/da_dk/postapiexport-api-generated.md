@@ -1,7 +1,8 @@
 ## Parametre
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
+|------|------|-----------|----------|------------|
+| tenantId | string | query | Ja |  |
 | text-search | string | query | Nej |  |
 | byIPFromComment | string | query | Nej |  |
 | filters | string | query | Nej |  |
@@ -9,7 +10,7 @@
 | sorts | string | query | Nej |  |
 | sso | string | query | Nej |  |
 
-## Respons
+## Svar
 
 Returnerer: [`ModerationExportResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationExportResponse.java)
 
@@ -30,6 +31,7 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String textSearch = "textSearch_example"; // String | 
     String byIPFromComment = "byIPFromComment_example"; // String | 
     String filters = "filters_example"; // String | 
@@ -37,7 +39,7 @@ public class Example {
     String sorts = "sorts_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationExportResponse result = apiInstance.postApiExport()
+      ModerationExportResponse result = apiInstance.postApiExport(tenantId)
             .textSearch(textSearch)
             .byIPFromComment(byIPFromComment)
             .filters(filters)
@@ -47,10 +49,10 @@ public class Example {
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ModerationApi#postApiExport");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("Undtagelse ved kald af ModerationApi#postApiExport");
+      System.err.println("Statuskode: " + e.getCode());
+      System.err.println("Årsag: " + e.getResponseBody());
+      System.err.println("Svar‑headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }

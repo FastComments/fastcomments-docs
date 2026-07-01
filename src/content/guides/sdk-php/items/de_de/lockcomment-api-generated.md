@@ -9,7 +9,7 @@
 
 ## Antwort
 
-Gibt zurück: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
+Rückgabe: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
 ## Beispiel
 
@@ -20,15 +20,19 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
+// Wenn Sie einen benutzerdefinierten HTTP-Client verwenden möchten, übergeben Sie Ihren Client, der `GuzzleHttp\ClientInterface` implementiert.
+// Dies ist optional, `GuzzleHttp\Client` wird standardmäßig verwendet.
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Wenn Sie einen benutzerdefinierten HTTP-Client verwenden möchten, übergeben Sie Ihren Client, der `GuzzleHttp\ClientInterface` implementiert.
-    // Dies ist optional, `GuzzleHttp\Client` wird standardmäßig verwendet.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $comment_id = 'comment_id_example'; // string
 $broadcast_id = 'broadcast_id_example'; // string
 $sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->lockComment($tenant_id, $comment_id, $broadcast_id, $sso);
@@ -37,5 +41,3 @@ try {
     echo 'Exception when calling PublicApi->lockComment: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

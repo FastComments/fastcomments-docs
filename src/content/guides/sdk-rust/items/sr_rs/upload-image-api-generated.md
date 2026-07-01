@@ -1,16 +1,30 @@
-Отпреми и промени величину слике
+Upload and resize an image
 
-## Параметри
+## Parameters
 
-| Назив | Тип | Обавезно | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| file | std::path::PathBuf | Да |  |
-| size_preset | models::SizePreset | Не |  |
-| url_id | String | Не |  |
+| tenant_id | String | Yes |  |
+| file | std::path::PathBuf | Yes |  |
+| size_preset | models::SizePreset | No |  |
+| url_id | String | No |  |
 
-## Одговор
+## Response
 
-Враћа: [`UploadImageResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/upload_image_response.rs)
+Returns: [`UploadImageResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/upload_image_response.rs)
 
----
+## Example
+
+[inline-code-attrs-start title = 'upload_image Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+async fn example() -> Result<(), Error> {
+    let params = UploadImageParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        file: std::path::PathBuf::from("/tmp/photo.jpg"),
+        size_preset: Some(models::SizePreset::Medium),
+        url_id: Some("news/article".to_string()),
+    };
+    let _response = upload_image(&configuration, params).await?;
+    Ok(())
+}
+[inline-code-end]

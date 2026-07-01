@@ -1,17 +1,10 @@
-## Parameters
+## Parametri
 
-| Ime | Tip | Obvezno | Opis |
+| Ime | Vrsta | Obvezno | Opis |
 |------|------|----------|-------------|
+| tenantId | string | Da |  |
 | commentId | string | Da |  |
-| banEmail | bool | Ne |  |
-| banEmailDomain | bool | Ne |  |
-| banIP | bool | Ne |  |
-| deleteAllUsersComments | bool | Ne |  |
-| bannedUntil | string | Ne |  |
-| isShadowBan | bool | Ne |  |
-| updateId | string | Ne |  |
-| banReason | string | Ne |  |
-| sso | string | Ne |  |
+| options | PostBanUserFromCommentOptions | Ne |  |
 
 ## Odgovor
 
@@ -19,23 +12,17 @@ Vrne: [`Option[BanUserFromCommentResult]`](https://github.com/FastComments/fastc
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer postBanUserFromComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postBanUserFromComment Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postBanUserFromComment(
-  commentId = "cmt-8f3a1b",
-  banEmail = false,
-  banEmailDomain = false,
-  banIP = false,
-  deleteAllUsersComments = false,
-  bannedUntil = "",
-  isShadowBan = false,
-  updateId = "",
-  banReason = "",
-  sso = ""
+let (banResult, httpResp) = client.postBanUserFromComment(
+  tenantId = "my-tenant-123",
+  commentId = "cmt-456",
+  options = PostBanUserFromCommentOptions()
 )
-if response.isSome:
-  let banResult = response.get()
-  discard banResult
-else:
-  echo "No ban result returned"
+
+if banResult.isSome:
+  let result = banResult.get()
+  echo result
 [inline-code-end]
+
+---

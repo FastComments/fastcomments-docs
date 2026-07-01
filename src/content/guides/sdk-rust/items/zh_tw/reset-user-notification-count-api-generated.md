@@ -1,26 +1,24 @@
 ## 參數
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| 名稱 | 類型 | 必填 | 描述 |
+|------|------|------|------|
 | tenant_id | String | 是 |  |
 | sso | String | 否 |  |
 
 ## 回應
 
-回傳: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/reset_user_notifications_response.rs)
+返回: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/reset_user_notifications_response.rs)
 
-## 範例
+## 示例
 
-[inline-code-attrs-start title = 'reset_user_notification_count 範例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'reset_user_notification_count 示例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_reset() -> Result<ResetUserNotificationsResponse, Error> {
-    let params: ResetUserNotificationCountParams = ResetUserNotificationCountParams {
+async fn run_example(config: &configuration::Configuration) -> Result<(), Error> {
+    let params = ResetUserNotificationCountParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        sso: Some("https://sso.acme.com/session/abc123".to_string()),
+        sso: Some("john.doe".to_string()),
     };
-    let response: ResetUserNotificationsResponse = reset_user_notification_count(&configuration, params).await?;
-    Ok(response)
+    let _response: ResetUserNotificationsResponse = reset_user_notification_count(config, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

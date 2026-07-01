@@ -3,20 +3,26 @@
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
 | commentId | string | はい |  |
+| tenantId | string | いいえ |  |
 | sso | string | いいえ |  |
 
-## レスポンス
+## 応答
 
-戻り値: [`GetCommentTextResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentTextResponse.ts)
+返却: [`GetModerationCommentTextResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModerationCommentTextResponse.ts)
 
 ## 例
 
-[inline-code-attrs-start title = 'getModerationCommentTextの例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getModerationCommentText の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const commentId: string = "cmt_9f3a2b7d6e1c4a5b";
-const ssoToken: string | undefined = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NDMyMSJ9.DUMMY_SIGNATURE";
-const commentResponse: GetCommentTextResponse = await getModerationCommentText(commentId);
-const commentResponseWithSso: GetCommentTextResponse = await getModerationCommentText(commentId, ssoToken);
-[inline-code-end]
+async function exampleUsage(): Promise<void> {
+  const commentId: string = "cmt_9f8e7d6c5b4a3b2c1d0e";
+  const tenantId: string = "tenant_67890";
+  const sso: string = "sso_token_abc123";
 
----
+  // 必要なパラメータのみで呼び出す
+  const result1: GetModerationCommentTextResponse = await getModerationCommentText(commentId);
+
+  // オプションのパラメータを使用して呼び出す
+  const result2: GetModerationCommentTextResponse = await getModerationCommentText(commentId, tenantId, sso);
+}
+[inline-code-end]

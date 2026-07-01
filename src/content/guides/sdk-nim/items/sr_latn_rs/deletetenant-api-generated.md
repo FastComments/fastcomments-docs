@@ -1,10 +1,10 @@
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
 | tenantId | string | Da |  |
 | id | string | Ne |  |
-| sure | string | Ne |  |
+| sure | string = "" | Ne |  |
 
 ## Odgovor
 
@@ -12,13 +12,9 @@ Vraća: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomment
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer deleteTenant'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteTenant Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteTenant(tenantId = "my-tenant-123", id = "", sure = "")
-if response.isSome:
-  let emptyResp = response.get()
-else:
-  discard httpResponse
+let (respOpt, httpResp) = client.deleteTenant(tenantId = "my-tenant-123", id = "tenant-to-delete", sure = "yes")
+if respOpt.isSome:
+  let emptyResp = respOpt.get()
 [inline-code-end]
-
----

@@ -1,6 +1,8 @@
-Όλες οι μέθοδοι API σε αυτό το SDK επιστρέφουν πλειάδες `(Option[ResponseType], Response)`. Το πρώτο στοιχείο περιέχει την αναλυμένη απάντηση εάν ήταν επιτυχής, και το δεύτερο στοιχείο είναι η ακατέργαστη HTTP απάντηση.
+All API methods in this SDK return tuples of `(Option[ResponseType], Response)`. The first element contains the parsed response if successful, and the second element is the raw HTTP response.
 
-### Παράδειγμα: Ανάκτηση σχολίων
+Οι απαιτούμενες παράμετροι και το σώμα του αιτήματος περνούν με τη σειρά. Οι υπόλοιπες προαιρετικές παράμετροι συγκεντρώνονται σε ένα ενιαίο αντικείμενο `Api<Operation>Options`, το οποίο είναι το τελευταίο όρισμα. Οι λειτουργίες χωρίς προαιρετικές παραμέτρους δεν λαμβάνουν αντικείμενο επιλογών.
+
+### Example: Fetching Comments
 
 ```nim
 import httpclient
@@ -14,20 +16,10 @@ client.headers["x-api-key"] = "your-api-key"
 let (response, httpResponse) = getComments(
   httpClient = client,
   tenantId = "your-tenant-id",
-  page = 0,
-  limit = 0,
-  skip = 0,
-  asTree = false,
-  skipChildren = 0,
-  limitChildren = 0,
-  maxTreeDepth = 0,
-  urlId = "your-url-id",
-  userId = "",
-  anonUserId = "",
-  contextUserId = "",
-  hashTag = "",
-  parentId = "",
-  direction = SortDirections.DESC
+  options = GetCommentsOptions(
+    urlId: "your-url-id",
+    direction: SortDirections.DESC
+  )
 )
 
 if httpResponse.code == Http200:

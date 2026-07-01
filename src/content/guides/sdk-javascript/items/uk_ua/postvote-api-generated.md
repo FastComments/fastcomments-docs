@@ -1,25 +1,34 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
-|------|------|----------|-------------|
-| commentId | string | Так |  |
-| direction | string | Ні |  |
-| sso | string | Ні |  |
+| Ім'я | Тип | Обов'язково | Опис |
+|------|------|------------|------|
+| commentId | string | Yes |  |
+| direction | string | No |  |
+| broadcastId | string | No |  |
+| tenantId | string | No |  |
+| sso | string | No |  |
 
 ## Відповідь
 
-Повертає: [`VoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/VoteResponse.ts)
+Returns: [`PostVoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostVoteResponse.ts)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад postVote'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'приклад postVote'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const commentId: string = 'cmt_5f6d3a2b9c1e';
-const minimalResponse: VoteResponse = await postVote(commentId);
+let commentId: string = 'cmt_12345';
+let direction: string = 'up';
+let broadcastId: string = 'brd_67890';
+let tenantId: string = 'tenant_abc';
+let sso: string = 'sso_token_xyz';
 
-const direction: string = 'up';
-const ssoToken: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiamRvZSIsImlhdCI6MTYwOTAwMDAwMH0.dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk';
-const fullResponse: VoteResponse = await postVote(commentId, direction, ssoToken);
+const fullVote: PostVoteResponse = await postVote(
+  commentId,
+  direction,
+  broadcastId,
+  tenantId,
+  sso
+);
+
+const simpleVote: PostVoteResponse = await postVote('cmt_67890');
 [inline-code-end]
-
----

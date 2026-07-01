@@ -1,18 +1,18 @@
-## Параметри
+## Parameters
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Так |  |
-| commentIds | string | query | Так | Список ідентифікаторів коментарів, розділених комами. |
-| sso | string | query | Ні |  |
+| tenantId | string | query | Yes |  |
+| commentIds | string | query | Yes | Список ідентифікаторів коментарів, розділений комами. |
+| sso | string | query | No |  |
 
-## Відповідь
+## Response
 
-Повертає: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CheckBlockedCommentsResponse.php)
+Returns: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CheckBlockedCommentsResponse.php)
 
-## Приклад
+## Example
 
-[inline-code-attrs-start title = 'Приклад checkedCommentsForBlocked'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'checkedCommentsForBlocked Приклад'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -20,13 +20,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Якщо ви хочете використати власний HTTP-клієнт, передайте ваш клієнт, який реалізує `GuzzleHttp\ClientInterface`.
-    // Це необов'язково, за замовчуванням буде використано `GuzzleHttp\Client`.
+    // Якщо ви хочете використати власний HTTP‑клієнт, передайте ваш клієнт, який реалізує `GuzzleHttp\ClientInterface`.
+    // Це необов’язково, за замовчуванням буде використано `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$comment_ids = 'comment_ids_example'; // string | Список ідентифікаторів коментарів, розділених комами.
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // рядок
+$comment_ids = 'comment_ids_example'; // рядок | Список ідентифікаторів коментарів, розділений комами.
+$sso = 'sso_example'; // рядок
+
 
 try {
     $result = $apiInstance->checkedCommentsForBlocked($tenant_id, $comment_ids, $sso);

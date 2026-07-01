@@ -1,11 +1,10 @@
----
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Назва | Тип | Обов’язково | Опис |
 |------|------|----------|-------------|
-| tag | string | Ні |  |
-| tenantId | string | Так |  |
-| updateHashTagBody | UpdateHashTagBody | Ні |  |
+| tenantId | string | Yes |  |
+| tag | string | No |  |
+| updateHashTagBody | UpdateHashTagBody | No |  |
 
 ## Відповідь
 
@@ -13,12 +12,17 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад patchHashTag'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'patchHashTag Приклад'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.patchHashTag(tag = "breaking-news", tenantId = "my-tenant-123", updateHashTagBody = UpdateHashTagBody())
-if response.isSome:
-  let updatedHashTag = response.get()
-  echo updatedHashTag
+let updateBody = UpdateHashTagBody()
+let (optResp, httpResp) = client.patchHashTag(
+  tenantId = "my-tenant-123",
+  tag = "news",
+  updateHashTagBody = updateBody
+)
+if optResp.isSome:
+  let resp = optResp.get()
+  echo resp
+else:
+  echo "No response"
 [inline-code-end]
-
----

@@ -1,10 +1,9 @@
----
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
-| tenantId | string | No |  |
-| createHashTagBody | CreateHashTagBody | No |  |
+| tenantId | string | Yes |  |
+| createHashTagBody | CreateHashTagBody | Yes |  |
 
 ## Απάντηση
 
@@ -12,26 +11,15 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα addHashTag'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'addHashTag Παράδειγμα'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-auto tenantId = boost::optional<utility::string_t>(U("my-tenant-123"));
-CreateHashTagBody createBody;
-createBody.name = utility::string_t(U("release"));
-createBody.createdBy = utility::string_t(U("admin@example.com"));
-auto bodyOpt = boost::optional<CreateHashTagBody>(createBody);
+CreateHashTagBody request;
+request.tag = utility::conversions::to_string_t("feature-request");
+request.description = utility::conversions::to_string_t("Requests for new features");
+request.relatedUrl = boost::optional<utility::string_t>(utility::conversions::to_string_t("https://example.com/feature-request"));
 
-api->addHashTag(tenantId, bodyOpt).then([](pplx::task<std::shared_ptr<CreateHashTagResponse>> t){
-    try {
-        auto resp = t.get();
-        if (resp) {
-            std::cout << "HashTag created successfully\n";
-        } else {
-            auto fallback = std::make_shared<CreateHashTagResponse>();
-        }
-    } catch (const std::exception &e) {
-        std::cerr << "AddHashTag failed: " << e.what() << '\n';
-    }
-});
+api->addHashTag(utility::conversions::to_string_t("my-tenant-123"), request)
+    .then([](std::shared_ptr<CreateHashTagResponse> resp) {
+        (void)resp;
+    });
 [inline-code-end]
-
----

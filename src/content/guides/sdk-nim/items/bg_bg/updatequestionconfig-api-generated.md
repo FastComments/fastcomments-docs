@@ -2,9 +2,9 @@
 
 | Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Не |  |
-| updateQuestionConfigBody | UpdateQuestionConfigBody | Не |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| updateQuestionConfigBody | UpdateQuestionConfigBody | No |  |
 
 ## Отговор
 
@@ -14,10 +14,14 @@
 
 [inline-code-attrs-start title = 'Пример за updateQuestionConfig'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateQuestionConfig(tenantId = "my-tenant-123", id = "question-config-456", updateQuestionConfigBody = default(UpdateQuestionConfigBody))
-if response.isSome:
-  let apiEmpty = response.get()
-  discard apiEmpty
+let (apiResp, httpResp) = client.updateQuestionConfig(
+  tenantId = "my-tenant-123",
+  id = "question-456",
+  updateQuestionConfigBody = UpdateQuestionConfigBody()
+)
+
+if apiResp.isSome:
+  let resp = apiResp.get()
 [inline-code-end]
 
 ---

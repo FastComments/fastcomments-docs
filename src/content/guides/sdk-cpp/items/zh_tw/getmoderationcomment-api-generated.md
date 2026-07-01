@@ -1,33 +1,33 @@
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 類型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| commentId | string | Yes |  |
-| includeEmail | bool | No |  |
-| includeIP | bool | No |  |
-| sso | string | No |  |
+| tenantId | string | 是 |  |
+| commentId | string | 是 |  |
+| options | const GetModerationCommentOptions& | 是 |  |
 
 ## 回應
 
-回傳：[`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ModerationAPICommentResponse.h)
+返回：[`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ModerationAPICommentResponse.h)
 
 ## 範例
 
-[inline-code-attrs-start title = 'getModerationComment 範例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getModerationComment 示例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t commentId = U("cmt-987654");
-boost::optional<bool> includeEmail = boost::optional<bool>(true);
-boost::optional<bool> includeIP = boost::optional<bool>(false);
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
-
-api->getModerationComment(commentId, includeEmail, includeIP, sso)
-.then([](std::shared_ptr<ModerationAPICommentResponse> resp) {
-    auto result = resp ? resp : std::make_shared<ModerationAPICommentResponse>();
-    if (resp)
-        std::cout << "Comment fetched successfully" << std::endl;
-    else
-        std::cout << "No comment returned; using placeholder" << std::endl;
-}).wait();
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto commentId = utility::conversions::to_string_t("comment-456");
+GetModerationCommentOptions options;
+options.includeDeleted = boost::optional<bool>(true);
+options.locale = boost::optional<utility::string_t>(utility::conversions::to_string_t("en-US"));
+api->getModerationComment(tenantId, commentId, options)
+    .then([](pplx::task<std::shared_ptr<ModerationAPICommentResponse>> task) {
+        try {
+            auto response = task.get();
+            // 根據需要處理回應
+        } catch (const std::exception& ex) {
+            // 處理錯誤
+        }
+    });
 [inline-code-end]
 
 ---

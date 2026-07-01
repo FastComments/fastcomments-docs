@@ -1,33 +1,33 @@
 ## Paramètres
 
-| Nom | Type | Requis | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
-| textSearch | string | No |  |
-| byIPFromComment | string | No |  |
-| filter | string | No |  |
-| searchFilters | string | No |  |
-| demo | boolean | No |  |
-| sso | string | No |  |
+| textSearch | string | Non |  |
+| byIPFromComment | string | Non |  |
+| filter | string | Non |  |
+| searchFilters | string | Non |  |
+| demo | boolean | Non |  |
+| tenantId | string | Non |  |
+| sso | string | Non |  |
 
 ## Réponse
 
-Renvoie: [`ModerationAPICountCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPICountCommentsResponse.ts)
+Renvoie : [`GetCountResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCountResponse.ts)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple getCount'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const countResult: ModerationAPICountCommentsResponse = await getCount(
-    "reported harassment",
-    "203.0.113.7",
-    "status:pending",
-    undefined,
-    false,
-    "sso_user_789.jwt.token"
-  );
-  console.log(countResult);
-})();
+async function main(): Promise<void> {
+  const count: GetCountResponse = await getCount({
+    textSearch: "order issue",
+    byIPFromComment: "198.51.100.23",
+    filter: "pending",
+    demo: true,
+    tenantId: "acme_corp",
+    sso: "sso_abcdef123456"
+  });
+  console.log(count);
+}
+main();
 [inline-code-end]
-
----

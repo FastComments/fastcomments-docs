@@ -1,7 +1,6 @@
----
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | commentId | string | query | Не |  |
@@ -18,9 +17,9 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за getPendingWebhookEvents'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getPendingWebhookEvents Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следните примери на код все още са в бета. При проблем, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следните примерни кодове все още са бета. При какъвто и да е проблем, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -32,7 +31,7 @@ let domain = "domain_example" // String |  (по избор)
 let attemptCountGT = 987 // Double |  (по избор)
 let skip = 987 // Double |  (по избор)
 
-DefaultAPI.getPendingWebhookEvents(tenantId: tenantId, commentId: commentId, externalId: externalId, eventType: eventType, type: type, domain: domain, attemptCountGT: attemptCountGT, skip: skip) { (response, error) in
+DefaultAPI.getPendingWebhookEvents(tenantId: tenantId, options: DefaultAPI.GetPendingWebhookEventsOptions(commentId: commentId, externalId: externalId, eventType: eventType, type: type, domain: domain, attemptCountGT: attemptCountGT, skip: skip)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -43,5 +42,3 @@ DefaultAPI.getPendingWebhookEvents(tenantId: tenantId, commentId: commentId, ext
     }
 }
 [inline-code-end]
-
----

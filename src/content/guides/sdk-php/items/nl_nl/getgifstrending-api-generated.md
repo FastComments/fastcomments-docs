@@ -7,7 +7,7 @@
 | rating | string | query | No |  |
 | page | number | query | No |  |
 
-## Response
+## Respons
 
 Retourneert: [`GetGifsTrendingResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetGifsTrendingResponse.php)
 
@@ -21,17 +21,21 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Als u een aangepaste HTTP-client wilt gebruiken, geef uw client door die `GuzzleHttp\ClientInterface` implementeert.
+    // Als je een aangepaste http-client wilt gebruiken, geef je client door die `GuzzleHttp\ClientInterface` implementeert.
     // Dit is optioneel, `GuzzleHttp\Client` wordt standaard gebruikt.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$locale = 'locale_example'; // string
-$rating = 'rating_example'; // string
-$page = 3.4; // float
+$options = [
+    'locale' => 'locale_example', // string
+    'rating' => 'rating_example', // string
+    'page' => 3.4, // float
+];
+
 
 try {
-    $result = $apiInstance->getGifsTrending($tenant_id, $locale, $rating, $page);
+    $result = $apiInstance->getGifsTrending($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getGifsTrending: ', $e->getMessage(), PHP_EOL;

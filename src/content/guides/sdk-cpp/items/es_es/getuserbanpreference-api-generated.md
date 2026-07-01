@@ -1,8 +1,8 @@
----
 ## Parámetros
 
-| Nombre | Tipo | Requerido | Descripción |
-|------|------|----------|-------------|
+| Nombre | Tipo | Obligatorio | Descripción |
+|--------|------|-------------|-------------|
+| tenantId | string | Sí |  |
 | sso | string | No |  |
 
 ## Respuesta
@@ -13,11 +13,16 @@ Devuelve: [`APIModerateGetUserBanPreferencesResponse`](https://github.com/FastCo
 
 [inline-code-attrs-start title = 'Ejemplo de getUserBanPreference'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(utility::string_t(U("my-tenant-123")));
-api->getUserBanPreference(sso).then([](std::shared_ptr<APIModerateGetUserBanPreferencesResponse> resp){
-    auto prefs = resp ? resp : std::make_shared<APIModerateGetUserBanPreferencesResponse>();
-    (void)prefs;
-});
+auto tenantId = utility::string_t(U("my-tenant-123"));
+boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
+
+api->getUserBanPreference(tenantId, sso)
+    .then([](pplx::task<std::shared_ptr<APIModerateGetUserBanPreferencesResponse>> t) {
+        try {
+            auto resp = t.get();
+        } catch (const std::exception&) {
+        }
+    });
 [inline-code-end]
 
 ---

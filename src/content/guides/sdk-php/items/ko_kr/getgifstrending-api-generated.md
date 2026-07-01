@@ -1,12 +1,11 @@
----
 ## 매개변수
 
-| Name | Type | Location | Required | Description |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| locale | string | query | No |  |
-| rating | string | query | No |  |
-| page | number | query | No |  |
+| tenantId | string | path | 예 |  |
+| locale | string | query | 아니오 |  |
+| rating | string | query | 아니오 |  |
+| page | number | query | 아니오 |  |
 
 ## 응답
 
@@ -22,17 +21,21 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // 사용자 지정 HTTP 클라이언트를 사용하려면 `GuzzleHttp\ClientInterface`를 구현하는 클라이언트를 전달하세요.
-    // 이것은 선택 사항이며 기본적으로 `GuzzleHttp\Client`가 사용됩니다.
+    // 맞춤 HTTP 클라이언트를 사용하려면 `GuzzleHttp\ClientInterface`를 구현하는 클라이언트를 전달하세요.
+    // 이는 선택 사항이며, 기본값으로 `GuzzleHttp\Client`가 사용됩니다.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$locale = 'locale_example'; // string
-$rating = 'rating_example'; // string
-$page = 3.4; // float
+
+$tenant_id = 'tenant_id_example'; // 문자열
+$options = [
+    'locale' => 'locale_example', // 문자열
+    'rating' => 'rating_example', // 문자열
+    'page' => 3.4, // 부동소수점
+];
+
 
 try {
-    $result = $apiInstance->getGifsTrending($tenant_id, $locale, $rating, $page);
+    $result = $apiInstance->getGifsTrending($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getGifsTrending: ', $e->getMessage(), PHP_EOL;

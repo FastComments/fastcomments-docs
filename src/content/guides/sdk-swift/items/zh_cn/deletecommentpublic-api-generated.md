@@ -1,6 +1,6 @@
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 是 |  |
 | commentId | string | path | 是 |  |
@@ -8,7 +8,7 @@
 | editKey | string | query | 否 |  |
 | sso | string | query | 否 |  |
 
-## Response
+## 响应
 
 返回: [`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PublicAPIDeleteCommentResponse.swift)
 
@@ -22,10 +22,10 @@ import FastCommentsSwift
 let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
 let broadcastId = "broadcastId_example" // String | 
-let editKey = "editKey_example" // String |  (可选)
-let sso = "sso_example" // String |  (可选)
+let editKey = "editKey_example" // String |  （可选）
+let sso = "sso_example" // String |  （可选）
 
-PublicAPI.deleteCommentPublic(tenantId: tenantId, commentId: commentId, broadcastId: broadcastId, editKey: editKey, sso: sso) { (response, error) in
+PublicAPI.deleteCommentPublic(tenantId: tenantId, commentId: commentId, broadcastId: broadcastId, options: PublicAPI.DeleteCommentPublicOptions(editKey: editKey, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -36,5 +36,3 @@ PublicAPI.deleteCommentPublic(tenantId: tenantId, commentId: commentId, broadcas
     }
 }
 [inline-code-end]
-
----

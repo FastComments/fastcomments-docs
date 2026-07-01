@@ -1,32 +1,29 @@
-Agrega esta línea al Gemfile de tu aplicación:
+Add this line to your application's Gemfile:
 
 ```ruby
 gem 'fastcomments'
 ```
 
-Y luego ejecuta:
+And then execute:
 
 ```bash
 bundle install
 ```
 
-O instálalo tú mismo como:
+Or install it yourself as:
 
 ```bash
 gem install fastcomments
 ```
 
-### Contenido de la biblioteca
+### Library Contents
 
-Esta biblioteca contiene el cliente de API generado y las utilidades SSO para facilitar el trabajo con la API.
+Esta biblioteca contiene el cliente API generado y las utilidades SSO para facilitar el trabajo con la API.
 
-- [Documentación de la biblioteca del cliente de API](https://github.com/FastComments/fastcomments-ruby/blob/master/client/README.md)
+- [Documentación de la Biblioteca del Cliente API](https://github.com/FastComments/fastcomments-ruby/blob/master/client/README.md)
 
-### APIs públicas vs protegidas
+### Public vs Secured APIs
 
-Para el cliente de API, hay tres clases, `DefaultApi`, `PublicApi`, y `ModerationApi`. La `DefaultApi` contiene métodos que requieren tu clave de API, y `PublicApi` contiene llamadas de API
-que pueden hacerse directamente desde un navegador/dispositivo móvil/etc. sin autenticación. La `ModerationApi` contiene los métodos que impulsan el panel de moderación.
+Para el cliente API, hay tres clases, `DefaultApi`, `PublicApi` y `ModerationApi`. La `DefaultApi` contiene métodos que requieren tu clave API, y la `PublicApi` contiene llamadas API que pueden realizarse directamente desde un navegador/dispositivo móvil, etc., sin autenticación. La `ModerationApi` contiene los métodos que impulsan el panel de moderador.
 
-La `ModerationApi` cubre la moderación de comentarios (listar, contar, buscar, registros, exportar), acciones de moderación (eliminar/restaurar, marcar, establecer estado de revisión/spam/aprobación, votos, reabrir/cerrar hilo),
-prohibiciones (banear a un usuario desde un comentario, deshacer, resúmenes previos al baneo, estado/preferencias de baneo, recuentos de usuarios baneados), e insignias y confianza (otorgar/quitar insignia, insignias manuales, obtener/establecer factor de confianza, perfil interno del usuario).
-Cada método de `ModerationApi` acepta un parámetro `sso` para que la solicitud pueda hacerse en nombre de un moderador autenticado por SSO.
+La `ModerationApi` ofrece una amplia suite de APIs de moderación en tiempo real y rápidas. Cada método de `ModerationApi` acepta un parámetro `sso` y puede autenticarse mediante SSO o una cookie de sesión de FastComments.com.

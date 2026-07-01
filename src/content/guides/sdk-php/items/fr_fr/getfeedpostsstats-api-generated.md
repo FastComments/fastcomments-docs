@@ -1,11 +1,10 @@
----
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Oui |  |
-| postIds | array | query | Oui |  |
-| sso | string | query | Non |  |
+| tenantId | string | path | Yes |  |
+| postIds | array | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Réponse
 
@@ -13,7 +12,7 @@ Renvoie : [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomment
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getFeedPostsStats'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getFeedPostsStats'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -22,12 +21,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
     // Si vous souhaitez utiliser un client HTTP personnalisé, transmettez votre client qui implémente `GuzzleHttp\ClientInterface`.
-    // Ceci est optionnel, `GuzzleHttp\Client` sera utilisé par défaut.
+    // Ceci est facultatif, `GuzzleHttp\Client` sera utilisé par défaut.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $post_ids = array('post_ids_example'); // string[]
 $sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->getFeedPostsStats($tenant_id, $post_ids, $sso);
@@ -36,5 +37,3 @@ try {
     echo 'Exception when calling PublicApi->getFeedPostsStats: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

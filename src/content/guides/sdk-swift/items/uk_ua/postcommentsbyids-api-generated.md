@@ -1,7 +1,8 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
-|------|------|----------|----------|-------------|
+| Ім'я | Тип | Розташування | Обов'язково | Опис |
+|------|------|--------------|-------------|------|
+| tenantId | string | query | Так |  |
 | sso | string | query | Ні |  |
 
 ## Відповідь
@@ -10,15 +11,16 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад postCommentsByIds'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postCommentsByIds Приклад'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Наступні приклади коду все ще перебувають на стадії бета. Якщо виникне проблема, будь ласка, повідомте через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наступні приклади коду все ще є бета-версією. При виникненні будь-якої проблеми, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentsByIdsParams = CommentsByIdsParams(ids: ["ids_example"]) // CommentsByIdsParams | 
 let sso = "sso_example" // String |  (необов'язково)
 
-ModerationAPI.postCommentsByIds(commentsByIdsParams: commentsByIdsParams, sso: sso) { (response, error) in
+ModerationAPI.postCommentsByIds(tenantId: tenantId, commentsByIdsParams: commentsByIdsParams, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -29,5 +31,3 @@ ModerationAPI.postCommentsByIds(commentsByIdsParams: commentsByIdsParams, sso: s
     }
 }
 [inline-code-end]
-
----

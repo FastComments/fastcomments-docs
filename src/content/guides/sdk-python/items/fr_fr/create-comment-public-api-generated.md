@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Oui |  |
 | urlId | string | query | Oui |  |
@@ -10,28 +10,29 @@
 
 ## Réponse
 
-Renvoie : [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/save_comments_response_with_presence.py)
+Retourne : [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/save_comments_response_with_presence.py)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de create_comment_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_comment_public Exemple'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import CreateCommentPublicOptions
 from client.models.comment_data import CommentData
 from client.models.save_comments_response_with_presence import SaveCommentsResponseWithPresence
 from client.rest import ApiException
 from pprint import pprint
 
-# La définition de l'hôte est facultative et la valeur par défaut est https://fastcomments.com
+# Définir l'hôte est facultatif et utilise https://fastcomments.com par défaut
 # Voir configuration.py pour la liste de tous les paramètres de configuration pris en charge.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Entrez dans un contexte avec une instance du client API
+# Entrer dans un contexte avec une instance du client API
 with client.ApiClient(configuration) as api_client:
-    # Créez une instance de la classe API
+    # Créer une instance de la classe API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
@@ -41,7 +42,7 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (optionnel)
 
     try:
-        api_response = api_instance.create_comment_public(tenant_id, url_id, broadcast_id, comment_data, session_id=session_id, sso=sso)
+        api_response = api_instance.create_comment_public(tenant_id, url_id, broadcast_id, comment_data, CreateCommentPublicOptions(session_id=session_id, sso=sso))
         print("The response of PublicApi->create_comment_public:\n")
         pprint(api_response)
     except Exception as e:

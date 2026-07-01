@@ -1,7 +1,8 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
+|--------|------|-----------|-----------|-------------|
+| tenantId | string | query | Sí |  |
 | page | number | query | No |  |
 | count | number | query | No |  |
 | text-search | string | query | No |  |
@@ -18,29 +19,32 @@ Devuelve: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/f
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de get_api_comments'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo get_api_comments'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 opts = {
-  page: 1.2, # Flotante | 
-  count: 1.2, # Flotante | 
-  text_search: 'text_search_example', # Cadena | 
-  by_ip_from_comment: 'by_ip_from_comment_example', # Cadena | 
-  filters: 'filters_example', # Cadena | 
-  search_filters: 'search_filters_example', # Cadena | 
-  sorts: 'sorts_example', # Cadena | 
-  demo: true, # Booleano | 
-  sso: 'sso_example' # Cadena | 
+  page: 1.2, # Float | 
+  count: 1.2, # Float | 
+  text_search: 'text_search_example', # String | 
+  by_ip_from_comment: 'by_ip_from_comment_example', # String | 
+  filters: 'filters_example', # String | 
+  search_filters: 'search_filters_example', # String | 
+  sorts: 'sorts_example', # String | 
+  demo: true, # Boolean | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.get_api_comments(opts)
+  result = api_instance.get_api_comments(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_api_comments: #{e}"
 end
 [inline-code-end]
+
+---

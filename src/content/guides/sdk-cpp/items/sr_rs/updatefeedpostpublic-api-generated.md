@@ -1,12 +1,11 @@
 ## Параметри
 
-| Назив | Тип | Обавезно | Опис |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| postId | string | Да |  |
-| updateFeedPostParams | UpdateFeedPostParams | Да |  |
-| broadcastId | string | Не |  |
-| sso | string | Не |  |
+| tenantId | string | Yes |  |
+| postId | string | Yes |  |
+| updateFeedPostParams | UpdateFeedPostParams | Yes |  |
+| options | const UpdateFeedPostPublicOptions& | Yes |  |
 
 ## Одговор
 
@@ -14,23 +13,17 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример updateFeedPostPublic'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateFeedPostPublic Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 utility::string_t postId = U("post-456");
-UpdateFeedPostParams updateFeedPostParams;
-boost::optional<utility::string_t> broadcastId = boost::optional<utility::string_t>(U("broadcast-789"));
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
-api->updateFeedPostPublic(tenantId, postId, updateFeedPostParams, broadcastId, sso)
-.then([](pplx::task<std::shared_ptr<CreateFeedPostResponse>> t) {
-    try {
-        auto resp = t.get();
-        if (resp) {
-            auto updatedCopy = std::make_shared<CreateFeedPostResponse>(*resp);
-        }
-    } catch (const std::exception& e) {
-    }
-});
+UpdateFeedPostParams params;
+params.title = boost::optional<utility::string_t>(U("Updated Title"));
+params.body = boost::optional<utility::string_t>(U("Updated content of the post."));
+UpdateFeedPostPublicOptions options;
+options.notifyFollowers = boost::optional<bool>(true);
+api->updateFeedPostPublic(tenantId, postId, params, options)
+    .then([](std::shared_ptr<CreateFeedPostResponse> resp) {
+        auto result = resp;
+    });
 [inline-code-end]
-
----

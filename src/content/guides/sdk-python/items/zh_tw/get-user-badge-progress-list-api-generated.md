@@ -1,53 +1,49 @@
 ## 參數
 
-| 名稱 | 類型 | 所在位置 | 必填 | 描述 |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 是 |  |
-| userId | string | query | 否 |  |
-| limit | number | query | 否 |  |
-| skip | number | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| limit | number | query | No |  |
+| skip | number | query | No |  |
 
 ## 回應
 
-回傳: [`APIGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_user_badge_progress_list_response.py)
+返回：[`APIGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_user_badge_progress_list_response.py)
 
 ## 範例
 
 [inline-code-attrs-start title = 'get_user_badge_progress_list 範例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetUserBadgeProgressListOptions
 from client.models.api_get_user_badge_progress_list_response import APIGetUserBadgeProgressListResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# 定義 host 是可選的，預設為 https://fastcomments.com
-# 請參閱 configuration.py 以取得所有支援的設定參數清單。
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
-
-# 用戶端必須設定驗證與授權參數
-# 以符合 API 伺服器的安全性政策。
-# 下面提供每種驗證方法的範例，請使用符合
-# 您驗證需求的範例。
+# 定義主機是可選的，預設為 https://fastcomments.com
+# 請參閱 configuration.py 以取得所有支援的設定參數列表。
+# 用戶端必須配置驗證與授權參數
+# 以符合 API 伺服器的安全政策。
+# 下面提供了每種驗證方法的範例，請使用符合您驗證需求的範例。
 
 # 設定 API 金鑰授權：api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# 若需要，取消下面的註解以設定 API 金鑰的前綴（例如 Bearer）
+# 如有需要，取消註解以下程式碼以設定 API 金鑰的前綴（例如 Bearer） for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# 以 API client 的實例進入上下文
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # 建立 API 類別的實例
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    user_id = 'user_id_example' # str |  (可選)
-    limit = 3.4 # float |  (可選)
-    skip = 3.4 # float |  (可選)
+    user_id = 'user_id_example' # str |  (optional)
+    limit = 3.4 # float |  (optional)
+    skip = 3.4 # float |  (optional)
 
     try:
-        api_response = api_instance.get_user_badge_progress_list(tenant_id, user_id=user_id, limit=limit, skip=skip)
+        api_response = api_instance.get_user_badge_progress_list(tenant_id, GetUserBadgeProgressListOptions(user_id=user_id, limit=limit, skip=skip))
         print("The response of DefaultApi->get_user_badge_progress_list:\n")
         pprint(api_response)
     except Exception as e:

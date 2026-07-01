@@ -1,20 +1,20 @@
-### Handlinger tilgængelige for alle brugere
+### Handlinger Tilgængelige for Alle Brugere
 
-- **Flag/Unflag** -- anmeld en kommentar til gennemgang
+- **Flag/Unflag** -- rapportér en kommentar til gennemsyn
 
 ```swift
 try await sdk.flagComment(commentId: commentId)
 try await sdk.unflagComment(commentId: commentId)
 ```
 
-- **Block/Unblock** -- skjul alle kommentarer fra en bruger (for hver enkelt seer)
+- **Block/Unblock** -- skjul alle kommentarer fra en bruger (pr. visning)
 
 ```swift
 try await sdk.blockUser(commentId: commentId)
 try await sdk.unblockUser(commentId: commentId)
 ```
 
-### Handlinger kun for administratorer
+### Kun Admin-handlinger
 
 - **Pin/Unpin** -- fastgør en kommentar til toppen af tråden
 
@@ -23,13 +23,11 @@ try await sdk.pinComment(commentId: commentId)
 try await sdk.unpinComment(commentId: commentId)
 ```
 
-- **Lock/Unlock** -- forhindre nye svar på en kommentar
+- **Lock/Unlock** -- forhindre nye svar på en kommentar, og blokere redigeringer og sletninger indtil den låses op (gælder for alle, inklusive moderatorer)
 
 ```swift
 try await sdk.lockComment(commentId: commentId)
 try await sdk.unlockComment(commentId: commentId)
 ```
 
-Alle moderationshandlinger er også tilgængelige gennem kommentarens kontekstmenu i brugergrænsefladen. Admin-handlinger vises kun, når den aktuelle bruger er site-admin (angivet via SSO `isAdmin`-flaget eller dashboard-konfiguration).
-
----
+Alle moderationshandlinger er også tilgængelige via kommentarens kontekstmenu i UI'et. Admin-handlinger vises kun, når den aktuelle bruger er en site-admin (sat via SSO `isAdmin`-flaget eller dashboard-konfigurationen).

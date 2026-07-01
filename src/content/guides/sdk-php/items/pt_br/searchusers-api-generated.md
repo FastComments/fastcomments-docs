@@ -1,7 +1,7 @@
 ## Parâmetros
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Localização | Obrigatório | Descrição |
+|------|------|------------|------------|-----------|
 | tenantId | string | path | Sim |  |
 | urlId | string | query | Sim |  |
 | usernameStartsWith | string | query | Não |  |
@@ -15,7 +15,7 @@ Retorna: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-php/
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de searchUsers'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo searchUsers'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -24,18 +24,22 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
     // Se você quiser usar um cliente HTTP personalizado, passe seu cliente que implemente `GuzzleHttp\ClientInterface`.
-    // Isso é opcional, `GuzzleHttp\Client` será usado por padrão.
+    // Isso é opcional, `GuzzleHttp\Client` será usado como padrão.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $url_id = 'url_id_example'; // string
-$username_starts_with = 'username_starts_with_example'; // string
-$mention_group_ids = array('mention_group_ids_example'); // string[]
-$sso = 'sso_example'; // string
-$search_section = 'search_section_example'; // string
+$options = [
+    'username_starts_with' => 'username_starts_with_example', // string
+    'mention_group_ids' => array('mention_group_ids_example'), // string[]
+    'sso' => 'sso_example', // string
+    'search_section' => 'search_section_example', // string
+];
+
 
 try {
-    $result = $apiInstance->searchUsers($tenant_id, $url_id, $username_starts_with, $mention_group_ids, $sso, $search_section);
+    $result = $apiInstance->searchUsers($tenant_id, $url_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->searchUsers: ', $e->getMessage(), PHP_EOL;

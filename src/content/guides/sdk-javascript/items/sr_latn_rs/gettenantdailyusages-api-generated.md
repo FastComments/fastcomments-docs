@@ -1,32 +1,44 @@
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| tenantId | string | Da |  |
-| yearNumber | number | Ne |  |
-| monthNumber | number | Ne |  |
-| dayNumber | number | Ne |  |
-| skip | number | Ne |  |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| yearNumber | number | No |  |
+| monthNumber | number | No |  |
+| dayNumber | number | No |  |
+| skip | number | No |  |
 
 ## Odgovor
 
-Vraća: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantDailyUsagesResponse.ts)
+Vraća: [`GetTenantDailyUsagesResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantDailyUsagesResponse1.ts)
 
 ## Primer
 
-[inline-code-attrs-start title = 'getTenantDailyUsages Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getTenantDailyUsages'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function run(): Promise<void> {
-  const tenantId: string = "b4f3a9c2-8d1e-4f3b-9c6e-2a7f4d5c1e0b";
-  const yearNumber: number = 2026;
-  const monthNumber: number = 6;
-  const dayNumber: number = 19;
+async function fetchDailyUsage() {
+  const tenantId: string = "tenant-9876";
+  const yearNumber: number = 2024;
+  const monthNumber: number = 5; // maj
+  const dayNumber: number = 12;
   const skip: number = 0;
-  const fullResponse: GetTenantDailyUsagesResponse = await getTenantDailyUsages(tenantId, yearNumber, monthNumber, dayNumber, skip);
-  const basicResponse: GetTenantDailyUsagesResponse = await getTenantDailyUsages(tenantId);
-  console.log(fullResponse, basicResponse);
-}
-run();
-[inline-code-end]
 
----
+  const fullResult: GetTenantDailyUsagesResponse1 = await getTenantDailyUsages(
+    tenantId,
+    yearNumber,
+    monthNumber,
+    dayNumber,
+    skip
+  );
+
+  // Korišćenje samo obaveznih i jednog opcionog parametra
+  const partialResult: GetTenantDailyUsagesResponse1 = await getTenantDailyUsages(
+    tenantId,
+    yearNumber
+  );
+
+  console.log(fullResult, partialResult);
+}
+
+fetchDailyUsage();
+[inline-code-end]

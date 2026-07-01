@@ -7,7 +7,7 @@
 
 ## Antwort
 
-Gibt zurück: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetHashTagsResponse.php)
+Rückgabe: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetHashTagsResponse.php)
 
 ## Beispiel
 
@@ -17,9 +17,9 @@ Gibt zurück: [`GetHashTagsResponse`](https://github.com/FastComments/fastcommen
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// API-Schlüssel-Authentifizierung konfigurieren: api_key
+// API-Schlüssel-Autorisierung konfigurieren: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Unten auskommentieren, um ein Präfix (z. B. Bearer) für den API-Schlüssel zu setzen, falls erforderlich
+// Entkommentieren Sie unten, um das Präfix (z. B. Bearer) für den API-Schlüssel festzulegen, falls nötig
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
@@ -29,8 +29,10 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$page = 3.4; // float
+
+$tenant_id = 'tenant_id_example'; // Zeichenkette
+$page = 3.4; // Fließkommazahl
+
 
 try {
     $result = $apiInstance->getHashTags($tenant_id, $page);
@@ -39,3 +41,5 @@ try {
     echo 'Exception when calling DefaultApi->getHashTags: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

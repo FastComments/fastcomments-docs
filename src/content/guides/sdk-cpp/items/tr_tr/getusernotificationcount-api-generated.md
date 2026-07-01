@@ -1,11 +1,11 @@
 ## Parametreler
 
-| Name | Tür | Gerekli | Açıklama |
+| Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | sso | string | Hayır |  |
 
-## Response
+## Yanıt
 
 Döndürür: [`GetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetUserNotificationCountResponse.h)
 
@@ -13,15 +13,14 @@ Döndürür: [`GetUserNotificationCountResponse`](https://github.com/FastComment
 
 [inline-code-attrs-start title = 'getUserNotificationCount Örneği'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
-auto fallback = std::make_shared<GetUserNotificationCountResponse>();
-api->getUserNotificationCount(tenantId, sso)
-.then([fallback](std::shared_ptr<GetUserNotificationCountResponse> resp) {
-    auto result = resp ? resp : fallback;
-    std::cout << "Received user notification count response (ptr=" << (result.get() != nullptr) << ")\n";
-})
-.wait();
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+boost::optional<utility::string_t> sso = utility::conversions::to_string_t("user@example.com");
+api->getUserNotificationCount(tenantId, sso).then([](pplx::task<std::shared_ptr<GetUserNotificationCountResponse>> t){
+    try{
+        auto resp = t.get();
+        // resp'yi gerektiği gibi kullan
+    }catch(const std::exception&){
+        // hatayı ele al
+    }
+});
 [inline-code-end]
-
----

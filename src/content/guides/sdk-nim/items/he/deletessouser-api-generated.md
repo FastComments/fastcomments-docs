@@ -1,11 +1,10 @@
-## פרמטרים
+## Parameters
 
-| שם | סוג | נדרש | תיאור |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | id | string | לא |  |
-| deleteComments | bool | לא |  |
-| commentDeleteMode | string | לא |  |
+| options | DeleteSSOUserOptions | לא |  |
 
 ## תגובה
 
@@ -13,14 +12,14 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-deleteSSOUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת deleteSSOUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteSSOUser(tenantId = "my-tenant-123", id = "sso-user-9876", deleteComments = true, commentDeleteMode = "hard")
-if response.isSome:
-  let deleted = response.get()
-  discard deleted
-else:
-  discard httpResponse
-[inline-code-end]
+let (apiRespOpt, httpResp) = client.deleteSSOUser(
+  tenantId = "my-tenant-123",
+  id = "user-456",
+  options = DeleteSSOUserOptions()
+)
 
----
+if apiRespOpt.isSome:
+  let apiResp = apiRespOpt.get()
+[inline-code-end]

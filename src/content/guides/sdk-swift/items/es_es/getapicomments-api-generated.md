@@ -1,7 +1,8 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Sí |  |
 | page | number | query | No |  |
 | count | number | query | No |  |
 | text-search | string | query | No |  |
@@ -18,11 +19,12 @@ Devuelve: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/f
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de getApiComments'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo getApiComments'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Los siguientes ejemplos de código aún están en beta. Para cualquier problema, por favor infórmelo vía http://github.com/OpenAPITools/openapi-generator/issues/new
+// Los siguientes ejemplos de código aún están en beta. Para cualquier problema, por favor informe a través de http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let page = 987 // Double |  (opcional)
 let count = 987 // Double |  (opcional)
 let textSearch = "textSearch_example" // String |  (opcional)
@@ -33,7 +35,7 @@ let sorts = "sorts_example" // String |  (opcional)
 let demo = true // Bool |  (opcional)
 let sso = "sso_example" // String |  (opcional)
 
-ModerationAPI.getApiComments(page: page, count: count, textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, demo: demo, sso: sso) { (response, error) in
+ModerationAPI.getApiComments(tenantId: tenantId, options: ModerationAPI.GetApiCommentsOptions(page: page, count: count, textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, demo: demo, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -44,5 +46,3 @@ ModerationAPI.getApiComments(page: page, count: count, textSearch: textSearch, b
     }
 }
 [inline-code-end]
-
----

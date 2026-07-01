@@ -1,14 +1,14 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Oui |  |
-| urlId | string | query | Non |  |
-| userId | string | query | Non |  |
-| startDate | string | query | Non |  |
-| questionId | string | query | Non |  |
-| questionIds | string | query | Non |  |
-| skip | number | query | Non |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | No |  |
+| userId | string | query | No |  |
+| startDate | string | query | No |  |
+| questionId | string | query | No |  |
+| questionIds | string | query | No |  |
+| skip | number | query | No |  |
 
 ## Réponse
 
@@ -16,20 +16,20 @@ Renvoie : [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcom
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getQuestionResults'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getQuestionResults'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Les exemples de code suivants sont encore en version bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Les exemples de code suivants sont encore en bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let urlId = "urlId_example" // String |  (optionnel)
-let userId = "userId_example" // String |  (optionnel)
-let startDate = "startDate_example" // String |  (optionnel)
-let questionId = "questionId_example" // String |  (optionnel)
-let questionIds = "questionIds_example" // String |  (optionnel)
-let skip = 987 // Double |  (optionnel)
+let urlId = "urlId_example" // String |  (facultatif)
+let userId = "userId_example" // String |  (facultatif)
+let startDate = "startDate_example" // String |  (facultatif)
+let questionId = "questionId_example" // String |  (facultatif)
+let questionIds = "questionIds_example" // String |  (facultatif)
+let skip = 987 // Double |  (facultatif)
 
-DefaultAPI.getQuestionResults(tenantId: tenantId, urlId: urlId, userId: userId, startDate: startDate, questionId: questionId, questionIds: questionIds, skip: skip) { (response, error) in
+DefaultAPI.getQuestionResults(tenantId: tenantId, options: DefaultAPI.GetQuestionResultsOptions(urlId: urlId, userId: userId, startDate: startDate, questionId: questionId, questionIds: questionIds, skip: skip)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -40,3 +40,5 @@ DefaultAPI.getQuestionResults(tenantId: tenantId, urlId: urlId, userId: userId, 
     }
 }
 [inline-code-end]
+
+---

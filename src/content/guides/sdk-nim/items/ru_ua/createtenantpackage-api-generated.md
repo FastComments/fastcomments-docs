@@ -1,26 +1,23 @@
----
-## Параметры
+## Параметри
 
-| Имя | Тип | Обязательно | Описание |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| createTenantPackageBody | CreateTenantPackageBody | Нет |  |
+| tenantId | string | Так |  |
+| createTenantPackageBody | CreateTenantPackageBody | Ні |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`Option[CreateTenantPackageResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_tenant_package_response.nim)
+Повертає: [`Option[CreateTenantPackageResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_tenant_package_response.nim)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример createTenantPackage'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createTenantPackage Приклад'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.createTenantPackage(tenantId = "my-tenant-123", createTenantPackageBody = CreateTenantPackageBody())
+let (responseOpt, httpResponse) = client.createTenantPackage(
+  tenantId = "my-tenant-123",
+  createTenantPackageBody = CreateTenantPackageBody()
+)
 
-if response.isSome:
-  let pkg = response.get()
-  echo "Created tenant package: ", $pkg
-else:
-  echo "Failed to create tenant package, HTTP response: ", $httpResponse
+if responseOpt.isSome:
+  let response = responseOpt.get()
 [inline-code-end]
-
----

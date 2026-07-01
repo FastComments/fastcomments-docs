@@ -1,25 +1,27 @@
-## Parametry
+## Parameters
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| value | string | query | Nie |  |
-| sso | string | query | Nie |  |
+| tenantId | string | query | Yes |  |
+| value | string | query | No |  |
+| sso | string | query | No |  |
 
-## Odpowiedź
+## Response
 
 Zwraca: [`ModerationUserSearchResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/moderation_user_search_response.py)
 
-## Przykład
+## Example
 
-[inline-code-attrs-start title = 'get_search_users Przykład'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład get_search_users'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetSearchUsersOptions
 from client.models.moderation_user_search_response import ModerationUserSearchResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Określenie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
-# Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracji.
+# Definiowanie hosta jest opcjonalne i domyślnie wskazuje https://fastcomments.com
+# Zobacz configuration.py po listę wszystkich obsługiwanych parametrów konfiguracji.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -29,11 +31,12 @@ configuration = client.Configuration(
 with client.ApiClient(configuration) as api_client:
     # Utwórz instancję klasy API
     api_instance = client.ModerationApi(api_client)
-    value = 'value_example' # str |  (opcjonalne)
-    sso = 'sso_example' # str |  (opcjonalne)
+    tenant_id = 'tenant_id_example' # str | 
+    value = 'value_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_search_users(value=value, sso=sso)
+        api_response = api_instance.get_search_users(tenant_id, GetSearchUsersOptions(value=value, sso=sso))
         print("The response of ModerationApi->get_search_users:\n")
         pprint(api_response)
     except Exception as e:

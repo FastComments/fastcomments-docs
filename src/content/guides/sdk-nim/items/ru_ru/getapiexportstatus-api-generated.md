@@ -1,10 +1,9 @@
----
 ## Параметры
 
-| Имя | Тип | Обязательный | Описание |
-|------|------|----------|-------------|
-| batchJobId | string | Нет |  |
-| sso | string | Нет |  |
+| Имя | Тип | Обязательно | Описание |
+|------|------|-------------|----------|
+| tenantId | string | Да |  |
+| options | GetApiExportStatusOptions | Нет |  |
 
 ## Ответ
 
@@ -14,12 +13,13 @@
 
 [inline-code-attrs-start title = 'Пример getApiExportStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getApiExportStatus(batchJobId = "export-job-2026-06-01", sso = "sso-abc123token")
-if response.isSome:
-  let exportStatus = response.get()
-  echo repr(exportStatus)
-else:
-  echo "No export status available, HTTP code: ", httpResponse.statusCode
+let (exportStatusOpt, httpResp) = client.getApiExportStatus(
+  tenantId = "my-tenant-123",
+  options = GetApiExportStatusOptions()
+)
+if exportStatusOpt.isSome:
+  let exportStatus = exportStatusOpt.get()
+  # использовать exportStatus по необходимости
 [inline-code-end]
 
 ---

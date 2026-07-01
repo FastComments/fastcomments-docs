@@ -1,8 +1,8 @@
----
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
 |------|------|--------------|--------------|
+| tenant_id | String | Ja |  |
 | comments_by_ids_params | models::CommentsByIdsParams | Ja |  |
 | sso | String | Nein |  |
 
@@ -14,18 +14,15 @@ Gibt zurück: [`ModerationApiChildCommentsResponse`](https://github.com/FastComm
 
 [inline-code-attrs-start title = 'post_comments_by_ids Beispiel'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let comments_by_ids = models::CommentsByIdsParams {
-    ids: vec!["cmt-87a1".to_string(), "cmt-42b0".to_string()],
-    tenant: "acme-corp-tenant".to_string(),
-    site: "news/article".to_string(),
-};
-
-let params = PostCommentsByIdsParams {
-    comments_by_ids_params: comments_by_ids,
-    sso: Some("sso_jwt_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9".to_string()),
-};
-
-let response: ModerationApiChildCommentsResponse = post_comments_by_ids(&configuration, params).await?;
+async fn example() -> Result<(), Error> {
+    let params = PostCommentsByIdsParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        comments_by_ids_params: models::CommentsByIdsParams {
+            comment_ids: vec!["cmt123".to_string(), "cmt456".to_string()],
+        },
+        sso: Some("user-sso-token".to_string()),
+    };
+    let _response = post_comments_by_ids(&configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]
-
----

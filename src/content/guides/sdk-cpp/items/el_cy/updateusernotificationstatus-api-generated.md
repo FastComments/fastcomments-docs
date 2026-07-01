@@ -7,31 +7,21 @@
 | newStatus | string | Ναι |  |
 | sso | string | Όχι |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`UpdateUserNotificationStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UpdateUserNotificationStatusResponse.h)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα updateUserNotificationStatus'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserNotificationStatus Παράδειγμα'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::string_t("my-tenant-123");
-utility::string_t notificationId = utility::string_t("notif-456");
-utility::string_t newStatus = utility::string_t("read");
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(utility::string_t("sso-token-xyz"));
-
-api->updateUserNotificationStatus(tenantId, notificationId, newStatus, sso)
-.then([](pplx::task<std::shared_ptr<UpdateUserNotificationStatusResponse>> task){
-    try {
-        auto resp = task.get();
-        if (resp) {
-            auto localCopy = std::make_shared<UpdateUserNotificationStatusResponse>(*resp);
-            (void)localCopy;
-        }
-    } catch (const std::exception& e) {
-        (void)e;
-    }
-});
+api->updateUserNotificationStatus(
+    U("my-tenant-123"),
+    U("notif-456"),
+    U("read"),
+    boost::optional<utility::string_t>(U("sso-token-abc"))
+).then([](std::shared_ptr<UpdateUserNotificationStatusResponse> resp) {
+}).wait();
 [inline-code-end]
 
 ---

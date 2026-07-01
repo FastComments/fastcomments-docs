@@ -1,26 +1,27 @@
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
-|------|------|----------|-------------|
-| comment_id | String | Ja |  |
-| sso | String | Nein |  |
+|------|------|---------------|---------------|
+| tenant_id | String | Yes |  |
+| comment_id | String | Yes |  |
+| sso | String | No |  |
 
 ## Antwort
 
-Gibt zurück: [`GetCommentTextResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_comment_text_response.rs)
+Rückgabe: [`GetCommentTextResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_comment_text_response.rs)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'get_moderation_comment_text Beispiel'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_comment_text() -> Result<(), Error> {
-    let params: GetModerationCommentTextParams = GetModerationCommentTextParams {
-        comment_id: String::from("news/technology/2026/06/19/ai-ethics-12345"),
-        sso: Some(String::from("sso-token-7f3a9b2c")),
+async fn example() -> Result<(), Error> {
+    let params = GetModerationCommentTextParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: "comment-12345".to_string(),
+        sso: Some("user-sso-token".to_string()),
     };
-    let _response: GetCommentTextResponse = get_moderation_comment_text(&configuration, params).await?;
+    let _response: GetCommentTextResponse =
+        get_moderation_comment_text(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

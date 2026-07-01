@@ -1,32 +1,26 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Обязательно | Описание |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| domain | string | Да |  |
+| Назва | Тип | Обов’язково | Опис |
+|------|------|-------------|------|
+| tenantId | string | Так |  |
+| domain | string | Так |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`DeleteDomainConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/DeleteDomainConfigResponse.h)
+Повертає: [`DeleteDomainConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/DeleteDomainConfigResponse.h)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример deleteDomainConfig'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад deleteDomainConfig'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t domain = U("example.com");
-boost::optional<utility::string_t> correlationId = boost::optional<utility::string_t>(U("corr-789"));
-api->deleteDomainConfig(tenantId, domain).then([correlationId](pplx::task<std::shared_ptr<DeleteDomainConfigResponse>> t){
-    try {
-        auto resp = t.get();
-        if(!resp) resp = std::make_shared<DeleteDomainConfigResponse>();
-        utility::string_t cid = correlationId ? *correlationId : U("");
-        (void)cid;
-    } catch(const std::exception &){
-        auto err = std::make_shared<DeleteDomainConfigResponse>();
-        (void)err;
-    }
-});
-[inline-code-end]
+boost::optional<utility::string_t> optTenant = U("my-tenant-123");
+boost::optional<utility::string_t> optDomain = U("example.com");
 
----
+api->deleteDomainConfig(optTenant.value(), optDomain.value())
+    .then([](pplx::task<std::shared_ptr<DeleteDomainConfigResponse>> task) {
+        try {
+            auto response = task.get();
+        } catch (const std::exception&) {
+        }
+    });
+[inline-code-end]

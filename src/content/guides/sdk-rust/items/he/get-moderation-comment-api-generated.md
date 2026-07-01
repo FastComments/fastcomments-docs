@@ -1,30 +1,30 @@
-## פרמטרים
+## Parameters
 
-| שם | סוג | נדרש | תיאור |
+| שם | סוג | מחויב | תיאור |
 |------|------|----------|-------------|
+| tenant_id | String | כן |  |
 | comment_id | String | כן |  |
 | include_email | bool | לא |  |
 | include_ip | bool | לא |  |
 | sso | String | לא |  |
 
-## תגובה
+## Response
 
 מחזיר: [`ModerationApiCommentResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/moderation_api_comment_response.rs)
 
-## דוגמה
+## Example
 
-[inline-code-attrs-start title = 'דוגמה ל-get_moderation_comment'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_moderation_comment דוגמה'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_comment() -> Result<ModerationApiCommentResponse, Error> {
-    let params: GetModerationCommentParams = GetModerationCommentParams {
-        comment_id: String::from("cmt-48291"),
+async fn example() -> Result<(), Error> {
+    let params = GetModerationCommentParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: "news/article-6789".to_string(),
         include_email: Some(true),
-        include_ip: Some(false),
-        sso: Some(String::from("sso-acme-corp-2026-token")),
+        include_ip: Some(true),
+        sso: Some("sso-user-42".to_string()),
     };
-    let response: ModerationApiCommentResponse = get_moderation_comment(&configuration, params).await?;
-    Ok(response)
+    let _response = get_moderation_comment(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

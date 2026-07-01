@@ -1,20 +1,25 @@
-## Параметри
+## Parametri
 
-| Name | Type | Required | Description |
+| Ime | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| sso | string | Не |  |
+| tenantId | string | Ne |  |
+| sso | string | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`APIModerateGetUserBanPreferencesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIModerateGetUserBanPreferencesResponse.ts)
+Vraća: [`GetUserBanPreferenceResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserBanPreferenceResponse.ts)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример getUserBanPreference'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getUserBanPreference'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const ssoToken: string = "sso_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9";
-const resultWithoutSso: APIModerateGetUserBanPreferencesResponse = await getUserBanPreference();
-const resultWithSso: APIModerateGetUserBanPreferencesResponse = await getUserBanPreference(ssoToken);
-[inline-code-end]
+async function demoGetUserBanPreference(): Promise<void> {
+  const tenantId: string = "acme-corp-tenant-2024";
+  const sso: string = "sso-token-9f8b7a6c";
 
----
+  const result: GetUserBanPreferenceResponse = await getUserBanPreference(tenantId, sso);
+  console.log(result);
+}
+
+demoGetUserBanPreference();
+[inline-code-end]

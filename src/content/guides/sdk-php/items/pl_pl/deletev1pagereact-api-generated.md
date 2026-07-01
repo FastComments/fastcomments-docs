@@ -1,15 +1,15 @@
-## Parametry
+## Parameters
 
-| Name | Type | Lokalizacja | Wymagane | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | ścieżka | Tak |  |
-| urlId | string | zapytanie | Tak |  |
+| tenantId | string | path | Tak |  |
+| urlId | string | query | Tak |  |
 
-## Odpowiedź
+## Response
 
 Zwraca: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateV1PageReact.php)
 
-## Przykład
+## Example
 
 [inline-code-attrs-start title = 'Przykład deleteV1PageReact'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -19,12 +19,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Jeśli chcesz użyć niestandardowego klienta HTTP, przekaż klienta implementującego `GuzzleHttp\ClientInterface`.
-    // Jest to opcjonalne — domyślnie zostanie użyty `GuzzleHttp\Client`.
+    // Jeśli chcesz używać własnego klienta HTTP, przekaż swój klient implementujący `GuzzleHttp\ClientInterface`.
+    // To jest opcjonalne, `GuzzleHttp\Client` będzie używany domyślnie.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $url_id = 'url_id_example'; // string
+
 
 try {
     $result = $apiInstance->deleteV1PageReact($tenant_id, $url_id);

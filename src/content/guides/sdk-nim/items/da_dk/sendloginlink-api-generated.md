@@ -1,26 +1,25 @@
----
 ## Parametre
 
-| Name | Type | Required | Description |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | id | string | Nej |  |
-| redirectURL | string | Nej |  |
+| redirectURL | string = "" | Nej |  |
 
-## Svar
+## Respons
 
 Returnerer: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'sendLoginLink-eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'sendLoginLink Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.sendLoginLink(tenantId = "my-tenant-123", id = "user-456", redirectURL = "https://app.newsportal.com/welcome")
-if response.isSome:
-  let apiResp = response.get()
-  echo "Login link sent successfully"
-else:
-  echo "Failed to send login link, HTTP status: ", $httpResponse.status
-[inline-code-end]
+let (maybeResp, httpResp) = client.sendLoginLink(
+  tenantId = "my-tenant-123",
+  id = "user-456",
+  redirectURL = "https://myapp.example.com/login-success"
+)
 
----
+if maybeResp.isSome:
+  let emptyResp = maybeResp.get()
+[inline-code-end]

@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Nom | Type | Requis | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
 | tenantId | string | Oui |  |
 | id | string | Oui |  |
@@ -8,17 +8,17 @@
 
 ## Réponse
 
-Retourne : [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Renvoie : [`SendInviteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SendInviteResponse.ts)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de sendInvite'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'sendInvite Exemple'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'bright-media-12';
-const id: string = 'user-8f4d2';
-const fromName: string = 'Sofia Park';
-const optionalNote: string | undefined = undefined;
-const result: APIEmptyResponse = await sendInvite(tenantId, id, fromName);
+const tenantId: string = "acme-corp-tenant";
+const inviteId: string = "invite-12345";
+const fromName: string = "John Doe";
+
+const inviteResult: SendInviteResponse = await sendInvite(tenantId, inviteId, fromName);
 [inline-code-end]
 
 ---

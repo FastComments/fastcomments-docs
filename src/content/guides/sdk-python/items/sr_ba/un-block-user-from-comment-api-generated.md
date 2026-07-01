@@ -1,54 +1,56 @@
-## Параметри
+## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| id | string | path | Да |  |
-| userId | string | query | Не |  |
-| anonUserId | string | query | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
+| id | string | path | Da |  |
+| userId | string | query | Ne |  |
+| anonUserId | string | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/unblock_success.py)
+Vraća: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/unblock_success.py)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'un_block_user_from_comment Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'un_block_user_from_comment Primjer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import UnBlockUserFromCommentOptions
 from client.models.un_block_from_comment_params import UnBlockFromCommentParams
 from client.models.unblock_success import UnblockSuccess
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинисање хоста је опционално и подразумева се https://fastcomments.com
-# Погледајте configuration.py за списак свих подржаних конфигурационих параметара.
+# Definisanje host-a je opcionalno i podrazumevano je https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клијент мора конфигурисати параметре аутентификације и овлашћења
-# у складу са безбједносном политиком API сервера.
-# Примјери за сваки метод аутентификације дати су доле, користите примјер који
-# одговара вашем случају употребе.
-# Конфигуришите ауторизацију API кључа: api_key
+# Klijent mora da konfiguriše parametre autentifikacije i autorizacije
+# u skladu sa politikom sigurnosti API servera.
+# Primjeri za svaki metod autentifikacije su dati ispod, koristite primjer koji
+# zadovoljava vaš slučaj korišćenja autentifikacije.
+
+# Konfigurišite autorizaciju API ključa: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Уклоните коментар доле да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
+# Otkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Уђите у контекст са инстанцом API клијента
+# Unesite kontekst sa instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Креирајте инстанцу API класе
+    # Kreirajte instancu API klase
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
     un_block_from_comment_params = client.UnBlockFromCommentParams() # UnBlockFromCommentParams | 
-    user_id = 'user_id_example' # str |  (опционо)
-    anon_user_id = 'anon_user_id_example' # str |  (опционо)
+    user_id = 'user_id_example' # str |  (optional)
+    anon_user_id = 'anon_user_id_example' # str |  (optional)
 
     try:
-        api_response = api_instance.un_block_user_from_comment(tenant_id, id, un_block_from_comment_params, user_id=user_id, anon_user_id=anon_user_id)
+        api_response = api_instance.un_block_user_from_comment(tenant_id, id, un_block_from_comment_params, UnBlockUserFromCommentOptions(user_id=user_id, anon_user_id=anon_user_id))
         print("The response of DefaultApi->un_block_user_from_comment:\n")
         pprint(api_response)
     except Exception as e:

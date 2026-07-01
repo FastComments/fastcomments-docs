@@ -2,27 +2,42 @@
 
 | Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| commentId | string | Да |  |
-| publicBlockFromCommentParams | PublicBlockFromCommentParams | Да |  |
-| sso | string | Не |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| publicBlockFromCommentParams | PublicBlockFromCommentParams | Yes |  |
+| sso | string | No |  |
 
 ## Отговор
 
-Връща: [`BlockSuccess`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BlockSuccess.ts)
+Връща: [`BlockFromCommentPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BlockFromCommentPublicResponse.ts)
 
 ## Пример
 
 [inline-code-attrs-start title = 'blockFromCommentPublic Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_52b9f3a1";
-const commentId: string = "cmt_4f9d2a7b";
-const publicBlockFromCommentParams: PublicBlockFromCommentParams = {
-  reason: "spam",
-  moderatorId: "mod_783",
-  durationMinutes: 1440,
-  notifyUser: true
-};
-const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example";
-const result: BlockSuccess = await blockFromCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso);
+async function demo() {
+  const tenantId: string = "tenant_9f8b7c";
+  const commentId: string = "cmt_1234567890";
+  const blockParams: PublicBlockFromCommentParams = {
+    reason: "spam",
+    durationHours: 24,
+  };
+  const ssoToken: string = "sso_ABCDEF123456";
+
+  const responseWithSso: BlockFromCommentPublicResponse = await blockFromCommentPublic(
+    tenantId,
+    commentId,
+    blockParams,
+    ssoToken
+  );
+
+  const responseWithoutSso: BlockFromCommentPublicResponse = await blockFromCommentPublic(
+    tenantId,
+    commentId,
+    blockParams
+  );
+
+  console.log(responseWithSso, responseWithoutSso);
+}
+demo();
 [inline-code-end]

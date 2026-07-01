@@ -1,26 +1,26 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Обязательно | Описание |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| commentId | string | Да |  |
-| includeEmail | bool | Нет |  |
-| includeIP | bool | Нет |  |
-| sso | string | Нет |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| options | GetModerationCommentOptions | No |  |
 
-## Ответ
+## Відповідь
 
 Возвращает: [`Option[ModerationAPICommentResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_api_comment_response.nim)
 
-## Пример
+## Приклад
 
 [inline-code-attrs-start title = 'Пример getModerationComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getModerationComment(commentId = "cmt-8f3b2a9d", includeEmail = false, includeIP = false, sso = "")
-if response.isSome:
-  let comment = response.get()
-  discard comment
-else:
-  echo "No moderation comment returned"
-[inline-code-end]
+let (maybeComment, httpResponse) = client.getModerationComment(
+  tenantId = "my-tenant-123",
+  commentId = "cmt-456789",
+  options = default(GetModerationCommentOptions)
+)
 
----
+if maybeComment.isSome:
+  let comment = maybeComment.get()
+  echo comment
+[inline-code-end]

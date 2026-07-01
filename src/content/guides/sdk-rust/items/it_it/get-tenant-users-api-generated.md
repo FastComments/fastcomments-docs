@@ -1,7 +1,7 @@
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nome | Tipo | Obbligatorio | Descrizione |
+|------|------|--------------|-------------|
 | tenant_id | String | Sì |  |
 | skip | f64 | No |  |
 
@@ -11,15 +11,14 @@ Restituisce: [`GetTenantUsersResponse`](https://github.com/FastComments/fastcomm
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di get_tenant_users'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_tenant_users Esempio'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example() -> Result<(), Error> {
-    let params: GetTenantUsersParams = GetTenantUsersParams {
+    let params = GetTenantUsersParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        skip: Some(20.0),
+        skip: Some(10.0),
     };
-    let response: GetTenantUsersResponse = get_tenant_users(&configuration, params).await?;
-    let _users: GetTenantUsersResponse = response;
+    let _response = get_tenant_users(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

@@ -2,8 +2,9 @@
 
 | שם | סוג | מיקום | חובה | תיאור |
 |------|------|----------|----------|-------------|
-| commentId | string | query | לא |  |
-| sso | string | query | לא |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## תגובה
 
@@ -11,33 +12,33 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-get_user_internal_profile'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת get_user_internal_profile'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetUserInternalProfileOptions
 from client.models.get_user_internal_profile_response import GetUserInternalProfileResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://fastcomments.com
-# ראו configuration.py לרשימת כל פרמטרי התצורה הנתמכים.
+# הגדרת ה-host היא אופציונלית ומופעלת כברירת מחדל ל-https://fastcomments.com
+# ראו configuration.py לקבלת רשימת כל פרמטרי ההגדרה הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Enter a context with an instance of the API client
+# נכנס לקונטקסט עם מופע של לקוח ה-API
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # יצירת מופע של מחלקת ה-API
     api_instance = client.ModerationApi(api_client)
-    comment_id = 'comment_id_example' # str |  (optional)
-    sso = 'sso_example' # str |  (optional)
+    tenant_id = 'tenant_id_example' # str | 
+    comment_id = 'comment_id_example' # str |  (אופציונלי)
+    sso = 'sso_example' # str |  (אופציונלי)
 
     try:
-        api_response = api_instance.get_user_internal_profile(comment_id=comment_id, sso=sso)
+        api_response = api_instance.get_user_internal_profile(tenant_id, GetUserInternalProfileOptions(comment_id=comment_id, sso=sso))
         print("The response of ModerationApi->get_user_internal_profile:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling ModerationApi->get_user_internal_profile: %s\n" % e)
 [inline-code-end]
-
----

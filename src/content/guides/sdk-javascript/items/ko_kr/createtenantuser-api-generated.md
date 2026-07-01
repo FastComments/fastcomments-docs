@@ -1,31 +1,29 @@
 ## 매개변수
 
-| 이름 | 타입 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | createTenantUserBody | CreateTenantUserBody | 예 |  |
 
 ## 응답
 
-반환: [`CreateTenantUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantUserResponse.ts)
+반환: [`CreateTenantUserResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantUserResponse1.ts)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'createTenantUser 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createTenantUser 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7f4b2a';
-const digestFreq: DigestEmailFrequency = { interval: 'daily' };
-const agentApprovalFreq: ImportedAgentApprovalNotificationFrequency = { mode: 'immediate' };
-const createTenantUserBody: CreateTenantUserBody = {
-  email: 'sara.martin@acme.co',
-  name: 'Sara Martin',
-  role: 'moderator',
-  avatarUrl: 'https://cdn.acme.co/avatars/sara.jpg',
-  notifyByEmail: true,                     // 선택적 매개변수 예시
-  digestEmailFrequency: digestFreq,
-  importedAgentApprovalNotificationFrequency: agentApprovalFreq
-};
-const result: CreateTenantUserResponse = await createTenantUser(tenantId, createTenantUserBody);
-[inline-code-end]
+const tenantId: string = "a1b2c3d4-5678-90ab-cdef-1234567890ab";
 
----
+const newUser: CreateTenantUserBody = {
+  email: "jane.doe@example.com",
+  firstName: "Jane",
+  lastName: "Doe",
+  role: "admin",
+  // 옵션 매개변수
+  phoneNumber: "+15551234567",
+  isActive: true,
+};
+
+const result: CreateTenantUserResponse1 = await createTenantUser(tenantId, newUser);
+[inline-code-end]

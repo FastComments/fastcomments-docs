@@ -1,22 +1,22 @@
 ## Paramètres
 
-| Nom | Type | Requis | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
-| tenantId | string | Oui |  |
-| largeInternalURLSanitized | string | Oui |  |
+| tenantId | string | Yes |  |
+| largeInternalURLSanitized | string | Yes |  |
 
 ## Réponse
 
-Retourne: [`GifGetLargeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GifGetLargeResponse.ts)
+Renvoie : [`GetGifLargeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetGifLargeResponse.ts)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getGifLarge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getGifLarge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-42';
-const largeInternalURLSanitized: string = '/assets/internal/gifs/launch-party-9f8b7c.gif';
-const correlationId?: string = 'req-20260619-01';
-const result: GifGetLargeResponse = await getGifLarge(tenantId, largeInternalURLSanitized);
+(async () => {
+  const tenantId: string = 'c9f4a1b2-3d5e-4f6a-8b9c-0d1e2f3a4b5c';
+  const largeInternalURLSanitized: string = 'https://cdn.fastcomments.com/gifs/awesome-cat-large.gif';
+  const result: GetGifLargeResponse = await getGifLarge(tenantId, largeInternalURLSanitized);
+  console.log(result);
+})();
 [inline-code-end]
-
----

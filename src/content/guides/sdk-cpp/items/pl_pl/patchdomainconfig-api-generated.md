@@ -1,10 +1,10 @@
 ## Parametry
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Tak |  |
-| domainToUpdate | string | Tak |  |
-| patchDomainConfigParams | PatchDomainConfigParams | Tak |  |
+| Nazwa | Typ | Wymagane | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| domainToUpdate | string | Yes |  |
+| patchDomainConfigParams | PatchDomainConfigParams | Yes |  |
 
 ## Odpowiedź
 
@@ -14,17 +14,18 @@ Zwraca: [`PatchDomainConfigResponse`](https://github.com/FastComments/fastcommen
 
 [inline-code-attrs-start title = 'Przykład patchDomainConfig'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t domainToUpdate = U("example.com");
-PatchDomainConfigParams patchParams;
-patchParams.enableComments = boost::optional<bool>(true);
-patchParams.moderatorEmail = boost::optional<utility::string_t>(U("moderator@example.com"));
-auto task = api->patchDomainConfig(tenantId, domainToUpdate, patchParams)
-    .then([](std::shared_ptr<PatchDomainConfigResponse> resp) {
-        auto result = resp ? resp : std::make_shared<PatchDomainConfigResponse>();
-        return result;
-    });
-task.wait();
-[inline-code-end]
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto domainToUpdate = utility::conversions::to_string_t("example.com");
+PatchDomainConfigParams patchDomainConfigParams;
+patchDomainConfigParams.enableComments = boost::optional<bool>(true);
+patchDomainConfigParams.moderationLevel = boost::optional<int>(2);
+patchDomainConfigParams.customHeader = boost::optional<utility::string_t>(utility::conversions::to_string_t("X-Custom-Header"));
 
----
+api->patchDomainConfig(tenantId, domainToUpdate, patchDomainConfigParams)
+    .then([](std::shared_ptr<PatchDomainConfigResponse> resp) {
+        // obsługa sukcesu
+    })
+    .then([](pplx::task<void> t) {
+        try { t.get(); } catch (const std::exception& e) { /* obsługa błędów */ }
+    });
+[inline-code-end]

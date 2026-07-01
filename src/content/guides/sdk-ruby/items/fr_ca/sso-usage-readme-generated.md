@@ -1,8 +1,8 @@
+---
 ### SSO simple
 
 ```ruby
 require 'fastcomments'
-require 'fastcomments-client'
 
 # Créer un jeton SSO simple
 user = FastComments::SSO::SimpleSSOUserData.new(
@@ -16,14 +16,14 @@ token = sso.create_token
 
 puts "SSO Token: #{token}"
 
-# Utiliser le jeton SSO pour effectuer un appel d'API authentifié
+# Utiliser le jeton SSO pour effectuer un appel API authentifié
 config = FastCommentsClient::Configuration.new
 api_client = FastCommentsClient::ApiClient.new(config)
 public_api = FastCommentsClient::PublicApi.new(api_client)
 
 response = public_api.get_comments_public(
-  tenant_id: 'your-tenant-id',
-  url_id: 'your-page-url-id',
+  'your-tenant-id',
+  'your-page-url-id',
   sso: token
 )
 
@@ -34,7 +34,6 @@ puts "Status: #{response}"
 
 ```ruby
 require 'fastcomments'
-require 'fastcomments-client'
 
 # Créer un jeton SSO sécurisé
 user = FastComments::SSO::SecureSSOUserData.new(
@@ -50,16 +49,17 @@ token = sso.create_token
 
 puts "Secure SSO Token: #{token}"
 
-# Utiliser le jeton SSO pour effectuer un appel d'API authentifié
+# Utiliser le jeton SSO pour effectuer un appel API authentifié
 config = FastCommentsClient::Configuration.new
 api_client = FastCommentsClient::ApiClient.new(config)
 public_api = FastCommentsClient::PublicApi.new(api_client)
 
 response = public_api.get_comments_public(
-  tenant_id: 'your-tenant-id',
-  url_id: 'your-page-url-id',
+  'your-tenant-id',
+  'your-page-url-id',
   sso: token
 )
 
 puts "Status: #{response}"
 ```
+---

@@ -1,22 +1,20 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| userId | string | Не |  |
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| userId | string = "" | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[GetSubscriptionsAPIResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_subscriptions_api_response.nim)
+Vraća: [`Option[GetSubscriptionsAPIResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_subscriptions_api_response.nim)
 
-## Примјер
+## Primjer
 
-[inline-code-attrs-start title = 'getSubscriptions Примјер'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSubscriptions Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSubscriptions(tenantId = "my-tenant-123", userId = "")
-if response.isSome:
-  let subscriptions = response.get()
-  discard subscriptions
+let (subscriptionsOpt, httpResp) = client.getSubscriptions(tenantId = "my-tenant-123", userId = "user-456")
+if subscriptionsOpt.isSome:
+  let subscriptions = subscriptionsOpt.get()
+  echo subscriptions
 [inline-code-end]
-
----

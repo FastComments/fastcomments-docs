@@ -1,7 +1,7 @@
 ## Parametre
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
-|------|------|----------|----------|-------------|
+|------|------|-----------|----------|-------------|
 | tenantId | string | path | Ja |  |
 | commentId | string | path | Ja |  |
 | voteId | string | path | Ja |  |
@@ -10,7 +10,7 @@
 | editKey | string | query | Nej |  |
 | sso | string | query | Nej |  |
 
-## Respons
+## Svar
 
 Returnerer: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_delete_response.py)
 
@@ -19,18 +19,19 @@ Returnerer: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-
 [inline-code-attrs-start title = 'delete_comment_vote Eksempel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import DeleteCommentVoteOptions
 from client.models.vote_delete_response import VoteDeleteResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Angivelse af host er valgfri og er som standard https://fastcomments.com
+# Angivelse af værten er valgfri og standard er https://fastcomments.com
 # Se configuration.py for en liste over alle understøttede konfigurationsparametre.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Gå ind i en kontekst med en instans af API-klienten
+# Indtast en kontekst med en instans af API-klienten
 with client.ApiClient(configuration) as api_client:
     # Opret en instans af API-klassen
     api_instance = client.PublicApi(api_client)
@@ -43,7 +44,7 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (valgfri)
 
     try:
-        api_response = api_instance.delete_comment_vote(tenant_id, comment_id, vote_id, url_id, broadcast_id, edit_key=edit_key, sso=sso)
+        api_response = api_instance.delete_comment_vote(tenant_id, comment_id, vote_id, url_id, broadcast_id, DeleteCommentVoteOptions(edit_key=edit_key, sso=sso))
         print("The response of PublicApi->delete_comment_vote:\n")
         pprint(api_response)
     except Exception as e:

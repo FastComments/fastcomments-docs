@@ -1,6 +1,6 @@
 ## Parametreler
 
-| Ad | Tip | Konum | Gerekli | Açıklama |
+| Ad | Tip | Konum | Gereklidir | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 | meta | string | query | Hayır |  |
@@ -15,37 +15,38 @@ Döndürür: [`GetTenantsResponse`](https://github.com/FastComments/fastcomments
 [inline-code-attrs-start title = 'get_tenants Örneği'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetTenantsOptions
 from client.models.get_tenants_response import GetTenantsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Host'u tanımlamak isteğe bağlıdır ve varsayılan olarak https://fastcomments.com kullanılır
+# Ana bilgisayarı tanımlamak isteğe bağlıdır ve varsayılan olarak https://fastcomments.com
 # Tüm desteklenen yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# İstemci, kimlik doğrulama ve yetkilendirme parametrelerini
-# API sunucusu güvenlik politikasına uygun olarak yapılandırmalıdır.
-# Her kimlik doğrulama yöntemi için örnekler aşağıda verilmiştir; kullanım
-# durumunuza uyan örneği kullanın.
+# İstemci, kimlik doğrulama ve yetkilendirme parametrelerini yapılandırmalıdır
+# API sunucusunun güvenlik politikası doğrultusunda.
+# Her kimlik doğrulama yöntemi için aşağıda örnekler verilmiştir,
+# kullanım durumunuza uyan örneği kullanın.
 
-# Configure API key authorization: api_key
+# API anahtar yetkilendirmesini yapılandır: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Gerekirse API anahtarı için önek (e.g. Bearer) ayarlamak için aşağıdaki satırın başındaki yorum işaretini kaldırın
+# Gerekirse API anahtarı için ön ek (ör. Bearer) ayarlamak için aşağıdaki satırı yorumdan çıkarın
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API istemcisinin bir örneği ile bir bağlam açın
+# API istemcisinin bir örneğiyle bir bağlam girin
 with client.ApiClient(configuration) as api_client:
-    # API sınıfından bir örnek oluşturun
+    # API sınıfının bir örneğini oluştur
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    meta = 'meta_example' # str |  (isteğe bağlı)
-    skip = 3.4 # float |  (isteğe bağlı)
+    meta = 'meta_example' # str |  (opsiyonel)
+    skip = 3.4 # float |  (opsiyonel)
 
     try:
-        api_response = api_instance.get_tenants(tenant_id, meta=meta, skip=skip)
+        api_response = api_instance.get_tenants(tenant_id, GetTenantsOptions(meta=meta, skip=skip))
         print("The response of DefaultApi->get_tenants:\n")
         pprint(api_response)
     except Exception as e:

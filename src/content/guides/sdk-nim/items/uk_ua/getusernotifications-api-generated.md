@@ -3,17 +3,7 @@
 | Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Так |  |
-| urlId | string | Так |  |
-| pageSize | int | Ні |  |
-| afterId | string | Ні |  |
-| includeContext | bool | Ні |  |
-| afterCreatedAt | int64 | Ні |  |
-| unreadOnly | bool | Ні |  |
-| dmOnly | bool | Ні |  |
-| noDm | bool | Ні |  |
-| includeTranslations | bool | Ні |  |
-| includeTenantNotifications | bool | Ні |  |
-| sso | string | Ні |  |
+| options | GetUserNotificationsOptions | Ні |  |
 
 ## Відповідь
 
@@ -21,24 +11,9 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад getUserNotifications'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUserNotifications Приклад'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUserNotifications(
-  tenantId = "my-tenant-123",
-  urlId = "news/article-title",
-  pageSize = 0,
-  afterId = "",
-  includeContext = false,
-  afterCreatedAt = 0,
-  unreadOnly = false,
-  dmOnly = false,
-  noDm = false,
-  includeTranslations = false,
-  includeTenantNotifications = false,
-  sso = ""
-)
-
-if response.isSome:
-  let notifications = response.get()
-  echo notifications
+let (maybeResponse, httpResponse) = client.getUserNotifications(tenantId = "my-tenant-123", options = GetUserNotificationsOptions())
+if maybeResponse.isSome:
+  let notifications = maybeResponse.get()
 [inline-code-end]

@@ -2,6 +2,7 @@
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | userId | string | query | No |  |
 | trustFactor | string | query | No |  |
 | sso | string | query | No |  |
@@ -12,7 +13,7 @@ Returnerer: [`SetUserTrustFactorResponse`](https://github.com/FastComments/fastc
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på SetTrustFactor'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'SetTrustFactor Eksempel'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -24,13 +25,14 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string |
 	userId := "userId_example" // string |  (valgfri)
 	trustFactor := "trustFactor_example" // string |  (valgfri)
 	sso := "sso_example" // string |  (valgfri)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.SetTrustFactor(context.Background()).UserId(userId).TrustFactor(trustFactor).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.SetTrustFactor(context.Background()).TenantId(tenantId).UserId(userId).TrustFactor(trustFactor).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.SetTrustFactor``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

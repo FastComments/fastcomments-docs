@@ -1,9 +1,10 @@
 ## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
-| commentId | string | 路徑 | 是 |  |
-| sso | string | 查詢 | 否 |  |
+| tenantId | string | query | 是 |  |
+| commentId | string | path | 是 |  |
+| sso | string | query | 否 |  |
 
 ## 回應
 
@@ -19,19 +20,20 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // 如果您想使用自訂的 HTTP 客戶端，請傳入實作了 `GuzzleHttp\ClientInterface` 的客戶端。
-    // 這是可選的，預設會使用 `GuzzleHttp\Client`。
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$comment_id = 'comment_id_example'; // 字串
-$sso = 'sso_example'; // 字串
+
+$tenant_id = 'tenant_id_example'; // string
+$comment_id = 'comment_id_example'; // string
+$sso = 'sso_example'; // string
+
 
 try {
-    $result = $apiInstance->getBanUsersFromComment($comment_id, $sso);
+    $result = $apiInstance->getBanUsersFromComment($tenant_id, $comment_id, $sso);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getBanUsersFromComment: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

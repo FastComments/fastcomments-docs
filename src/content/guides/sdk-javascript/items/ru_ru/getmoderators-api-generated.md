@@ -1,26 +1,25 @@
 ## Параметры
 
-| Имя | Тип | Обязательно | Описание |
+| Имя | Тип | Required | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| skip | number | Нет |  |
+| tenantId | string | Yes |  |
+| skip | number | No |  |
 
 ## Ответ
 
-Возвращает: [`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModeratorsResponse.ts)
+Возвращает: [`GetModeratorsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModeratorsResponse1.ts)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример использования getModerators'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getModerators'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function run(): Promise<void> {
-  const tenantId: string = "acme-tenant-98765";
-  const moderatorsResponse: GetModeratorsResponse = await getModerators(tenantId);
-  const skip: number = 25;
-  const pagedResponse: GetModeratorsResponse = await getModerators(tenantId, skip);
-  console.log(moderatorsResponse, pagedResponse);
+async function fetchModerators(): Promise<void> {
+  const tenantId: string = "tenant-9876";
+  const skip: number = 30; // необязательное смещение пагинации
+  const moderators: GetModeratorsResponse1 = await getModerators(tenantId, skip);
+  // Пример без пагинации:
+  // const allModerators: GetModeratorsResponse1 = await getModerators(tenantId);
 }
-run();
 [inline-code-end]
 
 ---

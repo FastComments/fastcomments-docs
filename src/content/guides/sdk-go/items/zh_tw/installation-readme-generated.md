@@ -2,11 +2,11 @@
 go get github.com/fastcomments/fastcomments-go
 ```
 
-### 使用 API 用戶端
+### 使用 API 客戶端
 
-#### 公開 API（無需驗證）
+#### 公共 API（無驗證）
 
-PublicAPI 允許未經驗證地存取公開端點：
+The PublicAPI allows unauthenticated access to public endpoints:
 
 ```go
 package main
@@ -21,7 +21,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // 使用 PublicAPI 取得評論
+    // Get comments using PublicAPI
     response, httpResp, err := apiClient.PublicAPI.GetCommentsPublic(
         context.Background(),
         "your-tenant-id",
@@ -38,7 +38,7 @@ func main() {
 
 #### 預設 API（需要 API 金鑰）
 
-DefaultAPI 需要使用您的 API 金鑰進行驗證：
+The DefaultAPI requires authentication using your API key:
 
 ```go
 package main
@@ -53,7 +53,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // 使用 API 金鑰建立已驗證的上下文
+    // Create authenticated context with API key
     auth := context.WithValue(
         context.Background(),
         client.ContextAPIKeys,
@@ -62,7 +62,7 @@ func main() {
         },
     )
 
-    // 使用已驗證的 DefaultAPI 取得評論
+    // Get comments using authenticated DefaultAPI
     response, httpResp, err := apiClient.DefaultAPI.GetComments(auth).
         TenantId("your-tenant-id").
         UrlId("your-page-url-id").
@@ -77,9 +77,9 @@ func main() {
 }
 ```
 
-#### 審核 API（管理員儀表板）
+#### 審核 API（審核員儀表板）
 
-ModerationAPI 提供管理員儀表板的功能。它提供用於列出、計數、搜尋和匯出評論的方法；審核操作（移除/還原、標記、設定審查/垃圾/核准狀態、投票、重新開啟/關閉討論串）；封鎖（禁止發言、復原、封鎖前摘要、封鎖狀態與偏好、被封鎖用戶計數）；以及徽章與信任（授予/移除徽章、手動徽章、取得/設定信任係數、使用者內部檔案）。所有 Moderation 方法都接受一個用於 SSO 驗證管理員的 `sso` 參數：
+The ModerationAPI provides an extensive suite of live and fast moderation APIs. All moderation methods accept an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie:
 
 ```go
 package main
@@ -94,7 +94,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // 使用 ModerationAPI 列出供審核的評論
+    // List comments for moderation using ModerationAPI
     response, httpResp, err := apiClient.ModerationAPI.GetApiComments(
         context.Background(),
     ).Sso("your-sso-token").Execute()

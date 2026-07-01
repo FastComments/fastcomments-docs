@@ -1,19 +1,19 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 说明 |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | No | 用于确定当前页面是否已订阅。 |
-| pageSize | integer | query | No |  |
-| afterId | string | query | No |  |
-| includeContext | boolean | query | No |  |
-| afterCreatedAt | integer | query | No |  |
-| unreadOnly | boolean | query | No |  |
-| dmOnly | boolean | query | No |  |
-| noDm | boolean | query | No |  |
-| includeTranslations | boolean | query | No |  |
-| includeTenantNotifications | boolean | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | 是 |  |
+| urlId | string | query | 否 | 用于确定当前页面是否已订阅。 |
+| pageSize | integer | query | 否 |  |
+| afterId | string | query | 否 |  |
+| includeContext | boolean | query | 否 |  |
+| afterCreatedAt | integer | query | 否 |  |
+| unreadOnly | boolean | query | 否 |  |
+| dmOnly | boolean | query | 否 |  |
+| noDm | boolean | query | 否 |  |
+| includeTranslations | boolean | query | 否 |  |
+| includeTenantNotifications | boolean | query | 否 |  |
+| sso | string | query | 否 |  |
 
 ## 响应
 
@@ -29,29 +29,31 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // 如果您想使用自定义的 HTTP 客户端，请传入实现了 `GuzzleHttp\ClientInterface` 的客户端。
+    // 如果您想使用自定义 HTTP 客户端，请传入实现 `GuzzleHttp\ClientInterface` 的客户端。
     // 这是可选的，默认将使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$url_id = 'url_id_example'; // string | 用于确定当前页面是否已订阅。
-$page_size = 56; // int
-$after_id = 'after_id_example'; // string
-$include_context = True; // bool
-$after_created_at = 56; // int
-$unread_only = True; // bool
-$dm_only = True; // bool
-$no_dm = True; // bool
-$include_translations = True; // bool
-$include_tenant_notifications = True; // bool
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // 字符串
+$options = [
+    'url_id' => 'url_id_example', // 字符串 | 用于确定当前页面是否已订阅。
+    'page_size' => 56, // 整数
+    'after_id' => 'after_id_example', // 字符串
+    'include_context' => True, // 布尔
+    'after_created_at' => 56, // 整数
+    'unread_only' => True, // 布尔
+    'dm_only' => True, // 布尔
+    'no_dm' => True, // 布尔
+    'include_translations' => True, // 布尔
+    'include_tenant_notifications' => True, // 布尔
+    'sso' => 'sso_example', // 字符串
+];
+
 
 try {
-    $result = $apiInstance->getUserNotifications($tenant_id, $url_id, $page_size, $after_id, $include_context, $after_created_at, $unread_only, $dm_only, $no_dm, $include_translations, $include_tenant_notifications, $sso);
+    $result = $apiInstance->getUserNotifications($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getUserNotifications: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

@@ -1,8 +1,8 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Sì |  |
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+|------|------|-----------|--------------|-------------|
+| tenantId | string | query | Yes |  |
 
 ## Risposta
 
@@ -10,25 +10,27 @@ Restituisce: [`GetDomainConfigsResponse`](https://github.com/FastComments/fastco
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di getDomainConfigs'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio getDomainConfigs'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configura l'autenticazione con API key: api_key
+// Configura l'autorizzazione della chiave API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Decommenta la riga qui sotto per impostare un prefisso (es. Bearer) per la API key, se necessario
+// Decommenta qui sotto per impostare il prefisso (es. Bearer) per la chiave API, se necessario
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
     // Se vuoi usare un client HTTP personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
-    // Questo è opzionale, `GuzzleHttp\Client` sarà usato come predefinito.
+    // Questo è opzionale, `GuzzleHttp\Client` verrà usato come predefinito.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
+
 
 try {
     $result = $apiInstance->getDomainConfigs($tenant_id);

@@ -1,6 +1,6 @@
 ## Parametre
 
-| Name | Type | Påkrævet | Beskrivelse |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | id | string | Nej |  |
@@ -14,12 +14,16 @@ Returnerer: [`Option[GetEmailTemplateRenderErrorsResponse]`](https://github.com/
 
 [inline-code-attrs-start title = 'getEmailTemplateRenderErrors Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getEmailTemplateRenderErrors(tenantId = "my-tenant-123", id = "", skip = 0.0)
-if response.isSome:
-  let templateErrors = response.get()
-  discard templateErrors
-else:
-  discard httpResponse
-[inline-code-end]
+let (optResp, httpResp) = client.getEmailTemplateRenderErrors(
+  tenantId = "my-tenant-123",
+  id = "welcome-template",
+  skip = 0.0
+)
 
----
+if optResp.isSome:
+  let resp = optResp.get()
+  # brug responsen efter behov
+else:
+  # håndter manglende svar
+  discard
+[inline-code-end]

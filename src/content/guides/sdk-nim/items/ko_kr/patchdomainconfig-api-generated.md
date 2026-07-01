@@ -1,37 +1,28 @@
----
 ## 매개변수
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| 이름 | 유형 | 필수 | 설명 |
+|------|------|------|------|
 | tenantId | string | 예 |  |
-| domainToUpdate | string | 아니요 |  |
-| patchDomainConfigParams | PatchDomainConfigParams | 아니요 |  |
+| domainToUpdate | string | 아니오 |  |
+| patchDomainConfigParams | PatchDomainConfigParams | 아니오 |  |
 
 ## 응답
 
 반환: [`Option[PatchDomainConfigResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_patch_domain_config_response.nim)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'patchDomainConfig 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'patchDomainConfig 예시'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let patchParams: PatchDomainConfigParams = PatchDomainConfigParams(
-  allowedOrigins = @["https://news.example.com", "https://cdn.news.com"],
-  enableComments = true,
-  moderationRequired = false,
-  maxCommentLength = 2000,
-  primaryDomain = "comments.news-site.com"
-)
-let (response, httpResponse) = client.patchDomainConfig(
+let (optResp, httpResp) = client.patchDomainConfig(
   tenantId = "my-tenant-123",
-  domainToUpdate = "comments.news-site.com",
-  patchDomainConfigParams = patchParams
+  domainToUpdate = "news.mywebsite.com",
+  patchDomainConfigParams = PatchDomainConfigParams()
 )
-if response.isSome:
-  let cfg = response.get()
-  echo "Patched domain config received:", cfg
-else:
-  echo "No response body, HTTP status:", httpResponse.statusCode
+
+if optResp.isSome:
+  let resp = optResp.get()
+  echo resp
 [inline-code-end]
 
 ---

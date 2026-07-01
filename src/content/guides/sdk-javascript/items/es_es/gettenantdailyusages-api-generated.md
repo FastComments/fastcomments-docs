@@ -1,9 +1,8 @@
----
 ## Parámetros
 
-| Name | Type | Required | Description |
+| Nombre | Tipo | Requerido | Descripción |
 |------|------|----------|-------------|
-| tenantId | string | Sí |  |
+| tenantId | string | Yes |  |
 | yearNumber | number | No |  |
 | monthNumber | number | No |  |
 | dayNumber | number | No |  |
@@ -11,23 +10,35 @@
 
 ## Respuesta
 
-Devuelve: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantDailyUsagesResponse.ts)
+Devuelve: [`GetTenantDailyUsagesResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantDailyUsagesResponse1.ts)
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de getTenantDailyUsages'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo getTenantDailyUsages'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function run(): Promise<void> {
-  const tenantId: string = "b4f3a9c2-8d1e-4f3b-9c6e-2a7f4d5c1e0b";
-  const yearNumber: number = 2026;
-  const monthNumber: number = 6;
-  const dayNumber: number = 19;
+async function fetchDailyUsage() {
+  const tenantId: string = "tenant-9876";
+  const yearNumber: number = 2024;
+  const monthNumber: number = 5; // Mayo
+  const dayNumber: number = 12;
   const skip: number = 0;
-  const fullResponse: GetTenantDailyUsagesResponse = await getTenantDailyUsages(tenantId, yearNumber, monthNumber, dayNumber, skip);
-  const basicResponse: GetTenantDailyUsagesResponse = await getTenantDailyUsages(tenantId);
-  console.log(fullResponse, basicResponse);
-}
-run();
-[inline-code-end]
 
----
+  const fullResult: GetTenantDailyUsagesResponse1 = await getTenantDailyUsages(
+    tenantId,
+    yearNumber,
+    monthNumber,
+    dayNumber,
+    skip
+  );
+
+  // Usando solo el parámetro requerido y uno opcional
+  const partialResult: GetTenantDailyUsagesResponse1 = await getTenantDailyUsages(
+    tenantId,
+    yearNumber
+  );
+
+  console.log(fullResult, partialResult);
+}
+
+fetchDailyUsage();
+[inline-code-end]

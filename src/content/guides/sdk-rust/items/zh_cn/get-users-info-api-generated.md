@@ -1,29 +1,26 @@
 ---
-租户的批量用户信息。给定 userIds，返回 User / SSOUser 的显示信息。
-由评论小部件使用，用于丰富通过 presence event 刚刚出现的用户。
-没有页面上下文：隐私被统一强制执行（私有资料被掩盖）。
+租户的批量用户信息。根据 userIds，返回 User / SSOUser 的显示信息。评论部件使用此接口为通过存在事件刚出现的用户提供丰富信息。没有页面上下文：隐私统一强制执行（私人资料会被遮蔽）。
 
 ## 参数
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | 是 |  |
-| ids | String | 是 |  |
+| tenant_id | String | Yes |  |
+| ids | String | Yes |  |
 
 ## 响应
 
-返回: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_info_response.rs)
+返回：[`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_info_response.rs)
 
 ## 示例
 
-[inline-code-attrs-start title = 'get_users_info 示例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '获取用户信息 示例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: GetUsersInfoParams = GetUsersInfoParams {
+let params = GetUsersInfoParams {
     tenant_id: "acme-corp-tenant".to_string(),
-    ids: "alice@example.com,bob@example.com,carol@example.com".to_string(),
-    page_size: Some(100),
+    ids: "user-1,user-2".to_string(),
 };
-let users_response: PageUsersInfoResponse = get_users_info(&configuration, params).await?;
+let page: PageUsersInfoResponse = get_users_info(&configuration, params).await?;
 [inline-code-end]
 
 ---

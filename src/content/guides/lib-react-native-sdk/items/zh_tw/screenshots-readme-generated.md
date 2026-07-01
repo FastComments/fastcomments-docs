@@ -1,41 +1,40 @@
----
-具有頭像、巢狀回覆、投票和內建富文本撰寫器的即時線程評論，另外包含深色主題和即時聊天預設（此處透過 `react-native-web` 呈現）：
+Live threaded commenting with avatars, nested replies, votes, and the built-in rich-text composer, plus a dark theme and a live‑chat preset (shown here rendered via `react-native-web`):
 
 <table>
   <tr>
-    <td align="center"><b>即時評論</b><br/><img src="./demo-screenshots/light.png" width="260" alt="即時評論，淺色主題"/></td>
-    <td align="center"><b>深色主題</b><br/><img src="./demo-screenshots/dark.png" width="260" alt="即時評論，深色主題"/></td>
-    <td align="center"><b>即時聊天</b><br/><img src="./demo-screenshots/chat.png" width="260" alt="即時聊天預設"/></td>
+    <td align="center"><b>Live Commenting</b><br/><img src="./demo-screenshots/light.png" width="260" alt="即時評論，亮色主題"/></td>
+    <td align="center"><b>Dark Theme</b><br/><img src="./demo-screenshots/dark.png" width="260" alt="即時評論，暗色主題"/></td>
+    <td align="center"><b>Live Chat</b><br/><img src="./demo-screenshots/chat.png" width="260" alt="即時聊天預設"/></td>
   </tr>
 </table>
 
-### 富文本編輯器
+### Rich Text Editor
 
-本函式庫使用 [`react-native-enriched`](https://github.com/software-mansion/react-native-enriched) 進行富文本編輯，提供功能強大的所見即所得 (WYSIWYG) 編輯體驗。相同的編輯器驅動 iOS、Android 與網頁（透過 `react-native-web`），因此撰寫器在每個平台上以單一實作保持一致行為。
+This library uses [`react-native-enriched`](https://github.com/software-mansion/react-native-enriched) for rich text editing, which provides a powerful WYSIWYG editing experience. The same editor powers iOS, Android, and the web (via `react-native-web`), so the composer behaves consistently across every platform with a single implementation.
 
-`react-native-enriched` 在原生端需要 React Native 新架構 (Fabric)（自 RN 0.76 起為預設，在 RN 0.72-0.75 需手動啟用），以及能解析套件 `exports` 條件的打包器。此 SDK 以 RN 0.81 / React 19 為開發與測試目標。同一編輯器也透過 `react-native-web` 在網頁上運行；enriched 編輯器的網頁建置在上游仍被標記為實驗性。
+`react-native-enriched` requires the React Native New Architecture (Fabric) on native (the default since RN 0.76, opt‑in on RN 0.72‑0.75), and a bundler that resolves package `exports` conditions. This SDK is developed and tested against RN 0.81 / React 19. The same editor also runs on web through `react-native-web`; the enriched editor's web build is still marked experimental upstream.
 
-### 元件
+### Widgets
 
-此 SDK 提供三個元件，與 FastComments Android SDK 對應：
+The SDK ships three widgets, mirroring the FastComments Android SDK:
 
-- `FastCommentsLiveCommenting` - 具有投票、回覆、分頁、提及、通知與即時更新的線程式評論。
-- `FastCommentsLiveChat` - 使用相同引擎的聊天預設：訊息按時間順序排列，最新訊息在底部，撰寫器位於列表下方，有即時的標頭條（連線點 + 使用者數），透過向上捲動載入無限歷史，會自動捲動到新訊息，沒有投票或回覆線程。每個預設都可透過 `config` 覆寫。
-- `FastCommentsFeed` - 一個社交動態，包含發文撰寫器、多媒體、反應、關注，以及即時新貼文橫幅。
+- `FastCommentsLiveCommenting` - threaded commenting with votes, replies, pagination, mentions, notifications, and live updates.
+- `FastCommentsLiveChat` - a chat preset over the same engine: chronological messages with new ones at the bottom, the composer below the list, a live header strip (connection dot + user count), infinite history loaded by scrolling up, auto‑scroll to new messages, no votes or reply threading. Every preset can be overridden via `config`.
+- `FastCommentsFeed` - a social feed with post composer, media, reactions, follows, and live new‑post banners.
 
 ```tsx
     <FastCommentsLiveChat config=\{{ tenantId: 'demo', urlId: 'my-room' }}/>
 ```
 
-### 主題
+### Theming
 
-預設外觀是從一組語義化設計代幣 (`FastCommentsTheme`) 產生：顏色、間距、圓角、字型大小、字重與頭像尺寸。在任一元件的 `theme` prop 傳入部分代幣覆寫（型別為 `FastCommentsThemeOverrides`），整個樣式樹將一致地重新套用樣式：
+The default look is generated from a set of semantic design tokens (`FastCommentsTheme`): colors, spacing, radius, font sizes, font weights, and avatar sizes. Pass partial token overrides (typed `FastCommentsThemeOverrides`) through the `theme` prop on any widget and the entire style tree restyles consistently:
 
 ```tsx
     <FastCommentsLiveCommenting config={config} theme=\{{ colors: { primary: '#FF5500' } }}/>
 ```
 
-啟用深色模式只需一組代幣：
+Dark mode is one token set away:
 
 ```tsx
     import { getDarkTheme } from 'fastcomments-react-native-sdk';
@@ -43,42 +42,71 @@
     <FastCommentsLiveCommenting config={config} theme={getDarkTheme()}/>
 ```
 
-`styles` prop 仍接受原始的 `IFastCommentsStyles` 樹以供精細控制。當同時提供 `theme` 與 `styles` 時，明確定義的 styles 會優先於主題化的樣式樹；當僅提供 `styles` 時，它將完全取代預設（這是原有行為，因此現有的整合與樣式不會受影響）。`setupDarkModeSkin` 已不建議使用，改為使用 `theme` prop。
+The `styles` prop still accepts a raw `IFastCommentsStyles` tree for surgical control. When `theme` and `styles` are both provided, the explicit styles win over the themed tree; when only `styles` is provided, it replaces the defaults entirely (the original behavior, so existing integrations and skins are unaffected). `setupDarkModeSkin` is deprecated in favor of the `theme` prop.
 
-### 配置選項
+### Configuration Options
 
-本函式庫旨在支援 [fastcomments-typescript](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts) 中定義的所有配置選項，與網頁實作一致。
+This library aims to support all configuration options defined in [fastcomments-typescript](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts), just like the web implementation.
 
-除此之外，React Native 透過 `FastCommentsRNConfig` 增加了一些 SDK 專用選項：
+On top of those, React Native adds a few SDK‑specific options via `FastCommentsRNConfig`:
 
-- `hideTopBar` - 隱藏顯示於撰寫器上方的已登入使用者/通知鈴鐺列。
-- `usePressToEdit` - 長按評論以開啟其選單。
-- `disableDownVoting` - 隱藏倒票（down-vote）按鈕。
-- `renderCommentInline` - 將評論者資訊渲染在與評論內容相同的 HTML 區塊內。
-- `renderLikesToRight` - 將投票/喜歡區域移到評論的右側，而非下方。
-- `renderDateBelowComment` - 在評論下方顯示日期。
-- `showLiveStatus` - 在評論上方顯示類似聊天樣式的「Live」＋使用者數量標頭條。
-- `useInlineSubmitButton` - 將送出按鈕以圖示方式呈現在撰寫器內。
-- `countAboveToggle` - 與 `useShowCommentsToggle` 一起使用時，指定在「顯示評論」切換按鈕上方呈現多少則評論。
-- `preserveFeedScrollPosition` - `FastCommentsFeed` 在卸載/重新掛載間記住其捲動位移（預設 true）。
+- `hideTopBar` - hide the logged‑in user / notification‑bell strip shown above the composer.
+- `usePressToEdit` - press‑and‑hold a comment to open its menu.
+- `disableDownVoting` - hide down‑vote buttons.
+- `renderCommentInline` - render commenter info inside the same HTML block as the comment content.
+- `renderLikesToRight` - move the vote/like area to the right of the comment instead of below it.
+- `renderDateBelowComment` - render the date below the comment.
+- `showLiveStatus` - show the chat‑style "Live" + user‑count header strip above comments.
+- `useInlineSubmitButton` - render the submit button as an icon inside the composer.
+- `countAboveToggle` - with `useShowCommentsToggle`, how many comments render above the "Show Comments" toggle.
+- `preserveFeedScrollPosition` - `FastCommentsFeed` remembers its scroll offset across unmount/remount (default true).
 
-### FastComments 概念
+### FastComments Concepts
 
-開始使用時主要要了解的概念是 `tenantId` 與 `urlId`。`tenantId` 是你的 FastComments.com 帳戶識別碼。`urlId` 是評論串所綁定的對象，這可以是頁面 URL，或產品 id、文章 id 等。
+The main concepts to be aware of to get started are `tenantId` and `urlId`. `tenantId` is your FastComments.com account identifier. `urlId` is where comment threads
+will be tied to. This could be a page URL, or a product id, an article id, etc.
 
-### 使用者通知
+### Localization
 
-FastComments 支援 [多種情境](https://docs.fastcomments.com/guide-notifications.html) 的通知。通知可設定，使用者可在全域或在單一通知/評論層級選擇取消訂閱，並支援頁面層級的訂閱，讓使用者能訂閱特定頁面或文章的討論串。
+All user‑facing text in these widgets (button labels, placeholders, empty states, relative
+dates like "5 minutes ago", error messages, etc.) is **server‑driven**. The components do not
+hard‑code English strings; they render the translations FastComments serves for the requested
+locale.
 
-例如，可以使用 Secure SSO 來驗證使用者，接著定期輪詢未讀通知並推送給使用者。
+To request a locale, set `locale` in your config:
 
-請參閱 [範例 AppNotificationSecureSSO](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppNotificationsSecureSSO.tsx) 了解如何取得與轉換使用者未讀通知。
+```ts
+const config = {
+    tenantId: 'your-tenant-id',
+    urlId: 'some-page',
+    locale: 'de_de', // de_de, fr_fr, ja_jp, es_es, etc.
+};
+```
 
-### Gif 瀏覽器
+When no `locale` is set, FastComments serves the tenant's default language.
 
-預設不啟用任何圖片或 gif 選擇功能。請參閱 [example/src/AppCommentingImageSelection.tsx](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppCommentingImageSelection.tsx) 了解如何支援圖片與 gif 上傳。此函式庫提供一個會將搜尋與圖片匿名化的 Gif 瀏覽器，你只需使用它即可。
+**Editing the text:** translations are managed in your FastComments dashboard, not in this SDK.
+To change wording, override the default copy, or add a language, edit the translations for your
+account in the dashboard - the change is picked up by the widgets automatically with no app
+release required. The SDK ships no English fallbacks, so any key you blank out in the dashboard
+renders empty; keep the keys populated for every locale you support.
 
-### 效能
+### User Notifications
 
-若發現任何效能問題，請建立一個包含可重現範例與所使用裝置的 issue。效能在所有 FastComments 函式庫中都是首要考量。
----
+FastComments supports notifications for [many scenarios](https://docs.fastcomments.com/guide-notifications.html). Notifications are configurable,
+can be opted‑out globally or at a notification/comment level, and supports page‑level subscriptions so that users can subscribe to threads of a
+specific page or article.
+
+For example, it is possible to use Secure SSO to authenticate the user and then periodically poll for unread notifications and push them to the user.
+
+See [the example AppNotificationSecureSSO](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppNotificationsSecureSSO.tsx) for how to get and translate unread user notifications.
+
+### Gif Browser
+
+By default, no image or gif selection is enabled. See [example/src/AppCommentingImageSelection.tsx](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppCommentingImageSelection.tsx) for how
+to support image and gif uploads. There is a Gif Browser that anonymizes searches and images provided in this library, you simply have to use it.
+
+### Performance
+
+Please open a ticket with an example to reproduce, including device used, if you identify any performance problems. Performance is a first‑class citizen
+of all FastComments libraries.

@@ -1,34 +1,24 @@
----
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| tenantId | string | Da |  |
-| commentId | string | Da |  |
-| broadcastId | string | Ne |  |
-| sso | string | Ne |  |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| broadcastId | string | No |  |
+| sso | string = "" | No |  |
 
 ## Odgovor
 
-Vraća: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
+Returns: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## Primjer
 
 [inline-code-attrs-start title = 'unLockComment Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let tenantId = "my-tenant-123"
-let commentId = "cmt-987654321"
-let (response, httpResponse) = client.unLockComment(
-  tenantId = tenantId,
-  commentId = commentId,
-  broadcastId = "",
-  sso = ""
-)
-if response.isSome:
-  let apiResp = response.get()
-  echo "Unlocked comment ", commentId, " for tenant ", tenantId
+let (maybeEmpty, httpResp) = client.unLockComment(tenantId = "my-tenant-123", commentId = "comment-456", broadcastId = "", sso = "")
+if maybeEmpty.isSome:
+  let emptyResp = maybeEmpty.get()
+  echo "Comment unlocked"
 else:
-  echo "Unlock failed, HTTP status: ", $httpResponse.status
+  echo "Failed to unlock comment"
 [inline-code-end]
-
----

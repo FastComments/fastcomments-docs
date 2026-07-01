@@ -1,22 +1,25 @@
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
-|------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
+| Naam | Type | Verplicht | Beschrijving |
+|------|------|-----------|--------------|
+| tenantId | string | Ja |  |
+| id | string | Ja |  |
 
 ## Respons
 
-Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Retourneert: [`DeleteEmailTemplateResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteEmailTemplateResponse.ts)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'deleteEmailTemplate Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_42';
-const templateId: string = 'tmpl_3fa85f64-5717-4562-b3fc-2c963f66afa6';
-const optionalStatus: APIStatus | undefined = undefined;
-const result: APIEmptyResponse = await deleteEmailTemplate(tenantId, templateId);
-[inline-code-end]
+async () => {
+  const tenantId: string = "tenant_12345";
+  const templateId: string = "template_abcde";
 
----
+  const response: DeleteEmailTemplateResponse = await deleteEmailTemplate(tenantId, templateId);
+
+  // Voorbeeld van het benaderen van een optionele eigenschap vanuit de respons
+  const statusCode: number | undefined = response.status?.code;
+}();
+[inline-code-end]

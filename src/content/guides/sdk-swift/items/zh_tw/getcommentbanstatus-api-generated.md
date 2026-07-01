@@ -1,25 +1,27 @@
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 說明 |
+| 名稱 | 類型 | 位置 | 必要 | 說明 |
 |------|------|----------|----------|-------------|
-| commentId | string | 路徑 | 是 |  |
-| sso | string | 查詢 | 否 |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| sso | string | query | No |  |
 
 ## 回應
 
-回傳：[`GetCommentBanStatusResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetCommentBanStatusResponse.swift)
+返回：[`GetCommentBanStatusResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetCommentBanStatusResponse.swift)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getCommentBanStatus 範例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 下列程式範例仍屬測試版。如有任何問題，請透過 http://github.com/OpenAPITools/openapi-generator/issues/new 回報
+// 以下程式碼範例仍屬測試版。如有任何問題，請透過 http://github.com/OpenAPITools/openapi-generator/issues/new 回報
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
-let sso = "sso_example" // String |  (選用)
+let sso = "sso_example" // String |  （可選）
 
-ModerationAPI.getCommentBanStatus(commentId: commentId, sso: sso) { (response, error) in
+ModerationAPI.getCommentBanStatus(tenantId: tenantId, commentId: commentId, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -30,3 +32,5 @@ ModerationAPI.getCommentBanStatus(commentId: commentId, sso: sso) { (response, e
     }
 }
 [inline-code-end]
+
+---

@@ -1,6 +1,6 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | commentId | string | path | Yes |  |
@@ -20,14 +20,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ако искате да използвате персонализиран HTTP клиент, предайте клиента си, който имплементира `GuzzleHttp\ClientInterface`.
+    // Ако искате да използвате персонализиран HTTP клиент, предайте вашия клиент, който имплементира `GuzzleHttp\ClientInterface`.
     // Това е по избор, по подразбиране ще се използва `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$comment_id = 'comment_id_example'; // string
+
+$tenant_id = 'tenant_id_example'; // низ
+$comment_id = 'comment_id_example'; // низ
 $public_block_from_comment_params = new \FastComments\Client\Model\PublicBlockFromCommentParams(); // \FastComments\Client\Model\PublicBlockFromCommentParams
-$sso = 'sso_example'; // string
+$sso = 'sso_example'; // низ
+
 
 try {
     $result = $apiInstance->blockFromCommentPublic($tenant_id, $comment_id, $public_block_from_comment_params, $sso);
@@ -36,3 +38,5 @@ try {
     echo 'Exception when calling PublicApi->blockFromCommentPublic: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

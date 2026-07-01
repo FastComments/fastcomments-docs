@@ -2,10 +2,10 @@ req
 tenantId
 urlId
 
-## Παράμετροι
+## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|------------|-------------|
 | tenantId | string | path | Ναι |  |
 | urlId | string | query | Ναι |  |
 | page | integer | query | Όχι |  |
@@ -35,30 +35,31 @@ urlId
 | afterCommentId | string | query | Όχι |  |
 | beforeCommentId | string | query | Όχι |  |
 
-## Απόκριση
+## Response
 
-Επιστρέφει: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comments_response_with_presence_public_comment.py)
+Returns: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comments_response_with_presence_public_comment.py)
 
-## Παράδειγμα
+## Example
 
 [inline-code-attrs-start title = 'Παράδειγμα get_comments_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetCommentsPublicOptions
 from client.models.get_comments_response_with_presence_public_comment import GetCommentsResponseWithPresencePublicComment
 from client.models.sort_directions import SortDirections
 from client.rest import ApiException
 from pprint import pprint
 
-# Ο καθορισμός του host είναι προαιρετικός και από προεπιλογή είναι το https://fastcomments.com
-# Δείτε το configuration.py για μια λίστα με όλες τις υποστηριζόμενες παραμέτρους διαμόρφωσης.
+# Ο καθορισμός του host είναι προαιρετικός και προεπιλεγμένη τιμή είναι https://fastcomments.com
+# Δείτε το configuration.py για μια λίστα όλων των υποστηριζόμενων παραμέτρων διαμόρφωσης.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Χρησιμοποιήστε context με ένα instance του API client
+# Εισαγωγή ενός πλαισίου (context) με μια παρουσία του API client
 with client.ApiClient(configuration) as api_client:
-    # Δημιουργήστε ένα instance της κλάσης API
+    # Create an instance of the API class
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
@@ -90,9 +91,9 @@ with client.ApiClient(configuration) as api_client:
     before_comment_id = 'before_comment_id_example' # str |  (προαιρετικό)
 
     try:
-        api_response = api_instance.get_comments_public(tenant_id, url_id, page=page, direction=direction, sso=sso, skip=skip, skip_children=skip_children, limit=limit, limit_children=limit_children, count_children=count_children, fetch_page_for_comment_id=fetch_page_for_comment_id, include_config=include_config, count_all=count_all, includei10n=includei10n, locale=locale, modules=modules, is_crawler=is_crawler, include_notification_count=include_notification_count, as_tree=as_tree, max_tree_depth=max_tree_depth, use_full_translation_ids=use_full_translation_ids, parent_id=parent_id, search_text=search_text, hash_tags=hash_tags, user_id=user_id, custom_config_str=custom_config_str, after_comment_id=after_comment_id, before_comment_id=before_comment_id)
-        print("The response of PublicApi->get_comments_public:\n")
+        api_response = api_instance.get_comments_public(tenant_id, url_id, GetCommentsPublicOptions(page=page, direction=direction, sso=sso, skip=skip, skip_children=skip_children, limit=limit, limit_children=limit_children, count_children=count_children, fetch_page_for_comment_id=fetch_page_for_comment_id, include_config=include_config, count_all=count_all, includei10n=includei10n, locale=locale, modules=modules, is_crawler=is_crawler, include_notification_count=include_notification_count, as_tree=as_tree, max_tree_depth=max_tree_depth, use_full_translation_ids=use_full_translation_ids, parent_id=parent_id, search_text=search_text, hash_tags=hash_tags, user_id=user_id, custom_config_str=custom_config_str, after_comment_id=after_comment_id, before_comment_id=before_comment_id))
+        print("Η απόκριση του PublicApi->get_comments_public:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PublicApi->get_comments_public: %s\n" % e)
+        print("Εξαίρεση κατά την κλήση του PublicApi->get_comments_public: %s\n" % e)
 [inline-code-end]

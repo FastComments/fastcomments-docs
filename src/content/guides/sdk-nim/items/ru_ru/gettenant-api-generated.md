@@ -1,6 +1,6 @@
 ## Параметры
 
-| Name | Type | Required | Description |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | id | string | Нет |  |
@@ -11,14 +11,10 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример getTenant'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTenant Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTenant(tenantId = "my-tenant-123", id = "tenant-789")
-if response.isSome:
-  let tenant = response.get()
-  discard tenant
-else:
-  discard httpResponse
+let (tenantResponse, httpResponse) = client.getTenant(tenantId = "my-tenant-123", id = "config-001")
+if tenantResponse.isSome:
+  let tenant = tenantResponse.get()
+  echo tenant
 [inline-code-end]
-
----

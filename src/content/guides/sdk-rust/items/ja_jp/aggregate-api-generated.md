@@ -1,49 +1,34 @@
-ドキュメントをグループ化（groupBy が指定されている場合）して複数の操作を適用することで集計します。sum、countDistinct、avg などのさまざまな操作がサポートされています。
+Aggregates documents by grouping them (if groupBy is provided) and applying multiple operations. Different operations (e.g. sum, countDistinct, avg, etc.) are supported.
 
-## パラメータ
+ドキュメントをグループ化（groupBy が提供されている場合）し、複数の操作を適用して集計します。sum、countDistinct、avg などのさまざまな操作がサポートされています。
 
-| Name | Type | Required | Description |
+## Parameters
+
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenant_id | String | はい |  |
-| aggregation_request | models::AggregationRequest | はい |  |
-| parent_tenant_id | String | いいえ |  |
-| include_stats | bool | いいえ |  |
+| tenant_id | String | Yes |  |
+| aggregation_request | models::AggregationRequest | Yes |  |
+| parent_tenant_id | String | No |  |
+| include_stats | bool | No |  |
 
-## レスポンス
+## Response
 
-戻り値: [`AggregateResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/aggregate_response.rs)
+返却: [`AggregateResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/aggregate_response.rs)
 
-## 例
+## Example
 
-[inline-code-attrs-start title = 'aggregate の例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '集計例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params = AggregateParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    aggregation_request: models::AggregationRequest {
-        predicates: Some(vec![
-            models::QueryPredicate {
-                field: "path".to_string(),
-                operator: "EQUALS".to_string(),
-                values: Some(vec![
-                    models::QueryPredicateValue { value: "news/article".to_string() }
-                ]),
-            }
-        ]),
-        operations: vec![
-            models::AggregationOperation {
-                op_type: models::AggregationOpType::COUNT,
-                field: Some("comment_id".to_string()),
-                alias: Some("total_comments".to_string()),
-            }
-        ],
-        sort: Some(vec![
-            models::AggregationRequestSort { field: "total_comments".to_string(), direction: "DESC".to_string() }
-        ]),
-    },
-    parent_tenant_id: Some("acme-parent-tenant".to_string()),
-    include_stats: Some(true),
-};
-let aggregate_response: AggregateResponse = aggregate(&configuration, params).await?;
+async fn example() -> Result<(), Error> {
+    let config = configuration::Configuration::default();
+    let aggregation_request = models::AggregationRequest::default();
+    let params = AggregateParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        aggregation_request,
+        parent_tenant_id: Some("global-tenant".to_string()),
+        include_stats: Some(true),
+    };
+    let _response = aggregate(&config, params).await?;
+    Ok(())
+}
 [inline-code-end]
-
----

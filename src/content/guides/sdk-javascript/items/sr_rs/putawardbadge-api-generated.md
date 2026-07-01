@@ -1,24 +1,28 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| badgeId | string | Да |  |
-| userId | string | Не |  |
-| commentId | string | Не |  |
-| broadcastId | string | Не |  |
-| sso | string | Не |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| badgeId | string | Da |  |
+| userId | string | Ne |  |
+| commentId | string | Ne |  |
+| broadcastId | string | Ne |  |
+| tenantId | string | Ne |  |
+| sso | string | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AwardUserBadgeResponse.ts)
+Vraća: [`PutAwardBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PutAwardBadgeResponse.ts)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'putAwardBadge пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putAwardBadge Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const badgeId: string = 'gold-medal-2023';
-const userId: string = 'usr_100234';
-const commentId: string = 'c_78910';
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fakePayload.signature';
-const response: AwardUserBadgeResponse = await putAwardBadge(badgeId, userId, commentId, undefined, sso);
+(async () => {
+    const badgeId: string = "badge-superstar"
+    const userId: string = "user-42"
+    const commentId: string = "comment-7f9c3"
+    const broadcastId: string = "broadcast-2023-09"
+    const result: PutAwardBadgeResponse = await putAwardBadge(badgeId, userId, commentId, broadcastId)
+    console.log(result)
+})()
 [inline-code-end]

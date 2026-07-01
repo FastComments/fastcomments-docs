@@ -1,10 +1,10 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Задължителен | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Не |  |
-| replaceTenantPackageBody | ReplaceTenantPackageBody | Не |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| replaceTenantPackageBody | ReplaceTenantPackageBody | No |  |
 
 ## Отговор
 
@@ -12,23 +12,16 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за replaceTenantPackage'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'replaceTenantPackage Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.replaceTenantPackage(
+let (optResp, httpResp) = client.replaceTenantPackage(
   tenantId = "my-tenant-123",
-  id = "pkg-987",
-  replaceTenantPackageBody = ReplaceTenantPackageBody(
-    name = "Premium Plan",
-    priceCents = 999,
-    seats = 50,
-    enabled = true,
-    features = @["moderation", "analytics", "priority-support"]
-  )
+  id = "pkg-456",
+  replaceTenantPackageBody = ReplaceTenantPackageBody()
 )
-
-if response.isSome:
-  let apiEmpty = response.get()
-  discard apiEmpty
+if optResp.isSome:
+  let resp = optResp.get()
+  discard resp
 [inline-code-end]
 
 ---

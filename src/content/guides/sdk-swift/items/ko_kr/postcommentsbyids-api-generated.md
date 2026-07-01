@@ -2,6 +2,7 @@
 
 | 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | 예 |  |
 | sso | string | query | 아니오 |  |
 
 ## 응답
@@ -10,15 +11,16 @@
 
 ## 예제
 
-[inline-code-attrs-start title = 'postCommentsByIds 예제'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postCommentsByIds 예시'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 다음 코드 샘플은 아직 베타입니다. 문제 발생 시 http://github.com/OpenAPITools/openapi-generator/issues/new 통해 보고해 주세요
+// 다음 코드 샘플은 아직 베타 버전입니다. 문제가 있을 경우, http://github.com/OpenAPITools/openapi-generator/issues/new 에 보고해 주세요
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentsByIdsParams = CommentsByIdsParams(ids: ["ids_example"]) // CommentsByIdsParams | 
-let sso = "sso_example" // String |  (선택 사항)
+let sso = "sso_example" // String |  (optional)
 
-ModerationAPI.postCommentsByIds(commentsByIdsParams: commentsByIdsParams, sso: sso) { (response, error) in
+ModerationAPI.postCommentsByIds(tenantId: tenantId, commentsByIdsParams: commentsByIdsParams, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -29,5 +31,3 @@ ModerationAPI.postCommentsByIds(commentsByIdsParams: commentsByIdsParams, sso: s
     }
 }
 [inline-code-end]
-
----

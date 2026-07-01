@@ -1,32 +1,43 @@
-Листа страница за tenant. Користи га FChat десктоп клијент да попуни своју листу соба.
-Захтијева да `enableFChat` буде true на решеном прилагођеном конфигу за сваку страницу.
-Странице које захтијевају SSO се филтрирају према приступу група корисника који праве захтјев.
+List pages for a tenant. Used by the FChat desktop client to populate its room list.  
+Requires `enableFChat` to be true on the resolved custom config for each page.  
+Pages that require SSO are filtered against the requesting user's group access.
 
-## Параметри
+## Parameters
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| cursor | string | Не |  |
-| limit | number | Не |  |
-| q | string | Не |  |
-| sortBy | PagesSortBy | Не |  |
-| hasComments | boolean | Не |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Da |  |
+| cursor | string | Ne |  |
+| limit | number | Ne |  |
+| q | string | Ne |  |
+| sortBy | PagesSortBy | Ne |  |
+| hasComments | boolean | Ne |  |
 
-## Одговор
+## Response
 
-Враћа: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPublicPagesResponse.ts)
+Vraća: [`GetPagesPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPagesPublicResponse.ts)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'Пример getPagesPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getPagesPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7f9b2c";
-const cursor: string = "cursor_0001a2b3";
-const limit: number = 25;
-const q: string = "product page";
-const hasComments: boolean = true;
-const response: GetPublicPagesResponse = await getPagesPublic(tenantId, cursor, limit, q, undefined, hasComments);
-[inline-code-end]
+async function fetchPages() {
+  const tenantId: string = "tenant_12345";
+  const cursor: string = "nextPageToken";
+  const limit: number = 20;
+  const q: string = "blog";
+  const sortBy: PagesSortBy = "createdAt";
+  const hasComments: boolean = true;
 
----
+  const response: GetPagesPublicResponse = await getPagesPublic(
+    tenantId,
+    cursor,
+    limit,
+    q,
+    sortBy,
+    hasComments
+  );
+
+  console.log(response);
+}
+[inline-code-end]

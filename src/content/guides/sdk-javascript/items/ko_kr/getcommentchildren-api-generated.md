@@ -1,22 +1,23 @@
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| commentId | string | 예 |  |
-| sso | string | 아니요 |  |
+| commentId | string | Yes |  |
+| tenantId | string | No |  |
+| sso | string | No |  |
 
 ## 응답
 
-반환: [`ModerationAPIChildCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPIChildCommentsResponse.ts)
+반환: [`GetCommentChildrenResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentChildrenResponse.ts)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'getCommentChildren 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getCommentChildren 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const commentId: string = "5f8d0a2e-3b9f-4c2b-9a37-1f4e6b2c7d8f";
-const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1Njc4OSJ9.signature";
-const childrenResponse: ModerationAPIChildCommentsResponse = await getCommentChildren(commentId);
-const childrenResponseWithSso: ModerationAPIChildCommentsResponse = await getCommentChildren(commentId, sso);
-[inline-code-end]
+const commentId: string = "cmt_12345";
+const tenantId: string = "tenant_xyz";
+const sso: string = "sso_987654";
 
----
+const fullResponse: GetCommentChildrenResponse = await getCommentChildren(commentId, tenantId, sso);
+const minimalResponse: GetCommentChildrenResponse = await getCommentChildren(commentId);
+[inline-code-end]

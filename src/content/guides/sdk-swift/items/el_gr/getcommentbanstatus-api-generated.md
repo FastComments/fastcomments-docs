@@ -1,25 +1,27 @@
-## Παράμετροι
+## Parameters
 
-| Όνομα | Τύπος | Θέση | Απαιτείται | Περιγραφή |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| commentId | string | διαδρομή | Ναι |  |
-| sso | string | ερώτημα | Όχι |  |
+| tenantId | string | query | Ναι |  |
+| commentId | string | path | Ναι |  |
+| sso | string | query | Όχι |  |
 
-## Απάντηση
+## Response
 
 Επιστρέφει: [`GetCommentBanStatusResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetCommentBanStatusResponse.swift)
 
-## Παράδειγμα
+## Example
 
-[inline-code-attrs-start title = 'getCommentBanStatus Παράδειγμα'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παράδειγμα getCommentBanStatus'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Τα παρακάτω δείγματα κώδικα είναι ακόμη σε beta. Για οποιοδήποτε πρόβλημα, αναφέρετε μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
+// Τα παρακάτω παραδείγματα κώδικα είναι ακόμη beta. Για οποιοδήποτε πρόβλημα, παρακαλώ αναφέρετε το μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
 let sso = "sso_example" // String |  (προαιρετικό)
 
-ModerationAPI.getCommentBanStatus(commentId: commentId, sso: sso) { (response, error) in
+ModerationAPI.getCommentBanStatus(tenantId: tenantId, commentId: commentId, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -30,5 +32,3 @@ ModerationAPI.getCommentBanStatus(commentId: commentId, sso: sso) { (response, e
     }
 }
 [inline-code-end]
-
----

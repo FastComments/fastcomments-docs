@@ -2,11 +2,11 @@
 
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| commentId | string | Ja |  |
-| approved | bool | Nej |  |
-| sso | string | Nej |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| options | PostSetCommentApprovalStatusOptions | No |  |
 
-## Respons
+## Svar
 
 Returnerer: [`Option[SetCommentApprovedResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_set_comment_approved_response.nim)
 
@@ -14,10 +14,13 @@ Returnerer: [`Option[SetCommentApprovedResponse]`](https://github.com/FastCommen
 
 [inline-code-attrs-start title = 'postSetCommentApprovalStatus Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postSetCommentApprovalStatus(commentId = "cmt-7890", approved = false, sso = "")
-if response.isSome:
-  let setResp = response.get()
-  discard setResp
-[inline-code-end]
+let (approvedOpt, httpResp) = client.postSetCommentApprovalStatus(
+  tenantId = "my-tenant-123",
+  commentId = "comment-7890",
+  options = PostSetCommentApprovalStatusOptions()
+)
 
----
+if approvedOpt.isSome:
+  let approved = approvedOpt.get()
+  echo approved
+[inline-code-end]

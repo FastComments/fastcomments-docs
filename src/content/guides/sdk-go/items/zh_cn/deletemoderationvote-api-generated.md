@@ -1,10 +1,12 @@
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
-| commentId | string | 路径 | 是 |  |
-| voteId | string | 路径 | 是 |  |
-| sso | string | 查询 | 否 |  |
+| tenantId | string | query | 是 |  |
+| commentId | string | path | 是 |  |
+| voteId | string | path | 是 |  |
+| broadcastId | string | query | 否 |  |
+| sso | string | query | 否 |  |
 
 ## 响应
 
@@ -24,18 +26,20 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
 	voteId := "voteId_example" // string | 
-	sso := "sso_example" // string |  (可选)
+	broadcastId := "broadcastId_example" // string |  (optional)
+	sso := "sso_example" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.DeleteModerationVote(context.Background(), commentId, voteId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.DeleteModerationVote(context.Background(), commentId, voteId).TenantId(tenantId).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.DeleteModerationVote``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// 来自 `DeleteModerationVote` 的响应: VoteDeleteResponse
+	// `DeleteModerationVote` 的响应: VoteDeleteResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.DeleteModerationVote`: %v\n", resp)
 }
 [inline-code-end]

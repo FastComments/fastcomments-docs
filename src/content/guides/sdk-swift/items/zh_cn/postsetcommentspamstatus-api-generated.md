@@ -1,12 +1,13 @@
----
 ## 参数
 
 | 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
-| commentId | string | path | 是 |  |
-| spam | boolean | query | 否 |  |
-| permNotSpam | boolean | query | 否 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | 查询 | 是 |  |
+| commentId | string | 路径 | 是 |  |
+| spam | boolean | 查询 | 否 |  |
+| permNotSpam | boolean | 查询 | 否 |  |
+| broadcastId | string | 查询 | 否 |  |
+| sso | string | 查询 | 否 |  |
 
 ## 响应
 
@@ -16,15 +17,17 @@
 
 [inline-code-attrs-start title = 'postSetCommentSpamStatus 示例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 以下代码示例仍为测试版。如有任何问题，请通过 http://github.com/OpenAPITools/openapi-generator/issues/new 提交报告
+// 以下代码示例仍为测试版。如有任何问题，请通过 http://github.com/OpenAPITools/openapi-generator/issues/new 报告
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
-let spam = true // Bool |  (可选)
-let permNotSpam = true // Bool |  (可选)
-let sso = "sso_example" // String |  (可选)
+let spam = true // Bool |  (optional)
+let permNotSpam = true // Bool |  (optional)
+let broadcastId = "broadcastId_example" // String |  (optional)
+let sso = "sso_example" // String |  (optional)
 
-ModerationAPI.postSetCommentSpamStatus(commentId: commentId, spam: spam, permNotSpam: permNotSpam, sso: sso) { (response, error) in
+ModerationAPI.postSetCommentSpamStatus(tenantId: tenantId, commentId: commentId, options: ModerationAPI.PostSetCommentSpamStatusOptions(spam: spam, permNotSpam: permNotSpam, broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -35,5 +38,3 @@ ModerationAPI.postSetCommentSpamStatus(commentId: commentId, spam: spam, permNot
     }
 }
 [inline-code-end]
-
----

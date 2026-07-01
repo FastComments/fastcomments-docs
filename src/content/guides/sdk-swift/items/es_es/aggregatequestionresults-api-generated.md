@@ -1,8 +1,8 @@
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Requerido | Descripción |
+| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Sí |  |
+| tenantId | string | query | Yes |  |
 | questionId | string | query | No |  |
 | questionIds | array | query | No |  |
 | urlId | string | query | No |  |
@@ -12,13 +12,13 @@
 
 ## Respuesta
 
-Devuelve: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AggregateQuestionResultsResponse.swift)
+Returns: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AggregateQuestionResultsResponse.swift)
 
 ## Ejemplo
 
 [inline-code-attrs-start title = 'Ejemplo de aggregateQuestionResults'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Los siguientes ejemplos de código todavía están en beta. Para cualquier problema, repórtelo en http://github.com/OpenAPITools/openapi-generator/issues/new
+// Los siguientes ejemplos de código siguen en beta. Para cualquier problema, por favor repórtelo vía http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -29,7 +29,7 @@ let timeBucket = AggregateTimeBucket() // AggregateTimeBucket |  (opcional)
 let startDate = Date() // Date |  (opcional)
 let forceRecalculate = true // Bool |  (opcional)
 
-DefaultAPI.aggregateQuestionResults(tenantId: tenantId, questionId: questionId, questionIds: questionIds, urlId: urlId, timeBucket: timeBucket, startDate: startDate, forceRecalculate: forceRecalculate) { (response, error) in
+DefaultAPI.aggregateQuestionResults(tenantId: tenantId, options: DefaultAPI.AggregateQuestionResultsOptions(questionId: questionId, questionIds: questionIds, urlId: urlId, timeBucket: timeBucket, startDate: startDate, forceRecalculate: forceRecalculate)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -40,5 +40,3 @@ DefaultAPI.aggregateQuestionResults(tenantId: tenantId, questionId: questionId, 
     }
 }
 [inline-code-end]
-
----

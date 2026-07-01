@@ -1,36 +1,26 @@
----
 ## Paramètres
 
 | Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
-| tenantId | string | Oui |  |
-| id | string | Oui |  |
-| errorId | string | Oui |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| errorId | string | Yes |  |
 
 ## Réponse
 
-Retourne: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
+Retourne : [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de deleteEmailTemplateRenderError'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple deleteEmailTemplateRenderError'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t templateId = U("template-456");
-boost::optional<utility::string_t> errorIdOpt = U("err-98765");
-api->deleteEmailTemplateRenderError(tenantId, templateId, (errorIdOpt ? *errorIdOpt : utility::string_t()))
-.then([=](pplx::task<std::shared_ptr<APIEmptyResponse>> task)
-{
-    try
-    {
-        auto resp = task.get();
-        auto result = resp ? resp : std::make_shared<APIEmptyResponse>();
-    }
-    catch (const std::exception &)
-    {
-        auto fallback = std::make_shared<APIEmptyResponse>();
-    }
-});
+boost::optional<utility::string_t> optTemplateId = utility::conversions::to_string_t("template-456");
+api->deleteEmailTemplateRenderError(
+    utility::conversions::to_string_t("my-tenant-123"),
+    *optTemplateId,
+    utility::conversions::to_string_t("error-789"))
+    .then([](std::shared_ptr<APIEmptyResponse>) {})
+    .then([](pplx::task<void> t) {
+        try { t.get(); } catch (...) {}
+    });
 [inline-code-end]
-
----

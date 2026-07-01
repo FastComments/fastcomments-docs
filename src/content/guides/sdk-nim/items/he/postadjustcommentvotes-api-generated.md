@@ -1,10 +1,11 @@
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| commentId | string | כן |  |
-| adjustCommentVotesParams | AdjustCommentVotesParams | לא |  |
-| sso | string | לא |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| adjustCommentVotesParams | AdjustCommentVotesParams | No |  |
+| options | PostAdjustCommentVotesOptions | No |  |
 
 ## תגובה
 
@@ -12,12 +13,15 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-postAdjustCommentVotes'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל‑postAdjustCommentVotes'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postAdjustCommentVotes(commentId = "cmt-987654", adjustCommentVotesParams = nil, sso = "sso-token-abc123")
-if response.isSome:
-  let adjusted = response.get()
-  discard adjusted
-[inline-code-end]
+let (adjustRespOpt, httpResp) = client.postAdjustCommentVotes(
+  tenantId = "my-tenant-123",
+  commentId = "cmt-789",
+  adjustCommentVotesParams = AdjustCommentVotesParams(),
+  options = PostAdjustCommentVotesOptions()
+)
 
----
+if adjustRespOpt.isSome:
+  let adjustResp = adjustRespOpt.get()
+[inline-code-end]

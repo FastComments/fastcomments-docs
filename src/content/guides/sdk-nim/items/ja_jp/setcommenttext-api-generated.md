@@ -6,8 +6,7 @@
 | commentId | string | はい |  |
 | broadcastId | string | いいえ |  |
 | commentTextUpdateRequest | CommentTextUpdateRequest | いいえ |  |
-| editKey | string | いいえ |  |
-| sso | string | いいえ |  |
+| options | SetCommentTextOptions | いいえ |  |
 
 ## レスポンス
 
@@ -17,17 +16,16 @@
 
 [inline-code-attrs-start title = 'setCommentText の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
+let commentUpdate = CommentTextUpdateRequest(text: "Updated comment text")
+let opts = SetCommentTextOptions()
 let (response, httpResponse) = client.setCommentText(
   tenantId = "my-tenant-123",
-  commentId = "cmt-456789",
-  broadcastId = "",
-  commentTextUpdateRequest = CommentTextUpdateRequest(text: "Updated comment text to fix a typo and clarify meaning."),
-  editKey = "",
-  sso = ""
-)
+  commentId = "cmt-456",
+  broadcastId = "broadcast-789",
+  commentTextUpdateRequest = commentUpdate,
+  options = opts)
 if response.isSome:
   let result = response.get()
-  discard result
 [inline-code-end]
 
 ---

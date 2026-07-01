@@ -1,9 +1,11 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
-|------|------|----------|----------|-------------|
+| Nom | Type | Emplacement | Obligatoire | Description |
+|------|------|-------------|-------------|-------------|
+| tenantId | string | query | Oui |  |
 | commentId | string | path | Oui |  |
 | voteId | string | path | Oui |  |
+| broadcastId | string | query | Non |  |
 | sso | string | query | Non |  |
 
 ## Réponse
@@ -12,30 +14,33 @@ Renvoie : [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-py
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de delete_moderation_vote'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple delete_moderation_vote'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import DeleteModerationVoteOptions
 from client.models.vote_delete_response import VoteDeleteResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# La définition de l'hôte est optionnelle et a pour valeur par défaut https://fastcomments.com
-# Voir configuration.py pour la liste de tous les paramètres de configuration pris en charge.
+# La définition de l'hôte est facultative et par défaut à https://fastcomments.com
+# Voir configuration.py pour une liste de tous les paramètres de configuration pris en charge.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Entrez dans un contexte avec une instance du client API
+# Entrer dans un contexte avec une instance du client API
 with client.ApiClient(configuration) as api_client:
-    # Créez une instance de la classe API
+    # Créer une instance de la classe API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     vote_id = 'vote_id_example' # str | 
-    sso = 'sso_example' # str |  (optionnel)
+    broadcast_id = 'broadcast_id_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.delete_moderation_vote(comment_id, vote_id, sso=sso)
+        api_response = api_instance.delete_moderation_vote(tenant_id, comment_id, vote_id, DeleteModerationVoteOptions(broadcast_id=broadcast_id, sso=sso))
         print("The response of ModerationApi->delete_moderation_vote:\n")
         pprint(api_response)
     except Exception as e:

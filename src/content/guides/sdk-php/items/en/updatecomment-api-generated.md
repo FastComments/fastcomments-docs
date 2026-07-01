@@ -32,15 +32,19 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
 $updatable_comment_params = new \FastComments\Client\Model\UpdatableCommentParams(); // \FastComments\Client\Model\UpdatableCommentParams
-$context_user_id = 'context_user_id_example'; // string
-$do_spam_check = True; // bool
-$is_live = True; // bool
+$options = [
+    'context_user_id' => 'context_user_id_example', // string
+    'do_spam_check' => True, // bool
+    'is_live' => True, // bool
+];
+
 
 try {
-    $result = $apiInstance->updateComment($tenant_id, $id, $updatable_comment_params, $context_user_id, $do_spam_check, $is_live);
+    $result = $apiInstance->updateComment($tenant_id, $id, $updatable_comment_params, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->updateComment: ', $e->getMessage(), PHP_EOL;

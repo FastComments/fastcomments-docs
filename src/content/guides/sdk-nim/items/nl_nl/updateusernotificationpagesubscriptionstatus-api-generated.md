@@ -1,4 +1,4 @@
-Schakel meldingen voor een pagina in of uit. Wanneer gebruikers zich op een pagina abonneren, worden meldingen aangemaakt voor nieuwe root-reacties, en ook
+Enable of uitschakelen van meldingen voor een pagina. Wanneer gebruikers geabonneerd zijn op een pagina, worden meldingen aangemaakt voor nieuwe hoofdreacties, en ook
 
 ## Parameters
 
@@ -9,30 +9,26 @@ Schakel meldingen voor een pagina in of uit. Wanneer gebruikers zich op een pagi
 | url | string | Nee |  |
 | pageTitle | string | Nee |  |
 | subscribedOrUnsubscribed | string | Nee |  |
-| sso | string | Nee |  |
+| sso | string = "" | Nee |  |
 
-## Antwoord
+## Respons
 
 Retourneert: [`Option[UpdateUserNotificationPageSubscriptionStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_page_subscription_status_response.nim)
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus Voorbeeld'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Voorbeeld updateUserNotificationPageSubscriptionStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateUserNotificationPageSubscriptionStatus(
+let (optResp, httpResp) = client.updateUserNotificationPageSubscriptionStatus(
   tenantId = "my-tenant-123",
-  urlId = "news/economy/market-rally-2026-06-19",
-  url = "",
-  pageTitle = "",
-  subscribedOrUnsubscribed = "",
+  urlId = "news/article-456",
+  url = "https://example.com/news/article-456",
+  pageTitle = "Breaking News: Something Happened",
+  subscribedOrUnsubscribed = "subscribed",
   sso = ""
 )
 
-if response.isSome:
-  let updateResp = response.get()
-  echo "Subscription update received: ", updateResp
-else:
-  echo "No subscription update returned."
+if optResp.isSome:
+  let resp = optResp.get()
+  # verdere verwerking met resp
 [inline-code-end]
-
----

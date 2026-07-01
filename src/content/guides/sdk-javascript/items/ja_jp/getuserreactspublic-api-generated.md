@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | 名前 | 型 | 必須 | 説明 |
@@ -7,19 +6,22 @@
 | postIds | Array<string> | いいえ |  |
 | sso | string | いいえ |  |
 
-## レスポンス
+## 応答
 
-戻り値: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UserReactsResponse.ts)
+返却: [`GetUserReactsPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserReactsPublicResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'getUserReactsPublic の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8f3b2a9c';
-const postIds: string[] = ['post_1a2b3c', 'post_4d5e6f'];
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTYifQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
-const fullResponse: UserReactsResponse = await getUserReactsPublic(tenantId, postIds, sso);
-const minimalResponse: UserReactsResponse = await getUserReactsPublic(tenantId)
-[inline-code-end]
+async function demo() {
+  const tenantId: string = "tenant_12345";
+  const postIds: string[] = ["post_1a2b3c", "post_4d5e6f"];
+  const ssoToken: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...";
 
----
+  const fullResponse: GetUserReactsPublicResponse = await getUserReactsPublic(tenantId, postIds, ssoToken);
+  const minimalResponse: GetUserReactsPublicResponse = await getUserReactsPublic(tenantId);
+}
+
+demo();
+[inline-code-end]

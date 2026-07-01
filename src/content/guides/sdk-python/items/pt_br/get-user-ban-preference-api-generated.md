@@ -1,8 +1,9 @@
 ## Parâmetros
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| sso | string | query | Não |  |
+| Nome | Tipo | Localização | Obrigatório | Descrição |
+|------|------|--------------|-------------|-----------|
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Resposta
 
@@ -17,7 +18,7 @@ from client.models.api_moderate_get_user_ban_preferences_response import APIMode
 from client.rest import ApiException
 from pprint import pprint
 
-# Definir o host é opcional e por padrão é https://fastcomments.com
+# Definir o host é opcional e o padrão é https://fastcomments.com
 # Veja configuration.py para uma lista de todos os parâmetros de configuração suportados.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -26,12 +27,13 @@ configuration = client.Configuration(
 
 # Entre em um contexto com uma instância do cliente da API
 with client.ApiClient(configuration) as api_client:
-    # Crie uma instância da classe API
+    # Crie uma instância da classe da API
     api_instance = client.ModerationApi(api_client)
-    sso = 'sso_example' # str | (opcional)
+    tenant_id = 'tenant_id_example' # str | 
+    sso = 'sso_example' # str |  (opcional)
 
     try:
-        api_response = api_instance.get_user_ban_preference(sso=sso)
+        api_response = api_instance.get_user_ban_preference(tenant_id, sso=sso)
         print("The response of ModerationApi->get_user_ban_preference:\n")
         pprint(api_response)
     except Exception as e:

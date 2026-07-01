@@ -1,11 +1,12 @@
----
 ## Parametre
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| commentId | string | sti | Ja |  |
-| voteId | string | sti | Ja |  |
-| sso | string | forespørgsel | Nej |  |
+| tenantId | string | query | Ja |  |
+| commentId | string | path | Ja |  |
+| voteId | string | path | Ja |  |
+| broadcastId | string | query | Nej |  |
+| sso | string | query | Nej |  |
 
 ## Svar
 
@@ -19,15 +20,17 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
-comment_id = 'comment_id_example' # String | 
-vote_id = 'vote_id_example' # String | 
+tenant_id = 'tenant_id_example' # Streng | 
+comment_id = 'comment_id_example' # Streng | 
+vote_id = 'vote_id_example' # Streng | 
 opts = {
-  sso: 'sso_example' # String | 
+  broadcast_id: 'broadcast_id_example', # Streng | 
+  sso: 'sso_example' # Streng | 
 }
 
 begin
   
-  result = api_instance.delete_moderation_vote(comment_id, vote_id, opts)
+  result = api_instance.delete_moderation_vote(tenant_id, comment_id, vote_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->delete_moderation_vote: #{e}"

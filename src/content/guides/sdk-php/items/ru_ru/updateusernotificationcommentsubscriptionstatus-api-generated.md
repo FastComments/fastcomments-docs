@@ -1,8 +1,8 @@
-Включение или отключение уведомлений для конкретного комментария.
+Включить или отключить уведомления для конкретного комментария.
 
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | notificationId | string | path | Да |  |
@@ -24,15 +24,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Если вы хотите использовать пользовательский HTTP-клиент, передайте свой клиент, который реализует `GuzzleHttp\ClientInterface`.
+    // Если вы хотите использовать пользовательский HTTP‑клиент, передайте свой клиент, который реализует `GuzzleHttp\ClientInterface`.
     // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // строка
-$notification_id = 'notification_id_example'; // строка
-$opted_in_or_out = 'opted_in_or_out_example'; // строка
-$comment_id = 'comment_id_example'; // строка
-$sso = 'sso_example'; // строка
+
+$tenant_id = 'tenant_id_example'; // string
+$notification_id = 'notification_id_example'; // string
+$opted_in_or_out = 'opted_in_or_out_example'; // string
+$comment_id = 'comment_id_example'; // string
+$sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->updateUserNotificationCommentSubscriptionStatus($tenant_id, $notification_id, $opted_in_or_out, $comment_id, $sso);

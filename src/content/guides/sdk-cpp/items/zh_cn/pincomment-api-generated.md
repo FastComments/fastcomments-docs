@@ -1,11 +1,11 @@
 ## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| commentId | string | 是 |  |
-| broadcastId | string | 是 |  |
-| sso | string | 否 |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| broadcastId | string | Yes |  |
+| sso | string | No |  |
 
 ## 响应
 
@@ -16,17 +16,15 @@
 [inline-code-attrs-start title = 'pinComment 示例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("cmt-456789");
-utility::string_t broadcastId = U("broadcast-987");
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
-api->pinComment(tenantId, commentId, broadcastId, sso)
-.then([](pplx::task<std::shared_ptr<ChangeCommentPinStatusResponse>> task){
-    try {
-        auto resp = task.get();
-        auto copy = std::make_shared<ChangeCommentPinStatusResponse>(*resp);
-        std::cout << "Pin operation completed. Response present: " << (resp != nullptr) << std::endl;
-    } catch (const std::exception& e) {
-        std::cerr << "Pin failed: " << e.what() << std::endl;
-    }
-});
+utility::string_t commentId = U("comment-456");
+utility::string_t broadcastId = U("broadcast-789");
+boost::optional<utility::string_t> sso = U("sso-token-abc");
+
+api->pinComment(tenantId, commentId, broadcastId, sss)
+    .then([](pplx::task<std::shared_ptr<ChangeCommentPinStatusResponse>> task) {
+        try {
+            auto response = task.get();
+        } catch (const std::exception&) {
+        }
+    });
 [inline-code-end]

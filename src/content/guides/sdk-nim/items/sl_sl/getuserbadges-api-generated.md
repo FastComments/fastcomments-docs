@@ -1,13 +1,9 @@
 ## Parametri
 
-| Name | Type | Obvezno | Opis |
+| Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| userId | string | Ne |  |
-| badgeId | string | Ne |  |
-| displayedOnComments | bool | Ne |  |
-| limit | float64 | Ne |  |
-| skip | float64 | Ne |  |
+| tenantId | string | Yes |  |
+| options | GetUserBadgesOptions | No |  |
 
 ## Odgovor
 
@@ -15,22 +11,10 @@ Vrne: [`Option[APIGetUserBadgesResponse]`](https://github.com/FastComments/fastc
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer getUserBadges'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUserBadges Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUserBadges(
-  tenantId = "my-tenant-123",
-  userId = "user-9876",
-  badgeId = "top-commenter",
-  displayedOnComments = true,
-  limit = 20.0,
-  skip = 0.0
-)
-
-if response.isSome:
-  let badges = response.get()
-  echo "Badges response:", badges
-else:
-  echo "No badges found (HTTP status: ", httpResponse.status, ")"
+let opts = GetUserBadgesOptions()
+let (badgesOpt, httpResp) = client.getUserBadges(tenantId = "my-tenant-123", options = opts)
+if badgesOpt.isSome:
+  let badges = badgesOpt.get()
 [inline-code-end]
-
----

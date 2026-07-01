@@ -1,16 +1,17 @@
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 說明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| commentId | string | 路徑 | 是 |  |
-| includeByUserIdAndEmail | boolean | 查詢 | 否 |  |
-| includeByIP | boolean | 查詢 | 否 |  |
-| includeByEmailDomain | boolean | 查詢 | 否 |  |
-| sso | string | 查詢 | 否 |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| includeByUserIdAndEmail | boolean | query | No |  |
+| includeByIP | boolean | query | No |  |
+| includeByEmailDomain | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## 回應
 
-回傳：[`PreBanSummary`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_pre_ban_summary.go)
+返回：[`PreBanSummary`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_pre_ban_summary.go)
 
 ## 範例
 
@@ -26,20 +27,21 @@ import (
 )
 
 func main() {
-	commentId := "commentId_example" // string | 
-	includeByUserIdAndEmail := true // bool |  (可選)
-	includeByIP := true // bool |  (可選)
-	includeByEmailDomain := true // bool |  (可選)
-	sso := "sso_example" // string |  (可選)
+	tenantId := "tenantId_example" // string |
+	commentId := "commentId_example" // string |
+	includeByUserIdAndEmail := true // bool |  （可選）
+	includeByIP := true // bool |  （可選）
+	includeByEmailDomain := true // bool |  （可選）
+	sso := "sso_example" // string |  （可選）
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetPreBanSummary(context.Background(), commentId).IncludeByUserIdAndEmail(includeByUserIdAndEmail).IncludeByIP(includeByIP).IncludeByEmailDomain(includeByEmailDomain).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetPreBanSummary(context.Background(), commentId).TenantId(tenantId).IncludeByUserIdAndEmail(includeByUserIdAndEmail).IncludeByIP(includeByIP).IncludeByEmailDomain(includeByEmailDomain).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetPreBanSummary``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// 從 `GetPreBanSummary` 的回應: PreBanSummary
+	// `GetPreBanSummary` 的回應: PreBanSummary
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetPreBanSummary`: %v\n", resp)
 }
 [inline-code-end]

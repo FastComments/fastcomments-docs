@@ -1,23 +1,26 @@
 ## パラメータ
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tag | string | はい |  |
-| tenantId | string | いいえ |  |
-| deleteHashTagRequestBody | DeleteHashTagRequestBody | いいえ |  |
+| tag | string | Yes |  |
+| tenantId | string | No |  |
+| deleteHashTagRequestBody | DeleteHashTagRequestBody | No |  |
 
 ## レスポンス
 
-戻り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+返却: [`DeleteHashTagResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteHashTagResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'deleteHashTag の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tag: string = "release-notes";
-const tenantId: string = "tenant_7b2f9c";
-const deleteHashTagRequestBody: DeleteHashTagRequestBody = { removedBy: "ops@acme-corp.com", force: true };
-const result: APIEmptyResponse = await deleteHashTag(tag, tenantId, deleteHashTagRequestBody);
+(async () => {
+  const tag: string = "announcement";
+  const tenantId: string = "tenant_9876";
+  const requestBody: DeleteHashTagRequestBody = {
+    confirmDeletion: true
+  };
+  const response: DeleteHashTagResponse = await deleteHashTag(tag, tenantId, requestBody);
+  console.log(response);
+})();
 [inline-code-end]
-
----

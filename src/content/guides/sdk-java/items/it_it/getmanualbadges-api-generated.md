@@ -1,8 +1,8 @@
----
 ## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
-|------|------|----------|----------|-------------|
+|------|------|-----------|--------------|-------------|
+| tenantId | string | query | Sì |  |
 | sso | string | query | No |  |
 
 ## Risposta
@@ -11,9 +11,9 @@ Restituisce: [`GetTenantManualBadgesResponse`](https://github.com/FastComments/f
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di getManualBadges'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio getManualBadges'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importa le classi:
+// Importa classi:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,21 +26,20 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      GetTenantManualBadgesResponse result = apiInstance.getManualBadges()
+      GetTenantManualBadgesResponse result = apiInstance.getManualBadges(tenantId)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ModerationApi#getManualBadges");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("Eccezione durante la chiamata a ModerationApi#getManualBadges");
+      System.err.println("Codice di stato: " + e.getCode());
+      System.err.println("Motivo: " + e.getResponseBody());
+      System.err.println("Intestazioni della risposta: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }
 }
 [inline-code-end]
-
----

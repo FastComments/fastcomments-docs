@@ -1,9 +1,9 @@
 ## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Sì |  |
-| domain | string | path | Sì |  |
+|------|------|----------|--------------|-------------|
+| tenantId | string | query | Yes |  |
+| domain | string | path | Yes |  |
 
 ## Risposta
 
@@ -11,26 +11,28 @@ Restituisce: [`DeleteDomainConfigResponse`](https://github.com/FastComments/fast
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di deleteDomainConfig'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio deleteDomainConfig'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configura l'autenticazione tramite API key: api_key
+// Configure API key authorization: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Decommenta la riga seguente per impostare un prefisso (es. Bearer) per la API key, se necessario
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Se vuoi usare un client HTTP personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
-    // Questo è opzionale, verrà usato `GuzzleHttp\Client` come predefinito.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $domain = 'domain_example'; // string
+
 
 try {
     $result = $apiInstance->deleteDomainConfig($tenant_id, $domain);

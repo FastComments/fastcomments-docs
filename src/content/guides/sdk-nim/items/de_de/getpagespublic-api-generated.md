@@ -1,40 +1,26 @@
-Listet Seiten für einen Mandanten. Wird vom FChat-Desktop-Client verwendet, um dessen Raumliste zu füllen.
-Erfordert, dass `enableFChat` für jede Seite in der aufgelösten Custom-Konfiguration auf true gesetzt ist.
-Seiten, die SSO benötigen, werden anhand des Gruppen-Zugriffs des anfragenden Benutzers gefiltert.
+Seiten für einen Mandanten auflisten. Wird vom FChat-Desktop-Client verwendet, um dessen Raumliste zu füllen.  
+Erfordert, dass `enableFChat` in der aufgelösten benutzerdefinierten Konfiguration für jede Seite auf true gesetzt ist.  
+Seiten, die SSO benötigen, werden anhand des Gruppen‑Zugriffs des anfordernden Benutzers gefiltert.
 
-## Parameter
+## Parameters
 
-| Name | Typ | Erforderlich | Beschreibung |
-|------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| cursor | string | Nein |  |
-| limit | int | Nein |  |
-| q | string | Nein |  |
-| sortBy | PagesSortBy | Nein |  |
-| hasComments | bool | Nein |  |
+| Name   | Typ    | Erforderlich | Beschreibung |
+|--------|--------|--------------|--------------|
+| tenantId | string | Ja           |  |
+| options  | GetPagesPublicOptions | Nein |  |
 
-## Antwort
+## Response
 
-Gibt zurück: [`Option[GetPublicPagesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_public_pages_response.nim)
+Rückgabe: [`Option[GetPublicPagesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_public_pages_response.nim)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'getPagesPublic Beispiel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getPagesPublic(
-  tenantId = "my-tenant-123",
-  cursor = "",
-  limit = 0,
-  q = "",
-  sortBy = PagesSortBy(0),
-  hasComments = false
-)
-
+let (response, httpResponse) = client.getPagesPublic(tenantId = "my-tenant-123", options = GetPagesPublicOptions())
 if response.isSome:
   let pages = response.get()
-  echo "Retrieved public pages: ", $pages
-else:
-  echo "No pages returned, HTTP status: ", $httpResponse.status
+  echo pages
 [inline-code-end]
 
 ---

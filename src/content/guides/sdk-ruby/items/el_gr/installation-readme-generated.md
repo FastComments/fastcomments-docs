@@ -1,31 +1,30 @@
-Προσθέστε αυτή τη γραμμή στο Gemfile της εφαρμογής σας:
+Add this line to your application's Gemfile:
 
 ```ruby
 gem 'fastcomments'
 ```
 
-Και στη συνέχεια εκτελέστε:
+And then execute:
 
 ```bash
 bundle install
 ```
 
-Ή εγκαταστήστε το μόνοι σας ως:
+Or install it yourself as:
 
 ```bash
 gem install fastcomments
 ```
 
-### Περιεχόμενα βιβλιοθήκης
+### Library Contents
 
-Αυτή η βιβλιοθήκη περιέχει τον παραγόμενο πελάτη API και τις βοηθητικές λειτουργίες SSO για να διευκολύνει την εργασία με το API.
+This library contains the generated API client and the SSO utilities to make working with the API easier.
 
-- [Τεκμηρίωση βιβλιοθήκης πελάτη API](https://github.com/FastComments/fastcomments-ruby/blob/master/client/README.md)
+- [API Client Library Docs](https://github.com/FastComments/fastcomments-ruby/blob/master/client/README.md)
 
-### Δημόσια vs Ασφαλή API
+### Public vs Secured APIs
 
-Για τον πελάτη API, υπάρχουν τρεις κλάσεις, `DefaultApi`, `PublicApi`, και `ModerationApi`. Η `DefaultApi` περιέχει μεθόδους που απαιτούν το API key σας, και η `PublicApi` περιέχει κλήσεις API που μπορούν να γίνουν απευθείας από πρόγραμμα περιήγησης/κινητή συσκευή/κ.λπ. χωρίς αυθεντικοποίηση. Η `ModerationApi` περιέχει τις μεθόδους που τροφοδοτούν τον πίνακα ελέγχου των moderators.
+For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains api calls
+that can be made directly from a browser/mobile device/etc without authentication. The `ModerationApi` contains the methods that power the moderator dashboard.
 
-Η `ModerationApi` καλύπτει τη διαχείριση σχολίων (λίστα, πλήθος, αναζήτηση, αρχεία καταγραφής, εξαγωγή), ενέργειες διαχείρισης (αφαίρεση/επανόρθωση, σηματοδότηση, ορισμός κατάστασης για αναθεώρηση/spam/έγκριση, ψήφοι, άνοιγμα/κλείσιμο θέματος),
-απαγορεύσεις (απαγόρευση από σχόλιο, αναίρεση, προ-περίληψη απαγόρευσης, κατάσταση/προτιμήσεις απαγόρευσης, μετρήσεις απαγορευμένων χρηστών), και διακριτικά & εμπιστοσύνη (απονομή/αφαίρεση διακριτικού, χειροκίνητα διακριτικά, λήψη/ρύθμιση παράγοντα εμπιστοσύνης, εσωτερικό προφίλ χρήστη).
-Κάθε μέθοδος της `ModerationApi` δέχεται μια παράμετρο `sso` ώστε το αίτημα να μπορεί να γίνει εκ μέρους ενός διαχειριστή με πιστοποίηση μέσω SSO.
+The `ModerationApi` provides an extensive suite of live and fast moderation APIs. Every `ModerationApi` method accepts an `sss` parameter and can authenticate via SSO or a FastComments.com session cookie.

@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tür | Gerekli | Açıklama |
@@ -10,20 +9,29 @@
 
 ## Yanıt
 
-Döndürür: [`APIGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIGetUserBadgeProgressListResponse.ts)
+Döndürür: [`GetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserBadgeProgressListResponse.ts)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'getUserBadgeProgressList Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "acme-corp-tenant-01";
-  const userId: string | undefined = "user-9e12b4";
-  const limit: number | undefined = 20;
-  const skip: number | undefined = 0;
-  const result: APIGetUserBadgeProgressListResponse = await getUserBadgeProgressList(tenantId, userId, limit, skip);
-  console.log(result);
-})();
+async function fetchBadgeProgress() {
+  const tenantId: string = "acme-corp";
+  const userId: string = "john.doe@example.com";
+  const limit: number = 10;
+  const skip: number = 5;
+
+  const fullList: GetUserBadgeProgressListResponse = await getUserBadgeProgressList(
+    tenantId,
+    userId,
+    limit,
+    skip
+  );
+
+  const simpleList: GetUserBadgeProgressListResponse = await getUserBadgeProgressList(tenantId);
+}
+
+fetchBadgeProgress();
 [inline-code-end]
 
 ---

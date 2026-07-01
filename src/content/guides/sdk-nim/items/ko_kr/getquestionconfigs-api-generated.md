@@ -1,9 +1,10 @@
+---
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| skip | float64 | 아니오 |  |
+| tenantId | string | Yes |  |
+| skip | float64 | No |  |
 
 ## 응답
 
@@ -16,10 +17,7 @@
 let (response, httpResponse) = client.getQuestionConfigs(tenantId = "my-tenant-123", skip = 0.0)
 if response.isSome:
   let configs = response.get()
-  echo "Received question configs for tenant my-tenant-123"
   echo configs
-else:
-  echo "No question configs returned"
 [inline-code-end]
 
 ---

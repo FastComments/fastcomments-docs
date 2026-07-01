@@ -3,12 +3,9 @@
 ```swift
 import FastCommentsSwift
 
-// Opret API-klient
-let publicApi = PublicAPI()
-
 // Hent kommentarer for en side
 do {
-    let response = try await publicApi.getCommentsPublic(
+    let response = try await PublicAPI.getCommentsPublic(
         tenantId: "your-tenant-id",
         urlId: "page-url-id"
     )
@@ -27,15 +24,14 @@ do {
 ```swift
 import FastCommentsSwift
 
-// Opret konfiguration med API-nøgle
-let defaultApi = DefaultAPI()
-defaultApi.apiKey = "your-api-key"
+// Konfigurer din API-nøgle i den delte konfiguration (sendt som x-api-key-headeren)
+FastCommentsSwiftAPIConfiguration.shared.customHeaders["x-api-key"] = "your-api-key"
 
-// Hent kommentarer ved hjælp af autentificeret API
+// Hent kommentarer ved brug af den autentificerede API
 do {
-    let response = try await defaultApi.getComments(
+    let response = try await DefaultAPI.getComments(
         tenantId: "your-tenant-id",
-        urlId: "page-url-id"
+        options: .init(urlId: "page-url-id")
     )
 
     print("Total comments: \(response.count ?? 0)")
@@ -52,13 +48,15 @@ do {
 ```swift
 import FastCommentsSwift
 
-// Moderationsmetoder er autoriseret med et `sso`-token for den aktive moderator
-// (generer det med FastCommentsSSO, se SSO-sektionen ovenfor).
+// Moderationsmetoder er autoriseret med en `sso`-token for den handlende moderator
+// (generer den med FastCommentsSSO, se SSO-sektionen ovenfor).
 do {
     let response = try await ModerationAPI.getApiComments(
-        page: 0,
-        count: 30,
-        sso: ssoToken
+        options: .init(
+            page: 0,
+            count: 30,
+            sso: ssoToken
+        )
     )
 
     print("Found \(response.comments.count) comments to moderate")
@@ -72,14 +70,14 @@ do {
 
 ### Brug af SSO til autentificering
 
-#### Sikker SSO (Anbefales til produktion)
+#### Sikker SSO (Anbefalet til produktion)
 
 ```swift
 import FastCommentsSwift
 
 let apiKey = "your-api-key"
 
-// Opret sikre SSO-brugerdata (kun på serveren!)
+// Opret sikker SSO-brugerdata (kun server-side!)
 let userData = SecureSSOUserData(
     id: "user-123",              // Bruger-ID
     email: "user@example.com",   // E-mail
@@ -93,18 +91,18 @@ do {
     let token = try sso.createToken()
 
     print("SSO Token: \(token ?? "")")
-    // Send dette token til dit frontend for autentificering
+    // Send denne token til din frontend for autentificering
 } catch {
     print("Error creating SSO token: \(error)")
 }
 ```
 
-#### Simpel SSO (Til udvikling/test)
+#### Simpel SSO (Til udvikling/testning)
 
 ```swift
 import FastCommentsSwift
 
-// Opret simple SSO-brugerdata (ingen API-nøgle nødvendig)
+// Opret simpel SSO-brugerdata (ingen API-nøgle nødvendig)
 let userData = SimpleSSOUserData(
     username: "johndoe",
     email: "user@example.com",

@@ -1,13 +1,14 @@
 ## Parametri
 
-| Nome | Tipo | Posizione | Richiesto | Descrizione |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+|------|------|-----------|--------------|-------------|
+| tenantId | string | query | Sì |  |
 | urlId | string | query | Sì |  |
 | sso | string | query | No |  |
 
 ## Risposta
 
-Restituisce: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
+Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## Esempio
 
@@ -18,8 +19,8 @@ from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# La definizione dell'host è facoltativa e per impostazione predefinita è https://fastcomments.com
-# Consulta configuration.py per l'elenco di tutti i parametri di configurazione supportati.
+# Definire l'host è opzionale e predefinito a https://fastcomments.com
+# Vedi configuration.py per un elenco di tutti i parametri di configurazione supportati.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -29,11 +30,12 @@ configuration = client.Configuration(
 with client.ApiClient(configuration) as api_client:
     # Crea un'istanza della classe API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
     sso = 'sso_example' # str |  (opzionale)
 
     try:
-        api_response = api_instance.put_reopen_thread(url_id, sso=sso)
+        api_response = api_instance.put_reopen_thread(tenant_id, url_id, sso=sso)
         print("The response of ModerationApi->put_reopen_thread:\n")
         pprint(api_response)
     except Exception as e:

@@ -1,7 +1,8 @@
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 描述 |
+| 名稱 | 類型 | 位置 | 必須 | 描述 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | 是 |  |
 | text-search | string | query | 否 |  |
 | byIPFromComment | string | query | 否 |  |
 | filter | string | query | 否 |  |
@@ -21,6 +22,7 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 opts = {
   text_search: 'text_search_example', # String | 
   by_ip_from_comment: 'by_ip_from_comment_example', # String | 
@@ -32,11 +34,9 @@ opts = {
 
 begin
   
-  result = api_instance.get_count(opts)
+  result = api_instance.get_count(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_count: #{e}"
 end
 [inline-code-end]
-
----

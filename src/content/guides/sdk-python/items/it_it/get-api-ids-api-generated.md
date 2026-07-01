@@ -1,7 +1,8 @@
 ## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
-|------|------|----------|----------|-------------|
+|------|------|----------|--------------|-------------|
+| tenantId | string | query | Yes |  |
 | text-search | string | query | No |  |
 | byIPFromComment | string | query | No |  |
 | filters | string | query | No |  |
@@ -19,31 +20,33 @@ Restituisce: [`ModerationAPIGetCommentIdsResponse`](https://github.com/FastComme
 [inline-code-attrs-start title = 'Esempio get_api_ids'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetApiIdsOptions
 from client.models.moderation_api_get_comment_ids_response import ModerationAPIGetCommentIdsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# La definizione dell'host è opzionale e il valore predefinito è https://fastcomments.com
-# Vedi configuration.py per un elenco di tutti i parametri di configurazione supportati.
+# Definire l'host è opzionale e predefinito a https://fastcomments.com
+# Vedere configuration.py per un elenco di tutti i parametri di configurazione supportati.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Entra in un contesto con un'istanza del client API
+# Entrare in un contesto con un'istanza del client API
 with client.ApiClient(configuration) as api_client:
-    # Crea un'istanza della classe API
+    # Creare un'istanza della classe API
     api_instance = client.ModerationApi(api_client)
-    text_search = 'text_search_example' # str |  (opzionale)
-    by_ip_from_comment = 'by_ip_from_comment_example' # str |  (opzionale)
-    filters = 'filters_example' # str |  (opzionale)
-    search_filters = 'search_filters_example' # str |  (opzionale)
-    after_id = 'after_id_example' # str |  (opzionale)
-    demo = True # bool |  (opzionale)
-    sso = 'sso_example' # str |  (opzionale)
+    tenant_id = 'tenant_id_example' # str | 
+    text_search = 'text_search_example' # str |  (optional)
+    by_ip_from_comment = 'by_ip_from_comment_example' # str |  (optional)
+    filters = 'filters_example' # str |  (optional)
+    search_filters = 'search_filters_example' # str |  (optional)
+    after_id = 'after_id_example' # str |  (optional)
+    demo = True # bool |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_api_ids(text_search=text_search, by_ip_from_comment=by_ip_from_comment, filters=filters, search_filters=search_filters, after_id=after_id, demo=demo, sso=sso)
+        api_response = api_instance.get_api_ids(tenant_id, GetApiIdsOptions(text_search=text_search, by_ip_from_comment=by_ip_from_comment, filters=filters, search_filters=search_filters, after_id=after_id, demo=demo, sso=sso))
         print("The response of ModerationApi->get_api_ids:\n")
         pprint(api_response)
     except Exception as e:

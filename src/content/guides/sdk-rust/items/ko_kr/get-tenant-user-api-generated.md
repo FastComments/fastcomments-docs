@@ -1,27 +1,25 @@
-## 매개변수
+## Parameters
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | 예 |  |
-| id | String | 예 |  |
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
 
-## 응답
+## Response
 
 반환: [`GetTenantUserResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_tenant_user_response.rs)
 
-## 예제
+## Example
 
 [inline-code-attrs-start title = 'get_tenant_user 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_tenant_user() -> Result<GetTenantUserResponse, Error> {
-    let params: GetTenantUserParams = GetTenantUserParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        id: "user-7b9a2".to_string(),
-        include_profile: Some(true),
+async fn run() -> Result<(), Error> {
+    let config = configuration::Configuration::default();
+    let params = GetTenantUserParams {
+        tenant_id: "acme-corp-tenant".into(),
+        id: "user-42".into(),
     };
-    let response: GetTenantUserResponse = get_tenant_user(&configuration, params).await?;
-    Ok(response)
+    let _response = get_tenant_user(&config, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

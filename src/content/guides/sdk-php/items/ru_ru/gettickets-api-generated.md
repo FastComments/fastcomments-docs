@@ -1,12 +1,12 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| userId | string | query | No |  |
-| state | number | query | No |  |
-| skip | number | query | No |  |
-| limit | number | query | No |  |
+| tenantId | string | query | Да |  |
+| userId | string | query | Нет |  |
+| state | number | query | Нет |  |
+| skip | number | query | Нет |  |
+| limit | number | query | Нет |  |
 
 ## Ответ
 
@@ -20,26 +20,29 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Настройка авторизации с помощью ключа API: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Раскомментируйте строку ниже, чтобы установить префикс (например, Bearer) для ключа API, если потребуется
+// Настройте авторизацию ключа API: api_key
+// Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для ключа API, если необходимо
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Если вы хотите использовать кастомный HTTP-клиент, передайте клиент, который реализует `GuzzleHttp\ClientInterface`.
-    // Это необязательно — по умолчанию будет использован `GuzzleHttp\Client`.
+    // Если хотите использовать пользовательский HTTP‑клиент, передайте ваш клиент, реализующий `GuzzleHttp\ClientInterface`.
+    // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$user_id = 'user_id_example'; // string
-$state = 3.4; // float
-$skip = 3.4; // float
-$limit = 3.4; // float
+$options = [
+    'user_id' => 'user_id_example', // string
+    'state' => 3.4, // float
+    'skip' => 3.4, // float
+    'limit' => 3.4, // float
+];
+
 
 try {
-    $result = $apiInstance->getTickets($tenant_id, $user_id, $state, $skip, $limit);
+    $result = $apiInstance->getTickets($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getTickets: ', $e->getMessage(), PHP_EOL;

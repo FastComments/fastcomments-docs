@@ -1,9 +1,9 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
-| tag | string | path | Ναι |  |
-| tenantId | string | query | Όχι |  |
+|------|------|----------|-----------|-------------|
+| tenantId | string | query | Yes |  |
+| tag | string | path | Yes |  |
 
 ## Απόκριση
 
@@ -13,6 +13,7 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα deleteHashTag'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
+// Import classes:
 // Εισαγωγή κλάσεων:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
@@ -26,19 +27,20 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
+    // Configure API key authorization: api_key
     // Διαμόρφωση εξουσιοδότησης κλειδιού API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Αποσχολιάστε την παρακάτω γραμμή για να ορίσετε ένα πρόθεμα για το κλειδί API, π.χ. "Token" (προεπιλογή null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    // Αποσχολιάστε την παρακάτω γραμμή για να ορίσετε ένα πρόθεμα για το κλειδί API, π.χ. "Token" (η προεπιλογή είναι null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    String tag = "tag_example"; // String | 
     String tenantId = "tenantId_example"; // String | 
+    String tag = "tag_example"; // String | 
     DeleteHashTagRequestBody deleteHashTagRequestBody = new DeleteHashTagRequestBody(); // DeleteHashTagRequestBody | 
     try {
-      APIEmptyResponse result = apiInstance.deleteHashTag(tag)
-            .tenantId(tenantId)
+      APIEmptyResponse result = apiInstance.deleteHashTag(tenantId, tag)
             .deleteHashTagRequestBody(deleteHashTagRequestBody)
             .execute();
       System.out.println(result);

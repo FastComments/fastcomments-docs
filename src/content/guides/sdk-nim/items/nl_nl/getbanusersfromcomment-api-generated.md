@@ -1,11 +1,12 @@
 ## Parameters
 
 | Naam | Type | Vereist | Beschrijving |
-|------|------|----------|-------------|
+|------|------|----------|---------------|
+| tenantId | string | Ja |  |
 | commentId | string | Ja |  |
-| sso | string | Nee |  |
+| sso | string = "" | Nee |  |
 
-## Respons
+## Reactie
 
 Retourneert: [`Option[GetBannedUsersFromCommentResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_banned_users_from_comment_response.nim)
 
@@ -13,12 +14,8 @@ Retourneert: [`Option[GetBannedUsersFromCommentResponse]`](https://github.com/Fa
 
 [inline-code-attrs-start title = 'getBanUsersFromComment Voorbeeld'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getBanUsersFromComment(commentId = "comment-98765", sso = "")
+let (response, httpResponse) = client.getBanUsersFromComment(tenantId = "my-tenant-001", commentId = "cmt-123456", sso = "")
 if response.isSome:
-  let bannedResp = response.get()
-  discard bannedResp
-else:
-  echo "No banned users found or request failed"
+  let banInfo = response.get()
+  echo banInfo
 [inline-code-end]
-
----

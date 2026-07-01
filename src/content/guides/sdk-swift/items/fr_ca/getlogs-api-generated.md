@@ -1,7 +1,8 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
-|------|------|----------|----------|-------------|
+| Nom | Type | Emplacement | Obligatoire | Description |
+|------|------|-------------|-------------|-------------|
+| tenantId | string | query | Oui |  |
 | commentId | string | path | Oui |  |
 | sso | string | query | Non |  |
 
@@ -16,10 +17,11 @@ Renvoie : [`ModerationAPIGetLogsResponse`](https://github.com/FastComments/fastc
 // Les exemples de code suivants sont encore en version bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
 let sso = "sso_example" // String |  (optionnel)
 
-ModerationAPI.getLogs(commentId: commentId, sso: sso) { (response, error) in
+ModerationAPI.getLogs(tenantId: tenantId, commentId: commentId, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -30,5 +32,3 @@ ModerationAPI.getLogs(commentId: commentId, sso: sso) { (response, error) in
     }
 }
 [inline-code-end]
-
----

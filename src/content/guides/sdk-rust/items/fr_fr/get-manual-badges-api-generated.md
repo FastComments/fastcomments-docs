@@ -1,22 +1,24 @@
 ## Paramètres
 
 | Nom | Type | Obligatoire | Description |
-|------|------|----------|-------------|
+|------|------|-------------|-------------|
+| tenant_id | String | Oui |  |
 | sso | String | Non |  |
 
 ## Réponse
 
-Retourne : [`GetTenantManualBadgesResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_tenant_manual_badges_response.rs)
+Renvoie : [`GetTenantManualBadgesResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_tenant_manual_badges_response.rs)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de get_manual_badges'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_manual_badges Exemple'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_manual_badges() -> Result<(), Error> {
-    let params: GetManualBadgesParams = GetManualBadgesParams {
-        sso: Some(String::from("https://sso.acme-corp.com/authorize?tenant=acme-corp-tenant")),
+async fn fetch_badges(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetManualBadgesParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        sso: Some("news/article".to_string()),
     };
-    let response: GetTenantManualBadgesResponse = get_manual_badges(&configuration, params).await?;
+    let _response = get_manual_badges(configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

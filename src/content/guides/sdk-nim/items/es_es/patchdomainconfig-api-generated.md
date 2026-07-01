@@ -1,7 +1,6 @@
----
 ## Parámetros
 
-| Nombre | Tipo | Requerido | Descripción |
+| Nombre | Tipo | Obligatorio | Descripción |
 |------|------|----------|-------------|
 | tenantId | string | Sí |  |
 | domainToUpdate | string | No |  |
@@ -15,23 +14,15 @@ Devuelve: [`Option[PatchDomainConfigResponse]`](https://github.com/FastComments/
 
 [inline-code-attrs-start title = 'Ejemplo de patchDomainConfig'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let patchParams: PatchDomainConfigParams = PatchDomainConfigParams(
-  allowedOrigins = @["https://news.example.com", "https://cdn.news.com"],
-  enableComments = true,
-  moderationRequired = false,
-  maxCommentLength = 2000,
-  primaryDomain = "comments.news-site.com"
-)
-let (response, httpResponse) = client.patchDomainConfig(
+let (optResp, httpResp) = client.patchDomainConfig(
   tenantId = "my-tenant-123",
-  domainToUpdate = "comments.news-site.com",
-  patchDomainConfigParams = patchParams
+  domainToUpdate = "news.mywebsite.com",
+  patchDomainConfigParams = PatchDomainConfigParams()
 )
-if response.isSome:
-  let cfg = response.get()
-  echo "Patched domain config received:", cfg
-else:
-  echo "No response body, HTTP status:", httpResponse.statusCode
+
+if optResp.isSome:
+  let resp = optResp.get()
+  echo resp
 [inline-code-end]
 
 ---

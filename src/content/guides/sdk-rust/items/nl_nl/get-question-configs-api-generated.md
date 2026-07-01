@@ -1,9 +1,10 @@
+---
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | Ja |  |
-| skip | f64 | Nee |  |
+| tenant_id | String | Yes |  |
+| skip | f64 | No |  |
 
 ## Respons
 
@@ -13,13 +14,13 @@ Retourneert: [`GetQuestionConfigsResponse`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'get_question_configs Voorbeeld'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_question_configs() -> Result<GetQuestionConfigsResponse, Error> {
-    let params: GetQuestionConfigsParams = GetQuestionConfigsParams {
+async fn example() -> Result<(), Error> {
+    let params = GetQuestionConfigsParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        skip: Some(20.0),
+        skip: Some(10.0),
     };
-    let response: GetQuestionConfigsResponse = get_question_configs(&configuration, params).await?;
-    Ok(response)
+    let _response: GetQuestionConfigsResponse = get_question_configs(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
 

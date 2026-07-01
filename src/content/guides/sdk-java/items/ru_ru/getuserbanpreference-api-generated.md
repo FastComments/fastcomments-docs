@@ -1,8 +1,9 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Название | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| sso | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Ответ
 
@@ -12,7 +13,7 @@
 
 [inline-code-attrs-start title = 'Пример getUserBanPreference'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Импорт классов:
+// Импортировать классы:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -25,9 +26,10 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      APIModerateGetUserBanPreferencesResponse result = apiInstance.getUserBanPreference()
+      APIModerateGetUserBanPreferencesResponse result = apiInstance.getUserBanPreference(tenantId)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -41,3 +43,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

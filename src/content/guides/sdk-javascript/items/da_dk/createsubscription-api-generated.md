@@ -1,9 +1,10 @@
+---
 ## Parametre
 
-| Name | Type | Påkrævet | Beskrivelse |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| createAPIUserSubscriptionData | CreateAPIUserSubscriptionData | Ja |  |
+| tenantId | string | Yes |  |
+| createAPIUserSubscriptionData | CreateAPIUserSubscriptionData | Yes |  |
 
 ## Svar
 
@@ -13,14 +14,19 @@ Returnerer: [`CreateSubscriptionAPIResponse`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'createSubscription Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-tenant-123";
-const createAPIUserSubscriptionData: CreateAPIUserSubscriptionData = {
-  userId: "user_98765",
-  planId: "pro_monthly",
-  paymentMethod: { type: "card", cardId: "card_abc123" },
-  autoRenew: true,
-  trialDays: 14, // valgfrit parameter demonstreret
-  metadata: { campaign: "spring_launch" } // valgfrit parameter demonstreret
-};
-const result: CreateSubscriptionAPIResponse = await createSubscription(tenantId, createAPIUserSubscriptionData);
+(async () => {
+    const tenantId: string = "acme-corp-123";
+
+    const subscriptionData: CreateAPIUserSubscriptionData = {
+        userId: "user-456",
+        planId: "premium-monthly",
+        startDate: new Date(),
+        trialPeriodDays: 14 // valgfrit felt
+    };
+
+    const result: CreateSubscriptionAPIResponse = await createSubscription(tenantId, subscriptionData);
+    console.log(result);
+})();
 [inline-code-end]
+
+---

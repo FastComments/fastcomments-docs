@@ -1,20 +1,21 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Обавезно | Опис |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Да |  |
-| includeByUserIdAndEmail | boolean | query | Не |  |
-| includeByIP | boolean | query | Не |  |
-| includeByEmailDomain | boolean | query | Не |  |
-| sso | string | query | Не |  |
+| Ime | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| includeByUserIdAndEmail | boolean | query | No |  |
+| includeByIP | boolean | query | No |  |
+| includeByEmailDomain | boolean | query | No |  |
+| sso | string | query | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`PreBanSummary`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_pre_ban_summary.go)
+Vraća: [`PreBanSummary`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_pre_ban_summary.go)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'GetPreBanSummary Пример'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GetPreBanSummary primjer'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -26,20 +27,21 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
-	includeByUserIdAndEmail := true // bool |  (опционо)
-	includeByIP := true // bool |  (опционо)
-	includeByEmailDomain := true // bool |  (опционо)
-	sso := "sso_example" // string |  (опционо)
+	includeByUserIdAndEmail := true // bool |  (opcionalno)
+	includeByIP := true // bool |  (opcionalno)
+	includeByEmailDomain := true // bool |  (opcionalno)
+	sso := "sso_example" // string |  (opcionalno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetPreBanSummary(context.Background(), commentId).IncludeByUserIdAndEmail(includeByUserIdAndEmail).IncludeByIP(includeByIP).IncludeByEmailDomain(includeByEmailDomain).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetPreBanSummary(context.Background(), commentId).TenantId(tenantId).IncludeByUserIdAndEmail(includeByUserIdAndEmail).IncludeByIP(includeByIP).IncludeByEmailDomain(includeByEmailDomain).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetPreBanSummary``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Greška pri pozivanju `ModerationAPI.GetPreBanSummary``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Pun HTTP odgovor: %v\n", r)
 	}
-	// одговор од `GetPreBanSummary`: PreBanSummary
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetPreBanSummary`: %v\n", resp)
+	// odgovor od `GetPreBanSummary`: PreBanSummary
+	fmt.Fprintf(os.Stdout, "Odgovor iz `ModerationAPI.GetPreBanSummary`: %v\n", resp)
 }
 [inline-code-end]

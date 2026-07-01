@@ -1,8 +1,8 @@
----
 ## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Tak |  |
 | userId | string | query | Nie |  |
 | trustFactor | string | query | Nie |  |
 | sso | string | query | Nie |  |
@@ -25,20 +25,19 @@ import (
 )
 
 func main() {
-	userId := "userId_example" // string |  (opcjonalne)
-	trustFactor := "trustFactor_example" // string |  (opcjonalne)
-	sso := "sso_example" // string |  (opcjonalne)
+	tenantId := "tenantId_example" // string | 
+	userId := "userId_example" // string |  (opcjonalnie)
+	trustFactor := "trustFactor_example" // string |  (opcjonalnie)
+	sso := "sso_example" // string |  (opcjonalnie)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.SetTrustFactor(context.Background()).UserId(userId).TrustFactor(trustFactor).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.SetTrustFactor(context.Background()).TenantId(tenantId).UserId(userId).TrustFactor(trustFactor).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.SetTrustFactor``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Błąd podczas wywoływania `ModerationAPI.SetTrustFactor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Pełna odpowiedź HTTP: %v\n", r)
 	}
 	// odpowiedź z `SetTrustFactor`: SetUserTrustFactorResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.SetTrustFactor`: %v\n", resp)
+	fmt.Fprintf(os.Stdout, "Odpowiedź z `ModerationAPI.SetTrustFactor`: %v\n", resp)
 }
 [inline-code-end]
-
----

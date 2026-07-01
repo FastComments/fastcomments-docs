@@ -1,26 +1,28 @@
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
-|------|------|----------|-------------|
-| badgeId | string | Yes |  |
-| userId | string | No |  |
-| commentId | string | No |  |
-| broadcastId | string | No |  |
-| sso | string | No |  |
+|------|------|--------------|--------------|
+| badgeId | string | Ja |  |
+| userId | string | Nein |  |
+| commentId | string | Nein |  |
+| broadcastId | string | Nein |  |
+| tenantId | string | Nein |  |
+| sso | string | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AwardUserBadgeResponse.ts)
+Rückgabe: [`PutAwardBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PutAwardBadgeResponse.ts)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'putAwardBadge Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const badgeId: string = 'gold-medal-2023';
-const userId: string = 'usr_100234';
-const commentId: string = 'c_78910';
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fakePayload.signature';
-const response: AwardUserBadgeResponse = await putAwardBadge(badgeId, userId, commentId, undefined, sso);
+(async () => {
+    const badgeId: string = "badge-superstar"
+    const userId: string = "user-42"
+    const commentId: string = "comment-7f9c3"
+    const broadcastId: string = "broadcast-2023-09"
+    const result: PutAwardBadgeResponse = await putAwardBadge(badgeId, userId, commentId, broadcastId)
+    console.log(result)
+})()
 [inline-code-end]
-
----

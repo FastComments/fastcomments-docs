@@ -2,29 +2,31 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| includeByUserIdAndEmail | boolean | query | 否 |  |
-| includeByIP | boolean | query | 否 |  |
-| includeByEmailDomain | boolean | query | 否 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| includeByUserIdAndEmail | boolean | query | No |  |
+| includeByIP | boolean | query | No |  |
+| includeByEmailDomain | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## 回應
 
-回傳: [`BulkPreBanSummary`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/BulkPreBanSummary.swift)
+Returns: [`BulkPreBanSummary`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/BulkPreBanSummary.swift)
 
 ## 範例
 
 [inline-code-attrs-start title = 'postBulkPreBanSummary 範例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 下列程式範例仍為測試版。如有任何問題，請至 http://github.com/OpenAPITools/openapi-generator/issues/new 回報
+// 以下程式碼範例仍屬測試版。如有任何問題，請透過 http://github.com/OpenAPITools/openapi-generator/issues/new 回報
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let bulkPreBanParams = BulkPreBanParams(commentIds: ["commentIds_example"]) // BulkPreBanParams | 
-let includeByUserIdAndEmail = true // Bool |  (選用)
-let includeByIP = true // Bool |  (選用)
-let includeByEmailDomain = true // Bool |  (選用)
-let sso = "sso_example" // String |  (選用)
+let includeByUserIdAndEmail = true // Bool |  (可選)
+let includeByIP = true // Bool |  (可選)
+let includeByEmailDomain = true // Bool |  (可選)
+let sso = "sso_example" // String |  (可選)
 
-ModerationAPI.postBulkPreBanSummary(bulkPreBanParams: bulkPreBanParams, includeByUserIdAndEmail: includeByUserIdAndEmail, includeByIP: includeByIP, includeByEmailDomain: includeByEmailDomain, sso: sso) { (response, error) in
+ModerationAPI.postBulkPreBanSummary(tenantId: tenantId, bulkPreBanParams: bulkPreBanParams, options: ModerationAPI.PostBulkPreBanSummaryOptions(includeByUserIdAndEmail: includeByUserIdAndEmail, includeByIP: includeByIP, includeByEmailDomain: includeByEmailDomain, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

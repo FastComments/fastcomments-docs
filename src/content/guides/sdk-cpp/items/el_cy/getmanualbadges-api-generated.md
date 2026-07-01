@@ -1,7 +1,8 @@
 ## Παράμετροι
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+|------|------|------------|------------|
+| tenantId | string | Ναι |  |
 | sso | string | Όχι |  |
 
 ## Απάντηση
@@ -10,19 +11,20 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα getManualBadges'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getManualBadges Παράδειγμα'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("https://auth.example.com/sso?tenant=my-tenant-123&user=user@example.com"));
-api->getManualBadges(sso).then([](pplx::task<std::shared_ptr<GetTenantManualBadgesResponse>> task){
-    try {
-        auto resp = task.get();
-        if (resp) {
-            auto copied = std::make_shared<GetTenantManualBadgesResponse>(*resp);
+utility::string_t tenantId = U("my-tenant-123");
+boost::optional<utility::string_t> sso = boost::make_optional(U("user@example.com"));
+
+api->getManualBadges(tenantId, sso)
+    .then([](pplx::task<std::shared_ptr<GetTenantManualBadgesResponse>> t) {
+        try {
+            auto response = t.get();
+            // επεξεργασία της απόκρισης, π.χ., response->badgeList
+        } catch (const std::exception& ex) {
+            // διαχείριση σφάλματος
         }
-    } catch (const std::exception& ex) {
-        (void)ex;
-    }
-});
+    });
 [inline-code-end]
 
 ---

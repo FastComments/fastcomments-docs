@@ -1,7 +1,7 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
-|------|------|----------|----------|-------------|
+| Nom | Type | Emplacement | Obligatoire | Description |
+|------|------|------------|-------------|-------------|
 | tenantId | string | path | Oui |  |
 | commentId | string | path | Oui |  |
 | broadcastId | string | query | Oui |  |
@@ -13,7 +13,7 @@ Renvoie : [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de unLockComment'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple de déverrouillage de commentaire'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -21,14 +21,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Si vous voulez utiliser un client HTTP personnalisé, passez votre client qui implémente `GuzzleHttp\ClientInterface`.
+    // Si vous souhaitez utiliser un client HTTP personnalisé, transmettez votre client qui implémente `GuzzleHttp\ClientInterface`.
     // Ceci est optionnel, `GuzzleHttp\Client` sera utilisé par défaut.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$comment_id = 'comment_id_example'; // string
-$broadcast_id = 'broadcast_id_example'; // string
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // chaîne
+$comment_id = 'comment_id_example'; // chaîne
+$broadcast_id = 'broadcast_id_example'; // chaîne
+$sso = 'sso_example'; // chaîne
+
 
 try {
     $result = $apiInstance->unLockComment($tenant_id, $comment_id, $broadcast_id, $sso);

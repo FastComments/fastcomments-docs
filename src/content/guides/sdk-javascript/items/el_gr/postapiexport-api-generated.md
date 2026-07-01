@@ -1,37 +1,42 @@
 ## Παράμετροι
 
-| Name | Τύπος | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
 | textSearch | string | Όχι |  |
 | byIPFromComment | string | Όχι |  |
 | filters | string | Όχι |  |
 | searchFilters | string | Όχι |  |
 | sorts | string | Όχι |  |
+| tenantId | string | Όχι |  |
 | sso | string | Όχι |  |
 
 ## Απόκριση
 
-Επιστρέφει: [`ModerationExportResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationExportResponse.ts)
+Επιστρέφει: [`PostApiExportResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostApiExportResponse.ts)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα postApiExport'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postApiExport Παράδειγμα'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const textSearch: string = "suspicious link";
-const byIPFromComment: string = "203.0.113.45";
-const filters: string = "status:flagged,platform:web";
-const searchFilters: string | undefined = undefined;
-const sorts: string = "-createdAt";
-const sso: string = "sso_token_3f9b8";
+(async () => {
+  const textSearch: string = "keyword:feedback"
+  const byIPFromComment: string = "203.0.113.45"
+  const filters: string = "status:pending,category:support"
+  const searchFilters: string = "createdAt>2023-01-01"
+  const sorts: string = "createdAt:desc"
+  const tenantId: string = "tenant_9876"
+  const sso: string = "sso_7e2a9b"
 
-const exportResponse: ModerationExportResponse = await postApiExport(
-  textSearch,
-  byIPFromComment,
-  filters,
-  searchFilters,
-  sorts,
-  sso
-);
+  const exportResult: PostApiExportResponse = await postApiExport(
+    textSearch,
+    byIPFromComment,
+    filters,
+    searchFilters,
+    sorts,
+    tenantId,
+    sso
+  )
+
+  console.log(exportResult)
+})()
 [inline-code-end]
-
----

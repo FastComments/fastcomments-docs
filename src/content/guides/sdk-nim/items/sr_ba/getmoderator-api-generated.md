@@ -1,24 +1,22 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Ime | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Не |  |
+| tenantId | string | Da |  |
+| id | string | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[GetModeratorResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_moderator_response.nim)
+Vraća: [`Option[GetModeratorResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_moderator_response.nim)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'getModerator Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getModerator'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getModerator(tenantId = "my-tenant-123", id = "mod-456")
-if response.isSome:
-  let moderator = response.get()
-  echo moderator
-else:
-  echo "Moderator not found, HTTP status: ", $httpResponse.status
+let (moderatorOpt, httpResponse) = client.getModerator(tenantId = "my-tenant-123", id = "moderator-456")
+if moderatorOpt.isSome:
+  let moderator = moderatorOpt.get()
+  discard moderator
 [inline-code-end]
 
 ---

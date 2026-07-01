@@ -1,11 +1,11 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| commentId | string | path | Yes |  |
-| editKey | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | path | כן |  |
+| commentId | string | path | כן |  |
+| editKey | string | query | לא |  |
+| sso | string | query | לא |  |
 
 ## תגובה
 
@@ -13,9 +13,9 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getCommentText'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה getCommentText'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// הדוגמאות הבאות עדיין בבטא. לכל בעיה, אנא דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// הדוגמיות הקודיות הבאות עדיין בטא. עבור כל בעיה, אנא דווח ב‑http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -23,7 +23,7 @@ let commentId = "commentId_example" // String |
 let editKey = "editKey_example" // String |  (אופציונלי)
 let sso = "sso_example" // String |  (אופציונלי)
 
-PublicAPI.getCommentText(tenantId: tenantId, commentId: commentId, editKey: editKey, sso: sso) { (response, error) in
+PublicAPI.getCommentText(tenantId: tenantId, commentId: commentId, options: PublicAPI.GetCommentTextOptions(editKey: editKey, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

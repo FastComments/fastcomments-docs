@@ -1,15 +1,16 @@
-## Parâmetros
+## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Localização | Obrigatório | Descrição |
+|------|------|-------------|-------------|-----------|
+| tenantId | string | query | Sim |  |
 | urlId | string | query | Sim |  |
 | sso | string | query | Não |  |
 
-## Resposta
+## Response
 
 Retorna: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
-## Exemplo
+## Example
 
 [inline-code-attrs-start title = 'Exemplo put_reopen_thread'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -18,24 +19,25 @@ from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definir o host é opcional e por padrão é https://fastcomments.com
+# Definir o host é opcional e o padrão é https://fastcomments.com
 # Veja configuration.py para uma lista de todos os parâmetros de configuração suportados.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Abra um contexto com uma instância do cliente da API
+# Entre em um contexto com uma instância do cliente API
 with client.ApiClient(configuration) as api_client:
-    # Crie uma instância da classe da API
+    # Crie uma instância da classe API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
-    sso = 'sso_example' # str |  (opcional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.put_reopen_thread(url_id, sso=sso)
-        print("The response of ModerationApi->put_reopen_thread:\n")
+        api_response = api_instance.put_reopen_thread(tenant_id, url_id, sso=sso)
+        print("A resposta de ModerationApi->put_reopen_thread:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ModerationApi->put_reopen_thread: %s\n" % e)
+        print("Exceção ao chamar ModerationApi->put_reopen_thread: %s\n" % e)
 [inline-code-end]

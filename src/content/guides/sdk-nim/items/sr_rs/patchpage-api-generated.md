@@ -1,36 +1,25 @@
-## Параметри
+## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Не |  |
-| updateAPIPageData | UpdateAPIPageData | Не |  |
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Da |  |
+| id | string | Ne |  |
+| updateAPIPageData | UpdateAPIPageData | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[PatchPageAPIResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_patch_page_api_response.nim)
+Vraća: [`Option[PatchPageAPIResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_patch_page_api_response.nim)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример patchPage'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'patchPage Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let updateData = UpdateAPIPageData(
-  title = "Breaking: Major Event Update",
-  urlId = "news/major-event-update",
-  visible = true,
-  tags = @["breaking", "headline"],
-  sortOrder = 5
-)
-
 let (response, httpResponse) = client.patchPage(
   tenantId = "my-tenant-123",
-  id = "news/major-event-update",
-  updateAPIPageData = updateData
+  id = "news/article-456",
+  updateAPIPageData = UpdateAPIPageData(title = "Updated article title", description = "Revised description")
 )
 
 if response.isSome:
-  let page = response.get()
-  discard page
+  let resp = response.get()
 [inline-code-end]
-
----

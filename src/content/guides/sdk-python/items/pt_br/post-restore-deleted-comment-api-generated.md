@@ -1,8 +1,10 @@
 ## Parâmetros
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Localização | Obrigatório | Descrição |
+|------|------|-------------|-------------|-----------|
+| tenantId | string | query | Sim |  |
 | commentId | string | path | Sim |  |
+| broadcastId | string | query | Não |  |
 | sso | string | query | Não |  |
 
 ## Resposta
@@ -11,9 +13,10 @@ Retorna: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-pytho
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo post_restore_deleted_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo de post_restore_deleted_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import PostRestoreDeletedCommentOptions
 from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
@@ -25,15 +28,17 @@ configuration = client.Configuration(
 )
 
 
-# Entre em um contexto com uma instância do API client
+# Entrar em um contexto com uma instância do cliente da API
 with client.ApiClient(configuration) as api_client:
-    # Crie uma instância da classe API
+    # Criar uma instância da classe API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
-    sso = 'sso_example' # str |  (opcional)
+    broadcast_id = 'broadcast_id_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.post_restore_deleted_comment(comment_id, sso=sso)
+        api_response = api_instance.post_restore_deleted_comment(tenant_id, comment_id, PostRestoreDeletedCommentOptions(broadcast_id=broadcast_id, sso=sso))
         print("The response of ModerationApi->post_restore_deleted_comment:\n")
         pprint(api_response)
     except Exception as e:

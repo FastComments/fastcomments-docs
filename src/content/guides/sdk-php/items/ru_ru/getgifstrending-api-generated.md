@@ -1,8 +1,7 @@
----
 ## Параметры
 
-| Имя | Тип | Местоположение | Обязательный | Описание |
-|------|------|----------|----------|-------------|
+| Имя | Тип | Местоположение | Обязательно | Описание |
+|------|------|----------------|-------------|----------|
 | tenantId | string | path | Да |  |
 | locale | string | query | Нет |  |
 | rating | string | query | Нет |  |
@@ -22,17 +21,21 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Если вы хотите использовать пользовательский HTTP-клиент, передайте клиент, который реализует `GuzzleHttp\ClientInterface`.
-    // Это необязательно — по умолчанию будет использован `GuzzleHttp\Client`.
+    // Если вы хотите использовать пользовательский HTTP‑клиент, передайте ваш клиент, реализующий `GuzzleHttp\ClientInterface`.
+    // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // строка
-$locale = 'locale_example'; // строка
-$rating = 'rating_example'; // строка
-$page = 3.4; // число с плавающей точкой
+$options = [
+    'locale' => 'locale_example', // строка
+    'rating' => 'rating_example', // строка
+    'page' => 3.4, // число с плавающей точкой
+];
+
 
 try {
-    $result = $apiInstance->getGifsTrending($tenant_id, $locale, $rating, $page);
+    $result = $apiInstance->getGifsTrending($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getGifsTrending: ', $e->getMessage(), PHP_EOL;

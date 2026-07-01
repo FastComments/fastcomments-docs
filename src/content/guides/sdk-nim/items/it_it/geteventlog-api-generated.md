@@ -1,15 +1,14 @@
----
-req
-tenantId
-urlId
-userIdWS
+req  
+tenantId  
+urlId  
+userIdWS  
 
 ## Parametri
 
-| Nome | Tipo | Richiesto | Descrizione |
-|------|------|----------|-------------|
-| tenantId | string | Sì |  |
-| urlId | string | Sì |  |
+| Nome | Tipo | Obbligatorio | Descrizione |
+|------|------|--------------|-------------|
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
 | userIdWS | string | No |  |
 | startTime | int64 | No |  |
 | endTime | int64 | No |  |
@@ -20,18 +19,17 @@ Restituisce: [`Option[GetEventLogResponse]`](https://github.com/FastComments/fas
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di getEventLog'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
-[inline-code-start]
-let (response, httpResponse) = client.getEventLog(
+[inline-code-attrs-start title = 'Esempio getEventLog'; type = 'nim'; isFunctional = false; inline-code-attrs-end]  
+[inline-code-start]  
+let (eventLogOpt, httpResp) = client.getEventLog(
   tenantId = "my-tenant-123",
-  urlId = "news/article-2026-solar-panels",
-  userIdWS = "user-456",
-  startTime = 1688000000'i64,
-  endTime = 1688086400'i64
+  urlId = "news/article-title",
+  userIdWS = "",
+  startTime = 0'i64,
+  endTime = 0'i64,
 )
-if response.isSome:
-  let eventLog = response.get()
-  discard eventLog
-[inline-code-end]
 
----
+if eventLogOpt.isSome:
+  let eventLog = eventLogOpt.get()
+  echo eventLog
+[inline-code-end]

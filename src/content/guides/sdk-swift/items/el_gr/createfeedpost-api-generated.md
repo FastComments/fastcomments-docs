@@ -2,13 +2,13 @@
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ναι |  |
-| broadcastId | string | query | Όχι |  |
-| isLive | boolean | query | Όχι |  |
-| doSpamCheck | boolean | query | Όχι |  |
-| skipDupCheck | boolean | query | Όχι |  |
+| tenantId | string | query | Yes |  |
+| broadcastId | string | query | No |  |
+| isLive | boolean | query | No |  |
+| doSpamCheck | boolean | query | No |  |
+| skipDupCheck | boolean | query | No |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateFeedPostsResponse.swift)
 
@@ -16,7 +16,7 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα createFeedPost'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Τα ακόλουθα δείγματα κώδικα είναι ακόμη beta. Για οποιοδήποτε ζήτημα, παρακαλώ αναφέρετε μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
+// Ο παρακάτω κώδικας είναι ακόμα beta. Για οποιοδήποτε πρόβλημα, παρακαλώ αναφέρετε το μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -26,7 +26,7 @@ let isLive = true // Bool |  (προαιρετικό)
 let doSpamCheck = true // Bool |  (προαιρετικό)
 let skipDupCheck = true // Bool |  (προαιρετικό)
 
-DefaultAPI.createFeedPost(tenantId: tenantId, createFeedPostParams: createFeedPostParams, broadcastId: broadcastId, isLive: isLive, doSpamCheck: doSpamCheck, skipDupCheck: skipDupCheck) { (response, error) in
+DefaultAPI.createFeedPost(tenantId: tenantId, createFeedPostParams: createFeedPostParams, options: DefaultAPI.CreateFeedPostOptions(broadcastId: broadcastId, isLive: isLive, doSpamCheck: doSpamCheck, skipDupCheck: skipDupCheck)) { (response, error) in
     guard error == nil else {
         print(error)
         return

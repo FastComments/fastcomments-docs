@@ -1,14 +1,14 @@
-## Parametri
+## Parameters
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Ime | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| userId | string | query | Ne |  |
-| badgeId | string | query | Ne |  |
-| type | number | query | Ne |  |
-| displayedOnComments | boolean | query | Ne |  |
-| limit | number | query | Ne |  |
-| skip | number | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| badgeId | string | query | No |  |
+| type | number | query | No |  |
+| displayedOnComments | boolean | query | No |  |
+| limit | number | query | No |  |
+| skip | number | query | No |  |
 
 ## Odgovor
 
@@ -16,9 +16,9 @@ Vraća: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomment
 
 ## Primjer
 
-[inline-code-attrs-start title = 'getUserBadges Primjer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getUserBadges'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sljedeći primjeri koda su još u beta fazi. Za bilo koji problem, prijavite putem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sljedeći kodni primjeri su još u beta fazi. Za bilo koji problem, molimo prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -29,7 +29,7 @@ let displayedOnComments = true // Bool |  (neobavezno)
 let limit = 987 // Double |  (neobavezno)
 let skip = 987 // Double |  (neobavezno)
 
-DefaultAPI.getUserBadges(tenantId: tenantId, userId: userId, badgeId: badgeId, type: type, displayedOnComments: displayedOnComments, limit: limit, skip: skip) { (response, error) in
+DefaultAPI.getUserBadges(tenantId: tenantId, options: DefaultAPI.GetUserBadgesOptions(userId: userId, badgeId: badgeId, type: type, displayedOnComments: displayedOnComments, limit: limit, skip: skip)) { (response, error) in
     guard error == nil else {
         print(error)
         return

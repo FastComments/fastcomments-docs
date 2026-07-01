@@ -1,29 +1,34 @@
+---
 ## Параметры
 
-| Имя | Тип | Обязательный | Описание |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
 | badgeId | string | Да |  |
 | userId | string | Нет |  |
 | commentId | string | Нет |  |
 | broadcastId | string | Нет |  |
+| tenantId | string | Нет |  |
 | sso | string | Нет |  |
 
 ## Ответ
 
-Возвращает: [`RemoveUserBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/RemoveUserBadgeResponse.ts)
+Возвращает: [`PutRemoveBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PutRemoveBadgeResponse.ts)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример использования putRemoveBadge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример putRemoveBadge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const badgeId: string = 'badge_7392';
-  const userId: string = 'user_1284';
-  const commentId: string = 'cmt_5583';
-  const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyXzEyODQifQ.signature';
-  const response: RemoveUserBadgeResponse = await putRemoveBadge(badgeId, userId, commentId, undefined, sso);
-  console.log(response);
-})();
+const badgeId: string = "badge-12345";
+const userId: string = "user-9876";
+const commentId: string = "comment-5555";
+const broadcastId: string = "broadcast-001";
+
+const result: PutRemoveBadgeResponse = await putRemoveBadge(
+  badgeId,
+  userId,
+  commentId,
+  broadcastId
+);
 [inline-code-end]
 
 ---

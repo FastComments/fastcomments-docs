@@ -2,14 +2,11 @@
 
 | Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| createCommentParams | seq[CreateCommentParams] | No |  |
-| isLive | bool | No |  |
-| doSpamCheck | bool | No |  |
-| sendEmails | bool | No |  |
-| populateNotifications | bool): (Option[seq[SaveCommentsBulkResponse]] | No |  |
-| id | string | No |  |
-| fromName | string | No |  |
+| tenantId | string | Да |  |
+| createCommentParams | seq[CreateCommentParams] | Нет |  |
+| options | SaveCommentsBulkOptions): (Option[seq[SaveCommentsBulkResponse]] | Нет |  |
+| id | string | Нет |  |
+| fromName | string | Нет |  |
 
 ## Ответ
 
@@ -22,19 +19,11 @@
 let (response, httpResponse) = client.saveCommentsBulk(
   tenantId = "my-tenant-123",
   createCommentParams = @[],
-  isLive = false,
-  doSpamCheck = false,
-  sendEmails = false,
-  populateNotifications = false,
+  options = SaveCommentsBulkOptions(),
   id = "",
   fromName = ""
 )
 
 if response.isSome:
-  let apiResp = response.get()
-  echo "Bulk save succeeded, tenant:", " my-tenant-123"
-else:
-  echo "Bulk save returned no API response"
+  let result = response.get()
 [inline-code-end]
-
----

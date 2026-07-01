@@ -1,12 +1,9 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
-|------|------|----------|-------------|
+|------|------|------------|-----------|
 | tenantId | string | Ναι |  |
-| userId | string | Όχι |  |
-| state | float64 | Όχι |  |
-| skip | float64 | Όχι |  |
-| limit | float64 | Όχι |  |
+| options | GetTicketsOptions | Όχι |  |
 
 ## Απόκριση
 
@@ -14,12 +11,12 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'getTickets Παράδειγμα'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παράδειγμα getTickets'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTickets(tenantId = "my-tenant-123", userId = "user-789", state = 1.0, skip = 0.0, limit = 50.0)
-if response.isSome:
-  let tickets = response.get()
-  echo tickets
+let (ticketsOpt, httpResp) = client.getTickets(tenantId = "my-tenant-123", options = GetTicketsOptions())
+if ticketsOpt.isSome:
+  let tickets = ticketsOpt.get()
+  # χρησιμοποιήστε τα εισιτήρια όπως χρειάζεται
 [inline-code-end]
 
 ---

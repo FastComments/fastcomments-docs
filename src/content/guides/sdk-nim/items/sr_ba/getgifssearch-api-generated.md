@@ -1,32 +1,22 @@
 ## Parametri
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| tenantId | string | Da |  |
-| search | string | Ne |  |
-| locale | string | Ne |  |
-| rating | string | Ne |  |
-| page | float64 | Ne |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| search | string | No |  |
+| options | GetGifsSearchOptions | No |  |
 
 ## Odgovor
 
 Vraća: [`Option[GetGifsSearchResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_gifs_search_response.nim)
 
-## Primjer
+## Primer
 
-[inline-code-attrs-start title = 'getGifsSearch Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getGifsSearch Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getGifsSearch(
-  tenantId = "my-tenant-123",
-  search = "funny cat",
-  locale = "en-US",
-  rating = "PG",
-  page = 1.0
-)
-
-if response.isSome:
-  let gifs = response.get()
-  echo "Fetched GIFs response:", gifs
+let opts = GetGifsSearchOptions(limit = 10, rating = "g")
+let (responseOpt, httpResponse) = client.getGifsSearch(tenantId = "my-tenant-123", search = "funny cats", options = opts)
+if responseOpt.isSome:
+  let resp = responseOpt.get()
+  # koristite resp po potrebi
 [inline-code-end]
-
----

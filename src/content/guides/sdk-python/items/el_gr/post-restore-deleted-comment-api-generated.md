@@ -1,9 +1,11 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Location | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Θέση | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Ναι |  |
-| sso | string | query | Όχι |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Απόκριση
 
@@ -14,30 +16,31 @@
 [inline-code-attrs-start title = 'post_restore_deleted_comment Παράδειγμα'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import PostRestoreDeletedCommentOptions
 from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Ορισμός του host είναι προαιρετικός και προεπιλογή είναι το https://fastcomments.com
+# Ο ορισμός του host είναι προαιρετικός και η προεπιλογή είναι https://fastcomments.com
 # Δείτε το configuration.py για μια λίστα με όλες τις υποστηριζόμενες παραμέτρους διαμόρφωσης.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Εισέλθετε σε ένα context με ένα instance του API client
+# Εισαγωγή ενός πλαισίου με ένα στιγμιότυπο του πελάτη API
 with client.ApiClient(configuration) as api_client:
-    # Δημιουργήστε ένα instance της κλάσης API
+    # Δημιουργία ενός στιγμιότυπου της κλάσης API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
-    sso = 'sso_example' # str |  (optional)
+    broadcast_id = 'broadcast_id_example' # str |  (προαιρετικό)
+    sso = 'sso_example' # str |  (προαιρετικό)
 
     try:
-        api_response = api_instance.post_restore_deleted_comment(comment_id, sso=sso)
+        api_response = api_instance.post_restore_deleted_comment(tenant_id, comment_id, PostRestoreDeletedCommentOptions(broadcast_id=broadcast_id, sso=sso))
         print("The response of ModerationApi->post_restore_deleted_comment:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling ModerationApi->post_restore_deleted_comment: %s\n" % e)
 [inline-code-end]
-
----

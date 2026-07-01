@@ -1,16 +1,17 @@
+---
 ## 參數
 
-| 名稱 | Type | Location | 必填 | 說明 |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | 是 |  |
-| commentId | string | path | 是 |  |
-| broadcastId | string | query | 是 |  |
-| editKey | string | query | 否 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | Yes |  |
+| editKey | string | query | No |  |
+| sso | string | query | No |  |
 
 ## 回應
 
-回傳: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PublicAPISetCommentTextResponse.php)
+返回: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PublicAPISetCommentTextResponse.php)
 
 ## 範例
 
@@ -22,21 +23,27 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // 如果您想使用自訂的 HTTP 用戶端，請傳入實作 `GuzzleHttp\ClientInterface` 的用戶端。
-    // 這是可選的，預設會使用 `GuzzleHttp\Client`。
+    // 如果您想使用自訂的 HTTP 客戶端，請傳入實作 `GuzzleHttp\ClientInterface` 的客戶端。
+    // 這是可選的，預設將使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // 字串
-$comment_id = 'comment_id_example'; // 字串
-$broadcast_id = 'broadcast_id_example'; // 字串
+
+$tenant_id = 'tenant_id_example'; // string
+$comment_id = 'comment_id_example'; // string
+$broadcast_id = 'broadcast_id_example'; // string
 $comment_text_update_request = new \FastComments\Client\Model\CommentTextUpdateRequest(); // \FastComments\Client\Model\CommentTextUpdateRequest
-$edit_key = 'edit_key_example'; // 字串
-$sso = 'sso_example'; // 字串
+$options = [
+    'edit_key' => 'edit_key_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->setCommentText($tenant_id, $comment_id, $broadcast_id, $comment_text_update_request, $edit_key, $sso);
+    $result = $apiInstance->setCommentText($tenant_id, $comment_id, $broadcast_id, $comment_text_update_request, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->setCommentText: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

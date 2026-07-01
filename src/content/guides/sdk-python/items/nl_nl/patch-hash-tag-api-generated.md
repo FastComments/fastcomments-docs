@@ -1,9 +1,9 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
-|------|------|----------|----------|-------------|
+| Naam | Type | Locatie | Verplicht | Beschrijving |
+|------|------|----------|-----------|--------------|
+| tenantId | string | query | Ja |  |
 | tag | string | path | Ja |  |
-| tenantId | string | query | Nee |  |
 
 ## Respons
 
@@ -19,33 +19,33 @@ from client.models.update_hash_tag_response import UpdateHashTagResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Het definiëren van de host is optioneel en standaard is https://fastcomments.com
-# Zie configuration.py voor een lijst van alle ondersteunde configuratieparameters.
+# Het definiëren van de host is optioneel en standaard https://fastcomments.com
+# Zie configuration.py voor een lijst van alle ondersteunde configuratie‑parameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # De client moet de authenticatie- en autorisatieparameters configureren
-# in overeenstemming met het beveiligingsbeleid van de API-server.
-# Voorbeelden voor elke auth-methode staan hieronder, gebruik het voorbeeld dat
-# past bij uw auth-gebruikssituatie.
+# in overeenstemming met het beveiligingsbeleid van de API‑server.
+# Voorbeelden voor elke authenticatiemethode worden hieronder gegeven, gebruik het voorbeeld dat
+# voldoet aan uw authenticatiegeval.
 
-# Configureer API-sleutelautorisatie: api_key
+# Configureer API‑sleutelautorisatie: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Haal het commentaar hieronder weg om het prefix in te stellen (bijv. Bearer) voor de API-sleutel, indien nodig
+# Verwijder de commentaar op de onderstaande regel om een prefix (bijv. Bearer) voor de API‑sleutel in te stellen, indien nodig
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Ga een context in met een instantie van de API-client
+# Open een context met een instantie van de API‑client
 with client.ApiClient(configuration) as api_client:
-    # Maak een instantie van de API-klasse
+    # Maak een instantie van de API‑klasse
     api_instance = client.DefaultApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     tag = 'tag_example' # str | 
-    tenant_id = 'tenant_id_example' # str |  (optioneel)
-    update_hash_tag_body = client.UpdateHashTagBody() # UpdateHashTagBody |  (optioneel)
+    update_hash_tag_body = client.UpdateHashTagBody() # UpdateHashTagBody |  (optional)
 
     try:
-        api_response = api_instance.patch_hash_tag(tag, tenant_id=tenant_id, update_hash_tag_body=update_hash_tag_body)
+        api_response = api_instance.patch_hash_tag(tenant_id, tag, update_hash_tag_body)
         print("The response of DefaultApi->patch_hash_tag:\n")
         pprint(api_response)
     except Exception as e:

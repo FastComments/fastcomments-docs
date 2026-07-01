@@ -1,35 +1,46 @@
-Voert aggregaties uit op documenten door ze te groeperen (als groupBy is opgegeven) en meerdere bewerkingen toe te passen.
-Verschillende bewerkingen (bijv. sum, countDistinct, avg, etc.) worden ondersteund.
+Aggregates documenten door ze te groeperen (indien groupBy is opgegeven) en meerdere bewerkingen toe te passen.  
+Verschillende bewerkingen (bijv. sum, countDistinct, avg, enz.) worden ondersteund.
 
 ## Parameters
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| aggregationRequest | AggregationRequest | Ja |  |
-| parentTenantId | string | Nee |  |
-| includeStats | boolean | Nee |  |
+| tenantId | string | Yes |  |
+| aggregationRequest | AggregationRequest | Yes |  |
+| parentTenantId | string | No |  |
+| includeStats | boolean | No |  |
 
-## Antwoord
+## Respons
 
-Geeft terug: [`AggregateResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AggregateResponse.ts)
+Retourneert: [`AggregateResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AggregateResponse.ts)
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'aggregate Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Aggregaat Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_72b3";
-const parentTenantId: string = "parent_acme_corp";
+const tenantId: string = "tenant-12345";
+
 const aggregationRequest: AggregationRequest = {
-  groupBy: ["postId"],
   predicates: [
-    { field: "status", operator: "EQ", value: { stringValue: "published" } as QueryPredicateValue }
+    {
+      field: "status",
+      operator: "eq",
+      value: { type: "string", value: "approved" }
+    }
   ],
   operations: [
-    { type: AggregationOpType.COUNT, field: "id", alias: "commentCount" } as AggregationOperation
+    { type: "count", field: "commentId" }
   ],
-  sort: [{ field: "commentCount", direction: "DESC" } as AggregationRequestSort],
-  limit: 25
+  sort: { field: "createdAt", direction: "desc" }
 };
-const response: AggregateResponse = await aggregate(tenantId, aggregationRequest, parentTenantId, true);
+
+const parentTenantId: string = "parent-001";
+const includeStats: boolean = true;
+
+const result: AggregateResponse = await aggregate(
+  tenantId,
+  aggregationRequest,
+  parentTenantId,
+  includeStats
+);
 [inline-code-end]

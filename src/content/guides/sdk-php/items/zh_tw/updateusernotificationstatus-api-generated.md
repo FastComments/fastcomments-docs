@@ -2,14 +2,14 @@
 
 | 名稱 | 類型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 是 |  |
-| notificationId | string | path | 是 |  |
-| newStatus | string | path | 是 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| notificationId | string | path | Yes |  |
+| newStatus | string | path | Yes |  |
+| sso | string | query | No |  |
 
 ## 回應
 
-回傳: [`UpdateUserNotificationStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationStatusResponse.php)
+返回：[`UpdateUserNotificationStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationStatusResponse.php)
 
 ## 範例
 
@@ -21,14 +21,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // 若要使用自訂的 HTTP 用戶端，請傳入實作 `GuzzleHttp\ClientInterface` 的用戶端。
+    // 如果您想使用自訂的 HTTP 客戶端，請傳入實作 `GuzzleHttp\ClientInterface` 的客戶端。
     // 這是可選的，預設會使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // 字串
-$notification_id = 'notification_id_example'; // 字串
-$new_status = 'new_status_example'; // 字串
-$sso = 'sso_example'; // 字串
+
+$tenant_id = 'tenant_id_example'; // string
+$notification_id = 'notification_id_example'; // string
+$new_status = 'new_status_example'; // string
+$sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->updateUserNotificationStatus($tenant_id, $notification_id, $new_status, $sso);
@@ -37,3 +39,5 @@ try {
     echo 'Exception when calling PublicApi->updateUserNotificationStatus: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

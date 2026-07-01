@@ -1,9 +1,9 @@
 ## Параметры
 
-| Name | Type | Required | Description |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| userId | string | Нет |  |
+| tenantId | string | Yes |  |
+| userId | string = "" | No |  |
 
 ## Ответ
 
@@ -13,10 +13,8 @@
 
 [inline-code-attrs-start title = 'Пример getSubscriptions'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSubscriptions(tenantId = "my-tenant-123", userId = "")
-if response.isSome:
-  let subscriptions = response.get()
-  discard subscriptions
+let (subscriptionsOpt, httpResp) = client.getSubscriptions(tenantId = "my-tenant-123", userId = "user-456")
+if subscriptionsOpt.isSome:
+  let subscriptions = subscriptionsOpt.get()
+  echo subscriptions
 [inline-code-end]
-
----

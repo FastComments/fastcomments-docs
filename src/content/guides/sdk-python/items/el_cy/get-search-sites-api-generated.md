@@ -2,8 +2,9 @@
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| value | string | query | Όχι |  |
-| sso | string | query | Όχι |  |
+| tenantId | string | query | Yes |  |
+| value | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Απόκριση
 
@@ -11,29 +12,31 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα get_search_sites'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_search_sites Παράδειγμα'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetSearchSitesOptions
 from client.models.moderation_site_search_response import ModerationSiteSearchResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Ορισμός του host είναι προαιρετικός και προεπιλογή είναι το https://fastcomments.com
-# Δείτε το configuration.py για λίστα με όλες τις υποστηριζόμενες παραμέτρους ρυθμίσεων.
+# Ο καθορισμός του host είναι προαιρετικός και η προεπιλογή είναι https://fastcomments.com
+# Δείτε το configuration.py για μια λίστα με όλες τις υποστηριζόμενες παραμέτρους διαμόρφωσης.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Εισέλθετε σε context με ένα αντικείμενο του API client
+# Εισαγωγή ενός πλαισίου με μια παρουσία του πελάτη API
 with client.ApiClient(configuration) as api_client:
-    # Δημιουργήστε ένα αντικείμενο της κλάσης API
+    # Δημιουργία μιας παρουσίασης της κλάσης API
     api_instance = client.ModerationApi(api_client)
-    value = 'value_example' # str |  (προαιρετικό)
-    sso = 'sso_example' # str |  (προαιρετικό)
+    tenant_id = 'tenant_id_example' # str | 
+    value = 'value_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_search_sites(value=value, sso=sso)
+        api_response = api_instance.get_search_sites(tenant_id, GetSearchSitesOptions(value=value, sso=sso))
         print("The response of ModerationApi->get_search_sites:\n")
         pprint(api_response)
     except Exception as e:

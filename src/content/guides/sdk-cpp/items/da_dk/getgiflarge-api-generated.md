@@ -1,11 +1,11 @@
 ## Parametre
 
-| Navn | Type | Påkrævet | Beskrivelse |
-|------|------|----------|-------------|
+| Navn | Type | Obligatorisk | Beskrivelse |
+|------|------|--------------|-------------|
 | tenantId | string | Ja |  |
 | largeInternalURLSanitized | string | Ja |  |
 
-## Respons
+## Svar
 
 Returnerer: [`GifGetLargeResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GifGetLargeResponse.h)
 
@@ -13,23 +13,17 @@ Returnerer: [`GifGetLargeResponse`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'getGifLarge Eksempel'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t largeUrl = U("https://cdn.fastcomments.com/gifs/large/abc123.gif");
-boost::optional<utility::string_t> acceptLanguage = boost::optional<utility::string_t>(U("en-US"));
-api->getGifLarge(tenantId, largeUrl)
-    .then([=](pplx::task<std::shared_ptr<GifGetLargeResponse>> t) {
-        try {
-            auto resp = t.get();
-            if (resp) {
-                std::cout << "GIF retrieved successfully\n";
-            } else {
-                auto fallback = std::make_shared<GifGetLargeResponse>();
-                std::cout << "Empty response, using fallback\n";
-            }
-        } catch (const std::exception &e) {
-            std::cout << "Request failed: " << e.what() << '\n';
-        }
-    }).wait();
-[inline-code-end]
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto largeUrl = utility::conversions::to_string_t("https://cdn.example.com/gifs/large/abc123.gif");
 
----
+api->getGifLarge(tenantId, largeUrl)
+   .then([&](std::shared_ptr<GifGetLargeResponse> resp) {
+        boost::optional<utility::string_t> maybeUrl;
+        if (resp && resp->url) {
+            maybeUrl = resp->url;
+        }
+        if (maybeUrl) {
+            std::wcout << *maybeUrl << std::endl;
+        }
+   });
+[inline-code-end]

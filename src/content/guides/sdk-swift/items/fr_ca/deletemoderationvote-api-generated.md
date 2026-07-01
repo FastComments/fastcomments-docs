@@ -1,14 +1,16 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
-| commentId | string | chemin | Oui |  |
-| voteId | string | chemin | Oui |  |
-| sso | string | requête | Non |  |
+| tenantId | string | query | Oui |  |
+| commentId | string | path | Oui |  |
+| voteId | string | path | Oui |  |
+| broadcastId | string | query | Non |  |
+| sso | string | query | Non |  |
 
 ## Réponse
 
-Retourne : [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/VoteDeleteResponse.swift)
+Renvoie : [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/VoteDeleteResponse.swift)
 
 ## Exemple
 
@@ -17,11 +19,13 @@ Retourne : [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-s
 // Les exemples de code suivants sont encore en version bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
 let voteId = "voteId_example" // String | 
-let sso = "sso_example" // String |  (optionnel)
+let broadcastId = "broadcastId_example" // String |  (optional)
+let sso = "sso_example" // String |  (optional)
 
-ModerationAPI.deleteModerationVote(commentId: commentId, voteId: voteId, sso: sso) { (response, error) in
+ModerationAPI.deleteModerationVote(tenantId: tenantId, commentId: commentId, voteId: voteId, options: ModerationAPI.DeleteModerationVoteOptions(broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -32,5 +36,3 @@ ModerationAPI.deleteModerationVote(commentId: commentId, voteId: voteId, sso: ss
     }
 }
 [inline-code-end]
-
----

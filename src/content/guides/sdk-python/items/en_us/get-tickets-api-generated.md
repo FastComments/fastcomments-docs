@@ -17,6 +17,7 @@ Returns: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-pyt
 [inline-code-attrs-start title = 'get_tickets Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetTicketsOptions
 from client.models.get_tickets_response import GetTicketsResponse
 from client.rest import ApiException
 from pprint import pprint
@@ -49,7 +50,7 @@ with client.ApiClient(configuration) as api_client:
     limit = 3.4 # float |  (optional)
 
     try:
-        api_response = api_instance.get_tickets(tenant_id, user_id=user_id, state=state, skip=skip, limit=limit)
+        api_response = api_instance.get_tickets(tenant_id, GetTicketsOptions(user_id=user_id, state=state, skip=skip, limit=limit))
         print("The response of DefaultApi->get_tickets:\n")
         pprint(api_response)
     except Exception as e:

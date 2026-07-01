@@ -1,14 +1,14 @@
-Trenutno online posetioci stranice: osobe čija je websocket sesija trenutno pretplaćena na stranicu.
-Vraća anonCount + totalCount (pretplatnici cele sobe, uključujući anonimne posetioce koje ne navodimo).
+Trenutno online posmatrači stranice: osobe čija je websocket sesija trenutno pretplaćena na stranicu.
+Vraća anonCount + totalCount (pretplatnici na čitavu sobu, uključujući anonimne posmatrače koje ne nabrajamo).
 
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| url_id | String | Yes |  |
-| after_name | String | No |  |
-| after_user_id | String | No |  |
+| tenant_id | String | Da |  |
+| url_id | String | Da |  |
+| after_name | String | Ne |  |
+| after_user_id | String | Ne |  |
 
 ## Odgovor
 
@@ -16,16 +16,18 @@ Vraća: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments
 
 ## Primer
 
-[inline-code-attrs-start title = 'get_online_users Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer get_online_users'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_online_users() -> Result<PageUsersOnlineResponse, Error> {
-    let params: GetOnlineUsersParams = GetOnlineUsersParams {
+async fn example() -> Result<(), Error> {
+    let params = GetOnlineUsersParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        url_id: "news/world/article-2026".to_string(),
-        after_name: Some("jane.doe".to_string()),
-        after_user_id: Some("user_98765".to_string()),
+        url_id: "news/article".to_string(),
+        after_name: Some("john_doe".to_string()),
+        after_user_id: Some("user-123".to_string()),
     };
-    let response: PageUsersOnlineResponse = get_online_users(&configuration, params).await?;
-    Ok(response)
+    let _response: PageUsersOnlineResponse = get_online_users(&config, params).await?;
+    Ok(())
 }
 [inline-code-end]
+
+---

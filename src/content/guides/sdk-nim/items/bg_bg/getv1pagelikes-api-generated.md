@@ -11,14 +11,10 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'getV1PageLikes Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за getV1PageLikes'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getV1PageLikes(tenantId = "my-tenant-123", urlId = "news/how-to-train-your-dragon")
+let (response, httpResponse) = client.getV1PageLikes(tenantId = "my-tenant-123", urlId = "news/article-title")
 if response.isSome:
   let pageLikes = response.get()
-  echo "Fetched page likes for url:", "news/how-to-train-your-dragon"
-else:
-  echo "No likes returned for url:", "news/how-to-train-your-dragon"
+  # използвайте pageLikes при необходимост
 [inline-code-end]
-
----

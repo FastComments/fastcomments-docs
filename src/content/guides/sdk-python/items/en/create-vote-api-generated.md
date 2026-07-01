@@ -17,6 +17,7 @@ Returns: [`VoteResponse`](https://github.com/FastComments/fastcomments-python/bl
 [inline-code-attrs-start title = 'create_vote Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import CreateVoteOptions
 from client.models.vote_response import VoteResponse
 from client.rest import ApiException
 from pprint import pprint
@@ -49,7 +50,7 @@ with client.ApiClient(configuration) as api_client:
     anon_user_id = 'anon_user_id_example' # str |  (optional)
 
     try:
-        api_response = api_instance.create_vote(tenant_id, comment_id, direction, user_id=user_id, anon_user_id=anon_user_id)
+        api_response = api_instance.create_vote(tenant_id, comment_id, direction, CreateVoteOptions(user_id=user_id, anon_user_id=anon_user_id))
         print("The response of DefaultApi->create_vote:\n")
         pprint(api_response)
     except Exception as e:

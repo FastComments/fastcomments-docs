@@ -1,13 +1,14 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Местоположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| text-search | string | query | Нет |  |
-| byIPFromComment | string | query | Нет |  |
-| filter | string | query | Нет |  |
-| searchFilters | string | query | Нет |  |
-| demo | boolean | query | Нет |  |
-| sso | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filter | string | query | No |  |
+| searchFilters | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Ответ
 
@@ -18,30 +19,32 @@
 [inline-code-attrs-start title = 'Пример get_count'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetCountOptions
 from client.models.moderation_api_count_comments_response import ModerationAPICountCommentsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Указание host необязательно — по умолчанию https://fastcomments.com
-# Смотрите configuration.py для списка всех поддерживаемых параметров конфигурации.
+# Определение хоста необязательно и по умолчанию https://fastcomments.com
+# См. configuration.py для списка всех поддерживаемых параметров конфигурации.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Войдите в контекст с экземпляром API-клиента
+# Войдите в контекст с экземпляром клиента API
 with client.ApiClient(configuration) as api_client:
-    # Создайте экземпляр API-класса
+    # Создайте экземпляр класса API
     api_instance = client.ModerationApi(api_client)
-    text_search = 'text_search_example' # str |  (необязательно)
-    by_ip_from_comment = 'by_ip_from_comment_example' # str |  (необязательно)
-    filter = 'filter_example' # str |  (необязательно)
-    search_filters = 'search_filters_example' # str |  (необязательно)
-    demo = True # bool |  (необязательно)
-    sso = 'sso_example' # str |  (необязательно)
+    tenant_id = 'tenant_id_example' # str | 
+    text_search = 'text_search_example' # str |  (опционально)
+    by_ip_from_comment = 'by_ip_from_comment_example' # str |  (опционально)
+    filter = 'filter_example' # str |  (опционально)
+    search_filters = 'search_filters_example' # str |  (опционально)
+    demo = True # bool |  (опционально)
+    sso = 'sso_example' # str |  (опционально)
 
     try:
-        api_response = api_instance.get_count(text_search=text_search, by_ip_from_comment=by_ip_from_comment, filter=filter, search_filters=search_filters, demo=demo, sso=sso)
+        api_response = api_instance.get_count(tenant_id, GetCountOptions(text_search=text_search, by_ip_from_comment=by_ip_from_comment, filter=filter, search_filters=search_filters, demo=demo, sso=sso))
         print("The response of ModerationApi->get_count:\n")
         pprint(api_response)
     except Exception as e:

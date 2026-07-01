@@ -1,35 +1,29 @@
-O SDK do FastComments fornece três clientes de API:
+O FastComments SDK fornece três clientes de API:
 
-### PublicAPI - Métodos seguros para cliente
+### PublicAPI - Métodos Seguros para Cliente
 
-O `PublicAPI` contém métodos seguros para serem chamados a partir de código do lado do cliente (apps iOS/macOS). Esses métodos:
-- Não requerem uma API key
+A `PublicAPI` contém métodos que são seguros para chamar a partir de código cliente (apps iOS/macOS). Esses métodos:
+- Não exigem uma chave de API
 - Podem usar tokens SSO para autenticação
-- São rate-limited por usuário/dispositivo
+- São limitados por taxa por usuário/dispositivo
 - São adequados para aplicações voltadas ao usuário final
 
-**Exemplo de uso**: Buscar e criar comentários em seu app iOS
+**Caso de uso**: Buscar e criar comentários no seu app iOS
 
-### DefaultAPI - Métodos do lado do servidor
+### DefaultAPI - Métodos Lado do Servidor
 
-O `DefaultAPI` contém métodos autenticados que requerem uma API key. Esses métodos:
-- Requerem sua FastComments API key
+A `DefaultAPI` contém métodos autenticados que exigem uma chave de API. Esses métodos:
+- Exigem sua chave de API FastComments
 - Devem SER CHAMADOS SOMENTE a partir de código do lado do servidor
-- Fornecem acesso completo aos seus dados do FastComments
-- São rate-limited por tenant
+- Fornecem acesso total aos seus dados FastComments
+- São limitados por taxa por locatário
 
-**Exemplo de uso**: Operações administrativas, exportação em massa de dados, gerenciamento de usuários
+**Caso de uso**: Operações administrativas, exportação em massa de dados, gerenciamento de usuários
 
-### ModerationAPI - Métodos do Painel de Moderador
+### ModerationAPI - Métodos do Painel de Moderação
 
-O `ModerationAPI` contém métodos que dão suporte ao painel do moderador. Esses métodos abrangem:
-- **Moderação de comentários** - listar, contar, buscar, recuperar logs e exportar comentários
-- **Ações de moderação** - remover/restaurar comentários, sinalizar, definir status de revisão/spam/aprovação, gerenciar votos e reabrir/fechar tópicos
-- **Banimentos** - banir um usuário de um comentário, desfazer banimentos, buscar resumos pré-banimento, verificar status de banimento e preferências, e ler contagens de usuários banidos
-- **Insígnias & confiança** - conceder/remover insígnias, listar insígnias manuais, obter/definir o fator de confiança de um usuário, e ler o perfil interno de um usuário
+A `ModerationAPI` fornece um amplo conjunto de APIs de moderação ao vivo e rápidas. Cada método `ModerationAPI` aceita um parâmetro `sso` e pode autenticar via SSO ou um cookie de sessão FastComments.com.
 
-Todo método do `ModerationAPI` aceita um parâmetro `sso` para que moderadores possam ser autenticados via SSO.
+**Caso de uso**: Construir uma experiência de moderação para moderadores da sua comunidade
 
-**Exemplo de uso**: Construir uma experiência de moderação para os moderadores da sua comunidade
-
-**IMPORTANTE**: Nunca exponha sua API key em código do lado do cliente. API keys devem ser usadas apenas no lado do servidor.
+**IMPORTANTE**: Nunca exponha sua chave de API no código cliente. As chaves de API devem ser usadas apenas no lado do servidor.

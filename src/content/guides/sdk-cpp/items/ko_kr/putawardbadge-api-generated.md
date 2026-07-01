@@ -1,13 +1,10 @@
----
 ## 매개변수
 
-| 이름 | 타입 | 필수 | 설명 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
+| tenantId | string | 예 |  |
 | badgeId | string | 예 |  |
-| userId | string | 아니오 |  |
-| commentId | string | 아니오 |  |
-| broadcastId | string | 아니오 |  |
-| sso | string | 아니오 |  |
+| options | const PutAwardBadgeOptions& | 예 |  |
 
 ## 응답
 
@@ -17,22 +14,16 @@
 
 [inline-code-attrs-start title = 'putAwardBadge 예제'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t badgeId = U("badge-elite-commenter");
-boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U("jane.doe@example.com"));
-boost::optional<utility::string_t> commentId = boost::optional<utility::string_t>(U("cmt-8f3a2b"));
-boost::optional<utility::string_t> broadcastId;
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("my-tenant-123"));
-
-api->putAwardBadge(badgeId, userId, commentId, broadcastId, sso)
-.then([](pplx::task<std::shared_ptr<AwardUserBadgeResponse>> t){
-    try {
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto badgeId = utility::conversions::to_string_t("badge-456");
+PutAwardBadgeOptions opts;
+opts.userId = utility::conversions::to_string_t("user-42");
+opts.note = boost::optional<utility::string_t>(utility::conversions::to_string_t("Excellent comment"));
+api->putAwardBadge(tenantId, badgeId, opts).then([](pplx::task<std::shared_ptr<AwardUserBadgeResponse>> t){
+    try{
         auto resp = t.get();
-        auto out = resp ? resp : std::make_shared<AwardUserBadgeResponse>();
-        std::cout << "Badge awarded successfully\n";
-    } catch (const std::exception &e) {
-        std::cerr << "Award failed: " << e.what() << '\n';
+        auto respCopy = std::make_shared<AwardUserBadgeResponse>(*resp);
+    }catch(const std::exception& e){
     }
-}).wait();
+});
 [inline-code-end]
-
----

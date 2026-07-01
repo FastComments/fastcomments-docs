@@ -1,9 +1,10 @@
 ## Parametry
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
-|------|------|----------|----------|-------------|
-| value | string | query | Nie |  |
-| sso | string | query | Nie |  |
+|------|------|-------------|----------|------|
+| tenantId | string | zapytanie | Tak |  |
+| value | string | zapytanie | Nie |  |
+| sso | string | zapytanie | Nie |  |
 
 ## Odpowiedź
 
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
-    String value = "value_example"; // String | 
-    String sso = "sso_example"; // String | 
+    String tenantId = "tenantId_example"; // String |
+    String value = "value_example"; // String |
+    String sso = "sso_example"; // String |
     try {
-      ModerationSiteSearchResponse result = apiInstance.getSearchSites()
+      ModerationSiteSearchResponse result = apiInstance.getSearchSites(tenantId)
             .value(value)
             .sso(sso)
             .execute();
@@ -44,5 +46,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

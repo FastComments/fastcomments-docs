@@ -1,8 +1,9 @@
 ## Parametri
 
-| Name | Type | Location | Richiesto | Description |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Sì |  |
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+|------|------|----------|--------------|-------------|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
 | sso | string | query | No |  |
 
 ## Risposta
@@ -11,29 +12,30 @@ Restituisce: [`GetBannedUsersFromCommentResponse`](https://github.com/FastCommen
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di get_ban_users_from_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio get_ban_users_from_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.models.get_banned_users_from_comment_response import GetBannedUsersFromCommentResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definire l'host è opzionale e il valore predefinito è https://fastcomments.com
-# Vedi configuration.py per un elenco di tutti i parametri di configurazione supportati.
+# Definire l'host è opzionale e per impostazione predefinita è https://fastcomments.com
+# Consulta configuration.py per un elenco di tutti i parametri di configurazione supportati.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Apri un contesto con un'istanza del client API
+# Entra in un contesto con un'istanza del client API
 with client.ApiClient(configuration) as api_client:
     # Crea un'istanza della classe API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
-    sso = 'sso_example' # str |  (opzionale)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_ban_users_from_comment(comment_id, sso=sso)
+        api_response = api_instance.get_ban_users_from_comment(tenant_id, comment_id, sso=sso)
         print("The response of ModerationApi->get_ban_users_from_comment:\n")
         pprint(api_response)
     except Exception as e:

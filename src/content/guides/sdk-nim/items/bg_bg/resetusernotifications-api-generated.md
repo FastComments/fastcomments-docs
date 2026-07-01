@@ -1,37 +1,21 @@
-## Parameters
+## Параметри
 
-| Име | Тип | Задължително | Описание |
+| Име | Тип | Задължителен | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
-| afterId | string | Не |  |
-| afterCreatedAt | int64 | Не |  |
-| unreadOnly | bool | Не |  |
-| dmOnly | bool | Не |  |
-| noDm | bool | Не |  |
-| sso | string | Не |  |
+| options | ResetUserNotificationsOptions | Не |  |
 
-## Response
+## Отговор
 
-Връща: [`Option[ResetUserNotificationsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_reset_user_notifications_response.nim)
+Returns: [`Option[ResetUserNotificationsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_reset_user_notifications_response.nim)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за resetUserNotifications'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'resetUserNotifications Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.resetUserNotifications(
+let (maybeResp, httpResp) = client.resetUserNotifications(
   tenantId = "my-tenant-123",
-  afterId = "",
-  afterCreatedAt = 0'i64,
-  unreadOnly = false,
-  dmOnly = false,
-  noDm = false,
-  sso = ""
-)
-if response.isSome:
-  let resetResp = response.get()
-  echo "ResetUserNotificationsResponse received"
-else:
-  echo "No ResetUserNotificationsResponse"
+  options = ResetUserNotificationsOptions())
+if maybeResp.isSome:
+  let resp = maybeResp.get()
 [inline-code-end]
-
----

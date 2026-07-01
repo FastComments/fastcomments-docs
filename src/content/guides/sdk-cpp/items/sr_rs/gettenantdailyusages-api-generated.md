@@ -1,12 +1,9 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
-| yearNumber | double | Не |  |
-| monthNumber | double | Не |  |
-| dayNumber | double | Не |  |
-| skip | double | Не |  |
+| options | const GetTenantDailyUsagesOptions& | Да |  |
 
 ## Одговор
 
@@ -17,20 +14,10 @@
 [inline-code-attrs-start title = 'Пример getTenantDailyUsages'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-boost::optional<double> yearNumber = 2026;
-boost::optional<double> monthNumber = 6;
-boost::optional<double> dayNumber; 
-boost::optional<double> skip = 0;
-api->getTenantDailyUsages(tenantId, yearNumber, monthNumber, dayNumber, skip)
-.then([=](pplx::task<std::shared_ptr<GetTenantDailyUsagesResponse>> t){
-    try {
-        auto resp = t.get();
-        if(!resp) resp = std::make_shared<GetTenantDailyUsagesResponse>();
-        return resp;
-    } catch(...) {
-        return std::make_shared<GetTenantDailyUsagesResponse>();
-    }
-});
+GetTenantDailyUsagesOptions opts;
+opts.startDate = boost::optional<utility::datetime>(utility::datetime::from_string(U("2023-01-01T00:00:00Z")));
+opts.endDate   = boost::optional<utility::datetime>(utility::datetime::from_string(U("2023-01-31T23:59:59Z")));
+api->getTenantDailyUsages(tenantId, opts).then([](std::shared_ptr<GetTenantDailyUsagesResponse> resp){
+    auto result = std::make_shared<GetTenantDailyUsagesResponse>(*resp);
+}).wait();
 [inline-code-end]
-
----

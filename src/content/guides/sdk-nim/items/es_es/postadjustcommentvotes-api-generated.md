@@ -2,9 +2,10 @@
 
 | Nombre | Tipo | Obligatorio | Descripción |
 |------|------|----------|-------------|
+| tenantId | string | Sí |  |
 | commentId | string | Sí |  |
 | adjustCommentVotesParams | AdjustCommentVotesParams | No |  |
-| sso | string | No |  |
+| options | PostAdjustCommentVotesOptions | No |  |
 
 ## Respuesta
 
@@ -12,12 +13,15 @@ Devuelve: [`Option[AdjustVotesResponse]`](https://github.com/FastComments/fastco
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de postAdjustCommentVotes'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postAdjustCommentVotes Ejemplo'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postAdjustCommentVotes(commentId = "cmt-987654", adjustCommentVotesParams = nil, sso = "sso-token-abc123")
-if response.isSome:
-  let adjusted = response.get()
-  discard adjusted
-[inline-code-end]
+let (adjustRespOpt, httpResp) = client.postAdjustCommentVotes(
+  tenantId = "my-tenant-123",
+  commentId = "cmt-789",
+  adjustCommentVotesParams = AdjustCommentVotesParams(),
+  options = PostAdjustCommentVotesOptions()
+)
 
----
+if adjustRespOpt.isSome:
+  let adjustResp = adjustRespOpt.get()
+[inline-code-end]

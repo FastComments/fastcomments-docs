@@ -1,9 +1,9 @@
 ## Параметры
 
-| Name | Type | Required | Description |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
-| value | string | No |  |
-| sso | string | No |  |
+| tenantId | string | Yes |  |
+| options | GetSearchUsersOptions | No |  |
 
 ## Ответ
 
@@ -11,14 +11,12 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'getSearchUsers Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getSearchUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSearchUsers(value = "john.doe@example.com", sso = "sso-acme-789")
-if response.isSome:
-  let searchRes = response.get()
-  echo "Search result:", searchRes
-else:
-  echo "No users found"
+let (searchRes, httpRes) = client.getSearchUsers(tenantId = "my-tenant-123", options = default(GetSearchUsersOptions))
+if searchRes.isSome:
+  let data = searchRes.get()
+  echo data
 [inline-code-end]
 
 ---

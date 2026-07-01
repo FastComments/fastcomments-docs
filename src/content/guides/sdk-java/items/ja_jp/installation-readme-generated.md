@@ -1,6 +1,6 @@
 ### Maven
 
-プロジェクトの POM に Repsy リポジトリを追加します:
+Add the Repsy repository to your project's POM:
 
 ```xml
 <repositories>
@@ -12,7 +12,7 @@
 </repositories>
 ```
 
-次に必要な依存関係を追加します:
+Then add the dependencies you need:
 
 ```xml
 <dependencies>
@@ -41,7 +41,7 @@
 
 ### Gradle
 
-build.gradle ファイルに Repsy リポジトリを追加します:
+Add the Repsy repository to your build.gradle file:
 
 ```groovy
 repositories {
@@ -65,16 +65,15 @@ dependencies {
 
 ### Library Contents
 
-このライブラリは3つのモジュールを含みます。生成された API クライアント、API の操作を容易にする手書きのユーティリティを含むコア Java ライブラリ、そして変更フィードの購読用ライブラリである `pubsub` モジュールです。
+This library contains three modules. The generated API client, the core Java library which contains hand-written utilities
+to make working with the API easier, and the `pubsub` module which is a library for subscribing to change feeds.
 
-- [API Client Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [PubSub Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [API クライアント ライブラリ ドキュメント](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [コア ライブラリ ドキュメント（SSO の例を含む）](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [PubSub ライブラリ ドキュメント](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
 ### Public vs Secured APIs
 
-API クライアントには `DefaultApi`、`PublicApi`、`ModerationApi` の3つのクラスがあります。`DefaultApi` は API キーを必要とするメソッドを含み、`PublicApi` はブラウザ／モバイル端末等から認証なしで直接実行できるメソッドを含みます。
+For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains methods that can be made directly from a browser/mobile device/etc without authentication.
 
-`ModerationApi` はモデレーター用ダッシュボードを支えます。コメントのモデレーションに関するメソッド（list、count、search、logs、export）、モデレーション操作（remove/restore、
-flag、review/spam/approval ステータスの設定、votes、スレッドの再開/クローズ）、バン関連（コメントからのバン、バンの解除、事前バン概要、バンのステータスと設定、バンされたユーザー数）、
-およびバッジと信頼（バッジの付与/削除、手動バッジ、信頼係数の取得/設定、ユーザー内部プロファイル）を含みます。すべての `ModerationApi` メソッドは `sso` パラメータを受け取るため、呼び出しを SSO で認証されたモデレーターを代理して実行できます。
+The `ModerationApi` provides an extensive suite of live and fast moderation APIs. Every `ModerationApi` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.

@@ -1,10 +1,11 @@
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|-------------|
-| badges_user_id | String | No |  |
-| comment_id | String | No |  |
-| sso | String | No |  |
+|------|------|----------|------|
+| tenant_id | String | Tak |  |
+| badges_user_id | String | Nie |  |
+| comment_id | String | Nie |  |
+| sso | String | Nie |  |
 
 ## Odpowiedź
 
@@ -12,17 +13,16 @@ Zwraca: [`GetUserManualBadgesResponse`](https://github.com/FastComments/fastcomm
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład get_manual_badges_for_user'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_manual_badges_for_user Przykład'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_manual_badges() -> Result<GetUserManualBadgesResponse, Error> {
-    let params: GetManualBadgesForUserParams = GetManualBadgesForUserParams {
-        badges_user_id: Some(String::from("acme-user-42")),
-        comment_id: Some(String::from("news/article-5678")),
-        sso: Some(String::from("sso-token-abc123")),
+async fn fetch_badges(config: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetManualBadgesForUserParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        badges_user_id: Some("user-42".to_string()),
+        comment_id: Some("comment-987".to_string()),
+        sso: Some("sso-abc123".to_string()),
     };
-    let response: GetUserManualBadgesResponse = get_manual_badges_for_user(&configuration, params).await?;
-    Ok(response)
+    let _response: GetUserManualBadgesResponse = get_manual_badges_for_user(config, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

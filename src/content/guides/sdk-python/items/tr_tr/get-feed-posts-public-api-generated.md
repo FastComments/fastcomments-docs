@@ -1,6 +1,6 @@
-req
-tenantId
-afterId
+req  
+tenantId  
+afterId  
 
 ## Parametreler
 
@@ -20,38 +20,37 @@ Döndürür: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcom
 
 ## Örnek
 
-[inline-code-attrs-start title = 'get_feed_posts_public Örneği'; type = 'python'; isFunctional = false; inline-code-attrs-end]
-[inline-code-start]
-import client
-from client.models.public_feed_posts_response import PublicFeedPostsResponse
-from client.rest import ApiException
-from pprint import pprint
+[inline-code-attrs-start title = 'get_feed_posts_public Örneği'; type = 'python'; isFunctional = false; inline-code-attrs-end]  
+[inline-code-start]  
+import client  
+from client.api.public_api import GetFeedPostsPublicOptions  
+from client.models.public_feed_posts_response import PublicFeedPostsResponse  
+from client.rest import ApiException  
+from pprint import pprint  
 
-# Sunucu tanımlama isteğe bağlıdır ve varsayılan https://fastcomments.com'tur
-# Tüm desteklenen yapılandırma parametreleri için configuration.py dosyasına bakın.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
+# Sunucunun tanımlanması isteğe bağlıdır ve varsayılan https://fastcomments.com adresidir  
+# Tüm desteklenen yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.  
+configuration = client.Configuration(  
+    host = "https://fastcomments.com"  
+)  
 
 
-# API istemcisi örneğiyle bir bağlam açın
-with client.ApiClient(configuration) as api_client:
-    # API sınıfının bir örneğini oluşturun
-    api_instance = client.PublicApi(api_client)
-    tenant_id = 'tenant_id_example' # str | 
-    after_id = 'after_id_example' # str |  (isteğe bağlı)
-    limit = 56 # int |  (isteğe bağlı)
-    tags = ['tags_example'] # List[str] |  (isteğe bağlı)
-    sso = 'sso_example' # str |  (isteğe bağlı)
-    is_crawler = True # bool |  (isteğe bağlı)
-    include_user_info = True # bool |  (isteğe bağlı)
+# API istemcisinin bir örneğiyle bir bağlam girin  
+with client.ApiClient(configuration) as api_client:  
+    # API sınıfının bir örneğini oluşturun  
+    api_instance = client.PublicApi(api_client)  
+    tenant_id = 'tenant_id_example' # str |  
+    after_id = 'after_id_example' # str |  (optional)  
+    limit = 56 # int |  (optional)  
+    tags = ['tags_example'] # List[str] |  (optional)  
+    sso = 'sso_example' # str |  (optional)  
+    is_crawler = True # bool |  (optional)  
+    include_user_info = True # bool |  (optional)  
 
-    try:
-        api_response = api_instance.get_feed_posts_public(tenant_id, after_id=after_id, limit=limit, tags=tags, sso=sso, is_crawler=is_crawler, include_user_info=include_user_info)
-        print("The response of PublicApi->get_feed_posts_public:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling PublicApi->get_feed_posts_public: %s\n" % e)
+    try:  
+        api_response = api_instance.get_feed_posts_public(tenant_id, GetFeedPostsPublicOptions(after_id=after_id, limit=limit, tags=tags, sso=sso, is_crawler=is_crawler, include_user_info=include_user_info))  
+        print("PublicApi->get_feed_posts_public yanıtı:\n")  
+        pprint(api_response)  
+    except Exception as e:  
+        print("PublicApi->get_feed_posts_public çağrılırken istisna: %s\n" % e)  
 [inline-code-end]
-
----

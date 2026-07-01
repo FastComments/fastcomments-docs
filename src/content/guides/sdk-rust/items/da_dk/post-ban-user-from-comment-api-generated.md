@@ -1,7 +1,8 @@
 ## Parametre
 
-| Name | Type | Påkrævet | Beskrivelse |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
+| tenant_id | String | Ja |  |
 | comment_id | String | Ja |  |
 | ban_email | bool | Nej |  |
 | ban_email_domain | bool | Nej |  |
@@ -21,19 +22,21 @@ Returnerer: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'post_ban_user_from_comment Eksempel'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: PostBanUserFromCommentParams = PostBanUserFromCommentParams {
-    comment_id: "news-article-98765-comment-123".to_string(),
-    ban_email: Some(true),
-    ban_email_domain: Some(false),
-    ban_ip: Some(true),
-    delete_all_users_comments: Some(true),
-    banned_until: Some("2026-12-31T23:59:59Z".to_string()),
-    is_shadow_ban: Some(false),
-    update_id: Some("moderator-42".to_string()),
-    ban_reason: Some("Repeated spam and abusive language".to_string()),
-    sso: Some("sso-user-token-8a7f".to_string()),
-};
-let ban_result: BanUserFromCommentResult = post_ban_user_from_comment(&configuration, params).await?;
+async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = PostBanUserFromCommentParams {
+        tenant_id: "acme-corp".to_string(),
+        comment_id: "cmt-12345".to_string(),
+        ban_email: Some(true),
+        ban_email_domain: Some(false),
+        ban_ip: Some(true),
+        delete_all_users_comments: Some(false),
+        banned_until: Some("2024-12-31T23:59:59Z".to_string()),
+        is_shadow_ban: Some(false),
+        update_id: Some("upd-987".to_string()),
+        ban_reason: Some("spam".to_string()),
+        sso: Some("sso-provider".to_string()),
+    };
+    let _result: BanUserFromCommentResult = post_ban_user_from_comment(configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]
-
----

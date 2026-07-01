@@ -1,9 +1,10 @@
 ## Parametry
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
-|------|------|----------|----------|-------------|
-| batchJobId | string | query | Nie |  |
-| sso | string | query | Nie |  |
+|------|------|------------|----------|------|
+| tenantId | string | query | Yes |  |
+| batchJobId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Odpowiedź
 
@@ -13,7 +14,7 @@ Zwraca: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastc
 
 [inline-code-attrs-start title = 'Przykład getApiExportStatus'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Import klas:
+// Importuj klasy:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String batchJobId = "batchJobId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationExportStatusResponse result = apiInstance.getApiExportStatus()
+      ModerationExportStatusResponse result = apiInstance.getApiExportStatus(tenantId)
             .batchJobId(batchJobId)
             .sso(sso)
             .execute();

@@ -1,33 +1,22 @@
 ## パラメータ
 
-| 名前 | 型 | 必須 | 説明 |
+| 名前 | タイプ | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | はい |  |
-| id | string | はい |  |
-| userId | string | いいえ |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| userId | string | No |  |
 
 ## レスポンス
 
-戻り値: [`DeleteSubscriptionAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/DeleteSubscriptionAPIResponse.h)
+返却: [`DeleteSubscriptionAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/DeleteSubscriptionAPIResponse.h)
 
 ## 例
 
 [inline-code-attrs-start title = 'deleteSubscription の例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t id = U("subscription-987");
-boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U("user@example.com"));
-auto defaultResp = std::make_shared<DeleteSubscriptionAPIResponse>();
-api->deleteSubscription(tenantId, id, userId)
-.then([defaultResp](pplx::task<std::shared_ptr<DeleteSubscriptionAPIResponse>> t){
-    try {
-        auto resp = t.get();
-        if (!resp) resp = defaultResp;
-        std::cout << "Delete completed\n";
-    } catch (const std::exception &e) {
-        std::cerr << "Delete failed: " << e.what() << '\n';
-    }
-});
+api->deleteSubscription(utility::string_t(U("my-tenant-123")), utility::string_t(U("sub-456")), boost::optional<utility::string_t>(utility::string_t(U("user@example.com"))))
+    .then([](std::shared_ptr<DeleteSubscriptionAPIResponse> resp){
+        if (resp) {
+        }
+    });
 [inline-code-end]
-
----

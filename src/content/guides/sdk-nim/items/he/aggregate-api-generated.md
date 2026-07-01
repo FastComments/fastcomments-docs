@@ -1,14 +1,13 @@
-מאגד מסמכים על ידי קיבוצם (אם מסופק groupBy) והחלת מספר פעולות.
-נתמכות פעולות שונות (למשל sum, countDistinct, avg וכו').
+מאגד מסמכים על‑ידי קיבוץ שלהם (אם מתקבל **groupBy**) והחלת מספר פעולות.  
+פעולות שונות (למשל sum, countDistinct, avg, וכד') נתמכות.
 
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | aggregationRequest | AggregationRequest | לא |  |
-| parentTenantId | string | לא |  |
-| includeStats | bool | לא |  |
+| options | AggregateOptions | לא |  |
 
 ## תגובה
 
@@ -16,18 +15,11 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-aggregate'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה לאגרגציה'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.aggregate(
-  tenantId = "my-tenant-123",
-  aggregationRequest = AggregationRequest(groupBy = @["articleId"], metrics = @["commentCount"], filters = @[], limit = 0),
-  parentTenantId = "",
-  includeStats = false
-)
-
-if response.isSome:
-  let agg = response.get()
-  discard agg
+let (aggResp, httpResp) = client.aggregate(tenantId = "my-tenant-123", aggregationRequest = AggregationRequest(), options = AggregateOptions())
+if aggResp.isSome:
+  let response = aggResp.get()
+  echo response
+echo httpResp
 [inline-code-end]
-
----

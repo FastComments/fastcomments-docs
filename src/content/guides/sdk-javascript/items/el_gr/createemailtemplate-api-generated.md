@@ -1,38 +1,33 @@
----
 ## Παράμετροι
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Ναι |  |
-| createEmailTemplateBody | CreateEmailTemplateBody | Ναι |  |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+|------|------|------------|------------|
+| tenantId | string | Yes |  |
+| createEmailTemplateBody | CreateEmailTemplateBody | Yes |  |
 
-## Απάντηση
+## Απόκριση
 
-Επιστρέφει: [`CreateEmailTemplateResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateEmailTemplateResponse.ts)
+Επιστρέφει: [`CreateEmailTemplateResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateEmailTemplateResponse1.ts)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα createEmailTemplate'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_prod_7f9b2a";
+const tenantId: string = "tenant_9f8e7d6c";
 
-const customTemplate: CustomEmailTemplate = {
-  id: "custtmpl_01",
-  name: "MinimalTransactional",
-  html: "<div style=\"font-family:Arial,Helvetica,sans-serif\">\{{body}}</div>"
+const emailTemplate: CreateEmailTemplateBody = {
+  name: "Account Activation",
+  subject: "Activate Your New Account",
+  htmlContent: "<p>Welcome! Please click <a href=\"\{{activationLink}}\">here</a> to activate.</p>",
+  // optional fields like textContent, isActive are omitted to demonstrate optional parameters
 };
 
-const createEmailTemplateBody: CreateEmailTemplateBody = {
-  name: "User Welcome - Web",
-  subject: "Welcome to Acme — Get Started",
-  html: "<p>Hi \{{firstName}}, welcome to Acme!</p>",
-  previewText: "Start exploring your new Acme account",
-  enabled: true,
-  replyTo: "support@acme.com",
-  customTemplate // προαιρετική παράμετρος για επίδειξη
-};
+const result: CreateEmailTemplateResponse1 = await createEmailTemplate(
+  tenantId,
+  emailTemplate
+);
 
-const result: CreateEmailTemplateResponse = await createEmailTemplate(tenantId, createEmailTemplateBody);
+console.log(result);
 [inline-code-end]
 
 ---

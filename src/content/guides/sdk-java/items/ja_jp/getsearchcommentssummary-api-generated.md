@@ -1,21 +1,22 @@
 ## パラメータ
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
-|------|------|----------|----------|-------------|
-| value | string | query | No |  |
-| filters | string | query | No |  |
-| searchFilters | string | query | No |  |
-| sso | string | query | No |  |
+|------|------|----------|------|-------------|
+| tenantId | string | query | はい |  |
+| value | string | query | いいえ |  |
+| filters | string | query | いいえ |  |
+| searchFilters | string | query | いいえ |  |
+| sso | string | query | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`ModerationCommentSearchResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationCommentSearchResponse.java)
+Returns: [`ModerationCommentSearchResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationCommentSearchResponse.java)
 
 ## 例
 
 [inline-code-attrs-start title = 'getSearchCommentsSummary の例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// クラスのインポート:
+// クラスをインポート:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -28,12 +29,13 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String value = "value_example"; // String | 
     String filters = "filters_example"; // String | 
     String searchFilters = "searchFilters_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationCommentSearchResponse result = apiInstance.getSearchCommentsSummary()
+      ModerationCommentSearchResponse result = apiInstance.getSearchCommentsSummary(tenantId)
             .value(value)
             .filters(filters)
             .searchFilters(searchFilters)

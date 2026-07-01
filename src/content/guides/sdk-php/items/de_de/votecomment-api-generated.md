@@ -1,6 +1,6 @@
 ## Parameter
 
-| Name | Type | Location | Required | Description |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Ja |  |
 | commentId | string | path | Ja |  |
@@ -11,7 +11,7 @@
 
 ## Antwort
 
-Gibt zurück: [`VoteResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/VoteResponse.php)
+Rückgabe: [`VoteResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/VoteResponse.php)
 
 ## Beispiel
 
@@ -27,16 +27,20 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     // Dies ist optional, `GuzzleHttp\Client` wird standardmäßig verwendet.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$comment_id = 'comment_id_example'; // string
-$url_id = 'url_id_example'; // string
-$broadcast_id = 'broadcast_id_example'; // string
+
+$tenant_id = 'tenant_id_example'; // Zeichenkette
+$comment_id = 'comment_id_example'; // Zeichenkette
+$url_id = 'url_id_example'; // Zeichenkette
+$broadcast_id = 'broadcast_id_example'; // Zeichenkette
 $vote_body_params = new \FastComments\Client\Model\VoteBodyParams(); // \FastComments\Client\Model\VoteBodyParams
-$session_id = 'session_id_example'; // string
-$sso = 'sso_example'; // string
+$options = [
+    'session_id' => 'session_id_example', // Zeichenkette
+    'sso' => 'sso_example', // Zeichenkette
+];
+
 
 try {
-    $result = $apiInstance->voteComment($tenant_id, $comment_id, $url_id, $broadcast_id, $vote_body_params, $session_id, $sso);
+    $result = $apiInstance->voteComment($tenant_id, $comment_id, $url_id, $broadcast_id, $vote_body_params, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->voteComment: ', $e->getMessage(), PHP_EOL;

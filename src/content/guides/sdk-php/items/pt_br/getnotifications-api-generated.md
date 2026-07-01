@@ -1,14 +1,14 @@
 ## Parâmetros
 
-| Nome | Tipo | Local | Obrigatório | Descrição |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Sim |  |
-| userId | string | query | Não |  |
-| urlId | string | query | Não |  |
-| fromCommentId | string | query | Não |  |
-| viewed | boolean | query | Não |  |
-| type | string | query | Não |  |
-| skip | number | query | Não |  |
+| Nome | Tipo | Localização | Obrigatório | Descrição |
+|------|------|-------------|-------------|-----------|
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| urlId | string | query | No |  |
+| fromCommentId | string | query | No |  |
+| viewed | boolean | query | No |  |
+| type | string | query | No |  |
+| skip | number | query | No |  |
 
 ## Resposta
 
@@ -16,34 +16,37 @@ Retorna: [`GetNotificationsResponse`](https://github.com/FastComments/fastcommen
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getNotifications'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo getNotifications'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configure API key authorization: api_key
+// Configurar autorização da chave de API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Descomente abaixo para configurar o prefixo (ex.: Bearer) para a chave da API, se necessário
+// Descomente abaixo para definir o prefixo (ex.: Bearer) da chave API, se necessário
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Se quiser usar um cliente HTTP personalizado, passe seu cliente que implemente `GuzzleHttp\ClientInterface`.
-    // Isto é opcional, `GuzzleHttp\Client` será usado por padrão.
+    // Se quiser usar cliente HTTP personalizado, passe seu cliente que implemente `GuzzleHttp\ClientInterface`.
+    // Opcional, `GuzzleHttp\Client` será usado por padrão.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$user_id = 'user_id_example'; // string
-$url_id = 'url_id_example'; // string
-$from_comment_id = 'from_comment_id_example'; // string
-$viewed = True; // bool
-$type = 'type_example'; // string
-$skip = 3.4; // float
+$options = [
+    'user_id' => 'user_id_example', // string
+    'url_id' => 'url_id_example', // string
+    'from_comment_id' => 'from_comment_id_example', // string
+    'viewed' => True, // bool
+    'type' => 'type_example', // string
+    'skip' => 3.4, // float
+];
+
 
 try {
-    $result = $apiInstance->getNotifications($tenant_id, $user_id, $url_id, $from_comment_id, $viewed, $type, $skip);
+    $result = $apiInstance->getNotifications($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getNotifications: ', $e->getMessage(), PHP_EOL;

@@ -1,7 +1,7 @@
 ## Параметри
 
-| Име | Тип | Местоположение | Задължително | Описание |
-|------|------|----------|----------|-------------|
+| Име | Тип | Location | Задължително | Описание |
+|------|------|----------|--------------|----------|
 | tenantId | string | query | Да |  |
 | sso | string | query | Не |  |
 
@@ -19,12 +19,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ако искате да използвате персонализиран HTTP клиент, подайте вашия клиент, който имплементира `GuzzleHttp\ClientInterface`.
-    // Това е по избор, `GuzzleHttp\Client` ще бъде използван по подразбиране.
+    // Ако искате да използвате персонализиран HTTP клиент, предайте вашия клиент, който имплементира `GuzzleHttp\ClientInterface`.
+    // Това е опционално, по подразбиране ще се използва `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // низ
 $sso = 'sso_example'; // низ
+
 
 try {
     $result = $apiInstance->resetUserNotificationCount($tenant_id, $sso);
@@ -33,5 +35,3 @@ try {
     echo 'Exception when calling PublicApi->resetUserNotificationCount: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

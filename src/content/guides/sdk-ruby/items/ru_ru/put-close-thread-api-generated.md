@@ -1,9 +1,10 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| urlId | string | query | Да |  |
-| sso | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Ответ
 
@@ -17,14 +18,15 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
-url_id = 'url_id_example' # Строка | 
+tenant_id = 'tenant_id_example' # String | 
+url_id = 'url_id_example' # String | 
 opts = {
-  sso: 'sso_example' # Строка | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.put_close_thread(url_id, opts)
+  result = api_instance.put_close_thread(tenant_id, url_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->put_close_thread: #{e}"

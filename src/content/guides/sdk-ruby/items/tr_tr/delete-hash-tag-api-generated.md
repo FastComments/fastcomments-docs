@@ -2,8 +2,8 @@
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tag | string | path | Evet |  |
-| tenantId | string | query | Hayır |  |
+| tenantId | string | query | Yes |  |
+| tag | string | path | Yes |  |
 
 ## Yanıt
 
@@ -19,22 +19,20 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # API anahtarı yetkilendirmesini yapılandır: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # API anahtarı için ön ek ayarlamak isterseniz aşağıdaki satırın yorumunu kaldırın, örn. 'Bearer' (varsayılan nil)
+  # API anahtarı için bir önek ayarlamak için aşağıdaki satırın yorumunu kaldırın, ör. 'Bearer' (varsayılan nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
+tenant_id = 'tenant_id_example' # String | 
 tag = 'tag_example' # String | 
-opts = {
-  tenant_id: 'tenant_id_example', # String | 
-  delete_hash_tag_request_body: FastCommentsClient::DeleteHashTagRequestBody.new # DeleteHashTagRequestBody | 
-}
+delete_hash_tag_request_body = FastCommentsClient::DeleteHashTagRequestBody.new # DeleteHashTagRequestBody | 
 
 begin
   
-  result = api_instance.delete_hash_tag(tag, opts)
+  result = api_instance.delete_hash_tag(tenant_id, tag, delete_hash_tag_request_body)
   p result
 rescue FastCommentsClient::ApiError => e
-  puts "Error when calling DefaultApi->delete_hash_tag: #{e}"
+  puts "DefaultApi->delete_hash_tag çağrılırken hata: #{e}"
 end
 [inline-code-end]

@@ -1,7 +1,7 @@
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
+| Ime | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|-------|
 | tenantId | string | query | Da |  |
 | userId | string | query | Ne |  |
 | urlId | string | query | Ne |  |
@@ -14,9 +14,9 @@
 
 Vraća: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetNotificationsResponse.php)
 
-## Primjer
+## Primer
 
-[inline-code-attrs-start title = 'getNotifications Primjer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getNotifications'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -29,21 +29,25 @@ $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKe
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ako želite koristiti prilagođeni HTTP klijent, proslijedite klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opcionalno, `GuzzleHttp\Client` će biti korišten kao podrazumijevani.
+    // Ako želite koristiti prilagođeni http klijent, proslijedite vaš klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao podrazumevano.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$user_id = 'user_id_example'; // string
-$url_id = 'url_id_example'; // string
-$from_comment_id = 'from_comment_id_example'; // string
-$viewed = True; // bool
-$type = 'type_example'; // string
-$skip = 3.4; // float
+$options = [
+    'user_id' => 'user_id_example', // string
+    'url_id' => 'url_id_example', // string
+    'from_comment_id' => 'from_comment_id_example', // string
+    'viewed' => True, // bool
+    'type' => 'type_example', // string
+    'skip' => 3.4, // float
+];
+
 
 try {
-    $result = $apiInstance->getNotifications($tenant_id, $user_id, $url_id, $from_comment_id, $viewed, $type, $skip);
+    $result = $apiInstance->getNotifications($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getNotifications: ', $e->getMessage(), PHP_EOL;

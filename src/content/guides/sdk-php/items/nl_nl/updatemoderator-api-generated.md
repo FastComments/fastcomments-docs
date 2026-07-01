@@ -1,6 +1,6 @@
 ## Parameters
 
-| Naam | Type | Locatie | Verplicht | Beschrijving |
+| Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | id | string | path | Ja |  |
@@ -17,20 +17,22 @@ Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-p
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configureer autorisatie met API-sleutel: api_key
-// Haal onderstaande commentaar weg om een voorvoegsel (bijv. Bearer) voor de API-sleutel in te stellen, indien nodig
+// Configureer API-sleutel autorisatie: api_key
+// Uncomment hieronder om prefix (bijv. Bearer) voor API-sleutel in te stellen, indien nodig
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Als u een aangepaste HTTP-client wilt gebruiken, geef uw client door die `GuzzleHttp\ClientInterface` implementeert.
-    // Dit is optioneel; `GuzzleHttp\Client` wordt standaard gebruikt.
+    // Als je een aangepaste HTTP-client wilt gebruiken, geef je client door die `GuzzleHttp\ClientInterface` implementeert.
+    // Dit is optioneel, `GuzzleHttp\Client` wordt standaard gebruikt.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
 $update_moderator_body = new \FastComments\Client\Model\UpdateModeratorBody(); // \FastComments\Client\Model\UpdateModeratorBody
+
 
 try {
     $result = $apiInstance->updateModerator($tenant_id, $id, $update_moderator_body);

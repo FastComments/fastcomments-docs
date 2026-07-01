@@ -1,9 +1,9 @@
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
-| tag | string | path | Da |  |
-| tenantId | string | query | Ne |  |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| tag | string | path | Yes |  |
 
 ## Odgovor
 
@@ -29,16 +29,15 @@ public class Example {
     // Konfiguriši autorizaciju API ključa: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Otkomentariši sledeću liniju da postaviš prefiks za API ključ, npr. "Token" (podrazumevano null)
+    // Otkomentariši sledeću liniju da postaviš prefiks za API ključ, npr. "Token" (podrazumevano je null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    String tag = "tag_example"; // String | 
     String tenantId = "tenantId_example"; // String | 
+    String tag = "tag_example"; // String | 
     DeleteHashTagRequestBody deleteHashTagRequestBody = new DeleteHashTagRequestBody(); // DeleteHashTagRequestBody | 
     try {
-      APIEmptyResponse result = apiInstance.deleteHashTag(tag)
-            .tenantId(tenantId)
+      APIEmptyResponse result = apiInstance.deleteHashTag(tenantId, tag)
             .deleteHashTagRequestBody(deleteHashTagRequestBody)
             .execute();
       System.out.println(result);
@@ -52,5 +51,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

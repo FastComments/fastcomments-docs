@@ -4,7 +4,7 @@ Restituisce: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-p
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di logoutPublic'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio logoutPublic'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -12,10 +12,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Se vuoi usare un client HTTP personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
-    // Questo è opzionale, `GuzzleHttp\Client` sarà utilizzato come predefinito.
+    // Se vuoi usare un client http personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
+    // Questo è opzionale, `GuzzleHttp\Client` sarà usato come predefinito.
     new GuzzleHttp\Client()
 );
+
+
 
 try {
     $result = $apiInstance->logoutPublic();

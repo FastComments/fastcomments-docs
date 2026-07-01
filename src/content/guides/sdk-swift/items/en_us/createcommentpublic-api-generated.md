@@ -26,7 +26,7 @@ let commentData = CommentData(date: 123, localDateString: "localDateString_examp
 let sessionId = "sessionId_example" // String |  (optional)
 let sso = "sso_example" // String |  (optional)
 
-PublicAPI.createCommentPublic(tenantId: tenantId, urlId: urlId, broadcastId: broadcastId, commentData: commentData, sessionId: sessionId, sso: sso) { (response, error) in
+PublicAPI.createCommentPublic(tenantId: tenantId, urlId: urlId, broadcastId: broadcastId, commentData: commentData, options: PublicAPI.CreateCommentPublicOptions(sessionId: sessionId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

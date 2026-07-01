@@ -1,11 +1,11 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
+|------|------|----------|------------|-----------|
+| tenantId | string | query | Ναι |  |
 | tag | string | path | Ναι |  |
-| tenantId | string | query | Όχι |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
@@ -19,33 +19,33 @@ from client.models.delete_hash_tag_request_body import DeleteHashTagRequestBody
 from client.rest import ApiException
 from pprint import pprint
 
-# Ορισμός του host είναι προαιρετικός και εξ ορισμού είναι https://fastcomments.com
+# Ο ορισμός του host είναι προαιρετικός και προεπιλογή είναι https://fastcomments.com
 # Δείτε το configuration.py για μια λίστα με όλες τις υποστηριζόμενες παραμέτρους ρύθμισης.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Ο client πρέπει να ρυθμίσει τις παραμέτρους πιστοποίησης και εξουσιοδότησης
-# σύμφωνα με την πολιτική ασφάλειας του API server.
-# Παρακάτω παρέχονται παραδείγματα για κάθε μέθοδο auth, χρησιμοποιήστε το παράδειγμα που
-# ικανοποιεί την περίπτωσή χρήσης σας.
+# Ο πελάτης πρέπει να ρυθμίσει τις παραμέτρους ελέγχου ταυτότητας και εξουσιοδότησης
+# σύμφωνα με την πολιτική ασφαλείας του διακομιστή API.
+# Παρέχονται παραδείγματα για κάθε μέθοδο αυθεντικοποίησης παρακάτω, χρησιμοποιήστε το παράδειγμα που
+# ικανοποιεί την περίπτωση χρήσης σας.
 
-# Ρυθμίστε την εξουσιοδότηση με κλειδί API: api_key
+# Ρυθμίστε την εξουσιοδότηση κλειδιού API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Αποσχολιάστε παρακάτω για να ρυθμίσετε πρόθεμα (π.χ. Bearer) για το API key, αν χρειάζεται
+# Απενεργοποιήστε το σχόλιο παρακάτω για να ρυθμίσετε προθέμα (π.χ. Bearer) για το κλειδί API, εάν απαιτείται
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Εισέλθετε σε ένα context με ένα instance του API client
+# Εισάγετε ένα πλαίσιο (context) με μια παρουσία του πελάτη API
 with client.ApiClient(configuration) as api_client:
-    # Δημιουργήστε ένα instance της κλάσης API
+    # Δημιουργήστε μια παρουσία της κλάσης API
     api_instance = client.DefaultApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     tag = 'tag_example' # str | 
-    tenant_id = 'tenant_id_example' # str |  (προαιρετικό)
-    delete_hash_tag_request_body = client.DeleteHashTagRequestBody() # DeleteHashTagRequestBody |  (προαιρετικό)
+    delete_hash_tag_request_body = client.DeleteHashTagRequestBody() # DeleteHashTagRequestBody |  (optional)
 
     try:
-        api_response = api_instance.delete_hash_tag(tag, tenant_id=tenant_id, delete_hash_tag_request_body=delete_hash_tag_request_body)
+        api_response = api_instance.delete_hash_tag(tenant_id, tag, delete_hash_tag_request_body)
         print("The response of DefaultApi->delete_hash_tag:\n")
         pprint(api_response)
     except Exception as e:

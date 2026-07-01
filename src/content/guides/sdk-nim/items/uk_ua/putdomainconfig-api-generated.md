@@ -1,10 +1,10 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Так |  |
-| domainToUpdate | string | Ні |  |
-| updateDomainConfigParams | UpdateDomainConfigParams | Ні |  |
+| Назва | Тип | Обов’язковий | Опис |
+|------|------|--------------|------|
+| tenantId | string | Yes |  |
+| domainToUpdate | string | No |  |
+| updateDomainConfigParams | UpdateDomainConfigParams | No |  |
 
 ## Відповідь
 
@@ -12,23 +12,15 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад putDomainConfig'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putDomainConfig Приклад'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.putDomainConfig(
+let (optResp, httpResp) = client.putDomainConfig(
   tenantId = "my-tenant-123",
-  domainToUpdate = "blog.example.com",
-  updateDomainConfigParams = UpdateDomainConfigParams(
-    allowAnonymous = false,
-    moderationEnabled = true,
-    maxCommentLength = 800,
-    allowedOrigins = @["https://blog.example.com", "https://cdn.blog.example.com"],
-    enableThreadedComments = true
-  )
+  domainToUpdate = "example.com",
+  updateDomainConfigParams = UpdateDomainConfigParams()
 )
 
-if response.isSome:
-  let cfg = response.get()
-  echo cfg
-else:
-  echo "Failed to update domain config, HTTP status: ", httpResponse.status
+if optResp.isSome:
+  let resp = optResp.get()
+  echo resp
 [inline-code-end]

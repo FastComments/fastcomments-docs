@@ -1,14 +1,14 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Da |  |
-| commentId | string | path | Da |  |
-| voteId | string | path | Da |  |
-| urlId | string | query | Da |  |
-| broadcastId | string | query | Da |  |
-| editKey | string | query | Ne |  |
-| sso | string | query | Ne |  |
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| voteId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| broadcastId | string | query | Yes |  |
+| editKey | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -16,14 +16,15 @@ Vraća: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-pyth
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer delete_comment_vote'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_comment_vote Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import DeleteCommentVoteOptions
 from client.models.vote_delete_response import VoteDeleteResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Podešavanje hosta je opciono i podrazumevano je https://fastcomments.com
+# Definisanje hosta je opcionalno i podrazumevano je https://fastcomments.com
 # Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -43,9 +44,11 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (opciono)
 
     try:
-        api_response = api_instance.delete_comment_vote(tenant_id, comment_id, vote_id, url_id, broadcast_id, edit_key=edit_key, sso=sso)
+        api_response = api_instance.delete_comment_vote(tenant_id, comment_id, vote_id, url_id, broadcast_id, DeleteCommentVoteOptions(edit_key=edit_key, sso=sso))
         print("The response of PublicApi->delete_comment_vote:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling PublicApi->delete_comment_vote: %s\n" % e)
 [inline-code-end]
+
+---

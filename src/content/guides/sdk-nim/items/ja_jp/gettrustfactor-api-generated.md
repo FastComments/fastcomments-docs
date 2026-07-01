@@ -1,24 +1,23 @@
+---
 ## パラメータ
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| userId | string | 任意 |  |
-| sso | string | 任意 |  |
+| tenantId | string | Yes |  |
+| options | GetTrustFactorOptions | No |  |
 
 ## レスポンス
 
-返却値: [`Option[GetUserTrustFactorResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user_trust_factor_response.nim)
+返却: [`Option[GetUserTrustFactorResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user_trust_factor_response.nim)
 
 ## 例
 
 [inline-code-attrs-start title = 'getTrustFactor の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTrustFactor(userId = "user-1001", sso = "sso-token-6f7d9c")
-if response.isSome:
-  let trust = response.get()
-  echo "Received trust factor for user-1001"
-else:
-  echo "No trust factor returned, HTTP status: ", $httpResponse.status
+let (trustOpt, httpResp) = client.getTrustFactor(tenantId = "my-tenant-123", options = GetTrustFactorOptions())
+if trustOpt.isSome:
+  let trust = trustOpt.get()
+  discard trust
 [inline-code-end]
 
 ---

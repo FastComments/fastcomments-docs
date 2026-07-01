@@ -1,39 +1,41 @@
-## Параметры
+## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| commentId | string | путь | Да |  |
-| sso | string | параметр запроса | Нет |  |
+| Назва | Тип | Розташування | Обов'язково | Опис |
+|------|------|--------------|-------------|------|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| sso | string | query | No |  |
 
-## Ответ
+## Response
 
-Возвращает: [`GetCommentBanStatusResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comment_ban_status_response.py)
+Повертає: [`GetCommentBanStatusResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comment_ban_status_response.py)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример get_comment_ban_status'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад get_comment_ban_status'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.models.get_comment_ban_status_response import GetCommentBanStatusResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Указание хоста необязательно и по умолчанию равно https://fastcomments.com
-# См. configuration.py для списка всех поддерживаемых параметров конфигурации.
+# Визначення хоста є необов'язковим і за замовчуванням https://fastcomments.com
+# Дивіться configuration.py для списку всіх підтримуваних параметрів конфігурації.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Открываем контекст с экземпляром API-клиента
+# Відкрийте контекст з екземпляром клієнта API
 with client.ApiClient(configuration) as api_client:
-    # Создаём экземпляр класса API
+    # Створіть екземпляр класу API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_comment_ban_status(comment_id, sso=sso)
+        api_response = api_instance.get_comment_ban_status(tenant_id, comment_id, sso=sso)
         print("The response of ModerationApi->get_comment_ban_status:\n")
         pprint(api_response)
     except Exception as e:

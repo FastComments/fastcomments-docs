@@ -1,23 +1,33 @@
 ## Parameters
 
 | Naam | Type | Vereist | Beschrijving |
-|------|------|---------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| deleteComments | string | No |  |
-| commentDeleteMode | string | No |  |
+|------|------|----------|-------------|
+| tenantId | string | Ja |  |
+| id | string | Ja |  |
+| deleteComments | string | Nee |  |
+| commentDeleteMode | string | Nee |  |
 
 ## Respons
 
-Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Retourneert: [`DeleteTenantUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteTenantUserResponse.ts)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'deleteTenantUser Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_4b7a9f2c";
-const id: string = "user_9d3f1b6a";
-const deleteComments: string = "true";
-const commentDeleteMode: string = "permanent";
-const result: APIEmptyResponse = await deleteTenantUser(tenantId, id, deleteComments, commentDeleteMode);
+async function demoDeleteTenantUser() {
+  const tenantId: string = "acme-corp-tenant";
+  const userId: string = "user-9876";
+
+  // Verwijder de gebruiker en al zijn reacties, met hard delete-modus
+  const resultWithOptions: DeleteTenantUserResponse = await deleteTenantUser(
+    tenantId,
+    userId,
+    "true",
+    "hard"
+  );
+
+  // Verwijder de gebruiker zonder opmerkingen te verwijderen (standaardgedrag)
+  const resultBasic: DeleteTenantUserResponse = await deleteTenantUser(tenantId, userId);
+}
 [inline-code-end]

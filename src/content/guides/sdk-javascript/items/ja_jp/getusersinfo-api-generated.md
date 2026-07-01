@@ -1,26 +1,27 @@
-テナントのユーザー情報を一括で取得します。userIds を指定すると User / SSOUser から表示情報を返します。
-コメントウィジェットによって、presence event により新たに表示されたユーザー情報を充実させるために使用されます。
-ページコンテキストがありません: プライバシーは一律に適用されます（非公開プロフィールはマスクされます）。
+Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
+Used by the comment widget to enrich users that just appeared via a presence event.  
+No page context: privacy is enforced uniformly (private profiles are masked).
 
-## パラメータ
+## Parameters
 
-| 名前 | 型 | 必須 | 説明 |
+| 名前 | タイプ | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | はい |  |
-| ids | string | はい |  |
+| tenantId | string | Yes |  |
+| ids | string | Yes |  |
 
-## レスポンス
+## Response
 
-戻り値: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersInfoResponse.ts)
+Returns: [`GetUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUsersInfoResponse.ts)
 
-## 例
+## Example
 
 [inline-code-attrs-start title = 'getUsersInfo の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_78f9';
-const ids: string = 'user_10234,user_10235,user_10236';
-const usersInfo: PageUsersInfoResponse = await getUsersInfo(tenantId, ids);
-// getUsersInfo は tenantId と ids のみを要求します。オプションのパラメータはここでは該当しません。
-[inline-code-end]
+const tenantId: string = "acme-corp-tenant";
+const ids: string = "user-1001,user-1002";
 
----
+const usersInfo: GetUsersInfoResponse = await getUsersInfo(tenantId, ids);
+
+// Optional fields in the response may be undefined
+const firstUser: PageUserEntry | undefined = usersInfo?.users?.[0];
+[inline-code-end]

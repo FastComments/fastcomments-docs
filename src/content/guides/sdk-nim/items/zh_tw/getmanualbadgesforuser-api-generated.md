@@ -1,28 +1,23 @@
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 類型 | 必要 | 說明 |
 |------|------|----------|-------------|
-| badgesUserId | string | 否 |  |
-| commentId | string | 是 |  |
-| sso | string | 否 |  |
+| tenantId | string | Yes |  |
+| options | GetManualBadgesForUserOptions | No |  |
 
 ## 回應
 
-回傳：[`Option[GetUserManualBadgesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user_manual_badges_response.nim)
+回傳: [`Option[GetUserManualBadgesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user_manual_badges_response.nim)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getManualBadgesForUser 範例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getManualBadgesForUser(
-  badgesUserId = "user-98765",
-  commentId = "comment-0a1b2c3d",
-  sso = "sso-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
+let (userBadgesOpt, httpResp) = client.getManualBadgesForUser(
+  tenantId = "my-tenant-123",
+  options = GetManualBadgesForUserOptions()
 )
-if response.isSome:
-  let badges = response.get()
-  echo "Received manual badges for user"
-  echo "HTTP status: ", httpResponse.status
+if userBadgesOpt.isSome:
+  let badges = userBadgesOpt.get()
+  echo badges
 [inline-code-end]
-
----

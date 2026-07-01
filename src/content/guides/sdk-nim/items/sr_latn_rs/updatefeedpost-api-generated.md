@@ -1,10 +1,10 @@
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| id | string | Ne |  |
-| feedPost | FeedPost | Ne |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| feedPost | FeedPost | No |  |
 
 ## Odgovor
 
@@ -12,20 +12,20 @@ Vraća: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomment
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer updateFeedPost'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateFeedPost Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let feedPost: FeedPost = FeedPost(title: "City Council Approves New Waterfront Park",
-  content: "The council voted 5-2 to approve funding and a timeline for construction.",
-  tags: @["local", "parks", "city"],
-  published: true)
+let feedPost = FeedPost(
+  title: "Breaking News",
+  content: "Updated story content",
+  tags: @["news", "update"]
+)
 
-let (response, httpResponse) = client.updateFeedPost(tenantId = "my-tenant-123", id = "post-456", feedPost = feedPost)
+let (apiRes, httpRes) = client.updateFeedPost(
+  tenantId = "my-tenant-123",
+  id = "post-456",
+  feedPost = feedPost
+)
 
-if response.isSome:
-  let apiResp = response.get()
-  echo "Feed post updated successfully"
-  echo apiResp
-else:
-  echo "Failed to update feed post"
-  echo httpResponse
+if apiRes.isSome:
+  let res = apiRes.get()
 [inline-code-end]

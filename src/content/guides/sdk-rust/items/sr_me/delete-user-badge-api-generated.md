@@ -1,24 +1,24 @@
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | Da |  |
-| id | String | Da |  |
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
 
 ## Odgovor
 
 Vraća: [`ApiEmptySuccessResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_success_response.rs)
 
-## Primer
+## Primjer
 
-[inline-code-attrs-start title = 'delete_user_badge Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_user_badge Primjer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: DeleteUserBadgeParams = DeleteUserBadgeParams {
-    tenant_id: "acme-newsroom-tenant".to_string(),
-    id: "badge-moderator-001".to_string(),
-};
-let include_related: Option<bool> = Some(false);
-let result: ApiEmptySuccessResponse = delete_user_badge(&configuration, params).await?;
+async fn remove_badge(config: &configuration::Configuration) -> Result<(), Error> {
+    let params: DeleteUserBadgeParams = DeleteUserBadgeParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "badge-abcde".to_string(),
+    };
+    let _ = delete_user_badge(config, params).await?;
+    Ok(())
+}
 [inline-code-end]
-
----

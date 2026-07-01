@@ -1,8 +1,10 @@
-## Parametry
+## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+|------|------|-------------|----------|------|
+| tenantId | string | query | Tak |  |
 | commentId | string | path | Tak |  |
+| broadcastId | string | query | Nie |  |
 | sso | string | query | Nie |  |
 
 ## Odpowiedź
@@ -26,10 +28,13 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
+    String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      APIEmptyResponse result = apiInstance.postUnFlagComment(commentId)
+      APIEmptyResponse result = apiInstance.postUnFlagComment(tenantId, commentId)
+            .broadcastId(broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -43,3 +48,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

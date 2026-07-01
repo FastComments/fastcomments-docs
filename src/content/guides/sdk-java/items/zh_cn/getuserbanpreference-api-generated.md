@@ -2,7 +2,8 @@
 
 | 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| sso | string | query | No |  |
+| tenantId | string | query | 是 |  |
+| sso | string | query | 否 |  |
 
 ## 响应
 
@@ -12,7 +13,7 @@
 
 [inline-code-attrs-start title = 'getUserBanPreference 示例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 导入类：
+// 导入类:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -25,19 +26,22 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
-    String sso = "sso_example"; // 字符串 | 
+    String tenantId = "tenantId_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
-      APIModerateGetUserBanPreferencesResponse result = apiInstance.getUserBanPreference()
+      APIModerateGetUserBanPreferencesResponse result = apiInstance.getUserBanPreference(tenantId)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ModerationApi#getUserBanPreference");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("调用 ModerationApi#getUserBanPreference 时的异常");
+      System.err.println("状态码: " + e.getCode());
+      System.err.println("原因: " + e.getResponseBody());
+      System.err.println("响应头: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }
 }
 [inline-code-end]
+
+---

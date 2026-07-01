@@ -1,13 +1,10 @@
----
 ## Parámetros
 
-| Nombre | Tipo | Obligatorio | Descripción |
+| Nombre | Tipo | Requerido | Descripción |
 |------|------|----------|-------------|
+| tenantId | string | Sí |  |
 | badgeId | string | No |  |
-| userId | string | No |  |
-| commentId | string | Sí |  |
-| broadcastId | string | No |  |
-| sso | string | No |  |
+| options | PutAwardBadgeOptions | No |  |
 
 ## Respuesta
 
@@ -15,20 +12,14 @@ Devuelve: [`Option[AwardUserBadgeResponse]`](https://github.com/FastComments/fas
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de putAwardBadge'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putAwardBadge Ejemplo'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.putAwardBadge(
-  badgeId = "gold-contributor",
-  userId = "user-8723",
-  commentId = "cmt-54a3b2",
-  broadcastId = "",
-  sso = ""
+  tenantId = "my-tenant-123",
+  badgeId = "gold-badge",
+  options = PutAwardBadgeOptions()
 )
+
 if response.isSome:
   let award = response.get()
-  echo "Awarded badge received"
-else:
-  echo "No award response"
 [inline-code-end]
-
----

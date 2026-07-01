@@ -25,7 +25,7 @@ let locale = "locale_example" // String |  (optional)
 let rating = "rating_example" // String |  (optional)
 let page = 987 // Double |  (optional)
 
-PublicAPI.getGifsSearch(tenantId: tenantId, search: search, locale: locale, rating: rating, page: page) { (response, error) in
+PublicAPI.getGifsSearch(tenantId: tenantId, search: search, options: PublicAPI.GetGifsSearchOptions(locale: locale, rating: rating, page: page)) { (response, error) in
     guard error == nil else {
         print(error)
         return

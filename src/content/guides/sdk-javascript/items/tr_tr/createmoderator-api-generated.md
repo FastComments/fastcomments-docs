@@ -1,24 +1,30 @@
 ## Parametreler
 
-| Name | Type | Gerekli | Açıklama |
-|------|------|----------|-------------|
-| tenantId | string | Evet |  |
-| createModeratorBody | CreateModeratorBody | Evet |  |
+| Name | Type | Required | Açıklama |
+|------|------|----------|----------|
+| tenantId | string | Yes |  |
+| createModeratorBody | CreateModeratorBody | Yes |  |
 
 ## Yanıt
 
-Döndürür: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateModeratorResponse.ts)
+Döndürür: [`CreateModeratorResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateModeratorResponse1.ts)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'createModerator Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_83f4b7a2';
-const createModeratorBody: CreateModeratorBody = {
-  email: 'renee.alvarez@acme-corp.com',
-  fullName: 'Renee Alvarez',
-  roles: ['content_moderator'],
-  notify: true // isteğe bağlı parametre örneği
-};
-const result: CreateModeratorResponse = await createModerator(tenantId, createModeratorBody);
+async function runExample() {
+  const tenantId: string = "tenant_9876";
+  const moderatorPayload: CreateModeratorBody = {
+    name: "Alice Johnson",
+    email: "alice.johnson@example.com"
+    // açıklama gibi isteğe bağlı alanlar atlanmıştır
+  };
+  const result: CreateModeratorResponse1 = await createModerator(tenantId, moderatorPayload);
+  console.log(result);
+}
+
+runExample();
 [inline-code-end]
+
+---

@@ -16,34 +16,35 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример reset_user_notifications'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'reset_user_notifications Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import ResetUserNotificationsOptions
 from client.models.reset_user_notifications_response import ResetUserNotificationsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Указание хоста необязательно и по умолчанию используется https://fastcomments.com
+# Определение хоста необязательно и по умолчанию https://fastcomments.com
 # См. configuration.py для списка всех поддерживаемых параметров конфигурации.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Открываем контекст с экземпляром API-клиента
+# Войдите в контекст с экземпляром клиента API
 with client.ApiClient(configuration) as api_client:
-    # Создаём экземпляр класса API
+    # Создайте экземпляр класса API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    after_id = 'after_id_example' # str |  (необязательно)
-    after_created_at = 56 # int |  (необязательно)
-    unread_only = True # bool |  (необязательно)
-    dm_only = True # bool |  (необязательно)
-    no_dm = True # bool |  (необязательно)
-    sso = 'sso_example' # str |  (необязательно)
+    after_id = 'after_id_example' # str |  (optional)
+    after_created_at = 56 # int |  (optional)
+    unread_only = True # bool |  (optional)
+    dm_only = True # bool |  (optional)
+    no_dm = True # bool |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.reset_user_notifications(tenant_id, after_id=after_id, after_created_at=after_created_at, unread_only=unread_only, dm_only=dm_only, no_dm=no_dm, sso=sso)
+        api_response = api_instance.reset_user_notifications(tenant_id, ResetUserNotificationsOptions(after_id=after_id, after_created_at=after_created_at, unread_only=unread_only, dm_only=dm_only, no_dm=no_dm, sso=sso))
         print("The response of PublicApi->reset_user_notifications:\n")
         pprint(api_response)
     except Exception as e:

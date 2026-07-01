@@ -1,34 +1,31 @@
-启用或禁用针对特定评论的通知。
+为特定评论启用或禁用通知。
 
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
-|------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| notificationId | string | No |  |
-| optedInOrOut | string | No |  |
-| commentId | string | Yes |  |
-| sso | string | No |  |
+| 名称 | 类型 | 必填 | 描述 |
+|------|------|------|------|
+| tenantId | string | 是 |  |
+| notificationId | string | 否 |  |
+| optedInOrOut | string | 否 |  |
+| commentId | string | 是 |  |
+| sso | string = "" | 否 |  |
 
 ## 响应
 
-返回：[`Option[UpdateUserNotificationCommentSubscriptionStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_comment_subscription_status_response.nim)
+返回: [`Option[UpdateUserNotificationCommentSubscriptionStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_comment_subscription_status_response.nim)
 
 ## 示例
 
 [inline-code-attrs-start title = 'updateUserNotificationCommentSubscriptionStatus 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateUserNotificationCommentSubscriptionStatus(
+let (optResp, httpResp) = client.updateUserNotificationCommentSubscriptionStatus(
   tenantId = "my-tenant-123",
-  notificationId = "",
-  optedInOrOut = "",
-  commentId = "cmt-789",
+  notificationId = "notif-456",
+  optedInOrOut = "opted-in",
+  commentId = "comment-789",
   sso = ""
 )
 
-if response.isSome:
-  let updateResp = response.get()
-  echo "Subscription update response: ", updateResp
+if optResp.isSome:
+  let resp = optResp.get()
 [inline-code-end]
-
----

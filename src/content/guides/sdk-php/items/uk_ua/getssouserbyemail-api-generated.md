@@ -1,9 +1,9 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Так |  |
-| email | string | path | Так |  |
+| tenantId | string | query | Yes |  |
+| email | string | path | Yes |  |
 
 ## Відповідь
 
@@ -16,21 +16,22 @@
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Налаштування авторизації API-ключем: api_key
+// Налаштування авторизації за допомогою API-ключа: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Розкоментуйте нижче, щоб встановити префікс (наприклад, Bearer) для API-ключа, якщо потрібно
+// Розкоментуйте нижче, щоб налаштувати префікс (наприклад Bearer) для API-ключа, якщо потрібно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Якщо ви хочете використати власний HTTP-клієнт, передайте клієнт, що реалізує `GuzzleHttp\ClientInterface`.
-    // Це необов'язково, за замовчуванням буде використовуватися `GuzzleHttp\Client`.
+    // Якщо ви бажаєте використовувати власний HTTP-клієнт, передайте ваш клієнт, який реалізує `GuzzleHttp\ClientInterface`.
+    // Це не обов'язково, за замовчуванням буде використано `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$email = 'email_example'; // string
+
+$tenant_id = 'tenant_id_example'; // рядок
+$email = 'email_example'; // рядок
+
 
 try {
     $result = $apiInstance->getSSOUserByEmail($tenant_id, $email);

@@ -1,9 +1,10 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Да |  |
-| sso | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| sso | string | query | No |  |
 
 ## Ответ
 
@@ -18,24 +19,27 @@ from client.models.moderation_api_get_logs_response import ModerationAPIGetLogsR
 from client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://fastcomments.com
-# See configuration.py for a list of all supported configuration parameters.
+# Определение хоста является опциональным и по умолчанию устанавливается https://fastcomments.com
+# Смотрите configuration.py для списка всех поддерживаемых параметров конфигурации.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Enter a context with an instance of the API client
+# Войдите в контекст с экземпляром API клиента
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # Создайте экземпляр класса API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     sso = 'sso_example' # str |  (необязательно)
 
     try:
-        api_response = api_instance.get_logs(comment_id, sso=sso)
+        api_response = api_instance.get_logs(tenant_id, comment_id, sso=sso)
         print("The response of ModerationApi->get_logs:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling ModerationApi->get_logs: %s\n" % e)
 [inline-code-end]
+
+---

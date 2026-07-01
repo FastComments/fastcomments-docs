@@ -1,16 +1,17 @@
----
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 描述 |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
-| commentId | string | path | 是 |  |
-| spam | boolean | query | 否 |  |
-| permNotSpam | boolean | query | 否 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| spam | boolean | query | No |  |
+| permNotSpam | boolean | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## 回應
 
-回傳：[`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
+返回：[`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
 
 ## 範例
 
@@ -26,21 +27,21 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
-	spam := true // bool |  (可選)
-	permNotSpam := true // bool |  (可選)
-	sso := "sso_example" // string |  (可選)
+	spam := true // bool |  (optional) -> (可選)
+	permNotSpam := true // bool |  (optional) -> (可選)
+	broadcastId := "broadcastId_example" // string |  (optional) -> (可選)
+	sso := "sso_example" // string |  (optional) -> (可選)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostSetCommentSpamStatus(context.Background(), commentId).Spam(spam).PermNotSpam(permNotSpam).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostSetCommentSpamStatus(context.Background(), commentId).TenantId(tenantId).Spam(spam).PermNotSpam(permNotSpam).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostSetCommentSpamStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// 來自 `PostSetCommentSpamStatus` 的回應: APIEmptyResponse
+	// response from `PostSetCommentSpamStatus`: APIEmptyResponse -> // 來自 `PostSetCommentSpamStatus` 的回應: APIEmptyResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostSetCommentSpamStatus`: %v\n", resp)
 }
 [inline-code-end]
-
----

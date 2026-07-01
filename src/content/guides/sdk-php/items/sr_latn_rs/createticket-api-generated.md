@@ -1,9 +1,9 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| userId | string | query | Da |  |
+| Ime | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| userId | string | query | Yes |  |
 
 ## Odgovor
 
@@ -11,7 +11,7 @@ Vraća: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-ph
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer createTicket'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createTicket Primer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -29,9 +29,11 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $user_id = 'user_id_example'; // string
 $create_ticket_body = new \FastComments\Client\Model\CreateTicketBody(); // \FastComments\Client\Model\CreateTicketBody
+
 
 try {
     $result = $apiInstance->createTicket($tenant_id, $user_id, $create_ticket_body);

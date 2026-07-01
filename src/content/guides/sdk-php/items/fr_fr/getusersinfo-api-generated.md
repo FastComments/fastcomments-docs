@@ -1,21 +1,21 @@
-Informations groupées des utilisateurs pour un tenant. Étant donné des userIds, retourne les informations d'affichage depuis User / SSOUser.
-Utilisé par le widget de commentaires pour enrichir les utilisateurs qui viennent d'apparaître via un événement de présence.
-Pas de contexte de page : la confidentialité est appliquée uniformément (les profils privés sont masqués).
+Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
+Used by the comment widget to enrich users that just appeared via a presence event.  
+No page context: privacy is enforced uniformly (private profiles are masked).
 
-## Paramètres
+## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | chemin | Oui |  |
-| ids | string | requête | Oui | userIds délimités par des virgules. |
+| tenantId | string | path | Yes |  |
+| ids | string | query | Yes | Identifiants d'utilisateur séparés par des virgules. |
 
-## Réponse
+## Response
 
-Retourne : [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersInfoResponse.php)
+Returns: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersInfoResponse.php)
 
-## Exemple
+## Example
 
-[inline-code-attrs-start title = 'Exemple de getUsersInfo'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getUsersInfo'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -23,12 +23,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Si vous souhaitez utiliser un client HTTP personnalisé, passez votre client qui implémente `GuzzleHttp\ClientInterface`.
+    // Si vous souhaitez utiliser un client HTTP personnalisé, transmettez votre client qui implémente `GuzzleHttp\ClientInterface`.
     // Ceci est optionnel, `GuzzleHttp\Client` sera utilisé par défaut.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$ids = 'ids_example'; // string | userIds délimités par des virgules.
+
+$tenant_id = 'tenant_id_example'; // chaîne
+$ids = 'ids_example'; // chaîne | Identifiants d'utilisateur séparés par des virgules.
+
 
 try {
     $result = $apiInstance->getUsersInfo($tenant_id, $ids);

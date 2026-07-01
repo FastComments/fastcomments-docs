@@ -1,6 +1,6 @@
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 類型 | 必需 | 說明 |
 |------|------|----------|-------------|
 | tenant_id | String | Yes |  |
 | id | String | Yes |  |
@@ -9,20 +9,20 @@
 
 ## 回應
 
-回傳: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_response.rs)
+返回：[`FlagCommentResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/flag_comment_response.rs)
 
 ## 範例
 
 [inline-code-attrs-start title = 'un_flag_comment 範例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn unflag_example() -> Result<FlagCommentResponse, Error> {
-    let params: UnFlagCommentParams = UnFlagCommentParams {
+async fn example() -> Result<(), Error> {
+    let params = UnFlagCommentParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "comment-98765".to_string(),
-        user_id: Some("user-42".to_string()),
+        id: "comment-12345".to_string(),
+        user_id: Some("user-67890".to_string()),
         anon_user_id: None,
     };
-    let response: FlagCommentResponse = un_flag_comment(configuration, params).await?;
-    Ok(response)
+    let _response = un_flag_comment(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]

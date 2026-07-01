@@ -1,8 +1,8 @@
----
 ## Parametry
 
-| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
-|------|------|----------|----------|-------------|
+| Nazwa | Typ | Lokalizacja | Wymagany | Opis |
+|------|------|-------------|----------|------|
+| tenantId | string | query | Tak |  |
 | sso | string | query | Nie |  |
 
 ## Odpowiedź
@@ -19,19 +19,20 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Jeśli chcesz użyć niestandardowego klienta HTTP, przekaż klienta implementującego `GuzzleHttp\ClientInterface`.
-    // To jest opcjonalne, domyślnie użyty zostanie `GuzzleHttp\Client`.
+    // Jeśli chcesz użyć własnego klienta http, przekaż swój klient implementujący `GuzzleHttp\ClientInterface`.
+    // To jest opcjonalne, `GuzzleHttp\Client` będzie użyty jako domyślny.
     new GuzzleHttp\Client()
 );
+
+$tenant_id = 'tenant_id_example'; // string
 $ban_user_undo_params = new \FastComments\Client\Model\BanUserUndoParams(); // \FastComments\Client\Model\BanUserUndoParams
 $sso = 'sso_example'; // string
 
+
 try {
-    $result = $apiInstance->postBanUserUndo($ban_user_undo_params, $sso);
+    $result = $apiInstance->postBanUserUndo($tenant_id, $ban_user_undo_params, $sso);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->postBanUserUndo: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

@@ -1,24 +1,23 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
-|------|------|----------|-------------|
+|------|------|------------|------------|
 | tenantId | string | Ναι |  |
 | skip | int | Όχι |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`Option[GetSSOUsersResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_sso_users_response.nim)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα getSSOUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSSOUsers Παράδειγμα'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSSOUsers(tenantId = "my-tenant-123", skip = 0)
-if response.isSome:
-  let ssoUsers = response.get()
-  echo ssoUsers
+let (maybeResponse, httpResponse) = client.getSSOUsers(tenantId = "my-tenant-123", skip = 0)
+if maybeResponse.isSome:
+  let users = maybeResponse.get()
+  echo users
 else:
-  echo "No SSO users returned; HTTP response:", httpResponse
+  echo "No SSO users found"
+echo httpResponse.statusCode
 [inline-code-end]
-
----

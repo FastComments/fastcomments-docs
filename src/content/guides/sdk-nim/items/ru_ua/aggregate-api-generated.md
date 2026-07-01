@@ -1,15 +1,12 @@
----
-Агрегирует документы, группируя их (если указан groupBy) и применяя несколько операций.
-Поддерживаются различные операции (например, sum, countDistinct, avg и т.д.).
+Aggregates documents by grouping them (if groupBy is provided) and applying multiple operations. Different operations (e.g. sum, countDistinct, avg, etc.) are supported.
 
 ## Параметры
 
 | Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| aggregationRequest | AggregationRequest | Нет |  |
-| parentTenantId | string | Нет |  |
-| includeStats | bool | Нет |  |
+| tenantId | string | Yes |  |
+| aggregationRequest | AggregationRequest | No |  |
+| options | AggregateOptions | No |  |
 
 ## Ответ
 
@@ -17,18 +14,11 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример использования aggregate'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'пример агрегирования'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.aggregate(
-  tenantId = "my-tenant-123",
-  aggregationRequest = AggregationRequest(groupBy = @["articleId"], metrics = @["commentCount"], filters = @[], limit = 0),
-  parentTenantId = "",
-  includeStats = false
-)
-
-if response.isSome:
-  let agg = response.get()
-  discard agg
+let (aggResp, httpResp) = client.aggregate(tenantId = "my-tenant-123", aggregationRequest = AggregationRequest(), options = AggregateOptions())
+if aggResp.isSome:
+  let response = aggResp.get()
+  echo response
+echo httpResp
 [inline-code-end]
-
----

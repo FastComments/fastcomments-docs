@@ -2,24 +2,26 @@
 
 | 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| commentId | string | 예 |  |
-| voteId | string | 아니요 |  |
-| sso | string | 아니요 |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| voteId | string | No |  |
+| options | DeleteModerationVoteOptions | No |  |
 
 ## 응답
 
 반환: [`Option[VoteDeleteResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_vote_delete_response.nim)
 
-## 예제
+## 예시
 
 [inline-code-attrs-start title = 'deleteModerationVote 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteModerationVote(commentId = "my-tenant-123/news/article-title/comment-987", voteId = "vote-456", sso = "sso-token-abc")
-if response.isSome:
-  let voteResp = response.get()
-  echo "Vote deleted:", voteResp
-else:
-  echo "Delete failed:", httpResponse
-[inline-code-end]
+let (respOpt, httpResp) = client.deleteModerationVote(
+  tenantId = "my-tenant-123",
+  commentId = "cmt-987654",
+  voteId = "vote-abc123",
+  options = DeleteModerationVoteOptions()
+)
 
----
+if respOpt.isSome:
+  let resp = respOpt.get()
+[inline-code-end]

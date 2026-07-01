@@ -1,7 +1,7 @@
-Το Swift SDK χρησιμοποιεί τη σύγχρονη σύνταξη async/await για όλες τις κλήσεις API:
+Το Swift SDK χρησιμοποιεί σύγχρονη σύνταξη async/await για όλες τις κλήσεις API:
 
 ```swift
-let response = try await publicApi.getCommentsPublic(
+let response = try await PublicAPI.getCommentsPublic(
     tenantId: "your-tenant-id",
     urlId: "page-url-id"
 )

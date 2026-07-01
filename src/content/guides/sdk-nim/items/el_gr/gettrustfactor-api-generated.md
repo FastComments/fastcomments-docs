@@ -1,24 +1,20 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
-|------|------|----------|-------------|
-| userId | string | Όχι |  |
-| sso | string | Όχι |  |
+|------|------|------------|-----------|
+| tenantId | string | Yes |  |
+| options | GetTrustFactorOptions | No |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`Option[GetUserTrustFactorResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user_trust_factor_response.nim)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα getTrustFactor'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTrustFactor Παράδειγμα'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTrustFactor(userId = "user-1001", sso = "sso-token-6f7d9c")
-if response.isSome:
-  let trust = response.get()
-  echo "Received trust factor for user-1001"
-else:
-  echo "No trust factor returned, HTTP status: ", $httpResponse.status
+let (trustOpt, httpResp) = client.getTrustFactor(tenantId = "my-tenant-123", options = GetTrustFactorOptions())
+if trustOpt.isSome:
+  let trust = trustOpt.get()
+  discard trust
 [inline-code-end]
-
----

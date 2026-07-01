@@ -1,25 +1,22 @@
 ## פרמטרים
 
-| שם | סוג | דרוש | תיאור |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | id | string | כן |  |
 
 ## תגובה
 
-מחזיר: [`GetQuestionConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionConfigResponse.ts)
+מחזיר: [`GetQuestionConfigResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionConfigResponse1.ts)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getQuestionConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getQuestionConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f8b7c2a';
-const configId: string = 'questioncfg_4d3e2a1b';
+const tenantId: string = "acme-corp-tenant-42";
+const questionId: string = "question-7f9b3e";
 
-const response: GetQuestionConfigResponse = await getQuestionConfig(tenantId, configId);
-
-const questionConfig: QuestionConfig | undefined = response.questionConfig;
-const customOptions: QuestionConfigCustomOptionsInner[] | undefined = questionConfig?.customOptions;
+const response: GetQuestionConfigResponse1 = await getQuestionConfig(tenantId, questionId);
 [inline-code-end]
 
 ---

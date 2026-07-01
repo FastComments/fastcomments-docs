@@ -1,40 +1,33 @@
----
-## Параметры
+## Parameters
 
-| Имя | Тип | Обязательно | Описание |
-|------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| render_email_template_body | models::RenderEmailTemplateBody | Да |  |
-| locale | String | Нет |  |
+| Ім'я | Тип | Обов'язково | Опис |
+|------|------|-------------|------|
+| tenant_id | String | Так |  |
+| render_email_template_body | models::RenderEmailTemplateBody | Так |  |
+| locale | String | Ні |  |
 
-## Ответ
+## Response
 
-Возвращает: [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/render_email_template_response.rs)
+Повертає: [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/render_email_template_response.rs)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'Пример render_email_template'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад render_email_template'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let render_body: models::RenderEmailTemplateBody = models::RenderEmailTemplateBody {
-        template_id: "notifications/comment_reply".to_string(),
-        subject: "Someone replied to your comment".to_string(),
-        recipient: "jane.doe@example.com".to_string(),
-        variables: std::collections::HashMap::from([
-            ("commenter".to_string(), "Alice".to_string()),
-            ("post_title".to_string(), "How to Rust".to_string()),
-        ]),
-    };
+let mut vars = std::collections::HashMap::new();
+vars.insert("article_title".to_string(), "Breaking News".to_string());
+vars.insert("author".to_string(), "Jane Smith".to_string());
 
-    let params: RenderEmailTemplateParams = RenderEmailTemplateParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        render_email_template_body: render_body,
-        locale: Some("en-US".to_string()),
-    };
+let body = models::RenderEmailTemplateBody {
+    template_id: "newsletter".to_string(),
+    variables: vars,
+};
 
-    let response: RenderEmailTemplateResponse = render_email_template(&configuration, params).await?;
-    Ok(())
-}
+let params = RenderEmailTemplateParams {
+    tenant_id: "acme-corp-tenant".to_string(),
+    render_email_template_body: body,
+    locale: Some("en-US".to_string()),
+};
+
+let response = render_email_template(&configuration, params).await?;
 [inline-code-end]
-
----

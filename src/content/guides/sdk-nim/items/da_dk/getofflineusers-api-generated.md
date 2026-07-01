@@ -1,36 +1,29 @@
-Tidligere kommentatorer på siden som IKKE er online lige nu. Sorteret efter displayName.
-Brug dette efter at have udtømt /users/online for at gengive en "Medlemmer"-sektion.
-Cursor-paginering på commenterName: serveren går igennem den delvise {tenantId, urlId, commenterName}
-index fra afterName fremad via $gt, no $skip cost.
+Past commenters on the page who are NOT currently online. Sorted by displayName.  
+Brug dette efter at have udtømt /users/online for at gengive en "Members" sektion.  
+Cursor-paginering på commenterName: serveren går igennem den delvise {tenantId, urlId, commenterName} indeks fra afterName fremad via $gt, ingen $skip-omkostning.
 
-## Parameters
+## Parametre
 
-| Name | Type | Required | Description |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | urlId | string | Yes |  |
-| afterName | string | No |  |
-| afterUserId | string | No |  |
+| options | GetOfflineUsersOptions | No |  |
 
-## Response
+## Respons
 
 Returnerer: [`Option[PageUsersOfflineResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_offline_response.nim)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på getOfflineUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getOfflineUsers Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getOfflineUsers(
+let (offlineResp, httpResponse) = client.getOfflineUsers(
   tenantId = "my-tenant-123",
-  urlId = "news/article-how-to-code",
-  afterName = "",
-  afterUserId = ""
+  urlId = "news/article-title",
+  options = GetOfflineUsersOptions()
 )
-
-if response.isSome:
-  let offlinePage = response.get()
-  echo "Received offline users page"
-  discard httpResponse.statusCode
+if offlineResp.isSome:
+  let offline = offlineResp.get()
+  echo offline)
 [inline-code-end]
-
----

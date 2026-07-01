@@ -1,22 +1,22 @@
-## פרמטרים
+## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | כן |  |
-| urlId | string | query | כן |  |
-| broadcastId | string | query | כן |  |
-| sessionId | string | query | לא |  |
-| sso | string | query | לא |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| broadcastId | string | query | Yes |  |
+| sessionId | string | query | No |  |
+| sso | string | query | No |  |
 
-## תגובה
+## Response
 
-מחזיר: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SaveCommentsResponseWithPresence.swift)
+מחזירים: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SaveCommentsResponseWithPresence.swift)
 
-## דוגמה
+## Example
 
 [inline-code-attrs-start title = 'createCommentPublic דוגמה'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// דוגמאות הקוד הבאות עדיין בבטא. לכל בעיה, דווחו דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// דגימות הקוד הבאות עדיין בבטא. לכל בעיה, אנא דווחו דרך http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -26,7 +26,7 @@ let commentData = CommentData(date: 123, localDateString: "localDateString_examp
 let sessionId = "sessionId_example" // String |  (אופציונלי)
 let sso = "sso_example" // String |  (אופציונלי)
 
-PublicAPI.createCommentPublic(tenantId: tenantId, urlId: urlId, broadcastId: broadcastId, commentData: commentData, sessionId: sessionId, sso: sso) { (response, error) in
+PublicAPI.createCommentPublic(tenantId: tenantId, urlId: urlId, broadcastId: broadcastId, commentData: commentData, options: PublicAPI.CreateCommentPublicOptions(sessionId: sessionId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -37,5 +37,3 @@ PublicAPI.createCommentPublic(tenantId: tenantId, urlId: urlId, broadcastId: bro
     }
 }
 [inline-code-end]
-
----

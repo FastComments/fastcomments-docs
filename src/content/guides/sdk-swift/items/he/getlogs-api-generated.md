@@ -1,26 +1,27 @@
----
-## פרמטרים
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | כן |  |
 | commentId | string | path | כן |  |
 | sso | string | query | לא |  |
 
-## תגובה
+## Response
 
 מחזיר: [`ModerationAPIGetLogsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationAPIGetLogsResponse.swift)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getLogs'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getLogs'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// דוגמאות הקוד שלהלן עדיין בגרסת בטא. לכל בעיה, אנא דווחו דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// דוגמאות הקוד הבאות עדיין בתהליכי בטא. עבור כל בעיה, אנא דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
 let sso = "sso_example" // String |  (אופציונלי)
 
-ModerationAPI.getLogs(commentId: commentId, sso: sso) { (response, error) in
+ModerationAPI.getLogs(tenantId: tenantId, commentId: commentId, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -31,5 +32,3 @@ ModerationAPI.getLogs(commentId: commentId, sso: sso) { (response, error) in
     }
 }
 [inline-code-end]
-
----

@@ -1,16 +1,10 @@
 ## Παράμετροι
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| userId | string | Όχι |  |
-| direction | SortDirections | Όχι |  |
-| repliesToUserId | string | Όχι |  |
-| page | float64 | Όχι |  |
-| includei10n | bool | Όχι |  |
-| locale | string | Όχι |  |
-| isCrawler | bool | Όχι |  |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+|------|------|------------|-----------|
+| options | GetCommentsForUserOptions | Όχι |  |
 
-## Απάντηση
+## Απόκριση
 
 Επιστρέφει: [`Option[GetCommentsForUserResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_comments_for_user_response.nim)
 
@@ -18,19 +12,16 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα getCommentsForUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getCommentsForUser(
-  userId = "user-8421",
-  direction = SortDirections.Newest,
-  repliesToUserId = "",
-  page = 1.0,
-  includei10n = true,
-  locale = "en-US",
-  isCrawler = false
-)
+let (maybeResp, httpResp) = client.getCommentsForUser(options = GetCommentsForUserOptions(
+  tenantId = "my-tenant-123",
+  userId = "user-456",
+  page = 0,
+  pageSize = 20,
+  includeDeleted = false,
+  commentIds = @[]
+))
 
-if response.isSome:
-  let comments = response.get()
-  discard comments
+if maybeResp.isSome:
+  let resp = maybeResp.get()
+  discard resp
 [inline-code-end]
-
----

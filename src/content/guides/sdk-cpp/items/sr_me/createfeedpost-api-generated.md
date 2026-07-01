@@ -1,38 +1,31 @@
-## Параметри
+## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| createFeedPostParams | CreateFeedPostParams | Да |  |
-| broadcastId | string | Не |  |
-| isLive | bool | Не |  |
-| doSpamCheck | bool | Не |  |
-| skipDupCheck | bool | Не |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| createFeedPostParams | CreateFeedPostParams | Yes |  |
+| options | const CreateFeedPostOptions& | Yes |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateFeedPostsResponse.h)
+Vraća: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateFeedPostsResponse.h)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'Пример createFeedPost'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer createFeedPost'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::string_t("my-tenant-123");
-auto paramsPtr = std::make_shared<CreateFeedPostParams>();
-paramsPtr->content = utility::string_t("Deployment completed successfully. All services are operational.");
-paramsPtr->authorEmail = utility::string_t("ops@company.com");
-paramsPtr->authorName = utility::string_t("Deploy Bot");
-boost::optional<utility::string_t> broadcastId = boost::optional<utility::string_t>(utility::string_t("broadcast-456"));
-boost::optional<bool> isLive = boost::optional<bool>(true);
-boost::optional<bool> doSpamCheck = boost::optional<bool>(true);
-boost::optional<bool> skipDupCheck = boost::optional<bool>(false);
-api->createFeedPost(tenantId, *paramsPtr, broadcastId, isLive, doSpamCheck, skipDupCheck)
-    .then([](pplx::task<std::shared_ptr<CreateFeedPostsResponse>> t){
-        try {
-            auto resp = t.get();
-            (void)resp;
-        } catch (...) {}
-    });
-[inline-code-end]
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+CreateFeedPostParams postParams;
+postParams.content = utility::conversions::to_string_t("Excited to join FastComments!");
+postParams.authorEmail = utility::conversions::to_string_t("user@example.com");
+postParams.title = utility::conversions::to_string_t("My First Post");
+postParams.tags = boost::optional<std::vector<utility::string_t>>({ utility::conversions::to_string_t("intro") });
 
----
+CreateFeedPostOptions options;
+options.notifyFollowers = boost::optional<bool>(true);
+options.scheduledAt = boost::optional<utility::datetime>(utility::datetime::utc_now());
+
+api->createFeedPost(tenantId, postParams, options).then([](std::shared_ptr<CreateFeedPostsResponse> resp) {
+    auto postId = resp->postId;
+});
+[inline-code-end]

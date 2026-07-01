@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tür | Gerekli | Açıklama |
@@ -15,15 +14,19 @@ Döndürür: [`PutDomainConfigResponse`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'putDomainConfig Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "7f12c9a4-3b6e-4d2f-9a1c-5f8b2e0a91c4";
-const domainToUpdate: string = "comments.newsroom-prod.com";
-const updateParams: UpdateDomainConfigParams = {
-  forceHttps: true,
-  enableCORS: true,               // isteğe bağlı bayrak (isteğe bağlı parametreleri gösterir)
-  corsAllowedOrigins: ["https://newsroom-prod.com"]
-};
-const response: PutDomainConfigResponse = await putDomainConfig(tenantId, domainToUpdate, updateParams);
-console.log(response);
+async function runExample() {
+  const tenantId: string = 'tenant-9f8c7b1a';
+  const domainToUpdate: string = 'comments.mywebsite.org';
+  const updateDomainConfigParams: UpdateDomainConfigParams = {
+    enableModeration: true,
+    // isteğe bağlı alan atlandı, örn., maxCommentLength?: number
+  };
+  const result: PutDomainConfigResponse = await putDomainConfig(
+    tenantId,
+    domainToUpdate,
+    updateDomainConfigParams,
+  );
+  console.log(result);
+}
+runExample();
 [inline-code-end]
-
----

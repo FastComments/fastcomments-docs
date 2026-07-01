@@ -1,7 +1,8 @@
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
 | commentId | string | path | Da |  |
 | sso | string | query | Ne |  |
 
@@ -18,8 +19,8 @@ from client.models.moderation_api_child_comments_response import ModerationAPICh
 from client.rest import ApiException
 from pprint import pprint
 
-# Definisanje hosta je opciono i podrazumevano je https://fastcomments.com
-# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
+# Definisanje host-a je opciono i podrazumevano je https://fastcomments.com
+# Pogledajte configuration.py za spisak svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -29,11 +30,12 @@ configuration = client.Configuration(
 with client.ApiClient(configuration) as api_client:
     # Kreirajte instancu API klase
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     sso = 'sso_example' # str |  (opciono)
 
     try:
-        api_response = api_instance.get_comment_children(comment_id, sso=sso)
+        api_response = api_instance.get_comment_children(tenant_id, comment_id, sso=sso)
         print("The response of ModerationApi->get_comment_children:\n")
         pprint(api_response)
     except Exception as e:

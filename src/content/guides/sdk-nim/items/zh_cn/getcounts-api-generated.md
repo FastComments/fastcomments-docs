@@ -1,8 +1,9 @@
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
-|------|------|----------|-------------|
-| sso | string | 否 |  |
+| 名称 | 类型 | 必填 | 描述 |
+|------|------|------|------|
+| tenantId | string | 是 |  |
+| sso | string = "" | 否 |  |
 
 ## 响应
 
@@ -12,12 +13,12 @@
 
 [inline-code-attrs-start title = 'getCounts 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getCounts(sso = "sso_my-tenant-123_token_AbCdEf123456")
-if response.isSome:
-  let counts = response.get()
+let (maybeCounts, httpRes) = client.getCounts(tenantId = "my-tenant-123", sso = "")
+if maybeCounts.isSome:
+  let counts = maybeCounts.get()
   echo counts
 else:
-  echo "Request failed with status:", httpResponse.status
+  echo "No counts returned"
 [inline-code-end]
 
 ---

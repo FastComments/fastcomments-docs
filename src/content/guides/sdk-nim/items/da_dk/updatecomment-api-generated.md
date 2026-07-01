@@ -1,13 +1,11 @@
 ## Parametre
 
-| Name | Type | Required | Description |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| id | string | Nej |  |
-| updatableCommentParams | UpdatableCommentParams | Nej |  |
-| contextUserId | string | Nej |  |
-| doSpamCheck | bool | Nej |  |
-| isLive | bool | Nej |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| updatableCommentParams | UpdatableCommentParams | No |  |
+| options | UpdateCommentOptions | No |  |
 
 ## Svar
 
@@ -15,24 +13,18 @@ Returnerer: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcom
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på updateComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateComment Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateComment(
+let commentParams = UpdatableCommentParams(content: "Updated comment content")
+let updateOpts = UpdateCommentOptions(force: false)
+
+let (respOpt, httpResp) = client.updateComment(
   tenantId = "my-tenant-123",
-  id = "cmt-987654",
-  updatableCommentParams = UpdatableCommentParams(
-    text = "Updated comment: corrected facts and clarified wording.",
-    isApproved = true,
-    tags = @["news", "update"]
-  ),
-  contextUserId = "user-456",
-  doSpamCheck = true,
-  isLive = true
+  id = "comment-456",
+  updatableCommentParams = commentParams,
+  options = updateOpts
 )
 
-if response.isSome:
-  let apiResp = response.get()
-  discard apiResp
+if respOpt.isSome:
+  let resp = respOpt.get()
 [inline-code-end]
-
----

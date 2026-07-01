@@ -1,31 +1,25 @@
----
-Тренутно онлајн гледаоци странице: људи чија је WebSocket сесија претплаћена на страницу у овом тренутку.
-Враћа anonCount + totalCount (претплатнике у целом 'room'-у, укључујући анонимне гледаоце које не набрајамо појединачно).
+Тренутно онлајн гледаоци странице: људи чија вебсокет сесија је тренутно претплаћена на страницу.  
+Враћа anonCount + totalCount (претплатници у целој соби, укључујући анонимне гледаоце које не наводимо).
 
-## Параметри
+## Parameters
 
-| Име | Тип | Обавезно | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| urlId | string | Да |  |
-| afterName | string | Не |  |
-| afterUserId | string | Не |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| options | GetOnlineUsersOptions | No |  |
 
-## Одговор
+## Response
 
 Враћа: [`Option[PageUsersOnlineResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_online_response.nim)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример getOnlineUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getOnlineUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getOnlineUsers(tenantId = "my-tenant-123", urlId = "news/politics/top-story", afterName = "", afterUserId = "")
-if response.isSome:
-  let page = response.get()
-  echo "Received online users page:"
-  echo page
-else:
-  echo "No online users returned. HTTP status: ", httpResponse.statusCode
+let opts = GetOnlineUsersOptions()
+let (onlineUsersOpt, httpResp) = client.getOnlineUsers(tenantId = "my-tenant-123", urlId = "news/article-title", options = opts)
+if onlineUsersOpt.isSome:
+  let onlineUsers = onlineUsersOpt.get()
+  echo onlineUsers
 [inline-code-end]
-
----

@@ -1,14 +1,15 @@
----
-## パラメータ
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | はい |  |
 | commentId | string | path | はい |  |
+| broadcastId | string | query | いいえ |  |
 | sso | string | query | いいえ |  |
 
-## レスポンス
+## Response
 
-戻り値: [`PostRemoveCommentResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/post_remove_comment_response.rb)
+返却: [`PostRemoveCommentApiResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/post_remove_comment_api_response.rb)
 
 ## 例
 
@@ -18,18 +19,18 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
-comment_id = 'comment_id_example' # String | 
+tenant_id = 'tenant_id_example' # 文字列 | 
+comment_id = 'comment_id_example' # 文字列 | 
 opts = {
-  sso: 'sso_example' # String | 
+  broadcast_id: 'broadcast_id_example', # 文字列 | 
+  sso: 'sso_example' # 文字列 | 
 }
 
 begin
   
-  result = api_instance.post_remove_comment(comment_id, opts)
+  result = api_instance.post_remove_comment(tenant_id, comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_remove_comment: #{e}"
 end
 [inline-code-end]
-
----

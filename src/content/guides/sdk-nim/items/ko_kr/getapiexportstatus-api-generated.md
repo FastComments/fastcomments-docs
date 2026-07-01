@@ -1,24 +1,23 @@
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
+| 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
-| batchJobId | string | 아니오 |  |
-| sso | string | 아니오 |  |
+| tenantId | string | 예 |  |
+| options | GetApiExportStatusOptions | 아니오 |  |
 
 ## 응답
 
 반환: [`Option[ModerationExportStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_export_status_response.nim)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'getApiExportStatus 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getApiExportStatus 예시'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getApiExportStatus(batchJobId = "export-job-2026-06-01", sso = "sso-abc123token")
-if response.isSome:
-  let exportStatus = response.get()
-  echo repr(exportStatus)
-else:
-  echo "No export status available, HTTP code: ", httpResponse.statusCode
+let (exportStatusOpt, httpResp) = client.getApiExportStatus(
+  tenantId = "my-tenant-123",
+  options = GetApiExportStatusOptions()
+)
+if exportStatusOpt.isSome:
+  let exportStatus = exportStatusOpt.get()
+  # 필요에 따라 exportStatus 사용
 [inline-code-end]
-
----

@@ -1,19 +1,19 @@
-## Параметри
+## Parameters
 
-| Име | Тип | Локација | Обавезно | Опис |
-|------|------|----------|----------|-------------|
-| tenantId | string | путања | Да |  |
-| commentId | string | путања | Да |  |
-| broadcastId | string | упит | Да |  |
-| sso | string | упит | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | Yes |  |
+| sso | string | query | No |  |
 
-## Одговор
+## Response
 
-Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
+Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'Пример unLockComment'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'unLockComment Primer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -21,14 +21,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ако желите да користите прилагођени http клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционално, подразумевано ће бити коришћен `GuzzleHttp\Client`.
+    // Ako želite koristiti prilagođeni http klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao podrazumevani.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // стринг
-$comment_id = 'comment_id_example'; // стринг
-$broadcast_id = 'broadcast_id_example'; // стринг
-$sso = 'sso_example'; // стринг
+
+$tenant_id = 'tenant_id_example'; // string
+$comment_id = 'comment_id_example'; // string
+$broadcast_id = 'broadcast_id_example'; // string
+$sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->unLockComment($tenant_id, $comment_id, $broadcast_id, $sso);
@@ -37,5 +39,3 @@ try {
     echo 'Exception when calling PublicApi->unLockComment: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

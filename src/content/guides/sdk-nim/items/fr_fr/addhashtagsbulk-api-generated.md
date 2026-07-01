@@ -1,24 +1,25 @@
 ## Paramètres
 
-| Nom | Type | Requis | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
-| tenantId | string | Oui |  |
-| bulkCreateHashTagsBody | BulkCreateHashTagsBody | Non |  |
+| tenantId | string | Yes |  |
+| bulkCreateHashTagsBody | BulkCreateHashTagsBody | No |  |
 
 ## Réponse
 
-Renvoie: [`Option[BulkCreateHashTagsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_bulk_create_hash_tags_response.nim)
+Retourne : [`Option[BulkCreateHashTagsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_bulk_create_hash_tags_response.nim)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple addHashTagsBulk'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.addHashTagsBulk(tenantId = "my-tenant-123", bulkCreateHashTagsBody = BulkCreateHashTagsBody(hashTags = @["news", "breaking", "politics"], replaceExisting = false))
-if response.isSome:
-  let result = response.get()
-  echo "Bulk tags response:", result
-else:
-  echo "No response body, HTTP status:", httpResponse.statusCode
-[inline-code-end]
+let (optResp, httpResp) = client.addHashTagsBulk(
+  tenantId = "my-tenant-123",
+  bulkCreateHashTagsBody = BulkCreateHashTagsBody(
+    hashTags = @["news", "technology"]
+  )
+)
 
----
+if optResp.isSome:
+  let resp = optResp.get()
+[inline-code-end]

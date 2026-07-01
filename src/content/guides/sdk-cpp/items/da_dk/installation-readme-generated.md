@@ -4,7 +4,7 @@
 sudo apt install libcpprest-dev libboost-all-dev
 ```
 
-### Byg fra kildekoden
+### Byg fra kildekode
 
 ```bash
 mkdir build
@@ -19,16 +19,13 @@ make
 sudo make install
 ```
 
-### Bibliotekets indhold
+### Biblioteksindhold
 
-Dette bibliotek indeholder den genererede API-klient og SSO-værktøjer, der gør arbejdet med API'et lettere.
+Dette bibliotek indeholder den genererede API-klient og SSO‑værktøjerne, som gør arbejdet med API'en lettere.
 
 - [API Client Library Docs](https://github.com/FastComments/fastcomments-cpp/blob/master/client/README.md)
 
-### Offentlige vs. sikrede API'er
+### Offentlige vs sikrede API'er
 
-For API-klienten er der tre klasser, `DefaultApi`, `PublicApi`, og `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` indeholder
-metoder, der kan kaldes direkte fra en browser/mobil enhed osv. uden godkendelse. The `ModerationApi` contains methods that power the moderator dashboard - listing,
-counting, searching, exporting and pulling logs for comments, moderation actions (fjern/gendan, marker, sæt review-/spam-/godkendelsesstatus, juster stemmer, genåbn/luk tråde),
-bans (udeluk fra en kommentar, fortryd udelukkelser, forudgående udelukkelsesoversigter, udelukkelsesstatus og præferencer, antal udelukkede brugere), og badges & trust (tildel/fjern badges, manuelle badges, få/indstil tillidsfaktor,
-brugerens interne profil). Every `ModerationApi` method accepts an `sso` parameter so the call is performed on behalf of an SSO-authenticated moderator.
+For API‑klienten er der tre klasser, `DefaultApi`, `PublicApi` og `ModerationApi`. `DefaultApi` indeholder metoder, der kræver din API‑nøgle, og `PublicApi` indeholder  
+metoder, der kan kaldes direkte fra en browser/mobil enhed/osv uden godkendelse. `ModerationApi` leverer en omfattende suite af live og hurtige moderations‑API'er. Hver `ModerationApi`‑metode accepterer en `sso`‑parameter og kan godkendes via SSO eller en FastComments.com sessions‑cookie.

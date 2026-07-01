@@ -1,23 +1,23 @@
-### Използване на автентифицирани API (DefaultApi)
+### Използване на удостоверени API (DefaultApi)
 
-**Важно:** Трябва да зададете вашия API ключ в ApiClient преди да правите автентифицирани заявки. Ако не го направите, заявките ще върнат грешка 401.
+**Важно:** Трябва да зададете вашия API ключ на ApiClient преди да правите удостоверени заявки. Ако не го направите, заявките ще се провалят с грешка 401.
 
 ```ruby
 require 'fastcomments'
 
-# Създаване и конфигуриране на API клиента
+# Create and configure the API client
 config = FastCommentsClient::Configuration.new
 api_client = FastCommentsClient::ApiClient.new(config)
 
-# ЗАДЪЛЖИТЕЛНО: Задайте вашия API ключ (вземете го от таблото за FastComments)
+# REQUIRED: Set your API key (get this from your FastComments dashboard)
 config.api_key['x-api-key'] = 'YOUR_API_KEY_HERE'
 
-# Създайте инстанцията на API с конфигурирания клиент
+# Create the API instance with the configured client
 api = FastCommentsClient::DefaultApi.new(api_client)
 
-# Сега можете да правите автентифицирани API повиквания
+# Now you can make authenticated API calls
 begin
-  # Пример: Добавяне на SSO потребител
+  # Example: Add an SSO user
   user_data = {
     id: 'user-123',
     email: 'user@example.com',
@@ -29,15 +29,15 @@ begin
 
 rescue FastCommentsClient::ApiError => e
   puts "Error: #{e.response_body}"
-  # Чести грешки:
-  # - 401: API ключът липсва или е невалиден
-  # - 400: Валидация на заявката неуспешна
+  # Common errors:
+  # - 401: API key is missing or invalid
+  # - 400: Request validation failed
 end
 ```
 
 ### Използване на публични API (PublicApi)
 
-Публичните крайни точки не изискват автентикация:
+Публичните крайни точки не изискват удостоверяване:
 
 ```ruby
 require 'fastcomments'
@@ -46,8 +46,8 @@ public_api = FastCommentsClient::PublicApi.new
 
 begin
   response = public_api.get_comments_public(
-    tenant_id: 'YOUR_TENANT_ID',
-    url_id: 'page-url-id'
+    'YOUR_TENANT_ID',
+    'page-url-id'
   )
   puts response
 rescue FastCommentsClient::ApiError => e
@@ -55,9 +55,9 @@ rescue FastCommentsClient::ApiError => e
 end
 ```
 
-### Използване на модерационни API (ModerationApi)
+### Използване на Модерационни API (ModerationApi)
 
-Методите за модерация захранват таблото за модератори. Предайте `sso` токен, така че заявката да се направи от името на модератор, автентифициран чрез SSO:
+Методите за модерация захранват таблото на модератора. Предайте `sso` токен, за да бъде заявката изпратена от името на модератор, удостоверен чрез SSO:
 
 ```ruby
 require 'fastcomments'
@@ -65,7 +65,7 @@ require 'fastcomments'
 moderation_api = FastCommentsClient::ModerationApi.new
 
 begin
-  # Пример: Списък на коментарите в модерационната опашка
+  # Example: List comments in the moderation queue
   response = moderation_api.get_api_comments(
     sso: 'YOUR_MODERATOR_SSO_TOKEN'
   )
@@ -75,8 +75,8 @@ rescue FastCommentsClient::ApiError => e
 end
 ```
 
-### Често срещани проблеми
+### Чести проблеми
 
-1. **401 "missing-api-key" error**: Уверете се, че сте задали `config.api_key['x-api-key'] = 'YOUR_KEY'` преди да създадете инстанция на DefaultApi.
-2. **Wrong API class**: Използвайте `DefaultApi` за автентифицирани заявки от страна на сървъра, `PublicApi` за клиентски/публични заявки и `ModerationApi` за заявки към таблото за модератори.
-3. **Null API key**: SDK-то ще пропусне автентикацията без съобщение, ако API ключът е null, което ще доведе до грешки 401.
+1. **401 "missing-api-key" грешка**: Уверете се, че сте задали `config.api_key['x-api-key'] = 'YOUR_KEY'` преди да създадете инстанция на DefaultApi.
+2. **Грешен API клас**: Използвайте `DefaultApi` за сървърни удостоверени заявки, `PublicApi` за клиентски/публични заявки и `ModerationApi` за заявки към таблото на модератора.
+3. **Нулев API ключ**: SDK ще пропусне удостоверяването без да даде съобщение, ако API ключът е null, което води до грешки 401.

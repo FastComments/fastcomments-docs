@@ -1,17 +1,15 @@
-Masovne informacije o uporabnikih za najemnika. Glede na userIds vrne prikazne informacije iz User / SSOUser.
-Uporablja ga vtičnik za komentarje za obogatitev uporabnikov, ki so se pravkar pojavili zaradi dogodka prisotnosti.
-Brez konteksta strani: zasebnost se uveljavlja enotno (zasebni profili so skriti).
+Bulk user info for a tenant. Given userIds, return display info from User / SSOUser. Used by the comment widget to enrich users that just appeared via a presence event. No page context: privacy is enforced uniformly (private profiles are masked).
 
 ## Parametri
 
-| Ime | Tip | Lokacija | Zahtevano | Opis |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Yes |  |
-| ids | string | query | Yes | UserIds ločeni z vejico. |
+| ids | string | query | Yes | Z vejicami ločeni ID-ji uporabnikov. |
 
 ## Odgovor
 
-Vrne: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersInfoResponse.php)
+Returns: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersInfoResponse.php)
 
 ## Primer
 
@@ -23,12 +21,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Če želite uporabiti prilagojen HTTP odjemalec, posredujte svoj odjemalec, ki implementira `GuzzleHttp\ClientInterface`.
-    // To je opcijsko, kot privzeti bo uporabljen `GuzzleHttp\Client`.
+    // Če želite uporabiti prilagojen HTTP odjemalec, podajte svoj odjemalec, ki implementira `GuzzleHttp\ClientInterface`.
+    // To je neobvezno, `GuzzleHttp\Client` bo uporabljen kot privzeto.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$ids = 'ids_example'; // string | userIds ločeni z vejico.
+$ids = 'ids_example'; // string | Z vejicami ločeni ID-ji uporabnikov.
+
 
 try {
     $result = $apiInstance->getUsersInfo($tenant_id, $ids);

@@ -1,11 +1,10 @@
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
-|------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| commentId | string | 是 |  |
-| editKey | string | 否 |  |
-| sso | string | 否 |  |
+| 名称 | 类型 | 必填 | 描述 |
+|------|------|------|------|
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| options | GetCommentTextOptions | No |  |
 
 ## 响应
 
@@ -15,13 +14,12 @@
 
 [inline-code-attrs-start title = 'getCommentText 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getCommentText(tenantId = "my-tenant-123", commentId = "cmt-987654321", editKey = "", sso = "")
+let (maybeResponse, httpResponse) = client.getCommentText(
+  tenantId = "my-tenant-123",
+  commentId = "comment-456",
+  options = GetCommentTextOptions()
+)
 
-if response.isSome:
-  let commentTextResp = response.get()
-  echo commentTextResp
-else:
-  echo "No comment text returned"
+if maybeResponse.isSome:
+  let response = maybeResponse.get()
 [inline-code-end]
-
----

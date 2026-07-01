@@ -17,26 +17,23 @@ Retourneert: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomm
 [inline-code-attrs-start title = 'save_comment Voorbeeld'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import SaveCommentOptions
 from client.models.api_save_comment_response import APISaveCommentResponse
 from client.models.create_comment_params import CreateCommentParams
 from client.rest import ApiException
 from pprint import pprint
 
-# Het instellen van de host is optioneel en standaardwaarde is https://fastcomments.com
-# Zie configuration.py voor een lijst van alle ondersteunde configuratieparameters.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
-
+# Het definiëren van de host is optioneel en standaard https://fastcomments.com
+# Zie configuration.py voor een lijst met alle ondersteunde configuratieparameters.
 # De client moet de authenticatie- en autorisatieparameters configureren
 # in overeenstemming met het beveiligingsbeleid van de API-server.
-# Voor elk auth-mechanisme zijn er voorbeelden hieronder; gebruik het voorbeeld dat
-# past bij jouw auth-geval.
+# Voorbeelden voor elke authenticatiemethode worden hieronder gegeven, gebruik het voorbeeld dat
+# voldoet aan uw authenticatiegebruiksgeval.
 
-# Configureer API-sleutelautorisatie: api_key
+# Configureer API-sleutel autorisatie: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Haal de onderstaande regel uit commentaar om een prefix in te stellen (bijv. Bearer) voor de API-sleutel, indien nodig
+# Verwijder commentaar hieronder om een prefix (bijv. Bearer) in te stellen voor de API-sleutel, indien nodig
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Open een context met een instantie van de API-client
@@ -45,13 +42,13 @@ with client.ApiClient(configuration) as api_client:
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_comment_params = client.CreateCommentParams() # CreateCommentParams | 
-    is_live = True # bool |  (optioneel)
-    do_spam_check = True # bool |  (optioneel)
-    send_emails = True # bool |  (optioneel)
-    populate_notifications = True # bool |  (optioneel)
+    is_live = True # bool |  (optional)
+    do_spam_check = True # bool |  (optional)
+    send_emails = True # bool |  (optional)
+    populate_notifications = True # bool |  (optional)
 
     try:
-        api_response = api_instance.save_comment(tenant_id, create_comment_params, is_live=is_live, do_spam_check=do_spam_check, send_emails=send_emails, populate_notifications=populate_notifications)
+        api_response = api_instance.save_comment(tenant_id, create_comment_params, SaveCommentOptions(is_live=is_live, do_spam_check=do_spam_check, send_emails=send_emails, populate_notifications=populate_notifications))
         print("The response of DefaultApi->save_comment:\n")
         pprint(api_response)
     except Exception as e:

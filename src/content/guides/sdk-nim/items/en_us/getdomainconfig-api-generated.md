@@ -13,10 +13,8 @@ Returns: [`Option[GetDomainConfigResponse]`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'getDomainConfig Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getDomainConfig(tenantId = "my-tenant-123", domain = "news/top-story-2026")
-if response.isSome:
-  let cfg = response.get()
+let (configOpt, httpResp) = client.getDomainConfig(tenantId = "my-tenant-123", domain = "news.example.com")
+if configOpt.isSome:
+  let cfg = configOpt.get()
   discard cfg
-else:
-  discard httpResponse
 [inline-code-end]

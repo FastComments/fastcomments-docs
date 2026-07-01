@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Required | Description |
+| Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | id | string | Da |  |
@@ -10,15 +10,32 @@
 
 ## Odgovor
 
-Vrne: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UnblockSuccess.ts)
+Vrne: [`UnBlockUserFromCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UnBlockUserFromCommentResponse.ts)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer unBlockUserFromComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'unBlockUserFromComment Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8b4a2f9c';
-const id: string = 'cmt_5f3b2a9e';
-const unBlockFromCommentParams: UnBlockFromCommentParams = { reason: 'Appeal accepted', effectiveAt: '2026-06-19T12:00:00Z' };
-const userId: string = 'user_42f7';
-const result: UnblockSuccess = await unBlockUserFromComment(tenantId, id, unBlockFromCommentParams, userId);
+async function demoUnblock() {
+  const tenantId: string = "acme-corp-tenant";
+  const commentId: string = "cmt_9f8b7a6d";
+
+  const params: UnBlockFromCommentParams = {
+    reason: "User resolved the issue",
+    notifyUser: true
+  };
+
+  const userId: string = "usr_12345";
+
+  const result: UnBlockUserFromCommentResponse = await unBlockUserFromComment(
+    tenantId,
+    commentId,
+    params,
+    userId
+    // anonUserId izpuščen
+  );
+
+  console.log(result);
+}
+demoUnblock();
 [inline-code-end]

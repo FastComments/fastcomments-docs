@@ -2,13 +2,8 @@
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| questionId | string | Ні |  |
-| questionIds | seq[string] | Ні |  |
-| urlId | string | Так |  |
-| timeBucket | AggregateTimeBucket | Ні |  |
-| startDate | string | Ні |  |
-| forceRecalculate | bool | Ні |  |
+| tenantId | string | Yes |  |
+| options | AggregateQuestionResultsOptions | No |  |
 
 ## Відповідь
 
@@ -16,21 +11,10 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад aggregateQuestionResults'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'aggregateQuestionResults Приклад'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.aggregateQuestionResults(
-  tenantId = "my-tenant-123",
-  questionId = "",
-  questionIds = @[],
-  urlId = "news/article-title",
-  timeBucket = AggregateTimeBucket(0),
-  startDate = "",
-  forceRecalculate = false
-)
-
-if response.isSome:
-  let results = response.get()
-  discard results
+let opts = AggregateQuestionResultsOptions()
+let (aggResultOpt, httpResp) = client.aggregateQuestionResults(tenantId = "my-tenant-123", options = opts)
+if aggResultOpt.isSome:
+  let aggResult = aggResultOpt.get()
 [inline-code-end]
-
----

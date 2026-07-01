@@ -1,6 +1,6 @@
 ## Parametreler
 
-| Ad | Tip | Gerekli | Açıklama |
+| Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | skip | float64 | Hayır |  |
@@ -13,12 +13,8 @@ Döndürür: [`Option[GetEmailTemplatesResponse]`](https://github.com/FastCommen
 
 [inline-code-attrs-start title = 'getEmailTemplates Örneği'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getEmailTemplates(tenantId = "my-tenant-123", skip = 0.0)
-if response.isSome:
-  let templates = response.get()
+let (emailTemplatesOpt, httpResp) = client.getEmailTemplates(tenantId = "my-tenant-123", skip = 0.0)
+if emailTemplatesOpt.isSome:
+  let templates = emailTemplatesOpt.get()
   echo templates
-else:
-  echo "No email templates available"
 [inline-code-end]
-
----

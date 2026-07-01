@@ -1,20 +1,19 @@
----
-Λίστα σελίδων για έναν tenant. Χρησιμοποιείται από τον πελάτη επιφάνειας εργασίας FChat για να συμπληρώσει τη λίστα δωματίων του.
-Απαιτεί το `enableFChat` να είναι true στην επιλυμένη προσαρμοσμένη ρύθμιση για κάθε σελίδα.
-Οι σελίδες που απαιτούν SSO φιλτράρονται με βάση την πρόσβαση ομάδων του χρήστη που κάνει το αίτημα.
+List pages for a tenant. Used by the FChat desktop client to populate its room list.
+Requires `enableFChat` to be true on the resolved custom config for each page.
+Pages that require SSO are filtered against the requesting user's group access.
 
-## Παράμετροι
+## Parameters
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Θέση | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Ναι |  |
-| cursor | string | query | Όχι | Αδιαφανές pagination cursor που επιστρέφεται ως `nextCursor` από προηγούμενο αίτημα. Συνδεδεμένο με το ίδιο `sortBy`. |
-| limit | integer | query | Όχι | 1..200, προεπιλογή 50 |
-| q | string | query | Όχι | Προαιρετικό φίλτρο προθέματος τίτλου χωρίς διάκριση πεζών-κεφαλαίων. |
-| sortBy | string | query | Όχι | Σειρά ταξινόμησης. `updatedAt` (προεπιλογή, νεότερα πρώτα), `commentCount` (πρώτα με τα περισσότερα σχόλια), ή `title` (αλφαβητικά). |
-| hasComments | boolean | query | Όχι | Αν είναι true, επιστρέφει μόνο σελίδες με τουλάχιστον ένα σχόλιο. |
+| tenantId | string | path | Yes |  |
+| cursor | string | query | No | Αδιάφανη δεικτοδότησης (pagination cursor) που επιστρέφεται ως `nextCursor` από ένα προηγούμενο αίτημα. Συνδεδεμένο με το ίδιο `sortBy`. |
+| limit | integer | query | No | 1..200, προεπιλογή 50 |
+| q | string | query | No | Προαιρετικό φιλτράρισμα προθέματος τίτλου χωρίς διάκριση πεζών-κεφαλαίων. |
+| sortBy | string | query | No | Σειρά ταξινόμησης. `updatedAt` (προεπιλογή, πρώτα τα νεότερα), `commentCount` (πρώτα τα περισσότερα σχόλια), ή `title` (αλφαβητική). |
+| hasComments | boolean | query | No | Αν true, επιστρέφονται μόνο σελίδες που έχουν τουλάχιστον ένα σχόλιο. |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPublicPagesResponse.swift)
 
@@ -22,17 +21,17 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα getPagesPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Τα παρακάτω δείγματα κώδικα είναι ακόμα beta. Για οποιοδήποτε πρόβλημα, αναφέρετέ το μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
+// Τα παρακάτω δείγματα κώδικα βρίσκονται ακόμη σε beta. Για οποιοδήποτε πρόβλημα, παρακαλώ αναφέρετε το μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let cursor = "cursor_example" // String | Αδιαφανές cursor σελιδοποίησης που επιστρέφεται ως `nextCursor` από προηγούμενο αίτημα. Συνδεδεμένο με το ίδιο `sortBy`. (προαιρετικό)
+let cursor = "cursor_example" // String | Αδιάφανη δεικτοδότησης (pagination cursor) που επιστρέφεται ως `nextCursor` από ένα προηγούμενο αίτημα. Συνδεδεμένο με το ίδιο `sortBy`. (προαιρετικό)
 let limit = 987 // Int | 1..200, προεπιλογή 50 (προαιρετικό)
-let q = "q_example" // String | Προαιρετικό φίλτρο προθέματος τίτλου χωρίς διάκριση πεζών-κεφαλαίων. (προαιρετικό)
-let sortBy = PagesSortBy() // PagesSortBy | Σειρά ταξινόμησης. `updatedAt` (προεπιλογή, νεότερα πρώτα), `commentCount` (πρώτα με τα περισσότερα σχόλια), ή `title` (αλφαβητικά). (προαιρετικό)
-let hasComments = true // Bool | Αν είναι true, επιστρέφει μόνο σελίδες με τουλάχιστον ένα σχόλιο. (προαιρετικό)
+let q = "q_example" // String | Προαιρετικό φιλτράρισμα προθέματος τίτλου χωρίς διάκριση πεζών-κεφαλαίων. (προαιρετικό)
+let sortBy = PagesSortBy() // PagesSortBy | Σειρά ταξινόμησης. `updatedAt` (προεπιλογή, πρώτα τα νεότερα), `commentCount` (πρώτα τα περισσότερα σχόλια), ή `title` (αλφαβητική). (προαιρετικό)
+let hasComments = true // Bool | Αν true, επιστρέφονται μόνο σελίδες που έχουν τουλάχιστον ένα σχόλιο. (προαιρετικό)
 
-PublicAPI.getPagesPublic(tenantId: tenantId, cursor: cursor, limit: limit, q: q, sortBy: sortBy, hasComments: hasComments) { (response, error) in
+PublicAPI.getPagesPublic(tenantId: tenantId, options: PublicAPI.GetPagesPublicOptions(cursor: cursor, limit: limit, q: q, sortBy: sortBy, hasComments: hasComments)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -43,5 +42,3 @@ PublicAPI.getPagesPublic(tenantId: tenantId, cursor: cursor, limit: limit, q: q,
     }
 }
 [inline-code-end]
-
----

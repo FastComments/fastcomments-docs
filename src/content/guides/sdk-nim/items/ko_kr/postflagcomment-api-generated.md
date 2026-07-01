@@ -1,10 +1,10 @@
----
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
+| tenantId | string | 예 |  |
 | commentId | string | 예 |  |
-| sso | string | 아니요 |  |
+| options | PostFlagCommentOptions | 아니오 |  |
 
 ## 응답
 
@@ -14,12 +14,12 @@
 
 [inline-code-attrs-start title = 'postFlagComment 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postFlagComment(commentId = "comment-742", sso = "")
+let opts = PostFlagCommentOptions()
+let (response, httpResponse) = client.postFlagComment(
+  tenantId = "my-tenant-123",
+  commentId = "comment-987654",
+  options = opts,
+)
 if response.isSome:
-  let apiResp = response.get()
-  echo "Comment flagged successfully"
-else:
-  echo "Failed to flag comment"
+  let result = response.get()
 [inline-code-end]
-
----

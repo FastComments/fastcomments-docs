@@ -1,36 +1,33 @@
 ### Radnje dostupne svim korisnicima
 
-- **Označi/Ukloni oznaku** -- prijavi komentar na pregled
+- **Flag/Unflag** -- prijavite komentar za reviziju
 
 ```swift
 try await sdk.flagComment(commentId: commentId)
 try await sdk.unflagComment(commentId: commentId)
 ```
 
-- **Blokiraj/Odblokiraj** -- sakrij sve komentare od korisnika (po posmatraču)
+- **Block/Unblock** -- sakrijte sve komentare korisnika (po‑gledatelju)
 
 ```swift
 try await sdk.blockUser(commentId: commentId)
 try await sdk.unblockUser(commentId: commentId)
 ```
 
-### Radnje samo za administratore
+### Akcije samo za administratore
 
-- **Postavi na vrh/Ukloni sa vrha** -- postavi komentar na vrh niti
+- **Pin/Unpin** -- zakačite komentar na vrh teme
 
 ```swift
 try await sdk.pinComment(commentId: commentId)
 try await sdk.unpinComment(commentId: commentId)
 ```
 
-- **Zaključaj/Otključaj** -- onemogući nove odgovore na komentar
+- **Lock/Unlock** -- sprečite nove odgovore na komentar i blokirajte izmene i brisanja dok se ne otključa (važi za sve, uključujući moderatore)
 
 ```swift
 try await sdk.lockComment(commentId: commentId)
 try await sdk.unlockComment(commentId: commentId)
 ```
 
-Sve radnje moderacije su takođe dostupne kroz kontekstni meni komentara u korisničkom interfejsu. Administratorske radnje se pojavljuju samo kada je trenutni korisnik administrator sajta (postavljeno putem SSO `isAdmin` zastavice ili konfiguracije kontrolne table).
-
----
----
+Sve akcije moderacije takođe su dostupne putem kontekstnog menija komentara u UI‑u. Administratorske akcije se prikazuju samo kada je trenutni korisnik administrator sajta (podešeno putem SSO `isAdmin` zastavice ili konfiguracije na kontrolnoj tabli).

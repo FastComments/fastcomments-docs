@@ -1,7 +1,6 @@
----
-## 매개변수
+## 파라미터
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenant_id | String | 예 |  |
 | url_id | String | 예 |  |
@@ -11,19 +10,17 @@
 
 반환: `CreateV1PageReact`
 
-## 예제
+## 예시
 
 [inline-code-attrs-start title = 'create_v1_page_react 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example() -> Result<CreateV1PageReact, Error> {
-    let params = CreateV1PageReactParams {
+async fn run() -> Result<(), Error> {
+    let params: CreateV1PageReactParams = CreateV1PageReactParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        url_id: "news/article/2026/06/launch".to_string(),
-        title: Some("Acme Launch Coverage".to_string()),
+        url_id: "news/article".to_string(),
+        title: Some("Rust Community Update".to_string()),
     };
-    let reaction: CreateV1PageReact = create_v1_page_react(&configuration, params).await?;
-    Ok(reaction)
+    let _response = create_v1_page_react(&config, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

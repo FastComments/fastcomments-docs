@@ -1,32 +1,28 @@
----
 ## Paramètres
 
-| Name | Type | Required | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
-| tenant_id | String | Oui |  |
-| user_id | String | Non |  |
-| limit | f64 | Non |  |
-| skip | f64 | Non |  |
+| tenant_id | String | Yes |  |
+| user_id | String | No |  |
+| limit | f64 | No |  |
+| skip | f64 | No |  |
 
 ## Réponse
 
-Renvoie : [`ApiGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_get_user_badge_progress_list_response.rs)
+Renvoie : [`ApiGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_get_user_badge_progress_list_response.rs)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de get_user_badge_progress_list'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple get_user_badge_progress_list'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example() -> Result<(), Error> {
-    let params: GetUserBadgeProgressListParams = GetUserBadgeProgressListParams {
+async fn fetch_badge_progress(conf: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetUserBadgeProgressListParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        user_id: Some("user-9876".to_string()),
-        limit: Some(25.0),
-        skip: Some(0.0),
+        user_id: Some("user-98765".to_string()),
+        limit: Some(20.0),
+        skip: Some(5.0),
     };
-    let badge_progress: ApiGetUserBadgeProgressListResponse =
-        get_user_badge_progress_list(&configuration, params).await?;
+    let _resp = get_user_badge_progress_list(conf, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

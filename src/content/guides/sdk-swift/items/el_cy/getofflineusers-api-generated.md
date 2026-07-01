@@ -1,15 +1,15 @@
-Προηγούμενοι σχολιαστές στη σελίδα που ΔΕΝ είναι αυτή τη στιγμή συνδεδεμένοι. Ταξινομημένα κατά displayName.
-Χρησιμοποιήστε αυτό αφού εξαντλήσετε το /users/online για να εμφανίσετε μια ενότητα «Μέλη».
-Σελιδοποίηση με cursor στο commenterName: ο διακομιστής διασχίζει τον μερικό δείκτη {tenantId, urlId, commenterName} από afterName προς τα εμπρός μέσω $gt, χωρίς κόστος $skip.
+Past commenters on the page who are NOT currently online. Sorted by displayName.  
+Use this after exhausting /users/online to render a "Members" section.  
+Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.
 
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
+|------|------|----------|------------|------------|
 | tenantId | string | path | Ναι |  |
-| urlId | string | query | Ναι | Αναγνωριστικό URL σελίδας (καθαρίζεται από τον διακομιστή). |
-| afterName | string | query | Όχι | Δείκτης (cursor): περάστε το nextAfterName από την προηγούμενη απόκριση. |
-| afterUserId | string | query | Όχι | Tiebreaker του cursor: περάστε το nextAfterUserId από την προηγούμενη απόκριση. Απαιτείται όταν έχει οριστεί το afterName ώστε οι ισοβαθμίες ονομάτων να μην παραλείψουν εγγραφές. |
+| urlId | string | query | Ναι | Αναγνωριστικό URL σελίδας (καθαρισμένο στο διακομιστή). |
+| afterName | string | query | Όχι | Κέρσορας: περάστε το nextAfterName από την προηγούμενη απάντηση. |
+| afterUserId | string | query | Όχι | Δεσμευτής ισότητας κέρσορα: περάστε το nextAfterUserId από την προηγούμενη απάντηση. Απαιτείται όταν το afterName είναι ορισμένο ώστε οι ισότητες ονομάτων να μην αφαιρούν εγγραφές. |
 
 ## Απόκριση
 
@@ -19,15 +19,15 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα getOfflineUsers'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Τα παρακάτω δείγματα κώδικα είναι ακόμα beta. Για οποιοδήποτε πρόβλημα, παρακαλώ αναφέρετε μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
+// Τα παρακάτω παραδείγματα κώδικα είναι ακόμα beta. Για οποιοδήποτε ζήτημα, παρακαλούμε αναφέρετέ το μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let urlId = "urlId_example" // String | Αναγνωριστικό URL σελίδας (καθαρίζεται από τον διακομιστή).
-let afterName = "afterName_example" // String | Δείκτης (cursor): περάστε το nextAfterName από την προηγούμενη απόκριση. (προαιρετικό)
-let afterUserId = "afterUserId_example" // String | Tiebreaker του cursor: περάστε το nextAfterUserId από την προηγούμενη απόκριση. Απαιτείται όταν έχει οριστεί το afterName ώστε οι ισοβαθμίες ονομάτων να μην παραλείψουν εγγραφές. (προαιρετικό)
+let urlId = "urlId_example" // String | Αναγνωριστικό URL σελίδας (καθαρισμένο στο διακομιστή).
+let afterName = "afterName_example" // String | Κέρσορας: περάστε το nextAfterName από την προηγούμενη απάντηση. (προαιρετικό)
+let afterUserId = "afterUserId_example" // String | Δεσμευτής ισότητας κέρσορα: περάστε το nextAfterUserId από την προηγούμενη απάντηση. Απαιτείται όταν το afterName είναι ορισμένο ώστε οι ισότητες ονομάτων να μην αφαιρούν εγγραφές. (προαιρετικό)
 
-PublicAPI.getOfflineUsers(tenantId: tenantId, urlId: urlId, afterName: afterName, afterUserId: afterUserId) { (response, error) in
+PublicAPI.getOfflineUsers(tenantId: tenantId, urlId: urlId, options: PublicAPI.GetOfflineUsersOptions(afterName: afterName, afterUserId: afterUserId)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -38,3 +38,5 @@ PublicAPI.getOfflineUsers(tenantId: tenantId, urlId: urlId, afterName: afterName
     }
 }
 [inline-code-end]
+
+---

@@ -1,7 +1,7 @@
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
-|------|------|---------|-------------|
+| Naam | Type | Verplicht | Beschrijving |
+|------|------|-----------|---------------|
 | commentId | string | Ja |  |
 | banEmail | boolean | Nee |  |
 | banEmailDomain | boolean | Nee |  |
@@ -11,31 +11,40 @@
 | isShadowBan | boolean | Nee |  |
 | updateId | string | Nee |  |
 | banReason | string | Nee |  |
+| tenantId | string | Nee |  |
 | sso | string | Nee |  |
 
 ## Respons
 
-Retourneert: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BanUserFromCommentResult.ts)
+Retouneert: [`PostBanUserFromCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostBanUserFromCommentResponse.ts)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'postBanUserFromComment Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const commentId: string = "cmt_9f8a7b4e";
-const bannedUntil: string = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString();
-const sso: string = "sso-user-7f3b2c";
-const updateId: string = "upd_20260619_001";
-const banReason: string = "Repeated harassment across multiple threads";
-const result: BanUserFromCommentResult = await postBanUserFromComment(
-  commentId,
-  true,        // e-mail verbannen
-  false,       // e-maildomein verbannen
-  true,        // IP-adres verbannen
-  true,        // alle reacties van gebruiker verwijderen
-  bannedUntil,
-  false,       // schaduwverbanning
-  updateId,
-  banReason,
-  sso
-);
+async function runBan() {
+  const commentId: string = "cmt_5f8a2b3c";
+  const banEmail: boolean = true;
+  const banIP: boolean = false;
+  const deleteAllUsersComments: boolean = true;
+  const bannedUntil: string = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString();
+  const isShadowBan: boolean = false;
+  const banReason: string = "Repeated spam posting";
+  const tenantId: string = "tenant_12345";
+
+  const response: PostBanUserFromCommentResponse = await postBanUserFromComment(
+    commentId,
+    banEmail,
+    undefined,
+    banIP,
+    deleteAllUsersComments,
+    bannedUntil,
+    isShadowBan,
+    undefined,
+    banReason,
+    tenantId
+  );
+  console.log(response);
+}
+runBan();
 [inline-code-end]

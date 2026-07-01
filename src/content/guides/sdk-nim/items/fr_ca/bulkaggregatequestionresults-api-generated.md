@@ -1,28 +1,25 @@
 ## Paramètres
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nom | Type | Obligatoire | Description |
+|------|------|-------------|-------------|
 | tenantId | string | Oui |  |
 | bulkAggregateQuestionResultsRequest | BulkAggregateQuestionResultsRequest | Non |  |
 | forceRecalculate | bool | Non |  |
 
 ## Réponse
 
-Renvoie : [`Option[BulkAggregateQuestionResultsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_bulk_aggregate_question_results_response.nim)
+Renvoie : [`Option[BulkAggregateQuestionResultsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_bulk_aggregate_question_results_response.nim)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de bulkAggregateQuestionResults'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple bulkAggregateQuestionResults'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.bulkAggregateQuestionResults(
+let request = BulkAggregateQuestionResultsRequest()
+let (maybeResult, httpResp) = client.bulkAggregateQuestionResults(
   tenantId = "my-tenant-123",
-  bulkAggregateQuestionResultsRequest = BulkAggregateQuestionResultsRequest(),
-  forceRecalculate = false
-)
+  bulkAggregateQuestionResultsRequest = request,
+  forceRecalculate = false)
 
-if response.isSome:
-  let aggregated = response.get()
-  echo "Aggregated question results received"
+if maybeResult.isSome:
+  let result = maybeResult.get()
 [inline-code-end]
-
----

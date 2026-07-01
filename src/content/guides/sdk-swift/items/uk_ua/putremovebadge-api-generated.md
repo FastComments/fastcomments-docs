@@ -1,7 +1,8 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
-|------|------|----------|----------|-------------|
+| Назва | Тип | Розташування | Обов'язковий | Опис |
+|------|------|--------------|--------------|------|
+| tenantId | string | query | Так |  |
 | badgeId | string | query | Так |  |
 | userId | string | query | Ні |  |
 | commentId | string | query | Ні |  |
@@ -16,16 +17,17 @@
 
 [inline-code-attrs-start title = 'Приклад putRemoveBadge'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Наступні приклади коду ще в бета-версії. У разі будь-яких проблем, будь ласка, повідомте через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наступні приклади коду все ще у бета-версії. У разі проблем, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let badgeId = "badgeId_example" // String | 
-let userId = "userId_example" // String |  (необов'язково)
-let commentId = "commentId_example" // String |  (необов'язково)
-let broadcastId = "broadcastId_example" // String |  (необов'язково)
-let sso = "sso_example" // String |  (необов'язково)
+let userId = "userId_example" // String |  (опційно)
+let commentId = "commentId_example" // String |  (опційно)
+let broadcastId = "broadcastId_example" // String |  (опційно)
+let sso = "sso_example" // String |  (опційно)
 
-ModerationAPI.putRemoveBadge(badgeId: badgeId, userId: userId, commentId: commentId, broadcastId: broadcastId, sso: sso) { (response, error) in
+ModerationAPI.putRemoveBadge(tenantId: tenantId, badgeId: badgeId, options: ModerationAPI.PutRemoveBadgeOptions(userId: userId, commentId: commentId, broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

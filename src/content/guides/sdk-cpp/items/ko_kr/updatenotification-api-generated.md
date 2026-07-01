@@ -1,6 +1,6 @@
 ## 매개변수
 
-| 이름 | 타입 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | id | string | 예 |  |
@@ -9,24 +9,19 @@
 
 ## 응답
 
-반환: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
+Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'updateNotification 예제'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateNotification 예시'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
-utility::string_t notificationId = utility::conversions::to_string_t("notif-456");
-auto updateBodyPtr = std::make_shared<UpdateNotificationBody>();
-boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(utility::conversions::to_string_t("user@example.com"));
-api->updateNotification(tenantId, notificationId, *updateBodyPtr, userId)
-    .then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task) {
-        try {
-            auto resp = task.get();
-            (void)resp;
-        } catch (...) {
-        }
-    });
+auto updateBody = std::make_shared<UpdateNotificationBody>();
+updateBody->title = utility::conversions::to_string_t("System Maintenance");
+updateBody->message = utility::conversions::to_string_t("Scheduled downtime at 02:00 UTC.");
+api->updateNotification(
+    utility::conversions::to_string_t("my-tenant-123"),
+    utility::conversions::to_string_t("notif-456"),
+    updateBody,
+    boost::optional<utility::string_t>(utility::conversions::to_string_t("admin-user"))
+).then([](std::shared_ptr<APIEmptyResponse>){});
 [inline-code-end]
-
----

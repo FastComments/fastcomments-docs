@@ -12,25 +12,15 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за putDomainConfig'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putDomainConfig пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.putDomainConfig(
+let (optResp, httpResp) = client.putDomainConfig(
   tenantId = "my-tenant-123",
-  domainToUpdate = "blog.example.com",
-  updateDomainConfigParams = UpdateDomainConfigParams(
-    allowAnonymous = false,
-    moderationEnabled = true,
-    maxCommentLength = 800,
-    allowedOrigins = @["https://blog.example.com", "https://cdn.blog.example.com"],
-    enableThreadedComments = true
-  )
+  domainToUpdate = "example.com",
+  updateDomainConfigParams = UpdateDomainConfigParams()
 )
 
-if response.isSome:
-  let cfg = response.get()
-  echo cfg
-else:
-  echo "Failed to update domain config, HTTP status: ", httpResponse.status
+if optResp.isSome:
+  let resp = optResp.get()
+  echo resp
 [inline-code-end]
-
----

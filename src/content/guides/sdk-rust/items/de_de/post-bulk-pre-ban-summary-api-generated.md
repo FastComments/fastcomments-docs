@@ -1,41 +1,35 @@
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
-|------|------|----------|-------------|
-| bulk_pre_ban_params | models::BulkPreBanParams | Ja |  |
-| include_by_user_id_and_email | bool | Nein |  |
-| include_by_ip | bool | Nein |  |
-| include_by_email_domain | bool | Nein |  |
-| sso | String | Nein |  |
+|------|------|--------------|--------------|
+| tenant_id | String | Yes |  |
+| bulk_pre_ban_params | models::BulkPreBanParams | Yes |  |
+| include_by_user_id_and_email | bool | No |  |
+| include_by_ip | bool | No |  |
+| include_by_email_domain | bool | No |  |
+| sso | String | No |  |
 
 ## Antwort
 
-Gibt zurück: [`BulkPreBanSummary`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/bulk_pre_ban_summary.rs)
+Rückgabe: [`BulkPreBanSummary`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/bulk_pre_ban_summary.rs)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'post_bulk_pre_ban_summary Beispiel'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: PostBulkPreBanSummaryParams = PostBulkPreBanSummaryParams {
-    bulk_pre_ban_params: models::BulkPreBanParams {
-        entries: vec![
-            models::BulkPreBanEntry {
-                user_id: Some("user-8472".to_string()),
-                email: Some("malicious.signals@fraudmail.com".to_string()),
-                ip: Some("198.51.100.23".to_string()),
-            },
-            models::BulkPreBanEntry {
-                user_id: Some("user-9021".to_string()),
-                email: Some("bot.account@spamnews.org".to_string()),
-                ip: None,
-            },
-        ],
-        reason: Some("coordinated spam campaign".to_string()),
-    },
-    include_by_user_id_and_email: Some(true),
-    include_by_ip: Some(true),
-    include_by_email_domain: Some(true),
-    sso: Some("acme-corp-sso".to_string()),
-};
-let summary: BulkPreBanSummary = post_bulk_pre_ban_summary(&configuration, params).await?
+async fn example() -> Result<(), Error> {
+    let bulk_params = models::BulkPreBanParams::default();
+    let params = PostBulkPreBanSummaryParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        bulk_pre_ban_params: bulk_params,
+        include_by_user_id_and_email: Some(true),
+        include_by_ip: Some(false),
+        include_by_email_domain: Some(true),
+        sso: Some("sso-token-xyz".to_string()),
+    };
+    let _summary = post_bulk_pre_ban_summary(&configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]
+
+---

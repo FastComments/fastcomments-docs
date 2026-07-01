@@ -1,7 +1,7 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательный | Описание |
-|------|------|----------|----------|-------------|
+| Имя | Тип | Расположение | Обязательно | Описание |
+|------|------|--------------|-------------|----------|
 | tenantId | string | query | Да |  |
 | urlId | string | query | Нет |  |
 | userId | string | query | Нет |  |
@@ -18,7 +18,7 @@
 
 [inline-code-attrs-start title = 'getQuestionResults Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие примеры кода все ещё находятся в бета-версии. В случае проблем, пожалуйста, сообщите через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следующие образцы кода всё ещё находятся в бета-версии. При возникновении любой проблемы, пожалуйста, сообщайте по адресу http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -29,7 +29,7 @@ let questionId = "questionId_example" // String |  (необязательно)
 let questionIds = "questionIds_example" // String |  (необязательно)
 let skip = 987 // Double |  (необязательно)
 
-DefaultAPI.getQuestionResults(tenantId: tenantId, urlId: urlId, userId: userId, startDate: startDate, questionId: questionId, questionIds: questionIds, skip: skip) { (response, error) in
+DefaultAPI.getQuestionResults(tenantId: tenantId, options: DefaultAPI.GetQuestionResultsOptions(urlId: urlId, userId: userId, startDate: startDate, questionId: questionId, questionIds: questionIds, skip: skip)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -40,3 +40,5 @@ DefaultAPI.getQuestionResults(tenantId: tenantId, urlId: urlId, userId: userId, 
     }
 }
 [inline-code-end]
+
+---

@@ -1,12 +1,13 @@
 ## Parametry
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
-|------|------|----------|----------|-------------|
-| badgeId | string | query | Tak |  |
-| userId | string | query | Nie |  |
-| commentId | string | query | Nie |  |
-| broadcastId | string | query | Nie |  |
-| sso | string | query | Nie |  |
+|------|------|-------------|----------|------|
+| tenantId | string | zapytanie | Tak |  |
+| badgeId | string | zapytanie | Tak |  |
+| userId | string | zapytanie | Nie |  |
+| commentId | string | zapytanie | Nie |  |
+| broadcastId | string | zapytanie | Nie |  |
+| sso | string | zapytanie | Nie |  |
 
 ## Odpowiedź
 
@@ -17,12 +18,13 @@ Zwraca: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-
 [inline-code-attrs-start title = 'Przykład put_award_badge'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import PutAwardBadgeOptions
 from client.models.award_user_badge_response import AwardUserBadgeResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Określenie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
-# Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracji.
+# Definiowanie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
+# Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracyjnych.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -32,14 +34,15 @@ configuration = client.Configuration(
 with client.ApiClient(configuration) as api_client:
     # Utwórz instancję klasy API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     badge_id = 'badge_id_example' # str | 
-    user_id = 'user_id_example' # str |  (opcjonalne)
-    comment_id = 'comment_id_example' # str |  (opcjonalne)
-    broadcast_id = 'broadcast_id_example' # str |  (opcjonalne)
-    sso = 'sso_example' # str |  (opcjonalne)
+    user_id = 'user_id_example' # str |  (opcjonalny)
+    comment_id = 'comment_id_example' # str |  (opcjonalny)
+    broadcast_id = 'broadcast_id_example' # str |  (opcjonalny)
+    sso = 'sso_example' # str |  (opcjonalny)
 
     try:
-        api_response = api_instance.put_award_badge(badge_id, user_id=user_id, comment_id=comment_id, broadcast_id=broadcast_id, sso=sso)
+        api_response = api_instance.put_award_badge(tenant_id, badge_id, PutAwardBadgeOptions(user_id=user_id, comment_id=comment_id, broadcast_id=broadcast_id, sso=sso))
         print("The response of ModerationApi->put_award_badge:\n")
         pprint(api_response)
     except Exception as e:

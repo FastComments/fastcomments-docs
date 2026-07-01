@@ -1,18 +1,18 @@
-## Parametri
+## Parameters
 
-| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | No |  |
+| tenantId | string | query | Yes |  |
 
-## Risposta
+## Response
 
-Restituisce: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/BulkCreateHashTagsResponse.java)
+Returns: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/BulkCreateHashTagsResponse.java)
 
-## Esempio
+## Example
 
-[inline-code-attrs-start title = 'Esempio di addHashTagsBulk'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio addHashTagsBulk'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Import delle classi:
+// Importa classi:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -25,18 +25,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configura l'autenticazione tramite API key: api_key
+    // Configura l'autorizzazione della chiave API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Decommenta la riga seguente per impostare un prefisso per la API key, es. "Token" (valore predefinito null)
+    // Decommenta la riga seguente per impostare un prefisso per la chiave API, ad es. "Token" (di default è null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     BulkCreateHashTagsBody bulkCreateHashTagsBody = new BulkCreateHashTagsBody(); // BulkCreateHashTagsBody | 
     try {
-      BulkCreateHashTagsResponse result = apiInstance.addHashTagsBulk()
-            .tenantId(tenantId)
+      BulkCreateHashTagsResponse result = apiInstance.addHashTagsBulk(tenantId)
             .bulkCreateHashTagsBody(bulkCreateHashTagsBody)
             .execute();
       System.out.println(result);
@@ -50,3 +49,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

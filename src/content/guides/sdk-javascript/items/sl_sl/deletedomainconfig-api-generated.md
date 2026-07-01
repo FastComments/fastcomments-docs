@@ -1,6 +1,6 @@
 ## Parametri
 
-| Ime | Tip | Obvezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | domain | string | Da |  |
@@ -11,11 +11,15 @@ Vrne: [`DeleteDomainConfigResponse`](https://github.com/FastComments/fastcomment
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer deleteDomainConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteDomainConfig Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "org_5b2f9c3a";
-const domain: string = "comments.acme-corp.com";
-const result: DeleteDomainConfigResponse = await deleteDomainConfig(tenantId, domain);
+async function runExample() {
+  const tenantId: string = 'acme-corp';
+  const domain: string = 'blog.acme.com';
+  const response: DeleteDomainConfigResponse = await deleteDomainConfig(tenantId, domain);
+  console.log(response);
+}
+runExample();
 [inline-code-end]
 
 ---

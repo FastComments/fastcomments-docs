@@ -1,54 +1,55 @@
-Листа страница за tenant. Користи се од стране FChat десктоп клијента да попуни своју листу соба.
-Захтева да `enableFChat` буде true на решеном прилагођеном конфигу за сваку страницу.
-Странице које захтевају SSO се филтрирају у складу са приступом групе корисника који шаље захтев.
+List pages for a tenant. Used by the FChat desktop client to populate its room list.  
+Requires `enableFChat` to be true on the resolved custom config for each page.  
+Pages that require SSO are filtered against the requesting user's group access.
 
-## Параметри
+## Parameters
 
-| Име | Тип | Локација | Обавезно | Опис |
-|------|------|----------|----------|-------------|
+| Ime | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
 | tenantId | string | path | Yes |  |
-| cursor | string | query | No | Непрозирни курсор пагинације враћен као `nextCursor` из претходног захтева. Везан за исти `sortBy`. |
-| limit | integer | query | No | 1..200, подразумевано 50 |
-| q | string | query | No | Опционални филтер префикса наслова који није осетљив на велика и мала слова. |
-| sortBy | string | query | No | Редослед сортирања. `updatedAt` (подразумевано, најновије прво), `commentCount` (највише коментара прво), или `title` (азбучно). |
-| hasComments | boolean | query | No | Ако је true, враћају се само странице са најмање једним коментаром. |
+| cursor | string | query | No | Neprozirni kursor paginacije vraćen kao `nextCursor` iz prethodnog zahteva. Vezao se za isti `sortBy`. |
+| limit | integer | query | No | 1..200, podrazumevano 50 |
+| q | string | query | No | Opcioni filter prefiksa naslova neosetljivog na veličinu slova. |
+| sortBy | string | query | No | Redosled sortiranja. `updatedAt` (podrazumevano, najnoviji prvo), `commentCount` (najviše komentara prvo), ili `title` (abecedno). |
+| hasComments | boolean | query | No | Ako je true, vraća samo stranice sa najmanje jednim komentarom. |
 
-## Одговор
+## Response
 
-Враћа: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_public_pages_response.py)
+Vraća: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_public_pages_response.py)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'get_pages_public Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer get_pages_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetPagesPublicOptions
 from client.models.get_public_pages_response import GetPublicPagesResponse
 from client.models.pages_sort_by import PagesSortBy
 from client.rest import ApiException
 from pprint import pprint
 
-# Подешавање host-а је опционално и подразумевано је https://fastcomments.com
-# Погледајте configuration.py за листу свих подржаних конфигурационих параметара.
+# Definisanje host-a je opciono i podrazumevano je https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Уђите у контекст са инстанцом API клијента
+# Uđite u kontekst sa instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Креирајте инстанцу API класе
+    # Kreirajte instancu API klase
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    cursor = 'cursor_example' # str | Непрозирни курсор пагинације враћен као `nextCursor` из претходног захтева. Везан за исти `sortBy`. (опционо)
-    limit = 56 # int | 1..200, подразумевано 50 (опционо)
-    q = 'q_example' # str | Опционални филтер префикса наслова који није осетљив на велика и мала слова. (опционо)
-    sort_by = client.PagesSortBy() # PagesSortBy | Редослед сортирања. `updatedAt` (подразумевано, најновије прво), `commentCount` (највише коментара прво), или `title` (азбучно). (опционо)
-    has_comments = True # bool | Ако је true, враћају се само странице са најмање једним коментаром. (опционо)
+    cursor = 'cursor_example' # str | Neprozirni kursor paginacije vraćen kao `nextCursor` iz prethodnog zahteva. Vezao se za isti `sortBy`. (optional)
+    limit = 56 # int | 1..200, podrazumevano 50 (optional)
+    q = 'q_example' # str | Opcioni filter prefiksa naslova neosetljivog na veličinu slova. (optional)
+    sort_by = client.PagesSortBy() # PagesSortBy | Redosled sortiranja. `updatedAt` (podrazumevano, najnoviji prvo), `commentCount` (najviše komentara prvo), ili `title` (abecedno). (optional)
+    has_comments = True # bool | Ako je true, vraća samo stranice sa najmanje jednim komentarom. (optional)
 
     try:
-        api_response = api_instance.get_pages_public(tenant_id, cursor=cursor, limit=limit, q=q, sort_by=sort_by, has_comments=has_comments)
-        print("The response of PublicApi->get_pages_public:\n")
+        api_response = api_instance.get_pages_public(tenant_id, GetPagesPublicOptions(cursor=cursor, limit=limit, q=q, sort_by=sort_by, has_comments=has_comments))
+        print("Ispis odgovora PublicApi->get_pages_public:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PublicApi->get_pages_public: %s\n" % e)
+        print("Izuzetak prilikom poziva PublicApi->get_pages_public: %s\n" % e)
 [inline-code-end]

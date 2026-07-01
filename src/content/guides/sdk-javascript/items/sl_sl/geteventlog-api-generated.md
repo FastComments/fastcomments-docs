@@ -5,28 +5,30 @@ userIdWS
 
 ## Parametri
 
-| Name | Tip | Obvezno | Opis |
+| Ime | Tip | Zahtevano | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| urlId | string | Da |  |
-| userIdWS | string | Da |  |
-| startTime | number | Da |  |
-| endTime | number | Ne |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| userIdWS | string | Yes |  |
+| startTime | number | Yes |  |
+| endTime | number | No |  |
 
 ## Odgovor
 
-Vrne: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEventLogResponse.ts)
+Vrne: [`GetEventLogResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEventLogResponse1.ts)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer getEventLog'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getEventLog Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "f2b3d9e8-1c4b-4a7e-9f6d-2b8c3e1a4f5d";
-const urlId: string = "news/article/2026/06/18/fastcomments";
-const userIdWS: string = "ws-user-78b3ef";
-const startTime: number = Date.now() - 24 * 60 * 60 * 1000;
-const endTime: number = Date.now();
+(async () => {
+    const tenantId: string = "tenant_9876";
+    const urlId: string = "page_54321";
+    const userIdWS: string = "ws_user_1122";
+    const startTime: number = Date.now() - 7 * 24 * 60 * 60 * 1000; // one week ago
+    const endTime: number = Date.now();
 
-const responseWithoutEnd: GetEventLogResponse = await getEventLog(tenantId, urlId, userIdWS, startTime);
-const responseWithEnd: GetEventLogResponse = await getEventLog(tenantId, urlId, userIdWS, startTime, endTime);
+    const log: GetEventLogResponse1 = await getEventLog(tenantId, urlId, userIdWS, startTime, endTime);
+    const recentLog: GetEventLogResponse1 = await getEventLog(tenantId, urlId, userIdWS, startTime);
+})();
 [inline-code-end]

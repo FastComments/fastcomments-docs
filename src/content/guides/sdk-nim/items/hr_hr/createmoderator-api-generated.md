@@ -1,7 +1,7 @@
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
 | tenantId | string | Da |  |
 | createModeratorBody | CreateModeratorBody | Ne |  |
 
@@ -11,20 +11,11 @@ Vraća: [`Option[CreateModeratorResponse]`](https://github.com/FastComments/fast
 
 ## Primjer
 
-[inline-code-attrs-start title = 'createModerator Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer createModerator'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-var body: CreateModeratorBody
-body.username = "alice.moderator"
-body.displayName = "Alice Moderator"
-body.email = "alice@news-site.com"
-body.enabled = true
-body.roles = @["moderator"]
-body.notes = ""
-
-let (response, httpResponse) = client.createModerator(tenantId = "my-tenant-123", createModeratorBody = body)
-if response.isSome:
-  let created = response.get()
-  echo "Created moderator ID: ", created.id
+let (moderatorRes, httpResp) = client.createModerator(tenantId = "my-tenant-123", createModeratorBody = CreateModeratorBody())
+if moderatorRes.isSome:
+  let moderator = moderatorRes.get()
 [inline-code-end]
 
 ---

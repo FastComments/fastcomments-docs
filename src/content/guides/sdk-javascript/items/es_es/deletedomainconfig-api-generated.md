@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Nombre | Tipo | Requerido | Descripción |
+| Nombre | Tipo | Obligatorio | Descripción |
 |------|------|----------|-------------|
 | tenantId | string | Sí |  |
 | domain | string | Sí |  |
@@ -11,11 +11,15 @@ Devuelve: [`DeleteDomainConfigResponse`](https://github.com/FastComments/fastcom
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de deleteDomainConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo deleteDomainConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "org_5b2f9c3a";
-const domain: string = "comments.acme-corp.com";
-const result: DeleteDomainConfigResponse = await deleteDomainConfig(tenantId, domain);
+async function runExample() {
+  const tenantId: string = 'acme-corp';
+  const domain: string = 'blog.acme.com';
+  const response: DeleteDomainConfigResponse = await deleteDomainConfig(tenantId, domain);
+  console.log(response);
+}
+runExample();
 [inline-code-end]
 
 ---

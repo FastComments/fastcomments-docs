@@ -1,9 +1,9 @@
 ## Parâmetros
 
 | Nome | Tipo | Localização | Obrigatório | Descrição |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Sim |  |
-| skip | number | query | Não |  |
+|------|------|--------------|--------------|-----------|
+| tenantId | string | query | Yes |  |
+| skip | number | query | No |  |
 
 ## Resposta
 
@@ -11,26 +11,28 @@ Retorna: [`GetTenantUsersResponse`](https://github.com/FastComments/fastcomments
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getTenantUsers'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo getTenantUsers'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configurar autorização da chave de API: api_key
+// Configure API key authorization: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Descomente abaixo para configurar o prefixo (por exemplo Bearer) para a chave de API, se necessário
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Se você desejar usar um cliente HTTP personalizado, passe seu cliente que implemente `GuzzleHttp\ClientInterface`.
-    // Isto é opcional, `GuzzleHttp\Client` será usado como padrão.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $skip = 3.4; // float
+
 
 try {
     $result = $apiInstance->getTenantUsers($tenant_id, $skip);
@@ -39,5 +41,3 @@ try {
     echo 'Exception when calling DefaultApi->getTenantUsers: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

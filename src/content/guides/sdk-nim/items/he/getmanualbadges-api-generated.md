@@ -2,7 +2,8 @@
 
 | שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| sso | string | לא |  |
+| tenantId | string | כן |  |
+| sso | string = "" | לא |  |
 
 ## תגובה
 
@@ -10,16 +11,10 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getManualBadges'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה getManualBadges'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getManualBadges(sso = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9")
-if response.isSome:
-  let badges = response.get()
-  echo "Manual badges received:"
-  echo badges
-else:
-  echo "No manual badges returned."
-  echo httpResponse
+let (manualBadgesOpt, httpResponse) = client.getManualBadges(tenantId = "my-tenant-123", sso = "")
+if manualBadgesOpt.isSome:
+  let manualBadges = manualBadgesOpt.get()
+  echo manualBadges
 [inline-code-end]
-
----

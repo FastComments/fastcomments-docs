@@ -1,15 +1,17 @@
-Λίστα σελίδων για έναν tenant. Χρησιμοποιείται από τον desktop client του FChat για να συμπληρώσει τη λίστα δωματίων του. Απαιτεί το `enableFChat` να είναι true στην επιλυμένη προσαρμοσμένη ρύθμιση (custom config) για κάθε σελίδα. Οι σελίδες που απαιτούν SSO φιλτράρονται με βάση την πρόσβαση της ομάδας του αιτούντος χρήστη.
+List pages for a tenant. Used by the FChat desktop client to populate its room list.  
+Requires `enableFChat` to be true on the resolved custom config for each page.  
+Pages that require SSO are filtered against the requesting user's group access.
 
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
-| tenant_id | String | Ναι |  |
-| cursor | String | Όχι |  |
-| limit | i32 | Όχι |  |
-| q | String | Όχι |  |
-| sort_by | models::PagesSortBy | Όχι |  |
-| has_comments | bool | Όχι |  |
+| tenant_id | String | Yes |  |
+| cursor | String | No |  |
+| limit | i32 | No |  |
+| q | String | No |  |
+| sort_by | models::PagesSortBy | No |  |
+| has_comments | bool | No |  |
 
 ## Απόκριση
 
@@ -17,17 +19,20 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα get_pages_public'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_pages_public Παράδειγμα'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: GetPagesPublicParams = GetPagesPublicParams {
-    tenant_id: String::from("acme-corp-tenant"),
-    cursor: Some(String::from("cursor_eyJwZl9pZCI6IjEyMyJ9")),
-    limit: Some(50),
-    q: Some(String::from("tag:release status:published")),
-    sort_by: Some(models::PagesSortBy::CreatedAt),
-    has_comments: Some(true),
-};
-let response: GetPublicPagesResponse = get_pages_public(&configuration, params).await?;
+async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetPagesPublicParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        cursor: Some("page_20".to_string()),
+        limit: Some(50),
+        q: Some("news/article".to_string()),
+        sort_by: Some(models::PagesSortBy::CreatedDesc),
+        has_comments: Some(true),
+    };
+    let _response = get_pages_public(configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]
 
 ---

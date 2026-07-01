@@ -3,8 +3,7 @@
 | Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
-| meta | string | Нет |  |
-| skip | double | Нет |  |
+| options | const GetTenantsOptions& | Да |  |
 
 ## Ответ
 
@@ -14,14 +13,12 @@
 
 [inline-code-attrs-start title = 'Пример getTenants'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> meta(U("user@example.com"));
-boost::optional<double> skip(10.0);
-api->getTenants(U("my-tenant-123"), meta, skip)
-    .then([](std::shared_ptr<GetTenantsResponse> resp) {
-        auto out = resp ? resp : std::make_shared<GetTenantsResponse>();
-        if (resp) std::cout << "Fetched tenants successfully\n";
-        else std::cout << "No tenants returned, using default\n";
-    });
-[inline-code-end]
+GetTenantsOptions options;
+options.includeDeleted = boost::make_optional(false);
+options.searchTerm = boost::make_optional(utility::string_t(U("enterprise")));
 
----
+api->getTenants(utility::string_t(U("my-tenant-123")), options)
+    .then([](std::shared_ptr<GetTenantsResponse> response) {
+    })
+    .then([](pplx::task<void> t){ try{ t.get(); }catch(...){} });
+[inline-code-end]

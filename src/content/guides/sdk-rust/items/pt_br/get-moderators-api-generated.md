@@ -1,8 +1,7 @@
----
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|----------|-------------|
+|------|------|-------------|-----------|
 | tenant_id | String | Sim |  |
 | skip | f64 | Não |  |
 
@@ -12,15 +11,15 @@ Retorna: [`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de get_moderators'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo get_moderators'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_moderators(configuration: &configuration::Configuration) -> Result<GetModeratorsResponse, Error> {
-    let params: GetModeratorsParams = GetModeratorsParams {
+async fn example() -> Result<(), Error> {
+    let params = GetModeratorsParams {
         tenant_id: "acme-corp-tenant".to_string(),
         skip: Some(20.0),
     };
-    let response: GetModeratorsResponse = get_moderators(configuration, params).await?;
-    Ok(response)
+    let _response = get_moderators(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
 

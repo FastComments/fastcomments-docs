@@ -8,7 +8,7 @@
 
 ## レスポンス
 
-戻り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
+返却: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
 ## 例
 
@@ -18,21 +18,23 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api_key
+// APIキー認証を設定: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// 必要に応じて下のコメントを外し、APIキーのプレフィックス（例: Bearer）を設定
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // カスタムのHTTPクライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
-    // これはオプションです。デフォルトでは `GuzzleHttp\Client` が使用されます。
+    // カスタムHTTPクライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装したクライアントを渡してください。
+    // これはオプションで、デフォルトでは `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$id = 'id_example'; // string
-$send_email = 'send_email_example'; // string
+
+$tenant_id = 'tenant_id_example'; // 文字列
+$id = 'id_example'; // 文字列
+$send_email = 'send_email_example'; // 文字列
+
 
 try {
     $result = $apiInstance->deleteModerator($tenant_id, $id, $send_email);
@@ -41,3 +43,5 @@ try {
     echo 'Exception when calling DefaultApi->deleteModerator: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

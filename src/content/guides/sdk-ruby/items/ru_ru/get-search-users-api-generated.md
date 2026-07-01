@@ -1,9 +1,10 @@
 ## Параметры
 
-| Имя | Тип | Местоположение | Обязательно | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| value | string | query | Нет |  |
-| sso | string | query | Нет |  |
+| tenantId | string | запрос | Да |  |
+| value | string | запрос | Нет |  |
+| sso | string | запрос | Нет |  |
 
 ## Ответ
 
@@ -17,18 +18,17 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 opts = {
-  value: 'value_example', # Строка | 
-  sso: 'sso_example' # Строка | 
+  value: 'value_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.get_search_users(opts)
+  result = api_instance.get_search_users(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_search_users: #{e}"
 end
 [inline-code-end]
-
----

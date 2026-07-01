@@ -1,29 +1,29 @@
-Προσθέστε αυτή τη γραμμή στο Gemfile της εφαρμογής σας:
+Add this line to your application's Gemfile:
 
 ```ruby
 gem 'fastcomments'
 ```
 
-Και στη συνέχεια εκτελέστε:
+And then execute:
 
 ```bash
 bundle install
 ```
 
-Ή εγκαταστήστε το χειροκίνητα ως:
+Or install it yourself as:
 
 ```bash
 gem install fastcomments
 ```
 
-### Περιεχόμενα βιβλιοθήκης
+### Library Contents
 
-Αυτή η βιβλιοθήκη περιέχει τον αυτόματα δημιουργημένο API client και τα βοηθητικά εργαλεία SSO για να διευκολύνουν την εργασία με το API.
+Αυτή η βιβλιοθήκη περιέχει τον παραγόμενο πελάτη API και τα εργαλεία SSO για να διευκολύνουν τη χρήση του API.
 
-- [Τεκμηρίωση βιβλιοθήκης πελάτη API](https://github.com/FastComments/fastcomments-ruby/blob/master/client/README.md)
+- [API Client Library Docs](https://github.com/FastComments/fastcomments-ruby/blob/master/client/README.md)
 
-### Δημόσια και Προστατευμένα API
+### Public vs Secured APIs
 
-Για τον πελάτη API, υπάρχουν τρεις κλάσεις, `DefaultApi`, `PublicApi`, και `ModerationApi`. Το `DefaultApi` περιλαμβάνει μεθόδους που απαιτούν το API key σας, και το `PublicApi` περιλαμβάνει κλήσεις API που μπορούν να γίνουν απευθείας από ένα πρόγραμμα περιήγησης/κινητή συσκευή/κ.λπ. χωρίς έλεγχο ταυτότητας. Το `ModerationApi` περιλαμβάνει τις μεθόδους που τροφοδοτούν τον πίνακα ελέγχου των συντονιστών.
+Για τον πελάτη API, υπάρχουν τρεις κλάσεις, `DefaultApi`, `PublicApi` και `ModerationApi`. Η `DefaultApi` περιέχει μεθόδους που απαιτούν το κλειδί API σας, η `PublicApi` περιλαμβάνει κλήσεις API που μπορούν να γίνουν απευθείας από πρόγραμμα περιήγησης/συσκευή κινητής κ.λπ. χωρίς έλεγχο ταυτότητας. Η `ModerationApi` περιέχει τις μεθόδους που τροφοδοτούν τον πίνακα ελέγχου του συντονιστή.
 
-Το `ModerationApi` καλύπτει τη διαχείριση σχολίων (list, count, search, logs, export), ενέργειες μεσολάβησης (remove/restore, flag, set review/spam/approval status, votes, reopen/close thread), απαγορεύσεις (ban from a comment, undo, pre-ban summaries, ban status/preferences, banned-user counts), και διακριτικά & εμπιστοσύνη (award/remove badge, manual badges, get/set trust factor, user internal profile). Κάθε μέθοδος του `ModerationApi` δέχεται μια παράμετρο `sso` ώστε το αίτημα να μπορεί να γίνει εκ μέρους ενός συντονιστή που έχει πιστοποιηθεί μέσω SSO.
+Η `ModerationApi` προσφέρει ένα εκτενές σύνολο ζωντανών και γρήγορων API συντονισμού. Κάθε μέθοδος `ModerationApi` δέχεται ένα παράμετρο `sso` και μπορεί να πιστοποιηθεί μέσω SSO ή ενός cookie συνεδρίας FastComments.com.

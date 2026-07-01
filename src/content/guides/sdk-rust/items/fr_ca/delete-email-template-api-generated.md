@@ -1,7 +1,7 @@
 ## Paramètres
 
-| Nom | Type | Requis | Description |
-|------|------|----------|-------------|
+| Nom | Type | Obligatoire | Description |
+|------|------|-------------|-------------|
 | tenant_id | String | Oui |  |
 | id | String | Oui |  |
 
@@ -13,18 +13,12 @@ Renvoie: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/
 
 [inline-code-attrs-start title = 'Exemple de delete_email_template'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let version: Option<&str> = Some("2025");
-    let template_id: String = if let Some(ver) = version {
-        format!("welcome-email-{}", ver)
-    } else {
-        "welcome-email".to_owned()
+async fn example() -> Result<(), Error> {
+    let params = DeleteEmailTemplateParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "welcome-email".to_string(),
     };
-    let params: DeleteEmailTemplateParams = DeleteEmailTemplateParams {
-        tenant_id: "acme-corp-tenant".to_owned(),
-        id: template_id,
-    };
-    let _response: ApiEmptyResponse = delete_email_template(&configuration, params).await?;
+    let _ = delete_email_template(&config, params).await?;
     Ok(())
 }
 [inline-code-end]

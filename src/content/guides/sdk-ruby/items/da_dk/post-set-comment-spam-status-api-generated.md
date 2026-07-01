@@ -2,9 +2,11 @@
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Ja |  |
 | commentId | string | path | Ja |  |
 | spam | boolean | query | Nej |  |
 | permNotSpam | boolean | query | Nej |  |
+| broadcastId | string | query | Nej |  |
 | sso | string | query | Nej |  |
 
 ## Svar
@@ -19,16 +21,18 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 comment_id = 'comment_id_example' # String | 
 opts = {
   spam: true, # Boolean | 
   perm_not_spam: true, # Boolean | 
+  broadcast_id: 'broadcast_id_example', # String | 
   sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.post_set_comment_spam_status(comment_id, opts)
+  result = api_instance.post_set_comment_spam_status(tenant_id, comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_set_comment_spam_status: #{e}"

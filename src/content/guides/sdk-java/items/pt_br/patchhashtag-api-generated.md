@@ -1,9 +1,9 @@
 ## Parâmetros
 
 | Nome | Tipo | Localização | Obrigatório | Descrição |
-|------|------|----------|----------|-------------|
+|------|------|-------------|-------------|-----------|
+| tenantId | string | query | Sim |  |
 | tag | string | path | Sim |  |
-| tenantId | string | query | Não |  |
 
 ## Resposta
 
@@ -11,7 +11,7 @@ Retorna: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de patchHashTag'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'patchHashTag Exemplo'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importar classes:
 import com.fastcomments.invoker.ApiClient;
@@ -26,23 +26,23 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configurar autorização por api_key
+    // Configurar autorização de chave API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Descomente a linha abaixo para definir um prefixo para a chave da API, por exemplo "Token" (padrão: null)
+    // Descomente a linha a seguir para definir um prefixo para a chave API, por exemplo "Token" (padrão null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    String tag = "tag_example"; // String | 
     String tenantId = "tenantId_example"; // String | 
+    String tag = "tag_example"; // String | 
     UpdateHashTagBody updateHashTagBody = new UpdateHashTagBody(); // UpdateHashTagBody | 
     try {
-      UpdateHashTagResponse result = apiInstance.patchHashTag(tag)
-            .tenantId(tenantId)
+      UpdateHashTagResponse result = apiInstance.patchHashTag(tenantId, tag)
             .updateHashTagBody(updateHashTagBody)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
+      // Exceção ao chamar DefaultApi#patchHashTag
       System.err.println("Exception when calling DefaultApi#patchHashTag");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());

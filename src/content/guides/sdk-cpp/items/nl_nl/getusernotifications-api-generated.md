@@ -1,20 +1,10 @@
 ---
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
-|------|------|----------|-------------|
+| Naam | Type | Verplicht | Beschrijving |
+|------|------|-----------|--------------|
 | tenantId | string | Ja |  |
-| urlId | string | Nee |  |
-| pageSize | int32_t | Nee |  |
-| afterId | string | Nee |  |
-| includeContext | bool | Nee |  |
-| afterCreatedAt | int64_t | Nee |  |
-| unreadOnly | bool | Nee |  |
-| dmOnly | bool | Nee |  |
-| noDm | bool | Nee |  |
-| includeTranslations | bool | Nee |  |
-| includeTenantNotifications | bool | Nee |  |
-| sso | string | Nee |  |
+| options | const GetUserNotificationsOptions& | Ja |  |
 
 ## Respons
 
@@ -24,28 +14,15 @@ Retourneert: [`GetMyNotificationsResponse`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'getUserNotifications Voorbeeld'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-auto tenantId = U("my-tenant-123");
-api->getUserNotifications(
-    tenantId,
-    boost::optional<utility::string_t>(U("post-456")),
-    boost::optional<int32_t>(50),
-    boost::optional<utility::string_t>(U("notif-789")),
-    boost::optional<bool>(true),
-    boost::optional<int64_t>(1625097600000LL),
-    boost::optional<bool>(true),
-    boost::optional<bool>(false),
-    boost::optional<bool>(false),
-    boost::optional<bool>(true),
-    boost::optional<bool>(false),
-    boost::optional<utility::string_t>(U("user@example.com"))
-).then([](pplx::task<std::shared_ptr<GetMyNotificationsResponse>> t){
-    try {
-        auto resp = t.get();
-        if(!resp) resp = std::make_shared<GetMyNotificationsResponse>();
-        // gebruik resp, bijv. velden inspecteren
-    } catch(const std::exception &e) {
-    }
-});
+utility::string_t tenantId = utility::string_t("my-tenant-123");
+GetUserNotificationsOptions options;
+options.limit = boost::optional<int>(20);
+options.unreadOnly = boost::optional<bool>(true);
+api->getUserNotifications(tenantId, options)
+    .then([](pplx::task<std::shared_ptr<GetMyNotificationsResponse>> task){
+        auto resp = task.get();
+        auto notifications = std::make_shared<GetMyNotificationsResponse>(*resp);
+    });
 [inline-code-end]
 
 ---

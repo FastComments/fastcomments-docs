@@ -1,25 +1,23 @@
-## Параметри
+## Parametri
 
-| Name | Type | Required | Description |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| skip | float64 | Не |  |
+| tenantId | string | Da |  |
+| skip | float64 | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[GetTenantPackagesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_tenant_packages_response.nim)
+Vraća: [`Option[GetTenantPackagesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_tenant_packages_response.nim)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'getTenantPackages Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getTenantPackages'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTenantPackages(tenantId = "my-tenant-123", skip = 0.0)
-if response.isSome:
-  let packages = response.get()
-  echo "Received tenant packages:"
+let (maybeResp, httpResp) = client.getTenantPackages(tenantId = "my-tenant-123", skip = 0.0)
+if maybeResp.isSome:
+  let packages = maybeResp.get()
   echo packages
-else:
-  echo "No packages found for tenant 'my-tenant-123'"
+  echo httpResp.statusCode
 [inline-code-end]
 
 ---

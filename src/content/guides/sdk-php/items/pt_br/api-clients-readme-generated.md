@@ -1,8 +1,8 @@
 O SDK expõe três classes cliente de API:
 
-- **`DefaultApi`** — métodos autenticados por chave de API para uso no lado do servidor. Configure uma chave de API como mostrado em [Introdução](#getting-started-readme-generated).
-- **`PublicApi`** — métodos públicos que não requerem uma chave de API, seguros para serem chamados a partir de navegadores e aplicativos móveis.
-- **`ModerationApi`** — métodos para o painel de moderação: listagem, contagem, busca, registro e exportação de comentários; ações de moderação (remover/restaurar, sinalizar, definir status de revisão/spam/aprovação, votos, reabrir/fechar thread); banimentos (banir de comentar, desfazer, resumos pré-banimento, status de banimento e preferências, contagens de usuários banidos); e distintivos & confiança (atribuir/remover distintivo, distintivos manuais, obter/definir fator de confiança, perfil interno do usuário). Cada método de `ModerationApi` aceita um parâmetro `$sso` para autenticar o moderador atuante via SSO.
+- **`DefaultApi`** - Métodos autenticados com chave de API para uso no lado do servidor. Configure uma chave de API como mostrado em [Getting Started](#getting-started-readme-generated).
+- **`PublicApi`** - Métodos públicos que não requerem uma chave de API, seguros para chamar de navegadores e aplicativos móveis.
+- **`ModerationApi`** - Um conjunto extenso de APIs de moderação ao vivo e rápidas. Cada método `ModerationApi` aceita um parâmetro `$sso` e pode autenticar via SSO ou um cookie de sessão do FastComments.com.
 
 ### Usando PublicApi
 
@@ -10,7 +10,7 @@ O SDK expõe três classes cliente de API:
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Public methods do not require an API key.
+// Métodos públicos não requerem uma chave de API.
 $apiInstance = new FastComments\Client\Api\PublicApi(
     new GuzzleHttp\Client()
 );
@@ -34,10 +34,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new FastComments\Client\Api\ModerationApi(
     new GuzzleHttp\Client()
 );
-$sso = 'sso_example'; // string - payload SSO que autentica o moderador
+$sso = 'sso_example'; // string - payload SSO autenticando o moderador
 
 try {
-    $result = $apiInstance->getCount(null, null, null, null, null, $sso);
+    $result = $apiInstance->getCount([
+        'sso' => $sso,
+    ]);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getCount: ', $e->getMessage(), PHP_EOL;

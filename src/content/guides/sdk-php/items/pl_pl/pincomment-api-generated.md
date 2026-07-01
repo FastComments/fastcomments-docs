@@ -1,7 +1,7 @@
-## Parametry
+## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Name | Typ | Location | Wymagane | Opis |
+|------|-----|----------|----------|------|
 | tenantId | string | path | Tak |  |
 | commentId | string | path | Tak |  |
 | broadcastId | string | query | Tak |  |
@@ -21,14 +21,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Jeśli chcesz użyć niestandardowego klienta HTTP, przekaż klienta implementującego `GuzzleHttp\ClientInterface`.
-    // To jest opcjonalne, domyślnie zostanie użyty `GuzzleHttp\Client`.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $comment_id = 'comment_id_example'; // string
 $broadcast_id = 'broadcast_id_example'; // string
 $sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->pinComment($tenant_id, $comment_id, $broadcast_id, $sso);
@@ -37,5 +39,3 @@ try {
     echo 'Exception when calling PublicApi->pinComment: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

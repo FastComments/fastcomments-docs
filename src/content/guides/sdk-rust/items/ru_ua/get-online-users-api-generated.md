@@ -1,33 +1,31 @@
-Текущие онлайн-зрители страницы: пользователи, чья WebSocket-сессия прямо сейчас подписана на страницу.
-Возвращает anonCount + totalCount (подписчики в комнате, включая анонимных зрителей, которых мы не перечисляем).
+Currently-online viewers of a page: люди, чья websocket‑сессия в данный момент подписана на страницу.  
+Returns anonCount + totalCount (room-wide subscribers, including anon viewers we don't enumerate). → Возвращает anonCount + totalCount (подписчики всей комнаты, включая анонимных зрителей, которые мы не перечисляем).
 
-## Параметры
+## Parameters
 
-| Name | Type | Required | Description |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| url_id | String | Да |  |
-| after_name | String | Нет |  |
-| after_user_id | String | Нет |  |
+| tenant_id | String | Yes |  |
+| url_id | String | Yes |  |
+| after_name | String | No |  |
+| after_user_id | String | No |  |
 
-## Ответ
+## Response
 
 Возвращает: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_online_response.rs)
 
-## Пример
+## Example
 
 [inline-code-attrs-start title = 'Пример get_online_users'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_online_users() -> Result<PageUsersOnlineResponse, Error> {
-    let params: GetOnlineUsersParams = GetOnlineUsersParams {
+async fn example() -> Result<(), Error> {
+    let params = GetOnlineUsersParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        url_id: "news/world/article-2026".to_string(),
-        after_name: Some("jane.doe".to_string()),
-        after_user_id: Some("user_98765".to_string()),
+        url_id: "news/article".to_string(),
+        after_name: Some("john_doe".to_string()),
+        after_user_id: Some("user-123".to_string()),
     };
-    let response: PageUsersOnlineResponse = get_online_users(&configuration, params).await?;
-    Ok(response)
+    let _response: PageUsersOnlineResponse = get_online_users(&config, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

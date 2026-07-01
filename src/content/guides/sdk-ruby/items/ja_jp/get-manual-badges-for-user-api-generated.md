@@ -2,13 +2,14 @@
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| badgesUserId | string | クエリ | いいえ |  |
-| commentId | string | クエリ | いいえ |  |
-| sso | string | クエリ | いいえ |  |
+| tenantId | string | query | Yes |  |
+| badgesUserId | string | query | No |  |
+| commentId | string | query | No |  |
+| sso | string | query | No |  |
 
-## レスポンス
+## 応答
 
-返却値: [`GetUserManualBadgesResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_manual_badges_response.rb)
+戻り値: [`GetUserManualBadgesResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_manual_badges_response.rb)
 
 ## 例
 
@@ -18,15 +19,16 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # 文字列 | 
 opts = {
-  badges_user_id: 'badges_user_id_example', # String | 
-  comment_id: 'comment_id_example', # String | 
-  sso: 'sso_example' # String | 
+  badges_user_id: 'badges_user_id_example', # 文字列 | 
+  comment_id: 'comment_id_example', # 文字列 | 
+  sso: 'sso_example' # 文字列 | 
 }
 
 begin
   
-  result = api_instance.get_manual_badges_for_user(opts)
+  result = api_instance.get_manual_badges_for_user(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_manual_badges_for_user: #{e}"

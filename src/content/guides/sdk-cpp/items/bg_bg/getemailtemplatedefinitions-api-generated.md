@@ -1,8 +1,8 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
+| tenantId | string | Да |  |
 
 ## Отговор
 
@@ -12,16 +12,16 @@
 
 [inline-code-attrs-start title = 'Пример за getEmailTemplateDefinitions'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-boost::optional<utility::string_t> locale = boost::none;
-api->getEmailTemplateDefinitions(tenantId)
-.then([=](pplx::task<std::shared_ptr<GetEmailTemplateDefinitionsResponse>> task) {
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+api->getEmailTemplateDefinitions(tenantId).then([](pplx::task<std::shared_ptr<GetEmailTemplateDefinitionsResponse>> t) {
     try {
-        auto resp = task.get();
-        auto safeResp = resp ? resp : std::make_shared<GetEmailTemplateDefinitionsResponse>();
-        return safeResp;
-    } catch (const std::exception&) {
-        return std::make_shared<GetEmailTemplateDefinitionsResponse>();
+        auto resp = t.get();
+        boost::optional<utility::string_t> tmplName = resp ? resp->templateName : boost::none;
+        if (tmplName) {
+            std::cout << *tmplName << std::endl;
+        }
+    } catch (const std::exception& e) {
+        std::cerr << e.what() << std::endl;
     }
 });
 [inline-code-end]

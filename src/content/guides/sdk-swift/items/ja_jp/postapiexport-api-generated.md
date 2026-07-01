@@ -2,6 +2,7 @@
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | はい |  |
 | text-search | string | query | いいえ |  |
 | byIPFromComment | string | query | いいえ |  |
 | filters | string | query | いいえ |  |
@@ -11,23 +12,24 @@
 
 ## レスポンス
 
-戻り値: [`ModerationExportResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationExportResponse.swift)
+返却: [`ModerationExportResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationExportResponse.swift)
 
 ## 例
 
-[inline-code-attrs-start title = 'postApiExport の例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postApiExport 例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 以下のコードサンプルはまだベータ版です。問題がある場合は http://github.com/OpenAPITools/openapi-generator/issues/new で報告してください
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let textSearch = "textSearch_example" // String |  (任意)
-let byIPFromComment = "byIPFromComment_example" // String |  (任意)
-let filters = "filters_example" // String |  (任意)
-let searchFilters = "searchFilters_example" // String |  (任意)
-let sorts = "sorts_example" // String |  (任意)
-let sso = "sso_example" // String |  (任意)
+let tenantId = "tenantId_example" // String | 
+let textSearch = "textSearch_example" // String | (optional) // (オプション)
+let byIPFromComment = "byIPFromComment_example" // String | (optional) // (オプション)
+let filters = "filters_example" // String | (optional) // (オプション)
+let searchFilters = "searchFilters_example" // String | (optional) // (オプション)
+let sorts = "sorts_example" // String | (optional) // (オプション)
+let sso = "sso_example" // String | (optional) // (オプション)
 
-ModerationAPI.postApiExport(textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, sso: sso) { (response, error) in
+ModerationAPI.postApiExport(tenantId: tenantId, options: ModerationAPI.PostApiExportOptions(textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -38,5 +40,3 @@ ModerationAPI.postApiExport(textSearch: textSearch, byIPFromComment: byIPFromCom
     }
 }
 [inline-code-end]
-
----

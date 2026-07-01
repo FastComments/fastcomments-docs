@@ -1,12 +1,23 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`DeletePageAPIResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeletePageAPIResponse.ts)
+Vraća: [`DeletePageAPIResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeletePageAPIResponse.ts)
 
----
+## Primjer
+
+[inline-code-attrs-start title = 'deletePage Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+async function example() {
+    const tenantId: string = "acme-corp-001";
+    const pageId: string = "page-987654321";
+    const result: DeletePageAPIResponse = await deletePage(tenantId, pageId);
+    console.log(result);
+}
+example();
+[inline-code-end]

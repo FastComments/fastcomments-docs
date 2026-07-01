@@ -1,14 +1,11 @@
-### 공개 API 사용
+### 공용 API 사용
 
 ```swift
 import FastCommentsSwift
 
-// API 클라이언트 생성
-let publicApi = PublicAPI()
-
-// 페이지의 댓글 가져오기
+// 페이지에 대한 댓글 가져오기
 do {
-    let response = try await publicApi.getCommentsPublic(
+    let response = try await PublicAPI.getCommentsPublic(
         tenantId: "your-tenant-id",
         urlId: "page-url-id"
     )
@@ -27,15 +24,14 @@ do {
 ```swift
 import FastCommentsSwift
 
-// API 키로 구성 생성
-let defaultApi = DefaultAPI()
-defaultApi.apiKey = "your-api-key"
+// 공유 구성에 API 키를 설정합니다 (x-api-key 헤더로 전송)
+FastCommentsSwiftAPIConfiguration.shared.customHeaders["x-api-key"] = "your-api-key"
 
-// 인증된 API로 댓글 가져오기
+// 인증된 API를 사용하여 댓글 가져오기
 do {
-    let response = try await defaultApi.getComments(
+    let response = try await DefaultAPI.getComments(
         tenantId: "your-tenant-id",
-        urlId: "page-url-id"
+        options: .init(urlId: "page-url-id")
     )
 
     print("Total comments: \(response.count ?? 0)")
@@ -52,13 +48,15 @@ do {
 ```swift
 import FastCommentsSwift
 
-// 모더레이션 메서드는 담당 모더레이터의 `sso` 토큰으로 권한이 부여됩니다
-// (FastCommentsSSO로 생성하세요, 위의 SSO 섹션 참조).
+// 모더레이션 메서드는 행동 중인 모더레이터를 위한 `sso` 토큰으로 인증됩니다
+// (FastCommentsSSO로 생성, 위의 SSO 섹션을 참조하세요).
 do {
     let response = try await ModerationAPI.getApiComments(
-        page: 0,
-        count: 30,
-        sso: ssoToken
+        options: .init(
+            page: 0,
+            count: 30,
+            sso: ssoToken
+        )
     )
 
     print("Found \(response.comments.count) comments to moderate")
@@ -72,7 +70,7 @@ do {
 
 ### 인증을 위한 SSO 사용
 
-#### 보안 SSO (프로덕션에 권장)
+#### 보안 SSO (프로덕션 권장)
 
 ```swift
 import FastCommentsSwift
@@ -83,7 +81,7 @@ let apiKey = "your-api-key"
 let userData = SecureSSOUserData(
     id: "user-123",              // 사용자 ID
     email: "user@example.com",   // 이메일
-    username: "johndoe",         // 사용자 이름
+    username: "johndoe",         // 사용자명
     avatar: "https://example.com/avatar.jpg" // 아바타 URL
 )
 
@@ -93,7 +91,7 @@ do {
     let token = try sso.createToken()
 
     print("SSO Token: \(token ?? "")")
-    // 인증을 위해 이 토큰을 프런트엔드로 전달하세요
+    // 이 토큰을 프론트엔드에 전달하여 인증합니다
 } catch {
     print("Error creating SSO token: \(error)")
 }

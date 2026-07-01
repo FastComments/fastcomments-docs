@@ -2,7 +2,9 @@
 
 | שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | כן |  |
 | commentId | string | path | כן |  |
+| broadcastId | string | query | לא |  |
 | sso | string | query | לא |  |
 
 ## תגובה
@@ -11,7 +13,7 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-PostAdjustCommentVotes'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PostAdjustCommentVotes דוגמה'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,13 +25,15 @@ import (
 )
 
 func main() {
-	commentId := "commentId_example" // string | 
-	adjustCommentVotesParams := *openapiclient.NewAdjustCommentVotesParams(float64(123)) // AdjustCommentVotesParams | 
+	tenantId := "tenantId_example" // string |
+	commentId := "commentId_example" // string |
+	adjustCommentVotesParams := *openapiclient.NewAdjustCommentVotesParams(float64(123)) // AdjustCommentVotesParams |
+	broadcastId := "broadcastId_example" // string |  (אופציונלי)
 	sso := "sso_example" // string |  (אופציונלי)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostAdjustCommentVotes(context.Background(), commentId).AdjustCommentVotesParams(adjustCommentVotesParams).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostAdjustCommentVotes(context.Background(), commentId).TenantId(tenantId).AdjustCommentVotesParams(adjustCommentVotesParams).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostAdjustCommentVotes``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

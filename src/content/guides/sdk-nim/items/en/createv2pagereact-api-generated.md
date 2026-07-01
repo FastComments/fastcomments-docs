@@ -5,7 +5,7 @@
 | tenantId | string | Yes |  |
 | urlId | string | Yes |  |
 | id | string | No |  |
-| title | string | No |  |
+| title | string = "" | No |  |
 
 ## Response
 
@@ -15,15 +15,14 @@ Returns: [`Option[CreateV1PageReact]`](https://github.com/FastComments/fastcomme
 
 [inline-code-attrs-start title = 'createV2PageReact Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.createV2PageReact(
+let (pageResult, httpResponse) = client.createV2PageReact(
   tenantId = "my-tenant-123",
-  urlId = "news/2026/06/fastcomments-release",
-  id = "",
-  title = ""
+  urlId = "news/article-title",
+  id = "page-456",
+  title = "Breaking News",
 )
-if response.isSome:
-  let react = response.get()
-  echo "Created page react: ", $react
-else:
-  echo "No react returned, HTTP status: ", $httpResponse.statusCode
+
+if pageResult.isSome:
+  let page = pageResult.get()
+  # use `page` as needed
 [inline-code-end]

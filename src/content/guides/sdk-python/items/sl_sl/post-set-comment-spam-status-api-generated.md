@@ -1,11 +1,13 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Da |  |
-| spam | boolean | query | Ne |  |
-| permNotSpam | boolean | query | Ne |  |
-| sso | string | query | Ne |  |
+| Ime | Tip | Lokacija | Potrebno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| spam | boolean | query | No |  |
+| permNotSpam | boolean | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -16,28 +18,31 @@ Vrne: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/b
 [inline-code-attrs-start title = 'post_set_comment_spam_status Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import PostSetCommentSpamStatusOptions
 from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # Določanje gostitelja je neobvezno in privzeto je https://fastcomments.com
-# Oglejte si configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
+# Glejte configuration.py za seznam vseh podprtih parametrov konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Vstopite v kontekst z instanco API odjemalca
+# Vstopite v kontekst s primerek API odjemalca
 with client.ApiClient(configuration) as api_client:
-    # Ustvarite instanco razreda API
+    # Ustvarite primerek API razreda
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
-    spam = True # bool |  (neobvezno)
-    perm_not_spam = True # bool |  (neobvezno)
-    sso = 'sso_example' # str |  (neobvezno)
+    spam = True # bool |  (optional)
+    perm_not_spam = True # bool |  (optional)
+    broadcast_id = 'broadcast_id_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.post_set_comment_spam_status(comment_id, spam=spam, perm_not_spam=perm_not_spam, sso=sso)
+        api_response = api_instance.post_set_comment_spam_status(tenant_id, comment_id, PostSetCommentSpamStatusOptions(spam=spam, perm_not_spam=perm_not_spam, broadcast_id=broadcast_id, sso=sso))
         print("The response of ModerationApi->post_set_comment_spam_status:\n")
         pprint(api_response)
     except Exception as e:

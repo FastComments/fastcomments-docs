@@ -1,57 +1,54 @@
-## Параметри
+## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| isLive | boolean | query | Не |  |
-| doSpamCheck | boolean | query | Не |  |
-| sendEmails | boolean | query | Не |  |
-| populateNotifications | boolean | query | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
+| isLive | boolean | query | Ne |  |
+| doSpamCheck | boolean | query | Ne |  |
+| sendEmails | boolean | query | Ne |  |
+| populateNotifications | boolean | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_save_comment_response.py)
+Vraća: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_save_comment_response.py)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'save_comment Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'save_comment Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import SaveCommentOptions
 from client.models.api_save_comment_response import APISaveCommentResponse
 from client.models.create_comment_params import CreateCommentParams
 from client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://fastcomments.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
+# Definisanje hosta je opcionalno i podrazumevano je https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
+# Klijent mora da konfiguriše parametre za autentifikaciju i autorizaciju
+# u skladu sa politikom bezbednosti API servera.
+# Primeri za svaki metod autentifikacije su dati ispod, koristite primer koji
+# zadovoljava vaš slučaj upotrebe autentifikacije.
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: api_key
+# Konfigurišite autorizaciju API ključa: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Odkomentarišite donji kod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Enter a context with an instance of the API client
+# Uđite u kontekst sa instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # Kreirajte instancu API klase
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_comment_params = client.CreateCommentParams() # CreateCommentParams | 
-    is_live = True # bool |  (опционално)
-    do_spam_check = True # bool |  (опционално)
-    send_emails = True # bool |  (опционално)
-    populate_notifications = True # bool |  (опционално)
+    is_live = True # bool |  (optional)
+    do_spam_check = True # bool |  (optional)
+    send_emails = True # bool |  (optional)
+    populate_notifications = True # bool |  (optional)
 
     try:
-        api_response = api_instance.save_comment(tenant_id, create_comment_params, is_live=is_live, do_spam_check=do_spam_check, send_emails=send_emails, populate_notifications=populate_notifications)
+        api_response = api_instance.save_comment(tenant_id, create_comment_params, SaveCommentOptions(is_live=is_live, do_spam_check=do_spam_check, send_emails=send_emails, populate_notifications=populate_notifications))
         print("The response of DefaultApi->save_comment:\n")
         pprint(api_response)
     except Exception as e:

@@ -1,7 +1,7 @@
 ## Paramètres
 
 | Nom | Type | Obligatoire | Description |
-|------|------|----------|-------------|
+|------|------|-------------|-------------|
 | tenantId | string | Oui |  |
 | domain | string | Non |  |
 
@@ -11,12 +11,12 @@ Renvoie : [`Option[DeleteDomainConfigResponse]`](https://github.com/FastComments
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de deleteDomainConfig'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteDomainConfig Exemple'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteDomainConfig(tenantId = "my-tenant-123", domain = "news.example.com")
-if response.isSome:
-  let deleted = response.get()
-  echo "DeleteDomainConfig succeeded for tenant ", "my-tenant-123"
-else:
-  echo "DeleteDomainConfig failed. HTTP status: ", $httpResponse.status
+let (optResp, httpResp) = client.deleteDomainConfig(tenantId = "my-tenant-123", domain = "news.example.com")
+if optResp.isSome:
+  let resp = optResp.get()
+  echo resp
 [inline-code-end]
+
+---

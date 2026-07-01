@@ -1,9 +1,9 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Tak |  |
-| domainToUpdate | string | path | Tak |  |
+| tenantId | string | query | Yes |  |
+| domainToUpdate | string | path | Yes |  |
 
 ## Odpowiedź
 
@@ -11,7 +11,7 @@ Zwraca: [`PutDomainConfigResponse`](https://github.com/FastComments/fastcomments
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład putDomainConfig'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'przykład putDomainConfig'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -19,19 +19,21 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Skonfiguruj autoryzację klucza API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Odkomentuj poniższą linię, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli to potrzebne
+// Odkomentuj poniżej, aby ustawić prefiks (e.g. Bearer) dla klucza API, jeśli jest potrzebny
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Jeśli chcesz użyć niestandardowego klienta HTTP, przekaż klienta implementującego `GuzzleHttp\ClientInterface`.
-    // To opcjonalne — domyślnie zostanie użyty `GuzzleHttp\Client`.
+    // Jeśli chcesz używać własnego klienta HTTP, przekaż swój klient implementujący `GuzzleHttp\ClientInterface`.
+    // To jest opcjonalne, `GuzzleHttp\Client` zostanie użyty jako domyślny.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $domain_to_update = 'domain_to_update_example'; // string
 $update_domain_config_params = new \FastComments\Client\Model\UpdateDomainConfigParams(); // \FastComments\Client\Model\UpdateDomainConfigParams
+
 
 try {
     $result = $apiInstance->putDomainConfig($tenant_id, $domain_to_update, $update_domain_config_params);
@@ -40,3 +42,5 @@ try {
     echo 'Exception when calling DefaultApi->putDomainConfig: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

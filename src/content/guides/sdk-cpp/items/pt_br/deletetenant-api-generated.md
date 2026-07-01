@@ -1,7 +1,7 @@
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-----------|
+|------|------|-------------|-----------|
 | tenantId | string | Sim |  |
 | id | string | Sim |  |
 | sure | string | Não |  |
@@ -12,19 +12,15 @@ Retorna: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/b
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de deleteTenant'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo deleteTenant'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t id = U("owner@example.com");
-boost::optional<utility::string_t> sure = boost::optional<utility::string_t>(U("true"));
-auto placeholder = std::make_shared<APIEmptyResponse>();
-api->deleteTenant(tenantId, id, sure)
-    .then([](std::shared_ptr<APIEmptyResponse> resp) {
-        if (resp) {
-            std::cout << "Tenant deleted successfully\n";
-        } else {
-            std::cout << "No response from deleteTenant\n";
-        }
-    })
-    .wait();
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto userId = utility::conversions::to_string_t("user@example.com");
+boost::optional<utility::string_t> sure = utility::conversions::to_string_t("true");
+api->deleteTenant(tenantId, userId, sure)
+   .then([](pplx::task<std::shared_ptr<APIEmptyResponse>> t){
+       try{
+           auto resp = t.get();
+           auto result = std::make_shared<APIEmptyResponse>(*resp);
+       }catch(const std::exception&){})
 [inline-code-end]

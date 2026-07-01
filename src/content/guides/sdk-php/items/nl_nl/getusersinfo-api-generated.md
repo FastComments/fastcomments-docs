@@ -1,13 +1,13 @@
-Bulk gebruikersinformatie voor een tenant. Gegeven userIds, retourneer weergave-informatie van User / SSOUser.
-Wordt gebruikt door de comment-widget om gebruikers die zojuist verschenen via een presence-event te verrijken.
-Geen paginacontext: privacy wordt uniform gehandhaafd (privéprofielen zijn gemaskeerd).
+Bulk gebruikersinformatie voor een tenant. Gegeven userIds, retourneert weergave‑informatie van User / SSOUser.  
+Gebruikt door de commentaarwidget om gebruikers die net verschenen via een aanwezigheidsevenement te verrijken.  
+Geen paginacontext: privacy wordt uniform afgedwongen (privéprofielen worden gemaskeerd).
 
 ## Parameters
 
-| Name | Type | Location | Required | Description |
+| Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| ids | string | query | Yes | Komma-gescheiden userIds. |
+| tenantId | string | path | Ja |  |
+| ids | string | query | Ja | Door komma’s gescheiden userIds. |
 
 ## Response
 
@@ -23,12 +23,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Als u een aangepaste HTTP-client wilt gebruiken, geef uw client door die `GuzzleHttp\ClientInterface` implementeert.
-    // Dit is optioneel, `GuzzleHttp\Client` zal als standaard worden gebruikt.
+    // Als je een aangepaste HTTP-client wilt gebruiken, geef je client door die `GuzzleHttp\ClientInterface` implementeert.
+    // Dit is optioneel, `GuzzleHttp\Client` wordt standaard gebruikt.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$ids = 'ids_example'; // string | Komma-gescheiden userIds.
+$ids = 'ids_example'; // string | Door komma’s gescheiden userIds.
+
 
 try {
     $result = $apiInstance->getUsersInfo($tenant_id, $ids);

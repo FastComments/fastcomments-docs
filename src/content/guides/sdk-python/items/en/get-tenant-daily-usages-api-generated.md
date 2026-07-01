@@ -17,6 +17,7 @@ Returns: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastco
 [inline-code-attrs-start title = 'get_tenant_daily_usages Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetTenantDailyUsagesOptions
 from client.models.get_tenant_daily_usages_response import GetTenantDailyUsagesResponse
 from client.rest import ApiException
 from pprint import pprint
@@ -49,7 +50,7 @@ with client.ApiClient(configuration) as api_client:
     skip = 3.4 # float |  (optional)
 
     try:
-        api_response = api_instance.get_tenant_daily_usages(tenant_id, year_number=year_number, month_number=month_number, day_number=day_number, skip=skip)
+        api_response = api_instance.get_tenant_daily_usages(tenant_id, GetTenantDailyUsagesOptions(year_number=year_number, month_number=month_number, day_number=day_number, skip=skip))
         print("The response of DefaultApi->get_tenant_daily_usages:\n")
         pprint(api_response)
     except Exception as e:

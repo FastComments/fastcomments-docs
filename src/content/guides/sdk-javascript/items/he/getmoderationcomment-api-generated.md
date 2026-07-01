@@ -1,25 +1,42 @@
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | commentId | string | כן |  |
 | includeEmail | boolean | לא |  |
 | includeIP | boolean | לא |  |
+| tenantId | string | לא |  |
 | sso | string | לא |  |
 
 ## תגובה
 
-מחזיר: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPICommentResponse.ts)
+מחזיר: [`GetModerationCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModerationCommentResponse.ts)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getModerationComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getModerationComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const commentId: string = 'cmt_62b8f9a3e1d4';
-const includeEmail: boolean = true;
-const includeIP: boolean = false;
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Njc4In0.signature';
-const response: ModerationAPICommentResponse = await getModerationComment(commentId, includeEmail, includeIP, sso);
+async function fetchCommentDetails() {
+  // קבוצת פרמטרים מלאה
+  const commentId: string = "cmt_12345abc";
+  const includeEmail: boolean = true;
+  const includeIP: boolean = false;
+  const tenantId: string = "tenant_9876";
+  const sso: string = "sso_token_xyz";
+
+  const fullResult: GetModerationCommentResponse = await getModerationComment(
+    commentId,
+    includeEmail,
+    includeIP,
+    tenantId,
+    sso
+  );
+
+  // קריאה מינימלית עם הפרמטר הדרוש בלבד
+  const minimalResult: GetModerationCommentResponse = await getModerationComment("cmt_67890def");
+
+  // השתמש בתוצאות לפי הצורך...
+}
 [inline-code-end]
 
 ---

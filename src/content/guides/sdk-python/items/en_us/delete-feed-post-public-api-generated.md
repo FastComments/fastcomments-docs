@@ -16,6 +16,7 @@ Returns: [`DeleteFeedPostPublicResponse`](https://github.com/FastComments/fastco
 [inline-code-attrs-start title = 'delete_feed_post_public Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import DeleteFeedPostPublicOptions
 from client.models.delete_feed_post_public_response import DeleteFeedPostPublicResponse
 from client.rest import ApiException
 from pprint import pprint
@@ -37,7 +38,7 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.delete_feed_post_public(tenant_id, post_id, broadcast_id=broadcast_id, sso=sso)
+        api_response = api_instance.delete_feed_post_public(tenant_id, post_id, DeleteFeedPostPublicOptions(broadcast_id=broadcast_id, sso=sso))
         print("The response of PublicApi->delete_feed_post_public:\n")
         pprint(api_response)
     except Exception as e:

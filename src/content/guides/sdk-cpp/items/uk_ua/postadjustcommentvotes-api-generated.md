@@ -1,10 +1,11 @@
 ## Параметри
 
-| Назва | Тип | Обов'язковий | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
+| tenantId | string | Так |  |
 | commentId | string | Так |  |
 | adjustCommentVotesParams | AdjustCommentVotesParams | Так |  |
-| sso | string | Ні |  |
+| options | const PostAdjustCommentVotesOptions& | Так |  |
 
 ## Відповідь
 
@@ -12,24 +13,20 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад postAdjustCommentVotes'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postAdjustCommentVotes Приклад'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto commentId = utility::conversions::to_string_t("cmt-456789");
 AdjustCommentVotesParams params;
-params.userId = utility::string_t(U("user-742"));
-params.adjustment = 1;
-params.reason = utility::string_t(U("Marked as helpful"));
-
-boost::optional<utility::string_t> sso = utility::string_t(U("sso-token-98765"));
-
-api->postAdjustCommentVotes(utility::string_t(U("comment-5f3a9b2")), params, sso)
-.then([](pplx::task<std::shared_ptr<AdjustVotesResponse>> t) {
-    try {
+params.voteDelta = 1;
+params.userIdentifier = utility::conversions::to_string_t("user@example.com");
+params.reason = boost::optional<utility::string_t>(utility::conversions::to_string_t("Helpful"));
+PostAdjustCommentVotesOptions opts;
+opts.timeout = boost::optional<int>(30);
+api->postAdjustCommentVotes(tenantId, commentId, params, opts).then([](pplx::task<std::shared_ptr<AdjustVotesResponse>> t){
+    try{
         auto resp = t.get();
-        auto finalResp = resp ? resp : std::make_shared<AdjustVotesResponse>();
-        (void)finalResp;
-    } catch (const std::exception&) {
+    }catch(const std::exception& e){
     }
 });
 [inline-code-end]
-
----

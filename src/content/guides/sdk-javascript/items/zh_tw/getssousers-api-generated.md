@@ -7,16 +7,23 @@
 
 ## 回應
 
-回傳: [`GetSSOUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetSSOUsersResponse.ts)
+返回：[`GetSSOUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetSSOUsersResponse.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getSSOUsers 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_8f3b2a1c";
-const usersWithoutSkip: GetSSOUsersResponse = await getSSOUsers(tenantId);
-const skip: number = 50;
-const usersWithSkip: GetSSOUsersResponse = await getSSOUsers(tenantId, skip);
-[inline-code-end]
+async function runExample(): Promise<void> {
+    const tenantId: string = "tenant_12345";
 
----
+    // 呼叫時未提供可選的 `skip`
+    const firstPage: GetSSOUsersResponse = await getSSOUsers(tenantId);
+
+    // 呼叫時使用可選的 `skip`
+    const secondPage: GetSSOUsersResponse = await getSSOUsers(tenantId, 100);
+
+    console.log(firstPage, secondPage);
+}
+
+runExample();
+[inline-code-end]

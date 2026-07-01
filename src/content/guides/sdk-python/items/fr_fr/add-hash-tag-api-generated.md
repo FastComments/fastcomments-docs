@@ -1,12 +1,12 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Non |  |
+| tenantId | string | query | Yes |  |
 
 ## Réponse
 
-Renvoie: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_hash_tag_response.py)
+Retourne : [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_hash_tag_response.py)
 
 ## Exemple
 
@@ -18,7 +18,7 @@ from client.models.create_hash_tag_response import CreateHashTagResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Le paramétrage de l'hôte est optionnel et par défaut vaut https://fastcomments.com
+# La définition de l'hôte est facultative et par défaut à https://fastcomments.com
 # Voir configuration.py pour la liste de tous les paramètres de configuration pris en charge.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -26,24 +26,24 @@ configuration = client.Configuration(
 
 # Le client doit configurer les paramètres d'authentification et d'autorisation
 # conformément à la politique de sécurité du serveur API.
-# Des exemples pour chaque méthode d'authentification sont fournis ci‑dessous, utilisez celui
-# qui correspond à votre cas d'utilisation d'authentification.
+# Des exemples pour chaque méthode d'authentification sont fournis ci-dessous, utilisez l'exemple qui
+# répond à votre cas d'utilisation d'authentification.
 
 # Configurer l'autorisation par clé API : api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Décommentez ci‑dessous pour définir un préfixe (par ex. Bearer) pour la clé API, si nécessaire
+# Décommentez ci-dessous pour configurer le préfixe (ex. Bearer) pour la clé API, si nécessaire
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Entrez dans un contexte avec une instance du client API
 with client.ApiClient(configuration) as api_client:
     # Créez une instance de la classe API
     api_instance = client.DefaultApi(api_client)
-    tenant_id = 'tenant_id_example' # str |  (optionnel)
-    create_hash_tag_body = client.CreateHashTagBody() # CreateHashTagBody |  (optionnel)
+    tenant_id = 'tenant_id_example' # str | 
+    create_hash_tag_body = client.CreateHashTagBody() # CreateHashTagBody |  (facultatif)
 
     try:
-        api_response = api_instance.add_hash_tag(tenant_id=tenant_id, create_hash_tag_body=create_hash_tag_body)
+        api_response = api_instance.add_hash_tag(tenant_id, create_hash_tag_body)
         print("The response of DefaultApi->add_hash_tag:\n")
         pprint(api_response)
     except Exception as e:

@@ -2,7 +2,6 @@
 
 ```ruby
 require 'fastcomments'
-require 'fastcomments-client'
 
 # 建立簡易 SSO 令牌
 user = FastComments::SSO::SimpleSSOUserData.new(
@@ -16,14 +15,14 @@ token = sso.create_token
 
 puts "SSO Token: #{token}"
 
-# 使用 SSO 令牌來進行已驗證的 API 呼叫
+# 使用 SSO 令牌以進行已驗證的 API 呼叫
 config = FastCommentsClient::Configuration.new
 api_client = FastCommentsClient::ApiClient.new(config)
 public_api = FastCommentsClient::PublicApi.new(api_client)
 
 response = public_api.get_comments_public(
-  tenant_id: 'your-tenant-id',
-  url_id: 'your-page-url-id',
+  'your-tenant-id',
+  'your-page-url-id',
   sso: token
 )
 
@@ -34,7 +33,6 @@ puts "Status: #{response}"
 
 ```ruby
 require 'fastcomments'
-require 'fastcomments-client'
 
 # 建立安全 SSO 令牌
 user = FastComments::SSO::SecureSSOUserData.new(
@@ -50,14 +48,14 @@ token = sso.create_token
 
 puts "Secure SSO Token: #{token}"
 
-# 使用 SSO 令牌來進行已驗證的 API 呼叫
+# 使用 SSO 令牌以進行已驗證的 API 呼叫
 config = FastCommentsClient::Configuration.new
 api_client = FastCommentsClient::ApiClient.new(config)
 public_api = FastCommentsClient::PublicApi.new(api_client)
 
 response = public_api.get_comments_public(
-  tenant_id: 'your-tenant-id',
-  url_id: 'your-page-url-id',
+  'your-tenant-id',
+  'your-page-url-id',
   sso: token
 )
 

@@ -1,29 +1,31 @@
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| badgeId | string | Sì |  |
+| Nome | Tipo | Obbligatorio | Descrizione |
+|------|------|--------------|-------------|
+| badgeId | string | Yes |  |
 | userId | string | No |  |
 | commentId | string | No |  |
 | broadcastId | string | No |  |
+| tenantId | string | No |  |
 | sso | string | No |  |
 
 ## Risposta
 
-Restituisce: [`RemoveUserBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/RemoveUserBadgeResponse.ts)
+Restituisce: [`PutRemoveBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PutRemoveBadgeResponse.ts)
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di putRemoveBadge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio putRemoveBadge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const badgeId: string = 'badge_7392';
-  const userId: string = 'user_1284';
-  const commentId: string = 'cmt_5583';
-  const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyXzEyODQifQ.signature';
-  const response: RemoveUserBadgeResponse = await putRemoveBadge(badgeId, userId, commentId, undefined, sso);
-  console.log(response);
-})();
-[inline-code-end]
+const badgeId: string = "badge-12345";
+const userId: string = "user-9876";
+const commentId: string = "comment-5555";
+const broadcastId: string = "broadcast-001";
 
----
+const result: PutRemoveBadgeResponse = await putRemoveBadge(
+  badgeId,
+  userId,
+  commentId,
+  broadcastId
+);
+[inline-code-end]

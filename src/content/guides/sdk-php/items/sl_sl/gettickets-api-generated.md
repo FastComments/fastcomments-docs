@@ -1,12 +1,12 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| userId | string | query | Ne |  |
-| state | number | query | Ne |  |
-| skip | number | query | Ne |  |
-| limit | number | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| state | number | query | No |  |
+| skip | number | query | No |  |
+| limit | number | query | No |  |
 
 ## Odgovor
 
@@ -20,25 +20,29 @@ Vrne: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-php/bl
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Konfigurirajte avtentikacijo z API ključem: api_key
-// Odkomentirajte spodnje, da nastavite predpono (npr. Bearer) za API ključ, če je potrebno
+// Configure API key authorization: api_key
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Če želite uporabiti lasten HTTP odjemalec, posredujte odjemalec, ki implementira `GuzzleHttp\ClientInterface`.
-    // To je neobvezno, privzeto bo uporabljen `GuzzleHttp\Client`.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$user_id = 'user_id_example'; // string
-$state = 3.4; // float
-$skip = 3.4; // float
-$limit = 3.4; // float
+$options = [
+    'user_id' => 'user_id_example', // string
+    'state' => 3.4, // float
+    'skip' => 3.4, // float
+    'limit' => 3.4, // float
+];
+
 
 try {
-    $result = $apiInstance->getTickets($tenant_id, $user_id, $state, $skip, $limit);
+    $result = $apiInstance->getTickets($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getTickets: ', $e->getMessage(), PHP_EOL;

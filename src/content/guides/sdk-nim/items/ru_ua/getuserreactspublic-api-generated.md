@@ -3,8 +3,7 @@
 | Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
-| postIds | seq[string] | Нет |  |
-| sso | string | Нет |  |
+| options | GetUserReactsPublicOptions | Нет |  |
 
 ## Ответ
 
@@ -14,12 +13,17 @@
 
 [inline-code-attrs-start title = 'Пример getUserReactsPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
+let opts = GetUserReactsPublicOptions(
+  limit = 20,
+  offset = 0,
+  includeDeleted = false
+)
+
 let (response, httpResponse) = client.getUserReactsPublic(
   tenantId = "my-tenant-123",
-  postIds = @["news/article-2026", "blog/opinion-987"],
-  sso = ""
+  options = opts
 )
+
 if response.isSome:
-  let reacts = response.get()
-  echo "Received user reacts for tenant: ", "my-tenant-123"
+  let userReacts = response.get()
 [inline-code-end]

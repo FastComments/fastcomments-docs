@@ -1,47 +1,44 @@
-### 認証済み API の使用 (DefaultApi)
+### 認証されたAPIの使用 (DefaultApi)
 
-**重要:** 認証されたリクエストを行う前に、Configuration に API キーを設定する必要があります。設定していない場合、リクエストは 401 エラーで失敗します。
+**重要:** 認証されたリクエストを行う前に、Configuration に API キーを設定する必要があります。設定しないと、リクエストは 401 エラーで失敗します。
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
 from client.models import CreateAPISSOUserData
 
-# API クライアントを作成して設定
+# APIクライアントを作成し、設定します
 config = Configuration()
 config.host = "https://fastcomments.com/api"
 
-# 必須: API キーを設定してください（FastComments のダッシュボードから取得）
+# 必須: API キーを設定します（FastComments ダッシュボードから取得してください）
 config.api_key = {"ApiKeyAuth": "YOUR_API_KEY_HERE"}
 
-# 設定済みのクライアントで API インスタンスを作成
+# 設定したクライアントで API インスタンスを作成します
 api_client = ApiClient(configuration=config)
 api = DefaultApi(api_client)
 
-# これで認証済みの API 呼び出しが可能です
+# これで認証された API 呼び出しが可能です
 try:
-    # 例: SSO ユーザーを追加
+    # 例: SSO ユーザーを追加する
     user_data = CreateAPISSOUserData(
         id="user-123",
         email="user@example.com",
         display_name="John Doe"
     )
 
-    response = api.add_sso_user(
-        tenant_id="YOUR_TENANT_ID",
-        create_apisso_user_data=user_data
-    )
+    response = api.add_sso_user("YOUR_TENANT_ID", user_data)
     print(f"User created: {response}")
 
 except Exception as e:
     print(f"Error: {e}")
-    # よくあるエラー:
-    # - 401: API キーがないか無効です
+    # 一般的なエラー:
+    # - 401: API キーが欠如または無効です
     # - 400: リクエストの検証に失敗しました
 ```
 
-### パブリック API の使用 (PublicApi)
+### パブリックAPIの使用 (PublicApi)
 
-パブリックエンドポイントは認証不要です:
+パブリックエンドポイントは認証を必要としません：
 
 ```python
 from client import ApiClient, Configuration, PublicApi
@@ -53,10 +50,7 @@ api_client = ApiClient(configuration=config)
 public_api = PublicApi(api_client)
 
 try:
-    response = public_api.get_comments_public(
-        tenant_id="YOUR_TENANT_ID",
-        url_id="page-url-id"
-    )
+    response = public_api.get_comments_public("YOUR_TENANT_ID", "page-url-id")
     print(response)
 except Exception as e:
     print(f"Error: {e}")
@@ -64,10 +58,11 @@ except Exception as e:
 
 ### モデレーションダッシュボードの使用 (ModerationApi)
 
-The `ModerationApi` powers the moderator dashboard. Methods are called on behalf of a moderator by passing an `sso` token:
+`ModerationApi` はモデレーター用ダッシュボードを提供します。メソッドは `sso` トークンを渡すことでモデレーターとして呼び出されます：
 
 ```python
 from client import ApiClient, Configuration, ModerationApi
+from client.api.moderation_api import GetCountOptions
 
 config = Configuration()
 config.host = "https://fastcomments.com/api"
@@ -76,16 +71,16 @@ api_client = ApiClient(configuration=config)
 moderation_api = ModerationApi(api_client)
 
 try:
-    # モデレーション待ちのコメント数をカウントする
-    response = moderation_api.get_count(sso="SSO_TOKEN")
+    # モデレーション待ちのコメント数を取得
+    response = moderation_api.get_count(GetCountOptions(sso="SSO_TOKEN"))
     print(response)
 except Exception as e:
     print(f"Error: {e}")
 ```
 
-### SSO (Single Sign-On) の使用
+### SSO（シングルサインオン）の使用
 
-SDK には安全な SSO トークンを生成するユーティリティが含まれています:
+SDK には安全な SSO トークンを生成するユーティリティが含まれています：
 
 ```python
 from sso import FastCommentsSSO, SecureSSOUserData
@@ -107,11 +102,11 @@ sso = FastCommentsSSO.new_secure(
 # SSO トークンを生成
 sso_token = sso.create_token()
 
-# このトークンをフロントエンドで使用するか API 呼び出しに渡す
+# このトークンをフロントエンドで使用するか、API 呼び出しに渡します
 print(f"SSO Token: {sso_token}")
 ```
 
-簡易 SSO（安全性は低く、テスト用）:
+テスト用の簡易 SSO（セキュリティが低い）:
 
 ```python
 from sso import FastCommentsSSO, SimpleSSOUserData
@@ -125,10 +120,10 @@ sso = FastCommentsSSO.new_simple(user_data)
 sso_token = sso.create_token()
 ```
 
-### よくある問題
+### 共通の問題
 
-1. **401 "missing-api-key" error**: DefaultApi インスタンスを作成する前に `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` を設定していることを確認してください。
-2. **API クラスの間違い**: サーバー側の認証済みリクエストには `DefaultApi` を、クライアント側/パブリックなリクエストには `PublicApi` を、モデレーターダッシュボードのリクエストには `ModerationApi` を使用してください。
+1. **401 "missing-api-key" エラー**: DefaultApi インスタンスを作成する前に、`config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` を設定していることを確認してください。
+2. **間違った API クラス**: サーバー側の認証リクエストには `DefaultApi`、クライアント側/パブリックリクエストには `PublicApi`、モデレーター用ダッシュボードのリクエストには `ModerationApi` を使用してください。
 3. **インポートエラー**: 正しいモジュールからインポートしていることを確認してください:
    - API クライアント: `from client import ...`
    - SSO ユーティリティ: `from sso import ...`

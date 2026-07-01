@@ -1,13 +1,14 @@
 ## Parâmetros
 
 | Nome | Tipo | Localização | Obrigatório | Descrição |
-|------|------|----------|----------|-------------|
-| text-search | string | query | Não |  |
-| byIPFromComment | string | query | Não |  |
-| filter | string | query | Não |  |
-| searchFilters | string | query | Não |  |
-| demo | boolean | query | Não |  |
-| sso | string | query | Não |  |
+|------|------|-------------|-------------|-----------|
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filter | string | query | No |  |
+| searchFilters | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Resposta
 
@@ -15,19 +16,20 @@ Retorna: [`ModerationAPICountCommentsResponse`](https://github.com/FastComments/
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getCount'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo getCount'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Os exemplos de código abaixo ainda estão em beta. Para qualquer problema, por favor reporte via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Os seguintes exemplos de código ainda estão em beta. Para qualquer problema, reporte via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let textSearch = "textSearch_example" // String |  (opcional)
-let byIPFromComment = "byIPFromComment_example" // String |  (opcional)
-let filter = "filter_example" // String |  (opcional)
-let searchFilters = "searchFilters_example" // String |  (opcional)
-let demo = true // Bool |  (opcional)
-let sso = "sso_example" // String |  (opcional)
+let tenantId = "tenantId_example" // String | 
+let textSearch = "textSearch_example" // String |  (optional)
+let byIPFromComment = "byIPFromComment_example" // String |  (optional)
+let filter = "filter_example" // String |  (optional)
+let searchFilters = "searchFilters_example" // String |  (optional)
+let demo = true // Bool |  (optional)
+let sso = "sso_example" // String |  (optional)
 
-ModerationAPI.getCount(textSearch: textSearch, byIPFromComment: byIPFromComment, filter: filter, searchFilters: searchFilters, demo: demo, sso: sso) { (response, error) in
+ModerationAPI.getCount(tenantId: tenantId, options: ModerationAPI.GetCountOptions(textSearch: textSearch, byIPFromComment: byIPFromComment, filter: filter, searchFilters: searchFilters, demo: demo, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

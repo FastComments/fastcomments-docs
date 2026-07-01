@@ -1,11 +1,13 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Да |  |
-| spam | boolean | query | Нет |  |
-| permNotSpam | boolean | query | Нет |  |
-| sso | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| spam | boolean | query | No |  |
+| permNotSpam | boolean | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Ответ
 
@@ -13,7 +15,7 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример postSetCommentSpamStatus'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postSetCommentSpamStatus Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Импорт классов:
 import com.fastcomments.invoker.ApiClient;
@@ -28,14 +30,17 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     Boolean spam = true; // Boolean | 
     Boolean permNotSpam = true; // Boolean | 
+    String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      APIEmptyResponse result = apiInstance.postSetCommentSpamStatus(commentId)
+      APIEmptyResponse result = apiInstance.postSetCommentSpamStatus(tenantId, commentId)
             .spam(spam)
             .permNotSpam(permNotSpam)
+            .broadcastId(broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -49,5 +54,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

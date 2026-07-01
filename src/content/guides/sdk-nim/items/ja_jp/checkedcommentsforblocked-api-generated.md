@@ -1,30 +1,28 @@
----
 ## パラメータ
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
 | tenantId | string | はい |  |
 | commentIds | string | いいえ |  |
-| sso | string | いいえ |  |
+| sso | string = "" | いいえ |  |
 
-## レスポンス
+## 応答
 
-返却: [`Option[CheckBlockedCommentsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_check_blocked_comments_response.nim)
+戻り値: [`Option[CheckBlockedCommentsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_check_blocked_comments_response.nim)
 
 ## 例
 
 [inline-code-attrs-start title = 'checkedCommentsForBlocked の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.checkedCommentsForBlocked(
+let (maybeResponse, httpResponse) = client.checkedCommentsForBlocked(
   tenantId = "my-tenant-123",
-  commentIds = "",
+  commentIds = "cmt-1,cmt-2",
   sso = ""
 )
-if response.isSome:
-  let blockedResp = response.get()
-  echo "Received blocked comments response: ", blockedResp
-else:
-  echo "No response body; HTTP status: ", $httpResponse.status
+
+if maybeResponse.isSome:
+  let response = maybeResponse.get()
+  discard response
 [inline-code-end]
 
 ---

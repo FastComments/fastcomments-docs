@@ -4,8 +4,8 @@ urlId
 
 ## 参数
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| 名称 | 类型 | 必填 | 描述 |
+|------|------|------|------|
 | tenantId | string | 是 |  |
 | urlId | string | 是 |  |
 | page | number | 否 |  |
@@ -37,43 +37,58 @@ urlId
 
 ## 响应
 
-返回: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsResponseWithPresencePublicComment.ts)
+返回：[`GetCommentsPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsPublicResponse.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'getCommentsPublic 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const response: GetCommentsResponseWithPresencePublicComment = await getCommentsPublic(
-    'news-tenant-42',
-    'article-2026-06-19-abc123',
-    1,
+async function fetchComments() {
+  const tenantId: string = 'acme-corp';
+  const urlId: string = 'blog/post-789';
+  const page: number = 1;
+  const direction: SortDirections = SortDirections.Desc;
+  const limit: number = 25;
+  const includeConfig: boolean = true;
+  const locale: string = 'en-GB';
+  const modules: string = 'reactions,attachments';
+  const isCrawler: boolean = false;
+  const includeNotificationCount: boolean = true;
+  const asTree: boolean = true;
+  const maxTreeDepth: number = 4;
+  const searchText: string = 'TypeScript';
+  const hashTags: string[] = ['typescript', 'api'];
+  const response: GetCommentsPublicResponse = await getCommentsPublic(
+    tenantId,
+    urlId,
+    page,
+    direction,
     undefined,
-    'sso_eyJhbGciOiJIUzI1Ni',
-    0,
-    0,
-    25,
-    5,
-    true,
     undefined,
-    true,
-    false,
-    true,
-    'en-US',
-    'reactions,moderation',
-    false,
-    true,
-    true,
-    3,
-    false,
     undefined,
-    'climate change',
-    ['environment', 'policy'],
-    'user-789',
+    limit,
+    undefined,
+    undefined,
+    undefined,
+    includeConfig,
+    undefined,
+    undefined,
+    locale,
+    modules,
+    isCrawler,
+    includeNotificationCount,
+    asTree,
+    maxTreeDepth,
+    undefined,
+    undefined,
+    searchText,
+    hashTags,
+    undefined,
     undefined,
     undefined,
     undefined
   );
-  console.log(response);
-})();
+}
 [inline-code-end]
+
+---

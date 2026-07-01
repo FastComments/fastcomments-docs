@@ -1,23 +1,23 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Vraća: [`DeleteQuestionConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteQuestionConfigResponse.ts)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример deleteQuestionConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteQuestionConfig Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_4f2b3c';
-const id: string = 'qcfg_9a8b7c';
-const metadataNote: string | undefined = undefined; // опционални метаподаци (нису обавезни за функцију)
-const result: APIEmptyResponse = await deleteQuestionConfig(tenantId, id);
-metadataNote;
+async function runDeletion(): Promise<void> {
+  const tenantId: string = "tenant_8f5a2c9d";
+  const configId: string = "questionConfig_4b7e1f";
+  const deleteResult: DeleteQuestionConfigResponse = await deleteQuestionConfig(tenantId, configId);
+  console.log(deleteResult);
+}
+void runDeletion();
 [inline-code-end]
-
----

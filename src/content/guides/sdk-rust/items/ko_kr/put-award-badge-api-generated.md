@@ -1,12 +1,13 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
+| tenant_id | String | 예 |  |
 | badge_id | String | 예 |  |
-| user_id | String | 아니요 |  |
-| comment_id | String | 아니요 |  |
-| broadcast_id | String | 아니요 |  |
-| sso | String | 아니요 |  |
+| user_id | String | 아니오 |  |
+| comment_id | String | 아니오 |  |
+| broadcast_id | String | 아니오 |  |
+| sso | String | 아니오 |  |
 
 ## 응답
 
@@ -16,16 +17,17 @@
 
 [inline-code-attrs-start title = 'put_award_badge 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn award_badge_example() -> Result<AwardUserBadgeResponse, Error> {
-    let params: PutAwardBadgeParams = PutAwardBadgeParams {
-        badge_id: "community-champion".to_string(),
-        user_id: Some("user-4821".to_string()),
-        comment_id: Some("news/article/2026-06-18-comment-91".to_string()),
+async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = PutAwardBadgeParams {
+        tenant_id: "acme-corp".to_string(),
+        badge_id: "top-contributor".to_string(),
+        user_id: Some("user-42".to_string()),
+        comment_id: Some("comment-99".to_string()),
         broadcast_id: None,
-        sso: Some("acme-corp-sso-token-abc123".to_string()),
+        sso: Some("sso-abc123".to_string()),
     };
-    let response: AwardUserBadgeResponse = put_award_badge(&configuration, params).await?;
-    Ok(response)
+    let _response = put_award_badge(configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
 

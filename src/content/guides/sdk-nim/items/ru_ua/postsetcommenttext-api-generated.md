@@ -1,10 +1,11 @@
 ## Параметры
 
-| Name | Type | Required | Description |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
-| commentId | string | Да |  |
-| setCommentTextParams | SetCommentTextParams | Нет |  |
-| sso | string | Нет |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| setCommentTextParams | SetCommentTextParams | No |  |
+| options | PostSetCommentTextOptions | No |  |
 
 ## Ответ
 
@@ -12,15 +13,15 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример использования postSetCommentText'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример postSetCommentText'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postSetCommentText(commentId = "comment-4821",
-  setCommentTextParams = SetCommentTextParams(text = "Updated comment to clarify the main point and fix a typo."),
-  sso = "sso-user-8f3b9c")
+let (responseOpt, httpResponse) = client.postSetCommentText(
+  tenantId = "my-tenant-123",
+  commentId = "comment-987654",
+  setCommentTextParams = SetCommentTextParams(),
+  options = PostSetCommentTextOptions()
+)
 
-if response.isSome:
-  let setCommentResp = response.get()
-  echo "Received SetCommentTextResponse"
+if responseOpt.isSome:
+  let updatedComment = responseOpt.get()
 [inline-code-end]
-
----

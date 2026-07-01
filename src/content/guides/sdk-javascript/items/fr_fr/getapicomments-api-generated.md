@@ -1,34 +1,40 @@
-## Paramètres
+## Parameters
 
-| Nom | Type | Requis | Description |
-|------|------|----------|-------------|
-| page | number | Non |  |
-| count | number | Non |  |
-| textSearch | string | Non |  |
-| byIPFromComment | string | Non |  |
-| filters | string | Non |  |
-| searchFilters | string | Non |  |
-| sorts | string | Non |  |
-| demo | boolean | Non |  |
-| sso | string | Non |  |
+| Nom | Type | Obligatoire | Description |
+|------|------|--------------|-------------|
+| page | number | No |  |
+| count | number | No |  |
+| textSearch | string | No |  |
+| byIPFromComment | string | No |  |
+| filters | string | No |  |
+| searchFilters | string | No |  |
+| sorts | string | No |  |
+| demo | boolean | No |  |
+| tenantId | string | No |  |
+| sso | string | No |  |
 
-## Réponse
+## Response
 
-Renvoie : [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPIGetCommentsResponse.ts)
+Renvoie : [`GetApiCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetApiCommentsResponse.ts)
 
-## Exemple
+## Example
 
-[inline-code-attrs-start title = 'Exemple de getApiComments'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getApiComments'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const page: number = 2;
-const count: number = 25;
-const textSearch: string = 'comments failing to load after posting';
-const filters: string = 'status:pending,moderation:required';
-const sorts: string = 'createdAt:desc';
-const demo: boolean = false;
-const sso: string = 'sso-usr-7f3b2a';
+async function loadComments() {
+  const fullResult: GetApiCommentsResponse = await getApiComments(
+    2,                     // page
+    25,                    // nombre
+    "feedback",           // rechercheTexte
+    "192.168.1.100",      // parIPDepuisCommentaire
+    "approved",           // filtres
+    "hasReplies",         // filtresDeRecherche
+    "dateDesc",           // tri
+    false,                // démo
+    "tenant-abc123",      // identifiantLocataire
+    "sso-token-xyz"       // sso
+  );
 
-const response: ModerationAPIGetCommentsResponse = await getApiComments(page, count, textSearch, undefined, filters, undefined, sorts, demo, sso);
+  const minimalResult: GetApiCommentsResponse = await getApiComments(undefined, 5);
+}
 [inline-code-end]
-
----

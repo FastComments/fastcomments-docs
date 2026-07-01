@@ -1,15 +1,16 @@
-## Parametreler
+## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | commentId | string | query | No |  |
 | sso | string | query | No |  |
 
-## Yanıt
+## Response
 
-Döndürür: [`GetUserInternalProfileResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_internal_profile_response.go)
+Returns: [`GetUserInternalProfileResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_internal_profile_response.go)
 
-## Örnek
+## Example
 
 [inline-code-attrs-start title = 'GetUserInternalProfile Örneği'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -23,17 +24,18 @@ import (
 )
 
 func main() {
-	commentId := "commentId_example" // string |  (isteğe bağlı)
-	sso := "sso_example" // string |  (isteğe bağlı)
+	tenantId := "tenantId_example" // string | 
+	commentId := "commentId_example" // string | (opsiyonel)
+	sso := "sso_example" // string | (opsiyonel)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetUserInternalProfile(context.Background()).CommentId(commentId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetUserInternalProfile(context.Background()).TenantId(tenantId).CommentId(commentId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetUserInternalProfile``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `GetUserInternalProfile`'den gelen yanıt: GetUserInternalProfileResponse
+	// `GetUserInternalProfile` yanıtı: GetUserInternalProfileResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetUserInternalProfile`: %v\n", resp)
 }
 [inline-code-end]

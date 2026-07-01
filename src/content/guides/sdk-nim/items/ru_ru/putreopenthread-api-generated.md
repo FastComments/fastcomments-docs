@@ -2,8 +2,9 @@
 
 | Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
+| tenantId | string | Да |  |
 | urlId | string | Да |  |
-| sso | string | Нет |  |
+| sso | string = "" | Нет |  |
 
 ## Ответ
 
@@ -11,14 +12,17 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример putReopenThread'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putReopenThread Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.putReopenThread(urlId = "news/2026-election-analysis", sso = "")
-if response.isSome:
-  let apiResp = response.get()
-  echo "Reopen succeeded, response: ", apiResp
-else:
-  echo "Reopen failed, HTTP status: ", httpResponse.status
+let (apiRespOpt, httpResp) = client.putReopenThread(
+  tenantId = "my-tenant-123",
+  urlId = "news/article-title",
+  sso = ""
+)
+
+if apiRespOpt.isSome:
+  let emptyResp = apiRespOpt.get()
+  discard
 [inline-code-end]
 
 ---

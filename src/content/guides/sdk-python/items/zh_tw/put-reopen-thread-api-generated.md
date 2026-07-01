@@ -1,13 +1,14 @@
 ## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| urlId | string | query | 是 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## 回應
 
-回傳: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
+返回：[`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## 範例
 
@@ -18,24 +19,27 @@ from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# 定義主機為選用，預設為 https://fastcomments.com
-# 有關所有支援之設定參數列表，請參閱 configuration.py。
+# 定義主機是可選的，預設為 https://fastcomments.com
+# 請參閱 configuration.py 以取得所有支援的配置參數列表。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# 使用 API 客戶端實例開啟一個上下文
+# 以 API 客戶端實例進入上下文
 with client.ApiClient(configuration) as api_client:
     # 建立 API 類別的實例
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
-    sso = 'sso_example' # str |  (選用)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.put_reopen_thread(url_id, sso=sso)
+        api_response = api_instance.put_reopen_thread(tenant_id, url_id, sso=sso)
         print("The response of ModerationApi->put_reopen_thread:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling ModerationApi->put_reopen_thread: %s\n" % e)
 [inline-code-end]
+
+---

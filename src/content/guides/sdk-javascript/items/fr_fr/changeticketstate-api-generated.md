@@ -1,25 +1,36 @@
 ## Paramètres
 
-| Nom | Type | Requis | Description |
-|------|------|----------|-------------|
-| tenantId | string | Oui |  |
-| userId | string | Oui |  |
-| id | string | Oui |  |
-| changeTicketStateBody | ChangeTicketStateBody | Oui |  |
+| Nom | Type | Obligatoire | Description |
+|------|------|-------------|-------------|
+| tenantId | string | Yes |  |
+| userId | string | Yes |  |
+| id | string | Yes |  |
+| changeTicketStateBody | ChangeTicketStateBody | Yes |  |
 
 ## Réponse
 
-Renvoie : [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ChangeTicketStateResponse.ts)
+Renvoie : [`ChangeTicketStateResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ChangeTicketStateResponse1.ts)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de changeTicketState'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'changeTicketState Exemple'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_01';
-const userId: string = 'moderator_421';
-const id: string = 'ticket_8421';
-const changeTicketStateBody: ChangeTicketStateBody = { state: 'closed', reason: 'Resolved after user follow-up', notifyUsers: true } as ChangeTicketStateBody;
-const result: ChangeTicketStateResponse = await changeTicketState(tenantId, userId, id, changeTicketStateBody);
+const tenantId: string = "acme-corp";
+const userId: string = "user-97123";
+const ticketId: string = "ticket-45001";
+
+const changeTicketStateBody: ChangeTicketStateBody = {
+  state: "closed",
+  // champ facultatif dans le corps
+  comment: "Issue resolved after code fix"
+};
+
+const response: ChangeTicketStateResponse1 = await changeTicketState(
+  tenantId,
+  userId,
+  ticketId,
+  changeTicketStateBody
+);
 [inline-code-end]
 
 ---

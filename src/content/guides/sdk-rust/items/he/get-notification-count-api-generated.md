@@ -1,13 +1,12 @@
----
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
-| tenant_id | String | כן |  |
-| user_id | String | לא |  |
-| url_id | String | לא |  |
-| from_comment_id | String | לא |  |
-| viewed | bool | לא |  |
+| tenant_id | String | Yes |  |
+| user_id | String | No |  |
+| url_id | String | No |  |
+| from_comment_id | String | No |  |
+| viewed | bool | No |  |
 
 ## תגובה
 
@@ -15,16 +14,17 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה של get_notification_count'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל‑get_notification_count'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: GetNotificationCountParams = GetNotificationCountParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    user_id: Some("user-123".to_string()),
-    url_id: Some("news/article/2026/06/19".to_string()),
-    from_comment_id: Some("cmt-98765".to_string()),
-    viewed: Some(false),
-};
-let notification_count: GetNotificationCountResponse = get_notification_count(configuration, params).await?;
+async fn example() -> Result<(), Error> {
+    let params = GetNotificationCountParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        user_id: Some("john.doe".to_string()),
+        url_id: Some("blog/post-123".to_string()),
+        from_comment_id: Some("comment789".to_string()),
+        viewed: Some(true),
+    };
+    let _response = get_notification_count(&configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]
-
----

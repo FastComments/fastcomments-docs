@@ -1,28 +1,38 @@
----
 ## Paramètres
 
-| Nom | Type | Requis | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
-| tenantId | string | Oui |  |
-| search | string | Oui |  |
-| locale | string | Non |  |
-| rating | string | Non |  |
-| page | number | Non |  |
+| tenantId | string | Yes |  |
+| search | string | Yes |  |
+| locale | string | No |  |
+| rating | string | No |  |
+| page | number | No |  |
 
 ## Réponse
 
-Renvoie : [`GetGifsSearchResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetGifsSearchResponse.ts)
+Retourne : [`GetGifsSearchResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetGifsSearchResponse.ts)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getGifsSearch'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getGifsSearch'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-42';
-const search: string = 'golden hour sunset';
-const locale: string = 'en-US';
-const rating: string = 'pg';
-const page: number = 1;
-const result: GetGifsSearchResponse = await getGifsSearch(tenantId, search, locale, rating, page);
-[inline-code-end]
+async function demo() {
+  const tenantId: string = "tenant_9f8b7c";
+  const search: string = "funny cats";
+  const locale: string = "en-US";
+  const rating: string = "pg";
+  const page: number = 1;
 
----
+  const result: GetGifsSearchResponse = await getGifsSearch(
+    tenantId,
+    search,
+    locale,
+    rating,
+    page
+  );
+
+  console.log(result);
+}
+
+demo();
+[inline-code-end]

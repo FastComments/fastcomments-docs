@@ -1,33 +1,24 @@
 ## Paramètres
 
-| Name | Type | Required | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
-| tenantId | string | Oui |  |
-| commentIds | string | Oui |  |
-| sso | string | Non |  |
+| tenantId | string | Yes |  |
+| commentIds | string | Yes |  |
+| sso | string | No |  |
 
 ## Réponse
 
-Retourne: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CheckBlockedCommentsResponse.h)
+Retourne : [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CheckBlockedCommentsResponse.h)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de checkedCommentsForBlocked'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple checkedCommentsForBlocked'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
-utility::string_t commentIds = utility::conversions::to_string_t("cmt-456,cmt-789");
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(utility::conversions::to_string_t("user@example.com"));
+auto tenantId = U("my-tenant-123");
+auto commentIds = U("cmt-001,cmt-002");
+boost::optional<utility::string_t> sso = U("user@example.com");
 
-api->checkedCommentsForBlocked(tenantId, commentIds, sso)
-    .then([](pplx::task<std::shared_ptr<CheckBlockedCommentsResponse>> t) {
-        try {
-            auto resp = t.get();
-            auto result = resp ? resp : std::make_shared<CheckBlockedCommentsResponse>();
-            (void)result;
-        } catch (const std::exception& e) {
-            (void)e;
-        }
-    });
+api->checkedCommentsForBlocked(tenantId, commentIds, sso).then([](std::shared_ptr<CheckBlockedCommentsResponse> resp){
+    (void)resp;
+});
 [inline-code-end]
-
----

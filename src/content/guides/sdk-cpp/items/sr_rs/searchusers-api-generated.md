@@ -1,13 +1,10 @@
 ## Параметри
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|------|
 | tenantId | string | Да |  |
 | urlId | string | Да |  |
-| usernameStartsWith | string | Не |  |
-| mentionGroupIds | vector<string | Не |  |
-| sso | string | Не |  |
-| searchSection | string | Не |  |
+| options | const SearchUsersOptions& | Да |  |
 
 ## Одговор
 
@@ -18,22 +15,14 @@
 [inline-code-attrs-start title = 'searchUsers Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-utility::string_t urlId = U("/articles/2026/optimizing-cpp");
-boost::optional<utility::string_t> usernameStartsWith(U("alice"));
-std::vector<boost::optional<utility::string_t>> mentionGroupIds{
-    boost::optional<utility::string_t>(U("editors")),
-    boost::optional<utility::string_t>(U("reviewers"))
-};
-boost::optional<utility::string_t> sso(U("sso-jwt-42"));
-boost::optional<utility::string_t> searchSection(U("comments"));
-
-api->searchUsers(tenantId, urlId, usernameStartsWith, mentionGroupIds, sso, searchSection)
-.then([](pplx::task<std::shared_ptr<SearchUsersResult>> task){
-    try {
-        auto res = task.get();
-        auto finalRes = res ? res : std::make_shared<SearchUsersResult>();
-        (void)finalRes;
-    } catch (const std::exception&) {
-    }
+utility::string_t urlId = U("article-456");
+SearchUsersOptions options;
+options.query = U("john.doe@example.com");
+options.page = boost::optional<int>(1);
+options.pageSize = boost::optional<int>(20);
+api->searchUsers(tenantId, urlId, options).then([](pplx::task<std::shared_ptr<SearchUsersResult>> task){
+    try{
+        auto result = task.get();
+    }catch(const std::exception&){}
 });
 [inline-code-end]

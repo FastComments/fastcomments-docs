@@ -1,9 +1,9 @@
 ## Parametre
 
-| Name | Type | Required | Description |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| domain | string | Ja |  |
+| tenantId | string | Yes |  |
+| domain | string | Yes |  |
 
 ## Svar
 
@@ -14,18 +14,19 @@ Returnerer: [`GetDomainConfigResponse`](https://github.com/FastComments/fastcomm
 [inline-code-attrs-start title = 'getDomainConfig Eksempel'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-boost::optional<utility::string_t> domainOpt = U("app.example.com");
-if (domainOpt) {
-    api->getDomainConfig(tenantId, *domainOpt)
-    .then([](pplx::task<std::shared_ptr<GetDomainConfigResponse>> t) {
-        try {
-            auto resp = t.get();
-            auto cfgCopy = std::make_shared<GetDomainConfigResponse>(*resp);
-            (void)cfgCopy;
-        } catch (const std::exception&) {
-        }
-    });
-}
-[inline-code-end]
+utility::string_t domain = U("myblog.example.com");
 
----
+api->getDomainConfig(tenantId, domain)
+    .then([](std::shared_ptr<GetDomainConfigResponse> response) {
+        if (!response) return;
+        boost::optional<bool> moderationEnabled = response->moderationEnabled;
+        boost::optional<std::string> theme = response->theme;
+        if (moderationEnabled && *moderationEnabled) {
+            // håndter aktiveret moderation
+        }
+        if (theme) {
+            // brug tema værdi
+        }
+    })
+    .wait();
+[inline-code-end]

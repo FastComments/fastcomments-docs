@@ -1,16 +1,15 @@
-Obecnie online widzowie strony: osoby, których sesja websocket jest obecnie zasubskrybowana do tej strony.
-Zwraca anonCount + totalCount (subskrybenci w całym pokoju, w tym anonimowi widzowie, których nie wymieniamy).
+Obecni oglądający stronę: użytkownicy, których sesja websocket jest obecnie subskrybowana do tej strony.  
+Zwraca anonCount + totalCount (subskrybenci całego pokoju, w tym anonimowi oglądający, których nie wymieniamy).
 
-## Parametry
+## Parameters
 
 | Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|-------------|
-| tenantId | string | Tak |  |
-| urlId | string | Tak |  |
-| afterName | string | Nie |  |
-| afterUserId | string | Nie |  |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| options | GetOnlineUsersOptions | No |  |
 
-## Odpowiedź
+## Response
 
 Zwraca: [`Option[PageUsersOnlineResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_online_response.nim)
 
@@ -18,13 +17,9 @@ Zwraca: [`Option[PageUsersOnlineResponse]`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'Przykład getOnlineUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getOnlineUsers(tenantId = "my-tenant-123", urlId = "news/politics/top-story", afterName = "", afterUserId = "")
-if response.isSome:
-  let page = response.get()
-  echo "Received online users page:"
-  echo page
-else:
-  echo "No online users returned. HTTP status: ", httpResponse.statusCode
+let opts = GetOnlineUsersOptions()
+let (onlineUsersOpt, httpResp) = client.getOnlineUsers(tenantId = "my-tenant-123", urlId = "news/article-title", options = opts)
+if onlineUsersOpt.isSome:
+  let onlineUsers = onlineUsersOpt.get()
+  echo onlineUsers
 [inline-code-end]
-
----

@@ -2,8 +2,8 @@
 
 | שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| domain | string | כן |  |
+| tenantId | string | Yes |  |
+| domain | string | Yes |  |
 
 ## תגובה
 
@@ -13,9 +13,13 @@
 
 [inline-code-attrs-start title = 'דוגמה של deleteDomainConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "org_5b2f9c3a";
-const domain: string = "comments.acme-corp.com";
-const result: DeleteDomainConfigResponse = await deleteDomainConfig(tenantId, domain);
+async function runExample() {
+  const tenantId: string = 'acme-corp';
+  const domain: string = 'blog.acme.com';
+  const response: DeleteDomainConfigResponse = await deleteDomainConfig(tenantId, domain);
+  console.log(response);
+}
+runExample();
 [inline-code-end]
 
 ---

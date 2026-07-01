@@ -1,8 +1,9 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| sso | string | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -17,25 +18,24 @@ from client.models.get_tenant_manual_badges_response import GetTenantManualBadge
 from client.rest import ApiException
 from pprint import pprint
 
-# Določanje gostitelja je neobvezno in privzeto uporablja https://fastcomments.com
+# Definiranje gostitelja je neobvezno in privzeto nastavljeno na https://fastcomments.com
 # Oglejte si configuration.py za seznam vseh podprtih parametrov konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Vstopite v kontekst z instanco API odjemalca
+# Vstopite v kontekst z instanco odjemalca API
 with client.ApiClient(configuration) as api_client:
-    # Ustvarite instanco API razreda
+    # Ustvarite instanco razreda API
     api_instance = client.ModerationApi(api_client)
-    sso = 'sso_example' # str |  (opcijsko)
+    tenant_id = 'tenant_id_example' # str | 
+    sso = 'sso_example' # str |  (neobvezno)
 
     try:
-        api_response = api_instance.get_manual_badges(sso=sso)
+        api_response = api_instance.get_manual_badges(tenant_id, sso=sso)
         print("The response of ModerationApi->get_manual_badges:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling ModerationApi->get_manual_badges: %s\n" % e)
 [inline-code-end]
-
----

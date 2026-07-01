@@ -2,12 +2,9 @@
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
-| tenantId | string | Ναι |  |
-| createFeedPostParams | CreateFeedPostParams | Όχι |  |
-| broadcastId | string | Όχι |  |
-| isLive | bool | Όχι |  |
-| doSpamCheck | bool | Όχι |  |
-| skipDupCheck | bool | Όχι |  |
+| tenantId | string | Yes |  |
+| createFeedPostParams | CreateFeedPostParams | No |  |
+| options | CreateFeedPostOptions | No |  |
 
 ## Απάντηση
 
@@ -15,28 +12,14 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα createFeedPost'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createFeedPost Παράδειγμα'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let postParams = CreateFeedPostParams(
-  title = "Major Acquisition by TechCorp",
-  content = "TechCorp has acquired SoftWorks in a deal valued at $1.2B, creating a new market leader.",
-  url = "news/tech/major-acquisition",
-  tags = @["business", "technology"],
-  authorId = "journalist-321"
-)
-
-let (response, httpResponse) = client.createFeedPost(
+let (respOpt, httpResp) = client.createFeedPost(
   tenantId = "my-tenant-123",
-  createFeedPostParams = postParams,
-  broadcastId = "",
-  isLive = false,
-  doSpamCheck = false,
-  skipDupCheck = false
+  createFeedPostParams = CreateFeedPostParams(),
+  options = CreateFeedPostOptions()
 )
 
-if response.isSome:
-  let created = response.get()
-  discard created
+if respOpt.isSome:
+  let feedPost = respOpt.get()
 [inline-code-end]
-
----

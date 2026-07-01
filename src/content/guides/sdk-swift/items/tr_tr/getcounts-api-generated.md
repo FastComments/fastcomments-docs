@@ -1,7 +1,8 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Gerekiyor mu | Açıklama |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Evet |  |
 | sso | string | query | Hayır |  |
 
 ## Yanıt
@@ -12,12 +13,13 @@ Döndürür: [`GetBannedUsersCountResponse`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'getCounts Örneği'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Aşağıdaki kod örnekleri hâlâ beta aşamasındadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new üzerinden bildirin
+// Aşağıdaki kod örnekleri hâlâ beta. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new adresine bildirin
 import FastCommentsSwift
 
-let sso = "sso_example" // String |  (isteğe bağlı)
+let tenantId = "tenantId_example" // String | 
+let sso = "sso_example" // String |  (opsiyonel)
 
-ModerationAPI.getCounts(sso: sso) { (response, error) in
+ModerationAPI.getCounts(tenantId: tenantId, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return

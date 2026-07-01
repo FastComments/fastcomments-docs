@@ -12,33 +12,27 @@
 
 ## Risposta
 
-Restituisce: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPendingWebhookEventCountResponse.ts)
+Restituisce: [`GetPendingWebhookEventCountResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPendingWebhookEventCountResponse1.ts)
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di getPendingWebhookEventCount'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio getPendingWebhookEventCount'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
-  const tenantId: string = 'd5c7e8b4-3a1f-4b2e-9f6c-12ab34cd56ef';
-  const commentId: string = 'cmt_000842';
-  const externalId: string = 'post-77f4';
-  const eventType: string = 'comment.updated';
-  const typeParam: string = 'delivery';
-  const domain: string = 'myblog.example.net';
-  const attemptCountGT: number = 2;
+  const tenantId: string = "tenant_001";
 
-  const result: GetPendingWebhookEventCountResponse = await getPendingWebhookEventCount(
+  const responseAll: GetPendingWebhookEventCountResponse1 = await getPendingWebhookEventCount(
     tenantId,
-    commentId,
-    externalId,
-    eventType,
-    typeParam,
-    domain,
-    attemptCountGT
+    "comment_456",
+    "ext_789",
+    "comment.updated",
+    "webhook",
+    "mydomain.com",
+    3
   );
 
-  console.log(result);
+  const responseMinimal: GetPendingWebhookEventCountResponse1 = await getPendingWebhookEventCount(tenantId);
+
+  console.log(responseAll, responseMinimal);
 })();
 [inline-code-end]
-
----

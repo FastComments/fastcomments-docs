@@ -1,11 +1,11 @@
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
+| Ime | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | id | string | Ne |  |
 | updateAPIUserSubscriptionData | UpdateAPIUserSubscriptionData | Ne |  |
-| userId | string | Ne |  |
+| userId | string = "" | Ne |  |
 
 ## Odgovor
 
@@ -13,21 +13,23 @@ Vraća: [`Option[UpdateSubscriptionAPIResponse]`](https://github.com/FastComment
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer za updateSubscription'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateSubscription Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateSubscription(
-  tenantId = "my-tenant-123",
-  id = "sub-456",
-  updateAPIUserSubscriptionData = UpdateAPIUserSubscriptionData(
-    subscribed = true,
-    channels = @["email", "push"]
-  ),
-  userId = "user-789"
+let subscriptionData = UpdateAPIUserSubscriptionData(
+  planId = "premium-plan",
+  isActive = true,
+  expiresAt = "2025-01-01",
 )
 
-if response.isSome:
-  let updated = response.get()
-  echo "Subscription updated:", updated
-else:
-  echo "Update failed, HTTP response:", httpResponse
+let (responseOpt, httpResponse) = client.updateSubscription(
+  tenantId = "my-tenant-123",
+  id = "sub-456",
+  updateAPIUserSubscriptionData = subscriptionData,
+  userId = "user-789",
+)
+
+if responseOpt.isSome:
+  let subscriptionResult = responseOpt.get()
 [inline-code-end]
+
+---

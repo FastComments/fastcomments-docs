@@ -1,7 +1,8 @@
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Da |  |
 | text-search | string | query | Ne |  |
 | byIPFromComment | string | query | Ne |  |
 | filter | string | query | Ne |  |
@@ -15,9 +16,10 @@ Vraća: [`ModerationAPICountCommentsResponse`](https://github.com/FastComments/f
 
 ## Primer
 
-[inline-code-attrs-start title = 'get_count Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer get_count'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetCountOptions
 from client.models.moderation_api_count_comments_response import ModerationAPICountCommentsResponse
 from client.rest import ApiException
 from pprint import pprint
@@ -29,21 +31,22 @@ configuration = client.Configuration(
 )
 
 
-# Uđite u kontekst sa instancom API klijenta
+# Unesite kontekst sa instancom API klijenta
 with client.ApiClient(configuration) as api_client:
     # Kreirajte instancu API klase
     api_instance = client.ModerationApi(api_client)
-    text_search = 'text_search_example' # str |  (opciono)
-    by_ip_from_comment = 'by_ip_from_comment_example' # str |  (opciono)
-    filter = 'filter_example' # str |  (opciono)
-    search_filters = 'search_filters_example' # str |  (opciono)
-    demo = True # bool |  (opciono)
-    sso = 'sso_example' # str |  (opciono)
+    tenant_id = 'tenant_id_example' # str | 
+    text_search = 'text_search_example' # str |  (optional)
+    by_ip_from_comment = 'by_ip_from_comment_example' # str |  (optional)
+    filter = 'filter_example' # str |  (optional)
+    search_filters = 'search_filters_example' # str |  (optional)
+    demo = True # bool |  (optional)
+    sno = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_count(text_search=text_search, by_ip_from_comment=by_ip_from_comment, filter=filter, search_filters=search_filters, demo=demo, sso=sso)
-        print("The response of ModerationApi->get_count:\n")
+        api_response = api_instance.get_count(tenant_id, GetCountOptions(text_search=text_search, by_ip_from_comment=by_ip_from_comment, filter=filter, search_filters=search_filters, demo=demo, sso=sso))
+        print("Odgovor ModerationApi->get_count:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ModerationApi->get_count: %s\n" % e)
+        print("Izuzetak prilikom poziva ModerationApi->get_count: %s\n" % e)
 [inline-code-end]

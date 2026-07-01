@@ -1,11 +1,12 @@
 ## Parametre
 
-| Navn | Type | Location | Påkrævet | Beskrivelse |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Ja |  |
-| sso | string | query | Nej |  |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
+|------|------|-----------|----------|-------------|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| sso | string | query | No |  |
 
-## Svar
+## Respons
 
 Returnerer: [`ModerationAPIGetLogsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/moderation_api_get_logs_response.py)
 
@@ -18,26 +19,25 @@ from client.models.moderation_api_get_logs_response import ModerationAPIGetLogsR
 from client.rest import ApiException
 from pprint import pprint
 
-# Det er valgfrit at angive host, og standard er https://fastcomments.com
+# Definerer værten er valgfri og standard til https://fastcomments.com
 # Se configuration.py for en liste over alle understøttede konfigurationsparametre.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Gå ind i en kontekst med en instans af API-klienten
+# Indtast en kontekst med en instans af API-klienten
 with client.ApiClient(configuration) as api_client:
     # Opret en instans af API-klassen
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     sso = 'sso_example' # str |  (valgfri)
 
     try:
-        api_response = api_instance.get_logs(comment_id, sso=sso)
+        api_response = api_instance.get_logs(tenant_id, comment_id, sso=sso)
         print("The response of ModerationApi->get_logs:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling ModerationApi->get_logs: %s\n" % e)
 [inline-code-end]
-
----

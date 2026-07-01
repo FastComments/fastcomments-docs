@@ -1,25 +1,40 @@
 ## Parametry
 
-| Nazwa | Typ | Wymagane | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| commentId | string | Tak |  |
-| includeEmail | boolean | Nie |  |
-| includeIP | boolean | Nie |  |
-| sso | string | Nie |  |
+| commentId | string | Yes |  |
+| includeEmail | boolean | No |  |
+| includeIP | boolean | No |  |
+| tenantId | string | No |  |
+| sso | string | No |  |
 
 ## Odpowiedź
 
-Zwraca: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPICommentResponse.ts)
+Zwraca: [`GetModerationCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModerationCommentResponse.ts)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład getModerationComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const commentId: string = 'cmt_62b8f9a3e1d4';
-const includeEmail: boolean = true;
-const includeIP: boolean = false;
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Njc4In0.signature';
-const response: ModerationAPICommentResponse = await getModerationComment(commentId, includeEmail, includeIP, sso);
-[inline-code-end]
+async function fetchCommentDetails() {
+  // Pełny zestaw parametrów
+  const commentId: string = "cmt_12345abc";
+  const includeEmail: boolean = true;
+  const includeIP: boolean = false;
+  const tenantId: string = "tenant_9876";
+  const sso: string = "sso_token_xyz";
 
----
+  const fullResult: GetModerationCommentResponse = await getModerationComment(
+    commentId,
+    includeEmail,
+    includeIP,
+    tenantId,
+    sso
+  );
+
+  // Minimalne wywołanie używające tylko wymaganego argumentu
+  const minimalResult: GetModerationCommentResponse = await getModerationComment("cmt_67890def");
+
+  // Użyj wyników w razie potrzeby...
+}
+[inline-code-end]

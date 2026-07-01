@@ -3,18 +3,28 @@
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
 | urlId | string | はい |  |
+| tenantId | string | いいえ |  |
 | sso | string | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+返却: [`PutReopenThreadResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PutReopenThreadResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'putReopenThread の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const reopenResultWithSso: APIEmptyResponse = await putReopenThread("th_3c9b2a7f", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyM30.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c");
-const reopenResultNoSso: APIEmptyResponse = await putReopenThread("th_7a4e5c1d");
+async function exampleUsage() {
+  const urlId: string = "thread-9f8b7c6a";
+  const tenantId: string = "tenant-001";
+  const sso: string = "sso-3f9d2e1a";
+
+  const resultAll: PutReopenThreadResponse = await putReopenThread(urlId, tenantId, sso);
+  console.log(resultAll);
+
+  const resultMinimal: PutReopenThreadResponse = await putReopenThread(urlId);
+  console.log(resultMinimal);
+}
 [inline-code-end]
 
 ---

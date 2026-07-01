@@ -30,10 +30,12 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $user_id = 'user_id_example'; // string
 $id = 'id_example'; // string
 $change_ticket_state_body = new \FastComments\Client\Model\ChangeTicketStateBody(); // \FastComments\Client\Model\ChangeTicketStateBody
+
 
 try {
     $result = $apiInstance->changeTicketState($tenant_id, $user_id, $id, $change_ticket_state_body);

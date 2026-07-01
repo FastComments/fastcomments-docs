@@ -1,26 +1,24 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Захтевано | Опис |
-|------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| skip | f64 | Не |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenant_id | String | Yes |  |
+| skip | f64 | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetQuestionConfigsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_question_configs_response.rs)
+Vraća: [`GetQuestionConfigsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_question_configs_response.rs)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'get_question_configs пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_question_configs Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_question_configs() -> Result<GetQuestionConfigsResponse, Error> {
-    let params: GetQuestionConfigsParams = GetQuestionConfigsParams {
+async fn example() -> Result<(), Error> {
+    let params = GetQuestionConfigsParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        skip: Some(20.0),
+        skip: Some(10.0),
     };
-    let response: GetQuestionConfigsResponse = get_question_configs(&configuration, params).await?;
-    Ok(response)
+    let _response: GetQuestionConfigsResponse = get_question_configs(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

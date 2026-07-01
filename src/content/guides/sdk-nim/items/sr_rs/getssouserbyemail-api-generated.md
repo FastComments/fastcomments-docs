@@ -1,24 +1,20 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| email | string | Не |  |
+| tenantId | string | Yes |  |
+| email | string | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[GetSSOUserByEmailAPIResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_sso_user_by_email_api_response.nim)
+Vraća: [`Option[GetSSOUserByEmailAPIResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_sso_user_by_email_api_response.nim)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'getSSOUserByEmail Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getSSOUserByEmail'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSSOUserByEmail(tenantId = "my-tenant-123", email = "alice@newsco.com")
-if response.isSome:
-  let ssoUser = response.get()
-  echo "SSO user found: ", ssoUser.email
-else:
-  echo "No SSO user found. HTTP status: ", httpResponse.status
+let (optResp, httpResp) = client.getSSOUserByEmail(tenantId = "my-tenant-123", email = "john.doe@example.com")
+if optResp.isSome:
+  let user = optResp.get()
+  discard user
 [inline-code-end]
-
----

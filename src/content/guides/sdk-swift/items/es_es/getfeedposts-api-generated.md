@@ -6,7 +6,7 @@ afterId
 
 | Nombre | Tipo | Ubicación | Obligatorio | Descripción |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Sí |  |
+| tenantId | string | query | Yes |  |
 | afterId | string | query | No |  |
 | limit | integer | query | No |  |
 | tags | array | query | No |  |
@@ -17,17 +17,17 @@ Devuelve: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de getFeedPosts'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo getFeedPosts'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Los siguientes ejemplos de código aún están en beta. Para cualquier problema, repórtelo vía http://github.com/OpenAPITools/openapi-generator/issues/new
+// Los siguientes ejemplos de código están todavía en beta. Para cualquier problema, por favor informe a http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let afterId = "afterId_example" // String |  (opcional)
-let limit = 987 // Int |  (opcional)
-let tags = ["inner_example"] // [String] |  (opcional)
+let afterId = "afterId_example" // String |  (optional)
+let limit = 987 // Int |  (optional)
+let tags = ["inner_example"] // [String] |  (optional)
 
-DefaultAPI.getFeedPosts(tenantId: tenantId, afterId: afterId, limit: limit, tags: tags) { (response, error) in
+DefaultAPI.getFeedPosts(tenantId: tenantId, options: DefaultAPI.GetFeedPostsOptions(afterId: afterId, limit: limit, tags: tags)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -38,3 +38,5 @@ DefaultAPI.getFeedPosts(tenantId: tenantId, afterId: afterId, limit: limit, tags
     }
 }
 [inline-code-end]
+
+---

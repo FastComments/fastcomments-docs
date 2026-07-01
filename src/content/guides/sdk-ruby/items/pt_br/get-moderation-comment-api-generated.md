@@ -1,11 +1,12 @@
 ## Parâmetros
 
-| Nome | Tipo | Location | Obrigatório | Descrição |
-|------|------|----------|------------|-----------|
-| commentId | string | path | Sim |  |
-| includeEmail | boolean | query | Não |  |
-| includeIP | boolean | query | Não |  |
-| sso | string | query | Não |  |
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| includeEmail | boolean | query | No |  |
+| includeIP | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Resposta
 
@@ -13,12 +14,13 @@ Retorna: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastco
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de get_moderation_comment'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo get_moderation_comment'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 comment_id = 'comment_id_example' # String | 
 opts = {
   include_email: true, # Boolean | 
@@ -28,7 +30,7 @@ opts = {
 
 begin
   
-  result = api_instance.get_moderation_comment(comment_id, opts)
+  result = api_instance.get_moderation_comment(tenant_id, comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_moderation_comment: #{e}"

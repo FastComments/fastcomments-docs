@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | id | string | path | Da |  |
@@ -12,27 +12,29 @@ Vrne: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer deleteTenant'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteTenant Primer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Konfigurirajte avtorizacijo API ključa: api_key
+// Konfiguriraj avtentikacijo API ključa: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Odkomentirajte spodnjo vrstico, da nastavite predpono (npr. Bearer) za API ključ, če je potrebno
+// Odkomentiraj spodaj za nastavitev predpone (npr. Bearer) za API ključ, če je potrebno
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Če želite uporabiti lastnega HTTP odjemalca, posredujte odjemalca, ki implementira `GuzzleHttp\ClientInterface`.
-    // To je izbirno; kot privzeti bo uporabljen `GuzzleHttp\Client`.
+    // Če želiš uporabiti lasten http odjemalec, podaj svoj odjemalec, ki implementira `GuzzleHttp\ClientInterface`.
+    // To je neobvezno, privzeto bo uporabljen `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$id = 'id_example'; // string
-$sure = 'sure_example'; // string
+
+$tenant_id = 'tenant_id_example'; // niz
+$id = 'id_example'; // niz
+$sure = 'sure_example'; // niz
+
 
 try {
     $result = $apiInstance->deleteTenant($tenant_id, $id, $sure);

@@ -1,9 +1,9 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Назва | Тип | Розташування | Обов’язковий | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Так |  |
-| id | string | path | Так |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
 ## Відповідь
 
@@ -17,21 +17,23 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Налаштування авторизації ключа API: api_key
+// Configure API key authorization: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Розкоментуйте нижче, щоб встановити префікс (наприклад Bearer) для ключа API, якщо потрібно
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Якщо ви хочете використовувати власний HTTP-клієнт, передайте свій клієнт, який реалізує `GuzzleHttp\ClientInterface`.
-    // Це опціонально, за замовчуванням буде використано `GuzzleHttp\Client`.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
 $update_user_badge_params = new \FastComments\Client\Model\UpdateUserBadgeParams(); // \FastComments\Client\Model\UpdateUserBadgeParams
+
 
 try {
     $result = $apiInstance->updateUserBadge($tenant_id, $id, $update_user_badge_params);

@@ -1,22 +1,23 @@
-## Παράμετροι
+## Parameters
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
-|------|------|----------|-------------|
-| userId | string | Όχι |  |
-| sso | string | Όχι |  |
+|------|------|------------|-----------|
+| userId | string | No |  |
+| tenantId | string | No |  |
+| sso | string | No |  |
 
 ## Απόκριση
 
-Επιστρέφει: [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserTrustFactorResponse.ts)
+Επιστρέφει: [`GetTrustFactorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTrustFactorResponse.ts)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα getTrustFactor'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const userId: string = '550e8400-e29b-41d4-a716-446655440000';
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.VXNlckRhdGE.signature';
-const trustFactor: GetUserTrustFactorResponse = await getTrustFactor(userId, sso);
-const trustFactorAnonymous: GetUserTrustFactorResponse = await getTrustFactor();
+async function runDemo(): Promise<void> {
+    const trustFull: GetTrustFactorResponse = await getTrustFactor("user_12345", "tenant_abc", "sso_token_987");
+    const trustUserOnly: GetTrustFactorResponse = await getTrustFactor("user_12345");
+    console.log(trustFull, trustUserOnly);
+}
+runDemo();
 [inline-code-end]
-
----

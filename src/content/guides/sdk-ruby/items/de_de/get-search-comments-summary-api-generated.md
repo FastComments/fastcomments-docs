@@ -1,7 +1,8 @@
 ## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
-|------|------|----------|----------|-------------|
+|------|------|-----|--------------|--------------|
+| tenantId | string | query | Ja |  |
 | value | string | query | Nein |  |
 | filters | string | query | Nein |  |
 | searchFilters | string | query | Nein |  |
@@ -9,7 +10,7 @@
 
 ## Antwort
 
-Gibt zurück: [`ModerationCommentSearchResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/moderation_comment_search_response.rb)
+Rückgabe: [`ModerationCommentSearchResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/moderation_comment_search_response.rb)
 
 ## Beispiel
 
@@ -19,6 +20,7 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 opts = {
   value: 'value_example', # String | 
   filters: 'filters_example', # String | 
@@ -28,9 +30,11 @@ opts = {
 
 begin
   
-  result = api_instance.get_search_comments_summary(opts)
+  result = api_instance.get_search_comments_summary(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_search_comments_summary: #{e}"
 end
 [inline-code-end]
+
+---

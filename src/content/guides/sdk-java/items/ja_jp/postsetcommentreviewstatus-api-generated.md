@@ -1,10 +1,12 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Yes |  |
-| reviewed | boolean | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | はい |  |
+| commentId | string | path | はい |  |
+| reviewed | boolean | query | いいえ |  |
+| broadcastId | string | query | いいえ |  |
+| sso | string | query | いいえ |  |
 
 ## レスポンス
 
@@ -12,7 +14,7 @@
 
 ## 例
 
-[inline-code-attrs-start title = 'postSetCommentReviewStatus の例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postSetCommentReviewStatus 例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // クラスをインポート:
 import com.fastcomments.invoker.ApiClient;
@@ -27,20 +29,23 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     Boolean reviewed = true; // Boolean | 
+    String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      APIEmptyResponse result = apiInstance.postSetCommentReviewStatus(commentId)
+      APIEmptyResponse result = apiInstance.postSetCommentReviewStatus(tenantId, commentId)
             .reviewed(reviewed)
+            .broadcastId(broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ModerationApi#postSetCommentReviewStatus");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("ModerationApi#postSetCommentReviewStatus の呼び出し中に例外がスローされました");
+      System.err.println("ステータスコード: " + e.getCode());
+      System.err.println("理由: " + e.getResponseBody());
+      System.err.println("レスポンスヘッダー: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }

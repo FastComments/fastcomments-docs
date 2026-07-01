@@ -1,11 +1,12 @@
 ## Parametre
 
-| Navn | Type | Location | Påkrævet | Beskrivelse |
-|------|------|----------|----------|-------------|
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
+|------|------|-----------|----------|-------------|
+| tenantId | string | query | Ja |  |
 | value | string | query | Nej |  |
 | sso | string | query | Nej |  |
 
-## Svar
+## Respons
 
 Returnerer: [`ModerationUserSearchResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/moderation_user_search_response.py)
 
@@ -14,26 +15,29 @@ Returnerer: [`ModerationUserSearchResponse`](https://github.com/FastComments/fas
 [inline-code-attrs-start title = 'get_search_users Eksempel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetSearchUsersOptions
 from client.models.moderation_user_search_response import ModerationUserSearchResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Angivelse af host er valgfri og er som standard https://fastcomments.com
+# Definition af værten er valgfri og standard er https://fastcomments.com
 # Se configuration.py for en liste over alle understøttede konfigurationsparametre.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Åbn en kontekst med en instans af API-klienten
+# Indtast en kontekst med en instans af API-klienten
+# Opret en instans af API-klassen
 with client.ApiClient(configuration) as api_client:
-    # Opret en instans af API-klassen
+    # Create an instance of the API class
     api_instance = client.ModerationApi(api_client)
-    value = 'value_example' # str |  (valgfri)
-    sso = 'sso_example' # str |  (valgfri)
+    tenant_id = 'tenant_id_example' # str | 
+    value = 'value_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_search_users(value=value, sso=sso)
+        api_response = api_instance.get_search_users(tenant_id, GetSearchUsersOptions(value=value, sso=sso))
         print("The response of ModerationApi->get_search_users:\n")
         pprint(api_response)
     except Exception as e:

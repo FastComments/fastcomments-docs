@@ -1,30 +1,26 @@
----
 ## 參數
 
 | 名稱 | 類型 | 必填 | 說明 |
-|------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| commentIds | string | 否 |  |
-| sso | string | 否 |  |
+|------|------|------|------|
+| tenantId | string | Yes |  |
+| commentIds | string | No |  |
+| sso | string = "" | No |  |
 
 ## 回應
 
-回傳: [`Option[CheckBlockedCommentsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_check_blocked_comments_response.nim)
+返回: [`Option[CheckBlockedCommentsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_check_blocked_comments_response.nim)
 
 ## 範例
 
 [inline-code-attrs-start title = 'checkedCommentsForBlocked 範例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.checkedCommentsForBlocked(
+let (maybeResponse, httpResponse) = client.checkedCommentsForBlocked(
   tenantId = "my-tenant-123",
-  commentIds = "",
+  commentIds = "cmt-1,cmt-2",
   sso = ""
 )
-if response.isSome:
-  let blockedResp = response.get()
-  echo "Received blocked comments response: ", blockedResp
-else:
-  echo "No response body; HTTP status: ", $httpResponse.status
-[inline-code-end]
 
----
+if maybeResponse.isSome:
+  let response = maybeResponse.get()
+  discard response
+[inline-code-end]

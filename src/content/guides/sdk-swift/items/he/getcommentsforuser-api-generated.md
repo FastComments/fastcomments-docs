@@ -1,6 +1,7 @@
+---
 ## פרמטרים
 
-| שם | סוג | מיקום | חובה | תיאור |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
 | userId | string | query | לא |  |
 | direction | string | query | לא |  |
@@ -16,9 +17,9 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getCommentsForUser'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getCommentsForUser'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// דוגמאות הקוד הבאות עדיין בבטא. עבור כל בעיה, דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// הדוגמאות בקוד הבאות עדיין בטא. לכל בעיה, אנא דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let userId = "userId_example" // String |  (אופציונלי)
@@ -29,7 +30,7 @@ let includei10n = true // Bool |  (אופציונלי)
 let locale = "locale_example" // String |  (אופציונלי)
 let isCrawler = true // Bool |  (אופציונלי)
 
-PublicAPI.getCommentsForUser(userId: userId, direction: direction, repliesToUserId: repliesToUserId, page: page, includei10n: includei10n, locale: locale, isCrawler: isCrawler) { (response, error) in
+PublicAPI.getCommentsForUser(options: PublicAPI.GetCommentsForUserOptions(userId: userId, direction: direction, repliesToUserId: repliesToUserId, page: page, includei10n: includei10n, locale: locale, isCrawler: isCrawler)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -40,3 +41,5 @@ PublicAPI.getCommentsForUser(userId: userId, direction: direction, repliesToUser
     }
 }
 [inline-code-end]
+
+---

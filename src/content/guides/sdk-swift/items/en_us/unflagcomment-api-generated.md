@@ -23,7 +23,7 @@ let id = "id_example" // String |
 let userId = "userId_example" // String |  (optional)
 let anonUserId = "anonUserId_example" // String |  (optional)
 
-DefaultAPI.unFlagComment(tenantId: tenantId, id: id, userId: userId, anonUserId: anonUserId) { (response, error) in
+DefaultAPI.unFlagComment(tenantId: tenantId, id: id, options: DefaultAPI.UnFlagCommentOptions(userId: userId, anonUserId: anonUserId)) { (response, error) in
     guard error == nil else {
         print(error)
         return

@@ -1,6 +1,6 @@
 ## Параметры
 
-| Имя | Тип | Обязательно | Описание |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenant_id | String | Да |  |
 | url_id | String | Да |  |
@@ -15,24 +15,18 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'search_users Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'search_users Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_users() -> Result<(), Error> {
-    let params: SearchUsersParams = SearchUsersParams {
+async fn run_search() -> Result<(), Error> {
+    let params = SearchUsersParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        url_id: "news/article-2026-06".to_string(),
-        username_starts_with: Some("jo".to_string()),
-        mention_group_ids: Some(vec![
-            "group-moderators".to_string(),
-            "group-editors".to_string(),
-        ]),
-        sso: Some("google".to_string()),
+        url_id: "news/article".to_string(),
+        username_starts_with: Some("john".to_string()),
+        mention_group_ids: Some(vec!["group1".to_string(), "group2".to_string()]),
+        sso: Some("sso-provider".to_string()),
         search_section: Some("comments".to_string()),
     };
-
-    let result: SearchUsersResult = search_users(&configuration, params).await?;
+    let _result: SearchUsersResult = search_users(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

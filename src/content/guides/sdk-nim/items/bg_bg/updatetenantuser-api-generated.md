@@ -5,7 +5,7 @@
 | tenantId | string | Да |  |
 | id | string | Не |  |
 | updateTenantUserBody | UpdateTenantUserBody | Не |  |
-| updateComments | string | Не |  |
+| updateComments | string = "" | Не |  |
 
 ## Отговор
 
@@ -15,21 +15,13 @@
 
 [inline-code-attrs-start title = 'Пример за updateTenantUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateTenantUser(
+let updateBody = UpdateTenantUserBody()
+let (optResp, httpResp) = client.updateTenantUser(
   tenantId = "my-tenant-123",
-  id = "user-987",
-  updateTenantUserBody = UpdateTenantUserBody(
-    displayName = "Jane Doe",
-    email = "jane.doe@example.com",
-    roles = @["moderator", "editor"],
-    isActive = true
-  ),
-  updateComments = "true"
+  id = "user-456",
+  updateTenantUserBody = updateBody,
+  updateComments = "Changed role to moderator",
 )
-
-if response.isSome:
-  let apiEmpty = response.get()
-  discard apiEmpty
+if optResp.isSome:
+  let _ = optResp.get()
 [inline-code-end]
-
----

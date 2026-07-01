@@ -1,11 +1,11 @@
 ## Parametry
 
-| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Tak |  |
-| notificationId | string | path | Tak |  |
-| newStatus | string | path | Tak |  |
-| sso | string | query | Nie |  |
+| Nazwa | Typ | Miejsce | Wymagane | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| notificationId | string | path | Yes |  |
+| newStatus | string | path | Yes |  |
+| sso | string | query | No |  |
 
 ## Odpowiedź
 
@@ -13,7 +13,7 @@ Zwraca: [`UpdateUserNotificationStatusResponse`](https://github.com/FastComments
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład updateUserNotificationStatus'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserNotificationStatus Przykład'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -21,14 +21,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Jeśli chcesz użyć niestandardowego klienta HTTP, przekaż klienta, który implementuje `GuzzleHttp\ClientInterface`.
-    // To jest opcjonalne, domyślnie zostanie użyty `GuzzleHttp\Client`.
+    // Jeśli chcesz użyć własnego klienta HTTP, przekaż swój klient implementujący `GuzzleHttp\ClientInterface`.
+    // To jest opcjonalne, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $notification_id = 'notification_id_example'; // string
 $new_status = 'new_status_example'; // string
 $sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->updateUserNotificationStatus($tenant_id, $notification_id, $new_status, $sso);
@@ -37,5 +39,3 @@ try {
     echo 'Exception when calling PublicApi->updateUserNotificationStatus: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

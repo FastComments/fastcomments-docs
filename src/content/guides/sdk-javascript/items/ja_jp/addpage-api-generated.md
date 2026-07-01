@@ -1,12 +1,30 @@
-## Parameters
+## パラメータ
 
-| 名前 | 型 | 必須 | 説明 |
+| 名前 | 種類 | 必須 | 説明 |
 |------|------|----------|-------------|
 | tenantId | string | はい |  |
 | createAPIPageData | CreateAPIPageData | はい |  |
 
-## Response
+## 応答
 
-戻り値: [`AddPageAPIResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AddPageAPIResponse.ts)
+Returns: [`AddPageAPIResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AddPageAPIResponse.ts)
 
----
+## 例
+
+[inline-code-attrs-start title = 'addPage の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+const tenantId: string = "tenant_9f8432b1-4c2e-4f9d-8a5d-7bc9e2f6d9a0";
+
+const pageData: CreateAPIPageData = {
+    url: "https://example.com/articles/fastcomments-intro",
+    title: "FastComments Introduction",
+    description: "An introductory guide to FastComments API usage.",
+    tags: ["fastcomments", "api", "tutorial"],
+    metadata: {
+        author: "Jane Doe",
+        publishedAt: "2024-03-15T08:00:00Z"
+    }
+};
+
+const response: AddPageAPIResponse = await addPage(tenantId, pageData);
+[inline-code-end]

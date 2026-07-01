@@ -1,39 +1,26 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Ime | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Не |  |
-| replaceTenantUserBody | ReplaceTenantUserBody | Не |  |
-| updateComments | string | Не |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| replaceTenantUserBody | ReplaceTenantUserBody | No |  |
+| updateComments | string = "" | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
+Vraća: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
-## Примјер
+## Primer
 
-[inline-code-attrs-start title = 'replaceTenantUser Примјер'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'replaceTenantUser Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let body = ReplaceTenantUserBody(
-  displayName = "Jane Doe",
-  email = "jane.doe@example.com",
-  externalId = "jdoe-789",
-  admin = false,
-  enabled = true,
-  tags = @["editor", "subscriber"]
-)
-
+let replaceBody = ReplaceTenantUserBody()
 let (response, httpResponse) = client.replaceTenantUser(
   tenantId = "my-tenant-123",
   id = "user-456",
-  replaceTenantUserBody = body,
-  updateComments = "true"
-)
-
+  replaceTenantUserBody = replaceBody,
+  updateComments = "")
 if response.isSome:
-  let apiEmpty = response.get()
-  echo "ReplaceTenantUser succeeded, http status:", httpResponse.status
+  let empty = response.get()
 [inline-code-end]
-
----

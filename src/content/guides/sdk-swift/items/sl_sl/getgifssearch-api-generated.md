@@ -1,13 +1,12 @@
----
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Da |  |
-| search | string | query | Da |  |
-| locale | string | query | Ne |  |
-| rating | string | query | Ne |  |
-| page | number | query | Ne |  |
+| tenantId | string | path | Yes |  |
+| search | string | query | Yes |  |
+| locale | string | query | No |  |
+| rating | string | query | No |  |
+| page | number | query | No |  |
 
 ## Odgovor
 
@@ -17,7 +16,7 @@ Vrne: [`GetGifsSearchResponse`](https://github.com/FastComments/fastcomments-swi
 
 [inline-code-attrs-start title = 'Primer getGifsSearch'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Naslednji primeri kode so še v beta različici. Za kakršnokoli težavo poročajte na http://github.com/OpenAPITools/openapi-generator/issues/new
+// Naslednji vzorci kode so še beta. Za katerokoli težavo, prosimo, pošljite poročilo na http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -26,7 +25,7 @@ let locale = "locale_example" // String |  (neobvezno)
 let rating = "rating_example" // String |  (neobvezno)
 let page = 987 // Double |  (neobvezno)
 
-PublicAPI.getGifsSearch(tenantId: tenantId, search: search, locale: locale, rating: rating, page: page) { (response, error) in
+PublicAPI.getGifsSearch(tenantId: tenantId, search: search, options: PublicAPI.GetGifsSearchOptions(locale: locale, rating: rating, page: page)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -37,5 +36,3 @@ PublicAPI.getGifsSearch(tenantId: tenantId, search: search, locale: locale, rati
     }
 }
 [inline-code-end]
-
----

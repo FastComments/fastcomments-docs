@@ -1,6 +1,6 @@
 ## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Yes |  |
 | postIds | array | query | No |  |
@@ -8,38 +8,37 @@
 
 ## 回應
 
-回傳: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/user_reacts_response.py)
+返回: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/user_reacts_response.py)
 
 ## 範例
 
 [inline-code-attrs-start title = 'get_user_reacts_public 範例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetUserReactsPublicOptions
 from client.models.user_reacts_response import UserReactsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# 定義 host 是可選，預設為 https://fastcomments.com
-# 有關所有支援的設定參數清單，請參閱 configuration.py。
+# Defining the host is optional and defaults to https://fastcomments.com
+# See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# 使用 ApiClient 實例進入一個上下文
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # 建立 API 類別的實例
+    # Create an instance of the API class
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    post_ids = ['post_ids_example'] # List[str] |  (選用)
-    sso = 'sso_example' # str |  (選用)
+    post_ids = ['post_ids_example'] # List[str] |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_user_reacts_public(tenant_id, post_ids=post_ids, sso=sso)
+        api_response = api_instance.get_user_reacts_public(tenant_id, GetUserReactsPublicOptions(post_ids=post_ids, sso=sso))
         print("The response of PublicApi->get_user_reacts_public:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling PublicApi->get_user_reacts_public: %s\n" % e)
 [inline-code-end]
-
----

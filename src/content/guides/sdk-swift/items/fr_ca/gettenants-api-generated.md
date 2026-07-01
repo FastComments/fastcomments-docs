@@ -8,7 +8,7 @@
 
 ## Réponse
 
-Renvoie : [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTenantsResponse.swift)
+Renvoie : [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTenantsResponse.swift)
 
 ## Exemple
 
@@ -18,10 +18,10 @@ Renvoie : [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-sw
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let meta = "meta_example" // String |  (optionnel)
-let skip = 987 // Double |  (optionnel)
+let meta = "meta_example" // String |  (optional)
+let skip = 987 // Double |  (optional)
 
-DefaultAPI.getTenants(tenantId: tenantId, meta: meta, skip: skip) { (response, error) in
+DefaultAPI.getTenants(tenantId: tenantId, options: DefaultAPI.GetTenantsOptions(meta: meta, skip: skip)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -32,3 +32,5 @@ DefaultAPI.getTenants(tenantId: tenantId, meta: meta, skip: skip) { (response, e
     }
 }
 [inline-code-end]
+
+---

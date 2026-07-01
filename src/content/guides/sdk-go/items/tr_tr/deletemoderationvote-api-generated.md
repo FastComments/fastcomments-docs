@@ -1,10 +1,11 @@
----
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| İsim | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Evet |  |
 | commentId | string | path | Evet |  |
 | voteId | string | path | Evet |  |
+| broadcastId | string | query | Hayır |  |
 | sso | string | query | Hayır |  |
 
 ## Yanıt
@@ -25,18 +26,20 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
 	voteId := "voteId_example" // string | 
-	sso := "sso_example" // string |  (isteğe bağlı)
+	broadcastId := "broadcastId_example" // string |  (opsiyonel)
+	sso := "sso_example" // string |  (opsiyonel)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.DeleteModerationVote(context.Background(), commentId, voteId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.DeleteModerationVote(context.Background(), commentId, voteId).TenantId(tenantId).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.DeleteModerationVote``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `DeleteModerationVote`'den dönen yanıt: VoteDeleteResponse
+	// `DeleteModerationVote` yanıtı: VoteDeleteResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.DeleteModerationVote`: %v\n", resp)
 }
 [inline-code-end]

@@ -1,14 +1,14 @@
 ## Parameters
 
-| Name | Type | Location | Required | Description |
+| Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| questionId | string | query | No |  |
-| questionIds | array | query | No |  |
-| urlId | string | query | No |  |
-| timeBucket | string | query | No |  |
-| startDate | string | query | No |  |
-| forceRecalculate | boolean | query | No |  |
+| tenantId | string | query | Ja |  |
+| questionId | string | query | Nee |  |
+| questionIds | array | query | Nee |  |
+| urlId | string | query | Nee |  |
+| timeBucket | string | query | Nee |  |
+| startDate | string | query | Nee |  |
+| forceRecalculate | boolean | query | Nee |  |
 
 ## Respons
 
@@ -19,31 +19,27 @@ Retourneert: [`AggregateQuestionResultsResponse`](https://github.com/FastComment
 [inline-code-attrs-start title = 'aggregate_question_results Voorbeeld'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import AggregateQuestionResultsOptions
 from client.models.aggregate_question_results_response import AggregateQuestionResultsResponse
 from client.models.aggregate_time_bucket import AggregateTimeBucket
 from client.rest import ApiException
 from pprint import pprint
 
-# Het definiëren van de host is optioneel en standaard is https://fastcomments.com
-# Zie configuration.py voor een lijst met alle ondersteunde configuratieparameters.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
+# Definiëren van de host is optioneel en standaard https://fastcomments.com
+# Zie configuration.py voor een lijst van alle ondersteunde configuratieparameters.
 
 # De client moet de authenticatie- en autorisatieparameters configureren
 # in overeenstemming met het beveiligingsbeleid van de API-server.
-# Voorbeelden voor elke auth-methode worden hieronder gegeven; gebruik het voorbeeld dat
-# voldoet aan uw auth-gebruikssituatie.
+# Voorbeelden voor elke authenticatiemethode worden hieronder gegeven, gebruik het voorbeeld dat
+# voldoet aan uw authenticatiegeval.
 
-# Configureer API-sleutelautorisatie: api_key
-configuration.api_key['api_key'] = os.environ["API_KEY"]
-
-# Haal hieronder het commentaar weg om een prefix in te stellen (bijv. Bearer) voor de API-sleutel, indien nodig
+# Configureer API-sleutel autorisatie: api_key
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Ga een context in met een instantie van de API-client
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Maak een instantie van de API-klasse
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     question_id = 'question_id_example' # str |  (optioneel)
@@ -54,7 +50,7 @@ with client.ApiClient(configuration) as api_client:
     force_recalculate = True # bool |  (optioneel)
 
     try:
-        api_response = api_instance.aggregate_question_results(tenant_id, question_id=question_id, question_ids=question_ids, url_id=url_id, time_bucket=time_bucket, start_date=start_date, force_recalculate=force_recalculate)
+        api_response = api_instance.aggregate_question_results(tenant_id, AggregateQuestionResultsOptions(question_id=question_id, question_ids=question_ids, url_id=url_id, time_bucket=time_bucket, start_date=start_date, force_recalculate=force_recalculate))
         print("The response of DefaultApi->aggregate_question_results:\n")
         pprint(api_response)
     except Exception as e:

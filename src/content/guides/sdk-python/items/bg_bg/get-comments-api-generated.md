@@ -1,6 +1,6 @@
-## Параметри
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | page | integer | query | No |  |
@@ -26,55 +26,56 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за get_comments'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_comments Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetCommentsOptions
 from client.models.api_get_comments_response import APIGetCommentsResponse
 from client.models.sort_directions import SortDirections
 from client.rest import ApiException
 from pprint import pprint
 
-# Задаването на host е по избор и по подразбиране е https://fastcomments.com
-# Вижте configuration.py за списък с всички поддържани конфигурационни параметри.
+# Дефинирането на хоста е по избор и по подразбиране е https://fastcomments.com
+# Вижте configuration.py за списъка с всички поддържани параметри на конфигурацията.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клиентът трябва да конфигурира параметрите за удостоверяване и авторизация
+# Клиентът трябва да конфигурира параметрите за автентикация и упълномощаване
 # в съответствие с политиката за сигурност на API сървъра.
-# По-долу са дадени примери за всеки метод на удостоверяване, използвайте примера, който
-# отговаря на вашия сценарий на удостоверяване.
+# Примери за всеки метод за удостоверяване са предоставени по-долу, използвайте примера, който
+# удовлетворява вашия случай на използване на удостоверяване.
 
-# Конфигурирайте удостоверяване с API ключ: api_key
+# Конфигурирайте упълномощаване с API ключ: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Разкоментрирайте по-долу, за да зададете префикс (напр. Bearer) за API ключа, ако е необходимо
+# Разкоментирайте по-долу, за да зададете префикс (например Bearer) за API ключа, ако е необходимо
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Влезте в контекст с екземпляр на API клиента
+# Въведете контекст с инстанция на API клиента
 with client.ApiClient(configuration) as api_client:
-    # Създайте екземпляр на API класа
+    # Създайте инстанция на API класа
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    page = 56 # int |  (по избор)
-    limit = 56 # int |  (по избор)
-    skip = 56 # int |  (по избор)
-    as_tree = True # bool |  (по избор)
-    skip_children = 56 # int |  (по избор)
-    limit_children = 56 # int |  (по избор)
-    max_tree_depth = 56 # int |  (по избор)
-    url_id = 'url_id_example' # str |  (по избор)
-    user_id = 'user_id_example' # str |  (по избор)
-    anon_user_id = 'anon_user_id_example' # str |  (по избор)
-    context_user_id = 'context_user_id_example' # str |  (по избор)
-    hash_tag = 'hash_tag_example' # str |  (по избор)
-    parent_id = 'parent_id_example' # str |  (по избор)
-    direction = client.SortDirections() # SortDirections |  (по избор)
-    from_date = 56 # int |  (по избор)
-    to_date = 56 # int |  (по избор)
+    page = 56 # int |  (optional)
+    limit = 56 # int |  (optional)
+    skip = 56 # int |  (optional)
+    as_tree = True # bool |  (optional)
+    skip_children = 56 # int |  (optional)
+    limit_children = 56 # int |  (optional)
+    max_tree_depth = 56 # int |  (optional)
+    url_id = 'url_id_example' # str |  (optional)
+    user_id = 'user_id_example' # str |  (optional)
+    anon_user_id = 'anon_user_id_example' # str |  (optional)
+    context_user_id = 'context_user_id_example' # str |  (optional)
+    hash_tag = 'hash_tag_example' # str |  (optional)
+    parent_id = 'parent_id_example' # str |  (optional)
+    direction = client.SortDirections() # SortDirections |  (optional)
+    from_date = 56 # int |  (optional)
+    to_date = 56 # int |  (optional)
 
     try:
-        api_response = api_instance.get_comments(tenant_id, page=page, limit=limit, skip=skip, as_tree=as_tree, skip_children=skip_children, limit_children=limit_children, max_tree_depth=max_tree_depth, url_id=url_id, user_id=user_id, anon_user_id=anon_user_id, context_user_id=context_user_id, hash_tag=hash_tag, parent_id=parent_id, direction=direction, from_date=from_date, to_date=to_date)
+        api_response = api_instance.get_comments(tenant_id, GetCommentsOptions(page=page, limit=limit, skip=skip, as_tree=as_tree, skip_children=skip_children, limit_children=limit_children, max_tree_depth=max_tree_depth, url_id=url_id, user_id=user_id, anon_user_id=anon_user_id, context_user_id=context_user_id, hash_tag=hash_tag, parent_id=parent_id, direction=direction, from_date=from_date, to_date=to_date))
         print("The response of DefaultApi->get_comments:\n")
         pprint(api_response)
     except Exception as e:

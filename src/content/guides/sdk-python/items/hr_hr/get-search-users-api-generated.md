@@ -1,39 +1,42 @@
-## Parametri
+## Parameters
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| value | string | query | Ne |  |
-| sso | string | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| value | string | query | No |  |
+| sso | string | query | No |  |
 
-## Odgovor
+## Response
 
-Vraća: [`ModerationUserSearchResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/moderation_user_search_response.py)
+Returns: [`ModerationUserSearchResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/moderation_user_search_response.py)
 
-## Primjer
+## Example
 
 [inline-code-attrs-start title = 'get_search_users Primjer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetSearchUsersOptions
 from client.models.moderation_user_search_response import ModerationUserSearchResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definiranje hosta je neobavezno i zadano je na https://fastcomments.com
+# Definiranje hosta je opcionalno i zadano je https://fastcomments.com
 # Pogledajte configuration.py za popis svih podržanih konfiguracijskih parametara.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Uđite u kontekst s instancom API klijenta
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Kreirajte instancu API klase
+    # Stvorite instancu API klase
     api_instance = client.ModerationApi(api_client)
-    value = 'value_example' # str |  (neobavezno)
-    sso = 'sso_example' # str |  (neobavezno)
+    tenant_id = 'tenant_id_example' # str | 
+    value = 'value_example' # str |  (opcionalno)
+    sso = 'sso_example' # str |  (opcionalno)
 
     try:
-        api_response = api_instance.get_search_users(value=value, sso=sso)
+        api_response = api_instance.get_search_users(tenant_id, GetSearchUsersOptions(value=value, sso=sso))
         print("The response of ModerationApi->get_search_users:\n")
         pprint(api_response)
     except Exception as e:

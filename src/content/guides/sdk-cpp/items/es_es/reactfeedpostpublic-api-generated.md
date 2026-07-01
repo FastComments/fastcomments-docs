@@ -2,12 +2,10 @@
 
 | Nombre | Tipo | Obligatorio | Descripción |
 |------|------|----------|-------------|
-| tenantId | string | Sí |  |
-| postId | string | Sí |  |
-| reactBodyParams | ReactBodyParams | Sí |  |
-| isUndo | bool | No |  |
-| broadcastId | string | No |  |
-| sso | string | No |  |
+| tenantId | string | Yes |  |
+| postId | string | Yes |  |
+| reactBodyParams | ReactBodyParams | Yes |  |
+| options | const ReactFeedPostPublicOptions& | Yes |  |
 
 ## Respuesta
 
@@ -15,19 +13,16 @@ Devuelve: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de reactFeedPostPublic'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'reactFeedPostPublic Ejemplo'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t postId = U("feed-post-456");
-ReactBodyParams reactBodyParams;
-reactBodyParams.reaction = U("like");
-boost::optional<bool> isUndo = false;
-boost::optional<utility::string_t> broadcastId = boost::optional<utility::string_t>(U("broadcast-01"));
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
-api->reactFeedPostPublic(tenantId, postId, reactBodyParams, isUndo, broadcastId, sso)
-.then([](std::shared_ptr<ReactFeedPostResponse> resp) {
-    if (resp) {
-        auto resultCopy = std::make_shared<ReactFeedPostResponse>(*resp);
-    }
-});
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto postId = utility::conversions::to_string_t("post-987");
+ReactBodyParams reactBody;
+reactBody.reaction = utility::conversions::to_string_t("love");
+reactBody.userId = utility::conversions::to_string_t("user@example.com");
+ReactFeedPostPublicOptions options;
+options.metadata = boost::optional<utility::string_t>(utility::conversions::to_string_t("mobile"));
+api->reactFeedPostPublic(tenantId, postId, reactBody, options)
+    .then([](std::shared_ptr<ReactFeedPostResponse> resp) {
+    });
 [inline-code-end]

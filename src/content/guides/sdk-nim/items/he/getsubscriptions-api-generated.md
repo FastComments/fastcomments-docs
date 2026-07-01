@@ -1,9 +1,9 @@
 ## פרמטרים
 
-| שם | סוג | חובה | תיאור |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| userId | string | לא |  |
+| tenantId | string | Yes |  |
+| userId | string = "" | No |  |
 
 ## תגובה
 
@@ -11,12 +11,12 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getSubscriptions'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSubscriptions דוגמה'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSubscriptions(tenantId = "my-tenant-123", userId = "")
-if response.isSome:
-  let subscriptions = response.get()
-  discard subscriptions
+let (subscriptionsOpt, httpResp) = client.getSubscriptions(tenantId = "my-tenant-123", userId = "user-456")
+if subscriptionsOpt.isSome:
+  let subscriptions = subscriptionsOpt.get()
+  echo subscriptions
 [inline-code-end]
 
 ---

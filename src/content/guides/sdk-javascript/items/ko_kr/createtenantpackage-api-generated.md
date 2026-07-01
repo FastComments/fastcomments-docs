@@ -1,31 +1,29 @@
 ## 매개변수
 
-| 이름 | 타입 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| createTenantPackageBody | CreateTenantPackageBody | 예 |  |
+| tenantId | string | Yes |  |
+| createTenantPackageBody | CreateTenantPackageBody | Yes |  |
 
 ## 응답
 
-반환: [`CreateTenantPackageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantPackageResponse.ts)
+반환: [`CreateTenantPackageResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantPackageResponse1.ts)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'createTenantPackage 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createTenantPackage 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function run(): Promise<void> {
-  const tenantId: string = 'tenant_acme_01';
-  const createTenantPackageBody: CreateTenantPackageBody = {
-    packageName: 'Pro Annual',
-    seats: 100,
-    billingCycle: 'annual',
-    autoRenew: true,
-    metadata: { region: 'us-west-2' } // 선택적 메타데이터 필드
-  };
-  const result: CreateTenantPackageResponse = await createTenantPackage(tenantId, createTenantPackageBody);
-  console.log(result);
-}
-run();
-[inline-code-end]
+(async () => {
+  const tenantId: string = "tenant-9876";
 
----
+  const body: CreateTenantPackageBody = {
+    packageName: "Standard",
+    quota: 5000,
+    // 선택적 필드
+    description: "Standard package for medium traffic",
+  };
+
+  const result: CreateTenantPackageResponse1 = await createTenantPackage(tenantId, body);
+  console.log(result);
+})();
+[inline-code-end]

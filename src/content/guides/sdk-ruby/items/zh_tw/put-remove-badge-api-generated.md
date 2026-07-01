@@ -1,17 +1,17 @@
----
 ## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
-| badgeId | string | query | 是 |  |
-| userId | string | query | 否 |  |
-| commentId | string | query | 否 |  |
-| broadcastId | string | query | 否 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| badgeId | string | query | Yes |  |
+| userId | string | query | No |  |
+| commentId | string | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## 回應
 
-回傳：[`RemoveUserBadgeResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/remove_user_badge_response.rb)
+返回：[`RemoveUserBadgeResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/remove_user_badge_response.rb)
 
 ## 範例
 
@@ -21,17 +21,18 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
-badge_id = 'badge_id_example' # 字串 | 
+tenant_id = 'tenant_id_example' # String | 
+badge_id = 'badge_id_example' # String | 
 opts = {
-  user_id: 'user_id_example', # 字串 | 
-  comment_id: 'comment_id_example', # 字串 | 
-  broadcast_id: 'broadcast_id_example', # 字串 | 
-  sso: 'sso_example' # 字串 | 
+  user_id: 'user_id_example', # String | 
+  comment_id: 'comment_id_example', # String | 
+  broadcast_id: 'broadcast_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.put_remove_badge(badge_id, opts)
+  result = api_instance.put_remove_badge(tenant_id, badge_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->put_remove_badge: #{e}"

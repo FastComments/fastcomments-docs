@@ -1,9 +1,9 @@
----
 ## Parámetros
 
-| Nombre | Tipo | Requerido | Descripción |
+| Nombre | Tipo | Obligatorio | Descripción |
 |------|------|----------|-------------|
-| sso | string | No |  |
+| tenantId | string | Sí |  |
+| sso | string = "" | No |  |
 
 ## Respuesta
 
@@ -11,16 +11,10 @@ Devuelve: [`Option[GetTenantManualBadgesResponse]`](https://github.com/FastComme
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de getManualBadges'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo getManualBadges'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getManualBadges(sso = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9")
-if response.isSome:
-  let badges = response.get()
-  echo "Manual badges received:"
-  echo badges
-else:
-  echo "No manual badges returned."
-  echo httpResponse
+let (manualBadgesOpt, httpResponse) = client.getManualBadges(tenantId = "my-tenant-123", sso = "")
+if manualBadgesOpt.isSome:
+  let manualBadges = manualBadgesOpt.get()
+  echo manualBadges
 [inline-code-end]
-
----

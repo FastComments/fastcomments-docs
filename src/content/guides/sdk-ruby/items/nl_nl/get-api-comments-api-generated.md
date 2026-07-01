@@ -1,20 +1,21 @@
 ## Parameters
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
-|------|------|----------|----------|-------------|
-| page | number | query | Nee |  |
-| count | number | query | Nee |  |
-| text-search | string | query | Nee |  |
-| byIPFromComment | string | query | Nee |  |
-| filters | string | query | Nee |  |
-| searchFilters | string | query | Nee |  |
-| sorts | string | query | Nee |  |
-| demo | boolean | query | Nee |  |
-| sso | string | query | Nee |  |
+|------|------|----------|----------|---------------|
+| tenantId | string | query | Yes |  |
+| page | number | query | No |  |
+| count | number | query | No |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sorts | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
-## Response
+## Respons
 
-Geeft terug: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/moderation_a_p_i_get_comments_response.rb)
+Retourneert: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/moderation_a_p_i_get_comments_response.rb)
 
 ## Voorbeeld
 
@@ -24,6 +25,7 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 opts = {
   page: 1.2, # Float | 
   count: 1.2, # Float | 
@@ -38,11 +40,9 @@ opts = {
 
 begin
   
-  result = api_instance.get_api_comments(opts)
+  result = api_instance.get_api_comments(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
-  puts "Error when calling ModerationApi->get_api_comments: #{e}"
+  puts "Fout bij het aanroepen van ModerationApi->get_api_comments: #{e}"
 end
 [inline-code-end]
-
----

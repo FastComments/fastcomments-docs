@@ -1,27 +1,23 @@
----
 ## 매개변수
 
 | 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| skip | number | 아니요 |  |
+| tenantId | string | Yes |  |
+| skip | number | No |  |
 
 ## 응답
 
-반환: [`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModeratorsResponse.ts)
+반환: [`GetModeratorsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModeratorsResponse1.ts)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'getModerators 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getModerators 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function run(): Promise<void> {
-  const tenantId: string = "acme-tenant-98765";
-  const moderatorsResponse: GetModeratorsResponse = await getModerators(tenantId);
-  const skip: number = 25;
-  const pagedResponse: GetModeratorsResponse = await getModerators(tenantId, skip);
-  console.log(moderatorsResponse, pagedResponse);
+async function fetchModerators(): Promise<void> {
+  const tenantId: string = "tenant-9876";
+  const skip: number = 30; // 선택적 페이지네이션 오프셋
+  const moderators: GetModeratorsResponse1 = await getModerators(tenantId, skip);
+  // 페이지네이션 없이 예시:
+  // const allModerators: GetModeratorsResponse1 = await getModerators(tenantId);
 }
-run();
 [inline-code-end]
-
----

@@ -1,12 +1,12 @@
----
 ## 参数
 
 | 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
-| includeByUserIdAndEmail | boolean | query | 否 |  |
-| includeByIP | boolean | query | 否 |  |
-| includeByEmailDomain | boolean | query | 否 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | 查询 | 是 |  |
+| includeByUserIdAndEmail | boolean | 查询 | 否 |  |
+| includeByIP | boolean | 查询 | 否 |  |
+| includeByEmailDomain | boolean | 查询 | 否 |  |
+| sso | string | 查询 | 否 |  |
 
 ## 响应
 
@@ -16,7 +16,7 @@
 
 [inline-code-attrs-start title = 'postBulkPreBanSummary 示例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 导入类：
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,13 +29,14 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     BulkPreBanParams bulkPreBanParams = new BulkPreBanParams(); // BulkPreBanParams | 
     Boolean includeByUserIdAndEmail = true; // Boolean | 
     Boolean includeByIP = true; // Boolean | 
     Boolean includeByEmailDomain = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      BulkPreBanSummary result = apiInstance.postBulkPreBanSummary(bulkPreBanParams)
+      BulkPreBanSummary result = apiInstance.postBulkPreBanSummary(tenantId, bulkPreBanParams)
             .includeByUserIdAndEmail(includeByUserIdAndEmail)
             .includeByIP(includeByIP)
             .includeByEmailDomain(includeByEmailDomain)
@@ -52,5 +53,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

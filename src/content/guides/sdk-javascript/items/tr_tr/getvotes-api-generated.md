@@ -2,20 +2,24 @@
 
 | Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
-| tenantId | string | Evet |  |
-| urlId | string | Evet |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
 
 ## Yanıt
 
-Döndürür: [`GetVotesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetVotesResponse.ts)
+Döndürür: [`GetVotesResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetVotesResponse1.ts)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'getVotes Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_8421';
-const urlId: string | undefined = 'posts/2026/06/typescript-api-examples';
-const votes: GetVotesResponse = await getVotes(tenantId, urlId!);
-[inline-code-end]
+async function fetchVotes(): Promise<void> {
+  const tenantId: string = "acme-corp-01";
+  const urlId: string = "article-2024-05-15";
 
----
+  const response: GetVotesResponse1 = await getVotes(tenantId, urlId);
+
+  // Yanıt içinde isteğe bağlı bir alanı erişme örneği
+  const firstVoteId: string | undefined = response?.votes?.[0]?.id;
+}
+[inline-code-end]

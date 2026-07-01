@@ -1,34 +1,34 @@
+---
 הפעל או בטל התראות עבור תגובה ספציפית.
 
-## פרמטרים
+## Parameters
 
 | שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| notificationId | string | לא |  |
-| optedInOrOut | string | לא |  |
-| commentId | string | כן |  |
-| sso | string | לא |  |
+| tenantId | string | Yes |  |
+| notificationId | string | No |  |
+| optedInOrOut | string | No |  |
+| commentId | string | Yes |  |
+| sso | string = "" | No |  |
 
-## תגובה
+## Response
 
 מחזיר: [`Option[UpdateUserNotificationCommentSubscriptionStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_comment_subscription_status_response.nim)
 
-## דוגמה
+## Example
 
-[inline-code-attrs-start title = 'דוגמה ל-updateUserNotificationCommentSubscriptionStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserNotificationCommentSubscriptionStatus דוגמה'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateUserNotificationCommentSubscriptionStatus(
+let (optResp, httpResp) = client.updateUserNotificationCommentSubscriptionStatus(
   tenantId = "my-tenant-123",
-  notificationId = "",
-  optedInOrOut = "",
-  commentId = "cmt-789",
+  notificationId = "notif-456",
+  optedInOrOut = "opted-in",
+  commentId = "comment-789",
   sso = ""
 )
 
-if response.isSome:
-  let updateResp = response.get()
-  echo "Subscription update response: ", updateResp
+if optResp.isSome:
+  let resp = optResp.get()
 [inline-code-end]
 
 ---

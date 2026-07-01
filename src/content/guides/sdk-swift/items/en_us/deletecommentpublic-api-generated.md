@@ -25,7 +25,7 @@ let broadcastId = "broadcastId_example" // String |
 let editKey = "editKey_example" // String |  (optional)
 let sso = "sso_example" // String |  (optional)
 
-PublicAPI.deleteCommentPublic(tenantId: tenantId, commentId: commentId, broadcastId: broadcastId, editKey: editKey, sso: sso) { (response, error) in
+PublicAPI.deleteCommentPublic(tenantId: tenantId, commentId: commentId, broadcastId: broadcastId, options: PublicAPI.DeleteCommentPublicOptions(editKey: editKey, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

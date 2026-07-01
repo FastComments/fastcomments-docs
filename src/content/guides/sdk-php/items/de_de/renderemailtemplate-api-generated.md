@@ -1,13 +1,13 @@
 ## Parameter
 
-| Name | Typ | Ort | Erforderlich | Beschreibung |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | Abfrage | Ja |  |
-| locale | string | Abfrage | Nein |  |
+| tenantId | string | query | Yes |  |
+| locale | string | query | No |  |
 
 ## Antwort
 
-Gibt zurück: [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/RenderEmailTemplateResponse.php)
+Rückgabe: [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/RenderEmailTemplateResponse.php)
 
 ## Beispiel
 
@@ -17,21 +17,23 @@ Gibt zurück: [`RenderEmailTemplateResponse`](https://github.com/FastComments/fa
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// API-Schlüsselautorisation konfigurieren: api_key
+// Konfigurieren Sie die API-Schlüsselberechtigung: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Entfernen Sie das Kommentarzeichen unten, um bei Bedarf ein Präfix (z. B. Bearer) für den API-Schlüssel einzurichten
+// Entfernen Sie den Kommentar unten, um ein Präfix (z. B. Bearer) für den API-Schlüssel festzulegen, falls erforderlich
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Wenn Sie einen eigenen HTTP-Client verwenden möchten, geben Sie Ihren Client an, der `GuzzleHttp\ClientInterface` implementiert.
-    // Dies ist optional, `GuzzleHttp\Client` wird standardmäßig verwendet.
+    // Wenn Sie einen benutzerdefinierten HTTP-Client verwenden möchten, übergeben Sie Ihren Client, der `GuzzleHttp\ClientInterface` implementiert.
+    // Optional, `GuzzleHttp\Client` wird standardmäßig verwendet.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $render_email_template_body = new \FastComments\Client\Model\RenderEmailTemplateBody(); // \FastComments\Client\Model\RenderEmailTemplateBody
 $locale = 'locale_example'; // string
+
 
 try {
     $result = $apiInstance->renderEmailTemplate($tenant_id, $render_email_template_body, $locale);

@@ -1,17 +1,17 @@
-### Swift 套件管理器
+### Swift 套件管理員
 
-將下列內容新增到您的 `Package.swift` 檔案：
+將以下內容加入您的 `Package.swift` 檔案：
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "2.0.0")
+    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "3.0.0")
 ]
 ```
 
 或在 Xcode 中：
-1. 檔案 > 新增套件...
+1. File > Add Packages...
 2. 輸入儲存庫 URL：`https://github.com/fastcomments/fastcomments-swift.git`
-3. 選擇您要使用的版本
+3. 選擇您想使用的版本
 
 ### 系統需求
 

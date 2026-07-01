@@ -2,11 +2,11 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Evet |  |
-| commentId | string | path | Evet |  |
-| broadcastId | string | query | Evet |  |
-| editKey | string | query | Hayır |  |
-| sso | string | query | Hayır |  |
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | Yes |  |
+| editKey | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Yanıt
 
@@ -17,19 +17,20 @@ Döndürür: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments
 [inline-code-attrs-start title = 'set_comment_text Örneği'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import SetCommentTextOptions
 from client.models.comment_text_update_request import CommentTextUpdateRequest
 from client.models.public_api_set_comment_text_response import PublicAPISetCommentTextResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Sunucu (host) tanımlamak isteğe bağlıdır ve varsayılan https://fastcomments.com'dur
+# Host tanımlaması isteğe bağlıdır ve varsayılan olarak https://fastcomments.com olur
 # Tüm desteklenen yapılandırma parametrelerinin listesini görmek için configuration.py dosyasına bakın.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# API istemcisinin bir örneği ile bir bağlam (context) açın
+# API istemcisinin bir örneğiyle bir bağlam girin
 with client.ApiClient(configuration) as api_client:
     # API sınıfının bir örneğini oluşturun
     api_instance = client.PublicApi(api_client)
@@ -37,11 +38,11 @@ with client.ApiClient(configuration) as api_client:
     comment_id = 'comment_id_example' # str | 
     broadcast_id = 'broadcast_id_example' # str | 
     comment_text_update_request = client.CommentTextUpdateRequest() # CommentTextUpdateRequest | 
-    edit_key = 'edit_key_example' # str |  (isteğe bağlı)
-    sso = 'sso_example' # str |  (isteğe bağlı)
+    edit_key = 'edit_key_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.set_comment_text(tenant_id, comment_id, broadcast_id, comment_text_update_request, edit_key=edit_key, sso=sso)
+        api_response = api_instance.set_comment_text(tenant_id, comment_id, broadcast_id, comment_text_update_request, SetCommentTextOptions(edit_key=edit_key, sso=sso))
         print("The response of PublicApi->set_comment_text:\n")
         pprint(api_response)
     except Exception as e:

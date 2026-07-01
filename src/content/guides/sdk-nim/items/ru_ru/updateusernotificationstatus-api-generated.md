@@ -1,11 +1,11 @@
 ## Параметры
 
-| Имя | Тип | Обязательно | Описание |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| notificationId | string | Нет |  |
-| newStatus | string | Нет |  |
-| sso | string | Нет |  |
+| tenantId | string | Yes |  |
+| notificationId | string | No |  |
+| newStatus | string | No |  |
+| sso | string = "" | No |  |
 
 ## Ответ
 
@@ -13,19 +13,14 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример использования updateUserNotificationStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример updateUserNotificationStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateUserNotificationStatus(
+let (respOpt, httpResponse) = client.updateUserNotificationStatus(
   tenantId = "my-tenant-123",
   notificationId = "notif-456",
   newStatus = "read",
-  sso = "sso-token-abc123"
+  sso = ""
 )
-if response.isSome:
-  let updated = response.get()
-  echo "Notification status updated successfully"
-else:
-  echo "No update response received"
+if respOpt.isSome:
+  let status = respOpt.get()
 [inline-code-end]
-
----

@@ -1,25 +1,27 @@
-## 매개변수
+## Parameters
 
-| 이름 | 형식 | 위치 | 필수 | 설명 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| commentId | string | path | 예 |  |
-| sso | string | query | 아니오 |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| sso | string | query | No |  |
 
-## 응답
+## Response
 
-반환: [`ModerationAPIGetLogsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationAPIGetLogsResponse.swift)
+Returns: [`ModerationAPIGetLogsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationAPIGetLogsResponse.swift)
 
-## 예제
+## Example
 
-[inline-code-attrs-start title = 'getLogs 예제'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getLogs 예시'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 다음 코드 샘플은 아직 베타입니다. 문제 발생 시 http://github.com/OpenAPITools/openapi-generator/issues/new 에서 신고해 주세요
+// 다음 코드 샘플은 아직 베타 버전입니다. 문제가 있으면 http://github.com/OpenAPITools/openapi-generator/issues/new 에 보고해 주세요
 import FastCommentsSwift
 
-let commentId = "commentId_example" // String | 
-let sso = "sso_example" // String |  (선택 사항)
+let tenantId = "tenantId_example" // String |
+let commentId = "commentId_example" // String |
+let sso = "sso_example" // String |  (옵션)
 
-ModerationAPI.getLogs(commentId: commentId, sso: sso) { (response, error) in
+ModerationAPI.getLogs(tenantId: tenantId, commentId: commentId, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -30,5 +32,3 @@ ModerationAPI.getLogs(commentId: commentId, sso: sso) { (response, error) in
     }
 }
 [inline-code-end]
-
----

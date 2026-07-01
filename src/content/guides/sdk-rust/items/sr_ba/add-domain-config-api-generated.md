@@ -1,35 +1,29 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| add_domain_config_params | models::AddDomainConfigParams | Да |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenant_id | String | Da |  |
+| add_domain_config_params | models::AddDomainConfigParams | Da |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`AddDomainConfigResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/add_domain_config_response.rs)
+Vraća: [`AddDomainConfigResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/add_domain_config_response.rs)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'add_domain_config Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'add_domain_config Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let params: AddDomainConfigParams = AddDomainConfigParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        add_domain_config_params: models::AddDomainConfigParams {
-            domain: "news.example.com".to_string(),
-            path_prefix: Some("news/article".to_string()),
-            allow_subdomains: Some(true),
-            allowed_origins: Some(vec![
-                "https://www.example.com".to_string(),
-                "https://editor.example.com".to_string()
-            ]),
-            default_moderation: Some("pre-moderation".to_string()),
-            enabled: Some(true),
-        },
-    };
+let params = AddDomainConfigParams {
+    tenant_id: "acme-corp-tenant".to_string(),
+    add_domain_config_params: models::AddDomainConfigParams {
+        domain: "news.example.com".to_string(),
+        config_type: "article".to_string(),
+        is_active: true,
+        description: Some("News article domain".to_string()),
+    },
+};
 
-    let response: AddDomainConfigResponse = add_domain_config(&configuration, params).await?;
-    Ok(())
-}
+let response = add_domain_config(&configuration, params).await?;
 [inline-code-end]
+
+---

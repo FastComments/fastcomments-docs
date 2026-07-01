@@ -1,15 +1,9 @@
----
 ## パラメータ
 
-| 名前 | 型 | 必須 | 説明 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | はい |  |
-| questionId | string | いいえ |  |
-| questionIds | seq[string] | いいえ |  |
-| urlId | string | はい |  |
-| timeBucket | AggregateTimeBucket | いいえ |  |
-| startDate | string | いいえ |  |
-| forceRecalculate | bool | いいえ |  |
+| options | AggregateQuestionResultsOptions | いいえ |  |
 
 ## レスポンス
 
@@ -19,19 +13,8 @@
 
 [inline-code-attrs-start title = 'aggregateQuestionResults の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.aggregateQuestionResults(
-  tenantId = "my-tenant-123",
-  questionId = "",
-  questionIds = @[],
-  urlId = "news/article-title",
-  timeBucket = AggregateTimeBucket(0),
-  startDate = "",
-  forceRecalculate = false
-)
-
-if response.isSome:
-  let results = response.get()
-  discard results
+let opts = AggregateQuestionResultsOptions()
+let (aggResultOpt, httpResp) = client.aggregateQuestionResults(tenantId = "my-tenant-123", options = opts)
+if aggResultOpt.isSome:
+  let aggResult = aggResultOpt.get()
 [inline-code-end]
-
----

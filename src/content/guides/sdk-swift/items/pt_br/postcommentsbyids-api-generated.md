@@ -1,8 +1,9 @@
 ## Parâmetros
 
 | Nome | Tipo | Localização | Obrigatório | Descrição |
-|------|------|----------|----------|-------------|
-| sso | string | query | Não |  |
+|------|------|-------------|-------------|-----------|
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Resposta
 
@@ -10,15 +11,16 @@ Retorna: [`ModerationAPIChildCommentsResponse`](https://github.com/FastComments/
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de postCommentsByIds'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo postCommentsByIds'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Os exemplos de código a seguir ainda estão em beta. Para qualquer problema, por favor reporte via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentsByIdsParams = CommentsByIdsParams(ids: ["ids_example"]) // CommentsByIdsParams | 
 let sso = "sso_example" // String |  (opcional)
 
-ModerationAPI.postCommentsByIds(commentsByIdsParams: commentsByIdsParams, sso: sso) { (response, error) in
+ModerationAPI.postCommentsByIds(tenantId: tenantId, commentsByIdsParams: commentsByIdsParams, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return

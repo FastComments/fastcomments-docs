@@ -1,9 +1,10 @@
 ## Параметри
 
-| Назва | Type | Обов'язковий | Опис |
-|------|------|--------------|-------------|
+| Назва | Тип | Обов'язково | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Так |  |
 | commentsByIdsParams | CommentsByIdsParams | Ні |  |
-| sso | string | Ні |  |
+| sso | string = "" | Ні |  |
 
 ## Відповідь
 
@@ -13,11 +14,10 @@
 
 [inline-code-attrs-start title = 'postCommentsByIds Приклад'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let commentsParams = CommentsByIdsParams(ids = @["cmt-1001", "cmt-1002"], includeReplies = true, maxDepth = 2)
-let (response, httpResponse) = client.postCommentsByIds(commentsByIdsParams = commentsParams, sso = "sso-user-7f3a9b")
-if response.isSome:
-  let result = response.get()
-  echo "Received child comments response: ", result
+let tenantId = "my-tenant-123"
+let params = CommentsByIdsParams(commentIds = @["cmt-001", "cmt-002"])
+let (maybeResp, httpResp) = client.postCommentsByIds(tenantId = tenantId, commentsByIdsParams = params, sso = "")
+if maybeResp.isSome:
+  let resp = maybeResp.get()
+  # використати resp за потреби
 [inline-code-end]
-
----

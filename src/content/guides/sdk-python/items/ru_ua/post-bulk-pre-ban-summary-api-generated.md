@@ -1,45 +1,48 @@
-## Параметры
+## Параметри
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| includeByUserIdAndEmail | boolean | query | Нет |  |
-| includeByIP | boolean | query | Нет |  |
-| includeByEmailDomain | boolean | query | Нет |  |
-| sso | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| includeByUserIdAndEmail | boolean | query | No |  |
+| includeByIP | boolean | query | No |  |
+| includeByEmailDomain | boolean | query | No |  |
+| sso | string | query | No |  |
 
-## Ответ
+## Відповідь
 
 Возвращает: [`BulkPreBanSummary`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/bulk_pre_ban_summary.py)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример post_bulk_pre_ban_summary'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_bulk_pre_ban_summary Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import PostBulkPreBanSummaryOptions
 from client.models.bulk_pre_ban_params import BulkPreBanParams
 from client.models.bulk_pre_ban_summary import BulkPreBanSummary
 from client.rest import ApiException
 from pprint import pprint
 
-# Указание хоста необязательно и по умолчанию https://fastcomments.com
+# Определение хоста является необязательным и по умолчанию равно https://fastcomments.com
 # См. configuration.py для списка всех поддерживаемых параметров конфигурации.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Войдите в контекст с экземпляром API-клиента
+# Войти в контекст с экземпляром клиента API
 with client.ApiClient(configuration) as api_client:
-    # Создайте экземпляр класса API
+    # Создать экземпляр класса API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     bulk_pre_ban_params = client.BulkPreBanParams() # BulkPreBanParams | 
-    include_by_user_id_and_email = True # bool |  (необязательно)
-    include_by_ip = True # bool |  (необязательно)
-    include_by_email_domain = True # bool |  (необязательно)
-    sso = 'sso_example' # str |  (необязательно)
+    include_by_user_id_and_email = True # bool |  (optional)
+    include_by_ip = True # bool |  (optional)
+    include_by_email_domain = True # bool |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.post_bulk_pre_ban_summary(bulk_pre_ban_params, include_by_user_id_and_email=include_by_user_id_and_email, include_by_ip=include_by_ip, include_by_email_domain=include_by_email_domain, sso=sso)
+        api_response = api_instance.post_bulk_pre_ban_summary(tenant_id, bulk_pre_ban_params, PostBulkPreBanSummaryOptions(include_by_user_id_and_email=include_by_user_id_and_email, include_by_ip=include_by_ip, include_by_email_domain=include_by_email_domain, sso=sso))
         print("The response of ModerationApi->post_bulk_pre_ban_summary:\n")
         pprint(api_response)
     except Exception as e:

@@ -1,32 +1,32 @@
-Actuellement, les spectateurs en ligne d'une page : personnes dont la session websocket est abonnée à la page en ce moment.
-Renvoie anonCount + totalCount (abonnés à la salle, y compris les spectateurs anonymes que nous n'énumérons pas).
+Currently‑online viewers of a page: people whose websocket session is subscribed to the page right now.  
+Renvoie anonCount + totalCount (room‑wide subscribers, including anon viewers we don't enumerate).
 
 ## Paramètres
 
 | Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Oui |  |
-| urlId | string | query | Oui | Identifiant de l'URL de la page (nettoyé côté serveur). |
-| afterName | string | query | Non | Curseur : passer nextAfterName de la réponse précédente. |
-| afterUserId | string | query | Non | Départageur de curseur : passer nextAfterUserId de la réponse précédente. Requis lorsque afterName est défini pour que les égalités de noms n'entraînent pas la suppression d'entrées. |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes | Identifiant d’URL de la page (nettoyé côté serveur). |
+| afterName | string | query | No | Curseur : transmettre nextAfterName de la réponse précédente. |
+| afterUserId | string | query | No | Critère de désambigüisation du curseur : transmettre nextAfterUserId de la réponse précédente. Obligatoire lorsque afterName est défini afin que les égalités de noms ne suppriment pas d’entrées. |
 
 ## Réponse
 
-Renvoie : [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PageUsersOnlineResponse.swift)
+Renvoie : [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PageUsersOnlineResponse.swift)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getOnlineUsers'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getOnlineUsers'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Les exemples de code suivants sont encore en version bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let urlId = "urlId_example" // String | Identifiant de l'URL de la page (nettoyé côté serveur).
-let afterName = "afterName_example" // String | Curseur : passer nextAfterName de la réponse précédente. (optionnel)
-let afterUserId = "afterUserId_example" // String | Départageur de curseur : passer nextAfterUserId de la réponse précédente. Requis lorsque afterName est défini pour que les égalités de noms n'entraînent pas la suppression d'entrées. (optionnel)
+let urlId = "urlId_example" // String | Identifiant d’URL de la page (nettoyé côté serveur).
+let afterName = "afterName_example" // String | Curseur : transmettre nextAfterName de la réponse précédente. (optionnel)
+let afterUserId = "afterUserId_example" // String | Critère de désambigüisation du curseur : transmettre nextAfterUserId de la réponse précédente. Obligatoire lorsque afterName est défini afin que les égalités de noms ne suppriment pas d’entrées. (optionnel)
 
-PublicAPI.getOnlineUsers(tenantId: tenantId, urlId: urlId, afterName: afterName, afterUserId: afterUserId) { (response, error) in
+PublicAPI.getOnlineUsers(tenantId: tenantId, urlId: urlId, options: PublicAPI.GetOnlineUsersOptions(afterName: afterName, afterUserId: afterUserId)) { (response, error) in
     guard error == nil else {
         print(error)
         return

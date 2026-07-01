@@ -1,7 +1,7 @@
-## Paramètres
+## Parameters
 
-| Name | Type | Obligatoire | Description |
-|------|------|------------|-------------|
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
 | tenantId | string | Oui |  |
 | userId | string | Non |  |
 | urlId | string | Non |  |
@@ -10,19 +10,31 @@
 | type | string | Non |  |
 | skip | number | Non |  |
 
-## Réponse
+## Response
 
-Renvoie : [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetNotificationsResponse.ts)
+Renvoie : [`GetNotificationsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetNotificationsResponse1.ts)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getNotifications'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getNotifications'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_98b3f';
-const userId: string = 'user_8a3f';
-const urlId: string = '/blog/2026/new-feature';
-const viewed: boolean = false;
-const type: string = 'reply';
-const skip: number = 10;
-const notifications: GetNotificationsResponse = await getNotifications(tenantId, userId, urlId, undefined, viewed, type, skip);
+async function demo() {
+  const tenantId: string = "acme-corp";
+  const userId: string = "john.doe";
+
+  const notifications: GetNotificationsResponse1 = await getNotifications(tenantId, userId);
+  console.log(notifications);
+
+  const more: GetNotificationsResponse1 = await getNotifications(
+    tenantId,
+    undefined,
+    "article-5678",
+    undefined,
+    true,
+    "reply",
+    10
+  );
+  console.log(more);
+}
+demo();
 [inline-code-end]

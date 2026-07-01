@@ -2,9 +2,9 @@
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
+| tenantId | string | はい |  |
 | commentId | string | はい |  |
-| reviewed | bool | いいえ |  |
-| sso | string | いいえ |  |
+| options | PostSetCommentReviewStatusOptions | いいえ |  |
 
 ## レスポンス
 
@@ -14,16 +14,15 @@
 
 [inline-code-attrs-start title = 'postSetCommentReviewStatus の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postSetCommentReviewStatus(
-  commentId = "cmt-98765-news-article",
-  reviewed = false,
-  sso = ""
+let (apiResp, httpResp) = client.postSetCommentReviewStatus(
+  tenantId = "my-tenant-123",
+  commentId = "cmt-7890",
+  options = PostSetCommentReviewStatusOptions()
 )
-if response.isSome:
-  let apiResp = response.get()
-  echo "Review status updated"
-else:
-  echo "Failed to update review status: " & $httpResponse.status
-[inline-code-end]
 
----
+if apiResp.isSome:
+  let _ = apiResp.get()
+  discard
+else:
+  discard
+[inline-code-end]

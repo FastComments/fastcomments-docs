@@ -4,7 +4,7 @@ afterId
 
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | כן |  |
 | afterId | string | query | לא |  |
@@ -17,9 +17,9 @@ afterId
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה של getFeedPosts'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getFeedPosts'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// דוגמאות הקוד הבאות עדיין בבטא. לכל בעיה, אנא דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// קטעי הקוד הבאים עדיין בטא. לכל בעיה, אנא דווחו דרך http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -27,7 +27,7 @@ let afterId = "afterId_example" // String |  (אופציונלי)
 let limit = 987 // Int |  (אופציונלי)
 let tags = ["inner_example"] // [String] |  (אופציונלי)
 
-DefaultAPI.getFeedPosts(tenantId: tenantId, afterId: afterId, limit: limit, tags: tags) { (response, error) in
+DefaultAPI.getFeedPosts(tenantId: tenantId, options: DefaultAPI.GetFeedPostsOptions(afterId: afterId, limit: limit, tags: tags)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -38,3 +38,5 @@ DefaultAPI.getFeedPosts(tenantId: tenantId, afterId: afterId, limit: limit, tags
     }
 }
 [inline-code-end]
+
+---

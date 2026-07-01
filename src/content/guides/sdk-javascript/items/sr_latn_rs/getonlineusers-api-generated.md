@@ -1,10 +1,10 @@
-Trenutno online gledaoci stranice: osobe čija je websocket sesija trenutno pretplaćena na stranicu.
-Vraća anonCount + totalCount (pretplatnici cele sobe, uključujući anonimne gledaoce koje ne nabrajamo).
+Trenutno online gledatelji stranice: osobe čija je websocket sesija trenutno pretplaćena na stranicu.  
+Vraća anonCount + totalCount (pretplatnici na čitavu sobu, uključujući anonimne gledatelje koje ne nabrajamo).
 
 ## Parametri
 
 | Ime | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
 | tenantId | string | Da |  |
 | urlId | string | Da |  |
 | afterName | string | Ne |  |
@@ -12,17 +12,27 @@ Vraća anonCount + totalCount (pretplatnici cele sobe, uključujući anonimne gl
 
 ## Odgovor
 
-Vraća: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOnlineResponse.ts)
+Vraća: [`GetOnlineUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOnlineUsersResponse.ts)
 
 ## Primer
 
-[inline-code-attrs-start title = 'getOnlineUsers Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getOnlineUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8f3c2b7';
-const urlId: string = 'article-2026-06-19-site-update';
-const afterName: string = 'michael.hansen';
-const afterUserId: string = 'user_00421';
-const onlineUsers: PageUsersOnlineResponse = await getOnlineUsers(tenantId, urlId, afterName, afterUserId);
+async function demoOnlineUsers() {
+  const tenantId: string = "tenant_12345";
+  const urlId: string = "url_98765";
+
+  // Sa opcionim parametrima paginacije
+  const pagedResult: GetOnlineUsersResponse = await getOnlineUsers(
+    tenantId,
+    urlId,
+    "alice_smith",
+    "user_9"
+  );
+
+  // Bez opcionih parametara paginacije
+  const fullResult: GetOnlineUsersResponse = await getOnlineUsers(tenantId, urlId);
+}
 [inline-code-end]
 
 ---

@@ -1,11 +1,11 @@
 ## Parámetros
 
-| Name | Type | Required | Description |
+| Nombre | Tipo | Requerido | Descripción |
 |------|------|----------|-------------|
-| tenantId | string | Sí |  |
-| urlId | string | Sí |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
 | id | string | No |  |
-| title | string | No |  |
+| title | string = "" | No |  |
 
 ## Respuesta
 
@@ -13,19 +13,16 @@ Devuelve: [`Option[CreateV1PageReact]`](https://github.com/FastComments/fastcomm
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de createV2PageReact'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createV2PageReact Ejemplo'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.createV2PageReact(
+let (pageResult, httpResponse) = client.createV2PageReact(
   tenantId = "my-tenant-123",
-  urlId = "news/2026/06/fastcomments-release",
-  id = "",
-  title = ""
+  urlId = "news/article-title",
+  id = "page-456",
+  title = "Breaking News",
 )
-if response.isSome:
-  let react = response.get()
-  echo "Created page react: ", $react
-else:
-  echo "No react returned, HTTP status: ", $httpResponse.statusCode
-[inline-code-end]
 
----
+if pageResult.isSome:
+  let page = pageResult.get()
+  # usar `page` según sea necesario
+[inline-code-end]

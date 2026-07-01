@@ -2,11 +2,11 @@
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Tak |  |
-| search | string | query | Tak |  |
-| locale | string | query | Nie |  |
-| rating | string | query | Nie |  |
-| page | number | query | Nie |  |
+| tenantId | string | path | Yes |  |
+| search | string | query | Yes |  |
+| locale | string | query | No |  |
+| rating | string | query | No |  |
+| page | number | query | No |  |
 
 ## Odpowiedź
 
@@ -14,7 +14,7 @@ Zwraca: [`GetGifsSearchResponse`](https://github.com/FastComments/fastcomments-p
 
 ## Przykład
 
-[inline-code-attrs-start title = 'getGifsSearch Przykład'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład getGifsSearch'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -22,18 +22,22 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Jeśli chcesz użyć niestandardowego klienta HTTP, przekaż klienta implementującego `GuzzleHttp\ClientInterface`.
-    // To jest opcjonalne, `GuzzleHttp\Client` będzie używany jako domyślny.
+    // Jeśli chcesz użyć własnego klienta HTTP, przekaż swój klient implementujący `GuzzleHttp\ClientInterface`.
+    // To jest opcjonalne, `GuzzleHttp\Client` zostanie użyty jako domyślny.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$search = 'search_example'; // string
-$locale = 'locale_example'; // string
-$rating = 'rating_example'; // string
-$page = 3.4; // float
+
+$tenant_id = 'tenant_id_example'; // ciąg znaków
+$search = 'search_example'; // ciąg znaków
+$options = [
+    'locale' => 'locale_example', // ciąg znaków
+    'rating' => 'rating_example', // ciąg znaków
+    'page' => 3.4, // liczba zmiennoprzecinkowa
+];
+
 
 try {
-    $result = $apiInstance->getGifsSearch($tenant_id, $search, $locale, $rating, $page);
+    $result = $apiInstance->getGifsSearch($tenant_id, $search, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getGifsSearch: ', $e->getMessage(), PHP_EOL;

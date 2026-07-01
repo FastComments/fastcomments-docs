@@ -1,7 +1,7 @@
 ## Paramètres
 
-| Name | Type | Requis | Description |
-|------|------|--------|-------------|
+| Nom | Type | Obligatoire | Description |
+|------|------|----------|-------------|
 | tenantId | string | Oui |  |
 | id | string | Non |  |
 | updateTenantPackageBody | UpdateTenantPackageBody | Non |  |
@@ -12,24 +12,14 @@ Renvoie : [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomme
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple d\'updateTenantPackage'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple de updateTenantPackage'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let packageBody = UpdateTenantPackageBody(
-  name: "Pro Plan",
-  priceCents: 1999,
-  active: true,
-  features: @["priority-support", "advanced-moderation"]
-)
-
-let (response, httpResponse) = client.updateTenantPackage(
+let body = UpdateTenantPackageBody()
+let (optResp, httpResp) = client.updateTenantPackage(
   tenantId = "my-tenant-123",
-  id = "pkg-789",
-  updateTenantPackageBody = packageBody
+  id = "premium-plan",
+  updateTenantPackageBody = body
 )
-
-if response.isSome:
-  let apiEmpty = response.get()
-  echo "Tenant package updated successfully, HTTP status: " & $httpResponse.status
+if optResp.isSome:
+  let empty = optResp.get()
 [inline-code-end]
-
----

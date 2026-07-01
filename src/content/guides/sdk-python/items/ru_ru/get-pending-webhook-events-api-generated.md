@@ -20,11 +20,12 @@
 [inline-code-attrs-start title = 'Пример get_pending_webhook_events'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetPendingWebhookEventsOptions
 from client.models.get_pending_webhook_events_response import GetPendingWebhookEventsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Указание хоста необязательно и по умолчанию равно https://fastcomments.com
+# Определение хоста является необязательным и по умолчанию https://fastcomments.com
 # См. configuration.py для списка всех поддерживаемых параметров конфигурации.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -32,16 +33,16 @@ configuration = client.Configuration(
 
 # Клиент должен настроить параметры аутентификации и авторизации
 # в соответствии с политикой безопасности сервера API.
-# Ниже приведены примеры для каждого метода аутентификации, используйте пример,
-# который соответствует вашему сценарию использования аутентификации.
+# Примеры для каждого метода аутентификации приведены ниже, используйте пример, который
+# соответствует вашему случаю использования аутентификации.
 
-# Настройка авторизации с помощью API-ключа: api_key
+# Настройка авторизации ключом API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Раскомментируйте ниже, чтобы установить префикс (e.g. Bearer) для API-ключа, если требуется
+# Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для ключа API, если необходимо
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Войдите в контекст с экземпляром API-клиента
+# Откройте контекст с экземпляром клиента API
 with client.ApiClient(configuration) as api_client:
     # Создайте экземпляр класса API
     api_instance = client.DefaultApi(api_client)
@@ -55,7 +56,7 @@ with client.ApiClient(configuration) as api_client:
     skip = 3.4 # float |  (необязательно)
 
     try:
-        api_response = api_instance.get_pending_webhook_events(tenant_id, comment_id=comment_id, external_id=external_id, event_type=event_type, type=type, domain=domain, attempt_count_gt=attempt_count_gt, skip=skip)
+        api_response = api_instance.get_pending_webhook_events(tenant_id, GetPendingWebhookEventsOptions(comment_id=comment_id, external_id=external_id, event_type=event_type, type=type, domain=domain, attempt_count_gt=attempt_count_gt, skip=skip))
         print("The response of DefaultApi->get_pending_webhook_events:\n")
         pprint(api_response)
     except Exception as e:

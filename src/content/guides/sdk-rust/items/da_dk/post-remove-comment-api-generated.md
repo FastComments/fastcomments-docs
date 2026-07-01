@@ -1,27 +1,28 @@
----
-## Parametre
+## Parameters
 
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
+| tenant_id | String | Ja |  |
 | comment_id | String | Ja |  |
+| broadcast_id | String | Nej |  |
 | sso | String | Nej |  |
 
-## Respons
+## Response
 
-Returnerer: [`PostRemoveCommentResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/post_remove_comment_response.rs)
+Returnerer: [`PostRemoveCommentApiResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/post_remove_comment_api_response.rs)
 
-## Eksempel
+## Example
 
 [inline-code-attrs-start title = 'post_remove_comment Eksempel'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_remove_comment() -> Result<PostRemoveCommentResponse, Error> {
-    let params: PostRemoveCommentParams = PostRemoveCommentParams {
-        comment_id: String::from("cmt-9f8b6a3"),
-        sso: Some(String::from("sso-token-6f4e9a2b")),
+async fn remove_comment_example(config: &configuration::Configuration) -> Result<(), Error> {
+    let params = PostRemoveCommentParams {
+        tenant_id: "acme-corp".into(),
+        comment_id: "news/article/42".into(),
+        broadcast_id: Some("live-event-99".into()),
+        sso: Some("sso-user-abc".into()),
     };
-    let response: PostRemoveCommentResponse = post_remove_comment(&configuration, params).await?;
-    Ok(response)
+    let _response = post_remove_comment(config, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

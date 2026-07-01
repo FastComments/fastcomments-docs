@@ -1,10 +1,10 @@
-ה-SDK מציע שלוש מחלקות לקוח API:
+The SDK מחזיק שלושה מחלקות לקוח של API:
 
-- **`DefaultApi`** — שיטות מאומתות באמצעות מפתח API לשימוש בצד השרת. הגדר מפתח API כפי שמוצג ב[התחלת עבודה](#getting-started-readme-generated).
-- **`PublicApi`** — שיטות ציבוריות שאינן דורשות מפתח API, ובטוחות לקריאה מדפדפנים ויישומי מובייל.
-- **`ModerationApi`** — שיטות ללוח הבקרה של המודרטורים: רישום, ספירה, חיפוש, רישום וייצוא תגובות; פעולות מודרציה (הסרה/שחזור, דיווח, קביעת סטטוס לסקירה/ספאם/אישור, הצבעות, פתיחה/סגירת אשכול); חסימות (חסימה מתגובה, ביטול, סיכומים לפני חסימה, מצב והעדפות חסימה, ספירת משתמשים חסומים); ותגים ואמון (הענקה/הסרה של תג, תגי ידני, קבלת/הגדרת גורם אמון, פרופיל פנימי של משתמש). כל שיטה ב-`ModerationApi` מקבלת פרמטר `$sso` לאימות המודרטור המבצע דרך SSO.
+- **`DefaultApi`** - שיטות מאומתות באמצעות מפתח API לשימוש בצד השרת. הגדירו מפתח API כפי שמופיע ב[Getting Started](#getting-started-readme-generated).
+- **`PublicApi`** - שיטות ציבוריות שאינן דורשות מפתח API, בטוחות לקריאה מדפדפנים ויישומים ניידים.
+- **`ModerationApi`** - מערכת מקיפה של API למודרציה בזמן אמת ומהירה. כל שיטה של `ModerationApi` מקבלת פרמטר `$sso` ויכולה לאמת באמצעות SSO או באמצעות קוביית סשן של FastComments.com.
 
-### שימוש ב-PublicApi
+### שימוש ב‑PublicApi
 
 ```php
 <?php
@@ -25,7 +25,7 @@ try {
 }
 ```
 
-### שימוש ב-ModerationApi
+### שימוש ב‑ModerationApi
 
 ```php
 <?php
@@ -34,10 +34,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new FastComments\Client\Api\ModerationApi(
     new GuzzleHttp\Client()
 );
-$sso = 'sso_example'; // מחרוזת - מטען SSO המאמת את המודרטור
+$sso = 'sso_example'; // מחרוזת - מטעינת SSO המאמתת את המפקח
 
 try {
-    $result = $apiInstance->getCount(null, null, null, null, null, $sso);
+    $result = $apiInstance->getCount([
+        'sso' => $sso,
+    ]);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getCount: ', $e->getMessage(), PHP_EOL;

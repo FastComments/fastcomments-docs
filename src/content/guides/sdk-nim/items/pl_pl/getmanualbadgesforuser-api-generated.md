@@ -2,9 +2,8 @@
 
 | Nazwa | Typ | Wymagane | Opis |
 |------|------|----------|-------------|
-| badgesUserId | string | Nie |  |
-| commentId | string | Tak |  |
-| sso | string | Nie |  |
+| tenantId | string | Yes |  |
+| options | GetManualBadgesForUserOptions | No |  |
 
 ## Odpowiedź
 
@@ -12,17 +11,15 @@ Zwraca: [`Option[GetUserManualBadgesResponse]`](https://github.com/FastComments/
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład getManualBadgesForUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getManualBadgesForUser Przykład'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getManualBadgesForUser(
-  badgesUserId = "user-98765",
-  commentId = "comment-0a1b2c3d",
-  sso = "sso-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
+let (userBadgesOpt, httpResp) = client.getManualBadgesForUser(
+  tenantId = "my-tenant-123",
+  options = GetManualBadgesForUserOptions()
 )
-if response.isSome:
-  let badges = response.get()
-  echo "Received manual badges for user"
-  echo "HTTP status: ", httpResponse.status
+if userBadgesOpt.isSome:
+  let badges = userBadgesOpt.get()
+  echo badges
 [inline-code-end]
 
 ---

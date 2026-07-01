@@ -7,8 +7,7 @@ Returns anonCount + totalCount (room-wide subscribers, including anon viewers we
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | urlId | string | Yes |  |
-| afterName | string | No |  |
-| afterUserId | string | No |  |
+| options | GetOnlineUsersOptions | No |  |
 
 ## Response
 
@@ -18,11 +17,9 @@ Returns: [`Option[PageUsersOnlineResponse]`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'getOnlineUsers Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getOnlineUsers(tenantId = "my-tenant-123", urlId = "news/politics/top-story", afterName = "", afterUserId = "")
-if response.isSome:
-  let page = response.get()
-  echo "Received online users page:"
-  echo page
-else:
-  echo "No online users returned. HTTP status: ", httpResponse.statusCode
+let opts = GetOnlineUsersOptions()
+let (onlineUsersOpt, httpResp) = client.getOnlineUsers(tenantId = "my-tenant-123", urlId = "news/article-title", options = opts)
+if onlineUsersOpt.isSome:
+  let onlineUsers = onlineUsersOpt.get()
+  echo onlineUsers
 [inline-code-end]

@@ -1,10 +1,10 @@
-## Parametry
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Tak |  |
 
-## Odpowiedź
+## Response
 
 Zwraca: [`CreateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateQuestionConfigResponse.php)
 
@@ -23,13 +23,15 @@ $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKe
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Jeśli chcesz użyć niestandardowego klienta HTTP, przekaż klienta implementującego `GuzzleHttp\ClientInterface`.
-    // To opcjonalne, domyślnie używany będzie `GuzzleHttp\Client`.
+    // Jeśli chcesz używać własnego klienta HTTP, przekaż swój klient implementujący `GuzzleHttp\ClientInterface`.
+    // Jest to opcjonalne, domyślnie używany będzie `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $create_question_config_body = new \FastComments\Client\Model\CreateQuestionConfigBody(); // \FastComments\Client\Model\CreateQuestionConfigBody
+
 
 try {
     $result = $apiInstance->createQuestionConfig($tenant_id, $create_question_config_body);

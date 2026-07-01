@@ -1,13 +1,13 @@
 ## Parametre
 
-| Name | Type | Location | Required | Description |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| userId | string | query | Nej |  |
-| urlId | string | query | Nej |  |
-| fromCommentId | string | query | Nej |  |
-| viewed | boolean | query | Nej |  |
-| type | string | query | Nej |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| urlId | string | query | No |  |
+| fromCommentId | string | query | No |  |
+| viewed | boolean | query | No |  |
+| type | string | query | No |  |
 
 ## Respons
 
@@ -17,7 +17,7 @@ Returnerer: [`GetNotificationCountResponse`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'getNotificationCount Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Følgende kodeeksempler er stadig i beta. Hvis du oplever problemer, rapportér venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De følgende kodeeksempler er stadig i beta. For eventuelle problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -27,7 +27,7 @@ let fromCommentId = "fromCommentId_example" // String |  (valgfri)
 let viewed = true // Bool |  (valgfri)
 let type = "type_example" // String |  (valgfri)
 
-DefaultAPI.getNotificationCount(tenantId: tenantId, userId: userId, urlId: urlId, fromCommentId: fromCommentId, viewed: viewed, type: type) { (response, error) in
+DefaultAPI.getNotificationCount(tenantId: tenantId, options: DefaultAPI.GetNotificationCountOptions(userId: userId, urlId: urlId, fromCommentId: fromCommentId, viewed: viewed, type: type)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -38,5 +38,3 @@ DefaultAPI.getNotificationCount(tenantId: tenantId, userId: userId, urlId: urlId
     }
 }
 [inline-code-end]
-
----

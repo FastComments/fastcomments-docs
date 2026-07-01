@@ -1,9 +1,9 @@
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| skip | int32_t | Ne |  |
+| tenantId | string | Yes |  |
+| skip | int32_t | No |  |
 
 ## Odgovor
 
@@ -11,20 +11,14 @@ Vraća: [`GetSSOUsersResponse`](https://github.com/FastComments/fastcomments-cpp
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer getSSOUsers'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSSOUsers Primjer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 boost::optional<int32_t> skip = 25;
-api->getSSOUsers(tenantId, skip)
-    .then([](pplx::task<std::shared_ptr<GetSSOUsersResponse>> task) {
-        try {
-            auto resp = task.get();
-            if (!resp) resp = std::make_shared<GetSSOUsersResponse>();
-            (void)resp;
-        } catch (const std::exception& ex) {
-            (void)ex;
-        }
-    });
+api->getSSOUsers(tenantId, skip).then([](pplx::task<std::shared_ptr<GetSSOUsersResponse>> t) {
+    try {
+        auto response = t.get();
+    } catch (const std::exception&) {
+    }
+});
 [inline-code-end]
-
----

@@ -1,12 +1,11 @@
-## Parametri
+## Parameteri
 
-| Ime | Tip | Obvezno | Opis |
+| Ime | Vrsta | Obvezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| id | string | Ne |  |
-| unBlockFromCommentParams | UnBlockFromCommentParams | Ne |  |
-| userId | string | Ne |  |
-| anonUserId | string | Ne |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| unBlockFromCommentParams | UnBlockFromCommentParams | No |  |
+| options | UnBlockUserFromCommentOptions | No |  |
 
 ## Odgovor
 
@@ -18,17 +17,11 @@ Vrne: [`Option[UnblockSuccess]`](https://github.com/FastComments/fastcomments-ni
 [inline-code-start]
 let (response, httpResponse) = client.unBlockUserFromComment(
   tenantId = "my-tenant-123",
-  id = "comment-9f3b2a",
-  unBlockFromCommentParams = UnBlockFromCommentParams(),
-  userId = "user-1024",
-  anonUserId = "anon-77b"
+  id = "comment-456",
+  unBlockFromCommentParams = UnBlockFromCommentParams(userId = "user-789", commentId = "cmt-321"),
+  options = UnBlockUserFromCommentOptions(),
 )
 
 if response.isSome:
-  let unblockResult = response.get()
-  echo unblockResult
-else:
-  echo "Unblock failed"
+  let unblockSuccess = response.get()
 [inline-code-end]
-
----

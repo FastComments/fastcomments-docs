@@ -1,6 +1,7 @@
+---
 ## Παράμετροι
 
-| Name | Type | Required | Description |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
 | tenant_id | String | Ναι |  |
 | create_tenant_body | models::CreateTenantBody | Ναι |  |
@@ -11,31 +12,28 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα create_tenant'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_tenant Παράδειγμα'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn create_tenant_example() -> Result<CreateTenantResponse, Error> {
-    let params: CreateTenantParams = CreateTenantParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        create_tenant_body: models::CreateTenantBody {
-            name: "Acme Corporation".to_string(),
-            primary_domain: "acme-corp.com".to_string(),
-            contact_email: "ops@acme-corp.com".to_string(),
-            api_domain_configuration: Some(ApiDomainConfiguration {
-                enabled: true,
-                domain: "comments.acme-corp.com".to_string(),
-            }),
-            billing_info: Some(BillingInfo {
-                plan: "pro".to_string(),
-                billing_contact_email: "billing@acme-corp.com".to_string(),
-            }),
-            imported_sites: Some(vec![ImportedSiteType {
-                site_type: "news/article".to_string(),
-                site_id: "acme-news".to_string(),
-            }]),
+async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let create_body = models::CreateTenantBody {
+        name: "Acme Corp".into(),
+        domain: ApiDomainConfiguration {
+            domain_name: "acme.example.com".into(),
+            ..Default::default()
         },
+        imported_site_type: Some(ImportedSiteType::NewsArticle),
+        billing_info: Some(BillingInfo {
+            plan: "enterprise".into(),
+            ..Default::default()
+        }),
+        ..Default::default()
     };
-    let response: CreateTenantResponse = create_tenant(&configuration, params).await?;
-    Ok(response)
+    let params = CreateTenantParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        create_tenant_body: create_body,
+    };
+    let _response: CreateTenantResponse = create_tenant(configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
 

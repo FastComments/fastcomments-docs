@@ -1,7 +1,8 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | כן |  |
 | text-search | string | query | לא |  |
 | sso | string | query | לא |  |
 
@@ -11,7 +12,7 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-GetSearchSuggest'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה של GetSearchSuggest'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,19 +24,18 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	textSearch := "textSearch_example" // string |  (אופציונלי)
 	sso := "sso_example" // string |  (אופציונלי)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetSearchSuggest(context.Background()).TextSearch(textSearch).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetSearchSuggest(context.Background()).TenantId(tenantId).TextSearch(textSearch).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetSearchSuggest``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "שגיאה בעת קריאה ל-`ModerationAPI.GetSearchSuggest``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "תשובה HTTP מלאה: %v\n", r)
 	}
 	// תגובה מ-`GetSearchSuggest`: ModerationSuggestResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetSearchSuggest`: %v\n", resp)
+	fmt.Fprintf(os.Stdout, "תגובה מ-`ModerationAPI.GetSearchSuggest`: %v\n", resp)
 }
 [inline-code-end]
-
----

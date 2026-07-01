@@ -1,7 +1,7 @@
 ## 매개변수
 
 | 이름 | 유형 | 필수 | 설명 |
-|------|------|----------|-------------|
+|------|------|------|------|
 | tenant_id | String | 예 |  |
 | comment_id | String | 아니오 |  |
 | external_id | String | 아니오 |  |
@@ -13,23 +13,20 @@
 
 반환: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_pending_webhook_event_count_response.rs)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'get_pending_webhook_event_count Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_pending_webhook_event_count 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let cfg: &configuration::Configuration = &configuration;
-    let params: GetPendingWebhookEventCountParams = GetPendingWebhookEventCountParams {
+async fn example() -> Result<(), Error> {
+    let params = GetPendingWebhookEventCountParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        comment_id: Some("cmt_92a7b3".to_string()),
-        external_id: Some("article-2026-06-19".to_string()),
-        event_type: Some("comment.created".to_string()),
-        domain: Some("acme.com".to_string()),
-        attempt_count_gt: Some(1.0),
+        comment_id: Some("comment-12345".to_string()),
+        external_id: Some("ext-98765".to_string()),
+        event_type: Some("comment_created".to_string()),
+        domain: Some("news.example.com".to_string()),
+        attempt_count_gt: Some(2.0),
     };
-    let count_response: GetPendingWebhookEventCountResponse = get_pending_webhook_event_count(cfg, params).await?;
+    let _response = get_pending_webhook_event_count(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

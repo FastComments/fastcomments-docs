@@ -2,11 +2,11 @@
 
 | Имя | Тип | Местоположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| id | string | path | Да |  |
-| contextUserId | string | query | Нет |  |
-| doSpamCheck | boolean | query | Нет |  |
-| isLive | boolean | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| contextUserId | string | query | No |  |
+| doSpamCheck | boolean | query | No |  |
+| isLive | boolean | query | No |  |
 
 ## Ответ
 
@@ -16,7 +16,7 @@
 
 [inline-code-attrs-start title = 'Пример updateComment'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие примеры кода все еще находятся в стадии бета. В случае проблем, пожалуйста, сообщите об этом на http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следующие образцы кода все еще находятся в бета-версии. При возникновении проблем, пожалуйста, сообщайте их по адресу http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -26,7 +26,7 @@ let contextUserId = "contextUserId_example" // String |  (необязатель
 let doSpamCheck = true // Bool |  (необязательно)
 let isLive = true // Bool |  (необязательно)
 
-DefaultAPI.updateComment(tenantId: tenantId, id: id, updatableCommentParams: updatableCommentParams, contextUserId: contextUserId, doSpamCheck: doSpamCheck, isLive: isLive) { (response, error) in
+DefaultAPI.updateComment(tenantId: tenantId, id: id, updatableCommentParams: updatableCommentParams, options: DefaultAPI.UpdateCommentOptions(contextUserId: contextUserId, doSpamCheck: doSpamCheck, isLive: isLive)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -37,3 +37,5 @@ DefaultAPI.updateComment(tenantId: tenantId, id: id, updatableCommentParams: upd
     }
 }
 [inline-code-end]
+
+---

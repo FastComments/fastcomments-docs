@@ -1,7 +1,7 @@
 ## Parametri
 
-| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Posizione | Richiesto | Descrizione |
+|------|------|-----------|-----------|-------------|
 | tenantId | string | query | Sì |  |
 | afterId | string | query | No |  |
 | afterCreatedAt | integer | query | No |  |
@@ -16,7 +16,7 @@ Restituisce: [`ResetUserNotificationsResponse`](https://github.com/FastComments/
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di resetUserNotifications'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'resetUserNotifications Esempio'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -24,20 +24,24 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Se vuoi utilizzare un client HTTP personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
-    // Questo è opzionale, `GuzzleHttp\Client` sarà usato come predefinito.
+    // Se vuoi usare un client HTTP personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
+    // Questo è opzionale, `GuzzleHttp\Client` verrà usato come predefinito.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$after_id = 'after_id_example'; // string
-$after_created_at = 56; // int
-$unread_only = True; // bool
-$dm_only = True; // bool
-$no_dm = True; // bool
-$sso = 'sso_example'; // string
+$options = [
+    'after_id' => 'after_id_example', // string
+    'after_created_at' => 56, // int
+    'unread_only' => True, // bool
+    'dm_only' => True, // bool
+    'no_dm' => True, // bool
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->resetUserNotifications($tenant_id, $after_id, $after_created_at, $unread_only, $dm_only, $no_dm, $sso);
+    $result = $apiInstance->resetUserNotifications($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->resetUserNotifications: ', $e->getMessage(), PHP_EOL;

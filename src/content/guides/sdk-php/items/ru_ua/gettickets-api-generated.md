@@ -1,12 +1,12 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Требуется | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| userId | string | query | Нет |  |
-| state | number | query | Нет |  |
-| skip | number | query | Нет |  |
-| limit | number | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| state | number | query | No |  |
+| skip | number | query | No |  |
+| limit | number | query | No |  |
 
 ## Ответ
 
@@ -20,30 +20,31 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Настройка авторизации ключа API: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Раскомментируйте ниже, чтобы задать префикс (например, Bearer) для ключа API, если необходимо
+// Настройте авторизацию ключа API: api_key
+// Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для ключа API, при необходимости
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Если вы хотите использовать пользовательский HTTP-клиент, передайте ваш клиент, который реализует `GuzzleHttp\ClientInterface`.
-    // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
+    // Если вы хотите использовать кастомный HTTP-клиент, передайте ваш клиент, реализующий `GuzzleHttp\ClientInterface`.
+    // Это опционально, по умолчанию будет использоваться `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // строка
-$user_id = 'user_id_example'; // строка
-$state = 3.4; // число с плавающей запятой
-$skip = 3.4; // число с плавающей запятой
-$limit = 3.4; // число с плавающей запятой
+$options = [
+    'user_id' => 'user_id_example', // строка
+    'state' => 3.4, // число с плавающей запятой
+    'skip' => 3.4, // число с плавающей запятой
+    'limit' => 3.4, // число с плавающей запятой
+];
+
 
 try {
-    $result = $apiInstance->getTickets($tenant_id, $user_id, $state, $skip, $limit);
+    $result = $apiInstance->getTickets($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getTickets: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

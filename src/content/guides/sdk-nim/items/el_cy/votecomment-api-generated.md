@@ -1,14 +1,13 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
-|------|------|----------|-------------|
-| tenantId | string | Ναι |  |
-| commentId | string | Ναι |  |
-| urlId | string | Ναι |  |
-| broadcastId | string | Όχι |  |
-| voteBodyParams | VoteBodyParams | Όχι |  |
-| sessionId | string | Όχι |  |
-| sso | string | Όχι |  |
+|------|------|------------|------------|
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| urlId | string | Yes |  |
+| broadcastId | string | No |  |
+| voteBodyParams | VoteBodyParams | No |  |
+| options | VoteCommentOptions | No |  |
 
 ## Απάντηση
 
@@ -16,21 +15,17 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα voteComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'voteComment Παράδειγμα'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.voteComment(
+let (voteRespOpt, httpResp) = client.voteComment(
   tenantId = "my-tenant-123",
-  commentId = "cmt-987654321",
-  urlId = "news/article-2026-inflation",
+  commentId = "comment-98765",
+  urlId = "blog/how-to-code",
   broadcastId = "",
   voteBodyParams = VoteBodyParams(),
-  sessionId = "",
-  sso = ""
+  options = VoteCommentOptions()
 )
 
-if response.isSome:
-  let voteResp = response.get()
-  discard voteResp
-else:
-  discard httpResponse
+if voteRespOpt.isSome:
+  let voteResp = voteRespOpt.get()
 [inline-code-end]

@@ -1,14 +1,13 @@
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| commentId | string | כן |  |
-| voteId | string | לא |  |
-| urlId | string | כן |  |
-| broadcastId | string | לא |  |
-| editKey | string | לא |  |
-| sso | string | לא |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| voteId | string | No |  |
+| urlId | string | Yes |  |
+| broadcastId | string | No |  |
+| options | DeleteCommentVoteOptions | No |  |
 
 ## תגובה
 
@@ -16,22 +15,17 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-deleteCommentVote'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteCommentVote דוגמה'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.deleteCommentVote(
   tenantId = "my-tenant-123",
-  commentId = "comment-456",
+  commentId = "cmt-456",
   voteId = "vote-789",
   urlId = "news/article-title",
-  broadcastId = "",
-  editKey = "",
-  sso = ""
+  broadcastId = "broadcast-001",
+  options = DeleteCommentVoteOptions()
 )
-if response.isSome:
-  let voteResp = response.get()
-  echo "Vote delete response:", voteResp
-else:
-  echo "No response body, HTTP response:", httpResponse
-[inline-code-end]
 
----
+if response.isSome:
+  let voteDelete = response.get()
+[inline-code-end]

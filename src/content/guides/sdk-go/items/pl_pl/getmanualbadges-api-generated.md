@@ -1,14 +1,15 @@
-## Parametry
+## Parameters
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
-|------|------|----------|----------|-------------|
+|------|------|-------------|----------|------|
+| tenantId | string | query | Tak |  |
 | sso | string | query | Nie |  |
 
-## Odpowiedź
+## Response
 
 Zwraca: [`GetTenantManualBadgesResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_tenant_manual_badges_response.go)
 
-## Przykład
+## Example
 
 [inline-code-attrs-start title = 'Przykład GetManualBadges'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -22,16 +23,17 @@ import (
 )
 
 func main() {
-	sso := "sso_example" // string |  (opcjonalne)
+	tenantId := "tenantId_example" // string | 
+	sso := "sso_example" // string |  (opcjonalny)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetManualBadges(context.Background()).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetManualBadges(context.Background()).TenantId(tenantId).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetManualBadges``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Błąd podczas wywoływania `ModerationAPI.GetManualBadges``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Pełna odpowiedź HTTP: %v\n", r)
 	}
-	// response from `GetManualBadges`: GetTenantManualBadgesResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetManualBadges`: %v\n", resp)
+	// odpowiedź z `GetManualBadges`: GetTenantManualBadgesResponse
+	fmt.Fprintf(os.Stdout, "Odpowiedź z `ModerationAPI.GetManualBadges`: %v\n", resp)
 }
 [inline-code-end]

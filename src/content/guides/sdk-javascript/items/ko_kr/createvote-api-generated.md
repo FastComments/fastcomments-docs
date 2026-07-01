@@ -1,26 +1,30 @@
 ## 매개변수
 
-| 이름 | 타입 | 필수 | 설명 |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| commentId | string | 예 |  |
-| direction | CreateVoteDirectionEnum | 예 |  |
-| userId | string | 아니요 |  |
-| anonUserId | string | 아니요 |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| direction | CreateVoteDirectionEnum | Yes |  |
+| userId | string | No |  |
+| anonUserId | string | No |  |
 
 ## 응답
 
-반환: [`VoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/VoteResponse.ts)
+반환: [`CreateVoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateVoteResponse.ts)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'createVote 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createVote 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_82a1c4b7';
-const commentId: string = 'cmt_5f4d3a2b1c';
-const direction: CreateVoteDirectionEnum = CreateVoteDirectionEnum.UP;
-const anonUserId: string = 'anon_9f8e7d6c';
-const voteResponse: VoteResponse = await createVote(tenantId, commentId, direction, undefined, anonUserId);
-[inline-code-end]
+const tenantId: string = "tenant_12345";
+const commentId: string = "comment_987654";
+const direction: CreateVoteDirectionEnum = CreateVoteDirectionEnum.Upvote;
+const userId: string = "user_7f9a2b";
 
----
+const voteResult: CreateVoteResponse = await createVote(
+  tenantId,
+  commentId,
+  direction,
+  userId
+);
+[inline-code-end]

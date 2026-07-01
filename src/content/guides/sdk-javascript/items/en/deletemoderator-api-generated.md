@@ -8,17 +8,18 @@
 
 ## Response
 
-Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Returns: [`DeleteModeratorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteModeratorResponse.ts)
 
 ## Example
 
 [inline-code-attrs-start title = 'deleteModerator Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_8f3b2a7c';
-  const moderatorId: string = 'mod_4c12f9b2';
-  const responseWithoutEmail: APIEmptyResponse = await deleteModerator(tenantId, moderatorId);
-  const responseWithEmail: APIEmptyResponse = await deleteModerator(tenantId, moderatorId, 'true');
-  console.log(responseWithoutEmail, responseWithEmail);
-})();
+async function runDeleteModeratorExample() {
+  const tenantId: string = "tenant_2023";
+  const moderatorId: string = "mod_001";
+  const notificationEmail: string = "admin@mycompany.com";
+
+  const resultWithEmail: DeleteModeratorResponse = await deleteModerator(tenantId, moderatorId, notificationEmail);
+  const resultWithoutEmail: DeleteModeratorResponse = await deleteModerator(tenantId, moderatorId);
+}
 [inline-code-end]

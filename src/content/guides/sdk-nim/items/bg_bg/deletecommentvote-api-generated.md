@@ -7,8 +7,7 @@
 | voteId | string | Не |  |
 | urlId | string | Да |  |
 | broadcastId | string | Не |  |
-| editKey | string | Не |  |
-| sso | string | Не |  |
+| options | DeleteCommentVoteOptions | Не |  |
 
 ## Отговор
 
@@ -16,20 +15,19 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за deleteCommentVote'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteCommentVote Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.deleteCommentVote(
   tenantId = "my-tenant-123",
-  commentId = "comment-456",
+  commentId = "cmt-456",
   voteId = "vote-789",
   urlId = "news/article-title",
-  broadcastId = "",
-  editKey = "",
-  sso = ""
+  broadcastId = "broadcast-001",
+  options = DeleteCommentVoteOptions()
 )
+
 if response.isSome:
-  let voteResp = response.get()
-  echo "Vote delete response:", voteResp
-else:
-  echo "No response body, HTTP response:", httpResponse
+  let voteDelete = response.get()
 [inline-code-end]
+
+---

@@ -1,8 +1,7 @@
----
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
+|------|------|----------|-------------|-------------|
 | tenantId | string | query | Sí |  |
 | id | string | path | Sí |  |
 | userId | string | query | No |  |
@@ -16,7 +15,7 @@ Devuelve: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-s
 
 [inline-code-attrs-start title = 'Ejemplo de unFlagComment'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Los siguientes ejemplos de código siguen siendo beta. Para cualquier problema, por favor repórtelo vía http://github.com/OpenAPITools/openapi-generator/issues/new
+// Los siguientes ejemplos de código todavía están en beta. Para cualquier problema, por favor repórtelo vía http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -24,7 +23,7 @@ let id = "id_example" // String |
 let userId = "userId_example" // String |  (opcional)
 let anonUserId = "anonUserId_example" // String |  (opcional)
 
-DefaultAPI.unFlagComment(tenantId: tenantId, id: id, userId: userId, anonUserId: anonUserId) { (response, error) in
+DefaultAPI.unFlagComment(tenantId: tenantId, id: id, options: DefaultAPI.UnFlagCommentOptions(userId: userId, anonUserId: anonUserId)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -35,5 +34,3 @@ DefaultAPI.unFlagComment(tenantId: tenantId, id: id, userId: userId, anonUserId:
     }
 }
 [inline-code-end]
-
----

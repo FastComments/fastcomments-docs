@@ -1,10 +1,9 @@
----
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
+| tenant_id | String | Tak |  |
 | tag | String | Tak |  |
-| tenant_id | String | Nie |  |
 | delete_hash_tag_request_body | models::DeleteHashTagRequestBody | Nie |  |
 
 ## Odpowiedź
@@ -13,14 +12,15 @@ Zwraca: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/b
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład delete_hash_tag'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_hash_tag Przykład'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: DeleteHashTagParams = DeleteHashTagParams {
-    tag: "news/article".to_string(),
-    tenant_id: Some("acme-corp-tenant".to_string()),
-    delete_hash_tag_request_body: Some(DeleteHashTagRequestBody {}),
-};
-let response: ApiEmptyResponse = delete_hash_tag(&configuration, params).await?;
+async fn example() -> Result<(), Error> {
+    let params = DeleteHashTagParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        tag: "news/article".to_string(),
+        delete_hash_tag_request_body: Some(models::DeleteHashTagRequestBody {}),
+    };
+    delete_hash_tag(&configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]
-
----

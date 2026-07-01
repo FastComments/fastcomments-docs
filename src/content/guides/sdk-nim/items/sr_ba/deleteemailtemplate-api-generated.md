@@ -1,29 +1,22 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Не |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
+Vraća: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'deleteEmailTemplate Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteEmailTemplate Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteEmailTemplate(
-  tenantId = "my-tenant-123",
-  id = "welcome-email-template-001"
-)
-
-if response.isSome:
-  let apiEmpty = response.get()
-  discard apiEmpty
-  echo "Email template deleted successfully"
+let (respOpt, httpResp) = client.deleteEmailTemplate(tenantId = "my-tenant-123", id = "welcome-email")
+if respOpt.isSome:
+  let emptyResp = respOpt.get()
+  echo "Email template deleted"
 else:
-  echo "No response body"
+  echo "Failed to delete email template"
 [inline-code-end]
-
----

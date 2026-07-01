@@ -1,6 +1,6 @@
-## פרמטרים
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | כן |  |
 | questionId | string | query | לא |  |
@@ -10,26 +10,26 @@
 | startDate | string | query | לא |  |
 | forceRecalculate | boolean | query | לא |  |
 
-## תגובה
+## Response
 
 מחזיר: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AggregateQuestionResultsResponse.swift)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-aggregateQuestionResults'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה של aggregateQuestionResults'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// הדוגמאות הבאות עדיין בבטא. לכל בעיה, דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// הדגימות הקודיות הבאות עדיין בגרסת בטא. לכל בעיה, אנא דווח באמצעות http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let questionId = "questionId_example" // String |  (אופציונלי)
-let questionIds = ["inner_example"] // [String] |  (אופציונלי)
-let urlId = "urlId_example" // String |  (אופציונלי)
-let timeBucket = AggregateTimeBucket() // AggregateTimeBucket |  (אופציונלי)
-let startDate = Date() // Date |  (אופציונלי)
-let forceRecalculate = true // Bool |  (אופציונלי)
+let questionId = "questionId_example" // String |  (optional)
+let questionIds = ["inner_example"] // [String] |  (optional)
+let urlId = "urlId_example" // String |  (optional)
+let timeBucket = AggregateTimeBucket() // AggregateTimeBucket |  (optional)
+let startDate = Date() // Date |  (optional)
+let forceRecalculate = true // Bool |  (optional)
 
-DefaultAPI.aggregateQuestionResults(tenantId: tenantId, questionId: questionId, questionIds: questionIds, urlId: urlId, timeBucket: timeBucket, startDate: startDate, forceRecalculate: forceRecalculate) { (response, error) in
+DefaultAPI.aggregateQuestionResults(tenantId: tenantId, options: DefaultAPI.AggregateQuestionResultsOptions(questionId: questionId, questionIds: questionIds, urlId: urlId, timeBucket: timeBucket, startDate: startDate, forceRecalculate: forceRecalculate)) { (response, error) in
     guard error == nil else {
         print(error)
         return

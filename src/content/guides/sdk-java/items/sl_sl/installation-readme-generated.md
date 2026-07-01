@@ -1,6 +1,6 @@
 ### Maven
 
-Dodajte Repsy repozitorij v POM datoteko vašega projekta:
+Add the Repsy repository to your project's POM:
 
 ```xml
 <repositories>
@@ -12,25 +12,25 @@ Dodajte Repsy repozitorij v POM datoteko vašega projekta:
 </repositories>
 ```
 
-Nato dodajte potrebne odvisnosti:
+Then add the dependencies you need:
 
 ```xml
 <dependencies>
-    <!-- API odjemalec -->
+    <!-- API Client -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
         <version>2.0.0</version>
     </dependency>
     
-    <!-- Jedrna knjižnica (vključuje SSO) -->
+    <!-- Core Library (includes SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
         <version>2.0.0</version>
     </dependency>
     
-    <!-- PubSub knjižnica (za dogodke v živo) -->
+    <!-- PubSub Library (for live events) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
@@ -41,7 +41,7 @@ Nato dodajte potrebne odvisnosti:
 
 ### Gradle
 
-Dodajte Repsy repozitorij v datoteko build.gradle:
+Add the Repsy repository to your build.gradle file:
 
 ```groovy
 repositories {
@@ -52,27 +52,29 @@ repositories {
 }
 
 dependencies {
-    // API odjemalec
+    // API Client
     implementation "com.fastcomments:client:2.0.0"
     
-    // Jedrna knjižnica (vključuje SSO)
+    // Core Library (includes SSO)
     implementation "com.fastcomments:core:2.0.0"
     
-    // PubSub knjižnica (za dogodke v živo)
+    // PubSub Library (for live events)
     implementation "com.fastcomments:pubsub:2.0.0"
 }
 ```
 
 ### Library Contents
 
-Ta knjižnica vsebuje tri module. Generirani API odjemalec, jedrna Java knjižnica, ki vsebuje ročno napisane pripomočke za lažje delo z API-jem, in modul `pubsub`, ki je knjižnica za naročanje na tokove sprememb.
+This library contains three modules. The generated API client, the core Java library which contains hand-written utilities
+to make working with the API easier, and the `pubsub` module which is a library for subscribing to change feeds.
 
-- [Dokumentacija knjižnice API odjemalca](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Dokumentacija jedrne knjižnice, vključno z primeri SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [Dokumentacija PubSub knjižnice](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [API Client Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [PubSub Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
 ### Public vs Secured APIs
 
-Za API odjemalca obstajajo tri razrede, `DefaultApi`, `PublicApi` in `ModerationApi`. `DefaultApi` vsebuje metode, ki zahtevajo vaš API ključ, medtem ko `PublicApi` vsebuje metode, ki jih je mogoče poklicati neposredno iz brskalnika/mobilne naprave/ipd. brez preverjanja pristnosti.
+For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains methods
+that can be made directly from a browser/mobile device/etc without authentication.
 
-`ModerationApi` poganja nadzorno ploščo moderatorja. Vsebuje metode za moderiranje komentarjev (seznam, štetje, iskanje, dnevniki in izvoz), moderacijske ukrepe (odstrani/obnovi, označi, nastavi status pregleda/spama/odobritve, glasovi in znova odpri/zaključi nit), prepovedi (prepoved komentiranja, prekliči prepoved, povzetki pred prepovedjo, status prepovedi in nastavitve ter število prepovedanih uporabnikov) ter značke in zaupanje (podeli/odstrani značko, ročne značke, pridobi/nastavi faktor zaupanja in notranji uporabniški profil). Vsaka metoda `ModerationApi` sprejme parameter `sso`, kar omogoča, da se klic izvede v imenu moderatorja, avtenticiranega prek SSO.
+The `ModerationApi` provides an extensive suite of live and fast moderation APIs. Every `ModerationApi` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.

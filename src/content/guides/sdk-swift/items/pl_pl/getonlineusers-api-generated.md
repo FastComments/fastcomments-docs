@@ -1,32 +1,32 @@
-Obecnie online widzowie strony: osoby, których sesja websocket jest aktualnie subskrybowana na tę stronę.
-Zwraca anonCount + totalCount (subskrybenci w całym pokoju, włącznie z anonimowymi widzami, których nie wyliczamy).
+Currently-online viewers of a page: people whose websocket session is subscribed to the page right now.  
+Returns anonCount + totalCount (room-wide subscribers, including anon viewers we don't enumerate).
 
-## Parametry
+## Parameters
 
-| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Tak |  |
-| urlId | string | query | Tak | Identyfikator adresu URL strony (oczyszczany po stronie serwera). |
-| afterName | string | query | Nie | Kursor: przekaż nextAfterName z poprzedniej odpowiedzi. |
-| afterUserId | string | query | Nie | Rozstrzygacz kursorów: przekaż nextAfterUserId z poprzedniej odpowiedzi. Wymagane, gdy afterName jest ustawione, aby remisy nazw nie powodowały pominięcia wpisów. |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes | Identyfikator URL strony (czyszczony po stronie serwera). |
+| afterName | string | query | No | Kursor: przekaż nextAfterName z poprzedniej odpowiedzi. |
+| afterUserId | string | query | No | Rozstrzygacz dla kursora: przekaż nextAfterUserId z poprzedniej odpowiedzi. Wymagane, gdy ustawiono afterName, aby w sytuacji remisów nazw nie pomijać wpisów. |
 
-## Odpowiedź
+## Response
 
-Zwraca: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PageUsersOnlineResponse.swift)
+Returns: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PageUsersOnlineResponse.swift)
 
-## Przykład
+## Example
 
 [inline-code-attrs-start title = 'Przykład getOnlineUsers'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Następujące przykłady kodu są nadal w wersji beta. W razie problemu zgłoś go przez http://github.com/OpenAPITools/openapi-generator/issues/new
+// Poniższe przykłady kodu są nadal w fazie beta. W razie jakichkolwiek problemów prosimy zgłaszać je pod http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let urlId = "urlId_example" // String | Identyfikator adresu URL strony (oczyszczany po stronie serwera).
-let afterName = "afterName_example" // String | Kursor: przekaż nextAfterName z poprzedniej odpowiedzi. (opcjonalne)
-let afterUserId = "afterUserId_example" // String | Rozstrzygacz kursorów: przekaż nextAfterUserId z poprzedniej odpowiedzi. Wymagane, gdy afterName jest ustawione, aby remisy nazw nie powodowały pominięcia wpisów. (opcjonalne)
+let urlId = "urlId_example" // String | Identyfikator URL strony (czyszczony po stronie serwera).
+let afterName = "afterName_example" // String | Kursor: przekaż nextAfterName z poprzedniej odpowiedzi. (opcjonalny)
+let afterUserId = "afterUserId_example" // String | Rozstrzygacz dla kursora: przekaż nextAfterUserId z poprzedniej odpowiedzi. Wymagane, gdy ustawiono afterName, aby w sytuacji remisów nazw nie pomijać wpisów. (opcjonalny)
 
-PublicAPI.getOnlineUsers(tenantId: tenantId, urlId: urlId, afterName: afterName, afterUserId: afterUserId) { (response, error) in
+PublicAPI.getOnlineUsers(tenantId: tenantId, urlId: urlId, options: PublicAPI.GetOnlineUsersOptions(afterName: afterName, afterUserId: afterUserId)) { (response, error) in
     guard error == nil else {
         print(error)
         return

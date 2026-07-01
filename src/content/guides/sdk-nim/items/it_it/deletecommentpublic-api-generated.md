@@ -2,11 +2,10 @@
 
 | Nome | Tipo | Obbligatorio | Descrizione |
 |------|------|--------------|-------------|
-| tenantId | string | Sì |  |
-| commentId | string | Sì |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
 | broadcastId | string | No |  |
-| editKey | string | No |  |
-| sso | string | No |  |
+| options | DeleteCommentPublicOptions | No |  |
 
 ## Risposta
 
@@ -14,12 +13,14 @@ Restituisce: [`Option[PublicAPIDeleteCommentResponse]`](https://github.com/FastC
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di deleteCommentPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio deleteCommentPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteCommentPublic(tenantId = "my-tenant-123", commentId = "cmt-987654321", broadcastId = "", editKey = "", sso = "")
-if response.isSome:
-  let deleted = response.get()
-  echo "Delete acknowledged, HTTP status: ", httpResponse.status
+let (responseOpt, httpResp) = client.deleteCommentPublic(
+  tenantId = "my-tenant-123",
+  commentId = "cmt-456789",
+  broadcastId = "",
+  options = DeleteCommentPublicOptions())
+if responseOpt.isSome:
+  let resp = responseOpt.get()
+  echo resp
 [inline-code-end]
-
----

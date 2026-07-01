@@ -1,7 +1,8 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Evet |  |
 | commentId | string | path | Evet |  |
 | includeEmail | boolean | query | Hayır |  |
 | includeIP | boolean | query | Hayır |  |
@@ -13,7 +14,7 @@ Döndürür: [`ModerationAPICommentResponse`](https://github.com/FastComments/fa
 
 ## Örnek
 
-[inline-code-attrs-start title = 'GetModerationComment Örneği'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GetModerationComment Örnek'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -25,6 +26,7 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
 	includeEmail := true // bool |  (isteğe bağlı)
 	includeIP := true // bool |  (isteğe bağlı)
@@ -32,12 +34,12 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetModerationComment(context.Background(), commentId).IncludeEmail(includeEmail).IncludeIP(includeIP).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetModerationComment(context.Background(), commentId).TenantId(tenantId).IncludeEmail(includeEmail).IncludeIP(includeIP).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetModerationComment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `GetModerationComment`'dan gelen yanıt: ModerationAPICommentResponse
+	// `GetModerationComment`'den yanıt: ModerationAPICommentResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetModerationComment`: %v\n", resp)
 }
 [inline-code-end]

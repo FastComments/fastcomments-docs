@@ -2,8 +2,8 @@
 
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| createHashTagBody | CreateHashTagBody | Nej |  |
+| tenantId | string | Yes |  |
+| createHashTagBody | CreateHashTagBody | No |  |
 
 ## Respons
 
@@ -13,16 +13,11 @@ Returnerer: [`Option[CreateHashTagResponse]`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'addHashTag Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.addHashTag(tenantId = "my-tenant-123",
-  createHashTagBody = CreateHashTagBody(name = "Breaking News",
-    slug = "breaking-news",
-    description = "Major breaking news items",
-    color = "#ff0000",
-    isTrending = true,
-    aliases = @["breaking", "news"]))
-if response.isSome:
-  let created = response.get()
-  echo created
-[inline-code-end]
+let (hashTagOpt, httpResp) = client.addHashTag(
+  tenantId = "my-tenant-123",
+  createHashTagBody = CreateHashTagBody(),
+)
 
----
+if hashTagOpt.isSome:
+  let tag = hashTagOpt.get()
+[inline-code-end]

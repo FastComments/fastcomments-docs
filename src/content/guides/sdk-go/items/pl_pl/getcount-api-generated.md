@@ -1,13 +1,14 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| text-search | string | query | Nie |  |
-| byIPFromComment | string | query | Nie |  |
-| filter | string | query | Nie |  |
-| searchFilters | string | query | Nie |  |
-| demo | boolean | query | Nie |  |
-| sso | string | query | Nie |  |
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filter | string | query | No |  |
+| searchFilters | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Odpowiedź
 
@@ -27,16 +28,17 @@ import (
 )
 
 func main() {
-	textSearch := "textSearch_example" // string |  (opcjonalne)
-	byIPFromComment := "byIPFromComment_example" // string |  (opcjonalne)
-	filter := "filter_example" // string |  (opcjonalne)
-	searchFilters := "searchFilters_example" // string |  (opcjonalne)
-	demo := true // bool |  (opcjonalne)
-	sso := "sso_example" // string |  (opcjonalne)
+	tenantId := "tenantId_example" // string | 
+	textSearch := "textSearch_example" // string |  (opcjonalny)
+	byIPFromComment := "byIPFromComment_example" // string |  (opcjonalny)
+	filter := "filter_example" // string |  (opcjonalny)
+	searchFilters := "searchFilters_example" // string |  (opcjonalny)
+	demo := true // bool |  (opcjonalny)
+	sso := "sso_example" // string |  (opcjonalny)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetCount(context.Background()).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filter(filter).SearchFilters(searchFilters).Demo(demo).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetCount(context.Background()).TenantId(tenantId).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filter(filter).SearchFilters(searchFilters).Demo(demo).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetCount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

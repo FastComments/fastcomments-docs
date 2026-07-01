@@ -1,10 +1,11 @@
+---
 ## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | renderEmailTemplateBody | RenderEmailTemplateBody | Не |  |
-| locale | string | Не |  |
+| locale | string = "" | Не |  |
 
 ## Отговор
 
@@ -12,17 +13,14 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за renderEmailTemplate'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'renderEmailTemplate Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.renderEmailTemplate(
-  tenantId = "my-tenant-123",
-  renderEmailTemplateBody = RenderEmailTemplateBody(),
-  locale = "en-US"
-)
-
-if response.isSome:
-  let rendered = response.get()
-  echo rendered
+let body = RenderEmailTemplateBody()
+let (responseOpt, httpResponse) = client.renderEmailTemplate(tenantId = "my-tenant-123", renderEmailTemplateBody = body, locale = "en-US")
+if responseOpt.isSome:
+  let response = responseOpt.get()
+  discard response
+discard httpResponse
 [inline-code-end]
 
 ---

@@ -1,13 +1,14 @@
-Trenutno prisutni gledatelji stranice: osobe čija je websocket sesija trenutno pretplaćena na stranicu. Vraća anonCount + totalCount (pretplatnici cijele sobe, uključujući anonimne gledatelje koje ne navodimo).
+Trenutno online gledatelji stranice: ljudi čija je WebSocket sesija pretplaćena na stranicu u ovom trenutku.  
+Vraća anonCount + totalCount (pretplatnici na cijelu sobu, uključujući anonimne gledatelje koje ne nabrajamo).
 
 ## Parametri
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Yes |  |
-| urlId | string | query | Yes | Identifikator URL-a stranice (očišćen na strani poslužitelja). |
+| urlId | string | query | Yes | Identifikator URL-a stranice (čišćen na serveru). |
 | afterName | string | query | No | Kursor: proslijedite nextAfterName iz prethodnog odgovora. |
-| afterUserId | string | query | No | Kursor za razrješavanje izjednačenja: proslijedite nextAfterUserId iz prethodnog odgovora. Potrebno kada je afterName postavljen kako unosi s istim imenom ne bi bili izostavljeni. |
+| afterUserId | string | query | No | Kursor razrješivač nerazlučivosti: proslijedite nextAfterUserId iz prethodnog odgovora. Obavezno kada je postavljeno afterName kako bi se izbjeglo izostavljanje zapisa uslijed istih imena. |
 
 ## Odgovor
 
@@ -23,19 +24,25 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ako želite koristiti prilagođeni HTTP klijent, proslijedite klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ako želite koristiti prilagođeni http klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
     // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao zadani.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$url_id = 'url_id_example'; // string | Identifikator URL-a stranice (očišćen na strani poslužitelja).
-$after_name = 'after_name_example'; // string | Kursor: proslijedite nextAfterName iz prethodnog odgovora.
-$after_user_id = 'after_user_id_example'; // string | Kursor za razrješavanje izjednačenja: proslijedite nextAfterUserId iz prethodnog odgovora. Potrebno kada je afterName postavljen kako unosi s istim imenom ne bi bili izostavljeni.
+$url_id = 'url_id_example'; // string | Identifikator URL-a stranice (čišćen na serveru).
+$options = [
+    'after_name' => 'after_name_example', // string | Kursor: proslijedite nextAfterName iz prethodnog odgovora.
+    'after_user_id' => 'after_user_id_example', // string | Kursor razrješivač nerazlučivosti: proslijedite nextAfterUserId iz prethodnog odgovora. Obavezno kada je postavljeno afterName kako bi se izbjeglo izostavljanje zapisa uslijed istih imena.
+];
+
 
 try {
-    $result = $apiInstance->getOnlineUsers($tenant_id, $url_id, $after_name, $after_user_id);
+    $result = $apiInstance->getOnlineUsers($tenant_id, $url_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getOnlineUsers: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

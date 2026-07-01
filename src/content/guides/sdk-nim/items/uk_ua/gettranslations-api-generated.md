@@ -1,11 +1,10 @@
 ## Параметри
 
-| Назва | Тип | Обов'язковий | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | namespace | string | Ні |  |
 | component | string | Ні |  |
-| locale | string | Ні |  |
-| useFullTranslationIds | bool | Ні |  |
+| options | GetTranslationsOptions | Ні |  |
 
 ## Відповідь
 
@@ -13,19 +12,13 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад використання getTranslations'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад getTranslations'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTranslations(
-  namespace = "news-site",
-  component = "article-comments",
-  locale = "en-US",
-  useFullTranslationIds = false
-)
-if response.isSome:
-  let translations = response.get()
-  discard translations
-else:
-  echo "No translations available"
+let opts = GetTranslationsOptions()
+let (maybeResp, httpResp) = client.getTranslations(namespace = "my-tenant-123", component = "news/article-title", options = opts)
+if maybeResp.isSome:
+  let resp = maybeResp.get()
+  echo resp
 [inline-code-end]
 
 ---

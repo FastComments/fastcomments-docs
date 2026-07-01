@@ -1,11 +1,10 @@
----
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| id | string | לא |  |
-| updateEmailTemplateBody | UpdateEmailTemplateBody | לא |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| updateEmailTemplateBody | UpdateEmailTemplateBody | No |  |
 
 ## תגובה
 
@@ -13,21 +12,20 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-updateEmailTemplate'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת updateEmailTemplate'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let updateBody = UpdateEmailTemplateBody(
-  subject = "Welcome to Newsly",
-  html = "<p>Thanks for joining Newsly! Visit https://newsly.example to get started.</p>",
-  fromAddress = "no-reply@newsly.example",
-  fromName = "Newsly Team",
-  enabled = true
+  subject: "Welcome to FastComments",
+  body: "Hello \{{user_name}}, thanks for joining!",
+  enabled: true,
 )
-let (response, httpResponse) = client.updateEmailTemplate(tenantId = "my-tenant-123", id = "welcome-email", updateEmailTemplateBody = updateBody)
-if response.isSome:
-  let result = response.get()
-  discard result
-else:
-  discard httpResponse.statusCode
-[inline-code-end]
 
----
+let (maybeResp, httpResp) = client.updateEmailTemplate(
+  tenantId = "my-tenant-123",
+  id = "welcome-email",
+  updateEmailTemplateBody = updateBody,
+)
+
+if maybeResp.isSome:
+  let resp = maybeResp.get()
+[inline-code-end]

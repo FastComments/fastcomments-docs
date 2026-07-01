@@ -1,9 +1,9 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Назва | Тип | Обов’язковий | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| addDomainConfigParams | AddDomainConfigParams | Так |  |
+| tenantId | string | Yes |  |
+| addDomainConfigParams | AddDomainConfigParams | Yes |  |
 
 ## Відповідь
 
@@ -11,22 +11,17 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад addDomainConfig'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'addDomainConfig Приклад'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 AddDomainConfigParams params;
-params.domain = U("comments.example.com");
-params.ownerEmail = U("admin@example.com");
-params.enforceHttps = boost::optional<bool>(true);
-params.note = boost::optional<utility::string_t>(U("Primary comments host for example.com"));
-api->addDomainConfig(tenantId, params)
-.then([](std::shared_ptr<AddDomainConfigResponse> resp){
-    if(!resp) throw std::runtime_error("addDomainConfig returned null");
-    return std::make_shared<AddDomainConfigResponse>(*resp);
-})
-.then([](std::shared_ptr<AddDomainConfigResponse> finalResp){
-    (void)finalResp;
+params.domain = U("example.com");
+params.adminEmail = U("admin@example.com");
+params.notes = boost::optional<utility::string_t>(U("Primary domain"));
+api->addDomainConfig(tenantId, params).then([](pplx::task<std::shared_ptr<AddDomainConfigResponse>> task){
+    try{
+        auto response = task.get();
+    }catch(const std::exception&){
+    }
 });
 [inline-code-end]
-
----

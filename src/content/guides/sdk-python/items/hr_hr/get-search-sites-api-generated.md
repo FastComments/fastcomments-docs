@@ -1,9 +1,10 @@
-## Parametri
+## Parameters
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
-| value | string | query | Ne |  |
-| sso | string | query | Ne |  |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| value | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -11,15 +12,16 @@ Vraća: [`ModerationSiteSearchResponse`](https://github.com/FastComments/fastcom
 
 ## Primjer
 
-[inline-code-attrs-start title = 'get_search_sites Primjer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer get_search_sites'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetSearchSitesOptions
 from client.models.moderation_site_search_response import ModerationSiteSearchResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definiranje hosta je neobavezno i zadano je na https://fastcomments.com
-# Pogledajte configuration.py za popis svih podržanih konfiguracijskih parametara.
+# Definiranje hosta je opcionalno i zadano je https://fastcomments.com
+# Pogledajte configuration.py za popis svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -29,11 +31,12 @@ configuration = client.Configuration(
 with client.ApiClient(configuration) as api_client:
     # Kreirajte instancu API klase
     api_instance = client.ModerationApi(api_client)
-    value = 'value_example' # str |  (neobavezno)
-    sso = 'sso_example' # str |  (neobavezno)
+    tenant_id = 'tenant_id_example' # str | 
+    value = 'value_example' # str | (opcionalno)
+    sso = 'sso_example' # str | (opcionalno)
 
     try:
-        api_response = api_instance.get_search_sites(value=value, sso=sso)
+        api_response = api_instance.get_search_sites(tenant_id, GetSearchSitesOptions(value=value, sso=sso))
         print("The response of ModerationApi->get_search_sites:\n")
         pprint(api_response)
     except Exception as e:

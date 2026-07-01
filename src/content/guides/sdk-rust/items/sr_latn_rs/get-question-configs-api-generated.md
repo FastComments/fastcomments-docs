@@ -1,9 +1,9 @@
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
+| Ime | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenant_id | String | Da |  |
-| skip | f64 | Ne |  |
+| tenant_id | String | Yes |  |
+| skip | f64 | No |  |
 
 ## Odgovor
 
@@ -11,16 +11,14 @@ Vraća: [`GetQuestionConfigsResponse`](https://github.com/FastComments/fastcomme
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer za get_question_configs'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer get_question_configs'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_question_configs() -> Result<GetQuestionConfigsResponse, Error> {
-    let params: GetQuestionConfigsParams = GetQuestionConfigsParams {
+async fn example() -> Result<(), Error> {
+    let params = GetQuestionConfigsParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        skip: Some(20.0),
+        skip: Some(10.0),
     };
-    let response: GetQuestionConfigsResponse = get_question_configs(&configuration, params).await?;
-    Ok(response)
+    let _response: GetQuestionConfigsResponse = get_question_configs(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

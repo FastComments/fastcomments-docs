@@ -1,21 +1,19 @@
-Пакетне информације о корисницима за tenant. За дате userIds, враћа информације за приказ из User / SSOUser.
-Користи га видгет за коментаре да обогати кориснике који су се управо појавили путем догађаја присутности.
-Без контекста странице: приватност се примењује униформно (приватни профили су маскирани).
+Masovne informacije o korisnicima za tenant. Dati userIds, vraća prikazne informacije iz User / SSOUser. Koristi se od strane widgeta za komentare da obogati korisnike koji su se upravo pojavili putem događaja prisutnosti. Nema konteksta stranice: privatnost se provodi uniformno (privatni profili su maskirani).
 
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Обавезно | Опис |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| ids | string | query | Yes | userIds раздвојени зарезима. |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | path | Da |  |
+| ids | string | query | Da | UserId‑ovi odvojeni zarezom. |
 
-## Одговор
+## Odgovor
 
-Враћа: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersInfoResponse.php)
+Returns: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersInfoResponse.php)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'Пример getUsersInfo'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUsersInfo Primjer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -23,12 +21,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ако желите користити прилагођен HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционо, као подразумевани ће бити кориштен `GuzzleHttp\Client`.
+    // Ako želite koristiti prilagođeni HTTP klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao podrazumevani.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$ids = 'ids_example'; // string | userIds раздвојени зарезима.
+$ids = 'ids_example'; // string | UserId‑ovi odvojeni zarezom.
+
 
 try {
     $result = $apiInstance->getUsersInfo($tenant_id, $ids);

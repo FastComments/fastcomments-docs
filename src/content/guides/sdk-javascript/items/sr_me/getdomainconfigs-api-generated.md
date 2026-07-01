@@ -1,27 +1,20 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Yes |  |
+| Ime | Tip | Potrebno | Opis |
+|------|------|----------|------|
+| tenantId | string | Da |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetDomainConfigsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetDomainConfigsResponse.ts)
+Vraća: [`GetDomainConfigsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetDomainConfigsResponse.ts)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример getDomainConfigs'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getDomainConfigs'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_9b7e4f3c";
-const domainConfigs: GetDomainConfigsResponse = await getDomainConfigs(tenantId);
-
-async function fetchDomainConfigs(tenant: string, useCache?: boolean): Promise<GetDomainConfigsResponse> {
-  if (useCache) return domainConfigs;
-  const fresh: GetDomainConfigsResponse = await getDomainConfigs(tenant);
-  return fresh;
+async function fetchDomainConfigs(): Promise<void> {
+  const tenantId: string = "acme-corp-567";
+  const configs: GetDomainConfigsResponse = await getDomainConfigs(tenantId);
+  console.log(configs);
 }
-
-const freshConfigs: GetDomainConfigsResponse = await fetchDomainConfigs(tenantId, false);
 [inline-code-end]
-
----

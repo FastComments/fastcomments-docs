@@ -10,7 +10,7 @@ for new root comments, and also
 | url | string | No |  |
 | pageTitle | string | No |  |
 | subscribedOrUnsubscribed | string | No |  |
-| sso | string | No |  |
+| sso | string = "" | No |  |
 
 ## Response
 
@@ -20,18 +20,16 @@ Returns: [`Option[UpdateUserNotificationPageSubscriptionStatusResponse]`](https:
 
 [inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateUserNotificationPageSubscriptionStatus(
+let (optResp, httpResp) = client.updateUserNotificationPageSubscriptionStatus(
   tenantId = "my-tenant-123",
-  urlId = "news/economy/market-rally-2026-06-19",
-  url = "",
-  pageTitle = "",
-  subscribedOrUnsubscribed = "",
+  urlId = "news/article-456",
+  url = "https://example.com/news/article-456",
+  pageTitle = "Breaking News: Something Happened",
+  subscribedOrUnsubscribed = "subscribed",
   sso = ""
 )
 
-if response.isSome:
-  let updateResp = response.get()
-  echo "Subscription update received: ", updateResp
-else:
-  echo "No subscription update returned."
+if optResp.isSome:
+  let resp = optResp.get()
+  # further processing with resp
 [inline-code-end]

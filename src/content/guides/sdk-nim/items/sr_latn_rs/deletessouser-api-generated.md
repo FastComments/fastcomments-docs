@@ -1,11 +1,10 @@
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
 | tenantId | string | Da |  |
 | id | string | Ne |  |
-| deleteComments | bool | Ne |  |
-| commentDeleteMode | string | Ne |  |
+| options | DeleteSSOUserOptions | Ne |  |
 
 ## Odgovor
 
@@ -15,12 +14,14 @@ Vraća: [`Option[DeleteSSOUserAPIResponse]`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'deleteSSOUser Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteSSOUser(tenantId = "my-tenant-123", id = "sso-user-9876", deleteComments = true, commentDeleteMode = "hard")
-if response.isSome:
-  let deleted = response.get()
-  discard deleted
-else:
-  discard httpResponse
+let (apiRespOpt, httpResp) = client.deleteSSOUser(
+  tenantId = "my-tenant-123",
+  id = "user-456",
+  options = DeleteSSOUserOptions()
+)
+
+if apiRespOpt.isSome:
+  let apiResp = apiRespOpt.get()
 [inline-code-end]
 
 ---

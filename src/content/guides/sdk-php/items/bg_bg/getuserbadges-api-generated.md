@@ -1,14 +1,14 @@
 ## Параметри
 
 | Име | Тип | Местоположение | Задължително | Описание |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| userId | string | query | Не |  |
-| badgeId | string | query | Не |  |
-| type | number | query | Не |  |
-| displayedOnComments | boolean | query | Не |  |
-| limit | number | query | Не |  |
-| skip | number | query | Не |  |
+|------|------|----------------|--------------|----------|
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| badgeId | string | query | No |  |
+| type | number | query | No |  |
+| displayedOnComments | boolean | query | No |  |
+| limit | number | query | No |  |
+| skip | number | query | No |  |
 
 ## Отговор
 
@@ -22,28 +22,32 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Конфигуриране на удостоверяване с API ключ: api_key
+// Конфигурирайте авторизация с API ключ: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Разкоментирайте по-долу, за да зададете префикс (например Bearer) за API ключа, ако е необходимо
+// Разкоментирайте по-долу, за да настроите префикс (например Bearer) за API ключа, ако е необходимо
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ако искате да използвате собствен HTTP клиент, подайте клиент, който имплементира `GuzzleHttp\ClientInterface`.
+    // Ако желаете да използвате персонализиран HTTP клиент, предайте вашия клиент, който имплементира `GuzzleHttp\ClientInterface`.
     // Това е по избор, `GuzzleHttp\Client` ще се използва по подразбиране.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$user_id = 'user_id_example'; // string
-$badge_id = 'badge_id_example'; // string
-$type = 3.4; // float
-$displayed_on_comments = True; // bool
-$limit = 3.4; // float
-$skip = 3.4; // float
+
+$tenant_id = 'tenant_id_example'; // стринг
+$options = [
+    'user_id' => 'user_id_example', // стринг
+    'badge_id' => 'badge_id_example', // стринг
+    'type' => 3.4, // float
+    'displayed_on_comments' => True, // булев
+    'limit' => 3.4, // float
+    'skip' => 3.4, // float
+];
+
 
 try {
-    $result = $apiInstance->getUserBadges($tenant_id, $user_id, $badge_id, $type, $displayed_on_comments, $limit, $skip);
+    $result = $apiInstance->getUserBadges($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getUserBadges: ', $e->getMessage(), PHP_EOL;

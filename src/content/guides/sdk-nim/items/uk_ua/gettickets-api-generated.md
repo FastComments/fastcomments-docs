@@ -1,12 +1,9 @@
 ## Параметри
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Так |  |
-| userId | string | Ні |  |
-| state | float64 | Ні |  |
-| skip | float64 | Ні |  |
-| limit | float64 | Ні |  |
+| Ім'я | Тип | Обов'язковий | Опис |
+|------|------|--------------|------|
+| tenantId | string | Yes |  |
+| options | GetTicketsOptions | No |  |
 
 ## Відповідь
 
@@ -16,10 +13,8 @@
 
 [inline-code-attrs-start title = 'Приклад getTickets'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTickets(tenantId = "my-tenant-123", userId = "user-789", state = 1.0, skip = 0.0, limit = 50.0)
-if response.isSome:
-  let tickets = response.get()
-  echo tickets
+let (ticketsOpt, httpResp) = client.getTickets(tenantId = "my-tenant-123", options = GetTicketsOptions())
+if ticketsOpt.isSome:
+  let tickets = ticketsOpt.get()
+  # використовуйте tickets за потребою
 [inline-code-end]
-
----

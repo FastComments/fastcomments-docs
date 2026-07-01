@@ -1,34 +1,28 @@
-## 매개변수
+## Parameters
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| commentId | string | 아니요 |  |
-| sso | string | 아니요 |  |
+| tenantId | string | Yes |  |
+| options | const GetUserInternalProfileOptions& | Yes |  |
 
-## 응답
+## Response
 
 반환: [`GetUserInternalProfileResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetUserInternalProfileResponse.h)
 
-## 예제
+## Example
 
-[inline-code-attrs-start title = 'getUserInternalProfile 예제'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUserInternalProfile 예시'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> commentId = boost::optional<utility::string_t>(U("cmt-987654"));
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("tenant-42|alice@example.com"));
-auto placeholder = std::make_shared<GetUserInternalProfileResponse>();
-api->getUserInternalProfile(commentId, sso)
-    .then([](pplx::task<std::shared_ptr<GetUserInternalProfileResponse>> task) {
-        try {
-            auto resp = task.get();
-            if (resp) {
-                std::cout << "User profile retrieved\n";
-            } else {
-                std::cout << "No profile found\n";
-            }
-        } catch (const std::exception& e) {
-            std::cerr << "Error: " << e.what() << '\n';
+utility::string_t tenantId = U("my-tenant-123");
+GetUserInternalProfileOptions options;
+options.email = boost::optional<utility::string_t>(U("user@example.com"));
+options.includeDetails = boost::optional<bool>(true);
+
+api->getUserInternalProfile(tenantId, options)
+    .then([](std::shared_ptr<GetUserInternalProfileResponse> response) {
+        if (response) {
+            auto name = response->displayName;
+            auto id = response->userId;
         }
     });
 [inline-code-end]
-
----

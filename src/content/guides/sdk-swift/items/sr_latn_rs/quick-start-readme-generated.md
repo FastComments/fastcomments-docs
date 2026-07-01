@@ -3,12 +3,9 @@
 ```swift
 import FastCommentsSwift
 
-// Kreiraj API klijent
-let publicApi = PublicAPI()
-
-// Dohvati komentare za stranicu
+// Preuzmi komentare za stranicu
 do {
-    let response = try await publicApi.getCommentsPublic(
+    let response = try await PublicAPI.getCommentsPublic(
         tenantId: "your-tenant-id",
         urlId: "page-url-id"
     )
@@ -27,15 +24,14 @@ do {
 ```swift
 import FastCommentsSwift
 
-// Kreiraj konfiguraciju sa API ključem
-let defaultApi = DefaultAPI()
-defaultApi.apiKey = "your-api-key"
+// Podesite vaš API ključ u deljenoj konfiguraciji (šalje se kao zaglavlje x-api-key header)
+FastCommentsSwiftAPIConfiguration.shared.customHeaders["x-api-key"] = "your-api-key"
 
-// Dohvati komentare koristeći autentifikovani API
+// Preuzmi komentare koristeći autentifikovani API
 do {
-    let response = try await defaultApi.getComments(
+    let response = try await DefaultAPI.getComments(
         tenantId: "your-tenant-id",
-        urlId: "page-url-id"
+        options: .init(urlId: "page-url-id")
     )
 
     print("Total comments: \(response.count ?? 0)")
@@ -47,18 +43,20 @@ do {
 }
 ```
 
-### Korišćenje API-ja za moderaciju
+### Korišćenje Moderacijski API
 
 ```swift
 import FastCommentsSwift
 
-// Metode za moderaciju su autorizovane `sso` tokenom za moderatora koji deluje
-// (generišite ga pomoću FastCommentsSSO, pogledajte odeljak SSO iznad).
+// Metode moderacije su autorizovane pomoću `sso` tokena za moderatora
+// (generišite ga putem FastCommentsSSO, vidi odeljak SSO iznad).
 do {
     let response = try await ModerationAPI.getApiComments(
-        page: 0,
-        count: 30,
-        sso: ssoToken
+        options: .init(
+            page: 0,
+            count: 30,
+            sso: ssoToken
+        )
     )
 
     print("Found \(response.comments.count) comments to moderate")
@@ -72,28 +70,28 @@ do {
 
 ### Korišćenje SSO za autentifikaciju
 
-#### Sigurni SSO (Preporučeno za produkciju)
+#### Bezbedni SSO (Preporučeno za proizvodnju)
 
 ```swift
 import FastCommentsSwift
 
 let apiKey = "your-api-key"
 
-// Kreiraj sigurne SSO korisničke podatke (samo na serverskoj strani!)
+// Napravite bezbedne SSO podatke korisnika (samo na serveru!)
 let userData = SecureSSOUserData(
-    id: "user-123",              // ID korisnika
+    id: "user-123",              // User ID
     email: "user@example.com",   // Email
-    username: "johndoe",         // Korisničko ime
-    avatar: "https://example.com/avatar.jpg" // URL avatara
+    username: "johndoe",         // Username
+    avatar: "https://example.com/avatar.jpg" // Avatar URL
 )
 
-// Generiši SSO token
+// Generišite SSO token
 do {
     let sso = try FastCommentsSSO.createSecure(apiKey: apiKey, secureSSOUserData: userData)
     let token = try sso.createToken()
 
     print("SSO Token: \(token ?? "")")
-    // Prosledi ovaj token frontendu za autentifikaciju
+    // Prosledite ovaj token vašem frontend-u za autentifikaciju
 } catch {
     print("Error creating SSO token: \(error)")
 }
@@ -104,14 +102,14 @@ do {
 ```swift
 import FastCommentsSwift
 
-// Kreiraj jednostavne SSO korisničke podatke (nije potreban API ključ)
+// Napravite jednostavne SSO podatke korisnika (API ključ nije potreban)
 let userData = SimpleSSOUserData(
     username: "johndoe",
     email: "user@example.com",
     avatar: "https://example.com/avatar.jpg"
 )
 
-// Generiši jednostavan SSO token
+// Generišite jednostavan SSO token
 let sso = FastCommentsSSO.createSimple(simpleSSOUserData: userData)
 do {
     let token = try sso.createToken()

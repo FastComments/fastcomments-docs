@@ -1,15 +1,15 @@
-## Parametre
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| tag | string | path | Ja |  |
-| tenantId | string | query | Nej |  |
+| tenantId | string | query | Yes |  |
+| tag | string | path | Yes |  |
 
-## Respons
+## Response
 
 Returnerer: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
 
-## Eksempel
+## Example
 
 [inline-code-attrs-start title = 'DeleteHashTag Eksempel'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -23,18 +23,20 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	tag := "tag_example" // string | 
-	tenantId := "tenantId_example" // string |  (valgfri)
-	deleteHashTagRequestBody := *openapiclient.NewDeleteHashTagRequestBody() // DeleteHashTagRequestBody |  (valgfri)
+	deleteHashTagRequestBody := *openapiclient.NewDeleteHashTagRequestBody() // DeleteHashTagRequestBody |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 	resp, r, err := apiClient.DefaultAPI.DeleteHashTag(context.Background(), tag).TenantId(tenantId).DeleteHashTagRequestBody(deleteHashTagRequestBody).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.DeleteHashTag``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Fejl ved kald af `DefaultAPI.DeleteHashTag``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Fuld HTTP-svar: %v\n", r)
 	}
-	// response from `DeleteHashTag`: APIEmptyResponse
-	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.DeleteHashTag`: %v\n", resp)
+	// svar fra `DeleteHashTag`: APIEmptyResponse
+	fmt.Fprintf(os.Stdout, "Svar fra `DefaultAPI.DeleteHashTag`: %v\n", resp)
 }
 [inline-code-end]
+
+---

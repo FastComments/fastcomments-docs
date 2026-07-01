@@ -1,9 +1,9 @@
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
+|------|------|----------|----------|------|
 | tenantId | string | query | Da |  |
-| urlId | string | query | Ne | Koristi se da se odredi da li je trenutna stranica pretplaćena. |
+| urlId | string | query | Ne | Koristi se za određivanje da li je trenutna stranica pretplaćena. |
 | pageSize | integer | query | Ne |  |
 | afterId | string | query | Ne |  |
 | includeContext | boolean | query | Ne |  |
@@ -23,23 +23,23 @@ Vraća: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomme
 
 [inline-code-attrs-start title = 'Primer getUserNotifications'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sledeći primeri koda su još uvek beta. Za bilo koji problem, prijavite na http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledeći primeri koda su još u beta fazi. Za bilo koji problem, molimo prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let urlId = "urlId_example" // String | Koristi se da se odredi da li je trenutna stranica pretplaćena. (opciono)
-let pageSize = 987 // Int |  (opciono)
-let afterId = "afterId_example" // String |  (opciono)
-let includeContext = true // Bool |  (opciono)
-let afterCreatedAt = 987 // Int64 |  (opciono)
-let unreadOnly = true // Bool |  (opciono)
-let dmOnly = true // Bool |  (opciono)
-let noDm = true // Bool |  (opciono)
-let includeTranslations = true // Bool |  (opciono)
-let includeTenantNotifications = true // Bool |  (opciono)
-let sso = "sso_example" // String |  (opciono)
+let urlId = "urlId_example" // String | Koristi se za određivanje da li je trenutna stranica pretplaćena. (optional)
+let pageSize = 987 // Int |  (optional)
+let afterId = "afterId_example" // String |  (optional)
+let includeContext = true // Bool |  (optional)
+let afterCreatedAt = 987 // Int64 |  (optional)
+let unreadOnly = true // Bool |  (optional)
+let dmOnly = true // Bool |  (optional)
+let noDm = true // Bool |  (optional)
+let includeTranslations = true // Bool |  (optional)
+let includeTenantNotifications = true // Bool |  (optional)
+let sso = "sso_example" // String |  (optional)
 
-PublicAPI.getUserNotifications(tenantId: tenantId, urlId: urlId, pageSize: pageSize, afterId: afterId, includeContext: includeContext, afterCreatedAt: afterCreatedAt, unreadOnly: unreadOnly, dmOnly: dmOnly, noDm: noDm, includeTranslations: includeTranslations, includeTenantNotifications: includeTenantNotifications, sso: sso) { (response, error) in
+PublicAPI.getUserNotifications(tenantId: tenantId, options: PublicAPI.GetUserNotificationsOptions(urlId: urlId, pageSize: pageSize, afterId: afterId, includeContext: includeContext, afterCreatedAt: afterCreatedAt, unreadOnly: unreadOnly, dmOnly: dmOnly, noDm: noDm, includeTranslations: includeTranslations, includeTenantNotifications: includeTenantNotifications, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

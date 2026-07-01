@@ -1,6 +1,6 @@
 ### Uporaba avtenticiranih API-jev (DefaultAPI)
 
-**Pomembno:** Avtenticirane končne točke zahtevajo, da je vaš API ključ nastavljen v glavi `x-api-key`.
+**Pomembno:** Avtenticirani končni naslovi zahtevajo, da je vaš API ključ nastavljen v glavi `x-api-key`.
 
 ```nim
 import httpclient
@@ -11,24 +11,16 @@ import fastcomments/models/model_comment_data
 let client = newHttpClient()
 client.headers["x-api-key"] = "your-api-key"
 
-# Izvedi avtenticirane API klice
+# Naredi avtenticirane klice API-ja.
+# Zahtevani parametri (in telo zahteve) so položajni; neobvezni
+# parametri se posredujejo prek objekt options operacije.
 let (response, httpResponse) = getComments(
   httpClient = client,
   tenantId = "your-tenant-id",
-  page = 0,
-  limit = 0,
-  skip = 0,
-  asTree = false,
-  skipChildren = 0,
-  limitChildren = 0,
-  maxTreeDepth = 0,
-  urlId = "your-url-id",
-  userId = "",
-  anonUserId = "",
-  contextUserId = "",
-  hashTag = "",
-  parentId = "",
-  direction = SortDirections.DESC
+  options = GetCommentsOptions(
+    urlId: "your-url-id",
+    direction: SortDirections.DESC
+  )
 )
 
 if response.isSome:
@@ -39,7 +31,7 @@ if response.isSome:
 
 ### Uporaba javnih API-jev (PublicAPI)
 
-Javne končne točke ne zahtevajo avtentikacije:
+Javni končni naslovi ne zahtevajo avtentikacije:
 
 ```nim
 import httpclient
@@ -48,37 +40,15 @@ import fastcomments/apis/api_public
 
 let client = newHttpClient()
 
-# Izvedi javne API klice
+# Naredi javne klice API-ja.
+# tenantId in urlId sta obvezna (položajna); vse ostalo je neobvezno.
 let (response, httpResponse) = getCommentsPublic(
   httpClient = client,
   tenantId = "your-tenant-id",
   urlId = "your-url-id",
-  page = 0,
-  direction = SortDirections.DESC,
-  sso = "",
-  skip = 0,
-  skipChildren = 0,
-  limit = 0,
-  limitChildren = 0,
-  countChildren = false,
-  fetchPageForCommentId = "",
-  includeConfig = false,
-  countAll = false,
-  includei10n = false,
-  locale = "",
-  modules = "",
-  isCrawler = false,
-  includeNotificationCount = false,
-  asTree = false,
-  maxTreeDepth = 0,
-  useFullTranslationIds = false,
-  parentId = "",
-  searchText = "",
-  hashTags = @[],
-  userId = "",
-  customConfigStr = "",
-  afterCommentId = "",
-  beforeCommentId = ""
+  options = GetCommentsPublicOptions(
+    direction: SortDirections.DESC
+  )
 )
 
 if response.isSome:
@@ -89,7 +59,7 @@ if response.isSome:
 
 ### Uporaba moderacijskih API-jev (ModerationAPI)
 
-Moderacijske končne točke poganjajo nadzorno ploščo moderatorja in so avtenticirane z SSO žetonom aktivnega moderatorja:
+Moderacijski končni naslovi poganjajo nadzorno ploščo moderatorja in so avtenticirani z SSO žetonom za delujočega moderatorja:
 
 ```nim
 import httpclient
@@ -98,18 +68,15 @@ import fastcomments/apis/api_moderation
 
 let client = newHttpClient()
 
-# Naštej komentarje v moderacijskem vmesniku
+# Izpiši komentarje v moderacijski nadzorni plošči.
+# Ta operacija nima zahtevanih parametrov, zato je vse neobvezno.
 let (response, httpResponse) = getApiComments(
   httpClient = client,
-  page = 0,
-  count = 30,
-  textSearch = "",
-  byIPFromComment = "",
-  filters = "",
-  searchFilters = "",
-  sorts = "",
-  demo = false,
-  sso = "your-sso-token"
+  options = GetApiCommentsOptions(
+    count: 30,
+    tenantId: "your-tenant-id",
+    sso: "your-sso-token"
+  )
 )
 
 if response.isSome:
@@ -119,5 +86,5 @@ if response.isSome:
 
 ### Pogoste težave
 
-1. **401 napaka avtentikacije**: Prepričajte se, da nastavite glavo `x-api-key` na svojem HttpClient pred izvajanjem DefaultAPI zahtev: `client.headers["x-api-key"] = "your-api-key"`
-2. **Napačen razred API**: Uporabite `api_default` za strežniške avtenticirane zahteve, `api_public` za odjemalčeve/javne zahteve in `api_moderation` za zahteve nadzorne plošče moderatorja.
+1. **Napaka 401 pri avtentikaciji**: Prepričajte se, da ste nastavili glavo `x-api-key` na vašem HttpClient-u pred pošiljanjem zahtevanj DefaultAPI: `client.headers["x-api-key"] = "your-api-key"`
+2. **Napačen API razred**: Uporabite `api_default` za strežniške avtenticirane zahteve, `api_public` za odjemalske/javne zahteve in `api_moderation` za zahteve moderacijske nadzorne plošče.

@@ -1,16 +1,9 @@
 ## Параметры
 
-| Имя | Тип | Обязательно | Описание |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| page | double | Нет |  |
-| count | double | Нет |  |
-| textSearch | string | Нет |  |
-| byIPFromComment | string | Нет |  |
-| filters | string | Нет |  |
-| searchFilters | string | Нет |  |
-| sorts | string | Нет |  |
-| demo | bool | Нет |  |
-| sso | string | Нет |  |
+| tenantId | string | Да |  |
+| options | const GetApiCommentsOptions& | Да |  |
 
 ## Ответ
 
@@ -18,26 +11,17 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример использования getApiComments'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getApiComments'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<double> pageOpt(1.0);
-boost::optional<double> countOpt(25.0);
-boost::optional<utility::string_t> textSearchOpt(utility::conversions::to_string_t("offensive content"));
-boost::optional<utility::string_t> byIPFromCommentOpt(utility::conversions::to_string_t("203.0.113.45"));
-boost::optional<utility::string_t> filtersOpt(utility::conversions::to_string_t("{\"status\":\"pending\"}"));
-boost::optional<utility::string_t> searchFiltersOpt(utility::conversions::to_string_t("author:john.doe@example.com"));
-boost::optional<utility::string_t> sortsOpt(utility::conversions::to_string_t("createdAt:desc"));
-boost::optional<bool> demoOpt(false);
-boost::optional<utility::string_t> ssoOpt(utility::conversions::to_string_t("tenant-123"));
+auto options = GetApiCommentsOptions{};
+options.page = boost::make_optional(2);
+options.authorEmail = boost::make_optional<utility::string_t>(U("user@example.com"));
+options.includeDeleted = boost::make_optional(false);
 
-api->getApiComments(pageOpt, countOpt, textSearchOpt, byIPFromCommentOpt, filtersOpt, searchFiltersOpt, sortsOpt, demoOpt, ssoOpt)
-.then([](pplx::task<std::shared_ptr<ModerationAPIGetCommentsResponse>> t){
-    try {
-        auto resp = t.get();
-        auto safeResp = resp ? resp : std::make_shared<ModerationAPIGetCommentsResponse>();
-    } catch (const std::exception&) {}
-})
-.wait();
+api->getApiComments(U("my-tenant-123"), options).then([](pplx::task<std::shared_ptr<ModerationAPIGetCommentsResponse>> task){
+    try{
+        auto response = task.get();
+    }catch(const std::exception&){
+    }
+});
 [inline-code-end]
-
----

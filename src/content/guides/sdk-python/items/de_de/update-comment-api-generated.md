@@ -10,38 +10,33 @@
 
 ## Antwort
 
-Gibt zurück: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
+Rückgabe: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'update_comment Beispiel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import UpdateCommentOptions
 from client.models.api_empty_response import APIEmptyResponse
 from client.models.updatable_comment_params import UpdatableCommentParams
 from client.rest import ApiException
 from pprint import pprint
 
-# Die Angabe des Hosts ist optional und standardmäßig https://fastcomments.com
+# Das Definieren des Hosts ist optional und hat standardmäßig https://fastcomments.com als Vorgabe
 # Siehe configuration.py für eine Liste aller unterstützten Konfigurationsparameter.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
+# Der Client muss die Authentifizierungs- und Autorisierungsparameter gemäß der Sicherheitsrichtlinie des API-Servers konfigurieren.
+# Beispiele für jede Authentifizierungsmethode werden unten bereitgestellt; verwenden Sie das Beispiel, das Ihren Authentifizierungsfall erfüllt.
 
-# Der Client muss die Authentifizierungs- und Autorisierungsparameter
-# gemäß der Sicherheitsrichtlinie des API-Servers konfigurieren.
-# Für jede Authentifizierungsmethode sind unten Beispiele enthalten. Verwenden Sie das Beispiel, das
-# Ihren Authentifizierungsfall erfüllt.
-
-# Configure API key authorization: api_key
+# Konfigurieren Sie die API-Schlüssel-Authorisierung: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Entfernen Sie unten die Kommentarzeichen, um bei Bedarf ein Präfix (z. B. Bearer) für den API-Key zu setzen
+# Kommentieren Sie die folgende Zeile aus, um ein Präfix (z. B. Bearer) für den API-Schlüssel festzulegen, falls erforderlich
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Einen Kontext mit einer Instanz des API-Clients öffnen
+# Betreten Sie einen Kontext mit einer Instanz des API-Clients
 with client.ApiClient(configuration) as api_client:
-    # Eine Instanz der API-Klasse erstellen
+    # Erstellen Sie eine Instanz der API-Klasse
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
@@ -51,7 +46,7 @@ with client.ApiClient(configuration) as api_client:
     is_live = True # bool |  (optional)
 
     try:
-        api_response = api_instance.update_comment(tenant_id, id, updatable_comment_params, context_user_id=context_user_id, do_spam_check=do_spam_check, is_live=is_live)
+        api_response = api_instance.update_comment(tenant_id, id, updatable_comment_params, UpdateCommentOptions(context_user_id=context_user_id, do_spam_check=do_spam_check, is_live=is_live))
         print("The response of DefaultApi->update_comment:\n")
         pprint(api_response)
     except Exception as e:

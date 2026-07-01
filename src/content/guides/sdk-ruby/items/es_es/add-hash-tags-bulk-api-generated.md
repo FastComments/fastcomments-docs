@@ -1,8 +1,8 @@
 ## Parámetros
 
-| Name | Tipo | Ubicación | Requerido | Descripción |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | No |  |
+| tenantId | string | query | Yes |  |
 
 ## Respuesta
 
@@ -10,27 +10,25 @@ Devuelve: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcom
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de add_hash_tags_bulk'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo add_hash_tags_bulk'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Configurar la autorización
+# configurar autorización
 FastCommentsClient.configure do |config|
-  # Configure API key authorization: api_key
+  # Configurar autorización de clave API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Descomenta la siguiente línea para establecer un prefijo para la API key, p. ej. 'Bearer' (por defecto nil)
+  # Descomente la línea siguiente para establecer un prefijo para la clave API, p.ej. 'Bearer' (por defecto nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
-opts = {
-  tenant_id: 'tenant_id_example', # String | 
-  bulk_create_hash_tags_body: FastCommentsClient::BulkCreateHashTagsBody.new({tags: [FastCommentsClient::BulkCreateHashTagsBodyTagsInner.new({tag: 'tag_example'})]}) # BulkCreateHashTagsBody | 
-}
+tenant_id = 'tenant_id_example' # String | 
+bulk_create_hash_tags_body = FastCommentsClient::BulkCreateHashTagsBody.new({tags: [FastCommentsClient::BulkCreateHashTagsBodyTagsInner.new({tag: 'tag_example'})]}) # BulkCreateHashTagsBody | 
 
 begin
   
-  result = api_instance.add_hash_tags_bulk(opts)
+  result = api_instance.add_hash_tags_bulk(tenant_id, bulk_create_hash_tags_body)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->add_hash_tags_bulk: #{e}"

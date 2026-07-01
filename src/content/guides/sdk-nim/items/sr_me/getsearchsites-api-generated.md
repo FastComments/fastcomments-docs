@@ -1,20 +1,19 @@
 ## Parametri
 
 | Ime | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| value | string | Ne |  |
-| sso | string | Ne |  |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| options | GetSearchSitesOptions | No |  |
 
 ## Odgovor
 
 Vraća: [`Option[ModerationSiteSearchResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_site_search_response.nim)
 
-## Primjer
+## Primer
 
-[inline-code-attrs-start title = 'getSearchSites Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getSearchSites'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSearchSites(value = "news/2026-olympics", sso = "sso-user-9876-token")
-if response.isSome:
-  let searchResponse: ModerationSiteSearchResponse = response.get()
-  echo "Found sites for search:", searchResponse
+let (searchResult, httpResp) = client.getSearchSites(tenantId = "my-tenant-123", options = GetSearchSitesOptions())
+if searchResult.isSome:
+  let siteResp = searchResult.get()
 [inline-code-end]

@@ -1,7 +1,7 @@
 ## Parametry
 
-| Name | Type | Lokalizacja | Wymagane | Opis |
-|------|------|----------|----------|-------------|
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+|------|------|-------------|----------|------|
 | tenantId | string | query | Tak |  |
 | userId | string | query | Nie |  |
 | badgeId | string | query | Nie |  |
@@ -29,21 +29,25 @@ $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKe
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Jeśli chcesz użyć niestandardowego klienta HTTP, przekaż klienta, który implementuje `GuzzleHttp\ClientInterface`.
+    // Jeśli chcesz użyć własnego klienta HTTP, przekaż swój klient implementujący `GuzzleHttp\ClientInterface`.
     // To jest opcjonalne, domyślnie używany będzie `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$user_id = 'user_id_example'; // string
-$badge_id = 'badge_id_example'; // string
-$type = 3.4; // float
-$displayed_on_comments = True; // bool
-$limit = 3.4; // float
-$skip = 3.4; // float
+$options = [
+    'user_id' => 'user_id_example', // string
+    'badge_id' => 'badge_id_example', // string
+    'type' => 3.4, // float
+    'displayed_on_comments' => True, // bool
+    'limit' => 3.4, // float
+    'skip' => 3.4, // float
+];
+
 
 try {
-    $result = $apiInstance->getUserBadges($tenant_id, $user_id, $badge_id, $type, $displayed_on_comments, $limit, $skip);
+    $result = $apiInstance->getUserBadges($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getUserBadges: ', $e->getMessage(), PHP_EOL;

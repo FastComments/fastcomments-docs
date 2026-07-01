@@ -1,38 +1,39 @@
----
 ## 매개변수
 
-| 이름 | 타입 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenant_id | String | 예 |  |
-| question_id | String | 아니오 |  |
-| question_ids | Vec<String> | 아니오 |  |
-| url_id | String | 아니오 |  |
-| start_date | chrono::DateTime<chrono::FixedOffset> | 아니오 |  |
-| force_recalculate | bool | 아니오 |  |
-| min_value | f64 | 아니오 |  |
-| max_value | f64 | 아니오 |  |
-| limit | f64 | 아니오 |  |
+| tenant_id | String | Yes |  |
+| question_id | String | No |  |
+| question_ids | Vec<String> | No |  |
+| url_id | String | No |  |
+| start_date | chrono::DateTime<chrono::FixedOffset> | No |  |
+| force_recalculate | bool | No |  |
+| min_value | f64 | No |  |
+| max_value | f64 | No |  |
+| limit | f64 | No |  |
 
 ## 응답
 
-반환: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/combine_question_results_with_comments_response.rs)
+Returns: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/combine_question_results_with_comments_response.rs)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'combine_comments_with_question_results 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'combine_comments_with_question_results 예시'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: CombineCommentsWithQuestionResultsParams = CombineCommentsWithQuestionResultsParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    question_id: None,
-    question_ids: Some(vec!["product-satisfaction".to_string(), "support-response".to_string()]),
-    url_id: Some("news/article-42".to_string()),
-    start_date: Some(chrono::FixedOffset::east(0).ymd(2025, 12, 01).and_hms(08, 00, 00)),
-    force_recalculate: Some(true),
-    min_value: Some(0.0),
-    max_value: Some(1.0),
-    limit: Some(250.0),
-};
-let response: CombineQuestionResultsWithCommentsResponse = combine_comments_with_question_results(&configuration, params).await?;
+async fn example() -> Result<(), Error> {
+    let config = configuration::Configuration::default();
+    let params = CombineCommentsWithQuestionResultsParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        question_id: Some("q123".to_string()),
+        question_ids: Some(vec!["q123".to_string(), "q124".to_string()]),
+        url_id: Some("news/article".to_string()),
+        start_date: Some(chrono::DateTime::parse_from_rfc3339("2023-01-01T00:00:00+00:00").unwrap()),
+        force_recalculate: Some(true),
+        min_value: Some(0.0),
+        max_value: Some(100.0),
+        limit: Some(50.0),
+    };
+    let _response = combine_comments_with_question_results(&config, params).await?;
+    Ok(())
+}
 [inline-code-end]
-
----

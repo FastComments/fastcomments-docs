@@ -2,9 +2,9 @@
 
 | Nome | Tipo | Obbligatorio | Descrizione |
 |------|------|--------------|-------------|
-| tenant_id | String | Sì |  |
-| url_id | String | Sì |  |
-| id | String | Sì |  |
+| tenant_id | String | Yes |  |
+| url_id | String | Yes |  |
+| id | String | Yes |  |
 
 ## Risposta
 
@@ -12,19 +12,15 @@ Restituisce: `CreateV1PageReact`
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di delete_v2_page_react'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio delete_v2_page_react'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_delete() -> Result<(), Error> {
-    let params: DeleteV2PageReactParams = DeleteV2PageReactParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        url_id: "news/article/2026/06/feature-ml".to_string(),
-        id: "react_987654321".to_string(),
+async fn run() -> Result<(), Error> {
+    let params = DeleteV2PageReactParams {
+        tenant_id: "acme-corp-tenant".into(),
+        url_id: "news/article".into(),
+        id: "react-987".into(),
     };
-    let request_id: Option<String> = Some("req-20260619-01".to_string());
-    let deleted: CreateV1PageReact = delete_v2_page_react(&configuration, params).await?;
-    let _ = request_id;
+    let _response: CreateV1PageReact = delete_v2_page_react(&config, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

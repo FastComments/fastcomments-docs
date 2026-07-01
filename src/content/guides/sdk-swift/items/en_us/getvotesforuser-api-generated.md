@@ -23,7 +23,7 @@ let urlId = "urlId_example" // String |
 let userId = "userId_example" // String |  (optional)
 let anonUserId = "anonUserId_example" // String |  (optional)
 
-DefaultAPI.getVotesForUser(tenantId: tenantId, urlId: urlId, userId: userId, anonUserId: anonUserId) { (response, error) in
+DefaultAPI.getVotesForUser(tenantId: tenantId, urlId: urlId, options: DefaultAPI.GetVotesForUserOptions(userId: userId, anonUserId: anonUserId)) { (response, error) in
     guard error == nil else {
         print(error)
         return

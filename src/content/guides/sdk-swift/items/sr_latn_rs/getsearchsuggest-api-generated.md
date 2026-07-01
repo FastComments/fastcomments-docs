@@ -1,7 +1,8 @@
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
 | text-search | string | query | Ne |  |
 | sso | string | query | Ne |  |
 
@@ -13,13 +14,14 @@ Vraća: [`ModerationSuggestResponse`](https://github.com/FastComments/fastcommen
 
 [inline-code-attrs-start title = 'Primer getSearchSuggest'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sledeći primeri koda su i dalje u beta fazi. Za bilo koji problem, prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledeći primeri koda su i dalje beta. Za bilo koji problem, molimo prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let textSearch = "textSearch_example" // String |  (neobavezno)
-let sso = "sso_example" // String |  (neobavezno)
+let tenantId = "tenantId_example" // String | 
+let textSearch = "textSearch_example" // String | (opcionalno)
+let sso = "sso_example" // String | (opcionalno)
 
-ModerationAPI.getSearchSuggest(textSearch: textSearch, sso: sso) { (response, error) in
+ModerationAPI.getSearchSuggest(tenantId: tenantId, options: ModerationAPI.GetSearchSuggestOptions(textSearch: textSearch, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -30,5 +32,3 @@ ModerationAPI.getSearchSuggest(textSearch: textSearch, sso: sso) { (response, er
     }
 }
 [inline-code-end]
-
----

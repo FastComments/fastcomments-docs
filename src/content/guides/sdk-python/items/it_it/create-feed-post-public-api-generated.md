@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Location | Obbligatorio | Descrizione |
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
 |------|------|----------|--------------|-------------|
 | tenantId | string | path | Sì |  |
 | broadcastId | string | query | No |  |
@@ -12,16 +12,17 @@ Restituisce: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomm
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di create_feed_post_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_feed_post_public Esempio'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import CreateFeedPostPublicOptions
 from client.models.create_feed_post_params import CreateFeedPostParams
 from client.models.create_feed_post_response import CreateFeedPostResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definire l'host è opzionale e il valore predefinito è https://fastcomments.com
-# Vedi configuration.py per un elenco di tutti i parametri di configurazione supportati.
+# Definire l'host è facoltativo e predefinito a https://fastcomments.com
+# Consulta configuration.py per l'elenco di tutti i parametri di configurazione supportati.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -33,11 +34,11 @@ with client.ApiClient(configuration) as api_client:
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_feed_post_params = client.CreateFeedPostParams() # CreateFeedPostParams | 
-    broadcast_id = 'broadcast_id_example' # str |  (opzionale)
-    sso = 'sso_example' # str |  (opzionale)
+    broadcast_id = 'broadcast_id_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.create_feed_post_public(tenant_id, create_feed_post_params, broadcast_id=broadcast_id, sso=sso)
+        api_response = api_instance.create_feed_post_public(tenant_id, create_feed_post_params, CreateFeedPostPublicOptions(broadcast_id=broadcast_id, sso=sso))
         print("The response of PublicApi->create_feed_post_public:\n")
         pprint(api_response)
     except Exception as e:

@@ -1,10 +1,9 @@
----
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Sí |  |
-| id | string | path | Sí |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 | deleteComments | string | query | No |  |
 | commentDeleteMode | string | query | No |  |
 
@@ -14,9 +13,9 @@ Devuelve: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swif
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de deleteTenantUser'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo deleteTenantUser'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Los siguientes ejemplos de código aún están en beta. Para cualquier problema, por favor repórtelo vía http://github.com/OpenAPITools/openapi-generator/issues/new
+// Los siguientes ejemplos de código aún están en beta. Para cualquier problema, por favor repórtelo a http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -24,7 +23,7 @@ let id = "id_example" // String |
 let deleteComments = "deleteComments_example" // String |  (opcional)
 let commentDeleteMode = "commentDeleteMode_example" // String |  (opcional)
 
-DefaultAPI.deleteTenantUser(tenantId: tenantId, id: id, deleteComments: deleteComments, commentDeleteMode: commentDeleteMode) { (response, error) in
+DefaultAPI.deleteTenantUser(tenantId: tenantId, id: id, options: DefaultAPI.DeleteTenantUserOptions(deleteComments: deleteComments, commentDeleteMode: commentDeleteMode)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -35,5 +34,3 @@ DefaultAPI.deleteTenantUser(tenantId: tenantId, id: id, deleteComments: deleteCo
     }
 }
 [inline-code-end]
-
----

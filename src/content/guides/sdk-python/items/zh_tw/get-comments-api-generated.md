@@ -1,24 +1,24 @@
 ## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | 查詢 | 是 |  |
-| page | integer | 查詢 | 否 |  |
-| limit | integer | 查詢 | 否 |  |
-| skip | integer | 查詢 | 否 |  |
-| asTree | boolean | 查詢 | 否 |  |
-| skipChildren | integer | 查詢 | 否 |  |
-| limitChildren | integer | 查詢 | 否 |  |
-| maxTreeDepth | integer | 查詢 | 否 |  |
-| urlId | string | 查詢 | 否 |  |
-| userId | string | 查詢 | 否 |  |
-| anonUserId | string | 查詢 | 否 |  |
-| contextUserId | string | 查詢 | 否 |  |
-| hashTag | string | 查詢 | 否 |  |
-| parentId | string | 查詢 | 否 |  |
-| direction | string | 查詢 | 否 |  |
-| fromDate | integer | 查詢 | 否 |  |
-| toDate | integer | 查詢 | 否 |  |
+| tenantId | string | query | Yes |  |
+| page | integer | query | No |  |
+| limit | integer | query | No |  |
+| skip | integer | query | No |  |
+| asTree | boolean | query | No |  |
+| skipChildren | integer | query | No |  |
+| limitChildren | integer | query | No |  |
+| maxTreeDepth | integer | query | No |  |
+| urlId | string | query | No |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
+| contextUserId | string | query | No |  |
+| hashTag | string | query | No |  |
+| parentId | string | query | No |  |
+| direction | string | query | No |  |
+| fromDate | integer | query | No |  |
+| toDate | integer | query | No |  |
 
 ## 回應
 
@@ -29,60 +29,51 @@
 [inline-code-attrs-start title = 'get_comments 範例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetCommentsOptions
 from client.models.api_get_comments_response import APIGetCommentsResponse
 from client.models.sort_directions import SortDirections
 from client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://fastcomments.com
-# 請參閱 configuration.py 以查看所有支援的設定參數。
+# 定義主機是可選的，預設為 https://fastcomments.com
+# 請參閱 configuration.py 以取得所有支援的設定參數列表。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# 用戶端必須設定驗證與授權參數
-# in accordance with the API server security policy.
-# 以符合 API 伺服器的安全政策。
-# Examples for each auth method are provided below, use the example that
-# 下方提供每種驗證方法的範例，使用符合您驗證情境的範例。
-# satisfies your auth use case.
-# 滿足您的驗證使用情境。
+# 客戶端必須依照 API 伺服器的安全政策設定驗證與授權參數
+# 為每種認證方法提供了以下範例，使用符合您認證需求的範例。
 
-# Configure API key authorization: api_key
-# 設定 API key 授權：api_key
+# 設定 API 金鑰授權：api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# 若需要，取消註解下方以設定 API key 的前綴（例如 Bearer）
+# 如有需要，取消註解以下設定 API 金鑰的前綴（例如 Bearer）設定
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Enter a context with an instance of the API client
-# 使用 ApiClient 的實例進入一個上下文
+# 使用 API 客戶端的實例進入上下文
 with client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    # 建立 API 類別的實例
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    page = 56 # int |  （可選）
-    limit = 56 # int |  （可選）
-    skip = 56 # int |  （可選）
-    as_tree = True # bool |  （可選）
-    skip_children = 56 # int |  （可選）
-    limit_children = 56 # int |  （可選）
-    max_tree_depth = 56 # int |  （可選）
-    url_id = 'url_id_example' # str |  （可選）
-    user_id = 'user_id_example' # str |  （可選）
-    anon_user_id = 'anon_user_id_example' # str |  （可選）
-    context_user_id = 'context_user_id_example' # str |  （可選）
-    hash_tag = 'hash_tag_example' # str |  （可選）
-    parent_id = 'parent_id_example' # str |  （可選）
-    direction = client.SortDirections() # SortDirections |  （可選）
-    from_date = 56 # int |  （可選）
-    to_date = 56 # int |  （可選）
+    page = 56 # int |  (optional)
+    limit = 56 # int |  (optional)
+    skip = 56 # int |  (optional)
+    as_tree = True # bool |  (optional)
+    skip_children = 56 # int |  (optional)
+    limit_children = 56 # int |  (optional)
+    max_tree_depth = 56 # int |  (optional)
+    url_id = 'url_id_example' # str |  (optional)
+    user_id = 'user_id_example' # str |  (optional)
+    anon_user_id = 'anon_user_id_example' # str |  (optional)
+    context_user_id = 'context_user_id_example' # str |  (optional)
+    hash_tag = 'hash_tag_example' # str |  (optional)
+    parent_id = 'parent_id_example' # str |  (optional)
+    direction = client.SortDirections() # SortDirections |  (optional)
+    from_date = 56 # int |  (optional)
+    to_date = 56 # int |  (optional)
 
     try:
-        api_response = api_instance.get_comments(tenant_id, page=page, limit=limit, skip=skip, as_tree=as_tree, skip_children=skip_children, limit_children=limit_children, max_tree_depth=max_tree_depth, url_id=url_id, user_id=user_id, anon_user_id=anon_user_id, context_user_id=context_user_id, hash_tag=hash_tag, parent_id=parent_id, direction=direction, from_date=from_date, to_date=to_date)
+        api_response = api_instance.get_comments(tenant_id, GetCommentsOptions(page=page, limit=limit, skip=skip, as_tree=as_tree, skip_children=skip_children, limit_children=limit_children, max_tree_depth=max_tree_depth, url_id=url_id, user_id=user_id, anon_user_id=anon_user_id, context_user_id=context_user_id, hash_tag=hash_tag, parent_id=parent_id, direction=direction, from_date=from_date, to_date=to_date))
         print("The response of DefaultApi->get_comments:\n")
         pprint(api_response)
     except Exception as e:

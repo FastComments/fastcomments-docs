@@ -1,25 +1,25 @@
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-----------|
+|------|------|-------------|-----------|
 | tenantId | string | Sim |  |
 | id | string | Sim |  |
 | editKey | string | Não |  |
 
 ## Resposta
 
-Retorna: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/VoteDeleteResponse.ts)
+Retorna: [`DeleteVoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteVoteResponse.ts)
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de deleteVote'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo deleteVote'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f7c2b1a';
-const id: string = 'vote_4b6e9a23';
-const editKey: string = 'editkey_02a8f3';
+(async () => {
+  const tenantId: string = "acme-corp";
+  const commentId: string = "comment-9876";
+  const editKey: string = "edit-key-123";
 
-const deleteResultWithoutKey: VoteDeleteResponse = await deleteVote(tenantId, id);
-const deleteResultWithKey: VoteDeleteResponse = await deleteVote(tenantId, id, editKey);
+  const resultWithEdit: DeleteVoteResponse = await deleteVote(tenantId, commentId, editKey);
+  const resultWithoutEdit: DeleteVoteResponse = await deleteVote(tenantId, commentId);
+})();
 [inline-code-end]
-
----

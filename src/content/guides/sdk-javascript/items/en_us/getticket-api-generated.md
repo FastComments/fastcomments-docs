@@ -8,12 +8,16 @@
 
 ## Response
 
-Returns: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTicketResponse.ts)
+Returns: [`GetTicketResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTicketResponse1.ts)
 
 ## Example
 
 [inline-code-attrs-start title = 'getTicket Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const ticketResponse: GetTicketResponse = await getTicket("fc_tenant_1a2b3c", "TK-20260619-0042", "user_2481");
-const ticketResponseNoUser: GetTicketResponse = await getTicket("fc_tenant_1a2b3c", "TK-20260619-0043");
+const tenantId: string = "acme-inc";
+const ticketId: string = "ticket-3421";
+const userId: string = "alice.smith";
+
+const ticketWithUser: GetTicketResponse1 = await getTicket(tenantId, ticketId, userId);
+const ticketWithoutUser: GetTicketResponse1 = await getTicket(tenantId, ticketId);
 [inline-code-end]

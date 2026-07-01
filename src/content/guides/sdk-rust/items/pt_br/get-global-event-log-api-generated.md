@@ -5,8 +5,8 @@ userIdWS
 
 ## Parâmetros
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nome | Tipo | Obrigatório | Descrição |
+|------|------|-------------|-----------|
 | tenant_id | String | Sim |  |
 | url_id | String | Sim |  |
 | user_id_ws | String | Sim |  |
@@ -21,15 +21,15 @@ Retorna: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-ru
 
 [inline-code-attrs-start title = 'Exemplo get_global_event_log'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_events() -> Result<GetEventLogResponse, Error> {
-    let params: GetGlobalEventLogParams = GetGlobalEventLogParams {
+async fn run(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetGlobalEventLogParams {
         tenant_id: "acme-corp-tenant".to_string(),
         url_id: "news/article".to_string(),
-        user_id_ws: "user-42-ws".to_string(),
-        start_time: 1688208000i64,
-        end_time: Some(1688294400i64),
+        user_id_ws: "user-12345".to_string(),
+        start_time: 1_680_000_000,
+        end_time: Some(1_680_864_000),
     };
-    let response: GetEventLogResponse = get_global_event_log(&configuration, params).await?;
-    Ok(response)
+    let _response = get_global_event_log(configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]

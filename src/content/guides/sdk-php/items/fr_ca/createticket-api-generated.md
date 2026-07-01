@@ -1,9 +1,9 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| userId | string | query | Yes |  |
+| Nom | Type | Emplacement | Obligatoire | Description |
+|------|------|------------|-------------|-------------|
+| tenantId | string | query | Oui |  |
+| userId | string | query | Oui |  |
 
 ## Réponse
 
@@ -11,15 +11,15 @@ Renvoie : [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de createTicket'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple createTicket'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configurer l'authentification par clé API : api_key
+// Configurer l'autorisation de clé API : api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Décommentez ci-dessous pour configurer un préfixe (p. ex. Bearer) pour la clé API, si nécessaire
+// Décommentez ci‑dessous pour configurer le préfixe (ex. Bearer) de la clé API, si nécessaire
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
@@ -29,9 +29,11 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$user_id = 'user_id_example'; // string
+
+$tenant_id = 'tenant_id_example'; // chaîne
+$user_id = 'user_id_example'; // chaîne
 $create_ticket_body = new \FastComments\Client\Model\CreateTicketBody(); // \FastComments\Client\Model\CreateTicketBody
+
 
 try {
     $result = $apiInstance->createTicket($tenant_id, $user_id, $create_ticket_body);
@@ -40,3 +42,5 @@ try {
     echo 'Exception when calling DefaultApi->createTicket: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

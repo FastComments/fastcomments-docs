@@ -1,27 +1,25 @@
----
-## Параметры
+## Параметри
 
-| Имя | Тип | Обязательно | Описание |
+| Назва | Тип | Обов’язковий | Опис |
 |------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| id | String | Да |  |
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`GetTenantResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_tenant_response.rs)
+Повертає: [`GetTenantResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_tenant_response.rs)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример get_tenant'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_tenant Приклад'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_tenant() -> Result<(), Error> {
-    let params: GetTenantParams = GetTenantParams {
+async fn example() -> Result<(), Error> {
+    let params = GetTenantParams {
         tenant_id: "acme-corp-tenant".to_string(),
         id: "news/article".to_string(),
+        include_billing: Some(true),
     };
-    let include_subdomains: Option<bool> = Some(true);
-    let tenant: GetTenantResponse = get_tenant(&configuration, params).await?;
-    println!("{:#?}", tenant);
+    let _response: GetTenantResponse = get_tenant(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

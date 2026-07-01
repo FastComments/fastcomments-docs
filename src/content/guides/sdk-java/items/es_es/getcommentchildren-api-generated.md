@@ -2,7 +2,8 @@
 
 | Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Sí |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
 | sso | string | query | No |  |
 
 ## Respuesta
@@ -26,18 +27,19 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationAPIChildCommentsResponse result = apiInstance.getCommentChildren(commentId)
+      ModerationAPIChildCommentsResponse result = apiInstance.getCommentChildren(tenantId, commentId)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ModerationApi#getCommentChildren");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("Excepción al llamar a ModerationApi#getCommentChildren");
+      System.err.println("Código de estado: " + e.getCode());
+      System.err.println("Razón: " + e.getResponseBody());
+      System.err.println("Encabezados de respuesta: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }

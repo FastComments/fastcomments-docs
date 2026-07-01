@@ -1,7 +1,8 @@
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-----------|
+|------|------|-------------|-----------|
+| tenantId | string | Sim |  |
 | commentId | string | Sim |  |
 | sso | string | Não |  |
 
@@ -11,15 +12,17 @@ Retorna: [`ModerationAPIChildCommentsResponse`](https://github.com/FastComments/
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getCommentChildren'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo getCommentChildren'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t commentId = U("comment-12345");
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
-api->getCommentChildren(commentId, sso).then([](std::shared_ptr<ModerationAPIChildCommentsResponse> resp){
-    auto result = resp ? std::make_shared<ModerationAPIChildCommentsResponse>(*resp)
-                       : std::make_shared<ModerationAPIChildCommentsResponse>();
-    return result;
-});
-[inline-code-end]
+utility::string_t tenantId = U("my-tenant-123");
+utility::string_t commentId = U("comment-456");
+boost::optional<utility::string_t> sso = U("sso-token-abc");
 
----
+api->getCommentChildren(tenantId, commentId, sso)
+    .then([](pplx::task<std::shared_ptr<ModerationAPIChildCommentsResponse>> task) {
+        try {
+            auto response = task.get();
+        } catch (const std::exception&) {
+        }
+    });
+[inline-code-end]

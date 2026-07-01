@@ -2,11 +2,11 @@
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | クエリ | はい |  |
+| tenantId | string | query | はい |  |
 
 ## レスポンス
 
-戻り値: [`CreateEmailTemplateResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateEmailTemplateResponse.php)
+返却: [`CreateEmailTemplateResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateEmailTemplateResponse.php)
 
 ## 例
 
@@ -16,20 +16,22 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// APIキーの認証を設定: api_key
+// APIキー認証を設定します: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// 必要に応じて以下のコメントを解除して、APIキーのプレフィックス（例: Bearer）を設定します
+// 必要に応じて、APIキーのプレフィックス（例: Bearer）を設定するには以下のコメントを外してください
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // カスタムHTTPクライアントを使用したい場合は、`GuzzleHttp\ClientInterface`を実装するクライアントを渡してください。
-    // これはオプションです。デフォルトでは`GuzzleHttp\Client`が使用されます。
+    // カスタム HTTP クライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装したクライアントを渡してください。
+    // これはオプションです。デフォルトでは `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $create_email_template_body = new \FastComments\Client\Model\CreateEmailTemplateBody(); // \FastComments\Client\Model\CreateEmailTemplateBody
+
 
 try {
     $result = $apiInstance->createEmailTemplate($tenant_id, $create_email_template_body);

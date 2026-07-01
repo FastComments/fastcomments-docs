@@ -1,8 +1,9 @@
 ## Параметри
 
-| Име | Тип | Местоположение | Задължителен | Описание |
-|------|------|----------|----------|-------------|
-| sso | string | query | Не |  |
+| Име | Тип | Местоположение | Задължително | Описание |
+|------|------|----------------|--------------|----------|
+| tenantId | string | запитване | Да |  |
+| sso | string | запитване | Не |  |
 
 ## Отговор
 
@@ -10,7 +11,7 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за postCommentsByIds'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postCommentsByIds Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Импортиране на класове:
 import com.fastcomments.invoker.ApiClient;
@@ -25,10 +26,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
-    CommentsByIdsParams commentsByIdsParams = new CommentsByIdsParams(); // CommentsByIdsParams | 
-    String sso = "sso_example"; // String | 
+    String tenantId = "tenantId_example"; // String |
+    CommentsByIdsParams commentsByIdsParams = new CommentsByIdsParams(); // CommentsByIdsParams |
+    String sso = "sso_example"; // String |
     try {
-      ModerationAPIChildCommentsResponse result = apiInstance.postCommentsByIds(commentsByIdsParams)
+      ModerationAPIChildCommentsResponse result = apiInstance.postCommentsByIds(tenantId, commentsByIdsParams)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -42,5 +44,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

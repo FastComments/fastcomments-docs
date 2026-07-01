@@ -1,28 +1,25 @@
-Hromadni podatki o uporabnikih za najemnika. Glede na userIds vrne prikazne podatke iz User / SSOUser.
-Uporablja ga pripomoček za komentarje za obogatitev uporabnikov, ki so se pravkar pojavili preko presence event.
-Brez konteksta strani: zasebnost se uveljavlja enotno (zasebni profili so zamaskirani).
+Bulk uporabniški podatki za najemnika. Na podlagi podanih userIds se vrnejo podatki za prikaz iz User / SSOUser.  
+Uporablja se v pripomočku za komentarje za obogatitev uporabnikov, ki so se pravkar pojavili prek dogodka prisotnosti.  
+Brez konteksta strani: zasebnost se izvaja enotno (zasebni profili so maskirani).
 
-## Parametri
+## Parameters
 
 | Ime | Tip | Obvezno | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
 | tenant_id | String | Da |  |
 | ids | String | Da |  |
 
-## Odziv
+## Response
 
-Vrne: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_info_response.rs)
+Returns: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_info_response.rs)
 
-## Primer
+## Example
 
 [inline-code-attrs-start title = 'Primer get_users_info'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: GetUsersInfoParams = GetUsersInfoParams {
+let params = GetUsersInfoParams {
     tenant_id: "acme-corp-tenant".to_string(),
-    ids: "alice@example.com,bob@example.com,carol@example.com".to_string(),
-    page_size: Some(100),
+    ids: "user-1,user-2".to_string(),
 };
-let users_response: PageUsersInfoResponse = get_users_info(&configuration, params).await?;
+let page: PageUsersInfoResponse = get_users_info(&configuration, params).await?;
 [inline-code-end]
-
----

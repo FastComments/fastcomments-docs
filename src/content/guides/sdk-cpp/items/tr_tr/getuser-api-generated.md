@@ -1,11 +1,11 @@
-## Parametreler
+## Parameters
 
-| Ad | Tür | Gerekli | Açıklama |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Evet |  |
-| id | string | Evet |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
-## Yanıt
+## Response
 
 Döndürür: [`GetUserResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetUserResponse.h)
 
@@ -13,19 +13,20 @@ Döndürür: [`GetUserResponse`](https://github.com/FastComments/fastcomments-cp
 
 [inline-code-attrs-start title = 'getUser Örneği'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
-utility::string_t userId = utility::conversions::to_string_t("user@example.com");
-boost::optional<utility::string_t> ifNoneMatch = boost::optional<utility::string_t>(utility::conversions::to_string_t("W/\"etag-98765\""));
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto userId = utility::conversions::to_string_t("user-789");
+boost::optional<utility::string_t> optTag = boost::none;
+
 api->getUser(tenantId, userId)
-    .then([](pplx::task<std::shared_ptr<GetUserResponse>> task){
+    .then([=](pplx::task<std::shared_ptr<GetUserResponse>> task) {
         try {
-            auto resp = task.get();
-            if (resp) {
-                auto clone = std::make_shared<GetUserResponse>(*resp);
+            auto response = task.get();
+            if (!response) {
+                response = std::make_shared<GetUserResponse>();
             }
-        } catch (...) {
+            // gerektiği gibi yanıtı işleyin
+        } catch (const std::exception&) {
+            // hatayı ele alın
         }
     });
 [inline-code-end]
-
----

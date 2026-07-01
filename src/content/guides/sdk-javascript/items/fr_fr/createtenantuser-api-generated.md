@@ -1,29 +1,29 @@
 ## Paramètres
 
-| Nom | Type | Requis | Description |
-|------|------|----------|-------------|
+| Nom | Type | Obligatoire | Description |
+|------|------|-------------|-------------|
 | tenantId | string | Oui |  |
 | createTenantUserBody | CreateTenantUserBody | Oui |  |
 
 ## Réponse
 
-Renvoie : [`CreateTenantUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantUserResponse.ts)
+Renvoie : [`CreateTenantUserResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantUserResponse1.ts)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de createTenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createTenantUser Exemple'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7f4b2a';
-const digestFreq: DigestEmailFrequency = { interval: 'daily' };
-const agentApprovalFreq: ImportedAgentApprovalNotificationFrequency = { mode: 'immediate' };
-const createTenantUserBody: CreateTenantUserBody = {
-  email: 'sara.martin@acme.co',
-  name: 'Sara Martin',
-  role: 'moderator',
-  avatarUrl: 'https://cdn.acme.co/avatars/sara.jpg',
-  notifyByEmail: true,                     // paramètre optionnel démontré
-  digestEmailFrequency: digestFreq,
-  importedAgentApprovalNotificationFrequency: agentApprovalFreq
+const tenantId: string = "a1b2c3d4-5678-90ab-cdef-1234567890ab";
+
+const newUser: CreateTenantUserBody = {
+  email: "jane.doe@example.com",
+  firstName: "Jane",
+  lastName: "Doe",
+  role: "admin",
+  // paramètres optionnels
+  phoneNumber: "+15551234567",
+  isActive: true,
 };
-const result: CreateTenantUserResponse = await createTenantUser(tenantId, createTenantUserBody);
+
+const result: CreateTenantUserResponse1 = await createTenantUser(tenantId, newUser);
 [inline-code-end]

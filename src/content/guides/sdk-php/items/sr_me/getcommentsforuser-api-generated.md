@@ -1,22 +1,22 @@
-## Параметри
+## Parameters
 
-| Име | Тип | Локација | Обавезно | Опис |
-|------|------|----------|----------|-------------|
-| userId | string | query | Не |  |
-| direction | string | query | Не |  |
-| repliesToUserId | string | query | Не |  |
-| page | number | query | Не |  |
-| includei10n | boolean | query | Не |  |
-| locale | string | query | Не |  |
-| isCrawler | boolean | query | Не |  |
+| Ime | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| userId | string | query | No |  |
+| direction | string | query | No |  |
+| repliesToUserId | string | query | No |  |
+| page | number | query | No |  |
+| includei10n | boolean | query | No |  |
+| locale | string | query | No |  |
+| isCrawler | boolean | query | No |  |
 
-## Одговор
+## Response
 
-Враћа: [`GetCommentsForUserResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCommentsForUserResponse.php)
+Vraća: [`GetCommentsForUserResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCommentsForUserResponse.php)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'Пример getCommentsForUser'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getCommentsForUser'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -24,20 +24,24 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ако желите да користите прилагођени HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционално, као подразумевани ће бити коришћен `GuzzleHttp\Client`.
+    // Ako želite koristiti prilagođeni http klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao podrazumevano.
     new GuzzleHttp\Client()
 );
-$user_id = 'user_id_example'; // string
-$direction = new \FastComments\Client\Model\\FastComments\Client\Model\SortDirections(); // \FastComments\Client\Model\SortDirections
-$replies_to_user_id = 'replies_to_user_id_example'; // string
-$page = 3.4; // float
-$includei10n = True; // bool
-$locale = 'locale_example'; // string
-$is_crawler = True; // bool
+
+$options = [
+    'user_id' => 'user_id_example', // string
+    'direction' => new \FastComments\Client\Model\\FastComments\Client\Model\SortDirections(), // \FastComments\Client\Model\SortDirections
+    'replies_to_user_id' => 'replies_to_user_id_example', // string
+    'page' => 3.4, // float
+    'includei10n' => True, // bool
+    'locale' => 'locale_example', // string
+    'is_crawler' => True, // bool
+];
+
 
 try {
-    $result = $apiInstance->getCommentsForUser($user_id, $direction, $replies_to_user_id, $page, $includei10n, $locale, $is_crawler);
+    $result = $apiInstance->getCommentsForUser($options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getCommentsForUser: ', $e->getMessage(), PHP_EOL;

@@ -1,10 +1,10 @@
-### Gestore pacchetti Swift
+### Gestore di pacchetti Swift
 
-Aggiungi quanto segue al file `Package.swift`:
+Aggiungi quanto segue al tuo file `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "2.0.0")
+    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "3.0.0")
 ]
 ```
 

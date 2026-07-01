@@ -1,12 +1,11 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Назва | Тип | Обов'язковий | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| commentId | string | Так |  |
-| broadcastId | string | Ні |  |
-| editKey | string | Ні |  |
-| sso | string | Ні |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| broadcastId | string | No |  |
+| options | DeleteCommentPublicOptions | No |  |
 
 ## Відповідь
 
@@ -16,8 +15,12 @@
 
 [inline-code-attrs-start title = 'Приклад deleteCommentPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteCommentPublic(tenantId = "my-tenant-123", commentId = "cmt-987654321", broadcastId = "", editKey = "", sso = "")
-if response.isSome:
-  let deleted = response.get()
-  echo "Delete acknowledged, HTTP status: ", httpResponse.status
+let (responseOpt, httpResp) = client.deleteCommentPublic(
+  tenantId = "my-tenant-123",
+  commentId = "cmt-456789",
+  broadcastId = "",
+  options = DeleteCommentPublicOptions())
+if responseOpt.isSome:
+  let resp = responseOpt.get()
+  echo resp
 [inline-code-end]

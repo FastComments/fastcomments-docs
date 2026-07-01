@@ -1,7 +1,8 @@
----
-Усі методи API в цьому SDK повертають кортежі `(Option[ResponseType], Response)`. Перший елемент містить розібрану відповідь у разі успіху, а другий елемент — сирий HTTP-відповідь.
+Усі методи API в цьому SDK повертають кортежі `(Option[ResponseType], Response)`. Перший елемент містить розпарсений відповідь, якщо успішно, а другий елемент — це необроблена HTTP‑відповідь.
 
-### Приклад: Отримання коментарів
+Обов’язкові параметри та тіло запиту передаються позиційно. Решта необов’язкових параметрів збираються в один об’єкт `Api<Operation>Options`, який є останнім аргументом. Операції без необов’язкових параметрів не беруть об’єкт параметрів.
+
+### Приклад: отримання коментарів
 
 ```nim
 import httpclient
@@ -15,20 +16,10 @@ client.headers["x-api-key"] = "your-api-key"
 let (response, httpResponse) = getComments(
   httpClient = client,
   tenantId = "your-tenant-id",
-  page = 0,
-  limit = 0,
-  skip = 0,
-  asTree = false,
-  skipChildren = 0,
-  limitChildren = 0,
-  maxTreeDepth = 0,
-  urlId = "your-url-id",
-  userId = "",
-  anonUserId = "",
-  contextUserId = "",
-  hashTag = "",
-  parentId = "",
-  direction = SortDirections.DESC
+  options = GetCommentsOptions(
+    urlId: "your-url-id",
+    direction: SortDirections.DESC
+  )
 )
 
 if httpResponse.code == Http200:

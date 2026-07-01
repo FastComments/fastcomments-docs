@@ -1,25 +1,23 @@
 ## Parametri
 
-| Ime | Tip | Obvezno | Opis |
+| Ime | Vrsta | Obvezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
+| tenantId | string | Da |  |
+| id | string | Da |  |
 
 ## Odgovor
 
-Vrača: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Vrne: [`DeletePendingWebhookEventResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeletePendingWebhookEventResponse.ts)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer deletePendingWebhookEvent'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deletePendingWebhookEvent Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function removePendingWebhookEvent(tenantId?: string): Promise<APIEmptyResponse | undefined> {
-  if (!tenantId) return;
-  const tenant: string = tenantId;
-  const eventId: string = 'evt_7f2c1a9b';
-  const response: APIEmptyResponse = await deletePendingWebhookEvent(tenant, eventId);
-  return response;
+async function runDemo() {
+  const tenantId: string = 'c3f5e9d2-1a2b-4c3d-9e7f-1234567890ab';
+  const eventId: string = 'event_987654321';
+  const response: DeletePendingWebhookEventResponse = await deletePendingWebhookEvent(tenantId, eventId);
+  console.log(response);
 }
+runDemo();
 [inline-code-end]
-
----

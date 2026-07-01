@@ -1,30 +1,25 @@
-## Параметри
+## Parameters
 
-| Назив | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| banUserUndoParams | BanUserUndoParams | Ne |  |
-| sso | string | Ne |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| banUserUndoParams | BanUserUndoParams | No |  |
+| sso | string = "" | No |  |
 
-## Одговор
+## Response
 
-Враћа: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
+Vraća: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'postBanUserUndo Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postBanUserUndo Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let banParams = BanUserUndoParams(
+let (apiResp, httpResp) = client.postBanUserUndo(
   tenantId = "my-tenant-123",
-  userId = "user-987",
-  undoneBy = "moderator-42",
-  reason = "Reinstated after manual review"
+  banUserUndoParams = BanUserUndoParams(userId = "user-456"),
+  sso = ""
 )
-let (response, httpResponse) = client.postBanUserUndo(banUserUndoParams = banParams, sso = "sso-jwt-abc123")
-if response.isSome:
-  let apiResp = response.get()
-  echo "Ban undo succeeded, http status: " & $httpResponse.status
-else:
-  echo "Ban undo failed, http status: " & $httpResponse.status
-[inline-code-end]
 
----
+if apiResp.isSome:
+  let _ = apiResp.get()
+[inline-code-end]

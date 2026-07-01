@@ -1,19 +1,19 @@
-## Parâmetros
+## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Sim |  |
-| limit | number | query | Não |  |
-| skip | number | query | Não |  |
-| order | string | query | Não |  |
-| after | number | query | Não |  |
-| before | number | query | Não |  |
+| tenantId | string | query | Yes |  |
+| limit | number | query | No |  |
+| skip | number | query | No |  |
+| order | string | query | No |  |
+| after | number | query | No |  |
+| before | number | query | No |  |
 
-## Resposta
+## Response
 
-Retorna: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetAuditLogsResponse.php)
+Returns: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetAuditLogsResponse.php)
 
-## Exemplo
+## Example
 
 [inline-code-attrs-start title = 'Exemplo de getAuditLogs'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -33,17 +33,23 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$limit = 3.4; // float
-$skip = 3.4; // float
-$order = new \FastComments\Client\Model\\FastComments\Client\Model\SORTDIR(); // \FastComments\Client\Model\SORTDIR
-$after = 3.4; // float
-$before = 3.4; // float
+$options = [
+    'limit' => 3.4, // float
+    'skip' => 3.4, // float
+    'order' => new \FastComments\Client\Model\\FastComments\Client\Model\SORTDIR(), // \FastComments\Client\Model\SORTDIR
+    'after' => 3.4, // float
+    'before' => 3.4, // float
+];
+
 
 try {
-    $result = $apiInstance->getAuditLogs($tenant_id, $limit, $skip, $order, $after, $before);
+    $result = $apiInstance->getAuditLogs($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getAuditLogs: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

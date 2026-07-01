@@ -18,30 +18,20 @@ Returnerer: [`GetNotificationCountResponse`](https://github.com/FastComments/fas
 [inline-code-attrs-start title = 'get_notification_count Eksempel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetNotificationCountOptions
 from client.models.get_notification_count_response import GetNotificationCountResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Det er valgfrit at angive host, og standard er https://fastcomments.com
+# Definerer værten er valgfri og standard er https://fastcomments.com
 # Se configuration.py for en liste over alle understøttede konfigurationsparametre.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
-
-# Klienten skal konfigurere autentifikations- og autorisationsparametrene
-# i overensstemmelse med API-serverens sikkerhedspolitik.
-# Eksempler for hver autentifikationsmetode er vist nedenfor, brug det eksempel der
-# passer til dit autentificeringsbehov.
-
-# Konfigurer API-nøgleautorisering: api_key
-configuration.api_key['api_key'] = os.environ["API_KEY"]
-
-# Fjern kommentar fra nedenstående for at sætte et præfiks (f.eks. Bearer) for API-nøglen, hvis nødvendigt
-# configuration.api_key_prefix['api_key'] = 'Bearer'
-
-# Gå ind i en kontekst med en instans af API-klienten
+# Klienten skal konfigurere godkendelses- og autorisationsparametre i overensstemmelse med API-serverens sikkerhedspolitik.
+# Eksempler for hver godkendelsesmetode er angivet nedenfor, brug det eksempel der opfylder dit godkendelsesbehov.
+# Konfigurer API-nøgle autorisation: api_key
+# Fjern kommentarer nedenfor for at opsætte præfiks (f.eks. Bearer) for API-nøgle, hvis nødvendigt
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Opret en instans af API-klassen
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     user_id = 'user_id_example' # str |  (valgfri)
@@ -51,11 +41,9 @@ with client.ApiClient(configuration) as api_client:
     type = 'type_example' # str |  (valgfri)
 
     try:
-        api_response = api_instance.get_notification_count(tenant_id, user_id=user_id, url_id=url_id, from_comment_id=from_comment_id, viewed=viewed, type=type)
+        api_response = api_instance.get_notification_count(tenant_id, GetNotificationCountOptions(user_id=user_id, url_id=url_id, from_comment_id=from_comment_id, viewed=viewed, type=type))
         print("The response of DefaultApi->get_notification_count:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling DefaultApi->get_notification_count: %s\n" % e)
 [inline-code-end]
-
----

@@ -1,7 +1,8 @@
 ## Параметри
 
-| Име | Тип | Задължително | Описание |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
+| tenant_id | String | Да |  |
 | sso | String | Не |  |
 
 ## Отговор
@@ -10,15 +11,14 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'get_manual_badges Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за get_manual_badges'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_manual_badges() -> Result<(), Error> {
-    let params: GetManualBadgesParams = GetManualBadgesParams {
-        sso: Some(String::from("https://sso.acme-corp.com/authorize?tenant=acme-corp-tenant")),
+async fn fetch_badges(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetManualBadgesParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        sso: Some("news/article".to_string()),
     };
-    let response: GetTenantManualBadgesResponse = get_manual_badges(&configuration, params).await?;
+    let _response = get_manual_badges(configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

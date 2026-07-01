@@ -1,10 +1,9 @@
----
 ## Parametri
 
 | Nome | Tipo | Obbligatorio | Descrizione |
 |------|------|--------------|-------------|
-| tenant_id | String | Sì |  |
-| domain | String | Sì |  |
+| tenant_id | String | Yes |  |
+| domain | String | Yes |  |
 
 ## Risposta
 
@@ -12,17 +11,16 @@ Restituisce: [`GetDomainConfigResponse`](https://github.com/FastComments/fastcom
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di get_domain_config'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio get_domain_config'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_domain_config() -> Result<GetDomainConfigResponse, Error> {
-    let tenant_id: String = "acme-corp-tenant".to_string();
-    let domain_override: Option<String> = Some("news.example.com".to_string());
-    let domain: String = domain_override.unwrap_or_else(|| "blog.example.com".to_string());
-    let params: GetDomainConfigParams = GetDomainConfigParams { tenant_id, domain };
-    let cfg: &configuration::Configuration = &configuration;
-    let response: GetDomainConfigResponse = get_domain_config(cfg, params).await?;
-    Ok(response)
+#[tokio::main]
+async fn main() -> Result<(), Error> {
+    let params = GetDomainConfigParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        domain: "news/article".to_string(),
+        locale: Some("en-US".to_string()),
+    };
+    let _response = get_domain_config(&config, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

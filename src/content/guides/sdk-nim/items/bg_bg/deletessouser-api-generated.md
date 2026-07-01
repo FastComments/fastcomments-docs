@@ -4,8 +4,7 @@
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | id | string | Не |  |
-| deleteComments | bool | Не |  |
-| commentDeleteMode | string | Не |  |
+| options | DeleteSSOUserOptions | Не |  |
 
 ## Отговор
 
@@ -13,14 +12,14 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за deleteSSOUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteSSOUser Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteSSOUser(tenantId = "my-tenant-123", id = "sso-user-9876", deleteComments = true, commentDeleteMode = "hard")
-if response.isSome:
-  let deleted = response.get()
-  discard deleted
-else:
-  discard httpResponse
-[inline-code-end]
+let (apiRespOpt, httpResp) = client.deleteSSOUser(
+  tenantId = "my-tenant-123",
+  id = "user-456",
+  options = DeleteSSOUserOptions()
+)
 
----
+if apiRespOpt.isSome:
+  let apiResp = apiRespOpt.get()
+[inline-code-end]

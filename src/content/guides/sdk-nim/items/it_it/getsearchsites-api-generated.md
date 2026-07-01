@@ -1,9 +1,9 @@
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| value | string | No |  |
-| sso | string | No |  |
+| Nome | Tipo | Obbligatorio | Descrizione |
+|------|------|--------------|-------------|
+| tenantId | string | Sì |  |
+| options | GetSearchSitesOptions | No |  |
 
 ## Risposta
 
@@ -13,10 +13,7 @@ Restituisce: [`Option[ModerationSiteSearchResponse]`](https://github.com/FastCom
 
 [inline-code-attrs-start title = 'Esempio di getSearchSites'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSearchSites(value = "news/2026-olympics", sso = "sso-user-9876-token")
-if response.isSome:
-  let searchResponse: ModerationSiteSearchResponse = response.get()
-  echo "Found sites for search:", searchResponse
+let (searchResult, httpResp) = client.getSearchSites(tenantId = "my-tenant-123", options = GetSearchSitesOptions())
+if searchResult.isSome:
+  let siteResp = searchResult.get()
 [inline-code-end]
-
----

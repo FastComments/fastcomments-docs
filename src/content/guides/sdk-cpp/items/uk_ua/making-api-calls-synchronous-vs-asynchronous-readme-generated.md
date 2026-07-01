@@ -1,8 +1,8 @@
-Всі методи API в цьому SDK повертають `pplx::task<std::shared_ptr<ResponseType>>` з C++ REST SDK. Це дає вам гнучкість у тому, як ви обробляєте відповіді API.
+Усі методи API у цьому SDK повертають `pplx::task<std::shared_ptr<ResponseType>>` з C++ REST SDK. Це дає вам гнучкість у тому, як обробляти відповіді API.
 
 ### Синхронні виклики за допомогою `.get()`
 
-Використовуйте `.get()`, щоб блокувати викликаючий потік до завершення запиту та отримати результат синхронно:
+Використовуйте `.get()`, щоб блокувати викликаючий потік, доки запит не завершиться, і отримати результат синхронно:
 
 ```cpp
 auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
@@ -13,24 +13,15 @@ config->setApiKey(utility::conversions::to_string_t("api_key"),
 auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
 org::openapitools::client::api::DefaultApi api(apiClient);
 
-// Викличіть .get(), щоб блокувати викликаючий потік і отримати результат синхронно
+// Required parameters are positional; optional ones go in the options struct
+org::openapitools::client::api::GetCommentsOptions options;
+options.urlId = utility::conversions::to_string_t("your-url-id");
+
+// Call .get() to block and get the result synchronously
 auto response = api.getComments(
     utility::conversions::to_string_t("your-tenant-id"),
-    boost::none,  // page
-    boost::none,  // limit
-    boost::none,  // skip
-    boost::none,  // asTree
-    boost::none,  // skipChildren
-    boost::none,  // limitChildren
-    boost::none,  // maxTreeDepth
-    utility::conversions::to_string_t("your-url-id"),  // urlId
-    boost::none,  // userId
-    boost::none,  // anonUserId
-    boost::none,  // contextUserId
-    boost::none,  // hashTag
-    boost::none,  // parentId
-    boost::none   // direction
-).get();  // Блокує, доки HTTP-запит не завершиться
+    options
+).get();  // Blocks until the HTTP request completes
 
 if (response && response->comments) {
     std::cout << "Found " << response->comments->size() << " comments" << std::endl;
@@ -39,7 +30,7 @@ if (response && response->comments) {
 
 ### Асинхронні виклики за допомогою `.then()`
 
-Використовуйте `.then()` для неблокуючого асинхронного виконання з колбеками:
+Використовуйте `.then()` для неблокуючого асинхронного виконання з зворотними викликами:
 
 ```cpp
 auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
@@ -50,21 +41,22 @@ config->setApiKey(utility::conversions::to_string_t("api_key"),
 auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
 org::openapitools::client::api::DefaultApi api(apiClient);
 
-// Використовуйте .then() для асинхронного виконання з колбеками
+// Required parameters are positional; optional ones go in the options struct
+org::openapitools::client::api::GetCommentsOptions options;
+options.urlId = utility::conversions::to_string_t("your-url-id");
+
+// Use .then() for asynchronous callback-based execution
 api.getComments(
     utility::conversions::to_string_t("your-tenant-id"),
-    boost::none, boost::none, boost::none, boost::none, boost::none,
-    boost::none, boost::none,
-    utility::conversions::to_string_t("your-url-id"),
-    boost::none, boost::none, boost::none, boost::none, boost::none, boost::none
+    options
 ).then([](std::shared_ptr<GetComments_200_response> response) {
-    // Це виконується асинхронно, коли запит завершиться
+    // This runs asynchronously when the request completes
     if (response && response->comments) {
         std::cout << "Found " << response->comments->size() << " comments" << std::endl;
     }
 });
 
-// Виконання продовжується відразу, без блокування
+// Execution continues immediately without blocking
 std::cout << "Request sent, continuing..." << std::endl;
 ```
 
@@ -73,16 +65,16 @@ std::cout << "Request sent, continuing..." << std::endl;
 Вибір залежить від вашого середовища виконання та архітектури застосунку:
 
 **`.get()` (Синхронне блокування)**
-- Блокує викликаючий потік, доки HTTP-запит не завершиться
-- Простіший потік виконання коду, легше розуміти
+- Блокує викликаючий потік, доки HTTP‑запит не завершиться
+- Простішій потік коду, легше розуміти
 - Підходить для виділених робочих потоків, пакетної обробки або інструментів командного рядка
-- **Не підходить** для циклів подій, GUI-потоків або однопотокових серверів
+- **Не підходить** для циклів подій, GUI‑потоків або однопотокових серверів
 
-**`.then()` (Асинхронне, неблокуюче)**
-- Повертається негайно, колбек виконується при завершенні запиту
+**`.then()` (Асинхронне неблокування)**
+- Повертає одразу, зворотний виклик виконується, коли запит завершується
 - Не блокує викликаючий потік
-- Необхідно для архітектур, орієнтованих на події, GUI-застосунків або однопотокових циклів подій
+- Необхідний для архітектур, орієнтованих на події, GUI‑застосунків або однопотокових циклів подій
 - Дозволяє ланцюжити кілька операцій
-- Складніший потік управління
+- Більш складний контроль потоку
 
-Набір тестів SDK використовує `.get()` виключно, і це доречно для тестового середовища, де блокування прийнятне.
+Тестовий набір SDK використовує `.get()` виключно, але це підходить для тестового середовища, де блокування прийнятне.

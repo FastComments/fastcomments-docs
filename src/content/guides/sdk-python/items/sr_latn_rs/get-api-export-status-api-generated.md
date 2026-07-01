@@ -1,9 +1,10 @@
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
-| batchJobId | string | query | Ne |  |
-| sso | string | query | Ne |  |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| batchJobId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -14,12 +15,13 @@ Vraća: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastc
 [inline-code-attrs-start title = 'Primer get_api_export_status'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetApiExportStatusOptions
 from client.models.moderation_export_status_response import ModerationExportStatusResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # Definisanje hosta je opciono i podrazumevano je https://fastcomments.com
-# Pogledajte configuration.py za listu svih podržanih konfiguracionih parametara.
+# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -29,11 +31,12 @@ configuration = client.Configuration(
 with client.ApiClient(configuration) as api_client:
     # Kreirajte instancu API klase
     api_instance = client.ModerationApi(api_client)
-    batch_job_id = 'batch_job_id_example' # str |  (opciono)
-    sso = 'sso_example' # str |  (opciono)
+    tenant_id = 'tenant_id_example' # str | 
+    batch_job_id = 'batch_job_id_example' # str |  (opcionalno)
+    sso = 'sso_example' # str |  (opcionalno)
 
     try:
-        api_response = api_instance.get_api_export_status(batch_job_id=batch_job_id, sso=sso)
+        api_response = api_instance.get_api_export_status(tenant_id, GetApiExportStatusOptions(batch_job_id=batch_job_id, sso=sso))
         print("The response of ModerationApi->get_api_export_status:\n")
         pprint(api_response)
     except Exception as e:

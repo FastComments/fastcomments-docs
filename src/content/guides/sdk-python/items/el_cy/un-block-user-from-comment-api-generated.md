@@ -1,11 +1,11 @@
 ## Παράμετροι
 
-| Name | Type | Location | Required | Description |
+| Όνομα | Τύπος | Θέση | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ναι |  |
-| id | string | path | Ναι |  |
-| userId | string | query | Όχι |  |
-| anonUserId | string | query | Όχι |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
 
 ## Απόκριση
 
@@ -13,34 +13,31 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα un_block_user_from_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'un_block_user_from_comment Παράδειγμα'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import UnBlockUserFromCommentOptions
 from client.models.un_block_from_comment_params import UnBlockFromCommentParams
 from client.models.unblock_success import UnblockSuccess
 from client.rest import ApiException
 from pprint import pprint
 
-# Ορισμός του host είναι προαιρετικός και η προεπιλογή είναι https://fastcomments.com
+# Ο καθορισμός του host είναι προαιρετικός και προεπιλογή είναι https://fastcomments.com
 # Δείτε το configuration.py για μια λίστα με όλες τις υποστηριζόμενες παραμέτρους ρυθμίσεων.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
-
-# Ο πελάτης πρέπει να ρυθμίσει τις παραμέτρους πιστοποίησης και εξουσιοδότησης
+# Ο πελάτης πρέπει να διαμορφώσει τις παραμέτρους αυθεντικοποίησης και εξουσιοδότησης
 # σύμφωνα με την πολιτική ασφαλείας του διακομιστή API.
 # Παραδείγματα για κάθε μέθοδο αυθεντικοποίησης παρέχονται παρακάτω, χρησιμοποιήστε το παράδειγμα που
 # καλύπτει την περίπτωσή σας.
 
-# Διαμορφώστε την εξουσιοδότηση με κλειδί API: api_key
+# Διαμόρφωση εξουσιοδότησης με κλειδί API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Αποσχολιάστε παρακάτω για να ρυθμίσετε πρόθεμα (π.χ. Bearer) για το κλειδί API, αν χρειάζεται
+# Απενεργοποιήστε το σχόλιο παρακάτω για να ορίσετε πρόθεμα (π.χ. Bearer) για το κλειδί API, εάν χρειάζεται
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Εισέλθετε σε context με ένα instance του API client
+# Εισαγωγή σε ένα context με ένα στιγμιότυπο του πελάτη API
 with client.ApiClient(configuration) as api_client:
-    # Δημιουργήστε ένα instance της κλάσης API
+    # Δημιουργία ενός στιγμιότυπου της κλάσης API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
@@ -49,7 +46,7 @@ with client.ApiClient(configuration) as api_client:
     anon_user_id = 'anon_user_id_example' # str |  (προαιρετικό)
 
     try:
-        api_response = api_instance.un_block_user_from_comment(tenant_id, id, un_block_from_comment_params, user_id=user_id, anon_user_id=anon_user_id)
+        api_response = api_instance.un_block_user_from_comment(tenant_id, id, un_block_from_comment_params, UnBlockUserFromCommentOptions(user_id=user_id, anon_user_id=anon_user_id))
         print("The response of DefaultApi->un_block_user_from_comment:\n")
         pprint(api_response)
     except Exception as e:

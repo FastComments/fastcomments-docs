@@ -1,24 +1,28 @@
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| tenantId | string | Da |  |
-| skip | number | Ne |  |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| skip | number | No |  |
 
 ## Odgovor
 
-Vraća: [`GetQuestionConfigsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionConfigsResponse.ts)
+Vraća: [`GetQuestionConfigsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionConfigsResponse1.ts)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'getQuestionConfigs Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getQuestionConfigs'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async (): Promise<void> => {
-  const tenantId: string = 'acme-corp-78';
-  const responseWithoutSkip: GetQuestionConfigsResponse = await getQuestionConfigs(tenantId);
-  const responseWithSkip: GetQuestionConfigsResponse = await getQuestionConfigs(tenantId, 25);
-  console.log(responseWithoutSkip, responseWithSkip);
-})();
-[inline-code-end]
+async function fetchQuestionConfigs() {
+    const tenantId: string = "tenant-9876";
 
----
+    // Poziv bez opcionalnog parametra 'skip'
+    const configsWithoutSkip: GetQuestionConfigsResponse1 = await getQuestionConfigs(tenantId);
+
+    // Poziv s opcionalnim parametrom 'skip'
+    const skip: number = 10;
+    const configsWithSkip: GetQuestionConfigsResponse1 = await getQuestionConfigs(tenantId, skip);
+
+    console.log(configsWithoutSkip, configsWithSkip);
+}
+[inline-code-end]

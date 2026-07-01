@@ -1,16 +1,17 @@
-## Paramètres
+## Parameters
 
-| Nom | Type | Emplacement | Requis | Description |
-|------|------|----------|----------|-------------|
-| sso | string | query | Non |  |
+| Nom | Type | Emplacement | Obligatoire | Description |
+|------|------|-------------|--------------|-------------|
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Réponse
 
-Renvoie: [`APIModerateGetUserBanPreferencesResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_moderate_get_user_ban_preferences_response.go)
+Retourne : [`APIModerateGetUserBanPreferencesResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_moderate_get_user_ban_preferences_response.go)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de GetUserBanPreference'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple GetUserBanPreference'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -22,16 +23,17 @@ import (
 )
 
 func main() {
-	sso := "sso_example" // string | (optionnel)
+	tenantId := "tenantId_example" // chaîne de caractères | 
+	sso := "sso_example" // chaîne de caractères | (facultatif)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetUserBanPreference(context.Background()).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetUserBanPreference(context.Background()).TenantId(tenantId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetUserBanPreference``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// réponse de `GetUserBanPreference`: APIModerateGetUserBanPreferencesResponse
+	// réponse de `GetUserBanPreference` : APIModerateGetUserBanPreferencesResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetUserBanPreference`: %v\n", resp)
 }
 [inline-code-end]

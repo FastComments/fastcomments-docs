@@ -1,12 +1,12 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Hayır |  |
+| tenantId | string | query | Evet |  |
 
 ## Yanıt
 
-Döndürür: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/bulk_create_hash_tags_response.py)
+Returns: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/bulk_create_hash_tags_response.py)
 
 ## Örnek
 
@@ -18,32 +18,30 @@ from client.models.bulk_create_hash_tags_response import BulkCreateHashTagsRespo
 from client.rest import ApiException
 from pprint import pprint
 
-# Host tanımlaması isteğe bağlıdır ve varsayılan olarak https://fastcomments.com kullanılır
-# Tüm desteklenen yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.
+# Host belirlemek isteğe bağlıdır ve varsayılan olarak https://fastcomments.com adresine ayarlıdır
+# configuration.py dosyasında desteklenen tüm yapılandırma parametrelerinin listesi bulunur.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# İstemci, kimlik doğrulama ve yetkilendirme parametrelerini
-# API sunucusunun güvenlik politikasına uygun olarak yapılandırmalıdır.
-# Her kimlik doğrulama yöntemi için örnekler aşağıda verilmiştir, kullanım durumunuzu karşılayan
-# örneği kullanın.
+# İstemci, kimlik doğrulama ve yetkilendirme parametrelerini API sunucusunun güvenlik politikasına göre yapılandırmalıdır.
+# Her kimlik doğrulama yöntemi için örnekler aşağıda sağlanmıştır, kullanım durumunuza uygun örneği kullanın.
 
-# API anahtarı yetkilendirmesini yapılandırın: api_key
+# API anahtarı yetkilendirmesini yapılandır: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Gerekirse API anahtarı için öneki (ör. Bearer) ayarlamak üzere aşağıdaki yorumu kaldırın
+# Gerekiyorsa API anahtarı için önek (ör. Bearer) ayarlamak için aşağıdaki satırı yorum dışı bırakın
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API istemcisinin bir örneği ile bir bağlam açın
+# API istemcisinin bir örneğiyle bir bağlam girin
 with client.ApiClient(configuration) as api_client:
-    # API sınıfından bir örnek oluşturun
+    # API sınıfının bir örneğini oluştur
     api_instance = client.DefaultApi(api_client)
-    tenant_id = 'tenant_id_example' # str |  (isteğe bağlı)
-    bulk_create_hash_tags_body = client.BulkCreateHashTagsBody() # BulkCreateHashTagsBody |  (isteğe bağlı)
+    tenant_id = 'tenant_id_example' # str | 
+    bulk_create_hash_tags_body = client.BulkCreateHashTagsBody() # BulkCreateHashTagsBody |  (optional)
 
     try:
-        api_response = api_instance.add_hash_tags_bulk(tenant_id=tenant_id, bulk_create_hash_tags_body=bulk_create_hash_tags_body)
+        api_response = api_instance.add_hash_tags_bulk(tenant_id, bulk_create_hash_tags_body)
         print("The response of DefaultApi->add_hash_tags_bulk:\n")
         pprint(api_response)
     except Exception as e:

@@ -1,16 +1,16 @@
 ## 參數
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| broadcastId | string | query | Yes |  |
-| sessionId | string | query | No |  |
-| sso | string | query | No |  |
+| 名稱 | 類型 | 位置 | 必填 | 描述 |
+|------|------|----------|------|------|
+| tenantId | string | path | 是 |  |
+| urlId | string | query | 是 |  |
+| broadcastId | string | query | 是 |  |
+| sessionId | string | query | 否 |  |
+| sso | string | query | 否 |  |
 
 ## 回應
 
-回傳：[`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SaveCommentsResponseWithPresence.php)
+返回: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SaveCommentsResponseWithPresence.php)
 
 ## 範例
 
@@ -22,21 +22,27 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // 如果您想使用自訂的 HTTP 用戶端，傳入實作了 `GuzzleHttp\ClientInterface` 的用戶端。
+    // 如果您想使用自訂 HTTP 客戶端，請傳遞實作 `GuzzleHttp\ClientInterface` 的客戶端。
     // 這是可選的，預設會使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$url_id = 'url_id_example'; // string
-$broadcast_id = 'broadcast_id_example'; // string
+
+$tenant_id = 'tenant_id_example'; // 字串
+$url_id = 'url_id_example'; // 字串
+$broadcast_id = 'broadcast_id_example'; // 字串
 $comment_data = new \FastComments\Client\Model\CommentData(); // \FastComments\Client\Model\CommentData
-$session_id = 'session_id_example'; // string
-$sso = 'sso_example'; // string
+$options = [
+    'session_id' => 'session_id_example', // 字串
+    'sso' => 'sso_example', // 字串
+];
+
 
 try {
-    $result = $apiInstance->createCommentPublic($tenant_id, $url_id, $broadcast_id, $comment_data, $session_id, $sso);
+    $result = $apiInstance->createCommentPublic($tenant_id, $url_id, $broadcast_id, $comment_data, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->createCommentPublic: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

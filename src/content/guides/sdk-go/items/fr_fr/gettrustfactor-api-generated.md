@@ -1,17 +1,18 @@
-## Paramètres
+## Parameters
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| userId | string | query | Non |  |
-| sso | string | query | Non |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| sso | string | query | No |  |
 
-## Réponse
+## Response
 
 Renvoie : [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_trust_factor_response.go)
 
-## Exemple
+## Example
 
-[inline-code-attrs-start title = 'Exemple de GetTrustFactor'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple GetTrustFactor'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,19 +24,18 @@ import (
 )
 
 func main() {
-	userId := "userId_example" // string |  (optionnel)
-	sso := "sso_example" // string |  (optionnel)
+	tenantId := "tenantId_example" // string | 
+	userId := "userId_example" // string |  (facultatif)
+	sso := "sso_example" // string |  (facultatif)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetTrustFactor(context.Background()).UserId(userId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetTrustFactor(context.Background()).TenantId(tenantId).UserId(userId).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetTrustFactor``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Erreur lors de l'appel `ModerationAPI.GetTrustFactor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Réponse HTTP complète : %v\n", r)
 	}
-	// réponse de `GetTrustFactor` : GetUserTrustFactorResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetTrustFactor`: %v\n", resp)
+	// réponse de `GetTrustFactor`: GetUserTrustFactorResponse
+	fmt.Fprintf(os.Stdout, "Réponse de `ModerationAPI.GetTrustFactor` : %v\n", resp)
 }
 [inline-code-end]
-
----

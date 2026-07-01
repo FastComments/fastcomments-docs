@@ -1,26 +1,28 @@
-## パラメータ
+## Parameters
 
-| 名前 | 型 | 必須 | 説明 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| comment_id | String | はい |  |
-| sso | String | いいえ |  |
+| tenant_id | String | Yes |  |
+| comment_id | String | Yes |  |
+| broadcast_id | String | No |  |
+| sso | String | No |  |
 
 ## レスポンス
 
-戻り値: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
+返却: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
 ## 例
 
-[inline-code-attrs-start title = 'post_flag_comment の例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_flag_comment 例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let params: PostFlagCommentParams = PostFlagCommentParams {
-        comment_id: String::from("news/acme-corp/article-237/comment-8421"),
-        sso: Some(String::from("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.acme-sso-payload")),
+async fn flag_comment_example() -> Result<(), Error> {
+    let params = PostFlagCommentParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: "comment-9f8e7d".to_string(),
+        broadcast_id: Some("broadcast-2024-01".to_string()),
+        sso: Some("sso-uid-12345".to_string()),
     };
-    let response: ApiEmptyResponse = post_flag_comment(&configuration, params).await?;
+    post_flag_comment(&config, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

@@ -1,6 +1,6 @@
-特定のコメントの通知を有効または無効にします。
+Enable or disable notifications for a specific comment.
 
-## パラメータ
+## Parameters
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
@@ -8,27 +8,24 @@
 | notificationId | string | いいえ |  |
 | optedInOrOut | string | いいえ |  |
 | commentId | string | はい |  |
-| sso | string | いいえ |  |
+| sso | string = "" | いいえ |  |
 
-## レスポンス
+## Response
 
-戻り値: [`Option[UpdateUserNotificationCommentSubscriptionStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_comment_subscription_status_response.nim)
+返却: [`Option[UpdateUserNotificationCommentSubscriptionStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_comment_subscription_status_response.nim)
 
 ## 例
 
 [inline-code-attrs-start title = 'updateUserNotificationCommentSubscriptionStatus の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateUserNotificationCommentSubscriptionStatus(
+let (optResp, httpResp) = client.updateUserNotificationCommentSubscriptionStatus(
   tenantId = "my-tenant-123",
-  notificationId = "",
-  optedInOrOut = "",
-  commentId = "cmt-789",
+  notificationId = "notif-456",
+  optedInOrOut = "opted-in",
+  commentId = "comment-789",
   sso = ""
 )
 
-if response.isSome:
-  let updateResp = response.get()
-  echo "Subscription update response: ", updateResp
+if optResp.isSome:
+  let resp = optResp.get()
 [inline-code-end]
-
----

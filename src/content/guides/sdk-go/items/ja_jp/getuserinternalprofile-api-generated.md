@@ -1,10 +1,10 @@
----
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| commentId | string | クエリ | いいえ |  |
-| sso | string | クエリ | いいえ |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## レスポンス
 
@@ -12,7 +12,7 @@
 
 ## 例
 
-[inline-code-attrs-start title = 'GetUserInternalProfileの例'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GetUserInternalProfile の例'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -24,12 +24,13 @@ import (
 )
 
 func main() {
-	commentId := "commentId_example" // string |  (任意)
-	sso := "sso_example" // string |  (任意)
+	tenantId := "tenantId_example" // string | 
+	commentId := "commentId_example" // string |  (optional) // string |  （オプション）
+	sso := "sso_example" // string |  (optional) // string |  （オプション）
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetUserInternalProfile(context.Background()).CommentId(commentId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetUserInternalProfile(context.Background()).TenantId(tenantId).CommentId(commentId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetUserInternalProfile``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

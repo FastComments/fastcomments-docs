@@ -1,15 +1,16 @@
-## Parametreler
+## Parameters
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| İsim | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| urlId | string | query | Evet |  |
-| sso | string | query | Hayır |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| sso | string | query | No |  |
 
-## Yanıt
+## Response
 
 Döndürür: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
-## Örnek
+## Example
 
 [inline-code-attrs-start title = 'put_reopen_thread Örneği'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -17,6 +18,7 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 url_id = 'url_id_example' # String | 
 opts = {
   sso: 'sso_example' # String | 
@@ -24,11 +26,9 @@ opts = {
 
 begin
   
-  result = api_instance.put_reopen_thread(url_id, opts)
+  result = api_instance.put_reopen_thread(tenant_id, url_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
-  puts "Error when calling ModerationApi->put_reopen_thread: #{e}"
+  puts "ModerationApi->put_reopen_thread çağrılırken hata: #{e}"
 end
 [inline-code-end]
-
----

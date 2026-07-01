@@ -1,11 +1,12 @@
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
-|------|------|----------|----------|-------------|
-| includeByUserIdAndEmail | boolean | query | いいえ |  |
-| includeByIP | boolean | query | いいえ |  |
-| includeByEmailDomain | boolean | query | いいえ |  |
-| sso | string | query | いいえ |  |
+| Name | Type | Location | Required | 説明 |
+|------|------|----------|----------|-----|
+| tenantId | string | query | Yes |  |
+| includeByUserIdAndEmail | boolean | query | No |  |
+| includeByIP | boolean | query | No |  |
+| includeByEmailDomain | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## レスポンス
 
@@ -25,7 +26,8 @@ import (
 )
 
 func main() {
-	bulkPreBanParams := *openapiclient.NewBulkPreBanParams([]string{"CommentIds_example"}) // BulkPreBanParams | 
+	tenantId := "tenantId_example" // string |
+	bulkPreBanParams := *openapiclient.NewBulkPreBanParams([]string{"CommentIds_example"}) // BulkPreBanParams |
 	includeByUserIdAndEmail := true // bool |  (オプション)
 	includeByIP := true // bool |  (オプション)
 	includeByEmailDomain := true // bool |  (オプション)
@@ -33,7 +35,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostBulkPreBanSummary(context.Background()).BulkPreBanParams(bulkPreBanParams).IncludeByUserIdAndEmail(includeByUserIdAndEmail).IncludeByIP(includeByIP).IncludeByEmailDomain(includeByEmailDomain).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostBulkPreBanSummary(context.Background()).TenantId(tenantId).BulkPreBanParams(bulkPreBanParams).IncludeByUserIdAndEmail(includeByUserIdAndEmail).IncludeByIP(includeByIP).IncludeByEmailDomain(includeByEmailDomain).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostBulkPreBanSummary``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

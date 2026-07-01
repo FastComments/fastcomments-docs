@@ -1,12 +1,11 @@
----
 ## Parâmetros
 
-| Nome | Tipo | Location | Obrigatório | Descrição |
-|------|------|----------|------------|-------------|
-| tenantId | string | query | Sim |  |
-| id | string | path | Sim |  |
-| userId | string | query | Não |  |
-| anonUserId | string | query | Não |  |
+| Nome | Tipo | Localização | Obrigatório | Descrição |
+|------|------|-------------|-------------|-----------|
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
 
 ## Resposta
 
@@ -14,9 +13,10 @@ Retorna: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-python/
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de un_block_user_from_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'un_block_user_from_comment Exemplo'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import UnBlockUserFromCommentOptions
 from client.models.un_block_from_comment_params import UnBlockFromCommentParams
 from client.models.unblock_success import UnblockSuccess
 from client.rest import ApiException
@@ -29,28 +29,28 @@ configuration = client.Configuration(
 )
 
 # O cliente deve configurar os parâmetros de autenticação e autorização
-# de acordo com a política de segurança do servidor da API.
-# Exemplos para cada método de autenticação são fornecidos abaixo; use o exemplo que
-# atenda ao seu caso de uso de autenticação.
+# de acordo com a política de segurança do servidor API.
+# Exemplos para cada método de autenticação são fornecidos abaixo, use o exemplo que
+# satisfaz seu caso de uso de autenticação.
 
-# Configurar autorização por chave de API: api_key
+# Configurar autorização de chave API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Descomente abaixo para configurar o prefixo (ex.: Bearer) para a chave de API, se necessário
+# Descomente abaixo para configurar o prefixo (ex.: Bearer) para a chave API, se necessário
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Entre em um contexto com uma instância do cliente da API
+# Entre em um contexto com uma instância do cliente API
 with client.ApiClient(configuration) as api_client:
     # Crie uma instância da classe API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
     un_block_from_comment_params = client.UnBlockFromCommentParams() # UnBlockFromCommentParams | 
-    user_id = 'user_id_example' # str |  (opcional)
-    anon_user_id = 'anon_user_id_example' # str |  (opcional)
+    user_id = 'user_id_example' # str |  (optional)
+    anon_user_id = 'anon_user_id_example' # str |  (optional)
 
     try:
-        api_response = api_instance.un_block_user_from_comment(tenant_id, id, un_block_from_comment_params, user_id=user_id, anon_user_id=anon_user_id)
+        api_response = api_instance.un_block_user_from_comment(tenant_id, id, un_block_from_comment_params, UnBlockUserFromCommentOptions(user_id=user_id, anon_user_id=anon_user_id))
         print("The response of DefaultApi->un_block_user_from_comment:\n")
         pprint(api_response)
     except Exception as e:

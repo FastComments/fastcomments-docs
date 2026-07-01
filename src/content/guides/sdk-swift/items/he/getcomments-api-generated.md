@@ -1,24 +1,24 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | כן |  |
-| page | integer | query | לא |  |
-| limit | integer | query | לא |  |
-| skip | integer | query | לא |  |
-| asTree | boolean | query | לא |  |
-| skipChildren | integer | query | לא |  |
-| limitChildren | integer | query | לא |  |
-| maxTreeDepth | integer | query | לא |  |
-| urlId | string | query | לא |  |
-| userId | string | query | לא |  |
-| anonUserId | string | query | לא |  |
-| contextUserId | string | query | לא |  |
-| hashTag | string | query | לא |  |
-| parentId | string | query | לא |  |
-| direction | string | query | לא |  |
-| fromDate | integer | query | לא |  |
-| toDate | integer | query | לא |  |
+| tenantId | string | query | Yes |  |
+| page | integer | query | No |  |
+| limit | integer | query | No |  |
+| skip | integer | query | No |  |
+| asTree | boolean | query | No |  |
+| skipChildren | integer | query | No |  |
+| limitChildren | integer | query | No |  |
+| maxTreeDepth | integer | query | No |  |
+| urlId | string | query | No |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
+| contextUserId | string | query | No |  |
+| hashTag | string | query | No |  |
+| parentId | string | query | No |  |
+| direction | string | query | No |  |
+| fromDate | integer | query | No |  |
+| toDate | integer | query | No |  |
 
 ## תגובה
 
@@ -26,9 +26,9 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת getComments'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה getComments'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// דוגמאות הקוד הבאות עדיין בבטא. לכל בעיה, דווחו דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// הדגמי קוד הבאים עדיין בטא. לכל בעיה, אנא דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -49,7 +49,7 @@ let direction = SortDirections() // SortDirections |  (אופציונלי)
 let fromDate = 987 // Int64 |  (אופציונלי)
 let toDate = 987 // Int64 |  (אופציונלי)
 
-DefaultAPI.getComments(tenantId: tenantId, page: page, limit: limit, skip: skip, asTree: asTree, skipChildren: skipChildren, limitChildren: limitChildren, maxTreeDepth: maxTreeDepth, urlId: urlId, userId: userId, anonUserId: anonUserId, contextUserId: contextUserId, hashTag: hashTag, parentId: parentId, direction: direction, fromDate: fromDate, toDate: toDate) { (response, error) in
+DefaultAPI.getComments(tenantId: tenantId, options: DefaultAPI.GetCommentsOptions(page: page, limit: limit, skip: skip, asTree: asTree, skipChildren: skipChildren, limitChildren: limitChildren, maxTreeDepth: maxTreeDepth, urlId: urlId, userId: userId, anonUserId: anonUserId, contextUserId: contextUserId, hashTag: hashTag, parentId: parentId, direction: direction, fromDate: fromDate, toDate: toDate)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -60,5 +60,3 @@ DefaultAPI.getComments(tenantId: tenantId, page: page, limit: limit, skip: skip,
     }
 }
 [inline-code-end]
-
----

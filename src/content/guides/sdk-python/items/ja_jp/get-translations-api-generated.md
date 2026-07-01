@@ -9,35 +9,36 @@
 
 ## レスポンス
 
-戻り値: [`GetTranslationsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_translations_response.py)
+返り値: [`GetTranslationsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_translations_response.py)
 
 ## 例
 
 [inline-code-attrs-start title = 'get_translations の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetTranslationsOptions
 from client.models.get_translations_response import GetTranslationsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# ホストの定義はオプションで、デフォルトは https://fastcomments.com
-# サポートされているすべての構成パラメータの一覧は configuration.py を参照してください。
+# ホストの定義はオプションで、デフォルトは https://fastcomments.com です
+# 設定可能なすべての構成パラメータの一覧は configuration.py を参照してください
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# APIクライアントのインスタンスでコンテキストに入ります
+# API クライアントのインスタンスでコンテキストに入ります
 with client.ApiClient(configuration) as api_client:
-    # APIクラスのインスタンスを作成します
+    # API クラスのインスタンスを作成します
     api_instance = client.PublicApi(api_client)
     namespace = 'namespace_example' # str | 
     component = 'component_example' # str | 
-    locale = 'locale_example' # str |  （任意）
-    use_full_translation_ids = True # bool |  （任意）
+    locale = 'locale_example' # str |  (optional)
+    use_full_translation_ids = True # bool |  (optional)
 
     try:
-        api_response = api_instance.get_translations(namespace, component, locale=locale, use_full_translation_ids=use_full_translation_ids)
+        api_response = api_instance.get_translations(namespace, component, GetTranslationsOptions(locale=locale, use_full_translation_ids=use_full_translation_ids))
         print("The response of PublicApi->get_translations:\n")
         pprint(api_response)
     except Exception as e:

@@ -1,33 +1,31 @@
-Тренутно онлајн гледаоци странице: људи чија је websocket сесија претплаћена на страницу у овом тренутку.
-Враћа anonCount + totalCount (сви претплатници у соби, укључући анонимне гледаоце које не набрајамо).
+Currently-online viewers of a page: people whose websocket session is subscribed to the page right now.  
+Vraća anonCount + totalCount (room-wide subscribers, including anon viewers we don't enumerate).  
 
-## Параметри
+## Parameters
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| url_id | String | Да |  |
-| after_name | String | Не |  |
-| after_user_id | String | Не |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenant_id | String | Yes |  |
+| url_id | String | Yes |  |
+| after_name | String | No |  |
+| after_user_id | String | No |  |
 
-## Одговор
+## Response
 
-Враћа: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_online_response.rs)
+Vraća: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_online_response.rs)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'get_online_users Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer get_online_users'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_online_users() -> Result<PageUsersOnlineResponse, Error> {
-    let params: GetOnlineUsersParams = GetOnlineUsersParams {
+async fn example() -> Result<(), Error> {
+    let params = GetOnlineUsersParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        url_id: "news/world/article-2026".to_string(),
-        after_name: Some("jane.doe".to_string()),
-        after_user_id: Some("user_98765".to_string()),
+        url_id: "news/article".to_string(),
+        after_name: Some("john_doe".to_string()),
+        after_user_id: Some("user-123".to_string()),
     };
-    let response: PageUsersOnlineResponse = get_online_users(&configuration, params).await?;
-    Ok(response)
+    let _response: PageUsersOnlineResponse = get_online_users(&config, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

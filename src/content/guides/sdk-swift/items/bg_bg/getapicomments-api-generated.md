@@ -1,17 +1,17 @@
----
 ## Параметри
 
 | Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
-| page | number | query | Не |  |
-| count | number | query | Не |  |
-| text-search | string | query | Не |  |
-| byIPFromComment | string | query | Не |  |
-| filters | string | query | Не |  |
-| searchFilters | string | query | Не |  |
-| sorts | string | query | Не |  |
-| demo | boolean | query | Не |  |
-| sso | string | query | Не |  |
+| tenantId | string | query | Yes |  |
+| page | number | query | No |  |
+| count | number | query | No |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sorts | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Отговор
 
@@ -19,22 +19,23 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример getApiComments'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getApiComments Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следните примери за код все още са в бета. За всеки проблем, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следващите примерни кодове все още са в бета версия. При какъвто и да е проблем, моля докладвайте го чрез http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let page = 987 // Double |  (незадължително)
-let count = 987 // Double |  (незадължително)
-let textSearch = "textSearch_example" // String |  (незадължително)
-let byIPFromComment = "byIPFromComment_example" // String |  (незадължително)
-let filters = "filters_example" // String |  (незадължително)
-let searchFilters = "searchFilters_example" // String |  (незадължително)
-let sorts = "sorts_example" // String |  (незадължително)
-let demo = true // Bool |  (незадължително)
-let sso = "sso_example" // String |  (незадължително)
+let tenantId = "tenantId_example" // String | 
+let page = 987 // Double |  (опционално)
+let count = 987 // Double |  (опционално)
+let textSearch = "textSearch_example" // String |  (опционално)
+let byIPFromComment = "byIPFromComment_example" // String |  (опционално)
+let filters = "filters_example" // String |  (опционално)
+let searchFilters = "searchFilters_example" // String |  (опционално)
+let sorts = "sorts_example" // String |  (опционално)
+let demo = true // Bool |  (опционално)
+let sso = "sso_example" // String |  (опционално)
 
-ModerationAPI.getApiComments(page: page, count: count, textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, demo: demo, sso: sso) { (response, error) in
+ModerationAPI.getApiComments(tenantId: tenantId, options: ModerationAPI.GetApiCommentsOptions(page: page, count: count, textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, demo: demo, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -45,5 +46,3 @@ ModerationAPI.getApiComments(page: page, count: count, textSearch: textSearch, b
     }
 }
 [inline-code-end]
-
----

@@ -1,11 +1,11 @@
 ## Parametre
 
-| Name | Type | Påkrævet | Beskrivelse |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | id | string | Nej |  |
 | updateTenantUserBody | UpdateTenantUserBody | Nej |  |
-| updateComments | string | Nej |  |
+| updateComments | string = "" | Nej |  |
 
 ## Svar
 
@@ -15,21 +15,13 @@ Returnerer: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'updateTenantUser Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateTenantUser(
+let updateBody = UpdateTenantUserBody()
+let (optResp, httpResp) = client.updateTenantUser(
   tenantId = "my-tenant-123",
-  id = "user-987",
-  updateTenantUserBody = UpdateTenantUserBody(
-    displayName = "Jane Doe",
-    email = "jane.doe@example.com",
-    roles = @["moderator", "editor"],
-    isActive = true
-  ),
-  updateComments = "true"
+  id = "user-456",
+  updateTenantUserBody = updateBody,
+  updateComments = "Changed role to moderator",
 )
-
-if response.isSome:
-  let apiEmpty = response.get()
-  discard apiEmpty
+if optResp.isSome:
+  let _ = optResp.get()
 [inline-code-end]
-
----

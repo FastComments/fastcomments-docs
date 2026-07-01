@@ -1,12 +1,10 @@
 ## Параметри
 
-| Име | Тип | Обавезно | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| commentId | string | Да |  |
-| includeByUserIdAndEmail | bool | Не |  |
-| includeByIP | bool | Не |  |
-| includeByEmailDomain | bool | Не |  |
-| sso | string | Не |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| options | GetPreBanSummaryOptions | No |  |
 
 ## Одговор
 
@@ -14,21 +12,9 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'getPreBanSummary Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getPreBanSummary'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let commentId = "cmt-7423"
-let (response, httpResponse) = client.getPreBanSummary(
-  commentId = commentId,
-  includeByUserIdAndEmail = false,
-  includeByIP = false,
-  includeByEmailDomain = false,
-  sso = ""
-)
-if response.isSome:
-  let preBanSummary = response.get()
-  discard preBanSummary
-else:
-  discard httpResponse
+let (preBanSummaryOpt, httpResponse) = client.getPreBanSummary(tenantId = "my-tenant-123", commentId = "cmt-456", options = GetPreBanSummaryOptions())
+if preBanSummaryOpt.isSome:
+  let summary = preBanSummaryOpt.get()
 [inline-code-end]
-
----

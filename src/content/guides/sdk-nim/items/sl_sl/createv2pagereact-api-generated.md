@@ -1,29 +1,28 @@
 ## Parametri
 
-| Ime | Tip | Obvezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| urlId | string | Da |  |
-| id | string | Ne |  |
-| title | string | Ne |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| id | string | No |  |
+| title | string = "" | No |  |
 
 ## Odgovor
 
-Vrne: [`Option[CreateV1PageReact]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_v1_page_react.nim)
+Returns: [`Option[CreateV1PageReact]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_v1_page_react.nim)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer createV2PageReact'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createV2PageReact Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.createV2PageReact(
+let (pageResult, httpResponse) = client.createV2PageReact(
   tenantId = "my-tenant-123",
-  urlId = "news/2026/06/fastcomments-release",
-  id = "",
-  title = ""
+  urlId = "news/article-title",
+  id = "page-456",
+  title = "Breaking News",
 )
-if response.isSome:
-  let react = response.get()
-  echo "Created page react: ", $react
-else:
-  echo "No react returned, HTTP status: ", $httpResponse.statusCode
+
+if pageResult.isSome:
+  let page = pageResult.get()
+  # uporabite `page` po potrebi
 [inline-code-end]

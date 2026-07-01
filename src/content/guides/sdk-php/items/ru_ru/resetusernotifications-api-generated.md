@@ -1,18 +1,18 @@
 ## Параметры
 
-| Имя | Тип | Местоположение | Обязательно | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| afterId | string | query | No |  |
-| afterCreatedAt | integer | query | No |  |
-| unreadOnly | boolean | query | No |  |
-| dmOnly | boolean | query | No |  |
-| noDm | boolean | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Да |  |
+| afterId | string | query | Нет |  |
+| afterCreatedAt | integer | query | Нет |  |
+| unreadOnly | boolean | query | Нет |  |
+| dmOnly | boolean | query | Нет |  |
+| noDm | boolean | query | Нет |  |
+| sso | string | query | Нет |  |
 
 ## Ответ
 
-Возвращает: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ResetUserNotificationsResponse.php)
+Returns: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ResetUserNotificationsResponse.php)
 
 ## Пример
 
@@ -24,24 +24,26 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Если вы хотите использовать пользовательский HTTP-клиент, передайте клиент, который реализует `GuzzleHttp\ClientInterface`.
-    // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
+    // Если вы хотите использовать собственный HTTP‑клиент, передайте свой клиент, реализующий `GuzzleHttp\ClientInterface`.
+    // Это опционально, по умолчанию будет использоваться `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$after_id = 'after_id_example'; // string
-$after_created_at = 56; // int
-$unread_only = True; // bool
-$dm_only = True; // bool
-$no_dm = True; // bool
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // строка
+$options = [
+    'after_id' => 'after_id_example', // строка
+    'after_created_at' => 56, // целое
+    'unread_only' => True, // булево
+    'dm_only' => True, // булево
+    'no_dm' => True, // булево
+    'sso' => 'sso_example', // строка
+];
+
 
 try {
-    $result = $apiInstance->resetUserNotifications($tenant_id, $after_id, $after_created_at, $unread_only, $dm_only, $no_dm, $sso);
+    $result = $apiInstance->resetUserNotifications($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->resetUserNotifications: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

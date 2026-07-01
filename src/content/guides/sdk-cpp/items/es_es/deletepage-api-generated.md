@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Name | Type | Required | Description |
+| Nombre | Tipo | Obligatorio | Descripción |
 |------|------|----------|-------------|
 | tenantId | string | Sí |  |
 | id | string | Sí |  |
@@ -11,21 +11,20 @@ Devuelve: [`DeletePageAPIResponse`](https://github.com/FastComments/fastcomments
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de deletePage'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo deletePage'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t pageId = U("page-456");
-boost::optional<utility::string_t> correlationId = boost::optional<utility::string_t>(U("corr-20251122"));
-auto task = api->deletePage(tenantId, pageId)
-    .then([correlationId](pplx::task<std::shared_ptr<DeletePageAPIResponse>> prev) -> std::shared_ptr<DeletePageAPIResponse> {
-        try {
-            auto resp = prev.get();
-            if (resp) return resp;
-            return std::make_shared<DeletePageAPIResponse>();
-        } catch (const std::exception&) {
-            return std::make_shared<DeletePageAPIResponse>();
-        }
-    });
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto pageId   = utility::conversions::to_string_t("page-456");
+
+api->deletePage(tenantId, pageId)
+   .then([](pplx::task<std::shared_ptr<DeletePageAPIResponse>> t) {
+       try {
+           auto response = t.get();
+           // procesar la respuesta según sea necesario
+       } catch (const std::exception& ex) {
+           // manejar el error
+       }
+   });
 [inline-code-end]
 
 ---

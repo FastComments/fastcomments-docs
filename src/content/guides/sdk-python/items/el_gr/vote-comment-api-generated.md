@@ -1,13 +1,13 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Ναι |  |
-| commentId | string | path | Ναι |  |
-| urlId | string | query | Ναι |  |
-| broadcastId | string | query | Ναι |  |
-| sessionId | string | query | Όχι |  |
-| sso | string | query | Όχι |  |
+|------|------|----------|-----------|------------|
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| broadcastId | string | query | Yes |  |
+| sessionId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Απόκριση
 
@@ -15,22 +15,23 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα vote_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'vote_comment Παράδειγμα'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import VoteCommentOptions
 from client.models.vote_body_params import VoteBodyParams
 from client.models.vote_response import VoteResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Ορισμός του host είναι προαιρετικός και εξ ορισμού είναι το https://fastcomments.com
-# Δείτε το αρχείο configuration.py για μια λίστα με όλες τις υποστηριζόμενες παραμέτρους διαμόρφωσης.
+# Ο καθορισμός του host είναι προαιρετικός και προεπιλογή είναι https://fastcomments.com
+# Δείτε το configuration.py για λίστα όλων των υποστηριζόμενων παραμέτρων παραμετροποίησης.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Εισέλθετε σε ένα context με ένα στιγμιότυπο του πελάτη API
+# Εισάγετε ένα context με ένα στιγμιότυπο του client API
 with client.ApiClient(configuration) as api_client:
     # Δημιουργήστε ένα στιγμιότυπο της κλάσης API
     api_instance = client.PublicApi(api_client)
@@ -43,7 +44,7 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (προαιρετικό)
 
     try:
-        api_response = api_instance.vote_comment(tenant_id, comment_id, url_id, broadcast_id, vote_body_params, session_id=session_id, sso=sso)
+        api_response = api_instance.vote_comment(tenant_id, comment_id, url_id, broadcast_id, vote_body_params, VoteCommentOptions(session_id=session_id, sso=sso))
         print("The response of PublicApi->vote_comment:\n")
         pprint(api_response)
     except Exception as e:

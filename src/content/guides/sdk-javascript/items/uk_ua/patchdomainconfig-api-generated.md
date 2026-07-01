@@ -1,10 +1,10 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| domainToUpdate | string | Так |  |
-| patchDomainConfigParams | PatchDomainConfigParams | Так |  |
+| tenantId | string | Yes |  |
+| domainToUpdate | string | Yes |  |
+| patchDomainConfigParams | PatchDomainConfigParams | Yes |  |
 
 ## Відповідь
 
@@ -12,16 +12,21 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад patchDomainConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'patchDomainConfig Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_8d9f3c4b";
-const domainToUpdate: string = "comments.newsroom.example.com";
-const patchDomainConfigParams: PatchDomainConfigParams = {
-  enabled: true,
-  enforceHttps: true, // необов'язковий параметр додано
-  allowedOrigins: ["https://newsroom.example.com"] // необов'язковий параметр додано
-};
-const result: PatchDomainConfigResponse = await patchDomainConfig(tenantId, domainToUpdate, patchDomainConfigParams);
+async function updateDomainConfig() {
+  const tenantId: string = "tenant_98765";
+  const domainToUpdate: string = "forum.mycompany.com";
+  const patchParams: PatchDomainConfigParams = {
+    enableComments: true,
+    moderationLevel: "strict",
+    allowAnonymous: false, // продемонстровано необов'язковий параметр
+  };
+  const response: PatchDomainConfigResponse = await patchDomainConfig(tenantId, domainToUpdate, patchParams);
+  console.log(response);
+}
+
+updateDomainConfig();
 [inline-code-end]
 
 ---

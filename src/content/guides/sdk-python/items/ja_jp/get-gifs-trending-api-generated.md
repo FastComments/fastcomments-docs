@@ -1,11 +1,11 @@
 ## パラメータ
 
-| Name | Type | Location | 必須 | 説明 |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | はい |  |
-| locale | string | query | いいえ |  |
-| rating | string | query | いいえ |  |
-| page | number | query | いいえ |  |
+| tenantId | string | path | Yes |  |
+| locale | string | query | No |  |
+| rating | string | query | No |  |
+| page | number | query | No |  |
 
 ## レスポンス
 
@@ -13,31 +13,32 @@
 
 ## 例
 
-[inline-code-attrs-start title = 'get_gifs_trending の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_gifs_trending 例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetGifsTrendingOptions
 from client.models.get_gifs_trending_response import GetGifsTrendingResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# ホストの定義は任意で、デフォルトは https://fastcomments.com です
-# サポートされているすべての設定パラメータの一覧は configuration.py を参照してください。
+# ホストの定義はオプションで、デフォルトは https://fastcomments.com です
+# configuration.py にはサポートされているすべての設定パラメータのリストがあります
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# APIクライアントのインスタンスを使ってコンテキストに入ります
+# APIクライアントのインスタンスでコンテキストに入ります
 with client.ApiClient(configuration) as api_client:
-    # APIクラスのインスタンスを作成
+    # APIクラスのインスタンスを作成します
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    locale = 'locale_example' # str |  （任意）
-    rating = 'rating_example' # str |  （任意）
-    page = 3.4 # float |  （任意）
+    locale = 'locale_example' # str |  (optional)
+    rating = 'rating_example' # str |  (optional)
+    page = 3.4 # float |  (optional)
 
     try:
-        api_response = api_instance.get_gifs_trending(tenant_id, locale=locale, rating=rating, page=page)
+        api_response = api_instance.get_gifs_trending(tenant_id, GetGifsTrendingOptions(locale=locale, rating=rating, page=page))
         print("The response of PublicApi->get_gifs_trending:\n")
         pprint(api_response)
     except Exception as e:

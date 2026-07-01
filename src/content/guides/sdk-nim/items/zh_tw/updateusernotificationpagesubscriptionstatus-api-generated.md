@@ -1,38 +1,34 @@
-啟用或停用頁面通知。當使用者訂閱頁面時，會為新的頂層留言建立通知，並且也
+啟用或停用頁面的通知。當使用者訂閱頁面時，會為新的根評論建立通知，且還會
 
 ## 參數
 
-| 名稱 | 型別 | 必填 | 說明 |
-|------|------|----------|-------------|
+| 名稱 | 類型 | 必填 | 描述 |
+|------|------|------|------|
 | tenantId | string | Yes |  |
 | urlId | string | Yes |  |
 | url | string | No |  |
 | pageTitle | string | No |  |
 | subscribedOrUnsubscribed | string | No |  |
-| sso | string | No |  |
+| sso | string = "" | No |  |
 
 ## 回應
 
-回傳：[`Option[UpdateUserNotificationPageSubscriptionStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_page_subscription_status_response.nim)
+返回：[`Option[UpdateUserNotificationPageSubscriptionStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_page_subscription_status_response.nim)
 
 ## 範例
 
-[inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus 範例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateUserNotificationPageSubscriptionStatus(
+let (optResp, httpResp) = client.updateUserNotificationPageSubscriptionStatus(
   tenantId = "my-tenant-123",
-  urlId = "news/economy/market-rally-2026-06-19",
-  url = "",
-  pageTitle = "",
-  subscribedOrUnsubscribed = "",
+  urlId = "news/article-456",
+  url = "https://example.com/news/article-456",
+  pageTitle = "Breaking News: Something Happened",
+  subscribedOrUnsubscribed = "subscribed",
   sso = ""
 )
 
-if response.isSome:
-  let updateResp = response.get()
-  echo "Subscription update received: ", updateResp
-else:
-  echo "No subscription update returned."
+if optResp.isSome:
+  let resp = optResp.get()
+  # 進一步處理 resp
 [inline-code-end]
-
----

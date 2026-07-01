@@ -1,13 +1,12 @@
----
 ## Parametri
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
+| Ime | Vrsta | Lokacija | Potrebno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| userId | string | query | Da |  |
-| id | string | path | Da |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
-## Odgovor
+## Odziv
 
 Vrne: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ChangeTicketStateResponse.php)
 
@@ -19,22 +18,24 @@ Vrne: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Konfigurirajte avtorizacijo API ključa: api_key
+// Configure API key authorization: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Odkomentirajte spodnjo vrstico, da nastavite predpono (npr. Bearer) za API ključ, če je potrebno
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Če želite uporabiti lastnega HTTP odjemalca, posredujte odjemalca, ki implementira `GuzzleHttp\ClientInterface`.
-    // To je neobvezno, kot privzeti bo uporabljen `GuzzleHttp\Client`.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // niz
 $user_id = 'user_id_example'; // niz
 $id = 'id_example'; // niz
 $change_ticket_state_body = new \FastComments\Client\Model\ChangeTicketStateBody(); // \FastComments\Client\Model\ChangeTicketStateBody
+
 
 try {
     $result = $apiInstance->changeTicketState($tenant_id, $user_id, $id, $change_ticket_state_body);
@@ -43,5 +44,3 @@ try {
     echo 'Exception when calling DefaultApi->changeTicketState: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

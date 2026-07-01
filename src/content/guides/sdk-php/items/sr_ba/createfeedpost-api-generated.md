@@ -1,46 +1,50 @@
-## Параметри
+## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| broadcastId | string | query | Не |  |
-| isLive | boolean | query | Не |  |
-| doSpamCheck | boolean | query | Не |  |
-| skipDupCheck | boolean | query | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
+| broadcastId | string | query | Ne |  |
+| isLive | boolean | query | Ne |  |
+| doSpamCheck | boolean | query | Ne |  |
+| skipDupCheck | boolean | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateFeedPostsResponse.php)
+Vraća: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateFeedPostsResponse.php)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'Пример createFeedPost'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer createFeedPost'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Конфигуришите ауторизацију API кључа: api_key
+// Konfigurišite autorizaciju API ključa: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Ако је потребно, уклоните коментар испод да подесите префикс (нпр. Bearer) за API кључ
+// Odkomentarišite dolje za postavljanje prefiksa (npr. Bearer) za API ključ, po potrebi
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ако желите користити прилагођени HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционално, подразумевани ће бити `GuzzleHttp\Client`.
+    // Ako želite koristiti prilagođeni HTTP klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao podrazumijevano.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $create_feed_post_params = new \FastComments\Client\Model\CreateFeedPostParams(); // \FastComments\Client\Model\CreateFeedPostParams
-$broadcast_id = 'broadcast_id_example'; // string
-$is_live = True; // bool
-$do_spam_check = True; // bool
-$skip_dup_check = True; // bool
+$options = [
+    'broadcast_id' => 'broadcast_id_example', // string
+    'is_live' => True, // bool
+    'do_spam_check' => True, // bool
+    'skip_dup_check' => True, // bool
+];
+
 
 try {
-    $result = $apiInstance->createFeedPost($tenant_id, $create_feed_post_params, $broadcast_id, $is_live, $do_spam_check, $skip_dup_check);
+    $result = $apiInstance->createFeedPost($tenant_id, $create_feed_post_params, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->createFeedPost: ', $e->getMessage(), PHP_EOL;

@@ -1,9 +1,10 @@
 ## Parametry
 
-| Name | Type | Lokalizacja | Wymagane | Description |
-|------|------|----------|----------|-------------|
-| commentId | string | ścieżka | Tak |  |
-| sso | string | zapytanie | Nie |  |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+|------|------|------------|----------|------|
+| tenantId | string | query | Tak |  |
+| commentId | string | path | Tak |  |
+| sso | string | query | Nie |  |
 
 ## Odpowiedź
 
@@ -23,12 +24,13 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
-	sso := "sso_example" // string |  (opcjonalne)
+	sso := "sso_example" // string |  (opcjonalny)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetLogs(context.Background(), commentId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetLogs(context.Background(), commentId).TenantId(tenantId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetLogs``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

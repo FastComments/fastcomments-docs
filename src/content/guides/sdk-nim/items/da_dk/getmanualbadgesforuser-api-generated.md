@@ -1,10 +1,9 @@
 ## Parametre
 
-| Name | Type | Required | Description |
+| Name | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| badgesUserId | string | Nej |  |
-| commentId | string | Ja |  |
-| sso | string | Nej |  |
+| tenantId | string | Ja |  |
+| options | GetManualBadgesForUserOptions | Nej |  |
 
 ## Svar
 
@@ -14,15 +13,11 @@ Returnerer: [`Option[GetUserManualBadgesResponse]`](https://github.com/FastComme
 
 [inline-code-attrs-start title = 'getManualBadgesForUser Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getManualBadgesForUser(
-  badgesUserId = "user-98765",
-  commentId = "comment-0a1b2c3d",
-  sso = "sso-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
+let (userBadgesOpt, httpResp) = client.getManualBadgesForUser(
+  tenantId = "my-tenant-123",
+  options = GetManualBadgesForUserOptions()
 )
-if response.isSome:
-  let badges = response.get()
-  echo "Received manual badges for user"
-  echo "HTTP status: ", httpResponse.status
+if userBadgesOpt.isSome:
+  let badges = userBadgesOpt.get()
+  echo badges
 [inline-code-end]
-
----

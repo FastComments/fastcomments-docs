@@ -1,9 +1,9 @@
 ## 参数
 
-| 名称 | 类型 | 必填 | 描述 |
+| 名称 | 类型 | 必需 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| id | string | 否 |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
 
 ## 响应
 
@@ -13,12 +13,8 @@
 
 [inline-code-attrs-start title = 'getModerator 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getModerator(tenantId = "my-tenant-123", id = "mod-456")
-if response.isSome:
-  let moderator = response.get()
-  echo moderator
-else:
-  echo "Moderator not found, HTTP status: ", $httpResponse.status
+let (moderatorOpt, httpResponse) = client.getModerator(tenantId = "my-tenant-123", id = "moderator-456")
+if moderatorOpt.isSome:
+  let moderator = moderatorOpt.get()
+  discard moderator
 [inline-code-end]
-
----

@@ -1,41 +1,46 @@
-## Параметри
+## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| commentId | string | путања | Да |  |
-| sso | string | упит | Не |  |
+| Ime | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
+| commentId | string | path | Da |  |
+| broadcastId | string | query | Ne |  |
+| sso | string | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`AdjustVotesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/adjust_votes_response.py)
+Returns: [`AdjustVotesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/adjust_votes_response.py)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'post_adjust_comment_votes Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_adjust_comment_votes Primjer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import PostAdjustCommentVotesOptions
 from client.models.adjust_comment_votes_params import AdjustCommentVotesParams
 from client.models.adjust_votes_response import AdjustVotesResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Постављање хоста је опционално и подразумева се https://fastcomments.com
-# Погледајте configuration.py за списак свих подржаних параметара конфигурације.
+# Definisanje hosta je opcionalno i podrazumevano na https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Уђите у контекст са инстанцом API клијента
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Креирајте инстанцу API класе
+    # Create an instance of the API class
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     adjust_comment_votes_params = client.AdjustCommentVotesParams() # AdjustCommentVotesParams | 
-    sso = 'sso_example' # str |  (опционо)
+    broadcast_id = 'broadcast_id_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.post_adjust_comment_votes(comment_id, adjust_comment_votes_params, sso=sso)
+        api_response = api_instance.post_adjust_comment_votes(tenant_id, comment_id, adjust_comment_votes_params, PostAdjustCommentVotesOptions(broadcast_id=broadcast_id, sso=sso))
         print("The response of ModerationApi->post_adjust_comment_votes:\n")
         pprint(api_response)
     except Exception as e:

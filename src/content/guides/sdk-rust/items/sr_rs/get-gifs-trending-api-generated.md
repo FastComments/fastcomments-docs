@@ -1,11 +1,11 @@
 ## Параметри
 
-| Име | Тип | Потребно | Опис |
-|------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| locale | String | Не |  |
-| rating | String | Не |  |
-| page | f64 | Не |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|------|
+| tenant_id | String | Yes |  |
+| locale | String | No |  |
+| rating | String | No |  |
+| page | f64 | No |  |
 
 ## Одговор
 
@@ -13,18 +13,16 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример get_gifs_trending'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer get_gifs_trending'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_trending_gifs() -> Result<GetGifsTrendingResponse, Error> {
-    let params: GetGifsTrendingParams = GetGifsTrendingParams {
-        tenant_id: String::from("acme-corp-tenant"),
-        locale: Some(String::from("en-US")),
-        rating: Some(String::from("pg-13")),
+async fn fetch_trending_gifs(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetGifsTrendingParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        locale: Some("en-US".to_string()),
+        rating: Some("pg".to_string()),
         page: Some(1.0),
     };
-    let trending: GetGifsTrendingResponse = get_gifs_trending(&configuration, params).await?;
-    Ok(trending)
+    let _response = get_gifs_trending(configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

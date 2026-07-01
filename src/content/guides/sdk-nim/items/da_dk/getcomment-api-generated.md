@@ -1,4 +1,3 @@
----
 ## Parametre
 
 | Navn | Type | Påkrævet | Beskrivelse |
@@ -14,12 +13,8 @@ Returnerer: [`Option[APIGetCommentResponse]`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'getComment Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getComment(tenantId = "my-tenant-123", id = "cmt-7890")
+let (response, httpResponse) = client.getComment(tenantId = "my-tenant-123", id = "cmt-789")
 if response.isSome:
   let comment = response.get()
   discard comment
-else:
-  echo "Comment not found"
 [inline-code-end]
-
----

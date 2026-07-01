@@ -21,17 +21,21 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Если вы хотите использовать пользовательский HTTP-клиент, передайте ваш клиент, который реализует `GuzzleHttp\ClientInterface`.
-    // Это необязательно, по умолчанию будет использоваться `GuzzleHttp\Client`.
+    // Если вы хотите использовать кастомный HTTP‑клиент, передайте ваш клиент, реализующий `GuzzleHttp\ClientInterface`.
+    // Это опционально, `GuzzleHttp\Client` будет использоваться по умолчанию.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // строка
 $comment_id = 'comment_id_example'; // строка
-$edit_key = 'edit_key_example'; // строка
-$sso = 'sso_example'; // строка
+$options = [
+    'edit_key' => 'edit_key_example', // строка
+    'sso' => 'sso_example', // строка
+];
+
 
 try {
-    $result = $apiInstance->getCommentText($tenant_id, $comment_id, $edit_key, $sso);
+    $result = $apiInstance->getCommentText($tenant_id, $comment_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getCommentText: ', $e->getMessage(), PHP_EOL;

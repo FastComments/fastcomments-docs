@@ -1,28 +1,27 @@
+Upload and resize an image
 ## 參數
 
-| Name | Type | 必填 | 說明 |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|------|------|
 | tenantId | string | 是 |  |
 | file | string | 否 |  |
-| sizePreset | SizePreset | 否 |  |
-| urlId | string | 是 |  |
+| options | UploadImageOptions | 否 |  |
 
 ## 回應
 
-回傳: [`Option[UploadImageResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_upload_image_response.nim)
+Returns: [`Option[UploadImageResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_upload_image_response.nim)
 
 ## 範例
 
 [inline-code-attrs-start title = 'uploadImage 範例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.uploadImage(
+let (uploadResult, httpResponse) = client.uploadImage(
   tenantId = "my-tenant-123",
-  file = "assets/images/comment-avatar.jpg",
-  sizePreset = SizePreset.small,
-  urlId = "news/article-2025-11-22"
+  file = "images/avatar.jpg",
+  options = UploadImageOptions()
 )
-if response.isSome:
-  let upload = response.get()
-  echo "Uploaded image id: ", upload.id
-  echo "Uploaded image url: ", upload.url
+
+if uploadResult.isSome:
+  let result = uploadResult.get()
+  # 根據需要使用結果
 [inline-code-end]

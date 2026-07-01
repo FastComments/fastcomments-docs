@@ -1,41 +1,44 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Обавезно | Опис |
-|------|------|----------|----------|-------------|
-| userId | string | query | Не |  |
-| trustFactor | string | query | Не |  |
-| sso | string | query | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| trustFactor | string | query | No |  |
+| sso | string | query | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`SetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/set_user_trust_factor_response.py)
+Returns: [`SetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/set_user_trust_factor_response.py)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'Пример set_trust_factor'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'set_trust_factor Primjer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import SetTrustFactorOptions
 from client.models.set_user_trust_factor_response import SetUserTrustFactorResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинисање host-а је опционално и подразумева https://fastcomments.com
-# Погледајте configuration.py за листу свих подржаних конфигурационих параметара.
+# Definisanje hosta je opciono i podrazumijeva https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih konfiguracionih parametara.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Уђите у контекст са инстанцом API клијента
+# Uđite u kontekst s instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Креирајте инстанцу API класе
+    # Kreirajte instancu API klase
     api_instance = client.ModerationApi(api_client)
-    user_id = 'user_id_example' # str |  (опционо)
-    trust_factor = 'trust_factor_example' # str |  (опционо)
-    sso = 'sso_example' # str |  (опционо)
+    tenant_id = 'tenant_id_example' # str | 
+    user_id = 'user_id_example' # str |  (opcionalno)
+    trust_factor = 'trust_factor_example' # str |  (opcionalno)
+    sso = 'sso_example' # str |  (opcionalno)
 
     try:
-        api_response = api_instance.set_trust_factor(user_id=user_id, trust_factor=trust_factor, sso=sso)
+        api_response = api_instance.set_trust_factor(tenant_id, SetTrustFactorOptions(user_id=user_id, trust_factor=trust_factor, sso=sso))
         print("The response of ModerationApi->set_trust_factor:\n")
         pprint(api_response)
     except Exception as e:

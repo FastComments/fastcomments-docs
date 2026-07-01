@@ -13,12 +13,12 @@ Returns: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/
 
 [inline-code-attrs-start title = 'delete_question_config Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_delete_question_config() -> Result<(), Error> {
+async fn run() -> Result<(), Error> {
     let params: DeleteQuestionConfigParams = DeleteQuestionConfigParams {
-        tenant_id: "acme-corp-tenant".to_owned(),
-        id: "faq/general-2026".to_owned(),
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "question-456".to_string(),
     };
-    let _response: ApiEmptyResponse = delete_question_config(&configuration, params).await?;
+    delete_question_config(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

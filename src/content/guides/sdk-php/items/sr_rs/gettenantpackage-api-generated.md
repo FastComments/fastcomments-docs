@@ -1,36 +1,38 @@
-## Параметри
+## Parameters
 
-| Име | Тип | Локација | Потребно | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| id | string | path | Да |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
-## Одговор
+## Response
 
-Враћа: [`GetTenantPackageResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantPackageResponse.php)
+Vraća: [`GetTenantPackageResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantPackageResponse.php)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'getTenantPackage Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getTenantPackage'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Конфигуришите ауторизацију API кључа: api_key
+// Konfigurišite autorizaciju API ključa: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Откоменатишите испод да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
+// Otkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ако желите да користите прилагођени http клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционално, подразумевано ће бити коришћен `GuzzleHttp\Client`.
+    // Ako želite da koristite prilagođeni http klijent, prosedite vaš klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opciono, `GuzzleHttp\Client` će se koristiti kao podrazumevano.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
+
 
 try {
     $result = $apiInstance->getTenantPackage($tenant_id, $id);
@@ -39,5 +41,3 @@ try {
     echo 'Exception when calling DefaultApi->getTenantPackage: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

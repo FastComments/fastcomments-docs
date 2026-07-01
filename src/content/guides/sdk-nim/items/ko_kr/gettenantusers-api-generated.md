@@ -1,9 +1,9 @@
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
-|------|------|----------|-------------|
+| 이름 | 타입 | 필수 | 설명 |
+|------|------|------|------|
 | tenantId | string | 예 |  |
-| skip | float64 | 아니요 |  |
+| skip | float64 | 아니오 |  |
 
 ## 응답
 
@@ -14,12 +14,7 @@
 [inline-code-attrs-start title = 'getTenantUsers 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.getTenantUsers(tenantId = "my-tenant-123", skip = 0.0)
-
 if response.isSome:
-  let tenantUsers = response.get()
-  echo "Retrieved tenant users"
-else:
-  echo "No tenant users returned"
+  let data = response.get()
+  echo data
 [inline-code-end]
-
----

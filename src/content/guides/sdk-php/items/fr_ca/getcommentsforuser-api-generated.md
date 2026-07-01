@@ -12,7 +12,7 @@
 
 ## Réponse
 
-Renvoie : [`GetCommentsForUserResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCommentsForUserResponse.php)
+Returns: [`GetCommentsForUserResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCommentsForUserResponse.php)
 
 ## Exemple
 
@@ -24,24 +24,26 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Si vous voulez utiliser un client HTTP personnalisé, passez votre client qui implémente `GuzzleHttp\ClientInterface`.
-    // Ceci est facultatif, `GuzzleHttp\Client` sera utilisé par défaut.
+    // Si vous souhaitez utiliser un client HTTP personnalisé, transmettez votre client qui implémente `GuzzleHttp\ClientInterface`.
+    // Ceci est optionnel, `GuzzleHttp\Client` sera utilisé par défaut.
     new GuzzleHttp\Client()
 );
-$user_id = 'user_id_example'; // string
-$direction = new \FastComments\Client\Model\\FastComments\Client\Model\SortDirections(); // \FastComments\Client\Model\SortDirections
-$replies_to_user_id = 'replies_to_user_id_example'; // string
-$page = 3.4; // float
-$includei10n = True; // bool
-$locale = 'locale_example'; // string
-$is_crawler = True; // bool
+
+$options = [
+    'user_id' => 'user_id_example', // chaîne
+    'direction' => new \FastComments\Client\Model\\FastComments\Client\Model\SortDirections(), // \FastComments\Client\Model\SortDirections
+    'replies_to_user_id' => 'replies_to_user_id_example', // chaîne
+    'page' => 3.4, // nombre à virgule flottante
+    'includei10n' => True, // booléen
+    'locale' => 'locale_example', // chaîne
+    'is_crawler' => True, // booléen
+];
+
 
 try {
-    $result = $apiInstance->getCommentsForUser($user_id, $direction, $replies_to_user_id, $page, $includei10n, $locale, $is_crawler);
+    $result = $apiInstance->getCommentsForUser($options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getCommentsForUser: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

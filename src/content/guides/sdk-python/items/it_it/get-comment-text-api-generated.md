@@ -1,9 +1,9 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Sì |  |
-| commentId | string | path | Sì |  |
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+|------|------|-----------|--------------|-------------|
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
 | editKey | string | query | No |  |
 | sso | string | query | No |  |
 
@@ -13,31 +13,32 @@ Restituisce: [`PublicAPIGetCommentTextResponse`](https://github.com/FastComments
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di get_comment_text'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio get_comment_text'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetCommentTextOptions
 from client.models.public_api_get_comment_text_response import PublicAPIGetCommentTextResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# La definizione dell'host è opzionale e il valore predefinito è https://fastcomments.com
-# Consulta configuration.py per l'elenco di tutti i parametri di configurazione supportati.
+# Definire l'host è opzionale e predefinito a https://fastcomments.com
+# Vedere configuration.py per l'elenco di tutti i parametri di configurazione supportati.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Entra in un contesto con un'istanza del client API
+# Entrare in un contesto con un'istanza del client API
 with client.ApiClient(configuration) as api_client:
-    # Crea un'istanza della classe API
+    # Creare un'istanza della classe API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
-    edit_key = 'edit_key_example' # str |  (opzionale)
-    sso = 'sso_example' # str |  (opzionale)
+    edit_key = 'edit_key_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_comment_text(tenant_id, comment_id, edit_key=edit_key, sso=sso)
+        api_response = api_instance.get_comment_text(tenant_id, comment_id, GetCommentTextOptions(edit_key=edit_key, sso=sso))
         print("The response of PublicApi->get_comment_text:\n")
         pprint(api_response)
     except Exception as e:

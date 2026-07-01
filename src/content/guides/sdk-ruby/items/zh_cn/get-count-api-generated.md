@@ -1,13 +1,14 @@
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| text-search | string | query | 否 |  |
-| byIPFromComment | string | query | 否 |  |
-| filter | string | query | 否 |  |
-| searchFilters | string | query | 否 |  |
-| demo | boolean | query | 否 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filter | string | query | No |  |
+| searchFilters | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## 响应
 
@@ -21,18 +22,19 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 opts = {
-  text_search: 'text_search_example', # 字符串 | 
-  by_ip_from_comment: 'by_ip_from_comment_example', # 字符串 | 
-  filter: 'filter_example', # 字符串 | 
-  search_filters: 'search_filters_example', # 字符串 | 
-  demo: true, # 布尔 | 
-  sso: 'sso_example' # 字符串 | 
+  text_search: 'text_search_example', # String | 
+  by_ip_from_comment: 'by_ip_from_comment_example', # String | 
+  filter: 'filter_example', # String | 
+  search_filters: 'search_filters_example', # String | 
+  demo: true, # Boolean | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.get_count(opts)
+  result = api_instance.get_count(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_count: #{e}"

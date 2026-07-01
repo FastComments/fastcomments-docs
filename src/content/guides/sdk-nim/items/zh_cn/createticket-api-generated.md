@@ -1,32 +1,23 @@
 ## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| userId | string | 否 |  |
-| createTicketBody | CreateTicketBody | 否 |  |
+| tenantId | string | Yes |  |
+| userId | string | No |  |
+| createTicketBody | CreateTicketBody | No |  |
 
 ## 响应
 
-返回: [`Option[CreateTicketResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_ticket_response.nim)
+返回：[`Option[CreateTicketResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_ticket_response.nim)
 
 ## 示例
 
 [inline-code-attrs-start title = 'createTicket 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let body = CreateTicketBody(
-  subject = "Comment moderation issue",
-  message = "Several abusive comments reported on article, please review and moderate.",
-  tags = @["moderation", "abuse", "urgent"],
-  url = "https://news.example.com/world/2026-election",
-  priority = "high"
-)
-
-let (response, httpResponse) = client.createTicket(tenantId = "my-tenant-123", userId = "user-789", createTicketBody = body)
-
-if response.isSome:
-  let ticket = response.get()
-  echo "Created ticket ID: ", ticket.id
+let tenantId = "my-tenant-123"
+let userId = "user-456"
+let ticketBody = CreateTicketBody()
+let (responseOpt, httpResponse) = client.createTicket(tenantId = tenantId, userId = userId, createTicketBody = ticketBody)
+if responseOpt.isSome:
+  let ticketResponse = responseOpt.get()
 [inline-code-end]
-
----

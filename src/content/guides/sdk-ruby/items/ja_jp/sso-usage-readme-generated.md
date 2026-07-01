@@ -2,7 +2,6 @@
 
 ```ruby
 require 'fastcomments'
-require 'fastcomments-client'
 
 # シンプル SSO トークンを作成
 user = FastComments::SSO::SimpleSSOUserData.new(
@@ -16,14 +15,14 @@ token = sso.create_token
 
 puts "SSO Token: #{token}"
 
-# SSO トークンを使用して認証された API コールを行う
+# 認証された API 呼び出しを行うために SSO トークンを使用
 config = FastCommentsClient::Configuration.new
 api_client = FastCommentsClient::ApiClient.new(config)
 public_api = FastCommentsClient::PublicApi.new(api_client)
 
 response = public_api.get_comments_public(
-  tenant_id: 'your-tenant-id',
-  url_id: 'your-page-url-id',
+  'your-tenant-id',
+  'your-page-url-id',
   sso: token
 )
 
@@ -34,7 +33,6 @@ puts "Status: #{response}"
 
 ```ruby
 require 'fastcomments'
-require 'fastcomments-client'
 
 # セキュア SSO トークンを作成
 user = FastComments::SSO::SecureSSOUserData.new(
@@ -50,14 +48,14 @@ token = sso.create_token
 
 puts "Secure SSO Token: #{token}"
 
-# SSO トークンを使用して認証された API コールを行う
+# 認証された API 呼び出しを行うために SSO トークンを使用
 config = FastCommentsClient::Configuration.new
 api_client = FastCommentsClient::ApiClient.new(config)
 public_api = FastCommentsClient::PublicApi.new(api_client)
 
 response = public_api.get_comments_public(
-  tenant_id: 'your-tenant-id',
-  url_id: 'your-page-url-id',
+  'your-tenant-id',
+  'your-page-url-id',
   sso: token
 )
 

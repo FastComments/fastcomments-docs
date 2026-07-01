@@ -1,19 +1,21 @@
-## Параметры
+## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| commentId | string | путь | Да |  |
-| spam | boolean | строка запроса | Нет |  |
-| permNotSpam | boolean | строка запроса | Нет |  |
-| sso | string | строка запроса | Нет |  |
+| Ім'я | Тип | Розташування | Обов'язковий | Опис |
+|------|------|--------------|--------------|------|
+| tenantId | string | query | Так |  |
+| commentId | string | path | Так |  |
+| spam | boolean | query | Ні |  |
+| permNotSpam | boolean | query | Ні |  |
+| broadcastId | string | query | Ні |  |
+| sso | string | query | Ні |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
+Повертає: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример PostSetCommentSpamStatus'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад PostSetCommentSpamStatus'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -25,19 +27,21 @@ import (
 )
 
 func main() {
-	commentId := "commentId_example" // string | 
-	spam := true // bool |  (необязательно)
-	permNotSpam := true // bool |  (необязательно)
-	sso := "sso_example" // string |  (необязательно)
+	tenantId := "tenantId_example" // string |
+	commentId := "commentId_example" // string |
+	spam := true // bool |  (необов'язковий)
+	permNotSpam := true // bool |  (необов'язковий)
+	broadcastId := "broadcastId_example" // string |  (необов'язковий)
+	sso := "sso_example" // string |  (необов'язковий)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostSetCommentSpamStatus(context.Background(), commentId).Spam(spam).PermNotSpam(permNotSpam).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostSetCommentSpamStatus(context.Background(), commentId).TenantId(tenantId).Spam(spam).PermNotSpam(permNotSpam).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostSetCommentSpamStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// ответ от `PostSetCommentSpamStatus`: APIEmptyResponse
+	// відповідь від `PostSetCommentSpamStatus`: APIEmptyResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostSetCommentSpamStatus`: %v\n", resp)
 }
 [inline-code-end]

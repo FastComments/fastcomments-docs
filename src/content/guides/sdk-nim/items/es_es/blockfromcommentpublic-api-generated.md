@@ -1,11 +1,11 @@
 ## Parámetros
 
-| Nombre | Tipo | Obligatorio | Descripción |
+| Nombre | Tipo | Requerido | Descripción |
 |------|------|----------|-------------|
-| tenantId | string | Sí |  |
-| commentId | string | Sí |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
 | publicBlockFromCommentParams | PublicBlockFromCommentParams | No |  |
-| sso | string | No |  |
+| sso | string = "" | No |  |
 
 ## Respuesta
 
@@ -13,28 +13,15 @@ Devuelve: [`Option[BlockSuccess]`](https://github.com/FastComments/fastcomments-
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de blockFromCommentPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo blockFromCommentPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let publicParams = PublicBlockFromCommentParams(
-  reason = "Repeated spam links",
-  durationMinutes = 1440,
-  blockAll = true,
-  notifyUser = false,
-  tags = @["spam", "auto-block"]
-)
-
-let (response, httpResponse) = client.blockFromCommentPublic(
+let (blockOpt, httpResp) = client.blockFromCommentPublic(
   tenantId = "my-tenant-123",
-  commentId = "comment-98765",
-  publicBlockFromCommentParams = publicParams,
+  commentId = "cmt-456789",
+  publicBlockFromCommentParams = PublicBlockFromCommentParams(),
   sso = ""
 )
 
-if response.isSome:
-  let blockResult = response.get()
-  echo "Block succeeded: ", $blockResult
-else:
-  echo "Block failed, HTTP status: ", $httpResponse.status
+if blockOpt.isSome:
+  let block = blockOpt.get()
 [inline-code-end]
-
----

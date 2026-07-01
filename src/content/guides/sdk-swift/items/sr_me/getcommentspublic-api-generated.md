@@ -4,7 +4,7 @@ urlId
 
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Da |  |
 | urlId | string | query | Da |  |
@@ -37,45 +37,45 @@ urlId
 
 ## Odgovor
 
-Vraća: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetCommentsResponseWithPresencePublicComment.swift)
+Returns: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetCommentsResponseWithPresencePublicComment.swift)
 
 ## Primjer
 
 [inline-code-attrs-start title = 'getCommentsPublic Primjer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sljedeći primjeri koda su još u beta fazi. Za bilo koji problem, prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sljedeći primjeri koda su još u beta fazi. Za bilo koji problem, molimo prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
-let page = 987 // Int |  (opciono)
-let direction = SortDirections() // SortDirections |  (opciono)
-let sso = "sso_example" // String |  (opciono)
-let skip = 987 // Int |  (opciono)
-let skipChildren = 987 // Int |  (opciono)
-let limit = 987 // Int |  (opciono)
-let limitChildren = 987 // Int |  (opciono)
-let countChildren = true // Bool |  (opciono)
-let fetchPageForCommentId = "fetchPageForCommentId_example" // String |  (opciono)
-let includeConfig = true // Bool |  (opciono)
-let countAll = true // Bool |  (opciono)
-let includei10n = true // Bool |  (opciono)
-let locale = "locale_example" // String |  (opciono)
-let modules = "modules_example" // String |  (opciono)
-let isCrawler = true // Bool |  (opciono)
-let includeNotificationCount = true // Bool |  (opciono)
-let asTree = true // Bool |  (opciono)
-let maxTreeDepth = 987 // Int |  (opciono)
-let useFullTranslationIds = true // Bool |  (opciono)
-let parentId = "parentId_example" // String |  (opciono)
-let searchText = "searchText_example" // String |  (opciono)
-let hashTags = ["inner_example"] // [String] |  (opciono)
-let userId = "userId_example" // String |  (opciono)
-let customConfigStr = "customConfigStr_example" // String |  (opciono)
-let afterCommentId = "afterCommentId_example" // String |  (opciono)
-let beforeCommentId = "beforeCommentId_example" // String |  (opciono)
+let page = 987 // Int |  (optional)
+let direction = SortDirections() // SortDirections |  (optional)
+let sso = "sso_example" // String |  (optional)
+let skip = 987 // Int |  (optional)
+let skipChildren = 987 // Int |  (optional)
+let limit = 987 // Int |  (optional)
+let limitChildren = 987 // Int |  (optional)
+let countChildren = true // Bool |  (optional)
+let fetchPageForCommentId = "fetchPageForCommentId_example" // String |  (optional)
+let includeConfig = true // Bool |  (optional)
+let countAll = true // Bool |  (optional)
+let includei10n = true // Bool |  (optional)
+let locale = "locale_example" // String |  (optional)
+let modules = "modules_example" // String |  (optional)
+let isCrawler = true // Bool |  (optional)
+let includeNotificationCount = true // Bool |  (optional)
+let asTree = true // Bool |  (optional)
+let maxTreeDepth = 987 // Int |  (optional)
+let useFullTranslationIds = true // Bool |  (optional)
+let parentId = "parentId_example" // String |  (optional)
+let searchText = "searchText_example" // String |  (optional)
+let hashTags = ["inner_example"] // [String] |  (optional)
+let userId = "userId_example" // String |  (optional)
+let customConfigStr = "customConfigStr_example" // String |  (optional)
+let afterCommentId = "afterCommentId_example" // String |  (optional)
+let beforeCommentId = "beforeCommentId_example" // String |  (optional)
 
-PublicAPI.getCommentsPublic(tenantId: tenantId, urlId: urlId, page: page, direction: direction, sso: sso, skip: skip, skipChildren: skipChildren, limit: limit, limitChildren: limitChildren, countChildren: countChildren, fetchPageForCommentId: fetchPageForCommentId, includeConfig: includeConfig, countAll: countAll, includei10n: includei10n, locale: locale, modules: modules, isCrawler: isCrawler, includeNotificationCount: includeNotificationCount, asTree: asTree, maxTreeDepth: maxTreeDepth, useFullTranslationIds: useFullTranslationIds, parentId: parentId, searchText: searchText, hashTags: hashTags, userId: userId, customConfigStr: customConfigStr, afterCommentId: afterCommentId, beforeCommentId: beforeCommentId) { (response, error) in
+PublicAPI.getCommentsPublic(tenantId: tenantId, urlId: urlId, options: PublicAPI.GetCommentsPublicOptions(page: page, direction: direction, sso: sso, skip: skip, skipChildren: skipChildren, limit: limit, limitChildren: limitChildren, countChildren: countChildren, fetchPageForCommentId: fetchPageForCommentId, includeConfig: includeConfig, countAll: countAll, includei10n: includei10n, locale: locale, modules: modules, isCrawler: isCrawler, includeNotificationCount: includeNotificationCount, asTree: asTree, maxTreeDepth: maxTreeDepth, useFullTranslationIds: useFullTranslationIds, parentId: parentId, searchText: searchText, hashTags: hashTags, userId: userId, customConfigStr: customConfigStr, afterCommentId: afterCommentId, beforeCommentId: beforeCommentId)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -86,3 +86,5 @@ PublicAPI.getCommentsPublic(tenantId: tenantId, urlId: urlId, page: page, direct
     }
 }
 [inline-code-end]
+
+---

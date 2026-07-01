@@ -1,31 +1,31 @@
-## Параметри
+## Параметры
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Так |  |
-| yearNumber | number | query | Ні |  |
-| monthNumber | number | query | Ні |  |
-| dayNumber | number | query | Ні |  |
-| skip | number | query | Ні |  |
+| tenantId | string | query | Yes |  |
+| yearNumber | number | query | No |  |
+| monthNumber | number | query | No |  |
+| dayNumber | number | query | No |  |
+| skip | number | query | No |  |
 
-## Відповідь
+## Ответ
 
-Повертає: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTenantDailyUsagesResponse.swift)
+Возвращает: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTenantDailyUsagesResponse.swift)
 
-## Приклад
+## Пример
 
-[inline-code-attrs-start title = 'Приклад getTenantDailyUsages'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getTenantDailyUsages'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Наведені приклади коду досі перебувають у бета-версії. У разі будь-якої проблеми, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следующие образцы кода находятся в бета‑версии. При возникновении проблем, пожалуйста, сообщайте по адресу http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let yearNumber = 987 // Double |  (необов'язково)
-let monthNumber = 987 // Double |  (необов'язково)
-let dayNumber = 987 // Double |  (необов'язково)
-let skip = 987 // Double |  (необов'язково)
+let yearNumber = 987 // Double |  (optional)
+let monthNumber = 987 // Double |  (optional)
+let dayNumber = 987 // Double |  (optional)
+let skip = 987 // Double |  (optional)
 
-DefaultAPI.getTenantDailyUsages(tenantId: tenantId, yearNumber: yearNumber, monthNumber: monthNumber, dayNumber: dayNumber, skip: skip) { (response, error) in
+DefaultAPI.getTenantDailyUsages(tenantId: tenantId, options: DefaultAPI.GetTenantDailyUsagesOptions(yearNumber: yearNumber, monthNumber: monthNumber, dayNumber: dayNumber, skip: skip)) { (response, error) in
     guard error == nil else {
         print(error)
         return

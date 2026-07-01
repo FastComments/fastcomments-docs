@@ -4,9 +4,9 @@ go get github.com/fastcomments/fastcomments-go
 
 ### Korišćenje API klijenta
 
-#### Public API (Bez autentifikacije)
+#### Javni API (Bez autentifikacije)
 
-PublicAPI omogućava neautentifikovan pristup javnim endpointima:
+PublicAPI omogućava neautentifikovan pristup javnim krajnjim tačkama:
 
 ```go
 package main
@@ -36,9 +36,9 @@ func main() {
 }
 ```
 
-#### Default API (Zahteva API ključ)
+#### Podrazumevani API (Zahteva API ključ)
 
-DefaultAPI zahteva autentifikaciju pomoću vašeg API ključa:
+DefaultAPI zahteva autentifikaciju korišćenjem vašeg API ključa:
 
 ```go
 package main
@@ -53,7 +53,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // Kreiraj autentifikovan kontekst pomoću API ključa
+    // Kreiraj autentifikovani kontekst sa API ključem
     auth := context.WithValue(
         context.Background(),
         client.ContextAPIKeys,
@@ -77,9 +77,9 @@ func main() {
 }
 ```
 
-#### Moderation API (Kontrolna tabla moderatora)
+#### Moderacioni API (Moderator kontrolna tabla)
 
-ModerationAPI pokreće kontrolnu tablu moderatora. Pruža metode za listanje, brojanje, pretragu i izvoz komentara, akcije moderacije (uklanjanje/obnavljanje, označavanje, postavljanje statusa za pregled/spam/odobrenje, glasovi, ponovo otvaranje/zatvaranje niti), zabrane (zabrana komentarisanja, poništavanje, pregledi pre zabrane, status zabrane i podešavanja, brojevi zabranjenih korisnika), i značke i poverenje (dodela/uklanjanje znački, ručne značke, dobijanje/postavljanje faktora poverenja, interni profil korisnika). Sve Moderation metode prihvataju `sso` parametar za SSO-autentifikovane moderatore:
+ModerationAPI pruža opsežan skup live i brzih moderacionih API-ja. Sve metode moderacije prihvataju `sso` parametar i mogu se autentifikovati putem SSO‑a ili FastComments.com sesijske kolačiće:
 
 ```go
 package main
@@ -94,7 +94,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // Lista komentara za moderaciju koristeći ModerationAPI
+    // Navedi komentare za moderaciju koristeći ModerationAPI
     response, httpResp, err := apiClient.ModerationAPI.GetApiComments(
         context.Background(),
     ).Sso("your-sso-token").Execute()
@@ -107,3 +107,4 @@ func main() {
     fmt.Printf("Comments: %+v\n", response)
 }
 ```
+---

@@ -1,14 +1,15 @@
+---
 ## Parameter
 
-| Name | Typ | Location | Erforderlich | Beschreibung |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Ja |  |
-| postIds | array | query | Nein |  |
-| sso | string | query | Nein |  |
+| tenantId | string | path | Yes |  |
+| postIds | array | query | No |  |
+| sso | string | query | No |  |
 
 ## Antwort
 
-Gibt zurück: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UserReactsResponse.php)
+Rückgabe: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UserReactsResponse.php)
 
 ## Beispiel
 
@@ -24,14 +25,20 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     // Dies ist optional, `GuzzleHttp\Client` wird standardmäßig verwendet.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$post_ids = array('post_ids_example'); // string[]
-$sso = 'sso_example'; // string
+$options = [
+    'post_ids' => array('post_ids_example'), // string[]
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->getUserReactsPublic($tenant_id, $post_ids, $sso);
+    $result = $apiInstance->getUserReactsPublic($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getUserReactsPublic: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

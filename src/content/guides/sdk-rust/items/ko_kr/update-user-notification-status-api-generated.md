@@ -1,29 +1,31 @@
-## 매개변수
+## Parameters
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 타입 | 필요 | 설명 |
 |------|------|----------|-------------|
 | tenant_id | String | 예 |  |
 | notification_id | String | 예 |  |
 | new_status | String | 예 |  |
 | sso | String | 아니오 |  |
 
-## 응답
+## Response
 
 반환: [`UpdateUserNotificationStatusResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/update_user_notification_status_response.rs)
 
-## 예제
+## Example
 
-[inline-code-attrs-start title = 'update_user_notification_status 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'update_user_notification_status 예시'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_update() -> Result<UpdateUserNotificationStatusResponse, Error> {
-    let params: UpdateUserNotificationStatusParams = UpdateUserNotificationStatusParams {
+async fn run_update() -> Result<(), Error> {
+    let params = UpdateUserNotificationStatusParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        notification_id: "notifications/8472".to_string(),
-        new_status: "dismissed".to_string(),
-        sso: Some("sso-user-98765-token".to_string()),
+        notification_id: "news/article".to_string(),
+        new_status: "read".to_string(),
+        sso: Some("sso-token-123".to_string()),
     };
-    let response: UpdateUserNotificationStatusResponse =
+    let _response: UpdateUserNotificationStatusResponse =
         update_user_notification_status(&configuration, params).await?;
-    Ok(response)
+    Ok(())
 }
 [inline-code-end]
+
+---

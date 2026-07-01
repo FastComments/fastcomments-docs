@@ -2,7 +2,7 @@
 
 | Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
+| tenantId | string | Yes |  |
 
 ## Odgovor
 
@@ -12,10 +12,11 @@ Vraća: [`Option[GetPagesAPIResponse]`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'Primjer getPages'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getPages(tenantId = "news-site-456")
-if response.isSome:
-  let pages = response.get()
-  echo "Received pages response: ", pages
+let (pagesOpt, httpResp) = client.getPages(tenantId = "my-tenant-123")
+if pagesOpt.isSome:
+  let pages = pagesOpt.get()
+  echo pages
 else:
-  echo "No pages returned. HTTP response: ", httpResponse
+  echo "No pages returned"
+echo httpResp
 [inline-code-end]

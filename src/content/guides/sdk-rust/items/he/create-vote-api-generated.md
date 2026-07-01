@@ -2,11 +2,11 @@
 
 | שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenant_id | String | כן |  |
-| comment_id | String | כן |  |
-| direction | String | כן |  |
-| user_id | String | לא |  |
-| anon_user_id | String | לא |  |
+| tenant_id | String | Yes |  |
+| comment_id | String | Yes |  |
+| direction | String | Yes |  |
+| user_id | String | No |  |
+| anon_user_id | String | No |  |
 
 ## תגובה
 
@@ -14,19 +14,17 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-create_vote'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_vote דוגמה'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<VoteResponse, Error> {
-    let params: CreateVoteParams = CreateVoteParams {
+async fn submit_vote() -> Result<(), Error> {
+    let params = CreateVoteParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        comment_id: "news/article/12345/comment-9876".to_string(),
+        comment_id: "news/article/12345".to_string(),
         direction: "up".to_string(),
         user_id: Some("user-42".to_string()),
-        anon_user_id: None,
+        anon_user_id: Some("anon-99".to_string()),
     };
-    let vote_response: VoteResponse = create_vote(&configuration, params).await?;
-    Ok(vote_response)
+    let _response = create_vote(&config, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

@@ -1,18 +1,19 @@
-## Parameters
+## Параметры
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Имя | Тип | Местоположение | Обязательно | Описание |
+|------|------|----------------|-------------|----------|
+| tenantId | string | query | Да |  |
 | commentId | string | path | Да |  |
 | includeByUserIdAndEmail | boolean | query | Нет |  |
 | includeByIP | boolean | query | Нет |  |
 | includeByEmailDomain | boolean | query | Нет |  |
 | sso | string | query | Нет |  |
 
-## Response
+## Ответ
 
 Возвращает: [`PreBanSummary`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_pre_ban_summary.go)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Пример GetPreBanSummary'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -26,7 +27,8 @@ import (
 )
 
 func main() {
-	commentId := "commentId_example" // string | 
+	tenantId := "tenantId_example" // string |
+	commentId := "commentId_example" // string |
 	includeByUserIdAndEmail := true // bool |  (необязательно)
 	includeByIP := true // bool |  (необязательно)
 	includeByEmailDomain := true // bool |  (необязательно)
@@ -34,7 +36,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetPreBanSummary(context.Background(), commentId).IncludeByUserIdAndEmail(includeByUserIdAndEmail).IncludeByIP(includeByIP).IncludeByEmailDomain(includeByEmailDomain).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetPreBanSummary(context.Background(), commentId).TenantId(tenantId).IncludeByUserIdAndEmail(includeByUserIdAndEmail).IncludeByIP(includeByIP).IncludeByEmailDomain(includeByEmailDomain).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetPreBanSummary``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

@@ -16,24 +16,31 @@ afterId
 
 ## Respuesta
 
-Devuelve: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PublicFeedPostsResponse.ts)
+Devuelve: [`GetFeedPostsPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetFeedPostsPublicResponse.ts)
 
 ## Ejemplo
 
 [inline-code-attrs-start title = 'Ejemplo de getFeedPostsPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "fc_tenant_12345";
-  const afterId: string = "feedPost_98765";
+async function example() {
+  const tenantId: string = "tenant_12345";
+  const afterId: string = "post_9876";
   const limit: number = 20;
-  const tags: Array<string> = ["announcement", "product"];
-  const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example";
+  const tags: string[] = ["news", "tech"];
+  const sso: string = "userToken123";
   const isCrawler: boolean = false;
   const includeUserInfo: boolean = true;
-
-  const response: PublicFeedPostsResponse = await getFeedPostsPublic(tenantId, afterId, limit, tags, sso, isCrawler, includeUserInfo);
-  console.log(response);
-})();
+  const response: GetFeedPostsPublicResponse = await getFeedPostsPublic(
+    tenantId,
+    afterId,
+    limit,
+    tags,
+    sso,
+    isCrawler,
+    includeUserInfo
+  );
+}
+example();
 [inline-code-end]
 
 ---

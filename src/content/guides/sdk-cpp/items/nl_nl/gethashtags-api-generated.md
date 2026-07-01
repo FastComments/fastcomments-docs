@@ -1,7 +1,7 @@
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
-|------|------|----------|-------------|
+| Naam | Type | Verplicht | Beschrijving |
+|------|------|-----------|--------------|
 | tenantId | string | Ja |  |
 | page | double | Nee |  |
 
@@ -11,18 +11,18 @@ Retourneert: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomment
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'getHashTags Voorbeeld'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getHashTags voorbeeld'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-boost::optional<double> page = 1.0;
-api->getHashTags(tenantId, page).then([](pplx::task<std::shared_ptr<GetHashTagsResponse>> t) {
+auto tenantId = utility::string_t(U("my-tenant-123"));
+boost::optional<double> page = 2.0;
+
+api->getHashTags(tenantId, page).then([](pplx::task<std::shared_ptr<GetHashTagsResponse>> task) {
     try {
-        auto resp = t.get();
-        if (!resp) resp = std::make_shared<GetHashTagsResponse>();
+        auto resultPtr = task.get();
+        auto response = std::make_shared<GetHashTagsResponse>(*resultPtr);
+        // gebruik response
     } catch (const std::exception&) {
-        auto resp = std::make_shared<GetHashTagsResponse>();
+        // fout afhandelen
     }
 });
 [inline-code-end]
-
----

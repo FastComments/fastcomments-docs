@@ -16,20 +16,18 @@ Returns: [`PatchSsoUserApiResponse`](https://github.com/FastComments/fastcomment
 [inline-code-attrs-start title = 'patch_sso_user Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn run() -> Result<(), Error> {
-    let params: PatchSsoUserParams = PatchSsoUserParams {
-        tenant_id: String::from("acme-corp-tenant"),
-        id: String::from("user-1234"),
-        update_apisso_user_data: models::UpdateApissoUserData {
-            email: String::from("jane.doe@acme.com"),
-            display_name: Some(String::from("Jane Doe")),
-            external_id: Some(String::from("sso-9876")),
-            roles: Some(vec![String::from("editor")]),
-            active: Some(true),
-        },
+    let config = configuration::Configuration::default();
+    let update_data = models::UpdateApissoUserData {
+        email: Some("john.doe@example.com".to_string()),
+        name: Some("John Doe".to_string()),
+    };
+    let params = PatchSsoUserParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "user-12345".to_string(),
+        update_apisso_user_data: update_data,
         update_comments: Some(true),
     };
-
-    let patched_user: PatchSsoUserApiResponse = patch_sso_user(&configuration, params).await?;
+    let _response: PatchSsoUserApiResponse = patch_sso_user(&config, params).await?;
     Ok(())
 }
 [inline-code-end]

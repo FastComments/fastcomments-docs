@@ -1,6 +1,6 @@
 ## Параметры
 
-| Имя | Тип | Обязательный | Описание |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
 | tenant_id | String | Да |  |
 | skip | f64 | Нет |  |
@@ -11,15 +11,14 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример использования get_tenant_users'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример get_tenant_users'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example() -> Result<(), Error> {
-    let params: GetTenantUsersParams = GetTenantUsersParams {
+    let params = GetTenantUsersParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        skip: Some(20.0),
+        skip: Some(10.0),
     };
-    let response: GetTenantUsersResponse = get_tenant_users(&configuration, params).await?;
-    let _users: GetTenantUsersResponse = response;
+    let _response = get_tenant_users(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

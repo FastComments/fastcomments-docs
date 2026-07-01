@@ -1,7 +1,7 @@
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
 | tenantId | string | Tak |  |
 | email | string | Nie |  |
 
@@ -11,14 +11,10 @@ Zwraca: [`Option[GetSSOUserByEmailAPIResponse]`](https://github.com/FastComments
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład getSSOUserByEmail'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSSOUserByEmail Przykład'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSSOUserByEmail(tenantId = "my-tenant-123", email = "alice@newsco.com")
-if response.isSome:
-  let ssoUser = response.get()
-  echo "SSO user found: ", ssoUser.email
-else:
-  echo "No SSO user found. HTTP status: ", httpResponse.status
+let (optResp, httpResp) = client.getSSOUserByEmail(tenantId = "my-tenant-123", email = "john.doe@example.com")
+if optResp.isSome:
+  let user = optResp.get()
+  discard user
 [inline-code-end]
-
----

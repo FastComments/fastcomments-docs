@@ -5,8 +5,7 @@
 | tenantId | string | Yes |  |
 | commentId | string | Yes |  |
 | direction | string | No |  |
-| userId | string | No |  |
-| anonUserId | string | No |  |
+| options | CreateVoteOptions | No |  |
 
 ## Response
 
@@ -16,16 +15,14 @@ Returns: [`Option[VoteResponse]`](https://github.com/FastComments/fastcomments-n
 
 [inline-code-attrs-start title = 'createVote Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.createVote(
+let (voteOpt, httpResp) = client.createVote(
   tenantId = "my-tenant-123",
-  commentId = "cmt-987654",
+  commentId = "comment-7890",
   direction = "up",
-  userId = "user-42",
-  anonUserId = ""
+  options = CreateVoteOptions()
 )
-if response.isSome:
-  let vote = response.get()
-  echo "Vote created:", vote
-else:
-  echo "No vote returned"
+
+if voteOpt.isSome:
+  let vote = voteOpt.get()
+  echo vote
 [inline-code-end]

@@ -1,17 +1,17 @@
-Перелік сторінок для тенанта. Використовується настільним клієнтом FChat для заповнення його списку кімнат.
-Потребує, щоб `enableFChat` було true у визначеній кастомній конфігурації для кожної сторінки.
-Сторінки, що вимагають SSO, фільтруються відповідно до групового доступу користувача, який робить запит.
+Список сторінок для орендаря. Використовується настільним клієнтом FChat для заповнення списку його кімнат.  
+Вимагає, щоб `enableFChat` був встановлений у true у розв’язаній кастомній конфігурації для кожної сторінки.  
+Сторінки, які вимагають SSO, фільтруються згідно з груповим доступом запитуючого користувача.
 
 ## Параметри
 
-| Назва | Type | Обов'язкове | Опис |
+| Назва | Тип | Обов’язково | Опис |
 |------|------|----------|-------------|
-| tenant_id | String | Так |  |
-| cursor | String | Ні |  |
-| limit | i32 | Ні |  |
-| q | String | Ні |  |
-| sort_by | models::PagesSortBy | Ні |  |
-| has_comments | bool | Ні |  |
+| tenant_id | String | Yes |  |
+| cursor | String | No |  |
+| limit | i32 | No |  |
+| q | String | No |  |
+| sort_by | models::PagesSortBy | No |  |
+| has_comments | bool | No |  |
 
 ## Відповідь
 
@@ -19,17 +19,18 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад get_pages_public'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_pages_public Приклад'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: GetPagesPublicParams = GetPagesPublicParams {
-    tenant_id: String::from("acme-corp-tenant"),
-    cursor: Some(String::from("cursor_eyJwZl9pZCI6IjEyMyJ9")),
-    limit: Some(50),
-    q: Some(String::from("tag:release status:published")),
-    sort_by: Some(models::PagesSortBy::CreatedAt),
-    has_comments: Some(true),
-};
-let response: GetPublicPagesResponse = get_pages_public(&configuration, params).await?;
+async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetPagesPublicParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        cursor: Some("page_20".to_string()),
+        limit: Some(50),
+        q: Some("news/article".to_string()),
+        sort_by: Some(models::PagesSortBy::CreatedDesc),
+        has_comments: Some(true),
+    };
+    let _response = get_pages_public(configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]
-
----

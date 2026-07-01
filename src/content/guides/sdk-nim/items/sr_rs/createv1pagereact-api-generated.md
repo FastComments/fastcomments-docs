@@ -1,30 +1,27 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Обавезно | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| urlId | string | Да |  |
-| title | string | Не |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| title | string = "" | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[CreateV1PageReact]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_v1_page_react.nim)
+Vraća: [`Option[CreateV1PageReact]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_v1_page_react.nim)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'createV1PageReact пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createV1PageReact Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.createV1PageReact(
+let (pageOpt, httpResp) = client.createV1PageReact(
   tenantId = "my-tenant-123",
-  urlId = "news/2026/market-rally",
-  title = "Breaking News: Markets Rally Today"
+  urlId = "news/article-456",
+  title = "Breaking News: Nim Takes Over"
 )
 
-if response.isSome:
-  let pageReact = response.get()
-  echo "Page react created: ", pageReact
-else:
-  echo "Failed to create page react: ", httpResponse
+if pageOpt.isSome:
+  let page = pageOpt.get()
+  discard page
+  discard httpResp
 [inline-code-end]
-
----

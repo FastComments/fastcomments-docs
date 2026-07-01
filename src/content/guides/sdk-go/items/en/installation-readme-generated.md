@@ -79,13 +79,7 @@ func main() {
 
 #### Moderation API (Moderator Dashboard)
 
-The ModerationAPI powers the moderator dashboard. It provides methods for listing,
-counting, searching, and exporting comments, moderation actions (remove/restore,
-flag, set review/spam/approval status, votes, reopen/close threads), bans (ban from
-comment, undo, pre-ban summaries, ban status and preferences, banned-user counts),
-and badges & trust (award/remove badges, manual badges, get/set trust factor, user
-internal profile). All Moderation methods accept an `sso` parameter for
-SSO-authenticated moderators:
+The ModerationAPI provides an extensive suite of live and fast moderation APIs. All moderation methods accept an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie:
 
 ```go
 package main

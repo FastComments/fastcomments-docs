@@ -1,13 +1,12 @@
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
-|------|------|---------|--------------|
+| Naam | Type | Verplicht | Beschrijving |
+|------|------|-----------|--------------|
 | tenantId | string | Ja |  |
 | commentId | string | Ja |  |
 | broadcastId | string | Nee |  |
 | commentTextUpdateRequest | CommentTextUpdateRequest | Nee |  |
-| editKey | string | Nee |  |
-| sso | string | Nee |  |
+| options | SetCommentTextOptions | Nee |  |
 
 ## Respons
 
@@ -17,17 +16,14 @@ Retourneert: [`Option[PublicAPISetCommentTextResponse]`](https://github.com/Fast
 
 [inline-code-attrs-start title = 'setCommentText Voorbeeld'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
+let commentUpdate = CommentTextUpdateRequest(text: "Updated comment text")
+let opts = SetCommentTextOptions()
 let (response, httpResponse) = client.setCommentText(
   tenantId = "my-tenant-123",
-  commentId = "cmt-456789",
-  broadcastId = "",
-  commentTextUpdateRequest = CommentTextUpdateRequest(text: "Updated comment text to fix a typo and clarify meaning."),
-  editKey = "",
-  sso = ""
-)
+  commentId = "cmt-456",
+  broadcastId = "broadcast-789",
+  commentTextUpdateRequest = commentUpdate,
+  options = opts)
 if response.isSome:
   let result = response.get()
-  discard result
 [inline-code-end]
-
----

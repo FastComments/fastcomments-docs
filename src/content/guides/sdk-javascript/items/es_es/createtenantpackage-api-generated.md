@@ -1,31 +1,29 @@
 ## Parámetros
 
-| Nombre | Tipo | Obligatorio | Descripción |
-|------|------|----------|-------------|
+| Nombre | Tipo | Requerido | Descripción |
+|--------|------|-----------|-------------|
 | tenantId | string | Sí |  |
 | createTenantPackageBody | CreateTenantPackageBody | Sí |  |
 
 ## Respuesta
 
-Devuelve: [`CreateTenantPackageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantPackageResponse.ts)
+Devuelve: [`CreateTenantPackageResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantPackageResponse1.ts)
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de createTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo createTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function run(): Promise<void> {
-  const tenantId: string = 'tenant_acme_01';
-  const createTenantPackageBody: CreateTenantPackageBody = {
-    packageName: 'Pro Annual',
-    seats: 100,
-    billingCycle: 'annual',
-    autoRenew: true,
-    metadata: { region: 'us-west-2' } // campo de metadatos opcional
-  };
-  const result: CreateTenantPackageResponse = await createTenantPackage(tenantId, createTenantPackageBody);
-  console.log(result);
-}
-run();
-[inline-code-end]
+(async () => {
+  const tenantId: string = "tenant-9876";
 
----
+  const body: CreateTenantPackageBody = {
+    packageName: "Standard",
+    quota: 5000,
+    // campo opcional
+    description: "Standard package for medium traffic",
+  };
+
+  const result: CreateTenantPackageResponse1 = await createTenantPackage(tenantId, body);
+  console.log(result);
+})();
+[inline-code-end]

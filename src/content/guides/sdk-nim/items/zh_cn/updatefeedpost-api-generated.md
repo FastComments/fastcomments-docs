@@ -1,6 +1,6 @@
 ## 参数
 
-| 名称 | 类型 | 必填 | 描述 |
+| 名称 | 类型 | 必需 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | id | string | 否 |  |
@@ -8,26 +8,26 @@
 
 ## 响应
 
-返回: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
+返回：[`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## 示例
 
 [inline-code-attrs-start title = 'updateFeedPost 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let feedPost: FeedPost = FeedPost(title: "City Council Approves New Waterfront Park",
-  content: "The council voted 5-2 to approve funding and a timeline for construction.",
-  tags: @["local", "parks", "city"],
-  published: true)
+let feedPost = FeedPost(
+  title: "Breaking News",
+  content: "Updated story content",
+  tags: @["news", "update"]
+)
 
-let (response, httpResponse) = client.updateFeedPost(tenantId = "my-tenant-123", id = "post-456", feedPost = feedPost)
+let (apiRes, httpRes) = client.updateFeedPost(
+  tenantId = "my-tenant-123",
+  id = "post-456",
+  feedPost = feedPost
+)
 
-if response.isSome:
-  let apiResp = response.get()
-  echo "Feed post updated successfully"
-  echo apiResp
-else:
-  echo "Failed to update feed post"
-  echo httpResponse
+if apiRes.isSome:
+  let res = apiRes.get()
 [inline-code-end]
 
 ---

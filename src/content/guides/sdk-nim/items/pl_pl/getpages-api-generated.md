@@ -1,24 +1,22 @@
----
-## Parametry
+## Parameters
 
-| Nazwa | Typ | Wymagane | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Tak |  |
+| tenantId | string | Yes |  |
 
-## Odpowiedź
+## Response
 
 Zwraca: [`Option[GetPagesAPIResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_pages_api_response.nim)
 
-## Przykład
+## Example
 
 [inline-code-attrs-start title = 'Przykład getPages'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getPages(tenantId = "news-site-456")
-if response.isSome:
-  let pages = response.get()
-  echo "Received pages response: ", pages
+let (pagesOpt, httpResp) = client.getPages(tenantId = "my-tenant-123")
+if pagesOpt.isSome:
+  let pages = pagesOpt.get()
+  echo pages
 else:
-  echo "No pages returned. HTTP response: ", httpResponse
+  echo "No pages returned"
+echo httpResp
 [inline-code-end]
-
----

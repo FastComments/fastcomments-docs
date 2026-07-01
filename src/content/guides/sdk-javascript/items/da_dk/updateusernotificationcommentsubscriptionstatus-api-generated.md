@@ -1,15 +1,14 @@
----
-Aktivér eller deaktiver notifikationer for en specifik kommentar.
+Enable or disable notifications for a specific comment.
 
 ## Parametre
 
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| notificationId | string | Ja |  |
-| optedInOrOut | UpdateUserNotificationCommentSubscriptionStatusOptedInOrOutEnum | Ja |  |
-| commentId | string | Ja |  |
-| sso | string | Nej |  |
+| tenantId | string | Yes |  |
+| notificationId | string | Yes |  |
+| optedInOrOut | UpdateUserNotificationCommentSubscriptionStatusOptedInOrOutEnum | Yes |  |
+| commentId | string | Yes |  |
+| sso | string | No |  |
 
 ## Svar
 
@@ -17,16 +16,31 @@ Returnerer: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på updateUserNotificationCommentSubscriptionStatus'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserNotificationCommentSubscriptionStatus Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_92a1c4';
-const notificationId: string = 'notif_3f7b2e9a-4d1b-11ec-8d3d-0242ac130003';
+const tenantId: string = "tenant_12345";
+const notificationId: string = "notif_9876";
+const commentId: string = "comment_abc123";
 const optedInOrOut: UpdateUserNotificationCommentSubscriptionStatusOptedInOrOutEnum =
-  UpdateUserNotificationCommentSubscriptionStatusOptedInOrOutEnum.OPTED_IN;
-const commentId: string = 'cmt_8f4b2e7a';
-const sso: string | undefined = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fake.payload';
-const response: UpdateUserNotificationCommentSubscriptionStatusResponse =
-  await updateUserNotificationCommentSubscriptionStatus(tenantId, notificationId, optedInOrOut, commentId, sso);
+  UpdateUserNotificationCommentSubscriptionStatusOptedInOrOutEnum.OptIn;
+const sso: string = "ssoTokenXYZ";
+
+const responseWithSso: UpdateUserNotificationCommentSubscriptionStatusResponse =
+  await updateUserNotificationCommentSubscriptionStatus(
+    tenantId,
+    notificationId,
+    optedInOrOut,
+    commentId,
+    sso
+  );
+
+const responseWithoutSso: UpdateUserNotificationCommentSubscriptionStatusResponse =
+  await updateUserNotificationCommentSubscriptionStatus(
+    tenantId,
+    notificationId,
+    optedInOrOut,
+    commentId
+  );
 [inline-code-end]
 
 ---

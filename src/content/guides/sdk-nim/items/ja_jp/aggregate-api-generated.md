@@ -1,33 +1,27 @@
----
-ドキュメントを集約します。groupBy が指定されている場合はグループ化し、複数の操作を適用します。sum、countDistinct、avg などの操作が利用可能です。
+Aggregates documents by grouping them (if groupBy is provided) and applying multiple operations.
+Different operations (e.g. sum, countDistinct, avg, etc.) are supported.
 
-## パラメータ
+## Parameters
 
-| 名前 | 型 | 必須 | 説明 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | はい |  |
-| aggregationRequest | AggregationRequest | いいえ |  |
-| parentTenantId | string | いいえ |  |
-| includeStats | bool | いいえ |  |
+| tenantId | string | Yes |  |
+| aggregationRequest | AggregationRequest | No |  |
+| options | AggregateOptions | No |  |
 
-## レスポンス
+## Response
 
-返却: [`Option[AggregateResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_aggregate_response.nim)
+Returns: [`Option[AggregateResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_aggregate_response.nim)
 
-## 例
+## Example
 
-[inline-code-attrs-start title = 'aggregate の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '集計例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.aggregate(
-  tenantId = "my-tenant-123",
-  aggregationRequest = AggregationRequest(groupBy = @["articleId"], metrics = @["commentCount"], filters = @[], limit = 0),
-  parentTenantId = "",
-  includeStats = false
-)
-
-if response.isSome:
-  let agg = response.get()
-  discard agg
+let (aggResp, httpResp) = client.aggregate(tenantId = "my-tenant-123", aggregationRequest = AggregationRequest(), options = AggregateOptions())
+if aggResp.isSome:
+  let response = aggResp.get()
+  echo response
+echo httpResp
 [inline-code-end]
 
 ---

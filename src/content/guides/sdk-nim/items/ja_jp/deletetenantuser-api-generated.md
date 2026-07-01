@@ -1,26 +1,25 @@
 ## パラメータ
 
-| Name | 型 | 必須 | 説明 |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
 | tenantId | string | はい |  |
 | id | string | いいえ |  |
-| deleteComments | string | いいえ |  |
-| commentDeleteMode | string | いいえ |  |
+| options | DeleteTenantUserOptions | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
+返却: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## 例
 
 [inline-code-attrs-start title = 'deleteTenantUser の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteTenantUser(tenantId = "my-tenant-123", id = "user-789", deleteComments = "true", commentDeleteMode = "soft")
+let (response, httpResponse) = client.deleteTenantUser(
+  tenantId = "my-tenant-123",
+  id = "user-456",
+  options = DeleteTenantUserOptions(),
+)
 if response.isSome:
-  let apiResp = response.get()
-  echo "Tenant user deleted, response: ", apiResp
-else:
-  echo "Failed to delete tenant user, HTTP status: ", $httpResponse.status
+  let empty = response.get()
+  echo "User successfully deleted"
 [inline-code-end]
-
----

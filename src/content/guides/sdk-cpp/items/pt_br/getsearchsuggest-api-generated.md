@@ -1,10 +1,9 @@
----
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|----------|-------------|
-| textSearch | string | Não |  |
-| sso | string | Não |  |
+|------|------|--------------|-----------|
+| tenantId | string | Sim |  |
+| options | const GetSearchSuggestOptions& | Sim |  |
 
 ## Resposta
 
@@ -12,20 +11,16 @@ Retorna: [`ModerationSuggestResponse`](https://github.com/FastComments/fastcomme
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getSearchSuggest'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSearchSuggest Exemplo'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> textSearch = utility::string_t(U("preventing spam in comments"));
-boost::optional<utility::string_t> sso = utility::string_t(U("user@example.com"));
-api->getSearchSuggest(textSearch, sso)
-    .then([](pplx::task<std::shared_ptr<ModerationSuggestResponse>> t) {
-        try {
-            auto resp = t.get();
-            if (resp) {
-                auto copy = std::make_shared<ModerationSuggestResponse>(*resp);
-            }
-        } catch (const std::exception&) {
-        }
-    });
+utility::string_t tenantId = U("my-tenant-123");
+GetSearchSuggestOptions opts;
+opts.query = U("search term");
+opts.limit = boost::optional<int>(5);
+opts.includeInactive = boost::optional<bool>(false);
+api->getSearchSuggest(tenantId, opts).then([](pplx::task<std::shared_ptr<ModerationSuggestResponse>> t){
+    try{
+        auto resp = t.get();
+    }catch(const std::exception&){ }
+}).wait();
 [inline-code-end]
-
----

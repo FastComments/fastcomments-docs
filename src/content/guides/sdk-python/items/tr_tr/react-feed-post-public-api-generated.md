@@ -1,7 +1,6 @@
----
 ## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| İsim | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Evet |  |
 | postId | string | path | Evet |  |
@@ -15,24 +14,25 @@ Döndürür: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomme
 
 ## Örnek
 
-[inline-code-attrs-start title = 'react_feed_post_public Örneği'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'react_feed_post_public Örnek'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import ReactFeedPostPublicOptions
 from client.models.react_body_params import ReactBodyParams
 from client.models.react_feed_post_response import ReactFeedPostResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Host'u tanımlamak isteğe bağlıdır ve varsayılan https://fastcomments.com'tur
-# Tüm desteklenen yapılandırma parametrelerinin listesi için configuration.py'ye bakın.
+# Host'u tanımlamak isteğe bağlıdır ve varsayılan olarak https://fastcomments.com adresine ayarlanır
+# Desteklenen tüm yapılandırma parametrelerinin listesini configuration.py dosyasında görebilirsiniz.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# API istemcisi örneği ile bir bağlam açın
+# API istemcisinin bir örneğiyle bir bağlam girin
 with client.ApiClient(configuration) as api_client:
-    # API sınıfından bir örnek oluşturun
+    # API sınıfının bir örneğini oluştur
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     post_id = 'post_id_example' # str | 
@@ -42,7 +42,7 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (isteğe bağlı)
 
     try:
-        api_response = api_instance.react_feed_post_public(tenant_id, post_id, react_body_params, is_undo=is_undo, broadcast_id=broadcast_id, sso=sso)
+        api_response = api_instance.react_feed_post_public(tenant_id, post_id, react_body_params, ReactFeedPostPublicOptions(is_undo=is_undo, broadcast_id=broadcast_id, sso=sso))
         print("The response of PublicApi->react_feed_post_public:\n")
         pprint(api_response)
     except Exception as e:

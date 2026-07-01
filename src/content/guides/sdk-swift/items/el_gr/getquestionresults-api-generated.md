@@ -1,14 +1,14 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ναι |  |
-| urlId | string | query | Όχι |  |
-| userId | string | query | Όχι |  |
-| startDate | string | query | Όχι |  |
-| questionId | string | query | Όχι |  |
-| questionIds | string | query | Όχι |  |
-| skip | number | query | Όχι |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | No |  |
+| userId | string | query | No |  |
+| startDate | string | query | No |  |
+| questionId | string | query | No |  |
+| questionIds | string | query | No |  |
+| skip | number | query | No |  |
 
 ## Απάντηση
 
@@ -18,7 +18,7 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα getQuestionResults'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Τα παρακάτω δείγματα κώδικα είναι ακόμα beta. Για οποιοδήποτε πρόβλημα, αναφέρετε μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
+// Οι παρακάτω δείγματα κώδικα είναι ακόμη σε beta. Για οποιοδήποτε πρόβλημα, παρακαλώ αναφέρετέ το μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -29,7 +29,7 @@ let questionId = "questionId_example" // String |  (προαιρετικό)
 let questionIds = "questionIds_example" // String |  (προαιρετικό)
 let skip = 987 // Double |  (προαιρετικό)
 
-DefaultAPI.getQuestionResults(tenantId: tenantId, urlId: urlId, userId: userId, startDate: startDate, questionId: questionId, questionIds: questionIds, skip: skip) { (response, error) in
+DefaultAPI.getQuestionResults(tenantId: tenantId, options: DefaultAPI.GetQuestionResultsOptions(urlId: urlId, userId: userId, startDate: startDate, questionId: questionId, questionIds: questionIds, skip: skip)) { (response, error) in
     guard error == nil else {
         print(error)
         return

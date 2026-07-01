@@ -1,10 +1,23 @@
 ## Parametri
 
-| Ime | Vrsta | Obvezno | Opis |
+| Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| email | string | Da |  |
+| tenantId | string | Yes |  |
+| email | string | Yes |  |
 
-## Odgovor
+## Odziv
 
-Vrača: [`GetSSOUserByEmailAPIResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetSSOUserByEmailAPIResponse.ts)
+Vrne: [`GetSSOUserByEmailAPIResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetSSOUserByEmailAPIResponse.ts)
+
+## Primer
+
+[inline-code-attrs-start title = 'getSSOUserByEmail Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+async function fetchSSOUser() {
+  const tenantId: string = "tenant_12345";
+  const email: string = "john.doe@example.com";
+
+  const result: GetSSOUserByEmailAPIResponse = await getSSOUserByEmail(tenantId, email);
+  const user: APISSOUser | undefined = result?.user;
+}
+[inline-code-end]

@@ -7,8 +7,7 @@ Different operations (e.g. sum, countDistinct, avg, etc.) are supported.
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | aggregationRequest | AggregationRequest | No |  |
-| parentTenantId | string | No |  |
-| includeStats | bool | No |  |
+| options | AggregateOptions | No |  |
 
 ## Response
 
@@ -18,14 +17,9 @@ Returns: [`Option[AggregateResponse]`](https://github.com/FastComments/fastcomme
 
 [inline-code-attrs-start title = 'aggregate Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.aggregate(
-  tenantId = "my-tenant-123",
-  aggregationRequest = AggregationRequest(groupBy = @["articleId"], metrics = @["commentCount"], filters = @[], limit = 0),
-  parentTenantId = "",
-  includeStats = false
-)
-
-if response.isSome:
-  let agg = response.get()
-  discard agg
+let (aggResp, httpResp) = client.aggregate(tenantId = "my-tenant-123", aggregationRequest = AggregationRequest(), options = AggregateOptions())
+if aggResp.isSome:
+  let response = aggResp.get()
+  echo response
+echo httpResp
 [inline-code-end]

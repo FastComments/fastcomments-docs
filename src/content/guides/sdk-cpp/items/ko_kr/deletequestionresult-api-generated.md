@@ -1,33 +1,35 @@
-## 매개변수
+## Parameters
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| 이름 | 유형 | 필수 | 설명 |
+|------|------|------|------|
 | tenantId | string | 예 |  |
 | id | string | 예 |  |
 
-## 응답
+## Response
 
 반환: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'deleteQuestionResult 예제'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteQuestionResult 예시'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-auto tenantId = utility::string_t(U("my-tenant-123"));
-auto questionId = utility::string_t(U("qst-456789"));
-boost::optional<utility::string_t> operatorNote = boost::optional<utility::string_t>(U("admin-request-001"));
+boost::optional<utility::string_t> optTenant = utility::conversions::to_string_t( "my-tenant-123" );
+utility::string_t questionId = utility::conversions::to_string_t( "question-456" );
 
-api->deleteQuestionResult(tenantId, questionId)
-    .then([operatorNote](pplx::task<std::shared_ptr<APIEmptyResponse>> t) {
-        try {
-            auto resp = t.get();
-            auto result = resp ? resp : std::make_shared<APIEmptyResponse>();
-            if (operatorNote) std::cout << "Deleted (note): " << utility::conversions::to_utf8string(*operatorNote) << std::endl;
-            else std::cout << "Deleted" << std::endl;
-            return result;
-        } catch (const std::exception& e) {
-            std::cerr << "Delete failed: " << e.what() << std::endl;
-            return std::shared_ptr<APIEmptyResponse>(nullptr);
-        }
-    });
+if ( optTenant )
+{
+    api->deleteQuestionResult( *optTenant, questionId )
+        .then( []( pplx::task<std::shared_ptr<APIEmptyResponse>> t )
+        {
+            try
+            {
+                auto resp = t.get();
+                // 성공 처리
+            }
+            catch ( const std::exception& e )
+            {
+                // 오류 처리
+            }
+        } );
+}
 [inline-code-end]

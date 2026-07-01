@@ -1,9 +1,9 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| skip | f64 | Не |  |
+| tenant_id | String | Yes |  |
+| skip | f64 | No |  |
 
 ## Отговор
 
@@ -11,15 +11,15 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за get_question_configs'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_question_configs Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_question_configs() -> Result<GetQuestionConfigsResponse, Error> {
-    let params: GetQuestionConfigsParams = GetQuestionConfigsParams {
+async fn example() -> Result<(), Error> {
+    let params = GetQuestionConfigsParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        skip: Some(20.0),
+        skip: Some(10.0),
     };
-    let response: GetQuestionConfigsResponse = get_question_configs(&configuration, params).await?;
-    Ok(response)
+    let _response: GetQuestionConfigsResponse = get_question_configs(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
 

@@ -1,6 +1,6 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Yes |  |
 | locale | string | query | No |  |
@@ -9,7 +9,7 @@
 
 ## レスポンス
 
-戻り値: [`GetGifsTrendingResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetGifsTrendingResponse.php)
+返却: [`GetGifsTrendingResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetGifsTrendingResponse.php)
 
 ## 例
 
@@ -21,21 +21,23 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // カスタムHTTPクライアントを使いたい場合は、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
-    // これは任意で、デフォルトでは `GuzzleHttp\Client` が使用されます。
+    // カスタム HTTP クライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装したクライアントを渡してください。
+    // これはオプションで、デフォルトでは `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // 文字列
-$locale = 'locale_example'; // 文字列
-$rating = 'rating_example'; // 文字列
-$page = 3.4; // 浮動小数点
+$options = [
+    'locale' => 'locale_example', // 文字列
+    'rating' => 'rating_example', // 文字列
+    'page' => 3.4, // 浮動小数点数
+];
+
 
 try {
-    $result = $apiInstance->getGifsTrending($tenant_id, $locale, $rating, $page);
+    $result = $apiInstance->getGifsTrending($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getGifsTrending: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

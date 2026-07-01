@@ -1,9 +1,9 @@
-## Parameters
+## Παράμετροι
 
-| Όνομα | Τύπος | Απαραίτητο | Περιγραφή |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
-| tenantId | string | Ναι |  |
-| createAPISSOUserData | CreateAPISSOUserData | Όχι |  |
+| tenantId | string | Yes |  |
+| createAPISSOUserData | CreateAPISSOUserData | No |  |
 
 ## Απόκριση
 
@@ -13,22 +13,7 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα addSSOUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.addSSOUser(
-  tenantId = "my-tenant-123",
-  createAPISSOUserData = CreateAPISSOUserData(
-    id = "sso-456",
-    email = "alice.johnson@newsorg.com",
-    name = "Alice Johnson",
-    roles = @["editor", "contributor"],
-    isActive = true,
-    isAdmin = false
-  )
-)
-if response.isSome:
-  let apiResp = response.get()
-  discard apiResp
-else:
-  discard httpResponse
+let (optResp, httpResp) = client.addSSOUser(tenantId = "my-tenant-123", createAPISSOUserData = CreateAPISSOUserData())
+if optResp.isSome:
+  let userResp = optResp.get()
 [inline-code-end]
-
----

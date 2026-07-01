@@ -1,13 +1,13 @@
 ## Παράμετροι
 
-| Name | Type | Required | Description |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
-| tenant_id | String | Ναι |  |
-| comment_id | String | Ναι |  |
-| broadcast_id | String | Ναι |  |
-| comment_text_update_request | models::CommentTextUpdateRequest | Ναι |  |
-| edit_key | String | Όχι |  |
-| sso | String | Όχι |  |
+| tenant_id | String | Yes |  |
+| comment_id | String | Yes |  |
+| broadcast_id | String | Yes |  |
+| comment_text_update_request | models::CommentTextUpdateRequest | Yes |  |
+| edit_key | String | No |  |
+| sso | String | No |  |
 
 ## Απάντηση
 
@@ -17,20 +17,20 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα set_comment_text'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn update_comment() -> Result<PublicApiSetCommentTextResponse, Error> {
-    let params: SetCommentTextParams = SetCommentTextParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        comment_id: "cmt-72f3a9".to_string(),
-        broadcast_id: "news/article/2026/06/19/product-launch".to_string(),
-        comment_text_update_request: models::CommentTextUpdateRequest {
-            text: "Updated: Congratulations on the launch! Clarified a few points.".to_string(),
-        },
-        edit_key: Some("edit-key-9f8b".to_string()),
-        sso: Some("sso-token-user-abc123".to_string()),
+async fn example() -> Result<(), Error> {
+    let comment_text_update_request = models::CommentTextUpdateRequest {
+        text: "Edited comment text after moderation".to_string(),
+        ..Default::default()
     };
-    let response = set_comment_text(&configuration, params).await?;
-    Ok(response)
+    let params = SetCommentTextParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: "cmt-98765".to_string(),
+        broadcast_id: "news/article".to_string(),
+        comment_text_update_request,
+        edit_key: Some("edit-key-2024".to_string()),
+        sso: Some("sso-token-789".to_string()),
+    };
+    let _response = set_comment_text(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

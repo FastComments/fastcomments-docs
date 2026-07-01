@@ -1,11 +1,9 @@
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Ime | Vrsta | Potrebno | Opis |
+|------|------|----------|------|
 | tenantId | string | Da |  |
-| locale | string | Ne |  |
-| rating | string | Ne |  |
-| page | float64 | Ne |  |
+| options | GetGifsTrendingOptions | Ne |  |
 
 ## Odziv
 
@@ -13,14 +11,14 @@ Vrne: [`Option[GetGifsTrendingResponse]`](https://github.com/FastComments/fastco
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer getGifsTrending'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getGifsTrending Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getGifsTrending(tenantId = "my-tenant-123",
-  locale = "en-US",
-  rating = "pg-13",
-  page = 1.0)
-if response.isSome:
-  let trending = response.get()
-[inline-code-end]
+let (maybeResponse, httpResponse) = client.getGifsTrending(
+  tenantId = "my-tenant-123",
+  options = GetGifsTrendingOptions()
+)
 
----
+if maybeResponse.isSome:
+  let gifs = maybeResponse.get()
+  echo gifs
+[inline-code-end]

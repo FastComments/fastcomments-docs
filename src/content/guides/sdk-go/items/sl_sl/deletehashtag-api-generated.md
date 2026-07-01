@@ -2,8 +2,8 @@
 
 | Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| tag | string | pot | Da |  |
-| tenantId | string | poizvedba | Ne |  |
+| tenantId | string | query | Da |  |
+| tag | string | path | Da |  |
 
 ## Odgovor
 
@@ -23,8 +23,8 @@ import (
 )
 
 func main() {
-	tag := "tag_example" // string | 
-	tenantId := "tenantId_example" // string |  (neobvezno)
+	tenantId := "tenantId_example" // string |
+	tag := "tag_example" // string |
 	deleteHashTagRequestBody := *openapiclient.NewDeleteHashTagRequestBody() // DeleteHashTagRequestBody |  (neobvezno)
 
 	configuration := openapiclient.NewConfiguration()
@@ -34,7 +34,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.DeleteHashTag``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DeleteHashTag`: APIEmptyResponse
+	// odgovor iz `DeleteHashTag`: APIEmptyResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.DeleteHashTag`: %v\n", resp)
 }
 [inline-code-end]

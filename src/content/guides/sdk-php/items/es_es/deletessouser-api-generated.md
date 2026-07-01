@@ -2,8 +2,8 @@
 
 | Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | Sí |  |
+| id | string | path | Sí |  |
 | deleteComments | boolean | query | No |  |
 | commentDeleteMode | string | query | No |  |
 
@@ -19,25 +19,29 @@ Devuelve: [`DeleteSSOUserAPIResponse`](https://github.com/FastComments/fastcomme
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configurar la autorización de la clave API: api_key
+// Configurar autorización de clave API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Descomente abajo para configurar el prefijo (por ejemplo, Bearer) para la clave API, si es necesario
+// Descomente lo siguiente para establecer el prefijo (p.ej., Bearer) para la clave API, si es necesario
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
     // Si desea usar un cliente HTTP personalizado, pase su cliente que implemente `GuzzleHttp\ClientInterface`.
-    // Esto es opcional, se usará `GuzzleHttp\Client` por defecto.
+    // Esto es opcional, `GuzzleHttp\Client` se usará por defecto.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$id = 'id_example'; // string
-$delete_comments = True; // bool
-$comment_delete_mode = 'comment_delete_mode_example'; // string
+
+$tenant_id = 'tenant_id_example'; // cadena
+$id = 'id_example'; // cadena
+$options = [
+    'delete_comments' => True, // booleano
+    'comment_delete_mode' => 'comment_delete_mode_example', // cadena
+];
+
 
 try {
-    $result = $apiInstance->deleteSSOUser($tenant_id, $id, $delete_comments, $comment_delete_mode);
+    $result = $apiInstance->deleteSSOUser($tenant_id, $id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->deleteSSOUser: ', $e->getMessage(), PHP_EOL;

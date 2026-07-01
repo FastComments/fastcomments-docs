@@ -1,11 +1,12 @@
 ## Параметри
 
 | Име | Тип | Местоположение | Задължително | Описание |
-|------|------|----------|----------|-------------|
-| value | string | query | Не |  |
-| filters | string | query | Не |  |
-| searchFilters | string | query | Не |  |
-| sso | string | query | Не |  |
+|------|------|----------------|--------------|----------|
+| tenantId | string | query | Yes |  |
+| value | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Отговор
 
@@ -15,15 +16,16 @@
 
 [inline-code-attrs-start title = 'Пример за getSearchCommentsSummary'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следните примерни фрагменти от код все още са в бета. За всеки проблем, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следващите примерни кодове все още са бета. При възникнал проблем, моля, съобщете чрез http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let value = "value_example" // String |  (optional)
-let filters = "filters_example" // String |  (optional)
-let searchFilters = "searchFilters_example" // String |  (optional)
-let sso = "sso_example" // String |  (optional)
+let tenantId = "tenantId_example" // String | 
+let value = "value_example" // String |  (опционално)
+let filters = "filters_example" // String |  (опционално)
+let searchFilters = "searchFilters_example" // String |  (опционално)
+let sso = "sso_example" // String |  (опционално)
 
-ModerationAPI.getSearchCommentsSummary(value: value, filters: filters, searchFilters: searchFilters, sso: sso) { (response, error) in
+ModerationAPI.getSearchCommentsSummary(tenantId: tenantId, options: ModerationAPI.GetSearchCommentsSummaryOptions(value: value, filters: filters, searchFilters: searchFilters, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

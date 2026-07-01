@@ -1,7 +1,7 @@
 ## Parametre
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
-|------|------|----------|----------|-------------|
+|------|------|-----------|----------|-------------|
 | tenantId | string | path | Ja |  |
 | urlId | string | query | Ja |  |
 | usernameStartsWith | string | query | Nej |  |
@@ -18,18 +18,19 @@ Returnerer: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-p
 [inline-code-attrs-start title = 'search_users Eksempel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import SearchUsersOptions
 from client.models.search_users_result import SearchUsersResult
 from client.rest import ApiException
 from pprint import pprint
 
-# Det er valgfrit at angive host; standard er https://fastcomments.com
+# Definering af værten er valgfri og standard er https://fastcomments.com
 # Se configuration.py for en liste over alle understøttede konfigurationsparametre.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Gå ind i en kontekst med en instans af API-klienten
+# Indtast en kontekst med en instans af API-klienten
 with client.ApiClient(configuration) as api_client:
     # Opret en instans af API-klassen
     api_instance = client.PublicApi(api_client)
@@ -41,7 +42,7 @@ with client.ApiClient(configuration) as api_client:
     search_section = 'search_section_example' # str |  (valgfri)
 
     try:
-        api_response = api_instance.search_users(tenant_id, url_id, username_starts_with=username_starts_with, mention_group_ids=mention_group_ids, sso=sso, search_section=search_section)
+        api_response = api_instance.search_users(tenant_id, url_id, SearchUsersOptions(username_starts_with=username_starts_with, mention_group_ids=mention_group_ids, sso=sso, search_section=search_section))
         print("The response of PublicApi->search_users:\n")
         pprint(api_response)
     except Exception as e:

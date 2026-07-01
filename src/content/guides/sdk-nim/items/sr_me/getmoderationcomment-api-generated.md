@@ -1,26 +1,26 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| commentId | string | Да |  |
-| includeEmail | bool | Не |  |
-| includeIP | bool | Не |  |
-| sso | string | Не |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| options | GetModerationCommentOptions | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[ModerationAPICommentResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_api_comment_response.nim)
+Vraća: [`Option[ModerationAPICommentResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_api_comment_response.nim)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'getModerationComment Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getModerationComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getModerationComment(commentId = "cmt-8f3b2a9d", includeEmail = false, includeIP = false, sso = "")
-if response.isSome:
-  let comment = response.get()
-  discard comment
-else:
-  echo "No moderation comment returned"
-[inline-code-end]
+let (maybeComment, httpResponse) = client.getModerationComment(
+  tenantId = "my-tenant-123",
+  commentId = "cmt-456789",
+  options = default(GetModerationCommentOptions)
+)
 
----
+if maybeComment.isSome:
+  let comment = maybeComment.get()
+  echo comment
+[inline-code-end]

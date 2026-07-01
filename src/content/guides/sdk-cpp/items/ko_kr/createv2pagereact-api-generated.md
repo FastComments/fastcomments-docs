@@ -1,34 +1,28 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| urlId | string | 예 |  |
-| id | string | 예 |  |
-| title | string | 아니요 |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| id | string | Yes |  |
+| title | string | No |  |
 
 ## 응답
 
 반환: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateV1PageReact.h)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'createV2PageReact 예제'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createV2PageReact 예시'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
-utility::string_t urlId = utility::conversions::to_string_t("homepage-landing");
-utility::string_t id = utility::conversions::to_string_t("user-987@example.com");
-boost::optional<utility::string_t> title = boost::optional<utility::string_t>(utility::conversions::to_string_t("Introducing FastComments"));
-
-api->createV2PageReact(tenantId, urlId, id, title)
-    .then([](std::shared_ptr<CreateV1PageReact> resp){
-        auto createdCopy = std::make_shared<CreateV1PageReact>(*resp);
-        return createdCopy;
-    })
-    .then([](std::shared_ptr<CreateV1PageReact> created){
-        (void)created;
-    })
-    .wait();
+api->createV2PageReact(
+    utility::string_t(U("my-tenant-789")),
+    utility::string_t(U("https://example.com/articles/12345")),
+    utility::string_t(U("user-42")),
+    boost::optional<utility::string_t>(U("Helpful"))
+).then([](pplx::task<std::shared_ptr<CreateV1PageReact>> task){
+    try{
+        auto response = task.get();
+    }catch(const std::exception&){ }
+});
 [inline-code-end]
-
----

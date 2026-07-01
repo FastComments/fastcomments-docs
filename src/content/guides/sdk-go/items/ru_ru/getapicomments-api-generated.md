@@ -1,16 +1,17 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| page | number | query | Нет |  |
-| count | number | query | Нет |  |
-| text-search | string | query | Нет |  |
-| byIPFromComment | string | query | Нет |  |
-| filters | string | query | Нет |  |
-| searchFilters | string | query | Нет |  |
-| sorts | string | query | Нет |  |
-| demo | boolean | query | Нет |  |
-| sso | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| page | number | query | No |  |
+| count | number | query | No |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sorts | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Ответ
 
@@ -30,6 +31,7 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	page := float64(1.2) // float64 |  (необязательно)
 	count := float64(1.2) // float64 |  (необязательно)
 	textSearch := "textSearch_example" // string |  (необязательно)
@@ -42,14 +44,12 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetApiComments(context.Background()).Page(page).Count(count).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).Sorts(sorts).Demo(demo).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetApiComments(context.Background()).TenantId(tenantId).Page(page).Count(count).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).Sorts(sorts).Demo(demo).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetApiComments``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Ошибка при вызове `ModerationAPI.GetApiComments``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Полный HTTP-ответ: %v\n", r)
 	}
 	// ответ от `GetApiComments`: ModerationAPIGetCommentsResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetApiComments`: %v\n", resp)
+	fmt.Fprintf(os.Stdout, "Ответ от `ModerationAPI.GetApiComments`: %v\n", resp)
 }
 [inline-code-end]
-
----

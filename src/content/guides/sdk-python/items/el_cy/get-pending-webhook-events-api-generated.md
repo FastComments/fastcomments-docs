@@ -1,7 +1,7 @@
 ## Παράμετροι
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|------------|-----------|
 | tenantId | string | query | Yes |  |
 | commentId | string | query | No |  |
 | externalId | string | query | No |  |
@@ -11,7 +11,7 @@
 | attemptCountGT | number | query | No |  |
 | skip | number | query | No |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_pending_webhook_events_response.py)
 
@@ -20,42 +20,43 @@
 [inline-code-attrs-start title = 'Παράδειγμα get_pending_webhook_events'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetPendingWebhookEventsOptions
 from client.models.get_pending_webhook_events_response import GetPendingWebhookEventsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Ορισμός του host είναι προαιρετικός και έχει ως προεπιλογή το https://fastcomments.com
-# Δείτε το configuration.py για λίστα με όλες τις υποστηριζόμενες παραμέτρους ρύθμισης.
+# Ορίζοντας τον κεντρικό υπολογιστή (host) είναι προαιρετικό και προεπιλεγμένο στο https://fastcomments.com
+# Δείτε το configuration.py για μια λίστα με όλες τις υποστηριζόμενες παραμέτρους διαμόρφωσης.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Ο client πρέπει να ρυθμίσει τις παραμέτρους αυθεντικοποίησης και εξουσιοδότησης
-# σύμφωνα με την πολιτική ασφαλείας του API server.
-# Παρατίθενται παραδείγματα για κάθε μέθοδο αυθεντικοποίησης παρακάτω, χρησιμοποιήστε
-# το παράδειγμα που ικανοποιεί την περίπτωσή σας χρήσης αυθεντικοποίησης.
+# Η εφαρμογή πρέπει να διαμορφώσει τις παραμέτρους αυθεντικοποίησης και εξουσιοδότησης
+# σύμφωνα με την πολιτική ασφαλείας του διακομιστή API.
+# Παρέχονται παραδείγματα για κάθε μέθοδο αυθεντικοποίησης παρακάτω, χρησιμοποιήστε το παράδειγμα που
+# καλύπτει την περίπτωση χρήσης σας.
 
-# Ρυθμίστε την εξουσιοδότηση με API key: api_key
+# Διαμόρφωση εξουσιοδότησης με κλειδί API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Αποσχολιάστε παρακάτω για να ρυθμίσετε πρόθεμα (π.χ. Bearer) για το API key, αν χρειάζεται
+# Ξεσχολιάστε παρακάτω για να ορίσετε πρόθεμα (π.χ. Bearer) για το κλειδί API, εάν χρειάζεται
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Εισέλθετε σε context με ένα instance του API client
+# Εισαγωγή σε ένα περιβάλλον με ένα στιγμιότυπο του πελάτη API
 with client.ApiClient(configuration) as api_client:
-    # Δημιουργία ενός instance της κλάσης API
+    # Δημιουργία ενός στιγμιότυπου της κλάσης API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    comment_id = 'comment_id_example' # str |  (προαιρετικό)
-    external_id = 'external_id_example' # str |  (προαιρετικό)
-    event_type = 'event_type_example' # str |  (προαιρετικό)
-    type = 'type_example' # str |  (προαιρετικό)
-    domain = 'domain_example' # str |  (προαιρετικό)
-    attempt_count_gt = 3.4 # float |  (προαιρετικό)
-    skip = 3.4 # float |  (προαιρετικό)
+    comment_id = 'comment_id_example' # str |  (optional)
+    external_id = 'external_id_example' # str |  (optional)
+    event_type = 'event_type_example' # str |  (optional)
+    type = 'type_example' # str |  (optional)
+    domain = 'domain_example' # str |  (optional)
+    attempt_count_gt = 3.4 # float |  (optional)
+    skip = 3.4 # float |  (optional)
 
     try:
-        api_response = api_instance.get_pending_webhook_events(tenant_id, comment_id=comment_id, external_id=external_id, event_type=event_type, type=type, domain=domain, attempt_count_gt=attempt_count_gt, skip=skip)
+        api_response = api_instance.get_pending_webhook_events(tenant_id, GetPendingWebhookEventsOptions(comment_id=comment_id, external_id=external_id, event_type=event_type, type=type, domain=domain, attempt_count_gt=attempt_count_gt, skip=skip))
         print("The response of DefaultApi->get_pending_webhook_events:\n")
         pprint(api_response)
     except Exception as e:

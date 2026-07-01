@@ -1,25 +1,27 @@
-## Parametreler
+## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| value | string | query | Hayır |  |
-| sso | string | query | Hayır |  |
+| tenantId | string | query | Yes |  |
+| value | string | query | No |  |
+| sso | string | query | No |  |
 
-## Yanıt
+## Response
 
-Döndürür: [`ModerationSiteSearchResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationSiteSearchResponse.swift)
+Returns: [`ModerationSiteSearchResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationSiteSearchResponse.swift)
 
-## Örnek
+## Example
 
 [inline-code-attrs-start title = 'getSearchSites Örneği'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Aşağıdaki kod örnekleri hâlâ beta aşamasındadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new üzerinden bildirin
+// Aşağıdaki kod örnekleri hâlâ beta sürümündedir. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new adresinden raporlayın
 import FastCommentsSwift
 
-let value = "value_example" // String |  (isteğe bağlı)
-let sso = "sso_example" // String |  (isteğe bağlı)
+let tenantId = "tenantId_example" // String | 
+let value = "value_example" // String | (opsiyonel)
+let sso = "sso_example" // String | (opsiyonel)
 
-ModerationAPI.getSearchSites(value: value, sso: sso) { (response, error) in
+ModerationAPI.getSearchSites(tenantId: tenantId, options: ModerationAPI.GetSearchSitesOptions(value: value, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

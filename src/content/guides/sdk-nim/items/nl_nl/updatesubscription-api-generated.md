@@ -1,11 +1,11 @@
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
-|------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| id | string | Nee |  |
-| updateAPIUserSubscriptionData | UpdateAPIUserSubscriptionData | Nee |  |
-| userId | string | Nee |  |
+| Naam | Type | Verplicht | Beschrijving |
+|------|------|-----------|--------------|
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| updateAPIUserSubscriptionData | UpdateAPIUserSubscriptionData | No |  |
+| userId | string = "" | No |  |
 
 ## Respons
 
@@ -15,21 +15,19 @@ Retourneert: [`Option[UpdateSubscriptionAPIResponse]`](https://github.com/FastCo
 
 [inline-code-attrs-start title = 'updateSubscription Voorbeeld'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateSubscription(
-  tenantId = "my-tenant-123",
-  id = "sub-456",
-  updateAPIUserSubscriptionData = UpdateAPIUserSubscriptionData(
-    subscribed = true,
-    channels = @["email", "push"]
-  ),
-  userId = "user-789"
+let subscriptionData = UpdateAPIUserSubscriptionData(
+  planId = "premium-plan",
+  isActive = true,
+  expiresAt = "2025-01-01",
 )
 
-if response.isSome:
-  let updated = response.get()
-  echo "Subscription updated:", updated
-else:
-  echo "Update failed, HTTP response:", httpResponse
-[inline-code-end]
+let (responseOpt, httpResponse) = client.updateSubscription(
+  tenantId = "my-tenant-123",
+  id = "sub-456",
+  updateAPIUserSubscriptionData = subscriptionData,
+  userId = "user-789",
+)
 
----
+if responseOpt.isSome:
+  let subscriptionResult = responseOpt.get()
+[inline-code-end]

@@ -2,10 +2,11 @@
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| includeByUserIdAndEmail | boolean | query | Hayır |  |
-| includeByIP | boolean | query | Hayır |  |
-| includeByEmailDomain | boolean | query | Hayır |  |
-| sso | string | query | Hayır |  |
+| tenantId | string | query | Yes |  |
+| includeByUserIdAndEmail | boolean | query | No |  |
+| includeByIP | boolean | query | No |  |
+| includeByEmailDomain | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Yanıt
 
@@ -25,20 +26,21 @@ import (
 )
 
 func main() {
-	bulkPreBanParams := *openapiclient.NewBulkPreBanParams([]string{"CommentIds_example"}) // BulkPreBanParams | 
-	includeByUserIdAndEmail := true // bool |  (isteğe bağlı)
-	includeByIP := true // bool |  (isteğe bağlı)
-	includeByEmailDomain := true // bool |  (isteğe bağlı)
-	sso := "sso_example" // string |  (isteğe bağlı)
+	tenantId := "tenantId_example" // string |
+	bulkPreBanParams := *openapiclient.NewBulkPreBanParams([]string{"CommentIds_example"}) // BulkPreBanParams |
+	includeByUserIdAndEmail := true // bool | (isteğe bağlı)
+	includeByIP := true // bool | (isteğe bağlı)
+	includeByEmailDomain := true // bool | (isteğe bağlı)
+	sso := "sso_example" // string | (isteğe bağlı)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostBulkPreBanSummary(context.Background()).BulkPreBanParams(bulkPreBanParams).IncludeByUserIdAndEmail(includeByUserIdAndEmail).IncludeByIP(includeByIP).IncludeByEmailDomain(includeByEmailDomain).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostBulkPreBanSummary(context.Background()).TenantId(tenantId).BulkPreBanParams(bulkPreBanParams).IncludeByUserIdAndEmail(includeByUserIdAndEmail).IncludeByIP(includeByIP).IncludeByEmailDomain(includeByEmailDomain).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostBulkPreBanSummary``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "`ModerationAPI.PostBulkPreBanSummary` çağrısı sırasında hata: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Tam HTTP yanıtı: %v\n", r)
 	}
-	// `PostBulkPreBanSummary`'den gelen yanıt: BulkPreBanSummary
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostBulkPreBanSummary`: %v\n", resp)
+	// `PostBulkPreBanSummary`'dan yanıt: BulkPreBanSummary
+	fmt.Fprintf(os.Stdout, "`ModerationAPI.PostBulkPreBanSummary`'dan yanıt: %v\n", resp)
 }
 [inline-code-end]

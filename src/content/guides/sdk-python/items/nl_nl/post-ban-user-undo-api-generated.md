@@ -1,10 +1,11 @@
 ## Parameters
 
-| Naam | Type | Locatie | Verplicht | Beschrijving |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| sso | string | query | Nee |  |
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
-## Respons
+## Reactie
 
 Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
@@ -18,22 +19,23 @@ from client.models.ban_user_undo_params import BanUserUndoParams
 from client.rest import ApiException
 from pprint import pprint
 
-# Het instellen van de host is optioneel en heeft standaardwaarde https://fastcomments.com
+# Het definiëren van de host is optioneel en standaard https://fastcomments.com
 # Zie configuration.py voor een lijst van alle ondersteunde configuratieparameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Open een context met een instantie van de API-client
+# Voer een context uit met een instantie van de API-client
 with client.ApiClient(configuration) as api_client:
     # Maak een instantie van de API-klasse
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     ban_user_undo_params = client.BanUserUndoParams() # BanUserUndoParams | 
     sso = 'sso_example' # str |  (optioneel)
 
     try:
-        api_response = api_instance.post_ban_user_undo(ban_user_undo_params, sso=sso)
+        api_response = api_instance.post_ban_user_undo(tenant_id, ban_user_undo_params, sso=sso)
         print("The response of ModerationApi->post_ban_user_undo:\n")
         pprint(api_response)
     except Exception as e:

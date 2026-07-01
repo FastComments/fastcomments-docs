@@ -1,11 +1,11 @@
 ## Параметри
 
-| Име | Тип | Задължителен | Описание |
+| Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentId | string | Yes |  |
-| isFlagged | bool | No |  |
-| sso | string | No |  |
+| tenantId | string | Да |  |
+| commentId | string | Да |  |
+| isFlagged | bool | Не |  |
+| sso | string = "" | Не |  |
 
 ## Отговор
 
@@ -15,16 +15,14 @@
 
 [inline-code-attrs-start title = 'flagCommentPublic Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.flagCommentPublic(
+let (optResp, httpResp) = client.flagCommentPublic(
   tenantId = "my-tenant-123",
   commentId = "cmt-456789",
   isFlagged = true,
   sso = ""
 )
 
-if response.isSome:
-  let apiResp = response.get()
-  discard apiResp
-else:
-  discard httpResponse
+if optResp.isSome:
+  let empty = optResp.get()
+  discard empty
 [inline-code-end]

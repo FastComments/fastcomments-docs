@@ -1,7 +1,8 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Oui |  |
 | commentId | string | path | Oui |  |
 | includeEmail | boolean | query | Non |  |
 | includeIP | boolean | query | Non |  |
@@ -9,21 +10,22 @@
 
 ## Réponse
 
-Retourne: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationAPICommentResponse.swift)
+Renvoie : [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationAPICommentResponse.swift)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getModerationComment'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getModerationComment'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Les exemples de code suivants sont encore en version bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Les échantillons de code suivants sont encore bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
-let includeEmail = true // Bool |  (optionnel)
-let includeIP = true // Bool |  (optionnel)
-let sso = "sso_example" // String |  (optionnel)
+let includeEmail = true // Bool |  (optional)
+let includeIP = true // Bool |  (optional)
+let sso = "sso_example" // String |  (optional)
 
-ModerationAPI.getModerationComment(commentId: commentId, includeEmail: includeEmail, includeIP: includeIP, sso: sso) { (response, error) in
+ModerationAPI.getModerationComment(tenantId: tenantId, commentId: commentId, options: ModerationAPI.GetModerationCommentOptions(includeEmail: includeEmail, includeIP: includeIP, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -34,5 +36,3 @@ ModerationAPI.getModerationComment(commentId: commentId, includeEmail: includeEm
     }
 }
 [inline-code-end]
-
----

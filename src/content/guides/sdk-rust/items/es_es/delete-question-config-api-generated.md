@@ -1,26 +1,24 @@
-## Parámetros
+## Parameters
 
-| Nombre | Tipo | Obligatorio | Descripción |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenant_id | String | Sí |  |
 | id | String | Sí |  |
 
-## Respuesta
+## Response
 
-Devuelve: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
+Returns: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
-## Ejemplo
+## Example
 
 [inline-code-attrs-start title = 'Ejemplo de delete_question_config'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_delete_question_config() -> Result<(), Error> {
+async fn run() -> Result<(), Error> {
     let params: DeleteQuestionConfigParams = DeleteQuestionConfigParams {
-        tenant_id: "acme-corp-tenant".to_owned(),
-        id: "faq/general-2026".to_owned(),
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "question-456".to_string(),
     };
-    let _response: ApiEmptyResponse = delete_question_config(&configuration, params).await?;
+    delete_question_config(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

@@ -1,8 +1,8 @@
-このSDKのすべてのAPIメソッドはC++ REST SDKの`pplx::task<std::shared_ptr<ResponseType>>`を返します。これにより、APIレスポンスの処理方法に柔軟性が得られます。
+All API methods in this SDK return `pplx::task<std::shared_ptr<ResponseType>>` from the C++ REST SDK. This gives you flexibility in how you handle API responses.
 
-### `.get()` を使った同期呼び出し
+### `.get()` を使用した同期呼び出し
 
-`.get()` を使用して、リクエストが完了するまで呼び出し元のスレッドをブロックし、結果を同期的に取得します:
+Use `.get()` to block the calling thread until the request completes and retrieve the result synchronously:
 
 ```cpp
 auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
@@ -13,33 +13,24 @@ config->setApiKey(utility::conversions::to_string_t("api_key"),
 auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
 org::openapitools::client::api::DefaultApi api(apiClient);
 
+// Required parameters are positional; optional ones go in the options struct
+org::openapitools::client::api::GetCommentsOptions options;
+options.urlId = utility::conversions::to_string_t("your-url-id");
+
 // Call .get() to block and get the result synchronously
 auto response = api.getComments(
     utility::conversions::to_string_t("your-tenant-id"),
-    boost::none,  // page
-    boost::none,  // limit
-    boost::none,  // skip
-    boost::none,  // asTree
-    boost::none,  // skipChildren
-    boost::none,  // limitChildren
-    boost::none,  // maxTreeDepth
-    utility::conversions::to_string_t("your-url-id"),  // urlId
-    boost::none,  // userId
-    boost::none,  // anonUserId
-    boost::none,  // contextUserId
-    boost::none,  // hashTag
-    boost::none,  // parentId
-    boost::none   // direction
-).get();  // Blocks until the HTTP request completes
+    options
+).get();  // HTTP リクエストが完了するまでブロックします
 
 if (response && response->comments) {
     std::cout << "Found " << response->comments->size() << " comments" << std::endl;
 }
 ```
 
-### `.then()` を使った非同期呼び出し
+### `.then()` を使用した非同期呼び出し
 
-コールバックによるノンブロッキングの非同期実行には`.then()`を使用します:
+Use `.then()` for non-blocking asynchronous execution with callbacks:
 
 ```cpp
 auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
@@ -50,39 +41,40 @@ config->setApiKey(utility::conversions::to_string_t("api_key"),
 auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
 org::openapitools::client::api::DefaultApi api(apiClient);
 
+// Required parameters are positional; optional ones go in the options struct
+org::openapitools::client::api::GetCommentsOptions options;
+options.urlId = utility::conversions::to_string_t("your-url-id");
+
 // Use .then() for asynchronous callback-based execution
 api.getComments(
     utility::conversions::to_string_t("your-tenant-id"),
-    boost::none, boost::none, boost::none, boost::none, boost::none,
-    boost::none, boost::none,
-    utility::conversions::to_string_t("your-url-id"),
-    boost::none, boost::none, boost::none, boost::none, boost::none, boost::none
+    options
 ).then([](std::shared_ptr<GetComments_200_response> response) {
-    // This runs asynchronously when the request completes
+    // リクエストが完了したときに非同期で実行されます
     if (response && response->comments) {
         std::cout << "Found " << response->comments->size() << " comments" << std::endl;
     }
 });
 
-// Execution continues immediately without blocking
+// ブロックせずにすぐに実行が続行されます
 std::cout << "Request sent, continuing..." << std::endl;
 ```
 
 ### 同期と非同期の選択
 
-選択はランタイム環境とアプリケーションのアーキテクチャによります:
+The choice depends on your runtime environment and application architecture:
 
 **`.get()`（同期ブロッキング）**
-- HTTPリクエストが完了するまで呼び出しスレッドをブロックする
-- コードの流れが単純で、理解しやすい
-- 専用のワーカースレッド、バッチ処理、またはコマンドラインツールに適している
-- **イベントループ、GUIスレッド、または単一スレッドのサーバーには適していない**
+- 呼び出しスレッドを HTTP リクエストが完了するまでブロックします
+- コードフローがシンプルで、理解しやすい
+- 専用のワーカースレッド、バッチ処理、コマンドラインツールに適しています
+- **イベントループ、GUI スレッド、シングルスレッドサーバーには適さない**
 
 **`.then()`（非同期ノンブロッキング）**
-- 即座に戻り、リクエスト完了時にコールバックが実行される
-- 呼び出しスレッドをブロックしない
-- イベント駆動型アーキテクチャ、GUIアプリケーション、または単一スレッドのイベントループでは必要
-- 複数の操作のチェーンを可能にする
-- 制御フローがより複雑になる
+- 即座に戻り、リクエスト完了時にコールバックが実行されます
+- 呼び出しスレッドをブロックしません
+- イベント駆動型アーキテクチャ、GUI アプリケーション、シングルスレッドのイベントループに必要です
+- 複数の操作をチェーンできます
+- 制御フローがより複雑になります
 
-このSDKのテストスイートは`.get()`のみを使用していますが、これはブロッキングが許容されるテスト環境では適切です。
+The SDK's test suite uses `.get()` exclusively, but this is appropriate for the test environment where blocking is acceptable.

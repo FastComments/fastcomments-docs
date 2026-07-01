@@ -1,14 +1,14 @@
+---
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
 | tenantId | string | Tak |  |
 | commentId | string | Tak |  |
 | urlId | string | Tak |  |
 | broadcastId | string | Nie |  |
 | voteBodyParams | VoteBodyParams | Nie |  |
-| sessionId | string | Nie |  |
-| sso | string | Nie |  |
+| options | VoteCommentOptions | Nie |  |
 
 ## Odpowiedź
 
@@ -18,21 +18,16 @@ Zwraca: [`Option[VoteResponse]`](https://github.com/FastComments/fastcomments-ni
 
 [inline-code-attrs-start title = 'Przykład voteComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.voteComment(
+let (voteRespOpt, httpResp) = client.voteComment(
   tenantId = "my-tenant-123",
-  commentId = "cmt-987654321",
-  urlId = "news/article-2026-inflation",
+  commentId = "comment-98765",
+  urlId = "blog/how-to-code",
   broadcastId = "",
   voteBodyParams = VoteBodyParams(),
-  sessionId = "",
-  sso = ""
+  options = VoteCommentOptions()
 )
 
-if response.isSome:
-  let voteResp = response.get()
-  discard voteResp
-else:
-  discard httpResponse
+if voteRespOpt.isSome:
+  let voteResp = voteRespOpt.get()
 [inline-code-end]
-
 ---

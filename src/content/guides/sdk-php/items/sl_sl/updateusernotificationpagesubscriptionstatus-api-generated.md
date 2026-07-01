@@ -1,17 +1,17 @@
-Omogoči ali onemogoči obvestila za stran. Ko so uporabniki naročeni na stran, se ob ustvarjanju novih korenskih komentarjev ustvarijo obvestila, in tudi
+Omogočite ali onemogočite obvestila za stran. Ko so uporabniki naročeni na stran, se ustvarijo obvestila za nove korenske komentarje, in tudi
 
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| urlId | string | query | Da |  |
-| url | string | query | Da |  |
-| pageTitle | string | query | Da |  |
-| subscribedOrUnsubscribed | string | path | Da |  |
-| sso | string | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| url | string | query | Yes |  |
+| pageTitle | string | query | Yes |  |
+| subscribedOrUnsubscribed | string | path | Yes |  |
+| sso | string | query | No |  |
 
-## Odziv
+## Odgovor
 
 Vrne: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationPageSubscriptionStatusResponse.php)
 
@@ -26,15 +26,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
     // Če želite uporabiti prilagojen HTTP odjemalec, posredujte svoj odjemalec, ki implementira `GuzzleHttp\ClientInterface`.
-    // To je neobvezno, privzeto bo uporabljen `GuzzleHttp\Client`.
+    // To je neobvezno, `GuzzleHttp\Client` bo uporabljen kot privzeto.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $url_id = 'url_id_example'; // string
 $url = 'url_example'; // string
 $page_title = 'page_title_example'; // string
 $subscribed_or_unsubscribed = 'subscribed_or_unsubscribed_example'; // string
 $sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->updateUserNotificationPageSubscriptionStatus($tenant_id, $url_id, $url, $page_title, $subscribed_or_unsubscribed, $sso);

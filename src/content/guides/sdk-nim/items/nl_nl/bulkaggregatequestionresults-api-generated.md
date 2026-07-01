@@ -14,13 +14,14 @@ Retourneert: [`Option[BulkAggregateQuestionResultsResponse]`](https://github.com
 
 [inline-code-attrs-start title = 'bulkAggregateQuestionResults Voorbeeld'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.bulkAggregateQuestionResults(
+let request = BulkAggregateQuestionResultsRequest()
+let (maybeResult, httpResp) = client.bulkAggregateQuestionResults(
   tenantId = "my-tenant-123",
-  bulkAggregateQuestionResultsRequest = BulkAggregateQuestionResultsRequest(),
-  forceRecalculate = false
-)
+  bulkAggregateQuestionResultsRequest = request,
+  forceRecalculate = false)
 
-if response.isSome:
-  let aggregated = response.get()
-  echo "Aggregated question results received"
+if maybeResult.isSome:
+  let result = maybeResult.get()
 [inline-code-end]
+
+---

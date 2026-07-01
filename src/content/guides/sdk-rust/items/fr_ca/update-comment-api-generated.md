@@ -2,12 +2,12 @@
 
 | Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
-| tenant_id | String | Oui |  |
-| id | String | Oui |  |
-| updatable_comment_params | models::UpdatableCommentParams | Oui |  |
-| context_user_id | String | Non |  |
-| do_spam_check | bool | Non |  |
-| is_live | bool | Non |  |
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
+| updatable_comment_params | models::UpdatableCommentParams | Yes |  |
+| context_user_id | String | No |  |
+| do_spam_check | bool | No |  |
+| is_live | bool | No |  |
 
 ## Réponse
 
@@ -15,21 +15,22 @@ Renvoie : [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple d\'update_comment'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple update_comment'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: UpdateCommentParams = UpdateCommentParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    id: "news/article-2026/comments/12345".to_string(),
-    updatable_comment_params: models::UpdatableCommentParams {
-        content: "Thanks for the update — I corrected the typo and clarified the timeline.".to_string(),
+async fn run_update() -> Result<(), Error> {
+    let updatable = models::UpdatableCommentParams {
+        content: "Edited comment about the latest news article".to_string(),
         ..Default::default()
-    },
-    context_user_id: Some("editor-42".to_string()),
-    do_spam_check: Some(true),
-    is_live: Some(true),
-};
-
-let response: ApiEmptyResponse = update_comment(&configuration, params).await?;
+    };
+    let params = UpdateCommentParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "comment-789".to_string(),
+        updatable_comment_params: updatable,
+        context_user_id: Some("reader-42".to_string()),
+        do_spam_check: Some(true),
+        is_live: Some(true),
+    };
+    let _ = update_comment(&configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]
-
----

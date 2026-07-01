@@ -1,9 +1,9 @@
 ## Parametri
 
-| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| namespace | string | path | Sì |  |
-| component | string | path | Sì |  |
+| namespace | string | path | Yes |  |
+| component | string | path | Yes |  |
 | locale | string | query | No |  |
 | useFullTranslationIds | boolean | query | No |  |
 
@@ -13,7 +13,7 @@ Restituisce: [`GetTranslationsResponse`](https://github.com/FastComments/fastcom
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di getTranslations'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio getTranslations'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -22,16 +22,20 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
     // Se vuoi usare un client HTTP personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
-    // Questo è opzionale, verrà usato `GuzzleHttp\Client` di default.
+    // Questo è opzionale, `GuzzleHttp\Client` verrà usato come predefinito.
     new GuzzleHttp\Client()
 );
-$namespace = 'namespace_example'; // string
-$component = 'component_example'; // string
-$locale = 'locale_example'; // string
-$use_full_translation_ids = True; // bool
+
+$namespace = 'namespace_example'; // stringa
+$component = 'component_example'; // stringa
+$options = [
+    'locale' => 'locale_example', // stringa
+    'use_full_translation_ids' => True, // bool
+];
+
 
 try {
-    $result = $apiInstance->getTranslations($namespace, $component, $locale, $use_full_translation_ids);
+    $result = $apiInstance->getTranslations($namespace, $component, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getTranslations: ', $e->getMessage(), PHP_EOL;

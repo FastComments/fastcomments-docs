@@ -1,29 +1,24 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Обязательно | Описание |
+| Назва | Тип | Обов’язково | Опис |
 |------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| id | String | Да |  |
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`GetQuestionConfigResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_question_config_response.rs)
+Returns: [`GetQuestionConfigResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_question_config_response.rs)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример get_question_config'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад get_question_config'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_question_config() -> Result<GetQuestionConfigResponse, Error> {
-    let configuration: configuration::Configuration = configuration::Configuration::default();
-    let optional_tenant: Option<String> = Some("acme-corp-tenant".to_string());
-    let tenant_id: String = optional_tenant.unwrap_or_else(|| "acme-default".to_string());
+async fn example() -> Result<(), Error> {
     let params = GetQuestionConfigParams {
-        tenant_id,
-        id: "news/article/2026-06-18".to_string(),
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "news/article".to_string(),
     };
-    let response: GetQuestionConfigResponse = get_question_config(&configuration, params).await?;
-    Ok(response)
+    let _response = get_question_config(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

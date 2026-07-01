@@ -1,6 +1,6 @@
 ### Usando APIs Autenticadas (DefaultApi)
 
-**Importante:** Você deve definir sua chave de API em Configuration antes de fazer requisições autenticadas. Se não o fizer, as requisições falharão com um erro 401.
+**Importante:** Você deve definir sua chave de API na Configuração antes de fazer solicitações autenticadas. Se não o fizer, as solicitações falharão com erro 401.
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
@@ -26,10 +26,7 @@ try:
         display_name="John Doe"
     )
 
-    response = api.add_sso_user(
-        tenant_id="YOUR_TENANT_ID",
-        create_apisso_user_data=user_data
-    )
+    response = api.add_sso_user("YOUR_TENANT_ID", user_data)
     print(f"User created: {response}")
 
 except Exception as e:
@@ -41,7 +38,7 @@ except Exception as e:
 
 ### Usando APIs Públicas (PublicApi)
 
-Endpoints públicos não exigem autenticação:
+Endpoints públicos não requerem autenticação:
 
 ```python
 from client import ApiClient, Configuration, PublicApi
@@ -53,10 +50,7 @@ api_client = ApiClient(configuration=config)
 public_api = PublicApi(api_client)
 
 try:
-    response = public_api.get_comments_public(
-        tenant_id="YOUR_TENANT_ID",
-        url_id="page-url-id"
-    )
+    response = public_api.get_comments_public("YOUR_TENANT_ID", "page-url-id")
     print(response)
 except Exception as e:
     print(f"Error: {e}")
@@ -64,10 +58,11 @@ except Exception as e:
 
 ### Usando o Painel de Moderação (ModerationApi)
 
-O `ModerationApi` alimenta o painel do moderador. Os métodos são chamados em nome de um moderador passando um token `sso`:
+A `ModerationApi` alimenta o painel de moderador. Os métodos são chamados em nome de um moderador passando um token `sso`:
 
 ```python
 from client import ApiClient, Configuration, ModerationApi
+from client.api.moderation_api import GetCountOptions
 
 config = Configuration()
 config.host = "https://fastcomments.com/api"
@@ -77,7 +72,7 @@ moderation_api = ModerationApi(api_client)
 
 try:
     # Count the comments awaiting moderation
-    response = moderation_api.get_count(sso="SSO_TOKEN")
+    response = moderation_api.get_count(GetCountOptions(sso="SSO_TOKEN"))
     print(response)
 except Exception as e:
     print(f"Error: {e}")
@@ -111,7 +106,7 @@ sso_token = sso.create_token()
 print(f"SSO Token: {sso_token}")
 ```
 
-Para SSO simples (menos seguro, para testes):
+Para SSO simples (menos seguro, para teste):
 
 ```python
 from sso import FastCommentsSSO, SimpleSSOUserData
@@ -127,8 +122,8 @@ sso_token = sso.create_token()
 
 ### Problemas Comuns
 
-1. **401 "missing-api-key" error**: Certifique-se de definir `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` antes de criar a instância DefaultApi.
-2. **Classe de API incorreta**: Use `DefaultApi` para requisições autenticadas no lado do servidor, `PublicApi` para requisições no lado do cliente/públicas, e `ModerationApi` para requisições do painel do moderador.
-3. **Erros de importação**: Certifique-se de estar importando do módulo correto:
+1. **Erro 401 "missing-api-key"**: Certifique‑se de definir `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` antes de criar a instância `DefaultApi`.
+2. **Classe de API errada**: Use `DefaultApi` para solicitações autenticadas do lado do servidor, `PublicApi` para solicitações client‑side/públicas e `ModerationApi` para solicitações do painel de moderador.
+3. **Erros de importação**: Certifique‑se de estar importando do módulo correto:
    - Cliente da API: `from client import ...`
    - Utilitários SSO: `from sso import ...`

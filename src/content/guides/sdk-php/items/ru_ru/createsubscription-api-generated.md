@@ -1,8 +1,8 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
+| tenantId | string | query | Yes |  |
 
 ## Ответ
 
@@ -13,23 +13,28 @@
 [inline-code-attrs-start title = 'Пример createSubscription'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require_once(__DIR__ . '/vendor/autoload.php);
 
 
-// Настроить авторизацию с помощью API-ключа: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для API-ключа, если необходимо
+// Configure API key authorization: api_key
+// Настройте авторизацию с помощью API-ключа: api_key
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Раскомментируйте ниже, чтобы задать префикс (например, Bearer) для API-ключа, если необходимо
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Если вы хотите использовать собственный HTTP-клиент, передайте клиент, который реализует `GuzzleHttp\ClientInterface`.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // Если вы хотите использовать пользовательский HTTP‑клиент, передайте ваш клиент, реализующий `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $create_api_user_subscription_data = new \FastComments\Client\Model\CreateAPIUserSubscriptionData(); // \FastComments\Client\Model\CreateAPIUserSubscriptionData
+
 
 try {
     $result = $apiInstance->createSubscription($tenant_id, $create_api_user_subscription_data);
@@ -38,5 +43,3 @@ try {
     echo 'Exception when calling DefaultApi->createSubscription: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

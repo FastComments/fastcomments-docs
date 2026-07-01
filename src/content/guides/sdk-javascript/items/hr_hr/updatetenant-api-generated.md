@@ -1,26 +1,30 @@
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
 | tenantId | string | Da |  |
 | id | string | Da |  |
 | updateTenantBody | UpdateTenantBody | Da |  |
 
 ## Odgovor
 
-Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Vraća: [`UpdateTenantResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateTenantResponse.ts)
 
 ## Primjer
 
 [inline-code-attrs-start title = 'Primjer updateTenant'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_78f3b2";
-const id: string = "tenant-site-01";
-const domainConfiguration: APIDomainConfiguration = { primaryDomain: "comments.acme-corp.com", cname: "acme-corp.comments.fastly.net", sslEnabled: true };
-const importedSite: ImportedSiteType = { siteId: "blog-42", domain: "blog.acme-corp.com" };
-const billingInfo: BillingInfo = { plan: "business", cardLast4: "4242", nextBillingDate: "2026-07-01" };
-const updateTenantBody: UpdateTenantBody = { displayName: "Acme Corp", domainConfiguration, importedSites: [importedSite], billingInfo, status: { enabled: true } as APIStatus };
-const result: APIEmptyResponse = await updateTenant(tenantId, id, updateTenantBody);
-[inline-code-end]
+const tenantId: string = "c8f9e3d2-4b6a-11ee-8c99-0242ac130003";
+const id: string = "tenant-config-01";
 
----
+const updateBody: UpdateTenantBody = {
+  domain: "mytenant.fastcomments.io",
+  branding: {
+    logoUrl: "https://cdn.mytenant.com/assets/logo.png"
+  },
+  description: "Branding update for Q3"
+};
+
+const response: UpdateTenantResponse = await updateTenant(tenantId, id, updateBody);
+console.log(response);
+[inline-code-end]

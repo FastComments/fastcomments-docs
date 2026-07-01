@@ -1,26 +1,26 @@
 ## 參數
 
-| 名稱 | 型別 | 必填 | 說明 |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
-| comment_id | String | 是 |  |
-| sso | String | 否 |  |
+| tenant_id | String | Yes |  |
+| comment_id | String | Yes |  |
+| sso | String | No |  |
 
 ## 回應
 
-回傳： [`GetCommentBanStatusResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_comment_ban_status_response.rs)
+Returns: [`GetCommentBanStatusResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_comment_ban_status_response.rs)
 
 ## 範例
 
 [inline-code-attrs-start title = 'get_comment_ban_status 範例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let params: GetCommentBanStatusParams = GetCommentBanStatusParams {
-        comment_id: String::from("cmt-9f8b7a6e-4d3c-11ee-8c99-0242ac120002"),
-        sso: Some(String::from("acme-corp-tenant")),
+async fn example(config: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetCommentBanStatusParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: "comment-12345".to_string(),
+        sso: Some("user@example.com".to_string()),
     };
-    let response: GetCommentBanStatusResponse = get_comment_ban_status(&configuration, params).await?;
+    let _response: GetCommentBanStatusResponse = get_comment_ban_status(config, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

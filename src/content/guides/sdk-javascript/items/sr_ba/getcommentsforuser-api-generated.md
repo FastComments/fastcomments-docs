@@ -1,33 +1,41 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| userId | string | Не |  |
-| direction | SortDirections | Не |  |
-| repliesToUserId | string | Не |  |
-| page | number | Не |  |
-| includei10n | boolean | Не |  |
-| locale | string | Не |  |
-| isCrawler | boolean | Не |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| userId | string | Ne |  |
+| direction | SortDirections | Ne |  |
+| repliesToUserId | string | Ne |  |
+| page | number | Ne |  |
+| includei10n | boolean | Ne |  |
+| locale | string | Ne |  |
+| isCrawler | boolean | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetCommentsForUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsForUserResponse.ts)
+Vraća: [`GetCommentsForUserResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsForUserResponse1.ts)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'getCommentsForUser Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getCommentsForUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const userId: string = 'user_7421';
-  const direction: SortDirections = SortDirections.Newest;
-  const page: number = 2;
-  const includei10n: boolean = true;
-  const locale: string = 'en-GB';
-  const isCrawler: boolean = false;
-  const response: GetCommentsForUserResponse = await getCommentsForUser(userId, direction, undefined, page, includei10n, locale, isCrawler);
-  console.log(response);
-})();
-[inline-code-end]
+async function demo() {
+    const userId: string = "user-12345";
+    const direction: SortDirections = "desc";
+    const page: number = 1;
+    const includei10n: boolean = true;
+    const locale: string = "en-US";
+    const isCrawler: boolean = false;
 
----
+    const response: GetCommentsForUserResponse1 = await getCommentsForUser(
+        userId,
+        direction,
+        undefined,
+        page,
+        includei10n,
+        locale,
+        isCrawler
+    );
+
+    console.log(response);
+}
+[inline-code-end]

@@ -1,24 +1,29 @@
+---
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| commentId | string | כן |  |
-| sso | string | לא |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| sso | string = "" | No |  |
 
-## תשובה
+## תגובה
 
-מחזיר: [`Option[GetCommentTextResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_comment_text_response.nim)
+מחזירה: [`Option[GetCommentTextResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_comment_text_response.nim)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getModerationCommentText'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getModerationCommentText דוגמה'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getModerationCommentText(commentId = "comment-9f8b7a6c", sso = "")
-if response.isSome:
-  let commentData = response.get()
-  echo "Moderation comment text retrieved"
-else:
-  echo "No moderation comment text available"
+let (optResp, httpResp) = client.getModerationCommentText(
+  tenantId = "my-tenant-123",
+  commentId = "comment-456abc",
+  sso = ""
+)
+
+if optResp.isSome:
+  let resp = optResp.get()
+  echo resp
 [inline-code-end]
 
 ---

@@ -1,47 +1,52 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| badgeId | string | query | Da |  |
-| userId | string | query | Ne |  |
-| commentId | string | query | Ne |  |
-| broadcastId | string | query | Ne |  |
-| sso | string | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| badgeId | string | query | Yes |  |
+| userId | string | query | No |  |
+| commentId | string | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
-## Odziv
+## Odgovor
 
-Vrača: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/award_user_badge_response.py)
+Vrne: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/award_user_badge_response.py)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer put_award_badge'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'put_award_badge Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import PutAwardBadgeOptions
 from client.models.award_user_badge_response import AwardUserBadgeResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Določanje gostitelja je izbirno in privzeto nastavljeno na https://fastcomments.com
-# Oglejte si configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
+# Določanje gostitelja je neobvezno in privzeto je https://fastcomments.com
+# Glej configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Odprite kontekst z instanco API odjemalca
+# Vstopite v kontekst s primerek API odjemalca
 with client.ApiClient(configuration) as api_client:
-    # Ustvarite instanco razreda API
+    # Ustvarite primerek API razreda
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     badge_id = 'badge_id_example' # str | 
-    user_id = 'user_id_example' # str |  (izbirno)
-    comment_id = 'comment_id_example' # str |  (izbirno)
-    broadcast_id = 'broadcast_id_example' # str |  (izbirno)
-    sso = 'sso_example' # str |  (izbirno)
+    user_id = 'user_id_example' # str |  (neobvezno)
+    comment_id = 'comment_id_example' # str |  (neobvezno)
+    broadcast_id = 'broadcast_id_example' # str |  (neobvezno)
+    sso = 'sso_example' # str |  (neobvezno)
 
     try:
-        api_response = api_instance.put_award_badge(badge_id, user_id=user_id, comment_id=comment_id, broadcast_id=broadcast_id, sso=sso)
+        api_response = api_instance.put_award_badge(tenant_id, badge_id, PutAwardBadgeOptions(user_id=user_id, comment_id=comment_id, broadcast_id=broadcast_id, sSO=sso))
         print("The response of ModerationApi->put_award_badge:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling ModerationApi->put_award_badge: %s\n" % e)
 [inline-code-end]
+
+---

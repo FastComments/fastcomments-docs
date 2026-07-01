@@ -1,7 +1,8 @@
 ## Parâmetros
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Localização | Obrigatório | Descrição |
+|------|------|-------------|-------------|-----------|
+| tenantId | string | query | Sim |  |
 | sso | string | query | Não |  |
 
 ## Resposta
@@ -10,7 +11,7 @@ Retorna: [`GetTenantManualBadgesResponse`](https://github.com/FastComments/fastc
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getManualBadges'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo getManualBadges'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -18,14 +19,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Se quiser usar um cliente HTTP customizado, passe seu cliente que implemente `GuzzleHttp\ClientInterface`.
-    // Isto é opcional, `GuzzleHttp\Client` será usado como padrão.
+    // Se você quiser usar um cliente HTTP personalizado, passe seu cliente que implemente `GuzzleHttp\ClientInterface`.
+    // Isto é opcional, `GuzzleHttp\Client` será usado por padrão.
     new GuzzleHttp\Client()
 );
+
+$tenant_id = 'tenant_id_example'; // string
 $sso = 'sso_example'; // string
 
+
 try {
-    $result = $apiInstance->getManualBadges($sso);
+    $result = $apiInstance->getManualBadges($tenant_id, $sso);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getManualBadges: ', $e->getMessage(), PHP_EOL;

@@ -1,9 +1,9 @@
 ## Parâmetros
 
 | Nome | Tipo | Localização | Obrigatório | Descrição |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Sim |  |
-| id | string | path | Sim |  |
+|------|------|-------------|-------------|------------|
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
 ## Resposta
 
@@ -11,7 +11,7 @@ Retorna: [`GetTenantResponse`](https://github.com/FastComments/fastcomments-php/
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getTenant'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo getTenant'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -29,8 +29,10 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
+
 
 try {
     $result = $apiInstance->getTenant($tenant_id, $id);

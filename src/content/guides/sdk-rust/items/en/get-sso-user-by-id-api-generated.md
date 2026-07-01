@@ -13,13 +13,12 @@ Returns: [`GetSsoUserByIdApiResponse`](https://github.com/FastComments/fastcomme
 
 [inline-code-attrs-start title = 'get_sso_user_by_id Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_sso_user() -> Result<GetSsoUserByIdApiResponse, Error> {
+async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {
     let params = GetSsoUserByIdParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "jdoe-89".to_string(),
-        expand: Some(vec!["profile".to_string(), "roles".to_string()]),
+        id: "user-9876".to_string(),
     };
-    let sso_user: GetSsoUserByIdApiResponse = get_sso_user_by_id(&configuration, params).await?;
-    Ok(sso_user)
+    let _response: GetSsoUserByIdApiResponse = get_sso_user_by_id(configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]

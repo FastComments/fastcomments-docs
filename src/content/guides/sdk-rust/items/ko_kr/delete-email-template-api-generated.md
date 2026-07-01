@@ -1,7 +1,7 @@
 ---
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenant_id | String | 예 |  |
 | id | String | 예 |  |
@@ -10,22 +10,16 @@
 
 반환: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'delete_email_template 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_email_template 예시'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let version: Option<&str> = Some("2025");
-    let template_id: String = if let Some(ver) = version {
-        format!("welcome-email-{}", ver)
-    } else {
-        "welcome-email".to_owned()
+async fn example() -> Result<(), Error> {
+    let params = DeleteEmailTemplateParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "welcome-email".to_string(),
     };
-    let params: DeleteEmailTemplateParams = DeleteEmailTemplateParams {
-        tenant_id: "acme-corp-tenant".to_owned(),
-        id: template_id,
-    };
-    let _response: ApiEmptyResponse = delete_email_template(&configuration, params).await?;
+    let _ = delete_email_template(&config, params).await?;
     Ok(())
 }
 [inline-code-end]

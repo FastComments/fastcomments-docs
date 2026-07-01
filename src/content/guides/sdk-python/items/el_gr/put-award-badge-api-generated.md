@@ -1,37 +1,40 @@
-## Παράμετροι
+## Parameters
 
-| Όνομα | Τύπος | Τοποθεσία | Υποχρεωτικό | Περιγραφή |
+| Όνομα | Τύπος | Θέση | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Ναι |  |
 | badgeId | string | query | Ναι |  |
 | userId | string | query | Όχι |  |
 | commentId | string | query | Όχι |  |
 | broadcastId | string | query | Όχι |  |
 | sso | string | query | Όχι |  |
 
-## Απόκριση
+## Response
 
 Επιστρέφει: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/award_user_badge_response.py)
 
-## Παράδειγμα
+## Example
 
 [inline-code-attrs-start title = 'Παράδειγμα put_award_badge'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import PutAwardBadgeOptions
 from client.models.award_user_badge_response import AwardUserBadgeResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Ορισμός του host είναι προαιρετικός και ως προεπιλογή χρησιμοποιεί το https://fastcomments.com
-# Δείτε το configuration.py για λίστα όλων των υποστηριζόμενων παραμέτρων ρυθμίσεων.
+# Ο ορισμός του host είναι προαιρετικός και προεπιλεγμένος στο https://fastcomments.com
+# Δείτε το configuration.py για μια λίστα όλων των υποστηριζόμενων παραμέτρων ρύθμισης.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Ανοίξτε ένα context με ένα στιγμιότυπο του API client
+# Εισέλθετε σε ένα context με ένα instance του API client
 with client.ApiClient(configuration) as api_client:
-    # Δημιουργήστε ένα στιγμιότυπο της κλάσης API
+    # Δημιουργήστε ένα instance της κλάσης API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     badge_id = 'badge_id_example' # str | 
     user_id = 'user_id_example' # str |  (προαιρετικό)
     comment_id = 'comment_id_example' # str |  (προαιρετικό)
@@ -39,7 +42,7 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (προαιρετικό)
 
     try:
-        api_response = api_instance.put_award_badge(badge_id, user_id=user_id, comment_id=comment_id, broadcast_id=broadcast_id, sso=sso)
+        api_response = api_instance.put_award_badge(tenant_id, badge_id, PutAwardBadgeOptions(user_id=user_id, comment_id=comment_id, broadcast_id=broadcast_id, sso=sso))
         print("The response of ModerationApi->put_award_badge:\n")
         pprint(api_response)
     except Exception as e:

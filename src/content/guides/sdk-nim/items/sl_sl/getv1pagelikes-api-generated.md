@@ -1,10 +1,9 @@
----
 ## Parametri
 
 | Ime | Tip | Obvezno | Opis |
-|------|------|----------|-------------|
-| tenantId | string | Da |  |
-| urlId | string | Da |  |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
 
 ## Odgovor
 
@@ -14,12 +13,8 @@ Vrne: [`Option[GetV1PageLikes]`](https://github.com/FastComments/fastcomments-ni
 
 [inline-code-attrs-start title = 'Primer getV1PageLikes'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getV1PageLikes(tenantId = "my-tenant-123", urlId = "news/how-to-train-your-dragon")
+let (response, httpResponse) = client.getV1PageLikes(tenantId = "my-tenant-123", urlId = "news/article-title")
 if response.isSome:
   let pageLikes = response.get()
-  echo "Fetched page likes for url:", "news/how-to-train-your-dragon"
-else:
-  echo "No likes returned for url:", "news/how-to-train-your-dragon"
+  # uporabi pageLikes po potrebi
 [inline-code-end]
-
----

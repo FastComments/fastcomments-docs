@@ -1,6 +1,8 @@
-Sve API metode u ovom SDK-u vraćaju torke `(Option[ResponseType], Response)`. Prvi element sadrži parsirani odgovor ako je uspješan, a drugi element je sirovi HTTP odgovor.
+Sve API metode u ovom SDK‑u vraćaju tuple tipa `(Option[ResponseType], Response)`. Prvi element sadrži parsirani odgovor ako je uspješan, a drugi element je sirovi HTTP odgovor.
 
-### Primjer: Dohvatanje komentara
+Obavezni parametri i tijelo zahtjeva se prosljeđuju pozicijski. Preostali opcionalni parametri se sakupljaju u jedan objekat `Api<Operation>Options`, koji je posljednji argument. Operacije bez opcionalnih parametara ne koriste objekat opcija.
+
+### Primjer: Dohvaćanje komentara
 
 ```nim
 import httpclient
@@ -14,20 +16,10 @@ client.headers["x-api-key"] = "your-api-key"
 let (response, httpResponse) = getComments(
   httpClient = client,
   tenantId = "your-tenant-id",
-  page = 0,
-  limit = 0,
-  skip = 0,
-  asTree = false,
-  skipChildren = 0,
-  limitChildren = 0,
-  maxTreeDepth = 0,
-  urlId = "your-url-id",
-  userId = "",
-  anonUserId = "",
-  contextUserId = "",
-  hashTag = "",
-  parentId = "",
-  direction = SortDirections.DESC
+  options = GetCommentsOptions(
+    urlId: "your-url-id",
+    direction: SortDirections.DESC
+  )
 )
 
 if httpResponse.code == Http200:

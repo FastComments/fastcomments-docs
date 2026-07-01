@@ -1,36 +1,23 @@
 ## パラメータ
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
 | tenantId | string | はい |  |
-| afterId | string | いいえ |  |
-| afterCreatedAt | int64_t | いいえ |  |
-| unreadOnly | bool | いいえ |  |
-| dmOnly | bool | いいえ |  |
-| noDm | bool | いいえ |  |
-| sso | string | いいえ |  |
+| options | const ResetUserNotificationsOptions& | はい |  |
 
-## レスポンス
+## 応答
 
-戻り値: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ResetUserNotificationsResponse.h)
+返り値: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ResetUserNotificationsResponse.h)
 
 ## 例
 
-[inline-code-attrs-start title = 'resetUserNotifications の例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'resetUserNotifications 例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-boost::optional<utility::string_t> afterId = utility::string_t(U("notif-456"));
-boost::optional<int64_t> afterCreatedAt = int64_t(1625097600LL);
-boost::optional<bool> unreadOnly = true;
-boost::optional<bool> dmOnly = false;
-boost::optional<bool> noDm = true;
-boost::optional<utility::string_t> sso = utility::string_t(U("user@example.com"));
-api->resetUserNotifications(tenantId, afterId, afterCreatedAt, unreadOnly, dmOnly, noDm, sso)
-.then([](pplx::task<std::shared_ptr<ResetUserNotificationsResponse>> t){
-    try {
-        auto resp = t.get();
-        auto result = resp ? resp : std::make_shared<ResetUserNotificationsResponse>();
-    } catch (const std::exception&) {
-    }
-});
+auto tenantId = utility::string_t(U("my-tenant-123"));
+ResetUserNotificationsOptions options;
+options.email = boost::optional<utility::string_t>(U("user@example.com"));
+api->resetUserNotifications(tenantId, options)
+    .then([](std::shared_ptr<ResetUserNotificationsResponse> resp) {
+        // 応答を処理する
+    });
 [inline-code-end]

@@ -1,36 +1,33 @@
-### Радње доступне свим корисницима
+### Actions Available to All Users
 
-- **Пријави/Уклони пријаву** -- пријавити коментар на преглед
+- **Flag/Unflag** -- prijavite komentar za pregled
 
 ```swift
 try await sdk.flagComment(commentId: commentId)
 try await sdk.unflagComment(commentId: commentId)
 ```
 
-- **Блокирај/Деблокирај** -- сакрити све коментаре од корисника (за сваког гледаоца појединачно)
+- **Block/Unblock** -- sakrijte sve komentare od korisnika (po‑gledatelju)
 
 ```swift
 try await sdk.blockUser(commentId: commentId)
 try await sdk.unblockUser(commentId: commentId)
 ```
 
-### Радње само за администраторе
+### Admin-Only Actions
 
-- **Закачи/Откачи** -- закачити коментар на врх нити
+- **Pin/Unpin** -- prikačite komentar na vrh teme
 
 ```swift
 try await sdk.pinComment(commentId: commentId)
 try await sdk.unpinComment(commentId: commentId)
 ```
 
-- **Закључај/Откључај** -- спречити нове одговоре на коментар
+- **Lock/Unlock** -- spriječite nove odgovore na komentar, i blokirajte uređivanja i brisanja dok nije otključan (važi za sve, uključujući moderatore)
 
 ```swift
 try await sdk.lockComment(commentId: commentId)
 try await sdk.unlockComment(commentId: commentId)
 ```
 
-Све модерацијске радње такође су доступне преко контекстног менија коментара у корисничком интерфејсу. Администраторске радње се појављују само када је тренутни корисник администратор сајта (постављено преко SSO `isAdmin` ознаке или конфигурације контролне табле).
-
----
----
+All moderation actions are also available through the comment context menu in the UI. Admin actions only appear when the current user is a site admin (set via SSO `isAdmin` flag or dashboard configuration).

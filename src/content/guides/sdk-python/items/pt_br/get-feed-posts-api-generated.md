@@ -1,12 +1,11 @@
----
 req
 tenantId
 afterId
 
 ## Parâmetros
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Localização | Obrigatório | Descrição |
+|------|------|------------|-------------|-----------|
 | tenantId | string | query | Sim |  |
 | afterId | string | query | Não |  |
 | limit | integer | query | Não |  |
@@ -18,29 +17,28 @@ Retorna: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-p
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de get_feed_posts'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_feed_posts Exemplo'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetFeedPostsOptions
 from client.models.get_feed_posts_response import GetFeedPostsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# A definição do host é opcional e o padrão é https://fastcomments.com
-# Consulte configuration.py para uma lista de todos os parâmetros de configuração suportados.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
-
+# Definindo o host é opcional e o padrão é https://fastcomments.com
+# Veja configuration.py para uma lista de todos os parâmetros de configuração suportados.
 # O cliente deve configurar os parâmetros de autenticação e autorização
-# de acordo com a política de segurança do servidor da API.
+# em conformidade com a política de segurança do servidor API.
 # Exemplos para cada método de autenticação são fornecidos abaixo, use o exemplo que
-# satisfaça seu caso de uso de autenticação.
+# atende ao seu caso de uso de autenticação.
 
-# Configure a autorização por chave de API: api_key
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Configurar a autorização da chave API: api_key
+configuration.api_key['api_key'] = os.environ["API_KEY"]
+
+# Descomente abaixo para configurar o prefixo (ex.: Bearer) para a chave API, se necessário
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Entre em um contexto com uma instância do cliente da API
+# Entre em um contexto com uma instância do cliente API
 with client.ApiClient(configuration) as api_client:
     # Crie uma instância da classe API
     api_instance = client.DefaultApi(api_client)
@@ -50,7 +48,7 @@ with client.ApiClient(configuration) as api_client:
     tags = ['tags_example'] # List[str] |  (optional)
 
     try:
-        api_response = api_instance.get_feed_posts(tenant_id, after_id=after_id, limit=limit, tags=tags)
+        api_response = api_instance.get_feed_posts(tenant_id, GetFeedPostsOptions(after_id=after_id, limit=limit, tags=tags))
         print("The response of DefaultApi->get_feed_posts:\n")
         pprint(api_response)
     except Exception as e:

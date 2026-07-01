@@ -1,25 +1,20 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Потребно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| skip | float64 | Не |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Da |  |
+| skip | float64 | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[GetTenantUsersResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_tenant_users_response.nim)
+Vraća: [`Option[GetTenantUsersResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_tenant_users_response.nim)
 
-## Примјер
+## Primer
 
-[inline-code-attrs-start title = 'getTenantUsers Примјер'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getTenantUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.getTenantUsers(tenantId = "my-tenant-123", skip = 0.0)
-
 if response.isSome:
-  let tenantUsers = response.get()
-  echo "Retrieved tenant users"
-else:
-  echo "No tenant users returned"
+  let data = response.get()
+  echo data
 [inline-code-end]
-
----

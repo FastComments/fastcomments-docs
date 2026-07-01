@@ -1,23 +1,23 @@
-### שימוש ב-Nimble
+### Using Nimble
 
 ```bash
 nimble install fastcomments
 ```
 
-### בנייה מהמקור
+### Building from Source
 
 ```bash
 nimble build
 ```
 
-### תכולת הספרייה
+### Library Contents
 
-ספרייה זו מכילה את לקוח ה-API שנוצר ואת כלי ה-SSO כדי להקל על העבודה עם ה-API.
+ספרייה זו מכילה את לקוח ה‑API שנוצר ואת כלי העזר של SSO כדי להקל על העבודה עם ה‑API.
 
-- [תיעוד ספריית לקוח ה-API](https://github.com/FastComments/fastcomments-nim/blob/master/client/README.md)
+- [תיעוד ספריית לקוח ה‑API](https://github.com/FastComments/fastcomments-nim/blob/master/client/README.md)
 
-### APIs ציבוריים מול מאובטחים
+### Public vs Secured APIs
 
-עבור לקוח ה-API קיימים שלושה מודולים: `api_default`, `api_public` ו-`api_moderation`. המודול `api_default` מכיל שיטות שדורשות את מפתח ה-API שלך, ו-`api_public` מכיל קריאות API שניתן לבצע ישירות מדפדפן/מכשיר נייד/וכו' ללא אימות. המודול `api_moderation` מכיל שיטות ללוח הבקרה של המודרטור.
+ללקוח ה‑API קיימים שלושה מודולי API: `api_default`, `api_public`, ו‑`api_moderation`. המודול `api_default` מכיל שיטות הדורשות את מפתח ה‑API שלכם, וה‑`api_public` מכיל קריאות API שניתן לבצע ישירות מדפדפן/מכשיר נייד/וכו׳ ללא אימות. מודול `api_moderation` מכיל שיטות ללוח המחוונים של המפקח.
 
-השיטות ב-`api_moderation` מכסות רשימה, ספירה, חיפוש וייצוא של תגובות ושל היומנים שלהן; פעולות moderation כמו הסרה/שחזור של תגובות, דיווח/סימון (flagging), קביעת סטטוס לסקירה/ספאם/אישור, התאמת הצבעות, ופתיחה מחדש/סגירה של שרשורים; חסימות (חסימת משתמש מתגובה, ביטול חסימה, תקצירי טרם חסימה, סטטוס והעדפות חסימה, וספירת משתמשים חסומים); ותגים ואמון (הענקה/הסרה של תג, רשימת תגים ידניים, קבלת/הגדרת גורם האמון של משתמש, ושליפת הפרופיל הפנימי של משתמש). כל שיטה ב-`api_moderation` מקבלת פרמטר `sso` כך שהקריאה מאומתת כמודרטור SSO.
+מודול `api_moderation` מספק חבילה נרחבת של API מודרציה חיים ומהירים. כל שיטת `api_moderation` מקבלת פרמטר `sso` וניתן לאמת באמצעות SSO או קובץ cookie של מושב FastComments.com.

@@ -1,7 +1,7 @@
 ## Parâmetros
 
 | Nome | Tipo | Localização | Obrigatório | Descrição |
-|------|------|----------|----------|-------------|
+|------|------|-------------|-------------|-----------|
 | tenantId | string | path | Sim |  |
 | urlId | string | query | Sim |  |
 
@@ -11,7 +11,7 @@ Retorna: [`GetV1PageLikes`](https://github.com/FastComments/fastcomments-php/blo
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getV1PageLikes'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo getV1PageLikes'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -20,11 +20,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
     // Se você quiser usar um cliente HTTP personalizado, passe seu cliente que implemente `GuzzleHttp\ClientInterface`.
-    // Isso é opcional, `GuzzleHttp\Client` será usado por padrão.
+    // Isso é opcional, `GuzzleHttp\Client` será usado como padrão.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $url_id = 'url_id_example'; // string
+
 
 try {
     $result = $apiInstance->getV1PageLikes($tenant_id, $url_id);
@@ -33,5 +35,3 @@ try {
     echo 'Exception when calling PublicApi->getV1PageLikes: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

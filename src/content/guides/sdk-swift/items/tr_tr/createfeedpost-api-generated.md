@@ -1,12 +1,12 @@
 ## Parametreler
 
-| Adı | Tür | Konum | Gerekli | Açıklama |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Evet |  |
-| broadcastId | string | query | Hayır |  |
-| isLive | boolean | query | Hayır |  |
-| doSpamCheck | boolean | query | Hayır |  |
-| skipDupCheck | boolean | query | Hayır |  |
+| tenantId | string | query | Yes |  |
+| broadcastId | string | query | No |  |
+| isLive | boolean | query | No |  |
+| doSpamCheck | boolean | query | No |  |
+| skipDupCheck | boolean | query | No |  |
 
 ## Yanıt
 
@@ -16,7 +16,7 @@ Döndürür: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'createFeedPost Örneği'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Aşağıdaki kod örnekleri hâlâ beta aşamasındadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new üzerinden bildirin
+// Aşağıdaki kod örnekleri hâlâ beta aşamasındadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new adresine bildirin.
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -26,7 +26,7 @@ let isLive = true // Bool |  (isteğe bağlı)
 let doSpamCheck = true // Bool |  (isteğe bağlı)
 let skipDupCheck = true // Bool |  (isteğe bağlı)
 
-DefaultAPI.createFeedPost(tenantId: tenantId, createFeedPostParams: createFeedPostParams, broadcastId: broadcastId, isLive: isLive, doSpamCheck: doSpamCheck, skipDupCheck: skipDupCheck) { (response, error) in
+DefaultAPI.createFeedPost(tenantId: tenantId, createFeedPostParams: createFeedPostParams, options: DefaultAPI.CreateFeedPostOptions(broadcastId: broadcastId, isLive: isLive, doSpamCheck: doSpamCheck, skipDupCheck: skipDupCheck)) { (response, error) in
     guard error == nil else {
         print(error)
         return

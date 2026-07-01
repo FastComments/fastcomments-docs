@@ -1,9 +1,9 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| id | string | Ні |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
 
 ## Відповідь
 
@@ -13,12 +13,10 @@
 
 [inline-code-attrs-start title = 'Приклад getUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUser(tenantId = "my-tenant-123", id = "user-456")
-if response.isSome:
-  let user = response.get()
+let (userOpt, httpResp) = client.getUser(tenantId = "my-tenant-123", id = "user-456")
+if userOpt.isSome:
+  let user = userOpt.get()
   echo user
 else:
   echo "User not found"
 [inline-code-end]
-
----

@@ -1,20 +1,23 @@
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| id | string | כן |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
 ## תגובה
 
-מחזיר: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+מחזיר: [`DeleteNotificationCountResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteNotificationCountResponse.ts)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל־deleteNotificationCount'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת deleteNotificationCount'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const idPrefix: string | undefined = 'count';
-const notificationId: string = `${idPrefix ? idPrefix + '-' : ''}8b3a9f6c-3e8f-4f6a-a2f3-1a2b3c4d5e6f`;
-const tenantId: string = 'acme-media-tenant-42';
-const result: APIEmptyResponse = await deleteNotificationCount(tenantId, notificationId);
+async function run() {
+  const tenantId: string = "tenant_12345";
+  const notificationId: string = "notif_98765";
+  const result: DeleteNotificationCountResponse = await deleteNotificationCount(tenantId, notificationId);
+  console.log(result);
+}
+run();
 [inline-code-end]

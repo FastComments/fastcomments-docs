@@ -1,9 +1,10 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Ad | Tür | Yer | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| urlId | string | query | Evet |  |
-| sso | string | query | Hayır |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Yanıt
 
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
-    String urlId = "urlId_example"; // String | 
-    String sso = "sso_example"; // String | 
+    String tenantId = "tenantId_example"; // String |
+    String urlId = "urlId_example"; // String |
+    String sso = "sso_example"; // String |
     try {
-      APIEmptyResponse result = apiInstance.putReopenThread(urlId)
+      APIEmptyResponse result = apiInstance.putReopenThread(tenantId, urlId)
             .sso(sso)
             .execute();
       System.out.println(result);

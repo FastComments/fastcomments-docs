@@ -1,18 +1,20 @@
-## 매개변수
+## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| commentId | string | path | 예 |  |
-| approved | boolean | query | 아니요 |  |
-| sso | string | query | 아니요 |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| approved | boolean | query | No |  |
+| broadcastId | string | query | No |  |
+| sSO | string | query | No |  |
 
-## 응답
+## Response
 
-반환: [`SetCommentApprovedResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SetCommentApprovedResponse.php)
+Returns: [`SetCommentApprovedResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SetCommentApprovedResponse.php)
 
-## 예제
+## Example
 
-[inline-code-attrs-start title = 'postSetCommentApprovalStatus 예제'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postSetCommentApprovalStatus 예시'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -20,20 +22,24 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // 커스텀 HTTP 클라이언트를 사용하려면, `GuzzleHttp\ClientInterface`를 구현하는 클라이언트를 전달하세요.
-    // 이는 선택 사항이며 기본값으로 `GuzzleHttp\Client`가 사용됩니다.
+    // 커스텀 HTTP 클라이언트를 사용하려면 `GuzzleHttp\ClientInterface`를 구현하는 클라이언트를 전달하세요.
+    // 이는 선택 사항이며, 기본적으로 `GuzzleHttp\Client`가 사용됩니다.
     new GuzzleHttp\Client()
 );
+
+$tenant_id = 'tenant_id_example'; // 문자열
 $comment_id = 'comment_id_example'; // 문자열
-$approved = True; // 부울
-$sso = 'sso_example'; // 문자열
+$options = [
+    'approved' => True, // 불리언
+    'broadcast_id' => 'broadcast_id_example', // 문자열
+    'sso' => 'sso_example', // 문자열
+];
+
 
 try {
-    $result = $apiInstance->postSetCommentApprovalStatus($comment_id, $approved, $sso);
+    $result = $apiInstance->postSetCommentApprovalStatus($tenant_id, $comment_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->postSetCommentApprovalStatus: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

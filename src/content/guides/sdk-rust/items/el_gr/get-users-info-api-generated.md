@@ -1,29 +1,25 @@
----
-Μαζικές πληροφορίες χρηστών για έναν tenant. Δεδομένων των userIds, επιστρέφει πληροφορίες εμφάνισης από User / SSOUser.
-Χρησιμοποιείται από το comment widget για να εμπλουτίσει χρήστες που μόλις εμφανίστηκαν μέσω ενός presence event.
-Χωρίς πλαίσιο σελίδας: η ιδιωτικότητα εφαρμόζεται ομοιόμορφα (τα ιδιωτικά προφίλ αποκρύπτονται).
+Μαζικές πληροφορίες χρήστη για έναν ενοικιαστή. Δοθέντες οι userIds, επιστρέφονται πληροφορίες εμφάνισης από User / SSOUser.  
+Χρησιμοποιείται από το widget σχολίων για τον εμπλουτισμό των χρηστών που μόλις εμφανίστηκαν μέσω ενός γεγονότος παρουσίας.  
+Δεν υπάρχει πλαίσιο σελίδας: η ιδιωτικότητα επιβάλλεται ομοιόμορφα (τα ιδιωτικά προφίλ καλύπτονται).
 
-## Παράμετροι
+## Parameters
 
-| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | Ναι |  |
-| ids | String | Ναι |  |
+| tenant_id | String | Yes |  |
+| ids | String | Yes |  |
 
-## Απόκριση
+## Response
 
 Επιστρέφει: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_info_response.rs)
 
-## Παράδειγμα
+## Example
 
-[inline-code-attrs-start title = 'Παράδειγμα get_users_info'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_users_info Παράδειγμα'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: GetUsersInfoParams = GetUsersInfoParams {
+let params = GetUsersInfoParams {
     tenant_id: "acme-corp-tenant".to_string(),
-    ids: "alice@example.com,bob@example.com,carol@example.com".to_string(),
-    page_size: Some(100),
+    ids: "user-1,user-2".to_string(),
 };
-let users_response: PageUsersInfoResponse = get_users_info(&configuration, params).await?;
+let page: PageUsersInfoResponse = get_users_info(&configuration, params).await?;
 [inline-code-end]
-
----

@@ -1,7 +1,8 @@
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| 名前 | タイプ | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | はい |  |
 | badgeId | string | query | はい |  |
 | userId | string | query | いいえ |  |
 | commentId | string | query | いいえ |  |
@@ -14,12 +15,13 @@
 
 ## 例
 
-[inline-code-attrs-start title = 'put_award_badge の例'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'put_award_badge 例'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 badge_id = 'badge_id_example' # String | 
 opts = {
   user_id: 'user_id_example', # String | 
@@ -30,11 +32,9 @@ opts = {
 
 begin
   
-  result = api_instance.put_award_badge(badge_id, opts)
+  result = api_instance.put_award_badge(tenant_id, badge_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->put_award_badge: #{e}"
 end
 [inline-code-end]
-
----

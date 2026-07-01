@@ -1,16 +1,16 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| questionId | string | query | No |  |
-| questionIds | array | query | No |  |
-| urlId | string | query | No |  |
-| startDate | string | query | No |  |
-| forceRecalculate | boolean | query | No |  |
-| minValue | number | query | No |  |
-| maxValue | number | query | No |  |
-| limit | number | query | No |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
+| questionId | string | query | Ne |  |
+| questionIds | array | query | Ne |  |
+| urlId | string | query | Ne |  |
+| startDate | string | query | Ne |  |
+| forceRecalculate | boolean | query | Ne |  |
+| minValue | number | query | Ne |  |
+| maxValue | number | query | Ne |  |
+| limit | number | query | Ne |  |
 
 ## Odgovor
 
@@ -18,9 +18,9 @@ Vraća: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastCo
 
 ## Primjer
 
-[inline-code-attrs-start title = 'combineCommentsWithQuestionResults Primjer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer combineCommentsWithQuestionResults'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sljedeći primjeri koda su još u beta verziji. Za bilo koji problem, prijavite putem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sljedeći primjeri koda još su beta. Za bilo koji problem, molimo prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -33,7 +33,7 @@ let minValue = 987 // Double |  (neobavezno)
 let maxValue = 987 // Double |  (neobavezno)
 let limit = 987 // Double |  (neobavezno)
 
-DefaultAPI.combineCommentsWithQuestionResults(tenantId: tenantId, questionId: questionId, questionIds: questionIds, urlId: urlId, startDate: startDate, forceRecalculate: forceRecalculate, minValue: minValue, maxValue: maxValue, limit: limit) { (response, error) in
+DefaultAPI.combineCommentsWithQuestionResults(tenantId: tenantId, options: DefaultAPI.CombineCommentsWithQuestionResultsOptions(questionId: questionId, questionIds: questionIds, urlId: urlId, startDate: startDate, forceRecalculate: forceRecalculate, minValue: minValue, maxValue: maxValue, limit: limit)) { (response, error) in
     guard error == nil else {
         print(error)
         return

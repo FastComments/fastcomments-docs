@@ -1,58 +1,59 @@
-## Parámetros
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Sí |  |
+| tenantId | string | query | Yes |  |
 | limit | number | query | No |  |
 | skip | number | query | No |  |
 | order | string | query | No |  |
 | after | number | query | No |  |
 | before | number | query | No |  |
 
-## Respuesta
+## Response
 
 Devuelve: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_audit_logs_response.py)
 
-## Ejemplo
+## Example
 
 [inline-code-attrs-start title = 'Ejemplo get_audit_logs'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetAuditLogsOptions
 from client.models.get_audit_logs_response import GetAuditLogsResponse
 from client.models.sortdir import SORTDIR
 from client.rest import ApiException
 from pprint import pprint
 
 # Definir el host es opcional y por defecto es https://fastcomments.com
-# Consulte configuration.py para obtener una lista de todos los parámetros de configuración compatibles.
+# Ver configuration.py para una lista de todos los parámetros de configuración soportados.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # El cliente debe configurar los parámetros de autenticación y autorización
 # de acuerdo con la política de seguridad del servidor API.
-# Se proporcionan ejemplos para cada método de autenticación a continuación; use el ejemplo que
+# Se proporcionan ejemplos para cada método de autenticación a continuación, use el ejemplo que
 # satisfaga su caso de uso de autenticación.
 
-# Configurar autorización por clave API: api_key
+# Configurar autorización con clave API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Descomente lo siguiente para configurar un prefijo (p. ej., Bearer) para la clave API, si es necesario
+# Descomente a continuación para configurar el prefijo (p.ej., Bearer) para la clave API, si es necesario
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Entre en un contexto con una instancia del cliente de la API
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Cree una instancia de la clase API
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    limit = 3.4 # float |  (opcional)
-    skip = 3.4 # float |  (opcional)
-    order = client.SORTDIR() # SORTDIR |  (opcional)
-    after = 3.4 # float |  (opcional)
-    before = 3.4 # float |  (opcional)
+    limit = 3.4 # float |  (optional)
+    skip = 3.4 # float |  (optional)
+    order = client.SORTDIR() # SORTDIR |  (optional)
+    after = 3.4 # float |  (optional)
+    before = 3.4 # float |  (optional)
 
     try:
-        api_response = api_instance.get_audit_logs(tenant_id, limit=limit, skip=skip, order=order, after=after, before=before)
+        api_response = api_instance.get_audit_logs(tenant_id, GetAuditLogsOptions(limit=limit, skip=skip, order=order, after=after, before=before))
         print("The response of DefaultApi->get_audit_logs:\n")
         pprint(api_response)
     except Exception as e:

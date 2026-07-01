@@ -1,31 +1,31 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Обязательно | Описание |
+| Назва | Тип | Обов’язково | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Нет |  |
-| feedPost | FeedPost | Нет |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| feedPost | FeedPost | No |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
+Повертає: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример updateFeedPost'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateFeedPost Приклад'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let feedPost: FeedPost = FeedPost(title: "City Council Approves New Waterfront Park",
-  content: "The council voted 5-2 to approve funding and a timeline for construction.",
-  tags: @["local", "parks", "city"],
-  published: true)
+let feedPost = FeedPost(
+  title: "Breaking News",
+  content: "Updated story content",
+  tags: @["news", "update"]
+)
 
-let (response, httpResponse) = client.updateFeedPost(tenantId = "my-tenant-123", id = "post-456", feedPost = feedPost)
+let (apiRes, httpRes) = client.updateFeedPost(
+  tenantId = "my-tenant-123",
+  id = "post-456",
+  feedPost = feedPost
+)
 
-if response.isSome:
-  let apiResp = response.get()
-  echo "Feed post updated successfully"
-  echo apiResp
-else:
-  echo "Failed to update feed post"
-  echo httpResponse
+if apiRes.isSome:
+  let res = apiRes.get()
 [inline-code-end]

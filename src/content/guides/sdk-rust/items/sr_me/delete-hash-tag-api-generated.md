@@ -1,25 +1,26 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tag | String | Да |  |
-| tenant_id | String | Не |  |
-| delete_hash_tag_request_body | models::DeleteHashTagRequestBody | Не |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenant_id | String | Da |  |
+| tag | String | Da |  |
+| delete_hash_tag_request_body | models::DeleteHashTagRequestBody | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
+Vraća: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'delete_hash_tag Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_hash_tag Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: DeleteHashTagParams = DeleteHashTagParams {
-    tag: "news/article".to_string(),
-    tenant_id: Some("acme-corp-tenant".to_string()),
-    delete_hash_tag_request_body: Some(DeleteHashTagRequestBody {}),
-};
-let response: ApiEmptyResponse = delete_hash_tag(&configuration, params).await?;
+async fn example() -> Result<(), Error> {
+    let params = DeleteHashTagParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        tag: "news/article".to_string(),
+        delete_hash_tag_request_body: Some(models::DeleteHashTagRequestBody {}),
+    };
+    delete_hash_tag(&configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]
-
----

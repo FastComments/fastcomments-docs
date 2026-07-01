@@ -1,4 +1,4 @@
-Belirli bir yorum için bildirimleri etkinleştirir veya devre dışı bırakır.
+Enable or disable notifications for a specific comment.
 
 ## Parametreler
 
@@ -8,7 +8,7 @@ Belirli bir yorum için bildirimleri etkinleştirir veya devre dışı bırakır
 | notificationId | string | Hayır |  |
 | optedInOrOut | string | Hayır |  |
 | commentId | string | Evet |  |
-| sso | string | Hayır |  |
+| sso | string = "" | Hayır |  |
 
 ## Yanıt
 
@@ -18,17 +18,16 @@ Döndürür: [`Option[UpdateUserNotificationCommentSubscriptionStatusResponse]`]
 
 [inline-code-attrs-start title = 'updateUserNotificationCommentSubscriptionStatus Örneği'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateUserNotificationCommentSubscriptionStatus(
+let (optResp, httpResp) = client.updateUserNotificationCommentSubscriptionStatus(
   tenantId = "my-tenant-123",
-  notificationId = "",
-  optedInOrOut = "",
-  commentId = "cmt-789",
+  notificationId = "notif-456",
+  optedInOrOut = "opted-in",
+  commentId = "comment-789",
   sso = ""
 )
 
-if response.isSome:
-  let updateResp = response.get()
-  echo "Subscription update response: ", updateResp
+if optResp.isSome:
+  let resp = optResp.get()
 [inline-code-end]
 
 ---

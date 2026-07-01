@@ -2,7 +2,8 @@
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| sso | string | query | いいえ |  |
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## レスポンス
 
@@ -18,14 +19,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // カスタムHTTPクライアントを使用する場合は、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
-    // これは任意です。デフォルトでは `GuzzleHttp\Client` が使用されます。
+    // カスタム HTTP クライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
+    // これはオプションで、デフォルトでは `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client()
 );
-$sso = 'sso_example'; // string 型
+
+$tenant_id = 'tenant_id_example'; // 文字列
+$sso = 'sso_example'; // 文字列
+
 
 try {
-    $result = $apiInstance->getUserBanPreference($sso);
+    $result = $apiInstance->getUserBanPreference($tenant_id, $sso);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getUserBanPreference: ', $e->getMessage(), PHP_EOL;

@@ -2,9 +2,9 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| meta | string | query | Ne |  |
-| skip | number | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| meta | string | query | No |  |
+| skip | number | query | No |  |
 
 ## Odgovor
 
@@ -20,22 +20,26 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Konfigurišite autorizaciju API ključa: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Otkomentarišite ispod da biste postavili prefiks (npr. Bearer) za API ključ, ako je potrebno
+// Otkomentarišite dole da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
     // Ako želite koristiti prilagođeni HTTP klijent, prosledite vaš klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opciono, kao podrazumevani će se koristiti `GuzzleHttp\Client`.
+    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao podrazumevano.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$meta = 'meta_example'; // string
-$skip = 3.4; // float
+$options = [
+    'meta' => 'meta_example', // string
+    'skip' => 3.4, // float
+];
+
 
 try {
-    $result = $apiInstance->getTenants($tenant_id, $meta, $skip);
+    $result = $apiInstance->getTenants($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getTenants: ', $e->getMessage(), PHP_EOL;

@@ -1,31 +1,33 @@
-## Параметры
+## Параметри
 
-| Name | Type | Обязательно | Описание |
-|------|------|------------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
-| updateAPISSOUserData | UpdateAPISSOUserData | Да |  |
-| updateComments | bool | Нет |  |
+| Назва | Тип | Обов’язковий | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Так |  |
+| id | string | Так |  |
+| updateAPISSOUserData | UpdateAPISSOUserData | Так |  |
+| updateComments | bool | Ні |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`PutSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PutSSOUserAPIResponse.h)
+Повертає: [`PutSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PutSSOUserAPIResponse.h)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример putSSOUser'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putSSOUser Приклад'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t id = U("user@example.com");
-UpdateAPISSOUserData updateData;
-updateData.displayName = U("Jane Doe");
-updateData.email = U("user@example.com");
-boost::optional<bool> updateComments = true;
-api->putSSOUser(tenantId, id, updateData, updateComments)
-.then([](std::shared_ptr<PutSSOUserAPIResponse> resp){
-    if(!resp){ std::cout << "putSSOUser returned null\n"; return; }
-    auto copy = std::make_shared<PutSSOUserAPIResponse>(*resp);
-    std::cout << "SSO user updated successfully\n";
+UpdateAPISSOUserData userData;
+userData.email = utility::conversions::to_string_t("alice@example.com");
+userData.first_name = utility::conversions::to_string_t("Alice");
+userData.last_name = utility::conversions::to_string_t("Smith");
+userData.role = utility::conversions::to_string_t("moderator");
+
+api->putSSOUser(
+    utility::conversions::to_string_t("my-tenant-123"),
+    utility::conversions::to_string_t("alice.smith"),
+    userData,
+    boost::optional<bool>(true)
+).then([](pplx::task<std::shared_ptr<PutSSOUserAPIResponse>> t) {
+    auto response = t.get();
 });
 [inline-code-end]
 

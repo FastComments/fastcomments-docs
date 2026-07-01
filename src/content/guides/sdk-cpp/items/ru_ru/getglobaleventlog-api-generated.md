@@ -5,7 +5,7 @@ userIdWS
 
 ## Параметры
 
-| Name | Type | Required | Description |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | urlId | string | Да |  |
@@ -19,20 +19,17 @@ userIdWS
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример getGlobalEventLog'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getGlobalEventLog Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t urlId = U("article-456");
-utility::string_t userIdWS = U("user@example.com");
-int64_t startTime = 1622505600000LL;
-boost::optional<int64_t> endTime = boost::optional<int64_t>(1622592000000LL);
-auto task = api->getGlobalEventLog(tenantId, urlId, userIdWS, startTime, endTime)
-    .then([](pplx::task<std::shared_ptr<GetEventLogResponse>> t){
-        try {
-            auto resp = t.get();
-            auto result = resp ? resp : std::make_shared<GetEventLogResponse>();
-        } catch (const std::exception& e) {
-            (void)e;
-        }
-    });
+api->getGlobalEventLog(
+    U("my-tenant-123"),
+    U("article-456"),
+    U("user@example.com"),
+    1622505600,
+    boost::optional<int64_t>(1625097600)
+).then([](std::shared_ptr<GetEventLogResponse> resp) {
+    (void)resp;
+});
 [inline-code-end]
+
+---

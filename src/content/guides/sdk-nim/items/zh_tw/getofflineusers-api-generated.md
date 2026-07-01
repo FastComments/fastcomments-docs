@@ -1,36 +1,29 @@
----
-頁面上曾留言但目前不在線上的使用者。依 displayName 排序。
-在用盡 /users/online 後使用，以呈現「成員」區段。
-以 commenterName 做游標分頁：伺服器會於部分索引 {tenantId, urlId, commenterName} 從 afterName 向前透過 $gt 遍歷，沒有 $skip 的成本。
+過去在此頁面留言的使用者，且目前未在線上。依 displayName 排序。  
+在耗盡 /users/online 後使用，以呈現「Members」區段。  
+在 commenterName 上的游標分頁：伺服器從 afterName 向前遍歷部分 {tenantId, urlId, commenterName} 索引，使用 $gt 前進，無 $skip 成本。
 
-## 參數
+## Parameters
 
-| 名稱 | 類型 | 是否必填 | 描述 |
-|------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| urlId | string | 是 |  |
-| afterName | string | 否 |  |
-| afterUserId | string | 否 |  |
+| 名稱 | 類型 | 必填 | 說明 |
+|------|------|------|------|
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| options | GetOfflineUsersOptions | No |  |
 
-## 回應
+## Response
 
-回傳: [`Option[PageUsersOfflineResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_offline_response.nim)
+Returns: [`Option[PageUsersOfflineResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_offline_response.nim)
 
-## 範例
+## Example
 
 [inline-code-attrs-start title = 'getOfflineUsers 範例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getOfflineUsers(
+let (offlineResp, httpResponse) = client.getOfflineUsers(
   tenantId = "my-tenant-123",
-  urlId = "news/article-how-to-code",
-  afterName = "",
-  afterUserId = ""
+  urlId = "news/article-title",
+  options = GetOfflineUsersOptions()
 )
-
-if response.isSome:
-  let offlinePage = response.get()
-  echo "Received offline users page"
-  discard httpResponse.statusCode
+if offlineResp.isSome:
+  let offline = offlineResp.get()
+  echo offline)
 [inline-code-end]
-
----

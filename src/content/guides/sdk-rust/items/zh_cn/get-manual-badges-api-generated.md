@@ -1,9 +1,9 @@
----
 ## 参数
 
-| 名称 | 类型 | 必填 | 描述 |
+| 名称 | 类型 | 必需 | 描述 |
 |------|------|----------|-------------|
-| sso | String | 否 |  |
+| tenant_id | String | Yes |  |
+| sso | String | No |  |
 
 ## 响应
 
@@ -13,11 +13,12 @@
 
 [inline-code-attrs-start title = 'get_manual_badges 示例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_manual_badges() -> Result<(), Error> {
-    let params: GetManualBadgesParams = GetManualBadgesParams {
-        sso: Some(String::from("https://sso.acme-corp.com/authorize?tenant=acme-corp-tenant")),
+async fn fetch_badges(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetManualBadgesParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        sso: Some("news/article".to_string()),
     };
-    let response: GetTenantManualBadgesResponse = get_manual_badges(&configuration, params).await?;
+    let _response = get_manual_badges(configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

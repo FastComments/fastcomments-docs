@@ -1,7 +1,8 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язкове | Опис |
+| Назва | Тип | Розташування | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Так |  |
 | commentId | string | path | Так |  |
 | banEmail | boolean | query | Ні |  |
 | banEmailDomain | boolean | query | Ні |  |
@@ -27,23 +28,28 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Якщо ви хочете використати власний HTTP-клієнт, передайте ваш клієнт, який реалізує `GuzzleHttp\ClientInterface`.
-    // Це необов'язково, за замовчуванням буде використано `GuzzleHttp\Client`.
+    // Якщо ви хочете використовувати власний HTTP-клієнт, передайте ваш клієнт, який реалізує `GuzzleHttp\ClientInterface`.
+    // Це необов'язково, `GuzzleHttp\Client` буде використаний за замовчуванням.
     new GuzzleHttp\Client()
 );
-$comment_id = 'comment_id_example'; // string
-$ban_email = True; // bool
-$ban_email_domain = True; // bool
-$ban_ip = True; // bool
-$delete_all_users_comments = True; // bool
-$banned_until = 'banned_until_example'; // string
-$is_shadow_ban = True; // bool
-$update_id = 'update_id_example'; // string
-$ban_reason = 'ban_reason_example'; // string
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // рядок
+$comment_id = 'comment_id_example'; // рядок
+$options = [
+    'ban_email' => True, // булевий
+    'ban_email_domain' => True, // булевий
+    'ban_ip' => True, // булевий
+    'delete_all_users_comments' => True, // булевий
+    'banned_until' => 'banned_until_example', // рядок
+    'is_shadow_ban' => True, // булевий
+    'update_id' => 'update_id_example', // рядок
+    'ban_reason' => 'ban_reason_example', // рядок
+    'sso' => 'sso_example', // рядок
+];
+
 
 try {
-    $result = $apiInstance->postBanUserFromComment($comment_id, $ban_email, $ban_email_domain, $ban_ip, $delete_all_users_comments, $banned_until, $is_shadow_ban, $update_id, $ban_reason, $sso);
+    $result = $apiInstance->postBanUserFromComment($tenant_id, $comment_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->postBanUserFromComment: ', $e->getMessage(), PHP_EOL;

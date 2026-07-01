@@ -1,24 +1,26 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
-|------|------|----------|----------|-------------|
-| value | string | query | No |  |
-| sso | string | query | No |  |
+| Naam | Type | Locatie | Verplicht | Beschrijving |
+|------|------|----------|------------|--------------|
+| tenantId | string | query | Ja |  |
+| value | string | query | Nee |  |
+| sso | string | query | Nee |  |
 
-## Antwoord
+## Respons
 
 Retourneert: [`ModerationSiteSearchResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/moderation_site_search_response.py)
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'get_search_sites Voorbeeld'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Voorbeeld get_search_sites'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetSearchSitesOptions
 from client.models.moderation_site_search_response import ModerationSiteSearchResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Het definiëren van de host is optioneel en standaard is https://fastcomments.com
+# De host definiëren is optioneel en standaard https://fastcomments.com
 # Zie configuration.py voor een lijst van alle ondersteunde configuratieparameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -29,11 +31,12 @@ configuration = client.Configuration(
 with client.ApiClient(configuration) as api_client:
     # Maak een instantie van de API-klasse
     api_instance = client.ModerationApi(api_client)
-    value = 'value_example' # str |  (optioneel)
-    sso = 'sso_example' # str |  (optioneel)
+    tenant_id = 'tenant_id_example' # str | 
+    value = 'value_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_search_sites(value=value, sso=sso)
+        api_response = api_instance.get_search_sites(tenant_id, GetSearchSitesOptions(value=value, sso=sso))
         print("The response of ModerationApi->get_search_sites:\n")
         pprint(api_response)
     except Exception as e:

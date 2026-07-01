@@ -1,7 +1,8 @@
 ## Parâmetros
 
 | Nome | Tipo | Localização | Obrigatório | Descrição |
-|------|------|----------|----------|-------------|
+|------|------|-------------|-------------|-----------|
+| tenantId | string | query | Sim |  |
 | sso | string | query | Não |  |
 
 ## Resposta
@@ -10,7 +11,7 @@ Retorna: [`GetBannedUsersCountResponse`](https://github.com/FastComments/fastcom
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de get_counts'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo get_counts'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.models.get_banned_users_count_response import GetBannedUsersCountResponse
@@ -24,14 +25,15 @@ configuration = client.Configuration(
 )
 
 
-# Entre em um contexto com uma instância do cliente da API
+# Entre em um contexto com uma instância do cliente API
 with client.ApiClient(configuration) as api_client:
     # Crie uma instância da classe API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     sso = 'sso_example' # str |  (opcional)
 
     try:
-        api_response = api_instance.get_counts(sso=sso)
+        api_response = api_instance.get_counts(tenant_id, sso=sso)
         print("The response of ModerationApi->get_counts:\n")
         pprint(api_response)
     except Exception as e:

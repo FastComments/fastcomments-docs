@@ -1,6 +1,6 @@
 ## 响应
 
-返回: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
+返回：[`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
 ## 示例
 
@@ -12,10 +12,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // 如果您想使用自定义 HTTP 客户端，请传入实现了 `GuzzleHttp\ClientInterface` 的客户端。
-    // 此项可选，默认将使用 `GuzzleHttp\Client`。
+    // 如果您想使用自定义 http 客户端，请传入实现 `GuzzleHttp\ClientInterface` 的客户端。
+    // 这是可选的，默认将使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client()
 );
+
+
 
 try {
     $result = $apiInstance->logoutPublic();
@@ -24,3 +26,5 @@ try {
     echo 'Exception when calling PublicApi->logoutPublic: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

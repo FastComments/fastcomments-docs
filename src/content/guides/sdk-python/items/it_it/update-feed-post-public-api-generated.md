@@ -1,9 +1,9 @@
 ## Parametri
 
-| Name | Tipo | Posizione | Obbligatorio | Descrizione |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Sì |  |
-| postId | string | path | Sì |  |
+| tenantId | string | path | Yes |  |
+| postId | string | path | Yes |  |
 | broadcastId | string | query | No |  |
 | sso | string | query | No |  |
 
@@ -16,30 +16,31 @@ Restituisce: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomm
 [inline-code-attrs-start title = 'Esempio di update_feed_post_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import UpdateFeedPostPublicOptions
 from client.models.create_feed_post_response import CreateFeedPostResponse
 from client.models.update_feed_post_params import UpdateFeedPostParams
 from client.rest import ApiException
 from pprint import pprint
 
-# La definizione dell'host è opzionale e per impostazione predefinita è https://fastcomments.com
-# Vedi configuration.py per un elenco di tutti i parametri di configurazione supportati.
+# Definire l'host è opzionale e predefinito a https://fastcomments.com
+# Vedere configuration.py per un elenco di tutti i parametri di configurazione supportati.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Entra in un contesto con un'istanza del client API
+# Entrare in un contesto con un'istanza del client API
 with client.ApiClient(configuration) as api_client:
-    # Crea un'istanza della classe API
+    # Creare un'istanza della classe API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     post_id = 'post_id_example' # str | 
     update_feed_post_params = client.UpdateFeedPostParams() # UpdateFeedPostParams | 
-    broadcast_id = 'broadcast_id_example' # str |  (opzionale)
-    sso = 'sso_example' # str |  (opzionale)
+    broadcast_id = 'broadcast_id_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.update_feed_post_public(tenant_id, post_id, update_feed_post_params, broadcast_id=broadcast_id, sso=sso)
+        api_response = api_instance.update_feed_post_public(tenant_id, post_id, update_feed_post_params, UpdateFeedPostPublicOptions(broadcast_id=broadcast_id, sso=sso))
         print("The response of PublicApi->update_feed_post_public:\n")
         pprint(api_response)
     except Exception as e:

@@ -1,25 +1,33 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Обязательно | Описание |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| commentId | string | Да |  |
-| broadcastId | string | Да |  |
-| sso | string | Нет |  |
+| Ім'я | Тип | Обов'язково | Опис |
+|------|------|-------------|------|
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| broadcastId | string | Yes |  |
+| sso | string | No |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Повертає: [`UnLockCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UnLockCommentResponse.ts)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример unLockComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'unLockComment Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f3d2b';
-const commentId: string = 'cmt_5e8a1d';
-const broadcastId: string = 'bcast_4f2b7a';
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJ1c2VyX2QxMjMifQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
-const result: APIEmptyResponse = await unLockComment(tenantId, commentId, broadcastId, sso);
-[inline-code-end]
+const tenantId: string = "tenant_12345";
+const commentId: string = "cmt_9876";
+const broadcastId: string = "brd_001";
+const ssoToken: string | undefined = "sso_token_abc";
 
----
+async function run() {
+  const unlocked: UnLockCommentResponse = await unLockComment(tenantId, commentId, broadcastId, ssoToken);
+  console.log(unlocked);
+
+  // Виклик без необов'язкового параметра sso
+  const unlockedWithoutSso: UnLockCommentResponse = await unLockComment(tenantId, commentId, broadcastId);
+  console.log(unlockedWithoutSso);
+}
+
+run();
+[inline-code-end]

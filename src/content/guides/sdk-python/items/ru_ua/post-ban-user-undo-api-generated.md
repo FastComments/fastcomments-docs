@@ -1,16 +1,17 @@
-## Параметры
+## Parameters
 
-| Имя | Тип | Location | Обязательный | Описание |
-|------|------|----------|----------|-------------|
-| sso | string | query | Нет |  |
+| Назва | Тип | Location | Обов’язковий | Опис |
+|------|------|----------|--------------|------|
+| tenantId | string | query | Так |  |
+| sso | string | query | Ні |  |
 
-## Ответ
+## Response
 
-Возвращает: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
+Повертає: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример post_ban_user_undo'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_ban_user_undo Приклад'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.models.api_empty_response import APIEmptyResponse
@@ -18,22 +19,23 @@ from client.models.ban_user_undo_params import BanUserUndoParams
 from client.rest import ApiException
 from pprint import pprint
 
-# Задание host необязательно и по умолчанию равно https://fastcomments.com
-# См. configuration.py для списка всех поддерживаемых параметров конфигурации.
+# Визначення хоста є необов'язковим і за замовчуванням https://fastcomments.com
+# Дивіться configuration.py для списку всіх підтримуваних параметрів конфігурації.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Войдите в контекст с экземпляром API-клиента
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Создайте экземпляр класса API
+    # Create an instance of the API class
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     ban_user_undo_params = client.BanUserUndoParams() # BanUserUndoParams | 
-    sso = 'sso_example' # str |  (необязательно)
+    sso = 'sso_example' # str |  (необов'язковий)
 
     try:
-        api_response = api_instance.post_ban_user_undo(ban_user_undo_params, sso=sso)
+        api_response = api_instance.post_ban_user_undo(tenant_id, ban_user_undo_params, sso=sso)
         print("The response of ModerationApi->post_ban_user_undo:\n")
         pprint(api_response)
     except Exception as e:

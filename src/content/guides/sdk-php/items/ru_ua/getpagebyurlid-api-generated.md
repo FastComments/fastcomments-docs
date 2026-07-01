@@ -1,15 +1,15 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Расположение | Обязательно | Описание |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| urlId | string | query | Да |  |
+| Ім'я | Тип | Розташування | Обов'язковий | Опис |
+|------|------|--------------|--------------|------|
+| tenantId | string | query | Так |  |
+| urlId | string | query | Так |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`GetPageByURLIdAPIResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPageByURLIdAPIResponse.php)
+Повертає: [`GetPageByURLIdAPIResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPageByURLIdAPIResponse.php)
 
-## Пример
+## Приклад
 
 [inline-code-attrs-start title = 'Пример getPageByURLId'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -17,20 +17,21 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Настройка авторизации ключом API: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Раскомментируйте ниже, чтобы задать префикс (например, Bearer) для ключа API, если необходимо
+// Налаштувати авторизацію ключа API: api_key
+// Розкоментуйте нижче, щоб встановити префікс (наприклад, Bearer) для ключа API, якщо потрібно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Если вы хотите использовать пользовательский HTTP-клиент, передайте ваш клиент, который реализует `GuzzleHttp\ClientInterface`.
-    // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
+    // Якщо ви хочете використовувати власний HTTP-клієнт, передайте ваш клієнт, який реалізує `GuzzleHttp\ClientInterface`.
+    // Це необов’язково, за замовчуванням буде використано `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$url_id = 'url_id_example'; // string
+
+$tenant_id = 'tenant_id_example'; // рядок
+$url_id = 'url_id_example'; // рядок
+
 
 try {
     $result = $apiInstance->getPageByURLId($tenant_id, $url_id);

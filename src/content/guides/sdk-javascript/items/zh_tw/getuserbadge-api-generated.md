@@ -1,24 +1,28 @@
----
 ## 參數
 
-| 名稱 | 類型 | 必填 | 描述 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| id | string | 是 |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
 ## 回應
 
-Returns: [`APIGetUserBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIGetUserBadgeResponse.ts)
+返回：[`GetUserBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserBadgeResponse.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getUserBadge 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-72a1';
-const id: string = 'badge_5d8f3c9';
-const response: APIGetUserBadgeResponse = await getUserBadge(tenantId, id);
-const status: APIStatus = response.status;
-const badgeTitle: string | undefined = response.userBadge?.title;
-[inline-code-end]
+async function runExample(): Promise<void> {
+  const tenantId: string = "acme-corp-tenant-001";
+  const badgeId: string = "badge-5f9d3a2b";
 
----
+  const badgeResponse: GetUserBadgeResponse = await getUserBadge(tenantId, badgeId);
+
+  // 安全地存取可選欄位
+  const badgeName: string | undefined = badgeResponse.userBadge?.name;
+  console.log(`Badge ID: ${badgeId}, Name: ${badgeName ?? "Unnamed"}`);
+}
+
+runExample();
+[inline-code-end]

@@ -1,15 +1,15 @@
-Commentatori passati sulla pagina che NON sono attualmente online. Ordinati per displayName.
-Usare questo dopo aver esaurito /users/online per visualizzare una sezione "Membri".
-Paginazione cursore su commenterName: il server scorre l'indice parziale {tenantId, urlId, commenterName} da afterName in avanti tramite $gt, senza costo $skip.
+Past commenters on the page who are NOT currently online. Sorted by displayName.  
+Use this after exhausting /users/online to render a "Members" section.  
+Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName}  
+index from afterName forward via $gt, no $skip cost.
 
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nome | Tipo | Obbligatorio | Descrizione |
+|------|------|--------------|-------------|
 | tenantId | string | Sì |  |
 | urlId | string | Sì |  |
-| afterName | string | No |  |
-| afterUserId | string | No |  |
+| options | GetOfflineUsersOptions | No |  |
 
 ## Risposta
 
@@ -17,19 +17,14 @@ Restituisce: [`Option[PageUsersOfflineResponse]`](https://github.com/FastComment
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di getOfflineUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio getOfflineUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getOfflineUsers(
+let (offlineResp, httpResponse) = client.getOfflineUsers(
   tenantId = "my-tenant-123",
-  urlId = "news/article-how-to-code",
-  afterName = "",
-  afterUserId = ""
+  urlId = "news/article-title",
+  options = GetOfflineUsersOptions()
 )
-
-if response.isSome:
-  let offlinePage = response.get()
-  echo "Received offline users page"
-  discard httpResponse.statusCode
+if offlineResp.isSome:
+  let offline = offlineResp.get()
+  echo offline)
 [inline-code-end]
-
----

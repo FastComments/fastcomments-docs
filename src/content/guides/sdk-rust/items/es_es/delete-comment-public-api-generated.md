@@ -1,10 +1,10 @@
 ## Parámetros
 
-| Name | Type | Requerido | Descripción |
-|------|------|----------|-------------|
-| tenant_id | String | Sí |  |
-| comment_id | String | Sí |  |
-| broadcast_id | String | Sí |  |
+| Nombre | Tipo | Requerido | Descripción |
+|--------|------|-----------|-------------|
+| tenant_id | String | Yes |  |
+| comment_id | String | Yes |  |
+| broadcast_id | String | Yes |  |
 | edit_key | String | No |  |
 | sso | String | No |  |
 
@@ -14,19 +14,18 @@ Devuelve: [`PublicApiDeleteCommentResponse`](https://github.com/FastComments/fas
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo delete_comment_public'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_comment_public Ejemplo'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let params: DeleteCommentPublicParams = DeleteCommentPublicParams {
-        tenant_id: String::from("acme-corp-tenant"),
-        comment_id: String::from("cmt-7f3a2b9"),
-        broadcast_id: String::from("news/article/2026/06/19/article-12345"),
-        edit_key: Some(String::from("editkey-9d2f")),
-        sso: Some(String::from("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9")),
+async fn run_delete() -> Result<(), Error> {
+    let params = DeleteCommentPublicParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: "cmt-12345".to_string(),
+        broadcast_id: "news/article-6789".to_string(),
+        edit_key: Some("edit-abc123".to_string()),
+        sso: Some("sso-token-xyz".to_string()),
     };
-    let response: PublicApiDeleteCommentResponse = delete_comment_public(&configuration, params).await?;
+    let response = delete_comment_public(&configuration, params).await?;
+    let _deleted: PublicApiDeleteCommentResponse = response;
     Ok(())
 }
 [inline-code-end]
-
----

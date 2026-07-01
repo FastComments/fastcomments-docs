@@ -1,7 +1,7 @@
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
 | tenantId | string | Tak |  |
 | id | string | Nie |  |
 | skip | float64 | Nie |  |
@@ -12,14 +12,18 @@ Zwraca: [`Option[GetEmailTemplateRenderErrorsResponse]`](https://github.com/Fast
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład getEmailTemplateRenderErrors'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getEmailTemplateRenderErrors Przykład'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getEmailTemplateRenderErrors(tenantId = "my-tenant-123", id = "", skip = 0.0)
-if response.isSome:
-  let templateErrors = response.get()
-  discard templateErrors
-else:
-  discard httpResponse
-[inline-code-end]
+let (optResp, httpResp) = client.getEmailTemplateRenderErrors(
+  tenantId = "my-tenant-123",
+  id = "welcome-template",
+  skip = 0.0
+)
 
----
+if optResp.isSome:
+  let resp = optResp.get()
+  # użyj resp w razie potrzeby
+else:
+  # obsłuż brak odpowiedzi
+  discard
+[inline-code-end]

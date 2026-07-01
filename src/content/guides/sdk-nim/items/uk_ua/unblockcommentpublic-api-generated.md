@@ -1,11 +1,11 @@
 ## Параметри
 
-| Назва | Тип | Обов'язкове | Опис |
+| Ім'я | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| commentId | string | Так |  |
-| publicBlockFromCommentParams | PublicBlockFromCommentParams | Ні |  |
-| sso | string | Ні |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| publicBlockFromCommentParams | PublicBlockFromCommentParams | No |  |
+| sso | string = "" | No |  |
 
 ## Відповідь
 
@@ -13,14 +13,15 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад unBlockCommentPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'unBlockCommentPublic Приклад'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.unBlockCommentPublic(tenantId = "my-tenant-123", commentId = "cmt-987654321", publicBlockFromCommentParams = PublicBlockFromCommentParams(), sso = "")
-if response.isSome:
-  let unblockResult = response.get()
-  discard unblockResult
-else:
-  discard httpResponse
-[inline-code-end]
+let (unblockResult, httpResp) = client.unBlockCommentPublic(
+  tenantId = "my-tenant-123",
+  commentId = "comment-7890",
+  publicBlockFromCommentParams = PublicBlockFromCommentParams(),
+  sso = ""
+)
 
----
+if unblockResult.isSome:
+  let result = unblockResult.get()
+[inline-code-end]

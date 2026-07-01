@@ -1,12 +1,12 @@
----
-## Parameters
+## Parametre
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Ja |  |
 | value | string | query | Nej |  |
 | sso | string | query | Nej |  |
 
-## Response
+## Svar
 
 Returnerer: [`ModerationSiteSearchResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationSiteSearchResponse.swift)
 
@@ -14,13 +14,14 @@ Returnerer: [`ModerationSiteSearchResponse`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'getSearchSites Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Følgende kodeeksempler er stadig i beta. Ved problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De følgende kodeeksempler er stadig beta. For eventuelle problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let value = "value_example" // String |  (valgfri)
 let sso = "sso_example" // String |  (valgfri)
 
-ModerationAPI.getSearchSites(value: value, sso: sso) { (response, error) in
+ModerationAPI.getSearchSites(tenantId: tenantId, options: ModerationAPI.GetSearchSitesOptions(value: value, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -31,5 +32,3 @@ ModerationAPI.getSearchSites(value: value, sso: sso) { (response, error) in
     }
 }
 [inline-code-end]
-
----

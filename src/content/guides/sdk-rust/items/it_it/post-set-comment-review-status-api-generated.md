@@ -2,8 +2,10 @@
 
 | Nome | Tipo | Obbligatorio | Descrizione |
 |------|------|--------------|-------------|
+| tenant_id | String | Sì |  |
 | comment_id | String | Sì |  |
 | reviewed | bool | No |  |
+| broadcast_id | String | No |  |
 | sso | String | No |  |
 
 ## Risposta
@@ -12,17 +14,17 @@ Restituisce: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-r
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di post_set_comment_review_status'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_set_comment_review_status Esempio'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn set_comment_review_status() -> Result<ApiEmptyResponse, Error> {
-    let params: PostSetCommentReviewStatusParams = PostSetCommentReviewStatusParams {
-        comment_id: "news/article-2026-06-18-cmt-9843".to_string(),
+async fn update_review_status(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = PostSetCommentReviewStatusParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: "comment-98765".to_string(),
         reviewed: Some(true),
-        sso: Some("acme-sso-session-7f2e9b".to_string()),
+        broadcast_id: Some("broadcast-2023-summer".to_string()),
+        sso: Some("sso-user-42".to_string()),
     };
-    let response: ApiEmptyResponse = post_set_comment_review_status(&configuration, params).await?;
-    Ok(response)
+    post_set_comment_review_status(configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

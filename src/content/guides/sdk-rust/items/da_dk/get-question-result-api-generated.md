@@ -2,8 +2,8 @@
 
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| tenant_id | String | Ja |  |
-| id | String | Ja |  |
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
 
 ## Svar
 
@@ -13,16 +13,13 @@ Returnerer: [`GetQuestionResultResponse`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'get_question_result Eksempel'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_call() -> Result<(), Error> {
-    let params: GetQuestionResultParams = GetQuestionResultParams {
+async fn fetch_question_result(config: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetQuestionResultParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "news/article-2026-07-poll-question-1".to_string(),
-        include_details: Some(true),
+        id: "question-12345".to_string(),
         locale: Some("en-US".to_string()),
     };
-    let result: GetQuestionResultResponse = get_question_result(&configuration, params).await?;
+    let _response: GetQuestionResultResponse = get_question_result(config, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

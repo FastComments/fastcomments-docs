@@ -1,12 +1,14 @@
 ## Παράμετροι
 
-| Name | Type | Location | Required | Description |
+| Όνομα | Τύπος | Θέση | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Yes |  |
-| voteId | string | path | Yes |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Ναι |  |
+| commentId | string | path | Ναι |  |
+| voteId | string | path | Ναι |  |
+| broadcastId | string | query | Όχι |  |
+| sso | string | query | Όχι |  |
 
-## Απάντηση
+## Απόκριση
 
 Επιστρέφει: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/VoteDeleteResponse.php)
 
@@ -20,20 +22,24 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Εάν θέλετε να χρησιμοποιήσετε προσαρμοσμένο HTTP client, περάστε τον client σας που υλοποιεί `GuzzleHttp\ClientInterface`.
-    // Αυτό είναι προαιρετικό, ο `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
+    // Εάν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε το client σας που υλοποιεί `GuzzleHttp\ClientInterface`.
+    // Αυτό είναι προεραιτέο, `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
     new GuzzleHttp\Client()
 );
-$comment_id = 'comment_id_example'; // string
-$vote_id = 'vote_id_example'; // string
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // συμβολοσειρά
+$comment_id = 'comment_id_example'; // συμβολοσειρά
+$vote_id = 'vote_id_example'; // συμβολοσειρά
+$options = [
+    'broadcast_id' => 'broadcast_id_example', // συμβολοσειρά
+    'sso' => 'sso_example', // συμβολοσειρά
+];
+
 
 try {
-    $result = $apiInstance->deleteModerationVote($comment_id, $vote_id, $sso);
+    $result = $apiInstance->deleteModerationVote($tenant_id, $comment_id, $vote_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->deleteModerationVote: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

@@ -1,33 +1,36 @@
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 類型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| tenant_id | String | 是 |  |
-| id | String | 是 |  |
-| updatable_comment_params | models::UpdatableCommentParams | 是 |  |
-| context_user_id | String | 否 |  |
-| do_spam_check | bool | 否 |  |
-| is_live | bool | 否 |  |
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
+| updatable_comment_params | models::UpdatableCommentParams | Yes |  |
+| context_user_id | String | No |  |
+| do_spam_check | bool | No |  |
+| is_live | bool | No |  |
 
 ## 回應
 
-回傳: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
+返回：[`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
-## 範例
+## 示例
 
 [inline-code-attrs-start title = 'update_comment 範例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: UpdateCommentParams = UpdateCommentParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    id: "news/article-2026/comments/12345".to_string(),
-    updatable_comment_params: models::UpdatableCommentParams {
-        content: "Thanks for the update — I corrected the typo and clarified the timeline.".to_string(),
+async fn run_update() -> Result<(), Error> {
+    let updatable = models::UpdatableCommentParams {
+        content: "Edited comment about the latest news article".to_string(),
         ..Default::default()
-    },
-    context_user_id: Some("editor-42".to_string()),
-    do_spam_check: Some(true),
-    is_live: Some(true),
-};
-
-let response: ApiEmptyResponse = update_comment(&configuration, params).await?;
+    };
+    let params = UpdateCommentParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "comment-789".to_string(),
+        updatable_comment_params: updatable,
+        context_user_id: Some("reader-42".to_string()),
+        do_spam_check: Some(true),
+        is_live: Some(true),
+    };
+    let _ = update_comment(&configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]

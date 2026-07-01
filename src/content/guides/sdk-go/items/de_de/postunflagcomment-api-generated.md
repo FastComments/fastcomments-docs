@@ -1,13 +1,15 @@
 ## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
-|------|------|----------|----------|-------------|
-| commentId | string | Pfad | Ja |  |
-| sso | string | Query | Nein |  |
+|------|-----|-----|--------------|--------------|
+| tenantId | string | query | Ja |  |
+| commentId | string | path | Ja |  |
+| broadcastId | string | query | Nein |  |
+| sso | string | query | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
+Rückgabe: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
 
 ## Beispiel
 
@@ -23,17 +25,21 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
+	broadcastId := "broadcastId_example" // string |  (optional)
 	sso := "sso_example" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostUnFlagComment(context.Background(), commentId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostUnFlagComment(context.Background(), commentId).TenantId(tenantId).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostUnFlagComment``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Fehler beim Aufruf von `ModerationAPI.PostUnFlagComment``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Vollständige HTTP-Antwort: %v\n", r)
 	}
 	// Antwort von `PostUnFlagComment`: APIEmptyResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostUnFlagComment`: %v\n", resp)
+	fmt.Fprintf(os.Stdout, "Antwort von `ModerationAPI.PostUnFlagComment`: %v\n", resp)
 }
 [inline-code-end]
+
+---

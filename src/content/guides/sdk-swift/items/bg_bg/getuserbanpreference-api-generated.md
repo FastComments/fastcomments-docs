@@ -1,8 +1,9 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| sso | string | query | Не |  |
+| Име | Тип | Местоположение | Задължително | Описание |
+|------|------|----------------|--------------|----------|
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Отговор
 
@@ -12,12 +13,13 @@
 
 [inline-code-attrs-start title = 'Пример за getUserBanPreference'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следните примерни кодове все още са в бета версия. При проблем, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следващите примерни кодове все още са в бета. При какъвто и да е проблем, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let sso = "sso_example" // String | (по избор)
+let tenantId = "tenantId_example" // String | 
+let sso = "sso_example" // String |  (опционално)
 
-ModerationAPI.getUserBanPreference(sso: sso) { (response, error) in
+ModerationAPI.getUserBanPreference(tenantId: tenantId, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return

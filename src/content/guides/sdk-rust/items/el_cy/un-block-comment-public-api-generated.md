@@ -1,11 +1,11 @@
 ## Παράμετροι
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenant_id | String | Ναι |  |
-| comment_id | String | Ναι |  |
-| public_block_from_comment_params | models::PublicBlockFromCommentParams | Ναι |  |
-| sso | String | Όχι |  |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+|------|------|-----------|-----------|
+| tenant_id | String | Yes |  |
+| comment_id | String | Yes |  |
+| public_block_from_comment_params | models::PublicBlockFromCommentParams | Yes |  |
+| sso | String | No |  |
 
 ## Απόκριση
 
@@ -15,18 +15,14 @@
 
 [inline-code-attrs-start title = 'un_block_comment_public Παράδειγμα'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: UnBlockCommentPublicParams = UnBlockCommentPublicParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    comment_id: "news/article/2026/06/19/cmt-987654".to_string(),
-    public_block_from_comment_params: models::PublicBlockFromCommentParams {
-        reason: "harassment".to_string(),
-        duration_minutes: Some(1440),
-        notify_author: Some(true),
-    },
-    sso: Some("sso-token-7f3b9a".to_string()),
-};
-
-let unblock_success: UnblockSuccess = un_block_comment_public(&configuration, params).await?;
+async fn example() -> Result<(), Error> {
+    let params = UnBlockCommentPublicParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: "comment-12345".to_string(),
+        public_block_from_comment_params: models::PublicBlockFromCommentParams::default(),
+        sso: Some("user-sso-token".to_string()),
+    };
+    let _result: UnblockSuccess = un_block_comment_public(configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]
-
----

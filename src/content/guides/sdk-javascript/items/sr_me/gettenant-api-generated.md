@@ -1,21 +1,24 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetTenantResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantResponse.ts)
+Vraća: [`GetTenantResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantResponse1.ts)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'getTenant пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getTenant'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp';
-const id: string = 'tenant-987654321';
-const options: { includeBilling?: boolean } = { includeBilling: true };
-const response: GetTenantResponse = await getTenant(tenantId, id);
-const billingInfo: BillingInfo | undefined = undefined
+async function fetchTenant(): Promise<void> {
+  const tenantId: string = "tenant_12345";
+  const id: string = "user_9876";
+  const tenantInfo: GetTenantResponse1 = await getTenant(tenantId, id);
+  console.log(tenantInfo);
+}
+
+fetchTenant();
 [inline-code-end]

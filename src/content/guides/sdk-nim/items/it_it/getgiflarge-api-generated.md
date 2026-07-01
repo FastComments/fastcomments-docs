@@ -1,3 +1,4 @@
+---
 ## Parametri
 
 | Nome | Tipo | Obbligatorio | Descrizione |
@@ -11,13 +12,14 @@ Restituisce: [`Option[GifGetLargeResponse]`](https://github.com/FastComments/fas
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di getGifLarge'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getGifLarge Esempio'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getGifLarge(tenantId = "news-tenant-42", largeInternalURLSanitized = "")
-if response.isSome:
-  let gif = response.get()
-  echo "Received GifGetLargeResponse"
-  discard gif
-else:
-  echo "No gif returned, HTTP status: " & $httpResponse.status
+let (gifOpt, httpResp) = client.getGifLarge(
+  tenantId = "my-tenant-123",
+  largeInternalURLSanitized = "https://cdn.example.com/gifs/large123.gif")
+if gifOpt.isSome:
+  let gif = gifOpt.get()
+  echo gif
 [inline-code-end]
+
+---

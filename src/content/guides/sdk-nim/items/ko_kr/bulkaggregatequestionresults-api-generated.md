@@ -2,9 +2,9 @@
 
 | 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| bulkAggregateQuestionResultsRequest | BulkAggregateQuestionResultsRequest | 아니요 |  |
-| forceRecalculate | bool | 아니요 |  |
+| tenantId | string | Yes |  |
+| bulkAggregateQuestionResultsRequest | BulkAggregateQuestionResultsRequest | No |  |
+| forceRecalculate | bool | No |  |
 
 ## 응답
 
@@ -14,15 +14,12 @@
 
 [inline-code-attrs-start title = 'bulkAggregateQuestionResults 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.bulkAggregateQuestionResults(
+let request = BulkAggregateQuestionResultsRequest()
+let (maybeResult, httpResp) = client.bulkAggregateQuestionResults(
   tenantId = "my-tenant-123",
-  bulkAggregateQuestionResultsRequest = BulkAggregateQuestionResultsRequest(),
-  forceRecalculate = false
-)
+  bulkAggregateQuestionResultsRequest = request,
+  forceRecalculate = false)
 
-if response.isSome:
-  let aggregated = response.get()
-  echo "Aggregated question results received"
+if maybeResult.isSome:
+  let result = maybeResult.get()
 [inline-code-end]
-
----

@@ -1,13 +1,14 @@
 ## Parameter
 
-| Name | Typ | Ort | Erforderlich | Beschreibung |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Ja |  |
-| sso | string | query | Nein |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| sso | string | query | No |  |
 
 ## Antwort
 
-Gibt zurück: [`ModerationAPIGetLogsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/moderation_api_get_logs_response.py)
+Rückgabe: [`ModerationAPIGetLogsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/moderation_api_get_logs_response.py)
 
 ## Beispiel
 
@@ -18,22 +19,23 @@ from client.models.moderation_api_get_logs_response import ModerationAPIGetLogsR
 from client.rest import ApiException
 from pprint import pprint
 
-# Das Festlegen des Hosts ist optional und standardmäßig auf https://fastcomments.com gesetzt
+# Das Definieren des Hosts ist optional und standardmäßig https://fastcomments.com
 # Siehe configuration.py für eine Liste aller unterstützten Konfigurationsparameter.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Einen Kontext mit einer Instanz des API-Clients öffnen
+# Öffnen Sie einen Kontext mit einer Instanz des API-Clients
 with client.ApiClient(configuration) as api_client:
-    # Eine Instanz der API-Klasse erstellen
+    # Erstellen Sie eine Instanz der API-Klasse
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_logs(comment_id, sso=sso)
+        api_response = api_instance.get_logs(tenant_id, comment_id, sso=sso)
         print("The response of ModerationApi->get_logs:\n")
         pprint(api_response)
     except Exception as e:

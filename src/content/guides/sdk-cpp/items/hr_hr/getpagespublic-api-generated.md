@@ -1,17 +1,13 @@
-Popis stranica za tenant. Koristi ga FChat desktop klijent za popunjavanje svog popisa soba.
-Za svaku stranicu zahtijeva da je `enableFChat` postavljen na true u razriješenoj prilagođenoj konfiguraciji.
-Stranice koje zahtijevaju SSO filtriraju se prema grupnom pristupu korisnika koji podnosi zahtjev.
+Popis stranica za najmodavca. Koristi FChat desktop klijent za popunjavanje popisa soba.  
+Potrebno je da `enableFChat` bude postavljen na true u razriješenoj prilagođenoj konfiguraciji za svaku stranicu.  
+Stranice koje zahtijevaju SSO filtriraju se prema pristupu grupi korisnika koji je zatražio.
 
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
 | tenantId | string | Da |  |
-| cursor | string | Ne |  |
-| limit | int32_t | Ne |  |
-| q | string | Ne |  |
-| sortBy | PagesSortBy | Ne |  |
-| hasComments | bool | Ne |  |
+| options | const GetPagesPublicOptions& | Da |  |
 
 ## Odgovor
 
@@ -19,19 +15,18 @@ Vraća: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-
 
 ## Primjer
 
-[inline-code-attrs-start title = 'getPagesPublic Primjer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getPagesPublic'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-auto tenantId = utility::string_t(U("my-tenant-123"));
-boost::optional<utility::string_t> cursor = utility::string_t(U("cursor_abc"));
-boost::optional<int32_t> limit = 50;
-boost::optional<utility::string_t> q = utility::string_t(U("status:published"));
-boost::optional<PagesSortBy> sortBy = PagesSortBy::NEWEST;
-boost::optional<bool> hasComments = true;
-api->getPagesPublic(tenantId, cursor, limit, q, sortBy, hasComments)
-.then([](std::shared_ptr<GetPublicPagesResponse> resp){
-    if (!resp) resp = std::make_shared<GetPublicPagesResponse>();
-})
-.wait();
+utility::string_t tenantId = U("my-tenant-123");
+GetPagesPublicOptions options;
+options.limit = boost::optional<int>(50);
+options.cursor = boost::optional<utility::string_t>(U("cursor-token"));
+api->getPagesPublic(tenantId, options).then([](pplx::task<std::shared_ptr<GetPublicPagesResponse>> task){
+    try{
+        auto response = task.get();
+        // process response if needed
+    }catch(const std::exception&){
+        // handle error if needed
+    }
+});
 [inline-code-end]
-
----

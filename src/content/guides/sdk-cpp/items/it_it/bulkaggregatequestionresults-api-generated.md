@@ -12,20 +12,19 @@ Restituisce: [`BulkAggregateQuestionResultsResponse`](https://github.com/FastCom
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di bulkAggregateQuestionResults'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'bulkAggregateQuestionResults Esempio'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
 BulkAggregateQuestionResultsRequest request;
-boost::optional<bool> forceRecalculate(true);
-api->bulkAggregateQuestionResults(tenantId, request, forceRecalculate)
-.then([](std::shared_ptr<BulkAggregateQuestionResultsResponse> resp) {
-    if (resp) {
-        auto respCopy = std::make_shared<BulkAggregateQuestionResultsResponse>(*resp);
-        std::cout << "Aggregated question results received\n";
-    } else {
-        std::cout << "No aggregated results\n";
-    }
-}).wait();
+request.questionIds = {
+    utility::conversions::to_string_t("q123"),
+    utility::conversions::to_string_t("q456")
+};
+request.startDate = utility::datetime::from_string(U("2023-01-01T00:00:00Z"));
+request.endDate = utility::datetime::from_string(U("2023-01-31T23:59:59Z"));
+boost::optional<bool> forceRecalc = true;
+api->bulkAggregateQuestionResults(tenantId, request, forceRecalc)
+   .then([](pplx::task<std::shared_ptr<BulkAggregateQuestionResultsResponse>> t) {
+       auto resp = t.get();
+   });
 [inline-code-end]
-
----

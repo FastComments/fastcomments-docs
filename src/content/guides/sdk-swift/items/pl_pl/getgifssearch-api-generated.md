@@ -1,7 +1,7 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+|------|------|--------------|----------|------|
 | tenantId | string | path | Tak |  |
 | search | string | query | Tak |  |
 | locale | string | query | Nie |  |
@@ -14,18 +14,18 @@ Zwraca: [`GetGifsSearchResponse`](https://github.com/FastComments/fastcomments-s
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład getGifsSearch'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getGifsSearch Przykład'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Następujące przykłady kodu są nadal w fazie beta. W przypadku problemów zgłoś je przez http://github.com/OpenAPITools/openapi-generator/issues/new
+// Następujące przykłady kodu są wciąż w wersji beta. W razie jakichkolwiek problemów, proszę zgłosić je pod adresem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let search = "search_example" // String | 
-let locale = "locale_example" // String |  (opcjonalne)
-let rating = "rating_example" // String |  (opcjonalne)
-let page = 987 // Double |  (opcjonalne)
+let locale = "locale_example" // String |  (opcjonalny)
+let rating = "rating_example" // String |  (opcjonalny)
+let page = 987 // Double |  (opcjonalny)
 
-PublicAPI.getGifsSearch(tenantId: tenantId, search: search, locale: locale, rating: rating, page: page) { (response, error) in
+PublicAPI.getGifsSearch(tenantId: tenantId, search: search, options: PublicAPI.GetGifsSearchOptions(locale: locale, rating: rating, page: page)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -36,3 +36,5 @@ PublicAPI.getGifsSearch(tenantId: tenantId, search: search, locale: locale, rati
     }
 }
 [inline-code-end]
+
+---

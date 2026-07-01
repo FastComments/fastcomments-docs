@@ -1,29 +1,35 @@
----
 ## Параметры
 
-| Name | Type | Required | Description |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
-| updateTenantPackageBody | UpdateTenantPackageBody | Да |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updateTenantPackageBody | UpdateTenantPackageBody | Yes |  |
 
 ## Ответ
 
-Возвращает: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Возвращает: [`UpdateTenantPackageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateTenantPackageResponse.ts)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример updateTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_4b7c9a2f";
-const id: string = "pkg_91f2d3b8";
-const updateTenantPackageBody: UpdateTenantPackageBody = {
-  planId: "business_annual",
-  seats: 50,
-  autoRenew: true,
-  couponCode: "WELCOME2025" // показан необязательный параметр
-};
-const result: APIEmptyResponse = await updateTenantPackage(tenantId, id, updateTenantPackageBody);
-[inline-code-end]
+const tenantId: string = "tenant-9876";
+const packageId: string = "pkg-2023";
 
----
+const customConfig: CustomConfigParameters = {
+  enableSpamFilter: true,
+  spamRatingThreshold: 4,
+};
+
+const updateBody: UpdateTenantPackageBody = {
+  displayName: "Enterprise Pro",
+  customConfig,
+};
+
+const response: UpdateTenantPackageResponse = await updateTenantPackage(
+  tenantId,
+  packageId,
+  updateBody
+);
+[inline-code-end]

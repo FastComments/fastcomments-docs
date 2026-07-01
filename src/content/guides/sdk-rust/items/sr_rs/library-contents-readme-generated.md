@@ -1,20 +1,20 @@
-FastComments Rust SDK се састоји од неколико модула:
+FastComments Rust SDK се састоји од више модула:
 
-- **Client Module** - API клијент за FastComments REST API-је
-  - Комплетне дефиниције типова за све API моделе
+- **Client Module** - API клиент за FastComments REST API‑је
+  - Потпуна дефиниција типова за све API моделе
   - Три API клијента који покривају све FastComments методе:
-    - `default_api` (**DefaultApi**) - методе аутентификоване помоћу API кључа за коришћење на серверској страни
-    - `public_api` (**PublicApi**) - јавне методе без API кључа које је безбедно позивати из прегледача и мобилних апликација
-    - `moderation_api` (**ModerationApi**) - методе које подржавају контролну таблу модератора, укључући модерацију коментара (list, count, search, logs, export), акције модерације (remove/restore, flag, set review/spam/approval status, votes, reopen/close thread), забране (ban from a comment, undo, pre-ban summaries, ban status/preferences, banned-user counts), и значке & поверење (award/remove badges, manual badges, get/set trust factor, user internal profile). Свака Moderation метода прихвата параметар `sso` тако да позив може бити извршен у име модератора аутентификованог преко SSO.
-  - Пуна async/await подршка уз tokio
+    - `default_api` (**DefaultApi**) - методе аутентификоване API кључем за серверско коришћење
+    - `public_api` (**PublicApi**) - јавни, методе без API кључа који су безбедни за позивање из прегледача и мобилних апликација
+    - `moderation_api` (**ModerationApi**) - обиљежан сет живих и брзих API‑ја за модерацију. Свaki метод модерације прихвата параметар `sso` и може се аутентификовањем преко SSO‑а или FastComments.com колачића сесије.
+  - Пуна подршка за async/await уз tokio
   - Погледајте [client/README.md](https://github.com/FastComments/fastcomments-rust/blob/main/client/README.md) за детаљну API документацију
 
-- **SSO Module** - серверске алатке за Single Sign-On
-  - Сигурна генерација токена за аутентификацију корисника
-  - Подршка за оба режима SSO: једноставни и сигурни
-  - Потписивање токена засновано на HMAC-SHA256
+- **SSO Module** - серверски алати за једнократно пријављивање (Single Sign-On)
+  - Безбедно генерисање токена за аутентификацију корисника
+  - Подршка за оба режима SSO‑а: једноставни и сигурни
+  - Потписивање токена засновано на HMAC‑SHA256
 
-- **Core Types** - Заједничке дефиниције типова и алатке
+- **Core Types** - заједничке дефиниције типова и алати
   - Модели коментара и структуре метаподатака
-  - Конфигурације корисника и tenant-а
+  - Конфигурације корисника и Tenanta
   - Помоћне функције за уобичајене операције

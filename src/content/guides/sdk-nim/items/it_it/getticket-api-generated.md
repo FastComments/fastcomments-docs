@@ -1,10 +1,10 @@
 ## Parametri
 
-| Nome | Tipo | Richiesto | Descrizione |
-|------|------|----------|-------------|
+| Nome | Tipo | Obbligatorio | Descrizione |
+|------|------|--------------|-------------|
 | tenantId | string | Sì |  |
 | id | string | No |  |
-| userId | string | No |  |
+| userId | string = "" | No |  |
 
 ## Risposta
 
@@ -12,14 +12,10 @@ Restituisce: [`Option[GetTicketResponse]`](https://github.com/FastComments/fastc
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di getTicket'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio getTicket'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTicket(tenantId = "my-tenant-123", id = "ticket-456", userId = "user-789")
-if response.isSome:
-  let ticket = response.get()
-  echo "Got ticket:", ticket
-else:
-  echo "No ticket returned; HTTP response:", httpResponse
+let (ticketOpt, httpResp) = client.getTicket(tenantId = "my-tenant-123", id = "ticket-456", userId = "")
+if ticketOpt.isSome:
+  let ticket = ticketOpt.get()
+  discard ticket
 [inline-code-end]
-
----

@@ -2,6 +2,7 @@
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Ja |  |
 | commentId | string | path | Ja |  |
 | includeEmail | boolean | query | Nej |  |
 | includeIP | boolean | query | Nej |  |
@@ -18,12 +19,13 @@ Returnerer: [`ModerationAPICommentResponse`](https://github.com/FastComments/fas
 // Følgende kodeeksempler er stadig i beta. Ved problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
 let includeEmail = true // Bool |  (valgfri)
 let includeIP = true // Bool |  (valgfri)
 let sso = "sso_example" // String |  (valgfri)
 
-ModerationAPI.getModerationComment(commentId: commentId, includeEmail: includeEmail, includeIP: includeIP, sso: sso) { (response, error) in
+ModerationAPI.getModerationComment(tenantId: tenantId, commentId: commentId, options: ModerationAPI.GetModerationCommentOptions(includeEmail: includeEmail, includeIP: includeIP, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -34,3 +36,5 @@ ModerationAPI.getModerationComment(commentId: commentId, includeEmail: includeEm
     }
 }
 [inline-code-end]
+
+---

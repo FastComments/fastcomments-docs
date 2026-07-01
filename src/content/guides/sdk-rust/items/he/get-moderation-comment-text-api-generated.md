@@ -1,9 +1,10 @@
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| comment_id | String | Yes |  |
-| sso | String | No |  |
+| tenant_id | String | כן |  |
+| comment_id | String | כן |  |
+| sso | String | לא |  |
 
 ## תגובה
 
@@ -11,16 +12,16 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-get_moderation_comment_text'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_moderation_comment_text דוגמה'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_comment_text() -> Result<(), Error> {
-    let params: GetModerationCommentTextParams = GetModerationCommentTextParams {
-        comment_id: String::from("news/technology/2026/06/19/ai-ethics-12345"),
-        sso: Some(String::from("sso-token-7f3a9b2c")),
+async fn example() -> Result<(), Error> {
+    let params = GetModerationCommentTextParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: "comment-12345".to_string(),
+        sso: Some("user-sso-token".to_string()),
     };
-    let _response: GetCommentTextResponse = get_moderation_comment_text(&configuration, params).await?;
+    let _response: GetCommentTextResponse =
+        get_moderation_comment_text(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

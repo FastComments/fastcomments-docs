@@ -1,17 +1,12 @@
-## Resposta
+## Response
 
-Retorna: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
+Returns: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
-## Exemplo
+## Example
 
-[inline-code-attrs-start title = 'Exemplo de logoutPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo logoutPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.logoutPublic(tenantId = "my-tenant-123", sessionId = "sess-9a8b7c6d", userId = "editor-87", revokeAll = false, ipAddress = "")
-if response.isSome:
-  let emptyResp = response.get()
-  echo "Logout successful for user: ", "editor-87"
-else:
-  echo "Logout failed"
+let (responseOpt, httpResponse) = client.logoutPublic(tenantId = "my-tenant-123", userId = "user-456")
+if responseOpt.isSome:
+  let emptyResponse = responseOpt.get()
 [inline-code-end]
-
----

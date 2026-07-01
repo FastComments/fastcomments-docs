@@ -1,26 +1,27 @@
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| commentId | string | Da |  |
-| setCommentTextParams | SetCommentTextParams | Ne |  |
-| sso | string | Ne |  |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| setCommentTextParams | SetCommentTextParams | No |  |
+| options | PostSetCommentTextOptions | No |  |
 
 ## Odgovor
 
-Vraća: [`Option[SetCommentTextResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_set_comment_text_response.nim)
+Returns: [`Option[SetCommentTextResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_set_comment_text_response.nim)
 
 ## Primer
 
 [inline-code-attrs-start title = 'postSetCommentText Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postSetCommentText(commentId = "comment-4821",
-  setCommentTextParams = SetCommentTextParams(text = "Updated comment to clarify the main point and fix a typo."),
-  sso = "sso-user-8f3b9c")
+let (responseOpt, httpResponse) = client.postSetCommentText(
+  tenantId = "my-tenant-123",
+  commentId = "comment-987654",
+  setCommentTextParams = SetCommentTextParams(),
+  options = PostSetCommentTextOptions()
+)
 
-if response.isSome:
-  let setCommentResp = response.get()
-  echo "Received SetCommentTextResponse"
+if responseOpt.isSome:
+  let updatedComment = responseOpt.get()
 [inline-code-end]
-
----

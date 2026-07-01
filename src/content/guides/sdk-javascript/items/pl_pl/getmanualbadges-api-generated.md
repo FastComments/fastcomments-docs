@@ -1,20 +1,32 @@
 ## Parametry
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nazwa | Typ | Wymagane | Opis |
+|------|------|----------|------|
+| tenantId | string | Nie |  |
 | sso | string | Nie |  |
 
 ## Odpowiedź
 
-Zwraca: [`GetTenantManualBadgesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantManualBadgesResponse.ts)
+Zwraca: [`GetManualBadgesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetManualBadgesResponse.ts)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład getManualBadges'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const ssoToken: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Njc4OSIsImlhdCI6MTYwOTQyNjQwMH0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c";
-const manualBadgesWithSso: GetTenantManualBadgesResponse = await getManualBadges(ssoToken);
-const manualBadgesWithoutSso: GetTenantManualBadgesResponse = await getManualBadges();
+async function fetchBadges() {
+  const tenantId: string = "tenant_987654321";
+  const ssoToken: string = "sso_ABCdef123456";
+
+  // Wywołanie z dwoma opcjonalnymi parametrami
+  const responseFull: GetManualBadgesResponse = await getManualBadges(tenantId, ssoToken);
+  console.log(responseFull);
+
+  // Wywołanie tylko z tenantId
+  const responseTenantOnly: GetManualBadgesResponse = await getManualBadges(tenantId);
+  console.log(responseTenantOnly);
+}
+
+fetchBadges();
 [inline-code-end]
 
 ---

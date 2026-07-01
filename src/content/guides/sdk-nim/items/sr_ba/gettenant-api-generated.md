@@ -1,24 +1,20 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Не |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[GetTenantResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_tenant_response.nim)
+Vraća: [`Option[GetTenantResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_tenant_response.nim)
 
-## Примјер
+## Primjer
 
-[inline-code-attrs-start title = 'getTenant Примјер'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getTenant'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTenant(tenantId = "my-tenant-123", id = "tenant-789")
-if response.isSome:
-  let tenant = response.get()
-  discard tenant
-else:
-  discard httpResponse
+let (tenantResponse, httpResponse) = client.getTenant(tenantId = "my-tenant-123", id = "config-001")
+if tenantResponse.isSome:
+  let tenant = tenantResponse.get()
+  echo tenant
 [inline-code-end]
-
----

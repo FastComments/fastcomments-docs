@@ -2,30 +2,42 @@
 
 | 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| commentId | string | 예 |  |
-| voteId | string | 예 |  |
-| urlId | string | 예 |  |
-| broadcastId | string | 예 |  |
-| editKey | string | 아니오 |  |
-| sso | string | 아니오 |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| voteId | string | Yes |  |
+| urlId | string | Yes |  |
+| broadcastId | string | Yes |  |
+| editKey | string | No |  |
+| sso | string | No |  |
 
 ## 응답
 
-반환: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/VoteDeleteResponse.ts)
+반환: [`DeleteCommentVoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteCommentVoteResponse.ts)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'deleteCommentVote 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteCommentVote 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_9f1b3c";
-const commentId: string = "comment_6a7b8c9d";
-const voteId: string = "vote_55a1";
-const urlId: string = "news/2026/06/19/typescript-updates";
-const broadcastId: string = "broadcast_20260619_live_01";
-const editKey: string = "edit_3f2a9b";
-const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.exampleSignature";
-const result: VoteDeleteResponse = await deleteCommentVote(tenantId, commentId, voteId, urlId, broadcastId, editKey, sso);
-[inline-code-end]
+async function removeVote() {
+  const tenantId: string = "tenant_12345";
+  const commentId: string = "cmt_98765";
+  const voteId: string = "vote_abcde";
+  const urlId: string = "url_56789";
+  const broadcastId: string = "brd_001";
+  const editKey: string = "edit_456";
+  // sso는 선택 사항이며 생략되었습니다
 
----
+  const response: DeleteCommentVoteResponse = await deleteCommentVote(
+    tenantId,
+    commentId,
+    voteId,
+    urlId,
+    broadcastId,
+    editKey
+  );
+
+  console.log(response);
+}
+
+removeVote();
+[inline-code-end]

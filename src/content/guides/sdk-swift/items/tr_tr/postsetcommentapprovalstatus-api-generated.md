@@ -1,11 +1,12 @@
----
 ## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Ad | Tür | Konum | Gereklilik | Açıklama |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Evet |  |
-| approved | boolean | query | Hayır |  |
-| sso | string | query | Hayır |  |
+| tenantId | string | sorgu | Evet |  |
+| commentId | string | yol | Evet |  |
+| approved | boolean | sorgu | Hayır |  |
+| broadcastId | string | sorgu | Hayır |  |
+| sso | string | sorgu | Hayır |  |
 
 ## Yanıt
 
@@ -15,14 +16,16 @@ Döndürür: [`SetCommentApprovedResponse`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'postSetCommentApprovalStatus Örneği'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Aşağıdaki kod örnekleri hâlâ beta aşamasındadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new üzerinden bildirin
+// Aşağıdaki kod örnekleri hâlâ beta aşamasındadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new adresine bildirin.
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
-let approved = true // Bool |  (isteğe bağlı)
-let sso = "sso_example" // String |  (isteğe bağlı)
+let approved = true // Bool |  (optional)
+let broadcastId = "broadcastId_example" // String |  (optional)
+let sso = "sso_example" // String |  (optional)
 
-ModerationAPI.postSetCommentApprovalStatus(commentId: commentId, approved: approved, sso: sso) { (response, error) in
+ModerationAPI.postSetCommentApprovalStatus(tenantId: tenantId, commentId: commentId, options: ModerationAPI.PostSetCommentApprovalStatusOptions(approved: approved, broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -33,5 +36,3 @@ ModerationAPI.postSetCommentApprovalStatus(commentId: commentId, approved: appro
     }
 }
 [inline-code-end]
-
----

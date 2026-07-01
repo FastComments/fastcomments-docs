@@ -1,9 +1,11 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
-|------|------|----------|----------|-------------|
-| commentId | string | шлях | Так |  |
-| sso | string | параметр запиту | Ні |  |
+| Назва | Тип | Розташування | Обов’язково | Опис |
+|------|------|--------------|-------------|------|
+| tenantId | string | query | Так |  |
+| commentId | string | path | Так |  |
+| broadcastId | string | query | Ні |  |
+| sso | string | query | Ні |  |
 
 ## Відповідь
 
@@ -11,15 +13,17 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад postFlagComment'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postFlagComment Приклад'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// наведені приклади коду все ще в бета-версії. Якщо виникнуть проблеми, будь ласка, повідомте через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наступні приклади коду все ще у бета‑версії. У випадку проблем, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
-let sso = "sso_example" // String |  (необов'язково)
+let broadcastId = "broadcastId_example" // String |  (необов’язково)
+let sso = "sso_example" // String |  (необов’язково)
 
-ModerationAPI.postFlagComment(commentId: commentId, sso: sso) { (response, error) in
+ModerationAPI.postFlagComment(tenantId: tenantId, commentId: commentId, options: ModerationAPI.PostFlagCommentOptions(broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -30,3 +34,5 @@ ModerationAPI.postFlagComment(commentId: commentId, sso: sso) { (response, error
     }
 }
 [inline-code-end]
+
+---

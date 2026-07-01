@@ -4,8 +4,7 @@
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | id | string | Nej |  |
-| contextUserId | string | Nej |  |
-| isLive | bool | Nej |  |
+| options | DeleteCommentOptions | Nej |  |
 
 ## Svar
 
@@ -13,14 +12,17 @@ Returnerer: [`Option[DeleteCommentResult]`](https://github.com/FastComments/fast
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på deleteComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteComment Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteComment(tenantId = "my-tenant-123", id = "cmt-98765", contextUserId = "user-456", isLive = true)
-if response.isSome:
-  let result = response.get()
-  echo "DeleteCommentResult received"
-else:
-  echo "No result, HTTP status: ", httpResponse.status
+let (delResult, httpResponse) = client.deleteComment(
+  tenantId = "my-tenant-123",
+  id = "comment-456",
+  options = DeleteCommentOptions()
+)
+
+if delResult.isSome:
+  let result = delResult.get()
+  echo result
 [inline-code-end]
 
 ---

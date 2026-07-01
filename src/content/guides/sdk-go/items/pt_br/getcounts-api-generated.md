@@ -1,7 +1,8 @@
-## Parâmetros
+## Parameters
 
 | Nome | Tipo | Localização | Obrigatório | Descrição |
-|------|------|------------|------------|-----------|
+|------|------|-------------|-------------|-----------|
+| tenantId | string | query | Sim |  |
 | sso | string | query | Não |  |
 
 ## Resposta
@@ -10,7 +11,7 @@ Retorna: [`GetBannedUsersCountResponse`](https://github.com/FastComments/fastcom
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de GetCounts'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo GetCounts'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -22,16 +23,17 @@ import (
 )
 
 func main() {
-	sso := "sso_example" // string | (opcional)
+	tenantId := "tenantId_example" // string | 
+	sso := "sso_example" // string |  (opcional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetCounts(context.Background()).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetCounts(context.Background()).TenantId(tenantId).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetCounts``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Erro ao chamar `ModerationAPI.GetCounts``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Resposta HTTP completa: %v\n", r)
 	}
 	// resposta de `GetCounts`: GetBannedUsersCountResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetCounts`: %v\n", resp)
+	fmt.Fprintf(os.Stdout, "Resposta de `ModerationAPI.GetCounts`: %v\n", resp)
 }
 [inline-code-end]

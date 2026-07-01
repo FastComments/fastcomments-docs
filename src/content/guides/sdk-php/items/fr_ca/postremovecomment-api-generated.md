@@ -1,17 +1,19 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
-| commentId | string | chemin | Oui |  |
-| sso | string | requête | Non |  |
+| tenantId | string | query | Oui |  |
+| commentId | string | path | Oui |  |
+| broadcastId | string | query | Non |  |
+| sso | string | query | Non |  |
 
 ## Réponse
 
-Renvoie : [`PostRemoveCommentResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PostRemoveCommentResponse.php)
+Renvoie : [`PostRemoveCommentApiResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PostRemoveCommentApiResponse.php)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de postRemoveComment'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple postRemoveComment'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -23,15 +25,19 @@ $apiInstance = new FastComments\Client\Api\ModerationApi(
     // Ceci est optionnel, `GuzzleHttp\Client` sera utilisé par défaut.
     new GuzzleHttp\Client()
 );
+
+$tenant_id = 'tenant_id_example'; // string
 $comment_id = 'comment_id_example'; // string
-$sso = 'sso_example'; // string
+$options = [
+    'broadcast_id' => 'broadcast_id_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->postRemoveComment($comment_id, $sso);
+    $result = $apiInstance->postRemoveComment($tenant_id, $comment_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->postRemoveComment: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

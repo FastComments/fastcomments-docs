@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| שם | סוג | חובה | תיאור |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | tenant_id | String | כן |  |
 | skip | f64 | לא |  |
@@ -11,16 +11,14 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-get_email_templates'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת get_email_templates'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_templates() -> Result<GetEmailTemplatesResponse, Error> {
-    let params: GetEmailTemplatesParams = GetEmailTemplatesParams {
+async fn run() -> Result<(), Error> {
+    let params = GetEmailTemplatesParams {
         tenant_id: "acme-corp-tenant".to_string(),
         skip: Some(10.0),
     };
-    let response: GetEmailTemplatesResponse = get_email_templates(&configuration, params).await?;
-    Ok(response)
+    let _response = get_email_templates(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

@@ -1,36 +1,27 @@
 ## パラメータ
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | 任意 |  |
-| createHashTagBody | CreateHashTagBody | 任意 |  |
+| tenantId | string | Yes |  |
+| createHashTagBody | CreateHashTagBody | Yes |  |
 
-## レスポンス
+## 応答
 
 戻り値: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateHashTagResponse.h)
 
 ## 例
 
-[inline-code-attrs-start title = 'addHashTag の例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'addHashTag 例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-auto tenantId = boost::optional<utility::string_t>(U("my-tenant-123"));
-CreateHashTagBody createBody;
-createBody.name = utility::string_t(U("release"));
-createBody.createdBy = utility::string_t(U("admin@example.com"));
-auto bodyOpt = boost::optional<CreateHashTagBody>(createBody);
+CreateHashTagBody request;
+request.tag = utility::conversions::to_string_t("feature-request");
+request.description = utility::conversions::to_string_t("Requests for new features");
+request.relatedUrl = boost::optional<utility::string_t>(utility::conversions::to_string_t("https://example.com/feature-request"));
 
-api->addHashTag(tenantId, bodyOpt).then([](pplx::task<std::shared_ptr<CreateHashTagResponse>> t){
-    try {
-        auto resp = t.get();
-        if (resp) {
-            std::cout << "HashTag created successfully\n";
-        } else {
-            auto fallback = std::make_shared<CreateHashTagResponse>();
-        }
-    } catch (const std::exception &e) {
-        std::cerr << "AddHashTag failed: " << e.what() << '\n';
-    }
-});
+api->addHashTag(utility::conversions::to_string_t("my-tenant-123"), request)
+    .then([](std::shared_ptr<CreateHashTagResponse> resp) {
+        (void)resp;
+    });
 [inline-code-end]
 
 ---

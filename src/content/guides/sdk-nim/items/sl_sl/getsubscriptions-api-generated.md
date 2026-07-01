@@ -1,9 +1,9 @@
 ## Parametri
 
-| Ime | Tip | Zahtevano | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| userId | string | Ne |  |
+| tenantId | string | Yes |  |
+| userId | string = "" | No |  |
 
 ## Odgovor
 
@@ -11,10 +11,12 @@ Vrne: [`Option[GetSubscriptionsAPIResponse]`](https://github.com/FastComments/fa
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer getSubscriptions'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSubscriptions Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSubscriptions(tenantId = "my-tenant-123", userId = "")
-if response.isSome:
-  let subscriptions = response.get()
-  discard subscriptions
+let (subscriptionsOpt, httpResp) = client.getSubscriptions(tenantId = "my-tenant-123", userId = "user-456")
+if subscriptionsOpt.isSome:
+  let subscriptions = subscriptionsOpt.get()
+  echo subscriptions
 [inline-code-end]
+
+---

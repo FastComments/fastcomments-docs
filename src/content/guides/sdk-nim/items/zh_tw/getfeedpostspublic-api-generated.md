@@ -1,37 +1,25 @@
-req
+請求
 tenantId
 afterId
 
-## Parameters
+## 參數
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| 名稱 | 類型 | 必填 | 說明 |
+|------|------|------|------|
 | tenantId | string | 是 |  |
-| afterId | string | 否 |  |
-| limit | int | 否 |  |
-| tags | seq[string] | 否 |  |
-| sso | string | 否 |  |
-| isCrawler | bool | 否 |  |
-| includeUserInfo | bool | 否 |  |
+| options | GetFeedPostsPublicOptions | 否 |  |
 
-## Response
+## 回應
 
-回傳：[`Option[PublicFeedPostsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_public_feed_posts_response.nim)
+Returns: [`Option[PublicFeedPostsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_public_feed_posts_response.nim)
 
-## Example
+## 範例
 
-[inline-code-attrs-start title = 'getFeedPostsPublic 範例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getFeedPostsPublic 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getFeedPostsPublic(
-  tenantId = "my-tenant-123",
-  afterId = "",
-  limit = 0,
-  tags = @[],
-  sso = "",
-  isCrawler = false,
-  includeUserInfo = false
-)
-if response.isSome:
-  let feed = response.get()
-  discard feed
+let (feedResponseOpt, httpResponse) = client.getFeedPostsPublic(tenantId = "my-tenant-123", options = GetFeedPostsPublicOptions())
+if feedResponseOpt.isSome:
+  let feedResponse = feedResponseOpt.get()
 [inline-code-end]
+
+---

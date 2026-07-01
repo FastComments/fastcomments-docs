@@ -1,25 +1,29 @@
-## Параметри
+## Parameters
 
 | Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Да |  |
-| sso | string | query | Не |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
-## Отговор
+## Response
 
 Връща: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'Пример за postRestoreDeletedComment'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postRestoreDeletedComment Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следващите примерни фрагменти от код все още са в бета. Ако срещнете проблем, моля докладвайте на http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следващите примерни кодове все още са в бета версия. За всеки проблем, моля, докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
-let sso = "sso_example" // String |  (незадължително)
+let broadcastId = "broadcastId_example" // String |  (по избор)
+let sso = "sso_example" // String |  (по избор)
 
-ModerationAPI.postRestoreDeletedComment(commentId: commentId, sso: sso) { (response, error) in
+ModerationAPI.postRestoreDeletedComment(tenantId: tenantId, commentId: commentId, options: ModerationAPI.PostRestoreDeletedCommentOptions(broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -30,5 +34,3 @@ ModerationAPI.postRestoreDeletedComment(commentId: commentId, sso: sso) { (respo
     }
 }
 [inline-code-end]
-
----

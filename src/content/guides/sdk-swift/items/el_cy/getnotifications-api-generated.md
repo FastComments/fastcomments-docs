@@ -1,17 +1,16 @@
----
 ## Παράμετροι
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Ναι |  |
-| userId | string | query | Όχι |  |
-| urlId | string | query | Όχι |  |
-| fromCommentId | string | query | Όχι |  |
-| viewed | boolean | query | Όχι |  |
-| type | string | query | Όχι |  |
-| skip | number | query | Όχι |  |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|------------|------------|
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| urlId | string | query | No |  |
+| fromCommentId | string | query | No |  |
+| viewed | boolean | query | No |  |
+| type | string | query | No |  |
+| skip | number | query | No |  |
 
-## Απάντηση
+## Απόκριση
 
 Επιστρέφει: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetNotificationsResponse.swift)
 
@@ -19,18 +18,18 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα getNotifications'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Τα ακόλουθα παραδείγματα κώδικα είναι ακόμα beta. Για οποιοδήποτε πρόβλημα, παρακαλώ αναφέρετε μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
+// Τα παρακάτω δείγματα κώδικα είναι ακόμη σε beta. Για οποιοδήποτε πρόβλημα, παρακαλούμε να το αναφέρετε μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let userId = "userId_example" // String |  (προαιρετικό)
-let urlId = "urlId_example" // String |  (προαιρετικό)
-let fromCommentId = "fromCommentId_example" // String |  (προαιρετικό)
-let viewed = true // Bool |  (προαιρετικό)
-let type = "type_example" // String |  (προαιρετικό)
-let skip = 987 // Double |  (προαιρετικό)
+let userId = "userId_example" // String |  (optional)
+let urlId = "urlId_example" // String |  (optional)
+let fromCommentId = "fromCommentId_example" // String |  (optional)
+let viewed = true // Bool |  (optional)
+let type = "type_example" // String |  (optional)
+let skip = 987 // Double |  (optional)
 
-DefaultAPI.getNotifications(tenantId: tenantId, userId: userId, urlId: urlId, fromCommentId: fromCommentId, viewed: viewed, type: type, skip: skip) { (response, error) in
+DefaultAPI.getNotifications(tenantId: tenantId, options: DefaultAPI.GetNotificationsOptions(userId: userId, urlId: urlId, fromCommentId: fromCommentId, viewed: viewed, type: type, skip: skip)) { (response, error) in
     guard error == nil else {
         print(error)
         return

@@ -1,32 +1,41 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| urlId | string | Да |  |
-| usernameStartsWith | string | Не |  |
-| mentionGroupIds | Array<string> | Не |  |
-| sso | string | Не |  |
-| searchSection | SearchUsersSearchSectionEnum | Не |  |
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| usernameStartsWith | string | No |  |
+| mentionGroupIds | Array<string> | No |  |
+| sso | string | No |  |
+| searchSection | SearchUsersSearchSectionEnum | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SearchUsersResult.ts)
+Vraća: [`SearchUsersResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SearchUsersResponse1.ts)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'searchUsers Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'searchUsers Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_9f7b3a';
-  const urlId: string = 'news/2026/fastcomments-release';
-  const usernameStartsWith: string = 'ann';
-  const mentionGroupIds: string[] = ['editors', 'contributors'];
-  const sso: string = 'google-oauth2';
-  const searchSection: SearchUsersSearchSectionEnum = SearchUsersSearchSectionEnum.Mentions;
-  const result: SearchUsersResult = await searchUsers(tenantId, urlId, usernameStartsWith, mentionGroupIds, sso, searchSection);
-  console.log(result);
-})();
-[inline-code-end]
+async function demoSearch(): Promise<void> {
+    const tenantId: string = "tenant_12345";
+    const urlId: string = "article-9876";
+    const usernameStartsWith: string = "john";
+    const mentionGroupIds: string[] = ["groupA", "groupB"];
+    const sso: string = "sso_abc123";
+    const searchSection: SearchUsersSearchSectionEnum = SearchUsersSearchSectionEnum.Users;
 
----
+    const response: SearchUsersResponse1 = await searchUsers(
+        tenantId,
+        urlId,
+        usernameStartsWith,
+        mentionGroupIds,
+        sso,
+        searchSection
+    );
+
+    console.log(response);
+}
+
+demoSearch();
+[inline-code-end]

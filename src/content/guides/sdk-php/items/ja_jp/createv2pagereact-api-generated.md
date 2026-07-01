@@ -1,12 +1,11 @@
----
-## パラメーター
+## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | タイプ | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | はい |  |
-| urlId | string | query | はい |  |
-| id | string | query | はい |  |
-| title | string | query | いいえ |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| id | string | query | Yes |  |
+| title | string | query | No |  |
 
 ## レスポンス
 
@@ -22,14 +21,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // カスタムHTTPクライアントを使いたい場合は、`GuzzleHttp\ClientInterface`を実装するクライアントを渡してください。
-    // これは任意です。デフォルトでは `GuzzleHttp\Client` が使用されます。
+    // カスタム HTTP クライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装したクライアントを渡してください。
+    // これはオプションで、デフォルトでは `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$url_id = 'url_id_example'; // string
-$id = 'id_example'; // string
-$title = 'title_example'; // string
+
+$tenant_id = 'tenant_id_example'; // 文字列
+$url_id = 'url_id_example'; // 文字列
+$id = 'id_example'; // 文字列
+$title = 'title_example'; // 文字列
+
 
 try {
     $result = $apiInstance->createV2PageReact($tenant_id, $url_id, $id, $title);
@@ -38,5 +39,3 @@ try {
     echo 'Exception when calling PublicApi->createV2PageReact: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

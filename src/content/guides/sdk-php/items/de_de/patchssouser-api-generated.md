@@ -1,14 +1,14 @@
 ## Parameter
 
-| Name | Type | Location | Required | Description |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| id | string | path | Ja |  |
-| updateComments | boolean | query | Nein |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| updateComments | boolean | query | No |  |
 
 ## Antwort
 
-Gibt zurück: [`PatchSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PatchSSOUserAPIResponse.php)
+Rückgabe: [`PatchSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PatchSSOUserAPIResponse.php)
 
 ## Beispiel
 
@@ -18,9 +18,8 @@ Gibt zurück: [`PatchSSOUserAPIResponse`](https://github.com/FastComments/fastco
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// API-Schlüssel-Autorisierung konfigurieren: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Unten auskommentierten Code aktivieren, um ein Präfix (z. B. Bearer) für den API-Schlüssel zu setzen, falls erforderlich
+// API-Schlüssel-Authentifizierung konfigurieren: api_key
+// Kommentieren Sie die folgende Zeile aus, um bei Bedarf ein Präfix (z. B. Bearer) für den API-Schlüssel festzulegen
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
@@ -30,10 +29,12 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$id = 'id_example'; // string
+
+$tenant_id = 'tenant_id_example'; // Zeichenkette
+$id = 'id_example'; // Zeichenkette
 $update_apisso_user_data = new \FastComments\Client\Model\UpdateAPISSOUserData(); // \FastComments\Client\Model\UpdateAPISSOUserData
 $update_comments = True; // bool
+
 
 try {
     $result = $apiInstance->patchSSOUser($tenant_id, $id, $update_apisso_user_data, $update_comments);

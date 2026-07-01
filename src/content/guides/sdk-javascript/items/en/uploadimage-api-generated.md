@@ -17,9 +17,13 @@ Returns: [`UploadImageResponse`](https://github.com/FastComments/fastcomments-sd
 
 [inline-code-attrs-start title = 'uploadImage Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant-acme-42';
-const file: Blob = new Blob([Uint8Array.from([137, 80, 78, 71, 13, 10])], { type: 'image/png' });
-const sizePreset: SizePreset = { name: 'hero-lg', maxWidth: 1920, maxHeight: 1080 };
-const urlId: string = 'homepage-hero-2026';
-const result: UploadImageResponse = await uploadImage(tenantId, file, sizePreset, urlId);
+const tenantId: string = "acme-tenant-01";
+const imageBlob: Blob = new Blob([new Uint8Array([137,80,78,71])], { type: "image/png" });
+
+const uploadResult1: UploadImageResponse = await uploadImage(tenantId, imageBlob);
+
+const sizePreset: SizePreset = { presetName: "medium" };
+const urlId: string = "article-9876";
+
+const uploadResult2: UploadImageResponse = await uploadImage(tenantId, imageBlob, sizePreset, urlId);
 [inline-code-end]

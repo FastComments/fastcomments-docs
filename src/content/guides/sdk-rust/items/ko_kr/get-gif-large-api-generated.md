@@ -1,9 +1,10 @@
+---
 ## 매개변수
 
-| 이름 | 타입 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenant_id | String | 예 |  |
-| large_internal_url_sanitized | String | 예 |  |
+| tenant_id | String | Yes |  |
+| large_internal_url_sanitized | String | Yes |  |
 
 ## 응답
 
@@ -13,15 +14,12 @@
 
 [inline-code-attrs-start title = 'get_gif_large 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example() -> Result<GifGetLargeResponse, Error> {
-    let params: GetGifLargeParams = GetGifLargeParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        large_internal_url_sanitized: "gifs/news/article/welcome-gif".to_string(),
-        referrer: Some("https://news.example.com/article/123".to_string()),
-    };
-    let response: GifGetLargeResponse = get_gif_large(&configuration, params).await?;
-    Ok(response)
-}
+let params: GetGifLargeParams = GetGifLargeParams {
+    tenant_id: "acme-corp-tenant".into(),
+    large_internal_url_sanitized: "news/article/gif123".into(),
+};
+
+let response: GifGetLargeResponse = get_gif_large(&configuration, params).await?;
 [inline-code-end]
 
 ---

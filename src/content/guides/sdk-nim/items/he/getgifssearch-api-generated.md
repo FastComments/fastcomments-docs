@@ -1,13 +1,10 @@
----
 ## פרמטרים
 
 | שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | search | string | לא |  |
-| locale | string | לא |  |
-| rating | string | לא |  |
-| page | float64 | לא |  |
+| options | GetGifsSearchOptions | לא |  |
 
 ## תגובה
 
@@ -15,19 +12,11 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getGifsSearch'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getGifsSearch'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getGifsSearch(
-  tenantId = "my-tenant-123",
-  search = "funny cat",
-  locale = "en-US",
-  rating = "PG",
-  page = 1.0
-)
-
-if response.isSome:
-  let gifs = response.get()
-  echo "Fetched GIFs response:", gifs
+let opts = GetGifsSearchOptions(limit = 10, rating = "g")
+let (responseOpt, httpResponse) = client.getGifsSearch(tenantId = "my-tenant-123", search = "funny cats", options = opts)
+if responseOpt.isSome:
+  let resp = responseOpt.get()
+  # השתמש בתגובה לפי הצורך
 [inline-code-end]
-
----

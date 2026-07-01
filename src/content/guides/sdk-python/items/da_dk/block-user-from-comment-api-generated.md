@@ -1,11 +1,11 @@
 ## Parametre
 
-| Navn | Type | Location | Påkrævet | Beskrivelse |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| id | string | path | Ja |  |
-| userId | string | query | Nej |  |
-| anonUserId | string | query | Nej |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
 
 ## Svar
 
@@ -16,26 +16,23 @@ Returnerer: [`BlockSuccess`](https://github.com/FastComments/fastcomments-python
 [inline-code-attrs-start title = 'block_user_from_comment Eksempel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import BlockUserFromCommentOptions
 from client.models.block_from_comment_params import BlockFromCommentParams
 from client.models.block_success import BlockSuccess
 from client.rest import ApiException
 from pprint import pprint
 
-# Det er valgfrit at angive host, og standard er https://fastcomments.com
+# Definering af værten er valgfri og standard er https://fastcomments.com
 # Se configuration.py for en liste over alle understøttede konfigurationsparametre.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
-
-# Klienten skal konfigurere godkendelses- og autorisationsparametrene
+# Klienten skal konfigurere autentificerings- og autorisationsparametrene
 # i overensstemmelse med API-serverens sikkerhedspolitik.
-# Eksempler for hver autentifikationsmetode gives nedenfor, brug det eksempel der
-# opfylder dit autentifikationsscenarie.
+# Eksempler for hver godkendelsesmetode er angivet nedenfor, brug det eksempel der
+# opfylder dit godkendelsesbrugssag.
 
-# Konfigurer API-nøgleautorisering: api_key
+# Konfigurer API-nøgleautorisation: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Fjern kommentaren nedenfor for at sætte et præfiks (f.eks. Bearer) for API-nøglen, hvis nødvendigt
+# Fjern kommentaren nedenfor for at sætte præfiks (fx Bearer) for API-nøgle, hvis nødvendigt
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Indtast en kontekst med en instans af API-klienten
@@ -49,7 +46,7 @@ with client.ApiClient(configuration) as api_client:
     anon_user_id = 'anon_user_id_example' # str |  (optional)
 
     try:
-        api_response = api_instance.block_user_from_comment(tenant_id, id, block_from_comment_params, user_id=user_id, anon_user_id=anon_user_id)
+        api_response = api_instance.block_user_from_comment(tenant_id, id, block_from_comment_params, BlockUserFromCommentOptions(user_id=user_id, anon_user_id=anon_user_id))
         print("The response of DefaultApi->block_user_from_comment:\n")
         pprint(api_response)
     except Exception as e:

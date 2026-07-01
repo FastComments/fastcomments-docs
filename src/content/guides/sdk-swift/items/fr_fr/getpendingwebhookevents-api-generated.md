@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | commentId | string | query | No |  |
@@ -13,25 +13,25 @@
 
 ## Réponse
 
-Renvoie : [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPendingWebhookEventsResponse.swift)
+Retourne : [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPendingWebhookEventsResponse.swift)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getPendingWebhookEvents'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getPendingWebhookEvents'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Les exemples de code suivants sont encore en bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Les exemples de code suivants sont encore en version bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let commentId = "commentId_example" // String |  (optionnel)
-let externalId = "externalId_example" // String |  (optionnel)
-let eventType = "eventType_example" // String |  (optionnel)
-let type = "type_example" // String |  (optionnel)
-let domain = "domain_example" // String |  (optionnel)
-let attemptCountGT = 987 // Double |  (optionnel)
-let skip = 987 // Double |  (optionnel)
+let commentId = "commentId_example" // String |  (facultatif)
+let externalId = "externalId_example" // String |  (facultatif)
+let eventType = "eventType_example" // String |  (facultatif)
+let type = "type_example" // String |  (facultatif)
+let domain = "domain_example" // String |  (facultatif)
+let attemptCountGT = 987 // Double |  (facultatif)
+let skip = 987 // Double |  (facultatif)
 
-DefaultAPI.getPendingWebhookEvents(tenantId: tenantId, commentId: commentId, externalId: externalId, eventType: eventType, type: type, domain: domain, attemptCountGT: attemptCountGT, skip: skip) { (response, error) in
+DefaultAPI.getPendingWebhookEvents(tenantId: tenantId, options: DefaultAPI.GetPendingWebhookEventsOptions(commentId: commentId, externalId: externalId, eventType: eventType, type: type, domain: domain, attemptCountGT: attemptCountGT, skip: skip)) { (response, error) in
     guard error == nil else {
         print(error)
         return

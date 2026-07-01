@@ -1,7 +1,7 @@
 ## Параметры
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Имя | Тип | Обязательно | Описание |
+|------|------|--------------|----------|
 | tenantId | string | Да |  |
 | id | string | Нет |  |
 
@@ -11,14 +11,10 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример использования getSSOUserById'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSSOUserById Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSSOUserById(tenantId = "my-tenant-123", id = "user-789")
+let (response, httpResponse) = client.getSSOUserById(tenantId = "my-tenant-123", id = "user-456")
 if response.isSome:
-  let ssoUser: GetSSOUserByIdAPIResponse = response.get()
-  echo "SSO user retrieved: ", $ssoUser
-else:
-  echo "No SSO user found, HTTP status: ", httpResponse.statusCode
+  let userInfo = response.get()
+  discard userInfo
 [inline-code-end]
-
----

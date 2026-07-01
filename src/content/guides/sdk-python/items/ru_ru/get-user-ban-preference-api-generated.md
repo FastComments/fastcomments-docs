@@ -2,6 +2,7 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
 | sso | string | query | Нет |  |
 
 ## Ответ
@@ -17,21 +18,22 @@ from client.models.api_moderate_get_user_ban_preferences_response import APIMode
 from client.rest import ApiException
 from pprint import pprint
 
-# Определение хоста необязательно и по умолчанию равно https://fastcomments.com
-# См. configuration.py для списка всех поддерживаемых параметров конфигурации.
+# Определение хоста необязательно и по умолчанию https://fastcomments.com
+# Смотрите configuration.py для списка всех поддерживаемых параметров конфигурации.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Входим в контекст с экземпляром API-клиента
+# Войдите в контекст с экземпляром клиента API
 with client.ApiClient(configuration) as api_client:
-    # Создаём экземпляр класса API
+    # Создайте экземпляр класса API
     api_instance = client.ModerationApi(api_client)
-    sso = 'sso_example' # str |  (необязательно)
+    tenant_id = 'tenant_id_example' # str | 
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_user_ban_preference(sso=sso)
+        api_response = api_instance.get_user_ban_preference(tenant_id, sso=sso)
         print("The response of ModerationApi->get_user_ban_preference:\n")
         pprint(api_response)
     except Exception as e:

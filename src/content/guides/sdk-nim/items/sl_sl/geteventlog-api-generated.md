@@ -5,7 +5,7 @@ userIdWS
 
 ## Parametri
 
-| Name | Type | Required | Description |
+| Ime | Vrsta | Obvezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | urlId | string | Da |  |
@@ -13,7 +13,7 @@ userIdWS
 | startTime | int64 | Ne |  |
 | endTime | int64 | Ne |  |
 
-## Odziv
+## Odgovor
 
 Vrne: [`Option[GetEventLogResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_event_log_response.nim)
 
@@ -21,16 +21,17 @@ Vrne: [`Option[GetEventLogResponse]`](https://github.com/FastComments/fastcommen
 
 [inline-code-attrs-start title = 'Primer getEventLog'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getEventLog(
+let (eventLogOpt, httpResp) = client.getEventLog(
   tenantId = "my-tenant-123",
-  urlId = "news/article-2026-solar-panels",
-  userIdWS = "user-456",
-  startTime = 1688000000'i64,
-  endTime = 1688086400'i64
+  urlId = "news/article-title",
+  userIdWS = "",
+  startTime = 0'i64,
+  endTime = 0'i64,
 )
-if response.isSome:
-  let eventLog = response.get()
-  discard eventLog
+
+if eventLogOpt.isSome:
+  let eventLog = eventLogOpt.get()
+  echo eventLog
 [inline-code-end]
 
 ---

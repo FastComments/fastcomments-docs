@@ -1,13 +1,14 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Назва | Тип | Розташування | Обов’язковий | Опис |
 |------|------|----------|----------|-------------|
-| text-search | string | query | Ні |  |
-| byIPFromComment | string | query | Ні |  |
-| filter | string | query | Ні |  |
-| searchFilters | string | query | Ні |  |
-| demo | boolean | query | Ні |  |
-| sso | string | query | Ні |  |
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filter | string | query | No |  |
+| searchFilters | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Відповідь
 
@@ -17,17 +18,18 @@
 
 [inline-code-attrs-start title = 'Приклад getCount'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Наступні приклади коду ще в бета-версії. Якщо виникне проблема, будь ласка, повідомте через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наступні приклади коду все ще бета. Якщо виникнуть проблеми, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let textSearch = "textSearch_example" // String |  (необов'язково)
-let byIPFromComment = "byIPFromComment_example" // String |  (необов'язково)
-let filter = "filter_example" // String |  (необов'язково)
-let searchFilters = "searchFilters_example" // String |  (необов'язково)
-let demo = true // Bool |  (необов'язково)
-let sso = "sso_example" // String |  (необов'язково)
+let tenantId = "tenantId_example" // String | 
+let textSearch = "textSearch_example" // String |  (необов'язковий)
+let byIPFromComment = "byIPFromComment_example" // String |  (необов'язковий)
+let filter = "filter_example" // String |  (необов'язковий)
+let searchFilters = "searchFilters_example" // String |  (необов'язковий)
+let demo = true // Bool |  (необов'язковий)
+let sso = "sso_example" // String |  (необов'язковий)
 
-ModerationAPI.getCount(textSearch: textSearch, byIPFromComment: byIPFromComment, filter: filter, searchFilters: searchFilters, demo: demo, sso: sso) { (response, error) in
+ModerationAPI.getCount(tenantId: tenantId, options: ModerationAPI.GetCountOptions(textSearch: textSearch, byIPFromComment: byIPFromComment, filter: filter, searchFilters: searchFilters, demo: demo, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -38,5 +40,3 @@ ModerationAPI.getCount(textSearch: textSearch, byIPFromComment: byIPFromComment,
     }
 }
 [inline-code-end]
-
----

@@ -1,9 +1,9 @@
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | Da |  |
-| create_question_result_body | models::CreateQuestionResultBody | Da |  |
+| tenant_id | String | Yes |  |
+| create_question_result_body | models::CreateQuestionResultBody | Yes |  |
 
 ## Odgovor
 
@@ -13,17 +13,22 @@ Vraća: [`CreateQuestionResultResponse`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'create_question_result Primjer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: CreateQuestionResultParams = CreateQuestionResultParams {
-    tenant_id: String::from("acme-corp-tenant"),
-    create_question_result_body: models::CreateQuestionResultBody {
-        question_id: String::from("news/article/1234"),
-        user_id: Some(String::from("reader-9876")),
-        answer: String::from("B"),
-        correct: Some(false),
-        score: Some(0.0),
-    },
+let mut metadata = std::collections::HashMap::new();
+metadata.insert("source".to_string(), "web".to_string());
+
+let body = models::CreateQuestionResultBody {
+    question_id: "q-987".to_string(),
+    user_id: "user-42".to_string(),
+    answer: "Positive".to_string(),
+    metadata: Some(metadata),
 };
-let response: CreateQuestionResultResponse = create_question_result(&configuration, params).await?;
+
+let params = CreateQuestionResultParams {
+    tenant_id: "acme-corp-tenant".to_string(),
+    create_question_result_body: body,
+};
+
+let response = create_question_result(&configuration, params).await?;
 [inline-code-end]
 
 ---

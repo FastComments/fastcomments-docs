@@ -11,22 +11,19 @@ Restituisce: [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio getUserBadgeProgressByUserId'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUserBadgeProgressByUserId Esempio'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t userId = U("user@example.com");
-boost::optional<utility::string_t> locale;
-api->getUserBadgeProgressByUserId(tenantId, userId)
-.then([=](pplx::task<std::shared_ptr<APIGetUserBadgeProgressResponse>> t) {
-    try {
-        auto resp = t.get();
-        if (!resp) resp = std::make_shared<APIGetUserBadgeProgressResponse>();
-        return resp;
-    } catch (...) {
-        return std::shared_ptr<APIGetUserBadgeProgressResponse>(nullptr);
-    }
-})
-.then([](std::shared_ptr<APIGetUserBadgeProgressResponse> resp) {
-    (void)resp;
-});
+boost::optional<std::shared_ptr<APIGetUserBadgeProgressResponse>> responseOpt;
+api->getUserBadgeProgressByUserId(
+    utility::conversions::to_string_t("my-tenant-123"),
+    utility::conversions::to_string_t("user@example.com"))
+    .then([&responseOpt](pplx::task<std::shared_ptr<APIGetUserBadgeProgressResponse>> t) {
+        try {
+            responseOpt = t.get();
+        } catch (...) {
+            responseOpt = boost::none;
+        }
+    });
 [inline-code-end]
+
+---

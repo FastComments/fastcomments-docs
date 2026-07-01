@@ -2,8 +2,8 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Sí |  |
-| id | string | path | Sí |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 | userId | string | query | No |  |
 | anonUserId | string | query | No |  |
 
@@ -13,16 +13,17 @@ Devuelve: [`BlockSuccess`](https://github.com/FastComments/fastcomments-python/b
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de block_user_from_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'block_user_from_comment Ejemplo'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import BlockUserFromCommentOptions
 from client.models.block_from_comment_params import BlockFromCommentParams
 from client.models.block_success import BlockSuccess
 from client.rest import ApiException
 from pprint import pprint
 
-# Definir el host es opcional y por defecto es https://fastcomments.com
-# Consulte configuration.py para obtener una lista de todos los parámetros de configuración compatibles.
+# Definir el host es opcional y el valor predeterminado es https://fastcomments.com
+# Ver configuration.py para una lista de todos los parámetros de configuración admitidos.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -32,24 +33,24 @@ configuration = client.Configuration(
 # Se proporcionan ejemplos para cada método de autenticación a continuación; use el ejemplo que
 # satisfaga su caso de uso de autenticación.
 
-# Configurar autorización por clave API: api_key
+# Configurar la autorización de la clave API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Descomente abajo para configurar el prefijo (por ejemplo, Bearer) para la clave API, si es necesario
+# Descomente a continuación para configurar el prefijo (p.ej., Bearer) para la clave API, si es necesario
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Entre en un contexto con una instancia del cliente API
+# Entrar en un contexto con una instancia del cliente API
 with client.ApiClient(configuration) as api_client:
-    # Cree una instancia de la clase API
+    # Crear una instancia de la clase API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
     block_from_comment_params = client.BlockFromCommentParams() # BlockFromCommentParams | 
-    user_id = 'user_id_example' # str |  (opcional)
-    anon_user_id = 'anon_user_id_example' # str |  (opcional)
+    user_id = 'user_id_example' # str |  (optional)
+    anon_user_id = 'anon_user_id_example' # str |  (optional)
 
     try:
-        api_response = api_instance.block_user_from_comment(tenant_id, id, block_from_comment_params, user_id=user_id, anon_user_id=anon_user_id)
+        api_response = api_instance.block_user_from_comment(tenant_id, id, block_from_comment_params, BlockUserFromCommentOptions(user_id=user_id, anon_user_id=anon_user_id))
         print("The response of DefaultApi->block_user_from_comment:\n")
         pprint(api_response)
     except Exception as e:

@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
@@ -11,7 +10,7 @@
 | type | string | query | Nee |  |
 | skip | number | query | Nee |  |
 
-## Antwoord
+## Respons
 
 Retourneert: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetNotificationsResponse.swift)
 
@@ -19,7 +18,7 @@ Retourneert: [`GetNotificationsResponse`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'getNotifications Voorbeeld'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// De volgende codevoorbeelden zijn nog in bèta. Voor problemen, meld dit via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De volgende codevoorbeelden zijn nog in de bètafase. Meld eventuele problemen via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -30,7 +29,7 @@ let viewed = true // Bool |  (optioneel)
 let type = "type_example" // String |  (optioneel)
 let skip = 987 // Double |  (optioneel)
 
-DefaultAPI.getNotifications(tenantId: tenantId, userId: userId, urlId: urlId, fromCommentId: fromCommentId, viewed: viewed, type: type, skip: skip) { (response, error) in
+DefaultAPI.getNotifications(tenantId: tenantId, options: DefaultAPI.GetNotificationsOptions(userId: userId, urlId: urlId, fromCommentId: fromCommentId, viewed: viewed, type: type, skip: skip)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -41,5 +40,3 @@ DefaultAPI.getNotifications(tenantId: tenantId, userId: userId, urlId: urlId, fr
     }
 }
 [inline-code-end]
-
----

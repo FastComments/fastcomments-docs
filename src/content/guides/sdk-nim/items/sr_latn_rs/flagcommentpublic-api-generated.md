@@ -2,10 +2,10 @@
 
 | Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| commentId | string | Da |  |
-| isFlagged | bool | Ne |  |
-| sso | string | Ne |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| isFlagged | bool | No |  |
+| sso | string = "" | No |  |
 
 ## Odgovor
 
@@ -15,18 +15,14 @@ Vraća: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomment
 
 [inline-code-attrs-start title = 'flagCommentPublic Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.flagCommentPublic(
+let (optResp, httpResp) = client.flagCommentPublic(
   tenantId = "my-tenant-123",
   commentId = "cmt-456789",
   isFlagged = true,
   sso = ""
 )
 
-if response.isSome:
-  let apiResp = response.get()
-  discard apiResp
-else:
-  discard httpResponse
+if optResp.isSome:
+  let empty = optResp.get()
+  discard empty
 [inline-code-end]
-
----

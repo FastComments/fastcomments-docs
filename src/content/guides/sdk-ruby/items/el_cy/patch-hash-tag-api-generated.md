@@ -1,9 +1,9 @@
-## Παράμετροι
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| Όνομα | Τύπος | Θέση | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Ναι |  |
 | tag | string | path | Ναι |  |
-| tenantId | string | query | Όχι |  |
 
 ## Απάντηση
 
@@ -17,22 +17,20 @@ require 'time'
 require 'fastcomments-client'
 # ρύθμιση εξουσιοδότησης
 FastCommentsClient.configure do |config|
-  # Διαμόρφωση εξουσιοδότησης με κλειδί API: api_key
+  # Ρύθμιση εξουσιοδότησης κλειδιού API: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Αποσχολιάστε την ακόλουθη γραμμή για να ορίσετε ένα πρόθεμα για το κλειδί API, π.χ. 'Bearer' (προεπιλογή: nil)
+  # Απενεργοποιήστε το σχόλιο στην παρακάτω γραμμή για να ορίσετε ένα πρόθεμα για το κλειδί API, π.χ. 'Bearer' (προεπιλογή nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
+tenant_id = 'tenant_id_example' # String | 
 tag = 'tag_example' # String | 
-opts = {
-  tenant_id: 'tenant_id_example', # String | 
-  update_hash_tag_body: FastCommentsClient::UpdateHashTagBody.new # UpdateHashTagBody | 
-}
+update_hash_tag_body = FastCommentsClient::UpdateHashTagBody.new # UpdateHashTagBody | 
 
 begin
   
-  result = api_instance.patch_hash_tag(tag, opts)
+  result = api_instance.patch_hash_tag(tenant_id, tag, update_hash_tag_body)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->patch_hash_tag: #{e}"

@@ -1,9 +1,10 @@
 ## Parâmetros
 
-| Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-----------|
-| urlId | string | Sim |  |
-| sso | string | Não |  |
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| sso | string | No |  |
 
 ## Resposta
 
@@ -11,18 +12,10 @@ Retorna: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/b
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de putReopenThread'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo putReopenThread'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t urlId = utility::conversions::to_string_t("my-tenant-123/thread-456");
-boost::optional<utility::string_t> sso = utility::conversions::to_string_t("sso-token-abc123");
-auto reopenTask = api->putReopenThread(urlId, sso)
-    .then([](pplx::task<std::shared_ptr<APIEmptyResponse>> t) -> std::shared_ptr<APIEmptyResponse> {
-        try {
-            return t.get();
-        } catch (...) {
-            return std::make_shared<APIEmptyResponse>();
-        }
+api->putReopenThread(utility::string_t(U("my-tenant-123")), utility::string_t(U("thread-456")), boost::make_optional<utility::string_t>(U("user@example.com")))
+    .then([](std::shared_ptr<APIEmptyResponse> result){
+        std::cout << "Thread reopened" << std::endl;
     });
 [inline-code-end]
-
----

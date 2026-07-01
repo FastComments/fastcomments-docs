@@ -1,12 +1,10 @@
 ## Parâmetros
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nome | Tipo | Obrigatório | Descrição |
+|------|------|-------------|-----------|
+| tenantId | string | Sim |  |
 | commentId | string | Sim |  |
-| includeByUserIdAndEmail | bool | Não |  |
-| includeByIP | bool | Não |  |
-| includeByEmailDomain | bool | Não |  |
-| sso | string | Não |  |
+| options | GetPreBanSummaryOptions | Não |  |
 
 ## Resposta
 
@@ -14,19 +12,9 @@ Retorna: [`Option[PreBanSummary]`](https://github.com/FastComments/fastcomments-
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getPreBanSummary'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo getPreBanSummary'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let commentId = "cmt-7423"
-let (response, httpResponse) = client.getPreBanSummary(
-  commentId = commentId,
-  includeByUserIdAndEmail = false,
-  includeByIP = false,
-  includeByEmailDomain = false,
-  sso = ""
-)
-if response.isSome:
-  let preBanSummary = response.get()
-  discard preBanSummary
-else:
-  discard httpResponse
+let (preBanSummaryOpt, httpResponse) = client.getPreBanSummary(tenantId = "my-tenant-123", commentId = "cmt-456", options = GetPreBanSummaryOptions())
+if preBanSummaryOpt.isSome:
+  let summary = preBanSummaryOpt.get()
 [inline-code-end]

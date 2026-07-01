@@ -1,12 +1,12 @@
 ## Parâmetros
 
-| Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-----------|
-| tenant_id | String | Sim |  |
-| user_id | String | Não |  |
-| state | f64 | Não |  |
-| skip | f64 | Não |  |
-| limit | f64 | Não |  |
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenant_id | String | Yes |  |
+| user_id | String | No |  |
+| state | f64 | No |  |
+| skip | f64 | No |  |
+| limit | f64 | No |  |
 
 ## Resposta
 
@@ -14,17 +14,17 @@ Retorna: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-rus
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de get_tickets'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_tickets Exemplo'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_tickets() -> Result<(), Error> {
-    let params: GetTicketsParams = GetTicketsParams {
-        tenant_id: String::from("acme-corp-tenant"),
-        user_id: Some(String::from("journalist-42")),
+async fn fetch_tickets(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetTicketsParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        user_id: Some("user-12345".to_string()),
         state: Some(1.0),
         skip: Some(0.0),
-        limit: Some(50.0),
+        limit: Some(20.0),
     };
-    let tickets: GetTicketsResponse = get_tickets(&configuration, params).await?;
+    let _response: GetTicketsResponse = get_tickets(configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

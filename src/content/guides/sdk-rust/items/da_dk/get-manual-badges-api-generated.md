@@ -2,6 +2,7 @@
 
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
+| tenant_id | String | Ja |  |
 | sso | String | Nej |  |
 
 ## Svar
@@ -12,13 +13,12 @@ Returnerer: [`GetTenantManualBadgesResponse`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'get_manual_badges Eksempel'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_manual_badges() -> Result<(), Error> {
-    let params: GetManualBadgesParams = GetManualBadgesParams {
-        sso: Some(String::from("https://sso.acme-corp.com/authorize?tenant=acme-corp-tenant")),
+async fn fetch_badges(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetManualBadgesParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        sso: Some("news/article".to_string()),
     };
-    let response: GetTenantManualBadgesResponse = get_manual_badges(&configuration, params).await?;
+    let _response = get_manual_badges(configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

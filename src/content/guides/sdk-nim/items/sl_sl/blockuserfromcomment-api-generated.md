@@ -1,39 +1,29 @@
 ## Parametri
 
-| Name | Type | Required | Description |
+| Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | No |  |
-| blockFromCommentParams | BlockFromCommentParams | No |  |
-| userId | string | No |  |
-| anonUserId | string | No |  |
+| tenantId | string | Da |  |
+| id | string | Ne |  |
+| blockFromCommentParams | BlockFromCommentParams | Ne |  |
+| options | BlockUserFromCommentOptions | Ne |  |
 
 ## Odgovor
 
-Vrača: [`Option[BlockSuccess]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_block_success.nim)
+Vrne: [`Option[BlockSuccess]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_block_success.nim)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer uporabe blockUserFromComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'blockUserFromComment Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.blockUserFromComment(
+let params = BlockFromCommentParams()
+let opts = BlockUserFromCommentOptions()
+let (blockResult, httpResp) = client.blockUserFromComment(
   tenantId = "my-tenant-123",
-  id = "cmt-7890",
-  blockFromCommentParams = BlockFromCommentParams(
-    reason = "Repeated abusive language",
-    durationMinutes = 1440,
-    notifyUser = true,
-    tags = @["abuse", "automated"]
-  ),
-  userId = "user-456",
-  anonUserId = ""
+  id = "comment-456",
+  blockFromCommentParams = params,
+  options = opts
 )
-
-if response.isSome:
-  let result = response.get()
-  discard result
-else:
-  discard httpResponse
+if blockResult.isSome:
+  let success = blockResult.get()
+  discard success
 [inline-code-end]
-
----

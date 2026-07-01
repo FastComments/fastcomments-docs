@@ -1,53 +1,54 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Потребно | Опис |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
-| deleteComments | string | query | No |  |
-| commentDeleteMode | string | query | No |  |
+| tenantId | string | query | Da |  |
+| id | string | path | Da |  |
+| deleteComments | string | query | Ne |  |
+| commentDeleteMode | string | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
+Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'delete_tenant_user Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_tenant_user Primjer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import DeleteTenantUserOptions
 from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Постављање host-а је опционо и подразумева https://fastcomments.com
-# Погледајте configuration.py за листу свих подржаних конфигурационих параметара.
+# Definisanje hosta je opcionalno i podrazumijeva https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клијент мора да подеси параметре аутентификације и овлашћења
-# у складу са безбедносном политиком API сервера.
-# Примери за сваки метод аутентикације су наведени испод, употребите пример који
-# одговара вашем случају употребе аутентификације.
+# Klijent mora konfigurirati parametre autentifikacije i autorizacije
+# u skladu s politikom sigurnosti API servera.
+# Primjeri za svaki metod autentifikacije su dati ispod, koristite primjer koji
+# zadovoljava vaš slučaj upotrebe autentifikacije.
 
-# Configure API key authorization: api_key
+# Konfigurirajte autorizaciju API ključa: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Otkomentarišite dolje da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Уђите у контекст са инстанцом API клијента
+# Uđite u kontekst s instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Направите инстанцу API класе
+    # Kreirajte instancu API klase
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
-    delete_comments = 'delete_comments_example' # str |  (optional)
-    comment_delete_mode = 'comment_delete_mode_example' # str |  (optional)
+    delete_comments = 'delete_comments_example' # str |  (opcionalno)
+    comment_delete_mode = 'comment_delete_mode_example' # str |  (opcionalno)
 
     try:
-        api_response = api_instance.delete_tenant_user(tenant_id, id, delete_comments=delete_comments, comment_delete_mode=comment_delete_mode)
+        api_response = api_instance.delete_tenant_user(tenant_id, id, DeleteTenantUserOptions(delete_comments=delete_comments, comment_delete_mode=comment_delete_mode))
         print("The response of DefaultApi->delete_tenant_user:\n")
         pprint(api_response)
     except Exception as e:

@@ -1,25 +1,26 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
-|------|------|----------|----------|-------------|
-| commentId | string | pot | Da |  |
-| banEmail | boolean | poizvedba | Ne |  |
-| banEmailDomain | boolean | poizvedba | Ne |  |
-| banIP | boolean | poizvedba | Ne |  |
-| deleteAllUsersComments | boolean | poizvedba | Ne |  |
-| bannedUntil | string | poizvedba | Ne |  |
-| isShadowBan | boolean | poizvedba | Ne |  |
-| updateId | string | poizvedba | Ne |  |
-| banReason | string | poizvedba | Ne |  |
-| sso | string | poizvedba | Ne |  |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
+| commentId | string | path | Da |  |
+| banEmail | boolean | query | Ne |  |
+| banEmailDomain | boolean | query | Ne |  |
+| banIP | boolean | query | Ne |  |
+| deleteAllUsersComments | boolean | query | Ne |  |
+| bannedUntil | string | query | Ne |  |
+| isShadowBan | boolean | query | Ne |  |
+| updateId | string | query | Ne |  |
+| banReason | string | query | Ne |  |
+| sso | string | query | Ne |  |
 
-## Odziv
+## Odgovor
 
 Vrne: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/BanUserFromCommentResult.php)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer postBanUserFromComment'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postBanUserFromComment Primer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -27,23 +28,28 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Če želite uporabiti po meri HTTP odjemalca, posredujte svoj odjemalec, ki implementira `GuzzleHttp\ClientInterface`.
-    // To je neobvezno, kot privzeto bo uporabljen `GuzzleHttp\Client`.
+    // Če želite uporabiti lasten HTTP odjemalec, podajte svoj odjemalec, ki implementira `GuzzleHttp\ClientInterface`.
+    // To je neobvezno, `GuzzleHttp\Client` bo uporabljen kot privzeto.
     new GuzzleHttp\Client()
 );
+
+$tenant_id = 'tenant_id_example'; // string
 $comment_id = 'comment_id_example'; // string
-$ban_email = True; // bool
-$ban_email_domain = True; // bool
-$ban_ip = True; // bool
-$delete_all_users_comments = True; // bool
-$banned_until = 'banned_until_example'; // string
-$is_shadow_ban = True; // bool
-$update_id = 'update_id_example'; // string
-$ban_reason = 'ban_reason_example'; // string
-$sso = 'sso_example'; // string
+$options = [
+    'ban_email' => True, // bool
+    'ban_email_domain' => True, // bool
+    'ban_ip' => True, // bool
+    'delete_all_users_comments' => True, // bool
+    'banned_until' => 'banned_until_example', // string
+    'is_shadow_ban' => True, // bool
+    'update_id' => 'update_id_example', // string
+    'ban_reason' => 'ban_reason_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->postBanUserFromComment($comment_id, $ban_email, $ban_email_domain, $ban_ip, $delete_all_users_comments, $banned_until, $is_shadow_ban, $update_id, $ban_reason, $sso);
+    $result = $apiInstance->postBanUserFromComment($tenant_id, $comment_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->postBanUserFromComment: ', $e->getMessage(), PHP_EOL;

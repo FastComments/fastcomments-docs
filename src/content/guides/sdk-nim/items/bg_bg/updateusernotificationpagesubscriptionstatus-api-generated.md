@@ -1,18 +1,17 @@
----
-Включване или изключване на известия за страница. Когато потребителите са абонирани за страница, се създават известия за нови коренни коментари, и също така
+Enable or disable notifications for a page. When users are subscribed to a page, notifications are created for new root comments, and also
 
-## Параметри
+## Parameters
 
 | Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| urlId | string | Да |  |
-| url | string | Не |  |
-| pageTitle | string | Не |  |
-| subscribedOrUnsubscribed | string | Не |  |
-| sso | string | Не |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| url | string | No |  |
+| pageTitle | string | No |  |
+| subscribedOrUnsubscribed | string | No |  |
+| sso | string = "" | No |  |
 
-## Отговор
+## Response
 
 Връща: [`Option[UpdateUserNotificationPageSubscriptionStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_page_subscription_status_response.nim)
 
@@ -20,20 +19,16 @@
 
 [inline-code-attrs-start title = 'Пример за updateUserNotificationPageSubscriptionStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateUserNotificationPageSubscriptionStatus(
+let (optResp, httpResp) = client.updateUserNotificationPageSubscriptionStatus(
   tenantId = "my-tenant-123",
-  urlId = "news/economy/market-rally-2026-06-19",
-  url = "",
-  pageTitle = "",
-  subscribedOrUnsubscribed = "",
+  urlId = "news/article-456",
+  url = "https://example.com/news/article-456",
+  pageTitle = "Breaking News: Something Happened",
+  subscribedOrUnsubscribed = "subscribed",
   sso = ""
 )
 
-if response.isSome:
-  let updateResp = response.get()
-  echo "Subscription update received: ", updateResp
-else:
-  echo "No subscription update returned."
+if optResp.isSome:
+  let resp = optResp.get()
+  # допълнително обработване с resp
 [inline-code-end]
-
----

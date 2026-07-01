@@ -1,28 +1,29 @@
-## 매개변수
+## Parameters
 
-| 이름 | 형식 | 필수 | 설명 |
-|------|------|------|------|
-| tenantId | string | 예 |  |
-| createAPIUserSubscriptionData | CreateAPIUserSubscriptionData | 예 |  |
+| 이름 | 유형 | 필수 | 설명 |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| createAPIUserSubscriptionData | CreateAPIUserSubscriptionData | Yes |  |
 
-## 응답
+## Response
 
 반환: [`CreateSubscriptionAPIResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateSubscriptionAPIResponse.ts)
 
-## 예제
+## Example
 
-[inline-code-attrs-start title = 'createSubscription 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createSubscription 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-tenant-123";
-const createAPIUserSubscriptionData: CreateAPIUserSubscriptionData = {
-  userId: "user_98765",
-  planId: "pro_monthly",
-  paymentMethod: { type: "card", cardId: "card_abc123" },
-  autoRenew: true,
-  trialDays: 14, // 선택적 매개변수 예시
-  metadata: { campaign: "spring_launch" } // 선택적 매개변수 예시
-};
-const result: CreateSubscriptionAPIResponse = await createSubscription(tenantId, createAPIUserSubscriptionData);
-[inline-code-end]
+(async () => {
+    const tenantId: string = "acme-corp-123";
 
----
+    const subscriptionData: CreateAPIUserSubscriptionData = {
+        userId: "user-456",
+        planId: "premium-monthly",
+        startDate: new Date(),
+        trialPeriodDays: 14 // 선택적 필드
+    };
+
+    const result: CreateSubscriptionAPIResponse = await createSubscription(tenantId, subscriptionData);
+    console.log(result);
+})();
+[inline-code-end]

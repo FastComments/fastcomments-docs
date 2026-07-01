@@ -2,24 +2,26 @@
 
 | 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| userId | string | query | 아니요 |  |
-| sso | string | query | 아니요 |  |
+| tenantId | string | query | 예 |  |
+| userId | string | query | 아니오 |  |
+| sso | string | query | 아니오 |  |
 
 ## 응답
 
 반환: [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetUserTrustFactorResponse.swift)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'getTrustFactor 예제'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTrustFactor 예시'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 다음 코드 샘플은 아직 베타입니다. 문제 발생 시 http://github.com/OpenAPITools/openapi-generator/issues/new 를 통해 보고해 주세요
+// 이 아래 코드 샘플은 아직 베타 버전입니다. 문제가 있으면 http://github.com/OpenAPITools/openapi-generator/issues/new 에 보고하십시오
 import FastCommentsSwift
 
-let userId = "userId_example" // String |  (선택 사항)
-let sso = "sso_example" // String |  (선택 사항)
+let tenantId = "tenantId_example" // String | 
+let userId = "userId_example" // String |  (옵션)
+let sso = "sso_example" // String |  (옵션)
 
-ModerationAPI.getTrustFactor(userId: userId, sso: sso) { (response, error) in
+ModerationAPI.getTrustFactor(tenantId: tenantId, options: ModerationAPI.GetTrustFactorOptions(userId: userId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -30,5 +32,3 @@ ModerationAPI.getTrustFactor(userId: userId, sso: sso) { (response, error) in
     }
 }
 [inline-code-end]
-
----

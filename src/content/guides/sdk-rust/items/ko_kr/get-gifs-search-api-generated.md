@@ -1,12 +1,12 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenant_id | String | 예 |  |
-| search | String | 예 |  |
-| locale | String | 아니오 |  |
-| rating | String | 아니오 |  |
-| page | f64 | 아니오 |  |
+| tenant_id | String | Yes |  |
+| search | String | Yes |  |
+| locale | String | No |  |
+| rating | String | No |  |
+| page | f64 | No |  |
 
 ## 응답
 
@@ -16,18 +16,15 @@
 
 [inline-code-attrs-start title = 'get_gifs_search 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_gif_search() -> Result<(), Error> {
-    let params: GetGifsSearchParams = GetGifsSearchParams {
+async fn fetch_gifs(config: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetGifsSearchParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        search: "breaking news".to_string(),
+        search: "funny cats".to_string(),
         locale: Some("en-US".to_string()),
-        rating: Some("pg-13".to_string()),
+        rating: Some("pg".to_string()),
         page: Some(1.0),
     };
-    let response: GetGifsSearchResponse = get_gifs_search(&configuration, params).await?;
-    println!("{:#?}", response);
+    let _response = get_gifs_search(config, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

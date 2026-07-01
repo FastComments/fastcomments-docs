@@ -1,8 +1,9 @@
-## Parameters
+## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| sso | string | query | Nie |  |
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Odpowiedź
 
@@ -10,14 +11,15 @@ Zwraca: [`GetBannedUsersCountResponse`](https://github.com/FastComments/fastcomm
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład getCounts'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getCounts Przykład'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Następujące przykłady kodu są nadal w wersji beta. W razie problemu zgłoś go przez http://github.com/OpenAPITools/openapi-generator/issues/new
+// Poniższe przykłady kodu są nadal w wersji beta. W razie jakichkolwiek problemów, proszę zgłosić je via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let sso = "sso_example" // String |  (opcjonalne)
+let tenantId = "tenantId_example" // String | 
+let sso = "sso_example" // String |  (opcjonalny)
 
-ModerationAPI.getCounts(sso: sso) { (response, error) in
+ModerationAPI.getCounts(tenantId: tenantId, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -28,5 +30,3 @@ ModerationAPI.getCounts(sso: sso) { (response, error) in
     }
 }
 [inline-code-end]
-
----

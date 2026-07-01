@@ -1,18 +1,17 @@
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
-|------|------|----------|-------------|
+|------|------|--------------|---------------|
 | tenantId | string | Ja |  |
 | commentId | string | Ja |  |
 | voteId | string | Nein |  |
 | urlId | string | Ja |  |
 | broadcastId | string | Nein |  |
-| editKey | string | Nein |  |
-| sso | string | Nein |  |
+| options | DeleteCommentVoteOptions | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`Option[VoteDeleteResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_vote_delete_response.nim)
+Rückgabe: [`Option[VoteDeleteResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_vote_delete_response.nim)
 
 ## Beispiel
 
@@ -20,18 +19,13 @@ Gibt zurück: [`Option[VoteDeleteResponse]`](https://github.com/FastComments/fas
 [inline-code-start]
 let (response, httpResponse) = client.deleteCommentVote(
   tenantId = "my-tenant-123",
-  commentId = "comment-456",
+  commentId = "cmt-456",
   voteId = "vote-789",
   urlId = "news/article-title",
-  broadcastId = "",
-  editKey = "",
-  sso = ""
+  broadcastId = "broadcast-001",
+  options = DeleteCommentVoteOptions()
 )
-if response.isSome:
-  let voteResp = response.get()
-  echo "Vote delete response:", voteResp
-else:
-  echo "No response body, HTTP response:", httpResponse
-[inline-code-end]
 
----
+if response.isSome:
+  let voteDelete = response.get()
+[inline-code-end]

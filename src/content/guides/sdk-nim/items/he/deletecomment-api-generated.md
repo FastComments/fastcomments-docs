@@ -1,26 +1,26 @@
-## פרמטרים
+## Parameters
 
 | שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | id | string | לא |  |
-| contextUserId | string | לא |  |
-| isLive | bool | לא |  |
+| options | DeleteCommentOptions | לא |  |
 
-## תגובה
+## Response
 
-מחזיר: [`Option[DeleteCommentResult]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_delete_comment_result.nim)
+מחזירים: [`Option[DeleteCommentResult]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_delete_comment_result.nim)
 
-## דוגמה
+## Example
 
-[inline-code-attrs-start title = 'דוגמה ל-deleteComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת deleteComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteComment(tenantId = "my-tenant-123", id = "cmt-98765", contextUserId = "user-456", isLive = true)
-if response.isSome:
-  let result = response.get()
-  echo "DeleteCommentResult received"
-else:
-  echo "No result, HTTP status: ", httpResponse.status
-[inline-code-end]
+let (delResult, httpResponse) = client.deleteComment(
+  tenantId = "my-tenant-123",
+  id = "comment-456",
+  options = DeleteCommentOptions()
+)
 
----
+if delResult.isSome:
+  let result = delResult.get()
+  echo result
+[inline-code-end]

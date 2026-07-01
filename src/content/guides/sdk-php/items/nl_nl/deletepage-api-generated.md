@@ -1,13 +1,13 @@
 ## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| id | string | path | Ja |  |
+| Name | Type | Location | Required | Beschrijving |
+|------|------|----------|----------|--------------|
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
-## Response
+## Respons
 
-Geeft terug: [`DeletePageAPIResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/DeletePageAPIResponse.php)
+Retourneert: [`DeletePageAPIResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/DeletePageAPIResponse.php)
 
 ## Voorbeeld
 
@@ -17,20 +17,22 @@ Geeft terug: [`DeletePageAPIResponse`](https://github.com/FastComments/fastcomme
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configureer API-sleutel autorisatie: api_key
+// Configure API key authorization: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Haal hieronder de commentaar weg om een voorvoegsel in te stellen (bijv. Bearer) voor de API-sleutel, indien nodig
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Als u een aangepaste http-client wilt gebruiken, geeft u uw client door die `GuzzleHttp\ClientInterface` implementeert.
-    // Dit is optioneel, `GuzzleHttp\Client` zal als standaard worden gebruikt.
+    // Als je een aangepaste HTTP-client wilt gebruiken, geef dan je client door die `GuzzleHttp\ClientInterface` implementeert.
+    // Dit is optioneel, `GuzzleHttp\Client` wordt standaard gebruikt.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
+
 
 try {
     $result = $apiInstance->deletePage($tenant_id, $id);

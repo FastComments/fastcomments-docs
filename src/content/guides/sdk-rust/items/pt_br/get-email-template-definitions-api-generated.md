@@ -1,7 +1,7 @@
 ## Parâmetros
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nome | Tipo | Obrigatório | Descrição |
+|------|------|-------------|-----------|
 | tenant_id | String | Sim |  |
 
 ## Resposta
@@ -10,18 +10,13 @@ Retorna: [`GetEmailTemplateDefinitionsResponse`](https://github.com/FastComments
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de get_email_template_definitions'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo get_email_template_definitions'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_templates() -> Result<(), Error> {
-    let params: GetEmailTemplateDefinitionsParams = GetEmailTemplateDefinitionsParams {
+async fn run() -> Result<(), Error> {
+    let params = GetEmailTemplateDefinitionsParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        locale: Some("en-US".to_string()),
     };
-    let response: GetEmailTemplateDefinitionsResponse =
-        get_email_template_definitions(&configuration, params).await?;
-    println!("{:#?}", response);
+    let _response = get_email_template_definitions(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

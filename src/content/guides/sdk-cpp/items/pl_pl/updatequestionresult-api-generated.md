@@ -1,10 +1,11 @@
+---
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|-------------|
-| tenantId | string | Tak |  |
-| id | string | Tak |  |
-| updateQuestionResultBody | UpdateQuestionResultBody | Tak |  |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updateQuestionResultBody | UpdateQuestionResultBody | Yes |  |
 
 ## Odpowiedź
 
@@ -12,23 +13,18 @@ Zwraca: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/bl
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład updateQuestionResult'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateQuestionResult Przykład'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
-utility::string_t questionId = utility::conversions::to_string_t("question-456");
-auto body = std::make_shared<UpdateQuestionResultBody>();
-body->answeredBy = utility::conversions::to_string_t("user@example.com");
-body->correct = true;
-body->score = boost::optional<int>(92);
-body->notes = boost::optional<utility::string_t>(utility::conversions::to_string_t("Clarified response during review"));
-api->updateQuestionResult(tenantId, questionId, *body)
-    .then([](pplx::task<std::shared_ptr<APIEmptyResponse>> t){
+auto tenantId = utility::string_t(U("my-tenant-123"));
+auto questionId = utility::string_t(U("question-456"));
+UpdateQuestionResultBody body;
+body.result = U("approved");
+body.note = boost::optional<utility::string_t>(U("Reviewed by admin"));
+api->updateQuestionResult(tenantId, questionId, body)
+    .then([](pplx::task<std::shared_ptr<APIEmptyResponse>> t) {
         try {
-            auto resp = t.get();
-            (void)resp;
+            auto respPtr = std::make_shared<APIEmptyResponse>(*t.get());
         } catch (const std::exception&) {
         }
     });
 [inline-code-end]
-
----

@@ -1,26 +1,27 @@
-Informations d'utilisateurs en masse pour un locataire. Étant donné des userIds, retourne les informations d'affichage de User / SSOUser.
-Utilisé par le widget de commentaires pour enrichir les utilisateurs qui viennent d'apparaître via un événement de présence.
-Pas de contexte de page : la confidentialité est appliquée de façon uniforme (les profils privés sont masqués).
+Informations d'utilisateur en masse pour un locataire. Étant donné des userIds, renvoie les informations d'affichage provenant de User / SSOUser.  
+Utilisé par le widget de commentaires pour enrichir les utilisateurs qui viennent d'apparaître via un événement de présence.  
+Pas de contexte de page : la confidentialité est appliquée uniformément (les profils privés sont masqués).
 
 ## Paramètres
 
-| Nom | Type | Requis | Description |
-|------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| ids | string | Yes |  |
+| Nom | Type | Obligatoire | Description |
+|------|------|-------------|-------------|
+| tenantId | string | Oui |  |
+| ids | string | Oui |  |
 
 ## Réponse
 
-Retourne : [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersInfoResponse.ts)
+Renvoie : [`GetUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUsersInfoResponse.ts)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple getUsersInfo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_78f9';
-const ids: string = 'user_10234,user_10235,user_10236';
-const usersInfo: PageUsersInfoResponse = await getUsersInfo(tenantId, ids);
-// getUsersInfo nécessite uniquement tenantId et ids ; les paramètres optionnels ne s'appliquent pas ici.
-[inline-code-end]
+const tenantId: string = "acme-corp-tenant";
+const ids: string = "user-1001,user-1002";
 
----
+const usersInfo: GetUsersInfoResponse = await getUsersInfo(tenantId, ids);
+
+// Les champs optionnels dans la réponse peuvent être indéfinis
+const firstUser: PageUserEntry | undefined = usersInfo?.users?.[0];
+[inline-code-end]

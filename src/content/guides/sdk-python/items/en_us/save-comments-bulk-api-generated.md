@@ -17,6 +17,7 @@ Returns: [`SaveCommentsBulkResponse`](https://github.com/FastComments/fastcommen
 [inline-code-attrs-start title = 'save_comments_bulk Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import SaveCommentsBulkOptions
 from client.models.create_comment_params import CreateCommentParams
 from client.models.save_comments_bulk_response import SaveCommentsBulkResponse
 from client.rest import ApiException
@@ -51,7 +52,7 @@ with client.ApiClient(configuration) as api_client:
     populate_notifications = True # bool |  (optional)
 
     try:
-        api_response = api_instance.save_comments_bulk(tenant_id, create_comment_params, is_live=is_live, do_spam_check=do_spam_check, send_emails=send_emails, populate_notifications=populate_notifications)
+        api_response = api_instance.save_comments_bulk(tenant_id, create_comment_params, SaveCommentsBulkOptions(is_live=is_live, do_spam_check=do_spam_check, send_emails=send_emails, populate_notifications=populate_notifications))
         print("The response of DefaultApi->save_comments_bulk:\n")
         pprint(api_response)
     except Exception as e:

@@ -1,11 +1,12 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Da |  |
 | value | string | query | Ne |  |
 | sso | string | query | Ne |  |
 
-## Odziv
+## Odgovor
 
 Vrne: [`ModerationSiteSearchResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationSiteSearchResponse.java)
 
@@ -13,6 +14,7 @@ Vrne: [`ModerationSiteSearchResponse`](https://github.com/FastComments/fastcomme
 
 [inline-code-attrs-start title = 'Primer getSearchSites'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
+// Import classes:
 // Uvozi razrede:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
@@ -26,10 +28,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String value = "value_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationSiteSearchResponse result = apiInstance.getSearchSites()
+      ModerationSiteSearchResponse result = apiInstance.getSearchSites(tenantId)
             .value(value)
             .sso(sso)
             .execute();

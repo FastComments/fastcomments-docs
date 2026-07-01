@@ -2,22 +2,32 @@
 
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| id | string | Ja |  |
-| deleteComments | string | Nej |  |
-| commentDeleteMode | string | Nej |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| deleteComments | string | No |  |
+| commentDeleteMode | string | No |  |
 
 ## Svar
 
-Returnerer: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Returnerer: [`DeleteTenantUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteTenantUserResponse.ts)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på deleteTenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteTenantUser Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_4b7a9f2c";
-const id: string = "user_9d3f1b6a";
-const deleteComments: string = "true";
-const commentDeleteMode: string = "permanent";
-const result: APIEmptyResponse = await deleteTenantUser(tenantId, id, deleteComments, commentDeleteMode);
+async function demoDeleteTenantUser() {
+  const tenantId: string = "acme-corp-tenant";
+  const userId: string = "user-9876";
+
+  // Slet brugeren og alle deres kommentarer, ved brug af hard delete-tilstand
+  const resultWithOptions: DeleteTenantUserResponse = await deleteTenantUser(
+    tenantId,
+    userId,
+    "true",
+    "hard"
+  );
+
+  // Slet brugeren uden at fjerne kommentarer (standardadfærd)
+  const resultBasic: DeleteTenantUserResponse = await deleteTenantUser(tenantId, userId);
+}
 [inline-code-end]

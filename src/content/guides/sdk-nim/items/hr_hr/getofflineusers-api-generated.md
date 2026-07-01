@@ -1,16 +1,15 @@
-Prethodni komentatori na stranici koji trenutno NISU online. Sortirano po displayName.
-Koristite ovo nakon što iscrpite /users/online za prikaz odjeljka "Članovi".
-Kursor-paginacija po commenterName: poslužitelj prolazi parcijalni indeks {tenantId, urlId, commenterName}
-od afterName naprijed koristeći $gt, bez troška $skip.
+Prethodni komentatori na stranici koji NIJE trenutno online. Sortirano po displayName.  
+Koristite ovo nakon što ste iscrpili /users/online za prikaz sekcije „Članovi“.  
+Kursor paginacija po commenterName: poslužitelj prolazi kroz djelomični {tenantId, urlId, commenterName}  
+indeks od afterName naprijed putem $gt, bez troška $skip.
 
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| tenantId | string | Da |  |
-| urlId | string | Da |  |
-| afterName | string | Ne |  |
-| afterUserId | string | Ne |  |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| options | GetOfflineUsersOptions | No |  |
 
 ## Odgovor
 
@@ -18,19 +17,16 @@ Vraća: [`Option[PageUsersOfflineResponse]`](https://github.com/FastComments/fas
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer za getOfflineUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getOfflineUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getOfflineUsers(
+let (offlineResp, httpResponse) = client.getOfflineUsers(
   tenantId = "my-tenant-123",
-  urlId = "news/article-how-to-code",
-  afterName = "",
-  afterUserId = ""
+  urlId = "news/article-title",
+  options = GetOfflineUsersOptions()
 )
-
-if response.isSome:
-  let offlinePage = response.get()
-  echo "Received offline users page"
-  discard httpResponse.statusCode
+if offlineResp.isSome:
+  let offline = offlineResp.get()
+  echo offline)
 [inline-code-end]
 
 ---

@@ -1,14 +1,14 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Название | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | query | No |  |
-| externalId | string | query | No |  |
-| eventType | string | query | No |  |
-| type | string | query | No |  |
-| domain | string | query | No |  |
-| attemptCountGT | number | query | No |  |
+| tenantId | string | query | Да |  |
+| commentId | string | query | Нет |  |
+| externalId | string | query | Нет |  |
+| eventType | string | query | Нет |  |
+| type | string | query | Нет |  |
+| domain | string | query | Нет |  |
+| attemptCountGT | number | query | Нет |  |
 
 ## Ответ
 
@@ -16,9 +16,9 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример getPendingWebhookEventCount'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getPendingWebhookEventCount Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие примеры кода все еще находятся в бете. Если обнаружите проблему, пожалуйста, сообщите через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следующие примеры кода всё ещё находятся в бете. При возникновении проблем, пожалуйста, сообщайте по адресу http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -29,7 +29,7 @@ let type = "type_example" // String |  (необязательно)
 let domain = "domain_example" // String |  (необязательно)
 let attemptCountGT = 987 // Double |  (необязательно)
 
-DefaultAPI.getPendingWebhookEventCount(tenantId: tenantId, commentId: commentId, externalId: externalId, eventType: eventType, type: type, domain: domain, attemptCountGT: attemptCountGT) { (response, error) in
+DefaultAPI.getPendingWebhookEventCount(tenantId: tenantId, options: DefaultAPI.GetPendingWebhookEventCountOptions(commentId: commentId, externalId: externalId, eventType: eventType, type: type, domain: domain, attemptCountGT: attemptCountGT)) { (response, error) in
     guard error == nil else {
         print(error)
         return

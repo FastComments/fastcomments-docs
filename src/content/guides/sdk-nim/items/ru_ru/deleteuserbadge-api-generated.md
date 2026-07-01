@@ -1,7 +1,7 @@
 ## Параметры
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Имя | Тип | Обязательно | Описание |
+|------|------|-------------|----------|
 | tenantId | string | Да |  |
 | id | string | Нет |  |
 
@@ -11,18 +11,9 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример deleteUserBadge'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteUserBadge Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let tenantId = "my-tenant-123"
-let badgeId = "badge-456"
-
-let (response, httpResponse) = client.deleteUserBadge(tenantId = tenantId, id = badgeId)
-
-if response.isSome:
-  let success = response.get()
-  echo "Badge deleted successfully for tenant: ", tenantId, " id: ", badgeId
-else:
-  echo "Failed to delete badge. HTTP status: ", $httpResponse.status
+let (apiResponse, httpResponse) = client.deleteUserBadge(tenantId = "my-tenant-123", id = "badge-456")
+if apiResponse.isSome:
+  let success = apiResponse.get()
 [inline-code-end]
-
----

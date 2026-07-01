@@ -2,9 +2,8 @@
 
 ```ruby
 require 'fastcomments'
-require 'fastcomments-client'
 
-# Створити токен простого SSO
+# Створити токен Simple SSO
 user = FastComments::SSO::SimpleSSOUserData.new(
   user_id: 'user-123',
   email: 'user@example.com',
@@ -16,27 +15,26 @@ token = sso.create_token
 
 puts "SSO Token: #{token}"
 
-# Використайте токен SSO, щоб зробити автентифікований запит до API
+# Використати токен SSO для здійснення автентифікованого API‑виклику
 config = FastCommentsClient::Configuration.new
 api_client = FastCommentsClient::ApiClient.new(config)
 public_api = FastCommentsClient::PublicApi.new(api_client)
 
 response = public_api.get_comments_public(
-  tenant_id: 'your-tenant-id',
-  url_id: 'your-page-url-id',
+  'your-tenant-id',
+  'your-page-url-id',
   sso: token
 )
 
 puts "Status: #{response}"
 ```
 
-### Захищений SSO
+### Безпечний SSO
 
 ```ruby
 require 'fastcomments'
-require 'fastcomments-client'
 
-# Створити токен захищеного SSO
+# Створити токен Secure SSO
 user = FastComments::SSO::SecureSSOUserData.new(
   user_id: 'user-123',
   email: 'user@example.com',
@@ -50,14 +48,14 @@ token = sso.create_token
 
 puts "Secure SSO Token: #{token}"
 
-# Використайте токен SSO, щоб зробити автентифікований запит до API
+# Використати токен SSO для здійснення автентифікованого API‑виклику
 config = FastCommentsClient::Configuration.new
 api_client = FastCommentsClient::ApiClient.new(config)
 public_api = FastCommentsClient::PublicApi.new(api_client)
 
 response = public_api.get_comments_public(
-  tenant_id: 'your-tenant-id',
-  url_id: 'your-page-url-id',
+  'your-tenant-id',
+  'your-page-url-id',
   sso: token
 )
 

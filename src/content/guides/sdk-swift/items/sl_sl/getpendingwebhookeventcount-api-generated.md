@@ -1,16 +1,16 @@
-## Parametri
+## Parameters
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| commentId | string | query | Ne |  |
-| externalId | string | query | Ne |  |
-| eventType | string | query | Ne |  |
-| type | string | query | Ne |  |
-| domain | string | query | Ne |  |
-| attemptCountGT | number | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | query | No |  |
+| externalId | string | query | No |  |
+| eventType | string | query | No |  |
+| type | string | query | No |  |
+| domain | string | query | No |  |
+| attemptCountGT | number | query | No |  |
 
-## Odgovor
+## Response
 
 Vrne: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPendingWebhookEventCountResponse.swift)
 
@@ -18,7 +18,7 @@ Vrne: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'Primer getPendingWebhookEventCount'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Naslednji primeri kode so še v beta. Za kakršnekoli težave, prosimo, prijavite na http://github.com/OpenAPITools/openapi-generator/issues/new
+// Naslednji vzorci kode so še v beta fazi. V primeru težav jih prosimo prijavite na http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -29,7 +29,7 @@ let type = "type_example" // String |  (neobvezno)
 let domain = "domain_example" // String |  (neobvezno)
 let attemptCountGT = 987 // Double |  (neobvezno)
 
-DefaultAPI.getPendingWebhookEventCount(tenantId: tenantId, commentId: commentId, externalId: externalId, eventType: eventType, type: type, domain: domain, attemptCountGT: attemptCountGT) { (response, error) in
+DefaultAPI.getPendingWebhookEventCount(tenantId: tenantId, options: DefaultAPI.GetPendingWebhookEventCountOptions(commentId: commentId, externalId: externalId, eventType: eventType, type: type, domain: domain, attemptCountGT: attemptCountGT)) { (response, error) in
     guard error == nil else {
         print(error)
         return

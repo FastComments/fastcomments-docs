@@ -2,37 +2,50 @@
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| postId | string | 예 |  |
-| updateFeedPostParams | UpdateFeedPostParams | 예 |  |
-| broadcastId | string | 아니요 |  |
-| sso | string | 아니요 |  |
+| tenantId | string | Yes |  |
+| postId | string | Yes |  |
+| updateFeedPostParams | UpdateFeedPostParams | Yes |  |
+| broadcastId | string | No |  |
+| sso | string | No |  |
 
 ## 응답
 
-반환: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateFeedPostResponse.ts)
+반환: [`UpdateFeedPostPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateFeedPostPublicResponse.ts)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'updateFeedPostPublic 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateFeedPostPublic 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_9b2f4a";
-const postId: string = "post_4f8c21";
-const updateFeedPostParams: UpdateFeedPostParams = {
-  title: "Weekly product update",
-  content: "We've shipped improvements to search relevance and mobile layout.",
-  media: [
-    {
-      type: "image",
-      assets: [{ url: "https://cdn.company.com/images/update-cover.jpg", width: 1200, height: 627 }]
-    }
-  ],
-  links: [{ url: "https://company.com/blog/release-notes", title: "Release notes" }],
-  published: true
-};
-const broadcastId: string = "broadcast_2026_06_19";
-const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.sso_payload.signature";
-const response: CreateFeedPostResponse = await updateFeedPostPublic(tenantId, postId, updateFeedPostParams, broadcastId, sso);
+async function updatePostExample() {
+  const tenantId: string = 'tenant-9f8b7c';
+  const postId: string = 'post-3a4d5e';
+  const updateParams: UpdateFeedPostParams = {
+    title: 'New Announcement',
+    content: 'We have updated our terms of service.',
+    media: [
+      {
+        url: 'https://cdn.example.com/assets/image.png',
+        type: 'image',
+        asset: {
+          width: 800,
+          height: 600,
+          size: 124000
+        } as FeedPostMediaItemAsset
+      } as FeedPostMediaItem
+    ],
+    link: {
+      url: 'https://example.com/terms',
+      title: 'Read the new TOS'
+    } as FeedPostLink
+  };
+  const broadcastId: string = 'broadcast-2023-09';
+  const sso: string = 'sso-abc123xyz';
+  const result: UpdateFeedPostPublicResponse = await updateFeedPostPublic(
+    tenantId,
+    postId,
+    updateParams,
+    broadcastId,
+    sso
+  );
+}
 [inline-code-end]
-
----

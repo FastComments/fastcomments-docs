@@ -1,7 +1,8 @@
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenant_id | String | Da |  |
 | value | String | Ne |  |
 | sso | String | Ne |  |
 
@@ -13,16 +14,13 @@ Vraća: [`ModerationPageSearchResponse`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'get_search_pages Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
+async fn example() -> Result<(), Error> {
     let params = GetSearchPagesParams {
-        value: Some("news/article/world/2026-summit".to_string()),
-        sso: Some("acme-corp-tenant".to_string()),
+        tenant_id: "acme-corp-tenant".to_string(),
+        value: Some("news/article".to_string()),
+        sso: Some("sso-token-123".to_string()),
     };
-    let moderation_response: ModerationPageSearchResponse =
-        get_search_pages(&configuration, params).await?;
-    let _status: ApiStatus = moderation_response.status;
+    let response: ModerationPageSearchResponse = get_search_pages(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

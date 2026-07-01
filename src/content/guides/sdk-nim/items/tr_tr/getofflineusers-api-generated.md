@@ -1,17 +1,19 @@
----
-Sayfada daha önce yorum yapan ve şu anda çevrimiçi olmayan kişiler. displayName'e göre sıralanır.
-/users/online tükendiğinde "Üyeler" bölümünü görüntülemek için bunu kullanın.
-commenterName üzerinde imleçli sayfalama: sunucu kısmi {tenantId, urlId, commenterName}
-indeksini afterName'den ileriye doğru $gt ile yürütür, $skip maliyeti yok.
+Past commenters on the page who are NOT currently online. Sorted by displayName.  
+Sayfada daha önce yorum yapan, şu anda ONLINE olmayan yorumcular. displayName’ye göre sıralanır.  
+
+Use this after exhausting /users/online to render a "Members" section.  
+/users/online kaynağını tükettikten sonra bir "Members" bölümü oluşturmak için bunu kullanın.  
+
+Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.  
+commenterName üzerinde cursor sayfalama: sunucu, {tenantId, urlId, commenterName} kısmından afterName sonrası $gt ile ilerleyerek, $skip maliyeti olmadan indeksi yürütür.  
 
 ## Parametreler
 
 | Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| afterName | string | No |  |
-| afterUserId | string | No |  |
+| tenantId | string | Evet |  |
+| urlId | string | Evet |  |
+| options | GetOfflineUsersOptions | Hayır |  |
 
 ## Yanıt
 
@@ -21,17 +23,12 @@ Döndürür: [`Option[PageUsersOfflineResponse]`](https://github.com/FastComment
 
 [inline-code-attrs-start title = 'getOfflineUsers Örneği'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getOfflineUsers(
+let (offlineResp, httpResponse) = client.getOfflineUsers(
   tenantId = "my-tenant-123",
-  urlId = "news/article-how-to-code",
-  afterName = "",
-  afterUserId = ""
+  urlId = "news/article-title",
+  options = GetOfflineUsersOptions()
 )
-
-if response.isSome:
-  let offlinePage = response.get()
-  echo "Received offline users page"
-  discard httpResponse.statusCode
+if offlineResp.isSome:
+  let offline = offlineResp.get()
+  echo offline)
 [inline-code-end]
-
----

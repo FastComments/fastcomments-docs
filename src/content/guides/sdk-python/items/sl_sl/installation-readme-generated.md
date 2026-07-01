@@ -1,16 +1,26 @@
-### PyPI
+### Namestitev s GitHub-a
+
+Namestite neposredno iz oznake izdaj (priporočeno, popolnoma reproducibilno):
 
 ```bash
-pip install fastcomments
+pip install git+https://github.com/fastcomments/fastcomments-python.git@v3.0.0
 ```
+
+Zakažite oznako namesto veje, da so gradnje določljive. Enak zapis deluje v `requirements.txt`:
+
+```
+fastcomments @ git+https://github.com/fastcomments/fastcomments-python.git@v3.0.0
+```
+
+Vsaka označena [GitHub izdaja](https://github.com/fastcomments/fastcomments-python/releases) ima tudi priloženo zgrajeno wheel, če raje neposredno namestite binarni artefakt.
 
 ### Vsebina knjižnice
 
-Ta knjižnica vsebuje dva modula: samodejno ustvarjen odjemalec API in jedrna Python knjižnica, ki vsebuje ročno napisane pripomočke za lažje delo z API-jem, vključno s podporo SSO.
+Ta knjižnica vsebuje dva modula: ustvarjenega API odjemalca in jedrno Python knjižnico, ki vsebuje ročno napisane pripomočke, ki olajšajo delo z API-jem, vključno s podporo za SSO.
 
-- [Dokumentacija API odjemalca](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
-- [Dokumentacija jedrne knjižnice, vključno s primeri SSO](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
+- [Dokumentacija knjižnice API odjemalca](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
+- [Dokumentacija jedrne knjižnice, vključno s SSO primeri](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
 
-### Javne in zavarovane API-je
+### Javni in zaščiteni API-ji
 
-Za API odjemalca so na voljo trije razredi, `DefaultApi`, `PublicApi` in `ModerationApi`. `DefaultApi` vsebuje metode, ki zahtevajo vaš API ključ, medtem ko `PublicApi` vsebuje metode, ki jih je mogoče klicati neposredno iz brskalnika/mobilne naprave/itd. brez overjanja. `ModerationApi` poganja nadzorno ploščo moderatorja in vsebuje metode za moderiranje komentarjev (seznam, štetje, iskanje, dnevni zapisi, izvoz), ukrepe moderiranja (odstrani/obnovi, označi, nastavi status pregleda/spama/odobritve, glasovi, ponovno odpri/zaključi nit), prepovedi (prepoved komentiranja, razveljavitev, povzetki pred prepovedjo, stanje/nastavitve prepovedi, štetje prepovedanih uporabnikov) ter značke in zaupanje (podeli/odstrani značko, ročne značke, pridobi/nastavi faktor zaupanja, uporabniški notranji profil). Vsaka metoda `ModerationApi` sprejme parameter `sso`, tako da jo je mogoče klicati v imenu moderatorja, avtenticiranega preko SSO.
+Za API odjemalca so na voljo trije razredi, `DefaultApi`, `PublicApi` in `ModerationApi`. `DefaultApi` vsebuje metode, ki zahtevajo vaš API ključ, `PublicApi` vsebuje metode, ki jih je mogoče izvesti neposredno iz brskalnika/mobilne naprave itd. brez avtentikacije. `ModerationApi` ponuja obsežen nabor živo in hitro moderiranje API-jev. Vsaka metoda `ModerationApi` sprejme parameter `sso` in se lahko avtenticira prek SSO ali FastComments.com seje piškotka.

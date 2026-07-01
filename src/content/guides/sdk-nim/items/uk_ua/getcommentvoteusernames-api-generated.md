@@ -1,11 +1,11 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Назва | Тип | Обов’язково | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Так |  |
 | commentId | string | Так |  |
 | dir | int | Ні |  |
-| sso | string | Ні |  |
+| sso | string = "" | Ні |  |
 
 ## Відповідь
 
@@ -15,10 +15,14 @@
 
 [inline-code-attrs-start title = 'Приклад getCommentVoteUserNames'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getCommentVoteUserNames(tenantId = "my-tenant-123", commentId = "cmt-987654", dir = 0, sso = "")
-if response.isSome:
-  let success: GetCommentVoteUserNamesSuccessResponse = response.get()
-  discard success
-[inline-code-end]
+let (voteNamesOpt, httpRes) = client.getCommentVoteUserNames(
+  tenantId = "my-tenant-123",
+  commentId = "cmt-987654321",
+  dir = 0,
+  sso = ""
+)
 
----
+if voteNamesOpt.isSome:
+  let voteNames = voteNamesOpt.get()
+  echo voteNames
+[inline-code-end]

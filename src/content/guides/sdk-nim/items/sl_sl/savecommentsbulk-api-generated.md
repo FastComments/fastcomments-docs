@@ -1,13 +1,10 @@
 ## Parametri
 
-| Ime | Type | Obvezno | Opis |
+| Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | createCommentParams | seq[CreateCommentParams] | Ne |  |
-| isLive | bool | Ne |  |
-| doSpamCheck | bool | Ne |  |
-| sendEmails | bool | Ne |  |
-| populateNotifications | bool): (Option[seq[SaveCommentsBulkResponse]] | Ne |  |
+| options | SaveCommentsBulkOptions): (Option[seq[SaveCommentsBulkResponse]] | Ne |  |
 | id | string | Ne |  |
 | fromName | string | Ne |  |
 
@@ -17,24 +14,16 @@ Vrne: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer saveCommentsBulk'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'saveCommentsBulk Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.saveCommentsBulk(
   tenantId = "my-tenant-123",
   createCommentParams = @[],
-  isLive = false,
-  doSpamCheck = false,
-  sendEmails = false,
-  populateNotifications = false,
+  options = SaveCommentsBulkOptions(),
   id = "",
   fromName = ""
 )
 
 if response.isSome:
-  let apiResp = response.get()
-  echo "Bulk save succeeded, tenant:", " my-tenant-123"
-else:
-  echo "Bulk save returned no API response"
+  let result = response.get()
 [inline-code-end]
-
----

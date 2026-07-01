@@ -1,9 +1,10 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | חובה | תיאור |
 |------|------|----------|----------|-------------|
-| commentId | string | path | כן |  |
-| sso | string | query | לא |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| sso | string | query | No |  |
 
 ## תגובה
 
@@ -11,15 +12,16 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה עבור getCommentBanStatus'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getCommentBanStatus'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// דגימות הקוד שלהלן עדיין בבטא. במקרה של בעיה, דווחו דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// ההדגימות הקוד הבאות עדיין בטא. לכל בעייה, אנא דווח באמצעות http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
 let sso = "sso_example" // String |  (אופציונלי)
 
-ModerationAPI.getCommentBanStatus(commentId: commentId, sso: sso) { (response, error) in
+ModerationAPI.getCommentBanStatus(tenantId: tenantId, commentId: commentId, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -30,3 +32,5 @@ ModerationAPI.getCommentBanStatus(commentId: commentId, sso: sso) { (response, e
     }
 }
 [inline-code-end]
+
+---

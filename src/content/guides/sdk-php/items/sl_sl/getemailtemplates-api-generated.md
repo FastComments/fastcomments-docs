@@ -1,7 +1,7 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
-|------|------|----------|----------|-------------|
+| Ime | Tip | Lokacija | Zahtevano | Opis |
+|------|------|----------|----------|------|
 | tenantId | string | query | Da |  |
 | skip | number | query | Ne |  |
 
@@ -11,7 +11,7 @@ Vrne: [`GetEmailTemplatesResponse`](https://github.com/FastComments/fastcomments
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer getEmailTemplates'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getEmailTemplates Primer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -24,13 +24,15 @@ $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKe
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Če želite uporabiti lastnega HTTP klienta, posredujte klienta, ki implementira `GuzzleHttp\ClientInterface`.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
+
+$tenant_id = 'tenant_id_example'; // niz
 $skip = 3.4; // float
+
 
 try {
     $result = $apiInstance->getEmailTemplates($tenant_id, $skip);
@@ -39,5 +41,3 @@ try {
     echo 'Exception when calling DefaultApi->getEmailTemplates: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | 名前 | 型 | 必須 | 説明 |
@@ -8,26 +7,22 @@
 
 ## レスポンス
 
-戻り値: [`GetCachedNotificationCountResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetCachedNotificationCountResponse.h)
+返却: [`GetCachedNotificationCountResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetCachedNotificationCountResponse.h)
 
 ## 例
 
 [inline-code-attrs-start title = 'getCachedNotificationCount の例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t id = U("user@example.com");
-boost::optional<utility::string_t> preferredLocale = boost::none;
-auto fallback = std::make_shared<GetCachedNotificationCountResponse>();
-api->getCachedNotificationCount(tenantId, id)
-.then([fallback](pplx::task<std::shared_ptr<GetCachedNotificationCountResponse>> t) {
-    try {
-        auto resp = t.get();
-        auto result = resp ? resp : fallback;
-        std::cout << "cachedNotificationCount: " << result->count << std::endl;
-    } catch (const std::exception& e) {
-        std::cerr << "Error fetching cached notification count: " << e.what() << std::endl;
-    }
-});
-[inline-code-end]
+auto tenantId = boost::optional<utility::string_t>(utility::conversions::to_string_t("my-tenant-123"));
+auto userId = boost::optional<utility::string_t>(utility::conversions::to_string_t("user-456"));
 
----
+api->getCachedNotificationCount(tenantId.value(), userId.value())
+    .then([](pplx::task<std::shared_ptr<GetCachedNotificationCountResponse>> task) {
+        try {
+            auto response = task.get();
+            // レスポンスを処理
+        } catch (const std::exception&) {
+            // エラーを処理
+        }
+    });
+[inline-code-end]

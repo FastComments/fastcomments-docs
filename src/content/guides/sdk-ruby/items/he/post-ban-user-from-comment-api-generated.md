@@ -1,7 +1,8 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | כן |  |
 | commentId | string | path | כן |  |
 | banEmail | boolean | query | לא |  |
 | banEmailDomain | boolean | query | לא |  |
@@ -19,28 +20,29 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-post_ban_user_from_comment'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_ban_user_from_comment דוגמה'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
-comment_id = 'comment_id_example' # מחרוזת | 
+tenant_id = 'tenant_id_example' # String | 
+comment_id = 'comment_id_example' # String | 
 opts = {
-  ban_email: true, # בוליאני | 
-  ban_email_domain: true, # בוליאני | 
-  ban_ip: true, # בוליאני | 
-  delete_all_users_comments: true, # בוליאני | 
-  banned_until: 'banned_until_example', # מחרוזת | 
-  is_shadow_ban: true, # בוליאני | 
-  update_id: 'update_id_example', # מחרוזת | 
-  ban_reason: 'ban_reason_example', # מחרוזת | 
-  sso: 'sso_example' # מחרוזת | 
+  ban_email: true, # Boolean | 
+  ban_email_domain: true, # Boolean | 
+  ban_ip: true, # Boolean | 
+  delete_all_users_comments: true, # Boolean | 
+  banned_until: 'banned_until_example', # String | 
+  is_shadow_ban: true, # Boolean | 
+  update_id: 'update_id_example', # String | 
+  ban_reason: 'ban_reason_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.post_ban_user_from_comment(comment_id, opts)
+  result = api_instance.post_ban_user_from_comment(tenant_id, comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_ban_user_from_comment: #{e}"

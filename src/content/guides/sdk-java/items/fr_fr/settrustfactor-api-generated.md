@@ -1,18 +1,19 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
-| userId | string | query | No |  |
-| trustFactor | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Oui |  |
+| userId | string | query | Non |  |
+| trustFactor | string | query | Non |  |
+| sso | string | query | Non |  |
 
 ## Réponse
 
-Renvoie : [`SetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SetUserTrustFactorResponse.java)
+Retourne : [`SetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SetUserTrustFactorResponse.java)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de setTrustFactor'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple setTrustFactor'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importer les classes :
 import com.fastcomments.invoker.ApiClient;
@@ -27,21 +28,22 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String userId = "userId_example"; // String | 
     String trustFactor = "trustFactor_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      SetUserTrustFactorResponse result = apiInstance.setTrustFactor()
+      SetUserTrustFactorResponse result = apiInstance.setTrustFactor(tenantId)
             .userId(userId)
             .trustFactor(trustFactor)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ModerationApi#setTrustFactor");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("Exception lors de l'appel de ModerationApi#setTrustFactor");
+      System.err.println("Code d'état : " + e.getCode());
+      System.err.println("Raison : " + e.getResponseBody());
+      System.err.println("En-têtes de réponse : " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }

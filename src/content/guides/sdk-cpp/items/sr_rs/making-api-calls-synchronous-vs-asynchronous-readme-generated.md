@@ -1,8 +1,8 @@
-Све API методе у овом SDK-у враћају `pplx::task<std::shared_ptr<ResponseType>>` из C++ REST SDK-а. Ово вам даје флексибилност у начину на који обрађујете одговоре API-ја.
+Svi API metodi u ovom SDK‑u vraćaju `pplx::task<std::shared_ptr<ResponseType>>` iz C++ REST SDK‑a. Ovo vam daje fleksibilnost u načinu na koji obrađujete API odgovore.
 
-### Синхрони позиви помоћу `.get()`
+### Sinhroni pozivi sa `.get()`
 
-Користите `.get()` да бисте блокирали позивачки нит све док захтев не заврши и добили резултат синхроно:
+Koristite `.get()` da blokirate nit pozivaoca dok zahtev ne bude završen i da sinhrono preuzmete rezultat:
 
 ```cpp
 auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
@@ -13,33 +13,24 @@ config->setApiKey(utility::conversions::to_string_t("api_key"),
 auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
 org::openapitools::client::api::DefaultApi api(apiClient);
 
-// Позовите .get() да бисте блокирали и добили резултат синхроно
+// Obavezni parametri su pozicioni; opciona idu u strukturu opcija
+org::openapitools::client::api::GetCommentsOptions options;
+options.urlId = utility::conversions::to_string_t("your-url-id");
+
+// Pozovite .get() da blokirate i sinhrono dobijete rezultat
 auto response = api.getComments(
     utility::conversions::to_string_t("your-tenant-id"),
-    boost::none,  // page
-    boost::none,  // limit
-    boost::none,  // skip
-    boost::none,  // asTree
-    boost::none,  // skipChildren
-    boost::none,  // limitChildren
-    boost::none,  // maxTreeDepth
-    utility::conversions::to_string_t("your-url-id"),  // urlId
-    boost::none,  // userId
-    boost::none,  // anonUserId
-    boost::none,  // contextUserId
-    boost::none,  // hashTag
-    boost::none,  // parentId
-    boost::none   // direction
-).get();  // Блокира док HTTP захтев не буде завршен
+    options
+).get();  // Blokira dok HTTP zahtev ne bude završen
 
 if (response && response->comments) {
     std::cout << "Found " << response->comments->size() << " comments" << std::endl;
 }
 ```
 
-### Асинхрони позиви помоћу `.then()`
+### Asinhroni pozivi sa `.then()`
 
-Користите `.then()` за не-блокирајуће асинхроно извршавање са повратним позивима (callbacks):
+Koristite `.then()` za neblokirajuće asinhrono izvršavanje sa povratnim pozivima:
 
 ```cpp
 auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
@@ -50,39 +41,40 @@ config->setApiKey(utility::conversions::to_string_t("api_key"),
 auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
 org::openapitools::client::api::DefaultApi api(apiClient);
 
-// Користите .then() за асинхроно извршавање засновано на повратним позивима
+// Obavezni parametri su pozicioni; opciona idu u strukturu opcija
+org::openapitools::client::api::GetCommentsOptions options;
+options.urlId = utility::conversions::to_string_t("your-url-id");
+
+// Koristite .then() za asinhrono izvršavanje zasnovano na povratnim pozivima
 api.getComments(
     utility::conversions::to_string_t("your-tenant-id"),
-    boost::none, boost::none, boost::none, boost::none, boost::none,
-    boost::none, boost::none,
-    utility::conversions::to_string_t("your-url-id"),
-    boost::none, boost::none, boost::none, boost::none, boost::none, boost::none
+    options
 ).then([](std::shared_ptr<GetComments_200_response> response) {
-    // Ово се извршава асинхроно када захтев буде завршен
+    // Ovo se izvršava asinhrono kada zahtev bude završen
     if (response && response->comments) {
         std::cout << "Found " << response->comments->size() << " comments" << std::endl;
     }
 });
 
-// Извршавање се наставља одмах без блокирања
+// Izvršavanje nastavlja odmah bez blokiranja
 std::cout << "Request sent, continuing..." << std::endl;
 ```
 
-### Избор између синхроног и асинхроног
+### Izbor između sinhronog i asinhronog pristupa
 
-Избор зависи од вашег окружења за извршавање и архитектуре апликације:
+Izbor zavisi od vašeg okruženja za izvršavanje i arhitekture aplikacije:
 
-**`.get()` (Синхроно, блокирајуће)**
-- Блокира позивачки нит док HTTP захтев не буде завршен
-- Једноставнији ток кода, лакше за разумевање
-- Погодно за посвећене радничке нити, пакетну обраду или алате командне линије
-- **Није погодно** за петље догађаја, GUI нити или једнонитне сервере
+**`.get()` (Sinhrono blokiranje)**
+- Blokira nit pozivaoca dok HTTP zahtev ne bude završen
+- Jednostavniji tok koda, lakše za razumevanje
+- Pogodno za posvećene radne niti, batch obradu ili alate komandne linije
+- **Neodgovarajuće** za petlje događaja, GUI niti ili jednonitne servere
 
-**`.then()` (Асинхроно, не-блокирајуће)**
-- Враћа се одмах, повратни позив се извршава када захтев буде завршен
-- Не блокира позивачки нит
-- Потребно за архитектуре засноване на догађајима, GUI апликације или једнонитне петље догађаја
-- Омогућава ланчање више операција
-- Сложенији ток контроле
+**`.then()` (Asinhrono neblokiranje)**
+- Vraća se odmah, povratni poziv se izvršava kada zahtev bude završen
+- Ne blokira nit pozivaoca
+- Neophodno za event‑driven arhitekture, GUI aplikacije ili jednonitne petlje događaja
+- Omogućava ulančavanje višestrukih operacija
+- Složeniji tok kontrole
 
-Тестни скуп SDK-а користи искључиво `.get()`, али то је прикладно за тестно окружење где је блокирање прихватљиво.
+Test paket SDK‑a koristi isključivo `.get()`, ali to je prikladno za test okruženje u kome je blokiranje prihvatljivo.

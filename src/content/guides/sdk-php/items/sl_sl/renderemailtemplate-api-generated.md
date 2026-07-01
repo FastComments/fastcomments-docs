@@ -1,6 +1,6 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Zahtevano | Opis |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | locale | string | query | Ne |  |
@@ -17,21 +17,23 @@ Vrne: [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcommen
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Konfiguriraj avtorizacijo z API ključem: api_key
+// Konfigurirajte avtentikacijo ključa API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Odkomentirajte spodaj za nastavitev predpone (npr. Bearer) za API ključ, če je potrebno
+// Odkomentirajte spodaj, da nastavite predpono (npr. Bearer) za ključ API, po potrebi
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Če želite uporabiti svoj http odjemalec, posredujte odjemalca, ki implementira `GuzzleHttp\ClientInterface`.
-    // To je izbirno, kot privzeti bo uporabljen `GuzzleHttp\Client`.
+    // Če želite uporabiti lasten HTTP odjemalec, posredujte svoj odjemalec, ki implementira `GuzzleHttp\ClientInterface`.
+    // To je neobvezno, `GuzzleHttp\Client` bo uporabljen kot privzeto.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $render_email_template_body = new \FastComments\Client\Model\RenderEmailTemplateBody(); // \FastComments\Client\Model\RenderEmailTemplateBody
 $locale = 'locale_example'; // string
+
 
 try {
     $result = $apiInstance->renderEmailTemplate($tenant_id, $render_email_template_body, $locale);

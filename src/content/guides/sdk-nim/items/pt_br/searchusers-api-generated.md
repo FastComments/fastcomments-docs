@@ -1,13 +1,10 @@
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-----------|
+|------|------|-------------|-----------|
 | tenantId | string | Sim |  |
 | urlId | string | Sim |  |
-| usernameStartsWith | string | Não |  |
-| mentionGroupIds | seq[string] | Não |  |
-| sso | string | Não |  |
-| searchSection | string | Não |  |
+| options | SearchUsersOptions | Não |  |
 
 ## Resposta
 
@@ -19,16 +16,12 @@ Retorna: [`Option[SearchUsersResult]`](https://github.com/FastComments/fastcomme
 [inline-code-start]
 let (response, httpResponse) = client.searchUsers(
   tenantId = "my-tenant-123",
-  urlId = "news/top-story",
-  usernameStartsWith = "",
-  mentionGroupIds = @[],
-  sso = "",
-  searchSection = ""
+  urlId = "news/article-title",
+  options = SearchUsersOptions()
 )
 
 if response.isSome:
-  let searchResult = response.get()
-  echo "SearchUsersResult:", searchResult
-else:
-  echo "No result or error. HTTP response:", httpResponse
+  let result = response.get()
 [inline-code-end]
+
+---

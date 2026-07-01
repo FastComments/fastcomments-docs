@@ -1,25 +1,28 @@
-## Parametri
+## Parameters
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
 | tenantId | string | Da |  |
 | id | string | Ne |  |
-| userId | string | Ne |  |
+| userId | string = "" | Ne |  |
 
-## Odgovor
+## Response
 
 Vraća: [`Option[DeleteSubscriptionAPIResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_delete_subscription_api_response.nim)
 
-## Primjer
+## Example
 
 [inline-code-attrs-start title = 'Primjer deleteSubscription'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteSubscription(tenantId = "my-tenant-123", id = "sub-98765", userId = "user-456")
-if response.isSome:
-  let deleteResp = response.get()
-  echo "Delete subscription response received"
-else:
-  echo "No subscription response"
+let (maybeResp, httpResp) = client.deleteSubscription(
+  tenantId = "my-tenant-123",
+  id = "sub-789",
+  userId = ""
+)
+
+if maybeResp.isSome:
+  let apiResult = maybeResp.get()
+  # koristite apiResult po potrebi
 [inline-code-end]
 
 ---

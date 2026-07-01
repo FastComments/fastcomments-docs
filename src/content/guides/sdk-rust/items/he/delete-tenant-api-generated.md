@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
 | tenant_id | String | כן |  |
 | id | String | כן |  |
@@ -8,22 +8,19 @@
 
 ## תגובה
 
-מחזיר: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
+מחזירה: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-delete_tenant'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת delete_tenant'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let params: DeleteTenantParams = DeleteTenantParams {
+async fn delete_example(config: &configuration::Configuration) -> Result<(), Error> {
+    let params = DeleteTenantParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "tenant-5f2d".to_string(),
-        sure: Some("confirm".to_string()),
+        id: "news/article".to_string(),
+        sure: Some("true".to_string()),
     };
-    let response: ApiEmptyResponse = delete_tenant(&configuration, params).await?;
-    let _ = response;
+    delete_tenant(config, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

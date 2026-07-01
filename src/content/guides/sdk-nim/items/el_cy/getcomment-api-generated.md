@@ -1,9 +1,9 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
-|------|------|----------|-------------|
-| tenantId | string | Ναι |  |
-| id | string | Όχι |  |
+|------|------|------------|-----------|
+| tenantId | string | Yes |  |
+| id | string | No |  |
 
 ## Απόκριση
 
@@ -13,12 +13,8 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα getComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getComment(tenantId = "my-tenant-123", id = "cmt-7890")
+let (response, httpResponse) = client.getComment(tenantId = "my-tenant-123", id = "cmt-789")
 if response.isSome:
   let comment = response.get()
   discard comment
-else:
-  echo "Comment not found"
 [inline-code-end]
-
----

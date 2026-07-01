@@ -1,19 +1,10 @@
+---
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
+| 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
-| urlId | string | 예 |  |
-| pageSize | int | 아니요 |  |
-| afterId | string | 아니요 |  |
-| includeContext | bool | 아니요 |  |
-| afterCreatedAt | int64 | 아니요 |  |
-| unreadOnly | bool | 아니요 |  |
-| dmOnly | bool | 아니요 |  |
-| noDm | bool | 아니요 |  |
-| includeTranslations | bool | 아니요 |  |
-| includeTenantNotifications | bool | 아니요 |  |
-| sso | string | 아니요 |  |
+| options | GetUserNotificationsOptions | 아니오 |  |
 
 ## 응답
 
@@ -23,24 +14,9 @@
 
 [inline-code-attrs-start title = 'getUserNotifications 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUserNotifications(
-  tenantId = "my-tenant-123",
-  urlId = "news/article-title",
-  pageSize = 0,
-  afterId = "",
-  includeContext = false,
-  afterCreatedAt = 0,
-  unreadOnly = false,
-  dmOnly = false,
-  noDm = false,
-  includeTranslations = false,
-  includeTenantNotifications = false,
-  sso = ""
-)
-
-if response.isSome:
-  let notifications = response.get()
-  echo notifications
+let (maybeResponse, httpResponse) = client.getUserNotifications(tenantId = "my-tenant-123", options = GetUserNotificationsOptions())
+if maybeResponse.isSome:
+  let notifications = maybeResponse.get()
 [inline-code-end]
 
 ---

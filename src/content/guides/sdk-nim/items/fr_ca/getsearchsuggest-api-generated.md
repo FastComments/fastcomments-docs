@@ -1,26 +1,24 @@
----
 ## Paramètres
 
-| Nom | Type | Requis | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
-| textSearch | string | Non |  |
-| sso | string | Non |  |
+| tenantId | string | Oui |  |
+| options | GetSearchSuggestOptions | Non |  |
 
 ## Réponse
 
-Retourne: [`Option[ModerationSuggestResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_suggest_response.nim)
+Renvoie : [`Option[ModerationSuggestResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_suggest_response.nim)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getSearchSuggest'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getSearchSuggest'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSearchSuggest(textSearch = "suspicious comment with spammy links", sso = "sso-user-789")
-if response.isSome:
-  let suggest = response.get()
-  echo "ModerationSuggestResponse:"
-  echo suggest
-else:
-  echo "No moderation suggestions returned. HTTP status: ", httpResponse.status
-[inline-code-end]
+let (suggestOpt, httpResp) = client.getSearchSuggest(
+  tenantId = "my-tenant-123",
+  options = GetSearchSuggestOptions(),
+)
 
----
+if suggestOpt.isSome:
+  let suggest = suggestOpt.get()
+  echo suggest
+[inline-code-end]

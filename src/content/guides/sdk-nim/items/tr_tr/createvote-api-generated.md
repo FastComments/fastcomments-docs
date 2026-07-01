@@ -1,12 +1,11 @@
 ## Parametreler
 
-| Ad | Tür | Gerekli | Açıklama |
+| İsim | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | commentId | string | Evet |  |
 | direction | string | Hayır |  |
-| userId | string | Hayır |  |
-| anonUserId | string | Hayır |  |
+| options | CreateVoteOptions | Hayır |  |
 
 ## Yanıt
 
@@ -16,18 +15,14 @@ Döndürür: [`Option[VoteResponse]`](https://github.com/FastComments/fastcommen
 
 [inline-code-attrs-start title = 'createVote Örneği'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.createVote(
+let (voteOpt, httpResp) = client.createVote(
   tenantId = "my-tenant-123",
-  commentId = "cmt-987654",
+  commentId = "comment-7890",
   direction = "up",
-  userId = "user-42",
-  anonUserId = ""
+  options = CreateVoteOptions()
 )
-if response.isSome:
-  let vote = response.get()
-  echo "Vote created:", vote
-else:
-  echo "No vote returned"
-[inline-code-end]
 
----
+if voteOpt.isSome:
+  let vote = voteOpt.get()
+  echo vote
+[inline-code-end]

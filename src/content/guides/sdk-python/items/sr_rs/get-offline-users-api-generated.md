@@ -1,48 +1,48 @@
-Прошли коментатори на страници који тренутно нису на мрежи. Сортирано по displayName.
-Користите ово након исцрпљивања /users/online да бисте приказали "Чланови" секцију.
-Курсорна пагинација по commenterName: сервер пролази делимични {tenantId, urlId, commenterName}
-индекс почевши од afterName унапред помоћу $gt, без трошкова $skip.
+Past коментатори на страници који ТРЕНУТНО НИСУ онлајн. Сортирани по displayName.  
+Користите ово након што исцрпите /users/online да прикажете секцију „Members“.  
+Курсорска пагинација на commenterName: сервер пролази кроз парцијални {tenantId, urlId, commenterName} индекс од afterName напред помоћу $gt, без $skip трошка.
 
-## Параметри
+## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Yes |  |
-| urlId | string | query | Yes | Идентификатор URL странице (очиšћен на серверу). |
+| urlId | string | query | Yes | Идентификатор URL‑а странице (очишћен на серверу). |
 | afterName | string | query | No | Курсор: проследите nextAfterName из претходног одговора. |
-| afterUserId | string | query | No | Курсор за разлучавање истих имена: проследите nextAfterUserId из претходног одговора. Обавезно када је afterName подешен да не би дошло до губитка уноса због истих имена. |
+| afterUserId | string | query | No | Курсор за решавање везног догађаја: проследите nextAfterUserId из претходног одговора. Потребно када је afterName постављен како би се у случају истица имена улази не изгубили. |
 
-## Одговор
+## Response
 
-Враћа: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/page_users_offline_response.py)
+Returns: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/page_users_offline_response.py)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'get_offline_users Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_offline_users Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetOfflineUsersOptions
 from client.models.page_users_offline_response import PageUsersOfflineResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинисање host-а је опционално и подразумева се https://fastcomments.com
-# Погледајте configuration.py за листу свих подржаних конфигурационих параметара.
+# Definisanje host-a je opciono i podrazumevano je https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih parametara podešavanja.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Уђите у контекст са инстанцом API клијента
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Креирајте инстанцу API класе
+    # Kreirajte instancu API klase
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    url_id = 'url_id_example' # str | Идентификатор URL странице (очишћен на серверу).
+    url_id = 'url_id_example' # str | Идентификатор URL‑а странице (очишћен на серверу).
     after_name = 'after_name_example' # str | Курсор: проследите nextAfterName из претходног одговора. (опционално)
-    after_user_id = 'after_user_id_example' # str | Курсор за разлучавање истих имена: проследите nextAfterUserId из претходног одговора. Обавезно када је afterName подешен да не би дошло до губитка уноса због истих имена. (опционално)
+    after_user_id = 'after_user_id_example' # str | Курсор за решавање везног догађаја: проследите nextAfterUserId из претходног одговора. Потребно када је afterName постављен како би се у случају истица имена улази не изгубили. (опционално)
 
     try:
-        api_response = api_instance.get_offline_users(tenant_id, url_id, after_name=after_name, after_user_id=after_user_id)
+        api_response = api_instance.get_offline_users(tenant_id, url_id, GetOfflineUsersOptions(after_name=after_name, after_user_id=after_user_id))
         print("The response of PublicApi->get_offline_users:\n")
         pprint(api_response)
     except Exception as e:

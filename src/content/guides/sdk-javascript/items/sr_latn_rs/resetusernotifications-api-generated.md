@@ -1,29 +1,42 @@
-## Parametri
+## Parameters
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| tenantId | string | Da |  |
-| afterId | string | Ne |  |
-| afterCreatedAt | number | Ne |  |
-| unreadOnly | boolean | Ne |  |
-| dmOnly | boolean | Ne |  |
-| noDm | boolean | Ne |  |
-| sso | string | Ne |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| afterId | string | No |  |
+| afterCreatedAt | number | No |  |
+| unreadOnly | boolean | No |  |
+| dmOnly | boolean | No |  |
+| noDm | boolean | No |  |
+| sso | string | No |  |
 
 ## Odgovor
 
-Vraća: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ResetUserNotificationsResponse.ts)
+Vraća: [`ResetUserNotificationsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ResetUserNotificationsResponse1.ts)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer resetUserNotifications'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'resetUserNotifications Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-9f2b';
-const afterId: string = 'notif_7c1a2b3';
-const afterCreatedAt: number = Date.now() - 3 * 24 * 60 * 60 * 1000;
-const unreadOnly: boolean = true;
-const sso: string = 'sso:microsoft:84012';
-const response: ResetUserNotificationsResponse = await resetUserNotifications(tenantId, afterId, afterCreatedAt, unreadOnly, undefined, undefined, sso);
-[inline-code-end]
+(async () => {
+  const tenantId: string = "tenant-001";
+  const afterId: string = "notif-123";
+  const afterCreatedAt: number = 1697049600; // primer UNIX vremenske oznake
+  const unreadOnly: boolean = true;
+  const dmOnly: boolean = false;
+  const noDm: boolean = false;
+  const sso: string = "sso-token-xyz";
 
----
+  const result: ResetUserNotificationsResponse1 = await resetUserNotifications(
+    tenantId,
+    afterId,
+    afterCreatedAt,
+    unreadOnly,
+    dmOnly,
+    noDm,
+    sso
+  );
+
+  console.log(result);
+})();
+[inline-code-end]

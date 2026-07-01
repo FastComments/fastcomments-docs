@@ -1,7 +1,7 @@
 ## Parametri
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
 | tenantId | string | Da |  |
 | urlId | string | Da |  |
 | id | string | Ne |  |
@@ -14,12 +14,13 @@ Vraća: [`Option[CreateV1PageReact]`](https://github.com/FastComments/fastcommen
 
 [inline-code-attrs-start title = 'deleteV2PageReact Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteV2PageReact(tenantId = "my-tenant-123", urlId = "news/2026/politics-election", id = "react-456")
-if response.isSome:
-  let react = response.get()
-  echo react
-else:
-  echo "No reaction returned, status: ", httpResponse.status
-[inline-code-end]
+let (maybeReact, httpResp) = client.deleteV2PageReact(
+  tenantId = "my-tenant-123",
+  urlId = "news/article-title",
+  id = "react-456",
+)
 
----
+if maybeReact.isSome:
+  let react = maybeReact.get()
+  echo react
+[inline-code-end]

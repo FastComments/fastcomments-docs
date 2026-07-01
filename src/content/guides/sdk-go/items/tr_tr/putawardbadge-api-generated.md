@@ -2,6 +2,7 @@
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Evet |  |
 | badgeId | string | query | Evet |  |
 | userId | string | query | Hayır |  |
 | commentId | string | query | Hayır |  |
@@ -26,20 +27,21 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	badgeId := "badgeId_example" // string | 
-	userId := "userId_example" // string |  (isteğe bağlı)
-	commentId := "commentId_example" // string |  (isteğe bağlı)
-	broadcastId := "broadcastId_example" // string |  (isteğe bağlı)
-	sso := "sso_example" // string |  (isteğe bağlı)
+	userId := "userId_example" // string | (isteğe bağlı)
+	commentId := "commentId_example" // string | (isteğe bağlı)
+	broadcastId := "broadcastId_example" // string | (isteğe bağlı)
+	sso := "sso_example" // string | (isteğe bağlı)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PutAwardBadge(context.Background()).BadgeId(badgeId).UserId(userId).CommentId(commentId).BroadcastId(broadcastId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PutAwardBadge(context.Background()).TenantId(tenantId).BadgeId(badgeId).UserId(userId).CommentId(commentId).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PutAwardBadge``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `PutAwardBadge`'den dönen cevap: AwardUserBadgeResponse
+	// `PutAwardBadge`'den yanıt: AwardUserBadgeResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PutAwardBadge`: %v\n", resp)
 }
 [inline-code-end]

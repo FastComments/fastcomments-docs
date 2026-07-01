@@ -1,15 +1,13 @@
-req
+请求
 tenantId
 afterId
 
 ## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必需 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| afterId | string | 否 |  |
-| limit | int | 否 |  |
-| tags | seq[string] | 否 |  |
+| tenantId | string | Yes |  |
+| options | GetFeedPostsOptions | No |  |
 
 ## 响应
 
@@ -19,13 +17,8 @@ afterId
 
 [inline-code-attrs-start title = 'getFeedPosts 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getFeedPosts(
-  tenantId = "my-tenant-123",
-  afterId = "",
-  limit = 0,
-  tags = @[]
-)
-if response.isSome:
-  let feed = response.get()
-  echo "Feed retrieved for tenant my-tenant-123"
+let (feedResponseOpt, httpResp) = client.getFeedPosts(tenantId = "my-tenant-123", options = GetFeedPostsOptions())
+if feedResponseOpt.isSome:
+  let feedResponse = feedResponseOpt.get()
+  echo feedResponse
 [inline-code-end]

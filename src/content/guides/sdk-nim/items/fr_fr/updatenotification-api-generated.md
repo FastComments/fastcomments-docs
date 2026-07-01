@@ -1,34 +1,27 @@
 ## Paramètres
 
-| Name | Type | Obligatoire | Description |
-|------|------|------------|-------------|
+| Nom | Type | Obligatoire | Description |
+|------|------|----------|-------------|
 | tenantId | string | Oui |  |
 | id | string | Non |  |
 | updateNotificationBody | UpdateNotificationBody | Non |  |
-| userId | string | Non |  |
+| userId | string = "" | Non |  |
 
 ## Réponse
 
-Renvoie: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
+Renvoie : [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple d\'updateNotification'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple de updateNotification'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateNotification(
+let body = UpdateNotificationBody(message: "Your comment was approved", isRead: false)
+let (optResp, httpResp) = client.updateNotification(
   tenantId = "my-tenant-123",
-  id = "notif-456",
-  updateNotificationBody = UpdateNotificationBody(
-    enabled = true,
-    channels = @["email", "push"],
-    frequency = "immediate"
-  ),
-  userId = "user-789"
+  id = "notif-789",
+  updateNotificationBody = body,
+  userId = "user-42"
 )
-
-if response.isSome:
-  let apiEmpty = response.get()
-  discard apiEmpty
+if optResp.isSome:
+  let _ = optResp.get()
 [inline-code-end]
-
----

@@ -1,13 +1,13 @@
 ## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| userId | string | query | Nee |  |
-| limit | number | query | Nee |  |
-| skip | number | query | Nee |  |
+| Naam | Type | Locatie | Verplicht | Beschrijving |
+|------|------|----------|-----------|--------------|
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| limit | number | query | No |  |
+| skip | number | query | No |  |
 
-## Response
+## Respons
 
 Retourneert: [`APIGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_user_badge_progress_list_response.py)
 
@@ -16,11 +16,12 @@ Retourneert: [`APIGetUserBadgeProgressListResponse`](https://github.com/FastComm
 [inline-code-attrs-start title = 'get_user_badge_progress_list Voorbeeld'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetUserBadgeProgressListOptions
 from client.models.api_get_user_badge_progress_list_response import APIGetUserBadgeProgressListResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Het instellen van de host is optioneel en standaard https://fastcomments.com
+# Het definiëren van de host is optioneel en standaard https://fastcomments.com
 # Zie configuration.py voor een lijst van alle ondersteunde configuratieparameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -29,25 +30,25 @@ configuration = client.Configuration(
 # De client moet de authenticatie- en autorisatieparameters configureren
 # in overeenstemming met het beveiligingsbeleid van de API-server.
 # Voorbeelden voor elke auth-methode worden hieronder gegeven, gebruik het voorbeeld dat
-# past bij uw auth-use case.
+# voldoet aan uw auth-gebruikssituatie.
 
-# Configureer API-sleutel authorisatie: api_key
+# Configureer API-sleutel autorisatie: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Haal de commentaarregel hieronder weg om een prefix in te stellen (bijv. Bearer) voor de API-sleutel, indien nodig
+# Verwijder de commentaartekens hieronder om een prefix (bijv. Bearer) voor de API-sleutel in te stellen, indien nodig
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Ga een context in met een instantie van de API-client
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Maak een instantie van de API-klasse
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    user_id = 'user_id_example' # str |  (optioneel)
-    limit = 3.4 # float |  (optioneel)
-    skip = 3.4 # float |  (optioneel)
+    user_id = 'user_id_example' # str |  (optional)
+    limit = 3.4 # float |  (optional)
+    skip = 3.4 # float |  (optional)
 
     try:
-        api_response = api_instance.get_user_badge_progress_list(tenant_id, user_id=user_id, limit=limit, skip=skip)
+        api_response = api_instance.get_user_badge_progress_list(tenant_id, GetUserBadgeProgressListOptions(user_id=user_id, limit=limit, skip=skip))
         print("The response of DefaultApi->get_user_badge_progress_list:\n")
         pprint(api_response)
     except Exception as e:

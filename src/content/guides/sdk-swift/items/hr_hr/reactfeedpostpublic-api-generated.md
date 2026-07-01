@@ -16,17 +16,17 @@ Vraća: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-s
 
 [inline-code-attrs-start title = 'Primjer reactFeedPostPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sljedeći primjeri koda su još u beta fazi. Ako se pojavi problem, prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sljedeći primjeri koda još uvijek su beta. Za bilo koji problem, molimo prijavite putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let postId = "postId_example" // String | 
 let reactBodyParams = ReactBodyParams(reactType: "reactType_example") // ReactBodyParams | 
-let isUndo = true // Bool |  (neobavezno)
-let broadcastId = "broadcastId_example" // String |  (neobavezno)
-let sso = "sso_example" // String |  (neobavezno)
+let isUndo = true // Bool |  (opcionalno)
+let broadcastId = "broadcastId_example" // String |  (opcionalno)
+let sso = "sso_example" // String |  (opcionalno)
 
-PublicAPI.reactFeedPostPublic(tenantId: tenantId, postId: postId, reactBodyParams: reactBodyParams, isUndo: isUndo, broadcastId: broadcastId, sso: sso) { (response, error) in
+PublicAPI.reactFeedPostPublic(tenantId: tenantId, postId: postId, reactBodyParams: reactBodyParams, options: PublicAPI.ReactFeedPostPublicOptions(isUndo: isUndo, broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

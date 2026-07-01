@@ -1,18 +1,19 @@
-## Parametry
+## Parameters
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| page | number | query | Nie |  |
-| count | number | query | Nie |  |
-| text-search | string | query | Nie |  |
-| byIPFromComment | string | query | Nie |  |
-| filters | string | query | Nie |  |
-| searchFilters | string | query | Nie |  |
-| sorts | string | query | Nie |  |
-| demo | boolean | query | Nie |  |
-| sso | string | query | Nie |  |
+| tenantId | string | query | Yes |  |
+| page | number | query | No |  |
+| count | number | query | No |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sorts | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
-## Odpowiedź
+## Response
 
 Zwraca: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationAPIGetCommentsResponse.swift)
 
@@ -20,20 +21,21 @@ Zwraca: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'Przykład getApiComments'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Poniższe przykłady kodu są nadal w wersji beta. W razie problemów zgłoś je pod adresem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Poniższe przykłady kodu są nadal w wersji beta. W razie jakichkolwiek problemów proszę zgłaszać je pod http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let page = 987 // Double |  (opcjonalne)
-let count = 987 // Double |  (opcjonalne)
-let textSearch = "textSearch_example" // String |  (opcjonalne)
-let byIPFromComment = "byIPFromComment_example" // String |  (opcjonalne)
-let filters = "filters_example" // String |  (opcjonalne)
-let searchFilters = "searchFilters_example" // String |  (opcjonalne)
-let sorts = "sorts_example" // String |  (opcjonalne)
-let demo = true // Bool |  (opcjonalne)
-let sso = "sso_example" // String |  (opcjonalne)
+let tenantId = "tenantId_example" // String | 
+let page = 987 // Double |  (optional)
+let count = 987 // Double |  (optional)
+let textSearch = "textSearch_example" // String |  (optional)
+let byIPFromComment = "byIPFromComment_example" // String |  (optional)
+let filters = "filters_example" // String |  (optional)
+let searchFilters = "searchFilters_example" // String |  (optional)
+let sorts = "sorts_example" // String |  (optional)
+let demo = true // Bool |  (optional)
+let sso = "sso_example" // String |  (optional)
 
-ModerationAPI.getApiComments(page: page, count: count, textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, demo: demo, sso: sso) { (response, error) in
+ModerationAPI.getApiComments(tenantId: tenantId, options: ModerationAPI.GetApiCommentsOptions(page: page, count: count, textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, demo: demo, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

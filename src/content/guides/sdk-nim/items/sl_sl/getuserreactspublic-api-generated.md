@@ -1,10 +1,9 @@
 ## Parametri
 
-| Name | Type | Required | Description |
+| Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| postIds | seq[string] | Ne |  |
-| sso | string | Ne |  |
+| tenantId | string | Yes |  |
+| options | GetUserReactsPublicOptions | No |  |
 
 ## Odgovor
 
@@ -14,14 +13,17 @@ Vrne: [`Option[UserReactsResponse]`](https://github.com/FastComments/fastcomment
 
 [inline-code-attrs-start title = 'Primer getUserReactsPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
+let opts = GetUserReactsPublicOptions(
+  limit = 20,
+  offset = 0,
+  includeDeleted = false
+)
+
 let (response, httpResponse) = client.getUserReactsPublic(
   tenantId = "my-tenant-123",
-  postIds = @["news/article-2026", "blog/opinion-987"],
-  sso = ""
+  options = opts
 )
-if response.isSome:
-  let reacts = response.get()
-  echo "Received user reacts for tenant: ", "my-tenant-123"
-[inline-code-end]
 
----
+if response.isSome:
+  let userReacts = response.get()
+[inline-code-end]

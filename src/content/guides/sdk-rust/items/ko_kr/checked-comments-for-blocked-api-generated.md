@@ -1,28 +1,26 @@
-## 매개변수
+## Parameters
 
-| 이름 | 형식 | 필수 | 설명 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | 예 |  |
-| comment_ids | String | 예 |  |
-| sso | String | 아니오 |  |
+| tenant_id | String | Yes |  |
+| comment_ids | String | Yes |  |
+| sso | String | No |  |
 
-## 응답
+## Response
 
 반환: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/check_blocked_comments_response.rs)
 
-## 예제
+## Example
 
 [inline-code-attrs-start title = 'checked_comments_for_blocked 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_checked_comments_for_blocked() -> Result<CheckBlockedCommentsResponse, Error> {
-    let params: CheckedCommentsForBlockedParams = CheckedCommentsForBlockedParams {
+async fn example() -> Result<(), Error> {
+    let params = CheckedCommentsForBlockedParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        comment_ids: "cmt-1023,cmt-2048".to_string(),
-        sso: Some("sso:user:john.doe:eyJhbGciOiJIUzI1Ni".to_string()),
+        comment_ids: "cmt-001,cmt-002".to_string(),
+        sso: Some("user@example.com".to_string()),
     };
-    let response: CheckBlockedCommentsResponse = checked_comments_for_blocked(&configuration, params).await?;
-    Ok(response)
+    let _response: CheckBlockedCommentsResponse = checked_comments_for_blocked(&config, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

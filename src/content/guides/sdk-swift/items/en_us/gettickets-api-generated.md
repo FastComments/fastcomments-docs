@@ -25,7 +25,7 @@ let state = 987 // Double |  (optional)
 let skip = 987 // Double |  (optional)
 let limit = 987 // Double |  (optional)
 
-DefaultAPI.getTickets(tenantId: tenantId, userId: userId, state: state, skip: skip, limit: limit) { (response, error) in
+DefaultAPI.getTickets(tenantId: tenantId, options: DefaultAPI.GetTicketsOptions(userId: userId, state: state, skip: skip, limit: limit)) { (response, error) in
     guard error == nil else {
         print(error)
         return

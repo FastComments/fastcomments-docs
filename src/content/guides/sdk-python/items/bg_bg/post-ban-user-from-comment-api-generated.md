@@ -1,17 +1,18 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Да |  |
-| banEmail | boolean | query | Не |  |
-| banEmailDomain | boolean | query | Не |  |
-| banIP | boolean | query | Не |  |
-| deleteAllUsersComments | boolean | query | Не |  |
-| bannedUntil | string | query | Не |  |
-| isShadowBan | boolean | query | Не |  |
-| updateId | string | query | Не |  |
-| banReason | string | query | Не |  |
-| sso | string | query | Не |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| banEmail | boolean | query | No |  |
+| banEmailDomain | boolean | query | No |  |
+| banIP | boolean | query | No |  |
+| deleteAllUsersComments | boolean | query | No |  |
+| bannedUntil | string | query | No |  |
+| isShadowBan | boolean | query | No |  |
+| updateId | string | query | No |  |
+| banReason | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Отговор
 
@@ -19,37 +20,39 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример post_ban_user_from_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_ban_user_from_comment Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import PostBanUserFromCommentOptions
 from client.models.ban_user_from_comment_result import BanUserFromCommentResult
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинирането на host е по избор и по подразбиране е https://fastcomments.com
-# Вижте configuration.py за списък с всички поддържани параметри на конфигурацията.
+# Дефинирането на хоста е незадължително и по подразбиране е https://fastcomments.com
+# Вижте configuration.py за списък на всички поддържани конфигурационни параметри.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Влезте в контекст с инстанция на API клиента
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Създайте инстанция на API класа
+    # Create an instance of the API class
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
-    ban_email = True # bool |  (по избор)
-    ban_email_domain = True # bool |  (по избор)
-    ban_ip = True # bool |  (по избор)
-    delete_all_users_comments = True # bool |  (по избор)
-    banned_until = 'banned_until_example' # str |  (по избор)
-    is_shadow_ban = True # bool |  (по избор)
-    update_id = 'update_id_example' # str |  (по избор)
-    ban_reason = 'ban_reason_example' # str |  (по избор)
-    sso = 'sso_example' # str |  (по избор)
+    ban_email = True # bool |  (опционално)
+    ban_email_domain = True # bool |  (опционално)
+    ban_ip = True # bool |  (опционално)
+    delete_all_users_comments = True # bool |  (опционално)
+    banned_until = 'banned_until_example' # str |  (опционално)
+    is_shadow_ban = True # bool |  (опционално)
+    update_id = 'update_id_example' # str |  (опционално)
+    ban_reason = 'ban_reason_example' # str |  (опционално)
+    sso = 'sso_example' # str |  (опционално)
 
     try:
-        api_response = api_instance.post_ban_user_from_comment(comment_id, ban_email=ban_email, ban_email_domain=ban_email_domain, ban_ip=ban_ip, delete_all_users_comments=delete_all_users_comments, banned_until=banned_until, is_shadow_ban=is_shadow_ban, update_id=update_id, ban_reason=ban_reason, sso=sso)
+        api_response = api_instance.post_ban_user_from_comment(tenant_id, comment_id, PostBanUserFromCommentOptions(ban_email=ban_email, ban_email_domain=ban_email_domain, ban_ip=ban_ip, delete_all_users_comments=delete_all_users_comments, banned_until=banned_until, is_shadow_ban=is_shadow_ban, update_id=update_id, ban_reason=ban_reason, sso=sso))
         print("The response of ModerationApi->post_ban_user_from_comment:\n")
         pprint(api_response)
     except Exception as e:

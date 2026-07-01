@@ -1,6 +1,6 @@
 ### Maven
 
-Добавьте репозиторий Repsy в POM вашего проекта:
+Add the Repsy repository to your project's POM:
 
 ```xml
 <repositories>
@@ -12,7 +12,7 @@
 </repositories>
 ```
 
-Затем добавьте необходимые зависимости:
+Then add the dependencies you need:
 
 ```xml
 <dependencies>
@@ -41,7 +41,7 @@
 
 ### Gradle
 
-Добавьте репозиторий Repsy в файл build.gradle:
+Add the Repsy repository to your build.gradle file:
 
 ```groovy
 repositories {
@@ -63,16 +63,18 @@ dependencies {
 }
 ```
 
-### Содержимое библиотеки
+### Library Contents
 
-Эта библиотека содержит три модуля. Сгенерированный API-клиент, основная Java-библиотека, которая содержит вручную написанные утилиты для упрощения работы с API, и модуль `pubsub`, который является библиотекой для подписки на ленты изменений.
+This library contains three modules. The generated API client, the core Java library which contains hand-written utilities
+to make working with the API easier, and the `pubsub` module which is a library for subscribing to change feeds.
 
-- [Документация библиотеки API-клиента](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Документация библиотеки клиента API](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
 - [Документация основной библиотеки, включая примеры SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
 - [Документация библиотеки PubSub](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### Публичные и защищённые API
+### Public vs Secured APIs
 
-В API-клиенте есть три класса: `DefaultApi`, `PublicApi` и `ModerationApi`. `DefaultApi` содержит методы, которые требуют ваш API-ключ, а `PublicApi` содержит методы, которые можно вызывать непосредственно из браузера/мобильного устройства и т.п. без аутентификации.
+For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains methods
+that can be made directly from a browser/mobile device/etc without authentication.
 
-`ModerationApi` отвечает за панель модератора. Он содержит методы для модерации комментариев (просмотр списка, подсчёт, поиск, журналы и экспорт), действий модерации (удаление/восстановление, пометка, установка статусов на проверку/спам/одобрение, голоса и повторное открытие/закрытие треда), блокировок (запрет на комментирование, отмена бана, сводки перед баном, статус и настройки бана, и количество заблокированных пользователей), а также значков и доверия (назначение/удаление значка, ручные значки, получение/установка коэффициента доверия и внутренний профиль пользователя). Каждый метод `ModerationApi` принимает параметр `sso`, чтобы вызов можно было выполнить от имени модератора, аутентифицированного через SSO.
+The `ModerationApi` provides an extensive suite of live and fast moderation APIs. Every `ModerationApi` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.

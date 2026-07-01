@@ -1,33 +1,40 @@
----
-Prošli komentatori na stranici koji trenutno nisu online. Sortirano po displayName.
-Koristite ovo nakon što iscrpite /users/online da prikažete sekciju 'Članovi'.
-Paginacija kursorom po commenterName: server prolazi delimični indeks {tenantId, urlId, commenterName} od afterName unapred koristeći $gt, bez troška $skip.
+Prethodni komentatori na stranici koji NISTE trenutno online. Sortirani po displayName.  
+Koristite ovo nakon što ste iscrpili /users/online da prikažete sekciju „Members“.  
+Kursorska paginacija po commenterName: server prolazi kroz parcijalni {tenantId, urlId, commenterName}  
+indeks od afterName napred putem $gt, bez troška $skip.
 
-## Parametri
+## Parameters
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
 | tenantId | string | Da |  |
 | urlId | string | Da |  |
 | afterName | string | Ne |  |
 | afterUserId | string | Ne |  |
 
-## Odgovor
+## Response
 
-Vraća: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOfflineResponse.ts)
+Vraća: [`GetOfflineUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOfflineUsersResponse.ts)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer getOfflineUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant-9f4b2a6c';
-const urlId: string = 'articles/product-launch-2025';
+async function fetchOfflineUsers(): Promise<void> {
+    const tenantId: string = "tenant_12345";
+    const urlId: string = "thread_9876";
+    const afterName: string = "Jane Smith";
+    const afterUserId: string = "user_7f9b3c";
 
-const offlinePageFirst: PageUsersOfflineResponse = await getOfflineUsers(tenantId, urlId);
+    const offlineUsers: GetOfflineUsersResponse = await getOfflineUsers(
+        tenantId,
+        urlId,
+        afterName,
+        afterUserId
+    );
 
-const afterName: string = 'samantha.r';
-const afterUserId: string = 'user_7d3a21f9';
-const offlinePageNext: PageUsersOfflineResponse = await getOfflineUsers(tenantId, urlId, afterName, afterUserId);
+    console.log(offlineUsers);
+}
 [inline-code-end]
 
 ---

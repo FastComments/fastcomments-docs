@@ -1,39 +1,40 @@
-## Параметри
+## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| userId | string | query | Не |  |
-| direction | string | query | Не |  |
-| repliesToUserId | string | query | Не |  |
-| page | number | query | Не |  |
-| includei10n | boolean | query | Не |  |
-| locale | string | query | Не |  |
-| isCrawler | boolean | query | Не |  |
+| Ime | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| userId | string | query | Ne |  |
+| direction | string | query | Ne |  |
+| repliesToUserId | string | query | Ne |  |
+| page | number | query | Ne |  |
+| includei10n | boolean | query | Ne |  |
+| locale | string | query | Ne |  |
+| isCrawler | boolean | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetCommentsForUserResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comments_for_user_response.py)
+Vraća: [`GetCommentsForUserResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comments_for_user_response.py)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'get_comments_for_user Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer get_comments_for_user'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetCommentsForUserOptions
 from client.models.get_comments_for_user_response import GetCommentsForUserResponse
 from client.models.sort_directions import SortDirections
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинисање host-а је опционално и подразумевано је https://fastcomments.com
-# Погледајте configuration.py за списак свих подржаних конфигурационих параметара.
+# Definisanje hosta je opcionalno i podrazumevano je https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Уђите у контекст са инстанцом API клијента
+# Unesite kontekst sa instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Креирајте инстанцу API класе
+    # Kreirajte instancu API klase
     api_instance = client.PublicApi(api_client)
     user_id = 'user_id_example' # str |  (optional)
     direction = client.SortDirections() # SortDirections |  (optional)
@@ -44,7 +45,7 @@ with client.ApiClient(configuration) as api_client:
     is_crawler = True # bool |  (optional)
 
     try:
-        api_response = api_instance.get_comments_for_user(user_id=user_id, direction=direction, replies_to_user_id=replies_to_user_id, page=page, includei10n=includei10n, locale=locale, is_crawler=is_crawler)
+        api_response = api_instance.get_comments_for_user(GetCommentsForUserOptions(user_id=user_id, direction=direction, replies_to_user_id=replies_to_user_id, page=page, includei10n=includei10n, locale=locale, is_crawler=is_crawler))
         print("The response of PublicApi->get_comments_for_user:\n")
         pprint(api_response)
     except Exception as e:

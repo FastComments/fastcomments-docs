@@ -1,9 +1,10 @@
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
-| urlId | string | query | Yes |  |
-| sso | string | query | No |  |
+| tenantId | string | query | 是 |  |
+| urlId | string | query | 是 |  |
+| sso | string | query | 否 |  |
 
 ## 响应
 
@@ -19,7 +20,7 @@ from client.rest import ApiException
 from pprint import pprint
 
 # 定义 host 是可选的，默认值为 https://fastcomments.com
-# 有关所有受支持的配置参数列表，请参阅 configuration.py。
+# 请参阅 configuration.py 以获取所有受支持的配置参数列表。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -29,11 +30,12 @@ configuration = client.Configuration(
 with client.ApiClient(configuration) as api_client:
     # 创建 API 类的实例
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
     sso = 'sso_example' # str |  (可选)
 
     try:
-        api_response = api_instance.put_reopen_thread(url_id, sso=sso)
+        api_response = api_instance.put_reopen_thread(tenant_id, url_id, sso=sso)
         print("The response of ModerationApi->put_reopen_thread:\n")
         pprint(api_response)
     except Exception as e:

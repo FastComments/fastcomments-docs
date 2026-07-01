@@ -1,15 +1,10 @@
 ---
 ## パラメータ
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
 | tenantId | string | はい |  |
-| urlId | string | はい |  |
-| userId | string | いいえ |  |
-| startDate | string | いいえ |  |
-| questionId | string | いいえ |  |
-| questionIds | string | いいえ |  |
-| skip | float64 | いいえ |  |
+| options | GetQuestionResultsOptions | いいえ |  |
 
 ## レスポンス
 
@@ -21,18 +16,12 @@
 [inline-code-start]
 let (response, httpResponse) = client.getQuestionResults(
   tenantId = "my-tenant-123",
-  urlId = "news/2026/election-analysis",
-  userId = "user-42",
-  startDate = "2026-06-01T00:00:00Z",
-  questionId = "q-6789",
-  questionIds = @["q-6789", "q-6790"],
-  skip = 0.0
+  options = GetQuestionResultsOptions()
 )
+
 if response.isSome:
   let results = response.get()
-  echo "Received question results"
-else:
-  echo "No results returned"
+  echo results
 [inline-code-end]
 
 ---

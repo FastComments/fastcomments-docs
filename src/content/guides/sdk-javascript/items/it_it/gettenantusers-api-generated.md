@@ -1,3 +1,4 @@
+---
 ## Parametri
 
 | Nome | Tipo | Obbligatorio | Descrizione |
@@ -7,17 +8,18 @@
 
 ## Risposta
 
-Restituisce: [`GetTenantUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantUsersResponse.ts)
+Restituisce: [`GetTenantUsersResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantUsersResponse1.ts)
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di getTenantUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio getTenantUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
-  const tenantId: string = 'tenant_7f3b2a9c';
-  const skip: number = 20; // optional parameter demonstrated
-  const result: GetTenantUsersResponse = await getTenantUsers(tenantId, skip);
-  console.log(result);
+  const tenantId: string = "tenant_9f7a2c";
+  const skip: number = 25;
+
+  const usersPage: GetTenantUsersResponse1 = await getTenantUsers(tenantId, skip);
+  const allUsers: GetTenantUsersResponse1 = await getTenantUsers(tenantId);
 })();
 [inline-code-end]
 

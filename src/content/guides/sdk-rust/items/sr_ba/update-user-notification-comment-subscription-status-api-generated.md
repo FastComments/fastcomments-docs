@@ -1,14 +1,14 @@
-Omogući ili onemogući obavijesti za određeni komentar.
+Omogućite ili onemogućite obavijesti za određeni komentar.
 
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| notification_id | String | Yes |  |
-| opted_in_or_out | String | Yes |  |
-| comment_id | String | Yes |  |
-| sso | String | No |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenant_id | String | Da |  |
+| notification_id | String | Da |  |
+| opted_in_or_out | String | Da |  |
+| comment_id | String | Da |  |
+| sso | String | Ne |  |
 
 ## Odgovor
 
@@ -18,16 +18,15 @@ Vraća: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://gith
 
 [inline-code-attrs-start title = 'update_user_notification_comment_subscription_status Primjer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example() -> Result<UpdateUserNotificationCommentSubscriptionStatusResponse, Error> {
-    let params: UpdateUserNotificationCommentSubscriptionStatusParams = UpdateUserNotificationCommentSubscriptionStatusParams {
+async fn run_example(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = UpdateUserNotificationCommentSubscriptionStatusParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        notification_id: "news/winter-2026-update".to_string(),
+        notification_id: "comment-reply".to_string(),
         opted_in_or_out: "opted_in".to_string(),
-        comment_id: "article-42-comment-7".to_string(),
-        sso: Some("user-123|eyJhbGciOi...".to_string()),
+        comment_id: "12345".to_string(),
+        sso: Some("user-sso-token".to_string()),
     };
-    let response: UpdateUserNotificationCommentSubscriptionStatusResponse =
-        update_user_notification_comment_subscription_status(&configuration, params).await?;
-    Ok(response)
+    let _response = update_user_notification_comment_subscription_status(configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]

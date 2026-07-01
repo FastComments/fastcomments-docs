@@ -1,23 +1,23 @@
 ### Korištenje autentificiranih API-ja (DefaultApi)
 
-**Važno:** Morate postaviti svoj API ključ na ApiClient prije izvođenja autentificiranih zahtjeva. Ako to ne učinite, zahtjevi će vratiti grešku 401.
+**Važno:** Morate postaviti svoj API ključ na ApiClient prije slanja autentificiranih zahtjeva. Ako to ne učinite, zahtjevi će propasti s greškom 401.
 
 ```ruby
 require 'fastcomments'
 
-# Kreiraj i konfiguriraj API klijent
+# Create and configure the API client
 config = FastCommentsClient::Configuration.new
 api_client = FastCommentsClient::ApiClient.new(config)
 
-# OBAVEZNO: Postavite vaš API ključ (nabavite ga sa FastComments nadzorne ploče)
+# REQUIRED: Set your API key (get this from your FastComments dashboard)
 config.api_key['x-api-key'] = 'YOUR_API_KEY_HERE'
 
-# Kreiraj API instancu s konfiguriranim klijentom
+# Create the API instance with the configured client
 api = FastCommentsClient::DefaultApi.new(api_client)
 
-# Sada možete izvršavati autentificirane API pozive
+# Now you can make authenticated API calls
 begin
-  # Primjer: Dodaj SSO korisnika
+  # Example: Add an SSO user
   user_data = {
     id: 'user-123',
     email: 'user@example.com',
@@ -29,15 +29,15 @@ begin
 
 rescue FastCommentsClient::ApiError => e
   puts "Error: #{e.response_body}"
-  # Uobičajene greške:
-  # - 401: API ključ nedostaje ili nije valjan
-  # - 400: Neuspjela validacija zahtjeva
+  # Common errors:
+  # - 401: API key is missing or invalid
+  # - 400: Request validation failed
 end
 ```
 
 ### Korištenje javnih API-ja (PublicApi)
 
-Javni endpointi ne zahtijevaju autentikaciju:
+Javni krajnji točke ne zahtijevaju autentifikaciju:
 
 ```ruby
 require 'fastcomments'
@@ -46,8 +46,8 @@ public_api = FastCommentsClient::PublicApi.new
 
 begin
   response = public_api.get_comments_public(
-    tenant_id: 'YOUR_TENANT_ID',
-    url_id: 'page-url-id'
+    'YOUR_TENANT_ID',
+    'page-url-id'
   )
   puts response
 rescue FastCommentsClient::ApiError => e
@@ -55,9 +55,9 @@ rescue FastCommentsClient::ApiError => e
 end
 ```
 
-### Korištenje moderacijskih API-ja (ModerationApi)
+### Korištenje API-ja za moderiranje (ModerationApi)
 
-Metode za moderaciju pokreću nadzornu ploču moderatora. Proslijedite `sso` token kako bi se zahtjev napravio u ime moderatora autentificiranog putem SSO:
+Metode za moderiranje pokreću nadzornu ploču moderatora. Proslijedite `sso` token kako bi se zahtjev izvršio u ime moderatora autentificiranog putem SSO:
 
 ```ruby
 require 'fastcomments'
@@ -65,7 +65,7 @@ require 'fastcomments'
 moderation_api = FastCommentsClient::ModerationApi.new
 
 begin
-  # Primjer: Popis komentara u redu za moderaciju
+  # Example: List comments in the moderation queue
   response = moderation_api.get_api_comments(
     sso: 'YOUR_MODERATOR_SSO_TOKEN'
   )
@@ -75,8 +75,8 @@ rescue FastCommentsClient::ApiError => e
 end
 ```
 
-### Česti problemi
+### Uobičajeni problemi
 
-1. **401 "missing-api-key" greška**: Provjerite jeste li postavili `config.api_key['x-api-key'] = 'YOUR_KEY'` prije kreiranja DefaultApi instance.
-2. **Pogrešna API klasa**: Koristite `DefaultApi` za server-side autentificirane zahtjeve, `PublicApi` za klijentske/javne zahtjeve, i `ModerationApi` za zahtjeve nadzorne ploče moderatora.
-3. **Null API ključ**: SDK će tiho preskočiti autentikaciju ako je API ključ null, što će dovesti do 401 grešaka.
+1. **401 "missing-api-key" greška**: Provjerite jeste li postavili `config.api_key['x-api-key'] = 'YOUR_KEY'` prije stvaranja instance DefaultApi.
+2. **Pogrešna klasa API-ja**: Koristite `DefaultApi` za zahtjeve s autentifikacijom na strani servera, `PublicApi` za klijentske/javne zahtjeve i `ModerationApi` za zahtjeve nadzorne ploče moderatora.
+3. **Null API ključ**: SDK će tiho preskočiti autentifikaciju ako je API ključ null, što dovodi do grešaka 401.

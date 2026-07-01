@@ -1,9 +1,9 @@
 ## Параметры
 
-| Name | Type | Required | Description |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| sso | string | Нет |  |
+| tenantId | string | Yes |  |
+| sso | string = "" | No |  |
 
 ## Ответ
 
@@ -11,14 +11,12 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример resetUserNotificationCount'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'resetUserNotificationCount Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.resetUserNotificationCount(tenantId = "my-tenant-123", sso = "user-sso-token-456")
-if response.isSome:
-  let result = response.get()
-  echo "ResetUserNotificationsResponse:", result
+let (resetRespOpt, httpResp) = client.resetUserNotificationCount(tenantId = "my-tenant-123", sso = "user-456")
+if resetRespOpt.isSome:
+  let resetResp = resetRespOpt.get()
+  echo resetResp
 else:
-  echo "Reset failed, HTTP response:", httpResponse
+  echo "Reset notification count response not available"
 [inline-code-end]
-
----

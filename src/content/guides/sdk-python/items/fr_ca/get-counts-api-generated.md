@@ -1,12 +1,13 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Oui |  |
 | sso | string | query | Non |  |
 
 ## Réponse
 
-Renvoie : [`GetBannedUsersCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_banned_users_count_response.py)
+Retourne : [`GetBannedUsersCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_banned_users_count_response.py)
 
 ## Exemple
 
@@ -17,8 +18,8 @@ from client.models.get_banned_users_count_response import GetBannedUsersCountRes
 from client.rest import ApiException
 from pprint import pprint
 
-# Définir l'hôte est optionnel et par défaut : https://fastcomments.com
-# Voir configuration.py pour la liste de tous les paramètres de configuration pris en charge.
+# La définition de l'hôte est facultative et par défaut https://fastcomments.com
+# Voir configuration.py pour une liste de tous les paramètres de configuration pris en charge.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -28,10 +29,11 @@ configuration = client.Configuration(
 with client.ApiClient(configuration) as api_client:
     # Créer une instance de la classe API
     api_instance = client.ModerationApi(api_client)
-    sso = 'sso_example' # str |  (optionnel)
+    tenant_id = 'tenant_id_example' # str | 
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_counts(sso=sso)
+        api_response = api_instance.get_counts(tenant_id, sso=sso)
         print("The response of ModerationApi->get_counts:\n")
         pprint(api_response)
     except Exception as e:

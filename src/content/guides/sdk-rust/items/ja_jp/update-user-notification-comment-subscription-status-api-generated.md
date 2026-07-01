@@ -1,14 +1,14 @@
-特定のコメントの通知を有効または無効にします。
+Enable or disable notifications for a specific comment.
 
 ## パラメータ
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenant_id | String | はい |  |
-| notification_id | String | はい |  |
-| opted_in_or_out | String | はい |  |
-| comment_id | String | はい |  |
-| sso | String | いいえ |  |
+| tenant_id | String | Yes |  |
+| notification_id | String | Yes |  |
+| opted_in_or_out | String | Yes |  |
+| comment_id | String | Yes |  |
+| sso | String | No |  |
 
 ## レスポンス
 
@@ -18,18 +18,15 @@
 
 [inline-code-attrs-start title = 'update_user_notification_comment_subscription_status の例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example() -> Result<UpdateUserNotificationCommentSubscriptionStatusResponse, Error> {
-    let params: UpdateUserNotificationCommentSubscriptionStatusParams = UpdateUserNotificationCommentSubscriptionStatusParams {
+async fn run_example(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = UpdateUserNotificationCommentSubscriptionStatusParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        notification_id: "news/winter-2026-update".to_string(),
+        notification_id: "comment-reply".to_string(),
         opted_in_or_out: "opted_in".to_string(),
-        comment_id: "article-42-comment-7".to_string(),
-        sso: Some("user-123|eyJhbGciOi...".to_string()),
+        comment_id: "12345".to_string(),
+        sso: Some("user-sso-token".to_string()),
     };
-    let response: UpdateUserNotificationCommentSubscriptionStatusResponse =
-        update_user_notification_comment_subscription_status(&configuration, params).await?;
-    Ok(response)
+    let _response = update_user_notification_comment_subscription_status(configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

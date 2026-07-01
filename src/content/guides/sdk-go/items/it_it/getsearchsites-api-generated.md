@@ -1,8 +1,8 @@
----
 ## Parametri
 
-| Nome | Tipo | Location | Obbligatorio | Descrizione |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+|------|------|-----------|--------------|-------------|
+| tenantId | string | query | Sì |  |
 | value | string | query | No |  |
 | sso | string | query | No |  |
 
@@ -12,7 +12,7 @@ Restituisce: [`ModerationSiteSearchResponse`](https://github.com/FastComments/fa
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di GetSearchSites'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio GetSearchSites'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -24,19 +24,18 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	value := "value_example" // string |  (opzionale)
 	sso := "sso_example" // string |  (opzionale)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetSearchSites(context.Background()).Value(value).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetSearchSites(context.Background()).TenantId(tenantId).Value(value).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetSearchSites``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Errore durante la chiamata a `ModerationAPI.GetSearchSites``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Risposta HTTP completa: %v\n", r)
 	}
 	// risposta da `GetSearchSites`: ModerationSiteSearchResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetSearchSites`: %v\n", resp)
+	fmt.Fprintf(os.Stdout, "Risposta da `ModerationAPI.GetSearchSites`: %v\n", resp)
 }
 [inline-code-end]
-
----

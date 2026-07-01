@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Nombre | Tipo | Obligatorio | Descripción |
+| Nombre | Tipo | Requerido | Descripción |
 |------|------|----------|-------------|
 | tenantId | string | Sí |  |
 | id | string | Sí |  |
@@ -11,22 +11,18 @@ Devuelve: [`GetCachedNotificationCountResponse`](https://github.com/FastComments
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de getCachedNotificationCount'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo getCachedNotificationCount'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t id = U("user@example.com");
-boost::optional<utility::string_t> preferredLocale = boost::none;
-auto fallback = std::make_shared<GetCachedNotificationCountResponse>();
-api->getCachedNotificationCount(tenantId, id)
-.then([fallback](pplx::task<std::shared_ptr<GetCachedNotificationCountResponse>> t) {
-    try {
-        auto resp = t.get();
-        auto result = resp ? resp : fallback;
-        std::cout << "cachedNotificationCount: " << result->count << std::endl;
-    } catch (const std::exception& e) {
-        std::cerr << "Error fetching cached notification count: " << e.what() << std::endl;
-    }
-});
-[inline-code-end]
+auto tenantId = boost::optional<utility::string_t>(utility::conversions::to_string_t("my-tenant-123"));
+auto userId = boost::optional<utility::string_t>(utility::conversions::to_string_t("user-456"));
 
----
+api->getCachedNotificationCount(tenantId.value(), userId.value())
+    .then([](pplx::task<std::shared_ptr<GetCachedNotificationCountResponse>> task) {
+        try {
+            auto response = task.get();
+            // procesar respuesta
+        } catch (const std::exception&) {
+            // manejar error
+        }
+    });
+[inline-code-end]

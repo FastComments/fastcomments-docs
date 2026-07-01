@@ -1,52 +1,53 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| commentId | string | query | Не |  |
-| externalId | string | query | Не |  |
-| eventType | string | query | Не |  |
-| type | string | query | Не |  |
-| domain | string | query | Не |  |
-| attemptCountGT | number | query | Не |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | query | No |  |
+| externalId | string | query | No |  |
+| eventType | string | query | No |  |
+| type | string | query | No |  |
+| domain | string | query | No |  |
+| attemptCountGT | number | query | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPendingWebhookEventCountResponse.php)
+Vraća: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPendingWebhookEventCountResponse.php)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'getPendingWebhookEventCount Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getPendingWebhookEventCount'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api_key
-// Конфигуришите ауторизацију API кључа: api_key
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Декоментаришите испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
+// Konfigurišite autorizaciju API ključa: api_key
+$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Otkomentarišite donji red da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // Ако желите да користите прилагођени HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    // Ово је опционо, подразумевано ће бити коришћен `GuzzleHttp\Client`.
+    // Ako želite koristiti prilagođeni http klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao podrazumevani.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$comment_id = 'comment_id_example'; // string
-$external_id = 'external_id_example'; // string
-$event_type = 'event_type_example'; // string
-$type = 'type_example'; // string
-$domain = 'domain_example'; // string
-$attempt_count_gt = 3.4; // float
+$options = [
+    'comment_id' => 'comment_id_example', // string
+    'external_id' => 'external_id_example', // string
+    'event_type' => 'event_type_example', // string
+    'type' => 'type_example', // string
+    'domain' => 'domain_example', // string
+    'attempt_count_gt' => 3.4, // float
+];
+
 
 try {
-    $result = $apiInstance->getPendingWebhookEventCount($tenant_id, $comment_id, $external_id, $event_type, $type, $domain, $attempt_count_gt);
+    $result = $apiInstance->getPendingWebhookEventCount($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getPendingWebhookEventCount: ', $e->getMessage(), PHP_EOL;

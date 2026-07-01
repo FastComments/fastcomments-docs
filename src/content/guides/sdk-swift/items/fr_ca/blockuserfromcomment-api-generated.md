@@ -1,15 +1,15 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | requête | Oui |  |
-| id | string | chemin | Oui |  |
-| userId | string | requête | Non |  |
-| anonUserId | string | requête | Non |  |
+| Nom | Type | Emplacement | Obligatoire | Description |
+|------|------|-------------|-------------|-------------|
+| tenantId | string | query | Oui |  |
+| id | string | path | Oui |  |
+| userId | string | query | Non |  |
+| anonUserId | string | query | Non |  |
 
 ## Réponse
 
-Retourne : [`BlockSuccess`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/BlockSuccess.swift)
+Renvoie : [`BlockSuccess`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/BlockSuccess.swift)
 
 ## Exemple
 
@@ -24,7 +24,7 @@ let blockFromCommentParams = BlockFromCommentParams(commentIdsToCheck: ["comment
 let userId = "userId_example" // String |  (optionnel)
 let anonUserId = "anonUserId_example" // String |  (optionnel)
 
-DefaultAPI.blockUserFromComment(tenantId: tenantId, id: id, blockFromCommentParams: blockFromCommentParams, userId: userId, anonUserId: anonUserId) { (response, error) in
+DefaultAPI.blockUserFromComment(tenantId: tenantId, id: id, blockFromCommentParams: blockFromCommentParams, options: DefaultAPI.BlockUserFromCommentOptions(userId: userId, anonUserId: anonUserId)) { (response, error) in
     guard error == nil else {
         print(error)
         return

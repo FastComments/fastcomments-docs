@@ -1,13 +1,13 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Απαραίτητο | Περιγραφή |
-|------|------|----------|-------------|
-| tenant_id | String | Ναι |  |
-| url_id | String | Ναι |  |
-| broadcast_id | String | Ναι |  |
-| comment_data | models::CommentData | Ναι |  |
-| session_id | String | Όχι |  |
-| sso | String | Όχι |  |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+|------|------|------------|-----------|
+| tenant_id | String | Yes |  |
+| url_id | String | Yes |  |
+| broadcast_id | String | Yes |  |
+| comment_data | models::CommentData | Yes |  |
+| session_id | String | No |  |
+| sso | String | No |  |
 
 ## Απόκριση
 
@@ -15,23 +15,17 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα create_comment_public'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_comment_public Παράδειγμα'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn post_public_comment(configuration: &configuration::Configuration) -> Result<SaveCommentsResponseWithPresence, Error> {
-    let params: CreateCommentPublicParams = CreateCommentPublicParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        url_id: "news/world/economic-update-2026".to_string(),
-        broadcast_id: "broadcast-2026-06-19-001".to_string(),
-        comment_data: models::CommentData {
-            content: "Great analysis — this clarified a lot of the market dynamics.".to_string(),
-            ..Default::default()
-        },
-        session_id: Some("sess-9f8e7d6c".to_string()),
-        sso: Some("sso-jwt-eyJhbGciOi...".to_string()),
-    };
-    let response: SaveCommentsResponseWithPresence = create_comment_public(configuration, params).await?;
-    Ok(response)
-}
+let params = CreateCommentPublicParams {
+    tenant_id: "acme-corp-tenant".to_string(),
+    url_id: "news/article-123".to_string(),
+    broadcast_id: "broadcast-2023-09-01".to_string(),
+    comment_data: models::CommentData {
+        text: "Great read!".to_string(),
+    },
+    session_id: Some("session-abc123".to_string()),
+    sso: Some("sso-token-xyz".to_string()),
+};
+let response = create_comment_public(&configuration, params).await?;
 [inline-code-end]
-
----

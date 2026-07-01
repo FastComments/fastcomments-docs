@@ -1,40 +1,40 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Обязательно | Описание |
+| Назва | Тип | Обов’язково | Опис |
 |------|------|----------|-------------|
-| page | f64 | Нет |  |
-| count | f64 | Нет |  |
-| text_search | String | Нет |  |
-| by_ip_from_comment | String | Нет |  |
-| filters | String | Нет |  |
-| search_filters | String | Нет |  |
-| sorts | String | Нет |  |
-| demo | bool | Нет |  |
-| sso | String | Нет |  |
+| tenant_id | String | Так |  |
+| page | f64 | Ні |  |
+| count | f64 | Ні |  |
+| text_search | String | Ні |  |
+| by_ip_from_comment | String | Ні |  |
+| filters | String | Ні |  |
+| search_filters | String | Ні |  |
+| sorts | String | Ні |  |
+| demo | bool | Ні |  |
+| sso | String | Ні |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`ModerationApiGetCommentsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/moderation_api_get_comments_response.rs)
+Повертає: [`ModerationApiGetCommentsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/moderation_api_get_comments_response.rs)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример get_api_comments'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад get_api_comments'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run(configuration: &configuration::Configuration) -> Result<(), Error> {
-    let params: GetApiCommentsParams = GetApiCommentsParams {
+async fn run() -> Result<(), Error> {
+    let params = GetApiCommentsParams {
+        tenant_id: "acme-corp-tenant".to_string(),
         page: Some(1.0),
         count: Some(20.0),
-        text_search: Some(String::from("breaking election results")),
-        by_ip_from_comment: Some(String::from("203.0.113.45")),
-        filters: Some(String::from("status:approved,thread:news/article")),
-        search_filters: Some(String::from("author:john.doe@example.com")),
-        sorts: Some(String::from("-created_at")),
+        text_search: Some("rust".to_string()),
+        by_ip_from_comment: None,
+        filters: Some("status:approved".to_string()),
+        search_filters: Some("author:john".to_string()),
+        sorts: Some("date:desc".to_string()),
         demo: Some(false),
-        sso: Some(String::from("acme-corp-tenant")),
+        sso: None,
     };
-    let response: ModerationApiGetCommentsResponse = get_api_comments(configuration, params).await?;
+    let _response = get_api_comments(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

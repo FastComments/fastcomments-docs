@@ -1,9 +1,10 @@
+---
 ## פרמטרים
 
 | שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tag | string | לא |  |
 | tenantId | string | כן |  |
+| tag | string | לא |  |
 | updateHashTagBody | UpdateHashTagBody | לא |  |
 
 ## תגובה
@@ -12,10 +13,19 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-patchHashTag'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'patchHashTag דוגמה'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.patchHashTag(tag = "breaking-news", tenantId = "my-tenant-123", updateHashTagBody = UpdateHashTagBody())
-if response.isSome:
-  let updatedHashTag = response.get()
-  echo updatedHashTag
+let updateBody = UpdateHashTagBody()
+let (optResp, httpResp) = client.patchHashTag(
+  tenantId = "my-tenant-123",
+  tag = "news",
+  updateHashTagBody = updateBody
+)
+if optResp.isSome:
+  let resp = optResp.get()
+  echo resp
+else:
+  echo "No response"
 [inline-code-end]
+
+---

@@ -1,32 +1,31 @@
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 類型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | No |  |
-| updateEmailTemplateBody | UpdateEmailTemplateBody | No |  |
+| tenantId | string | 是 |  |
+| id | string | 否 |  |
+| updateEmailTemplateBody | UpdateEmailTemplateBody | 否 |  |
 
 ## 回應
 
-回傳： [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
+返回: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## 範例
 
 [inline-code-attrs-start title = 'updateEmailTemplate 範例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let updateBody = UpdateEmailTemplateBody(
-  subject = "Welcome to Newsly",
-  html = "<p>Thanks for joining Newsly! Visit https://newsly.example to get started.</p>",
-  fromAddress = "no-reply@newsly.example",
-  fromName = "Newsly Team",
-  enabled = true
+  subject: "Welcome to FastComments",
+  body: "Hello \{{user_name}}, thanks for joining!",
+  enabled: true,
 )
-let (response, httpResponse) = client.updateEmailTemplate(tenantId = "my-tenant-123", id = "welcome-email", updateEmailTemplateBody = updateBody)
-if response.isSome:
-  let result = response.get()
-  discard result
-else:
-  discard httpResponse.statusCode
-[inline-code-end]
 
----
+let (maybeResp, httpResp) = client.updateEmailTemplate(
+  tenantId = "my-tenant-123",
+  id = "welcome-email",
+  updateEmailTemplateBody = updateBody,
+)
+
+if maybeResp.isSome:
+  let resp = maybeResp.get()
+[inline-code-end]

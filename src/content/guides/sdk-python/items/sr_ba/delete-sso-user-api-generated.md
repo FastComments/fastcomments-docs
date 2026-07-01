@@ -1,53 +1,50 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Обавезно | Опис |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| id | string | path | Да |  |
-| deleteComments | boolean | query | Не |  |
-| commentDeleteMode | string | query | Не |  |
+| Ime | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
+| id | string | path | Da |  |
+| deleteComments | boolean | query | Ne |  |
+| commentDeleteMode | string | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`DeleteSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/delete_sso_user_api_response.py)
+Vraća: [`DeleteSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/delete_sso_user_api_response.py)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример delete_sso_user'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_sso_user Primjer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import DeleteSsoUserOptions
 from client.models.delete_sso_user_api_response import DeleteSSOUserAPIResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинисање host-а је опционо и подразумевано је https://fastcomments.com
-# Погледајте configuration.py за листу свих подржаних параметара конфигурације.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
+# Definisanje hosta je opcionalno i podrazumevano je https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih konfiguracionih parametara.
+# Klijent mora da konfiguriše parametre autentifikacije i autorizacije
+# u skladu sa sigurnosnom politikom API servera.
+# Primjeri za svaki metod autentifikacije su dati ispod, koristite primjer koji
+# zadovoljava vaš slučaj upotrebe autentifikacije.
 
-# Клијент мора да конфигурише параметре аутентификације и ауторизације
-# у складу са политиком безбедности API сервера.
-# Примери за сваки метод аутентификације дати су испод, користите пример који
-# одговара вашем случају употребе аутентификације.
-
-# Конфигуришите овлашћење API кључем: api_key
+# Konfigurišite autorizaciju API ključem: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Откоменатишите испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
+# Odkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Уђите у контекст са инстанцом API клијента
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Креирајте инстанцу API класе
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
-    delete_comments = True # bool |  (опционо)
-    comment_delete_mode = 'comment_delete_mode_example' # str |  (опционо)
+    delete_comments = True # bool |  (optional)
+    comment_delete_mode = 'comment_delete_mode_example' # str |  (optional)
 
     try:
-        api_response = api_instance.delete_sso_user(tenant_id, id, delete_comments=delete_comments, comment_delete_mode=comment_delete_mode)
+        api_response = api_instance.delete_sso_user(tenant_id, id, DeleteSsoUserOptions(delete_comments=delete_comments, comment_delete_mode=comment_delete_mode))
         print("The response of DefaultApi->delete_sso_user:\n")
         pprint(api_response)
     except Exception as e:

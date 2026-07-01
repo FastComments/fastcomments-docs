@@ -1,26 +1,25 @@
-## 매개변수
+## Parameters
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenant_id | String | 예 |  |
 | id | String | 예 |  |
 
-## 응답
+## Response
 
 반환: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
-## 예제
+## Example
 
-[inline-code-attrs-start title = 'delete_tenant_package 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_tenant_package 예시'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_delete_example() -> Result<(), Error> {
-    let params: DeleteTenantPackageParams = DeleteTenantPackageParams {
+async fn run() -> Result<(), Error> {
+    let params = DeleteTenantPackageParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "premium-comment-moderation".to_string(),
+        id: "premium-plan".to_string(),
+        force: Some(true),
     };
-    let response: ApiEmptyResponse = delete_tenant_package(&configuration, params).await?;
+    delete_tenant_package(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

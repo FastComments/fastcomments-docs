@@ -1,8 +1,10 @@
 ## Parametri
 
-| Nome | Tipo | Location | Obbligatorio | Descrizione |
-|------|------|----------|-------------|-------------|
-| commentId | string | path | Sì |  |
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+|------|------|-----------|--------------|-------------|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
 | sso | string | query | No |  |
 
 ## Risposta
@@ -11,9 +13,9 @@ Restituisce: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-j
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio postUnFlagComment'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postUnFlagComment Esempio'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importa classi:
+// Importa le classi:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,10 +28,13 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
+    String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      APIEmptyResponse result = apiInstance.postUnFlagComment(commentId)
+      APIEmptyResponse result = apiInstance.postUnFlagComment(tenantId, commentId)
+            .broadcastId(broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);
@@ -43,5 +48,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

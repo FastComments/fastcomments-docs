@@ -1,23 +1,23 @@
-Lister sider for en tenant. Bruges af FChat desktop-klienten til at udfylde sin rumliste.
-Kræver, at `enableFChat` er true i den endelige brugerdefinerede konfiguration for hver side.
-Sider, der kræver SSO, filtreres ud fra den anmodende brugers gruppeadgang.
+List sider for en lejer. Bruges af FChat desktop‑klienten til at udfylde dens rumliste.  
+Kræver, at `enableFChat` er sand på den løste brugerdefinerede konfiguration for hver side.  
+Sider, der kræver SSO, filtreres i forhold til den anmodende brugers gruppeadgang.
 
-## Parametre
+## Parameters
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
-|------|------|----------|----------|-------------|
+|------|------|-----------|----------|-------------|
 | tenantId | string | path | Yes |  |
-| cursor | string | query | No | Opaque pagineringscursor returneret som `nextCursor` fra en tidligere anmodning. Bundet til samme `sortBy`. |
+| cursor | string | query | No | Uigennemsigtigt pagineringscursor returneret som `nextCursor` fra en tidligere anmodning. Knyttet til den samme `sortBy`. |
 | limit | integer | query | No | 1..200, standard 50 |
-| q | string | query | No | Valgfrit titel-præfiksfilter uden hensyn til store/små bogstaver. |
-| sortBy | string | query | No | Sorteringsrækkefølge. `updatedAt` (standard, nyeste først), `commentCount` (flest kommentarer først), eller `title` (alfabetisk). |
-| hasComments | boolean | query | No | Hvis true, returner kun sider med mindst én kommentar. |
+| q | string | query | No | Valgfri case‑insensitiv titelpræfiksfilter. |
+| sortBy | string | query | No | Sorteringsrækkefølge. `updatedAt` (standard, nyeste først), `commentCount` (fleste kommentarer først), eller `title` (alfabetisk). |
+| hasComments | boolean | query | No | Hvis sand, returnerer kun sider med mindst én kommentar. |
 
 ## Response
 
 Returnerer: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPublicPagesResponse.php)
 
-## Eksempel
+## Example
 
 [inline-code-attrs-start title = 'getPagesPublic Eksempel'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -27,21 +27,27 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Hvis du ønsker at bruge en brugerdefineret HTTP-klient, skal du videregive din klient, som implementerer `GuzzleHttp\ClientInterface`.
-    // Dette er valgfrit; `GuzzleHttp\Client` vil blive brugt som standard.
+    // Hvis du vil bruge en brugerdefineret http-klient, skal du videregive din klient, som implementerer `GuzzleHttp\ClientInterface`.
+    // Dette er valgfrit, `GuzzleHttp\Client` vil blive brugt som standard.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$cursor = 'cursor_example'; // string | Opaque pagineringscursor returneret som `nextCursor` fra en tidligere forespørgsel. Tilknyttet samme `sortBy`.
-$limit = 56; // int | 1..200, standard 50
-$q = 'q_example'; // string | Valgfrit titelpræfiksfilter uden hensyn til store/små bogstaver.
-$sort_by = new \FastComments\Client\Model\\FastComments\Client\Model\PagesSortBy(); // \FastComments\Client\Model\PagesSortBy | Sorteringsrækkefølge. `updatedAt` (standard, nyeste først), `commentCount` (flest kommentarer først), eller `title` (alfabetisk).
-$has_comments = True; // bool | Hvis true, returnér kun sider med mindst én kommentar.
+$options = [
+    'cursor' => 'cursor_example', // string | Uigennemsigtigt pagineringscursor returneret som `nextCursor` fra en tidligere anmodning. Knyttet til den samme `sortBy`.
+    'limit' => 56, // int | 1..200, standard 50
+    'q' => 'q_example', // string | Valgfri case‑insensitiv titelpræfiksfilter.
+    'sort_by' => new \FastComments\Client\Model\\FastComments\Client\Model\PagesSortBy(), // \FastComments\Client\Model\PagesSortBy | Sorteringsrækkefølge. `updatedAt` (standard, nyeste først), `commentCount` (fleste kommentarer først), eller `title` (alfabetisk).
+    'has_comments' => True, // bool | Hvis sand, returnerer kun sider med mindst én kommentar.
+];
+
 
 try {
-    $result = $apiInstance->getPagesPublic($tenant_id, $cursor, $limit, $q, $sort_by, $has_comments);
+    $result = $apiInstance->getPagesPublic($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getPagesPublic: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

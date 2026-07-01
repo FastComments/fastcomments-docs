@@ -1,10 +1,11 @@
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
-| userId | string | query | No |  |
-| trustFactor | string | query | No |  |
-| sso | string | query | No |  |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
+| userId | string | query | Ne |  |
+| trustFactor | string | query | Ne |  |
+| sso | string | query | Ne |  |
 
 ## Odgovor
 
@@ -24,18 +25,19 @@ import (
 )
 
 func main() {
-	userId := "userId_example" // string |  (neobavezno)
-	trustFactor := "trustFactor_example" // string |  (neobavezno)
-	sso := "sso_example" // string |  (neobavezno)
+	tenantId := "tenantId_example" // string | 
+	userId := "userId_example" // string | (opcionalno)
+	trustFactor := "trustFactor_example" // string | (opcionalno)
+	sso := "sso_example" // string | (opcionalno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.SetTrustFactor(context.Background()).UserId(userId).TrustFactor(trustFactor).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.SetTrustFactor(context.Background()).TenantId(tenantId).UserId(userId).TrustFactor(trustFactor).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.SetTrustFactor``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor od `SetTrustFactor`: SetUserTrustFactorResponse
+	// odgovor iz `SetTrustFactor`: SetUserTrustFactorResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.SetTrustFactor`: %v\n", resp)
 }
 [inline-code-end]

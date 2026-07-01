@@ -4,8 +4,7 @@
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | id | string | No |  |
-| deleteComments | bool | No |  |
-| commentDeleteMode | string | No |  |
+| options | DeleteSSOUserOptions | No |  |
 
 ## Response
 
@@ -15,15 +14,12 @@ Returns: [`Option[DeleteSSOUserAPIResponse]`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'deleteSSOUser Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteSSOUser(
+let (apiRespOpt, httpResp) = client.deleteSSOUser(
   tenantId = "my-tenant-123",
-  id = "user-7f3b9c",
-  deleteComments = true,
-  commentDeleteMode = "soft"
+  id = "user-456",
+  options = DeleteSSOUserOptions()
 )
 
-if response.isSome:
-  let apiResult = response.get()
-  echo "SSO user deleted successfully"
-  discard apiResult
+if apiRespOpt.isSome:
+  let apiResp = apiRespOpt.get()
 [inline-code-end]

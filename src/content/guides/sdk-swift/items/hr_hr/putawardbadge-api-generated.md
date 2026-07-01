@@ -1,7 +1,8 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
 | badgeId | string | query | Da |  |
 | userId | string | query | Ne |  |
 | commentId | string | query | Ne |  |
@@ -16,16 +17,17 @@ Vraća: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-
 
 [inline-code-attrs-start title = 'putAwardBadge Primjer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sljedeći primjeri koda su još u beta verziji. Za bilo koji problem, prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sljedeći primjeri koda još su beta. Za bilo koji problem, molimo prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let badgeId = "badgeId_example" // String | 
-let userId = "userId_example" // String |  (neobavezno)
-let commentId = "commentId_example" // String |  (neobavezno)
-let broadcastId = "broadcastId_example" // String |  (neobavezno)
-let sso = "sso_example" // String |  (neobavezno)
+let userId = "userId_example" // String |  (opcionalno)
+let commentId = "commentId_example" // String |  (opcionalno)
+let broadcastId = "broadcastId_example" // String |  (opcionalno)
+let sso = "sso_example" // String |  (opcionalno)
 
-ModerationAPI.putAwardBadge(badgeId: badgeId, userId: userId, commentId: commentId, broadcastId: broadcastId, sso: sso) { (response, error) in
+ModerationAPI.putAwardBadge(tenantId: tenantId, badgeId: badgeId, options: ModerationAPI.PutAwardBadgeOptions(userId: userId, commentId: commentId, broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

@@ -1,7 +1,7 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
 | tenantId | string | path | Da |  |
 | search | string | query | Da |  |
 | locale | string | query | Ne |  |
@@ -22,18 +22,22 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ako želite koristiti prilagođeni HTTP klijent, proslijedite klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opcionalno, `GuzzleHttp\Client` će biti korišten kao zadani.
+    // Ako želite koristiti prilagođeni HTTP klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao podrazumevani.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $search = 'search_example'; // string
-$locale = 'locale_example'; // string
-$rating = 'rating_example'; // string
-$page = 3.4; // float
+$options = [
+    'locale' => 'locale_example', // string
+    'rating' => 'rating_example', // string
+    'page' => 3.4, // float
+];
+
 
 try {
-    $result = $apiInstance->getGifsSearch($tenant_id, $search, $locale, $rating, $page);
+    $result = $apiInstance->getGifsSearch($tenant_id, $search, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getGifsSearch: ', $e->getMessage(), PHP_EOL;

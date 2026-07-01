@@ -1,14 +1,10 @@
+---
 ## פרמטרים
 
-| שם | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| commentId | string | כן |  |
-| externalId | string | לא |  |
-| eventType | string | לא |  |
-| domain | string | לא |  |
-| attemptCountGT | float64 | לא |  |
-| skip | float64 | לא |  |
+| tenantId | string | Yes |  |
+| options | GetPendingWebhookEventsOptions | No |  |
 
 ## תגובה
 
@@ -16,20 +12,15 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getPendingWebhookEvents'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getPendingWebhookEvents'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getPendingWebhookEvents(
+let (maybeResp, httpResp) = client.getPendingWebhookEvents(
   tenantId = "my-tenant-123",
-  commentId = "cmt-987654",
-  externalId = "",
-  eventType = "",
-  domain = "",
-  attemptCountGT = 0.0,
-  skip = 0.0
+  options = GetPendingWebhookEventsOptions()
 )
-if response.isSome:
-  let pending = response.get()
-  discard pending
+
+if maybeResp.isSome:
+  let resp = maybeResp.get()
 [inline-code-end]
 
 ---

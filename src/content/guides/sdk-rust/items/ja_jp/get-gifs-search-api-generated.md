@@ -2,32 +2,29 @@
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenant_id | String | はい |  |
-| search | String | はい |  |
-| locale | String | いいえ |  |
-| rating | String | いいえ |  |
-| page | f64 | いいえ |  |
+| tenant_id | String | Yes |  |
+| search | String | Yes |  |
+| locale | String | No |  |
+| rating | String | No |  |
+| page | f64 | No |  |
 
 ## レスポンス
 
-戻り値: [`GetGifsSearchResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_gifs_search_response.rs)
+返却: [`GetGifsSearchResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_gifs_search_response.rs)
 
 ## 例
 
-[inline-code-attrs-start title = 'get_gifs_search の例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_gifs_search 例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_gif_search() -> Result<(), Error> {
-    let params: GetGifsSearchParams = GetGifsSearchParams {
+async fn fetch_gifs(config: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetGifsSearchParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        search: "breaking news".to_string(),
+        search: "funny cats".to_string(),
         locale: Some("en-US".to_string()),
-        rating: Some("pg-13".to_string()),
+        rating: Some("pg".to_string()),
         page: Some(1.0),
     };
-    let response: GetGifsSearchResponse = get_gifs_search(&configuration, params).await?;
-    println!("{:#?}", response);
+    let _response = get_gifs_search(config, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

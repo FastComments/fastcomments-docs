@@ -1,7 +1,7 @@
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-------------|
+|------|------|-------------|-----------|
 | tenantId | string | Sim |  |
 | id | string | Sim |  |
 | sendEmail | string | Não |  |
@@ -14,18 +14,11 @@ Retorna: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/b
 
 [inline-code-attrs-start title = 'Exemplo deleteModerator'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t moderatorId = U("moderator-456");
-boost::optional<utility::string_t> sendEmail = boost::optional<utility::string_t>(U("notify@example.com"));
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto moderatorId = utility::conversions::to_string_t("mod-456");
+boost::optional<utility::string_t> sendEmail = utility::conversions::to_string_t("admin@example.com");
 api->deleteModerator(tenantId, moderatorId, sendEmail)
-.then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task) {
-    try {
-        auto resp = task.get();
-        auto result = resp ? resp : std::make_shared<APIEmptyResponse>();
-    } catch (...) {
-        throw;
-    }
-}).wait();
+    .then([](std::shared_ptr<APIEmptyResponse> resp) {
+        // tratar sucesso
+    });
 [inline-code-end]
-
----

@@ -2,21 +2,27 @@
 
 | Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| urlId | string | Da |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
 
 ## Odgovor
 
-Vrne: [`GetV2PageReacts`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetV2PageReacts.ts)
+Vrne: [`GetV2PageReactsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetV2PageReactsResponse.ts)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer getV2PageReacts'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getV2PageReacts Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'fastcomments-tenant-82';
-const urlId: string = 'https://www.acmecorp.com/blog/product-launch-2026';
-const reacts: GetV2PageReacts = await getV2PageReacts(tenantId, urlId);
-console.log(reacts);
-[inline-code-end]
+async function demoGetPageReacts(): Promise<void> {
+    const tenantId: string = "acme-corp-tenant";
+    const urlId: string = "article-2024-06-01";
 
----
+    const reacts: GetV2PageReactsResponse = await getV2PageReacts(tenantId, urlId);
+
+    // primer neobveznega dostopa do lastnosti
+    const customConfig: CustomConfigParameters | undefined = reacts.customConfig;
+    console.log(reacts);
+}
+
+demoGetPageReacts();
+[inline-code-end]

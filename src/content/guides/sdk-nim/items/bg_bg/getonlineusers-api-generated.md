@@ -1,14 +1,13 @@
-В момента онлайн зрители на страница: хора, чиито websocket сесии са абонирани за страницата в момента.
-Връща anonCount + totalCount (абонати в рамките на стаята, включително анонимни зрители, които не изброяваме).
+Текущо онлайн зрители на страница: хора, чиито уебсокет сесия е абонирана за страницата в момента.  
+Връща anonCount + totalCount (абонати в цялото помещение, включително анонимни зрители, които не изброяваме).
 
 ## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Задължителен | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| urlId | string | Да |  |
-| afterName | string | Не |  |
-| afterUserId | string | Не |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| options | GetOnlineUsersOptions | No |  |
 
 ## Отговор
 
@@ -18,11 +17,9 @@
 
 [inline-code-attrs-start title = 'Пример за getOnlineUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getOnlineUsers(tenantId = "my-tenant-123", urlId = "news/politics/top-story", afterName = "", afterUserId = "")
-if response.isSome:
-  let page = response.get()
-  echo "Received online users page:"
-  echo page
-else:
-  echo "No online users returned. HTTP status: ", httpResponse.statusCode
+let opts = GetOnlineUsersOptions()
+let (onlineUsersOpt, httpResp) = client.getOnlineUsers(tenantId = "my-tenant-123", urlId = "news/article-title", options = opts)
+if onlineUsersOpt.isSome:
+  let onlineUsers = onlineUsersOpt.get()
+  echo onlineUsers
 [inline-code-end]

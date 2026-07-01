@@ -1,8 +1,8 @@
 ## Параметри
 
-| Назва | Type | Location | Обов'язково | Опис |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Ні |  |
+| Ім'я | Тип | Розташування | Обов'язково | Опис |
+|------|------|--------------|--------------|------|
+| tenantId | string | query | Yes |  |
 
 ## Відповідь
 
@@ -18,32 +18,28 @@ from client.models.bulk_create_hash_tags_response import BulkCreateHashTagsRespo
 from client.rest import ApiException
 from pprint import pprint
 
-# Визначення host є необов'язковим і за замовчуванням дорівнює https://fastcomments.com
+# Визначення хоста є необов'язковим і за замовчуванням https://fastcomments.com
 # Див. configuration.py для списку всіх підтримуваних параметрів конфігурації.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
-
 # Клієнт повинен налаштувати параметри автентифікації та авторизації
-# відповідно до політики безпеки сервера API.
-# Нижче наведено приклади для кожного методу автентифікації, використовуйте приклад, який
-# задовольняє ваш випадок використання автентифікації.
+# відповідно до політики безпеки API сервера.
+# Приклади для кожного методу автентифікації наведені нижче, використайте приклад, який
+# відповідає вашому випадку використання автентифікації.
 
-# Configure API key authorization: api_key
+# Налаштування авторизації за допомогою API ключа: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Розкоментуйте нижче, щоб налаштувати префікс (наприклад, Bearer) для API ключа, якщо необхідно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Відкрийте контекст з екземпляром клієнта API
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Створіть екземпляр класу API
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
-    tenant_id = 'tenant_id_example' # str |  (optional)
+    tenant_id = 'tenant_id_example' # str | 
     bulk_create_hash_tags_body = client.BulkCreateHashTagsBody() # BulkCreateHashTagsBody |  (optional)
 
     try:
-        api_response = api_instance.add_hash_tags_bulk(tenant_id=tenant_id, bulk_create_hash_tags_body=bulk_create_hash_tags_body)
+        api_response = api_instance.add_hash_tags_bulk(tenant_id, bulk_create_hash_tags_body)
         print("The response of DefaultApi->add_hash_tags_bulk:\n")
         pprint(api_response)
     except Exception as e:

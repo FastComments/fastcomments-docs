@@ -1,13 +1,14 @@
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 描述 |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | userId | string | query | No |  |
 | sso | string | query | No |  |
 
 ## 回應
 
-回傳：[`GetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_trust_factor_response.go)
+回傳: [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_trust_factor_response.go)
 
 ## 範例
 
@@ -23,17 +24,20 @@ import (
 )
 
 func main() {
-	userId := "userId_example" // string |  (選用)
-	sso := "sso_example" // string |  (選用)
+	tenantId := "tenantId_example" // string | 
+	userId := "userId_example" // string |  (optional) => (可選)
+	sso := "sso_example" // string |  (optional) => (可選)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetTrustFactor(context.Background()).UserId(userId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetTrustFactor(context.Background()).TenantId(tenantId).UserId(userId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetTrustFactor``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// 來自 `GetTrustFactor` 的回應：GetUserTrustFactorResponse
+	// response from `GetTrustFactor`: GetUserTrustFactorResponse => 回應自 `GetTrustFactor`：GetUserTrustFactorResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetTrustFactor`: %v\n", resp)
 }
 [inline-code-end]
+
+---

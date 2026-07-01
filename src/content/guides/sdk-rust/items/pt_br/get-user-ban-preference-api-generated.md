@@ -1,8 +1,9 @@
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-------------|
-| sso | String | Não |  |
+|------|------|-------------|-----------|
+| tenant_id | String | Yes |  |
+| sso | String | No |  |
 
 ## Resposta
 
@@ -12,15 +13,12 @@ Retorna: [`ApiModerateGetUserBanPreferencesResponse`](https://github.com/FastCom
 
 [inline-code-attrs-start title = 'Exemplo de get_user_ban_preference'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example() -> Result<(), Error> {
-    let params: GetUserBanPreferenceParams = GetUserBanPreferenceParams {
-        sso: Some("acme-corp-tenant".to_string()),
+async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetUserBanPreferenceParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        sso: Some("user123".to_string()),
     };
-    let response: ApiModerateGetUserBanPreferencesResponse =
-        get_user_ban_preference(&configuration, params).await?;
-    println!("{:#?}", response);
+    let _response = get_user_ban_preference(configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

@@ -1,16 +1,26 @@
-### PyPI
+### Installer fra GitHub
+
+Installer direkte fra et udgivelses‑tag (anbefalet, fuldt reproducerbart):
 
 ```bash
-pip install fastcomments
+pip install git+https://github.com/fastcomments/fastcomments-python.git@v3.0.0
 ```
+
+Fastgør tagget i stedet for en gren, så bygninger er deterministiske. Den samme form virker i `requirements.txt`:
+
+```
+fastcomments @ git+https://github.com/fastcomments/fastcomments-python.git@v3.0.0
+```
+
+Hver tagget [GitHub Release](https://github.com/fastcomments/fastcomments-python/releases) har også et bygget wheel vedhæftet, hvis du foretrækker at installere en binær artefakt direkte.
 
 ### Biblioteksindhold
 
-Dette bibliotek indeholder to moduler: den genererede API-klient og kernebiblioteket til Python, som indeholder håndskrevne hjælpefunktioner for at gøre arbejdet med API'et lettere, inklusive SSO-understøttelse.
+Dette bibliotek indeholder to moduler: den genererede API‑klient og kjerne‑Python‑biblioteket, som indeholder håndskrevne værktøjer for at gøre arbejdet med API'en lettere, herunder SSO‑understøttelse.
 
-- [Dokumentation for API-klientbiblioteket](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
-- [Kernebibliotekets dokumentation, inklusive SSO-eksempler](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
+- [API Client Library Docs](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
+- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
 
-### Offentlige vs. sikrede API'er
+### Offentlige vs Sikrede API'er
 
-For API-klienten er der tre klasser, `DefaultApi`, `PublicApi`, og `ModerationApi`. `DefaultApi` indeholder metoder, der kræver din API-nøgle, og `PublicApi` indeholder metoder, som kan bruges direkte fra en browser/mobilenhed/etc. uden autentificering. `ModerationApi` driver moderatorpanelet og indeholder metoder til moderering af kommentarer (liste, optælling, søgning, logfiler, eksport), moderationhandlinger (fjern/gendan, marker, indstil gennemgang/spam/godkendelsesstatus, stemmer, genåbn/luk tråd), udelukkelser (udeluk fra at kommentere, fortryd, forudgående udelukkelsesoversigter, udelukkelsesstatus/indstillinger, antal udelukkede brugere) og badges & tillid (tildel/fjern badge, manuelle badges, hent/indstil tillidsfaktor, brugerens interne profil). Hver `ModerationApi`-metode accepterer en `sso`-parameter, så den kan kaldes på vegne af en SSO-autentificeret moderator.
+For API‑klienten er der tre klasser, `DefaultApi`, `PublicApi` og `ModerationApi`. `DefaultApi` indeholder metoder, der kræver din API‑nøgle, og `PublicApi` indeholder metoder, der kan udføres direkte fra en browser/mobil enhed osv. uden autentifikation. `ModerationApi` leverer en omfattende række af live og hurtige moderations‑API'er. Hver `ModerationApi`‑metode accepterer en `sss`‑parameter og kan autentificere via SSO eller en FastComments.com‑session cookie.

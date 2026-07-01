@@ -1,13 +1,10 @@
 ## Параметри
 
-| Назва | Тип | Обов'язкове | Опис |
+| Назва | Тип | Обов'язковий | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Так |  |
 | createCommentParams | seq[CreateCommentParams] | Ні |  |
-| isLive | bool | Ні |  |
-| doSpamCheck | bool | Ні |  |
-| sendEmails | bool | Ні |  |
-| populateNotifications | bool): (Option[seq[SaveCommentsBulkResponse]] | Ні |  |
+| options | SaveCommentsBulkOptions): (Option[seq[SaveCommentsBulkResponse]] | Ні |  |
 | id | string | Ні |  |
 | fromName | string | Ні |  |
 
@@ -17,22 +14,16 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад saveCommentsBulk'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'saveCommentsBulk Приклад'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.saveCommentsBulk(
   tenantId = "my-tenant-123",
   createCommentParams = @[],
-  isLive = false,
-  doSpamCheck = false,
-  sendEmails = false,
-  populateNotifications = false,
+  options = SaveCommentsBulkOptions(),
   id = "",
   fromName = ""
 )
 
 if response.isSome:
-  let apiResp = response.get()
-  echo "Bulk save succeeded, tenant:", " my-tenant-123"
-else:
-  echo "Bulk save returned no API response"
+  let result = response.get()
 [inline-code-end]

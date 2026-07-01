@@ -1,3 +1,4 @@
+---
 req
 tenantId
 afterId
@@ -7,9 +8,7 @@ afterId
 | Nome | Tipo | Obrigatório | Descrição |
 |------|------|-------------|-----------|
 | tenantId | string | Sim |  |
-| afterId | string | Não |  |
-| limit | int | Não |  |
-| tags | seq[string] | Não |  |
+| options | GetFeedPostsOptions | Não |  |
 
 ## Resposta
 
@@ -17,17 +16,12 @@ Retorna: [`Option[GetFeedPostsResponse]`](https://github.com/FastComments/fastco
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getFeedPosts'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getFeedPosts Exemplo'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getFeedPosts(
-  tenantId = "my-tenant-123",
-  afterId = "",
-  limit = 0,
-  tags = @[]
-)
-if response.isSome:
-  let feed = response.get()
-  echo "Feed retrieved for tenant my-tenant-123"
+let (feedResponseOpt, httpResp) = client.getFeedPosts(tenantId = "my-tenant-123", options = GetFeedPostsOptions())
+if feedResponseOpt.isSome:
+  let feedResponse = feedResponseOpt.get()
+  echo feedResponse
 [inline-code-end]
 
 ---

@@ -1,26 +1,19 @@
-## Параметры
+## Parameters
 
-| Имя | Тип | Обязательно | Описание |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| userId | string | Нет |  |
-| urlId | string | Да |  |
-| fromCommentId | string | Нет |  |
-| viewed | bool | Нет |  |
-| skip | float64 | Нет |  |
+| Назва | Тип | Обов’язково | Опис |
+|------|------|--------------|------|
+| tenantId | string | Так |  |
+| options | GetNotificationsOptions | Ні |  |
 
-## Ответ
+## Response
 
-Возвращает: [`Option[GetNotificationsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_notifications_response.nim)
+Повертає: [`Option[GetNotificationsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_notifications_response.nim)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'Пример getNotifications'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад getNotifications'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getNotifications(tenantId = "my-tenant-123", userId = "user-456", urlId = "news/article-title", fromCommentId = "cmt-789", viewed = false, skip = 0.0)
-if response.isSome:
-  let notifications = response.get()
-  echo notifications
+let (notifOpt, httpResp) = client.getNotifications(tenantId = "my-tenant-123", options = GetNotificationsOptions())
+if notifOpt.isSome:
+  let notifications = notifOpt.get()
 [inline-code-end]
-
----

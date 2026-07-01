@@ -1,11 +1,11 @@
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| tenantId | string | Da |  |
-| commentId | string | Da |  |
-| dir | int32_t | Da |  |
-| sso | string | Ne |  |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| dir | int32_t | Yes |  |
+| sso | string | No |  |
 
 ## Odgovor
 
@@ -15,15 +15,14 @@ Vraća: [`GetCommentVoteUserNamesSuccessResponse`](https://github.com/FastCommen
 
 [inline-code-attrs-start title = 'Primjer getCommentVoteUserNames'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("comment-456");
-int32_t dir = 1;
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
-api->getCommentVoteUserNames(tenantId, commentId, dir, sso)
-.then([](std::shared_ptr<GetCommentVoteUserNamesSuccessResponse> resp){
-    auto result = resp ? resp : std::make_shared<GetCommentVoteUserNamesSuccessResponse>();
-    std::cout << "Fetched comment vote user names" << std::endl;
+auto task = api->getCommentVoteUserNames(
+    utility::conversions::to_string_t("my-tenant-123"),
+    utility::conversions::to_string_t("comment-456"),
+    static_cast<int32_t>(1),
+    boost::optional<utility::string_t>(utility::conversions::to_string_t("sso-token"))
+).then([](pplx::task<std::shared_ptr<GetCommentVoteUserNamesSuccessResponse>> t){
+    try{
+        auto response = t.get();
+    }catch(const std::exception&){ }
 });
 [inline-code-end]
-
----

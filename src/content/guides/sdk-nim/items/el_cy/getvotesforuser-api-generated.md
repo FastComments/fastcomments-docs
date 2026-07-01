@@ -4,8 +4,7 @@
 |------|------|----------|-------------|
 | tenantId | string | Ναι |  |
 | urlId | string | Ναι |  |
-| userId | string | Όχι |  |
-| anonUserId | string | Όχι |  |
+| options | GetVotesForUserOptions | Όχι |  |
 
 ## Απόκριση
 
@@ -15,17 +14,13 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα getVotesForUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getVotesForUser(
+let (optResp, httpResp) = client.getVotesForUser(
   tenantId = "my-tenant-123",
   urlId = "news/article-title",
-  userId = "user-789",
-  anonUserId = ""
+  options = GetVotesForUserOptions()
 )
-if response.isSome:
-  let votes = response.get()
-  echo "User votes retrieved"
-else:
-  echo "No votes found"
-[inline-code-end]
 
----
+if optResp.isSome:
+  let resp = optResp.get()
+  echo resp
+[inline-code-end]

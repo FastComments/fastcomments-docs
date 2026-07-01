@@ -1,10 +1,9 @@
----
 ## Parametri
 
 | Nome | Tipo | Obbligatorio | Descrizione |
 |------|------|--------------|-------------|
-| value | string | No |  |
-| sso | string | No |  |
+| tenantId | string | Sì |  |
+| options | const GetSearchPagesOptions& | Sì |  |
 
 ## Risposta
 
@@ -14,20 +13,20 @@ Restituisce: [`ModerationPageSearchResponse`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'Esempio di getSearchPages'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t value = U("getting-started");
-utility::string_t sso = U("user@example.com");
-boost::optional<utility::string_t> valueOpt = value;
-boost::optional<utility::string_t> ssoOpt = sso;
-api->getSearchPages(valueOpt, ssoOpt)
-.then([](pplx::task<std::shared_ptr<ModerationPageSearchResponse>> t){
-    try {
-        auto resp = t.get();
-        auto safeResp = resp ? resp : std::make_shared<ModerationPageSearchResponse>();
-        (void)safeResp;
-    } catch (const std::exception& e) {
-        (void)e;
-    }
-});
+GetSearchPagesOptions options;
+options.pageNumber = boost::optional<int>(1);
+options.pageSize = boost::optional<int>(50);
+options.searchTerm = boost::optional<utility::string_t>(U("spam"));
+
+api->getSearchPages(U("my-tenant-123"), options)
+    .then([](pplx::task<std::shared_ptr<ModerationPageSearchResponse>> task) {
+        try {
+            auto response = task.get();
+            // usa la risposta
+        } catch (const std::exception& e) {
+            // gestire l'errore
+        }
+    });
 [inline-code-end]
 
 ---

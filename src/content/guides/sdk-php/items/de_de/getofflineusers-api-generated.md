@@ -1,25 +1,24 @@
----
-Frühere Kommentatoren auf der Seite, die derzeit NICHT online sind. Nach displayName sortiert.
-Verwenden Sie dies, nachdem Sie /users/online erschöpft haben, um einen "Mitglieder"-Abschnitt darzustellen.
-Cursor-Paginierung auf commenterName: der Server durchläuft den partiellen {tenantId, urlId, commenterName}
-Index von afterName vorwärts über $gt, keine $skip-Kosten.
+Past commenters on the page who are NOT currently online. Sorted by displayName.  
+Use this after exhausting /users/online to render a "Members" section.  
+Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName}  
+index from afterName forward via $gt, no $skip cost.
 
 ## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Name | Typ | Ort | Erforderlich | Beschreibung |
+|------|-----|-----|--------------|--------------|
 | tenantId | string | path | Yes |  |
-| urlId | string | query | Yes | Page URL identifier (cleaned server-side). |
-| afterName | string | query | No | Cursor: pass nextAfterName from the previous response. |
-| afterUserId | string | query | No | Cursor tiebreaker: pass nextAfterUserId from the previous response. Required when afterName is set so name-ties don't drop entries. |
+| urlId | string | query | Yes | Seiten-URL-Identifikator (serverseitig bereinigt). |
+| afterName | string | query | No | Cursor: übergebe nextAfterName aus der vorherigen Antwort. |
+| afterUserId | string | query | No | Cursor-Tiebreaker: übergebe nextAfterUserId aus der vorherigen Antwort. Erforderlich, wenn afterName gesetzt ist, damit Namensgleichheiten keine Einträge entfernen. |
 
 ## Response
 
-Gibt zurück: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersOfflineResponse.php)
+Returns: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersOfflineResponse.php)
 
-## Beispiel
+## Example
 
-[inline-code-attrs-start title = 'getOfflineUsers Beispiel'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Beispiel für getOfflineUsers'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -31,17 +30,19 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     // Dies ist optional, `GuzzleHttp\Client` wird standardmäßig verwendet.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$url_id = 'url_id_example'; // string | Seiten-URL-Bezeichner (serverseitig bereinigt).
-$after_name = 'after_name_example'; // string | Cursor: übergeben Sie nextAfterName aus der vorherigen Antwort.
-$after_user_id = 'after_user_id_example'; // string | Cursor-Tiebreaker: übergeben Sie nextAfterUserId aus der vorherigen Antwort. Erforderlich, wenn afterName gesetzt ist, damit bei gleichen Namen keine Einträge verloren gehen.
+$url_id = 'url_id_example'; // string | Seiten-URL-Identifikator (serverseitig bereinigt).
+$options = [
+    'after_name' => 'after_name_example', // string | Cursor: übergebe nextAfterName aus der vorherigen Antwort.
+    'after_user_id' => 'after_user_id_example', // string | Cursor-Tiebreaker: übergebe nextAfterUserId aus der vorherigen Antwort. Erforderlich, wenn afterName gesetzt ist, damit Namensgleichheiten keine Einträge entfernen.
+];
+
 
 try {
-    $result = $apiInstance->getOfflineUsers($tenant_id, $url_id, $after_name, $after_user_id);
+    $result = $apiInstance->getOfflineUsers($tenant_id, $url_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getOfflineUsers: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

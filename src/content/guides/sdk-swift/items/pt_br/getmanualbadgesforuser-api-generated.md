@@ -1,8 +1,8 @@
----
 ## Parâmetros
 
 | Nome | Tipo | Localização | Obrigatório | Descrição |
-|------|------|----------|----------|-------------|
+|------|------|-------------|-------------|-----------|
+| tenantId | string | query | Sim |  |
 | badgesUserId | string | query | Não |  |
 | commentId | string | query | Não |  |
 | sso | string | query | Não |  |
@@ -13,16 +13,17 @@ Retorna: [`GetUserManualBadgesResponse`](https://github.com/FastComments/fastcom
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getManualBadgesForUser'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo getManualBadgesForUser'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Os exemplos de código a seguir ainda estão em beta. Para qualquer problema, por favor reporte via http://github.com/OpenAPITools/openapi-generator/issues/new
+// O seguinte exemplo de código ainda está em beta. Para qualquer problema, por favor reporte via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let badgesUserId = "badgesUserId_example" // String |  (opcional)
 let commentId = "commentId_example" // String |  (opcional)
 let sso = "sso_example" // String |  (opcional)
 
-ModerationAPI.getManualBadgesForUser(badgesUserId: badgesUserId, commentId: commentId, sso: sso) { (response, error) in
+ModerationAPI.getManualBadgesForUser(tenantId: tenantId, options: ModerationAPI.GetManualBadgesForUserOptions(badgesUserId: badgesUserId, commentId: commentId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -33,5 +34,3 @@ ModerationAPI.getManualBadgesForUser(badgesUserId: badgesUserId, commentId: comm
     }
 }
 [inline-code-end]
-
----

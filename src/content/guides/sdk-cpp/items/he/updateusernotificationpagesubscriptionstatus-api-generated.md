@@ -1,16 +1,15 @@
----
-הפעל או השבת התראות עבור דף. כאשר משתמשים מנויים לדף, נוצרים התראות עבור תגובות שורש חדשות, וגם
+אפשר או בטל התראות עבור דף. כאשר משתמשים מנויים לדף, נוצרות התראות עבור תגובות שורש חדשות, וגם
 
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| urlId | string | כן |  |
-| url | string | כן |  |
-| pageTitle | string | כן |  |
-| subscribedOrUnsubscribed | string | כן |  |
-| sso | string | לא |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| url | string | Yes |  |
+| pageTitle | string | Yes |  |
+| subscribedOrUnsubscribed | string | Yes |  |
+| sso | string | No |  |
 
 ## תגובה
 
@@ -18,23 +17,19 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל־updateUserNotificationPageSubscriptionStatus'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus דוגמה'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> sso(utility::conversions::to_string_t("sso-token-abc123"));
-api->updateUserNotificationPageSubscriptionStatus(
-    utility::conversions::to_string_t("my-tenant-123"),
-    utility::conversions::to_string_t("article-456"),
-    utility::conversions::to_string_t("https://www.example.com/posts/456"),
-    utility::conversions::to_string_t("How to Test C++ SDK"),
-    utility::conversions::to_string_t("subscribed"),
-    sso
-).then([](pplx::task<std::shared_ptr<UpdateUserNotificationPageSubscriptionStatusResponse>> t){
-    try {
-        auto resp = t.get();
-        auto copy = std::make_shared<UpdateUserNotificationPageSubscriptionStatusResponse>(*resp);
-        (void)copy;
-    } catch (const std::exception&) { }
-});
+utility::string_t tenantId = U("my-tenant-123");
+utility::string_t urlId = U("page-456");
+utility::string_t url = U("https://example.com/articles/awesome-article");
+utility::string_t pageTitle = U("Awesome Article");
+utility::string_t subscription = U("subscribed");
+boost::optional<utility::string_t> sso = boost::make_optional<utility::string_t>(U("sso-token-789"));
+
+api->updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscription, sso)
+    .then([](std::shared_ptr<UpdateUserNotificationPageSubscriptionStatusResponse> resp) {
+        // עיבוד resp אם נדרש
+    });
 [inline-code-end]
 
 ---

@@ -1,8 +1,8 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Sì |  |
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+|------|------|-----------|--------------|-------------|
+| tenantId | string | query | Yes |  |
 | commentId | string | query | No |  |
 | externalId | string | query | No |  |
 | eventType | string | query | No |  |
@@ -17,15 +17,15 @@ Restituisce: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di getPendingWebhookEvents'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio getPendingWebhookEvents'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configura l'autenticazione con la chiave API: api_key
+// Configura l'autorizzazione della chiave API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Decommenta la riga sottostante per impostare il prefisso (es. Bearer) per la chiave API, se necessario
+// Decommenta qui sotto per impostare il prefisso (es. Bearer) per la chiave API, se necessario
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
@@ -35,21 +35,23 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$comment_id = 'comment_id_example'; // string
-$external_id = 'external_id_example'; // string
-$event_type = 'event_type_example'; // string
-$type = 'type_example'; // string
-$domain = 'domain_example'; // string
-$attempt_count_gt = 3.4; // float
-$skip = 3.4; // float
+$options = [
+    'comment_id' => 'comment_id_example', // string
+    'external_id' => 'external_id_example', // string
+    'event_type' => 'event_type_example', // string
+    'type' => 'type_example', // string
+    'domain' => 'domain_example', // string
+    'attempt_count_gt' => 3.4, // float
+    'skip' => 3.4, // float
+];
+
 
 try {
-    $result = $apiInstance->getPendingWebhookEvents($tenant_id, $comment_id, $external_id, $event_type, $type, $domain, $attempt_count_gt, $skip);
+    $result = $apiInstance->getPendingWebhookEvents($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getPendingWebhookEvents: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

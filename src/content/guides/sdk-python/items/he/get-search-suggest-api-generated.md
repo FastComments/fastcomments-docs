@@ -2,8 +2,9 @@
 
 | שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| text-search | string | שאילתה | לא |  |
-| sso | string | שאילתה | לא |  |
+| tenantId | string | query | כן |  |
+| text-search | string | query | לא |  |
+| sso | string | query | לא |  |
 
 ## תגובה
 
@@ -11,29 +12,31 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-get_search_suggest'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה get_search_suggest'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetSearchSuggestOptions
 from client.models.moderation_suggest_response import ModerationSuggestResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת ה-host היא אופציונלית ומוגדרת כבררת מחדל ל-https://fastcomments.com
-# עיינו ב-configuration.py לרשימה של כל פרמטרי הקונפיגורציה הנתמכים.
+# הגדרת המארח היא אופציונלית והמחדל הוא https://fastcomments.com
+# ראו configuration.py עבור רשימה של כל פרמטרי התצורה הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# הכנסו להקשר עם מופע של לקוח ה-API
+# הכנסו להקשר עם מופע של לקוח ה‑API
 with client.ApiClient(configuration) as api_client:
-    # יצירת מופע של מחלקת ה-API
+    # צור מופע של מחלקת ה‑API
     api_instance = client.ModerationApi(api_client)
-    text_search = 'text_search_example' # str |  (אופציונלי)
-    sso = 'sso_example' # str |  (אופציונלי)
+    tenant_id = 'tenant_id_example' # str | 
+    text_search = 'text_search_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_search_suggest(text_search=text_search, sso=sso)
+        api_response = api_instance.get_search_suggest(tenant_id, GetSearchSuggestOptions(text_search=text_search, sso=sso))
         print("The response of ModerationApi->get_search_suggest:\n")
         pprint(api_response)
     except Exception as e:

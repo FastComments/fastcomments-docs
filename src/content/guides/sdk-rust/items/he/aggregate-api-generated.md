@@ -1,15 +1,13 @@
-מאגד מסמכים על ידי קיבוצם (אם groupBy מסופק) ויישום מספר פעולות.
-
-נתמכות פעולות שונות (למשל sum, countDistinct, avg וכו').
+Aggregates מסמכים על‑ידי קיבוץ שלהם (אם groupBy סופק) ויישום של מספר פעולות. פעולות שונות (למשל sum, countDistinct, avg, וכו׳) נתמכות.
 
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | כן |  |
-| aggregation_request | models::AggregationRequest | כן |  |
-| parent_tenant_id | String | לא |  |
-| include_stats | bool | לא |  |
+| tenant_id | String | Yes |  |
+| aggregation_request | models::AggregationRequest | Yes |  |
+| parent_tenant_id | String | No |  |
+| include_stats | bool | No |  |
 
 ## תגובה
 
@@ -17,35 +15,18 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-aggregate'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה לצבירה'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params = AggregateParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    aggregation_request: models::AggregationRequest {
-        predicates: Some(vec![
-            models::QueryPredicate {
-                field: "path".to_string(),
-                operator: "EQUALS".to_string(),
-                values: Some(vec![
-                    models::QueryPredicateValue { value: "news/article".to_string() }
-                ]),
-            }
-        ]),
-        operations: vec![
-            models::AggregationOperation {
-                op_type: models::AggregationOpType::COUNT,
-                field: Some("comment_id".to_string()),
-                alias: Some("total_comments".to_string()),
-            }
-        ],
-        sort: Some(vec![
-            models::AggregationRequestSort { field: "total_comments".to_string(), direction: "DESC".to_string() }
-        ]),
-    },
-    parent_tenant_id: Some("acme-parent-tenant".to_string()),
-    include_stats: Some(true),
-};
-let aggregate_response: AggregateResponse = aggregate(&configuration, params).await?;
+async fn example() -> Result<(), Error> {
+    let config = configuration::Configuration::default();
+    let aggregation_request = models::AggregationRequest::default();
+    let params = AggregateParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        aggregation_request,
+        parent_tenant_id: Some("global-tenant".to_string()),
+        include_stats: Some(true),
+    };
+    let _response = aggregate(&config, params).await?;
+    Ok(())
+}
 [inline-code-end]
-
----

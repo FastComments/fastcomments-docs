@@ -1,23 +1,39 @@
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
 | commentId | string | Da |  |
 | adjustCommentVotesParams | AdjustCommentVotesParams | Da |  |
+| broadcastId | string | Ne |  |
+| tenantId | string | Ne |  |
 | sso | string | Ne |  |
 
 ## Odgovor
 
-Vraća: [`AdjustVotesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AdjustVotesResponse.ts)
+Vraća: [`PostAdjustCommentVotesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostAdjustCommentVotesResponse.ts)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer postAdjustCommentVotes'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postAdjustCommentVotes Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const commentId: string = "cmt_8f3a2b7d4e";
-const adjustCommentVotesParams: AdjustCommentVotesParams = { delta: 1, reason: "useful", source: "web" } as AdjustCommentVotesParams;
-const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.exampleSignature";
-const result: AdjustVotesResponse = await postAdjustCommentVotes(commentId, adjustCommentVotesParams, sso);
+const commentId: string = "cmt_9f8b7a6d";
+
+const adjustParams: AdjustCommentVotesParams = {
+  voteDelta: 1,
+  // dodatna polja prema potrebi AdjustCommentVotesParams
+};
+
+const broadcastId: string = "brd_20230915";
+const tenantId: string = "tenant_42";
+const sso: string = "sso-token-abc123";
+
+const result: PostAdjustCommentVotesResponse = await postAdjustCommentVotes(
+  commentId,
+  adjustParams,
+  broadcastId,
+  tenantId,
+  sso
+);
 [inline-code-end]
 
 ---

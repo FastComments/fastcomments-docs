@@ -1,30 +1,43 @@
 ## Παράμετροι
 
-| Name | Type | Required | Description |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
-| tenantId | string | Ναι |  |
-| commentId | string | Ναι |  |
-| urlId | string | Ναι |  |
-| broadcastId | string | Ναι |  |
-| voteBodyParams | VoteBodyParams | Ναι |  |
-| sessionId | string | Όχι |  |
-| sso | string | Όχι |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| urlId | string | Yes |  |
+| broadcastId | string | Yes |  |
+| voteBodyParams | VoteBodyParams | Yes |  |
+| sessionId | string | No |  |
+| sso | string | No |  |
 
 ## Απάντηση
 
-Επιστρέφει: [`VoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/VoteResponse.ts)
+Επιστρέφει: [`VoteCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/VoteCommentResponse.ts)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα voteComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7b2f9c';
-const commentId: string = 'cmt_4a9e2d';
-const urlId: string = 'articles/2026/new-features';
-const broadcastId: string = 'brd_1f3a9b';
-const voteBodyParams: VoteBodyParams = { vote: 'up' };
-const sessionId: string = 'sess_ab12cd34';
-const voteResponse: VoteResponse = await voteComment(tenantId, commentId, urlId, broadcastId, voteBodyParams, sessionId);
-[inline-code-end]
+const tenantId: string = "acme-corp";
+const commentId: string = "cmt_9f8e7d6c";
+const urlId: string = "url_123456";
+const broadcastId: string = "bcast_2024_01";
 
----
+const voteBodyParams: VoteBodyParams = {
+  vote: "up",               // π.χ., "up" | "down"
+  weight: 1,                // προαιρετικό βάρος της ψήφου
+};
+
+const sessionId: string = "sess_abc123def";
+const sso: string = "sso_token_xyz";
+
+const result: VoteCommentResponse = await voteComment(
+  tenantId,
+  commentId,
+  urlId,
+  broadcastId,
+  voteBodyParams,
+  sessionId,
+  sso
+);
+[inline-code-end]

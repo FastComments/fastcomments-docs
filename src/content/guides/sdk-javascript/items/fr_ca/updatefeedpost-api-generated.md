@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Nom | Type | Obligatoire | Description |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Oui |  |
 | id | string | Oui |  |
@@ -8,36 +8,30 @@
 
 ## Réponse
 
-Retourne: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Renvoie : [`UpdateFeedPostResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateFeedPostResponse.ts)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de updateFeedPost'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateFeedPost Exemple'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-779';
-const id: string = 'post_5f1b9c3a';
-const asset: FeedPostMediaItemAsset = {
-  url: 'https://cdn.acme.com/images/cover.jpg',
-  type: 'image/jpeg',
-  width: 1200,
-  height: 800
-};
-const mediaItem: FeedPostMediaItem = {
-  id: 'media_12f',
-  caption: 'Event highlight',
-  assets: [asset]
-};
-const link: FeedPostLink = {
-  url: 'https://acme.com/events/2026',
-  title: 'Event details'
-};
+const tenantId: string = "tenant_3421";
+const postId: string = "feedpost_a9b8c7";
+
 const feedPost: FeedPost = {
-  title: 'June Product Launch',
-  content: '<p>Join us for the new product demo.</p>',
-  published: true,
-  media: [mediaItem],
-  links: [link],
-  authorId: 'user_93d'
+  content: "We've refreshed the announcement with the latest project milestones.",
+  media: [
+    {
+      type: "image",
+      url: "https://assets.example.com/images/milestone.png",
+      caption: "Project Milestones"
+    } as FeedPostMediaItem
+  ],
+  link: {
+    url: "https://example.com/project-updates",
+    title: "Project Updates",
+    description: "Read about the recent progress and upcoming goals."
+  } as FeedPostLink
 };
-const result: APIEmptyResponse = await updateFeedPost(tenantId, id, feedPost);
+
+const result: UpdateFeedPostResponse = await updateFeedPost(tenantId, postId, feedPost);
 [inline-code-end]

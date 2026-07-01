@@ -1,34 +1,29 @@
-## Параметры
+## Parameters
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| id | String | Да |  |
-| update_user_badge_params | models::UpdateUserBadgeParams | Да |  |
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
+| update_user_badge_params | models::UpdateUserBadgeParams | Yes |  |
 
-## Ответ
+## Response
 
-Возвращает: [`ApiEmptySuccessResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_success_response.rs)
+Повертає: [`ApiEmptySuccessResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_success_response.rs)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'Пример update_user_badge'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'update_user_badge Приклад'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_update_badge() -> Result<ApiEmptySuccessResponse, Error> {
-    let params: UpdateUserBadgeParams = UpdateUserBadgeParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        id: "badge-8742".to_string(),
+async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = UpdateUserBadgeParams {
+        tenant_id: "acme-corp".to_string(),
+        id: "user-42".to_string(),
         update_user_badge_params: models::UpdateUserBadgeParams {
-            name: Some("Top Contributor".to_string()),
-            description: Some("Awarded for 100 helpful comments".to_string()),
-            icon_url: Some("https://assets.acme.com/badges/top-contributor.png".to_string()),
-            expires_at: None,
-            is_visible: Some(true),
+            badge_name: "contributor".to_string(),
+            expires_at: Some("2025-12-31T23:59:59Z".to_string()),
         },
     };
-    let response: ApiEmptySuccessResponse = update_user_badge(&configuration, params).await?;
-    Ok(response)
+    let _resp = update_user_badge(configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

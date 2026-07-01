@@ -1,8 +1,8 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Zorunlu | Açıklama |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Hayır |  |
+| tenantId | string | query | Evet |  |
 
 ## Yanıt
 
@@ -28,15 +28,14 @@ public class Example {
     // API anahtarı yetkilendirmesini yapılandır: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Aşağıdaki satırın başındaki yorumu kaldırarak API anahtarına bir önek ayarlayın, örn. "Token" (varsayılan null)
+    // API anahtarı için bir önek ayarlamak için aşağıdaki satırın yorumunu kaldırın, ör. "Token" (varsayılan null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     BulkCreateHashTagsBody bulkCreateHashTagsBody = new BulkCreateHashTagsBody(); // BulkCreateHashTagsBody | 
     try {
-      BulkCreateHashTagsResponse result = apiInstance.addHashTagsBulk()
-            .tenantId(tenantId)
+      BulkCreateHashTagsResponse result = apiInstance.addHashTagsBulk(tenantId)
             .bulkCreateHashTagsBody(bulkCreateHashTagsBody)
             .execute();
       System.out.println(result);

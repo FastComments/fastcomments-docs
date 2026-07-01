@@ -1,18 +1,18 @@
 ## Parameter
 
-| Name | Typ | Ort | Erforderlich | Beschreibung |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| commentId | string | query | Nein |  |
-| externalId | string | query | Nein |  |
-| eventType | string | query | Nein |  |
-| type | string | query | Nein |  |
-| domain | string | query | Nein |  |
-| attemptCountGT | number | query | Nein |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | query | No |  |
+| externalId | string | query | No |  |
+| eventType | string | query | No |  |
+| type | string | query | No |  |
+| domain | string | query | No |  |
+| attemptCountGT | number | query | No |  |
 
 ## Antwort
 
-Gibt zurück: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPendingWebhookEventCountResponse.php)
+Rückgabe: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPendingWebhookEventCountResponse.php)
 
 ## Beispiel
 
@@ -22,28 +22,32 @@ Gibt zurück: [`GetPendingWebhookEventCountResponse`](https://github.com/FastCom
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// API-Schlüssel-Authentifizierung konfigurieren: api_key
+// Konfigurieren Sie die API-Schlüsselautorisation: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Entfernen Sie die Kommentarzeichen unten, um bei Bedarf ein Präfix (z. B. Bearer) für den API-Schlüssel einzurichten
+// Entfernen Sie die Kommentarzeichen unten, um ein Präfix (z. B. Bearer) für den API-Schlüssel einzurichten, falls benötigt
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
     // Wenn Sie einen benutzerdefinierten HTTP-Client verwenden möchten, übergeben Sie Ihren Client, der `GuzzleHttp\ClientInterface` implementiert.
-    // Dies ist optional, `GuzzleHttp\Client` wird als Standard verwendet.
+    // Dies ist optional, `GuzzleHttp\Client` wird standardmäßig verwendet.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$comment_id = 'comment_id_example'; // string
-$external_id = 'external_id_example'; // string
-$event_type = 'event_type_example'; // string
-$type = 'type_example'; // string
-$domain = 'domain_example'; // string
-$attempt_count_gt = 3.4; // float
+$options = [
+    'comment_id' => 'comment_id_example', // string
+    'external_id' => 'external_id_example', // string
+    'event_type' => 'event_type_example', // string
+    'type' => 'type_example', // string
+    'domain' => 'domain_example', // string
+    'attempt_count_gt' => 3.4, // float
+];
+
 
 try {
-    $result = $apiInstance->getPendingWebhookEventCount($tenant_id, $comment_id, $external_id, $event_type, $type, $domain, $attempt_count_gt);
+    $result = $apiInstance->getPendingWebhookEventCount($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getPendingWebhookEventCount: ', $e->getMessage(), PHP_EOL;

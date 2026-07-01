@@ -1,14 +1,16 @@
 ## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
-|------|------|----------|----------|-------------|
-| commentId | string | Pfad | Ja |  |
-| approved | boolean | Abfrage | Nein |  |
-| sso | string | Abfrage | Nein |  |
+|------|------|-----|--------------|--------------|
+| tenantId | string | query | Ja |  |
+| commentId | string | path | Ja |  |
+| approved | boolean | query | Nein |  |
+| broadcastId | string | query | Nein |  |
+| sso | string | query | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`SetCommentApprovedResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/set_comment_approved_response.rb)
+Rückgabe: [`SetCommentApprovedResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/set_comment_approved_response.rb)
 
 ## Beispiel
 
@@ -18,15 +20,17 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 comment_id = 'comment_id_example' # String | 
 opts = {
   approved: true, # Boolean | 
+  broadcast_id: 'broadcast_id_example', # String | 
   sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.post_set_comment_approval_status(comment_id, opts)
+  result = api_instance.post_set_comment_approval_status(tenant_id, comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_set_comment_approval_status: #{e}"

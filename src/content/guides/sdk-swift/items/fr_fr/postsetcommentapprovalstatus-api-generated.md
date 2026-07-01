@@ -2,9 +2,11 @@
 
 | Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Oui |  |
-| approved | boolean | query | Non |  |
-| sso | string | query | Non |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| approved | boolean | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Réponse
 
@@ -12,16 +14,18 @@ Retourne : [`SetCommentApprovedResponse`](https://github.com/FastComments/fastco
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de postSetCommentApprovalStatus'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple postSetCommentApprovalStatus'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Les exemples de code suivants sont encore en bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
+// La suite des exemples de code est encore en version bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let commentId = "commentId_example" // String | 
-let approved = true // Bool |  (optionnel)
-let sso = "sso_example" // String |  (optionnel)
+let tenantId = "tenantId_example" // Chaîne | 
+let commentId = "commentId_example" // Chaîne | 
+let approved = true // Booléen |  (optionnel)
+let broadcastId = "broadcastId_example" // Chaîne |  (optionnel)
+let sso = "sso_example" // Chaîne |  (optionnel)
 
-ModerationAPI.postSetCommentApprovalStatus(commentId: commentId, approved: approved, sso: sso) { (response, error) in
+ModerationAPI.postSetCommentApprovalStatus(tenantId: tenantId, commentId: commentId, options: ModerationAPI.PostSetCommentApprovalStatusOptions(approved: approved, broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

@@ -1,8 +1,8 @@
 ## Parametreler
 
-| Ad | Tür | Yer | Zorunlu | Açıklama |
+| İsim | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Evet |  |
+| tenantId | string | query | Yes |  |
 
 ## Yanıt
 
@@ -16,20 +16,22 @@ Döndürür: [`CreateEmailTemplateResponse`](https://github.com/FastComments/fas
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// API anahtar yetkilendirmesini yapılandır: api_key
+// API anahtarı yetkilendirmesini yapılandır: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Gerekirse API anahtarı için öneki (ör. Bearer) ayarlamak için aşağıdaki satırın yorumunu kaldırın
+// Gerekirse API anahtarı için önek (örn. Bearer) ayarlamak için aşağıdaki satırı yorumdan çıkarın
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Özel bir HTTP istemcusu kullanmak isterseniz, `GuzzleHttp\ClientInterface`'i uygulayan istemcinizi geçin.
-    // Bu isteğe bağlıdır; varsayılan olarak `GuzzleHttp\Client` kullanılacaktır.
+    // Özel bir http istemcisi kullanmak istiyorsanız, `GuzzleHttp\ClientInterface`'i uygulayan istemcinizi geçirin.
+    // Bu isteğe bağlıdır, varsayılan olarak `GuzzleHttp\Client` kullanılacaktır.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $create_email_template_body = new \FastComments\Client\Model\CreateEmailTemplateBody(); // \FastComments\Client\Model\CreateEmailTemplateBody
+
 
 try {
     $result = $apiInstance->createEmailTemplate($tenant_id, $create_email_template_body);

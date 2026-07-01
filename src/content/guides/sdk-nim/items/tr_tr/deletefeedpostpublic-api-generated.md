@@ -1,11 +1,10 @@
 ## Parametreler
 
-| Name | Type | Required | Description |
+| Ad | Tür | Zorunlu | Açıklama |
 |------|------|----------|-------------|
-| tenantId | string | Evet |  |
-| postId | string | Hayır |  |
-| broadcastId | string | Hayır |  |
-| sso | string | Hayır |  |
+| tenantId | string | Yes |  |
+| postId | string | No |  |
+| options | DeleteFeedPostPublicOptions | No |  |
 
 ## Yanıt
 
@@ -15,12 +14,12 @@ Döndürür: [`Option[DeleteFeedPostPublicResponse]`](https://github.com/FastCom
 
 [inline-code-attrs-start title = 'deleteFeedPostPublic Örneği'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteFeedPostPublic(tenantId = "my-tenant-123", postId = "", broadcastId = "", sso = "")
-if response.isSome:
-  let deleted = response.get()
-  echo "Delete successful"
-else:
-  echo "Delete failed"
-[inline-code-end]
+let (response, httpResponse) = client.deleteFeedPostPublic(
+  tenantId = "my-tenant-123",
+  postId = "news/article-42",
+  options = DeleteFeedPostPublicOptions()
+)
 
----
+if response.isSome:
+  let deleteResp = response.get()
+[inline-code-end]

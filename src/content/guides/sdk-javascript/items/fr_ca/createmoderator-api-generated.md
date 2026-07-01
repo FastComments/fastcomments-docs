@@ -2,25 +2,29 @@
 
 | Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
-| tenantId | string | Oui |  |
-| createModeratorBody | CreateModeratorBody | Oui |  |
+| tenantId | string | Yes |  |
+| createModeratorBody | CreateModeratorBody | Yes |  |
 
 ## Réponse
 
-Renvoie : [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateModeratorResponse.ts)
+Renvoie : [`CreateModeratorResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateModeratorResponse1.ts)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de createModerator'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createModerator Exemple'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_83f4b7a2';
-const createModeratorBody: CreateModeratorBody = {
-  email: 'renee.alvarez@acme-corp.com',
-  fullName: 'Renee Alvarez',
-  roles: ['content_moderator'],
-  notify: true // paramètre optionnel démontré
-};
-const result: CreateModeratorResponse = await createModerator(tenantId, createModeratorBody);
+async function runExample() {
+  const tenantId: string = "tenant_9876";
+  const moderatorPayload: CreateModeratorBody = {
+    name: "Alice Johnson",
+    email: "alice.johnson@example.com"
+    // les champs optionnels comme la description sont omis
+  };
+  const result: CreateModeratorResponse1 = await createModerator(tenantId, moderatorPayload);
+  console.log(result);
+}
+
+runExample();
 [inline-code-end]
 
 ---

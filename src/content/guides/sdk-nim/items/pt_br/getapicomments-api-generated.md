@@ -1,16 +1,9 @@
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|----------|-------------|
-| page | float64 | Não |  |
-| count | float64 | Não |  |
-| textSearch | string | Não |  |
-| byIPFromComment | string | Não |  |
-| filters | string | Não |  |
-| searchFilters | string | Não |  |
-| sorts | string | Não |  |
-| demo | bool | Não |  |
-| sso | string | Não |  |
+|------|------|-------------|-----------|
+| tenantId | string | Sim |  |
+| options | GetApiCommentsOptions | Não |  |
 
 ## Resposta
 
@@ -18,25 +11,10 @@ Retorna: [`Option[ModerationAPIGetCommentsResponse]`](https://github.com/FastCom
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getApiComments'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getApiComments Exemplo'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getApiComments(
-  page = 1.0,
-  count = 25.0,
-  textSearch = "opinion on climate summit",
-  byIPFromComment = "198.51.100.23",
-  filters = "status:approved",
-  searchFilters = "section:world",
-  sorts = "-createdAt",
-  demo = false,
-  sso = "sso-user-982bf"
-)
-
-if response.isSome:
-  let commentsResp = response.get()
-  echo "Retrieved comments response"
-else:
-  echo "No comments returned, HTTP status: ", httpResponse.status
+let (maybeResp, httpResp) = client.getApiComments(tenantId = "my-tenant-123", options = GetApiCommentsOptions())
+if maybeResp.isSome:
+  let resp = maybeResp.get()
+  # further processing can be done with `resp`
 [inline-code-end]
-
----

@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Name | Type | Required | Description |
+| Nombre | Tipo | Obligatorio | Descripción |
 |------|------|----------|-------------|
 | tenantId | string | Sí |  |
 | id | string | Sí |  |
@@ -8,20 +8,29 @@
 
 ## Respuesta
 
-Devuelve: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Devuelve: [`ReplaceTenantPackageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ReplaceTenantPackageResponse.ts)
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de replaceTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo replaceTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f3b1c';
-const id: string = 'pkg_pro_2026';
-const replaceTenantPackageBody: ReplaceTenantPackageBody = {
-  planCode: 'pro_annual',
-  seats: 12,
-  expiresAt: '2027-01-01T00:00:00Z',
-  autoRenew: true, // indicador opcional que demuestra un parámetro opcional
-  notes: 'Upgrade for team collaboration'
-};
-const result: APIEmptyResponse = await replaceTenantPackage(tenantId, id, replaceTenantPackageBody);
+(async () => {
+    const tenantId: string = "acme-corp-tenant-01";
+    const packageId: string = "pkg-2024-annual";
+
+    const config: CustomConfigParameters = {
+        // campos de configuración personalizados aquí
+    };
+
+    const body: ReplaceTenantPackageBody = {
+        name: "Enterprise Package",
+        // configuración personalizada opcional
+        customConfig: config,
+    };
+
+    const response: ReplaceTenantPackageResponse = await replaceTenantPackage(tenantId, packageId, body);
+    console.log(response);
+})();
 [inline-code-end]
+
+---

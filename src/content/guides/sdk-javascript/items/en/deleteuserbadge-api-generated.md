@@ -7,14 +7,17 @@
 
 ## Response
 
-Returns: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptySuccessResponse.ts)
+Returns: [`DeleteUserBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteUserBadgeResponse.ts)
 
 ## Example
 
 [inline-code-attrs-start title = 'deleteUserBadge Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-42';
-const badgeId: string = 'badge_9f8b2c1d';
-const includeAudit: boolean | undefined = undefined; // optional flag (not required by deleteUserBadge)
-const result: APIEmptySuccessResponse = await deleteUserBadge(tenantId, badgeId);
+async function exampleDeleteBadge(): Promise<void> {
+  const tenantId: string = "tenant_9f8b7c6a";
+  const badgeId: string = "badge_4e3d2c1b";
+  const result: DeleteUserBadgeResponse = await deleteUserBadge(tenantId, badgeId);
+  console.log(result);
+}
+exampleDeleteBadge();
 [inline-code-end]

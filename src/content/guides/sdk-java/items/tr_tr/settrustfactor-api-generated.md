@@ -1,7 +1,8 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | userId | string | query | No |  |
 | trustFactor | string | query | No |  |
 | sso | string | query | No |  |
@@ -27,11 +28,12 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
-    String userId = "userId_example"; // Dize | 
-    String trustFactor = "trustFactor_example"; // Dize | 
-    String sso = "sso_example"; // Dize | 
+    String tenantId = "tenantId_example"; // String |
+    String userId = "userId_example"; // String |
+    String trustFactor = "trustFactor_example"; // String |
+    String sso = "sso_example"; // String |
     try {
-      SetUserTrustFactorResponse result = apiInstance.setTrustFactor()
+      SetUserTrustFactorResponse result = apiInstance.setTrustFactor(tenantId)
             .userId(userId)
             .trustFactor(trustFactor)
             .sso(sso)

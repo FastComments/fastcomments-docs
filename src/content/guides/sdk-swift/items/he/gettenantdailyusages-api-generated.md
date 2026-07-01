@@ -1,13 +1,12 @@
----
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | שאילתה | כן |  |
-| yearNumber | number | שאילתה | לא |  |
-| monthNumber | number | שאילתה | לא |  |
-| dayNumber | number | שאילתה | לא |  |
-| skip | number | שאילתה | לא |  |
+| tenantId | string | query | Yes |  |
+| yearNumber | number | query | No |  |
+| monthNumber | number | query | No |  |
+| dayNumber | number | query | No |  |
+| skip | number | query | No |  |
 
 ## תגובה
 
@@ -15,9 +14,9 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה של getTenantDailyUsages'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getTenantDailyUsages'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// דוגמאות הקוד הבאות עדיין בבטא. עבור כל בעיה, דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// הקוד הבא עדיין בניסוי. לכל בעיה, אנא דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -26,7 +25,7 @@ let monthNumber = 987 // Double |  (אופציונלי)
 let dayNumber = 987 // Double |  (אופציונלי)
 let skip = 987 // Double |  (אופציונלי)
 
-DefaultAPI.getTenantDailyUsages(tenantId: tenantId, yearNumber: yearNumber, monthNumber: monthNumber, dayNumber: dayNumber, skip: skip) { (response, error) in
+DefaultAPI.getTenantDailyUsages(tenantId: tenantId, options: DefaultAPI.GetTenantDailyUsagesOptions(yearNumber: yearNumber, monthNumber: monthNumber, dayNumber: dayNumber, skip: skip)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -37,5 +36,3 @@ DefaultAPI.getTenantDailyUsages(tenantId: tenantId, yearNumber: yearNumber, mont
     }
 }
 [inline-code-end]
-
----

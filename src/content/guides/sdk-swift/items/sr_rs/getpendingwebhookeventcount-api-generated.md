@@ -1,35 +1,35 @@
-## Параметри
+## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| commentId | string | query | Не |  |
-| externalId | string | query | Не |  |
-| eventType | string | query | Не |  |
-| type | string | query | Не |  |
-| domain | string | query | Не |  |
-| attemptCountGT | number | query | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| commentId | string | query | No |  |
+| externalId | string | query | No |  |
+| eventType | string | query | No |  |
+| type | string | query | No |  |
+| domain | string | query | No |  |
+| attemptCountGT | number | query | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPendingWebhookEventCountResponse.swift)
+Vraća: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPendingWebhookEventCountResponse.swift)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'getPendingWebhookEventCount Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getPendingWebhookEventCount Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи примери кода су и даље бета. За било какав проблем, пријавите га преко http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledeći uzorci koda su i dalje beta. Za bilo koji problem, molimo prijavite putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let commentId = "commentId_example" // String |  (опционо)
-let externalId = "externalId_example" // String |  (опционо)
-let eventType = "eventType_example" // String |  (опционо)
-let type = "type_example" // String |  (опционо)
-let domain = "domain_example" // String |  (опционо)
-let attemptCountGT = 987 // Double |  (опционо)
+let commentId = "commentId_example" // String |  (opciono)
+let externalId = "externalId_example" // String |  (opciono)
+let eventType = "eventType_example" // String |  (opciono)
+let type = "type_example" // String |  (opciono)
+let domain = "domain_example" // String |  (opciono)
+let attemptCountGT = 987 // Double |  (opciono)
 
-DefaultAPI.getPendingWebhookEventCount(tenantId: tenantId, commentId: commentId, externalId: externalId, eventType: eventType, type: type, domain: domain, attemptCountGT: attemptCountGT) { (response, error) in
+DefaultAPI.getPendingWebhookEventCount(tenantId: tenantId, options: DefaultAPI.GetPendingWebhookEventCountOptions(commentId: commentId, externalId: externalId, eventType: eventType, type: type, domain: domain, attemptCountGT: attemptCountGT)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -40,5 +40,3 @@ DefaultAPI.getPendingWebhookEventCount(tenantId: tenantId, commentId: commentId,
     }
 }
 [inline-code-end]
-
----

@@ -1,13 +1,13 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Sí |  |
-| urlId | string | query | Sí |  |
-| usernameStartsWith | string | query | No |  |
-| mentionGroupIds | array | query | No |  |
-| sso | string | query | No |  |
-| searchSection | string | query | No |  |
+| tenantId | string | ruta | Sí |  |
+| urlId | string | consulta | Sí |  |
+| usernameStartsWith | string | consulta | No |  |
+| mentionGroupIds | array | consulta | No |  |
+| sso | string | consulta | No |  |
+| searchSection | string | consulta | No |  |
 
 ## Respuesta
 
@@ -15,19 +15,19 @@ Devuelve: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-swi
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de searchUsers'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'searchUsers Ejemplo'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Los siguientes ejemplos de código aún están en beta. Para cualquier problema, por favor repórtelo a través de http://github.com/OpenAPITools/openapi-generator/issues/new
+// Los siguientes ejemplos de código están todavía en beta. Para cualquier problema, por favor informe vía http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
-let usernameStartsWith = "usernameStartsWith_example" // String |  (opcional)
-let mentionGroupIds = ["inner_example"] // [String] |  (opcional)
-let sso = "sso_example" // String |  (opcional)
-let searchSection = "searchSection_example" // String |  (opcional)
+let usernameStartsWith = "usernameStartsWith_example" // String |  (optional)
+let mentionGroupIds = ["inner_example"] // [String] |  (optional)
+let sso = "sso_example" // String |  (optional)
+let searchSection = "searchSection_example" // String |  (optional)
 
-PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, usernameStartsWith: usernameStartsWith, mentionGroupIds: mentionGroupIds, sso: sso, searchSection: searchSection) { (response, error) in
+PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, options: PublicAPI.SearchUsersOptions(usernameStartsWith: usernameStartsWith, mentionGroupIds: mentionGroupIds, sso: sso, searchSection: searchSection)) { (response, error) in
     guard error == nil else {
         print(error)
         return

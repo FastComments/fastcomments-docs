@@ -1,11 +1,10 @@
----
 ## Paramètres
 
-| Name | Type | Required | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
-| tenantId | string | Oui |  |
-| urlId | string | Oui |  |
-| id | string | Oui |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| id | string | Yes |  |
 
 ## Réponse
 
@@ -13,18 +12,15 @@ Renvoie : [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-cpp
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de deleteV2PageReact'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple deleteV2PageReact'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> reason(U("cleanup"));
-utility::string_t tenantId(U("my-tenant-123"));
-utility::string_t urlId(U("blog/post-2024"));
-utility::string_t id(U("react-0a1b2c3d"));
-auto deleteTask = api->deleteV2PageReact(tenantId, urlId, id)
-    .then([](std::shared_ptr<CreateV1PageReact> result){
-        auto out = result ? result : std::make_shared<CreateV1PageReact>();
-        return out;
-    });
-deleteTask.wait();
-[inline-code-end]
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto urlId = utility::conversions::to_string_t("page-456");
+auto reactId = utility::conversions::to_string_t("react-789");
+boost::optional<utility::string_t> correlationId = utility::conversions::to_string_t("corr-001");
 
----
+api->deleteV2PageReact(tenantId, urlId, reactId)
+   .then([](pplx::task<std::shared_ptr<CreateV1PageReact>> t) {
+        auto result = t.get();
+    });
+[inline-code-end]

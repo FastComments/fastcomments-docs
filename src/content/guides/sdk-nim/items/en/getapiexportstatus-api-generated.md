@@ -2,8 +2,8 @@
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| batchJobId | string | No |  |
-| sso | string | No |  |
+| tenantId | string | Yes |  |
+| options | GetApiExportStatusOptions | No |  |
 
 ## Response
 
@@ -13,10 +13,11 @@ Returns: [`Option[ModerationExportStatusResponse]`](https://github.com/FastComme
 
 [inline-code-attrs-start title = 'getApiExportStatus Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getApiExportStatus(batchJobId = "export-job-2026-06-01", sso = "sso-abc123token")
-if response.isSome:
-  let exportStatus = response.get()
-  echo repr(exportStatus)
-else:
-  echo "No export status available, HTTP code: ", httpResponse.statusCode
+let (exportStatusOpt, httpResp) = client.getApiExportStatus(
+  tenantId = "my-tenant-123",
+  options = GetApiExportStatusOptions()
+)
+if exportStatusOpt.isSome:
+  let exportStatus = exportStatusOpt.get()
+  # use exportStatus as needed
 [inline-code-end]

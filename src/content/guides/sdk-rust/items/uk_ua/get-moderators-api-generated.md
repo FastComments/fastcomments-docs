@@ -1,9 +1,9 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | Так |  |
-| skip | f64 | Ні |  |
+| tenant_id | String | Yes |  |
+| skip | f68 | No |  |
 
 ## Відповідь
 
@@ -13,12 +13,14 @@
 
 [inline-code-attrs-start title = 'Приклад get_moderators'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_moderators(configuration: &configuration::Configuration) -> Result<GetModeratorsResponse, Error> {
-    let params: GetModeratorsParams = GetModeratorsParams {
+async fn example() -> Result<(), Error> {
+    let params = GetModeratorsParams {
         tenant_id: "acme-corp-tenant".to_string(),
         skip: Some(20.0),
     };
-    let response: GetModeratorsResponse = get_moderators(configuration, params).await?;
-    Ok(response)
+    let _response = get_moderators(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
+
+---

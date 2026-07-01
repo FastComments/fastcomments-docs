@@ -1,38 +1,31 @@
----
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
-|------|------|----------|-------------|
+|------|------|------------|-----------|
 | tenantId | string | Ναι |  |
 | commentId | string | Ναι |  |
 | voteId | string | Όχι |  |
 | urlId | string | Ναι |  |
 | broadcastId | string | Όχι |  |
-| editKey | string | Όχι |  |
-| sso | string | Όχι |  |
+| options | DeleteCommentVoteOptions | Όχι |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`Option[VoteDeleteResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_vote_delete_response.nim)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα deleteCommentVote'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteCommentVote Παράδειγμα'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.deleteCommentVote(
   tenantId = "my-tenant-123",
-  commentId = "comment-456",
+  commentId = "cmt-456",
   voteId = "vote-789",
   urlId = "news/article-title",
-  broadcastId = "",
-  editKey = "",
-  sso = ""
+  broadcastId = "broadcast-001",
+  options = DeleteCommentVoteOptions()
 )
-if response.isSome:
-  let voteResp = response.get()
-  echo "Vote delete response:", voteResp
-else:
-  echo "No response body, HTTP response:", httpResponse
-[inline-code-end]
 
----
+if response.isSome:
+  let voteDelete = response.get()
+[inline-code-end]

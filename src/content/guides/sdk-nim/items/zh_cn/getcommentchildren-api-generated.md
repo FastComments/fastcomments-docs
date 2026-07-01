@@ -1,9 +1,10 @@
 ## 参数
 
-| 名称 | 类型 | 是否必需 | 描述 |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| commentId | string | 是 |  |
-| sso | string | 否 |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| sso | string = "" | No |  |
 
 ## 响应
 
@@ -13,10 +14,8 @@
 
 [inline-code-attrs-start title = 'getCommentChildren 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getCommentChildren(commentId = "comment-98765", sso = "")
-if response.isSome:
-  let childResp = response.get()
-  discard childResp
+let (childRespOpt, httpResp) = client.getCommentChildren(tenantId = "my-tenant-123", commentId = "cmt-456789", sso = "")
+if childRespOpt.isSome:
+  let childResp = childRespOpt.get()
+  echo childResp
 [inline-code-end]
-
----

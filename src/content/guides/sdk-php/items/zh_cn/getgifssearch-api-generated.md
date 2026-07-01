@@ -1,12 +1,12 @@
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | 是 |  |
-| search | string | query | 是 |  |
-| locale | string | query | 否 |  |
-| rating | string | query | 否 |  |
-| page | number | query | 否 |  |
+| tenantId | string | path | Yes |  |
+| search | string | query | Yes |  |
+| locale | string | query | No |  |
+| rating | string | query | No |  |
+| page | number | query | No |  |
 
 ## 响应
 
@@ -21,19 +21,23 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new FastComments\Client\Api\PublicApi(
-    // 如果您想使用自定义 http 客户端，请传入实现了 `GuzzleHttp\ClientInterface` 的客户端。
-    // 这是可选的，默认会使用 `GuzzleHttp\Client`。
-    new GuzzleHttp\Client()
-);
+// $apiInstance = new FastComments\Client\Api\PublicApi(
+//     // 如果您想使用自定义 HTTP 客户端，请传入实现 `GuzzleHttp\ClientInterface` 的客户端。
+//     // 这不是必需的，默认会使用 `GuzzleHttp\Client`。
+//     new GuzzleHttp\Client()
+// );
+
 $tenant_id = 'tenant_id_example'; // string
 $search = 'search_example'; // string
-$locale = 'locale_example'; // string
-$rating = 'rating_example'; // string
-$page = 3.4; // float
+$options = [
+    'locale' => 'locale_example', // string
+    'rating' => 'rating_example', // string
+    'page' => 3.4, // float
+];
+
 
 try {
-    $result = $apiInstance->getGifsSearch($tenant_id, $search, $locale, $rating, $page);
+    $result = $apiInstance->getGifsSearch($tenant_id, $search, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getGifsSearch: ', $e->getMessage(), PHP_EOL;

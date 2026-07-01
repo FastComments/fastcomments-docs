@@ -1,30 +1,31 @@
-## 매개변수
+---
+이미지를 업로드하고 리사이즈하기
 
-| 이름 | 타입 | 필수 | 설명 |
+## Parameters
+
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| file | string | 아니오 |  |
-| sizePreset | SizePreset | 아니오 |  |
-| urlId | string | 예 |  |
+| tenantId | string | Yes |  |
+| file | string | No |  |
+| options | UploadImageOptions | No |  |
 
-## 응답
+## Response
 
 반환: [`Option[UploadImageResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_upload_image_response.nim)
 
-## 예제
+## Example
 
 [inline-code-attrs-start title = 'uploadImage 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.uploadImage(
+let (uploadResult, httpResponse) = client.uploadImage(
   tenantId = "my-tenant-123",
-  file = "assets/images/comment-avatar.jpg",
-  sizePreset = SizePreset.small,
-  urlId = "news/article-2025-11-22"
+  file = "images/avatar.jpg",
+  options = UploadImageOptions()
 )
-if response.isSome:
-  let upload = response.get()
-  echo "Uploaded image id: ", upload.id
-  echo "Uploaded image url: ", upload.url
+
+if uploadResult.isSome:
+  let result = uploadResult.get()
+  # 결과를 필요에 따라 사용
 [inline-code-end]
 
 ---

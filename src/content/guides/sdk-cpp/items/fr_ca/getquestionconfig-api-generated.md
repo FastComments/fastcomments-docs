@@ -1,7 +1,7 @@
 ## Paramètres
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nom | Type | Obligatoire | Description |
+|------|------|-------------|-------------|
 | tenantId | string | Oui |  |
 | id | string | Oui |  |
 
@@ -13,23 +13,16 @@ Renvoie : [`GetQuestionConfigResponse`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'Exemple getQuestionConfig'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t questionId = U("qstn-456");
-boost::optional<utility::string_t> ifNoneMatch = U("W/\"5a2f3c\"");
-api->getQuestionConfig(tenantId, questionId)
-.then([ifNoneMatch](pplx::task<std::shared_ptr<GetQuestionConfigResponse>> t){
-    try {
-        auto resp = t.get();
-        if (ifNoneMatch) {
-            auto etag = *ifNoneMatch;
-            (void)etag;
-        }
-        auto cfg = resp ? resp : std::make_shared<GetQuestionConfigResponse>();
-        (void)cfg;
-    } catch (const std::exception &ex) {
-        (void)ex;
-    }
-});
-[inline-code-end]
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto questionId = utility::conversions::to_string_t("question-456");
 
----
+api->getQuestionConfig(tenantId, questionId)
+    .then([](pplx::task<std::shared_ptr<GetQuestionConfigResponse>> task) {
+        try {
+            auto response = task.get();
+            // Use response as needed
+        } catch (const std::exception&) {
+            // Handle error
+        }
+    });
+[inline-code-end]

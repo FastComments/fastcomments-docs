@@ -9,18 +9,23 @@
 
 ## レスポンス
 
-戻り値: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ChangeCommentPinStatusResponse.ts)
+返り値: [`UnPinCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UnPinCommentResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'unPinComment の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_org_001';
-const commentId: string = 'cmt_4f2b1a8e';
-const broadcastId: string = 'bcast_live_2026-06-19';
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiamRvZSJ9.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
+(async () => {
+  const tenantId: string = "tenant-001"
+  const commentId: string = "comment-123"
+  const broadcastId: string = "broadcast-456"
+  const sso: string = "sso-token-xyz"
 
-const response: ChangeCommentPinStatusResponse = await unPinComment(tenantId, commentId, broadcastId, sso);
+  const resultWithSso: UnPinCommentResponse = await unPinComment(tenantId, commentId, broadcastId, sso)
+  const resultWithoutSso: UnPinCommentResponse = await unPinComment(tenantId, commentId, broadcastId)
+
+  console.log(resultWithSso, resultWithoutSso)
+})()
 [inline-code-end]
 
 ---

@@ -1,9 +1,11 @@
 ## Parametry
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
-|------|------|----------|----------|-------------|
+|------|------|-------------|----------|------|
+| tenantId | string | query | Tak |  |
 | commentId | string | path | Tak |  |
 | reviewed | boolean | query | Nie |  |
+| broadcastId | string | query | Nie |  |
 | sso | string | query | Nie |  |
 
 ## Odpowiedź
@@ -12,16 +14,18 @@ Zwraca: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład postSetCommentReviewStatus'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postSetCommentReviewStatus Przykład'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Następujące przykłady kodu są nadal w wersji beta. W przypadku problemu zgłoś go pod adresem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Następujące próbki kodu są wciąż w wersji beta. W przypadku problemów proszę zgłosić je pod adresem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let commentId = "commentId_example" // String | 
-let reviewed = true // Bool |  (opcjonalne)
-let sso = "sso_example" // String |  (opcjonalne)
+let tenantId = "tenantId_example" // String |
+let commentId = "commentId_example" // String |
+let reviewed = true // Bool | (opcjonalnie)
+let broadcastId = "broadcastId_example" // String | (opcjonalnie)
+let sso = "sso_example" // String | (opcjonalnie)
 
-ModerationAPI.postSetCommentReviewStatus(commentId: commentId, reviewed: reviewed, sso: sso) { (response, error) in
+ModerationAPI.postSetCommentReviewStatus(tenantId: tenantId, commentId: commentId, options: ModerationAPI.PostSetCommentReviewStatusOptions(reviewed: reviewed, broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -32,5 +36,3 @@ ModerationAPI.postSetCommentReviewStatus(commentId: commentId, reviewed: reviewe
     }
 }
 [inline-code-end]
-
----

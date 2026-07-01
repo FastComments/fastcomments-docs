@@ -1,7 +1,7 @@
 ## Parâmetros
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nome | Tipo | Obrigatório | Descrição |
+|------|------|-------------|-----------|
 | tenant_id | String | Sim |  |
 | id | String | Sim |  |
 
@@ -13,14 +13,12 @@ Retorna: [`GetEmailTemplateResponse`](https://github.com/FastComments/fastcommen
 
 [inline-code-attrs-start title = 'Exemplo get_email_template'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
+async fn fetch_template() -> Result<(), Error> {
     let params: GetEmailTemplateParams = GetEmailTemplateParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "marketing/welcome_v2".to_string(),
+        id: "welcome-email".to_string(),
     };
-    let template: GetEmailTemplateResponse = get_email_template(&configuration, params).await?;
+    let _response = get_email_template(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

@@ -1,15 +1,15 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 描述 |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| tenantId | string | 路径 | 是 |  |
-| locale | string | 查询 | 否 |  |
-| rating | string | 查询 | 否 |  |
-| page | number | 查询 | 否 |  |
+| tenantId | string | path | 是 |  |
+| locale | string | query | 否 |  |
+| rating | string | query | 否 |  |
+| page | number | query | 否 |  |
 
 ## 响应
 
-返回: [`GetGifsTrendingResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetGifsTrendingResponse.swift)
+返回：[`GetGifsTrendingResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetGifsTrendingResponse.swift)
 
 ## 示例
 
@@ -23,7 +23,7 @@ let locale = "locale_example" // String |  (可选)
 let rating = "rating_example" // String |  (可选)
 let page = 987 // Double |  (可选)
 
-PublicAPI.getGifsTrending(tenantId: tenantId, locale: locale, rating: rating, page: page) { (response, error) in
+PublicAPI.getGifsTrending(tenantId: tenantId, options: PublicAPI.GetGifsTrendingOptions(locale: locale, rating: rating, page: page)) { (response, error) in
     guard error == nil else {
         print(error)
         return

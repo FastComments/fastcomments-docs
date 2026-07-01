@@ -1,7 +1,7 @@
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
-|------|------|----------|-------------|
+| Naam | Type | Verplicht | Beschrijving |
+|------|------|-----------|--------------|
 | tenantId | string | Ja |  |
 | id | string | Ja |  |
 
@@ -13,16 +13,15 @@ Retourneert: [`GetTenantUserResponse`](https://github.com/FastComments/fastcomme
 
 [inline-code-attrs-start title = 'getTenantUser Voorbeeld'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> auditReason = U("admin-request");
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t id = U("john.doe@example.com");
-auto fallback = std::make_shared<GetTenantUserResponse>();
-api->getTenantUser(tenantId, id).then([fallback, auditReason](pplx::task<std::shared_ptr<GetTenantUserResponse>> t){
-    try {
-        auto resp = t.get();
-        if(!resp) resp = fallback;
-        (void)auditReason;
-    } catch(const std::exception&) {
-    }
-});
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto userId = utility::conversions::to_string_t("user@example.com");
+api->getTenantUser(tenantId, userId)
+    .then([](pplx::task<std::shared_ptr<GetTenantUserResponse>> task) {
+        try {
+            auto response = task.get();
+            // Gebruik de response indien nodig
+        } catch (const std::exception&) {
+            // Foutafhandeling
+        }
+    });
 [inline-code-end]

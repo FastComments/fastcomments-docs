@@ -2,12 +2,11 @@
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Sì |  |
-| commentId | string | Sì |  |
-| broadcastId | string | Sì |  |
-| commentTextUpdateRequest | CommentTextUpdateRequest | Sì |  |
-| editKey | string | No |  |
-| sso | string | No |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| broadcastId | string | Yes |  |
+| commentTextUpdateRequest | CommentTextUpdateRequest | Yes |  |
+| options | const SetCommentTextOptions& | Yes |  |
 
 ## Risposta
 
@@ -15,20 +14,20 @@ Restituisce: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di setCommentText'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio setCommentText'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("comment-456");
-utility::string_t broadcastId = U("broadcast-789");
-CommentTextUpdateRequest commentTextUpdateRequest;
-commentTextUpdateRequest.text = U("Updated comment: clarified wording and fixed a typo.");
-boost::optional<utility::string_t> editKey = boost::optional<utility::string_t>(U("editKey-abc123"));
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
-api->setCommentText(tenantId, commentId, broadcastId, commentTextUpdateRequest, editKey, sso)
-    .then([](pplx::task<std::shared_ptr<PublicAPISetCommentTextResponse>> task) {
-        try {
-            auto resp = task.get();
-            if (!resp) resp = std::make_shared<PublicAPISetCommentTextResponse>();
-        } catch (const std::exception&) {}
+auto tenantId = U("my-tenant-123");
+auto commentId = U("cmt-456");
+auto broadcastId = U("brd-789");
+
+CommentTextUpdateRequest updateReq;
+updateReq.text = U("Updated comment content");
+updateReq.isEdited = boost::make_optional(true);
+
+SetCommentTextOptions opts;
+opts.notifySubscribers = boost::make_optional(true);
+
+api->setCommentText(tenantId, commentId, broadcastId, updateReq, opts)
+    .then([](std::shared_ptr<PublicAPISetCommentTextResponse> resp) {
     });
 [inline-code-end]

@@ -1,23 +1,23 @@
----
 ## 參數
 
 | 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
-| badgeId | string | query | 是 |  |
-| userId | string | query | 否 |  |
-| commentId | string | query | 否 |  |
-| broadcastId | string | query | 否 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| badgeId | string | query | Yes |  |
+| userId | string | query | No |  |
+| commentId | string | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## 回應
 
-回傳: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AwardUserBadgeResponse.java)
+回傳：[`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AwardUserBadgeResponse.java)
 
 ## 範例
 
 [inline-code-attrs-start title = 'putAwardBadge 範例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 匯入類別：
+// 匯入類別:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -30,13 +30,14 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
-    String badgeId = "badgeId_example"; // 字串 | 
-    String userId = "userId_example"; // 字串 | 
-    String commentId = "commentId_example"; // 字串 | 
-    String broadcastId = "broadcastId_example"; // 字串 | 
-    String sso = "sso_example"; // 字串 | 
+    String tenantId = "tenantId_example"; // String | 
+    String badgeId = "badgeId_example"; // String | 
+    String userId = "userId_example"; // String | 
+    String commentId = "commentId_example"; // String | 
+    String broadcastId = "broadcastId_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
-      AwardUserBadgeResponse result = apiInstance.putAwardBadge(badgeId)
+      AwardUserBadgeResponse result = apiInstance.putAwardBadge(tenantId, badgeId)
             .userId(userId)
             .commentId(commentId)
             .broadcastId(broadcastId)
@@ -53,5 +54,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

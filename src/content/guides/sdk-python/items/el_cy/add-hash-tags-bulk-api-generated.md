@@ -1,8 +1,8 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Όχι |  |
+|------|------|----------|-----------|------------|
+| tenantId | string | query | Yes |  |
 
 ## Απόκριση
 
@@ -10,7 +10,7 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα add_hash_tags_bulk'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'add_hash_tags_bulk Παράδειγμα'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.models.bulk_create_hash_tags_body import BulkCreateHashTagsBody
@@ -18,32 +18,28 @@ from client.models.bulk_create_hash_tags_response import BulkCreateHashTagsRespo
 from client.rest import ApiException
 from pprint import pprint
 
-# Ορισμός του host είναι προαιρετικός και από προεπιλογή είναι το https://fastcomments.com
-# Δείτε το configuration.py για μια λίστα με όλες τις υποστηριζόμενες παραμέτρους ρυθμίσεων.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
+# Ο ορισμός του host είναι προαιρετικός και η προεπιλογή είναι https://fastcomments.com
+# Δείτε το configuration.py για τη λίστα όλων των υποστηριζόμενων παραμέτρων διαμόρφωσης.
+# Ο πελάτης πρέπει να διαμορφώσει τις παραμέτρους αυθεντικοποίησης και εξουσιοδότησης
+# σύμφωνα με την πολιτική ασφαλείας του διακομιστή API.
+# Παρέχονται παραδείγματα για κάθε μέθοδο αυθεντικοποίησης παρακάτω, χρησιμοποιήστε το παράδειγμα που
+# ικανοποιεί την περίπτωση χρήσης αυθεντικοποίησής σας.
 
-# Ο πελάτης πρέπει να ρυθμίσει τις παραμέτρους αυθεντικοποίησης και εξουσιοδότησης
-# σύμφωνα με την πολιτική ασφάλειας του διακομιστή API.
-# Παρακάτω δίνονται παραδείγματα για κάθε μέθοδο αυθεντικοποίησης, χρησιμοποιήστε το παράδειγμα που
-# καλύπτει την περίπτωσή σας.
-
-# Διαμορφώστε την εξουσιοδότηση με API key: api_key
+# Διαμόρφωση εξουσιοδότησης κλειδιού API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Αποσχολιάστε παρακάτω για να ορίσετε πρόθεμα (π.χ. Bearer) για το API key, αν χρειάζεται
+# Ξεσχολιάστε παρακάτω για να ορίσετε πρόθεμα (π.χ. Bearer) για το κλειδί API, εάν χρειάζεται
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Εισέλθετε σε context με ένα αντικείμενο του API client
+# Εισέλθετε σε ένα context με μια παρουσία του πελάτη API
 with client.ApiClient(configuration) as api_client:
-    # Δημιουργήστε ένα αντικείμενο της κλάσης API
+    # Δημιουργήστε μια παρουσία της κλάσης API
     api_instance = client.DefaultApi(api_client)
-    tenant_id = 'tenant_id_example' # str |  (προαιρετικό)
-    bulk_create_hash_tags_body = client.BulkCreateHashTagsBody() # BulkCreateHashTagsBody |  (προαιρετικό)
+    tenant_id = 'tenant_id_example' # str | 
+    bulk_create_hash_tags_body = client.BulkCreateHashTagsBody() # BulkCreateHashTagsBody |  (optional)
 
     try:
-        api_response = api_instance.add_hash_tags_bulk(tenant_id=tenant_id, bulk_create_hash_tags_body=bulk_create_hash_tags_body)
+        api_response = api_instance.add_hash_tags_bulk(tenant_id, bulk_create_hash_tags_body)
         print("The response of DefaultApi->add_hash_tags_bulk:\n")
         pprint(api_response)
     except Exception as e:

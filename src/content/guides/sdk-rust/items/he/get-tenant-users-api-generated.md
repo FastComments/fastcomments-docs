@@ -2,8 +2,8 @@
 
 | שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenant_id | String | כן |  |
-| skip | f64 | לא |  |
+| tenant_id | String | Yes |  |
+| skip | f64 | No |  |
 
 ## תגובה
 
@@ -11,17 +11,14 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-get_tenant_users'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_tenant_users דוגמה'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example() -> Result<(), Error> {
-    let params: GetTenantUsersParams = GetTenantUsersParams {
+    let params = GetTenantUsersParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        skip: Some(20.0),
+        skip: Some(10.0),
     };
-    let response: GetTenantUsersResponse = get_tenant_users(&configuration, params).await?;
-    let _users: GetTenantUsersResponse = response;
+    let _response = get_tenant_users(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

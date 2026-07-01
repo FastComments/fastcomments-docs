@@ -1,13 +1,14 @@
-## Paramètres
+## Parameters
 
 | Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Oui |  |
 | commentId | string | path | Oui |  |
 | sso | string | query | Non |  |
 
-## Réponse
+## Response
 
-Renvoie: [`GetBannedUsersFromCommentResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_banned_users_from_comment_response.rb)
+Renvoie : [`GetBannedUsersFromCommentResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_banned_users_from_comment_response.rb)
 
 ## Exemple
 
@@ -17,6 +18,7 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # Chaîne | 
 comment_id = 'comment_id_example' # Chaîne | 
 opts = {
   sso: 'sso_example' # Chaîne | 
@@ -24,7 +26,7 @@ opts = {
 
 begin
   
-  result = api_instance.get_ban_users_from_comment(comment_id, opts)
+  result = api_instance.get_ban_users_from_comment(tenant_id, comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_ban_users_from_comment: #{e}"

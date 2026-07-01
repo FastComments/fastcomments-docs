@@ -1,25 +1,20 @@
----
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| skip | float64 | Не |  |
+| tenantId | string | Da |  |
+| skip | float64 | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[GetModeratorsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_moderators_response.nim)
+Vraća: [`Option[GetModeratorsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_moderators_response.nim)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'getModerators Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getModerators'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getModerators(tenantId = "my-tenant-123", skip = 0.0)
-if response.isSome:
-  let moderators = response.get()
-  echo "Received moderators response:", moderators
-else:
-  echo "No moderators returned"
+let (moderatorsOpt, httpResp) = client.getModerators(tenantId = "my-tenant-123", skip = 0.0)
+if moderatorsOpt.isSome:
+  let moderators = moderatorsOpt.get()
+  echo moderators
 [inline-code-end]
-
----

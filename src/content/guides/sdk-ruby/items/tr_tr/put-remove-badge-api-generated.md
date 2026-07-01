@@ -2,6 +2,7 @@
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Evet |  |
 | badgeId | string | query | Evet |  |
 | userId | string | query | Hayır |  |
 | commentId | string | query | Hayır |  |
@@ -20,6 +21,7 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 badge_id = 'badge_id_example' # String | 
 opts = {
   user_id: 'user_id_example', # String | 
@@ -30,7 +32,7 @@ opts = {
 
 begin
   
-  result = api_instance.put_remove_badge(badge_id, opts)
+  result = api_instance.put_remove_badge(tenant_id, badge_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->put_remove_badge: #{e}"

@@ -27,7 +27,7 @@ let order = SORT_DIR() // SORTDIR |  (optional)
 let after = 987 // Double |  (optional)
 let before = 987 // Double |  (optional)
 
-DefaultAPI.getAuditLogs(tenantId: tenantId, limit: limit, skip: skip, order: order, after: after, before: before) { (response, error) in
+DefaultAPI.getAuditLogs(tenantId: tenantId, options: DefaultAPI.GetAuditLogsOptions(limit: limit, skip: skip, order: order, after: after, before: before)) { (response, error) in
     guard error == nil else {
         print(error)
         return

@@ -1,17 +1,18 @@
 ## Parâmetros
 
 | Nome | Tipo | Localização | Obrigatório | Descrição |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Sim |  |
-| banEmail | boolean | query | Não |  |
-| banEmailDomain | boolean | query | Não |  |
-| banIP | boolean | query | Não |  |
-| deleteAllUsersComments | boolean | query | Não |  |
-| bannedUntil | string | query | Não |  |
-| isShadowBan | boolean | query | Não |  |
-| updateId | string | query | Não |  |
-| banReason | string | query | Não |  |
-| sso | string | query | Não |  |
+|------|------|-------------|-------------|-----------|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| banEmail | boolean | query | No |  |
+| banEmailDomain | boolean | query | No |  |
+| banIP | boolean | query | No |  |
+| deleteAllUsersComments | boolean | query | No |  |
+| bannedUntil | string | query | No |  |
+| isShadowBan | boolean | query | No |  |
+| updateId | string | query | No |  |
+| banReason | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Resposta
 
@@ -19,12 +20,13 @@ Retorna: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcommen
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de post_ban_user_from_comment'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_ban_user_from_comment Exemplo'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 comment_id = 'comment_id_example' # String | 
 opts = {
   ban_email: true, # Boolean | 
@@ -40,11 +42,9 @@ opts = {
 
 begin
   
-  result = api_instance.post_ban_user_from_comment(comment_id, opts)
+  result = api_instance.post_ban_user_from_comment(tenant_id, comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
-  puts "Error when calling ModerationApi->post_ban_user_from_comment: #{e}"
+  puts "Erro ao chamar ModerationApi->post_ban_user_from_comment: #{e}"
 end
 [inline-code-end]
-
----

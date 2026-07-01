@@ -77,7 +77,4 @@ to make working with the API easier, and the `pubsub` module which is a library 
 For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains methods
 that can be made directly from a browser/mobile device/etc without authentication.
 
-The `ModerationApi` powers the moderator dashboard. It contains methods for comment moderation (list, count, search, logs, and export), moderation actions (remove/restore,
-flag, set review/spam/approval status, votes, and reopen/close thread), bans (ban from comment, undo a ban, pre-ban summaries, ban status and preferences, and banned-user counts),
-and badges & trust (award/remove a badge, manual badges, get/set trust factor, and user internal profile). Every `ModerationApi` method accepts an `sso` parameter so the call can be
-performed on behalf of an SSO-authenticated moderator.
+The `ModerationApi` provides an extensive suite of live and fast moderation APIs. Every `ModerationApi` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.

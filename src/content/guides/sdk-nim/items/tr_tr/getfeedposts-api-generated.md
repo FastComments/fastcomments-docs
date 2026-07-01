@@ -5,12 +5,10 @@ afterId
 
 ## Parametreler
 
-| Ad | Tür | Zorunlu | Açıklama |
+| Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
-| afterId | string | Hayır |  |
-| limit | int | Hayır |  |
-| tags | seq[string] | Hayır |  |
+| options | GetFeedPostsOptions | Hayır |  |
 
 ## Yanıt
 
@@ -18,17 +16,12 @@ Döndürür: [`Option[GetFeedPostsResponse]`](https://github.com/FastComments/fa
 
 ## Örnek
 
-[inline-code-attrs-start title = 'getFeedPosts Örneği'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getFeedPosts Örnek'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getFeedPosts(
-  tenantId = "my-tenant-123",
-  afterId = "",
-  limit = 0,
-  tags = @[]
-)
-if response.isSome:
-  let feed = response.get()
-  echo "Feed retrieved for tenant my-tenant-123"
+let (feedResponseOpt, httpResp) = client.getFeedPosts(tenantId = "my-tenant-123", options = GetFeedPostsOptions())
+if feedResponseOpt.isSome:
+  let feedResponse = feedResponseOpt.get()
+  echo feedResponse
 [inline-code-end]
 
 ---

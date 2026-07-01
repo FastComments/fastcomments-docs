@@ -1,9 +1,9 @@
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenant_id | String | Da |  |
-| id | String | Da |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
 
 ## Odgovor
 
@@ -11,22 +11,14 @@ Vraća: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/b
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer delete_email_template'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_email_template Primjer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let version: Option<&str> = Some("2025");
-    let template_id: String = if let Some(ver) = version {
-        format!("welcome-email-{}", ver)
-    } else {
-        "welcome-email".to_owned()
+async fn example() -> Result<(), Error> {
+    let params = DeleteEmailTemplateParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "welcome-email".to_string(),
     };
-    let params: DeleteEmailTemplateParams = DeleteEmailTemplateParams {
-        tenant_id: "acme-corp-tenant".to_owned(),
-        id: template_id,
-    };
-    let _response: ApiEmptyResponse = delete_email_template(&configuration, params).await?;
+    let _ = delete_email_template(&config, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

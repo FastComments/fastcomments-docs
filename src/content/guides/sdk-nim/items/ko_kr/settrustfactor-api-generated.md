@@ -1,26 +1,20 @@
----
-## Parameters
+## 매개변수
 
-| 이름 | 타입 | 필수 | 설명 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| userId | string | 아니요 |  |
-| trustFactor | string | 아니요 |  |
-| sso | string | 아니요 |  |
+| tenantId | string | Yes |  |
+| options | SetTrustFactorOptions | No |  |
 
 ## 응답
 
-반환: [`Option[SetUserTrustFactorResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_set_user_trust_factor_response.nim)
+Returns: [`Option[SetUserTrustFactorResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_set_user_trust_factor_response.nim)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'setTrustFactor 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'setTrustFactor 예시'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.setTrustFactor(userId = "user-9876", trustFactor = "high", sso = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyLTk4NzYiLCJpYXQiOjE2MjQwMDAwMDB9.signature")
-if response.isSome:
-  let resultObj = response.get()
-  echo resultObj
-else:
-  echo "No response received"
+let opts = SetTrustFactorOptions(userId = "user-456", trustFactor = 5, reason = "spam detection")
+let (trustResponse, httpResponse) = client.setTrustFactor(tenantId = "my-tenant-123", options = opts)
+if trustResponse.isSome:
+  let result = trustResponse.get()
 [inline-code-end]
-
----

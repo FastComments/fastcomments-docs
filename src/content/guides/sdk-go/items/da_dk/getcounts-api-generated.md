@@ -1,8 +1,9 @@
 ## Parametre
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| sso | string | query | Nej |  |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
+|------|------|-----------|----------|-------------|
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Svar
 
@@ -10,7 +11,7 @@ Returnerer: [`GetBannedUsersCountResponse`](https://github.com/FastComments/fast
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'GetCounts-eksempel'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GetCounts Eksempel'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -22,16 +23,19 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	sso := "sso_example" // string |  (valgfri)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetCounts(context.Background()).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetCounts(context.Background()).TenantId(tenantId).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetCounts``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Fejl ved kald af `ModerationAPI.GetCounts``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Fuld HTTP-svar: %v\n", r)
 	}
 	// svar fra `GetCounts`: GetBannedUsersCountResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetCounts`: %v\n", resp)
+	fmt.Fprintf(os.Stdout, "Svar fra `ModerationAPI.GetCounts`: %v\n", resp)
 }
 [inline-code-end]
+
+---

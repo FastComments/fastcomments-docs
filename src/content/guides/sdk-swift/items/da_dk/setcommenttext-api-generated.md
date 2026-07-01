@@ -1,7 +1,7 @@
 ## Parametre
 
-| Navn | Type | Placering | Obligatorisk | Beskrivelse |
-|------|------|----------|----------|-------------|
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
+|------|------|-----------|----------|-------------|
 | tenantId | string | path | Ja |  |
 | commentId | string | path | Ja |  |
 | broadcastId | string | query | Ja |  |
@@ -16,7 +16,7 @@ Returnerer: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/
 
 [inline-code-attrs-start title = 'setCommentText Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Følgende kodeeksempler er stadig beta. Hvis der opstår problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De følgende kodeeksempler er stadig beta. Ved eventuelle problemer bedes du rapportere via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -26,7 +26,7 @@ let commentTextUpdateRequest = CommentTextUpdateRequest(comment: "comment_exampl
 let editKey = "editKey_example" // String |  (valgfri)
 let sso = "sso_example" // String |  (valgfri)
 
-PublicAPI.setCommentText(tenantId: tenantId, commentId: commentId, broadcastId: broadcastId, commentTextUpdateRequest: commentTextUpdateRequest, editKey: editKey, sso: sso) { (response, error) in
+PublicAPI.setCommentText(tenantId: tenantId, commentId: commentId, broadcastId: broadcastId, commentTextUpdateRequest: commentTextUpdateRequest, options: PublicAPI.SetCommentTextOptions(editKey: editKey, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -37,5 +37,3 @@ PublicAPI.setCommentText(tenantId: tenantId, commentId: commentId, broadcastId: 
     }
 }
 [inline-code-end]
-
----

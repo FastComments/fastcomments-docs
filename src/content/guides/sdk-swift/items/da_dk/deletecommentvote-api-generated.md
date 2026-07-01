@@ -1,6 +1,6 @@
 ## Parametre
 
-| Name | Type | Location | Required | Description |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Ja |  |
 | commentId | string | path | Ja |  |
@@ -10,7 +10,7 @@
 | editKey | string | query | Nej |  |
 | sso | string | query | Nej |  |
 
-## Svar
+## Response
 
 Returnerer: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/VoteDeleteResponse.swift)
 
@@ -18,7 +18,7 @@ Returnerer: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-
 
 [inline-code-attrs-start title = 'deleteCommentVote Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Følgende kodeeksempler er stadig i beta. For ethvert problem, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De følgende kodeeksempler er stadig beta. For eventuelle problemer, rapportér venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -26,10 +26,10 @@ let commentId = "commentId_example" // String |
 let voteId = "voteId_example" // String | 
 let urlId = "urlId_example" // String | 
 let broadcastId = "broadcastId_example" // String | 
-let editKey = "editKey_example" // String |  (valgfri)
-let sso = "sso_example" // String |  (valgfri)
+let editKey = "editKey_example" // String |  (optional)
+let sso = "sso_example" // String |  (optional)
 
-PublicAPI.deleteCommentVote(tenantId: tenantId, commentId: commentId, voteId: voteId, urlId: urlId, broadcastId: broadcastId, editKey: editKey, sso: sso) { (response, error) in
+PublicAPI.deleteCommentVote(tenantId: tenantId, commentId: commentId, voteId: voteId, urlId: urlId, broadcastId: broadcastId, options: PublicAPI.DeleteCommentVoteOptions(editKey: editKey, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -40,3 +40,5 @@ PublicAPI.deleteCommentVote(tenantId: tenantId, commentId: commentId, voteId: vo
     }
 }
 [inline-code-end]
+
+---

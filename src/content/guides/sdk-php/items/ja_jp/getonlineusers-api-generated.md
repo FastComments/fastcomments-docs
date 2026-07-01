@@ -1,21 +1,20 @@
----
-ページに現在オンラインの閲覧者: 現在そのページに websocket セッションがサブスクライブされている人々を指します。
-anonCount + totalCount を返します（ルーム全体の購読者数、列挙しない匿名閲覧者を含む）。
+現在ページをオンラインで閲覧しているユーザー: 現在、ウェブソケットセッションがそのページに購読されている人々。  
+返却: anonCount + totalCount（部屋全体の購読者数で、匿名ビューアーも含まれますが、列挙は行いません）。
 
-## パラメータ
+## Parameters
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | はい |  |
-| urlId | string | query | はい | ページ URL の識別子（サーバー側でクリーンされます）。 |
-| afterName | string | query | いいえ | カーソル: 前のレスポンスの nextAfterName を渡してください。 |
-| afterUserId | string | query | いいえ | カーソルのタイブレーカー: 前のレスポンスの nextAfterUserId を渡してください。afterName が設定されている場合、名前の同一によるエントリの脱落を防ぐために必須です。 |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes | ページ URL 識別子（サーバー側でクリーンアップされたもの）。 |
+| afterName | string | query | No | カーソル: 前回のレスポンスから nextAfterName を渡す。 |
+| afterUserId | string | query | No | カーソルのタイブレーカー: 前回のレスポンスから nextAfterUserId を渡す。afterName が設定されている場合に必要で、名前が同じエントリが除外されないようにします。 |
 
-## レスポンス
+## Response
 
-戻り値: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersOnlineResponse.php)
+返却: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersOnlineResponse.php)
 
-## 例
+## Example
 
 [inline-code-attrs-start title = 'getOnlineUsers の例'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -25,21 +24,23 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // カスタムの HTTP クライアントを使用する場合は、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
-    // これはオプションです。デフォルトでは `GuzzleHttp\Client` が使用されます。
+    // カスタム HTTP クライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装したクライアントを渡してください。
+    // これはオプションで、デフォルトでは `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$url_id = 'url_id_example'; // string | ページ URL の識別子（サーバー側でクリーンされます）。
-$after_name = 'after_name_example'; // string | カーソル: 前のレスポンスの nextAfterName を渡してください。
-$after_user_id = 'after_user_id_example'; // string | カーソルのタイブレーカー: 前のレスポンスの nextAfterUserId を渡してください。afterName が設定されている場合、名前の同一によるエントリの脱落を防ぐために必須です。
+$url_id = 'url_id_example'; // string | ページ URL 識別子（サーバー側でクリーンアップされたもの）。
+$options = [
+    'after_name' => 'after_name_example', // string | カーソル: 前回のレスポンスから nextAfterName を渡す。
+    'after_user_id' => 'after_user_id_example', // string | カーソルのタイブレーカー: 前回のレスポンスから nextAfterUserId を渡す。afterName が設定されている場合に必要で、名前が同じエントリが除外されないようにします。
+];
+
 
 try {
-    $result = $apiInstance->getOnlineUsers($tenant_id, $url_id, $after_name, $after_user_id);
+    $result = $apiInstance->getOnlineUsers($tenant_id, $url_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getOnlineUsers: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

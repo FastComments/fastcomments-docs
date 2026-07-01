@@ -2,16 +2,16 @@
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | クエリ | はい |  |
-| id | string | パス | はい |  |
+| tenantId | string | query | はい |  |
+| id | string | path | はい |  |
 
-## レスポンス
+## 応答
 
-戻り値: [`GetEmailTemplateResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetEmailTemplateResponse.php)
+返却: [`GetEmailTemplateResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetEmailTemplateResponse.php)
 
 ## 例
 
-[inline-code-attrs-start title = 'getEmailTemplate の例'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getEmailTemplate 例'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -19,18 +19,20 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // APIキー認証を設定: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// 必要に応じてAPIキーのプレフィックス（例: Bearer）を設定するには、下の行のコメントを外してください
+// 必要に応じて、APIキーのプレフィックス（例: Bearer）を設定するには、以下のコメントアウトを解除してください
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // カスタムのHTTPクライアントを使いたい場合は、`GuzzleHttp\ClientInterface`を実装するクライアントを渡してください。
-    // これはオプションです。デフォルトでは`GuzzleHttp\Client`が使用されます。
+    // カスタムHTTPクライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装したクライアントを渡してください。
+    // これはオプションです。デフォルトでは `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
+
 
 try {
     $result = $apiInstance->getEmailTemplate($tenant_id, $id);
@@ -39,5 +41,3 @@ try {
     echo 'Exception when calling DefaultApi->getEmailTemplate: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

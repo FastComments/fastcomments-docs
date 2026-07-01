@@ -2,9 +2,11 @@
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| comment_id | String | Да |  |
-| reviewed | bool | Нет |  |
-| sso | String | Нет |  |
+| tenant_id | String | Yes |  |
+| comment_id | String | Yes |  |
+| reviewed | bool | No |  |
+| broadcast_id | String | No |  |
+| sso | String | No |  |
 
 ## Ответ
 
@@ -12,17 +14,17 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример post_set_comment_review_status'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_set_comment_review_status Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn set_comment_review_status() -> Result<ApiEmptyResponse, Error> {
-    let params: PostSetCommentReviewStatusParams = PostSetCommentReviewStatusParams {
-        comment_id: "news/article-2026-06-18-cmt-9843".to_string(),
+async fn update_review_status(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = PostSetCommentReviewStatusParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: "comment-98765".to_string(),
         reviewed: Some(true),
-        sso: Some("acme-sso-session-7f2e9b".to_string()),
+        broadcast_id: Some("broadcast-2023-summer".to_string()),
+        sso: Some("sso-user-42".to_string()),
     };
-    let response: ApiEmptyResponse = post_set_comment_review_status(&configuration, params).await?;
-    Ok(response)
+    post_set_comment_review_status(configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

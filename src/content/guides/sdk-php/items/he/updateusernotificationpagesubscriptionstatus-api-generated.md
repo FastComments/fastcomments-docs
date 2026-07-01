@@ -1,24 +1,24 @@
-הפעל או כבה התראות עבור דף. כאשר משתמשים מנויים לדף, נוצרות התראות
-לתגובות שורש חדשות, וגם
+Enable or disable notifications for a page. When users are subscribed to a page, notifications are created
+for new root comments, and also
 
-## פרמטרים
+## Parameters
 
 | שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | כן |  |
-| urlId | string | query | כן |  |
-| url | string | query | כן |  |
-| pageTitle | string | query | כן |  |
-| subscribedOrUnsubscribed | string | path | כן |  |
-| sso | string | query | לא |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| url | string | query | Yes |  |
+| pageTitle | string | query | Yes |  |
+| subscribedOrUnsubscribed | string | path | Yes |  |
+| sso | string | query | No |  |
 
-## תגובה
+## Response
 
 מחזיר: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationPageSubscriptionStatusResponse.php)
 
-## דוגמה
+## Example
 
-[inline-code-attrs-start title = 'דוגמה ל-updateUserNotificationPageSubscriptionStatus'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה של updateUserNotificationPageSubscriptionStatus'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -26,16 +26,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // אם ברצונך להשתמש בלקוח HTTP מותאם, העבר את הלקוח שלך שמממש את `GuzzleHttp\ClientInterface`.
-    // זה אופציונלי, `GuzzleHttp\Client` ישמש כברירת מחדל.
+    // אם ברצונך להשתמש בלקוח HTTP מותאם, העבר את הלקוח שלך המממש את `GuzzleHttp\ClientInterface`.
+    // זה אופציונלי, `GuzzleHttp\Client` ישמש ברירת מחדל.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // מחרוזת
-$url_id = 'url_id_example'; // מחרוזת
-$url = 'url_example'; // מחרוזת
-$page_title = 'page_title_example'; // מחרוזת
-$subscribed_or_unsubscribed = 'subscribed_or_unsubscribed_example'; // מחרוזת
-$sso = 'sso_example'; // מחרוזת
+
+$tenant_id = 'tenant_id_example'; // string
+$url_id = 'url_id_example'; // string
+$url = 'url_example'; // string
+$page_title = 'page_title_example'; // string
+$subscribed_or_unsubscribed = 'subscribed_or_unsubscribed_example'; // string
+$sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->updateUserNotificationPageSubscriptionStatus($tenant_id, $url_id, $url, $page_title, $subscribed_or_unsubscribed, $sso);

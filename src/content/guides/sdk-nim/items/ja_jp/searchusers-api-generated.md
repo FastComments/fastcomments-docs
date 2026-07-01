@@ -4,10 +4,7 @@
 |------|------|----------|-------------|
 | tenantId | string | はい |  |
 | urlId | string | はい |  |
-| usernameStartsWith | string | いいえ |  |
-| mentionGroupIds | seq[string] | いいえ |  |
-| sso | string | いいえ |  |
-| searchSection | string | いいえ |  |
+| options | SearchUsersOptions | いいえ |  |
 
 ## レスポンス
 
@@ -19,18 +16,12 @@
 [inline-code-start]
 let (response, httpResponse) = client.searchUsers(
   tenantId = "my-tenant-123",
-  urlId = "news/top-story",
-  usernameStartsWith = "",
-  mentionGroupIds = @[],
-  sso = "",
-  searchSection = ""
+  urlId = "news/article-title",
+  options = SearchUsersOptions()
 )
 
 if response.isSome:
-  let searchResult = response.get()
-  echo "SearchUsersResult:", searchResult
-else:
-  echo "No result or error. HTTP response:", httpResponse
+  let result = response.get()
 [inline-code-end]
 
 ---

@@ -1,6 +1,6 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательный | Описание |
+| Имя | Тип | Местоположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | id | string | path | Yes |  |
@@ -12,27 +12,32 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример deleteModerator'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteModerator Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Настройка авторизации ключом API: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Раскомментируйте ниже, чтобы задать префикс (например Bearer) для API-ключа, если необходимо
+// Configure API key authorization: api_key
+// Настройте авторизацию ключом API: api_key
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для ключа API, если нужно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Если вы хотите использовать кастомный HTTP-клиент, передайте клиент, который реализует `GuzzleHttp\ClientInterface`.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // Если вы хотите использовать пользовательский HTTP‑клиент, передайте ваш клиент, реализующий `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     // Это необязательно, по умолчанию будет использоваться `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
 $send_email = 'send_email_example'; // string
+
 
 try {
     $result = $apiInstance->deleteModerator($tenant_id, $id, $send_email);

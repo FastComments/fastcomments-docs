@@ -1,15 +1,9 @@
----
 ## パラメータ
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| textSearch | string | いいえ |  |
-| byIPFromComment | string | いいえ |  |
-| filters | string | いいえ |  |
-| searchFilters | string | いいえ |  |
-| afterId | string | いいえ |  |
-| demo | bool | いいえ |  |
-| sso | string | いいえ |  |
+| tenantId | string | Yes |  |
+| options | const GetApiIdsOptions& | Yes |  |
 
 ## レスポンス
 
@@ -19,23 +13,15 @@
 
 [inline-code-attrs-start title = 'getApiIds の例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-api->getApiIds(
-    boost::optional<utility::string_t>(U("spam report")),
-    boost::optional<utility::string_t>(U("203.0.113.45")),
-    boost::optional<utility::string_t>(U("status:pending")),
-    boost::optional<utility::string_t>(U("tenant:my-tenant-123")),
-    boost::optional<utility::string_t>(U("cmt_987654321")),
-    boost::optional<bool>(false),
-    boost::optional<utility::string_t>(U("user@example.com"))
-).then([](pplx::task<std::shared_ptr<ModerationAPIGetCommentIdsResponse>> task){
-    try {
-        auto resp = task.get();
-        auto safeResp = resp ? resp : std::make_shared<ModerationAPIGetCommentIdsResponse>();
-        (void)safeResp;
-    } catch (const std::exception &e) {
-        (void)e;
+utility::string_t tenantId = U("my-tenant-123");
+GetApiIdsOptions options;
+options.limit = boost::optional<int>(100);
+options.cursor = boost::optional<utility::string_t>(U("next-page-token"));
+api->getApiIds(tenantId, options).then([](pplx::task<std::shared_ptr<ModerationAPIGetCommentIdsResponse>> t){
+    try{
+        auto response = t.get();
+        auto ids = response->commentIds;
+    }catch(const std::exception&){
     }
 });
 [inline-code-end]
-
----

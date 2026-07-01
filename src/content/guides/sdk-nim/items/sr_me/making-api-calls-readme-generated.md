@@ -1,6 +1,8 @@
-Све API методе у овом SDK-у враћају парове `(Option[ResponseType], Response)`. Први елемент садржи парсиран одговор ако је захтев успешан, а други елемент представља необрађени HTTP одговор.
+All API methods in this SDK return tuples of `(Option[ResponseType], Response)`. The first element contains the parsed response if successful, and the second element is the raw HTTP response.
 
-### Пример: Преузимање коментара
+Required parameters and the request body are passed positionally. The remaining optional parameters are collected into a single `Api<Operation>Options` object, which is the last argument. Operations with no optional parameters take no options object.
+
+### Primjer: Dohvaćanje komentara
 
 ```nim
 import httpclient
@@ -14,20 +16,10 @@ client.headers["x-api-key"] = "your-api-key"
 let (response, httpResponse) = getComments(
   httpClient = client,
   tenantId = "your-tenant-id",
-  page = 0,
-  limit = 0,
-  skip = 0,
-  asTree = false,
-  skipChildren = 0,
-  limitChildren = 0,
-  maxTreeDepth = 0,
-  urlId = "your-url-id",
-  userId = "",
-  anonUserId = "",
-  contextUserId = "",
-  hashTag = "",
-  parentId = "",
-  direction = SortDirections.DESC
+  options = GetCommentsOptions(
+    urlId: "your-url-id",
+    direction: SortDirections.DESC
+  )
 )
 
 if httpResponse.code == Http200:

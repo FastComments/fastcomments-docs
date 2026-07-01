@@ -1,11 +1,11 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Sì |  |
-| commentId | string | path | Sì |  |
-| urlId | string | query | Sì |  |
-| broadcastId | string | query | Sì |  |
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+|------|------|-----------|--------------|-------------|
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| broadcastId | string | query | Yes |  |
 | sessionId | string | query | No |  |
 | sso | string | query | No |  |
 
@@ -15,15 +15,16 @@ Restituisce: [`VoteResponse`](https://github.com/FastComments/fastcomments-pytho
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di vote_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'vote_comment Esempio'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import VoteCommentOptions
 from client.models.vote_body_params import VoteBodyParams
 from client.models.vote_response import VoteResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Impostare l'host è opzionale e il valore predefinito è https://fastcomments.com
+# Definire l'host è opzionale e predefinito a https://fastcomments.com
 # Consulta configuration.py per un elenco di tutti i parametri di configurazione supportati.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -43,9 +44,11 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (opzionale)
 
     try:
-        api_response = api_instance.vote_comment(tenant_id, comment_id, url_id, broadcast_id, vote_body_params, session_id=session_id, sso=sso)
+        api_response = api_instance.vote_comment(tenant_id, comment_id, url_id, broadcast_id, vote_body_params, VoteCommentOptions(session_id=session_id, sso=sso))
         print("The response of PublicApi->vote_comment:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling PublicApi->vote_comment: %s\n" % e)
 [inline-code-end]
+
+---

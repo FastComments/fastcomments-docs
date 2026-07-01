@@ -1,6 +1,6 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Da |  |
 | commentId | string | path | Da |  |
@@ -15,15 +15,15 @@ Vraća: [`PublicAPIGetCommentTextResponse`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'Primer getCommentText'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sledeći primeri koda su još u beta fazi. Za bilo koji problem, prijavite na http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sljedeći kod primjeri su još u beta fazi. Za bilo koji problem, prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
-let editKey = "editKey_example" // String |  (neobavezno)
-let sso = "sso_example" // String |  (neobavezno)
+let editKey = "editKey_example" // String |  (optional)
+let sso = "sso_example" // String |  (optional)
 
-PublicAPI.getCommentText(tenantId: tenantId, commentId: commentId, editKey: editKey, sso: sso) { (response, error) in
+PublicAPI.getCommentText(tenantId: tenantId, commentId: commentId, options: PublicAPI.GetCommentTextOptions(editKey: editKey, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

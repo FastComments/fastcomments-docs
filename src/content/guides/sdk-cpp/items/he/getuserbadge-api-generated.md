@@ -1,4 +1,3 @@
----
 ## פרמטרים
 
 | שם | סוג | חובה | תיאור |
@@ -12,23 +11,15 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getUserBadge'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getUserBadge'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-boost::optional<utility::string_t> userOpt(U("alice@example.com"));
-utility::string_t userId = userOpt.value_or(U("alice@example.com"));
-auto ctx = std::make_shared<utility::string_t>(U("request-context-1"));
-api->getUserBadge(tenantId, userId)
-.then([ctx](pplx::task<std::shared_ptr<APIGetUserBadgeResponse>> task) {
-    try {
-        auto resp = task.get();
-        if (resp) {
-            *ctx = U("badge-retrieved");
-        }
-    } catch (const std::exception &e) {
-        *ctx = U("error");
+utility::string_t userId = U("user-456");
+api->getUserBadge(tenantId, userId).then([](pplx::task<std::shared_ptr<APIGetUserBadgeResponse>> t){
+    try{
+        auto resp = t.get();
+        boost::optional<std::string> badgeUrl = resp->badge_url ? boost::optional<std::string>(*resp->badge_url) : boost::none;
+    }catch(const std::exception&){
     }
 });
 [inline-code-end]
-
----

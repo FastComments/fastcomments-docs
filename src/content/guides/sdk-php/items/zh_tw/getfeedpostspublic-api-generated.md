@@ -4,7 +4,7 @@ afterId
 
 ## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 是 |  |
 | afterId | string | query | 否 |  |
@@ -16,7 +16,7 @@ afterId
 
 ## 回應
 
-回傳: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PublicFeedPostsResponse.php)
+返回：[`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PublicFeedPostsResponse.php)
 
 ## 範例
 
@@ -28,22 +28,28 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // 如果您想使用自訂的 HTTP 用戶端，請傳入實作 `GuzzleHttp\ClientInterface` 的客戶端。
-    // 這是可選的，`GuzzleHttp\Client` 將會被用作預設值。
+    // 如果您想使用自訂 HTTP 客戶端，傳入實作 `GuzzleHttp\ClientInterface` 的客戶端。
+    // 這是可選的，`GuzzleHttp\Client` 會被預設使用。
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$after_id = 'after_id_example'; // string
-$limit = 56; // int
-$tags = array('tags_example'); // string[]
-$sso = 'sso_example'; // string
-$is_crawler = True; // bool
-$include_user_info = True; // bool
+
+$tenant_id = 'tenant_id_example'; // 字串
+$options = [
+    'after_id' => 'after_id_example', // 字串
+    'limit' => 56, // 整數
+    'tags' => array('tags_example'), // 字串陣列
+    'sso' => 'sso_example', // 字串
+    'is_crawler' => True, // 布林值
+    'include_user_info' => True, // 布林值
+];
+
 
 try {
-    $result = $apiInstance->getFeedPostsPublic($tenant_id, $after_id, $limit, $tags, $sso, $is_crawler, $include_user_info);
+    $result = $apiInstance->getFeedPostsPublic($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getFeedPostsPublic: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

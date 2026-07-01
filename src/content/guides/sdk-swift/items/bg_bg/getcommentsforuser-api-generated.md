@@ -1,14 +1,14 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
-| userId | string | query | Не |  |
-| direction | string | query | Не |  |
-| repliesToUserId | string | query | Не |  |
-| page | number | query | Не |  |
-| includei10n | boolean | query | Не |  |
-| locale | string | query | Не |  |
-| isCrawler | boolean | query | Не |  |
+| userId | string | query | No |  |
+| direction | string | query | No |  |
+| repliesToUserId | string | query | No |  |
+| page | number | query | No |  |
+| includei10n | boolean | query | No |  |
+| locale | string | query | No |  |
+| isCrawler | boolean | query | No |  |
 
 ## Отговор
 
@@ -16,20 +16,20 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за getCommentsForUser'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getCommentsForUser Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следващите примери за код все още са в бета. За всякакъв проблем, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следващите примерни кодове са все още бета. За всеки проблем, моля съобщете via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let userId = "userId_example" // String |  (по избор)
-let direction = SortDirections() // SortDirections |  (по избор)
-let repliesToUserId = "repliesToUserId_example" // String |  (по избор)
-let page = 987 // Double |  (по избор)
-let includei10n = true // Bool |  (по избор)
-let locale = "locale_example" // String |  (по избор)
-let isCrawler = true // Bool |  (по избор)
+let userId = "userId_example" // String |  (optional)
+let direction = SortDirections() // SortDirections |  (optional)
+let repliesToUserId = "repliesToUserId_example" // String |  (optional)
+let page = 987 // Double |  (optional)
+let includei10n = true // Bool |  (optional)
+let locale = "locale_example" // String |  (optional)
+let isCrawler = true // Bool |  (optional)
 
-PublicAPI.getCommentsForUser(userId: userId, direction: direction, repliesToUserId: repliesToUserId, page: page, includei10n: includei10n, locale: locale, isCrawler: isCrawler) { (response, error) in
+PublicAPI.getCommentsForUser(options: PublicAPI.GetCommentsForUserOptions(userId: userId, direction: direction, repliesToUserId: repliesToUserId, page: page, includei10n: includei10n, locale: locale, isCrawler: isCrawler)) { (response, error) in
     guard error == nil else {
         print(error)
         return

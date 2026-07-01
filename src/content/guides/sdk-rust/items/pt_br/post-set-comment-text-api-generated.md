@@ -1,10 +1,11 @@
----
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|----------|-------------|
+|------|------|-------------|-----------|
+| tenant_id | String | Sim |  |
 | comment_id | String | Sim |  |
 | set_comment_text_params | models::SetCommentTextParams | Sim |  |
+| broadcast_id | String | Não |  |
 | sso | String | Não |  |
 
 ## Resposta
@@ -13,20 +14,19 @@ Retorna: [`SetCommentTextResponse`](https://github.com/FastComments/fastcomments
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de post_set_comment_text'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo post_set_comment_text'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn update_comment_text() -> Result<(), Error> {
-    let params: PostSetCommentTextParams = PostSetCommentTextParams {
-        comment_id: "comment-73b2a9".to_string(),
+async fn update_comment(config: &configuration::Configuration) -> Result<(), Error> {
+    let params = PostSetCommentTextParams {
+        tenant_id: "acme-corp".to_string(),
+        comment_id: "comment-9876".to_string(),
         set_comment_text_params: models::SetCommentTextParams {
-            text: "Updated: The event now starts at 9:00 AM local time.".to_string(),
+            text: "Revised comment content".to_string(),
         },
-        sso: Some("sso-session-8a7f3b".to_string()),
+        broadcast_id: Some("broadcast-2023".to_string()),
+        sso: Some("sso-token-abc".to_string()),
     };
-
-    let response: SetCommentTextResponse = post_set_comment_text(&configuration, params).await?;
+    let _response = post_set_comment_text(config, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

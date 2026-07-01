@@ -1,7 +1,8 @@
+---
 ## Parametry
 
-| Name | Type | Wymagane | Opis |
-|------|------|----------|-------------|
+| Nazwa | Typ | Wymagane | Opis |
+|------|------|----------|------|
 | tenant_id | String | Tak |  |
 | id | String | Tak |  |
 
@@ -13,14 +14,15 @@ Zwraca: [`GetQuestionResultResponse`](https://github.com/FastComments/fastcommen
 
 [inline-code-attrs-start title = 'Przykład get_question_result'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_call() -> Result<(), Error> {
-    let params: GetQuestionResultParams = GetQuestionResultParams {
+async fn fetch_question_result(config: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetQuestionResultParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "news/article-2026-07-poll-question-1".to_string(),
-        include_details: Some(true),
+        id: "question-12345".to_string(),
         locale: Some("en-US".to_string()),
     };
-    let result: GetQuestionResultResponse = get_question_result(&configuration, params).await?;
+    let _response: GetQuestionResultResponse = get_question_result(config, params).await?;
     Ok(())
 }
 [inline-code-end]
+
+---

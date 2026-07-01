@@ -2,36 +2,41 @@
 
 | 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
-| textSearch | string | 아니요 |  |
-| byIPFromComment | string | 아니요 |  |
-| filters | string | 아니요 |  |
-| searchFilters | string | 아니요 |  |
-| sorts | string | 아니요 |  |
-| sso | string | 아니요 |  |
+| textSearch | string | No |  |
+| byIPFromComment | string | No |  |
+| filters | string | No |  |
+| searchFilters | string | No |  |
+| sorts | string | No |  |
+| tenantId | string | No |  |
+| sso | string | No |  |
 
 ## 응답
 
-반환: [`ModerationExportResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationExportResponse.ts)
+Returns: [`PostApiExportResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostApiExportResponse.ts)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'postApiExport 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postApiExport 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const textSearch: string = "suspicious link";
-const byIPFromComment: string = "203.0.113.45";
-const filters: string = "status:flagged,platform:web";
-const searchFilters: string | undefined = undefined;
-const sorts: string = "-createdAt";
-const sso: string = "sso_token_3f9b8";
+(async () => {
+  const textSearch: string = "keyword:feedback"
+  const byIPFromComment: string = "203.0.113.45"
+  const filters: string = "status:pending,category:support"
+  const searchFilters: string = "createdAt>2023-01-01"
+  const sorts: string = "createdAt:desc"
+  const tenantId: string = "tenant_9876"
+  const sso: string = "sso_7e2a9b"
 
-const exportResponse: ModerationExportResponse = await postApiExport(
-  textSearch,
-  byIPFromComment,
-  filters,
-  searchFilters,
-  sorts,
-  sso
-);
+  const exportResult: PostApiExportResponse = await postApiExport(
+    textSearch,
+    byIPFromComment,
+    filters,
+    searchFilters,
+    sorts,
+    tenantId,
+    sso
+  )
+
+  console.log(exportResult)
+})()
 [inline-code-end]
-
----

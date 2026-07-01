@@ -1,7 +1,7 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
-|------|------|----------|----------|-------------|
+| Naam | Type | Locatie | Verplicht | Beschrijving |
+|------|------|----------|-----------|--------------|
 | tenantId | string | path | Ja |  |
 | postId | string | path | Ja |  |
 | isUndo | boolean | query | Nee |  |
@@ -17,13 +17,14 @@ Retourneert: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomme
 [inline-code-attrs-start title = 'react_feed_post_public Voorbeeld'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import ReactFeedPostPublicOptions
 from client.models.react_body_params import ReactBodyParams
 from client.models.react_feed_post_response import ReactFeedPostResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Het instellen van de host is optioneel en standaardwaarde is https://fastcomments.com
-# Zie configuration.py voor een lijst met alle ondersteunde configuratieparameters.
+# Het definiëren van de host is optioneel en standaard https://fastcomments.com
+# Zie configuration.py voor een lijst van alle ondersteunde configuratieparameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -36,12 +37,12 @@ with client.ApiClient(configuration) as api_client:
     tenant_id = 'tenant_id_example' # str | 
     post_id = 'post_id_example' # str | 
     react_body_params = client.ReactBodyParams() # ReactBodyParams | 
-    is_undo = True # bool |  (optioneel)
-    broadcast_id = 'broadcast_id_example' # str |  (optioneel)
-    sso = 'sso_example' # str |  (optioneel)
+    is_undo = True # bool |  (optional)
+    broadcast_id = 'broadcast_id_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.react_feed_post_public(tenant_id, post_id, react_body_params, is_undo=is_undo, broadcast_id=broadcast_id, sso=sso)
+        api_response = api_instance.react_feed_post_public(tenant_id, post_id, react_body_params, ReactFeedPostPublicOptions(is_undo=is_undo, broadcast_id=broadcast_id, sso=sso))
         print("The response of PublicApi->react_feed_post_public:\n")
         pprint(api_response)
     except Exception as e:

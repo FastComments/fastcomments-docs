@@ -1,9 +1,8 @@
----
 ## Parámetros
 
-| Nombre | Tipo | Requerido | Descripción |
-|------|------|----------|-------------|
-| tenantId | string | Sí |  |
+| Nombre | Tipo | Obligatorio | Descripción |
+|--------|------|-------------|-------------|
+| tenantId | string | Yes |  |
 | id | string | No |  |
 | skip | float64 | No |  |
 
@@ -13,14 +12,18 @@ Devuelve: [`Option[GetEmailTemplateRenderErrorsResponse]`](https://github.com/Fa
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de getEmailTemplateRenderErrors'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo getEmailTemplateRenderErrors'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getEmailTemplateRenderErrors(tenantId = "my-tenant-123", id = "", skip = 0.0)
-if response.isSome:
-  let templateErrors = response.get()
-  discard templateErrors
-else:
-  discard httpResponse
-[inline-code-end]
+let (optResp, httpResp) = client.getEmailTemplateRenderErrors(
+  tenantId = "my-tenant-123",
+  id = "welcome-template",
+  skip = 0.0
+)
 
----
+if optResp.isSome:
+  let resp = optResp.get()
+  # usar la respuesta según sea necesario
+else:
+  # manejar respuesta faltante
+  discard
+[inline-code-end]

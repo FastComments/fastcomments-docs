@@ -1,11 +1,11 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| id | string | path | Da |  |
-| userId | string | query | Ne |  |
-| anonUserId | string | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
 
 ## Odgovor
 
@@ -13,34 +13,35 @@ Vrne: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-python/blo
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer un_block_user_from_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'un_block_user_from_comment Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import UnBlockUserFromCommentOptions
 from client.models.un_block_from_comment_params import UnBlockFromCommentParams
 from client.models.unblock_success import UnblockSuccess
 from client.rest import ApiException
 from pprint import pprint
 
-# Določanje gostitelja je neobvezno in privzeto je https://fastcomments.com
-# Oglejte si configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
+# Definiranje gostitelja je neobvezno in privzeto nastavljeno na https://fastcomments.com
+# Glej configuration.py za seznam vseh podprtih parametrov konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Odjemalec mora nastaviti parametre avtentikacije in avtorizacije
-# v skladu z varnostno politiko API strežnika.
-# Spodaj so prikazani primeri za vsako metodo avtentikacije; uporabite primer, ki
-# ustreza vašemu primeru uporabe avtentikacije.
+# Odjemalec mora konfigurirati parametre avtentikacije in avtorizacije
+# v skladu s varnostno politiko strežnika API.
+# Primeri za vsako metodo overjanja so podani spodaj, uporabite primer,
+# ki ustreza vašemu primeru uporabe overjanja.
 
-# Konfigurirajte avtentikacijo z API ključem: api_key
+# Nastavi overjanje API ključa: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Odkomentirajte spodaj za nastavitev predpone (npr. Bearer) za API ključ, če je potrebno
+# Odkomentirajte spodaj, da nastavite predpono (npr. Bearer) za API ključ, po potrebi
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Vstopite v kontekst z instanco API odjemalca
 with client.ApiClient(configuration) as api_client:
-    # Ustvarite instanco razreda API
+    # Ustvarite instanco API razreda
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
@@ -49,7 +50,7 @@ with client.ApiClient(configuration) as api_client:
     anon_user_id = 'anon_user_id_example' # str |  (neobvezno)
 
     try:
-        api_response = api_instance.un_block_user_from_comment(tenant_id, id, un_block_from_comment_params, user_id=user_id, anon_user_id=anon_user_id)
+        api_response = api_instance.un_block_user_from_comment(tenant_id, id, un_block_from_comment_params, UnBlockUserFromCommentOptions(user_id=user_id, anon_user_id=anon_user_id))
         print("The response of DefaultApi->un_block_user_from_comment:\n")
         pprint(api_response)
     except Exception as e:

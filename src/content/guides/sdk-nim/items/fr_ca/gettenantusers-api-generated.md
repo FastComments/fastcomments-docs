@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Nom | Type | Requis | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
 | tenantId | string | Oui |  |
 | skip | float64 | Non |  |
@@ -11,15 +11,10 @@ Retourne : [`Option[GetTenantUsersResponse]`](https://github.com/FastComments/fa
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getTenantUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getTenantUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.getTenantUsers(tenantId = "my-tenant-123", skip = 0.0)
-
 if response.isSome:
-  let tenantUsers = response.get()
-  echo "Retrieved tenant users"
-else:
-  echo "No tenant users returned"
+  let data = response.get()
+  echo data
 [inline-code-end]
-
----

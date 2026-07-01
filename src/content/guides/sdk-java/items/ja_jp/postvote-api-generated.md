@@ -2,8 +2,10 @@
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | はい |  |
 | commentId | string | path | はい |  |
 | direction | string | query | いいえ |  |
+| broadcastId | string | query | いいえ |  |
 | sso | string | query | いいえ |  |
 
 ## レスポンス
@@ -27,12 +29,15 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
-    String commentId = "commentId_example"; // String | 
-    String direction = "direction_example"; // String | 
-    String sso = "sso_example"; // String | 
+    String tenantId = "tenantId_example"; // 文字列 |
+    String commentId = "commentId_example"; // 文字列 |
+    String direction = "direction_example"; // 文字列 |
+    String broadcastId = "broadcastId_example"; // 文字列 |
+    String sso = "sso_example"; // 文字列 |
     try {
-      VoteResponse result = apiInstance.postVote(commentId)
+      VoteResponse result = apiInstance.postVote(tenantId, commentId)
             .direction(direction)
+            .broadcastId(broadcastId)
             .sso(sso)
             .execute();
       System.out.println(result);

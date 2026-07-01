@@ -1,30 +1,34 @@
 ## Parametri
 
-| Ime | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| id | string | Da |  |
-| replaceTenantUserBody | ReplaceTenantUserBody | Da |  |
-| updateComments | string | Ne |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| replaceTenantUserBody | ReplaceTenantUserBody | Yes |  |
+| updateComments | string | No |  |
 
 ## Odgovor
 
-Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Vraća: [`ReplaceTenantUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ReplaceTenantUserResponse.ts)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer za replaceTenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'replaceTenantUser Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-92";
-const id: string = "user_7f9b2a";
-const replaceTenantUserBody: ReplaceTenantUserBody = {
-  email: "maria.garcia@acme-corp.com",
-  displayName: "María García",
-  role: "moderator",
-  externalId: "ext-5271"
-};
-const updateComments: string = "true";
-const result: APIEmptyResponse = await replaceTenantUser(tenantId, id, replaceTenantUserBody, updateComments);
+async function updateUser() {
+  const tenantId: string = "c3d1f2e4-5b6a-4c7d-9f2e-1234567890ab";
+  const userId: string = "u-654321";
+  const replaceBody: ReplaceTenantUserBody = {
+    email: "newuser@example.com",
+    username: "newusername"
+  };
+  const response: ReplaceTenantUserResponse = await replaceTenantUser(
+    tenantId,
+    userId,
+    replaceBody,
+    "true"
+  );
+  console.log(response);
+}
+updateUser();
 [inline-code-end]
-
----

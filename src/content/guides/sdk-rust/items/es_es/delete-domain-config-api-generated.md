@@ -1,4 +1,3 @@
----
 ## Parámetros
 
 | Nombre | Tipo | Requerido | Descripción |
@@ -12,17 +11,14 @@ Devuelve: [`DeleteDomainConfigResponse`](https://github.com/FastComments/fastcom
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de delete_domain_config'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_domain_config Ejemplo'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_delete_domain_config() -> Result<DeleteDomainConfigResponse, Error> {
+async fn run_example(configuration: &configuration::Configuration) -> Result<(), Error> {
     let params = DeleteDomainConfigParams {
-        tenant_id: "acme-corp-tenant".to_owned(),
-        domain: "news/acme-corp".to_owned(),
-        force: Some(true),
+        tenant_id: "acme-corp-tenant".to_string(),
+        domain: "news/article".to_string(),
     };
-    let response: DeleteDomainConfigResponse = delete_domain_config(&configuration, params).await?;
-    Ok(response)
+    let _response: DeleteDomainConfigResponse = delete_domain_config(configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

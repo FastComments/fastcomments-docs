@@ -1,30 +1,42 @@
----
 ## 參數
 
-| 名稱 | 類型 | 必填 | 描述 |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| questionId | string | 否 |  |
-| questionIds | Array<string> | 否 |  |
-| urlId | string | 否 |  |
-| timeBucket | AggregateTimeBucket | 否 |  |
-| startDate | Date | 否 |  |
-| forceRecalculate | boolean | 否 |  |
+| tenantId | string | Yes |  |
+| questionId | string | No |  |
+| questionIds | Array<string> | No |  |
+| urlId | string | No |  |
+| timeBucket | AggregateTimeBucket | No |  |
+| startDate | Date | No |  |
+| forceRecalculate | boolean | No |  |
 
 ## 回應
 
-回傳：[`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AggregateQuestionResultsResponse.ts)
+回傳: [`AggregateQuestionResultsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AggregateQuestionResultsResponse1.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'aggregateQuestionResults 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8a4f7c2b';
-const questionIds: string[] = ['q_101', 'q_102', 'q_103'];
-const urlId: string = 'url_3f9b12';
-const startDate: Date = new Date('2026-01-01T00:00:00Z');
-const forceRecalculate: boolean = true;
-const result: AggregateQuestionResultsResponse = await aggregateQuestionResults(tenantId, undefined, questionIds, urlId, undefined, startDate, forceRecalculate);
-[inline-code-end]
+(async () => {
+  const tenantId: string = "acme-corp-123";
+  const questionId: string = "feedback-rating";
+  const questionIds: string[] = ["feedback-rating", "recommendation"];
+  const urlId: string = "https://myblog.com/articles/42";
+  const timeBucket: AggregateTimeBucket = "month";
+  const startDate: Date = new Date("2023-01-01T00:00:00Z");
+  const forceRecalculate: boolean = true;
 
----
+  const result: AggregateQuestionResultsResponse1 = await aggregateQuestionResults(
+    tenantId,
+    questionId,
+    questionIds,
+    urlId,
+    timeBucket,
+    startDate,
+    forceRecalculate
+  );
+
+  console.log(result);
+})();
+[inline-code-end]

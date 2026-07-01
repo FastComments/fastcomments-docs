@@ -1,12 +1,12 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| commentId | string | query | Да |  |
-| direction | string | query | Да |  |
-| userId | string | query | Не |  |
-| anonUserId | string | query | Не |  |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| commentId | string | query | Yes |  |
+| direction | string | query | Yes |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
 
 ## Одговор
 
@@ -14,18 +14,18 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример createVote'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createVote Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи примери кода су још у бети. За било који проблем, пријавите га преко http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledeći kod primeri su i dalje beta. Za bilo koji problem, molimo prijavite putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
 let direction = "direction_example" // String | 
-let userId = "userId_example" // String |  (опционо)
-let anonUserId = "anonUserId_example" // String |  (опционо)
+let userId = "userId_example" // String |  (optional)
+let anonUserId = "anonUserId_example" // String |  (optional)
 
-DefaultAPI.createVote(tenantId: tenantId, commentId: commentId, direction: direction, userId: userId, anonUserId: anonUserId) { (response, error) in
+DefaultAPI.createVote(tenantId: tenantId, commentId: commentId, direction: direction, options: DefaultAPI.CreateVoteOptions(userId: userId, anonUserId: anonUserId)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -36,5 +36,3 @@ DefaultAPI.createVote(tenantId: tenantId, commentId: commentId, direction: direc
     }
 }
 [inline-code-end]
-
----

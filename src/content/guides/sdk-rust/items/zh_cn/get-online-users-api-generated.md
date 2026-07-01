@@ -1,14 +1,13 @@
-当前页面在线的观众：当前其 websocket 会话已订阅该页面的人。
-返回 anonCount + totalCount（房间范围的订阅者，包括我们不枚举的匿名观众）。
+当前在线的页面查看者：其 websocket 会话当前已订阅该页面的用户。返回 anonCount + totalCount（整个房间的订阅者，包括我们未枚举的匿名查看者）。
 
 ## 参数
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenant_id | String | 是 |  |
-| url_id | String | 是 |  |
-| after_name | String | 否 |  |
-| after_user_id | String | 否 |  |
+| 名称 | 类型 | 必需 | 描述 |
+|------|------|------|------|
+| tenant_id | String | Yes |  |
+| url_id | String | Yes |  |
+| after_name | String | No |  |
+| after_user_id | String | No |  |
 
 ## 响应
 
@@ -16,18 +15,16 @@
 
 ## 示例
 
-[inline-code-attrs-start title = 'get_online_users 示例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '获取在线用户 示例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_online_users() -> Result<PageUsersOnlineResponse, Error> {
-    let params: GetOnlineUsersParams = GetOnlineUsersParams {
+async fn example() -> Result<(), Error> {
+    let params = GetOnlineUsersParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        url_id: "news/world/article-2026".to_string(),
-        after_name: Some("jane.doe".to_string()),
-        after_user_id: Some("user_98765".to_string()),
+        url_id: "news/article".to_string(),
+        after_name: Some("john_doe".to_string()),
+        after_user_id: Some("user-123".to_string()),
     };
-    let response: PageUsersOnlineResponse = get_online_users(&configuration, params).await?;
-    Ok(response)
+    let _response: PageUsersOnlineResponse = get_online_users(&config, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

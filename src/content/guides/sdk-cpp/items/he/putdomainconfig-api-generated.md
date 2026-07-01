@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | domainToUpdate | string | כן |  |
@@ -12,24 +12,17 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה של putDomainConfig'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת putDomainConfig'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 utility::string_t domainToUpdate = U("example.com");
-boost::optional<utility::string_t> contactEmail = U("admin@example.com");
-boost::optional<bool> enforceHttps = true;
 UpdateDomainConfigParams updateParams;
-updateParams.contactEmail = contactEmail;
-updateParams.enforceHttps = enforceHttps;
+updateParams.enableComments = true;
+updateParams.moderationLevel = boost::optional<int>(2);
+updateParams.customCss = boost::optional<utility::string_t>(U(".fc-comment{color:red;}"));
 api->putDomainConfig(tenantId, domainToUpdate, updateParams)
-.then([](pplx::task<std::shared_ptr<PutDomainConfigResponse>> t){
-    try {
-        auto resp = t.get();
-        return resp ? resp : std::make_shared<PutDomainConfigResponse>();
-    } catch(...) {
-        return std::make_shared<PutDomainConfigResponse>();
-    }
-});
+    .then([](std::shared_ptr<PutDomainConfigResponse> resp) {
+    });
 [inline-code-end]
 
 ---

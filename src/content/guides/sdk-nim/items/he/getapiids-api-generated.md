@@ -1,14 +1,10 @@
+---
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| textSearch | string | לא |  |
-| byIPFromComment | string | לא |  |
-| filters | string | לא |  |
-| searchFilters | string | לא |  |
-| afterId | string | לא |  |
-| demo | bool | לא |  |
-| sso | string | לא |  |
+| tenantId | string | כן |  |
+| options | GetApiIdsOptions | לא |  |
 
 ## תגובה
 
@@ -16,21 +12,13 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getApiIds'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getApiIds'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getApiIds(
-  textSearch = "urgent moderation review",
-  byIPFromComment = "203.0.113.45",
-  filters = "status:pending,flagged",
-  searchFilters = "author:jane.doe@example.com",
-  afterId = "cmt_9f8e7d6a",
-  demo = false,
-  sso = "sso-token-6b7f9a"
-)
-
-if response.isSome:
-  let idsResp = response.get()
-  echo idsResp
+let opts = GetApiIdsOptions()
+let (maybeResponse, httpResponse) = client.getApiIds(tenantId = "my-tenant-123", options = opts)
+if maybeResponse.isSome:
+  let response = maybeResponse.get()
+  echo response
 [inline-code-end]
 
 ---

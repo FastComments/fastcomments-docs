@@ -1,12 +1,9 @@
 ## Parametreler
 
-| Ad | Tür | Gerekli | Açıklama |
+| Ad | Tip | Gerekli | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
-| userId | string | Hayır |  |
-| state | double | Hayır |  |
-| skip | double | Hayır |  |
-| limit | double | Hayır |  |
+| options | const GetTicketsOptions& | Evet |  |
 
 ## Yanıt
 
@@ -16,21 +13,14 @@ Döndürür: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'getTickets Örneği'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-boost::optional<utility::string_t> userId{ utility::string_t(U("user@example.com")) };
-boost::optional<double> state{ 1.0 };
-boost::optional<double> skip{ 0.0 };
-boost::optional<double> limit{ 25.0 };
-auto emptyResp = std::make_shared<GetTicketsResponse>();
-api->getTickets(tenantId, userId, state, skip, limit)
-.then([](pplx::task<std::shared_ptr<GetTicketsResponse>> t){
+auto options = GetTicketsOptions{};
+options.page = boost::optional<int>(1);
+options.status = boost::optional<utility::string_t>(U("open"));
+api->getTickets(U("my-tenant-123"), options).then([](pplx::task<std::shared_ptr<GetTicketsResponse>> task) {
     try {
-        auto resp = t.get();
-        if (resp) (void)resp;
-    } catch (const std::exception& e) {
-        (void)e;
+        auto response = task.get();
+        auto responseCopy = std::make_shared<GetTicketsResponse>(*response);
+    } catch (const std::exception&) {
     }
 });
 [inline-code-end]
-
----

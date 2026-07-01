@@ -2,10 +2,12 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| commentId | string | ruta | Sí |  |
-| spam | boolean | consulta | No |  |
-| permNotSpam | boolean | consulta | No |  |
-| sso | string | consulta | No |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| spam | boolean | query | No |  |
+| permNotSpam | boolean | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Respuesta
 
@@ -22,16 +24,22 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
     // Si desea usar un cliente HTTP personalizado, pase su cliente que implemente `GuzzleHttp\ClientInterface`.
-    // Esto es opcional, `GuzzleHttp\Client` se usará por defecto.
+    // Esto es opcional, se usará `GuzzleHttp\Client` por defecto.
     new GuzzleHttp\Client()
 );
-$comment_id = 'comment_id_example'; // string
-$spam = True; // bool
-$perm_not_spam = True; // bool
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // cadena
+$comment_id = 'comment_id_example'; // cadena
+$options = [
+    'spam' => True, // booleano
+    'perm_not_spam' => True, // booleano
+    'broadcast_id' => 'broadcast_id_example', // cadena
+    'sso' => 'sso_example', // cadena
+];
+
 
 try {
-    $result = $apiInstance->postSetCommentSpamStatus($comment_id, $spam, $perm_not_spam, $sso);
+    $result = $apiInstance->postSetCommentSpamStatus($tenant_id, $comment_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->postSetCommentSpamStatus: ', $e->getMessage(), PHP_EOL;

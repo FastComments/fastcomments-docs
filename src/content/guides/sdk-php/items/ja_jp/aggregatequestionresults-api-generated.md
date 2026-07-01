@@ -2,15 +2,15 @@
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | はい |  |
-| questionId | string | query | いいえ |  |
-| questionIds | array | query | いいえ |  |
-| urlId | string | query | いいえ |  |
-| timeBucket | string | query | いいえ |  |
-| startDate | string | query | いいえ |  |
-| forceRecalculate | boolean | query | いいえ |  |
+| tenantId | string | query | Yes |  |
+| questionId | string | query | No |  |
+| questionIds | array | query | No |  |
+| urlId | string | query | No |  |
+| timeBucket | string | query | No |  |
+| startDate | string | query | No |  |
+| forceRecalculate | boolean | query | No |  |
 
-## レスポンス
+## 応答
 
 返却: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AggregateQuestionResultsResponse.php)
 
@@ -22,28 +22,32 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// APIキー認証を設定: api_key
+// API キー認証を設定: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// 必要に応じて、APIキーのプレフィックス（例: Bearer）を設定するには以下のコメントを外してください
+// 必要に応じて、API キーのプレフィックス（例: Bearer）を設定するには、以下のコメントを解除してください
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // カスタムのHTTPクライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
-    // これは任意です。デフォルトでは `GuzzleHttp\Client` が使用されます。
+    // カスタム HTTP クライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装したクライアントを渡してください。
+    // これはオプションです。デフォルトでは `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$question_id = 'question_id_example'; // string
-$question_ids = array('question_ids_example'); // string[]
-$url_id = 'url_id_example'; // string
-$time_bucket = new \FastComments\Client\Model\\FastComments\Client\Model\AggregateTimeBucket(); // \FastComments\Client\Model\AggregateTimeBucket
-$start_date = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime
-$force_recalculate = True; // bool
+
+$tenant_id = 'tenant_id_example'; // 文字列
+$options = [
+    'question_id' => 'question_id_example', // 文字列
+    'question_ids' => array('question_ids_example'), // 文字列[]
+    'url_id' => 'url_id_example', // 文字列
+    'time_bucket' => new \FastComments\Client\Model\\FastComments\Client\Model\AggregateTimeBucket(), // \FastComments\Client\Model\AggregateTimeBucket
+    'start_date' => new \DateTime('2013-10-20T19:20:30+01:00'), // \DateTime
+    'force_recalculate' => True, // bool
+];
+
 
 try {
-    $result = $apiInstance->aggregateQuestionResults($tenant_id, $question_id, $question_ids, $url_id, $time_bucket, $start_date, $force_recalculate);
+    $result = $apiInstance->aggregateQuestionResults($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->aggregateQuestionResults: ', $e->getMessage(), PHP_EOL;

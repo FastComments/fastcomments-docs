@@ -2,8 +2,8 @@
 
 | Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
-| tenant_id | String | Da |  |
-| skip | f64 | Ne |  |
+| tenant_id | String | Yes |  |
+| skip | f64 | No |  |
 
 ## Odgovor
 
@@ -11,16 +11,14 @@ Vrne: [`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-rus
 
 ## Primer
 
-[inline-code-attrs-start title = 'get_moderators Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer get_moderators'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_moderators(configuration: &configuration::Configuration) -> Result<GetModeratorsResponse, Error> {
-    let params: GetModeratorsParams = GetModeratorsParams {
+async fn example() -> Result<(), Error> {
+    let params = GetModeratorsParams {
         tenant_id: "acme-corp-tenant".to_string(),
         skip: Some(20.0),
     };
-    let response: GetModeratorsResponse = get_moderators(configuration, params).await?;
-    Ok(response)
+    let _response = get_moderators(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

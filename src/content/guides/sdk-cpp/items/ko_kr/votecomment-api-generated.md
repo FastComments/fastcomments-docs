@@ -7,8 +7,7 @@
 | urlId | string | 예 |  |
 | broadcastId | string | 예 |  |
 | voteBodyParams | VoteBodyParams | 예 |  |
-| sessionId | string | 아니오 |  |
-| sso | string | 아니오 |  |
+| options | const VoteCommentOptions& | 예 |  |
 
 ## 응답
 
@@ -18,18 +17,24 @@
 
 [inline-code-attrs-start title = 'voteComment 예제'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
-utility::string_t commentId = utility::conversions::to_string_t("comment-456");
-utility::string_t urlId = utility::conversions::to_string_t("/articles/how-to-cpp");
-utility::string_t broadcastId = utility::conversions::to_string_t("broadcast-001");
-VoteBodyParams voteBodyParams;
-boost::optional<utility::string_t> sessionId = boost::optional<utility::string_t>(utility::conversions::to_string_t("session-abc-123"));
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(utility::conversions::to_string_t("user@example.com"));
-api->voteComment(tenantId, commentId, urlId, broadcastId, voteBodyParams, sessionId, sso)
-.then([](std::shared_ptr<VoteResponse> resp){
-    auto safeResp = resp ? resp : std::make_shared<VoteResponse>();
-    return safeResp;
-});
-[inline-code-end]
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto commentId = utility::conversions::to_string_t("comment-7890");
+auto urlId = utility::conversions::to_string_t("article-456");
+auto broadcastId = utility::conversions::to_string_t("broadcast-321");
 
----
+VoteBodyParams voteParams;
+voteParams.upvote = true;
+voteParams.note = boost::optional<utility::string_t>(utility::conversions::to_string_t("Great insight"));
+
+VoteCommentOptions options;
+options.dryRun = boost::optional<bool>(false);
+
+api->voteComment(tenantId, commentId, urlId, broadcastId, voteParams, options)
+   .then([](pplx::task<std::shared_ptr<VoteResponse>> t) {
+       try {
+           auto response = t.get();
+           // 응답 처리
+       } catch (const std::exception&) {
+       }
+   });
+[inline-code-end]

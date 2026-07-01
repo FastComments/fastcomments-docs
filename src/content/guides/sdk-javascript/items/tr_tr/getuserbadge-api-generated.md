@@ -1,24 +1,28 @@
----
 ## Parametreler
 
-| Name | Type | Required | Description |
+| Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | id | string | Evet |  |
 
 ## Yanıt
 
-Döndürür: [`APIGetUserBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIGetUserBadgeResponse.ts)
+Döndürür: [`GetUserBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserBadgeResponse.ts)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'getUserBadge Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-72a1';
-const id: string = 'badge_5d8f3c9';
-const response: APIGetUserBadgeResponse = await getUserBadge(tenantId, id);
-const status: APIStatus = response.status;
-const badgeTitle: string | undefined = response.userBadge?.title;
-[inline-code-end]
+async function runExample(): Promise<void> {
+  const tenantId: string = "acme-corp-tenant-001";
+  const badgeId: string = "badge-5f9d3a2b";
 
----
+  const badgeResponse: GetUserBadgeResponse = await getUserBadge(tenantId, badgeId);
+
+  // Opsiyonel alanlara güvenli bir şekilde erişin
+  const badgeName: string | undefined = badgeResponse.userBadge?.name;
+  console.log(`Badge ID: ${badgeId}, Name: ${badgeName ?? "Unnamed"}`);
+}
+
+runExample();
+[inline-code-end]

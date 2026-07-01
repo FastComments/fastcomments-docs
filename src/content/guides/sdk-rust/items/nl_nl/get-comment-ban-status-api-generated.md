@@ -1,11 +1,12 @@
 ## Parameters
 
 | Naam | Type | Verplicht | Beschrijving |
-|------|------|----------|-------------|
+|------|------|-----------|--------------|
+| tenant_id | String | Ja |  |
 | comment_id | String | Ja |  |
 | sso | String | Nee |  |
 
-## Response
+## Respons
 
 Retourneert: [`GetCommentBanStatusResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_comment_ban_status_response.rs)
 
@@ -13,12 +14,13 @@ Retourneert: [`GetCommentBanStatusResponse`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'get_comment_ban_status Voorbeeld'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let params: GetCommentBanStatusParams = GetCommentBanStatusParams {
-        comment_id: String::from("cmt-9f8b7a6e-4d3c-11ee-8c99-0242ac120002"),
-        sso: Some(String::from("acme-corp-tenant")),
+async fn example(config: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetCommentBanStatusParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: "comment-12345".to_string(),
+        sso: Some("user@example.com".to_string()),
     };
-    let response: GetCommentBanStatusResponse = get_comment_ban_status(&configuration, params).await?;
+    let _response: GetCommentBanStatusResponse = get_comment_ban_status(config, params).await?;
     Ok(())
 }
 [inline-code-end]

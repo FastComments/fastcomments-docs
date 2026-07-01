@@ -1,13 +1,10 @@
 ## Parametri
 
 | Ime | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
 | tenantId | string | Da |  |
 | urlId | string | Da |  |
-| usernameStartsWith | string | Ne |  |
-| mentionGroupIds | seq[string] | Ne |  |
-| sso | string | Ne |  |
-| searchSection | string | Ne |  |
+| options | SearchUsersOptions | Ne |  |
 
 ## Odgovor
 
@@ -15,22 +12,16 @@ Vraća: [`Option[SearchUsersResult]`](https://github.com/FastComments/fastcommen
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer searchUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'searchUsers Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.searchUsers(
   tenantId = "my-tenant-123",
-  urlId = "news/top-story",
-  usernameStartsWith = "",
-  mentionGroupIds = @[],
-  sso = "",
-  searchSection = ""
+  urlId = "news/article-title",
+  options = SearchUsersOptions()
 )
 
 if response.isSome:
-  let searchResult = response.get()
-  echo "SearchUsersResult:", searchResult
-else:
-  echo "No result or error. HTTP response:", httpResponse
+  let result = response.get()
 [inline-code-end]
 
 ---

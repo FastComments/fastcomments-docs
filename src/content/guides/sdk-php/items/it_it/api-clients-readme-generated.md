@@ -1,8 +1,8 @@
-Il SDK espone tre classi client API:
+L'SDK espone tre classi client API:
 
-- **`DefaultApi`** — Metodi autenticati tramite API key per uso server-side. Configura una API key come mostrato in [Primi passi](#getting-started-readme-generated).
-- **`PublicApi`** — Metodi pubblici che non richiedono una API key, sicuri da chiamare da browser e app mobili.
-- **`ModerationApi`** — Metodi per la dashboard di moderazione: elencare, contare, cercare, registrare ed esportare commenti; azioni di moderazione (rimuovi/ripristina, segnala, imposta stato revisione/spam/approvazione, voti, riapri/chiudi thread); ban (ban dai commenti, annulla, riepiloghi pre-ban, stato e preferenze ban, conteggi utenti bannati); e badge & trust (assegna/rimuovi badge, badge manuali, ottenere/impostare fattore di fiducia, profilo interno utente). Ogni metodo di `ModerationApi` accetta un parametro `$sso` per autenticare il moderatore tramite SSO.
+- **`DefaultApi`** - metodi autenticati con chiave API per uso lato server. Configura una chiave API come mostrato in [Getting Started](#getting-started-readme-generated).
+- **`PublicApi`** - metodi pubblici che non richiedono una chiave API, sicuri da chiamare da browser e app mobili.
+- **`ModerationApi`** - una suite completa di API di moderazione in tempo reale e veloce. Ogni metodo `ModerationApi` accetta un parametro `$sso` e può autenticarsi tramite SSO o un cookie di sessione FastComments.com.
 
 ### Utilizzo di PublicApi
 
@@ -37,7 +37,9 @@ $apiInstance = new FastComments\Client\Api\ModerationApi(
 $sso = 'sso_example'; // string - Payload SSO che autentica il moderatore
 
 try {
-    $result = $apiInstance->getCount(null, null, null, null, null, $sso);
+    $result = $apiInstance->getCount([
+        'sso' => $sso,
+    ]);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getCount: ', $e->getMessage(), PHP_EOL;

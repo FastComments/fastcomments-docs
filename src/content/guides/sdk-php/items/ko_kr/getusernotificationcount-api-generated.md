@@ -1,15 +1,15 @@
-## 매개변수
+## Parameters
 
 | 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
 | sso | string | query | 아니오 |  |
 
-## 응답
+## Response
 
 반환: [`GetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetUserNotificationCountResponse.php)
 
-## 예제
+## Example
 
 [inline-code-attrs-start title = 'getUserNotificationCount 예제'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -19,12 +19,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // 커스텀 HTTP 클라이언트를 사용하려면 `GuzzleHttp\ClientInterface`를 구현하는 클라이언트를 전달하세요.
-    // 이는 선택 사항이며 기본적으로 `GuzzleHttp\Client`가 사용됩니다.
+    // 사용자 지정 HTTP 클라이언트를 사용하려면 `GuzzleHttp\ClientInterface`을 구현하는 클라이언트를 전달하세요.
+    // 이는 선택 사항이며, 기본적으로 `GuzzleHttp\Client`가 사용됩니다.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->getUserNotificationCount($tenant_id, $sso);

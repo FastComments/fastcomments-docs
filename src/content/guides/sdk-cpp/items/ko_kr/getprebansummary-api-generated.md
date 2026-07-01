@@ -1,12 +1,10 @@
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| commentId | string | 예 |  |
-| includeByUserIdAndEmail | bool | 아니오 |  |
-| includeByIP | bool | 아니오 |  |
-| includeByEmailDomain | bool | 아니오 |  |
-| sso | string | 아니오 |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| options | const GetPreBanSummaryOptions& | Yes |  |
 
 ## 응답
 
@@ -16,21 +14,18 @@
 
 [inline-code-attrs-start title = 'getPreBanSummary 예제'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t commentId = utility::conversions::to_string_t("cmt-987654321");
-boost::optional<bool> includeByUserIdAndEmail = true;
-boost::optional<bool> includeByIP = true;
-boost::optional<bool> includeByEmailDomain = false;
-boost::optional<utility::string_t> sso = utility::conversions::to_string_t("my-tenant-123-sso-token");
-api->getPreBanSummary(commentId, includeByUserIdAndEmail, includeByIP, includeByEmailDomain, sso)
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto commentId = utility::conversions::to_string_t("cmt-456789");
+GetPreBanSummaryOptions options;
+options.locale = boost::optional<utility::string_t>{utility::conversions::to_string_t("en-US")};
+
+api->getPreBanSummary(tenantId, commentId, options)
     .then([](pplx::task<std::shared_ptr<PreBanSummary>> t) {
         try {
             auto summary = t.get();
-            if (!summary) summary = std::make_shared<PreBanSummary>();
-            std::cout << "PreBanSummary retrieved" << std::endl;
-        } catch (const std::exception &e) {
-            std::cerr << "Error fetching PreBanSummary: " << e.what() << std::endl;
+            // 요약 처리
+        } catch (const std::exception&) {
+            // 오류 처리
         }
     });
 [inline-code-end]
-
----

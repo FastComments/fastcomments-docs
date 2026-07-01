@@ -1,7 +1,8 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Місце | Обов’язково | Опис |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Так |  |
 | page | number | query | Ні |  |
 | count | number | query | Ні |  |
 | text-search | string | query | Ні |  |
@@ -20,20 +21,21 @@
 
 [inline-code-attrs-start title = 'getApiComments Приклад'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Наступні приклади коду ще в бета-версії. Якщо виникне проблема, будь ласка, повідомте через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наступні зразки коду все ще у бета-версії. У разі проблем, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let page = 987 // Double |  (необов'язково)
-let count = 987 // Double |  (необов'язково)
-let textSearch = "textSearch_example" // String |  (необов'язково)
-let byIPFromComment = "byIPFromComment_example" // String |  (необов'язково)
-let filters = "filters_example" // String |  (необов'язково)
-let searchFilters = "searchFilters_example" // String |  (необов'язково)
-let sorts = "sorts_example" // String |  (необов'язково)
-let demo = true // Bool |  (необов'язково)
-let sso = "sso_example" // String |  (необов'язково)
+let tenantId = "tenantId_example" // String | 
+let page = 987 // Double |  (необов’язково)
+let count = 987 // Double |  (необов’язково)
+let textSearch = "textSearch_example" // String |  (необов’язково)
+let byIPFromComment = "byIPFromComment_example" // String |  (необов’язково)
+let filters = "filters_example" // String |  (необов’язково)
+let searchFilters = "searchFilters_example" // String |  (необов’язково)
+let sorts = "sorts_example" // String |  (необов’язково)
+let demo = true // Bool |  (необов’язково)
+let sso = "sso_example" // String |  (необов’язково)
 
-ModerationAPI.getApiComments(page: page, count: count, textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, demo: demo, sso: sso) { (response, error) in
+ModerationAPI.getApiComments(tenantId: tenantId, options: ModerationAPI.GetApiCommentsOptions(page: page, count: count, textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, demo: demo, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

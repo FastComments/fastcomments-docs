@@ -1,13 +1,14 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Zahtevano | Opis |
-|------|------|----------|----------|-------------|
-| commentId | string | pot | Da |  |
-| sso | string | poizvedba | Ne |  |
+| Ime | Tip | Lokacija | Obvezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
+| commentId | string | path | Da |  |
+| sso | string | query | Ne |  |
 
 ## Odgovor
 
-Vrne: [`GetCommentBanStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCommentBanStatusResponse.php)
+Vrnitev: [`GetCommentBanStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCommentBanStatusResponse.php)
 
 ## Primer
 
@@ -19,17 +20,22 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Če želite uporabiti lastnega HTTP odjemalca, posredujte odjemalca, ki implementira `GuzzleHttp\ClientInterface`.
-    // To ni obvezno, kot privzeti bo uporabljen `GuzzleHttp\Client`.
+    // Če želite uporabiti svoj HTTP odjemalec, podajte svoj odjemalec, ki implementira `GuzzleHttp\ClientInterface`.
+    // To je neobvezno, `GuzzleHttp\Client` bo uporabljen kot privzeto.
     new GuzzleHttp\Client()
 );
+
+$tenant_id = 'tenant_id_example'; // niz
 $comment_id = 'comment_id_example'; // niz
 $sso = 'sso_example'; // niz
 
+
 try {
-    $result = $apiInstance->getCommentBanStatus($comment_id, $sso);
+    $result = $apiInstance->getCommentBanStatus($tenant_id, $comment_id, $sso);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getCommentBanStatus: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

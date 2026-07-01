@@ -1,9 +1,9 @@
 ## Parametry
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tag | string | Nie |  |
+| Nazwa | Typ | Wymagane | Opis |
+|------|------|----------|------|
 | tenantId | string | Tak |  |
+| tag | string | Nie |  |
 | deleteHashTagRequestBody | DeleteHashTagRequestBody | Nie |  |
 
 ## Odpowiedź
@@ -14,17 +14,7 @@ Zwraca: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomment
 
 [inline-code-attrs-start title = 'Przykład deleteHashTag'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteHashTag(
-  tag = "",
-  tenantId = "my-tenant-123",
-  deleteHashTagRequestBody = DeleteHashTagRequestBody()
-)
-
-if response.isSome:
-  let emptyResp = response.get()
-  echo "Deleted hashtag for tenant my-tenant-123; response:", $emptyResp, " status:", $httpResponse.status
-else:
-  echo "No response body; status:", $httpResponse.status
+let (apiResp, httpResp) = client.deleteHashTag(tenantId = "my-tenant-123", tag = "sports", deleteHashTagRequestBody = DeleteHashTagRequestBody())
+if apiResp.isSome:
+  let emptyResp = apiResp.get()
 [inline-code-end]
-
----

@@ -2,13 +2,13 @@
 
 | Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
-| userId | string | query | Не |  |
-| direction | string | query | Не |  |
-| repliesToUserId | string | query | Не |  |
-| page | number | query | Не |  |
-| includei10n | boolean | query | Не |  |
-| locale | string | query | Не |  |
-| isCrawler | boolean | query | Не |  |
+| userId | string | query | No |  |
+| direction | string | query | No |  |
+| repliesToUserId | string | query | No |  |
+| page | number | query | No |  |
+| includei10n | boolean | query | No |  |
+| locale | string | query | No |  |
+| isCrawler | boolean | query | No |  |
 
 ## Отговор
 
@@ -16,7 +16,7 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за getCommentsForUser'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getCommentsForUser Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -24,22 +24,28 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ако искате да използвате собствен HTTP клиент, подайте клиента си, който имплементира `GuzzleHttp\ClientInterface`.
-    // Това е по избор, `GuzzleHttp\Client` ще се използва като подразбиране.
+    // Ако искате да използвате персонализиран HTTP клиент, предайте вашия клиент, който имплементира `GuzzleHttp\ClientInterface`.
+    // Това е незадължително, по подразбиране ще се използва `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
-$user_id = 'user_id_example'; // string
-$direction = new \FastComments\Client\Model\\FastComments\Client\Model\SortDirections(); // \FastComments\Client\Model\SortDirections
-$replies_to_user_id = 'replies_to_user_id_example'; // string
-$page = 3.4; // float
-$includei10n = True; // bool
-$locale = 'locale_example'; // string
-$is_crawler = True; // bool
+
+$options = [
+    'user_id' => 'user_id_example', // низ
+    'direction' => new \FastComments\Client\Model\\FastComments\Client\Model\SortDirections(), // \FastComments\Client\Model\SortDirections
+    'replies_to_user_id' => 'replies_to_user_id_example', // низ
+    'page' => 3.4, // число
+    'includei10n' => True, // булев
+    'locale' => 'locale_example', // низ
+    'is_crawler' => True, // булев
+];
+
 
 try {
-    $result = $apiInstance->getCommentsForUser($user_id, $direction, $replies_to_user_id, $page, $includei10n, $locale, $is_crawler);
+    $result = $apiInstance->getCommentsForUser($options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getCommentsForUser: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

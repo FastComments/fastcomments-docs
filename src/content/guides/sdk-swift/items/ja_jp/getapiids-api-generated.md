@@ -1,35 +1,37 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| text-search | string | query | いいえ |  |
-| byIPFromComment | string | query | いいえ |  |
-| filters | string | query | いいえ |  |
-| searchFilters | string | query | いいえ |  |
-| afterId | string | query | いいえ |  |
-| demo | boolean | query | いいえ |  |
-| sso | string | query | いいえ |  |
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| afterId | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
-## レスポンス
+## 応答
 
-戻り値: [`ModerationAPIGetCommentIdsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationAPIGetCommentIdsResponse.swift)
+Returns: [`ModerationAPIGetCommentIdsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationAPIGetCommentIdsResponse.swift)
 
 ## 例
 
-[inline-code-attrs-start title = 'getApiIds の例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getApiIds 例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 以下のコードサンプルはまだベータ版です。問題がある場合は http://github.com/OpenAPITools/openapi-generator/issues/new で報告してください
+// 以下のコードサンプルはまだベータ版です。問題がある場合は、http://github.com/OpenAPITools/openapi-generator/issues/new へ報告してください
 import FastCommentsSwift
 
-let textSearch = "textSearch_example" // String |  （任意）
-let byIPFromComment = "byIPFromComment_example" // String |  （任意）
-let filters = "filters_example" // String |  （任意）
-let searchFilters = "searchFilters_example" // String |  （任意）
-let afterId = "afterId_example" // String |  （任意）
-let demo = true // Bool |  （任意）
-let sso = "sso_example" // String |  （任意）
+let tenantId = "tenantId_example" // String |
+let textSearch = "textSearch_example" // String |  (任意)
+let byIPFromComment = "byIPFromComment_example" // String |  (任意)
+let filters = "filters_example" // String |  (任意)
+let searchFilters = "searchFilters_example" // String |  (任意)
+let afterId = "afterId_example" // String |  (任意)
+let demo = true // Bool |  (任意)
+let sso = "sso_example" // String |  (任意)
 
-ModerationAPI.getApiIds(textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, afterId: afterId, demo: demo, sso: sso) { (response, error) in
+ModerationAPI.getApiIds(tenantId: tenantId, options: ModerationAPI.GetApiIdsOptions(textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, afterId: afterId, demo: demo, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -40,5 +42,3 @@ ModerationAPI.getApiIds(textSearch: textSearch, byIPFromComment: byIPFromComment
     }
 }
 [inline-code-end]
-
----

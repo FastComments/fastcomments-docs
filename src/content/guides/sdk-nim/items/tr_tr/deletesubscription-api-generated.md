@@ -1,10 +1,11 @@
+---
 ## Parametreler
 
 | Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
-| tenantId | string | Evet |  |
-| id | string | Hayır |  |
-| userId | string | Hayır |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| userId | string = "" | No |  |
 
 ## Yanıt
 
@@ -14,12 +15,15 @@ Döndürür: [`Option[DeleteSubscriptionAPIResponse]`](https://github.com/FastCo
 
 [inline-code-attrs-start title = 'deleteSubscription Örneği'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteSubscription(tenantId = "my-tenant-123", id = "sub-98765", userId = "user-456")
-if response.isSome:
-  let deleteResp = response.get()
-  echo "Delete subscription response received"
-else:
-  echo "No subscription response"
+let (maybeResp, httpResp) = client.deleteSubscription(
+  tenantId = "my-tenant-123",
+  id = "sub-789",
+  userId = ""
+)
+
+if maybeResp.isSome:
+  let apiResult = maybeResp.get()
+  # apiResult'ı gerektiği gibi kullan
 [inline-code-end]
 
 ---

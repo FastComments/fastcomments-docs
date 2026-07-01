@@ -1,6 +1,6 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Назва | Тип | Розташування | Обов’язковий | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | id | string | path | Yes |  |
@@ -19,25 +19,28 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Налаштування авторизації за допомогою API-ключа: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Налаштуйте авторизацію за допомогою API key: api_key
+// Розкоментуйте нижче, щоб встановити префікс (наприклад, Bearer) для API key, якщо потрібно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Якщо ви хочете використовувати власний HTTP-клієнт, передайте клієнт, який реалізує `GuzzleHttp\ClientInterface`.
-    // Це необов'язково, за замовчуванням буде використано `GuzzleHttp\Client`.
+    // Якщо ви хочете використовувати власний HTTP‑клієнт, передайте ваш клієнт, який реалізує `GuzzleHttp\ClientInterface`.
+    // Це необов’язково, за замовчуванням буде використано `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$id = 'id_example'; // string
-$context_user_id = 'context_user_id_example'; // string
-$is_live = True; // bool
+
+$tenant_id = 'tenant_id_example'; // рядок
+$id = 'id_example'; // рядок
+$options = [
+    'context_user_id' => 'context_user_id_example', // рядок
+    'is_live' => True, // булевий
+];
+
 
 try {
-    $result = $apiInstance->deleteComment($tenant_id, $id, $context_user_id, $is_live);
+    $result = $apiInstance->deleteComment($tenant_id, $id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->deleteComment: ', $e->getMessage(), PHP_EOL;

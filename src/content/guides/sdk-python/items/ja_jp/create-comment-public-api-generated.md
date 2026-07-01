@@ -2,11 +2,11 @@
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | はい |  |
-| urlId | string | query | はい |  |
-| broadcastId | string | query | はい |  |
-| sessionId | string | query | いいえ |  |
-| sso | string | query | いいえ |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| broadcastId | string | query | Yes |  |
+| sessionId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## レスポンス
 
@@ -17,31 +17,32 @@
 [inline-code-attrs-start title = 'create_comment_public の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import CreateCommentPublicOptions
 from client.models.comment_data import CommentData
 from client.models.save_comments_response_with_presence import SaveCommentsResponseWithPresence
 from client.rest import ApiException
 from pprint import pprint
 
-# ホストの定義は任意で、デフォルトは https://fastcomments.com です
-# サポートされているすべての設定パラメータの一覧については configuration.py を参照してください。
+# ホストの定義はオプションで、デフォルトは https://fastcomments.com です
+# configuration.py でサポートされているすべての設定パラメータの一覧を確認できます。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# APIクライアントのインスタンスを使ってコンテキストに入ります
+# API クライアントのインスタンスでコンテキストに入ります
 with client.ApiClient(configuration) as api_client:
-    # APIクラスのインスタンスを作成します
+    # API クラスのインスタンスを作成します
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
     broadcast_id = 'broadcast_id_example' # str | 
     comment_data = client.CommentData() # CommentData | 
-    session_id = 'session_id_example' # str |  (任意)
-    sso = 'sso_example' # str |  (任意)
+    session_id = 'session_id_example' # str |  (オプション)
+    sso = 'sso_example' # str |  (オプション)
 
     try:
-        api_response = api_instance.create_comment_public(tenant_id, url_id, broadcast_id, comment_data, session_id=session_id, sso=sso)
+        api_response = api_instance.create_comment_public(tenant_id, url_id, broadcast_id, comment_data, CreateCommentPublicOptions(session_id=session_id, sso=sso))
         print("The response of PublicApi->create_comment_public:\n")
         pprint(api_response)
     except Exception as e:

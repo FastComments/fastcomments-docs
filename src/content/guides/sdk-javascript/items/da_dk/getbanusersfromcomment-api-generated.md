@@ -1,26 +1,34 @@
----
 ## Parametre
 
-| Name | Type | Påkrævet | Beskrivelse |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
 | commentId | string | Ja |  |
+| tenantId | string | Nej |  |
 | sso | string | Nej |  |
 
 ## Svar
 
-Returnerer: [`GetBannedUsersFromCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetBannedUsersFromCommentResponse.ts)
+Returnerer: [`GetBanUsersFromCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetBanUsersFromCommentResponse.ts)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på getBanUsersFromComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getBanUsersFromComment Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const commentId: string = "cmt_7f4d2a9b6c";
-  const ssoToken: string = "sso_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.signature";
-  const bannedWithoutSso: GetBannedUsersFromCommentResponse = await getBanUsersFromComment(commentId);
-  const bannedWithSso: GetBannedUsersFromCommentResponse = await getBanUsersFromComment(commentId, ssoToken);
-  console.log(bannedWithoutSso, bannedWithSso);
-})();
+async function demoGetBanUsers() {
+  const commentId: string = "cmt_5f8e3a9b2d";
+  const tenantId: string = "tenant_42";
+  const sso: string = "sso_token_abc123";
+
+  // Kald med alle parametre
+  const fullResult: GetBanUsersFromCommentResponse = await getBanUsersFromComment(commentId, tenantId, sso);
+  console.log(fullResult);
+
+  // Kald kun med den påkrævede parameter
+  const minimalResult: GetBanUsersFromCommentResponse = await getBanUsersFromComment(commentId);
+  console.log(minimalResult);
+}
+
+demoGetBanUsers();
 [inline-code-end]
 
 ---

@@ -1,30 +1,25 @@
 ## 參數
 
-| 名稱 | 類型 | 是否必填 | 說明 |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| id | string | 是 |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
 ## 回應
 
-回傳: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptySuccessResponse.h)
+返回：[`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptySuccessResponse.h)
 
 ## 範例
 
 [inline-code-attrs-start title = 'deleteUserBadge 範例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t badgeId = U("badge-456");
-boost::optional<utility::string_t> requestId = boost::optional<utility::string_t>(U("req-789"));
-api->deleteUserBadge(tenantId, badgeId)
-    .then([tenantId, requestId](std::shared_ptr<APIEmptySuccessResponse> resp) {
-        auto result = resp ? resp : std::make_shared<APIEmptySuccessResponse>();
-        std::cout << "Deleted badge '" << badgeId << "' for tenant '" << tenantId << "'\n";
-        return result;
+auto tenantId = boost::optional<utility::string_t>(U("my-tenant-123"));
+auto badgeId = utility::string_t(U("badge-789"));
+api->deleteUserBadge(tenantId.value(), badgeId)
+    .then([](std::shared_ptr<APIEmptySuccessResponse> resp){
+        auto copy = std::make_shared<APIEmptySuccessResponse>(*resp);
     })
-    .then([](std::shared_ptr<APIEmptySuccessResponse>){
-    })
-    .wait();
+    .then([](pplx::task<void> t){
+        try{ t.get(); } catch(const std::exception&){ }
+    });
 [inline-code-end]
-
----

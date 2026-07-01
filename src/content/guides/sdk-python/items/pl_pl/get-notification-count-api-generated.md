@@ -1,28 +1,29 @@
-## Parametry
+## Parameters
 
-| Name | Type | Lokalizacja | Wymagane | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Tak |  |
-| userId | string | query | Nie |  |
-| urlId | string | query | Nie |  |
-| fromCommentId | string | query | Nie |  |
-| viewed | boolean | query | Nie |  |
-| type | string | query | Nie |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| urlId | string | query | No |  |
+| fromCommentId | string | query | No |  |
+| viewed | boolean | query | No |  |
+| type | string | query | No |  |
 
-## Odpowiedź
+## Response
 
 Zwraca: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notification_count_response.py)
 
-## Przykład
+## Example
 
-[inline-code-attrs-start title = 'Przykład get_notification_count'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_notification_count Przykład'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetNotificationCountOptions
 from client.models.get_notification_count_response import GetNotificationCountResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Określenie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
+# Definiowanie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
 # Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracji.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -30,13 +31,13 @@ configuration = client.Configuration(
 
 # Klient musi skonfigurować parametry uwierzytelniania i autoryzacji
 # zgodnie z polityką bezpieczeństwa serwera API.
-# Poniżej znajdują się przykłady dla każdej metody uwierzytelniania; użyj przykładu, który
-# odpowiada Twojemu przypadkowi użycia uwierzytelniania.
+# Przykłady dla każdej metody uwierzytelniania są podane poniżej, użyj przykładu, który
+# spełnia Twój przypadek użycia uwierzytelniania.
 
-# Configure API key authorization: api_key
+# Skonfiguruj autoryzację kluczem API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli jest potrzebny
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Wejdź w kontekst z instancją klienta API
@@ -44,14 +45,14 @@ with client.ApiClient(configuration) as api_client:
     # Utwórz instancję klasy API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    user_id = 'user_id_example' # str |  (opcjonalne)
-    url_id = 'url_id_example' # str |  (opcjonalne)
-    from_comment_id = 'from_comment_id_example' # str |  (opcjonalne)
-    viewed = True # bool |  (opcjonalne)
-    type = 'type_example' # str |  (opcjonalne)
+    user_id = 'user_id_example' # str |  (optional)
+    url_id = 'url_id_example' # str |  (optional)
+    from_comment_id = 'from_comment_id_example' # str |  (optional)
+    viewed = True # bool |  (optional)
+    type = 'type_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_notification_count(tenant_id, user_id=user_id, url_id=url_id, from_comment_id=from_comment_id, viewed=viewed, type=type)
+        api_response = api_instance.get_notification_count(tenant_id, GetNotificationCountOptions(user_id=user_id, url_id=url_id, from_comment_id=from_comment_id, viewed=viewed, type=type))
         print("The response of DefaultApi->get_notification_count:\n")
         pprint(api_response)
     except Exception as e:

@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | tenant_id | String | כן |  |
 | sso | String | לא |  |
@@ -11,16 +11,15 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-get_user_notification_count'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל‑get_user_notification_count'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example() -> Result<(), Error> {
-    let params: GetUserNotificationCountParams = GetUserNotificationCountParams {
-        tenant_id: "acme-corp-tenant".to_owned(),
-        sso: Some("user-42.sso.example".to_owned()),
+    let params = GetUserNotificationCountParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        sso: Some("user-sso-token".to_string()),
     };
-    let response: GetUserNotificationCountResponse = get_user_notification_count(&configuration, params).await?;
+    let response = get_user_notification_count(&config, params).await?;
+    println!("{:?}", response);
     Ok(())
 }
 [inline-code-end]
-
----

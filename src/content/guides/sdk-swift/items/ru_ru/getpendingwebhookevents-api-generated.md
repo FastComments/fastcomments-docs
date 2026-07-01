@@ -2,14 +2,14 @@
 
 | Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| commentId | string | query | Нет |  |
-| externalId | string | query | Нет |  |
-| eventType | string | query | Нет |  |
-| type | string | query | Нет |  |
-| domain | string | query | Нет |  |
-| attemptCountGT | number | query | Нет |  |
-| skip | number | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | query | No |  |
+| externalId | string | query | No |  |
+| eventType | string | query | No |  |
+| type | string | query | No |  |
+| domain | string | query | No |  |
+| attemptCountGT | number | query | No |  |
+| skip | number | query | No |  |
 
 ## Ответ
 
@@ -19,7 +19,7 @@
 
 [inline-code-attrs-start title = 'Пример getPendingWebhookEvents'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие примеры кода всё ещё в бете. По любым проблемам, пожалуйста, сообщите через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следующие образцы кода все еще находятся в бета-версии. При возникновении проблем, пожалуйста, сообщайте через http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -31,7 +31,7 @@ let domain = "domain_example" // String |  (необязательно)
 let attemptCountGT = 987 // Double |  (необязательно)
 let skip = 987 // Double |  (необязательно)
 
-DefaultAPI.getPendingWebhookEvents(tenantId: tenantId, commentId: commentId, externalId: externalId, eventType: eventType, type: type, domain: domain, attemptCountGT: attemptCountGT, skip: skip) { (response, error) in
+DefaultAPI.getPendingWebhookEvents(tenantId: tenantId, options: DefaultAPI.GetPendingWebhookEventsOptions(commentId: commentId, externalId: externalId, eventType: eventType, type: type, domain: domain, attemptCountGT: attemptCountGT, skip: skip)) { (response, error) in
     guard error == nil else {
         print(error)
         return

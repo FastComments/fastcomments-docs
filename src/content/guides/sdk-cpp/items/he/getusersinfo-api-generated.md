@@ -1,33 +1,33 @@
----
-מידע משתמשים בכמות גדולה עבור שוכר. בהתבסס על userIds, החזר מידע תצוגה מ-User / SSOUser.
-משמש את הווידג'ט של התגובות להעשיר משתמשים שהופיעו זה עתה דרך אירוע נוכחות.
-ללא הקשר של דף: מדיניות הפרטיות נאכפת באופן אחיד (פרופילים פרטיים מוסתרים).
+Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
+Used by the comment widget to enrich users that just appeared via a presence event.  
+No page context: privacy is enforced uniformly (private profiles are masked).
 
-## פרמטרים
+## Parameters
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | ids | string | Yes |  |
 
-## תגובה
+## Response
 
-מחזיר: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PageUsersInfoResponse.h)
+Returns: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PageUsersInfoResponse.h)
 
-## דוגמה
+## Example
 
-[inline-code-attrs-start title = 'דוגמת getUsersInfo'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUsersInfo דוגמה'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 utility::string_t ids = U("alice@example.com,bob@example.com");
-boost::optional<utility::string_t> statusFilter = U("active");
+boost::optional<utility::string_t> locale = boost::make_optional(U("en-US"));
+
 api->getUsersInfo(tenantId, ids).then([](pplx::task<std::shared_ptr<PageUsersInfoResponse>> t){
-    try {
-        auto res = t.get();
-        if (res) {
-            auto responseCopy = std::make_shared<PageUsersInfoResponse>(*res);
-        }
-    } catch (const std::exception&) {}
+    try{
+        auto response = t.get();
+        // עיבוד התגובה
+    }catch(const std::exception&){
+        // טיפול בשגיאה
+    }
 });
 [inline-code-end]
 

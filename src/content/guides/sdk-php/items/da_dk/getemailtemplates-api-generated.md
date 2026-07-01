@@ -17,20 +17,22 @@ Returnerer: [`GetEmailTemplatesResponse`](https://github.com/FastComments/fastco
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Konfigurer API-nøgleautorisation: api_key
+// Konfigurer API-nøgle autorisation: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Fjern kommentaren nedenfor for at opsætte et præfiks (f.eks. Bearer) for API-nøglen, hvis nødvendigt
+// Fjern kommentaren nedenfor for at opsætte præfiks (fx Bearer) til API-nøglen, hvis nødvendigt
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Hvis du vil bruge en brugerdefineret HTTP-klient, skal du give din klient, som implementerer `GuzzleHttp\ClientInterface`.
-    // Dette er valgfrit; `GuzzleHttp\Client` vil blive brugt som standard.
+    // Hvis du vil bruge en brugerdefineret HTTP-klient, skal du videregive din klient som implementerer `GuzzleHttp\ClientInterface`.
+    // Dette er valgfrit, `GuzzleHttp\Client` vil blive brugt som standard.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$skip = 3.4; // float
+
+$tenant_id = 'tenant_id_example'; // streng
+$skip = 3.4; // flydende
+
 
 try {
     $result = $apiInstance->getEmailTemplates($tenant_id, $skip);
@@ -39,5 +41,3 @@ try {
     echo 'Exception when calling DefaultApi->getEmailTemplates: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

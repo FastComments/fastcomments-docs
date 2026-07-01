@@ -1,8 +1,8 @@
-Das SDK stellt drei API-Client-Klassen bereit:
+Das SDK stellt drei API‑Client‑Klassen bereit:
 
-- **`DefaultApi`** — Methoden, die per API-Schlüssel authentifiziert sind, für die serverseitige Verwendung. Konfigurieren Sie einen API-Schlüssel wie in [Getting Started](#getting-started-readme-generated) beschrieben.
-- **`PublicApi`** — öffentliche Methoden, die keinen API-Schlüssel benötigen und sicher aus Browsern und mobilen Apps aufgerufen werden können.
-- **`ModerationApi`** — Methoden für das Moderations-Dashboard: Auflisten, Zählen, Suchen, Protokollieren und Exportieren von Kommentaren; Moderationsaktionen (entfernen/wiederherstellen, markieren, Review/Spam/Freigabe-Status setzen, Stimmen, Thread wieder öffnen/schließen); Sperren (vom Kommentieren ausschließen, rückgängig machen, Vor-Sperr-Zusammenfassungen, Sperrstatus und -einstellungen, Anzahl gesperrter Benutzer); sowie Abzeichen & Vertrauen (Abzeichen vergeben/entfernen, manuelle Abzeichen, Trust-Faktor abrufen/setzen, internes Benutzerprofil). Jede `ModerationApi`-Methode akzeptiert einen `$sso`-Parameter, um den handelnden Moderator via SSO zu authentifizieren.
+- **`DefaultApi`** – API‑Schlüssel‑authentifizierte Methoden für serverseitige Nutzung. Konfigurieren Sie einen API‑Schlüssel wie in [Getting Started](#getting-started-readme-generated) gezeigt.
+- **`PublicApi`** – öffentliche Methoden, die keinen API‑Schlüssel benötigen und sicher aus Browsern und mobilen Apps aufgerufen werden können.
+- **`ModerationApi`** – eine umfangreiche Suite von Live‑ und schnellen Moderations‑APIs. Jede `ModerationApi`‑Methode akzeptiert einen `$sso`‑Parameter und kann sich über SSO oder ein FastComments.com‑Session‑Cookie authentifizieren.
 
 ### Verwendung von PublicApi
 
@@ -10,7 +10,7 @@ Das SDK stellt drei API-Client-Klassen bereit:
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Öffentliche Methoden benötigen keinen API-Schlüssel.
+// Öffentliche Methoden erfordern keinen API-Schlüssel.
 $apiInstance = new FastComments\Client\Api\PublicApi(
     new GuzzleHttp\Client()
 );
@@ -34,10 +34,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new FastComments\Client\Api\ModerationApi(
     new GuzzleHttp\Client()
 );
-$sso = 'sso_example'; // string - SSO-Payload zur Authentifizierung des Moderators
+$sso = 'sso_example'; // string - SSO-Payload, das den Moderator authentifiziert
 
 try {
-    $result = $apiInstance->getCount(null, null, null, null, null, $sso);
+    $result = $apiInstance->getCount([
+        'sso' => $sso,
+    ]);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getCount: ', $e->getMessage(), PHP_EOL;

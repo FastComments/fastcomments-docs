@@ -6,34 +6,41 @@ afterId
 
 | שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| afterId | string | לא |  |
-| limit | number | לא |  |
-| tags | Array<string> | לא |  |
-| sso | string | לא |  |
-| isCrawler | boolean | לא |  |
-| includeUserInfo | boolean | לא |  |
+| tenantId | string | Yes |  |
+| afterId | string | No |  |
+| limit | number | No |  |
+| tags | Array<string> | No |  |
+| sso | string | No |  |
+| isCrawler | boolean | No |  |
+| includeUserInfo | boolean | No |  |
 
 ## תגובה
 
-מחזיר: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PublicFeedPostsResponse.ts)
+מחזיר: [`GetFeedPostsPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetFeedPostsPublicResponse.ts)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getFeedPostsPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getFeedPostsPublic דוגמה'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "fc_tenant_12345";
-  const afterId: string = "feedPost_98765";
+async function example() {
+  const tenantId: string = "tenant_12345";
+  const afterId: string = "post_9876";
   const limit: number = 20;
-  const tags: Array<string> = ["announcement", "product"];
-  const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example";
+  const tags: string[] = ["news", "tech"];
+  const sso: string = "userToken123";
   const isCrawler: boolean = false;
   const includeUserInfo: boolean = true;
-
-  const response: PublicFeedPostsResponse = await getFeedPostsPublic(tenantId, afterId, limit, tags, sso, isCrawler, includeUserInfo);
-  console.log(response);
-})();
+  const response: GetFeedPostsPublicResponse = await getFeedPostsPublic(
+    tenantId,
+    afterId,
+    limit,
+    tags,
+    sso,
+    isCrawler,
+    includeUserInfo
+  );
+}
+example();
 [inline-code-end]
 
 ---

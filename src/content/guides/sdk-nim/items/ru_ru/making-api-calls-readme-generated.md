@@ -1,4 +1,6 @@
-Все методы API в этом SDK возвращают кортежи `(Option[ResponseType], Response)`. Первый элемент содержит разобранный ответ в случае успеха, а второй элемент — необработанный HTTP-ответ.
+Все методы API в этом SDK возвращают кортежи `(Option[ResponseType], Response)`. Первый элемент содержит разобранный ответ при успехе, а второй элемент – необработанный HTTP‑ответ.
+
+Обязательные параметры и тело запроса передаются позиционно. Оставшиеся необязательные параметры собираются в единый объект `Api<Operation>Options`, который является последним аргументом. Операции без необязательных параметров не используют объект опций.
 
 ### Пример: Получение комментариев
 
@@ -14,20 +16,10 @@ client.headers["x-api-key"] = "your-api-key"
 let (response, httpResponse) = getComments(
   httpClient = client,
   tenantId = "your-tenant-id",
-  page = 0,
-  limit = 0,
-  skip = 0,
-  asTree = false,
-  skipChildren = 0,
-  limitChildren = 0,
-  maxTreeDepth = 0,
-  urlId = "your-url-id",
-  userId = "",
-  anonUserId = "",
-  contextUserId = "",
-  hashTag = "",
-  parentId = "",
-  direction = SortDirections.DESC
+  options = GetCommentsOptions(
+    urlId: "your-url-id",
+    direction: SortDirections.DESC
+  )
 )
 
 if httpResponse.code == Http200:

@@ -1,7 +1,6 @@
----
-## Paramètres
+## Parameters
 
-| Name | Type | Required | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
 | tenantId | string | Oui |  |
 | domainToUpdate | string | Oui |  |
@@ -9,23 +8,26 @@
 
 ## Réponse
 
-Retourne: [`PatchDomainConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PatchDomainConfigResponse.h)
+Retourne : [`PatchDomainConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PatchDomainConfigResponse.h)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de patchDomainConfig'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple patchDomainConfig'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t domainToUpdate = U("example.com");
-PatchDomainConfigParams patchParams;
-patchParams.enableComments = boost::optional<bool>(true);
-patchParams.moderatorEmail = boost::optional<utility::string_t>(U("moderator@example.com"));
-auto task = api->patchDomainConfig(tenantId, domainToUpdate, patchParams)
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto domainToUpdate = utility::conversions::to_string_t("example.com");
+PatchDomainConfigParams patchDomainConfigParams;
+patchDomainConfigParams.enableComments = boost::optional<bool>(true);
+patchDomainConfigParams.moderationLevel = boost::optional<int>(2);
+patchDomainConfigParams.customHeader = boost::optional<utility::string_t>(utility::conversions::to_string_t("X-Custom-Header"));
+
+api->patchDomainConfig(tenantId, domainToUpdate, patchDomainConfigParams)
     .then([](std::shared_ptr<PatchDomainConfigResponse> resp) {
-        auto result = resp ? resp : std::make_shared<PatchDomainConfigResponse>();
-        return result;
+        // gestion du succès
+    })
+    .then([](pplx::task<void> t) {
+        try { t.get(); } catch (const std::exception& e) { /* gestion de l'erreur */ }
     });
-task.wait();
 [inline-code-end]
 
 ---

@@ -1,7 +1,7 @@
 ## Parâmetros
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Localização | Obrigatório | Descrição |
+|------|------|-------------|-------------|-----------|
 | tenantId | string | path | Sim |  |
 | locale | string | query | Não |  |
 | rating | string | query | Não |  |
@@ -13,21 +13,22 @@ Retorna: [`GetGifsTrendingResponse`](https://github.com/FastComments/fastcomment
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de get_gifs_trending'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo get_gifs_trending'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetGifsTrendingOptions
 from client.models.get_gifs_trending_response import GetGifsTrendingResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # Definir o host é opcional e o padrão é https://fastcomments.com
-# Veja configuration.py para uma lista de todos os parâmetros de configuração suportados.
+# Consulte configuration.py para uma lista de todos os parâmetros de configuração suportados.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Entre em um contexto com uma instância do cliente da API
+# Entre em um contexto com uma instância do cliente API
 with client.ApiClient(configuration) as api_client:
     # Crie uma instância da classe API
     api_instance = client.PublicApi(api_client)
@@ -37,7 +38,7 @@ with client.ApiClient(configuration) as api_client:
     page = 3.4 # float |  (opcional)
 
     try:
-        api_response = api_instance.get_gifs_trending(tenant_id, locale=locale, rating=rating, page=page)
+        api_response = api_instance.get_gifs_trending(tenant_id, GetGifsTrendingOptions(locale=locale, rating=rating, page=page))
         print("The response of PublicApi->get_gifs_trending:\n")
         pprint(api_response)
     except Exception as e:

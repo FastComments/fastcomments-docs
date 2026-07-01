@@ -1,12 +1,10 @@
----
 ## Параметры
 
 | Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
+| tenantId | string | Да |  |
 | commentId | string | Да |  |
-| includeEmail | bool | Нет |  |
-| includeIP | bool | Нет |  |
-| sso | string | Нет |  |
+| options | GetModerationCommentOptions | Нет |  |
 
 ## Ответ
 
@@ -16,12 +14,15 @@
 
 [inline-code-attrs-start title = 'Пример getModerationComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getModerationComment(commentId = "cmt-8f3b2a9d", includeEmail = false, includeIP = false, sso = "")
-if response.isSome:
-  let comment = response.get()
-  discard comment
-else:
-  echo "No moderation comment returned"
+let (maybeComment, httpResponse) = client.getModerationComment(
+  tenantId = "my-tenant-123",
+  commentId = "cmt-456789",
+  options = default(GetModerationCommentOptions)
+)
+
+if maybeComment.isSome:
+  let comment = maybeComment.get()
+  echo comment
 [inline-code-end]
 
 ---

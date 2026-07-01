@@ -1,14 +1,9 @@
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
 | tenantId | string | Da |  |
-| afterId | string | Ne |  |
-| afterCreatedAt | int64 | Ne |  |
-| unreadOnly | bool | Ne |  |
-| dmOnly | bool | Ne |  |
-| noDm | bool | Ne |  |
-| sso | string | Ne |  |
+| options | ResetUserNotificationsOptions | Ne |  |
 
 ## Odgovor
 
@@ -18,20 +13,9 @@ Vraća: [`Option[ResetUserNotificationsResponse]`](https://github.com/FastCommen
 
 [inline-code-attrs-start title = 'resetUserNotifications Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.resetUserNotifications(
+let (maybeResp, httpResp) = client.resetUserNotifications(
   tenantId = "my-tenant-123",
-  afterId = "",
-  afterCreatedAt = 0'i64,
-  unreadOnly = false,
-  dmOnly = false,
-  noDm = false,
-  sso = ""
-)
-if response.isSome:
-  let resetResp = response.get()
-  echo "ResetUserNotificationsResponse received"
-else:
-  echo "No ResetUserNotificationsResponse"
+  options = ResetUserNotificationsOptions())
+if maybeResp.isSome:
+  let resp = maybeResp.get()
 [inline-code-end]
-
----

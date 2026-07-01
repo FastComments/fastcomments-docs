@@ -2,9 +2,9 @@
 
 | Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
+| tenantId | string | Da |  |
 | commentId | string | Da |  |
-| reviewed | bool | Ne |  |
-| sso | string | Ne |  |
+| options | PostSetCommentReviewStatusOptions | Ne |  |
 
 ## Odgovor
 
@@ -12,18 +12,17 @@ Vrne: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer uporabe postSetCommentReviewStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postSetCommentReviewStatus Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postSetCommentReviewStatus(
-  commentId = "cmt-98765-news-article",
-  reviewed = false,
-  sso = ""
+let (apiResp, httpResp) = client.postSetCommentReviewStatus(
+  tenantId = "my-tenant-123",
+  commentId = "cmt-7890",
+  options = PostSetCommentReviewStatusOptions()
 )
-if response.isSome:
-  let apiResp = response.get()
-  echo "Review status updated"
-else:
-  echo "Failed to update review status: " & $httpResponse.status
-[inline-code-end]
 
----
+if apiResp.isSome:
+  let _ = apiResp.get()
+  discard
+else:
+  discard
+[inline-code-end]

@@ -1,9 +1,9 @@
 ## Parametri
 
 | Ime | Tip | Lokacija | Obvezno | Opis |
-|------|------|----------|----------|-------------|
-| tag | string | path | Da |  |
-| tenantId | string | query | Ne |  |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| tag | string | path | Yes |  |
 
 ## Odgovor
 
@@ -17,24 +17,26 @@ Vrne: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Konfiguriraj pooblastilo API ključa: api_key
+// Konfiguriraj avtorizacijo API ključa: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Odkomentirajte spodaj za nastavitev predpone (npr. Bearer) za API ključ, če je potrebno
+// Odkomentiraj spodaj, da nastaviš predpono (npr. Bearer) za API ključ, po potrebi
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Če želite uporabiti prilagojen HTTP odjemalec, posredujte svoj odjemalec, ki implementira `GuzzleHttp\ClientInterface`.
-    // To je izbirno, kot privzeto se bo uporabil `GuzzleHttp\Client`.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$tag = 'tag_example'; // string
+
 $tenant_id = 'tenant_id_example'; // string
+$tag = 'tag_example'; // string
 $update_hash_tag_body = new \FastComments\Client\Model\UpdateHashTagBody(); // \FastComments\Client\Model\UpdateHashTagBody
 
+
 try {
-    $result = $apiInstance->patchHashTag($tag, $tenant_id, $update_hash_tag_body);
+    $result = $apiInstance->patchHashTag($tenant_id, $tag, $update_hash_tag_body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->patchHashTag: ', $e->getMessage(), PHP_EOL;

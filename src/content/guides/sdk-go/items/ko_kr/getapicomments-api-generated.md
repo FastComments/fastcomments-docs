@@ -1,7 +1,8 @@
-## 매개변수
+## Parameters
 
-| 이름 | 형식 | 위치 | 필수 | 설명 |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | 예 |  |
 | page | number | query | 아니오 |  |
 | count | number | query | 아니오 |  |
 | text-search | string | query | 아니오 |  |
@@ -30,26 +31,25 @@ import (
 )
 
 func main() {
-	page := float64(1.2) // float64 |  (선택 사항)
-	count := float64(1.2) // float64 |  (선택 사항)
-	textSearch := "textSearch_example" // string |  (선택 사항)
-	byIPFromComment := "byIPFromComment_example" // string |  (선택 사항)
-	filters := "filters_example" // string |  (선택 사항)
-	searchFilters := "searchFilters_example" // string |  (선택 사항)
-	sorts := "sorts_example" // string |  (선택 사항)
-	demo := true // bool |  (선택 사항)
-	sso := "sso_example" // string |  (선택 사항)
+	tenantId := "tenantId_example" // string | 
+	page := float64(1.2) // float64 |  (옵션)
+	count := float64(1.2) // float64 |  (옵션)
+	textSearch := "textSearch_example" // string |  (옵션)
+	byIPFromComment := "byIPFromComment_example" // string |  (옵션)
+	filters := "filters_example" // string |  (옵션)
+	searchFilters := "searchFilters_example" // string |  (옵션)
+	sorts := "sorts_example" // string |  (옵션)
+	demo := true // bool |  (옵션)
+	sso := "sso_example" // string |  (옵션)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetApiComments(context.Background()).Page(page).Count(count).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).Sorts(sorts).Demo(demo).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetApiComments(context.Background()).TenantId(tenantId).Page(page).Count(count).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).Sorts(sorts).Demo(demo).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetApiComments``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `GetApiComments`의 응답: ModerationAPIGetCommentsResponse
+	// `GetApiComments`에서의 응답: ModerationAPIGetCommentsResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetApiComments`: %v\n", resp)
 }
 [inline-code-end]
-
----

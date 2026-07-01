@@ -1,11 +1,11 @@
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
 | tenantId | string | Da |  |
 | commentId | string | Da |  |
 | broadcastId | string | Ne |  |
-| sso | string | Ne |  |
+| sso | string = "" | Ne |  |
 
 ## Odgovor
 
@@ -13,14 +13,15 @@ Vraća: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomment
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer lockComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'lockComment Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.lockComment(tenantId = "news-tenant-42", commentId = "cmt-8f3a2b9d", broadcastId = "", sso = "")
-if response.isSome:
-  let apiResp = response.get()
-  echo "Locked comment successfully for tenant news-tenant-42"
-else:
-  echo "Failed to lock comment, HTTP status: ", $httpResponse.status
-[inline-code-end]
+let (lockResult, httpRes) = client.lockComment(
+  tenantId = "my-tenant-123",
+  commentId = "comment-456",
+  broadcastId = "",
+  sso = "")
 
----
+if lockResult.isSome:
+  let resp = lockResult.get()
+  discard resp
+[inline-code-end]

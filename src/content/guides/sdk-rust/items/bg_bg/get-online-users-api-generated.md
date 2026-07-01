@@ -1,14 +1,14 @@
-В момента онлайн зрители на страница: хора, чиито websocket сесии са абонирани за страницата в момента.
-Връща anonCount + totalCount (абонати за цялата стая, включително анонимните зрители, които не изброяваме).
+В момента онлайн зрители на страница: хора, чиито уебсокет сесии са абонирани за страницата в момента.  
+Връща anonCount + totalCount (абонати за цялата стая, включително анонимни зрители, които не изброяваме).
 
 ## Параметри
 
 | Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| url_id | String | Да |  |
-| after_name | String | Не |  |
-| after_user_id | String | Не |  |
+| tenant_id | String | Yes |  |
+| url_id | String | Yes |  |
+| after_name | String | No |  |
+| after_user_id | String | No |  |
 
 ## Отговор
 
@@ -18,15 +18,15 @@
 
 [inline-code-attrs-start title = 'get_online_users Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_online_users() -> Result<PageUsersOnlineResponse, Error> {
-    let params: GetOnlineUsersParams = GetOnlineUsersParams {
+async fn example() -> Result<(), Error> {
+    let params = GetOnlineUsersParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        url_id: "news/world/article-2026".to_string(),
-        after_name: Some("jane.doe".to_string()),
-        after_user_id: Some("user_98765".to_string()),
+        url_id: "news/article".to_string(),
+        after_name: Some("john_doe".to_string()),
+        after_user_id: Some("user-123".to_string()),
     };
-    let response: PageUsersOnlineResponse = get_online_users(&configuration, params).await?;
-    Ok(response)
+    let _response: PageUsersOnlineResponse = get_online_users(&config, params).await?;
+    Ok(())
 }
 [inline-code-end]
 

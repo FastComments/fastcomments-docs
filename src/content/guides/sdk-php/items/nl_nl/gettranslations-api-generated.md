@@ -1,7 +1,7 @@
 ## Parameters
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
-|------|------|----------|----------|-------------|
+|------|------|----------|----------|--------------|
 | namespace | string | path | Ja |  |
 | component | string | path | Ja |  |
 | locale | string | query | Nee |  |
@@ -21,17 +21,21 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Als u een aangepaste HTTP-client wilt gebruiken, geef dan uw client door die `GuzzleHttp\ClientInterface` implementeert.
-    // Dit is optioneel; `GuzzleHttp\Client` wordt standaard gebruikt.
+    // Als je een aangepaste http-client wilt gebruiken, geef je client door die `GuzzleHttp\ClientInterface` implementeert.
+    // Dit is optioneel, `GuzzleHttp\Client` wordt standaard gebruikt.
     new GuzzleHttp\Client()
 );
+
 $namespace = 'namespace_example'; // string
 $component = 'component_example'; // string
-$locale = 'locale_example'; // string
-$use_full_translation_ids = True; // bool
+$options = [
+    'locale' => 'locale_example', // string
+    'use_full_translation_ids' => True, // bool
+];
+
 
 try {
-    $result = $apiInstance->getTranslations($namespace, $component, $locale, $use_full_translation_ids);
+    $result = $apiInstance->getTranslations($namespace, $component, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getTranslations: ', $e->getMessage(), PHP_EOL;

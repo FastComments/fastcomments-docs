@@ -1,9 +1,9 @@
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
+| Ime | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| id | string | Ne |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
 
 ## Odgovor
 
@@ -13,13 +13,7 @@ Vraća: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomment
 
 [inline-code-attrs-start title = 'Primjer deleteQuestionConfig'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteQuestionConfig(tenantId = "my-tenant-123", id = "")
-
-if response.isSome:
-  let deleted = response.get()
-  echo "Question config deleted for tenant: ", "my-tenant-123"
-else:
-  echo "Failed to delete question config"
+let (apiResult, httpResponse) = client.deleteQuestionConfig(tenantId = "my-tenant-123", id = "question-config-456")
+if apiResult.isSome:
+  let empty = apiResult.get()
 [inline-code-end]
-
----

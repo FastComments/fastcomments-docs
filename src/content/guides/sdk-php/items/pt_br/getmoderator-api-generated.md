@@ -1,7 +1,7 @@
 ## Parâmetros
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Localização | Obrigatório | Descrição |
+|------|------|-------------|------------|-----------|
 | tenantId | string | query | Sim |  |
 | id | string | path | Sim |  |
 
@@ -11,15 +11,15 @@ Retorna: [`GetModeratorResponse`](https://github.com/FastComments/fastcomments-p
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getModerator'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo getModerator'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configurar autorização da chave da API: api_key
+// Configurar autorização de chave de API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Descomente abaixo para configurar prefixo (e.g. Bearer) para a chave da API, se necessário
+// Descomente abaixo para definir o prefixo (ex. Bearer) para a chave de API, se necessário
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
@@ -29,8 +29,10 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
+
 
 try {
     $result = $apiInstance->getModerator($tenant_id, $id);
@@ -39,3 +41,5 @@ try {
     echo 'Exception when calling DefaultApi->getModerator: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

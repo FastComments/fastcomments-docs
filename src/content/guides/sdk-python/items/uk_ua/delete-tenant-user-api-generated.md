@@ -1,11 +1,11 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язковий | Опис |
+| Назва | Тип | Розташування | Обов’язковий | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Так |  |
-| id | string | path | Так |  |
-| deleteComments | string | query | Ні |  |
-| commentDeleteMode | string | query | Ні |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| deleteComments | string | query | No |  |
+| commentDeleteMode | string | query | No |  |
 
 ## Відповідь
 
@@ -13,41 +13,38 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'delete_tenant_user Приклад'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад delete_tenant_user'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import DeleteTenantUserOptions
 from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Визначення хоста необов'язкове й за замовчуванням — https://fastcomments.com
-# Див. configuration.py для списку всіх підтримуваних параметрів конфігурації.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
-
-# Клієнт має налаштувати параметри автентифікації та авторизації
-# відповідно до політики безпеки сервера API.
+# Визначення хосту є необов’язковим і за замовчуванням встановлює https://fastcomments.com
+# Дивіться configuration.py для списку всіх підтримуваних параметрів конфігурації.
+# Клієнт повинен налаштувати параметри автентифікації та авторизації
+# згідно з політикою безпеки сервера API.
 # Приклади для кожного методу автентифікації наведені нижче, використайте приклад, який
 # відповідає вашому випадку використання автентифікації.
 
-# Налаштуйте авторизацію за допомогою API-ключа: api_key
+# Налаштуйте авторизацію за допомогою API ключа: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Розкоментуйте нижче, щоб встановити префікс (наприклад, Bearer) для API-ключа, якщо потрібно
+# Розкоментуйте нижче, щоб встановити префікс (наприклад, Bearer) для API ключа, якщо потрібно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Увійдіть у контекст з екземпляром API-клієнта
+# Відкрийте контекст з екземпляром клієнта API
 with client.ApiClient(configuration) as api_client:
     # Створіть екземпляр класу API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
-    delete_comments = 'delete_comments_example' # str |  (необов'язково)
-    comment_delete_mode = 'comment_delete_mode_example' # str |  (необов'язково)
+    delete_comments = 'delete_comments_example' # str |  (optional)
+    comment_delete_mode = 'comment_delete_mode_example' # str |  (optional)
 
     try:
-        api_response = api_instance.delete_tenant_user(tenant_id, id, delete_comments=delete_comments, comment_delete_mode=comment_delete_mode)
+        api_response = api_instance.delete_tenant_user(tenant_id, id, DeleteTenantUserOptions(delete_comments=delete_comments, comment_delete_mode=comment_delete_mode))
         print("The response of DefaultApi->delete_tenant_user:\n")
         pprint(api_response)
     except Exception as e:

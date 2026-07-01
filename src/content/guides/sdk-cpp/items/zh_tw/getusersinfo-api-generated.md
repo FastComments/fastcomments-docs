@@ -1,18 +1,17 @@
----
-租戶的批次使用者資訊。給定 userIds，回傳 User / SSOUser 的顯示資訊。
-由評論元件用於豐富那些剛透過 presence event 出現的使用者。
-無頁面上下文：隱私一律被強制執行（私人檔案會被遮罩）。
+Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
+Used by the comment widget to enrich users that just appeared via a presence event.  
+No page context: privacy is enforced uniformly (private profiles are masked).
 
-## 參數
+## Parameters
 
-| 名稱 | 類型 | 必填 | 描述 |
-|------|------|------|-------------|
-| tenantId | string | 是 |  |
-| ids | string | 是 |  |
+| 名稱 | 類型 | 必要 | 說明 |
+|------|------|------|------|
+| tenantId | string | Yes |  |
+| ids | string | Yes |  |
 
-## 回應
+## Response
 
-回傳：[`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PageUsersInfoResponse.h)
+Returns: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PageUsersInfoResponse.h)
 
 ## 範例
 
@@ -20,15 +19,14 @@
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 utility::string_t ids = U("alice@example.com,bob@example.com");
-boost::optional<utility::string_t> statusFilter = U("active");
+boost::optional<utility::string_t> locale = boost::make_optional(U("en-US"));
+
 api->getUsersInfo(tenantId, ids).then([](pplx::task<std::shared_ptr<PageUsersInfoResponse>> t){
-    try {
-        auto res = t.get();
-        if (res) {
-            auto responseCopy = std::make_shared<PageUsersInfoResponse>(*res);
-        }
-    } catch (const std::exception&) {}
+    try{
+        auto response = t.get();
+        // process response
+    }catch(const std::exception&){
+        // handle error
+    }
 });
 [inline-code-end]
-
----

@@ -1,40 +1,30 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| textSearch | string | No |  |
-| byIPFromComment | string | No |  |
-| filters | string | No |  |
-| searchFilters | string | No |  |
-| sorts | string | No |  |
-| sso | string | No |  |
+| tenantId | string | Yes |  |
+| options | const PostApiExportOptions& | Yes |  |
 
 ## 응답
 
 반환: [`ModerationExportResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ModerationExportResponse.h)
 
-## 예제
+## 예시
 
 [inline-code-attrs-start title = 'postApiExport 예제'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> textSearch(utility::string_t("spam content"));
-boost::optional<utility::string_t> byIPFromComment(utility::string_t("203.0.113.45"));
-boost::optional<utility::string_t> filters(utility::string_t("site:my-tenant-123 status:pending"));
-boost::optional<utility::string_t> searchFilters(utility::string_t("created>2026-01-01"));
-boost::optional<utility::string_t> sorts(utility::string_t("created:desc"));
-boost::optional<utility::string_t> sso(utility::string_t("user@example.com"));
+auto tenantId = utility::string_t(U("my-tenant-123"));
+PostApiExportOptions options;
+options.format = utility::string_t(U("json"));
+options.email = utility::string_t(U("reports@example.com"));
+options.startDate = boost::optional<utility::datetime>(utility::datetime::from_string(U("2023-01-01T00:00:00Z")));
+options.endDate = boost::optional<utility::datetime>(utility::datetime::from_string(U("2023-01-31T23:59:59Z")));
 
-auto task = api->postApiExport(textSearch, byIPFromComment, filters, searchFilters, sorts, sso)
-.then([](pplx::task<std::shared_ptr<ModerationExportResponse>> t){
-    try {
-        auto resp = t.get();
-        return resp ? std::make_shared<ModerationExportResponse>(*resp) : std::make_shared<ModerationExportResponse>();
-    } catch(...) {
-        return std::shared_ptr<ModerationExportResponse>();
-    }
-});
-
-task.wait();
+api->postApiExport(tenantId, options)
+    .then([](std::shared_ptr<ModerationExportResponse> response) {
+        if (response) {
+            // 성공적인 내보내기 응답 처리
+        }
+    })
+    .wait();
 [inline-code-end]
-
----

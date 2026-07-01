@@ -2,8 +2,9 @@
 
 | שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| commentId | string | כן |  |
-| sso | string | לא |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| options | PostFlagCommentOptions | No |  |
 
 ## תגובה
 
@@ -11,14 +12,14 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת postFlagComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postFlagComment דוגמה'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postFlagComment(commentId = "comment-742", sso = "")
+let opts = PostFlagCommentOptions()
+let (response, httpResponse) = client.postFlagComment(
+  tenantId = "my-tenant-123",
+  commentId = "comment-987654",
+  options = opts,
+)
 if response.isSome:
-  let apiResp = response.get()
-  echo "Comment flagged successfully"
-else:
-  echo "Failed to flag comment"
+  let result = response.get()
 [inline-code-end]
-
----

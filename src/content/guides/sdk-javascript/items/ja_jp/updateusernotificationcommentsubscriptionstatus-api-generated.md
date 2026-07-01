@@ -1,32 +1,46 @@
----
-特定のコメントの通知を有効または無効にします。
+特定のコメントの通知を有効化または無効化します。
 
 ## パラメータ
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | はい |  |
-| notificationId | string | はい |  |
-| optedInOrOut | UpdateUserNotificationCommentSubscriptionStatusOptedInOrOutEnum | はい |  |
-| commentId | string | はい |  |
-| sso | string | いいえ |  |
+| tenantId | string | Yes |  |
+| notificationId | string | Yes |  |
+| optedInOrOut | UpdateUserNotificationCommentSubscriptionStatusOptedInOrOutEnum | Yes |  |
+| commentId | string | Yes |  |
+| sso | string | No |  |
 
 ## レスポンス
 
-戻り値: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateUserNotificationCommentSubscriptionStatusResponse.ts)
+返却: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateUserNotificationCommentSubscriptionStatusResponse.ts)
 
 ## 例
 
-[inline-code-attrs-start title = 'updateUserNotificationCommentSubscriptionStatus の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserNotificationCommentSubscriptionStatus 例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_92a1c4';
-const notificationId: string = 'notif_3f7b2e9a-4d1b-11ec-8d3d-0242ac130003';
+const tenantId: string = "tenant_12345";
+const notificationId: string = "notif_9876";
+const commentId: string = "comment_abc123";
 const optedInOrOut: UpdateUserNotificationCommentSubscriptionStatusOptedInOrOutEnum =
-  UpdateUserNotificationCommentSubscriptionStatusOptedInOrOutEnum.OPTED_IN;
-const commentId: string = 'cmt_8f4b2e7a';
-const sso: string | undefined = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fake.payload';
-const response: UpdateUserNotificationCommentSubscriptionStatusResponse =
-  await updateUserNotificationCommentSubscriptionStatus(tenantId, notificationId, optedInOrOut, commentId, sso);
+  UpdateUserNotificationCommentSubscriptionStatusOptedInOrOutEnum.OptIn;
+const sso: string = "ssoTokenXYZ";
+
+const responseWithSso: UpdateUserNotificationCommentSubscriptionStatusResponse =
+  await updateUserNotificationCommentSubscriptionStatus(
+    tenantId,
+    notificationId,
+    optedInOrOut,
+    commentId,
+    sso
+  );
+
+const responseWithoutSso: UpdateUserNotificationCommentSubscriptionStatusResponse =
+  await updateUserNotificationCommentSubscriptionStatus(
+    tenantId,
+    notificationId,
+    optedInOrOut,
+    commentId
+  );
 [inline-code-end]
 
 ---

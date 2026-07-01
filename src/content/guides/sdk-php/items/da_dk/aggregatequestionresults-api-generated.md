@@ -1,7 +1,7 @@
 ## Parametre
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
-|------|------|----------|----------|-------------|
+|------|------|-----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | questionId | string | query | Nej |  |
 | questionIds | array | query | Nej |  |
@@ -24,26 +24,30 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Konfigurer API-nøgleautorisation: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Fjern kommentaren nedenfor for at konfigurere præfiks (f.eks. Bearer) til API-nøglen, hvis det er nødvendigt
+// Fjern kommentaren nedenfor for at opsætte præfiks (f.eks. Bearer) for API-nøgle, hvis nødvendigt
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Hvis du vil bruge en brugerdefineret HTTP-klient, så giv din klient, som implementerer `GuzzleHttp\ClientInterface`.
+    // Hvis du vil bruge en tilpasset HTTP-klient, skal du give din klient, som implementerer `GuzzleHttp\ClientInterface`.
     // Dette er valgfrit, `GuzzleHttp\Client` vil blive brugt som standard.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$question_id = 'question_id_example'; // string
-$question_ids = array('question_ids_example'); // string[]
-$url_id = 'url_id_example'; // string
-$time_bucket = new \FastComments\Client\Model\\FastComments\Client\Model\AggregateTimeBucket(); // \FastComments\Client\Model\AggregateTimeBucket
-$start_date = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime
-$force_recalculate = True; // bool
+$options = [
+    'question_id' => 'question_id_example', // string
+    'question_ids' => array('question_ids_example'), // string[]
+    'url_id' => 'url_id_example', // string
+    'time_bucket' => new \FastComments\Client\Model\\FastComments\Client\Model\AggregateTimeBucket(), // \FastComments\Client\Model\AggregateTimeBucket
+    'start_date' => new \DateTime('2013-10-20T19:20:30+01:00'), // \DateTime
+    'force_recalculate' => True, // bool
+];
+
 
 try {
-    $result = $apiInstance->aggregateQuestionResults($tenant_id, $question_id, $question_ids, $url_id, $time_bucket, $start_date, $force_recalculate);
+    $result = $apiInstance->aggregateQuestionResults($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->aggregateQuestionResults: ', $e->getMessage(), PHP_EOL;

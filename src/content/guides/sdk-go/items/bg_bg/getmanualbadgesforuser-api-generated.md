@@ -1,7 +1,8 @@
 ## Параметри
 
-| Име | Тип | Местоположение | Задължително | Описание |
+| Име | Тип | Местоположение | Задължителен | Описание |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
 | badgesUserId | string | query | Не |  |
 | commentId | string | query | Не |  |
 | sso | string | query | Не |  |
@@ -24,18 +25,19 @@ import (
 )
 
 func main() {
-	badgesUserId := "badgesUserId_example" // string |  (по избор)
-	commentId := "commentId_example" // string |  (по избор)
-	sso := "sso_example" // string |  (по избор)
+	tenantId := "tenantId_example" // string | 
+	badgesUserId := "badgesUserId_example" // string |  (опционално)
+	commentId := "commentId_example" // string |  (опционално)
+	sso := "sso_example" // string |  (опционално)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetManualBadgesForUser(context.Background()).BadgesUserId(badgesUserId).CommentId(commentId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetManualBadgesForUser(context.Background()).TenantId(tenantId).BadgesUserId(badgesUserId).CommentId(commentId).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetManualBadgesForUser``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Грешка при извикване на `ModerationAPI.GetManualBadgesForUser``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Пълен HTTP отговор: %v\n", r)
 	}
 	// отговор от `GetManualBadgesForUser`: GetUserManualBadgesResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetManualBadgesForUser`: %v\n", resp)
+	fmt.Fprintf(os.Stdout, "Отговор от `ModerationAPI.GetManualBadgesForUser`: %v\n", resp)
 }
 [inline-code-end]

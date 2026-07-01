@@ -1,9 +1,9 @@
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| tenant_id | String | Da |  |
-| id | String | Da |  |
+|-------|-----|----------|------|
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
 
 ## Odgovor
 
@@ -11,17 +11,14 @@ Vraća: [`ApiGetUserBadgeResponse`](https://github.com/FastComments/fastcomments
 
 ## Primer
 
-[inline-code-attrs-start title = 'get_user_badge Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer get_user_badge'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_user_badge() -> Result<ApiGetUserBadgeResponse, Error> {
-    let params: GetUserBadgeParams = GetUserBadgeParams {
+async fn fetch_badge() -> Result<(), Error> {
+    let params = GetUserBadgeParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "badge-moderator".to_string(),
-        include_inactive: Some(false),
+        id: "badge-42".to_string(),
     };
-    let badge: ApiGetUserBadgeResponse = get_user_badge(&configuration, params).await?;
-    Ok(badge)
+    let _response: ApiGetUserBadgeResponse = get_user_badge(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

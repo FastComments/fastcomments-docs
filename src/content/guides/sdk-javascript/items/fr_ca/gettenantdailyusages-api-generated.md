@@ -1,30 +1,46 @@
 ## Paramètres
 
-| Name | Type | Required | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
-| tenantId | string | Oui |  |
-| yearNumber | number | Non |  |
-| monthNumber | number | Non |  |
-| dayNumber | number | Non |  |
-| skip | number | Non |  |
+| tenantId | string | Yes |  |
+| yearNumber | number | No |  |
+| monthNumber | number | No |  |
+| dayNumber | number | No |  |
+| skip | number | No |  |
 
 ## Réponse
 
-Renvoie: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantDailyUsagesResponse.ts)
+Renvoie : [`GetTenantDailyUsagesResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantDailyUsagesResponse1.ts)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getTenantDailyUsages'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getTenantDailyUsages'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function run(): Promise<void> {
-  const tenantId: string = "b4f3a9c2-8d1e-4f3b-9c6e-2a7f4d5c1e0b";
-  const yearNumber: number = 2026;
-  const monthNumber: number = 6;
-  const dayNumber: number = 19;
+async function fetchDailyUsage() {
+  const tenantId: string = "tenant-9876";
+  const yearNumber: number = 2024;
+  const monthNumber: number = 5; // mai
+  const dayNumber: number = 12;
   const skip: number = 0;
-  const fullResponse: GetTenantDailyUsagesResponse = await getTenantDailyUsages(tenantId, yearNumber, monthNumber, dayNumber, skip);
-  const basicResponse: GetTenantDailyUsagesResponse = await getTenantDailyUsages(tenantId);
-  console.log(fullResponse, basicResponse);
+
+  const fullResult: GetTenantDailyUsagesResponse1 = await getTenantDailyUsages(
+    tenantId,
+    yearNumber,
+    monthNumber,
+    dayNumber,
+    skip
+  );
+
+  // En utilisant uniquement les paramètres obligatoires et un paramètre optionnel
+  const partialResult: GetTenantDailyUsagesResponse1 = await getTenantDailyUsages(
+    tenantId,
+    yearNumber
+  );
+
+  console.log(fullResult, partialResult);
 }
-run();
+
+fetchDailyUsage();
 [inline-code-end]
+
+---

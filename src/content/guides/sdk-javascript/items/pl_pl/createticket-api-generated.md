@@ -1,28 +1,28 @@
 ## Parametry
 
-| Nazwa | Typ | Wymagane | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Tak |  |
-| userId | string | Tak |  |
-| createTicketBody | CreateTicketBody | Tak |  |
+| tenantId | string | Yes |  |
+| userId | string | Yes |  |
+| createTicketBody | CreateTicketBody | Yes |  |
 
 ## Odpowiedź
 
-Zwraca: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTicketResponse.ts)
+Zwraca: [`CreateTicketResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTicketResponse1.ts)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład createTicket'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-enterprises";
-const userId: string = "user_12039";
-const createTicketBody: CreateTicketBody = {
-  subject: "Login failures for multiple users",
-  description: "Users report 500 error when authenticating since 2026-06-18 08:00 UTC. Affects web and mobile.",
-  priority: "urgent",
-  tags: ["authentication", "outage"]
-};
-const result: CreateTicketResponse = await createTicket(tenantId, userId, createTicketBody);
-[inline-code-end]
+const tenantId: string = "tenant_12345";
+const userId: string = "user_98765";
 
----
+const ticketBody: CreateTicketBody = {
+  subject: "Issue with payment processing"
+  // description?: string jest opcjonalny i pominięty
+};
+
+const response: CreateTicketResponse1 = await createTicket(tenantId, userId, ticketBody);
+// Przykład użycia opcjonalnego pola z odpowiedzi
+// console.log(response.ticket?.id);
+[inline-code-end]

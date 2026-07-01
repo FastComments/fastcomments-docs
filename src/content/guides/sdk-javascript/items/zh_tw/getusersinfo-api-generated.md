@@ -1,24 +1,27 @@
-為租戶批次取得使用者資訊。給定 userIds，回傳來自 User / SSOUser 的顯示資訊。
-由留言小工具使用，用以豐富剛透過 presence 事件出現的使用者資料。
-沒有頁面上下文：隱私會統一強制執行（私人檔案會被遮蔽）。
+取得租戶的批次使用者資訊。根據 userIds，回傳 User / SSOUser 的顯示資訊。此功能由評論小工具使用，以在使用者透過 presence 事件剛出現時豐富其資訊。無頁面上下文：隱私權一致執行（私密個人檔案會被遮蔽）。
 
 ## 參數
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| ids | string | 是 |  |
+| 名稱 | 類型 | 必填 | 說明 |
+|------|------|------|------|
+| tenantId | string | Yes |  |
+| ids | string | Yes |  |
 
 ## 回應
 
-回傳：[`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersInfoResponse.ts)
+返回: [`GetUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUsersInfoResponse.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getUsersInfo 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_78f9';
-const ids: string = 'user_10234,user_10235,user_10236';
-const usersInfo: PageUsersInfoResponse = await getUsersInfo(tenantId, ids);
-// getUsersInfo 只需要 tenantId 和 ids；可選參數在此不適用。
+const tenantId: string = "acme-corp-tenant";
+const ids: string = "user-1001,user-1002";
+
+const usersInfo: GetUsersInfoResponse = await getUsersInfo(tenantId, ids);
+
+// 回應中的可選欄位可能為 undefined
+const firstUser: PageUserEntry | undefined = usersInfo?.users?.[0];
 [inline-code-end]
+
+---

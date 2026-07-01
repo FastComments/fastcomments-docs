@@ -1,10 +1,11 @@
 ## Parametri
 
-| Naziv | Type | Location | Obvezno | Opis |
-|------|------|----------|----------|-------------|
-| badgesUserId | string | query | Ne |  |
-| commentId | string | query | Ne |  |
-| sso | string | query | Ne |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| badgesUserId | string | query | No |  |
+| commentId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -12,34 +13,34 @@ Vraća: [`GetUserManualBadgesResponse`](https://github.com/FastComments/fastcomm
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer get_manual_badges_for_user'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_manual_badges_for_user Primjer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetManualBadgesForUserOptions
 from client.models.get_user_manual_badges_response import GetUserManualBadgesResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definiranje hosta je opcionalno i zadano na https://fastcomments.com
+# Definiranje hosta je opcionalno i zadano je https://fastcomments.com
 # Pogledajte configuration.py za popis svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Uđite u kontekst s instancom API klijenta
+# Unesite kontekst s instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Kreirajte instancu API klase
+    # Stvorite instancu API klase
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     badges_user_id = 'badges_user_id_example' # str |  (neobavezno)
     comment_id = 'comment_id_example' # str |  (neobavezno)
     sso = 'sso_example' # str |  (neobavezno)
 
     try:
-        api_response = api_instance.get_manual_badges_for_user(badges_user_id=badges_user_id, comment_id=comment_id, sso=sso)
+        api_response = api_instance.get_manual_badges_for_user(tenant_id, GetManualBadgesForUserOptions(badges_user_id=badges_user_id, comment_id=comment_id, sso=sso))
         print("The response of ModerationApi->get_manual_badges_for_user:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling ModerationApi->get_manual_badges_for_user: %s\n" % e)
 [inline-code-end]
-
----

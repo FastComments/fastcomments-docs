@@ -1,29 +1,36 @@
----
-현재 페이지에 온라인 상태인 뷰어: websocket 세션이 현재 해당 페이지를 구독하고 있는 사람들.
-anonCount + totalCount를 반환합니다 (룸 전체 구독자, 우리가 열거하지 않는 익명 뷰어 포함).
+현재 페이지에 실시간으로 접속 중인 사용자: 현재 웹소켓 세션이 페이지에 구독돼 있는 사람들입니다.  
+익명 사용자 수(anonCount)와 총 사용자 수(totalCount)를 반환합니다(방 전체 구독자 수, 열거되지 않은 익명 뷰어 포함).
 
-## Parameters
+## 매개변수
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| 이름 | 타입 | 필수 | 설명 |
+|------|------|------|------|
 | tenantId | string | 예 |  |
 | urlId | string | 예 |  |
-| afterName | string | 아니요 |  |
-| afterUserId | string | 아니요 |  |
+| afterName | string | 아니오 |  |
+| afterUserId | string | 아니오 |  |
 
-## Response
+## 응답
 
-반환: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOnlineResponse.ts)
+반환: [`GetOnlineUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOnlineUsersResponse.ts)
 
-## Example
+## 예시
 
-[inline-code-attrs-start title = 'getOnlineUsers 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getOnlineUsers 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8f3c2b7';
-const urlId: string = 'article-2026-06-19-site-update';
-const afterName: string = 'michael.hansen';
-const afterUserId: string = 'user_00421';
-const onlineUsers: PageUsersOnlineResponse = await getOnlineUsers(tenantId, urlId, afterName, afterUserId);
-[inline-code-end]
+async function demoOnlineUsers() {
+  const tenantId: string = "tenant_12345";
+  const urlId: string = "url_98765";
 
----
+  // 선택적 페이지 매김 매개변수가 있는 경우
+  const pagedResult: GetOnlineUsersResponse = await getOnlineUsers(
+    tenantId,
+    urlId,
+    "alice_smith",
+    "user_9"
+  );
+
+  // 선택적 페이지 매김 매개변수가 없는 경우
+  const fullResult: GetOnlineUsersResponse = await getOnlineUsers(tenantId, urlId);
+}
+[inline-code-end]

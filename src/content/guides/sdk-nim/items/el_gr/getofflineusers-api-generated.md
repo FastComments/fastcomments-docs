@@ -1,35 +1,30 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.
-Χρησιμοποιήστε αυτό μετά την εξαντλήση του /users/online για να εμφανίσετε μια ενότητα «Μέλη».
-Σελιδοποίηση cursor με βάση το commenterName: ο server περπατάει τον μερικό δείκτη {tenantId, urlId, commenterName} από το afterName προς τα εμπρός μέσω $gt, χωρίς κόστος $skip.
+Past commenters on the page who are NOT currently online. Sorted by displayName.  
+Use this after exhausting /users/online to render a "Members" section.  
+Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName}  
+index from afterName forward via $gt, no $skip cost.
 
-## Παράμετροι
+## Parameters
 
-| Name | Type | Required | Description |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
 | tenantId | string | Ναι |  |
 | urlId | string | Ναι |  |
-| afterName | string | Όχι |  |
-| afterUserId | string | Όχι |  |
+| options | GetOfflineUsersOptions | Όχι |  |
 
-## Απόκριση
+## Response
 
 Επιστρέφει: [`Option[PageUsersOfflineResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_offline_response.nim)
 
-## Παράδειγμα
+## Example
 
-[inline-code-attrs-start title = 'Παράδειγμα getOfflineUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
-[inline-code-start]
-let (response, httpResponse) = client.getOfflineUsers(
-  tenantId = "my-tenant-123",
-  urlId = "news/article-how-to-code",
-  afterName = "",
-  afterUserId = ""
-)
-
-if response.isSome:
-  let offlinePage = response.get()
-  echo "Received offline users page"
-  discard httpResponse.statusCode
+[inline-code-attrs-start title = 'Παράδειγμα getOfflineUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]  
+[inline-code-start]  
+let (offlineResp, httpResponse) = client.getOfflineUsers(  
+  tenantId = "my-tenant-123",  
+  urlId = "news/article-title",  
+  options = GetOfflineUsersOptions()  
+)  
+if offlineResp.isSome:  
+  let offline = offlineResp.get()  
+  echo offline)  
 [inline-code-end]
-
----

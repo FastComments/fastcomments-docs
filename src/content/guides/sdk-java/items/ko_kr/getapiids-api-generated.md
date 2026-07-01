@@ -1,7 +1,8 @@
 ## 매개변수
 
-| Name | Type | Location | Required | Description |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | 예 |  |
 | text-search | string | query | 아니오 |  |
 | byIPFromComment | string | query | 아니오 |  |
 | filters | string | query | 아니오 |  |
@@ -31,15 +32,16 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
-    String textSearch = "textSearch_example"; // 문자열 | 
-    String byIPFromComment = "byIPFromComment_example"; // 문자열 | 
-    String filters = "filters_example"; // 문자열 | 
-    String searchFilters = "searchFilters_example"; // 문자열 | 
-    String afterId = "afterId_example"; // 문자열 | 
-    Boolean demo = true; // 불리언 | 
-    String sso = "sso_example"; // 문자열 | 
+    String tenantId = "tenantId_example"; // String | 
+    String textSearch = "textSearch_example"; // String | 
+    String byIPFromComment = "byIPFromComment_example"; // String | 
+    String filters = "filters_example"; // String | 
+    String searchFilters = "searchFilters_example"; // String | 
+    String afterId = "afterId_example"; // String | 
+    Boolean demo = true; // Boolean | 
+    String sso = "sso_example"; // String | 
     try {
-      ModerationAPIGetCommentIdsResponse result = apiInstance.getApiIds()
+      ModerationAPIGetCommentIdsResponse result = apiInstance.getApiIds(tenantId)
             .textSearch(textSearch)
             .byIPFromComment(byIPFromComment)
             .filters(filters)

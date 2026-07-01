@@ -16,17 +16,17 @@
 
 [inline-code-attrs-start title = 'reactFeedPostPublic 示例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 以下代码示例仍处于测试版。若有任何问题，请通过 http://github.com/OpenAPITools/openapi-generator/issues/new 报告
+// 以下代码示例仍为测试版。如有问题，请通过 http://github.com/OpenAPITools/openapi-generator/issues/new 报告
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let postId = "postId_example" // String | 
 let reactBodyParams = ReactBodyParams(reactType: "reactType_example") // ReactBodyParams | 
-let isUndo = true // Bool |  (可选)
-let broadcastId = "broadcastId_example" // String |  (可选)
-let sso = "sso_example" // String |  (可选)
+let isUndo = true // Bool |  (optional)
+let broadcastId = "broadcastId_example" // String |  (optional)
+let sso = "sso_example" // String |  (optional)
 
-PublicAPI.reactFeedPostPublic(tenantId: tenantId, postId: postId, reactBodyParams: reactBodyParams, isUndo: isUndo, broadcastId: broadcastId, sso: sso) { (response, error) in
+PublicAPI.reactFeedPostPublic(tenantId: tenantId, postId: postId, reactBodyParams: reactBodyParams, options: PublicAPI.ReactFeedPostPublicOptions(isUndo: isUndo, broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -37,3 +37,5 @@ PublicAPI.reactFeedPostPublic(tenantId: tenantId, postId: postId, reactBodyParam
     }
 }
 [inline-code-end]
+
+---

@@ -1,7 +1,8 @@
 ## Parametri
 
-| Nome | Tipo | Posizione | Richiesto | Descrizione |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+|------|------|-----------|--------------|-------------|
+| tenantId | string | query | Yes |  |
 | text-search | string | query | No |  |
 | sso | string | query | No |  |
 
@@ -11,7 +12,7 @@ Restituisce: [`ModerationSuggestResponse`](https://github.com/FastComments/fastc
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di GetSearchSuggest'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio GetSearchSuggest'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,17 +24,18 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	textSearch := "textSearch_example" // string |  (opzionale)
 	sso := "sso_example" // string |  (opzionale)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetSearchSuggest(context.Background()).TextSearch(textSearch).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetSearchSuggest(context.Background()).TenantId(tenantId).TextSearch(textSearch).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetSearchSuggest``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Errore durante la chiamata `ModerationAPI.GetSearchSuggest``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Risposta HTTP completa: %v\n", r)
 	}
 	// risposta da `GetSearchSuggest`: ModerationSuggestResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetSearchSuggest`: %v\n", resp)
+	fmt.Fprintf(os.Stdout, "Risposta da `ModerationAPI.GetSearchSuggest`: %v\n", resp)
 }
 [inline-code-end]

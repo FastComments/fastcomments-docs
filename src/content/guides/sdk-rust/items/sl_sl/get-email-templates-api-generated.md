@@ -1,6 +1,6 @@
 ## Parametri
 
-| Ime | Tip | Obvezno | Opis |
+| Ime | Vrsta | Obvezno | Opis |
 |------|------|----------|-------------|
 | tenant_id | String | Da |  |
 | skip | f64 | Ne |  |
@@ -13,14 +13,12 @@ Vrne: [`GetEmailTemplatesResponse`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'get_email_templates Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_templates() -> Result<GetEmailTemplatesResponse, Error> {
-    let params: GetEmailTemplatesParams = GetEmailTemplatesParams {
+async fn run() -> Result<(), Error> {
+    let params = GetEmailTemplatesParams {
         tenant_id: "acme-corp-tenant".to_string(),
         skip: Some(10.0),
     };
-    let response: GetEmailTemplatesResponse = get_email_templates(&configuration, params).await?;
-    Ok(response)
+    let _response = get_email_templates(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

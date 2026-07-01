@@ -2,40 +2,42 @@
 
 | Ad | Tip | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Evet |  |
-| banEmail | boolean | query | Hayır |  |
-| banEmailDomain | boolean | query | Hayır |  |
-| banIP | boolean | query | Hayır |  |
-| deleteAllUsersComments | boolean | query | Hayır |  |
-| bannedUntil | string | query | Hayır |  |
-| isShadowBan | boolean | query | Hayır |  |
-| updateId | string | query | Hayır |  |
-| banReason | string | query | Hayır |  |
-| sso | string | query | Hayır |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| banEmail | boolean | query | No |  |
+| banEmailDomain | boolean | query | No |  |
+| banIP | boolean | query | No |  |
+| deleteAllUsersComments | boolean | query | No |  |
+| bannedUntil | string | query | No |  |
+| isShadowBan | boolean | query | No |  |
+| updateId | string | query | No |  |
+| banReason | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Yanıt
 
-Döndürür: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/BanUserFromCommentResult.swift)
+Returns: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/BanUserFromCommentResult.swift)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'postBanUserFromComment Örneği'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Aşağıdaki kod örnekleri hâlâ beta aşamasındadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new adresi üzerinden bildirin
+// Aşağıdaki kod örnekleri hâlâ beta aşamasındadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new adresinden bildirin
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
-let banEmail = true // Bool |  (isteğe bağlı)
-let banEmailDomain = true // Bool |  (isteğe bağlı)
-let banIP = true // Bool |  (isteğe bağlı)
-let deleteAllUsersComments = true // Bool |  (isteğe bağlı)
-let bannedUntil = "bannedUntil_example" // String |  (isteğe bağlı)
-let isShadowBan = true // Bool |  (isteğe bağlı)
-let updateId = "updateId_example" // String |  (isteğe bağlı)
-let banReason = "banReason_example" // String |  (isteğe bağlı)
-let sso = "sso_example" // String |  (isteğe bağlı)
+let banEmail = true // Bool |  (optional)
+let banEmailDomain = true // Bool |  (optional)
+let banIP = true // Bool |  (optional)
+let deleteAllUsersComments = true // Bool |  (optional)
+let bannedUntil = "bannedUntil_example" // String |  (optional)
+let isShadowBan = true // Bool |  (optional)
+let updateId = "updateId_example" // String |  (optional)
+let banReason = "banReason_example" // String |  (optional)
+let sso = "sso_example" // String |  (optional)
 
-ModerationAPI.postBanUserFromComment(commentId: commentId, banEmail: banEmail, banEmailDomain: banEmailDomain, banIP: banIP, deleteAllUsersComments: deleteAllUsersComments, bannedUntil: bannedUntil, isShadowBan: isShadowBan, updateId: updateId, banReason: banReason, sso: sso) { (response, error) in
+ModerationAPI.postBanUserFromComment(tenantId: tenantId, commentId: commentId, options: ModerationAPI.PostBanUserFromCommentOptions(banEmail: banEmail, banEmailDomain: banEmailDomain, banIP: banIP, deleteAllUsersComments: deleteAllUsersComments, bannedUntil: bannedUntil, isShadowBan: isShadowBan, updateId: updateId, banReason: banReason, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

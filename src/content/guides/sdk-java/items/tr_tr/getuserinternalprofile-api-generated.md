@@ -1,16 +1,16 @@
----
-## Parametreler
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Evet |  |
 | commentId | string | query | Hayır |  |
 | sso | string | query | Hayır |  |
 
-## Yanıt
+## Response
 
-Dönüş değeri: [`GetUserInternalProfileResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserInternalProfileResponse.java)
+Döndürür: [`GetUserInternalProfileResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserInternalProfileResponse.java)
 
-## Örnek
+## Example
 
 [inline-code-attrs-start title = 'getUserInternalProfile Örneği'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -27,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      GetUserInternalProfileResponse result = apiInstance.getUserInternalProfile()
+      GetUserInternalProfileResponse result = apiInstance.getUserInternalProfile(tenantId)
             .commentId(commentId)
             .sso(sso)
             .execute();
@@ -45,5 +46,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

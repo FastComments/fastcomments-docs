@@ -1,8 +1,9 @@
-## Παραμέτροι
+## Παράμετροι
 
-| Name | Type | Location | Required | Description |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτήται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| sso | string | query | Όχι |  |
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Απόκριση
 
@@ -18,15 +19,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Εάν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε τον client σας που υλοποιεί `GuzzleHttp\ClientInterface`.
-    // Αυτό είναι προαιρετικό, `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
+    // Αν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε το client σας που υλοποιεί `GuzzleHttp\ClientInterface`.
+    // Αυτή είναι προαιρετική, `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
     new GuzzleHttp\Client()
 );
+
+$tenant_id = 'tenant_id_example'; // string
 $comments_by_ids_params = new \FastComments\Client\Model\CommentsByIdsParams(); // \FastComments\Client\Model\CommentsByIdsParams
 $sso = 'sso_example'; // string
 
+
 try {
-    $result = $apiInstance->postCommentsByIds($comments_by_ids_params, $sso);
+    $result = $apiInstance->postCommentsByIds($tenant_id, $comments_by_ids_params, $sso);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->postCommentsByIds: ', $e->getMessage(), PHP_EOL;

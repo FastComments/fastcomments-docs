@@ -1,13 +1,13 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nom | Type | Emplacement | Obligatoire | Description |
+|------|------|-------------|-------------|-------------|
 | tenantId | string | query | Yes |  |
 | id | string | path | Yes |  |
 
 ## Réponse
 
-Renvoie : [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIGetUserBadgeProgressResponse.php)
+Retourne : [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIGetUserBadgeProgressResponse.php)
 
 ## Exemple
 
@@ -17,20 +17,22 @@ Renvoie : [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fa
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configurer l'authentification par clé API : api_key
+// Configurer l'autorisation de clé API : api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Décommentez ci-dessous pour configurer un préfixe (ex. Bearer) pour la clé API, si nécessaire
+// Décommentez ci‑dessous pour définir un préfixe (par ex. Bearer) pour la clé API, si nécessaire
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Si vous souhaitez utiliser un client HTTP personnalisé, fournissez votre client qui implémente `GuzzleHttp\ClientInterface`.
+    // Si vous souhaitez utiliser un client HTTP personnalisé, passez votre client qui implémente `GuzzleHttp\ClientInterface`.
     // Ceci est optionnel, `GuzzleHttp\Client` sera utilisé par défaut.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
+
 
 try {
     $result = $apiInstance->getUserBadgeProgressById($tenant_id, $id);

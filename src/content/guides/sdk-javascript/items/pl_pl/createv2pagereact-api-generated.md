@@ -1,27 +1,29 @@
 ## Parametry
 
-| Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|-------------|
-| tenantId | string | Tak |  |
-| urlId | string | Tak |  |
-| id | string | Tak |  |
-| title | string | Nie |  |
+| Name     | Type   | Required | Description |
+|----------|--------|----------|-------------|
+| tenantId | string | Yes      |  |
+| urlId    | string | Yes      |  |
+| id       | string | Yes      |  |
+| title    | string | No       |  |
 
 ## Odpowiedź
 
-Zwraca: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateV1PageReact.ts)
+Zwraca: [`CreateV2PageReactResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateV2PageReactResponse.ts)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład użycia createV2PageReact'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład createV2PageReact'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_91f4b3b';
-const urlId: string = 'https://news.site.com/articles/2026/06/fastcomments-integration';
-const id: string = 'react_5f2c1a';
-const title: string = 'FastComments Integration — June 2026';
+(async () => {
+  const tenantId: string = "acme-corp";
+  const urlId: string = "blog/posts/fastcomments-integration";
+  const pageId: string = "page-12345";
+  const title: string = "FastComments API Integration Guide";
 
-const reactionWithTitle: CreateV1PageReact = await createV2PageReact(tenantId, urlId, id, title);
-const reactionWithoutTitle: CreateV1PageReact = await createV2PageReact(tenantId, urlId, id);
+  const responseWithoutTitle: CreateV2PageReactResponse = await createV2PageReact(tenantId, urlId, pageId);
+  const responseWithTitle: CreateV2PageReactResponse = await createV2PageReact(tenantId, urlId, pageId, title);
+
+  console.log(responseWithoutTitle, responseWithTitle);
+})();
 [inline-code-end]
-
----

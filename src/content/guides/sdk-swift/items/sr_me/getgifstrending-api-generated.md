@@ -1,29 +1,29 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Обавезно | Опис |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| locale | string | query | Не |  |
-| rating | string | query | Не |  |
-| page | number | query | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | path | Da |  |
+| locale | string | query | Ne |  |
+| rating | string | query | Ne |  |
+| page | number | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetGifsTrendingResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetGifsTrendingResponse.swift)
+Returns: [`GetGifsTrendingResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetGifsTrendingResponse.swift)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'getGifsTrending Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getGifsTrending'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи примјери кода су још у бета фази. За било који проблем, пријавите га преко http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sljedeći primjeri koda su još u beta fazi. Za bilo koji problem, molimo prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let locale = "locale_example" // String |  (опционо)
-let rating = "rating_example" // String |  (опционо)
-let page = 987 // Double |  (опционо)
+let locale = "locale_example" // String |  (optional)
+let rating = "rating_example" // String |  (optional)
+let page = 987 // Double |  (optional)
 
-PublicAPI.getGifsTrending(tenantId: tenantId, locale: locale, rating: rating, page: page) { (response, error) in
+PublicAPI.getGifsTrending(tenantId: tenantId, options: PublicAPI.GetGifsTrendingOptions(locale: locale, rating: rating, page: page)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -34,5 +34,3 @@ PublicAPI.getGifsTrending(tenantId: tenantId, locale: locale, rating: rating, pa
     }
 }
 [inline-code-end]
-
----

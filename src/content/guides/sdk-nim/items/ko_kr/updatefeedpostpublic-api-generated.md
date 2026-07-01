@@ -1,33 +1,30 @@
+---
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | postId | string | 아니오 |  |
 | updateFeedPostParams | UpdateFeedPostParams | 아니오 |  |
-| broadcastId | string | 아니오 |  |
-| sso | string | 아니오 |  |
+| options | UpdateFeedPostPublicOptions | 아니오 |  |
 
 ## 응답
 
 반환: [`Option[CreateFeedPostResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_feed_post_response.nim)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'updateFeedPostPublic 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateFeedPostPublic 예시'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.updateFeedPostPublic(
   tenantId = "my-tenant-123",
-  postId = "post-456",
-  updateFeedPostParams = UpdateFeedPostParams(title = "Weekly Product Update", content = "Released bug fixes and performance improvements in v2.1.", tags = @["release", "product"], pinned = false),
-  broadcastId = "",
-  sso = ""
+  postId = "post-789",
+  updateFeedPostParams = UpdateFeedPostParams(),
+  options = UpdateFeedPostPublicOptions()
 )
+
 if response.isSome:
-  let created = response.get()
-  echo "Updated feed post id: ", created.postId
-else:
-  echo "Update failed with HTTP status: ", httpResponse.status
+  let post = response.get()
 [inline-code-end]
 
 ---

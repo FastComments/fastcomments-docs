@@ -1,7 +1,7 @@
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
 | tenantId | string | Da |  |
 | search | string | Da |  |
 | locale | string | Ne |  |
@@ -14,14 +14,27 @@ Vraća: [`GetGifsSearchResponse`](https://github.com/FastComments/fastcomments-s
 
 ## Primjer
 
-[inline-code-attrs-start title = 'getGifsSearch Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getGifsSearch'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-42';
-const search: string = 'golden hour sunset';
-const locale: string = 'en-US';
-const rating: string = 'pg';
-const page: number = 1;
-const result: GetGifsSearchResponse = await getGifsSearch(tenantId, search, locale, rating, page);
+async function demo() {
+  const tenantId: string = "tenant_9f8b7c";
+  const search: string = "funny cats";
+  const locale: string = "en-US";
+  const rating: string = "pg";
+  const page: number = 1;
+
+  const result: GetGifsSearchResponse = await getGifsSearch(
+    tenantId,
+    search,
+    locale,
+    rating,
+    page
+  );
+
+  console.log(result);
+}
+
+demo();
 [inline-code-end]
 
 ---

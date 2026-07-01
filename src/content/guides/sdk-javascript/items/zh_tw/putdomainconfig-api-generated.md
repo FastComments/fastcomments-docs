@@ -2,27 +2,31 @@
 
 | 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| domainToUpdate | string | Yes |  |
-| updateDomainConfigParams | UpdateDomainConfigParams | Yes |  |
+| tenantId | string | 是 |  |
+| domainToUpdate | string | 是 |  |
+| updateDomainConfigParams | UpdateDomainConfigParams | 是 |  |
 
 ## 回應
 
-Returns: [`PutDomainConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PutDomainConfigResponse.ts)
+返回: [`PutDomainConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PutDomainConfigResponse.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'putDomainConfig 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "7f12c9a4-3b6e-4d2f-9a1c-5f8b2e0a91c4";
-const domainToUpdate: string = "comments.newsroom-prod.com";
-const updateParams: UpdateDomainConfigParams = {
-  forceHttps: true,
-  enableCORS: true,               // 可選旗標（示範可選參數）
-  corsAllowedOrigins: ["https://newsroom-prod.com"]
-};
-const response: PutDomainConfigResponse = await putDomainConfig(tenantId, domainToUpdate, updateParams);
-console.log(response);
+async function runExample() {
+  const tenantId: string = 'tenant-9f8c7b1a';
+  const domainToUpdate: string = 'comments.mywebsite.org';
+  const updateDomainConfigParams: UpdateDomainConfigParams = {
+    enableModeration: true,
+    // 可選欄位已省略，例如 maxCommentLength?: number
+  };
+  const result: PutDomainConfigResponse = await putDomainConfig(
+    tenantId,
+    domainToUpdate,
+    updateDomainConfigParams,
+  );
+  console.log(result);
+}
+runExample();
 [inline-code-end]
-
----

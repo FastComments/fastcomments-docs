@@ -1,13 +1,14 @@
+---
 req
 tenantId
 urlId
 
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Posizione | Richiesto | Descrizione |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Sì |  |
-| urlId | string | query | Sì |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
 | page | integer | query | No |  |
 | direction | string | query | No |  |
 | sso | string | query | No |  |
@@ -41,9 +42,9 @@ Restituisce: [`GetCommentsResponseWithPresencePublicComment`](https://github.com
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio getCommentsPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getCommentsPublic Esempio'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// I seguenti esempi di codice sono ancora in fase beta. Per qualsiasi problema, si prega di segnalare tramite http://github.com/OpenAPITools/openapi-generator/issues/new
+// I seguenti esempi di codice sono ancora in beta. Per qualsiasi problema, segnalalo tramite http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -75,7 +76,7 @@ let customConfigStr = "customConfigStr_example" // String |  (opzionale)
 let afterCommentId = "afterCommentId_example" // String |  (opzionale)
 let beforeCommentId = "beforeCommentId_example" // String |  (opzionale)
 
-PublicAPI.getCommentsPublic(tenantId: tenantId, urlId: urlId, page: page, direction: direction, sso: sso, skip: skip, skipChildren: skipChildren, limit: limit, limitChildren: limitChildren, countChildren: countChildren, fetchPageForCommentId: fetchPageForCommentId, includeConfig: includeConfig, countAll: countAll, includei10n: includei10n, locale: locale, modules: modules, isCrawler: isCrawler, includeNotificationCount: includeNotificationCount, asTree: asTree, maxTreeDepth: maxTreeDepth, useFullTranslationIds: useFullTranslationIds, parentId: parentId, searchText: searchText, hashTags: hashTags, userId: userId, customConfigStr: customConfigStr, afterCommentId: afterCommentId, beforeCommentId: beforeCommentId) { (response, error) in
+PublicAPI.getCommentsPublic(tenantId: tenantId, urlId: urlId, options: PublicAPI.GetCommentsPublicOptions(page: page, direction: direction, sso: sso, skip: skip, skipChildren: skipChildren, limit: limit, limitChildren: limitChildren, countChildren: countChildren, fetchPageForCommentId: fetchPageForCommentId, includeConfig: includeConfig, countAll: countAll, includei10n: includei10n, locale: locale, modules: modules, isCrawler: isCrawler, includeNotificationCount: includeNotificationCount, asTree: asTree, maxTreeDepth: maxTreeDepth, useFullTranslationIds: useFullTranslationIds, parentId: parentId, searchText: searchText, hashTags: hashTags, userId: userId, customConfigStr: customConfigStr, afterCommentId: afterCommentId, beforeCommentId: beforeCommentId)) { (response, error) in
     guard error == nil else {
         print(error)
         return

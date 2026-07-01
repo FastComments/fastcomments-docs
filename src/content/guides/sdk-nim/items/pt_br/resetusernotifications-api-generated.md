@@ -1,14 +1,10 @@
+---
 ## Parâmetros
 
-| Nome | Type | Obrigatório | Descrição |
-|------|------|------------|-------------|
+| Nome | Tipo | Obrigatório | Descrição |
+|------|------|-------------|-----------|
 | tenantId | string | Sim |  |
-| afterId | string | Não |  |
-| afterCreatedAt | int64 | Não |  |
-| unreadOnly | bool | Não |  |
-| dmOnly | bool | Não |  |
-| noDm | bool | Não |  |
-| sso | string | Não |  |
+| options | ResetUserNotificationsOptions | Não |  |
 
 ## Resposta
 
@@ -16,22 +12,13 @@ Retorna: [`Option[ResetUserNotificationsResponse]`](https://github.com/FastComme
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de resetUserNotifications'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'resetUserNotifications Exemplo'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.resetUserNotifications(
+let (maybeResp, httpResp) = client.resetUserNotifications(
   tenantId = "my-tenant-123",
-  afterId = "",
-  afterCreatedAt = 0'i64,
-  unreadOnly = false,
-  dmOnly = false,
-  noDm = false,
-  sso = ""
-)
-if response.isSome:
-  let resetResp = response.get()
-  echo "ResetUserNotificationsResponse received"
-else:
-  echo "No ResetUserNotificationsResponse"
+  options = ResetUserNotificationsOptions())
+if maybeResp.isSome:
+  let resp = maybeResp.get()
 [inline-code-end]
 
 ---

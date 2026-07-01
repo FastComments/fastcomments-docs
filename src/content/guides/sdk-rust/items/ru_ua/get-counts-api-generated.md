@@ -1,23 +1,24 @@
-## Параметры
+## Параметри
 
-| Name | Type | Required | Description |
+| Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
-| sso | String | No |  |
+| tenant_id | String | Так |  |
+| sso | String | Ні |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`GetBannedUsersCountResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_banned_users_count_response.rs)
+Повертає: [`GetBannedUsersCountResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_banned_users_count_response.rs)
 
-## Пример
+## Приклад
 
 [inline-code-attrs-start title = 'Пример get_counts'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_counts() -> Result<(), Error> {
-    let params: GetCountsParams = GetCountsParams {
-        sso: Some("acme-corp-tenant".to_string()),
+async fn run() -> Result<(), Error> {
+    let params = GetCountsParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        sso: Some("news/article".to_string()),
     };
-    let counts: GetBannedUsersCountResponse = get_counts(&configuration, params).await?;
-    println!("{:?}", counts);
+    let _response = get_counts(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

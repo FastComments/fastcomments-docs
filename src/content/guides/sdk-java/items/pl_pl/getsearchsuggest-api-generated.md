@@ -1,7 +1,8 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+|------|------|-------------|----------|------|
+| tenantId | string | query | Tak |  |
 | text-search | string | query | Nie |  |
 | sso | string | query | Nie |  |
 
@@ -11,7 +12,7 @@ Zwraca: [`ModerationSuggestResponse`](https://github.com/FastComments/fastcommen
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład getSearchSuggest'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSearchSuggest Przykład'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importuj klasy:
 import com.fastcomments.invoker.ApiClient;
@@ -26,10 +27,11 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String textSearch = "textSearch_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationSuggestResponse result = apiInstance.getSearchSuggest()
+      ModerationSuggestResponse result = apiInstance.getSearchSuggest(tenantId)
             .textSearch(textSearch)
             .sso(sso)
             .execute();

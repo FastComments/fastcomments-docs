@@ -1,20 +1,29 @@
 ## פרמטרים
 
-| שם | סוג | חובה | תיאור |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| commentId | string | כן |  |
-| sso | string | לא |  |
+| commentId | string | Yes |  |
+| broadcastId | string | No |  |
+| tenantId | string | No |  |
+| sso | string | No |  |
 
 ## תגובה
 
-מחזיר: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+מחזיר: [`PostFlagCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostFlagCommentResponse.ts)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-postFlagComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postFlagComment דוגמה'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const response: APIEmptyResponse = await postFlagComment('cmt_8f3b2a1f4e6');
-const responseWithSso: APIEmptyResponse = await postFlagComment('cmt_9b4a7c2d5f1', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NzEyMzQ1NiIsImlhdCI6MTYyNzcxMzYwMH0.sig-token-part');
-[inline-code-end]
+const commentId: string = "cmt_20230915_001";
+const broadcastId: string = "brd_20230915_live";
+const tenantId: string = "tenant_42";
+const sso: string = "sso_token_abc123";
 
----
+const flaggedResponse: PostFlagCommentResponse = await postFlagComment(
+  commentId,
+  broadcastId,
+  tenantId,
+  sso
+);
+[inline-code-end]

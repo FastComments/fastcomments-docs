@@ -1,11 +1,11 @@
-## פרמטרים
+## Parameters
 
-| שם | סוג | מיקום | חובה | תיאור |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | כן |  |
-| id | string | path | כן |  |
-| deleteComments | boolean | query | לא |  |
-| commentDeleteMode | string | query | לא |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| deleteComments | boolean | query | No |  |
+| commentDeleteMode | string | query | No |  |
 
 ## תגובה
 
@@ -13,33 +13,28 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-delete_sso_user'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_sso_user דוגמה'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import DeleteSsoUserOptions
 from client.models.delete_sso_user_api_response import DeleteSSOUserAPIResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת ה-host אופציונלית והבררת מחדל היא https://fastcomments.com
-# עיין ב-configuration.py עבור רשימת כל פרמטרי הקונפיגורציה הנתמכים.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
-
-# הלקוח חייב להגדיר את פרמטרי האימות וההרשאה
+# הגדרת המארח היא אופציונלית ומוגדרת כברירת מחדל ל- https://fastcomments.com
+# ראו configuration.py עבור רשימת כל פרמטרי ההגדרה הנתמכים.
+# על הלקוח להגדיר את פרמטרי האימות והאישור
 # בהתאם למדיניות האבטחה של שרת ה-API.
-# דוגמאות לכל שיטת אימות מסופקות למטה; השתמש בדוגמה ש-
-# מתאימה למקרה השימוש שלך.
+# דוגמאות לכל שיטת אימות מסופקות למטה, השתמשו בדוגמה ש
+# מתאימה למקרה השימוש שלכם באימות.
 
-# קבע הרשאת מפתח API: api_key
-configuration.api_key['api_key'] = os.environ["API_KEY"]
-
-# הסר את ההערה מהשורה למטה כדי להגדיר קידומת (למשל Bearer) עבור מפתח ה-API, אם נדרש
+# הגדרת אימות מפתח API: api_key
+# בטלו את ההערה למטה כדי להגדיר קידומת (למשל Bearer) למפתח API, אם נדרש
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# פתח הקשר עם מופע של לקוח ה-API
+# הכניסו הקשר עם מופע של לקוח ה-API
 with client.ApiClient(configuration) as api_client:
-    # צור מופע של מחלקת ה-API
+    # צרו מופע של מחלקת ה-API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
@@ -47,7 +42,7 @@ with client.ApiClient(configuration) as api_client:
     comment_delete_mode = 'comment_delete_mode_example' # str |  (אופציונלי)
 
     try:
-        api_response = api_instance.delete_sso_user(tenant_id, id, delete_comments=delete_comments, comment_delete_mode=comment_delete_mode)
+        api_response = api_instance.delete_sso_user(tenant_id, id, DeleteSsoUserOptions(delete_comments=delete_comments, comment_delete_mode=comment_delete_mode))
         print("The response of DefaultApi->delete_sso_user:\n")
         pprint(api_response)
     except Exception as e:

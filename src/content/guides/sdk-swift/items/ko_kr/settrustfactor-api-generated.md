@@ -1,7 +1,8 @@
 ## 매개변수
 
-| Name | Type | Location | Required | Description |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | 예 |  |
 | userId | string | query | 아니오 |  |
 | trustFactor | string | query | 아니오 |  |
 | sso | string | query | 아니오 |  |
@@ -10,18 +11,19 @@
 
 반환: [`SetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SetUserTrustFactorResponse.swift)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'setTrustFactor 예제'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'setTrustFactor 예시'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 다음 코드 샘플은 아직 베타입니다. 문제 발생 시 http://github.com/OpenAPITools/openapi-generator/issues/new 에 보고해 주세요
+// 다음 코드 샘플은 아직 베타 버전입니다. 문제가 있으면 http://github.com/OpenAPITools/openapi-generator/issues/new 에서 보고해 주세요
 import FastCommentsSwift
 
-let userId = "userId_example" // String |  (선택 사항)
-let trustFactor = "trustFactor_example" // String |  (선택 사항)
-let sso = "sso_example" // String |  (선택 사항)
+let tenantId = "tenantId_example" // String | 
+let userId = "userId_example" // String | (옵션)
+let trustFactor = "trustFactor_example" // String | (옵션)
+let sso = "sso_example" // String | (옵션)
 
-ModerationAPI.setTrustFactor(userId: userId, trustFactor: trustFactor, sso: sso) { (response, error) in
+ModerationAPI.setTrustFactor(tenantId: tenantId, options: ModerationAPI.SetTrustFactorOptions(userId: userId, trustFactor: trustFactor, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -32,3 +34,5 @@ ModerationAPI.setTrustFactor(userId: userId, trustFactor: trustFactor, sso: sso)
     }
 }
 [inline-code-end]
+
+---

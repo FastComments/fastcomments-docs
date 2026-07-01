@@ -17,6 +17,7 @@ Returns: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomment
 [inline-code-attrs-start title = 'create_feed_post Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import CreateFeedPostOptions
 from client.models.create_feed_post_params import CreateFeedPostParams
 from client.models.create_feed_posts_response import CreateFeedPostsResponse
 from client.rest import ApiException
@@ -51,7 +52,7 @@ with client.ApiClient(configuration) as api_client:
     skip_dup_check = True # bool |  (optional)
 
     try:
-        api_response = api_instance.create_feed_post(tenant_id, create_feed_post_params, broadcast_id=broadcast_id, is_live=is_live, do_spam_check=do_spam_check, skip_dup_check=skip_dup_check)
+        api_response = api_instance.create_feed_post(tenant_id, create_feed_post_params, CreateFeedPostOptions(broadcast_id=broadcast_id, is_live=is_live, do_spam_check=do_spam_check, skip_dup_check=skip_dup_check))
         print("The response of DefaultApi->create_feed_post:\n")
         pprint(api_response)
     except Exception as e:

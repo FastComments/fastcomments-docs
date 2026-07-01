@@ -1,36 +1,32 @@
-## Parametri
+## Parameters
 
-| Naziv | Tip | Obavezno | Opis |
+| Ime | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenant_id | String | Da |  |
-| id | String | Da |  |
-| update_notification_body | models::UpdateNotificationBody | Da |  |
-| user_id | String | Ne |  |
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
+| update_notification_body | models::UpdateNotificationBody | Yes |  |
+| user_id | String | No |  |
 
-## Odgovor
+## Response
 
 Vraća: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer update_notification'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'update_notification Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let update_notification_body: models::UpdateNotificationBody = models::UpdateNotificationBody {
-        enabled: true,
-        event: "comment.posted".into(),
-        channels: vec!["email".into(), "webhook".into()],
-        template_id: "tmpl-new-comment".into(),
+#[tokio::main]
+async fn main() -> Result<(), Error> {
+    let params = UpdateNotificationParams {
+        tenant_id: "acme-corp".to_string(),
+        id: "news/article".to_string(),
+        update_notification_body: models::UpdateNotificationBody {
+            title: "New article published".to_string(),
+            content: "Read the latest updates in our blog.".to_string(),
+        },
+        user_id: Some("user-123".to_string()),
     };
-    let params: UpdateNotificationParams = UpdateNotificationParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        id: "notif-12345".to_string(),
-        update_notification_body,
-        user_id: Some("admin-user-99".to_string()),
-    };
-    let response: ApiEmptyResponse = update_notification(&configuration, params).await?;
+    update_notification(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

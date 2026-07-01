@@ -1,7 +1,8 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов'язковий | Опис |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Так |  |
 | value | string | query | Ні |  |
 | filters | string | query | Ні |  |
 | searchFilters | string | query | Ні |  |
@@ -13,7 +14,7 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад GetSearchCommentsSummary'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GetSearchCommentsSummary Приклад'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -25,21 +26,21 @@ import (
 )
 
 func main() {
-	value := "value_example" // string |  (необов'язково)
-	filters := "filters_example" // string |  (необов'язково)
-	searchFilters := "searchFilters_example" // string |  (необов'язково)
-	sso := "sso_example" // string |  (необов'язково)
+	tenantId := "tenantId_example" // string | 
+	value := "value_example" // string |  (необов'язковий)
+	filters := "filters_example" // string |  (необов'язковий)
+	searchFilters := "searchFilters_example" // string |  (необов'язковий)
+	sso := "sso_example" // string |  (необов'язковий)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetSearchCommentsSummary(context.Background()).Value(value).Filters(filters).SearchFilters(searchFilters).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetSearchCommentsSummary(context.Background()).TenantId(tenantId).Value(value).Filters(filters).SearchFilters(searchFilters).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetSearchCommentsSummary``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `GetSearchCommentsSummary`: ModerationCommentSearchResponse
 	// відповідь від `GetSearchCommentsSummary`: ModerationCommentSearchResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetSearchCommentsSummary`: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -1,17 +1,10 @@
 ## Παράμετροι
 
-| Name | Type | Απαιτείται | Περιγραφή |
-|------|------|------------|-----------|
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+|------|------|-----------|-----------|
+| tenantId | string | Ναι |  |
 | commentId | string | Ναι |  |
-| banEmail | bool | Όχι |  |
-| banEmailDomain | bool | Όχι |  |
-| banIP | bool | Όχι |  |
-| deleteAllUsersComments | bool | Όχι |  |
-| bannedUntil | string | Όχι |  |
-| isShadowBan | bool | Όχι |  |
-| updateId | string | Όχι |  |
-| banReason | string | Όχι |  |
-| sso | string | Όχι |  |
+| options | PostBanUserFromCommentOptions | Όχι |  |
 
 ## Απάντηση
 
@@ -21,23 +14,13 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα postBanUserFromComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postBanUserFromComment(
-  commentId = "cmt-8f3a1b",
-  banEmail = false,
-  banEmailDomain = false,
-  banIP = false,
-  deleteAllUsersComments = false,
-  bannedUntil = "",
-  isShadowBan = false,
-  updateId = "",
-  banReason = "",
-  sso = ""
+let (banResult, httpResp) = client.postBanUserFromComment(
+  tenantId = "my-tenant-123",
+  commentId = "cmt-456",
+  options = PostBanUserFromCommentOptions()
 )
-if response.isSome:
-  let banResult = response.get()
-  discard banResult
-else:
-  echo "No ban result returned"
-[inline-code-end]
 
----
+if banResult.isSome:
+  let result = banResult.get()
+  echo result
+[inline-code-end]

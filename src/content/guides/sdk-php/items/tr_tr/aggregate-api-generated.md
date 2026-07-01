@@ -1,16 +1,17 @@
-Belgeleri gruplayarak (groupBy sağlanmışsa) toplar ve birden fazla işlem uygular. Farklı işlemler (ör. sum, countDistinct, avg vb.) desteklenir.
+Aggregates documents by grouping them (if groupBy is provided) and applying multiple operations.  
+Different operations (e.g. sum, countDistinct, avg, etc.) are supported.
 
-## Parameters
+## Parametreler
 
-| Ad | Type | Konum | Zorunlu | Açıklama |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Evet |  |
-| parentTenantId | string | query | Hayır |  |
-| includeStats | boolean | query | Hayır |  |
+| tenantId | string | query | Yes |  |
+| parentTenantId | string | query | No |  |
+| includeStats | boolean | query | No |  |
 
 ## Yanıt
 
-Döndürür: [`AggregateResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AggregateResponse.php)
+Returns: [`AggregateResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AggregateResponse.php)
 
 ## Örnek
 
@@ -22,23 +23,27 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // API anahtarı yetkilendirmesini yapılandır: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Gerekirse API anahtarı için önek (ör. Bearer) ayarlamak için aşağıdaki satırı yorumdan çıkarın
+// API anahtarı için önek (örn. Bearer) ayarlamak isterseniz aşağıdaki satırın yorumunu kaldırın
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Özel bir HTTP istemcisi kullanmak isterseniz, `GuzzleHttp\ClientInterface` uygulayan istemcinizi geçin.
-    // Bu isteğe bağlıdır, varsayılan olarak `GuzzleHttp\Client` kullanılacaktır.
+    // Özel http istemcisi kullanmak istiyorsanız, `GuzzleHttp\ClientInterface`'i uygulayan istemcinizi geçirin.
+    // Bu isteğe bağlıdır, `GuzzleHttp\Client` varsayılan olarak kullanılacaktır.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $aggregation_request = new \FastComments\Client\Model\AggregationRequest(); // \FastComments\Client\Model\AggregationRequest
-$parent_tenant_id = 'parent_tenant_id_example'; // string
-$include_stats = True; // bool
+$options = [
+    'parent_tenant_id' => 'parent_tenant_id_example', // string
+    'include_stats' => True, // bool
+];
+
 
 try {
-    $result = $apiInstance->aggregate($tenant_id, $aggregation_request, $parent_tenant_id, $include_stats);
+    $result = $apiInstance->aggregate($tenant_id, $aggregation_request, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->aggregate: ', $e->getMessage(), PHP_EOL;

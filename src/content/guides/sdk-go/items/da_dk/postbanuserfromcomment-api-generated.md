@@ -1,7 +1,8 @@
-## Parametre
+## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Navn | Type | Placering | Krævet | Beskrivelse |
+|------|------|-----------|--------|-------------|
+| tenantId | string | query | Ja |  |
 | commentId | string | path | Ja |  |
 | banEmail | boolean | query | Nej |  |
 | banEmailDomain | boolean | query | Nej |  |
@@ -13,13 +14,13 @@
 | banReason | string | query | Nej |  |
 | sso | string | query | Nej |  |
 
-## Svar
+## Response
 
 Returnerer: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_ban_user_from_comment_result.go)
 
-## Eksempel
+## Example
 
-[inline-code-attrs-start title = 'Eksempel på PostBanUserFromComment'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PostBanUserFromComment Eksempel'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -31,6 +32,7 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
 	banEmail := true // bool |  (valgfri)
 	banEmailDomain := true // bool |  (valgfri)
@@ -44,12 +46,12 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostBanUserFromComment(context.Background(), commentId).BanEmail(banEmail).BanEmailDomain(banEmailDomain).BanIP(banIP).DeleteAllUsersComments(deleteAllUsersComments).BannedUntil(bannedUntil).IsShadowBan(isShadowBan).UpdateId(updateId).BanReason(banReason).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostBanUserFromComment(context.Background(), commentId).TenantId(tenantId).BanEmail(banEmail).BanEmailDomain(banEmailDomain).BanIP(banIP).DeleteAllUsersComments(deleteAllUsersComments).BannedUntil(bannedUntil).IsShadowBan(isShadowBan).UpdateId(updateId).BanReason(banReason).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostBanUserFromComment``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Fejl ved kald af `ModerationAPI.PostBanUserFromComment``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Fuld HTTP-respons: %v\n", r)
 	}
-	// svar fra `PostBanUserFromComment`: BanUserFromCommentResult
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostBanUserFromComment`: %v\n", resp)
+	// respons fra `PostBanUserFromComment`: BanUserFromCommentResult
+	fmt.Fprintf(os.Stdout, "Respons fra `ModerationAPI.PostBanUserFromComment`: %v\n", resp)
 }
 [inline-code-end]

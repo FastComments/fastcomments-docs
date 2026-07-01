@@ -1,11 +1,11 @@
-req
-tenantId
-urlId
-userIdWS
+req  
+tenantId  
+urlId  
+userIdWS  
 
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | urlId | string | Da |  |
@@ -15,20 +15,20 @@ userIdWS
 
 ## Odgovor
 
-Vraća: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEventLogResponse.ts)
+Vraća: [`GetEventLogResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEventLogResponse1.ts)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer getEventLog'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "f2b3d9e8-1c4b-4a7e-9f6d-2b8c3e1a4f5d";
-const urlId: string = "news/article/2026/06/18/fastcomments";
-const userIdWS: string = "ws-user-78b3ef";
-const startTime: number = Date.now() - 24 * 60 * 60 * 1000;
-const endTime: number = Date.now();
+(async () => {
+    const tenantId: string = "tenant_9876";
+    const urlId: string = "page_54321";
+    const userIdWS: string = "ws_user_1122";
+    const startTime: number = Date.now() - 7 * 24 * 60 * 60 * 1000; // one week ago
+    const endTime: number = Date.now();
 
-const responseWithoutEnd: GetEventLogResponse = await getEventLog(tenantId, urlId, userIdWS, startTime);
-const responseWithEnd: GetEventLogResponse = await getEventLog(tenantId, urlId, userIdWS, startTime, endTime);
+    const log: GetEventLogResponse1 = await getEventLog(tenantId, urlId, userIdWS, startTime, endTime);
+    const recentLog: GetEventLogResponse1 = await getEventLog(tenantId, urlId, userIdWS, startTime);
+})();
 [inline-code-end]
-
----

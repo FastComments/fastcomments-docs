@@ -1,7 +1,7 @@
 ## Παράμετροι
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|------------|-----------|
 | tenantId | string | query | Ναι |  |
 | page | integer | query | Όχι |  |
 | limit | integer | query | Όχι |  |
@@ -29,52 +29,49 @@
 [inline-code-attrs-start title = 'Παράδειγμα get_comments'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetCommentsOptions
 from client.models.api_get_comments_response import APIGetCommentsResponse
 from client.models.sort_directions import SortDirections
 from client.rest import ApiException
 from pprint import pprint
 
-# Η ρύθμιση του host είναι προαιρετική και προεπιλογή είναι το https://fastcomments.com
-# Δείτε το configuration.py για λίστα με όλες τις υποστηριζόμενες παραμέτρους διαμόρφωσης.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
+# Ο καθορισμός του host είναι προαιρετικός και προεπιλογή είναι https://fastcomments.com
+# Δείτε το configuration.py για μια λίστα με όλες τις υποστηριζόμενες παραμέτρους διαμόρφωσης.
+# Ο πελάτης πρέπει να ρυθμίσει τις παραμέτρους αυθεντικοποίησης και εξουσιοδότησης
+# σύμφωνα με την πολιτική ασφαλείας του διακομιστή API.
+# Παρέχονται παραδείγματα για κάθε μέθοδο αυθεντικοποίησης, χρησιμοποιήστε το παράδειγμα που
+# ικανοποιεί τη χρήση αυθεντικοποίησής σας.
 
-# Ο client πρέπει να ρυθμίσει τις παραμέτρους authentication και authorization
-# σύμφωνα με την πολιτική ασφάλειας του API server.
-# Παραδείγματα για κάθε μέθοδο auth παρέχονται παρακάτω, χρησιμοποιήστε το παράδειγμα που
-# ικανοποιεί την περίπτωση χρήσης σας για auth.
-
-# Configure API key authorization: api_key
+# Διαμόρφωση εξουσιοδότησης κλειδιού API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Καταργήστε το σχόλιο παρακάτω για να ορίσετε πρόθεμα (π.χ. Bearer) για το κλειδί API, εάν χρειάζεται
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Enter a context with an instance of the API client
+# Εισαγωγή ενός πλαισίου με ένα αντίτυπο του πελάτη API
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # Δημιουργία ενός αντιτύπου της κλάσης API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    page = 56 # int |  (προαιρετικό)
-    limit = 56 # int |  (προαιρετικό)
-    skip = 56 # int |  (προαιρετικό)
-    as_tree = True # bool |  (προαιρετικό)
-    skip_children = 56 # int |  (προαιρετικό)
-    limit_children = 56 # int |  (προαιρετικό)
-    max_tree_depth = 56 # int |  (προαιρετικό)
-    url_id = 'url_id_example' # str |  (προαιρετικό)
-    user_id = 'user_id_example' # str |  (προαιρετικό)
-    anon_user_id = 'anon_user_id_example' # str |  (προαιρετικό)
-    context_user_id = 'context_user_id_example' # str |  (προαιρετικό)
-    hash_tag = 'hash_tag_example' # str |  (προαιρετικό)
-    parent_id = 'parent_id_example' # str |  (προαιρετικό)
-    direction = client.SortDirections() # SortDirections |  (προαιρετικό)
-    from_date = 56 # int |  (προαιρετικό)
-    to_date = 56 # int |  (προαιρετικό)
+    page = 56 # int |  (optional)
+    limit = 56 # int |  (optional)
+    skip = 56 # int |  (optional)
+    as_tree = True # bool |  (optional)
+    skip_children = 56 # int |  (optional)
+    limit_children = 56 # int |  (optional)
+    max_tree_depth = 56 # int |  (optional)
+    url_id = 'url_id_example' # str |  (optional)
+    user_id = 'user_id_example' # str |  (optional)
+    anon_user_id = 'anon_user_id_example' # str |  (optional)
+    context_user_id = 'context_user_id_example' # str |  (optional)
+    hash_tag = 'hash_tag_example' # str |  (optional)
+    parent_id = 'parent_id_example' # str |  (optional)
+    direction = client.SortDirections() # SortDirections |  (optional)
+    from_date = 56 # int |  (optional)
+    to_date = 56 # int |  (optional)
 
     try:
-        api_response = api_instance.get_comments(tenant_id, page=page, limit=limit, skip=skip, as_tree=as_tree, skip_children=skip_children, limit_children=limit_children, max_tree_depth=max_tree_depth, url_id=url_id, user_id=user_id, anon_user_id=anon_user_id, context_user_id=context_user_id, hash_tag=hash_tag, parent_id=parent_id, direction=direction, from_date=from_date, to_date=to_date)
+        api_response = api_instance.get_comments(tenant_id, GetCommentsOptions(page=page, limit=limit, skip=skip, as_tree=as_tree, skip_children=skip_children, limit_children=limit_children, max_tree_depth=max_tree_depth, url_id=url_id, user_id=user_id, anon_user_id=anon_user_id, context_user_id=context_user_id, hash_tag=hash_tag, parent_id=parent_id, direction=direction, from_date=from_date, to_date=to_date))
         print("The response of DefaultApi->get_comments:\n")
         pprint(api_response)
     except Exception as e:

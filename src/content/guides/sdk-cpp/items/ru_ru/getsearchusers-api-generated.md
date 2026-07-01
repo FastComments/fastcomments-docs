@@ -1,10 +1,9 @@
----
 ## Параметры
 
 | Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
-| value | string | Нет |  |
-| sso | string | Нет |  |
+| tenantId | string | Да |  |
+| options | const GetSearchUsersOptions& | Да |  |
 
 ## Ответ
 
@@ -14,12 +13,16 @@
 
 [inline-code-attrs-start title = 'Пример getSearchUsers'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> value(boost::optional<utility::string_t>(U("john.doe@example.com")));
-boost::optional<utility::string_t> sso(boost::optional<utility::string_t>(U("my-tenant-123")));
-api->getSearchUsers(value, sso).then([](std::shared_ptr<ModerationUserSearchResponse> resp){
-    if (!resp) return;
-    auto copy = std::make_shared<ModerationUserSearchResponse>(*resp);
-});
-[inline-code-end]
+auto tenantId = utility::string_t(U("my-tenant-123"));
+GetSearchUsersOptions opts;
+opts.query = utility::string_t(U("john.doe@example.com"));
+opts.page = boost::optional<int>(1);
+opts.pageSize = boost::optional<int>(20);
 
----
+api->getSearchUsers(tenantId, opts)
+    .then([](std::shared_ptr<ModerationUserSearchResponse> resp) {
+        for (const auto& user : resp->users) {
+            std::wcout << user.id << L" - " << user.email << std::endl;
+        }
+    });
+[inline-code-end]

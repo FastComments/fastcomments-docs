@@ -1,6 +1,6 @@
 ## Parametre
 
-| Name | Type | Påkrævet | Beskrivelse |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | id | string | Ja |  |
@@ -13,17 +13,23 @@ Returnerer: [`UpdateSubscriptionAPIResponse`](https://github.com/FastComments/fa
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'updateSubscription-eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateSubscription Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f3b2c';
-const subscriptionId: string = 'sub_7641a2b3';
+const tenantId: string = "tenant_12345";
+const subscriptionId: string = "sub_98765";
+
 const updateData: UpdateAPIUserSubscriptionData = {
-  status: 'active',
-  planId: 'pro_annual',
-  autoRenew: true,
-  renewalDate: '2026-04-15T00:00:00Z',
-  metadata: { upgradedBy: 'billing-team' }
+  planId: "premium_plan",
+  status: "active",
+  renewalDate: "2024-12-31",
 };
-const userId: string = 'user_215';
-const result: UpdateSubscriptionAPIResponse = await updateSubscription(tenantId, subscriptionId, updateData, userId);
+
+const userId: string = "user_abcde";
+
+const response: UpdateSubscriptionAPIResponse = await updateSubscription(
+  tenantId,
+  subscriptionId,
+  updateData,
+  userId
+);
 [inline-code-end]

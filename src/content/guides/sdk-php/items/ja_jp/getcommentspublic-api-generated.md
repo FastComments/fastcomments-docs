@@ -6,36 +6,36 @@ urlId
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | はい |  |
-| urlId | string | query | はい |  |
-| page | integer | query | いいえ |  |
-| direction | string | query | いいえ |  |
-| sso | string | query | いいえ |  |
-| skip | integer | query | いいえ |  |
-| skipChildren | integer | query | いいえ |  |
-| limit | integer | query | いいえ |  |
-| limitChildren | integer | query | いいえ |  |
-| countChildren | boolean | query | いいえ |  |
-| fetchPageForCommentId | string | query | いいえ |  |
-| includeConfig | boolean | query | いいえ |  |
-| countAll | boolean | query | いいえ |  |
-| includei10n | boolean | query | いいえ |  |
-| locale | string | query | いいえ |  |
-| modules | string | query | いいえ |  |
-| isCrawler | boolean | query | いいえ |  |
-| includeNotificationCount | boolean | query | いいえ |  |
-| asTree | boolean | query | いいえ |  |
-| maxTreeDepth | integer | query | いいえ |  |
-| useFullTranslationIds | boolean | query | いいえ |  |
-| parentId | string | query | いいえ |  |
-| searchText | string | query | いいえ |  |
-| hashTags | array | query | いいえ |  |
-| userId | string | query | いいえ |  |
-| customConfigStr | string | query | いいえ |  |
-| afterCommentId | string | query | いいえ |  |
-| beforeCommentId | string | query | いいえ |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| page | integer | query | No |  |
+| direction | string | query | No |  |
+| sso | string | query | No |  |
+| skip | integer | query | No |  |
+| skipChildren | integer | query | No |  |
+| limit | integer | query | No |  |
+| limitChildren | integer | query | No |  |
+| countChildren | boolean | query | No |  |
+| fetchPageForCommentId | string | query | No |  |
+| includeConfig | boolean | query | No |  |
+| countAll | boolean | query | No |  |
+| includei10n | boolean | query | No |  |
+| locale | string | query | No |  |
+| modules | string | query | No |  |
+| isCrawler | boolean | query | No |  |
+| includeNotificationCount | boolean | query | No |  |
+| asTree | boolean | query | No |  |
+| maxTreeDepth | integer | query | No |  |
+| useFullTranslationIds | boolean | query | No |  |
+| parentId | string | query | No |  |
+| searchText | string | query | No |  |
+| hashTags | array | query | No |  |
+| userId | string | query | No |  |
+| customConfigStr | string | query | No |  |
+| afterCommentId | string | query | No |  |
+| beforeCommentId | string | query | No |  |
 
-## レスポンス
+## 応答
 
 戻り値: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCommentsResponseWithPresencePublicComment.php)
 
@@ -49,41 +49,45 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // カスタムの HTTP クライアントを使用する場合は、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
-    // これはオプションです。デフォルトでは `GuzzleHttp\Client` が使用されます。
+    // カスタム HTTP クライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
+    // これはオプションで、デフォルトでは `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $url_id = 'url_id_example'; // string
-$page = 56; // int
-$direction = new \FastComments\Client\Model\\FastComments\Client\Model\SortDirections(); // \FastComments\Client\Model\SortDirections
-$sso = 'sso_example'; // string
-$skip = 56; // int
-$skip_children = 56; // int
-$limit = 56; // int
-$limit_children = 56; // int
-$count_children = True; // bool
-$fetch_page_for_comment_id = 'fetch_page_for_comment_id_example'; // string
-$include_config = True; // bool
-$count_all = True; // bool
-$includei10n = True; // bool
-$locale = 'locale_example'; // string
-$modules = 'modules_example'; // string
-$is_crawler = True; // bool
-$include_notification_count = True; // bool
-$as_tree = True; // bool
-$max_tree_depth = 56; // int
-$use_full_translation_ids = True; // bool
-$parent_id = 'parent_id_example'; // string
-$search_text = 'search_text_example'; // string
-$hash_tags = array('hash_tags_example'); // string[]
-$user_id = 'user_id_example'; // string
-$custom_config_str = 'custom_config_str_example'; // string
-$after_comment_id = 'after_comment_id_example'; // string
-$before_comment_id = 'before_comment_id_example'; // string
+$options = [
+    'page' => 56, // 整数
+    'direction' => new \FastComments\Client\Model\\FastComments\Client\Model\SortDirections(), // \FastComments\Client\Model\SortDirections
+    'sso' => 'sso_example', // 文字列
+    'skip' => 56, // 整数
+    'skip_children' => 56, // 整数
+    'limit' => 56, // 整数
+    'limit_children' => 56, // 整数
+    'count_children' => True, // ブール
+    'fetch_page_for_comment_id' => 'fetch_page_for_comment_id_example', // 文字列
+    'include_config' => True, // ブール
+    'count_all' => True, // ブール
+    'includei10n' => True, // ブール
+    'locale' => 'locale_example', // 文字列
+    'modules' => 'modules_example', // 文字列
+    'is_crawler' => True, // ブール
+    'include_notification_count' => True, // ブール
+    'as_tree' => True, // ブール
+    'max_tree_depth' => 56, // 整数
+    'use_full_translation_ids' => True, // ブール
+    'parent_id' => 'parent_id_example', // 文字列
+    'search_text' => 'search_text_example', // 文字列
+    'hash_tags' => array('hash_tags_example'), // string[]
+    'user_id' => 'user_id_example', // 文字列
+    'custom_config_str' => 'custom_config_str_example', // 文字列
+    'after_comment_id' => 'after_comment_id_example', // 文字列
+    'before_comment_id' => 'before_comment_id_example', // 文字列
+];
+
 
 try {
-    $result = $apiInstance->getCommentsPublic($tenant_id, $url_id, $page, $direction, $sso, $skip, $skip_children, $limit, $limit_children, $count_children, $fetch_page_for_comment_id, $include_config, $count_all, $includei10n, $locale, $modules, $is_crawler, $include_notification_count, $as_tree, $max_tree_depth, $use_full_translation_ids, $parent_id, $search_text, $hash_tags, $user_id, $custom_config_str, $after_comment_id, $before_comment_id);
+    $result = $apiInstance->getCommentsPublic($tenant_id, $url_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getCommentsPublic: ', $e->getMessage(), PHP_EOL;

@@ -1,8 +1,8 @@
----
 ## Parametri
 
-| Name | Tip | Lokacija | Obavezno | Opis |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Da |  |
 | text-search | string | query | Ne |  |
 | byIPFromComment | string | query | Ne |  |
 | filters | string | query | Ne |  |
@@ -19,11 +19,12 @@ Vraća: [`ModerationExportResponse`](https://github.com/FastComments/fastcomment
 [inline-code-attrs-start title = 'post_api_export Primjer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import PostApiExportOptions
 from client.models.moderation_export_response import ModerationExportResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Podešavanje hosta je opciono i podrazumijevano je https://fastcomments.com
+# Definisanje hosta je opcionalno i podrazumijeva https://fastcomments.com
 # Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -34,19 +35,18 @@ configuration = client.Configuration(
 with client.ApiClient(configuration) as api_client:
     # Kreirajte instancu API klase
     api_instance = client.ModerationApi(api_client)
-    text_search = 'text_search_example' # str | (opciono)
-    by_ip_from_comment = 'by_ip_from_comment_example' # str | (opciono)
-    filters = 'filters_example' # str | (opciono)
-    search_filters = 'search_filters_example' # str | (opciono)
-    sorts = 'sorts_example' # str | (opciono)
-    sso = 'sso_example' # str | (opciono)
+    tenant_id = 'tenant_id_example' # str | 
+    text_search = 'text_search_example' # str |  (opcionalno)
+    by_ip_from_comment = 'by_ip_from_comment_example' # str |  (opcionalno)
+    filters = 'filters_example' # str |  (opcionalno)
+    search_filters = 'search_filters_example' # str |  (opcionalno)
+    sorts = 'sorts_example' # str |  (opcionalno)
+    sso = 'sso_example' # str |  (opcionalno)
 
     try:
-        api_response = api_instance.post_api_export(text_search=text_search, by_ip_from_comment=by_ip_from_comment, filters=filters, search_filters=search_filters, sorts=sorts, sso=sso)
-        print("The response of ModerationApi->post_api_export:\n")
+        api_response = api_instance.post_api_export(tenant_id, PostApiExportOptions(text_search=text_search, by_ip_from_comment=by_ip_from_comment, filters=filters, search_filters=search_filters, sorts=sorts, sso=sso))
+        print("Odgovor ModerationApi->post_api_export:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ModerationApi->post_api_export: %s\n" % e)
+        print("Izuzetak prilikom poziva ModerationApi->post_api_export: %s\n" % e)
 [inline-code-end]
-
----

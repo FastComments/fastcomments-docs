@@ -1,10 +1,9 @@
----
 ## פרמטרים
 
 | שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| id | string | לא |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
 
 ## תגובה
 
@@ -12,14 +11,10 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getUserBadgeProgressById'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה getUserBadgeProgressById'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUserBadgeProgressById(tenantId = "my-tenant-123", id = "")
-if response.isSome:
-  let badgeProgress = response.get()
+let (badgeProgressOpt, httpResp) = client.getUserBadgeProgressById(tenantId = "my-tenant-123", id = "badge-456")
+if badgeProgressOpt.isSome:
+  let badgeProgress = badgeProgressOpt.get()
   echo badgeProgress
-else:
-  echo "No badge progress found"
 [inline-code-end]
-
----

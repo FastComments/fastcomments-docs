@@ -1,16 +1,14 @@
-Sayfadaki ve şu anda çevrimiçi olmayan geçmiş yorumcular. displayName'e göre sıralanır.
-Use this after exhausting /users/online to render a "Üyeler" section.
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName}
-index from afterName forward via $gt, no $skip cost.
+Sayfada daha önce yorum yapmış ancak şu anda çevrim içi olmayan yorumcular. displayName'e göre sıralanır.  
+Bu, /users/online endpoint'i tüketildikten sonra bir "Üyeler" bölümü oluşturmak için kullanılır.  
+commenterName üzerinde imleç sayfalama: sunucu, {tenantId, urlId, commenterName} kısmı üzerinden afterName'den itibaren $gt ile ileri yürür, $skip maliyeti yok.
 
 ## Parametreler
 
-| Name | Type | Required | Description |
+| Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | urlId | string | Evet |  |
-| afterName | string | Hayır |  |
-| afterUserId | string | Hayır |  |
+| options | const GetOfflineUsersOptions& | Evet |  |
 
 ## Yanıt
 
@@ -20,14 +18,19 @@ Döndürür: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'getOfflineUsers Örneği'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-auto tenantId = utility::string_t(U("my-tenant-123"));
-auto urlId = utility::string_t(U("article-456"));
-boost::optional<utility::string_t> afterName = boost::optional<utility::string_t>(U("jane.doe@example.com"));
-boost::optional<utility::string_t> afterUserId = boost::optional<utility::string_t>(U("user-789"));
-api->getOfflineUsers(tenantId, urlId, afterName, afterUserId).then([](std::shared_ptr<PageUsersOfflineResponse> resp){
-    auto result = resp ? resp : std::make_shared<PageUsersOfflineResponse>();
-    (void)result;
-});
+utility::string_t tenantId = U("my-tenant-123");
+utility::string_t urlId = U("page-456");
+GetOfflineUsersOptions options;
+options.limit = boost::optional<int>(50);
+options.includeDetails = boost::optional<bool>(true);
+
+api->getOfflineUsers(tenantId, urlId, options)
+    .then([](pplx::task<std::shared_ptr<PageUsersOfflineResponse>> t) {
+        try {
+            auto response = t.get();
+        } catch (const std::exception&) {
+        }
+    });
 [inline-code-end]
 
 ---

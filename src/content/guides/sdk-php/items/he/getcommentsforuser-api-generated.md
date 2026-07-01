@@ -12,11 +12,11 @@
 
 ## תגובה
 
-מחזיר: [`GetCommentsForUserResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCommentsForUserResponse.php)
+Returns: [`GetCommentsForUserResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCommentsForUserResponse.php)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'getCommentsForUser דוגמה'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getCommentsForUser'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -24,24 +24,26 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // אם ברצונך להשתמש בלקוח HTTP מותאם אישית, העבר את הלקוח שלך שמממש את `GuzzleHttp\ClientInterface`.
+    // אם ברצונך להשתמש ב‑client HTTP מותאם, העבר את ה‑client שלך שמממש `GuzzleHttp\ClientInterface`.
     // זה אופציונלי, `GuzzleHttp\Client` ישמש כברירת מחדל.
     new GuzzleHttp\Client()
 );
-$user_id = 'user_id_example'; // string
-$direction = new \FastComments\Client\Model\\FastComments\Client\Model\SortDirections(); // \FastComments\Client\Model\SortDirections
-$replies_to_user_id = 'replies_to_user_id_example'; // string
-$page = 3.4; // float
-$includei10n = True; // bool
-$locale = 'locale_example'; // string
-$is_crawler = True; // bool
+
+$options = [
+    'user_id' => 'user_id_example', // string
+    'direction' => new \FastComments\Client\Model\\FastComments\Client\Model\SortDirections(), // \FastComments\Client\Model\SortDirections
+    'replies_to_user_id' => 'replies_to_user_id_example', // string
+    'page' => 3.4, // float
+    'includei10n' => True, // bool
+    'locale' => 'locale_example', // string
+    'is_crawler' => True, // bool
+];
+
 
 try {
-    $result = $apiInstance->getCommentsForUser($user_id, $direction, $replies_to_user_id, $page, $includei10n, $locale, $is_crawler);
+    $result = $apiInstance->getCommentsForUser($options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getCommentsForUser: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

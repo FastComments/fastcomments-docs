@@ -1,10 +1,11 @@
 ## Parametre
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| userId | string | query | Nej |  |
-| trustFactor | string | query | Nej |  |
-| sso | string | query | Nej |  |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
+|------|------|-----------|----------|-------------|
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| trustFactor | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Svar
 
@@ -14,14 +15,15 @@ Returnerer: [`SetUserTrustFactorResponse`](https://github.com/FastComments/fastc
 
 [inline-code-attrs-start title = 'setTrustFactor Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Følgende kodeeksempler er stadig i beta. Ved problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De følgende kodeeksempler er stadig beta. For eventuelle problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let userId = "userId_example" // String |  (valgfri)
-let trustFactor = "trustFactor_example" // String |  (valgfri)
-let sso = "sso_example" // String |  (valgfri)
+let tenantId = "tenantId_example" // String | 
+let userId = "userId_example" // String |  (optional)
+let trustFactor = "trustFactor_example" // String |  (optional)
+let sso = "sso_example" // String |  (optional)
 
-ModerationAPI.setTrustFactor(userId: userId, trustFactor: trustFactor, sso: sso) { (response, error) in
+ModerationAPI.setTrustFactor(tenantId: tenantId, options: ModerationAPI.SetTrustFactorOptions(userId: userId, trustFactor: trustFactor, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -32,3 +34,5 @@ ModerationAPI.setTrustFactor(userId: userId, trustFactor: trustFactor, sso: sso)
     }
 }
 [inline-code-end]
+
+---

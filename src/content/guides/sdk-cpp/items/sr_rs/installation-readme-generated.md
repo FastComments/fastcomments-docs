@@ -1,10 +1,10 @@
-### Инсталирање зависности
+### Instalirajte zavisnosti
 
 ```bash
 sudo apt install libcpprest-dev libboost-all-dev
 ```
 
-### Изградња из извора
+### Izgradnja iz izvornog koda
 
 ```bash
 mkdir build
@@ -13,22 +13,19 @@ cmake ..
 make
 ```
 
-### Инсталација
+### Instaliranje
 
 ```bash
 sudo make install
 ```
 
-### Садржај библиотеке
+### Sadržaj biblioteke
 
-Ова библиотека садржи генерисани API клијент и SSO алате који олакшавају рад са API-јем.
+Ova biblioteka sadrži generisani API klijent i SSO alate koji olakšavaju rad sa API-jem.
 
-- [Документација библиотеке API клијента](https://github.com/FastComments/fastcomments-cpp/blob/master/client/README.md)
+- [Dokumentacija API klijentske biblioteke](https://github.com/FastComments/fastcomments-cpp/blob/master/client/README.md)
 
-### Јавни и заштићени API-ји
+### Javni vs zaštićeni API-ji
 
-За API клијента постоје три класе, `DefaultApi`, `PublicApi`, и `ModerationApi`. The `DefaultApi` садржи методе које захтевају ваш API кључ, а `PublicApi` садржи
-методе које се могу позивати директно из прегледача/мобилног уређаја/итд. без аутентификације. The `ModerationApi` садржи методе које покрећу контролну таблу модератора - listing,
-counting, searching, exporting and pulling logs for comments, акције модерирања (remove/restore, flag, set review/spam/approval status, adjust votes, reopen/close threads),
-забране (ban from a comment, undo bans, pre-ban summaries, ban status and preferences, banned-user counts), and badges & trust (award/remove badges, manual badges, get/set trust
-factor, user internal profile). Every `ModerationApi` method accepts an `sso` parameter so the call is performed on behalf of an SSO-authenticated moderator.
+Za API klijent postoje tri klase, `DefaultApi`, `PublicApi` i `ModerationApi`. `DefaultApi` sadrži metode koje zahtevaju vaš API ključ, a `PublicApi` sadrži
+metode koje se mogu pozvati direktno iz pregledača/mobilnog uređaja/i sl. bez autentifikacije. `ModerationApi` pruža opsežan skup API-ja za moderaciju u realnom vremenu i brzu moderaciju. Svaka metoda `ModerationApi` prihvata `sso` parametar i može se autentifikovati putem SSO ili sesijskog kolačića sa FastComments.com.

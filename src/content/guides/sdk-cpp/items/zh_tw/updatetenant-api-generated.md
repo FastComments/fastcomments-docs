@@ -1,32 +1,28 @@
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 類型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| id | string | 是 |  |
-| updateTenantBody | UpdateTenantBody | 是 |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updateTenantBody | UpdateTenantBody | Yes |  |
 
 ## 回應
 
-回傳: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
+返回: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
 ## 範例
 
 [inline-code-attrs-start title = 'updateTenant 範例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t id = U("admin-user-456");
-auto updateTenantBody = std::make_shared<UpdateTenantBody>();
-updateTenantBody->name = U("Acme Corporation");
-updateTenantBody->ownerEmail = boost::optional<utility::string_t>(U("owner@acme.com"));
-updateTenantBody->isActive = boost::optional<bool>(true);
-api->updateTenant(tenantId, id, updateTenantBody)
-.then([](pplx::task<std::shared_ptr<APIEmptyResponse>> t) {
-    try {
-        auto resp = t.get();
-        (void)resp;
-    } catch (const std::exception&) {
-    }
+auto tenantId = utility::string_t(U("my-tenant-123"));
+auto recordId = utility::string_t(U("tenant-456"));
+UpdateTenantBody body;
+body.name = boost::optional<utility::string_t>(U("Acme Corp"));
+body.contactEmail = boost::optional<utility::string_t>(U("admin@acme.com"));
+api->updateTenant(tenantId, recordId, body).then([](std::shared_ptr<APIEmptyResponse> resp) {
+    auto log = std::make_shared<utility::string_t>(U("Tenant update succeeded"));
+    (void)resp;
+    (void)log;
 });
 [inline-code-end]
 

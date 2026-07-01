@@ -1,29 +1,42 @@
 ## Параметри
 
-| Назва | Тип | Обов'язковий | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Так |  |
-| afterId | string | Ні |  |
-| afterCreatedAt | number | Ні |  |
-| unreadOnly | boolean | Ні |  |
-| dmOnly | boolean | Ні |  |
-| noDm | boolean | Ні |  |
-| sso | string | Ні |  |
+| Назва | Тип | Обов'язково | Опис |
+|------|------|-------------|------|
+| tenantId | string | Yes |  |
+| afterId | string | No |  |
+| afterCreatedAt | number | No |  |
+| unreadOnly | boolean | No |  |
+| dmOnly | boolean | No |  |
+| noDm | boolean | No |  |
+| sso | string | No |  |
 
 ## Відповідь
 
-Повертає: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ResetUserNotificationsResponse.ts)
+Повертає: [`ResetUserNotificationsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ResetUserNotificationsResponse1.ts)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад resetUserNotifications'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'resetUserNotifications Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-9f2b';
-const afterId: string = 'notif_7c1a2b3';
-const afterCreatedAt: number = Date.now() - 3 * 24 * 60 * 60 * 1000;
-const unreadOnly: boolean = true;
-const sso: string = 'sso:microsoft:84012';
-const response: ResetUserNotificationsResponse = await resetUserNotifications(tenantId, afterId, afterCreatedAt, unreadOnly, undefined, undefined, sso);
-[inline-code-end]
+(async () => {
+  const tenantId: string = "tenant-001";
+  const afterId: string = "notif-123";
+  const afterCreatedAt: number = 1697049600; // приклад UNIX timestamp
+  const unreadOnly: boolean = true;
+  const dmOnly: boolean = false;
+  const noDm: boolean = false;
+  const sso: string = "sso-token-xyz";
 
----
+  const result: ResetUserNotificationsResponse1 = await resetUserNotifications(
+    tenantId,
+    afterId,
+    afterCreatedAt,
+    unreadOnly,
+    dmOnly,
+    noDm,
+    sso
+  );
+
+  console.log(result);
+})();
+[inline-code-end]

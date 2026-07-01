@@ -2,10 +2,10 @@
 
 | Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| id | string | path | Да |  |
-| userId | string | query | Нет |  |
-| anonUserId | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
 
 ## Ответ
 
@@ -13,15 +13,16 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример block_user_from_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'block_user_from_comment Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import BlockUserFromCommentOptions
 from client.models.block_from_comment_params import BlockFromCommentParams
 from client.models.block_success import BlockSuccess
 from client.rest import ApiException
 from pprint import pprint
 
-# Определение хоста необязательно и по умолчанию равно https://fastcomments.com
+# Определение хоста необязательно и по умолчанию https://fastcomments.com
 # См. configuration.py для списка всех поддерживаемых параметров конфигурации.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -29,27 +30,27 @@ configuration = client.Configuration(
 
 # Клиент должен настроить параметры аутентификации и авторизации
 # в соответствии с политикой безопасности сервера API.
-# Ниже приведены примеры для каждого метода аутентификации, используйте пример, который
-# соответствует вашему сценарию использования аутентификации.
+# Примеры для каждого метода аутентификации приведены ниже, используйте пример, который
+# соответствует вашему случаю использования аутентификации.
 
-# Настройте авторизацию по API-ключу: api_key
+# Настройте авторизацию ключом API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Раскомментируйте ниже, чтобы задать префикс (e.g. Bearer) для API-ключа, если требуется
+# Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для ключа API, если необходимо
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Войдите в контекст с экземпляром API-клиента
+# Войдите в контекст с экземпляром клиента API
 with client.ApiClient(configuration) as api_client:
-    # Создайте экземпляр класса API
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
     block_from_comment_params = client.BlockFromCommentParams() # BlockFromCommentParams | 
-    user_id = 'user_id_example' # str |  (необязательно)
-    anon_user_id = 'anon_user_id_example' # str |  (необязательно)
+    user_id = 'user_id_example' # str |  (optional)
+    anon_user_id = 'anon_user_id_example' # str |  (optional)
 
     try:
-        api_response = api_instance.block_user_from_comment(tenant_id, id, block_from_comment_params, user_id=user_id, anon_user_id=anon_user_id)
+        api_response = api_instance.block_user_from_comment(tenant_id, id, block_from_comment_params, BlockUserFromCommentOptions(user_id=user_id, anon_user_id=anon_user_id))
         print("The response of DefaultApi->block_user_from_comment:\n")
         pprint(api_response)
     except Exception as e:

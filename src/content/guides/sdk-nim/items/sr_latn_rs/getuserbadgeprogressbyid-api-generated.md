@@ -1,9 +1,9 @@
 ## Parametri
 
-| Ime | Tip | Obavezno | Opis |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| id | string | Ne |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
 
 ## Odgovor
 
@@ -13,12 +13,8 @@ Vraća: [`Option[APIGetUserBadgeProgressResponse]`](https://github.com/FastComme
 
 [inline-code-attrs-start title = 'getUserBadgeProgressById Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUserBadgeProgressById(tenantId = "my-tenant-123", id = "")
-if response.isSome:
-  let badgeProgress = response.get()
+let (badgeProgressOpt, httpResp) = client.getUserBadgeProgressById(tenantId = "my-tenant-123", id = "badge-456")
+if badgeProgressOpt.isSome:
+  let badgeProgress = badgeProgressOpt.get()
   echo badgeProgress
-else:
-  echo "No badge progress found"
 [inline-code-end]
-
----

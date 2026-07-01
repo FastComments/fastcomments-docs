@@ -1,8 +1,10 @@
 ## Параметри
 
-| Име | Тип | Location | Обавезно | Опис |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
 | commentId | string | path | Да |  |
+| broadcastId | string | query | Не |  |
 | sso | string | query | Не |  |
 
 ## Одговор
@@ -11,29 +13,32 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'post_un_flag_comment Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_un_flag_comment Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import PostUnFlagCommentOptions
 from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Подешавање host-а је опционо и подразумева се https://fastcomments.com
-# Погледајте configuration.py за листу свих подржаних конфигурационих параметара.
+# Definisanje hosta je opciono i podrazumevano je https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Уђите у контекст са инстанцом API клијента
+# Ući u kontekst sa instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Креирајте инстанцу API класе
+    # Kreiranje instance API klase
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
-    sso = 'sso_example' # str |  (optional)
+    broadcast_id = 'broadcast_id_example' # str |  (opciono)
+    sso = 'sso_example' # str |  (opciono)
 
     try:
-        api_response = api_instance.post_un_flag_comment(comment_id, sso=sso)
+        api_response = api_instance.post_un_flag_comment(tenant_id, comment_id, PostUnFlagCommentOptions(broadcast_id=broadcast_id, sso=sso))
         print("The response of ModerationApi->post_un_flag_comment:\n")
         pprint(api_response)
     except Exception as e:

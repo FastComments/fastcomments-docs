@@ -2,32 +2,32 @@ req
 tenantId
 afterId
 
-## Параметри
+## Parameters
 
-| Назва | Тип | Розташування | Обов'язкове | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Так |  |
-| afterId | string | query | Ні |  |
-| limit | integer | query | Ні |  |
-| tags | array | query | Ні |  |
+| tenantId | string | query | Yes |  |
+| afterId | string | query | No |  |
+| limit | integer | query | No |  |
+| tags | array | query | No |  |
 
-## Відповідь
+## Response
 
-Повертає: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetFeedPostsResponse.swift)
+Returns: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetFeedPostsResponse.swift)
 
-## Приклад
+## Example
 
 [inline-code-attrs-start title = 'Приклад getFeedPosts'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Наведені приклади коду все ще перебувають у бета-версії. Якщо виникне проблема, будь ласка, повідомте про неї через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наступні приклади коду все ще є бета‑версією. У разі будь‑якої проблеми, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let afterId = "afterId_example" // String |  (необов'язково)
-let limit = 987 // Int |  (необов'язково)
-let tags = ["inner_example"] // [String] |  (необов'язково)
+let afterId = "afterId_example" // String |  (optional)
+let limit = 987 // Int |  (optional)
+let tags = ["inner_example"] // [String] |  (optional)
 
-DefaultAPI.getFeedPosts(tenantId: tenantId, afterId: afterId, limit: limit, tags: tags) { (response, error) in
+DefaultAPI.getFeedPosts(tenantId: tenantId, options: DefaultAPI.GetFeedPostsOptions(afterId: afterId, limit: limit, tags: tags)) { (response, error) in
     guard error == nil else {
         print(error)
         return

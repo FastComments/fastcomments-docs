@@ -1,7 +1,9 @@
+---
 ## Параметры
 
-| Имя | Тип | Обязательный | Описание |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
+| tenant_id | String | Да |  |
 | comment_id | String | Да |  |
 | include_by_user_id_and_email | bool | Нет |  |
 | include_by_ip | bool | Нет |  |
@@ -16,14 +18,18 @@
 
 [inline-code-attrs-start title = 'Пример get_pre_ban_summary'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: GetPreBanSummaryParams = GetPreBanSummaryParams {
-    comment_id: String::from("news/article-9876-comment-42"),
-    include_by_user_id_and_email: Some(true),
-    include_by_ip: Some(false),
-    include_by_email_domain: Some(true),
-    sso: Some(String::from("sso-acme-corp-2026")),
-};
-let pre_ban_summary: PreBanSummary = get_pre_ban_summary(configuration, params).await?;
+async fn example() -> Result<(), Error> {
+    let params = GetPreBanSummaryParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: "comment-12345".to_string(),
+        include_by_user_id_and_email: Some(true),
+        include_by_ip: Some(false),
+        include_by_email_domain: Some(true),
+        sso: Some("sso-token-abc".to_string()),
+    };
+    let _summary = get_pre_ban_summary(&configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]
 
 ---

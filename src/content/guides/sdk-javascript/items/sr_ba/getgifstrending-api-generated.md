@@ -1,11 +1,11 @@
-## Parametri
+## Parameters
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| locale | string | Ne |  |
-| rating | string | Ne |  |
-| page | number | Ne |  |
+| tenantId | string | Yes |  |
+| locale | string | No |  |
+| rating | string | No |  |
+| page | number | No |  |
 
 ## Odgovor
 
@@ -15,11 +15,19 @@ Vraća: [`GetGifsTrendingResponse`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'Primjer getGifsTrending'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-media';
-const locale: string = 'en-US';
-const rating: string = 'pg-13';
-const page: number = 2;
-const trending: GetGifsTrendingResponse = await getGifsTrending(tenantId, locale, rating, page);
-[inline-code-end]
+async function runExample(): Promise<void> {
+  const tenantId: string = "tenant_9f8b7c6d";
+  const locale: string = "en-US";
+  const rating: string = "PG-13";
+  const page: number = 1;
 
----
+  const trendingAll: GetGifsTrendingResponse = await getGifsTrending(tenantId, locale, rating, page);
+  console.log(trendingAll);
+
+  // Korišćenje samo neophodnog parametra
+  const trendingMinimal: GetGifsTrendingResponse = await getGifsTrending(tenantId);
+  console.log(trendingMinimal);
+}
+
+runExample();
+[inline-code-end]

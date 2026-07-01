@@ -1,7 +1,7 @@
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
+|------|------|----------|----------|------|
 | tenantId | string | query | Da |  |
 | page | integer | query | Ne |  |
 | limit | integer | query | Ne |  |
@@ -28,28 +28,28 @@ Vraća: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-
 
 [inline-code-attrs-start title = 'Primer getComments'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sledeći primeri koda su još u beta fazi. Za bilo koji problem, prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledeći primeri koda su još u beta fazi. Za sve probleme, molimo prijavite putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let page = 987 // Int |  (neobavezno)
-let limit = 987 // Int |  (neobavezno)
-let skip = 987 // Int |  (neobavezno)
-let asTree = true // Bool |  (neobavezno)
-let skipChildren = 987 // Int |  (neobavezno)
-let limitChildren = 987 // Int |  (neobavezno)
-let maxTreeDepth = 987 // Int |  (neobavezno)
-let urlId = "urlId_example" // String |  (neobavezno)
-let userId = "userId_example" // String |  (neobavezno)
-let anonUserId = "anonUserId_example" // String |  (neobavezno)
-let contextUserId = "contextUserId_example" // String |  (neobavezno)
-let hashTag = "hashTag_example" // String |  (neobavezno)
-let parentId = "parentId_example" // String |  (neobavezno)
-let direction = SortDirections() // SortDirections |  (neobavezno)
-let fromDate = 987 // Int64 |  (neobavezno)
-let toDate = 987 // Int64 |  (neobavezno)
+let page = 987 // Int |  (opciono)
+let limit = 987 // Int |  (opciono)
+let skip = 987 // Int |  (opciono)
+let asTree = true // Bool |  (opciono)
+let skipChildren = 987 // Int |  (opciono)
+let limitChildren = 987 // Int |  (opciono)
+let maxTreeDepth = 987 // Int |  (opciono)
+let urlId = "urlId_example" // String |  (opciono)
+let userId = "userId_example" // String |  (opciono)
+let anonUserId = "anonUserId_example" // String |  (opciono)
+let contextUserId = "contextUserId_example" // String |  (opciono)
+let hashTag = "hashTag_example" // String |  (opciono)
+let parentId = "parentId_example" // String |  (opciono)
+let direction = SortDirections() // SortDirections |  (opciono)
+let fromDate = 987 // Int64 |  (opciono)
+let toDate = 987 // Int64 |  (opciono)
 
-DefaultAPI.getComments(tenantId: tenantId, page: page, limit: limit, skip: skip, asTree: asTree, skipChildren: skipChildren, limitChildren: limitChildren, maxTreeDepth: maxTreeDepth, urlId: urlId, userId: userId, anonUserId: anonUserId, contextUserId: contextUserId, hashTag: hashTag, parentId: parentId, direction: direction, fromDate: fromDate, toDate: toDate) { (response, error) in
+DefaultAPI.getComments(tenantId: tenantId, options: DefaultAPI.GetCommentsOptions(page: page, limit: limit, skip: skip, asTree: asTree, skipChildren: skipChildren, limitChildren: limitChildren, maxTreeDepth: maxTreeDepth, urlId: urlId, userId: userId, anonUserId: anonUserId, contextUserId: contextUserId, hashTag: hashTag, parentId: parentId, direction: direction, fromDate: fromDate, toDate: toDate)) { (response, error) in
     guard error == nil else {
         print(error)
         return

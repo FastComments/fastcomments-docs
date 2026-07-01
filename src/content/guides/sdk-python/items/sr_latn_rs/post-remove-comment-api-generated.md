@@ -1,21 +1,23 @@
----
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Ime | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
 | commentId | string | path | Da |  |
+| broadcastId | string | query | Ne |  |
 | sso | string | query | Ne |  |
 
-## Response
+## Odgovor
 
-Vraća: [`PostRemoveCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/post_remove_comment_response.py)
+Vraća: [`PostRemoveCommentApiResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/post_remove_comment_api_response.py)
 
 ## Primer
 
 [inline-code-attrs-start title = 'post_remove_comment Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.post_remove_comment_response import PostRemoveCommentResponse
+from client.api.moderation_api import PostRemoveCommentOptions
+from client.models.post_remove_comment_api_response import PostRemoveCommentApiResponse
 from client.rest import ApiException
 from pprint import pprint
 
@@ -30,15 +32,15 @@ configuration = client.Configuration(
 with client.ApiClient(configuration) as api_client:
     # Kreirajte instancu API klase
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
-    sso = 'sso_example' # str |  (neobavezno)
+    broadcast_id = 'broadcast_id_example' # str |  (opciono)
+    sso = 'sso_example' # str |  (opciono)
 
     try:
-        api_response = api_instance.post_remove_comment(comment_id, sso=sso)
+        api_response = api_instance.post_remove_comment(tenant_id, comment_id, PostRemoveCommentOptions(broadcast_id=broadcast_id, sso=sso))
         print("The response of ModerationApi->post_remove_comment:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling ModerationApi->post_remove_comment: %s\n" % e)
 [inline-code-end]
-
----

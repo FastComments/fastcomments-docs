@@ -1,7 +1,7 @@
 ## Параметры
 
-| Имя | Тип | Location | Обязательный | Описание |
-|------|------|----------|----------|-------------|
+| Имя | Тип | Расположение | Обязательно | Описание |
+|------|------|--------------|-------------|----------|
 | tenantId | string | query | Да |  |
 | id | string | path | Да |  |
 
@@ -11,26 +11,27 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример использования deleteNotificationCount'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример deleteNotificationCount'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Настроить авторизацию по ключу API: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для ключа API, если нужно
+// Настройте авторизацию ключа API: api_key
+// Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для ключа API, если это необходимо
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Если вы хотите использовать пользовательский HTTP-клиент, передайте клиент, реализующий `GuzzleHttp\ClientInterface`.
-    // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
+    // Если вы хотите использовать пользовательский HTTP‑клиент, передайте ваш клиент, реализующий `GuzzleHttp\ClientInterface`.
+    // Это опционально, будет использован `GuzzleHttp\Client` по умолчанию.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$id = 'id_example'; // string
+
+$tenant_id = 'tenant_id_example'; // строка
+$id = 'id_example'; // строка
+
 
 try {
     $result = $apiInstance->deleteNotificationCount($tenant_id, $id);

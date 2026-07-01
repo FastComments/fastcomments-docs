@@ -1,7 +1,7 @@
 ## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
-|------|------|----------|----------|-------------|
+|------|------|-----------|--------------|-------------|
 | tenantId | string | query | Sì |  |
 | sso | string | query | No |  |
 
@@ -11,7 +11,7 @@ Restituisce: [`GetUserNotificationCountResponse`](https://github.com/FastComment
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di getUserNotificationCount'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio getUserNotificationCount'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -23,8 +23,10 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     // Questo è opzionale, `GuzzleHttp\Client` verrà usato come predefinito.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // stringa
 $sso = 'sso_example'; // stringa
+
 
 try {
     $result = $apiInstance->getUserNotificationCount($tenant_id, $sso);
@@ -33,5 +35,3 @@ try {
     echo 'Exception when calling PublicApi->getUserNotificationCount: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

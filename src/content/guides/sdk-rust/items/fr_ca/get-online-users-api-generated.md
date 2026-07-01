@@ -1,11 +1,10 @@
----
-Actuellement en ligne sur une page : personnes dont la session websocket est abonnée à la page en ce moment.
-Renvoie anonCount + totalCount (abonnés de la salle, y compris les spectateurs anonymes que nous n'énumérons pas).
+Visionneurs actuellement en ligne d’une page : les personnes dont la session websocket est abonnée à la page en ce moment.  
+Renvoie anonCount + totalCount (abonnés à toute la salle, y compris les visionneurs anonymes que nous n’énumérons pas).
 
 ## Paramètres
 
 | Nom | Type | Obligatoire | Description |
-|------|------|----------|-------------|
+|------|------|-------------|-------------|
 | tenant_id | String | Oui |  |
 | url_id | String | Oui |  |
 | after_name | String | Non |  |
@@ -13,22 +12,20 @@ Renvoie anonCount + totalCount (abonnés de la salle, y compris les spectateurs 
 
 ## Réponse
 
-Renvoie : [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_online_response.rs)
+Renvoie : [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_online_response.rs)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de get_online_users'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple get_online_users'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_online_users() -> Result<PageUsersOnlineResponse, Error> {
-    let params: GetOnlineUsersParams = GetOnlineUsersParams {
+async fn example() -> Result<(), Error> {
+    let params = GetOnlineUsersParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        url_id: "news/world/article-2026".to_string(),
-        after_name: Some("jane.doe".to_string()),
-        after_user_id: Some("user_98765".to_string()),
+        url_id: "news/article".to_string(),
+        after_name: Some("john_doe".to_string()),
+        after_user_id: Some("user-123".to_string()),
     };
-    let response: PageUsersOnlineResponse = get_online_users(&configuration, params).await?;
-    Ok(response)
+    let _response: PageUsersOnlineResponse = get_online_users(&config, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

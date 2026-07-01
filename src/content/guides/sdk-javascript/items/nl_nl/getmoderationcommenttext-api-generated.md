@@ -1,22 +1,28 @@
 ## Parameters
 
-| Naam | Type | Verplicht | Beschrijving |
-|------|------|----------|-------------|
+| Naam | Type | Vereist | Beschrijving |
+|------|------|----------|--------------|
 | commentId | string | Ja |  |
+| tenantId | string | Nee |  |
 | sso | string | Nee |  |
 
 ## Response
 
-Retourneert: [`GetCommentTextResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentTextResponse.ts)
+Retourneert: [`GetModerationCommentTextResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModerationCommentTextResponse.ts)
 
-## Voorbeeld
+## Example
 
-[inline-code-attrs-start title = 'getModerationCommentText Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Voorbeeld van getModerationCommentText'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const commentId: string = "cmt_9f3a2b7d6e1c4a5b";
-const ssoToken: string | undefined = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NDMyMSJ9.DUMMY_SIGNATURE";
-const commentResponse: GetCommentTextResponse = await getModerationCommentText(commentId);
-const commentResponseWithSso: GetCommentTextResponse = await getModerationCommentText(commentId, ssoToken);
-[inline-code-end]
+async function exampleUsage(): Promise<void> {
+  const commentId: string = "cmt_9f8e7d6c5b4a3b2c1d0e";
+  const tenantId: string = "tenant_67890";
+  const sso: string = "sso_token_abc123";
 
----
+  // Roep aan met alleen de verplichte parameter
+  const result1: GetModerationCommentTextResponse = await getModerationCommentText(commentId);
+
+  // Roep aan met optionele parameters
+  const result2: GetModerationCommentTextResponse = await getModerationCommentText(commentId, tenantId, sso);
+}
+[inline-code-end]

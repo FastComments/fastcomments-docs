@@ -1,6 +1,6 @@
 ## Parametreler
 
-| Ad | Tür | Gerekli | Açıklama |
+| İsim | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | id | string | Evet |  |
@@ -13,23 +13,23 @@ Döndürür: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-c
 
 [inline-code-attrs-start title = 'deleteQuestionResult Örneği'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-auto tenantId = utility::string_t(U("my-tenant-123"));
-auto questionId = utility::string_t(U("qst-456789"));
-boost::optional<utility::string_t> operatorNote = boost::optional<utility::string_t>(U("admin-request-001"));
+boost::optional<utility::string_t> optTenant = utility::conversions::to_string_t( "my-tenant-123" );
+utility::string_t questionId = utility::conversions::to_string_t( "question-456" );
 
-api->deleteQuestionResult(tenantId, questionId)
-    .then([operatorNote](pplx::task<std::shared_ptr<APIEmptyResponse>> t) {
-        try {
-            auto resp = t.get();
-            auto result = resp ? resp : std::make_shared<APIEmptyResponse>();
-            if (operatorNote) std::cout << "Deleted (note): " << utility::conversions::to_utf8string(*operatorNote) << std::endl;
-            else std::cout << "Deleted" << std::endl;
-            return result;
-        } catch (const std::exception& e) {
-            std::cerr << "Delete failed: " << e.what() << std::endl;
-            return std::shared_ptr<APIEmptyResponse>(nullptr);
-        }
-    });
+if ( optTenant )
+{
+    api->deleteQuestionResult( *optTenant, questionId )
+        .then( []( pplx::task<std::shared_ptr<APIEmptyResponse>> t )
+        {
+            try
+            {
+                auto resp = t.get();
+                // başarı işleme
+            }
+            catch ( const std::exception& e )
+            {
+                // hata işleme
+            }
+        } );
+}
 [inline-code-end]
-
----

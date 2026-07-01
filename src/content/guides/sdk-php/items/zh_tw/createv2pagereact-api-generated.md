@@ -1,15 +1,15 @@
 ## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | 是 |  |
-| urlId | string | query | 是 |  |
-| id | string | query | 是 |  |
-| title | string | query | 否 |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| id | string | query | Yes |  |
+| title | string | query | No |  |
 
 ## 回應
 
-回傳: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateV1PageReact.php)
+返回：[`CreateV1PageReact`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateV1PageReact.php)
 
 ## 範例
 
@@ -21,14 +21,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // 如果您想使用自訂的 HTTP 客戶端，請傳入實作了 `GuzzleHttp\ClientInterface` 的客戶端。
+    // 如果您想使用自訂的 http 客戶端，請傳入實作 `GuzzleHttp\ClientInterface` 的客戶端。
     // 這是可選的，預設會使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // 字串
-$url_id = 'url_id_example'; // 字串
-$id = 'id_example'; // 字串
-$title = 'title_example'; // 字串
+
+$tenant_id = 'tenant_id_example'; // string
+$url_id = 'url_id_example'; // string
+$id = 'id_example'; // string
+$title = 'title_example'; // string
+
 
 try {
     $result = $apiInstance->createV2PageReact($tenant_id, $url_id, $id, $title);
@@ -37,5 +39,3 @@ try {
     echo 'Exception when calling PublicApi->createV2PageReact: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

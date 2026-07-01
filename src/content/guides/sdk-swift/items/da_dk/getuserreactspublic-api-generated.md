@@ -2,11 +2,11 @@
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Ja |  |
-| postIds | array | query | Nej |  |
-| sso | string | query | Nej |  |
+| tenantId | string | path | Yes |  |
+| postIds | array | query | No |  |
+| sso | string | query | No |  |
 
-## Svar
+## Respons
 
 Returnerer: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/UserReactsResponse.swift)
 
@@ -14,14 +14,14 @@ Returnerer: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-
 
 [inline-code-attrs-start title = 'getUserReactsPublic Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Følgende kodeeksempler er stadig i beta. Hvis der er et problem, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De følgende kodeeksempler er stadig i beta. For eventuelle problemer, rapportér venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let postIds = ["inner_example"] // [String] |  (valgfri)
 let sso = "sso_example" // String |  (valgfri)
 
-PublicAPI.getUserReactsPublic(tenantId: tenantId, postIds: postIds, sso: sso) { (response, error) in
+PublicAPI.getUserReactsPublic(tenantId: tenantId, options: PublicAPI.GetUserReactsPublicOptions(postIds: postIds, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -32,5 +32,3 @@ PublicAPI.getUserReactsPublic(tenantId: tenantId, postIds: postIds, sso: sso) { 
     }
 }
 [inline-code-end]
-
----

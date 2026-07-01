@@ -1,9 +1,9 @@
 ## Paramètres
 
-| Name | Type | Required | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
-| tenant_id | String | Oui |  |
-| sso | String | Non |  |
+| tenant_id | String | Yes |  |
+| sso | String | No |  |
 
 ## Réponse
 
@@ -11,16 +11,14 @@ Renvoie : [`ResetUserNotificationsResponse`](https://github.com/FastComments/fas
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de reset_user_notification_count'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'reset_user_notification_count Exemple'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_reset() -> Result<ResetUserNotificationsResponse, Error> {
-    let params: ResetUserNotificationCountParams = ResetUserNotificationCountParams {
+async fn run_example(config: &configuration::Configuration) -> Result<(), Error> {
+    let params = ResetUserNotificationCountParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        sso: Some("https://sso.acme.com/session/abc123".to_string()),
+        sso: Some("john.doe".to_string()),
     };
-    let response: ResetUserNotificationsResponse = reset_user_notification_count(&configuration, params).await?;
-    Ok(response)
+    let _response: ResetUserNotificationsResponse = reset_user_notification_count(config, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

@@ -1,14 +1,14 @@
 ## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Naam | Type | Locatie | Vereist | Beschrijving |
+|------|------|----------|----------|---------------|
 | tenantId | string | path | Ja |  |
 | urlId | string | query | Ja |  |
 | broadcastId | string | query | Ja |  |
 | sessionId | string | query | Nee |  |
 | sso | string | query | Nee |  |
 
-## Response
+## Respons
 
 Retourneert: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SaveCommentsResponseWithPresence.swift)
 
@@ -16,7 +16,7 @@ Retourneert: [`SaveCommentsResponseWithPresence`](https://github.com/FastComment
 
 [inline-code-attrs-start title = 'createCommentPublic Voorbeeld'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// De volgende codevoorbeelden zijn nog in bèta. Voor problemen, meld dit via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De volgende codevoorbeelden zijn nog steeds beta. Voor eventuele problemen, meld dit via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -26,7 +26,7 @@ let commentData = CommentData(date: 123, localDateString: "localDateString_examp
 let sessionId = "sessionId_example" // String |  (optioneel)
 let sso = "sso_example" // String |  (optioneel)
 
-PublicAPI.createCommentPublic(tenantId: tenantId, urlId: urlId, broadcastId: broadcastId, commentData: commentData, sessionId: sessionId, sso: sso) { (response, error) in
+PublicAPI.createCommentPublic(tenantId: tenantId, urlId: urlId, broadcastId: broadcastId, commentData: commentData, options: PublicAPI.CreateCommentPublicOptions(sessionId: sessionId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

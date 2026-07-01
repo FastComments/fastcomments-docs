@@ -1,39 +1,41 @@
-## Parametri
+## Parameters
 
-| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| urlId | string | query | Sì |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
 | sso | string | query | No |  |
 
-## Risposta
+## Response
 
-Restituisce: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
+Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
-## Esempio
+## Example
 
-[inline-code-attrs-start title = 'Esempio di put_close_thread'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio put_close_thread'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# La definizione dell'host è opzionale e il valore predefinito è https://fastcomments.com
+# Definire l'host è opzionale e predefinito a https://fastcomments.com
 # Vedi configuration.py per un elenco di tutti i parametri di configurazione supportati.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Entra in un contesto con un'istanza del client API
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Crea un'istanza della classe API
+    # Create an instance of the API class
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
-    sso = 'sso_example' # str |  (opzionale)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.put_close_thread(url_id, sso=sso)
+        api_response = api_instance.put_close_thread(tenant_id, url_id, sso=sso)
         print("The response of ModerationApi->put_close_thread:\n")
         pprint(api_response)
     except Exception as e:

@@ -1,6 +1,6 @@
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
 | userId | string | query | 否 |  |
 | direction | string | query | 否 |  |
@@ -19,13 +19,14 @@
 [inline-code-attrs-start title = 'get_comments_for_user 示例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetCommentsForUserOptions
 from client.models.get_comments_for_user_response import GetCommentsForUserResponse
 from client.models.sort_directions import SortDirections
 from client.rest import ApiException
 from pprint import pprint
 
-# 定义 host 是可选的，默认值为 https://fastcomments.com
-# 有关所有支持的配置参数列表，请参阅 configuration.py。
+# 定义主机是可选的，默认值为 https://fastcomments.com
+# 请参阅 configuration.py 获取所有支持的配置参数列表。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -33,18 +34,18 @@ configuration = client.Configuration(
 
 # 使用 API 客户端实例进入上下文
 with client.ApiClient(configuration) as api_client:
-    # 创建 API 类的一个实例
+    # 创建 API 类的实例
     api_instance = client.PublicApi(api_client)
-    user_id = 'user_id_example' # str |  (可选)
-    direction = client.SortDirections() # SortDirections |  (可选)
-    replies_to_user_id = 'replies_to_user_id_example' # str |  (可选)
-    page = 3.4 # float |  (可选)
-    includei10n = True # bool |  (可选)
-    locale = 'locale_example' # str |  (可选)
-    is_crawler = True # bool |  (可选)
+    user_id = 'user_id_example' # str |  (optional)
+    direction = client.SortDirections() # SortDirections |  (optional)
+    replies_to_user_id = 'replies_to_user_id_example' # str |  (optional)
+    page = 3.4 # float |  (optional)
+    includei10n = True # bool |  (optional)
+    locale = 'locale_example' # str |  (optional)
+    is_crawler = True # bool |  (optional)
 
     try:
-        api_response = api_instance.get_comments_for_user(user_id=user_id, direction=direction, replies_to_user_id=replies_to_user_id, page=page, includei10n=includei10n, locale=locale, is_crawler=is_crawler)
+        api_response = api_instance.get_comments_for_user(GetCommentsForUserOptions(user_id=user_id, direction=direction, replies_to_user_id=replies_to_user_id, page=page, includei10n=includei10n, locale=locale, is_crawler=is_crawler))
         print("The response of PublicApi->get_comments_for_user:\n")
         pprint(api_response)
     except Exception as e:

@@ -1,17 +1,17 @@
-## Parametri
+## Parameters
 
-| Nome | Type | Location | Obbligatorio | Descrizione |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+|------|------|-----------|--------------|-------------|
+| tenantId | string | query | Sì |  |
 | tag | string | path | Sì |  |
-| tenantId | string | query | No |  |
 
-## Risposta
+## Response
 
 Restituisce: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
-## Esempio
+## Example
 
-[inline-code-attrs-start title = 'Esempio di delete_hash_tag'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_hash_tag Esempio'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.models.api_empty_response import APIEmptyResponse
@@ -19,7 +19,7 @@ from client.models.delete_hash_tag_request_body import DeleteHashTagRequestBody
 from client.rest import ApiException
 from pprint import pprint
 
-# La definizione dell'host è opzionale e per impostazione predefinita è https://fastcomments.com
+# Definire l'host è facoltativo e di default è https://fastcomments.com
 # Vedere configuration.py per un elenco di tutti i parametri di configurazione supportati.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -27,25 +27,25 @@ configuration = client.Configuration(
 
 # Il client deve configurare i parametri di autenticazione e autorizzazione
 # in conformità con la policy di sicurezza del server API.
-# Esempi per ogni metodo di autenticazione sono forniti di seguito; usa l'esempio che
+# Esempi per ogni metodo di autenticazione sono forniti sotto, usa l'esempio che
 # soddisfa il tuo caso d'uso di autenticazione.
 
-# Configurare l'autorizzazione con API key: api_key
+# Configura l'autorizzazione della chiave API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Decommentare qui sotto per impostare un prefisso (es. Bearer) per la API key, se necessario
+# Decommenta qui sotto per impostare il prefisso (ad esempio Bearer) per la chiave API, se necessario
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Entrare in un contesto con un'istanza del client API
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Creare un'istanza della classe API
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     tag = 'tag_example' # str | 
-    tenant_id = 'tenant_id_example' # str |  (opzionale)
-    delete_hash_tag_request_body = client.DeleteHashTagRequestBody() # DeleteHashTagRequestBody |  (opzionale)
+    delete_hash_tag_request_body = client.DeleteHashTagRequestBody() # DeleteHashTagRequestBody |  (optional)
 
     try:
-        api_response = api_instance.delete_hash_tag(tag, tenant_id=tenant_id, delete_hash_tag_request_body=delete_hash_tag_request_body)
+        api_response = api_instance.delete_hash_tag(tenant_id, tag, delete_hash_tag_request_body)
         print("The response of DefaultApi->delete_hash_tag:\n")
         pprint(api_response)
     except Exception as e:

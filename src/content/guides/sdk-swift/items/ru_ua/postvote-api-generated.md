@@ -1,27 +1,31 @@
-## Параметры
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов’язково | Опис |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Да |  |
-| direction | string | query | Нет |  |
-| sso | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| direction | string | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`VoteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/VoteResponse.swift)
+Повертає: [`VoteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/VoteResponse.swift)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример postVote'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад postVote'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие примеры кода всё ещё находятся в бета-версии. По любым проблемам, пожалуйста, сообщите через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наступні зразки коду ще є бета‑версією. Якщо виникли проблеми, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
-let direction = "direction_example" // String |  (необязательно)
-let sso = "sso_example" // String |  (необязательно)
+let direction = "direction_example" // String |  (необов’язково)
+let broadcastId = "broadcastId_example" // String |  (необов’язково)
+let sso = "sso_example" // String |  (необов’язково)
 
-ModerationAPI.postVote(commentId: commentId, direction: direction, sso: sso) { (response, error) in
+ModerationAPI.postVote(tenantId: tenantId, commentId: commentId, options: ModerationAPI.PostVoteOptions(direction: direction, broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -32,5 +36,3 @@ ModerationAPI.postVote(commentId: commentId, direction: direction, sso: sso) { (
     }
 }
 [inline-code-end]
-
----

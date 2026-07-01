@@ -1,25 +1,36 @@
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| commentId | string | 예 |  |
-| reviewed | boolean | 아니요 |  |
-| sso | string | 아니요 |  |
+| commentId | string | Yes |  |
+| reviewed | boolean | No |  |
+| broadcastId | string | No |  |
+| tenantId | string | No |  |
+| sso | string | No |  |
 
 ## 응답
 
-반환: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+반환: [`PostSetCommentReviewStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostSetCommentReviewStatusResponse.ts)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'postSetCommentReviewStatus 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postSetCommentReviewStatus 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const commentIdSimple: string = "cmt_93a2b1d4";
-const resultSimple: APIEmptyResponse = await postSetCommentReviewStatus(commentIdSimple);
+async function updateCommentReviewStatus(): Promise<void> {
+  const commentId: string = "cmt_9f8a7b6c5d4e3f2a1b0c";
+  const reviewed: boolean = true;
+  const broadcastId: string = "broadcast_2024Q1";
+  const tenantId: string = "tenant_1001";
+  const sso: string = "alice@example.com";
 
-const commentIdWithOptions: string = "cmt_7a8f2b6c";
-const ssoToken: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0MjMifQ.signature";
-const resultWithOptions: APIEmptyResponse = await postSetCommentReviewStatus(commentIdWithOptions, true, ssoToken);
+  const response: PostSetCommentReviewStatusResponse = await postSetCommentReviewStatus(
+    commentId,
+    reviewed,
+    broadcastId,
+    tenantId,
+    sso
+  );
+
+  console.log(response);
+}
 [inline-code-end]
-
----

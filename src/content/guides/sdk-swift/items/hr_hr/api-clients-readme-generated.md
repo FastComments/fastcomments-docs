@@ -1,35 +1,29 @@
-FastComments SDK pruža tri API klijenta:
+The FastComments SDK pruža tri API klijenta:
 
-### PublicAPI - Metode sigurne za klijenta
+### PublicAPI – Metode sigurne za klijenta
 
-`PublicAPI` sadrži metode koje je sigurno pozivati iz klijentskog koda (iOS/macOS aplikacije). Ove metode:
-- Ne zahtijevaju API ključ
-- Mogu koristiti SSO tokene za autentikaciju
-- Imaju ograničenje brzine po korisniku/uređaju
-- Pogodne su za aplikacije usmjerene prema krajnjim korisnicima
+The `PublicAPI` contains methods that are safe to call from client-side code (iOS/macOS apps). These methods:
+- Do not require an API key
+- Can use SSO tokens for authentication
+- Are rate-limited per user/device
+- Are suitable for end-user facing applications
 
-**Primjer upotrebe**: Dohvaćanje i stvaranje komentara u vašoj iOS aplikaciji
+**Primjer upotrebe**: Fetching and creating comments in your iOS app
 
-### DefaultAPI - Metode na strani poslužitelja
+### DefaultAPI – Metode na strani servera
 
-`DefaultAPI` sadrži autentificirane metode koje zahtijevaju API ključ. Ove metode:
-- Zahtijevaju vaš FastComments API ključ
-- TREBAJU se pozivati SAMO iz koda na strani poslužitelja
-- Pružaju potpuni pristup vašim FastComments podacima
-- Imaju ograničenje brzine po tenantu
+The `DefaultAPI` contains authenticated methods that require an API key. These methods:
+- Require your FastComments API key
+- Should ONLY be called from server-side code
+- Provide full access to your FastComments data
+- Are rate-limited per tenant
 
-**Primjer upotrebe**: Administrativne operacije, izvoz podataka u bulk-u, upravljanje korisnicima
+**Primjer upotrebe**: Administrative operations, bulk data export, user management
 
-### ModerationAPI - Metode nadzorne ploče moderatora
+### ModerationAPI – Metode nadzorne ploče moderatora
 
-`ModerationAPI` sadrži metode koje pokreću nadzornu ploču za moderatore. Ove metode obuhvaćaju:
-- **Moderiranje komentara** - listanje, brojanje, pretraživanje, dohvaćanje zapisa i izvoz komentara
-- **Moderacijske akcije** - uklanjanje/obnavljanje komentara, označavanje, postavljanje statusa za pregled/spam/odobrenje, upravljanje glasovima i ponovno otvaranje/zatvaranje niti
-- **Zabrane** - zabrana korisnika u komentaru, poništavanje zabrana, dohvat sažetaka prije zabrane, provjera statusa zabrane i postavki, te čitanje broja zabranjenih korisnika
-- **Značke i povjerenje** - dodjela/uklanjanje znački, listanje ručnih znački, dohvat/postavljanje faktora povjerenja korisnika i pregled internog profila korisnika
+The `ModerationAPI` provides an extensive suite of live and fast moderation APIs. Every `ModerationAPI` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.
 
-Svaka `ModerationAPI` metoda prihvaća `sso` parametar kako bi se moderatori mogli autentificirati putem SSO-a.
+**Primjer upotrebe**: Building a moderation experience for moderators of your community
 
-**Primjer upotrebe**: Izgradnja iskustva moderiranja za moderatore vaše zajednice
-
-**VAŽNO**: Nikada ne otkrivajte svoj API ključ u klijentskom kodu. API ključevi trebaju se koristiti samo na strani poslužitelja.
+**VAŽNO**: Never expose your API key in client-side code. API keys should only be used server-side.

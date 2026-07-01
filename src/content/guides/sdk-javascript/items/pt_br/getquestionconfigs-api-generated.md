@@ -1,24 +1,30 @@
-## Parameters
+## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-----------|
+|------|------|-------------|-----------|
 | tenantId | string | Sim |  |
 | skip | number | Não |  |
 
 ## Resposta
 
-Retorna: [`GetQuestionConfigsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionConfigsResponse.ts)
+Retorna: [`GetQuestionConfigsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionConfigsResponse1.ts)
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getQuestionConfigs'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo getQuestionConfigs'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async (): Promise<void> => {
-  const tenantId: string = 'acme-corp-78';
-  const responseWithoutSkip: GetQuestionConfigsResponse = await getQuestionConfigs(tenantId);
-  const responseWithSkip: GetQuestionConfigsResponse = await getQuestionConfigs(tenantId, 25);
-  console.log(responseWithoutSkip, responseWithSkip);
-})();
+async function fetchQuestionConfigs() {
+    const tenantId: string = "tenant-9876";
+
+    // Chamada sem o parâmetro opcional 'skip'
+    const configsWithoutSkip: GetQuestionConfigsResponse1 = await getQuestionConfigs(tenantId);
+
+    // Chamada com o parâmetro opcional 'skip'
+    const skip: number = 10;
+    const configsWithSkip: GetQuestionConfigsResponse1 = await getQuestionConfigs(tenantId, skip);
+
+    console.log(configsWithoutSkip, configsWithSkip);
+}
 [inline-code-end]
 
 ---

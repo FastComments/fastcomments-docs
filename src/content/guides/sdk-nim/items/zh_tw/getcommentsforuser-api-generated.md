@@ -1,14 +1,8 @@
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
-| userId | string | 否 |  |
-| direction | SortDirections | 否 |  |
-| repliesToUserId | string | 否 |  |
-| page | float64 | 否 |  |
-| includei10n | bool | 否 |  |
-| locale | string | 否 |  |
-| isCrawler | bool | 否 |  |
+| options | GetCommentsForUserOptions | No |  |
 
 ## 回應
 
@@ -18,19 +12,16 @@
 
 [inline-code-attrs-start title = 'getCommentsForUser 範例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getCommentsForUser(
-  userId = "user-8421",
-  direction = SortDirections.Newest,
-  repliesToUserId = "",
-  page = 1.0,
-  includei10n = true,
-  locale = "en-US",
-  isCrawler = false
-)
+let (maybeResp, httpResp) = client.getCommentsForUser(options = GetCommentsForUserOptions(
+  tenantId = "my-tenant-123",
+  userId = "user-456",
+  page = 0,
+  pageSize = 20,
+  includeDeleted = false,
+  commentIds = @[]
+))
 
-if response.isSome:
-  let comments = response.get()
-  discard comments
+if maybeResp.isSome:
+  let resp = maybeResp.get()
+  discard resp
 [inline-code-end]
-
----

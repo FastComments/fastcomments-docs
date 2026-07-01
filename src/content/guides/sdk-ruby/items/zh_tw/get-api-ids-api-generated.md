@@ -1,19 +1,19 @@
----
 ## 參數
 
-| 名稱 | Type | Location | 必填 | 說明 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| text-search | string | query | 否 |  |
-| byIPFromComment | string | query | 否 |  |
-| filters | string | query | 否 |  |
-| searchFilters | string | query | 否 |  |
-| afterId | string | query | 否 |  |
-| demo | boolean | query | 否 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| afterId | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## 回應
 
-回傳: [`ModerationAPIGetCommentIdsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/moderation_a_p_i_get_comment_ids_response.rb)
+返回：[`ModerationAPIGetCommentIdsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/moderation_a_p_i_get_comment_ids_response.rb)
 
 ## 範例
 
@@ -23,23 +23,22 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 opts = {
-  text_search: 'text_search_example', # 字串 | 
-  by_ip_from_comment: 'by_ip_from_comment_example', # 字串 | 
-  filters: 'filters_example', # 字串 | 
-  search_filters: 'search_filters_example', # 字串 | 
-  after_id: 'after_id_example', # 字串 | 
-  demo: true, # 布林值 | 
-  sso: 'sso_example' # 字串 | 
+  text_search: 'text_search_example', # String | 
+  by_ip_from_comment: 'by_ip_from_comment_example', # String | 
+  filters: 'filters_example', # String | 
+  search_filters: 'search_filters_example', # String | 
+  after_id: 'after_id_example', # String | 
+  demo: true, # Boolean | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.get_api_ids(opts)
+  result = api_instance.get_api_ids(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_api_ids: #{e}"
 end
 [inline-code-end]
-
----

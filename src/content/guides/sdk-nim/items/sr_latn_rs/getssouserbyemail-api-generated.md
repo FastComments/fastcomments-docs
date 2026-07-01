@@ -1,9 +1,9 @@
 ## Parametri
 
 | Ime | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| tenantId | string | Da |  |
-| email | string | Ne |  |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| email | string | No |  |
 
 ## Odgovor
 
@@ -11,14 +11,10 @@ Vraća: [`Option[GetSSOUserByEmailAPIResponse]`](https://github.com/FastComments
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer za getSSOUserByEmail'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getSSOUserByEmail'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSSOUserByEmail(tenantId = "my-tenant-123", email = "alice@newsco.com")
-if response.isSome:
-  let ssoUser = response.get()
-  echo "SSO user found: ", ssoUser.email
-else:
-  echo "No SSO user found. HTTP status: ", httpResponse.status
+let (optResp, httpResp) = client.getSSOUserByEmail(tenantId = "my-tenant-123", email = "john.doe@example.com")
+if optResp.isSome:
+  let user = optResp.get()
+  discard user
 [inline-code-end]
-
----

@@ -1,9 +1,9 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Назва | Тип | Розташування | Обов’язково | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Так |  |
-| domain | string | path | Так |  |
+| tenantId | string | query | Yes |  |
+| domain | string | path | Yes |  |
 
 ## Відповідь
 
@@ -11,26 +11,33 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад deleteDomainConfig'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteDomainConfig Приклад'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Налаштуйте авторизацію за допомогою API-ключа: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Розкоментуйте нижче, щоб встановити префікс (наприклад, Bearer) для API-ключа, якщо потрібно
+// Configure API key authorization: api_key
+// Налаштуйте авторизацію ключа API: api_key
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Розкоментуйте нижче, щоб встановити префікс (наприклад, Bearer) для ключа API, при необхідності
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Якщо ви хочете використати власний HTTP-клієнт, передайте клієнт, який реалізує `GuzzleHttp\ClientInterface`.
-    // Це необов'язково, за замовчуванням буде використовуватись `GuzzleHttp\Client`.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // Якщо ви хочете використовувати власний HTTP-клієнт, передайте свій клієнт, який реалізує `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // Це необов’язково, `GuzzleHttp\Client` буде використовуватися за замовчуванням.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // рядок
-$domain = 'domain_example'; // рядок
+
+$tenant_id = 'tenant_id_example'; // string
+// рядок
+$domain = 'domain_example'; // string
+// рядок
+
 
 try {
     $result = $apiInstance->deleteDomainConfig($tenant_id, $domain);
@@ -39,3 +46,5 @@ try {
     echo 'Exception when calling DefaultApi->deleteDomainConfig: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

@@ -1,12 +1,13 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | はい |  |
 | sso | string | query | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`GetTenantManualBadgesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenant_manual_badges_response.py)
+返却: [`GetTenantManualBadgesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenant_manual_badges_response.py)
 
 ## 例
 
@@ -17,21 +18,22 @@ from client.models.get_tenant_manual_badges_response import GetTenantManualBadge
 from client.rest import ApiException
 from pprint import pprint
 
-# ホストの指定は任意で、デフォルトは https://fastcomments.com です
-# サポートされているすべての設定パラメータの一覧は configuration.py を参照してください。
+# ホストの定義はオプションで、デフォルトは https://fastcomments.com です
+# すべてのサポートされている構成パラメータの一覧は configuration.py を参照してください。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# API クライアントのインスタンスを用いたコンテキストを開始します
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # API クラスのインスタンスを作成
+    # API クラスのインスタンスを作成します
     api_instance = client.ModerationApi(api_client)
-    sso = 'sso_example' # str |  （オプション）
+    tenant_id = 'tenant_id_example' # str | 
+    sso = 'sso_example' # str |  (オプション)
 
     try:
-        api_response = api_instance.get_manual_badges(sso=sso)
+        api_response = api_instance.get_manual_badges(tenant_id, sso=sso)
         print("The response of ModerationApi->get_manual_badges:\n")
         pprint(api_response)
     except Exception as e:

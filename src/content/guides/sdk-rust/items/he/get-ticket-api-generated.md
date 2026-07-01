@@ -1,28 +1,26 @@
-## פרמטרים
+## Parameters
 
-| שם | סוג | נדרש | תיאור |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | כן |  |
-| id | String | כן |  |
-| user_id | String | לא |  |
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
+| user_id | String | No |  |
 
-## תגובה
+## Response
 
-מחזיר: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_ticket_response.rs)
+Returns: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_ticket_response.rs)
 
-## דוגמה
+## Example
 
-[inline-code-attrs-start title = 'דוגמה ל-get_ticket'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת get_ticket'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_ticket() -> Result<GetTicketResponse, Error> {
-    let params: GetTicketParams = GetTicketParams {
+async fn run() -> Result<(), Error> {
+    let params = GetTicketParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "TICKET-2026-045".to_string(),
-        user_id: Some("user-12345".to_string()),
+        id: "ticket-456".to_string(),
+        user_id: Some("user-123".to_string()),
     };
-    let ticket: GetTicketResponse = get_ticket(&configuration, params).await?;
-    Ok(ticket)
+    let _response: GetTicketResponse = get_ticket(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

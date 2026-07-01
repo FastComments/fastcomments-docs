@@ -1,13 +1,10 @@
----
 ## Parametri
 
 | Nome | Tipo | Obbligatorio | Descrizione |
 |------|------|--------------|-------------|
+| tenantId | string | Sì |  |
 | commentId | string | Sì |  |
-| includeByUserIdAndEmail | bool | No |  |
-| includeByIP | bool | No |  |
-| includeByEmailDomain | bool | No |  |
-| sso | string | No |  |
+| options | const GetPreBanSummaryOptions& | Sì |  |
 
 ## Risposta
 
@@ -15,21 +12,20 @@ Restituisce: [`PreBanSummary`](https://github.com/FastComments/fastcomments-cpp/
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di getPreBanSummary'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio getPreBanSummary'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t commentId = utility::conversions::to_string_t("cmt-987654321");
-boost::optional<bool> includeByUserIdAndEmail = true;
-boost::optional<bool> includeByIP = true;
-boost::optional<bool> includeByEmailDomain = false;
-boost::optional<utility::string_t> sso = utility::conversions::to_string_t("my-tenant-123-sso-token");
-api->getPreBanSummary(commentId, includeByUserIdAndEmail, includeByIP, includeByEmailDomain, sso)
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto commentId = utility::conversions::to_string_t("cmt-456789");
+GetPreBanSummaryOptions options;
+options.locale = boost::optional<utility::string_t>{utility::conversions::to_string_t("en-US")};
+
+api->getPreBanSummary(tenantId, commentId, options)
     .then([](pplx::task<std::shared_ptr<PreBanSummary>> t) {
         try {
             auto summary = t.get();
-            if (!summary) summary = std::make_shared<PreBanSummary>();
-            std::cout << "PreBanSummary retrieved" << std::endl;
-        } catch (const std::exception &e) {
-            std::cerr << "Error fetching PreBanSummary: " << e.what() << std::endl;
+            // processa il riepilogo
+        } catch (const std::exception&) {
+            // gestisci l'errore
         }
     });
 [inline-code-end]

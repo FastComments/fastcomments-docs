@@ -2,9 +2,9 @@
 
 | Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
-| commentId | string | Да |  |
-| approved | bool | Не |  |
-| sso | string | Не |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| options | PostSetCommentApprovalStatusOptions | No |  |
 
 ## Отговор
 
@@ -12,12 +12,17 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за postSetCommentApprovalStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postSetCommentApprovalStatus пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postSetCommentApprovalStatus(commentId = "cmt-7890", approved = false, sso = "")
-if response.isSome:
-  let setResp = response.get()
-  discard setResp
+let (approvedOpt, httpResp) = client.postSetCommentApprovalStatus(
+  tenantId = "my-tenant-123",
+  commentId = "comment-7890",
+  options = PostSetCommentApprovalStatusOptions()
+)
+
+if approvedOpt.isSome:
+  let approved = approvedOpt.get()
+  echo approved
 [inline-code-end]
 
 ---

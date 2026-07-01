@@ -1,6 +1,6 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Назва | Тип | Розташування | Обов’язковий | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Так |  |
 | userId | string | query | Ні |  |
@@ -21,27 +21,31 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Налаштування авторизації за API ключем: api_key
+// Налаштуйте авторизацію API-ключем: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Розкоментуйте нижче, щоб налаштувати префікс (наприклад, Bearer) для API-ключа, якщо потрібно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Якщо ви хочете використати власний HTTP-клієнт, передайте клієнт, який реалізує `GuzzleHttp\ClientInterface`.
-    // Це необов'язково, за замовчуванням буде використано `GuzzleHttp\Client`.
+    // Якщо ви хочете використовувати власний HTTP-клієнт, передайте свій клієнт, який реалізує `GuzzleHttp\ClientInterface`.
+    // Це необов’язково, за замовчуванням буде використано `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$user_id = 'user_id_example'; // string
-$url_id = 'url_id_example'; // string
-$from_comment_id = 'from_comment_id_example'; // string
-$viewed = True; // bool
-$type = 'type_example'; // string
+
+$tenant_id = 'tenant_id_example'; // рядок
+$options = [
+    'user_id' => 'user_id_example', // рядок
+    'url_id' => 'url_id_example', // рядок
+    'from_comment_id' => 'from_comment_id_example', // рядок
+    'viewed' => True, // булевий
+    'type' => 'type_example', // рядок
+];
+
 
 try {
-    $result = $apiInstance->getNotificationCount($tenant_id, $user_id, $url_id, $from_comment_id, $viewed, $type);
+    $result = $apiInstance->getNotificationCount($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getNotificationCount: ', $e->getMessage(), PHP_EOL;

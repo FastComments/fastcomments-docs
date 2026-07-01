@@ -1,18 +1,19 @@
-## Parametre
+## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
+|------|------|-----------|----------|-------------|
+| tenantId | string | query | Ja |  |
 | sso | string | query | Nej |  |
 
-## Svar
+## Response
 
 Returnerer: [`GetBannedUsersCountResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetBannedUsersCountResponse.java)
 
-## Eksempel
+## Example
 
 [inline-code-attrs-start title = 'getCounts Eksempel'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importer klasser:
+// Importér klasser:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -25,17 +26,18 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      GetBannedUsersCountResponse result = apiInstance.getCounts()
+      GetBannedUsersCountResponse result = apiInstance.getCounts(tenantId)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ModerationApi#getCounts");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("Undtagelse ved kald af ModerationApi#getCounts");
+      System.err.println("Statuskode: " + e.getCode());
+      System.err.println("Årsag: " + e.getResponseBody());
+      System.err.println("Svar‑headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }

@@ -1,10 +1,9 @@
-### Preprosto SSO
+### Enostavno SSO
 
 ```ruby
 require 'fastcomments'
-require 'fastcomments-client'
 
-# Ustvarite preprost SSO žeton
+# Ustvari enostavni SSO žeton
 user = FastComments::SSO::SimpleSSOUserData.new(
   user_id: 'user-123',
   email: 'user@example.com',
@@ -16,14 +15,14 @@ token = sso.create_token
 
 puts "SSO Token: #{token}"
 
-# Uporabite SSO žeton za avtenticiran klic API-ja
+# Uporabi SSO žeton za izvedbo avtoriziranega API klica
 config = FastCommentsClient::Configuration.new
 api_client = FastCommentsClient::ApiClient.new(config)
 public_api = FastCommentsClient::PublicApi.new(api_client)
 
 response = public_api.get_comments_public(
-  tenant_id: 'your-tenant-id',
-  url_id: 'your-page-url-id',
+  'your-tenant-id',
+  'your-page-url-id',
   sso: token
 )
 
@@ -34,9 +33,8 @@ puts "Status: #{response}"
 
 ```ruby
 require 'fastcomments'
-require 'fastcomments-client'
 
-# Ustvarite zaščiten SSO žeton
+# Ustvari varen SSO žeton
 user = FastComments::SSO::SecureSSOUserData.new(
   user_id: 'user-123',
   email: 'user@example.com',
@@ -50,14 +48,14 @@ token = sso.create_token
 
 puts "Secure SSO Token: #{token}"
 
-# Uporabite SSO žeton za avtenticiran klic API-ja
+# Uporabi SSO žeton za izvedbo avtoriziranega API klica
 config = FastCommentsClient::Configuration.new
 api_client = FastCommentsClient::ApiClient.new(config)
 public_api = FastCommentsClient::PublicApi.new(api_client)
 
 response = public_api.get_comments_public(
-  tenant_id: 'your-tenant-id',
-  url_id: 'your-page-url-id',
+  'your-tenant-id',
+  'your-page-url-id',
   sso: token
 )
 

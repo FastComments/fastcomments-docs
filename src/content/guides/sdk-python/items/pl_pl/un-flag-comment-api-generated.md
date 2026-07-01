@@ -1,7 +1,7 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+|------|------|-------------|----------|------|
 | tenantId | string | query | Tak |  |
 | id | string | path | Tak |  |
 | userId | string | query | Nie |  |
@@ -13,28 +13,29 @@ Zwraca: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-pyt
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład un_flag_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'un_flag_comment Przykład'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import UnFlagCommentOptions
 from client.models.flag_comment_response import FlagCommentResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Określenie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
-# Zobacz configuration.py po listę wszystkich obsługiwanych parametrów konfiguracji.
+# Definiowanie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
+# Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracji.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Klient musi skonfigurować parametry uwierzytelniania i autoryzacji
 # zgodnie z polityką bezpieczeństwa serwera API.
-# Poniżej podano przykłady dla każdej metody uwierzytelniania, użyj tego, 
-# który spełnia Twój przypadek użycia uwierzytelniania.
+# Przykłady dla każdej metody uwierzytelniania są podane poniżej, użyj przykładu, który
+# spełnia Twoje wymagania dotyczące uwierzytelniania.
 
-# Skonfiguruj autoryzację kluczem API: api_key
+# Skonfiguruj autoryzację klucza API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli to konieczne
+# Odkomentuj poniżej, aby ustawić prefiks (np. Bearer) dla klucza API, jeśli potrzebny
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Wejdź w kontekst z instancją klienta API
@@ -43,11 +44,11 @@ with client.ApiClient(configuration) as api_client:
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
-    user_id = 'user_id_example' # str |  (opcjonalne)
-    anon_user_id = 'anon_user_id_example' # str |  (opcjonalne)
+    user_id = 'user_id_example' # str |  (optional)
+    anon_user_id = 'anon_user_id_example' # str |  (optional)
 
     try:
-        api_response = api_instance.un_flag_comment(tenant_id, id, user_id=user_id, anon_user_id=anon_user_id)
+        api_response = api_instance.un_flag_comment(tenant_id, id, UnFlagCommentOptions(user_id=user_id, anon_user_id=anon_user_id))
         print("The response of DefaultApi->un_flag_comment:\n")
         pprint(api_response)
     except Exception as e:

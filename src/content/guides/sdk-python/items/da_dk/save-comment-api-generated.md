@@ -1,12 +1,12 @@
 ## Parametre
 
-| Name | Type | Location | Required | Description |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| isLive | boolean | query | Nej |  |
-| doSpamCheck | boolean | query | Nej |  |
-| sendEmails | boolean | query | Nej |  |
-| populateNotifications | boolean | query | Nej |  |
+| tenantId | string | query | Yes |  |
+| isLive | boolean | query | No |  |
+| doSpamCheck | boolean | query | No |  |
+| sendEmails | boolean | query | No |  |
+| populateNotifications | boolean | query | No |  |
 
 ## Svar
 
@@ -17,41 +17,38 @@ Returnerer: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomme
 [inline-code-attrs-start title = 'save_comment Eksempel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import SaveCommentOptions
 from client.models.api_save_comment_response import APISaveCommentResponse
 from client.models.create_comment_params import CreateCommentParams
 from client.rest import ApiException
 from pprint import pprint
 
-# Det er valgfrit at definere hosten; standard er https://fastcomments.com
+# Definering af værten er valgfri og har standardværdien https://fastcomments.com
 # Se configuration.py for en liste over alle understøttede konfigurationsparametre.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
-
-# Klienten skal konfigurere autentifikations- og autorisationsparametrene
+# Klienten skal konfigurere godkendelses- og autorisationsparametre
 # i overensstemmelse med API-serverens sikkerhedspolitik.
-# Eksempler for hver auth-metode er vist nedenfor; brug det eksempel, der
-# opfylder dit autentifikationsbrugstilfælde.
+# Eksempler for hver godkendelsesmetode er angivet nedenfor; brug det eksempel, som
+# opfylder dit godkendelsesbehov.
 
-# Konfigurer API-nøgleautorisation: api_key
+# Konfigurer API-nøgle autorisation: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Fjern kommentar nedenfor for at sætte præfiks (f.eks. Bearer) for API-nøglen, hvis nødvendigt
+# Fjern kommentar nedenfor for at opsætte præfiks (f.eks. Bearer) for API-nøgle, hvis nødvendigt
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Gå ind i en kontekst med en instans af API-klienten
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Opret en instans af API-klassen
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_comment_params = client.CreateCommentParams() # CreateCommentParams | 
-    is_live = True # bool |  (valgfri)
-    do_spam_check = True # bool |  (valgfri)
-    send_emails = True # bool |  (valgfri)
-    populate_notifications = True # bool |  (valgfri)
+    is_live = True # bool |  (optional)
+    do_spam_check = True # bool |  (optional)
+    send_emails = True # bool |  (optional)
+    populate_notifications = True # bool |  (optional)
 
     try:
-        api_response = api_instance.save_comment(tenant_id, create_comment_params, is_live=is_live, do_spam_check=do_spam_check, send_emails=send_emails, populate_notifications=populate_notifications)
+        api_response = api_instance.save_comment(tenant_id, create_comment_params, SaveCommentOptions(is_live=is_live, do_spam_check=do_spam_check, send_emails=send_emails, populate_notifications=populate_notifications))
         print("The response of DefaultApi->save_comment:\n")
         pprint(api_response)
     except Exception as e:

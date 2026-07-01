@@ -2,12 +2,13 @@
 
 | 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| text-search | string | query | 아니요 |  |
-| byIPFromComment | string | query | 아니요 |  |
-| filter | string | query | 아니요 |  |
-| searchFilters | string | query | 아니요 |  |
-| demo | boolean | query | 아니요 |  |
-| sso | string | query | 아니요 |  |
+| tenantId | string | query | 예 |  |
+| text-search | string | query | 아니오 |  |
+| byIPFromComment | string | query | 아니오 |  |
+| filter | string | query | 아니오 |  |
+| searchFilters | string | query | 아니오 |  |
+| demo | boolean | query | 아니오 |  |
+| sso | string | query | 아니오 |  |
 
 ## 응답
 
@@ -30,6 +31,7 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String textSearch = "textSearch_example"; // String | 
     String byIPFromComment = "byIPFromComment_example"; // String | 
     String filter = "filter_example"; // String | 
@@ -37,7 +39,7 @@ public class Example {
     Boolean demo = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationAPICountCommentsResponse result = apiInstance.getCount()
+      ModerationAPICountCommentsResponse result = apiInstance.getCount(tenantId)
             .textSearch(textSearch)
             .byIPFromComment(byIPFromComment)
             .filter(filter)
@@ -56,5 +58,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

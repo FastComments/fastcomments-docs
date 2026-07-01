@@ -1,30 +1,39 @@
-## Параметри
+## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
-| updateQuestionResultBody | UpdateQuestionResultBody | Да |  |
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Da |  |
+| id | string | Da |  |
+| updateQuestionResultBody | UpdateQuestionResultBody | Da |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Vraća: [`UpdateQuestionResultResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateQuestionResultResponse.ts)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример updateQuestionResult'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateQuestionResult Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_acme-corp_01";
-const id: string = "question_9f2d1b";
-const metaItem: MetaItem = { key: "platform", value: "web" };
-const status: APIStatus = { code: 0, message: "scored" };
-const updateQuestionResultBody: UpdateQuestionResultBody = {
-  score: 92,
-  passed: true,
-  status,
-  meta: [metaItem] // демонстрирано опционално поље
-};
-const result: APIEmptyResponse = await updateQuestionResult(tenantId, id, updateQuestionResultBody);
-[inline-code-end]
+async function runUpdate() {
+    const tenantId: string = "acme-corp-01";
+    const id: string = "qr-20230915-001";
 
----
+    const updateQuestionResultBody: UpdateQuestionResultBody = {
+        // obavezna polja
+        answer: "No",
+        // opciona polja
+        comment: "User clarified their response",
+        // anotherOptionalField?: value,
+    };
+
+    const result: UpdateQuestionResultResponse = await updateQuestionResult(
+        tenantId,
+        id,
+        updateQuestionResultBody
+    );
+
+    console.log(result);
+}
+
+runUpdate();
+[inline-code-end]

@@ -1,8 +1,9 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Θέση | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| sso | string | query | Όχι |  |
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Απόκριση
 
@@ -17,21 +18,22 @@ from client.models.api_moderate_get_user_ban_preferences_response import APIMode
 from client.rest import ApiException
 from pprint import pprint
 
-# Ορισμός του host είναι προαιρετικός και εξ ορισμού είναι το https://fastcomments.com
-# Δείτε το configuration.py για μια λίστα με όλες τις υποστηριζόμενες παραμέτρους ρυθμίσεων.
+# Ο ορισμός του host είναι προαιρετικός και προεπιλεγμένο στο https://fastcomments.com
+# Δείτε το configuration.py για μια λίστα με όλες τις υποστηριζόμενες παραμέτρους διαμόρφωσης.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Άνοιγμα context με ένα στιγμιότυπο του πελάτη API
+# Εισαγωγή ενός πλαισίου με ένα στιγμιότυπο του πελάτη API
 with client.ApiClient(configuration) as api_client:
     # Δημιουργία ενός στιγμιότυπου της κλάσης API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     sso = 'sso_example' # str |  (προαιρετικό)
 
     try:
-        api_response = api_instance.get_user_ban_preference(sso=sso)
+        api_response = api_instance.get_user_ban_preference(tenant_id, sso=sso)
         print("The response of ModerationApi->get_user_ban_preference:\n")
         pprint(api_response)
     except Exception as e:

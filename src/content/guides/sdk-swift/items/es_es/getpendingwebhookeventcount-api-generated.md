@@ -1,8 +1,8 @@
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Sí |  |
+| tenantId | string | query | Yes |  |
 | commentId | string | query | No |  |
 | externalId | string | query | No |  |
 | eventType | string | query | No |  |
@@ -16,9 +16,9 @@ Devuelve: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComment
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de getPendingWebhookEventCount'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getPendingWebhookEventCount Ejemplo'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Los siguientes ejemplos de código siguen siendo beta. Para cualquier problema, por favor repórtalo vía http://github.com/OpenAPITools/openapi-generator/issues/new
+// Los siguientes ejemplos de código todavía están en beta. Para cualquier problema, por favor informe en http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -29,7 +29,7 @@ let type = "type_example" // String |  (opcional)
 let domain = "domain_example" // String |  (opcional)
 let attemptCountGT = 987 // Double |  (opcional)
 
-DefaultAPI.getPendingWebhookEventCount(tenantId: tenantId, commentId: commentId, externalId: externalId, eventType: eventType, type: type, domain: domain, attemptCountGT: attemptCountGT) { (response, error) in
+DefaultAPI.getPendingWebhookEventCount(tenantId: tenantId, options: DefaultAPI.GetPendingWebhookEventCountOptions(commentId: commentId, externalId: externalId, eventType: eventType, type: type, domain: domain, attemptCountGT: attemptCountGT)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -40,3 +40,5 @@ DefaultAPI.getPendingWebhookEventCount(tenantId: tenantId, commentId: commentId,
     }
 }
 [inline-code-end]
+
+---

@@ -1,25 +1,29 @@
-## Parameter
+## Parameters
 
 | Name | Typ | Erforderlich | Beschreibung |
-|------|------|----------|-------------|
+|------|------|--------------|--------------|
 | tenantId | string | Ja |  |
 | commentId | string | Ja |  |
 | editKey | string | Nein |  |
 | sso | string | Nein |  |
 
-## Antwort
+## Response
 
-Gibt zurück: [`PublicAPIGetCommentTextResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PublicAPIGetCommentTextResponse.ts)
+Rückgabe: [`GetCommentTextResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentTextResponse1.ts)
 
-## Beispiel
+## Example
 
-[inline-code-attrs-start title = 'getCommentText Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Beispiel für getCommentText'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_prod_01';
-const commentId: string = 'cmt_5f2d9b8a-3e7c-4a1b';
-const editKey: string = 'edit_8b3f6c2d4a9e';
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example.signature';
-const response: PublicAPIGetCommentTextResponse = await getCommentText(tenantId, commentId, editKey, sso);
-[inline-code-end]
+async function run() {
+  const tenantId: string = "acme-corp-tenant";
+  const commentId: string = "cmt-5f2e9a1b";
+  const editKey: string = "edk-9b7c3";
+  const ssoToken: string = "sso-xyz789";
 
----
+  const commentOnly: GetCommentTextResponse1 = await getCommentText(tenantId, commentId);
+  const commentWithEdit: GetCommentTextResponse1 = await getCommentText(tenantId, commentId, editKey);
+  const commentFull: GetCommentTextResponse1 = await getCommentText(tenantId, commentId, editKey, ssoToken);
+}
+run();
+[inline-code-end]

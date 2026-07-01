@@ -13,22 +13,13 @@ Returns: [`AddSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-
 
 [inline-code-attrs-start title = 'addSSOUser Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
-auto createPtr = std::make_shared<CreateAPISSOUserData>();
-createPtr->email = utility::conversions::to_string_t("user@example.com");
-createPtr->displayName = boost::optional<utility::string_t>(utility::conversions::to_string_t("Jane Doe"));
-createPtr->externalId = boost::optional<utility::string_t>(utility::conversions::to_string_t("ext-456"));
-createPtr->isAdmin = boost::optional<bool>(false);
-api->addSSOUser(tenantId, *createPtr)
-.then([](pplx::task<std::shared_ptr<AddSSOUserAPIResponse>> task){
-    try {
-        auto resp = task.get();
-        if (resp) {
-            return resp;
-        }
-        return std::shared_ptr<AddSSOUserAPIResponse>();
-    } catch (const std::exception&) {
-        return std::shared_ptr<AddSSOUserAPIResponse>();
-    }
-});
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+CreateAPISSOUserData createAPISSOUserData;
+createAPISSOUserData.email = utility::conversions::to_string_t("john.doe@example.com");
+createAPISSOUserData.externalId = utility::conversions::to_string_t("ext-9876");
+createAPISSOUserData.firstName = boost::optional<utility::string_t>(utility::conversions::to_string_t("John"));
+createAPISSOUserData.lastName = boost::optional<utility::string_t>(utility::conversions::to_string_t("Doe"));
+api->addSSOUser(tenantId, createAPISSOUserData)
+    .then([](std::shared_ptr<AddSSOUserAPIResponse> resp) {
+    });
 [inline-code-end]

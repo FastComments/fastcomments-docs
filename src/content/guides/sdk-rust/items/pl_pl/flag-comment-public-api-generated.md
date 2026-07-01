@@ -1,31 +1,28 @@
-## Parametry
+## Parameters
 
-| Name | Type | Wymagane | Opis |
-|------|------|----------|-------------|
-| tenant_id | String | Tak |  |
-| comment_id | String | Tak |  |
-| is_flagged | bool | Tak |  |
-| sso | String | Nie |  |
+| Nazwa | Typ | Wymagane | Opis |
+|------|------|----------|------|
+| tenant_id | String | Yes |  |
+| comment_id | String | Yes |  |
+| is_flagged | bool | Yes |  |
+| sso | String | No |  |
 
-## Odpowiedź
+## Response
 
 Zwraca: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
-## Przykład
+## Example
 
-[inline-code-attrs-start title = 'Przykład flag_comment_public'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'flag_comment_public Przykład'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_flag_comment() -> Result<(), Error> {
-    let params: FlagCommentPublicParams = FlagCommentPublicParams {
-        tenant_id: String::from("acme-corp-tenant"),
-        comment_id: String::from("comment-89b3"),
+async fn run(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = FlagCommentPublicParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: "comment-12345".to_string(),
         is_flagged: true,
-        sso: Some(String::from("sso-uid-7a2f")),
+        sso: Some("user-sso-token".to_string()),
     };
-
-    let _response: ApiEmptyResponse = flag_comment_public(&configuration, params).await?;
+    flag_comment_public(configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

@@ -1,10 +1,10 @@
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-------------|
+|------|------|-------------|-----------|
 | tenantId | string | Sim |  |
 | id | string | Não |  |
-| userId | string | Não |  |
+| userId | string = "" | Não |  |
 
 ## Resposta
 
@@ -12,14 +12,15 @@ Retorna: [`Option[DeleteSubscriptionAPIResponse]`](https://github.com/FastCommen
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de deleteSubscription'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo deleteSubscription'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteSubscription(tenantId = "my-tenant-123", id = "sub-98765", userId = "user-456")
-if response.isSome:
-  let deleteResp = response.get()
-  echo "Delete subscription response received"
-else:
-  echo "No subscription response"
-[inline-code-end]
+let (maybeResp, httpResp) = client.deleteSubscription(
+  tenantId = "my-tenant-123",
+  id = "sub-789",
+  userId = ""
+)
 
----
+if maybeResp.isSome:
+  let apiResult = maybeResp.get()
+  # use apiResult conforme necessário
+[inline-code-end]

@@ -1,7 +1,7 @@
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
+|------|------|----------|----------|------|
 | tenantId | string | path | Da |  |
 | commentId | string | path | Da |  |
 | broadcastId | string | query | Da |  |
@@ -14,15 +14,16 @@ Vraća: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fast
 
 ## Primjer
 
-[inline-code-attrs-start title = 'set_comment_text Primjer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer set_comment_text'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import SetCommentTextOptions
 from client.models.comment_text_update_request import CommentTextUpdateRequest
 from client.models.public_api_set_comment_text_response import PublicAPISetCommentTextResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definiranje hosta je opcionalno i zadano je na https://fastcomments.com
+# Definiranje hosta je opcionalno i zadano je https://fastcomments.com
 # Pogledajte configuration.py za popis svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -41,9 +42,11 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (neobavezno)
 
     try:
-        api_response = api_instance.set_comment_text(tenant_id, comment_id, broadcast_id, comment_text_update_request, edit_key=edit_key, sso=sso)
+        api_response = api_instance.set_comment_text(tenant_id, comment_id, broadcast_id, comment_text_update_request, SetCommentTextOptions(edit_key=edit_key, sso=sso))
         print("The response of PublicApi->set_comment_text:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling PublicApi->set_comment_text: %s\n" % e)
 [inline-code-end]
+
+---

@@ -1,31 +1,33 @@
 ## Parametri
 
-| Name | Type | Location | Obvezno | Opis |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| badgeId | string | query | Da |  |
-| userId | string | query | Ne |  |
-| commentId | string | query | Ne |  |
-| broadcastId | string | query | Ne |  |
-| sso | string | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| badgeId | string | query | Yes |  |
+| userId | string | query | No |  |
+| commentId | string | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
-## Odziv
+## Odgovor
 
 Vrne: [`RemoveUserBadgeResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/RemoveUserBadgeResponse.swift)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer putRemoveBadge'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putRemoveBadge Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Naslednji primeri kode so še v beta. Za morebitne težave prijavite na http://github.com/OpenAPITools/openapi-generator/issues/new
+// Naslednji vzorci kode so še beta. Če imate težave, prosimo, poročajte na http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let badgeId = "badgeId_example" // String | 
-let userId = "userId_example" // String |  (izbirno)
-let commentId = "commentId_example" // String |  (izbirno)
-let broadcastId = "broadcastId_example" // String |  (izbirno)
-let sso = "sso_example" // String |  (izbirno)
+let tenantId = "tenantId_example" // String |
+let badgeId = "badgeId_example" // String |
+let userId = "userId_example" // String |  (neobvezno)
+let commentId = "commentId_example" // String |  (neobvezno)
+let broadcastId = "broadcastId_example" // String |  (neobvezno)
+let sso = "sso_example" // String |  (neobvezno)
 
-ModerationAPI.putRemoveBadge(badgeId: badgeId, userId: userId, commentId: commentId, broadcastId: broadcastId, sso: sso) { (response, error) in
+ModerationAPI.putRemoveBadge(tenantId: tenantId, badgeId: badgeId, options: ModerationAPI.PutRemoveBadgeOptions(userId: userId, commentId: commentId, broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

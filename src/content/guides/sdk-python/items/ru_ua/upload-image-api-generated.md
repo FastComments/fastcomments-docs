@@ -2,11 +2,11 @@
 
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| sizePreset | string | query | Нет | Предустановка размера: "Default" (1000x1000px) или "CrossPlatform" (создает размеры для популярных устройств) |
-| urlId | string | query | Нет | ID страницы, с которой выполняется загрузка, для настройки |
+| tenantId | string | path | Yes |  |
+| sizePreset | string | query | No | Предустановленный размер: \"Default\" (1000x1000px) или \"CrossPlatform\" (создает размеры для популярных устройств) |
+| urlId | string | query | No | ID страницы, от которой происходит загрузка, для настройки |
 
 ## Ответ
 
@@ -17,29 +17,30 @@
 [inline-code-attrs-start title = 'Пример upload_image'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import UploadImageOptions
 from client.models.size_preset import SizePreset
 from client.models.upload_image_response import UploadImageResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Указание хоста необязательно и по умолчанию равно https://fastcomments.com
+# Определение хоста является необязательным и по умолчанию https://fastcomments.com
 # Смотрите configuration.py для списка всех поддерживаемых параметров конфигурации.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Откройте контекст с экземпляром клиента API
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Создайте экземпляр класса API
+    # Create an instance of the API class
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    file = None # bytearray | 
-    size_preset = client.SizePreset() # SizePreset | Size preset: \"Default\" (1000x1000px) or \"CrossPlatform\" (creates sizes for popular devices) (optional)
-    url_id = 'url_id_example' # str | ID страницы, с которой выполняется загрузка, для настройки (необязательно)
+    file = None # bytes | 
+    size_preset = client.SizePreset() # SizePreset | Предустановленный размер: \"Default\" (1000x1000px) или \"CrossPlatform\" (создает размеры для популярных устройств) (optional)
+    url_id = 'url_id_example' # str | ID страницы, от которой происходит загрузка, для настройки (optional)
 
     try:
-        api_response = api_instance.upload_image(tenant_id, file, size_preset=size_preset, url_id=url_id)
+        api_response = api_instance.upload_image(tenant_id, file, UploadImageOptions(size_preset=size_preset, url_id=url_id))
         print("The response of PublicApi->upload_image:\n")
         pprint(api_response)
     except Exception as e:

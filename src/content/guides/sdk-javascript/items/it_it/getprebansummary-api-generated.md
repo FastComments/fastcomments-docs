@@ -1,34 +1,35 @@
-## Parametri
+## Parameters
 
 | Nome | Tipo | Obbligatorio | Descrizione |
-|------|------|----------|-------------|
+|------|------|--------------|-------------|
 | commentId | string | Sì |  |
 | includeByUserIdAndEmail | boolean | No |  |
 | includeByIP | boolean | No |  |
 | includeByEmailDomain | boolean | No |  |
+| tenantId | string | No |  |
 | sso | string | No |  |
 
-## Risposta
+## Response
 
-Restituisce: [`PreBanSummary`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PreBanSummary.ts)
+Restituisce: [`GetPreBanSummaryResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPreBanSummaryResponse.ts)
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di getPreBanSummary'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio getPreBanSummary'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const commentId: string = 'cmt-9f7b2e3d-45a1';
+const commentId: string = "5f8d0c2e4b1a2c3d4e5f6a7b";
 const includeByUserIdAndEmail: boolean = true;
 const includeByIP: boolean = true;
 const includeByEmailDomain: boolean = false;
-const sso: string = 'sso_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';
+const tenantId: string = "tenant-001";
+const sso: string = "sso-xyz-123";
 
-const summary: PreBanSummary = await getPreBanSummary(
+const preBanSummary: GetPreBanSummaryResponse = await getPreBanSummary(
   commentId,
   includeByUserIdAndEmail,
   includeByIP,
   includeByEmailDomain,
+  tenantId,
   sso
 );
 [inline-code-end]
-
----

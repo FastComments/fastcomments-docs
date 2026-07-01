@@ -1,14 +1,10 @@
----
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|----------|-------------|
+|------|------|--------------|-----------|
 | tenantId | string | Sim |  |
 | createFeedPostParams | CreateFeedPostParams | Sim |  |
-| broadcastId | string | Não |  |
-| isLive | bool | Não |  |
-| doSpamCheck | bool | Não |  |
-| skipDupCheck | bool | Não |  |
+| options | const CreateFeedPostOptions& | Sim |  |
 
 ## Resposta
 
@@ -16,24 +12,20 @@ Retorna: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomment
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de createFeedPost'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo createFeedPost'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::string_t("my-tenant-123");
-auto paramsPtr = std::make_shared<CreateFeedPostParams>();
-paramsPtr->content = utility::string_t("Deployment completed successfully. All services are operational.");
-paramsPtr->authorEmail = utility::string_t("ops@company.com");
-paramsPtr->authorName = utility::string_t("Deploy Bot");
-boost::optional<utility::string_t> broadcastId = boost::optional<utility::string_t>(utility::string_t("broadcast-456"));
-boost::optional<bool> isLive = boost::optional<bool>(true);
-boost::optional<bool> doSpamCheck = boost::optional<bool>(true);
-boost::optional<bool> skipDupCheck = boost::optional<bool>(false);
-api->createFeedPost(tenantId, *paramsPtr, broadcastId, isLive, doSpamCheck, skipDupCheck)
-    .then([](pplx::task<std::shared_ptr<CreateFeedPostsResponse>> t){
-        try {
-            auto resp = t.get();
-            (void)resp;
-        } catch (...) {}
-    });
-[inline-code-end]
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+CreateFeedPostParams postParams;
+postParams.content = utility::conversions::to_string_t("Excited to join FastComments!");
+postParams.authorEmail = utility::conversions::to_string_t("user@example.com");
+postParams.title = utility::conversions::to_string_t("My First Post");
+postParams.tags = boost::optional<std::vector<utility::string_t>>({ utility::conversions::to_string_t("intro") });
 
----
+CreateFeedPostOptions options;
+options.notifyFollowers = boost::optional<bool>(true);
+options.scheduledAt = boost::optional<utility::datetime>(utility::datetime::utc_now());
+
+api->createFeedPost(tenantId, postParams, options).then([](std::shared_ptr<CreateFeedPostsResponse> resp) {
+    auto postId = resp->postId;
+});
+[inline-code-end]

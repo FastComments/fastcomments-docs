@@ -1,11 +1,9 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
-|------|------|----------|-------------|
-| tenantId | string | Ναι |  |
-| userId | string | Όχι |  |
-| limit | float64 | Όχι |  |
-| skip | float64 | Όχι |  |
+|------|------|------------|-----------|
+| tenantId | string | Yes |  |
+| options | GetUserBadgeProgressListOptions | No |  |
 
 ## Απόκριση
 
@@ -15,18 +13,7 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα getUserBadgeProgressList'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUserBadgeProgressList(
-  tenantId = "my-tenant-123",
-  userId = "user-789",
-  limit = 25.0,
-  skip = 0.0
-)
-
+let (response, httpResponse) = client.getUserBadgeProgressList(tenantId = "my-tenant-123", options = GetUserBadgeProgressListOptions())
 if response.isSome:
   let badgeProgress = response.get()
-  echo "Received badge progress:", badgeProgress
-else:
-  echo "No badge progress; HTTP status: ", $httpResponse.status
 [inline-code-end]
-
----

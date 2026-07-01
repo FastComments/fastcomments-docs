@@ -1,23 +1,34 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
-| errorId | string | Да |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Da |  |
+| id | string | Da |  |
+| errorId | string | Da |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Vraća: [`DeleteEmailTemplateRenderErrorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteEmailTemplateRenderErrorResponse.ts)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'Пример за deleteEmailTemplateRenderError'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteEmailTemplateRenderError Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'fastcomments-7f3a2b';
-const templateId: string = 'tmpl-9c3e1a2b';
-const errorId: string = 'err-2026-06-19-001';
-const result: APIEmptyResponse = await deleteEmailTemplateRenderError(tenantId, templateId, errorId);
+async function executeDelete() {
+  const tenantId: string = "tenant_12345";
+  const templateId: string = "email_tpl_001";
+  const errorId: string = "render_err_2023";
+
+  const result: DeleteEmailTemplateRenderErrorResponse = await deleteEmailTemplateRenderError(
+    tenantId,
+    templateId,
+    errorId
+  );
+
+  console.log(result);
+}
+
+executeDelete();
 [inline-code-end]
 
 ---

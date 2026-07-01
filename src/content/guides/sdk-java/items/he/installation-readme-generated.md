@@ -1,6 +1,6 @@
 ### Maven
 
-הוסף את מאגר Repsy לקובץ POM של הפרויקט שלך:
+הוסף את מאגר Repsy ל‑POM של הפרויקט שלך:
 
 ```xml
 <repositories>
@@ -63,16 +63,18 @@ dependencies {
 }
 ```
 
-### Library Contents
+### תכולת הספרייה
 
-ספרייה זו מכילה שלושה מודולים. לקוח ה-API שנוצר באופן אוטומטי, ספריית ה-core ב-Java שמכילה עזרי קוד ידניים כדי להקל על העבודה עם ה-API, ומודול `pubsub` שהוא ספרייה למנוי על זרמי שינויים.
+הספרייה הזו מכילה שלושה מודלים. לקוח ה‑API שנוצר, ספריית הקור Java המרכזית הכוללת utilities שנכתבות ידנית כדי להקל על העבודה עם ה‑API,
+ומודול `pubsub` שהוא ספרייה למנוי על פיד של שינויים.
 
-- [תיעוד ספריית לקוח ה-API](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [תיעוד ספריית ה-core, כולל דוגמאות SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [תיעוד ספריית לקוח ה‑API](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [תיעוד הספרייה המרכזית, כולל דוגמאות SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
 - [תיעוד ספריית PubSub](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### Public vs Secured APIs
+### API ציבוריים לעומת מאובטחים
 
-ללקוח ה-API יש שלוש מחלקות: `DefaultApi`, `PublicApi`, ו-`ModerationApi`. ה-`DefaultApi` מכיל שיטות שדורשות את מפתח ה-API שלך, ו-`PublicApi` מכיל שיטות שניתן לקרוא להן ישירות מדפדפן/מכשיר נייד/וכו' ללא אימות.
+לעבור על לקוח ה‑API, יש שלוש מחלקות, `DefaultApi`, `PublicApi`, ו‑`ModerationApi`. ה‑`DefaultApi` מכילה שיטות הדורשות את מפתח ה‑API שלך, ו‑`PublicApi` מכילה שיטות  
+שניתן לקרוא להן ישירות מדפדפן/מכשיר נייד/וכו' ללא אימות.
 
-ה-`ModerationApi` מפעיל את לוח הבקרה של המודרטור. הוא כולל שיטות למתן מענה על תגובות (רשימה, ספירה, חיפוש, לוגים וייצוא), פעולות Moderation (הסרה/שחזור, דגל, הגדרת מצב לסקירה/דואר-זבל/אישור, הצבעות, ופתיחה/סגירה של שרשור), איסורים (איסור מכתיבת תגובות, ביטול איסור, תקצירים לפני איסור, מצב האיסור והעדפות, וספירת משתמשים מנועים), ותגים ואמון (הענקה/הסרה של תג, תגיות ידניות, קבלת/הגדרת גורם אמון, ופרופיל פנימי של משתמש). כל שיטה ב-`ModerationApi` מקבלת פרמטר `sso` כך שהקריאה יכולה להתבצע בשם מודרטור שהאומת באמצעות SSO.
+ה‑`ModerationApi` מספקת חבילה רחבה של API מודרציה בזמן אמת ומהירה. כל שיטה של `ModerationApi` מקבלת פרמטר `sso` ויכולה לאמת באמצעות SSO או קוקיית סשן של FastComments.com.

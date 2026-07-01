@@ -1,59 +1,60 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Локација | Обавезно | Опис |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| userId | string | query | Не |  |
-| badgeId | string | query | Не |  |
-| type | number | query | Не |  |
-| displayedOnComments | boolean | query | Не |  |
-| limit | number | query | Не |  |
-| skip | number | query | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
+| userId | string | query | Ne |  |
+| badgeId | string | query | Ne |  |
+| type | number | query | Ne |  |
+| displayedOnComments | boolean | query | Ne |  |
+| limit | number | query | Ne |  |
+| skip | number | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_user_badges_response.py)
+Returns: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_user_badges_response.py)
 
-## Примјер
+## Primer
 
-[inline-code-attrs-start title = 'get_user_badges Примјер'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer get_user_badges'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetUserBadgesOptions
 from client.models.api_get_user_badges_response import APIGetUserBadgesResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинисање host-а је опционално и подразумјевано је https://fastcomments.com
-# Погледајте configuration.py за листу свих подржаних конфигурационих параметара.
+# Definisanje hosta je opcionalno i podrazumijeva https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клијент мора конфигурисати параметре аутентификације и ауторизације
-# у складу са безбедносном политиком API сервера.
-# Примјери за сваки метод аутентификације су наведени испод, користите примјер који
-# задовољава ваш случај употребе аутентификације.
+# Klijent mora da konfiguriše parametre autentifikacije i autorizacije
+# u skladu sa sigurnosnom politikom API servera.
+# Primjeri za svaki metod autentifikacije su dati ispod, upotrijebite primjer koji
+# odgovara vašem slučaju upotrebe.
 
-# Конфигуришите API key ауторизацију: api_key
+# Konfigurišite autorizaciju API ključem: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Откоментирајте испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
+# Otkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Унесите контекст са инстанцом API клијента
+# Unesite kontekst sa instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Креирајте инстанцу API класе
+    # Kreirajte instancu API klase
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    user_id = 'user_id_example' # str |  (опционо)
-    badge_id = 'badge_id_example' # str |  (опционо)
-    type = 3.4 # float |  (опционо)
-    displayed_on_comments = True # bool |  (опционо)
-    limit = 3.4 # float |  (опционо)
-    skip = 3.4 # float |  (опционо)
+    user_id = 'user_id_example' # str |  (opcionalno)
+    badge_id = 'badge_id_example' # str |  (opcionalno)
+    type = 3.4 # float |  (opcionalno)
+    displayed_on_comments = True # bool |  (opcionalno)
+    limit = 3.4 # float |  (opcionalno)
+    skip = 3.4 # float |  (opcionalno)
 
     try:
-        api_response = api_instance.get_user_badges(tenant_id, user_id=user_id, badge_id=badge_id, type=type, displayed_on_comments=displayed_on_comments, limit=limit, skip=skip)
+        api_response = api_instance.get_user_badges(tenant_id, GetUserBadgesOptions(user_id=user_id, badge_id=badge_id, type=type, displayed_on_comments=displayed_on_comments, limit=limit, skip=skip))
         print("The response of DefaultApi->get_user_badges:\n")
         pprint(api_response)
     except Exception as e:

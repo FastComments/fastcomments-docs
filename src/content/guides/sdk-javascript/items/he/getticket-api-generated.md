@@ -1,21 +1,23 @@
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| id | string | כן |  |
-| userId | string | לא |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| userId | string | No |  |
 
-## תגובה
+## תשובה
 
-מחזיר: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTicketResponse.ts)
+מחזירה: [`GetTicketResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTicketResponse1.ts)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getTicket'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getTicket'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const ticketResponse: GetTicketResponse = await getTicket("fc_tenant_1a2b3c", "TK-20260619-0042", "user_2481");
-const ticketResponseNoUser: GetTicketResponse = await getTicket("fc_tenant_1a2b3c", "TK-20260619-0043");
-[inline-code-end]
+const tenantId: string = "acme-inc";
+const ticketId: string = "ticket-3421";
+const userId: string = "alice.smith";
 
----
+const ticketWithUser: GetTicketResponse1 = await getTicket(tenantId, ticketId, userId);
+const ticketWithoutUser: GetTicketResponse1 = await getTicket(tenantId, ticketId);
+[inline-code-end]

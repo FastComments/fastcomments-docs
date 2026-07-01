@@ -1,10 +1,9 @@
 ## Parametreler
 
-| Name | Type | Required | Description |
+| İsim | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
-| tenantId | string | Evet |  |
-| postIds | seq[string] | Hayır |  |
-| sso | string | Hayır |  |
+| tenantId | string | Yes |  |
+| options | GetUserReactsPublicOptions | No |  |
 
 ## Yanıt
 
@@ -14,12 +13,17 @@ Döndürür: [`Option[UserReactsResponse]`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'getUserReactsPublic Örneği'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
+let opts = GetUserReactsPublicOptions(
+  limit = 20,
+  offset = 0,
+  includeDeleted = false
+)
+
 let (response, httpResponse) = client.getUserReactsPublic(
   tenantId = "my-tenant-123",
-  postIds = @["news/article-2026", "blog/opinion-987"],
-  sso = ""
+  options = opts
 )
+
 if response.isSome:
-  let reacts = response.get()
-  echo "Received user reacts for tenant: ", "my-tenant-123"
+  let userReacts = response.get()
 [inline-code-end]

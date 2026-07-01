@@ -8,7 +8,7 @@
 | userId | string | query | Nee |  |
 | anonUserId | string | query | Nee |  |
 
-## Antwoord
+## Respons
 
 Retourneert: [`VoteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/VoteResponse.swift)
 
@@ -16,7 +16,7 @@ Retourneert: [`VoteResponse`](https://github.com/FastComments/fastcomments-swift
 
 [inline-code-attrs-start title = 'createVote Voorbeeld'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// De volgende codevoorbeelden zijn nog in bèta. Als er een probleem is, meld dit via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De volgende codevoorbeelden zijn nog steeds beta. Voor eventuele problemen, meld deze via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -25,7 +25,7 @@ let direction = "direction_example" // String |
 let userId = "userId_example" // String |  (optioneel)
 let anonUserId = "anonUserId_example" // String |  (optioneel)
 
-DefaultAPI.createVote(tenantId: tenantId, commentId: commentId, direction: direction, userId: userId, anonUserId: anonUserId) { (response, error) in
+DefaultAPI.createVote(tenantId: tenantId, commentId: commentId, direction: direction, options: DefaultAPI.CreateVoteOptions(userId: userId, anonUserId: anonUserId)) { (response, error) in
     guard error == nil else {
         print(error)
         return

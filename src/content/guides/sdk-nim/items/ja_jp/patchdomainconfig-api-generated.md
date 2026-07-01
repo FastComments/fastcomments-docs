@@ -1,10 +1,11 @@
+---
 ## パラメータ
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | はい |  |
-| domainToUpdate | string | いいえ |  |
-| patchDomainConfigParams | PatchDomainConfigParams | いいえ |  |
+| tenantId | string | Yes |  |
+| domainToUpdate | string | No |  |
+| patchDomainConfigParams | PatchDomainConfigParams | No |  |
 
 ## レスポンス
 
@@ -14,23 +15,15 @@
 
 [inline-code-attrs-start title = 'patchDomainConfig の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let patchParams: PatchDomainConfigParams = PatchDomainConfigParams(
-  allowedOrigins = @["https://news.example.com", "https://cdn.news.com"],
-  enableComments = true,
-  moderationRequired = false,
-  maxCommentLength = 2000,
-  primaryDomain = "comments.news-site.com"
-)
-let (response, httpResponse) = client.patchDomainConfig(
+let (optResp, httpResp) = client.patchDomainConfig(
   tenantId = "my-tenant-123",
-  domainToUpdate = "comments.news-site.com",
-  patchDomainConfigParams = patchParams
+  domainToUpdate = "news.mywebsite.com",
+  patchDomainConfigParams = PatchDomainConfigParams()
 )
-if response.isSome:
-  let cfg = response.get()
-  echo "Patched domain config received:", cfg
-else:
-  echo "No response body, HTTP status:", httpResponse.statusCode
+
+if optResp.isSome:
+  let resp = optResp.get()
+  echo resp
 [inline-code-end]
 
 ---

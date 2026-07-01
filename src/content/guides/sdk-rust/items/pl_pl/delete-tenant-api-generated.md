@@ -1,7 +1,7 @@
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
 | tenant_id | String | Tak |  |
 | id | String | Tak |  |
 | sure | String | Nie |  |
@@ -12,18 +12,15 @@ Zwraca: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/b
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład delete_tenant'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_tenant Przykład'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let params: DeleteTenantParams = DeleteTenantParams {
+async fn delete_example(config: &configuration::Configuration) -> Result<(), Error> {
+    let params = DeleteTenantParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "tenant-5f2d".to_string(),
-        sure: Some("confirm".to_string()),
+        id: "news/article".to_string(),
+        sure: Some("true".to_string()),
     };
-    let response: ApiEmptyResponse = delete_tenant(&configuration, params).await?;
-    let _ = response;
+    delete_tenant(config, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

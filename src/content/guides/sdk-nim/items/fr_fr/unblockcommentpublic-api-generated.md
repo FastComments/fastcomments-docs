@@ -1,26 +1,27 @@
 ## Paramètres
 
-| Nom | Type | Requis | Description |
-|------|------|----------|-------------|
+| Name | Type | Obligatoire | Description |
+|------|------|-------------|-------------|
 | tenantId | string | Oui |  |
 | commentId | string | Oui |  |
 | publicBlockFromCommentParams | PublicBlockFromCommentParams | Non |  |
-| sso | string | Non |  |
+| sso | string = "" | Non |  |
 
 ## Réponse
 
-Renvoie: [`Option[UnblockSuccess]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_unblock_success.nim)
+Retourne : [`Option[UnblockSuccess]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_unblock_success.nim)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de unBlockCommentPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.unBlockCommentPublic(tenantId = "my-tenant-123", commentId = "cmt-987654321", publicBlockFromCommentParams = PublicBlockFromCommentParams(), sso = "")
-if response.isSome:
-  let unblockResult = response.get()
-  discard unblockResult
-else:
-  discard httpResponse
-[inline-code-end]
+let (unblockResult, httpResp) = client.unBlockCommentPublic(
+  tenantId = "my-tenant-123",
+  commentId = "comment-7890",
+  publicBlockFromCommentParams = PublicBlockFromCommentParams(),
+  sso = ""
+)
 
----
+if unblockResult.isSome:
+  let result = unblockResult.get()
+[inline-code-end]

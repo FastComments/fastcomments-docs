@@ -1,36 +1,33 @@
-### Ações disponíveis para todos os usuários
+### Ações Disponíveis para Todos os Usuários
 
-- **Denunciar/Remover denúncia** -- denunciar um comentário para revisão
+- **Flag/Unflag** -- denunciar um comentário para revisão
 
 ```swift
 try await sdk.flagComment(commentId: commentId)
 try await sdk.unflagComment(commentId: commentId)
 ```
 
-- **Bloquear/Desbloquear** -- ocultar todos os comentários de um usuário (por visualizador)
+- **Block/Unblock** -- ocultar todos os comentários de um usuário (por visualizador)
 
 ```swift
 try await sdk.blockUser(commentId: commentId)
 try await sdk.unblockUser(commentId: commentId)
 ```
 
-### Ações apenas para administradores
+### Ações Apenas para Administradores
 
-- **Fixar/Desfixar** -- fixar um comentário no topo da thread
+- **Pin/Unpin** -- fixar um comentário no topo da conversa
 
 ```swift
 try await sdk.pinComment(commentId: commentId)
 try await sdk.unpinComment(commentId: commentId)
 ```
 
-- **Bloquear/Desbloquear** -- impedir novas respostas a um comentário
+- **Lock/Unlock** -- impedir novas respostas a um comentário e bloquear edições e exclusões até que seja desbloqueado (aplica-se a todos, incluindo moderadores)
 
 ```swift
 try await sdk.lockComment(commentId: commentId)
 try await sdk.unlockComment(commentId: commentId)
 ```
 
-Todas as ações de moderação também estão disponíveis através do menu de contexto do comentário na interface. As ações de administrador aparecem apenas quando o usuário atual é um administrador do site (definido via SSO `isAdmin` flag ou configuração do painel).
-
----
----
+Todas as ações de moderação também estão disponíveis através do menu de contexto do comentário na interface. As ações de administrador só aparecem quando o usuário atual é um administrador do site (definido via flag SSO `isAdmin` ou configuração do painel).

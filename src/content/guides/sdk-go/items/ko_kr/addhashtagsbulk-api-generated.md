@@ -1,15 +1,14 @@
----
 ## 매개변수
 
-| 이름 | 유형 | 위치 | 필수 | 설명 |
+| 이름 | 타입 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 아니오 |  |
+| tenantId | string | query | 예 |  |
 
 ## 응답
 
 반환: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_bulk_create_hash_tags_response.go)
 
-## 예제
+## 예시
 
 [inline-code-attrs-start title = 'AddHashTagsBulk 예제'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -23,8 +22,8 @@ import (
 )
 
 func main() {
-	tenantId := "tenantId_example" // string |  (선택 사항)
-	bulkCreateHashTagsBody := *openapiclient.NewBulkCreateHashTagsBody([]openapiclient.BulkCreateHashTagsBodyTagsInner{*openapiclient.NewBulkCreateHashTagsBodyTagsInner("Tag_example")}) // BulkCreateHashTagsBody |  (선택 사항)
+	tenantId := "tenantId_example" // string | 
+	bulkCreateHashTagsBody := *openapiclient.NewBulkCreateHashTagsBody([]openapiclient.BulkCreateHashTagsBodyTagsInner{*openapiclient.NewBulkCreateHashTagsBodyTagsInner("Tag_example")}) // BulkCreateHashTagsBody |  (옵션)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

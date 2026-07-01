@@ -1,6 +1,6 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 
@@ -16,20 +16,27 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Конфигуриране на упълномощаване с API ключ: api_key
+// Configure API key authorization: api_key
+// Конфигуриране на оторизация с API ключ: api_key
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Разкоментирайте по-долу, за да зададете префикс (например Bearer) за API ключа, при нужда
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Разкоментирайте по-долу, за да зададете префикс (например Bearer) за API ключа, ако е необходимо
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // Ако искате да използвате персонализиран HTTP клиент, предайте вашия клиент, който имплементира `GuzzleHttp\ClientInterface`.
-    // Това е по избор, по подразбиране ще се използва `GuzzleHttp\Client`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // Това е опционално, `GuzzleHttp\Client` ще се използва по подразбиране.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // тип: string
+
+$tenant_id = 'tenant_id_example'; // string
 $create_tenant_package_body = new \FastComments\Client\Model\CreateTenantPackageBody(); // \FastComments\Client\Model\CreateTenantPackageBody
+
 
 try {
     $result = $apiInstance->createTenantPackage($tenant_id, $create_tenant_package_body);

@@ -1,7 +1,7 @@
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
 | tenantId | string | Tak |  |
 | id | string | Nie |  |
 
@@ -13,12 +13,8 @@ Zwraca: [`Option[GetTenantResponse]`](https://github.com/FastComments/fastcommen
 
 [inline-code-attrs-start title = 'Przykład getTenant'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTenant(tenantId = "my-tenant-123", id = "tenant-789")
-if response.isSome:
-  let tenant = response.get()
-  discard tenant
-else:
-  discard httpResponse
+let (tenantResponse, httpResponse) = client.getTenant(tenantId = "my-tenant-123", id = "config-001")
+if tenantResponse.isSome:
+  let tenant = tenantResponse.get()
+  echo tenant
 [inline-code-end]
-
----

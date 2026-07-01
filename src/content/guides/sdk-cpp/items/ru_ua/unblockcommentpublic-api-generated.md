@@ -1,11 +1,11 @@
 ## Параметры
 
-| Name | Type | Required | Description |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| commentId | string | Да |  |
-| publicBlockFromCommentParams | PublicBlockFromCommentParams | Да |  |
-| sso | string | Нет |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| publicBlockFromCommentParams | PublicBlockFromCommentParams | Yes |  |
+| sso | string | No |  |
 
 ## Ответ
 
@@ -13,21 +13,14 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример unBlockCommentPublic'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'unBlockCommentPublic Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("comment-7890");
-PublicBlockFromCommentParams params;
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
-
-api->unBlockCommentPublic(tenantId, commentId, params, sso)
-.then([](std::shared_ptr<UnblockSuccess> res) {
-    if (!res) res = std::make_shared<UnblockSuccess>();
-    return res;
-})
-.then([](std::shared_ptr<UnblockSuccess> finalResult){
-    (void)finalResult;
-});
+auto blockParams = PublicBlockFromCommentParams();  
+blockParams.reason = U("spam");  
+api->unBlockCommentPublic(  
+    U("my-tenant-123"),  
+    U("comment-789"),  
+    blockParams,  
+    boost::optional<utility::string_t>(U("sso-token-abc"))  
+).then([](std::shared_ptr<UnblockSuccess> result){ });
 [inline-code-end]
-
----

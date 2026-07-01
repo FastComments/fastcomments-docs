@@ -1,25 +1,20 @@
----
 ## Parameters
 
 | Naam | Type | Verplicht | Beschrijving |
-|------|------|----------|-------------|
+|------|------|-----------|--------------|
 | tenantId | string | Ja |  |
 | id | string | Nee |  |
 
 ## Respons
 
-Geeft terug: [`Option[GetSSOUserByIdAPIResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_sso_user_by_id_api_response.nim)
+Retourneert: [`Option[GetSSOUserByIdAPIResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_sso_user_by_id_api_response.nim)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'getSSOUserById Voorbeeld'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSSOUserById(tenantId = "my-tenant-123", id = "user-789")
+let (response, httpResponse) = client.getSSOUserById(tenantId = "my-tenant-123", id = "user-456")
 if response.isSome:
-  let ssoUser: GetSSOUserByIdAPIResponse = response.get()
-  echo "SSO user retrieved: ", $ssoUser
-else:
-  echo "No SSO user found, HTTP status: ", httpResponse.statusCode
+  let userInfo = response.get()
+  discard userInfo
 [inline-code-end]
-
----

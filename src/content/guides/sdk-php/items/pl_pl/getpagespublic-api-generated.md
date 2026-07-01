@@ -1,25 +1,25 @@
-Lista stron dla tenanta. Używane przez klienta desktopowego FChat do wypełnienia jego listy pokoi.
-Wymaga, aby `enableFChat` było ustawione na true w rozwiązanej konfiguracji niestandardowej dla każdej strony.
-Strony wymagające SSO są filtrowane na podstawie dostępu grupowego użytkownika wysyłającego żądanie.
+List pages for a tenant. Used by the FChat desktop client to populate its room list.
+Requires `enableFChat` to be true on the resolved custom config for each page.
+Pages that require SSO are filtered against the requesting user's group access.
 
-## Parametry
+## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Tak |  |
-| cursor | string | query | Nie | Niejawny kursor paginacji zwrócony jako `nextCursor` z wcześniejszego żądania. Powiązany z tym samym `sortBy`. |
-| limit | integer | query | Nie | 1..200, domyślnie 50 |
-| q | string | query | Nie | Opcjonalny filtr prefiksu tytułu niewrażliwy na wielkość liter. |
-| sortBy | string | query | Nie | Kolejność sortowania. `updatedAt` (domyślnie, najnowsze pierwsze), `commentCount` (najwięcej komentarzy pierwsze), lub `title` (alfabetycznie). |
-| hasComments | boolean | query | Nie | Jeśli true, zwróć tylko strony z co najmniej jednym komentarzem. |
+| tenantId | string | path | Yes |  |
+| cursor | string | query | No | Niewidoczny wskaźnik stronicowania zwrócony jako `nextCursor` z poprzedniego żądania. Powiązany z tym samym `sortBy`. |
+| limit | integer | query | No | 1..200, domyślnie 50 |
+| q | string | query | No | Opcjonalny filtr prefiksu tytułu, nie rozróżniający wielkości liter. |
+| sortBy | string | query | No | Kolejność sortowania. `updatedAt` (domyślnie, najnowsze najpierw), `commentCount` (najwięcej komentarzy najpierw) lub `title` (alfabetycznie). |
+| hasComments | boolean | query | No | Jeśli true, zwróć tylko strony z co najmniej jednym komentarzem. |
 
-## Odpowiedź
+## Response
 
-Zwraca: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPublicPagesResponse.php)
+Returns: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPublicPagesResponse.php)
 
-## Przykład
+## Example
 
-[inline-code-attrs-start title = 'Przykład getPagesPublic'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getPagesPublic Przykład'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -27,19 +27,23 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Jeśli chcesz użyć niestandardowego klienta HTTP, przekaż klienta, który implementuje `GuzzleHttp\ClientInterface`.
-    // To jest opcjonalne, jako domyślny zostanie użyty `GuzzleHttp\Client`.
+    // Jeśli chcesz użyć własnego klienta HTTP, przekaż swojego klienta implementującego `GuzzleHttp\ClientInterface`.
+    // To jest opcjonalne, domyślnie używany będzie `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$cursor = 'cursor_example'; // string | Niejawny kursor paginacji zwrócony jako `nextCursor` z wcześniejszego żądania. Powiązany z tym samym `sortBy`.
-$limit = 56; // int | 1..200, domyślnie 50
-$q = 'q_example'; // string | Opcjonalny filtr prefiksu tytułu niewrażliwy na wielkość liter.
-$sort_by = new \FastComments\Client\Model\\FastComments\Client\Model\PagesSortBy(); // \FastComments\Client\Model\PagesSortBy | Kolejność sortowania. `updatedAt` (domyślnie, najnowsze pierwsze), `commentCount` (najwięcej komentarzy pierwsze), lub `title` (alfabetycznie).
-$has_comments = True; // bool | Jeśli true, zwróć tylko strony z co najmniej jednym komentarzem.
+$options = [
+    'cursor' => 'cursor_example', // string | Niewidoczny wskaźnik stronicowania zwrócony jako `nextCursor` z poprzedniego żądania. Powiązany z tym samym `sortBy`.
+    'limit' => 56, // int | 1..200, domyślnie 50
+    'q' => 'q_example', // string | Opcjonalny filtr prefiksu tytułu, nie rozróżniający wielkości liter.
+    'sort_by' => new \FastComments\Client\Model\\FastComments\Client\Model\PagesSortBy(), // \FastComments\Client\Model\PagesSortBy | Kolejność sortowania. `updatedAt` (domyślnie, najnowsze najpierw), `commentCount` (najwięcej komentarzy najpierw) lub `title` (alfabetycznie).
+    'has_comments' => True, // bool | Jeśli true, zwróć tylko strony z co najmniej jednym komentarzem.
+];
+
 
 try {
-    $result = $apiInstance->getPagesPublic($tenant_id, $cursor, $limit, $q, $sort_by, $has_comments);
+    $result = $apiInstance->getPagesPublic($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getPagesPublic: ', $e->getMessage(), PHP_EOL;

@@ -1,7 +1,7 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
+|--------|------|-----------|-----------|-------------|
 | tenantId | string | path | Sí |  |
 | urlId | string | query | Sí |  |
 | broadcastId | string | query | Sí |  |
@@ -14,22 +14,23 @@ Devuelve: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/f
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de create_comment_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo create_comment_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import CreateCommentPublicOptions
 from client.models.comment_data import CommentData
 from client.models.save_comments_response_with_presence import SaveCommentsResponseWithPresence
 from client.rest import ApiException
 from pprint import pprint
 
 # Definir el host es opcional y por defecto es https://fastcomments.com
-# Consulte configuration.py para una lista de todos los parámetros de configuración compatibles.
+# Ver configuration.py para una lista de todos los parámetros de configuración soportados.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Abra un contexto con una instancia del cliente de la API
+# Entrar en un contexto con una instancia del cliente API
 with client.ApiClient(configuration) as api_client:
     # Crear una instancia de la clase API
     api_instance = client.PublicApi(api_client)
@@ -41,7 +42,7 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (opcional)
 
     try:
-        api_response = api_instance.create_comment_public(tenant_id, url_id, broadcast_id, comment_data, session_id=session_id, sso=sso)
+        api_response = api_instance.create_comment_public(tenant_id, url_id, broadcast_id, comment_data, CreateCommentPublicOptions(session_id=session_id, sso=sso))
         print("The response of PublicApi->create_comment_public:\n")
         pprint(api_response)
     except Exception as e:

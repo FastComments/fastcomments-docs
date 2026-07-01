@@ -1,24 +1,23 @@
----
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-------------|
-| tenantId | string | Sim |  |
-| id | string | Sim |  |
+|------|------|-------------|-----------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
 ## Resposta
 
-Retorna: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Retorna: [`DeleteQuestionConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteQuestionConfigResponse.ts)
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de deleteQuestionConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo deleteQuestionConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_4f2b3c';
-const id: string = 'qcfg_9a8b7c';
-const metadataNote: string | undefined = undefined; // metadados opcionais (não exigidos pela função)
-const result: APIEmptyResponse = await deleteQuestionConfig(tenantId, id);
-metadataNote;
+async function runDeletion(): Promise<void> {
+  const tenantId: string = "tenant_8f5a2c9d";
+  const configId: string = "questionConfig_4b7e1f";
+  const deleteResult: DeleteQuestionConfigResponse = await deleteQuestionConfig(tenantId, configId);
+  console.log(deleteResult);
+}
+void runDeletion();
 [inline-code-end]
-
----

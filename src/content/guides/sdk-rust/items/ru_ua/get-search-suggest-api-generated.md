@@ -2,6 +2,7 @@
 
 | Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
+| tenant_id | String | Да |  |
 | text_search | String | Нет |  |
 | sso | String | Нет |  |
 
@@ -11,16 +12,15 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример get_search_suggest'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_search_suggest Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_suggest() -> Result<(), Error> {
-    let params: GetSearchSuggestParams = GetSearchSuggestParams {
-        text_search: Some("news/article: presidential debate highlights".to_string()),
-        sso: Some("acme-corp-tenant".to_string()),
+async fn run_example(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetSearchSuggestParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        text_search: Some("news/article".to_string()),
+        sso: Some("sso-token-123".to_string()),
     };
-    let suggestion: ModerationSuggestResponse = get_search_suggest(&configuration, params).await?;
+    let _response: ModerationSuggestResponse = get_search_suggest(configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

@@ -1,7 +1,8 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Gereklidir | Açıklama |
+| Ad | Tür | Yer | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Evet |  |
 | userId | string | query | Hayır |  |
 | trustFactor | string | query | Hayır |  |
 | sso | string | query | Hayır |  |
@@ -14,14 +15,15 @@ Döndürür: [`SetUserTrustFactorResponse`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'setTrustFactor Örneği'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Aşağıdaki kod örnekleri hâlâ beta aşamasındadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new adresi üzerinden bildirin
+// Aşağıdaki kod örnekleri hâlâ beta durumundadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new adresinden raporlayın
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String |
 let userId = "userId_example" // String |  (isteğe bağlı)
 let trustFactor = "trustFactor_example" // String |  (isteğe bağlı)
 let sso = "sso_example" // String |  (isteğe bağlı)
 
-ModerationAPI.setTrustFactor(userId: userId, trustFactor: trustFactor, sso: sso) { (response, error) in
+ModerationAPI.setTrustFactor(tenantId: tenantId, options: ModerationAPI.SetTrustFactorOptions(userId: userId, trustFactor: trustFactor, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

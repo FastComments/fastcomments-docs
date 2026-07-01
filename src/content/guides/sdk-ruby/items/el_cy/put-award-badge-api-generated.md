@@ -1,12 +1,13 @@
 ## Παράμετροι
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| badgeId | string | query | Ναι |  |
-| userId | string | query | Όχι |  |
-| commentId | string | query | Όχι |  |
-| broadcastId | string | query | Όχι |  |
-| sso | string | query | Όχι |  |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|------------|-----------|
+| tenantId | string | query | Yes |  |
+| badgeId | string | query | Yes |  |
+| userId | string | query | No |  |
+| commentId | string | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Απόκριση
 
@@ -20,21 +21,20 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
-badge_id = 'badge_id_example' # Συμβολοσειρά | 
+tenant_id = 'tenant_id_example' # String | 
+badge_id = 'badge_id_example' # String | 
 opts = {
-  user_id: 'user_id_example', # Συμβολοσειρά | 
-  comment_id: 'comment_id_example', # Συμβολοσειρά | 
-  broadcast_id: 'broadcast_id_example', # Συμβολοσειρά | 
-  sso: 'sso_example' # Συμβολοσειρά | 
+  user_id: 'user_id_example', # String | 
+  comment_id: 'comment_id_example', # String | 
+  broadcast_id: 'broadcast_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.put_award_badge(badge_id, opts)
+  result = api_instance.put_award_badge(tenant_id, badge_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->put_award_badge: #{e}"
 end
 [inline-code-end]
-
----

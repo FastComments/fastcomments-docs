@@ -1,12 +1,12 @@
-Prenesi i promijeni veličinu slike
+Učitaj i promijeni veličinu slike
 
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
 | tenantId | string | path | Da |  |
-| sizePreset | string | query | Ne | Preset veličine: "Default" (1000x1000px) ili "CrossPlatform" (stvara veličine za popularne uređaje) |
-| urlId | string | query | Ne | ID stranice s koje se obavlja prijenos, za konfiguraciju |
+| sizePreset | string | query | Ne | Predefinirani set veličina: \"Default\" (1000x1000px) ili \"CrossPlatform\" (kreira veličine za popularne uređaje) |
+| urlId | string | query | Ne | ID stranice s koju se obavlja upload, za konfiguraciju |
 
 ## Odgovor
 
@@ -22,19 +22,25 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ako želite koristiti prilagođeni http klijent, proslijedite vašeg klijenta koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao zadani.
+    // Ako želite koristiti prilagođeni HTTP klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao zadano.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $file = '/path/to/file.txt'; // \SplFileObject
-$size_preset = new \FastComments\Client\Model\\FastComments\Client\Model\SizePreset(); // \FastComments\Client\Model\SizePreset | Preset veličine: \"Default\" (1000x1000px) ili \"CrossPlatform\" (stvara veličine za popularne uređaje)
-$url_id = 'url_id_example'; // string | ID stranice s koje se obavlja prijenos, za konfiguraciju
+$options = [
+    'size_preset' => new \FastComments\Client\Model\\FastComments\Client\Model\SizePreset(), // \FastComments\Client\Model\SizePreset | Predefinirani set veličina: \"Default\" (1000x1000px) ili \"CrossPlatform\" (kreira veličine za popularne uređaje)
+    'url_id' => 'url_id_example', // string | ID stranice s koju se obavlja upload, za konfiguraciju
+];
+
 
 try {
-    $result = $apiInstance->uploadImage($tenant_id, $file, $size_preset, $url_id);
+    $result = $apiInstance->uploadImage($tenant_id, $file, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->uploadImage: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

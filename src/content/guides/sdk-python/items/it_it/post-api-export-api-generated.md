@@ -1,7 +1,8 @@
 ## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
-|------|------|----------|----------|-------------|
+|------|------|-----------|--------------|-------------|
+| tenantId | string | query | Sì |  |
 | text-search | string | query | No |  |
 | byIPFromComment | string | query | No |  |
 | filters | string | query | No |  |
@@ -15,15 +16,16 @@ Restituisce: [`ModerationExportResponse`](https://github.com/FastComments/fastco
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di post_api_export'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_api_export Esempio'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import PostApiExportOptions
 from client.models.moderation_export_response import ModerationExportResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definire l'host è opzionale e il valore predefinito è https://fastcomments.com
-# Consulta configuration.py per un elenco di tutti i parametri di configurazione supportati.
+# Definire l'host è facoltativo e il valore predefinito è https://fastcomments.com
+# Vedi configuration.py per un elenco di tutti i parametri di configurazione supportati.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -33,6 +35,7 @@ configuration = client.Configuration(
 with client.ApiClient(configuration) as api_client:
     # Crea un'istanza della classe API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     text_search = 'text_search_example' # str |  (opzionale)
     by_ip_from_comment = 'by_ip_from_comment_example' # str |  (opzionale)
     filters = 'filters_example' # str |  (opzionale)
@@ -41,7 +44,7 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (opzionale)
 
     try:
-        api_response = api_instance.post_api_export(text_search=text_search, by_ip_from_comment=by_ip_from_comment, filters=filters, search_filters=search_filters, sorts=sorts, sso=sso)
+        api_response = api_instance.post_api_export(tenant_id, PostApiExportOptions(text_search=text_search, by_ip_from_comment=by_ip_from_comment, filters=filters, search_filters=search_filters, sorts=sorts, sso=sso))
         print("The response of ModerationApi->post_api_export:\n")
         pprint(api_response)
     except Exception as e:

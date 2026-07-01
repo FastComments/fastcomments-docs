@@ -1,6 +1,6 @@
-## פרמטרים
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | כן |  |
 | userId | string | query | לא |  |
@@ -9,15 +9,15 @@
 | viewed | boolean | query | לא |  |
 | type | string | query | לא |  |
 
-## תגובה
+## Response
 
 מחזיר: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetNotificationCountResponse.swift)
 
-## דוגמה
+## Example
 
-[inline-code-attrs-start title = 'דוגמה ל-getNotificationCount'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getNotificationCount דוגמה'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// הדוגמאות לקוד שלהלן עדיין בבטא. לכל בעיה, אנא דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// דגימות הקוד הבאות עדיין במצב בטא. לכל בעיה, אנא דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -27,7 +27,7 @@ let fromCommentId = "fromCommentId_example" // String |  (אופציונלי)
 let viewed = true // Bool |  (אופציונלי)
 let type = "type_example" // String |  (אופציונלי)
 
-DefaultAPI.getNotificationCount(tenantId: tenantId, userId: userId, urlId: urlId, fromCommentId: fromCommentId, viewed: viewed, type: type) { (response, error) in
+DefaultAPI.getNotificationCount(tenantId: tenantId, options: DefaultAPI.GetNotificationCountOptions(userId: userId, urlId: urlId, fromCommentId: fromCommentId, viewed: viewed, type: type)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -38,5 +38,3 @@ DefaultAPI.getNotificationCount(tenantId: tenantId, userId: userId, urlId: urlId
     }
 }
 [inline-code-end]
-
----

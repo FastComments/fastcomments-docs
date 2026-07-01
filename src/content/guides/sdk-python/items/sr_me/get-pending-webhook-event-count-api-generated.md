@@ -1,59 +1,60 @@
-## Параметри
+## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| commentId | string | query | Не |  |
-| externalId | string | query | Не |  |
-| eventType | string | query | Не |  |
-| type | string | query | Не |  |
-| domain | string | query | Не |  |
-| attemptCountGT | number | query | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| commentId | string | query | No |  |
+| externalId | string | query | No |  |
+| eventType | string | query | No |  |
+| type | string | query | No |  |
+| domain | string | query | No |  |
+| attemptCountGT | number | query | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_pending_webhook_event_count_response.py)
+Vraća: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_pending_webhook_event_count_response.py)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'get_pending_webhook_event_count Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_pending_webhook_event_count Primjer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetPendingWebhookEventCountOptions
 from client.models.get_pending_webhook_event_count_response import GetPendingWebhookEventCountResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Подешавање хоста је необавезно и подразумевано је https://fastcomments.com
-# Погледајте configuration.py за листу свих подржаних параметара конфигурације.
+# Definisanje hosta je opciono i podrazumevano je https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клијент мора да подеси параметре аутентификације и ауторизације
-# у складу са политиком безбедности API сервера.
-# Примери за сваки метод аутентикације дати су доле, користите пример који
-# задовољава ваш случај употребе аутентификације.
+# Klijent mora da konfiguriše parametre autentifikacije i autorizacije
+# u skladu sa sigurnosnom politikom API servera.
+# Primeri za svaki metod autentifikacije su dati ispod, koristite primer koji
+# zadovoljava vaš slučaj korišćenja autentifikacije.
 
-# Конфигуришите ауторизацију помоћу API кључа: api_key
+# Konfigurišite autorizaciju API ključa: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Откоментирајте доле да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
+# Otkomentarišite dolje da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Уђите у контекст са инстанцом API клијента
+# Unesite kontekst sa instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Креирајте инстанцу API класе
+    # Kreirajte instancu API klase
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    comment_id = 'comment_id_example' # str |  (необавезно)
-    external_id = 'external_id_example' # str |  (необавезно)
-    event_type = 'event_type_example' # str |  (необавезno)
-    type = 'type_example' # str |  (необавезно)
-    domain = 'domain_example' # str |  (необавезно)
-    attempt_count_gt = 3.4 # float |  (необавезно)
+    comment_id = 'comment_id_example' # str |  (optional)
+    external_id = 'external_id_example' # str |  (optional)
+    event_type = 'event_type_example' # str |  (optional)
+    type = 'type_example' # str |  (optional)
+    domain = 'domain_example' # str |  (optional)
+    attempt_count_gt = 3.4 # float |  (optional)
 
     try:
-        api_response = api_instance.get_pending_webhook_event_count(tenant_id, comment_id=comment_id, external_id=external_id, event_type=event_type, type=type, domain=domain, attempt_count_gt=attempt_count_gt)
+        api_response = api_instance.get_pending_webhook_event_count(tenant_id, GetPendingWebhookEventCountOptions(comment_id=comment_id, external_id=external_id, event_type=event_type, type=type, domain=domain, attempt_count_gt=attempt_count_gt))
         print("The response of DefaultApi->get_pending_webhook_event_count:\n")
         pprint(api_response)
     except Exception as e:

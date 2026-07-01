@@ -1,13 +1,9 @@
 ## Параметры
 
-| Имя | Тип | Обязательно | Описание |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| textSearch | string | Нет |  |
-| byIPFromComment | string | Нет |  |
-| filter | string | Нет |  |
-| searchFilters | string | Нет |  |
-| demo | bool | Нет |  |
-| sso | string | Нет |  |
+| tenantId | string | Yes |  |
+| options | const GetCountOptions& | Yes |  |
 
 ## Ответ
 
@@ -17,25 +13,17 @@
 
 [inline-code-attrs-start title = 'Пример getCount'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t text = U("abusive language");
-utility::string_t ip = U("203.0.113.45");
-utility::string_t filter = U("status:flagged");
-utility::string_t searchFilters = U("platform:mobile");
-utility::string_t sso = U("admin@my-tenant-123.com");
-auto textOpt = boost::optional<utility::string_t>(text);
-auto ipOpt = boost::optional<utility::string_t>(ip);
-auto filterOpt = boost::optional<utility::string_t>(filter);
-auto searchFiltersOpt = boost::optional<utility::string_t>(searchFilters);
-auto demoOpt = boost::optional<bool>(true);
-auto ssoOpt = boost::optional<utility::string_t>(sso);
-api->getCount(textOpt, ipOpt, filterOpt, searchFiltersOpt, demoOpt, ssoOpt)
-.then([](pplx::task<std::shared_ptr<ModerationAPICountCommentsResponse>> t){
-    try {
-        auto resp = t.get();
-        auto finalResp = resp ? resp : std::make_shared<ModerationAPICountCommentsResponse>();
-        (void)finalResp;
-    } catch (...) {}
+utility::string_t tenantId = U("my-tenant-123");
+GetCountOptions options;
+options.userEmail = boost::optional<utility::string_t>(U("user@example.com"));
+options.maxResults = boost::optional<int>(100);
+api->getCount(tenantId, options).then([](pplx::task<std::shared_ptr<ModerationAPICountCommentsResponse>> task){
+    try{
+        auto resp = task.get();
+        auto copy = std::make_shared<ModerationAPICountCommentsResponse>(*resp);
+        std::cout << "Count: " << copy->count << std::endl;
+    }catch(const std::exception& e){
+        std::cerr << "Error: " << e.what() << std::endl;
+    }
 });
 [inline-code-end]
-
----

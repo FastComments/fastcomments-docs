@@ -1,13 +1,11 @@
----
 ## Параметри
 
-| Назва | Тип | Обов'язкове | Опис |
+| Назва | Тип | Обов’язково | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Так |  |
 | commentId | string | Так |  |
 | direction | string | Ні |  |
-| userId | string | Ні |  |
-| anonUserId | string | Ні |  |
+| options | CreateVoteOptions | Ні |  |
 
 ## Відповідь
 
@@ -17,18 +15,14 @@
 
 [inline-code-attrs-start title = 'Приклад createVote'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.createVote(
+let (voteOpt, httpResp) = client.createVote(
   tenantId = "my-tenant-123",
-  commentId = "cmt-987654",
+  commentId = "comment-7890",
   direction = "up",
-  userId = "user-42",
-  anonUserId = ""
+  options = CreateVoteOptions()
 )
-if response.isSome:
-  let vote = response.get()
-  echo "Vote created:", vote
-else:
-  echo "No vote returned"
-[inline-code-end]
 
----
+if voteOpt.isSome:
+  let vote = voteOpt.get()
+  echo vote
+[inline-code-end]

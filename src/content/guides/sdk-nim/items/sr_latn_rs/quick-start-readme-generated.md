@@ -1,6 +1,6 @@
-### Korišćenje autentifikovanih API-ja (DefaultAPI)
+### Korišćenje Autentifikovanih API‑ja (DefaultAPI)
 
-**Važno:** Autentifikovani endpointi zahtevaju da vaš API ključ bude postavljen kao zaglavlje `x-api-key`.
+**Važno:** Autentifikovani krajnji poјaci zahtevaju da vaš API ključ bude postavljen kao `x-api-key` zaglavlje.
 
 ```nim
 import httpclient
@@ -11,24 +11,16 @@ import fastcomments/models/model_comment_data
 let client = newHttpClient()
 client.headers["x-api-key"] = "your-api-key"
 
-# Izvršite autentifikovane API pozive
+# Napravite autentifikovane API pozive.
+# Potrebni parametri (i telo zahteva) su pozicioni; opcioni
+# parametri se prosleđuju putem objekta opcija operacije.
 let (response, httpResponse) = getComments(
   httpClient = client,
   tenantId = "your-tenant-id",
-  page = 0,
-  limit = 0,
-  skip = 0,
-  asTree = false,
-  skipChildren = 0,
-  limitChildren = 0,
-  maxTreeDepth = 0,
-  urlId = "your-url-id",
-  userId = "",
-  anonUserId = "",
-  contextUserId = "",
-  hashTag = "",
-  parentId = "",
-  direction = SortDirections.DESC
+  options = GetCommentsOptions(
+    urlId: "your-url-id",
+    direction: SortDirections.DESC
+  )
 )
 
 if response.isSome:
@@ -37,9 +29,9 @@ if response.isSome:
     echo "Found ", resp.comments.get().len, " comments"
 ```
 
-### Korišćenje javnih API-ja (PublicAPI)
+### Korišćenje javnih API‑ja (PublicAPI)
 
-Javni endpointi ne zahtevaju autentifikaciju:
+Javni krajnji poјaci ne zahtevaju autentifikaciju:
 
 ```nim
 import httpclient
@@ -48,37 +40,15 @@ import fastcomments/apis/api_public
 
 let client = newHttpClient()
 
-# Izvršite javne API pozive
+# Napravite javne API pozive.
+# tenantId i urlId su obavezni (pozicioni); sve ostalo je opciono.
 let (response, httpResponse) = getCommentsPublic(
   httpClient = client,
   tenantId = "your-tenant-id",
   urlId = "your-url-id",
-  page = 0,
-  direction = SortDirections.DESC,
-  sso = "",
-  skip = 0,
-  skipChildren = 0,
-  limit = 0,
-  limitChildren = 0,
-  countChildren = false,
-  fetchPageForCommentId = "",
-  includeConfig = false,
-  countAll = false,
-  includei10n = false,
-  locale = "",
-  modules = "",
-  isCrawler = false,
-  includeNotificationCount = false,
-  asTree = false,
-  maxTreeDepth = 0,
-  useFullTranslationIds = false,
-  parentId = "",
-  searchText = "",
-  hashTags = @[],
-  userId = "",
-  customConfigStr = "",
-  afterCommentId = "",
-  beforeCommentId = ""
+  options = GetCommentsPublicOptions(
+    direction: SortDirections.DESC
+  )
 )
 
 if response.isSome:
@@ -87,9 +57,9 @@ if response.isSome:
     echo "Found ", resp.comments.get().len, " comments"
 ```
 
-### Korišćenje API-ja za moderaciju (ModerationAPI)
+### Korišćenje Moderacionih API‑ja (ModerationAPI)
 
-Moderacijski endpointi pokreću kontrolnu tablu moderatora i autentifikuju se pomoću SSO tokena za moderatora koji deluje:
+Moderacioni krajnji poјaci napajaju moderacijski kontrolni panel i autentifikovani su SSO tokenom za moderatora koji deluje:
 
 ```nim
 import httpclient
@@ -98,18 +68,15 @@ import fastcomments/apis/api_moderation
 
 let client = newHttpClient()
 
-# Prikaži komentare na kontrolnoj tabli moderatora
+# Listajte komentare u moderacionom kontrolnom panelu.
+# Ova operacija nema obavezne parametre, pa je sve opciono.
 let (response, httpResponse) = getApiComments(
   httpClient = client,
-  page = 0,
-  count = 30,
-  textSearch = "",
-  byIPFromComment = "",
-  filters = "",
-  searchFilters = "",
-  sorts = "",
-  demo = false,
-  sso = "your-sso-token"
+  options = GetApiCommentsOptions(
+    count: 30,
+    tenantId: "your-tenant-id",
+    sso: "your-sso-token"
+  )
 )
 
 if response.isSome:
@@ -119,5 +86,5 @@ if response.isSome:
 
 ### Uobičajeni problemi
 
-1. **401 greška autentifikacije**: Uverite se da ste postavili zaglavlje `x-api-key` na vašem HttpClient pre nego što izvršite zahteve DefaultAPI-ja: `client.headers["x-api-key"] = "your-api-key"`
-2. **Pogrešna API klasa**: Koristite `api_default` za autentifikovane zahteve na serverskoj strani, `api_public` za zahteve sa klijentske strane/javne zahteve, i `api_moderation` za zahteve kontrolne table moderatora.
+1. **401 greška autentifikacije**: Proverite da ste postavili `x-api-key` zaglavlje na vaš HttpClient pre slanja DefaultAPI zahteva: `client.headers["x-api-key"] = "your-api-key"`
+2. **Pogrešna API klasa**: Koristite `api_default` za serverske autentifikovane zahteve, `api_public` za klijentske/javne zahteve, i `api_moderation` za zahteve moderacionog kontrolnog panela.

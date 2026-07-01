@@ -1,30 +1,33 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
-| updateTenantPackageBody | UpdateTenantPackageBody | Да |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updateTenantPackageBody | UpdateTenantPackageBody | Yes |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
+Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'updateTenantPackage Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateTenantPackage Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-auto tenantId = utility::string_t(U("my-tenant-123"));
-auto packageId = utility::string_t(U("pkg-987"));
 auto body = std::make_shared<UpdateTenantPackageBody>();
-body->plan = utility::string_t(U("premium"));
-body->seats = boost::optional<int>(50);
-body->expiresAt = boost::optional<utility::string_t>(U("2026-12-31T23:59:59Z"));
-body->contactEmail = boost::optional<utility::string_t>(U("ops@acme-corp.com"));
-api->updateTenantPackage(tenantId, packageId, body)
-.then([](std::shared_ptr<APIEmptyResponse> resp){
-    if(!resp) throw std::runtime_error("Failed to update tenant package");
-});
-[inline-code-end]
+body->packageId = utility::conversions::to_string_t("premium-plan");
+body->expirationDate = utility::conversions::to_string_t("2025-12-31");
+body->notes = boost::optional<utility::string_t>(utility::conversions::to_string_t("Upgraded package"));
 
----
+api->updateTenantPackage(utility::conversions::to_string_t("my-tenant-123"),
+                         utility::conversions::to_string_t("pkg-456"),
+                         body)
+    .then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task) {
+        try {
+            auto response = task.get();
+            // success handling
+        } catch (const std::exception& ex) {
+            // error handling
+        }
+    });
+[inline-code-end]

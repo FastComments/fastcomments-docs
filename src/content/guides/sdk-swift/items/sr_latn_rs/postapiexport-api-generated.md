@@ -1,13 +1,14 @@
-## Parametri
+## Parameters
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Ime | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| text-search | string | query | No |  |
-| byIPFromComment | string | query | No |  |
-| filters | string | query | No |  |
-| searchFilters | string | query | No |  |
-| sorts | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Da |  |
+| text-search | string | query | Ne |  |
+| byIPFromComment | string | query | Ne |  |
+| filters | string | query | Ne |  |
+| searchFilters | string | query | Ne |  |
+| sorts | string | query | Ne |  |
+| sso | string | query | Ne |  |
 
 ## Odgovor
 
@@ -17,17 +18,18 @@ Vraća: [`ModerationExportResponse`](https://github.com/FastComments/fastcomment
 
 [inline-code-attrs-start title = 'postApiExport Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sledeći primeri koda su i dalje u beta fazi. Za bilo koji problem, prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledeći primeri koda su još u beta fazi. Za bilo koji problem, molimo vas da prijavite putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let textSearch = "textSearch_example" // String |  (neobavezno)
-let byIPFromComment = "byIPFromComment_example" // String |  (neobavezno)
-let filters = "filters_example" // String |  (neobavezno)
-let searchFilters = "searchFilters_example" // String |  (neobavezno)
-let sorts = "sorts_example" // String |  (neobavezno)
-let sso = "sso_example" // String |  (neobavezno)
+let tenantId = "tenantId_example" // String | 
+let textSearch = "textSearch_example" // String |  (opcionalno)
+let byIPFromComment = "byIPFromComment_example" // String |  (opcionalno)
+let filters = "filters_example" // String |  (opcionalno)
+let searchFilters = "searchFilters_example" // String |  (opcionalno)
+let sorts = "sorts_example" // String |  (opcionalno)
+let sso = "sso_example" // String |  (opcionalno)
 
-ModerationAPI.postApiExport(textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, sso: sso) { (response, error) in
+ModerationAPI.postApiExport(tenantId: tenantId, options: ModerationAPI.PostApiExportOptions(textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

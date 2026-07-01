@@ -1,15 +1,16 @@
+---
 ## Parameters
 
-| Name | Type | Location | Required | Description |
+| Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | email | string | path | Ja |  |
 
-## Response
+## Respons
 
 Retourneert: [`GetSSOUserByEmailAPIResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetSSOUserByEmailAPIResponse.php)
 
-## Example
+## Voorbeeld
 
 [inline-code-attrs-start title = 'getSSOUserByEmail Voorbeeld'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -17,20 +18,22 @@ Retourneert: [`GetSSOUserByEmailAPIResponse`](https://github.com/FastComments/fa
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configureer API-sleutelautorisatie: api_key
+// Configureer API-sleutel autorisatie: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Haal hieronder de commentaarteken weg om een prefix in te stellen (bijv. Bearer) voor de API-sleutel, indien nodig
+// Haal de commentaar hieronder weg om een prefix (bijv. Bearer) voor de API-sleutel in te stellen, indien nodig
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Als u een aangepaste HTTP-client wilt gebruiken, geef uw client door die `GuzzleHttp\ClientInterface` implementeert.
-    // Dit is optioneel, `GuzzleHttp\Client` wordt standaard gebruikt.
+    // Als je een aangepast http-client wilt gebruiken, geef dan je client door die `GuzzleHttp\ClientInterface` implementeert.
+    // Dit is optioneel, `GuzzleHttp\Client` wordt als standaard gebruikt.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $email = 'email_example'; // string
+
 
 try {
     $result = $apiInstance->getSSOUserByEmail($tenant_id, $email);
@@ -39,3 +42,5 @@ try {
     echo 'Exception when calling DefaultApi->getSSOUserByEmail: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

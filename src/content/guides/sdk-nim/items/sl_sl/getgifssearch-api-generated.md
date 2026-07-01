@@ -1,12 +1,10 @@
 ## Parametri
 
-| Ime | Tip | Zahtevano | Opis |
+| Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | search | string | Ne |  |
-| locale | string | Ne |  |
-| rating | string | Ne |  |
-| page | float64 | Ne |  |
+| options | GetGifsSearchOptions | Ne |  |
 
 ## Odgovor
 
@@ -16,17 +14,9 @@ Vrne: [`Option[GetGifsSearchResponse]`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'Primer getGifsSearch'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getGifsSearch(
-  tenantId = "my-tenant-123",
-  search = "funny cat",
-  locale = "en-US",
-  rating = "PG",
-  page = 1.0
-)
-
-if response.isSome:
-  let gifs = response.get()
-  echo "Fetched GIFs response:", gifs
+let opts = GetGifsSearchOptions(limit = 10, rating = "g")
+let (responseOpt, httpResponse) = client.getGifsSearch(tenantId = "my-tenant-123", search = "funny cats", options = opts)
+if responseOpt.isSome:
+  let resp = responseOpt.get()
+  # uporabi resp po potrebi
 [inline-code-end]
-
----

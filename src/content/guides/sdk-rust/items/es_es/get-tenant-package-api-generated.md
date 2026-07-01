@@ -1,7 +1,8 @@
+---
 ## Parámetros
 
-| Nombre | Tipo | Requerido | Descripción |
-|------|------|----------|-------------|
+| Nombre | Tipo | Obligatorio | Descripción |
+|--------|------|-------------|-------------|
 | tenant_id | String | Sí |  |
 | id | String | Sí |  |
 
@@ -11,16 +12,15 @@ Devuelve: [`GetTenantPackageResponse`](https://github.com/FastComments/fastcomme
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de get_tenant_package'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo get_tenant_package'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_get_tenant_package() -> Result<GetTenantPackageResponse, Error> {
-    let params: GetTenantPackageParams = GetTenantPackageParams {
+async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetTenantPackageParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "pkg-premium-001".to_string(),
-        include_related: Some(true),
+        id: "news/article".to_string(),
     };
-    let response: GetTenantPackageResponse = get_tenant_package(&configuration, params).await?;
-    Ok(response)
+    let _response: GetTenantPackageResponse = get_tenant_package(configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
 

@@ -1,7 +1,8 @@
+---
 ## Параметри
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Назва | Тип | Обов’язковий | Опис |
+|------|------|--------------|------|
 | tenantId | string | Так |  |
 | email | string | Ні |  |
 
@@ -13,12 +14,10 @@
 
 [inline-code-attrs-start title = 'Приклад getSSOUserByEmail'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSSOUserByEmail(tenantId = "my-tenant-123", email = "alice@newsco.com")
-if response.isSome:
-  let ssoUser = response.get()
-  echo "SSO user found: ", ssoUser.email
-else:
-  echo "No SSO user found. HTTP status: ", httpResponse.status
+let (optResp, httpResp) = client.getSSOUserByEmail(tenantId = "my-tenant-123", email = "john.doe@example.com")
+if optResp.isSome:
+  let user = optResp.get()
+  discard user
 [inline-code-end]
 
 ---

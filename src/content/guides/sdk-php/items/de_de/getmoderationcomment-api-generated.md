@@ -1,17 +1,18 @@
-## Parameter
+## Parameters
 
-| Name | Typ | Ort | Erforderlich | Beschreibung |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Ja |  |
-| includeEmail | boolean | query | Nein |  |
-| includeIP | boolean | query | Nein |  |
-| sso | string | query | Nein |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| includeEmail | boolean | query | No |  |
+| includeIP | boolean | query | No |  |
+| sso | string | query | No |  |
 
-## Antwort
+## Response
 
-Gibt zurück: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationAPICommentResponse.php)
+Returns: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationAPICommentResponse.php)
 
-## Beispiel
+## Example
 
 [inline-code-attrs-start title = 'getModerationComment Beispiel'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -21,19 +22,26 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Wenn Sie einen benutzerdefinierten HTTP-Client verwenden möchten, übergeben Sie Ihren Client, der `GuzzleHttp\ClientInterface` implementiert.
+    // Wenn Sie einen benutzerdefinierten HTTP‑Client verwenden möchten, übergeben Sie Ihren Client, der `GuzzleHttp\ClientInterface` implementiert.
     // Dies ist optional, `GuzzleHttp\Client` wird standardmäßig verwendet.
     new GuzzleHttp\Client()
 );
-$comment_id = 'comment_id_example'; // string
-$include_email = True; // bool
-$include_ip = True; // bool
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // Zeichenkette
+$comment_id = 'comment_id_example'; // Zeichenkette
+$options = [
+    'include_email' => True, // bool
+    'include_ip' => True, // bool
+    'sso' => 'sso_example', // Zeichenkette
+];
+
 
 try {
-    $result = $apiInstance->getModerationComment($comment_id, $include_email, $include_ip, $sso);
+    $result = $apiInstance->getModerationComment($tenant_id, $comment_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getModerationComment: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

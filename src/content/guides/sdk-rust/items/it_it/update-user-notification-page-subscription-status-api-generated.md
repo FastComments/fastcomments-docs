@@ -1,15 +1,15 @@
-Abilita o disabilita le notifiche per una pagina. Quando gli utenti sono iscritti a una pagina, vengono create notifiche
-per i nuovi commenti di primo livello, e anche
+Enable or disable notifications for a page. When users are subscribed to a page, notifications are created
+for new root comments, and also
 
 ## Parametri
 
 | Nome | Tipo | Obbligatorio | Descrizione |
 |------|------|--------------|-------------|
-| tenant_id | String | Sì |  |
-| url_id | String | Sì |  |
-| url | String | Sì |  |
-| page_title | String | Sì |  |
-| subscribed_or_unsubscribed | String | Sì |  |
+| tenant_id | String | Yes |  |
+| url_id | String | Yes |  |
+| url | String | Yes |  |
+| page_title | String | Yes |  |
+| subscribed_or_unsubscribed | String | Yes |  |
 | sso | String | No |  |
 
 ## Risposta
@@ -18,19 +18,19 @@ Restituisce: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://gi
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio update_user_notification_page_subscription_status'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio di update_user_notification_page_subscription_status'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example() -> Result<UpdateUserNotificationPageSubscriptionStatusResponse, Error> {
-    let params: UpdateUserNotificationPageSubscriptionStatusParams = UpdateUserNotificationPageSubscriptionStatusParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        url_id: "news/rocket-launch-2026".to_string(),
-        url: "https://acme.example.com/news/rocket-launch-2026".to_string(),
-        page_title: "Acme Rocket Launch — June 2026".to_string(),
-        subscribed_or_unsubscribed: "subscribed".to_string(),
-        sso: Some("user:alice@acme.com".to_string()),
+    let params = UpdateUserNotificationPageSubscriptionStatusParams {
+        tenant_id: "acme-corp-tenant".to_owned(),
+        url_id: "news-article-2024".to_owned(),
+        url: "https://news.example.com/articles/rust".to_owned(),
+        page_title: "Rust Dominates the Programming World".to_owned(),
+        subscribed_or_unsubscribed: "subscribed".to_owned(),
+        sso: Some("sso-token-abc".to_owned()),
     };
-    let response: UpdateUserNotificationPageSubscriptionStatusResponse =
-        update_user_notification_page_subscription_status(&configuration, params).await?;
-    Ok(response)
+    update_user_notification_page_subscription_status(&configuration, params).await
 }
 [inline-code-end]
+
+---

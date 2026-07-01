@@ -1,30 +1,32 @@
-## Параметри
+## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
-| updateTenantUserBody | UpdateTenantUserBody | Да |  |
-| updateComments | string | Не |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Da |  |
+| id | string | Da |  |
+| updateTenantUserBody | UpdateTenantUserBody | Da |  |
+| updateComments | string | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Vraća: [`UpdateTenantUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateTenantUserResponse.ts)
 
-## Примјер
+## Primer
 
-[inline-code-attrs-start title = 'Примјер позива updateTenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateTenantUser Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_8f4a2b7c";
-const id: string = "user_74d9c1a3";
-const updateTenantUserBody: UpdateTenantUserBody = {
-  email: "jane.doe@acme-corp.com",
-  displayName: "Jane Doe",
-  roles: ["moderator"],
-  active: true
+let tenantId: string = "5f8f8c1a2e9b3c001c2a9b2d";
+let userId: string = "user_98765";
+
+let updateBody: UpdateTenantUserBody = {
+  email: "jane.smith@example.com",
+  role: "moderator",
+  isActive: false,
 };
-const updateComments: string = "Promoted to moderator for customer support";
-const response: APIEmptyResponse = await updateTenantUser(tenantId, id, updateTenantUserBody, updateComments);
+
+let updateComments: string = "Deactivated user due to policy violation.";
+
+let result: UpdateTenantUserResponse = await updateTenantUser(tenantId, userId, updateBody, updateComments);
 [inline-code-end]
 
 ---

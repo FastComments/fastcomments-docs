@@ -2,17 +2,17 @@ req
 tenantId
 afterId
 
-## Параметри
+## Параметri
 
 | Име | Тип | Местоположение | Задължително | Описание |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| afterId | string | query | Не |  |
-| limit | integer | query | Не |  |
-| tags | array | query | Не |  |
-| sso | string | query | Не |  |
-| isCrawler | boolean | query | Не |  |
-| includeUserInfo | boolean | query | Не |  |
+|------|------|----------------|--------------|----------|
+| tenantId | string | path | Yes |  |
+| afterId | string | query | No |  |
+| limit | integer | query | No |  |
+| tags | array | query | No |  |
+| sso | string | query | No |  |
+| isCrawler | boolean | query | No |  |
+| includeUserInfo | boolean | query | No |  |
 
 ## Отговор
 
@@ -22,18 +22,18 @@ afterId
 
 [inline-code-attrs-start title = 'getFeedPostsPublic Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следните примери с код все още са в бета. За всеки проблем, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следващите примерни кодове все още са бета. При каквито и да е проблеми, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let afterId = "afterId_example" // String |  (незадължително)
-let limit = 987 // Int |  (незадължително)
-let tags = ["inner_example"] // [String] |  (незадължително)
-let sso = "sso_example" // String |  (незадължително)
-let isCrawler = true // Bool |  (незадължително)
-let includeUserInfo = true // Bool |  (незадължително)
+let afterId = "afterId_example" // String |  (optional)
+let limit = 987 // Int |  (optional)
+let tags = ["inner_example"] // [String] |  (optional)
+let sso = "sso_example" // String |  (optional)
+let isCrawler = true // Bool |  (optional)
+let includeUserInfo = true // Bool |  (optional)
 
-PublicAPI.getFeedPostsPublic(tenantId: tenantId, afterId: afterId, limit: limit, tags: tags, sso: sso, isCrawler: isCrawler, includeUserInfo: includeUserInfo) { (response, error) in
+PublicAPI.getFeedPostsPublic(tenantId: tenantId, options: PublicAPI.GetFeedPostsPublicOptions(afterId: afterId, limit: limit, tags: tags, sso: sso, isCrawler: isCrawler, includeUserInfo: includeUserInfo)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -44,3 +44,5 @@ PublicAPI.getFeedPostsPublic(tenantId: tenantId, afterId: afterId, limit: limit,
     }
 }
 [inline-code-end]
+
+---

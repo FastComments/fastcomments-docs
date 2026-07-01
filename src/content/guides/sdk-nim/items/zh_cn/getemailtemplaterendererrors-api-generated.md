@@ -1,7 +1,7 @@
 ---
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | id | string | 否 |  |
@@ -15,12 +15,18 @@
 
 [inline-code-attrs-start title = 'getEmailTemplateRenderErrors 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getEmailTemplateRenderErrors(tenantId = "my-tenant-123", id = "", skip = 0.0)
-if response.isSome:
-  let templateErrors = response.get()
-  discard templateErrors
+let (optResp, httpResp) = client.getEmailTemplateRenderErrors(
+  tenantId = "my-tenant-123",
+  id = "welcome-template",
+  skip = 0.0
+)
+
+if optResp.isSome:
+  let resp = optResp.get()
+  # 根据需要使用 resp
 else:
-  discard httpResponse
+  # 处理缺失的响应
+  discard
 [inline-code-end]
 
 ---

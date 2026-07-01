@@ -1,19 +1,19 @@
-## 매개변수
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| 이름 | 타입 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | namespace | string | path | 예 |  |
 | component | string | path | 예 |  |
 | locale | string | query | 아니오 |  |
 | useFullTranslationIds | boolean | query | 아니오 |  |
 
-## 응답
+## Response
 
 반환: [`GetTranslationsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTranslationsResponse.php)
 
-## 예제
+## Example
 
-[inline-code-attrs-start title = 'getTranslations 예제'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTranslations 예시'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -21,19 +21,25 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // 사용자 지정 HTTP 클라이언트를 사용하려면 `GuzzleHttp\ClientInterface`를 구현하는 클라이언트를 전달하세요.
-    // 이는 선택 사항입니다. 기본적으로 `GuzzleHttp\Client`가 사용됩니다.
+    // 사용자 지정 HTTP 클라이언트를 사용하려면 `GuzzleHttp\ClientInterface`를 구현하는 클라이언트를 전달하십시오.
+    // 이는 선택 사항이며, 기본값으로 `GuzzleHttp\Client`가 사용됩니다.
     new GuzzleHttp\Client()
 );
-$namespace = 'namespace_example'; // 문자열
-$component = 'component_example'; // 문자열
-$locale = 'locale_example'; // 문자열
-$use_full_translation_ids = True; // 부울
+
+$namespace = 'namespace_example'; // string
+$component = 'component_example'; // string
+$options = [
+    'locale' => 'locale_example', // string
+    'use_full_translation_ids' => True, // bool
+];
+
 
 try {
-    $result = $apiInstance->getTranslations($namespace, $component, $locale, $use_full_translation_ids);
+    $result = $apiInstance->getTranslations($namespace, $component, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getTranslations: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

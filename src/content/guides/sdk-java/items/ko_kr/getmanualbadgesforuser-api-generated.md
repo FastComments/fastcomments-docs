@@ -1,10 +1,11 @@
 ## 매개변수
 
-| Name | Type | Location | Required | Description |
+| 이름 | 타입 | 위치 | 필요 | 설명 |
 |------|------|----------|----------|-------------|
-| badgesUserId | string | query | 아니오 |  |
-| commentId | string | query | 아니오 |  |
-| sso | string | query | 아니오 |  |
+| tenantId | string | query | Yes |  |
+| badgesUserId | string | query | No |  |
+| commentId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## 응답
 
@@ -14,7 +15,7 @@
 
 [inline-code-attrs-start title = 'getManualBadgesForUser 예제'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 클래스 임포트:
+// 클래스 가져오기:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -27,11 +28,12 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
-    String badgesUserId = "badgesUserId_example"; // 문자열 | 
-    String commentId = "commentId_example"; // 문자열 | 
-    String sso = "sso_example"; // 문자열 | 
+    String tenantId = "tenantId_example"; // String | 
+    String badgesUserId = "badgesUserId_example"; // String | 
+    String commentId = "commentId_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
-      GetUserManualBadgesResponse result = apiInstance.getManualBadgesForUser()
+      GetUserManualBadgesResponse result = apiInstance.getManualBadgesForUser(tenantId)
             .badgesUserId(badgesUserId)
             .commentId(commentId)
             .sso(sso)

@@ -1,9 +1,8 @@
----
-啟用或停用特定評論的通知。
+Enable or disable notifications for a specific comment.
 
 ## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | notificationId | string | path | Yes |  |
@@ -13,7 +12,7 @@
 
 ## 回應
 
-回傳： [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationCommentSubscriptionStatusResponse.php)
+返回：[`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationCommentSubscriptionStatusResponse.php)
 
 ## 範例
 
@@ -25,15 +24,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // 如果要使用自訂的 HTTP 用戶端，傳入實作了 `GuzzleHttp\ClientInterface` 的用戶端。
+    // 如果您想使用自訂的 HTTP 客戶端，傳遞實作 `GuzzleHttp\ClientInterface` 的客戶端。
     // 這是可選的，預設會使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$notification_id = 'notification_id_example'; // string
-$opted_in_or_out = 'opted_in_or_out_example'; // string
-$comment_id = 'comment_id_example'; // string
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // 字串
+$notification_id = 'notification_id_example'; // 字串
+$opted_in_or_out = 'opted_in_or_out_example'; // 字串
+$comment_id = 'comment_id_example'; // 字串
+$sso = 'sso_example'; // 字串
+
 
 try {
     $result = $apiInstance->updateUserNotificationCommentSubscriptionStatus($tenant_id, $notification_id, $opted_in_or_out, $comment_id, $sso);
@@ -42,5 +43,3 @@ try {
     echo 'Exception when calling PublicApi->updateUserNotificationCommentSubscriptionStatus: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

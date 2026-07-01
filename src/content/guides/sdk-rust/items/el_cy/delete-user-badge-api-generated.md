@@ -1,24 +1,24 @@
-## Παράμετροι
+## Parameters
 
-| Name | Type | Required | Description |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
-| tenant_id | String | Ναι |  |
-| id | String | Ναι |  |
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
 
-## Απόκριση
+## Response
 
 Επιστρέφει: [`ApiEmptySuccessResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_success_response.rs)
 
-## Παράδειγμα
+## Example
 
-[inline-code-attrs-start title = 'Παράδειγμα delete_user_badge'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_user_badge Παράδειγμα'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: DeleteUserBadgeParams = DeleteUserBadgeParams {
-    tenant_id: "acme-newsroom-tenant".to_string(),
-    id: "badge-moderator-001".to_string(),
-};
-let include_related: Option<bool> = Some(false);
-let result: ApiEmptySuccessResponse = delete_user_badge(&configuration, params).await?;
+async fn remove_badge(config: &configuration::Configuration) -> Result<(), Error> {
+    let params: DeleteUserBadgeParams = DeleteUserBadgeParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "badge-abcde".to_string(),
+    };
+    let _ = delete_user_badge(config, params).await?;
+    Ok(())
+}
 [inline-code-end]
-
----

@@ -1,14 +1,9 @@
 ## パラメータ
 
-| 名前 | 型 | 必須 | 説明 |
+| 名前 | タイプ | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | はい |  |
-| afterId | string | いいえ |  |
-| afterCreatedAt | int64 | いいえ |  |
-| unreadOnly | bool | いいえ |  |
-| dmOnly | bool | いいえ |  |
-| noDm | bool | いいえ |  |
-| sso | string | いいえ |  |
+| tenantId | string | Yes |  |
+| options | ResetUserNotificationsOptions | No |  |
 
 ## レスポンス
 
@@ -18,20 +13,9 @@
 
 [inline-code-attrs-start title = 'resetUserNotifications の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.resetUserNotifications(
+let (maybeResp, httpResp) = client.resetUserNotifications(
   tenantId = "my-tenant-123",
-  afterId = "",
-  afterCreatedAt = 0'i64,
-  unreadOnly = false,
-  dmOnly = false,
-  noDm = false,
-  sso = ""
-)
-if response.isSome:
-  let resetResp = response.get()
-  echo "ResetUserNotificationsResponse received"
-else:
-  echo "No ResetUserNotificationsResponse"
+  options = ResetUserNotificationsOptions())
+if maybeResp.isSome:
+  let resp = maybeResp.get()
 [inline-code-end]
-
----

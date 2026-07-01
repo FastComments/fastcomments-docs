@@ -14,13 +14,13 @@ Returns: [`DeleteSubscriptionApiResponse`](https://github.com/FastComments/fastc
 
 [inline-code-attrs-start title = 'delete_subscription Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_delete_subscription() -> Result<DeleteSubscriptionApiResponse, Error> {
-    let params: DeleteSubscriptionParams = DeleteSubscriptionParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        id: "sub-newsletter-daily".to_string(),
-        user_id: Some("user_12345".to_string()),
+async fn run() -> Result<(), Error> {
+    let params = DeleteSubscriptionParams {
+        tenant_id: "acme-corp".to_string(),
+        id: "sub-2024-09".to_string(),
+        user_id: Some("user-42".to_string()),
     };
-    let response: DeleteSubscriptionApiResponse = delete_subscription(&configuration, params).await?;
-    Ok(response)
+    let _response = delete_subscription(&config, params).await?;
+    Ok(())
 }
 [inline-code-end]

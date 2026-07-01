@@ -12,27 +12,28 @@ Returnerer: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ph
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på deleteModerator'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteModerator Eksempel'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Konfigurer API-nøgleautorisering: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Konfigurer API-nøgle autorisation: api_key
+// Fjern kommentar på nedenstående for at opsætte præfiks (f.eks. Bearer) til API-nøglen, hvis nødvendigt
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Hvis du vil bruge en brugerdefineret http-klient, angiv din klient, som implementerer `GuzzleHttp\ClientInterface`.
+    // Hvis du vil bruge en brugerdefineret http-klient, skal du sende din klient, som implementerer `GuzzleHttp\ClientInterface`.
     // Dette er valgfrit, `GuzzleHttp\Client` vil blive brugt som standard.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
 $send_email = 'send_email_example'; // string
+
 
 try {
     $result = $apiInstance->deleteModerator($tenant_id, $id, $send_email);

@@ -1,33 +1,33 @@
-Les commentateurs précédents sur la page qui NE sont PAS actuellement en ligne. Triés par displayName.
-Utilisez ceci après avoir épuisé /users/online pour afficher une section "Membres".
-Pagination par curseur sur commenterName : le serveur parcourt l'index partiel {tenantId, urlId, commenterName} à partir de afterName vers l'avant via $gt, sans coût de $skip.
+Past commentateurs sur la page QUI NE sont PAS en ligne actuellement. Triés par displayName.  
+Utilisez ceci après avoir épuisé /users/online pour afficher une section « Membres ».  
+Pagination par curseur sur commenterName : le serveur parcourt le fragment partiel {tenantId, urlId, commenterName} à partir de afterName vers l’avant via $gt, sans coût $skip.
 
-## Paramètres
+## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Oui |  |
-| urlId | string | query | Oui | Identifiant de l'URL de la page (nettoyé côté serveur). |
-| afterName | string | query | Non | Curseur : transmettre nextAfterName de la réponse précédente. |
-| afterUserId | string | query | Non | Départage du curseur : transmettre nextAfterUserId de la réponse précédente. Requis lorsque afterName est défini afin que les entrées en cas d'égalité de noms ne soient pas perdues. |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes | Identifiant d’URL de page (nettoyé côté serveur). |
+| afterName | string | query | No | Curseur : transmettez nextAfterName de la réponse précédente. |
+| afterUserId | string | query | No | Critère de rupture d’égalité du curseur : transmettez nextAfterUserId de la réponse précédente. Requis lorsque afterName est défini afin que les égalités de nom ne suppriment pas d’entrées. |
 
-## Réponse
+## Response
 
-Renvoie : [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PageUsersOfflineResponse.swift)
+Returns: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PageUsersOfflineResponse.swift)
 
-## Exemple
+## Example
 
-[inline-code-attrs-start title = 'Exemple de getOfflineUsers'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getOfflineUsers'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Les exemples de code suivants sont toujours en version bêta. Pour tout problème, veuillez signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Les exemples de code suivants sont encore en version bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let urlId = "urlId_example" // String | Identifiant de l'URL de la page (nettoyé côté serveur).
-let afterName = "afterName_example" // String | Curseur : transmettre nextAfterName de la réponse précédente. (optionnel)
-let afterUserId = "afterUserId_example" // String | Départage du curseur : transmettre nextAfterUserId de la réponse précédente. Requis lorsque afterName est défini afin que les entrées en cas d'égalité de noms ne soient pas perdues. (optionnel)
+let urlId = "urlId_example" // String | Identifiant d’URL de page (nettoyé côté serveur).
+let afterName = "afterName_example" // String | Curseur : transmettez nextAfterName de la réponse précédente. (optionnel)
+let afterUserId = "afterUserId_example" // String | Critère de rupture d’égalité du curseur : transmettez nextAfterUserId de la réponse précédente. Requis lorsque afterName est défini afin que les égalités de nom ne suppriment pas d’entrées. (optionnel)
 
-PublicAPI.getOfflineUsers(tenantId: tenantId, urlId: urlId, afterName: afterName, afterUserId: afterUserId) { (response, error) in
+PublicAPI.getOfflineUsers(tenantId: tenantId, urlId: urlId, options: PublicAPI.GetOfflineUsersOptions(afterName: afterName, afterUserId: afterUserId)) { (response, error) in
     guard error == nil else {
         print(error)
         return

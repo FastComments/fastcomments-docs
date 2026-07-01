@@ -2,7 +2,7 @@
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Hayır |  |
+| tenantId | string | query | Yes |  |
 
 ## Yanıt
 
@@ -18,32 +18,30 @@ from client.models.create_hash_tag_response import CreateHashTagResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Sunucu host'unu tanımlamak isteğe bağlıdır ve varsayılan değer https://fastcomments.com
-# Tüm desteklenen yapılandırma parametrelerinin bir listesi için configuration.py dosyasına bakın.
+# Ana bilgisayarın tanımlanması isteğe bağlıdır ve varsayılan olarak https://fastcomments.com adresine ayarlıdır
+# configuration.py dosyasında desteklenen tüm yapılandırma parametrelerinin bir listesi bulunur.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# İstemci, kimlik doğrulama ve yetkilendirme parametrelerini
-# API sunucusunun güvenlik politikasına göre yapılandırmalıdır.
-# Her kimlik doğrulama yöntemi için örnekler aşağıda verilmiştir, kullanım durumunuza
-# uyan örneği kullanın.
+# İstemci, API sunucusunun güvenlik politikasına uygun olarak kimlik doğrulama ve yetkilendirme parametrelerini yapılandırmalıdır.
+# Aşağıda her kimlik doğrulama yöntemi için örnekler verilmiştir; kimlik doğrulama kullanım durumunuza uyan örneği kullanın.
 
-# Configure API key authorization: api_key
+# API anahtarı yetkilendirmesini yapılandır: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
 # Gerekirse API anahtarı için önek (ör. Bearer) ayarlamak için aşağıdaki satırın yorumunu kaldırın
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API istemcisi örneği ile bir bağlama girin
+# API istemcisi örneğiyle bir bağlam girin
 with client.ApiClient(configuration) as api_client:
-    # API sınıfından bir örnek oluşturun
+    # API sınıfının bir örneğini oluştur
     api_instance = client.DefaultApi(api_client)
-    tenant_id = 'tenant_id_example' # str |  (isteğe bağlı)
+    tenant_id = 'tenant_id_example' # str | 
     create_hash_tag_body = client.CreateHashTagBody() # CreateHashTagBody |  (isteğe bağlı)
 
     try:
-        api_response = api_instance.add_hash_tag(tenant_id=tenant_id, create_hash_tag_body=create_hash_tag_body)
+        api_response = api_instance.add_hash_tag(tenant_id, create_hash_tag_body)
         print("The response of DefaultApi->add_hash_tag:\n")
         pprint(api_response)
     except Exception as e:

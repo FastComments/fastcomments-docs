@@ -2,8 +2,8 @@
 
 | Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| createAPISSOUserData | CreateAPISSOUserData | Не |  |
+| tenantId | string | Yes |  |
+| createAPISSOUserData | CreateAPISSOUserData | No |  |
 
 ## Отговор
 
@@ -13,22 +13,7 @@
 
 [inline-code-attrs-start title = 'Пример за addSSOUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.addSSOUser(
-  tenantId = "my-tenant-123",
-  createAPISSOUserData = CreateAPISSOUserData(
-    id = "sso-456",
-    email = "alice.johnson@newsorg.com",
-    name = "Alice Johnson",
-    roles = @["editor", "contributor"],
-    isActive = true,
-    isAdmin = false
-  )
-)
-if response.isSome:
-  let apiResp = response.get()
-  discard apiResp
-else:
-  discard httpResponse
+let (optResp, httpResp) = client.addSSOUser(tenantId = "my-tenant-123", createAPISSOUserData = CreateAPISSOUserData())
+if optResp.isSome:
+  let userResp = optResp.get()
 [inline-code-end]
-
----

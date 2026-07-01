@@ -1,14 +1,14 @@
 ## Parametre
 
-| Navn | Type | Placering | Påkrævet | Beskrivelse |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| commentId | string | query | Nej |  |
-| externalId | string | query | Nej |  |
-| eventType | string | query | Nej |  |
-| type | string | query | Nej |  |
-| domain | string | query | Nej |  |
-| attemptCountGT | number | query | Nej |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | query | No |  |
+| externalId | string | query | No |  |
+| eventType | string | query | No |  |
+| type | string | query | No |  |
+| domain | string | query | No |  |
+| attemptCountGT | number | query | No |  |
 
 ## Svar
 
@@ -18,7 +18,7 @@ Returnerer: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComme
 
 [inline-code-attrs-start title = 'getPendingWebhookEventCount Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Følgende kodeeksempler er stadig i beta. For eventuelle problemer, rapportér venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De følgende kodeeksempler er stadig i beta. For eventuelle problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -29,7 +29,7 @@ let type = "type_example" // String |  (valgfri)
 let domain = "domain_example" // String |  (valgfri)
 let attemptCountGT = 987 // Double |  (valgfri)
 
-DefaultAPI.getPendingWebhookEventCount(tenantId: tenantId, commentId: commentId, externalId: externalId, eventType: eventType, type: type, domain: domain, attemptCountGT: attemptCountGT) { (response, error) in
+DefaultAPI.getPendingWebhookEventCount(tenantId: tenantId, options: DefaultAPI.GetPendingWebhookEventCountOptions(commentId: commentId, externalId: externalId, eventType: eventType, type: type, domain: domain, attemptCountGT: attemptCountGT)) { (response, error) in
     guard error == nil else {
         print(error)
         return

@@ -1,23 +1,25 @@
-## Параметри
+## Parameters
 
-| Назив | Тип | Локација | Обавезно | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| sso | string | query | Не |  |
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
-## Одговор
+## Response
 
-Враћа: [`APIModerateGetUserBanPreferencesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIModerateGetUserBanPreferencesResponse.swift)
+Returns: [`APIModerateGetUserBanPreferencesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIModerateGetUserBanPreferencesResponse.swift)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'getUserBanPreference Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getUserBanPreference'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи примери кода су још у бета фази. За било какав проблем, пријавите га на http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledeći uzorci koda su i dalje beta. Za bilo koji problem, prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let sso = "sso_example" // String |  (опционо)
+let tenantId = "tenantId_example" // String | 
+let sso = "sso_example" // String |  (opcionalno)
 
-ModerationAPI.getUserBanPreference(sso: sso) { (response, error) in
+ModerationAPI.getUserBanPreference(tenantId: tenantId, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -28,5 +30,3 @@ ModerationAPI.getUserBanPreference(sso: sso) { (response, error) in
     }
 }
 [inline-code-end]
-
----

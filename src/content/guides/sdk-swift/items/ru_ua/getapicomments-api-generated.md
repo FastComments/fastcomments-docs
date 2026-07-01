@@ -1,39 +1,41 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| page | number | query | Нет |  |
-| count | number | query | Нет |  |
-| text-search | string | query | Нет |  |
-| byIPFromComment | string | query | Нет |  |
-| filters | string | query | Нет |  |
-| searchFilters | string | query | Нет |  |
-| sorts | string | query | Нет |  |
-| demo | boolean | query | Нет |  |
-| sso | string | query | Нет |  |
+| tenantId | string | query | Так |  |
+| page | number | query | Ні |  |
+| count | number | query | Ні |  |
+| text-search | string | query | Ні |  |
+| byIPFromComment | string | query | Ні |  |
+| filters | string | query | Ні |  |
+| searchFilters | string | query | Ні |  |
+| sorts | string | query | Ні |  |
+| demo | boolean | query | Ні |  |
+| sso | string | query | Ні |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationAPIGetCommentsResponse.swift)
+Повертає: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationAPIGetCommentsResponse.swift)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример getApiComments'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад getApiComments'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие примеры кода всё ещё в бета-версии. В случае проблем, пожалуйста, сообщите через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наведені приклади коду ще в бета-версії. Якщо виникнуть проблеми, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let page = 987 // Double |  (необязательно)
-let count = 987 // Double |  (необязательно)
-let textSearch = "textSearch_example" // String |  (необязательно)
-let byIPFromComment = "byIPFromComment_example" // String |  (необязательно)
-let filters = "filters_example" // String |  (необязательно)
-let searchFilters = "searchFilters_example" // String |  (необязательно)
-let sorts = "sorts_example" // String |  (необязательно)
-let demo = true // Bool |  (необязательно)
-let sso = "sso_example" // String |  (необязательно)
+let tenantId = "tenantId_example" // String | 
+let page = 987 // Double |  (необов’язковий)
+let count = 987 // Double |  (необов’язковий)
+let textSearch = "textSearch_example" // String |  (необов’язковий)
+let byIPFromComment = "byIPFromComment_example" // String |  (необов’язковий)
+let filters = "filters_example" // String |  (необов’язковий)
+let searchFilters = "searchFilters_example" // String |  (необов’язковий)
+let sorts = "sorts_example" // String |  (необов’язковий)
+let demo = true // Bool |  (необов’язковий)
+let sso = "sso_example" // String |  (необов’язковий)
 
-ModerationAPI.getApiComments(page: page, count: count, textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, demo: demo, sso: sso) { (response, error) in
+ModerationAPI.getApiComments(tenantId: tenantId, options: ModerationAPI.GetApiCommentsOptions(page: page, count: count, textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, demo: demo, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -44,3 +46,5 @@ ModerationAPI.getApiComments(page: page, count: count, textSearch: textSearch, b
     }
 }
 [inline-code-end]
+
+---

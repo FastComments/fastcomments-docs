@@ -1,17 +1,17 @@
-Перечисляет страницы для тенанта. Используется десктоп-клиентом FChat для заполнения списка комнат.
-Требует, чтобы в разрешённой пользовательской конфигурации для каждой страницы `enableFChat` имел значение true.
-Страницы, требующие SSO, фильтруются с учётом группового доступа запрашивающего пользователя.
+List pages for a tenant. Used by the FChat desktop client to populate its room list.  
+Requires `enableFChat` to be true on the resolved custom config for each page.  
+Pages that require SSO are filtered against the requesting user's group access.
 
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| cursor | string | query | Нет | Непрозрачный курсор постраничной навигации, возвращённый как `nextCursor` в предыдущем запросе. Привязан к тому же `sortBy`. |
-| limit | integer | query | Нет | 1..200, по умолчанию 50 |
-| q | string | query | Нет | Необязательный регистронезависимый фильтр по префиксу заголовка. |
-| sortBy | string | query | Нет | Порядок сортировки. `updatedAt` (по умолчанию, сначала новейшие), `commentCount` (сначала страницы с наибольшим количеством комментариев), или `title` (в алфавитном порядке). |
-| hasComments | boolean | query | Нет | Если true, возвращать только страницы с хотя бы одним комментарием. |
+| tenantId | string | path | Yes |  |
+| cursor | string | query | No | Непрозрачный курсор пагинации, возвращённый как `nextCursor` из предыдущего запроса. Связан с тем же `sortBy`. |
+| limit | integer | query | No | 1..200, default 50 |
+| q | string | query | No | Необязательный регистронезависимый фильтр префикса заголовка. |
+| sortBy | string | query | No | Порядок сортировки. `updatedAt` (по умолчанию, новейшие первыми), `commentCount` (сначала страницы с наибольшим числом комментариев) или `title` (в алфавитном порядке). |
+| hasComments | boolean | query | No | Если true, возвращаются только страницы, содержащие хотя бы один комментарий. |
 
 ## Ответ
 
@@ -26,22 +26,28 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new FastComments\Client\Api\PublicApi(
-    // Если вы хотите использовать собственный HTTP-клиент, передайте клиент, который реализует `GuzzleHttp\ClientInterface`.
+// $apiInstance = new FastComments\Client\Api\PublicApi(
+    // Если вы хотите использовать собственный HTTP‑клиент, передайте свой клиент, реализующий `GuzzleHttp\ClientInterface`.
     // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$cursor = 'cursor_example'; // string | Непрозрачный курсор постраничной навигации, возвращённый как `nextCursor` в предыдущем запросе. Привязан к тому же `sortBy`.
-$limit = 56; // int | 1..200, по умолчанию 50
-$q = 'q_example'; // string | Необязательный регистронезависимый фильтр по префиксу заголовка.
-$sort_by = new \FastComments\Client\Model\\FastComments\Client\Model\PagesSortBy(); // \FastComments\Client\Model\PagesSortBy | Порядок сортировки. `updatedAt` (по умолчанию, сначала новейшие), `commentCount` (сначала страницы с наибольшим количеством комментариев), или `title` (в алфавитном порядке).
-$has_comments = True; // bool | Если true, возвращать только страницы с хотя бы одним комментарием.
+$options = [
+    'cursor' => 'cursor_example', // string | Непрозрачный курсор пагинации, возвращённый как `nextCursor` из предыдущего запроса. Связан с тем же `sortBy`.
+    'limit' => 56, // int | 1..200, default 50
+    'q' => 'q_example', // string | Необязательный регистронезависимый фильтр префикса заголовка.
+    'sort_by' => new \FastComments\Client\Model\\FastComments\Client\Model\PagesSortBy(), // \FastComments\Client\Model\PagesSortBy | Порядок сортировки. `updatedAt` (по умолчанию, новейшие первыми), `commentCount` (сначала страницы с наибольшим числом комментариев) или `title` (в алфавитном порядке).
+    'has_comments' => True, // bool | Если true, возвращаются только страницы, содержащие хотя бы один комментарий.
+];
+
 
 try {
-    $result = $apiInstance->getPagesPublic($tenant_id, $cursor, $limit, $q, $sort_by, $has_comments);
+    $result = $apiInstance->getPagesPublic($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getPagesPublic: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

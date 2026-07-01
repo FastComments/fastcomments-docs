@@ -1,7 +1,7 @@
 <a name="documentation-for-api-endpoints"></a>
-## Documentation pour les points de terminaison API
+## Documentation des points d’API
 
-Toutes les URI sont relatives à *https://fastcomments.com*
+All URIs are relative to *https://fastcomments.com*
 
 | Classe | Méthode | Requête HTTP | Description |
 |------------ | ------------- | ------------- | -------------|
@@ -10,7 +10,7 @@ Toutes les URI sont relatives à *https://fastcomments.com*
 *DefaultApi* | [**addHashTagsBulk**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/DefaultApi.md#addHashTagsBulk) | **POST** /api/v1/hash-tags/bulk |  |
 *DefaultApi* | [**addPage**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/DefaultApi.md#addPage) | **POST** /api/v1/pages |  |
 *DefaultApi* | [**addSSOUser**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/DefaultApi.md#addSSOUser) | **POST** /api/v1/sso-users |  |
-*DefaultApi* | [**aggregate**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/DefaultApi.md#aggregate) | **POST** /api/v1/aggregate | Agrège les documents en les regroupant (si groupBy est fourni) et en appliquant plusieurs opérations. Différentes opérations (par exemple sum, countDistinct, avg, etc.) sont prises en charge. |
+*DefaultApi* | [**aggregate**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/DefaultApi.md#aggregate) | **POST** /api/v1/aggregate | Agrège les documents en les regroupant (si `groupBy` est fourni) et en appliquant plusieurs opérations. Différentes opérations (par ex. somme, `countDistinct`, moyenne, etc.) sont prises en charge. |
 *DefaultApi* | [**aggregateQuestionResults**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/DefaultApi.md#aggregateQuestionResults) | **GET** /api/v1/question-results-aggregation |  |
 *DefaultApi* | [**blockUserFromComment**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/DefaultApi.md#blockUserFromComment) | **POST** /api/v1/comments/{id}/block |  |
 *DefaultApi* | [**bulkAggregateQuestionResults**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/DefaultApi.md#bulkAggregateQuestionResults) | **POST** /api/v1/question-results-aggregation/bulk |  |
@@ -119,49 +119,49 @@ Toutes les URI sont relatives à *https://fastcomments.com*
 *DefaultApi* | [**updateTenantPackage**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/DefaultApi.md#updateTenantPackage) | **PATCH** /api/v1/tenant-packages/{id} |  |
 *DefaultApi* | [**updateTenantUser**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/DefaultApi.md#updateTenantUser) | **PATCH** /api/v1/tenant-users/{id} |  |
 *DefaultApi* | [**updateUserBadge**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/DefaultApi.md#updateUserBadge) | **PUT** /api/v1/user-badges/{id} |  |
-| *ModerationApi* | [**deleteModerationVote**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#deleteModerationVote) | **DELETE** /auth/my-account/moderate-comments/vote/{commentId}/{voteId} |  |
-*ModerationApi* | [**getApiComments**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getApiComments) | **GET** /auth/my-account/moderate-comments/api/comments |  |
-*ModerationApi* | [**getApiExportStatus**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getApiExportStatus) | **GET** /auth/my-account/moderate-comments/api/export/status |  |
-*ModerationApi* | [**getApiIds**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getApiIds) | **GET** /auth/my-account/moderate-comments/api/ids |  |
-*ModerationApi* | [**getBanUsersFromComment**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getBanUsersFromComment) | **GET** /auth/my-account/moderate-comments/ban-users/from-comment/{commentId} |  |
-*ModerationApi* | [**getCommentBanStatus**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getCommentBanStatus) | **GET** /auth/my-account/moderate-comments/get-comment-ban-status/{commentId} |  |
-*ModerationApi* | [**getCommentChildren**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getCommentChildren) | **GET** /auth/my-account/moderate-comments/comment-children/{commentId} |  |
-*ModerationApi* | [**getCount**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getCount) | **GET** /auth/my-account/moderate-comments/count |  |
-*ModerationApi* | [**getCounts**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getCounts) | **GET** /auth/my-account/moderate-comments/banned-users/counts |  |
-*ModerationApi* | [**getLogs**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getLogs) | **GET** /auth/my-account/moderate-comments/logs/{commentId} |  |
-*ModerationApi* | [**getManualBadges**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getManualBadges) | **GET** /auth/my-account/moderate-comments/get-manual-badges |  |
-*ModerationApi* | [**getManualBadgesForUser**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getManualBadgesForUser) | **GET** /auth/my-account/moderate-comments/get-manual-badges-for-user |  |
-*ModerationApi* | [**getModerationComment**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getModerationComment) | **GET** /auth/my-account/moderate-comments/comment/{commentId} |  |
-*ModerationApi* | [**getModerationCommentText**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getModerationCommentText) | **GET** /auth/my-account/moderate-comments/get-comment-text/{commentId} |  |
-*ModerationApi* | [**getPreBanSummary**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getPreBanSummary) | **GET** /auth/my-account/moderate-comments/pre-ban-summary/{commentId} |  |
-*ModerationApi* | [**getSearchCommentsSummary**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getSearchCommentsSummary) | **GET** /auth/my-account/moderate-comments/search/comments/summary |  |
-*ModerationApi* | [**getSearchPages**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getSearchPages) | **GET** /auth/my-account/moderate-comments/search/pages |  |
-*ModerationApi* | [**getSearchSites**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getSearchSites) | **GET** /auth/my-account/moderate-comments/search/sites |  |
-*ModerationApi* | [**getSearchSuggest**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getSearchSuggest) | **GET** /auth/my-account/moderate-comments/search/suggest |  |
-*ModerationApi* | [**getSearchUsers**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getSearchUsers) | **GET** /auth/my-account/moderate-comments/search/users |  |
-*ModerationApi* | [**getTrustFactor**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getTrustFactor) | **GET** /auth/my-account/moderate-comments/get-trust-factor |  |
-*ModerationApi* | [**getUserBanPreference**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getUserBanPreference) | **GET** /auth/my-account/moderate-comments/user-ban-preference |  |
-*ModerationApi* | [**getUserInternalProfile**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getUserInternalProfile) | **GET** /auth/my-account/moderate-comments/get-user-internal-profile |  |
-*ModerationApi* | [**postAdjustCommentVotes**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#postAdjustCommentVotes) | **POST** /auth/my-account/moderate-comments/adjust-comment-votes/{commentId} |  |
-*ModerationApi* | [**postApiExport**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#postApiExport) | **POST** /auth/my-account/moderate-comments/api/export |  |
-*ModerationApi* | [**postBanUserFromComment**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#postBanUserFromComment) | **POST** /auth/my-account/moderate-comments/ban-user/from-comment/{commentId} |  |
-*ModerationApi* | [**postBanUserUndo**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#postBanUserUndo) | **POST** /auth/my-account/moderate-comments/ban-user/undo |  |
-*ModerationApi* | [**postBulkPreBanSummary**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#postBulkPreBanSummary) | **POST** /auth/my-account/moderate-comments/bulk-pre-ban-summary |  |
-*ModerationApi* | [**postCommentsByIds**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#postCommentsByIds) | **POST** /auth/my-account/moderate-comments/comments-by-ids |  |
-*ModerationApi* | [**postFlagComment**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#postFlagComment) | **POST** /auth/my-account/moderate-comments/flag-comment/{commentId} |  |
-*ModerationApi* | [**postRemoveComment**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#postRemoveComment) | **POST** /auth/my-account/moderate-comments/remove-comment/{commentId} |  |
-*ModerationApi* | [**postRestoreDeletedComment**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#postRestoreDeletedComment) | **POST** /auth/my-account/moderate-comments/restore-deleted-comment/{commentId} |  |
-*ModerationApi* | [**postSetCommentApprovalStatus**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#postSetCommentApprovalStatus) | **POST** /auth/my-account/moderate-comments/set-comment-approval-status/{commentId} |  |
-*ModerationApi* | [**postSetCommentReviewStatus**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#postSetCommentReviewStatus) | **POST** /auth/my-account/moderate-comments/set-comment-review-status/{commentId} |  |
-*ModerationApi* | [**postSetCommentSpamStatus**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#postSetCommentSpamStatus) | **POST** /auth/my-account/moderate-comments/set-comment-spam-status/{commentId} |  |
-*ModerationApi* | [**postSetCommentText**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#postSetCommentText) | **POST** /auth/my-account/moderate-comments/set-comment-text/{commentId} |  |
-*ModerationApi* | [**postUnFlagComment**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#postUnFlagComment) | **POST** /auth/my-account/moderate-comments/un-flag-comment/{commentId} |  |
-*ModerationApi* | [**postVote**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#postVote) | **POST** /auth/my-account/moderate-comments/vote/{commentId} |  |
-*ModerationApi* | [**putAwardBadge**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#putAwardBadge) | **PUT** /auth/my-account/moderate-comments/award-badge |  |
-*ModerationApi* | [**putCloseThread**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#putCloseThread) | **PUT** /auth/my-account/moderate-comments/close-thread |  |
-*ModerationApi* | [**putRemoveBadge**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#putRemoveBadge) | **PUT** /auth/my-account/moderate-comments/remove-badge |  |
-*ModerationApi* | [**putReopenThread**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#putReopenThread) | **PUT** /auth/my-account/moderate-comments/reopen-thread |  |
-*ModerationApi* | [**setTrustFactor**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#setTrustFactor) | **PUT** /auth/my-account/moderate-comments/set-trust-factor |  |
+| *ModerationApi* | [**deleteModerationVote**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#deleteModerationVote) | **DELETE** /auth/my-account/moderate-comments/mod_api/vote/{commentId}/{voteId} |  |
+*ModerationApi* | [**getApiComments**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getApiComments) | **GET** /auth/my-account/moderate-comments/mod_api/api/comments |  |
+*ModerationApi* | [**getApiExportStatus**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getApiExportStatus) | **GET** /auth/my-account/moderate-comments/mod_api/api/export/status |  |
+*ModerationApi* | [**getApiIds**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getApiIds) | **GET** /auth/my-account/moderate-comments/mod_api/api/ids |  |
+*ModerationApi* | [**getBanUsersFromComment**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getBanUsersFromComment) | **GET** /auth/my-account/moderate-comments/mod_api/ban-users/from-comment/{commentId} |  |
+*ModerationApi* | [**getCommentBanStatus**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getCommentBanStatus) | **GET** /auth/my-account/moderate-comments/mod_api/get-comment-ban-status/{commentId} |  |
+*ModerationApi* | [**getCommentChildren**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getCommentChildren) | **GET** /auth/my-account/moderate-comments/mod_api/comment-children/{commentId} |  |
+*ModerationApi* | [**getCount**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getCount) | **GET** /auth/my-account/moderate-comments/mod_api/count |  |
+*ModerationApi* | [**getCounts**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getCounts) | **GET** /auth/my-account/moderate-comments/banned-users/mod_api/counts |  |
+*ModerationApi* | [**getLogs**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getLogs) | **GET** /auth/my-account/moderate-comments/mod_api/logs/{commentId} |  |
+*ModerationApi* | [**getManualBadges**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getManualBadges) | **GET** /auth/my-account/moderate-comments/mod_api/get-manual-badges |  |
+*ModerationApi* | [**getManualBadgesForUser**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getManualBadgesForUser) | **GET** /auth/my-account/moderate-comments/mod_api/get-manual-badges-for-user |  |
+*ModerationApi* | [**getModerationComment**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getModerationComment) | **GET** /auth/my-account/moderate-comments/mod_api/comment/{commentId} |  |
+*ModerationApi* | [**getModerationCommentText**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getModerationCommentText) | **GET** /auth/my-account/moderate-comments/mod_api/get-comment-text/{commentId} |  |
+*ModerationApi* | [**getPreBanSummary**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getPreBanSummary) | **GET** /auth/my-account/moderate-comments/mod_api/pre-ban-summary/{commentId} |  |
+*ModerationApi* | [**getSearchCommentsSummary**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getSearchCommentsSummary) | **GET** /auth/my-account/moderate-comments/mod_api/search/comments/summary |  |
+*ModerationApi* | [**getSearchPages**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getSearchPages) | **GET** /auth/my-account/moderate-comments/mod_api/search/pages |  |
+*ModerationApi* | [**getSearchSites**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getSearchSites) | **GET** /auth/my-account/moderate-comments/mod_api/search/sites |  |
+*ModerationApi* | [**getSearchSuggest**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getSearchSuggest) | **GET** /auth/my-account/moderate-comments/mod_api/search/suggest |  |
+*ModerationApi* | [**getSearchUsers**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getSearchUsers) | **GET** /auth/my-account/moderate-comments/mod_api/search/users |  |
+*ModerationApi* | [**getTrustFactor**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getTrustFactor) | **GET** /auth/my-account/moderate-comments/mod_api/get-trust-factor |  |
+*ModerationApi* | [**getUserBanPreference**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getUserBanPreference) | **GET** /auth/my-account/moderate-comments/mod_api/user-ban-preference |  |
+*ModerationApi* | [**getUserInternalProfile**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#getUserInternalProfile) | **GET** /auth/my-account/moderate-comments/mod_api/get-user-internal-profile |  |
+*ModerationApi* | [**postAdjustCommentVotes**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#postAdjustCommentVotes) | **POST** /auth/my-account/moderate-comments/mod_api/adjust-comment-votes/{commentId} |  |
+*ModerationApi* | [**postApiExport**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#postApiExport) | **POST** /auth/my-account/moderate-comments/mod_api/api/export |  |
+*ModerationApi* | [**postBanUserFromComment**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#postBanUserFromComment) | **POST** /auth/my-account/moderate-comments/mod_api/ban-user/from-comment/{commentId} |  |
+*ModerationApi* | [**postBanUserUndo**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#postBanUserUndo) | **POST** /auth/my-account/moderate-comments/mod_api/ban-user/undo |  |
+*ModerationApi* | [**postBulkPreBanSummary**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#postBulkPreBanSummary) | **POST** /auth/my-account/moderate-comments/mod_api/bulk-pre-ban-summary |  |
+*ModerationApi* | [**postCommentsByIds**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#postCommentsByIds) | **POST** /auth/my-account/moderate-comments/mod_api/comments-by-ids |  |
+*ModerationApi* | [**postFlagComment**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#postFlagComment) | **POST** /auth/my-account/moderate-comments/mod_api/flag-comment/{commentId} |  |
+*ModerationApi* | [**postRemoveComment**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#postRemoveComment) | **POST** /auth/my-account/moderate-comments/mod_api/remove-comment/{commentId} |  |
+*ModerationApi* | [**postRestoreDeletedComment**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#postRestoreDeletedComment) | **POST** /auth/my-account/moderate-comments/mod_api/restore-deleted-comment/{commentId} |  |
+*ModerationApi* | [**postSetCommentApprovalStatus**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#postSetCommentApprovalStatus) | **POST** /auth/my-account/moderate-comments/mod_api/set-comment-approval-status/{commentId} |  |
+*ModerationApi* | [**postSetCommentReviewStatus**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#postSetCommentReviewStatus) | **POST** /auth/my-account/moderate-comments/mod_api/set-comment-review-status/{commentId} |  |
+*ModerationApi* | [**postSetCommentSpamStatus**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#postSetCommentSpamStatus) | **POST** /auth/my-account/moderate-comments/mod_api/set-comment-spam-status/{commentId} |  |
+*ModerationApi* | [**postSetCommentText**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#postSetCommentText) | **POST** /auth/my-account/moderate-comments/mod_api/set-comment-text/{commentId} |  |
+*ModerationApi* | [**postUnFlagComment**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#postUnFlagComment) | **POST** /auth/my-account/moderate-comments/mod_api/un-flag-comment/{commentId} |  |
+*ModerationApi* | [**postVote**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#postVote) | **POST** /auth/my-account/moderate-comments/mod_api/vote/{commentId} |  |
+*ModerationApi* | [**putAwardBadge**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#putAwardBadge) | **PUT** /auth/my-account/moderate-comments/mod_api/award-badge |  |
+*ModerationApi* | [**putCloseThread**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#putCloseThread) | **PUT** /auth/my-account/moderate-comments/mod_api/close-thread |  |
+*ModerationApi* | [**putRemoveBadge**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#putRemoveBadge) | **PUT** /auth/my-account/moderate-comments/mod_api/remove-badge |  |
+*ModerationApi* | [**putReopenThread**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#putReopenThread) | **PUT** /auth/my-account/moderate-comments/mod_api/reopen-thread |  |
+*ModerationApi* | [**setTrustFactor**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/ModerationApi.md#setTrustFactor) | **PUT** /auth/my-account/moderate-comments/mod_api/set-trust-factor |  |
 | *PublicApi* | [**blockFromCommentPublic**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/PublicApi.md#blockFromCommentPublic) | **POST** /block-from-comment/{commentId} |  |
 *PublicApi* | [**checkedCommentsForBlocked**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/PublicApi.md#checkedCommentsForBlocked) | **GET** /check-blocked-comments |  |
 *PublicApi* | [**createCommentPublic**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/PublicApi.md#createCommentPublic) | **POST** /comments/{tenantId} |  |
@@ -185,15 +185,15 @@ Toutes les URI sont relatives à *https://fastcomments.com*
 *PublicApi* | [**getGifsSearch**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/PublicApi.md#getGifsSearch) | **GET** /gifs/search/{tenantId} |  |
 *PublicApi* | [**getGifsTrending**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/PublicApi.md#getGifsTrending) | **GET** /gifs/trending/{tenantId} |  |
 *PublicApi* | [**getGlobalEventLog**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/PublicApi.md#getGlobalEventLog) | **GET** /event-log/global/{tenantId} |  req tenantId urlId userIdWS |
-*PublicApi* | [**getOfflineUsers**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/PublicApi.md#getOfflineUsers) | **GET** /pages/{tenantId}/users/offline | Commentateurs passés sur la page qui ne sont PAS actuellement en ligne. Triés par displayName. Utilisez ceci après avoir parcouru /users/online pour afficher une section « Membres ». Pagination par curseur sur commenterName : le serveur parcourt l'index partiel {tenantId, urlId, commenterName} de afterName vers l’avant via $gt, sans coût $skip. |
-*PublicApi* | [**getOnlineUsers**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/PublicApi.md#getOnlineUsers) | **GET** /pages/{tenantId}/users/online | Personnes actuellement en ligne sur une page : personnes dont la session websocket est actuellement abonnée à la page. Retourne anonCount + totalCount (abonnés à la salle, incluant les utilisateurs anonymes qui ne sont pas énumérés). |
-*PublicApi* | [**getPagesPublic**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/PublicApi.md#getPagesPublic) | **GET** /pages/{tenantId} | Liste les pages pour un locataire. Utilisé par le client de bureau FChat pour remplir sa liste de salles. Nécessite que `enableFChat` soit défini à true dans la configuration personnalisée résolue pour chaque page. Les pages nécessitant SSO sont filtrées selon les groupes de l'utilisateur demandeur. |
+*PublicApi* | [**getOfflineUsers**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/PublicApi.md#getOfflineUsers) | **GET** /pages/{tenantId}/users/offline | Commentateurs antérieurs sur la page QUI NE sont PAS actuellement en ligne. Triés par `displayName`. Utilisez ceci après avoir épuisé `/users/online` pour générer une section « Membres ». Pagination par curseur sur `commenterName` : le serveur parcourt l’index partiel `{tenantId, urlId, commenterName}` depuis `afterName` via `$gt`, sans coût `$skip`. |
+*PublicApi* | [**getOnlineUsers**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/PublicApi.md#getOnlineUsers) | **GET** /pages/{tenantId}/users/online | Spectateurs actuellement en ligne d’une page : personnes dont la session websocket est abonnée à la page en ce moment. Retourne `anonCount` + `totalCount` (abonnés à la salle, y compris les visiteurs anonymes que nous n’énumérons pas). |
+*PublicApi* | [**getPagesPublic**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/PublicApi.md#getPagesPublic) | **GET** /pages/{tenantId} | Liste les pages d’un locataire. Utilisé par le client de bureau FChat pour remplir sa liste de salles. Nécessite que `enableFChat` soit vrai dans la configuration personnalisée résolue pour chaque page. Les pages qui requièrent le SSO sont filtrées selon le groupe d’accès de l’utilisateur demandeur. |
 *PublicApi* | [**getTranslations**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/PublicApi.md#getTranslations) | **GET** /translations/{namespace}/{component} |  |
 *PublicApi* | [**getUserNotificationCount**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/PublicApi.md#getUserNotificationCount) | **GET** /user-notifications/get-count |  |
 *PublicApi* | [**getUserNotifications**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/PublicApi.md#getUserNotifications) | **GET** /user-notifications |  |
 *PublicApi* | [**getUserPresenceStatuses**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/PublicApi.md#getUserPresenceStatuses) | **GET** /user-presence-status |  |
 *PublicApi* | [**getUserReactsPublic**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/PublicApi.md#getUserReactsPublic) | **GET** /feed-posts/{tenantId}/user-reacts |  |
-*PublicApi* | [**getUsersInfo**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/PublicApi.md#getUsersInfo) | **GET** /pages/{tenantId}/users/info | Informations utilisateur en masse pour un locataire. Données les userIds, retourne les informations d’affichage de User / SSOUser. Utilisé par le widget de commentaires pour enrichir les utilisateurs apparus suite à un événement de présence. Pas de contexte de page : la confidentialité est appliquée uniformément (profils privés masqués). |
+*PublicApi* | [**getUsersInfo**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/PublicApi.md#getUsersInfo) | **GET** /pages/{tenantId}/users/info | Informations utilisateur en masse pour un locataire. Étant donné des `userIds`, retourne les informations d’affichage provenant de `User` / `SSOUser`. Utilisé par le widget de commentaire pour enrichir les utilisateurs qui viennent d’apparaître via un événement de présence. Aucun contexte de page : la confidentialité est appliquée uniformément (les profils privés sont masqués). |
 *PublicApi* | [**getV1PageLikes**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/PublicApi.md#getV1PageLikes) | **GET** /page-reacts/v1/likes/{tenantId} |  |
 *PublicApi* | [**getV2PageReactUsers**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/PublicApi.md#getV2PageReactUsers) | **GET** /page-reacts/v2/{tenantId}/list |  |
 *PublicApi* | [**getV2PageReacts**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/PublicApi.md#getV2PageReacts) | **GET** /page-reacts/v2/{tenantId} |  |
@@ -210,14 +210,13 @@ Toutes les URI sont relatives à *https://fastcomments.com*
 *PublicApi* | [**unPinComment**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/PublicApi.md#unPinComment) | **POST** /comments/{tenantId}/{commentId}/unpin |  |
 *PublicApi* | [**updateFeedPostPublic**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/PublicApi.md#updateFeedPostPublic) | **PUT** /feed-posts/{tenantId}/{postId} |  |
 *PublicApi* | [**updateUserNotificationCommentSubscriptionStatus**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/PublicApi.md#updateUserNotificationCommentSubscriptionStatus) | **POST** /user-notifications/{notificationId}/mark-opted/{optedInOrOut} | Activer ou désactiver les notifications pour un commentaire spécifique. |
-*PublicApi* | [**updateUserNotificationPageSubscriptionStatus**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/PublicApi.md#updateUserNotificationPageSubscriptionStatus) | **POST** /user-notifications/set-subscription-state/{subscribedOrUnsubscribed} | Activer ou désactiver les notifications pour une page. Lorsque les utilisateurs sont abonnés à une page, des notifications sont créées pour les nouveaux commentaires racine, ainsi que |
+*PublicApi* | [**updateUserNotificationPageSubscriptionStatus**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/PublicApi.md#updateUserNotificationPageSubscriptionStatus) | **POST** /user-notifications/set-subscription-state/{subscribedOrUnsubscribed} | Activer ou désactiver les notifications pour une page. Lorsque les utilisateurs sont abonnés à une page, des notifications sont créées pour les nouveaux commentaires racine, et aussi |
 *PublicApi* | [**updateUserNotificationStatus**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/PublicApi.md#updateUserNotificationStatus) | **POST** /user-notifications/{notificationId}/mark/{newStatus} |  |
 *PublicApi* | [**uploadImage**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/PublicApi.md#uploadImage) | **POST** /upload-image/{tenantId} | Télécharger et redimensionner une image |
 *PublicApi* | [**voteComment**](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Apis/PublicApi.md#voteComment) | **POST** /comments/{tenantId}/{commentId}/vote |  |
 
-
 <a name="documentation-for-models"></a>
-## Documentation des Modèles
+## Documentation des modèles
 
  - [APIAuditLog](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Models/APIAuditLog.md)
  - [APIBanUserChangeLog](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Models/APIBanUserChangeLog.md)
@@ -322,31 +321,4 @@ Toutes les URI sont relatives à *https://fastcomments.com*
  - [CreateHashTagResponse](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Models/CreateHashTagResponse.md)
  - [CreateModeratorBody](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Models/CreateModeratorBody.md)
  - [CreateModeratorResponse](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Models/CreateModeratorResponse.md)
- - [CreateQuestionConfigBody](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Models/CreateQuestionConfigBody.md)
- - [CreateQuestionConfigResponse](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Models/CreateQuestionConfigResponse.md)
- - [CreateQuestionResultBody](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Models/CreateQuestionResultBody.md)
- - [CreateQuestionResultResponse](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Models/CreateQuestionResultResponse.md)
- - [CreateSubscriptionAPIResponse](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Models/CreateSubscriptionAPIResponse.md)
- - [CreateTenantBody](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Models/CreateTenantBody.md)
- - [CreateTenantPackageBody](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Models/CreateTenantPackageBody.md)
- - [CreateTenantPackageResponse](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Models/CreateTenantPackageResponse.md)
- - [CreateTenantResponse](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Models/CreateTenantResponse.md)
- - [CreateTenantUserBody](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Models/CreateTenantUserBody.md)
- - [CreateTenantUserResponse](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Models/CreateTenantUserResponse.md)
- - [CreateTicketBody](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Models/CreateTicketBody.md)
- - [CreateTicketResponse](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Models/CreateTicketResponse.md)
- - [CreateUserBadgeParams](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Models/CreateUserBadgeParams.md)
- - [CreateV1PageReact](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Models/CreateV1PageReact.md)
- - [CustomConfigParameters](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Models/CustomConfigParameters.md)
- - [CustomEmailTemplate](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Models/CustomEmailTemplate.md)
- - [DeleteCommentAction](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Models/DeleteCommentAction.md)
- - [DeleteCommentResult](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Models/DeleteCommentResult.md)
- - [DeleteDomainConfigResponse](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Models/DeleteDomainConfigResponse.md)
- - [DeleteFeedPostPublicResponse](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Models/DeleteFeedPostPublicResponse.md)
- - [DeleteHashTagRequestBody](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Models/DeleteHashTagRequestBody.md)
- - [DeletePageAPIResponse](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Models/DeletePageAPIResponse.md)
- - [DeleteSSOUserAPIResponse](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Models/DeleteSSOUserAPIResponse.md)
- - [DeleteSubscriptionAPIResponse](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Models/DeleteSubscriptionAPIResponse.md)
- - [DeletedCommentResultComment](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Models/DeletedCommentResultComment.md)
- - [DigestEmailFrequency](https://github.com/FastComments/fastcomments-nim/blob/master/docs/Models/DigestEmailFrequency.md)
- - [EmailTemplateDefinition](
+ - [

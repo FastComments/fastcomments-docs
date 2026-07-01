@@ -1,6 +1,6 @@
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
+| Ime | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | createHashTagBody | CreateHashTagBody | Ne |  |
@@ -13,16 +13,13 @@ Vraća: [`Option[CreateHashTagResponse]`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'addHashTag Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.addHashTag(tenantId = "my-tenant-123",
-  createHashTagBody = CreateHashTagBody(name = "Breaking News",
-    slug = "breaking-news",
-    description = "Major breaking news items",
-    color = "#ff0000",
-    isTrending = true,
-    aliases = @["breaking", "news"]))
-if response.isSome:
-  let created = response.get()
-  echo created
+let (hashTagOpt, httpResp) = client.addHashTag(
+  tenantId = "my-tenant-123",
+  createHashTagBody = CreateHashTagBody(),
+)
+
+if hashTagOpt.isSome:
+  let tag = hashTagOpt.get()
 [inline-code-end]
 
 ---

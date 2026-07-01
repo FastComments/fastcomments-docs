@@ -1,18 +1,19 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Назва | Тип | Розташування | Обов’язково | Опис |
 |------|------|----------|----------|-------------|
-| badgesUserId | string | query | Нет |  |
-| commentId | string | query | Нет |  |
-| sso | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| badgesUserId | string | query | No |  |
+| commentId | string | query | No |  |
+| sso | string | query | No |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`GetUserManualBadgesResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_manual_badges_response.go)
+Повертає: [`GetUserManualBadgesResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_manual_badges_response.go)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример GetManualBadgesForUser'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад GetManualBadgesForUser'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -24,18 +25,19 @@ import (
 )
 
 func main() {
-	badgesUserId := "badgesUserId_example" // string |  (необязательно)
-	commentId := "commentId_example" // string |  (необязательно)
-	sso := "sso_example" // string |  (необязательно)
+	tenantId := "tenantId_example" // string | 
+	badgesUserId := "badgesUserId_example" // string |  (необов’язково)
+	commentId := "commentId_example" // string |  (необов’язково)
+	sso := "sso_example" // string |  (необов’язково)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetManualBadgesForUser(context.Background()).BadgesUserId(badgesUserId).CommentId(commentId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetManualBadgesForUser(context.Background()).TenantId(tenantId).BadgesUserId(badgesUserId).CommentId(commentId).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetManualBadgesForUser``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Помилка під час виклику `ModerationAPI.GetManualBadgesForUser``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Повна HTTP відповідь: %v\n", r)
 	}
-	// ответ от `GetManualBadgesForUser`: GetUserManualBadgesResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetManualBadgesForUser`: %v\n", resp)
+	// відповідь від `GetManualBadgesForUser`: GetUserManualBadgesResponse
+	fmt.Fprintf(os.Stdout, "Відповідь від `ModerationAPI.GetManualBadgesForUser`: %v\n", resp)
 }
 [inline-code-end]

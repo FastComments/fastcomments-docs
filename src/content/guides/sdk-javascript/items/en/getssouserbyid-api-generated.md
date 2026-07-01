@@ -13,7 +13,10 @@ Returns: [`GetSSOUserByIdAPIResponse`](https://github.com/FastComments/fastcomme
 
 [inline-code-attrs-start title = 'getSSOUserById Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-inc-042';
-const id: string = 'user-00098765';
-const result: GetSSOUserByIdAPIResponse = await getSSOUserById(tenantId, id);
+async function fetchUser() {
+  const tenantId: string = "tenant-987654321";
+  const userId: string = "sso-user-abc123";
+  const result: GetSSOUserByIdAPIResponse = await getSSOUserById(tenantId, userId);
+  const ssoUser: APISSOUser = result.user;
+}
 [inline-code-end]

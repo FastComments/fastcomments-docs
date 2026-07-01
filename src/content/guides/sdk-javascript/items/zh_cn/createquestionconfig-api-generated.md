@@ -1,36 +1,34 @@
----
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| createQuestionConfigBody | CreateQuestionConfigBody | 是 |  |
+| tenantId | string | Yes |  |
+| createQuestionConfigBody | CreateQuestionConfigBody | Yes |  |
 
 ## 响应
 
-返回: [`CreateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionConfigResponse.ts)
+返回: [`CreateQuestionConfigResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionConfigResponse1.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'createQuestionConfig 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "org-7b3d1e9f";
-const customOption: QuestionConfigCustomOptionsInner = {
-  key: "priority",
-  label: "Priority",
-  values: ["low", "medium", "high"],
-  defaultValue: "medium"
-};
-const createQuestionConfigBody: CreateQuestionConfigBody = {
-  name: "Customer Support Questions",
-  description: "Configuration for support-related question flows",
-  enabled: true,
-  moderation: { required: true, level: "manual" },
-  questionLimitPerUser: 5,
-  customOptions: [customOption],
-  allowAnonymous: false
-};
-const response: CreateQuestionConfigResponse = await createQuestionConfig(tenantId, createQuestionConfigBody);
-[inline-code-end]
+const tenantId: string = "tenant_12345";
 
----
+const customOption: QuestionConfigCustomOptionsInner = {
+  label: "Option A",
+  value: "a",
+};
+
+const createQuestionConfigBody: CreateQuestionConfigBody = {
+  questionText: "What is your favorite color?",
+  isActive: true,
+  // 可选字段可以省略
+  customOptions: [customOption],
+};
+
+const response: CreateQuestionConfigResponse1 = await createQuestionConfig(
+  tenantId,
+  createQuestionConfigBody
+);
+[inline-code-end]

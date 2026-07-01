@@ -1,11 +1,11 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Ad | Tür | Konum | Zorunlu | Açıklama |
 |------|------|----------|----------|-------------|
-| namespace | string | path | Evet |  |
-| component | string | path | Evet |  |
-| locale | string | query | Hayır |  |
-| useFullTranslationIds | boolean | query | Hayır |  |
+| namespace | string | path | Yes |  |
+| component | string | path | Yes |  |
+| locale | string | query | No |  |
+| useFullTranslationIds | boolean | query | No |  |
 
 ## Yanıt
 
@@ -15,7 +15,7 @@ Döndürür: [`GetTranslationsResponse`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'getTranslations Örneği'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Aşağıdaki kod örnekleri hâlâ beta aşamasındadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new üzerinden bildirin
+// Aşağıdaki kod örnekleri hâlâ beta aşamasındadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new adresinden bildirin.
 import FastCommentsSwift
 
 let namespace = "namespace_example" // String | 
@@ -23,7 +23,7 @@ let component = "component_example" // String |
 let locale = "locale_example" // String |  (isteğe bağlı)
 let useFullTranslationIds = true // Bool |  (isteğe bağlı)
 
-PublicAPI.getTranslations(namespace: namespace, component: component, locale: locale, useFullTranslationIds: useFullTranslationIds) { (response, error) in
+PublicAPI.getTranslations(namespace: namespace, component: component, options: PublicAPI.GetTranslationsOptions(locale: locale, useFullTranslationIds: useFullTranslationIds)) { (response, error) in
     guard error == nil else {
         print(error)
         return

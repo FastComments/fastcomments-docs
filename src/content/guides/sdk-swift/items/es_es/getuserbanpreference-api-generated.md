@@ -1,7 +1,8 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
+|--------|------|-----------|-----------|-------------|
+| tenantId | string | query | Sí |  |
 | sso | string | query | No |  |
 
 ## Respuesta
@@ -10,14 +11,15 @@ Devuelve: [`APIModerateGetUserBanPreferencesResponse`](https://github.com/FastCo
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de getUserBanPreference'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo getUserBanPreference'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Los siguientes ejemplos de código aún están en beta. Para cualquier problema, por favor reporte a través de http://github.com/OpenAPITools/openapi-generator/issues/new
+// Los siguientes ejemplos de código todavía están en beta. Para cualquier problema, por favor repórtelo en http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let sso = "sso_example" // String |  (opcional)
+let tenantId = "tenantId_example" // String | 
+let sso = "sso_example" // String |  (optional)
 
-ModerationAPI.getUserBanPreference(sso: sso) { (response, error) in
+ModerationAPI.getUserBanPreference(tenantId: tenantId, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return

@@ -1,7 +1,7 @@
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-------------|
+|------|------|-------------|-----------|
 | tenantId | string | Sim |  |
 | createAPIUserSubscriptionData | CreateAPIUserSubscriptionData | Sim |  |
 
@@ -11,18 +11,19 @@ Retorna: [`CreateSubscriptionAPIResponse`](https://github.com/FastComments/fastc
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de createSubscription'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createSubscription Exemplo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-tenant-123";
-const createAPIUserSubscriptionData: CreateAPIUserSubscriptionData = {
-  userId: "user_98765",
-  planId: "pro_monthly",
-  paymentMethod: { type: "card", cardId: "card_abc123" },
-  autoRenew: true,
-  trialDays: 14, // parâmetro opcional demonstrado
-  metadata: { campaign: "spring_launch" } // parâmetro opcional demonstrado
-};
-const result: CreateSubscriptionAPIResponse = await createSubscription(tenantId, createAPIUserSubscriptionData);
-[inline-code-end]
+(async () => {
+    const tenantId: string = "acme-corp-123";
 
----
+    const subscriptionData: CreateAPIUserSubscriptionData = {
+        userId: "user-456",
+        planId: "premium-monthly",
+        startDate: new Date(),
+        trialPeriodDays: 14 // campo opcional
+    };
+
+    const result: CreateSubscriptionAPIResponse = await createSubscription(tenantId, subscriptionData);
+    console.log(result);
+})();
+[inline-code-end]

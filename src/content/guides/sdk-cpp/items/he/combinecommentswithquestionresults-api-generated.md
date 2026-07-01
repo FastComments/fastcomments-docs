@@ -1,16 +1,9 @@
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| questionId | string | לא |  |
-| questionIds | vector<string | לא |  |
-| urlId | string | לא |  |
-| startDate | datetime | לא |  |
-| forceRecalculate | bool | לא |  |
-| minValue | double | לא |  |
-| maxValue | double | לא |  |
-| limit | double | לא |  |
+| tenantId | string | Yes |  |
+| options | const CombineCommentsWithQuestionResultsOptions& | Yes |  |
 
 ## תגובה
 
@@ -18,33 +11,19 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-combineCommentsWithQuestionResults'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה של combineCommentsWithQuestionResults'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
-boost::optional<utility::string_t> questionId = utility::conversions::to_string_t("q-456");
-std::vector<utility::string_t> qlist = { utility::conversions::to_string_t("q-101"), utility::conversions::to_string_t("q-102") };
-boost::optional<std::vector<utility::string_t>> questionIds = qlist;
-boost::optional<utility::string_t> urlId = utility::conversions::to_string_t("page-789");
-boost::optional<utility::datetime> startDate = utility::datetime::from_string(utility::conversions::to_string_t("2025-01-01T00:00:00Z"));
-boost::optional<bool> forceRecalculate = true;
-boost::optional<double> minValue = 0.0;
-boost::optional<double> maxValue = 5.0;
-boost::optional<double> limit = 100.0;
-
-api->combineCommentsWithQuestionResults(
-    tenantId,
-    questionId,
-    questionIds,
-    urlId,
-    startDate,
-    forceRecalculate,
-    minValue,
-    maxValue,
-    limit
-).then([](std::shared_ptr<CombineQuestionResultsWithCommentsResponse> resp){
-    auto result = resp ? resp : std::make_shared<CombineQuestionResultsWithCommentsResponse>();
-    return result;
-});
+utility::string_t tenantId = utility::string_t("my-tenant-123");
+CombineCommentsWithQuestionResultsOptions options;
+options.questionId = utility::string_t("question-789");
+options.maxComments = boost::optional<int>(50);
+api->combineCommentsWithQuestionResults(tenantId, options).then(
+    [](pplx::task<std::shared_ptr<CombineQuestionResultsWithCommentsResponse>> task){
+        try{
+            auto respPtr = task.get();
+            auto combined = std::make_shared<CombineQuestionResultsWithCommentsResponse>(*respPtr);
+            // השתמש ב‑combined לפי הצורך
+        }catch(const std::exception&){
+        }
+    });
 [inline-code-end]
-
----

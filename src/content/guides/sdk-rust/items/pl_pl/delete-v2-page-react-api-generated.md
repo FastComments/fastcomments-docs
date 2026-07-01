@@ -1,7 +1,7 @@
 ## Parametry
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nazwa | Typ | Wymagane | Opis |
+|------|------|----------|------|
 | tenant_id | String | Tak |  |
 | url_id | String | Tak |  |
 | id | String | Tak |  |
@@ -14,17 +14,13 @@ Zwraca: `CreateV1PageReact`
 
 [inline-code-attrs-start title = 'delete_v2_page_react Przykład'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_delete() -> Result<(), Error> {
-    let params: DeleteV2PageReactParams = DeleteV2PageReactParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        url_id: "news/article/2026/06/feature-ml".to_string(),
-        id: "react_987654321".to_string(),
+async fn run() -> Result<(), Error> {
+    let params = DeleteV2PageReactParams {
+        tenant_id: "acme-corp-tenant".into(),
+        url_id: "news/article".into(),
+        id: "react-987".into(),
     };
-    let request_id: Option<String> = Some("req-20260619-01".to_string());
-    let deleted: CreateV1PageReact = delete_v2_page_react(&configuration, params).await?;
-    let _ = request_id;
+    let _response: CreateV1PageReact = delete_v2_page_react(&config, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

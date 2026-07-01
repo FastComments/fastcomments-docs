@@ -1,4 +1,3 @@
----
 ## 参数
 
 | 名称 | 类型 | 位置 | 必需 | 描述 |
@@ -9,7 +8,7 @@
 
 ## 响应
 
-返回: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateV1PageReact.php)
+返回：[`CreateV1PageReact`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateV1PageReact.php)
 
 ## 示例
 
@@ -25,9 +24,11 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     // 这是可选的，默认将使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // 字符串
-$url_id = 'url_id_example'; // 字符串
-$id = 'id_example'; // 字符串
+
+$tenant_id = 'tenant_id_example'; // string
+$url_id = 'url_id_example'; // string
+$id = 'id_example'; // string
+
 
 try {
     $result = $apiInstance->deleteV2PageReact($tenant_id, $url_id, $id);

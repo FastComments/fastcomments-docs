@@ -1,9 +1,10 @@
 ## Parametri
 
-| Ime | Tip | Zahtevano | Opis |
+| Ime | Vrsta | Obvezno | Opis |
 |------|------|----------|-------------|
-| commentId | string | Da |  |
-| sso | string | Ne |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| sso | string = "" | No |  |
 
 ## Odgovor
 
@@ -13,10 +14,8 @@ Vrne: [`Option[ModerationAPIChildCommentsResponse]`](https://github.com/FastComm
 
 [inline-code-attrs-start title = 'getCommentChildren Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getCommentChildren(commentId = "comment-98765", sso = "")
-if response.isSome:
-  let childResp = response.get()
-  discard childResp
+let (childRespOpt, httpResp) = client.getCommentChildren(tenantId = "my-tenant-123", commentId = "cmt-456789", sso = "")
+if childRespOpt.isSome:
+  let childResp = childRespOpt.get()
+  echo childResp
 [inline-code-end]
-
----

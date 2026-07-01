@@ -1,10 +1,10 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Ναι |  |
+|------|------|----------|-----------|-------------|
+| tenantId | string | query | Yes |  |
 
-## Απάντηση
+## Απόκριση
 
 Επιστρέφει: [`AddSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AddSSOUserAPIResponse.php)
 
@@ -16,20 +16,24 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure API key authorization: api_key
 // Διαμόρφωση εξουσιοδότησης κλειδιού API: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Αποσχολίασε παρακάτω για να ρυθμίσεις πρόθεμα (π.χ. Bearer) για το κλειδί API, εάν χρειαστεί
-// $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Απενεργοποιήστε το σχόλιο παρακάτω για να ορίσετε πρόθεμα (π.χ. Bearer) για το κλειδί API, εάν απαιτείται
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Εάν θέλεις να χρησιμοποιήσεις προσαρμοσμένο http client, δώσε τον client που υλοποιεί `GuzzleHttp\ClientInterface`.
-    // Αυτό είναι προαιρετικό, ο `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // Εάν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε τον client σας που υλοποιεί `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // Αυτό είναι προαιρετικό, το `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
+
+$tenant_id = 'tenant_id_example'; // συμβολοσειρά
 $create_apisso_user_data = new \FastComments\Client\Model\CreateAPISSOUserData(); // \FastComments\Client\Model\CreateAPISSOUserData
+
 
 try {
     $result = $apiInstance->addSSOUser($tenant_id, $create_apisso_user_data);

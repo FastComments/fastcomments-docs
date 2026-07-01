@@ -1,17 +1,10 @@
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-------------|
+|------|------|-------------|-----------|
+| tenantId | string | Sim |  |
 | commentId | string | Sim |  |
-| banEmail | bool | Não |  |
-| banEmailDomain | bool | Não |  |
-| banIP | bool | Não |  |
-| deleteAllUsersComments | bool | Não |  |
-| bannedUntil | string | Não |  |
-| isShadowBan | bool | Não |  |
-| updateId | string | Não |  |
-| banReason | string | Não |  |
-| sso | string | Não |  |
+| options | PostBanUserFromCommentOptions | Não |  |
 
 ## Resposta
 
@@ -19,25 +12,15 @@ Retorna: [`Option[BanUserFromCommentResult]`](https://github.com/FastComments/fa
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de postBanUserFromComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postBanUserFromComment Exemplo'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postBanUserFromComment(
-  commentId = "cmt-8f3a1b",
-  banEmail = false,
-  banEmailDomain = false,
-  banIP = false,
-  deleteAllUsersComments = false,
-  bannedUntil = "",
-  isShadowBan = false,
-  updateId = "",
-  banReason = "",
-  sso = ""
+let (banResult, httpResp) = client.postBanUserFromComment(
+  tenantId = "my-tenant-123",
+  commentId = "cmt-456",
+  options = PostBanUserFromCommentOptions()
 )
-if response.isSome:
-  let banResult = response.get()
-  discard banResult
-else:
-  echo "No ban result returned"
-[inline-code-end]
 
----
+if banResult.isSome:
+  let result = banResult.get()
+  echo result
+[inline-code-end]

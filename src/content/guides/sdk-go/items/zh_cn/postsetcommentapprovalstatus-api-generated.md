@@ -1,9 +1,11 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 描述 |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | 是 |  |
 | commentId | string | path | 是 |  |
 | approved | boolean | query | 否 |  |
+| broadcastId | string | query | 否 |  |
 | sso | string | query | 否 |  |
 
 ## 响应
@@ -24,18 +26,20 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
 	approved := true // bool |  (可选)
+	broadcastId := "broadcastId_example" // string |  (可选)
 	sso := "sso_example" // string |  (可选)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostSetCommentApprovalStatus(context.Background(), commentId).Approved(approved).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostSetCommentApprovalStatus(context.Background(), commentId).TenantId(tenantId).Approved(approved).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostSetCommentApprovalStatus``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "调用 `ModerationAPI.PostSetCommentApprovalStatus`` 时出错：%v\n", err)
+		fmt.Fprintf(os.Stderr, "完整 HTTP 响应: %v\n", r)
 	}
-	// response from `PostSetCommentApprovalStatus`: SetCommentApprovedResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostSetCommentApprovalStatus`: %v\n", resp)
+	// `PostSetCommentApprovalStatus` 的响应: SetCommentApprovedResponse
+	fmt.Fprintf(os.Stdout, "来自 `ModerationAPI.PostSetCommentApprovalStatus` 的响应：%v\n", resp)
 }
 [inline-code-end]

@@ -1,11 +1,11 @@
-Información masiva de usuarios para un tenant. Dado userIds, devuelve la información de visualización de User / SSOUser.
-Usado por el widget de comentarios para enriquecer a los usuarios que acaban de aparecer mediante un evento de presencia.
-Sin contexto de página: la privacidad se aplica de forma uniforme (los perfiles privados se ocultan).
+Información masiva de usuarios para un arrendatario. Dado userIds, devuelve información de visualización de User / SSOUser.  
+Utilizado por el widget de comentarios para enriquecer a los usuarios que acaban de aparecer mediante un evento de presencia.  
+Sin contexto de página: la privacidad se aplica uniformemente (los perfiles privados se ocultan).
 
 ## Parámetros
 
 | Nombre | Tipo | Obligatorio | Descripción |
-|------|------|----------|-------------|
+|--------|------|-------------|-------------|
 | tenant_id | String | Sí |  |
 | ids | String | Sí |  |
 
@@ -15,14 +15,11 @@ Devuelve: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de get_users_info'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo get_users_info'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: GetUsersInfoParams = GetUsersInfoParams {
+let params = GetUsersInfoParams {
     tenant_id: "acme-corp-tenant".to_string(),
-    ids: "alice@example.com,bob@example.com,carol@example.com".to_string(),
-    page_size: Some(100),
+    ids: "user-1,user-2".to_string(),
 };
-let users_response: PageUsersInfoResponse = get_users_info(&configuration, params).await?;
+let page: PageUsersInfoResponse = get_users_info(&configuration, params).await?;
 [inline-code-end]
-
----

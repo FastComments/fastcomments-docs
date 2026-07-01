@@ -2,22 +2,38 @@
 
 | Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
-| commentId | string | Oui |  |
-| approved | boolean | Non |  |
-| sso | string | Non |  |
+| commentId | string | Yes |  |
+| approved | boolean | No |  |
+| broadcastId | string | No |  |
+| tenantId | string | No |  |
+| sso | string | No |  |
 
 ## Réponse
 
-Renvoie: [`SetCommentApprovedResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SetCommentApprovedResponse.ts)
+Renvoie : [`PostSetCommentApprovalStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostSetCommentApprovalStatusResponse.ts)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de postSetCommentApprovalStatus'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postSetCommentApprovalStatus Exemple'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const commentId: string = 'cmt_4b8f2a1d';
-const approved: boolean = true;
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ssoSignature.example';
-const result: SetCommentApprovedResponse = await postSetCommentApprovalStatus(commentId, approved, sso);
-[inline-code-end]
+async function main() {
+  const commentIdOnly: string = "cmt_1001";
+  const resultOnly: PostSetCommentApprovalStatusResponse = await postSetCommentApprovalStatus(commentIdOnly);
 
----
+  const commentIdFull: string = "cmt_2002";
+  const approvedFull: boolean = true;
+  const broadcastIdFull: string = "brd_3003";
+  const tenantIdFull: string = "tenant_abc";
+  const ssoFull: string = "sso_token_xyz";
+  const resultFull: PostSetCommentApprovalStatusResponse = await postSetCommentApprovalStatus(
+    commentIdFull,
+    approvedFull,
+    broadcastIdFull,
+    tenantIdFull,
+    ssoFull
+  );
+
+  console.log(resultOnly, resultFull);
+}
+main();
+[inline-code-end]

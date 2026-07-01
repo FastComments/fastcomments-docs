@@ -1,45 +1,45 @@
-## Параметри
+## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| urlId | string | query | Не | Използва се за определяне дали текущата страница е абонирана. |
-| pageSize | integer | query | Не |  |
-| afterId | string | query | Не |  |
-| includeContext | boolean | query | Не |  |
-| afterCreatedAt | integer | query | Не |  |
-| unreadOnly | boolean | query | Не |  |
-| dmOnly | boolean | query | Не |  |
-| noDm | boolean | query | Не |  |
-| includeTranslations | boolean | query | Не |  |
-| includeTenantNotifications | boolean | query | Не |  |
-| sso | string | query | Не |  |
+| Име | Тип | Местоположение | Задължително | Описание |
+|------|------|----------------|--------------|----------|
+| tenantId | string | query | Yes |  |
+| urlId | string | query | No | Използва се за определяне дали текущата страница е абонирана. |
+| pageSize | integer | query | No |  |
+| afterId | string | query | No |  |
+| includeContext | boolean | query | No |  |
+| afterCreatedAt | integer | query | No |  |
+| unreadOnly | boolean | query | No |  |
+| dmOnly | boolean | query | No |  |
+| noDm | boolean | query | No |  |
+| includeTranslations | boolean | query | No |  |
+| includeTenantNotifications | boolean | query | No |  |
+| sso | string | query | No |  |
 
-## Отговор
+## Response
 
-Връща: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetMyNotificationsResponse.swift)
+Returns: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetMyNotificationsResponse.swift)
 
-## Пример
+## Example
 
 [inline-code-attrs-start title = 'Пример за getUserNotifications'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следващите примери за код все още са бета. Ако срещнете проблем, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следващите примерни кодове все още са в бета. За какъвто и да е проблем, моля, докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let urlId = "urlId_example" // String | Използва се за определяне дали текущата страница е абонирана. (незадължително)
-let pageSize = 987 // Int |  (незадължително)
-let afterId = "afterId_example" // String |  (незадължително)
-let includeContext = true // Bool |  (незадължително)
-let afterCreatedAt = 987 // Int64 |  (незадължително)
-let unreadOnly = true // Bool |  (незадължително)
-let dmOnly = true // Bool |  (незадължително)
-let noDm = true // Bool |  (незадължително)
-let includeTranslations = true // Bool |  (незадължително)
-let includeTenantNotifications = true // Bool |  (незадължително)
-let sso = "sso_example" // String |  (незадължително)
+let urlId = "urlId_example" // String | Използва се за определяне дали текущата страница е абонирана. (optional)
+let pageSize = 987 // Int |  (optional)
+let afterId = "afterId_example" // String |  (optional)
+let includeContext = true // Bool |  (optional)
+let afterCreatedAt = 987 // Int64 |  (optional)
+let unreadOnly = true // Bool |  (optional)
+let dmOnly = true // Bool |  (optional)
+let noDm = true // Bool |  (optional)
+let includeTranslations = true // Bool |  (optional)
+let includeTenantNotifications = true // Bool |  (optional)
+let sso = "sso_example" // String |  (optional)
 
-PublicAPI.getUserNotifications(tenantId: tenantId, urlId: urlId, pageSize: pageSize, afterId: afterId, includeContext: includeContext, afterCreatedAt: afterCreatedAt, unreadOnly: unreadOnly, dmOnly: dmOnly, noDm: noDm, includeTranslations: includeTranslations, includeTenantNotifications: includeTenantNotifications, sso: sso) { (response, error) in
+PublicAPI.getUserNotifications(tenantId: tenantId, options: PublicAPI.GetUserNotificationsOptions(urlId: urlId, pageSize: pageSize, afterId: afterId, includeContext: includeContext, afterCreatedAt: afterCreatedAt, unreadOnly: unreadOnly, dmOnly: dmOnly, noDm: noDm, includeTranslations: includeTranslations, includeTenantNotifications: includeTenantNotifications, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -50,5 +50,3 @@ PublicAPI.getUserNotifications(tenantId: tenantId, urlId: urlId, pageSize: pageS
     }
 }
 [inline-code-end]
-
----

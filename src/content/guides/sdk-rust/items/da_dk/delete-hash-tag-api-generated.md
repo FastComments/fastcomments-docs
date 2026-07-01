@@ -2,8 +2,8 @@
 
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
+| tenant_id | String | Ja |  |
 | tag | String | Ja |  |
-| tenant_id | String | Nej |  |
 | delete_hash_tag_request_body | models::DeleteHashTagRequestBody | Nej |  |
 
 ## Svar
@@ -14,12 +14,15 @@ Returnerer: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-ru
 
 [inline-code-attrs-start title = 'delete_hash_tag Eksempel'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: DeleteHashTagParams = DeleteHashTagParams {
-    tag: "news/article".to_string(),
-    tenant_id: Some("acme-corp-tenant".to_string()),
-    delete_hash_tag_request_body: Some(DeleteHashTagRequestBody {}),
-};
-let response: ApiEmptyResponse = delete_hash_tag(&configuration, params).await?;
+async fn example() -> Result<(), Error> {
+    let params = DeleteHashTagParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        tag: "news/article".to_string(),
+        delete_hash_tag_request_body: Some(models::DeleteHashTagRequestBody {}),
+    };
+    delete_hash_tag(&configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]
 
 ---

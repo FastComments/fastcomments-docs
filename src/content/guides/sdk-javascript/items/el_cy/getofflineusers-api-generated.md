@@ -1,11 +1,10 @@
-Προηγούμενοι σχολιαστές της σελίδας που ΔΕΝ είναι αυτή τη στιγμή online. Ταξινομημένο κατά displayName.
-Χρησιμοποιήστε το αυτό αφού εξαντλήσετε /users/online για να εμφανίσετε μια ενότητα "Μέλη".
-Σελιδοποίηση με cursor στο commenterName: ο server διασχίζει το μερικό {tenantId, urlId, commenterName}
-index από το afterName προς τα εμπρός μέσω $gt, χωρίς κόστος $skip.
+Past commenters on the page who are NOT currently online. Sorted by displayName.  
+Χρησιμοποιήστε το μετά την εξάντληση του /users/online για να εμφανίσετε μια ενότητα "Members".  
+Κατάτμηση σελίδωσης με κέρσορα στο commenterName: ο διακομιστής διασχίζει το μερικό {tenantId, urlId, commenterName} δείκτη από afterName προώθηση μέσω $gt, χωρίς κόστος $skip.
 
-## Παράμετροι
+## Parameters
 
-| Name | Type | Required | Description |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
 | tenantId | string | Ναι |  |
 | urlId | string | Ναι |  |
@@ -14,20 +13,25 @@ index από το afterName προς τα εμπρός μέσω $gt, χωρίς 
 
 ## Response
 
-Επιστρέφει: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOfflineResponse.ts)
+Επιστρέφει: [`GetOfflineUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOfflineUsersResponse.ts)
 
-## Παράδειγμα
+## Example
 
 [inline-code-attrs-start title = 'Παράδειγμα getOfflineUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant-9f4b2a6c';
-const urlId: string = 'articles/product-launch-2025';
+async function fetchOfflineUsers(): Promise<void> {
+    const tenantId: string = "tenant_12345";
+    const urlId: string = "thread_9876";
+    const afterName: string = "Jane Smith";
+    const afterUserId: string = "user_7f9b3c";
 
-const offlinePageFirst: PageUsersOfflineResponse = await getOfflineUsers(tenantId, urlId);
+    const offlineUsers: GetOfflineUsersResponse = await getOfflineUsers(
+        tenantId,
+        urlId,
+        afterName,
+        afterUserId
+    );
 
-const afterName: string = 'samantha.r';
-const afterUserId: string = 'user_7d3a21f9';
-const offlinePageNext: PageUsersOfflineResponse = await getOfflineUsers(tenantId, urlId, afterName, afterUserId);
+    console.log(offlineUsers);
+}
 [inline-code-end]
-
----

@@ -10,13 +10,13 @@
 
 ## Antwort
 
-Gibt zurück: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTicketsResponse.swift)
+Rückgabe: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTicketsResponse.swift)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'getTickets Beispiel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Die folgenden Codebeispiele sind noch Beta. Bitte melden Sie etwaige Probleme unter http://github.com/OpenAPITools/openapi-generator/issues/new
+// Die folgenden Codebeispiele befinden sich noch in der Beta-Phase. Für etwaige Probleme melden Sie diese bitte über http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -25,7 +25,7 @@ let state = 987 // Double |  (optional)
 let skip = 987 // Double |  (optional)
 let limit = 987 // Double |  (optional)
 
-DefaultAPI.getTickets(tenantId: tenantId, userId: userId, state: state, skip: skip, limit: limit) { (response, error) in
+DefaultAPI.getTickets(tenantId: tenantId, options: DefaultAPI.GetTicketsOptions(userId: userId, state: state, skip: skip, limit: limit)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -36,5 +36,3 @@ DefaultAPI.getTickets(tenantId: tenantId, userId: userId, state: state, skip: sk
     }
 }
 [inline-code-end]
-
----

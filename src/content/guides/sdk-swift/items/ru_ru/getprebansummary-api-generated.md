@@ -1,7 +1,8 @@
 ## Параметры
 
-| Name | Тип | Расположение | Обязательно | Описание |
-|------|------|----------|----------|-------------|
+| Имя | Тип | Местоположение | Обязательно | Описание |
+|------|------|----------------|--------------|----------|
+| tenantId | string | query | Да |  |
 | commentId | string | path | Да |  |
 | includeByUserIdAndEmail | boolean | query | Нет |  |
 | includeByIP | boolean | query | Нет |  |
@@ -16,16 +17,17 @@
 
 [inline-code-attrs-start title = 'Пример getPreBanSummary'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие примеры кода все еще находятся в стадии бета. При возникновении проблем, пожалуйста, сообщите через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следующие примеры кода всё ещё находятся в бета‑версии. При возникновении проблем, пожалуйста, сообщайте их по адресу http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
-let includeByUserIdAndEmail = true // Bool |  (необязательно)
-let includeByIP = true // Bool |  (необязательно)
-let includeByEmailDomain = true // Bool |  (необязательно)
-let sso = "sso_example" // String |  (необязательно)
+let includeByUserIdAndEmail = true // Bool |  (optional)
+let includeByIP = true // Bool |  (optional)
+let includeByEmailDomain = true // Bool |  (optional)
+let sso = "sso_example" // String |  (optional)
 
-ModerationAPI.getPreBanSummary(commentId: commentId, includeByUserIdAndEmail: includeByUserIdAndEmail, includeByIP: includeByIP, includeByEmailDomain: includeByEmailDomain, sso: sso) { (response, error) in
+ModerationAPI.getPreBanSummary(tenantId: tenantId, commentId: commentId, options: ModerationAPI.GetPreBanSummaryOptions(includeByUserIdAndEmail: includeByUserIdAndEmail, includeByIP: includeByIP, includeByEmailDomain: includeByEmailDomain, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -36,5 +38,3 @@ ModerationAPI.getPreBanSummary(commentId: commentId, includeByUserIdAndEmail: in
     }
 }
 [inline-code-end]
-
----

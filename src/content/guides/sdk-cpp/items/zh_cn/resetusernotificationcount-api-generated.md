@@ -1,25 +1,24 @@
+---
 ## 参数
 
-| 名称 | 类型 | 是否必需 | 描述 |
-|------|------|----------|-------------|
+| 名称 | 类型 | 必填 | 描述 |
+|------|------|------|------|
 | tenantId | string | 是 |  |
 | sso | string | 否 |  |
 
 ## 响应
 
-返回: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ResetUserNotificationsResponse.h)
+返回：[`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ResetUserNotificationsResponse.h)
 
 ## 示例
 
 [inline-code-attrs-start title = 'resetUserNotificationCount 示例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
-api->resetUserNotificationCount(tenantId, sso)
-    .then([](std::shared_ptr<ResetUserNotificationsResponse> resp){
-        if(!resp) resp = std::make_shared<ResetUserNotificationsResponse>();
-    })
-    .wait();
+auto resetTask = api->resetUserNotificationCount(
+    U("my-tenant-123"),
+    boost::optional<utility::string_t>(U("user@example.com"))
+).then([](std::shared_ptr<ResetUserNotificationsResponse> resp){
+});
 [inline-code-end]
 
 ---

@@ -1,10 +1,10 @@
 ## Параметри
 
-| Name | Type | Обов'язково | Опис |
-|------|------|----------|-------------|
+| Назва | Тип | Обов'язковий | Опис |
+|------|------|--------------|------|
+| tenantId | string | Так |  |
 | commentId | string | Так |  |
-| approved | bool | Ні |  |
-| sso | string | Ні |  |
+| options | const PostSetCommentApprovalStatusOptions& | Так |  |
 
 ## Відповідь
 
@@ -12,14 +12,18 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад postSetCommentApprovalStatus'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postSetCommentApprovalStatus Приклад'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t commentId = U("cmt-12345");
-boost::optional<bool> approved = boost::optional<bool>(true);
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
-auto task = api->postSetCommentApprovalStatus(commentId, approved, sso)
-.then([](std::shared_ptr<SetCommentApprovedResponse> resp){
-    auto result = resp ? resp : std::make_shared<SetCommentApprovedResponse>();
-    return result;
-});
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto commentId = utility::conversions::to_string_t("comment-abc123");
+auto options = std::make_shared<PostSetCommentApprovalStatusOptions>();
+options->approved = boost::optional<bool>(true);
+options->reason = boost::optional<utility::string_t>(utility::conversions::to_string_t("Inappropriate content"));
+api->postSetCommentApprovalStatus(tenantId, commentId, *options)
+    .then([](pplx::task<std::shared_ptr<SetCommentApprovedResponse>> task) {
+        try {
+            auto response = task.get();
+        } catch (const std::exception& ex) {
+        }
+    });
 [inline-code-end]

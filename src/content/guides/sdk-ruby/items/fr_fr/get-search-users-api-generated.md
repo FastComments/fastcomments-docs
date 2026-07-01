@@ -1,7 +1,8 @@
 ## Paramètres
 
 | Nom | Type | Emplacement | Obligatoire | Description |
-|------|------|----------|----------|-------------|
+|------|------|------------|------------|-------------|
+| tenantId | string | query | Oui |  |
 | value | string | query | Non |  |
 | sso | string | query | Non |  |
 
@@ -11,12 +12,13 @@ Renvoie : [`ModerationUserSearchResponse`](https://github.com/FastComments/fastc
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple get_search_users'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_search_users Exemple'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 opts = {
   value: 'value_example', # String | 
   sso: 'sso_example' # String | 
@@ -24,11 +26,9 @@ opts = {
 
 begin
   
-  result = api_instance.get_search_users(opts)
+  result = api_instance.get_search_users(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_search_users: #{e}"
 end
 [inline-code-end]
-
----

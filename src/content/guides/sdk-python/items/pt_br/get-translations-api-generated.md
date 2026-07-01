@@ -1,7 +1,7 @@
 ## Parâmetros
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Localização | Obrigatório | Descrição |
+|------|------|-------------|-------------|-----------|
 | namespace | string | path | Sim |  |
 | component | string | path | Sim |  |
 | locale | string | query | Não |  |
@@ -13,21 +13,22 @@ Retorna: [`GetTranslationsResponse`](https://github.com/FastComments/fastcomment
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de get_translations'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo get_translations'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetTranslationsOptions
 from client.models.get_translations_response import GetTranslationsResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # Definir o host é opcional e o padrão é https://fastcomments.com
-# Veja configuration.py para uma lista de todos os parâmetros de configuração suportados.
+# Consulte configuration.py para a lista de todos os parâmetros de configuração suportados.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Entre em um contexto com uma instância do cliente da API
+# Entre em um contexto com uma instância do cliente API
 with client.ApiClient(configuration) as api_client:
     # Crie uma instância da classe API
     api_instance = client.PublicApi(api_client)
@@ -37,11 +38,9 @@ with client.ApiClient(configuration) as api_client:
     use_full_translation_ids = True # bool |  (opcional)
 
     try:
-        api_response = api_instance.get_translations(namespace, component, locale=locale, use_full_translation_ids=use_full_translation_ids)
-        print("The response of PublicApi->get_translations:\n")
+        api_response = api_instance.get_translations(namespace, component, GetTranslationsOptions(locale=locale, use_full_translation_ids=use_full_translation_ids))
+        print("A resposta de PublicApi->get_translations:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PublicApi->get_translations: %s\n" % e)
+        print("Exceção ao chamar PublicApi->get_translations: %s\n" % e)
 [inline-code-end]
-
----

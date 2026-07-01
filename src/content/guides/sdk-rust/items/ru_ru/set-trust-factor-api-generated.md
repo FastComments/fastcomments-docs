@@ -2,9 +2,10 @@
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| user_id | String | No |  |
-| trust_factor | String | No |  |
-| sso | String | No |  |
+| tenant_id | String | Да |  |
+| user_id | String | Нет |  |
+| trust_factor | String | Нет |  |
+| sso | String | Нет |  |
 
 ## Ответ
 
@@ -14,16 +15,14 @@
 
 [inline-code-attrs-start title = 'Пример set_trust_factor'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn update_user_trust() -> Result<SetUserTrustFactorResponse, Error> {
-    let params: SetTrustFactorParams = SetTrustFactorParams {
-        user_id: Some("user-9821".to_string()),
+async fn update_trust() -> Result<(), Error> {
+    let params = SetTrustFactorParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        user_id: Some("user-123".to_string()),
         trust_factor: Some("high".to_string()),
-        sso: Some("okta-acme-corp".to_string()),
+        sso: Some("sso-token-xyz".to_string()),
     };
-
-    let response: SetUserTrustFactorResponse = set_trust_factor(&configuration, params).await?;
-    Ok(response)
+    let _response = set_trust_factor(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

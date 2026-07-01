@@ -12,7 +12,7 @@ Aggiungi il repository Repsy al POM del tuo progetto:
 </repositories>
 ```
 
-Quindi aggiungi le dipendenze necessarie:
+Quindi aggiungi le dipendenze di cui hai bisogno:
 
 ```xml
 <dependencies>
@@ -63,16 +63,16 @@ dependencies {
 }
 ```
 
-### Contenuti della libreria
+### Contenuto della libreria
 
-Questa libreria contiene tre moduli. Il client API generato, la libreria Java core che contiene utilità scritte a mano per rendere più semplice il lavoro con l'API, e il modulo `pubsub` che è una libreria per iscriversi ai feed di cambiamento.
+Questa libreria contiene tre moduli. Il client API generato, la libreria core Java che contiene utilità scritte a mano per semplificare l'uso dell'API, e il modulo `pubsub` che è una libreria per sottoscrivere i feed di cambiamento.
 
-- [Documentazione libreria client API](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Documentazione libreria core, inclusi esempi SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [Documentazione libreria PubSub](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [API Client Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [PubSub Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### API Pubbliche vs Protette
+### API pubbliche vs API protette
 
-Per il client API, ci sono tre classi, `DefaultApi`, `PublicApi`, e `ModerationApi`. La `DefaultApi` contiene metodi che richiedono la tua API key, e `PublicApi` contiene metodi che possono essere eseguiti direttamente da un browser/dispositivo mobile/etc senza autenticazione.
+Per il client API, ci sono tre classi, `DefaultApi`, `PublicApi` e `ModerationApi`. La classe `DefaultApi` contiene metodi che richiedono la tua chiave API, mentre `PublicApi` contiene metodi che possono essere chiamati direttamente da un browser/dispositivo mobile/etc. senza autenticazione.
 
-La `ModerationApi` alimenta la dashboard dei moderatori. Contiene metodi per la moderazione dei commenti (elenco, conteggio, ricerca, log e esportazione), azioni di moderazione (rimuovere/ripristinare, segnala, impostare lo stato di revisione/spam/approvazione, voti e riaprire/chiudere il thread), ban (vietare di commentare, annullare un ban, riepiloghi pre-ban, stato e preferenze del ban, e conteggi utenti bannati), e badge & fiducia (assegnare/rimuovere un badge, badge manuali, ottenere/impostare il fattore di fiducia, e profilo interno utente). Ogni metodo di `ModerationApi` accetta un parametro `sso` in modo che la chiamata possa essere eseguita per conto di un moderatore autenticato tramite SSO.
+`ModerationApi` offre una suite completa di API di moderazione in tempo reale e veloce. Ogni metodo di `ModerationApi` accetta un parametro `sso` e può autenticarsi tramite SSO o un cookie di sessione FastComments.com.

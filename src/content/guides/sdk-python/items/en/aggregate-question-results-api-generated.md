@@ -19,6 +19,7 @@ Returns: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fa
 [inline-code-attrs-start title = 'aggregate_question_results Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import AggregateQuestionResultsOptions
 from client.models.aggregate_question_results_response import AggregateQuestionResultsResponse
 from client.models.aggregate_time_bucket import AggregateTimeBucket
 from client.rest import ApiException
@@ -54,7 +55,7 @@ with client.ApiClient(configuration) as api_client:
     force_recalculate = True # bool |  (optional)
 
     try:
-        api_response = api_instance.aggregate_question_results(tenant_id, question_id=question_id, question_ids=question_ids, url_id=url_id, time_bucket=time_bucket, start_date=start_date, force_recalculate=force_recalculate)
+        api_response = api_instance.aggregate_question_results(tenant_id, AggregateQuestionResultsOptions(question_id=question_id, question_ids=question_ids, url_id=url_id, time_bucket=time_bucket, start_date=start_date, force_recalculate=force_recalculate))
         print("The response of DefaultApi->aggregate_question_results:\n")
         pprint(api_response)
     except Exception as e:

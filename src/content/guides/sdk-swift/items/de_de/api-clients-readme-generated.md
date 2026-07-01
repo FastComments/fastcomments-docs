@@ -1,35 +1,29 @@
 Das FastComments SDK stellt drei API-Clients bereit:
 
-### PublicAPI - Client-sichere Methoden
+### PublicAPI – Client-sichere Methoden
 
-Die `PublicAPI` enthält Methoden, die sicher aus clientseitigem Code (iOS-/macOS-Apps) aufgerufen werden können. Diese Methoden:
-- Benötigen keinen API-Schlüssel
-- Können SSO-Tokens zur Authentifizierung verwenden
-- Unterliegen pro Benutzer/Gerät einer Ratenbegrenzung
-- Eignen sich für an Endnutzer gerichtete Anwendungen
+Die `PublicAPI` enthält Methoden, die sicher vom clientseitigen Code (iOS/macOS‑Apps) aufgerufen werden können. Diese Methoden:
+- Erfordern keinen API‑Schlüssel
+- Können SSO‑Token zur Authentifizierung verwenden
+- Sind pro Benutzer/Gerät rate‑limitiert
+- Sind für End‑User‑Anwendungen geeignet
 
-**Beispielanwendung**: Abrufen und Erstellen von Kommentaren in Ihrer iOS-App
+**Beispielanwendung**: Abrufen und Erstellen von Kommentaren in Ihrer iOS‑App
 
-### DefaultAPI - Serverseitige Methoden
+### DefaultAPI – Serverseitige Methoden
 
-Die `DefaultAPI` enthält authentifizierte Methoden, die einen API-Schlüssel benötigen. Diese Methoden:
-- Benötigen Ihren FastComments API-Schlüssel
-- Dürfen NUR aus serverseitigem Code aufgerufen werden
-- Gewähren vollen Zugriff auf Ihre FastComments-Daten
-- Unterliegen einer Ratenbegrenzung pro Mandant
+Die `DefaultAPI` enthält authentifizierte Methoden, die einen API‑Schlüssel benötigen. Diese Methoden:
+- Benötigen Ihren FastComments‑API‑Schlüssel
+- Sollten NUR aus serverseitigem Code aufgerufen werden
+- Bieten vollen Zugriff auf Ihre FastComments‑Daten
+- Sind pro Mandant rate‑limitiert
 
-**Beispielanwendung**: Administrative Vorgänge, Massendatenexport, Benutzerverwaltung
+**Beispielanwendung**: Administrative Vorgänge, Massendatenexport, Benutzermanagement
 
-### ModerationAPI - Methoden für das Moderator-Dashboard
+### ModerationAPI – Methoden für das Moderator‑Dashboard
 
-Die `ModerationAPI` enthält Methoden, die das Moderator-Dashboard antreiben. Diese Methoden umfassen:
-- **Kommentarmoderation** - auflisten, zählen, durchsuchen, Protokolle abrufen und Kommentare exportieren
-- **Moderationsaktionen** - Kommentare entfernen/wiederherstellen, markieren, Prüf-/Spam-/Freigabestatus setzen, Stimmen verwalten und Threads wieder öffnen/schließen
-- **Verbannungen** - einen Benutzer von einem Kommentar sperren, Sperren rückgängig machen, Vor-Sperr-Zusammenfassungen abrufen, Sperrstatus und -einstellungen prüfen und Anzahl gesperrter Benutzer lesen
-- **Abzeichen & Vertrauen** - Abzeichen vergeben/entfernen, manuelle Abzeichen auflisten, den Vertrauensfaktor eines Benutzers abrufen/setzen und das interne Profil eines Benutzers lesen
+Die `ModerationAPI` bietet eine umfangreiche Sammlung von Live‑ und schnellen Moderations‑APIs. Jede `ModerationAPI`‑Methode akzeptiert einen `sso`‑Parameter und kann sich über SSO oder ein FastComments.com‑Session‑Cookie authentifizieren.
 
-Jede `ModerationAPI`-Methode akzeptiert einen `sso`-Parameter, sodass Moderatoren per SSO authentifiziert werden können.
+**Beispielanwendung**: Erstellung einer Moderations‑Erfahrung für Moderatoren Ihrer Community
 
-**Beispielanwendung**: Aufbau einer Moderationserfahrung für die Moderatoren Ihrer Community
-
-**WICHTIG**: Setzen Sie Ihren API-Schlüssel niemals in clientseitigem Code offen. API-Schlüssel sollten nur serverseitig verwendet werden.
+**WICHTIG**: Setzen Sie Ihren API‑Schlüssel niemals im clientseitigen Code ein. API‑Schlüssel sollten nur serverseitig verwendet werden.

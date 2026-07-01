@@ -1,8 +1,8 @@
----
 ## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 描述 |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | 是 |  |
 | commentId | string | path | 是 |  |
 | banEmail | boolean | query | 否 |  |
 | banEmailDomain | boolean | query | 否 |  |
@@ -22,7 +22,7 @@
 
 [inline-code-attrs-start title = 'postBanUserFromComment 示例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 导入类：
+// 导入类:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -35,18 +35,19 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
-    String commentId = "commentId_example"; // String | 
-    Boolean banEmail = true; // Boolean | 
-    Boolean banEmailDomain = true; // Boolean | 
-    Boolean banIP = true; // Boolean | 
-    Boolean deleteAllUsersComments = true; // Boolean | 
-    String bannedUntil = "bannedUntil_example"; // String | 
-    Boolean isShadowBan = true; // Boolean | 
-    String updateId = "updateId_example"; // String | 
-    String banReason = "banReason_example"; // String | 
-    String sso = "sso_example"; // String | 
+    String tenantId = "tenantId_example"; // 字符串 |
+    String commentId = "commentId_example"; // 字符串 |
+    Boolean banEmail = true; // 布尔值 |
+    Boolean banEmailDomain = true; // 布尔值 |
+    Boolean banIP = true; // 布尔值 |
+    Boolean deleteAllUsersComments = true; // 布尔值 |
+    String bannedUntil = "bannedUntil_example"; // 字符串 |
+    Boolean isShadowBan = true; // 布尔值 |
+    String updateId = "updateId_example"; // 字符串 |
+    String banReason = "banReason_example"; // 字符串 |
+    String sso = "sso_example"; // 字符串 |
     try {
-      BanUserFromCommentResult result = apiInstance.postBanUserFromComment(commentId)
+      BanUserFromCommentResult result = apiInstance.postBanUserFromComment(tenantId, commentId)
             .banEmail(banEmail)
             .banEmailDomain(banEmailDomain)
             .banIP(banIP)
@@ -68,5 +69,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

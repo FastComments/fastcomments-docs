@@ -1,9 +1,10 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| value | string | query | Nie |  |
-| sso | string | query | Nie |  |
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+|------|------|------------|----------|------|
+| tenantId | string | query | Yes |  |
+| value | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Odpowiedź
 
@@ -11,15 +12,16 @@ Zwraca: [`ModerationPageSearchResponse`](https://github.com/FastComments/fastcom
 
 ## Przykład
 
-[inline-code-attrs-start title = 'getSearchPages Przykład'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład getSearchPages'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Poniższe przykłady kodu są wciąż w wersji beta. W przypadku problemu, zgłoś je przez http://github.com/OpenAPITools/openapi-generator/issues/new
+// Poniższe przykłady kodu są wciąż w wersji beta. W razie problemów proszę zgłosić je pod adresem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let value = "value_example" // String |  (opcjonalne)
-let sso = "sso_example" // String |  (opcjonalne)
+let tenantId = "tenantId_example" // String | 
+let value = "value_example" // String |  (opcjonalnie)
+let sso = "sso_example" // String |  (opcjonalnie)
 
-ModerationAPI.getSearchPages(value: value, sso: sso) { (response, error) in
+ModerationAPI.getSearchPages(tenantId: tenantId, options: ModerationAPI.GetSearchPagesOptions(value: value, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

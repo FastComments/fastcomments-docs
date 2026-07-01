@@ -1,11 +1,12 @@
+Bir görüntüyü yükle ve yeniden boyutlandır
+
 ## Parametreler
 
-| Ad | Tür | Gerekli | Açıklama |
+| İsim | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | file | string | No |  |
-| sizePreset | SizePreset | No |  |
-| urlId | string | Yes |  |
+| options | UploadImageOptions | No |  |
 
 ## Yanıt
 
@@ -15,16 +16,13 @@ Döndürür: [`Option[UploadImageResponse]`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'uploadImage Örneği'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.uploadImage(
+let (uploadResult, httpResponse) = client.uploadImage(
   tenantId = "my-tenant-123",
-  file = "assets/images/comment-avatar.jpg",
-  sizePreset = SizePreset.small,
-  urlId = "news/article-2025-11-22"
+  file = "images/avatar.jpg",
+  options = UploadImageOptions()
 )
-if response.isSome:
-  let upload = response.get()
-  echo "Uploaded image id: ", upload.id
-  echo "Uploaded image url: ", upload.url
-[inline-code-end]
 
----
+if uploadResult.isSome:
+  let result = uploadResult.get()
+  # sonucu gerektiği gibi kullan
+[inline-code-end]

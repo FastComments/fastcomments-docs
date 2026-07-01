@@ -1,24 +1,28 @@
 ## パラメータ
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
 | tenantId | string | はい |  |
 | id | string | はい |  |
 
-## レスポンス
+## 応答
 
-返却: [`GetQuestionResultResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionResultResponse.ts)
+返却: [`GetQuestionResultResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionResultResponse1.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'getQuestionResult の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-inc-tenant-7';
-const id: string = 'b7f9c3a2-4d1e-4a2f-9c1b-0d5e8f6a9b3c';
-const result: GetQuestionResultResponse = await getQuestionResult(tenantId, id);
-const status: APIStatus | undefined = result.status;
-const questionResult: QuestionResult | undefined = result.questionResult;
-const metaItems: MetaItem[] | undefined = result.meta?.items;
+async function fetchQuestionResult(): Promise<void> {
+    const tenantId: string = "acme-corp-001";
+    const questionId: string = "question-7a9b8c";
+    const result: GetQuestionResultResponse1 = await getQuestionResult(tenantId, questionId);
+
+    const question: QuestionResult | undefined = result.questionResult;
+    const firstMeta: MetaItem | undefined = result.meta?.[0];
+
+    console.log(question?.id, firstMeta?.key);
+}
 [inline-code-end]
 
 ---

@@ -1,25 +1,29 @@
 ## 參數
 
-| 名稱 | 類型 | 必填 | 描述 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| postIds | Array<string> | 是 |  |
-| sso | string | 否 |  |
+| tenantId | string | Yes |  |
+| postIds | Array<string> | Yes |  |
+| sso | string | No |  |
 
 ## 回應
 
-回傳: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FeedPostsStatsResponse.ts)
+返回：[`GetFeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetFeedPostsStatsResponse.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getFeedPostsStats 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'acme-corp-tenant-001';
-  const postIds: Array<string> = ['post_4d2f1a', 'post_7b9c3e', 'post_b8a0d4'];
-  const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0MjMifQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
-  const statsWithSso: FeedPostsStatsResponse = await getFeedPostsStats(tenantId, postIds, sso);
-  const statsWithoutSso: FeedPostsStatsResponse = await getFeedPostsStats(tenantId, postIds);
-  console.log(statsWithSso, statsWithoutSso);
-})();
+async function runExample(): Promise<void> {
+    const tenantId: string = "tenant_12345";
+    const postIds: string[] = ["post_a1b2c3", "post_d4e5f6"];
+    const ssoToken: string = "sso_abcdef123456";
+
+    const statsWithoutSso: GetFeedPostsStatsResponse = await getFeedPostsStats(tenantId, postIds);
+    const statsWithSso: GetFeedPostsStatsResponse = await getFeedPostsStats(tenantId, postIds, ssoToken);
+}
+
+runExample();
 [inline-code-end]
+
+---

@@ -1,12 +1,13 @@
-## Параметри
+## Parameters
 
 | Назва | Тип | Розташування | Обов'язково | Опис |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Так |  |
-| includeByUserIdAndEmail | boolean | query | Ні |  |
-| includeByIP | boolean | query | Ні |  |
-| includeByEmailDomain | boolean | query | Ні |  |
-| sso | string | query | Ні |  |
+|------|------|--------------|-------------|------|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| includeByUserIdAndEmail | boolean | query | No |  |
+| includeByIP | boolean | query | No |  |
+| includeByEmailDomain | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## Відповідь
 
@@ -14,24 +15,26 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад get_pre_ban_summary'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_pre_ban_summary Приклад'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetPreBanSummaryOptions
 from client.models.pre_ban_summary import PreBanSummary
 from client.rest import ApiException
 from pprint import pprint
 
-# Визначення хосту необов'язкове і за замовчуванням має значення https://fastcomments.com
-# Див. configuration.py для списку всіх підтримуваних параметрів конфігурації.
+# Визначення хоста є необов'язковим і за замовчуванням https://fastcomments.com
+# Дивіться configuration.py для списку всіх підтримуваних параметрів конфігурації.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Відкрийте контекст із екземпляром API-клієнта
+# Відкрийте контекст з екземпляром клієнта API
 with client.ApiClient(configuration) as api_client:
     # Створіть екземпляр класу API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     include_by_user_id_and_email = True # bool |  (необов'язково)
     include_by_ip = True # bool |  (необов'язково)
@@ -39,9 +42,9 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (необов'язково)
 
     try:
-        api_response = api_instance.get_pre_ban_summary(comment_id, include_by_user_id_and_email=include_by_user_id_and_email, include_by_ip=include_by_ip, include_by_email_domain=include_by_email_domain, sso=sso)
-        print("The response of ModerationApi->get_pre_ban_summary:\n")
+        api_response = api_instance.get_pre_ban_summary(tenant_id, comment_id, GetPreBanSummaryOptions(include_by_user_id_and_email=include_by_user_id_and_email, include_by_ip=include_by_ip, include_by_email_domain=include_by_email_domain, sso=sso))
+        print("Відповідь ModerationApi->get_pre_ban_summary:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ModerationApi->get_pre_ban_summary: %s\n" % e)
+        print("Виняток під час виклику ModerationApi->get_pre_ban_summary: %s\n" % e)
 [inline-code-end]

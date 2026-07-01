@@ -1,10 +1,12 @@
+---
 ## Параметры
 
 | Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
+| tenantId | string | Да |  |
 | commentId | string | Да |  |
 | adjustCommentVotesParams | AdjustCommentVotesParams | Нет |  |
-| sso | string | Нет |  |
+| options | PostAdjustCommentVotesOptions | Нет |  |
 
 ## Ответ
 
@@ -12,12 +14,17 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример postAdjustCommentVotes'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postAdjustCommentVotes Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postAdjustCommentVotes(commentId = "cmt-987654", adjustCommentVotesParams = nil, sso = "sso-token-abc123")
-if response.isSome:
-  let adjusted = response.get()
-  discard adjusted
+let (adjustRespOpt, httpResp) = client.postAdjustCommentVotes(
+  tenantId = "my-tenant-123",
+  commentId = "cmt-789",
+  adjustCommentVotesParams = AdjustCommentVotesParams(),
+  options = PostAdjustCommentVotesOptions()
+)
+
+if adjustRespOpt.isSome:
+  let adjustResp = adjustRespOpt.get()
 [inline-code-end]
 
 ---

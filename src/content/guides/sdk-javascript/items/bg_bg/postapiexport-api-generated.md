@@ -1,38 +1,42 @@
----
 ## Параметри
 
-| Име | Тип | Задължително | Описание |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | textSearch | string | Не |  |
 | byIPFromComment | string | Не |  |
 | filters | string | Не |  |
 | searchFilters | string | Не |  |
 | sorts | string | Не |  |
+| tenantId | string | Не |  |
 | sso | string | Не |  |
 
 ## Отговор
 
-Връща: [`ModerationExportResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationExportResponse.ts)
+Връща: [`PostApiExportResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostApiExportResponse.ts)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за postApiExport'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postApiExport Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const textSearch: string = "suspicious link";
-const byIPFromComment: string = "203.0.113.45";
-const filters: string = "status:flagged,platform:web";
-const searchFilters: string | undefined = undefined;
-const sorts: string = "-createdAt";
-const sso: string = "sso_token_3f9b8";
+(async () => {
+  const textSearch: string = "keyword:feedback"
+  const byIPFromComment: string = "203.0.113.45"
+  const filters: string = "status:pending,category:support"
+  const searchFilters: string = "createdAt>2023-01-01"
+  const sorts: string = "createdAt:desc"
+  const tenantId: string = "tenant_9876"
+  const sso: string = "sso_7e2a9b"
 
-const exportResponse: ModerationExportResponse = await postApiExport(
-  textSearch,
-  byIPFromComment,
-  filters,
-  searchFilters,
-  sorts,
-  sso
-);
+  const exportResult: PostApiExportResponse = await postApiExport(
+    textSearch,
+    byIPFromComment,
+    filters,
+    searchFilters,
+    sorts,
+    tenantId,
+    sso
+  )
+
+  console.log(exportResult)
+})()
 [inline-code-end]
-
----

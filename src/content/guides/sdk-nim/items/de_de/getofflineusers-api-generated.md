@@ -1,37 +1,34 @@
----
-Frühere Kommentierende auf der Seite, die momentan NICHT online sind. Sortiert nach displayName.
-Verwenden Sie dies, nachdem Sie /users/online abgefragt haben, um einen "Members"-Abschnitt anzuzeigen.
-Cursor-Paginierung auf commenterName: Der Server durchläuft den partiellen Index {tenantId, urlId, commenterName}
-index ab afterName vorwärts mittels $gt, ohne $skip-Kosten.
+Past commenters on the page who are NOT currently online. Sorted by displayName.  
+Frühere Kommentatoren auf der Seite, die **nicht** gerade online sind. Sortiert nach Anzeigename.  
 
-## Parameter
+Use this after exhausting /users/online to render a "Members" section.  
+Verwenden Sie dies, nachdem /users/online erschöpft ist, um einen „Mitglieder“-Abschnitt zu rendern.  
 
-| Name | Typ | Erforderlich | Beschreibung |
+Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.  
+Cursor-Paginierung bei commenterName: Der Server durchläuft den Teil {tenantId, urlId, commenterName} vom Index nach afterName vorwärts mittels $gt, ohne $skip-Kosten.  
+
+## Parameters
+
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| urlId | string | Ja |  |
-| afterName | string | Nein |  |
-| afterUserId | string | Nein |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| options | GetOfflineUsersOptions | No |  |
 
-## Antwort
+## Response
 
-Gibt zurück: [`Option[PageUsersOfflineResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_offline_response.nim)
+Rückgabe: [`Option[PageUsersOfflineResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_offline_response.nim)
 
-## Beispiel
+## Example
 
 [inline-code-attrs-start title = 'getOfflineUsers Beispiel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getOfflineUsers(
+let (offlineResp, httpResponse) = client.getOfflineUsers(
   tenantId = "my-tenant-123",
-  urlId = "news/article-how-to-code",
-  afterName = "",
-  afterUserId = ""
+  urlId = "news/article-title",
+  options = GetOfflineUsersOptions()
 )
-
-if response.isSome:
-  let offlinePage = response.get()
-  echo "Received offline users page"
-  discard httpResponse.statusCode
+if offlineResp.isSome:
+  let offline = offlineResp.get()
+  echo offline)
 [inline-code-end]
-
----

@@ -1,39 +1,45 @@
 ## 參數
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| createCommentParams | Array<CreateCommentParams> | 是 |  |
-| isLive | boolean | 否 |  |
-| doSpamCheck | boolean | 否 |  |
-| sendEmails | boolean | 否 |  |
-| populateNotifications | boolean | 否 |  |
+| 名稱 | 類型 | 必填 | 說明 |
+|------|------|------|------|
+| tenantId | string | Yes |  |
+| createCommentParams | Array<CreateCommentParams> | Yes |  |
+| isLive | boolean | No |  |
+| doSpamCheck | boolean | No |  |
+| sendEmails | boolean | No |  |
+| populateNotifications | boolean | No |  |
 
 ## 回應
 
-回傳: `Array<SaveCommentsBulkResponse`
+返回：`Array<SaveCommentsBulkResponse`
 
 ## 範例
 
 [inline-code-attrs-start title = 'saveCommentsBulk 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme_corp_tenant_12';
-const createCommentParams: Array<CreateCommentParams> = [
+const tenantId: string = "tenant_9f8b7c6d";
+
+const bulkComments: CreateCommentParams[] = [
   {
-    content: 'Really helpful breakdown of the migration steps.',
-    threadId: 'thread_2026_08',
-    authorName: 'Maya Singh',
-    authorEmail: 'maya.singh@startup.io',
-    mentions: [{ userId: 'user_314', displayName: 'Leo Park' }],
-    hashtags: [{ tag: 'migration' }],
-    createdAt: '2026-06-19T12:00:00Z'
+    content: "Welcome to the new forum thread!",
+    authorId: "user_42",
+    mentions: [{ userId: "user_84", username: "alice" }],
+    hashtags: [{ tag: "intro" }]
+  },
+  {
+    content: "Please review the updated guidelines.",
+    authorId: "moderator_1",
+    mentions: [],
+    hashtags: [{ tag: "guidelines" }, { tag: "update" }]
   }
 ];
-const isLive: boolean = true;
-const doSpamCheck: boolean = true;
-const sendEmails: boolean = false;
-const populateNotifications: boolean = true;
-const responses: Array<SaveCommentsBulkResponse> = await saveCommentsBulk(tenantId, createCommentParams, isLive, doSpamCheck, sendEmails, populateNotifications);
-[inline-code-end]
 
----
+const results: SaveCommentsBulkResponse[] = await saveCommentsBulk(
+  tenantId,
+  bulkComments,
+  true,      // 是否為實時
+  false,     // 執行垃圾郵件檢查
+  true,      // 發送電子郵件
+  undefined  // 填充通知（使用預設）
+);
+[inline-code-end]

@@ -1,31 +1,22 @@
----
-## Параметри
+## Parametri
 
-| Назив | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tag | string | Не |  |
-| tenantId | string | Да |  |
-| deleteHashTagRequestBody | DeleteHashTagRequestBody | Не |  |
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Da | |
+| tag | string | Ne | |
+| deleteHashTagRequestBody | DeleteHashTagRequestBody | Ne | |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
+Vraća: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'deleteHashTag Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteHashTag Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteHashTag(
-  tag = "",
-  tenantId = "my-tenant-123",
-  deleteHashTagRequestBody = DeleteHashTagRequestBody()
-)
-
-if response.isSome:
-  let emptyResp = response.get()
-  echo "Deleted hashtag for tenant my-tenant-123; response:", $emptyResp, " status:", $httpResponse.status
-else:
-  echo "No response body; status:", $httpResponse.status
+let (apiResp, httpResp) = client.deleteHashTag(tenantId = "my-tenant-123", tag = "sports", deleteHashTagRequestBody = DeleteHashTagRequestBody())
+if apiResp.isSome:
+  let emptyResp = apiResp.get()
 [inline-code-end]
 
 ---

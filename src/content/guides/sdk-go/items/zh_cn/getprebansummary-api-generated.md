@@ -1,13 +1,13 @@
----
 ## 参数
 
 | 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
-| commentId | string | path | 是 |  |
-| includeByUserIdAndEmail | boolean | query | 否 |  |
-| includeByIP | boolean | query | 否 |  |
-| includeByEmailDomain | boolean | query | 否 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| includeByUserIdAndEmail | boolean | query | No |  |
+| includeByIP | boolean | query | No |  |
+| includeByEmailDomain | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## 响应
 
@@ -27,15 +27,16 @@ import (
 )
 
 func main() {
-	commentId := "commentId_example" // string | 
-	includeByUserIdAndEmail := true // bool |  (可选)
-	includeByIP := true // bool |  (可选)
-	includeByEmailDomain := true // bool |  (可选)
-	sso := "sso_example" // string |  (可选)
+	tenantId := "tenantId_example" // string |
+	commentId := "commentId_example" // string |
+	includeByUserIdAndEmail := true // bool |  （可选）
+	includeByIP := true // bool |  （可选）
+	includeByEmailDomain := true // bool |  （可选）
+	sso := "sso_example" // string |  （可选）
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetPreBanSummary(context.Background(), commentId).IncludeByUserIdAndEmail(includeByUserIdAndEmail).IncludeByIP(includeByIP).IncludeByEmailDomain(includeByEmailDomain).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetPreBanSummary(context.Background(), commentId).TenantId(tenantId).IncludeByUserIdAndEmail(includeByUserIdAndEmail).IncludeByIP(includeByIP).IncludeByEmailDomain(includeByEmailDomain).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetPreBanSummary``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -44,5 +45,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetPreBanSummary`: %v\n", resp)
 }
 [inline-code-end]
-
----

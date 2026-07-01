@@ -1,21 +1,21 @@
-## Parameters
+## Parameter
 
-| Name | Typ | Ort | Erforderlich | Beschreibung |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | Pfad | Ja |  |
-| urlId | string | Abfrage | Ja |  |
-| usernameStartsWith | string | Abfrage | Nein |  |
-| mentionGroupIds | array | Abfrage | Nein |  |
-| sso | string | Abfrage | Nein |  |
-| searchSection | string | Abfrage | Nein |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| usernameStartsWith | string | query | No |  |
+| mentionGroupIds | array | query | No |  |
+| sso | string | query | No |  |
+| searchSection | string | query | No |  |
 
 ## Antwort
 
-Gibt zurück: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SearchUsersResult.php)
+Rückgabe: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SearchUsersResult.php)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'Beispiel für searchUsers'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'searchUsers Beispiel'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -27,15 +27,19 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     // Dies ist optional, `GuzzleHttp\Client` wird standardmäßig verwendet.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $url_id = 'url_id_example'; // string
-$username_starts_with = 'username_starts_with_example'; // string
-$mention_group_ids = array('mention_group_ids_example'); // string[]
-$sso = 'sso_example'; // string
-$search_section = 'search_section_example'; // string
+$options = [
+    'username_starts_with' => 'username_starts_with_example', // string
+    'mention_group_ids' => array('mention_group_ids_example'), // string[]
+    'sso' => 'sso_example', // string
+    'search_section' => 'search_section_example', // string
+];
+
 
 try {
-    $result = $apiInstance->searchUsers($tenant_id, $url_id, $username_starts_with, $mention_group_ids, $sso, $search_section);
+    $result = $apiInstance->searchUsers($tenant_id, $url_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->searchUsers: ', $e->getMessage(), PHP_EOL;

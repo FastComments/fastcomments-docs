@@ -1,14 +1,14 @@
 ## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| userId | string | query | Nee |  |
-| urlId | string | query | Nee |  |
-| fromCommentId | string | query | Nee |  |
-| viewed | boolean | query | Nee |  |
-| type | string | query | Nee |  |
-| skip | number | query | Nee |  |
+| Naam | Type | Locatie | Verplicht | Beschrijving |
+|------|------|----------|-----------|--------------|
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| urlId | string | query | No |  |
+| fromCommentId | string | query | No |  |
+| viewed | boolean | query | No |  |
+| type | string | query | No |  |
+| skip | number | query | No |  |
 
 ## Response
 
@@ -22,28 +22,32 @@ Retourneert: [`GetNotificationsResponse`](https://github.com/FastComments/fastco
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configureer API-sleutelautorisatie: api_key
+// Configureer API-sleutel autorisatie: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Haal onderstaande regel uit commentaar om een voorvoegsel in te stellen (bijv. Bearer) voor de API-sleutel, indien nodig
+// Verwijder de commentaartekens hieronder om een prefix (bijv. Bearer) voor de API‑sleutel in te stellen, indien nodig
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Als u een aangepaste HTTP-client wilt gebruiken, geef uw client op die `GuzzleHttp\ClientInterface` implementeert.
+    // Als u een aangepaste HTTP‑client wilt gebruiken, geef dan uw client door die `GuzzleHttp\ClientInterface` implementeert.
     // Dit is optioneel, `GuzzleHttp\Client` wordt standaard gebruikt.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$user_id = 'user_id_example'; // string
-$url_id = 'url_id_example'; // string
-$from_comment_id = 'from_comment_id_example'; // string
-$viewed = True; // bool
-$type = 'type_example'; // string
-$skip = 3.4; // float
+$options = [
+    'user_id' => 'user_id_example', // string
+    'url_id' => 'url_id_example', // string
+    'from_comment_id' => 'from_comment_id_example', // string
+    'viewed' => True, // bool
+    'type' => 'type_example', // string
+    'skip' => 3.4, // float
+];
+
 
 try {
-    $result = $apiInstance->getNotifications($tenant_id, $user_id, $url_id, $from_comment_id, $viewed, $type, $skip);
+    $result = $apiInstance->getNotifications($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getNotifications: ', $e->getMessage(), PHP_EOL;

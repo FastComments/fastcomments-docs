@@ -2,13 +2,12 @@
 
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentId | string | Yes |  |
-| voteId | string | No |  |
-| urlId | string | Yes |  |
-| broadcastId | string | No |  |
-| editKey | string | No |  |
-| sso | string | No |  |
+| tenantId | string | Ja |  |
+| commentId | string | Ja |  |
+| voteId | string | Nej |  |
+| urlId | string | Ja |  |
+| broadcastId | string | Nej |  |
+| options | DeleteCommentVoteOptions | Nej |  |
 
 ## Svar
 
@@ -16,20 +15,17 @@ Returnerer: [`Option[VoteDeleteResponse]`](https://github.com/FastComments/fastc
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på deleteCommentVote'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteCommentVote Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.deleteCommentVote(
   tenantId = "my-tenant-123",
-  commentId = "comment-456",
+  commentId = "cmt-456",
   voteId = "vote-789",
   urlId = "news/article-title",
-  broadcastId = "",
-  editKey = "",
-  sso = ""
+  broadcastId = "broadcast-001",
+  options = DeleteCommentVoteOptions()
 )
+
 if response.isSome:
-  let voteResp = response.get()
-  echo "Vote delete response:", voteResp
-else:
-  echo "No response body, HTTP response:", httpResponse
+  let voteDelete = response.get()
 [inline-code-end]

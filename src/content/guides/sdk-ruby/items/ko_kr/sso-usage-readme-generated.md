@@ -2,9 +2,8 @@
 
 ```ruby
 require 'fastcomments'
-require 'fastcomments-client'
 
-# 간단한 SSO 토큰 생성
+# Simple SSO 토큰 생성
 user = FastComments::SSO::SimpleSSOUserData.new(
   user_id: 'user-123',
   email: 'user@example.com',
@@ -16,14 +15,14 @@ token = sso.create_token
 
 puts "SSO Token: #{token}"
 
-# SSO 토큰을 사용하여 인증된 API 호출 수행
+# 인증된 API 호출을 위해 SSO 토큰 사용
 config = FastCommentsClient::Configuration.new
 api_client = FastCommentsClient::ApiClient.new(config)
 public_api = FastCommentsClient::PublicApi.new(api_client)
 
 response = public_api.get_comments_public(
-  tenant_id: 'your-tenant-id',
-  url_id: 'your-page-url-id',
+  'your-tenant-id',
+  'your-page-url-id',
   sso: token
 )
 
@@ -34,7 +33,6 @@ puts "Status: #{response}"
 
 ```ruby
 require 'fastcomments'
-require 'fastcomments-client'
 
 # 보안 SSO 토큰 생성
 user = FastComments::SSO::SecureSSOUserData.new(
@@ -50,17 +48,16 @@ token = sso.create_token
 
 puts "Secure SSO Token: #{token}"
 
-# SSO 토큰을 사용하여 인증된 API 호출 수행
+# 인증된 API 호출을 위해 SSO 토큰 사용
 config = FastCommentsClient::Configuration.new
 api_client = FastCommentsClient::ApiClient.new(config)
 public_api = FastCommentsClient::PublicApi.new(api_client)
 
 response = public_api.get_comments_public(
-  tenant_id: 'your-tenant-id',
-  url_id: 'your-page-url-id',
+  'your-tenant-id',
+  'your-page-url-id',
   sso: token
 )
 
 puts "Status: #{response}"
 ```
----

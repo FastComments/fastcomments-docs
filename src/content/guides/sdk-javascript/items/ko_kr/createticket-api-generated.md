@@ -1,28 +1,28 @@
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| userId | string | 예 |  |
-| createTicketBody | CreateTicketBody | 예 |  |
+| tenantId | string | Yes |  |
+| userId | string | Yes |  |
+| createTicketBody | CreateTicketBody | Yes |  |
 
 ## 응답
 
-반환: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTicketResponse.ts)
+반환: [`CreateTicketResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTicketResponse1.ts)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'createTicket 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createTicket 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-enterprises";
-const userId: string = "user_12039";
-const createTicketBody: CreateTicketBody = {
-  subject: "Login failures for multiple users",
-  description: "Users report 500 error when authenticating since 2026-06-18 08:00 UTC. Affects web and mobile.",
-  priority: "urgent",
-  tags: ["authentication", "outage"]
-};
-const result: CreateTicketResponse = await createTicket(tenantId, userId, createTicketBody);
-[inline-code-end]
+const tenantId: string = "tenant_12345";
+const userId: string = "user_98765";
 
----
+const ticketBody: CreateTicketBody = {
+  subject: "Issue with payment processing"
+  // description?: string은 선택 사항이며 생략되었습니다
+};
+
+const response: CreateTicketResponse1 = await createTicket(tenantId, userId, ticketBody);
+// 응답의 선택적 필드를 사용하는 예시
+// console.log(response.ticket?.id);
+[inline-code-end]

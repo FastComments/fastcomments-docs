@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | skip | int | לא |  |
@@ -11,14 +11,13 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getSSOUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSSOUsers דוגמה'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSSOUsers(tenantId = "my-tenant-123", skip = 0)
-if response.isSome:
-  let ssoUsers = response.get()
-  echo ssoUsers
+let (maybeResponse, httpResponse) = client.getSSOUsers(tenantId = "my-tenant-123", skip = 0)
+if maybeResponse.isSome:
+  let users = maybeResponse.get()
+  echo users
 else:
-  echo "No SSO users returned; HTTP response:", httpResponse
+  echo "No SSO users found"
+echo httpResponse.statusCode
 [inline-code-end]
-
----

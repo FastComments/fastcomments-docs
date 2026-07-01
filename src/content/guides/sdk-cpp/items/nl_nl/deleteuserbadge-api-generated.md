@@ -1,10 +1,9 @@
----
 ## Parameters
 
-| Name | Type | Required | Description |
+| Naam | Type | Verplicht | Beschrijving |
 |------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| id | string | Ja |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
 ## Respons
 
@@ -14,18 +13,13 @@ Retourneert: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'deleteUserBadge Voorbeeld'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t badgeId = U("badge-456");
-boost::optional<utility::string_t> requestId = boost::optional<utility::string_t>(U("req-789"));
-api->deleteUserBadge(tenantId, badgeId)
-    .then([tenantId, requestId](std::shared_ptr<APIEmptySuccessResponse> resp) {
-        auto result = resp ? resp : std::make_shared<APIEmptySuccessResponse>();
-        std::cout << "Deleted badge '" << badgeId << "' for tenant '" << tenantId << "'\n";
-        return result;
+auto tenantId = boost::optional<utility::string_t>(U("my-tenant-123"));
+auto badgeId = utility::string_t(U("badge-789"));
+api->deleteUserBadge(tenantId.value(), badgeId)
+    .then([](std::shared_ptr<APIEmptySuccessResponse> resp){
+        auto copy = std::make_shared<APIEmptySuccessResponse>(*resp);
     })
-    .then([](std::shared_ptr<APIEmptySuccessResponse>){
-    })
-    .wait();
+    .then([](pplx::task<void> t){
+        try{ t.get(); } catch(const std::exception&){ }
+    });
 [inline-code-end]
-
----

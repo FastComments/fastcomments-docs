@@ -1,24 +1,24 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Обязательный | Описание |
-|------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| id | String | Да |  |
+| Назва | Тип | Обов'язково | Опис |
+|------|------|-------------|------|
+| tenant_id | String | Так |  |
+| id | String | Так |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`ApiEmptySuccessResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_success_response.rs)
+Повертає: [`ApiEmptySuccessResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_success_response.rs)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример delete_user_badge'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад delete_user_badge'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: DeleteUserBadgeParams = DeleteUserBadgeParams {
-    tenant_id: "acme-newsroom-tenant".to_string(),
-    id: "badge-moderator-001".to_string(),
-};
-let include_related: Option<bool> = Some(false);
-let result: ApiEmptySuccessResponse = delete_user_badge(&configuration, params).await?;
+async fn remove_badge(config: &configuration::Configuration) -> Result<(), Error> {
+    let params: DeleteUserBadgeParams = DeleteUserBadgeParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "badge-abcde".to_string(),
+    };
+    let _ = delete_user_badge(config, params).await?;
+    Ok(())
+}
 [inline-code-end]
-
----

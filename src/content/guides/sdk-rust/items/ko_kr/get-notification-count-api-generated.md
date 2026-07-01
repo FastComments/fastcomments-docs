@@ -1,29 +1,30 @@
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | 예 |  |
-| user_id | String | 아니오 |  |
-| url_id | String | 아니오 |  |
-| from_comment_id | String | 아니오 |  |
-| viewed | bool | 아니오 |  |
+| tenant_id | String | Yes |  |
+| user_id | String | No |  |
+| url_id | String | No |  |
+| from_comment_id | String | No |  |
+| viewed | bool | No |  |
 
 ## 응답
 
 반환: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_notification_count_response.rs)
 
-## 예제
+## 예시
 
 [inline-code-attrs-start title = 'get_notification_count 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: GetNotificationCountParams = GetNotificationCountParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    user_id: Some("user-123".to_string()),
-    url_id: Some("news/article/2026/06/19".to_string()),
-    from_comment_id: Some("cmt-98765".to_string()),
-    viewed: Some(false),
-};
-let notification_count: GetNotificationCountResponse = get_notification_count(configuration, params).await?;
+async fn example() -> Result<(), Error> {
+    let params = GetNotificationCountParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        user_id: Some("john.doe".to_string()),
+        url_id: Some("blog/post-123".to_string()),
+        from_comment_id: Some("comment789".to_string()),
+        viewed: Some(true),
+    };
+    let _response = get_notification_count(&configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]
-
----

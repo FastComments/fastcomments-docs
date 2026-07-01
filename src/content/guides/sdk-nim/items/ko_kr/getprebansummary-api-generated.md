@@ -1,12 +1,10 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
+| tenantId | string | 예 |  |
 | commentId | string | 예 |  |
-| includeByUserIdAndEmail | bool | 아니요 |  |
-| includeByIP | bool | 아니요 |  |
-| includeByEmailDomain | bool | 아니요 |  |
-| sso | string | 아니요 |  |
+| options | GetPreBanSummaryOptions | 아니오 |  |
 
 ## 응답
 
@@ -16,19 +14,7 @@
 
 [inline-code-attrs-start title = 'getPreBanSummary 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let commentId = "cmt-7423"
-let (response, httpResponse) = client.getPreBanSummary(
-  commentId = commentId,
-  includeByUserIdAndEmail = false,
-  includeByIP = false,
-  includeByEmailDomain = false,
-  sso = ""
-)
-if response.isSome:
-  let preBanSummary = response.get()
-  discard preBanSummary
-else:
-  discard httpResponse
+let (preBanSummaryOpt, httpResponse) = client.getPreBanSummary(tenantId = "my-tenant-123", commentId = "cmt-456", options = GetPreBanSummaryOptions())
+if preBanSummaryOpt.isSome:
+  let summary = preBanSummaryOpt.get()
 [inline-code-end]
-
----

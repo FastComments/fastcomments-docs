@@ -1,14 +1,11 @@
-### שימוש ב-API הציבורי
+### שימוש ב‑API ציבורי
 
 ```swift
 import FastCommentsSwift
 
-// צור לקוח API
-let publicApi = PublicAPI()
-
-// קבל תגובות עבור דף
+// הפקת תגובות עבור עמוד
 do {
-    let response = try await publicApi.getCommentsPublic(
+    let response = try await PublicAPI.getCommentsPublic(
         tenantId: "your-tenant-id",
         urlId: "page-url-id"
     )
@@ -22,20 +19,19 @@ do {
 }
 ```
 
-### שימוש ב-API המאומת
+### שימוש ב‑API מאומת
 
 ```swift
 import FastCommentsSwift
 
-// צור תצורה עם מפתח API
-let defaultApi = DefaultAPI()
-defaultApi.apiKey = "your-api-key"
+// הגדר את מפתח ה‑API שלך בתצורה המשותפת (נשלח ככותרת x-api-key header)
+FastCommentsSwiftAPIConfiguration.shared.customHeaders["x-api-key"] = "your-api-key"
 
-// קבל תגובות באמצעות ה-API המאומת
+// הפקת תגובות באמצעות API מאומת
 do {
-    let response = try await defaultApi.getComments(
+    let response = try await DefaultAPI.getComments(
         tenantId: "your-tenant-id",
-        urlId: "page-url-id"
+        options: .init(urlId: "page-url-id")
     )
 
     print("Total comments: \(response.count ?? 0)")
@@ -47,18 +43,20 @@ do {
 }
 ```
 
-### שימוש ב-API המודרציה
+### שימוש ב‑API מודרציה
 
 ```swift
 import FastCommentsSwift
 
-// שיטות המודרציה מאושרות באמצעות אסימון `sso` עבור המודרטור הפעיל
-// (צור אותו באמצעות FastCommentsSSO, ראה את הסעיף על SSO לעיל).
+// שיטות מודרציה מאושרות בעזרת אסימון `sso` עבור המנחה הפועל
+// (צור אותו עם FastCommentsSSO, ראה את סעיף ה‑SSO למעלה).
 do {
     let response = try await ModerationAPI.getApiComments(
-        page: 0,
-        count: 30,
-        sso: ssoToken
+        options: .init(
+            page: 0,
+            count: 30,
+            sso: ssoToken
+        )
     )
 
     print("Found \(response.comments.count) comments to moderate")
@@ -70,21 +68,21 @@ do {
 }
 ```
 
-### שימוש ב-SSO לאימות
+### שימוש ב‑SSO לאימות
 
-#### SSO מאובטח (מומלץ בסביבת ייצור)
+#### SSO מאובטח (מומלץ לייצור)
 
 ```swift
 import FastCommentsSwift
 
 let apiKey = "your-api-key"
 
-// צור נתוני משתמש SSO מאובטחים (צד שרת בלבד!)
+// צור נתוני משתמש SSO מאובטח (רק בשרת!)
 let userData = SecureSSOUserData(
-    id: "user-123",              // מזהה משתמש
-    email: "user@example.com",   // אימייל
-    username: "johndoe",         // שם משתמש
-    avatar: "https://example.com/avatar.jpg" // כתובת URL של ה-avatar
+    id: "user-123",              // User ID
+    email: "user@example.com",   // Email
+    username: "johndoe",         // Username
+    avatar: "https://example.com/avatar.jpg" // Avatar URL
 )
 
 // צור אסימון SSO
@@ -93,13 +91,13 @@ do {
     let token = try sso.createToken()
 
     print("SSO Token: \(token ?? "")")
-    // העבר אסימון זה לצד הלקוח שלך לצורך אימות
+    // העבר אסימון זה לממשק הקדמי שלך לאימות
 } catch {
     print("Error creating SSO token: \(error)")
 }
 ```
 
-#### SSO פשוט (לפיתוח/בדיקות)
+#### SSO פשוט (לפיתוח/בדיקה)
 
 ```swift
 import FastCommentsSwift

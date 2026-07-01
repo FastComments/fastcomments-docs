@@ -1,24 +1,30 @@
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 類型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| urlIdWS | string | 是 |  |
-| userIds | string | 是 |  |
+| tenantId | string | Yes |  |
+| urlIdWS | string | Yes |  |
+| userIds | string | Yes |  |
 
 ## 回應
 
-回傳：[`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserPresenceStatusesResponse.ts)
+返回：[`GetUserPresenceStatusesResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserPresenceStatusesResponse1.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getUserPresenceStatuses 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acct_7c9b21';
-const urlIdWS: string = 'wss://ws.fastcomments.com/presence/room-231';
-const userIds: string = 'user_102,user_203';
-const presence: GetUserPresenceStatusesResponse = await getUserPresenceStatuses(tenantId, urlIdWS, userIds);
-const firstStatus: APIStatus | undefined = (presence as unknown as { statuses?: APIStatus[] }).statuses?.[0];
-[inline-code-end]
+async function fetchUserPresences() {
+  const tenantId: string = "tenant_9f8e2d";
+  const urlIdWS: string = "blog.mycompany.com/thread/12345";
+  const userIds: string = "alice,bob,carol";
 
----
+  const result: GetUserPresenceStatusesResponse1 = await getUserPresenceStatuses(
+    tenantId,
+    urlIdWS,
+    userIds
+  );
+
+  console.log(result);
+}
+[inline-code-end]

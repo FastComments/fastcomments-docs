@@ -3,11 +3,7 @@
 | Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Так |  |
-| commentId | string | Так |  |
-| externalId | string | Ні |  |
-| eventType | string | Ні |  |
-| domain | string | Ні |  |
-| attemptCountGT | float64 | Ні |  |
+| options | GetPendingWebhookEventCountOptions | Ні |  |
 
 ## Відповідь
 
@@ -17,20 +13,8 @@
 
 [inline-code-attrs-start title = 'Приклад getPendingWebhookEventCount'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getPendingWebhookEventCount(
-  tenantId = "my-tenant-123",
-  commentId = "cmt-456abc",
-  externalId = "ext-7890",
-  eventType = "comment_created",
-  domain = "news.example.com",
-  attemptCountGT = 2.0
-)
-
-if response.isSome:
-  let pending = response.get()
-  echo pending
-else:
-  echo "No pending webhook event count returned; HTTP status: ", httpResponse.status
+let (pendingCountOpt, httpResponse) = client.getPendingWebhookEventCount(tenantId = "my-tenant-123", options = GetPendingWebhookEventCountOptions())
+if pendingCountOpt.isSome:
+  let pendingCount = pendingCountOpt.get()
+  echo pendingCount
 [inline-code-end]
-
----

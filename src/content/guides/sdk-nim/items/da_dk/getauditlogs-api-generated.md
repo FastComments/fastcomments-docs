@@ -2,12 +2,8 @@
 
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| limit | float64 | No |  |
-| skip | float64 | No |  |
-| order | SORTDIR | No |  |
-| after | float64 | No |  |
-| before | float64 | No |  |
+| tenantId | string | Ja |  |
+| options | GetAuditLogsOptions | Nej |  |
 
 ## Svar
 
@@ -17,20 +13,8 @@ Returnerer: [`Option[GetAuditLogsResponse]`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'getAuditLogs Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getAuditLogs(
-  tenantId = "my-tenant-123",
-  limit = 50.0,
-  skip = 0.0,
-  order = SORTDIR.DESC,
-  after = 1622505600.0,
-  before = 1625097600.0
-)
-
-if response.isSome:
-  let logs = response.get()
-  echo logs
-else:
-  echo "No audit logs returned"
+let (auditOpt, httpResp) = client.getAuditLogs(tenantId = "my-tenant-123", options = GetAuditLogsOptions())
+if auditOpt.isSome:
+  let audit = auditOpt.get()
+  echo audit
 [inline-code-end]
-
----

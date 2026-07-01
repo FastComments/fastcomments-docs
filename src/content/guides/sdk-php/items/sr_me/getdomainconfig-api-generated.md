@@ -1,36 +1,38 @@
-## Параметри
+## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| domain | string | path | Да |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
+| domain | string | path | Da |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetDomainConfigResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetDomainConfigResponse.php)
+Vraća: [`GetDomainConfigResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetDomainConfigResponse.php)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'Пример getDomainConfig'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getDomainConfig Primjer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Конфигурисање ауторизације API кључа: api_key
+// Konfigurišite autorizaciju API ključa: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Откоментирајте доле да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
+// Otkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ако желите да користите прилагођени http клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционално, као подразумевани ће се користити `GuzzleHttp\Client`.
+    // Ako želite koristiti prilagođeni http klijent, proslijedite vaš klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opciono, `GuzzleHttp\Client` će se koristiti kao podrazumevani.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $domain = 'domain_example'; // string
+
 
 try {
     $result = $apiInstance->getDomainConfig($tenant_id, $domain);

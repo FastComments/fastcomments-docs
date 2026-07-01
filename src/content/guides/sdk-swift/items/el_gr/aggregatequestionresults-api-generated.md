@@ -1,7 +1,7 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
+|------|------|----------|------------|-------------|
 | tenantId | string | query | Ναι |  |
 | questionId | string | query | Όχι |  |
 | questionIds | array | query | Όχι |  |
@@ -10,26 +10,26 @@
 | startDate | string | query | Όχι |  |
 | forceRecalculate | boolean | query | Όχι |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/AggregateQuestionResultsResponse.swift)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα aggregateQuestionResults'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'aggregateQuestionResults Παράδειγμα'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Τα παρακάτω δείγματα κώδικα είναι ακόμη beta. Για οποιοδήποτε πρόβλημα, αναφέρετέ το μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
+// Τα παρακάτω δείγματα κώδικα είναι ακόμη beta. Για οποιοδήποτε πρόβλημα, παρακαλούμε αναφέρετέ το μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let questionId = "questionId_example" // String |  (προαιρετικό)
-let questionIds = ["inner_example"] // [String] |  (προαιρετικό)
-let urlId = "urlId_example" // String |  (προαιρετικό)
-let timeBucket = AggregateTimeBucket() // AggregateTimeBucket |  (προαιρετικό)
-let startDate = Date() // Date |  (προαιρετικό)
-let forceRecalculate = true // Bool |  (προαιρετικό)
+let questionId = "questionId_example" // String |  (optional)
+let questionIds = ["inner_example"] // [String] |  (optional)
+let urlId = "urlId_example" // String |  (optional)
+let timeBucket = AggregateTimeBucket() // AggregateTimeBucket |  (optional)
+let startDate = Date() // Date |  (optional)
+let forceRecalculate = true // Bool |  (optional)
 
-DefaultAPI.aggregateQuestionResults(tenantId: tenantId, questionId: questionId, questionIds: questionIds, urlId: urlId, timeBucket: timeBucket, startDate: startDate, forceRecalculate: forceRecalculate) { (response, error) in
+DefaultAPI.aggregateQuestionResults(tenantId: tenantId, options: DefaultAPI.AggregateQuestionResultsOptions(questionId: questionId, questionIds: questionIds, urlId: urlId, timeBucket: timeBucket, startDate: startDate, forceRecalculate: forceRecalculate)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -40,5 +40,3 @@ DefaultAPI.aggregateQuestionResults(tenantId: tenantId, questionId: questionId, 
     }
 }
 [inline-code-end]
-
----

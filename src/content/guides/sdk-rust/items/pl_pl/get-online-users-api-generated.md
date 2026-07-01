@@ -1,10 +1,10 @@
-Użytkownicy strony obecnie online: osoby, których sesja websocket jest aktualnie subskrybowana na tej stronie.
-Zwraca anonCount + totalCount (abonenci w całym pokoju, włącznie z anonimowymi widzami, których nie wyliczamy).
+Obecnie online oglądający stronę: osoby, których sesja websocket jest aktualnie subskrybowana do tej strony.  
+Zwraca anonCount + totalCount (subskrybenci w całym pokoju, w tym anonimowi oglądający, których nie wymieniamy).
 
 ## Parametry
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nazwa | Typ | Wymagane | Opis |
+|------|------|----------|------|
 | tenant_id | String | Tak |  |
 | url_id | String | Tak |  |
 | after_name | String | Nie |  |
@@ -16,18 +16,16 @@ Zwraca: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments
 
 ## Przykład
 
-[inline-code-attrs-start title = 'get_online_users Przykład'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład get_online_users'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_online_users() -> Result<PageUsersOnlineResponse, Error> {
-    let params: GetOnlineUsersParams = GetOnlineUsersParams {
+async fn example() -> Result<(), Error> {
+    let params = GetOnlineUsersParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        url_id: "news/world/article-2026".to_string(),
-        after_name: Some("jane.doe".to_string()),
-        after_user_id: Some("user_98765".to_string()),
+        url_id: "news/article".to_string(),
+        after_name: Some("john_doe".to_string()),
+        after_user_id: Some("user-123".to_string()),
     };
-    let response: PageUsersOnlineResponse = get_online_users(&configuration, params).await?;
-    Ok(response)
+    let _response: PageUsersOnlineResponse = get_online_users(&config, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

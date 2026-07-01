@@ -1,7 +1,7 @@
 ## Parameter
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Name | Typ | Ort | Erforderlich | Beschreibung |
+|------|-----|-----|--------------|---------------|
 | tenantId | string | query | Yes |  |
 | id | string | path | Yes |  |
 | deleteComments | string | query | No |  |
@@ -9,37 +9,44 @@
 
 ## Antwort
 
-Gibt zurück: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
+Rückgabe: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'delete_tenant_user Beispiel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import DeleteTenantUserOptions
 from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Die Angabe des Hosts ist optional und standardmäßig https://fastcomments.com
+# Definieren des Hosts ist optional und standardmäßig https://fastcomments.com
 # Siehe configuration.py für eine Liste aller unterstützten Konfigurationsparameter.
+# Der Client muss die Authentifizierungs- und Autorisierungsparameter gemäß der Sicherheitsrichtlinie des API-Servers konfigurieren.
+# Beispiele für jede Authentifizierungsmethode werden unten bereitgestellt, verwenden Sie das Beispiel, das Ihren Authentifizierungsfall erfüllt.
+# Konfigurieren Sie die API-Schlüssel-Autorisierung: api_key
+# Kommentieren Sie unten aus, um bei Bedarf ein Präfix (z. B. Bearer) für den API-Schlüssel festzulegen
+# Betreten Sie einen Kontext mit einer Instanz des API-Clients
+# Erstellen Sie eine Instanz der API-Klasse
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Der Client muss die Authentifizierungs- und Autorisierungsparameter
-# gemäß der Sicherheitsrichtlinie des API-Servers konfigurieren.
-# Beispiele für jede Authentifizierungsmethode sind unten aufgeführt, verwenden Sie das
-# Beispiel, das Ihren Authentifizierungsbedarf erfüllt.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Unten auskommentieren, um ein Präfix (z. B. Bearer) für den API-Schlüssel zu setzen, falls nötig
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Einen Kontext mit einer Instanz des API-Clients betreten
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Eine Instanz der API-Klasse erstellen
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
@@ -47,7 +54,7 @@ with client.ApiClient(configuration) as api_client:
     comment_delete_mode = 'comment_delete_mode_example' # str |  (optional)
 
     try:
-        api_response = api_instance.delete_tenant_user(tenant_id, id, delete_comments=delete_comments, comment_delete_mode=comment_delete_mode)
+        api_response = api_instance.delete_tenant_user(tenant_id, id, DeleteTenantUserOptions(delete_comments=delete_comments, comment_delete_mode=comment_delete_mode))
         print("The response of DefaultApi->delete_tenant_user:\n")
         pprint(api_response)
     except Exception as e:

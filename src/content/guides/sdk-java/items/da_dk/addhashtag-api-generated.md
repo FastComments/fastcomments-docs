@@ -1,8 +1,8 @@
 ## Parametre
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Nej |  |
+|------|------|-----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 
 ## Svar
 
@@ -10,7 +10,7 @@ Returnerer: [`CreateHashTagResponse`](https://github.com/FastComments/fastcommen
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på addHashTag'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'addHashTag Eksempel'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importer klasser:
 import com.fastcomments.invoker.ApiClient;
@@ -25,18 +25,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Konfigurer API-nøgleautorisation: api_key
+    // Konfigurer API-nøglegodkendelse: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Fjern kommentarstregen på følgende linje for at angive et præfiks for API-nøglen, f.eks. "Token" (standard er null)
+    // Fjern kommentaren fra følgende linje for at sætte et præfiks for API-nøglen, f.eks. "Token" (standard er null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     CreateHashTagBody createHashTagBody = new CreateHashTagBody(); // CreateHashTagBody | 
     try {
-      CreateHashTagResponse result = apiInstance.addHashTag()
-            .tenantId(tenantId)
+      CreateHashTagResponse result = apiInstance.addHashTag(tenantId)
             .createHashTagBody(createHashTagBody)
             .execute();
       System.out.println(result);

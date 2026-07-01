@@ -1,8 +1,8 @@
 ## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Sì |  |
+|------|------|-----------|--------------|-------------|
+| tenantId | string | query | Yes |  |
 | broadcastId | string | query | No |  |
 | isLive | boolean | query | No |  |
 | doSpamCheck | boolean | query | No |  |
@@ -14,19 +14,19 @@ Restituisce: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcom
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di createFeedPost'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio createFeedPost'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// I seguenti esempi di codice sono ancora in beta. Per qualsiasi problema, si prega di segnalarlo tramite http://github.com/OpenAPITools/openapi-generator/issues/new
+// I seguenti esempi di codice sono ancora beta. Per qualsiasi problema, si prega di segnalarlo via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let createFeedPostParams = CreateFeedPostParams(title: "title_example", contentHTML: "contentHTML_example", media: [FeedPostMediaItem(title: "title_example", linkUrl: "linkUrl_example", sizes: [FeedPostMediaItemAsset(w: 123, h: 123, src: "src_example")])], links: [FeedPostLink(text: "text_example", title: "title_example", description: "description_example", url: "url_example")], fromUserId: "fromUserId_example", fromUserDisplayName: "fromUserDisplayName_example", tags: ["tags_example"], meta: "TODO") // CreateFeedPostParams | 
-let broadcastId = "broadcastId_example" // String |  (opzionale)
-let isLive = true // Bool |  (opzionale)
-let doSpamCheck = true // Bool |  (opzionale)
-let skipDupCheck = true // Bool |  (opzionale)
+let broadcastId = "broadcastId_example" // String |  (optional)
+let isLive = true // Bool |  (optional)
+let doSpamCheck = true // Bool |  (optional)
+let skipDupCheck = true // Bool |  (optional)
 
-DefaultAPI.createFeedPost(tenantId: tenantId, createFeedPostParams: createFeedPostParams, broadcastId: broadcastId, isLive: isLive, doSpamCheck: doSpamCheck, skipDupCheck: skipDupCheck) { (response, error) in
+DefaultAPI.createFeedPost(tenantId: tenantId, createFeedPostParams: createFeedPostParams, options: DefaultAPI.CreateFeedPostOptions(broadcastId: broadcastId, isLive: isLive, doSpamCheck: doSpamCheck, skipDupCheck: skipDupCheck)) { (response, error) in
     guard error == nil else {
         print(error)
         return

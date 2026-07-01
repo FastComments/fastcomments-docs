@@ -1,10 +1,10 @@
-### Инсталирајте зависности
+### Install Dependencies
 
 ```bash
 sudo apt install libcpprest-dev libboost-all-dev
 ```
 
-### Изградња из извора
+### Building from Source
 
 ```bash
 mkdir build
@@ -13,21 +13,18 @@ cmake ..
 make
 ```
 
-### Инсталирање
+### Installing
 
 ```bash
 sudo make install
 ```
 
-### Садржај библиотеке
+### Library Contents
 
-Ова библиотека садржи генерисан API клијент и SSO алате који олакшавају рад са API-јем.
+Ova biblioteka sadrži generirani API klijent i SSO alate koji olakšavaju rad s API‑jem.
 
 - [API Client Library Docs](https://github.com/FastComments/fastcomments-cpp/blob/master/client/README.md)
 
-### Јавни и заштићени API-ји
+### Public vs Secured APIs
 
-Код API клијента постоје три класе, `DefaultApi`, `PublicApi`, и `ModerationApi`. `DefaultApi` садржи методе које захтевају ваш API кључ, а `PublicApi` садржи
-методе које се могу позивати директно из прегледника/мобилног уређаја/итд. без аутентификације. `ModerationApi` садржи методе које покрећу контролну таблу модератора - листање,
-бројање, претрагу, извоз и повлачење логова за коментаре, акције модерирања (уклањање/враћање, означавање, подешавање статуса за преглед/спам/одобрење, подешавање гласова, поновно отварање/затварање тема),
-забране (забрана по коментару, поништавање забрана, пре-забранске сажетке, статус и преференце забране, број забанованих корисника), и значке и поверење (додавање/уклањање значки, ручне значке, добијање/постављање фактора поверења, унутрашњи профил корисника). Сваки `ModerationApi` метод прихвата `sso` параметар тако да се позив извршава у име SSO-аутентификованог модератора.
+Za API klijent postoje tri klase, `DefaultApi`, `PublicApi` i `ModerationApi`. `DefaultApi` sadrži metode koje zahtijevaju vaš API ključ, a `PublicApi` sadrži metode koje se mogu izvesti direktno iz preglednika/mobilnog uređaja/itd. bez autentifikacije. `ModerationApi` pruža opsežan skup live i brzih API‑ja za moderaciju. Svaka metoda `ModerationApi` prihvata parametar `sso` i može se autentifikovati putem SSO‑a ili sesijskog kolačića FastComments.com.

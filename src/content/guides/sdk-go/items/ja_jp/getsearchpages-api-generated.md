@@ -1,14 +1,14 @@
----
 ## パラメータ
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| value | string | query | いいえ |  |
-| sso | string | query | いいえ |  |
+| tenantId | string | query | Yes |  |
+| value | string | query | No |  |
+| sso | string | query | No |  |
 
 ## レスポンス
 
-返却値: [`ModerationPageSearchResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_page_search_response.go)
+Returns: [`ModerationPageSearchResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_page_search_response.go)
 
 ## 例
 
@@ -24,19 +24,18 @@ import (
 )
 
 func main() {
-	value := "value_example" // string |  (省略可能)
-	sso := "sso_example" // string |  (省略可能)
+	tenantId := "tenantId_example" // string | 
+	value := "value_example" // string |  (optional) -> (オプション)
+	sso := "sso_example" // string |  (optional) -> (オプション)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetSearchPages(context.Background()).Value(value).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetSearchPages(context.Background()).TenantId(tenantId).Value(value).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetSearchPages``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `GetSearchPages` のレスポンス: ModerationPageSearchResponse
+	// response from `GetSearchPages`: ModerationPageSearchResponse -> `GetSearchPages` のレスポンス: ModerationPageSearchResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetSearchPages`: %v\n", resp)
 }
 [inline-code-end]
-
----

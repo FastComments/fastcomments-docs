@@ -1,11 +1,10 @@
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| id | string | 否 |  |
-| deleteComments | string | 否 |  |
-| commentDeleteMode | string | 否 |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| options | DeleteTenantUserOptions | No |  |
 
 ## 响应
 
@@ -15,12 +14,12 @@
 
 [inline-code-attrs-start title = 'deleteTenantUser 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteTenantUser(tenantId = "my-tenant-123", id = "user-789", deleteComments = "true", commentDeleteMode = "soft")
+let (response, httpResponse) = client.deleteTenantUser(
+  tenantId = "my-tenant-123",
+  id = "user-456",
+  options = DeleteTenantUserOptions(),
+)
 if response.isSome:
-  let apiResp = response.get()
-  echo "Tenant user deleted, response: ", apiResp
-else:
-  echo "Failed to delete tenant user, HTTP status: ", $httpResponse.status
+  let empty = response.get()
+  echo "User successfully deleted"
 [inline-code-end]
-
----

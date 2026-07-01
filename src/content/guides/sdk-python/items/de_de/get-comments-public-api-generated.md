@@ -1,62 +1,63 @@
-req
-tenantId
-urlId
+req  
+tenantId  
+urlId  
 
 ## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| page | integer | query | No |  |
-| direction | string | query | No |  |
-| sso | string | query | No |  |
-| skip | integer | query | No |  |
-| skipChildren | integer | query | No |  |
-| limit | integer | query | No |  |
-| limitChildren | integer | query | No |  |
-| countChildren | boolean | query | No |  |
-| fetchPageForCommentId | string | query | No |  |
-| includeConfig | boolean | query | No |  |
-| countAll | boolean | query | No |  |
-| includei10n | boolean | query | No |  |
-| locale | string | query | No |  |
-| modules | string | query | No |  |
-| isCrawler | boolean | query | No |  |
-| includeNotificationCount | boolean | query | No |  |
-| asTree | boolean | query | No |  |
-| maxTreeDepth | integer | query | No |  |
-| useFullTranslationIds | boolean | query | No |  |
-| parentId | string | query | No |  |
-| searchText | string | query | No |  |
-| hashTags | array | query | No |  |
-| userId | string | query | No |  |
-| customConfigStr | string | query | No |  |
-| afterCommentId | string | query | No |  |
-| beforeCommentId | string | query | No |  |
+|------|-----|-----|--------------|--------------|
+| tenantId | string | path | Ja |  |
+| urlId | string | query | Ja |  |
+| page | integer | query | Nein |  |
+| direction | string | query | Nein |  |
+| sso | string | query | Nein |  |
+| skip | integer | query | Nein |  |
+| skipChildren | integer | query | Nein |  |
+| limit | integer | query | Nein |  |
+| limitChildren | integer | query | Nein |  |
+| countChildren | boolean | query | Nein |  |
+| fetchPageForCommentId | string | query | Nein |  |
+| includeConfig | boolean | query | Nein |  |
+| countAll | boolean | query | Nein |  |
+| includei10n | boolean | query | Nein |  |
+| locale | string | query | Nein |  |
+| modules | string | query | Nein |  |
+| isCrawler | boolean | query | Nein |  |
+| includeNotificationCount | boolean | query | Nein |  |
+| asTree | boolean | query | Nein |  |
+| maxTreeDepth | integer | query | Nein |  |
+| useFullTranslationIds | boolean | query | Nein |  |
+| parentId | string | query | Nein |  |
+| searchText | string | query | Nein |  |
+| hashTags | array | query | Nein |  |
+| userId | string | query | Nein |  |
+| customConfigStr | string | query | Nein |  |
+| afterCommentId | string | query | Nein |  |
+| beforeCommentId | string | query | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comments_response_with_presence_public_comment.py)
+Rückgabe: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comments_response_with_presence_public_comment.py)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'get_comments_public Beispiel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetCommentsPublicOptions
 from client.models.get_comments_response_with_presence_public_comment import GetCommentsResponseWithPresencePublicComment
 from client.models.sort_directions import SortDirections
 from client.rest import ApiException
 from pprint import pprint
 
-# Die Angabe des Hosts ist optional und standardmäßig https://fastcomments.com
+# Die Definition des Hosts ist optional und Standard ist https://fastcomments.com
 # Siehe configuration.py für eine Liste aller unterstützten Konfigurationsparameter.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Kontext mit einer Instanz des API-Clients öffnen
+# Öffnen Sie einen Kontext mit einer Instanz des API-Clients
 with client.ApiClient(configuration) as api_client:
     # Erstellen Sie eine Instanz der API-Klasse
     api_instance = client.PublicApi(api_client)
@@ -90,7 +91,7 @@ with client.ApiClient(configuration) as api_client:
     before_comment_id = 'before_comment_id_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_comments_public(tenant_id, url_id, page=page, direction=direction, sso=sso, skip=skip, skip_children=skip_children, limit=limit, limit_children=limit_children, count_children=count_children, fetch_page_for_comment_id=fetch_page_for_comment_id, include_config=include_config, count_all=count_all, includei10n=includei10n, locale=locale, modules=modules, is_crawler=is_crawler, include_notification_count=include_notification_count, as_tree=as_tree, max_tree_depth=max_tree_depth, use_full_translation_ids=use_full_translation_ids, parent_id=parent_id, search_text=search_text, hash_tags=hash_tags, user_id=user_id, custom_config_str=custom_config_str, after_comment_id=after_comment_id, before_comment_id=before_comment_id)
+        api_response = api_instance.get_comments_public(tenant_id, url_id, GetCommentsPublicOptions(page=page, direction=direction, sso=sso, skip=skip, skip_children=skip_children, limit=limit, limit_children=limit_children, count_children=count_children, fetch_page_for_comment_id=fetch_page_for_comment_id, include_config=include_config, count_all=count_all, includei10n=includei10n, locale=locale, modules=modules, is_crawler=is_crawler, include_notification_count=include_notification_count, as_tree=as_tree, max_tree_depth=max_tree_depth, use_full_translation_ids=use_full_translation_ids, parent_id=parent_id, search_text=search_text, hash_tags=hash_tags, user_id=user_id, custom_config_str=custom_config_str, after_comment_id=after_comment_id, before_comment_id=before_comment_id))
         print("The response of PublicApi->get_comments_public:\n")
         pprint(api_response)
     except Exception as e:

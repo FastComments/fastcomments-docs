@@ -1,6 +1,6 @@
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | id | string | 아니오 |  |
@@ -9,16 +9,12 @@
 
 반환: [`Option[GetTenantResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_tenant_response.nim)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'getTenant 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTenant 예시'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTenant(tenantId = "my-tenant-123", id = "tenant-789")
-if response.isSome:
-  let tenant = response.get()
-  discard tenant
-else:
-  discard httpResponse
+let (tenantResponse, httpResponse) = client.getTenant(tenantId = "my-tenant-123", id = "config-001")
+if tenantResponse.isSome:
+  let tenant = tenantResponse.get()
+  echo tenant
 [inline-code-end]
-
----

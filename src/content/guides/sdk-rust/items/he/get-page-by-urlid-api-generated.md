@@ -1,28 +1,24 @@
----
-## פרמטרים
+## Parameters
 
-| Name | Type | Required | Description |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
-| tenant_id | String | כן |  |
-| url_id | String | כן |  |
+| tenant_id | String | Yes |  |
+| url_id | String | Yes |  |
 
-## תגובה
+## Response
 
 מחזיר: [`GetPageByUrlidApiResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_page_by_urlid_api_response.rs)
 
-## דוגמה
+## Example
 
-[inline-code-attrs-start title = 'דוגמה ל-get_page_by_urlid'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה get_page_by_urlid'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_page() -> Result<GetPageByUrlidApiResponse, Error> {
-    let params: GetPageByUrlidParams = GetPageByUrlidParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        url_id: "news/article/how-to-build-an-api".to_string(),
-        locale: Some("en-US".to_string()),
+async fn example() -> Result<(), Error> {
+    let params = GetPageByUrlidParams {
+        tenant_id: "acme-corp-tenant".into(),
+        url_id: "news/article".into(),
     };
-    let page: GetPageByUrlidApiResponse = get_page_by_urlid(&configuration, params).await?;
-    Ok(page)
+    let _response = get_page_by_urlid(&config, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

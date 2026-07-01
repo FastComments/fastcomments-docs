@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | id | string | path | Oui |  |
@@ -19,9 +19,9 @@ Renvoie : [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configurer l'authentification par clé API : api_key
+// Configurer l'autorisation de la clé API : api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Décommentez ci-dessous pour configurer le préfixe (p. ex. Bearer) pour la clé API, si nécessaire
+// Décommentez ci-dessous pour configurer le préfixe (p. ex. Bearer) pour la clé API, si nécessaire
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
@@ -31,13 +31,17 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
-$delete_comments = 'delete_comments_example'; // string
-$comment_delete_mode = 'comment_delete_mode_example'; // string
+$options = [
+    'delete_comments' => 'delete_comments_example', // string
+    'comment_delete_mode' => 'comment_delete_mode_example', // string
+];
+
 
 try {
-    $result = $apiInstance->deleteTenantUser($tenant_id, $id, $delete_comments, $comment_delete_mode);
+    $result = $apiInstance->deleteTenantUser($tenant_id, $id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->deleteTenantUser: ', $e->getMessage(), PHP_EOL;

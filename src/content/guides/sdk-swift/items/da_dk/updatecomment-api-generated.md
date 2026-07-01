@@ -1,4 +1,3 @@
----
 ## Parametre
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
@@ -17,7 +16,7 @@ Returnerer: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sw
 
 [inline-code-attrs-start title = 'updateComment Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Følgende kodeeksempler er stadig i beta. For eventuelle problemer, rapportér venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De følgende kodeeksempler er stadig i beta. For eventuelle problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -27,7 +26,7 @@ let contextUserId = "contextUserId_example" // String |  (valgfri)
 let doSpamCheck = true // Bool |  (valgfri)
 let isLive = true // Bool |  (valgfri)
 
-DefaultAPI.updateComment(tenantId: tenantId, id: id, updatableCommentParams: updatableCommentParams, contextUserId: contextUserId, doSpamCheck: doSpamCheck, isLive: isLive) { (response, error) in
+DefaultAPI.updateComment(tenantId: tenantId, id: id, updatableCommentParams: updatableCommentParams, options: DefaultAPI.UpdateCommentOptions(contextUserId: contextUserId, doSpamCheck: doSpamCheck, isLive: isLive)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -38,5 +37,3 @@ DefaultAPI.updateComment(tenantId: tenantId, id: id, updatableCommentParams: upd
     }
 }
 [inline-code-end]
-
----

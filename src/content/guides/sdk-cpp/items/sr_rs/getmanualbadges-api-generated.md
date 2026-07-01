@@ -1,28 +1,28 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| sso | string | Не |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Da |  |
+| sso | string | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetTenantManualBadgesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetTenantManualBadgesResponse.h)
+Vraća: [`GetTenantManualBadgesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetTenantManualBadgesResponse.h)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример getManualBadges'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getManualBadges'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("https://auth.example.com/sso?tenant=my-tenant-123&user=user@example.com"));
-api->getManualBadges(sso).then([](pplx::task<std::shared_ptr<GetTenantManualBadgesResponse>> task){
-    try {
-        auto resp = task.get();
-        if (resp) {
-            auto copied = std::make_shared<GetTenantManualBadgesResponse>(*resp);
-        }
-    } catch (const std::exception& ex) {
-        (void)ex;
-    }
-});
-[inline-code-end]
+utility::string_t tenantId = U("my-tenant-123");
+boost::optional<utility::string_t> sso = boost::make_optional(U("user@example.com"));
 
----
+api->getManualBadges(tenantId, sno)
+    .then([](pplx::task<std::shared_ptr<GetTenantManualBadgesResponse>> t) {
+        try {
+            auto response = t.get();
+            // obradi odgovor, npr. response->badgeList
+        } catch (const std::exception& ex) {
+            // obradi grešku
+        }
+    });
+[inline-code-end]

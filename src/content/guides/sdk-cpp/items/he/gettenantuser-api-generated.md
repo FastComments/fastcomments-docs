@@ -1,3 +1,4 @@
+---
 ## פרמטרים
 
 | שם | סוג | נדרש | תיאור |
@@ -11,20 +12,19 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getTenantUser'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getTenantUser'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> auditReason = U("admin-request");
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t id = U("john.doe@example.com");
-auto fallback = std::make_shared<GetTenantUserResponse>();
-api->getTenantUser(tenantId, id).then([fallback, auditReason](pplx::task<std::shared_ptr<GetTenantUserResponse>> t){
-    try {
-        auto resp = t.get();
-        if(!resp) resp = fallback;
-        (void)auditReason;
-    } catch(const std::exception&) {
-    }
-});
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto userId = utility::conversions::to_string_t("user@example.com");
+api->getTenantUser(tenantId, userId)
+    .then([](pplx::task<std::shared_ptr<GetTenantUserResponse>> task) {
+        try {
+            auto response = task.get();
+            // השתמש בתשובה לפי הצורך
+        } catch (const std::exception&) {
+            // טיפול בשגיאה
+        }
+    });
 [inline-code-end]
 
 ---

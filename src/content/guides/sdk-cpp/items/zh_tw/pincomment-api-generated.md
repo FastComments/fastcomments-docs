@@ -1,32 +1,30 @@
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| commentId | string | 是 |  |
-| broadcastId | string | 是 |  |
-| sso | string | 否 |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| broadcastId | string | Yes |  |
+| sso | string | No |  |
 
 ## 回應
 
-回傳：[`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ChangeCommentPinStatusResponse.h)
+返回：[`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ChangeCommentPinStatusResponse.h)
 
 ## 範例
 
 [inline-code-attrs-start title = 'pinComment 範例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("cmt-456789");
-utility::string_t broadcastId = U("broadcast-987");
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
+utility::string_t commentId = U("comment-456");
+utility::string_t broadcastId = U("broadcast-789");
+boost::optional<utility::string_t> sso = U("sso-token-abc");
+
 api->pinComment(tenantId, commentId, broadcastId, sso)
-.then([](pplx::task<std::shared_ptr<ChangeCommentPinStatusResponse>> task){
-    try {
-        auto resp = task.get();
-        auto copy = std::make_shared<ChangeCommentPinStatusResponse>(*resp);
-        std::cout << "Pin operation completed. Response present: " << (resp != nullptr) << std::endl;
-    } catch (const std::exception& e) {
-        std::cerr << "Pin failed: " << e.what() << std::endl;
-    }
-});
+    .then([](pplx::task<std::shared_ptr<ChangeCommentPinStatusResponse>> task) {
+        try {
+            auto response = task.get();
+        } catch (const std::exception&) {
+        }
+    });
 [inline-code-end]

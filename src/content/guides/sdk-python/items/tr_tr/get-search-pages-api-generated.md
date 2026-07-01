@@ -1,9 +1,10 @@
-## Parameters
+## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| value | string | query | Hayır |  |
-| sso | string | query | Hayır |  |
+| tenantId | string | query | Yes |  |
+| value | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Yanıt
 
@@ -11,29 +12,31 @@ Döndürür: [`ModerationPageSearchResponse`](https://github.com/FastComments/fa
 
 ## Örnek
 
-[inline-code-attrs-start title = 'get_search_pages Örneği'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_search_pages Örnek'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetSearchPagesOptions
 from client.models.moderation_page_search_response import ModerationPageSearchResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Host tanımlamak isteğe bağlıdır ve varsayılan https://fastcomments.com'tur
-# Tüm desteklenen yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.
+# Sunucuyu tanımlamak isteğe bağlıdır ve varsayılan olarak https://fastcomments.com adresine yöneliktir
+# configuration.py dosyasında desteklenen tüm yapılandırma parametrelerinin bir listesi bulunur.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# API istemcisinin bir örneği ile bir context içine girin
+# API istemcisi bir örnek ile bir bağlam girin
 with client.ApiClient(configuration) as api_client:
     # API sınıfının bir örneğini oluşturun
     api_instance = client.ModerationApi(api_client)
-    value = 'value_example' # str |  (isteğe bağlı)
-    sso = 'sso_example' # str |  (isteğe bağlı)
+    tenant_id = 'tenant_id_example' # str | 
+    value = 'value_example' # str |  (opsiyonel)
+    sso = 'sso_example' # str |  (opsiyonel)
 
     try:
-        api_response = api_instance.get_search_pages(value=value, sso=sso)
+        api_response = api_instance.get_search_pages(tenant_id, GetSearchPagesOptions(value=value, sso=sso))
         print("The response of ModerationApi->get_search_pages:\n")
         pprint(api_response)
     except Exception as e:

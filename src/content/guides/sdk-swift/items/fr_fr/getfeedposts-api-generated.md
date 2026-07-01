@@ -5,7 +5,7 @@ afterId
 ## Paramètres
 
 | Nom | Type | Emplacement | Obligatoire | Description |
-|------|------|----------|----------|-------------|
+|------|------|--------------|-------------|-------------|
 | tenantId | string | query | Oui |  |
 | afterId | string | query | Non |  |
 | limit | integer | query | Non |  |
@@ -13,7 +13,7 @@ afterId
 
 ## Réponse
 
-Renvoie : [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetFeedPostsResponse.swift)
+Retourne : [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetFeedPostsResponse.swift)
 
 ## Exemple
 
@@ -23,11 +23,11 @@ Renvoie : [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let afterId = "afterId_example" // String |  (optionnel)
-let limit = 987 // Int |  (optionnel)
-let tags = ["inner_example"] // [String] |  (optionnel)
+let afterId = "afterId_example" // String |  (facultatif)
+let limit = 987 // Int |  (facultatif)
+let tags = ["inner_example"] // [String] |  (facultatif)
 
-DefaultAPI.getFeedPosts(tenantId: tenantId, afterId: afterId, limit: limit, tags: tags) { (response, error) in
+DefaultAPI.getFeedPosts(tenantId: tenantId, options: DefaultAPI.GetFeedPostsOptions(afterId: afterId, limit: limit, tags: tags)) { (response, error) in
     guard error == nil else {
         print(error)
         return

@@ -2,9 +2,9 @@
 
 | שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
+| tenantId | string | כן |  |
 | commentId | string | כן |  |
-| reviewed | bool | לא |  |
-| sso | string | לא |  |
+| options | PostSetCommentReviewStatusOptions | לא |  |
 
 ## תגובה
 
@@ -12,18 +12,17 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-postSetCommentReviewStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postSetCommentReviewStatus דוגמה'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postSetCommentReviewStatus(
-  commentId = "cmt-98765-news-article",
-  reviewed = false,
-  sso = ""
+let (apiResp, httpResp) = client.postSetCommentReviewStatus(
+  tenantId = "my-tenant-123",
+  commentId = "cmt-7890",
+  options = PostSetCommentReviewStatusOptions()
 )
-if response.isSome:
-  let apiResp = response.get()
-  echo "Review status updated"
-else:
-  echo "Failed to update review status: " & $httpResponse.status
-[inline-code-end]
 
----
+if apiResp.isSome:
+  let _ = apiResp.get()
+  discard
+else:
+  discard
+[inline-code-end]

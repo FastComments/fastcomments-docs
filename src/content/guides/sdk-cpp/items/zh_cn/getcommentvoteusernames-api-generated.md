@@ -1,6 +1,6 @@
 ## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必需 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | commentId | string | 是 |  |
@@ -15,15 +15,14 @@
 
 [inline-code-attrs-start title = 'getCommentVoteUserNames 示例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("comment-456");
-int32_t dir = 1;
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
-api->getCommentVoteUserNames(tenantId, commentId, dir, sso)
-.then([](std::shared_ptr<GetCommentVoteUserNamesSuccessResponse> resp){
-    auto result = resp ? resp : std::make_shared<GetCommentVoteUserNamesSuccessResponse>();
-    std::cout << "Fetched comment vote user names" << std::endl;
+auto task = api->getCommentVoteUserNames(
+    utility::conversions::to_string_t("my-tenant-123"),
+    utility::conversions::to_string_t("comment-456"),
+    static_cast<int32_t>(1),
+    boost::optional<utility::string_t>(utility::conversions::to_string_t("sso-token"))
+).then([](pplx::task<std::shared_ptr<GetCommentVoteUserNamesSuccessResponse>> t){
+    try{
+        auto response = t.get();
+    }catch(const std::exception&){ }
 });
 [inline-code-end]
-
----

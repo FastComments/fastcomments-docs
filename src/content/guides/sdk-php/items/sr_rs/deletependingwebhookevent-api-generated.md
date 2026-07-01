@@ -1,6 +1,6 @@
 ## Параметри
 
-| Назив | Тип | Локација | Обавезно | Опис |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | id | string | path | Да |  |
@@ -11,26 +11,27 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример deletePendingWebhookEvent'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deletePendingWebhookEvent Primer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Конфигуришите ауторизацију API кључа: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Откоментирајте испод да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
+// Configure API key authorization: api_key
+// Откоментариши линију испод да подесиш префикс (нпр. Bearer) за API кључ, ако је потребно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ако желите да користите прилагођени HTTP клијент, проследите клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционално; као подразумевани ће бити коришћен `GuzzleHttp\Client`.
+    // Ако желиш да користиш прилагођени HTTP клијент, проследи свој клијент који имплементира `GuzzleHttp\ClientInterface`.
+    // Ово је опционо, `GuzzleHttp\Client` ће се користити као подразумевано.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
+
 
 try {
     $result = $apiInstance->deletePendingWebhookEvent($tenant_id, $id);

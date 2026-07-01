@@ -1,32 +1,30 @@
-Додайте цей рядок до Gemfile вашого додатка:
+Add this line to your application's Gemfile:
 
 ```ruby
 gem 'fastcomments'
 ```
 
-А потім виконайте:
+And then execute:
 
 ```bash
 bundle install
 ```
 
-Або встановіть його самостійно за допомогою:
+Or install it yourself as:
 
 ```bash
 gem install fastcomments
 ```
 
-### Вміст бібліотеки
+### Library Contents
 
-Ця бібліотека містить згенерований клієнт API та утиліти SSO, щоб полегшити роботу з API.
+This library contains the generated API client and the SSO utilities to make working with the API easier.
 
-- [API Client Library Docs](https://github.com/FastComments/fastcomments-ruby/blob/master/client/README.md)
+- [Документація бібліотеки клієнта API](https://github.com/FastComments/fastcomments-ruby/blob/master/client/README.md)
 
-### Публічні та захищені API
+### Public vs Secured APIs
 
-Для клієнта API існують три класи, `DefaultApi`, `PublicApi` та `ModerationApi`. `DefaultApi` містить методи, які потребують вашого API-ключа, а `PublicApi` містить виклики API
-які можна виконувати безпосередньо з браузера/мобільного пристрою тощо без автентифікації. `ModerationApi` містить методи, що забезпечують роботу панелі модератора.
+For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains api calls
+that can be made directly from a browser/mobile device/etc without authentication. The `ModerationApi` contains the methods that power the moderator dashboard.
 
-`ModerationApi` охоплює модерацію коментарів (перелік, підрахунок, пошук, журнали, експорт), дії модерації (видалення/відновлення, позначення, встановлення статусу перевірки/спаму/схвалення, голоси, повторне відкриття/закриття треду),
-блокування (заборона з коментаря, скасування, підсумки перед баном, статус/параметри бану, кількість заблокованих користувачів), та значки й довіру (нагородити/зняти значок, ручні значки, отримати/встановити коефіцієнт довіри, внутрішній профіль користувача).
-Кожен метод `ModerationApi` приймає параметр `sso`, щоб запит міг бути виконаний від імені модератора, автентифікованого через SSO.
+The `ModerationApi` provides an extensive suite of live and fast moderation APIs. Every `ModerationApi` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.

@@ -1,11 +1,11 @@
-Masovni podaci o korisnicima za tenant. Za zadane userIds vraća prikazne informacije iz User / SSOUser.
-Koristi ga widget za komentare za obogaćivanje korisnika koji su se upravo pojavili putem događaja prisutnosti.
-Nema konteksta stranice: privatnost se primjenjuje jednako (privatni profili su maskirani).
+Masovni podaci o korisnicima za tenant. S obzirom na userIds, vraća prikazne informacije iz User / SSOUser.  
+Koristi se od strane widgeta za komentare kako bi se obogatili korisnici koji su se upravo pojavili putem događaja prisutnosti.  
+Bez konteksta stranice: privatnost se provodi uniformno (privatni profili su maskirani).
 
-## Parametri
+## Parameters
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
 | tenant_id | String | Da |  |
 | ids | String | Da |  |
 
@@ -17,12 +17,9 @@ Vraća: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-r
 
 [inline-code-attrs-start title = 'get_users_info Primjer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: GetUsersInfoParams = GetUsersInfoParams {
+let params = GetUsersInfoParams {
     tenant_id: "acme-corp-tenant".to_string(),
-    ids: "alice@example.com,bob@example.com,carol@example.com".to_string(),
-    page_size: Some(100),
+    ids: "user-1,user-2".to_string(),
 };
-let users_response: PageUsersInfoResponse = get_users_info(&configuration, params).await?;
+let page: PageUsersInfoResponse = get_users_info(&configuration, params).await?;
 [inline-code-end]
-
----

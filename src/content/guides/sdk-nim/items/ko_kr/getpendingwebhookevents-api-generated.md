@@ -1,14 +1,9 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| commentId | string | 예 |  |
-| externalId | string | 아니요 |  |
-| eventType | string | 아니요 |  |
-| domain | string | 아니요 |  |
-| attemptCountGT | float64 | 아니요 |  |
-| skip | float64 | 아니요 |  |
+| tenantId | string | Yes |  |
+| options | GetPendingWebhookEventsOptions | No |  |
 
 ## 응답
 
@@ -18,18 +13,11 @@
 
 [inline-code-attrs-start title = 'getPendingWebhookEvents 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getPendingWebhookEvents(
+let (maybeResp, httpResp) = client.getPendingWebhookEvents(
   tenantId = "my-tenant-123",
-  commentId = "cmt-987654",
-  externalId = "",
-  eventType = "",
-  domain = "",
-  attemptCountGT = 0.0,
-  skip = 0.0
+  options = GetPendingWebhookEventsOptions()
 )
-if response.isSome:
-  let pending = response.get()
-  discard pending
-[inline-code-end]
 
----
+if maybeResp.isSome:
+  let resp = maybeResp.get()
+[inline-code-end]

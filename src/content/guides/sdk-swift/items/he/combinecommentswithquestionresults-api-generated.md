@@ -2,15 +2,15 @@
 
 | שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | כן |  |
-| questionId | string | query | לא |  |
-| questionIds | array | query | לא |  |
-| urlId | string | query | לא |  |
-| startDate | string | query | לא |  |
-| forceRecalculate | boolean | query | לא |  |
-| minValue | number | query | לא |  |
-| maxValue | number | query | לא |  |
-| limit | number | query | לא |  |
+| tenantId | string | query | Yes |  |
+| questionId | string | query | No |  |
+| questionIds | array | query | No |  |
+| urlId | string | query | No |  |
+| startDate | string | query | No |  |
+| forceRecalculate | boolean | query | No |  |
+| minValue | number | query | No |  |
+| maxValue | number | query | No |  |
+| limit | number | query | No |  |
 
 ## תגובה
 
@@ -18,9 +18,9 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-combineCommentsWithQuestionResults'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'combineCommentsWithQuestionResults דוגמה'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// דגימות הקוד שלהלן עדיין בבטא. לכל בעיה, אנא דווחו דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// הקוד הבא עדיין במצב בטא. לכל בעיה, אנא דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -33,7 +33,7 @@ let minValue = 987 // Double |  (אופציונלי)
 let maxValue = 987 // Double |  (אופציונלי)
 let limit = 987 // Double |  (אופציונלי)
 
-DefaultAPI.combineCommentsWithQuestionResults(tenantId: tenantId, questionId: questionId, questionIds: questionIds, urlId: urlId, startDate: startDate, forceRecalculate: forceRecalculate, minValue: minValue, maxValue: maxValue, limit: limit) { (response, error) in
+DefaultAPI.combineCommentsWithQuestionResults(tenantId: tenantId, options: DefaultAPI.CombineCommentsWithQuestionResultsOptions(questionId: questionId, questionIds: questionIds, urlId: urlId, startDate: startDate, forceRecalculate: forceRecalculate, minValue: minValue, maxValue: maxValue, limit: limit)) { (response, error) in
     guard error == nil else {
         print(error)
         return

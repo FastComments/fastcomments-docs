@@ -1,10 +1,10 @@
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| id | string | Ne |  |
-| userId | string | Ne |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| userId | string = "" | No |  |
 
 ## Odgovor
 
@@ -12,14 +12,10 @@ Vraća: [`Option[GetTicketResponse]`](https://github.com/FastComments/fastcommen
 
 ## Primjer
 
-[inline-code-attrs-start title = 'getTicket Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getTicket'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTicket(tenantId = "my-tenant-123", id = "ticket-456", userId = "user-789")
-if response.isSome:
-  let ticket = response.get()
-  echo "Got ticket:", ticket
-else:
-  echo "No ticket returned; HTTP response:", httpResponse
+let (ticketOpt, httpResp) = client.getTicket(tenantId = "my-tenant-123", id = "ticket-456", userId = "")
+if ticketOpt.isSome:
+  let ticket = ticketOpt.get()
+  discard ticket
 [inline-code-end]
-
----

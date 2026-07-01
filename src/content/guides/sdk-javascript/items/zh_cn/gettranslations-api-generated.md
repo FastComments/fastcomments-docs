@@ -1,6 +1,6 @@
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | namespace | string | Yes |  |
 | component | string | Yes |  |
@@ -9,14 +9,21 @@
 
 ## 响应
 
-返回: [`GetTranslationsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTranslationsResponse.ts)
+Returns: [`GetTranslationsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTranslationsResponse1.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'getTranslations 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const translationsFull: GetTranslationsResponse = await getTranslations("site-comments", "comment-form", "fr-FR", true);
-const translationsDefault: GetTranslationsResponse = await getTranslations("admin-dashboard", "notification-center");
+(async () => {
+  const namespace: string = 'blog';
+  const component: string = 'comment-editor';
+  const locale: string = 'fr-FR';
+  const useFullTranslationIds: boolean = true;
+
+  const basicTranslations: GetTranslationsResponse1 = await getTranslations(namespace, component);
+  const fullTranslations: GetTranslationsResponse1 = await getTranslations(namespace, component, locale, useFullTranslationIds);
+})();
 [inline-code-end]
 
 ---

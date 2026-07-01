@@ -1,9 +1,11 @@
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obvezno | Opis |
+| Ime | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Da |  |
 | commentId | string | path | Da |  |
 | approved | boolean | query | Ne |  |
+| broadcastId | string | query | Ne |  |
 | sso | string | query | Ne |  |
 
 ## Odgovor
@@ -12,7 +14,7 @@ Vraća: [`SetCommentApprovedResponse`](https://github.com/FastComments/fastcomme
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer PostSetCommentApprovalStatus'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PostSetCommentApprovalStatus Primjer'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -24,18 +26,20 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
-	approved := true // bool |  (neobavezno)
-	sso := "sso_example" // string |  (neobavezno)
+	approved := true // bool | (opcionalno)
+	broadcastId := "broadcastId_example" // string | (opcionalno)
+	sso := "sso_example" // string | (opcionalno)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostSetCommentApprovalStatus(context.Background(), commentId).Approved(approved).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostSetCommentApprovalStatus(context.Background(), commentId).TenantId(tenantId).Approved(approved).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostSetCommentApprovalStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor iz `PostSetCommentApprovalStatus`: SetCommentApprovedResponse
+	// odgovor od `PostSetCommentApprovalStatus`: SetCommentApprovedResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostSetCommentApprovalStatus`: %v\n", resp)
 }
 [inline-code-end]

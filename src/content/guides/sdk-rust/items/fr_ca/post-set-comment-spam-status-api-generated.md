@@ -1,30 +1,32 @@
 ## Paramètres
 
-| Nom | Type | Requis | Description |
-|------|------|----------|-------------|
+| Nom | Type | Obligatoire | Description |
+|------|------|-------------|-------------|
+| tenant_id | String | Oui |  |
 | comment_id | String | Oui |  |
 | spam | bool | Non |  |
 | perm_not_spam | bool | Non |  |
+| broadcast_id | String | Non |  |
 | sso | String | Non |  |
 
 ## Réponse
 
-Renvoie : [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
+Retourne : [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de post_set_comment_spam_status'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_set_comment_spam_status Exemple'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_set_spam_status() -> Result<(), Error> {
-    let params: PostSetCommentSpamStatusParams = PostSetCommentSpamStatusParams {
-        comment_id: String::from("acme-news/2026/06/19/article-84/comment-1023"),
+async fn example() -> Result<(), Error> {
+    let params = PostSetCommentSpamStatusParams {
+        tenant_id: "acme-corp-tenant".into(),
+        comment_id: "comment-12345".into(),
         spam: Some(true),
         perm_not_spam: Some(false),
-        sso: Some(String::from("jwt:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fakepayload")),
+        broadcast_id: Some("broadcast-678".into()),
+        sso: Some("user@example.com".into()),
     };
-    let response: ApiEmptyResponse = post_set_comment_spam_status(configuration, params).await?;
+    post_set_comment_spam_status(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

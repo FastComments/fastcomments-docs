@@ -1,45 +1,48 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Обавезно | Опис |
-|------|------|----------|----------|-------------|
-| badgeId | string | query | Да |  |
-| userId | string | query | Не |  |
-| commentId | string | query | Не |  |
-| broadcastId | string | query | Не |  |
-| sso | string | query | Не |  |
+| Ime | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
+| badgeId | string | query | Da |  |
+| userId | string | query | Ne |  |
+| commentId | string | query | Ne |  |
+| broadcastId | string | query | Ne |  |
+| sso | string | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/award_user_badge_response.py)
+Vraća: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/award_user_badge_response.py)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'put_award_badge Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'put_award_badge Primjer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import PutAwardBadgeOptions
 from client.models.award_user_badge_response import AwardUserBadgeResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Постављање host-а је опционо и подразумева се https://fastcomments.com
-# Погледајте configuration.py за списак свих подржаних конфигурационих параметара.
+# Definisanje hosta je opcionalno i podrazumijeva https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih konfiguracionih parametara.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Уђите у контекст са инстанцом API клијента
+# Ulazite u kontekst s instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Креирајте инстанцу API класе
+    # Kreirajte instancu API klase
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     badge_id = 'badge_id_example' # str | 
-    user_id = 'user_id_example' # str |  (опционо)
-    comment_id = 'comment_id_example' # str |  (опционо)
-    broadcast_id = 'broadcast_id_example' # str |  (опционо)
-    sso = 'sso_example' # str |  (опционо)
+    user_id = 'user_id_example' # str |  (opcionalno)
+    comment_id = 'comment_id_example' # str |  (opcionalno)
+    broadcast_id = 'broadcast_id_example' # str |  (opcionalno)
+    sso = 'sso_example' # str |  (opcionalno)
 
     try:
-        api_response = api_instance.put_award_badge(badge_id, user_id=user_id, comment_id=comment_id, broadcast_id=broadcast_id, sso=sso)
+        api_response = api_instance.put_award_badge(tenant_id, badge_id, PutAwardBadgeOptions(user_id=user_id, comment_id=comment_id, broadcast_id=broadcast_id, sso=sso))
         print("The response of ModerationApi->put_award_badge:\n")
         pprint(api_response)
     except Exception as e:

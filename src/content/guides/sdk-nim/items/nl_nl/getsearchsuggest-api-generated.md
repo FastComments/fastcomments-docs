@@ -1,11 +1,11 @@
 ## Parameters
 
 | Naam | Type | Vereist | Beschrijving |
-|------|------|----------|-------------|
-| textSearch | string | Nee |  |
-| sso | string | Nee |  |
+|------|------|----------|---------------|
+| tenantId | string | Ja |  |
+| options | GetSearchSuggestOptions | Nee |  |
 
-## Response
+## Respons
 
 Retourneert: [`Option[ModerationSuggestResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_suggest_response.nim)
 
@@ -13,11 +13,12 @@ Retourneert: [`Option[ModerationSuggestResponse]`](https://github.com/FastCommen
 
 [inline-code-attrs-start title = 'getSearchSuggest Voorbeeld'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSearchSuggest(textSearch = "suspicious comment with spammy links", sso = "sso-user-789")
-if response.isSome:
-  let suggest = response.get()
-  echo "ModerationSuggestResponse:"
+let (suggestOpt, httpResp) = client.getSearchSuggest(
+  tenantId = "my-tenant-123",
+  options = GetSearchSuggestOptions(),
+)
+
+if suggestOpt.isSome:
+  let suggest = suggestOpt.get()
   echo suggest
-else:
-  echo "No moderation suggestions returned. HTTP status: ", httpResponse.status
 [inline-code-end]

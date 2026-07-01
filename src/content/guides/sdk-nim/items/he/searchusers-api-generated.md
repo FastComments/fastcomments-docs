@@ -1,13 +1,10 @@
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| urlId | string | כן |  |
-| usernameStartsWith | string | לא |  |
-| mentionGroupIds | seq[string] | לא |  |
-| sso | string | לא |  |
-| searchSection | string | לא |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| options | SearchUsersOptions | No |  |
 
 ## תגובה
 
@@ -15,22 +12,14 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה של searchUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת searchUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.searchUsers(
   tenantId = "my-tenant-123",
-  urlId = "news/top-story",
-  usernameStartsWith = "",
-  mentionGroupIds = @[],
-  sso = "",
-  searchSection = ""
+  urlId = "news/article-title",
+  options = SearchUsersOptions()
 )
 
 if response.isSome:
-  let searchResult = response.get()
-  echo "SearchUsersResult:", searchResult
-else:
-  echo "No result or error. HTTP response:", httpResponse
+  let result = response.get()
 [inline-code-end]
-
----

@@ -1,7 +1,7 @@
 ## Παράμετροι
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|------------|-----------|
 | tenantId | string | query | Ναι |  |
 | userId | string | query | Όχι |  |
 | state | number | query | Όχι |  |
@@ -10,13 +10,13 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTicketsResponse.swift)
+Returns: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTicketsResponse.swift)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα getTickets'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Τα ακόλουθα δείγματα κώδικα εξακολουθούν να είναι beta. Για οποιοδήποτε πρόβλημα, αναφέρετε το μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
+// Τα παρακάτω παραδείγματα κώδικα βρίσκονται ακόμη σε beta. Για οποιοδήποτε πρόβλημα, παρακαλούμε αναφέρετέ το μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -25,7 +25,7 @@ let state = 987 // Double |  (προαιρετικό)
 let skip = 987 // Double |  (προαιρετικό)
 let limit = 987 // Double |  (προαιρετικό)
 
-DefaultAPI.getTickets(tenantId: tenantId, userId: userId, state: state, skip: skip, limit: limit) { (response, error) in
+DefaultAPI.getTickets(tenantId: tenantId, options: DefaultAPI.GetTicketsOptions(userId: userId, state: state, skip: skip, limit: limit)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -36,5 +36,3 @@ DefaultAPI.getTickets(tenantId: tenantId, userId: userId, state: state, skip: sk
     }
 }
 [inline-code-end]
-
----

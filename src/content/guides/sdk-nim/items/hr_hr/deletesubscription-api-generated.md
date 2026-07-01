@@ -1,10 +1,10 @@
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
 | tenantId | string | Da |  |
 | id | string | Ne |  |
-| userId | string | Ne |  |
+| userId | string = "" | Ne |  |
 
 ## Odgovor
 
@@ -12,14 +12,15 @@ Vraća: [`Option[DeleteSubscriptionAPIResponse]`](https://github.com/FastComment
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer deleteSubscription'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteSubscription Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteSubscription(tenantId = "my-tenant-123", id = "sub-98765", userId = "user-456")
-if response.isSome:
-  let deleteResp = response.get()
-  echo "Delete subscription response received"
-else:
-  echo "No subscription response"
-[inline-code-end]
+let (maybeResp, httpResp) = client.deleteSubscription(
+  tenantId = "my-tenant-123",
+  id = "sub-789",
+  userId = ""
+)
 
----
+if maybeResp.isSome:
+  let apiResult = maybeResp.get()
+  # upotrijebite apiResult po potrebi
+[inline-code-end]

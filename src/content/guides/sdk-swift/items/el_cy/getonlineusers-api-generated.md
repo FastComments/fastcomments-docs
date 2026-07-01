@@ -1,32 +1,32 @@
-Την παρούσα στιγμή συνδεδεμένοι θεατές μιας σελίδας: άτομα των οποίων η websocket συνεδρία είναι εγγεγραμμένη στη σελίδα αυτή αυτή τη στιγμή.
-Επιστρέφει anonCount + totalCount (συνδρομητές στο δωμάτιο συνολικά, συμπεριλαμβανομένων ανώνυμων θεατών που δεν απαριθμούμε).
+Currently-online viewers of a page: people whose websocket session is subscribed to the page right now.  
+Returns anonCount + totalCount (room-wide subscribers, including anon viewers we don't enumerate).
 
-## Παράμετροι
+## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Ναι |  |
-| urlId | string | query | Ναι | Αναγνωριστικό URL της σελίδας (καθαρίζεται από τον διακομιστή). |
-| afterName | string | query | Όχι | Δείκτης: περάστε το nextAfterName από την προηγούμενη απάντηση. |
-| afterUserId | string | query | Όχι | Δείκτης-επιλύτης ισοβαθμίας: περάστε το nextAfterUserId από την προηγούμενη απάντηση. Απαιτείται όταν το afterName έχει οριστεί ώστε οι ισοβαθμίες ονομάτων να μην παραλείπουν εγγραφές. |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|------------|------------|
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes | Αναγνωριστικό URL σελίδας (καθαρισμένο από τον server). |
+| afterName | string | query | No | Δείκτης: περάστε το nextAfterName από την προηγούμενη απόκριση. (προαιρετικό) |
+| afterUserId | string | query | No | Διευθυντής ισοσταθμισμού δείκτη: περάστε το nextAfterUserId από την προηγούμενη απόκριση. Απαιτείται όταν ορίζεται afterName ώστε τα ισοδυνάμει ονόματα να μην αφαιρούν εγγραφές. (προαιρετικό) |
 
-## Απόκριση
+## Response
 
-Επιστρέφει: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PageUsersOnlineResponse.swift)
+Returns: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PageUsersOnlineResponse.swift)
 
-## Παράδειγμα
+## Example
 
-[inline-code-attrs-start title = 'Παράδειγμα getOnlineUsers'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getOnlineUsers Παράδειγμα'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Τα ακόλουθα δείγματα κώδικα είναι ακόμα beta. Για οποιοδήποτε πρόβλημα, αναφέρετε το μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
+// Τα παρακάτω δείγματα κώδικα είναι ακόμη σε beta. Για οποιοδήποτε πρόβλημα, παρακαλώ αναφέρετε το μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let urlId = "urlId_example" // String | Αναγνωριστικό URL σελίδας (καθαρίζεται από τον διακομιστή).
-let afterName = "afterName_example" // String | Δείκτης: περάστε το nextAfterName από την προηγούμενη απάντηση. (προαιρετικό)
-let afterUserId = "afterUserId_example" // String | Δείκτης-επιλύτης ισοβαθμίας: περάστε το nextAfterUserId από την προηγούμενη απάντηση. Απαιτείται όταν το afterName έχει οριστεί ώστε οι ισοβαθμίες ονομάτων να μην παραλείπουν εγγραφές. (προαιρετικό)
+let urlId = "urlId_example" // String | Αναγνωριστικό URL σελίδας (καθαρισμένο από τον server).
+let afterName = "afterName_example" // String | Δείκτης: περάστε το nextAfterName από την προηγούμενη απόκριση. (προαιρετικό)
+let afterUserId = "afterUserId_example" // String | Διευθυντής ισοσταθμισμού δείκτη: περάστε το nextAfterUserId από την προηγούμενη απόκριση. Απαιτείται όταν ορίζεται afterName ώστε τα ισοδυνάμει ονόματα να μην αφαιρούν εγγραφές. (προαιρετικό)
 
-PublicAPI.getOnlineUsers(tenantId: tenantId, urlId: urlId, afterName: afterName, afterUserId: afterUserId) { (response, error) in
+PublicAPI.getOnlineUsers(tenantId: tenantId, urlId: urlId, options: PublicAPI.GetOnlineUsersOptions(afterName: afterName, afterUserId: afterUserId)) { (response, error) in
     guard error == nil else {
         print(error)
         return

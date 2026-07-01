@@ -1,9 +1,8 @@
----
 ## Parametreler
 
-| Name | Type | Required | Description |
+| Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
-| tenant_id | String | Evet |  |
+| tenant_id | String | Yes |  |
 
 ## Yanıt
 
@@ -13,14 +12,11 @@ Döndürür: [`GetEmailTemplateDefinitionsResponse`](https://github.com/FastComm
 
 [inline-code-attrs-start title = 'get_email_template_definitions Örneği'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_templates() -> Result<(), Error> {
-    let params: GetEmailTemplateDefinitionsParams = GetEmailTemplateDefinitionsParams {
+async fn run() -> Result<(), Error> {
+    let params = GetEmailTemplateDefinitionsParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        locale: Some("en-US".to_string()),
     };
-    let response: GetEmailTemplateDefinitionsResponse =
-        get_email_template_definitions(&configuration, params).await?;
-    println!("{:#?}", response);
+    let _response = get_email_template_definitions(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

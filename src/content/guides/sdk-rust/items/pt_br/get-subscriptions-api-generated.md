@@ -1,7 +1,8 @@
+---
 ## Parâmetros
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nome | Tipo | Obrigatório | Descrição |
+|------|------|-------------|-----------|
 | tenant_id | String | Sim |  |
 | user_id | String | Não |  |
 
@@ -11,14 +12,16 @@ Retorna: [`GetSubscriptionsApiResponse`](https://github.com/FastComments/fastcom
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de get_subscriptions'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo get_subscriptions'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_subscriptions() -> Result<GetSubscriptionsApiResponse, Error> {
-    let params: GetSubscriptionsParams = GetSubscriptionsParams {
+async fn fetch_subscriptions(config: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetSubscriptionsParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        user_id: Some("user-9876".to_string()),
+        user_id: Some("user-12345".to_string()),
     };
-    let subscriptions: GetSubscriptionsApiResponse = get_subscriptions(&configuration, params).await?;
-    Ok(subscriptions)
+    let _response: GetSubscriptionsApiResponse = get_subscriptions(config, params).await?;
+    Ok(())
 }
 [inline-code-end]
+
+---

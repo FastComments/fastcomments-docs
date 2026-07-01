@@ -24,7 +24,7 @@ let file = URL(string: "https://example.com")! // URL |
 let sizePreset = SizePreset() // SizePreset | Size preset: \"Default\" (1000x1000px) or \"CrossPlatform\" (creates sizes for popular devices) (optional)
 let urlId = "urlId_example" // String | Page id that upload is happening from, to configure (optional)
 
-PublicAPI.uploadImage(tenantId: tenantId, file: file, sizePreset: sizePreset, urlId: urlId) { (response, error) in
+PublicAPI.uploadImage(tenantId: tenantId, file: file, options: PublicAPI.UploadImageOptions(sizePreset: sizePreset, urlId: urlId)) { (response, error) in
     guard error == nil else {
         print(error)
         return

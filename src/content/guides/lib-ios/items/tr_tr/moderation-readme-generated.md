@@ -1,36 +1,33 @@
-### Tüm Kullanıcılar İçin Kullanılabilir Eylemler
+### Tüm Kullanıcılar İçin Mevcut İşlemler
 
-- **Bildir/Bildirimi Kaldır** -- bir yorumu inceleme için bildir
+- **Flag/Unflag** -- bir yorumu gözden geçirme için raporla
 
 ```swift
 try await sdk.flagComment(commentId: commentId)
 try await sdk.unflagComment(commentId: commentId)
 ```
 
-- **Engelle/Engellemeyi Kaldır** -- bir kullanıcının tüm yorumlarını gizle (her görüntüleyici için)
+- **Block/Unblock** -- bir kullanıcıdan gelen tüm yorumları gizle (görülere göre)
 
 ```swift
 try await sdk.blockUser(commentId: commentId)
 try await sdk.unblockUser(commentId: commentId)
 ```
 
-### Yalnızca Yönetici Eylemleri
+### Yalnızca Yöneticiler İçin İşlemler
 
-- **Sabitle/Sabitlemeyi Kaldır** -- bir yorumu konu dizisinin en üstüne sabitle
+- **Pin/Unpin** -- bir yorumu dizinin en üstüne sabitle
 
 ```swift
 try await sdk.pinComment(commentId: commentId)
 try await sdk.unpinComment(commentId: commentId)
 ```
 
-- **Kilitle/Kilidi Aç** -- yoruma yeni yanıtların eklenmesini engelle
+- **Lock/Unlock** -- bir yoruma yeni yanıtları engelle ve kilit açılana kadar düzenlemeleri ve silmeleri engelle (herkese, moderatörler dahil, uygulanır)
 
 ```swift
 try await sdk.lockComment(commentId: commentId)
 try await sdk.unlockComment(commentId: commentId)
 ```
 
-Tüm moderasyon eylemleri ayrıca kullanıcı arayüzündeki (UI) yorum bağlam menüsünden de kullanılabilir. Yönetici eylemleri yalnızca geçerli kullanıcı site yöneticisi olduğunda görünür (SSO ile ayarlanan `isAdmin` bayrağı veya yönetim paneli yapılandırması aracılığıyla).
-
----
----
+Tüm denetleme işlemleri, UI'deki yorum bağlam menüsü aracılığıyla da kullanılabilir. Yönetici işlemleri yalnızca geçerli kullanıcı bir site yöneticisi olduğunda görünür (SSO `isAdmin` bayrağı veya kontrol paneli yapılandırması ile ayarlanır).

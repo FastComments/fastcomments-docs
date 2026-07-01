@@ -1,30 +1,33 @@
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| domainToUpdate | string | Ja |  |
-| patchDomainConfigParams | PatchDomainConfigParams | Ja |  |
+| tenantId | string | Yes |  |
+| domainToUpdate | string | Yes |  |
+| patchDomainConfigParams | PatchDomainConfigParams | Yes |  |
 
-## Antwoord
+## Respons
 
-Geeft terug: [`PatchDomainConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PatchDomainConfigResponse.h)
+Retourneert: [`PatchDomainConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PatchDomainConfigResponse.h)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'patchDomainConfig Voorbeeld'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t domainToUpdate = U("example.com");
-PatchDomainConfigParams patchParams;
-patchParams.enableComments = boost::optional<bool>(true);
-patchParams.moderatorEmail = boost::optional<utility::string_t>(U("moderator@example.com"));
-auto task = api->patchDomainConfig(tenantId, domainToUpdate, patchParams)
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto domainToUpdate = utility::conversions::to_string_t("example.com");
+PatchDomainConfigParams patchDomainConfigParams;
+patchDomainConfigParams.enableComments = boost::optional<bool>(true);
+patchDomainConfigParams.moderationLevel = boost::optional<int>(2);
+patchDomainConfigParams.customHeader = boost::optional<utility::string_t>(utility::conversions::to_string_t("X-Custom-Header"));
+
+api->patchDomainConfig(tenantId, domainToUpdate, patchDomainConfigParams)
     .then([](std::shared_ptr<PatchDomainConfigResponse> resp) {
-        auto result = resp ? resp : std::make_shared<PatchDomainConfigResponse>();
-        return result;
+        // succesafhandeling
+    })
+    .then([](pplx::task<void> t) {
+        try { t.get(); } catch (const std::exception& e) { /* foutafhandeling */ }
     });
-task.wait();
 [inline-code-end]
 
 ---

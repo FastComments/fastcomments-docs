@@ -2,7 +2,8 @@
 
 | 名稱 | 類型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| sso | string | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## 回應
 
@@ -17,23 +18,26 @@ from client.models.get_banned_users_count_response import GetBannedUsersCountRes
 from client.rest import ApiException
 from pprint import pprint
 
-# 定義 host 為選用，預設為 https://fastcomments.com
-# 請參閱 configuration.py 以取得所有支援的設定參數清單。
+# 定義 host 為可選，預設為 https://fastcomments.com
+# 參見 configuration.py，了解所有支援的設定參數。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# 使用 ApiClient 實例建立一個上下文
+# 以 API 客戶端實例建立上下文
 with client.ApiClient(configuration) as api_client:
     # 建立 API 類別的實例
     api_instance = client.ModerationApi(api_client)
-    sso = 'sso_example' # str |  (可選)
+    tenant_id = 'tenant_id_example' # str | 
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_counts(sso=sso)
+        api_response = api_instance.get_counts(tenant_id, sso=sso)
         print("The response of ModerationApi->get_counts:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling ModerationApi->get_counts: %s\n" % e)
 [inline-code-end]
+
+---

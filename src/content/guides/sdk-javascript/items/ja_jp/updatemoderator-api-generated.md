@@ -1,33 +1,31 @@
----
 ## パラメータ
 
-| 名前 | 型 | 必須 | 説明 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | はい |  |
-| id | string | はい |  |
-| updateModeratorBody | UpdateModeratorBody | はい |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updateModeratorBody | UpdateModeratorBody | Yes |  |
 
-## レスポンス
+## 応答
 
-戻り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+返り値: [`UpdateModeratorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateModeratorResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'updateModerator の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'acme-corp-tenant-92';
-  const id: string = '9f3b2c1a-4d6e-11ec-81d3-0242ac130003';
-  const updateModeratorBody: UpdateModeratorBody = {
-    email: 'moderator.lead@acmecorp.com',
-    displayName: 'Alex Rivera',
-    roles: ['moderator', 'team_lead'],
-    active: true,
-    notify: true // 変更についてモデレーターに通知するオプションのフラグ
-  };
-  const result: APIEmptyResponse = await updateModerator(tenantId, id, updateModeratorBody);
-  console.log(result);
-})();
-[inline-code-end]
+async function demoUpdateModerator(): Promise<void> {
+    const tenantId: string = "tenant_42abc";
+    const moderatorId: string = "moderator_8f9e";
+    const updateBody: UpdateModeratorBody = {
+        isActive: true,
+        role: "admin",
+        // 任意のフィールド
+        notes: "Promoted to senior moderator"
+    };
+    const result: UpdateModeratorResponse = await updateModerator(tenantId, moderatorId, updateBody);
+    console.log(result);
+}
 
----
+demoUpdateModerator();
+[inline-code-end]

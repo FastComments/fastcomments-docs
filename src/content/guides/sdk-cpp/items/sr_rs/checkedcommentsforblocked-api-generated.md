@@ -1,33 +1,24 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| commentIds | string | Да |  |
-| sso | string | Не |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| commentIds | string | Yes |  |
+| sso | string | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CheckBlockedCommentsResponse.h)
+Returns: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CheckBlockedCommentsResponse.h)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример checkedCommentsForBlocked'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'checkedCommentsForBlocked Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
-utility::string_t commentIds = utility::conversions::to_string_t("cmt-456,cmt-789");
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(utility::conversions::to_string_t("user@example.com"));
+auto tenantId = U("my-tenant-123");
+auto commentIds = U("cmt-001,cmt-002");
+boost::optional<utility::string_t> sso = U("user@example.com");
 
-api->checkedCommentsForBlocked(tenantId, commentIds, sso)
-    .then([](pplx::task<std::shared_ptr<CheckBlockedCommentsResponse>> t) {
-        try {
-            auto resp = t.get();
-            auto result = resp ? resp : std::make_shared<CheckBlockedCommentsResponse>();
-            (void)result;
-        } catch (const std::exception& e) {
-            (void)e;
-        }
-    });
+api->checkedCommentsForBlocked(tenantId, commentIds, sso).then([](std::shared_ptr<CheckBlockedCommentsResponse> resp){
+    (void)resp;
+});
 [inline-code-end]
-
----

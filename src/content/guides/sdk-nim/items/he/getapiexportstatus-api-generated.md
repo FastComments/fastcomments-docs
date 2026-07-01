@@ -1,9 +1,9 @@
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
-| batchJobId | string | לא |  |
-| sso | string | לא |  |
+| tenantId | string | כן |  |
+| options | GetApiExportStatusOptions | לא |  |
 
 ## תגובה
 
@@ -11,14 +11,13 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getApiExportStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה של getApiExportStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getApiExportStatus(batchJobId = "export-job-2026-06-01", sso = "sso-abc123token")
-if response.isSome:
-  let exportStatus = response.get()
-  echo repr(exportStatus)
-else:
-  echo "No export status available, HTTP code: ", httpResponse.statusCode
+let (exportStatusOpt, httpResp) = client.getApiExportStatus(
+  tenantId = "my-tenant-123",
+  options = GetApiExportStatusOptions()
+)
+if exportStatusOpt.isSome:
+  let exportStatus = exportStatusOpt.get()
+  # השתמש ב‑exportStatus לפי הצורך
 [inline-code-end]
-
----

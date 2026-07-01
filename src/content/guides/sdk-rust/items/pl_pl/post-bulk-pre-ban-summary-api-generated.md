@@ -1,7 +1,8 @@
 ## Parametry
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nazwa | Typ | Wymagane | Opis |
+|------|------|----------|------|
+| tenant_id | String | Tak |  |
 | bulk_pre_ban_params | models::BulkPreBanParams | Tak |  |
 | include_by_user_id_and_email | bool | Nie |  |
 | include_by_ip | bool | Nie |  |
@@ -14,28 +15,19 @@ Zwraca: [`BulkPreBanSummary`](https://github.com/FastComments/fastcomments-rust/
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład post_bulk_pre_ban_summary'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_bulk_pre_ban_summary Przykład'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: PostBulkPreBanSummaryParams = PostBulkPreBanSummaryParams {
-    bulk_pre_ban_params: models::BulkPreBanParams {
-        entries: vec![
-            models::BulkPreBanEntry {
-                user_id: Some("user-8472".to_string()),
-                email: Some("malicious.signals@fraudmail.com".to_string()),
-                ip: Some("198.51.100.23".to_string()),
-            },
-            models::BulkPreBanEntry {
-                user_id: Some("user-9021".to_string()),
-                email: Some("bot.account@spamnews.org".to_string()),
-                ip: None,
-            },
-        ],
-        reason: Some("coordinated spam campaign".to_string()),
-    },
-    include_by_user_id_and_email: Some(true),
-    include_by_ip: Some(true),
-    include_by_email_domain: Some(true),
-    sso: Some("acme-corp-sso".to_string()),
-};
-let summary: BulkPreBanSummary = post_bulk_pre_ban_summary(&configuration, params).await?
+async fn example() -> Result<(), Error> {
+    let bulk_params = models::BulkPreBanParams::default();
+    let params = PostBulkPreBanSummaryParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        bulk_pre_ban_params: bulk_params,
+        include_by_user_id_and_email: Some(true),
+        include_by_ip: Some(false),
+        include_by_email_domain: Some(true),
+        sso: Some("sso-token-xyz".to_string()),
+    };
+    let _summary = post_bulk_pre_ban_summary(&configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]

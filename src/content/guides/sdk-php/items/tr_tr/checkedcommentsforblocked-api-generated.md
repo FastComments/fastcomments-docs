@@ -1,10 +1,10 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Ad | Tür | Yer | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentIds | string | query | Yes | Virgülle ayrılmış yorum kimlikleri listesi. |
-| sso | string | query | No |  |
+| tenantId | string | query | Evet |  |
+| commentIds | string | query | Evet | Virgülle ayrılmış yorum kimlikleri listesi. |
+| sso | string | query | Hayır |  |
 
 ## Yanıt
 
@@ -20,13 +20,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Özel bir HTTP istemcisi kullanmak istiyorsanız, `GuzzleHttp\ClientInterface` uygulayan istemcinizi geçin.
-    // Bu isteğe bağlıdır; varsayılan olarak `GuzzleHttp\Client` kullanılacaktır.
+    // Özel bir HTTP istemcisi kullanmak istiyorsanız, `GuzzleHttp\ClientInterface`'i uygulayan istemcinizi geçirin.
+    // Bu isteğe bağlıdır, `GuzzleHttp\Client` varsayılan olarak kullanılacaktır.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $comment_ids = 'comment_ids_example'; // string | Virgülle ayrılmış yorum kimlikleri listesi.
 $sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->checkedCommentsForBlocked($tenant_id, $comment_ids, $sso);

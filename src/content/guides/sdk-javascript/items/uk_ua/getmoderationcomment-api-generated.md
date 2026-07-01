@@ -1,25 +1,40 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
-|------|------|----------|-------------|
-| commentId | string | Так |  |
-| includeEmail | boolean | Ні |  |
-| includeIP | boolean | Ні |  |
-| sso | string | Ні |  |
+| Назва | Тип | Обов'язковий | Опис |
+|------|------|--------------|------|
+| commentId | string | Yes |  |
+| includeEmail | boolean | No |  |
+| includeIP | boolean | No |  |
+| tenantId | string | No |  |
+| sso | string | No |  |
 
 ## Відповідь
 
-Повертає: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPICommentResponse.ts)
+Повертає: [`GetModerationCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModerationCommentResponse.ts)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'Приклад getModerationComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const commentId: string = 'cmt_62b8f9a3e1d4';
-const includeEmail: boolean = true;
-const includeIP: boolean = false;
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Njc4In0.signature';
-const response: ModerationAPICommentResponse = await getModerationComment(commentId, includeEmail, includeIP, sso);
-[inline-code-end]
+async function fetchCommentDetails() {
+  // Повний набір параметрів
+  const commentId: string = "cmt_12345abc";
+  const includeEmail: boolean = true;
+  const includeIP: boolean = false;
+  const tenantId: string = "tenant_9876";
+  const sso: string = "sso_token_xyz";
 
----
+  const fullResult: GetModerationCommentResponse = await getModerationComment(
+    commentId,
+    includeEmail,
+    includeIP,
+    tenantId,
+    sso
+  );
+
+  // Мінімальний виклик, що використовує лише обов'язковий аргумент
+  const minimalResult: GetModerationCommentResponse = await getModerationComment("cmt_67890def");
+
+  // Використовуйте результати за потребою...
+}
+[inline-code-end]

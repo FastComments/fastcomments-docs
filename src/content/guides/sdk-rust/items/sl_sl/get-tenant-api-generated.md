@@ -1,26 +1,25 @@
 ## Parametri
 
-| Ime | Tip | Zahtevano | Opis |
+| Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
 | tenant_id | String | Da |  |
 | id | String | Da |  |
 
-## Odziv
+## Odgovor
 
-Vrača: [`GetTenantResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_tenant_response.rs)
+Vrne: [`GetTenantResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_tenant_response.rs)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer get_tenant'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_tenant() -> Result<(), Error> {
-    let params: GetTenantParams = GetTenantParams {
+async fn example() -> Result<(), Error> {
+    let params = GetTenantParams {
         tenant_id: "acme-corp-tenant".to_string(),
         id: "news/article".to_string(),
+        include_billing: Some(true),
     };
-    let include_subdomains: Option<bool> = Some(true);
-    let tenant: GetTenantResponse = get_tenant(&configuration, params).await?;
-    println!("{:#?}", tenant);
+    let _response: GetTenantResponse = get_tenant(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

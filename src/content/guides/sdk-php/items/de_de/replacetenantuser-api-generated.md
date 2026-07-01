@@ -1,16 +1,16 @@
-## Parameter
+## Parameters
 
-| Name | Typ | Speicherort | Erforderlich | Beschreibung |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| id | string | path | Ja |  |
-| updateComments | string | query | Nein |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| updateComments | string | query | No |  |
 
-## Antwort
+## Response
 
-Gibt zurück: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
+Rückgabe: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
-## Beispiel
+## Example
 
 [inline-code-attrs-start title = 'replaceTenantUser Beispiel'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -18,22 +18,24 @@ Gibt zurück: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Konfigurieren der API-Schlüssel-Autorisierung: api_key
+// Konfigurieren Sie die API-Schlüssel-Authentifizierung: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Entfernen Sie die Kommentarzeichen unten, um das Präfix (z. B. Bearer) für den API-Schlüssel einzurichten, falls erforderlich
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
     // Wenn Sie einen benutzerdefinierten HTTP-Client verwenden möchten, übergeben Sie Ihren Client, der `GuzzleHttp\ClientInterface` implementiert.
-    // Dies ist optional, `GuzzleHttp\Client` wird als Standard verwendet.
+    // Dies ist optional, `GuzzleHttp\Client` wird standardmäßig verwendet.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$id = 'id_example'; // string
+
+$tenant_id = 'tenant_id_example'; // Zeichenkette
+$id = 'id_example'; // Zeichenkette
 $replace_tenant_user_body = new \FastComments\Client\Model\ReplaceTenantUserBody(); // \FastComments\Client\Model\ReplaceTenantUserBody
-$update_comments = 'update_comments_example'; // string
+$update_comments = 'update_comments_example'; // Zeichenkette
+
 
 try {
     $result = $apiInstance->replaceTenantUser($tenant_id, $id, $replace_tenant_user_body, $update_comments);

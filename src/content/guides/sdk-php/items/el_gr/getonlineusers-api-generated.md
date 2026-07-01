@@ -1,20 +1,20 @@
-Τώρα-ενεργοί θεατές μιας σελίδας: άτομα των οποίων η websocket συνεδρία είναι εγγεγραμμένη στη σελίδα αυτή τη στιγμή.
-Επιστρέφει anonCount + totalCount (συνδρομητές σε ολόκληρο το δωμάτιο, συμπεριλαμβανομένων ανώνυμων θεατών που δεν καταμετρούνται ατομικά).
+Συνεχώς σε απευθείας σύνδεση θεατές μιας σελίδας: άτομα των οποίων η συνεδρία websocket είναι εγγεγραμμένη στη σελίδα αυτή τη στιγμή.  
+Επιστρέφει anonCount + totalCount (συνδρομητές σε ολόκληρο το δωμάτιο, συμπεριλαμβανομένων των ανώνυχων θεατών που δεν απαριθμούμε).
 
-## Παράμετροι
+## Parameters
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Ναι |  |
-| urlId | string | query | Ναι | Page URL identifier (cleaned server-side). |
-| afterName | string | query | Όχι | Δείκτης: περάστε το nextAfterName από την προηγούμενη απάντηση. |
-| afterUserId | string | query | Όχι | Tiebreaker δείκτη: περάστε το nextAfterUserId από την προηγούμενη απάντηση. Απαιτείται όταν το afterName έχει οριστεί ώστε οι ισοβαθμίες ονόματος να μην προκαλούν απώλεια εγγραφών. |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes | Αναγνωριστικό URL σελίδας (καθαρισμένο στη διακομιστή). |
+| afterName | string | query | No | Κέρσορας: περάστε το nextAfterName από την προηγούμενη απάντηση. |
+| afterUserId | string | query | No | Διαχωριστικό κέρσορα: περάστε το nextAfterUserId από την προηγούμενη απάντηση. Απαιτείται όταν έχει οριστεί afterName ώστε οι ισοδύναμες ονομασίες να μην αφαιρούν εγγραφές. |
 
-## Απόκριση
+## Response
 
-Επιστρέφει: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersOnlineResponse.php)
+Returns: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersOnlineResponse.php)
 
-## Παράδειγμα
+## Example
 
 [inline-code-attrs-start title = 'Παράδειγμα getOnlineUsers'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -24,17 +24,21 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Εάν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε τον client σας που υλοποιεί την `GuzzleHttp\ClientInterface`.
-    // Αυτό είναι προαιρετικό, ο `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
+    // Εάν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε τον πελάτη σας που υλοποιεί `GuzzleHttp\ClientInterface`.
+    // Αυτό είναι προαιρετικό, `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$url_id = 'url_id_example'; // string | Page URL identifier (cleaned server-side).
-$after_name = 'after_name_example'; // string | Δείκτης: περάστε το nextAfterName από την προηγούμενη απάντηση.
-$after_user_id = 'after_user_id_example'; // string | Tiebreaker δείκτη: περάστε το nextAfterUserId από την προηγούμενη απάντηση. Απαιτείται όταν το afterName είναι ορισμένο ώστε οι ισοβαθμίες ονόματος να μην διαγράφουν εγγραφές.
+$url_id = 'url_id_example'; // string | Αναγνωριστικό URL σελίδας (καθαρισμένο στη διακομιστή).
+$options = [
+    'after_name' => 'after_name_example', // string | Κέρσορας: περάστε το nextAfterName από την προηγούμενη απάντηση.
+    'after_user_id' => 'after_user_id_example', // string | Διαχωριστικό κέρσορα: περάστε το nextAfterUserId από την προηγούμενη απάντηση. Απαιτείται όταν έχει οριστεί afterName ώστε οι ισοδύναμες ονομασίες να μην αφαιρούν εγγραφές.
+];
+
 
 try {
-    $result = $apiInstance->getOnlineUsers($tenant_id, $url_id, $after_name, $after_user_id);
+    $result = $apiInstance->getOnlineUsers($tenant_id, $url_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getOnlineUsers: ', $e->getMessage(), PHP_EOL;

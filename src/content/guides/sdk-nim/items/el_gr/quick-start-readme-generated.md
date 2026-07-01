@@ -1,6 +1,6 @@
-### Χρήση Αυθεντικοποιημένων APIs (DefaultAPI)
+### Χρήση Πιστοποιημένων API (DefaultAPI)
 
-**Σημαντικό:** Τα αυθεντικοποιημένα endpoints απαιτούν να ορίσετε το API key σας ως την κεφαλίδα `x-api-key`.
+**Σημαντικό:** Τα πιστοποιημένα σημεία λήψης απαιτούν το κλειδί API σας να οριστεί ως την κεφαλίδα `x-api-key`.
 
 ```nim
 import httpclient
@@ -11,24 +11,16 @@ import fastcomments/models/model_comment_data
 let client = newHttpClient()
 client.headers["x-api-key"] = "your-api-key"
 
-# Κάντε αυθεντικοποιημένες κλήσεις API
+# Make authenticated API calls.
+# Required parameters (and the request body) are positional; optional
+# parameters are passed via the operation's options object.
 let (response, httpResponse) = getComments(
   httpClient = client,
   tenantId = "your-tenant-id",
-  page = 0,
-  limit = 0,
-  skip = 0,
-  asTree = false,
-  skipChildren = 0,
-  limitChildren = 0,
-  maxTreeDepth = 0,
-  urlId = "your-url-id",
-  userId = "",
-  anonUserId = "",
-  contextUserId = "",
-  hashTag = "",
-  parentId = "",
-  direction = SortDirections.DESC
+  options = GetCommentsOptions(
+    urlId: "your-url-id",
+    direction: SortDirections.DESC
+  )
 )
 
 if response.isSome:
@@ -37,9 +29,9 @@ if response.isSome:
     echo "Found ", resp.comments.get().len, " comments"
 ```
 
-### Χρήση Δημόσιων APIs (PublicAPI)
+### Χρήση Δημοσίων API (PublicAPI)
 
-Τα δημόσια endpoints δεν απαιτούν αυθεντικοποίηση:
+Τα δημόσια σημεία λήψης δεν απαιτούν έλεγχο ταυτότητας:
 
 ```nim
 import httpclient
@@ -48,37 +40,15 @@ import fastcomments/apis/api_public
 
 let client = newHttpClient()
 
-# Κάντε δημόσιες κλήσεις API
+# Make public API calls.
+# tenantId and urlId are required (positional); everything else is optional.
 let (response, httpResponse) = getCommentsPublic(
   httpClient = client,
   tenantId = "your-tenant-id",
   urlId = "your-url-id",
-  page = 0,
-  direction = SortDirections.DESC,
-  sso = "",
-  skip = 0,
-  skipChildren = 0,
-  limit = 0,
-  limitChildren = 0,
-  countChildren = false,
-  fetchPageForCommentId = "",
-  includeConfig = false,
-  countAll = false,
-  includei10n = false,
-  locale = "",
-  modules = "",
-  isCrawler = false,
-  includeNotificationCount = false,
-  asTree = false,
-  maxTreeDepth = 0,
-  useFullTranslationIds = false,
-  parentId = "",
-  searchText = "",
-  hashTags = @[],
-  userId = "",
-  customConfigStr = "",
-  afterCommentId = "",
-  beforeCommentId = ""
+  options = GetCommentsPublicOptions(
+    direction: SortDirections.DESC
+  )
 )
 
 if response.isSome:
@@ -87,9 +57,9 @@ if response.isSome:
     echo "Found ", resp.comments.get().len, " comments"
 ```
 
-### Χρήση APIs Εποπτείας (ModerationAPI)
+### Χρήση API Εποπτείας (ModerationAPI)
 
-Τα endpoints εποπτείας τροφοδοτούν τον πίνακα ελέγχου του συντονιστή και αυθεντικοποιούνται με ένα SSO token για τον ενεργούντα συντονιστή:
+Τα σημεία λήψης εποπτείας τροφοδοτούν τον πίνακα ελεγκτή και πιστοποιούνται με ένα token SSO για τον ενεργό ελεγκτή:
 
 ```nim
 import httpclient
@@ -98,18 +68,15 @@ import fastcomments/apis/api_moderation
 
 let client = newHttpClient()
 
-# Λίστα σχολίων στον πίνακα εποπτείας
+# List comments in the moderation dashboard.
+# This operation has no required parameters, so everything is optional.
 let (response, httpResponse) = getApiComments(
   httpClient = client,
-  page = 0,
-  count = 30,
-  textSearch = "",
-  byIPFromComment = "",
-  filters = "",
-  searchFilters = "",
-  sorts = "",
-  demo = false,
-  sso = "your-sso-token"
+  options = GetApiCommentsOptions(
+    count: 30,
+    tenantId: "your-tenant-id",
+    sso: "your-sso-token"
+  )
 )
 
 if response.isSome:
@@ -117,7 +84,7 @@ if response.isSome:
   echo "Found ", resp.comments.len, " comments"
 ```
 
-### Συνήθη Προβλήματα
+### Κοινά Προβλήματα
 
-1. **Σφάλμα 401 αυθεντικοποίησης**: Βεβαιωθείτε ότι έχετε ορίσει την κεφαλίδα `x-api-key` στο HttpClient σας πριν κάνετε αιτήσεις DefaultAPI: `client.headers["x-api-key"] = "your-api-key"`
-2. **Λανθασμένη κλάση API**: Χρησιμοποιήστε `api_default` για αυθεντικοποιημένες αιτήσεις στην πλευρά του server, `api_public` για client-side/δημόσιες αιτήσεις, και `api_moderation` για αιτήσεις στον πίνακα ελέγχου του διαχειριστή.
+1. **Σφάλμα ελέγχου ταυτότητας 401**: Βεβαιωθείτε ότι έχετε ορίσει την κεφαλίδα `x-api-key` στο HttpClient σας πριν κάνετε αιτήματα DefaultAPI: `client.headers["x-api-key"] = "your-api-key"`
+2. **Λάθος κλάση API**: Χρησιμοποιήστε `api_default` για αιτήματα πιστοποιημένα από τον διακομιστή, `api_public` για αιτήματα από τον πελάτη/δημόσια, και `api_moderation` για αιτήματα πίνακα ελεγκτή.

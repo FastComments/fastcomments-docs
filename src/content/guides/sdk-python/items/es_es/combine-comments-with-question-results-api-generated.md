@@ -1,7 +1,7 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
+|--------|------|-----------|-----------|-------------|
 | tenantId | string | query | Sí |  |
 | questionId | string | query | No |  |
 | questionIds | array | query | No |  |
@@ -18,46 +18,45 @@ Devuelve: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/Fast
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'combine_comments_with_question_results Ejemplo'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo de combine_comments_with_question_results'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import CombineCommentsWithQuestionResultsOptions
 from client.models.combine_question_results_with_comments_response import CombineQuestionResultsWithCommentsResponse
 from client.rest import ApiException
 from pprint import pprint
 
 # Definir el host es opcional y por defecto es https://fastcomments.com
-# Consulte configuration.py para obtener una lista de todos los parámetros de configuración compatibles.
+# Ver configuration.py para una lista de todos los parámetros de configuración soportados.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# El cliente debe configurar los parámetros de autenticación y autorización
-# de acuerdo con la política de seguridad del servidor API.
-# Se proporcionan ejemplos para cada método de autenticación a continuación; use el ejemplo que
-# satisfaga su caso de uso de autenticación.
+# El cliente debe configurar los parámetros de autenticación y autorización de acuerdo con la política de seguridad del servidor API.
+# Se proporcionan ejemplos para cada método de auth a continuación, use el ejemplo que satisfaga su caso de uso de auth.
 
-# Configurar autorización por clave de API: api_key
+# Configurar autorización de clave API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Descomente abajo para establecer un prefijo (p. ej. Bearer) para la clave API, si es necesario
+# Descomente a continuación para configurar prefijo (p.ej., Bearer) para la clave API, si es necesario
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Ingrese en un contexto con una instancia del cliente API
+# Entrar en un contexto con una instancia del cliente API
 with client.ApiClient(configuration) as api_client:
-    # Cree una instancia de la clase API
+    # Crear una instancia de la clase API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    question_id = 'question_id_example' # str |  (opcional)
-    question_ids = ['question_ids_example'] # List[str] |  (opcional)
-    url_id = 'url_id_example' # str |  (opcional)
-    start_date = '2013-10-20T19:20:30+01:00' # datetime |  (opcional)
-    force_recalculate = True # bool |  (opcional)
-    min_value = 3.4 # float |  (opcional)
-    max_value = 3.4 # float |  (opcional)
-    limit = 3.4 # float |  (opcional)
+    question_id = 'question_id_example' # str | (opcional)
+    question_ids = ['question_ids_example'] # List[str] | (opcional)
+    url_id = 'url_id_example' # str | (opcional)
+    start_date = '2013-10-20T19:20:30+01:00' # datetime | (opcional)
+    force_recalculate = True # bool | (opcional)
+    min_value = 3.4 # float | (opcional)
+    max_value = 3.4 # float | (opcional)
+    limit = 3.4 # float | (opcional)
 
     try:
-        api_response = api_instance.combine_comments_with_question_results(tenant_id, question_id=question_id, question_ids=question_ids, url_id=url_id, start_date=start_date, force_recalculate=force_recalculate, min_value=min_value, max_value=max_value, limit=limit)
+        api_response = api_instance.combine_comments_with_question_results(tenant_id, CombineCommentsWithQuestionResultsOptions(question_id=question_id, question_ids=question_ids, url_id=url_id, start_date=start_date, force_recalculate=force_recalculate, min_value=min_value, max_value=max_value, limit=limit))
         print("The response of DefaultApi->combine_comments_with_question_results:\n")
         pprint(api_response)
     except Exception as e:

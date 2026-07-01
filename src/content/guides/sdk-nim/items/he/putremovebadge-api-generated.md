@@ -2,11 +2,9 @@
 
 | שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
+| tenantId | string | כן |  |
 | badgeId | string | לא |  |
-| userId | string | לא |  |
-| commentId | string | כן |  |
-| broadcastId | string | לא |  |
-| sso | string | לא |  |
+| options | PutRemoveBadgeOptions | לא |  |
 
 ## תגובה
 
@@ -14,19 +12,16 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-putRemoveBadge'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putRemoveBadge דוגמה'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.putRemoveBadge(badgeId = "verified-journalist",
-  userId = "user-7890",
-  commentId = "comment-98765",
-  broadcastId = "",
-  sso = "")
+let (maybeResp, httpResp) = client.putRemoveBadge(
+  tenantId = "my-tenant-123",
+  badgeId = "badge-456",
+  options = PutRemoveBadgeOptions()
+)
 
-if response.isSome:
-  let removeResp = response.get()
-  discard removeResp
-else:
-  discard httpResponse
+if maybeResp.isSome:
+  let badgeResp = maybeResp.get()
 [inline-code-end]
 
 ---

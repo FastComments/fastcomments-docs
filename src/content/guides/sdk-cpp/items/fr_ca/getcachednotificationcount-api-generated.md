@@ -1,32 +1,28 @@
 ## Paramètres
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nom | Type | Obligatoire | Description |
+|------|------|-------------|-------------|
 | tenantId | string | Oui |  |
 | id | string | Oui |  |
 
 ## Réponse
 
-Renvoie: [`GetCachedNotificationCountResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetCachedNotificationCountResponse.h)
+Renvoie : [`GetCachedNotificationCountResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetCachedNotificationCountResponse.h)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple de getCachedNotificationCount'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t id = U("user@example.com");
-boost::optional<utility::string_t> preferredLocale = boost::none;
-auto fallback = std::make_shared<GetCachedNotificationCountResponse>();
-api->getCachedNotificationCount(tenantId, id)
-.then([fallback](pplx::task<std::shared_ptr<GetCachedNotificationCountResponse>> t) {
-    try {
-        auto resp = t.get();
-        auto result = resp ? resp : fallback;
-        std::cout << "cachedNotificationCount: " << result->count << std::endl;
-    } catch (const std::exception& e) {
-        std::cerr << "Error fetching cached notification count: " << e.what() << std::endl;
-    }
-});
-[inline-code-end]
+auto tenantId = boost::optional<utility::string_t>(utility::conversions::to_string_t("my-tenant-123"));
+auto userId = boost::optional<utility::string_t>(utility::conversions::to_string_t("user-456"));
 
----
+api->getCachedNotificationCount(tenantId.value(), userId.value())
+    .then([](pplx::task<std::shared_ptr<GetCachedNotificationCountResponse>> task) {
+        try {
+            auto response = task.get();
+            // traiter la réponse
+        } catch (const std::exception&) {
+            // gérer l'erreur
+        }
+    });
+[inline-code-end]

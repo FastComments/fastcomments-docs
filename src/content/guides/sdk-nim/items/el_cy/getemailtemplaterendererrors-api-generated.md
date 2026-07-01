@@ -1,23 +1,29 @@
-## Παράμετροι
+## Parameters
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
-|------|------|----------|-------------|
-| tenantId | string | Ναι |  |
-| id | string | Όχι |  |
-| skip | float64 | Όχι |  |
+|------|------|------------|-----------|
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| skip | float64 | No |  |
 
-## Απόκριση
+## Response
 
 Επιστρέφει: [`Option[GetEmailTemplateRenderErrorsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_email_template_render_errors_response.nim)
 
-## Παράδειγμα
+## Example
 
-[inline-code-attrs-start title = 'getEmailTemplateRenderErrors Παράδειγμα'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παράδειγμα getEmailTemplateRenderErrors'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getEmailTemplateRenderErrors(tenantId = "my-tenant-123", id = "", skip = 0.0)
-if response.isSome:
-  let templateErrors = response.get()
-  discard templateErrors
+let (optResp, httpResp) = client.getEmailTemplateRenderErrors(
+  tenantId = "my-tenant-123",
+  id = "welcome-template",
+  skip = 0.0
+)
+
+if optResp.isSome:
+  let resp = optResp.get()
+  # χρησιμοποιήστε resp όπως χρειάζεται
 else:
-  discard httpResponse
+  # διαχειριστείτε την έλλειψη απάντησης
+  discard
 [inline-code-end]

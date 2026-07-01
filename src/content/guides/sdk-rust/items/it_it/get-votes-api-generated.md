@@ -1,8 +1,7 @@
----
 ## Parametri
 
 | Nome | Tipo | Obbligatorio | Descrizione |
-|------|------|--------------|-------------|
+|------|------|---------------|-------------|
 | tenant_id | String | Sì |  |
 | url_id | String | Sì |  |
 
@@ -12,18 +11,15 @@ Restituisce: [`GetVotesResponse`](https://github.com/FastComments/fastcomments-r
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di get_votes'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio get_votes'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_votes() -> Result<GetVotesResponse, Error> {
-    let params: GetVotesParams = GetVotesParams {
+async fn fetch_votes(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetVotesParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        url_id: "news/2026/06/product-launch".to_string(),
-        page_size: Some(25),
-        cursor: Some("cursor_2026_06_ab12".to_string()),
+        url_id: "news/article".to_string(),
+        limit: Some(100),
     };
-    let votes: GetVotesResponse = get_votes(&configuration, params).await?;
-    Ok(votes)
+    let _response: GetVotesResponse = get_votes(configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

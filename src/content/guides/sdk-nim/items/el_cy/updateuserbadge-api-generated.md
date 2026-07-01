@@ -1,12 +1,12 @@
-## Παράμετροι
+## Parameters
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
-|------|------|----------|-------------|
+|------|------|-----------|-----------|
 | tenantId | string | Ναι |  |
 | id | string | Όχι |  |
 | updateUserBadgeParams | UpdateUserBadgeParams | Όχι |  |
 
-## Απόκριση
+## Response
 
 Επιστρέφει: [`Option[APIEmptySuccessResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_success_response.nim)
 
@@ -14,17 +14,8 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα updateUserBadge'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateUserBadge(
-  tenantId = "my-tenant-123",
-  id = "user-456",
-  updateUserBadgeParams = UpdateUserBadgeParams()
-)
-
-if response.isSome:
-  let success = response.get()
-  echo "Badge updated successfully"
-else:
-  echo "Badge update failed"
+let params = UpdateUserBadgeParams()
+let (maybeResp, httpResp) = client.updateUserBadge(tenantId = "my-tenant-123", id = "user-456", updateUserBadgeParams = params)
+if maybeResp.isSome:
+  let success = maybeResp.get()
 [inline-code-end]
-
----

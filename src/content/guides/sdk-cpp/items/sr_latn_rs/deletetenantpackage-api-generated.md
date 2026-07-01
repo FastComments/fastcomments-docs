@@ -1,7 +1,7 @@
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
 | tenantId | string | Da |  |
 | id | string | Da |  |
 
@@ -11,21 +11,15 @@ Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/bl
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer deleteTenantPackage'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteTenantPackage Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t packageId = U("pkg-456");
-boost::optional<utility::string_t> ifMatch = U("W/\"etag-789\"");
-
-api->deleteTenantPackage(tenantId, packageId)
-.then([=](pplx::task<std::shared_ptr<APIEmptyResponse>> task) {
-    try {
-        auto resp = task.get();
-        auto finalResp = resp ? resp : std::make_shared<APIEmptyResponse>();
-    } catch (const std::exception& e) {
-        auto errorResp = std::make_shared<APIEmptyResponse>();
-    }
-});
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto packageId = utility::conversions::to_string_t("pkg-456");
+boost::optional<utility::string_t> optTenant = tenantId;
+boost::optional<utility::string_t> optPackage = packageId;
+api->deleteTenantPackage(optTenant.value(), optPackage.value())
+    .then([](std::shared_ptr<APIEmptyResponse>){ })
+    .then([](pplx::task<void> t){ try{ t.get(); }catch(const std::exception&){ } });
 [inline-code-end]
 
 ---

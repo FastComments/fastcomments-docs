@@ -1,21 +1,23 @@
-Geef een lijst met pagina's voor een tenant. Wordt gebruikt door de FChat desktopclient om de kamerlijst te vullen. Vereist dat `enableFChat` waar is in de opgeloste aangepaste configuratie voor elke pagina. Pagina's die SSO vereisen worden gefilterd op basis van de groepstoegang van de aanvragende gebruiker.
+List pagina's voor een tenant. Wordt gebruikt door de FChat desktopclient om de kamerlijst te vullen.  
+Vereist dat `enableFChat` true is in de opgeloste aangepaste configuratie voor elke pagina.  
+Pagina's die SSO vereisen worden gefilterd op basis van de groepsrechten van de verzoekende gebruiker.
 
 ## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Naam | Type | Locatie | Verplicht | Beschrijving |
+|------|------|----------|-----------|--------------|
 | tenantId | string | path | Ja |  |
-| cursor | string | query | Nee | Ondoorzichtige paginatiecursor die als `nextCursor` werd teruggegeven in een eerdere aanvraag. Gebonden aan dezelfde `sortBy`. |
+| cursor | string | query | Nee | Onduidelijke pagineringscursor geretourneerd als `nextCursor` van een eerdere aanvraag. Gekoppeld aan dezelfde `sortBy`. |
 | limit | integer | query | Nee | 1..200, standaard 50 |
-| q | string | query | Nee | Optionele niet-hoofdlettergevoelige voorvoegselfilter voor de titel. |
+| q | string | query | Nee | Optionele hoofdletterongevoelige titelvoorvoegselfilter. |
 | sortBy | string | query | Nee | Sorteervolgorde. `updatedAt` (standaard, nieuwste eerst), `commentCount` (meeste reacties eerst), of `title` (alfabetisch). |
-| hasComments | boolean | query | Nee | Als true, geef alleen pagina's terug met ten minste één reactie. |
+| hasComments | boolean | query | Nee | Indien true, alleen pagina's teruggeven met ten minste één reactie. |
 
 ## Response
 
-Retourneert: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPublicPagesResponse.swift)
+Returns: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPublicPagesResponse.swift)
 
-## Voorbeeld
+## Example
 
 [inline-code-attrs-start title = 'getPagesPublic Voorbeeld'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -23,13 +25,13 @@ Retourneert: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomm
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let cursor = "cursor_example" // String | Ondoorzichtige paginatiecursor die als `nextCursor` werd teruggegeven in een eerdere aanvraag. Gebonden aan dezelfde `sortBy`. (optioneel)
+let cursor = "cursor_example" // String | Onduidelijke pagineringscursor geretourneerd als `nextCursor` van een eerdere aanvraag. Gekoppeld aan dezelfde `sortBy`. (optioneel)
 let limit = 987 // Int | 1..200, standaard 50 (optioneel)
-let q = "q_example" // String | Optionele niet-hoofdlettergevoelige voorvoegselfilter voor de titel. (optioneel)
+let q = "q_example" // String | Optionele hoofdletterongevoelige titelvoorvoegselfilter. (optioneel)
 let sortBy = PagesSortBy() // PagesSortBy | Sorteervolgorde. `updatedAt` (standaard, nieuwste eerst), `commentCount` (meeste reacties eerst), of `title` (alfabetisch). (optioneel)
-let hasComments = true // Bool | Als true, geef alleen pagina's terug met ten minste één reactie. (optioneel)
+let hasComments = true // Bool | Indien true, alleen pagina's teruggeven met ten minste één reactie. (optioneel)
 
-PublicAPI.getPagesPublic(tenantId: tenantId, cursor: cursor, limit: limit, q: q, sortBy: sortBy, hasComments: hasComments) { (response, error) in
+PublicAPI.getPagesPublic(tenantId: tenantId, options: PublicAPI.GetPagesPublicOptions(cursor: cursor, limit: limit, q: q, sortBy: sortBy, hasComments: hasComments)) { (response, error) in
     guard error == nil else {
         print(error)
         return

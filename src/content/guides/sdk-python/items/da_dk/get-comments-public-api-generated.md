@@ -2,38 +2,38 @@ req
 tenantId
 urlId
 
-## Parameters
+## Parametre
 
-| Navn | Type | Placering | Påkrævet | Beskrivelse |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Ja |  |
-| urlId | string | query | Ja |  |
-| page | integer | query | Nej |  |
-| direction | string | query | Nej |  |
-| sso | string | query | Nej |  |
-| skip | integer | query | Nej |  |
-| skipChildren | integer | query | Nej |  |
-| limit | integer | query | Nej |  |
-| limitChildren | integer | query | Nej |  |
-| countChildren | boolean | query | Nej |  |
-| fetchPageForCommentId | string | query | Nej |  |
-| includeConfig | boolean | query | Nej |  |
-| countAll | boolean | query | Nej |  |
-| includei10n | boolean | query | Nej |  |
-| locale | string | query | Nej |  |
-| modules | string | query | Nej |  |
-| isCrawler | boolean | query | Nej |  |
-| includeNotificationCount | boolean | query | Nej |  |
-| asTree | boolean | query | Nej |  |
-| maxTreeDepth | integer | query | Nej |  |
-| useFullTranslationIds | boolean | query | Nej |  |
-| parentId | string | query | Nej |  |
-| searchText | string | query | Nej |  |
-| hashTags | array | query | Nej |  |
-| userId | string | query | Nej |  |
-| customConfigStr | string | query | Nej |  |
-| afterCommentId | string | query | Nej |  |
-| beforeCommentId | string | query | Nej |  |
+| Navn | Type | Placering | Obligatorisk | Beskrivelse |
+|------|------|-----------|--------------|-------------|
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| page | integer | query | No |  |
+| direction | string | query | No |  |
+| sso | string | query | No |  |
+| skip | integer | query | No |  |
+| skipChildren | integer | query | No |  |
+| limit | integer | query | No |  |
+| limitChildren | integer | query | No |  |
+| countChildren | boolean | query | No |  |
+| fetchPageForCommentId | string | query | No |  |
+| includeConfig | boolean | query | No |  |
+| countAll | boolean | query | No |  |
+| includei10n | boolean | query | No |  |
+| locale | string | query | No |  |
+| modules | string | query | No |  |
+| isCrawler | boolean | query | No |  |
+| includeNotificationCount | boolean | query | No |  |
+| asTree | boolean | query | No |  |
+| maxTreeDepth | integer | query | No |  |
+| useFullTranslationIds | boolean | query | No |  |
+| parentId | string | query | No |  |
+| searchText | string | query | No |  |
+| hashTags | array | query | No |  |
+| userId | string | query | No |  |
+| customConfigStr | string | query | No |  |
+| afterCommentId | string | query | No |  |
+| beforeCommentId | string | query | No |  |
 
 ## Svar
 
@@ -44,53 +44,54 @@ Returnerer: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/
 [inline-code-attrs-start title = 'get_comments_public Eksempel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetCommentsPublicOptions
 from client.models.get_comments_response_with_presence_public_comment import GetCommentsResponseWithPresencePublicComment
 from client.models.sort_directions import SortDirections
 from client.rest import ApiException
 from pprint import pprint
 
-# Det er valgfrit at angive host, standard er https://fastcomments.com
+# Angivelse af værten er valgfri og standard er https://fastcomments.com
 # Se configuration.py for en liste over alle understøttede konfigurationsparametre.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Gå ind i en kontekst med en instans af API-klienten
+# Indtast en kontekst med en instans af API-klienten
 with client.ApiClient(configuration) as api_client:
     # Opret en instans af API-klassen
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
-    page = 56 # int |  (valgfri)
-    direction = client.SortDirections() # SortDirections |  (valgfri)
-    sso = 'sso_example' # str |  (valgfri)
-    skip = 56 # int |  (valgfri)
-    skip_children = 56 # int |  (valgfri)
-    limit = 56 # int |  (valgfri)
-    limit_children = 56 # int |  (valgfri)
-    count_children = True # bool |  (valgfri)
-    fetch_page_for_comment_id = 'fetch_page_for_comment_id_example' # str |  (valgfri)
-    include_config = True # bool |  (valgfri)
-    count_all = True # bool |  (valgfri)
-    includei10n = True # bool |  (valgfri)
-    locale = 'locale_example' # str |  (valgfri)
-    modules = 'modules_example' # str |  (valgfri)
-    is_crawler = True # bool |  (valgfri)
-    include_notification_count = True # bool |  (valgfri)
-    as_tree = True # bool |  (valgfri)
-    max_tree_depth = 56 # int |  (valgfri)
-    use_full_translation_ids = True # bool |  (valgfri)
-    parent_id = 'parent_id_example' # str |  (valgfri)
-    search_text = 'search_text_example' # str |  (valgfri)
-    hash_tags = ['hash_tags_example'] # List[str] |  (valgfri)
-    user_id = 'user_id_example' # str |  (valgfri)
-    custom_config_str = 'custom_config_str_example' # str |  (valgfri)
-    after_comment_id = 'after_comment_id_example' # str |  (valgfri)
-    before_comment_id = 'before_comment_id_example' # str |  (valgfri)
+    page = 56 # int |  (optional)
+    direction = client.SortDirections() # SortDirections |  (optional)
+    sso = 'sso_example' # str |  (optional)
+    skip = 56 # int |  (optional)
+    skip_children = 56 # int |  (optional)
+    limit = 56 # int |  (optional)
+    limit_children = 56 # int |  (optional)
+    count_children = True # bool |  (optional)
+    fetch_page_for_comment_id = 'fetch_page_for_comment_id_example' # str |  (optional)
+    include_config = True # bool |  (optional)
+    count_all = True # bool |  (optional)
+    includei10n = True # bool |  (optional)
+    locale = 'locale_example' # str |  (optional)
+    modules = 'modules_example' # str |  (optional)
+    is_crawler = True # bool |  (optional)
+    include_notification_count = True # bool |  (optional)
+    as_tree = True # bool |  (optional)
+    max_tree_depth = 56 # int |  (optional)
+    use_full_translation_ids = True # bool |  (optional)
+    parent_id = 'parent_id_example' # str |  (optional)
+    search_text = 'search_text_example' # str |  (optional)
+    hash_tags = ['hash_tags_example'] # List[str] |  (optional)
+    user_id = 'user_id_example' # str |  (optional)
+    custom_config_str = 'custom_config_str_example' # str |  (optional)
+    after_comment_id = 'after_comment_id_example' # str |  (optional)
+    before_comment_id = 'before_comment_id_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_comments_public(tenant_id, url_id, page=page, direction=direction, sso=sso, skip=skip, skip_children=skip_children, limit=limit, limit_children=limit_children, count_children=count_children, fetch_page_for_comment_id=fetch_page_for_comment_id, include_config=include_config, count_all=count_all, includei10n=includei10n, locale=locale, modules=modules, is_crawler=is_crawler, include_notification_count=include_notification_count, as_tree=as_tree, max_tree_depth=max_tree_depth, use_full_translation_ids=use_full_translation_ids, parent_id=parent_id, search_text=search_text, hash_tags=hash_tags, user_id=user_id, custom_config_str=custom_config_str, after_comment_id=after_comment_id, before_comment_id=before_comment_id)
+        api_response = api_instance.get_comments_public(tenant_id, url_id, GetCommentsPublicOptions(page=page, direction=direction, sso=sso, skip=skip, skip_children=skip_children, limit=limit, limit_children=limit_children, count_children=count_children, fetch_page_for_comment_id=fetch_page_for_comment_id, include_config=include_config, count_all=count_all, includei10n=includei10n, locale=locale, modules=modules, is_crawler=is_crawler, include_notification_count=include_notification_count, as_tree=as_tree, max_tree_depth=max_tree_depth, use_full_translation_ids=use_full_translation_ids, parent_id=parent_id, search_text=search_text, hash_tags=hash_tags, user_id=user_id, custom_config_str=custom_config_str, after_comment_id=after_comment_id, before_comment_id=before_comment_id))
         print("The response of PublicApi->get_comments_public:\n")
         pprint(api_response)
     except Exception as e:

@@ -1,14 +1,9 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Назва | Тип | Обов’язково | Опис |
 |------|------|----------|-------------|
-| textSearch | string | Ні |  |
-| byIPFromComment | string | Ні |  |
-| filters | string | Ні |  |
-| searchFilters | string | Ні |  |
-| afterId | string | Ні |  |
-| demo | bool | Ні |  |
-| sso | string | Ні |  |
+| tenantId | string | Так |  |
+| options | GetApiIdsOptions | Ні |  |
 
 ## Відповідь
 
@@ -16,21 +11,11 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад getApiIds'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getApiIds Приклад'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getApiIds(
-  textSearch = "urgent moderation review",
-  byIPFromComment = "203.0.113.45",
-  filters = "status:pending,flagged",
-  searchFilters = "author:jane.doe@example.com",
-  afterId = "cmt_9f8e7d6a",
-  demo = false,
-  sso = "sso-token-6b7f9a"
-)
-
-if response.isSome:
-  let idsResp = response.get()
-  echo idsResp
+let opts = GetApiIdsOptions()
+let (maybeResponse, httpResponse) = client.getApiIds(tenantId = "my-tenant-123", options = opts)
+if maybeResponse.isSome:
+  let response = maybeResponse.get()
+  echo response
 [inline-code-end]
-
----

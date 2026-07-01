@@ -1,7 +1,8 @@
-## Parameter
+## Parameters
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Ja |  |
 | commentId | string | path | Ja |  |
 | banEmail | boolean | query | Nein |  |
 | banEmailDomain | boolean | query | Nein |  |
@@ -13,9 +14,9 @@
 | banReason | string | query | Nein |  |
 | sso | string | query | Nein |  |
 
-## Antwort
+## Response
 
-Gibt zurück: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_ban_user_from_comment_result.go)
+Rückgabe: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_ban_user_from_comment_result.go)
 
 ## Beispiel
 
@@ -31,6 +32,7 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
 	banEmail := true // bool |  (optional)
 	banEmailDomain := true // bool |  (optional)
@@ -44,12 +46,12 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostBanUserFromComment(context.Background(), commentId).BanEmail(banEmail).BanEmailDomain(banEmailDomain).BanIP(banIP).DeleteAllUsersComments(deleteAllUsersComments).BannedUntil(bannedUntil).IsShadowBan(isShadowBan).UpdateId(updateId).BanReason(banReason).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostBanUserFromComment(context.Background(), commentId).TenantId(tenantId).BanEmail(banEmail).BanEmailDomain(banEmailDomain).BanIP(banIP).DeleteAllUsersComments(deleteAllUsersComments).BannedUntil(bannedUntil).IsShadowBan(isShadowBan).UpdateId(updateId).BanReason(banReason).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostBanUserFromComment``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Fehler beim Aufrufen `ModerationAPI.PostBanUserFromComment``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Vollständige HTTP-Antwort: %v\n", r)
 	}
 	// Antwort von `PostBanUserFromComment`: BanUserFromCommentResult
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostBanUserFromComment`: %v\n", resp)
+	fmt.Fprintf(os.Stdout, "Antwort von `ModerationAPI.PostBanUserFromComment`: %v\n", resp)
 }
 [inline-code-end]

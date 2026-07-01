@@ -1,15 +1,34 @@
----
-## פרמטרים
+## Parameters
 
-| שם | סוג | נדרש | תיאור |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| id | string | כן |  |
-| deleteComments | boolean | לא |  |
-| commentDeleteMode | string | לא |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| deleteComments | boolean | No |  |
+| commentDeleteMode | string | No |  |
 
-## תגובה
+## Response
 
 מחזיר: [`DeleteSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteSSOUserAPIResponse.ts)
 
----
+## Example
+
+[inline-code-attrs-start title = 'דוגמת deleteSSOUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+const tenantId: string = "acme-corp-tenant";
+const userId: string = "sso-user-42";
+const deleteComments: boolean = true;
+const commentDeleteMode: string = "hard";
+
+const detailedResult: DeleteSSOUserAPIResponse = await deleteSSOUser(
+  tenantId,
+  userId,
+  deleteComments,
+  commentDeleteMode
+);
+
+const simpleResult: DeleteSSOUserAPIResponse = await deleteSSOUser(
+  tenantId,
+  userId
+);
+[inline-code-end]

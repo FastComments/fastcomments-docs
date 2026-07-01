@@ -1,9 +1,9 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Назва | Тип | Обов’язковий | Опис |
 |------|------|----------|-------------|
-| tenant_id | String | Так |  |
-| id | String | Так |  |
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
 
 ## Відповідь
 
@@ -11,17 +11,14 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад get_moderator'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_moderator Приклад'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_moderator() -> Result<GetModeratorResponse, Error> {
-    let params: GetModeratorParams = GetModeratorParams {
-        tenant_id: "acme-newsroom".to_string(),
-        id: "mod-jane-smith-001".to_string(),
+async fn run() -> Result<(), Error> {
+    let params = GetModeratorParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "moderator-123".to_string(),
     };
-    let include_permissions: Option<bool> = Some(true);
-    let moderator: GetModeratorResponse = get_moderator(&configuration, params).await?;
-    Ok(moderator)
+    let _response: GetModeratorResponse = get_moderator(configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

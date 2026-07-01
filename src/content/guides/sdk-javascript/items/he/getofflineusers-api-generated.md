@@ -1,32 +1,38 @@
-מגיבים קודמים בדף שאינם מקוונים כרגע. מסודרים לפי displayName.
-השתמש בזה לאחר מיצוי /users/online כדי להציג מדור "חברים".
-Cursor pagination על commenterName: השרת עובר על האינדקס החלקי {tenantId, urlId, commenterName} החל מ-afterName קדימה באמצעות $gt, ללא עלות של $skip.
+מגיבים קודמים בעמוד שאינם מחוברים כעת. ממוין לפי displayName.  
+השתמש בזה לאחר שכבר נצלת /users/online כדי ליצור קטע "Members" section.  
+דפדוף בעזרת מצביע על commenterName: השרת פועל על החלקי {tenantId, urlId, commenterName}  
+אינדקס מ‑afterName קדימה באמצעות $gt, ללא עלות $skip.
 
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| urlId | string | כן |  |
-| afterName | string | לא |  |
-| afterUserId | string | לא |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| afterName | string | No |  |
+| afterUserId | string | No |  |
 
 ## תגובה
 
-מחזיר: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOfflineResponse.ts)
+מחזיר: [`GetOfflineUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOfflineUsersResponse.ts)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getOfflineUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getOfflineUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant-9f4b2a6c';
-const urlId: string = 'articles/product-launch-2025';
+async function fetchOfflineUsers(): Promise<void> {
+    const tenantId: string = "tenant_12345";
+    const urlId: string = "thread_9876";
+    const afterName: string = "Jane Smith";
+    const afterUserId: string = "user_7f9b3c";
 
-const offlinePageFirst: PageUsersOfflineResponse = await getOfflineUsers(tenantId, urlId);
+    const offlineUsers: GetOfflineUsersResponse = await getOfflineUsers(
+        tenantId,
+        urlId,
+        afterName,
+        afterUserId
+    );
 
-const afterName: string = 'samantha.r';
-const afterUserId: string = 'user_7d3a21f9';
-const offlinePageNext: PageUsersOfflineResponse = await getOfflineUsers(tenantId, urlId, afterName, afterUserId);
+    console.log(offlineUsers);
+}
 [inline-code-end]
-
----

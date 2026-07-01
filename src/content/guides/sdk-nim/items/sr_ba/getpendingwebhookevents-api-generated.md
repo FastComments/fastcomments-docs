@@ -1,14 +1,9 @@
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| tenantId | string | Da |  |
-| commentId | string | Da |  |
-| externalId | string | Ne |  |
-| eventType | string | Ne |  |
-| domain | string | Ne |  |
-| attemptCountGT | float64 | Ne |  |
-| skip | float64 | Ne |  |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| options | GetPendingWebhookEventsOptions | No |  |
 
 ## Odgovor
 
@@ -18,16 +13,11 @@ Vraća: [`Option[GetPendingWebhookEventsResponse]`](https://github.com/FastComme
 
 [inline-code-attrs-start title = 'getPendingWebhookEvents Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getPendingWebhookEvents(
+let (maybeResp, httpResp) = client.getPendingWebhookEvents(
   tenantId = "my-tenant-123",
-  commentId = "cmt-987654",
-  externalId = "",
-  eventType = "",
-  domain = "",
-  attemptCountGT = 0.0,
-  skip = 0.0
+  options = GetPendingWebhookEventsOptions()
 )
-if response.isSome:
-  let pending = response.get()
-  discard pending
+
+if maybeResp.isSome:
+  let resp = maybeResp.get()
 [inline-code-end]

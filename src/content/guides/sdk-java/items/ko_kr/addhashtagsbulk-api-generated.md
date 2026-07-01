@@ -2,7 +2,7 @@
 
 | 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 아니오 |  |
+| tenantId | string | query | Yes |  |
 
 ## 응답
 
@@ -28,15 +28,14 @@ public class Example {
     // API 키 인증 구성: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // API 키 접두사 설정을 위해 다음 줄의 주석 처리를 해제하세요. 예: "Token" (기본값은 null)
+    // API 키에 접두사를 설정하려면 아래 라인의 주석을 해제하세요. 예: "Token" (기본값은 null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     BulkCreateHashTagsBody bulkCreateHashTagsBody = new BulkCreateHashTagsBody(); // BulkCreateHashTagsBody | 
     try {
-      BulkCreateHashTagsResponse result = apiInstance.addHashTagsBulk()
-            .tenantId(tenantId)
+      BulkCreateHashTagsResponse result = apiInstance.addHashTagsBulk(tenantId)
             .bulkCreateHashTagsBody(bulkCreateHashTagsBody)
             .execute();
       System.out.println(result);
@@ -50,3 +49,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

@@ -1,21 +1,27 @@
 ## Paramètres
 
 | Nom | Type | Obligatoire | Description |
-|------|------|----------|-------------|
+|------|------|------------|-------------|
 | tenantId | string | Oui |  |
 | skip | number | Non |  |
 
 ## Réponse
 
-Retourne: [`GetTenantPackagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantPackagesResponse.ts)
+Retourne : [`GetTenantPackagesResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantPackagesResponse1.ts)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getTenantPackages'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getTenantPackages'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-9f3b";
-const packagesPage1: GetTenantPackagesResponse = await getTenantPackages(tenantId);
-const packagesPage2: GetTenantPackagesResponse = await getTenantPackages(tenantId, 10);
+(async () => {
+  const tenantId: string = 'tenant_67890';
+  const skip: number = 30;
+
+  const packagesWithSkip: GetTenantPackagesResponse1 = await getTenantPackages(tenantId, skip);
+  const packagesWithoutSkip: GetTenantPackagesResponse1 = await getTenantPackages(tenantId);
+
+  console.log(packagesWithSkip, packagesWithoutSkip);
+})();
 [inline-code-end]
 
 ---

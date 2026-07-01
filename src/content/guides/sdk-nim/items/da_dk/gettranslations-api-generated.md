@@ -4,8 +4,7 @@
 |------|------|----------|-------------|
 | namespace | string | Nej |  |
 | component | string | Nej |  |
-| locale | string | Nej |  |
-| useFullTranslationIds | bool | Nej |  |
+| options | GetTranslationsOptions | Nej |  |
 
 ## Svar
 
@@ -13,19 +12,11 @@ Returnerer: [`Option[GetTranslationsResponse]`](https://github.com/FastComments/
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'getTranslations-eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTranslations Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTranslations(
-  namespace = "news-site",
-  component = "article-comments",
-  locale = "en-US",
-  useFullTranslationIds = false
-)
-if response.isSome:
-  let translations = response.get()
-  discard translations
-else:
-  echo "No translations available"
+let opts = GetTranslationsOptions()
+let (maybeResp, httpResp) = client.getTranslations(namespace = "my-tenant-123", component = "news/article-title", options = opts)
+if maybeResp.isSome:
+  let resp = maybeResp.get()
+  echo resp
 [inline-code-end]
-
----

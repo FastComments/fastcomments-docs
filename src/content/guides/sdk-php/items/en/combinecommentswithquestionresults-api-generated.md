@@ -36,18 +36,22 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$question_id = 'question_id_example'; // string
-$question_ids = array('question_ids_example'); // string[]
-$url_id = 'url_id_example'; // string
-$start_date = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime
-$force_recalculate = True; // bool
-$min_value = 3.4; // float
-$max_value = 3.4; // float
-$limit = 3.4; // float
+$options = [
+    'question_id' => 'question_id_example', // string
+    'question_ids' => array('question_ids_example'), // string[]
+    'url_id' => 'url_id_example', // string
+    'start_date' => new \DateTime('2013-10-20T19:20:30+01:00'), // \DateTime
+    'force_recalculate' => True, // bool
+    'min_value' => 3.4, // float
+    'max_value' => 3.4, // float
+    'limit' => 3.4, // float
+];
+
 
 try {
-    $result = $apiInstance->combineCommentsWithQuestionResults($tenant_id, $question_id, $question_ids, $url_id, $start_date, $force_recalculate, $min_value, $max_value, $limit);
+    $result = $apiInstance->combineCommentsWithQuestionResults($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->combineCommentsWithQuestionResults: ', $e->getMessage(), PHP_EOL;

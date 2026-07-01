@@ -1,27 +1,26 @@
-## 매개변수
+## Parameters
 
 | 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| sso | string | 아니오 |  |
+| tenantId | string | Yes |  |
+| sso | string | No |  |
 
 ## 응답
 
 반환: [`GetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetUserNotificationCountResponse.h)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'getUserNotificationCount 예제'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUserNotificationCount 예시'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
-auto fallback = std::make_shared<GetUserNotificationCountResponse>();
-api->getUserNotificationCount(tenantId, sso)
-.then([fallback](std::shared_ptr<GetUserNotificationCountResponse> resp) {
-    auto result = resp ? resp : fallback;
-    std::cout << "Received user notification count response (ptr=" << (result.get() != nullptr) << ")\n";
-})
-.wait();
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+boost::optional<utility::string_t> sso = utility::conversions::to_string_t("user@example.com");
+api->getUserNotificationCount(tenantId, sso).then([](pplx::task<std::shared_ptr<GetUserNotificationCountResponse>> t){
+    try{
+        auto resp = t.get();
+        // use resp as needed
+    }catch(const std::exception&){
+        // handle error
+    }
+});
 [inline-code-end]
-
----

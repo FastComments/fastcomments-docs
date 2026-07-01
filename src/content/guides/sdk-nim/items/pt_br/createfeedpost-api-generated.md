@@ -1,13 +1,10 @@
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|----------|-------------|
+|------|------|-------------|-----------|
 | tenantId | string | Sim |  |
 | createFeedPostParams | CreateFeedPostParams | Não |  |
-| broadcastId | string | Não |  |
-| isLive | bool | Não |  |
-| doSpamCheck | bool | Não |  |
-| skipDupCheck | bool | Não |  |
+| options | CreateFeedPostOptions | Não |  |
 
 ## Resposta
 
@@ -15,28 +12,14 @@ Retorna: [`Option[CreateFeedPostsResponse]`](https://github.com/FastComments/fas
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de createFeedPost'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo createFeedPost'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let postParams = CreateFeedPostParams(
-  title = "Major Acquisition by TechCorp",
-  content = "TechCorp has acquired SoftWorks in a deal valued at $1.2B, creating a new market leader.",
-  url = "news/tech/major-acquisition",
-  tags = @["business", "technology"],
-  authorId = "journalist-321"
-)
-
-let (response, httpResponse) = client.createFeedPost(
+let (respOpt, httpResp) = client.createFeedPost(
   tenantId = "my-tenant-123",
-  createFeedPostParams = postParams,
-  broadcastId = "",
-  isLive = false,
-  doSpamCheck = false,
-  skipDupCheck = false
+  createFeedPostParams = CreateFeedPostParams(),
+  options = CreateFeedPostOptions()
 )
 
-if response.isSome:
-  let created = response.get()
-  discard created
+if respOpt.isSome:
+  let feedPost = respOpt.get()
 [inline-code-end]
-
----

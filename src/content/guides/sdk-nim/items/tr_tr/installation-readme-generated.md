@@ -4,7 +4,7 @@
 nimble install fastcomments
 ```
 
-### Kaynak Koddan Derleme
+### Kaynağından Derleme
 
 ```bash
 nimble build
@@ -12,12 +12,12 @@ nimble build
 
 ### Kütüphane İçeriği
 
-Bu kütüphane, API ile çalışmayı kolaylaştırmak için oluşturulmuş API istemcisini ve SSO yardımcı araçlarını içerir.
+Bu kütüphane, API ile çalışmayı kolaylaştıran oluşturulmuş API istemcisini ve SSO yardımcı programlarını içerir.
 
-- [API İstemci Kütüphanesi Belgeleri](https://github.com/FastComments/fastcomments-nim/blob/master/client/README.md)
+- [API Client Library Docs](https://github.com/FastComments/fastcomments-nim/blob/master/client/README.md)
 
 ### Genel ve Güvenli API'ler
 
-API istemcisi için üç API modülü vardır: `api_default`, `api_public` ve `api_moderation`. `api_default`, API anahtarınızı gerektiren yöntemleri içerir ve `api_public`, tarayıcı/mobil cihaz vb. üzerinden kimlik doğrulama olmadan doğrudan yapılabilecek API çağrılarını içerir. `api_moderation` modülü ise moderatör panosu için yöntemleri içerir.
+API istemcisi için üç API modülü vardır: `api_default`, `api_public` ve `api_moderation`. `api_default`, API anahtarınızı gerektiren metodları içerirken, `api_public` kimlik doğrulama gerektirmeden doğrudan bir tarayıcı/mobil cihaz vb. üzerinden yapılabilen API çağrılarını içerir. `api_moderation` modülü, moderatör kontrol paneli için metodları içerir.
 
-`api_moderation` yöntemleri yorumları ve bunların günlüklerini listeleme, sayma, arama ve dışa aktarma; yorumları kaldırma/geri yükleme, işaretleme, inceleme/spam/onay durumunu ayarlama, oyları ayarlama ve konuları yeniden açma/kapatma gibi moderasyon eylemlerini; yasaklar (bir kullanıcıyı bir yorumdan yasaklama, yasağı geri alma, ön-yasak özetleri, yasağın durumu ve tercihleri ve yasaklı kullanıcı sayıları); ve rozetler ve güven (rozet verme/kaldırma, manuel rozetleri listeleme, bir kullanıcının güven faktörünü alma/ayarlama ve bir kullanıcının dahili profilini alma) kapsar. Her `api_moderation` yöntemi bir `sso` parametresi kabul eder, böylece çağrı bir SSO moderatörü olarak kimlik doğrulanır.
+`api_moderation` modülü, canlı ve hızlı denetleme API'lerinin kapsamlı bir paketini sunar. Her `api_moderation` metodu bir `sso` parametresi alır ve SSO veya bir FastComments.com oturum çerezi aracılığıyla kimlik doğrulaması yapabilir.

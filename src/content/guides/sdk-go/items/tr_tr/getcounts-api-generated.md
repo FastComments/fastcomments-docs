@@ -1,8 +1,9 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| sso | string | query | Hayır |  |
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Yanıt
 
@@ -22,18 +23,17 @@ import (
 )
 
 func main() {
-	sso := "sso_example" // string |  (isteğe bağlı)
+	tenantId := "tenantId_example" // string | 
+	sso := "sso_example" // string |  (opsiyonel)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetCounts(context.Background()).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetCounts(context.Background()).TenantId(tenantId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetCounts``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `GetCounts`'ten dönen yanıt: GetBannedUsersCountResponse
+	// `GetCounts`'ten yanıt: GetBannedUsersCountResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetCounts`: %v\n", resp)
 }
 [inline-code-end]
-
----

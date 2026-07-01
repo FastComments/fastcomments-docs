@@ -2,9 +2,9 @@
 
 | Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
-| tenant_id | String | Evet |  |
-| id | String | Evet |  |
-| edit_key | String | Hayır |  |
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
+| edit_key | String | No |  |
 
 ## Yanıt
 
@@ -14,13 +14,13 @@ Döndürür: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments
 
 [inline-code-attrs-start title = 'delete_vote Örneği'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let params: DeleteVoteParams = DeleteVoteParams {
-        tenant_id: String::from("acme-corp-tenant"),
-        id: String::from("article-5678-comment-1234"),
-        edit_key: Some(String::from("editkey-9b2f4e")),
+async fn example() -> Result<(), Error> {
+    let params = DeleteVoteParams {
+        tenant_id: "acme-corp".to_string(),
+        id: "vote-12345".to_string(),
+        edit_key: Some("edit-key-abc".to_string()),
     };
-    let response: VoteDeleteResponse = delete_vote(&configuration, params).await?;
+    let _response: VoteDeleteResponse = delete_vote(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

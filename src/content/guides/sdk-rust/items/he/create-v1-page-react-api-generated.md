@@ -1,7 +1,6 @@
----
 ## פרמטרים
 
-| שם | סוג | חובה | תיאור |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | tenant_id | String | כן |  |
 | url_id | String | כן |  |
@@ -13,17 +12,15 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-create_v1_page_react'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_v1_page_react דוגמה'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example() -> Result<CreateV1PageReact, Error> {
-    let params = CreateV1PageReactParams {
+async fn run() -> Result<(), Error> {
+    let params: CreateV1PageReactParams = CreateV1PageReactParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        url_id: "news/article/2026/06/launch".to_string(),
-        title: Some("Acme Launch Coverage".to_string()),
+        url_id: "news/article".to_string(),
+        title: Some("Rust Community Update".to_string()),
     };
-    let reaction: CreateV1PageReact = create_v1_page_react(&configuration, params).await?;
-    Ok(reaction)
+    let _response = create_v1_page_react(&config, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

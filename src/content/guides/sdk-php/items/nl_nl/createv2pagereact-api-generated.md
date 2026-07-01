@@ -20,15 +20,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new FastComments\Client\Api\PublicApi(
-    // Als u een aangepaste HTTP-client wilt gebruiken, geef dan uw client door die `GuzzleHttp\ClientInterface` implementeert.
-    // Dit is optioneel; `GuzzleHttp\Client` wordt standaard gebruikt.
-    new GuzzleHttp\Client()
-);
+// $apiInstance = new FastComments\Client\Api\PublicApi(
+    // Als je een aangepaste http-client wilt gebruiken, geef je client door die `GuzzleHttp\ClientInterface` implementeert.
+    // Dit is optioneel, `GuzzleHttp\Client` wordt als standaard gebruikt.
+    // new GuzzleHttp\Client()
+// );
+
 $tenant_id = 'tenant_id_example'; // string
 $url_id = 'url_id_example'; // string
 $id = 'id_example'; // string
 $title = 'title_example'; // string
+
 
 try {
     $result = $apiInstance->createV2PageReact($tenant_id, $url_id, $id, $title);
@@ -37,5 +39,3 @@ try {
     echo 'Exception when calling PublicApi->createV2PageReact: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

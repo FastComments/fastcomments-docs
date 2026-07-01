@@ -1,6 +1,6 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | userId | string | query | No |  |
@@ -13,7 +13,7 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'getUserBadgeProgressList Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getUserBadgeProgressList'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -31,13 +31,17 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$user_id = 'user_id_example'; // string
-$limit = 3.4; // float
-$skip = 3.4; // float
+$options = [
+    'user_id' => 'user_id_example', // string
+    'limit' => 3.4, // float
+    'skip' => 3.4, // float
+];
+
 
 try {
-    $result = $apiInstance->getUserBadgeProgressList($tenant_id, $user_id, $limit, $skip);
+    $result = $apiInstance->getUserBadgeProgressList($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getUserBadgeProgressList: ', $e->getMessage(), PHP_EOL;

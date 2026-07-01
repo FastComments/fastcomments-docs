@@ -1,14 +1,11 @@
-### Gebruik van de Public API
+### Gebruik van de openbare API
 
 ```swift
 import FastCommentsSwift
 
-// Maak API-client
-let publicApi = PublicAPI()
-
-// Haal opmerkingen op voor een pagina
+// Haal reacties op voor een pagina
 do {
-    let response = try await publicApi.getCommentsPublic(
+    let response = try await PublicAPI.getCommentsPublic(
         tenantId: "your-tenant-id",
         urlId: "page-url-id"
     )
@@ -22,20 +19,19 @@ do {
 }
 ```
 
-### Gebruik van de Authenticated API
+### Gebruik van de geauthenticeerde API
 
 ```swift
 import FastCommentsSwift
 
-// Maak configuratie met API-sleutel
-let defaultApi = DefaultAPI()
-defaultApi.apiKey = "your-api-key"
+// Stel uw API-sleutel in op de gedeelde configuratie (verzonden als de x-api-key header)
+FastCommentsSwiftAPIConfiguration.shared.customHeaders["x-api-key"] = "your-api-key"
 
-// Haal opmerkingen op met geauthenticeerde API
+// Haal reacties op met geauthentiseerde API
 do {
-    let response = try await defaultApi.getComments(
+    let response = try await DefaultAPI.getComments(
         tenantId: "your-tenant-id",
-        urlId: "page-url-id"
+        options: .init(urlId: "page-url-id")
     )
 
     print("Total comments: \(response.count ?? 0)")
@@ -47,18 +43,20 @@ do {
 }
 ```
 
-### Gebruik van de Moderation API
+### Gebruik van de moderatie-API
 
 ```swift
 import FastCommentsSwift
 
-// Moderation methods are authorized with an `sso` token for the acting moderator
-// (generate it with FastCommentsSSO, see the SSO section above).
+// Moderatiemethoden zijn geautoriseerd met een `sso`-token voor de optredende moderator
+// (genereer het met FastCommentsSSO, zie de SSO sectie hierboven).
 do {
     let response = try await ModerationAPI.getApiComments(
-        page: 0,
-        count: 30,
-        sso: ssoToken
+        options: .init(
+            page: 0,
+            count: 30,
+            sso: ssoToken
+        )
     )
 
     print("Found \(response.comments.count) comments to moderate")
@@ -70,21 +68,21 @@ do {
 }
 ```
 
-### SSO gebruiken voor authenticatie
+### Gebruik van SSO voor authenticatie
 
-#### Secure SSO (Aanbevolen voor productie)
+#### Veilige SSO (Aanbevolen voor productie)
 
 ```swift
 import FastCommentsSwift
 
 let apiKey = "your-api-key"
 
-// Maak beveiligde SSO-gebruikersgegevens (alleen server-side!)
+// Maak veilige SSO-gebruikersgegevens aan (alleen server‑side!)
 let userData = SecureSSOUserData(
     id: "user-123",              // Gebruikers-ID
-    email: "user@example.com",   // E-mail
+    email: "user@example.com",   // E‑mail
     username: "johndoe",         // Gebruikersnaam
-    avatar: "https://example.com/avatar.jpg" // Avatar URL
+    avatar: "https://example.com/avatar.jpg" // Avatar‑URL
 )
 
 // Genereer SSO-token
@@ -93,18 +91,18 @@ do {
     let token = try sso.createToken()
 
     print("SSO Token: \(token ?? "")")
-    // Geef deze token door aan je frontend voor authenticatie
+    // Stuur dit token naar uw front‑end voor authenticatie
 } catch {
     print("Error creating SSO token: \(error)")
 }
 ```
 
-#### Simple SSO (Voor ontwikkeling/testen)
+#### Eenvoudige SSO (Voor ontwikkeling/testen)
 
 ```swift
 import FastCommentsSwift
 
-// Maak eenvoudige SSO-gebruikersgegevens (geen API-sleutel nodig)
+// Maak eenvoudige SSO-gebruikersgegevens aan (geen API-sleutel nodig)
 let userData = SimpleSSOUserData(
     username: "johndoe",
     email: "user@example.com",

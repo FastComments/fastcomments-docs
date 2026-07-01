@@ -1,10 +1,10 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | id | string | Не |  |
-| userId | string | Не |  |
+| userId | string = "" | Не |  |
 
 ## Отговор
 
@@ -14,10 +14,13 @@
 
 [inline-code-attrs-start title = 'Пример за deleteSubscription'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteSubscription(tenantId = "my-tenant-123", id = "sub-98765", userId = "user-456")
-if response.isSome:
-  let deleteResp = response.get()
-  echo "Delete subscription response received"
-else:
-  echo "No subscription response"
+let (maybeResp, httpResp) = client.deleteSubscription(
+  tenantId = "my-tenant-123",
+  id = "sub-789",
+  userId = ""
+)
+
+if maybeResp.isSome:
+  let apiResult = maybeResp.get()
+  # използвайте apiResult, както е необходимо
 [inline-code-end]

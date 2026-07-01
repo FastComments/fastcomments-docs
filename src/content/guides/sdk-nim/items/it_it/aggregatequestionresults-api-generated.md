@@ -1,15 +1,9 @@
----
 ## Parametri
 
 | Nome | Tipo | Obbligatorio | Descrizione |
 |------|------|--------------|-------------|
 | tenantId | string | Sì |  |
-| questionId | string | No |  |
-| questionIds | seq[string] | No |  |
-| urlId | string | Sì |  |
-| timeBucket | AggregateTimeBucket | No |  |
-| startDate | string | No |  |
-| forceRecalculate | bool | No |  |
+| options | AggregateQuestionResultsOptions | No |  |
 
 ## Risposta
 
@@ -17,21 +11,10 @@ Restituisce: [`Option[AggregateQuestionResultsResponse]`](https://github.com/Fas
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di aggregateQuestionResults'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'aggregateQuestionResults Esempio'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.aggregateQuestionResults(
-  tenantId = "my-tenant-123",
-  questionId = "",
-  questionIds = @[],
-  urlId = "news/article-title",
-  timeBucket = AggregateTimeBucket(0),
-  startDate = "",
-  forceRecalculate = false
-)
-
-if response.isSome:
-  let results = response.get()
-  discard results
+let opts = AggregateQuestionResultsOptions()
+let (aggResultOpt, httpResp) = client.aggregateQuestionResults(tenantId = "my-tenant-123", options = opts)
+if aggResultOpt.isSome:
+  let aggResult = aggResultOpt.get()
 [inline-code-end]
-
----

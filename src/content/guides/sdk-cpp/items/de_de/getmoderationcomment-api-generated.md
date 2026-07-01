@@ -1,33 +1,31 @@
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
-|------|------|----------|-------------|
+|------|------|--------------|--------------|
+| tenantId | string | Ja |  |
 | commentId | string | Ja |  |
-| includeEmail | bool | Nein |  |
-| includeIP | bool | Nein |  |
-| sso | string | Nein |  |
+| options | const GetModerationCommentOptions& | Ja |  |
 
 ## Antwort
 
-Gibt zurück: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ModerationAPICommentResponse.h)
+Rückgabe: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ModerationAPICommentResponse.h)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'getModerationComment Beispiel'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Beispiel für getModerationComment'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t commentId = U("cmt-987654");
-boost::optional<bool> includeEmail = boost::optional<bool>(true);
-boost::optional<bool> includeIP = boost::optional<bool>(false);
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
-
-api->getModerationComment(commentId, includeEmail, includeIP, sso)
-.then([](std::shared_ptr<ModerationAPICommentResponse> resp) {
-    auto result = resp ? resp : std::make_shared<ModerationAPICommentResponse>();
-    if (resp)
-        std::cout << "Comment fetched successfully" << std::endl;
-    else
-        std::cout << "No comment returned; using placeholder" << std::endl;
-}).wait();
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto commentId = utility::conversions::to_string_t("comment-456");
+GetModerationCommentOptions options;
+options.includeDeleted = boost::optional<bool>(true);
+options.locale = boost::optional<utility::string_t>(utility::conversions::to_string_t("en-US"));
+api->getModerationComment(tenantId, commentId, options)
+    .then([](pplx::task<std::shared_ptr<ModerationAPICommentResponse>> task) {
+        try {
+            auto response = task.get();
+            // Verarbeite die Antwort nach Bedarf
+        } catch (const std::exception& ex) {
+            // Fehler behandeln
+        }
+    });
 [inline-code-end]
-
----

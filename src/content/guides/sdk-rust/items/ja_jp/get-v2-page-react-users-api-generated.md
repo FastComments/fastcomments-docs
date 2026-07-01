@@ -1,29 +1,29 @@
 ## パラメータ
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenant_id | String | はい |  |
-| url_id | String | はい |  |
-| id | String | はい |  |
+| tenant_id | String | Yes |  |
+| url_id | String | Yes |  |
+| id | String | Yes |  |
 
 ## レスポンス
 
-返却値: `GetV2PageReactUsersResponse`
+戻り値: `GetV2PageReactUsersResponse`
 
 ## 例
 
-[inline-code-attrs-start title = 'get_v2_page_react_users の例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_v2_page_react_users 例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_react_users(configuration: &configuration::Configuration) -> Result<(), Error> {
-    let params: GetV2PageReactUsersParams = GetV2PageReactUsersParams {
-        tenant_id: String::from("acme-corp-tenant"),
-        url_id: String::from("news/2026/space-flight-updates"),
-        id: String::from("page-7a3f"),
-        include_reaction_info: Some(true),
-        limit: Some(100),
+async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetV2PageReactUsersParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        url_id: "news/article".to_string(),
+        id: "react567".to_string(),
+        page: Some(1),
+        per_page: Some(50),
+        ..Default::default()
     };
-    let response: GetV2PageReactUsersResponse = get_v2_page_react_users(configuration, params).await?;
-    let _response = response;
+    let _response = get_v2_page_react_users(configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

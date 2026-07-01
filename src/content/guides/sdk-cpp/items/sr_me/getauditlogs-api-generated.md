@@ -1,13 +1,9 @@
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
 | tenantId | string | Da |  |
-| limit | double | Ne |  |
-| skip | double | Ne |  |
-| order | SORT_DIR | Ne |  |
-| after | double | Ne |  |
-| before | double | Ne |  |
+| options | const GetAuditLogsOptions& | Da |  |
 
 ## Odgovor
 
@@ -15,22 +11,21 @@ Vraća: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-cp
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer getAuditLogs'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getAuditLogs Primjer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-boost::optional<double> limit = 100.0;
-boost::optional<double> skip = 0.0;
-boost::optional<SORT_DIR> order = SORT_DIR::DESC;
-boost::optional<double> after;
-boost::optional<double> before;
-api->getAuditLogs(tenantId, limit, skip, order, after, before)
-.then([](pplx::task<std::shared_ptr<GetAuditLogsResponse>> t) {
+
+GetAuditLogsOptions options;
+options.startDate = boost::optional<utility::datetime>(utility::datetime::from_string(U("2023-01-01T00:00:00Z"), utility::datetime::RFC_1123));
+options.endDate   = boost::optional<utility::datetime>(utility::datetime::from_string(U("2023-01-31T23:59:59Z"), utility::datetime::RFC_1123));
+options.limit     = boost::optional<int>(100);
+
+api->getAuditLogs(tenantId, options).then([](pplx::task<std::shared_ptr<GetAuditLogsResponse>> t) {
     try {
-        auto resp = t.get();
-        if (!resp) resp = std::make_shared<GetAuditLogsResponse>();
-        std::cout << "Fetched audit logs for tenant\n";
-    } catch (const std::exception &e) {
-        std::cerr << "getAuditLogs failed: " << e.what() << '\n';
+        auto response = t.get();
+        // upotrijebite odgovor
+    } catch (const std::exception& e) {
+        // obradite grešku
     }
 });
 [inline-code-end]

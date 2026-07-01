@@ -2,11 +2,11 @@
 go get github.com/fastcomments/fastcomments-go
 ```
 
-### שימוש בלקוח ה-API
+### שימוש בלקוח ה‑API
 
-#### Public API (ללא אימות)
+#### API ציבורי (ללא אימות)
 
-The PublicAPI מאפשרת גישה ללא אימות לנקודות קצה ציבוריות:
+The PublicAPI allows unauthenticated access to public endpoints:
 
 ```go
 package main
@@ -36,9 +36,9 @@ func main() {
 }
 ```
 
-#### Default API (דורש מפתח API)
+#### API ברירת מחדל (דורש מפתח API)
 
-The DefaultAPI דורש אימות באמצעות מפתח ה-API שלך:
+The DefaultAPI requires authentication using your API key:
 
 ```go
 package main
@@ -53,7 +53,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // צור הקשר מאומת עם מפתח ה-API
+    // צור הקשר מאומת עם מפתח API
     auth := context.WithValue(
         context.Background(),
         client.ContextAPIKeys,
@@ -77,13 +77,9 @@ func main() {
 }
 ```
 
-#### Moderation API (לוח הבקרה של המודרטור)
+#### API מודרציה (לוח מודרטור)
 
-The ModerationAPI מפעיל את לוח הבקרה של המודרטור. הוא מספק שיטות לרישום,
-ספירה, חיפוש וייצוא תגובות, פעולות פיקוח (הסרה/שחזור,
-דגל, קביעת סטטוס לסקירה/ספאם/אישור, הצבעות, פתיחה/סגירה של שרשורים), הרחקות (חסימה מלהגיב, בטל, תקצירי טרום-חסימה, סטטוס והעדפות חסימה, ספירות משתמשים חסומים),
-וסמלים ואמון (הענקה/הסרה של תגי כבוד, תגי ידני, קבלת/קביעת גורם אמון, פרופיל פנימי של משתמש). כל שיטות Moderation מקבלות פרמטר `sso` עבור
-מודרטורים המאומתים באמצעות SSO:
+The ModerationAPI provides an extensive suite of live and fast moderation APIs. All moderation methods accept an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie:
 
 ```go
 package main
@@ -98,7 +94,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // רשימת תגובות למודרציה באמצעות ModerationAPI
+    // רשום תגובות למודרציה באמצעות ModerationAPI
     response, httpResp, err := apiClient.ModerationAPI.GetApiComments(
         context.Background(),
     ).Sso("your-sso-token").Execute()

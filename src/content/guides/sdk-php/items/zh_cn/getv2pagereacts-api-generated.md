@@ -1,13 +1,13 @@
-## Parameters
+## 参数
 
-| 名称 | 类型 | 位置 | 是否必需 | 描述 |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 是 |  |
 | urlId | string | query | 是 |  |
 
 ## 响应
 
-返回：[`GetV2PageReacts`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetV2PageReacts.php)
+返回: [`GetV2PageReacts`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetV2PageReacts.php)
 
 ## 示例
 
@@ -23,8 +23,10 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     // 这是可选的，默认将使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // 字符串
-$url_id = 'url_id_example'; // 字符串
+
+$tenant_id = 'tenant_id_example'; // string
+$url_id = 'url_id_example'; // string
+
 
 try {
     $result = $apiInstance->getV2PageReacts($tenant_id, $url_id);

@@ -1,11 +1,12 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Ad | Tür | Konum | Zorunlu | Açıklama |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Evet |  |
-| includeEmail | boolean | query | Hayır |  |
-| includeIP | boolean | query | Hayır |  |
-| sso | string | query | Hayır |  |
+| tenantId | string | sorgu | Evet |  |
+| commentId | string | yol | Evet |  |
+| includeEmail | boolean | sorgu | Hayır |  |
+| includeIP | boolean | sorgu | Hayır |  |
+| sso | string | sorgu | Hayır |  |
 
 ## Yanıt
 
@@ -28,12 +29,13 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     Boolean includeEmail = true; // Boolean | 
     Boolean includeIP = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationAPICommentResponse result = apiInstance.getModerationComment(commentId)
+      ModerationAPICommentResponse result = apiInstance.getModerationComment(tenantId, commentId)
             .includeEmail(includeEmail)
             .includeIP(includeIP)
             .sso(sso)
@@ -49,5 +51,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

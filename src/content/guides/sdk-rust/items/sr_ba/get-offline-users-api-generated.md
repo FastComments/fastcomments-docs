@@ -1,32 +1,32 @@
-Претходни коментатори на страници који ТРЕНУТНО НИСУ на мрежи. Сортирано по displayName.
-Користите ово након што исцрпите /users/online да прикажете одељак "Чланови".
-Курсорска пагинација по commenterName: сервер пролази по делимичном индексу {tenantId, urlId, commenterName} од afterName унапред преко $gt, без трошка $skip.
+Prethodni komentatori na stranici koji NISU trenutno online. Sortirani po displayName.  
+Koristite ovo nakon što iscrpite /users/online kako biste prikazali odjeljak "Members".  
+Kursor paginacija po commenterName: server prolazi kroz djelomični indeks {tenantId, urlId, commenterName} od afterName naprijed putem $gt, bez troška $skip.
 
-## Параметри
+## Parameters
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| url_id | String | Да |  |
-| after_name | String | Не |  |
-| after_user_id | String | Не |  |
+| tenant_id | String | Yes |  |
+| url_id | String | Yes |  |
+| after_name | String | No |  |
+| after_user_id | String | No |  |
 
-## Одговор
+## Response
 
-Враћа: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_offline_response.rs)
+Returns: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_offline_response.rs)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'get_offline_users Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_offline_users Primjer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_offline_users() -> Result<PageUsersOfflineResponse, Error> {
-    let params: GetOfflineUsersParams = GetOfflineUsersParams {
+async fn fetch_offline(config: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetOfflineUsersParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        url_id: "news/world/today".to_string(),
-        after_name: Some("jane.smith".to_string()),
-        after_user_id: Some("user-1024".to_string()),
+        url_id: "news/article".to_string(),
+        after_name: Some("alice".to_string()),
+        after_user_id: Some("user-42".to_string()),
     };
-    let response: PageUsersOfflineResponse = get_offline_users(&configuration, params).await?;
-    Ok(response)
+    let _response = get_offline_users(config, params).await?;
+    Ok(())
 }
 [inline-code-end]

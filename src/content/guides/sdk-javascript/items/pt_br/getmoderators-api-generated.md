@@ -1,26 +1,25 @@
 ## Parâmetros
 
-| Name | Type | Obrigatório | Descrição |
-|------|------|------------|-----------|
+| Nome | Tipo | Obrigatório | Descrição |
+|------|------|-------------|-----------|
 | tenantId | string | Sim |  |
 | skip | number | Não |  |
 
 ## Resposta
 
-Retorna: [`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModeratorsResponse.ts)
+Retorna: [`GetModeratorsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModeratorsResponse1.ts)
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getModerators'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo getModerators'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function run(): Promise<void> {
-  const tenantId: string = "acme-tenant-98765";
-  const moderatorsResponse: GetModeratorsResponse = await getModerators(tenantId);
-  const skip: number = 25;
-  const pagedResponse: GetModeratorsResponse = await getModerators(tenantId, skip);
-  console.log(moderatorsResponse, pagedResponse);
+async function fetchModerators(): Promise<void> {
+  const tenantId: string = "tenant-9876";
+  const skip: number = 30; // deslocamento de paginação opcional
+  const moderators: GetModeratorsResponse1 = await getModerators(tenantId, skip);
+  // Exemplo sem paginação:
+  // const allModerators: GetModeratorsResponse1 = await getModerators(tenantId);
 }
-run();
 [inline-code-end]
 
 ---

@@ -1,8 +1,9 @@
 ## Параметри
 
-| Ім'я | Тип | Обов'язкове | Опис |
+| Назва | Тип | Обов’язковий | Опис |
 |------|------|----------|-------------|
-| sso | string | Ні |  |
+| tenantId | string | Так |  |
+| sso | string = "" | Ні |  |
 
 ## Відповідь
 
@@ -12,12 +13,8 @@
 
 [inline-code-attrs-start title = 'Приклад getUserBanPreference'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUserBanPreference(sso = "sso-jwt-7f3a9b")
-if response.isSome:
-  let prefs = response.get()
-  echo "User ban preferences:", prefs
-else:
-  echo "No ban preference found"
+let (maybePref, httpResp) = client.getUserBanPreference(tenantId = "my-tenant-123", sso = "")
+if maybePref.isSome:
+  let pref = maybePref.get()
+  echo pref
 [inline-code-end]
-
----

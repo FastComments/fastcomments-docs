@@ -1,45 +1,44 @@
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
+| Ime | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
 | tenantId | string | path | Da |  |
 | postIds | array | query | Ne |  |
 | sso | string | query | Ne |  |
 
-## Odgovor
+## Odziv
 
 Vraća: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/user_reacts_response.py)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'get_user_reacts_public Primjer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer get_user_reacts_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetUserReactsPublicOptions
 from client.models.user_reacts_response import UserReactsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definiranje hosta je opciono i podrazumijeva se https://fastcomments.com
-# Pogledajte configuration.py za listu svih podržanih konfiguracijskih parametara.
+# Definisanje hosta je opciono i podrazumijeva https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Uđite u kontekst sa instancom API klijenta
+# Unesite kontekst sa instancom API klijenta
 with client.ApiClient(configuration) as api_client:
     # Kreirajte instancu API klase
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    post_ids = ['post_ids_example'] # List[str] |  (neobavezno)
-    sso = 'sso_example' # str |  (neobavezno)
+    post_ids = ['post_ids_example'] # List[str] |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_user_reacts_public(tenant_id, post_ids=post_ids, sso=sso)
+        api_response = api_instance.get_user_reacts_public(tenant_id, GetUserReactsPublicOptions(post_ids=post_ids, sso=sso))
         print("The response of PublicApi->get_user_reacts_public:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling PublicApi->get_user_reacts_public: %s\n" % e)
 [inline-code-end]
-
----

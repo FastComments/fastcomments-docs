@@ -1,7 +1,7 @@
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
+|------|------|----------|----------|------|
 | tenantId | string | path | Da |  |
 | commentId | string | path | Da |  |
 | urlId | string | query | Da |  |
@@ -17,7 +17,7 @@ Vraća: [`VoteResponse`](https://github.com/FastComments/fastcomments-swift/blob
 
 [inline-code-attrs-start title = 'Primer voteComment'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sledeći primeri koda su još u beta fazi. Za bilo koji problem, prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledeći kod primeri su i dalje beta. Za bilo koji problem, molimo prijavite via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -25,10 +25,10 @@ let commentId = "commentId_example" // String |
 let urlId = "urlId_example" // String | 
 let broadcastId = "broadcastId_example" // String | 
 let voteBodyParams = VoteBodyParams(commenterEmail: "commenterEmail_example", commenterName: "commenterName_example", voteDir: "voteDir_example", url: "url_example") // VoteBodyParams | 
-let sessionId = "sessionId_example" // String |  (neobavezno)
-let sso = "sso_example" // String |  (neobavezno)
+let sessionId = "sessionId_example" // String |  (opciono)
+let sso = "sso_example" // String |  (opciono)
 
-PublicAPI.voteComment(tenantId: tenantId, commentId: commentId, urlId: urlId, broadcastId: broadcastId, voteBodyParams: voteBodyParams, sessionId: sessionId, sso: sso) { (response, error) in
+PublicAPI.voteComment(tenantId: tenantId, commentId: commentId, urlId: urlId, broadcastId: broadcastId, voteBodyParams: voteBodyParams, options: PublicAPI.VoteCommentOptions(sessionId: sessionId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

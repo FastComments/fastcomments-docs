@@ -1,23 +1,19 @@
-## Параметри
+## Parameters
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Не |  |
+| tenantId | string | Da |  |
+| id | string | Ne |  |
 
-## Одговор
+## Response
 
-Враћа: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
+Returns: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'deleteQuestionConfig Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteQuestionConfig Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteQuestionConfig(tenantId = "my-tenant-123", id = "")
-
-if response.isSome:
-  let deleted = response.get()
-  echo "Question config deleted for tenant: ", "my-tenant-123"
-else:
-  echo "Failed to delete question config"
+let (apiResult, httpResponse) = client.deleteQuestionConfig(tenantId = "my-tenant-123", id = "question-config-456")
+if apiResult.isSome:
+  let empty = apiResult.get()
 [inline-code-end]

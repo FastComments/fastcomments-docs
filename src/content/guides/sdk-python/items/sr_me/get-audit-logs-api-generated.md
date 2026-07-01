@@ -1,58 +1,59 @@
-## Параметри
+## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| limit | number | query | Не |  |
-| skip | number | query | Не |  |
-| order | string | query | Не |  |
-| after | number | query | Не |  |
-| before | number | query | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| limit | number | query | No |  |
+| skip | number | query | No |  |
+| order | string | query | No |  |
+| after | number | query | No |  |
+| before | number | query | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_audit_logs_response.py)
+Returns: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_audit_logs_response.py)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'get_audit_logs Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_audit_logs Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetAuditLogsOptions
 from client.models.get_audit_logs_response import GetAuditLogsResponse
 from client.models.sortdir import SORTDIR
 from client.rest import ApiException
 from pprint import pprint
 
-# Поставка хоста је опционална и подразумева се https://fastcomments.com
-# Погледајте configuration.py за списак свих подржаних конфигурационих параметара.
+# Definisanje hosta je opciono i podrazumevano je https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клијент мора конфигурисати параметре аутентификације и овлашћења
-# у складу са политиком безбедности API сервера.
-# Испод су примери за сваки метод аутентификације, користите пример који
-# одговара вашем случају употребе.
+# Klijent mora da konfiguriše parametre autentifikacije i autorizacije
+# u skladu s politikom sigurnosti API servera.
+# Primeri za svaki metod autentifikacije su prikazani ispod, koristite primer koji
+# zadovoljava vaš slučaj korišćenja autentifikacije.
 
-# Конфигуришите овлашћење помоћу API кључа: api_key
+# Konfigurišite autorizaciju API ključa: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Откоментирајте испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
+# Otkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Уђите у контекст са инстанцом API клијента
+# Uđite u kontekst s instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Креирајте инстанцу API класе
+    # Kreirajte instancu API klase
     api_instance = client.DefaultApi(api_client)
-    tenant_id = 'tenant_id_example' # str | 
-    limit = 3.4 # float |  (optional)
-    skip = 3.4 # float |  (optional)
-    order = client.SORTDIR() # SORTDIR |  (optional)
-    after = 3.4 # float |  (optional)
-    before = 3.4 # float |  (optional)
+    tenant_id = 'tenant_id_example' # str |
+    limit = 3.4 # float | (opcionalno)
+    skip = 3.4 # float | (opcionalno)
+    order = client.SORTDIR() # SORTDIR | (opcionalno)
+    after = 3.4 # float | (opcionalno)
+    before = 3.4 # float | (opcionalno)
 
     try:
-        api_response = api_instance.get_audit_logs(tenant_id, limit=limit, skip=skip, order=order, after=after, before=before)
+        api_response = api_instance.get_audit_logs(tenant_id, GetAuditLogsOptions(limit=limit, skip=skip, order=order, after=after, before=before))
         print("The response of DefaultApi->get_audit_logs:\n")
         pprint(api_response)
     except Exception as e:

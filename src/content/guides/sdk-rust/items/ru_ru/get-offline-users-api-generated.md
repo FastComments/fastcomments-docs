@@ -1,17 +1,18 @@
-Прошлые комментаторы на странице, которые в настоящий момент НЕ в сети. Отсортировано по displayName.
-Используйте это после исчерпания /users/online, чтобы отобразить раздел «Members».
-Постраничная пагинация по commenterName: сервер проходит по частичному {tenantId, urlId, commenterName} индексу начиная после afterName вперёд через $gt, без затрат $skip.
+Past commenters on the page who are NOT currently online. Sorted by displayName.  
+Use this after exhausting /users/online to render a "Members" section.  
+Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName}  
+index from afterName forward via $gt, no $skip cost.
 
-## Параметры
+## Parameters
 
-| Имя | Тип | Обязательный | Описание |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
 | tenant_id | String | Да |  |
 | url_id | String | Да |  |
 | after_name | String | Нет |  |
 | after_user_id | String | Нет |  |
 
-## Ответ
+## Response
 
 Возвращает: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_offline_response.rs)
 
@@ -19,16 +20,14 @@
 
 [inline-code-attrs-start title = 'Пример get_offline_users'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_offline_users() -> Result<PageUsersOfflineResponse, Error> {
-    let params: GetOfflineUsersParams = GetOfflineUsersParams {
+async fn fetch_offline(config: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetOfflineUsersParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        url_id: "news/world/today".to_string(),
-        after_name: Some("jane.smith".to_string()),
-        after_user_id: Some("user-1024".to_string()),
+        url_id: "news/article".to_string(),
+        after_name: Some("alice".to_string()),
+        after_user_id: Some("user-42".to_string()),
     };
-    let response: PageUsersOfflineResponse = get_offline_users(&configuration, params).await?;
-    Ok(response)
+    let _response = get_offline_users(config, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

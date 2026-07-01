@@ -1,6 +1,6 @@
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
 | tenant_id | String | 是 |  |
 | id | String | 是 |  |
@@ -8,21 +8,19 @@
 
 ## 回應
 
-回傳: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
+返回: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
 ## 範例
 
 [inline-code-attrs-start title = 'delete_moderator 範例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn run() -> Result<(), Error> {
-    let params: DeleteModeratorParams = DeleteModeratorParams {
-        tenant_id: String::from("acme-corp-tenant"),
-        id: String::from("moderator-93b1f"),
-        send_email: Some(String::from("moderator@acme-corp.com")),
+    let params = DeleteModeratorParams {
+        tenant_id: "acme-corp".to_string(),
+        id: "moderator-123".to_string(),
+        send_email: Some("admin@acme.com".to_string()),
     };
-    let _response: ApiEmptyResponse = delete_moderator(&configuration, params).await?;
+    let _ = delete_moderator(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

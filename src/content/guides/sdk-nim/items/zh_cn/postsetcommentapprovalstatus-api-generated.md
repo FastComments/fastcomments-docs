@@ -2,22 +2,27 @@
 
 | 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
+| tenantId | string | 是 |  |
 | commentId | string | 是 |  |
-| approved | bool | 否 |  |
-| sso | string | 否 |  |
+| options | PostSetCommentApprovalStatusOptions | 否 |  |
 
 ## 响应
 
-返回： [`Option[SetCommentApprovedResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_set_comment_approved_response.nim)
+返回：[`Option[SetCommentApprovedResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_set_comment_approved_response.nim)
 
 ## 示例
 
 [inline-code-attrs-start title = 'postSetCommentApprovalStatus 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postSetCommentApprovalStatus(commentId = "cmt-7890", approved = false, sso = "")
-if response.isSome:
-  let setResp = response.get()
-  discard setResp
+let (approvedOpt, httpResp) = client.postSetCommentApprovalStatus(
+  tenantId = "my-tenant-123",
+  commentId = "comment-7890",
+  options = PostSetCommentApprovalStatusOptions()
+)
+
+if approvedOpt.isSome:
+  let approved = approvedOpt.get()
+  echo approved
 [inline-code-end]
 
 ---

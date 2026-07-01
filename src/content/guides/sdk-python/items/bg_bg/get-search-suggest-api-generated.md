@@ -1,9 +1,10 @@
 ## Параметри
 
-| Име | Тип | Местоположение | Задължителен | Описание |
+| Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
-| text-search | string | query | Не |  |
-| sso | string | query | Не |  |
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Отговор
 
@@ -14,26 +15,28 @@
 [inline-code-attrs-start title = 'get_search_suggest Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetSearchSuggestOptions
 from client.models.moderation_suggest_response import ModerationSuggestResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Задаването на host е по избор и по подразбиране е https://fastcomments.com
-# Вижте configuration.py за списък с всички поддържани параметри за конфигурация.
+# Дефинирането на хоста е незадължително и по подразбиране е https://fastcomments.com
+# Вижте configuration.py за списък на всички поддържани параметри за конфигурация.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Влезте в контекст с екземпляр на API клиента
+# Влезте в контекст с инстанция на API клиента
 with client.ApiClient(configuration) as api_client:
-    # Създайте екземпляр на API класа
+    # Създайте инстанция на API класа
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     text_search = 'text_search_example' # str |  (optional)
     sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_search_suggest(text_search=text_search, sso=sso)
+        api_response = api_instance.get_search_suggest(tenant_id, GetSearchSuggestOptions(text_search=text_search, sso=sso))
         print("The response of ModerationApi->get_search_suggest:\n")
         pprint(api_response)
     except Exception as e:

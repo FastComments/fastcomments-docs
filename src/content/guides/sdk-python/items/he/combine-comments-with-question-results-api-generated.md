@@ -1,16 +1,16 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | כן |  |
-| questionId | string | query | לא |  |
-| questionIds | array | query | לא |  |
-| urlId | string | query | לא |  |
-| startDate | string | query | לא |  |
-| forceRecalculate | boolean | query | לא |  |
-| minValue | number | query | לא |  |
-| maxValue | number | query | לא |  |
-| limit | number | query | לא |  |
+| tenantId | string | שאילתה | כן |  |
+| questionId | string | שאילתה | לא |  |
+| questionIds | array | שאילתה | לא |  |
+| urlId | string | שאילתה | לא |  |
+| startDate | string | שאילתה | לא |  |
+| forceRecalculate | boolean | שאילתה | לא |  |
+| minValue | number | שאילתה | לא |  |
+| maxValue | number | שאילתה | לא |  |
+| limit | number | שאילתה | לא |  |
 
 ## תגובה
 
@@ -18,31 +18,32 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-combine_comments_with_question_results'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'combine_comments_with_question_results דוגמה'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import CombineCommentsWithQuestionResultsOptions
 from client.models.combine_question_results_with_comments_response import CombineQuestionResultsWithCommentsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת ה-host אופציונלית ומוגדרת כברירת מחדל ל-https://fastcomments.com
-# ראו configuration.py לרשימה של כל פרמטרי התצורה הנתמכים.
+# הגדרת המארח היא אופציונלית ובברירת מחדל https://fastcomments.com
+# ראה configuration.py עבור רשימת כל הפרמטרים הנתמכים.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# הלקוח חייב להגדיר את פרמטרי האימות וההרשאה
-# בהתאם למדיניות האבטחה של שרת ה-API.
-# דוגמאות לכל שיטת אימות מסופקות להלן, השתמשו בדוגמה ש-
-# מתאימה למקרה השימוש שלכם.
+# על הלקוח להגדיר את פרמטרי האימות וההרשאה
+# בהתאם למדיניות האבטחה של השרת API.
+# דוגמאות לכל שיטת אימות ניתנות למטה, השתמשו בדוגמה שמספקת
+# עומדת במקרuse של האימות שלכם.
 
-# Configure API key authorization: api_key
+# הגדרת הרשאת מפתח API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# הסירו את ההערה למטה כדי להגדיר קידומת (למשל Bearer) למפתח ה-API, אם נדרש
+# בטלו את ההערה למטה כדי להגדיר קידומת (לדוגמה Bearer) למפתח API, אם נדרש
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# הכנסו לקונטקסט עם מופע של ApiClient
+# הכנסו לקונטקסט עם מופע של לקוח ה-API
 with client.ApiClient(configuration) as api_client:
     # צרו מופע של מחלקת ה-API
     api_instance = client.DefaultApi(api_client)
@@ -57,7 +58,7 @@ with client.ApiClient(configuration) as api_client:
     limit = 3.4 # float |  (אופציונלי)
 
     try:
-        api_response = api_instance.combine_comments_with_question_results(tenant_id, question_id=question_id, question_ids=question_ids, url_id=url_id, start_date=start_date, force_recalculate=force_recalculate, min_value=min_value, max_value=max_value, limit=limit)
+        api_response = api_instance.combine_comments_with_question_results(tenant_id, CombineCommentsWithQuestionResultsOptions(question_id=question_id, question_ids=question_ids, url_id=url_id, start_date=start_date, force_recalculate=force_recalculate, min_value=min_value, max_value=max_value, limit=limit))
         print("The response of DefaultApi->combine_comments_with_question_results:\n")
         pprint(api_response)
     except Exception as e:

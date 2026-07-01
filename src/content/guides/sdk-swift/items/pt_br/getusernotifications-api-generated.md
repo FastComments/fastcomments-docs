@@ -1,9 +1,9 @@
 ## Parâmetros
 
-| Nome | Tipo | Location | Obrigatório | Descrição |
-|------|------|----------|------------|-----------|
+| Nome | Tipo | Localização | Obrigatório | Descrição |
+|------|------|-------------|-------------|-----------|
 | tenantId | string | query | Sim |  |
-| urlId | string | query | Não | Usado para determinar se a página atual está inscrita. |
+| urlId | string | query | Não | Usado para determinar se a página atual está subscrita. |
 | pageSize | integer | query | Não |  |
 | afterId | string | query | Não |  |
 | includeContext | boolean | query | Não |  |
@@ -21,13 +21,13 @@ Retorna: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomm
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getUserNotifications'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo getUserNotifications'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Os seguintes exemplos de código ainda estão em beta. Para qualquer problema, por favor reporte via http://github.com/OpenAPITools/openapi-generator/issues/new
+// As amostras de código a seguir ainda estão em beta. Para qualquer problema, por favor reporte via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let urlId = "urlId_example" // String | Usado para determinar se a página atual está inscrita. (opcional)
+let urlId = "urlId_example" // String | Usado para determinar se a página atual está subscrita. (opcional)
 let pageSize = 987 // Int |  (opcional)
 let afterId = "afterId_example" // String |  (opcional)
 let includeContext = true // Bool |  (opcional)
@@ -39,7 +39,7 @@ let includeTranslations = true // Bool |  (opcional)
 let includeTenantNotifications = true // Bool |  (opcional)
 let sso = "sso_example" // String |  (opcional)
 
-PublicAPI.getUserNotifications(tenantId: tenantId, urlId: urlId, pageSize: pageSize, afterId: afterId, includeContext: includeContext, afterCreatedAt: afterCreatedAt, unreadOnly: unreadOnly, dmOnly: dmOnly, noDm: noDm, includeTranslations: includeTranslations, includeTenantNotifications: includeTenantNotifications, sso: sso) { (response, error) in
+PublicAPI.getUserNotifications(tenantId: tenantId, options: PublicAPI.GetUserNotificationsOptions(urlId: urlId, pageSize: pageSize, afterId: afterId, includeContext: includeContext, afterCreatedAt: afterCreatedAt, unreadOnly: unreadOnly, dmOnly: dmOnly, noDm: noDm, includeTranslations: includeTranslations, includeTenantNotifications: includeTenantNotifications, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

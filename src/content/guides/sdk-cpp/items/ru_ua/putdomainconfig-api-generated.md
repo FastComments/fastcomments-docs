@@ -1,35 +1,26 @@
-## Параметры
+## Параметри
 
-| Name | Type | Required | Description |
+| Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | domainToUpdate | string | Yes |  |
 | updateDomainConfigParams | UpdateDomainConfigParams | Yes |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`PutDomainConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PutDomainConfigResponse.h)
+Повертає: [`PutDomainConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PutDomainConfigResponse.h)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример putDomainConfig'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putDomainConfig Приклад'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 utility::string_t domainToUpdate = U("example.com");
-boost::optional<utility::string_t> contactEmail = U("admin@example.com");
-boost::optional<bool> enforceHttps = true;
 UpdateDomainConfigParams updateParams;
-updateParams.contactEmail = contactEmail;
-updateParams.enforceHttps = enforceHttps;
+updateParams.enableComments = true;
+updateParams.moderationLevel = boost::optional<int>(2);
+updateParams.customCss = boost::optional<utility::string_t>(U(".fc-comment{color:red;}"));
 api->putDomainConfig(tenantId, domainToUpdate, updateParams)
-.then([](pplx::task<std::shared_ptr<PutDomainConfigResponse>> t){
-    try {
-        auto resp = t.get();
-        return resp ? resp : std::make_shared<PutDomainConfigResponse>();
-    } catch(...) {
-        return std::make_shared<PutDomainConfigResponse>();
-    }
-});
+    .then([](std::shared_ptr<PutDomainConfigResponse> resp) {
+    });
 [inline-code-end]
-
----

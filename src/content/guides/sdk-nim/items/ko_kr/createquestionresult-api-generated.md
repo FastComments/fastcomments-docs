@@ -1,6 +1,6 @@
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | createQuestionResultBody | CreateQuestionResultBody | 아니오 |  |
@@ -13,20 +13,10 @@
 
 [inline-code-attrs-start title = 'createQuestionResult 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.createQuestionResult(
-  tenantId = "my-tenant-123",
-  createQuestionResultBody = CreateQuestionResultBody(
-    questionId = "q-2026-001",
-    userId = "user-42",
-    correct = true,
-    score = 95,
-    tags = @["news","reader-question"]
-  )
-)
-if response.isSome:
-  let result = response.get()
-  echo "Created question result id: ", result.id
-  echo "HTTP status: ", httpResponse.status.code
+let tenantId = "my-tenant-123"
+let body = CreateQuestionResultBody()
+let (optResult, httpResp) = client.createQuestionResult(tenantId = tenantId, createQuestionResultBody = body)
+if optResult.isSome:
+  let result = optResult.get()
+  echo result
 [inline-code-end]
-
----

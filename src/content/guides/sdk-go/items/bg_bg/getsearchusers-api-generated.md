@@ -1,7 +1,8 @@
 ## Параметри
 
 | Име | Тип | Местоположение | Задължително | Описание |
-|------|------|----------|----------|-------------|
+|------|------|----------------|--------------|----------|
+| tenantId | string | query | Да |  |
 | value | string | query | Не |  |
 | sso | string | query | Не |  |
 
@@ -23,12 +24,13 @@ import (
 )
 
 func main() {
-	value := "value_example" // string | (по избор)
-	sso := "sso_example" // string | (по избор)
+	tenantId := "tenantId_example" // string | 
+	value := "value_example" // string |  (опционално)
+	sso := "sso_example" // string |  (опционално)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetSearchUsers(context.Background()).Value(value).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetSearchUsers(context.Background()).TenantId(tenantId).Value(value).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetSearchUsers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

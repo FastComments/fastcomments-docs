@@ -2,10 +2,10 @@
 
 | Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenant_id | String | Da |  |
-| id | String | Da |  |
-| context_user_id | String | Ne |  |
-| is_live | bool | Ne |  |
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
+| context_user_id | String | No |  |
+| is_live | bool | No |  |
 
 ## Odgovor
 
@@ -15,16 +15,14 @@ Vraća: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-rus
 
 [inline-code-attrs-start title = 'delete_comment Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_delete() -> Result<DeleteCommentResult, Error> {
-    let params: DeleteCommentParams = DeleteCommentParams {
+async fn main() -> Result<(), Error> {
+    let params = DeleteCommentParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "comment-6f8a21b4".to_string(),
-        context_user_id: Some("editor-42".to_string()),
+        id: "comment-12345".to_string(),
+        context_user_id: Some("user-6789".to_string()),
         is_live: Some(true),
     };
-    let deleted: DeleteCommentResult = delete_comment(&configuration, params).await?;
-    Ok(deleted)
+    let _result = delete_comment(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

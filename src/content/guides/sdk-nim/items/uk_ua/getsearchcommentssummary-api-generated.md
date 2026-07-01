@@ -1,11 +1,9 @@
 ## Параметри
 
-| Назва | Тип | Обов'язковий | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| value | string | Ні |  |
-| filters | string | Ні |  |
-| searchFilters | string | Ні |  |
-| sso | string | Ні |  |
+| tenantId | string | Yes |  |
+| options | GetSearchCommentsSummaryOptions | No |  |
 
 ## Відповідь
 
@@ -13,17 +11,14 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад getSearchCommentsSummary'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSearchCommentsSummary Приклад'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSearchCommentsSummary(
-  value = "news/climate-change-2026",
-  filters = "{\"tenantId\":\"my-tenant-123\",\"siteId\":\"main-site\",\"status\":\"approved\"}",
-  searchFilters = "author:journalist@news.com OR content:climate",
-  sso = "sso-xyz-7890"
+let (summaryOpt, httpResp) = client.getSearchCommentsSummary(
+  tenantId = "my-tenant-123",
+  options = GetSearchCommentsSummaryOptions()
 )
-if response.isSome:
-  let summary = response.get()
-  echo "Received summary: ", $summary
-else:
-  echo "No summary returned, HTTP response: ", $httpResponse
+
+if summaryOpt.isSome:
+  let summary = summaryOpt.get()
+  echo summary
 [inline-code-end]

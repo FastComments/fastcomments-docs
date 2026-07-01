@@ -1,5 +1,5 @@
-Belgeleri gruplayarak (groupBy sağlanmışsa) ve birden çok işlem uygulayarak toplar.
-Farklı işlemler (örn. sum, countDistinct, avg, vb.) desteklenir.
+Belgeleri gruplandırarak (eğer groupBy sağlanmışsa) ve birden fazla işlem uygulayarak toplar.  
+Farklı işlemler (ör. sum, countDistinct, avg, vb.) desteklenir.
 
 ## Parametreler
 
@@ -7,8 +7,7 @@ Farklı işlemler (örn. sum, countDistinct, avg, vb.) desteklenir.
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | aggregationRequest | AggregationRequest | Hayır |  |
-| parentTenantId | string | Hayır |  |
-| includeStats | bool | Hayır |  |
+| options | AggregateOptions | Hayır |  |
 
 ## Yanıt
 
@@ -18,16 +17,9 @@ Döndürür: [`Option[AggregateResponse]`](https://github.com/FastComments/fastc
 
 [inline-code-attrs-start title = 'aggregate Örneği'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.aggregate(
-  tenantId = "my-tenant-123",
-  aggregationRequest = AggregationRequest(groupBy = @["articleId"], metrics = @["commentCount"], filters = @[], limit = 0),
-  parentTenantId = "",
-  includeStats = false
-)
-
-if response.isSome:
-  let agg = response.get()
-  discard agg
+let (aggResp, httpResp) = client.aggregate(tenantId = "my-tenant-123", aggregationRequest = AggregationRequest(), options = AggregateOptions())
+if aggResp.isSome:
+  let response = aggResp.get()
+  echo response
+echo httpResp
 [inline-code-end]
-
----

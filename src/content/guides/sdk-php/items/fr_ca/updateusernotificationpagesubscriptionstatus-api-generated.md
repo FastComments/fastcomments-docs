@@ -1,10 +1,9 @@
----
-Activer ou désactiver les notifications pour une page. Lorsque les utilisateurs sont abonnés à une page, des notifications sont créées
-pour les nouveaux commentaires racines, et aussi
+Enable ou désactiver les notifications pour une page. Lorsque les utilisateurs sont abonnés à une page, des notifications sont créées  
+pour les nouveaux commentaires racine, et également
 
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | urlId | string | query | Oui |  |
@@ -15,11 +14,11 @@ pour les nouveaux commentaires racines, et aussi
 
 ## Réponse
 
-Retourne : [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationPageSubscriptionStatusResponse.php)
+Renvoie : [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationPageSubscriptionStatusResponse.php)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple d\'updateUserNotificationPageSubscriptionStatus'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus Exemple'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -31,12 +30,14 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     // Ceci est optionnel, `GuzzleHttp\Client` sera utilisé par défaut.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$url_id = 'url_id_example'; // string
-$url = 'url_example'; // string
-$page_title = 'page_title_example'; // string
-$subscribed_or_unsubscribed = 'subscribed_or_unsubscribed_example'; // string
-$sso = 'sso_example'; // string
+
+$tenant_id = 'tenant_id_example'; // chaîne
+$url_id = 'url_id_example'; // chaîne
+$url = 'url_example'; // chaîne
+$page_title = 'page_title_example'; // chaîne
+$subscribed_or_unsubscribed = 'subscribed_or_unsubscribed_example'; // chaîne
+$sso = 'sso_example'; // chaîne
+
 
 try {
     $result = $apiInstance->updateUserNotificationPageSubscriptionStatus($tenant_id, $url_id, $url, $page_title, $subscribed_or_unsubscribed, $sso);

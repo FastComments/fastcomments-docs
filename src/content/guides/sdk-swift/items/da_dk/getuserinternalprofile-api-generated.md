@@ -1,9 +1,10 @@
 ## Parametre
 
-| Navn | Type | Placering | Obligatorisk | Beskrivelse |
-|------|------|----------|----------|-------------|
-| commentId | string | query | Nej |  |
-| sso | string | query | Nej |  |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
+|------|------|-----------|----------|-------------|
+| tenantId | string | query | Yes |  |
+| commentId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Svar
 
@@ -13,13 +14,14 @@ Returnerer: [`GetUserInternalProfileResponse`](https://github.com/FastComments/f
 
 [inline-code-attrs-start title = 'getUserInternalProfile Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Følgende kodeeksempler er stadig i beta. Hvis du oplever problemer, bedes du rapportere det via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Det følgende kodeeksempler er stadig beta. For eventuelle problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let commentId = "commentId_example" // String |  (valgfrit)
-let sso = "sso_example" // String |  (valgfrit)
+let tenantId = "tenantId_example" // String | 
+let commentId = "commentId_example" // String |  (valgfri)
+let sso = "sso_example" // String |  (valgfri)
 
-ModerationAPI.getUserInternalProfile(commentId: commentId, sso: sso) { (response, error) in
+ModerationAPI.getUserInternalProfile(tenantId: tenantId, options: ModerationAPI.GetUserInternalProfileOptions(commentId: commentId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -30,5 +32,3 @@ ModerationAPI.getUserInternalProfile(commentId: commentId, sso: sso) { (response
     }
 }
 [inline-code-end]
-
----

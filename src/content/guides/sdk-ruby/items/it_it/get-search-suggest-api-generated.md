@@ -1,7 +1,8 @@
 ## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
-|------|------|----------|----------|-------------|
+|------|------|-----------|--------------|-------------|
+| tenantId | string | query | Sì |  |
 | text-search | string | query | No |  |
 | sso | string | query | No |  |
 
@@ -11,20 +12,21 @@ Restituisce: [`ModerationSuggestResponse`](https://github.com/FastComments/fastc
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio get_search_suggest'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio di get_search_suggest'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # Stringa |
 opts = {
-  text_search: 'text_search_example', # Stringa | 
-  sso: 'sso_example' # Stringa | 
+  text_search: 'text_search_example', # Stringa |
+  sso: 'sso_example' # Stringa |
 }
 
 begin
   
-  result = api_instance.get_search_suggest(opts)
+  result = api_instance.get_search_suggest(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_search_suggest: #{e}"

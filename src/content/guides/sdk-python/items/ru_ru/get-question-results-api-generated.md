@@ -1,14 +1,14 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| urlId | string | query | Нет |  |
-| userId | string | query | Нет |  |
-| startDate | string | query | Нет |  |
-| questionId | string | query | Нет |  |
-| questionIds | string | query | Нет |  |
-| skip | number | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | No |  |
+| userId | string | query | No |  |
+| startDate | string | query | No |  |
+| questionId | string | query | No |  |
+| questionIds | string | query | No |  |
+| skip | number | query | No |  |
 
 ## Ответ
 
@@ -19,25 +19,26 @@
 [inline-code-attrs-start title = 'Пример get_question_results'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetQuestionResultsOptions
 from client.models.get_question_results_response import GetQuestionResultsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Указание хоста необязательно и по умолчанию установлено на https://fastcomments.com
-# Смотрите configuration.py для списка всех поддерживаемых параметров конфигурации.
+# Определение хоста необязательно и по умолчанию https://fastcomments.com
+# См. configuration.py для списка всех поддерживаемых параметров конфигурации.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Клиент должен настроить параметры аутентификации и авторизации
-# в соответствии с политикой безопасности API-сервера.
+# в соответствии с политикой безопасности сервера API.
 # Примеры для каждого метода аутентификации приведены ниже, используйте пример,
-# который соответствует вашему сценарию использования.
+# соответствующий вашему сценарию использования.
 
-# Настройте авторизацию по API-ключу: api_key
+# Настройка авторизации ключом API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Раскомментируйте ниже, чтобы задать префикс (например, Bearer) для API-ключа, если это необходимо
+# Раскомментируйте ниже, чтобы задать префикс (например, Bearer) для ключа API, если требуется
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Войдите в контекст с экземпляром клиента API
@@ -53,7 +54,7 @@ with client.ApiClient(configuration) as api_client:
     skip = 3.4 # float |  (необязательно)
 
     try:
-        api_response = api_instance.get_question_results(tenant_id, url_id=url_id, user_id=user_id, start_date=start_date, question_id=question_id, question_ids=question_ids, skip=skip)
+        api_response = api_instance.get_question_results(tenant_id, GetQuestionResultsOptions(url_id=url_id, user_id=user_id, start_date=start_date, question_id=question_id, question_ids=question_ids, skip=skip))
         print("The response of DefaultApi->get_question_results:\n")
         pprint(api_response)
     except Exception as e:

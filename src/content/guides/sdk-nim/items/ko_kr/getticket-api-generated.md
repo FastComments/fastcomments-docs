@@ -1,25 +1,21 @@
-## 매개변수
+## Parameters
 
-| 이름 | 유형 | 필수 | 설명 |
+| 이름 | 유형 | Required | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| id | string | 아니오 |  |
-| userId | string | 아니오 |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| userId | string = "" | No |  |
 
-## 응답
+## Response
 
 반환: [`Option[GetTicketResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_ticket_response.nim)
 
-## 예제
+## Example
 
-[inline-code-attrs-start title = 'getTicket 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTicket 예시'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTicket(tenantId = "my-tenant-123", id = "ticket-456", userId = "user-789")
-if response.isSome:
-  let ticket = response.get()
-  echo "Got ticket:", ticket
-else:
-  echo "No ticket returned; HTTP response:", httpResponse
+let (ticketOpt, httpResp) = client.getTicket(tenantId = "my-tenant-123", id = "ticket-456", userId = "")
+if ticketOpt.isSome:
+  let ticket = ticketOpt.get()
+  discard ticket
 [inline-code-end]
-
----

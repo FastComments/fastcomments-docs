@@ -1,30 +1,29 @@
-## פרמטרים
+Upload and resize an image
+============================
 
-| שם | סוג | חובה | תיאור |
+## Parameters
+
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| file | string | לא |  |
-| sizePreset | SizePreset | לא |  |
-| urlId | string | כן |  |
+| tenantId | string | Yes |  |
+| file | string | No |  |
+| options | UploadImageOptions | No |  |
 
-## תגובה
+## Response
 
-מחזיר: [`Option[UploadImageResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_upload_image_response.nim)
+Returns: [`Option[UploadImageResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_upload_image_response.nim)
 
-## דוגמה
+## Example
 
-[inline-code-attrs-start title = 'דוגמה ל-uploadImage'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'uploadImage דוגמה'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.uploadImage(
+let (uploadResult, httpResponse) = client.uploadImage(
   tenantId = "my-tenant-123",
-  file = "assets/images/comment-avatar.jpg",
-  sizePreset = SizePreset.small,
-  urlId = "news/article-2025-11-22"
+  file = "images/avatar.jpg",
+  options = UploadImageOptions()
 )
-if response.isSome:
-  let upload = response.get()
-  echo "Uploaded image id: ", upload.id
-  echo "Uploaded image url: ", upload.url
-[inline-code-end]
 
----
+if uploadResult.isSome:
+  let result = uploadResult.get()
+  # השתמש בתוצאה לפי הצורך
+[inline-code-end]

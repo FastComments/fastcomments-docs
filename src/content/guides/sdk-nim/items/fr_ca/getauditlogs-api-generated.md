@@ -1,13 +1,9 @@
 ## Paramètres
 
-| Nom | Type | Requis | Description |
-|------|------|----------|-------------|
-| tenantId | string | Oui |  |
-| limit | float64 | Non |  |
-| skip | float64 | Non |  |
-| order | SORTDIR | Non |  |
-| after | float64 | Non |  |
-| before | float64 | Non |  |
+| Nom | Type | Obligatoire | Description |
+|------|------|--------------|-------------|
+| tenantId | string | Yes |  |
+| options | GetAuditLogsOptions | No |  |
 
 ## Réponse
 
@@ -15,22 +11,10 @@ Renvoie : [`Option[GetAuditLogsResponse]`](https://github.com/FastComments/fastc
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getAuditLogs'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getAuditLogs'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getAuditLogs(
-  tenantId = "my-tenant-123",
-  limit = 50.0,
-  skip = 0.0,
-  order = SORTDIR.DESC,
-  after = 1622505600.0,
-  before = 1625097600.0
-)
-
-if response.isSome:
-  let logs = response.get()
-  echo logs
-else:
-  echo "No audit logs returned"
+let (auditOpt, httpResp) = client.getAuditLogs(tenantId = "my-tenant-123", options = GetAuditLogsOptions())
+if auditOpt.isSome:
+  let audit = auditOpt.get()
+  echo audit
 [inline-code-end]
-
----

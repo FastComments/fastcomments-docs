@@ -1,11 +1,11 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| commentId | string | path | Yes |  |
-| broadcastId | string | query | Yes |  |
-| sso | string | query | No |  |
+| tenantId | string | path | Да |  |
+| commentId | string | path | Да |  |
+| broadcastId | string | query | Да |  |
+| sso | string | query | Нет |  |
 
 ## Ответ
 
@@ -21,14 +21,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Если вы хотите использовать кастомный HTTP-клиент, передайте ваш клиент, который реализует `GuzzleHttp\ClientInterface`.
+    // Если вы хотите использовать кастомный HTTP‑клиент, передайте свой клиент, реализующий `GuzzleHttp\ClientInterface`.
     // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // строка
-$comment_id = 'comment_id_example'; // строка
-$broadcast_id = 'broadcast_id_example'; // строка
-$sso = 'sso_example'; // строка
+
+$tenant_id = 'tenant_id_example'; // string
+$comment_id = 'comment_id_example'; // string
+$broadcast_id = 'broadcast_id_example'; // string
+$sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->unPinComment($tenant_id, $comment_id, $broadcast_id, $sso);

@@ -2,9 +2,10 @@
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
+| tenantId | string | Yes |  |
 | commentId | string | Yes |  |
 | voteId | string | No |  |
-| sso | string | No |  |
+| options | DeleteModerationVoteOptions | No |  |
 
 ## Response
 
@@ -14,10 +15,13 @@ Returns: [`Option[VoteDeleteResponse]`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'deleteModerationVote Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteModerationVote(commentId = "my-tenant-123/news/article-title/comment-987", voteId = "vote-456", sso = "sso-token-abc")
-if response.isSome:
-  let voteResp = response.get()
-  echo "Vote deleted:", voteResp
-else:
-  echo "Delete failed:", httpResponse
+let (respOpt, httpResp) = client.deleteModerationVote(
+  tenantId = "my-tenant-123",
+  commentId = "cmt-987654",
+  voteId = "vote-abc123",
+  options = DeleteModerationVoteOptions()
+)
+
+if respOpt.isSome:
+  let resp = respOpt.get()
 [inline-code-end]

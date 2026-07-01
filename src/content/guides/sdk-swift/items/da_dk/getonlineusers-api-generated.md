@@ -1,32 +1,32 @@
-Aktuelt online-seere af en side: personer, hvis websocket-session er abonneret på siden lige nu.
-Returnerer anonCount + totalCount (abonnenter på hele rummet, inklusive anonyme seere, som vi ikke opregner).
+Aktuelt online‑visere af en side: personer, hvis websocketsession er abonneret på siden lige nu.  
+Returnerer anonCount + totalCount (rum‑omfattende abonnenter, inklusive anonyme seere, som vi ikke tæller).
 
 ## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Yes |  |
-| urlId | string | query | Yes | Side-URL-identifikator (renset på serversiden). |
-| afterName | string | query | No | Cursor: angiv nextAfterName fra det forrige svar. |
-| afterUserId | string | query | No | Cursor-tiebreaker: angiv nextAfterUserId fra det forrige svar. Påkrævet når afterName er angivet, så navne-kollisioner ikke udelader poster. |
+| urlId | string | query | Yes | Side-URL-identifikator (ryddet server-side). |
+| afterName | string | query | No | Markør: send nextAfterName fra den forrige respons. |
+| afterUserId | string | query | No | Markør tie-breaker: send nextAfterUserId fra den forrige respons. Kræves når afterName er sat så navne-ties ikke dropper poster. |
 
 ## Response
 
-Returnerer: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PageUsersOnlineResponse.swift)
+Returns: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PageUsersOnlineResponse.swift)
 
-## Eksempel
+## Example
 
 [inline-code-attrs-start title = 'getOnlineUsers Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Følgende kodeeksempler er stadig i beta. For problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Følgende kodeeksempler er stadig i beta. For eventuelle problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let urlId = "urlId_example" // String | Side-URL-identifikator (renset på serversiden).
-let afterName = "afterName_example" // String | Cursor: angiv nextAfterName fra det forrige svar. (valgfri)
-let afterUserId = "afterUserId_example" // String | Cursor tiebreaker: angiv nextAfterUserId fra det forrige svar. Påkrævet når afterName er angivet, så navne-kollisioner ikke udelader poster. (valgfri)
+let urlId = "urlId_example" // String | Side-URL-identifikator (ryddet server-side).
+let afterName = "afterName_example" // String | Markør: send nextAfterName fra den forrige respons. (optional)
+let afterUserId = "afterUserId_example" // String | Markør tie-breaker: send nextAfterUserId fra den forrige respons. Kræves når afterName er sat så navne-ties ikke dropper poster. (optional)
 
-PublicAPI.getOnlineUsers(tenantId: tenantId, urlId: urlId, afterName: afterName, afterUserId: afterUserId) { (response, error) in
+PublicAPI.getOnlineUsers(tenantId: tenantId, urlId: urlId, options: PublicAPI.GetOnlineUsersOptions(afterName: afterName, afterUserId: afterUserId)) { (response, error) in
     guard error == nil else {
         print(error)
         return

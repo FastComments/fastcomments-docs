@@ -1,11 +1,11 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Местоположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| commentId | string | path | Да |  |
-| editKey | string | query | Нет |  |
-| sso | string | query | Нет |  |
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| editKey | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Ответ
 
@@ -15,7 +15,7 @@
 
 [inline-code-attrs-start title = 'Пример getCommentText'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Приведённые примеры кода всё ещё находятся в бета-версии. По любым проблемам сообщайте через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следующие образцы кода находятся в бета-версии. При возникновении проблем, пожалуйста, сообщайте по адресу http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -23,7 +23,7 @@ let commentId = "commentId_example" // String |
 let editKey = "editKey_example" // String |  (необязательно)
 let sso = "sso_example" // String |  (необязательно)
 
-PublicAPI.getCommentText(tenantId: tenantId, commentId: commentId, editKey: editKey, sso: sso) { (response, error) in
+PublicAPI.getCommentText(tenantId: tenantId, commentId: commentId, options: PublicAPI.GetCommentTextOptions(editKey: editKey, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -34,3 +34,5 @@ PublicAPI.getCommentText(tenantId: tenantId, commentId: commentId, editKey: edit
     }
 }
 [inline-code-end]
+
+---

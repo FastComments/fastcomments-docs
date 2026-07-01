@@ -2,32 +2,32 @@ req
 tenantId
 afterId
 
-## Параметри
+## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| afterId | string | query | Не |  |
-| limit | integer | query | Не |  |
-| tags | array | query | Не |  |
+| Ime | Tip | Lokacija | Potrebno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
+| afterId | string | query | Ne |  |
+| limit | integer | query | Ne |  |
+| tags | array | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetFeedPostsResponse.swift)
+Vraća: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetFeedPostsResponse.swift)
 
-## Примјер
+## Primjer
 
-[inline-code-attrs-start title = 'getFeedPosts Примјер'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getFeedPosts'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи примјери кода су још у бета фази. За било који проблем, пријавите га преко http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sljedeći primjeri koda su još u beta fazi. Za bilo koji problem, molimo prijavite putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let afterId = "afterId_example" // String |  (опционо)
-let limit = 987 // Int |  (опционо)
-let tags = ["inner_example"] // [String] |  (опционо)
+let afterId = "afterId_example" // String |  (opcionalno)
+let limit = 987 // Int |  (opcionalno)
+let tags = ["inner_example"] // [String] |  (opcionalno)
 
-DefaultAPI.getFeedPosts(tenantId: tenantId, afterId: afterId, limit: limit, tags: tags) { (response, error) in
+DefaultAPI.getFeedPosts(tenantId: tenantId, options: DefaultAPI.GetFeedPostsOptions(afterId: afterId, limit: limit, tags: tags)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -38,3 +38,5 @@ DefaultAPI.getFeedPosts(tenantId: tenantId, afterId: afterId, limit: limit, tags
     }
 }
 [inline-code-end]
+
+---

@@ -1,28 +1,30 @@
 ---
 ## Parametre
 
-| Name | Type | Påkrævet | Beskrivelse |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| createTenantBody | CreateTenantBody | Ja |  |
+| tenantId | string | Yes |  |
+| createTenantBody | CreateTenantBody | Yes |  |
 
 ## Svar
 
-Returnerer: [`CreateTenantResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantResponse.ts)
+Returnerer: [`CreateTenantResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantResponse1.ts)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'createTenant-eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createTenant Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp-001';
-const createTenantBody: CreateTenantBody = {
-  name: 'Acme Corporation',
-  adminEmail: 'platform-admin@acme.com',
-  apiDomainConfiguration: { domain: 'comments.acme.com', tlsEnabled: true },
-  importedSites: [{ siteId: 'main-site', url: 'https://www.acme.com', platform: 'nextjs' }],
-  billingInfo: { plan: 'enterprise', billingEmail: 'billing@acme.com', vatId: 'GB123456789' }
-};
-const result: CreateTenantResponse = await createTenant(tenantId, createTenantBody);
+async function example() {
+  const tenantId: string = 'tenant-2024-01';
+  const createTenantBody: CreateTenantBody = {
+    // påkrævede felter
+    name: 'Acme International',
+    // valgfrie felter kan tilføjes efter behov, f.eks.:
+    // billingInfo: { address: '123 Main St', city: 'Metropolis' } as BillingInfo,
+  };
+  const response: CreateTenantResponse1 = await createTenant(tenantId, createTenantBody);
+  console.log(response);
+}
 [inline-code-end]
 
 ---

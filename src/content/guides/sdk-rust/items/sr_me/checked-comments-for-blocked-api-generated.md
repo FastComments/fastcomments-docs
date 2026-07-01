@@ -1,28 +1,26 @@
-## Параметри
+## Parametri
 
-| Name | Type | Required | Description |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| comment_ids | String | Да |  |
-| sso | String | Не |  |
+| tenant_id | String | Yes |  |
+| comment_ids | String | Yes |  |
+| sso | String | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/check_blocked_comments_response.rs)
+Vraća: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/check_blocked_comments_response.rs)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'checked_comments_for_blocked Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'checked_comments_for_blocked Primjer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_checked_comments_for_blocked() -> Result<CheckBlockedCommentsResponse, Error> {
-    let params: CheckedCommentsForBlockedParams = CheckedCommentsForBlockedParams {
+async fn example() -> Result<(), Error> {
+    let params = CheckedCommentsForBlockedParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        comment_ids: "cmt-1023,cmt-2048".to_string(),
-        sso: Some("sso:user:john.doe:eyJhbGciOiJIUzI1Ni".to_string()),
+        comment_ids: "cmt-001,cmt-002".to_string(),
+        sso: Some("user@example.com".to_string()),
     };
-    let response: CheckBlockedCommentsResponse = checked_comments_for_blocked(&configuration, params).await?;
-    Ok(response)
+    let _response: CheckBlockedCommentsResponse = checked_comments_for_blocked(&config, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

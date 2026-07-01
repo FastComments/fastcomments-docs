@@ -1,36 +1,33 @@
-### Für alle Benutzer verfügbare Aktionen
+### Aktionen, die allen Benutzern zur Verfügung stehen
 
-- **Melden/Markierung aufheben** -- einen Kommentar zur Überprüfung melden
+- **Flag/Unflag** -- einen Kommentar zur Überprüfung melden
 
 ```swift
 try await sdk.flagComment(commentId: commentId)
 try await sdk.unflagComment(commentId: commentId)
 ```
 
-- **Blockieren/Blockierung aufheben** -- alle Kommentare eines Nutzers ausblenden (pro Betrachter)
+- **Block/Unblock** -- alle Kommentare eines Benutzers ausblenden (pro Betrachter)
 
 ```swift
 try await sdk.blockUser(commentId: commentId)
 try await sdk.unblockUser(commentId: commentId)
 ```
 
-### Nur für Administratoren
+### Nur für Administratoren verfügbare Aktionen
 
-- **Anpinnen/Entpinnen** -- einen Kommentar oben im Thread anpinnen
+- **Pin/Unpin** -- einen Kommentar an den Anfang des Threads anheften
 
 ```swift
 try await sdk.pinComment(commentId: commentId)
 try await sdk.unpinComment(commentId: commentId)
 ```
 
-- **Sperren/Entsperren** -- neue Antworten auf einen Kommentar verhindern
+- **Lock/Unlock** -- neue Antworten auf einen Kommentar verhindern und Bearbeitungen sowie Löschungen blockieren, bis er entsperrt ist (gilt für alle, einschließlich Moderatoren)
 
 ```swift
 try await sdk.lockComment(commentId: commentId)
 try await sdk.unlockComment(commentId: commentId)
 ```
 
-Alle Moderationsaktionen sind außerdem über das Kontextmenü des Kommentars in der Benutzeroberfläche verfügbar. Administratoraktionen erscheinen nur, wenn der aktuelle Benutzer ein Site-Administrator ist (festgelegt über das SSO `isAdmin` Flag oder die Dashboard-Konfiguration).
-
----
----
+Alle Moderationsaktionen sind ebenfalls über das Kontextmenü des Kommentars in der UI verfügbar. Administrator‑Aktionen werden nur angezeigt, wenn der aktuelle Benutzer ein Site‑Administrator ist (gesetzt über das SSO `isAdmin`‑Flag oder die Dashboard‑Konfiguration).

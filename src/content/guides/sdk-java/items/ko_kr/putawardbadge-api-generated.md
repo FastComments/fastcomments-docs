@@ -1,18 +1,19 @@
-## 매개변수
+## Parameters
 
-| 이름 | 유형 | 위치 | 필수 | 설명 |
+| 이름 | 타입 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | badgeId | string | query | Yes |  |
 | userId | string | query | No |  |
 | commentId | string | query | No |  |
 | broadcastId | string | query | No |  |
 | sso | string | query | No |  |
 
-## 응답
+## Response
 
-반환: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AwardUserBadgeResponse.java)
+Returns: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AwardUserBadgeResponse.java)
 
-## 예제
+## Example
 
 [inline-code-attrs-start title = 'putAwardBadge 예제'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -29,13 +30,14 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
-    String badgeId = "badgeId_example"; // 문자열 | 
-    String userId = "userId_example"; // 문자열 | 
-    String commentId = "commentId_example"; // 문자열 | 
-    String broadcastId = "broadcastId_example"; // 문자열 | 
-    String sso = "sso_example"; // 문자열 | 
+    String tenantId = "tenantId_example"; // String | 
+    String badgeId = "badgeId_example"; // String | 
+    String userId = "userId_example"; // String | 
+    String commentId = "commentId_example"; // String | 
+    String broadcastId = "broadcastId_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
-      AwardUserBadgeResponse result = apiInstance.putAwardBadge(badgeId)
+      AwardUserBadgeResponse result = apiInstance.putAwardBadge(tenantId, badgeId)
             .userId(userId)
             .commentId(commentId)
             .broadcastId(broadcastId)

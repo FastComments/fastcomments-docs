@@ -1,10 +1,9 @@
----
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| id | string | לא |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
 
 ## תגובה
 
@@ -12,12 +11,9 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getEmailTemplate'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getEmailTemplate'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getEmailTemplate(tenantId = "my-tenant-123", id = "welcome-email-01")
+let (response, httpResponse) = client.getEmailTemplate(tenantId = "my-tenant-123", id = "welcome-email")
 if response.isSome:
-  let template = response.get()
-  discard template
+  let tmpl = response.get()
 [inline-code-end]
-
----

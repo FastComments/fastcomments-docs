@@ -1,35 +1,35 @@
-## Параметри
+## Parameters
 
-| Име | Тип | Локација | Обавезно | Опис |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| urlId | string | query | Не |  |
-| userId | string | query | Не |  |
-| startDate | string | query | Не |  |
-| questionId | string | query | Не |  |
-| questionIds | string | query | Не |  |
-| skip | number | query | Не |  |
+| Ime | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
+| urlId | string | query | Ne |  |
+| userId | string | query | Ne |  |
+| startDate | string | query | Ne |  |
+| questionId | string | query | Ne |  |
+| questionIds | string | query | Ne |  |
+| skip | number | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetQuestionResultsResponse.swift)
+Vraća: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetQuestionResultsResponse.swift)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'getQuestionResults Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getQuestionResults Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи примери кода су још у бета фази. За било који проблем, пријавите га преко http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledeći primeri koda su i dalje beta. Za bilo koji problem, molimo prijavite preko http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let urlId = "urlId_example" // String |  (опционо)
-let userId = "userId_example" // String |  (опционо)
-let startDate = "startDate_example" // String |  (опционо)
-let questionId = "questionId_example" // String |  (опционо)
-let questionIds = "questionIds_example" // String |  (опционо)
-let skip = 987 // Double |  (опционо)
+let urlId = "urlId_example" // String |  (opcionalno)
+let userId = "userId_example" // String |  (opcionalno)
+let startDate = "startDate_example" // String |  (opcionalno)
+let questionId = "questionId_example" // String |  (opcionalno)
+let questionIds = "questionIds_example" // String |  (opcionalno)
+let skip = 987 // Double |  (opcionalno)
 
-DefaultAPI.getQuestionResults(tenantId: tenantId, urlId: urlId, userId: userId, startDate: startDate, questionId: questionId, questionIds: questionIds, skip: skip) { (response, error) in
+DefaultAPI.getQuestionResults(tenantId: tenantId, options: DefaultAPI.GetQuestionResultsOptions(urlId: urlId, userId: userId, startDate: startDate, questionId: questionId, questionIds: questionIds, skip: skip)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -40,5 +40,3 @@ DefaultAPI.getQuestionResults(tenantId: tenantId, urlId: urlId, userId: userId, 
     }
 }
 [inline-code-end]
-
----

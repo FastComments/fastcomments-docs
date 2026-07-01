@@ -1,28 +1,25 @@
-Пакет информација о корисницима за tenant. На основу userIds, враћа информације за приказ из User / SSOUser.
-Користи га видгет коментара да обогати кориснике који су управо појавили преко presence event-а.
-Нема контекста странице: приватност се примењује униформно (приватни профили су маскирани).
+Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
+Used by the comment widget to enrich users that just appeared via a presence event.  
+No page context: privacy is enforced uniformly (private profiles are masked).
 
-## Параметри
+## Parameters
 
-| Name | Type | Required | Description |
+| Ime | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| ids | String | Да |  |
+| tenant_id | String | Yes |  |
+| ids | String | Yes |  |
 
-## Одговор
+## Response
 
-Враћа: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_info_response.rs)
+Returns: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_info_response.rs)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример get_users_info'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer get_users_info'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: GetUsersInfoParams = GetUsersInfoParams {
+let params = GetUsersInfoParams {
     tenant_id: "acme-corp-tenant".to_string(),
-    ids: "alice@example.com,bob@example.com,carol@example.com".to_string(),
-    page_size: Some(100),
+    ids: "user-1,user-2".to_string(),
 };
-let users_response: PageUsersInfoResponse = get_users_info(&configuration, params).await?;
+let page: PageUsersInfoResponse = get_users_info(&configuration, params).await?;
 [inline-code-end]
-
----

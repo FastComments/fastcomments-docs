@@ -1,16 +1,16 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Так |  |
-| questionId | string | query | Ні |  |
-| questionIds | array | query | Ні |  |
-| urlId | string | query | Ні |  |
-| startDate | string | query | Ні |  |
-| forceRecalculate | boolean | query | Ні |  |
-| minValue | number | query | Ні |  |
-| maxValue | number | query | Ні |  |
-| limit | number | query | Ні |  |
+| Ім'я | Тип | Розташування | Обов'язково | Опис |
+|------|------|--------------|-------------|------|
+| tenantId | string | query | Yes |  |
+| questionId | string | query | No |  |
+| questionIds | array | query | No |  |
+| urlId | string | query | No |  |
+| startDate | string | query | No |  |
+| forceRecalculate | boolean | query | No |  |
+| minValue | number | query | No |  |
+| maxValue | number | query | No |  |
+| limit | number | query | No |  |
 
 ## Відповідь
 
@@ -18,31 +18,32 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад combine_comments_with_question_results'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'combine_comments_with_question_results Приклад'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import CombineCommentsWithQuestionResultsOptions
 from client.models.combine_question_results_with_comments_response import CombineQuestionResultsWithCommentsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Визначення хоста необов’язкове та за замовчуванням — https://fastcomments.com
-# Див. configuration.py для списку всіх підтримуваних параметрів конфігурації.
+# Визначення хоста є необов’язковим і за замовчуванням https://fastcomments.com
+# Дивіться configuration.py для списку всіх підтримуваних параметрів конфігурації.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Клієнт повинен налаштувати параметри автентифікації та авторизації
-# відповідно до політики безпеки сервера API.
-# Приклади для кожного методу автентифікації наведені нижче — використайте той,
-# який відповідає вашому сценарію автентифікації.
+# відповідно до політики безпеки API сервера.
+# Приклади для кожного методу автентифікації наведено нижче, використайте приклад, який
+# задовольняє ваш випадок використання автентифікації.
 
-# Налаштуйте авторизацію за допомогою ключа API: api_key
+# Налаштування авторизації API ключа: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Розкоментуйте нижче, щоб встановити префікс (наприклад, Bearer) для API ключа, при потребі
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Увійдіть у контекст з екземпляром клієнта API
+# Введіть контекст з екземпляром API клієнта
 with client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
@@ -57,7 +58,7 @@ with client.ApiClient(configuration) as api_client:
     limit = 3.4 # float |  (optional)
 
     try:
-        api_response = api_instance.combine_comments_with_question_results(tenant_id, question_id=question_id, question_ids=question_ids, url_id=url_id, start_date=start_date, force_recalculate=force_recalculate, min_value=min_value, max_value=max_value, limit=limit)
+        api_response = api_instance.combine_comments_with_question_results(tenant_id, CombineCommentsWithQuestionResultsOptions(question_id=question_id, question_ids=question_ids, url_id=url_id, start_date=start_date, force_recalculate=force_recalculate, min_value=min_value, max_value=max_value, limit=limit))
         print("The response of DefaultApi->combine_comments_with_question_results:\n")
         pprint(api_response)
     except Exception as e:

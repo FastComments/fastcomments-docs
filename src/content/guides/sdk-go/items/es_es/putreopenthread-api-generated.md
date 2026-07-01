@@ -1,9 +1,10 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| urlId | string | query | Sí |  |
-| sso | string | query | No |  |
+| Nombre   | Tipo   | Ubicación | Requerido | Descripción |
+|----------|--------|-----------|-----------|-------------|
+| tenantId | string | query     | Sí        |  |
+| urlId    | string | query     | Sí        |  |
+| sso      | string | query     | No        |  |
 
 ## Respuesta
 
@@ -23,12 +24,13 @@ import (
 )
 
 func main() {
-	urlId := "urlId_example" // string | 
-	sso := "sso_example" // string |  (opcional)
+	tenantId := "tenantId_example" // cadena | 
+	urlId := "urlId_example" // cadena | 
+	sso := "sso_example" // cadena |  (opcional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PutReopenThread(context.Background()).UrlId(urlId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PutReopenThread(context.Background()).TenantId(tenantId).UrlId(urlId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PutReopenThread``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -37,3 +39,5 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PutReopenThread`: %v\n", resp)
 }
 [inline-code-end]
+
+---

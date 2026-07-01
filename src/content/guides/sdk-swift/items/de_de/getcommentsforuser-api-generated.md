@@ -2,23 +2,23 @@
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| userId | string | query | Nein |  |
-| direction | string | query | Nein |  |
-| repliesToUserId | string | query | Nein |  |
-| page | number | query | Nein |  |
-| includei10n | boolean | query | Nein |  |
-| locale | string | query | Nein |  |
-| isCrawler | boolean | query | Nein |  |
+| userId | string | query | No |  |
+| direction | string | query | No |  |
+| repliesToUserId | string | query | No |  |
+| page | number | query | No |  |
+| includei10n | boolean | query | No |  |
+| locale | string | query | No |  |
+| isCrawler | boolean | query | No |  |
 
 ## Antwort
 
-Gibt zurück: [`GetCommentsForUserResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetCommentsForUserResponse.swift)
+Rückgabe: [`GetCommentsForUserResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetCommentsForUserResponse.swift)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'getCommentsForUser Beispiel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Beispiel für getCommentsForUser'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Die folgenden Codebeispiele sind noch Beta. Bei Problemen melden Sie sich bitte über http://github.com/OpenAPITools/openapi-generator/issues/new
+// Die folgenden Codebeispiele sind noch in Beta. Bei Problemen bitte melden über http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let userId = "userId_example" // String |  (optional)
@@ -29,7 +29,7 @@ let includei10n = true // Bool |  (optional)
 let locale = "locale_example" // String |  (optional)
 let isCrawler = true // Bool |  (optional)
 
-PublicAPI.getCommentsForUser(userId: userId, direction: direction, repliesToUserId: repliesToUserId, page: page, includei10n: includei10n, locale: locale, isCrawler: isCrawler) { (response, error) in
+PublicAPI.getCommentsForUser(options: PublicAPI.GetCommentsForUserOptions(userId: userId, direction: direction, repliesToUserId: repliesToUserId, page: page, includei10n: includei10n, locale: locale, isCrawler: isCrawler)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -40,5 +40,3 @@ PublicAPI.getCommentsForUser(userId: userId, direction: direction, repliesToUser
     }
 }
 [inline-code-end]
-
----

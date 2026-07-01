@@ -1,39 +1,42 @@
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
-| comment_id | String | 예 |  |
-| ban_email | bool | 아니오 |  |
-| ban_email_domain | bool | 아니오 |  |
-| ban_ip | bool | 아니오 |  |
-| delete_all_users_comments | bool | 아니오 |  |
-| banned_until | String | 아니오 |  |
-| is_shadow_ban | bool | 아니오 |  |
-| update_id | String | 아니오 |  |
-| ban_reason | String | 아니오 |  |
-| sso | String | 아니오 |  |
+| tenant_id | String | Yes |  |
+| comment_id | String | Yes |  |
+| ban_email | bool | No |  |
+| ban_email_domain | bool | No |  |
+| ban_ip | bool | No |  |
+| delete_all_users_comments | bool | No |  |
+| banned_until | String | No |  |
+| is_shadow_ban | bool | No |  |
+| update_id | String | No |  |
+| ban_reason | String | No |  |
+| sso | String | No |  |
 
 ## 응답
 
 반환: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/ban_user_from_comment_result.rs)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'post_ban_user_from_comment 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_ban_user_from_comment 예시'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: PostBanUserFromCommentParams = PostBanUserFromCommentParams {
-    comment_id: "news-article-98765-comment-123".to_string(),
-    ban_email: Some(true),
-    ban_email_domain: Some(false),
-    ban_ip: Some(true),
-    delete_all_users_comments: Some(true),
-    banned_until: Some("2026-12-31T23:59:59Z".to_string()),
-    is_shadow_ban: Some(false),
-    update_id: Some("moderator-42".to_string()),
-    ban_reason: Some("Repeated spam and abusive language".to_string()),
-    sso: Some("sso-user-token-8a7f".to_string()),
-};
-let ban_result: BanUserFromCommentResult = post_ban_user_from_comment(&configuration, params).await?;
+async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = PostBanUserFromCommentParams {
+        tenant_id: "acme-corp".to_string(),
+        comment_id: "cmt-12345".to_string(),
+        ban_email: Some(true),
+        ban_email_domain: Some(false),
+        ban_ip: Some(true),
+        delete_all_users_comments: Some(false),
+        banned_until: Some("2024-12-31T23:59:59Z".to_string()),
+        is_shadow_ban: Some(false),
+        update_id: Some("upd-987".to_string()),
+        ban_reason: Some("spam".to_string()),
+        sso: Some("sso-provider".to_string()),
+    };
+    let _result: BanUserFromCommentResult = post_ban_user_from_comment(configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]
-
----

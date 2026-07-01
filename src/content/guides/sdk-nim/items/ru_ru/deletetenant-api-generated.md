@@ -1,10 +1,11 @@
+---
 ## Параметры
 
-| Имя | Тип | Обязательный | Описание |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | id | string | Нет |  |
-| sure | string | Нет |  |
+| sure | string = "" | Нет |  |
 
 ## Ответ
 
@@ -12,11 +13,11 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример deleteTenant'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteTenant Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteTenant(tenantId = "my-tenant-123", id = "", sure = "")
-if response.isSome:
-  let emptyResp = response.get()
-else:
-  discard httpResponse
+let (respOpt, httpResp) = client.deleteTenant(tenantId = "my-tenant-123", id = "tenant-to-delete", sure = "yes")
+if respOpt.isSome:
+  let emptyResp = respOpt.get()
 [inline-code-end]
+
+---

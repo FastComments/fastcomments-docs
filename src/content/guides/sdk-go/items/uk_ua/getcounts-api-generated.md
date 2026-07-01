@@ -1,8 +1,9 @@
 ## Параметри
 
-| Назва | Тип | Location | Обов'язковий | Опис |
+| Назва | Тип | Розташування | Обов’язковий | Опис |
 |------|------|----------|----------|-------------|
-| sso | string | query | Ні |  |
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Відповідь
 
@@ -22,11 +23,12 @@ import (
 )
 
 func main() {
-	sso := "sso_example" // string |  (необов'язковий)
+	tenantId := "tenantId_example" // string | 
+	sso := "sso_example" // string |  (необов'язково)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetCounts(context.Background()).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetCounts(context.Background()).TenantId(tenantId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetCounts``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -35,5 +37,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetCounts`: %v\n", resp)
 }
 [inline-code-end]
-
----

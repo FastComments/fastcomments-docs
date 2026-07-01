@@ -2,13 +2,13 @@
 
 | Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
-| userId | string | query | Non |  |
-| direction | string | query | Non |  |
-| repliesToUserId | string | query | Non |  |
-| page | number | query | Non |  |
-| includei10n | boolean | query | Non |  |
-| locale | string | query | Non |  |
-| isCrawler | boolean | query | Non |  |
+| userId | string | query | No |  |
+| direction | string | query | No |  |
+| repliesToUserId | string | query | No |  |
+| page | number | query | No |  |
+| includei10n | boolean | query | No |  |
+| locale | string | query | No |  |
+| isCrawler | boolean | query | No |  |
 
 ## Réponse
 
@@ -16,24 +16,25 @@ Retourne : [`GetCommentsForUserResponse`](https://github.com/FastComments/fastco
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de get_comments_for_user'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple get_comments_for_user'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetCommentsForUserOptions
 from client.models.get_comments_for_user_response import GetCommentsForUserResponse
 from client.models.sort_directions import SortDirections
 from client.rest import ApiException
 from pprint import pprint
 
-# La définition de l'hôte est optionnelle et par défaut c'est https://fastcomments.com
+# Définir l'hôte est facultatif et utilise https://fastcomments.com par défaut
 # Voir configuration.py pour la liste de tous les paramètres de configuration pris en charge.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Ouvrez un contexte avec une instance du client API
+# Entrer dans un contexte avec une instance du client API
 with client.ApiClient(configuration) as api_client:
-    # Créez une instance de la classe API
+    # Créer une instance de la classe API
     api_instance = client.PublicApi(api_client)
     user_id = 'user_id_example' # str |  (optionnel)
     direction = client.SortDirections() # SortDirections |  (optionnel)
@@ -44,7 +45,7 @@ with client.ApiClient(configuration) as api_client:
     is_crawler = True # bool |  (optionnel)
 
     try:
-        api_response = api_instance.get_comments_for_user(user_id=user_id, direction=direction, replies_to_user_id=replies_to_user_id, page=page, includei10n=includei10n, locale=locale, is_crawler=is_crawler)
+        api_response = api_instance.get_comments_for_user(GetCommentsForUserOptions(user_id=user_id, direction=direction, replies_to_user_id=replies_to_user_id, page=page, includei10n=includei10n, locale=locale, is_crawler=is_crawler))
         print("The response of PublicApi->get_comments_for_user:\n")
         pprint(api_response)
     except Exception as e:

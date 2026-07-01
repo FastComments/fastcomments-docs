@@ -1,10 +1,10 @@
-启用或禁用页面的通知。当用户订阅页面时，会为新的根评论创建通知，
-并且还会
+Enable or disable notifications for a page. When users are subscribed to a page, notifications are created
+for new root comments, and also
 
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
-|------|------|----------|-------------|
+| 名称 | 类型 | 必填 | 描述 |
+|------|------|------|------|
 | tenant_id | String | 是 |  |
 | url_id | String | 是 |  |
 | url | String | 是 |  |
@@ -21,18 +21,14 @@
 [inline-code-attrs-start title = 'update_user_notification_page_subscription_status 示例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example() -> Result<UpdateUserNotificationPageSubscriptionStatusResponse, Error> {
-    let params: UpdateUserNotificationPageSubscriptionStatusParams = UpdateUserNotificationPageSubscriptionStatusParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        url_id: "news/rocket-launch-2026".to_string(),
-        url: "https://acme.example.com/news/rocket-launch-2026".to_string(),
-        page_title: "Acme Rocket Launch — June 2026".to_string(),
-        subscribed_or_unsubscribed: "subscribed".to_string(),
-        sso: Some("user:alice@acme.com".to_string()),
+    let params = UpdateUserNotificationPageSubscriptionStatusParams {
+        tenant_id: "acme-corp-tenant".to_owned(),
+        url_id: "news-article-2024".to_owned(),
+        url: "https://news.example.com/articles/rust".to_owned(),
+        page_title: "Rust Dominates the Programming World".to_owned(),
+        subscribed_or_unsubscribed: "subscribed".to_owned(),
+        sso: Some("sso-token-abc".to_owned()),
     };
-    let response: UpdateUserNotificationPageSubscriptionStatusResponse =
-        update_user_notification_page_subscription_status(&configuration, params).await?;
-    Ok(response)
+    update_user_notification_page_subscription_status(&configuration, params).await
 }
 [inline-code-end]
-
----

@@ -1,45 +1,48 @@
-## Parametry
+## Parameters
 
-| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| badgeId | string | query | Tak |  |
-| userId | string | query | Nie |  |
-| commentId | string | query | Nie |  |
-| broadcastId | string | query | Nie |  |
-| sso | string | query | Nie |  |
+| tenantId | string | query | Yes |  |
+| badgeId | string | query | Yes |  |
+| userId | string | query | No |  |
+| commentId | string | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
-## Odpowiedź
+## Response
 
 Zwraca: [`RemoveUserBadgeResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/remove_user_badge_response.py)
 
-## Przykład
+## Example
 
 [inline-code-attrs-start title = 'Przykład put_remove_badge'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import PutRemoveBadgeOptions
 from client.models.remove_user_badge_response import RemoveUserBadgeResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Określenie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
+# Definiowanie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
 # Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracji.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Otwórz kontekst z instancją klienta API
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Utwórz instancję klasy API
+    # Create an instance of the API class
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     badge_id = 'badge_id_example' # str | 
-    user_id = 'user_id_example' # str |  (opcjonalne)
-    comment_id = 'comment_id_example' # str |  (opcjonalne)
-    broadcast_id = 'broadcast_id_example' # str |  (opcjonalne)
-    sso = 'sso_example' # str |  (opcjonalne)
+    user_id = 'user_id_example' # str |  (optional)
+    comment_id = 'comment_id_example' # str |  (optional)
+    broadcast_id = 'broadcast_id_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.put_remove_badge(badge_id, user_id=user_id, comment_id=comment_id, broadcast_id=broadcast_id, sso=sso)
+        api_response = api_instance.put_remove_badge(tenant_id, badge_id, PutRemoveBadgeOptions(user_id=user_id, comment_id=comment_id, broadcast_id=broadcast_id, sso=sso))
         print("The response of ModerationApi->put_remove_badge:\n")
         pprint(api_response)
     except Exception as e:

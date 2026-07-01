@@ -1,7 +1,8 @@
 ## Parameters
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
-|------|------|----------|----------|-------------|
+|------|------|----------|----------|---------------|
+| tenantId | string | query | Ja |  |
 | includeByUserIdAndEmail | boolean | query | Nee |  |
 | includeByIP | boolean | query | Nee |  |
 | includeByEmailDomain | boolean | query | Nee |  |
@@ -13,12 +14,13 @@ Retourneert: [`BulkPreBanSummary`](https://github.com/FastComments/fastcomments-
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'Voorbeeld van post_bulk_pre_ban_summary'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_bulk_pre_ban_summary Voorbeeld'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 bulk_pre_ban_params = FastCommentsClient::BulkPreBanParams.new({comment_ids: ['comment_ids_example']}) # BulkPreBanParams | 
 opts = {
   include_by_user_id_and_email: true, # Boolean | 
@@ -29,11 +31,9 @@ opts = {
 
 begin
   
-  result = api_instance.post_bulk_pre_ban_summary(bulk_pre_ban_params, opts)
+  result = api_instance.post_bulk_pre_ban_summary(tenant_id, bulk_pre_ban_params, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_bulk_pre_ban_summary: #{e}"
 end
 [inline-code-end]
-
----

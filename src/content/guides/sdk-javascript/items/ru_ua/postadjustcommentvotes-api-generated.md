@@ -1,23 +1,37 @@
 ## Параметры
 
-| Name | Type | Обязательно | Описание |
-|------|------|------------|-------------|
-| commentId | string | Да |  |
-| adjustCommentVotesParams | AdjustCommentVotesParams | Да |  |
-| sso | string | Нет |  |
+| Имя | Тип | Обязательно | Описание |
+|------|------|----------|-------------|
+| commentId | string | Yes |  |
+| adjustCommentVotesParams | AdjustCommentVotesParams | Yes |  |
+| broadcastId | string | No |  |
+| tenantId | string | No |  |
+| sso | string | No |  |
 
 ## Ответ
 
-Возвращает: [`AdjustVotesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AdjustVotesResponse.ts)
+Возвращает: [`PostAdjustCommentVotesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostAdjustCommentVotesResponse.ts)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример postAdjustCommentVotes'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postAdjustCommentVotes Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const commentId: string = "cmt_8f3a2b7d4e";
-const adjustCommentVotesParams: AdjustCommentVotesParams = { delta: 1, reason: "useful", source: "web" } as AdjustCommentVotesParams;
-const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.exampleSignature";
-const result: AdjustVotesResponse = await postAdjustCommentVotes(commentId, adjustCommentVotesParams, sso);
-[inline-code-end]
+const commentId: string = "cmt_9f8b7a6d";
 
----
+const adjustParams: AdjustCommentVotesParams = {
+  voteDelta: 1,
+  // дополнительные поля, как требуется AdjustCommentVotesParams
+};
+
+const broadcastId: string = "brd_20230915";
+const tenantId: string = "tenant_42";
+const sso: string = "sso-token-abc123";
+
+const result: PostAdjustCommentVotesResponse = await postAdjustCommentVotes(
+  commentId,
+  adjustParams,
+  broadcastId,
+  tenantId,
+  sso
+);
+[inline-code-end]

@@ -1,8 +1,9 @@
+---
 ## Параметри
 
-| Name | Type | Required | Description |
+| Назва | Тип | Обов’язковий | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
+| tenantId | string | Yes |  |
 
 ## Відповідь
 
@@ -10,14 +11,12 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад getEmailTemplateDefinitions'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getEmailTemplateDefinitions Приклад'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getEmailTemplateDefinitions(tenantId = "my-tenant-123")
-if response.isSome:
-  let definitions = response.get()
-  echo "Email template definitions for my-tenant-123: ", definitions
-else:
-  echo "Failed to retrieve templates, HTTP status: ", httpResponse.status
+let (responseOpt, httpResponse) = client.getEmailTemplateDefinitions(tenantId = "my-tenant-123")
+if responseOpt.isSome:
+  let definitions = responseOpt.get()
+  echo definitions
 [inline-code-end]
 
 ---

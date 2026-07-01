@@ -1,16 +1,26 @@
-### PyPI
+### Installeren vanaf GitHub
+
+Installeer direct vanaf een release-tag (aanbevolen, volledig reproduceerbaar):
 
 ```bash
-pip install fastcomments
+pip install git+https://github.com/fastcomments/fastcomments-python.git@v3.0.0
 ```
 
-### Inhoud van de bibliotheek
+Pin de tag in plaats van een branch zodat builds deterministisch zijn. Hetzelfde formaat werkt in `requirements.txt`:
 
-Deze bibliotheek bevat twee modules: de gegenereerde API-client en de core Python-bibliotheek die handgeschreven hulpprogramma's bevat om het werken met de API eenvoudiger te maken, inclusief SSO-ondersteuning.
+```
+fastcomments @ git+https://github.com/fastcomments/fastcomments-python.git@v3.0.0
+```
 
-- [Documentatie API-clientbibliotheek](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
-- [Documentatie core-bibliotheek, inclusief SSO-voorbeelden](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
+Elke gelabelde [GitHub Release](https://github.com/fastcomments/fastcomments-python/releases) heeft ook een gebouwd wheel bijgevoegd als je de voorkeur geeft aan het rechtstreeks installeren van een binair artefact.
 
-### Openbare vs beveiligde API's
+### Bibliotheekinhoud
 
-Voor de API-client zijn er drie klassen, `DefaultApi`, `PublicApi` en `ModerationApi`. De `DefaultApi` bevat methoden die je API-sleutel vereisen, en `PublicApi` bevat methoden die direct vanuit een browser/mobiel apparaat/etc. zonder authenticatie kunnen worden aangeroepen. De `ModerationApi` voedt het moderatordashboard en bevat methoden voor het modereren van opmerkingen (lijst, aantal, zoeken, logs, export), moderatieacties (verwijderen/herstellen, markeren, instellen van review/spam/goedkeuringsstatus, stemmen, draad heropenen/sluiten), verbanningen (verbannen om te reageren, ongedaan maken, pre-ban-samenvattingen, ban-status/voorkeuren, aantallen verbannen gebruikers), en badges & vertrouwen (badge toekennen/verwijderen, handmatige badges, ophalen/instellen van vertrouwensfactor, intern gebruikersprofiel). Elke `ModerationApi`-methode accepteert een `sso`-parameter zodat deze kan worden aangeroepen namens een via SSO geauthenticeerde moderator.
+Deze bibliotheek bevat twee modules: de gegenereerde API-client en de kern‑Python‑bibliotheek die handgeschreven hulpprogramma's bevat om het werken met de API gemakkelijker te maken, inclusief SSO‑ondersteuning.
+
+- [API Client Library Docs](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
+- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
+
+### Publieke versus beveiligde API's
+
+Voor de API-client zijn er drie klassen, `DefaultApi`, `PublicApi` en `ModerationApi`. De `DefaultApi` bevat methoden die je API‑sleutel vereisen, en de `PublicApi` bevat methoden die rechtstreeks vanuit een browser/mobiel apparaat/etc. kunnen worden aangeroepen zonder authenticatie. De `ModerationApi` biedt een uitgebreide reeks live‑ en snelle moderatie‑API's. Elke `ModerationApi`‑methode accepteert een `sso`‑parameter en kan authenticeren via SSO of een FastComments.com‑sessiecookie.

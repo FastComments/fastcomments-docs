@@ -2,9 +2,9 @@
 
 | Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
+| tenantId | string | Evet |  |
 | commentId | string | Evet |  |
-| direction | string | Hayır |  |
-| sso | string | Hayır |  |
+| options | const PostVoteOptions& | Evet |  |
 
 ## Yanıt
 
@@ -14,17 +14,17 @@ Döndürür: [`VoteResponse`](https://github.com/FastComments/fastcomments-cpp/b
 
 [inline-code-attrs-start title = 'postVote Örneği'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t commentId = U("cmt-987654321");
-boost::optional<utility::string_t> direction = U("up");
-boost::optional<utility::string_t> sso = U("sso-token-abc123");
-api->postVote(commentId, direction, sso)
-.then([](pplx::task<std::shared_ptr<VoteResponse>> task) {
-    try {
-        auto resp = task.get();
-        if (!resp) resp = std::make_shared<VoteResponse>();
-    } catch (const std::exception&) {
-    }
-});
+utility::string_t tenantId = U("my-tenant-123");
+utility::string_t commentId = U("cmt-456789");
+PostVoteOptions options;
+options.upvote = boost::make_optional(true);
+options.reason = boost::make_optional<std::string>("Inappropriate content");
+api->postVote(tenantId, commentId, options)
+    .then([](pplx::task<std::shared_ptr<VoteResponse>> t) {
+        try {
+            auto resp = t.get();
+            auto count = resp->voteCount;
+        } catch (const std::exception& e) {
+        }
+    });
 [inline-code-end]
-
----

@@ -1,8 +1,7 @@
----
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
-|------|------|----------|-------------|
+| Naam | Type | Verplicht | Beschrijving |
+|------|------|-----------|--------------|
 | tenantId | string | Ja |  |
 | urlIdWS | string | Ja |  |
 | userIds | string | Ja |  |
@@ -15,20 +14,15 @@ Retourneert: [`GetUserPresenceStatusesResponse`](https://github.com/FastComments
 
 [inline-code-attrs-start title = 'getUserPresenceStatuses Voorbeeld'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t urlIdWS = U("chat-room-77");
-boost::optional<utility::string_t> optUserIds(U("alice@example.com,bob@example.com"));
-api->getUserPresenceStatuses(tenantId, urlIdWS, optUserIds.value_or(U("")))
-    .then([](pplx::task<std::shared_ptr<GetUserPresenceStatusesResponse>> t) {
-        try {
-            auto resp = t.get();
-            if (!resp) resp = std::make_shared<GetUserPresenceStatusesResponse>();
-            (void)resp;
-        } catch (const std::exception&) {
-            auto errResp = std::make_shared<GetUserPresenceStatusesResponse>();
-            (void)errResp;
+auto tenantId = U("my-tenant-123");
+auto urlIdWS = U("article-789");
+auto userIds = U("alice@example.com,bob@example.com");
+boost::optional<utility::string_t> optionalFilter = boost::none;
+api->getUserPresenceStatuses(tenantId, urlIdWS, userIds)
+    .then([](pplx::task<std::shared_ptr<GetUserPresenceStatusesResponse>> t){
+        try{
+            auto response = t.get();
+        }catch(...){
         }
     });
 [inline-code-end]
-
----

@@ -1,7 +1,7 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
-|------|------|----------|-------------|
+| Назва | Тип | Обов’язковий | Опис |
+|------|------|--------------|------|
 | tenantId | string | Так |  |
 | id | string | Ні |  |
 
@@ -13,10 +13,8 @@
 
 [inline-code-attrs-start title = 'Приклад getModerator'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getModerator(tenantId = "my-tenant-123", id = "mod-456")
-if response.isSome:
-  let moderator = response.get()
-  echo moderator
-else:
-  echo "Moderator not found, HTTP status: ", $httpResponse.status
+let (moderatorOpt, httpResponse) = client.getModerator(tenantId = "my-tenant-123", id = "moderator-456")
+if moderatorOpt.isSome:
+  let moderator = moderatorOpt.get()
+  discard moderator
 [inline-code-end]

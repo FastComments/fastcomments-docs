@@ -1,10 +1,9 @@
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|-------------|
-| userId | string | Nie |  |
-| trustFactor | string | Nie |  |
-| sso | string | Nie |  |
+|------|------|----------|------|
+| tenantId | string | Tak |  |
+| options | const SetTrustFactorOptions& | Tak |  |
 
 ## Odpowiedź
 
@@ -12,21 +11,19 @@ Zwraca: [`SetUserTrustFactorResponse`](https://github.com/FastComments/fastcomme
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład użycia setTrustFactor'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład setTrustFactor'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> userId = utility::conversions::to_string_t("user-9876");
-boost::optional<utility::string_t> trustFactor = utility::conversions::to_string_t("verified");
-boost::optional<utility::string_t> sso = utility::conversions::to_string_t("sso-token-abc123");
-api->setTrustFactor(userId, trustFactor, sso)
-.then([](pplx::task<std::shared_ptr<SetUserTrustFactorResponse>> t){
-    try {
-        auto resp = t.get();
-        if (resp) {
-            auto copy = std::make_shared<SetUserTrustFactorResponse>(*resp);
+SetTrustFactorOptions opts;
+opts.userId = utility::conversions::to_string_t("user@example.com");
+opts.trustFactor = 8;
+opts.reason = boost::optional<utility::string_t>(utility::conversions::to_string_t("Spam check passed"));
+api->setTrustFactor(utility::conversions::to_string_t("my-tenant-123"), opts)
+    .then([](pplx::task<std::shared_ptr<SetUserTrustFactorResponse>> task) {
+        try {
+            auto response = task.get();
+        } catch (const std::exception&) {
         }
-    } catch (const std::exception&) {
-    }
-});
+    });
 [inline-code-end]
 
 ---

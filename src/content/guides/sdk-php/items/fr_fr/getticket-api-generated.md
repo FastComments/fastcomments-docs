@@ -1,10 +1,10 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Requis | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
-| userId | string | query | No |  |
+| Nom | Type | Emplacement | Obligatoire | Description |
+|------|------|-------------|-------------|-------------|
+| tenantId | string | query | Oui |  |
+| id | string | path | Oui |  |
+| userId | string | query | Non |  |
 
 ## Réponse
 
@@ -12,7 +12,7 @@ Renvoie : [`GetTicketResponse`](https://github.com/FastComments/fastcomments-php
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getTicket'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getTicket'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -30,9 +30,11 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
 $user_id = 'user_id_example'; // string
+
 
 try {
     $result = $apiInstance->getTicket($tenant_id, $id, $user_id);
@@ -41,3 +43,5 @@ try {
     echo 'Exception when calling DefaultApi->getTicket: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

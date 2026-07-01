@@ -1,33 +1,29 @@
----
 ## Paramètres
 
-| Nom | Type | Requis | Description |
-|------|------|----------|-------------|
+| Nom | Type | Obligatoire | Description |
+|------|------|-------------|-------------|
 | tenantId | string | Oui |  |
 | id | string | Oui |  |
 
 ## Réponse
 
-Renvoie : [`GetQuestionResultResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetQuestionResultResponse.h)
+Renvoie : [`GetQuestionResultResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetQuestionResultResponse.h)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getQuestionResult'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getQuestionResult'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t questionId = U("question-789");
-boost::optional<utility::string_t> requestedBy = boost::optional<utility::string_t>(U("user@example.com"));
+auto tenantId = utility::string_t(U("my-tenant-123"));
+auto questionId = utility::string_t(U("question-789"));
+boost::optional<utility::string_t> optionalParam = boost::none;
 
 api->getQuestionResult(tenantId, questionId)
-.then([requestedBy](pplx::task<std::shared_ptr<GetQuestionResultResponse>> task) -> std::shared_ptr<GetQuestionResultResponse> {
-    try {
-        auto resp = task.get();
-        if (!resp) resp = std::make_shared<GetQuestionResultResponse>();
-        return resp;
-    } catch (...) {
-        return std::make_shared<GetQuestionResultResponse>();
-    }
-});
+    .then([](pplx::task<std::shared_ptr<GetQuestionResultResponse>> task) {
+        try {
+            auto response = task.get();
+        } catch (const std::exception&) {
+        }
+    });
 [inline-code-end]
 
 ---

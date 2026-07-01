@@ -1,35 +1,35 @@
-## Параметри
+## Parametri
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| userId | string | query | Не |  |
-| badgeId | string | query | Не |  |
-| type | number | query | Не |  |
-| displayedOnComments | boolean | query | Не |  |
-| limit | number | query | Не |  |
-| skip | number | query | Не |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| badgeId | string | query | No |  |
+| type | number | query | No |  |
+| displayedOnComments | boolean | query | No |  |
+| limit | number | query | No |  |
+| skip | number | query | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIGetUserBadgesResponse.swift)
+Vraća: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIGetUserBadgesResponse.swift)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'getUserBadges пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getUserBadges'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи пример кода је још у бета фази. За било који проблем, пријавите га преко http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledeći primeri koda su još uvek beta. Za bilo koji problem, molimo prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let userId = "userId_example" // String |  (опционо)
-let badgeId = "badgeId_example" // String |  (опционо)
-let type = 987 // Double |  (опционо)
-let displayedOnComments = true // Bool |  (опционо)
-let limit = 987 // Double |  (опционо)
-let skip = 987 // Double |  (опционо)
+let userId = "userId_example" // String |  (opciono)
+let badgeId = "badgeId_example" // String |  (opciono)
+let type = 987 // Double |  (opciono)
+let displayedOnComments = true // Bool |  (opciono)
+let limit = 987 // Double |  (opciono)
+let skip = 987 // Double |  (opciono)
 
-DefaultAPI.getUserBadges(tenantId: tenantId, userId: userId, badgeId: badgeId, type: type, displayedOnComments: displayedOnComments, limit: limit, skip: skip) { (response, error) in
+DefaultAPI.getUserBadges(tenantId: tenantId, options: DefaultAPI.GetUserBadgesOptions(userId: userId, badgeId: badgeId, type: type, displayedOnComments: displayedOnComments, limit: limit, skip: skip)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -40,5 +40,3 @@ DefaultAPI.getUserBadges(tenantId: tenantId, userId: userId, badgeId: badgeId, t
     }
 }
 [inline-code-end]
-
----

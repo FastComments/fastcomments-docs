@@ -1,30 +1,29 @@
-### 401 Unauthorized Errors
+### 401 未授权错误
 
-If you're getting 401 errors when using the authenticated API:
+如果在使用已认证的 API 时遇到 401 错误：
 
-1. **Check your API key**: Ensure you're using the correct API key from your FastComments dashboard
-2. **Verify the tenant ID**: Make sure the tenant ID matches your account
-3. **API key format**: The API key should be set on the API client:
+1. **检查您的 API 密钥**：确保使用来自 FastComments 仪表板的正确 API 密钥
+2. **验证租户 ID**：确保租户 ID 与您的账户匹配
+3. **API 密钥格式**：API 密钥应在共享配置中设置为 `x-api-key` 头部：
 
 ```swift
-let defaultApi = DefaultAPI()
-defaultApi.apiKey = "YOUR_API_KEY"
+FastCommentsSwiftAPIConfiguration.shared.customHeaders["x-api-key"] = "YOUR_API_KEY"
 ```
 
-4. **Using the wrong API**: Make sure you're using `DefaultAPI` (not `PublicAPI`) for authenticated calls
+4. **使用错误的 API**：确保在已认证调用中使用 `DefaultAPI`（而不是 `PublicAPI`）  
 
-### SSO Token Issues
+### SSO 令牌问题
 
-If SSO tokens aren't working:
+如果 SSO 令牌无法正常工作：
 
-1. **Use secure mode for production**: Always use `FastCommentsSSO.createSecure()` with your API key for production
-2. **Server-side only**: Generate secure SSO tokens on your server, never expose your API key to clients
-3. **Check user data**: Ensure all required fields (id, email, username) are provided
-4. **Token expiration**: Secure SSO tokens include a timestamp and may expire. Generate fresh tokens as needed.
+1. **在生产环境中使用安全模式**：始终使用 `FastCommentsSSO.createSecure()` 并传入您的 API 密钥进行生产环境部署
+2. **仅限服务器端**：在服务器上生成安全的 SSO 令牌，切勿将 API 密钥暴露给客户端
+3. **检查用户数据**：确保提供所有必填字段（id、email、username）
+4. **令牌过期**：安全的 SSO 令牌包含时间戳，可能会过期。根据需要生成新的令牌。  
 
-### SSL/TLS Errors
+### SSL/TLS 错误
 
-If you encounter SSL/TLS errors:
+如果遇到 SSL/TLS 错误：
 
-1. Ensure your app's Info.plist allows HTTPS connections to fastcomments.com
-2. Check that you're not using App Transport Security exceptions that might block the connection
+1. 确保您的应用的 Info.plist 允许对 fastcomments.com 的 HTTPS 连接
+2. 检查是否未使用可能阻止连接的 App Transport Security 异常

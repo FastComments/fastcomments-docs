@@ -1,32 +1,22 @@
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
-|------|------|----------|-------------|
+|------|-----|--------------|--------------|
 | tenantId | string | Ja |  |
 | search | string | Nein |  |
-| locale | string | Nein |  |
-| rating | string | Nein |  |
-| page | float64 | Nein |  |
+| options | GetGifsSearchOptions | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`Option[GetGifsSearchResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_gifs_search_response.nim)
+Rückgabe: [`Option[GetGifsSearchResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_gifs_search_response.nim)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'getGifsSearch Beispiel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getGifsSearch(
-  tenantId = "my-tenant-123",
-  search = "funny cat",
-  locale = "en-US",
-  rating = "PG",
-  page = 1.0
-)
-
-if response.isSome:
-  let gifs = response.get()
-  echo "Fetched GIFs response:", gifs
+let opts = GetGifsSearchOptions(limit = 10, rating = "g")
+let (responseOpt, httpResponse) = client.getGifsSearch(tenantId = "my-tenant-123", search = "funny cats", options = opts)
+if responseOpt.isSome:
+  let resp = responseOpt.get()
+  # resp nach Bedarf verwenden
 [inline-code-end]
-
----

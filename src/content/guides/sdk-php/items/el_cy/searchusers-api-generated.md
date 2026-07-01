@@ -1,6 +1,6 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Υποχρεωτικό | Περιγραφή |
+| Όνομα | Τύπος | Θέση | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Ναι |  |
 | urlId | string | query | Ναι |  |
@@ -11,7 +11,7 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SearchUsersResult.php)
+Returns: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SearchUsersResult.php)
 
 ## Παράδειγμα
 
@@ -23,19 +23,23 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Εάν θέλετε να χρησιμοποιήσετε προσαρμοσμένο HTTP client, περάστε τον client σας που υλοποιεί το `GuzzleHttp\ClientInterface`.
-    // Αυτό είναι προαιρετικό, `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
+    // Αν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε τον πελάτη σας που υλοποιεί `GuzzleHttp\ClientInterface`.
+    // Αυτό είναι προαιρετικό, το `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$url_id = 'url_id_example'; // string
-$username_starts_with = 'username_starts_with_example'; // string
-$mention_group_ids = array('mention_group_ids_example'); // string[]
-$sso = 'sso_example'; // string
-$search_section = 'search_section_example'; // string
+
+$tenant_id = 'tenant_id_example'; // συμβολοσειρά
+$url_id = 'url_id_example'; // συμβολοσειρά
+$options = [
+    'username_starts_with' => 'username_starts_with_example', // συμβολοσειρά
+    'mention_group_ids' => array('mention_group_ids_example'), // συμβολοσειρά[]
+    'sso' => 'sso_example', // συμβολοσειρά
+    'search_section' => 'search_section_example', // συμβολοσειρά
+];
+
 
 try {
-    $result = $apiInstance->searchUsers($tenant_id, $url_id, $username_starts_with, $mention_group_ids, $sso, $search_section);
+    $result = $apiInstance->searchUsers($tenant_id, $url_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->searchUsers: ', $e->getMessage(), PHP_EOL;

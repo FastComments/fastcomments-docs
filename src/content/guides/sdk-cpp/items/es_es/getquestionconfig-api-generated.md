@@ -1,35 +1,28 @@
-## Parámetros
+## Parameters
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Sí |  |
-| id | string | Sí |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
-## Respuesta
+## Response
 
-Devuelve: [`GetQuestionConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetQuestionConfigResponse.h)
+Returns: [`GetQuestionConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetQuestionConfigResponse.h)
 
-## Ejemplo
+## Example
 
-[inline-code-attrs-start title = 'Ejemplo de getQuestionConfig'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo getQuestionConfig'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t questionId = U("qstn-456");
-boost::optional<utility::string_t> ifNoneMatch = U("W/\"5a2f3c\"");
-api->getQuestionConfig(tenantId, questionId)
-.then([ifNoneMatch](pplx::task<std::shared_ptr<GetQuestionConfigResponse>> t){
-    try {
-        auto resp = t.get();
-        if (ifNoneMatch) {
-            auto etag = *ifNoneMatch;
-            (void)etag;
-        }
-        auto cfg = resp ? resp : std::make_shared<GetQuestionConfigResponse>();
-        (void)cfg;
-    } catch (const std::exception &ex) {
-        (void)ex;
-    }
-});
-[inline-code-end]
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto questionId = utility::conversions::to_string_t("question-456");
 
----
+api->getQuestionConfig(tenantId, questionId)
+    .then([](pplx::task<std::shared_ptr<GetQuestionConfigResponse>> task) {
+        try {
+            auto response = task.get();
+            // Utilizar la respuesta según sea necesario
+        } catch (const std::exception&) {
+            // Manejar el error
+        }
+    });
+[inline-code-end]

@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| שם | סוג | חובה | תיאור |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | createEmailTemplateBody | CreateEmailTemplateBody | לא |  |
@@ -11,22 +11,21 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-createEmailTemplate'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת createEmailTemplate'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.createEmailTemplate(tenantId = "my-tenant-123",
-  createEmailTemplateBody = CreateEmailTemplateBody(
-    name = "Weekly Newsletter",
-    subject = "This Week on NewsSite",
-    html = "<h1>Latest updates</h1><p>Read our latest article.</p>",
-    fromAddress = "no-reply@newssite.com",
-    isDefault = false,
-    tags = @["news", "weekly"]
-  )
+let createBody = CreateEmailTemplateBody(
+  name: "Welcome Email",
+  subject: "Welcome to FastComments",
+  htmlBody: "<p>Hello, thank you for joining us!</p>",
+  isActive: true,
+  tags: @[]
 )
 
-if response.isSome:
-  let template = response.get()
-  echo "Created email template id: ", template.id
-[inline-code-end]
+let (optResp, httpResp) = client.createEmailTemplate(
+  tenantId = "my-tenant-123",
+  createEmailTemplateBody = createBody
+)
 
----
+if optResp.isSome:
+  let emailTemplate = optResp.get()
+[inline-code-end]

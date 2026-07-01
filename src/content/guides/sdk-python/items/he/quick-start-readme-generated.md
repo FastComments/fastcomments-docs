@@ -1,47 +1,44 @@
-### שימוש ב‑APIs מאומתים (DefaultApi)
+### Using Authenticated APIs (DefaultApi)
 
-**חשוב:** עליך להגדיר את מפתח ה‑API ב‑Configuration לפני ביצוע קריאות מאומתות. אם לא תעשה זאת, הקריאות ייכשלו עם שגיאת 401.
+**חשוב:** עליך לקבוע את מפתח ה-API שלך בתצורה לפני ביצוע בקשות מאומתות. אם לא תעשה זאת, הבקשות יכשלו עם שגיאת 401.
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
 from client.models import CreateAPISSOUserData
 
-# Create and configure the API client
+# צור והגדר את לקוח ה-API
 config = Configuration()
 config.host = "https://fastcomments.com/api"
 
-# REQUIRED: Set your API key (get this from your FastComments dashboard)
+# נחוץ: הגדר את מפתח ה-API שלך (קבל זאת מלוח הבקרה של FastComments)
 config.api_key = {"ApiKeyAuth": "YOUR_API_KEY_HERE"}
 
-# Create the API instance with the configured client
+# צור את מופע ה-API עם הלקוח המוגדר
 api_client = ApiClient(configuration=config)
 api = DefaultApi(api_client)
 
-# Now you can make authenticated API calls
+# עכשיו אתה יכול לבצע קריאות API מאומתות
 try:
-    # Example: Add an SSO user
+    # לדוגמה: הוסף משתמש SSO
     user_data = CreateAPISSOUserData(
         id="user-123",
         email="user@example.com",
         display_name="John Doe"
     )
 
-    response = api.add_sso_user(
-        tenant_id="YOUR_TENANT_ID",
-        create_apisso_user_data=user_data
-    )
+    response = api.add_sso_user("YOUR_TENANT_ID", user_data)
     print(f"User created: {response}")
 
 except Exception as e:
     print(f"Error: {e}")
-    # Common errors:
-    # - 401: API key is missing or invalid
-    # - 400: Request validation failed
+    # שגאים נפוצים:
+    # - 401: מפתח ה-API חסר או לא תקף
+    # - 400: אימות הבקשה נכשל
 ```
 
-### שימוש ב‑APIs ציבוריים (PublicApi)
+### Using Public APIs (PublicApi)
 
-נקודות קצה ציבוריות אינן דורשות אימות:
+Public endpoints don't require authentication:
 
 ```python
 from client import ApiClient, Configuration, PublicApi
@@ -53,21 +50,19 @@ api_client = ApiClient(configuration=config)
 public_api = PublicApi(api_client)
 
 try:
-    response = public_api.get_comments_public(
-        tenant_id="YOUR_TENANT_ID",
-        url_id="page-url-id"
-    )
+    response = public_api.get_comments_public("YOUR_TENANT_ID", "page-url-id")
     print(response)
 except Exception as e:
     print(f"Error: {e}")
 ```
 
-### שימוש בלוח הבקרה של המודרציה (ModerationApi)
+### Using the Moderation Dashboard (ModerationApi)
 
-The `ModerationApi` powers the moderator dashboard. Methods are called on behalf of a moderator by passing an `sso` token:
+`ModerationApi` powers the moderator dashboard. Methods are called on behalf of a moderator by passing an `sso` token:
 
 ```python
 from client import ApiClient, Configuration, ModerationApi
+from client.api.moderation_api import GetCountOptions
 
 config = Configuration()
 config.host = "https://fastcomments.com/api"
@@ -76,21 +71,21 @@ api_client = ApiClient(configuration=config)
 moderation_api = ModerationApi(api_client)
 
 try:
-    # Count the comments awaiting moderation
-    response = moderation_api.get_count(sso="SSO_TOKEN")
+    # ציין את מספר ההערות במחכה למודרציה
+    response = moderation_api.get_count(GetCountOptions(sso="SSO_TOKEN"))
     print(response)
 except Exception as e:
     print(f"Error: {e}")
 ```
 
-### שימוש ב‑SSO (Single Sign-On)
+### Using SSO (Single Sign-On)
 
-ה‑SDK כולל כלי עזר ליצירת אסימוני SSO מאובטחים:
+The SDK includes utilities for generating secure SSO tokens:
 
 ```python
 from sso import FastCommentsSSO, SecureSSOUserData
 
-# Create user data
+# צור נתוני משתמש
 user_data = SecureSSOUserData(
     user_id="user-123",
     email="user@example.com",
@@ -98,16 +93,16 @@ user_data = SecureSSOUserData(
     avatar="https://example.com/avatar.jpg"
 )
 
-# Create SSO instance with your API secret
+# צור מופע SSO עם סוד ה-API שלך
 sso = FastCommentsSSO.new_secure(
     api_secret="YOUR_API_SECRET",
     user_data=user_data
 )
 
-# Generate the SSO token
+# צור את אסימון ה-SSO
 sso_token = sso.create_token()
 
-# Use this token in your frontend or pass to API calls
+# השתמש באסימון זה בצד הקליינט או העבר לקריאות ה-API
 print(f"SSO Token: {sso_token}")
 ```
 
@@ -125,10 +120,10 @@ sso = FastCommentsSSO.new_simple(user_data)
 sso_token = sso.create_token()
 ```
 
-### בעיות נפוצות
+### Common Issues
 
 1. **401 "missing-api-key" error**: ודא שהגדרת `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` לפני יצירת מופע DefaultApi.
-2. **Wrong API class**: השתמש ב‑`DefaultApi` עבור קריאות מאומתות בצד השרת, ב‑`PublicApi` עבור קריאות מצד הלקוח/ציבוריות, וב‑`ModerationApi` עבור קריאות של לוח הבקרה של המודרטור.
+2. **Wrong API class**: השתמש ב-`DefaultApi` לבקשות מאומתות בצד השרת, `PublicApi` לבקשות ציבוריות/בצד הלקוח, ו-`ModerationApi` לבקשות ללוח המודרציה.
 3. **Import errors**: ודא שאתה מייבא מהמודול הנכון:
-   - לקוח ה‑API: `from client import ...`
-   - כלי SSO: `from sso import ...`
+   - לקוח API: `from client import ...`
+   - כלים ל-SSO: `from sso import ...`

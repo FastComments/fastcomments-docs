@@ -1,14 +1,15 @@
-## 매개변수
+## Parameters
 
-| 이름 | 유형 | 위치 | 필수 | 설명 |
+| 이름 | 타입 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| sso | string | query | 아니요 |  |
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
-## 응답
+## Response
 
 반환: [`GetTenantManualBadgesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantManualBadgesResponse.java)
 
-## 예제
+## Example
 
 [inline-code-attrs-start title = 'getManualBadges 예제'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -25,14 +26,15 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
-    String sso = "sso_example"; // 문자열 | 
+    String tenantId = "tenantId_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
-      GetTenantManualBadgesResponse result = apiInstance.getManualBadges()
+      GetTenantManualBadgesResponse result = apiInstance.getManualBadges(tenantId)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ModerationApi#getManualBadges");
+      System.err.println("ModerationApi#getManualBadges 호출 중 예외 발생");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -41,5 +43,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

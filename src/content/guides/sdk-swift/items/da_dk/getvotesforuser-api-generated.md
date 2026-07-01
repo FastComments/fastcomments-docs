@@ -2,10 +2,10 @@
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| urlId | string | query | Ja |  |
-| userId | string | query | Nej |  |
-| anonUserId | string | query | Nej |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
 
 ## Svar
 
@@ -15,7 +15,7 @@ Returnerer: [`GetVotesForUserResponse`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'getVotesForUser Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Følgende kodeeksempler er stadig i beta. Hvis der opstår problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Følgende kodeeksempler er stadig i beta. For eventuelle problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -23,7 +23,7 @@ let urlId = "urlId_example" // String |
 let userId = "userId_example" // String |  (valgfri)
 let anonUserId = "anonUserId_example" // String |  (valgfri)
 
-DefaultAPI.getVotesForUser(tenantId: tenantId, urlId: urlId, userId: userId, anonUserId: anonUserId) { (response, error) in
+DefaultAPI.getVotesForUser(tenantId: tenantId, urlId: urlId, options: DefaultAPI.GetVotesForUserOptions(userId: userId, anonUserId: anonUserId)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -34,5 +34,3 @@ DefaultAPI.getVotesForUser(tenantId: tenantId, urlId: urlId, userId: userId, ano
     }
 }
 [inline-code-end]
-
----

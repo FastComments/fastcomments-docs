@@ -8,32 +8,7 @@ urlId
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | urlId | string | Ja |  |
-| page | int | Nej |  |
-| direction | SortDirections | Nej |  |
-| sso | string | Nej |  |
-| skip | int | Nej |  |
-| skipChildren | int | Nej |  |
-| limit | int | Nej |  |
-| limitChildren | int | Nej |  |
-| countChildren | bool | Nej |  |
-| fetchPageForCommentId | string | Nej |  |
-| includeConfig | bool | Nej |  |
-| countAll | bool | Nej |  |
-| includei10n | bool | Nej |  |
-| locale | string | Nej |  |
-| modules | string | Nej |  |
-| isCrawler | bool | Nej |  |
-| includeNotificationCount | bool | Nej |  |
-| asTree | bool | Nej |  |
-| maxTreeDepth | int | Nej |  |
-| useFullTranslationIds | bool | Nej |  |
-| parentId | string | Nej |  |
-| searchText | string | Nej |  |
-| hashTags | seq[string] | Nej |  |
-| userId | string | Nej |  |
-| customConfigStr | string | Nej |  |
-| afterCommentId | string | Nej |  |
-| beforeCommentId | string | Nej |  |
+| options | GetCommentsPublicOptions | Nej |  |
 
 ## Svar
 
@@ -43,43 +18,20 @@ Returnerer: [`Option[GetCommentsResponseWithPresencePublicComment]`](https://git
 
 [inline-code-attrs-start title = 'getCommentsPublic Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getCommentsPublic(
+let (optResp, httpResp) = client.getCommentsPublic(
   tenantId = "my-tenant-123",
   urlId = "news/article-title",
-  page = 2,
-  direction = SortDirections.Descending,
-  sso = "",
-  skip = 0,
-  skipChildren = 0,
-  limit = 25,
-  limitChildren = 5,
-  countChildren = false,
-  fetchPageForCommentId = "",
-  includeConfig = true,
-  countAll = false,
-  includei10n = true,
-  locale = "en-US",
-  modules = "reactions,moderation",
-  isCrawler = false,
-  includeNotificationCount = true,
-  asTree = true,
-  maxTreeDepth = 3,
-  useFullTranslationIds = false,
-  parentId = "",
-  searchText = "climate change",
-  hashTags = @["climate", "research"],
-  userId = "user-789",
-  customConfigStr = "",
-  afterCommentId = "",
-  beforeCommentId = ""
+  options = GetCommentsPublicOptions(
+    page = 0,
+    pageSize = 10,
+    includeDeleted = false,
+    tags = @[]
+  )
 )
 
-if response.isSome:
-  let commentsResp = response.get()
-  echo "Received comments response:"
-  echo commentsResp
-else:
-  echo "No comments returned. HTTP status:", httpResponse.status
+if optResp.isSome:
+  let resp = optResp.get()
+  echo resp
 [inline-code-end]
 
 ---

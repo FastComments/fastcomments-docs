@@ -1,10 +1,9 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
-|------|------|----------|-------------|
+| Назва | Тип | Обов’язково | Опис |
+|------|------|------------|------|
 | tenantId | string | Так |  |
-| postIds | vector<string | Ні |  |
-| sso | string | Ні |  |
+| options | const GetUserReactsPublicOptions& | Так |  |
 
 ## Відповідь
 
@@ -14,17 +13,10 @@
 
 [inline-code-attrs-start title = 'Приклад getUserReactsPublic'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-boost::optional<std::vector<utility::string_t>> postIds = std::vector<utility::string_t>{ U("post-7f3a"), U("post-b2c9") };
-boost::optional<utility::string_t> sso = U("user@example.com");
-api->getUserReactsPublic(tenantId, postIds, sso)
-    .then([](pplx::task<std::shared_ptr<UserReactsResponse>> task) {
-        try {
-            auto resp = task.get();
-            if (!resp) resp = std::make_shared<UserReactsResponse>();
-        } catch (const std::exception&) {
-        }
-    });
+auto options = GetUserReactsPublicOptions{};
+options.userId = boost::optional<utility::string_t>(U("user@example.com"));
+options.limit = boost::optional<int>(50);
+api->getUserReactsPublic(U("my-tenant-123"), options).then([](pplx::task<std::shared_ptr<UserReactsResponse>> t){
+    auto response = t.get();
+});
 [inline-code-end]
-
----

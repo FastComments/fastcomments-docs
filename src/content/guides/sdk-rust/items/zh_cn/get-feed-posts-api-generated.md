@@ -13,23 +13,20 @@ afterId
 
 ## 响应
 
-返回: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_feed_posts_response.rs)
+Returns: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_feed_posts_response.rs)
 
 ## 示例
 
 [inline-code-attrs-start title = 'get_feed_posts 示例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<GetFeedPostsResponse, Error> {
-    let cfg: &configuration::Configuration = &configuration;
-    let params: GetFeedPostsParams = GetFeedPostsParams {
-        tenant_id: String::from("acme-corp-tenant"),
-        after_id: Some(String::from("post_987654321")),
-        limit: Some(25),
-        tags: Some(vec![String::from("product-updates"), String::from("release")]),
+async fn fetch_feed(config: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetFeedPostsParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        after_id: Some("post-12345".to_string()),
+        limit: Some(20),
+        tags: Some(vec!["news".to_string(), "article".to_string()]),
     };
-    let response: GetFeedPostsResponse = get_feed_posts(cfg, params).await?;
-    Ok(response)
+    let _response = get_feed_posts(config, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

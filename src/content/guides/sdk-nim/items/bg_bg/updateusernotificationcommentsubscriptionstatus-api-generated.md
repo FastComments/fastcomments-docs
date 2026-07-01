@@ -1,14 +1,14 @@
-Активиране или деактивиране на известия за конкретен коментар.
+Активирайте или деактивирайте известия за конкретен коментар.
 
 ## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | notificationId | string | Не |  |
 | optedInOrOut | string | Не |  |
 | commentId | string | Да |  |
-| sso | string | Не |  |
+| sso | string = "" | Не |  |
 
 ## Отговор
 
@@ -16,19 +16,16 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'updateUserNotificationCommentSubscriptionStatus Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за updateUserNotificationCommentSubscriptionStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateUserNotificationCommentSubscriptionStatus(
+let (optResp, httpResp) = client.updateUserNotificationCommentSubscriptionStatus(
   tenantId = "my-tenant-123",
-  notificationId = "",
-  optedInOrOut = "",
-  commentId = "cmt-789",
+  notificationId = "notif-456",
+  optedInOrOut = "opted-in",
+  commentId = "comment-789",
   sso = ""
 )
 
-if response.isSome:
-  let updateResp = response.get()
-  echo "Subscription update response: ", updateResp
+if optResp.isSome:
+  let resp = optResp.get()
 [inline-code-end]
-
----

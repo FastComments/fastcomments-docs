@@ -1,10 +1,9 @@
----
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
 | tag | string | path | Да |  |
-| tenantId | string | query | Не |  |
 
 ## Одговор
 
@@ -12,7 +11,7 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'patch_hash_tag Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'patch_hash_tag Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.models.update_hash_tag_body import UpdateHashTagBody
@@ -20,37 +19,31 @@ from client.models.update_hash_tag_response import UpdateHashTagResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Подешавање хоста је опционално и подразумева се https://fastcomments.com
-# Погледајте configuration.py за листу свих подржаних конфигурационих параметара.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
+# Definisanje hosta je opcionalno i podrazumevano je https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
+# Klijent mora da konfiguriše parametre autentifikacije i autorizacije
+# u skladu sa politikom sigurnosti API servera.
+# Primeri za svaki metod autentifikacije su dati ispod, koristite primer koji
+# odgovara vašem slučaju upotrebe autentifikacije.
 
-# Клијент мора да конфигурише параметре аутентификације и ауторизације
-# у складу са политиком безбедности API сервера.
-# Примери за сваки метод аутентификације дати су испод, користите пример који
-# одговара вашем случају употребе аутентификације.
-
-# Конфигуришите овлашћење помоћу API кључа: api_key
+# Konfigurišite autorizaciju API ključa: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Откоментаришите испод да бисте подесили префикс (нпр. Bearer) за API кључ, ако је потребно
+# Odkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, po potrebi
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Уђите у контекст са инстанцом API клијента
+# Uđite u kontekst sa instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Креирајте инстанцу API класе
+    # Kreirajte instancu API klase
     api_instance = client.DefaultApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     tag = 'tag_example' # str | 
-    tenant_id = 'tenant_id_example' # str |  (опционо)
-    update_hash_tag_body = client.UpdateHashTagBody() # UpdateHashTagBody |  (опционо)
+    update_hash_tag_body = client.UpdateHashTagBody() # UpdateHashTagBody |  (optional)
 
     try:
-        api_response = api_instance.patch_hash_tag(tag, tenant_id=tenant_id, update_hash_tag_body=update_hash_tag_body)
+        api_response = api_instance.patch_hash_tag(tenant_id, tag, update_hash_tag_body)
         print("The response of DefaultApi->patch_hash_tag:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling DefaultApi->patch_hash_tag: %s\n" % e)
 [inline-code-end]
-
----

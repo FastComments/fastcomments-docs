@@ -1,6 +1,6 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Zorunlu | Açıklama |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 | page | integer | query | Hayır |  |
@@ -26,9 +26,9 @@ Döndürür: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomm
 
 ## Örnek
 
-[inline-code-attrs-start title = 'getComments Örneği'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getComments Örnek'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Aşağıdaki kod örnekleri hâlâ beta aşamasındadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new adresi üzerinden bildirin
+// Aşağıdaki kod örnekleri halen beta aşamasındadır. Herhangi bir sorun için, lütfen http://github.com/OpenAPITools/openapi-generator/issues/new adresinden bildirin.
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -49,7 +49,7 @@ let direction = SortDirections() // SortDirections |  (isteğe bağlı)
 let fromDate = 987 // Int64 |  (isteğe bağlı)
 let toDate = 987 // Int64 |  (isteğe bağlı)
 
-DefaultAPI.getComments(tenantId: tenantId, page: page, limit: limit, skip: skip, asTree: asTree, skipChildren: skipChildren, limitChildren: limitChildren, maxTreeDepth: maxTreeDepth, urlId: urlId, userId: userId, anonUserId: anonUserId, contextUserId: contextUserId, hashTag: hashTag, parentId: parentId, direction: direction, fromDate: fromDate, toDate: toDate) { (response, error) in
+DefaultAPI.getComments(tenantId: tenantId, options: DefaultAPI.GetCommentsOptions(page: page, limit: limit, skip: skip, asTree: asTree, skipChildren: skipChildren, limitChildren: limitChildren, maxTreeDepth: maxTreeDepth, urlId: urlId, userId: userId, anonUserId: anonUserId, contextUserId: contextUserId, hashTag: hashTag, parentId: parentId, direction: direction, fromDate: fromDate, toDate: toDate)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -60,5 +60,3 @@ DefaultAPI.getComments(tenantId: tenantId, page: page, limit: limit, skip: skip,
     }
 }
 [inline-code-end]
-
----

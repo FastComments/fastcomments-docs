@@ -5,14 +5,14 @@ afterId
 ## Parametre
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Ja |  |
-| afterId | string | query | Nej |  |
-| limit | integer | query | Nej |  |
-| tags | array | query | Nej |  |
-| sso | string | query | Nej |  |
-| isCrawler | boolean | query | Nej |  |
-| includeUserInfo | boolean | query | Nej |  |
+|------|------|-----------|----------|-------------|
+| tenantId | string | path | Yes |  |
+| afterId | string | query | No |  |
+| limit | integer | query | No |  |
+| tags | array | query | No |  |
+| sso | string | query | No |  |
+| isCrawler | boolean | query | No |  |
+| includeUserInfo | boolean | query | No |  |
 
 ## Svar
 
@@ -23,31 +23,32 @@ Returnerer: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomm
 [inline-code-attrs-start title = 'get_feed_posts_public Eksempel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetFeedPostsPublicOptions
 from client.models.public_feed_posts_response import PublicFeedPostsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Angivelse af host er valgfri, og standardværdien er https://fastcomments.com
+# Definering af host er valgfri og standard er https://fastcomments.com
 # Se configuration.py for en liste over alle understøttede konfigurationsparametre.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Opret en kontekst med en instans af API-klienten
+# Indtast en kontekst med en forekomst af API-klienten
 with client.ApiClient(configuration) as api_client:
-    # Opret en instans af API-klassen
+    # Opret en forekomst af API-klassen
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    after_id = 'after_id_example' # str |  (valgfri)
-    limit = 56 # int |  (valgfri)
-    tags = ['tags_example'] # List[str] |  (valgfri)
-    sso = 'sso_example' # str |  (valgfri)
-    is_crawler = True # bool |  (valgfri)
-    include_user_info = True # bool |  (valgfri)
+    after_id = 'after_id_example' # str |  (optional)
+    limit = 56 # int |  (optional)
+    tags = ['tags_example'] # List[str] |  (optional)
+    sso = 'sso_example' # str |  (optional)
+    is_crawler = True # bool |  (optional)
+    include_user_info = True # bool |  (optional)
 
     try:
-        api_response = api_instance.get_feed_posts_public(tenant_id, after_id=after_id, limit=limit, tags=tags, sso=sso, is_crawler=is_crawler, include_user_info=include_user_info)
+        api_response = api_instance.get_feed_posts_public(tenant_id, GetFeedPostsPublicOptions(after_id=after_id, limit=limit, tags=tags, sso=sso, is_crawler=is_crawler, include_user_info=include_user_info))
         print("The response of PublicApi->get_feed_posts_public:\n")
         pprint(api_response)
     except Exception as e:

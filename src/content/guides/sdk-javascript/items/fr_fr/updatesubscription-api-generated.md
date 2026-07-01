@@ -1,6 +1,6 @@
 ## Paramètres
 
-| Nom | Type | Requis | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
 | tenantId | string | Oui |  |
 | id | string | Oui |  |
@@ -13,19 +13,23 @@ Renvoie : [`UpdateSubscriptionAPIResponse`](https://github.com/FastComments/fast
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple pour updateSubscription'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple updateSubscription'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f3b2c';
-const subscriptionId: string = 'sub_7641a2b3';
-const updateData: UpdateAPIUserSubscriptionData = {
-  status: 'active',
-  planId: 'pro_annual',
-  autoRenew: true,
-  renewalDate: '2026-04-15T00:00:00Z',
-  metadata: { upgradedBy: 'billing-team' }
-};
-const userId: string = 'user_215';
-const result: UpdateSubscriptionAPIResponse = await updateSubscription(tenantId, subscriptionId, updateData, userId);
-[inline-code-end]
+const tenantId: string = "tenant_12345";
+const subscriptionId: string = "sub_98765";
 
----
+const updateData: UpdateAPIUserSubscriptionData = {
+  planId: "premium_plan",
+  status: "active",
+  renewalDate: "2024-12-31",
+};
+
+const userId: string = "user_abcde";
+
+const response: UpdateSubscriptionAPIResponse = await updateSubscription(
+  tenantId,
+  subscriptionId,
+  updateData,
+  userId
+);
+[inline-code-end]

@@ -1,9 +1,9 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Местоположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| tag | string | path | Да |  |
-| tenantId | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| tag | string | path | Yes |  |
 
 ## Ответ
 
@@ -19,33 +19,33 @@ from client.models.delete_hash_tag_request_body import DeleteHashTagRequestBody
 from client.rest import ApiException
 from pprint import pprint
 
-# Определение хоста необязательно и по умолчанию https://fastcomments.com
+# Определение хоста необязательно и по умолчанию устанавливается https://fastcomments.com
 # См. configuration.py для списка всех поддерживаемых параметров конфигурации.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Клиент должен настроить параметры аутентификации и авторизации
-# в соответствии с политикой безопасности сервера API.
-# Ниже приведены примеры для каждого метода аутентификации, используйте пример, который
-# соответствует вашему сценарию аутентификации.
+# в соответствии с политикой безопасности API сервера.
+# Примеры для каждого метода аутентификации предоставлены ниже, используйте пример, который
+# удовлетворяет вашему сценарию использования аутентификации.
 
-# Настройка авторизации по ключу API: api_key
+# Настройка авторизации с помощью API-ключа: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Раскомментируйте ниже, чтобы настроить префикс (e.g. Bearer) для API key, если это необходимо
+# Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для API-ключа, если необходимо
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Войдите в контекст с экземпляром API-клиента
 with client.ApiClient(configuration) as api_client:
     # Создайте экземпляр класса API
     api_instance = client.DefaultApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     tag = 'tag_example' # str | 
-    tenant_id = 'tenant_id_example' # str |  (необязательно)
-    delete_hash_tag_request_body = client.DeleteHashTagRequestBody() # DeleteHashTagRequestBody |  (необязательно)
+    delete_hash_tag_request_body = client.DeleteHashTagRequestBody() # DeleteHashTagRequestBody |  (optional)
 
     try:
-        api_response = api_instance.delete_hash_tag(tag, tenant_id=tenant_id, delete_hash_tag_request_body=delete_hash_tag_request_body)
+        api_response = api_instance.delete_hash_tag(tenant_id, tag, delete_hash_tag_request_body)
         print("The response of DefaultApi->delete_hash_tag:\n")
         pprint(api_response)
     except Exception as e:

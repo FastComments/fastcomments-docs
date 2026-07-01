@@ -1,12 +1,12 @@
-## Параметри
+## Parameters
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Так |  |
-| broadcastId | string | query | Ні |  |
-| isLive | boolean | query | Ні |  |
-| doSpamCheck | boolean | query | Ні |  |
-| skipDupCheck | boolean | query | Ні |  |
+| Ім'я | Тип | Розташування | Обов'язково | Опис |
+|------|------|--------------|-------------|------|
+| tenantId | string | запит | Так |  |
+| broadcastId | string | запит | Ні |  |
+| isLive | boolean | запит | Ні |  |
+| doSpamCheck | boolean | запит | Ні |  |
+| skipDupCheck | boolean | запит | Ні |  |
 
 ## Відповідь
 
@@ -17,31 +17,30 @@
 [inline-code-attrs-start title = 'Приклад create_feed_post'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import CreateFeedPostOptions
 from client.models.create_feed_post_params import CreateFeedPostParams
 from client.models.create_feed_posts_response import CreateFeedPostsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Визначення хоста необов'язкове й за замовчуванням — https://fastcomments.com
+# Визначення хоста є необов’язковим і за замовчуванням https://fastcomments.com
 # Див. configuration.py для списку всіх підтримуваних параметрів конфігурації.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клієнт повинен налаштувати параметри автентифікації та авторизації
-# відповідно до політики безпеки сервера API.
-# Нижче наведено приклади для кожного методу автентифікації — використовуйте приклад, який
-# відповідає вашому випадку використання автентифікації.
+# Клієнт повинен налаштувати параметри автентифікації та авторизації у відповідності до політики безпеки API сервера.
+# Приклади для кожного методу автентифікації наведені нижче, використайте приклад, який відповідає вашому випадку використання.
 
-# Configure API key authorization: api_key
+# Налаштування авторизації за API ключем: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Розкоментуйте нижче, щоб встановити префікс (наприклад, Bearer) для API ключа, якщо потрібно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Enter a context with an instance of the API client
+# Відкрийте контекст з екземпляром API клієнта
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # Створіть екземпляр класу API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_feed_post_params = client.CreateFeedPostParams() # CreateFeedPostParams | 
@@ -51,7 +50,7 @@ with client.ApiClient(configuration) as api_client:
     skip_dup_check = True # bool |  (optional)
 
     try:
-        api_response = api_instance.create_feed_post(tenant_id, create_feed_post_params, broadcast_id=broadcast_id, is_live=is_live, do_spam_check=do_spam_check, skip_dup_check=skip_dup_check)
+        api_response = api_instance.create_feed_post(tenant_id, create_feed_post_params, CreateFeedPostOptions(broadcast_id=broadcast_id, is_live=is_live, do_spam_check=do_spam_check, skip_dup_check=skip_dup_check))
         print("The response of DefaultApi->create_feed_post:\n")
         pprint(api_response)
     except Exception as e:

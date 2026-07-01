@@ -1,22 +1,26 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
-| page | number | 아니요 |  |
+| page | number | 아니오 |  |
 
 ## 응답
 
-반환: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetHashTagsResponse.ts)
+반환: [`GetHashTagsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetHashTagsResponse1.ts)
 
 ## 예제
 
 [inline-code-attrs-start title = 'getHashTags 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-123";
-const pageNumber: number = 2;
-const responseWithPage: GetHashTagsResponse = await getHashTags(tenantId, pageNumber);
-const responseFirstPage: GetHashTagsResponse = await getHashTags(tenantId);
+(async () => {
+  const tenantId: string = "tenant_12345";
+
+  const responseWithPage: GetHashTagsResponse1 = await getHashTags(tenantId, 1);
+  const responseDefault: GetHashTagsResponse1 = await getHashTags(tenantId);
+
+  console.log(responseWithPage, responseDefault);
+})();
 [inline-code-end]
 
 ---

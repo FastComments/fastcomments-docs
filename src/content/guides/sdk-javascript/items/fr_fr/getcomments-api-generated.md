@@ -1,61 +1,50 @@
 ## Paramètres
 
-| Nom | Type | Requis | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
-| tenantId | string | Oui |  |
-| page | number | Non |  |
-| limit | number | Non |  |
-| skip | number | Non |  |
-| asTree | boolean | Non |  |
-| skipChildren | number | Non |  |
-| limitChildren | number | Non |  |
-| maxTreeDepth | number | Non |  |
-| urlId | string | Non |  |
-| userId | string | Non |  |
-| anonUserId | string | Non |  |
-| contextUserId | string | Non |  |
-| hashTag | string | Non |  |
-| parentId | string | Non |  |
-| direction | SortDirections | Non |  |
-| fromDate | number | Non |  |
-| toDate | number | Non |  |
+| tenantId | string | Yes |  |
+| page | number | No |  |
+| limit | number | No |  |
+| skip | number | No |  |
+| asTree | boolean | No |  |
+| skipChildren | number | No |  |
+| limitChildren | number | No |  |
+| maxTreeDepth | number | No |  |
+| urlId | string | No |  |
+| userId | string | No |  |
+| anonUserId | string | No |  |
+| contextUserId | string | No |  |
+| hashTag | string | No |  |
+| parentId | string | No |  |
+| direction | SortDirections | No |  |
+| fromDate | number | No |  |
+| toDate | number | No |  |
 
 ## Réponse
 
-Renvoie: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIGetCommentsResponse.ts)
+Retourne : [`GetCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsResponse.ts)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getComments'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getComments'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_789";
-const page: number = 1;
-const limit: number = 25;
+const tenantId: string = "tenant_12345";
+const page: number = 2;
+const limit: number = 50;
 const asTree: boolean = true;
-const maxTreeDepth: number = 3;
-const urlId: string = "articles/2026/fastcomments-intro";
-const userId: string = "user_12345";
+const urlId: string = "article_5678";
 const direction: SortDirections = "desc";
-const fromDate: number = 1672531200000;
+const fromDate: number = Date.now() - 7 * 24 * 60 * 60 * 1000; // il y a une semaine
 const toDate: number = Date.now();
 
-const result: APIGetCommentsResponse = await getComments(
+const commentsResponse: GetCommentsResponse = await getComments({
   tenantId,
   page,
   limit,
-  0,
   asTree,
-  0,
-  5,
-  maxTreeDepth,
   urlId,
-  userId,
-  undefined,
-  undefined,
-  "#release",
-  undefined,
   direction,
   fromDate,
-  toDate
-);
+  toDate,
+});
 [inline-code-end]

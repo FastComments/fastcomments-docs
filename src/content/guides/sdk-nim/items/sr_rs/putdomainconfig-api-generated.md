@@ -1,36 +1,28 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| domainToUpdate | string | Не |  |
-| updateDomainConfigParams | UpdateDomainConfigParams | Не |  |
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Da |  |
+| domainToUpdate | string | Ne |  |
+| updateDomainConfigParams | UpdateDomainConfigParams | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[PutDomainConfigResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_put_domain_config_response.nim)
+Vraća: [`Option[PutDomainConfigResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_put_domain_config_response.nim)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример putDomainConfig'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putDomainConfig Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.putDomainConfig(
+let (optResp, httpResp) = client.putDomainConfig(
   tenantId = "my-tenant-123",
-  domainToUpdate = "blog.example.com",
-  updateDomainConfigParams = UpdateDomainConfigParams(
-    allowAnonymous = false,
-    moderationEnabled = true,
-    maxCommentLength = 800,
-    allowedOrigins = @["https://blog.example.com", "https://cdn.blog.example.com"],
-    enableThreadedComments = true
-  )
+  domainToUpdate = "example.com",
+  updateDomainConfigParams = UpdateDomainConfigParams()
 )
 
-if response.isSome:
-  let cfg = response.get()
-  echo cfg
-else:
-  echo "Failed to update domain config, HTTP status: ", httpResponse.status
+if optResp.isSome:
+  let resp = optResp.get()
+  echo resp
 [inline-code-end]
 
 ---

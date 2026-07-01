@@ -1,6 +1,6 @@
 ## Parametreler
 
-| Name | Type | Required | Description |
+| Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | domain | string | Evet |  |
@@ -13,14 +13,13 @@ Döndürür: [`GetDomainConfigResponse`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'getDomainConfig Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-type DomainModeration = { moderation?: { enabled?: boolean; mode?: string } };
-
-const tenantId: string = "tc_4b6f9d2a9e1f";
-const domain: string = "comments.newsdaily.com";
-const config: GetDomainConfigResponse = await getDomainConfig(tenantId, domain);
-
-const moderationEnabled: boolean | undefined = (config as unknown as DomainModeration).moderation?.enabled;
-const moderationMode: string | undefined = (config as unknown as DomainModeration).moderation?.mode;
+async function main() {
+  const tenantId: string = "acme-corp-123";
+  const domain: string = "blog.acme.com";
+  const config: GetDomainConfigResponse = await getDomainConfig(tenantId, domain);
+  console.log(config);
+}
+main();
 [inline-code-end]
 
 ---

@@ -1,25 +1,30 @@
-## Параметры
+## Параметри
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| commentId | string | Да |  |
-| broadcastId | string | Да |  |
-| sso | string | Нет |  |
+| Назва | Тип | Обов’язковий | Опис |
+|------|------|--------------|------|
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| broadcastId | string | Yes |  |
+| sso | string | No |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Повертає: [`LockCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/LockCommentResponse.ts)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример lockComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'lockComment Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-media-214';
-const commentId: string = 'cmt_4f3b9a2d';
-const broadcastId: string = 'live-987654321';
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NzgiLCJuYW1lIjoiSmFuZSBEb2UifQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
+(async () => {
+  const tenantId: string = "tenant_12345";
+  const commentId: string = "cmt_98765";
+  const broadcastId: string = "brd_54321";
 
-const lockedWithSso: APIEmptyResponse = await lockComment(tenantId, commentId, broadcastId, sso);
-const lockedWithoutSso: APIEmptyResponse = await lockComment(tenantId, commentId, broadcastId);
+  // З необов’язковим токеном SSO
+  const ssoToken: string = "user-abc123";
+  const lockedWithSso: LockCommentResponse = await lockComment(tenantId, commentId, broadcastId, ssoToken);
+
+  // Без токену SSO
+  const lockedWithoutSso: LockCommentResponse = await lockComment(tenantId, commentId, broadcastId);
+})();
 [inline-code-end]

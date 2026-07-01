@@ -1,26 +1,28 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
-|------|------|----------|-------------|
-| badgeId | string | Ναι |  |
-| userId | string | Όχι |  |
-| commentId | string | Όχι |  |
-| broadcastId | string | Όχι |  |
-| sso | string | Όχι |  |
+|------|------|------------|-----------|
+| badgeId | string | Yes |  |
+| userId | string | No |  |
+| commentId | string | No |  |
+| broadcastId | string | No |  |
+| tenantId | string | No |  |
+| sso | string | No |  |
 
 ## Απόκριση
 
-Επιστρέφει: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AwardUserBadgeResponse.ts)
+Επιστρέφει: [`PutAwardBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PutAwardBadgeResponse.ts)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα putAwardBadge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putAwardBadge Παράδειγμα'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const badgeId: string = 'gold-medal-2023';
-const userId: string = 'usr_100234';
-const commentId: string = 'c_78910';
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fakePayload.signature';
-const response: AwardUserBadgeResponse = await putAwardBadge(badgeId, userId, commentId, undefined, sso);
+(async () => {
+    const badgeId: string = "badge-superstar"
+    const userId: string = "user-42"
+    const commentId: string = "comment-7f9c3"
+    const broadcastId: string = "broadcast-2023-09"
+    const result: PutAwardBadgeResponse = await putAwardBadge(badgeId, userId, commentId, broadcastId)
+    console.log(result)
+})()
 [inline-code-end]
-
----

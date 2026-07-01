@@ -1,30 +1,28 @@
-Користувачі, які наразі онлайн на сторінці: люди, чиї websocket-сесії наразі підписані на цю сторінку.
-Повертає anonCount + totalCount (підписники кімнати, включно з анонімними глядачами, яких ми не перераховуємо).
+---
+Поточні онлайн переглядачі сторінки: люди, чия сесія вебсокета підписана на сторінку в даний момент.  
+Повертає anonCount + totalCount (підписники всього простору, включаючи анонімних глядачів, яких ми не перераховуємо).
 
-## Параметри
+## Parameters
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Так |  |
-| urlId | string | Так |  |
-| afterName | string | Ні |  |
-| afterUserId | string | Ні |  |
+| Назва | Тип | Обов’язково | Опис |
+|------|------|--------------|------|
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| options | GetOnlineUsersOptions | No |  |
 
-## Відповідь
+## Response
 
 Повертає: [`Option[PageUsersOnlineResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_online_response.nim)
 
-## Приклад
+## Example
 
 [inline-code-attrs-start title = 'Приклад getOnlineUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getOnlineUsers(tenantId = "my-tenant-123", urlId = "news/politics/top-story", afterName = "", afterUserId = "")
-if response.isSome:
-  let page = response.get()
-  echo "Received online users page:"
-  echo page
-else:
-  echo "No online users returned. HTTP status: ", httpResponse.statusCode
+let opts = GetOnlineUsersOptions()
+let (onlineUsersOpt, httpResp) = client.getOnlineUsers(tenantId = "my-tenant-123", urlId = "news/article-title", options = opts)
+if onlineUsersOpt.isSome:
+  let onlineUsers = onlineUsersOpt.get()
+  echo onlineUsers
 [inline-code-end]
 
 ---

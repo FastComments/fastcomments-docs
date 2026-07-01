@@ -1,19 +1,19 @@
 ## 매개변수
 
-| Name | Type | Location | Required | Description |
+| 이름 | 타입 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | 예 |  |
 | tag | string | path | 예 |  |
-| tenantId | string | query | 아니오 |  |
 
 ## 응답
 
 반환: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateHashTagResponse.java)
 
-## 예제
+## 예시
 
 [inline-code-attrs-start title = 'patchHashTag 예제'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 클래스 임포트:
+// 클래스 가져오기:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,16 +29,15 @@ public class Example {
     // API 키 인증 구성: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // API 키에 접두사를 설정하려면 다음 줄의 주석을 제거하세요. 예: "Token" (기본값은 null)
+    // API 키에 대한 접두사를 설정하려면 다음 줄의 주석을 해제하세요. 예: "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    String tag = "tag_example"; // String | 
     String tenantId = "tenantId_example"; // String | 
+    String tag = "tag_example"; // String | 
     UpdateHashTagBody updateHashTagBody = new UpdateHashTagBody(); // UpdateHashTagBody | 
     try {
-      UpdateHashTagResponse result = apiInstance.patchHashTag(tag)
-            .tenantId(tenantId)
+      UpdateHashTagResponse result = apiInstance.patchHashTag(tenantId, tag)
             .updateHashTagBody(updateHashTagBody)
             .execute();
       System.out.println(result);
@@ -52,3 +51,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

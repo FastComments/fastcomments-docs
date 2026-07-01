@@ -1,11 +1,12 @@
+---
 ## パラメータ
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | はい |  |
-| id | string | path | はい |  |
-| deleteComments | boolean | query | いいえ |  |
-| commentDeleteMode | string | query | いいえ |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| deleteComments | boolean | query | No |  |
+| commentDeleteMode | string | query | No |  |
 
 ## レスポンス
 
@@ -15,15 +16,15 @@
 
 [inline-code-attrs-start title = 'deleteSSOUser の例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 以下のコードサンプルはまだベータ版です。問題がある場合は http://github.com/OpenAPITools/openapi-generator/issues/new で報告してください
+// 以下のコードサンプルはまだベータ版です。問題がある場合は、http://github.com/OpenAPITools/openapi-generator/issues/new へ報告してください
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let id = "id_example" // String | 
-let deleteComments = true // Bool |  (任意)
-let commentDeleteMode = "commentDeleteMode_example" // String |  (任意)
+let deleteComments = true // Bool |  (オプション)
+let commentDeleteMode = "commentDeleteMode_example" // String |  (オプション)
 
-DefaultAPI.deleteSSOUser(tenantId: tenantId, id: id, deleteComments: deleteComments, commentDeleteMode: commentDeleteMode) { (response, error) in
+DefaultAPI.deleteSSOUser(tenantId: tenantId, id: id, options: DefaultAPI.DeleteSSOUserOptions(deleteComments: deleteComments, commentDeleteMode: commentDeleteMode)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -34,3 +35,5 @@ DefaultAPI.deleteSSOUser(tenantId: tenantId, id: id, deleteComments: deleteComme
     }
 }
 [inline-code-end]
+
+---

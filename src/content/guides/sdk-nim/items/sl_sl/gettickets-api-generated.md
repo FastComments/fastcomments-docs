@@ -1,14 +1,12 @@
+---
 ## Parametri
 
-| Ime | Vrsta | Obvezno | Opis |
+| Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
-| userId | string | Ne |  |
-| state | float64 | Ne |  |
-| skip | float64 | Ne |  |
-| limit | float64 | Ne |  |
+| options | GetTicketsOptions | Ne |  |
 
-## Odgovor
+## Odziv
 
 Vrne: [`Option[GetTicketsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_tickets_response.nim)
 
@@ -16,10 +14,10 @@ Vrne: [`Option[GetTicketsResponse]`](https://github.com/FastComments/fastcomment
 
 [inline-code-attrs-start title = 'Primer getTickets'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTickets(tenantId = "my-tenant-123", userId = "user-789", state = 1.0, skip = 0.0, limit = 50.0)
-if response.isSome:
-  let tickets = response.get()
-  echo tickets
+let (ticketsOpt, httpResp) = client.getTickets(tenantId = "my-tenant-123", options = GetTicketsOptions())
+if ticketsOpt.isSome:
+  let tickets = ticketsOpt.get()
+  # uporabite vstopnice po potrebi
 [inline-code-end]
 
 ---

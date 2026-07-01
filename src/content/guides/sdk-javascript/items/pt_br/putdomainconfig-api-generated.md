@@ -1,7 +1,7 @@
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-----------|
+|------|------|-------------|-----------|
 | tenantId | string | Sim |  |
 | domainToUpdate | string | Sim |  |
 | updateDomainConfigParams | UpdateDomainConfigParams | Sim |  |
@@ -12,17 +12,23 @@ Retorna: [`PutDomainConfigResponse`](https://github.com/FastComments/fastcomment
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de putDomainConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo putDomainConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "7f12c9a4-3b6e-4d2f-9a1c-5f8b2e0a91c4";
-const domainToUpdate: string = "comments.newsroom-prod.com";
-const updateParams: UpdateDomainConfigParams = {
-  forceHttps: true,
-  enableCORS: true,               // sinalizador opcional (demonstra parâmetros opcionais)
-  corsAllowedOrigins: ["https://newsroom-prod.com"]
-};
-const response: PutDomainConfigResponse = await putDomainConfig(tenantId, domainToUpdate, updateParams);
-console.log(response);
+async function runExample() {
+  const tenantId: string = 'tenant-9f8c7b1a';
+  const domainToUpdate: string = 'comments.mywebsite.org';
+  const updateDomainConfigParams: UpdateDomainConfigParams = {
+    enableModeration: true,
+    // campo opcional omitido, por exemplo, maxCommentLength?: number
+  };
+  const result: PutDomainConfigResponse = await putDomainConfig(
+    tenantId,
+    domainToUpdate,
+    updateDomainConfigParams,
+  );
+  console.log(result);
+}
+runExample();
 [inline-code-end]
 
 ---

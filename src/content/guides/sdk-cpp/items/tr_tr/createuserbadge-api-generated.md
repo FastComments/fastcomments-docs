@@ -1,6 +1,6 @@
 ## Parametreler
 
-| Name | Type | Required | Description |
+| Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | createUserBadgeParams | CreateUserBadgeParams | Evet |  |
@@ -13,18 +13,14 @@ Döndürür: [`APICreateUserBadgeResponse`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'createUserBadge Örneği'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-CreateUserBadgeParams params;
-params.userEmail = utility::string_t(U("jane.doe@example.com"));
-params.badgeSlug = utility::string_t(U("community-moderator"));
-params.issuedBy = utility::string_t(U("admin@my-tenant.com"));
-params.expiresAt = boost::optional<utility::string_t>(utility::string_t(U("2026-12-31T23:59:59Z")));
-auto task = api->createUserBadge(tenantId, params)
-    .then([](pplx::task<std::shared_ptr<APICreateUserBadgeResponse>> t){
-        auto resp = t.get();
-        if (resp) return resp;
-        return std::make_shared<APICreateUserBadgeResponse>();
-    });
+auto tenantId = U("my-tenant-123");
+CreateUserBadgeParams badgeParams;
+badgeParams.userEmail = U("user@example.com");
+badgeParams.badgeCode = U("gold");
+badgeParams.expirationDate = boost::optional<utility::datetime>(utility::datetime::utc_now() + utility::datetime::from_seconds(2592000));
+api->createUserBadge(tenantId, badgeParams).then([](std::shared_ptr<APICreateUserBadgeResponse> resp){
+    if (resp && resp->success) {
+        auto result = std::make_shared<APICreateUserBadgeResponse>(*resp);
+    }
+});
 [inline-code-end]
-
----

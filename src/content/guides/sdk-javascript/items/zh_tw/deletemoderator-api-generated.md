@@ -1,27 +1,25 @@
----
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 類型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| id | string | 是 |  |
-| sendEmail | string | 否 |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| sendEmail | string | No |  |
 
 ## 回應
 
-回傳: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+返回: [`DeleteModeratorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteModeratorResponse.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'deleteModerator 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_8f3b2a7c';
-  const moderatorId: string = 'mod_4c12f9b2';
-  const responseWithoutEmail: APIEmptyResponse = await deleteModerator(tenantId, moderatorId);
-  const responseWithEmail: APIEmptyResponse = await deleteModerator(tenantId, moderatorId, 'true');
-  console.log(responseWithoutEmail, responseWithEmail);
-})();
-[inline-code-end]
+async function runDeleteModeratorExample() {
+  const tenantId: string = "tenant_2023";
+  const moderatorId: string = "mod_001";
+  const notificationEmail: string = "admin@mycompany.com";
 
----
+  const resultWithEmail: DeleteModeratorResponse = await deleteModerator(tenantId, moderatorId, notificationEmail);
+  const resultWithoutEmail: DeleteModeratorResponse = await deleteModerator(tenantId, moderatorId);
+}
+[inline-code-end]

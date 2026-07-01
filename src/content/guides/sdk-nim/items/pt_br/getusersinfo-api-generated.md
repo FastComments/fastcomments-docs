@@ -1,28 +1,26 @@
-Informações em massa de usuários para um tenant. Dado userIds, retorna as informações de exibição de User / SSOUser.
-Usado pelo widget de comentários para enriquecer usuários que acabaram de aparecer via um evento de presença.
-Sem contexto de página: a privacidade é aplicada de forma uniforme (perfis privados são mascarados).
+---
+Informações de usuário em lote para um tenant. Dado userIds, retorna informações de exibição de User / SSOUser.  
+Usado pelo widget de comentários para enriquecer usuários que acabaram de aparecer via um evento de presença.  
+Sem contexto de página: a privacidade é aplicada uniformemente (perfis privados são mascarados).
 
-## Parâmetros
+## Parameters
 
-| Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-------------|
-| tenantId | string | Sim |  |
-| ids | string | Não |  |
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| ids | string | No |  |
 
-## Resposta
+## Response
 
 Retorna: [`Option[PageUsersInfoResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_info_response.nim)
 
-## Exemplo
+## Example
 
-[inline-code-attrs-start title = 'Exemplo de getUsersInfo'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo getUsersInfo'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUsersInfo(tenantId = "my-tenant-123", ids = "user-42,user-87")
-if response.isSome:
-  let usersInfo = response.get()
-  echo "Retrieved users info:", usersInfo
-else:
-  echo "No users info returned. HTTP status:", httpResponse.status
+let (usersInfoOpt, httpResp) = client.getUsersInfo(tenantId = "my-tenant-123", ids = "user42")
+if usersInfoOpt.isSome:
+  let usersInfo = usersInfoOpt.get()
 [inline-code-end]
 
 ---

@@ -1,8 +1,9 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| sso | string | query | Nee |  |
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Respons
 
@@ -16,17 +17,16 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 opts = {
   sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.get_counts(opts)
+  result = api_instance.get_counts(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_counts: #{e}"
 end
 [inline-code-end]
-
----

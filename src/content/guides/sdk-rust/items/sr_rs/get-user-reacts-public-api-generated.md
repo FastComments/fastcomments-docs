@@ -1,31 +1,29 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Ime | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| post_ids | Vec<String> | Не |  |
-| sso | String | Не |  |
+| tenant_id | String | Yes |  |
+| post_ids | Vec<String> | No |  |
+| sso | String | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/user_reacts_response.rs)
+Vraća: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/user_reacts_response.rs)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'get_user_reacts_public Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_user_reacts_public Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let params: GetUserReactsPublicParams = GetUserReactsPublicParams {
+async fn fetch_user_reacts() -> Result<(), Error> {
+    let params = GetUserReactsPublicParams {
         tenant_id: "acme-corp-tenant".to_string(),
         post_ids: Some(vec![
             "news/article-123".to_string(),
             "blog/post-456".to_string(),
         ]),
-        sso: Some("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9".to_string()),
+        sso: Some("sso-token-xyz".to_string()),
     };
-    let response: UserReactsResponse = get_user_reacts_public(&configuration, params).await?;
+    let _response = get_user_reacts_public(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

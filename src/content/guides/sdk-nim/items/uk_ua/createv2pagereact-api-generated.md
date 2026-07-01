@@ -1,11 +1,11 @@
-## Parameters
+## Параметри
 
-| Name | Type | Required | Description |
+| Назва | Тип | Обов'язковий | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Так |  |
 | urlId | string | Так |  |
 | id | string | Ні |  |
-| title | string | Ні |  |
+| title | string = "" | Ні |  |
 
 ## Відповідь
 
@@ -15,17 +15,14 @@
 
 [inline-code-attrs-start title = 'Приклад createV2PageReact'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.createV2PageReact(
+let (pageResult, httpResponse) = client.createV2PageReact(
   tenantId = "my-tenant-123",
-  urlId = "news/2026/06/fastcomments-release",
-  id = "",
-  title = ""
+  urlId = "news/article-title",
+  id = "page-456",
+  title = "Breaking News",
 )
-if response.isSome:
-  let react = response.get()
-  echo "Created page react: ", $react
-else:
-  echo "No react returned, HTTP status: ", $httpResponse.statusCode
-[inline-code-end]
 
----
+if pageResult.isSome:
+  let page = pageResult.get()
+  # використати `page` за потреби
+[inline-code-end]

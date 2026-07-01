@@ -1,32 +1,25 @@
-## Параметры
+## Параметри
 
-| Name | Type | Обязательно | Описание |
-|------|------|------------|----------|
-| tenantId | string | Да |  |
-| createAPISSOUserData | CreateAPISSOUserData | Да |  |
+| Назва | Тип | Обов'язковий | Опис |
+|------|------|--------------|------|
+| tenantId | string | Yes |  |
+| createAPISSOUserData | CreateAPISSOUserData | Yes |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`AddSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/AddSSOUserAPIResponse.h)
+Повертає: [`AddSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/AddSSOUserAPIResponse.h)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример addSSOUser'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'addSSOUser Приклад'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-auto createData = std::make_shared<CreateAPISSOUserData>();
-createData->email = utility::string_t(U("alice@example.com"));
-createData->externalUserId = utility::string_t(U("okta|987654321"));
-createData->displayName = boost::optional<utility::string_t>(U("Alice Johnson"));
-createData->roles = std::vector<utility::string_t>{ U("moderator"), U("editor") };
-api->addSSOUser(tenantId, createData)
-.then([](pplx::task<std::shared_ptr<AddSSOUserAPIResponse>> task){
-    try {
-        auto resp = task.get();
-        if (resp) {
-            (void)resp;
-        }
-    } catch (...) {
-    }
-});
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+CreateAPISSOUserData createAPISSOUserData;
+createAPISSOUserData.email = utility::conversions::to_string_t("john.doe@example.com");
+createAPISSOUserData.externalId = utility::conversions::to_string_t("ext-9876");
+createAPISSOUserData.firstName = boost::optional<utility::string_t>(utility::conversions::to_string_t("John"));
+createAPISSOUserData.lastName = boost::optional<utility::string_t>(utility::conversions::to_string_t("Doe"));
+api->addSSOUser(tenantId, createAPISSOUserData)
+    .then([](std::shared_ptr<AddSSOUserAPIResponse> resp) {
+    });
 [inline-code-end]

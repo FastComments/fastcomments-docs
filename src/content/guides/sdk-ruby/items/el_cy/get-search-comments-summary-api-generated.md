@@ -1,12 +1,12 @@
----
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
-| value | string | query | Όχι |  |
-| filters | string | query | Όχι |  |
-| searchFilters | string | query | Όχι |  |
-| sso | string | query | Όχι |  |
+|------|------|----------|------------|-----------|
+| tenantId | string | query | Yes |  |
+| value | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Απάντηση
 
@@ -20,20 +20,19 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # Συμβολοσειρά | 
 opts = {
-  value: 'value_example', # String | 
-  filters: 'filters_example', # String | 
-  search_filters: 'search_filters_example', # String | 
-  sso: 'sso_example' # String | 
+  value: 'value_example', # Συμβολοσειρά | 
+  filters: 'filters_example', # Συμβολοσειρά | 
+  search_filters: 'search_filters_example', # Συμβολοσειρά | 
+  sso: 'sso_example' # Συμβολοσειρά | 
 }
 
 begin
   
-  result = api_instance.get_search_comments_summary(opts)
+  result = api_instance.get_search_comments_summary(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_search_comments_summary: #{e}"
 end
 [inline-code-end]
-
----

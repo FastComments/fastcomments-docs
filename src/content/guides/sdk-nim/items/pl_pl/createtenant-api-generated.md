@@ -1,7 +1,7 @@
 ## Parametry
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nazwa | Typ | Wymagane | Opis |
+|------|------|----------|------|
 | tenantId | string | Tak |  |
 | createTenantBody | CreateTenantBody | Nie |  |
 
@@ -11,23 +11,11 @@ Zwraca: [`Option[CreateTenantResponse]`](https://github.com/FastComments/fastcom
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład createTenant'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createTenant Przykład'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.createTenant(
-  tenantId = "my-tenant-123",
-  createTenantBody = CreateTenantBody(
-    name = "My Tenant 123",
-    domain = "news.example.com",
-    allowAnonymous = false,
-    allowedOrigins = @["https://news.example.com", "https://api.news.example.com"],
-    description = "Comments for News Example"
-  )
-)
-if response.isSome:
-  let created = response.get()
-  echo "Created tenant: ", created.tenantId
-else:
-  echo "Failed to create tenant, status: ", httpResponse.status
+let (maybeResp, httpResp) = client.createTenant(tenantId = "my-tenant-123", createTenantBody = CreateTenantBody())
+if maybeResp.isSome:
+  let resp = maybeResp.get()
+  discard resp
+discard httpResp
 [inline-code-end]
-
----

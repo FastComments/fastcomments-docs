@@ -1,7 +1,9 @@
+---
 ## Parametri
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Da |  |
 | sso | string | query | Ne |  |
 
 ## Odgovor
@@ -10,12 +12,13 @@ Vrne: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blo
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer post_ban_user_undo'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_ban_user_undo Primer'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 ban_user_undo_params = FastCommentsClient::BanUserUndoParams.new({changelog: FastCommentsClient::APIBanUserChangeLog.new}) # BanUserUndoParams | 
 opts = {
   sso: 'sso_example' # String | 
@@ -23,7 +26,7 @@ opts = {
 
 begin
   
-  result = api_instance.post_ban_user_undo(ban_user_undo_params, opts)
+  result = api_instance.post_ban_user_undo(tenant_id, ban_user_undo_params, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_ban_user_undo: #{e}"

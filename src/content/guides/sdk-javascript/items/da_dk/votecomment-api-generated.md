@@ -1,28 +1,43 @@
 ## Parametre
 
-| Name | Type | Required | Description |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| commentId | string | Ja |  |
-| urlId | string | Ja |  |
-| broadcastId | string | Ja |  |
-| voteBodyParams | VoteBodyParams | Ja |  |
-| sessionId | string | Nej |  |
-| sso | string | Nej |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| urlId | string | Yes |  |
+| broadcastId | string | Yes |  |
+| voteBodyParams | VoteBodyParams | Yes |  |
+| sessionId | string | No |  |
+| sso | string | No |  |
 
 ## Svar
 
-Returnerer: [`VoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/VoteResponse.ts)
+Returnerer: [`VoteCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/VoteCommentResponse.ts)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på voteComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'voteComment Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_7b2f9c';
-const commentId: string = 'cmt_4a9e2d';
-const urlId: string = 'articles/2026/new-features';
-const broadcastId: string = 'brd_1f3a9b';
-const voteBodyParams: VoteBodyParams = { vote: 'up' };
-const sessionId: string = 'sess_ab12cd34';
-const voteResponse: VoteResponse = await voteComment(tenantId, commentId, urlId, broadcastId, voteBodyParams, sessionId);
+const tenantId: string = "acme-corp";
+const commentId: string = "cmt_9f8e7d6c";
+const urlId: string = "url_123456";
+const broadcastId: string = "bcast_2024_01";
+
+const voteBodyParams: VoteBodyParams = {
+  vote: "up",               // f.eks., "up" | "down"
+  weight: 1,                // valgfri vægtning af stemmen
+};
+
+const sessionId: string = "sess_abc123def";
+const sso: string = "sso_token_xyz";
+
+const result: VoteCommentResponse = await voteComment(
+  tenantId,
+  commentId,
+  urlId,
+  broadcastId,
+  voteBodyParams,
+  sessionId,
+  sso
+);
 [inline-code-end]

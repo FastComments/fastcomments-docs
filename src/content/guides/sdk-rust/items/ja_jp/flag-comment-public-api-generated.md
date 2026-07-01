@@ -2,10 +2,10 @@
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenant_id | String | はい |  |
-| comment_id | String | はい |  |
-| is_flagged | bool | はい |  |
-| sso | String | いいえ |  |
+| tenant_id | String | Yes |  |
+| comment_id | String | Yes |  |
+| is_flagged | bool | Yes |  |
+| sso | String | No |  |
 
 ## レスポンス
 
@@ -15,17 +15,14 @@
 
 [inline-code-attrs-start title = 'flag_comment_public の例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_flag_comment() -> Result<(), Error> {
-    let params: FlagCommentPublicParams = FlagCommentPublicParams {
-        tenant_id: String::from("acme-corp-tenant"),
-        comment_id: String::from("comment-89b3"),
+async fn run(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = FlagCommentPublicParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: "comment-12345".to_string(),
         is_flagged: true,
-        sso: Some(String::from("sso-uid-7a2f")),
+        sso: Some("user-sso-token".to_string()),
     };
-
-    let _response: ApiEmptyResponse = flag_comment_public(&configuration, params).await?;
+    flag_comment_public(configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

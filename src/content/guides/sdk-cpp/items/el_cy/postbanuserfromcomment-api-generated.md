@@ -1,17 +1,10 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
-|------|------|----------|-------------|
+|------|------|------------|-----------|
+| tenantId | string | Ναι |  |
 | commentId | string | Ναι |  |
-| banEmail | bool | Όχι |  |
-| banEmailDomain | bool | Όχι |  |
-| banIP | bool | Όχι |  |
-| deleteAllUsersComments | bool | Όχι |  |
-| bannedUntil | string | Όχι |  |
-| isShadowBan | bool | Όχι |  |
-| updateId | string | Όχι |  |
-| banReason | string | Όχι |  |
-| sso | string | Όχι |  |
+| options | const PostBanUserFromCommentOptions& | Ναι |  |
 
 ## Απόκριση
 
@@ -19,25 +12,21 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα postBanUserFromComment'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postBanUserFromComment Παράδειγμα'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t commentId = U("comment-98765");
-auto continuation = api->postBanUserFromComment(
-    commentId,
-    boost::optional<bool>(true),
-    boost::optional<bool>(true),
-    boost::optional<bool>(false),
-    boost::optional<bool>(true),
-    boost::optional<utility::string_t>(U("2026-12-31T23:59:59Z")),
-    boost::optional<bool>(false),
-    boost::optional<utility::string_t>(U("update-abc123")),
-    boost::optional<utility::string_t>(U("User posted spam links")),
-    boost::optional<utility::string_t>(U("sso-token-7f3"))
-).then([](pplx::task<std::shared_ptr<BanUserFromCommentResult>> t){
-    try {
-        auto result = t.get();
-        if (!result) result = std::make_shared<BanUserFromCommentResult>();
-    } catch (...) {}
-});
-continuation.wait();
+utility::string_t tenantId = U("my-tenant-123");
+utility::string_t commentId = U("comment-456789");
+PostBanUserFromCommentOptions options;
+options.reason = boost::optional<utility::string_t>(U("spam"));
+options.durationDays = boost::optional<int>(30);
+
+api->postBanUserFromComment(tenantId, commentId, options)
+    .then([](std::shared_ptr<BanUserFromCommentResult> result) {
+        // διαχείριση αποτελέσματος
+    })
+    .then([](pplx::task<void> t) {
+        try { t.get(); } catch (const std::exception& e) { /* διαχείριση σφάλματος */ }
+    });
 [inline-code-end]
+
+---

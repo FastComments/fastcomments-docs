@@ -1,34 +1,28 @@
 ## Parametre
 
-| Name | Type | Påkrævet | Beskrivelse |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| commentId | string | Nej |  |
-| sso | string | Nej |  |
+| tenantId | string | Yes |  |
+| options | const GetUserInternalProfileOptions& | Yes |  |
 
-## Response
+## Svar
 
 Returnerer: [`GetUserInternalProfileResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetUserInternalProfileResponse.h)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på getUserInternalProfile'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUserInternalProfile Eksempel'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> commentId = boost::optional<utility::string_t>(U("cmt-987654"));
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("tenant-42|alice@example.com"));
-auto placeholder = std::make_shared<GetUserInternalProfileResponse>();
-api->getUserInternalProfile(commentId, sso)
-    .then([](pplx::task<std::shared_ptr<GetUserInternalProfileResponse>> task) {
-        try {
-            auto resp = task.get();
-            if (resp) {
-                std::cout << "User profile retrieved\n";
-            } else {
-                std::cout << "No profile found\n";
-            }
-        } catch (const std::exception& e) {
-            std::cerr << "Error: " << e.what() << '\n';
+utility::string_t tenantId = U("my-tenant-123");
+GetUserInternalProfileOptions options;
+options.email = boost::optional<utility::string_t>(U("user@example.com"));
+options.includeDetails = boost::optional<bool>(true);
+
+api->getUserInternalProfile(tenantId, options)
+    .then([](std::shared_ptr<GetUserInternalProfileResponse> response) {
+        if (response) {
+            auto name = response->displayName;
+            auto id = response->userId;
         }
     });
 [inline-code-end]
-
----

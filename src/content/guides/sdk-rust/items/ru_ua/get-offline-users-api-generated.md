@@ -1,8 +1,9 @@
-Бывшие комментаторы на странице, которые НЕ находятся в сети. Отсортировано по displayName.
-Используйте это после исчерпания /users/online, чтобы отобразить раздел «Участники».
-Курсорная пагинация по commenterName: сервер проходит частичный индекс {tenantId, urlId, commenterName} от afterName вперёд через $gt, без затрат, связанных с $skip.
+Past commenters on the page who are NOT currently online. Sorted by displayName.  
+Use this after exhausting /users/online to render a "Members" section.  
+Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName}  
+index from afterName forward via $gt, no $skip cost.
 
-## Параметры
+## Parameters
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
@@ -11,7 +12,7 @@
 | after_name | String | No |  |
 | after_user_id | String | No |  |
 
-## Ответ
+## Response
 
 Возвращает: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_offline_response.rs)
 
@@ -19,16 +20,14 @@
 
 [inline-code-attrs-start title = 'Пример get_offline_users'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_offline_users() -> Result<PageUsersOfflineResponse, Error> {
-    let params: GetOfflineUsersParams = GetOfflineUsersParams {
+async fn fetch_offline(config: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetOfflineUsersParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        url_id: "news/world/today".to_string(),
-        after_name: Some("jane.smith".to_string()),
-        after_user_id: Some("user-1024".to_string()),
+        url_id: "news/article".to_string(),
+        after_name: Some("alice".to_string()),
+        after_user_id: Some("user-42".to_string()),
     };
-    let response: PageUsersOfflineResponse = get_offline_users(&configuration, params).await?;
-    Ok(response)
+    let _response = get_offline_users(config, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

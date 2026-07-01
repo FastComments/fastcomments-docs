@@ -1,30 +1,25 @@
 ## パラメータ
 
-| 名前 | 型 | 必須 | 説明 |
+| 名前 | タイプ | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | はい |  |
-| id | string | はい |  |
-| fromName | string | はい |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| fromName | string | Yes |  |
 
 ## レスポンス
 
-戻り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
+返り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
 ## 例
 
 [inline-code-attrs-start title = 'sendInvite の例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t id = U("user@example.com");
-utility::string_t fromName = U("Acme Support");
-boost::optional<utility::string_t> note = boost::optional<utility::string_t>(U("Invitation to join comments"));
-api->sendInvite(tenantId, id, fromName)
-    .then([](pplx::task<std::shared_ptr<APIEmptyResponse>> t){
-        try {
-            auto resp = t.get();
-            auto finalResp = resp ? resp : std::make_shared<APIEmptyResponse>();
-            (void)finalResp;
-        } catch (const std::exception&) {
-        }
-    });
+boost::optional<utility::string_t> cc = utility::conversions::to_string_t("cc@example.com");
+api->sendInvite(
+    utility::conversions::to_string_t("my-tenant-123"),
+    utility::conversions::to_string_t("invitee@example.com"),
+    utility::conversions::to_string_t("John Doe")
+).then([](std::shared_ptr<APIEmptyResponse> resp) {
+    // 招待が成功した場合の処理
+});
 [inline-code-end]

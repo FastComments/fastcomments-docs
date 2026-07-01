@@ -1,14 +1,14 @@
 ## Параметри
 
-| Назва | Тип | Обов'язковий | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | Так |  |
-| comment_id | String | Ні |  |
-| external_id | String | Ні |  |
-| event_type | String | Ні |  |
-| domain | String | Ні |  |
-| attempt_count_gt | f64 | Ні |  |
-| skip | f64 | Ні |  |
+| tenant_id | String | Yes |  |
+| comment_id | String | No |  |
+| external_id | String | No |  |
+| event_type | String | No |  |
+| domain | String | No |  |
+| attempt_count_gt | f64 | No |  |
+| skip | f64 | No |  |
 
 ## Відповідь
 
@@ -16,21 +16,20 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад get_pending_webhook_events'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_pending_webhook_events Приклад'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<GetPendingWebhookEventsResponse, Error> {
-    let params: GetPendingWebhookEventsParams = GetPendingWebhookEventsParams {
+async fn demo() -> Result<(), Error> {
+    let params = GetPendingWebhookEventsParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        comment_id: Some("cmt_12345".to_string()),
-        external_id: Some("ext-98765".to_string()),
-        event_type: Some("comment.created".to_string()),
+        comment_id: Some("comment-123".to_string()),
+        external_id: Some("external-789".to_string()),
+        event_type: Some("comment_created".to_string()),
         domain: Some("news.example.com".to_string()),
-        attempt_count_gt: Some(2.0),
+        attempt_count_gt: Some(1.0),
         skip: Some(0.0),
     };
-    let response: GetPendingWebhookEventsResponse =
-        get_pending_webhook_events(&configuration, params).await?;
-    Ok(response)
+    let _response = get_pending_webhook_events(&config, params).await?;
+    Ok(())
 }
 [inline-code-end]
 

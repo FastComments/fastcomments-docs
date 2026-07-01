@@ -2,8 +2,8 @@
 
 | Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
-| value | string | Non |  |
-| sso | string | Non |  |
+| tenantId | string | Yes |  |
+| options | const GetSearchSitesOptions& | Yes |  |
 
 ## Réponse
 
@@ -11,16 +11,23 @@ Renvoie : [`ModerationSiteSearchResponse`](https://github.com/FastComments/fastc
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getSearchSites'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getSearchSites'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> valueOpt = boost::optional<utility::string_t>(U("my-tenant-123"));
-boost::optional<utility::string_t> ssoOpt = boost::optional<utility::string_t>(U("user@example.com"));
-api->getSearchSites(valueOpt, ssoOpt)
-    .then([](std::shared_ptr<ModerationSiteSearchResponse> resp){
-        auto response = resp ? resp : std::make_shared<ModerationSiteSearchResponse>();
-        (void)response;
-    })
-    .wait();
-[inline-code-end]
+auto tenantId = utility::string_t(U("my-tenant-123"));
+GetSearchSitesOptions options;
+options.query = boost::make_optional(utility::string_t(U("example query")));
+options.limit = boost::make_optional(25);
 
----
+api->getSearchSites(tenantId, options)
+   .then([](pplx::task<std::shared_ptr<ModerationSiteSearchResponse>> t) {
+       try {
+           auto response = t.get();
+           auto respPtr = std::make_shared<ModerationSiteSearchResponse>(*response);
+           for (const auto& site : respPtr->sites) {
+               // logique de traitement
+           }
+       } catch (const std::exception&) {
+           // gestion des erreurs
+       }
+   });
+[inline-code-end]

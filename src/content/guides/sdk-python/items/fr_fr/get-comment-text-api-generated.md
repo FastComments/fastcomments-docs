@@ -1,7 +1,7 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nom | Type | Emplacement | Obligatoire | Description |
+|------|------|--------------|-------------|-------------|
 | tenantId | string | path | Oui |  |
 | commentId | string | path | Oui |  |
 | editKey | string | query | Non |  |
@@ -9,19 +9,20 @@
 
 ## Réponse
 
-Renvoie: [`PublicAPIGetCommentTextResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/public_api_get_comment_text_response.py)
+Retourne : [`PublicAPIGetCommentTextResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/public_api_get_comment_text_response.py)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de get_comment_text'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple get_comment_text'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetCommentTextOptions
 from client.models.public_api_get_comment_text_response import PublicAPIGetCommentTextResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# La définition de l'hôte est optionnelle et a pour valeur par défaut https://fastcomments.com
-# Consultez configuration.py pour la liste de tous les paramètres de configuration pris en charge.
+# La définition de l'hôte est facultative et utilise https://fastcomments.com par défaut
+# Voir configuration.py pour la liste de tous les paramètres de configuration pris en charge.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -37,7 +38,7 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (optionnel)
 
     try:
-        api_response = api_instance.get_comment_text(tenant_id, comment_id, edit_key=edit_key, sso=sso)
+        api_response = api_instance.get_comment_text(tenant_id, comment_id, GetCommentTextOptions(edit_key=edit_key, sso=sso))
         print("The response of PublicApi->get_comment_text:\n")
         pprint(api_response)
     except Exception as e:

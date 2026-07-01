@@ -1,6 +1,6 @@
-## פרמטרים
+## Parameters
 
-| שם | סוג | נדרש | תיאור |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | page | number | לא |  |
 | count | number | לא |  |
@@ -10,25 +10,31 @@
 | searchFilters | string | לא |  |
 | sorts | string | לא |  |
 | demo | boolean | לא |  |
+| tenantId | string | לא |  |
 | sso | string | לא |  |
 
-## תגובה
+## Response
 
-מחזיר: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPIGetCommentsResponse.ts)
+מחזיר: [`GetApiCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetApiCommentsResponse.ts)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getApiComments'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getApiComments'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const page: number = 2;
-const count: number = 25;
-const textSearch: string = 'comments failing to load after posting';
-const filters: string = 'status:pending,moderation:required';
-const sorts: string = 'createdAt:desc';
-const demo: boolean = false;
-const sso: string = 'sso-usr-7f3b2a';
+async function loadComments() {
+  const fullResult: GetApiCommentsResponse = await getApiComments(
+    2,                     // עמוד
+    25,                    // כמות
+    "feedback",           // חיפוש טקסט
+    "192.168.1.100",      // כתובת IP מההערה
+    "approved",           // מסננים
+    "hasReplies",         // מסנני חיפוש
+    "dateDesc",           // מיון
+    false,                // הדגמה
+    "tenant-abc123",      // מזהה שוכר
+    "sso-token-xyz"       // SSO
+  );
 
-const response: ModerationAPIGetCommentsResponse = await getApiComments(page, count, textSearch, undefined, filters, undefined, sorts, demo, sso);
+  const minimalResult: GetApiCommentsResponse = await getApiComments(undefined, 5);
+}
 [inline-code-end]
-
----

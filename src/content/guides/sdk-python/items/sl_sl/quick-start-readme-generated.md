@@ -1,23 +1,23 @@
 ### Uporaba avtenticiranih API-jev (DefaultApi)
 
-**Pomembno:** Pred ustvarjanjem avtenticiranih zahtev morate nastaviti svoj API ključ v Configuration. Če tega ne storite, bodo zahtevki spodleteli z napako 401.
+**Pomembno:** Pred izvajanjem avtenticiranih zahtev morate nastaviti svoj API ključ v konfiguraciji. Če tega ne storite, bodo zahteve spodletelo z napako 401.
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
 from client.models import CreateAPISSOUserData
 
-# Ustvarite in konfigurirajte API odjemalca
+# Ustvari in konfiguriraj API odjemalca
 config = Configuration()
 config.host = "https://fastcomments.com/api"
 
-# OBVEZNO: Nastavite svoj API ključ (pridobite ga na nadzorni plošči FastComments)
+# OBVEZNO: Nastavite svoj API ključ (ga pridobite v nadzorni plošči FastComments)
 config.api_key = {"ApiKeyAuth": "YOUR_API_KEY_HERE"}
 
-# Ustvarite instanco API z konfiguriranim odjemalcem
+# Ustvari API primerek s konfiguriranim odjemalcem
 api_client = ApiClient(configuration=config)
 api = DefaultApi(api_client)
 
-# Zdaj lahko izvajate avtenticirane klice API-ja
+# Zdaj lahko izvajate avtenticirane API klice
 try:
     # Primer: Dodaj SSO uporabnika
     user_data = CreateAPISSOUserData(
@@ -26,22 +26,19 @@ try:
         display_name="John Doe"
     )
 
-    response = api.add_sso_user(
-        tenant_id="YOUR_TENANT_ID",
-        create_apisso_user_data=user_data
-    )
+    response = api.add_sso_user("YOUR_TENANT_ID", user_data)
     print(f"User created: {response}")
 
 except Exception as e:
     print(f"Error: {e}")
     # Pogoste napake:
     # - 401: API ključ manjka ali je neveljaven
-    # - 400: Validacija zahtevka ni uspela
+    # - 400: Preverjanje zahteve je spodletelo
 ```
 
 ### Uporaba javnih API-jev (PublicApi)
 
-Javni endpointi ne zahtevajo avtentikacije:
+Javni končni naslovi ne zahtevajo avtentikacije:
 
 ```python
 from client import ApiClient, Configuration, PublicApi
@@ -53,21 +50,19 @@ api_client = ApiClient(configuration=config)
 public_api = PublicApi(api_client)
 
 try:
-    response = public_api.get_comments_public(
-        tenant_id="YOUR_TENANT_ID",
-        url_id="page-url-id"
-    )
+    response = public_api.get_comments_public("YOUR_TENANT_ID", "page-url-id")
     print(response)
 except Exception as e:
     print(f"Error: {e}")
 ```
 
-### Uporaba nadzorne plošče moderacije (ModerationApi)
+### Uporaba nadzorne plošče za moderiranje (ModerationApi)
 
-The `ModerationApi` powers the moderator dashboard. Methods are called on behalf of a moderator by passing an `sso` token:
+`ModerationApi` poganja nadzorno ploščo moderatorjev. Metode se kličejo v imenu moderatorja z podajanjem `sso` žetona:
 
 ```python
 from client import ApiClient, Configuration, ModerationApi
+from client.api.moderation_api import GetCountOptions
 
 config = Configuration()
 config.host = "https://fastcomments.com/api"
@@ -76,21 +71,21 @@ api_client = ApiClient(configuration=config)
 moderation_api = ModerationApi(api_client)
 
 try:
-    # Preštejte komentarje, ki čakajo na moderacijo
-    response = moderation_api.get_count(sso="SSO_TOKEN")
+    # Šteje komentarje, ki čakajo na moderiranje
+    response = moderation_api.get_count(GetCountOptions(sso="SSO_TOKEN"))
     print(response)
 except Exception as e:
     print(f"Error: {e}")
 ```
 
-### Uporaba SSO (enotna prijava)
+### Uporaba SSO (Single Sign-On)
 
-SDK vsebuje pripomočke za ustvarjanje varnih SSO žetonov:
+SDK vključuje pripomočke za ustvarjanje varnih SSO žetonov:
 
 ```python
 from sso import FastCommentsSSO, SecureSSOUserData
 
-# Ustvarite podatke o uporabniku
+# Ustvari podatke uporabnika
 user_data = SecureSSOUserData(
     user_id="user-123",
     email="user@example.com",
@@ -98,16 +93,16 @@ user_data = SecureSSOUserData(
     avatar="https://example.com/avatar.jpg"
 )
 
-# Ustvarite SSO instanco z vašim API skrivnostjo
+# Ustvari SSO primerek z vašim API skrivnim ključem
 sso = FastCommentsSSO.new_secure(
     api_secret="YOUR_API_SECRET",
     user_data=user_data
 )
 
-# Generirajte SSO žeton
+# Ustvari SSO žeton
 sso_token = sso.create_token()
 
-# Ta žeton uporabite v frontend aplikaciji ali ga posredujte klicem API-ja
+# Uporabite ta žeton v vašem frontendu ali ga posredujte API zahtevam
 print(f"SSO Token: {sso_token}")
 ```
 
@@ -127,8 +122,8 @@ sso_token = sso.create_token()
 
 ### Pogoste težave
 
-1. **401 "missing-api-key" error**: Prepričajte se, da nastavite `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` pred ustvarjanjem instance DefaultApi.
-2. **Wrong API class**: Uporabite `DefaultApi` za strežniške avtenticirane zahteve, `PublicApi` za odjemalske/javne zahteve in `ModerationApi` za zahteve nadzorne plošče moderatorja.
-3. **Import errors**: Prepričajte se, da uvažate iz pravilnega modula:
-   - API client: `from client import ...`
-   - SSO utilities: `from sso import ...`
+1. **401 "missing-api-key" napaka**: Prepričajte se, da ste nastavili `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` pred ustvarjanjem `DefaultApi` primerka.
+2. **Napačen API razred**: Uporabite `DefaultApi` za strežniške avtenticirane zahteve, `PublicApi` za odjemalske/javne zahteve in `ModerationApi` za zahteve nadzorne plošče moderatorjev.
+3. **Napake pri uvozu**: Prepričajte se, da uvažate iz pravilnega modula:
+   - API odjemalec: `from client import ...`
+   - SSO pripomočki: `from sso import ...`

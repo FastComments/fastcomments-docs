@@ -1,11 +1,11 @@
 ## Параметри
 
-| Име | Тип | Местоположение | Задължително | Описание |
+| Име | Тип | Местоположение | Задължителен | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| notificationId | string | path | Да |  |
-| newStatus | string | path | Да |  |
-| sso | string | query | Не |  |
+| tenantId | string | query | Yes |  |
+| notificationId | string | path | Yes |  |
+| newStatus | string | path | Yes |  |
+| sso | string | query | No |  |
 
 ## Отговор
 
@@ -21,14 +21,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ако искате да използвате персонализиран HTTP клиент, предайте вашия клиент, който реализира `GuzzleHttp\ClientInterface`.
-    // Това е по избор; `GuzzleHttp\Client` ще бъде използван по подразбиране.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $notification_id = 'notification_id_example'; // string
 $new_status = 'new_status_example'; // string
 $sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->updateUserNotificationStatus($tenant_id, $notification_id, $new_status, $sso);

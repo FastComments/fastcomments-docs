@@ -1,27 +1,25 @@
----
-Massendaten-Benutzerinformationen für einen tenant. Gibt bei Angabe von userIds Anzeigeinformationen aus User / SSOUser zurück. Wird vom Kommentar-Widget verwendet, um Benutzer anzureichern, die gerade über ein presence event aufgetaucht sind. Kein Seitenkontext: Datenschutz wird einheitlich durchgesetzt (private Profile werden maskiert).
+Bulk-Benutzerinformationen für einen Mandanten. Angesichts von userIds wird Anzeiginformationen von User / SSOUser zurückgegeben.  
+Wird vom Kommentar‑Widget verwendet, um Benutzer, die gerade über ein Präsenzereignis erschienen sind, anzureichern.  
+Kein Seitenkontext: Datenschutz wird einheitlich durchgesetzt (private Profile werden maskiert).
 
-## Parameter
+## Parameters
 
-| Name | Typ | Erforderlich | Beschreibung |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | Ja |  |
-| ids | String | Ja |  |
+| tenant_id | String | Yes |  |
+| ids | String | Yes |  |
 
-## Antwort
+## Response
 
-Gibt zurück: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_info_response.rs)
+Returns: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_info_response.rs)
 
-## Beispiel
+## Example
 
 [inline-code-attrs-start title = 'get_users_info Beispiel'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: GetUsersInfoParams = GetUsersInfoParams {
+let params = GetUsersInfoParams {
     tenant_id: "acme-corp-tenant".to_string(),
-    ids: "alice@example.com,bob@example.com,carol@example.com".to_string(),
-    page_size: Some(100),
+    ids: "user-1,user-2".to_string(),
 };
-let users_response: PageUsersInfoResponse = get_users_info(&configuration, params).await?;
+let page: PageUsersInfoResponse = get_users_info(&configuration, params).await?;
 [inline-code-end]
-
----

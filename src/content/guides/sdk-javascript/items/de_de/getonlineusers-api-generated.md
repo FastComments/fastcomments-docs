@@ -1,10 +1,10 @@
-Derzeit online befindliche Betrachter einer Seite: Personen, deren websocket-Sitzung gerade auf die Seite abonniert ist.
-Gibt anonCount + totalCount zurück (raumweite Abonnenten, einschließlich anon-Betrachter, die wir nicht aufzählen).
+Currently-online viewers of a page: Personen, deren Websocket‑Sitzung gerade die Seite abonniert hat.  
+Returns anonCount + totalCount (room-wide subscribers, including anon viewers we don't enumerate).  
 
-## Parameter
+## Parameters
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Name | Typ | Erforderlich | Beschreibung |
+|------|-----|--------------|--------------|
 | tenantId | string | Ja |  |
 | urlId | string | Ja |  |
 | afterName | string | Nein |  |
@@ -12,17 +12,25 @@ Gibt anonCount + totalCount zurück (raumweite Abonnenten, einschließlich anon-
 
 ## Antwort
 
-Gibt zurück: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOnlineResponse.ts)
+Returns: [`GetOnlineUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOnlineUsersResponse.ts)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'Beispiel: getOnlineUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getOnlineUsers Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8f3c2b7';
-const urlId: string = 'article-2026-06-19-site-update';
-const afterName: string = 'michael.hansen';
-const afterUserId: string = 'user_00421';
-const onlineUsers: PageUsersOnlineResponse = await getOnlineUsers(tenantId, urlId, afterName, afterUserId);
-[inline-code-end]
+async function demoOnlineUsers() {
+  const tenantId: string = "tenant_12345";
+  const urlId: string = "url_98765";
 
----
+  // With optional pagination parameters
+  const pagedResult: GetOnlineUsersResponse = await getOnlineUsers(
+    tenantId,
+    urlId,
+    "alice_smith",
+    "user_9"
+  );
+
+  // Without optional pagination parameters
+  const fullResult: GetOnlineUsersResponse = await getOnlineUsers(tenantId, urlId);
+}
+[inline-code-end]

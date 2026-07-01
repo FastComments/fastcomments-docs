@@ -1,28 +1,25 @@
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| createHashTagBody | CreateHashTagBody | 否 |  |
+| tenantId | string | Yes |  |
+| createHashTagBody | CreateHashTagBody | No |  |
 
 ## 回應
 
-回傳: [`Option[CreateHashTagResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_hash_tag_response.nim)
+Returns: [`Option[CreateHashTagResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_hash_tag_response.nim)
 
 ## 範例
 
 [inline-code-attrs-start title = 'addHashTag 範例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.addHashTag(tenantId = "my-tenant-123",
-  createHashTagBody = CreateHashTagBody(name = "Breaking News",
-    slug = "breaking-news",
-    description = "Major breaking news items",
-    color = "#ff0000",
-    isTrending = true,
-    aliases = @["breaking", "news"]))
-if response.isSome:
-  let created = response.get()
-  echo created
+let (hashTagOpt, httpResp) = client.addHashTag(
+  tenantId = "my-tenant-123",
+  createHashTagBody = CreateHashTagBody(),
+)
+
+if hashTagOpt.isSome:
+  let tag = hashTagOpt.get()
 [inline-code-end]
 
 ---

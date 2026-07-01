@@ -1,39 +1,47 @@
 ## 매개변수
 
-| 이름 | 타입 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| commentId | string | 아니요 |  |
-| externalId | string | 아니요 |  |
-| eventType | string | 아니요 |  |
-| type | string | 아니요 |  |
-| domain | string | 아니요 |  |
-| attemptCountGT | number | 아니요 |  |
-| skip | number | 아니요 |  |
+| tenantId | string | Yes |  |
+| commentId | string | No |  |
+| externalId | string | No |  |
+| eventType | string | No |  |
+| type | string | No |  |
+| domain | string | No |  |
+| attemptCountGT | number | No |  |
+| skip | number | No |  |
 
 ## 응답
 
-반환: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPendingWebhookEventsResponse.ts)
+반환: [`GetPendingWebhookEventsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPendingWebhookEventsResponse1.ts)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'getPendingWebhookEvents 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getPendingWebhookEvents 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_a1b2c3';
-const commentId: string = 'cmt_9f8e7d';
-const eventType: string = 'comment.created';
-const domain: string = 'comments.acme-corp.com';
-const attemptCountGT: number = 2;
-const skip: number = 5;
+async function fetchPendingEvents(): Promise<void> {
+    const tenantId: string = "123e4567-e89b-12d3-a456-426614174000";
+    const commentId: string = "cmt-987654321";
+    const externalId: string = "ext-abc-123";
+    const eventType: string = "comment_created";
+    const type: string = "outbound";
+    const domain: string = "myblog.com";
+    const attemptCountGT: number = 3;
+    const skip: number = 0;
 
-const result: GetPendingWebhookEventsResponse = await getPendingWebhookEvents(
-  tenantId,
-  commentId,
-  undefined,
-  eventType,
-  undefined,
-  domain,
-  attemptCountGT,
-  skip
-);
+    const pending: GetPendingWebhookEventsResponse1 = await getPendingWebhookEvents(
+        tenantId,
+        commentId,
+        externalId,
+        eventType,
+        type,
+        domain,
+        attemptCountGT,
+        skip
+    );
+
+    console.log(pending);
+}
+
+fetchPendingEvents();
 [inline-code-end]

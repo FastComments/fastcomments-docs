@@ -1,14 +1,30 @@
 画像をアップロードしてリサイズする
 
-## パラメータ
+## Parameters
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenant_id | String | はい |  |
-| file | std::path::PathBuf | はい |  |
-| size_preset | models::SizePreset | いいえ |  |
-| url_id | String | いいえ |  |
+| tenant_id | String | Yes |  |
+| file | std::path::PathBuf | Yes |  |
+| size_preset | models::SizePreset | No |  |
+| url_id | String | No |  |
 
-## レスポンス
+## Response
 
-戻り値: [`UploadImageResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/upload_image_response.rs)
+返却: [`UploadImageResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/upload_image_response.rs)
+
+## Example
+
+[inline-code-attrs-start title = 'upload_image の例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+async fn example() -> Result<(), Error> {
+    let params = UploadImageParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        file: std::path::PathBuf::from("/tmp/photo.jpg"),
+        size_preset: Some(models::SizePreset::Medium),
+        url_id: Some("news/article".to_string()),
+    };
+    let _response = upload_image(&configuration, params).await?;
+    Ok(())
+}
+[inline-code-end]

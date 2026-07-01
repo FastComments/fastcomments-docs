@@ -1,13 +1,12 @@
----
 ## Parameters
 
-| Naam | Type | Locatie | Verplicht | Beschrijving |
+| Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Nee |  |
+| tenantId | string | query | Ja |  |
 
-## Antwoord
+## Respons
 
-Geeft terug: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_hash_tag_response.go)
+Returns: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_hash_tag_response.go)
 
 ## Voorbeeld
 
@@ -23,19 +22,17 @@ import (
 )
 
 func main() {
-	tenantId := "tenantId_example" // string |  (optioneel)
-	createHashTagBody := *openapiclient.NewCreateHashTagBody("Tag_example") // CreateHashTagBody |  (optioneel)
+	tenantId := "tenantId_example" // string | 
+	createHashTagBody := *openapiclient.NewCreateHashTagBody("Tag_example") // CreateHashTagBody | (optioneel)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 	resp, r, err := apiClient.DefaultAPI.AddHashTag(context.Background()).TenantId(tenantId).CreateHashTagBody(createHashTagBody).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.AddHashTag``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Fout bij het aanroepen van `DefaultAPI.AddHashTag``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Volledige HTTP-respons: %v\n", r)
 	}
-	// antwoord van `AddHashTag`: CreateHashTagResponse
-	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.AddHashTag`: %v\n", resp)
+	// respons van `AddHashTag`: CreateHashTagResponse
+	fmt.Fprintf(os.Stdout, "Respons van `DefaultAPI.AddHashTag`: %v\n", resp)
 }
 [inline-code-end]
-
----

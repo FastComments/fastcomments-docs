@@ -2,7 +2,7 @@
 
 | Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ne |  |
+| tenantId | string | query | Da |  |
 
 ## Odgovor
 
@@ -22,7 +22,7 @@ import (
 )
 
 func main() {
-	tenantId := "tenantId_example" // string |  (neobvezno)
+	tenantId := "tenantId_example" // string | 
 	createHashTagBody := *openapiclient.NewCreateHashTagBody("Tag_example") // CreateHashTagBody |  (neobvezno)
 
 	configuration := openapiclient.NewConfiguration()

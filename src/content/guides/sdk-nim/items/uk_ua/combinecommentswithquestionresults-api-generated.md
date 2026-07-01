@@ -1,16 +1,9 @@
 ## Параметри
 
-| Назва | Type | Обов'язково | Опис |
+| Назва | Тип | Обов’язковий | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| questionId | string | Ні |  |
-| questionIds | seq[string] | Ні |  |
-| urlId | string | Так |  |
-| startDate | string | Ні |  |
-| forceRecalculate | bool | Ні |  |
-| minValue | float64 | Ні |  |
-| maxValue | float64 | Ні |  |
-| limit | float64 | Ні |  |
+| tenantId | string | Yes |  |
+| options | CombineCommentsWithQuestionResultsOptions | No |  |
 
 ## Відповідь
 
@@ -18,25 +11,13 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад combineCommentsWithQuestionResults'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'combineCommentsWithQuestionResults Приклад'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.combineCommentsWithQuestionResults(
+let (combineOpt, httpResponse) = client.combineCommentsWithQuestionResults(
   tenantId = "my-tenant-123",
-  questionId = "",
-  questionIds = @[],
-  urlId = "news/article-2026-climate-change",
-  startDate = "",
-  forceRecalculate = false,
-  minValue = 0.0,
-  maxValue = 0.0,
-  limit = 0.0
+  options = default(CombineCommentsWithQuestionResultsOptions)
 )
 
-if response.isSome:
-  let combined = response.get()
-  echo "Combined results received for tenant:", " my-tenant-123"
-else:
-  echo "No combined results returned"
+if combineOpt.isSome:
+  let combineResult = combineOpt.get()
 [inline-code-end]
-
----

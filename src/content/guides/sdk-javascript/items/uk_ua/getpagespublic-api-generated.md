@@ -1,33 +1,41 @@
----
-Перелічує сторінки для орендаря. Використовується настільним клієнтом FChat для заповнення списку кімнат.
-Потребує, щоб `enableFChat` було встановлено в true у вирішеній користувацькій конфігурації для кожної сторінки.
-Сторінки, що вимагають SSO, фільтруються відповідно до групового доступу користувача, що робить запит.
+Список сторінок для орендаря. Використовується клієнтом FChat для настільних комп’ютерів для заповнення списку кімнат. Потрібно, щоб `enableFChat` було встановлено в **true** у розвʼязаній кастомній конфігурації для кожної сторінки. Сторінки, які вимагають SSO, фільтруються згідно з груповим доступом запитуючого користувача.
 
-## Parameters
+## Параметри
 
-| Name | Type | Required | Description |
+| Назва | Тип | Обов’язково | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| cursor | string | Ні |  |
-| limit | number | Ні |  |
-| q | string | Ні |  |
-| sortBy | PagesSortBy | Ні |  |
-| hasComments | boolean | Ні |  |
+| tenantId | string | Yes |  |
+| cursor | string | No |  |
+| limit | number | No |  |
+| q | string | No |  |
+| sortBy | PagesSortBy | No |  |
+| hasComments | boolean | No |  |
 
-## Response
+## Відповідь
 
-Повертає: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPublicPagesResponse.ts)
+Повертає: [`GetPagesPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPagesPublicResponse.ts)
 
-## Example
+## Приклад
 
-[inline-code-attrs-start title = 'Приклад getPagesPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getPagesPublic Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_7f9b2c";
-const cursor: string = "cursor_0001a2b3";
-const limit: number = 25;
-const q: string = "product page";
-const hasComments: boolean = true;
-const response: GetPublicPagesResponse = await getPagesPublic(tenantId, cursor, limit, q, undefined, hasComments);
-[inline-code-end]
+async function fetchPages() {
+  const tenantId: string = "tenant_12345";
+  const cursor: string = "nextPageToken";
+  const limit: number = 20;
+  const q: string = "blog";
+  const sortBy: PagesSortBy = "createdAt";
+  const hasComments: boolean = true;
 
----
+  const response: GetPagesPublicResponse = await getPagesPublic(
+    tenantId,
+    cursor,
+    limit,
+    q,
+    sortBy,
+    hasComments
+  );
+
+  console.log(response);
+}
+[inline-code-end]

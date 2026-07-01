@@ -1,7 +1,8 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательный | Описание |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
 | page | number | query | Нет |  |
 | count | number | query | Нет |  |
 | text-search | string | query | Нет |  |
@@ -18,24 +19,26 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример get_api_comments'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_api_comments Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetApiCommentsOptions
 from client.models.moderation_api_get_comments_response import ModerationAPIGetCommentsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Указание host необязательно; по умолчанию https://fastcomments.com
+# Определение хоста является необязательным и по умолчанию https://fastcomments.com
 # См. configuration.py для списка всех поддерживаемых параметров конфигурации.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Открываем контекст с экземпляром API-клиента
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Создаём экземпляр класса API
+    # Создать экземпляр класса API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     page = 3.4 # float |  (необязательно)
     count = 3.4 # float |  (необязательно)
     text_search = 'text_search_example' # str |  (необязательно)
@@ -47,7 +50,7 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (необязательно)
 
     try:
-        api_response = api_instance.get_api_comments(page=page, count=count, text_search=text_search, by_ip_from_comment=by_ip_from_comment, filters=filters, search_filters=search_filters, sorts=sorts, demo=demo, sso=sso)
+        api_response = api_instance.get_api_comments(tenant_id, GetApiCommentsOptions(page=page, count=count, text_search=text_search, by_ip_from_comment=by_ip_from_comment, filters=filters, search_filters=search_filters, sorts=sorts, demo=demo, sso=sso))
         print("The response of ModerationApi->get_api_comments:\n")
         pprint(api_response)
     except Exception as e:

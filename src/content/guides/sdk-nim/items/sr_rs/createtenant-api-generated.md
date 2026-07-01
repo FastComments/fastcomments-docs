@@ -1,33 +1,21 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Ime | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| createTenantBody | CreateTenantBody | Не |  |
+| tenantId | string | Da |  |
+| createTenantBody | CreateTenantBody | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[CreateTenantResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_tenant_response.nim)
+Vraća: [`Option[CreateTenantResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_tenant_response.nim)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример createTenant'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createTenant Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.createTenant(
-  tenantId = "my-tenant-123",
-  createTenantBody = CreateTenantBody(
-    name = "My Tenant 123",
-    domain = "news.example.com",
-    allowAnonymous = false,
-    allowedOrigins = @["https://news.example.com", "https://api.news.example.com"],
-    description = "Comments for News Example"
-  )
-)
-if response.isSome:
-  let created = response.get()
-  echo "Created tenant: ", created.tenantId
-else:
-  echo "Failed to create tenant, status: ", httpResponse.status
+let (maybeResp, httpResp) = client.createTenant(tenantId = "my-tenant-123", createTenantBody = CreateTenantBody())
+if maybeResp.isSome:
+  let resp = maybeResp.get()
+  discard resp
+discard httpResp
 [inline-code-end]
-
----

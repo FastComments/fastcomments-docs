@@ -1,31 +1,31 @@
 ## Parametri
 
-| Ime | Tip | Zahtevano | Opis |
+| Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | createTenantPackageBody | CreateTenantPackageBody | Da |  |
 
-## Odziv
+## Odgovor
 
-Vrača: [`CreateTenantPackageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantPackageResponse.ts)
+Vrne: [`CreateTenantPackageResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantPackageResponse1.ts)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer createTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createTenantPackage Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function run(): Promise<void> {
-  const tenantId: string = 'tenant_acme_01';
-  const createTenantPackageBody: CreateTenantPackageBody = {
-    packageName: 'Pro Annual',
-    seats: 100,
-    billingCycle: 'annual',
-    autoRenew: true,
-    metadata: { region: 'us-west-2' } // neobvezno polje metapodatkov
+(async () => {
+  const tenantId: string = "tenant-9876";
+
+  const body: CreateTenantPackageBody = {
+    packageName: "Standard",
+    quota: 5000,
+    // neobvezno polje
+    description: "Standard package for medium traffic",
   };
-  const result: CreateTenantPackageResponse = await createTenantPackage(tenantId, createTenantPackageBody);
+
+  const result: CreateTenantPackageResponse1 = await createTenantPackage(tenantId, body);
   console.log(result);
-}
-run();
+})();
 [inline-code-end]
 
 ---

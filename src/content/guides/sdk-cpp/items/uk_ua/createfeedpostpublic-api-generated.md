@@ -1,11 +1,10 @@
 ## Параметри
 
-| Name | Type | Обов'язково | Опис |
+| Назва | Тип | Обов'язковий | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| createFeedPostParams | CreateFeedPostParams | Так |  |
-| broadcastId | string | Ні |  |
-| sso | string | Ні |  |
+| tenantId | string | Yes |  |
+| createFeedPostParams | CreateFeedPostParams | Yes |  |
+| options | const CreateFeedPostPublicOptions& | Yes |  |
 
 ## Відповідь
 
@@ -13,23 +12,22 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад createFeedPostPublic'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createFeedPostPublic Приклад'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-auto params = std::make_shared<CreateFeedPostParams>();
-params->title = U("New feature release");
-params->content = U("We launched the new comment moderation feature today.");
-params->authorEmail = U("alice@example.com");
-boost::optional<utility::string_t> broadcastId = boost::optional<utility::string_t>(U("broadcast-456"));
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("alice@example.com"));
-api->createFeedPostPublic(tenantId, *params, broadcastId, sso)
-.then([](pplx::task<std::shared_ptr<CreateFeedPostResponse>> t){
-    try {
-        auto resp = t.get();
+
+CreateFeedPostParams params;
+params.title = U("Introducing Our New Feature");
+params.content = U("We are excited to announce the release of our latest update.");
+params.authorEmail = boost::optional<utility::string_t>(U("user@example.com"));
+params.tags = boost::optional<std::vector<utility::string_t>>({U("announcement"), U("release")});
+
+CreateFeedPostPublicOptions options;
+
+api->createFeedPostPublic(tenantId, params, options)
+    .then([](std::shared_ptr<CreateFeedPostResponse> resp) {
         if (resp) {
-            utility::string_t postId = resp->postId;
+            std::wcout << U("Post created with ID: ") << resp->postId << std::endl;
         }
-    } catch (const std::exception&) {
-    }
-});
+    });
 [inline-code-end]

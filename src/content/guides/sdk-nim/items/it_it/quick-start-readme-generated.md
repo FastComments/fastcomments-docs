@@ -1,6 +1,6 @@
-### Utilizzo delle API autenticate (DefaultAPI)
+### Utilizzo delle API Autenticate (DefaultAPI)
 
-**Importante:** Gli endpoint autenticati richiedono che la tua chiave API sia impostata nell'header `x-api-key`.
+**Importante:** Gli endpoint autenticati richiedono che la tua chiave API sia impostata come intestazione `x-api-key`.
 
 ```nim
 import httpclient
@@ -11,24 +11,16 @@ import fastcomments/models/model_comment_data
 let client = newHttpClient()
 client.headers["x-api-key"] = "your-api-key"
 
-# Effettua chiamate API autenticate
+# Effettua chiamate API autenticate.
+# I parametri richiesti (e il corpo della richiesta) sono posizionali; i parametri opzionali
+# sono passati tramite l'oggetto options dell'operazione.
 let (response, httpResponse) = getComments(
   httpClient = client,
   tenantId = "your-tenant-id",
-  page = 0,
-  limit = 0,
-  skip = 0,
-  asTree = false,
-  skipChildren = 0,
-  limitChildren = 0,
-  maxTreeDepth = 0,
-  urlId = "your-url-id",
-  userId = "",
-  anonUserId = "",
-  contextUserId = "",
-  hashTag = "",
-  parentId = "",
-  direction = SortDirections.DESC
+  options = GetCommentsOptions(
+    urlId: "your-url-id",
+    direction: SortDirections.DESC
+  )
 )
 
 if response.isSome:
@@ -37,7 +29,7 @@ if response.isSome:
     echo "Found ", resp.comments.get().len, " comments"
 ```
 
-### Utilizzo delle API pubbliche (PublicAPI)
+### Utilizzo delle API Pubbliche (PublicAPI)
 
 Gli endpoint pubblici non richiedono autenticazione:
 
@@ -48,37 +40,15 @@ import fastcomments/apis/api_public
 
 let client = newHttpClient()
 
-# Effettua chiamate API pubbliche
+# Effettua chiamate API pubbliche.
+# tenantId e urlId sono obbligatori (posizionali); tutto il resto è opzionale.
 let (response, httpResponse) = getCommentsPublic(
   httpClient = client,
   tenantId = "your-tenant-id",
   urlId = "your-url-id",
-  page = 0,
-  direction = SortDirections.DESC,
-  sso = "",
-  skip = 0,
-  skipChildren = 0,
-  limit = 0,
-  limitChildren = 0,
-  countChildren = false,
-  fetchPageForCommentId = "",
-  includeConfig = false,
-  countAll = false,
-  includei10n = false,
-  locale = "",
-  modules = "",
-  isCrawler = false,
-  includeNotificationCount = false,
-  asTree = false,
-  maxTreeDepth = 0,
-  useFullTranslationIds = false,
-  parentId = "",
-  searchText = "",
-  hashTags = @[],
-  userId = "",
-  customConfigStr = "",
-  afterCommentId = "",
-  beforeCommentId = ""
+  options = GetCommentsPublicOptions(
+    direction: SortDirections.DESC
+  )
 )
 
 if response.isSome:
@@ -87,9 +57,9 @@ if response.isSome:
     echo "Found ", resp.comments.get().len, " comments"
 ```
 
-### Utilizzo delle API di moderazione (ModerationAPI)
+### Utilizzo delle API di Moderazione (ModerationAPI)
 
-Gli endpoint di moderazione alimentano la dashboard dei moderatori e sono autenticati con un token SSO per il moderatore che agisce:
+Gli endpoint di moderazione alimentano la dashboard del moderatore e sono autenticati con un token SSO per il moderatore attivo:
 
 ```nim
 import httpclient
@@ -98,18 +68,15 @@ import fastcomments/apis/api_moderation
 
 let client = newHttpClient()
 
-# Elenca i commenti nella dashboard di moderazione
+# Elenca i commenti nella dashboard di moderazione.
+# Questa operazione non ha parametri richiesti, quindi tutto è opzionale.
 let (response, httpResponse) = getApiComments(
   httpClient = client,
-  page = 0,
-  count = 30,
-  textSearch = "",
-  byIPFromComment = "",
-  filters = "",
-  searchFilters = "",
-  sorts = "",
-  demo = false,
-  sso = "your-sso-token"
+  options = GetApiCommentsOptions(
+    count: 30,
+    tenantId: "your-tenant-id",
+    sso: "your-sso-token"
+  )
 )
 
 if response.isSome:
@@ -119,5 +86,5 @@ if response.isSome:
 
 ### Problemi comuni
 
-1. **401 authentication error**: Assicurati di impostare l'header `x-api-key` sul tuo HttpClient prima di effettuare richieste a DefaultAPI: `client.headers["x-api-key"] = "your-api-key"`
-2. **Wrong API class**: Usa `api_default` per le richieste autenticate lato server, `api_public` per le richieste lato client/pubbliche e `api_moderation` per le richieste della dashboard dei moderatori.
+1. **Errore di autenticazione 401**: Assicurati di impostare l'intestazione `x-api-key` sul tuo HttpClient prima di effettuare richieste DefaultAPI: `client.headers["x-api-key"] = "your-api-key"`
+2. **Classe API errata**: Usa `api_default` per richieste autenticate lato server, `api_public` per richieste lato client/pubbliche, e `api_moderation` per richieste della dashboard del moderatore.

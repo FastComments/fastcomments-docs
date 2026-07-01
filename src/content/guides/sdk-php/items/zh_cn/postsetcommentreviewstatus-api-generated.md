@@ -1,9 +1,11 @@
 ## 参数
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| 名称 | 类型 | 位置 | 必填 | 描述 |
+|------|------|----------|------|-----|
+| tenantId | string | query | 是 |  |
 | commentId | string | path | 是 |  |
 | reviewed | boolean | query | 否 |  |
+| broadcastId | string | query | 否 |  |
 | sso | string | query | 否 |  |
 
 ## 响应
@@ -21,15 +23,21 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
     // 如果您想使用自定义 HTTP 客户端，请传入实现 `GuzzleHttp\ClientInterface` 的客户端。
-    // 这是可选的，默认将使用 `GuzzleHttp\Client`。
+    // 这是可选的，默认使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client()
 );
-$comment_id = 'comment_id_example'; // 字符串
-$reviewed = True; // 布尔
-$sso = 'sso_example'; // 字符串
+
+$tenant_id = 'tenant_id_example'; // string
+$comment_id = 'comment_id_example'; // string
+$options = [
+    'reviewed' => True, // bool
+    'broadcast_id' => 'broadcast_id_example', // string
+    'sso' => 'sso_example', // string
+];
+
 
 try {
-    $result = $apiInstance->postSetCommentReviewStatus($comment_id, $reviewed, $sso);
+    $result = $apiInstance->postSetCommentReviewStatus($tenant_id, $comment_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->postSetCommentReviewStatus: ', $e->getMessage(), PHP_EOL;

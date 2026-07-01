@@ -13,41 +13,42 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за delete_tenant_user'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_tenant_user Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import DeleteTenantUserOptions
 from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Задаването на host е незадължително и по подразбиране е https://fastcomments.com
-# Вижте configuration.py за списък с всички поддържани параметри за конфигурация.
+# Определянето на хоста е по избор и по подразбиране е https://fastcomments.com
+# Вижте configuration.py за списък на всички поддържани конфигурационни параметри.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клиентът трябва да конфигурира параметрите за удостоверяване и упълномощаване
-# в съответствие с политиката за сигурност на API сървъра.
-# По-долу са дадени примери за всеки метод за удостоверяване, използвайте примера, който
+# Клиентът трябва да конфигурира параметрите за удостоверяване и оторизация
+# съгласно политиката за сигурност на API сървъра.
+# Примери за всеки метод на удостоверяване са предоставени по-долу, използвайте примера, който
 # отговаря на вашия случай на използване.
 
-# Configure API key authorization: api_key
+# Конфигурирайте авторизация с API ключ: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Премахнете коментара от долния ред, за да зададете префикс (например Bearer) за API ключа, ако е необходимо
+# Разкоментирайте по-долу, за да настроите префикс (например Bearer) за API ключа, ако е необходимо
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Влезте в контекст с инстанция на API клиента
+# Въведете контекст с инстанция на API клиентa
 with client.ApiClient(configuration) as api_client:
-    # Създайте инстанция на класа API
+    # Създайте инстанция на API класа
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
-    delete_comments = 'delete_comments_example' # str |  (незадължително)
-    comment_delete_mode = 'comment_delete_mode_example' # str |  (незадължително)
+    delete_comments = 'delete_comments_example' # str |  (optional)
+    comment_delete_mode = 'comment_delete_mode_example' # str |  (optional)
 
     try:
-        api_response = api_instance.delete_tenant_user(tenant_id, id, delete_comments=delete_comments, comment_delete_mode=comment_delete_mode)
+        api_response = api_instance.delete_tenant_user(tenant_id, id, DeleteTenantUserOptions(delete_comments=delete_comments, comment_delete_mode=comment_delete_mode))
         print("The response of DefaultApi->delete_tenant_user:\n")
         pprint(api_response)
     except Exception as e:

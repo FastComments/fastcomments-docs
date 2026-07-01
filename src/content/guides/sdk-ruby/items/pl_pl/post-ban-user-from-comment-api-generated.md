@@ -1,17 +1,18 @@
 ## Parametry
 
-| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Tak |  |
-| banEmail | boolean | query | Nie |  |
-| banEmailDomain | boolean | query | Nie |  |
-| banIP | boolean | query | Nie |  |
-| deleteAllUsersComments | boolean | query | Nie |  |
-| bannedUntil | string | query | Nie |  |
-| isShadowBan | boolean | query | Nie |  |
-| updateId | string | query | Nie |  |
-| banReason | string | query | Nie |  |
-| sso | string | query | Nie |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| banEmail | boolean | query | No |  |
+| banEmailDomain | boolean | query | No |  |
+| banIP | boolean | query | No |  |
+| deleteAllUsersComments | boolean | query | No |  |
+| bannedUntil | string | query | No |  |
+| isShadowBan | boolean | query | No |  |
+| updateId | string | query | No |  |
+| banReason | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Odpowiedź
 
@@ -19,28 +20,29 @@ Zwraca: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomment
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład post_ban_user_from_comment'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_ban_user_from_comment Przykład'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
-comment_id = 'comment_id_example' # Ciąg znaków | 
+tenant_id = 'tenant_id_example' # String | 
+comment_id = 'comment_id_example' # String | 
 opts = {
-  ban_email: true, # Wartość logiczna | 
-  ban_email_domain: true, # Wartość logiczna | 
-  ban_ip: true, # Wartość logiczna | 
-  delete_all_users_comments: true, # Wartość logiczna | 
-  banned_until: 'banned_until_example', # Ciąg znaków | 
-  is_shadow_ban: true, # Wartość logiczna | 
-  update_id: 'update_id_example', # Ciąg znaków | 
-  ban_reason: 'ban_reason_example', # Ciąg znaków | 
-  sso: 'sso_example' # Ciąg znaków | 
+  ban_email: true, # Boolean | 
+  ban_email_domain: true, # Boolean | 
+  ban_ip: true, # Boolean | 
+  delete_all_users_comments: true, # Boolean | 
+  banned_until: 'banned_until_example', # String | 
+  is_shadow_ban: true, # Boolean | 
+  update_id: 'update_id_example', # String | 
+  ban_reason: 'ban_reason_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.post_ban_user_from_comment(comment_id, opts)
+  result = api_instance.post_ban_user_from_comment(tenant_id, comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_ban_user_from_comment: #{e}"

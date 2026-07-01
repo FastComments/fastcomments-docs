@@ -1,10 +1,12 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язкове | Опис |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Так |  |
-| reviewed | boolean | query | Ні |  |
-| sso | string | query | Ні |  |
+| Ім'я | Тип | Розташування | Обов’язково | Опис |
+|------|------|--------------|-------------|------|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| reviewed | boolean | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Відповідь
 
@@ -12,23 +14,25 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад post_set_comment_review_status'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_set_comment_review_status Приклад'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
-comment_id = 'comment_id_example' # String | 
+tenant_id = 'tenant_id_example' # Рядок | 
+comment_id = 'comment_id_example' # Рядок | 
 opts = {
-  reviewed: true, # Boolean | 
-  sso: 'sso_example' # String | 
+  reviewed: true, # Булевий | 
+  broadcast_id: 'broadcast_id_example', # Рядок | 
+  sso: 'sso_example' # Рядок | 
 }
 
 begin
   
-  result = api_instance.post_set_comment_review_status(comment_id, opts)
+  result = api_instance.post_set_comment_review_status(tenant_id, comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
-  puts "Error when calling ModerationApi->post_set_comment_review_status: #{e}"
+  puts "Помилка під час виклику ModerationApi->post_set_comment_review_status: #{e}"
 end
 [inline-code-end]

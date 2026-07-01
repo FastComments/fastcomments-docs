@@ -2,8 +2,8 @@
 
 | Nombre | Tipo | Requerido | Descripción |
 |------|------|----------|-------------|
+| tenant_id | String | Sí |  |
 | tag | String | Sí |  |
-| tenant_id | String | No |  |
 | update_hash_tag_body | models::UpdateHashTagBody | No |  |
 
 ## Respuesta
@@ -12,14 +12,17 @@ Devuelve: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de patch_hash_tag'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'patch_hash_tag Ejemplo'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let cfg: &configuration::Configuration = &configuration;
-let body: models::UpdateHashTagBody = Default::default();
-let params: PatchHashTagParams = PatchHashTagParams {
-    tag: "news/article".to_string(),
-    tenant_id: Some("acme-corp-tenant".to_string()),
-    update_hash_tag_body: Some(body),
-};
-let response: UpdateHashTagResponse = patch_hash_tag(cfg, params).await?;
+async fn example() -> Result<(), Error> {
+    let params = PatchHashTagParams {
+        tenant_id: "acme-corp-tenant".into(),
+        tag: "news/article".into(),
+        update_hash_tag_body: Some(models::UpdateHashTagBody::default()),
+    };
+    let _response = patch_hash_tag(&configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]
+
+---

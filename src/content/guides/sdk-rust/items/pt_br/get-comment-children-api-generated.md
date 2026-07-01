@@ -1,8 +1,8 @@
----
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|----------|-------------|
+|------|------|-------------|-----------|
+| tenant_id | String | Sim |  |
 | comment_id | String | Sim |  |
 | sso | String | Não |  |
 
@@ -12,15 +12,16 @@ Retorna: [`ModerationApiChildCommentsResponse`](https://github.com/FastComments/
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de get_comment_children'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo get_comment_children'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_children() -> Result<ModerationApiChildCommentsResponse, Error> {
-    let params: GetCommentChildrenParams = GetCommentChildrenParams {
-        comment_id: "news/article-2026-06-19-cmt-42".to_string(),
-        sso: Some("sso-token-user-8f3d2a".to_string()),
+async fn fetch_children(config: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetCommentChildrenParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: "news/article/comment-9876".to_string(),
+        sso: Some("user-42".to_string()),
     };
-    let children: ModerationApiChildCommentsResponse = get_comment_children(&configuration, params).await?;
-    Ok(children)
+    let _response: ModerationApiChildCommentsResponse = get_comment_children(config, params).await?;
+    Ok(())
 }
 [inline-code-end]
 

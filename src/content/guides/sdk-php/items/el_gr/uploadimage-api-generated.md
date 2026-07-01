@@ -1,12 +1,13 @@
-Μεταφόρτωση και αλλαγή μεγέθους εικόνας
+Upload and resize an image
+============================
 
 ## Παράμετροι
 
-| Όνομα | Τύπος | Θέση | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Ναι |  |
-| sizePreset | string | query | Όχι | Προεπιλογή μεγέθους: "Default" (1000x1000px) ή "CrossPlatform" (δημιουργεί μεγέθη για δημοφιλείς συσκευές) |
-| urlId | string | query | Όχι | Αναγνωριστικό σελίδας από όπου γίνεται το ανέβασμα, για διαμόρφωση |
+| tenantId | string | path | Yes |  |
+| sizePreset | string | query | No | Πρότυπο μεγέθους: \"Default\" (1000x1000px) ή \"CrossPlatform\" (δημιουργεί μεγέθη για δημοφιλείς συσκευές) |
+| urlId | string | query | No | Αναγνωριστικό σελίδας από το οποίο γίνεται το ανέβασμα, για διαμόρφωση |
 
 ## Απόκριση
 
@@ -14,25 +15,29 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα uploadImage'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'uploadImage Παράδειγμα'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new FastComments\Client\Api\PublicApi(
-    // Εάν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε τον client σας που υλοποιεί το `GuzzleHttp\ClientInterface`.
-    // Αυτό είναι προαιρετικό, ο `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
+// $apiInstance = new FastComments\Client\Api\PublicApi(
+    // Αν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε τον client σας που υλοποιεί `GuzzleHttp\ClientInterface`.
+    // Αυτό είναι προαιρετικό, το `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $file = '/path/to/file.txt'; // \SplFileObject
-$size_preset = new \FastComments\Client\Model\\FastComments\Client\Model\SizePreset(); // \FastComments\Client\Model\SizePreset | Προεπιλογή μεγέθους: \"Default\" (1000x1000px) ή \"CrossPlatform\" (δημιουργεί μεγέθη για δημοφιλείς συσκευές)
-$url_id = 'url_id_example'; // string | Αναγνωριστικό σελίδας από όπου γίνεται το ανέβασμα, για διαμόρφωση
+$options = [
+    'size_preset' => new \FastComments\Client\Model\\FastComments\Client\Model\SizePreset(), // \FastComments\Client\Model\SizePreset | Πρότυπο μεγέθους: \"Default\" (1000x1000px) ή \"CrossPlatform\" (δημιουργεί μεγέθη για δημοφιλείς συσκευές)
+    'url_id' => 'url_id_example', // string | Αναγνωριστικό σελίδας από το οποίο γίνεται το ανέβασμα, για διαμόρφωση
+];
+
 
 try {
-    $result = $apiInstance->uploadImage($tenant_id, $file, $size_preset, $url_id);
+    $result = $apiInstance->uploadImage($tenant_id, $file, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->uploadImage: ', $e->getMessage(), PHP_EOL;

@@ -1,9 +1,10 @@
 ## Parametry
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| commentId | string | Yes |  |
-| sso | string | No |  |
+| Nazwa | Typ | Wymagane | Opis |
+|------|------|----------|------|
+| tenantId | string | Tak |  |
+| commentId | string | Tak |  |
+| sso | string = "" | Nie |  |
 
 ## Odpowiedź
 
@@ -11,14 +12,15 @@ Zwraca: [`Option[GetCommentTextResponse]`](https://github.com/FastComments/fastc
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład getModerationCommentText'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getModerationCommentText Przykład'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getModerationCommentText(commentId = "comment-9f8b7a6c", sso = "")
-if response.isSome:
-  let commentData = response.get()
-  echo "Moderation comment text retrieved"
-else:
-  echo "No moderation comment text available"
-[inline-code-end]
+let (optResp, httpResp) = client.getModerationCommentText(
+  tenantId = "my-tenant-123",
+  commentId = "comment-456abc",
+  sso = ""
+)
 
----
+if optResp.isSome:
+  let resp = optResp.get()
+  echo resp
+[inline-code-end]

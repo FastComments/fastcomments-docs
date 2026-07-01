@@ -1,12 +1,12 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | はい |  |
-| isLive | boolean | query | いいえ |  |
-| doSpamCheck | boolean | query | いいえ |  |
-| sendEmails | boolean | query | いいえ |  |
-| populateNotifications | boolean | query | いいえ |  |
+| tenantId | string | query | Yes |  |
+| isLive | boolean | query | No |  |
+| doSpamCheck | boolean | query | No |  |
+| sendEmails | boolean | query | No |  |
+| populateNotifications | boolean | query | No |  |
 
 ## レスポンス
 
@@ -17,38 +17,38 @@
 [inline-code-attrs-start title = 'save_comment の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import SaveCommentOptions
 from client.models.api_save_comment_response import APISaveCommentResponse
 from client.models.create_comment_params import CreateCommentParams
 from client.rest import ApiException
 from pprint import pprint
 
-# ホストの定義は任意で、デフォルトは https://fastcomments.com です
-# サポートされているすべての構成パラメータの一覧は configuration.py を参照してください。
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
+# ホストの定義はオプションで、デフォルトは https://fastcomments.com です
+# configuration.py を参照して、サポートされているすべての設定パラメータの一覧をご確認ください
+# クライアントは API サーバーのセキュリティポリシーに従って、認証および認可パラメータを設定する必要があります
+# API サーバーのセキュリティポリシーに従って
+# 各認証方法の例が以下に提供されています。適切な例を使用してください
+# あなたの認証ユースケースに合致するもの
 
-# クライアントは API サーバのセキュリティポリシーに従って認証および認可パラメータを設定する必要があります。
-# 以下に各認証方式の例を示します。ご自身の認証ユースケースに合う例を使用してください。
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# 必要に応じて API キーの接頭辞（例: Bearer）を設定するには以下の行のコメントを外してください
+# 必要に応じて、API キーのプレフィックス（例: Bearer）を設定するには、以下のコメントを解除してください
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API クライアントのインスタンスを使ってコンテキストに入ります
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # API クラスのインスタンスを作成
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_comment_params = client.CreateCommentParams() # CreateCommentParams | 
-    is_live = True # bool |  (任意)
-    do_spam_check = True # bool |  (任意)
-    send_emails = True # bool |  (任意)
-    populate_notifications = True # bool |  (任意)
+    is_live = True # bool |  (optional)
+    do_spam_check = True # bool |  (optional)
+    send_emails = True # bool |  (optional)
+    populate_notifications = True # bool |  (optional)
 
     try:
-        api_response = api_instance.save_comment(tenant_id, create_comment_params, is_live=is_live, do_spam_check=do_spam_check, send_emails=send_emails, populate_notifications=populate_notifications)
+        api_response = api_instance.save_comment(tenant_id, create_comment_params, SaveCommentOptions(is_live=is_live, do_spam_check=do_spam_check, send_emails=send_emails, populate_notifications=populate_notifications))
         print("The response of DefaultApi->save_comment:\n")
         pprint(api_response)
     except Exception as e:

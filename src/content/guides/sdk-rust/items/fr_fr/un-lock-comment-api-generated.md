@@ -1,7 +1,7 @@
 ## Paramètres
 
-| Nom | Type | Requis | Description |
-|------|------|----------|-------------|
+| Nom | Type | Obligatoire | Description |
+|------|------|-------------|-------------|
 | tenant_id | String | Oui |  |
 | comment_id | String | Oui |  |
 | broadcast_id | String | Oui |  |
@@ -13,18 +13,16 @@ Renvoie : [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de un_lock_comment'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'un_lock_comment Exemple'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn run() -> Result<(), Error> {
-    let params: UnLockCommentParams = UnLockCommentParams {
-        tenant_id: String::from("acme-corp-tenant"),
-        comment_id: String::from("news/article-123#comment-4829"),
-        broadcast_id: String::from("broadcast-2025-06-19"),
-        sso: Some(String::from("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9")),
+    let params = UnLockCommentParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: "cmt-456".to_string(),
+        broadcast_id: "news/article-123".to_string(),
+        sso: Some("user-sso-token".to_string()),
     };
-    let response: ApiEmptyResponse = un_lock_comment(configuration, params).await?;
+    let _response = un_lock_comment(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

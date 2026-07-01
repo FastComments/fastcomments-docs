@@ -1,11 +1,11 @@
 ## Parâmetros
 
-| Name | Type | Obrigatório | Descrição |
-|------|------|------------|-------------|
-| tenant_id | String | Sim |  |
-| id | String | Sim |  |
-| context_user_id | String | Não |  |
-| is_live | bool | Não |  |
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
+| context_user_id | String | No |  |
+| is_live | bool | No |  |
 
 ## Resposta
 
@@ -13,18 +13,16 @@ Retorna: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-ru
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de delete_comment'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo delete_comment'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_delete() -> Result<DeleteCommentResult, Error> {
-    let params: DeleteCommentParams = DeleteCommentParams {
+async fn main() -> Result<(), Error> {
+    let params = DeleteCommentParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "comment-6f8a21b4".to_string(),
-        context_user_id: Some("editor-42".to_string()),
+        id: "comment-12345".to_string(),
+        context_user_id: Some("user-6789".to_string()),
         is_live: Some(true),
     };
-    let deleted: DeleteCommentResult = delete_comment(&configuration, params).await?;
-    Ok(deleted)
+    let _result = delete_comment(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

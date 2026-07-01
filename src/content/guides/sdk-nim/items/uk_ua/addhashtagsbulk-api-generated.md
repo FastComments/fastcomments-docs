@@ -1,9 +1,9 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Назва | Тип | Обов’язковий | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| bulkCreateHashTagsBody | BulkCreateHashTagsBody | Ні |  |
+| tenantId | string | Yes |  |
+| bulkCreateHashTagsBody | BulkCreateHashTagsBody | No |  |
 
 ## Відповідь
 
@@ -11,14 +11,17 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад addHashTagsBulk'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'addHashTagsBulk Приклад'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.addHashTagsBulk(tenantId = "my-tenant-123", bulkCreateHashTagsBody = BulkCreateHashTagsBody(hashTags = @["news", "breaking", "politics"], replaceExisting = false))
-if response.isSome:
-  let result = response.get()
-  echo "Bulk tags response:", result
-else:
-  echo "No response body, HTTP status:", httpResponse.statusCode
+let (optResp, httpResp) = client.addHashTagsBulk(
+  tenantId = "my-tenant-123",
+  bulkCreateHashTagsBody = BulkCreateHashTagsBody(
+    hashTags = @["news", "technology"]
+  )
+)
+
+if optResp.isSome:
+  let resp = optResp.get()
 [inline-code-end]
 
 ---

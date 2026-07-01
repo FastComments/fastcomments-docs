@@ -1,20 +1,25 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Обязательно | Описание |
+| Назва | Тип | Обов’язково | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Повертає: [`DeleteEmailTemplateResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteEmailTemplateResponse.ts)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример deleteEmailTemplate'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад deleteEmailTemplate'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_42';
-const templateId: string = 'tmpl_3fa85f64-5717-4562-b3fc-2c963f66afa6';
-const optionalStatus: APIStatus | undefined = undefined;
-const result: APIEmptyResponse = await deleteEmailTemplate(tenantId, templateId);
+async () => {
+  const tenantId: string = "tenant_12345";
+  const templateId: string = "template_abcde";
+
+  const response: DeleteEmailTemplateResponse = await deleteEmailTemplate(tenantId, templateId);
+
+  // Приклад доступу до необов’язкової властивості відповіді
+  const statusCode: number | undefined = response.status?.code;
+}();
 [inline-code-end]

@@ -1,5 +1,6 @@
----
-テナントのページを一覧表示します。FChat デスクトップクライアントがそのルーム一覧を作成するために使用します。各ページの解決されたカスタム設定で `enableFChat` が true である必要があります。SSO を必要とするページは、リクエスト元ユーザーのグループアクセスに対してフィルタリングされます。
+テナントのページを一覧取得します。FChat デスクトップクライアントが部屋リストを構築するために使用します。  
+`enableFChat` が各ページの解決されたカスタム設定で true であることが必要です。  
+SSO が必要なページは、リクエスト元ユーザーのグループアクセスに基づいてフィルタリングされます。
 
 ## パラメータ
 
@@ -14,21 +15,22 @@
 
 ## レスポンス
 
-返却: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_public_pages_response.rs)
+Returns: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_public_pages_response.rs)
 
 ## 例
 
-[inline-code-attrs-start title = 'get_pages_public の例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_pages_public 例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: GetPagesPublicParams = GetPagesPublicParams {
-    tenant_id: String::from("acme-corp-tenant"),
-    cursor: Some(String::from("cursor_eyJwZl9pZCI6IjEyMyJ9")),
-    limit: Some(50),
-    q: Some(String::from("tag:release status:published")),
-    sort_by: Some(models::PagesSortBy::CreatedAt),
-    has_comments: Some(true),
-};
-let response: GetPublicPagesResponse = get_pages_public(&configuration, params).await?;
+async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetPagesPublicParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        cursor: Some("page_20".to_string()),
+        limit: Some(50),
+        q: Some("news/article".to_string()),
+        sort_by: Some(models::PagesSortBy::CreatedDesc),
+        has_comments: Some(true),
+    };
+    let _response = get_pages_public(configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]
-
----

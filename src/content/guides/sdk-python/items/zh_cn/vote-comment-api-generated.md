@@ -1,4 +1,3 @@
----
 ## 参数
 
 | 名称 | 类型 | 位置 | 必需 | 描述 |
@@ -19,13 +18,14 @@
 [inline-code-attrs-start title = 'vote_comment 示例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import VoteCommentOptions
 from client.models.vote_body_params import VoteBodyParams
 from client.models.vote_response import VoteResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# 定义主机是可选的，默认为 https://fastcomments.com
-# 有关所有受支持的配置参数的列表，请参见 configuration.py。
+# 定义主机是可选的，默认值为 https://fastcomments.com
+# 查看 configuration.py 以获取所有支持的配置参数列表。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -44,11 +44,9 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (可选)
 
     try:
-        api_response = api_instance.vote_comment(tenant_id, comment_id, url_id, broadcast_id, vote_body_params, session_id=session_id, sso=sso)
+        api_response = api_instance.vote_comment(tenant_id, comment_id, url_id, broadcast_id, vote_body_params, VoteCommentOptions(session_id=session_id, sso=sso))
         print("The response of PublicApi->vote_comment:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling PublicApi->vote_comment: %s\n" % e)
 [inline-code-end]
-
----

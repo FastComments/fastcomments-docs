@@ -1,30 +1,33 @@
+---
 ## パラメータ
 
-| Name | Type | Required | Description |
+| 名前 | タイプ | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | はい |  |
-| id | string | はい |  |
-| updateAPISSOUserData | UpdateAPISSOUserData | はい |  |
-| updateComments | boolean | いいえ |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updateAPISSOUserData | UpdateAPISSOUserData | Yes |  |
+| updateComments | boolean | No |  |
 
 ## レスポンス
 
-戻り値: [`PutSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PutSSOUserAPIResponse.ts)
+返却: [`PutSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PutSSOUserAPIResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'putSSOUser の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-enterprises-42';
-const id: string = 'usr-73a1b2';
-const updateAPISSOUserData: UpdateAPISSOUserData = {
-  email: 'marcus.ingram@acme.com',
-  givenName: 'Marcus',
-  familyName: 'Ingram',
-  roles: ['editor', 'project_owner'],
-  enabled: true
-};
-const result: PutSSOUserAPIResponse = await putSSOUser(tenantId, id, updateAPISSOUserData, true);
+(async () => {
+  const tenantId: string = "tenant_abc123";
+  const userId: string = "user_456def";
+
+  const updateData: UpdateAPISSOUserData = {
+    email: "jane.doe@example.com",
+    displayName: "Jane Doe",
+    isActive: true,
+  };
+
+  const response: PutSSOUserAPIResponse = await putSSOUser(tenantId, userId, updateData, true);
+})();
 [inline-code-end]
 
 ---

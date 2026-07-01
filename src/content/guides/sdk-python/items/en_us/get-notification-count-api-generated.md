@@ -18,6 +18,7 @@ Returns: [`GetNotificationCountResponse`](https://github.com/FastComments/fastco
 [inline-code-attrs-start title = 'get_notification_count Example'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetNotificationCountOptions
 from client.models.get_notification_count_response import GetNotificationCountResponse
 from client.rest import ApiException
 from pprint import pprint
@@ -51,7 +52,7 @@ with client.ApiClient(configuration) as api_client:
     type = 'type_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_notification_count(tenant_id, user_id=user_id, url_id=url_id, from_comment_id=from_comment_id, viewed=viewed, type=type)
+        api_response = api_instance.get_notification_count(tenant_id, GetNotificationCountOptions(user_id=user_id, url_id=url_id, from_comment_id=from_comment_id, viewed=viewed, type=type))
         print("The response of DefaultApi->get_notification_count:\n")
         pprint(api_response)
     except Exception as e:

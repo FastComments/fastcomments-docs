@@ -1,8 +1,8 @@
 ## Parámetros
 
 | Nombre | Tipo | Ubicación | Requerido | Descripción |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Sí |  |
+|--------|------|-----------|-----------|--------------|
+| tenantId | string | query | Yes |  |
 | page | integer | query | No |  |
 | limit | integer | query | No |  |
 | skip | integer | query | No |  |
@@ -22,20 +22,21 @@
 
 ## Respuesta
 
-Devuelve: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_comments_response.py)
+Returns: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_comments_response.py)
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de get_comments'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo get_comments'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetCommentsOptions
 from client.models.api_get_comments_response import APIGetCommentsResponse
 from client.models.sort_directions import SortDirections
 from client.rest import ApiException
 from pprint import pprint
 
 # Definir el host es opcional y por defecto es https://fastcomments.com
-# Consulte configuration.py para una lista de todos los parámetros de configuración compatibles.
+# Ver configuration.py para una lista de todos los parámetros de configuración soportados.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -43,17 +44,17 @@ configuration = client.Configuration(
 # El cliente debe configurar los parámetros de autenticación y autorización
 # de acuerdo con la política de seguridad del servidor API.
 # Se proporcionan ejemplos para cada método de autenticación a continuación, use el ejemplo que
-# se ajuste a su caso de uso de autenticación.
+# satisfaga su caso de uso de autenticación.
 
-# Configurar la autorización por clave de API: api_key
+# Configurar la autorización de clave API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Descomente abajo para configurar el prefijo (p. ej. Bearer) para la clave de API, si es necesario
+# Descomente a continuación para configurar el prefijo (p.ej., Bearer) para la clave API, si es necesario
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Ingrese a un contexto con una instancia del cliente API
+# Entrar en un contexto con una instancia del cliente API
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # Crear una instancia de la clase API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     page = 56 # int |  (opcional)
@@ -74,9 +75,11 @@ with client.ApiClient(configuration) as api_client:
     to_date = 56 # int |  (opcional)
 
     try:
-        api_response = api_instance.get_comments(tenant_id, page=page, limit=limit, skip=skip, as_tree=as_tree, skip_children=skip_children, limit_children=limit_children, max_tree_depth=max_tree_depth, url_id=url_id, user_id=user_id, anon_user_id=anon_user_id, context_user_id=context_user_id, hash_tag=hash_tag, parent_id=parent_id, direction=direction, from_date=from_date, to_date=to_date)
+        api_response = api_instance.get_comments(tenant_id, GetCommentsOptions(page=page, limit=limit, skip=skip, as_tree=as_tree, skip_children=skip_children, limit_children=limit_children, max_tree_depth=max_tree_depth, url_id=url_id, user_id=user_id, anon_user_id=anon_user_id, context_user_id=context_user_id, hash_tag=hash_tag, parent_id=parent_id, direction=direction, from_date=from_date, to_date=to_date))
         print("The response of DefaultApi->get_comments:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling DefaultApi->get_comments: %s\n" % e)
 [inline-code-end]
+
+---

@@ -1,49 +1,50 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Расположение | Обязательно | Описание |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| commentId | string | path | Да |  |
-| voteId | string | path | Да |  |
-| urlId | string | query | Да |  |
-| broadcastId | string | query | Да |  |
-| editKey | string | query | Нет |  |
-| sso | string | query | Нет |  |
+| Назва | Тип | Місце розташування | Обов’язково | Опис |
+|------|------|-------------------|-------------|------|
+| tenantId | string | шлях | Так |  |
+| commentId | string | шлях | Так |  |
+| voteId | string | шлях | Так |  |
+| urlId | string | запит | Так |  |
+| broadcastId | string | запит | Так |  |
+| editKey | string | запит | Ні |  |
+| sso | string | запит | Ні |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_delete_response.py)
+Повертає: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_delete_response.py)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример delete_comment_vote'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_comment_vote Приклад'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import DeleteCommentVoteOptions
 from client.models.vote_delete_response import VoteDeleteResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Определение хоста необязательно; по умолчанию используется https://fastcomments.com
-# См. configuration.py для списка всех поддерживаемых параметров конфигурации.
+# Визначення хоста є необов’язковим і за замовчуванням https://fastcomments.com
+# Див. configuration.py для списку всіх підтримуваних параметрів конфігурації.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Откройте контекст с экземпляром API-клиента
+# Відкрити контекст з екземпляром клієнта API
 with client.ApiClient(configuration) as api_client:
-    # Создайте экземпляр класса API
+    # Створити екземпляр класу API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     vote_id = 'vote_id_example' # str | 
     url_id = 'url_id_example' # str | 
     broadcast_id = 'broadcast_id_example' # str | 
-    edit_key = 'edit_key_example' # str |  (необязательно)
-    sso = 'sso_example' # str |  (необязательно)
+    edit_key = 'edit_key_example' # str |  (необов’язково)
+    sso = 'sso_example' # str |  (необов’язково)
 
     try:
-        api_response = api_instance.delete_comment_vote(tenant_id, comment_id, vote_id, url_id, broadcast_id, edit_key=edit_key, sso=sso)
+        api_response = api_instance.delete_comment_vote(tenant_id, comment_id, vote_id, url_id, broadcast_id, DeleteCommentVoteOptions(edit_key=edit_key, sso=sso))
         print("The response of PublicApi->delete_comment_vote:\n")
         pprint(api_response)
     except Exception as e:

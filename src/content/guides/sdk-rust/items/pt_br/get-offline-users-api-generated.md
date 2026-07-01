@@ -1,35 +1,32 @@
-Comentadores anteriores na página que NÃO estão atualmente online. Ordenados por displayName.
-Use isto após esgotar /users/online para renderizar uma seção "Membros".
-Paginação por cursor em commenterName: o servidor percorre o índice parcial {tenantId, urlId, commenterName}
-índice a partir de afterName em diante via $gt, sem custo de $skip.
+Comentadores anteriores na página que NÃO estão online no momento. Ordenados por displayName.  
+Use isso após consumir /users/online para renderizar uma seção “Members”.  
+Paginação por cursor em commenterName: o servidor percorre o parcial {tenantId, urlId, commenterName} índice a partir de afterName avançando via $gt, sem custo de $skip.
 
-## Parâmetros
+## Parameters
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nome | Tipo | Obrigatório | Descrição |
+|------|------|--------------|-----------|
 | tenant_id | String | Sim |  |
 | url_id | String | Sim |  |
 | after_name | String | Não |  |
 | after_user_id | String | Não |  |
 
-## Resposta
+## Response
 
 Retorna: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_offline_response.rs)
 
-## Exemplo
+## Example
 
-[inline-code-attrs-start title = 'Exemplo de get_offline_users'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo get_offline_users'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_offline_users() -> Result<PageUsersOfflineResponse, Error> {
-    let params: GetOfflineUsersParams = GetOfflineUsersParams {
+async fn fetch_offline(config: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetOfflineUsersParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        url_id: "news/world/today".to_string(),
-        after_name: Some("jane.smith".to_string()),
-        after_user_id: Some("user-1024".to_string()),
+        url_id: "news/article".to_string(),
+        after_name: Some("alice".to_string()),
+        after_user_id: Some("user-42".to_string()),
     };
-    let response: PageUsersOfflineResponse = get_offline_users(&configuration, params).await?;
-    Ok(response)
+    let _response = get_offline_users(config, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

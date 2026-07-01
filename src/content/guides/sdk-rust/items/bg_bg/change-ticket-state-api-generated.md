@@ -1,32 +1,32 @@
-## Параметри
+## Parameters
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| user_id | String | Да |  |
-| id | String | Да |  |
-| change_ticket_state_body | models::ChangeTicketStateBody | Да |  |
+| tenant_id | String | Yes |  |
+| user_id | String | Yes |  |
+| id | String | Yes |  |
+| change_ticket_state_body | models::ChangeTicketStateBody | Yes |  |
 
-## Отговор
+## Response
 
 Връща: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/change_ticket_state_response.rs)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'Пример за change_ticket_state'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'change_ticket_state Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let change_ticket_state_body: models::ChangeTicketStateBody = models::ChangeTicketStateBody {
-    state: Some("resolved".to_string()),
-    comment: Some("Fixed in release 1.2.3".to_string()),
-    notify_subscribers: Some(true),
-};
-
-let params: ChangeTicketStateParams = ChangeTicketStateParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    user_id: "john.doe@acme.com".to_string(),
-    id: "ticket-98765".to_string(),
-    change_ticket_state_body,
-};
-
-let response: ChangeTicketStateResponse = change_ticket_state(configuration, params).await?;
+async fn example(config: &configuration::Configuration) -> Result<(), Error> {
+    let body = models::ChangeTicketStateBody {
+        state: Some("closed".to_string()),
+        comment: Some("Issue resolved".to_string()),
+    };
+    let params = ChangeTicketStateParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        user_id: "user-1234".to_string(),
+        id: "ticket-5678".to_string(),
+        change_ticket_state_body: body,
+    };
+    let _response: ChangeTicketStateResponse = change_ticket_state(config, params).await?;
+    Ok(())
+}
 [inline-code-end]

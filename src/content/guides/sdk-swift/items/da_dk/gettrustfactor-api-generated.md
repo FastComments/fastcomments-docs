@@ -1,7 +1,8 @@
 ## Parametre
 
-| Navn | Type | Placering | Obligatorisk | Beskrivelse |
-|------|------|----------|----------|-------------|
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
+|------|------|-----------|----------|-------------|
+| tenantId | string | query | Ja |  |
 | userId | string | query | Nej |  |
 | sso | string | query | Nej |  |
 
@@ -11,15 +12,16 @@ Returnerer: [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastc
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'getTrustFactor-eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTrustFactor Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Følgende kodeeksempler er stadig i beta. Ved problemer, rapportér venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De følgende kodeeksempler er stadig i beta. For eventuelle problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let userId = "userId_example" // String |  (valgfri)
-let sso = "sso_example" // String |  (valgfri)
+let tenantId = "tenantId_example" // String | 
+let userId = "userId_example" // String |  (optional)
+let sso = "sso_example" // String |  (optional)
 
-ModerationAPI.getTrustFactor(userId: userId, sso: sso) { (response, error) in
+ModerationAPI.getTrustFactor(tenantId: tenantId, options: ModerationAPI.GetTrustFactorOptions(userId: userId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -30,5 +32,3 @@ ModerationAPI.getTrustFactor(userId: userId, sso: sso) { (response, error) in
     }
 }
 [inline-code-end]
-
----

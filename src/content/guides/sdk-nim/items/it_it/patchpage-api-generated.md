@@ -1,8 +1,8 @@
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Sì |  |
+| Nome | Tipo | Obbligatorio | Descrizione |
+|------|------|--------------|-------------|
+| tenantId | string | Yes |  |
 | id | string | No |  |
 | updateAPIPageData | UpdateAPIPageData | No |  |
 
@@ -12,25 +12,16 @@ Restituisce: [`Option[PatchPageAPIResponse]`](https://github.com/FastComments/fa
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di patchPage'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio patchPage'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let updateData = UpdateAPIPageData(
-  title = "Breaking: Major Event Update",
-  urlId = "news/major-event-update",
-  visible = true,
-  tags = @["breaking", "headline"],
-  sortOrder = 5
-)
-
 let (response, httpResponse) = client.patchPage(
   tenantId = "my-tenant-123",
-  id = "news/major-event-update",
-  updateAPIPageData = updateData
+  id = "news/article-456",
+  updateAPIPageData = UpdateAPIPageData(title = "Updated article title", description = "Revised description")
 )
 
 if response.isSome:
-  let page = response.get()
-  discard page
+  let resp = response.get()
 [inline-code-end]
 
 ---

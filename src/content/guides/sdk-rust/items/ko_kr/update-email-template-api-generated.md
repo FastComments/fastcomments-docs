@@ -1,37 +1,30 @@
 ## 매개변수
 
-| 이름 | 타입 | 필수 | 설명 |
-|------|------|------|-------------|
-| tenant_id | String | 예 |  |
-| id | String | 예 |  |
-| update_email_template_body | models::UpdateEmailTemplateBody | 예 |  |
+| 이름 | 유형 | 필수 | 설명 |
+|------|------|----------|-------------|
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
+| update_email_template_body | models::UpdateEmailTemplateBody | Yes |  |
 
 ## 응답
 
 반환: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
-## 예제
+## 예시
 
 [inline-code-attrs-start title = 'update_email_template 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_update() -> Result<(), Error> {
-    let params: UpdateEmailTemplateParams = UpdateEmailTemplateParams {
+async fn example() -> Result<(), Error> {
+    let params = UpdateEmailTemplateParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "weekly-newsletter".to_string(),
+        id: "welcome-email".to_string(),
         update_email_template_body: models::UpdateEmailTemplateBody {
-            name: Some("Weekly Newsletter".to_string()),
-            subject: Some("Your Weekly Acme Updates".to_string()),
-            html: Some("<h1>Acme News</h1><p>Latest product and engineering updates.</p>".to_string()),
-            plain_text: Some("Acme News - Latest product and engineering updates.".to_string()),
-            enabled: Some(true),
-            sender_name: Some("Acme Team".to_string()),
-            sender_email: Some("newsletter@acme.com".to_string()),
-            locale: Some("en-US".to_string()),
+            subject: Some("Welcome to Acme Corp".to_string()),
+            body_html: Some("<p>Hello, \{{user.name}}!</p>".to_string()),
+            body_text: None,
         },
     };
-    update_email_template(&configuration, params).await?;
+    let _ = update_email_template(&config, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

@@ -7,19 +7,16 @@
 
 ## Odpowiedź
 
-Zwraca: [`GetQuestionConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionConfigResponse.ts)
+Zwraca: [`GetQuestionConfigResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionConfigResponse1.ts)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład getQuestionConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getQuestionConfig Przykład'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f8b7c2a';
-const configId: string = 'questioncfg_4d3e2a1b';
+const tenantId: string = "acme-corp-tenant-42";
+const questionId: string = "question-7f9b3e";
 
-const response: GetQuestionConfigResponse = await getQuestionConfig(tenantId, configId);
-
-const questionConfig: QuestionConfig | undefined = response.questionConfig;
-const customOptions: QuestionConfigCustomOptionsInner[] | undefined = questionConfig?.customOptions;
+const response: GetQuestionConfigResponse1 = await getQuestionConfig(tenantId, questionId);
 [inline-code-end]
 
 ---

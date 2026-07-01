@@ -1,10 +1,9 @@
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| userId | string | 否 |  |
-| trustFactor | string | 否 |  |
-| sso | string | 否 |  |
+| tenantId | string | Yes |  |
+| options | const SetTrustFactorOptions& | Yes |  |
 
 ## 响应
 
@@ -14,19 +13,15 @@
 
 [inline-code-attrs-start title = 'setTrustFactor 示例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> userId = utility::conversions::to_string_t("user-9876");
-boost::optional<utility::string_t> trustFactor = utility::conversions::to_string_t("verified");
-boost::optional<utility::string_t> sso = utility::conversions::to_string_t("sso-token-abc123");
-api->setTrustFactor(userId, trustFactor, sso)
-.then([](pplx::task<std::shared_ptr<SetUserTrustFactorResponse>> t){
-    try {
-        auto resp = t.get();
-        if (resp) {
-            auto copy = std::make_shared<SetUserTrustFactorResponse>(*resp);
+SetTrustFactorOptions opts;
+opts.userId = utility::conversions::to_string_t("user@example.com");
+opts.trustFactor = 8;
+opts.reason = boost::optional<utility::string_t>(utility::conversions::to_string_t("Spam check passed"));
+api->setTrustFactor(utility::conversions::to_string_t("my-tenant-123"), opts)
+    .then([](pplx::task<std::shared_ptr<SetUserTrustFactorResponse>> task) {
+        try {
+            auto response = task.get();
+        } catch (const std::exception&) {
         }
-    } catch (const std::exception&) {
-    }
-});
+    });
 [inline-code-end]
-
----

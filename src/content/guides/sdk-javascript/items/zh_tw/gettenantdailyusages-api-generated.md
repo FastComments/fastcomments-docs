@@ -1,32 +1,44 @@
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 類型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| yearNumber | number | 否 |  |
-| monthNumber | number | 否 |  |
-| dayNumber | number | 否 |  |
-| skip | number | 否 |  |
+| tenantId | string | Yes |  |
+| yearNumber | number | No |  |
+| monthNumber | number | No |  |
+| dayNumber | number | No |  |
+| skip | number | No |  |
 
 ## 回應
 
-回傳: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantDailyUsagesResponse.ts)
+返回：[`GetTenantDailyUsagesResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantDailyUsagesResponse1.ts)
 
 ## 範例
 
-[inline-code-attrs-start title = 'getTenantDailyUsages 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTenantDailyUsages 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function run(): Promise<void> {
-  const tenantId: string = "b4f3a9c2-8d1e-4f3b-9c6e-2a7f4d5c1e0b";
-  const yearNumber: number = 2026;
-  const monthNumber: number = 6;
-  const dayNumber: number = 19;
+async function fetchDailyUsage() {
+  const tenantId: string = "tenant-9876";
+  const yearNumber: number = 2024;
+  const monthNumber: number = 5; // 五月
+  const dayNumber: number = 12;
   const skip: number = 0;
-  const fullResponse: GetTenantDailyUsagesResponse = await getTenantDailyUsages(tenantId, yearNumber, monthNumber, dayNumber, skip);
-  const basicResponse: GetTenantDailyUsagesResponse = await getTenantDailyUsages(tenantId);
-  console.log(fullResponse, basicResponse);
-}
-run();
-[inline-code-end]
 
----
+  const fullResult: GetTenantDailyUsagesResponse1 = await getTenantDailyUsages(
+    tenantId,
+    yearNumber,
+    monthNumber,
+    dayNumber,
+    skip
+  );
+
+  // 只使用必填參數和一個可選參數
+  const partialResult: GetTenantDailyUsagesResponse1 = await getTenantDailyUsages(
+    tenantId,
+    yearNumber
+  );
+
+  console.log(fullResult, partialResult);
+}
+
+fetchDailyUsage();
+[inline-code-end]

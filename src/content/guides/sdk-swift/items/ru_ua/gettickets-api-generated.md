@@ -1,32 +1,31 @@
----
-## Параметры
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов’язковий | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| userId | string | query | No |  |
-| state | number | query | No |  |
-| skip | number | query | No |  |
-| limit | number | query | No |  |
+| tenantId | string | query | Так |  |
+| userId | string | query | Ні |  |
+| state | number | query | Ні |  |
+| skip | number | query | Ні |  |
+| limit | number | query | Ні |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTicketsResponse.swift)
+Повертає: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTicketsResponse.swift)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример getTickets'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад getTickets'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие примеры кода всё ещё находятся в бета-версии. По любым проблемам, пожалуйста, сообщите через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наступні приклади коду все ще є бета‑версією. У разі будь‑якої проблеми, будь ласка, повідомте за посиланням http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let userId = "userId_example" // String |  (необязательно)
-let state = 987 // Double |  (необязательно)
-let skip = 987 // Double |  (необязательно)
-let limit = 987 // Double |  (необязательно)
+let userId = "userId_example" // String |  (необов’язковий)
+let state = 987 // Double |  (необов’язковий)
+let skip = 987 // Double |  (необов’язковий)
+let limit = 987 // Double |  (необов’язковий)
 
-DefaultAPI.getTickets(tenantId: tenantId, userId: userId, state: state, skip: skip, limit: limit) { (response, error) in
+DefaultAPI.getTickets(tenantId: tenantId, options: DefaultAPI.GetTicketsOptions(userId: userId, state: state, skip: skip, limit: limit)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -37,5 +36,3 @@ DefaultAPI.getTickets(tenantId: tenantId, userId: userId, state: state, skip: sk
     }
 }
 [inline-code-end]
-
----

@@ -1,28 +1,29 @@
----
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
-|------|------|----------|-------------|
+|------|-----|--------------|--------------|
 | tenantId | string | Ja |  |
-| postIds | seq[string] | Nein |  |
-| sso | string | Nein |  |
+| options | GetUserReactsPublicOptions | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`Option[UserReactsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_user_reacts_response.nim)
+Rückgabe: [`Option[UserReactsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_user_reacts_response.nim)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'getUserReactsPublic Beispiel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
+let opts = GetUserReactsPublicOptions(
+  limit = 20,
+  offset = 0,
+  includeDeleted = false
+)
+
 let (response, httpResponse) = client.getUserReactsPublic(
   tenantId = "my-tenant-123",
-  postIds = @["news/article-2026", "blog/opinion-987"],
-  sso = ""
+  options = opts
 )
-if response.isSome:
-  let reacts = response.get()
-  echo "Received user reacts for tenant: ", "my-tenant-123"
-[inline-code-end]
 
----
+if response.isSome:
+  let userReacts = response.get()
+[inline-code-end]

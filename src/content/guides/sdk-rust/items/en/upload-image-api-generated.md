@@ -17,14 +17,14 @@ Returns: [`UploadImageResponse`](https://github.com/FastComments/fastcomments-ru
 
 [inline-code-attrs-start title = 'upload_image Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_upload() -> Result<UploadImageResponse, Error> {
-    let params: UploadImageParams = UploadImageParams {
-        tenant_id: String::from("acme-corp-tenant"),
-        file: std::path::PathBuf::from("assets/images/news-article-hero.jpg"),
-        size_preset: None,
-        url_id: Some(String::from("news/article/2026/hero-image")),
+async fn example() -> Result<(), Error> {
+    let params = UploadImageParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        file: std::path::PathBuf::from("/tmp/photo.jpg"),
+        size_preset: Some(models::SizePreset::Medium),
+        url_id: Some("news/article".to_string()),
     };
-    let response: UploadImageResponse = upload_image(&configuration, params).await?;
-    Ok(response)
+    let _response = upload_image(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]

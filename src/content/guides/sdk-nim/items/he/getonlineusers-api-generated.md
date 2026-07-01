@@ -1,14 +1,12 @@
-צופים המחוברים כרגע לדף: אנשים ש-websocket session שלהם מנוי על הדף ברגע זה.
-מחזיר את anonCount + totalCount (מנויי החדר כולו, כולל צופים אנונימיים שאיננו מונים).
+צופים מקוונים של דף: אנשים שהחיבור WebSocket שלהם מנוי לדף ברגע זה. מחזיר anonCount + totalCount (מנויים בחדר כולו, כולל צופי אנונימי שאינם נספרים).
 
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| urlId | string | כן |  |
-| afterName | string | לא |  |
-| afterUserId | string | לא |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| options | GetOnlineUsersOptions | No |  |
 
 ## תגובה
 
@@ -16,15 +14,11 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getOnlineUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה getOnlineUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getOnlineUsers(tenantId = "my-tenant-123", urlId = "news/politics/top-story", afterName = "", afterUserId = "")
-if response.isSome:
-  let page = response.get()
-  echo "Received online users page:"
-  echo page
-else:
-  echo "No online users returned. HTTP status: ", httpResponse.statusCode
+let opts = GetOnlineUsersOptions()
+let (onlineUsersOpt, httpResp) = client.getOnlineUsers(tenantId = "my-tenant-123", urlId = "news/article-title", options = opts)
+if onlineUsersOpt.isSome:
+  let onlineUsers = onlineUsersOpt.get()
+  echo onlineUsers
 [inline-code-end]
-
----

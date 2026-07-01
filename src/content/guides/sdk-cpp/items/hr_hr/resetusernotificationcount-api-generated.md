@@ -1,9 +1,9 @@
-## Parametri
+## Parameters
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| tenantId | string | Da |  |
-| sso | string | Ne |  |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| sso | string | No |  |
 
 ## Odgovor
 
@@ -13,13 +13,9 @@ Vraća: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastc
 
 [inline-code-attrs-start title = 'Primjer resetUserNotificationCount'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
-api->resetUserNotificationCount(tenantId, sso)
-    .then([](std::shared_ptr<ResetUserNotificationsResponse> resp){
-        if(!resp) resp = std::make_shared<ResetUserNotificationsResponse>();
-    })
-    .wait();
+auto resetTask = api->resetUserNotificationCount(
+    U("my-tenant-123"),
+    boost::optional<utility::string_t>(U("user@example.com"))
+).then([](std::shared_ptr<ResetUserNotificationsResponse> resp){
+});
 [inline-code-end]
-
----

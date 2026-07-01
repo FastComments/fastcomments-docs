@@ -1,10 +1,11 @@
 ## Параметры
 
 | Имя | Тип | Местоположение | Обязательно | Описание |
-|------|------|----------|----------|-------------|
-| userId | string | query | Нет |  |
-| trustFactor | string | query | Нет |  |
-| sso | string | query | Нет |  |
+|------|------|----------------|-------------|----------|
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| trustFactor | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Ответ
 
@@ -18,6 +19,7 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # Строка | 
 opts = {
   user_id: 'user_id_example', # Строка | 
   trust_factor: 'trust_factor_example', # Строка | 
@@ -26,11 +28,9 @@ opts = {
 
 begin
   
-  result = api_instance.set_trust_factor(opts)
+  result = api_instance.set_trust_factor(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->set_trust_factor: #{e}"
 end
 [inline-code-end]
-
----

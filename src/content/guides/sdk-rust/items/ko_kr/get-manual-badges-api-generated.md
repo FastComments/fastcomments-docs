@@ -1,23 +1,24 @@
----
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
+| tenant_id | String | 예 |  |
 | sso | String | 아니오 |  |
 
 ## 응답
 
 반환: [`GetTenantManualBadgesResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_tenant_manual_badges_response.rs)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'get_manual_badges 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_manual_badges 예시'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_manual_badges() -> Result<(), Error> {
-    let params: GetManualBadgesParams = GetManualBadgesParams {
-        sso: Some(String::from("https://sso.acme-corp.com/authorize?tenant=acme-corp-tenant")),
+async fn fetch_badges(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetManualBadgesParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        sso: Some("news/article".to_string()),
     };
-    let response: GetTenantManualBadgesResponse = get_manual_badges(&configuration, params).await?;
+    let _response = get_manual_badges(configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

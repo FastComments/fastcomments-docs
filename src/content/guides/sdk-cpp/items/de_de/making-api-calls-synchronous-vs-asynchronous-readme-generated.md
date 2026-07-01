@@ -1,4 +1,4 @@
-Alle API-Methoden in diesem SDK geben `pplx::task<std::shared_ptr<ResponseType>>` aus dem C++ REST SDK zurück. Das gibt Ihnen Flexibilität dabei, wie Sie API-Antworten verarbeiten.
+Alle API-Methoden in diesem SDK geben `pplx::task<std::shared_ptr<ResponseType>>` aus dem C++ REST SDK zurück. Das gibt Ihnen Flexibilität im Umgang mit API‑Antworten.
 
 ### Synchrone Aufrufe mit `.get()`
 
@@ -13,24 +13,15 @@ config->setApiKey(utility::conversions::to_string_t("api_key"),
 auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
 org::openapitools::client::api::DefaultApi api(apiClient);
 
-// Rufen Sie .get() auf, um zu blockieren und das Ergebnis synchron zu erhalten
+// Required parameters are positional; optional ones go in the options struct
+org::openapitools::client::api::GetCommentsOptions options;
+options.urlId = utility::conversions::to_string_t("your-url-id");
+
+// Call .get() to block and get the result synchronously
 auto response = api.getComments(
     utility::conversions::to_string_t("your-tenant-id"),
-    boost::none,  // page
-    boost::none,  // limit
-    boost::none,  // skip
-    boost::none,  // asTree
-    boost::none,  // skipChildren
-    boost::none,  // limitChildren
-    boost::none,  // maxTreeDepth
-    utility::conversions::to_string_t("your-url-id"),  // urlId
-    boost::none,  // userId
-    boost::none,  // anonUserId
-    boost::none,  // contextUserId
-    boost::none,  // hashTag
-    boost::none,  // parentId
-    boost::none   // direction
-).get();  // Blockiert, bis die HTTP-Anfrage abgeschlossen ist
+    options
+).get();  // Blocks until the HTTP request completes
 
 if (response && response->comments) {
     std::cout << "Found " << response->comments->size() << " comments" << std::endl;
@@ -39,7 +30,7 @@ if (response && response->comments) {
 
 ### Asynchrone Aufrufe mit `.then()`
 
-Verwenden Sie `.then()` für nicht-blockierende asynchrone Ausführung mit Rückrufen:
+Verwenden Sie `.then()` für nicht‑blockierende asynchrone Ausführung mit Callbacks:
 
 ```cpp
 auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
@@ -50,15 +41,16 @@ config->setApiKey(utility::conversions::to_string_t("api_key"),
 auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
 org::openapitools::client::api::DefaultApi api(apiClient);
 
-// Verwenden Sie .then() für asynchrone, callback-basierte Ausführung
+// Required parameters are positional; optional ones go in the options struct
+org::openapitools::client::api::GetCommentsOptions options;
+options.urlId = utility::conversions::to_string_t("your-url-id");
+
+// Use .then() for asynchronous callback-based execution
 api.getComments(
     utility::conversions::to_string_t("your-tenant-id"),
-    boost::none, boost::none, boost::none, boost::none, boost::none,
-    boost::none, boost::none,
-    utility::conversions::to_string_t("your-url-id"),
-    boost::none, boost::none, boost::none, boost::none, boost::none, boost::none
+    options
 ).then([](std::shared_ptr<GetComments_200_response> response) {
-    // Dies wird asynchron ausgeführt, wenn die Anfrage abgeschlossen ist
+    // This runs asynchronously when the request completes
     if (response && response->comments) {
         std::cout << "Found " << response->comments->size() << " comments" << std::endl;
     }
@@ -68,21 +60,21 @@ api.getComments(
 std::cout << "Request sent, continuing..." << std::endl;
 ```
 
-### Entscheidung zwischen synchronen und asynchronen Aufrufen
+### Auswahl zwischen synchron und asynchron
 
-Die Wahl hängt von Ihrer Laufzeitumgebung und der Architektur Ihrer Anwendung ab:
+Die Wahl hängt von Ihrer Laufzeitumgebung und Anwendungsarchitektur ab:
 
-**`.get()` (Synchrones Blockieren)**
-- Blockiert den aufrufenden Thread, bis die HTTP-Anfrage abgeschlossen ist
-- Einfacherer Programmablauf, leichter nachzuvollziehen
-- Geeignet für dedizierte Worker-Threads, Batch-Verarbeitung oder Kommandozeilen-Tools
-- **Nicht geeignet** für Event-Loops, GUI-Threads oder Single-Thread-Server
+**`.get()` (Synchronous blocking)**
+- Blockiert den aufrufenden Thread, bis die HTTP‑Anfrage abgeschlossen ist
+- Einfacherer Codefluss, leichter nachvollziehbar
+- Geeignet für dedizierte Worker‑Threads, Batch‑Verarbeitung oder Kommandozeilen‑Tools
+- **Nicht geeignet** für Ereignisschleifen, GUI‑Threads oder ein‑threadige Server
 
-**`.then()` (Asynchron, nicht-blockierend)**
+**`.then()` (Asynchronous non-blocking)**
 - Gibt sofort zurück, der Callback wird ausgeführt, wenn die Anfrage abgeschlossen ist
 - Blockiert den aufrufenden Thread nicht
-- Erforderlich für ereignisgesteuerte Architekturen, GUI-Anwendungen oder single-threaded Event-Loops
+- Erforderlich für ereignisgesteuerte Architekturen, GUI‑Anwendungen oder ein‑threadige Ereignisschleifen
 - Ermöglicht das Verketten mehrerer Operationen
-- Komplexere Steuerungsabläufe
+- Komplexerer Kontrollfluss
 
-Die Test-Suite des SDK verwendet ausschließlich `.get()`, was für die Testumgebung angemessen ist, in der Blockieren akzeptabel ist.
+Die Testsuite des SDK verwendet ausschließlich `.get()`, was jedoch für die Testumgebung, in der Blockieren akzeptabel ist, passend ist.

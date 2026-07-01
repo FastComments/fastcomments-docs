@@ -1,9 +1,9 @@
 ## Parámetros
 
-| Nombre | Tipo | Requerido | Descripción |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | Sí |  |
-| bulk_aggregate_question_results_request | models::BulkAggregateQuestionResultsRequest | Sí |  |
+| tenant_id | String | Yes |  |
+| bulk_aggregate_question_results_request | models::BulkAggregateQuestionResultsRequest | Yes |  |
 | force_recalculate | bool | No |  |
 
 ## Respuesta
@@ -14,27 +14,17 @@ Devuelve: [`BulkAggregateQuestionResultsResponse`](https://github.com/FastCommen
 
 [inline-code-attrs-start title = 'Ejemplo de bulk_aggregate_question_results'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let params: BulkAggregateQuestionResultsParams = BulkAggregateQuestionResultsParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        bulk_aggregate_question_results_request: models::BulkAggregateQuestionResultsRequest {
-            items: vec![
-                models::BulkAggregateQuestionItem {
-                    question_id: "article-engagement".to_string(),
-                    path: "news/article/987".to_string(),
-                    include_subpaths: true,
-                }
-            ],
-            time_bucket: models::AggregateTimeBucket::Daily,
-            range_start: "2026-05-01T00:00:00Z".to_string(),
-            range_end: "2026-05-31T23:59:59Z".to_string(),
-        },
+async fn example() -> Result<(), Error> {
+    let request = models::BulkAggregateQuestionResultsRequest {
+        question_ids: vec!["q123".into(), "q456".into()],
+        time_bucket: "daily".into(),
+    };
+    let params = BulkAggregateQuestionResultsParams {
+        tenant_id: "acme-corp-tenant".into(),
+        bulk_aggregate_question_results_request: request,
         force_recalculate: Some(true),
     };
-    let result: BulkAggregateQuestionResultsResponse = bulk_aggregate_question_results(&configuration, params).await?;
-    println!("{:#?}", result);
+    let _response = bulk_aggregate_question_results(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

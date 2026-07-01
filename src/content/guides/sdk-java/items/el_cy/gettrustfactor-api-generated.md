@@ -1,9 +1,10 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
-| userId | string | query | No |  |
-| sso | string | query | No |  |
+|------|------|----------|------------|-------------|
+| tenantId | string | query | Ναι |  |
+| userId | string | query | Όχι |  |
+| sso | string | query | Όχι |  |
 
 ## Απάντηση
 
@@ -26,15 +27,17 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String userId = "userId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      GetUserTrustFactorResponse result = apiInstance.getTrustFactor()
+      GetUserTrustFactorResponse result = apiInstance.getTrustFactor(tenantId)
             .userId(userId)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
+      // Εξαίρεση κατά την κλήση του ModerationApi#getTrustFactor
       System.err.println("Exception when calling ModerationApi#getTrustFactor");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());

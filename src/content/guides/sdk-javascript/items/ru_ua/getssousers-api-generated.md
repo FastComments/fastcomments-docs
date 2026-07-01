@@ -1,22 +1,29 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Обязательно | Описание |
+| Ім’я | Тип | Обов’язково | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| skip | number | Нет |  |
+| tenantId | string | Yes |  |
+| skip | number | No |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`GetSSOUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetSSOUsersResponse.ts)
+Повертає: [`GetSSOUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetSSOUsersResponse.ts)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример getSSOUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад getSSOUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_8f3b2a1c";
-const usersWithoutSkip: GetSSOUsersResponse = await getSSOUsers(tenantId);
-const skip: number = 50;
-const usersWithSkip: GetSSOUsersResponse = await getSSOUsers(tenantId, skip);
-[inline-code-end]
+async function runExample(): Promise<void> {
+    const tenantId: string = "tenant_12345";
 
----
+    // Виклик без необов’язкового `skip`
+    const firstPage: GetSSOUsersResponse = await getSSOUsers(tenantId);
+
+    // Виклик з необов’язковим `skip`
+    const secondPage: GetSSOUsersResponse = await getSSOUsers(tenantId, 100);
+
+    console.log(firstPage, secondPage);
+}
+
+runExample();
+[inline-code-end]

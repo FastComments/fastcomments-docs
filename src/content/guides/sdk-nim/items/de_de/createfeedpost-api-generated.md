@@ -1,42 +1,25 @@
 ## Parameter
 
-| Name | Type | Erforderlich | Beschreibung |
-|------|------|--------------|--------------|
+| Name | Typ | Erforderlich | Beschreibung |
+|------|-----|--------------|--------------|
 | tenantId | string | Ja |  |
 | createFeedPostParams | CreateFeedPostParams | Nein |  |
-| broadcastId | string | Nein |  |
-| isLive | bool | Nein |  |
-| doSpamCheck | bool | Nein |  |
-| skipDupCheck | bool | Nein |  |
+| options | CreateFeedPostOptions | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`Option[CreateFeedPostsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_feed_posts_response.nim)
+Rückgabe: [`Option[CreateFeedPostsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_feed_posts_response.nim)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'createFeedPost Beispiel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let postParams = CreateFeedPostParams(
-  title = "Major Acquisition by TechCorp",
-  content = "TechCorp has acquired SoftWorks in a deal valued at $1.2B, creating a new market leader.",
-  url = "news/tech/major-acquisition",
-  tags = @["business", "technology"],
-  authorId = "journalist-321"
-)
-
-let (response, httpResponse) = client.createFeedPost(
+let (respOpt, httpResp) = client.createFeedPost(
   tenantId = "my-tenant-123",
-  createFeedPostParams = postParams,
-  broadcastId = "",
-  isLive = false,
-  doSpamCheck = false,
-  skipDupCheck = false
+  createFeedPostParams = CreateFeedPostParams(),
+  options = CreateFeedPostOptions()
 )
 
-if response.isSome:
-  let created = response.get()
-  discard created
+if respOpt.isSome:
+  let feedPost = respOpt.get()
 [inline-code-end]
-
----

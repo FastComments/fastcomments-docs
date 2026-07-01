@@ -1,7 +1,6 @@
----
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenant_id | String | 예 |  |
 | id | String | 예 |  |
@@ -14,15 +13,12 @@
 
 [inline-code-attrs-start title = 'get_tenant_package 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_get_tenant_package() -> Result<GetTenantPackageResponse, Error> {
-    let params: GetTenantPackageParams = GetTenantPackageParams {
+async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetTenantPackageParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        id: "pkg-premium-001".to_string(),
-        include_related: Some(true),
+        id: "news/article".to_string(),
     };
-    let response: GetTenantPackageResponse = get_tenant_package(&configuration, params).await?;
-    Ok(response)
+    let _response: GetTenantPackageResponse = get_tenant_package(configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

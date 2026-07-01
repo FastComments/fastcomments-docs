@@ -1,13 +1,12 @@
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
-|------|------|---------|-------------|
+| Naam | Type | Verplicht | Beschrijving |
+|------|------|----------|-------------|
+| tenantId | string | Ja |  |
 | commentId | string | Ja |  |
-| spam | bool | Nee |  |
-| permNotSpam | bool | Nee |  |
-| sso | string | Nee |  |
+| options | PostSetCommentSpamStatusOptions | Nee |  |
 
-## Response
+## Respons
 
 Retourneert: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
@@ -15,15 +14,10 @@ Retourneert: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'postSetCommentSpamStatus Voorbeeld'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postSetCommentSpamStatus(
-  commentId = "cmt-20250619-842",
-  spam = false,
-  permNotSpam = false,
-  sso = ""
-)
-if response.isSome:
-  let apiEmpty = response.get()
-  discard apiEmpty
+let defaultOpts = PostSetCommentSpamStatusOptions()
+let (maybeResp, httpResp) = client.postSetCommentSpamStatus(tenantId = "my-tenant-123", commentId = "cmt-456789", options = defaultOpts)
+if maybeResp.isSome:
+  let resp = maybeResp.get()
 [inline-code-end]
 
 ---

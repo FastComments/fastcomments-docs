@@ -7,19 +7,19 @@
 
 ## 响应
 
-返回: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_hash_tags_response.rs)
+返回：[`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_hash_tags_response.rs)
 
 ## 示例
 
 [inline-code-attrs-start title = 'get_hash_tags 示例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_hash_tags() -> Result<GetHashTagsResponse, Error> {
-    let params: GetHashTagsParams = GetHashTagsParams {
+async fn example() -> Result<(), Error> {
+    let params = GetHashTagsParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        page: Some(2.0),
+        page: Some(1.0),
     };
-    let response: GetHashTagsResponse = get_hash_tags(&configuration, params).await?;
-    Ok(response)
+    let _response = get_hash_tags(&config, params).await?;
+    Ok(())
 }
 [inline-code-end]
 

@@ -1,13 +1,13 @@
 ## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| skip | double | 否 |  |
+| tenantId | string | Yes |  |
+| skip | double | No |  |
 
 ## 响应
 
-返回: [`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetModeratorsResponse.h)
+返回：[`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetModeratorsResponse.h)
 
 ## 示例
 
@@ -15,16 +15,7 @@
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 boost::optional<double> skip = 10.0;
-api->getModerators(tenantId, skip)
-    .then([=](pplx::task<std::shared_ptr<GetModeratorsResponse>> t) {
-        try {
-            auto resp = t.get();
-            auto safeResp = resp ? resp : std::make_shared<GetModeratorsResponse>();
-            (void)safeResp;
-        } catch (const std::exception& e) {
-            (void)e;
-        }
-    });
+api->getModerators(tenantId, skip).then([](pplx::task<std::shared_ptr<GetModeratorsResponse>> t){
+    auto response = t.get();
+});
 [inline-code-end]
-
----

@@ -2,22 +2,22 @@
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | はい |  |
-| id | string | はい |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
 ## レスポンス
 
-戻り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+返り値: [`DeleteQuestionConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteQuestionConfigResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'deleteQuestionConfig の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_4f2b3c';
-const id: string = 'qcfg_9a8b7c';
-const metadataNote: string | undefined = undefined; // オプションのメタデータ（関数では必須ではありません）
-const result: APIEmptyResponse = await deleteQuestionConfig(tenantId, id);
-metadataNote;
+async function runDeletion(): Promise<void> {
+  const tenantId: string = "tenant_8f5a2c9d";
+  const configId: string = "questionConfig_4b7e1f";
+  const deleteResult: DeleteQuestionConfigResponse = await deleteQuestionConfig(tenantId, configId);
+  console.log(deleteResult);
+}
+void runDeletion();
 [inline-code-end]
-
----

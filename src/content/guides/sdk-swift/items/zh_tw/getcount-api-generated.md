@@ -1,33 +1,35 @@
 ## 參數
 
-| 名稱 | Type | Location | 必填 | 描述 |
+| 名稱 | 類型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| text-search | string | query | 否 |  |
-| byIPFromComment | string | query | 否 |  |
-| filter | string | query | 否 |  |
-| searchFilters | string | query | 否 |  |
-| demo | boolean | query | 否 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filter | string | query | No |  |
+| searchFilters | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
 ## 回應
 
-回傳: [`ModerationAPICountCommentsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationAPICountCommentsResponse.swift)
+返回：[`ModerationAPICountCommentsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationAPICountCommentsResponse.swift)
 
 ## 範例
 
-[inline-code-attrs-start title = 'getCount 範例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getCount 示例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 下列程式碼範例仍屬測試版。若有任何問題，請透過 http://github.com/OpenAPITools/openapi-generator/issues/new 回報
+// 以下程式碼範例仍為 beta 版。如有任何問題，請透過 http://github.com/OpenAPITools/openapi-generator/issues/new 回報
 import FastCommentsSwift
 
-let textSearch = "textSearch_example" // String |  (選用)
-let byIPFromComment = "byIPFromComment_example" // String |  (選用)
-let filter = "filter_example" // String |  (選用)
-let searchFilters = "searchFilters_example" // String |  (選用)
-let demo = true // Bool |  (選用)
-let sso = "sso_example" // String |  (選用)
+let tenantId = "tenantId_example" // String | 
+let textSearch = "textSearch_example" // String |  (可選)
+let byIPFromComment = "byIPFromComment_example" // String |  (可選)
+let filter = "filter_example" // String |  (可選)
+let searchFilters = "searchFilters_example" // String |  (可選)
+let demo = true // Bool |  (可選)
+let sso = "sso_example" // String |  (可選)
 
-ModerationAPI.getCount(textSearch: textSearch, byIPFromComment: byIPFromComment, filter: filter, searchFilters: searchFilters, demo: demo, sso: sso) { (response, error) in
+ModerationAPI.getCount(tenantId: tenantId, options: ModerationAPI.GetCountOptions(textSearch: textSearch, byIPFromComment: byIPFromComment, filter: filter, searchFilters: searchFilters, demo: demo, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

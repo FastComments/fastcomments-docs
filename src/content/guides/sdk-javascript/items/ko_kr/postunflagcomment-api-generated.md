@@ -3,23 +3,24 @@
 | 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
 | commentId | string | Yes |  |
+| broadcastId | string | No |  |
+| tenantId | string | No |  |
 | sso | string | No |  |
 
 ## 응답
 
-반환: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+반환: [`PostUnFlagCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostUnFlagCommentResponse.ts)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'postUnFlagComment 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postUnFlagComment 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const commentId: string = '5f8d04b2-9c3a-4d13-bb8a-123456789abc';
-  const resultWithoutSso: APIEmptyResponse = await postUnFlagComment(commentId);
-  const ssoToken: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0NTY3OCJ9.signature';
-  const resultWithSso: APIEmptyResponse = await postUnFlagComment(commentId, ssoToken);
-  console.log(resultWithoutSso, resultWithSso);
-})();
+async () => {
+  const response: PostUnFlagCommentResponse = await postUnFlagComment(
+    "cmt_12345",          // 댓글 ID
+    "brd_67890",          // broadcastId (선택사항)
+    "tenant_abc",         // tenantId (선택사항)
+    "sso_user_token_789"  // sso (선택사항)
+  );
+};
 [inline-code-end]
-
----

@@ -1,6 +1,6 @@
 ## Parametre
 
-| Name | Type | Location | Required | Description |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | id | string | path | Ja |  |
@@ -24,13 +24,15 @@ $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKe
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Hvis du vil bruge en tilpasset HTTP-klient, skal du sende din klient, som implementerer `GuzzleHttp\ClientInterface`.
-    // Dette er valgfrit, `GuzzleHttp\Client` vil blive brugt som standard.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
+
 
 try {
     $result = $apiInstance->getModerator($tenant_id, $id);

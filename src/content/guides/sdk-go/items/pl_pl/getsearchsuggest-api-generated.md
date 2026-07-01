@@ -1,10 +1,10 @@
----
 ## Parametry
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
 |------|------|----------|----------|-------------|
-| text-search | string | query | Nie |  |
-| sso | string | query | Nie |  |
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Odpowiedź
 
@@ -24,18 +24,19 @@ import (
 )
 
 func main() {
-	textSearch := "textSearch_example" // string |  (opcjonalne)
-	sso := "sso_example" // string |  (opcjonalne)
+	tenantId := "tenantId_example" // string | 
+	textSearch := "textSearch_example" // string |  (opcjonalnie)
+	sso := "sso_example" // string |  (opcjonalnie)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetSearchSuggest(context.Background()).TextSearch(textSearch).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetSearchSuggest(context.Background()).TenantId(tenantId).TextSearch(textSearch).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetSearchSuggest``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Błąd podczas wywoływania `ModerationAPI.GetSearchSuggest``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Pełna odpowiedź HTTP: %v\n", r)
 	}
 	// odpowiedź z `GetSearchSuggest`: ModerationSuggestResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetSearchSuggest`: %v\n", resp)
+	fmt.Fprintf(os.Stdout, "Odpowiedź z `ModerationAPI.GetSearchSuggest`: %v\n", resp)
 }
 [inline-code-end]
 

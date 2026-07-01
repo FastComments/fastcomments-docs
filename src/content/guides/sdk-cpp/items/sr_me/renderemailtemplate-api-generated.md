@@ -1,35 +1,26 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| renderEmailTemplateBody | RenderEmailTemplateBody | Да |  |
-| locale | string | Не |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| renderEmailTemplateBody | RenderEmailTemplateBody | Yes |  |
+| locale | string | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/RenderEmailTemplateResponse.h)
+Vraća: [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/RenderEmailTemplateResponse.h)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'Пример renderEmailTemplate'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'renderEmailTemplate Primjer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-auto body = std::make_shared<RenderEmailTemplateBody>();
-body->templateId = U("welcome-email");
-body->recipientEmail = U("user@example.com");
+auto body = RenderEmailTemplateBody();
+body.templateId = U("welcome-email");
+body.recipientEmail = U("user@example.com");
 boost::optional<utility::string_t> locale = U("en-US");
-api->renderEmailTemplate(tenantId, *body, locale)
-    .then([](pplx::task<std::shared_ptr<RenderEmailTemplateResponse>> t) {
-        try {
-            auto resp = t.get();
-            if (resp) {
-                std::cout << "Rendered email template received for tenant\n";
-            }
-        } catch (const std::exception& e) {
-            std::cerr << "Error: " << e.what() << '\n';
-        }
+
+api->renderEmailTemplate(U("my-tenant-123"), body, locale)
+    .then([](std::shared_ptr<RenderEmailTemplateResponse> resp) {
+        std::cout << "Email template rendered successfully\n";
     });
 [inline-code-end]
-
----

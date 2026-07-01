@@ -1,10 +1,9 @@
----
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| tenantId | string | Da |  |
-| id | string | Da |  |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
 ## Odgovor
 
@@ -12,21 +11,22 @@ Vraća: [`GetUserResponse`](https://github.com/FastComments/fastcomments-cpp/blo
 
 ## Primjer
 
-[inline-code-attrs-start title = 'getUser Primjer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getUser'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
-utility::string_t userId = utility::conversions::to_string_t("user@example.com");
-boost::optional<utility::string_t> ifNoneMatch = boost::optional<utility::string_t>(utility::conversions::to_string_t("W/\"etag-98765\""));
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto userId = utility::conversions::to_string_t("user-789");
+boost::optional<utility::string_t> optTag = boost::none;
+
 api->getUser(tenantId, userId)
-    .then([](pplx::task<std::shared_ptr<GetUserResponse>> task){
+    .then([=](pplx::task<std::shared_ptr<GetUserResponse>> task) {
         try {
-            auto resp = task.get();
-            if (resp) {
-                auto clone = std::make_shared<GetUserResponse>(*resp);
+            auto response = task.get();
+            if (!response) {
+                response = std::make_shared<GetUserResponse>();
             }
-        } catch (...) {
+            // obradi odgovor po potrebi
+        } catch (const std::exception&) {
+            // obradi grešku
         }
     });
 [inline-code-end]
-
----

@@ -1,29 +1,46 @@
 ---
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezan | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| commentId | string | Da |  |
-| setCommentTextParams | SetCommentTextParams | Da |  |
-| sso | string | Ne |  |
+| commentId | string | Да |  |
+| setCommentTextParams | SetCommentTextParams | Да |  |
+| broadcastId | string | Не |  |
+| tenantId | string | Не |  |
+| sso | string | Не |  |
 
 ## Одговор
 
-Враћа: [`SetCommentTextResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SetCommentTextResponse.ts)
+Враћа: [`PostSetCommentTextResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostSetCommentTextResponse.ts)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Primer postSetCommentText'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postSetCommentText Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const commentId: string = "cmt_a1b2c3d4";
-const setCommentTextParams: SetCommentTextParams = {
-  text: "Updated timeline and added a reference to the original report for clarity.",
-  editedByUserId: "user_9876",
-  editReason: "clarified timeline and added source",
-  editedAt: "2026-06-19T12:00:00Z"
-};
-const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.exampleSignature";
-const result: SetCommentTextResponse = await postSetCommentText(commentId, setCommentTextParams, sso);
+(async () => {
+  const commentId: string = "cmt_9f8b7a6d5e4c3b2a1";
+  const setParams: SetCommentTextParams = {
+    text: "Edited comment to correct a typo and add clarification."
+  };
+  const broadcastId: string = "brd_1a2b3c4d5e6f7g8h9";
+  const tenantId: string = "tenant_xyz123";
+  const sso: string = "sso_user_456def";
+
+  const fullResult: PostSetCommentTextResponse = await postSetCommentText(
+    commentId,
+    setParams,
+    broadcastId,
+    tenantId,
+    sso
+  );
+
+  const minimalResult: PostSetCommentTextResponse = await postSetCommentText(
+    commentId,
+    setParams
+  );
+
+  console.log(fullResult, minimalResult);
+})();
 [inline-code-end]
 
 ---

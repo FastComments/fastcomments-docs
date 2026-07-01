@@ -1,9 +1,9 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| id | string | path | Да |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
 ## Отговор
 
@@ -11,33 +11,33 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'getEmailTemplate Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за getEmailTemplate'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Конфигурирайте удостоверяването с API ключ: api_key
+// Конфигуриране на удостоверяване с API ключ: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Ако е необходимо, разкоментирайте долния ред, за да зададете префикс (напр. Bearer) за API ключа
+// Разкоментирайте по-долу, за да зададете префикс (например Bearer) за API ключа, ако е необходимо
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ако искате да използвате собствен HTTP клиент, предайте клиент, който имплементира `GuzzleHttp\ClientInterface`.
-    // Това е по избор; по подразбиране ще бъде използван `GuzzleHttp\Client`.
+    // Ако искате да използвате персонализиран HTTP клиент, предайте вашия клиент, който имплементира `GuzzleHttp\ClientInterface`.
+    // Това е опционално, `GuzzleHttp\Client` ще се използва по подразбиране.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$id = 'id_example'; // string
+
+$tenant_id = 'tenant_id_example'; // стринг
+$id = 'id_example'; // стринг
+
 
 try {
     $result = $apiInstance->getEmailTemplate($tenant_id, $id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->getEmailTemplate: ', $e->getMessage(), PHP_EOL;
+    echo 'Изключение при извикване на DefaultApi->getEmailTemplate: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

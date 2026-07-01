@@ -1,11 +1,11 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| Naam | Type | Locatie | Verplicht | Beschrijving |
+|------|------|----------|-----------|--------------|
+| tenantId | string | query | Ja |  |
+| id | string | path | Ja |  |
 
-## Response
+## Respons
 
 Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
@@ -17,21 +17,25 @@ Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-p
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configureer API-sleutelautorisatie: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Haal hieronder de commentaar weg om een prefix (bijv. Bearer) voor de API-sleutel te configureren, indien nodig
-// $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// Configure API key authorization: api_key
+// Configureer API-sleutel autorisatie: api_key
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Ontcommentarieer onderstaande om een prefix in te stellen (bijv. Bearer) voor de API-sleutel, indien nodig
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Als u een aangepaste HTTP-client wilt gebruiken, geef uw client door die `GuzzleHttp\ClientInterface` implementeert.
-    // Dit is optioneel; `GuzzleHttp\Client` wordt standaard gebruikt.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // Als je een aangepaste HTTP-client wilt gebruiken, geef je client door die `GuzzleHttp\ClientInterface` implementeert.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // Dit is optioneel, `GuzzleHttp\Client` wordt als standaard gebruikt.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
 $update_tenant_package_body = new \FastComments\Client\Model\UpdateTenantPackageBody(); // \FastComments\Client\Model\UpdateTenantPackageBody
+
 
 try {
     $result = $apiInstance->updateTenantPackage($tenant_id, $id, $update_tenant_package_body);

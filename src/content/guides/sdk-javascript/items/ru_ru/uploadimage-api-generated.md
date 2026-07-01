@@ -1,16 +1,29 @@
-Загрузить и изменить размер изображения
+Upload and resize an image
 
-## Параметры
+## Parameters
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| file | Blob | Да |  |
-| sizePreset | SizePreset | Нет |  |
-| urlId | string | Нет |  |
+| tenantId | string | Yes |  |
+| file | Blob | Yes |  |
+| sizePreset | SizePreset | No |  |
+| urlId | string | No |  |
 
-## Ответ
+## Response
 
-Возвращает: [`UploadImageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UploadImageResponse.ts)
+Returns: [`UploadImageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UploadImageResponse.ts)
 
----
+## Example
+
+[inline-code-attrs-start title = 'uploadImage Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+const tenantId: string = "acme-tenant-01";
+const imageBlob: Blob = new Blob([new Uint8Array([137,80,78,71])], { type: "image/png" });
+
+const uploadResult1: UploadImageResponse = await uploadImage(tenantId, imageBlob);
+
+const sizePreset: SizePreset = { presetName: "medium" };
+const urlId: string = "article-9876";
+
+const uploadResult2: UploadImageResponse = await uploadImage(tenantId, imageBlob, sizePreset, urlId);
+[inline-code-end]

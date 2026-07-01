@@ -1,6 +1,6 @@
 ## Parametre
 
-| Name | Type | Location | Required | Description |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Ja |  |
 | locale | string | query | Nej |  |
@@ -16,20 +16,21 @@ Returnerer: [`GetGifsTrendingResponse`](https://github.com/FastComments/fastcomm
 [inline-code-attrs-start title = 'get_gifs_trending Eksempel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetGifsTrendingOptions
 from client.models.get_gifs_trending_response import GetGifsTrendingResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Angivelse af host er valgfri og som standard er https://fastcomments.com
+# Definering af værten er valgfri og standard er https://fastcomments.com
 # Se configuration.py for en liste over alle understøttede konfigurationsparametre.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Opret en kontekst med en instans af API-klienten
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Opret en instans af API-klassen
+    # Create an instance of the API class
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     locale = 'locale_example' # str |  (valgfri)
@@ -37,7 +38,7 @@ with client.ApiClient(configuration) as api_client:
     page = 3.4 # float |  (valgfri)
 
     try:
-        api_response = api_instance.get_gifs_trending(tenant_id, locale=locale, rating=rating, page=page)
+        api_response = api_instance.get_gifs_trending(tenant_id, GetGifsTrendingOptions(locale=locale, rating=rating, page=page))
         print("The response of PublicApi->get_gifs_trending:\n")
         pprint(api_response)
     except Exception as e:

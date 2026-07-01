@@ -1,6 +1,6 @@
-## Параметри
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
 | userId | string | query | No |  |
 | direction | string | query | No |  |
@@ -10,43 +10,46 @@
 | locale | string | query | No |  |
 | isCrawler | boolean | query | No |  |
 
-## Одговор
+## Response
 
-Враћа: [`GetCommentsForUserResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comments_for_user_response.py)
+Returns: [`GetCommentsForUserResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comments_for_user_response.py)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'Пример get_comments_for_user'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer get_comments_for_user'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetCommentsForUserOptions
 from client.models.get_comments_for_user_response import GetCommentsForUserResponse
 from client.models.sort_directions import SortDirections
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинисање host-а је опционо и подразумевано је на https://fastcomments.com
-# Погледајте configuration.py за листу свих подржаних конфигурационих параметара.
+# Definisanje hosta je opciono i podrazumevano je https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih konfiguracionih parametara.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Уђите у контекст са инстанцом API клијента
+# Uđite u kontekst sa instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Креирајте инстанцу API класе
+    # Kreirajte instancu API klase
     api_instance = client.PublicApi(api_client)
-    user_id = 'user_id_example' # str |  (опционо)
-    direction = client.SortDirections() # SortDirections |  (опционо)
-    replies_to_user_id = 'replies_to_user_id_example' # str |  (опционо)
-    page = 3.4 # float |  (опционо)
-    includei10n = True # bool |  (опционо)
-    locale = 'locale_example' # str |  (опционо)
-    is_crawler = True # bool |  (опционо)
+    user_id = 'user_id_example' # str |  (opciono)
+    direction = client.SortDirections() # SortDirections |  (opciono)
+    replies_to_user_id = 'replies_to_user_id_example' # str |  (opciono)
+    page = 3.4 # float |  (opciono)
+    includei10n = True # bool |  (opciono)
+    locale = 'locale_example' # str |  (opciono)
+    is_crawler = True # bool |  (opciono)
 
     try:
-        api_response = api_instance.get_comments_for_user(user_id=user_id, direction=direction, replies_to_user_id=replies_to_user_id, page=page, includei10n=includei10n, locale=locale, is_crawler=is_crawler)
+        api_response = api_instance.get_comments_for_user(GetCommentsForUserOptions(user_id=user_id, direction=direction, replies_to_user_id=replies_to_user_id, page=page, includei10n=includei10n, locale=locale, is_crawler=is_crawler))
         print("The response of PublicApi->get_comments_for_user:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling PublicApi->get_comments_for_user: %s\n" % e)
 [inline-code-end]
+
+---

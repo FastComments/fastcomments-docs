@@ -1,24 +1,25 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetModeratorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModeratorResponse.ts)
+Returns: [`GetModeratorResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModeratorResponse1.ts)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример getModerator-а'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getModerator Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-enterprises-72';
-const id: string = 'mod_4b2f9a';
-const response: GetModeratorResponse = await getModerator(tenantId, id);
-const status: APIStatus | undefined = response.status;
-const moderator: Moderator | undefined = response.moderator;
-const moderatorEmail: string | undefined = response.moderator?.email;
-[inline-code-end]
+(async () => {
+  const tenantId: string = "acme-corp-001";
+  const id: string = "mod-12345";
 
----
+  const result: GetModeratorResponse1 = await getModerator(tenantId, id);
+
+  const moderatorName: string | undefined = result.moderator?.name;
+  console.log(moderatorName);
+})();
+[inline-code-end]

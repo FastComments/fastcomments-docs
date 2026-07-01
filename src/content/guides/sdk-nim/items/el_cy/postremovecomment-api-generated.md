@@ -1,24 +1,25 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
-|------|------|----------|-------------|
+|------|------|------------|------------|
+| tenantId | string | Ναι |  |
 | commentId | string | Ναι |  |
-| sso | string | Όχι |  |
+| options | PostRemoveCommentOptions | Όχι |  |
 
-## Απόκριση
+## Απάντηση
 
-Επιστρέφει: [`Option[PostRemoveCommentResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_post_remove_comment_response.nim)
+Επιστρέφει: [`Option[PostRemoveCommentApiResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_post_remove_comment_api_response.nim)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα postRemoveComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postRemoveComment Παράδειγμα'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postRemoveComment(commentId = "cmt-987654321", sso = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.abc123.signature")
-if response.isSome:
-  let removed = response.get()
-  echo "Comment removed:", removed
-else:
-  echo "Failed to remove comment, HTTP response:", httpResponse
-[inline-code-end]
+let (apiResponseOpt, httpResp) = client.postRemoveComment(
+  tenantId = "my-tenant-123",
+  commentId = "comment-987654",
+  options = PostRemoveCommentOptions()
+)
 
----
+if apiResponseOpt.isSome:
+  let apiResponse = apiResponseOpt.get()
+[inline-code-end]

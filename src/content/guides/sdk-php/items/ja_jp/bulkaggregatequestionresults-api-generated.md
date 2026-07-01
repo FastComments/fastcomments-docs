@@ -1,9 +1,9 @@
-## パラメーター
+## パラメータ
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | クエリ | はい |  |
-| forceRecalculate | boolean | クエリ | いいえ |  |
+| tenantId | string | query | はい |  |
+| forceRecalculate | boolean | query | いいえ |  |
 
 ## レスポンス
 
@@ -17,21 +17,23 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// API キー認証を設定: api_key
+// APIキー認証を構成: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// 必要に応じて、下の行のコメント解除で API キーのプレフィックス（例: Bearer）を設定します
+// 必要に応じて、以下のコメントを解除して API キーのプレフィックス（例：Bearer）を設定してください
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // カスタムの HTTP クライアントを使用する場合は、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
-    // これはオプションです。デフォルトでは `GuzzleHttp\Client` が使用されます。
+    // カスタム HTTP クライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
+    // これはオプションで、デフォルトとして `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $bulk_aggregate_question_results_request = new \FastComments\Client\Model\BulkAggregateQuestionResultsRequest(); // \FastComments\Client\Model\BulkAggregateQuestionResultsRequest
 $force_recalculate = True; // bool
+
 
 try {
     $result = $apiInstance->bulkAggregateQuestionResults($tenant_id, $bulk_aggregate_question_results_request, $force_recalculate);

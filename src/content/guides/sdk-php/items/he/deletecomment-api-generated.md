@@ -1,47 +1,49 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| שם | טיפוס | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | כן |  |
 | id | string | path | כן |  |
 | contextUserId | string | query | לא |  |
 | isLive | boolean | query | לא |  |
 
-## תשובה
+## תגובה
 
 מחזיר: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/DeleteCommentResult.php)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-deleteComment'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת deleteComment'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// הגדר הרשאת מפתח API: api_key
+// Configure API key authorization: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// בטל את ההערה בשורה שלמטה כדי להגדיר קידומת (למשל Bearer) למפתח ה-API, אם נדרש
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // אם ברצונך להשתמש ב-client HTTP מותאם אישית, מסור את ה-client שלך שמממש את `GuzzleHttp\ClientInterface`.
-    // זה אופציונלי, `GuzzleHttp\Client` ישמש כברירת מחדל.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
-$context_user_id = 'context_user_id_example'; // string
-$is_live = True; // bool
+$options = [
+    'context_user_id' => 'context_user_id_example', // string
+    'is_live' => True; // bool
+];
+
 
 try {
-    $result = $apiInstance->deleteComment($tenant_id, $id, $context_user_id, $is_live);
+    $result = $apiInstance->deleteComment($tenant_id, $id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->deleteComment: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

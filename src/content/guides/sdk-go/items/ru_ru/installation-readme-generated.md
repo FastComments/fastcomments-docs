@@ -2,11 +2,11 @@
 go get github.com/fastcomments/fastcomments-go
 ```
 
-### Использование клиента API
+### Использование API‑клиента
 
-#### Public API (без аутентификации)
+#### Public API (No Authentication)
 
-PublicAPI предоставляет неаутентифицированный доступ к публичным конечным точкам:
+PublicAPI позволяет выполнять неаутентифицированный доступ к публичным конечным точкам:
 
 ```go
 package main
@@ -36,9 +36,9 @@ func main() {
 }
 ```
 
-#### Default API (требует API-ключ)
+#### Default API (Requires API Key)
 
-DefaultAPI требует аутентификации с использованием вашего API-ключа:
+DefaultAPI требует аутентификацию с использованием вашего API‑ключа:
 
 ```go
 package main
@@ -53,7 +53,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // Создать аутентифицированный контекст с API-ключом
+    // Создать аутентифицированный контекст с API‑ключом
     auth := context.WithValue(
         context.Background(),
         client.ContextAPIKeys,
@@ -62,7 +62,7 @@ func main() {
         },
     )
 
-    // Получить комментарии с помощью аутентифицированного DefaultAPI
+    // Get comments using authenticated DefaultAPI
     response, httpResp, err := apiClient.DefaultAPI.GetComments(auth).
         TenantId("your-tenant-id").
         UrlId("your-page-url-id").
@@ -77,9 +77,9 @@ func main() {
 }
 ```
 
-#### Moderation API (Панель модератора)
+#### Moderation API (Moderator Dashboard)
 
-ModerationAPI обеспечивает работу панели модератора. Он предоставляет методы для перечисления, подсчёта, поиска и экспорта комментариев; действия модерации (удаление/восстановление, пометка, установка статуса на проверку/спам/одобрение, голоса, повторное открытие/закрытие веток); баны (запрет комментирования, отмена бана, предварительные сводки по банам, статус и настройки бана, количество забаненных пользователей); и бейджи и доверие (назначение/удаление бейджей, ручные бейджи, получение/установка коэффициента доверия, внутренний профиль пользователя). Все методы Moderation принимают параметр `sso` для модераторов, прошедших SSO-аутентификацию:
+ModerationAPI предоставляет обширный набор живых и быстрых API модерации. Все методы модерации принимают параметр `sso` и могут аутентифицироваться через SSO или cookie сессии FastComments.com:
 
 ```go
 package main

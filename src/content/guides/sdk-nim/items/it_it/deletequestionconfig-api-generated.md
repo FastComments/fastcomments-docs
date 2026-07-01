@@ -1,7 +1,7 @@
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nome | Tipo | Obbligatorio | Descrizione |
+|------|------|--------------|-------------|
 | tenantId | string | Sì |  |
 | id | string | No |  |
 
@@ -11,15 +11,11 @@ Restituisce: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastco
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di deleteQuestionConfig'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteQuestionConfig Esempio'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteQuestionConfig(tenantId = "my-tenant-123", id = "")
-
-if response.isSome:
-  let deleted = response.get()
-  echo "Question config deleted for tenant: ", "my-tenant-123"
-else:
-  echo "Failed to delete question config"
+let (apiResult, httpResponse) = client.deleteQuestionConfig(tenantId = "my-tenant-123", id = "question-config-456")
+if apiResult.isSome:
+  let empty = apiResult.get()
 [inline-code-end]
 
 ---

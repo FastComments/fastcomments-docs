@@ -2,11 +2,11 @@
 go get github.com/fastcomments/fastcomments-go
 ```
 
-### API クライアントの使用方法
+### API クライアントの使用
 
-#### Public API（認証不要）
+#### パブリック API（認証なし）
 
-PublicAPI は、認証を必要としない公開エンドポイントへのアクセスを提供します:
+PublicAPI は認証なしでパブリックエンドポイントにアクセスできます:
 
 ```go
 package main
@@ -21,7 +21,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // Get comments using PublicAPI
+    // PublicAPI を使用してコメントを取得
     response, httpResp, err := apiClient.PublicAPI.GetCommentsPublic(
         context.Background(),
         "your-tenant-id",
@@ -36,7 +36,7 @@ func main() {
 }
 ```
 
-#### Default API（APIキーが必要）
+#### デフォルト API（API キーが必要）
 
 DefaultAPI は API キーを使用した認証が必要です:
 
@@ -53,7 +53,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // Create authenticated context with API key
+    // API キーで認証されたコンテキストを作成
     auth := context.WithValue(
         context.Background(),
         client.ContextAPIKeys,
@@ -62,7 +62,7 @@ func main() {
         },
     )
 
-    // Get comments using authenticated DefaultAPI
+    // 認証された DefaultAPI を使用してコメントを取得
     response, httpResp, err := apiClient.DefaultAPI.GetComments(auth).
         TenantId("your-tenant-id").
         UrlId("your-page-url-id").
@@ -77,9 +77,9 @@ func main() {
 }
 ```
 
-#### Moderation API（モデレーターダッシュボード）
+#### モデレーション API（モデレーター ダッシュボード）
 
-ModerationAPI はモデレーターダッシュボードを支える API です。コメントの一覧取得、件数取得、検索、エクスポート、モデレーション操作（削除/復元、フラグ、レビュー/スパム/承認ステータスの設定、投票、スレッドの再開/クローズ）、バン（コメント禁止、取り消し、事前バンの概要、バンのステータスと設定、バンされたユーザー数）、およびバッジと信頼度（バッジの付与/削除、手動バッジ、信頼度の取得/設定、ユーザー内部プロファイル）を提供します。すべての Moderation メソッドは SSO 認証されたモデレーター向けに `sso` パラメータを受け取ります:
+ModerationAPI は、リアルタイムかつ高速なモデレーション API の豊富なスイートを提供します。すべてのモデレーションメソッドは `sso` パラメータを受け付け、SSO または FastComments.com のセッションクッキーで認証できます:
 
 ```go
 package main
@@ -94,7 +94,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // List comments for moderation using ModerationAPI
+    // ModerationAPI を使用してモデレーション用のコメントを一覧取得
     response, httpResp, err := apiClient.ModerationAPI.GetApiComments(
         context.Background(),
     ).Sso("your-sso-token").Execute()

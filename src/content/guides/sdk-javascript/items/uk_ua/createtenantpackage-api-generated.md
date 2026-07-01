@@ -1,29 +1,29 @@
-## Параметри
+## Parameters
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Назва | Тип | Обов'язково | Опис |
+|------|------|-------------|------|
 | tenantId | string | Так |  |
 | createTenantPackageBody | CreateTenantPackageBody | Так |  |
 
-## Відповідь
+## Response
 
-Повертає: [`CreateTenantPackageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantPackageResponse.ts)
+Повертає: [`CreateTenantPackageResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantPackageResponse1.ts)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад createTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createTenantPackage Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function run(): Promise<void> {
-  const tenantId: string = 'tenant_acme_01';
-  const createTenantPackageBody: CreateTenantPackageBody = {
-    packageName: 'Pro Annual',
-    seats: 100,
-    billingCycle: 'annual',
-    autoRenew: true,
-    metadata: { region: 'us-west-2' } // необов'язкове поле метаданих
+(async () => {
+  const tenantId: string = "tenant-9876";
+
+  const body: CreateTenantPackageBody = {
+    packageName: "Standard",
+    quota: 5000,
+    // optional field
+    description: "Standard package for medium traffic",
   };
-  const result: CreateTenantPackageResponse = await createTenantPackage(tenantId, createTenantPackageBody);
+
+  const result: CreateTenantPackageResponse1 = await createTenantPackage(tenantId, body);
   console.log(result);
-}
-run();
+})();
 [inline-code-end]

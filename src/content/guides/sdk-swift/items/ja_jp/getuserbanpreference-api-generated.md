@@ -1,23 +1,25 @@
-## パラメータ
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| sso | string | query | 任意 |  |
+| tenantId | string | query | はい |  |
+| sso | string | query | いいえ |  |
 
-## レスポンス
+## Response
 
-返却値: [`APIModerateGetUserBanPreferencesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIModerateGetUserBanPreferencesResponse.swift)
+返り値: [`APIModerateGetUserBanPreferencesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIModerateGetUserBanPreferencesResponse.swift)
 
 ## 例
 
 [inline-code-attrs-start title = 'getUserBanPreference の例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 以下のコードサンプルはまだベータ版です。問題がある場合は http://github.com/OpenAPITools/openapi-generator/issues/new で報告してください
+// 以下のコードサンプルはまだベータ版です。問題がある場合は、http://github.com/OpenAPITools/openapi-generator/issues/new へ報告してください
 import FastCommentsSwift
 
-let sso = "sso_example" // String | （省略可）
+let tenantId = "tenantId_example" // String | 
+let sso = "sso_example" // String |  (オプション)
 
-ModerationAPI.getUserBanPreference(sso: sso) { (response, error) in
+ModerationAPI.getUserBanPreference(tenantId: tenantId, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -28,5 +30,3 @@ ModerationAPI.getUserBanPreference(sso: sso) { (response, error) in
     }
 }
 [inline-code-end]
-
----

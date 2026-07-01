@@ -1,26 +1,24 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Обязательно | Описание |
+| Назва | Тип | Обов’язково | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| locale | string | Нет |  |
-| rating | string | Нет |  |
-| page | float64 | Нет |  |
+| tenantId | string | Yes |  |
+| options | GetGifsTrendingOptions | No |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`Option[GetGifsTrendingResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_gifs_trending_response.nim)
+Повертає: [`Option[GetGifsTrendingResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_gifs_trending_response.nim)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример getGifsTrending'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад getGifsTrending'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getGifsTrending(tenantId = "my-tenant-123",
-  locale = "en-US",
-  rating = "pg-13",
-  page = 1.0)
-if response.isSome:
-  let trending = response.get()
-[inline-code-end]
+let (maybeResponse, httpResponse) = client.getGifsTrending(
+  tenantId = "my-tenant-123",
+  options = GetGifsTrendingOptions()
+)
 
----
+if maybeResponse.isSome:
+  let gifs = maybeResponse.get()
+  echo gifs
+[inline-code-end]

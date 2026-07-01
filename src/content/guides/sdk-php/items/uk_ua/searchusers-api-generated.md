@@ -1,7 +1,7 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Назва | Тип | Розташування | Обов’язково | Опис |
+|------|------|--------------|-------------|------|
 | tenantId | string | path | Так |  |
 | urlId | string | query | Так |  |
 | usernameStartsWith | string | query | Ні |  |
@@ -23,19 +23,23 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Якщо ви хочете використати власний HTTP-клієнт, передайте ваш клієнт, який реалізує `GuzzleHttp\ClientInterface`.
-    // Це необов'язково, за замовчуванням буде використано `GuzzleHttp\Client`.
+    // Якщо ви хочете використовувати кастомний HTTP-клієнт, передайте ваш клієнт, який реалізує `GuzzleHttp\ClientInterface`.
+    // Це необов’язково, за замовчуванням буде використано `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$url_id = 'url_id_example'; // string
-$username_starts_with = 'username_starts_with_example'; // string
-$mention_group_ids = array('mention_group_ids_example'); // string[]
-$sso = 'sso_example'; // string
-$search_section = 'search_section_example'; // string
+
+$tenant_id = 'tenant_id_example'; // рядок
+$url_id = 'url_id_example'; // рядок
+$options = [
+    'username_starts_with' => 'username_starts_with_example', // рядок
+    'mention_group_ids' => array('mention_group_ids_example'), // рядок[]
+    'sso' => 'sso_example', // рядок
+    'search_section' => 'search_section_example', // рядок
+];
+
 
 try {
-    $result = $apiInstance->searchUsers($tenant_id, $url_id, $username_starts_with, $mention_group_ids, $sso, $search_section);
+    $result = $apiInstance->searchUsers($tenant_id, $url_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->searchUsers: ', $e->getMessage(), PHP_EOL;

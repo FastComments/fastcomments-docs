@@ -1,8 +1,8 @@
-The SDK izpostavlja tri razrede API odjemalcev:
+The SDK razkriva tri razrede odjemalcev API:
 
-- **`DefaultApi`** — Metode, avtenticirane z API ključem, za uporabo na strežniku. Konfigurirajte API ključ, kot je prikazano v [Začetek](#getting-started-readme-generated).
-- **`PublicApi`** — Javne metode, ki ne zahtevajo API ključa; varno jih je klicati iz brskalnikov in mobilnih aplikacij.
-- **`ModerationApi`** — Metode za nadzorno ploščo moderatorja: seznam, štetje, iskanje, beleženje in izvoz komentarjev; ukrepi moderiranja (odstrani/obnovi, označi, nastavi status pregleda/spama/odobritve, glasovi, ponovno odpri/ zapri nit); prepovedi (prepoved komentiranja, razveljavitev, povzetki pred prepovedjo, stanje prepovedi in nastavitve, štetje prepovedanih uporabnikov); ter značke in zaupanje (podeli/odstrani značko, ročne značke, pridobi/nastavi faktor zaupanja, notranji profil uporabnika). Vsaka metoda `ModerationApi` sprejme parameter `$sso` za avtentikacijo delujočega moderatorja prek SSO.
+- **`DefaultApi`** - metode, avtenticirane s ključem API za strežniško uporabo. Ključ API nastavite, kot je prikazano v [Getting Started](#getting-started-readme-generated).
+- **`PublicApi`** - javne metode, ki ne zahtevajo ključa API, varno jih je klicati iz brskalnikov in mobilnih aplikacij.
+- **`ModerationApi`** - obsežen nabor API-jev za takojšnjo in hitro moderacijo. Vsaka metoda `ModerationApi` sprejme parameter `$sso` in se lahko avtenticira prek SSO ali piškotka seje FastComments.com.
 
 ### Uporaba PublicApi
 
@@ -10,12 +10,12 @@ The SDK izpostavlja tri razrede API odjemalcev:
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Public methods do not require an API key.
+// Javni metode ne zahtevajo ključa API.
 $apiInstance = new FastComments\Client\Api\PublicApi(
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$url_id = 'url_id_example'; // string
+$tenant_id = 'tenant_id_example'; // niz
+$url_id = 'url_id_example'; // niz
 
 try {
     $result = $apiInstance->getCommentsPublic($tenant_id, $url_id);
@@ -34,10 +34,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new FastComments\Client\Api\ModerationApi(
     new GuzzleHttp\Client()
 );
-$sso = 'sso_example'; // string - SSO payload authenticating the moderator
+$sso = 'sso_example'; // niz - SSO payload, ki avtenticira moderatorja
 
 try {
-    $result = $apiInstance->getCount(null, null, null, null, null, $sso);
+    $result = $apiInstance->getCount([
+        'sso' => $sso,
+    ]);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getCount: ', $e->getMessage(), PHP_EOL;

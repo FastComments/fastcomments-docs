@@ -1,10 +1,10 @@
 ## Parametri
 
-| Ime | Tip | Zahtevano | Opis |
+| Ime | Vrsta | Obvezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | id | string | Ne |  |
-| editKey | string | Ne |  |
+| editKey | string = "" | Ne |  |
 
 ## Odgovor
 
@@ -14,12 +14,11 @@ Vrne: [`Option[VoteDeleteResponse]`](https://github.com/FastComments/fastcomment
 
 [inline-code-attrs-start title = 'deleteVote Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteVote(tenantId = "my-tenant-123", id = "vote-7f3b2a", editKey = "")
-if response.isSome:
-  let voteDelete = response.get()
-  echo "Vote deleted successfully"
-else:
-  echo "Failed to delete vote"
+let (voteRespOpt, httpResp) = client.deleteVote(tenantId = "my-tenant-123", id = "comment-456", editKey = "")
+if voteRespOpt.isSome:
+  let voteResp = voteRespOpt.get()
+  discard voteResp
+  discard httpResp
 [inline-code-end]
 
 ---

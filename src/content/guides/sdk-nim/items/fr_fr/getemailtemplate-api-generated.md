@@ -1,7 +1,7 @@
 ## Paramètres
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nom | Type | Obligatoire | Description |
+|------|------|-------------|-------------|
 | tenantId | string | Oui |  |
 | id | string | Non |  |
 
@@ -11,10 +11,9 @@ Renvoie : [`Option[GetEmailTemplateResponse]`](https://github.com/FastComments/f
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getEmailTemplate'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getEmailTemplate'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getEmailTemplate(tenantId = "my-tenant-123", id = "welcome-email-01")
+let (response, httpResponse) = client.getEmailTemplate(tenantId = "my-tenant-123", id = "welcome-email")
 if response.isSome:
-  let template = response.get()
-  discard template
+  let tmpl = response.get()
 [inline-code-end]

@@ -30,9 +30,11 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
 $from_name = 'from_name_example'; // string
+
 
 try {
     $result = $apiInstance->sendInvite($tenant_id, $id, $from_name);

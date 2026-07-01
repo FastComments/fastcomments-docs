@@ -1,7 +1,6 @@
----
-## Parametri
+## Parameters
 
-| Ime | Tip | Obvezno | Opis |
+| Ime | Vrsta | Obvezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | renderEmailTemplateBody | RenderEmailTemplateBody | Da |  |
@@ -13,24 +12,15 @@ Vrne: [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcommen
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer renderEmailTemplate'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'renderEmailTemplate Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-auto body = std::make_shared<RenderEmailTemplateBody>();
-body->templateId = U("welcome-email");
-body->recipientEmail = U("user@example.com");
+auto body = RenderEmailTemplateBody();
+body.templateId = U("welcome-email");
+body.recipientEmail = U("user@example.com");
 boost::optional<utility::string_t> locale = U("en-US");
-api->renderEmailTemplate(tenantId, *body, locale)
-    .then([](pplx::task<std::shared_ptr<RenderEmailTemplateResponse>> t) {
-        try {
-            auto resp = t.get();
-            if (resp) {
-                std::cout << "Rendered email template received for tenant\n";
-            }
-        } catch (const std::exception& e) {
-            std::cerr << "Error: " << e.what() << '\n';
-        }
+
+api->renderEmailTemplate(U("my-tenant-123"), body, locale)
+    .then([](std::shared_ptr<RenderEmailTemplateResponse> resp) {
+        std::cout << "Email template rendered successfully\n";
     });
 [inline-code-end]
-
----

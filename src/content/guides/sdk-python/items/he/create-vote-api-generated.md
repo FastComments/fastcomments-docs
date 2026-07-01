@@ -2,45 +2,40 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | כן |  |
-| commentId | string | query | כן |  |
-| direction | string | query | כן |  |
-| userId | string | query | לא |  |
-| anonUserId | string | query | לא |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | query | Yes |  |
+| direction | string | query | Yes |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
 
-## תגובה
+## תשובה
 
 מחזיר: [`VoteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_response.py)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-create_vote'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_vote דוגמה'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import CreateVoteOptions
 from client.models.vote_response import VoteResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת ה-host היא אופציונלית וברירת המחדל היא https://fastcomments.com
-# ראו את configuration.py לרשימת כל פרמטרי התצורה הנתמכים.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
-
-# הלקוח חייב להגדיר את פרמטרי האימות והרשאות
+# הגדרת המארח היא אופציונלית ובברירת המחדל https://fastcomments.com
+# ראה configuration.py לקבלת רשימה של כל פרמטרי הקונפיגורציה הנתמכים.
+# הלקוח חייב להגדיר את פרמטי האימות וההרשאה
 # בהתאם למדיניות האבטחה של שרת ה-API.
-# דוגמאות לכל שיטת אימות מסופקות למטה, השתמשו בדוגמה ש
-# מספקת את מקרה השימוש שלכם באימות.
-
-# הגדרת אישור מפתח ה-API: api_key
-configuration.api_key['api_key'] = os.environ["API_KEY"]
-
-# הסירו את ההערה למטה כדי להגדיר תחילית (למשל Bearer) עבור מפתח ה-API, אם נדרש
+# דוגמאות לכל שיטת אימות ניתנות למטה, השתמש בדוגמה שמ
+# מתאימה למקרה השימוש שלך באימות.
+# הגדר הרשאת מפתח API: api_key
+# בטל את ההערה של הקו הבא כדי להגדיר קידומת (למשל Bearer) למפתח ה-API, אם נדרש
+# configuration.api_key['api_key'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# כניסה להקשר עם מופע של לקוח ה-API
+# הכנס להקשר עם מופע של לקוח ה-API
 with client.ApiClient(configuration) as api_client:
-    # צרו מופע של מחלקת ה-API
+    # צור מופע של מחלקת ה-API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
@@ -49,7 +44,7 @@ with client.ApiClient(configuration) as api_client:
     anon_user_id = 'anon_user_id_example' # str |  (אופציונלי)
 
     try:
-        api_response = api_instance.create_vote(tenant_id, comment_id, direction, user_id=user_id, anon_user_id=anon_user_id)
+        api_response = api_instance.create_vote(tenant_id, comment_id, direction, CreateVoteOptions(user_id=user_id, anon_user_id=anon_user_id))
         print("The response of DefaultApi->create_vote:\n")
         pprint(api_response)
     except Exception as e:

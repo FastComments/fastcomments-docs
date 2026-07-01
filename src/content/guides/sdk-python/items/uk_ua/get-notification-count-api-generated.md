@@ -1,7 +1,7 @@
 ## Параметри
 
-| Назва | Type | Location | Обов'язково | Опис |
-|------|------|----------|----------|-------------|
+| Назва | Тип | Розташування | Обов’язково | Опис |
+|------|------|--------------|-------------|------|
 | tenantId | string | query | Так |  |
 | userId | string | query | Ні |  |
 | urlId | string | query | Ні |  |
@@ -15,31 +15,28 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад get_notification_count'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_notification_count Приклад'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetNotificationCountOptions
 from client.models.get_notification_count_response import GetNotificationCountResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Визначення хоста необов'язкове і за замовчуванням https://fastcomments.com
+# Визначення хоста є необов’язковим і за замовчуванням встановлює https://fastcomments.com
 # Дивіться configuration.py для списку всіх підтримуваних параметрів конфігурації.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
-
 # Клієнт повинен налаштувати параметри автентифікації та авторизації
 # відповідно до політики безпеки сервера API.
-# Приклади для кожного методу автентифікації наведено нижче, використайте приклад, який
-# відповідає вашому випадку використання автентифікації.
+# Приклади для кожного методу автентифікації наведені нижче, використайте той приклад,
+# який відповідає вашому випадку використання автентифікації.
 
-# Configure API key authorization: api_key
+# Налаштування авторизації за допомогою API‑ключа: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Розкоментуйте нижче, щоб задати префікс (наприклад, Bearer) для API‑ключа, якщо потрібно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Відкрийте контекст із екземпляром клієнта API
+# Відкрийте контекст з екземпляром API‑клієнта
 with client.ApiClient(configuration) as api_client:
     # Створіть екземпляр класу API
     api_instance = client.DefaultApi(api_client)
@@ -51,9 +48,9 @@ with client.ApiClient(configuration) as api_client:
     type = 'type_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_notification_count(tenant_id, user_id=user_id, url_id=url_id, from_comment_id=from_comment_id, viewed=viewed, type=type)
-        print("The response of DefaultApi->get_notification_count:\n")
+        api_response = api_instance.get_notification_count(tenant_id, GetNotificationCountOptions(user_id=user_id, url_id=url_id, from_comment_id=from_comment_id, viewed=viewed, type=type))
+        print("Відповідь DefaultApi->get_notification_count:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DefaultApi->get_notification_count: %s\n" % e)
+        print("Виняток при виклику DefaultApi->get_notification_count: %s\n" % e)
 [inline-code-end]

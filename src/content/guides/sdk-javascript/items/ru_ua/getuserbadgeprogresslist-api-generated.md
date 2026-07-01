@@ -1,29 +1,35 @@
----
-## Параметри
+## Параметры
 
-| Назва | Тип | Обов'язково | Опис |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| userId | string | Ні |  |
-| limit | number | Ні |  |
-| skip | number | Ні |  |
+| tenantId | string | Yes |  |
+| userId | string | No |  |
+| limit | number | No |  |
+| skip | number | No |  |
 
-## Відповідь
+## Ответ
 
-Повертає: [`APIGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIGetUserBadgeProgressListResponse.ts)
+Возвращает: [`GetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserBadgeProgressListResponse.ts)
 
-## Приклад
+## Пример
 
-[inline-code-attrs-start title = 'Приклад getUserBadgeProgressList'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getUserBadgeProgressList'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "acme-corp-tenant-01";
-  const userId: string | undefined = "user-9e12b4";
-  const limit: number | undefined = 20;
-  const skip: number | undefined = 0;
-  const result: APIGetUserBadgeProgressListResponse = await getUserBadgeProgressList(tenantId, userId, limit, skip);
-  console.log(result);
-})();
-[inline-code-end]
+async function fetchBadgeProgress() {
+  const tenantId: string = "acme-corp";
+  const userId: string = "john.doe@example.com";
+  const limit: number = 10;
+  const skip: number = 5;
 
----
+  const fullList: GetUserBadgeProgressListResponse = await getUserBadgeProgressList(
+    tenantId,
+    userId,
+    limit,
+    skip
+  );
+
+  const simpleList: GetUserBadgeProgressListResponse = await getUserBadgeProgressList(tenantId);
+}
+
+fetchBadgeProgress();
+[inline-code-end]

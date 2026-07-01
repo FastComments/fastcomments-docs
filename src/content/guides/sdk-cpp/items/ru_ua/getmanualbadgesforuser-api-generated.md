@@ -2,9 +2,8 @@
 
 | Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
-| badgesUserId | string | No |  |
-| commentId | string | No |  |
-| sso | string | No |  |
+| tenantId | string | Да |  |
+| options | const GetManualBadgesForUserOptions& | Да |  |
 
 ## Ответ
 
@@ -14,19 +13,14 @@
 
 [inline-code-attrs-start title = 'Пример getManualBadgesForUser'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> badgesUserId(boost::optional<utility::string_t>(U("user@example.com")));
-boost::optional<utility::string_t> commentId(boost::optional<utility::string_t>(U("cmt-789")));
-boost::optional<utility::string_t> sso(boost::optional<utility::string_t>(U("my-tenant-123|sso-token-abc")));
-auto task = api->getManualBadgesForUser(badgesUserId, commentId, sso)
-.then([](pplx::task<std::shared_ptr<GetUserManualBadgesResponse>> t) {
-    try {
-        auto resp = t.get();
-        if (!resp) resp = std::make_shared<GetUserManualBadgesResponse>();
-        return resp;
-    } catch (...) {
-        return std::make_shared<GetUserManualBadgesResponse>();
+utility::string_t tenantId = U("my-tenant-123");
+GetManualBadgesForUserOptions options;
+options.userEmail = boost::optional<utility::string_t>(U("user@example.com"));
+options.includeInactive = boost::optional<bool>(true);
+api->getManualBadgesForUser(tenantId, options).then([](pplx::task<std::shared_ptr<GetUserManualBadgesResponse>> task){
+    try{
+        auto response = task.get();
+    }catch(const std::exception&){
     }
 });
 [inline-code-end]
-
----

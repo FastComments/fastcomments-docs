@@ -1,22 +1,26 @@
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| page | number | 否 |  |
+| tenantId | string | Yes |  |
+| page | number | No |  |
 
 ## 回應
 
-回傳: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetHashTagsResponse.ts)
+返回：[`GetHashTagsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetHashTagsResponse1.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getHashTags 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-123";
-const pageNumber: number = 2;
-const responseWithPage: GetHashTagsResponse = await getHashTags(tenantId, pageNumber);
-const responseFirstPage: GetHashTagsResponse = await getHashTags(tenantId);
+(async () => {
+  const tenantId: string = "tenant_12345";
+
+  const responseWithPage: GetHashTagsResponse1 = await getHashTags(tenantId, 1);
+  const responseDefault: GetHashTagsResponse1 = await getHashTags(tenantId);
+
+  console.log(responseWithPage, responseDefault);
+})();
 [inline-code-end]
 
 ---

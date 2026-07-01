@@ -7,9 +7,7 @@ afterId
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
-| afterId | string | Nej |  |
-| limit | int | Nej |  |
-| tags | seq[string] | Nej |  |
+| options | GetFeedPostsOptions | Nej |  |
 
 ## Svar
 
@@ -19,13 +17,10 @@ Returnerer: [`Option[GetFeedPostsResponse]`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'getFeedPosts Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getFeedPosts(
-  tenantId = "my-tenant-123",
-  afterId = "",
-  limit = 0,
-  tags = @[]
-)
-if response.isSome:
-  let feed = response.get()
-  echo "Feed retrieved for tenant my-tenant-123"
+let (feedResponseOpt, httpResp) = client.getFeedPosts(tenantId = "my-tenant-123", options = GetFeedPostsOptions())
+if feedResponseOpt.isSome:
+  let feedResponse = feedResponseOpt.get()
+  echo feedResponse
 [inline-code-end]
+
+---

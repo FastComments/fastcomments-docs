@@ -1,10 +1,10 @@
 ## 参数
 
-| 名称 | 类型 | 必需 | 说明 |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| id | string | 否 |  |
-| userId | string | 否 |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| userId | string = "" | No |  |
 
 ## 响应
 
@@ -14,10 +14,8 @@
 
 [inline-code-attrs-start title = 'getTicket 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTicket(tenantId = "my-tenant-123", id = "ticket-456", userId = "user-789")
-if response.isSome:
-  let ticket = response.get()
-  echo "Got ticket:", ticket
-else:
-  echo "No ticket returned; HTTP response:", httpResponse
+let (ticketOpt, httpResp) = client.getTicket(tenantId = "my-tenant-123", id = "ticket-456", userId = "")
+if ticketOpt.isSome:
+  let ticket = ticketOpt.get()
+  discard ticket
 [inline-code-end]

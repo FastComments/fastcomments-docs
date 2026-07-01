@@ -1,7 +1,8 @@
 ## Parametry
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
-|------|------|----------|----------|-------------|
+|------|------|--------------|----------|------|
+| tenantId | string | query | Tak |  |
 | userId | string | query | Nie |  |
 | sso | string | query | Nie |  |
 
@@ -13,13 +14,14 @@ Zwraca: [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastcomme
 
 [inline-code-attrs-start title = 'Przykład getTrustFactor'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Następujące przykłady kodu są nadal w wersji beta. W razie problemu zgłoś go przez http://github.com/OpenAPITools/openapi-generator/issues/new
+// Poniższe przykłady kodu są wciąż w wersji beta. W razie problemu prosimy zgłosić go pod adresem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let userId = "userId_example" // String |  (opcjonalne)
-let sso = "sso_example" // String |  (opcjonalne)
+let tenantId = "tenantId_example" // String | 
+let userId = "userId_example" // String |  (opcjonalnie)
+let sso = "sso_example" // String |  (opcjonalnie)
 
-ModerationAPI.getTrustFactor(userId: userId, sso: sso) { (response, error) in
+ModerationAPI.getTrustFactor(tenantId: tenantId, options: ModerationAPI.GetTrustFactorOptions(userId: userId, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -30,5 +32,3 @@ ModerationAPI.getTrustFactor(userId: userId, sso: sso) { (response, error) in
     }
 }
 [inline-code-end]
-
----

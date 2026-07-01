@@ -1,16 +1,31 @@
-画像をアップロードしてリサイズする
+画像のアップロードとリサイズ
 
 ## パラメータ
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | はい |  |
-| file | Blob | はい |  |
-| sizePreset | SizePreset | いいえ |  |
-| urlId | string | いいえ |  |
+| tenantId | string | Yes |  |
+| file | Blob | Yes |  |
+| sizePreset | SizePreset | No |  |
+| urlId | string | No |  |
 
 ## レスポンス
 
-戻り値: [`UploadImageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UploadImageResponse.ts)
+返却: [`UploadImageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UploadImageResponse.ts)
+
+## 例
+
+[inline-code-attrs-start title = 'uploadImage の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+const tenantId: string = "acme-tenant-01";
+const imageBlob: Blob = new Blob([new Uint8Array([137,80,78,71])], { type: "image/png" });
+
+const uploadResult1: UploadImageResponse = await uploadImage(tenantId, imageBlob);
+
+const sizePreset: SizePreset = { presetName: "medium" };
+const urlId: string = "article-9876";
+
+const uploadResult2: UploadImageResponse = await uploadImage(tenantId, imageBlob, sizePreset, urlId);
+[inline-code-end]
 
 ---

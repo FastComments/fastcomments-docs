@@ -1,35 +1,35 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Обавезно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
+Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример deleteQuestionResult'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteQuestionResult Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-auto tenantId = utility::string_t(U("my-tenant-123"));
-auto questionId = utility::string_t(U("qst-456789"));
-boost::optional<utility::string_t> operatorNote = boost::optional<utility::string_t>(U("admin-request-001"));
+boost::optional<utility::string_t> optTenant = utility::conversions::to_string_t( "my-tenant-123" );
+utility::string_t questionId = utility::conversions::to_string_t( "question-456" );
 
-api->deleteQuestionResult(tenantId, questionId)
-    .then([operatorNote](pplx::task<std::shared_ptr<APIEmptyResponse>> t) {
-        try {
-            auto resp = t.get();
-            auto result = resp ? resp : std::make_shared<APIEmptyResponse>();
-            if (operatorNote) std::cout << "Deleted (note): " << utility::conversions::to_utf8string(*operatorNote) << std::endl;
-            else std::cout << "Deleted" << std::endl;
-            return result;
-        } catch (const std::exception& e) {
-            std::cerr << "Delete failed: " << e.what() << std::endl;
-            return std::shared_ptr<APIEmptyResponse>(nullptr);
-        }
-    });
+if ( optTenant )
+{
+    api->deleteQuestionResult( *optTenant, questionId )
+        .then( []( pplx::task<std::shared_ptr<APIEmptyResponse>> t )
+        {
+            try
+            {
+                auto resp = t.get();
+                // uspješno rukovanje
+            }
+            catch ( const std::exception& e )
+            {
+                // rukovanje greškom
+            }
+        } );
+}
 [inline-code-end]
-
----

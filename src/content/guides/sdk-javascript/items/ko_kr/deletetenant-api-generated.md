@@ -1,23 +1,32 @@
-## 매개변수
+## Parameters
 
-| 이름 | 타입 | 필수 | 설명 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| id | string | 예 |  |
-| sure | string | 아니요 |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| sure | string | No |  |
 
-## 응답
+## Response
 
-반환: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Returns: [`DeleteTenantResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteTenantResponse.ts)
 
-## 예제
+## Example
 
-[inline-code-attrs-start title = 'deleteTenant 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteTenant 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_5f2b9c8a';
-const id: string = 'site_9d4f2a1b';
-const confirmation: string = 'CONFIRM_DELETE';
-const result: APIEmptyResponse = await deleteTenant(tenantId, id, confirmation);
-[inline-code-end]
+async function runExample() {
+    const tenantId: string = "tenant_12345";
+    const id: string = "resource_98765";
+    const sure: string = "confirm";
 
----
+    // 선택적인 'sure' 매개변수를 사용하여 호출
+    const responseWithSure: DeleteTenantResponse = await deleteTenant(tenantId, id, sure);
+    console.log(responseWithSure);
+
+    // 선택적인 'sure' 매개변수 없이 호출
+    const responseWithoutSure: DeleteTenantResponse = await deleteTenant(tenantId, id);
+    console.log(responseWithoutSure);
+}
+
+runExample();
+[inline-code-end]

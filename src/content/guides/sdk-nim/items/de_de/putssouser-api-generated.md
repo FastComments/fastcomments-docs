@@ -1,36 +1,27 @@
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
-|------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| id | string | Nein |  |
-| updateAPISSOUserData | UpdateAPISSOUserData | Nein |  |
-| updateComments | bool | Nein |  |
+|------|------|--------------|---------------|
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| updateAPISSOUserData | UpdateAPISSOUserData | No |  |
+| updateComments | bool | No |  |
 
 ## Antwort
 
-Gibt zurück: [`Option[PutSSOUserAPIResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_put_sso_user_api_response.nim)
+Rückgabe: [`Option[PutSSOUserAPIResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_put_sso_user_api_response.nim)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'putSSOUser Beispiel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.putSSOUser(
+let (apiRespOpt, httpResp) = client.putSSOUser(
   tenantId = "my-tenant-123",
   id = "user-456",
-  updateAPISSOUserData = UpdateAPISSOUserData(
-    externalId = "ext-789",
-    displayName = "Jane Doe",
-    email = "jane.doe@example.com",
-    avatarUrl = "https://cdn.news-site.com/avatars/jane.jpg",
-    roles = @["member", "subscriber"]
-  ),
-  updateComments = true
-)
+  updateAPISSOUserData = default(UpdateAPISSOUserData),
+  updateComments = false)
 
-if response.isSome:
-  let result = response.get()
-  echo "SSO user updated:", result
+if apiRespOpt.isSome:
+  let apiResp = apiRespOpt.get()
+  echo apiResp
 [inline-code-end]
-
----

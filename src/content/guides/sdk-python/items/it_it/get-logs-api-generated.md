@@ -1,13 +1,14 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Sì |  |
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+|------|------|-----------|--------------|-------------|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
 | sso | string | query | No |  |
 
 ## Risposta
 
-Restituisce: [`ModerationAPIGetLogsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/moderation_api_get_logs_response.py)
+Returns: [`ModerationAPIGetLogsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/moderation_api_get_logs_response.py)
 
 ## Esempio
 
@@ -18,22 +19,23 @@ from client.models.moderation_api_get_logs_response import ModerationAPIGetLogsR
 from client.rest import ApiException
 from pprint import pprint
 
-# La definizione dell'host è opzionale e il valore predefinito è https://fastcomments.com
-# Consulta configuration.py per l'elenco di tutti i parametri di configurazione supportati.
+# Definire l'host è opzionale e il valore predefinito è https://fastcomments.com
+# Vedere configuration.py per un elenco di tutti i parametri di configurazione supportati.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Entra in un contesto con un'istanza del client API
+# Entrare in un contesto con un'istanza del client API
 with client.ApiClient(configuration) as api_client:
-    # Crea un'istanza della classe API
+    # Creare un'istanza della classe API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
-    sso = 'sso_example' # str |  (opzionale)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_logs(comment_id, sso=sso)
+        api_response = api_instance.get_logs(tenant_id, comment_id, sso=sso)
         print("The response of ModerationApi->get_logs:\n")
         pprint(api_response)
     except Exception as e:

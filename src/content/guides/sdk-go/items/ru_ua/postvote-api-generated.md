@@ -1,18 +1,20 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Location | Обязательно | Описание |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Да |  |
-| direction | string | query | Нет |  |
-| sso | string | query | Нет |  |
+| Назва | Тип | Розташування | Обов'язково | Опис |
+|------|------|--------------|-------------|------|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| direction | string | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`VoteResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_vote_response.go)
+Повертає: [`VoteResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_vote_response.go)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример PostVote'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад PostVote'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -24,18 +26,20 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
-	direction := "direction_example" // string |  (необязательно)
-	sso := "sso_example" // string |  (необязательно)
+	direction := "direction_example" // string |  (опціонально)
+	broadcastId := "broadcastId_example" // string |  (опціонально)
+	sso := "sso_example" // string |  (опціонально)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostVote(context.Background(), commentId).Direction(direction).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostVote(context.Background(), commentId).TenantId(tenantId).Direction(direction).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostVote``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Помилка при виклику `ModerationAPI.PostVote``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Повна HTTP‑відповідь: %v\n", r)
 	}
-	// ответ от `PostVote`: VoteResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostVote`: %v\n", resp)
+	// відповідь від `PostVote`: VoteResponse
+	fmt.Fprintf(os.Stdout, "Відповідь від `ModerationAPI.PostVote`: %v\n", resp)
 }
 [inline-code-end]

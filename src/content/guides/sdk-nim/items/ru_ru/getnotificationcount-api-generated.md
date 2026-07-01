@@ -1,12 +1,9 @@
 ## Параметры
 
 | Имя | Тип | Обязательно | Описание |
-|------|------|----------|-------------|
+|------|------|-------------|----------|
 | tenantId | string | Да |  |
-| userId | string | Нет |  |
-| urlId | string | Да |  |
-| fromCommentId | string | Нет |  |
-| viewed | bool | Нет |  |
+| options | GetNotificationCountOptions | Нет |  |
 
 ## Ответ
 
@@ -14,12 +11,12 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример использования getNotificationCount'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getNotificationCount'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getNotificationCount(tenantId = "my-tenant-123", userId = "user-987", urlId = "news/2026/06/election-results", fromCommentId = "", viewed = false)
-if response.isSome:
-  let notifyData = response.get()
-  echo notifyData
+let (notifOpt, httpResp) = client.getNotificationCount(tenantId = "my-tenant-123", options = GetNotificationCountOptions())
+if notifOpt.isSome:
+  let notif = notifOpt.get()
+  echo notif
 [inline-code-end]
 
 ---

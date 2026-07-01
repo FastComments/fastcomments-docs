@@ -1,12 +1,11 @@
-## Параметри
+## Parameters
 
 | Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | id | string | Да |  |
 | blockFromCommentParams | BlockFromCommentParams | Да |  |
-| userId | string | Не |  |
-| anonUserId | string | Не |  |
+| options | const BlockUserFromCommentOptions& | Да |  |
 
 ## Отговор
 
@@ -14,22 +13,17 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за blockUserFromComment'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'blockUserFromComment пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("cmt-987654321");
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto commentId = utility::conversions::to_string_t("comment-789");
 BlockFromCommentParams params;
-boost::optional<utility::string_t> userId = boost::optional<utility::string_t>(U("user@example.com"));
-boost::optional<utility::string_t> anonUserId;
-api->blockUserFromComment(tenantId, commentId, params, userId, anonUserId)
-.then([](pplx::task<std::shared_ptr<BlockSuccess>> task){
-    try {
-        auto result = task.get();
-        auto ack = std::make_shared<BlockSuccess>();
-        bool blocked = (result != nullptr);
-        (void)ack; (void)blocked;
-    } catch(...) {}
-});
-[inline-code-end]
+params.reason = utility::conversions::to_string_t("Inappropriate content");
+params.durationDays = boost::optional<int>(30);
+BlockUserFromCommentOptions options;
+options.notifyUser = boost::optional<bool>(true);
 
----
+api->blockUserFromComment(tenantId, commentId, params, options)
+    .then([](std::shared_ptr<BlockSuccess> result){ })
+    .then([](pplx::task<void> t){ try { t.get(); } catch (const std::exception&) { } });
+[inline-code-end]

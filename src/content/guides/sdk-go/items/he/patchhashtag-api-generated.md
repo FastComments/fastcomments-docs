@@ -1,15 +1,15 @@
-## פרמטרים
+## Parameters
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| שם | סוג | מיקום | חובה | תיאור |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | כן |  |
 | tag | string | path | כן |  |
-| tenantId | string | query | לא |  |
 
-## תגובה
+## Response
 
 מחזיר: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_update_hash_tag_response.go)
 
-## דוגמה
+## Example
 
 [inline-code-attrs-start title = 'דוגמה ל-PatchHashTag'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -23,8 +23,8 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	tag := "tag_example" // string | 
-	tenantId := "tenantId_example" // string |  (אופציונלי)
 	updateHashTagBody := *openapiclient.NewUpdateHashTagBody() // UpdateHashTagBody |  (אופציונלי)
 
 	configuration := openapiclient.NewConfiguration()
@@ -34,7 +34,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PatchHashTag``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// תגובה מ־`PatchHashTag`: UpdateHashTagResponse
+	// response from `PatchHashTag`: UpdateHashTagResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PatchHashTag`: %v\n", resp)
 }
 [inline-code-end]
+
+---

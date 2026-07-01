@@ -2,13 +2,14 @@
 
 | Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| text-search | string | query | No |  |
-| byIPFromComment | string | query | No |  |
-| filters | string | query | No |  |
-| searchFilters | string | query | No |  |
-| afterId | string | query | No |  |
-| demo | boolean | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Да |  |
+| text-search | string | query | Нет |  |
+| byIPFromComment | string | query | Нет |  |
+| filters | string | query | Нет |  |
+| searchFilters | string | query | Нет |  |
+| afterId | string | query | Нет |  |
+| demo | boolean | query | Нет |  |
+| sso | string | query | Нет |  |
 
 ## Ответ
 
@@ -16,9 +17,9 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример использования getApiIds'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getApiIds'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Импорт классов:
+// Импортировать классы:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -31,15 +32,16 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
-    String textSearch = "textSearch_example"; // String | 
-    String byIPFromComment = "byIPFromComment_example"; // String | 
-    String filters = "filters_example"; // String | 
-    String searchFilters = "searchFilters_example"; // String | 
-    String afterId = "afterId_example"; // String | 
-    Boolean demo = true; // Boolean | 
-    String sso = "sso_example"; // String | 
+    String tenantId = "tenantId_example"; // String |
+    String textSearch = "textSearch_example"; // String |
+    String byIPFromComment = "byIPFromComment_example"; // String |
+    String filters = "filters_example"; // String |
+    String searchFilters = "searchFilters_example"; // String |
+    String afterId = "afterId_example"; // String |
+    Boolean demo = true; // Boolean |
+    String sso = "sso_example"; // String |
     try {
-      ModerationAPIGetCommentIdsResponse result = apiInstance.getApiIds()
+      ModerationAPIGetCommentIdsResponse result = apiInstance.getApiIds(tenantId)
             .textSearch(textSearch)
             .byIPFromComment(byIPFromComment)
             .filters(filters)

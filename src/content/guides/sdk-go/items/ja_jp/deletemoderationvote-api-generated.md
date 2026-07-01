@@ -1,15 +1,16 @@
----
 ## パラメータ
 
-| 名前 | 型 | ロケーション | 必須 | 説明 |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| commentId | string | path | はい |  |
-| voteId | string | path | はい |  |
-| sso | string | query | いいえ |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| voteId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
-## レスポンス
+## 応答
 
-返却値: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_vote_delete_response.go)
+Returns: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_vote_delete_response.go)
 
 ## 例
 
@@ -25,19 +26,21 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
 	voteId := "voteId_example" // string | 
-	sso := "sso_example" // string |  (任意)
+	broadcastId := "broadcastId_example" // string |  (オプション)
+	sso := "sso_example" // string |  (オプション)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.DeleteModerationVote(context.Background(), commentId, voteId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.DeleteModerationVote(context.Background(), commentId, voteId).TenantId(tenantId).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.DeleteModerationVote``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "呼び出し中のエラー `ModerationAPI.DeleteModerationVote``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "完全な HTTP 応答: %v\n", r)
 	}
-	// response from `DeleteModerationVote`: VoteDeleteResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.DeleteModerationVote`: %v\n", resp)
+	// `DeleteModerationVote` の応答: VoteDeleteResponse
+	fmt.Fprintf(os.Stdout, "`ModerationAPI.DeleteModerationVote` からの応答: %v\n", resp)
 }
 [inline-code-end]
 

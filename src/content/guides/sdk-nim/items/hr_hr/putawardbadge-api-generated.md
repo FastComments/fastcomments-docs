@@ -1,12 +1,10 @@
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| badgeId | string | Ne |  |
-| userId | string | Ne |  |
-| commentId | string | Da |  |
-| broadcastId | string | Ne |  |
-| sso | string | Ne |  |
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| badgeId | string | No |  |
+| options | PutAwardBadgeOptions | No |  |
 
 ## Odgovor
 
@@ -14,20 +12,14 @@ Vraća: [`Option[AwardUserBadgeResponse]`](https://github.com/FastComments/fastc
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer putAwardBadge'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putAwardBadge Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.putAwardBadge(
-  badgeId = "gold-contributor",
-  userId = "user-8723",
-  commentId = "cmt-54a3b2",
-  broadcastId = "",
-  sso = ""
+  tenantId = "my-tenant-123",
+  badgeId = "gold-badge",
+  options = PutAwardBadgeOptions()
 )
+
 if response.isSome:
   let award = response.get()
-  echo "Awarded badge received"
-else:
-  echo "No award response"
 [inline-code-end]
-
----

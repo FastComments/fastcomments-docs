@@ -1,45 +1,48 @@
-Fasst Dokumente zusammen, indem sie gruppiert werden (falls groupBy angegeben ist) und mehrere Operationen angewendet werden.
-Verschiedene Operationen (z. B. sum, countDistinct, avg, usw.) werden unterstützt.
+Aggregiert Dokumente, indem sie (falls `groupBy` angegeben ist) gruppiert und mehrere Vorgänge angewendet werden. Verschiedene Vorgänge (z. B. sum, countDistinct, avg usw.) werden unterstützt.
 
 ## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| parentTenantId | string | query | No |  |
-| includeStats | boolean | query | No |  |
+|------|-----|-----|--------------|--------------|
+| tenantId | string | query | Ja |  |
+| parentTenantId | string | query | Nein |  |
+| includeStats | boolean | query | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`AggregateResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AggregateResponse.php)
+Rückgabe: [`AggregateResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AggregateResponse.php)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'aggregate Beispiel'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Aggregationsbeispiel'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Konfigurieren der API-Schlüssel-Autorisierung: api_key
+// Konfiguriere API-Schlüssel-Authentifizierung: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Entkommentieren Sie die folgende Zeile, um ein Präfix (z. B. Bearer) für den API-Schlüssel zu setzen, falls erforderlich
+// Kommentiere die Zeile unten aus, um ein Präfix (z. B. Bearer) für den API‑Schlüssel festzulegen, falls nötig
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Wenn Sie einen eigenen HTTP-Client verwenden möchten, übergeben Sie einen Client, der `GuzzleHttp\ClientInterface` implementiert.
+    // Wenn du einen benutzerdefinierten HTTP‑Client verwenden möchtest, übergebe deinen Client, der `GuzzleHttp\ClientInterface` implementiert.
     // Dies ist optional, `GuzzleHttp\Client` wird standardmäßig verwendet.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $aggregation_request = new \FastComments\Client\Model\AggregationRequest(); // \FastComments\Client\Model\AggregationRequest
-$parent_tenant_id = 'parent_tenant_id_example'; // string
-$include_stats = True; // bool
+$options = [
+    'parent_tenant_id' => 'parent_tenant_id_example', // string
+    'include_stats' => True, // bool
+];
+
 
 try {
-    $result = $apiInstance->aggregate($tenant_id, $aggregation_request, $parent_tenant_id, $include_stats);
+    $result = $apiInstance->aggregate($tenant_id, $aggregation_request, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->aggregate: ', $e->getMessage(), PHP_EOL;

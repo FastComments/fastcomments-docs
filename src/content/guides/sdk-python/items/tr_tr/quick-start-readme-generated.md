@@ -1,47 +1,44 @@
-### Kimlik Doğrulamalı API'leri Kullanma (DefaultApi)
+### Yetkilendirilmiş API'leri Kullanma (DefaultApi)
 
-**Important:** Kimlik doğrulamalı istekler yapmadan önce Configuration üzerinde API anahtarınızı ayarlamalısınız. Ayarlamazsanız, istekler 401 hatasıyla başarısız olur.
+**Önemli:** Yetkilendirilmiş istekler yapmadan önce API anahtarınızı Configuration üzerinde ayarlamalısınız. Aksi takdirde istekler 401 hatasıyla başarısız olacaktır.
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
 from client.models import CreateAPISSOUserData
 
-# API istemcisini oluşturun ve yapılandırın
+# API istemcisini oluştur ve yapılandır
 config = Configuration()
 config.host = "https://fastcomments.com/api"
 
-# GEREKLİ: API anahtarınızı ayarlayın (bunu FastComments panonuzdan alın)
+# GEREKLİ: API anahtarınızı ayarlayın (FastComments kontrol panelinizden alın)
 config.api_key = {"ApiKeyAuth": "YOUR_API_KEY_HERE"}
 
-# Yapılandırılmış client ile API örneğini oluşturun
+# Yapılandırılmış istemciyle API örneğini oluştur
 api_client = ApiClient(configuration=config)
 api = DefaultApi(api_client)
 
-# Artık kimlik doğrulamalı API çağrıları yapabilirsiniz
+# Artık yetkilendirilmiş API çağrıları yapabilirsiniz
 try:
-    # Örnek: Bir SSO kullanıcısı ekleyin
+    # Örnek: Bir SSO kullanıcısı ekle
     user_data = CreateAPISSOUserData(
         id="user-123",
         email="user@example.com",
         display_name="John Doe"
     )
 
-    response = api.add_sso_user(
-        tenant_id="YOUR_TENANT_ID",
-        create_apisso_user_data=user_data
-    )
+    response = api.add_sso_user("YOUR_TENANT_ID", user_data)
     print(f"User created: {response}")
 
 except Exception as e:
     print(f"Error: {e}")
     # Yaygın hatalar:
     # - 401: API anahtarı eksik veya geçersiz
-    # - 400: İstek doğrulaması başarısız
+    # - 400: İstek doğrulama başarısız
 ```
 
-### Herkese Açık API'leri Kullanma (PublicApi)
+### Genel API'leri Kullanma (PublicApi)
 
-Herkese açık uç noktalar kimlik doğrulama gerektirmez:
+Genel uç noktalar kimlik doğrulama gerektirmez:
 
 ```python
 from client import ApiClient, Configuration, PublicApi
@@ -53,10 +50,7 @@ api_client = ApiClient(configuration=config)
 public_api = PublicApi(api_client)
 
 try:
-    response = public_api.get_comments_public(
-        tenant_id="YOUR_TENANT_ID",
-        url_id="page-url-id"
-    )
+    response = public_api.get_comments_public("YOUR_TENANT_ID", "page-url-id")
     print(response)
 except Exception as e:
     print(f"Error: {e}")
@@ -64,10 +58,11 @@ except Exception as e:
 
 ### Moderasyon Panosunu Kullanma (ModerationApi)
 
-The `ModerationApi` moderatör panosunu sağlar. Yöntemler, bir moderatör adına bir `sso` token'i geçilerek çağrılır:
+`ModerationApi`, moderatör panosunun gücünü sağlar. Yöntemler bir `sso` belirteci geçerek moderatör adına çağrılır:
 
 ```python
 from client import ApiClient, Configuration, ModerationApi
+from client.api.moderation_api import GetCountOptions
 
 config = Configuration()
 config.host = "https://fastcomments.com/api"
@@ -76,21 +71,21 @@ api_client = ApiClient(configuration=config)
 moderation_api = ModerationApi(api_client)
 
 try:
-    # Moderasyonda bekleyen yorum sayısını alın
-    response = moderation_api.get_count(sso="SSO_TOKEN")
+    # Moderasyon bekleyen yorumları say
+    response = moderation_api.get_count(GetCountOptions(sso="SSO_TOKEN"))
     print(response)
 except Exception as e:
     print(f"Error: {e}")
 ```
 
-### SSO (Single Sign-On) Kullanımı
+### SSO (Tekli Oturum Açma) Kullanma
 
-SDK güvenli SSO tokenleri oluşturmak için yardımcı araçlar içerir:
+SDK, güvenli SSO belirteçleri oluşturmak için yardımcı programlar içerir:
 
 ```python
 from sso import FastCommentsSSO, SecureSSOUserData
 
-# Kullanıcı verilerini oluşturun
+# Kullanıcı verisi oluştur
 user_data = SecureSSOUserData(
     user_id="user-123",
     email="user@example.com",
@@ -98,16 +93,16 @@ user_data = SecureSSOUserData(
     avatar="https://example.com/avatar.jpg"
 )
 
-# API secret'inizle SSO örneği oluşturun
+# API gizlinizle SSO örneği oluştur
 sso = FastCommentsSSO.new_secure(
     api_secret="YOUR_API_SECRET",
     user_data=user_data
 )
 
-# SSO token'ını oluşturun
+# SSO belirtecini oluştur
 sso_token = sso.create_token()
 
-# Bu token'ı frontend'inizde kullanın veya API çağrılarına iletin
+# Bu belirteci ön yüzünüzde kullanın veya API çağrılarına geçirin
 print(f"SSO Token: {sso_token}")
 ```
 
@@ -128,7 +123,7 @@ sso_token = sso.create_token()
 ### Yaygın Sorunlar
 
 1. **401 "missing-api-key" hatası**: DefaultApi örneğini oluşturmadan önce `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` ayarladığınızdan emin olun.
-2. **Yanlış API sınıfı**: Sunucu tarafı kimlik doğrulamalı istekler için `DefaultApi`, istemci/halka açık istekler için `PublicApi`, moderatör paneli istekleri için `ModerationApi` kullanın.
+2. **Yanlış API sınıfı**: Sunucu tarafı yetkilendirilmiş istekler için `DefaultApi`, istemci tarafı/genel istekler için `PublicApi` ve moderatör panosu istekleri için `ModerationApi` kullanın.
 3. **İçe aktarma hataları**: Doğru modülden ithal ettiğinizden emin olun:
    - API istemcisi: `from client import ...`
-   - SSO yardımcı araçları: `from sso import ...`
+   - SSO yardımcı programları: `from sso import ...`

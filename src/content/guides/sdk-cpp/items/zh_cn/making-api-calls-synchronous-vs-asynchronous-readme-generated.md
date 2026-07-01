@@ -1,8 +1,10 @@
-所有此 SDK 中的 API 方法都返回来自 C++ REST SDK 的 `pplx::task<std::shared_ptr<ResponseType>>`。这使您在处理 API 响应时具有更大的灵活性。
+All API methods in this SDK return `pplx::task<std::shared_ptr<ResponseType>>` from the C++ REST SDK. This gives you flexibility in how you handle API responses.
+
+此 SDK 中的所有 API 方法都返回来自 C++ REST SDK 的 `pplx::task<std::shared_ptr<ResponseType>>`。这为您处理 API 响应提供了灵活性。
 
 ### 使用 `.get()` 的同步调用
 
-使用 `.get()` 阻塞调用线程，直到请求完成并同步检索结果：
+Use `.get()` to block the calling thread until the request completes and retrieve the result synchronously:
 
 ```cpp
 auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
@@ -13,24 +15,15 @@ config->setApiKey(utility::conversions::to_string_t("api_key"),
 auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
 org::openapitools::client::api::DefaultApi api(apiClient);
 
-// 调用 .get() 来阻塞并同步获取结果
+// Required parameters are positional; optional ones go in the options struct
+org::openapitools::client::api::GetCommentsOptions options;
+options.urlId = utility::conversions::to_string_t("your-url-id");
+
+// Call .get() to block and get the result synchronously
 auto response = api.getComments(
     utility::conversions::to_string_t("your-tenant-id"),
-    boost::none,  // page
-    boost::none,  // limit
-    boost::none,  // skip
-    boost::none,  // asTree
-    boost::none,  // skipChildren
-    boost::none,  // limitChildren
-    boost::none,  // maxTreeDepth
-    utility::conversions::to_string_t("your-url-id"),  // urlId
-    boost::none,  // userId
-    boost::none,  // anonUserId
-    boost::none,  // contextUserId
-    boost::none,  // hashTag
-    boost::none,  // parentId
-    boost::none   // direction
-).get();  // 阻塞直到 HTTP 请求完成
+    options
+).get();  // Blocks until the HTTP request completes
 
 if (response && response->comments) {
     std::cout << "Found " << response->comments->size() << " comments" << std::endl;
@@ -39,7 +32,7 @@ if (response && response->comments) {
 
 ### 使用 `.then()` 的异步调用
 
-使用 `.then()` 进行非阻塞的异步执行并使用回调：
+Use `.then()` for non-blocking asynchronous execution with callbacks:
 
 ```cpp
 auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
@@ -50,39 +43,51 @@ config->setApiKey(utility::conversions::to_string_t("api_key"),
 auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
 org::openapitools::client::api::DefaultApi api(apiClient);
 
-// 使用 .then() 进行基于回调的异步执行
+// Required parameters are positional; optional ones go in the options struct
+org::openapitools::client::api::GetCommentsOptions options;
+options.urlId = utility::conversions::to_string_t("your-url-id");
+
+// Use .then() for asynchronous callback-based execution
 api.getComments(
     utility::conversions::to_string_t("your-tenant-id"),
-    boost::none, boost::none, boost::none, boost::none, boost::none,
-    boost::none, boost::none,
-    utility::conversions::to_string_t("your-url-id"),
-    boost::none, boost::none, boost::none, boost::none, boost::none, boost::none
+    options
 ).then([](std::shared_ptr<GetComments_200_response> response) {
-    // 当请求完成时异步运行此代码
+    // This runs asynchronously when the request completes
     if (response && response->comments) {
         std::cout << "Found " << response->comments->size() << " comments" << std::endl;
     }
 });
 
-// 执行会立即继续而不会阻塞
+// Execution continues immediately without blocking
 std::cout << "Request sent, continuing..." << std::endl;
 ```
 
-### 在同步与异步之间进行选择
+### 在同步和异步之间的选择
 
-选择取决于您的运行时环境和应用程序架构：
+The choice depends on your runtime environment and application architecture:
 
-**`.get()` (同步阻塞)**
-- 阻塞调用线程直到 HTTP 请求完成
-- 代码流程更简单，更易于理解
-- 适用于专用工作线程、批处理或命令行工具
-- 不适用于事件循环、GUI 线程或单线程服务器
+**`.get()` (Synchronous blocking)**
+- Blocks the calling thread until the HTTP request completes
+  → 阻塞调用线程，直到 HTTP 请求完成
+- Simpler code flow, easier to reason about
+  → 代码流程更简单，易于理解
+- Suitable for dedicated worker threads, batch processing, or command-line tools
+  → 适用于专用工作线程、批处理或命令行工具
+- **Not suitable** for event loops, GUI threads, or single-threaded servers
+  → **不适合** 事件循环、GUI 线程或单线程服务器
 
-**`.then()` (异步非阻塞)**
-- 立即返回，回调在请求完成后执行
-- 不会阻塞调用线程
-- 适用于事件驱动架构、GUI 应用或单线程事件循环
-- 允许链式执行多个操作
-- 控制流更复杂
+**`.then()` (Asynchronous non-blocking)**
+- Returns immediately, callback executes when request completes
+  → 立即返回，请求完成时执行回调
+- Does not block the calling thread
+  → 不阻塞调用线程
+- Required for event-driven architectures, GUI applications, or single-threaded event loops
+  → 在事件驱动架构、GUI 应用程序或单线程事件循环中是必需的
+- Allows chaining multiple operations
+  → 允许链式调用多个操作
+- More complex control flow
+  → 控制流更复杂
 
-SDK 的测试套件仅使用 `.get()`，但这适用于测试环境，在该环境中阻塞是可以接受的。
+The SDK's test suite uses `.get()` exclusively, but this is appropriate for the test environment where blocking is acceptable.
+
+SDK 的测试套件仅使用 `.get()`，但这在阻塞是可接受的测试环境中是合适的。

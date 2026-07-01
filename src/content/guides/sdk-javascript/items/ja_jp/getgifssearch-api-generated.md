@@ -1,13 +1,12 @@
----
 ## パラメータ
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | はい |  |
-| search | string | はい |  |
-| locale | string | いいえ |  |
-| rating | string | いいえ |  |
-| page | number | いいえ |  |
+| tenantId | string | Yes |  |
+| search | string | Yes |  |
+| locale | string | No |  |
+| rating | string | No |  |
+| page | number | No |  |
 
 ## レスポンス
 
@@ -17,12 +16,23 @@
 
 [inline-code-attrs-start title = 'getGifsSearch の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-42';
-const search: string = 'golden hour sunset';
-const locale: string = 'en-US';
-const rating: string = 'pg';
-const page: number = 1;
-const result: GetGifsSearchResponse = await getGifsSearch(tenantId, search, locale, rating, page);
-[inline-code-end]
+async function demo() {
+  const tenantId: string = "tenant_9f8b7c";
+  const search: string = "funny cats";
+  const locale: string = "en-US";
+  const rating: string = "pg";
+  const page: number = 1;
 
----
+  const result: GetGifsSearchResponse = await getGifsSearch(
+    tenantId,
+    search,
+    locale,
+    rating,
+    page
+  );
+
+  console.log(result);
+}
+
+demo();
+[inline-code-end]

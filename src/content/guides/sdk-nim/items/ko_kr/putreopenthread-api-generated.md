@@ -1,25 +1,28 @@
----
-## 매개변수
+## Parameters
 
-| 이름 | 형식 | 필수 | 설명 |
-|------|------|------|-------------|
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenantId | string | 예 |  |
 | urlId | string | 예 |  |
-| sso | string | 아니요 |  |
+| sso | string = "" | 아니오 |  |
 
-## 응답
+## Response
 
-반환: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
+Returns: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
-## 예제
+## Example
 
-[inline-code-attrs-start title = 'putReopenThread 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putReopenThread 예시'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.putReopenThread(urlId = "news/2026-election-analysis", sso = "")
-if response.isSome:
-  let apiResp = response.get()
-  echo "Reopen succeeded, response: ", apiResp
-else:
-  echo "Reopen failed, HTTP status: ", httpResponse.status
+let (apiRespOpt, httpResp) = client.putReopenThread(
+  tenantId = "my-tenant-123",
+  urlId = "news/article-title",
+  sso = ""
+)
+
+if apiRespOpt.isSome:
+  let emptyResp = apiRespOpt.get()
+  discard
 [inline-code-end]
 
 ---

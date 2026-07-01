@@ -1,23 +1,24 @@
 ## 매개변수
 
-| 이름 | 타입 | 필수 | 설명 |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| id | string | 예 |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
 ## 응답
 
-반환: [`GetTenantResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantResponse.ts)
+반환: [`GetTenantResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantResponse1.ts)
 
-## 예제
+## 예시
 
 [inline-code-attrs-start title = 'getTenant 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp';
-const id: string = 'tenant-987654321';
-const options: { includeBilling?: boolean } = { includeBilling: true };
-const response: GetTenantResponse = await getTenant(tenantId, id);
-const billingInfo: BillingInfo | undefined = undefined
-[inline-code-end]
+async function fetchTenant(): Promise<void> {
+  const tenantId: string = "tenant_12345";
+  const id: string = "user_9876";
+  const tenantInfo: GetTenantResponse1 = await getTenant(tenantId, id);
+  console.log(tenantInfo);
+}
 
----
+fetchTenant();
+[inline-code-end]

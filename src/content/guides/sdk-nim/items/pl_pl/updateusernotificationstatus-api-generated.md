@@ -1,11 +1,11 @@
 ## Parametry
 
-| Nazwa | Typ | Wymagane | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Tak |  |
 | notificationId | string | Nie |  |
 | newStatus | string | Nie |  |
-| sso | string | Nie |  |
+| sso | string = "" | Nie |  |
 
 ## Odpowiedź
 
@@ -13,19 +13,16 @@ Zwraca: [`Option[UpdateUserNotificationStatusResponse]`](https://github.com/Fast
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład updateUserNotificationStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserNotificationStatus Przykład'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateUserNotificationStatus(
+let (respOpt, httpResponse) = client.updateUserNotificationStatus(
   tenantId = "my-tenant-123",
   notificationId = "notif-456",
   newStatus = "read",
-  sso = "sso-token-abc123"
+  sso = ""
 )
-if response.isSome:
-  let updated = response.get()
-  echo "Notification status updated successfully"
-else:
-  echo "No update response received"
+if respOpt.isSome:
+  let status = respOpt.get()
 [inline-code-end]
 
 ---

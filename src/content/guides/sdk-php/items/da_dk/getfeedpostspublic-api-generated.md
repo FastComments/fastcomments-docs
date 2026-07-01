@@ -1,18 +1,18 @@
-req
+anmodning
 tenantId
 afterId
 
 ## Parametre
 
-| Name | Type | Location | Required | Description |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| afterId | string | query | No |  |
-| limit | integer | query | No |  |
-| tags | array | query | No |  |
-| sso | string | query | No |  |
-| isCrawler | boolean | query | No |  |
-| includeUserInfo | boolean | query | No |  |
+| tenantId | string | path | Ja |  |
+| afterId | string | query | Nej |  |
+| limit | integer | query | Nej |  |
+| tags | array | query | Nej |  |
+| sso | string | query | Nej |  |
+| isCrawler | boolean | query | Nej |  |
+| includeUserInfo | boolean | query | Nej |  |
 
 ## Svar
 
@@ -28,22 +28,26 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Hvis du vil bruge en brugerdefineret http-klient, giv din klient som implementerer `GuzzleHttp\ClientInterface`.
+    // Hvis du vil bruge en brugerdefineret http-klient, skal du videregive din klient, som implementerer `GuzzleHttp\ClientInterface`.
     // Dette er valgfrit, `GuzzleHttp\Client` vil blive brugt som standard.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$after_id = 'after_id_example'; // string
-$limit = 56; // int
-$tags = array('tags_example'); // string[]
-$sso = 'sso_example'; // string
-$is_crawler = True; // bool
-$include_user_info = True; // bool
+
+$tenant_id = 'tenant_id_example'; // streng
+$options = [
+    'after_id' => 'after_id_example', // streng
+    'limit' => 56, // int
+    'tags' => array('tags_example'), // string[]
+    'sso' => 'sso_example', // streng
+    'is_crawler' => True, // bool
+    'include_user_info' => True, // bool
+];
+
 
 try {
-    $result = $apiInstance->getFeedPostsPublic($tenant_id, $after_id, $limit, $tags, $sso, $is_crawler, $include_user_info);
+    $result = $apiInstance->getFeedPostsPublic($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PublicApi->getFeedPostsPublic: ', $e->getMessage(), PHP_EOL;
+    echo 'Undtagelse ved kald af PublicApi->getFeedPostsPublic: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]

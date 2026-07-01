@@ -1,16 +1,30 @@
-上傳並調整影像大小
+上傳並重新調整圖像大小
 
 ## 參數
 
 | 名稱 | 類型 | 必填 | 說明 |
-|------|------|------|------|
-| tenant_id | String | 是 |  |
-| file | std::path::PathBuf | 是 |  |
-| size_preset | models::SizePreset | 否 |  |
-| url_id | String | 否 |  |
+|------|------|----------|-------------|
+| tenant_id | String | Yes |  |
+| file | std::path::PathBuf | Yes |  |
+| size_preset | models::SizePreset | No |  |
+| url_id | String | No |  |
 
 ## 回應
 
-回傳：[`UploadImageResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/upload_image_response.rs)
+返回: [`UploadImageResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/upload_image_response.rs)
 
----
+## 範例
+
+[inline-code-attrs-start title = 'upload_image 範例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+async fn example() -> Result<(), Error> {
+    let params = UploadImageParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        file: std::path::PathBuf::from("/tmp/photo.jpg"),
+        size_preset: Some(models::SizePreset::Medium),
+        url_id: Some("news/article".to_string()),
+    };
+    let _response = upload_image(&configuration, params).await?;
+    Ok(())
+}
+[inline-code-end]

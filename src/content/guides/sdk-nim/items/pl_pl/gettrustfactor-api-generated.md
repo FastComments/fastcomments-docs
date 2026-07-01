@@ -1,9 +1,9 @@
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|-------------|
-| userId | string | Nie |  |
-| sso | string | Nie |  |
+|------|------|----------|------|
+| tenantId | string | Tak |  |
+| options | GetTrustFactorOptions | Nie |  |
 
 ## Odpowiedź
 
@@ -13,12 +13,8 @@ Zwraca: [`Option[GetUserTrustFactorResponse]`](https://github.com/FastComments/f
 
 [inline-code-attrs-start title = 'Przykład getTrustFactor'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTrustFactor(userId = "user-1001", sso = "sso-token-6f7d9c")
-if response.isSome:
-  let trust = response.get()
-  echo "Received trust factor for user-1001"
-else:
-  echo "No trust factor returned, HTTP status: ", $httpResponse.status
+let (trustOpt, httpResp) = client.getTrustFactor(tenantId = "my-tenant-123", options = GetTrustFactorOptions())
+if trustOpt.isSome:
+  let trust = trustOpt.get()
+  discard trust
 [inline-code-end]
-
----

@@ -1,8 +1,8 @@
-All API methods in this SDK return `pplx::task<std::shared_ptr<ResponseType>>` from the C++ REST SDK. Αυτό σας δίνει ευελιξία στον τρόπο που χειρίζεστε τις απαντήσεις του API.
+Όλες οι μέθοδοι API σε αυτό το SDK επιστρέφουν `pplx::task<std::shared_ptr<ResponseType>>` από το C++ REST SDK. Αυτό σας δίνει ευελιξία στον τρόπο που χειρίζεστε τις αποκρίσεις API.
 
-### Συγχρονικές κλήσεις με `.get()`
+### Σύνθετες κλήσεις με `.get()`
 
-Χρησιμοποιήστε `.get()` για να μπλοκάρετε το νήμα που καλεί μέχρι να ολοκληρωθεί το αίτημα και να λάβετε το αποτέλεσμα συγχρονικά:
+Χρησιμοποιήστε το `.get()` για να μπλοκάρετε το νήμα που καλεί τη μέθοδο μέχρι να ολοκληρωθεί το αίτημα και να λάβετε το αποτέλεσμα συγχρονισμένα:
 
 ```cpp
 auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
@@ -13,24 +13,15 @@ config->setApiKey(utility::conversions::to_string_t("api_key"),
 auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
 org::openapitools::client::api::DefaultApi api(apiClient);
 
-// Call .get() to block and get the result synchronously
+// Οι απαιτούμενες παράμετροι είναι θέσεων· οι προαιρετικές πηγαίνουν στη δομή επιλογών
+org::openapitools::client::api::GetCommentsOptions options;
+options.urlId = utility::conversions::to_string_t("your-url-id");
+
+// Κλήση .get() για να μπλοκάρει και να λάβει το αποτέλεσμα συγχρονισμένα
 auto response = api.getComments(
     utility::conversions::to_string_t("your-tenant-id"),
-    boost::none,  // page
-    boost::none,  // limit
-    boost::none,  // skip
-    boost::none,  // asTree
-    boost::none,  // skipChildren
-    boost::none,  // limitChildren
-    boost::none,  // maxTreeDepth
-    utility::conversions::to_string_t("your-url-id"),  // urlId
-    boost::none,  // userId
-    boost::none,  // anonUserId
-    boost::none,  // contextUserId
-    boost::none,  // hashTag
-    boost::none,  // parentId
-    boost::none   // direction
-).get();  // Blocks until the HTTP request completes
+    options
+).get();  // Μπλοκάρει μέχρι να ολοκληρωθεί το HTTP αίτημα
 
 if (response && response->comments) {
     std::cout << "Found " << response->comments->size() << " comments" << std::endl;
@@ -39,7 +30,7 @@ if (response && response->comments) {
 
 ### Ασύγχρονες κλήσεις με `.then()`
 
-Χρησιμοποιήστε `.then()` για μη αποκλειστική ασύγχρονη εκτέλεση με callbacks:
+Χρησιμοποιήστε το `.then()` για μη‑μπλοκαριστική ασύγχρονη εκτέλεση με callbacks:
 
 ```cpp
 auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
@@ -50,39 +41,40 @@ config->setApiKey(utility::conversions::to_string_t("api_key"),
 auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
 org::openapitools::client::api::DefaultApi api(apiClient);
 
-// Use .then() for asynchronous callback-based execution
+// Οι απαιτούμενες παράμετροι είναι θέσεων· οι προαιρετικές πηγαίνουν στη δομή επιλογών
+org::openapitools::client::api::GetCommentsOptions options;
+options.urlId = utility::conversions::to_string_t("your-url-id");
+
+// Χρησιμοποιήστε .then() για εκτέλεση με βάση callbacks
 api.getComments(
     utility::conversions::to_string_t("your-tenant-id"),
-    boost::none, boost::none, boost::none, boost::none, boost::none,
-    boost::none, boost::none,
-    utility::conversions::to_string_t("your-url-id"),
-    boost::none, boost::none, boost::none, boost::none, boost::none, boost::none
+    options
 ).then([](std::shared_ptr<GetComments_200_response> response) {
-    // This runs asynchronously when the request completes
+    // Αυτό εκτελείται ασύγχρονα όταν ολοκληρωθεί το αίτημα
     if (response && response->comments) {
         std::cout << "Found " << response->comments->size() << " comments" << std::endl;
     }
 });
 
-// Execution continues immediately without blocking
+// Η εκτέλεση συνεχίζεται άμεσα χωρίς μπλοκάρισμα
 std::cout << "Request sent, continuing..." << std::endl;
 ```
 
 ### Επιλογή μεταξύ Συγχρονικής και Ασύγχρονης
 
-Η επιλογή εξαρτάται από το περιβάλλον εκτέλεσης και την αρχιτεκτονική της εφαρμογής σας:
+Η επιλογή εξαρτάται από το περιβάλλον εκτέλεσής σας και την αρχιτεκτονική της εφαρμογής:
 
-**`.get()` (Συγχρονικό — μπλοκάρισμα)**
-- Μπλοκάρει το νήμα που καλεί μέχρι να ολοκληρωθεί το HTTP αίτημα
-- Απλούστερη ροή κώδικα, ευκολότερη στην κατανόηση
-- Κατάλληλο για αφιερωμένα νήματα εργασίας, επεξεργασία παρτίδων ή εργαλεία γραμμής εντολών
+**`.get()` (Συγχρονικό μπλοκάρισμα)**
+- Μπλοκάρει το νήμα που καλεί τη μέθοδο μέχρι να ολοκληρωθεί το HTTP αίτημα
+- Πιο απλή ροή κώδικα, πιο εύκολο στην κατανόηση
+- Κατάλληλο για αποκλειστικά νήματα εργατών, batch επεξεργασία ή εργαλεία γραμμής εντολών
 - **Μη κατάλληλο** για βρόχους συμβάντων, νήματα GUI ή μονονηματικούς διακομιστές
 
-**`.then()` (Ασύγχρονο — μη αποκλειστικό)**
-- Επιστρέφει αμέσως, η callback εκτελείται όταν ολοκληρωθεί το αίτημα
-- Δεν μπλοκάρει το νήμα που καλεί
-- Απαραίτητο για αρχιτεκτονικές καθοδηγούμενες από συμβάντα, εφαρμογές GUI ή μονονηματικούς βρόχους συμβάντων
-- Επιτρέπει την αλυσιδωτή εκτέλεση πολλαπλών λειτουργιών
+**`.then()` (Ασύγχρονο μη‑μπλοκάρισμα)**
+- Επιστρέφει αμέσως, το callback εκτελείται όταν ολοκληρωθεί το αίτημα
+- Δεν μπλοκάρει το νήμα που καλεί τη μέθοδο
+- Απαιτείται για αρχιτεκτονικές γεγονότων, GUI εφαρμογές ή μονονηματικούς βρόχους συμβάντων
+- Επιτρέπει αλυσίδωση πολλαπλών λειτουργιών
 - Πιο πολύπλοκη ροή ελέγχου
 
-Το σύνολο δοκιμών του SDK χρησιμοποιεί αποκλειστικά `.get()`, αλλά αυτό είναι κατάλληλο για το περιβάλλον δοκιμών όπου το μπλοκάρισμα είναι αποδεκτό.
+Η ομάδα δοκιμών του SDK χρησιμοποιεί αποκλειστικά `.get()`, αλλά αυτό είναι κατάλληλο για το περιβάλλον δοκιμών όπου το μπλοκάρισμα είναι αποδεκτό.

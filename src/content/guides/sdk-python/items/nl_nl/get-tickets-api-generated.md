@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
@@ -9,7 +8,7 @@
 | skip | number | query | Nee |  |
 | limit | number | query | Nee |  |
 
-## Respons
+## Antwoord
 
 Retourneert: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tickets_response.py)
 
@@ -18,43 +17,43 @@ Retourneert: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments
 [inline-code-attrs-start title = 'get_tickets Voorbeeld'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetTicketsOptions
 from client.models.get_tickets_response import GetTicketsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Het instellen van de host is optioneel en standaard ingesteld op https://fastcomments.com
+# Het definiëren van de host is optioneel en standaard https://fastcomments.com
 # Zie configuration.py voor een lijst van alle ondersteunde configuratieparameters.
+
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # De client moet de authenticatie- en autorisatieparameters configureren
 # in overeenstemming met het beveiligingsbeleid van de API-server.
-# Voor elk authenticatiemethode staan hieronder voorbeelden; gebruik het voorbeeld dat
-# past bij uw gebruiksgeval voor authenticatie.
+# Voorbeelden voor elke authenticatiemethode worden hieronder gegeven, gebruik het voorbeeld dat
+# voldoet aan uw authenticatiegeval.
 
-# Configureer API-sleutelautorisatie: api_key
+# Configureer API-sleutel autorisatie: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Haal de commentaartekens hieronder weg om een prefix (bijv. Bearer) voor de API-sleutel in te stellen, indien nodig
+# Verwijder de commentaar van onderstaande regel om een prefix (bijv. Bearer) voor de API-sleutel in te stellen, indien nodig
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Open een context met een instantie van de API-client
+# Voer een context in met een instantie van de API-client
 with client.ApiClient(configuration) as api_client:
-    # Maak een instantie van de API-klasse aan
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    user_id = 'user_id_example' # str |  (optioneel)
-    state = 3.4 # float |  (optioneel)
-    skip = 3.4 # float |  (optioneel)
-    limit = 3.4 # float |  (optioneel)
+    user_id = 'user_id_example' # str |  (optional)
+    state = 3.4 # float |  (optional)
+    skip = 3.4 # float |  (optional)
+    limit = 3.4 # float |  (optional)
 
     try:
-        api_response = api_instance.get_tickets(tenant_id, user_id=user_id, state=state, skip=skip, limit=limit)
+        api_response = api_instance.get_tickets(tenant_id, GetTicketsOptions(user_id=user_id, state=state, skip=skip, limit=limit))
         print("The response of DefaultApi->get_tickets:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling DefaultApi->get_tickets: %s\n" % e)
 [inline-code-end]
-
----

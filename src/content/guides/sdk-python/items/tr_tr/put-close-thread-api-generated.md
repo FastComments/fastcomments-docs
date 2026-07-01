@@ -1,7 +1,8 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tip | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Evet |  |
 | urlId | string | query | Evet |  |
 | sso | string | query | Hayır |  |
 
@@ -18,22 +19,23 @@ from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Sunucunun tanımlanması isteğe bağlıdır ve varsayılan https://fastcomments.com'dur
-# Tüm desteklenen yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.
+# Host tanımlama isteğe bağlıdır ve varsayılan olarak https://fastcomments.com adresindedir
+# Desteklenen tüm yapılandırma parametrelerinin listesini configuration.py dosyasında görebilirsiniz.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# API istemcisinin bir örneği ile bir bağlam oluşturun
+# API istemcisinin bir örneğiyle bir bağlam oluşturun
 with client.ApiClient(configuration) as api_client:
     # API sınıfının bir örneğini oluşturun
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
-    sso = 'sso_example' # str |  (isteğe bağlı)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.put_close_thread(url_id, sso=sso)
+        api_response = api_instance.put_close_thread(tenant_id, url_id, sso=sso)
         print("The response of ModerationApi->put_close_thread:\n")
         pprint(api_response)
     except Exception as e:

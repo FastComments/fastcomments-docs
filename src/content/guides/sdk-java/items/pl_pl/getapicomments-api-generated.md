@@ -1,8 +1,8 @@
----
 ## Parametry
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
-|------|------|----------|----------|-------------|
+|------|------|------------|----------|------|
+| tenantId | string | query | Tak |  |
 | page | number | query | Nie |  |
 | count | number | query | Nie |  |
 | text-search | string | query | Nie |  |
@@ -13,7 +13,7 @@
 | demo | boolean | query | Nie |  |
 | sso | string | query | Nie |  |
 
-## Response
+## Odpowiedź
 
 Zwraca: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationAPIGetCommentsResponse.java)
 
@@ -34,6 +34,7 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     Double page = 3.4D; // Double | 
     Double count = 3.4D; // Double | 
     String textSearch = "textSearch_example"; // String | 
@@ -44,7 +45,7 @@ public class Example {
     Boolean demo = true; // Boolean | 
     String sso = "sso_example"; // String | 
     try {
-      ModerationAPIGetCommentsResponse result = apiInstance.getApiComments()
+      ModerationAPIGetCommentsResponse result = apiInstance.getApiComments(tenantId)
             .page(page)
             .count(count)
             .textSearch(textSearch)
@@ -66,5 +67,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

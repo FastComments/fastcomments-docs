@@ -1,31 +1,25 @@
+---
 ## Parametri
 
-| Ime | Tip | Obvezno | Opis |
+| Ime | Vrsta | Obvezno | Opis |
 |------|------|----------|-------------|
 | namespace | string | Ne |  |
 | component | string | Ne |  |
-| locale | string | Ne |  |
-| useFullTranslationIds | bool | Ne |  |
+| options | GetTranslationsOptions | Ne |  |
 
 ## Odgovor
 
-Vrača: [`Option[GetTranslationsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_translations_response.nim)
+Vrne: [`Option[GetTranslationsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_translations_response.nim)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer getTranslations'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTranslations Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTranslations(
-  namespace = "news-site",
-  component = "article-comments",
-  locale = "en-US",
-  useFullTranslationIds = false
-)
-if response.isSome:
-  let translations = response.get()
-  discard translations
-else:
-  echo "No translations available"
+let opts = GetTranslationsOptions()
+let (maybeResp, httpResp) = client.getTranslations(namespace = "my-tenant-123", component = "news/article-title", options = opts)
+if maybeResp.isSome:
+  let resp = maybeResp.get()
+  echo resp
 [inline-code-end]
 
 ---

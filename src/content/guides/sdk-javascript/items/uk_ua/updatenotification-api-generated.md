@@ -1,6 +1,6 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Назва | Тип | Обов’язково | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Так |  |
 | id | string | Так |  |
@@ -9,19 +9,33 @@
 
 ## Відповідь
 
-Повертає: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Повертає: [`UpdateNotificationResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateNotificationResponse.ts)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'updateNotification Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад updateNotification'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'd6f9b2a4-1b2c-4e5f-9a7b-3c2d1e4f5a6b';
-const id: string = 'notification-78f1c3e4';
-const updateNotificationBody: UpdateNotificationBody = {} as UpdateNotificationBody;
-const userId: string = 'user-9b3f2a1c';
+const tenantId: string = "tenant_5f4d2c";
+const notificationId: string = "notif_9b8a7c";
 
-const responseWithUser: APIEmptyResponse = await updateNotification(tenantId, id, updateNotificationBody, userId);
-const responseWithoutUser: APIEmptyResponse = await updateNotification(tenantId, id, updateNotificationBody);
+const updateBody: UpdateNotificationBody = {
+  enabled: false,
+  sendEmail: true,
+  schedule: "2023-12-01T08:00:00Z"
+};
+
+const userId: string = "user_123e4567";
+
+const responseWithUser: UpdateNotificationResponse = await updateNotification(
+  tenantId,
+  notificationId,
+  updateBody,
+  userId
+);
+
+const responseWithoutUser: UpdateNotificationResponse = await updateNotification(
+  tenantId,
+  notificationId,
+  updateBody
+);
 [inline-code-end]
-
----

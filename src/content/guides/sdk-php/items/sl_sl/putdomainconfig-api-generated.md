@@ -1,37 +1,38 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| domainToUpdate | string | path | Da |  |
+| tenantId | string | query | Yes |  |
+| domainToUpdate | string | path | Yes |  |
 
-## Odziv
+## Odgovor
 
 Vrne: [`PutDomainConfigResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PutDomainConfigResponse.php)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer putDomainConfig'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putDomainConfig Primer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Konfigurirajte avtentikacijo API ključa: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Odkomentirajte spodnje, da nastavite predpono (npr. Bearer) za API ključ, če je potrebno
+// Nastavi avtorizacijo ključev API: api_key
+// Odkomentirajte spodaj za nastavitev predpone (npr. Bearer) za ključ API, po potrebi
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Če želite uporabiti prilagojen HTTP odjemalec, posredujte odjemalca, ki implementira `GuzzleHttp\ClientInterface`.
-    // To je izbirno, kot privzeti bo uporabljen `GuzzleHttp\Client`.
+    // Če želite uporabiti lasten HTTP odjemalec, posredujte svoj odjemalec, ki implementira `GuzzleHttp\ClientInterface`.
+    // To je neobvezno, `GuzzleHttp\Client` bo uporabljen kot privzeto.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$domain_to_update = 'domain_to_update_example'; // string
+
+$tenant_id = 'tenant_id_example'; // niz
+$domain_to_update = 'domain_to_update_example'; // niz
 $update_domain_config_params = new \FastComments\Client\Model\UpdateDomainConfigParams(); // \FastComments\Client\Model\UpdateDomainConfigParams
+
 
 try {
     $result = $apiInstance->putDomainConfig($tenant_id, $domain_to_update, $update_domain_config_params);

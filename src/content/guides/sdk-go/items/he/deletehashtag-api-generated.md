@@ -1,18 +1,17 @@
----
-## פרמטרים
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | tag | string | path | Yes |  |
-| tenantId | string | query | No |  |
 
-## תגובה
+## Response
 
 מחזיר: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
 
-## דוגמה
+## Example
 
-[inline-code-attrs-start title = 'דוגמה ל-DeleteHashTag'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת DeleteHashTag'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -24,8 +23,8 @@ import (
 )
 
 func main() {
-	tag := "tag_example" // string | 
-	tenantId := "tenantId_example" // string |  (אופציונלי)
+	tenantId := "tenantId_example" // מחרוזת | 
+	tag := "tag_example" // מחרוזת | 
 	deleteHashTagRequestBody := *openapiclient.NewDeleteHashTagRequestBody() // DeleteHashTagRequestBody |  (אופציונלי)
 
 	configuration := openapiclient.NewConfiguration()
@@ -35,9 +34,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.DeleteHashTag``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// תגובה מ- `DeleteHashTag`: APIEmptyResponse
+	// תגובה מ-`DeleteHashTag`: APIEmptyResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.DeleteHashTag`: %v\n", resp)
 }
 [inline-code-end]
-
----

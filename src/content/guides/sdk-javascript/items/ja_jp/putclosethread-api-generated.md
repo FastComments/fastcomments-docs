@@ -1,25 +1,27 @@
----
 ## パラメータ
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| urlId | string | はい |  |
-| sso | string | いいえ |  |
+| urlId | string | Yes |  |
+| tenantId | string | No |  |
+| sso | string | No |  |
 
 ## レスポンス
 
-戻り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Returns: [`PutCloseThreadResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PutCloseThreadResponse.ts)
 
 ## 例
 
-[inline-code-attrs-start title = 'putCloseThread の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putCloseThread 例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const urlId: string = 'thread-2f7c9b6a';
-const closeResultWithoutSSO: APIEmptyResponse = await putCloseThread(urlId);
+async function closeThreadDemo(): Promise<void> {
+  const urlId: string = "article-2023-09-15";
+  const tenantId: string = "tenant-42";
+  const sso: string = "sso-token-xyz";
 
-const urlIdWithSSO: string = 'thread-8a9b3e1c';
-const ssoToken: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjc4OSJ9.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
-const closeResultWithSSO: APIEmptyResponse = await putCloseThread(urlIdWithSSO, ssoToken);
+  const response: PutCloseThreadResponse = await putCloseThread(urlId, tenantId, sso);
+  console.log(response);
+}
+
+closeThreadDemo();
 [inline-code-end]
-
----

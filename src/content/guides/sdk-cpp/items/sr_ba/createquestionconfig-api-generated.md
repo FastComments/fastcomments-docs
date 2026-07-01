@@ -1,32 +1,26 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| createQuestionConfigBody | CreateQuestionConfigBody | Да |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| createQuestionConfigBody | CreateQuestionConfigBody | Yes |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`CreateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateQuestionConfigResponse.h)
+Vraća: [`CreateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateQuestionConfigResponse.h)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'createQuestionConfig Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer createQuestionConfig'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-CreateQuestionConfigBody body;
-body.questionText = U("Do you want to receive our newsletter?");
-body.isRequired = true;
-body.moderatorEmail = boost::optional<utility::string_t>(U("moderator@example.com"));
-api->createQuestionConfig(tenantId, body)
-.then([](std::shared_ptr<CreateQuestionConfigResponse> resp){
-    auto result = std::make_shared<CreateQuestionConfigResponse>(*resp);
-    return result;
-})
-.then([](std::shared_ptr<CreateQuestionConfigResponse> finalResp){
-    (void)finalResp;
-})
-.wait();
+auto tenantId = utility::string_t(U("my-tenant-123"));
+CreateQuestionConfigBody configBody;
+configBody.question = utility::string_t(U("How satisfied are you with our service?"));
+configBody.required = true;
+configBody.defaultAnswer = boost::optional<utility::string_t>(utility::string_t(U("Very satisfied")));
+api->createQuestionConfig(tenantId, configBody).then([](pplx::task<std::shared_ptr<CreateQuestionConfigResponse>> task){
+    try{
+        auto response = task.get();
+    }catch(const std::exception&){}
+});
 [inline-code-end]
-
----

@@ -1,13 +1,12 @@
----
 ## Parametri
 
-| Ime | Tip | Obvezno | Opis |
+| Ime | Vrsta | Obvezno | Opis |
 |------|------|----------|-------------|
-| tenant_id | String | Da |  |
-| search | String | Da |  |
-| locale | String | Ne |  |
-| rating | String | Ne |  |
-| page | f64 | Ne |  |
+| tenant_id | String | Yes |  |
+| search | String | Yes |  |
+| locale | String | No |  |
+| rating | String | No |  |
+| page | f64 | No |  |
 
 ## Odgovor
 
@@ -15,20 +14,17 @@ Vrne: [`GetGifsSearchResponse`](https://github.com/FastComments/fastcomments-rus
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer get_gifs_search'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_gifs_search Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_gif_search() -> Result<(), Error> {
-    let params: GetGifsSearchParams = GetGifsSearchParams {
+async fn fetch_gifs(config: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetGifsSearchParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        search: "breaking news".to_string(),
+        search: "funny cats".to_string(),
         locale: Some("en-US".to_string()),
-        rating: Some("pg-13".to_string()),
+        rating: Some("pg".to_string()),
         page: Some(1.0),
     };
-    let response: GetGifsSearchResponse = get_gifs_search(&configuration, params).await?;
-    println!("{:#?}", response);
+    let _response = get_gifs_search(config, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

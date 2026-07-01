@@ -2,12 +2,12 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 是 |  |
-| skip | number | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| skip | number | query | No |  |
 
 ## 响应
 
-返回: [`GetTenantUsersResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantUsersResponse.php)
+返回：[`GetTenantUsersResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantUsersResponse.php)
 
 ## 示例
 
@@ -29,8 +29,10 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // 字符串
-$skip = 3.4; // 浮点数
+
+$tenant_id = 'tenant_id_example'; // string
+$skip = 3.4; // float
+
 
 try {
     $result = $apiInstance->getTenantUsers($tenant_id, $skip);
@@ -39,3 +41,5 @@ try {
     echo 'Exception when calling DefaultApi->getTenantUsers: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

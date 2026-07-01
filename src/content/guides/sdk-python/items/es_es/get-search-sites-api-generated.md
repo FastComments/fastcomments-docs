@@ -1,7 +1,8 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | value | string | query | No |  |
 | sso | string | query | No |  |
 
@@ -14,6 +15,7 @@ Devuelve: [`ModerationSiteSearchResponse`](https://github.com/FastComments/fastc
 [inline-code-attrs-start title = 'Ejemplo de get_search_sites'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetSearchSitesOptions
 from client.models.moderation_site_search_response import ModerationSiteSearchResponse
 from client.rest import ApiException
 from pprint import pprint
@@ -25,15 +27,16 @@ configuration = client.Configuration(
 )
 
 
-# Entrar en un contexto con una instancia del cliente de la API
+# Entre en un contexto con una instancia del cliente API
 with client.ApiClient(configuration) as api_client:
-    # Crear una instancia de la clase API
+    # Cree una instancia de la clase API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     value = 'value_example' # str |  (opcional)
     sso = 'sso_example' # str |  (opcional)
 
     try:
-        api_response = api_instance.get_search_sites(value=value, sso=sso)
+        api_response = api_instance.get_search_sites(tenant_id, GetSearchSitesOptions(value=value, sso=sso))
         print("The response of ModerationApi->get_search_sites:\n")
         pprint(api_response)
     except Exception as e:

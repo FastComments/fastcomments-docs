@@ -1,23 +1,23 @@
-### Brug af autentificerede API'er (DefaultApi)
+### Brugen af godkendte API'er (DefaultApi)
 
-**Vigtigt:** Du skal angive din API-nøgle på ApiClient, før du foretager autentificerede anmodninger. Hvis du ikke gør det, vil anmodninger fejle med en 401-fejl.
+**Vigtigt:** Du skal sætte din API-nøgle på ApiClient, før du laver godkendte anmodninger. Hvis du ikke gør det, vil anmodninger mislykkes med en 401-fejl.
 
 ```ruby
 require 'fastcomments'
 
-# Opret og konfigurer API-klienten
+# Create and configure the API client
 config = FastCommentsClient::Configuration.new
 api_client = FastCommentsClient::ApiClient.new(config)
 
-# KRÆVET: Angiv din API-nøgle (hent den fra dit FastComments-dashboard)
+# REQUIRED: Set your API key (get this from your FastComments dashboard)
 config.api_key['x-api-key'] = 'YOUR_API_KEY_HERE'
 
-# Opret API-instansen med den konfigurerede klient
+# Create the API instance with the configured client
 api = FastCommentsClient::DefaultApi.new(api_client)
 
-# Nu kan du lave autentificerede API-kald
+# Now you can make authenticated API calls
 begin
-  # Eksempel: Tilføj en SSO-bruger
+  # Example: Add an SSO user
   user_data = {
     id: 'user-123',
     email: 'user@example.com',
@@ -29,15 +29,15 @@ begin
 
 rescue FastCommentsClient::ApiError => e
   puts "Error: #{e.response_body}"
-  # Almindelige fejl:
-  # - 401: API-nøglen mangler eller er ugyldig
-  # - 400: Anmodningsvalidering mislykkedes
+  # Common errors:
+  # - 401: API key is missing or invalid
+  # - 400: Request validation failed
 end
 ```
 
-### Brug af offentlige API'er (PublicApi)
+### Brugen af offentlige API'er (PublicApi)
 
-Offentlige endepunkter kræver ikke autentificering:
+Offentlige slutpunkter kræver ikke godkendelse:
 
 ```ruby
 require 'fastcomments'
@@ -46,8 +46,8 @@ public_api = FastCommentsClient::PublicApi.new
 
 begin
   response = public_api.get_comments_public(
-    tenant_id: 'YOUR_TENANT_ID',
-    url_id: 'page-url-id'
+    'YOUR_TENANT_ID',
+    'page-url-id'
   )
   puts response
 rescue FastCommentsClient::ApiError => e
@@ -55,9 +55,9 @@ rescue FastCommentsClient::ApiError => e
 end
 ```
 
-### Brug af moderation-API'er (ModerationApi)
+### Brugen af moderations-API'er (ModerationApi)
 
-Moderationsmetoderne driver moderator-dashboardet. Send et `sso`-token, så anmodningen foretages på vegne af en SSO-autentificeret moderator:
+Moderationsmetoderne driver moderator‑dashboardet. Overgiv en `sso`‑token, så anmodningen foretages på vegne af en SSO-godkendt moderator:
 
 ```ruby
 require 'fastcomments'
@@ -65,7 +65,7 @@ require 'fastcomments'
 moderation_api = FastCommentsClient::ModerationApi.new
 
 begin
-  # Eksempel: Hent kommentarer i moderator-køen
+  # Example: List comments in the moderation queue
   response = moderation_api.get_api_comments(
     sso: 'YOUR_MODERATOR_SSO_TOKEN'
   )
@@ -77,6 +77,6 @@ end
 
 ### Almindelige problemer
 
-1. **401 "missing-api-key" fejl**: Sørg for at du sætter `config.api_key['x-api-key'] = 'YOUR_KEY'` før du opretter DefaultApi-instansen.
-2. **Forkert API-klasse**: Brug `DefaultApi` til autentificerede anmodninger på serversiden, `PublicApi` til anmodninger på klientsiden/offentlige anmodninger, og `ModerationApi` til anmodninger fra moderator-dashboardet.
-3. **Null API key**: SDK'en vil stiltiende springe autentificering over, hvis API-nøglen er null, hvilket fører til 401-fejl.
+1. **401 "missing-api-key" fejl**: Sørg for, at du sætter `config.api_key['x-api-key'] = 'YOUR_KEY'` før du opretter DefaultApi‑instansen.
+2. **Forkert API‑klasse**: Brug `DefaultApi` til server‑side godkendte anmodninger, `PublicApi` til klient‑side/offentlige anmodninger, og `ModerationApi` til anmodninger fra moderator‑dashboardet.
+3. **Null API‑nøgle**: SDK'en vil stille og roligt springe godkendelse over, hvis API‑nøglen er null, hvilket medfører 401‑fejl.

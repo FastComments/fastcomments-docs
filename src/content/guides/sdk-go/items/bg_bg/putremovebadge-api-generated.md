@@ -1,7 +1,8 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Име | Тип | Местоположение | Задължително | Описание |
+|------|------|----------------|--------------|----------|
+| tenantId | string | query | Yes |  |
 | badgeId | string | query | Yes |  |
 | userId | string | query | No |  |
 | commentId | string | query | No |  |
@@ -10,7 +11,7 @@
 
 ## Отговор
 
-Връща: [`RemoveUserBadgeResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_remove_user_badge_response.go)
+Returns: [`RemoveUserBadgeResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_remove_user_badge_response.go)
 
 ## Пример
 
@@ -26,15 +27,16 @@ import (
 )
 
 func main() {
-	badgeId := "badgeId_example" // string | 
-	userId := "userId_example" // string |  (по избор)
-	commentId := "commentId_example" // string |  (по избор)
-	broadcastId := "broadcastId_example" // string |  (по избор)
-	sso := "sso_example" // string |  (по избор)
+	tenantId := "tenantId_example" // string |
+	badgeId := "badgeId_example" // string |
+	userId := "userId_example" // string |  (опционално)
+	commentId := "commentId_example" // string |  (опционално)
+	broadcastId := "broadcastId_example" // string |  (опционално)
+	sso := "sso_example" // string |  (опционално)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PutRemoveBadge(context.Background()).BadgeId(badgeId).UserId(userId).CommentId(commentId).BroadcastId(broadcastId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PutRemoveBadge(context.Background()).TenantId(tenantId).BadgeId(badgeId).UserId(userId).CommentId(commentId).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PutRemoveBadge``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

@@ -1,38 +1,25 @@
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
-| userId | string | לא |  |
-| urlId | string | לא |  |
-| fromCommentId | string | לא |  |
-| viewed | bool | לא |  |
-| type | string | לא |  |
-| skip | double | לא |  |
+| options | const GetNotificationsOptions& | כן |  |
 
 ## תגובה
 
-מחזיר: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetNotificationsResponse.h)
+מחזירה: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetNotificationsResponse.h)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getNotifications'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getNotifications'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-boost::optional<utility::string_t> userId(U("user@example.com"));
-boost::optional<utility::string_t> urlId(U("/articles/2026/new-feature"));
-boost::optional<utility::string_t> fromCommentId(U("cmt-98765"));
-boost::optional<bool> viewed(true);
-boost::optional<utility::string_t> type(U("reply"));
-boost::optional<double> skip(0.0);
-
-api->getNotifications(tenantId, userId, urlId, fromCommentId, viewed, type, skip)
-.then([](std::shared_ptr<GetNotificationsResponse> resp){
-    auto holder = std::make_shared<GetNotificationsResponse>();
-    holder = resp;
-    if (holder) std::cout << "Received notifications\n";
-    return holder;
-});
+GetNotificationsOptions options;
+options.limit = 20;
+options.after = U("cursor-123");
+api->getNotifications(U("my-tenant-123"), options)
+    .then([](std::shared_ptr<GetNotificationsResponse> resp) {
+        (void)resp;
+    });
 [inline-code-end]
 
 ---

@@ -1,30 +1,29 @@
-## Παράμετροι
+## Parameters
 
-| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | Ναι |  |
-| create_moderator_body | models::CreateModeratorBody | Ναι |  |
+| tenant_id | String | Yes |  |
+| create_moderator_body | models::CreateModeratorBody | Yes |  |
 
-## Απόκριση
+## Response
 
-Επιστρέφει: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_moderator_response.rs)
+Returns: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_moderator_response.rs)
 
-## Παράδειγμα
+## Example
 
 [inline-code-attrs-start title = 'create_moderator Παράδειγμα'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: CreateModeratorParams = CreateModeratorParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    create_moderator_body: models::CreateModeratorBody {
-        email: "jane.doe@acme-corp.com".to_string(),
-        display_name: Some("Jane Doe".to_string()),
-        username: Some("jdoe".to_string()),
-        role: Some("moderator".to_string()),
-        sections: Some(vec!["news/article".to_string(), "tech/reviews".to_string()]),
-        notify: Some(true),
-    },
-};
-let response: CreateModeratorResponse = create_moderator(&configuration, params).await?;
+async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = CreateModeratorParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        create_moderator_body: models::CreateModeratorBody {
+            email: "mod@example.com".to_string(),
+            username: Some("mod_user".to_string()),
+            permissions: vec!["delete".to_string(), "edit".to_string()],
+            ..Default::default()
+        },
+    };
+    let _response = create_moderator(configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]
-
----

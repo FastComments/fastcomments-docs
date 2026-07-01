@@ -1,19 +1,12 @@
 ## Parameters
 
 | Naam | Type | Vereist | Beschrijving |
-|------|------|----------|-------------|
-| commentId | string | Yes |  |
-| banEmail | bool | No |  |
-| banEmailDomain | bool | No |  |
-| banIP | bool | No |  |
-| deleteAllUsersComments | bool | No |  |
-| bannedUntil | string | No |  |
-| isShadowBan | bool | No |  |
-| updateId | string | No |  |
-| banReason | string | No |  |
-| sso | string | No |  |
+|------|------|----------|--------------|
+| tenantId | string | Ja |  |
+| commentId | string | Ja |  |
+| options | const PostBanUserFromCommentOptions& | Ja |  |
 
-## Antwoord
+## Respons
 
 Retourneert: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/BanUserFromCommentResult.h)
 
@@ -21,23 +14,17 @@ Retourneert: [`BanUserFromCommentResult`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'postBanUserFromComment Voorbeeld'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t commentId = U("comment-98765");
-auto continuation = api->postBanUserFromComment(
-    commentId,
-    boost::optional<bool>(true),
-    boost::optional<bool>(true),
-    boost::optional<bool>(false),
-    boost::optional<bool>(true),
-    boost::optional<utility::string_t>(U("2026-12-31T23:59:59Z")),
-    boost::optional<bool>(false),
-    boost::optional<utility::string_t>(U("update-abc123")),
-    boost::optional<utility::string_t>(U("User posted spam links")),
-    boost::optional<utility::string_t>(U("sso-token-7f3"))
-).then([](pplx::task<std::shared_ptr<BanUserFromCommentResult>> t){
-    try {
-        auto result = t.get();
-        if (!result) result = std::make_shared<BanUserFromCommentResult>();
-    } catch (...) {}
-});
-continuation.wait();
+utility::string_t tenantId = U("my-tenant-123");
+utility::string_t commentId = U("comment-456789");
+PostBanUserFromCommentOptions options;
+options.reason = boost::optional<utility::string_t>(U("spam"));
+options.durationDays = boost::optional<int>(30);
+
+api->postBanUserFromComment(tenantId, commentId, options)
+    .then([](std::shared_ptr<BanUserFromCommentResult> result) {
+        // resultaatverwerking
+    })
+    .then([](pplx::task<void> t) {
+        try { t.get(); } catch (const std::exception& e) { /* foutafhandeling */ }
+    });
 [inline-code-end]

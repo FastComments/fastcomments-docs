@@ -1,10 +1,10 @@
 ---
 ## Παράμετροι
 
-| Name | Type | Required | Description |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
-| tenant_id | String | Ναι |  |
-| url_id | String | Ναι |  |
+| tenant_id | String | Yes |  |
+| url_id | String | Yes |  |
 
 ## Απόκριση
 
@@ -14,15 +14,12 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα get_v1_page_likes'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_page_likes() -> Result<(), Error> {
-    let params: GetV1PageLikesParams = GetV1PageLikesParams {
+async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetV1PageLikesParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        url_id: "news/article-123".to_string(),
+        url_id: "news/article".to_string(),
     };
-    let optional_referrer: Option<String> = Some("https://news.example.com/article-123".to_string());
-    let likes: GetV1PageLikes = get_v1_page_likes(&configuration, params).await?;
-    println!("retrieved page likes: {:?}", optional_referrer);
-    let _consumed: GetV1PageLikes = likes;
+    let _likes = get_v1_page_likes(configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

@@ -1,31 +1,31 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| commentId | string | Да |  |
-| includeEmail | bool | Не |  |
-| includeIP | bool | Не |  |
-| sso | string | Не |  |
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| options | const GetModerationCommentOptions& | Yes |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ModerationAPICommentResponse.h)
+Vraća: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ModerationAPICommentResponse.h)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'Пример getModerationComment'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getModerationComment'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t commentId = U("cmt-987654");
-boost::optional<bool> includeEmail = boost::optional<bool>(true);
-boost::optional<bool> includeIP = boost::optional<bool>(false);
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
-
-api->getModerationComment(commentId, includeEmail, includeIP, sso)
-.then([](std::shared_ptr<ModerationAPICommentResponse> resp) {
-    auto result = resp ? resp : std::make_shared<ModerationAPICommentResponse>();
-    if (resp)
-        std::cout << "Comment fetched successfully" << std::endl;
-    else
-        std::cout << "No comment returned; using placeholder" << std::endl;
-}).wait();
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto commentId = utility::conversions::to_string_t("comment-456");
+GetModerationCommentOptions options;
+options.includeDeleted = boost::optional<bool>(true);
+options.locale = boost::optional<utility::string_t>(utility::conversions::to_string_t("en-US"));
+api->getModerationComment(tenantId, commentId, options)
+    .then([](pplx::task<std::shared_ptr<ModerationAPICommentResponse>> task) {
+        try {
+            auto response = task.get();
+            // Obradi odgovor po potrebi
+        } catch (const std::exception& ex) {
+            // Obradi grešku
+        }
+    });
 [inline-code-end]

@@ -1,43 +1,44 @@
-## Parametri
+## Parameters
 
 | Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Da |  |
-| locale | string | query | Ne |  |
-| rating | string | query | Ne |  |
-| page | number | query | Ne |  |
+| tenantId | string | path | Yes |  |
+| locale | string | query | No |  |
+| rating | string | query | No |  |
+| page | number | query | No |  |
 
 ## Odgovor
 
-Vrne: [`GetGifsTrendingResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_gifs_trending_response.py)
+Returns: [`GetGifsTrendingResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_gifs_trending_response.py)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer get_gifs_trending'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_gifs_trending Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetGifsTrendingOptions
 from client.models.get_gifs_trending_response import GetGifsTrendingResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Nastavitev gostitelja je izbirna in privzeto je https://fastcomments.com
+# Definiranje gostitelja je neobvezno in privzeto nastavljeno na https://fastcomments.com
 # Oglejte si configuration.py za seznam vseh podprtih konfiguracijskih parametrov.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Vstopite v kontekst z instanco API odjemalca
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Ustvarite instanco razreda API
+    # Create an instance of the API class
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    locale = 'locale_example' # str |  (neobvezno)
-    rating = 'rating_example' # str |  (neobvezno)
-    page = 3.4 # float |  (neobvezno)
+    locale = 'locale_example' # str |  (optional)
+    rating = 'rating_example' # str |  (optional)
+    page = 3.4 # float |  (optional)
 
     try:
-        api_response = api_instance.get_gifs_trending(tenant_id, locale=locale, rating=rating, page=page)
+        api_response = api_instance.get_gifs_trending(tenant_id, GetGifsTrendingOptions(locale=locale, rating=rating, page=page))
         print("The response of PublicApi->get_gifs_trending:\n")
         pprint(api_response)
     except Exception as e:

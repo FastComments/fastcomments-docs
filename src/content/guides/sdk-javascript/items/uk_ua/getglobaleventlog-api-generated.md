@@ -1,3 +1,4 @@
+---
 req
 tenantId
 urlId
@@ -5,7 +6,7 @@ userIdWS
 
 ## Параметри
 
-| Name | Type | Required | Description |
+| Назва | Тип | Обов’язковий | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Так |  |
 | urlId | string | Так |  |
@@ -15,18 +16,24 @@ userIdWS
 
 ## Відповідь
 
-Повертає: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEventLogResponse.ts)
+Повертає: [`GetGlobalEventLogResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetGlobalEventLogResponse.ts)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'Приклад getGlobalEventLog'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_4f7b2a9c';
-const urlId: string = 'article-87c1a2b';
-const userIdWS: string = 'ws-1a2b3c4d';
-const startTime: number = Date.now() - 60 * 60 * 1000; // 1 годину тому
-const endTime: number = Date.now();
+(async () => {
+  const tenantId: string = '123e4567-e89b-12d3-a456-426614174000';
+  const urlId: string = 'article-2023-09-15';
+  const userIdWS: string = 'ws_987654321';
+  const startTime: number = Date.now() - 86400000;
+  const endTime: number = Date.now();
 
-const responseWithEnd: GetEventLogResponse = await getGlobalEventLog(tenantId, urlId, userIdWS, startTime, endTime);
-const responseWithoutEnd: GetEventLogResponse = await getGlobalEventLog(tenantId, urlId, userIdWS, startTime);
+  const fullLog: GetGlobalEventLogResponse = await getGlobalEventLog(tenantId, urlId, userIdWS, startTime, endTime);
+  const recentLog: GetGlobalEventLogResponse = await getGlobalEventLog(tenantId, urlId, userIdWS, startTime);
+
+  console.log(fullLog, recentLog);
+})();
 [inline-code-end]
+
+---

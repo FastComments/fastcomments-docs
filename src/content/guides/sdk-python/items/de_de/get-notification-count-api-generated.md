@@ -1,45 +1,46 @@
 ## Parameter
 
-| Name | Type | Location | Required | Description |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| userId | string | query | Nein |  |
-| urlId | string | query | Nein |  |
-| fromCommentId | string | query | Nein |  |
-| viewed | boolean | query | Nein |  |
-| type | string | query | Nein |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| urlId | string | query | No |  |
+| fromCommentId | string | query | No |  |
+| viewed | boolean | query | No |  |
+| type | string | query | No |  |
 
 ## Antwort
 
-Gibt zurück: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notification_count_response.py)
+Rückgabe: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notification_count_response.py)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'get_notification_count Beispiel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetNotificationCountOptions
 from client.models.get_notification_count_response import GetNotificationCountResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Die Angabe des Hosts ist optional und standardmäßig https://fastcomments.com
+# Das Definieren des Hosts ist optional und standardmäßig https://fastcomments.com
 # Siehe configuration.py für eine Liste aller unterstützten Konfigurationsparameter.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Der Client muss die Authentifizierungs- und Autorisierungsparameter
-# gemäß der Sicherheitsrichtlinie des API-Servers konfigurieren.
-# Für jede Authentifizierungsmethode werden unten Beispiele bereitgestellt. Verwenden Sie das Beispiel,
-# das Ihren Authentifizierungsanforderungen entspricht.
+# Der Client muss die Authentifizierungs- und Autorisierungsparameter konfigurieren
+# gemäß der Sicherheitsrichtlinie des API-Servers.
+# Beispiele für jede Auth-Methode werden unten bereitgestellt, verwenden Sie das Beispiel, das
+# Ihren Auth-Anwendungsfall erfüllt.
 
-# API-Key-Authentifizierung konfigurieren: api_key
+# Konfiguriere API-Schlüssel-Authentifizierung: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Entfernen Sie das Kommentarzeichen unten, um ein Präfix (z.B. Bearer) für den API-Key zu setzen, falls erforderlich
+# Entfernen Sie das Kommentarzeichen unten, um ein Präfix (z. B. Bearer) für den API-Schlüssel einzurichten, falls nötig
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Einen Kontext mit einer Instanz des API-Clients betreten
+# Betreten Sie einen Kontext mit einer Instanz des API-Clients
 with client.ApiClient(configuration) as api_client:
     # Erstellen Sie eine Instanz der API-Klasse
     api_instance = client.DefaultApi(api_client)
@@ -51,7 +52,7 @@ with client.ApiClient(configuration) as api_client:
     type = 'type_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_notification_count(tenant_id, user_id=user_id, url_id=url_id, from_comment_id=from_comment_id, viewed=viewed, type=type)
+        api_response = api_instance.get_notification_count(tenant_id, GetNotificationCountOptions(user_id=user_id, url_id=url_id, from_comment_id=from_comment_id, viewed=viewed, type=type))
         print("The response of DefaultApi->get_notification_count:\n")
         pprint(api_response)
     except Exception as e:

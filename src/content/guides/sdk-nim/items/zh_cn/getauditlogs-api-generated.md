@@ -1,13 +1,9 @@
 ## 参数
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| limit | float64 | 否 |  |
-| skip | float64 | 否 |  |
-| order | SORTDIR | 否 |  |
-| after | float64 | 否 |  |
-| before | float64 | 否 |  |
+| 名称 | 类型 | 必填 | 描述 |
+|------|------|------|------|
+| tenantId | string | Yes |  |
+| options | GetAuditLogsOptions | No |  |
 
 ## 响应
 
@@ -17,20 +13,8 @@
 
 [inline-code-attrs-start title = 'getAuditLogs 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getAuditLogs(
-  tenantId = "my-tenant-123",
-  limit = 50.0,
-  skip = 0.0,
-  order = SORTDIR.DESC,
-  after = 1622505600.0,
-  before = 1625097600.0
-)
-
-if response.isSome:
-  let logs = response.get()
-  echo logs
-else:
-  echo "No audit logs returned"
+let (auditOpt, httpResp) = client.getAuditLogs(tenantId = "my-tenant-123", options = GetAuditLogsOptions())
+if auditOpt.isSome:
+  let audit = auditOpt.get()
+  echo audit
 [inline-code-end]
-
----

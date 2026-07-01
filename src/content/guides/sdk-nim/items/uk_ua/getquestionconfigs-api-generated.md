@@ -1,10 +1,9 @@
----
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Назва | Тип | Обов'язковий | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| skip | float64 | Ні |  |
+| tenantId | string | Yes |  |
+| skip | float64 | No |  |
 
 ## Відповідь
 
@@ -17,10 +16,7 @@
 let (response, httpResponse) = client.getQuestionConfigs(tenantId = "my-tenant-123", skip = 0.0)
 if response.isSome:
   let configs = response.get()
-  echo "Received question configs for tenant my-tenant-123"
   echo configs
-else:
-  echo "No question configs returned"
 [inline-code-end]
 
 ---

@@ -35,17 +35,21 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$comment_id = 'comment_id_example'; // string
-$external_id = 'external_id_example'; // string
-$event_type = 'event_type_example'; // string
-$type = 'type_example'; // string
-$domain = 'domain_example'; // string
-$attempt_count_gt = 3.4; // float
-$skip = 3.4; // float
+$options = [
+    'comment_id' => 'comment_id_example', // string
+    'external_id' => 'external_id_example', // string
+    'event_type' => 'event_type_example', // string
+    'type' => 'type_example', // string
+    'domain' => 'domain_example', // string
+    'attempt_count_gt' => 3.4, // float
+    'skip' => 3.4, // float
+];
+
 
 try {
-    $result = $apiInstance->getPendingWebhookEvents($tenant_id, $comment_id, $external_id, $event_type, $type, $domain, $attempt_count_gt, $skip);
+    $result = $apiInstance->getPendingWebhookEvents($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getPendingWebhookEvents: ', $e->getMessage(), PHP_EOL;

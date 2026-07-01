@@ -1,22 +1,23 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
-| badgeId | string | query | Yes |  |
-| userId | string | query | No |  |
-| commentId | string | query | No |  |
-| broadcastId | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Oui |  |
+| badgeId | string | query | Oui |  |
+| userId | string | query | Non |  |
+| commentId | string | query | Non |  |
+| broadcastId | string | query | Non |  |
+| sso | string | query | Non |  |
 
 ## Réponse
 
-Renvoie: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AwardUserBadgeResponse.java)
+Renvoie : [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AwardUserBadgeResponse.java)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de putAwardBadge'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple putAwardBadge'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importer des classes :
+// Importer les classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,13 +30,14 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String badgeId = "badgeId_example"; // String | 
     String userId = "userId_example"; // String | 
     String commentId = "commentId_example"; // String | 
     String broadcastId = "broadcastId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      AwardUserBadgeResponse result = apiInstance.putAwardBadge(badgeId)
+      AwardUserBadgeResponse result = apiInstance.putAwardBadge(tenantId, badgeId)
             .userId(userId)
             .commentId(commentId)
             .broadcastId(broadcastId)

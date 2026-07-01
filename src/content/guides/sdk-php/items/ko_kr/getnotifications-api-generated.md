@@ -1,49 +1,62 @@
-## 매개변수
+## Parameters
 
-| 이름 | 유형 | 위치 | 필수 | 설명 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 예 |  |
-| userId | string | query | 아니오 |  |
-| urlId | string | query | 아니오 |  |
-| fromCommentId | string | query | 아니오 |  |
-| viewed | boolean | query | 아니오 |  |
-| type | string | query | 아니오 |  |
-| skip | number | query | 아니오 |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| urlId | string | query | No |  |
+| fromCommentId | string | query | No |  |
+| viewed | boolean | query | No |  |
+| type | string | query | No |  |
+| skip | number | query | No |  |
 
-## 응답
+## Response
 
-반환: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetNotificationsResponse.php)
+Returns: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetNotificationsResponse.php)
 
-## 예제
+## Example
 
-[inline-code-attrs-start title = 'getNotifications 예제'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getNotifications 예시'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
+// Configure API key authorization: api_key
 // API 키 인증 구성: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// 필요한 경우 API 키에 대한 접두사(예: Bearer)를 설정하려면 아래 주석을 해제하세요
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// 필요에 따라 API 키에 대한 접두사(e.g. Bearer)를 설정하려면 아래 주석을 해제하십시오
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // 사용자 지정 http 클라이언트를 사용하려면 `GuzzleHttp\ClientInterface`를 구현하는 클라이언트를 전달하세요.
-    // 이것은 선택 사항입니다. 기본적으로 `GuzzleHttp\Client`가 사용됩니다.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // 사용자 정의 HTTP 클라이언트를 사용하려면 `GuzzleHttp\ClientInterface`를 구현하는 클라이언트를 전달하십시오.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // 이는 선택 사항이며, 기본값으로 `GuzzleHttp\Client`가 사용됩니다.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$user_id = 'user_id_example'; // string
-$url_id = 'url_id_example'; // string
-$from_comment_id = 'from_comment_id_example'; // string
-$viewed = True; // bool
-$type = 'type_example'; // string
-$skip = 3.4; // float
+// 문자열
+$options = [
+    'user_id' => 'user_id_example', // string
+    // 문자열
+    'url_id' => 'url_id_example', // string
+    // 문자열
+    'from_comment_id' => 'from_comment_id_example', // string
+    // 문자열
+    'viewed' => True, // bool
+    // 불리언
+    'type' => 'type_example', // string
+    // 문자열
+    'skip' => 3.4, // float
+    // 부동소수점
+];
+
 
 try {
-    $result = $apiInstance->getNotifications($tenant_id, $user_id, $url_id, $from_comment_id, $viewed, $type, $skip);
+    $result = $apiInstance->getNotifications($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getNotifications: ', $e->getMessage(), PHP_EOL;

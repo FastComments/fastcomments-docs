@@ -34,16 +34,20 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$url_id = 'url_id_example'; // string
-$user_id = 'user_id_example'; // string
-$start_date = 'start_date_example'; // string
-$question_id = 'question_id_example'; // string
-$question_ids = 'question_ids_example'; // string
-$skip = 3.4; // float
+$options = [
+    'url_id' => 'url_id_example', // string
+    'user_id' => 'user_id_example', // string
+    'start_date' => 'start_date_example', // string
+    'question_id' => 'question_id_example', // string
+    'question_ids' => 'question_ids_example', // string
+    'skip' => 3.4, // float
+];
+
 
 try {
-    $result = $apiInstance->getQuestionResults($tenant_id, $url_id, $user_id, $start_date, $question_id, $question_ids, $skip);
+    $result = $apiInstance->getQuestionResults($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getQuestionResults: ', $e->getMessage(), PHP_EOL;

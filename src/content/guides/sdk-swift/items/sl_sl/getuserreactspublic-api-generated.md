@@ -1,10 +1,10 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Mesto | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Da |  |
-| postIds | array | query | Ne |  |
-| sso | string | query | Ne |  |
+| tenantId | string | path | Yes |  |
+| postIds | array | query | No |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -14,14 +14,14 @@ Vrne: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-swift/
 
 [inline-code-attrs-start title = 'Primer getUserReactsPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Naslednji primeri kode so še v beta različici. Za kakršnekoli težave poročajte preko http://github.com/OpenAPITools/openapi-generator/issues/new
+// Naslednji vzorci kode so še v beta različici. Če naletite na težave, jih prosimo prijavite na http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let postIds = ["inner_example"] // [String] |  (neobvezno)
 let sso = "sso_example" // String |  (neobvezno)
 
-PublicAPI.getUserReactsPublic(tenantId: tenantId, postIds: postIds, sso: sso) { (response, error) in
+PublicAPI.getUserReactsPublic(tenantId: tenantId, options: PublicAPI.GetUserReactsPublicOptions(postIds: postIds, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

@@ -1,11 +1,8 @@
----
-Сводная информация о пользователях для тенанта. По заданным userIds возвращает отображаемую информацию из User / SSOUser.
-Используется виджетом комментариев для обогащения пользователей, которые только что появились через событие присутствия.
-Нет контекста страницы: конфиденциальность соблюдается одинаково (приватные профили маскируются).
+Массовая информация о пользователях для арендатора. По заданным userIds возвращается отображаемая информация из User / SSOUser. Используется виджетом комментариев для обогащения пользователей, которые только что появились через событие присутствия. Нет контекста страницы: конфиденциальность соблюдается единообразно (приватные профили маскируются).
 
 ## Параметры
 
-| Name | Type | Required | Description |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | ids | string | Да |  |
@@ -20,15 +17,14 @@
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 utility::string_t ids = U("alice@example.com,bob@example.com");
-boost::optional<utility::string_t> statusFilter = U("active");
+boost::optional<utility::string_t> locale = boost::make_optional(U("en-US"));
+
 api->getUsersInfo(tenantId, ids).then([](pplx::task<std::shared_ptr<PageUsersInfoResponse>> t){
-    try {
-        auto res = t.get();
-        if (res) {
-            auto responseCopy = std::make_shared<PageUsersInfoResponse>(*res);
-        }
-    } catch (const std::exception&) {}
+    try{
+        auto response = t.get();
+        // process response
+    }catch(const std::exception&){
+        // handle error
+    }
 });
 [inline-code-end]
-
----

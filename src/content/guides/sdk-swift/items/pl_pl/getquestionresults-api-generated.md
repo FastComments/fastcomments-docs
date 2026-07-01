@@ -1,7 +1,7 @@
 ## Parametry
 
-| Name | Typ | Lokalizacja | Wymagane | Opis |
-|------|------|----------|----------|-------------|
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+|------|------|------------|----------|------|
 | tenantId | string | query | Tak |  |
 | urlId | string | query | Nie |  |
 | userId | string | query | Nie |  |
@@ -16,20 +16,20 @@ Zwraca: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomme
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład getQuestionResults'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getQuestionResults Przykład'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Następujące przykłady kodu są nadal w wersji beta. W razie problemów zgłoś je przez http://github.com/OpenAPITools/openapi-generator/issues/new
+// Poniższe przykłady kodu są nadal w wersji beta. W razie jakichkolwiek problemów prosimy zgłaszać je poprzez http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let urlId = "urlId_example" // String |  (opcjonalne)
-let userId = "userId_example" // String |  (opcjonalne)
-let startDate = "startDate_example" // String |  (opcjonalne)
-let questionId = "questionId_example" // String |  (opcjonalne)
-let questionIds = "questionIds_example" // String |  (opcjonalne)
-let skip = 987 // Double |  (opcjonalne)
+let urlId = "urlId_example" // String |  (opcjonalny)
+let userId = "userId_example" // String |  (opcjonalny)
+let startDate = "startDate_example" // String |  (opcjonalny)
+let questionId = "questionId_example" // String |  (opcjonalny)
+let questionIds = "questionIds_example" // String |  (opcjonalny)
+let skip = 987 // Double |  (opcjonalny)
 
-DefaultAPI.getQuestionResults(tenantId: tenantId, urlId: urlId, userId: userId, startDate: startDate, questionId: questionId, questionIds: questionIds, skip: skip) { (response, error) in
+DefaultAPI.getQuestionResults(tenantId: tenantId, options: DefaultAPI.GetQuestionResultsOptions(urlId: urlId, userId: userId, startDate: startDate, questionId: questionId, questionIds: questionIds, skip: skip)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -40,5 +40,3 @@ DefaultAPI.getQuestionResults(tenantId: tenantId, urlId: urlId, userId: userId, 
     }
 }
 [inline-code-end]
-
----

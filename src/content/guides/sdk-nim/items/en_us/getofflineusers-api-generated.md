@@ -9,8 +9,7 @@ index from afterName forward via $gt, no $skip cost.
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | urlId | string | Yes |  |
-| afterName | string | No |  |
-| afterUserId | string | No |  |
+| options | GetOfflineUsersOptions | No |  |
 
 ## Response
 
@@ -20,15 +19,12 @@ Returns: [`Option[PageUsersOfflineResponse]`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'getOfflineUsers Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getOfflineUsers(
+let (offlineResp, httpResponse) = client.getOfflineUsers(
   tenantId = "my-tenant-123",
-  urlId = "news/article-how-to-code",
-  afterName = "",
-  afterUserId = ""
+  urlId = "news/article-title",
+  options = GetOfflineUsersOptions()
 )
-
-if response.isSome:
-  let offlinePage = response.get()
-  echo "Received offline users page"
-  discard httpResponse.statusCode
+if offlineResp.isSome:
+  let offline = offlineResp.get()
+  echo offline)
 [inline-code-end]

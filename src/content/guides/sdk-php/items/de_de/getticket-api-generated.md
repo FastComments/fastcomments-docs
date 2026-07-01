@@ -1,14 +1,14 @@
 ## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| id | string | path | Ja |  |
-| userId | string | query | Nein |  |
+|------|------|-----|--------------|--------------|
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| userId | string | query | No |  |
 
 ## Antwort
 
-Gibt zurück: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTicketResponse.php)
+Rückgabe: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTicketResponse.php)
 
 ## Beispiel
 
@@ -18,21 +18,23 @@ Gibt zurück: [`GetTicketResponse`](https://github.com/FastComments/fastcomments
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// API-Schlüssel-Autorisierung konfigurieren: api_key
+// Konfiguriere die API-Schlüssel-Authentifizierung: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Entkommentieren Sie unten, um bei Bedarf ein Präfix (z. B. Bearer) für den API-Schlüssel einzurichten
+// Entkommentiere unten, um einen Präfix (z. B. Bearer) für den API-Schlüssel einzurichten, falls erforderlich
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Wenn Sie einen eigenen HTTP-Client verwenden möchten, übergeben Sie Ihren Client, der `GuzzleHttp\ClientInterface` implementiert.
-    // Dies ist optional; `GuzzleHttp\Client` wird standardmäßig verwendet.
+    // Wenn du einen benutzerdefinierten HTTP-Client verwenden möchtest, übergebe deinen Client, der `GuzzleHttp\ClientInterface` implementiert.
+    // Dies ist optional, `GuzzleHttp\Client` wird standardmäßig verwendet.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
 $user_id = 'user_id_example'; // string
+
 
 try {
     $result = $apiInstance->getTicket($tenant_id, $id, $user_id);
@@ -41,3 +43,5 @@ try {
     echo 'Exception when calling DefaultApi->getTicket: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

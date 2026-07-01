@@ -1,45 +1,49 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Местоположение | Обязательно | Описание |
+| Назва | Тип | Розташування | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| yearNumber | number | query | Нет |  |
-| monthNumber | number | query | Нет |  |
-| dayNumber | number | query | Нет |  |
-| skip | number | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| yearNumber | number | query | No |  |
+| monthNumber | number | query | No |  |
+| dayNumber | number | query | No |  |
+| skip | number | query | No |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantDailyUsagesResponse.php)
+Повертає: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantDailyUsagesResponse.php)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример вызова getTenantDailyUsages'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад getTenantDailyUsages'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Настроить авторизацию по API-ключу: api_key
+// Налаштування авторизації ключем API: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для API-ключа, если это необходимо
+// Розкоментуйте нижче, щоб встановити префікс (наприклад, Bearer) для ключа API, якщо потрібно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Если вы хотите использовать кастомный HTTP-клиент, передайте клиент, который реализует `GuzzleHttp\ClientInterface`.
-    // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
+    // Якщо ви хочете використати власний HTTP-клієнт, передайте ваш клієнт, який реалізує `GuzzleHttp\ClientInterface`.
+    // Це необов'язково, за замовчуванням буде використано `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$year_number = 3.4; // float
-$month_number = 3.4; // float
-$day_number = 3.4; // float
-$skip = 3.4; // float
+
+$tenant_id = 'tenant_id_example'; // рядок
+$options = [
+    'year_number' => 3.4, // float
+    'month_number' => 3.4, // float
+    'day_number' => 3.4, // float
+    'skip' => 3.4, // float
+];
+
 
 try {
-    $result = $apiInstance->getTenantDailyUsages($tenant_id, $year_number, $month_number, $day_number, $skip);
+    $result = $apiInstance->getTenantDailyUsages($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getTenantDailyUsages: ', $e->getMessage(), PHP_EOL;

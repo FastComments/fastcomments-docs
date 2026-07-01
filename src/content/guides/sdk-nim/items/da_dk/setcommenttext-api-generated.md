@@ -1,13 +1,12 @@
 ## Parametre
 
-| Name | Type | Påkrævet | Beskrivelse |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| commentId | string | Ja |  |
-| broadcastId | string | Nej |  |
-| commentTextUpdateRequest | CommentTextUpdateRequest | Nej |  |
-| editKey | string | Nej |  |
-| sso | string | Nej |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| broadcastId | string | No |  |
+| commentTextUpdateRequest | CommentTextUpdateRequest | No |  |
+| options | SetCommentTextOptions | No |  |
 
 ## Svar
 
@@ -17,17 +16,14 @@ Returnerer: [`Option[PublicAPISetCommentTextResponse]`](https://github.com/FastC
 
 [inline-code-attrs-start title = 'setCommentText Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
+let commentUpdate = CommentTextUpdateRequest(text: "Updated comment text")
+let opts = SetCommentTextOptions()
 let (response, httpResponse) = client.setCommentText(
   tenantId = "my-tenant-123",
-  commentId = "cmt-456789",
-  broadcastId = "",
-  commentTextUpdateRequest = CommentTextUpdateRequest(text: "Updated comment text to fix a typo and clarify meaning."),
-  editKey = "",
-  sso = ""
-)
+  commentId = "cmt-456",
+  broadcastId = "broadcast-789",
+  commentTextUpdateRequest = commentUpdate,
+  options = opts)
 if response.isSome:
   let result = response.get()
-  discard result
 [inline-code-end]
-
----

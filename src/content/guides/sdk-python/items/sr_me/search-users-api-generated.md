@@ -1,47 +1,48 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Локација | Обавезно | Опис |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| urlId | string | query | Да |  |
-| usernameStartsWith | string | query | Не |  |
-| mentionGroupIds | array | query | Не |  |
-| sso | string | query | Не |  |
-| searchSection | string | query | Не |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | path | Da |  |
+| urlId | string | query | Da |  |
+| usernameStartsWith | string | query | Ne |  |
+| mentionGroupIds | array | query | Ne |  |
+| sso | string | query | Ne |  |
+| searchSection | string | query | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/search_users_result.py)
+Vraća: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/search_users_result.py)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'search_users Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'search_users Primjer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import SearchUsersOptions
 from client.models.search_users_result import SearchUsersResult
 from client.rest import ApiException
 from pprint import pprint
 
-# Подешавање хоста је опционо и подразумевано је https://fastcomments.com
-# Погледајте configuration.py за листу свих подржаних параметара конфигурације.
+# Definisanje hosta je opcionalno i podrazumijevano je https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih konfiguracionih parametara.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Уђите у контекст са инстанцом API клијента
+# Uđite u kontekst s instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Креирајте инстанцу API класе
+    # Kreirajte instancu API klase
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
-    username_starts_with = 'username_starts_with_example' # str |  (опционо)
-    mention_group_ids = ['mention_group_ids_example'] # List[str] |  (опционо)
-    sso = 'sso_example' # str |  (опционо)
-    search_section = 'search_section_example' # str |  (опционо)
+    username_starts_with = 'username_starts_with_example' # str |  (opcionalno)
+    mention_group_ids = ['mention_group_ids_example'] # List[str] |  (opcionalno)
+    sso = 'sso_example' # str |  (opcionalno)
+    search_section = 'search_section_example' # str |  (opcionalno)
 
     try:
-        api_response = api_instance.search_users(tenant_id, url_id, username_starts_with=username_starts_with, mention_group_ids=mention_group_ids, sso=sso, search_section=search_section)
+        api_response = api_instance.search_users(tenant_id, url_id, SearchUsersOptions(username_starts_with=username_starts_with, mention_group_ids=mention_group_ids, sso=sso, search_section=search_section))
         print("The response of PublicApi->search_users:\n")
         pprint(api_response)
     except Exception as e:

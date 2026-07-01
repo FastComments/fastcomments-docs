@@ -29,8 +29,10 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $page = 3.4; // float
+
 
 try {
     $result = $apiInstance->getHashTags($tenant_id, $page);

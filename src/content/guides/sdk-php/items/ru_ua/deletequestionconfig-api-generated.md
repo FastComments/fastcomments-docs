@@ -1,10 +1,9 @@
----
 ## Параметры
 
-| Имя | Тип | Location | Обязательно | Описание |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| id | string | path | Да |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
 ## Ответ
 
@@ -18,20 +17,25 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Настроить авторизацию API-ключом: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Раскомментируйте ниже, чтобы задать префикс (например Bearer) для API-ключа, если требуется
+// Configure API key authorization: api_key
+// Настройка авторизации API-ключа: api_key
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для API-ключа, если необходимо
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Если вы хотите использовать собственный HTTP-клиент, передайте клиент, который реализует `GuzzleHttp\ClientInterface`.
-    // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // Если вы хотите использовать пользовательский HTTP‑клиент, передайте ваш клиент, реализующий `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // Это опционально, по умолчанию будет использоваться `GuzzleHttp\Client`.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
-$id = 'id_example'; // string
+
+$tenant_id = 'tenant_id_example'; // строка
+$id = 'id_example'; // строка
+
 
 try {
     $result = $apiInstance->deleteQuestionConfig($tenant_id, $id);
@@ -40,5 +44,3 @@ try {
     echo 'Exception when calling DefaultApi->deleteQuestionConfig: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

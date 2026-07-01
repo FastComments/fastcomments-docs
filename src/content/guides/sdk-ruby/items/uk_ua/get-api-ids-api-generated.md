@@ -1,7 +1,8 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Місце | Обовʼязково | Опис |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Так |  |
 | text-search | string | query | Ні |  |
 | byIPFromComment | string | query | Ні |  |
 | filters | string | query | Ні |  |
@@ -22,6 +23,7 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 opts = {
   text_search: 'text_search_example', # String | 
   by_ip_from_comment: 'by_ip_from_comment_example', # String | 
@@ -34,7 +36,7 @@ opts = {
 
 begin
   
-  result = api_instance.get_api_ids(opts)
+  result = api_instance.get_api_ids(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_api_ids: #{e}"

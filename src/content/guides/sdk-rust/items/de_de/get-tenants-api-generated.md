@@ -1,29 +1,26 @@
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
-|------|------|----------|-------------|
+|------|-----|--------------|--------------|
 | tenant_id | String | Ja |  |
 | meta | String | Nein |  |
 | skip | f64 | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_tenants_response.rs)
+Rückgabe: [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_tenants_response.rs)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'Beispiel für get_tenants'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_tenants Beispiel'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_get_tenants() -> Result<(), Error> {
-    let params: GetTenantsParams = GetTenantsParams {
+async fn example(config: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetTenantsParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        meta: Some("include=domains,billing".to_string()),
+        meta: Some("news/article".to_string()),
         skip: Some(10.0),
     };
-    let tenants: GetTenantsResponse = get_tenants(&configuration, params).await?;
-    println!("{:#?}", tenants);
+    let _response = get_tenants(config, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

@@ -1,22 +1,28 @@
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
-|------|------|----------|-------------|
+| Naam | Type | Verplicht | Beschrijving |
+|------|------|-----------|--------------|
+| tenantId | string | Ja |  |
 | commentId | string | Ja |  |
-| sso | string | Nee |  |
+| options | PostRestoreDeletedCommentOptions | Nee |  |
 
 ## Respons
 
-Geeft terug: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
+Retourneert: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'postRestoreDeletedComment Voorbeeld'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postRestoreDeletedComment(commentId = "comment-8a7b6c5d", sso = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.SAMPLE_SIGNATURE")
-if response.isSome:
-  let apiResp = response.get()
-  echo "Comment restored:", apiResp
-else:
-  echo "Restore request failed"
+let (respOpt, httpResp) = client.postRestoreDeletedComment(
+  tenantId = "my-tenant-123",
+  commentId = "comment-456",
+  options = default(PostRestoreDeletedCommentOptions)
+)
+
+if respOpt.isSome:
+  let empty = respOpt.get()
+  echo "Comment restored"
 [inline-code-end]
+
+---

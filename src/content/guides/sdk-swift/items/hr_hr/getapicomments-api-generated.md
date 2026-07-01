@@ -1,7 +1,8 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Naziv | Tip | Lokacija | Potrebno | Opis |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | page | number | query | No |  |
 | count | number | query | No |  |
 | text-search | string | query | No |  |
@@ -18,11 +19,12 @@ Vraća: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fas
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer getApiComments'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getApiComments Primjer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sljedeći primjeri koda su još uvijek u beta fazi. Za bilo koji problem, prijavite putem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sljedeći primjeri koda su još u beta fazi. Za bilo koji problem, prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let page = 987 // Double |  (neobavezno)
 let count = 987 // Double |  (neobavezno)
 let textSearch = "textSearch_example" // String |  (neobavezno)
@@ -33,7 +35,7 @@ let sorts = "sorts_example" // String |  (neobavezno)
 let demo = true // Bool |  (neobavezno)
 let sso = "sso_example" // String |  (neobavezno)
 
-ModerationAPI.getApiComments(page: page, count: count, textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, demo: demo, sso: sso) { (response, error) in
+ModerationAPI.getApiComments(tenantId: tenantId, options: ModerationAPI.GetApiCommentsOptions(page: page, count: count, textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, demo: demo, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

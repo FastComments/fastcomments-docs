@@ -5,35 +5,35 @@ urlId
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Ναι |  |
-| urlId | string | query | Ναι |  |
-| page | integer | query | Όχι |  |
-| direction | string | query | Όχι |  |
-| sso | string | query | Όχι |  |
-| skip | integer | query | Όχι |  |
-| skipChildren | integer | query | Όχι |  |
-| limit | integer | query | Όχι |  |
-| limitChildren | integer | query | Όχι |  |
-| countChildren | boolean | query | Όχι |  |
-| fetchPageForCommentId | string | query | Όχι |  |
-| includeConfig | boolean | query | Όχι |  |
-| countAll | boolean | query | Όχι |  |
-| includei10n | boolean | query | Όχι |  |
-| locale | string | query | Όχι |  |
-| modules | string | query | Όχι |  |
-| isCrawler | boolean | query | Όχι |  |
-| includeNotificationCount | boolean | query | Όχι |  |
-| asTree | boolean | query | Όχι |  |
-| maxTreeDepth | integer | query | Όχι |  |
-| useFullTranslationIds | boolean | query | Όχι |  |
-| parentId | string | query | Όχι |  |
-| searchText | string | query | Όχι |  |
-| hashTags | array | query | Όχι |  |
-| userId | string | query | Όχι |  |
-| customConfigStr | string | query | Όχι |  |
-| afterCommentId | string | query | Όχι |  |
-| beforeCommentId | string | query | Όχι |  |
+|------|------|----------|------------|-----------|
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| page | integer | query | No |  |
+| direction | string | query | No |  |
+| sso | string | query | No |  |
+| skip | integer | query | No |  |
+| skipChildren | integer | query | No |  |
+| limit | integer | query | No |  |
+| limitChildren | integer | query | No |  |
+| countChildren | boolean | query | No |  |
+| fetchPageForCommentId | string | query | No |  |
+| includeConfig | boolean | query | No |  |
+| countAll | boolean | query | No |  |
+| includei10n | boolean | query | No |  |
+| locale | string | query | No |  |
+| modules | string | query | No |  |
+| isCrawler | boolean | query | No |  |
+| includeNotificationCount | boolean | query | No |  |
+| asTree | boolean | query | No |  |
+| maxTreeDepth | integer | query | No |  |
+| useFullTranslationIds | boolean | query | No |  |
+| parentId | string | query | No |  |
+| searchText | string | query | No |  |
+| hashTags | array | query | No |  |
+| userId | string | query | No |  |
+| customConfigStr | string | query | No |  |
+| afterCommentId | string | query | No |  |
+| beforeCommentId | string | query | No |  |
 
 ## Απόκριση
 
@@ -41,9 +41,9 @@ urlId
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα getCommentsPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getCommentsPublic Παράδειγμα'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Τα ακόλουθα δείγματα κώδικα είναι ακόμα σε beta. Για οποιοδήποτε θέμα, παρακαλώ αναφέρετε στο http://github.com/OpenAPITools/openapi-generator/issues/new
+// Τα παρακάτω δείγματα κώδικα είναι ακόμη beta. Για οποιοδήποτε πρόβλημα, παρακαλώ αναφέρετε μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -75,7 +75,7 @@ let customConfigStr = "customConfigStr_example" // String |  (προαιρετι
 let afterCommentId = "afterCommentId_example" // String |  (προαιρετικό)
 let beforeCommentId = "beforeCommentId_example" // String |  (προαιρετικό)
 
-PublicAPI.getCommentsPublic(tenantId: tenantId, urlId: urlId, page: page, direction: direction, sso: sso, skip: skip, skipChildren: skipChildren, limit: limit, limitChildren: limitChildren, countChildren: countChildren, fetchPageForCommentId: fetchPageForCommentId, includeConfig: includeConfig, countAll: countAll, includei10n: includei10n, locale: locale, modules: modules, isCrawler: isCrawler, includeNotificationCount: includeNotificationCount, asTree: asTree, maxTreeDepth: maxTreeDepth, useFullTranslationIds: useFullTranslationIds, parentId: parentId, searchText: searchText, hashTags: hashTags, userId: userId, customConfigStr: customConfigStr, afterCommentId: afterCommentId, beforeCommentId: beforeCommentId) { (response, error) in
+PublicAPI.getCommentsPublic(tenantId: tenantId, urlId: urlId, options: PublicAPI.GetCommentsPublicOptions(page: page, direction: direction, sso: sso, skip: skip, skipChildren: skipChildren, limit: limit, limitChildren: limitChildren, countChildren: countChildren, fetchPageForCommentId: fetchPageForCommentId, includeConfig: includeConfig, countAll: countAll, includei10n: includei10n, locale: locale, modules: modules, isCrawler: isCrawler, includeNotificationCount: includeNotificationCount, asTree: asTree, maxTreeDepth: maxTreeDepth, useFullTranslationIds: useFullTranslationIds, parentId: parentId, searchText: searchText, hashTags: hashTags, userId: userId, customConfigStr: customConfigStr, afterCommentId: afterCommentId, beforeCommentId: beforeCommentId)) { (response, error) in
     guard error == nil else {
         print(error)
         return

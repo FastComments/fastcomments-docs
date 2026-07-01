@@ -1,30 +1,30 @@
-## Параметри
+## Parameters
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| value | string | Не |  |
-| sso | string | Не |  |
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Da |  |
+| options | const GetSearchPagesOptions& | Da |  |
 
-## Одговор
+## Response
 
-Враћа: [`ModerationPageSearchResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ModerationPageSearchResponse.h)
+Vraća: [`ModerationPageSearchResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ModerationPageSearchResponse.h)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'getSearchPages Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSearchPages Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t value = U("getting-started");
-utility::string_t sso = U("user@example.com");
-boost::optional<utility::string_t> valueOpt = value;
-boost::optional<utility::string_t> ssoOpt = sso;
-api->getSearchPages(valueOpt, ssoOpt)
-.then([](pplx::task<std::shared_ptr<ModerationPageSearchResponse>> t){
-    try {
-        auto resp = t.get();
-        auto safeResp = resp ? resp : std::make_shared<ModerationPageSearchResponse>();
-        (void)safeResp;
-    } catch (const std::exception& e) {
-        (void)e;
-    }
-});
+GetSearchPagesOptions options;
+options.pageNumber = boost::optional<int>(1);
+options.pageSize = boost::optional<int>(50);
+options.searchTerm = boost::optional<utility::string_t>(U("spam"));
+
+api->getSearchPages(U("my-tenant-123"), options)
+    .then([](pplx::task<std::shared_ptr<ModerationPageSearchResponse>> task) {
+        try {
+            auto response = task.get();
+            // koristi odgovor
+        } catch (const std::exception& e) {
+            // obradi grešku
+        }
+    });
 [inline-code-end]

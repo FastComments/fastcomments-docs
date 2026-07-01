@@ -1,7 +1,7 @@
 ## Parámetros
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nombre | Tipo | Requerido | Descripción |
+|--------|------|-----------|-------------|
 | tenantId | string | Sí |  |
 | id | string | Sí |  |
 | fromName | string | Sí |  |
@@ -12,19 +12,14 @@ Devuelve: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de sendInvite'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo sendInvite'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t id = U("user@example.com");
-utility::string_t fromName = U("Acme Support");
-boost::optional<utility::string_t> note = boost::optional<utility::string_t>(U("Invitation to join comments"));
-api->sendInvite(tenantId, id, fromName)
-    .then([](pplx::task<std::shared_ptr<APIEmptyResponse>> t){
-        try {
-            auto resp = t.get();
-            auto finalResp = resp ? resp : std::make_shared<APIEmptyResponse>();
-            (void)finalResp;
-        } catch (const std::exception&) {
-        }
-    });
+boost::optional<utility::string_t> cc = utility::conversions::to_string_t("cc@example.com");
+api->sendInvite(
+    utility::conversions::to_string_t("my-tenant-123"),
+    utility::conversions::to_string_t("invitee@example.com"),
+    utility::conversions::to_string_t("John Doe")
+).then([](std::shared_ptr<APIEmptyResponse> resp) {
+    // manejar invitación exitosa
+});
 [inline-code-end]

@@ -1,12 +1,10 @@
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
-|------|------|----------|-------------|
+| Naam | Type | Verplicht | Beschrijving |
+|------|------|-----------|--------------|
 | tenantId | string | Ja |  |
 | search | string | Nee |  |
-| locale | string | Nee |  |
-| rating | string | Nee |  |
-| page | float64 | Nee |  |
+| options | GetGifsSearchOptions | Nee |  |
 
 ## Respons
 
@@ -16,17 +14,9 @@ Retourneert: [`Option[GetGifsSearchResponse]`](https://github.com/FastComments/f
 
 [inline-code-attrs-start title = 'getGifsSearch Voorbeeld'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getGifsSearch(
-  tenantId = "my-tenant-123",
-  search = "funny cat",
-  locale = "en-US",
-  rating = "PG",
-  page = 1.0
-)
-
-if response.isSome:
-  let gifs = response.get()
-  echo "Fetched GIFs response:", gifs
+let opts = GetGifsSearchOptions(limit = 10, rating = "g")
+let (responseOpt, httpResponse) = client.getGifsSearch(tenantId = "my-tenant-123", search = "funny cats", options = opts)
+if responseOpt.isSome:
+  let resp = responseOpt.get()
+  # gebruik resp indien nodig
 [inline-code-end]
-
----

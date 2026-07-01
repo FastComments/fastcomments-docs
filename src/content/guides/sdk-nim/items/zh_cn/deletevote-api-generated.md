@@ -1,10 +1,10 @@
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | id | string | 否 |  |
-| editKey | string | 否 |  |
+| editKey | string = "" | 否 |  |
 
 ## 响应
 
@@ -14,12 +14,11 @@
 
 [inline-code-attrs-start title = 'deleteVote 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteVote(tenantId = "my-tenant-123", id = "vote-7f3b2a", editKey = "")
-if response.isSome:
-  let voteDelete = response.get()
-  echo "Vote deleted successfully"
-else:
-  echo "Failed to delete vote"
+let (voteRespOpt, httpResp) = client.deleteVote(tenantId = "my-tenant-123", id = "comment-456", editKey = "")
+if voteRespOpt.isSome:
+  let voteResp = voteRespOpt.get()
+  discard voteResp
+  discard httpResp
 [inline-code-end]
 
 ---

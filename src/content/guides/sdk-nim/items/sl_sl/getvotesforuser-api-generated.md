@@ -1,11 +1,11 @@
+---
 ## Parametri
 
-| Ime | Tip | Obvezno | Opis |
+| Ime | Vrsta | Obvezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| urlId | string | Da |  |
-| userId | string | Ne |  |
-| anonUserId | string | Ne |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| options | GetVotesForUserOptions | No |  |
 
 ## Odgovor
 
@@ -13,19 +13,17 @@ Vrne: [`Option[GetVotesForUserResponse]`](https://github.com/FastComments/fastco
 
 ## Primer
 
-[inline-code-attrs-start title = 'getVotesForUser Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getVotesForUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getVotesForUser(
+let (optResp, httpResp) = client.getVotesForUser(
   tenantId = "my-tenant-123",
   urlId = "news/article-title",
-  userId = "user-789",
-  anonUserId = ""
+  options = GetVotesForUserOptions()
 )
-if response.isSome:
-  let votes = response.get()
-  echo "User votes retrieved"
-else:
-  echo "No votes found"
+
+if optResp.isSome:
+  let resp = optResp.get()
+  echo resp
 [inline-code-end]
 
 ---

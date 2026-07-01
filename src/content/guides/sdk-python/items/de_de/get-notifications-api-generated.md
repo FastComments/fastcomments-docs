@@ -1,48 +1,49 @@
 ## Parameter
 
-| Name | Type | Ort | Erforderlich | Beschreibung |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| userId | string | query | Nein |  |
-| urlId | string | query | Nein |  |
-| fromCommentId | string | query | Nein |  |
-| viewed | boolean | query | Nein |  |
-| type | string | query | Nein |  |
-| skip | number | query | Nein |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| urlId | string | query | No |  |
+| fromCommentId | string | query | No |  |
+| viewed | boolean | query | No |  |
+| type | string | query | No |  |
+| skip | number | query | No |  |
 
 ## Antwort
 
-Gibt zurück: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notifications_response.py)
+Rückgabe: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notifications_response.py)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'Beispiel für get_notifications'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetNotificationsOptions
 from client.models.get_notifications_response import GetNotificationsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Die Angabe des Hosts ist optional und standardmäßig https://fastcomments.com
+# Definieren des Hosts ist optional und standardmäßig https://fastcomments.com
 # Siehe configuration.py für eine Liste aller unterstützten Konfigurationsparameter.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Der Client muss die Authentifizierungs- und Autorisierungsparameter
-# entsprechend der Sicherheitsrichtlinie des API-Servers konfigurieren.
-# Beispiele für jede Authentifizierungsmethode sind unten aufgeführt; verwenden Sie das Beispiel, das
-# Ihren Authentifizierungsfall erfüllt.
+# gemäß den Sicherheitsrichtlinien des API-Servers konfigurieren.
+# Beispiele für jede Authentifizierungsmethode sind unten angegeben, verwenden Sie das Beispiel,
+# das Ihrem Anwendungsfall entspricht.
 
-# API-Schlüssel-Authentifizierung konfigurieren: api_key
+# Konfigurieren Sie die API‑Schlüssel‑Autorisation: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Unten auskommentierten Code aktivieren, um ein Präfix (z. B. Bearer) für den API-Schlüssel einzurichten, falls erforderlich
+# Kommentieren Sie die Zeile unten aus, um ein Präfix (z. B. Bearer) für den API‑Schlüssel festzulegen, falls nötig
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Kontext mit einer Instanz des API-Clients betreten
+# Öffnen Sie einen Kontext mit einer Instanz des API‑Clients
 with client.ApiClient(configuration) as api_client:
-    # Erstellen Sie eine Instanz der API-Klasse
+    # Erstellen Sie eine Instanz der API‑Klasse
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     user_id = 'user_id_example' # str |  (optional)
@@ -53,7 +54,7 @@ with client.ApiClient(configuration) as api_client:
     skip = 3.4 # float |  (optional)
 
     try:
-        api_response = api_instance.get_notifications(tenant_id, user_id=user_id, url_id=url_id, from_comment_id=from_comment_id, viewed=viewed, type=type, skip=skip)
+        api_response = api_instance.get_notifications(tenant_id, GetNotificationsOptions(user_id=user_id, url_id=url_id, from_comment_id=from_comment_id, viewed=viewed, type=type, skip=skip))
         print("The response of DefaultApi->get_notifications:\n")
         pprint(api_response)
     except Exception as e:

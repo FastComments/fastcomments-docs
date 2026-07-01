@@ -2,10 +2,9 @@
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| namespace | string | 任意 |  |
-| component | string | 任意 |  |
-| locale | string | 任意 |  |
-| useFullTranslationIds | bool | 任意 |  |
+| namespace | string | いいえ |  |
+| component | string | いいえ |  |
+| options | GetTranslationsOptions | いいえ |  |
 
 ## レスポンス
 
@@ -15,15 +14,9 @@
 
 [inline-code-attrs-start title = 'getTranslations の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTranslations(
-  namespace = "news-site",
-  component = "article-comments",
-  locale = "en-US",
-  useFullTranslationIds = false
-)
-if response.isSome:
-  let translations = response.get()
-  discard translations
-else:
-  echo "No translations available"
+let opts = GetTranslationsOptions()
+let (maybeResp, httpResp) = client.getTranslations(namespace = "my-tenant-123", component = "news/article-title", options = opts)
+if maybeResp.isSome:
+  let resp = maybeResp.get()
+  echo resp
 [inline-code-end]

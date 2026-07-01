@@ -3,12 +3,7 @@
 | Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
-| commentId | string | Да |  |
-| externalId | string | Нет |  |
-| eventType | string | Нет |  |
-| domain | string | Нет |  |
-| attemptCountGT | float64 | Нет |  |
-| skip | float64 | Нет |  |
+| options | GetPendingWebhookEventsOptions | Нет |  |
 
 ## Ответ
 
@@ -18,18 +13,11 @@
 
 [inline-code-attrs-start title = 'Пример getPendingWebhookEvents'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getPendingWebhookEvents(
+let (maybeResp, httpResp) = client.getPendingWebhookEvents(
   tenantId = "my-tenant-123",
-  commentId = "cmt-987654",
-  externalId = "",
-  eventType = "",
-  domain = "",
-  attemptCountGT = 0.0,
-  skip = 0.0
+  options = GetPendingWebhookEventsOptions()
 )
-if response.isSome:
-  let pending = response.get()
-  discard pending
-[inline-code-end]
 
----
+if maybeResp.isSome:
+  let resp = maybeResp.get()
+[inline-code-end]

@@ -1,14 +1,14 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательный | Описание |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| userId | string | query | Нет |  |
-| direction | string | query | Нет |  |
-| repliesToUserId | string | query | Нет |  |
-| page | number | query | Нет |  |
-| includei10n | boolean | query | Нет |  |
-| locale | string | query | Нет |  |
-| isCrawler | boolean | query | Нет |  |
+| userId | string | query | No |  |
+| direction | string | query | No |  |
+| repliesToUserId | string | query | No |  |
+| page | number | query | No |  |
+| includei10n | boolean | query | No |  |
+| locale | string | query | No |  |
+| isCrawler | boolean | query | No |  |
 
 ## Ответ
 
@@ -24,20 +24,24 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Если вы хотите использовать пользовательский HTTP-клиент, передайте клиент, который реализует `GuzzleHttp\ClientInterface`.
-    // Это необязательно, `GuzzleHttp\Client` будет использован как значение по умолчанию.
+    // Если хотите использовать пользовательский HTTP‑клиент, передайте ваш клиент, реализующий `GuzzleHttp\ClientInterface`.
+    // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
-$user_id = 'user_id_example'; // string
-$direction = new \FastComments\Client\Model\\FastComments\Client\Model\SortDirections(); // \FastComments\Client\Model\SortDirections
-$replies_to_user_id = 'replies_to_user_id_example'; // string
-$page = 3.4; // float
-$includei10n = True; // bool
-$locale = 'locale_example'; // string
-$is_crawler = True; // bool
+
+$options = [
+    'user_id' => 'user_id_example', // string
+    'direction' => new \FastComments\Client\Model\\FastComments\Client\Model\SortDirections(), // \FastComments\Client\Model\SortDirections
+    'replies_to_user_id' => 'replies_to_user_id_example', // string
+    'page' => 3.4, // float
+    'includei10n' => True, // bool
+    'locale' => 'locale_example', // string
+    'is_crawler' => True, // bool
+];
+
 
 try {
-    $result = $apiInstance->getCommentsForUser($user_id, $direction, $replies_to_user_id, $page, $includei10n, $locale, $is_crawler);
+    $result = $apiInstance->getCommentsForUser($options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getCommentsForUser: ', $e->getMessage(), PHP_EOL;

@@ -1,14 +1,12 @@
-Gledaoci stranice koji su trenutno online: osobe čija je websocket sesija trenutno pretplaćena na stranicu.
-Vraća anonCount + totalCount (pretplatnici cele sobe, uključujući anonimne gledaoce koje ne nabrajamo).
+Trenutno onlajn posmatrači stranice: ljudi čija je websocket sesija trenutno pretplaćena na stranicu. Vraća anonCount + totalCount (pretplatnici po sobi, uključujući anonimne posmatrače koje ne nabrajamo).
 
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
 | tenantId | string | Da |  |
 | urlId | string | Da |  |
-| afterName | string | Ne |  |
-| afterUserId | string | Ne |  |
+| options | GetOnlineUsersOptions | Ne |  |
 
 ## Odgovor
 
@@ -16,15 +14,13 @@ Vraća: [`Option[PageUsersOnlineResponse]`](https://github.com/FastComments/fast
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer getOnlineUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getOnlineUsers Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getOnlineUsers(tenantId = "my-tenant-123", urlId = "news/politics/top-story", afterName = "", afterUserId = "")
-if response.isSome:
-  let page = response.get()
-  echo "Received online users page:"
-  echo page
-else:
-  echo "No online users returned. HTTP status: ", httpResponse.statusCode
+let opts = GetOnlineUsersOptions()
+let (onlineUsersOpt, httpResp) = client.getOnlineUsers(tenantId = "my-tenant-123", urlId = "news/article-title", options = opts)
+if onlineUsersOpt.isSome:
+  let onlineUsers = onlineUsersOpt.get()
+  echo onlineUsers
 [inline-code-end]
 
 ---

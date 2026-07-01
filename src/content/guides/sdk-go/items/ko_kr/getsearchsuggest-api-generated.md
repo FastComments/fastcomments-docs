@@ -1,17 +1,18 @@
 ## 매개변수
 
-| Name | Type | Location | Required | Description |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| text-search | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | 예 |  |
+| text-search | string | query | 아니오 |  |
+| sso | string | query | 아니오 |  |
 
 ## 응답
 
 반환: [`ModerationSuggestResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_suggest_response.go)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'GetSearchSuggest 예제'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GetSearchSuggest 예시'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,19 +24,18 @@ import (
 )
 
 func main() {
-	textSearch := "textSearch_example" // string |  (선택 사항)
-	sso := "sso_example" // string |  (선택 사항)
+	tenantId := "tenantId_example" // string |
+	textSearch := "textSearch_example" // string |  (선택적)
+	sso := "sso_example" // string |  (선택적)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetSearchSuggest(context.Background()).TextSearch(textSearch).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetSearchSuggest(context.Background()).TenantId(tenantId).TextSearch(textSearch).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetSearchSuggest``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `GetSearchSuggest`의 응답: ModerationSuggestResponse
+	// `GetSearchSuggest`에 대한 응답: ModerationSuggestResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetSearchSuggest`: %v\n", resp)
 }
 [inline-code-end]
-
----

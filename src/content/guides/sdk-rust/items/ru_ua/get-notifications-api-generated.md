@@ -1,34 +1,32 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Обязательно | Описание |
-|------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| user_id | String | Нет |  |
-| url_id | String | Нет |  |
-| from_comment_id | String | Нет |  |
-| viewed | bool | Нет |  |
-| skip | f64 | Нет |  |
+| Назва | Тип | Обов'язковий | Опис |
+|------|------|--------------|------|
+| tenant_id | String | Yes |  |
+| user_id | String | No |  |
+| url_id | String | No |  |
+| from_comment_id | String | No |  |
+| viewed | bool | No |  |
+| skip | f64 | No |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_notifications_response.rs)
+Повертає: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_notifications_response.rs)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример get_notifications'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_notifications Приклад'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_get_notifications() -> Result<(), Error> {
-    let params: GetNotificationsParams = GetNotificationsParams {
+async fn fetch_notifications(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetNotificationsParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        user_id: Some("user-9a7b".to_string()),
-        url_id: Some("news/article/launch-announcement".to_string()),
-        from_comment_id: Some("cmt-1024".to_string()),
-        viewed: Some(false),
+        user_id: Some("user-123".to_string()),
+        url_id: Some("news/article".to_string()),
+        from_comment_id: Some("cmt-456".to_string()),
+        viewed: Some(true),
         skip: Some(0.0),
     };
-    let notifications: GetNotificationsResponse = get_notifications(&configuration, params).await?;
+    let _response = get_notifications(configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

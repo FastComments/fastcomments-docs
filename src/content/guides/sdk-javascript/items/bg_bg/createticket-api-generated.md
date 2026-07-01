@@ -1,26 +1,28 @@
-## Parameters
+## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| userId | string | Да |  |
-| createTicketBody | CreateTicketBody | Да |  |
+| tenantId | string | Yes |  |
+| userId | string | Yes |  |
+| createTicketBody | CreateTicketBody | Yes |  |
 
-## Response
+## Отговор
 
-Връща: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTicketResponse.ts)
+Връща: [`CreateTicketResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTicketResponse1.ts)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'Пример за createTicket'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createTicket Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-enterprises";
-const userId: string = "user_12039";
-const createTicketBody: CreateTicketBody = {
-  subject: "Login failures for multiple users",
-  description: "Users report 500 error when authenticating since 2026-06-18 08:00 UTC. Affects web and mobile.",
-  priority: "urgent",
-  tags: ["authentication", "outage"]
+const tenantId: string = "tenant_12345";
+const userId: string = "user_98765";
+
+const ticketBody: CreateTicketBody = {
+  subject: "Issue with payment processing"
+  // description?: string е незадължително и е пропуснато
 };
-const result: CreateTicketResponse = await createTicket(tenantId, userId, createTicketBody);
+
+const response: CreateTicketResponse1 = await createTicket(tenantId, userId, ticketBody);
+// Пример за използване на незадължително поле от отговора
+// console.log(response.ticket?.id);
 [inline-code-end]

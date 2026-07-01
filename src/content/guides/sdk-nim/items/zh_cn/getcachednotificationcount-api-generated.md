@@ -1,10 +1,9 @@
----
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| id | string | 否 |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
 
 ## 响应
 
@@ -14,12 +13,8 @@
 
 [inline-code-attrs-start title = 'getCachedNotificationCount 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getCachedNotificationCount(tenantId = "my-tenant-123", id = "notification-789")
-if response.isSome:
-  let cached = response.get()
-  echo "Cached notification count: ", $cached
-else:
-  echo "No cached notification count"
+let (cachedCountOpt, httpResp) = client.getCachedNotificationCount(tenantId = "my-tenant-123", id = "article-456")
+if cachedCountOpt.isSome:
+  let cachedCount = cachedCountOpt.get()
+  echo cachedCount
 [inline-code-end]
-
----

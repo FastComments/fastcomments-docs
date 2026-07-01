@@ -1,7 +1,8 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | כן |  |
 | commentId | string | path | כן |  |
 | includeByUserIdAndEmail | boolean | query | לא |  |
 | includeByIP | boolean | query | לא |  |
@@ -14,26 +15,31 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getPreBanSummary'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getPreBanSummary'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new FastComments\Client\Api\ModerationApi(
-    // אם ברצונך להשתמש בלקוח HTTP מותאם אישית, מסור את הלקוח שמממש את `GuzzleHttp\ClientInterface`.
-    // זה אופציונלי; ברירת המחדל תהיה `GuzzleHttp\Client`.
+// $apiInstance = new FastComments\Client\Api\ModerationApi(
+    // אם אתה רוצה להשתמש בלקוח HTTP מותאם, העבר את הלקוח שלך שמממש `GuzzleHttp\ClientInterface`.
+    // זה אופציונלי, `GuzzleHttp\Client` ישמש ברירת מחדל.
     new GuzzleHttp\Client()
 );
+
+$tenant_id = 'tenant_id_example'; // מחרוזת
 $comment_id = 'comment_id_example'; // מחרוזת
-$include_by_user_id_and_email = True; // בוליאני
-$include_by_ip = True; // בוליאני
-$include_by_email_domain = True; // בוליאני
-$sso = 'sso_example'; // מחרוזת
+$options = [
+    'include_by_user_id_and_email' => True, // בוליאני
+    'include_by_ip' => True, // בוליאני
+    'include_by_email_domain' => True, // בוליאני
+    'sso' => 'sso_example', // מחרוזת
+];
+
 
 try {
-    $result = $apiInstance->getPreBanSummary($comment_id, $include_by_user_id_and_email, $include_by_ip, $include_by_email_domain, $sso);
+    $result = $apiInstance->getPreBanSummary($tenant_id, $comment_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->getPreBanSummary: ', $e->getMessage(), PHP_EOL;

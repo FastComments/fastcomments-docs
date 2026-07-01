@@ -1,13 +1,14 @@
-Агрегує документи шляхом групування (якщо вказано groupBy) та застосування кількох операцій. Підтримуються різні операції (наприклад sum, countDistinct, avg тощо).
+Агрегує документи, групуючи їх (якщо вказано groupBy) і застосовуючи кілька операцій.  
+Різні операції (наприклад, sum, countDistinct, avg тощо) підтримуються.
 
 ## Параметри
 
 | Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| aggregationRequest | AggregationRequest | Так |  |
-| parentTenantId | string | Ні |  |
-| includeStats | boolean | Ні |  |
+| tenantId | string | Yes |  |
+| aggregationRequest | AggregationRequest | Yes |  |
+| parentTenantId | string | No |  |
+| includeStats | boolean | No |  |
 
 ## Відповідь
 
@@ -15,20 +16,31 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад aggregate'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад агрегування'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_72b3";
-const parentTenantId: string = "parent_acme_corp";
+const tenantId: string = "tenant-12345";
+
 const aggregationRequest: AggregationRequest = {
-  groupBy: ["postId"],
   predicates: [
-    { field: "status", operator: "EQ", value: { stringValue: "published" } as QueryPredicateValue }
+    {
+      field: "status",
+      operator: "eq",
+      value: { type: "string", value: "approved" }
+    }
   ],
   operations: [
-    { type: AggregationOpType.COUNT, field: "id", alias: "commentCount" } as AggregationOperation
+    { type: "count", field: "commentId" }
   ],
-  sort: [{ field: "commentCount", direction: "DESC" } as AggregationRequestSort],
-  limit: 25
+  sort: { field: "createdAt", direction: "desc" }
 };
-const response: AggregateResponse = await aggregate(tenantId, aggregationRequest, parentTenantId, true);
+
+const parentTenantId: string = "parent-001";
+const includeStats: boolean = true;
+
+const result: AggregateResponse = await aggregate(
+  tenantId,
+  aggregationRequest,
+  parentTenantId,
+  includeStats
+);
 [inline-code-end]

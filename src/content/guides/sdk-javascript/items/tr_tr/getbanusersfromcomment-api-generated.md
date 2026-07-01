@@ -2,24 +2,33 @@
 
 | Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
-| commentId | string | Evet |  |
-| sso | string | Hayır |  |
+| commentId | string | Yes |  |
+| tenantId | string | No |  |
+| sso | string | No |  |
 
 ## Yanıt
 
-Döndürür: [`GetBannedUsersFromCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetBannedUsersFromCommentResponse.ts)
+Döndürür: [`GetBanUsersFromCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetBanUsersFromCommentResponse.ts)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'getBanUsersFromComment Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const commentId: string = "cmt_7f4d2a9b6c";
-  const ssoToken: string = "sso_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.signature";
-  const bannedWithoutSso: GetBannedUsersFromCommentResponse = await getBanUsersFromComment(commentId);
-  const bannedWithSso: GetBannedUsersFromCommentResponse = await getBanUsersFromComment(commentId, ssoToken);
-  console.log(bannedWithoutSso, bannedWithSso);
-})();
+async function demoGetBanUsers() {
+  const commentId: string = "cmt_5f8e3a9b2d";
+  const tenantId: string = "tenant_42";
+  const sso: string = "sso_token_abc123";
+
+  // Tüm parametrelerle çağır
+  const fullResult: GetBanUsersFromCommentResponse = await getBanUsersFromComment(commentId, tenantId, sso);
+  console.log(fullResult);
+
+  // Sadece gerekli parametreyle çağır
+  const minimalResult: GetBanUsersFromCommentResponse = await getBanUsersFromComment(commentId);
+  console.log(minimalResult);
+}
+
+demoGetBanUsers();
 [inline-code-end]
 
 ---

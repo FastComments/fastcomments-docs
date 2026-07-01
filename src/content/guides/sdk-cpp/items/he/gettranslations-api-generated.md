@@ -1,11 +1,10 @@
-## פרמטרים
+## Parameters
 
 | שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
-| r_namespace | string | כן |  |
-| component | string | כן |  |
-| locale | string | לא |  |
-| useFullTranslationIds | bool | לא |  |
+| r_namespace | string | Yes |  |
+| component | string | Yes |  |
+| options | const GetTranslationsOptions& | Yes |  |
 
 ## תגובה
 
@@ -13,21 +12,18 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת getTranslations'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה getTranslations'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> locale(U("en-US"));
-boost::optional<bool> useFullTranslationIds(true);
-api->getTranslations(U("my-tenant-123"), U("comment-widget"), locale, useFullTranslationIds)
-.then([](pplx::task<std::shared_ptr<GetTranslationsResponse>> task){
-    try {
-        auto resp = task.get();
-        if (resp) {
-            auto copied = std::make_shared<GetTranslationsResponse>(*resp);
+utility::string_t ns = U("my-tenant-123");
+utility::string_t comp = U("comments");
+auto optsPtr = std::make_shared<GetTranslationsOptions>();
+optsPtr->language = boost::make_optional(U("en"));
+optsPtr->fallback = boost::none;
+api->getTranslations(ns, comp, *optsPtr)
+    .then([](pplx::task<std::shared_ptr<GetTranslationsResponse>> t) {
+        try {
+            auto resp = t.get();
+        } catch (const std::exception& e) {
         }
-    } catch (const std::exception&) {
-        throw;
-    }
-});
+    });
 [inline-code-end]
-
----

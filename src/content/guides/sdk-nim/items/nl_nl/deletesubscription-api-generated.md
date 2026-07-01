@@ -1,12 +1,12 @@
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
-|------|------|----------|-------------|
+| Naam | Type | Verplicht | Beschrijving |
+|------|------|-----------|--------------|
 | tenantId | string | Ja |  |
 | id | string | Nee |  |
-| userId | string | Nee |  |
+| userId | string = "" | Nee |  |
 
-## Antwoord
+## Reactie
 
 Retourneert: [`Option[DeleteSubscriptionAPIResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_delete_subscription_api_response.nim)
 
@@ -14,12 +14,15 @@ Retourneert: [`Option[DeleteSubscriptionAPIResponse]`](https://github.com/FastCo
 
 [inline-code-attrs-start title = 'deleteSubscription Voorbeeld'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteSubscription(tenantId = "my-tenant-123", id = "sub-98765", userId = "user-456")
-if response.isSome:
-  let deleteResp = response.get()
-  echo "Delete subscription response received"
-else:
-  echo "No subscription response"
+let (maybeResp, httpResp) = client.deleteSubscription(
+  tenantId = "my-tenant-123",
+  id = "sub-789",
+  userId = ""
+)
+
+if maybeResp.isSome:
+  let apiResult = maybeResp.get()
+  # gebruik apiResult indien nodig
 [inline-code-end]
 
 ---

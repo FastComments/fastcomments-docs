@@ -5,7 +5,7 @@
 | tenantId | string | はい |  |
 | commentId | string | はい |  |
 | dir | int | いいえ |  |
-| sso | string | いいえ |  |
+| sso | string = "" | いいえ |  |
 
 ## レスポンス
 
@@ -15,10 +15,14 @@
 
 [inline-code-attrs-start title = 'getCommentVoteUserNames の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getCommentVoteUserNames(tenantId = "my-tenant-123", commentId = "cmt-987654", dir = 0, sso = "")
-if response.isSome:
-  let success: GetCommentVoteUserNamesSuccessResponse = response.get()
-  discard success
-[inline-code-end]
+let (voteNamesOpt, httpRes) = client.getCommentVoteUserNames(
+  tenantId = "my-tenant-123",
+  commentId = "cmt-987654321",
+  dir = 0,
+  sso = ""
+)
 
----
+if voteNamesOpt.isSome:
+  let voteNames = voteNamesOpt.get()
+  echo voteNames
+[inline-code-end]

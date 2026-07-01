@@ -2,12 +2,8 @@
 
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| textSearch | string | Nej |  |
-| byIPFromComment | string | Nej |  |
-| filters | string | Nej |  |
-| searchFilters | string | Nej |  |
-| sorts | string | Nej |  |
-| sso | string | Nej |  |
+| tenantId | string | Ja |  |
+| options | const PostApiExportOptions& | Ja |  |
 
 ## Svar
 
@@ -15,26 +11,20 @@ Returnerer: [`ModerationExportResponse`](https://github.com/FastComments/fastcom
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på postApiExport'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postApiExport Eksempel'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> textSearch(utility::string_t("spam content"));
-boost::optional<utility::string_t> byIPFromComment(utility::string_t("203.0.113.45"));
-boost::optional<utility::string_t> filters(utility::string_t("site:my-tenant-123 status:pending"));
-boost::optional<utility::string_t> searchFilters(utility::string_t("created>2026-01-01"));
-boost::optional<utility::string_t> sorts(utility::string_t("created:desc"));
-boost::optional<utility::string_t> sso(utility::string_t("user@example.com"));
+auto tenantId = utility::string_t(U("my-tenant-123"));
+PostApiExportOptions options;
+options.format = utility::string_t(U("json"));
+options.email = utility::string_t(U("reports@example.com"));
+options.startDate = boost::optional<utility::datetime>(utility::datetime::from_string(U("2023-01-01T00:00:00Z")));
+options.endDate = boost::optional<utility::datetime>(utility::datetime::from_string(U("2023-01-31T23:59:59Z")));
 
-auto task = api->postApiExport(textSearch, byIPFromComment, filters, searchFilters, sorts, sso)
-.then([](pplx::task<std::shared_ptr<ModerationExportResponse>> t){
-    try {
-        auto resp = t.get();
-        return resp ? std::make_shared<ModerationExportResponse>(*resp) : std::make_shared<ModerationExportResponse>();
-    } catch(...) {
-        return std::shared_ptr<ModerationExportResponse>();
-    }
-});
-
-task.wait();
+api->postApiExport(tenantId, options)
+    .then([](std::shared_ptr<ModerationExportResponse> response) {
+        if (response) {
+            // håndter vellykket eksportrespons
+        }
+    })
+    .wait();
 [inline-code-end]
-
----

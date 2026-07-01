@@ -1,25 +1,26 @@
----
 ## Paramètres
 
 | Nom | Type | Obligatoire | Description |
-|------|------|----------|-------------|
+|------|------|-------------|-------------|
+| tenant_id | String | Oui |  |
 | text_search | String | Non |  |
 | sso | String | Non |  |
 
 ## Réponse
 
-Renvoie : [`ModerationSuggestResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/moderation_suggest_response.rs)
+Retourne : [`ModerationSuggestResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/moderation_suggest_response.rs)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de get_search_suggest'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple get_search_suggest'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_suggest() -> Result<(), Error> {
-    let params: GetSearchSuggestParams = GetSearchSuggestParams {
-        text_search: Some("news/article: presidential debate highlights".to_string()),
-        sso: Some("acme-corp-tenant".to_string()),
+async fn run_example(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetSearchSuggestParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        text_search: Some("news/article".to_string()),
+        sso: Some("sso-token-123".to_string()),
     };
-    let suggestion: ModerationSuggestResponse = get_search_suggest(&configuration, params).await?;
+    let _response: ModerationSuggestResponse = get_search_suggest(configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

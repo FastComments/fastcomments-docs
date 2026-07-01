@@ -1,13 +1,12 @@
 ## Parameters
 
-| Naam | Type | Verplicht | Beschrijving |
+| Naam | Type | Vereist | Beschrijving |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | postId | string | Nee |  |
-| broadcastId | string | Nee |  |
-| sso | string | Nee |  |
+| options | DeleteFeedPostPublicOptions | Nee |  |
 
-## Response
+## Respons
 
 Retourneert: [`Option[DeleteFeedPostPublicResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_delete_feed_post_public_response.nim)
 
@@ -15,12 +14,14 @@ Retourneert: [`Option[DeleteFeedPostPublicResponse]`](https://github.com/FastCom
 
 [inline-code-attrs-start title = 'deleteFeedPostPublic Voorbeeld'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteFeedPostPublic(tenantId = "my-tenant-123", postId = "", broadcastId = "", sso = "")
+let (response, httpResponse) = client.deleteFeedPostPublic(
+  tenantId = "my-tenant-123",
+  postId = "news/article-42",
+  options = DeleteFeedPostPublicOptions()
+)
+
 if response.isSome:
-  let deleted = response.get()
-  echo "Delete successful"
-else:
-  echo "Delete failed"
+  let deleteResp = response.get()
 [inline-code-end]
 
 ---

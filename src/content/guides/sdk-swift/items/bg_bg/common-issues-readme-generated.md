@@ -1,30 +1,29 @@
 ### 401 Неоторизирани грешки
 
-If you're getting 401 errors when using the authenticated API:
+Ако получавате 401 грешки при използване на автентикираното API:
 
-1. **Check your API key**: Уверете се, че използвате правилния API ключ от таблото за управление на FastComments
-2. **Verify the tenant ID**: Уверете се, че tenant ID съвпада с вашия акаунт
-3. **API key format**: API ключът трябва да бъде зададен в API клиента:
+1. **Проверете вашия API key**: Уверете се, че използвате правилния API key от вашето FastComments табло за управление
+2. **Проверете tenant ID**: Уверете се, че tenant ID съвпада с вашия акаунт
+3. **API key format**: API key‑т трябва да бъде зададен като `x-api-key` header в споделената конфигурация:
 
 ```swift
-let defaultApi = DefaultAPI()
-defaultApi.apiKey = "YOUR_API_KEY"
+FastCommentsSwiftAPIConfiguration.shared.customHeaders["x-api-key"] = "YOUR_API_KEY"
 ```
 
-4. **Using the wrong API**: Уверете се, че използвате `DefaultAPI` (не `PublicAPI`) за автентифицирани повиквания
+4. **Използване на грешен API**: Уверете се, че използвате `DefaultAPI` (не `PublicAPI`) за автентикирани извиквания
 
-### Проблеми със SSO токените
+### Проблеми с SSO токени
 
-If SSO tokens aren't working:
+Ако SSO токените не работят:
 
-1. **Use secure mode for production**: Винаги използвайте `FastCommentsSSO.createSecure()` с вашия API ключ за производствена среда
-2. **Server-side only**: Генерирайте сигурни SSO токени на вашия сървър, никога не излагайте API ключа си на клиентите
-3. **Check user data**: Уверете се, че всички задължителни полета (id, email, username) са предоставени
-4. **Token expiration**: Сигурните SSO токени включват времеви печат и могат да изтекат. Генерирайте нови токени при необходимост.
+1. **Използвайте сигурен режим за продукция**: Винаги използвайте `FastCommentsSSO.createSecure()` с вашия API key за продукция
+2. **Само от сървъра**: Генерирайте сигурни SSO токени на вашия сървър, никога не излагайте вашия API key пред клиентите
+3. **Проверете потребителските данни**: Уверете се, че всички задължителни полета (id, email, username) са предоставени
+4. **Срок на токена**: Сигурните SSO токени включват времеви печат и могат да изтекат. Генерирайте нови токени при нужда.
 
 ### SSL/TLS грешки
 
-If you encounter SSL/TLS errors:
+Ако срещнете SSL/TLS грешки:
 
 1. Уверете се, че Info.plist на вашето приложение позволява HTTPS връзки към fastcomments.com
-2. Проверете, че не използвате изключения на App Transport Security, които биха могли да блокират връзката
+2. Проверете, че не използвате изключения в App Transport Security, които могат да блокират връзката

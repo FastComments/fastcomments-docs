@@ -1,34 +1,30 @@
----
-Масовне информације о корисницима за тенанта. За дате userIds, враћа приказне информације из User / SSOUser.
-Користи га видгет за коментаре да обогати кориснике који су се управо појавили путем догађаја присутности.
-Нема контекста странице: приватност се доследно примењује (приватни профили су сакривени).
+Bulk informacije o korisnicima za tenant. На основу userIds, враћа информације за приказ из User / SSOUser. Користи се од стране видгета за коментаре да обогати кориснике који су управо појавили преко догађаја присуства. Без контекста странице: приватност се примењује униформно (приватни профили су замаскирани).
 
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| ids | string | Да |  |
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| ids | string | Yes |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PageUsersInfoResponse.h)
+Vraća: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PageUsersInfoResponse.h)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'getUsersInfo Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getUsersInfo'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 utility::string_t ids = U("alice@example.com,bob@example.com");
-boost::optional<utility::string_t> statusFilter = U("active");
+boost::optional<utility::string_t> locale = boost::make_optional(U("en-US"));
+
 api->getUsersInfo(tenantId, ids).then([](pplx::task<std::shared_ptr<PageUsersInfoResponse>> t){
-    try {
-        auto res = t.get();
-        if (res) {
-            auto responseCopy = std::make_shared<PageUsersInfoResponse>(*res);
-        }
-    } catch (const std::exception&) {}
+    try{
+        auto response = t.get();
+        // obradi odgovor
+    }catch(const std::exception&){
+        // obradi grešku
+    }
 });
 [inline-code-end]
-
----

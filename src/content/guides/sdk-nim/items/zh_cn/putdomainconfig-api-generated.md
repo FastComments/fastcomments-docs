@@ -1,34 +1,28 @@
-## Parameters
+## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| domainToUpdate | string | 否 |  |
-| updateDomainConfigParams | UpdateDomainConfigParams | 否 |  |
+| tenantId | string | Yes |  |
+| domainToUpdate | string | No |  |
+| updateDomainConfigParams | UpdateDomainConfigParams | No |  |
 
-## Response
+## 响应
 
 返回: [`Option[PutDomainConfigResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_put_domain_config_response.nim)
 
-## Example
+## 示例
 
 [inline-code-attrs-start title = 'putDomainConfig 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.putDomainConfig(
+let (optResp, httpResp) = client.putDomainConfig(
   tenantId = "my-tenant-123",
-  domainToUpdate = "blog.example.com",
-  updateDomainConfigParams = UpdateDomainConfigParams(
-    allowAnonymous = false,
-    moderationEnabled = true,
-    maxCommentLength = 800,
-    allowedOrigins = @["https://blog.example.com", "https://cdn.blog.example.com"],
-    enableThreadedComments = true
-  )
+  domainToUpdate = "example.com",
+  updateDomainConfigParams = UpdateDomainConfigParams()
 )
 
-if response.isSome:
-  let cfg = response.get()
-  echo cfg
-else:
-  echo "Failed to update domain config, HTTP status: ", httpResponse.status
+if optResp.isSome:
+  let resp = optResp.get()
+  echo resp
 [inline-code-end]
+
+---

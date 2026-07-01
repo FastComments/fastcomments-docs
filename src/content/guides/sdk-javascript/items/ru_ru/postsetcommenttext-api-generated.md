@@ -1,28 +1,46 @@
+---
 ## Параметры
 
-| Name | Type | Обязательно | Description |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
-| commentId | string | Да |  |
-| setCommentTextParams | SetCommentTextParams | Да |  |
-| sso | string | Нет |  |
+| commentId | string | Yes |  |
+| setCommentTextParams | SetCommentTextParams | Yes |  |
+| broadcastId | string | No |  |
+| tenantId | string | No |  |
+| sso | string | No |  |
 
 ## Ответ
 
-Возвращает: [`SetCommentTextResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SetCommentTextResponse.ts)
+Возвращает: [`PostSetCommentTextResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostSetCommentTextResponse.ts)
 
 ## Пример
 
 [inline-code-attrs-start title = 'postSetCommentText Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const commentId: string = "cmt_a1b2c3d4";
-const setCommentTextParams: SetCommentTextParams = {
-  text: "Updated timeline and added a reference to the original report for clarity.",
-  editedByUserId: "user_9876",
-  editReason: "clarified timeline and added source",
-  editedAt: "2026-06-19T12:00:00Z"
-};
-const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.exampleSignature";
-const result: SetCommentTextResponse = await postSetCommentText(commentId, setCommentTextParams, sso);
+(async () => {
+  const commentId: string = "cmt_9f8b7a6d5e4c3b2a1";
+  const setParams: SetCommentTextParams = {
+    text: "Edited comment to correct a typo and add clarification."
+  };
+  const broadcastId: string = "brd_1a2b3c4d5e6f7g8h9";
+  const tenantId: string = "tenant_xyz123";
+  const sso: string = "sso_user_456def";
+
+  const fullResult: PostSetCommentTextResponse = await postSetCommentText(
+    commentId,
+    setParams,
+    broadcastId,
+    tenantId,
+    sso
+  );
+
+  const minimalResult: PostSetCommentTextResponse = await postSetCommentText(
+    commentId,
+    setParams
+  );
+
+  console.log(fullResult, minimalResult);
+})();
 [inline-code-end]
 
 ---

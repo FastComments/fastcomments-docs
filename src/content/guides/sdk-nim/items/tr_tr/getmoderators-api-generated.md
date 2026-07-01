@@ -1,9 +1,9 @@
 ## Parametreler
 
-| Ad | Tür | Gerekli | Açıklama |
+| Ad | Tür | Zorunlu | Açıklama |
 |------|------|----------|-------------|
-| tenantId | string | Evet |  |
-| skip | float64 | Hayır |  |
+| tenantId | string | Yes |  |
+| skip | float64 | No |  |
 
 ## Yanıt
 
@@ -13,12 +13,8 @@ Döndürür: [`Option[GetModeratorsResponse]`](https://github.com/FastComments/f
 
 [inline-code-attrs-start title = 'getModerators Örneği'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getModerators(tenantId = "my-tenant-123", skip = 0.0)
-if response.isSome:
-  let moderators = response.get()
-  echo "Received moderators response:", moderators
-else:
-  echo "No moderators returned"
+let (moderatorsOpt, httpResp) = client.getModerators(tenantId = "my-tenant-123", skip = 0.0)
+if moderatorsOpt.isSome:
+  let moderators = moderatorsOpt.get()
+  echo moderators
 [inline-code-end]
-
----

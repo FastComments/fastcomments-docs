@@ -1,14 +1,14 @@
 ## Parâmetros
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| userId | string | query | Não |  |
-| direction | string | query | Não |  |
-| repliesToUserId | string | query | Não |  |
-| page | number | query | Não |  |
-| includei10n | boolean | query | Não |  |
-| locale | string | query | Não |  |
-| isCrawler | boolean | query | Não |  |
+| Nome | Tipo | Localização | Obrigatório | Descrição |
+|------|------|--------------|--------------|-----------|
+| userId | string | query | No |  |
+| direction | string | query | No |  |
+| repliesToUserId | string | query | No |  |
+| page | number | query | No |  |
+| includei10n | boolean | query | No |  |
+| locale | string | query | No |  |
+| isCrawler | boolean | query | No |  |
 
 ## Resposta
 
@@ -16,9 +16,9 @@ Retorna: [`GetCommentsForUserResponse`](https://github.com/FastComments/fastcomm
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getCommentsForUser'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getCommentsForUser Exemplo'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Os seguintes exemplos de código ainda estão em beta. Para qualquer problema, reporte via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Os exemplos de código a seguir ainda estão em beta. Para qualquer problema, por favor reporte via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let userId = "userId_example" // String |  (opcional)
@@ -29,7 +29,7 @@ let includei10n = true // Bool |  (opcional)
 let locale = "locale_example" // String |  (opcional)
 let isCrawler = true // Bool |  (opcional)
 
-PublicAPI.getCommentsForUser(userId: userId, direction: direction, repliesToUserId: repliesToUserId, page: page, includei10n: includei10n, locale: locale, isCrawler: isCrawler) { (response, error) in
+PublicAPI.getCommentsForUser(options: PublicAPI.GetCommentsForUserOptions(userId: userId, direction: direction, repliesToUserId: repliesToUserId, page: page, includei10n: includei10n, locale: locale, isCrawler: isCrawler)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -40,5 +40,3 @@ PublicAPI.getCommentsForUser(userId: userId, direction: direction, repliesToUser
     }
 }
 [inline-code-end]
-
----

@@ -1,28 +1,39 @@
-Osoby obecnie online na stronie: osoby, których sesja websocket jest aktualnie subskrybowana na tę stronę.
-Zwraca anonCount + totalCount (subskrybenci w całym pokoju, w tym anonimowi widzowie, których nie wymieniamy).
+---
+Aktualnie online oglądający stronę: osoby, których sesja websocket jest subskrybowana do tej strony w tym momencie.
+Zwraca anonCount + totalCount (subskrybenci na poziomie pokoju, w tym anonimowi oglądający, których nie wymieniamy).
 
-## Parametry
+## Parameters
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Tak |  |
-| urlId | string | Tak |  |
-| afterName | string | Nie |  |
-| afterUserId | string | Nie |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| afterName | string | No |  |
+| afterUserId | string | No |  |
 
-## Odpowiedź
+## Response
 
-Zwraca: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOnlineResponse.ts)
+Zwraca: [`GetOnlineUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOnlineUsersResponse.ts)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład użycia getOnlineUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład getOnlineUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8f3c2b7';
-const urlId: string = 'article-2026-06-19-site-update';
-const afterName: string = 'michael.hansen';
-const afterUserId: string = 'user_00421';
-const onlineUsers: PageUsersOnlineResponse = await getOnlineUsers(tenantId, urlId, afterName, afterUserId);
+async function demoOnlineUsers() {
+  const tenantId: string = "tenant_12345";
+  const urlId: string = "url_98765";
+
+  // Z opcjonalnymi parametrami paginacji
+  const pagedResult: GetOnlineUsersResponse = await getOnlineUsers(
+    tenantId,
+    urlId,
+    "alice_smith",
+    "user_9"
+  );
+
+  // Bez opcjonalnych parametrów paginacji
+  const fullResult: GetOnlineUsersResponse = await getOnlineUsers(tenantId, urlId);
+}
 [inline-code-end]
 
 ---

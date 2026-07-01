@@ -1,9 +1,9 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
-|------|------|----------|-------------|
-| tenantId | string | Ναι |  |
-| skip | float64 | Όχι |  |
+|------|------|------------|-----------|
+| tenantId | string | Yes |  |
+| skip | float64 | No |  |
 
 ## Απόκριση
 
@@ -11,14 +11,12 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα χρήσης getEmailTemplates'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παράδειγμα getEmailTemplates'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getEmailTemplates(tenantId = "my-tenant-123", skip = 0.0)
-if response.isSome:
-  let templates = response.get()
+let (emailTemplatesOpt, httpResp) = client.getEmailTemplates(tenantId = "my-tenant-123", skip = 0.0)
+if emailTemplatesOpt.isSome:
+  let templates = emailTemplatesOpt.get()
   echo templates
-else:
-  echo "No email templates available"
 [inline-code-end]
 
 ---

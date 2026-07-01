@@ -2,7 +2,7 @@
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Nej |  |
+| tenantId | string | query | Ja |  |
 
 ## Svar
 
@@ -14,25 +14,25 @@ Returnerer: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastc
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# opsæt godkendelse
+# opsæt autorisation
 FastCommentsClient.configure do |config|
   # Konfigurer API-nøgleautorisation: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Fjern kommentaren fra følgende linje for at sætte et præfiks for API-nøglen, f.eks. 'Bearer' (standard er nil)
+  # Fjern kommentar fra følgende linje for at indstille et præfiks for API-nøglen, f.eks. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
-opts = {
-  tenant_id: 'tenant_id_example', # String | 
-  bulk_create_hash_tags_body: FastCommentsClient::BulkCreateHashTagsBody.new({tags: [FastCommentsClient::BulkCreateHashTagsBodyTagsInner.new({tag: 'tag_example'})]}) # BulkCreateHashTagsBody | 
-}
+tenant_id = 'tenant_id_example' # String | 
+bulk_create_hash_tags_body = FastCommentsClient::BulkCreateHashTagsBody.new({tags: [FastCommentsClient::BulkCreateHashTagsBodyTagsInner.new({tag: 'tag_example'})]}) # BulkCreateHashTagsBody | 
 
 begin
   
-  result = api_instance.add_hash_tags_bulk(opts)
+  result = api_instance.add_hash_tags_bulk(tenant_id, bulk_create_hash_tags_body)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->add_hash_tags_bulk: #{e}"
 end
 [inline-code-end]
+
+---

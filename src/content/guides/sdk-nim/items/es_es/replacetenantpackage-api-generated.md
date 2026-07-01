@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Name | Type | Requerido | Descripción |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Sí |  |
 | id | string | No |  |
@@ -12,23 +12,14 @@ Devuelve: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomme
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de replaceTenantPackage'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo replaceTenantPackage'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.replaceTenantPackage(
+let (optResp, httpResp) = client.replaceTenantPackage(
   tenantId = "my-tenant-123",
-  id = "pkg-987",
-  replaceTenantPackageBody = ReplaceTenantPackageBody(
-    name = "Premium Plan",
-    priceCents = 999,
-    seats = 50,
-    enabled = true,
-    features = @["moderation", "analytics", "priority-support"]
-  )
+  id = "pkg-456",
+  replaceTenantPackageBody = ReplaceTenantPackageBody()
 )
-
-if response.isSome:
-  let apiEmpty = response.get()
-  discard apiEmpty
+if optResp.isSome:
+  let resp = optResp.get()
+  discard resp
 [inline-code-end]
-
----

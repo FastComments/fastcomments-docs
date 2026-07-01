@@ -1,26 +1,26 @@
-Masowe informacje o użytkownikach dla najemcy. Na podstawie userIds zwraca informacje wyświetlane z User / SSOUser.
-Używane przez widget komentarzy do wzbogacania użytkowników, którzy właśnie pojawili się w wyniku zdarzenia obecności.
-Brak kontekstu strony: prywatność jest egzekwowana jednolicie (profile prywatne są maskowane).
+Bulk user info for a tenant. Given userIds, return display info from User / SSOUser. Used by the comment widget to enrich users that just appeared via a presence event. No page context: privacy is enforced uniformly (private profiles are masked).
 
-## Parametry
+## Parameters
 
-| Nazwa | Typ | Wymagane | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Tak |  |
-| ids | string | Tak |  |
+| tenantId | string | Yes |  |
+| ids | string | Yes |  |
 
-## Odpowiedź
+## Response
 
-Zwraca: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersInfoResponse.ts)
+Zwraca: [`GetUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUsersInfoResponse.ts)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład getUsersInfo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUsersInfo Przykład'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_78f9';
-const ids: string = 'user_10234,user_10235,user_10236';
-const usersInfo: PageUsersInfoResponse = await getUsersInfo(tenantId, ids);
-// getUsersInfo wymaga tylko tenantId i ids; parametry opcjonalne nie mają tu zastosowania.
-[inline-code-end]
+const tenantId: string = "acme-corp-tenant";
+const ids: string = "user-1001,user-1002";
 
----
+const usersInfo: GetUsersInfoResponse = await getUsersInfo(tenantId, ids);
+
+// Optional fields in the response may be undefined
+// Opcjonalne pola w odpowiedzi mogą być niezdefiniowane
+const firstUser: PageUserEntry | undefined = usersInfo?.users?.[0];
+[inline-code-end]

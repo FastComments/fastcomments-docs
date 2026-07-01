@@ -1,8 +1,8 @@
----
 ## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 描述 |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | 是 |  |
 | sso | string | query | 否 |  |
 
 ## 响应
@@ -11,7 +11,7 @@
 
 ## 示例
 
-[inline-code-attrs-start title = 'GetUserBanPreference 示例'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '获取用户禁令偏好 示例'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,18 +23,17 @@ import (
 )
 
 func main() {
-	sso := "sso_example" // string |  (可选)
+	tenantId := "tenantId_example" // string | 
+	sso := "sso_example" // string |  （可选）
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetUserBanPreference(context.Background()).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetUserBanPreference(context.Background()).TenantId(tenantId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetUserBanPreference``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// 来自 `GetUserBanPreference` 的响应: APIModerateGetUserBanPreferencesResponse
+	// 响应来自 `GetUserBanPreference`：APIModerateGetUserBanPreferencesResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetUserBanPreference`: %v\n", resp)
 }
 [inline-code-end]
-
----

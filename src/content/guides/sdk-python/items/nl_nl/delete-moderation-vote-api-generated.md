@@ -2,11 +2,13 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Ja |  |
-| voteId | string | path | Ja |  |
-| sso | string | query | Nee |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| voteId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
-## Antwoord
+## Response
 
 Retourneert: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_delete_response.py)
 
@@ -15,11 +17,12 @@ Retourneert: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments
 [inline-code-attrs-start title = 'delete_moderation_vote Voorbeeld'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import DeleteModerationVoteOptions
 from client.models.vote_delete_response import VoteDeleteResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Het instellen van de host is optioneel en staat standaard op https://fastcomments.com
+# Het definiëren van de host is optioneel en standaard https://fastcomments.com
 # Zie configuration.py voor een lijst van alle ondersteunde configuratieparameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -30,12 +33,14 @@ configuration = client.Configuration(
 with client.ApiClient(configuration) as api_client:
     # Maak een instantie van de API-klasse
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     vote_id = 'vote_id_example' # str | 
+    broadcast_id = 'broadcast_id_example' # str |  (optional)
     sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.delete_moderation_vote(comment_id, vote_id, sso=sso)
+        api_response = api_instance.delete_moderation_vote(tenant_id, comment_id, vote_id, DeleteModerationVoteOptions(broadcast_id=broadcast_id, sso=sso))
         print("The response of ModerationApi->delete_moderation_vote:\n")
         pprint(api_response)
     except Exception as e:

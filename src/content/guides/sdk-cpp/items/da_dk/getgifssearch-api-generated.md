@@ -1,13 +1,10 @@
----
 ## Parametre
 
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| search | string | Ja |  |
-| locale | string | Nej |  |
-| rating | string | Nej |  |
-| page | double | Nej |  |
+| tenantId | string | Yes |  |
+| search | string | Yes |  |
+| options | const GetGifsSearchOptions& | Yes |  |
 
 ## Svar
 
@@ -15,22 +12,17 @@ Returnerer: [`GetGifsSearchResponse`](https://github.com/FastComments/fastcommen
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på getGifsSearch'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getGifsSearch Eksempel'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t search = U("funny cats");
-boost::optional<utility::string_t> locale(U("en-US"));
-boost::optional<utility::string_t> rating(U("pg"));
-boost::optional<double> page(1.0);
-
-api->getGifsSearch(tenantId, search, locale, rating, page)
-.then([](pplx::task<std::shared_ptr<GetGifsSearchResponse>> t) {
-    try {
-        auto resp = t.get();
-        auto finalResp = resp ? resp : std::make_shared<GetGifsSearchResponse>();
-    } catch (const std::exception&) {
+auto tenantId = U("my-tenant-123");
+auto search = U("funny cats");
+GetGifsSearchOptions options;
+options.limit = boost::optional<int>(10);
+options.rating = boost::optional<utility::string_t>(U("pg"));
+api->getGifsSearch(tenantId, search, options).then([](pplx::task<std::shared_ptr<GetGifsSearchResponse>> task){
+    try{
+        auto response = task.get();
+    }catch(const std::exception&){
     }
 });
 [inline-code-end]
-
----

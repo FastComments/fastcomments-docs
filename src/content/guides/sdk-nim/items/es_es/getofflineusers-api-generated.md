@@ -1,37 +1,29 @@
----
-Comentaristas anteriores en la página que NO están actualmente en línea. Ordenados por displayName.
-Úselo después de agotar /users/online para mostrar una sección "Miembros".
-Paginación por cursor basada en commenterName: el servidor recorre la entrada parcial {tenantId, urlId, commenterName}
-index desde afterName hacia adelante vía $gt, sin coste de $skip.
+Past commenters on the page who are NOT currently online. Sorted by displayName.  
+Use this after exhausting /users/online to render a "Members" section.  
+Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.
 
 ## Parámetros
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Sí |  |
-| urlId | string | Sí |  |
-| afterName | string | No |  |
-| afterUserId | string | No |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| options | GetOfflineUsersOptions | No |  |
 
 ## Respuesta
 
-Devuelve: [`Option[PageUsersOfflineResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_offline_response.nim)
+Returns: [`Option[PageUsersOfflineResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_offline_response.nim)
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de getOfflineUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo getOfflineUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getOfflineUsers(
+let (offlineResp, httpResponse) = client.getOfflineUsers(
   tenantId = "my-tenant-123",
-  urlId = "news/article-how-to-code",
-  afterName = "",
-  afterUserId = ""
+  urlId = "news/article-title",
+  options = GetOfflineUsersOptions()
 )
-
-if response.isSome:
-  let offlinePage = response.get()
-  echo "Received offline users page"
-  discard httpResponse.statusCode
+if offlineResp.isSome:
+  let offline = offlineResp.get()
+  echo offline)
 [inline-code-end]
-
----

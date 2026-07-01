@@ -6,23 +6,34 @@
 | id | string | Ja |  |
 | updateQuestionResultBody | UpdateQuestionResultBody | Ja |  |
 
-## Respons
+## Svar
 
-Returnerer: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Returnerer: [`UpdateQuestionResultResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateQuestionResultResponse.ts)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'updateQuestionResult Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_acme-corp_01";
-const id: string = "question_9f2d1b";
-const metaItem: MetaItem = { key: "platform", value: "web" };
-const status: APIStatus = { code: 0, message: "scored" };
-const updateQuestionResultBody: UpdateQuestionResultBody = {
-  score: 92,
-  passed: true,
-  status,
-  meta: [metaItem] // valgfrit felt demonstreret
-};
-const result: APIEmptyResponse = await updateQuestionResult(tenantId, id, updateQuestionResultBody);
+async function runUpdate() {
+    const tenantId: string = "acme-corp-01";
+    const id: string = "qr-20230915-001";
+
+    const updateQuestionResultBody: UpdateQuestionResultBody = {
+        // obligatoriske felter
+        answer: "No",
+        // valgfri felter
+        comment: "User clarified their response",
+        // anotherOptionalField?: value,
+    };
+
+    const result: UpdateQuestionResultResponse = await updateQuestionResult(
+        tenantId,
+        id,
+        updateQuestionResultBody
+    );
+
+    console.log(result);
+}
+
+runUpdate();
 [inline-code-end]

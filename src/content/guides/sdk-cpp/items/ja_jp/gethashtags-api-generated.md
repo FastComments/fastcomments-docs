@@ -1,9 +1,9 @@
 ## パラメータ
 
-| 名前 | 型 | 必須 | 説明 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | はい |  |
-| page | double | いいえ |  |
+| tenantId | string | Yes |  |
+| page | double | No |  |
 
 ## レスポンス
 
@@ -13,16 +13,16 @@
 
 [inline-code-attrs-start title = 'getHashTags の例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-boost::optional<double> page = 1.0;
-api->getHashTags(tenantId, page).then([](pplx::task<std::shared_ptr<GetHashTagsResponse>> t) {
+auto tenantId = utility::string_t(U("my-tenant-123"));
+boost::optional<double> page = 2.0;
+
+api->getHashTags(tenantId, page).then([](pplx::task<std::shared_ptr<GetHashTagsResponse>> task) {
     try {
-        auto resp = t.get();
-        if (!resp) resp = std::make_shared<GetHashTagsResponse>();
+        auto resultPtr = task.get();
+        auto response = std::make_shared<GetHashTagsResponse>(*resultPtr);
+        // レスポンスを使用
     } catch (const std::exception&) {
-        auto resp = std::make_shared<GetHashTagsResponse>();
+        // エラーを処理
     }
 });
 [inline-code-end]
-
----

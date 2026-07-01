@@ -1,28 +1,28 @@
 ## Parameter
 
-| Name | Typ | Erforderlich | Beschreibung |
-|------|------|-------------|-------------|
-| commentId | string | Ja |  |
-| sso | string | Nein |  |
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| options | const PostUnFlagCommentOptions& | Yes |  |
 
 ## Antwort
 
-Gibt zurück: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
+Rückgabe: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'postUnFlagComment Beispiel'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t commentId = U("cmt-8f3a21b7");
-boost::optional<utility::string_t> sso = utility::string_t(U("user@example.com"));
-api->postUnFlagComment(commentId, sso)
-.then([](pplx::task<std::shared_ptr<APIEmptyResponse>> t) {
-    try {
-        auto resp = t.get();
-        if (!resp) resp = std::make_shared<APIEmptyResponse>();
-    } catch (const std::exception &e) {
-    }
-}).wait();
+utility::string_t tenantId = U("my-tenant-123");
+utility::string_t commentId = U("cmt-456789");
+PostUnFlagCommentOptions opts;
+opts.notifyUser = boost::optional<bool>(true);
+api->postUnFlagComment(tenantId, commentId, opts)
+    .then([](std::shared_ptr<APIEmptyResponse> resp) {
+        // Verarbeitung kann hier durchgeführt werden
+    })
+    .then([](pplx::task<void> t) {
+        try { t.get(); } catch (const std::exception&) {}
+    });
 [inline-code-end]
-
----

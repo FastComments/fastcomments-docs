@@ -1,56 +1,57 @@
-Agrège des documents en les regroupant (si groupBy est fourni) et en appliquant plusieurs opérations.
-Différentes opérations (p. ex. sum, countDistinct, avg, etc.) sont prises en charge.
+Agrège les documents en les groupant (si `groupBy` est fourni) et en appliquant plusieurs opérations.  
+Différentes opérations (p. ex. sum, countDistinct, avg, etc.) sont prises en charge.
 
-## Paramètres
+## Parameters
 
-| Nom | Type | Emplacement | Requis | Description |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Oui |  |
-| parentTenantId | string | query | Non |  |
-| includeStats | boolean | query | Non |  |
+| tenantId | string | query | Yes |  |
+| parentTenantId | string | query | No |  |
+| includeStats | boolean | query | No |  |
 
-## Réponse
+## Response
 
-Renvoie : [`AggregateResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/aggregate_response.py)
+Returns: [`AggregateResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/aggregate_response.py)
 
-## Exemple
+## Example
 
 [inline-code-attrs-start title = 'Exemple d\'agrégation'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import AggregateOptions
 from client.models.aggregate_response import AggregateResponse
 from client.models.aggregation_request import AggregationRequest
 from client.rest import ApiException
 from pprint import pprint
 
-# La définition de l'hôte est optionnelle et par défaut https://fastcomments.com
-# Voir configuration.py pour la liste de tous les paramètres de configuration pris en charge.
+# Defining the host is optional and defaults to https://fastcomments.com
+# See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Le client doit configurer les paramètres d'authentification et d'autorisation
-# conformément à la politique de sécurité du serveur API.
-# Des exemples pour chaque méthode d'authentification sont fournis ci-dessous, utilisez l'exemple qui
-# correspond à votre cas d'utilisation d'authentification.
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
 # Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Décommentez ci-dessous pour configurer le préfixe (p. ex. Bearer) pour la clé API, si nécessaire
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Entrer dans un contexte avec une instance du client API
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Créer une instance de la classe API
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     aggregation_request = client.AggregationRequest() # AggregationRequest | 
-    parent_tenant_id = 'parent_tenant_id_example' # str |  (optionnel)
-    include_stats = True # bool |  (optionnel)
+    parent_tenant_id = 'parent_tenant_id_example' # str |  (optional)
+    include_stats = True # bool |  (optional)
 
     try:
-        api_response = api_instance.aggregate(tenant_id, aggregation_request, parent_tenant_id=parent_tenant_id, include_stats=include_stats)
+        api_response = api_instance.aggregate(tenant_id, aggregation_request, AggregateOptions(parent_tenant_id=parent_tenant_id, include_stats=include_stats))
         print("The response of DefaultApi->aggregate:\n")
         pprint(api_response)
     except Exception as e:

@@ -4,9 +4,9 @@ go get github.com/fastcomments/fastcomments-go
 
 ### Verwendung des API-Clients
 
-#### Public API (Keine Authentifizierung)
+#### Öffentliche API (Keine Authentifizierung)
 
-Die PublicAPI ermöglicht unauthentifizierten Zugriff auf öffentliche Endpunkte:
+Die PublicAPI ermöglicht unverifizierten Zugriff auf öffentliche Endpunkte:
 
 ```go
 package main
@@ -21,7 +21,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // Kommentare mit der PublicAPI abrufen
+    // Kommentare mit PublicAPI abrufen
     response, httpResp, err := apiClient.PublicAPI.GetCommentsPublic(
         context.Background(),
         "your-tenant-id",
@@ -36,9 +36,9 @@ func main() {
 }
 ```
 
-#### Default API (Erfordert API-Schlüssel)
+#### Standard-API (Erfordert API-Schlüssel)
 
-Die DefaultAPI erfordert die Authentifizierung mit Ihrem API-Schlüssel:
+Die DefaultAPI erfordert Authentifizierung mit Ihrem API-Schlüssel:
 
 ```go
 package main
@@ -62,7 +62,7 @@ func main() {
         },
     )
 
-    // Kommentare mit der authentifizierten DefaultAPI abrufen
+    // Kommentare mit authentifizierter DefaultAPI abrufen
     response, httpResp, err := apiClient.DefaultAPI.GetComments(auth).
         TenantId("your-tenant-id").
         UrlId("your-page-url-id").
@@ -77,14 +77,9 @@ func main() {
 }
 ```
 
-#### Moderation API (Moderator-Dashboard)
+#### Moderations-API (Moderator-Dashboard)
 
-Die ModerationAPI treibt das Moderator-Dashboard an. Sie stellt Methoden zum Auflisten,
-Zählen, Suchen und Exportieren von Kommentaren, Moderationsaktionen (entfernen/wiederherstellen,
-melden, Überprüfungs-/Spam-/Genehmigungsstatus setzen, Bewertungen, Threads wieder öffnen/schließen), Sperren (vom
-Kommentieren sperren, rückgängig machen, Pre-Bann‑Zusammenfassungen, Bannstatus und -präferenzen, Anzahl gesperrter Benutzer),
-und Abzeichen & Vertrauen (Abzeichen vergeben/entfernen, manuelle Abzeichen, Vertrauensfaktor abrufen/setzen, internes Benutzerprofil) bereit. Alle Moderationsmethoden akzeptieren einen `sso`-Parameter für
-SSO-authentifizierte Moderatoren:
+Die ModerationsAPI bietet eine umfangreiche Sammlung von Live- und schnellen Moderations-APIs. Alle Moderationsmethoden akzeptieren einen `sso`-Parameter und können über SSO oder ein FastComments.com-Session-Cookie authentifiziert werden:
 
 ```go
 package main
@@ -99,7 +94,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // Kommentare für die Moderation mit ModerationAPI auflisten
+    // Kommentare zur Moderation mit ModerationsAPI auflisten
     response, httpResp, err := apiClient.ModerationAPI.GetApiComments(
         context.Background(),
     ).Sso("your-sso-token").Execute()

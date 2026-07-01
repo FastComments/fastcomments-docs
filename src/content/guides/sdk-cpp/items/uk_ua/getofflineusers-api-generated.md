@@ -1,15 +1,15 @@
-Попередні коментатори на сторінці, які Наразі НЕ в мережі. Відсортовано за displayName.
-Використовуйте це після вичерпання /users/online, щоб відобразити секцію "Учасники".
-Курсорна пагінація за commenterName: сервер обходить частковий індекс {tenantId, urlId, commenterName} від afterName вперед через $gt, без витрат $skip.
+Попередні коментатори на сторінці, які НЕ перебувають онлайн. Сортовано за displayName.  
+Використовуйте це після вичерпання /users/online, щоб відобразити розділ “Учасники”.  
+Пагінація курсора за commenterName: сервер проходить частковий {tenantId, urlId, commenterName}  
+індекс від afterName вперед за допомогою $gt, без вартості $skip.
 
 ## Параметри
 
 | Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| urlId | string | Так |  |
-| afterName | string | Ні |  |
-| afterUserId | string | Ні |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| options | const GetOfflineUsersOptions& | Yes |  |
 
 ## Відповідь
 
@@ -19,14 +19,17 @@
 
 [inline-code-attrs-start title = 'Приклад getOfflineUsers'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-auto tenantId = utility::string_t(U("my-tenant-123"));
-auto urlId = utility::string_t(U("article-456"));
-boost::optional<utility::string_t> afterName = boost::optional<utility::string_t>(U("jane.doe@example.com"));
-boost::optional<utility::string_t> afterUserId = boost::optional<utility::string_t>(U("user-789"));
-api->getOfflineUsers(tenantId, urlId, afterName, afterUserId).then([](std::shared_ptr<PageUsersOfflineResponse> resp){
-    auto result = resp ? resp : std::make_shared<PageUsersOfflineResponse>();
-    (void)result;
-});
-[inline-code-end]
+utility::string_t tenantId = U("my-tenant-123");
+utility::string_t urlId = U("page-456");
+GetOfflineUsersOptions options;
+options.limit = boost::optional<int>(50);
+options.includeDetails = boost::optional<bool>(true);
 
----
+api->getOfflineUsers(tenantId, urlId, options)
+    .then([](pplx::task<std::shared_ptr<PageUsersOfflineResponse>> t) {
+        try {
+            auto response = t.get();
+        } catch (const std::exception&) {
+        }
+    });
+[inline-code-end]

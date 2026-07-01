@@ -1,36 +1,33 @@
-### Akcje dostępne dla wszystkich użytkowników
+### Actions Available to All Users
 
-- **Zgłoś/Usuń zgłoszenie** -- zgłoś komentarz do przeglądu
+- **Flag/Unflag** -- report a comment for review
 
 ```swift
 try await sdk.flagComment(commentId: commentId)
 try await sdk.unflagComment(commentId: commentId)
 ```
 
-- **Zablokuj użytkownika/Odblokuj użytkownika** -- ukryj wszystkie komentarze od użytkownika (dla danego widza)
+- **Block/Unblock** -- hide all comments from a user (per-viewer)
 
 ```swift
 try await sdk.blockUser(commentId: commentId)
 try await sdk.unblockUser(commentId: commentId)
 ```
 
-### Akcje tylko dla administratorów
+### Admin-Only Actions
 
-- **Przypnij/Odprzypnij** -- przypnij komentarz na górze wątku
+- **Pin/Unpin** -- pin a comment to the top of the thread
 
 ```swift
 try await sdk.pinComment(commentId: commentId)
 try await sdk.unpinComment(commentId: commentId)
 ```
 
-- **Zablokuj/Odblokuj** -- uniemożliwić dodawanie nowych odpowiedzi do komentarza
+- **Lock/Unlock** -- prevent new replies to a comment, and block edits and deletes until it is unlocked (applies to everyone, including moderators)
 
 ```swift
 try await sdk.lockComment(commentId: commentId)
 try await sdk.unlockComment(commentId: commentId)
 ```
 
-Wszystkie akcje moderacyjne są również dostępne poprzez menu kontekstowe komentarza w interfejsie użytkownika. Akcje administracyjne pojawiają się tylko, gdy bieżący użytkownik jest administratorem serwisu (ustawione poprzez flagę SSO `isAdmin` lub konfigurację w panelu administracyjnym).
-
----
----
+All moderation actions are also available through the comment context menu in the UI. Admin actions only appear when the current user is a site admin (set via SSO `isAdmin` flag or dashboard configuration).

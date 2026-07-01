@@ -1,18 +1,26 @@
----
-### PyPI
+### התקנה מ‑GitHub
+
+התקן ישירות מתג רילייז (מומלץ, ניתן לשחזר במלואו):
 
 ```bash
-pip install fastcomments
+pip install git+https://github.com/fastcomments/fastcomments-python.git@v3.0.0
 ```
+
+נעץ את התג במקום סניף כך שהבנייה תהיה דטרמיניסטית. אותה הצורה עובדת ב‑`requirements.txt`:
+
+```
+fastcomments @ git+https://github.com/fastcomments/fastcomments-python.git@v3.0.0
+```
+
+לכל תיוג [GitHub Release](https://github.com/fastcomments/fastcomments-python/releases) יש גלגל (wheel) שנבנה מצורף אם אתה מעדיף להתקין ארטיפקט בינארי ישירות.
 
 ### תוכן הספרייה
 
-ספרייה זו מכילה שני מודולים: לקוח ה-API שנוצר והספרייה הראשית בפייתון שמכילה כלי עזר שנכתבו ידנית כדי להקל על העבודה עם ה-API, כולל תמיכה ב-SSO.
+ספרייה זו מכילה שני מודולים: לקוח ה‑API שנוצר והספרייה המרכזית של פייתון שמכילה כלי כתובים ידנית כדי להקל על העבודה עם ה‑API, כולל תמיכה ב‑SSO.
 
-- [תיעוד ספריית לקוח ה-API](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
-- [תיעוד הספרייה הראשית, כולל דוגמאות ל-SSO](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
+- [API Client Library Docs](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
+- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
 
-### ממשקי API: ציבוריים מול מאובטחים
+### API ציבוריים לעומת מאובטחים
 
-ללקוח ה-API יש שלוש מחלקות, `DefaultApi`, `PublicApi`, ו-`ModerationApi`. ה-`DefaultApi` מכילה שיטות שדורשות את מפתח ה-API שלך, ו-`PublicApi` מכילה שיטות שניתן לבצע ישירות מדפדפן/מכשיר נייד/וכו' ללא אימות. ה-`ModerationApi` מפעילה את לוח המחוונים של המפקח ומכילה שיטות לניהול תגובות (רשימה, ספירה, חיפוש, יומנים, ייצוא), פעולות Moderation (הסרה/שחזור, סימון, קביעת מצב לסקירה/ספאם/אישור, הצבעות, פתיחה מחדש/סגירת שרשור), חסימות (חסימה מפרסום תגובה, ביטול חסימה, סיכומי קדם־חסימה, סטטוס/העדפות חסימה, ספירות משתמשים חסומים), ותגים ואמון (הענקה/הסרה של תג, תגיות ידניות, קבלת/הגדרת גורם אמון, פרופיל פנימי של משתמש). כל שיטה ב-`ModerationApi` מקבלת פרמטר `sso` כדי שניתן יהיה לקרוא לה בשם ממונה שהוסמך באמצעות SSO.
----
+ללקוח ה‑API יש שלושה מחלקות, `DefaultApi`, `PublicApi`, ו‑`ModerationApi`. ה‑`DefaultApi` מכילה שיטות הדורשות את מפתח ה‑API שלך, ו‑`PublicApi` מכילה שיטות שניתן לבצע ישירות מדפדפן/התקן נייד/וכו' ללא אימות. ה‑`ModerationApi` מספקת חבילה נרחבת של API למודרציה חיה ומהירה. כל שיטת `ModerationApi` מקבלת פרמטר `sso` ויכולה לבצע אימות דרך SSO או באמצעות עוגיית סשן של FastComments.com.

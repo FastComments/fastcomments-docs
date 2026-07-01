@@ -1,11 +1,11 @@
-## Parametry
+## Parameters
 
 | Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|-------------|
-| tenantId | string | Tak |  |
-| domain | string | Tak |  |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| domain | string | Yes |  |
 
-## Odpowiedź
+## Response
 
 Zwraca: [`GetDomainConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetDomainConfigResponse.h)
 
@@ -14,18 +14,19 @@ Zwraca: [`GetDomainConfigResponse`](https://github.com/FastComments/fastcomments
 [inline-code-attrs-start title = 'Przykład getDomainConfig'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-boost::optional<utility::string_t> domainOpt = U("app.example.com");
-if (domainOpt) {
-    api->getDomainConfig(tenantId, *domainOpt)
-    .then([](pplx::task<std::shared_ptr<GetDomainConfigResponse>> t) {
-        try {
-            auto resp = t.get();
-            auto cfgCopy = std::make_shared<GetDomainConfigResponse>(*resp);
-            (void)cfgCopy;
-        } catch (const std::exception&) {
-        }
-    });
-}
-[inline-code-end]
+utility::string_t domain = U("myblog.example.com");
 
----
+api->getDomainConfig(tenantId, domain)
+    .then([](std::shared_ptr<GetDomainConfigResponse> response) {
+        if (!response) return;
+        boost::optional<bool> moderationEnabled = response->moderationEnabled;
+        boost::optional<std::string> theme = response->theme;
+        if (moderationEnabled && *moderationEnabled) {
+            // handle enabled moderation
+        }
+        if (theme) {
+            // use theme value
+        }
+    })
+    .wait();
+[inline-code-end]

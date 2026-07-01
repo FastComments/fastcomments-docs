@@ -1,26 +1,20 @@
----
 ## Parametri
 
-| Naziv | Type | Obavezno | Opis |
-|------|------|----------|-------------|
-| sso | string | Ne |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Da |  |
+| sso | string = "" | Ne |  |
 
 ## Odgovor
 
-Vraća: [`Option[GetTenantManualBadgesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_tenant_manual_badges_response.nim)
+Returns: [`Option[GetTenantManualBadgesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_tenant_manual_badges_response.nim)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'getManualBadges Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getManualBadges'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getManualBadges(sso = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9")
-if response.isSome:
-  let badges = response.get()
-  echo "Manual badges received:"
-  echo badges
-else:
-  echo "No manual badges returned."
-  echo httpResponse
+let (manualBadgesOpt, httpResponse) = client.getManualBadges(tenantId = "my-tenant-123", sso = "")
+if manualBadgesOpt.isSome:
+  let manualBadges = manualBadgesOpt.get()
+  echo manualBadges
 [inline-code-end]
-
----

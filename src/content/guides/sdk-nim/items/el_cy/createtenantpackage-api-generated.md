@@ -1,25 +1,23 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Απαραίτητο | Περιγραφή |
-|------|------|----------|-------------|
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+|------|------|------------|-----------|
 | tenantId | string | Ναι |  |
 | createTenantPackageBody | CreateTenantPackageBody | Όχι |  |
 
-## Επιστρέφει
+## Απόκριση
 
 Επιστρέφει: [`Option[CreateTenantPackageResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_tenant_package_response.nim)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα createTenantPackage'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createTenantPackage Παράδειγμα'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.createTenantPackage(tenantId = "my-tenant-123", createTenantPackageBody = CreateTenantPackageBody())
+let (responseOpt, httpResponse) = client.createTenantPackage(
+  tenantId = "my-tenant-123",
+  createTenantPackageBody = CreateTenantPackageBody()
+)
 
-if response.isSome:
-  let pkg = response.get()
-  echo "Created tenant package: ", $pkg
-else:
-  echo "Failed to create tenant package, HTTP response: ", $httpResponse
+if responseOpt.isSome:
+  let response = responseOpt.get()
 [inline-code-end]
-
----

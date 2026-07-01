@@ -1,24 +1,25 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | はい |  |
-| afterId | string | query | いいえ |  |
-| afterCreatedAt | integer | query | いいえ |  |
-| unreadOnly | boolean | query | いいえ |  |
-| dmOnly | boolean | query | いいえ |  |
-| noDm | boolean | query | いいえ |  |
-| sso | string | query | いいえ |  |
+| tenantId | string | query | Yes |  |
+| afterId | string | query | No |  |
+| afterCreatedAt | integer | query | No |  |
+| unreadOnly | boolean | query | No |  |
+| dmOnly | boolean | query | No |  |
+| noDm | boolean | query | No |  |
+| sso | string | query | No |  |
 
-## レスポンス
+## 応答
 
 戻り値: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/reset_user_notifications_response.py)
 
-## 例
+## Example
 
-[inline-code-attrs-start title = 'reset_user_notifications の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'reset_user_notifications 例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import ResetUserNotificationsOptions
 from client.models.reset_user_notifications_response import ResetUserNotificationsResponse
 from client.rest import ApiException
 from pprint import pprint
@@ -30,20 +31,20 @@ configuration = client.Configuration(
 )
 
 
-# API クライアントのインスタンスとともにコンテキストに入ります
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # API クラスのインスタンスを作成します
+    # API クラスのインスタンスを作成する
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    after_id = 'after_id_example' # str |  （任意）
-    after_created_at = 56 # int |  （任意）
-    unread_only = True # bool |  （任意）
-    dm_only = True # bool |  （任意）
-    no_dm = True # bool |  （任意）
-    sso = 'sso_example' # str |  （任意）
+    after_id = 'after_id_example' # str |  (optional)
+    after_created_at = 56 # int |  (optional)
+    unread_only = True # bool |  (optional)
+    dm_only = True # bool |  (optional)
+    no_dm = True # bool |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.reset_user_notifications(tenant_id, after_id=after_id, after_created_at=after_created_at, unread_only=unread_only, dm_only=dm_only, no_dm=no_dm, sso=sso)
+        api_response = api_instance.reset_user_notifications(tenant_id, ResetUserNotificationsOptions(after_id=after_id, after_created_at=after_created_at, unread_only=unread_only, dm_only=dm_only, no_dm=no_dm, sso=soo))
         print("The response of PublicApi->reset_user_notifications:\n")
         pprint(api_response)
     except Exception as e:

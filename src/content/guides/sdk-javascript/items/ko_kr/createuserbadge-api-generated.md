@@ -1,31 +1,27 @@
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
-|------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| createUserBadgeParams | CreateUserBadgeParams | 예 |  |
+| 이름 | 형식 | 필수 | 설명 |
+|------|------|------|------|
+| tenantId | string | Yes |  |
+| createUserBadgeParams | CreateUserBadgeParams | Yes |  |
 
 ## 응답
 
-반환: [`APICreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APICreateUserBadgeResponse.ts)
+반환: [`CreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateUserBadgeResponse.ts)
 
-## 예제
+## 예시
 
 [inline-code-attrs-start title = 'createUserBadge 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_84a2c6b2';
-  const createUserBadgeParams: CreateUserBadgeParams = {
-    name: 'Early Supporter',
-    description: 'Awarded to users who joined during the alpha launch',
-    iconUrl: 'https://cdn.fastcomments.com/badges/early-supporter.png',
-    criteria: 'Joined before 2021-06-01',
-    isActive: true,
-    notifyUsers: true // 선택적 매개변수
-  };
-  const result: APICreateUserBadgeResponse = await createUserBadge(tenantId, createUserBadgeParams);
-  console.log(result);
-})();
+const tenantId: string = "company-42";
+
+const badgeParams: CreateUserBadgeParams = {
+  name: "Community Champion",
+  iconUrl: "https://assets.example.com/badges/champion.png",
+  // 설명은 선택 사항이며 여기서는 생략되었습니다
+};
+
+const result: CreateUserBadgeResponse = await createUserBadge(tenantId, badgeParams);
 [inline-code-end]
 
 ---

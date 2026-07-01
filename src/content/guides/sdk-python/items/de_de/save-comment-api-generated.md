@@ -1,6 +1,6 @@
 ## Parameter
 
-| Name | Type | Location | Required | Description |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | isLive | boolean | query | Nein |  |
@@ -10,19 +10,20 @@
 
 ## Antwort
 
-Rückgabe: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_save_comment_response.py)
+Returns: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_save_comment_response.py)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'save_comment Beispiel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import SaveCommentOptions
 from client.models.api_save_comment_response import APISaveCommentResponse
 from client.models.create_comment_params import CreateCommentParams
 from client.rest import ApiException
 from pprint import pprint
 
-# Die Angabe des Hosts ist optional und standardmäßig https://fastcomments.com
+# Das Definieren des Hosts ist optional und standardmäßig https://fastcomments.com
 # Siehe configuration.py für eine Liste aller unterstützten Konfigurationsparameter.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -30,18 +31,18 @@ configuration = client.Configuration(
 
 # Der Client muss die Authentifizierungs- und Autorisierungsparameter
 # gemäß der Sicherheitsrichtlinie des API-Servers konfigurieren.
-# Beispiele für jede Authentifizierungsmethode werden unten bereitgestellt; verwenden Sie das Beispiel, das
-# Ihren Authentifizierungsfall erfüllt.
+# Beispiele für jede Authentifizierungsmethode sind unten angegeben, verwenden Sie das Beispiel,
+# das Ihren Authentifizierungsfall erfüllt.
 
-# Configure API key authorization: api_key
+# API‑Schlüssel-Authentifizierung konfigurieren: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# Auskommentieren, um ein Präfix (z. B. Bearer) für den API‑Schlüssel festzulegen, falls benötigt
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Einen Kontext mit einer Instanz des API-Clients öffnen
+# Einen Kontext mit einer Instanz des API‑Clients betreten
 with client.ApiClient(configuration) as api_client:
-    # Erstellen Sie eine Instanz der API-Klasse
+    # Eine Instanz der API‑Klasse erstellen
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_comment_params = client.CreateCommentParams() # CreateCommentParams | 
@@ -51,11 +52,9 @@ with client.ApiClient(configuration) as api_client:
     populate_notifications = True # bool |  (optional)
 
     try:
-        api_response = api_instance.save_comment(tenant_id, create_comment_params, is_live=is_live, do_spam_check=do_spam_check, send_emails=send_emails, populate_notifications=populate_notifications)
+        api_response = api_instance.save_comment(tenant_id, create_comment_params, SaveCommentOptions(is_live=is_live, do_spam_check=do_spam_check, send_emails=send_emails, populate_notifications=populate_notifications))
         print("The response of DefaultApi->save_comment:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling DefaultApi->save_comment: %s\n" % e)
 [inline-code-end]
-
----

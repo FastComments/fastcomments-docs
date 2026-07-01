@@ -1,6 +1,7 @@
-### שימוש ב-APIs מאומתים (DefaultAPI)
+---
+### שימוש בממשקי API מאומתים (DefaultAPI)
 
-**חשוב:** נקודות קצה המאומתות דורשות שמפתח ה-API שלך יוגדר בכותרת `x-api-key`.
+**חשוב:** קצוות מאומתים דורשים שהמפתח API שלך יוגדר ככותרת `x-api-key`.
 
 ```nim
 import httpclient
@@ -11,24 +12,16 @@ import fastcomments/models/model_comment_data
 let client = newHttpClient()
 client.headers["x-api-key"] = "your-api-key"
 
-# בצע קריאות API מאומתות
+# Make authenticated API calls.
+# Required parameters (and the request body) are positional; optional
+# parameters are passed via the operation's options object.
 let (response, httpResponse) = getComments(
   httpClient = client,
   tenantId = "your-tenant-id",
-  page = 0,
-  limit = 0,
-  skip = 0,
-  asTree = false,
-  skipChildren = 0,
-  limitChildren = 0,
-  maxTreeDepth = 0,
-  urlId = "your-url-id",
-  userId = "",
-  anonUserId = "",
-  contextUserId = "",
-  hashTag = "",
-  parentId = "",
-  direction = SortDirections.DESC
+  options = GetCommentsOptions(
+    urlId: "your-url-id",
+    direction: SortDirections.DESC
+  )
 )
 
 if response.isSome:
@@ -37,9 +30,9 @@ if response.isSome:
     echo "Found ", resp.comments.get().len, " comments"
 ```
 
-### שימוש ב-APIs ציבוריים (PublicAPI)
+### שימוש בממשקי API ציבוריים (PublicAPI)
 
-נקודות קצה ציבוריות לא דורשות אימות:
+קצוות ציבוריים אינם דורשים אימות:
 
 ```nim
 import httpclient
@@ -48,37 +41,15 @@ import fastcomments/apis/api_public
 
 let client = newHttpClient()
 
-# בצע קריאות API ציבוריות
+# Make public API calls.
+# tenantId and urlId are required (positional); everything else is optional.
 let (response, httpResponse) = getCommentsPublic(
   httpClient = client,
   tenantId = "your-tenant-id",
   urlId = "your-url-id",
-  page = 0,
-  direction = SortDirections.DESC,
-  sso = "",
-  skip = 0,
-  skipChildren = 0,
-  limit = 0,
-  limitChildren = 0,
-  countChildren = false,
-  fetchPageForCommentId = "",
-  includeConfig = false,
-  countAll = false,
-  includei10n = false,
-  locale = "",
-  modules = "",
-  isCrawler = false,
-  includeNotificationCount = false,
-  asTree = false,
-  maxTreeDepth = 0,
-  useFullTranslationIds = false,
-  parentId = "",
-  searchText = "",
-  hashTags = @[],
-  userId = "",
-  customConfigStr = "",
-  afterCommentId = "",
-  beforeCommentId = ""
+  options = GetCommentsPublicOptions(
+    direction: SortDirections.DESC
+  )
 )
 
 if response.isSome:
@@ -87,9 +58,9 @@ if response.isSome:
     echo "Found ", resp.comments.get().len, " comments"
 ```
 
-### שימוש ב-APIs למודרציה (ModerationAPI)
+### שימוש בממשקי API למודרציה (ModerationAPI)
 
-נקודות קצה של מודרציה מאפשרות את לוח הבקרה של המודרטור ומאומתות באמצעות אסימון SSO עבור המודרטור הפעיל:
+קצוות המודרציה מניעים את לוח הבקרה של המנחה ומאומתים בעזרת אסימון SSO למנחה הפועל:
 
 ```nim
 import httpclient
@@ -98,18 +69,15 @@ import fastcomments/apis/api_moderation
 
 let client = newHttpClient()
 
-# הצג תגובות בלוח הבקרה של המודרטור
+# List comments in the moderation dashboard.
+# This operation has no required parameters, so everything is optional.
 let (response, httpResponse) = getApiComments(
   httpClient = client,
-  page = 0,
-  count = 30,
-  textSearch = "",
-  byIPFromComment = "",
-  filters = "",
-  searchFilters = "",
-  sorts = "",
-  demo = false,
-  sso = "your-sso-token"
+  options = GetApiCommentsOptions(
+    count: 30,
+    tenantId: "your-tenant-id",
+    sso: "your-sso-token"
+  )
 )
 
 if response.isSome:
@@ -119,5 +87,6 @@ if response.isSome:
 
 ### בעיות נפוצות
 
-1. **שגיאת אימות 401**: וודא כי הגדרת את כותרת `x-api-key` על ה-HttpClient שלך לפני ביצוע בקשות ל-DefaultAPI: `client.headers["x-api-key"] = "your-api-key"`
-2. **מחלקת API שגויה**: השתמש ב-`api_default` עבור בקשות מאומתות בצד השרת, ב-`api_public` עבור בקשות בצד הלקוח/ציבוריות, וב-`api_moderation` עבור בקשות ללוח הבקרה של המודרטור.
+1. **שגיאת אימות 401**: ודא שהגדרת את כותרת `x-api-key` ב-HttpClient שלך לפני ביצוע בקשות DefaultAPI: `client.headers["x-api-key"] = "your-api-key"`
+2. **מחלקת API שגויה**: השתמש ב-`api_default` לבקשות מאומתות בצד השרת, `api_public` לבקשות בצד הלקוח/ציבוריות, ו-`api_moderation` לבקשות של לוח הבקרה של המנחה.
+---

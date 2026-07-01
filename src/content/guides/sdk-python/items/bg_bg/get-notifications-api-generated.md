@@ -16,44 +16,45 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'get_notifications Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за get_notifications'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetNotificationsOptions
 from client.models.get_notifications_response import GetNotificationsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Задаването на host е по избор и по подразбиране е https://fastcomments.com
-# Вижте configuration.py за списък на всички поддържани конфигурационни параметри.
+# Дефинирането на хоста е опционално и по подразбиране е https://fastcomments.com
+# Вижте configuration.py за списък на всички поддържани параметри за конфигурация.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клиентът трябва да конфигурира параметрите за удостоверяване и авторизация
+# Клиентът трябва да конфигурира параметрите за автентикация и упълномощаване
 # в съответствие с политиката за сигурност на API сървъра.
-# Примери за всеки метод на удостоверяване са дадени по-долу, използвайте примера, който
-# отговаря на вашия случай на използване на удостоверяване.
+# Примери за всеки метод за автентикация са предоставени по-долу, използвайте примера,
+# който отговаря на вашия случай на употреба.
 
-# Конфигурирайте удостоверяване с API ключ: api_key
+# Конфигуриране на API ключ за упълномощаване: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Премахнете коментара по-долу, за да зададете префикс (например Bearer) за API ключа, ако е необходимо
+# Махнете коментара от реда по-долу, за да зададете префикс (например Bearer) за API ключа, ако е необходимо
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Влезте в контекст с екземпляр на API клиента
+# Въведете контекст с инстанция на API клиента
 with client.ApiClient(configuration) as api_client:
-    # Създайте екземпляр на класа API
+    # Създаване на инстанция на API класа
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    user_id = 'user_id_example' # str |  (по избор)
-    url_id = 'url_id_example' # str |  (по избор)
-    from_comment_id = 'from_comment_id_example' # str |  (по избор)
-    viewed = True # bool |  (по избор)
-    type = 'type_example' # str |  (по избор)
-    skip = 3.4 # float |  (по избор)
+    user_id = 'user_id_example' # str |  (optional)
+    url_id = 'url_id_example' # str |  (optional)
+    from_comment_id = 'from_comment_id_example' # str |  (optional)
+    viewed = True # bool |  (optional)
+    type = 'type_example' # str |  (optional)
+    skip = 3.4 # float |  (optional)
 
     try:
-        api_response = api_instance.get_notifications(tenant_id, user_id=user_id, url_id=url_id, from_comment_id=from_comment_id, viewed=viewed, type=type, skip=skip)
+        api_response = api_instance.get_notifications(tenant_id, GetNotificationsOptions(user_id=user_id, url_id=url_id, from_comment_id=from_comment_id, viewed=viewed, type=type, skip=skip))
         print("The response of DefaultApi->get_notifications:\n")
         pprint(api_response)
     except Exception as e:

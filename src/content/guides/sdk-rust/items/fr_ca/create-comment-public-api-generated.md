@@ -1,37 +1,31 @@
 ## Paramètres
 
-| Nom | Type | Requis | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
-| tenant_id | String | Oui |  |
-| url_id | String | Oui |  |
-| broadcast_id | String | Oui |  |
-| comment_data | models::CommentData | Oui |  |
-| session_id | String | Non |  |
-| sso | String | Non |  |
+| tenant_id | String | Yes |  |
+| url_id | String | Yes |  |
+| broadcast_id | String | Yes |  |
+| comment_data | models::CommentData | Yes |  |
+| session_id | String | No |  |
+| sso | String | No |  |
 
 ## Réponse
 
-Retourne : [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/save_comments_response_with_presence.rs)
+Retourne: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/save_comments_response_with_presence.rs)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de create_comment_public'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple create_comment_public'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn post_public_comment(configuration: &configuration::Configuration) -> Result<SaveCommentsResponseWithPresence, Error> {
-    let params: CreateCommentPublicParams = CreateCommentPublicParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        url_id: "news/world/economic-update-2026".to_string(),
-        broadcast_id: "broadcast-2026-06-19-001".to_string(),
-        comment_data: models::CommentData {
-            content: "Great analysis — this clarified a lot of the market dynamics.".to_string(),
-            ..Default::default()
-        },
-        session_id: Some("sess-9f8e7d6c".to_string()),
-        sso: Some("sso-jwt-eyJhbGciOi...".to_string()),
-    };
-    let response: SaveCommentsResponseWithPresence = create_comment_public(configuration, params).await?;
-    Ok(response)
-}
+let params = CreateCommentPublicParams {
+    tenant_id: "acme-corp-tenant".to_string(),
+    url_id: "news/article-123".to_string(),
+    broadcast_id: "broadcast-2023-09-01".to_string(),
+    comment_data: models::CommentData {
+        text: "Great read!".to_string(),
+    },
+    session_id: Some("session-abc123".to_string()),
+    sso: Some("sso-token-xyz".to_string()),
+};
+let response = create_comment_public(&configuration, params).await?;
 [inline-code-end]
-
----

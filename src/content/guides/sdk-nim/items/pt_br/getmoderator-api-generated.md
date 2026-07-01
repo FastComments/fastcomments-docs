@@ -1,7 +1,7 @@
 ## Parâmetros
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nome | Tipo | Obrigatório | Descrição |
+|------|------|-------------|----------|
 | tenantId | string | Sim |  |
 | id | string | Não |  |
 
@@ -11,14 +11,10 @@ Retorna: [`Option[GetModeratorResponse]`](https://github.com/FastComments/fastco
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getModerator'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo getModerator'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getModerator(tenantId = "my-tenant-123", id = "mod-456")
-if response.isSome:
-  let moderator = response.get()
-  echo moderator
-else:
-  echo "Moderator not found, HTTP status: ", $httpResponse.status
+let (moderatorOpt, httpResponse) = client.getModerator(tenantId = "my-tenant-123", id = "moderator-456")
+if moderatorOpt.isSome:
+  let moderator = moderatorOpt.get()
+  discard moderator
 [inline-code-end]
-
----

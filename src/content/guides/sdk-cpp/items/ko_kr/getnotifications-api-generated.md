@@ -1,38 +1,23 @@
-## 매개변수
+## Parameters
 
-| Name | Type | Required | Description |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
-| userId | string | 아니요 |  |
-| urlId | string | 아니요 |  |
-| fromCommentId | string | 아니요 |  |
-| viewed | bool | 아니요 |  |
-| type | string | 아니요 |  |
-| skip | double | 아니요 |  |
+| options | const GetNotificationsOptions& | 예 |  |
 
-## 응답
+## Response
 
 반환: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetNotificationsResponse.h)
 
-## 예제
+## Example
 
-[inline-code-attrs-start title = 'getNotifications 예제'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getNotifications 예시'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-boost::optional<utility::string_t> userId(U("user@example.com"));
-boost::optional<utility::string_t> urlId(U("/articles/2026/new-feature"));
-boost::optional<utility::string_t> fromCommentId(U("cmt-98765"));
-boost::optional<bool> viewed(true);
-boost::optional<utility::string_t> type(U("reply"));
-boost::optional<double> skip(0.0);
-
-api->getNotifications(tenantId, userId, urlId, fromCommentId, viewed, type, skip)
-.then([](std::shared_ptr<GetNotificationsResponse> resp){
-    auto holder = std::make_shared<GetNotificationsResponse>();
-    holder = resp;
-    if (holder) std::cout << "Received notifications\n";
-    return holder;
-});
+GetNotificationsOptions options;
+options.limit = 20;
+options.after = U("cursor-123");
+api->getNotifications(U("my-tenant-123"), options)
+    .then([](std::shared_ptr<GetNotificationsResponse> resp) {
+        (void)resp;
+    });
 [inline-code-end]
-
----

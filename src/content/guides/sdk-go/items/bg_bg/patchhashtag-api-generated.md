@@ -1,10 +1,9 @@
----
 ## Параметри
 
 | Име | Тип | Местоположение | Задължително | Описание |
-|------|------|----------|----------|-------------|
+|------|------|----------------|--------------|----------|
+| tenantId | string | query | Да |  |
 | tag | string | path | Да |  |
-| tenantId | string | query | Не |  |
 
 ## Отговор
 
@@ -12,7 +11,7 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за PatchHashTag'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PatchHashTag Пример'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -24,9 +23,9 @@ import (
 )
 
 func main() {
-	tag := "tag_example" // string | 
-	tenantId := "tenantId_example" // string |  (по избор)
-	updateHashTagBody := *openapiclient.NewUpdateHashTagBody() // UpdateHashTagBody |  (по избор)
+	tenantId := "tenantId_example" // низ |
+	tag := "tag_example" // низ |
+	updateHashTagBody := *openapiclient.NewUpdateHashTagBody() // UpdateHashTagBody | (по избор)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -39,5 +38,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PatchHashTag`: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -2,36 +2,39 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| badgeId | string | query | はい |  |
-| userId | string | query | いいえ |  |
-| commentId | string | query | いいえ |  |
-| broadcastId | string | query | いいえ |  |
-| sso | string | query | いいえ |  |
+| tenantId | string | query | Yes |  |
+| badgeId | string | query | Yes |  |
+| userId | string | query | No |  |
+| commentId | string | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
-## レスポンス
+## 応答
 
-戻り値: [`RemoveUserBadgeResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/remove_user_badge_response.py)
+Returns: [`RemoveUserBadgeResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/remove_user_badge_response.py)
 
 ## 例
 
 [inline-code-attrs-start title = 'put_remove_badge の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import PutRemoveBadgeOptions
 from client.models.remove_user_badge_response import RemoveUserBadgeResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# ホストの定義は任意で、デフォルトは https://fastcomments.com です
-# サポートされている設定パラメータの一覧は configuration.py を参照してください。
+# ホストの定義はオプションで、デフォルトは https://fastcomments.com です
+# configuration.py を参照してください。サポートされているすべての設定パラメータの一覧があります。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# API クライアントのインスタンスでコンテキストを開きます
+# APIクライアントのインスタンスでコンテキストに入ります
 with client.ApiClient(configuration) as api_client:
-    # API クラスのインスタンスを作成する
+    # APIクラスのインスタンスを作成します
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     badge_id = 'badge_id_example' # str | 
     user_id = 'user_id_example' # str |  (オプション)
     comment_id = 'comment_id_example' # str |  (オプション)
@@ -39,7 +42,7 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (オプション)
 
     try:
-        api_response = api_instance.put_remove_badge(badge_id, user_id=user_id, comment_id=comment_id, broadcast_id=broadcast_id, sso=sso)
+        api_response = api_instance.put_remove_badge(tenant_id, badge_id, PutRemoveBadgeOptions(user_id=user_id, comment_id=comment_id, broadcast_id=broadcast_id, sso=sso))
         print("The response of ModerationApi->put_remove_badge:\n")
         pprint(api_response)
     except Exception as e:

@@ -1,31 +1,35 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
-| updateAPIUserSubscriptionData | UpdateAPIUserSubscriptionData | Да |  |
-| userId | string | Не |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updateAPIUserSubscriptionData | UpdateAPIUserSubscriptionData | Yes |  |
+| userId | string | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`UpdateSubscriptionAPIResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateSubscriptionAPIResponse.ts)
+Vraća: [`UpdateSubscriptionAPIResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateSubscriptionAPIResponse.ts)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'Пример updateSubscription'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer updateSubscription'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f3b2c';
-const subscriptionId: string = 'sub_7641a2b3';
-const updateData: UpdateAPIUserSubscriptionData = {
-  status: 'active',
-  planId: 'pro_annual',
-  autoRenew: true,
-  renewalDate: '2026-04-15T00:00:00Z',
-  metadata: { upgradedBy: 'billing-team' }
-};
-const userId: string = 'user_215';
-const result: UpdateSubscriptionAPIResponse = await updateSubscription(tenantId, subscriptionId, updateData, userId);
-[inline-code-end]
+const tenantId: string = "tenant_12345";
+const subscriptionId: string = "sub_98765";
 
----
+const updateData: UpdateAPIUserSubscriptionData = {
+  planId: "premium_plan",
+  status: "active",
+  renewalDate: "2024-12-31",
+};
+
+const userId: string = "user_abcde";
+
+const response: UpdateSubscriptionAPIResponse = await updateSubscription(
+  tenantId,
+  subscriptionId,
+  updateData,
+  userId
+);
+[inline-code-end]

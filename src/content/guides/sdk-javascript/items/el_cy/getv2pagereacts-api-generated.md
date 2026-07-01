@@ -1,23 +1,28 @@
----
-## Παράμετροι
+## Parameters
 
-| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Ναι |  |
 | urlId | string | Ναι |  |
 
-## Απόκριση
+## Response
 
-Επιστρέφει: [`GetV2PageReacts`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetV2PageReacts.ts)
+Επιστρέφει: [`GetV2PageReactsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetV2PageReactsResponse.ts)
 
-## Παράδειγμα
+## Example
 
 [inline-code-attrs-start title = 'Παράδειγμα getV2PageReacts'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'fastcomments-tenant-82';
-const urlId: string = 'https://www.acmecorp.com/blog/product-launch-2026';
-const reacts: GetV2PageReacts = await getV2PageReacts(tenantId, urlId);
-console.log(reacts);
-[inline-code-end]
+async function demoGetPageReacts(): Promise<void> {
+    const tenantId: string = "acme-corp-tenant";
+    const urlId: string = "article-2024-06-01";
 
----
+    const reacts: GetV2PageReactsResponse = await getV2PageReacts(tenantId, urlId);
+
+    // προαιρετικό παράδειγμα πρόσβασης ιδιότητας
+    const customConfig: CustomConfigParameters | undefined = reacts.customConfig;
+    console.log(reacts);
+}
+
+demoGetPageReacts();
+[inline-code-end]

@@ -1,12 +1,14 @@
-## Parameters
+## Параметри
 
-| Назва | Тип | Location | Обов'язково | Опис |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Так |  |
-| voteId | string | path | Так |  |
-| sso | string | query | Ні |  |
+| Ім'я | Тип | Розташування | Обов'язково | Опис |
+|------|------|--------------|-------------|------|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| voteId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
-## Response
+## Відповідь
 
 Повертає: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_vote_delete_response.go)
 
@@ -24,18 +26,20 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
 	voteId := "voteId_example" // string | 
-	sso := "sso_example" // string |  (необов'язково)
+	broadcastId := "broadcastId_example" // string |  (необов’язково)
+	sso := "sso_example" // string |  (необов’язково)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.DeleteModerationVote(context.Background(), commentId, voteId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.DeleteModerationVote(context.Background(), commentId, voteId).TenantId(tenantId).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.DeleteModerationVote``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Помилка при виклику `ModerationAPI.DeleteModerationVote``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Повна HTTP відповідь: %v\n", r)
 	}
 	// відповідь від `DeleteModerationVote`: VoteDeleteResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.DeleteModerationVote`: %v\n", resp)
+	fmt.Fprintf(os.Stdout, "Відповідь від `ModerationAPI.DeleteModerationVote`: %v\n", resp)
 }
 [inline-code-end]

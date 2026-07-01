@@ -1,29 +1,31 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Oblobiten | Opis |
 |------|------|----------|----------|-------------|
-| value | string | query | Ne |  |
-| filters | string | query | Ne |  |
-| searchFilters | string | query | Ne |  |
-| sso | string | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| value | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
-Vrne: [`ModerationCommentSearchResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationCommentSearchResponse.swift)
+Returns: [`ModerationCommentSearchResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationCommentSearchResponse.swift)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer getSearchCommentsSummary'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSearchCommentsSummary Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Naslednji primeri kode so še v beta. Za kakršnokoli težavo, prosimo, prijavite na http://github.com/OpenAPITools/openapi-generator/issues/new
+// Naslednji primeri kode so še v beta fazi. Za kakršno koli težavo, prosimo, poročajte na http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let value = "value_example" // String |  (izbirno)
-let filters = "filters_example" // String |  (izbirno)
-let searchFilters = "searchFilters_example" // String |  (izbirno)
-let sso = "sso_example" // String |  (izbirno)
+let tenantId = "tenantId_example" // String | 
+let value = "value_example" // String |  (neobvezno)
+let filters = "filters_example" // String |  (neobvezno)
+let searchFilters = "searchFilters_example" // String |  (neobvezno)
+let sso = "sso_example" // String |  (neobvezno)
 
-ModerationAPI.getSearchCommentsSummary(value: value, filters: filters, searchFilters: searchFilters, sso: sso) { (response, error) in
+ModerationAPI.getSearchCommentsSummary(tenantId: tenantId, options: ModerationAPI.GetSearchCommentsSummaryOptions(value: value, filters: filters, searchFilters: searchFilters, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

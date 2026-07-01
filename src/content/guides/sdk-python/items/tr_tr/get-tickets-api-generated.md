@@ -1,46 +1,45 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| İsim | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Evet |  |
-| userId | string | query | Hayır |  |
-| state | number | query | Hayır |  |
-| skip | number | query | Hayır |  |
-| limit | number | query | Hayır |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| state | number | query | No |  |
+| skip | number | query | No |  |
+| limit | number | query | No |  |
 
 ## Yanıt
 
-Döndürür: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tickets_response.py)
+Returns: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tickets_response.py)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'get_tickets Örneği'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetTicketsOptions
 from client.models.get_tickets_response import GetTicketsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Host belirtmek isteğe bağlıdır ve varsayılan https://fastcomments.com'dur
-# Tüm desteklenen yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.
+# Host tanımlama isteğe bağlıdır ve varsayılan olarak https://fastcomments.com
+# configuration.py dosyasında desteklenen tüm yapılandırma parametrelerinin listesini görebilirsiniz.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# İstemci, kimlik doğrulama ve yetkilendirme parametrelerini yapılandırmalıdır
-# API sunucusunun güvenlik politikasına göre.
-# Her kimlik doğrulama yöntemi için örnekler aşağıda verilmiştir, kullanım durumunuza uygun olan
-# örneği kullanın.
+# İstemci, kimlik doğrulama ve yetkilendirme parametrelerini API sunucusunun güvenlik politikasıyla uyumlu olarak yapılandırmalıdır.
+# Aşağıda her kimlik doğrulama yöntemi için örnekler verilmiştir; kullanım durumunuza uyan örneği kullanın.
 
-# API anahtarı yetkilendirmesini yapılandırın: api_key
+# API anahtarı yetkilendirmesini yapılandır: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Gerekirse API anahtarı için önek (ör. Bearer) ayarlamak üzere aşağıdaki satırın başındaki yorumu kaldırın
+# Gerekirse API anahtarı için önek (ör. Bearer) belirlemek için aşağıdaki satırı yorum dışı bırakın
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API istemcisi örneğiyle bir bağlam açın
+# API istemcisinin bir örneğiyle bir bağlam girin
 with client.ApiClient(configuration) as api_client:
-    # API sınıfından bir örnek oluşturun
+    # API sınıfının bir örneğini oluştur
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     user_id = 'user_id_example' # str |  (isteğe bağlı)
@@ -49,7 +48,7 @@ with client.ApiClient(configuration) as api_client:
     limit = 3.4 # float |  (isteğe bağlı)
 
     try:
-        api_response = api_instance.get_tickets(tenant_id, user_id=user_id, state=state, skip=skip, limit=limit)
+        api_response = api_instance.get_tickets(tenant_id, GetTicketsOptions(user_id=user_id, state=state, skip=skip, limit=limit))
         print("The response of DefaultApi->get_tickets:\n")
         pprint(api_response)
     except Exception as e:

@@ -1,32 +1,37 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
-| updateQuestionConfigBody | UpdateQuestionConfigBody | Да |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updateQuestionConfigBody | UpdateQuestionConfigBody | Yes |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Vraća: [`UpdateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateQuestionConfigResponse.ts)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример updateQuestionConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer updateQuestionConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'acme-tenant-84f2';
-  const id: string = '5d6a8b2f-1c4e-4a7b-9f3d-e2c123456789';
-  const customOption: QuestionConfigCustomOptionsInner = { label: 'Helpful', value: 'helpful' };
-  const updateQuestionConfigBody: UpdateQuestionConfigBody = {
-    enabled: true,
-    title: 'Is this information helpful?',
-    // демонстриран опциони параметар:
-    customOptions: [customOption]
-  };
-  const result: APIEmptyResponse = await updateQuestionConfig(tenantId, id, updateQuestionConfigBody);
-  console.log(result);
-})();
-[inline-code-end]
+const tenantId: string = "acme-corp-tenant";
+const questionId: string = "qstn-2023-04";
 
----
+const updateBody: UpdateQuestionConfigBody = {
+  // demonstrirane opciona polja
+  customOptions: [
+    {
+      id: "opt-001",
+      label: "Extra Details",
+      required: true,
+    },
+  ],
+  renderingType: "markdown",
+};
+
+const response: UpdateQuestionConfigResponse = await updateQuestionConfig(
+  tenantId,
+  questionId,
+  updateBody
+);
+[inline-code-end]

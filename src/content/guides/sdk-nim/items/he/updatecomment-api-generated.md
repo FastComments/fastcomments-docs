@@ -2,12 +2,10 @@
 
 | שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| id | string | לא |  |
-| updatableCommentParams | UpdatableCommentParams | לא |  |
-| contextUserId | string | לא |  |
-| doSpamCheck | bool | לא |  |
-| isLive | bool | לא |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| updatableCommentParams | UpdatableCommentParams | No |  |
+| options | UpdateCommentOptions | No |  |
 
 ## תגובה
 
@@ -15,24 +13,20 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת updateComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמא ל‑updateComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateComment(
+let commentParams = UpdatableCommentParams(content: "Updated comment content")
+let updateOpts = UpdateCommentOptions(force: false)
+
+let (respOpt, httpResp) = client.updateComment(
   tenantId = "my-tenant-123",
-  id = "cmt-987654",
-  updatableCommentParams = UpdatableCommentParams(
-    text = "Updated comment: corrected facts and clarified wording.",
-    isApproved = true,
-    tags = @["news", "update"]
-  ),
-  contextUserId = "user-456",
-  doSpamCheck = true,
-  isLive = true
+  id = "comment-456",
+  updatableCommentParams = commentParams,
+  options = updateOpts
 )
 
-if response.isSome:
-  let apiResp = response.get()
-  discard apiResp
+if respOpt.isSome:
+  let resp = respOpt.get()
 [inline-code-end]
 
 ---

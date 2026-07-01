@@ -1,18 +1,18 @@
 ## Paramètres
 
-| Name | Type | Emplacement | Obligatoire | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Oui |  |
-| urlIdWS | string | query | Oui |  |
-| userIds | string | query | Oui |  |
+| tenantId | string | query | Yes |  |
+| urlIdWS | string | query | Yes |  |
+| userIds | string | query | Yes |  |
 
 ## Réponse
 
-Renvoie : [`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetUserPresenceStatusesResponse.php)
+Retourne : [`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetUserPresenceStatusesResponse.php)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getUserPresenceStatuses'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getUserPresenceStatuses'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -20,13 +20,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Si vous voulez utiliser un client HTTP personnalisé, passez votre client qui implémente `GuzzleHttp\ClientInterface`.
-    // Ceci est optionnel, `GuzzleHttp\Client` sera utilisé par défaut.
+    // Si vous souhaitez utiliser un client http personnalisé, transmettez votre client qui implémente `GuzzleHttp\ClientInterface`.
+    // Ceci est facultatif, `GuzzleHttp\Client` sera utilisé par défaut.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$url_id_ws = 'url_id_ws_example'; // string
-$user_ids = 'user_ids_example'; // string
+
+$tenant_id = 'tenant_id_example'; // chaîne
+$url_id_ws = 'url_id_ws_example'; // chaîne
+$user_ids = 'user_ids_example'; // chaîne
+
 
 try {
     $result = $apiInstance->getUserPresenceStatuses($tenant_id, $url_id_ws, $user_ids);
@@ -35,5 +37,3 @@ try {
     echo 'Exception when calling PublicApi->getUserPresenceStatuses: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

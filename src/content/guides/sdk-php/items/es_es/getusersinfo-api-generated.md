@@ -1,14 +1,13 @@
----
-Información masiva de usuarios para un tenant. Dado userIds, devuelve información para mostrar de User / SSOUser.
-Usado por el widget de comentarios para enriquecer usuarios que acaban de aparecer mediante un evento de presencia.
-Sin contexto de página: la privacidad se aplica de forma uniforme (los perfiles privados están enmascarados).
+Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
+Used by the comment widget to enrich users that just appeared via a presence event.  
+No page context: privacy is enforced uniformly (private profiles are masked).
 
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Sí |  |
-| ids | string | query | Sí | userIds separados por comas. |
+| tenantId | string | path | Yes |  |
+| ids | string | query | Yes | Ids de usuario delimitados por comas. |
 
 ## Respuesta
 
@@ -16,7 +15,7 @@ Devuelve: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de getUsersInfo'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo getUsersInfo'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -24,12 +23,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Si desea usar un cliente HTTP personalizado, pase su cliente que implemente `GuzzleHttp\ClientInterface`.
-    // Esto es opcional; `GuzzleHttp\Client` se usará por defecto.
+    // Si deseas usar un cliente HTTP personalizado, pasa tu cliente que implemente `GuzzleHttp\ClientInterface`.
+    // Esto es opcional, se usará `GuzzleHttp\Client` por defecto.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$ids = 'ids_example'; // string | userIds separados por comas.
+$ids = 'ids_example'; // string | Ids de usuario delimitados por comas.
+
 
 try {
     $result = $apiInstance->getUsersInfo($tenant_id, $ids);
@@ -38,5 +39,3 @@ try {
     echo 'Exception when calling PublicApi->getUsersInfo: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

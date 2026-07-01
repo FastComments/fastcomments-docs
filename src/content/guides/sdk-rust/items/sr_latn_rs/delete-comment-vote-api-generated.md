@@ -1,14 +1,14 @@
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| tenant_id | String | Da |  |
-| comment_id | String | Da |  |
-| vote_id | String | Da |  |
-| url_id | String | Da |  |
-| broadcast_id | String | Da |  |
-| edit_key | String | Ne |  |
-| sso | String | Ne |  |
+|------|------|----------|------|
+| tenant_id | String | Yes |  |
+| comment_id | String | Yes |  |
+| vote_id | String | Yes |  |
+| url_id | String | Yes |  |
+| broadcast_id | String | Yes |  |
+| edit_key | String | No |  |
+| sso | String | No |  |
 
 ## Odgovor
 
@@ -16,20 +16,20 @@ Vraća: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-rust
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer delete_comment_vote'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_comment_vote Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_delete_vote() -> Result<VoteDeleteResponse, Error> {
-    let params: DeleteCommentVoteParams = DeleteCommentVoteParams {
+#[tokio::main]
+async fn main() -> Result<(), Error> {
+    let params = DeleteCommentVoteParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        comment_id: "cmt-8f3a2b9e".to_string(),
-        vote_id: "vote-7d124f".to_string(),
-        url_id: "news/politics/2026-election".to_string(),
-        broadcast_id: "web-1234".to_string(),
-        edit_key: Some("edit-abc123".to_string()),
-        sso: Some("sso-token-xyz".to_string()),
+        comment_id: "comment-12345".to_string(),
+        vote_id: "vote-67890".to_string(),
+        url_id: "news/article".to_string(),
+        broadcast_id: "broadcast-abc".to_string(),
+        edit_key: Some("edit-key-xyz".to_string()),
+        sso: Some("sso-token-123".to_string()),
     };
-
-    let response: VoteDeleteResponse = delete_comment_vote(&configuration, params).await?;
-    Ok(response)
+    let _response: VoteDeleteResponse = delete_comment_vote(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]

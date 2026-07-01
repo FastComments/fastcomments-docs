@@ -1,30 +1,39 @@
 ## Параметри
 
-| Назва | Тип | Обов'язкове | Опис |
+| Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| id | string | Так |  |
-| updateQuestionResultBody | UpdateQuestionResultBody | Так |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updateQuestionResultBody | UpdateQuestionResultBody | Yes |  |
 
 ## Відповідь
 
-Повертає: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Повертає: [`UpdateQuestionResultResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateQuestionResultResponse.ts)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад updateQuestionResult'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateQuestionResult Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_acme-corp_01";
-const id: string = "question_9f2d1b";
-const metaItem: MetaItem = { key: "platform", value: "web" };
-const status: APIStatus = { code: 0, message: "scored" };
-const updateQuestionResultBody: UpdateQuestionResultBody = {
-  score: 92,
-  passed: true,
-  status,
-  meta: [metaItem] // необов'язкове поле (демонстрація)
-};
-const result: APIEmptyResponse = await updateQuestionResult(tenantId, id, updateQuestionResultBody);
-[inline-code-end]
+async function runUpdate() {
+    const tenantId: string = "acme-corp-01";
+    const id: string = "qr-20230915-001";
 
----
+    const updateQuestionResultBody: UpdateQuestionResultBody = {
+        // обов'язкові поля
+        answer: "No",
+        // необов'язкові поля
+        comment: "User clarified their response",
+        // anotherOptionalField?: value,
+    };
+
+    const result: UpdateQuestionResultResponse = await updateQuestionResult(
+        tenantId,
+        id,
+        updateQuestionResultBody
+    );
+
+    console.log(result);
+}
+
+runUpdate();
+[inline-code-end]

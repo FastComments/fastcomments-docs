@@ -1,25 +1,28 @@
-## Параметры
+## Параметри
 
-| Имя | Тип | Обязательный | Описание |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| postId | string | Да |  |
-| broadcastId | string | Нет |  |
-| sso | string | Нет |  |
+| Ім'я | Тип | Обов'язково | Опис |
+|------|------|-------------|------|
+| tenantId | string | Так |  |
+| postId | string | Так |  |
+| broadcastId | string | Ні |  |
+| sso | string | Ні |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`DeleteFeedPostPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteFeedPostPublicResponse.ts)
+Повертає: [`DeleteFeedPostPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteFeedPostPublicResponse.ts)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример deleteFeedPostPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteFeedPostPublic Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-tenant-7f3b';
-const postId: string = 'post_589132';
-const broadcastId: string = 'broadcast_2026-06-19_01';
-const sso: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NDMyMSIsIm5hbWUiOiJKb2huIERvZSJ9.DX3h7k9vYz0Qx2p5u1L8b6c9R4s';
-const result: DeleteFeedPostPublicResponse = await deleteFeedPostPublic(tenantId, postId, broadcastId, sso);
-[inline-code-end]
+(async () => {
+  const tenantId: string = "acme-corp";
+  const postId: string = "post_987654321";
+  const broadcastId: string = "broadcast_2024Q1";
+  const sso: string = "sso_4fa3b9c2";
 
----
+  const response1: DeleteFeedPostPublicResponse = await deleteFeedPostPublic(tenantId, postId);
+  const response2: DeleteFeedPostPublicResponse = await deleteFeedPostPublic(tenantId, postId, broadcastId);
+  const response3: DeleteFeedPostPublicResponse = await deleteFeedPostPublic(tenantId, postId, broadcastId, sso);
+})();
+[inline-code-end]

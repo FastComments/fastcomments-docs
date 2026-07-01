@@ -3,10 +3,7 @@
 | 名称 | 类型 | 必需 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
-| userId | string | 否 |  |
-| state | float64 | 否 |  |
-| skip | float64 | 否 |  |
-| limit | float64 | 否 |  |
+| options | GetTicketsOptions | 否 |  |
 
 ## 响应
 
@@ -16,10 +13,8 @@
 
 [inline-code-attrs-start title = 'getTickets 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTickets(tenantId = "my-tenant-123", userId = "user-789", state = 1.0, skip = 0.0, limit = 50.0)
-if response.isSome:
-  let tickets = response.get()
-  echo tickets
+let (ticketsOpt, httpResp) = client.getTickets(tenantId = "my-tenant-123", options = GetTicketsOptions())
+if ticketsOpt.isSome:
+  let tickets = ticketsOpt.get()
+  # 根据需要使用 tickets
 [inline-code-end]
-
----

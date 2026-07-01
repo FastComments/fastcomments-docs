@@ -1,21 +1,21 @@
-### שימוש ב-APIs מאומתים (DefaultApi)
+### שימוש ב‑APIs מאומתים (DefaultApi)
 
-**חשוב:** חייבים להגדיר את מפתח ה-API ב-ApiClient לפני ביצוע בקשות מאומתות. אם לא תעשו זאת, הבקשות ייכשלו עם שגיאת 401.
+**חשוב:** עליך להגדיר את מפתח ה‑API שלך ב‑ApiClient לפני ביצוע בקשות מאומתות. אם לא תעשה זאת, הבקשות יכשלו עם שגיאת 401.
 
 ```ruby
 require 'fastcomments'
 
-# צור וקבע תצורה ל-ApiClient
+# צור וקונפיגור את לקוח ה‑API
 config = FastCommentsClient::Configuration.new
 api_client = FastCommentsClient::ApiClient.new(config)
 
-# דרוש: הגדר את מפתח ה-API שלך (השג אותו מלוח המחוונים של FastComments)
+# דרוש: הגדר את מפתח ה‑API שלך (קבל זאת מלוח המחוונים של FastComments)
 config.api_key['x-api-key'] = 'YOUR_API_KEY_HERE'
 
-# צור את מופע ה-API עם הלקוח שהוגדר
+# צור את מופע ה‑API עם הלקוח המוגדר
 api = FastCommentsClient::DefaultApi.new(api_client)
 
-# עכשיו אפשר לבצע קריאות API מאומתות
+# עכשיו אתה יכול לבצע קריאות API מאומתות
 begin
   # דוגמה: הוספת משתמש SSO
   user_data = {
@@ -30,14 +30,14 @@ begin
 rescue FastCommentsClient::ApiError => e
   puts "Error: #{e.response_body}"
   # שגיאות נפוצות:
-  # - 401: מפתח ה-API חסר או לא תקין
-  # - 400: אימות הבקשה נכשל
+  # - 401: מפתח ה‑API חסר או אינו תקין
+  # - 400: האימות של הבקשה נכשל
 end
 ```
 
-### שימוש ב-APIs ציבוריים (PublicApi)
+### שימוש ב‑APIs ציבוריים (PublicApi)
 
-נקודות קצה ציבוריות לא דורשות אימות:
+נקודות קצה ציבוריות אינן דורשות אימות:
 
 ```ruby
 require 'fastcomments'
@@ -46,8 +46,8 @@ public_api = FastCommentsClient::PublicApi.new
 
 begin
   response = public_api.get_comments_public(
-    tenant_id: 'YOUR_TENANT_ID',
-    url_id: 'page-url-id'
+    'YOUR_TENANT_ID',
+    'page-url-id'
   )
   puts response
 rescue FastCommentsClient::ApiError => e
@@ -55,9 +55,9 @@ rescue FastCommentsClient::ApiError => e
 end
 ```
 
-### שימוש ב-APIs למודרציה (ModerationApi)
+### שימוש ב‑APIs מודרציה (ModerationApi)
 
-שיטות המודרציה מספקות את לוח הבקרה של המודרטור. שלח אסימון `sso` כך שהבקשה תתבצע בשם מודרטור שאומת באמצעות SSO:
+שיטות המודרציה מקנות כוח ללוח הבקרה של המודרטור. העבר אסימון `sso` כך שהבקשה תתבצע בשם מודרטור מאומת ב‑SSO:
 
 ```ruby
 require 'fastcomments'
@@ -65,7 +65,7 @@ require 'fastcomments'
 moderation_api = FastCommentsClient::ModerationApi.new
 
 begin
-  # דוגמה: הצגת תגובות בתור המודרציה
+  # דוגמה: רשימת תגובות בתור המודרציה
   response = moderation_api.get_api_comments(
     sso: 'YOUR_MODERATOR_SSO_TOKEN'
   )
@@ -77,6 +77,6 @@ end
 
 ### בעיות נפוצות
 
-1. **שגיאת 401 "missing-api-key"**: ודא שהגדרת את `config.api_key['x-api-key'] = 'YOUR_KEY'` לפני יצירת האינסטנס של DefaultApi.
-2. **מחלקת API שגויה**: השתמש ב-`DefaultApi` לבקשות מאומתות בצד השרת, ב-`PublicApi` לבקשות צד-לקוח/ציבוריות, וב-`ModerationApi` לבקשות עבור לוח הבקרה של המודרטור.
-3. **מפתח API null**: ה-SDK ידלג בשקט על אימות אם מפתח ה-API הוא null, מה שיוביל לשגיאות 401.
+1. **שגיאת 401 "missing-api-key"**: ודא שהגדרת `config.api_key['x-api-key'] = 'YOUR_KEY'` לפני יצירת מופע DefaultApi.
+2. **מחלקת API שגויה**: השתמש ב‑`DefaultApi` עבור בקשות מאומתות בצד השרת, ב‑`PublicApi` עבור בקשות בצד הלקוח/ציבוריות, וב‑`ModerationApi` עבור בקשות ללוח הבקרה של המודרטור.
+3. **מפתח API ריק**: ה‑SDK ידלג בשקט על אימות אם מפתח ה‑API ריק, מה שיוביל לשגיאות 401.

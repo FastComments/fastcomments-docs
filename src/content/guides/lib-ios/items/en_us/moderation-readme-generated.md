@@ -23,7 +23,7 @@ try await sdk.pinComment(commentId: commentId)
 try await sdk.unpinComment(commentId: commentId)
 ```
 
-- **Lock/Unlock** -- prevent new replies on a comment
+- **Lock/Unlock** -- prevent new replies to a comment, and block edits and deletes until it is unlocked (applies to everyone, including moderators)
 
 ```swift
 try await sdk.lockComment(commentId: commentId)

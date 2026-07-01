@@ -1,17 +1,17 @@
-req
-tenantId
-urlId
-userIdWS
+req  
+tenantId  
+urlId  
+userIdWS  
 
 ## 매개변수
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| 이름 | 유형 | 필수 | 설명 |
+|------|------|------|------|
 | tenantId | string | 예 |  |
 | urlId | string | 예 |  |
 | userIdWS | string | 예 |  |
 | startTime | int64_t | 예 |  |
-| endTime | int64_t | 아니요 |  |
+| endTime | int64_t | 아니오 |  |
 
 ## 응답
 
@@ -21,20 +21,13 @@ userIdWS
 
 [inline-code-attrs-start title = 'getGlobalEventLog 예제'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t urlId = U("article-456");
-utility::string_t userIdWS = U("user@example.com");
-int64_t startTime = 1622505600000LL;
-boost::optional<int64_t> endTime = boost::optional<int64_t>(1622592000000LL);
-auto task = api->getGlobalEventLog(tenantId, urlId, userIdWS, startTime, endTime)
-    .then([](pplx::task<std::shared_ptr<GetEventLogResponse>> t){
-        try {
-            auto resp = t.get();
-            auto result = resp ? resp : std::make_shared<GetEventLogResponse>();
-        } catch (const std::exception& e) {
-            (void)e;
-        }
-    });
+api->getGlobalEventLog(
+    U("my-tenant-123"),
+    U("article-456"),
+    U("user@example.com"),
+    1622505600,
+    boost::optional<int64_t>(1625097600)
+).then([](std::shared_ptr<GetEventLogResponse> resp) {
+    (void)resp;
+});
 [inline-code-end]
-
----

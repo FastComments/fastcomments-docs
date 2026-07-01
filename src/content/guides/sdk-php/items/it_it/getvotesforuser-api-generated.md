@@ -1,9 +1,9 @@
 ## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Sì |  |
-| urlId | string | query | Sì |  |
+|------|------|-----------|--------------|-------------|
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
 | userId | string | query | No |  |
 | anonUserId | string | query | No |  |
 
@@ -13,31 +13,33 @@ Restituisce: [`GetVotesForUserResponse`](https://github.com/FastComments/fastcom
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di getVotesForUser'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio getVotesForUser'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configura l'autenticazione della API key: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Decommenta la riga sottostante per impostare il prefisso (es. Bearer) per la API key, se necessario
+// Configura l'autorizzazione della chiave API: api_key
+// Decommenta qui sotto per impostare il prefisso (ad es. Bearer) per la chiave API, se necessario
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
     // Se vuoi usare un client HTTP personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
-    // Questo è opzionale, `GuzzleHttp\Client` sarà usato come predefinito.
+    // Questo è opzionale, verrà usato `GuzzleHttp\Client` come predefinito.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // stringa
 $url_id = 'url_id_example'; // stringa
-$user_id = 'user_id_example'; // stringa
-$anon_user_id = 'anon_user_id_example'; // stringa
+$options = [
+    'user_id' => 'user_id_example', // stringa
+    'anon_user_id' => 'anon_user_id_example', // stringa
+];
+
 
 try {
-    $result = $apiInstance->getVotesForUser($tenant_id, $url_id, $user_id, $anon_user_id);
+    $result = $apiInstance->getVotesForUser($tenant_id, $url_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getVotesForUser: ', $e->getMessage(), PHP_EOL;

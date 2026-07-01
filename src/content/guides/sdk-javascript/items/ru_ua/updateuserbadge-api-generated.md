@@ -1,30 +1,32 @@
-## Параметры
+## Parameters
 
-| Name | Type | Required | Description |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
-| updateUserBadgeParams | UpdateUserBadgeParams | Да |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updateUserBadgeParams | UpdateUserBadgeParams | Yes |  |
 
-## Ответ
+## Response
 
-Возвращает: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptySuccessResponse.ts)
+Возвращает: [`UpdateUserBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateUserBadgeResponse.ts)
 
-## Пример
+## Example
 
 [inline-code-attrs-start title = 'Пример updateUserBadge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-web-tenant-7";
-const id: string = "badge_48f2a9";
-const updateUserBadgeParams: UpdateUserBadgeParams = {
-  label: "Community Champion",
-  description: "Awarded for exceptional moderation and sustained helpful responses",
-  active: true,
-  expiresAt: "2026-12-31T23:59:59Z", // необязательный срок действия (демонстрация)
-  notifyUsers: true,
-  metadata: { awardedBy: "moderator_jane" }
-};
-const result: APIEmptySuccessResponse = await updateUserBadge(tenantId, id, updateUserBadgeParams);
-[inline-code-end]
+async function applyBadge() {
+    const tenantId: string = "acme-corp-tenant";
+    const userId: string = "user-98765";
 
----
+    const params: UpdateUserBadgeParams = {
+        badgeId: "gold-contributor",
+        // пример необязательного поля
+        expiresAt: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
+    };
+
+    const result: UpdateUserBadgeResponse = await updateUserBadge(tenantId, userId, params);
+    console.log(result);
+}
+
+applyBadge();
+[inline-code-end]

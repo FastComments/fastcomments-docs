@@ -1,9 +1,9 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
-|------|------|----------|-------------|
-| commentId | string | Так |  |
-| sso | string | Ні |  |
+| Назва | Тип | Обов’язковий | Опис |
+|------|------|--------------|------|
+| tenantId | string | Так |  |
+| options | GetUserInternalProfileOptions | Ні |  |
 
 ## Відповідь
 
@@ -11,12 +11,13 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад getUserInternalProfile'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUserInternalProfile Приклад'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getUserInternalProfile(commentId = "cmt-2026-00042", sso = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoibXl1c2VyIn0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c")
-if response.isSome:
-  let profile = response.get()
-  discard profile
-[inline-code-end]
+let (profileOpt, httpResp) = client.getUserInternalProfile(
+  tenantId = "my-tenant-123",
+  options = GetUserInternalProfileOptions()
+)
 
----
+if profileOpt.isSome:
+  let profile = profileOpt.get()
+[inline-code-end]

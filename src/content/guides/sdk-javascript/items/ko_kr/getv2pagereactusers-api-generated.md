@@ -1,23 +1,25 @@
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| urlId | string | 예 |  |
-| id | string | 예 |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| id | string | Yes |  |
 
 ## 응답
 
-반환: [`GetV2PageReactUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetV2PageReactUsersResponse.ts)
+Returns: [`GetV2PageReactUsersResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetV2PageReactUsersResponse1.ts)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'getV2PageReactUsers 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getV2PageReactUsers 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "fc_tenant_7b4c9d1";
-const rawUrlId: string | undefined = undefined; // 라우트 매개변수에서 올 수 있음
-const urlId: string = rawUrlId ?? "page-home-9a3f2b";
-const id: string = "user_823b5c";
-
-const response: GetV2PageReactUsersResponse = await getV2PageReactUsers(tenantId, urlId, id);
+async function fetchReactUsers() {
+  const tenantId: string = 'tenant_12345';
+  const urlId: string = 'article-9876';
+  const id: string = 'user_abcde';
+  const response: GetV2PageReactUsersResponse1 = await getV2PageReactUsers(tenantId, urlId, id);
+  console.log(response);
+}
+fetchReactUsers();
 [inline-code-end]

@@ -1,18 +1,13 @@
-req
+запрос
 tenantId
 afterId
 
 ## Параметры
 
-| Name | Type | Required | Description |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
-| afterId | string | Нет |  |
-| limit | int32_t | Нет |  |
-| tags | vector<string | Нет |  |
-| sso | string | Нет |  |
-| isCrawler | bool | Нет |  |
-| includeUserInfo | bool | Нет |  |
+| options | const GetFeedPostsPublicOptions& | Да |  |
 
 ## Ответ
 
@@ -22,22 +17,17 @@ afterId
 
 [inline-code-attrs-start title = 'Пример getFeedPostsPublic'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-boost::optional<utility::string_t> afterId = boost::optional<utility::string_t>(U("post_456"));
-boost::optional<int32_t> limit = boost::optional<int32_t>(25);
-std::vector<utility::string_t> tagList = { U("news"), U("announcement") };
-boost::optional<std::vector<utility::string_t>> tags = boost::optional<std::vector<utility::string_t>>(tagList);
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
-boost::optional<bool> isCrawler = boost::optional<bool>(false);
-boost::optional<bool> includeUserInfo = boost::optional<bool>(true);
+auto options = GetFeedPostsPublicOptions{};
+options.limit = boost::optional<int>{20};
+options.before = boost::optional<utility::string_t>{U("2023-01-01T00:00:00Z")};
 
-api->getFeedPostsPublic(tenantId, afterId, limit, tags, sso, isCrawler, includeUserInfo)
-    .then([](pplx::task<std::shared_ptr<PublicFeedPostsResponse>> t){
-        try {
-            auto resp = t.get();
-            if(!resp) resp = std::make_shared<PublicFeedPostsResponse>();
-        } catch (const std::exception&) {
-            auto fallback = std::make_shared<PublicFeedPostsResponse>();
-        }
-    });
+api->getFeedPostsPublic(U("my-tenant-123"), options).then([](pplx::task<std::shared_ptr<PublicFeedPostsResponse>> task){
+    try{
+        auto response = task.get();
+        auto processed = std::make_shared<PublicFeedPostsResponse>(*response);
+        // Используйте processed по необходимости
+    }catch(const std::exception&){
+        // Обработать ошибку
+    }
+});
 [inline-code-end]

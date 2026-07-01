@@ -1,30 +1,24 @@
 ## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| tenant_id | String | 是 |  |
-| id | String | 是 |  |
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
 
 ## 响应
 
-返回: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
+返回：[`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
 ## 示例
 
 [inline-code-attrs-start title = 'delete_question_result 示例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run_delete() -> Result<(), Error> {
-    let tenant_id: String = "acme-corp-tenant".to_string();
-    let id: String = "news/article-12345/question-67890".to_string();
-
+async fn example() -> Result<(), Error> {
     let params = DeleteQuestionResultParams {
-        tenant_id,
-        id,
+        tenant_id: "acme-corp".to_string(),
+        id: "question-9876".to_string(),
     };
-
-    let response: ApiEmptyResponse = delete_question_result(&configuration, params).await?;
+    delete_question_result(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

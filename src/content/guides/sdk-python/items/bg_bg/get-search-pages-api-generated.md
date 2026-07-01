@@ -1,7 +1,8 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
 | value | string | query | Не |  |
 | sso | string | query | Не |  |
 
@@ -11,31 +12,35 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за get_search_pages'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_search_pages пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetSearchPagesOptions
 from client.models.moderation_page_search_response import ModerationPageSearchResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Задаването на host е по избор и по подразбиране е https://fastcomments.com
-# Вижте configuration.py за списък на всички поддържани параметри на конфигурацията.
+# Определянето на хоста е незадължително и по подразбиране е https://fastcomments.com
+# Вижте configuration.py за списък на всички поддържани конфигурационни параметри.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Влезте в контекст с инстанция на API клиента
+# Въведете контекст с инстанция на API клиента
 with client.ApiClient(configuration) as api_client:
     # Създайте инстанция на API класа
     api_instance = client.ModerationApi(api_client)
-    value = 'value_example' # str |  (по избор)
-    sso = 'sso_example' # str |  (по избор)
+    tenant_id = 'tenant_id_example' # str | 
+    value = 'value_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_search_pages(value=value, sso=sso)
+        api_response = api_instance.get_search_pages(tenant_id, GetSearchPagesOptions(value=value, sso=sso))
         print("The response of ModerationApi->get_search_pages:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling ModerationApi->get_search_pages: %s\n" % e)
 [inline-code-end]
+
+---

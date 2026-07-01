@@ -1,10 +1,9 @@
----
 ## פרמטרים
 
 | שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| domain | string | לא |  |
+| tenantId | string | Yes |  |
+| domain | string | No |  |
 
 ## תגובה
 
@@ -12,14 +11,10 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getDomainConfig'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getDomainConfig'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getDomainConfig(tenantId = "my-tenant-123", domain = "news/top-story-2026")
-if response.isSome:
-  let cfg = response.get()
+let (configOpt, httpResp) = client.getDomainConfig(tenantId = "my-tenant-123", domain = "news.example.com")
+if configOpt.isSome:
+  let cfg = configOpt.get()
   discard cfg
-else:
-  discard httpResponse
 [inline-code-end]
-
----

@@ -1,47 +1,48 @@
-Prošli komentatori na stranici koji trenutno nisu online. Sortirano po displayName.
-Koristite ovo nakon što iscrpite /users/online za prikaz sekcije 'Članovi'.
-Kursor paginacija na commenterName: server prolazi parcijalni indeks {tenantId, urlId, commenterName} od afterName naprijed preko $gt, bez troška $skip.
+Past komentatori na stranici koji NISU trenutno online. Sortirani po displayName.  
+Koristite ovo nakon što iscrpite /users/online za prikaz sekcije „Members“.  
+Kursor paginacija po commenterName: server prolazi kroz parcijalni {tenantId, urlId, commenterName} indeks od afterName naprijed putem $gt, bez troška $skip.
 
-## Parameters
+## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
 | tenantId | string | path | Yes |  |
-| urlId | string | query | Yes | Identifikator URL stranice (očišćen na serverskoj strani). |
-| afterName | string | query | No | Kursor: pošaljite nextAfterName iz prethodnog odgovora. |
-| afterUserId | string | query | No | Tajbrejker za kursor: pošaljite nextAfterUserId iz prethodnog odgovora. Obavezno kada je afterName postavljen tako da se zbog jednakih imena unosi ne izgube. |
+| urlId | string | query | Yes | Identifikator URL‑adrese stranice (čišćen na serveru). |
+| afterName | string | query | No | Kursor: proslijedite nextAfterName iz prethodnog odgovora. |
+| afterUserId | string | query | No | Kursor tiebreaker: proslijedite nextAfterUserId iz prethodnog odgovora. Potrebno kada je postavljen afterName kako se ne bi izostavile stavke pri istim imenima. |
 
-## Response
+## Odgovor
 
-Vraća: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/page_users_offline_response.py)
+Returns: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/page_users_offline_response.py)
 
-## Example
+## Primer
 
-[inline-code-attrs-start title = 'Primjer get_offline_users'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer get_offline_users'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetOfflineUsersOptions
 from client.models.page_users_offline_response import PageUsersOfflineResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://fastcomments.com
-# See configuration.py for a list of all supported configuration parameters.
+# Definisanje hosta je opciono i podrazumijevano je https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih konfiguracionih parametara.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Enter a context with an instance of the API client
+# Uđite u kontekst sa instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # Kreirajte instancu API klase
     api_instance = client.PublicApi(api_client)
-    tenant_id = 'tenant_id_example' # str | 
-    url_id = 'url_id_example' # str | Identifikator URL stranice (očišćen na serverskoj strani).
-    after_name = 'after_name_example' # str | Kursor: pošaljite nextAfterName iz prethodnog odgovora. (opcionalno)
-    after_user_id = 'after_user_id_example' # str | Tajbrejker za kursor: pošaljite nextAfterUserId iz prethodnog odgovora. Obavezno kada je afterName postavljen tako da se zbog jednakih imena unosi ne izgube. (opcionalno)
+    tenant_id = 'tenant_id_example' # str |
+    url_id = 'url_id_example' # str | Identifikator URL‑adrese stranice (čišćen na serveru).
+    after_name = 'after_name_example' # str | Kursor: proslijedite nextAfterName iz prethodnog odgovora. (opcionalno)
+    after_user_id = 'after_user_id_example' # str | Kursor tiebreaker: proslijedite nextAfterUserId iz prethodnog odgovora. Potrebno kada je postavljen afterName kako se ne bi izostavile stavke pri istim imenima. (opcionalno)
 
     try:
-        api_response = api_instance.get_offline_users(tenant_id, url_id, after_name=after_name, after_user_id=after_user_id)
+        api_response = api_instance.get_offline_users(tenant_id, url_id, GetOfflineUsersOptions(after_name=after_name, after_user_id=after_user_id))
         print("The response of PublicApi->get_offline_users:\n")
         pprint(api_response)
     except Exception as e:

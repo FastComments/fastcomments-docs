@@ -1,24 +1,37 @@
 ## Parametri
 
-| Name | Type | Required | Description |
+| Ime | Vrsta | Obvezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| id | string | Da |  |
-| blockFromCommentParams | BlockFromCommentParams | Da |  |
-| userId | string | Ne |  |
-| anonUserId | string | Ne |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| blockFromCommentParams | BlockFromCommentParams | Yes |  |
+| userId | string | No |  |
+| anonUserId | string | No |  |
 
 ## Odgovor
 
-Vrača: [`BlockSuccess`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BlockSuccess.ts)
+Vrne: [`BlockUserFromCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BlockUserFromCommentResponse.ts)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer blockUserFromComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'blockUserFromComment Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-corp';
-const id: string = '5f9a3b2c-1d3e-4b6f-8a9c-12d345ef6789';
-const blockFromCommentParams: BlockFromCommentParams = { reason: 'Repeated spam', durationDays: 30, notifyModerator: true };
-const userId: string = 'user-1024';
-const result: BlockSuccess = await blockUserFromComment(tenantId, id, blockFromCommentParams, userId);
+const tenantId: string = 'tenant_42';
+const commentId: string = 'cmt_20231101';
+
+const blockParams: BlockFromCommentParams = {
+  reason: 'spam',
+  blockDurationHours: 24,
+};
+
+const userId: string = 'user_123'; // neobvezen parameter
+
+const response: BlockUserFromCommentResponse = await blockUserFromComment(
+  tenantId,
+  commentId,
+  blockParams,
+  userId
+);
 [inline-code-end]
+
+---

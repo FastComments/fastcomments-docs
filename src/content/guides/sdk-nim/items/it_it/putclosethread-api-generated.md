@@ -2,8 +2,9 @@
 
 | Nome | Tipo | Obbligatorio | Descrizione |
 |------|------|--------------|-------------|
+| tenantId | string | Sì |  |
 | urlId | string | Sì |  |
-| sso | string | No |  |
+| sso | string = "" | No |  |
 
 ## Risposta
 
@@ -11,14 +12,10 @@ Restituisce: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastco
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di putCloseThread'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putCloseThread Esempio'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.putCloseThread(urlId = "news/article-title", sso = "")
-if response.isSome:
-  let apiResp = response.get()
-  echo "Thread closed successfully:", $apiResp
-else:
-  echo "Failed to close thread, HTTP response:", $httpResponse
+let (respOpt, httpResp) = client.putCloseThread(tenantId = "my-tenant-123", urlId = "news/fastcomments-integration", sso = "")
+if respOpt.isSome:
+  let empty = respOpt.get()
+  echo "Thread successfully closed"
 [inline-code-end]
-
----

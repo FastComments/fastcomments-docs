@@ -1,12 +1,12 @@
 ## Paramètres
 
-| Name | Type | Required | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
 | tenantId | string | Oui |  |
 | commentIds | string | Non |  |
-| sso | string | Non |  |
+| sso | string = "" | Non |  |
 
-## Response
+## Réponse
 
 Renvoie : [`Option[CheckBlockedCommentsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_check_blocked_comments_response.nim)
 
@@ -14,14 +14,13 @@ Renvoie : [`Option[CheckBlockedCommentsResponse]`](https://github.com/FastCommen
 
 [inline-code-attrs-start title = 'Exemple de checkedCommentsForBlocked'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.checkedCommentsForBlocked(
+let (maybeResponse, httpResponse) = client.checkedCommentsForBlocked(
   tenantId = "my-tenant-123",
-  commentIds = "",
+  commentIds = "cmt-1,cmt-2",
   sso = ""
 )
-if response.isSome:
-  let blockedResp = response.get()
-  echo "Received blocked comments response: ", blockedResp
-else:
-  echo "No response body; HTTP status: ", $httpResponse.status
+
+if maybeResponse.isSome:
+  let response = maybeResponse.get()
+  discard response
 [inline-code-end]

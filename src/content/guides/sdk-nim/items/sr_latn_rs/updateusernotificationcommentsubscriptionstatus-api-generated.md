@@ -1,14 +1,14 @@
-Omogući ili onemogući obaveštenja za određeni komentar.
+Enable or disable notifications for a specific comment.
 
-## Parametri
+## Parameters
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| tenantId | string | Da |  |
-| notificationId | string | Ne |  |
-| optedInOrOut | string | Ne |  |
-| commentId | string | Da |  |
-| sso | string | Ne |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| notificationId | string | No |  |
+| optedInOrOut | string | No |  |
+| commentId | string | Yes |  |
+| sso | string = "" | No |  |
 
 ## Odgovor
 
@@ -16,19 +16,16 @@ Vraća: [`Option[UpdateUserNotificationCommentSubscriptionStatusResponse]`](http
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer updateUserNotificationCommentSubscriptionStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserNotificationCommentSubscriptionStatus Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateUserNotificationCommentSubscriptionStatus(
+let (optResp, httpResp) = client.updateUserNotificationCommentSubscriptionStatus(
   tenantId = "my-tenant-123",
-  notificationId = "",
-  optedInOrOut = "",
-  commentId = "cmt-789",
+  notificationId = "notif-456",
+  optedInOrOut = "opted-in",
+  commentId = "comment-789",
   sso = ""
 )
 
-if response.isSome:
-  let updateResp = response.get()
-  echo "Subscription update response: ", updateResp
+if optResp.isSome:
+  let resp = optResp.get()
 [inline-code-end]
-
----

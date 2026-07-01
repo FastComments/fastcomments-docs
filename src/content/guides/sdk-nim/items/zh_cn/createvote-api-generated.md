@@ -1,33 +1,28 @@
 ## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | commentId | string | 是 |  |
 | direction | string | 否 |  |
-| userId | string | 否 |  |
-| anonUserId | string | 否 |  |
+| options | CreateVoteOptions | 否 |  |
 
 ## 响应
 
-返回: [`Option[VoteResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_vote_response.nim)
+返回：[`Option[VoteResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_vote_response.nim)
 
 ## 示例
 
 [inline-code-attrs-start title = 'createVote 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.createVote(
+let (voteOpt, httpResp) = client.createVote(
   tenantId = "my-tenant-123",
-  commentId = "cmt-987654",
+  commentId = "comment-7890",
   direction = "up",
-  userId = "user-42",
-  anonUserId = ""
+  options = CreateVoteOptions()
 )
-if response.isSome:
-  let vote = response.get()
-  echo "Vote created:", vote
-else:
-  echo "No vote returned"
-[inline-code-end]
 
----
+if voteOpt.isSome:
+  let vote = voteOpt.get()
+  echo vote
+[inline-code-end]

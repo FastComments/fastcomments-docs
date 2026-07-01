@@ -1,16 +1,26 @@
-### PyPI
+### Install from GitHub
+
+Install directly from a release tag (recommended, fully reproducible):
 
 ```bash
-pip install fastcomments
+pip install git+https://github.com/fastcomments/fastcomments-python.git@v3.0.0
 ```
 
-### Садржај библиотеке
+Pin the tag rather than a branch so builds are deterministic. The same form works in `requirements.txt`:
 
-Ова библиотека садржи два модула: генерисани API клијент и основну Python библиотеку која садржи ручно написане помоћне функције да олакшају рад са API-јем, укључујући подршку за SSO.
+```
+fastcomments @ git+https://github.com/fastcomments/fastcomments-python.git@v3.0.0
+```
 
-- [Документација библиотеке API клијента](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
-- [Документација основне библиотеке, укључујући примере за SSO](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
+Each tagged [GitHub Release](https://github.com/fastcomments/fastcomments-python/releases) also has a built wheel attached if you prefer to install a binary artifact directly.
 
-### Јавни и заштићени API-ји
+### Library Contents
 
-За API клијент постоје три класе, `DefaultApi`, `PublicApi`, и `ModerationApi`. `DefaultApi` садржи методе који захтевају ваш API кључ, а `PublicApi` садржи методе које се могу позвати директно из прегледача/мобилног уређаја/итд. без аутентификације. `ModerationApi` покреће модераторску контролну таблу и садржи методе за модерацију коментара (листа, бројање, претрага, записи, извоз), акције модерације (уклањање/враћање, означавање, подешавање статуса за преглед/спам/одобрење, гласови, поновно отварање/затварање нити), забране (забрана коментарисања, поништавање, прегледи пре забране, статус/поставке забране, број забрањених корисника), и значке и поверење (додели/уклони значку, ручно додате значке, добијање/постављање фактора поверења, унутрашњи кориснички профил). Сваки метод `ModerationApi` прихвата `sso` параметар тако да се може позвати у име модератора који је аутентификован преко SSO.
+This library contains two modules: the generated API client and the core Python library which contains hand-written utilities to make working with the API easier, including SSO support.
+
+- [API Client Library Docs](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
+- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
+
+### Public vs Secured APIs
+
+For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains methods that can be made directly from a browser/mobile device/etc without authentication. The `ModerationApi` provides an extensive suite of live and fast moderation APIs. Every `ModerationApi` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.

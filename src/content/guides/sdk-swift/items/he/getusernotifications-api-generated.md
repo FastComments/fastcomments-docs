@@ -2,32 +2,32 @@
 
 | שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | כן |  |
-| urlId | string | query | לא | משמש כדי לקבוע האם הדף הנוכחי מנוי. |
-| pageSize | integer | query | לא |  |
-| afterId | string | query | לא |  |
-| includeContext | boolean | query | לא |  |
-| afterCreatedAt | integer | query | לא |  |
-| unreadOnly | boolean | query | לא |  |
-| dmOnly | boolean | query | לא |  |
-| noDm | boolean | query | לא |  |
-| includeTranslations | boolean | query | לא |  |
-| includeTenantNotifications | boolean | query | לא |  |
-| sso | string | query | לא |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | No | משמש לקביעת האם הדף הנוכחי מנוי. |
+| pageSize | integer | query | No |  |
+| afterId | string | query | No |  |
+| includeContext | boolean | query | No |  |
+| afterCreatedAt | integer | query | No |  |
+| unreadOnly | boolean | query | No |  |
+| dmOnly | boolean | query | No |  |
+| noDm | boolean | query | No |  |
+| includeTranslations | boolean | query | No |  |
+| includeTenantNotifications | boolean | query | No |  |
+| sno | string | query | No |  |
 
 ## תגובה
 
-מחזיר: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetMyNotificationsResponse.swift)
+Returns: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetMyNotificationsResponse.swift)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getUserNotifications'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getUserNotifications'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// דוגמאות הקוד הבאות עדיין בבטא. במקרה של בעיה, אנא דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// הדגמות הקוד הבאות עדיין בגרסת בטא. עבור כל בעיה, אנא דווח באמצעות http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let urlId = "urlId_example" // String | משמש כדי לקבוע האם הדף הנוכחי מנוי. (אופציונלי)
+let urlId = "urlId_example" // String | משמש לקביעת האם הדף הנוכחי מנוי. (אופציונלי)
 let pageSize = 987 // Int |  (אופציונלי)
 let afterId = "afterId_example" // String |  (אופציונלי)
 let includeContext = true // Bool |  (אופציונלי)
@@ -39,7 +39,7 @@ let includeTranslations = true // Bool |  (אופציונלי)
 let includeTenantNotifications = true // Bool |  (אופציונלי)
 let sso = "sso_example" // String |  (אופציונלי)
 
-PublicAPI.getUserNotifications(tenantId: tenantId, urlId: urlId, pageSize: pageSize, afterId: afterId, includeContext: includeContext, afterCreatedAt: afterCreatedAt, unreadOnly: unreadOnly, dmOnly: dmOnly, noDm: noDm, includeTranslations: includeTranslations, includeTenantNotifications: includeTenantNotifications, sso: sso) { (response, error) in
+PublicAPI.getUserNotifications(tenantId: tenantId, options: PublicAPI.GetUserNotificationsOptions(urlId: urlId, pageSize: pageSize, afterId: afterId, includeContext: includeContext, afterCreatedAt: afterCreatedAt, unreadOnly: unreadOnly, dmOnly: dmOnly, noDm: noDm, includeTranslations: includeTranslations, includeTenantNotifications: includeTenantNotifications, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

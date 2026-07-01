@@ -1,23 +1,23 @@
 ## Paramètres
 
-| Name | Type | Requis | Description |
-|------|------|--------|-------------|
+| Nom | Type | Obligatoire | Description |
+|------|------|----------|-------------|
 | tenantId | string | Oui |  |
 | id | string | Non |  |
-| userId | string | Non |  |
+| userId | string = "" | Non |  |
 
 ## Réponse
 
-Renvoie: [`Option[GetTicketResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_ticket_response.nim)
+Renvoie : [`Option[GetTicketResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_ticket_response.nim)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getTicket'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getTicket'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTicket(tenantId = "my-tenant-123", id = "ticket-456", userId = "user-789")
-if response.isSome:
-  let ticket = response.get()
-  echo "Got ticket:", ticket
-else:
-  echo "No ticket returned; HTTP response:", httpResponse
+let (ticketOpt, httpResp) = client.getTicket(tenantId = "my-tenant-123", id = "ticket-456", userId = "")
+if ticketOpt.isSome:
+  let ticket = ticketOpt.get()
+  discard ticket
 [inline-code-end]
+
+---

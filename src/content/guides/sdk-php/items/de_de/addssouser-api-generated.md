@@ -6,7 +6,7 @@
 
 ## Antwort
 
-Gibt zurück: [`AddSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AddSSOUserAPIResponse.php)
+Rückgabe: [`AddSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AddSSOUserAPIResponse.php)
 
 ## Beispiel
 
@@ -16,9 +16,9 @@ Gibt zurück: [`AddSSOUserAPIResponse`](https://github.com/FastComments/fastcomm
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// API-Schlüssel-Authentifizierung konfigurieren: api_key
+// API-Schlüssel-Autorisierung konfigurieren: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Auskommentieren Sie die folgende Zeile, um ein Präfix (z. B. Bearer) für den API-Schlüssel einzurichten, falls erforderlich
+// Kommentieren Sie die untenstehende Zeile aus, um einen Präfix (z. B. Bearer) für den API-Schlüssel einzurichten, falls erforderlich
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
@@ -28,8 +28,10 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $create_apisso_user_data = new \FastComments\Client\Model\CreateAPISSOUserData(); // \FastComments\Client\Model\CreateAPISSOUserData
+
 
 try {
     $result = $apiInstance->addSSOUser($tenant_id, $create_apisso_user_data);

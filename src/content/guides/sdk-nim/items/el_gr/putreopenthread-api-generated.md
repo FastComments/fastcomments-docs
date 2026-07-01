@@ -1,11 +1,12 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Απαραίτητο | Περιγραφή |
-|------|------|----------|-------------|
-| urlId | string | Ναι |  |
-| sso | string | Όχι |  |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+|------|------|------------|-----------|
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| sso | string = "" | No |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
@@ -13,12 +14,13 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα putReopenThread'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.putReopenThread(urlId = "news/2026-election-analysis", sso = "")
-if response.isSome:
-  let apiResp = response.get()
-  echo "Reopen succeeded, response: ", apiResp
-else:
-  echo "Reopen failed, HTTP status: ", httpResponse.status
-[inline-code-end]
+let (apiRespOpt, httpResp) = client.putReopenThread(
+  tenantId = "my-tenant-123",
+  urlId = "news/article-title",
+  sso = ""
+)
 
----
+if apiRespOpt.isSome:
+  let emptyResp = apiRespOpt.get()
+  discard
+[inline-code-end]

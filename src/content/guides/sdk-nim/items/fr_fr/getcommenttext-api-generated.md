@@ -1,11 +1,10 @@
 ## Paramètres
 
-| Nom | Type | Obligatoire | Description |
+| Nom | Type | Requis | Description |
 |------|------|----------|-------------|
-| tenantId | string | Oui |  |
-| commentId | string | Oui |  |
-| editKey | string | Non |  |
-| sso | string | Non |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| options | GetCommentTextOptions | No |  |
 
 ## Réponse
 
@@ -13,15 +12,16 @@ Retourne : [`Option[PublicAPIGetCommentTextResponse]`](https://github.com/FastCo
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getCommentText'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getCommentText'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getCommentText(tenantId = "my-tenant-123", commentId = "cmt-987654321", editKey = "", sso = "")
+let (maybeResponse, httpResponse) = client.getCommentText(
+  tenantId = "my-tenant-123",
+  commentId = "comment-456",
+  options = GetCommentTextOptions()
+)
 
-if response.isSome:
-  let commentTextResp = response.get()
-  echo commentTextResp
-else:
-  echo "No comment text returned"
+if maybeResponse.isSome:
+  let response = maybeResponse.get()
 [inline-code-end]
 
 ---

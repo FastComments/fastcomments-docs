@@ -1,13 +1,10 @@
 ## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | createCommentParams | seq[CreateCommentParams] | 否 |  |
-| isLive | bool | 否 |  |
-| doSpamCheck | bool | 否 |  |
-| sendEmails | bool | 否 |  |
-| populateNotifications | bool): (Option[seq[SaveCommentsBulkResponse]] | 否 |  |
+| options | SaveCommentsBulkOptions): (Option[seq[SaveCommentsBulkResponse]] | 否 |  |
 | id | string | 否 |  |
 | fromName | string | 否 |  |
 
@@ -22,19 +19,11 @@
 let (response, httpResponse) = client.saveCommentsBulk(
   tenantId = "my-tenant-123",
   createCommentParams = @[],
-  isLive = false,
-  doSpamCheck = false,
-  sendEmails = false,
-  populateNotifications = false,
+  options = SaveCommentsBulkOptions(),
   id = "",
   fromName = ""
 )
 
 if response.isSome:
-  let apiResp = response.get()
-  echo "Bulk save succeeded, tenant:", " my-tenant-123"
-else:
-  echo "Bulk save returned no API response"
+  let result = response.get()
 [inline-code-end]
-
----

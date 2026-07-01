@@ -1,9 +1,10 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαραίτητο | Περιγραφή |
-|------|------|----------|----------|-------------|
-| batchJobId | string | query | No |  |
-| sso | string | query | No |  |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|------------|-----------|
+| tenantId | string | query | Ναι |  |
+| batchJobId | string | query | Όχι |  |
+| sso | string | query | Όχι |  |
 
 ## Απόκριση
 
@@ -14,26 +15,28 @@
 [inline-code-attrs-start title = 'Παράδειγμα get_api_export_status'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetApiExportStatusOptions
 from client.models.moderation_export_status_response import ModerationExportStatusResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Ορισμός του host είναι προαιρετικός και προεπιλεγμένος στο https://fastcomments.com
+# Ο καθορισμός του host είναι προαιρετικός και η προεπιλογή είναι https://fastcomments.com
 # Δείτε το configuration.py για μια λίστα με όλες τις υποστηριζόμενες παραμέτρους διαμόρφωσης.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Εισέλθετε σε ένα context με ένα instance του ApiClient
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Δημιουργήστε ένα instance της κλάσης API
+    # Δημιουργία ενός στιγμιότυπου της κλάσης API
     api_instance = client.ModerationApi(api_client)
-    batch_job_id = 'batch_job_id_example' # str | (προαιρετικό)
-    sso = 'sso_example' # str | (προαιρετικό)
+    tenant_id = 'tenant_id_example' # str | 
+    batch_job_id = 'batch_job_id_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_api_export_status(batch_job_id=batch_job_id, sso=sso)
+        api_response = api_instance.get_api_export_status(tenant_id, GetApiExportStatusOptions(batch_job_id=batch_job_id, sso=sso))
         print("The response of ModerationApi->get_api_export_status:\n")
         pprint(api_response)
     except Exception as e:

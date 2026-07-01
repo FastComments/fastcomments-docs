@@ -1,30 +1,28 @@
-## Параметри
+Upload and resize an image
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| file | string | Не |  |
-| sizePreset | SizePreset | Не |  |
-| urlId | string | Да |  |
+## Parameters
 
-## Одговор
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| file | string | No |  |
+| options | UploadImageOptions | No |  |
 
-Враћа: [`Option[UploadImageResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_upload_image_response.nim)
+## Response
 
-## Пример
+Returns: [`Option[UploadImageResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_upload_image_response.nim)
 
-[inline-code-attrs-start title = 'uploadImage Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+## Example
+
+[inline-code-attrs-start title = 'uploadImage Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.uploadImage(
+let (uploadResult, httpResponse) = client.uploadImage(
   tenantId = "my-tenant-123",
-  file = "assets/images/comment-avatar.jpg",
-  sizePreset = SizePreset.small,
-  urlId = "news/article-2025-11-22"
+  file = "images/avatar.jpg",
+  options = UploadImageOptions()
 )
-if response.isSome:
-  let upload = response.get()
-  echo "Uploaded image id: ", upload.id
-  echo "Uploaded image url: ", upload.url
-[inline-code-end]
 
----
+if uploadResult.isSome:
+  let result = uploadResult.get()
+  # koristi rezultat po potrebi
+[inline-code-end]

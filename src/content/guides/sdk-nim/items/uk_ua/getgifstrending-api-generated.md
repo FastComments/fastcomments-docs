@@ -1,11 +1,9 @@
 ## Параметри
 
-| Назва | Тип | Обов'язкове | Опис |
+| Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| locale | string | Ні |  |
-| rating | string | Ні |  |
-| page | float64 | Ні |  |
+| tenantId | string | Yes |  |
+| options | GetGifsTrendingOptions | No |  |
 
 ## Відповідь
 
@@ -15,10 +13,12 @@
 
 [inline-code-attrs-start title = 'Приклад getGifsTrending'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getGifsTrending(tenantId = "my-tenant-123",
-  locale = "en-US",
-  rating = "pg-13",
-  page = 1.0)
-if response.isSome:
-  let trending = response.get()
+let (maybeResponse, httpResponse) = client.getGifsTrending(
+  tenantId = "my-tenant-123",
+  options = GetGifsTrendingOptions()
+)
+
+if maybeResponse.isSome:
+  let gifs = maybeResponse.get()
+  echo gifs
 [inline-code-end]

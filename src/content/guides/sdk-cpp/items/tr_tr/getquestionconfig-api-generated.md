@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tür | Gerekli | Açıklama |
@@ -8,29 +7,24 @@
 
 ## Yanıt
 
-Dönüş değeri: [`GetQuestionConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetQuestionConfigResponse.h)
+Döndürür: [`GetQuestionConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetQuestionConfigResponse.h)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'getQuestionConfig Örneği'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t questionId = U("qstn-456");
-boost::optional<utility::string_t> ifNoneMatch = U("W/\"5a2f3c\"");
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto questionId = utility::conversions::to_string_t("question-456");
+
 api->getQuestionConfig(tenantId, questionId)
-.then([ifNoneMatch](pplx::task<std::shared_ptr<GetQuestionConfigResponse>> t){
-    try {
-        auto resp = t.get();
-        if (ifNoneMatch) {
-            auto etag = *ifNoneMatch;
-            (void)etag;
+    .then([](pplx::task<std::shared_ptr<GetQuestionConfigResponse>> task) {
+        try {
+            auto response = task.get();
+            // Gerekli olduğu gibi yanıtı kullan
+        } catch (const std::exception&) {
+            // Hata işleyin
         }
-        auto cfg = resp ? resp : std::make_shared<GetQuestionConfigResponse>();
-        (void)cfg;
-    } catch (const std::exception &ex) {
-        (void)ex;
-    }
-});
+    });
 [inline-code-end]
 
 ---

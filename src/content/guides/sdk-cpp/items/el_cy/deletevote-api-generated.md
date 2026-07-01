@@ -1,12 +1,12 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Ναι |  |
-| id | string | Ναι |  |
-| editKey | string | Όχι |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| editKey | string | No |  |
 
-## Απάντηση
+## Response
 
 Επιστρέφει: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/VoteDeleteResponse.h)
 
@@ -14,18 +14,18 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα deleteVote'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t id = U("vote-987654321");
-boost::optional<utility::string_t> editKey = boost::optional<utility::string_t>(U("edit-key-abc123"));
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto voteId = utility::conversions::to_string_t("vote-9876");
+boost::optional<utility::string_t> editKey = utility::conversions::to_string_t("edit-abc123");
 
-api->deleteVote(tenantId, id, editKey).then([](pplx::task<std::shared_ptr<VoteDeleteResponse>> t){
+api->deleteVote(tenantId, voteId, editKey).then([](pplx::task<std::shared_ptr<VoteDeleteResponse>> task) {
     try {
-        auto resp = t.get();
-        auto finalResp = resp ? resp : std::make_shared<VoteDeleteResponse>();
-        (void)finalResp;
-    } catch (...) {
-        auto errorResp = std::make_shared<VoteDeleteResponse>();
-        (void)errorResp;
+        auto response = task.get();
+        // Επεξεργασία της απάντησης όπως απαιτείται
+    } catch (const std::exception&) {
+        // Διαχείριση σφάλματος
     }
 });
 [inline-code-end]
+
+---

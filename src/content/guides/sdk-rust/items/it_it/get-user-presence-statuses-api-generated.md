@@ -2,9 +2,9 @@
 
 | Nome | Tipo | Obbligatorio | Descrizione |
 |------|------|--------------|-------------|
-| tenant_id | String | Sì |  |
-| url_id_ws | String | Sì |  |
-| user_ids | String | Sì |  |
+| tenant_id | String | Yes |  |
+| url_id_ws | String | Yes |  |
+| user_ids | String | Yes |  |
 
 ## Risposta
 
@@ -12,16 +12,17 @@ Restituisce: [`GetUserPresenceStatusesResponse`](https://github.com/FastComments
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di get_user_presence_statuses'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio get_user_presence_statuses'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let cfg: &configuration::Configuration = &configuration;
-let params: GetUserPresenceStatusesParams = GetUserPresenceStatusesParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    url_id_ws: "news/article".to_string(),
-    user_ids: "user-123,user-456".to_string(),
-    include_offline: Some(false),
-};
-let response: GetUserPresenceStatusesResponse = get_user_presence_statuses(cfg, params).await?;
+async fn run() -> Result<(), Error> {
+    let params = GetUserPresenceStatusesParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        url_id_ws: "news/article".to_string(),
+        user_ids: "user123,user456".to_string(),
+    };
+    let _response = get_user_presence_statuses(&configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]
 
 ---

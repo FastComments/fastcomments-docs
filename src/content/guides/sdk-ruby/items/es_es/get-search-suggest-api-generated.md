@@ -1,7 +1,8 @@
 ## Parámetros
 
 | Nombre | Tipo | Ubicación | Obligatorio | Descripción |
-|------|------|----------|----------|-------------|
+|--------|------|-----------|-------------|-------------|
+| tenantId | string | query | Sí |  |
 | text-search | string | query | No |  |
 | sso | string | query | No |  |
 
@@ -17,14 +18,15 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # Cadena | 
 opts = {
-  text_search: 'text_search_example', # String | 
-  sso: 'sso_example' # String | 
+  text_search: 'text_search_example', # Cadena | 
+  sso: 'sso_example' # Cadena | 
 }
 
 begin
   
-  result = api_instance.get_search_suggest(opts)
+  result = api_instance.get_search_suggest(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_search_suggest: #{e}"

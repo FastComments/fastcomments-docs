@@ -1,13 +1,14 @@
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
-| text-search | string | query | Ne |  |
-| byIPFromComment | string | query | Ne |  |
-| filters | string | query | Ne |  |
-| searchFilters | string | query | Ne |  |
-| sorts | string | query | Ne |  |
-| sso | string | query | Ne |  |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sorts | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -15,7 +16,7 @@ Vraća: [`ModerationExportResponse`](https://github.com/FastComments/fastcomment
 
 ## Primer
 
-[inline-code-attrs-start title = 'PostApiExport Primer'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer PostApiExport'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -27,16 +28,17 @@ import (
 )
 
 func main() {
-	textSearch := "textSearch_example" // string |  (opciono)
-	byIPFromComment := "byIPFromComment_example" // string |  (opciono)
-	filters := "filters_example" // string |  (opciono)
-	searchFilters := "searchFilters_example" // string |  (opciono)
-	sorts := "sorts_example" // string |  (opciono)
-	sso := "sso_example" // string |  (opciono)
+	tenantId := "tenantId_example" // string | 
+	textSearch := "textSearch_example" // string |  (optional)
+	byIPFromComment := "byIPFromComment_example" // string |  (optional)
+	filters := "filters_example" // string |  (optional)
+	searchFilters := "searchFilters_example" // string |  (optional)
+	sorts := "sorts_example" // string |  (optional)
+	sso := "sso_example" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostApiExport(context.Background()).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).Sorts(sorts).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostApiExport(context.Background()).TenantId(tenantId).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filters(filters).SearchFilters(searchFilters).Sorts(sorts).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostApiExport``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

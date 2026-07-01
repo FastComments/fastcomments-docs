@@ -4,25 +4,25 @@ afterId
 
 ## Parametreler
 
-| Ad | Tür | Konum | Zorunlu | Açıklama |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Evet |  |
-| afterId | string | query | Hayır |  |
-| limit | integer | query | Hayır |  |
-| tags | array | query | Hayır |  |
-| sso | string | query | Hayır |  |
-| isCrawler | boolean | query | Hayır |  |
-| includeUserInfo | boolean | query | Hayır |  |
+| tenantId | string | path | Yes |  |
+| afterId | string | query | No |  |
+| limit | integer | query | No |  |
+| tags | array | query | No |  |
+| sso | string | query | No |  |
+| isCrawler | boolean | query | No |  |
+| includeUserInfo | boolean | query | No |  |
 
 ## Yanıt
 
-Dönüş: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PublicFeedPostsResponse.swift)
+Döndürür: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PublicFeedPostsResponse.swift)
 
 ## Örnek
 
-[inline-code-attrs-start title = 'getFeedPostsPublic Örnek'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getFeedPostsPublic Örneği'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Aşağıdaki kod örnekleri hâlâ beta aşamasındadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new üzerinden bildirin
+// Aşağıdaki kod örnekleri hâlâ beta sürümündedir. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new adresinden bildirin
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -33,7 +33,7 @@ let sso = "sso_example" // String |  (isteğe bağlı)
 let isCrawler = true // Bool |  (isteğe bağlı)
 let includeUserInfo = true // Bool |  (isteğe bağlı)
 
-PublicAPI.getFeedPostsPublic(tenantId: tenantId, afterId: afterId, limit: limit, tags: tags, sso: sso, isCrawler: isCrawler, includeUserInfo: includeUserInfo) { (response, error) in
+PublicAPI.getFeedPostsPublic(tenantId: tenantId, options: PublicAPI.GetFeedPostsPublicOptions(afterId: afterId, limit: limit, tags: tags, sso: sso, isCrawler: isCrawler, includeUserInfo: includeUserInfo)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -44,3 +44,5 @@ PublicAPI.getFeedPostsPublic(tenantId: tenantId, afterId: afterId, limit: limit,
     }
 }
 [inline-code-end]
+
+---

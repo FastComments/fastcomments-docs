@@ -1,11 +1,12 @@
----
 ## パラメータ
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
+| 名前 | タイプ | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| commentId | string | パス | はい |  |
-| reviewed | boolean | クエリ | いいえ |  |
-| sso | string | クエリ | いいえ |  |
+| tenantId | string | query | はい |  |
+| commentId | string | path | はい |  |
+| reviewed | boolean | query | いいえ |  |
+| broadcastId | string | query | いいえ |  |
+| sso | string | query | いいえ |  |
 
 ## レスポンス
 
@@ -25,20 +26,20 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
-	reviewed := true // bool |  (任意)
-	sso := "sso_example" // string |  (任意)
+	reviewed := true // bool |  (オプション)
+	broadcastId := "broadcastId_example" // string |  (オプション)
+	sso := "sso_example" // string |  (オプション)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostSetCommentReviewStatus(context.Background(), commentId).Reviewed(reviewed).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostSetCommentReviewStatus(context.Background(), commentId).TenantId(tenantId).Reviewed(reviewed).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostSetCommentReviewStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSetCommentReviewStatus`: APIEmptyResponse
+	// `PostSetCommentReviewStatus` のレスポンス: APIEmptyResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostSetCommentReviewStatus`: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -2,7 +2,9 @@
 
 | Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
 | commentId | string | path | Да |  |
+| broadcastId | string | query | Нет |  |
 | sso | string | query | Нет |  |
 
 ## Ответ
@@ -11,35 +13,36 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример post_adjust_comment_votes'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_adjust_comment_votes Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import PostAdjustCommentVotesOptions
 from client.models.adjust_comment_votes_params import AdjustCommentVotesParams
 from client.models.adjust_votes_response import AdjustVotesResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Указание host необязательно и по умолчанию равно https://fastcomments.com
-# См. configuration.py для списка всех поддерживаемых параметров конфигурации.
+# Определение хоста необязательно и по умолчанию https://fastcomments.com
+# См. файл configuration.py для списка всех поддерживаемых параметров конфигурации.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Откройте контекст с экземпляром API-клиента
+# Войдите в контекст с экземпляром клиента API
 with client.ApiClient(configuration) as api_client:
     # Создайте экземпляр класса API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     adjust_comment_votes_params = client.AdjustCommentVotesParams() # AdjustCommentVotesParams | 
-    sso = 'sso_example' # str |  (optional)
+    broadcast_id = 'broadcast_id_example' # str |  (необязательно)
+    sso = 'sso_example' # str |  (необязательно)
 
     try:
-        api_response = api_instance.post_adjust_comment_votes(comment_id, adjust_comment_votes_params, sso=sso)
+        api_response = api_instance.post_adjust_comment_votes(tenant_id, comment_id, adjust_comment_votes_params, PostAdjustCommentVotesOptions(broadcast_id=broadcast_id, sso=sso))
         print("The response of ModerationApi->post_adjust_comment_votes:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling ModerationApi->post_adjust_comment_votes: %s\n" % e)
 [inline-code-end]
-
----

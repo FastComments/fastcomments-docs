@@ -1,6 +1,6 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | skip | float64 | Не |  |
@@ -13,12 +13,10 @@
 
 [inline-code-attrs-start title = 'Пример за getModerators'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getModerators(tenantId = "my-tenant-123", skip = 0.0)
-if response.isSome:
-  let moderators = response.get()
-  echo "Received moderators response:", moderators
-else:
-  echo "No moderators returned"
+let (moderatorsOpt, httpResp) = client.getModerators(tenantId = "my-tenant-123", skip = 0.0)
+if moderatorsOpt.isSome:
+  let moderators = moderatorsOpt.get()
+  echo moderators
 [inline-code-end]
 
 ---

@@ -1,9 +1,9 @@
----
 ## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| sso | string | query | Ні |  |
+| Назва | Тип | Розташування | Обов'язково | Опис |
+|------|------|--------------|--------------|------|
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Відповідь
 
@@ -13,6 +13,7 @@
 
 [inline-code-attrs-start title = 'Приклад getManualBadges'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
+// Import classes:
 // Імпорт класів:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
@@ -26,14 +27,16 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
+    String tenantId = "tenantId_example"; // String | 
     String sso = "sso_example"; // String | 
     try {
-      GetTenantManualBadgesResponse result = apiInstance.getManualBadges()
+      GetTenantManualBadgesResponse result = apiInstance.getManualBadges(tenantId)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ModerationApi#getManualBadges");
+      System.err.println("Exception when calling ModerationApi#getManualBadges"); // Виняток під час виклику ModerationApi#getManualBadges
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -42,5 +45,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

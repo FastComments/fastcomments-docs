@@ -1,9 +1,9 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | חובה | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | כן |  |
-| domain | string | path | כן |  |
+| tenantId | string | query | Yes |  |
+| domain | string | path | Yes |  |
 
 ## תגובה
 
@@ -17,20 +17,21 @@
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// הגדר הרשאת מפתח API: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// הסר את ההערה למטה כדי להגדיר קידומת (למשל Bearer) למפתח ה-API, אם יש צורך
+// הגדרת הרשאת מפתח API: api_key
+// בטל את ההערה מהשורה שלמטה כדי להגדיר קידומת (למשל, Bearer) למפתח ה-API, אם נדרש
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // אם ברצונך להשתמש בלקוח HTTP מותאם אישית, העבר את הלקוח שלך שמממש את `GuzzleHttp\ClientInterface`.
-    // זה אופציונלי, `GuzzleHttp\Client` ישמש כברירת מחדל.
+    // אם ברצונך להשתמש בלקוח HTTP מותאם, העבר את הלקוח שלך שמממש `GuzzleHttp\ClientInterface`.
+    // זה אופציונלי, `GuzzleHttp\Client` ישמש ברירת מחדל.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // מחרוזת
-$domain = 'domain_example'; // מחרוזת
+
+$tenant_id = 'tenant_id_example'; // string
+$domain = 'domain_example'; // string
+
 
 try {
     $result = $apiInstance->getDomainConfig($tenant_id, $domain);

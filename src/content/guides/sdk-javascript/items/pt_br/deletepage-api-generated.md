@@ -1,8 +1,7 @@
----
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-----------|
+|------|------|-------------|-----------|
 | tenantId | string | Sim |  |
 | id | string | Sim |  |
 
@@ -10,4 +9,15 @@
 
 Retorna: [`DeletePageAPIResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeletePageAPIResponse.ts)
 
----
+## Exemplo
+
+[inline-code-attrs-start title = 'Exemplo deletePage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+async function example() {
+    const tenantId: string = "acme-corp-001";
+    const pageId: string = "page-987654321";
+    const result: DeletePageAPIResponse = await deletePage(tenantId, pageId);
+    console.log(result);
+}
+example();
+[inline-code-end]

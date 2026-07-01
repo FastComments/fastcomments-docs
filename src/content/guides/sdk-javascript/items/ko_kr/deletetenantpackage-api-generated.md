@@ -1,23 +1,25 @@
-## 매개변수
+## Parameters
 
-| 이름 | 유형 | 필수 | 설명 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| id | string | 예 |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
-## 응답
+## Response
 
-반환: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Returns: [`DeleteTenantPackageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteTenantPackageResponse.ts)
 
-## 예제
+## Example
 
-[inline-code-attrs-start title = 'deleteTenantPackage 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteTenantPackage 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'f47ac10b-58cc-4372-a567-0e02b2c3d479';
-const packageId: string = 'pkg_prod_delete_2026-06-19';
-const onComplete: ((status?: APIStatus) => void) | undefined = undefined;
-const response: APIEmptyResponse = await deleteTenantPackage(tenantId, packageId);
-onComplete?.();
-[inline-code-end]
+async function removeTenantPackage(): Promise<void> {
+  const tenantId: string = "tenant_12345";
+  const packageId: string = "pkg_67890";
 
----
+  const result: DeleteTenantPackageResponse = await deleteTenantPackage(tenantId, packageId);
+  // 필요에 따라 결과 사용
+}
+
+removeTenantPackage();
+[inline-code-end]

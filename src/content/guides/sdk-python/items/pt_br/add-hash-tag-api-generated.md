@@ -1,8 +1,8 @@
 ## Parâmetros
 
 | Nome | Tipo | Localização | Obrigatório | Descrição |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Não |  |
+|------|------|-------------|-------------|-----------|
+| tenantId | string | query | Yes |  |
 
 ## Resposta
 
@@ -10,7 +10,7 @@ Retorna: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de add_hash_tag'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo add_hash_tag'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.models.create_hash_tag_body import CreateHashTagBody
@@ -25,29 +25,27 @@ configuration = client.Configuration(
 )
 
 # O cliente deve configurar os parâmetros de autenticação e autorização
-# de acordo com a política de segurança do servidor da API.
-# Exemplos para cada método de autenticação são fornecidos abaixo; use o exemplo que
-# satisfaça seu caso de uso de autenticação.
+# de acordo com a política de segurança do servidor API.
+# Exemplos para cada método de autenticação são fornecidos abaixo, use o exemplo que
+# atenda ao seu caso de uso de autenticação.
 
 # Configurar autorização por chave de API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Descomente abaixo para configurar o prefixo (ex.: Bearer) para a chave de API, se necessário
+# Descomente abaixo para definir o prefixo (ex.: Bearer) para a chave de API, se necessário
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Entre em um contexto com uma instância do cliente da API
+# Entrar em um contexto com uma instância do cliente API
 with client.ApiClient(configuration) as api_client:
-    # Crie uma instância da classe API
+    # Criar uma instância da classe API
     api_instance = client.DefaultApi(api_client)
-    tenant_id = 'tenant_id_example' # str |  (opcional)
+    tenant_id = 'tenant_id_example' # str | 
     create_hash_tag_body = client.CreateHashTagBody() # CreateHashTagBody |  (opcional)
 
     try:
-        api_response = api_instance.add_hash_tag(tenant_id=tenant_id, create_hash_tag_body=create_hash_tag_body)
+        api_response = api_instance.add_hash_tag(tenant_id, create_hash_tag_body)
         print("The response of DefaultApi->add_hash_tag:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling DefaultApi->add_hash_tag: %s\n" % e)
 [inline-code-end]
-
----

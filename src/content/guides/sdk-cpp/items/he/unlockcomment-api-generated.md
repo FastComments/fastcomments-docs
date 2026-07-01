@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | commentId | string | כן |  |
@@ -13,24 +13,17 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-unLockComment'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה של unLockComment'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t commentId = U("cmt-456789");
-utility::string_t broadcastId = U("bcast-987");
-boost::optional<utility::string_t> sso = utility::string_t(U("user@example.com"));
-api->unLockComment(tenantId, commentId, broadcastId, sso)
-.then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task){
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto commentId = utility::conversions::to_string_t("cmt-456789");
+auto broadcastId = utility::conversions::to_string_t("broadcast-001");
+boost::optional<utility::string_t> sso = utility::conversions::to_string_t("john.doe@example.com");
+
+api->unLockComment(tenantId, commentId, broadcastId, sso).then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task) {
     try {
-        auto resp = task.get();
-        if (resp) {
-            std::cout << "Comment unlocked successfully\n";
-        } else {
-            std::cout << "No response body\n";
-        }
-    } catch (const std::exception& e) {
-        auto emptyResp = std::make_shared<APIEmptyResponse>();
-        std::cout << "Error unlocking comment: " << e.what() << "\n";
+        auto response = task.get();
+    } catch (const std::exception&) {
     }
 });
 [inline-code-end]

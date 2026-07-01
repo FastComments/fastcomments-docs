@@ -13,9 +13,19 @@ Returns: [`Option[AddPageAPIResponse]`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'addPage Example'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let createData = CreateAPIPageData(path = "news/2026/market-update", title = "Market Update — Jan 2026", tags = @["finance", "markets"], isPublished = true)
-let (response, httpResponse) = client.addPage(tenantId = "my-tenant-123", createAPIPageData = createData)
-if response.isSome:
-  let page = response.get()
-  discard page
+let pageData = CreateAPIPageData(
+  urlId = "news/article-2024",
+  title = "Breaking News: Nim Takes Over",
+  description = "An in-depth article about Nim's rise.",
+  tags = @["nim", "programming", "news"]
+)
+
+let (addPageResp, httpResp) = client.addPage(
+  tenantId = "my-tenant-123",
+  createAPIPageData = pageData
+)
+
+if addPageResp.isSome:
+  let resp = addPageResp.get()
+  echo resp
 [inline-code-end]

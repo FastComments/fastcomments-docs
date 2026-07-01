@@ -1,7 +1,8 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| İsim | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Evet |  |
 | urlId | string | query | Evet |  |
 | sso | string | query | Hayır |  |
 
@@ -23,17 +24,18 @@ import (
 )
 
 func main() {
-	urlId := "urlId_example" // string | 
+	tenantId := "tenantId_example" // string |
+	urlId := "urlId_example" // string |
 	sso := "sso_example" // string |  (isteğe bağlı)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PutReopenThread(context.Background()).UrlId(urlId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PutReopenThread(context.Background()).TenantId(tenantId).UrlId(urlId).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PutReopenThread``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `PutReopenThread`'den dönen yanıt: APIEmptyResponse
+	// `PutReopenThread`'dan yanıt: APIEmptyResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PutReopenThread`: %v\n", resp)
 }
 [inline-code-end]

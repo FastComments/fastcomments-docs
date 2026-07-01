@@ -1,15 +1,14 @@
----
 Omogoči ali onemogoči obvestila za določen komentar.
 
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Zahtevano | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| notificationId | string | path | Da |  |
-| optedInOrOut | string | path | Da |  |
-| commentId | string | query | Da |  |
-| sso | string | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| notificationId | string | path | Yes |  |
+| optedInOrOut | string | path | Yes |  |
+| commentId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -17,7 +16,7 @@ Vrne: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer updateUserNotificationCommentSubscriptionStatus'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserNotificationCommentSubscriptionStatus Primer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -25,15 +24,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Če želite uporabiti prilagojen HTTP odjemalec, posredujte odjemalec, ki implementira `GuzzleHttp\ClientInterface`.
-    // To je neobvezno; privzeto bo uporabljen `GuzzleHttp\Client`.
+    // Če želite uporabiti prilagojeni HTTP odjemalec, podajte svoj odjemalec, ki implementira `GuzzleHttp\ClientInterface`.
+    // To je neobvezno, `GuzzleHttp\Client` bo uporabljen kot privzeto.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $notification_id = 'notification_id_example'; // string
 $opted_in_or_out = 'opted_in_or_out_example'; // string
 $comment_id = 'comment_id_example'; // string
 $sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->updateUserNotificationCommentSubscriptionStatus($tenant_id, $notification_id, $opted_in_or_out, $comment_id, $sso);

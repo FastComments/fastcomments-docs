@@ -2,9 +2,9 @@
 
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| commentIds | string | Nej |  |
-| sso | string | Nej |  |
+| tenantId | string | Yes |  |
+| commentIds | string | No |  |
+| sso | string = "" | No |  |
 
 ## Svar
 
@@ -12,18 +12,17 @@ Returnerer: [`Option[CheckBlockedCommentsResponse]`](https://github.com/FastComm
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'checkedCommentsForBlocked-eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'checkedCommentsForBlocked Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.checkedCommentsForBlocked(
+let (maybeResponse, httpResponse) = client.checkedCommentsForBlocked(
   tenantId = "my-tenant-123",
-  commentIds = "",
+  commentIds = "cmt-1,cmt-2",
   sso = ""
 )
-if response.isSome:
-  let blockedResp = response.get()
-  echo "Received blocked comments response: ", blockedResp
-else:
-  echo "No response body; HTTP status: ", $httpResponse.status
+
+if maybeResponse.isSome:
+  let response = maybeResponse.get()
+  discard response
 [inline-code-end]
 
 ---

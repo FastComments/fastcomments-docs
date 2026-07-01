@@ -1,30 +1,29 @@
-### 401 Неовлашћено
+### 401 Greške neovlaštenog pristupa
 
-Ако добијате 401 грешке при коришћењу аутентификованог API-ја:
+Ako dobijate 401 greške prilikom korištenja autentifikovanog API‑ja:
 
-1. **Проверите ваш API кључ**: Уверите се да користите исправан API кључ са вашег FastComments контролног панела
-2. **Потврдите tenant ID**: Уверите се да tenant ID одговара вашем налогу
-3. **Формат API кључа**: API кључ треба бити подешен на API клијенту:
+1. **Provjerite svoj API ključ**: Osigurajte da koristite ispravan API ključ sa vaše FastComments kontrolne ploče  
+2. **Provjerite tenant ID**: Provjerite da se tenant ID podudara s vašim računom  
+3. **Format API ključa**: API ključ treba biti postavljen kao zaglavlje `x-api-key` u zajedničkoj konfiguraciji:
 
 ```swift
-let defaultApi = DefaultAPI()
-defaultApi.apiKey = "YOUR_API_KEY"
+FastCommentsSwiftAPIConfiguration.shared.customHeaders["x-api-key"] = "YOUR_API_KEY"
 ```
 
-4. **Коришћење погрешног API-ја**: Уверите се да користите `DefaultAPI` (не `PublicAPI`) за аутентификоване позиве
+4. **Korištenje pogrešnog API‑ja**: Provjerite da koristite `DefaultAPI` (a ne `PublicAPI`) za autentifikovane pozive  
 
-### Проблеми са SSO токенима
+### Problemi s SSO tokenom
 
-Ако SSO токени не функционишу:
+Ako SSO tokeni ne rade:
 
-1. **Користите безбедни режим за продукцију**: Увек користите `FastCommentsSSO.createSecure()` са вашим API кључем за продукцију
-2. **Само на серверу**: Генеришите безбедне SSO токене на вашем серверу, никада не откривајте ваш API кључ клијентима
-3. **Проверите податке корисника**: Уверите се да су обезбеђена сва обавезна поља (id, email, username)
-4. **Истек валидности токена**: Безбедни SSO токени садрже временску ознаку и могу истећи. Генеришите нове токене по потреби.
+1. **Koristite sigurni režim za produkciju**: Uvijek koristite `FastCommentsSSO.createSecure()` s vašim API ključem za produkciju  
+2. **Samo na serveru**: Generišite sigurni SSO token na vašem serveru, nikada ne izlažite vaš API ključ klijentima  
+3. **Provjerite korisničke podatke**: Osigurajte da su pružena sva obavezna polja (id, email, korisničko ime)  
+4. **Isticanje tokena**: Sigurni SSO tokeni sadrže vremensku oznaku i mogu isteći. Generišite nove tokene po potrebi.  
 
-### SSL/TLS грешке
+### SSL/TLS greške
 
-Ако наиђете на SSL/TLS грешке:
+Ako naiđete na SSL/TLS greške:
 
-1. Уверите се да Info.plist ваше апликације дозвољава HTTPS везе према fastcomments.com
-2. Проверите да не користите изузетке App Transport Security који би могли блокирати везу
+1. Osigurajte da vaš Info.plist dozvoljava HTTPS veze prema fastcomments.com  
+2. Provjerite da ne koristite izuzetke App Transport Security koji bi mogli blokirati vezu

@@ -1,11 +1,10 @@
 ## パラメータ
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
 | tenantId | string | はい |  |
 | postId | string | いいえ |  |
-| broadcastId | string | いいえ |  |
-| sso | string | いいえ |  |
+| options | DeleteFeedPostPublicOptions | いいえ |  |
 
 ## レスポンス
 
@@ -15,12 +14,14 @@
 
 [inline-code-attrs-start title = 'deleteFeedPostPublic の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteFeedPostPublic(tenantId = "my-tenant-123", postId = "", broadcastId = "", sso = "")
+let (response, httpResponse) = client.deleteFeedPostPublic(
+  tenantId = "my-tenant-123",
+  postId = "news/article-42",
+  options = DeleteFeedPostPublicOptions()
+)
+
 if response.isSome:
-  let deleted = response.get()
-  echo "Delete successful"
-else:
-  echo "Delete failed"
+  let deleteResp = response.get()
 [inline-code-end]
 
 ---

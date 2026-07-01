@@ -1,6 +1,6 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Zorunlu | Açıklama |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Evet |  |
 | search | string | query | Evet |  |
@@ -16,16 +16,16 @@ Döndürür: [`GetGifsSearchResponse`](https://github.com/FastComments/fastcomme
 
 [inline-code-attrs-start title = 'getGifsSearch Örneği'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Aşağıdaki kod örnekleri hâlâ beta aşamasındadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new üzerinden bildirin
+// Aşağıdaki kod örnekleri hâlâ beta aşamasındadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new adresinden bildirin
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let search = "search_example" // String | 
-let locale = "locale_example" // String |  (isteğe bağlı)
-let rating = "rating_example" // String |  (isteğe bağlı)
-let page = 987 // Double |  (isteğe bağlı)
+let locale = "locale_example" // String |  (opsiyonel)
+let rating = "rating_example" // String |  (opsiyonel)
+let page = 987 // Double |  (opsiyonel)
 
-PublicAPI.getGifsSearch(tenantId: tenantId, search: search, locale: locale, rating: rating, page: page) { (response, error) in
+PublicAPI.getGifsSearch(tenantId: tenantId, search: search, options: PublicAPI.GetGifsSearchOptions(locale: locale, rating: rating, page: page)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -36,5 +36,3 @@ PublicAPI.getGifsSearch(tenantId: tenantId, search: search, locale: locale, rati
     }
 }
 [inline-code-end]
-
----

@@ -1,7 +1,8 @@
+---
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-------------|
+|------|------|-------------|-----------|
 | tenantId | string | Sim |  |
 | addDomainConfigParams | AddDomainConfigParams | Não |  |
 
@@ -11,21 +12,15 @@ Retorna: [`Option[AddDomainConfigResponse]`](https://github.com/FastComments/fas
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de addDomainConfig'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo addDomainConfig'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let config = AddDomainConfigParams(
-  domain: "comments.example-news.com",
-  enabled: true,
-  allowedOrigins: @["https://www.example-news.com", "https://m.example-news.com"],
-  commentsPath: "/news/world/election-coverage",
-  priority: 5
+let (respOpt, httpResp) = client.addDomainConfig(
+  tenantId = "my-tenant-123",
+  addDomainConfigParams = default(AddDomainConfigParams)
 )
-let (response, httpResponse) = client.addDomainConfig(tenantId = "my-tenant-123", addDomainConfigParams = config)
-if response.isSome:
-  let created = response.get()
-  echo "Created domain config:", created
-else:
-  echo "Failed to create domain config, HTTP status:", httpResponse.status.code
+
+if respOpt.isSome:
+  let cfg = respOpt.get()
 [inline-code-end]
 
 ---

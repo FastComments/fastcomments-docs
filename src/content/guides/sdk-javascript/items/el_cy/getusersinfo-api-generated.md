@@ -1,27 +1,27 @@
----
-Μαζικές πληροφορίες χρηστών για έναν tenant. Δεδομένων των userIds, επιστρέφει πληροφορίες εμφάνισης από User / SSOUser.
-Χρησιμοποιείται από το comment widget για να εμπλουτίσει χρήστες που μόλις εμφανίστηκαν μέσω ενός presence event.
-Χωρίς πλαίσιο σελίδας: η ιδιωτικότητα εφαρμόζεται ομοιόμορφα (τα ιδιωτικά προφίλ αποκρύπτονται).
+Συγκεντρωτικές πληροφορίες χρηστών για έναν ενοικιαστή. Δίνεται η λίστα των userIds, επιστρέφει πληροφορίες εμφάνισης από το User / SSOUser.  
+Χρησιμοποιείται από το widget σχολίων για να εμπλουτίσει τους χρήστες που μόλις εμφανίστηκαν μέσω γεγονότος παρουσίας.  
+Χωρίς περισάφισμα σελίδας: η προστασία απορρήτου εφαρμόζεται ομοιόμορφα (ιδιωτικά προφίλ καλύπτονται).
 
-## Παράμετροι
+## Parameters
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
-|------|------|----------|-------------|
+|------|------|------------|-----------|
 | tenantId | string | Ναι |  |
 | ids | string | Ναι |  |
 
-## Απάντηση
+## Response
 
-Επιστρέφει: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersInfoResponse.ts)
+Επιστρέφει: [`GetUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUsersInfoResponse.ts)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα getUsersInfo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_acme_78f9';
-const ids: string = 'user_10234,user_10235,user_10236';
-const usersInfo: PageUsersInfoResponse = await getUsersInfo(tenantId, ids);
-// Η getUsersInfo απαιτεί μόνο τα tenantId και ids· οι προαιρετικές παράμετροι δεν ισχύουν εδώ.
-[inline-code-end]
+const tenantId: string = "acme-corp-tenant";
+const ids: string = "user-1001,user-1002";
 
----
+const usersInfo: GetUsersInfoResponse = await getUsersInfo(tenantId, ids);
+
+// Optional fields in the response may be undefined
+const firstUser: PageUserEntry | undefined = usersInfo?.users?.[0];
+[inline-code-end]

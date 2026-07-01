@@ -1,25 +1,26 @@
 ## パラメータ
 
-| Name | Type | Required | Description |
+| 名前 | タイプ | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | はい |  |
-| id | string | いいえ |  |
-| userId | string | いいえ |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| userId | string = "" | No |  |
 
-## レスポンス
+## 応答
 
-戻り値: [`Option[DeleteSubscriptionAPIResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_delete_subscription_api_response.nim)
+返却: [`Option[DeleteSubscriptionAPIResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_delete_subscription_api_response.nim)
 
 ## 例
 
 [inline-code-attrs-start title = 'deleteSubscription の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.deleteSubscription(tenantId = "my-tenant-123", id = "sub-98765", userId = "user-456")
-if response.isSome:
-  let deleteResp = response.get()
-  echo "Delete subscription response received"
-else:
-  echo "No subscription response"
-[inline-code-end]
+let (maybeResp, httpResp) = client.deleteSubscription(
+  tenantId = "my-tenant-123",
+  id = "sub-789",
+  userId = ""
+)
 
----
+if maybeResp.isSome:
+  let apiResult = maybeResp.get()
+  # use apiResult as needed
+[inline-code-end]

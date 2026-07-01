@@ -1,12 +1,12 @@
 ## Parametreler
 
-| Adı | Tür | Gerekli | Açıklama |
+| Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
-| tenant_id | String | Evet |  |
-| post_id | String | Evet |  |
-| update_feed_post_params | models::UpdateFeedPostParams | Evet |  |
-| broadcast_id | String | Hayır |  |
-| sso | String | Hayır |  |
+| tenant_id | String | Yes |  |
+| post_id | String | Yes |  |
+| update_feed_post_params | models::UpdateFeedPostParams | Yes |  |
+| broadcast_id | String | No |  |
+| sso | String | No |  |
 
 ## Yanıt
 
@@ -14,34 +14,19 @@ Döndürür: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomm
 
 ## Örnek
 
-[inline-code-attrs-start title = 'update_feed_post_public Örneği'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'update_feed_post_public Örnek'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: UpdateFeedPostPublicParams = UpdateFeedPostPublicParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    post_id: "news/product-launch-2026".to_string(),
+let params = UpdateFeedPostPublicParams {
+    tenant_id: "acme-corp-tenant".into(),
+    post_id: "news/article-123".into(),
     update_feed_post_params: models::UpdateFeedPostParams {
-        title: "Acme Product Launch".to_string(),
-        content: "Acme releases version 2.0 with major performance and security improvements.".to_string(),
-        media: Some(vec![
-            models::FeedPostMediaItem {
-                asset: models::FeedPostMediaItemAsset {
-                    url: "https://cdn.acme.com/images/product-v2.jpg".to_string(),
-                    mime_type: Some("image/jpeg".to_string())
-                }
-            }
-        ]),
-        links: Some(vec![
-            models::FeedPostLink {
-                url: "https://acme.com/blog/product-v2".to_string(),
-                title: Some("Product v2 announcement".to_string())
-            }
-        ]),
+        title: Some("Updated Headline".into()),
+        content: Some("Revised content of the article with latest information.".into()),
         ..Default::default()
     },
-    broadcast_id: Some("broadcast-789".to_string()),
-    sso: Some("sso-token-eyJhbGciOiJIUzI1Ni".to_string()),
+    broadcast_id: Some("broadcast-001".into()),
+    sso: Some("sso-token-abc123".into()),
 };
+
 let response: CreateFeedPostResponse = update_feed_post_public(&configuration, params).await?;
 [inline-code-end]
-
----

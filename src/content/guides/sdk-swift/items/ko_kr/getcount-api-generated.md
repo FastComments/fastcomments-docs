@@ -1,7 +1,8 @@
 ## 매개변수
 
-| 이름 | 유형 | 위치 | 필수 | 설명 |
+| 이름 | 타입 | 위치 | 필요 여부 | 설명 |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 | text-search | string | query | No |  |
 | byIPFromComment | string | query | No |  |
 | filter | string | query | No |  |
@@ -13,21 +14,22 @@
 
 반환: [`ModerationAPICountCommentsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationAPICountCommentsResponse.swift)
 
-## 예제
+## 예시
 
 [inline-code-attrs-start title = 'getCount 예제'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 아래 코드 샘플은 아직 베타입니다. 문제가 있으면 http://github.com/OpenAPITools/openapi-generator/issues/new 를 통해 신고해 주세요
+// 다음 코드 샘플은 아직 베타 버전입니다. 문제가 있으면 http://github.com/OpenAPITools/openapi-generator/issues/new 을 통해 보고해 주세요
 import FastCommentsSwift
 
-let textSearch = "textSearch_example" // String |  (선택 사항)
-let byIPFromComment = "byIPFromComment_example" // String |  (선택 사항)
-let filter = "filter_example" // String |  (선택 사항)
-let searchFilters = "searchFilters_example" // String |  (선택 사항)
-let demo = true // Bool |  (선택 사항)
-let sso = "sso_example" // String |  (선택 사항)
+let tenantId = "tenantId_example" // String | 
+let textSearch = "textSearch_example" // String |  (옵션)
+let byIPFromComment = "byIPFromComment_example" // String |  (옵션)
+let filter = "filter_example" // String |  (옵션)
+let searchFilters = "searchFilters_example" // String |  (옵션)
+let demo = true // Bool |  (옵션)
+let sso = "sso_example" // String |  (옵션)
 
-ModerationAPI.getCount(textSearch: textSearch, byIPFromComment: byIPFromComment, filter: filter, searchFilters: searchFilters, demo: demo, sso: sso) { (response, error) in
+ModerationAPI.getCount(tenantId: tenantId, options: ModerationAPI.GetCountOptions(textSearch: textSearch, byIPFromComment: byIPFromComment, filter: filter, searchFilters: searchFilters, demo: demo, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

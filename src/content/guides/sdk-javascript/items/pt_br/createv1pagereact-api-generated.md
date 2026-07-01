@@ -1,24 +1,25 @@
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|----------|-------------|
+|------|------|-------------|-----------|
 | tenantId | string | Sim |  |
 | urlId | string | Sim |  |
 | title | string | Não |  |
 
 ## Resposta
 
-Retorna: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateV1PageReact.ts)
+Retorna: [`CreateV1PageReactResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateV1PageReactResponse.ts)
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de createV1PageReact'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo createV1PageReact'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-enterprises-42';
-const urlId: string = 'blog/how-we-reduce-latency';
-const title: string | undefined = 'Reducing Frontend Latency with FastComments';
-const createResponse: CreateV1PageReact = await createV1PageReact(tenantId, urlId, title);
-const createResponseNoTitle: CreateV1PageReact = await createV1PageReact(tenantId, urlId);
+const tenantId: string = "tenant_12345";
+const urlId: string = "article-2024-06-improvements";
+const title: string = "FastComments API Integration Guide";
+
+const responseWithTitle: CreateV1PageReactResponse = await createV1PageReact(tenantId, urlId, title);
+const responseWithoutTitle: CreateV1PageReactResponse = await createV1PageReact(tenantId, urlId);
 [inline-code-end]
 
 ---

@@ -1,13 +1,14 @@
 ## Parameters
 
-| Naam | Type | Location | Vereist | Beschrijving |
+| Naam | Type | Locatie | Verplicht | Beschrijving |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Ja |  |
 | commentId | string | path | Ja |  |
 | includeEmail | boolean | query | Nee |  |
 | includeIP | boolean | query | Nee |  |
 | sso | string | query | Nee |  |
 
-## Respons
+## Response
 
 Retourneert: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationAPICommentResponse.swift)
 
@@ -15,15 +16,16 @@ Retourneert: [`ModerationAPICommentResponse`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'getModerationComment Voorbeeld'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// De volgende codevoorbeelden zijn nog in bèta. Meld eventuele problemen via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De volgende codevoorbeelden zijn nog beta. Voor eventuele problemen, rapporteer via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
-let includeEmail = true // Bool |  (optioneel)
-let includeIP = true // Bool |  (optioneel)
-let sso = "sso_example" // String |  (optioneel)
+let includeEmail = true // Bool |  (optional)
+let includeIP = true // Bool |  (optional)
+let sso = "sso_example" // String |  (optional)
 
-ModerationAPI.getModerationComment(commentId: commentId, includeEmail: includeEmail, includeIP: includeIP, sso: sso) { (response, error) in
+ModerationAPI.getModerationComment(tenantId: tenantId, commentId: commentId, options: ModerationAPI.GetModerationCommentOptions(includeEmail: includeEmail, includeIP: includeIP, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -34,5 +36,3 @@ ModerationAPI.getModerationComment(commentId: commentId, includeEmail: includeEm
     }
 }
 [inline-code-end]
-
----

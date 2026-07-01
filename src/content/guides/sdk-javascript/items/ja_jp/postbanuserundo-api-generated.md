@@ -3,27 +3,33 @@
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
 | banUserUndoParams | BanUserUndoParams | はい |  |
+| tenantId | string | いいえ |  |
 | sso | string | いいえ |  |
 
-## レスポンス
+## 応答
 
-返却値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+戻り値: [`PostBanUserUndoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostBanUserUndoResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'postBanUserUndo の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const banUserUndoParams: BanUserUndoParams = {
-  userId: 'u_9f3d2b7c',
-  banId: 'b_58a1e4',
-  siteId: 'site_204',
-  moderatorId: 'mod_12',
-  note: 'Ban removed after manual review; user allowed to repost'
+const undoParams: BanUserUndoParams = {
+  userId: "user-8421",
+  commentId: "comment-6702",
+  reason: "Accidental ban"
 };
 
-const ssoToken: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtb2QtMTIiLCJpYXQiOjE2Mzk0MzIwMDB9.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
+const tenantId: string = "tenant-7f9e";
+const ssoToken: string = "sso-4b2c1d";
 
-const result: APIEmptyResponse = await postBanUserUndo(banUserUndoParams, ssoToken);
+async function runUndo() {
+  const resultAll: PostBanUserUndoResponse = await postBanUserUndo(undoParams, tenantId, ssoToken);
+  console.log(resultAll);
+
+  const resultMinimal: PostBanUserUndoResponse = await postBanUserUndo(undoParams);
+  console.log(resultMinimal);
+}
+
+runUndo();
 [inline-code-end]
-
----

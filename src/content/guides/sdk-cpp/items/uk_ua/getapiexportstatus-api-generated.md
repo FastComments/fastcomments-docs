@@ -1,9 +1,9 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
-|------|------|----------|-------------|
-| batchJobId | string | Ні |  |
-| sso | string | Ні |  |
+| Назва | Тип | Обов'язковий | Опис |
+|------|------|--------------|------|
+| tenantId | string | Так |  |
+| options | const GetApiExportStatusOptions& | Так |  |
 
 ## Відповідь
 
@@ -11,14 +11,16 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад getApiExportStatus'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getApiExportStatus Приклад'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> batchId = utility::string_t(U("export-batch-2026-06-19"));
-boost::optional<utility::string_t> sso = utility::string_t(U("audit@my-tenant-123.com"));
-api->getApiExportStatus(batchId, sso)
-    .then([](std::shared_ptr<ModerationExportStatusResponse> resp) {
-        if (!resp) return;
-        auto statusCopy = std::make_shared<ModerationExportStatusResponse>(*resp);
+auto opts = GetApiExportStatusOptions{};
+opts.exportId = boost::make_optional<utility::string_t>(U("export-456"));
+api->getApiExportStatus(U("my-tenant-123"), opts)
+    .then([](pplx::task<std::shared_ptr<ModerationExportStatusResponse>> t){
+        try{
+            auto status = t.get();
+        }catch(const std::exception&){
+        }
     });
 [inline-code-end]
 

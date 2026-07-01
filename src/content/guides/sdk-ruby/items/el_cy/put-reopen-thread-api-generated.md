@@ -1,11 +1,12 @@
 ## Παράμετροι
 
-| Όνομα | Type | Location | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Θέση | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| urlId | string | query | Ναι |  |
-| sso | string | query | Όχι |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| sso | string | query | No |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_response.rb)
 
@@ -17,16 +18,19 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
-url_id = 'url_id_example' # Συμβολοσειρά | 
+tenant_id = 'tenant_id_example' # String | 
+url_id = 'url_id_example' # String | 
 opts = {
-  sso: 'sso_example' # Συμβολοσειρά | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.put_reopen_thread(url_id, opts)
+  result = api_instance.put_reopen_thread(tenant_id, url_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->put_reopen_thread: #{e}"
 end
 [inline-code-end]
+
+---

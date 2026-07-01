@@ -1,33 +1,40 @@
-页面上曾评论但当前不在线的用户。按 displayName 排序。
-在用尽 /users/online 之后使用此项来呈现 "成员" 部分。
-基于 commenterName 的游标分页：服务器遍历部分 {tenantId, urlId, commenterName}
-从 afterName 之后通过 $gt 向前索引，无 $skip 成本。
+---
+页面上过去的评论者（当前不在线）。按 displayName 排序。  
+在使用完 /users/online 后使用，以渲染“成员”部分。  
+在 commenterName 上进行光标分页：服务器遍历部分 {tenantId, urlId, commenterName}，从 afterName 开始向前使用 $gt 索引，无需 $skip 开销。
 
-## 参数
+## Parameters
 
-| 名称 | 类型 | 必需 | 描述 |
-|------|------|------|-------------|
-| tenantId | string | 是 |  |
-| urlId | string | 是 |  |
-| afterName | string | 否 |  |
-| afterUserId | string | 否 |  |
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| afterName | string | No |  |
+| afterUserId | string | No |  |
 
-## 响应
+## Response
 
-返回: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOfflineResponse.ts)
+返回：[`GetOfflineUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOfflineUsersResponse.ts)
 
-## 示例
+## Example
 
 [inline-code-attrs-start title = 'getOfflineUsers 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant-9f4b2a6c';
-const urlId: string = 'articles/product-launch-2025';
+async function fetchOfflineUsers(): Promise<void> {
+    const tenantId: string = "tenant_12345";
+    const urlId: string = "thread_9876";
+    const afterName: string = "Jane Smith";
+    const afterUserId: string = "user_7f9b3c";
 
-const offlinePageFirst: PageUsersOfflineResponse = await getOfflineUsers(tenantId, urlId);
+    const offlineUsers: GetOfflineUsersResponse = await getOfflineUsers(
+        tenantId,
+        urlId,
+        afterName,
+        afterUserId
+    );
 
-const afterName: string = 'samantha.r';
-const afterUserId: string = 'user_7d3a21f9';
-const offlinePageNext: PageUsersOfflineResponse = await getOfflineUsers(tenantId, urlId, afterName, afterUserId);
+    console.log(offlineUsers);
+}
 [inline-code-end]
 
 ---

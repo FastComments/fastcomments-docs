@@ -1,29 +1,29 @@
 ## Paramètres
 
-| Name | Type | Location | Requis | Description |
-|------|------|----------|--------|-------------|
-| tenantId | string | query | Oui |  |
-| id | string | path | Oui |  |
-| userId | string | query | Non |  |
-| anonUserId | string | query | Non |  |
+| Nom | Type | Emplacement | Obligatoire | Description |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
 
 ## Réponse
 
-Retourne : [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FlagCommentResponse.swift)
+Renvoie : [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/FlagCommentResponse.swift)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de flagComment'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple flagComment'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Les exemples de code suivants sont encore en version bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Les échantillons de code suivants sont encore en version bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let id = "id_example" // String | 
-let userId = "userId_example" // String |  (optionnel)
-let anonUserId = "anonUserId_example" // String |  (optionnel)
+let userId = "userId_example" // String |  (optional)
+let anonUserId = "anonUserId_example" // String |  (optional)
 
-DefaultAPI.flagComment(tenantId: tenantId, id: id, userId: userId, anonUserId: anonUserId) { (response, error) in
+DefaultAPI.flagComment(tenantId: tenantId, id: id, options: DefaultAPI.FlagCommentOptions(userId: userId, anonUserId: anonUserId)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -34,5 +34,3 @@ DefaultAPI.flagComment(tenantId: tenantId, id: id, userId: userId, anonUserId: a
     }
 }
 [inline-code-end]
-
----

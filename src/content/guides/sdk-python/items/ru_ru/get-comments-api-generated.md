@@ -1,24 +1,24 @@
 ## Параметры
 
-| Имя | Тип | Местоположение | Обязательный | Описание |
+| Имя | Тип | Расположение | Обязательный | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| page | integer | query | Нет |  |
-| limit | integer | query | Нет |  |
-| skip | integer | query | Нет |  |
-| asTree | boolean | query | Нет |  |
-| skipChildren | integer | query | Нет |  |
-| limitChildren | integer | query | Нет |  |
-| maxTreeDepth | integer | query | Нет |  |
-| urlId | string | query | Нет |  |
-| userId | string | query | Нет |  |
-| anonUserId | string | query | Нет |  |
-| contextUserId | string | query | Нет |  |
-| hashTag | string | query | Нет |  |
-| parentId | string | query | Нет |  |
-| direction | string | query | Нет |  |
-| fromDate | integer | query | Нет |  |
-| toDate | integer | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| page | integer | query | No |  |
+| limit | integer | query | No |  |
+| skip | integer | query | No |  |
+| asTree | boolean | query | No |  |
+| skipChildren | integer | query | No |  |
+| limitChildren | integer | query | No |  |
+| maxTreeDepth | integer | query | No |  |
+| urlId | string | query | No |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
+| contextUserId | string | query | No |  |
+| hashTag | string | query | No |  |
+| parentId | string | query | No |  |
+| direction | string | query | No |  |
+| fromDate | integer | query | No |  |
+| toDate | integer | query | No |  |
 
 ## Ответ
 
@@ -29,12 +29,13 @@
 [inline-code-attrs-start title = 'Пример get_comments'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetCommentsOptions
 from client.models.api_get_comments_response import APIGetCommentsResponse
 from client.models.sort_directions import SortDirections
 from client.rest import ApiException
 from pprint import pprint
 
-# Задание host необязательно, по умолчанию https://fastcomments.com
+# Определение хоста является необязательным и по умолчанию устанавливается https://fastcomments.com
 # См. configuration.py для списка всех поддерживаемых параметров конфигурации.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -42,18 +43,18 @@ configuration = client.Configuration(
 
 # Клиент должен настроить параметры аутентификации и авторизации
 # в соответствии с политикой безопасности сервера API.
-# Ниже приведены примеры для каждого метода аутентификации, используйте пример, который
-# соответствует вашему сценарию аутентификации.
+# Примеры для каждого метода аутентификации приведены ниже, используйте пример,
+# который соответствует вашему случаю использования аутентификации.
 
-# Настроить авторизацию по API-ключу: api_key
+# Настроить авторизацию ключа API: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Раскомментируйте ниже, чтобы задать префикс (e.g. Bearer) для API ключа, если требуется
+# Раскомментируйте ниже, чтобы установить префикс (например, Bearer) для ключа API, если необходимо
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Откройте контекст с экземпляром клиента API
+# Войдите в контекст с экземпляром клиента API
 with client.ApiClient(configuration) as api_client:
-    # Создайте экземпляр класса API
+    # Создать экземпляр класса API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     page = 56 # int |  (необязательно)
@@ -68,13 +69,13 @@ with client.ApiClient(configuration) as api_client:
     anon_user_id = 'anon_user_id_example' # str |  (необязательно)
     context_user_id = 'context_user_id_example' # str |  (необязательно)
     hash_tag = 'hash_tag_example' # str |  (необязательно)
-    parent_id = 'parent_id_example' # str |  (неobязательно)
+    parent_id = 'parent_id_example' # str |  (необязательно)
     direction = client.SortDirections() # SortDirections |  (необязательно)
     from_date = 56 # int |  (необязательно)
     to_date = 56 # int |  (необязательно)
 
     try:
-        api_response = api_instance.get_comments(tenant_id, page=page, limit=limit, skip=skip, as_tree=as_tree, skip_children=skip_children, limit_children=limit_children, max_tree_depth=max_tree_depth, url_id=url_id, user_id=user_id, anon_user_id=anon_user_id, context_user_id=context_user_id, hash_tag=hash_tag, parent_id=parent_id, direction=direction, from_date=from_date, to_date=to_date)
+        api_response = api_instance.get_comments(tenant_id, GetCommentsOptions(page=page, limit=limit, skip=skip, as_tree=as_tree, skip_children=skip_children, limit_children=limit_children, max_tree_depth=max_tree_depth, url_id=url_id, user_id=user_id, anon_user_id=anon_user_id, context_user_id=context_user_id, hash_tag=hash_tag, parent_id=parent_id, direction=direction, from_date=from_date, to_date=to_date))
         print("The response of DefaultApi->get_comments:\n")
         pprint(api_response)
     except Exception as e:

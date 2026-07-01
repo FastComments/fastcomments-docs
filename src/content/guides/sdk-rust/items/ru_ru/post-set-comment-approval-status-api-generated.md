@@ -1,10 +1,12 @@
 ## Параметры
 
-| Name | Type | Required | Description |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
-| comment_id | String | Yes |  |
-| approved | bool | No |  |
-| sso | String | No |  |
+| tenant_id | String | Да |  |
+| comment_id | String | Да |  |
+| approved | bool | Нет |  |
+| broadcast_id | String | Нет |  |
+| sso | String | Нет |  |
 
 ## Ответ
 
@@ -14,14 +16,15 @@
 
 [inline-code-attrs-start title = 'post_set_comment_approval_status Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let params: PostSetCommentApprovalStatusParams = PostSetCommentApprovalStatusParams {
-        comment_id: String::from("news/article/2026-06-19/post-42/comment-128"),
+async fn approve_comment(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = PostSetCommentApprovalStatusParams {
+        tenant_id: "acme-corp".to_string(),
+        comment_id: "cmt-9876".to_string(),
         approved: Some(true),
-        sso: Some(String::from("sso:user:acme:eyJhbGciOiJIUzI1Ni")),
+        broadcast_id: Some("broadcast-2023".to_string()),
+        sso: None,
     };
-    let response: SetCommentApprovedResponse = post_set_comment_approval_status(&configuration, params).await?;
-    let _response = response;
+    let _response = post_set_comment_approval_status(configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

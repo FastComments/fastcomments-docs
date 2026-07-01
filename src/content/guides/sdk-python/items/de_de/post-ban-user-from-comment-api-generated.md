@@ -1,42 +1,45 @@
-## Parameter
+## Parameters
 
-| Name | Typ | Ort | Erforderlich | Beschreibung |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Ja |  |
-| banEmail | boolean | query | Nein |  |
-| banEmailDomain | boolean | query | Nein |  |
-| banIP | boolean | query | Nein |  |
-| deleteAllUsersComments | boolean | query | Nein |  |
-| bannedUntil | string | query | Nein |  |
-| isShadowBan | boolean | query | Nein |  |
-| updateId | string | query | Nein |  |
-| banReason | string | query | Nein |  |
-| sso | string | query | Nein |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| banEmail | boolean | query | No |  |
+| banEmailDomain | boolean | query | No |  |
+| banIP | boolean | query | No |  |
+| deleteAllUsersComments | boolean | query | No |  |
+| bannedUntil | string | query | No |  |
+| isShadowBan | boolean | query | No |  |
+| updateId | string | query | No |  |
+| banReason | string | query | No |  |
+| sso | string | query | No |  |
 
-## Antwort
+## Response
 
-Gibt zurück: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/ban_user_from_comment_result.py)
+Returns: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/ban_user_from_comment_result.py)
 
-## Beispiel
+## Example
 
 [inline-code-attrs-start title = 'post_ban_user_from_comment Beispiel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import PostBanUserFromCommentOptions
 from client.models.ban_user_from_comment_result import BanUserFromCommentResult
 from client.rest import ApiException
 from pprint import pprint
 
-# Die Angabe des Hosts ist optional und standardmäßig https://fastcomments.com
+# Das Definieren des Hosts ist optional und standardmäßig https://fastcomments.com
 # Siehe configuration.py für eine Liste aller unterstützten Konfigurationsparameter.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Einen Kontext mit einer Instanz des API-Clients verwenden
+# Betritt einen Kontext mit einer Instanz des API-Clients
 with client.ApiClient(configuration) as api_client:
-    # Erstellen einer Instanz der API-Klasse
+    # Erstelle eine Instanz der API-Klasse
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     ban_email = True # bool |  (optional)
     ban_email_domain = True # bool |  (optional)
@@ -49,7 +52,7 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.post_ban_user_from_comment(comment_id, ban_email=ban_email, ban_email_domain=ban_email_domain, ban_ip=ban_ip, delete_all_users_comments=delete_all_users_comments, banned_until=banned_until, is_shadow_ban=is_shadow_ban, update_id=update_id, ban_reason=ban_reason, sso=sso)
+        api_response = api_instance.post_ban_user_from_comment(tenant_id, comment_id, PostBanUserFromCommentOptions(ban_email=ban_email, ban_email_domain=ban_email_domain, ban_ip=ban_ip, delete_all_users_comments=delete_all_users_comments, banned_until=banned_until, is_shadow_ban=is_shadow_ban, update_id=update_id, ban_reason=ban_reason, sso=sso))
         print("The response of ModerationApi->post_ban_user_from_comment:\n")
         pprint(api_response)
     except Exception as e:

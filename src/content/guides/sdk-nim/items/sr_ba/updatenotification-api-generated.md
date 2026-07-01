@@ -1,34 +1,29 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Не |  |
-| updateNotificationBody | UpdateNotificationBody | Не |  |
-| userId | string | Не |  |
+| tenantId | string | Da |  |
+| id | string | Ne |  |
+| updateNotificationBody | UpdateNotificationBody | Ne |  |
+| userId | string = "" | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
+Vraća: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример updateNotification'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer updateNotification'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateNotification(
+let body = UpdateNotificationBody(message: "Your comment was approved", isRead: false)
+let (optResp, httpResp) = client.updateNotification(
   tenantId = "my-tenant-123",
-  id = "notif-456",
-  updateNotificationBody = UpdateNotificationBody(
-    enabled = true,
-    channels = @["email", "push"],
-    frequency = "immediate"
-  ),
-  userId = "user-789"
+  id = "notif-789",
+  updateNotificationBody = body,
+  userId = "user-42"
 )
-
-if response.isSome:
-  let apiEmpty = response.get()
-  discard apiEmpty
+if optResp.isSome:
+  let _ = optResp.get()
 [inline-code-end]
 
 ---

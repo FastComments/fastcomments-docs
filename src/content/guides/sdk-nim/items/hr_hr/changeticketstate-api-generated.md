@@ -2,10 +2,10 @@
 
 | Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| userId | string | Ne |  |
-| id | string | Ne |  |
-| changeTicketStateBody | ChangeTicketStateBody | Ne |  |
+| tenantId | string | Yes |  |
+| userId | string | No |  |
+| id | string | No |  |
+| changeTicketStateBody | ChangeTicketStateBody | No |  |
 
 ## Odgovor
 
@@ -13,13 +13,16 @@ Vraća: [`Option[ChangeTicketStateResponse]`](https://github.com/FastComments/fa
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer changeTicketState'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'changeTicketState Primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let body = ChangeTicketStateBody()
-let (response, httpResponse) = client.changeTicketState(tenantId = "my-tenant-123", userId = "user-456", id = "ticket-789", changeTicketStateBody = body)
-if response.isSome:
-  let ticketResp = response.get()
-  echo "Ticket state changed:", ticketResp
-[inline-code-end]
+let (optResp, httpResp) = client.changeTicketState(
+  tenantId = "my-tenant-001",
+  userId = "user-42",
+  id = "ticket-12345",
+  changeTicketStateBody = ChangeTicketStateBody(state = "closed")
+)
 
----
+if optResp.isSome:
+  let resp = optResp.get()
+  echo resp
+[inline-code-end]

@@ -1,6 +1,6 @@
 ### Maven
 
-Dodaj repozytorium Repsy do pliku POM swojego projektu:
+Add the Repsy repository to your project's POM:
 
 ```xml
 <repositories>
@@ -12,7 +12,7 @@ Dodaj repozytorium Repsy do pliku POM swojego projektu:
 </repositories>
 ```
 
-Następnie dodaj wymagane zależności:
+Then add the dependencies you need:
 
 ```xml
 <dependencies>
@@ -41,7 +41,7 @@ Następnie dodaj wymagane zależności:
 
 ### Gradle
 
-Dodaj repozytorium Repsy do pliku build.gradle:
+Add the Repsy repository to your build.gradle file:
 
 ```groovy
 repositories {
@@ -65,14 +65,16 @@ dependencies {
 
 ### Library Contents
 
-Ta biblioteka zawiera trzy moduły. Wygenerowany klient API, biblioteka core w Javie, która zawiera ręcznie napisane narzędzia ułatwiające pracę z API, oraz moduł `pubsub`, który jest biblioteką do subskrybowania strumieni zmian.
+This library contains three modules. The generated API client, the core Java library which contains hand-written utilities
+to make working with the API easier, and the `pubsub` module which is a library for subscribing to change feeds.
 
 - [Dokumentacja biblioteki klienta API](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Dokumentacja biblioteki Core, w tym przykłady SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [Dokumentacja biblioteki podstawowej, w tym przykłady SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
 - [Dokumentacja biblioteki PubSub](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
 ### Public vs Secured APIs
 
-Dla klienta API istnieją trzy klasy: `DefaultApi`, `PublicApi` oraz `ModerationApi`. `DefaultApi` zawiera metody, które wymagają Twojego klucza API, a `PublicApi` zawiera metody, które można wywołać bezpośrednio z przeglądarki/urządzenia mobilnego itp. bez uwierzytelniania.
+For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains methods
+that can be made directly from a browser/mobile device/etc without authentication.
 
-`ModerationApi` zasila panel moderatora. Zawiera metody do moderacji komentarzy (lista, zliczanie, wyszukiwanie, logi i eksport), akcje moderacji (usuwanie/przywracanie, oznaczanie, ustawianie statusu do weryfikacji/spam/akceptacja, głosowanie oraz ponowne otwieranie/zamykanie wątku), blokady (zablokowanie komentowania, cofnięcie blokady, podsumowania przed blokadą, status i preferencje blokady oraz liczba zablokowanych użytkowników) oraz odznaki i zaufanie (przyznawanie/usuwanie odznaki, odznaki ręczne, pobieranie/ustawianie współczynnika zaufania oraz wewnętrzny profil użytkownika). Każda metoda `ModerationApi` przyjmuje parametr `sso`, dzięki czemu wywołanie może zostać wykonane w imieniu moderatora uwierzytelnionego przez SSO.
+The `ModerationApi` provides an extensive suite of live and fast moderation APIs. Every `ModerationApi` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.

@@ -1,33 +1,33 @@
-req
-tenantId
-afterId
+req  
+tenantId  
+afterId  
 
 ## Parameters
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
-|------|------|----------|----------|-------------|
+|------|------|----------|----------|--------------|
 | tenantId | string | query | Ja |  |
 | afterId | string | query | Nee |  |
 | limit | integer | query | Nee |  |
 | tags | array | query | Nee |  |
 
-## Response
+## Respons
 
-Geeft terug: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetFeedPostsResponse.swift)
+Retourneert: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetFeedPostsResponse.swift)
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'getFeedPosts Voorbeeld'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
-[inline-code-start]
-// De volgende codevoorbeelden zijn nog in bèta. Voor problemen, meld dit via http://github.com/OpenAPITools/openapi-generator/issues/new
-import FastCommentsSwift
+[inline-code-attrs-start title = 'getFeedPosts Voorbeeld'; type = 'swift'; isFunctional = false; inline-code-attrs-end]  
+[inline-code-start]  
+// De volgende codevoorbeelden zijn nog beta. Bij problemen, rapporteer via http://github.com/OpenAPITools/openapi-generator/issues/new  
+import FastCommentsSwift  
 
-let tenantId = "tenantId_example" // String | 
-let afterId = "afterId_example" // String |  (optioneel)
-let limit = 987 // Int |  (optioneel)
-let tags = ["inner_example"] // [String] |  (optioneel)
+let tenantId = "tenantId_example" // String |  
+let afterId = "afterId_example" // String |  (optioneel)  
+let limit = 987 // Int |  (optioneel)  
+let tags = ["inner_example"] // [String] |  (optioneel)  
 
-DefaultAPI.getFeedPosts(tenantId: tenantId, afterId: afterId, limit: limit, tags: tags) { (response, error) in
+DefaultAPI.getFeedPosts(tenantId: tenantId, options: DefaultAPI.GetFeedPostsOptions(afterId: afterId, limit: limit, tags: tags)) { (response, error) in
     guard error == nil else {
         print(error)
         return

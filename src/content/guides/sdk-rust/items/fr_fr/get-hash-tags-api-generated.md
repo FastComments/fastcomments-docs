@@ -1,25 +1,25 @@
 ## Paramètres
 
-| Name | Type | Requis | Description |
-|------|------|--------|-------------|
-| tenant_id | String | Oui |  |
-| page | f64 | Non |  |
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenant_id | String | Yes |  |
+| page | f64 | No |  |
 
 ## Réponse
 
-Renvoie: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_hash_tags_response.rs)
+Retourne : [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_hash_tags_response.rs)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de get_hash_tags'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple get_hash_tags'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_hash_tags() -> Result<GetHashTagsResponse, Error> {
-    let params: GetHashTagsParams = GetHashTagsParams {
+async fn example() -> Result<(), Error> {
+    let params = GetHashTagsParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        page: Some(2.0),
+        page: Some(1.0),
     };
-    let response: GetHashTagsResponse = get_hash_tags(&configuration, params).await?;
-    Ok(response)
+    let _response = get_hash_tags(&config, params).await?;
+    Ok(())
 }
 [inline-code-end]
 

@@ -1,36 +1,29 @@
-## 매개변수
+## Parameters
 
-| 이름 | 유형 | 필수 | 설명 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | 예 |  |
-| create_tenant_package_body | models::CreateTenantPackageBody | 예 |  |
+| tenant_id | String | Yes |  |
+| create_tenant_package_body | models::CreateTenantPackageBody | Yes |  |
 
-## 응답
+## Response
 
-반환: [`CreateTenantPackageResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_tenant_package_response.rs)
+Returns: [`CreateTenantPackageResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_tenant_package_response.rs)
 
-## 예제
+## Example
 
-[inline-code-attrs-start title = 'create_tenant_package 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_tenant_package 예시'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<CreateTenantPackageResponse, Error> {
-    let create_tenant_package_body: models::CreateTenantPackageBody = models::CreateTenantPackageBody {
-        name: "Premium Support".to_string(),
-        plan: "enterprise".to_string(),
-        seats: Some(50),
-        price_cents: Some(19900),
-        currency: Some("USD".to_string()),
-        features: Some(vec!["priority-support".to_string(), "white-label".to_string()]),
-        auto_renew: Some(true),
-        notes: Some("Includes monthly account review".to_string()),
-    };
-    let params: CreateTenantPackageParams = CreateTenantPackageParams {
+async fn example() -> Result<(), Error> {
+    let params = CreateTenantPackageParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        create_tenant_package_body,
+        create_tenant_package_body: models::CreateTenantPackageBody {
+            package_name: "Standard".to_string(),
+            package_type: "news/article".to_string(),
+            description: Some("Package for news articles".to_string()),
+            ..Default::default()
+        },
     };
-    let response: CreateTenantPackageResponse = create_tenant_package(&configuration, params).await?;
-    Ok(response)
+    let _response = create_tenant_package(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

@@ -2,6 +2,7 @@
 
 | שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | כן |  |
 | userId | string | query | לא |  |
 | trustFactor | string | query | לא |  |
 | sso | string | query | לא |  |
@@ -12,16 +13,17 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-setTrustFactor'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת setTrustFactor'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// דוגמות הקוד הבאות עדיין בבטא. במקרה של בעיה, דווחו דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// הקוד של הדוגמאות שלהלן עדיין בגרסת בטא. עבור כל בעיה, אנא דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let userId = "userId_example" // String |  (אופציונלי)
 let trustFactor = "trustFactor_example" // String |  (אופציונלי)
 let sso = "sso_example" // String |  (אופציונלי)
 
-ModerationAPI.setTrustFactor(userId: userId, trustFactor: trustFactor, sso: sso) { (response, error) in
+ModerationAPI.setTrustFactor(tenantId: tenantId, options: ModerationAPI.SetTrustFactorOptions(userId: userId, trustFactor: trustFactor, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -32,5 +34,3 @@ ModerationAPI.setTrustFactor(userId: userId, trustFactor: trustFactor, sso: sso)
     }
 }
 [inline-code-end]
-
----

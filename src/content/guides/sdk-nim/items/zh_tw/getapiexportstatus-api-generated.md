@@ -1,24 +1,25 @@
 ## 參數
 
-| 名稱 | 型別 | 必填 | 說明 |
+| 名稱 | 類型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| batchJobId | string | 否 |  |
-| sso | string | 否 |  |
+| tenantId | string | 是 |  |
+| options | GetApiExportStatusOptions | 否 |  |
 
 ## 回應
 
-回傳: [`Option[ModerationExportStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_export_status_response.nim)
+返回: [`Option[ModerationExportStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_export_status_response.nim)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getApiExportStatus 範例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getApiExportStatus(batchJobId = "export-job-2026-06-01", sso = "sso-abc123token")
-if response.isSome:
-  let exportStatus = response.get()
-  echo repr(exportStatus)
-else:
-  echo "No export status available, HTTP code: ", httpResponse.statusCode
+let (exportStatusOpt, httpResp) = client.getApiExportStatus(
+  tenantId = "my-tenant-123",
+  options = GetApiExportStatusOptions()
+)
+if exportStatusOpt.isSome:
+  let exportStatus = exportStatusOpt.get()
+  # 根據需要使用 exportStatus
 [inline-code-end]
 
 ---

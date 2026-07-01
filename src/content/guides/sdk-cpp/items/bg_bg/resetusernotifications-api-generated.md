@@ -3,12 +3,7 @@
 | Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
-| afterId | string | Не |  |
-| afterCreatedAt | int64_t | Не |  |
-| unreadOnly | bool | Не |  |
-| dmOnly | bool | Не |  |
-| noDm | bool | Не |  |
-| sso | string | Не |  |
+| options | const ResetUserNotificationsOptions& | Да |  |
 
 ## Отговор
 
@@ -16,21 +11,13 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за resetUserNotifications'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'resetUserNotifications Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-boost::optional<utility::string_t> afterId = utility::string_t(U("notif-456"));
-boost::optional<int64_t> afterCreatedAt = int64_t(1625097600LL);
-boost::optional<bool> unreadOnly = true;
-boost::optional<bool> dmOnly = false;
-boost::optional<bool> noDm = true;
-boost::optional<utility::string_t> sso = utility::string_t(U("user@example.com"));
-api->resetUserNotifications(tenantId, afterId, afterCreatedAt, unreadOnly, dmOnly, noDm, sso)
-.then([](pplx::task<std::shared_ptr<ResetUserNotificationsResponse>> t){
-    try {
-        auto resp = t.get();
-        auto result = resp ? resp : std::make_shared<ResetUserNotificationsResponse>();
-    } catch (const std::exception&) {
-    }
-});
+auto tenantId = utility::string_t(U("my-tenant-123"));
+ResetUserNotificationsOptions options;
+options.email = boost::optional<utility::string_t>(U("user@example.com"));
+api->resetUserNotifications(tenantId, options)
+    .then([](std::shared_ptr<ResetUserNotificationsResponse> resp) {
+        // Обработете отговора
+    });
 [inline-code-end]

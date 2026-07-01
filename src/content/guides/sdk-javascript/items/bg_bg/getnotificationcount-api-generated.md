@@ -1,37 +1,41 @@
-## Параметри
+## Parameters
 
-| Име | Тип | Задължително | Описание |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| userId | string | Не |  |
-| urlId | string | Не |  |
-| fromCommentId | string | Не |  |
-| viewed | boolean | Не |  |
-| type | string | Не |  |
+| tenantId | string | Yes |  |
+| userId | string | No |  |
+| urlId | string | No |  |
+| fromCommentId | string | No |  |
+| viewed | boolean | No |  |
+| type | string | No |  |
 
-## Отговор
+## Response
 
-Връща: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetNotificationCountResponse.ts)
+Returns: [`GetNotificationCountResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetNotificationCountResponse1.ts)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'Пример на getNotificationCount'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за getNotificationCount'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f3b2a';
-const userId: string = 'user_7421';
-const urlId: string = 'https://news.example.com/articles/2026/06/19/ai-update';
-const fromCommentId: string = 'cmt_5a1d2f';
-const viewed: boolean = false;
-const type: string = 'mention';
+async function demoNotificationCount() {
+    const tenantId: string = "tenant_001";
+    const userId: string = "user_42";
+    const urlId: string = "url_9f8e7d";
+    const fromCommentId: string = "comment_12345";
+    const viewed: boolean = false;
+    const type: string = "mention";
 
-const notificationCount: GetNotificationCountResponse = await getNotificationCount(
-  tenantId,
-  userId,
-  urlId,
-  fromCommentId,
-  viewed,
-  type
-);
+    const result: GetNotificationCountResponse1 = await getNotificationCount(
+        tenantId,
+        userId,
+        urlId,
+        fromCommentId,
+        viewed,
+        type
+    );
+
+    console.log(result);
+}
+
+demoNotificationCount();
 [inline-code-end]
-
----

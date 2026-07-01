@@ -1,30 +1,32 @@
-## Параметры
+## Параметри
 
-| Имя | Type | Обязательный | Описание |
-|------|------|----------|-------------|
-| badge_id | String | Да |  |
-| user_id | String | Нет |  |
-| comment_id | String | Нет |  |
-| broadcast_id | String | Нет |  |
-| sso | String | Нет |  |
+| Ім’я | Тип | Обов’язково | Опис |
+|------|------|--------------|------|
+| tenant_id | String | Так |  |
+| badge_id | String | Так |  |
+| user_id | String | Ні |  |
+| comment_id | String | Ні |  |
+| broadcast_id | String | Ні |  |
+| sso | String | Ні |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/award_user_badge_response.rs)
+Повертає: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/award_user_badge_response.rs)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример put_award_badge'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад put_award_badge'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn award_badge_example() -> Result<AwardUserBadgeResponse, Error> {
-    let params: PutAwardBadgeParams = PutAwardBadgeParams {
-        badge_id: "community-champion".to_string(),
-        user_id: Some("user-4821".to_string()),
-        comment_id: Some("news/article/2026-06-18-comment-91".to_string()),
+async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = PutAwardBadgeParams {
+        tenant_id: "acme-corp".to_string(),
+        badge_id: "top-contributor".to_string(),
+        user_id: Some("user-42".to_string()),
+        comment_id: Some("comment-99".to_string()),
         broadcast_id: None,
-        sso: Some("acme-corp-sso-token-abc123".to_string()),
+        sso: Some("sso-abc123".to_string()),
     };
-    let response: AwardUserBadgeResponse = put_award_badge(&configuration, params).await?;
-    Ok(response)
+    let _response = put_award_badge(configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]

@@ -1,30 +1,31 @@
-## 매개변수
+## Parameters
 
-| 이름 | 형식 | 필수 | 설명 |
-|------|------|------|-------------|
-| tenantId | string | 예 |  |
-| domainToUpdate | string | 예 |  |
-| patchDomainConfigParams | PatchDomainConfigParams | 예 |  |
+| 이름 | 타입 | 필수 | 설명 |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| domainToUpdate | string | Yes |  |
+| patchDomainConfigParams | PatchDomainConfigParams | Yes |  |
 
-## 응답
+## Response
 
-반환: [`PatchDomainConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PatchDomainConfigResponse.h)
+Returns: [`PatchDomainConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PatchDomainConfigResponse.h)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'patchDomainConfig 예제'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'patchDomainConfig 예시'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t domainToUpdate = U("example.com");
-PatchDomainConfigParams patchParams;
-patchParams.enableComments = boost::optional<bool>(true);
-patchParams.moderatorEmail = boost::optional<utility::string_t>(U("moderator@example.com"));
-auto task = api->patchDomainConfig(tenantId, domainToUpdate, patchParams)
-    .then([](std::shared_ptr<PatchDomainConfigResponse> resp) {
-        auto result = resp ? resp : std::make_shared<PatchDomainConfigResponse>();
-        return result;
-    });
-task.wait();
-[inline-code-end]
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto domainToUpdate = utility::conversions::to_string_t("example.com");
+PatchDomainConfigParams patchDomainConfigParams;
+patchDomainConfigParams.enableComments = boost::optional<bool>(true);
+patchDomainConfigParams.moderationLevel = boost::optional<int>(2);
+patchDomainConfigParams.customHeader = boost::optional<utility::string_t>(utility::conversions::to_string_t("X-Custom-Header"));
 
----
+api->patchDomainConfig(tenantId, domainToUpdate, patchDomainConfigParams)
+    .then([](std::shared_ptr<PatchDomainConfigResponse> resp) {
+        // 성공 처리
+    })
+    .then([](pplx::task<void> t) {
+        try { t.get(); } catch (const std::exception& e) { /* 오류 처리 */ }
+    });
+[inline-code-end]

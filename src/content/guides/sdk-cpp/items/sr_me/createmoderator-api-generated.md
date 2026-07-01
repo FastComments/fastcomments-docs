@@ -1,32 +1,24 @@
-## Параметри
+## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| createModeratorBody | CreateModeratorBody | Да |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Da |  |
+| createModeratorBody | CreateModeratorBody | Da |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateModeratorResponse.h)
+Vraća: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateModeratorResponse.h)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'createModerator пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createModerator Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-auto bodyPtr = std::make_shared<CreateModeratorBody>();
-bodyPtr->email = utility::string_t(U("moderator@mycompany.com"));
-bodyPtr->role = utility::string_t(U("moderator"));
-bodyPtr->displayName = boost::optional<utility::string_t>(U("Jane Moderator"));
-bodyPtr->isActive = boost::optional<bool>(true);
-
-api->createModerator(tenantId, *bodyPtr).then([](pplx::task<std::shared_ptr<CreateModeratorResponse>> task){
-    try {
-        auto resp = task.get();
-        if (resp) {
-            utility::string_t newModeratorId = resp->id;
-        }
-    } catch (const std::exception&) {
-    }
-});
+CreateModeratorBody moderatorBody;
+moderatorBody.email = utility::conversions::to_string_t("moderator@example.com");
+moderatorBody.name = utility::conversions::to_string_t("John Moderator");
+moderatorBody.notes = boost::optional<utility::string_t>(utility::conversions::to_string_t("Community moderator"));
+api->createModerator(utility::conversions::to_string_t("my-tenant-123"), moderatorBody)
+    .then([](std::shared_ptr<CreateModeratorResponse> resp) {});
 [inline-code-end]
+
+---

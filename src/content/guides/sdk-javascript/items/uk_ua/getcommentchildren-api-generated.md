@@ -1,20 +1,25 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| commentId | string | Так |  |
-| sso | string | Ні |  |
+| commentId | string | Yes |  |
+| tenantId | string | No |  |
+| sso | string | No |  |
 
 ## Відповідь
 
-Повертає: [`ModerationAPIChildCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPIChildCommentsResponse.ts)
+Повертає: [`GetCommentChildrenResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentChildrenResponse.ts)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'Приклад getCommentChildren'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const commentId: string = "5f8d0a2e-3b9f-4c2b-9a37-1f4e6b2c7d8f";
-const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1Njc4OSJ9.signature";
-const childrenResponse: ModerationAPIChildCommentsResponse = await getCommentChildren(commentId);
-const childrenResponseWithSso: ModerationAPIChildCommentsResponse = await getCommentChildren(commentId, sso);
+const commentId: string = "cmt_12345";
+const tenantId: string = "tenant_xyz";
+const sso: string = "sso_987654";
+
+const fullResponse: GetCommentChildrenResponse = await getCommentChildren(commentId, tenantId, sso);
+const minimalResponse: GetCommentChildrenResponse = await getCommentChildren(commentId);
 [inline-code-end]
+
+---

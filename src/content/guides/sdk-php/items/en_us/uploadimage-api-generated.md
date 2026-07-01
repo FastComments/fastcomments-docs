@@ -6,7 +6,7 @@ Upload and resize an image
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Yes |  |
 | sizePreset | string | query | No | Size preset: "Default" (1000x1000px) or "CrossPlatform" (creates sizes for popular devices) |
-| urlId | string | query | No | Page ID where the upload is occurring, used for configuration |
+| urlId | string | query | No | Page id that upload is happening from, to configure |
 
 ## Response
 
@@ -22,17 +22,21 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // If you want to use a custom HTTP client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional; `GuzzleHttp\Client` will be used by default.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $file = '/path/to/file.txt'; // \SplFileObject
-$size_preset = new \FastComments\Client\Model\\FastComments\Client\Model\SizePreset(); // \FastComments\Client\Model\SizePreset | Size preset: \"Default\" (1000x1000px) or \"CrossPlatform\" (generates sizes for common devices)
-$url_id = 'url_id_example'; // string | Page ID where the upload is occurring, used for configuration
+$options = [
+    'size_preset' => new \FastComments\Client\Model\\FastComments\Client\Model\SizePreset(), // \FastComments\Client\Model\SizePreset | Size preset: \"Default\" (1000x1000px) or \"CrossPlatform\" (creates sizes for popular devices)
+    'url_id' => 'url_id_example', // string | Page id that upload is happening from, to configure
+];
+
 
 try {
-    $result = $apiInstance->uploadImage($tenant_id, $file, $size_preset, $url_id);
+    $result = $apiInstance->uploadImage($tenant_id, $file, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->uploadImage: ', $e->getMessage(), PHP_EOL;

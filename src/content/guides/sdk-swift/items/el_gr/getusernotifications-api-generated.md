@@ -1,45 +1,45 @@
-## Παράμετροι
+## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Ναι |  |
-| urlId | string | query | Όχι | Χρησιμοποιείται για να προσδιοριστεί εάν η τρέχουσα σελίδα είναι εγγεγραμμένη. |
-| pageSize | integer | query | Όχι |  |
-| afterId | string | query | Όχι |  |
-| includeContext | boolean | query | Όχι |  |
-| afterCreatedAt | integer | query | Όχι |  |
-| unreadOnly | boolean | query | Όχι |  |
-| dmOnly | boolean | query | Όχι |  |
-| noDm | boolean | query | Όχι |  |
-| includeTranslations | boolean | query | Όχι |  |
-| includeTenantNotifications | boolean | query | Όχι |  |
-| sso | string | query | Όχι |  |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|------------|------------|
+| tenantId | string | query | Yes |  |
+| urlId | string | query | No | Χρησιμοποιείται για να προσδιοριστεί εάν η τρέχουσα σελίδα είναι εγγεγραμμένη. |
+| pageSize | integer | query | No |  |
+| afterId | string | query | No |  |
+| includeContext | boolean | query | No |  |
+| afterCreatedAt | integer | query | No |  |
+| unreadOnly | boolean | query | No |  |
+| dmOnly | boolean | query | No |  |
+| noDm | boolean | query | No |  |
+| includeTranslations | boolean | query | No |  |
+| includeTenantNotifications | boolean | query | No |  |
+| sso | string | query | No |  |
 
-## Απόκριση
+## Response
 
 Επιστρέφει: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetMyNotificationsResponse.swift)
 
-## Παράδειγμα
+## Example
 
 [inline-code-attrs-start title = 'Παράδειγμα getUserNotifications'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Τα παρακάτω δείγματα κώδικα είναι ακόμα beta. Για οποιοδήποτε πρόβλημα, αναφέρετε μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
+// Τα παρακάτω παραδείγματα κώδικα είναι ακόμα σε έκδοση beta. Για οποιοδήποτε πρόβλημα, παρακαλούμε να το αναφέρετε μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let urlId = "urlId_example" // String | Χρησιμοποιείται για να προσδιοριστεί εάν η τρέχουσα σελίδα είναι εγγεγραμμένη. (προαιρετικό)
-let pageSize = 987 // Int |  (προαιρετικό)
-let afterId = "afterId_example" // String |  (προαιρετικό)
-let includeContext = true // Bool |  (προαιρετικό)
-let afterCreatedAt = 987 // Int64 |  (προαιρετικό)
-let unreadOnly = true // Bool |  (προαιρετικό)
-let dmOnly = true // Bool |  (προαιρετικό)
-let noDm = true // Bool |  (προαιρετικό)
-let includeTranslations = true // Bool |  (προαιρετικό)
-let includeTenantNotifications = true // Bool |  (προαιρετικό)
-let sso = "sso_example" // String |  (προαιρετικό)
+let urlId = "urlId_example" // String | Χρησιμοποιείται για να προσδιοριστεί εάν η τρέχουσα σελίδα είναι εγγεγραμμένη. (optional)
+let pageSize = 987 // Int |  (optional)
+let afterId = "afterId_example" // String |  (optional)
+let includeContext = true // Bool |  (optional)
+let afterCreatedAt = 987 // Int64 |  (optional)
+let unreadOnly = true // Bool |  (optional)
+let dmOnly = true // Bool |  (optional)
+let noDm = true // Bool |  (optional)
+let includeTranslations = true // Bool |  (optional)
+let includeTenantNotifications = true // Bool |  (optional)
+let sso = "sso_example" // String |  (optional)
 
-PublicAPI.getUserNotifications(tenantId: tenantId, urlId: urlId, pageSize: pageSize, afterId: afterId, includeContext: includeContext, afterCreatedAt: afterCreatedAt, unreadOnly: unreadOnly, dmOnly: dmOnly, noDm: noDm, includeTranslations: includeTranslations, includeTenantNotifications: includeTenantNotifications, sso: sso) { (response, error) in
+PublicAPI.getUserNotifications(tenantId: tenantId, options: PublicAPI.GetUserNotificationsOptions(urlId: urlId, pageSize: pageSize, afterId: afterId, includeContext: includeContext, afterCreatedAt: afterCreatedAt, unreadOnly: unreadOnly, dmOnly: dmOnly, noDm: noDm, includeTranslations: includeTranslations, includeTenantNotifications: includeTenantNotifications, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

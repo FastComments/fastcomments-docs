@@ -1,27 +1,26 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Потребно | Опис |
+| Ime | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| id | String | Да |  |
-| error_id | String | Да |  |
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
+| error_id | String | Yes |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
+Vraća: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'delete_email_template_render_error Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_email_template_render_error Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params: DeleteEmailTemplateRenderErrorParams = DeleteEmailTemplateRenderErrorParams {
-    tenant_id: String::from("acme-corp-tenant"),
-    id: String::from("marketing/newsletter/welcome"),
-    error_id: String::from("render_err_2026-06-15-7a3f"),
-    request_id: Some(String::from("req-83b2f9a1")),
-};
-
-let response: ApiEmptyResponse = delete_email_template_render_error(&configuration, params).await?;
+async fn example(config: &configuration::Configuration) -> Result<(), Error> {
+    let params = DeleteEmailTemplateRenderErrorParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        id: "welcome-email".to_string(),
+        error_id: "render-failure-123".to_string(),
+    };
+    let _ = delete_email_template_render_error(config, params).await?;
+    Ok(())
+}
 [inline-code-end]
-
----

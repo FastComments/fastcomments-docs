@@ -1,31 +1,28 @@
-## Parametri
+## Parameters
 
-| Nome | Tipo | Obbligatorio | Descrizione |
-|------|------|--------------|-------------|
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
 | tenantId | string | Sì |  |
 | urlId | string | Sì |  |
-| userId | string | No |  |
-| anonUserId | string | No |  |
+| options | GetVotesForUserOptions | No |  |
 
-## Risposta
+## Response
 
 Restituisce: [`Option[GetVotesForUserResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_votes_for_user_response.nim)
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di getVotesForUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio getVotesForUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getVotesForUser(
+let (optResp, httpResp) = client.getVotesForUser(
   tenantId = "my-tenant-123",
   urlId = "news/article-title",
-  userId = "user-789",
-  anonUserId = ""
+  options = GetVotesForUserOptions()
 )
-if response.isSome:
-  let votes = response.get()
-  echo "User votes retrieved"
-else:
-  echo "No votes found"
+
+if optResp.isSome:
+  let resp = optResp.get()
+  echo resp
 [inline-code-end]
 
 ---

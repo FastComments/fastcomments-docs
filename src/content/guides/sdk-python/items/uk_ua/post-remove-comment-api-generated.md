@@ -1,39 +1,44 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов’язково | Опис |
 |------|------|----------|----------|-------------|
-| commentId | string | path | Так |  |
-| sso | string | query | Ні |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Відповідь
 
-Повертає: [`PostRemoveCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/post_remove_comment_response.py)
+Повертає: [`PostRemoveCommentApiResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/post_remove_comment_api_response.py)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'post_remove_comment Приклад'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
-from client.models.post_remove_comment_response import PostRemoveCommentResponse
+from client.api.moderation_api import PostRemoveCommentOptions
+from client.models.post_remove_comment_api_response import PostRemoveCommentApiResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Визначення хоста необов'язкове та за замовчуванням встановлено на https://fastcomments.com
+# Визначення хоста є необов'язковим і за замовчуванням https://fastcomments.com
 # Див. configuration.py для списку всіх підтримуваних параметрів конфігурації.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Увійдіть у контекст із екземпляром клієнта API
+# Відкрити контекст з екземпляром клієнта API
 with client.ApiClient(configuration) as api_client:
-    # Створіть екземпляр класу API
+    # Створити екземпляр класу API
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
-    sso = 'sso_example' # str |  (необов'язково)
+    broadcast_id = 'broadcast_id_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.post_remove_comment(comment_id, sso=sso)
+        api_response = api_instance.post_remove_comment(tenant_id, comment_id, PostRemoveCommentOptions(broadcast_id=broadcast_id, sso=sso))
         print("The response of ModerationApi->post_remove_comment:\n")
         pprint(api_response)
     except Exception as e:

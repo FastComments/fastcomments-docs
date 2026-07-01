@@ -1,11 +1,11 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Ime | Tip | Lokacija | Obvezno | Opis |
+|------|------|----------|----------|------|
 | tenantId | string | query | Da |  |
 | id | string | path | Da |  |
 
-## Odziv
+## Odgovor
 
 Vrne: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
@@ -17,25 +17,28 @@ Vrne: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Konfiguriraj avtorizacijo z API ključem: api_key
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Nastavite pooblastitev ključ API: api_key
+$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Odkomentirajte spodaj, da nastavite predpono (npr. Bearer) za ključ API, če je potrebno
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Če želite uporabiti lastnega HTTP klienta, posredujte klienta, ki implementira `GuzzleHttp\ClientInterface`.
-    // To je neobvezno, privzeto se bo uporabil `GuzzleHttp\Client`.
+    // Če želite uporabiti svoj HTTP odjemalec, podajte odjemalca, ki implementira `GuzzleHttp\ClientInterface`.
+    // To je neobvezno, `GuzzleHttp\Client` bo uporabljen kot privzeto.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
 $update_tenant_package_body = new \FastComments\Client\Model\UpdateTenantPackageBody(); // \FastComments\Client\Model\UpdateTenantPackageBody
+
 
 try {
     $result = $apiInstance->updateTenantPackage($tenant_id, $id, $update_tenant_package_body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->updateTenantPackage: ', $e->getMessage(), PHP_EOL;
+    echo 'Izjema pri klicu DefaultApi->updateTenantPackage: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]

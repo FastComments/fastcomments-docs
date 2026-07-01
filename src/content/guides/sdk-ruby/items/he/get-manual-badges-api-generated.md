@@ -1,7 +1,8 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| שם | סוג | מיקום | חובה | תיאור |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | כן |  |
 | sso | string | query | לא |  |
 
 ## תגובה
@@ -10,23 +11,22 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-get_manual_badges'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת get_manual_badges'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 opts = {
   sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.get_manual_badges(opts)
+  result = api_instance.get_manual_badges(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_manual_badges: #{e}"
 end
 [inline-code-end]
-
----

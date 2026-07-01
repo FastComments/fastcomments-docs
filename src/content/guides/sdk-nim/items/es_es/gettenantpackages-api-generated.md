@@ -1,9 +1,8 @@
----
 ## Parámetros
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Sí |  |
+| Nombre | Tipo | Requerido | Descripción |
+|--------|------|-----------|-------------|
+| tenantId | string | Yes |  |
 | skip | float64 | No |  |
 
 ## Respuesta
@@ -12,15 +11,11 @@ Devuelve: [`Option[GetTenantPackagesResponse]`](https://github.com/FastComments/
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de getTenantPackages'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTenantPackages Ejemplo'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getTenantPackages(tenantId = "my-tenant-123", skip = 0.0)
-if response.isSome:
-  let packages = response.get()
-  echo "Received tenant packages:"
+let (maybeResp, httpResp) = client.getTenantPackages(tenantId = "my-tenant-123", skip = 0.0)
+if maybeResp.isSome:
+  let packages = maybeResp.get()
   echo packages
-else:
-  echo "No packages found for tenant 'my-tenant-123'"
+  echo httpResp.statusCode
 [inline-code-end]
-
----

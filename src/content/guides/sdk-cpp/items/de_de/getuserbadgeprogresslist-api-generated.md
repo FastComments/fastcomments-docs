@@ -1,11 +1,9 @@
 ## Parameter
 
-| Name | Type | Erforderlich | Beschreibung |
-|------|------|--------------|-------------|
-| tenantId | string | Ja |  |
-| userId | string | Nein |  |
-| limit | double | Nein |  |
-| skip | double | Nein |  |
+| Name | Typ | Erforderlich | Beschreibung |
+|------|------|--------------|---------------|
+| tenantId | string | Yes |  |
+| options | const GetUserBadgeProgressListOptions& | Yes |  |
 
 ## Antwort
 
@@ -16,20 +14,15 @@ Gibt zurück: [`APIGetUserBadgeProgressListResponse`](https://github.com/FastCom
 [inline-code-attrs-start title = 'getUserBadgeProgressList Beispiel'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
-boost::optional<utility::string_t> userId = utility::string_t(U("user@example.com"));
-boost::optional<double> limit = 50.0;
-boost::optional<double> skip = 0.0;
-auto defaultResp = std::make_shared<APIGetUserBadgeProgressListResponse>();
-api->getUserBadgeProgressList(tenantId, userId, limit, skip)
-.then([defaultResp](pplx::task<std::shared_ptr<APIGetUserBadgeProgressListResponse>> t){
-    try {
-        auto resp = t.get();
-        auto finalResp = resp ? resp : defaultResp;
-        (void)finalResp;
-    } catch (const std::exception& e) {
-        std::cerr << "Error: " << e.what() << std::endl;
-    }
-});
+GetUserBadgeProgressListOptions options;
+options.userId = U("user@example.com");
+options.page = boost::optional<int>(1);
+options.pageSize = boost::optional<int>(20);
+api->getUserBadgeProgressList(tenantId, options)
+    .then([](std::shared_ptr<APIGetUserBadgeProgressListResponse> resp) {
+        if (!resp) return;
+        for (const auto& badge : resp->badges) {
+            // process badge
+        }
+    });
 [inline-code-end]
-
----

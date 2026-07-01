@@ -1,9 +1,9 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов’язково | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Так |  |
-| id | string | path | Так |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
 ## Відповідь
 
@@ -11,7 +11,7 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад updateQuestionResult'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateQuestionResult Приклад'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -24,14 +24,16 @@ $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKe
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Якщо ви хочете використовувати власний HTTP-клієнт, передайте клієнта, який реалізує `GuzzleHttp\ClientInterface`.
-    // Це необов'язково, `GuzzleHttp\Client` буде використано за замовчуванням.
+    // Якщо ви хочете використати власний HTTP‑клієнт, передайте ваш клієнт, який реалізує `GuzzleHttp\ClientInterface`.
+    // Це необов’язково, `GuzzleHttp\Client` буде використано за замовчуванням.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
 $update_question_result_body = new \FastComments\Client\Model\UpdateQuestionResultBody(); // \FastComments\Client\Model\UpdateQuestionResultBody
+
 
 try {
     $result = $apiInstance->updateQuestionResult($tenant_id, $id, $update_question_result_body);
@@ -40,3 +42,5 @@ try {
     echo 'Exception when calling DefaultApi->updateQuestionResult: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

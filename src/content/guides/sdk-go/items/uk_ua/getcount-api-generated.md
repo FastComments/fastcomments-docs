@@ -1,7 +1,8 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Назва | Тип | Розташування | Обов'язково | Опис |
+|------|------|--------------|-------------|------|
+| tenantId | string | query | Так |  |
 | text-search | string | query | Ні |  |
 | byIPFromComment | string | query | Ні |  |
 | filter | string | query | Ні |  |
@@ -27,16 +28,17 @@ import (
 )
 
 func main() {
-	textSearch := "textSearch_example" // string |  (необов'язково)
-	byIPFromComment := "byIPFromComment_example" // string |  (необов'язково)
-	filter := "filter_example" // string |  (необов'язково)
-	searchFilters := "searchFilters_example" // string |  (необов'язково)
-	demo := true // bool |  (необов'язково)
-	sso := "sso_example" // string |  (необов'язково)
+	tenantId := "tenantId_example" // string | 
+	textSearch := "textSearch_example" // string |  (необов'язковий)
+	byIPFromComment := "byIPFromComment_example" // string |  (необов'язковий)
+	filter := "filter_example" // string |  (необов'язковий)
+	searchFilters := "searchFilters_example" // string |  (необов'язковий)
+	demo := true // bool |  (необов'язковий)
+	sso := "sso_example" // string |  (необов'язковий)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetCount(context.Background()).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filter(filter).SearchFilters(searchFilters).Demo(demo).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetCount(context.Background()).TenantId(tenantId).TextSearch(textSearch).ByIPFromComment(byIPFromComment).Filter(filter).SearchFilters(searchFilters).Demo(demo).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetCount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

@@ -1,9 +1,9 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tag | string | path | Evet |  |
-| tenantId | string | query | Hayır |  |
+| tenantId | string | query | Yes |  |
+| tag | string | path | Yes |  |
 
 ## Yanıt
 
@@ -23,8 +23,8 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	tag := "tag_example" // string | 
-	tenantId := "tenantId_example" // string |  (isteğe bağlı)
 	deleteHashTagRequestBody := *openapiclient.NewDeleteHashTagRequestBody() // DeleteHashTagRequestBody |  (isteğe bağlı)
 
 	configuration := openapiclient.NewConfiguration()
@@ -34,7 +34,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.DeleteHashTag``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `DeleteHashTag`'ten yanıt: APIEmptyResponse
+	// `DeleteHashTag` yanıtı: APIEmptyResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.DeleteHashTag`: %v\n", resp)
 }
 [inline-code-end]
+
+---

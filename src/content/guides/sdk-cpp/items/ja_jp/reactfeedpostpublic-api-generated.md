@@ -5,31 +5,24 @@
 | tenantId | string | はい |  |
 | postId | string | はい |  |
 | reactBodyParams | ReactBodyParams | はい |  |
-| isUndo | bool | いいえ |  |
-| broadcastId | string | いいえ |  |
-| sso | string | いいえ |  |
+| options | const ReactFeedPostPublicOptions& | はい |  |
 
 ## レスポンス
 
-戻り値: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ReactFeedPostResponse.h)
+返却: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ReactFeedPostResponse.h)
 
 ## 例
 
 [inline-code-attrs-start title = 'reactFeedPostPublic の例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t postId = U("feed-post-456");
-ReactBodyParams reactBodyParams;
-reactBodyParams.reaction = U("like");
-boost::optional<bool> isUndo = false;
-boost::optional<utility::string_t> broadcastId = boost::optional<utility::string_t>(U("broadcast-01"));
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
-api->reactFeedPostPublic(tenantId, postId, reactBodyParams, isUndo, broadcastId, sso)
-.then([](std::shared_ptr<ReactFeedPostResponse> resp) {
-    if (resp) {
-        auto resultCopy = std::make_shared<ReactFeedPostResponse>(*resp);
-    }
-});
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto postId = utility::conversions::to_string_t("post-987");
+ReactBodyParams reactBody;
+reactBody.reaction = utility::conversions::to_string_t("love");
+reactBody.userId = utility::conversions::to_string_t("user@example.com");
+ReactFeedPostPublicOptions options;
+options.metadata = boost::optional<utility::string_t>(utility::conversions::to_string_t("mobile"));
+api->reactFeedPostPublic(tenantId, postId, reactBody, options)
+    .then([](std::shared_ptr<ReactFeedPostResponse> resp) {
+    });
 [inline-code-end]
-
----

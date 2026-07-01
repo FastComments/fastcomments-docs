@@ -1,12 +1,11 @@
 ## 參數
 
-| 名稱 | 類型 | 必填 | 說明 |
+| 名稱 | 型別 | 必須 | 說明 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | commentId | string | 是 |  |
 | direction | string | 否 |  |
-| userId | string | 否 |  |
-| anonUserId | string | 否 |  |
+| options | CreateVoteOptions | 否 |  |
 
 ## 回應
 
@@ -16,18 +15,14 @@
 
 [inline-code-attrs-start title = 'createVote 範例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.createVote(
+let (voteOpt, httpResp) = client.createVote(
   tenantId = "my-tenant-123",
-  commentId = "cmt-987654",
+  commentId = "comment-7890",
   direction = "up",
-  userId = "user-42",
-  anonUserId = ""
+  options = CreateVoteOptions()
 )
-if response.isSome:
-  let vote = response.get()
-  echo "Vote created:", vote
-else:
-  echo "No vote returned"
-[inline-code-end]
 
----
+if voteOpt.isSome:
+  let vote = voteOpt.get()
+  echo vote
+[inline-code-end]

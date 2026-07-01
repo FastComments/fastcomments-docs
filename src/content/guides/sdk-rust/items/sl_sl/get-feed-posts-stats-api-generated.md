@@ -1,10 +1,10 @@
 ## Parametri
 
-| Name | Type | Obvezno | Opis |
+| Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
-| tenant_id | String | Da |  |
-| post_ids | Vec<String> | Da |  |
-| sso | String | Ne |  |
+| tenant_id | String | Yes |  |
+| post_ids | Vec<String> | Yes |  |
+| sso | String | No |  |
 
 ## Odgovor
 
@@ -14,17 +14,16 @@ Vrne: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-ru
 
 [inline-code-attrs-start title = 'Primer get_feed_posts_stats'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_main(configuration: &configuration::Configuration) -> Result<(), Error> {
-    let params: GetFeedPostsStatsParams = GetFeedPostsStatsParams {
+async fn fetch_feed_stats() -> Result<(), Error> {
+    let params = GetFeedPostsStatsParams {
         tenant_id: "acme-corp-tenant".to_string(),
         post_ids: vec![
-            "news/2026-product-launch".to_string(),
-            "blog/engineering-architecture".to_string()
+            "news/article/123".to_string(),
+            "blog/post/456".to_string(),
         ],
-        sso: Some("sso.jwt.token.eyJhbGci...".to_string()),
+        sso: Some("sso-token-xyz".to_string()),
     };
-    let stats: FeedPostsStatsResponse = get_feed_posts_stats(configuration, params).await?;
-    let _api_status: ApiStatus = /* uporabite stats po potrebi */ stats.into();
+    let _response = get_feed_posts_stats(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]

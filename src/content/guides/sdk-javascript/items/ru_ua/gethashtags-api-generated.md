@@ -1,22 +1,26 @@
-## Параметры
+## Параметри
 
-| Имя | Type | Обязательно | Описание |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| page | number | Нет |  |
+| Назва | Тип | Обов'язково | Опис |
+|------|------|-------------|------|
+| tenantId | string | Так |  |
+| page | number | Ні |  |
 
-## Ответ
+## Відповідь
 
-Возвращает: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetHashTagsResponse.ts)
+Повертає: [`GetHashTagsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetHashTagsResponse1.ts)
 
-## Пример
+## Приклад
 
-[inline-code-attrs-start title = 'Пример getHashTags'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад getHashTags'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-123";
-const pageNumber: number = 2;
-const responseWithPage: GetHashTagsResponse = await getHashTags(tenantId, pageNumber);
-const responseFirstPage: GetHashTagsResponse = await getHashTags(tenantId);
+(async () => {
+  const tenantId: string = "tenant_12345";
+
+  const responseWithPage: GetHashTagsResponse1 = await getHashTags(tenantId, 1);
+  const responseDefault: GetHashTagsResponse1 = await getHashTags(tenantId);
+
+  console.log(responseWithPage, responseDefault);
+})();
 [inline-code-end]
 
 ---

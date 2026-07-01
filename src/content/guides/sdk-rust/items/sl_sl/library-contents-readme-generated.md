@@ -1,20 +1,20 @@
-FastComments Rust SDK je sestavljen iz več modulov:
+FastComments Rust SDK sestavlja več modulov:
 
-- **Modul odjemalca** - API-odjemalec za FastComments REST API-je
-  - Celotne definicije tipov za vse modele API-ja
-  - Trije API-odjemalci, ki pokrivajo vse metode FastComments:
-    - `default_api` (**DefaultApi**) - Metode, avtenticirane z API ključem, za strežniško uporabo
-    - `public_api` (**PublicApi**) - javni, brez API-ključa metode, ki jih je varno klicati iz brskalnikov in mobilnih aplikacij
-    - `moderation_api` (**ModerationApi**) - metode, ki podpirajo nadzorno ploščo moderatorja, vključno z moderacijo komentarjev (seznam, štetje, iskanje, dnevniki, izvoz), ukrepi moderacije (odstrani/obnovi, označi, nastavi status pregleda/spama/odobritve, glasovi, ponovno odpri/zaključi nit), prepovedmi (prepoved iz komentarja, razveljavitev, povzetki pred prepovedjo, status/preferenc prepovedi, število prepovedanih uporabnikov) ter značkami in zaupanje (podeli/odstrani značke, ročne značke, pridobi/nastavi faktor zaupanja, notranji uporabniški profil). Vsaka moderacijska metoda sprejme parameter `sso`, tako da je klic mogoče izvesti v imenu moderatorja, avtenticiranega preko SSO.
-  - Popolna podpora async/await z tokio
-  - Za podrobno dokumentacijo API-ja glejte [client/README.md](https://github.com/FastComments/fastcomments-rust/blob/main/client/README.md)
+- **Client Module** – API odjemalec za FastComments REST API‑je
+  - Celovite definicije tipov za vse modele API‑ja
+  - Trije API odjemalci, ki pokrivajo vse FastComments metode:
+    - `default_api` (**DefaultApi**) – metode, avtenticirane s ključem API, za uporabo na strežniku
+    - `public_api` (**PublicApi**) – javne metode brez ključa API, ki so varne za klic iz brskalnikov in mobilnih aplikacij
+    - `moderation_api` (**ModerationApi**) – obsežna zbirka živo in hitro delujočih moderacijskih API‑jev. Vsaka metoda Moderation sprejme parameter `sso` in se lahko avtenticira prek SSO ali piškotka seje FastComments.com.
+  - Polna podpora za async/await s tokio
+  - Oglejte si [client/README.md](https://github.com/FastComments/fastcomments-rust/blob/main/client/README.md) za podrobno dokumentacijo API‑ja
 
-- **Modul SSO** - Strežniški pripomočki za Single Sign-On
-  - Varno generiranje žetonov za avtentikacijo uporabnikov
-  - Podpora za preproste in varne SSO načine
-  - Podpisovanje žetonov, ki temelji na HMAC-SHA256
+- **SSO Module** – strežniška orodja za enotno prijavo (Single Sign-On)
+  - Varen generiranje žetonov za avtentikacijo uporabnikov
+  - Podpora tako preprostem kot varnemu načinu SSO
+  - Podpisovanje žetonov na osnovi HMAC‑SHA256
 
-- **Osnovni tipi** - Skupne definicije tipov in pripomočki
+- **Core Types** – skupne definicije tipov in orodja
   - Modeli komentarjev in strukture metapodatkov
   - Konfiguracije uporabnikov in najemnikov
   - Pomožne funkcije za pogoste operacije

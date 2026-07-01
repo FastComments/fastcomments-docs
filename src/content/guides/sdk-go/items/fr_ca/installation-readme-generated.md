@@ -2,11 +2,11 @@
 go get github.com/fastcomments/fastcomments-go
 ```
 
-### Utilisation du client de l'API
+### Utilisation du client API
 
-#### API publique (Aucune authentification)
+#### API publique (sans authentification)
 
-L'API publique permet un accès non authentifié aux points de terminaison publics :
+L'API publique permet un accès non authentifié aux points de terminaison publics :
 
 ```go
 package main
@@ -21,7 +21,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // Récupérer les commentaires via PublicAPI
+    // Obtenir les commentaires en utilisant l'API publique
     response, httpResp, err := apiClient.PublicAPI.GetCommentsPublic(
         context.Background(),
         "your-tenant-id",
@@ -36,9 +36,9 @@ func main() {
 }
 ```
 
-#### API par défaut (Requiert une clé API)
+#### API par défaut (requiert une clé API)
 
-L'API par défaut requiert une authentification avec votre clé API :
+L'API par défaut requiert une authentification en utilisant votre clé API :
 
 ```go
 package main
@@ -62,7 +62,7 @@ func main() {
         },
     )
 
-    // Récupérer les commentaires en utilisant DefaultAPI authentifié
+    // Obtenir les commentaires en utilisant l'API par défaut authentifiée
     response, httpResp, err := apiClient.DefaultAPI.GetComments(auth).
         TenantId("your-tenant-id").
         UrlId("your-page-url-id").
@@ -77,15 +77,9 @@ func main() {
 }
 ```
 
-#### API de modération (Tableau de bord du modérateur)
+#### API de modération (tableau de bord du modérateur)
 
-L'API de modération alimente le tableau de bord du modérateur. Elle fournit des méthodes pour lister,
-compter, rechercher et exporter des commentaires, actions de modération (supprimer/restaurer,
-signaler, définir l'état revue/spam/approuvé, votes, rouvrir/fermer les fils), bannissements (interdire de
-commenter, annuler, résumés pré-bannissement, état et préférences du bannissement, nombre d'utilisateurs bannis),
-et badges & confiance (attribuer/retirer des badges, badges manuels, obtenir/définir le facteur de confiance, profil
-interne de l'utilisateur). Toutes les méthodes de modération acceptent un `sso` paramètre pour
-les modérateurs authentifiés via SSO:
+L'API de modération fournit une suite étendue d'APIs de modération en temps réel et rapides. Toutes les méthodes de modération acceptent un paramètre `sso` et peuvent s'authentifier via SSO ou un cookie de session FastComments.com :
 
 ```go
 package main
@@ -100,7 +94,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // Lister les commentaires pour modération en utilisant ModerationAPI
+    // Répertorier les commentaires pour la modération en utilisant l'API de modération
     response, httpResp, err := apiClient.ModerationAPI.GetApiComments(
         context.Background(),
     ).Sso("your-sso-token").Execute()

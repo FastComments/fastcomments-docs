@@ -1,15 +1,15 @@
-## Parametri
+## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tag | string | path | Da |  |
-| tenantId | string | query | Ne |  |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| tag | string | path | Yes |  |
 
-## Odgovor
+## Response
 
 Vraća: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_hash_tag_response.py)
 
-## Primer
+## Example
 
 [inline-code-attrs-start title = 'patch_hash_tag Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -19,33 +19,33 @@ from client.models.update_hash_tag_response import UpdateHashTagResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definisanje hosta je opciono i podrazumevano je https://fastcomments.com
+# Definisanje hosta je opcionalno i podrazumevano je https://fastcomments.com
 # Pogledajte configuration.py za listu svih podržanih konfiguracionih parametara.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 # Klijent mora da konfiguriše parametre autentifikacije i autorizacije
-# u skladu sa politikom bezbednosti API servera.
-# Primeri za svaki metod autentifikacije dati su ispod, koristite primer koji
-# odgovara vašem slučaju upotrebe.
+# u skladu sa politikom sigurnosti API servera.
+# Primeri za svaki metod autentifikacije su prikazani dole, koristite primer koji
+# ispunjava vaš slučaj upotrebe autentifikacije.
 
 # Konfigurišite autorizaciju API ključa: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Otkomentarišite ispod da biste postavili prefiks (npr. Bearer) za API ključ, ako je potrebno
+# Otkomentarišite dole da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Uđite u kontekst sa instancom API klijenta
 with client.ApiClient(configuration) as api_client:
     # Kreirajte instancu API klase
     api_instance = client.DefaultApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     tag = 'tag_example' # str | 
-    tenant_id = 'tenant_id_example' # str |  (opciono)
-    update_hash_tag_body = client.UpdateHashTagBody() # UpdateHashTagBody |  (opciono)
+    update_hash_tag_body = client.UpdateHashTagBody() # UpdateHashTagBody |  (optional)
 
     try:
-        api_response = api_instance.patch_hash_tag(tag, tenant_id=tenant_id, update_hash_tag_body=update_hash_tag_body)
+        api_response = api_instance.patch_hash_tag(tenant_id, tag, update_hash_tag_body)
         print("The response of DefaultApi->patch_hash_tag:\n")
         pprint(api_response)
     except Exception as e:

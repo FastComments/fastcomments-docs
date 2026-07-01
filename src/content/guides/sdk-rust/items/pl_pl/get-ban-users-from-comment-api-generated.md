@@ -1,7 +1,8 @@
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|-------------|
+|------|------|----------|------|
+| tenant_id | String | Tak |  |
 | comment_id | String | Tak |  |
 | sso | String | Nie |  |
 
@@ -13,14 +14,14 @@ Zwraca: [`GetBannedUsersFromCommentResponse`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'Przykład get_ban_users_from_comment'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_banned_users_from_comment() -> Result<GetBannedUsersFromCommentResponse, Error> {
-    let params: GetBanUsersFromCommentParams = GetBanUsersFromCommentParams {
-        comment_id: String::from("news/tech/acme-launch/comment-42"),
-        sso: Some(String::from("acme-corp-sso-token-2026-06")),
+async fn example() -> Result<(), Error> {
+    let params = GetBanUsersFromCommentParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: "news/article/12345".to_string(),
+        sso: Some("sso-unique-id".to_string()),
     };
-    let response: GetBannedUsersFromCommentResponse =
-        get_ban_users_from_comment(&configuration, params).await?;
-    Ok(response)
+    let _response = get_ban_users_from_comment(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
 

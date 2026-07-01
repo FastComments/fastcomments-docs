@@ -1,13 +1,13 @@
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| limit | number | query | Ne |  |
-| skip | number | query | Ne |  |
-| order | string | query | Ne |  |
-| after | number | query | Ne |  |
-| before | number | query | Ne |  |
+| tenantId | string | upit | Da |  |
+| limit | number | upit | Ne |  |
+| skip | number | upit | Ne |  |
+| order | string | upit | Ne |  |
+| after | number | upit | Ne |  |
+| before | number | upit | Ne |  |
 
 ## Odgovor
 
@@ -17,17 +17,17 @@ Vraća: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-sw
 
 [inline-code-attrs-start title = 'Primer getAuditLogs'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sledeći primeri koda su još uvek beta. Za bilo koji problem, prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sledići primeri koda su još u beta fazi. Za bilo koji problem, molimo prijavite na http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let limit = 987 // Double |  (opciono)
-let skip = 987 // Double |  (opciono)
-let order = SORT_DIR() // SORTDIR |  (opciono)
-let after = 987 // Double |  (opciono)
-let before = 987 // Double |  (opciono)
+let limit = 987 // Double |  (opcionalno)
+let skip = 987 // Double |  (opcionalno)
+let order = SORT_DIR() // SORTDIR |  (opcionalno)
+let after = 987 // Double |  (opcionalno)
+let before = 987 // Double |  (opcionalno)
 
-DefaultAPI.getAuditLogs(tenantId: tenantId, limit: limit, skip: skip, order: order, after: after, before: before) { (response, error) in
+DefaultAPI.getAuditLogs(tenantId: tenantId, options: DefaultAPI.GetAuditLogsOptions(limit: limit, skip: skip, order: order, after: after, before: before)) { (response, error) in
     guard error == nil else {
         print(error)
         return

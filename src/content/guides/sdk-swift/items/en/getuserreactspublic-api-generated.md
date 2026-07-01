@@ -21,7 +21,7 @@ let tenantId = "tenantId_example" // String |
 let postIds = ["inner_example"] // [String] |  (optional)
 let sso = "sso_example" // String |  (optional)
 
-PublicAPI.getUserReactsPublic(tenantId: tenantId, postIds: postIds, sso: sso) { (response, error) in
+PublicAPI.getUserReactsPublic(tenantId: tenantId, options: PublicAPI.GetUserReactsPublicOptions(postIds: postIds, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

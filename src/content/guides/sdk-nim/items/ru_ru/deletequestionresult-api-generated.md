@@ -13,12 +13,9 @@
 
 [inline-code-attrs-start title = 'Пример deleteQuestionResult'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let tenantId = "my-tenant-123"
-let resultId = "question-result-456"
-let (response, httpResponse) = client.deleteQuestionResult(tenantId = tenantId, id = resultId)
-if response.isSome:
-  let emptyResp = response.get()
-  echo "Deleted question result:", resultId
+let (maybeResult, httpResp) = client.deleteQuestionResult(tenantId = "my-tenant-123", id = "question-456")
+if maybeResult.isSome:
+  let result = maybeResult.get()
 [inline-code-end]
 
 ---

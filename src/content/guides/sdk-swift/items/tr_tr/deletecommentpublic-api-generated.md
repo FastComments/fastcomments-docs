@@ -2,11 +2,11 @@
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Evet |  |
-| commentId | string | path | Evet |  |
-| broadcastId | string | query | Evet |  |
-| editKey | string | query | Hayır |  |
-| sso | string | query | Hayır |  |
+| tenantId | string | yol | Evet |  |
+| commentId | string | yol | Evet |  |
+| broadcastId | string | sorgu | Evet |  |
+| editKey | string | sorgu | Hayır |  |
+| sso | string | sorgu | Hayır |  |
 
 ## Yanıt
 
@@ -16,7 +16,7 @@ Döndürür: [`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/
 
 [inline-code-attrs-start title = 'deleteCommentPublic Örneği'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Aşağıdaki kod örnekleri hâlâ beta aşamasındadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new üzerinden bildirin
+// Aşağıdaki kod örnekleri hâlâ beta. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new adresine bildirin
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -25,7 +25,7 @@ let broadcastId = "broadcastId_example" // String |
 let editKey = "editKey_example" // String |  (isteğe bağlı)
 let sso = "sso_example" // String |  (isteğe bağlı)
 
-PublicAPI.deleteCommentPublic(tenantId: tenantId, commentId: commentId, broadcastId: broadcastId, editKey: editKey, sso: sso) { (response, error) in
+PublicAPI.deleteCommentPublic(tenantId: tenantId, commentId: commentId, broadcastId: broadcastId, options: PublicAPI.DeleteCommentPublicOptions(editKey: editKey, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

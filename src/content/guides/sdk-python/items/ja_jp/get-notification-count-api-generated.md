@@ -2,46 +2,41 @@
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | はい |  |
-| userId | string | query | いいえ |  |
-| urlId | string | query | いいえ |  |
-| fromCommentId | string | query | いいえ |  |
-| viewed | boolean | query | いいえ |  |
-| type | string | query | いいえ |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| urlId | string | query | No |  |
+| fromCommentId | string | query | No |  |
+| viewed | boolean | query | No |  |
+| type | string | query | No |  |
 
 ## レスポンス
 
-戻り値: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notification_count_response.py)
+Returns: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notification_count_response.py)
 
 ## 例
 
 [inline-code-attrs-start title = 'get_notification_count の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetNotificationCountOptions
 from client.models.get_notification_count_response import GetNotificationCountResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# ホストの定義は任意で、デフォルトは https://fastcomments.com です
-# サポートされているすべての構成パラメータの一覧は configuration.py を参照してください。
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
+# ホストの定義はオプションで、デフォルトは https://fastcomments.com です
+# configuration.py でサポートされているすべての設定パラメータの一覧を確認してください。
+# クライアントは API サーバーのセキュリティポリシーに従って認証および認可パラメータを設定する必要があります。
+# 各認証方法の例が以下に示されています。認証ユースケースに合致する例を使用してください。
 
-# クライアントは認証および認可パラメータを設定する必要があります
-# それは API サーバーのセキュリティポリシーに従って行ってください。
-# 各認証方式の例を以下に示します。
-# あなたの認証ユースケースに合う例を使用してください。
-
-# API キー認証を設定: api_key
+# APIキー認証を設定: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# 必要に応じて API キーのプレフィックス（例: Bearer）を設定する場合は、以下の行のコメントを外してください
+# 必要に応じて API キーのプレフィックス（例: Bearer）を設定する場合は下のコメントを解除してください
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# API クライアントのインスタンスを使ってコンテキストを開きます
+# API クライアントのインスタンスでコンテキストに入ります
 with client.ApiClient(configuration) as api_client:
-    # API クラスのインスタンスを作成
+    # API クラスのインスタンスを作成します
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     user_id = 'user_id_example' # str |  (オプション)
@@ -51,7 +46,7 @@ with client.ApiClient(configuration) as api_client:
     type = 'type_example' # str |  (オプション)
 
     try:
-        api_response = api_instance.get_notification_count(tenant_id, user_id=user_id, url_id=url_id, from_comment_id=from_comment_id, viewed=viewed, type=type)
+        api_response = api_instance.get_notification_count(tenant_id, GetNotificationCountOptions(user_id=user_id, url_id=url_id, from_comment_id=from_comment_id, viewed=viewed, type=type))
         print("The response of DefaultApi->get_notification_count:\n")
         pprint(api_response)
     except Exception as e:

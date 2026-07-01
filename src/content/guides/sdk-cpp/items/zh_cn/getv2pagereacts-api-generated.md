@@ -1,25 +1,26 @@
 ## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必需 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | urlId | string | 是 |  |
 
 ## 响应
 
-返回：[`GetV2PageReacts`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetV2PageReacts.h)
+返回: [`GetV2PageReacts`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetV2PageReacts.h)
 
 ## 示例
 
 [inline-code-attrs-start title = 'getV2PageReacts 示例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = utility::conversions::to_string_t("my-tenant-123");
-utility::string_t urlId = utility::conversions::to_string_t("page-55f3b2");
-boost::optional<utility::string_t> maybeFilter = utility::conversions::to_string_t("recent");
-auto fallback = std::make_shared<GetV2PageReacts>();
+auto tenantId = utility::string_t("my-tenant-123");
+auto urlId = utility::string_t("https://example.com/article/42");
+boost::optional<utility::string_t> locale = utility::string_t("en-US");
 api->getV2PageReacts(tenantId, urlId)
-.then([fallback](std::shared_ptr<GetV2PageReacts> resp){
-    auto result = resp ? resp : fallback;
-    std::cout << "Received reacts object at " << result.get() << std::endl;
-});
+    .then([locale](std::shared_ptr<GetV2PageReacts> reacts){
+        if (locale) {}
+    })
+    .then([](pplx::task<void> t){
+        try { t.get(); } catch (...) {}
+    });
 [inline-code-end]

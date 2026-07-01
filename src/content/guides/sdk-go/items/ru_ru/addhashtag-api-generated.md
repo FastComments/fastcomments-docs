@@ -1,8 +1,8 @@
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Имя | Тип | Местоположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Нет |  |
+| tenantId | string | query | Да |  |
 
 ## Ответ
 
@@ -22,18 +22,18 @@ import (
 )
 
 func main() {
-	tenantId := "tenantId_example" // string |  (необязательно)
+	tenantId := "tenantId_example" // string | 
 	createHashTagBody := *openapiclient.NewCreateHashTagBody("Tag_example") // CreateHashTagBody |  (необязательно)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 	resp, r, err := apiClient.DefaultAPI.AddHashTag(context.Background()).TenantId(tenantId).CreateHashTagBody(createHashTagBody).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.AddHashTag``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Ошибка при вызове `DefaultAPI.AddHashTag``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Полный HTTP-ответ: %v\n", r)
 	}
 	// ответ от `AddHashTag`: CreateHashTagResponse
-	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.AddHashTag`: %v\n", resp)
+	fmt.Fprintf(os.Stdout, "Ответ от `DefaultAPI.AddHashTag`: %v\n", resp)
 }
 [inline-code-end]
 

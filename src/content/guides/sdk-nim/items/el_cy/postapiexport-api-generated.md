@@ -1,14 +1,9 @@
----
 ## Παράμετροι
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| textSearch | string | Όχι |  |
-| byIPFromComment | string | Όχι |  |
-| filters | string | Όχι |  |
-| searchFilters | string | Όχι |  |
-| sorts | string | Όχι |  |
-| sso | string | Όχι |  |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+|------|------|------------|-----------|
+| tenantId | string | Yes |  |
+| options | PostApiExportOptions | No |  |
 
 ## Απόκριση
 
@@ -16,21 +11,12 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα postApiExport'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postApiExport Παράδειγμα'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.postApiExport(
-  textSearch = "offensive language and spam",
-  byIPFromComment = "203.0.113.45",
-  filters = "{\"status\":\"pending\",\"severity\":\"high\"}",
-  searchFilters = "authorEmail:editor@news-site.com",
-  sorts = "-createdAt",
-  sso = "sso-session-token-9f8b7c"
-)
-if response.isSome:
-  let exportResp = response.get()
-  echo "Moderation export received:", exportResp
-else:
-  echo "No export returned, HTTP status:", httpResponse.status.code
+let (optExport, httpResp) = client.postApiExport(tenantId = "my-tenant-123", options = PostApiExportOptions())
+if optExport.isSome:
+  let export = optExport.get()
+  echo export
 [inline-code-end]
 
 ---

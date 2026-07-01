@@ -1,12 +1,12 @@
 ## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Oui |  |
-| id | string | path | Oui |  |
-| contextUserId | string | query | Non |  |
-| doSpamCheck | boolean | query | Non |  |
-| isLive | boolean | query | Non |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| contextUserId | string | query | No |  |
+| doSpamCheck | boolean | query | No |  |
+| isLive | boolean | query | No |  |
 
 ## Réponse
 
@@ -14,13 +14,13 @@ Renvoie : [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple updateComment'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple de mise à jour de commentaire'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configurer l'authentification par clé API : api_key
+// Configurer l'autorisation de clé API : api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Décommentez ci-dessous pour configurer le préfixe (par ex. Bearer) pour la clé API, si nécessaire
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
@@ -32,15 +32,19 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $id = 'id_example'; // string
 $updatable_comment_params = new \FastComments\Client\Model\UpdatableCommentParams(); // \FastComments\Client\Model\UpdatableCommentParams
-$context_user_id = 'context_user_id_example'; // string
-$do_spam_check = True; // bool
-$is_live = True; // bool
+$options = [
+    'context_user_id' => 'context_user_id_example', // string
+    'do_spam_check' => True, // bool
+    'is_live' => True, // bool
+];
+
 
 try {
-    $result = $apiInstance->updateComment($tenant_id, $id, $updatable_comment_params, $context_user_id, $do_spam_check, $is_live);
+    $result = $apiInstance->updateComment($tenant_id, $id, $updatable_comment_params, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->updateComment: ', $e->getMessage(), PHP_EOL;

@@ -1,23 +1,23 @@
 ## Parametre
 
-| Name | Type | Required | Description |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | id | string | Ja |  |
 
-## Response
+## Svar
 
-Returnerer: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Returnerer: [`DeleteQuestionConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteQuestionConfigResponse.ts)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på deleteQuestionConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteQuestionConfig Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_4f2b3c';
-const id: string = 'qcfg_9a8b7c';
-const metadataNote: string | undefined = undefined; // valgfri metadata (ikke krævet af funktionen)
-const result: APIEmptyResponse = await deleteQuestionConfig(tenantId, id);
-metadataNote;
+async function runDeletion(): Promise<void> {
+  const tenantId: string = "tenant_8f5a2c9d";
+  const configId: string = "questionConfig_4b7e1f";
+  const deleteResult: DeleteQuestionConfigResponse = await deleteQuestionConfig(tenantId, configId);
+  console.log(deleteResult);
+}
+void runDeletion();
 [inline-code-end]
-
----

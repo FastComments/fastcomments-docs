@@ -1,7 +1,8 @@
-## פרמטרים
+## Parameters
 
 | שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | כן |  |
 | page | number | query | לא |  |
 | count | number | query | לא |  |
 | text-search | string | query | לא |  |
@@ -12,17 +13,18 @@
 | demo | boolean | query | לא |  |
 | sso | string | query | לא |  |
 
-## תגובה
+## Response
 
-מחזיר: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationAPIGetCommentsResponse.swift)
+מחזירה: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationAPIGetCommentsResponse.swift)
 
-## דוגמה
+## Example
 
-[inline-code-attrs-start title = 'דוגמה ל-getApiComments'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getApiComments'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// דוגמאות הקוד הבאות עדיין בבטא. לכל בעיה, אנא דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// דוגמת קוד זו עדיין בגרסת בטא. לכל בעיה, אנא דווחו באמצעות http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
+let tenantId = "tenantId_example" // String | 
 let page = 987 // Double |  (אופציונלי)
 let count = 987 // Double |  (אופציונלי)
 let textSearch = "textSearch_example" // String |  (אופציונלי)
@@ -33,7 +35,7 @@ let sorts = "sorts_example" // String |  (אופציונלי)
 let demo = true // Bool |  (אופציונלי)
 let sso = "sso_example" // String |  (אופציונלי)
 
-ModerationAPI.getApiComments(page: page, count: count, textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, demo: demo, sso: sso) { (response, error) in
+ModerationAPI.getApiComments(tenantId: tenantId, options: ModerationAPI.GetApiCommentsOptions(page: page, count: count, textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, demo: demo, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

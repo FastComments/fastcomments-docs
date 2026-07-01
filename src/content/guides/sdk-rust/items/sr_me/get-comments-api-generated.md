@@ -1,57 +1,54 @@
-## Параметри
+## Parametri
 
-| Назив | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenant_id | String | Да |  |
-| page | i32 | Не |  |
-| limit | i32 | Не |  |
-| skip | i32 | Не |  |
-| as_tree | bool | Не |  |
-| skip_children | i32 | Не |  |
-| limit_children | i32 | Не |  |
-| max_tree_depth | i32 | Не |  |
-| url_id | String | Не |  |
-| user_id | String | Не |  |
-| anon_user_id | String | Не |  |
-| context_user_id | String | Не |  |
-| hash_tag | String | Не |  |
-| parent_id | String | Не |  |
-| direction | models::SortDirections | Не |  |
-| from_date | i64 | Не |  |
-| to_date | i64 | Не |  |
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenant_id | String | Da |  |
+| page | i32 | Ne |  |
+| limit | i32 | Ne |  |
+| skip | i32 | Ne |  |
+| as_tree | bool | Ne |  |
+| skip_children | i32 | Ne |  |
+| limit_children | i32 | Ne |  |
+| max_tree_depth | i32 | Ne |  |
+| url_id | String | Ne |  |
+| user_id | String | Ne |  |
+| anon_user_id | String | Ne |  |
+| context_user_id | String | Ne |  |
+| hash_tag | String | Ne |  |
+| parent_id | String | Ne |  |
+| direction | models::SortDirections | Ne |  |
+| from_date | i64 | Ne |  |
+| to_date | i64 | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`ApiGetCommentsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_get_comments_response.rs)
+Vraća: [`ApiGetCommentsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_get_comments_response.rs)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'get_comments Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer get_comments'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example() -> Result<(), Error> {
-    let params: GetCommentsParams = GetCommentsParams {
+async fn fetch_comments() -> Result<(), Error> {
+    let params = GetCommentsParams {
         tenant_id: "acme-corp-tenant".to_string(),
         page: Some(1),
-        limit: Some(25),
+        limit: Some(20),
         skip: Some(0),
         as_tree: Some(true),
-        skip_children: Some(0),
-        limit_children: Some(5),
+        skip_children: Some(5),
+        limit_children: Some(10),
         max_tree_depth: Some(3),
-        url_id: Some("news/article/2026/06/fast-rust".to_string()),
-        user_id: Some("user-1234".to_string()),
-        anon_user_id: Some("anon-5678".to_string()),
-        context_user_id: Some("context-999".to_string()),
-        hash_tag: Some("release".to_string()),
-        parent_id: Some("comment-9876".to_string()),
+        url_id: Some("news/article".to_string()),
+        user_id: Some("user-123".to_string()),
+        anon_user_id: Some("anon-456".to_string()),
+        context_user_id: Some("ctx-789".to_string()),
+        hash_tag: Some("rust".to_string()),
+        parent_id: Some("parent-001".to_string()),
         direction: Some(models::SortDirections::Desc),
-        from_date: Some(1_689_000_000_i64),
-        to_date: Some(1_689_086_400_i64),
+        from_date: Some(1_640_995_200),
+        to_date: Some(1_641_081_600),
     };
-
-    let response: ApiGetCommentsResponse = get_comments(configuration, params).await?;
+    let _response = get_comments(&config, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

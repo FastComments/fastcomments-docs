@@ -1,23 +1,25 @@
 ## 매개변수
 
-| 이름 | 타입 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| id | string | 아니오 |  |
-| updateQuestionConfigBody | UpdateQuestionConfigBody | 아니오 |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| updateQuestionConfigBody | UpdateQuestionConfigBody | No |  |
 
 ## 응답
 
 반환: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'updateQuestionConfig 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateQuestionConfig 예시'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateQuestionConfig(tenantId = "my-tenant-123", id = "question-config-456", updateQuestionConfigBody = default(UpdateQuestionConfigBody))
-if response.isSome:
-  let apiEmpty = response.get()
-  discard apiEmpty
-[inline-code-end]
+let (apiResp, httpResp) = client.updateQuestionConfig(
+  tenantId = "my-tenant-123",
+  id = "question-456",
+  updateQuestionConfigBody = UpdateQuestionConfigBody()
+)
 
----
+if apiResp.isSome:
+  let resp = apiResp.get()
+[inline-code-end]

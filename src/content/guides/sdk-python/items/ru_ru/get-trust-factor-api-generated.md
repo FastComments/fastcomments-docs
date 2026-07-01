@@ -1,9 +1,10 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| userId | string | query | Нет |  |
-| sso | string | query | Нет |  |
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Ответ
 
@@ -14,27 +15,28 @@
 [inline-code-attrs-start title = 'Пример get_trust_factor'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetTrustFactorOptions
 from client.models.get_user_trust_factor_response import GetUserTrustFactorResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Указание host необязательно и по умолчанию равно https://fastcomments.com
-# См. configuration.py для списка всех поддерживаемых параметров конфигурации.
-
+# Определение host является необязательным и по умолчанию равно https://fastcomments.com
+# Смотрите configuration.py для списка всех поддерживаемых параметров конфигурации.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Входим в контекст с экземпляром клиента API
+# Войдите в контекст с экземпляром API‑клиента
 with client.ApiClient(configuration) as api_client:
-    # Создаём экземпляр класса API
+    # Создайте экземпляр класса API
     api_instance = client.ModerationApi(api_client)
-    user_id = 'user_id_example' # str | (необязательно)
-    sso = 'sso_example' # str | (необязательно)
+    tenant_id = 'tenant_id_example' # str | 
+    user_id = 'user_id_example' # str |  (необязательно)
+    sso = 'sso_example' # str |  (необязательно)
 
     try:
-        api_response = api_instance.get_trust_factor(user_id=user_id, sso=sso)
+        api_response = api_instance.get_trust_factor(tenant_id, GetTrustFactorOptions(user_id=user_id, sso=sso))
         print("The response of ModerationApi->get_trust_factor:\n")
         pprint(api_response)
     except Exception as e:

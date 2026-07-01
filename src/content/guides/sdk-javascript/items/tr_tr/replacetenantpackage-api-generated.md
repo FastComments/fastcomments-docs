@@ -1,29 +1,34 @@
-## Parametreler
+## Parameters
 
-| Name | Type | Gerekli | Açıklama |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Evet |  |
-| id | string | Evet |  |
-| replaceTenantPackageBody | ReplaceTenantPackageBody | Evet |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| replaceTenantPackageBody | ReplaceTenantPackageBody | Yes |  |
 
 ## Yanıt
 
-Döndürür: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Döndürür: [`ReplaceTenantPackageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ReplaceTenantPackageResponse.ts)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'replaceTenantPackage Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_9f3b1c';
-const id: string = 'pkg_pro_2026';
-const replaceTenantPackageBody: ReplaceTenantPackageBody = {
-  planCode: 'pro_annual',
-  seats: 12,
-  expiresAt: '2027-01-01T00:00:00Z',
-  autoRenew: true, // isteğe bağlı parametreyi gösteren bayrak
-  notes: 'Upgrade for team collaboration'
-};
-const result: APIEmptyResponse = await replaceTenantPackage(tenantId, id, replaceTenantPackageBody);
-[inline-code-end]
+(async () => {
+    const tenantId: string = "acme-corp-tenant-01";
+    const packageId: string = "pkg-2024-annual";
 
----
+    const config: CustomConfigParameters = {
+        // buraya özel yapılandırma alanları
+    };
+
+    const body: ReplaceTenantPackageBody = {
+        name: "Enterprise Package",
+        // isteğe bağlı özel yapılandırma
+        customConfig: config,
+    };
+
+    const response: ReplaceTenantPackageResponse = await replaceTenantPackage(tenantId, packageId, body);
+    console.log(response);
+})();
+[inline-code-end]

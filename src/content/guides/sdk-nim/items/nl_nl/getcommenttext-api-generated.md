@@ -4,24 +4,22 @@
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | commentId | string | Ja |  |
-| editKey | string | Nee |  |
-| sso | string | Nee |  |
+| options | GetCommentTextOptions | Nee |  |
 
-## Respons
+## Response
 
 Retourneert: [`Option[PublicAPIGetCommentTextResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_public_api_get_comment_text_response.nim)
 
-## Voorbeeld
+## Example
 
 [inline-code-attrs-start title = 'getCommentText Voorbeeld'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getCommentText(tenantId = "my-tenant-123", commentId = "cmt-987654321", editKey = "", sso = "")
+let (maybeResponse, httpResponse) = client.getCommentText(
+  tenantId = "my-tenant-123",
+  commentId = "comment-456",
+  options = GetCommentTextOptions()
+)
 
-if response.isSome:
-  let commentTextResp = response.get()
-  echo commentTextResp
-else:
-  echo "No comment text returned"
+if maybeResponse.isSome:
+  let response = maybeResponse.get()
 [inline-code-end]
-
----

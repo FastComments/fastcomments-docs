@@ -1,13 +1,13 @@
 ## Parameter
 
-| Name | Typ | Location | Erforderlich | Beschreibung |
-|------|------|----------|----------|-------------|
-| tag | string | path | Ja |  |
-| tenantId | string | query | Nein |  |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
+|------|------|-----|--------------|----------------|
+| tenantId | string | query | Yes |  |
+| tag | string | path | Yes |  |
 
 ## Antwort
 
-Gibt zurück: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_hash_tag_response.rb)
+Rückgabe: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_hash_tag_response.rb)
 
 ## Beispiel
 
@@ -15,26 +15,26 @@ Gibt zurück: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomm
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Autorisierung einrichten
+# Einrichtung der Autorisierung
 FastCommentsClient.configure do |config|
-  # API-Schlüssel-Autorisierung konfigurieren: api_key
+  # Konfiguration der API key Autorisation: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Heben Sie die Auskommentierung der folgenden Zeile auf, um ein Präfix für den API-Schlüssel festzulegen, z. B. 'Bearer' (Standard ist nil)
+  # Entfernen Sie das Kommentarzeichen der folgenden Zeile, um ein Präfix für den API key festzulegen, z. B. 'Bearer' (defaults to nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
+tenant_id = 'tenant_id_example' # String | 
 tag = 'tag_example' # String | 
-opts = {
-  tenant_id: 'tenant_id_example', # String | 
-  update_hash_tag_body: FastCommentsClient::UpdateHashTagBody.new # UpdateHashTagBody | 
-}
+update_hash_tag_body = FastCommentsClient::UpdateHashTagBody.new # UpdateHashTagBody | 
 
 begin
   
-  result = api_instance.patch_hash_tag(tag, opts)
+  result = api_instance.patch_hash_tag(tenant_id, tag, update_hash_tag_body)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->patch_hash_tag: #{e}"
 end
 [inline-code-end]
+
+---

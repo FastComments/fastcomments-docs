@@ -2,31 +2,24 @@
 
 | Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
-| badgeId | string | Hayır |  |
-| userId | string | Hayır |  |
-| commentId | string | Evet |  |
-| broadcastId | string | Hayır |  |
-| sso | string | Hayır |  |
+| tenantId | string | Yes |  |
+| badgeId | string | No |  |
+| options | PutRemoveBadgeOptions | No |  |
 
 ## Yanıt
 
-Dönüş: [`Option[RemoveUserBadgeResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_remove_user_badge_response.nim)
+Döndürür: [`Option[RemoveUserBadgeResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_remove_user_badge_response.nim)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'putRemoveBadge Örneği'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.putRemoveBadge(badgeId = "verified-journalist",
-  userId = "user-7890",
-  commentId = "comment-98765",
-  broadcastId = "",
-  sso = "")
+let (maybeResp, httpResp) = client.putRemoveBadge(
+  tenantId = "my-tenant-123",
+  badgeId = "badge-456",
+  options = PutRemoveBadgeOptions()
+)
 
-if response.isSome:
-  let removeResp = response.get()
-  discard removeResp
-else:
-  discard httpResponse
+if maybeResp.isSome:
+  let badgeResp = maybeResp.get()
 [inline-code-end]
-
----

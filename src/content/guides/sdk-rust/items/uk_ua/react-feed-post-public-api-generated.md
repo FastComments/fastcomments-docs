@@ -1,13 +1,13 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | Так |  |
-| post_id | String | Так |  |
-| react_body_params | models::ReactBodyParams | Так |  |
-| is_undo | bool | Ні |  |
-| broadcast_id | String | Ні |  |
-| sso | String | Ні |  |
+| tenant_id | String | Yes |  |
+| post_id | String | Yes |  |
+| react_body_params | models::ReactBodyParams | Yes |  |
+| is_undo | bool | No |  |
+| broadcast_id | String | No |  |
+| sso | String | No |  |
 
 ## Відповідь
 
@@ -15,24 +15,22 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад react_feed_post_public'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'react_feed_post_public Приклад'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let params: ReactFeedPostPublicParams = ReactFeedPostPublicParams {
-        tenant_id: "acme-corp-tenant".to_string(),
-        post_id: "news/article-2026-06-19".to_string(),
-        react_body_params: models::ReactBodyParams {
-            reaction: "like".to_string(),
-            user_id: "user-9876".to_string(),
-            metadata: None,
-        },
-        is_undo: Some(false),
-        broadcast_id: Some("broadcast-42".to_string()),
-        sso: Some("sso-token-abc123".to_string()),
+async fn example() -> Result<(), Error> {
+    let config = configuration::Configuration::default();
+    let react_body = models::ReactBodyParams {
+        reaction: "like".to_string(),
     };
-    let response: ReactFeedPostResponse = react_feed_post_public(&configuration, params).await?;
+    let params = ReactFeedPostPublicParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        post_id: "news/article/12345".to_string(),
+        react_body_params: react_body,
+        is_undo: Some(false),
+        broadcast_id: Some("broadcast-xyz".to_string()),
+        sso: Some("sso-token-abc".to_string()),
+    };
+    let _response: ReactFeedPostResponse = react_feed_post_public(&config, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

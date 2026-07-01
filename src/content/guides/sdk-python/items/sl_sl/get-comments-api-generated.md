@@ -1,59 +1,58 @@
-## Parametri
+## Parameters
 
 | Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| page | integer | query | Ne |  |
-| limit | integer | query | Ne |  |
-| skip | integer | query | Ne |  |
-| asTree | boolean | query | Ne |  |
-| skipChildren | integer | query | Ne |  |
-| limitChildren | integer | query | Ne |  |
-| maxTreeDepth | integer | query | Ne |  |
-| urlId | string | query | Ne |  |
-| userId | string | query | Ne |  |
-| anonUserId | string | query | Ne |  |
-| contextUserId | string | query | Ne |  |
-| hashTag | string | query | Ne |  |
-| parentId | string | query | Ne |  |
-| direction | string | query | Ne |  |
-| fromDate | integer | query | Ne |  |
-| toDate | integer | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| page | integer | query | No |  |
+| limit | integer | query | No |  |
+| skip | integer | query | No |  |
+| asTree | boolean | query | No |  |
+| skipChildren | integer | query | No |  |
+| limitChildren | integer | query | No |  |
+| maxTreeDepth | integer | query | No |  |
+| urlId | string | query | No |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
+| contextUserId | string | query | No |  |
+| hashTag | string | query | No |  |
+| parentId | string | query | No |  |
+| direction | string | query | No |  |
+| fromDate | integer | query | No |  |
+| toDate | integer | query | No |  |
 
-## Odgovor
+## Response
 
-Vrača: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_comments_response.py)
+Vrne: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_get_comments_response.py)
 
 ## Primer
 
 [inline-code-attrs-start title = 'get_comments Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetCommentsOptions
 from client.models.api_get_comments_response import APIGetCommentsResponse
 from client.models.sort_directions import SortDirections
 from client.rest import ApiException
 from pprint import pprint
 
-# Določitev gostitelja je neobvezna in privzeto nastavljena na https://fastcomments.com
-# Oglejte si configuration.py za seznam vseh podprtih parametrov konfiguracije.
+# Določanje gostitelja je neobvezno in privzeto nastavljeno na https://fastcomments.com
+# Glejte configuration.py za seznam vseh podprtih parametrov konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Odjemalec mora konfigurirati parametre avtentikacije in avtorizacije
-# v skladu s politiko varnosti API strežnika.
-# Primeri za vsako metodo avtentikacije so navedeni spodaj, uporabite primer, ki
-# ustreza vašemu primeru uporabe avtentikacije.
+# Odjemalec mora nastaviti parametre avtentikacije in avtorizacije v skladu s politiko varnosti strežnika API.
+# Primeri za vsako metodo avtentikacije so predstavljeni spodaj, uporabite primer, ki ustreza vašemu primeru uporabe avtentikacije.
 
-# Konfigurirajte avtorizacijo z API ključem: api_key
+# Nastavi avtentikacijo z API ključem: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Odkomentirajte spodaj, če želite nastaviti predpono (npr. Bearer) za API ključ, če je potrebno
+# Odkomentirajte spodaj za nastavitev predpone (npr. Bearer) za API ključ, če je potrebno
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
 # Vstopite v kontekst z instanco API odjemalca
 with client.ApiClient(configuration) as api_client:
-    # Ustvarite instanco razreda API
+    # Ustvari instanco razreda API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     page = 56 # int |  (neobvezno)
@@ -74,9 +73,9 @@ with client.ApiClient(configuration) as api_client:
     to_date = 56 # int |  (neobvezno)
 
     try:
-        api_response = api_instance.get_comments(tenant_id, page=page, limit=limit, skip=skip, as_tree=as_tree, skip_children=skip_children, limit_children=limit_children, max_tree_depth=max_tree_depth, url_id=url_id, user_id=user_id, anon_user_id=anon_user_id, context_user_id=context_user_id, hash_tag=hash_tag, parent_id=parent_id, direction=direction, from_date=from_date, to_date=to_date)
-        print("The response of DefaultApi->get_comments:\n")
+        api_response = api_instance.get_comments(tenant_id, GetCommentsOptions(page=page, limit=limit, skip=skip, as_tree=as_tree, skip_children=skip_children, limit_children=limit_children, max_tree_depth=max_tree_depth, url_id=url_id, user_id=user_id, anon_user_id=anon_user_id, context_user_id=context_user_id, hash_tag=hash_tag, parent_id=parent_id, direction=direction, from_date=from_date, to_date=to_date))
+        print("Odgovor DefaultApi->get_comments:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DefaultApi->get_comments: %s\n" % e)
+        print("Izjema pri klicanju DefaultApi->get_comments: %s\n" % e)
 [inline-code-end]

@@ -1,14 +1,9 @@
 ## Parametreler
 
-| Ad | Tür | Gerekli | Açıklama |
+| İsim | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
-| textSearch | string | Hayır |  |
-| byIPFromComment | string | Hayır |  |
-| filters | string | Hayır |  |
-| searchFilters | string | Hayır |  |
-| afterId | string | Hayır |  |
-| demo | bool | Hayır |  |
-| sso | string | Hayır |  |
+| tenantId | string | Evet |  |
+| options | GetApiIdsOptions | Hayır |  |
 
 ## Yanıt
 
@@ -18,19 +13,11 @@ Döndürür: [`Option[ModerationAPIGetCommentIdsResponse]`](https://github.com/F
 
 [inline-code-attrs-start title = 'getApiIds Örneği'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getApiIds(
-  textSearch = "urgent moderation review",
-  byIPFromComment = "203.0.113.45",
-  filters = "status:pending,flagged",
-  searchFilters = "author:jane.doe@example.com",
-  afterId = "cmt_9f8e7d6a",
-  demo = false,
-  sso = "sso-token-6b7f9a"
-)
-
-if response.isSome:
-  let idsResp = response.get()
-  echo idsResp
+let opts = GetApiIdsOptions()
+let (maybeResponse, httpResponse) = client.getApiIds(tenantId = "my-tenant-123", options = opts)
+if maybeResponse.isSome:
+  let response = maybeResponse.get()
+  echo response
 [inline-code-end]
 
 ---

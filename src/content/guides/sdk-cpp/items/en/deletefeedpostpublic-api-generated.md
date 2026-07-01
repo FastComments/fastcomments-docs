@@ -4,8 +4,7 @@
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | postId | string | Yes |  |
-| broadcastId | string | No |  |
-| sso | string | No |  |
+| options | const DeleteFeedPostPublicOptions& | Yes |  |
 
 ## Response
 
@@ -15,17 +14,12 @@ Returns: [`DeleteFeedPostPublicResponse`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'deleteFeedPostPublic Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t postId = U("feed-post-456");
-boost::optional<utility::string_t> broadcastId = boost::optional<utility::string_t>(U("broadcast-789"));
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
-
-api->deleteFeedPostPublic(tenantId, postId, broadcastId, sso)
-.then([](pplx::task<std::shared_ptr<DeleteFeedPostPublicResponse>> task){
-    try {
-        auto resp = task.get();
-        if (!resp) resp = std::make_shared<DeleteFeedPostPublicResponse>();
-    } catch (...) {
-    }
-}).wait();
+auto opts = std::make_shared<DeleteFeedPostPublicOptions>();
+opts->reason = boost::optional<utility::string_t>(U("Inappropriate content"));
+api->deleteFeedPostPublic(U("my-tenant-123"), U("post-789"), *opts)
+    .then([](std::shared_ptr<DeleteFeedPostPublicResponse> resp) {
+        if (resp && resp->isSuccess()) {
+            // success logic
+        }
+    });
 [inline-code-end]

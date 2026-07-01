@@ -1,12 +1,10 @@
 ## Parâmetros
 
-| Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-----------|
-| tenantId | string | Sim |  |
-| search | string | Não |  |
-| locale | string | Não |  |
-| rating | string | Não |  |
-| page | float64 | Não |  |
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| search | string | No |  |
+| options | GetGifsSearchOptions | No |  |
 
 ## Resposta
 
@@ -16,17 +14,11 @@ Retorna: [`Option[GetGifsSearchResponse]`](https://github.com/FastComments/fastc
 
 [inline-code-attrs-start title = 'Exemplo getGifsSearch'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getGifsSearch(
-  tenantId = "my-tenant-123",
-  search = "funny cat",
-  locale = "en-US",
-  rating = "PG",
-  page = 1.0
-)
-
-if response.isSome:
-  let gifs = response.get()
-  echo "Fetched GIFs response:", gifs
+let opts = GetGifsSearchOptions(limit = 10, rating = "g")
+let (responseOpt, httpResponse) = client.getGifsSearch(tenantId = "my-tenant-123", search = "funny cats", options = opts)
+if responseOpt.isSome:
+  let resp = responseOpt.get()
+  # use resp conforme necessário
 [inline-code-end]
 
 ---

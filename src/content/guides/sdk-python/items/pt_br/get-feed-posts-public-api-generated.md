@@ -1,4 +1,3 @@
----
 req
 tenantId
 afterId
@@ -7,35 +6,36 @@ afterId
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Sim |  |
-| afterId | string | query | Não |  |
-| limit | integer | query | Não |  |
-| tags | array | query | Não |  |
-| sso | string | query | Não |  |
-| isCrawler | boolean | query | Não |  |
-| includeUserInfo | boolean | query | Não |  |
+| tenantId | string | path | Yes |  |
+| afterId | string | query | No |  |
+| limit | integer | query | No |  |
+| tags | array | query | No |  |
+| sso | string | query | No |  |
+| isCrawler | boolean | query | No |  |
+| includeUserInfo | boolean | query | No |  |
 
 ## Resposta
 
-Retorna: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/public_feed_posts_response.py)
+Returns: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/public_feed_posts_response.py)
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de get_feed_posts_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_feed_posts_public Exemplo'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetFeedPostsPublicOptions
 from client.models.public_feed_posts_response import PublicFeedPostsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definir o host é opcional e por padrão usa https://fastcomments.com
+# Definir o host é opcional e o padrão é https://fastcomments.com
 # Veja configuration.py para uma lista de todos os parâmetros de configuração suportados.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Entre em um contexto com uma instância do cliente da API
+# Entre em um contexto com uma instância do cliente API
 with client.ApiClient(configuration) as api_client:
     # Crie uma instância da classe API
     api_instance = client.PublicApi(api_client)
@@ -48,11 +48,9 @@ with client.ApiClient(configuration) as api_client:
     include_user_info = True # bool |  (opcional)
 
     try:
-        api_response = api_instance.get_feed_posts_public(tenant_id, after_id=after_id, limit=limit, tags=tags, sso=sso, is_crawler=is_crawler, include_user_info=include_user_info)
+        api_response = api_instance.get_feed_posts_public(tenant_id, GetFeedPostsPublicOptions(after_id=after_id, limit=limit, tags=tags, sso=sso, is_crawler=is_crawler, include_user_info=include_user_info))
         print("The response of PublicApi->get_feed_posts_public:\n")
         pprint(api_response)
     except Exception as e:
         print("Exception when calling PublicApi->get_feed_posts_public: %s\n" % e)
 [inline-code-end]
-
----

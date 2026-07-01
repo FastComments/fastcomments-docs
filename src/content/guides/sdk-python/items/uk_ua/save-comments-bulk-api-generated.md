@@ -1,12 +1,12 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Назва | Тип | Розташування | Обов’язковий | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Так |  |
-| isLive | boolean | query | Ні |  |
-| doSpamCheck | boolean | query | Ні |  |
-| sendEmails | boolean | query | Ні |  |
-| populateNotifications | boolean | query | Ні |  |
+| tenantId | string | query | Yes |  |
+| isLive | boolean | query | No |  |
+| doSpamCheck | boolean | query | No |  |
+| sendEmails | boolean | query | No |  |
+| populateNotifications | boolean | query | No |  |
 
 ## Відповідь
 
@@ -14,44 +14,45 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад save_comments_bulk'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'save_comments_bulk Приклад'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import SaveCommentsBulkOptions
 from client.models.create_comment_params import CreateCommentParams
 from client.models.save_comments_bulk_response import SaveCommentsBulkResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Визначення хоста необов'язкове й за замовчуванням встановлено на https://fastcomments.com
-# Див. configuration.py для списку всіх підтримуваних параметрів конфігурації.
+# Визначення хоста є необов’язковим і за замовчуванням встановлює https://fastcomments.com
+# Дивіться configuration.py для списку всіх підтримуваних параметрів конфігурації.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Клієнт має налаштувати параметри автентифікації та авторизації
+# Клієнт повинен налаштувати параметри автентифікації та авторизації
 # відповідно до політики безпеки сервера API.
-# Приклади для кожного методу автентифікації наведені нижче; використайте приклад, який
-# відповідає вашому сценарію автентифікації.
+# Приклади для кожного методу автентифікації наведено нижче, використайте приклад,
+# який відповідає вашому випадку використання автентифікації.
 
-# Налаштуйте авторизацію за допомогою API-ключа: api_key
+# Налаштування авторизації за допомогою API ключа: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Розкоментуйте нижче, щоб встановити префікс (наприклад, Bearer) для API-ключа, якщо потрібно
+# Розкоментуйте нижче, щоб встановити префікс (наприклад, Bearer) для API ключа, якщо потрібно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Відкрийте контекст з екземпляром API-клієнта
+# Введіть контекст з екземпляром клієнта API
 with client.ApiClient(configuration) as api_client:
     # Створіть екземпляр класу API
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_comment_params = [client.CreateCommentParams()] # List[CreateCommentParams] | 
-    is_live = True # bool |  (необов'язково)
-    do_spam_check = True # bool |  (необов'язково)
-    send_emails = True # bool |  (необов'язково)
-    populate_notifications = True # bool |  (необов'язково)
+    is_live = True # bool |  (optional)
+    do_spam_check = True # bool |  (optional)
+    send_emails = True # bool |  (optional)
+    populate_notifications = True # bool |  (optional)
 
     try:
-        api_response = api_instance.save_comments_bulk(tenant_id, create_comment_params, is_live=is_live, do_spam_check=do_spam_check, send_emails=send_emails, populate_notifications=populate_notifications)
+        api_response = api_instance.save_comments_bulk(tenant_id, create_comment_params, SaveCommentsBulkOptions(is_live=is_live, do_spam_check=do_spam_check, send_emails=send_emails, populate_notifications=populate_notifications))
         print("The response of DefaultApi->save_comments_bulk:\n")
         pprint(api_response)
     except Exception as e:

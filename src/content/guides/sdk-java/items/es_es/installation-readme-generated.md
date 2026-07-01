@@ -1,6 +1,6 @@
 ### Maven
 
-Add the Repsy repository to your project's POM:
+Agregue el repositorio Repsy al **POM** de su proyecto:
 
 ```xml
 <repositories>
@@ -12,25 +12,25 @@ Add the Repsy repository to your project's POM:
 </repositories>
 ```
 
-Then add the dependencies you need:
+Luego agregue las dependencias que necesite:
 
 ```xml
 <dependencies>
-    <!-- Cliente de la API -->
+    <!-- API Client -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
         <version>2.0.0</version>
     </dependency>
     
-    <!-- Biblioteca Core (incluye SSO) -->
+    <!-- Core Library (includes SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
         <version>2.0.0</version>
     </dependency>
     
-    <!-- Biblioteca PubSub (para eventos en vivo) -->
+    <!-- PubSub Library (for live events) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
@@ -41,7 +41,7 @@ Then add the dependencies you need:
 
 ### Gradle
 
-Add the Repsy repository to your build.gradle file:
+Agregue el repositorio Repsy a su archivo **build.gradle**:
 
 ```groovy
 repositories {
@@ -52,32 +52,27 @@ repositories {
 }
 
 dependencies {
-    // Cliente de la API
+    // API Client
     implementation "com.fastcomments:client:2.0.0"
     
-    // Biblioteca Core (incluye SSO)
+    // Core Library (includes SSO)
     implementation "com.fastcomments:core:2.0.0"
     
-    // Biblioteca PubSub (para eventos en vivo)
+    // PubSub Library (for live events)
     implementation "com.fastcomments:pubsub:2.0.0"
 }
 ```
 
-### Library Contents
+### Contenido de la Biblioteca
 
-This library contains three modules. The generated API client, the core Java library which contains hand-written utilities
-to make working with the API easier, and the `pubsub` module which is a library for subscribing to change feeds.
+Esta biblioteca contiene tres módulos: el cliente API generado, la biblioteca central de Java que incluye utilidades escritas a mano para facilitar el trabajo con la API, y el módulo `pubsub`, que es una biblioteca para suscribirse a flujos de cambios.
 
-- [Documentación de la biblioteca del cliente de la API](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Documentación de la biblioteca Core, incluyendo ejemplos de SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [Documentación de la biblioteca PubSub](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [API Client Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [PubSub Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### Public vs Secured APIs
+### APIs Públicas vs Seguras
 
-For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains methods
-that can be made directly from a browser/mobile device/etc without authentication.
+Para el cliente API, existen tres clases: `DefaultApi`, `PublicApi` y `ModerationApi`. La clase `DefaultApi` contiene métodos que requieren su clave API, y `PublicApi` contiene métodos que pueden llamarse directamente desde un navegador, dispositivo móvil, etc., sin autenticación.
 
-The `ModerationApi` powers the moderator dashboard. It contains methods for comment moderation (list, count, search, logs, and export), moderation actions (remove/restore,
-flag, set review/spam/approval status, votes, and reopen/close thread), bans (ban from comment, undo a ban, pre-ban summaries, ban status and preferences, and banned-user counts),
-and badges & trust (award/remove a badge, manual badges, get/set trust factor, and user internal profile). Every `ModerationApi` method accepts an `sso` parameter so the call can be
-performed on behalf of an SSO-authenticated moderator.
+La clase `ModerationApi` ofrece una amplia gama de API de moderación en tiempo real y rápidas. Cada método de `ModerationApi` acepta un parámetro `sso` y puede autenticarse mediante SSO o una cookie de sesión de FastComments.com.

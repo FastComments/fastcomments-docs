@@ -1,23 +1,19 @@
 ## 参数
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| 名称 | 类型 | 必填 | 描述 |
+|------|------|------|------|
 | tenantId | string | 是 |  |
 
 ## 响应
 
-返回: [`Option[GetEmailTemplateDefinitionsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_email_template_definitions_response.nim)
+返回：[`Option[GetEmailTemplateDefinitionsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_email_template_definitions_response.nim)
 
 ## 示例
 
 [inline-code-attrs-start title = 'getEmailTemplateDefinitions 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getEmailTemplateDefinitions(tenantId = "my-tenant-123")
-if response.isSome:
-  let definitions = response.get()
-  echo "Email template definitions for my-tenant-123: ", definitions
-else:
-  echo "Failed to retrieve templates, HTTP status: ", httpResponse.status
+let (responseOpt, httpResponse) = client.getEmailTemplateDefinitions(tenantId = "my-tenant-123")
+if responseOpt.isSome:
+  let definitions = responseOpt.get()
+  echo definitions
 [inline-code-end]
-
----

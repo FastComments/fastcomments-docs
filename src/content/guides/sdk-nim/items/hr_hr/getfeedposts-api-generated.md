@@ -5,12 +5,10 @@ afterId
 
 ## Parametri
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
 | tenantId | string | Da |  |
-| afterId | string | Ne |  |
-| limit | int | Ne |  |
-| tags | seq[string] | Ne |  |
+| options | GetFeedPostsOptions | Ne |  |
 
 ## Odgovor
 
@@ -20,15 +18,10 @@ Vraća: [`Option[GetFeedPostsResponse]`](https://github.com/FastComments/fastcom
 
 [inline-code-attrs-start title = 'Primjer getFeedPosts'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getFeedPosts(
-  tenantId = "my-tenant-123",
-  afterId = "",
-  limit = 0,
-  tags = @[]
-)
-if response.isSome:
-  let feed = response.get()
-  echo "Feed retrieved for tenant my-tenant-123"
+let (feedResponseOpt, httpResp) = client.getFeedPosts(tenantId = "my-tenant-123", options = GetFeedPostsOptions())
+if feedResponseOpt.isSome:
+  let feedResponse = feedResponseOpt.get()
+  echo feedResponse
 [inline-code-end]
 
 ---

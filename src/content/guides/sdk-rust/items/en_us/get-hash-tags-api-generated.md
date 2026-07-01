@@ -13,12 +13,12 @@ Returns: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-ru
 
 [inline-code-attrs-start title = 'get_hash_tags Example'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_hash_tags() -> Result<GetHashTagsResponse, Error> {
-    let params: GetHashTagsParams = GetHashTagsParams {
+async fn example() -> Result<(), Error> {
+    let params = GetHashTagsParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        page: Some(2.0),
+        page: Some(1.0),
     };
-    let response: GetHashTagsResponse = get_hash_tags(&configuration, params).await?;
-    Ok(response)
+    let _response = get_hash_tags(&config, params).await?;
+    Ok(())
 }
 [inline-code-end]

@@ -1,10 +1,9 @@
----
 ## Paramètres
 
-| Nom | Type | Requis | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
-| tenant_id | String | Oui |  |
-| id | String | Oui |  |
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
 
 ## Réponse
 
@@ -12,18 +11,15 @@ Renvoie : [`GetTenantResponse`](https://github.com/FastComments/fastcomments-rus
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de get_tenant'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple get_tenant'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_get_tenant() -> Result<(), Error> {
-    let params: GetTenantParams = GetTenantParams {
+async fn example() -> Result<(), Error> {
+    let params = GetTenantParams {
         tenant_id: "acme-corp-tenant".to_string(),
         id: "news/article".to_string(),
+        include_billing: Some(true),
     };
-    let include_subdomains: Option<bool> = Some(true);
-    let tenant: GetTenantResponse = get_tenant(&configuration, params).await?;
-    println!("{:#?}", tenant);
+    let _response: GetTenantResponse = get_tenant(&configuration, params).await?;
     Ok(())
 }
 [inline-code-end]
-
----

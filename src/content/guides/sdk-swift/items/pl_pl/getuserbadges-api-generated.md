@@ -1,7 +1,7 @@
-## Parametry
+## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+|------|------|-------------|----------|------|
 | tenantId | string | query | Tak |  |
 | userId | string | query | Nie |  |
 | badgeId | string | query | Nie |  |
@@ -10,7 +10,7 @@
 | limit | number | query | Nie |  |
 | skip | number | query | Nie |  |
 
-## Odpowiedź
+## Response
 
 Zwraca: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIGetUserBadgesResponse.swift)
 
@@ -18,18 +18,18 @@ Zwraca: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomment
 
 [inline-code-attrs-start title = 'Przykład getUserBadges'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Następujące przykłady kodu są nadal w wersji beta. W przypadku problemu zgłoś go przez http://github.com/OpenAPITools/openapi-generator/issues/new
+// Poniższe przykłady kodu są wciąż w wersji beta. W razie jakichkolwiek problemów, proszę zgłosić je pod adresem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let userId = "userId_example" // String |  (opcjonalne)
-let badgeId = "badgeId_example" // String |  (opcjonalne)
-let type = 987 // Double |  (opcjonalne)
-let displayedOnComments = true // Bool |  (opcjonalne)
-let limit = 987 // Double |  (opcjonalne)
-let skip = 987 // Double |  (opcjonalne)
+let userId = "userId_example" // String |  (opcjonalny)
+let badgeId = "badgeId_example" // String |  (opcjonalny)
+let type = 987 // Double |  (opcjonalny)
+let displayedOnComments = true // Bool |  (opcjonalny)
+let limit = 987 // Double |  (opcjonalny)
+let skip = 987 // Double |  (opcjonalny)
 
-DefaultAPI.getUserBadges(tenantId: tenantId, userId: userId, badgeId: badgeId, type: type, displayedOnComments: displayedOnComments, limit: limit, skip: skip) { (response, error) in
+DefaultAPI.getUserBadges(tenantId: tenantId, options: DefaultAPI.GetUserBadgesOptions(userId: userId, badgeId: badgeId, type: type, displayedOnComments: displayedOnComments, limit: limit, skip: skip)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -40,3 +40,5 @@ DefaultAPI.getUserBadges(tenantId: tenantId, userId: userId, badgeId: badgeId, t
     }
 }
 [inline-code-end]
+
+---

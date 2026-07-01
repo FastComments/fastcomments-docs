@@ -2,9 +2,9 @@ req
 tenantId
 urlId
 
-## 参数
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 是 |  |
 | urlId | string | query | 是 |  |
@@ -35,62 +35,63 @@ urlId
 | afterCommentId | string | query | 否 |  |
 | beforeCommentId | string | query | 否 |  |
 
-## 响应
+## Response
 
-返回: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comments_response_with_presence_public_comment.py)
+返回：[`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comments_response_with_presence_public_comment.py)
 
 ## 示例
 
 [inline-code-attrs-start title = 'get_comments_public 示例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetCommentsPublicOptions
 from client.models.get_comments_response_with_presence_public_comment import GetCommentsResponseWithPresencePublicComment
 from client.models.sort_directions import SortDirections
 from client.rest import ApiException
 from pprint import pprint
 
-# 定义主机是可选的，默认为 https://fastcomments.com
-# 有关所有支持的配置参数列表，请参见 configuration.py。
+# Defining the host is optional and defaults to https://fastcomments.com
+# See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# 使用 API 客户端实例进入上下文
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # 创建 API 类的实例
+    # Create an instance of the API class
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
-    page = 56 # int |  (可选)
-    direction = client.SortDirections() # SortDirections |  (可选)
-    sso = 'sso_example' # str |  (可选)
-    skip = 56 # int |  (可选)
-    skip_children = 56 # int |  (可选)
-    limit = 56 # int |  (可选)
-    limit_children = 56 # int |  (可选)
-    count_children = True # bool |  (可选)
-    fetch_page_for_comment_id = 'fetch_page_for_comment_id_example' # str |  (可选)
-    include_config = True # bool |  (可选)
-    count_all = True # bool |  (可选)
-    includei10n = True # bool |  (可选)
-    locale = 'locale_example' # str |  (可选)
-    modules = 'modules_example' # str |  (可选)
-    is_crawler = True # bool |  (可选)
-    include_notification_count = True # bool |  (可选)
-    as_tree = True # bool |  (可选)
-    max_tree_depth = 56 # int |  (可选)
-    use_full_translation_ids = True # bool |  (可选)
-    parent_id = 'parent_id_example' # str |  (可选)
-    search_text = 'search_text_example' # str |  (可选)
-    hash_tags = ['hash_tags_example'] # List[str] |  (可选)
-    user_id = 'user_id_example' # str |  (可选)
-    custom_config_str = 'custom_config_str_example' # str |  (可选)
-    after_comment_id = 'after_comment_id_example' # str |  (可选)
-    before_comment_id = 'before_comment_id_example' # str |  (可选)
+    page = 56 # int |  (optional)
+    direction = client.SortDirections() # SortDirections |  (optional)
+    sso = 'sso_example' # str |  (optional)
+    skip = 56 # int |  (optional)
+    skip_children = 56 # int |  (optional)
+    limit = 56 # int |  (optional)
+    limit_children = 56 # int |  (optional)
+    count_children = True # bool |  (optional)
+    fetch_page_for_comment_id = 'fetch_page_for_comment_id_example' # str |  (optional)
+    include_config = True # bool |  (optional)
+    count_all = True # bool |  (optional)
+    includei10n = True # bool |  (optional)
+    locale = 'locale_example' # str |  (optional)
+    modules = 'modules_example' # str |  (optional)
+    is_crawler = True # bool |  (optional)
+    include_notification_count = True # bool |  (optional)
+    as_tree = True # bool |  (optional)
+    max_tree_depth = 56 # int |  (optional)
+    use_full_translation_ids = True # bool |  (optional)
+    parent_id = 'parent_id_example' # str |  (optional)
+    search_text = 'search_text_example' # str |  (optional)
+    hash_tags = ['hash_tags_example'] # List[str] |  (optional)
+    user_id = 'user_id_example' # str |  (optional)
+    custom_config_str = 'custom_config_str_example' # str |  (optional)
+    after_comment_id = 'after_comment_id_example' # str |  (optional)
+    before_comment_id = 'before_comment_id_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_comments_public(tenant_id, url_id, page=page, direction=direction, sso=sso, skip=skip, skip_children=skip_children, limit=limit, limit_children=limit_children, count_children=count_children, fetch_page_for_comment_id=fetch_page_for_comment_id, include_config=include_config, count_all=count_all, includei10n=includei10n, locale=locale, modules=modules, is_crawler=is_crawler, include_notification_count=include_notification_count, as_tree=as_tree, max_tree_depth=max_tree_depth, use_full_translation_ids=use_full_translation_ids, parent_id=parent_id, search_text=search_text, hash_tags=hash_tags, user_id=user_id, custom_config_str=custom_config_str, after_comment_id=after_comment_id, before_comment_id=before_comment_id)
+        api_response = api_instance.get_comments_public(tenant_id, url_id, GetCommentsPublicOptions(page=page, direction=direction, sso=sso, skip=skip, skip_children=skip_children, limit=limit, limit_children=limit_children, count_children=count_children, fetch_page_for_comment_id=fetch_page_for_comment_id, include_config=include_config, count_all=count_all, includei10n=includei10n, locale=locale, modules=modules, is_crawler=is_crawler, include_notification_count=include_notification_count, as_tree=as_tree, max_tree_depth=max_tree_depth, use_full_translation_ids=use_full_translation_ids, parent_id=parent_id, search_text=search_text, hash_tags=hash_tags, user_id=user_id, custom_config_str=custom_config_str, after_comment_id=after_comment_id, before_comment_id=before_comment_id))
         print("The response of PublicApi->get_comments_public:\n")
         pprint(api_response)
     except Exception as e:

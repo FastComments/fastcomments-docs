@@ -1,25 +1,27 @@
----
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| value | string | Не |  |
-| sso | string | Не |  |
+| tenantId | string | Da |  |
+| options | GetSearchPagesOptions | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[ModerationPageSearchResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_page_search_response.nim)
+Vraća: [`Option[ModerationPageSearchResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_page_search_response.nim)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'getSearchPages Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSearchPages Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getSearchPages(value = "news/politics/election-2024", sso = "sso-user-7f3b9c")
-if response.isSome:
-  let pageSearch = response.get()
-  echo "Moderation page search returned"
-else:
-  echo "No moderation pages found"
-[inline-code-end]
+let (searchResp, httpResp) = client.getSearchPages(
+  tenantId = "my-tenant-123",
+  options = GetSearchPagesOptions(
+    page: 1,
+    pageSize: 20,
+    query: "spam"
+  )
+)
 
----
+if searchResp.isSome:
+  let resp = searchResp.get()
+[inline-code-end]

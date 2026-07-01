@@ -1,16 +1,16 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Evet |  |
-| commentId | string | path | Evet |  |
-| broadcastId | string | query | Evet |  |
-| editKey | string | query | Hayır |  |
-| sso | string | query | Hayır |  |
+| tenantId | string | yol | Evet |  |
+| commentId | string | yol | Evet |  |
+| broadcastId | string | sorgu | Evet |  |
+| editKey | string | sorgu | Hayır |  |
+| sso | string | sorgu | Hayır |  |
 
 ## Yanıt
 
-Döndürür: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PublicAPISetCommentTextResponse.swift)
+Döner: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PublicAPISetCommentTextResponse.swift)
 
 ## Örnek
 
@@ -23,10 +23,10 @@ let tenantId = "tenantId_example" // String |
 let commentId = "commentId_example" // String | 
 let broadcastId = "broadcastId_example" // String | 
 let commentTextUpdateRequest = CommentTextUpdateRequest(comment: "comment_example", mentions: [CommentUserMentionInfo(id: "id_example", tag: "tag_example", rawTag: "rawTag_example", type: "type_example", sent: false)], hashTags: [CommentUserHashTagInfo(id: "id_example", tag: "tag_example", url: "url_example", retain: false)]) // CommentTextUpdateRequest | 
-let editKey = "editKey_example" // String |  (isteğe bağlı)
-let sso = "sso_example" // String |  (isteğe bağlı)
+let editKey = "editKey_example" // String |  (optional)
+let sso = "sso_example" // String |  (optional)
 
-PublicAPI.setCommentText(tenantId: tenantId, commentId: commentId, broadcastId: broadcastId, commentTextUpdateRequest: commentTextUpdateRequest, editKey: editKey, sso: sso) { (response, error) in
+PublicAPI.setCommentText(tenantId: tenantId, commentId: commentId, broadcastId: broadcastId, commentTextUpdateRequest: commentTextUpdateRequest, options: PublicAPI.SetCommentTextOptions(editKey: editKey, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

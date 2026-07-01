@@ -1,13 +1,13 @@
-页面当前在线的查看者：其 websocket 会话当前已订阅该页面的人。返回 anonCount + totalCount（房间范围的订阅者，包括我们不枚举的匿名查看者）。
+Currently-online viewers of a page: people whose websocket session is subscribed to the page right now.  
+返回 anonCount + totalCount (room-wide subscribers, including anon viewers we don't enumerate).  
 
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| urlId | string | 是 |  |
-| afterName | string | 否 |  |
-| afterUserId | string | 否 |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| options | GetOnlineUsersOptions | No |  |
 
 ## 响应
 
@@ -15,15 +15,11 @@
 
 ## 示例
 
-[inline-code-attrs-start title = 'getOnlineUsers 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
-[inline-code-start]
-let (response, httpResponse) = client.getOnlineUsers(tenantId = "my-tenant-123", urlId = "news/politics/top-story", afterName = "", afterUserId = "")
-if response.isSome:
-  let page = response.get()
-  echo "Received online users page:"
-  echo page
-else:
-  echo "No online users returned. HTTP status: ", httpResponse.statusCode
+[inline-code-attrs-start title = 'getOnlineUsers 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]  
+[inline-code-start]  
+let opts = GetOnlineUsersOptions()  
+let (onlineUsersOpt, httpResp) = client.getOnlineUsers(tenantId = "my-tenant-123", urlId = "news/article-title", options = opts)  
+if onlineUsersOpt.isSome:  
+  let onlineUsers = onlineUsersOpt.get()  
+  echo onlineUsers  
 [inline-code-end]
-
----

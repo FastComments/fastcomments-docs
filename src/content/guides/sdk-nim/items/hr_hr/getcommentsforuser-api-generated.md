@@ -1,14 +1,8 @@
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| userId | string | Ne |  |
-| direction | SortDirections | Ne |  |
-| repliesToUserId | string | Ne |  |
-| page | float64 | Ne |  |
-| includei10n | bool | Ne |  |
-| locale | string | Ne |  |
-| isCrawler | bool | Ne |  |
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| options | GetCommentsForUserOptions | Ne |  |
 
 ## Odgovor
 
@@ -18,19 +12,16 @@ Vraća: [`Option[GetCommentsForUserResponse]`](https://github.com/FastComments/f
 
 [inline-code-attrs-start title = 'Primjer getCommentsForUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getCommentsForUser(
-  userId = "user-8421",
-  direction = SortDirections.Newest,
-  repliesToUserId = "",
-  page = 1.0,
-  includei10n = true,
-  locale = "en-US",
-  isCrawler = false
-)
+let (maybeResp, httpResp) = client.getCommentsForUser(options = GetCommentsForUserOptions(
+  tenantId = "my-tenant-123",
+  userId = "user-456",
+  page = 0,
+  pageSize = 20,
+  includeDeleted = false,
+  commentIds = @[]
+))
 
-if response.isSome:
-  let comments = response.get()
-  discard comments
+if maybeResp.isSome:
+  let resp = maybeResp.get()
+  discard resp
 [inline-code-end]
-
----

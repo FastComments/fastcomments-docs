@@ -1,4 +1,3 @@
----
 req
 tenantId
 urlId
@@ -6,7 +5,7 @@ userIdWS
 
 ## パラメータ
 
-| 名前 | 型 | 必須 | 説明 |
+| 名前 | タイプ | 必須 | 説明 |
 |------|------|----------|-------------|
 | tenantId | string | はい |  |
 | urlId | string | はい |  |
@@ -16,22 +15,21 @@ userIdWS
 
 ## レスポンス
 
-返却値: [`Option[GetEventLogResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_event_log_response.nim)
+返却: [`Option[GetEventLogResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_event_log_response.nim)
 
 ## 例
 
 [inline-code-attrs-start title = 'getEventLog の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getEventLog(
+let (eventLogOpt, httpResp) = client.getEventLog(
   tenantId = "my-tenant-123",
-  urlId = "news/article-2026-solar-panels",
-  userIdWS = "user-456",
-  startTime = 1688000000'i64,
-  endTime = 1688086400'i64
+  urlId = "news/article-title",
+  userIdWS = "",
+  startTime = 0'i64,
+  endTime = 0'i64,
 )
-if response.isSome:
-  let eventLog = response.get()
-  discard eventLog
-[inline-code-end]
 
----
+if eventLogOpt.isSome:
+  let eventLog = eventLogOpt.get()
+  echo eventLog
+[inline-code-end]

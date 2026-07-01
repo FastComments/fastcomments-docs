@@ -13,14 +13,15 @@ Returns: [`AddSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-
 
 [inline-code-attrs-start title = 'addSSOUser Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-organization-92';
-const createAPISSOUserData: CreateAPISSOUserData = {
-  email: 'sarah.connor@skynetpartners.com',
-  firstName: 'Sarah',
-  lastName: 'Connor',
-  externalId: 'okta|678901234',
-  roles: ['admin', 'developer'], // optional field demonstrated
-  displayName: 'Sarah Connor'    // optional field demonstrated
+const tenantId: string = "tenant_12345";
+
+const newUser: CreateAPISSOUserData = {
+  userId: "sso_user_987",
+  name: "Jane Doe",
+  email: "jane.doe@example.com",
+  // optional field
+  avatarUrl: "https://example.com/avatars/jane.jpg",
 };
-const addUserResult: AddSSOUserAPIResponse = await addSSOUser(tenantId, createAPISSOUserData);
+
+const result: AddSSOUserAPIResponse = await addSSOUser(tenantId, newUser);
 [inline-code-end]

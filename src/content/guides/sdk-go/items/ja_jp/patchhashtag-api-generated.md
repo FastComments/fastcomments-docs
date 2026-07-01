@@ -1,9 +1,9 @@
 ## パラメータ
 
-| 名前 | 型 | 位置 | 必須 | 説明 |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tag | string | path | はい |  |
-| tenantId | string | query | いいえ |  |
+| tenantId | string | query | Yes |  |
+| tag | string | path | Yes |  |
 
 ## レスポンス
 
@@ -23,9 +23,9 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	tag := "tag_example" // string | 
-	tenantId := "tenantId_example" // string |  （オプション）
-	updateHashTagBody := *openapiclient.NewUpdateHashTagBody() // UpdateHashTagBody |  （オプション）
+	updateHashTagBody := *openapiclient.NewUpdateHashTagBody() // UpdateHashTagBody | (オプション)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -34,7 +34,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.PatchHashTag``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// `PatchHashTag` からのレスポンス: UpdateHashTagResponse
+	// `PatchHashTag` のレスポンス: UpdateHashTagResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PatchHashTag`: %v\n", resp)
 }
 [inline-code-end]

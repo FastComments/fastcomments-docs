@@ -5,13 +5,13 @@ userIdWS
 
 ## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| urlId | string | query | Да |  |
-| userIdWS | string | query | Да |  |
-| startTime | integer | query | Да |  |
-| endTime | integer | query | Не |  |
+| Име | Тип | Местоположение | Задължително | Описание |
+|------|------|----------------|--------------|----------|
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| userIdWS | string | query | Yes |  |
+| startTime | integer | query | Yes |  |
+| endTime | integer | query | No |  |
 
 ## Отговор
 
@@ -27,15 +27,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ако искате да използвате персонализиран HTTP клиент, подайте вашия клиент, който реализира `GuzzleHttp\ClientInterface`.
-    // Това е незадължително, `GuzzleHttp\Client` ще се използва по подразбиране.
+    // Ако искате да използвате персонализиран HTTP клиент, предайте вашия клиент, който имплементира `GuzzleHttp\ClientInterface`.
+    // Това е опционално, `GuzzleHttp\Client` ще се използва по подразбиране.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $url_id = 'url_id_example'; // string
 $user_id_ws = 'user_id_ws_example'; // string
 $start_time = 56; // int
 $end_time = 56; // int
+
 
 try {
     $result = $apiInstance->getEventLog($tenant_id, $url_id, $user_id_ws, $start_time, $end_time);
@@ -44,5 +46,3 @@ try {
     echo 'Exception when calling PublicApi->getEventLog: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

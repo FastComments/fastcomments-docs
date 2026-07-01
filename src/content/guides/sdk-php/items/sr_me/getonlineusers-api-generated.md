@@ -1,22 +1,25 @@
-Корисници тренутно онлајн на страници: људи чија је websocket сесија претплаћена на страницу у овом тренутку.
-Враћа anonCount + totalCount (претплатници широм просторије, укључујући анонимне гледаоце које не набрајамо).
+Currently-online viewers of a page: people whose websocket session is subscribed to the page right now.  
+Returns anonCount + totalCount (room-wide subscribers, including anon viewers we don't enumerate).
 
-## Параметри
+Trenutno online gledatelji stranice: osobe čija je websocket sesija trenutno pretplaćena na stranicu.  
+Vraća anonCount + totalCount (pretplatnici u cijeloj sobi, uključujući anonimne gledatelje koje ne nabrajamo).
 
-| Име | Тип | Локација | Обавезно | Опис |
+## Parameters
+
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Yes |  |
-| urlId | string | query | Yes | Идентификатор URL странице (очишћен на серверу). |
-| afterName | string | query | No | Курсор: проследите nextAfterName из претходног одговора. |
-| afterUserId | string | query | No | Курсор tiebreaker: проследите nextAfterUserId из претходног одговора. Обавезно када је afterName постављен да би се спречило да везе по имену изоставе уносе. |
+| urlId | string | query | Yes | Identifikator URL-a stranice (čišćen na serveru). |
+| afterName | string | query | No | Kursor: proslijedite nextAfterName iz prethodnog odgovora. |
+| afterUserId | string | query | No | Kursor za razrješavanje neriješenih slučajeva: proslijedite nextAfterUserId iz prethodnog odgovora. Potrebno kada je postavljen afterName kako se ne bi izostavili unosi s istim imenom. |
 
-## Одговор
+## Response
 
-Враћа: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersOnlineResponse.php)
+Returns: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersOnlineResponse.php)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'getOnlineUsers Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getOnlineUsers'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -24,17 +27,21 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ако желите да користите прилагођени HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционално, подразумевано ће бити коришћен `GuzzleHttp\Client`.
+    // Ako želite koristiti prilagođeni http klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
+    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao podrazumevano.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$url_id = 'url_id_example'; // string | Идентификатор URL странице (очишћен на серверу).
-$after_name = 'after_name_example'; // string | Курсор: проследите nextAfterName из претходног одговора.
-$after_user_id = 'after_user_id_example'; // string | Курсор tiebreaker: проследите nextAfterUserId из претходног одговора. Обавезно када је afterName постављен да би се спречило да везе по имену изоставе уносе.
+$url_id = 'url_id_example'; // string | Identifikator URL-a stranice (čišćen na serveru).
+$options = [
+    'after_name' => 'after_name_example', // string | Kursor: proslijedite nextAfterName iz prethodnog odgovora.
+    'after_user_id' => 'after_user_id_example', // string | Kursor za razrješavanje neriješenih slučajeva: proslijedite nextAfterUserId iz prethodnog odgovora. Potrebno kada je postavljen afterName kako se ne bi izostavili unosi s istim imenom.
+];
+
 
 try {
-    $result = $apiInstance->getOnlineUsers($tenant_id, $url_id, $after_name, $after_user_id);
+    $result = $apiInstance->getOnlineUsers($tenant_id, $url_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getOnlineUsers: ', $e->getMessage(), PHP_EOL;

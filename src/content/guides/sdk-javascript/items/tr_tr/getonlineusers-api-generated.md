@@ -1,9 +1,9 @@
-Bir sayfanın şu anda çevrimiçi olan izleyicileri: websocket oturumu şu anda sayfaya abone olan kişiler.
-Döndürür anonCount + totalCount (oda genelindeki aboneler, saymadığımız anon görüntüleyiciler dahil).
+Şu anda çevrimiçi izleyiciler bir sayfada: websocket oturumu şu anda sayfaya abone olan kişiler.  
+anonCount + totalCount değerini döndürür (odadaki tüm aboneler, saymadığımız anonim izleyiciler dahil).
 
 ## Parametreler
 
-| Name | Type | Required | Description |
+| Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | urlId | string | Evet |  |
@@ -12,17 +12,27 @@ Döndürür anonCount + totalCount (oda genelindeki aboneler, saymadığımız a
 
 ## Yanıt
 
-Döndürür: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOnlineResponse.ts)
+Döndürür: [`GetOnlineUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOnlineUsersResponse.ts)
 
 ## Örnek
 
-[inline-code-attrs-start title = 'getOnlineUsers Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getOnlineUsers Örnek'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8f3c2b7';
-const urlId: string = 'article-2026-06-19-site-update';
-const afterName: string = 'michael.hansen';
-const afterUserId: string = 'user_00421';
-const onlineUsers: PageUsersOnlineResponse = await getOnlineUsers(tenantId, urlId, afterName, afterUserId);
+async function demoOnlineUsers() {
+  const tenantId: string = "tenant_12345";
+  const urlId: string = "url_98765";
+
+  // İsteğe bağlı sayfalama parametreleriyle
+  const pagedResult: GetOnlineUsersResponse = await getOnlineUsers(
+    tenantId,
+    urlId,
+    "alice_smith",
+    "user_9"
+  );
+
+  // İsteğe bağlı sayfalama parametreleri olmadan
+  const fullResult: GetOnlineUsersResponse = await getOnlineUsers(tenantId, urlId);
+}
 [inline-code-end]
 
 ---

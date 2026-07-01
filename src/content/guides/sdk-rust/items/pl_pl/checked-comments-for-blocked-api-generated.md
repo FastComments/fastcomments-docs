@@ -1,10 +1,11 @@
+---
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|-------------|
-| tenant_id | String | Tak |  |
-| comment_ids | String | Tak |  |
-| sso | String | Nie |  |
+|------|------|----------|------|
+| tenant_id | String | Tak | |
+| comment_ids | String | Tak | |
+| sso | String | Nie | |
 
 ## Odpowiedź
 
@@ -12,16 +13,16 @@ Zwraca: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcom
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład checked_comments_for_blocked'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'checked_comments_for_blocked Przykład'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_checked_comments_for_blocked() -> Result<CheckBlockedCommentsResponse, Error> {
-    let params: CheckedCommentsForBlockedParams = CheckedCommentsForBlockedParams {
+async fn example() -> Result<(), Error> {
+    let params = CheckedCommentsForBlockedParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        comment_ids: "cmt-1023,cmt-2048".to_string(),
-        sso: Some("sso:user:john.doe:eyJhbGciOiJIUzI1Ni".to_string()),
+        comment_ids: "cmt-001,cmt-002".to_string(),
+        sso: Some("user@example.com".to_string()),
     };
-    let response: CheckBlockedCommentsResponse = checked_comments_for_blocked(&configuration, params).await?;
-    Ok(response)
+    let _response: CheckBlockedCommentsResponse = checked_comments_for_blocked(&config, params).await?;
+    Ok(())
 }
 [inline-code-end]
 

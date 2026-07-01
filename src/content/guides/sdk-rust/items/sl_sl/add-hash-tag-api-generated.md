@@ -2,8 +2,8 @@
 
 | Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
-| tenant_id | String | Ne |  |
-| create_hash_tag_body | models::CreateHashTagBody | Ne |  |
+| tenant_id | String | Yes |  |
+| create_hash_tag_body | models::CreateHashTagBody | No |  |
 
 ## Odgovor
 
@@ -11,18 +11,16 @@ Vrne: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-rus
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer uporabe add_hash_tag'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'add_hash_tag Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn run() -> Result<(), Error> {
-    let params: AddHashTagParams = AddHashTagParams {
-        tenant_id: Some("acme-corp-tenant".to_string()),
+async fn example(cfg: &configuration::Configuration) -> Result<(), Error> {
+    let params = AddHashTagParams {
+        tenant_id: "acme-corp-tenant".to_string(),
         create_hash_tag_body: Some(models::CreateHashTagBody {
-            name: "breaking-news".to_string(),
-            slug: "news/breaking".to_string(),
+            tag: "news/article".to_string(),
         }),
     };
-    let response: CreateHashTagResponse = add_hash_tag(&configuration, params).await?;
-    let _created_tag = response;
+    let _response: CreateHashTagResponse = add_hash_tag(cfg, params).await?;
     Ok(())
 }
 [inline-code-end]

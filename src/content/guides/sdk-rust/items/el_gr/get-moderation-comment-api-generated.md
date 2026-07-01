@@ -2,10 +2,11 @@
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
-| comment_id | String | Ναι |  |
-| include_email | bool | Όχι |  |
-| include_ip | bool | Όχι |  |
-| sso | String | Όχι |  |
+| tenant_id | String | Yes |  |
+| comment_id | String | Yes |  |
+| include_email | bool | No |  |
+| include_ip | bool | No |  |
+| sso | String | No |  |
 
 ## Απόκριση
 
@@ -15,16 +16,15 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα get_moderation_comment'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_comment() -> Result<ModerationApiCommentResponse, Error> {
-    let params: GetModerationCommentParams = GetModerationCommentParams {
-        comment_id: String::from("cmt-48291"),
+async fn example() -> Result<(), Error> {
+    let params = GetModerationCommentParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: "news/article-6789".to_string(),
         include_email: Some(true),
-        include_ip: Some(false),
-        sso: Some(String::from("sso-acme-corp-2026-token")),
+        include_ip: Some(true),
+        sso: Some("sso-user-42".to_string()),
     };
-    let response: ModerationApiCommentResponse = get_moderation_comment(&configuration, params).await?;
-    Ok(response)
+    let _response = get_moderation_comment(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

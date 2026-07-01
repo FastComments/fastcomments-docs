@@ -1,7 +1,6 @@
----
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | afterId | string | query | 否 |  |
@@ -13,19 +12,20 @@
 
 ## 响应
 
-返回: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/reset_user_notifications_response.py)
+返回：[`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/reset_user_notifications_response.py)
 
 ## 示例
 
 [inline-code-attrs-start title = 'reset_user_notifications 示例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import ResetUserNotificationsOptions
 from client.models.reset_user_notifications_response import ResetUserNotificationsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# 定义主机是可选的，默认为 https://fastcomments.com
-# 有关所有支持的配置参数列表，请参阅 configuration.py。
+# 定义主机是可选的，默认值为 https://fastcomments.com
+# 请参阅 configuration.py 以获取所有受支持的配置参数列表。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -33,7 +33,7 @@ configuration = client.Configuration(
 
 # 使用 API 客户端实例进入上下文
 with client.ApiClient(configuration) as api_client:
-    # 创建 API 类的一个实例
+    # 创建 API 类的实例
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     after_id = 'after_id_example' # str |  (可选)
@@ -44,11 +44,9 @@ with client.ApiClient(configuration) as api_client:
     sso = 'sso_example' # str |  (可选)
 
     try:
-        api_response = api_instance.reset_user_notifications(tenant_id, after_id=after_id, after_created_at=after_created_at, unread_only=unread_only, dm_only=dm_only, no_dm=no_dm, sso=sso)
-        print("The response of PublicApi->reset_user_notifications:\n")
+        api_response = api_instance.reset_user_notifications(tenant_id, ResetUserNotificationsOptions(after_id=after_id, after_created_at=after_created_at, unread_only=unread_only, dm_only=dm_only, no_dm=no_dm, sso=sso))
+        print("PublicApi->reset_user_notifications 的响应：\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PublicApi->reset_user_notifications: %s\n" % e)
+        print("调用 PublicApi->reset_user_notifications 时出现异常: %s\n" % e)
 [inline-code-end]
-
----

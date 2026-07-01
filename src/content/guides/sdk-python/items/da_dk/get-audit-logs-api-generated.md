@@ -1,13 +1,13 @@
 ## Parametre
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| limit | number | query | Nej |  |
-| skip | number | query | Nej |  |
-| order | string | query | Nej |  |
-| after | number | query | Nej |  |
-| before | number | query | Nej |  |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
+|------|------|-----------|----------|-------------|
+| tenantId | string | query | Yes |  |
+| limit | number | query | No |  |
+| skip | number | query | No |  |
+| order | string | query | No |  |
+| after | number | query | No |  |
+| before | number | query | No |  |
 
 ## Svar
 
@@ -18,30 +18,32 @@ Returnerer: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomment
 [inline-code-attrs-start title = 'get_audit_logs Eksempel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import GetAuditLogsOptions
 from client.models.get_audit_logs_response import GetAuditLogsResponse
 from client.models.sortdir import SORTDIR
 from client.rest import ApiException
 from pprint import pprint
 
-# Det er valgfrit at angive host, standard er https://fastcomments.com
+# Definering af værten er valgfri og standard er https://fastcomments.com
 # Se configuration.py for en liste over alle understøttede konfigurationsparametre.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Klienten skal konfigurere autentificerings- og autorisationsparametre
+# Klienten skal konfigurere autentifikations- og autorisationsparametrene
 # i overensstemmelse med API-serverens sikkerhedspolitik.
-# Eksempler for hver autentificeringsmetode er angivet nedenfor — brug det eksempel, der opfylder dit autentificeringsbehov.
+# Eksempler for hver auth-metode er angivet nedenfor, brug det eksempel der
+# opfylder dit auth-brugstilfælde.
 
-# Konfigurér API-nøgleautorisation: api_key
+# Konfigurer API-nøgle autorisation: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Fjern kommentaren nedenfor for at sætte prefix (fx Bearer) for API-nøglen, hvis nødvendigt
+# Fjern kommentaren nedenfor for at konfigurere præfiks (f.eks. Bearer) for API-nøgle, hvis nødvendigt
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Opret en kontekst med en instans af API-klienten
+# Indtast en kontekst med en forekomst af API-klienten
 with client.ApiClient(configuration) as api_client:
-    # Opret en instans af API-klassen
+    # Opret en forekomst af API-klassen
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     limit = 3.4 # float |  (valgfri)
@@ -51,7 +53,7 @@ with client.ApiClient(configuration) as api_client:
     before = 3.4 # float |  (valgfri)
 
     try:
-        api_response = api_instance.get_audit_logs(tenant_id, limit=limit, skip=skip, order=order, after=after, before=before)
+        api_response = api_instance.get_audit_logs(tenant_id, GetAuditLogsOptions(limit=limit, skip=skip, order=order, after=after, before=before))
         print("The response of DefaultApi->get_audit_logs:\n")
         pprint(api_response)
     except Exception as e:

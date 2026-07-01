@@ -5,7 +5,7 @@
 | tenantId | string | はい |  |
 | notificationId | string | いいえ |  |
 | newStatus | string | いいえ |  |
-| sso | string | いいえ |  |
+| sso | string = "" | いいえ |  |
 
 ## レスポンス
 
@@ -15,17 +15,12 @@
 
 [inline-code-attrs-start title = 'updateUserNotificationStatus の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateUserNotificationStatus(
+let (respOpt, httpResponse) = client.updateUserNotificationStatus(
   tenantId = "my-tenant-123",
   notificationId = "notif-456",
   newStatus = "read",
-  sso = "sso-token-abc123"
+  sso = ""
 )
-if response.isSome:
-  let updated = response.get()
-  echo "Notification status updated successfully"
-else:
-  echo "No update response received"
+if respOpt.isSome:
+  let status = respOpt.get()
 [inline-code-end]
-
----

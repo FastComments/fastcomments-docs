@@ -1,31 +1,28 @@
----
-## Parameters
+## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenant_id | String | 예 |  |
-| url_id | String | 예 |  |
-| id | String | 예 |  |
-| title | String | 아니오 |  |
+| tenant_id | String | Yes |  |
+| url_id | String | Yes |  |
+| id | String | Yes |  |
+| title | String | No |  |
 
-## Response
+## 응답
 
-Returns: `CreateV1PageReact`
+반환: `CreateV1PageReact`
 
-## Example
+## 예시
 
-[inline-code-attrs-start title = 'create_v2_page_react 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_v2_page_react 예시'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn example_create_react() -> Result<CreateV1PageReact, Error> {
-    let params: CreateV2PageReactParams = CreateV2PageReactParams {
-        tenant_id: String::from("acme-corp-tenant"),
-        url_id: String::from("news/2026/product-launch"),
-        id: String::from("react-like"),
-        title: Some(String::from("Product Launch Coverage")),
+async fn run() -> Result<(), Error> {
+    let params = CreateV2PageReactParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        url_id: "news/article".to_string(),
+        id: "comment-123".to_string(),
+        title: Some("Breaking News".to_string()),
     };
-    let response: CreateV1PageReact = create_v2_page_react(&config, params).await?;
-    Ok(response)
+    let _react = create_v2_page_react(&configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

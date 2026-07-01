@@ -5,18 +5,23 @@
 | tenantId | string | Ja |  |
 | skip | number | Nej |  |
 
-## Respons
+## Svar
 
-Returnerer: [`GetEmailTemplatesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplatesResponse.ts)
+Returnerer: [`GetEmailTemplatesResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplatesResponse1.ts)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'getEmailTemplates Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'tenant_8f3b2a9c';
-const templatesPage1: GetEmailTemplatesResponse = await getEmailTemplates(tenantId);
-const templatesPage2: GetEmailTemplatesResponse = await getEmailTemplates(tenantId, 25);
-console.log(templatesPage1, templatesPage2);
+(async () => {
+  const tenantId: string = "tenant_12345";
+
+  // Kald uden valgfri 'skip'
+  const templates: GetEmailTemplatesResponse1 = await getEmailTemplates(tenantId);
+
+  // Kald med valgfri 'skip' parameter
+  const pagedTemplates: GetEmailTemplatesResponse1 = await getEmailTemplates(tenantId, 20);
+})();
 [inline-code-end]
 
 ---

@@ -2,9 +2,11 @@
 
 | Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
 | commentId | string | path | Да |  |
 | spam | boolean | query | Не |  |
 | permNotSpam | boolean | query | Не |  |
+| broadcastId | string | query | Не |  |
 | sso | string | query | Не |  |
 
 ## Отговор
@@ -25,21 +27,21 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
 	spam := true // bool |  (по избор)
 	permNotSpam := true // bool |  (по избор)
+	broadcastId := "broadcastId_example" // string |  (по избор)
 	sso := "sso_example" // string |  (по избор)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostSetCommentSpamStatus(context.Background(), commentId).Spam(spam).PermNotSpam(permNotSpam).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostSetCommentSpamStatus(context.Background(), commentId).TenantId(tenantId).Spam(spam).PermNotSpam(permNotSpam).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostSetCommentSpamStatus``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Грешка при извикване на `ModerationAPI.PostSetCommentSpamStatus``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Пълен HTTP отговор: %v\n", r)
 	}
-	// response from `PostSetCommentSpamStatus`: APIEmptyResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostSetCommentSpamStatus`: %v\n", resp)
+	// отговор от `PostSetCommentSpamStatus`: APIEmptyResponse
+	fmt.Fprintf(os.Stdout, "Отговор от `ModerationAPI.PostSetCommentSpamStatus`: %v\n", resp)
 }
 [inline-code-end]
-
----

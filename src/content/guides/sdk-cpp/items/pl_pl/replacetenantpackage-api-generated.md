@@ -1,10 +1,10 @@
 ## Parametry
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Tak |  |
-| id | string | Tak |  |
-| replaceTenantPackageBody | ReplaceTenantPackageBody | Tak |  |
+| Nazwa | Typ | Wymagane | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| replaceTenantPackageBody | ReplaceTenantPackageBody | Yes |  |
 
 ## Odpowiedź
 
@@ -12,23 +12,16 @@ Zwraca: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/bl
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład użycia replaceTenantPackage'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'replaceTenantPackage Przykład'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t packageId = U("pkg-456");
-auto replaceBody = std::make_shared<ReplaceTenantPackageBody>();
-replaceBody->name = U("Pro Plan");
-replaceBody->description = boost::optional<utility::string_t>(U("Enterprise package with enhanced support"));
-replaceBody->maxSeats = boost::optional<int>(500);
-api->replaceTenantPackage(tenantId, packageId, *replaceBody)
-.then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task){
-    try {
-        auto resp = task.get();
-        std::cout << "Package replaced successfully\n";
-    } catch (const std::exception &e) {
-        std::cerr << "Error replacing package: " << e.what() << '\n';
-    }
-});
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto pkgId = utility::conversions::to_string_t("pkg-456");
+ReplaceTenantPackageBody body;
+body.planId = utility::conversions::to_string_t("enterprise");
+body.notes = boost::optional<utility::string_t>(utility::conversions::to_string_t("Upgrade request"));
+api->replaceTenantPackage(tenantId, pkgId, body)
+    .then([](std::shared_ptr<APIEmptyResponse>) { })
+    .then([](pplx::task<void> t) {
+        try { t.get(); } catch (const std::exception&) { }
+    });
 [inline-code-end]
-
----

@@ -1,9 +1,10 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| userId | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Da |  |
+| userId | string | query | Ne |  |
+| sso | string | query | Ne |  |
 
 ## Odgovor
 
@@ -11,15 +12,16 @@ Vrne: [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastcomment
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer get_trust_factor'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_trust_factor Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import GetTrustFactorOptions
 from client.models.get_user_trust_factor_response import GetUserTrustFactorResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Nastavitev gostitelja je izbirna in privzeto je https://fastcomments.com
-# Za seznam vseh podprtih konfiguracijskih parametrov si oglejte configuration.py.
+# Definiranje gostitelja je neobvezno in privzeto nastavljeno na https://fastcomments.com
+# Oglejte si configuration.py za seznam vseh podprtih parametrov konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -27,13 +29,14 @@ configuration = client.Configuration(
 
 # Vstopite v kontekst z instanco API odjemalca
 with client.ApiClient(configuration) as api_client:
-    # Ustvarite instanco razreda API
+    # Ustvarite instanco API razreda
     api_instance = client.ModerationApi(api_client)
-    user_id = 'user_id_example' # str |  (izbirno)
-    sso = 'sso_example' # str |  (izbirno)
+    tenant_id = 'tenant_id_example' # str | 
+    user_id = 'user_id_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.get_trust_factor(user_id=user_id, sso=sso)
+        api_response = api_instance.get_trust_factor(tenant_id, GetTrustFactorOptions(user_id=user_id, sso=sso))
         print("The response of ModerationApi->get_trust_factor:\n")
         pprint(api_response)
     except Exception as e:

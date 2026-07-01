@@ -1,9 +1,9 @@
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-----------|
-| tenant_id | String | Sim |  |
-| create_email_template_body | models::CreateEmailTemplateBody | Sim |  |
+|------|------|-------------|-----------|
+| tenant_id | String | Yes |  |
+| create_email_template_body | models::CreateEmailTemplateBody | Yes |  |
 
 ## Resposta
 
@@ -11,23 +11,21 @@ Retorna: [`CreateEmailTemplateResponse`](https://github.com/FastComments/fastcom
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de create_email_template'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo create_email_template'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let params = CreateEmailTemplateParams {
-    tenant_id: "acme-corp-tenant".to_string(),
-    create_email_template_body: models::CreateEmailTemplateBody {
-        name: "Weekly Newsletter".to_string(),
-        slug: Some("news/weekly".to_string()),
-        subject: Some("Acme Corp — Weekly Updates".to_string()),
-        html_body: Some("<h1>Acme Weekly</h1><p>Top stories this week...</p>".to_string()),
-        text_body: Some("Acme Weekly — Top stories this week...".to_string()),
-        from_email: Some("newsletter@acme.com".to_string()),
-        reply_to: Some("support@acme.com".to_string()),
-        description: Some("Template used for the weekly customer newsletter".to_string()),
-        is_active: Some(true),
-    },
-};
-let created: CreateEmailTemplateResponse = create_email_template(&configuration, params).await?;
+async fn example() -> Result<(), Error> {
+    let params = CreateEmailTemplateParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        create_email_template_body: models::CreateEmailTemplateBody {
+            name: "welcome".to_string(),
+            subject: "Welcome to Acme".to_string(),
+            html_content: "<h1>Welcome</h1>".to_string(),
+            plain_text_content: Some("Welcome to Acme".to_string()),
+        },
+    };
+    let _response = create_email_template(&configuration, params).await?;
+    Ok(())
+}
 [inline-code-end]
 
 ---

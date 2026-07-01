@@ -2,6 +2,7 @@
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
+| tenantId | string | Yes |  |
 | sso | string | No |  |
 
 ## Response
@@ -12,15 +13,16 @@ Returns: [`GetTenantManualBadgesResponse`](https://github.com/FastComments/fastc
 
 [inline-code-attrs-start title = 'getManualBadges Example'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("https://auth.example.com/sso?tenant=my-tenant-123&user=user@example.com"));
-api->getManualBadges(sso).then([](pplx::task<std::shared_ptr<GetTenantManualBadgesResponse>> task){
-    try {
-        auto resp = task.get();
-        if (resp) {
-            auto copied = std::make_shared<GetTenantManualBadgesResponse>(*resp);
+utility::string_t tenantId = U("my-tenant-123");
+boost::optional<utility::string_t> sso = boost::make_optional(U("user@example.com"));
+
+api->getManualBadges(tenantId, sso)
+    .then([](pplx::task<std::shared_ptr<GetTenantManualBadgesResponse>> t) {
+        try {
+            auto response = t.get();
+            // process response, e.g., response->badgeList
+        } catch (const std::exception& ex) {
+            // handle error
         }
-    } catch (const std::exception& ex) {
-        (void)ex;
-    }
-});
+    });
 [inline-code-end]

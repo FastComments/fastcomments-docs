@@ -1,24 +1,25 @@
----
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| שם | טיפוס | חובה | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | id | string | כן |  |
 
 ## תגובה
 
-מחזיר: [`GetTenantPackageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantPackageResponse.ts)
+מחזירה: [`GetTenantPackageResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantPackageResponse1.ts)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'fc_tenant_9b3c2a';
-const packageId: string = 'pkg_pro_monthly_2026';
-const result: GetTenantPackageResponse = await getTenantPackage(tenantId, packageId);
-const tenantPackage: TenantPackage | undefined = (result as unknown as { tenantPackage?: TenantPackage }).tenantPackage;
-const status: APIStatus | undefined = (result as unknown as { status?: APIStatus }).status
-[inline-code-end]
+async function fetchTenantPackage(): Promise<void> {
+    const tenantId: string = "acme-tenant-2024";
+    const packageId: string = "premium-package-01";
+    const response: GetTenantPackageResponse1 = await getTenantPackage(tenantId, packageId);
 
----
+    // שדות אופציונליים בתגובה
+    const tenantPackage: TenantPackage | undefined = response.tenantPackage;
+    const customConfig: CustomConfigParameters | undefined = response.customConfigParameters;
+}
+[inline-code-end]

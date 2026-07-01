@@ -1,10 +1,10 @@
 ## פרמטרים
 
-| שם | סוג | דרוש | תיאור |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| id | string | לא |  |
-| updateTenantBody | UpdateTenantBody | לא |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| updateTenantBody | UpdateTenantBody | No |  |
 
 ## תגובה
 
@@ -12,24 +12,21 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-updateTenant'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת updateTenant'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateTenant(
-  tenantId = "my-tenant-123",
-  id = "settings",
-  updateTenantBody = UpdateTenantBody(
-    name = "My Tenant 123",
-    enableModeration = true,
-    allowedDomains = @["news.example.com", "blog.example.org"],
-    maxCommentLength = 1000
-  )
+let updateBody = UpdateTenantBody(
+  name: "My Tenant",
+  description: "Tenant for news site",
+  isActive: true,
+  allowedDomains: @["example.com", "news.com"]
 )
 
-if response.isSome:
-  let apiResp = response.get()
-  echo "Tenant updated successfully: ", apiResp
-else:
-  echo "Failed to update tenant, HTTP status: ", httpResponse.status
-[inline-code-end]
+let (apiResp, httpResp) = client.updateTenant(
+  tenantId = "my-tenant-123",
+  id = "tenant-456",
+  updateTenantBody = updateBody
+)
 
----
+if apiResp.isSome:
+  let emptyResp = apiResp.get()
+[inline-code-end]

@@ -1,20 +1,20 @@
-Aktivieren oder Deaktivieren von Benachrichtigungen für einen bestimmten Kommentar.
+Enable or disable notifications for a specific comment.
 
-## Parameters
+## Parameter
 
-| Name | Typ | Location | Erforderlich | Beschreibung |
-|------|------|----------|-------------|-------------|
-| tenantId | string | query | Ja |  |
-| notificationId | string | path | Ja |  |
-| optedInOrOut | string | path | Ja |  |
-| commentId | string | query | Ja |  |
-| sso | string | query | Nein |  |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
+|------|-----|-----|--------------|--------------|
+| tenantId | string | query | Yes |  |
+| notificationId | string | path | Yes |  |
+| optedInOrOut | string | path | Yes |  |
+| commentId | string | query | Yes |  |
+| sso | string | query | No |  |
 
-## Response
+## Antwort
 
-Gibt zurück: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationCommentSubscriptionStatusResponse.php)
+Rückgabe: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationCommentSubscriptionStatusResponse.php)
 
-## Example
+## Beispiel
 
 [inline-code-attrs-start title = 'updateUserNotificationCommentSubscriptionStatus Beispiel'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -28,11 +28,13 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     // Dies ist optional, `GuzzleHttp\Client` wird standardmäßig verwendet.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $notification_id = 'notification_id_example'; // string
 $opted_in_or_out = 'opted_in_or_out_example'; // string
 $comment_id = 'comment_id_example'; // string
 $sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->updateUserNotificationCommentSubscriptionStatus($tenant_id, $notification_id, $opted_in_or_out, $comment_id, $sso);

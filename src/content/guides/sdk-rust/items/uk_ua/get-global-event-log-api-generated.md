@@ -5,13 +5,13 @@ userIdWS
 
 ## Параметри
 
-| Name | Type | Required | Description |
+| Назва | Тип | Обов’язково | Опис |
 |------|------|----------|-------------|
-| tenant_id | String | Так |  |
-| url_id | String | Так |  |
-| user_id_ws | String | Так |  |
-| start_time | i64 | Так |  |
-| end_time | i64 | Ні |  |
+| tenant_id | String | Yes |  |
+| url_id | String | Yes |  |
+| user_id_ws | String | Yes |  |
+| start_time | i64 | Yes |  |
+| end_time | i64 | No |  |
 
 ## Відповідь
 
@@ -21,17 +21,15 @@ userIdWS
 
 [inline-code-attrs-start title = 'Приклад get_global_event_log'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_events() -> Result<GetEventLogResponse, Error> {
-    let params: GetGlobalEventLogParams = GetGlobalEventLogParams {
+async fn run(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetGlobalEventLogParams {
         tenant_id: "acme-corp-tenant".to_string(),
         url_id: "news/article".to_string(),
-        user_id_ws: "user-42-ws".to_string(),
-        start_time: 1688208000i64,
-        end_time: Some(1688294400i64),
+        user_id_ws: "user-12345".to_string(),
+        start_time: 1_680_000_000,
+        end_time: Some(1_680_864_000),
     };
-    let response: GetEventLogResponse = get_global_event_log(&configuration, params).await?;
-    Ok(response)
+    let _response = get_global_event_log(configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

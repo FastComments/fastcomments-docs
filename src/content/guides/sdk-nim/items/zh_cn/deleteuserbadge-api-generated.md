@@ -1,6 +1,6 @@
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | id | string | 否 |  |
@@ -13,16 +13,9 @@
 
 [inline-code-attrs-start title = 'deleteUserBadge 示例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let tenantId = "my-tenant-123"
-let badgeId = "badge-456"
-
-let (response, httpResponse) = client.deleteUserBadge(tenantId = tenantId, id = badgeId)
-
-if response.isSome:
-  let success = response.get()
-  echo "Badge deleted successfully for tenant: ", tenantId, " id: ", badgeId
-else:
-  echo "Failed to delete badge. HTTP status: ", $httpResponse.status
+let (apiResponse, httpResponse) = client.deleteUserBadge(tenantId = "my-tenant-123", id = "badge-456")
+if apiResponse.isSome:
+  let success = apiResponse.get()
 [inline-code-end]
 
 ---

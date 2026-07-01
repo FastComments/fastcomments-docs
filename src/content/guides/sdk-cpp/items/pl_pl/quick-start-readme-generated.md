@@ -1,8 +1,8 @@
-### Korzystanie z uwierzytelnionych API (DefaultAPI)
+### Using Authenticated APIs (DefaultAPI)
 
 **Ważne:**
-1. Musisz ustawić adres bazowy (generator cpp-restsdk nie pobiera go ze specyfikacji OpenAPI)
-2. Musisz ustawić swój klucz API w ApiClient przed wykonywaniem żądań uwierzytelnionych. Jeśli tego nie zrobisz, żądania zakończą się błędem 401.
+1. Musisz ustawić podstawowy URL (generator cpp-restsdk nie odczytuje go z specyfikacji OpenAPI)
+2. Musisz ustawić swój klucz API w ApiClient przed wykonywaniem uwierzytelnionych żądań. Jeśli tego nie zrobisz, żądania zakończą się błędem 401.
 
 ```cpp
 #include <iostream>
@@ -13,7 +13,7 @@
 int main() {
     auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
 
-    // WYMAGANE: Ustaw adres bazowy (wybierz region)
+    // WYMAGANE: Ustaw podstawowy URL (wybierz swój region)
     config->setBaseUrl(utility::conversions::to_string_t("https://fastcomments.com"));  // US
     // LUB: config->setBaseUrl(utility::conversions::to_string_t("https://eu.fastcomments.com"));  // EU
 
@@ -28,9 +28,9 @@ int main() {
 }
 ```
 
-### Korzystanie z publicznych API (PublicAPI)
+### Using Public APIs (PublicAPI)
 
-Punkty końcowe publiczne nie wymagają uwierzytelnienia:
+Publiczne endpointy nie wymagają uwierzytelnienia:
 
 ```cpp
 #include <iostream>
@@ -41,7 +41,7 @@ Punkty końcowe publiczne nie wymagają uwierzytelnienia:
 int main() {
     auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
 
-    // WYMAGANE: Ustaw adres bazowy
+    // WYMAGANE: Ustaw podstawowy URL
     config->setBaseUrl(utility::conversions::to_string_t("https://fastcomments.com"));
 
     auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
@@ -52,10 +52,9 @@ int main() {
 }
 ```
 
-### Korzystanie z Moderation APIs (ModerationApi)
+### Using Moderation APIs (ModerationApi)
 
-The `ModerationApi` powers the moderator dashboard. Every method accepts an `sso` parameter so the call runs on behalf of an SSO-authenticated moderator (see the SSO section below
-for how to create a token):
+API `ModerationApi` napędza panel moderatora. Każda metoda przyjmuje parametr `sso`, więc wywołanie jest wykonywane w imieniu moderatora uwierzytelnionego przez SSO (zobacz sekcję SSO poniżej, aby dowiedzieć się, jak utworzyć token):
 
 ```cpp
 #include <iostream>
@@ -66,7 +65,7 @@ for how to create a token):
 int main() {
     auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
 
-    // WYMAGANE: Ustaw adres bazowy
+    // WYMAGANE: Ustaw podstawowy URL
     config->setBaseUrl(utility::conversions::to_string_t("https://fastcomments.com"));
 
     auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
@@ -75,21 +74,17 @@ int main() {
     // Przekaż token SSO moderatora, aby uwierzytelnić wywołanie
     auto ssoToken = utility::conversions::to_string_t("YOUR_MODERATOR_SSO_TOKEN");
 
-    auto response = moderationApi.getCount(
-        boost::none,  // textSearch
-        boost::none,  // byIPFromComment
-        boost::none,  // filter
-        boost::none,  // searchFilters
-        boost::none,  // demo
-        ssoToken      // sso
-    ).get();
+    org::openapitools::client::api::GetCountOptions options;
+    options.sso = ssoToken;
+
+    auto response = moderationApi.getCount(options).get();
 
     return 0;
 }
 ```
 
-### Częste problemy
+### Common Issues
 
-1. **Błąd „URI musi zawierać nazwę hosta”**: Upewnij się, że wywołujesz `config->setBaseUrl(utility::conversions::to_string_t("https://fastcomments.com"))` przed utworzeniem ApiClient. Generator cpp-restsdk nie odczytuje automatycznie adresu serwera ze specyfikacji OpenAPI.
+1. **Błąd "URI must contain a hostname"**: Upewnij się, że wywołujesz `config->setBaseUrl(utility::conversions::to_string_t("https://fastcomments.com"))` przed utworzeniem ApiClient. Generator cpp-restsdk nie odczytuje automatycznie URL serwera z specyfikacji OpenAPI.
 2. **Błąd 401 "missing-api-key"**: Upewnij się, że wywołujesz `config->setApiKey(utility::conversions::to_string_t("api_key"), utility::conversions::to_string_t("YOUR_KEY"))` przed utworzeniem instancji DefaultAPI.
-3. **Nieprawidłowa klasa API**: Użyj `DefaultApi` dla żądań uwierzytelnionych po stronie serwera, `PublicApi` dla żądań po stronie klienta/publicznych, oraz `ModerationApi` dla żądań panelu moderatora (uwierzytelnianych tokenem SSO moderatora).
+3. **Nieprawidłowa klasa API**: Użyj `DefaultApi` dla żądań uwierzytelnionych po stronie serwera, `PublicApi` dla żądań po stronie klienta/publicznych, oraz `ModerationApi` dla żądań panelu moderatora (uwierzytelnionych tokenem SSO moderatora).

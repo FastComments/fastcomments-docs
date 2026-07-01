@@ -30,13 +30,17 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $url_id = 'url_id_example'; // string | Page URL identifier (cleaned server-side).
-$after_name = 'after_name_example'; // string | Cursor: pass nextAfterName from the previous response.
-$after_user_id = 'after_user_id_example'; // string | Cursor tiebreaker: pass nextAfterUserId from the previous response. Required when afterName is set so name-ties don't drop entries.
+$options = [
+    'after_name' => 'after_name_example', // string | Cursor: pass nextAfterName from the previous response.
+    'after_user_id' => 'after_user_id_example', // string | Cursor tiebreaker: pass nextAfterUserId from the previous response. Required when afterName is set so name-ties don't drop entries.
+];
+
 
 try {
-    $result = $apiInstance->getOfflineUsers($tenant_id, $url_id, $after_name, $after_user_id);
+    $result = $apiInstance->getOfflineUsers($tenant_id, $url_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PublicApi->getOfflineUsers: ', $e->getMessage(), PHP_EOL;

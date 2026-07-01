@@ -1,10 +1,10 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| commentIds | string | query | Да | Листа id-јева коментара раздвојена зарезом. |
-| sso | string | query | Не |  |
+| tenantId | string | query | Yes |  |
+| commentIds | string | query | Yes | Листа идентификатора коментара раздвојена зарезом. |
+| sso | string | query | No |  |
 
 ## Одговор
 
@@ -12,7 +12,7 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'checkedCommentsForBlocked Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'checkedCommentsForBlocked Primer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -20,13 +20,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ако желите да користите прилагођен HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционално, подразумевани ће бити `GuzzleHttp\Client`.
+    // Ако желите да користите прилагођени HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
+    // Ово је опционално, `GuzzleHttp\Client` ће се користити као подразумевано.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$comment_ids = 'comment_ids_example'; // string | Листа id-јева коментара раздвојена зарезом.
+$comment_ids = 'comment_ids_example'; // string | Листа идентификатора коментара раздвојена зарезом.
 $sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->checkedCommentsForBlocked($tenant_id, $comment_ids, $sso);

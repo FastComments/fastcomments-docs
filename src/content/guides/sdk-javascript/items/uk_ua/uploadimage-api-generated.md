@@ -1,17 +1,29 @@
----
-Завантажити та змінити розмір зображення
+Завантаження та зміна розміру зображення
 
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Назва | Тип | Обов’язково | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| file | Blob | Так |  |
-| sizePreset | SizePreset | Ні |  |
-| urlId | string | Ні |  |
+| tenantId | string | Yes |  |
+| file | Blob | Yes |  |
+| sizePreset | SizePreset | No |  |
+| urlId | string | No |  |
 
 ## Відповідь
 
 Повертає: [`UploadImageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UploadImageResponse.ts)
 
----
+## Приклад
+
+[inline-code-attrs-start title = 'Приклад uploadImage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+const tenantId: string = "acme-tenant-01";
+const imageBlob: Blob = new Blob([new Uint8Array([137,80,78,71])], { type: "image/png" });
+
+const uploadResult1: UploadImageResponse = await uploadImage(tenantId, imageBlob);
+
+const sizePreset: SizePreset = { presetName: "medium" };
+const urlId: string = "article-9876";
+
+const uploadResult2: UploadImageResponse = await uploadImage(tenantId, imageBlob, sizePreset, urlId);
+[inline-code-end]

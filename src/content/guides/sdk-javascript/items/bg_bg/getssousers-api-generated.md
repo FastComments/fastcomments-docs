@@ -2,8 +2,8 @@
 
 | Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| skip | number | Не |  |
+| tenantId | string | Yes |  |
+| skip | number | No |  |
 
 ## Отговор
 
@@ -13,10 +13,17 @@
 
 [inline-code-attrs-start title = 'Пример за getSSOUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_8f3b2a1c";
-const usersWithoutSkip: GetSSOUsersResponse = await getSSOUsers(tenantId);
-const skip: number = 50;
-const usersWithSkip: GetSSOUsersResponse = await getSSOUsers(tenantId, skip);
-[inline-code-end]
+async function runExample(): Promise<void> {
+    const tenantId: string = "tenant_12345";
 
----
+    // Извикайте без опцио­налния `skip`
+    const firstPage: GetSSOUsersResponse = await getSSOUsers(tenantId);
+
+    // Извикайте с опцио­налния `skip`
+    const secondPage: GetSSOUsersResponse = await getSSOUsers(tenantId, 100);
+
+    console.log(firstPage, secondPage);
+}
+
+runExample();
+[inline-code-end]

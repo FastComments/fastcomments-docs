@@ -1,7 +1,7 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+|------|------|-----------|--------------|-------------|
 | tenantId | string | query | Sì |  |
 | notificationId | string | path | Sì |  |
 | newStatus | string | path | Sì |  |
@@ -21,14 +21,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Se vuoi usare un client HTTP personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
-    // Questo è opzionale, verrà usato `GuzzleHttp\Client` come predefinito.
+    // Se vuoi utilizzare un client http personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
+    // Questo è opzionale, verrà utilizzato `GuzzleHttp\Client` come predefinito.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // stringa
-$notification_id = 'notification_id_example'; // stringa
-$new_status = 'new_status_example'; // stringa
-$sso = 'sso_example'; // stringa
+
+$tenant_id = 'tenant_id_example'; // string
+$notification_id = 'notification_id_example'; // string
+$new_status = 'new_status_example'; // string
+$sso = 'sso_example'; // string
+
 
 try {
     $result = $apiInstance->updateUserNotificationStatus($tenant_id, $notification_id, $new_status, $sso);
@@ -37,5 +39,3 @@ try {
     echo 'Exception when calling PublicApi->updateUserNotificationStatus: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

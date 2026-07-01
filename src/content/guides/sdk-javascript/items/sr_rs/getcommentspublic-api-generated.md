@@ -2,80 +2,91 @@ req
 tenantId
 urlId
 
-## Параметри
+## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| urlId | string | Да |  |
-| page | number | Не |  |
-| direction | SortDirections | Не |  |
-| sso | string | Не |  |
-| skip | number | Не |  |
-| skipChildren | number | Не |  |
-| limit | number | Не |  |
-| limitChildren | number | Не |  |
-| countChildren | boolean | Не |  |
-| fetchPageForCommentId | string | Не |  |
-| includeConfig | boolean | Не |  |
-| countAll | boolean | Не |  |
-| includei10n | boolean | Не |  |
-| locale | string | Не |  |
-| modules | string | Не |  |
-| isCrawler | boolean | Не |  |
-| includeNotificationCount | boolean | Не |  |
-| asTree | boolean | Не |  |
-| maxTreeDepth | number | Не |  |
-| useFullTranslationIds | boolean | Не |  |
-| parentId | string | Не |  |
-| searchText | string | Не |  |
-| hashTags | Array<string> | Не |  |
-| userId | string | Не |  |
-| customConfigStr | string | Не |  |
-| afterCommentId | string | Не |  |
-| beforeCommentId | string | Не |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Da |  |
+| urlId | string | Da |  |
+| page | number | Ne |  |
+| direction | SortDirections | Ne |  |
+| sso | string | Ne |  |
+| skip | number | Ne |  |
+| skipChildren | number | Ne |  |
+| limit | number | Ne |  |
+| limitChildren | number | Ne |  |
+| countChildren | boolean | Ne |  |
+| fetchPageForCommentId | string | Ne |  |
+| includeConfig | boolean | Ne |  |
+| countAll | boolean | Ne |  |
+| includei10n | boolean | Ne |  |
+| locale | string | Ne |  |
+| modules | string | Ne |  |
+| isCrawler | boolean | Ne |  |
+| includeNotificationCount | boolean | Ne |  |
+| asTree | boolean | Ne |  |
+| maxTreeDepth | number | Ne |  |
+| useFullTranslationIds | boolean | Ne |  |
+| parentId | string | Ne |  |
+| searchText | string | Ne |  |
+| hashTags | Array<string> | Ne |  |
+| userId | string | Ne |  |
+| customConfigStr | string | Ne |  |
+| afterCommentId | string | Ne |  |
+| beforeCommentId | string | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsResponseWithPresencePublicComment.ts)
+Vraća: [`GetCommentsPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsPublicResponse.ts)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'getCommentsPublic Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getCommentsPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const response: GetCommentsResponseWithPresencePublicComment = await getCommentsPublic(
-    'news-tenant-42',
-    'article-2026-06-19-abc123',
-    1,
+async function fetchComments() {
+  const tenantId: string = 'acme-corp';
+  const urlId: string = 'blog/post-789';
+  const page: number = 1;
+  const direction: SortDirections = SortDirections.Desc;
+  const limit: number = 25;
+  const includeConfig: boolean = true;
+  const locale: string = 'en-GB';
+  const modules: string = 'reactions,attachments';
+  const isCrawler: boolean = false;
+  const includeNotificationCount: boolean = true;
+  const asTree: boolean = true;
+  const maxTreeDepth: number = 4;
+  const searchText: string = 'TypeScript';
+  const hashTags: string[] = ['typescript', 'api'];
+  const response: GetCommentsPublicResponse = await getCommentsPublic(
+    tenantId,
+    urlId,
+    page,
+    direction,
     undefined,
-    'sso_eyJhbGciOiJIUzI1Ni',
-    0,
-    0,
-    25,
-    5,
-    true,
     undefined,
-    true,
-    false,
-    true,
-    'en-US',
-    'reactions,moderation',
-    false,
-    true,
-    true,
-    3,
-    false,
     undefined,
-    'climate change',
-    ['environment', 'policy'],
-    'user-789',
+    limit,
+    undefined,
+    undefined,
+    undefined,
+    includeConfig,
+    undefined,
+    undefined,
+    locale,
+    modules,
+    isCrawler,
+    includeNotificationCount,
+    asTree,
+    maxTreeDepth,
+    undefined,
+    undefined,
+    searchText,
+    hashTags,
+    undefined,
     undefined,
     undefined,
     undefined
   );
-  console.log(response);
-})();
+}
 [inline-code-end]
-
----

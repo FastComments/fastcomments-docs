@@ -1,10 +1,10 @@
-Користувачі, які зараз онлайн на сторінці: це люди, чиї websocket-сесії зараз підписані на цю сторінку.
-Повертає anonCount + totalCount (підписники по всій кімнаті, включно з анонімними глядачами, яких ми не перераховуємо).
+Поточні онлайн‑глядачі сторінки: користувачі, чия сесія WebSocket підписана на сторінку зараз.  
+Повертає anonCount + totalCount (підписники по всій кімнаті, включаючи анонімних глядачів, які не перераховуються).
 
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
-|------|------|----------|-------------|
+| Назва | Тип | Обов’язково | Опис |
+|------|------|--------------|------|
 | tenant_id | String | Так |  |
 | url_id | String | Так |  |
 | after_name | String | Ні |  |
@@ -18,16 +18,14 @@
 
 [inline-code-attrs-start title = 'Приклад get_online_users'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_online_users() -> Result<PageUsersOnlineResponse, Error> {
-    let params: GetOnlineUsersParams = GetOnlineUsersParams {
+async fn example() -> Result<(), Error> {
+    let params = GetOnlineUsersParams {
         tenant_id: "acme-corp-tenant".to_string(),
-        url_id: "news/world/article-2026".to_string(),
-        after_name: Some("jane.doe".to_string()),
-        after_user_id: Some("user_98765".to_string()),
+        url_id: "news/article".to_string(),
+        after_name: Some("john_doe".to_string()),
+        after_user_id: Some("user-123".to_string()),
     };
-    let response: PageUsersOnlineResponse = get_online_users(&configuration, params).await?;
-    Ok(response)
+    let _response: PageUsersOnlineResponse = get_online_users(&config, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

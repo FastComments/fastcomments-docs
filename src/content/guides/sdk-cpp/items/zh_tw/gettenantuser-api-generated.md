@@ -1,6 +1,6 @@
 ## 參數
 
-| 名稱 | 類型 | 必填 | 描述 |
+| 名稱 | 型別 | 必填 | 說明 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | id | string | 是 |  |
@@ -13,18 +13,15 @@
 
 [inline-code-attrs-start title = 'getTenantUser 範例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> auditReason = U("admin-request");
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t id = U("john.doe@example.com");
-auto fallback = std::make_shared<GetTenantUserResponse>();
-api->getTenantUser(tenantId, id).then([fallback, auditReason](pplx::task<std::shared_ptr<GetTenantUserResponse>> t){
-    try {
-        auto resp = t.get();
-        if(!resp) resp = fallback;
-        (void)auditReason;
-    } catch(const std::exception&) {
-    }
-});
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto userId = utility::conversions::to_string_t("user@example.com");
+api->getTenantUser(tenantId, userId)
+    .then([](pplx::task<std::shared_ptr<GetTenantUserResponse>> task) {
+        try {
+            auto response = task.get();
+            // 根據需要使用回應
+        } catch (const std::exception&) {
+            // 錯誤處理
+        }
+    });
 [inline-code-end]
-
----

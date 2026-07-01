@@ -1,10 +1,12 @@
 ## Parameters
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
-|------|------|----------|----------|-------------|
-| commentId | string | pad | Ja |  |
-| direction | string | query | Nee |  |
-| sso | string | query | Nee |  |
+|------|------|----------|----------|--------------|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| direction | string | query | No |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Respons
 
@@ -15,27 +17,30 @@ Retourneert: [`VoteResponse`](https://github.com/FastComments/fastcomments-pytho
 [inline-code-attrs-start title = 'post_vote Voorbeeld'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.moderation_api import PostVoteOptions
 from client.models.vote_response import VoteResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Het instellen van de host is optioneel en standaard is https://fastcomments.com
-# Zie configuration.py voor een lijst van alle ondersteunde configuratieparameters.
+# Het definiëren van de host is optioneel en standaard https://fastcomments.com
+# Zie configuration.py voor een lijst met alle ondersteunde configuratieparameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Ga een context in met een instantie van de API-client
+# Voer een context in met een instance van de API client
 with client.ApiClient(configuration) as api_client:
-    # Maak een instantie van de API-klasse
+    # Maak een instance van de API-klasse
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     direction = 'direction_example' # str |  (optioneel)
+    broadcast_id = 'broadcast_id_example' # str |  (optioneel)
     sso = 'sso_example' # str |  (optioneel)
 
     try:
-        api_response = api_instance.post_vote(comment_id, direction=direction, sso=sso)
+        api_response = api_instance.post_vote(tenant_id, comment_id, PostVoteOptions(direction=direction, broadcast_id=broadcast_id, sso=sso))
         print("The response of ModerationApi->post_vote:\n")
         pprint(api_response)
     except Exception as e:

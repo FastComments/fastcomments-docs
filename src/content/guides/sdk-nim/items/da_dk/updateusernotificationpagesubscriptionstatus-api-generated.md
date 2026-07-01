@@ -1,15 +1,16 @@
-Aktivér eller deaktiver meddelelser for en side. Når brugere er tilmeldt en side, oprettes der meddelelser for nye rodkommentarer, og også
+---
+Aktiver eller deaktiver meddelelser for en side. Når brugere er abonneret på en side, oprettes meddelelser for nye rodkommentarer, og også
 
 ## Parametre
 
-| Name | Type | Required | Description |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | urlId | string | Ja |  |
 | url | string | Nej |  |
 | pageTitle | string | Nej |  |
 | subscribedOrUnsubscribed | string | Nej |  |
-| sso | string | Nej |  |
+| sso | string = "" | Nej |  |
 
 ## Svar
 
@@ -17,20 +18,20 @@ Returnerer: [`Option[UpdateUserNotificationPageSubscriptionStatusResponse]`](htt
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på updateUserNotificationPageSubscriptionStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus Eksempel'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.updateUserNotificationPageSubscriptionStatus(
+let (optResp, httpResp) = client.updateUserNotificationPageSubscriptionStatus(
   tenantId = "my-tenant-123",
-  urlId = "news/economy/market-rally-2026-06-19",
-  url = "",
-  pageTitle = "",
-  subscribedOrUnsubscribed = "",
+  urlId = "news/article-456",
+  url = "https://example.com/news/article-456",
+  pageTitle = "Breaking News: Something Happened",
+  subscribedOrUnsubscribed = "subscribed",
   sso = ""
 )
 
-if response.isSome:
-  let updateResp = response.get()
-  echo "Subscription update received: ", updateResp
-else:
-  echo "No subscription update returned."
+if optResp.isSome:
+  let resp = optResp.get()
+  # yderligere behandling med resp
 [inline-code-end]
+
+---

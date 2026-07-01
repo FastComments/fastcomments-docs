@@ -1,16 +1,16 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Ναι |  |
-| userId | string | query | Όχι |  |
-| badgeId | string | query | Όχι |  |
-| type | number | query | Όχι |  |
-| displayedOnComments | boolean | query | Όχι |  |
-| limit | number | query | Όχι |  |
-| skip | number | query | Όχι |  |
+|------|------|----------|------------|------------|
+| tenantId | string | query | Yes |  |
+| userId | string | query | No |  |
+| badgeId | string | query | No |  |
+| type | number | query | No |  |
+| displayedOnComments | boolean | query | No |  |
+| limit | number | query | No |  |
+| skip | number | query | No |  |
 
-## Απάντηση
+## Απόκριση
 
 Επιστρέφει: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIGetUserBadgesResponse.swift)
 
@@ -18,18 +18,18 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα getUserBadges'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Τα παρακάτω δείγματα κώδικα είναι ακόμα σε beta. Για οποιοδήποτε πρόβλημα, παρακαλούμε αναφέρετε μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
+// Τα παρακάτω δείγματα κώδικα είναι ακόμη beta. Για οποιοδήποτε πρόβλημα, παρακαλούμε αναφέρετε το μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let userId = "userId_example" // String |  (προαιρετικό)
-let badgeId = "badgeId_example" // String |  (προαιρετικό)
-let type = 987 // Double |  (προαιρετικό)
-let displayedOnComments = true // Bool |  (προαιρετικό)
-let limit = 987 // Double |  (προαιρετικό)
-let skip = 987 // Double |  (προαιρετικό)
+let userId = "userId_example" // String |  (optional)
+let badgeId = "badgeId_example" // String |  (optional)
+let type = 987 // Double |  (optional)
+let displayedOnComments = true // Bool |  (optional)
+let limit = 987 // Double |  (optional)
+let skip = 987 // Double |  (optional)
 
-DefaultAPI.getUserBadges(tenantId: tenantId, userId: userId, badgeId: badgeId, type: type, displayedOnComments: displayedOnComments, limit: limit, skip: skip) { (response, error) in
+DefaultAPI.getUserBadges(tenantId: tenantId, options: DefaultAPI.GetUserBadgesOptions(userId: userId, badgeId: badgeId, type: type, displayedOnComments: displayedOnComments, limit: limit, skip: skip)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -40,3 +40,5 @@ DefaultAPI.getUserBadges(tenantId: tenantId, userId: userId, badgeId: badgeId, t
     }
 }
 [inline-code-end]
+
+---

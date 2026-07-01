@@ -2,11 +2,11 @@
 go get github.com/fastcomments/fastcomments-go
 ```
 
-### Uso del cliente API
+### Usando el Cliente API
 
-#### API pública (Sin autenticación)
+#### API Pública (Sin Autenticación)
 
-La PublicAPI permite acceso no autenticado a endpoints públicos:
+La PublicAPI permite acceso no autenticado a los endpoints públicos:
 
 ```go
 package main
@@ -21,7 +21,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // Obtener comentarios con PublicAPI
+    // Obtener comentarios usando PublicAPI
     response, httpResp, err := apiClient.PublicAPI.GetCommentsPublic(
         context.Background(),
         "your-tenant-id",
@@ -36,9 +36,9 @@ func main() {
 }
 ```
 
-#### API predeterminada (Requiere clave API)
+#### API Predeterminada (Requiere clave API)
 
-La DefaultAPI requiere autenticación mediante tu clave API:
+La DefaultAPI requiere autenticación usando tu clave API:
 
 ```go
 package main
@@ -53,7 +53,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // Crear contexto autenticado con la clave API
+    // Crear contexto autenticado con clave API
     auth := context.WithValue(
         context.Background(),
         client.ContextAPIKeys,
@@ -77,13 +77,9 @@ func main() {
 }
 ```
 
-#### API de moderación (Panel de moderador)
+#### API de Moderación (Panel de Moderador)
 
-La ModerationAPI alimenta el panel de moderador. Proporciona métodos para listar,
-contar, buscar y exportar comentarios, acciones de moderación (eliminar/restaurar,
-marcar, establecer estado de revisión/spam/aprobación, votos, reabrir/cerrar hilos), baneos (prohibir comentar, deshacer, resúmenes previos al baneo, estado y preferencias de baneo, recuentos de usuarios baneados),
-e insignias y confianza (otorgar/quitar insignias, insignias manuales, obtener/establecer factor de confianza, perfil interno de usuario). Todos los métodos de Moderation aceptan un parámetro `sso` para
-moderadores autenticados por SSO:
+La ModerationAPI proporciona una suite extensa de APIs de moderación en vivo y rápidas. Todos los métodos de moderación aceptan un parámetro `sso` y pueden autenticarse mediante SSO o una cookie de sesión de FastComments.com:
 
 ```go
 package main

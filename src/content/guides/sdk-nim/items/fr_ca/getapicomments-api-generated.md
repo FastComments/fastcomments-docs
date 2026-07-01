@@ -1,42 +1,20 @@
 ## Paramètres
 
-| Nom | Type | Requis | Description |
-|------|------|----------|-------------|
-| page | float64 | Non |  |
-| count | float64 | Non |  |
-| textSearch | string | Non |  |
-| byIPFromComment | string | Non |  |
-| filters | string | Non |  |
-| searchFilters | string | Non |  |
-| sorts | string | Non |  |
-| demo | bool | Non |  |
-| sso | string | Non |  |
+| Nom | Type | Obligatoire | Description |
+|------|------|-------------|-------------|
+| tenantId | string | Oui |  |
+| options | GetApiCommentsOptions | Non |  |
 
 ## Réponse
 
-Retourne : [`Option[ModerationAPIGetCommentsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_api_get_comments_response.nim)
+Renvoie: [`Option[ModerationAPIGetCommentsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_api_get_comments_response.nim)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getApiComments'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getApiComments'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getApiComments(
-  page = 1.0,
-  count = 25.0,
-  textSearch = "opinion on climate summit",
-  byIPFromComment = "198.51.100.23",
-  filters = "status:approved",
-  searchFilters = "section:world",
-  sorts = "-createdAt",
-  demo = false,
-  sso = "sso-user-982bf"
-)
-
-if response.isSome:
-  let commentsResp = response.get()
-  echo "Retrieved comments response"
-else:
-  echo "No comments returned, HTTP status: ", httpResponse.status
+let (maybeResp, httpResp) = client.getApiComments(tenantId = "my-tenant-123", options = GetApiCommentsOptions())
+if maybeResp.isSome:
+  let resp = maybeResp.get()
+  # un traitement supplémentaire peut être effectué avec `resp`
 [inline-code-end]
-
----

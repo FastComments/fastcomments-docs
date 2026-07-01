@@ -2,16 +2,17 @@
 
 | 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| commentId | string | path | 예 |  |
-| banEmail | boolean | query | 아니요 |  |
-| banEmailDomain | boolean | query | 아니요 |  |
-| banIP | boolean | query | 아니요 |  |
-| deleteAllUsersComments | boolean | query | 아니요 |  |
-| bannedUntil | string | query | 아니요 |  |
-| isShadowBan | boolean | query | 아니요 |  |
-| updateId | string | query | 아니요 |  |
-| banReason | string | query | 아니요 |  |
-| sso | string | query | 아니요 |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| banEmail | boolean | query | No |  |
+| banEmailDomain | boolean | query | No |  |
+| banIP | boolean | query | No |  |
+| deleteAllUsersComments | boolean | query | No |  |
+| bannedUntil | string | query | No |  |
+| isShadowBan | boolean | query | No |  |
+| updateId | string | query | No |  |
+| banReason | string | query | No |  |
+| sso | string | query | No |  |
 
 ## 응답
 
@@ -31,20 +32,21 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
-	banEmail := true // bool |  (선택 사항)
-	banEmailDomain := true // bool |  (선택 사항)
-	banIP := true // bool |  (선택 사항)
-	deleteAllUsersComments := true // bool |  (선택 사항)
-	bannedUntil := "bannedUntil_example" // string |  (선택 사항)
-	isShadowBan := true // bool |  (선택 사항)
-	updateId := "updateId_example" // string |  (선택 사항)
-	banReason := "banReason_example" // string |  (선택 사항)
-	sso := "sso_example" // string |  (선택 사항)
+	banEmail := true // bool |  (옵션)
+	banEmailDomain := true // bool |  (옵션)
+	banIP := true // bool |  (옵션)
+	deleteAllUsersComments := true // bool |  (옵션)
+	bannedUntil := "bannedUntil_example" // string |  (옵션)
+	isShadowBan := true // bool |  (옵션)
+	updateId := "updateId_example" // string |  (옵션)
+	banReason := "banReason_example" // string |  (옵션)
+	sso := "sso_example" // string |  (옵션)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.PostBanUserFromComment(context.Background(), commentId).BanEmail(banEmail).BanEmailDomain(banEmailDomain).BanIP(banIP).DeleteAllUsersComments(deleteAllUsersComments).BannedUntil(bannedUntil).IsShadowBan(isShadowBan).UpdateId(updateId).BanReason(banReason).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.PostBanUserFromComment(context.Background(), commentId).TenantId(tenantId).BanEmail(banEmail).BanEmailDomain(banEmailDomain).BanIP(banIP).DeleteAllUsersComments(deleteAllUsersComments).BannedUntil(bannedUntil).IsShadowBan(isShadowBan).UpdateId(updateId).BanReason(banReason).Sso(sso).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostBanUserFromComment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

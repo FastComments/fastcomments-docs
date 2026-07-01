@@ -1,10 +1,10 @@
 ## Parametri
 
-| Ime | Tip | Obvezno | Opis |
-|------|------|----------|-------------|
-| tenantId | string | Da |  |
-| bulkAggregateQuestionResultsRequest | BulkAggregateQuestionResultsRequest | Ne |  |
-| forceRecalculate | bool | Ne |  |
+| Ime | Tip | Potrebno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| bulkAggregateQuestionResultsRequest | BulkAggregateQuestionResultsRequest | No |  |
+| forceRecalculate | bool | No |  |
 
 ## Odgovor
 
@@ -12,17 +12,14 @@ Vrne: [`Option[BulkAggregateQuestionResultsResponse]`](https://github.com/FastCo
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer bulkAggregateQuestionResults'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'bulkAggregateQuestionResults Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.bulkAggregateQuestionResults(
+let request = BulkAggregateQuestionResultsRequest()
+let (maybeResult, httpResp) = client.bulkAggregateQuestionResults(
   tenantId = "my-tenant-123",
-  bulkAggregateQuestionResultsRequest = BulkAggregateQuestionResultsRequest(),
-  forceRecalculate = false
-)
+  bulkAggregateQuestionResultsRequest = request,
+  forceRecalculate = false)
 
-if response.isSome:
-  let aggregated = response.get()
-  echo "Aggregated question results received"
+if maybeResult.isSome:
+  let result = maybeResult.get()
 [inline-code-end]
-
----

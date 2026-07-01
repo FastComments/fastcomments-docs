@@ -1,31 +1,27 @@
-## Parameter
+## Parameters
 
 | Name | Typ | Erforderlich | Beschreibung |
-|------|------|----------|-------------|
-| commentsByIdsParams | CommentsByIdsParams | Ja |  |
-| sso | string | Nein |  |
+|------|------|--------------|---------------|
+| tenantId | string | Yes |  |
+| commentsByIdsParams | CommentsByIdsParams | Yes |  |
+| sso | string | No |  |
 
-## Antwort
+## Response
 
-Gibt zurück: [`ModerationAPIChildCommentsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ModerationAPIChildCommentsResponse.h)
+Rückgabe: [`ModerationAPIChildCommentsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ModerationAPIChildCommentsResponse.h)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'postCommentsByIds Beispiel'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
+auto tenantId = utility::string_t(U("my-tenant-123"));
 CommentsByIdsParams params;
-params.tenantId = utility::string_t(U("my-tenant-123"));
-params.commentIds = std::vector<utility::string_t>{ U("cmt-1001"), U("cmt-1002") };
-boost::optional<utility::string_t> sso(U("user@example.com"));
-api->postCommentsByIds(params, sso).then([](pplx::task<std::shared_ptr<ModerationAPIChildCommentsResponse>> t) {
-    try {
+params.commentIds = {U("cmt-001"), U("cmt-002")};
+boost::optional<utility::string_t> sso = U("sso-token-abc");
+api->postCommentsByIds(tenantId, params, sso).then([](pplx::task<std::shared_ptr<ModerationAPIChildCommentsResponse>> t){
+    try{
         auto resp = t.get();
-        auto result = resp ? resp : std::make_shared<ModerationAPIChildCommentsResponse>();
-        std::cout << "Fetched child comments response: " << (result ? "present" : "empty") << std::endl;
-    } catch (const std::exception &e) {
-        std::cerr << "Request failed: " << e.what() << std::endl;
-    }
+        auto copy = std::make_shared<ModerationAPIChildCommentsResponse>(*resp);
+    }catch(const std::exception&){ }
 });
 [inline-code-end]
-
----

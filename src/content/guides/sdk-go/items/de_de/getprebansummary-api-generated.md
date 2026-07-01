@@ -1,16 +1,17 @@
 ## Parameter
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| commentId | string | path | Yes |  |
-| includeByUserIdAndEmail | boolean | query | No |  |
-| includeByIP | boolean | query | No |  |
-| includeByEmailDomain | boolean | query | No |  |
-| sso | string | query | No |  |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
+|------|------|------|--------------|---------------|
+| tenantId | string | query | Ja |  |
+| commentId | string | path | Ja |  |
+| includeByUserIdAndEmail | boolean | query | Nein |  |
+| includeByIP | boolean | query | Nein |  |
+| includeByEmailDomain | boolean | query | Nein |  |
+| sso | string | query | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`PreBanSummary`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_pre_ban_summary.go)
+Rückgabe: [`PreBanSummary`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_pre_ban_summary.go)
 
 ## Beispiel
 
@@ -26,7 +27,8 @@ import (
 )
 
 func main() {
-	commentId := "commentId_example" // string | 
+	tenantId := "tenantId_example" // string |
+	commentId := "commentId_example" // string |
 	includeByUserIdAndEmail := true // bool |  (optional)
 	includeByIP := true // bool |  (optional)
 	includeByEmailDomain := true // bool |  (optional)
@@ -34,12 +36,12 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetPreBanSummary(context.Background(), commentId).IncludeByUserIdAndEmail(includeByUserIdAndEmail).IncludeByIP(includeByIP).IncludeByEmailDomain(includeByEmailDomain).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetPreBanSummary(context.Background(), commentId).TenantId(tenantId).IncludeByUserIdAndEmail(includeByUserIdAndEmail).IncludeByIP(includeByIP).IncludeByEmailDomain(includeByEmailDomain).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetPreBanSummary``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Fehler beim Aufrufen von `ModerationAPI.GetPreBanSummary``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Vollständige HTTP-Antwort: %v\n", r)
 	}
 	// Antwort von `GetPreBanSummary`: PreBanSummary
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetPreBanSummary`: %v\n", resp)
+	fmt.Fprintf(os.Stdout, "Antwort von `ModerationAPI.GetPreBanSummary`: %v\n", resp)
 }
 [inline-code-end]

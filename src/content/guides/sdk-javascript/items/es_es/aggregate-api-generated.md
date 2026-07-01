@@ -1,10 +1,10 @@
----
-Agrega documentos agrupándolos (si se proporciona groupBy) y aplicando múltiples operaciones. Se admiten diferentes operaciones (por ejemplo sum, countDistinct, avg, etc.).
+Agrega documentos agrupándolos (si se proporciona *groupBy*) y aplicando múltiples operaciones.  
+Se admiten diferentes operaciones (p. ej., sum, countDistinct, avg, etc.).
 
 ## Parámetros
 
-| Nombre | Tipo | Requerido | Descripción |
-|------|------|----------|-------------|
+| Nombre | Tipo | Obligatorio | Descripción |
+|--------|------|--------------|-------------|
 | tenantId | string | Sí |  |
 | aggregationRequest | AggregationRequest | Sí |  |
 | parentTenantId | string | No |  |
@@ -16,22 +16,31 @@ Devuelve: [`AggregateResponse`](https://github.com/FastComments/fastcomments-sdk
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de aggregate'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo de agregación'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_72b3";
-const parentTenantId: string = "parent_acme_corp";
+const tenantId: string = "tenant-12345";
+
 const aggregationRequest: AggregationRequest = {
-  groupBy: ["postId"],
   predicates: [
-    { field: "status", operator: "EQ", value: { stringValue: "published" } as QueryPredicateValue }
+    {
+      field: "status",
+      operator: "eq",
+      value: { type: "string", value: "approved" }
+    }
   ],
   operations: [
-    { type: AggregationOpType.COUNT, field: "id", alias: "commentCount" } as AggregationOperation
+    { type: "count", field: "commentId" }
   ],
-  sort: [{ field: "commentCount", direction: "DESC" } as AggregationRequestSort],
-  limit: 25
+  sort: { field: "createdAt", direction: "desc" }
 };
-const response: AggregateResponse = await aggregate(tenantId, aggregationRequest, parentTenantId, true);
-[inline-code-end]
 
----
+const parentTenantId: string = "parent-001";
+const includeStats: boolean = true;
+
+const result: AggregateResponse = await aggregate(
+  tenantId,
+  aggregationRequest,
+  parentTenantId,
+  includeStats
+);
+[inline-code-end]

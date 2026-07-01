@@ -1,11 +1,10 @@
 ## Parâmetros
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nome | Tipo | Obrigatório | Descrição |
+|------|------|-------------|-----------|
 | tenantId | string | Sim |  |
 | commentId | string | Sim |  |
-| editKey | string | Não |  |
-| sso | string | Não |  |
+| options | const GetCommentTextOptions& | Sim |  |
 
 ## Resposta
 
@@ -13,21 +12,17 @@ Retorna: [`PublicAPIGetCommentTextResponse`](https://github.com/FastComments/fas
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getCommentText'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo getCommentText'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-auto tenantId = utility::conversions::to_string_t("my-tenant-123");
-auto commentId = utility::conversions::to_string_t("cmt-7f4b2a");
-boost::optional<utility::string_t> editKey(utility::conversions::to_string_t("edit-xyz-789"));
-boost::optional<utility::string_t> sso(utility::conversions::to_string_t("user@example.com"));
-api->getCommentText(tenantId, commentId, editKey, sso)
-.then([](pplx::task<std::shared_ptr<PublicAPIGetCommentTextResponse>> t){
-    try {
-        auto resp = t.get();
-        auto result = resp ? resp : std::make_shared<PublicAPIGetCommentTextResponse>();
-    } catch (...) {
-        auto empty = std::make_shared<PublicAPIGetCommentTextResponse>();
-    }
+utility::string_t tenantId = U("my-tenant-123");
+utility::string_t commentId = U("cmt-456789");
+auto options = std::make_shared<GetCommentTextOptions>();
+options->language = boost::optional<utility::string_t>(U("en"));
+options->includeDeleted = boost::optional<bool>(false);
+api->getCommentText(tenantId, commentId, *options).then([](pplx::task<std::shared_ptr<PublicAPIGetCommentTextResponse>> task){
+    try{
+        auto response = task.get();
+        (void)response;
+    }catch(...){}
 });
 [inline-code-end]
-
----

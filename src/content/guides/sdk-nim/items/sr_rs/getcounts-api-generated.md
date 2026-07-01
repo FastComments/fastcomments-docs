@@ -1,23 +1,22 @@
-## Параметри
+## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| sso | string | Не |  |
+| Ime | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| sso | string = "" | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`Option[GetBannedUsersCountResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_banned_users_count_response.nim)
+Vraća: [`Option[GetBannedUsersCountResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_banned_users_count_response.nim)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'Пример getCounts'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getCounts'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getCounts(sso = "sso_my-tenant-123_token_AbCdEf123456")
-if response.isSome:
-  let counts = response.get()
+let (maybeCounts, httpRes) = client.getCounts(tenantId = "my-tenant-123", sso = "")
+if maybeCounts.isSome:
+  let counts = maybeCounts.get()
   echo counts
 else:
-  echo "Request failed with status:", httpResponse.status
+  echo "No counts returned"
 [inline-code-end]
-
----

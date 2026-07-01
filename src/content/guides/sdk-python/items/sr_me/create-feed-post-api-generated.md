@@ -1,57 +1,54 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Да |  |
-| broadcastId | string | query | Не |  |
-| isLive | boolean | query | Не |  |
-| doSpamCheck | boolean | query | Не |  |
-| skipDupCheck | boolean | query | Не |  |
+| tenantId | string | query | Yes |  |
+| broadcastId | string | query | No |  |
+| isLive | boolean | query | No |  |
+| doSpamCheck | boolean | query | No |  |
+| skipDupCheck | boolean | query | No |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_feed_posts_response.py)
+Vraća: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_feed_posts_response.py)
 
-## Пример
+## Primjer
 
-[inline-code-attrs-start title = 'Пример create_feed_post'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_feed_post Primjer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.default_api import CreateFeedPostOptions
 from client.models.create_feed_post_params import CreateFeedPostParams
 from client.models.create_feed_posts_response import CreateFeedPostsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинисање хоста је опционално и подразумевано је https://fastcomments.com
-# Погледајте configuration.py за списак свих подржаних параметара конфигурације.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
+# Definisanje hosta je opcionalno i podrazumijevano je https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih konfiguracionih parametara.
+# Klijent mora da konfiguriše parametre za autentifikaciju i autorizaciju
+# u skladu sa sigurnosnom politikom API servera.
+# Primjeri za svaki metod autentifikacije su dati ispod, koristite primjer koji
+# zadovoljava vaš slučaj upotrebe autentifikacije.
 
-# Клијент мора да конфигурише параметре аутентификације и овлашћења
-# у складу са безбедносном политиком API сервера.
-# Испод су наведени примери за сваки метод аутентификације, користите пример који
-# одговара вашем случају употребе аутентификације.
-
-# Конфигуришите ауторизацију API кључем: api_key
+# Konfiguracija autorizacije API ključem: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Ако је потребно, поништите коментар испод да поставите префикс (нпр. Bearer) за API кључ
+# Otkomentarišite donje ako je potrebno postaviti prefiks (npr. Bearer) za API ključ
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Уђите у контекст са инстанцом API клијента
+# Unesite kontekst sa instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Направите инстанцу API класе
+    # Kreirajte instancu API klase
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_feed_post_params = client.CreateFeedPostParams() # CreateFeedPostParams | 
-    broadcast_id = 'broadcast_id_example' # str |  (опционо)
-    is_live = True # bool |  (опционо)
-    do_spam_check = True # bool |  (опционо)
-    skip_dup_check = True # bool |  (опционо)
+    broadcast_id = 'broadcast_id_example' # str |  (optional)
+    is_live = True # bool |  (optional)
+    do_spam_check = True # bool |  (optional)
+    skip_dup_check = True # bool |  (optional)
 
     try:
-        api_response = api_instance.create_feed_post(tenant_id, create_feed_post_params, broadcast_id=broadcast_id, is_live=is_live, do_spam_check=do_spam_check, skip_dup_check=skip_dup_check)
+        api_response = api_instance.create_feed_post(tenant_id, create_feed_post_params, CreateFeedPostOptions(broadcast_id=broadcast_id, is_live=is_live, do_spam_check=do_spam_check, skip_dup_check=skip_dup_check))
         print("The response of DefaultApi->create_feed_post:\n")
         pprint(api_response)
     except Exception as e:

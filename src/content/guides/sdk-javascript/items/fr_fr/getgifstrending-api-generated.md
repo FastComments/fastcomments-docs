@@ -1,4 +1,3 @@
----
 ## Paramètres
 
 | Nom | Type | Obligatoire | Description |
@@ -10,17 +9,25 @@
 
 ## Réponse
 
-Renvoie : [`GetGifsTrendingResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetGifsTrendingResponse.ts)
+Retourne : [`GetGifsTrendingResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetGifsTrendingResponse.ts)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getGifsTrending'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getGifsTrending'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = 'acme-media';
-const locale: string = 'en-US';
-const rating: string = 'pg-13';
-const page: number = 2;
-const trending: GetGifsTrendingResponse = await getGifsTrending(tenantId, locale, rating, page);
-[inline-code-end]
+async function runExample(): Promise<void> {
+  const tenantId: string = "tenant_9f8b7c6d";
+  const locale: string = "en-US";
+  const rating: string = "PG-13";
+  const page: number = 1;
 
----
+  const trendingAll: GetGifsTrendingResponse = await getGifsTrending(tenantId, locale, rating, page);
+  console.log(trendingAll);
+
+  // Utilisation uniquement du paramètre requis
+  const trendingMinimal: GetGifsTrendingResponse = await getGifsTrending(tenantId);
+  console.log(trendingMinimal);
+}
+
+runExample();
+[inline-code-end]

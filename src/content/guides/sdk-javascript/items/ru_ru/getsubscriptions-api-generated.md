@@ -2,8 +2,8 @@
 
 | Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| userId | string | Нет |  |
+| tenantId | string | Yes |  |
+| userId | string | No |  |
 
 ## Ответ
 
@@ -13,10 +13,11 @@
 
 [inline-code-attrs-start title = 'Пример getSubscriptions'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "contoso-9a1b2c";
-const userId: string = "u-482f6";
-const subscriptions: GetSubscriptionsAPIResponse = await getSubscriptions(tenantId);
-const userSubscriptions: GetSubscriptionsAPIResponse = await getSubscriptions(tenantId, userId);
-[inline-code-end]
+(async () => {
+    const tenantId: string = "acme-corp-123";
+    const userId: string = "user-789";
 
----
+    const responseWithUser: GetSubscriptionsAPIResponse = await getSubscriptions(tenantId, userId);
+    const responseWithoutUser: GetSubscriptionsAPIResponse = await getSubscriptions(tenantId);
+})();
+[inline-code-end]

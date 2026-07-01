@@ -1,13 +1,9 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Απαραίτητο | Περιγραφή |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
 | tenantId | string | Ναι |  |
-| commentId | string | Ναι |  |
-| externalId | string | Όχι |  |
-| eventType | string | Όχι |  |
-| domain | string | Όχι |  |
-| attemptCountGT | float64 | Όχι |  |
+| options | GetPendingWebhookEventCountOptions | Όχι |  |
 
 ## Απάντηση
 
@@ -15,20 +11,10 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'getPendingWebhookEventCount Παράδειγμα'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παράδειγμα getPendingWebhookEventCount'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.getPendingWebhookEventCount(
-  tenantId = "my-tenant-123",
-  commentId = "cmt-456abc",
-  externalId = "ext-7890",
-  eventType = "comment_created",
-  domain = "news.example.com",
-  attemptCountGT = 2.0
-)
-
-if response.isSome:
-  let pending = response.get()
-  echo pending
-else:
-  echo "No pending webhook event count returned; HTTP status: ", httpResponse.status
+let (pendingCountOpt, httpResponse) = client.getPendingWebhookEventCount(tenantId = "my-tenant-123", options = GetPendingWebhookEventCountOptions())
+if pendingCountOpt.isSome:
+  let pendingCount = pendingCountOpt.get()
+  echo pendingCount
 [inline-code-end]

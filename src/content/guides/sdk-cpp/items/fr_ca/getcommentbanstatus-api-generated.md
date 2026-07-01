@@ -1,30 +1,26 @@
 ## Paramètres
 
 | Nom | Type | Obligatoire | Description |
-|------|------|----------|-------------|
+|------|------|-------------|-------------|
+| tenantId | string | Oui |  |
 | commentId | string | Oui |  |
 | sso | string | Non |  |
 
 ## Réponse
 
-Renvoie : [`GetCommentBanStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetCommentBanStatusResponse.h)
+Retourne : [`GetCommentBanStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetCommentBanStatusResponse.h)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de getCommentBanStatus'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getCommentBanStatus'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-boost::optional<utility::string_t> sso = utility::string_t(U("user@example.com"));
-utility::string_t commentId = utility::string_t(U("comment-98765"));
+auto tenantId = utility::string_t(U"my-tenant-123");
+auto commentId = utility::string_t(U"comment-456");
+boost::optional<utility::string_t> sso = utility::string_t(U"user@example.com");
 
-api->getCommentBanStatus(commentId, sso)
-    .then([](pplx::task<std::shared_ptr<GetCommentBanStatusResponse>> task){
-        try {
-            auto resp = task.get();
-            auto copy = std::make_shared<GetCommentBanStatusResponse>(*resp);
-            (void)copy;
-        } catch (const std::exception&) {
-        }
-    });
+api->getCommentBanStatus(tenantId, commentId, sso).then([](pplx::task<std::shared_ptr<GetCommentBanStatusResponse>> t){
+    try{
+        auto response = t.get();
+    }catch(const std::exception&){ }
+});
 [inline-code-end]
-
----

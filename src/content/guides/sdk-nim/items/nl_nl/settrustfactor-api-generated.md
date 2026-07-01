@@ -1,12 +1,11 @@
 ## Parameters
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| userId | string | No |  |
-| trustFactor | string | No |  |
-| sso | string | No |  |
+| Naam | Type | Verplicht | Omschrijving |
+|------|------|-----------|--------------|
+| tenantId | string | Ja |  |
+| options | SetTrustFactorOptions | Nee |  |
 
-## Antwoord
+## Respons
 
 Retourneert: [`Option[SetUserTrustFactorResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_set_user_trust_factor_response.nim)
 
@@ -14,12 +13,8 @@ Retourneert: [`Option[SetUserTrustFactorResponse]`](https://github.com/FastComme
 
 [inline-code-attrs-start title = 'setTrustFactor Voorbeeld'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let (response, httpResponse) = client.setTrustFactor(userId = "user-9876", trustFactor = "high", sso = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyLTk4NzYiLCJpYXQiOjE2MjQwMDAwMDB9.signature")
-if response.isSome:
-  let resultObj = response.get()
-  echo resultObj
-else:
-  echo "No response received"
+let opts = SetTrustFactorOptions(userId = "user-456", trustFactor = 5, reason = "spam detection")
+let (trustResponse, httpResponse) = client.setTrustFactor(tenantId = "my-tenant-123", options = opts)
+if trustResponse.isSome:
+  let result = trustResponse.get()
 [inline-code-end]
-
----

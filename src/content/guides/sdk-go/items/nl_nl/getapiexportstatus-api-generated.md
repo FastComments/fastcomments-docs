@@ -1,17 +1,18 @@
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Omschrijving |
+| Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
-| batchJobId | string | query | Nee |  |
-| sso | string | query | Nee |  |
+| tenantId | string | query | Yes |  |
+| batchJobId | string | query | No |  |
+| sso | string | query | No |  |
 
-## Antwoord
+## Response
 
 Retourneert: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_export_status_response.go)
 
-## Voorbeeld
+## Example
 
-[inline-code-attrs-start title = 'GetApiExportStatus Voorbeeld'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Voorbeeld GetApiExportStatus'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,17 +24,18 @@ import (
 )
 
 func main() {
+	tenantId := "tenantId_example" // string | 
 	batchJobId := "batchJobId_example" // string |  (optioneel)
 	sso := "sso_example" // string |  (optioneel)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ModerationAPI.GetApiExportStatus(context.Background()).BatchJobId(batchJobId).Sso(sso).Execute()
+	resp, r, err := apiClient.ModerationAPI.GetApiExportStatus(context.Background()).TenantId(tenantId).BatchJobId(batchJobId).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetApiExportStatus``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Fout bij het aanroepen van `ModerationAPI.GetApiExportStatus``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Volledige HTTP-respons: %v\n", r)
 	}
-	// antwoord van `GetApiExportStatus`: ModerationExportStatusResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetApiExportStatus`: %v\n", resp)
+	// reactie van `GetApiExportStatus`: ModerationExportStatusResponse
+	fmt.Fprintf(os.Stdout, "Respons van `ModerationAPI.GetApiExportStatus`: %v\n", resp)
 }
 [inline-code-end]

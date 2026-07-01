@@ -1,49 +1,53 @@
----
-groupBy가 제공된 경우 문서를 그룹화하고 여러 연산을 적용하여 집계합니다. sum, countDistinct, avg 등 다양한 연산을 지원합니다.
+Aggregates documents by grouping them (if groupBy is provided) and applying multiple operations.  
+Different operations (e.g. sum, countDistinct, avg, etc.) are supported.
 
 ## Parameters
 
-| 이름 | 타입 | 위치 | 필수 | 설명 |
+| 이름 | 형식 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 예 |  |
-| parentTenantId | string | query | 아니오 |  |
-| includeStats | boolean | query | 아니오 |  |
+| tenantId | string | query | Yes |  |
+| parentTenantId | string | query | No |  |
+| includeStats | boolean | query | No |  |
 
 ## Response
 
-반환: [`AggregateResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AggregateResponse.php)
+Returns: [`AggregateResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AggregateResponse.php)
 
-## 예제
+## Example
 
-[inline-code-attrs-start title = 'aggregate 예제'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '집계 예시'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
+// Configure API key authorization: api_key
 // API 키 인증 구성: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// 필요시 API 키에 대한 접두사(예: Bearer)를 설정하려면 아래의 주석을 해제하세요
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// 필요에 따라 API 키에 대한 접두사(e.g. Bearer)를 설정하려면 아래 주석을 해제하세요
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // 사용자 정의 HTTP 클라이언트를 사용하려면 `GuzzleHttp\ClientInterface`를 구현하는 클라이언트를 전달하세요.
-    // 이것은 선택 사항이며 기본적으로 `GuzzleHttp\Client`가 사용됩니다.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // 커스텀 HTTP 클라이언트를 사용하려면 `GuzzleHttp\ClientInterface`를 구현하는 클라이언트를 전달하세요.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // 이는 옵션이며, 기본값으로 `GuzzleHttp\Client`가 사용됩니다.
     new GuzzleHttp\Client(),
     $config
 );
-$tenant_id = 'tenant_id_example'; // string
+
+$tenant_id = 'tenant_id_example'; // 문자열
 $aggregation_request = new \FastComments\Client\Model\AggregationRequest(); // \FastComments\Client\Model\AggregationRequest
-$parent_tenant_id = 'parent_tenant_id_example'; // string
-$include_stats = True; // bool
+$options = [
+    'parent_tenant_id' => 'parent_tenant_id_example', // 문자열
+    'include_stats' => True, // 불리언
+];
+
 
 try {
-    $result = $apiInstance->aggregate($tenant_id, $aggregation_request, $parent_tenant_id, $include_stats);
+    $result = $apiInstance->aggregate($tenant_id, $aggregation_request, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->aggregate: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

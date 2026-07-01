@@ -4,34 +4,41 @@ afterId
 
 ## Παράμετροι
 
-| Όνομα | Τύπος | Απαραίτητο | Περιγραφή |
-|------|------|----------|-------------|
-| tenantId | string | Ναι |  |
-| afterId | string | Όχι |  |
-| limit | number | Όχι |  |
-| tags | Array<string> | Όχι |  |
-| sso | string | Όχι |  |
-| isCrawler | boolean | Όχι |  |
-| includeUserInfo | boolean | Όχι |  |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+|------|------|------------|-----------|
+| tenantId | string | Yes |  |
+| afterId | string | No |  |
+| limit | number | No |  |
+| tags | Array<string> | No |  |
+| sso | string | No |  |
+| isCrawler | boolean | No |  |
+| includeUserInfo | boolean | No |  |
 
-## Απόκριση
+## Απάντηση
 
-Επιστρέφει: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PublicFeedPostsResponse.ts)
+Επιστρέφει: [`GetFeedPostsPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetFeedPostsPublicResponse.ts)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα getFeedPostsPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "fc_tenant_12345";
-  const afterId: string = "feedPost_98765";
+async function example() {
+  const tenantId: string = "tenant_12345";
+  const afterId: string = "post_9876";
   const limit: number = 20;
-  const tags: Array<string> = ["announcement", "product"];
-  const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example";
+  const tags: string[] = ["news", "tech"];
+  const sso: string = "userToken123";
   const isCrawler: boolean = false;
   const includeUserInfo: boolean = true;
-
-  const response: PublicFeedPostsResponse = await getFeedPostsPublic(tenantId, afterId, limit, tags, sso, isCrawler, includeUserInfo);
-  console.log(response);
-})();
+  const response: GetFeedPostsPublicResponse = await getFeedPostsPublic(
+    tenantId,
+    afterId,
+    limit,
+    tags,
+    sso,
+    isCrawler,
+    includeUserInfo
+  );
+}
+example();
 [inline-code-end]

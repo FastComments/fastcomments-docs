@@ -1,20 +1,19 @@
----
-Сводная информация о пользователях для тенанта. По заданным userIds возвращает отображаемую информацию из User / SSOUser.
-Используется виджетом комментариев для обогащения пользователей, которые только что появились через событие присутствия.
-Контекст страницы отсутствует: конфиденциальность применяется одинаково (частные профили маскируются).
+Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
+Used by the comment widget to enrich users that just appeared via a presence event.  
+No page context: privacy is enforced uniformly (private profiles are masked).
 
-## Параметры
+## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| ids | string | query | Да | userIds, разделённые через запятую. |
+| tenantId | string | path | Yes |  |
+| ids | string | query | Yes | Идентификаторы пользователей, разделённые запятыми. |
 
-## Ответ
+## Response
 
 Возвращает: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersInfoResponse.php)
 
-## Пример
+## Example
 
 [inline-code-attrs-start title = 'Пример getUsersInfo'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -24,12 +23,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Если вы хотите использовать пользовательский HTTP-клиент, передайте ваш клиент, который реализует `GuzzleHttp\ClientInterface`.
-    // Это необязательно, по умолчанию будет использован `GuzzleHttp\Client`.
+    // Если вы хотите использовать пользовательский HTTP‑клиент, передайте ваш клиент, реализующий `GuzzleHttp\ClientInterface`.
+    // Это опционально, по умолчанию будет использоваться `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$ids = 'ids_example'; // string | userIds, разделённые через запятую.
+
+$tenant_id = 'tenant_id_example'; // строка
+$ids = 'ids_example'; // строка | Идентификаторы пользователей, разделённые запятыми.
+
 
 try {
     $result = $apiInstance->getUsersInfo($tenant_id, $ids);

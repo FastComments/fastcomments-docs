@@ -2,10 +2,10 @@
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenant_id | String | はい |  |
-| locale | String | いいえ |  |
-| rating | String | いいえ |  |
-| page | f64 | いいえ |  |
+| tenant_id | String | Yes |  |
+| locale | String | No |  |
+| rating | String | No |  |
+| page | f64 | No |  |
 
 ## レスポンス
 
@@ -13,18 +13,16 @@
 
 ## 例
 
-[inline-code-attrs-start title = 'get_gifs_trending の例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_gifs_trending 例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async fn fetch_trending_gifs() -> Result<GetGifsTrendingResponse, Error> {
-    let params: GetGifsTrendingParams = GetGifsTrendingParams {
-        tenant_id: String::from("acme-corp-tenant"),
-        locale: Some(String::from("en-US")),
-        rating: Some(String::from("pg-13")),
+async fn fetch_trending_gifs(configuration: &configuration::Configuration) -> Result<(), Error> {
+    let params = GetGifsTrendingParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        locale: Some("en-US".to_string()),
+        rating: Some("pg".to_string()),
         page: Some(1.0),
     };
-    let trending: GetGifsTrendingResponse = get_gifs_trending(&configuration, params).await?;
-    Ok(trending)
+    let _response = get_gifs_trending(configuration, params).await?;
+    Ok(())
 }
 [inline-code-end]
-
----

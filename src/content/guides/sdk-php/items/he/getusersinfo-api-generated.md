@@ -1,22 +1,21 @@
----
-מידע מרוכז על משתמשים עבור tenant. בהינתן userIds, מחזיר מידע להצגה מ-User / SSOUser.
-משמש ב-widget של תגובות כדי להעשיר משתמשים שהופיעו זה עתה דרך אירוע נוכחות.
-אין הקשר של עמוד: פרטיות נאכפת באופן אחיד (פרופילים פרטיים מטושטשים).
+Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
+Used by the comment widget to enrich users that just appeared via a presence event.  
+No page context: privacy is enforced uniformly (private profiles are masked).
 
-## Parameters
+## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | כן |  |
-| ids | string | query | כן | userIds מופרדים בפסיקים. |
+| ids | string | query | כן | מופרדים בפסיקים userIds. |
 
-## Response
+## תגובה
 
-Returns: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersInfoResponse.php)
+מחזיר: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersInfoResponse.php)
 
-## Example
+## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת getUsersInfo'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUsersInfo דוגמה'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -24,12 +23,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // אם ברצונך להשתמש בלקוח HTTP מותאם, העבר את הלקוח שלך שמממש את `GuzzleHttp\ClientInterface`.
-    // זה אופציונלי, `GuzzleHttp\Client` ישמש כברירת מחדל.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$ids = 'ids_example'; // string | userIds מופרדים בפסיקים.
+$ids = 'ids_example'; // string | Comma-delimited userIds.
+
 
 try {
     $result = $apiInstance->getUsersInfo($tenant_id, $ids);
@@ -38,5 +39,3 @@ try {
     echo 'Exception when calling PublicApi->getUsersInfo: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

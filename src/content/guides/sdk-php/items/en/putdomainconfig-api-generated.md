@@ -29,9 +29,11 @@ $apiInstance = new FastComments\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
 $domain_to_update = 'domain_to_update_example'; // string
 $update_domain_config_params = new \FastComments\Client\Model\UpdateDomainConfigParams(); // \FastComments\Client\Model\UpdateDomainConfigParams
+
 
 try {
     $result = $apiInstance->putDomainConfig($tenant_id, $domain_to_update, $update_domain_config_params);

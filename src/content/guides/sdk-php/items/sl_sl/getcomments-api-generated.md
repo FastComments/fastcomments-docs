@@ -1,26 +1,26 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| page | integer | query | Ne |  |
-| limit | integer | query | Ne |  |
-| skip | integer | query | Ne |  |
-| asTree | boolean | query | Ne |  |
-| skipChildren | integer | query | Ne |  |
-| limitChildren | integer | query | Ne |  |
-| maxTreeDepth | integer | query | Ne |  |
-| urlId | string | query | Ne |  |
-| userId | string | query | Ne |  |
-| anonUserId | string | query | Ne |  |
-| contextUserId | string | query | Ne |  |
-| hashTag | string | query | Ne |  |
-| parentId | string | query | Ne |  |
-| direction | string | query | Ne |  |
-| fromDate | integer | query | Ne |  |
-| toDate | integer | query | Ne |  |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| page | integer | query | No |  |
+| limit | integer | query | No |  |
+| skip | integer | query | No |  |
+| asTree | boolean | query | No |  |
+| skipChildren | integer | query | No |  |
+| limitChildren | integer | query | No |  |
+| maxTreeDepth | integer | query | No |  |
+| urlId | string | query | No |  |
+| userId | string | query | No |  |
+| anonUserId | string | query | No |  |
+| contextUserId | string | query | No |  |
+| hashTag | string | query | No |  |
+| parentId | string | query | No |  |
+| direction | string | query | No |  |
+| fromDate | integer | query | No |  |
+| toDate | integer | query | No |  |
 
-## Odziv
+## Odgovor
 
 Vrne: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIGetCommentsResponse.php)
 
@@ -32,38 +32,45 @@ Vrne: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-ph
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Konfigurirajte avtorizacijo API ključa: api_key
+// Configure API key authorization: api_key
+// Nastavite pooblastitev API ključa: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Odkomentirajte spodaj, da nastavite predpono (npr. Bearer) za API ključ, če je potrebno
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Če želite uporabiti lastnega HTTP odjemalca, posredujte odjemalca, ki implementira `GuzzleHttp\ClientInterface`.
-    // To je neobvezno, kot privzeti bo uporabljen `GuzzleHttp\Client`.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // Če želite uporabiti svoj HTTP odjemalec, podajte odjemalca, ki implementira `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // To je neobvezno, `GuzzleHttp\Client` bo uporabljen kot privzeto.
     new GuzzleHttp\Client(),
     $config
 );
+
 $tenant_id = 'tenant_id_example'; // string
-$page = 56; // int
-$limit = 56; // int
-$skip = 56; // int
-$as_tree = True; // bool
-$skip_children = 56; // int
-$limit_children = 56; // int
-$max_tree_depth = 56; // int
-$url_id = 'url_id_example'; // string
-$user_id = 'user_id_example'; // string
-$anon_user_id = 'anon_user_id_example'; // string
-$context_user_id = 'context_user_id_example'; // string
-$hash_tag = 'hash_tag_example'; // string
-$parent_id = 'parent_id_example'; // string
-$direction = new \FastComments\Client\Model\\FastComments\Client\Model\SortDirections(); // \FastComments\Client\Model\SortDirections
-$from_date = 56; // int
-$to_date = 56; // int
+$options = [
+    'page' => 56, // int
+    'limit' => 56, // int
+    'skip' => 56, // int
+    'as_tree' => True, // bool
+    'skip_children' => 56, // int
+    'limit_children' => 56, // int
+    'max_tree_depth' => 56, // int
+    'url_id' => 'url_id_example', // string
+    'user_id' => 'user_id_example', // string
+    'anon_user_id' => 'anon_user_id_example', // string
+    'context_user_id' => 'context_user_id_example', // string
+    'hash_tag' => 'hash_tag_example', // string
+    'parent_id' => 'parent_id_example', // string
+    'direction' => new \FastComments\Client\Model\\FastComments\Client\Model\SortDirections(), // \FastComments\Client\Model\SortDirections
+    'from_date' => 56, // int
+    'to_date' => 56, // int
+];
+
 
 try {
-    $result = $apiInstance->getComments($tenant_id, $page, $limit, $skip, $as_tree, $skip_children, $limit_children, $max_tree_depth, $url_id, $user_id, $anon_user_id, $context_user_id, $hash_tag, $parent_id, $direction, $from_date, $to_date);
+    $result = $apiInstance->getComments($tenant_id, $options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getComments: ', $e->getMessage(), PHP_EOL;

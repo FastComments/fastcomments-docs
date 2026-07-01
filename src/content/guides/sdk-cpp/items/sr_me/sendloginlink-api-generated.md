@@ -1,32 +1,23 @@
-## Параметри
+## Parametri
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
-| redirectURL | string | Не |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Da |  |
+| id | string | Da |  |
+| redirectURL | string | Ne |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
+Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
-## Пример
+## Primer
 
-[inline-code-attrs-start title = 'sendLoginLink Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'sendLoginLink Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-utility::string_t tenantId = U("my-tenant-123");
-utility::string_t userId = U("user@example.com");
-boost::optional<utility::string_t> redirectUrl = boost::optional<utility::string_t>(U("https://app.example.com/welcome"));
-api->sendLoginLink(tenantId, userId, redirectUrl).then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task) {
-    try {
-        auto resp = task.get();
-        auto finalResp = resp ? resp : std::make_shared<APIEmptyResponse>();
-        (void)finalResp;
-    } catch (...) {
-        auto fallback = std::make_shared<APIEmptyResponse>();
-        (void)fallback;
-    }
+api->sendLoginLink(
+    U("my-tenant-123"),
+    U("user@example.com"),
+    boost::make_optional(U("https://myapp.com/auth/callback"))
+).then([](std::shared_ptr<APIEmptyResponse> resp) {
 });
 [inline-code-end]
-
----

@@ -1,15 +1,16 @@
-## 參數
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
-| urlId | string | query | 是 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| sso | string | query | No |  |
 
-## 回應
+## Response
 
-回傳：[`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
+返回：[`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
-## 範例
+## Example
 
 [inline-code-attrs-start title = 'put_close_thread 範例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -18,22 +19,23 @@ from client.models.api_empty_response import APIEmptyResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# 定義 host 是可選的，預設為 https://fastcomments.com
-# 有關所有支援的組態參數列表，請參閱 configuration.py。
+# 定義主機是可選的，預設為 https://fastcomments.com
+# 參閱 configuration.py 以取得所有支援的設定參數清單。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# 使用 API 用戶端實例進入一個上下文
+# 以 API 用戶端的實例進入上下文
 with client.ApiClient(configuration) as api_client:
     # 建立 API 類別的實例
     api_instance = client.ModerationApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     url_id = 'url_id_example' # str | 
-    sso = 'sso_example' # str | (可選)
+    sso = 'sso_example' # str |  (optional)
 
     try:
-        api_response = api_instance.put_close_thread(url_id, sso=sso)
+        api_response = api_instance.put_close_thread(tenant_id, url_id, sso=sso)
         print("The response of ModerationApi->put_close_thread:\n")
         pprint(api_response)
     except Exception as e:

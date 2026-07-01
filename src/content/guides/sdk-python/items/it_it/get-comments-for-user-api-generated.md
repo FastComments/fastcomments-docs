@@ -1,7 +1,7 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+|------|------|-----------|--------------|-------------|
 | userId | string | query | No |  |
 | direction | string | query | No |  |
 | repliesToUserId | string | query | No |  |
@@ -16,24 +16,25 @@ Restituisce: [`GetCommentsForUserResponse`](https://github.com/FastComments/fast
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di get_comments_for_user'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio get_comments_for_user'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
+from client.api.public_api import GetCommentsForUserOptions
 from client.models.get_comments_for_user_response import GetCommentsForUserResponse
 from client.models.sort_directions import SortDirections
 from client.rest import ApiException
 from pprint import pprint
 
-# Definire l'host è opzionale e di default è https://fastcomments.com
-# Vedi configuration.py per un elenco di tutti i parametri di configurazione supportati.
+# Definire l'host è facoltativo e predefinito a https://fastcomments.com
+# Vedere configuration.py per l'elenco di tutti i parametri di configurazione supportati.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Entra in un contesto con un'istanza del client API
+# Aprire un contesto con un'istanza del client API
 with client.ApiClient(configuration) as api_client:
-    # Crea un'istanza della classe API
+    # Creare un'istanza della classe API
     api_instance = client.PublicApi(api_client)
     user_id = 'user_id_example' # str |  (opzionale)
     direction = client.SortDirections() # SortDirections |  (opzionale)
@@ -44,9 +45,9 @@ with client.ApiClient(configuration) as api_client:
     is_crawler = True # bool |  (opzionale)
 
     try:
-        api_response = api_instance.get_comments_for_user(user_id=user_id, direction=direction, replies_to_user_id=replies_to_user_id, page=page, includei10n=includei10n, locale=locale, is_crawler=is_crawler)
-        print("The response of PublicApi->get_comments_for_user:\n")
+        api_response = api_instance.get_comments_for_user(GetCommentsForUserOptions(user_id=user_id, direction=direction, replies_to_user_id=replies_to_user_id, page=page, includei10n=includei10n, locale=locale, is_crawler=is_crawler))
+        print("La risposta di PublicApi->get_comments_for_user:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PublicApi->get_comments_for_user: %s\n" % e)
+        print("Eccezione durante la chiamata a PublicApi->get_comments_for_user: %s\n" % e)
 [inline-code-end]

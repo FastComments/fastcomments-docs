@@ -1,7 +1,8 @@
 ## Parametry
 
-| Name | Type | Location | Wymagane | Description |
-|------|------|----------|----------|-------------|
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+|------|------|--------------|----------|------|
+| tenantId | string | query | Tak |  |
 | badgesUserId | string | query | Nie |  |
 | commentId | string | query | Nie |  |
 | sso | string | query | Nie |  |
@@ -18,6 +19,7 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+tenant_id = 'tenant_id_example' # String | 
 opts = {
   badges_user_id: 'badges_user_id_example', # String | 
   comment_id: 'comment_id_example', # String | 
@@ -26,11 +28,9 @@ opts = {
 
 begin
   
-  result = api_instance.get_manual_badges_for_user(opts)
+  result = api_instance.get_manual_badges_for_user(tenant_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_manual_badges_for_user: #{e}"
 end
 [inline-code-end]
-
----

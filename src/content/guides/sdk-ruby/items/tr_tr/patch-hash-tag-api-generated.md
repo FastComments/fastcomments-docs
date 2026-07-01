@@ -2,8 +2,8 @@
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tag | string | path | Evet |  |
-| tenantId | string | query | Hayır |  |
+| tenantId | string | query | Yes |  |
+| tag | string | path | Yes |  |
 
 ## Yanıt
 
@@ -15,24 +15,22 @@ Döndürür: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomme
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# yetkilendirmeyi yapılandır
+# yetkilendirmeyi ayarla
 FastCommentsClient.configure do |config|
   # API anahtarı yetkilendirmesini yapılandır: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Aşağıdaki satırın yorumunu kaldırarak API anahtarına bir önek ayarlayın, örn. 'Bearer' (varsayılan nil)
+  # API anahtarı için bir önek ayarlamak için aşağıdaki satırı yorumdan çıkarın, örn. 'Bearer' (varsayılan nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
+tenant_id = 'tenant_id_example' # String | 
 tag = 'tag_example' # String | 
-opts = {
-  tenant_id: 'tenant_id_example', # String | 
-  update_hash_tag_body: FastCommentsClient::UpdateHashTagBody.new # UpdateHashTagBody | 
-}
+update_hash_tag_body = FastCommentsClient::UpdateHashTagBody.new # UpdateHashTagBody | 
 
 begin
   
-  result = api_instance.patch_hash_tag(tag, opts)
+  result = api_instance.patch_hash_tag(tenant_id, tag, update_hash_tag_body)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->patch_hash_tag: #{e}"
