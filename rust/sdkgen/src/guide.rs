@@ -18,7 +18,7 @@ use crate::generators::openapi::OpenApiGenerator;
 use crate::generators::readme::{self, ReadmeGenerator};
 
 /// Concurrency cap for SDK-level fan-out. SDK generation is mostly
-/// network/IO-bound (git checkouts, OpenAI calls), so the default
+/// network/IO-bound (git checkouts, LLM calls), so the default
 /// runs all SDKs in parallel up to a cap. Override with
 /// `SDKGEN_PARALLEL`.
 const DEFAULT_SDK_PARALLELISM: usize = 8;

@@ -42,7 +42,7 @@ impl DocGenerator for TypescriptAiGenerator {
         }
 
         // Resolve cache + emit sections, in parallel across methods. The
-        // cache lookups dominate, but on cache-cold builds the OpenAI
+        // cache lookups dominate, but on cache-cold builds the LLM
         // calls are the bottleneck — both benefit from parallelism.
         Ok(common::run_ai_generator(
             all_methods,

@@ -11,7 +11,7 @@
 //!   `src/server-search-engine.js:248-264`.
 //! * Locale fallback to default locale when DB missing:
 //!   `src/server-search-engine.js:206-228`.
-//! * OpenAI rerank + prompt-injection guard:
+//! * LLM rerank + prompt-injection guard:
 //!   `src/server-search-engine.js:37-130`.
 //! * Search telemetry batch flush:
 //!   `src/server-search-engine.js:138-194`.
@@ -57,7 +57,7 @@ const BOOST_PARENT_TITLE: f32 = 10.0;
 const BOOST_SEARCH_TEXT: f32 = 1.0;
 
 /// Hard cap on the `query` string. Anything longer is rejected at the
-/// edge: it can't help recall, but it can drive OpenAI tokens and CPU.
+/// edge: it can't help recall, but it can drive LLM tokens and CPU.
 const MAX_QUERY_LEN: usize = 256;
 /// Tokens-per-second + burst, per remote IP. Sized for a busy
 /// docs reader (jumping between guides, typing several searches
@@ -73,8 +73,9 @@ struct AppState {
     index_dir: Arc<PathBuf>,
     cache: Arc<DashMap<String, LocaleSlot>>,
     telemetry: Arc<Mutex<telemetry::Collector>>,
-    openai_api_key: Option<Arc<String>>,
-    openai_model: Arc<String>,
+    llm_api_key: Option<Arc<String>>,
+    llm_model: Arc<String>,
+    llm_endpoint: Arc<String>,
     search_api_key: Option<Arc<String>>,
     http: reqwest::Client,
     limiter: Arc<RateLimiter>,
@@ -197,10 +198,16 @@ async fn main() -> Result<()> {
         index_dir: Arc::new(index_dir),
         cache: Arc::new(DashMap::new()),
         telemetry: Arc::new(Mutex::new(telemetry::Collector::default())),
-        openai_api_key: std::env::var("OPENAI_API_KEY").ok().map(Arc::new),
-        openai_model: Arc::new(
-            std::env::var("OPENAI_MODEL").unwrap_or_else(|_| "gpt-5-mini".to_string()),
+        llm_api_key: std::env::var("LLM_API_KEY").ok().map(Arc::new),
+        llm_model: Arc::new(
+            std::env::var("LLM_MODEL").unwrap_or_else(|_| "openai/gpt-oss-120b-Turbo".to_string()),
         ),
+        llm_endpoint: Arc::new(format!(
+            "{}/chat/completions",
+            std::env::var("LLM_BASE_URL")
+                .unwrap_or_else(|_| "https://api.deepinfra.com/v1/openai".to_string())
+                .trim_end_matches('/')
+        )),
         search_api_key: std::env::var("SEARCH_API_KEY").ok().map(Arc::new),
         http,
         limiter: Arc::new(RateLimiter::new(RATE_PER_SEC, RATE_BURST)),
@@ -306,13 +313,14 @@ async fn handle_search(
     info!(count = results.len(), query = %query, "results");
 
     if !params.nollm {
-        if let Some(key) = state.openai_api_key.clone() {
-            results = reorder_with_openai(
+        if let Some(key) = state.llm_api_key.clone() {
+            results = reorder_with_llm(
                 &state.http,
                 &query,
                 results,
                 &key,
-                &state.openai_model,
+                &state.llm_model,
+                &state.llm_endpoint,
             )
             .await;
         }
@@ -566,19 +574,20 @@ fn contains_prompt_injection(text: &str) -> bool {
 
 /// Port of reorderResultsWithOpenAI from
 /// src/server-search-engine.js:37-130.
-async fn reorder_with_openai(
+async fn reorder_with_llm(
     client: &reqwest::Client,
     query: &str,
     results: Vec<SearchResult>,
     api_key: &str,
     model: &str,
+    endpoint: &str,
 ) -> Vec<SearchResult> {
     if results.len() <= 1 {
-        info!("OpenAI reranking skipped: 0-1 results");
+        info!("LLM reranking skipped: 0-1 results");
         return results;
     }
     if contains_prompt_injection(query) {
-        info!("Prompt injection detected in query, skipping OpenAI reranking");
+        info!("Prompt injection detected in query, skipping LLM reranking");
         return results;
     }
 
@@ -597,12 +606,12 @@ async fn reorder_with_openai(
             {"role": "system", "content": "You are a search result ranker for FastComments documentation. Given a search query and a list of results with IDs in brackets, return ONLY the IDs in order of relevance (most relevant first). Output only comma-separated IDs, nothing else. Example output: guide-auth,api-sso,ref-users\n\nImportant ranking hints:\n- For queries about installing, adding, or setting up FastComments on a website (e.g., \"install\", \"add to site\", \"setup\", \"getting started\", \"how to add\"), the guide-installation result should be ranked first if present."},
             {"role": "user", "content": format!("Query: \"{query}\"\n\nResults:\n{results_list}")}
         ],
-        "max_completion_tokens": 4000,
+        "max_tokens": 4000,
     });
 
-    info!(model, n = results.len(), "OpenAI reranking");
+    info!(model, n = results.len(), "LLM reranking");
     let resp = match client
-        .post("https://api.openai.com/v1/chat/completions")
+        .post(endpoint)
         .bearer_auth(api_key)
         .json(&body)
         .send()
@@ -610,7 +619,7 @@ async fn reorder_with_openai(
     {
         Ok(r) => r,
         Err(e) => {
-            error!("OpenAI request failed: {e}");
+            error!("LLM request failed: {e}");
             return results;
         }
     };
@@ -618,13 +627,13 @@ async fn reorder_with_openai(
     if !resp.status().is_success() {
         let status = resp.status();
         let text = resp.text().await.unwrap_or_default();
-        error!("OpenAI API error {status}: {text}");
+        error!("LLM API error {status}: {text}");
         return results;
     }
     let data: serde_json::Value = match resp.json().await {
         Ok(v) => v,
         Err(e) => {
-            error!("OpenAI parse failed: {e}");
+            error!("LLM parse failed: {e}");
             return results;
         }
     };
@@ -635,7 +644,7 @@ async fn reorder_with_openai(
         .map(|s| s.trim().to_string())
         .unwrap_or_default();
     if ranking_text.is_empty() {
-        warn!("OpenAI reranking: empty ranking text");
+        warn!("LLM reranking: empty ranking text");
         return results;
     }
     let ranked: Vec<String> = ranking_text
@@ -644,7 +653,7 @@ async fn reorder_with_openai(
         .filter(|s| !s.is_empty())
         .collect();
     if ranked.is_empty() {
-        warn!("OpenAI reranking: failed to parse ids");
+        warn!("LLM reranking: failed to parse ids");
         return results;
     }
 
@@ -666,7 +675,7 @@ async fn reorder_with_openai(
             out.push(r);
         }
     }
-    info!(n = out.len(), "OpenAI reranking ok");
+    info!(n = out.len(), "LLM reranking ok");
     out
 }
 
@@ -768,8 +777,9 @@ mod fallback_tests {
             index_dir: Arc::new(index_dir),
             cache: Arc::new(DashMap::new()),
             telemetry: Arc::new(Mutex::new(telemetry::Collector::default())),
-            openai_api_key: None,
-            openai_model: Arc::new("test".into()),
+            llm_api_key: None,
+            llm_model: Arc::new("test".into()),
+            llm_endpoint: Arc::new("http://127.0.0.1/chat/completions".into()),
             search_api_key: None,
             http: reqwest::Client::new(),
             limiter: Arc::new(RateLimiter::new(1000.0, 1000.0)),

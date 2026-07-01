@@ -235,9 +235,9 @@ pub fn init_ai_context(
         anyhow::bail!("could not locate repo root from {:?}", ctx.repo_path);
     };
     let cache_dir = ai_cache_dir(&repo_root, &ctx.sdk.id);
-    // Default to gpt-5-mini, matching Node openai-client at
-    // src/sdk-doc-generators/openai-client.js:6.
-    let model = std::env::var("OPENAI_MODEL").unwrap_or_else(|_| "gpt-5-mini".to_string());
+    // Primary model from LLM_MODEL, defaulting to DeepInfra gpt-oss Turbo.
+    let model =
+        std::env::var("LLM_MODEL").unwrap_or_else(|_| "openai/gpt-oss-120b-Turbo".to_string());
     let llm = LlmClient::new(&cache_dir, &model, lang)?;
     Ok(AiContext {
         op_map,
@@ -521,7 +521,7 @@ pub fn render_method_section(
 /// Single method's "cached or generate" dance, shared by every
 /// per-language AI generator. Returns:
 ///   - `Ok(Some(code))`: cache hit, or fresh LLM call succeeded.
-///   - `Ok(None)`: cache miss AND no `OPENAI_API_KEY` (Node treats
+///   - `Ok(None)`: cache miss AND no `LLM_API_KEY` (Node treats
 ///                 missing-key as "skip silently" rather than fail).
 ///   - `Err(e)`:    LLM call attempted but failed.
 pub async fn cached_or_generate<M: Serialize + ?Sized>(
@@ -540,7 +540,7 @@ pub async fn cached_or_generate<M: Serialize + ?Sized>(
 }
 
 /// Fan out a per-language AI generator's main loop: for each method,
-/// resolve the cache (or call OpenAI), then render a doc section.
+/// resolve the cache (or call the LLM), then render a doc section.
 /// Spawns one tokio task per method, drains in order, and returns
 /// `(sections, cache_misses)`.
 ///

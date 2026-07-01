@@ -21,7 +21,7 @@
 ///     target file never gets created and `check` flags them as
 ///     missing AGAIN next time. Infinite re-translate loop.
 ///   - `run.rs` — same predicate, called per-task to short-circuit
-///     the OpenAI round-trip.
+///     the LLM round-trip.
 pub const MIN_SOURCE_LEN_FOR_TRANSLATION: usize = 10;
 
 /// Should this source file be skipped because it's too small to bother

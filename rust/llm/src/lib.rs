@@ -1,4 +1,4 @@
-//! Shared OpenAI chat-completions client.
+//! Shared LLM chat-completions client.
 //!
 //! Used by both `fcdocs-sdkgen`'s four AI doc generators and `fcdocs-trans`.
 //! Mirrors `src/sdk-doc-generators/openai-client.js` so the existing

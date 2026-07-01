@@ -1,7 +1,7 @@
 //! `trans run` — port of `src/translate-with-gpt.js`.
 //!
 //! Walks the same per-locale items tree as `trans check`, identifies
-//! missing or stale translations, and calls OpenAI for each. Prompts
+//! missing or stale translations, and calls the LLM for each. Prompts
 //! and cache keys mirror the Node implementation byte-for-byte so
 //! existing `translation-cache.json` entries remain valid hits.
 //!
@@ -37,7 +37,7 @@ use crate::json_translator::JsonTranslator;
 use crate::snapshot::hash_content;
 use crate::ui;
 
-const DEFAULT_MODEL: &str = "gpt-5-mini";
+const DEFAULT_MODEL: &str = "openai/gpt-oss-120b-Turbo";
 
 /// Matches Node's translate-with-gpt.js CLI default
 /// (`parseArgs() options.concurrency = 20` at line 1001). The
@@ -71,7 +71,7 @@ pub struct Options {
     /// `--concurrency <n>`: caps both markdown and meta.json fan-out.
     /// UI strings remain sequential per-locale (matches Node).
     pub concurrency: Option<usize>,
-    /// `--dry-run`: skip OpenAI calls + skip writes; just log what
+    /// `--dry-run`: skip LLM calls + skip writes; just log what
     /// would happen. Useful for verifying scope before paying tokens.
     pub dry_run: bool,
     /// `--force`: re-translate even when the cache says fresh.
@@ -136,18 +136,20 @@ fn print_help() {
         "  --guide <id>           Only translate for this guide. Applies to markdown",
         "                         items + meta.json; UI strings are global, so the",
         "                         filter has no effect there.",
-        "  --concurrency <n>      Concurrent OpenAI calls. Also overridable via the",
+        "  --concurrency <n>      Concurrent LLM calls. Also overridable via the",
         "                         TRANS_CONCURRENCY env var.",
-        "  --dry-run              Report what would translate; do NOT call OpenAI or",
-        "                         write files. Skips the OPENAI_API_KEY requirement",
+        "  --dry-run              Report what would translate; do NOT call the LLM or",
+        "                         write files. Skips the LLM_API_KEY requirement",
         "                         so it's safe for scope-check runs in CI.",
         "  --force                Re-translate even when the cache says fresh (e.g.",
         "                         after a prompt or system-message edit).",
         "  --help, -h             Show this message.",
         "",
         "Environment:",
-        "  OPENAI_API_KEY         Required unless --dry-run.",
-        "  OPENAI_MODEL           Model to use.",
+        "  LLM_API_KEY            Required unless --dry-run.",
+        "  LLM_MODEL              Primary model to use.",
+        "  LLM_BASE_URL           Chat-completions API base (default DeepInfra).",
+        "  LLM_FALLBACK_MODELS    Comma-separated fallback models (optional).",
         "  TRANS_CONCURRENCY      Default concurrency (see --concurrency).",
     ];
     for l in lines {
@@ -219,16 +221,16 @@ pub async fn run_with(opts: Options) -> Result<()> {
         );
     }
 
-    // OPENAI_API_KEY only required when we'll actually call out. Dry
+    // LLM_API_KEY only required when we'll actually call out. Dry
     // runs (Node line 891: `if (dryRun) { skip }`) need to work
     // unattended in CI even without the secret.
-    let api_key = std::env::var("OPENAI_API_KEY").ok();
+    let api_key = std::env::var("LLM_API_KEY").ok();
     if api_key.is_none() && !opts.dry_run {
-        warn!("OPENAI_API_KEY not set — `trans run` cannot call OpenAI (use --dry-run to scope-check without a key).");
-        anyhow::bail!("OPENAI_API_KEY required");
+        warn!("LLM_API_KEY not set — `trans run` cannot call the LLM (use --dry-run to scope-check without a key).");
+        anyhow::bail!("LLM_API_KEY required");
     }
 
-    let model = Arc::new(std::env::var("OPENAI_MODEL").unwrap_or_else(|_| DEFAULT_MODEL.to_string()));
+    let model = Arc::new(std::env::var("LLM_MODEL").unwrap_or_else(|_| DEFAULT_MODEL.to_string()));
     // 120s per request is generous for chat/completions (Node default
     // was 600s, but that just hides hung connections). Connect timeout
     // is shorter so we fail fast on routing problems.
@@ -498,9 +500,9 @@ async fn process_one_task(
     } else {
         let prompt = build_prompt(&source, &task.locale, locales);
         let system = system_message(&task.locale, locales);
-        let raw = call_openai(client, api_key, model, &system, &prompt, &task.filename)
+        let raw = call_llm(client, api_key, model, &system, &prompt, &task.filename)
             .await
-            .context("OpenAI call")?;
+            .context("LLM call")?;
         sanitize_inline_code_attrs(&raw)
     };
 
@@ -779,11 +781,11 @@ fn count_inline_code(content: &str) -> (usize, usize) {
 }
 
 /// Markdown items translation hits this. Routes through the shared
-/// [`crate::openai_client::CompletionClient`] so it gets the same
+/// [`crate::llm_client::CompletionClient`] so it gets the same
 /// retry+backoff+model-fallback behavior the JSON paths have always
 /// had. Pre-fix this was a bare single POST; one transient 429 / 5xx
 /// on any of 28 locales x hundreds of files aborted the whole build.
-async fn call_openai(
+async fn call_llm(
     client: &reqwest::Client,
     api_key: &str,
     model: &str,
@@ -791,7 +793,7 @@ async fn call_openai(
     prompt: &str,
     filename: &str,
 ) -> Result<String> {
-    let cc = crate::openai_client::CompletionClient::new(
+    let cc = crate::llm_client::CompletionClient::new(
         Arc::new(client.clone()),
         Arc::new(api_key.to_string()),
         model.to_string(),

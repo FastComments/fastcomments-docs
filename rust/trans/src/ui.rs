@@ -3,7 +3,7 @@
 //! and `translateUIStrings` (lines 451-573).
 //!
 //! For each non-default locale, build a single batch of all missing or
-//! stale keys (one OpenAI call per locale instead of per key), translate
+//! stale keys (one LLM call per locale instead of per key), translate
 //! the batch as a JSON object, merge into `src/translations.json`, then
 //! update `src/ui-translation-cache.json` with md5(sourceValue) per
 //! translated key.

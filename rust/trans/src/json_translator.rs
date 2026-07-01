@@ -1,11 +1,11 @@
-//! OpenAI client for paths that expect a JSON response: the UI
+//! LLM client for paths that expect a JSON response: the UI
 //! strings translator (translates a dict, expects a dict back) and
 //! the meta.json translator (same shape). The "Json" in the name is
 //! load-bearing: this client strips ```json fences and
 //! `serde_json::from_str`s the body before returning.
 //!
 //! The retry/backoff/model-fallback loop lives in
-//! [`crate::openai_client::CompletionClient`] — shared with the
+//! [`crate::llm_client::CompletionClient`] — shared with the
 //! markdown items translator in `run.rs` so all three paths agree
 //! on transient-failure handling. This module is just the
 //! JSON-response post-processing on top.
@@ -16,7 +16,7 @@ use anyhow::{Context, Result};
 use serde_json::Value;
 use tracing::info;
 
-use crate::openai_client::CompletionClient;
+use crate::llm_client::CompletionClient;
 
 /// Wraps a [`CompletionClient`] with JSON-response post-processing
 /// (fence stripping + parse). Cheap to clone (the underlying
@@ -51,12 +51,12 @@ impl JsonTranslator {
         let cleaned = strip_json_fences(&completion.text);
         let parsed: Value = serde_json::from_str(&cleaned).with_context(|| {
             format!(
-                "parse OpenAI response as JSON for {label} (first 200 chars: {first}...)",
+                "parse LLM response as JSON for {label} (first 200 chars: {first}...)",
                 first = cleaned.chars().take(200).collect::<String>()
             )
         })?;
         let obj = parsed.as_object().ok_or_else(|| {
-            anyhow::anyhow!("OpenAI response for {label} was not a JSON object")
+            anyhow::anyhow!("LLM response for {label} was not a JSON object")
         })?;
         info!(model = %completion.model_used, %label, "translated");
         Ok(obj.clone())

@@ -1,8 +1,8 @@
-//! Shared OpenAI chat/completions caller for the `trans` binary.
+//! Shared LLM chat/completions caller for the `trans` binary.
 //!
 //! Originally only the JSON-translation paths (UI + meta.json) had a
 //! retry/backoff/model-fallback loop, in [`crate::json_translator`].
-//! The markdown items path in `run.rs::call_openai` was a bare single
+//! The markdown items path in `run.rs` was a bare single
 //! POST, which meant ONE transient 429 / 5xx on any of 28 locales x
 //! hundreds of files aborted the whole build.
 //!
@@ -10,7 +10,7 @@
 //! It mirrors the Node behavior at
 //! `src/translate-with-gpt.js:208-269`:
 //!
-//!   - Try each model in `[primary, ...ALTERNATE_MODELS]` in order.
+//!   - Try each model in `[primary, ...alternate_models]` in order.
 //!   - Within each model, retry up to [`MAX_RETRIES`] times with
 //!     exponential backoff (1s, 2s, 4s, 8s, 16s).
 //!   - On `finish_reason === 'length'` with empty content, break the
@@ -26,17 +26,36 @@ use anyhow::{Context, Result};
 use serde_json::{json, Value};
 use tracing::warn;
 
-/// Models tried in order after the primary fails. Mirrors Node's
-/// ALTERNATE_MODELS at `translate-with-gpt.js:66`.
-pub const ALTERNATE_MODELS: &[&str] = &["gpt-4.1", "gpt-5.2"];
 /// Mirrors Node maxRetries at `translate-with-gpt.js:465 / :688`.
 pub const MAX_RETRIES: u32 = 5;
 const BASE_DELAY: Duration = Duration::from_millis(1000);
-/// Mirrors Node max_completion_tokens at `translate-with-gpt.js:230`.
-pub const MAX_COMPLETION_TOKENS: u32 = 16000;
+/// Output token budget per completion (DeepInfra uses `max_tokens`).
+pub const MAX_TOKENS: u32 = 16000;
 
-/// Production endpoint. Tests override via [`CompletionClient::endpoint_url`].
-pub const OPENAI_ENDPOINT: &str = "https://api.openai.com/v1/chat/completions";
+/// Default LLM API base (no trailing `/chat/completions`): DeepInfra's
+/// chat endpoint. Override with `LLM_BASE_URL`. The
+/// chat-completions path is appended by [`chat_completions_url`].
+pub const DEFAULT_BASE_URL: &str = "https://api.deepinfra.com/v1/openai";
+
+/// Build the chat-completions endpoint from `LLM_BASE_URL` (falling
+/// back to [`DEFAULT_BASE_URL`]). Trailing slashes on the base are tolerated.
+pub fn chat_completions_url() -> String {
+    let base = std::env::var("LLM_BASE_URL").unwrap_or_else(|_| DEFAULT_BASE_URL.to_string());
+    format!("{}/chat/completions", base.trim_end_matches('/'))
+}
+
+/// Fallback models tried in order after the primary, parsed from
+/// `LLM_FALLBACK_MODELS` (comma-separated). Empty by default so no
+/// provider-specific model names are baked into the binary.
+pub fn env_fallback_models() -> Vec<String> {
+    std::env::var("LLM_FALLBACK_MODELS")
+        .unwrap_or_default()
+        .split(',')
+        .map(|s| s.trim())
+        .filter(|s| !s.is_empty())
+        .map(|s| s.to_string())
+        .collect()
+}
 
 /// HTTP client + credentials + primary model. Cheap to clone (each
 /// field is an Arc / small String).
@@ -45,12 +64,16 @@ pub struct CompletionClient {
     pub client: Arc<reqwest::Client>,
     pub api_key: Arc<String>,
     pub primary_model: String,
-    /// Override only for tests. Production should use [`OPENAI_ENDPOINT`].
+    /// Fallback models tried after `primary_model`, in order.
+    pub alternate_models: Vec<String>,
+    /// Full chat-completions URL. Built from `LLM_BASE_URL` in
+    /// [`CompletionClient::new`]; tests override directly.
     pub endpoint_url: Arc<String>,
 }
 
 impl CompletionClient {
-    /// Construct against the live OpenAI endpoint.
+    /// Construct against the configured LLM endpoint (`LLM_BASE_URL`,
+    /// default DeepInfra) with fallback models from `LLM_FALLBACK_MODELS`.
     pub fn new(
         client: Arc<reqwest::Client>,
         api_key: Arc<String>,
@@ -60,7 +83,8 @@ impl CompletionClient {
             client,
             api_key,
             primary_model,
-            endpoint_url: Arc::new(OPENAI_ENDPOINT.to_string()),
+            alternate_models: env_fallback_models(),
+            endpoint_url: Arc::new(chat_completions_url()),
         }
     }
 }
@@ -81,7 +105,7 @@ impl CompletionClient {
     /// lines (e.g. `"intro.md for fr_fr"` or `"meta.json for guide-sso/fr_fr"`).
     pub async fn complete(&self, system: &str, prompt: &str, label: &str) -> Result<Completion> {
         let models: Vec<String> = std::iter::once(self.primary_model.clone())
-            .chain(ALTERNATE_MODELS.iter().map(|m| (*m).to_string()))
+            .chain(self.alternate_models.iter().cloned())
             .collect();
 
         let mut last_err: Option<anyhow::Error> = None;
@@ -100,7 +124,7 @@ impl CompletionClient {
                         warn!(
                             model = %current_model,
                             %label,
-                            "OpenAI length truncation; trying next model fallback"
+                            "LLM length truncation; trying next model fallback"
                         );
                         break;
                     }
@@ -110,7 +134,7 @@ impl CompletionClient {
                             %label,
                             attempt,
                             error = %e,
-                            "OpenAI call failed"
+                            "LLM call failed"
                         );
                         last_err = Some(e);
                         if attempt == MAX_RETRIES {
@@ -138,7 +162,7 @@ impl CompletionClient {
                 {"role": "system", "content": system},
                 {"role": "user", "content": prompt},
             ],
-            "max_completion_tokens": MAX_COMPLETION_TOKENS,
+            "max_tokens": MAX_TOKENS,
         });
         let resp = self
             .client
@@ -147,13 +171,13 @@ impl CompletionClient {
             .json(&body)
             .send()
             .await
-            .with_context(|| format!("POST OpenAI for {label}"))?;
+            .with_context(|| format!("POST LLM for {label}"))?;
         let status = resp.status();
         if !status.is_success() {
             let text = resp.text().await.unwrap_or_default();
-            anyhow::bail!("OpenAI API error {status}: {text}");
+            anyhow::bail!("LLM API error {status}: {text}");
         }
-        let data: Value = resp.json().await.context("parse OpenAI response")?;
+        let data: Value = resp.json().await.context("parse LLM response")?;
         let raw_content = data
             .pointer("/choices/0/message/content")
             .and_then(|v| v.as_str())
@@ -171,7 +195,7 @@ impl CompletionClient {
                 return Ok(SingleCall::LengthTruncated);
             }
             anyhow::bail!(
-                "OpenAI returned empty content (finish_reason={finish_reason})"
+                "LLM returned empty content (finish_reason={finish_reason})"
             );
         }
         Ok(SingleCall::Ok(raw_content))
@@ -209,6 +233,7 @@ mod tests {
             client: Arc::new(http),
             api_key: Arc::new("test-key".to_string()),
             primary_model: "gpt-5-mini".to_string(),
+            alternate_models: vec!["gpt-4.1".to_string(), "gpt-5.2".to_string()],
             endpoint_url: Arc::new(url.to_string()),
         }
     }
@@ -223,7 +248,7 @@ mod tests {
     }
 
     /// Headline regression: pre-fix, this scenario aborted the build
-    /// because run.rs::call_openai had no retry. Now we tolerate
+    /// because run.rs had no retry. Now we tolerate
     /// transient 503s and succeed on the 3rd attempt.
     #[tokio::test]
     async fn retries_through_transient_5xx_then_succeeds() {
@@ -314,7 +339,7 @@ mod tests {
         let app = Router::new().route("/v1/chat/completions", post(handler));
         let url = spawn_server(app).await;
         // Smaller test: just verify it errors. The exact attempt count
-        // is `MAX_RETRIES * (1 + ALTERNATE_MODELS.len())` = 5*3 = 15,
+        // is `MAX_RETRIES * (1 + alternate_models.len())` = 5*3 = 15,
         // each with backoff growing to 16s — too slow to wait for in
         // a unit test. We rely on the other test to pin the
         // retry-count behavior.

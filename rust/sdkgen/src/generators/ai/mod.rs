@@ -5,7 +5,7 @@
 //!
 //! These are the leaf generators behind sdk-javascript, sdk-rust,
 //! sdk-cpp, sdk-nim. Validated for byte-parity by reusing the
-//! committed cache files: no OpenAI access required when source
+//! committed cache files: no LLM access required when source
 //! signatures haven't changed.
 //!
 //! References:

@@ -1,10 +1,10 @@
-//! OpenAI chat-completions client with disk-backed cache + model fallback.
+//! LLM chat-completions client with disk-backed cache + model fallback.
 //!
 //! Mirrors `src/sdk-doc-generators/openai-client.js`:
 //! - Cache directory laid out the same way (`<cache_dir>/<sha256>.json`).
 //! - Cache file body matches the Node shape `{ method, codeExample, timestamp, model }`.
-//! - Retries with model fallback for oversized requests (`gpt-5-mini` ->
-//!   `gpt-4.1` -> `gpt-5.2`), matching the existing behavior.
+//! - Retries the primary model, then any `LLM_FALLBACK_MODELS`, for
+//!   oversized/transient requests.
 
 use std::path::{Path, PathBuf};
 use std::time::Duration;
@@ -17,7 +17,7 @@ use thiserror::Error;
 use crate::cache_key::sha256_hex;
 
 /// Per-request read timeout. Node's default was 600s, which mostly
-/// papered over hung connections. 120s is generous for OpenAI chat
+/// papered over hung connections. 120s is generous for LLM chat
 /// completions but fails fast when the network melts.
 const REQUEST_TIMEOUT: Duration = Duration::from_secs(120);
 const CONNECT_TIMEOUT: Duration = Duration::from_secs(10);
@@ -29,9 +29,9 @@ const RETRY_MAX_DELAY: Duration = Duration::from_secs(30);
 
 #[derive(Debug, Error)]
 pub enum LlmError {
-    #[error("OpenAI API returned status {status}: {body}")]
+    #[error("LLM API returned status {status}: {body}")]
     Api { status: u16, body: String },
-    #[error("OpenAI response missing choices/message/content")]
+    #[error("LLM response missing choices/message/content")]
     BadResponse,
     #[error("cache directory not writable: {0}")]
     Cache(PathBuf),
@@ -53,6 +53,8 @@ pub struct LlmClient {
     http: reqwest::Client,
     /// Models tried in order. First is the configured `model`, then fallbacks.
     pub fallback_models: Vec<String>,
+    /// Full chat-completions URL (`{LLM_BASE_URL}/chat/completions`).
+    endpoint_url: String,
 }
 
 impl LlmClient {
@@ -72,7 +74,7 @@ impl LlmClient {
         let fallback_models = default_fallbacks(&model);
         Ok(Self {
             cache_dir,
-            api_key: std::env::var("OPENAI_API_KEY").ok(),
+            api_key: std::env::var("LLM_API_KEY").ok(),
             model,
             language,
             http: reqwest::Client::builder()
@@ -81,6 +83,7 @@ impl LlmClient {
                 .build()
                 .expect("reqwest client"),
             fallback_models,
+            endpoint_url: chat_completions_url(),
         })
     }
 
@@ -155,11 +158,11 @@ impl LlmClient {
         let api_key = self
             .api_key
             .as_deref()
-            .context("OPENAI_API_KEY not set")?;
+            .context("LLM_API_KEY not set")?;
 
         let mut last_err: Option<anyhow::Error> = None;
         for model in &self.fallback_models {
-            match self.call_openai_retrying(api_key, model, prompt).await {
+            match self.call_llm_retrying(api_key, model, prompt).await {
                 Ok(text) => {
                     let _ = write_cache(
                         &cache_file,
@@ -185,7 +188,7 @@ impl LlmClient {
                     });
                 }
                 Err(e) => {
-                    tracing::warn!(model = %model, error = %e, "OpenAI call failed; trying next fallback");
+                    tracing::warn!(model = %model, error = %e, "LLM call failed; trying next fallback");
                     last_err = Some(e);
                 }
             }
@@ -196,7 +199,7 @@ impl LlmClient {
     /// Retry the same `model` on transient errors before bubbling up
     /// to the fallback chain. Without this, a single 429 immediately
     /// promotes to the (more expensive) next-tier model.
-    async fn call_openai_retrying(
+    async fn call_llm_retrying(
         &self,
         api_key: &str,
         model: &str,
@@ -204,7 +207,7 @@ impl LlmClient {
     ) -> Result<String> {
         let mut last_err: Option<anyhow::Error> = None;
         for attempt in 0..RETRIES_PER_MODEL {
-            match self.call_openai(api_key, model, prompt).await {
+            match self.call_llm(api_key, model, prompt).await {
                 Ok(text) => return Ok(text),
                 Err(e) => {
                     if !is_transient(&e) || attempt == RETRIES_PER_MODEL - 1 {
@@ -216,7 +219,7 @@ impl LlmClient {
                         attempt = attempt + 1,
                         delay_ms = delay.as_millis() as u64,
                         error = %e,
-                        "transient OpenAI failure; backing off"
+                        "transient LLM failure; backing off"
                     );
                     last_err = Some(e);
                     tokio::time::sleep(delay).await;
@@ -226,7 +229,7 @@ impl LlmClient {
         Err(last_err.unwrap_or_else(|| anyhow::anyhow!("retry loop fell through")))
     }
 
-    async fn call_openai(&self, api_key: &str, model: &str, prompt: &str) -> Result<String> {
+    async fn call_llm(&self, api_key: &str, model: &str, prompt: &str) -> Result<String> {
         // Three things to keep in lockstep with Node
         // (src/sdk-doc-generators/openai-client.js:115-126, 386-416):
         //
@@ -234,7 +237,7 @@ impl LlmClient {
         //    prompt. The persona materially affects the LLM's tone and
         //    idiomaticity — without it, code examples drift to
         //    generic-style output that doesn't match Node's cache.
-        // 2. max_completion_tokens = 8000 (Node), not 4000. Halving the
+        // 2. max_tokens = 8000 (Node used 8000), not 4000. Halving the
         //    budget truncates longer snippets mid-function.
         // 3. Strip the leading/trailing markdown code fence the model
         //    sometimes wraps the answer in (```typescript / ```rust /
@@ -246,16 +249,16 @@ impl LlmClient {
                 {"role": "system", "content": self.system_message()},
                 {"role": "user", "content": prompt},
             ],
-            "max_completion_tokens": 8000,
+            "max_tokens": 8000,
         });
         let resp = self
             .http
-            .post("https://api.openai.com/v1/chat/completions")
+            .post(&self.endpoint_url)
             .bearer_auth(api_key)
             .json(&body)
             .send()
             .await
-            .context("OpenAI POST")?;
+            .context("LLM POST")?;
         let status = resp.status();
         if !status.is_success() {
             let text = resp.text().await.unwrap_or_default();
@@ -265,7 +268,7 @@ impl LlmClient {
             }
             .into());
         }
-        let value: Value = resp.json().await.context("parse OpenAI response")?;
+        let value: Value = resp.json().await.context("parse LLM response")?;
         let raw = value
             .pointer("/choices/0/message/content")
             .and_then(|v| v.as_str())
@@ -340,12 +343,24 @@ fn backoff_for(attempt: u32) -> Duration {
     Duration::from_millis((raw as i64 + jitter).max(1) as u64)
 }
 
+/// Default LLM API base (no trailing `/chat/completions`): DeepInfra's
+/// chat endpoint. Override with `LLM_BASE_URL`.
+pub const DEFAULT_BASE_URL: &str = "https://api.deepinfra.com/v1/openai";
+
+/// Build the chat-completions endpoint from `LLM_BASE_URL` (falling back
+/// to [`DEFAULT_BASE_URL`]). Trailing slashes on the base are tolerated.
+fn chat_completions_url() -> String {
+    let base = std::env::var("LLM_BASE_URL").unwrap_or_else(|_| DEFAULT_BASE_URL.to_string());
+    format!("{}/chat/completions", base.trim_end_matches('/'))
+}
+
 fn default_fallbacks(primary: &str) -> Vec<String> {
-    // Mirrors the Node fallback chain in translate-with-gpt.js:66 and
-    // similar use in openai-client.js: prefer the configured model, fall
-    // back to gpt-4.1 then gpt-5.2 for oversized requests.
+    // Primary model first, then any models from `LLM_FALLBACK_MODELS`
+    // (comma-separated). Empty by default so no provider-specific model
+    // names are baked into the binary.
     let mut out = vec![primary.to_string()];
-    for m in ["gpt-4.1", "gpt-5.2"] {
+    let fallbacks = std::env::var("LLM_FALLBACK_MODELS").unwrap_or_default();
+    for m in fallbacks.split(',').map(|s| s.trim()).filter(|s| !s.is_empty()) {
         if !out.iter().any(|x| x == m) {
             out.push(m.to_string());
         }
@@ -431,6 +446,7 @@ mod cache_key_tests {
             language: "typescript".to_string(),
             http: reqwest::Client::new(),
             fallback_models: vec!["gpt-5-mini".to_string()],
+            endpoint_url: chat_completions_url(),
         }
     }
 
