@@ -1,0 +1,7 @@
+{
+  "method": "patchPage",
+  "signatureHash": "a79624f748b1094404ee0e158b790f13a728e17d06c1f27747f05241dbe39b11",
+  "generatedAt": "2026-07-01T10:15:38.507Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant_12345\";\n  const pageId: string = \"page_98765\";\n\n  const updateData: UpdateAPIPageData = {\n    title: \"Updated FAQ Page\"\n    // description?: string can be omitted\n  };\n\n  const response: PatchPageAPIResponse = await patchPage(tenantId, pageId, updateData);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

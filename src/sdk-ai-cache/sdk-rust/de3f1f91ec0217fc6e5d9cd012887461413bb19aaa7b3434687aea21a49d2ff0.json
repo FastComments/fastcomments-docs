@@ -1,0 +1,7 @@
+{
+  "method": "get_domain_config",
+  "signatureHash": "de3f1f91ec0217fc6e5d9cd012887461413bb19aaa7b3434687aea21a49d2ff0",
+  "generatedAt": "2026-07-01T10:15:29.428Z",
+  "codeExample": "#[tokio::main]\nasync fn main() -> Result<(), Error> {\n    let params = GetDomainConfigParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        domain: \"news/article\".to_string(),\n        locale: Some(\"en-US\".to_string()),\n    };\n    let _response = get_domain_config(&config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

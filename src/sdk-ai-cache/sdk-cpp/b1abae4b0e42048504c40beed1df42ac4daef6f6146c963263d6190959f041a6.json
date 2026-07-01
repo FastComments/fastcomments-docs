@@ -1,0 +1,7 @@
+{
+  "method": "replaceTenantPackage",
+  "signatureHash": "b1abae4b0e42048504c40beed1df42ac4daef6f6146c963263d6190959f041a6",
+  "generatedAt": "2026-07-01T10:15:16.363Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto pkgId = utility::conversions::to_string_t(\"pkg-456\");\nReplaceTenantPackageBody body;\nbody.planId = utility::conversions::to_string_t(\"enterprise\");\nbody.notes = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"Upgrade request\"));\napi->replaceTenantPackage(tenantId, pkgId, body)\n    .then([](std::shared_ptr<APIEmptyResponse>) { })\n    .then([](pplx::task<void> t) {\n        try { t.get(); } catch (const std::exception&) { }\n    });",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

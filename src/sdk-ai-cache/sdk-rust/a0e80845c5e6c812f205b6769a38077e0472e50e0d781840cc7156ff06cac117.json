@@ -1,0 +1,7 @@
+{
+  "method": "add_page",
+  "signatureHash": "a0e80845c5e6c812f205b6769a38077e0472e50e0d781840cc7156ff06cac117",
+  "generatedAt": "2026-07-01T10:15:25.412Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = AddPageParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        create_api_page_data: models::CreateApiPageData {\n            title: Some(\"Breaking News\".to_string()),\n            url: Some(\"/news/article\".to_string()),\n            ..Default::default()\n        },\n    };\n    let _response = add_page(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

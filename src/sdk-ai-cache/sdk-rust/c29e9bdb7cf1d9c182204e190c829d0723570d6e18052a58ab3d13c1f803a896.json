@@ -1,0 +1,7 @@
+{
+  "method": "post_api_export",
+  "signatureHash": "c29e9bdb7cf1d9c182204e190c829d0723570d6e18052a58ab3d13c1f803a896",
+  "generatedAt": "2026-07-01T10:15:22.192Z",
+  "codeExample": "async fn export_moderation() -> Result<(), Error> {\n    let params = PostApiExportParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        text_search: Some(\"news/article\".to_string()),\n        by_ip_from_comment: Some(\"203.0.113.42\".to_string()),\n        filters: Some(\"status:pending\".to_string()),\n        search_filters: Some(\"created_at>2023-01-01\".to_string()),\n        sorts: Some(\"created_at_desc\".to_string()),\n        sso: None,\n    };\n    let _response = post_api_export(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

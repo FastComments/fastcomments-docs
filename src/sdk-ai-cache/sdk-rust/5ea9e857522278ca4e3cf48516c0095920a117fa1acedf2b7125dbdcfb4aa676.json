@@ -1,0 +1,7 @@
+{
+  "method": "update_feed_post",
+  "signatureHash": "5ea9e857522278ca4e3cf48516c0095920a117fa1acedf2b7125dbdcfb4aa676",
+  "generatedAt": "2026-07-01T10:15:23.529Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let feed_post = models::FeedPost {\n        title: \"Acme Corp Quarterly Update\".to_string(),\n        content: Some(\"Q2 results exceeded expectations with a 15% revenue growth.\".to_string()),\n        media: Some(vec![\n            models::FeedPostMediaItem {\n                asset: models::FeedPostMediaItemAsset {\n                    url: \"https://cdn.acme.com/media/q2-report.png\".to_string(),\n                    mime_type: Some(\"image/png\".to_string()),\n                    ..Default::default()\n                },\n                ..Default::default()\n            },\n        ]),\n        link: Some(models::FeedPostLink {\n            url: \"https://www.acme.com/reports/q2\".to_string(),\n            title: Some(\"Full Report\".to_string()),\n            ..Default::default()\n        }),\n        ..Default::default()\n    };\n\n    let params = UpdateFeedPostParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"news/q2-update\".to_string(),\n        feed_post,\n    };\n\n    update_feed_post(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

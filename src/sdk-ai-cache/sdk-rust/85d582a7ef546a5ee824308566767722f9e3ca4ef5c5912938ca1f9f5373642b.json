@@ -1,0 +1,7 @@
+{
+  "method": "update_feed_post_public",
+  "signatureHash": "85d582a7ef546a5ee824308566767722f9e3ca4ef5c5912938ca1f9f5373642b",
+  "generatedAt": "2026-07-01T10:15:25.689Z",
+  "codeExample": "let params = UpdateFeedPostPublicParams {\n    tenant_id: \"acme-corp-tenant\".into(),\n    post_id: \"news/article-123\".into(),\n    update_feed_post_params: models::UpdateFeedPostParams {\n        title: Some(\"Updated Headline\".into()),\n        content: Some(\"Revised content of the article with latest information.\".into()),\n        ..Default::default()\n    },\n    broadcast_id: Some(\"broadcast-001\".into()),\n    sso: Some(\"sso-token-abc123\".into()),\n};\n\nlet response: CreateFeedPostResponse = update_feed_post_public(&configuration, params).await?;",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

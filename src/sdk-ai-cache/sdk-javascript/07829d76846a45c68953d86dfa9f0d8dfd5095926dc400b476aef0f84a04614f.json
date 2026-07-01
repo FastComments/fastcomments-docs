@@ -1,0 +1,7 @@
+{
+  "method": "getUserBadge",
+  "signatureHash": "07829d76846a45c68953d86dfa9f0d8dfd5095926dc400b476aef0f84a04614f",
+  "generatedAt": "2026-07-01T10:15:38.504Z",
+  "codeExample": "async function runExample(): Promise<void> {\n  const tenantId: string = \"acme-corp-tenant-001\";\n  const badgeId: string = \"badge-5f9d3a2b\";\n\n  const badgeResponse: GetUserBadgeResponse = await getUserBadge(tenantId, badgeId);\n\n  // Access optional fields safely\n  const badgeName: string | undefined = badgeResponse.userBadge?.name;\n  console.log(`Badge ID: ${badgeId}, Name: ${badgeName ?? \"Unnamed\"}`);\n}\n\nrunExample();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

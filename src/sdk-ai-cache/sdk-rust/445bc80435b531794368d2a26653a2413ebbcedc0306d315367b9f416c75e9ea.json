@@ -1,0 +1,7 @@
+{
+  "method": "delete_page",
+  "signatureHash": "445bc80435b531794368d2a26653a2413ebbcedc0306d315367b9f416c75e9ea",
+  "generatedAt": "2026-07-01T10:15:20.010Z",
+  "codeExample": "async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params = DeletePageParams {\n        tenant_id: \"acme-corp-tenant\".into(),\n        id: \"news/article\".into(),\n    };\n    let _resp = delete_page(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

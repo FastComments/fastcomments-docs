@@ -1,0 +1,7 @@
+{
+  "method": "setCommentText",
+  "signatureHash": "0287a3943677177452553c125ff4274473cb9c2241c1fae18c0727f3a5a9144b",
+  "generatedAt": "2026-07-01T10:15:43.392Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant_12345';\n  const commentId: string = 'cmt_98765';\n  const broadcastId: string = 'brd_112233';\n  const commentTextUpdateRequest: CommentTextUpdateRequest = {\n    text: 'Updated comment with @john.doe and #important',\n    mentions: [{ userId: 'user_001', username: 'john.doe' }],\n    hashtags: [{ tag: 'important' }],\n  };\n  const editKey: string = 'edit_abc123';\n  const result: SetCommentTextResponse1 = await setCommentText(\n    tenantId,\n    commentId,\n    broadcastId,\n    commentTextUpdateRequest,\n    editKey,\n  );\n  console.log(result);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

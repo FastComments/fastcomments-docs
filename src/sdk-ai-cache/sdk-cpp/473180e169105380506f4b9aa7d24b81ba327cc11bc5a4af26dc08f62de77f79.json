@@ -1,0 +1,7 @@
+{
+  "method": "setTrustFactor",
+  "signatureHash": "473180e169105380506f4b9aa7d24b81ba327cc11bc5a4af26dc08f62de77f79",
+  "generatedAt": "2026-07-01T10:15:15.589Z",
+  "codeExample": "SetTrustFactorOptions opts;\nopts.userId = utility::conversions::to_string_t(\"user@example.com\");\nopts.trustFactor = 8;\nopts.reason = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"Spam check passed\"));\napi->setTrustFactor(utility::conversions::to_string_t(\"my-tenant-123\"), opts)\n    .then([](pplx::task<std::shared_ptr<SetUserTrustFactorResponse>> task) {\n        try {\n            auto response = task.get();\n        } catch (const std::exception&) {\n        }\n    });",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "post_flag_comment",
+  "signatureHash": "2e5b03539a8ee86ecaa98d09ed0905ba294f1af80d1af8d974bb86b4dbad8ea6",
+  "generatedAt": "2026-07-01T10:15:24.250Z",
+  "codeExample": "async fn flag_comment_example() -> Result<(), Error> {\n    let params = PostFlagCommentParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"comment-9f8e7d\".to_string(),\n        broadcast_id: Some(\"broadcast-2024-01\".to_string()),\n        sso: Some(\"sso-uid-12345\".to_string()),\n    };\n    post_flag_comment(&config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "deleteEmailTemplate",
+  "signatureHash": "0b0990cc6bf84d65098a6912491952f33469f6a692506deeed28d953f75b8218",
+  "generatedAt": "2026-07-01T10:15:38.072Z",
+  "codeExample": "async () => {\n  const tenantId: string = \"tenant_12345\";\n  const templateId: string = \"template_abcde\";\n\n  const response: DeleteEmailTemplateResponse = await deleteEmailTemplate(tenantId, templateId);\n\n  // Example of accessing an optional property from the response\n  const statusCode: number | undefined = response.status?.code;\n}();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

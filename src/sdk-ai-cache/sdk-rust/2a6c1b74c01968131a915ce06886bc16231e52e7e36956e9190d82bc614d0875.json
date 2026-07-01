@@ -1,0 +1,7 @@
+{
+  "method": "aggregate_question_results",
+  "signatureHash": "2a6c1b74c01968131a915ce06886bc16231e52e7e36956e9190d82bc614d0875",
+  "generatedAt": "2026-07-01T10:15:24.871Z",
+  "codeExample": "let params = AggregateQuestionResultsParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    question_id: Some(\"question-123\".to_string()),\n    question_ids: Some(vec![\"question-123\".to_string(), \"question-456\".to_string()]),\n    url_id: Some(\"news/article\".to_string()),\n    time_bucket: Some(models::AggregateTimeBucket::Day),\n    start_date: Some(chrono::DateTime::parse_from_rfc3339(\"2023-01-01T00:00:00+00:00\").unwrap()),\n    force_recalculate: Some(true),\n};\n\nlet response = aggregate_question_results(&configuration, params).await?;",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

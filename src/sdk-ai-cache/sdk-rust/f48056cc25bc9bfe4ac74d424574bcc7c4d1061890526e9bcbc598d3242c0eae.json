@@ -1,0 +1,7 @@
+{
+  "method": "save_comments_bulk",
+  "signatureHash": "f48056cc25bc9bfe4ac74d424574bcc7c4d1061890526e9bcbc598d3242c0eae",
+  "generatedAt": "2026-07-01T10:15:22.483Z",
+  "codeExample": "#[tokio::main]\nasync fn main() -> Result<(), Box<dyn std::error::Error>> {\n    let params: SaveCommentsBulkParams = SaveCommentsBulkParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        create_comment_params: vec![\n            models::CreateCommentParams::default(),\n            models::CreateCommentParams::default(),\n        ],\n        is_live: Some(true),\n        do_spam_check: Some(false),\n        send_emails: Some(true),\n        populate_notifications: Some(false),\n    };\n    let _responses: Vec<models::SaveCommentsBulkResponse> = save_comments_bulk(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

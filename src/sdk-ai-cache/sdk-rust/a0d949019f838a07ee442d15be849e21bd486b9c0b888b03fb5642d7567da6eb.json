@@ -1,0 +1,7 @@
+{
+  "method": "get_sso_user_by_email",
+  "signatureHash": "a0d949019f838a07ee442d15be849e21bd486b9c0b888b03fb5642d7567da6eb",
+  "generatedAt": "2026-07-01T10:15:24.025Z",
+  "codeExample": "async fn run_example(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let tenant_id = Some(\"acme-corp\".to_string());\n    let email = Some(\"john.doe@example.com\".to_string());\n    let params = GetSsoUserByEmailParams {\n        tenant_id: tenant_id.unwrap(),\n        email: email.unwrap(),\n    };\n    let _response = get_sso_user_by_email(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

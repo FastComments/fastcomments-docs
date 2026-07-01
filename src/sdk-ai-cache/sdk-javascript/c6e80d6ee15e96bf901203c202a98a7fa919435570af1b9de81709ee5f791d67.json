@@ -1,0 +1,7 @@
+{
+  "method": "getUserNotifications",
+  "signatureHash": "c6e80d6ee15e96bf901203c202a98a7fa919435570af1b9de81709ee5f791d67",
+  "generatedAt": "2026-07-01T10:15:37.927Z",
+  "codeExample": "async function fetchUserNotifications() {\n    const tenantId: string = \"tenant_9f4b2c\";\n    const urlId: string = \"post_1234\";\n    const pageSize: number = 25;\n    const afterId: string = \"notif_5678\";\n    const includeContext: boolean = true;\n    const unreadOnly: boolean = false;\n    const dmOnly: boolean = false;\n    const includeTranslations: boolean = true;\n\n    const notifications: GetUserNotificationsResponse = await getUserNotifications(\n        tenantId,\n        urlId,\n        pageSize,\n        afterId,\n        includeContext,\n        undefined,\n        unreadOnly,\n        dmOnly,\n        undefined,\n        includeTranslations,\n        undefined,\n        undefined\n    );\n\n    console.log(notifications);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

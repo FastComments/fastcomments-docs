@@ -1,0 +1,7 @@
+{
+  "method": "getGlobalEventLog",
+  "signatureHash": "21fe9dc59b34212627b063c78d8ed19e1e43f9bd479cf2f948ffaee185ced651",
+  "generatedAt": "2026-07-01T10:15:14.413Z",
+  "codeExample": "let (eventLogOpt, httpResp) = client.getGlobalEventLog(\n  tenantId = \"my-tenant-123\",\n  urlId = \"news/article-title\",\n  userIdWS = \"user-456\",\n  startTime = 1700000000'i64,\n  endTime = 1700003600'i64,\n)\n\nif eventLogOpt.isSome:\n  let eventLog = eventLogOpt.get()\n  echo eventLog",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

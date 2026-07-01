@@ -1,0 +1,7 @@
+{
+  "method": "get_email_template",
+  "signatureHash": "99429406476e76081172328aa57ff03d2c326a351d41207a9162f6fe6a9925c3",
+  "generatedAt": "2026-07-01T10:15:26.153Z",
+  "codeExample": "async fn fetch_template() -> Result<(), Error> {\n    let params: GetEmailTemplateParams = GetEmailTemplateParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"welcome-email\".to_string(),\n    };\n    let _response = get_email_template(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "lockComment",
+  "signatureHash": "b7b8d638ecec710ddbc9f9286633fb8d025ff1cdeb34f718847e4400a2a5d924",
+  "generatedAt": "2026-07-01T10:15:38.450Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant_12345\";\n  const commentId: string = \"cmt_98765\";\n  const broadcastId: string = \"brd_54321\";\n\n  // With optional SSO token\n  const ssoToken: string = \"user-abc123\";\n  const lockedWithSso: LockCommentResponse = await lockComment(tenantId, commentId, broadcastId, ssoToken);\n\n  // Without SSO token\n  const lockedWithoutSso: LockCommentResponse = await lockComment(tenantId, commentId, broadcastId);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

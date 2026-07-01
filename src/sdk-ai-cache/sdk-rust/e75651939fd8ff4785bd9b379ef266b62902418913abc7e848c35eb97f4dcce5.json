@@ -1,0 +1,7 @@
+{
+  "method": "delete_comment_vote",
+  "signatureHash": "e75651939fd8ff4785bd9b379ef266b62902418913abc7e848c35eb97f4dcce5",
+  "generatedAt": "2026-07-01T10:15:26.008Z",
+  "codeExample": "#[tokio::main]\nasync fn main() -> Result<(), Error> {\n    let params = DeleteCommentVoteParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"comment-12345\".to_string(),\n        vote_id: \"vote-67890\".to_string(),\n        url_id: \"news/article\".to_string(),\n        broadcast_id: \"broadcast-abc\".to_string(),\n        edit_key: Some(\"edit-key-xyz\".to_string()),\n        sso: Some(\"sso-token-123\".to_string()),\n    };\n    let _response: VoteDeleteResponse = delete_comment_vote(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

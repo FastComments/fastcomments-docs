@@ -1,0 +1,7 @@
+{
+  "method": "getUsersInfo",
+  "signatureHash": "a045cde0736d76d660399e5d03f0028a7d68532e6e41e37ff6c97934814b18f6",
+  "generatedAt": "2026-07-01T10:15:38.123Z",
+  "codeExample": "const tenantId: string = \"acme-corp-tenant\";\nconst ids: string = \"user-1001,user-1002\";\n\nconst usersInfo: GetUsersInfoResponse = await getUsersInfo(tenantId, ids);\n\n// Optional fields in the response may be undefined\nconst firstUser: PageUserEntry | undefined = usersInfo?.users?.[0];",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

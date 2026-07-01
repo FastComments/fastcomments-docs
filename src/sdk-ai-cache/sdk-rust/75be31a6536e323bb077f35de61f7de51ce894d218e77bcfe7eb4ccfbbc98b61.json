@@ -1,0 +1,7 @@
+{
+  "method": "get_trust_factor",
+  "signatureHash": "75be31a6536e323bb077f35de61f7de51ce894d218e77bcfe7eb4ccfbbc98b61",
+  "generatedAt": "2026-07-01T10:15:26.067Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params = GetTrustFactorParams {\n        tenant_id: \"acme-corp-tenant\".into(),\n        user_id: Some(\"user-12345\".into()),\n        sso: Some(\"sso-provider\".into()),\n    };\n    let _response = get_trust_factor(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

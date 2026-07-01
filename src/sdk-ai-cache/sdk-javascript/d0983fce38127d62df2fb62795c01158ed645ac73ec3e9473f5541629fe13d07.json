@@ -1,0 +1,7 @@
+{
+  "method": "getNotifications",
+  "signatureHash": "d0983fce38127d62df2fb62795c01158ed645ac73ec3e9473f5541629fe13d07",
+  "generatedAt": "2026-07-01T10:15:40.027Z",
+  "codeExample": "async function demo() {\n  const tenantId: string = \"acme-corp\";\n  const userId: string = \"john.doe\";\n\n  const notifications: GetNotificationsResponse1 = await getNotifications(tenantId, userId);\n  console.log(notifications);\n\n  const more: GetNotificationsResponse1 = await getNotifications(\n    tenantId,\n    undefined,\n    \"article-5678\",\n    undefined,\n    true,\n    \"reply\",\n    10\n  );\n  console.log(more);\n}\ndemo();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

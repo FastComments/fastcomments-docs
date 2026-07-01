@@ -1,0 +1,7 @@
+{
+  "method": "get_users_info",
+  "signatureHash": "9ab9f2c7e2a67353f843abe373fafbdf8a1de6cf4c5c548514e06b8fe8e25e75",
+  "generatedAt": "2026-07-01T10:15:29.584Z",
+  "codeExample": "let params = GetUsersInfoParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    ids: \"user-1,user-2\".to_string(),\n};\nlet page: PageUsersInfoResponse = get_users_info(&configuration, params).await?;",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

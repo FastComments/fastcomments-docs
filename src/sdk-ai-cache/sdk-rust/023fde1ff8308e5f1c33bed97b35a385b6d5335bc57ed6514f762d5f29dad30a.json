@@ -1,0 +1,7 @@
+{
+  "method": "get_search_sites",
+  "signatureHash": "023fde1ff8308e5f1c33bed97b35a385b6d5335bc57ed6514f762d5f29dad30a",
+  "generatedAt": "2026-07-01T10:15:20.244Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params = GetSearchSitesParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        value: Some(\"news/article\".to_string()),\n        sso: Some(\"sso-token-abc\".to_string()),\n    };\n    let _response = get_search_sites(&config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

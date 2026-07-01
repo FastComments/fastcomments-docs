@@ -1,0 +1,7 @@
+{
+  "method": "getSearchPages",
+  "signatureHash": "872faeaa6113d2988360fb39e8beb5939d74c61db92a03a511d1f0aec2b7cc69",
+  "generatedAt": "2026-07-01T10:15:37.380Z",
+  "codeExample": "(async () => {\n  const query: string = \"network outage\";\n  const tenantId: string = \"tenant-9876\";\n  const ssoToken: string = \"sso-abc123def456\";\n\n  const searchResult: GetSearchPagesResponse = await getSearchPages(query, tenantId, ssoToken);\n  const searchResultNoSso: GetSearchPagesResponse = await getSearchPages(query, tenantId);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

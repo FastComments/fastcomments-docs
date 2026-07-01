@@ -1,0 +1,7 @@
+{
+  "method": "get_comment_ban_status",
+  "signatureHash": "5355217a3daf84d726b0dd4e48187a854a2bce451b3bad29acf1b685e551a608",
+  "generatedAt": "2026-07-01T10:15:19.198Z",
+  "codeExample": "async fn example(config: &configuration::Configuration) -> Result<(), Error> {\n    let params = GetCommentBanStatusParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"comment-12345\".to_string(),\n        sso: Some(\"user@example.com\".to_string()),\n    };\n    let _response: GetCommentBanStatusResponse = get_comment_ban_status(config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

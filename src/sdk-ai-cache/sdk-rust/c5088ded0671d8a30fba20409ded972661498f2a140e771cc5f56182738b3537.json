@@ -1,0 +1,7 @@
+{
+  "method": "set_trust_factor",
+  "signatureHash": "c5088ded0671d8a30fba20409ded972661498f2a140e771cc5f56182738b3537",
+  "generatedAt": "2026-07-01T10:15:20.718Z",
+  "codeExample": "async fn update_trust() -> Result<(), Error> {\n    let params = SetTrustFactorParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        user_id: Some(\"user-123\".to_string()),\n        trust_factor: Some(\"high\".to_string()),\n        sso: Some(\"sso-token-xyz\".to_string()),\n    };\n    let _response = set_trust_factor(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

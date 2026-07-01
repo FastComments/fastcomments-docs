@@ -1,0 +1,7 @@
+{
+  "method": "post_un_flag_comment",
+  "signatureHash": "d91ced741ee7963b2c1eb5bb00539b6e0d96a7bdcab88fc52370b5cf4dcf3b60",
+  "generatedAt": "2026-07-01T10:15:24.044Z",
+  "codeExample": "async fn unflag_example(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params = PostUnFlagCommentParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"comment-12345\".to_string(),\n        broadcast_id: Some(\"broadcast-987\".to_string()),\n        sso: Some(\"user@example.com\".to_string()),\n    };\n    let _ = post_un_flag_comment(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

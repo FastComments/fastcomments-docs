@@ -1,0 +1,7 @@
+{
+  "method": "get_tickets",
+  "signatureHash": "f6c2dd6c1da58cb78fcc44a458e4eecfe3b2a9773300e954eff095af559a01b6",
+  "generatedAt": "2026-07-01T10:15:20.908Z",
+  "codeExample": "async fn fetch_tickets(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params = GetTicketsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        user_id: Some(\"user-12345\".to_string()),\n        state: Some(1.0),\n        skip: Some(0.0),\n        limit: Some(20.0),\n    };\n    let _response: GetTicketsResponse = get_tickets(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

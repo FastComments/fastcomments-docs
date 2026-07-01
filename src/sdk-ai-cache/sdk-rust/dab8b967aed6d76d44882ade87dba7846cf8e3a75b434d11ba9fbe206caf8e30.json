@@ -1,0 +1,7 @@
+{
+  "method": "un_block_user_from_comment",
+  "signatureHash": "dab8b967aed6d76d44882ade87dba7846cf8e3a75b434d11ba9fbe206caf8e30",
+  "generatedAt": "2026-07-01T10:15:25.494Z",
+  "codeExample": "async fn example(config: &configuration::Configuration) -> Result<UnblockSuccess, Error> {\n    let params = UnBlockUserFromCommentParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"comment-12345\".to_string(),\n        un_block_from_comment_params: models::UnBlockFromCommentParams::default(),\n        user_id: Some(\"user-67890\".to_string()),\n        anon_user_id: Some(\"anon-abcde\".to_string()),\n    };\n    let result = un_block_user_from_comment(config, params).await?;\n    Ok(result)\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

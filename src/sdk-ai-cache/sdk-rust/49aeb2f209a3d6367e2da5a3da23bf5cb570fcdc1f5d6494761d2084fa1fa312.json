@@ -1,0 +1,7 @@
+{
+  "method": "get_search_comments_summary",
+  "signatureHash": "49aeb2f209a3d6367e2da5a3da23bf5cb570fcdc1f5d6494761d2084fa1fa312",
+  "generatedAt": "2026-07-01T10:15:19.291Z",
+  "codeExample": "async fn run_example(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params = GetSearchCommentsSummaryParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        value: Some(\"news/article\".to_string()),\n        filters: Some(\"status:approved\".to_string()),\n        search_filters: Some(\"author:john\".to_string()),\n        sso: Some(\"sso-token-123\".to_string()),\n    };\n    let _response = get_search_comments_summary(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

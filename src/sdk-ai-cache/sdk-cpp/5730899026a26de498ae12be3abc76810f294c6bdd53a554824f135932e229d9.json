@@ -1,0 +1,7 @@
+{
+  "method": "updateFeedPost",
+  "signatureHash": "5730899026a26de498ae12be3abc76810f294c6bdd53a554824f135932e229d9",
+  "generatedAt": "2026-07-01T10:15:14.756Z",
+  "codeExample": "utility::string_t tenantId = U\"my-tenant-123\";\nutility::string_t postId = U\"post-456\";\n\nFeedPost feedPost;\nfeedPost.title = U\"Breaking News\";\nfeedPost.content = U\"Details of the update go here.\";\nfeedPost.imageUrl = boost::optional<utility::string_t>(U\"https://example.com/image.jpg\");\n\napi->updateFeedPost(tenantId, postId, feedPost)\n    .then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task) {\n        try {\n            auto response = task.get();\n        } catch (const std::exception& ex) {\n        }\n    });",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

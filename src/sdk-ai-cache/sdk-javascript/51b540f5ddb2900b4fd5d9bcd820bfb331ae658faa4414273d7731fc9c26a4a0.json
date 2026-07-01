@@ -1,0 +1,7 @@
+{
+  "method": "deleteModerator",
+  "signatureHash": "51b540f5ddb2900b4fd5d9bcd820bfb331ae658faa4414273d7731fc9c26a4a0",
+  "generatedAt": "2026-07-01T10:15:36.802Z",
+  "codeExample": "async function runDeleteModeratorExample() {\n  const tenantId: string = \"tenant_2023\";\n  const moderatorId: string = \"mod_001\";\n  const notificationEmail: string = \"admin@mycompany.com\";\n\n  const resultWithEmail: DeleteModeratorResponse = await deleteModerator(tenantId, moderatorId, notificationEmail);\n  const resultWithoutEmail: DeleteModeratorResponse = await deleteModerator(tenantId, moderatorId);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

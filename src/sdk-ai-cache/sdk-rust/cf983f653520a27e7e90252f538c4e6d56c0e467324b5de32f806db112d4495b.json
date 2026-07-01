@@ -1,0 +1,7 @@
+{
+  "method": "get_user_notification_count",
+  "signatureHash": "cf983f653520a27e7e90252f538c4e6d56c0e467324b5de32f806db112d4495b",
+  "generatedAt": "2026-07-01T10:15:26.020Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = GetUserNotificationCountParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        sso: Some(\"user-sso-token\".to_string()),\n    };\n    let response = get_user_notification_count(&config, params).await?;\n    println!(\"{:?}\", response);\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

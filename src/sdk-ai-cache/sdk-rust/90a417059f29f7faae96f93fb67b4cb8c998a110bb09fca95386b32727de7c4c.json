@@ -1,0 +1,7 @@
+{
+  "method": "set_comment_text",
+  "signatureHash": "90a417059f29f7faae96f93fb67b4cb8c998a110bb09fca95386b32727de7c4c",
+  "generatedAt": "2026-07-01T10:15:23.233Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let comment_text_update_request = models::CommentTextUpdateRequest {\n        text: \"Edited comment text after moderation\".to_string(),\n        ..Default::default()\n    };\n    let params = SetCommentTextParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"cmt-98765\".to_string(),\n        broadcast_id: \"news/article\".to_string(),\n        comment_text_update_request,\n        edit_key: Some(\"edit-key-2024\".to_string()),\n        sso: Some(\"sso-token-789\".to_string()),\n    };\n    let _response = set_comment_text(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

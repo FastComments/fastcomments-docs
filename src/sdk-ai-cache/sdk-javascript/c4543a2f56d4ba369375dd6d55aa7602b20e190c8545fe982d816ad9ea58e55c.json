@@ -1,0 +1,7 @@
+{
+  "method": "createTenantUser",
+  "signatureHash": "c4543a2f56d4ba369375dd6d55aa7602b20e190c8545fe982d816ad9ea58e55c",
+  "generatedAt": "2026-07-01T10:15:37.089Z",
+  "codeExample": "const tenantId: string = \"a1b2c3d4-5678-90ab-cdef-1234567890ab\";\n\nconst newUser: CreateTenantUserBody = {\n  email: \"jane.doe@example.com\",\n  firstName: \"Jane\",\n  lastName: \"Doe\",\n  role: \"admin\",\n  // optional parameters\n  phoneNumber: \"+15551234567\",\n  isActive: true,\n};\n\nconst result: CreateTenantUserResponse1 = await createTenantUser(tenantId, newUser);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

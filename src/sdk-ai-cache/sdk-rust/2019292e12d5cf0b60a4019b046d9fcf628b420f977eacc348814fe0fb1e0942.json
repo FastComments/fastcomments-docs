@@ -1,0 +1,7 @@
+{
+  "method": "get_ban_users_from_comment",
+  "signatureHash": "2019292e12d5cf0b60a4019b046d9fcf628b420f977eacc348814fe0fb1e0942",
+  "generatedAt": "2026-07-01T10:15:22.795Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = GetBanUsersFromCommentParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"news/article/12345\".to_string(),\n        sso: Some(\"sso-unique-id\".to_string()),\n    };\n    let _response = get_ban_users_from_comment(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

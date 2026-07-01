@@ -1,0 +1,7 @@
+{
+  "method": "un_block_comment_public",
+  "signatureHash": "c7483b8c1ac390d6aa66e0f7d75de50d4aeb3af26cb0200a8d6f660ec532f2a8",
+  "generatedAt": "2026-07-01T10:15:27.968Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = UnBlockCommentPublicParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"comment-12345\".to_string(),\n        public_block_from_comment_params: models::PublicBlockFromCommentParams::default(),\n        sso: Some(\"user-sso-token\".to_string()),\n    };\n    let _result: UnblockSuccess = un_block_comment_public(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

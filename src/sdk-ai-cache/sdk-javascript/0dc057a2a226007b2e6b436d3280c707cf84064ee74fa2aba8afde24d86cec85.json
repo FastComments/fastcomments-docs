@@ -1,0 +1,7 @@
+{
+  "method": "deleteV2PageReact",
+  "signatureHash": "0dc057a2a226007b2e6b436d3280c707cf84064ee74fa2aba8afde24d86cec85",
+  "generatedAt": "2026-07-01T10:15:36.655Z",
+  "codeExample": "const tenantId: string = \"tenant_12345\";\nconst urlId: string = \"page_98765\";\nconst reactionId: string = \"react_abcde\";\n\nconst deleteResult: DeleteV2PageReactResponse = await deleteV2PageReact(tenantId, urlId, reactionId);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

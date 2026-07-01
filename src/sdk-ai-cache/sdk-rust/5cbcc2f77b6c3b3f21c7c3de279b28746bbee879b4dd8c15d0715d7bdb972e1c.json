@@ -1,0 +1,7 @@
+{
+  "method": "get_search_suggest",
+  "signatureHash": "5cbcc2f77b6c3b3f21c7c3de279b28746bbee879b4dd8c15d0715d7bdb972e1c",
+  "generatedAt": "2026-07-01T10:15:22.130Z",
+  "codeExample": "async fn run_example(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params = GetSearchSuggestParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        text_search: Some(\"news/article\".to_string()),\n        sso: Some(\"sso-token-123\".to_string()),\n    };\n    let _response: ModerationSuggestResponse = get_search_suggest(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "get_moderation_comment_text",
+  "signatureHash": "148fd719865539da5c2096cd71ce430db68363480e3979a22bfd3a59c212ce8f",
+  "generatedAt": "2026-07-01T10:15:19.709Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = GetModerationCommentTextParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"comment-12345\".to_string(),\n        sso: Some(\"user-sso-token\".to_string()),\n    };\n    let _response: GetCommentTextResponse =\n        get_moderation_comment_text(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

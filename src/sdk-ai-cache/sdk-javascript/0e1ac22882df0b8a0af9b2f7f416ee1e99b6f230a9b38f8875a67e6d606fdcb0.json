@@ -1,0 +1,7 @@
+{
+  "method": "getApiExportStatus",
+  "signatureHash": "0e1ac22882df0b8a0af9b2f7f416ee1e99b6f230a9b38f8875a67e6d606fdcb0",
+  "generatedAt": "2026-07-01T10:15:38.290Z",
+  "codeExample": "async function demoExportStatus() {\n    const batchJobId: string = \"exportBatch-20231101-001\";\n    const tenantId: string = \"tenant-abc123\";\n    const ssoToken: string = \"sso-xyz789\";\n\n    const fullStatus: GetApiExportStatusResponse = await getApiExportStatus(batchJobId, tenantId, ssoToken);\n    const simpleStatus: GetApiExportStatusResponse = await getApiExportStatus(batchJobId);\n    console.log(fullStatus, simpleStatus);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "updateFeedPost",
+  "signatureHash": "d0bf0c92f810f0aef72d3e991d54247c96914b825b53540b7b38555df0446ae2",
+  "generatedAt": "2026-07-01T10:15:14.748Z",
+  "codeExample": "let feedPost = FeedPost(\n  title: \"Breaking News\",\n  content: \"Updated story content\",\n  tags: @[\"news\", \"update\"]\n)\n\nlet (apiRes, httpRes) = client.updateFeedPost(\n  tenantId = \"my-tenant-123\",\n  id = \"post-456\",\n  feedPost = feedPost\n)\n\nif apiRes.isSome:\n  let res = apiRes.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

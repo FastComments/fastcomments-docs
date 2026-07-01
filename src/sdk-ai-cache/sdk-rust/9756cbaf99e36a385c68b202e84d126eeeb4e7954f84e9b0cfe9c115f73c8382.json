@@ -1,0 +1,7 @@
+{
+  "method": "patch_domain_config",
+  "signatureHash": "9756cbaf99e36a385c68b202e84d126eeeb4e7954f84e9b0cfe9c115f73c8382",
+  "generatedAt": "2026-07-01T10:15:24.395Z",
+  "codeExample": "async fn run_example() -> Result<(), Error> {\n    let config = configuration::Configuration::default();\n    let params = PatchDomainConfigParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        domain_to_update: \"news/article\".to_string(),\n        patch_domain_config_params: models::PatchDomainConfigParams {\n            enable_comments: Some(true),\n            theme: Some(\"dark\".to_string()),\n        },\n    };\n    let _response = patch_domain_config(&config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "deleteModerationVote",
+  "signatureHash": "9ad12af2303a40a6e8d90724dcd1ceba84e806eeef78f6a4518f98a495a3ed73",
+  "generatedAt": "2026-07-01T10:15:37.689Z",
+  "codeExample": "const commentId: string = \"cmt_12345\";\nconst voteId: string = \"vote_9876\";\nconst broadcastId: string = \"brd_001\";\nconst tenantId: string = \"tenant_42\";\nconst sso: string = \"sso_token_abc\";\n\nconst result: DeleteModerationVoteResponse = await deleteModerationVote(\n  commentId,\n  voteId,\n  broadcastId,\n  tenantId,\n  sso\n);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

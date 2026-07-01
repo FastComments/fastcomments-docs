@@ -1,0 +1,7 @@
+{
+  "method": "get_comments",
+  "signatureHash": "85a2e8785ed1672d0d5683310dcf8298ac8b18f784cdb204be1f831f4df02e4a",
+  "generatedAt": "2026-07-01T10:15:28.081Z",
+  "codeExample": "async fn fetch_comments() -> Result<(), Error> {\n    let params = GetCommentsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        page: Some(1),\n        limit: Some(20),\n        skip: Some(0),\n        as_tree: Some(true),\n        skip_children: Some(5),\n        limit_children: Some(10),\n        max_tree_depth: Some(3),\n        url_id: Some(\"news/article\".to_string()),\n        user_id: Some(\"user-123\".to_string()),\n        anon_user_id: Some(\"anon-456\".to_string()),\n        context_user_id: Some(\"ctx-789\".to_string()),\n        hash_tag: Some(\"rust\".to_string()),\n        parent_id: Some(\"parent-001\".to_string()),\n        direction: Some(models::SortDirections::Desc),\n        from_date: Some(1_640_995_200),\n        to_date: Some(1_641_081_600),\n    };\n    let _response = get_comments(&config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

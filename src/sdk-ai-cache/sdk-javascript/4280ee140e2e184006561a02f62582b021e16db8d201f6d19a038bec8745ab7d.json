@@ -1,0 +1,7 @@
+{
+  "method": "replaceTenantUser",
+  "signatureHash": "4280ee140e2e184006561a02f62582b021e16db8d201f6d19a038bec8745ab7d",
+  "generatedAt": "2026-07-01T10:15:39.123Z",
+  "codeExample": "async function updateUser() {\n  const tenantId: string = \"c3d1f2e4-5b6a-4c7d-9f2e-1234567890ab\";\n  const userId: string = \"u-654321\";\n  const replaceBody: ReplaceTenantUserBody = {\n    email: \"newuser@example.com\",\n    username: \"newusername\"\n  };\n  const response: ReplaceTenantUserResponse = await replaceTenantUser(\n    tenantId,\n    userId,\n    replaceBody,\n    \"true\"\n  );\n  console.log(response);\n}\nupdateUser();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

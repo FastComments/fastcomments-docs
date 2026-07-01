@@ -1,0 +1,7 @@
+{
+  "method": "get_event_log",
+  "signatureHash": "ea9cb057b7df45a47dbda29c3c5b6b499e132710958bb939ae517d78f52dddf6",
+  "generatedAt": "2026-07-01T10:15:24.459Z",
+  "codeExample": "async fn fetch_event_log(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params = GetEventLogParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        url_id: \"news/article\".to_string(),\n        user_id_ws: \"user-12345\".to_string(),\n        start_time: 1_640_995_200,\n        end_time: Some(1_640_995_300),\n    };\n    let _response: GetEventLogResponse = get_event_log(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

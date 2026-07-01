@@ -1,0 +1,7 @@
+{
+  "method": "updateUserNotificationPageSubscriptionStatus",
+  "signatureHash": "f9335ff69ae6eb8712a8615c77a243c0b07a5c3809b540f8a844646ab6d8223f",
+  "generatedAt": "2026-07-01T10:15:39.631Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant-2024\";\n  const urlId: string = \"page-5678\";\n  const url: string = \"https://example.com/articles/typescript-tips\";\n  const pageTitle: string = \"Top TypeScript Tips\";\n  const subscribedOrUnsubscribed: UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum =\n    UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum.Subscribed;\n  const sso: string = \"sso-token-xyz\";\n\n  const resultWithSso: UpdateUserNotificationPageSubscriptionStatusResponse = await updateUserNotificationPageSubscriptionStatus(\n    tenantId,\n    urlId,\n    url,\n    pageTitle,\n    subscribedOrUnsubscribed,\n    sso\n  );\n\n  const resultWithoutSso: UpdateUserNotificationPageSubscriptionStatusResponse = await updateUserNotificationPageSubscriptionStatus(\n    tenantId,\n    urlId,\n    url,\n    pageTitle,\n    subscribedOrUnsubscribed\n  );\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

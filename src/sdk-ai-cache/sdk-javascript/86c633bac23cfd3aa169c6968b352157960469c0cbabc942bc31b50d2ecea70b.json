@@ -1,0 +1,7 @@
+{
+  "method": "getUserPresenceStatuses",
+  "signatureHash": "86c633bac23cfd3aa169c6968b352157960469c0cbabc942bc31b50d2ecea70b",
+  "generatedAt": "2026-07-01T10:15:37.095Z",
+  "codeExample": "async function fetchUserPresences() {\n  const tenantId: string = \"tenant_9f8e2d\";\n  const urlIdWS: string = \"blog.mycompany.com/thread/12345\";\n  const userIds: string = \"alice,bob,carol\";\n\n  const result: GetUserPresenceStatusesResponse1 = await getUserPresenceStatuses(\n    tenantId,\n    urlIdWS,\n    userIds\n  );\n\n  console.log(result);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

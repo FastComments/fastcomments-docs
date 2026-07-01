@@ -1,0 +1,7 @@
+{
+  "method": "getV2PageReacts",
+  "signatureHash": "0119826686b4b79ba5e48d730a4dcec727977a5c0accd4f8dd9c3923a90f746a",
+  "generatedAt": "2026-07-01T10:15:38.140Z",
+  "codeExample": "async function demoGetPageReacts(): Promise<void> {\n    const tenantId: string = \"acme-corp-tenant\";\n    const urlId: string = \"article-2024-06-01\";\n\n    const reacts: GetV2PageReactsResponse = await getV2PageReacts(tenantId, urlId);\n\n    // optional property access example\n    const customConfig: CustomConfigParameters | undefined = reacts.customConfig;\n    console.log(reacts);\n}\n\ndemoGetPageReacts();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

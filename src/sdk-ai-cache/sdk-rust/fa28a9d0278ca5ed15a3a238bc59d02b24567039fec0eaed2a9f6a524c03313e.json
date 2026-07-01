@@ -1,0 +1,7 @@
+{
+  "method": "get_pre_ban_summary",
+  "signatureHash": "fa28a9d0278ca5ed15a3a238bc59d02b24567039fec0eaed2a9f6a524c03313e",
+  "generatedAt": "2026-07-01T10:15:21.406Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = GetPreBanSummaryParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"comment-12345\".to_string(),\n        include_by_user_id_and_email: Some(true),\n        include_by_ip: Some(false),\n        include_by_email_domain: Some(true),\n        sso: Some(\"sso-token-abc\".to_string()),\n    };\n    let _summary = get_pre_ban_summary(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

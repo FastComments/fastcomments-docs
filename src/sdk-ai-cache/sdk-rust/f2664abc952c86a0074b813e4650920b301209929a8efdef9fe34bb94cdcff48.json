@@ -1,0 +1,7 @@
+{
+  "method": "get_notification_count",
+  "signatureHash": "f2664abc952c86a0074b813e4650920b301209929a8efdef9fe34bb94cdcff48",
+  "generatedAt": "2026-07-01T10:15:25.071Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = GetNotificationCountParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        user_id: Some(\"john.doe\".to_string()),\n        url_id: Some(\"blog/post-123\".to_string()),\n        from_comment_id: Some(\"comment789\".to_string()),\n        viewed: Some(true),\n    };\n    let _response = get_notification_count(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getSearchCommentsSummary",
+  "signatureHash": "4fd3f4a02167d8d4cb8dcdcd1730dbe553e6a2708376038ae57ca3c6e858a7f3",
+  "generatedAt": "2026-07-01T10:15:38.593Z",
+  "codeExample": "async function runExample(): Promise<void> {\n    const searchTerm: string = \"fastcomments integration\";\n    const filterString: string = \"status:approved\";\n    const searchFilterString: string = \"author:jane\";\n    const tenantId: string = \"123e4567-e89b-12d3-a456-426614174000\";\n    const ssoToken: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...\";\n\n    const summary: GetSearchCommentsSummaryResponse = await getSearchCommentsSummary(\n        searchTerm,\n        filterString,\n        searchFilterString,\n        tenantId,\n        ssoToken\n    );\n\n    console.log(summary);\n}\nrunExample();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

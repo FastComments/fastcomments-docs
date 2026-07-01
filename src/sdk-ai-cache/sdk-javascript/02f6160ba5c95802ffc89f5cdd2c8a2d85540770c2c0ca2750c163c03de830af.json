@@ -1,0 +1,7 @@
+{
+  "method": "getCommentsForUser",
+  "signatureHash": "02f6160ba5c95802ffc89f5cdd2c8a2d85540770c2c0ca2750c163c03de830af",
+  "generatedAt": "2026-07-01T10:15:40.525Z",
+  "codeExample": "async function demo() {\n    const userId: string = \"user-12345\";\n    const direction: SortDirections = \"desc\";\n    const page: number = 1;\n    const includei10n: boolean = true;\n    const locale: string = \"en-US\";\n    const isCrawler: boolean = false;\n\n    const response: GetCommentsForUserResponse1 = await getCommentsForUser(\n        userId,\n        direction,\n        undefined,\n        page,\n        includei10n,\n        locale,\n        isCrawler\n    );\n\n    console.log(response);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

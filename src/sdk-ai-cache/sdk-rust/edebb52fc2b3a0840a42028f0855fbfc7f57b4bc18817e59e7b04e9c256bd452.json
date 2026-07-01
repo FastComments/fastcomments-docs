@@ -1,0 +1,7 @@
+{
+  "method": "create_tenant",
+  "signatureHash": "edebb52fc2b3a0840a42028f0855fbfc7f57b4bc18817e59e7b04e9c256bd452",
+  "generatedAt": "2026-07-01T10:15:24.844Z",
+  "codeExample": "async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let create_body = models::CreateTenantBody {\n        name: \"Acme Corp\".into(),\n        domain: ApiDomainConfiguration {\n            domain_name: \"acme.example.com\".into(),\n            ..Default::default()\n        },\n        imported_site_type: Some(ImportedSiteType::NewsArticle),\n        billing_info: Some(BillingInfo {\n            plan: \"enterprise\".into(),\n            ..Default::default()\n        }),\n        ..Default::default()\n    };\n    let params = CreateTenantParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        create_tenant_body: create_body,\n    };\n    let _response: CreateTenantResponse = create_tenant(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

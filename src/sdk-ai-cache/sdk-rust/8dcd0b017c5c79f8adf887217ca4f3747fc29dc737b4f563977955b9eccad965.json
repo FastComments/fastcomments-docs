@@ -1,0 +1,7 @@
+{
+  "method": "put_close_thread",
+  "signatureHash": "8dcd0b017c5c79f8adf887217ca4f3747fc29dc737b4f563977955b9eccad965",
+  "generatedAt": "2026-07-01T10:15:26.325Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let config = configuration::Configuration::default();\n    let params = PutCloseThreadParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        url_id: \"news/article-123\".to_string(),\n        sso: Some(\"sso-token-abc\".to_string()),\n    };\n    put_close_thread(&config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

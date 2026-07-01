@@ -1,0 +1,7 @@
+{
+  "method": "post_restore_deleted_comment",
+  "signatureHash": "768789c152b8e847a826d57eacd09fd3c40b154da950ae94ce44dbf2ff076622",
+  "generatedAt": "2026-07-01T10:15:20.597Z",
+  "codeExample": "async fn restore_comment() -> Result<(), Error> {\n    let config: &configuration::Configuration = get_configuration();\n    let params = PostRestoreDeletedCommentParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"comment-12345\".to_string(),\n        broadcast_id: Some(\"broadcast-987\".to_string()),\n        sso: Some(\"user@example.com\".to_string()),\n    };\n    let _response = post_restore_deleted_comment(config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

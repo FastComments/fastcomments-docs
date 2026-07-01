@@ -1,0 +1,7 @@
+{
+  "method": "getPreBanSummary",
+  "signatureHash": "1539cd2e56b7823f670a9755467a3266ea7b16bdfc52fad9ddb1c5b5f8839d9b",
+  "generatedAt": "2026-07-01T10:15:38.984Z",
+  "codeExample": "const commentId: string = \"5f8d0c2e4b1a2c3d4e5f6a7b\";\nconst includeByUserIdAndEmail: boolean = true;\nconst includeByIP: boolean = true;\nconst includeByEmailDomain: boolean = false;\nconst tenantId: string = \"tenant-001\";\nconst sso: string = \"sso-xyz-123\";\n\nconst preBanSummary: GetPreBanSummaryResponse = await getPreBanSummary(\n  commentId,\n  includeByUserIdAndEmail,\n  includeByIP,\n  includeByEmailDomain,\n  tenantId,\n  sso\n);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

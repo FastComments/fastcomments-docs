@@ -1,0 +1,7 @@
+{
+  "method": "getEmailTemplate",
+  "signatureHash": "26ba1fdcd377f70bdd6a9254efee0be9ebdd2ca90bbf94457f603eac21784222",
+  "generatedAt": "2026-07-01T10:15:37.569Z",
+  "codeExample": "async function fetchTemplate(): Promise<void> {\n    const tenantId: string = \"tenant-12345\";\n    const templateId: string = \"order-confirmation\";\n    const response: GetEmailTemplateResponse1 = await getEmailTemplate(tenantId, templateId);\n    const emailTemplate: CustomEmailTemplate | undefined = response.customEmailTemplate;\n    const configParams: CustomConfigParameters | undefined = response.customConfigParameters;\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

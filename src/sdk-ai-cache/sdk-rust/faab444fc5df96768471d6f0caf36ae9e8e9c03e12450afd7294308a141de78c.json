@@ -1,0 +1,7 @@
+{
+  "method": "vote_comment",
+  "signatureHash": "faab444fc5df96768471d6f0caf36ae9e8e9c03e12450afd7294308a141de78c",
+  "generatedAt": "2026-07-01T10:15:26.223Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let config = configuration::Configuration::default();\n\n    let vote_body = models::VoteBodyParams {\n        vote_type: \"upvote\".to_string(),\n        weight: 1,\n    };\n\n    let params = VoteCommentParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"comment-12345\".to_string(),\n        url_id: \"news/article\".to_string(),\n        broadcast_id: \"broadcast-67890\".to_string(),\n        vote_body_params: vote_body,\n        session_id: Some(\"session-abcde\".to_string()),\n        sso: None,\n    };\n\n    let _response = vote_comment(&config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

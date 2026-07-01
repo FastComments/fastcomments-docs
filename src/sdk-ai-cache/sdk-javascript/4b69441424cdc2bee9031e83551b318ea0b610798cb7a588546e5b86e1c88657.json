@@ -1,0 +1,7 @@
+{
+  "method": "getCommentBanStatus",
+  "signatureHash": "4b69441424cdc2bee9031e83551b318ea0b610798cb7a588546e5b86e1c88657",
+  "generatedAt": "2026-07-01T10:15:38.728Z",
+  "codeExample": "async function checkCommentBanStatus() {\n  const banStatus: GetCommentBanStatusResponse1 = await getCommentBanStatus('cmt_987654321', 'tenant_42', 'sso_token_abc123');\n  const banStatusNoTenant: GetCommentBanStatusResponse1 = await getCommentBanStatus('cmt_987654322', undefined, 'sso_token_def456');\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

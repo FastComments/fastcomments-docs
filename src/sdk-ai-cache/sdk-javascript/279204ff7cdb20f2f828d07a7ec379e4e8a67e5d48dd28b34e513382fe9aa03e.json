@@ -1,0 +1,7 @@
+{
+  "method": "getGifLarge",
+  "signatureHash": "279204ff7cdb20f2f828d07a7ec379e4e8a67e5d48dd28b34e513382fe9aa03e",
+  "generatedAt": "2026-07-01T10:15:37.897Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'c9f4a1b2-3d5e-4f6a-8b9c-0d1e2f3a4b5c';\n  const largeInternalURLSanitized: string = 'https://cdn.fastcomments.com/gifs/awesome-cat-large.gif';\n  const result: GetGifLargeResponse = await getGifLarge(tenantId, largeInternalURLSanitized);\n  console.log(result);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

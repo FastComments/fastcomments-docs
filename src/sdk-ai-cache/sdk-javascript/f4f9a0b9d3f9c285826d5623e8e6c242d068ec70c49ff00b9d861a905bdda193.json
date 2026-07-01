@@ -1,0 +1,7 @@
+{
+  "method": "getComments",
+  "signatureHash": "f4f9a0b9d3f9c285826d5623e8e6c242d068ec70c49ff00b9d861a905bdda193",
+  "generatedAt": "2026-07-01T10:15:40.585Z",
+  "codeExample": "const tenantId: string = \"tenant_12345\";\nconst page: number = 2;\nconst limit: number = 50;\nconst asTree: boolean = true;\nconst urlId: string = \"article_5678\";\nconst direction: SortDirections = \"desc\";\nconst fromDate: number = Date.now() - 7 * 24 * 60 * 60 * 1000; // one week ago\nconst toDate: number = Date.now();\n\nconst commentsResponse: GetCommentsResponse = await getComments({\n  tenantId,\n  page,\n  limit,\n  asTree,\n  urlId,\n  direction,\n  fromDate,\n  toDate,\n});",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

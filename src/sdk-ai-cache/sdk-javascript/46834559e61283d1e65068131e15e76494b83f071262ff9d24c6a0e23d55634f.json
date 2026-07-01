@@ -1,0 +1,7 @@
+{
+  "method": "getTicket",
+  "signatureHash": "46834559e61283d1e65068131e15e76494b83f071262ff9d24c6a0e23d55634f",
+  "generatedAt": "2026-07-01T10:15:37.344Z",
+  "codeExample": "const tenantId: string = \"acme-inc\";\nconst ticketId: string = \"ticket-3421\";\nconst userId: string = \"alice.smith\";\n\nconst ticketWithUser: GetTicketResponse1 = await getTicket(tenantId, ticketId, userId);\nconst ticketWithoutUser: GetTicketResponse1 = await getTicket(tenantId, ticketId);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

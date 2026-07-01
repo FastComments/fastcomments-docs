@@ -1,0 +1,7 @@
+{
+  "method": "createCommentPublic",
+  "signatureHash": "3746cc155c4dc8e46188ad4f97e485dfb767ba6fceff63a345dc1105d41ea3ec",
+  "generatedAt": "2026-07-01T10:15:41.645Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant-abc123\";\n  const urlId: string = \"post-987654\";\n  const broadcastId: string = \"bcast-001\";\n  const commentData: CommentData = {\n    content: \"I really enjoyed this article!\"\n  };\n  const sessionId: string = \"session-xyz789\";\n  const sso: string = \"sso-token-456def\";\n\n  const response: CreateCommentPublicResponse = await createCommentPublic(\n    tenantId,\n    urlId,\n    broadcastId,\n    commentData,\n    sessionId,\n    sso\n  );\n\n  console.log(response);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

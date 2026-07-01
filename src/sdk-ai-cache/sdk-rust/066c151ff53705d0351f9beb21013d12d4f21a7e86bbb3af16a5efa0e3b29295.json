@@ -1,0 +1,7 @@
+{
+  "method": "get_tenant_users",
+  "signatureHash": "066c151ff53705d0351f9beb21013d12d4f21a7e86bbb3af16a5efa0e3b29295",
+  "generatedAt": "2026-07-01T10:15:26.531Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = GetTenantUsersParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        skip: Some(10.0),\n    };\n    let _response = get_tenant_users(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

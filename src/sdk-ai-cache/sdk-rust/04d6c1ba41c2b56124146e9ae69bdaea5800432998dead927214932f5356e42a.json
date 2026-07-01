@@ -1,0 +1,7 @@
+{
+  "method": "replace_tenant_package",
+  "signatureHash": "04d6c1ba41c2b56124146e9ae69bdaea5800432998dead927214932f5356e42a",
+  "generatedAt": "2026-07-01T10:15:28.523Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = ReplaceTenantPackageParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"news/article\".to_string(),\n        replace_tenant_package_body: models::ReplaceTenantPackageBody {\n            package_id: \"premium-plan\".to_string(),\n            enabled: true,\n            description: Some(\"Premium package for high traffic\".to_string()),\n        },\n    };\n    replace_tenant_package(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

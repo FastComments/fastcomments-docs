@@ -1,0 +1,7 @@
+{
+  "method": "get_api_ids",
+  "signatureHash": "4751675415184640fc66804cb5faf91775742a70eee0d19247546a44e30aef48",
+  "generatedAt": "2026-07-01T10:15:27.263Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = GetApiIdsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        text_search: Some(\"breaking news\".to_string()),\n        by_ip_from_comment: None,\n        filters: Some(\"status:approved\".to_string()),\n        search_filters: None,\n        after_id: None,\n        demo: Some(false),\n        sso: Some(\"sso-token\".to_string()),\n    };\n    let _response = get_api_ids(&config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

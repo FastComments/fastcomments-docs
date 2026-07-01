@@ -1,0 +1,7 @@
+{
+  "method": "get_user_reacts_public",
+  "signatureHash": "40ef83ca991ad8d305a859c0c139b12b08d0154f4e6580dbc3f905aa76d63413",
+  "generatedAt": "2026-07-01T10:15:25.092Z",
+  "codeExample": "async fn fetch_user_reacts() -> Result<(), Error> {\n    let params = GetUserReactsPublicParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        post_ids: Some(vec![\n            \"news/article-123\".to_string(),\n            \"blog/post-456\".to_string(),\n        ]),\n        sso: Some(\"sso-token-xyz\".to_string()),\n    };\n    let _response = get_user_reacts_public(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

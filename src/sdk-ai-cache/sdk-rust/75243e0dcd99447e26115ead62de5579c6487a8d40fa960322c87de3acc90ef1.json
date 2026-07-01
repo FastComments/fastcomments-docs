@@ -1,0 +1,7 @@
+{
+  "method": "update_question_config",
+  "signatureHash": "75243e0dcd99447e26115ead62de5579c6487a8d40fa960322c87de3acc90ef1",
+  "generatedAt": "2026-07-01T10:15:28.588Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = UpdateQuestionConfigParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"news/article\".to_string(),\n        update_question_config_body: UpdateQuestionConfigBody {\n            title: \"Breaking News\".to_string(),\n            is_active: true,\n            custom_options: vec![\n                QuestionConfigCustomOptionsInner {\n                    key: \"priority\".to_string(),\n                    value: \"high\".to_string(),\n                },\n            ],\n            description: Some(\"Config for breaking news article\".to_string()),\n        },\n    };\n    update_question_config(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

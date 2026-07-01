@@ -1,0 +1,7 @@
+{
+  "method": "unLockComment",
+  "signatureHash": "92389db65ddb6f1ffb2a47d88c23da737c290487c60736bf1dae6fa70ba07244",
+  "generatedAt": "2026-07-01T10:15:15.187Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto commentId = utility::conversions::to_string_t(\"cmt-456789\");\nauto broadcastId = utility::conversions::to_string_t(\"broadcast-001\");\nboost::optional<utility::string_t> sso = utility::conversions::to_string_t(\"john.doe@example.com\");\n\napi->unLockComment(tenantId, commentId, broadcastId, sso).then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task) {\n    try {\n        auto response = task.get();\n    } catch (const std::exception&) {\n    }\n});",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

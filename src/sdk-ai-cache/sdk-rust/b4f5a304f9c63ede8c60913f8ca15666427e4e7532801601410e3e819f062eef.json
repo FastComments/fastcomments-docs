@@ -1,0 +1,7 @@
+{
+  "method": "update_email_template",
+  "signatureHash": "b4f5a304f9c63ede8c60913f8ca15666427e4e7532801601410e3e819f062eef",
+  "generatedAt": "2026-07-01T10:15:26.394Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = UpdateEmailTemplateParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"welcome-email\".to_string(),\n        update_email_template_body: models::UpdateEmailTemplateBody {\n            subject: Some(\"Welcome to Acme Corp\".to_string()),\n            body_html: Some(\"<p>Hello, {{user.name}}!</p>\".to_string()),\n            body_text: None,\n        },\n    };\n    let _ = update_email_template(&config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

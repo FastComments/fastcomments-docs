@@ -1,0 +1,7 @@
+{
+  "method": "createTenantPackage",
+  "signatureHash": "bcdf70849c857a3bc23c5548917f57302509525e5aa0c1b92881e344182c9662",
+  "generatedAt": "2026-07-01T10:15:41.909Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant-9876\";\n\n  const body: CreateTenantPackageBody = {\n    packageName: \"Standard\",\n    quota: 5000,\n    // optional field\n    description: \"Standard package for medium traffic\",\n  };\n\n  const result: CreateTenantPackageResponse1 = await createTenantPackage(tenantId, body);\n  console.log(result);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

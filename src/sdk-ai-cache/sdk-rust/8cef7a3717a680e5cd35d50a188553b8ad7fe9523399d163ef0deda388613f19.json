@@ -1,0 +1,7 @@
+{
+  "method": "get_user_internal_profile",
+  "signatureHash": "8cef7a3717a680e5cd35d50a188553b8ad7fe9523399d163ef0deda388613f19",
+  "generatedAt": "2026-07-01T10:15:20.977Z",
+  "codeExample": "async fn fetch_profile() -> Result<(), Error> {\n    let params = GetUserInternalProfileParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: Some(\"news/article\".to_string()),\n        sso: Some(\"sso-user-xyz\".to_string()),\n    };\n    let _response = get_user_internal_profile(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

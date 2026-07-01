@@ -1,0 +1,7 @@
+{
+  "method": "post_set_comment_spam_status",
+  "signatureHash": "0456348a4daf09dd8b2bc9b4524dcbc309b2054dd59194d3169956271484fd6d",
+  "generatedAt": "2026-07-01T10:15:20.144Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = PostSetCommentSpamStatusParams {\n        tenant_id: \"acme-corp-tenant\".into(),\n        comment_id: \"comment-12345\".into(),\n        spam: Some(true),\n        perm_not_spam: Some(false),\n        broadcast_id: Some(\"broadcast-678\".into()),\n        sso: Some(\"user@example.com\".into()),\n    };\n    post_set_comment_spam_status(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

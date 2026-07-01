@@ -1,0 +1,7 @@
+{
+  "method": "replaceTenantPackage",
+  "signatureHash": "b1fe0159d5bb72384a140fc67837884ca6ebc4d119e0414686f41b97088961a0",
+  "generatedAt": "2026-07-01T10:15:40.142Z",
+  "codeExample": "(async () => {\n    const tenantId: string = \"acme-corp-tenant-01\";\n    const packageId: string = \"pkg-2024-annual\";\n\n    const config: CustomConfigParameters = {\n        // custom configuration fields here\n    };\n\n    const body: ReplaceTenantPackageBody = {\n        name: \"Enterprise Package\",\n        // optional custom configuration\n        customConfig: config,\n    };\n\n    const response: ReplaceTenantPackageResponse = await replaceTenantPackage(tenantId, packageId, body);\n    console.log(response);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

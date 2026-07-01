@@ -1,0 +1,7 @@
+{
+  "method": "postRestoreDeletedComment",
+  "signatureHash": "c6341c0970513390ade7565a67b241118dd42a7da10288f4c1ed7deaf0f76eb1",
+  "generatedAt": "2026-07-01T10:15:37.991Z",
+  "codeExample": "async function restoreCommentDemo(): Promise<void> {\n    const commentId: string = \"cmt_5f2a9b7e1234567890abcd\";\n    const broadcastId: string | undefined = \"brd_2023_09\";\n    const tenantId: string | undefined = \"tenant_42\";\n    const sso: string | undefined = \"sso_token_abcdef123456\";\n\n    const response: PostRestoreDeletedCommentResponse = await postRestoreDeletedComment(\n        commentId,\n        broadcastId,\n        tenantId,\n        sso\n    );\n\n    console.log(response);\n}\n\nrestoreCommentDemo();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

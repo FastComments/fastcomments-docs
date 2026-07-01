@@ -1,0 +1,7 @@
+{
+  "method": "update_moderator",
+  "signatureHash": "9e8d2d44dfd5d784953bc65420ac81935b8575659fcb56d741775f477148c17d",
+  "generatedAt": "2026-07-01T10:15:26.394Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params = UpdateModeratorParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"moderator-42\".to_string(),\n        update_moderator_body: models::UpdateModeratorBody {\n            name: Some(\"Alice Smith\".to_string()),\n            email: Some(\"alice.smith@example.com\".to_string()),\n            is_active: Some(true),\n        },\n    };\n    update_moderator(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

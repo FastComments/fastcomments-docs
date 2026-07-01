@@ -1,0 +1,7 @@
+{
+  "method": "create_user_badge",
+  "signatureHash": "9d48387b4504b8898f37f56ca08b34a944fbebf0ce2ad71f30f3fc448ca2b3fe",
+  "generatedAt": "2026-07-01T10:15:24.395Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = CreateUserBadgeParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        create_user_badge_params: models::CreateUserBadgeParams {\n            badge_type: \"premium\".to_string(),\n            user_id: \"user-123\".to_string(),\n            description: Some(\"Top contributor\".to_string()),\n            expires_at: None,\n        },\n    };\n    let _response = create_user_badge(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

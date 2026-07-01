@@ -1,0 +1,7 @@
+{
+  "method": "getUserBadges",
+  "signatureHash": "c05fee5ed2d49b01ba30470aefe7d9aa8439457d7b68561315ed8830783d7ea0",
+  "generatedAt": "2026-07-01T10:15:38.066Z",
+  "codeExample": "async function example() {\n  const tenantId: string = \"tenant-01\";\n  const userId: string = \"user-42\";\n  const badgeId: string = \"badge-gold\";\n  const type: number = 1;\n  const displayedOnComments: boolean = true;\n  const limit: number = 10;\n  const skip: number = 5;\n\n  const fullResult: GetUserBadgesResponse = await getUserBadges(\n    tenantId,\n    userId,\n    badgeId,\n    type,\n    displayedOnComments,\n    limit,\n    skip\n  );\n\n  const minimalResult: GetUserBadgesResponse = await getUserBadges(tenantId);\n}\nexample();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

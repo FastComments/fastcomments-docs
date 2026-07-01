@@ -1,0 +1,7 @@
+{
+  "method": "update_tenant_package",
+  "signatureHash": "b8a0e92d6a241f9409333733c9ec99acb2fafdac57b30eec1fc697c90f007382",
+  "generatedAt": "2026-07-01T10:15:26.758Z",
+  "codeExample": "async fn run_update(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let body = models::UpdateTenantPackageBody {\n        plan: Some(\"enterprise\".to_string()),\n        renewal_date: Some(\"2024-12-31\".to_string()),\n        ..Default::default()\n    };\n    let params = UpdateTenantPackageParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"pkg-2024\".to_string(),\n        update_tenant_package_body: body,\n    };\n    let _: ApiEmptyResponse = update_tenant_package(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

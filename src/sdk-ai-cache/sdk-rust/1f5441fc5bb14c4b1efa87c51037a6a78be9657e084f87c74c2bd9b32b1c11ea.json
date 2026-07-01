@@ -1,0 +1,7 @@
+{
+  "method": "create_ticket",
+  "signatureHash": "1f5441fc5bb14c4b1efa87c51037a6a78be9657e084f87c74c2bd9b32b1c11ea",
+  "generatedAt": "2026-07-01T10:15:20.701Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let body = models::CreateTicketBody {\n        title: \"Login Issue\".to_string(),\n        description: \"User cannot log in after password reset\".to_string(),\n        priority: Some(\"high\".to_string()),\n    };\n    let params = CreateTicketParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        user_id: \"user-12345\".to_string(),\n        create_ticket_body: body,\n    };\n    let _response: CreateTicketResponse = create_ticket(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

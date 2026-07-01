@@ -1,0 +1,7 @@
+{
+  "method": "create_v1_page_react",
+  "signatureHash": "c14ce155b3d89a79bccf5853673b94fe78873b3504a4179370931e7741a7a892",
+  "generatedAt": "2026-07-01T10:15:22.579Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: CreateV1PageReactParams = CreateV1PageReactParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        url_id: \"news/article\".to_string(),\n        title: Some(\"Rust Community Update\".to_string()),\n    };\n    let _response = create_v1_page_react(&config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

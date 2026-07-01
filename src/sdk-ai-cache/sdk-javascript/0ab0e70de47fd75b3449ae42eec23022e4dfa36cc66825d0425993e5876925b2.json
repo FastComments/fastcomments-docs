@@ -1,0 +1,7 @@
+{
+  "method": "getHashTags",
+  "signatureHash": "0ab0e70de47fd75b3449ae42eec23022e4dfa36cc66825d0425993e5876925b2",
+  "generatedAt": "2026-07-01T10:15:36.954Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant_12345\";\n\n  const responseWithPage: GetHashTagsResponse1 = await getHashTags(tenantId, 1);\n  const responseDefault: GetHashTagsResponse1 = await getHashTags(tenantId);\n\n  console.log(responseWithPage, responseDefault);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

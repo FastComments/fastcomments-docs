@@ -1,0 +1,7 @@
+{
+  "method": "create_feed_post_public",
+  "signatureHash": "02c809507cd35d5cc86aad3377e968546cbac34f940d67dc1325456fe8fafbff",
+  "generatedAt": "2026-07-01T10:15:26.095Z",
+  "codeExample": "async fn run_example(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params = CreateFeedPostPublicParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        create_feed_post_params: models::CreateFeedPostParams {\n            title: \"Breaking News\".to_string(),\n            body: \"Details about the news...\".to_string(),\n            ..Default::default()\n        },\n        broadcast_id: Some(\"news/article\".to_string()),\n        sso: Some(\"sso-token-abc\".to_string()),\n    };\n    let _response = create_feed_post_public(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

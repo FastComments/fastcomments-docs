@@ -1,0 +1,7 @@
+{
+  "method": "delete_feed_post_public",
+  "signatureHash": "6883d81b9e01775db6106e588dd89c8b66e161cbd7329afcdceb8c39fa7f7a0e",
+  "generatedAt": "2026-07-01T10:15:26.343Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = DeleteFeedPostPublicParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        post_id: \"news/article-123\".to_string(),\n        broadcast_id: Some(\"broadcast-456\".to_string()),\n        sso: Some(\"sso-token-789\".to_string()),\n    };\n    let _response: DeleteFeedPostPublicResponse = delete_feed_post_public(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "add_hash_tags_bulk",
+  "signatureHash": "4756413732e9d0b1e58a98cb0902e3311d82a049bba1a00c0cc08f96503e8b91",
+  "generatedAt": "2026-07-01T10:15:24.640Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params = AddHashTagsBulkParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        bulk_create_hash_tags_body: Some(models::BulkCreateHashTagsBody {\n            tags: vec![\n                models::BulkCreateHashTagsBodyTagsInner {\n                    tag: \"news/article\".to_string(),\n                },\n            ],\n        }),\n    };\n    let _response: BulkCreateHashTagsResponse = add_hash_tags_bulk(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

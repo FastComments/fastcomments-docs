@@ -1,0 +1,7 @@
+{
+  "method": "updateUserNotificationStatus",
+  "signatureHash": "a42827030dec2c9f3f42ea09d91232cf7cde88da3cc4e0f961146cf6c4880c3a",
+  "generatedAt": "2026-07-01T10:15:37.420Z",
+  "codeExample": "const tenantId: string = \"acme-corp\";\nconst notificationId: string = \"notif-20231101-001\";\nconst newStatus: UpdateUserNotificationStatusNewStatusEnum = UpdateUserNotificationStatusNewStatusEnum.Dismissed;\nconst ssoToken: string = \"sso-9f8e7d6c5b4a\";\n\nconst result: UpdateUserNotificationStatusResponse = await updateUserNotificationStatus(\n  tenantId,\n  notificationId,\n  newStatus,\n  ssoToken\n);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

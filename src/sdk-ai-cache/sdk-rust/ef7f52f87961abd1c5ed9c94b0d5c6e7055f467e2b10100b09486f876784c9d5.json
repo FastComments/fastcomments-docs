@@ -1,0 +1,7 @@
+{
+  "method": "get_audit_logs",
+  "signatureHash": "ef7f52f87961abd1c5ed9c94b0d5c6e7055f467e2b10100b09486f876784c9d5",
+  "generatedAt": "2026-07-01T10:15:27.963Z",
+  "codeExample": "async fn fetch_audit_logs(config: &configuration::Configuration) -> Result<(), Error> {\n    let params = GetAuditLogsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        limit: Some(100.0),\n        skip: Some(0.0),\n        order: Some(models::SortDir::Desc),\n        after: Some(1622505600.0),\n        before: None,\n    };\n    let _response: GetAuditLogsResponse = get_audit_logs(config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

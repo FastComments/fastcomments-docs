@@ -1,0 +1,7 @@
+{
+  "method": "search_users",
+  "signatureHash": "6ac5eefa917723407484b7e06531216c5fa19c360c9af641a5be3da3a2804ca8",
+  "generatedAt": "2026-07-01T10:15:21.938Z",
+  "codeExample": "async fn run_search() -> Result<(), Error> {\n    let params = SearchUsersParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        url_id: \"news/article\".to_string(),\n        username_starts_with: Some(\"john\".to_string()),\n        mention_group_ids: Some(vec![\"group1\".to_string(), \"group2\".to_string()]),\n        sso: Some(\"sso-provider\".to_string()),\n        search_section: Some(\"comments\".to_string()),\n    };\n    let _result: SearchUsersResult = search_users(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

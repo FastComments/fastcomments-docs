@@ -1,0 +1,7 @@
+{
+  "method": "patchSSOUser",
+  "signatureHash": "0c4bb17d38884516ea980628be342fa1b482f713e3581b6d9543b722b0a3387e",
+  "generatedAt": "2026-07-01T10:15:38.827Z",
+  "codeExample": "const tenantId: string = \"c1f2a3b4-5678-90ab-cdef-1234567890ab\";\nconst userId: string = \"user-987654321\";\nconst updateData: UpdateAPISSOUserData = {\n  email: \"jane.smith@enterprise.com\",\n  displayName: \"Jane Smith\",\n  role: \"editor\"\n};\n\nconst responseWithComments: PatchSSOUserAPIResponse = await patchSSOUser(\n  tenantId,\n  userId,\n  updateData,\n  true\n);\n\nconst responseWithoutComments: PatchSSOUserAPIResponse = await patchSSOUser(\n  tenantId,\n  userId,\n  updateData\n);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

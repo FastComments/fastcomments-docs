@@ -1,0 +1,7 @@
+{
+  "method": "put_sso_user",
+  "signatureHash": "ac541b73467b23f48a064b9d46c377d9ab86a217540d187040240bfee7ed6119",
+  "generatedAt": "2026-07-01T10:15:22.665Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let update_data = UpdateApissoUserData {\n        email: \"jane.doe@example.com\".to_string(),\n        display_name: \"Jane Doe\".to_string(),\n    };\n    let params = PutSsoUserParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"user-12345\".to_string(),\n        update_apisso_user_data: update_data,\n        update_comments: Some(true),\n    };\n    let _response = put_sso_user(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

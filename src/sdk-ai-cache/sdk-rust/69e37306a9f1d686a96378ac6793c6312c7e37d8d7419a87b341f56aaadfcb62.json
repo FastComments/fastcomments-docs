@@ -1,0 +1,7 @@
+{
+  "method": "upload_image",
+  "signatureHash": "69e37306a9f1d686a96378ac6793c6312c7e37d8d7419a87b341f56aaadfcb62",
+  "generatedAt": "2026-07-01T10:15:25.410Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = UploadImageParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        file: std::path::PathBuf::from(\"/tmp/photo.jpg\"),\n        size_preset: Some(models::SizePreset::Medium),\n        url_id: Some(\"news/article\".to_string()),\n    };\n    let _response = upload_image(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

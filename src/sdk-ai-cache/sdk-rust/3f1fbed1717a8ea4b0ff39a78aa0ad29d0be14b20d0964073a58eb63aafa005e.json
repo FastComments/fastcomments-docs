@@ -1,0 +1,7 @@
+{
+  "method": "post_set_comment_text",
+  "signatureHash": "3f1fbed1717a8ea4b0ff39a78aa0ad29d0be14b20d0964073a58eb63aafa005e",
+  "generatedAt": "2026-07-01T10:15:23.345Z",
+  "codeExample": "async fn update_comment(config: &configuration::Configuration) -> Result<(), Error> {\n    let params = PostSetCommentTextParams {\n        tenant_id: \"acme-corp\".to_string(),\n        comment_id: \"comment-9876\".to_string(),\n        set_comment_text_params: models::SetCommentTextParams {\n            text: \"Revised comment content\".to_string(),\n        },\n        broadcast_id: Some(\"broadcast-2023\".to_string()),\n        sso: Some(\"sso-token-abc\".to_string()),\n    };\n    let _response = post_set_comment_text(config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

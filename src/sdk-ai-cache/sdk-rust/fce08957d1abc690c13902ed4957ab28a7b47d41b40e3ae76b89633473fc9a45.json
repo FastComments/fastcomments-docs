@@ -1,0 +1,7 @@
+{
+  "method": "delete_user_badge",
+  "signatureHash": "fce08957d1abc690c13902ed4957ab28a7b47d41b40e3ae76b89633473fc9a45",
+  "generatedAt": "2026-07-01T10:15:24.154Z",
+  "codeExample": "async fn remove_badge(config: &configuration::Configuration) -> Result<(), Error> {\n    let params: DeleteUserBadgeParams = DeleteUserBadgeParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"badge-abcde\".to_string(),\n    };\n    let _ = delete_user_badge(config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

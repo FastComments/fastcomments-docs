@@ -1,0 +1,7 @@
+{
+  "method": "delete_moderator",
+  "signatureHash": "5fcd10d703c99517fe92ac4c292a2e3ac45bdfcfbda2276fbcf211e0da4f8d37",
+  "generatedAt": "2026-07-01T10:15:19.542Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params = DeleteModeratorParams {\n        tenant_id: \"acme-corp\".to_string(),\n        id: \"moderator-123\".to_string(),\n        send_email: Some(\"admin@acme.com\".to_string()),\n    };\n    let _ = delete_moderator(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

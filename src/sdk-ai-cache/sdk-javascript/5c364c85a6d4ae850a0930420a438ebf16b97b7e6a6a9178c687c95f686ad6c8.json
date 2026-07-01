@@ -1,0 +1,7 @@
+{
+  "method": "putDomainConfig",
+  "signatureHash": "5c364c85a6d4ae850a0930420a438ebf16b97b7e6a6a9178c687c95f686ad6c8",
+  "generatedAt": "2026-07-01T10:15:37.749Z",
+  "codeExample": "async function runExample() {\n  const tenantId: string = 'tenant-9f8c7b1a';\n  const domainToUpdate: string = 'comments.mywebsite.org';\n  const updateDomainConfigParams: UpdateDomainConfigParams = {\n    enableModeration: true,\n    // optional field omitted, e.g., maxCommentLength?: number\n  };\n  const result: PutDomainConfigResponse = await putDomainConfig(\n    tenantId,\n    domainToUpdate,\n    updateDomainConfigParams,\n  );\n  console.log(result);\n}\nrunExample();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

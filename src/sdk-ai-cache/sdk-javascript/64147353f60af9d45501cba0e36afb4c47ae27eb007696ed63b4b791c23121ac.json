@@ -1,0 +1,7 @@
+{
+  "method": "deleteTenantUser",
+  "signatureHash": "64147353f60af9d45501cba0e36afb4c47ae27eb007696ed63b4b791c23121ac",
+  "generatedAt": "2026-07-01T10:15:37.927Z",
+  "codeExample": "async function demoDeleteTenantUser() {\n  const tenantId: string = \"acme-corp-tenant\";\n  const userId: string = \"user-9876\";\n\n  // Delete the user and all their comments, using hard delete mode\n  const resultWithOptions: DeleteTenantUserResponse = await deleteTenantUser(\n    tenantId,\n    userId,\n    \"true\",\n    \"hard\"\n  );\n\n  // Delete the user without removing comments (default behavior)\n  const resultBasic: DeleteTenantUserResponse = await deleteTenantUser(tenantId, userId);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

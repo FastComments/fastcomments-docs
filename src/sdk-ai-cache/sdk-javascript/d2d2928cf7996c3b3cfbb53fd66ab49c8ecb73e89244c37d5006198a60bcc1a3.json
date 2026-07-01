@@ -1,0 +1,7 @@
+{
+  "method": "patchHashTag",
+  "signatureHash": "d2d2928cf7996c3b3cfbb53fd66ab49c8ecb73e89244c37d5006198a60bcc1a3",
+  "generatedAt": "2026-07-01T10:15:38.806Z",
+  "codeExample": "const response1: PatchHashTagResponse = await patchHashTag(\"new-feature\");\n\nconst response2: PatchHashTagResponse = await patchHashTag(\n  \"beta-release\",\n  \"tenant-9f8b7c\"\n);\n\nconst updateBody: UpdateHashTagBody = {\n  description: \"Mark comments related to the upcoming beta release\",\n  color: \"#1e90ff\"\n};\n\nconst response3: PatchHashTagResponse = await patchHashTag(\n  \"beta-release\",\n  \"tenant-9f8b7c\",\n  updateBody\n);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

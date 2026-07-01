@@ -1,0 +1,7 @@
+{
+  "method": "postSetCommentReviewStatus",
+  "signatureHash": "bbe82f8d0ad7b2167b926ba7bddb8269d8258ab3ce2413a87134c5b040e26625",
+  "generatedAt": "2026-07-01T10:15:38.472Z",
+  "codeExample": "async function updateCommentReviewStatus(): Promise<void> {\n  const commentId: string = \"cmt_9f8a7b6c5d4e3f2a1b0c\";\n  const reviewed: boolean = true;\n  const broadcastId: string = \"broadcast_2024Q1\";\n  const tenantId: string = \"tenant_1001\";\n  const sso: string = \"alice@example.com\";\n\n  const response: PostSetCommentReviewStatusResponse = await postSetCommentReviewStatus(\n    commentId,\n    reviewed,\n    broadcastId,\n    tenantId,\n    sso\n  );\n\n  console.log(response);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

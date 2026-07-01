@@ -1,0 +1,7 @@
+{
+  "method": "create_tenant_user",
+  "signatureHash": "de5bf73a4cf09e34d55d1cd87ae38aad9b429814789786e8383240d1e891c7f8",
+  "generatedAt": "2026-07-01T10:15:21.764Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = CreateTenantUserParams {\n        tenant_id: \"acme-corp\".to_string(),\n        create_tenant_user_body: models::CreateTenantUserBody {\n            email: \"john.doe@example.com\".to_string(),\n            role: \"admin\".to_string(),\n            first_name: Some(\"John\".to_string()),\n            last_name: Some(\"Doe\".to_string()),\n            digest_email_frequency: Some(DigestEmailFrequency::Daily),\n            imported_agent_approval_notification_frequency: Some(ImportedAgentApprovalNotificationFrequency::Weekly),\n            ..Default::default()\n        },\n    };\n    let _response: CreateTenantUserResponse = create_tenant_user(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

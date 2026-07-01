@@ -1,0 +1,7 @@
+{
+  "method": "get_comments_public",
+  "signatureHash": "44c5c5c74e2a4f65114018620e5aed902adf4cac14b449b9b274b6fbe3003b1d",
+  "generatedAt": "2026-07-01T10:15:28.918Z",
+  "codeExample": "async fn fetch_comments() -> Result<(), Error> {\n    let params = GetCommentsPublicParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        url_id: \"news/article\".to_string(),\n        page: Some(1),\n        direction: Some(models::SortDirections::Desc),\n        limit: Some(20),\n        includei10n: Some(true),\n        locale: Some(\"en-US\".to_string()),\n        as_tree: Some(true),\n        max_tree_depth: Some(3),\n        hash_tags: Some(vec![\"rust\".to_string(), \"programming\".to_string()]),\n        ..Default::default()\n    };\n    let _response = get_comments_public(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

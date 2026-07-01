@@ -1,0 +1,7 @@
+{
+  "method": "updateComment",
+  "signatureHash": "865573318917971a48faa7d945749e1c533d893cfddb0405bbe7b624a51082f2",
+  "generatedAt": "2026-07-01T10:15:40.155Z",
+  "codeExample": "const tenantId: string = \"tenant_12345\";\nconst commentId: string = \"cmt_98765\";\n\nconst updatableCommentParams: UpdatableCommentParams = {\n  // example fields; actual shape depends on the API definition\n  // e.g., body: \"Edited comment content\",\n};\n\nconst contextUserId: string = \"user_abcde\";\nconst doSpamCheck: boolean = true;\nconst isLive: boolean = false;\n\nconst result: UpdateCommentResponse = await updateComment(\n  tenantId,\n  commentId,\n  updatableCommentParams,\n  contextUserId,\n  doSpamCheck,\n  isLive\n);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

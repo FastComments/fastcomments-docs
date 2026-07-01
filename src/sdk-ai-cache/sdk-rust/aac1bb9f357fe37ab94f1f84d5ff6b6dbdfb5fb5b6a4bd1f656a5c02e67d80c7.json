@@ -1,0 +1,7 @@
+{
+  "method": "create_vote",
+  "signatureHash": "aac1bb9f357fe37ab94f1f84d5ff6b6dbdfb5fb5b6a4bd1f656a5c02e67d80c7",
+  "generatedAt": "2026-07-01T10:15:22.383Z",
+  "codeExample": "async fn submit_vote() -> Result<(), Error> {\n    let params = CreateVoteParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"news/article/12345\".to_string(),\n        direction: \"up\".to_string(),\n        user_id: Some(\"user-42\".to_string()),\n        anon_user_id: Some(\"anon-99\".to_string()),\n    };\n    let _response = create_vote(&config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getSearchSites",
+  "signatureHash": "a003cd7afd095f5d22a4d8f0f7f4f3055a5759e8fae1227031c28c3d51fb2337",
+  "generatedAt": "2026-07-01T10:15:39.590Z",
+  "codeExample": "async function fetchSites() {\n  const value: string = \"customer support\"\n  const tenantId: string = \"tenant-9876\"\n  const sso: string = \"sso-abc123\"\n\n  const sites: GetSearchSitesResponse = await getSearchSites(value, tenantId, sso)\n  const sitesOnlyTenant: GetSearchSitesResponse = await getSearchSites(undefined, tenantId)\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

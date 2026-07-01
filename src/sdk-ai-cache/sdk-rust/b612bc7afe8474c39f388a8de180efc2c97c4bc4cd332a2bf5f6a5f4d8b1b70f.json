@@ -1,0 +1,7 @@
+{
+  "method": "aggregate",
+  "signatureHash": "b612bc7afe8474c39f388a8de180efc2c97c4bc4cd332a2bf5f6a5f4d8b1b70f",
+  "generatedAt": "2026-07-01T10:15:22.578Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let config = configuration::Configuration::default();\n    let aggregation_request = models::AggregationRequest::default();\n    let params = AggregateParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        aggregation_request,\n        parent_tenant_id: Some(\"global-tenant\".to_string()),\n        include_stats: Some(true),\n    };\n    let _response = aggregate(&config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "delete_tenant",
+  "signatureHash": "59022bac16beff8d5172fcaa8a70d48ef84ea661d7f5946acd982a3a30355cd3",
+  "generatedAt": "2026-07-01T10:15:23.496Z",
+  "codeExample": "async fn delete_example(config: &configuration::Configuration) -> Result<(), Error> {\n    let params = DeleteTenantParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"news/article\".to_string(),\n        sure: Some(\"true\".to_string()),\n    };\n    delete_tenant(config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

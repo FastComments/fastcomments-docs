@@ -1,0 +1,7 @@
+{
+  "method": "delete_comment",
+  "signatureHash": "9de41ffae3a4eda4a76d68ad686d130c842c8837a353978093a1de64247765c0",
+  "generatedAt": "2026-07-01T10:15:21.991Z",
+  "codeExample": "async fn main() -> Result<(), Error> {\n    let params = DeleteCommentParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"comment-12345\".to_string(),\n        context_user_id: Some(\"user-6789\".to_string()),\n        is_live: Some(true),\n    };\n    let _result = delete_comment(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

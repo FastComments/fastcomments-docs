@@ -1,0 +1,7 @@
+{
+  "method": "updateQuestionConfig",
+  "signatureHash": "243e2f65860d5687568f22285df065e7f86a947acf3663b0f50ad3576b805b22",
+  "generatedAt": "2026-07-01T10:15:39.868Z",
+  "codeExample": "const tenantId: string = \"acme-corp-tenant\";\nconst questionId: string = \"qstn-2023-04\";\n\nconst updateBody: UpdateQuestionConfigBody = {\n  // optional fields demonstrated\n  customOptions: [\n    {\n      id: \"opt-001\",\n      label: \"Extra Details\",\n      required: true,\n    },\n  ],\n  renderingType: \"markdown\",\n};\n\nconst response: UpdateQuestionConfigResponse = await updateQuestionConfig(\n  tenantId,\n  questionId,\n  updateBody\n);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

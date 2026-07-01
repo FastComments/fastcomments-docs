@@ -1,0 +1,7 @@
+{
+  "method": "deleteV1PageReact",
+  "signatureHash": "a94453e3264d6b179566fba1e85d9a7ffd37cd7e4d8e7c187a578f1155caacfb",
+  "generatedAt": "2026-07-01T10:15:38.655Z",
+  "codeExample": "const tenantId: string = \"acme-corp\";\nconst urlId: string = \"article-2024-06-01\";\n\nconst response: DeleteV1PageReactResponse = await deleteV1PageReact(tenantId, urlId);\nconsole.log(response);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

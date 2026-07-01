@@ -1,0 +1,7 @@
+{
+  "method": "pin_comment",
+  "signatureHash": "8ea08bcb7041fbbddd4602108dd9dcb9aebeeecb02fd2253372ea3b98f05e705",
+  "generatedAt": "2026-07-01T10:15:26.909Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = PinCommentParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"comment-12345\".to_string(),\n        broadcast_id: \"news/article\".to_string(),\n        sso: Some(\"sso-token-xyz\".to_string()),\n    };\n    let _response = pin_comment(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

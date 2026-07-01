@@ -1,0 +1,7 @@
+{
+  "method": "deleteComment",
+  "signatureHash": "b168c29034e5007e1caa34ccc6f0168617cbe0b97d6934282a4012ed853404c3",
+  "generatedAt": "2026-07-01T10:15:38.177Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant_01';\n  const commentId: string = 'comment_abc123';\n  const contextUserId: string = 'user_42';\n  const isLive: boolean = false;\n\n  const deleteResult: DeleteCommentResponse = await deleteComment(tenantId, commentId, contextUserId, isLive);\n  const simpleResult: DeleteCommentResponse = await deleteComment(tenantId, commentId);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

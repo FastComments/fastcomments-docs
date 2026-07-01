@@ -1,0 +1,7 @@
+{
+  "method": "updateEmailTemplate",
+  "signatureHash": "7ba084c212dd22d87aded61f51a6f28c7252dbb07259ceb361ad6ee1fa1c7685",
+  "generatedAt": "2026-07-01T10:15:39.453Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant_12345\";\n  const templateId: string = \"email_tpl_67890\";\n\n  const updateBody: UpdateEmailTemplateBody = {\n    subject: \"Comment reply notification\",\n    htmlContent: \"<p>Someone replied to your comment.</p>\",\n    plainTextContent: \"Someone replied to your comment.\",\n    // optional field example\n    isActive: true,\n  };\n\n  const result: UpdateEmailTemplateResponse = await updateEmailTemplate(\n    tenantId,\n    templateId,\n    updateBody\n  );\n\n  console.log(result);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

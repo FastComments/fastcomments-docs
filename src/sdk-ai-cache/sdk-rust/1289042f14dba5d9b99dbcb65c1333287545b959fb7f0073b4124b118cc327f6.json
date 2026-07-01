@@ -1,0 +1,7 @@
+{
+  "method": "get_gifs_trending",
+  "signatureHash": "1289042f14dba5d9b99dbcb65c1333287545b959fb7f0073b4124b118cc327f6",
+  "generatedAt": "2026-07-01T10:15:26.307Z",
+  "codeExample": "async fn fetch_trending_gifs(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params = GetGifsTrendingParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        locale: Some(\"en-US\".to_string()),\n        rating: Some(\"pg\".to_string()),\n        page: Some(1.0),\n    };\n    let _response = get_gifs_trending(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

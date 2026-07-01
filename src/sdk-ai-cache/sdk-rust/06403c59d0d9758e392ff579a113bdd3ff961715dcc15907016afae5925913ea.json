@@ -1,0 +1,7 @@
+{
+  "method": "update_tenant",
+  "signatureHash": "06403c59d0d9758e392ff579a113bdd3ff961715dcc15907016afae5925913ea",
+  "generatedAt": "2026-07-01T10:15:29.569Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params = UpdateTenantParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"tenant-001\".to_string(),\n        update_tenant_body: UpdateTenantBody {\n            description: Some(\"Primary tenant for Acme Corp\".to_string()),\n            ..Default::default()\n        },\n    };\n    let _ = update_tenant(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

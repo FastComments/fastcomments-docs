@@ -1,0 +1,7 @@
+{
+  "method": "replace_tenant_user",
+  "signatureHash": "b9968ad3f7782e1d14bf6ad3a36b10820a1eb5b2de74beb97cd0b93bfea607e9",
+  "generatedAt": "2026-07-01T10:15:24.706Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = ReplaceTenantUserParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"user-12345\".to_string(),\n        replace_tenant_user_body: ReplaceTenantUserBody::default(),\n        update_comments: Some(\"Update user role\".to_string()),\n    };\n    replace_tenant_user(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

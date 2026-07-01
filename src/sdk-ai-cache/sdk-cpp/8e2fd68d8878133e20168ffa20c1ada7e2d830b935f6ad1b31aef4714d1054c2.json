@@ -1,0 +1,7 @@
+{
+  "method": "deleteEmailTemplate",
+  "signatureHash": "8e2fd68d8878133e20168ffa20c1ada7e2d830b935f6ad1b31aef4714d1054c2",
+  "generatedAt": "2026-07-01T10:15:15.018Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto templateId = utility::conversions::to_string_t(\"welcome-email-template\");\nboost::optional<utility::string_t> optTenantId = tenantId;\nboost::optional<utility::string_t> optTemplateId = templateId;\napi->deleteEmailTemplate(optTenantId.value(), optTemplateId.value())\n    .then([](pplx::task<std::shared_ptr<APIEmptyResponse>> t) {\n        try { t.get(); }\n        catch (const std::exception&) {}\n    });",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

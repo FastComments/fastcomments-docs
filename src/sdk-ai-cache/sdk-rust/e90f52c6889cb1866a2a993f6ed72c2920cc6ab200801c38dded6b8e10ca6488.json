@@ -1,0 +1,7 @@
+{
+  "method": "get_question_configs",
+  "signatureHash": "e90f52c6889cb1866a2a993f6ed72c2920cc6ab200801c38dded6b8e10ca6488",
+  "generatedAt": "2026-07-01T10:15:22.327Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = GetQuestionConfigsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        skip: Some(10.0),\n    };\n    let _response: GetQuestionConfigsResponse = get_question_configs(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

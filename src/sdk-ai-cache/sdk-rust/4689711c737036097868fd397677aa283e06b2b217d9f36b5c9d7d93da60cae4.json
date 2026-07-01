@@ -1,0 +1,7 @@
+{
+  "method": "get_pending_webhook_event_count",
+  "signatureHash": "4689711c737036097868fd397677aa283e06b2b217d9f36b5c9d7d93da60cae4",
+  "generatedAt": "2026-07-01T10:15:21.682Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = GetPendingWebhookEventCountParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: Some(\"comment-12345\".to_string()),\n        external_id: Some(\"ext-98765\".to_string()),\n        event_type: Some(\"comment_created\".to_string()),\n        domain: Some(\"news.example.com\".to_string()),\n        attempt_count_gt: Some(2.0),\n    };\n    let _response = get_pending_webhook_event_count(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

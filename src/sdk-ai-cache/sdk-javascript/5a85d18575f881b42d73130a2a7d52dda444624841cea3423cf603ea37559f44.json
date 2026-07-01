@@ -1,0 +1,7 @@
+{
+  "method": "flagComment",
+  "signatureHash": "5a85d18575f881b42d73130a2a7d52dda444624841cea3423cf603ea37559f44",
+  "generatedAt": "2026-07-01T10:15:38.761Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant_2023\";\n  const commentId: string = \"comment_5678\";\n  const userId: string = \"user_1234\";\n  const anonUserId: string = \"anon_4321\";\n\n  const result: FlagCommentResponse1 = await flagComment(tenantId, commentId, userId);\n  const anonResult: FlagCommentResponse1 = await flagComment(tenantId, commentId, undefined, anonUserId);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

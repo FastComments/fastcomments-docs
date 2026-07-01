@@ -1,0 +1,7 @@
+{
+  "method": "createTicket",
+  "signatureHash": "64deee0dcdaa806192d964c5bd021620818effc41abeb756669592594f91146e",
+  "generatedAt": "2026-07-01T10:15:38.939Z",
+  "codeExample": "const tenantId: string = \"tenant_12345\";\nconst userId: string = \"user_98765\";\n\nconst ticketBody: CreateTicketBody = {\n  subject: \"Issue with payment processing\"\n  // description?: string is optional and omitted\n};\n\nconst response: CreateTicketResponse1 = await createTicket(tenantId, userId, ticketBody);\n// Example of using an optional field from the response\n// console.log(response.ticket?.id);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

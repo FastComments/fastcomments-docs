@@ -1,0 +1,7 @@
+{
+  "method": "get_gif_large",
+  "signatureHash": "a84716d8c165af2351e3d662602bd55ab969452ba2f8b2c2a9da35bae40693e8",
+  "generatedAt": "2026-07-01T10:15:26.570Z",
+  "codeExample": "let params: GetGifLargeParams = GetGifLargeParams {\n    tenant_id: \"acme-corp-tenant\".into(),\n    large_internal_url_sanitized: \"news/article/gif123\".into(),\n};\n\nlet response: GifGetLargeResponse = get_gif_large(&configuration, params).await?;",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

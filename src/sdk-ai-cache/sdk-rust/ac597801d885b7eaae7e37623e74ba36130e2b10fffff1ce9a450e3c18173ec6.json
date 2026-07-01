@@ -1,0 +1,7 @@
+{
+  "method": "get_subscriptions",
+  "signatureHash": "ac597801d885b7eaae7e37623e74ba36130e2b10fffff1ce9a450e3c18173ec6",
+  "generatedAt": "2026-07-01T10:15:20.521Z",
+  "codeExample": "async fn fetch_subscriptions(config: &configuration::Configuration) -> Result<(), Error> {\n    let params = GetSubscriptionsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        user_id: Some(\"user-12345\".to_string()),\n    };\n    let _response: GetSubscriptionsApiResponse = get_subscriptions(config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

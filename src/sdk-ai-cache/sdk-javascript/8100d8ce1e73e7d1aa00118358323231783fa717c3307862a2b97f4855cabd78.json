@@ -1,0 +1,7 @@
+{
+  "method": "deleteTenant",
+  "signatureHash": "8100d8ce1e73e7d1aa00118358323231783fa717c3307862a2b97f4855cabd78",
+  "generatedAt": "2026-07-01T10:15:38.426Z",
+  "codeExample": "async function runExample() {\n    const tenantId: string = \"tenant_12345\";\n    const id: string = \"resource_98765\";\n    const sure: string = \"confirm\";\n\n    // Call with optional 'sure' parameter\n    const responseWithSure: DeleteTenantResponse = await deleteTenant(tenantId, id, sure);\n    console.log(responseWithSure);\n\n    // Call without optional 'sure' parameter\n    const responseWithoutSure: DeleteTenantResponse = await deleteTenant(tenantId, id);\n    console.log(responseWithoutSure);\n}\n\nrunExample();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

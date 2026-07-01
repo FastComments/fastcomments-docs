@@ -1,0 +1,7 @@
+{
+  "method": "get_user",
+  "signatureHash": "de6e36a06ad2e50c39ec7fc5132dcdd9ea047e4d9d78580603382ff820307f52",
+  "generatedAt": "2026-07-01T10:15:25.315Z",
+  "codeExample": "async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params = GetUserParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"user-123\".to_string(),\n        include_details: Some(true),\n    };\n    let _response = get_user(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

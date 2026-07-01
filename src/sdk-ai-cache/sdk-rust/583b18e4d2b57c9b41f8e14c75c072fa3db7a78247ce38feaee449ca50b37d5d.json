@@ -1,0 +1,7 @@
+{
+  "method": "get_pages_public",
+  "signatureHash": "583b18e4d2b57c9b41f8e14c75c072fa3db7a78247ce38feaee449ca50b37d5d",
+  "generatedAt": "2026-07-01T10:15:24.967Z",
+  "codeExample": "async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params = GetPagesPublicParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        cursor: Some(\"page_20\".to_string()),\n        limit: Some(50),\n        q: Some(\"news/article\".to_string()),\n        sort_by: Some(models::PagesSortBy::CreatedDesc),\n        has_comments: Some(true),\n    };\n    let _response = get_pages_public(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

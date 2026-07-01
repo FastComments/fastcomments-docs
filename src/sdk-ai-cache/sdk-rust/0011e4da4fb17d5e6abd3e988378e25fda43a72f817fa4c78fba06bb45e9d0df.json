@@ -1,0 +1,7 @@
+{
+  "method": "get_feed_posts",
+  "signatureHash": "0011e4da4fb17d5e6abd3e988378e25fda43a72f817fa4c78fba06bb45e9d0df",
+  "generatedAt": "2026-07-01T10:15:27.160Z",
+  "codeExample": "async fn fetch_feed(config: &configuration::Configuration) -> Result<(), Error> {\n    let params = GetFeedPostsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        after_id: Some(\"post-12345\".to_string()),\n        limit: Some(20),\n        tags: Some(vec![\"news\".to_string(), \"article\".to_string()]),\n    };\n    let _response = get_feed_posts(config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getTenants",
+  "signatureHash": "5182ca768e1161bdad20fed5f440cf621605b0d78d50fc00363853cc05dbef99",
+  "generatedAt": "2026-07-01T10:15:37.710Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant-9f8e7d6c\";\n  const resultOnlyId: GetTenantsResponse1 = await getTenants(tenantId);\n  const resultWithMeta: GetTenantsResponse1 = await getTenants(tenantId, \"full\");\n  const resultAllParams: GetTenantsResponse1 = await getTenants(tenantId, \"full\", 15);\n  console.log(resultOnlyId, resultWithMeta, resultAllParams);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

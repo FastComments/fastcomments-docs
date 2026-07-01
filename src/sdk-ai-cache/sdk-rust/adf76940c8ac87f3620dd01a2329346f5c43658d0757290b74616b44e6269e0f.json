@@ -1,0 +1,7 @@
+{
+  "method": "update_notification",
+  "signatureHash": "adf76940c8ac87f3620dd01a2329346f5c43658d0757290b74616b44e6269e0f",
+  "generatedAt": "2026-07-01T10:15:28.121Z",
+  "codeExample": "#[tokio::main]\nasync fn main() -> Result<(), Error> {\n    let params = UpdateNotificationParams {\n        tenant_id: \"acme-corp\".to_string(),\n        id: \"news/article\".to_string(),\n        update_notification_body: models::UpdateNotificationBody {\n            title: \"New article published\".to_string(),\n            content: \"Read the latest updates in our blog.\".to_string(),\n        },\n        user_id: Some(\"user-123\".to_string()),\n    };\n    update_notification(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

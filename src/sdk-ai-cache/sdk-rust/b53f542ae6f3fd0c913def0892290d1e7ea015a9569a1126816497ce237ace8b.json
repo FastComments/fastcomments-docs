@@ -1,0 +1,7 @@
+{
+  "method": "get_votes",
+  "signatureHash": "b53f542ae6f3fd0c913def0892290d1e7ea015a9569a1126816497ce237ace8b",
+  "generatedAt": "2026-07-01T10:15:25.284Z",
+  "codeExample": "async fn fetch_votes(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params = GetVotesParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        url_id: \"news/article\".to_string(),\n        limit: Some(100),\n    };\n    let _response: GetVotesResponse = get_votes(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

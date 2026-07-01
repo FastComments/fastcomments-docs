@@ -1,0 +1,7 @@
+{
+  "method": "createEmailTemplate",
+  "signatureHash": "bb1bc04aadc67bd4db07a19206173de62152255a07d46b14d3a3b377109fb22f",
+  "generatedAt": "2026-07-01T10:15:39.049Z",
+  "codeExample": "const tenantId: string = \"tenant_9f8e7d6c\";\n\nconst emailTemplate: CreateEmailTemplateBody = {\n  name: \"Account Activation\",\n  subject: \"Activate Your New Account\",\n  htmlContent: \"<p>Welcome! Please click <a href=\\\"{{activationLink}}\\\">here</a> to activate.</p>\",\n  // optional fields like textContent, isActive are omitted to demonstrate optional parameters\n};\n\nconst result: CreateEmailTemplateResponse1 = await createEmailTemplate(\n  tenantId,\n  emailTemplate\n);\n\nconsole.log(result);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "add_sso_user",
+  "signatureHash": "074f8fb3ab45f4c8fd4435af0612cf648a340b20eac3b09af6692958f1ca2626",
+  "generatedAt": "2026-07-01T10:15:23.147Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let user_data = models::CreateApissoUserData {\n        username: \"jdoe\".to_string(),\n        email: \"jdoe@acme.com\".to_string(),\n        display_name: Some(\"John Doe\".to_string()),\n        is_active: Some(true),\n    };\n    let params = AddSsoUserParams {\n        tenant_id: \"acme-corp\".to_string(),\n        create_apisso_user_data: user_data,\n    };\n    let _response = add_sso_user(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

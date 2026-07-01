@@ -1,0 +1,7 @@
+{
+  "method": "getPagesPublic",
+  "signatureHash": "c9abd08b6fdf08a36f4e004df36e52094d8ff6d2f521406af350ed3a3613d9fc",
+  "generatedAt": "2026-07-01T10:15:39.189Z",
+  "codeExample": "async function fetchPages() {\n  const tenantId: string = \"tenant_12345\";\n  const cursor: string = \"nextPageToken\";\n  const limit: number = 20;\n  const q: string = \"blog\";\n  const sortBy: PagesSortBy = \"createdAt\";\n  const hasComments: boolean = true;\n\n  const response: GetPagesPublicResponse = await getPagesPublic(\n    tenantId,\n    cursor,\n    limit,\n    q,\n    sortBy,\n    hasComments\n  );\n\n  console.log(response);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

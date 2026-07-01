@@ -1,0 +1,7 @@
+{
+  "method": "unBlockCommentPublic",
+  "signatureHash": "f35cc83981ea711585834a47973d7e98014993a9f8fdb974f212022e092a252a",
+  "generatedAt": "2026-07-01T10:15:38.947Z",
+  "codeExample": "const tenantId: string = \"acme-corp-tenant\";\nconst commentId: string = \"cmt-20230915-001\";\nconst unblockParams: PublicBlockFromCommentParams = {\n  reason: \"User appealed and was cleared\",\n  unblockExpiresAt: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString()\n};\nconst ssoToken: string = \"sso-3d9f8a7b\";\n\nconst result: UnBlockCommentPublicResponse = await unBlockCommentPublic(\n  tenantId,\n  commentId,\n  unblockParams,\n  ssoToken\n);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

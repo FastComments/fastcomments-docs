@@ -1,0 +1,7 @@
+{
+  "method": "aggregate",
+  "signatureHash": "e26e0bad38028acd8144a26a69fa48f313a64c4e1f39f89a16ed59f24b744265",
+  "generatedAt": "2026-07-01T10:15:41.166Z",
+  "codeExample": "const tenantId: string = \"tenant-12345\";\n\nconst aggregationRequest: AggregationRequest = {\n  predicates: [\n    {\n      field: \"status\",\n      operator: \"eq\",\n      value: { type: \"string\", value: \"approved\" }\n    }\n  ],\n  operations: [\n    { type: \"count\", field: \"commentId\" }\n  ],\n  sort: { field: \"createdAt\", direction: \"desc\" }\n};\n\nconst parentTenantId: string = \"parent-001\";\nconst includeStats: boolean = true;\n\nconst result: AggregateResponse = await aggregate(\n  tenantId,\n  aggregationRequest,\n  parentTenantId,\n  includeStats\n);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

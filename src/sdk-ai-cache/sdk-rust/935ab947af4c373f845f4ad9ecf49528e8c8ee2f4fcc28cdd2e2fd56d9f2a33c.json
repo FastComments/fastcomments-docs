@@ -1,0 +1,7 @@
+{
+  "method": "create_comment_public",
+  "signatureHash": "935ab947af4c373f845f4ad9ecf49528e8c8ee2f4fcc28cdd2e2fd56d9f2a33c",
+  "generatedAt": "2026-07-01T10:15:28.601Z",
+  "codeExample": "let params = CreateCommentPublicParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    url_id: \"news/article-123\".to_string(),\n    broadcast_id: \"broadcast-2023-09-01\".to_string(),\n    comment_data: models::CommentData {\n        text: \"Great read!\".to_string(),\n    },\n    session_id: Some(\"session-abc123\".to_string()),\n    sso: Some(\"sso-token-xyz\".to_string()),\n};\nlet response = create_comment_public(&configuration, params).await?;",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

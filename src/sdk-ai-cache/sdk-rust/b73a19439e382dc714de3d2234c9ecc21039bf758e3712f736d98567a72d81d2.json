@@ -1,0 +1,7 @@
+{
+  "method": "get_question_result",
+  "signatureHash": "b73a19439e382dc714de3d2234c9ecc21039bf758e3712f736d98567a72d81d2",
+  "generatedAt": "2026-07-01T10:15:24.289Z",
+  "codeExample": "async fn fetch_question_result(config: &configuration::Configuration) -> Result<(), Error> {\n    let params = GetQuestionResultParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"question-12345\".to_string(),\n        locale: Some(\"en-US\".to_string()),\n    };\n    let _response: GetQuestionResultResponse = get_question_result(config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

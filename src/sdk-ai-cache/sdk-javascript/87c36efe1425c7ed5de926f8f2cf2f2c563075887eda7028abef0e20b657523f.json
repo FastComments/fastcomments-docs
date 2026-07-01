@@ -1,0 +1,7 @@
+{
+  "method": "postVote",
+  "signatureHash": "87c36efe1425c7ed5de926f8f2cf2f2c563075887eda7028abef0e20b657523f",
+  "generatedAt": "2026-07-01T10:15:38.155Z",
+  "codeExample": "let commentId: string = 'cmt_12345';\nlet direction: string = 'up';\nlet broadcastId: string = 'brd_67890';\nlet tenantId: string = 'tenant_abc';\nlet sso: string = 'sso_token_xyz';\n\nconst fullVote: PostVoteResponse = await postVote(\n  commentId,\n  direction,\n  broadcastId,\n  tenantId,\n  sso\n);\n\nconst simpleVote: PostVoteResponse = await postVote('cmt_67890');",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

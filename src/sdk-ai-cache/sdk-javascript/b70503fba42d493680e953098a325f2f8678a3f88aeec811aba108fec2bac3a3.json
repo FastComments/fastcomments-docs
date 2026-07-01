@@ -1,0 +1,7 @@
+{
+  "method": "deleteFeedPostPublic",
+  "signatureHash": "b70503fba42d493680e953098a325f2f8678a3f88aeec811aba108fec2bac3a3",
+  "generatedAt": "2026-07-01T10:15:39.637Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"acme-corp\";\n  const postId: string = \"post_987654321\";\n  const broadcastId: string = \"broadcast_2024Q1\";\n  const sso: string = \"sso_4fa3b9c2\";\n\n  const response1: DeleteFeedPostPublicResponse = await deleteFeedPostPublic(tenantId, postId);\n  const response2: DeleteFeedPostPublicResponse = await deleteFeedPostPublic(tenantId, postId, broadcastId);\n  const response3: DeleteFeedPostPublicResponse = await deleteFeedPostPublic(tenantId, postId, broadcastId, sso);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

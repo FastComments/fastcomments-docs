@@ -1,0 +1,7 @@
+{
+  "method": "create_question_result",
+  "signatureHash": "99ceefd316e9d5561184c87508126715fac4d62b0f08aded26fe8009c3722827",
+  "generatedAt": "2026-07-01T10:15:23.882Z",
+  "codeExample": "let mut metadata = std::collections::HashMap::new();\nmetadata.insert(\"source\".to_string(), \"web\".to_string());\n\nlet body = models::CreateQuestionResultBody {\n    question_id: \"q-987\".to_string(),\n    user_id: \"user-42\".to_string(),\n    answer: \"Positive\".to_string(),\n    metadata: Some(metadata),\n};\n\nlet params = CreateQuestionResultParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    create_question_result_body: body,\n};\n\nlet response = create_question_result(&configuration, params).await?;",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

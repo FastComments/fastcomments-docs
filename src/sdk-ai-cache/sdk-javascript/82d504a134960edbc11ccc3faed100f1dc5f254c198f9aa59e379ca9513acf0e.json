@@ -1,0 +1,7 @@
+{
+  "method": "blockUserFromComment",
+  "signatureHash": "82d504a134960edbc11ccc3faed100f1dc5f254c198f9aa59e379ca9513acf0e",
+  "generatedAt": "2026-07-01T10:15:39.179Z",
+  "codeExample": "const tenantId: string = 'tenant_42';\nconst commentId: string = 'cmt_20231101';\n\nconst blockParams: BlockFromCommentParams = {\n  reason: 'spam',\n  blockDurationHours: 24,\n};\n\nconst userId: string = 'user_123'; // optional parameter\n\nconst response: BlockUserFromCommentResponse = await blockUserFromComment(\n  tenantId,\n  commentId,\n  blockParams,\n  userId\n);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

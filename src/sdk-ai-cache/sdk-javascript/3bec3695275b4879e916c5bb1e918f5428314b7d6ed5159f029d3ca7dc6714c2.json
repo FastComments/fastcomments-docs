@@ -1,0 +1,7 @@
+{
+  "method": "getModerationCommentText",
+  "signatureHash": "3bec3695275b4879e916c5bb1e918f5428314b7d6ed5159f029d3ca7dc6714c2",
+  "generatedAt": "2026-07-01T10:15:37.175Z",
+  "codeExample": "async function exampleUsage(): Promise<void> {\n  const commentId: string = \"cmt_9f8e7d6c5b4a3b2c1d0e\";\n  const tenantId: string = \"tenant_67890\";\n  const sso: string = \"sso_token_abc123\";\n\n  // Call with only the required parameter\n  const result1: GetModerationCommentTextResponse = await getModerationCommentText(commentId);\n\n  // Call with optional parameters\n  const result2: GetModerationCommentTextResponse = await getModerationCommentText(commentId, tenantId, sso);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

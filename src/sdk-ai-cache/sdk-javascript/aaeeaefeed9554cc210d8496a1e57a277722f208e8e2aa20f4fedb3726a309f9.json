@@ -1,0 +1,7 @@
+{
+  "method": "getCommentVoteUserNames",
+  "signatureHash": "aaeeaefeed9554cc210d8496a1e57a277722f208e8e2aa20f4fedb3726a309f9",
+  "generatedAt": "2026-07-01T10:15:37.882Z",
+  "codeExample": "async function demoGetCommentVoteUserNames() {\n  const tenantId: string = \"acme-corp\";\n  const commentId: string = \"cmt_5f2a1e3b\";\n  const dir: number = 1; // ascending\n\n  const votesWithoutSSO: GetCommentVoteUserNamesResponse = await getCommentVoteUserNames(\n    tenantId,\n    commentId,\n    dir\n  );\n\n  const ssoToken: string = \"sso_abcdef123456\";\n  const votesWithSSO: GetCommentVoteUserNamesResponse = await getCommentVoteUserNames(\n    tenantId,\n    commentId,\n    dir,\n    ssoToken\n  );\n\n  console.log(votesWithoutSSO, votesWithSSO);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

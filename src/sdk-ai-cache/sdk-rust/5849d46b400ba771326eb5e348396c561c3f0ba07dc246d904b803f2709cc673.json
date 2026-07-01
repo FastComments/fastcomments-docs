@@ -1,0 +1,7 @@
+{
+  "method": "get_notifications",
+  "signatureHash": "5849d46b400ba771326eb5e348396c561c3f0ba07dc246d904b803f2709cc673",
+  "generatedAt": "2026-07-01T10:15:23.150Z",
+  "codeExample": "async fn fetch_notifications(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params = GetNotificationsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        user_id: Some(\"user-123\".to_string()),\n        url_id: Some(\"news/article\".to_string()),\n        from_comment_id: Some(\"cmt-456\".to_string()),\n        viewed: Some(true),\n        skip: Some(0.0),\n    };\n    let _response = get_notifications(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

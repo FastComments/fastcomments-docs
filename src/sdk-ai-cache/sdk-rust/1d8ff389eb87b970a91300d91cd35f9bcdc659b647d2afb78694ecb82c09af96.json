@@ -1,0 +1,7 @@
+{
+  "method": "get_cached_notification_count",
+  "signatureHash": "1d8ff389eb87b970a91300d91cd35f9bcdc659b647d2afb78694ecb82c09af96",
+  "generatedAt": "2026-07-01T10:15:24.858Z",
+  "codeExample": "async fn fetch_notification_count() -> Result<(), Error> {\n    let params = GetCachedNotificationCountParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"news/article\".to_string(),\n    };\n    let response = get_cached_notification_count(&configuration, params).await?;\n    let _ = response.user_notification_count;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

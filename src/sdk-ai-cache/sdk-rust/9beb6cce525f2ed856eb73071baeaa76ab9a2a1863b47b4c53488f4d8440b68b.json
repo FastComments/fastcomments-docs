@@ -1,0 +1,7 @@
+{
+  "method": "get_online_users",
+  "signatureHash": "9beb6cce525f2ed856eb73071baeaa76ab9a2a1863b47b4c53488f4d8440b68b",
+  "generatedAt": "2026-07-01T10:15:21.859Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = GetOnlineUsersParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        url_id: \"news/article\".to_string(),\n        after_name: Some(\"john_doe\".to_string()),\n        after_user_id: Some(\"user-123\".to_string()),\n    };\n    let _response: PageUsersOnlineResponse = get_online_users(&config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

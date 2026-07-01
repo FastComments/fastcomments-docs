@@ -1,0 +1,7 @@
+{
+  "method": "combine_comments_with_question_results",
+  "signatureHash": "adde9ac42bd4cc5e75168531383de8a1fb01ebc4300e79ce96efa5afe6d2cbef",
+  "generatedAt": "2026-07-01T10:15:25.845Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let config = configuration::Configuration::default();\n    let params = CombineCommentsWithQuestionResultsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        question_id: Some(\"q123\".to_string()),\n        question_ids: Some(vec![\"q123\".to_string(), \"q124\".to_string()]),\n        url_id: Some(\"news/article\".to_string()),\n        start_date: Some(chrono::DateTime::parse_from_rfc3339(\"2023-01-01T00:00:00+00:00\").unwrap()),\n        force_recalculate: Some(true),\n        min_value: Some(0.0),\n        max_value: Some(100.0),\n        limit: Some(50.0),\n    };\n    let _response = combine_comments_with_question_results(&config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

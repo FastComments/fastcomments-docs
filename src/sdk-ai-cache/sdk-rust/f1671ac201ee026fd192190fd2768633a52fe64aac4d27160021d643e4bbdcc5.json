@@ -1,0 +1,7 @@
+{
+  "method": "create_tenant_package",
+  "signatureHash": "f1671ac201ee026fd192190fd2768633a52fe64aac4d27160021d643e4bbdcc5",
+  "generatedAt": "2026-07-01T10:15:21.732Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = CreateTenantPackageParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        create_tenant_package_body: models::CreateTenantPackageBody {\n            package_name: \"Standard\".to_string(),\n            package_type: \"news/article\".to_string(),\n            description: Some(\"Package for news articles\".to_string()),\n            ..Default::default()\n        },\n    };\n    let _response = create_tenant_package(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

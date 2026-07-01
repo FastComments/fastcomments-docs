@@ -1,0 +1,7 @@
+{
+  "method": "get_v2_page_reacts",
+  "signatureHash": "ac3f77092514011bd83482c85fd8c27e513771aaaad46e2a1096fc682700a44d",
+  "generatedAt": "2026-07-01T10:15:28.077Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params = GetV2PageReactsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        url_id: \"news/article\".to_string(),\n        page: Some(1),\n        page_size: Some(50),\n    };\n    let _reacts = get_v2_page_reacts(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

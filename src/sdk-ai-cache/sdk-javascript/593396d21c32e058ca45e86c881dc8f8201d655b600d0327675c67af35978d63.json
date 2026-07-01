@@ -1,0 +1,7 @@
+{
+  "method": "updateUserBadge",
+  "signatureHash": "593396d21c32e058ca45e86c881dc8f8201d655b600d0327675c67af35978d63",
+  "generatedAt": "2026-07-01T10:15:37.760Z",
+  "codeExample": "async function applyBadge() {\n    const tenantId: string = \"acme-corp-tenant\";\n    const userId: string = \"user-98765\";\n\n    const params: UpdateUserBadgeParams = {\n        badgeId: \"gold-contributor\",\n        // optional field example\n        expiresAt: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),\n    };\n\n    const result: UpdateUserBadgeResponse = await updateUserBadge(tenantId, userId, params);\n    console.log(result);\n}\n\napplyBadge();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

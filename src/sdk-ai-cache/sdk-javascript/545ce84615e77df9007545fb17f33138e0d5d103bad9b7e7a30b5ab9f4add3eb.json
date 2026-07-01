@@ -1,0 +1,7 @@
+{
+  "method": "postAdjustCommentVotes",
+  "signatureHash": "545ce84615e77df9007545fb17f33138e0d5d103bad9b7e7a30b5ab9f4add3eb",
+  "generatedAt": "2026-07-01T10:15:37.845Z",
+  "codeExample": "const commentId: string = \"cmt_9f8b7a6d\";\n\nconst adjustParams: AdjustCommentVotesParams = {\n  voteDelta: 1,\n  // additional fields as required by AdjustCommentVotesParams\n};\n\nconst broadcastId: string = \"brd_20230915\";\nconst tenantId: string = \"tenant_42\";\nconst sso: string = \"sso-token-abc123\";\n\nconst result: PostAdjustCommentVotesResponse = await postAdjustCommentVotes(\n  commentId,\n  adjustParams,\n  broadcastId,\n  tenantId,\n  sso\n);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

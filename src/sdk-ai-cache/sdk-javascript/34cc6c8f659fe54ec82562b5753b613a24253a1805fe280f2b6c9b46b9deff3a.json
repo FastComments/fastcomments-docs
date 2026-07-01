@@ -1,0 +1,7 @@
+{
+  "method": "postApiExport",
+  "signatureHash": "34cc6c8f659fe54ec82562b5753b613a24253a1805fe280f2b6c9b46b9deff3a",
+  "generatedAt": "2026-07-01T10:15:40.394Z",
+  "codeExample": "(async () => {\n  const textSearch: string = \"keyword:feedback\"\n  const byIPFromComment: string = \"203.0.113.45\"\n  const filters: string = \"status:pending,category:support\"\n  const searchFilters: string = \"createdAt>2023-01-01\"\n  const sorts: string = \"createdAt:desc\"\n  const tenantId: string = \"tenant_9876\"\n  const sso: string = \"sso_7e2a9b\"\n\n  const exportResult: PostApiExportResponse = await postApiExport(\n    textSearch,\n    byIPFromComment,\n    filters,\n    searchFilters,\n    sorts,\n    tenantId,\n    sso\n  )\n\n  console.log(exportResult)\n})()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

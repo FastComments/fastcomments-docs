@@ -1,0 +1,7 @@
+{
+  "method": "update_user_notification_page_subscription_status",
+  "signatureHash": "a1cec433798180c0bc8ef828c979ed050b298446d0c8c57b98d3aab256313ec4",
+  "generatedAt": "2026-07-01T10:15:26.878Z",
+  "codeExample": "async fn example() -> Result<UpdateUserNotificationPageSubscriptionStatusResponse, Error> {\n    let params = UpdateUserNotificationPageSubscriptionStatusParams {\n        tenant_id: \"acme-corp-tenant\".to_owned(),\n        url_id: \"news-article-2024\".to_owned(),\n        url: \"https://news.example.com/articles/rust\".to_owned(),\n        page_title: \"Rust Dominates the Programming World\".to_owned(),\n        subscribed_or_unsubscribed: \"subscribed\".to_owned(),\n        sso: Some(\"sso-token-abc\".to_owned()),\n    };\n    update_user_notification_page_subscription_status(&configuration, params).await\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

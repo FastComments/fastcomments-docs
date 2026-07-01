@@ -1,0 +1,7 @@
+{
+  "method": "deleteSSOUser",
+  "signatureHash": "4dc4d4cf79fa3a4391c5ae408a7a07169cd9aa853ab0e430762fae46eefa4b9d",
+  "generatedAt": "2026-07-01T10:15:17.368Z",
+  "codeExample": "auto tenantId = U(\"my-tenant-123\");\nauto userId = U(\"user-456\");\nDeleteSSOUserOptions options;\noptions.dryRun = boost::optional<bool>(true);\napi->deleteSSOUser(tenantId, userId, options).then([](std::shared_ptr<DeleteSSOUserAPIResponse> resp) {\n    if (resp) {\n        (void)resp;\n    }\n});",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

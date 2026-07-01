@@ -1,0 +1,7 @@
+{
+  "method": "updateTenantUser",
+  "signatureHash": "a39da26d2c0531408810c8bd3bd686849f34a6e6b4e42b8525eac74b02e5ebc8",
+  "generatedAt": "2026-07-01T10:15:38.732Z",
+  "codeExample": "let tenantId: string = \"5f8f8c1a2e9b3c001c2a9b2d\";\nlet userId: string = \"user_98765\";\n\nlet updateBody: UpdateTenantUserBody = {\n  email: \"jane.smith@example.com\",\n  role: \"moderator\",\n  isActive: false,\n};\n\nlet updateComments: string = \"Deactivated user due to policy violation.\";\n\nlet result: UpdateTenantUserResponse = await updateTenantUser(tenantId, userId, updateBody, updateComments);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "save_comment",
+  "signatureHash": "7c83634ec0d1bd2446a734da548c9f5e3f80d722c8da83c4b064f703159c1600",
+  "generatedAt": "2026-07-01T10:15:26.480Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params = SaveCommentParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        create_comment_params: models::CreateCommentParams {\n            body: \"Great insights on the latest tech trends.\".to_string(),\n            user_id: \"user-789\".to_string(),\n            ..Default::default()\n        },\n        is_live: Some(true),\n        do_spam_check: Some(true),\n        send_emails: Some(false),\n        populate_notifications: Some(true),\n    };\n    let _response = save_comment(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

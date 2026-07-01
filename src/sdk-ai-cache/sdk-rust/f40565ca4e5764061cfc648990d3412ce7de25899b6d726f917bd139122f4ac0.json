@@ -1,0 +1,7 @@
+{
+  "method": "get_user_badge_progress_by_id",
+  "signatureHash": "f40565ca4e5764061cfc648990d3412ce7de25899b6d726f917bd139122f4ac0",
+  "generatedAt": "2026-07-01T10:15:21.410Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = GetUserBadgeProgressByIdParams {\n        tenant_id: \"acme-corp\".to_string(),\n        id: \"user-12345\".to_string(),\n    };\n    let _response = get_user_badge_progress_by_id(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

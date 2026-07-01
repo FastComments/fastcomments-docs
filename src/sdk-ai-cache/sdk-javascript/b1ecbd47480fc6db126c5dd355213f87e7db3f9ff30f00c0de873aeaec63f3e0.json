@@ -1,0 +1,7 @@
+{
+  "method": "deleteCommentVote",
+  "signatureHash": "b1ecbd47480fc6db126c5dd355213f87e7db3f9ff30f00c0de873aeaec63f3e0",
+  "generatedAt": "2026-07-01T10:15:38.251Z",
+  "codeExample": "async function removeVote() {\n  const tenantId: string = \"tenant_12345\";\n  const commentId: string = \"cmt_98765\";\n  const voteId: string = \"vote_abcde\";\n  const urlId: string = \"url_56789\";\n  const broadcastId: string = \"brd_001\";\n  const editKey: string = \"edit_456\";\n  // sso is optional and omitted\n\n  const response: DeleteCommentVoteResponse = await deleteCommentVote(\n    tenantId,\n    commentId,\n    voteId,\n    urlId,\n    broadcastId,\n    editKey\n  );\n\n  console.log(response);\n}\n\nremoveVote();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

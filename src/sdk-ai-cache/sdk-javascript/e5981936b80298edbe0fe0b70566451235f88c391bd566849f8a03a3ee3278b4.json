@@ -1,0 +1,7 @@
+{
+  "method": "resetUserNotifications",
+  "signatureHash": "e5981936b80298edbe0fe0b70566451235f88c391bd566849f8a03a3ee3278b4",
+  "generatedAt": "2026-07-01T10:15:38.722Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant-001\";\n  const afterId: string = \"notif-123\";\n  const afterCreatedAt: number = 1697049600; // example UNIX timestamp\n  const unreadOnly: boolean = true;\n  const dmOnly: boolean = false;\n  const noDm: boolean = false;\n  const sso: string = \"sso-token-xyz\";\n\n  const result: ResetUserNotificationsResponse1 = await resetUserNotifications(\n    tenantId,\n    afterId,\n    afterCreatedAt,\n    unreadOnly,\n    dmOnly,\n    noDm,\n    sso\n  );\n\n  console.log(result);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

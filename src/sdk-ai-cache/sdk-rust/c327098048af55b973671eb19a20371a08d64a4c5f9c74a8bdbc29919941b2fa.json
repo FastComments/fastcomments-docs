@@ -1,0 +1,7 @@
+{
+  "method": "delete_email_template",
+  "signatureHash": "c327098048af55b973671eb19a20371a08d64a4c5f9c74a8bdbc29919941b2fa",
+  "generatedAt": "2026-07-01T10:15:19.911Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = DeleteEmailTemplateParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"welcome-email\".to_string(),\n    };\n    let _ = delete_email_template(&config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getTrustFactor",
+  "signatureHash": "e525c088fdab61bd7dd7868f7fcc3ca03667e25061ac6dfa924160b22450e4d6",
+  "generatedAt": "2026-07-01T10:15:38.092Z",
+  "codeExample": "async function runDemo(): Promise<void> {\n    const trustFull: GetTrustFactorResponse = await getTrustFactor(\"user_12345\", \"tenant_abc\", \"sso_token_987\");\n    const trustUserOnly: GetTrustFactorResponse = await getTrustFactor(\"user_12345\");\n    console.log(trustFull, trustUserOnly);\n}\nrunDemo();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

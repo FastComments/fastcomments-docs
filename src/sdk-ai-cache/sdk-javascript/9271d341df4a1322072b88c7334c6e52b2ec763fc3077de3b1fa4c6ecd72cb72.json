@@ -1,0 +1,7 @@
+{
+  "method": "getV1PageLikes",
+  "signatureHash": "9271d341df4a1322072b88c7334c6e52b2ec763fc3077de3b1fa4c6ecd72cb72",
+  "generatedAt": "2026-07-01T10:15:37.576Z",
+  "codeExample": "async function fetchPageLikes() {\n  const tenantId: string = \"acme-corp-tenant-42\";\n  const urlId: string = \"blog-post-2024-06-typescript-best-practices\";\n\n  const likes: GetV1PageLikesResponse = await getV1PageLikes(tenantId, urlId);\n  console.log(likes);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

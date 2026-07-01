@@ -1,0 +1,7 @@
+{
+  "method": "update_tenant_user",
+  "signatureHash": "431c1201b1c6f371f2453dcd2649cc7528be37fb6b6dbcaa289789a9c4236e03",
+  "generatedAt": "2026-07-01T10:15:26.940Z",
+  "codeExample": "async fn run_example(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params = UpdateTenantUserParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"user-9876\".to_string(),\n        update_tenant_user_body: models::UpdateTenantUserBody {\n            email: \"jane.doe@example.com\".to_string(),\n            role: \"editor\".to_string(),\n        },\n        update_comments: Some(\"Promoted to editor\".to_string()),\n    };\n    let _ = update_tenant_user(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

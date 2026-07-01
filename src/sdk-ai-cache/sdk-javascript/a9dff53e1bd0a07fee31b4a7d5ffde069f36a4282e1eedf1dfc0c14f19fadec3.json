@@ -1,0 +1,7 @@
+{
+  "method": "unFlagComment",
+  "signatureHash": "a9dff53e1bd0a07fee31b4a7d5ffde069f36a4282e1eedf1dfc0c14f19fadec3",
+  "generatedAt": "2026-07-01T10:15:38.216Z",
+  "codeExample": "const tenantId: string = \"acme-corp\";\nconst commentId: string = \"cmt_123456\";\nconst userId: string = \"usr_98765\";\n\nconst result: UnFlagCommentResponse = await unFlagComment(tenantId, commentId, userId);\n\nconst anonCommentId: string = \"cmt_123457\";\nconst anonUserId: string = \"anon_abc123\";\n\nconst anonResult: UnFlagCommentResponse = await unFlagComment(tenantId, anonCommentId, undefined, anonUserId);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "updateFeedPost",
+  "signatureHash": "f1e3af0586621b79f0192609d375fcb0b481784e93c5a70cd7606b0ea65e55a0",
+  "generatedAt": "2026-07-01T10:15:39.670Z",
+  "codeExample": "const tenantId: string = \"tenant_3421\";\nconst postId: string = \"feedpost_a9b8c7\";\n\nconst feedPost: FeedPost = {\n  content: \"We've refreshed the announcement with the latest project milestones.\",\n  media: [\n    {\n      type: \"image\",\n      url: \"https://assets.example.com/images/milestone.png\",\n      caption: \"Project Milestones\"\n    } as FeedPostMediaItem\n  ],\n  link: {\n    url: \"https://example.com/project-updates\",\n    title: \"Project Updates\",\n    description: \"Read about the recent progress and upcoming goals.\"\n  } as FeedPostLink\n};\n\nconst result: UpdateFeedPostResponse = await updateFeedPost(tenantId, postId, feedPost);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

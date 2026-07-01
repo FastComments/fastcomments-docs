@@ -1,0 +1,7 @@
+{
+  "method": "get_manual_badges_for_user",
+  "signatureHash": "870a1bcc81c7c347a8737fb4a27be7e7ac941abe93dea73cbf7583a6474791e5",
+  "generatedAt": "2026-07-01T10:15:23.756Z",
+  "codeExample": "async fn fetch_badges(config: &configuration::Configuration) -> Result<(), Error> {\n    let params = GetManualBadgesForUserParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        badges_user_id: Some(\"user-42\".to_string()),\n        comment_id: Some(\"comment-987\".to_string()),\n        sso: Some(\"sso-abc123\".to_string()),\n    };\n    let _response: GetUserManualBadgesResponse = get_manual_badges_for_user(config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getCounts",
+  "signatureHash": "f8b8101fd256b59417530d3a49f88f0a00532b7aa0892927192ba89b4f6b9a4e",
+  "generatedAt": "2026-07-01T10:15:37.686Z",
+  "codeExample": "async function runExample() {\n    const tenantId: string = \"acme-corp\";\n    const ssoToken: string = \"sso-token-2024\";\n\n    const withBoth: GetCountsResponse = await getCounts(tenantId, ssoToken);\n    const withTenantOnly: GetCountsResponse = await getCounts(tenantId);\n    const withoutParams: GetCountsResponse = await getCounts();\n\n    console.log(withBoth, withTenantOnly, withoutParams);\n}\nrunExample();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

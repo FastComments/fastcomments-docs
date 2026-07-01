@@ -1,0 +1,7 @@
+{
+  "method": "send_invite",
+  "signatureHash": "8bf4aba88a081281f144eac1530d241a254acd3270b1515867add0ae01bf401c",
+  "generatedAt": "2026-07-01T10:15:23.230Z",
+  "codeExample": "async fn run_example(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params = SendInviteParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"news/article\".to_string(),\n        from_name: \"John Doe\".to_string(),\n        message: Some(\"Welcome to the platform\".to_string()),\n        ..Default::default()\n    };\n    let _ = send_invite(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "bulk_aggregate_question_results",
+  "signatureHash": "ca0d785c317a0a2e5989c95329964a369634e89016bc71d313e5c80e6aa04288",
+  "generatedAt": "2026-07-01T10:15:23.896Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let request = models::BulkAggregateQuestionResultsRequest {\n        question_ids: vec![\"q123\".into(), \"q456\".into()],\n        time_bucket: \"daily\".into(),\n    };\n    let params = BulkAggregateQuestionResultsParams {\n        tenant_id: \"acme-corp-tenant\".into(),\n        bulk_aggregate_question_results_request: request,\n        force_recalculate: Some(true),\n    };\n    let _response = bulk_aggregate_question_results(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

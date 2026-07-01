@@ -1,0 +1,7 @@
+{
+  "method": "unBlockUserFromComment",
+  "signatureHash": "1cd653bd00f1f941f292ac0470146ab5570756e6b250ee95a945cbb1152dc330",
+  "generatedAt": "2026-07-01T10:15:38.283Z",
+  "codeExample": "async function demoUnblock() {\n  const tenantId: string = \"acme-corp-tenant\";\n  const commentId: string = \"cmt_9f8b7a6d\";\n\n  const params: UnBlockFromCommentParams = {\n    reason: \"User resolved the issue\",\n    notifyUser: true\n  };\n\n  const userId: string = \"usr_12345\";\n\n  const result: UnBlockUserFromCommentResponse = await unBlockUserFromComment(\n    tenantId,\n    commentId,\n    params,\n    userId\n    // anonUserId omitted\n  );\n\n  console.log(result);\n}\ndemoUnblock();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "updateModerator",
+  "signatureHash": "8132043378afb746c1f1d1b96c30f5df977c60e5a77411da19c9503709ca5df1",
+  "generatedAt": "2026-07-01T10:15:37.927Z",
+  "codeExample": "async function demoUpdateModerator(): Promise<void> {\n    const tenantId: string = \"tenant_42abc\";\n    const moderatorId: string = \"moderator_8f9e\";\n    const updateBody: UpdateModeratorBody = {\n        isActive: true,\n        role: \"admin\",\n        // optional field\n        notes: \"Promoted to senior moderator\"\n    };\n    const result: UpdateModeratorResponse = await updateModerator(tenantId, moderatorId, updateBody);\n    console.log(result);\n}\n\ndemoUpdateModerator();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

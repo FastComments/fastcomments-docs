@@ -1,0 +1,7 @@
+{
+  "method": "get_v2_page_react_users",
+  "signatureHash": "072685de0692e34b1a254096c5d951c84a5810efd26c414d90e7cca17ee8be09",
+  "generatedAt": "2026-07-01T10:15:30.454Z",
+  "codeExample": "async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params = GetV2PageReactUsersParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        url_id: \"news/article\".to_string(),\n        id: \"react567\".to_string(),\n        page: Some(1),\n        per_page: Some(50),\n        ..Default::default()\n    };\n    let _response = get_v2_page_react_users(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

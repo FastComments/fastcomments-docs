@@ -1,0 +1,7 @@
+{
+  "method": "getUserInternalProfile",
+  "signatureHash": "a4f09fd30855ce661c7ce52835da148521fb2db471e51ee05abb3480611778ad",
+  "generatedAt": "2026-07-01T10:15:38.093Z",
+  "codeExample": "(async () => {\n  const fullProfile: GetUserInternalProfileResponse1 = await getUserInternalProfile({\n    commentId: \"cmt_12345\",\n    tenantId: \"tenant_67890\",\n    sso: \"sso_token_abcdef\"\n  });\n\n  const partialProfile: GetUserInternalProfileResponse1 = await getUserInternalProfile({\n    commentId: \"cmt_98765\"\n  });\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

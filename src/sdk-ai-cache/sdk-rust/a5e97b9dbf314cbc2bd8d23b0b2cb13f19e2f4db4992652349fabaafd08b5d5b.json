@@ -1,0 +1,7 @@
+{
+  "method": "put_domain_config",
+  "signatureHash": "a5e97b9dbf314cbc2bd8d23b0b2cb13f19e2f4db4992652349fabaafd08b5d5b",
+  "generatedAt": "2026-07-01T10:15:23.980Z",
+  "codeExample": "async fn update_domain(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let update_params = models::UpdateDomainConfigParams {\n        enable_comments: Some(true),\n        moderation_level: Some(\"strict\".to_string()),\n        max_comment_length: Some(500),\n        ..Default::default()\n    };\n    let params = PutDomainConfigParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        domain_to_update: \"news.example.com\".to_string(),\n        update_domain_config_params: update_params,\n    };\n    let _resp: PutDomainConfigResponse = put_domain_config(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "update_user_notification_comment_subscription_status",
+  "signatureHash": "3caf1968593f5359ce4474e88fff3e02cc3a805cc32ee9dc2cae4f502bba91d7",
+  "generatedAt": "2026-07-01T10:15:25.188Z",
+  "codeExample": "async fn run_example(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params = UpdateUserNotificationCommentSubscriptionStatusParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        notification_id: \"comment-reply\".to_string(),\n        opted_in_or_out: \"opted_in\".to_string(),\n        comment_id: \"12345\".to_string(),\n        sso: Some(\"user-sso-token\".to_string()),\n    };\n    let _response = update_user_notification_comment_subscription_status(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

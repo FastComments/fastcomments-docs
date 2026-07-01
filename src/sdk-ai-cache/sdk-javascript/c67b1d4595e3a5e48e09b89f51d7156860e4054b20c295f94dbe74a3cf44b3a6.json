@@ -1,0 +1,7 @@
+{
+  "method": "getTenantPackages",
+  "signatureHash": "c67b1d4595e3a5e48e09b89f51d7156860e4054b20c295f94dbe74a3cf44b3a6",
+  "generatedAt": "2026-07-01T10:15:38.577Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant_67890';\n  const skip: number = 30;\n\n  const packagesWithSkip: GetTenantPackagesResponse1 = await getTenantPackages(tenantId, skip);\n  const packagesWithoutSkip: GetTenantPackagesResponse1 = await getTenantPackages(tenantId);\n\n  console.log(packagesWithSkip, packagesWithoutSkip);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

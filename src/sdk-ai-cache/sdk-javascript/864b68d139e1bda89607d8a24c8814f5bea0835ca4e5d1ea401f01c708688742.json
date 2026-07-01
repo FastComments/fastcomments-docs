@@ -1,0 +1,7 @@
+{
+  "method": "getTranslations",
+  "signatureHash": "864b68d139e1bda89607d8a24c8814f5bea0835ca4e5d1ea401f01c708688742",
+  "generatedAt": "2026-07-01T10:15:36.956Z",
+  "codeExample": "(async () => {\n  const namespace: string = 'blog';\n  const component: string = 'comment-editor';\n  const locale: string = 'fr-FR';\n  const useFullTranslationIds: boolean = true;\n\n  const basicTranslations: GetTranslationsResponse1 = await getTranslations(namespace, component);\n  const fullTranslations: GetTranslationsResponse1 = await getTranslations(namespace, component, locale, useFullTranslationIds);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

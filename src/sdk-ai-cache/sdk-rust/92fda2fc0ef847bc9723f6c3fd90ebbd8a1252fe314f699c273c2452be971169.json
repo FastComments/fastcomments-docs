@@ -1,0 +1,7 @@
+{
+  "method": "get_comment_children",
+  "signatureHash": "92fda2fc0ef847bc9723f6c3fd90ebbd8a1252fe314f699c273c2452be971169",
+  "generatedAt": "2026-07-01T10:15:18.722Z",
+  "codeExample": "async fn fetch_children(config: &configuration::Configuration) -> Result<(), Error> {\n    let params = GetCommentChildrenParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"news/article/comment-9876\".to_string(),\n        sso: Some(\"user-42\".to_string()),\n    };\n    let _response: ModerationApiChildCommentsResponse = get_comment_children(config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

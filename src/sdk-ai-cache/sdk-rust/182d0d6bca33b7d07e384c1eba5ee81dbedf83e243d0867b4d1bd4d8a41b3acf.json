@@ -1,0 +1,7 @@
+{
+  "method": "put_reopen_thread",
+  "signatureHash": "182d0d6bca33b7d07e384c1eba5ee81dbedf83e243d0867b4d1bd4d8a41b3acf",
+  "generatedAt": "2026-07-01T10:15:25.690Z",
+  "codeExample": "async fn reopen_thread_example(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params = PutReopenThreadParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        url_id: \"news/article-123\".to_string(),\n        sso: Some(\"user-42\".to_string()),\n    };\n    let _response: ApiEmptyResponse = put_reopen_thread(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

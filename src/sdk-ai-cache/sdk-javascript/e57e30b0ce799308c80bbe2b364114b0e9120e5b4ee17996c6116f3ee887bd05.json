@@ -1,0 +1,7 @@
+{
+  "method": "getModerator",
+  "signatureHash": "e57e30b0ce799308c80bbe2b364114b0e9120e5b4ee17996c6116f3ee887bd05",
+  "generatedAt": "2026-07-01T10:15:38.504Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"acme-corp-001\";\n  const id: string = \"mod-12345\";\n\n  const result: GetModeratorResponse1 = await getModerator(tenantId, id);\n\n  const moderatorName: string | undefined = result.moderator?.name;\n  console.log(moderatorName);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

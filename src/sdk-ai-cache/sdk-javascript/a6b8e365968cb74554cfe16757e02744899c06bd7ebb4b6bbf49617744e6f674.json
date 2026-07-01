@@ -1,0 +1,7 @@
+{
+  "method": "postCommentsByIds",
+  "signatureHash": "a6b8e365968cb74554cfe16757e02744899c06bd7ebb4b6bbf49617744e6f674",
+  "generatedAt": "2026-07-01T10:15:39.378Z",
+  "codeExample": "const commentsByIdsParams: CommentsByIdsParams = {\n  commentIds: ['cmt001', 'cmt002'],\n  includeUserInfo: true,\n  includeThreadInfo: false,\n} as CommentsByIdsParams;\n\nconst fullResponse: PostCommentsByIdsResponse = await postCommentsByIds(\n  commentsByIdsParams,\n  'tenant-12345',\n  'sso-token-xyz'\n);\n\nconst minimalResponse: PostCommentsByIdsResponse = await postCommentsByIds(\n  commentsByIdsParams\n);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

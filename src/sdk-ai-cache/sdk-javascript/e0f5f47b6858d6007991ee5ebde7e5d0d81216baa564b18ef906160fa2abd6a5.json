@@ -1,0 +1,7 @@
+{
+  "method": "getUserReactsPublic",
+  "signatureHash": "e0f5f47b6858d6007991ee5ebde7e5d0d81216baa564b18ef906160fa2abd6a5",
+  "generatedAt": "2026-07-01T10:15:37.643Z",
+  "codeExample": "async function demo() {\n  const tenantId: string = \"tenant_12345\";\n  const postIds: string[] = [\"post_1a2b3c\", \"post_4d5e6f\"];\n  const ssoToken: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...\";\n\n  const fullResponse: GetUserReactsPublicResponse = await getUserReactsPublic(tenantId, postIds, ssoToken);\n  const minimalResponse: GetUserReactsPublicResponse = await getUserReactsPublic(tenantId);\n}\n\ndemo();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

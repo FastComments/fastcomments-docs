@@ -1,0 +1,7 @@
+{
+  "method": "getManualBadges",
+  "signatureHash": "a93e55059646d8c9678fc9accf7d2d7aa83b03936908c5abc76551fc53a2fd51",
+  "generatedAt": "2026-07-01T10:15:37.764Z",
+  "codeExample": "async function fetchBadges() {\n  const tenantId: string = \"tenant_987654321\";\n  const ssoToken: string = \"sso_ABCdef123456\";\n\n  // Call with both optional parameters\n  const responseFull: GetManualBadgesResponse = await getManualBadges(tenantId, ssoToken);\n  console.log(responseFull);\n\n  // Call with only tenantId\n  const responseTenantOnly: GetManualBadgesResponse = await getManualBadges(tenantId);\n  console.log(responseTenantOnly);\n}\n\nfetchBadges();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

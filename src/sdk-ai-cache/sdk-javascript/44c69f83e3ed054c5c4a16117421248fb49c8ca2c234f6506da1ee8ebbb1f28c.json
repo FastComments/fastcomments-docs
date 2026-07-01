@@ -1,0 +1,7 @@
+{
+  "method": "getVotes",
+  "signatureHash": "44c69f83e3ed054c5c4a16117421248fb49c8ca2c234f6506da1ee8ebbb1f28c",
+  "generatedAt": "2026-07-01T10:15:38.332Z",
+  "codeExample": "async function fetchVotes(): Promise<void> {\n  const tenantId: string = \"acme-corp-01\";\n  const urlId: string = \"article-2024-05-15\";\n\n  const response: GetVotesResponse1 = await getVotes(tenantId, urlId);\n\n  // Example of accessing an optional field in the response\n  const firstVoteId: string | undefined = response?.votes?.[0]?.id;\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

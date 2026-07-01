@@ -1,0 +1,7 @@
+{
+  "method": "post_adjust_comment_votes",
+  "signatureHash": "7a53aacca3aca884359cc4ef8bbaf532736558828f6b0d57417e26812d51120e",
+  "generatedAt": "2026-07-01T10:15:23.403Z",
+  "codeExample": "async fn adjust_votes_example(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params = PostAdjustCommentVotesParams {\n        tenant_id: \"acme-corp\".to_string(),\n        comment_id: \"comment-9876\".to_string(),\n        adjust_comment_votes_params: models::AdjustCommentVotesParams::default(),\n        broadcast_id: Some(\"broadcast-2023-11\".to_string()),\n        sso: Some(\"sso-xyz\".to_string()),\n    };\n    let _response = post_adjust_comment_votes(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

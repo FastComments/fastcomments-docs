@@ -1,0 +1,7 @@
+{
+  "method": "post_set_comment_review_status",
+  "signatureHash": "839fcc38d1c3fdc9c6074d2f1d97961de87ecad905e83533d8fa7a6f7f552c65",
+  "generatedAt": "2026-07-01T10:15:19.627Z",
+  "codeExample": "async fn update_review_status(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params = PostSetCommentReviewStatusParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"comment-98765\".to_string(),\n        reviewed: Some(true),\n        broadcast_id: Some(\"broadcast-2023-summer\".to_string()),\n        sso: Some(\"sso-user-42\".to_string()),\n    };\n    post_set_comment_review_status(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

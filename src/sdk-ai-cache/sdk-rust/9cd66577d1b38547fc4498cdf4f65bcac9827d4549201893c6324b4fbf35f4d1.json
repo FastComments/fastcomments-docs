@@ -1,0 +1,7 @@
+{
+  "method": "delete_email_template_render_error",
+  "signatureHash": "9cd66577d1b38547fc4498cdf4f65bcac9827d4549201893c6324b4fbf35f4d1",
+  "generatedAt": "2026-07-01T10:15:24.722Z",
+  "codeExample": "async fn example(config: &configuration::Configuration) -> Result<(), Error> {\n    let params = DeleteEmailTemplateRenderErrorParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"welcome-email\".to_string(),\n        error_id: \"render-failure-123\".to_string(),\n    };\n    let _ = delete_email_template_render_error(config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

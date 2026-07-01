@@ -1,0 +1,7 @@
+{
+  "method": "get_tenant",
+  "signatureHash": "9fb02e03fafeafbef387c100eeae5b4a12d446cf79441c044afb32c2295787f3",
+  "generatedAt": "2026-07-01T10:15:25.713Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = GetTenantParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"news/article\".to_string(),\n        include_billing: Some(true),\n    };\n    let _response: GetTenantResponse = get_tenant(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

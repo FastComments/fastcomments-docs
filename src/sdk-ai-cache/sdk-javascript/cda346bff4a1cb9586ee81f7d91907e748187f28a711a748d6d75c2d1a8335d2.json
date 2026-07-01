@@ -1,0 +1,7 @@
+{
+  "method": "createUserBadge",
+  "signatureHash": "cda346bff4a1cb9586ee81f7d91907e748187f28a711a748d6d75c2d1a8335d2",
+  "generatedAt": "2026-07-01T10:15:38.394Z",
+  "codeExample": "const tenantId: string = \"company-42\";\n\nconst badgeParams: CreateUserBadgeParams = {\n  name: \"Community Champion\",\n  iconUrl: \"https://assets.example.com/badges/champion.png\",\n  // description is optional and omitted here\n};\n\nconst result: CreateUserBadgeResponse = await createUserBadge(tenantId, badgeParams);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

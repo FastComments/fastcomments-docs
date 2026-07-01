@@ -1,0 +1,7 @@
+{
+  "method": "getFeedPostsStats",
+  "signatureHash": "e2cec67f21840d2378b92a490e753a4340e8bac58aeaaea638ebc8f8b25149a8",
+  "generatedAt": "2026-07-01T10:15:15.032Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nstd::vector<utility::string_t> postIds = {\n    utility::conversions::to_string_t(\"post-001\"),\n    utility::conversions::to_string_t(\"post-002\")\n};\nboost::optional<utility::string_t> sso = utility::conversions::to_string_t(\"user@example.com\");\n\napi->getFeedPostsStats(tenantId, postIds, sso)\n    .then([](std::shared_ptr<FeedPostsStatsResponse> response) {\n        (void)response;\n    });",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

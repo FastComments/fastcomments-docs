@@ -1,0 +1,7 @@
+{
+  "method": "delete_v2_page_react",
+  "signatureHash": "0f6de31f1fefa34142175c22bb56e358a2bcc21d54cc924495363b19766e880d",
+  "generatedAt": "2026-07-01T10:15:27.468Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params = DeleteV2PageReactParams {\n        tenant_id: \"acme-corp-tenant\".into(),\n        url_id: \"news/article\".into(),\n        id: \"react-987\".into(),\n    };\n    let _response: CreateV1PageReact = delete_v2_page_react(&config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

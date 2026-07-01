@@ -1,0 +1,7 @@
+{
+  "method": "create_email_template",
+  "signatureHash": "471be8e4c01d1652b6dd887a2361ff5ed5a23ed4529de3dd3225543e6961d561",
+  "generatedAt": "2026-07-01T10:15:22.563Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = CreateEmailTemplateParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        create_email_template_body: models::CreateEmailTemplateBody {\n            name: \"welcome\".to_string(),\n            subject: \"Welcome to Acme\".to_string(),\n            html_content: \"<h1>Welcome</h1>\".to_string(),\n            plain_text_content: Some(\"Welcome to Acme\".to_string()),\n        },\n    };\n    let _response = create_email_template(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "create_v2_page_react",
+  "signatureHash": "c3e2d6bcdc2071afe868afd596e7c31b0f369a0da14f448a9c6937d09a2a3f0c",
+  "generatedAt": "2026-07-01T10:15:25.828Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params = CreateV2PageReactParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        url_id: \"news/article\".to_string(),\n        id: \"comment-123\".to_string(),\n        title: Some(\"Breaking News\".to_string()),\n    };\n    let _react = create_v2_page_react(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

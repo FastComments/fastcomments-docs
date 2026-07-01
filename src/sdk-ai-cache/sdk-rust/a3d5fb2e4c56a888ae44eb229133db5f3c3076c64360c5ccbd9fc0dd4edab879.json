@@ -1,0 +1,7 @@
+{
+  "method": "get_counts",
+  "signatureHash": "a3d5fb2e4c56a888ae44eb229133db5f3c3076c64360c5ccbd9fc0dd4edab879",
+  "generatedAt": "2026-07-01T10:15:25.305Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params = GetCountsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        sso: Some(\"news/article\".to_string()),\n    };\n    let _response = get_counts(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

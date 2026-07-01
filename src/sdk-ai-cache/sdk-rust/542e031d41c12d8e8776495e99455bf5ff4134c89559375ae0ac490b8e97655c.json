@@ -1,0 +1,7 @@
+{
+  "method": "reset_user_notifications",
+  "signatureHash": "542e031d41c12d8e8776495e99455bf5ff4134c89559375ae0ac490b8e97655c",
+  "generatedAt": "2026-07-01T10:15:21.053Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = ResetUserNotificationsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        after_id: Some(\"notif-12345\".to_string()),\n        after_created_at: Some(1_640_995_200),\n        unread_only: Some(true),\n        dm_only: Some(false),\n        no_dm: Some(true),\n        sso: Some(\"sso-provider\".to_string()),\n    };\n    let _response: ResetUserNotificationsResponse =\n        reset_user_notifications(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

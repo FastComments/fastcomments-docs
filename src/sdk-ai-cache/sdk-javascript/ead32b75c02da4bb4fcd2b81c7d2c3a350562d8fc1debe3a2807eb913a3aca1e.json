@@ -1,0 +1,7 @@
+{
+  "method": "getUserBadgeProgressById",
+  "signatureHash": "ead32b75c02da4bb4fcd2b81c7d2c3a350562d8fc1debe3a2807eb913a3aca1e",
+  "generatedAt": "2026-07-01T10:15:38.723Z",
+  "codeExample": "async function demo(): Promise<void> {\n    const tenantId: string = \"acme-corp\";\n    const userId: string = \"user-42\";\n    const result: GetUserBadgeProgressByIdResponse = await getUserBadgeProgressById(tenantId, userId);\n    const progress: UserBadgeProgress | undefined = result.progress;\n    const earnedAt: Date | undefined = progress?.earnedAt;\n    console.log(`Badge earned at: ${earnedAt?.toISOString() ?? \"not earned yet\"}`);\n}\ndemo();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

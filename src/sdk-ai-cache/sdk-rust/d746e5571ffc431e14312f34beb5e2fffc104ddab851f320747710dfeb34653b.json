@@ -1,0 +1,7 @@
+{
+  "method": "update_comment",
+  "signatureHash": "d746e5571ffc431e14312f34beb5e2fffc104ddab851f320747710dfeb34653b",
+  "generatedAt": "2026-07-01T10:15:24.208Z",
+  "codeExample": "async fn run_update() -> Result<(), Error> {\n    let updatable = models::UpdatableCommentParams {\n        content: \"Edited comment about the latest news article\".to_string(),\n        ..Default::default()\n    };\n    let params = UpdateCommentParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"comment-789\".to_string(),\n        updatable_comment_params: updatable,\n        context_user_id: Some(\"reader-42\".to_string()),\n        do_spam_check: Some(true),\n        is_live: Some(true),\n    };\n    let _ = update_comment(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "createV1PageReact",
+  "signatureHash": "297a0445846137df08892d3eeac32dfc297df6c81024eb444e87817f786843da",
+  "generatedAt": "2026-07-01T10:15:38.269Z",
+  "codeExample": "const tenantId: string = \"tenant_12345\";\nconst urlId: string = \"article-2024-06-improvements\";\nconst title: string = \"FastComments API Integration Guide\";\n\nconst responseWithTitle: CreateV1PageReactResponse = await createV1PageReact(tenantId, urlId, title);\nconst responseWithoutTitle: CreateV1PageReactResponse = await createV1PageReact(tenantId, urlId);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

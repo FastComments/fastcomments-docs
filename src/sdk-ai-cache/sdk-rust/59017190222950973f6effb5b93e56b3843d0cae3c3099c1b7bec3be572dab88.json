@@ -1,0 +1,7 @@
+{
+  "method": "get_pending_webhook_events",
+  "signatureHash": "59017190222950973f6effb5b93e56b3843d0cae3c3099c1b7bec3be572dab88",
+  "generatedAt": "2026-07-01T10:15:23.544Z",
+  "codeExample": "async fn demo() -> Result<(), Error> {\n    let params = GetPendingWebhookEventsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: Some(\"comment-123\".to_string()),\n        external_id: Some(\"external-789\".to_string()),\n        event_type: Some(\"comment_created\".to_string()),\n        domain: Some(\"news.example.com\".to_string()),\n        attempt_count_gt: Some(1.0),\n        skip: Some(0.0),\n    };\n    let _response = get_pending_webhook_events(&config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

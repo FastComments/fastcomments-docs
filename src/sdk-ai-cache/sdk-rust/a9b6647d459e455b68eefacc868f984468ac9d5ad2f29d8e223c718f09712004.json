@@ -1,0 +1,7 @@
+{
+  "method": "delete_comment_public",
+  "signatureHash": "a9b6647d459e455b68eefacc868f984468ac9d5ad2f29d8e223c718f09712004",
+  "generatedAt": "2026-07-01T10:15:25.754Z",
+  "codeExample": "async fn run_delete() -> Result<(), Error> {\n    let params = DeleteCommentPublicParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"cmt-12345\".to_string(),\n        broadcast_id: \"news/article-6789\".to_string(),\n        edit_key: Some(\"edit-abc123\".to_string()),\n        sso: Some(\"sso-token-xyz\".to_string()),\n    };\n    let response = delete_comment_public(&configuration, params).await?;\n    let _deleted: PublicApiDeleteCommentResponse = response;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

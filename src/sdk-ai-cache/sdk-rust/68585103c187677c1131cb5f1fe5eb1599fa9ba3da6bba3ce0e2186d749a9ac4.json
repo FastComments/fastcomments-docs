@@ -1,0 +1,7 @@
+{
+  "method": "delete_moderation_vote",
+  "signatureHash": "68585103c187677c1131cb5f1fe5eb1599fa9ba3da6bba3ce0e2186d749a9ac4",
+  "generatedAt": "2026-07-01T10:15:27.091Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = DeleteModerationVoteParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"news/article-42\".to_string(),\n        vote_id: \"vote-12345\".to_string(),\n        broadcast_id: Some(\"broadcast-987\".to_string()),\n        sso: None,\n    };\n    let _response: VoteDeleteResponse = delete_moderation_vote(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

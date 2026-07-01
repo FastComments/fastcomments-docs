@@ -1,0 +1,7 @@
+{
+  "method": "get_user_notifications",
+  "signatureHash": "92070b573014b63dbedc1b24248aab60288fb3217dce3d41d4fe127ab4526258",
+  "generatedAt": "2026-07-01T10:15:27.052Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = GetUserNotificationsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        url_id: Some(\"news/article\".to_string()),\n        page_size: Some(20),\n        after_id: None,\n        include_context: Some(true),\n        after_created_at: None,\n        unread_only: Some(false),\n        dm_only: Some(false),\n        no_dm: Some(true),\n        include_translations: Some(false),\n        include_tenant_notifications: Some(true),\n        sso: None,\n    };\n    let _resp = get_user_notifications(&config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

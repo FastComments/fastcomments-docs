@@ -1,0 +1,7 @@
+{
+  "method": "lock_comment",
+  "signatureHash": "32f205f5d85c053be875c6f9450d75b03023e0d626deb343f63bba0b6684c268",
+  "generatedAt": "2026-07-01T10:15:24.487Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = LockCommentParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"cmt-9876\".to_string(),\n        broadcast_id: \"news/article\".to_string(),\n        sso: Some(\"user-sso-token\".to_string()),\n    };\n    let _resp = lock_comment(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

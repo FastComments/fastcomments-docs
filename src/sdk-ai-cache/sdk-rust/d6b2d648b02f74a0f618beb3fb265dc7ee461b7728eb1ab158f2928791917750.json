@@ -1,0 +1,7 @@
+{
+  "method": "delete_tenant_package",
+  "signatureHash": "d6b2d648b02f74a0f618beb3fb265dc7ee461b7728eb1ab158f2928791917750",
+  "generatedAt": "2026-07-01T10:15:26.124Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params = DeleteTenantPackageParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"premium-plan\".to_string(),\n        force: Some(true),\n    };\n    delete_tenant_package(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

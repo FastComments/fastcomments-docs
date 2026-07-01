@@ -1,0 +1,7 @@
+{
+  "method": "put_remove_badge",
+  "signatureHash": "7d8bf7cc1d87766bb1113a8b7b2d8ec800eeba4bc87ae67f768817cae89ab35d",
+  "generatedAt": "2026-07-01T10:15:22.057Z",
+  "codeExample": "async fn remove_badge_example(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params = PutRemoveBadgeParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        badge_id: \"news-contributor\".to_string(),\n        user_id: Some(\"user-42\".to_string()),\n        comment_id: Some(\"comment-12345\".to_string()),\n        broadcast_id: None,\n        sso: Some(\"sso-key-xyz\".to_string()),\n    };\n    let _response: RemoveUserBadgeResponse = put_remove_badge(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

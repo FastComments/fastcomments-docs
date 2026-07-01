@@ -1,0 +1,7 @@
+{
+  "method": "create_feed_post",
+  "signatureHash": "3d666afa2d0b7ee359b1990e975e4595f39a82012216bfd8727b7bbcaf4cd3a0",
+  "generatedAt": "2026-07-01T10:15:27.294Z",
+  "codeExample": "async fn run_example(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params = CreateFeedPostParams {\n        tenant_id: \"acme-corp-tenant\".into(),\n        create_feed_post_params: models::CreateFeedPostParams {\n            text: \"Launching new features\".into(),\n            media: vec![],\n        },\n        broadcast_id: Some(\"broadcast-2023-09\".into()),\n        is_live: Some(true),\n        do_spam_check: Some(true),\n        skip_dup_check: Some(false),\n    };\n    let _response = create_feed_post(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

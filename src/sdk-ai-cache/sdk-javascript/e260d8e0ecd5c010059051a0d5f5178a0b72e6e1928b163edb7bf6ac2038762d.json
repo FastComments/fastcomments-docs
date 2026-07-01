@@ -1,0 +1,7 @@
+{
+  "method": "getBanUsersFromComment",
+  "signatureHash": "e260d8e0ecd5c010059051a0d5f5178a0b72e6e1928b163edb7bf6ac2038762d",
+  "generatedAt": "2026-07-01T10:15:38.093Z",
+  "codeExample": "async function demoGetBanUsers() {\n  const commentId: string = \"cmt_5f8e3a9b2d\";\n  const tenantId: string = \"tenant_42\";\n  const sso: string = \"sso_token_abc123\";\n\n  // Call with all parameters\n  const fullResult: GetBanUsersFromCommentResponse = await getBanUsersFromComment(commentId, tenantId, sso);\n  console.log(fullResult);\n\n  // Call with only the required parameter\n  const minimalResult: GetBanUsersFromCommentResponse = await getBanUsersFromComment(commentId);\n  console.log(minimalResult);\n}\n\ndemoGetBanUsers();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

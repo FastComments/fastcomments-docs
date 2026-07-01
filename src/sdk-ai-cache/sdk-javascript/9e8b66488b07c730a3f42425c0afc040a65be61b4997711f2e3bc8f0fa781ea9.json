@@ -1,0 +1,7 @@
+{
+  "method": "getQuestionConfigs",
+  "signatureHash": "9e8b66488b07c730a3f42425c0afc040a65be61b4997711f2e3bc8f0fa781ea9",
+  "generatedAt": "2026-07-01T10:15:37.015Z",
+  "codeExample": "async function fetchQuestionConfigs() {\n    const tenantId: string = \"tenant-9876\";\n\n    // Call without the optional 'skip' parameter\n    const configsWithoutSkip: GetQuestionConfigsResponse1 = await getQuestionConfigs(tenantId);\n\n    // Call with the optional 'skip' parameter\n    const skip: number = 10;\n    const configsWithSkip: GetQuestionConfigsResponse1 = await getQuestionConfigs(tenantId, skip);\n\n    console.log(configsWithoutSkip, configsWithSkip);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

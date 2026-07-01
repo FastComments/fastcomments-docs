@@ -1,0 +1,7 @@
+{
+  "method": "patch_sso_user",
+  "signatureHash": "85a290faf0b1483b0b84aa3e934d0dc198f4804af5ded12320e2fcbfaa020270",
+  "generatedAt": "2026-07-01T10:15:24.994Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let config = configuration::Configuration::default();\n    let update_data = models::UpdateApissoUserData {\n        email: Some(\"john.doe@example.com\".to_string()),\n        name: Some(\"John Doe\".to_string()),\n    };\n    let params = PatchSsoUserParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"user-12345\".to_string(),\n        update_apisso_user_data: update_data,\n        update_comments: Some(true),\n    };\n    let _response: PatchSsoUserApiResponse = patch_sso_user(&config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

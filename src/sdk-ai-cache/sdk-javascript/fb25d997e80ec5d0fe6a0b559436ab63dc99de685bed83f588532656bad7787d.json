@@ -1,0 +1,7 @@
+{
+  "method": "renderEmailTemplate",
+  "signatureHash": "fb25d997e80ec5d0fe6a0b559436ab63dc99de685bed83f588532656bad7787d",
+  "generatedAt": "2026-07-01T10:15:38.766Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"acme-corp-01\";\n  const templateBody: RenderEmailTemplateBody = {\n    templateId: \"welcome-email\",\n    placeholders: {\n      userName: \"John Doe\",\n      signupDate: \"2024-04-01\"\n    }\n  };\n  const locale: string = \"en-US\";\n  const result: RenderEmailTemplateResponse1 = await renderEmailTemplate(tenantId, templateBody, locale);\n  console.log(result);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

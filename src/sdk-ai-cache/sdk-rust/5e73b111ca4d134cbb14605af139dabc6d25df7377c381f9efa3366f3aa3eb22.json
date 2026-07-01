@@ -1,0 +1,7 @@
+{
+  "method": "get_moderators",
+  "signatureHash": "5e73b111ca4d134cbb14605af139dabc6d25df7377c381f9efa3366f3aa3eb22",
+  "generatedAt": "2026-07-01T10:15:20.398Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = GetModeratorsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        skip: Some(20.0),\n    };\n    let _response = get_moderators(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

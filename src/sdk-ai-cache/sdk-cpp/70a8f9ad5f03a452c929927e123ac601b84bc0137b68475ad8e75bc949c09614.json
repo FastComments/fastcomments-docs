@@ -1,0 +1,7 @@
+{
+  "method": "getUserNotifications",
+  "signatureHash": "70a8f9ad5f03a452c929927e123ac601b84bc0137b68475ad8e75bc949c09614",
+  "generatedAt": "2026-07-01T10:15:15.872Z",
+  "codeExample": "utility::string_t tenantId = utility::string_t(\"my-tenant-123\");\nGetUserNotificationsOptions options;\noptions.limit = boost::optional<int>(20);\noptions.unreadOnly = boost::optional<bool>(true);\napi->getUserNotifications(tenantId, options)\n    .then([](pplx::task<std::shared_ptr<GetMyNotificationsResponse>> task){\n        auto resp = task.get();\n        auto notifications = std::make_shared<GetMyNotificationsResponse>(*resp);\n    });",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

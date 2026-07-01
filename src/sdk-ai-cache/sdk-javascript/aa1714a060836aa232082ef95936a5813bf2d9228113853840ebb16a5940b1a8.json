@@ -1,0 +1,7 @@
+{
+  "method": "postBanUserUndo",
+  "signatureHash": "aa1714a060836aa232082ef95936a5813bf2d9228113853840ebb16a5940b1a8",
+  "generatedAt": "2026-07-01T10:15:37.539Z",
+  "codeExample": "const undoParams: BanUserUndoParams = {\n  userId: \"user-8421\",\n  commentId: \"comment-6702\",\n  reason: \"Accidental ban\"\n};\n\nconst tenantId: string = \"tenant-7f9e\";\nconst ssoToken: string = \"sso-4b2c1d\";\n\nasync function runUndo() {\n  const resultAll: PostBanUserUndoResponse = await postBanUserUndo(undoParams, tenantId, ssoToken);\n  console.log(resultAll);\n\n  const resultMinimal: PostBanUserUndoResponse = await postBanUserUndo(undoParams);\n  console.log(resultMinimal);\n}\n\nrunUndo();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

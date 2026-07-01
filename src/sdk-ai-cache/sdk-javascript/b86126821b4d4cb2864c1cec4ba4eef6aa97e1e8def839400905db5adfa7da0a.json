@@ -1,0 +1,7 @@
+{
+  "method": "deleteEmailTemplateRenderError",
+  "signatureHash": "b86126821b4d4cb2864c1cec4ba4eef6aa97e1e8def839400905db5adfa7da0a",
+  "generatedAt": "2026-07-01T10:15:37.727Z",
+  "codeExample": "async function executeDelete() {\n  const tenantId: string = \"tenant_12345\";\n  const templateId: string = \"email_tpl_001\";\n  const errorId: string = \"render_err_2023\";\n\n  const result: DeleteEmailTemplateRenderErrorResponse = await deleteEmailTemplateRenderError(\n    tenantId,\n    templateId,\n    errorId\n  );\n\n  console.log(result);\n}\n\nexecuteDelete();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

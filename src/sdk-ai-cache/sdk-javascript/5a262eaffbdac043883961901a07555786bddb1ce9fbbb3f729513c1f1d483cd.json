@@ -1,0 +1,7 @@
+{
+  "method": "addSSOUser",
+  "signatureHash": "5a262eaffbdac043883961901a07555786bddb1ce9fbbb3f729513c1f1d483cd",
+  "generatedAt": "2026-07-01T10:15:36.803Z",
+  "codeExample": "const tenantId: string = \"tenant_12345\";\n\nconst newUser: CreateAPISSOUserData = {\n  userId: \"sso_user_987\",\n  name: \"Jane Doe\",\n  email: \"jane.doe@example.com\",\n  // optional field\n  avatarUrl: \"https://example.com/avatars/jane.jpg\",\n};\n\nconst result: AddSSOUserAPIResponse = await addSSOUser(tenantId, newUser);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

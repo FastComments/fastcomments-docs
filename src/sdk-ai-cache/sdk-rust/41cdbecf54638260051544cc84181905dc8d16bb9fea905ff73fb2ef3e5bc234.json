@@ -1,0 +1,7 @@
+{
+  "method": "patch_hash_tag",
+  "signatureHash": "41cdbecf54638260051544cc84181905dc8d16bb9fea905ff73fb2ef3e5bc234",
+  "generatedAt": "2026-07-01T10:15:25.091Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = PatchHashTagParams {\n        tenant_id: \"acme-corp-tenant\".into(),\n        tag: \"news/article\".into(),\n        update_hash_tag_body: Some(models::UpdateHashTagBody::default()),\n    };\n    let _response = patch_hash_tag(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

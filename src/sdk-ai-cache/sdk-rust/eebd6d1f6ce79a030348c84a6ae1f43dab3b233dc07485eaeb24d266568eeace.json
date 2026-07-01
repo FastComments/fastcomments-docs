@@ -1,0 +1,7 @@
+{
+  "method": "un_pin_comment",
+  "signatureHash": "eebd6d1f6ce79a030348c84a6ae1f43dab3b233dc07485eaeb24d266568eeace",
+  "generatedAt": "2026-07-01T10:15:26.739Z",
+  "codeExample": "async fn unpin_example(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params = UnPinCommentParams {\n        tenant_id: \"acme-corp\".to_string(),\n        comment_id: \"comment-12345\".to_string(),\n        broadcast_id: \"news/article-6789\".to_string(),\n        sso: Some(\"sso-token-xyz\".to_string()),\n    };\n    let _response: ChangeCommentPinStatusResponse = un_pin_comment(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

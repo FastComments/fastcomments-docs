@@ -1,0 +1,7 @@
+{
+  "method": "add_domain_config",
+  "signatureHash": "93a835063052ed03df9a0460f9e3f3db4026a9f0d50b43a4a22bfa6709fab416",
+  "generatedAt": "2026-07-01T10:15:23.565Z",
+  "codeExample": "let params = AddDomainConfigParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    add_domain_config_params: models::AddDomainConfigParams {\n        domain: \"news.example.com\".to_string(),\n        config_type: \"article\".to_string(),\n        is_active: true,\n        description: Some(\"News article domain\".to_string()),\n    },\n};\n\nlet response = add_domain_config(&configuration, params).await?;",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

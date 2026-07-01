@@ -1,0 +1,7 @@
+{
+  "method": "deleteSubscription",
+  "signatureHash": "693a86f3d51bbacf8fbe01a3879505cf1c7b907ecaa873f1153f6b92e5a5b5c7",
+  "generatedAt": "2026-07-01T10:15:37.978Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant_9876\";\n  const subscriptionId: string = \"sub_54321\";\n  const userId: string = \"user_abc123\";\n\n  // With optional userId\n  const responseWithUser: DeleteSubscriptionAPIResponse = await deleteSubscription(tenantId, subscriptionId, userId);\n\n  // Without optional userId\n  const responseWithoutUser: DeleteSubscriptionAPIResponse = await deleteSubscription(tenantId, subscriptionId);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

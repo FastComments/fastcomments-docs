@@ -1,0 +1,7 @@
+{
+  "method": "getUserBanPreference",
+  "signatureHash": "87cae75c2e4bcc4e1a4ec54e6564ae174ee49cb2a75acf2aa7865e5399c15e3b",
+  "generatedAt": "2026-07-01T10:15:37.298Z",
+  "codeExample": "async function demoGetUserBanPreference(): Promise<void> {\n  const tenantId: string = \"acme-corp-tenant-2024\";\n  const sso: string = \"sso-token-9f8b7a6c\";\n\n  const result: GetUserBanPreferenceResponse = await getUserBanPreference(tenantId, sso);\n  console.log(result);\n}\n\ndemoGetUserBanPreference();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

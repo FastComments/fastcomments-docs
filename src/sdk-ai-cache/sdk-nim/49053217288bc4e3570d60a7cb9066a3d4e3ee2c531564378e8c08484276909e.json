@@ -1,0 +1,7 @@
+{
+  "method": "updateQuestionConfig",
+  "signatureHash": "49053217288bc4e3570d60a7cb9066a3d4e3ee2c531564378e8c08484276909e",
+  "generatedAt": "2026-07-01T10:15:15.594Z",
+  "codeExample": "let (apiResp, httpResp) = client.updateQuestionConfig(\n  tenantId = \"my-tenant-123\",\n  id = \"question-456\",\n  updateQuestionConfigBody = UpdateQuestionConfigBody()\n)\n\nif apiResp.isSome:\n  let resp = apiResp.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}
