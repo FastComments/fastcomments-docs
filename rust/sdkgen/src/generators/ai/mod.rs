@@ -13,7 +13,7 @@
 //! - `src/sdk-doc-generators/rust-ai-generator.js`
 //! - `src/sdk-doc-generators/cpp-ai-generator.js`
 //! - `src/sdk-doc-generators/nim-ai-generator.js`
-//! - `src/sdk-doc-generators/openai-client.js`
+//! - `src/sdk-doc-generators/the legacy Node LLM client`
 
 pub mod common;
 pub mod cpp;

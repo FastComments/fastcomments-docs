@@ -1,6 +1,6 @@
 //! Per-language prompt builders. Each is a verbatim port of the
 //! matching `build{Lang}Prompt` in
-//! `src/sdk-doc-generators/openai-client.js:151-359`. Byte-for-byte
+//! `src/sdk-doc-generators/the legacy Node LLM client:151-359`. Byte-for-byte
 //! string output is required so the cache key SHA256 matches the
 //! Node-computed value and we hit the existing `sdk-ai-cache/` files.
 
@@ -277,7 +277,7 @@ pub fn nim_prompt(method: &super::nim_parser::Method) -> String {
         |p| &p.type_,
         |p| p.required,
         "optional",
-        // Skip the httpClient parameter (matches openai-client.js:322).
+        // Skip the httpClient parameter (matches the legacy Node LLM client:322).
         |name| name == "httpClient",
     );
     lines.push(String::new());

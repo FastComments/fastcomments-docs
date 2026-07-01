@@ -1,6 +1,6 @@
 //! LLM chat-completions client with disk-backed cache + model fallback.
 //!
-//! Mirrors `src/sdk-doc-generators/openai-client.js`:
+//! Mirrors `src/sdk-doc-generators/the legacy Node LLM client`:
 //! - Cache directory laid out the same way (`<cache_dir>/<sha256>.json`).
 //! - Cache file body matches the Node shape `{ method, codeExample, timestamp, model }`.
 //! - Retries the primary model, then any `LLM_FALLBACK_MODELS`, for
@@ -88,7 +88,7 @@ impl LlmClient {
     }
 
     /// Compute the cache key for a (method, prompt, model) tuple,
-    /// matching Node's `openai-client.js:58-72`.
+    /// matching Node's `the legacy Node LLM client:58-72`.
     ///
     /// Critical detail: Node does
     ///     const data = { methodName: method.name, ..., httpMethod: method.httpMethod, ... };
@@ -141,7 +141,7 @@ impl LlmClient {
     /// Generate a completion, with cache lookup keyed by
     /// SHA256(stable_stringify({ method, prompt, model })).
     /// `method_meta` should mirror the Node call site at
-    /// `src/sdk-doc-generators/openai-client.js:58-72`.
+    /// `src/sdk-doc-generators/the legacy Node LLM client:58-72`.
     pub async fn generate(&self, method_meta: &Value, prompt: &str) -> Result<LlmResponse> {
         let cache_key = self.cache_key(method_meta, prompt);
         let cache_file = self.cache_dir.join(format!("{cache_key}.json"));
@@ -231,7 +231,7 @@ impl LlmClient {
 
     async fn call_llm(&self, api_key: &str, model: &str, prompt: &str) -> Result<String> {
         // Three things to keep in lockstep with Node
-        // (src/sdk-doc-generators/openai-client.js:115-126, 386-416):
+        // (src/sdk-doc-generators/the legacy Node LLM client:115-126, 386-416):
         //
         // 1. Send a language-specific system persona, not just the user
         //    prompt. The persona materially affects the LLM's tone and
@@ -276,7 +276,7 @@ impl LlmClient {
         Ok(strip_code_fences(raw))
     }
 
-    /// Mirrors Node's `getSystemMessage` at openai-client.js:115-126.
+    /// Mirrors Node's `getSystemMessage` at the legacy Node LLM client:115-126.
     /// Language-specific persona; falls back to TypeScript for any
     /// language we haven't seen (matches Node's else branch).
     fn system_message(&self) -> &'static str {
@@ -299,7 +299,7 @@ impl LlmClient {
 
 /// Strip leading ` ```typescript\n` / ` ```ts\n` / ` ```rust\n` / ` ```\n`
 /// and trailing `\n``` ` from the model's reply, matching Node's
-/// `cleanCode` chain at openai-client.js:411-416. Also `.trim()`s,
+/// `cleanCode` chain at the legacy Node LLM client:411-416. Also `.trim()`s,
 /// which Node does up-front on line 408.
 fn strip_code_fences(s: &str) -> String {
     let trimmed = s.trim();
@@ -369,7 +369,7 @@ fn default_fallbacks(primary: &str) -> Vec<String> {
 }
 
 /// Matches the on-disk cache shape written by
-/// `src/sdk-doc-generators/openai-client.js:419-427`:
+/// `src/sdk-doc-generators/the legacy Node LLM client:419-427`:
 ///
 /// ```json
 /// {
@@ -427,7 +427,7 @@ fn now_iso8601() -> String {
 #[cfg(test)]
 mod cache_key_tests {
     //! These tests pin the cache-key construction byte-for-byte against
-    //! Node's behavior in `src/sdk-doc-generators/openai-client.js`.
+    //! Node's behavior in `src/sdk-doc-generators/the legacy Node LLM client`.
     //!
     //! Regenerate the expected hashes with the snippet at the top of
     //! `client.rs`'s `cache_key` docstring if Node's `generateCacheKey`
@@ -442,10 +442,10 @@ mod cache_key_tests {
         LlmClient {
             cache_dir: tmp,
             api_key: None,
-            model: "gpt-5-mini".to_string(),
+            model: "Qwen/Qwen2.5-72B-Instruct".to_string(),
             language: "typescript".to_string(),
             http: reqwest::Client::new(),
-            fallback_models: vec!["gpt-5-mini".to_string()],
+            fallback_models: vec!["Qwen/Qwen2.5-72B-Instruct".to_string()],
             endpoint_url: chat_completions_url(),
         }
     }
@@ -463,7 +463,7 @@ mod cache_key_tests {
         });
         assert_eq!(
             client.cache_key(&method, "TEST PROMPT"),
-            "5febcc618c0d8ef55592f33ef320532a0554f336a98325e83b30e3664b05b311"
+            "bfdd410d1ca038c833e3f31d7c460517fae569e5a5b0549fae1b21939eb3ef70"
         );
     }
 
@@ -482,7 +482,7 @@ mod cache_key_tests {
         });
         assert_eq!(
             client.cache_key(&method, "TEST PROMPT"),
-            "c6faa321a52fc23cd8abc9373c1079e7e3f16fb8a662da5a1192f7a3b2af1ae6"
+            "bf79b92af7de651995aca7ba7e3106c1a29f9ac0ff37fc1d27d5e23ab80cf1df"
         );
     }
 
@@ -503,7 +503,7 @@ mod cache_key_tests {
         });
         assert_eq!(
             client.cache_key(&method, "TEST PROMPT"),
-            "f78cedb63356648c100ea7de881e1ffb5a63296cc1df267c82c8502aea590276"
+            "bf84455d1452535d9a701e331770769d4527b2c6482b8f2024136ecdf20915ae"
         );
     }
 
@@ -536,14 +536,14 @@ mod cache_key_tests {
         c.language = "nim".into();
         assert!(c.system_message().starts_with("You are an expert Nim"));
         // Unknown language falls back to TypeScript persona (matches
-        // Node's else branch at openai-client.js:125).
+        // Node's else branch at the legacy Node LLM client:125).
         c.language = "haskell".into();
         assert!(c.system_message().starts_with("You are an expert TypeScript"));
     }
 
     #[test]
     fn strip_code_fences_handles_node_variants() {
-        // Mirrors src/sdk-doc-generators/openai-client.js:411-416.
+        // Mirrors src/sdk-doc-generators/the legacy Node LLM client:411-416.
         // Each prefix appears at start, paired with the closing ```.
         assert_eq!(strip_code_fences("```typescript\nfoo\n```"), "foo");
         assert_eq!(strip_code_fences("```ts\nfoo\n```"), "foo");

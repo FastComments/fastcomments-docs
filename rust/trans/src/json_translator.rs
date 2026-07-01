@@ -47,24 +47,34 @@ impl JsonTranslator {
         prompt: &str,
         label: &str,
     ) -> Result<serde_json::Map<String, Value>> {
-        let completion = self.completion_client().complete(system, prompt, label).await?;
-        let cleaned = strip_json_fences(&completion.text);
-        let parsed: Value = serde_json::from_str(&cleaned).with_context(|| {
-            format!(
-                "parse LLM response as JSON for {label} (first 200 chars: {first}...)",
-                first = cleaned.chars().take(200).collect::<String>()
-            )
-        })?;
-        let obj = parsed.as_object().ok_or_else(|| {
-            anyhow::anyhow!("LLM response for {label} was not a JSON object")
-        })?;
-        info!(model = %completion.model_used, %label, "translated");
-        Ok(obj.clone())
+        // Parse INSIDE the retry loop: a 200 response carrying malformed
+        // or truncated JSON is a retryable failure (retry same model,
+        // then fall back), not a hard abort. Previously this parse ran
+        // after the retry loop returned, so one flaky completion failed
+        // the whole build.
+        let (obj, model_used) = self
+            .completion_client()
+            .complete_validated(system, prompt, label, |text| {
+                let cleaned = strip_json_fences(text);
+                let parsed: Value = serde_json::from_str(&cleaned).with_context(|| {
+                    format!(
+                        "parse LLM response as JSON for {label} (first 200 chars: {first}...)",
+                        first = cleaned.chars().take(200).collect::<String>()
+                    )
+                })?;
+                let obj = parsed.as_object().ok_or_else(|| {
+                    anyhow::anyhow!("LLM response for {label} was not a JSON object")
+                })?;
+                Ok(obj.clone())
+            })
+            .await?;
+        info!(model = %model_used, %label, "translated");
+        Ok(obj)
     }
 }
 
 /// Mirrors Node's strip-markdown-code-block logic at
-/// translate-with-gpt.js:499-508 / :722-731:
+/// the legacy Node translator:499-508 / :722-731:
 ///   if startsWith ```json -> strip 7 chars
 ///   else if startsWith ``` -> strip 3 chars
 ///   if endsWith ``` -> strip 3 chars

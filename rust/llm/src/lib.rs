@@ -1,7 +1,7 @@
 //! Shared LLM chat-completions client.
 //!
 //! Used by both `fcdocs-sdkgen`'s four AI doc generators and `fcdocs-trans`.
-//! Mirrors `src/sdk-doc-generators/openai-client.js` so the existing
+//! Mirrors `src/sdk-doc-generators/the legacy Node LLM client` so the existing
 //! `sdk-ai-cache/` cache hits remain valid after the migration.
 
 pub mod cache_key;

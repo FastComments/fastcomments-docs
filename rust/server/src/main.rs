@@ -572,7 +572,7 @@ fn contains_prompt_injection(text: &str) -> bool {
     INJECTION_PATTERNS.iter().any(|re| re.is_match(text))
 }
 
-/// Port of reorderResultsWithOpenAI from
+/// Port of reorderResultsWithLLM from
 /// src/server-search-engine.js:37-130.
 async fn reorder_with_llm(
     client: &reqwest::Client,

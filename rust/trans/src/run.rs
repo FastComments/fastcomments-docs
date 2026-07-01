@@ -1,4 +1,4 @@
-//! `trans run` — port of `src/translate-with-gpt.js`.
+//! `trans run` — port of `src/the legacy Node translator`.
 //!
 //! Walks the same per-locale items tree as `trans check`, identifies
 //! missing or stale translations, and calls the LLM for each. Prompts
@@ -39,10 +39,10 @@ use crate::ui;
 
 const DEFAULT_MODEL: &str = "openai/gpt-oss-120b-Turbo";
 
-/// Matches Node's translate-with-gpt.js CLI default
+/// Matches Node's the legacy Node translator CLI default
 /// (`parseArgs() options.concurrency = 20` at line 1001). The
 /// in-process function defaults (lines 322, 858) are 5, but the
-/// CLI overrides them when called via `node src/translate-with-gpt.js`,
+/// CLI overrides them when called via `node src/the legacy Node translator`,
 /// which is what build.sh invokes. Mirroring the CLI default so a
 /// production trans run finishes in the same wall time.
 const DEFAULT_CONCURRENCY: usize = 20;
@@ -56,11 +56,11 @@ const CACHE_FLUSH_INTERVAL: Duration = Duration::from_secs(15);
 // BTreeMap serializes directly to a sorted-key JSON object via
 // serde_json, matching Node's translation-cache.json layout. Shared by
 // the markdown items path AND the meta.json path (Node's
-// translate-with-gpt.js uses one cache for both, keyed differently).
+// the legacy Node translator uses one cache for both, keyed differently).
 type CacheMap = BTreeMap<String, String>;
 
 /// CLI options for `trans run`. Mirror of Node parseArgs() at
-/// src/translate-with-gpt.js:996-1024.
+/// src/the legacy Node translator:996-1024.
 #[derive(Debug, Default, Clone)]
 pub struct Options {
     /// `--locale <code>`: limit to one locale across all three phases.
@@ -81,7 +81,7 @@ pub struct Options {
 }
 
 /// Parse CLI args after the `run` subcommand. Mirrors Node parseArgs()
-/// at src/translate-with-gpt.js:996-1024 byte-for-byte: same flag
+/// at src/the legacy Node translator:996-1024 byte-for-byte: same flag
 /// names, same `--help` text shape, same defaults.
 pub fn parse_options<I: IntoIterator<Item = String>>(args: I) -> Result<Options> {
     let mut opts = Options::default();
@@ -348,7 +348,7 @@ pub async fn run_with(opts: Options) -> Result<()> {
     info!(success = s, failed = f, skipped = k, "markdown items phase complete");
 
     // Phase 2: UI strings. Per-locale batches, sequential
-    // (translate-with-gpt.js processes them with a single for-of loop
+    // (the legacy Node translator processes them with a single for-of loop
     // at line 590). Has its own cache (src/ui-translation-cache.json).
     let translator = Arc::new(JsonTranslator {
         client: client.clone(),
@@ -494,7 +494,7 @@ async fn process_one_task(
     let started = std::time::Instant::now();
 
     // en_us special-case: copy source verbatim. Mirrors
-    // translate-with-gpt.js:362-366.
+    // the legacy Node translator:362-366.
     let translation = if task.locale == "en_us" {
         source.clone()
     } else {
@@ -506,7 +506,7 @@ async fn process_one_task(
         sanitize_inline_code_attrs(&raw)
     };
 
-    // Validate inline-code count parity. Mirrors translate-with-gpt.js:299-311.
+    // Validate inline-code count parity. Mirrors the legacy Node translator:299-311.
     if task.locale != "en_us" {
         let src_counts = count_inline_code(&source);
         let tr_counts = count_inline_code(&translation);
@@ -602,7 +602,7 @@ struct Task {
     source_path: PathBuf,
 }
 
-/// Filtered task discovery. Mirrors translate-with-gpt.js::buildTaskList
+/// Filtered task discovery. Mirrors the legacy Node translator::buildTaskList
 /// (line 950-994):
 ///   - `filter_locale = Some(loc)` restricts to that locale.
 ///   - `filter_guide = Some(id)` restricts to that guide.
@@ -689,7 +689,7 @@ fn cache_key(guide_id: &str, locale: &str, filename: &str) -> String {
     format!("{guide_id}/{locale}/{filename}")
 }
 
-/// Verbatim port of `getSystemMessage` at translate-with-gpt.js:139-148.
+/// Verbatim port of `getSystemMessage` at the legacy Node translator:139-148.
 fn system_message(locale: &str, locales: &Locales) -> String {
     let native = locales.native_name_or_key(locale);
     format!(
@@ -701,7 +701,7 @@ fn system_message(locale: &str, locales: &Locales) -> String {
     )
 }
 
-/// Verbatim port of `buildPrompt` at translate-with-gpt.js:156-188.
+/// Verbatim port of `buildPrompt` at the legacy Node translator:156-188.
 fn build_prompt(content: &str, locale: &str, locales: &Locales) -> String {
     let native = locales.native_name_or_key(locale);
     let mut lines: Vec<String> = Vec::new();
@@ -734,7 +734,7 @@ fn build_prompt(content: &str, locale: &str, locales: &Locales) -> String {
     lines.join("\n")
 }
 
-/// Verbatim port of `sanitizeInlineCodeAttrs` at translate-with-gpt.js:45-62.
+/// Verbatim port of `sanitizeInlineCodeAttrs` at the legacy Node translator:45-62.
 fn sanitize_inline_code_attrs(text: &str) -> String {
     static RE: Lazy<Regex> = Lazy::new(|| {
         Regex::new(r"(?s)\[inline-code-attrs-start ([\s\S]*?) inline-code-attrs-end\]")
@@ -798,8 +798,7 @@ async fn call_llm(
         Arc::new(api_key.to_string()),
         model.to_string(),
     );
-    let completion = cc.complete(system, prompt, filename).await?;
-    Ok(completion.text)
+    cc.complete(system, prompt, filename).await
 }
 
 use fcdocs_shared::repo::repo_root;
@@ -930,7 +929,7 @@ mod tests {
 #[cfg(test)]
 mod cli_tests {
     //! Argument parsing + filter wiring for `trans run`. The Node CLI
-    //! contract at src/translate-with-gpt.js:996-1024 is the spec.
+    //! contract at src/the legacy Node translator:996-1024 is the spec.
 
     use super::*;
     use fcdocs_shared::locales::Locale;
@@ -1195,7 +1194,7 @@ mod cli_tests {
             &locales_en_fr_de(),
             &http,
             "test-key",
-            "gpt-5-mini",
+            "Qwen/Qwen2.5-72B-Instruct",
             false,
         )
         .await
@@ -1215,7 +1214,7 @@ mod cli_tests {
 #[cfg(test)]
 mod prompt_parity_tests {
     //! Byte-for-byte parity between Rust system_message/build_prompt
-    //! and Node translate-with-gpt.js's getSystemMessage/buildPrompt.
+    //! and Node the legacy Node translator's getSystemMessage/buildPrompt.
     //!
     //! Lives inside run.rs (not tests/) so it imports the real
     //! `system_message` and `build_prompt` instead of re-implementing
@@ -1223,7 +1222,7 @@ mod prompt_parity_tests {
     //! function bodies, so any divergence in run.rs went undetected.
     //!
     //! The expected outputs are captured from the actual live Node
-    //! `TranslationClient` (`src/translate-with-gpt.js`) and embedded
+    //! `TranslationClient` (`src/the legacy Node translator`) and embedded
     //! via include_str! — no /tmp fixture files, no silent skips.
     //! Regenerate when the Node prompt shape genuinely changes:
     //!
@@ -1245,7 +1244,7 @@ mod prompt_parity_tests {
     use std::path::PathBuf;
 
     /// Captured by running the real TranslationClient in
-    /// src/translate-with-gpt.js against the inputs returned by
+    /// src/the legacy Node translator against the inputs returned by
     /// fixtures(). Re-captured whenever the Node prompts change.
     const NODE_FIXTURES: &str = include_str!("node_prompts_fixture.json");
 

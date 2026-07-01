@@ -1,6 +1,6 @@
 //! Deterministic cache key generation matching the Node
 //! `sortObjectKeys` + `JSON.stringify` + `sha256` chain in
-//! `src/sdk-doc-generators/openai-client.js:13-72`.
+//! `src/sdk-doc-generators/the legacy Node LLM client:13-72`.
 
 use serde_json::Value;
 use sha2::{Digest, Sha256};
@@ -119,7 +119,7 @@ mod tests {
     #[test]
     fn sha256_matches_node_for_simple_object() {
         // Cross-checked against the Node implementation in
-        // src/sdk-doc-generators/openai-client.js by running:
+        // src/sdk-doc-generators/the legacy Node LLM client by running:
         //   node -e "const c=require('crypto');const s=o=>JSON.stringify(
         //     (function r(x){if(x&&typeof x==='object'&&!Array.isArray(x)){
         //       const o={};for(const k of Object.keys(x).sort())o[k]=r(x[k]);return o;}

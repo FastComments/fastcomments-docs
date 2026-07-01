@@ -11,7 +11,7 @@
 
 /// Minimum source-file size (after `.trim()`) below which translation
 /// is a no-op. Mirrors the historic Node skip at
-/// `translate-with-gpt.js` for tiny `intro.md` / `conclusion.md` files
+/// `the legacy Node translator` for tiny `intro.md` / `conclusion.md` files
 /// that don't carry meaningful text.
 ///
 /// Used in TWO places that MUST agree:

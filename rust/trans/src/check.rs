@@ -285,7 +285,7 @@ fn audit_ui_translations(
 /// the case Node's check-translations.js:226-244 catches (no
 /// `meta_translated/meta_<locale>.json` file at all). `stale_count`
 /// extends that with hash-based staleness — the same check
-/// `translate-with-gpt.js:842` (`isCached`) uses to decide whether
+/// `the legacy Node translator:842` (`isCached`) uses to decide whether
 /// `trans run` would re-translate. Surfacing it here means `trans
 /// check` exits non-zero so build.sh branches into the translator,
 /// instead of reporting "all translations up to date" while
@@ -332,7 +332,7 @@ fn audit_meta_translations(
             continue;
         }
         // Hash the source meta.json once per guide. Mirrors
-        // translate-with-gpt.js:833-834.
+        // the legacy Node translator:833-834.
         let source_hash = match std::fs::read_to_string(&meta_path) {
             Ok(s) => Some(hash_content(&s)),
             Err(_) => None,
@@ -353,7 +353,7 @@ fn audit_meta_translations(
                 continue;
             }
             // File present. Compare cache entry against current source
-            // hash — same shape as translate-with-gpt.js's isCached.
+            // hash — same shape as the legacy Node translator's isCached.
             let Some(expected) = source_hash.as_deref() else {
                 continue;
             };

@@ -1,5 +1,5 @@
 //! UI strings translation pipeline. Port of
-//! `src/translate-with-gpt.js::processUITranslations` (lines 581-649)
+//! `src/the legacy Node translator::processUITranslations` (lines 581-649)
 //! and `translateUIStrings` (lines 451-573).
 //!
 //! For each non-default locale, build a single batch of all missing or
@@ -9,7 +9,7 @@
 //! translated key.
 //!
 //! Per-locale processing is sequential (matches Node — `for (const
-//! [locale, ...] of Object.entries)` at translate-with-gpt.js:590).
+//! [locale, ...] of Object.entries)` at the legacy Node translator:590).
 //! That keeps writes to translations.json deterministic since each
 //! per-locale batch is one merge + one save.
 
@@ -120,7 +120,7 @@ pub async fn process_all(
         }
 
         // en_us shortcut — Node copies source verbatim
-        // (translate-with-gpt.js:621). Save the cycle and the cost.
+        // (the legacy Node translator:621). Save the cycle and the cost.
         let translated: serde_json::Map<String, Value> = if locale_key == "en_us" {
             to_translate.clone()
         } else {
@@ -238,7 +238,7 @@ fn compute_needs(
     out
 }
 
-/// Mirrors translate-with-gpt.js:455-463. The system message names
+/// Mirrors the legacy Node translator:455-463. The system message names
 /// the target locale; the user prompt embeds a 2-space-indented JSON
 /// dump of the strings to translate.
 fn build_system_and_prompt(

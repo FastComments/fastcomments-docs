@@ -1,5 +1,5 @@
 //! meta.json translation pipeline. Port of
-//! `src/translate-with-gpt.js::processMetaJsonTranslations`
+//! `src/the legacy Node translator::processMetaJsonTranslations`
 //! (lines 857-942) + `translateMetaJson` (lines 659-813).
 //!
 //! For each guide × non-default-locale where the cached source hash
@@ -11,7 +11,7 @@
 //! `translation-cache.json` keyed by `{guideId}/{locale}/meta.json`.
 //!
 //! Per-(guide × locale) tasks run in parallel up to `concurrency`,
-//! matching Node's worker pool at translate-with-gpt.js:934-937.
+//! matching Node's worker pool at the legacy Node translator:934-937.
 
 use std::collections::BTreeMap;
 use std::path::Path;
@@ -278,7 +278,7 @@ async fn build_task_list(
     out
 }
 
-/// Mirrors translate-with-gpt.js:663-676 — flatten the strings the
+/// Mirrors the legacy Node translator:663-676 — flatten the strings the
 /// model needs to translate into a single map. Item index ordering
 /// must be preserved across the round-trip, so we use insertion-
 /// ordered Map (preserve_order on serde_json).
@@ -308,7 +308,7 @@ fn build_to_translate(meta: &Value) -> serde_json::Map<String, Value> {
     to
 }
 
-/// Mirrors translate-with-gpt.js:763-778. Returns a fully-rebuilt
+/// Mirrors the legacy Node translator:763-778. Returns a fully-rebuilt
 /// meta object with the same shape as the source, but with the
 /// translated `name` / `pageHeader` and item `name`/`subCat`.
 /// Per-item fields fall back to the original if a key is missing
@@ -354,7 +354,7 @@ fn merge_translated(
     out
 }
 
-/// Mirrors translate-with-gpt.js:678-686.
+/// Mirrors the legacy Node translator:678-686.
 fn build_system_and_prompt(
     locales: &Locales,
     locale_key: &str,

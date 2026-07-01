@@ -1,4 +1,4 @@
-//! Replaces `src/check-translations.js` + `src/translate-with-gpt.js` +
+//! Replaces `src/check-translations.js` + `src/the legacy Node translator` +
 //! `src/translation-snapshot.js` + cleanup utilities.
 //!
 //! Subcommands:
@@ -8,7 +8,7 @@
 //!   `run`     - translates everything `check` would flag. Three
 //!               phases in order: markdown items, UI strings,
 //!               meta.json. All three share the same on-disk caches
-//!               and prompt shapes as Node's translate-with-gpt.js.
+//!               and prompt shapes as Node's the legacy Node translator.
 //!   `cleanup` - empties stale translation files matching Node's
 //!               cleanup-empty-translations.js + cleanup-empty-generated.js.
 

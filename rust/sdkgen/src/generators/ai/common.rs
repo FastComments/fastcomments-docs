@@ -235,7 +235,7 @@ pub fn init_ai_context(
         anyhow::bail!("could not locate repo root from {:?}", ctx.repo_path);
     };
     let cache_dir = ai_cache_dir(&repo_root, &ctx.sdk.id);
-    // Primary model from LLM_MODEL, defaulting to DeepInfra gpt-oss Turbo.
+    // Primary model from LLM_MODEL, defaulting to the DeepInfra open model.
     let model =
         std::env::var("LLM_MODEL").unwrap_or_else(|_| "openai/gpt-oss-120b-Turbo".to_string());
     let llm = LlmClient::new(&cache_dir, &model, lang)?;
