@@ -1,0 +1,33 @@
+## Parametri
+
+| Ime | Tip | Lokacija | Obvezno | Opis |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+
+## Odgovor
+
+Vrne: `APIEmptyResponse`
+
+## Primer
+
+[inline-code-attrs-start title = 'Primer updateTenantPackage'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+import 'package:fastcomments_dart/api.dart';
+// TODO Nastavite avtorizacijo API ključa: api_key
+//defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKey = 'YOUR_API_KEY';
+// odkomentirajte spodaj za nastavitev predpone (npr. Bearer) za API ključ, po potrebi
+//defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
+
+final api_instance = DefaultApi();
+final tenantId = tenantId_example; // String | 
+final id = id_example; // String | 
+final updateTenantPackageBody = UpdateTenantPackageBody(); // UpdateTenantPackageBody | 
+
+try {
+    final result = api_instance.updateTenantPackage(tenantId, id, updateTenantPackageBody);
+    print(result);
+} catch (e) {
+    print('Exception when calling DefaultApi->updateTenantPackage: $e\n');
+}
+[inline-code-end]

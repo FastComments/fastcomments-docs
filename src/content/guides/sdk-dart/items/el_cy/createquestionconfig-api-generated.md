@@ -1,0 +1,31 @@
+## Παράμετροι
+
+| Όνομα | Τύπος | Θέση | Απαιτείται | Περιγραφή |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Ναι |  |
+
+## Απόκριση
+
+Επιστρέφει: `CreateQuestionConfigResponse`
+
+## Παράδειγμα
+
+[inline-code-attrs-start title = 'createQuestionConfig Παράδειγμα'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+import 'package:fastcomments_dart/api.dart';
+// TODO Διαμόρφωση εξουσιοδότησης κλειδιού API: api_key
+//defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKey = 'YOUR_API_KEY';
+// καταργήστε το σχόλιο παρακάτω για να ρυθμίσετε το πρόθεμα (π.χ. Bearer) για το κλειδί API, εάν χρειάζεται
+//defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
+
+final api_instance = DefaultApi();
+final tenantId = tenantId_example; // String | 
+final createQuestionConfigBody = CreateQuestionConfigBody(); // CreateQuestionConfigBody | 
+
+try {
+    final result = api_instance.createQuestionConfig(tenantId, createQuestionConfigBody);
+    print(result);
+} catch (e) {
+    print('Exception when calling DefaultApi->createQuestionConfig: $e\n');
+}
+[inline-code-end]

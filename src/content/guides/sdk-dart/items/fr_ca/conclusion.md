@@ -1,0 +1,10 @@
+## Besoin d'aide ?
+
+Si vous rencontrez des problèmes ou avez des questions concernant le SDK Dart, veuillez :
+
+- [Ouvrir un problème sur GitHub](https://github.com/FastComments/fastcomments-dart/issues)
+- [Contacter le support FastComments](https://fastcomments.com/auth/my-account/help)
+
+## Contribuer
+
+Les contributions sont les bienvenues ! Veuillez visiter le [référentiel GitHub](https://github.com/FastComments/fastcomments-dart) pour les directives de contribution.

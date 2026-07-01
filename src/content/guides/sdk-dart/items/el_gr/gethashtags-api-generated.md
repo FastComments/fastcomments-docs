@@ -1,0 +1,32 @@
+## Παράμετροι
+
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|------------|-------------|
+| tenantId | string | query | Ναι |  |
+| page | number | query | Όχι |  |
+
+## Απόκριση
+
+Επιστρέφει: `GetHashTagsResponse`
+
+## Παράδειγμα
+
+[inline-code-attrs-start title = 'Παράδειγμα getHashTags'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+import 'package:fastcomments_dart/api.dart';
+// TODO Διαμορφώστε την εξουσιοδότηση κλειδιού API: api_key
+//defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKey = 'YOUR_API_KEY';
+// Ανασχολιάστε το παρακάτω για να ρυθμίσετε το πρόθεμα (π.χ. Bearer) για το κλειδί API, αν χρειάζεται
+//defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
+
+final api_instance = DefaultApi();
+final tenantId = tenantId_example; // String | 
+final page = 1.2; // double | 
+
+try {
+    final result = api_instance.getHashTags(tenantId, page);
+    print(result);
+} catch (e) {
+    print('Exception when calling DefaultApi->getHashTags: $e\n');
+}
+[inline-code-end]

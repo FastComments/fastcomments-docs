@@ -1,0 +1,36 @@
+## Parametri
+
+| Ime | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Da |  |
+| id | string | path | Da |  |
+| contextUserId | string | query | Ne |  |
+| isLive | boolean | query | Ne |  |
+
+## Odgovor
+
+Vraća: `DeleteCommentResult`
+
+## Primer
+
+[inline-code-attrs-start title = 'deleteComment Primer'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+import 'package:fastcomments_dart/api.dart';
+// TODO Konfigurišite autorizaciju API ključa: api_key
+//defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKey = 'YOUR_API_KEY';
+// otkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
+//defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
+
+final api_instance = DefaultApi();
+final tenantId = tenantId_example; // String | 
+final id = id_example; // String | 
+final contextUserId = contextUserId_example; // String | 
+final isLive = true; // bool | 
+
+try {
+    final result = api_instance.deleteComment(tenantId, id, DeleteCommentOptions(contextUserId: contextUserId, isLive: isLive));
+    print(result);
+} catch (e) {
+    print('Izuzetak prilikom pozivanja DefaultApi->deleteComment: $e\n');
+}
+[inline-code-end]

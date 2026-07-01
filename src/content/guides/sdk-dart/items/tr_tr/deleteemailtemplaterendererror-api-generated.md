@@ -1,0 +1,34 @@
+## Parametreler
+
+| Ad | Tür | Konum | Gerekli | Açıklama |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| errorId | string | path | Yes |  |
+
+## Yanıt
+
+Döndürür: `APIEmptyResponse`
+
+## Örnek
+
+[inline-code-attrs-start title = 'deleteEmailTemplateRenderError Örneği'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+import 'package:fastcomments_dart/api.dart';
+// TODO API anahtarı yetkilendirmesini yapılandırın: api_key
+//defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKey = 'YOUR_API_KEY';
+// Aşağıdakini yorumdan çıkararak API anahtarı için ön ek (örn. Bearer) ayarlamak, gerekirse
+//defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
+
+final api_instance = DefaultApi();
+final tenantId = tenantId_example; // String | 
+final id = id_example; // String | 
+final errorId = errorId_example; // String | 
+
+try {
+    final result = api_instance.deleteEmailTemplateRenderError(tenantId, id, errorId);
+    print(result);
+} catch (e) {
+    print('Exception when calling DefaultApi->deleteEmailTemplateRenderError: $e\n');
+}
+[inline-code-end]

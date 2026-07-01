@@ -1,0 +1,32 @@
+Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
+Used by the comment widget to enrich users that just appeared via a presence event.  
+No page context: privacy is enforced uniformly (private profiles are masked).
+
+## Parameters
+
+| Nom | Type | Emplacement | Obligatoire | Description |
+|------|------|----------|----------|-------------|
+| tenantId | string | path | Oui |  |
+| ids | string | query | Oui | Identifiants d'utilisateur séparés par des virgules. |
+
+## Response
+
+Returns: `PageUsersInfoResponse`
+
+## Example
+
+[inline-code-attrs-start title = 'Exemple getUsersInfo'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+import 'package:fastcomments_dart/api.dart';
+
+final api_instance = PublicApi();
+final tenantId = tenantId_example; // Chaîne | 
+final ids = ids_example; // Chaîne | Identifiants d'utilisateur séparés par des virgules.
+
+try {
+    final result = api_instance.getUsersInfo(tenantId, ids);
+    print(result);
+} catch (e) {
+    print('Exception when calling PublicApi->getUsersInfo: $e\n');
+}
+[inline-code-end]

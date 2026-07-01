@@ -1,0 +1,31 @@
+## 参数
+
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
+| tenantId | string | path | Yes |  |
+| broadcastId | string | query | No |  |
+| sso | string | query | No |  |
+
+## 响应
+
+Returns: `CreateFeedPostResponse`
+
+## 示例
+
+[inline-code-attrs-start title = 'createFeedPostPublic 示例'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+import 'package:fastcomments_dart/api.dart';
+
+final api_instance = PublicApi();
+final tenantId = tenantId_example; // String | 
+final createFeedPostParams = CreateFeedPostParams(); // CreateFeedPostParams | 
+final broadcastId = broadcastId_example; // String | 
+final sso = sso_example; // String | 
+
+try {
+    final result = api_instance.createFeedPostPublic(tenantId, createFeedPostParams, CreateFeedPostPublicOptions(broadcastId: broadcastId, sso: sso));
+    print(result);
+} catch (e) {
+    print('Exception when calling PublicApi->createFeedPostPublic: $e\n');
+}
+[inline-code-end]

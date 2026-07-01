@@ -1,0 +1,39 @@
+## Parametri
+
+| Ime | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| isLive | boolean | query | No |  |
+| doSpamCheck | boolean | query | No |  |
+| sendEmails | boolean | query | No |  |
+| populateNotifications | boolean | query | No |  |
+
+## Odgovor
+
+Vraća: `SaveCommentsBulkResponse`
+
+## Primjer
+
+[inline-code-attrs-start title = 'saveCommentsBulk Primjer'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+import 'package:fastcomments_dart/api.dart';
+// TODO Konfigurišite autorizaciju API ključa: api_key
+//defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKey = 'YOUR_API_KEY';
+// odkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
+//defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
+
+final api_instance = DefaultApi();
+final tenantId = tenantId_example; // String | 
+final createCommentParams = [List<CreateCommentParams>()]; // List<CreateCommentParams> | 
+final isLive = true; // bool | 
+final doSpamCheck = true; // bool | 
+final sendEmails = true; // bool | 
+final populateNotifications = true; // bool | 
+
+try {
+    final result = api_instance.saveCommentsBulk(tenantId, createCommentParams, SaveCommentsBulkOptions(isLive: isLive, doSpamCheck: doSpamCheck, sendEmails: sendEmails, populateNotifications: populateNotifications));
+    print(result);
+} catch (e) {
+    print('Exception when calling DefaultApi->saveCommentsBulk: $e\n');
+}
+[inline-code-end]
