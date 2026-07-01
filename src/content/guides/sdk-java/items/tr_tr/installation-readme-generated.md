@@ -1,6 +1,6 @@
 ### Maven
 
-Projenizin POM'una Repsy deposunu ekleyin:
+Projenizin POM dosyasına Repsy deposunu ekleyin:
 
 ```xml
 <repositories>
@@ -16,32 +16,32 @@ Ardından ihtiyacınız olan bağımlılıkları ekleyin:
 
 ```xml
 <dependencies>
-    <!-- API İstemcisi -->
+    <!-- API Client -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>2.0.0</version>
+        <version>3.0.0</version>
     </dependency>
     
-    <!-- Çekirdek Kütüphane (SSO içerir) -->
+    <!-- Core Library (includes SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>2.0.0</version>
+        <version>3.0.0</version>
     </dependency>
     
-    <!-- PubSub Kütüphanesi (canlı etkinlikler için) -->
+    <!-- PubSub Library (for live events) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>2.0.0</version>
+        <version>3.0.0</version>
     </dependency>
 </dependencies>
 ```
 
 ### Gradle
 
-`build.gradle` dosyanıza Repsy deposunu ekleyin:
+Repsy deposunu **build.gradle** dosyanıza ekleyin:
 
 ```groovy
 repositories {
@@ -52,27 +52,27 @@ repositories {
 }
 
 dependencies {
-    // API İstemcisi
-    implementation "com.fastcomments:client:2.0.0"
+    // API Client
+    implementation "com.fastcomments:client:3.0.0"
     
-    // Çekirdek Kütüphane (SSO içerir)
-    implementation "com.fastcomments:core:2.0.0"
+    // Core Library (includes SSO)
+    implementation "com.fastcomments:core:3.0.0"
     
-    // PubSub Kütüphanesi (canlı etkinlikler için)
-    implementation "com.fastcomments:pubsub:2.0.0"
+    // PubSub Library (for live events)
+    implementation "com.fastcomments:pubsub:3.0.0"
 }
 ```
 
-### Library Contents
+### Kütüphane İçerikleri
 
-Bu kütüphane üç modül içerir. Oluşturulan API istemcisi, API ile çalışmayı kolaylaştıran el yazısı yardımcı işlevlerine sahip çekirdek Java kütüphanesi ve değişiklik akışlarına abone olmak için kullanılan `pubsub` modülü.
+Bu kütüphane üç modül içerir. Oluşturulan API istemcisi, API ile çalışmayı kolaylaştıran el yazısı yardımcı programlar içeren çekirdek Java kütüphanesi ve değişiklik akışlarına abone olmak için bir kütüphane olan `pubsub` modülü.
 
-- [API İstemci Kütüphanesi Belgeleri](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Çekirdek Kütüphane Belgeleri, SSO Örnekleri Dahil](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [PubSub Kütüphane Belgeleri](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [API İstemci Kütüphanesi Dokümantasyonu](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Çekirdek Kütüphane Dokümantasyonu, SSO Örnekleri Dahil](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [PubSub Kütüphane Dokümantasyonu](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### Public vs Secured APIs
+### Genel vs Güvenli API'ler
 
-API istemcisi için üç sınıf vardır: `DefaultApi`, `PublicApi` ve `ModerationApi`. `DefaultApi`, API anahtarınızı gerektiren yöntemleri içerirken, `PublicApi` kimlik doğrulama olmadan doğrudan bir tarayıcı/mobil cihaz vb. üzerinden yapılabilecek yöntemleri içerir.
+API istemcisi için üç sınıf vardır: `DefaultApi`, `PublicApi` ve `ModerationApi`. `DefaultApi`, API anahtarınızı gerektiren yöntemleri içerirken, `PublicApi` kimlik doğrulama gerektirmeden bir tarayıcı/mobil cihaz vb. üzerinden doğrudan yapılabilen yöntemleri içerir.
 
-`ModerationApi`, kapsamlı bir canlı ve hızlı denetleme API seti sunar. Her `ModerationApi` yöntemi bir `sso` parametresi alır ve SSO veya FastComments.com oturum çerezi aracılığıyla kimlik doğrulaması yapabilir.
+`ModerationApi`, canlı ve hızlı denetleme API'lerinin kapsamlı bir setini sağlar. Her `ModerationApi` yöntemi bir `sso` parametresi alır ve SSO veya bir FastComments.com oturum çerezi ile kimlik doğrulaması yapabilir.

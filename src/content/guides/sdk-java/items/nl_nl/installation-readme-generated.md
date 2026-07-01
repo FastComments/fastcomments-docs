@@ -1,6 +1,6 @@
 ### Maven
 
-Voeg de Repsy-repository toe aan de POM van je project:
+Voeg de Repsy‑repository toe aan de POM van je project:
 
 ```xml
 <repositories>
@@ -20,28 +20,28 @@ Voeg vervolgens de benodigde afhankelijkheden toe:
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>2.0.0</version>
+        <version>3.0.0</version>
     </dependency>
     
     <!-- Core Library (includes SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>2.0.0</version>
+        <version>3.0.0</version>
     </dependency>
     
     <!-- PubSub Library (for live events) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>2.0.0</version>
+        <version>3.0.0</version>
     </dependency>
 </dependencies>
 ```
 
 ### Gradle
 
-Voeg de Repsy-repository toe aan je **build.gradle**‑bestand:
+Voeg de Repsy‑repository toe aan je **build.gradle**‑bestand:
 
 ```groovy
 repositories {
@@ -53,26 +53,26 @@ repositories {
 
 dependencies {
     // API Client
-    implementation "com.fastcomments:client:2.0.0"
+    implementation "com.fastcomments:client:3.0.0"
     
     // Core Library (includes SSO)
-    implementation "com.fastcomments:core:2.0.0"
+    implementation "com.fastcomments:core:3.0.0"
     
     // PubSub Library (for live events)
-    implementation "com.fastcomments:pubsub:2.0.0"
+    implementation "com.fastcomments:pubsub:3.0.0"
 }
 ```
 
-### Library Contents
+### Bibliotheekinhoud
 
-Deze bibliotheek bevat drie modules. De gegenereerde API‑client, de kern‑Java‑bibliotheek die handgeschreven hulpprogramma’s bevat om het werken met de API gemakkelijker te maken, en de `pubsub`‑module die een bibliotheek is om je te abonneren op wijzigingsfeeds.
+Deze bibliotheek bevat drie modules: de gegenereerde API‑client, de kern‑Java‑bibliotheek die handgeschreven hulpprogramma’s bevat om het werken met de API makkelijker te maken, en de `pubsub`‑module, een bibliotheek voor het abonneren op wijzigingsfeeds.
 
-- [API‑clientbibliotheekdocumentatie](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Documentatie van de kernbibliotheek, inclusief SSO‑voorbeelden](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [PubSub‑bibliotheekdocumentatie](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [API Client Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [PubSub Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
 ### Publieke versus beveiligde API's
 
-Voor de API‑client zijn er drie klassen: `DefaultApi`, `PublicApi` en `ModerationApi`. De `DefaultApi` bevat methoden die je API‑sleutel vereisen, en de `PublicApi` bevat methoden die rechtstreeks vanuit een browser, mobiel apparaat, enzovoort kunnen worden aangeroepen zonder authenticatie.
+Voor de API‑client zijn er drie klassen, `DefaultApi`, `PublicApi` en `ModerationApi`. De `DefaultApi` bevat methoden die je API‑sleutel vereisen, en de `PublicApi` bevat methoden die rechtstreeks vanuit een browser/mobiel apparaat/etc. kunnen worden aangeroepen zonder authenticatie.
 
-De `ModerationApi` biedt een uitgebreide reeks live en snelle moderatie‑API’s. Elke `ModerationApi`‑methode accepteert een `sso`‑parameter en kan authenticeren via SSO of een FastComments.com‑sessie‑cookie.
+De `ModerationApi` biedt een uitgebreide reeks live‑ en snelle moderatie‑API’s. Elke `ModerationApi`‑methode accepteert een `sso`‑parameter en kan authenticeren via SSO of een FastComments.com‑sessie‑cookie.

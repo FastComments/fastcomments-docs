@@ -1,6 +1,6 @@
 ### Maven
 
-Add the Repsy repository to your project's POM:
+Добавете репозитория Repsy към вашия POM файл на проекта:
 
 ```xml
 <repositories>
@@ -12,36 +12,36 @@ Add the Repsy repository to your project's POM:
 </repositories>
 ```
 
-Then add the dependencies you need:
+След това добавете зависимостите, от които се нуждаете:
 
 ```xml
 <dependencies>
-    <!-- API Client -->
+    <!-- API клиент -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>2.0.0</version>
+        <version>3.0.0</version>
     </dependency>
     
-    <!-- Core Library (includes SSO) -->
+    <!-- Основна библиотека (включва SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>2.0.0</version>
+        <version>3.0.0</version>
     </dependency>
     
-    <!-- PubSub Library (for live events) -->
+    <!-- PubSub библиотека (за живи събития) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>2.0.0</version>
+        <version>3.0.0</version>
     </dependency>
 </dependencies>
 ```
 
 ### Gradle
 
-Add the Repsy repository to your build.gradle file:
+Добавете репозитория Repsy към вашия файл `build.gradle`:
 
 ```groovy
 repositories {
@@ -52,29 +52,27 @@ repositories {
 }
 
 dependencies {
-    // API Client
-    implementation "com.fastcomments:client:2.0.0"
+    // API клиент
+    implementation "com.fastcomments:client:3.0.0"
     
-    // Core Library (includes SSO)
-    implementation "com.fastcomments:core:2.0.0"
+    // Основна библиотека (включва SSO)
+    implementation "com.fastcomments:core:3.0.0"
     
-    // PubSub Library (for live events)
-    implementation "com.fastcomments:pubsub:2.0.0"
+    // PubSub библиотека (за живи събития)
+    implementation "com.fastcomments:pubsub:3.0.0"
 }
 ```
 
 ### Library Contents
 
-This library contains three modules. The generated API client, the core Java library which contains hand-written utilities
-to make working with the API easier, and the `pubsub` module which is a library for subscribing to change feeds.
+Тази библиотека съдържа три модула. Генерираният API клиент, основната Java библиотека, която съдържа ръчно написани помощни функции за по‑лесна работа с API‑то, и модулът `pubsub`, който е библиотека за абониране за потоци от промени.
 
-- [Документация за библиотеката на API клиента](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Документация за основната библиотека, включително примери за SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [Документация за API клиент библиотеката](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Документация за основната библиотека, включително примери с SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
 - [Документация за PubSub библиотеката](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
 ### Public vs Secured APIs
 
-For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains methods
-that can be made directly from a browser/mobile device/etc without authentication.
+За API клиента има три класа – `DefaultApi`, `PublicApi` и `ModerationApi`. Класът `DefaultApi` съдържа методи, които изискват вашия API ключ, а `PublicApi` съдържа методи, които могат да се извикват директно от браузър/мобилно устройство и т.н. без автентикация.
 
-The `ModerationApi` provides an extensive suite of live and fast moderation APIs. Every `ModerationApi` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.
+`ModerationApi` предоставя обширен набор от живи и бързи API‑та за модерация. Всеки метод от `ModerationApi` приема параметър `sso` и може да се автентифицира чрез SSO или с cookie от сесия в FastComments.com.

@@ -1,7 +1,6 @@
 ### Maven
 
-Aggiungi il repository Repsy al POM del tuo progetto:
-
+Add the Repsy repository to your project's POM:
 ```xml
 <repositories>
     <repository>
@@ -12,37 +11,35 @@ Aggiungi il repository Repsy al POM del tuo progetto:
 </repositories>
 ```
 
-Quindi aggiungi le dipendenze di cui hai bisogno:
-
+Then add the dependencies you need:
 ```xml
 <dependencies>
-    <!-- API Client -->
+    <!-- Client API -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>2.0.0</version>
+        <version>3.0.0</version>
     </dependency>
     
-    <!-- Core Library (includes SSO) -->
+    <!-- Libreria Core (include SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>2.0.0</version>
+        <version>3.0.0</version>
     </dependency>
     
-    <!-- PubSub Library (for live events) -->
+    <!-- Libreria PubSub (per eventi live) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>2.0.0</version>
+        <version>3.0.0</version>
     </dependency>
 </dependencies>
 ```
 
 ### Gradle
 
-Aggiungi il repository Repsy al file build.gradle:
-
+Add the Repsy repository to your build.gradle file:
 ```groovy
 repositories {
     mavenCentral()
@@ -52,27 +49,27 @@ repositories {
 }
 
 dependencies {
-    // API Client
-    implementation "com.fastcomments:client:2.0.0"
+    // Client API
+    implementation "com.fastcomments:client:3.0.0"
     
-    // Core Library (includes SSO)
-    implementation "com.fastcomments:core:2.0.0"
+    // Libreria Core (include SSO)
+    implementation "com.fastcomments:core:3.0.0"
     
-    // PubSub Library (for live events)
-    implementation "com.fastcomments:pubsub:2.0.0"
+    // Libreria PubSub (per eventi live)
+    implementation "com.fastcomments:pubsub:3.0.0"
 }
 ```
 
-### Contenuto della libreria
+### Library Contents
 
-Questa libreria contiene tre moduli. Il client API generato, la libreria core Java che contiene utilità scritte a mano per semplificare l'uso dell'API, e il modulo `pubsub` che è una libreria per sottoscrivere i feed di cambiamento.
+This library contains three modules. The generated API client, the core Java library which contains hand-written utilities to make working with the API easier, and the `pubsub` module which is a library for subscribing to change feeds.
 
-- [API Client Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [PubSub Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [Documentazione Libreria Client API](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Documentazione Libreria Core, Inclusi Esempi SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [Documentazione Libreria PubSub](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### API pubbliche vs API protette
+### Public vs Secured APIs
 
-Per il client API, ci sono tre classi, `DefaultApi`, `PublicApi` e `ModerationApi`. La classe `DefaultApi` contiene metodi che richiedono la tua chiave API, mentre `PublicApi` contiene metodi che possono essere chiamati direttamente da un browser/dispositivo mobile/etc. senza autenticazione.
+For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains methods that can be made directly from a browser/mobile device/etc without authentication.
 
-`ModerationApi` offre una suite completa di API di moderazione in tempo reale e veloce. Ogni metodo di `ModerationApi` accetta un parametro `sso` e può autenticarsi tramite SSO o un cookie di sessione FastComments.com.
+The `ModerationApi` provides an extensive suite of live and fast moderation APIs. Every `ModerationApi` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.

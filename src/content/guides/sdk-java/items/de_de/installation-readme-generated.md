@@ -1,6 +1,6 @@
 ### Maven
 
-Add the Repsy repository to your project's POM:
+Fügen Sie das Repsy-Repository zu Ihrer Projekt‑POM hinzu:
 
 ```xml
 <repositories>
@@ -12,7 +12,7 @@ Add the Repsy repository to your project's POM:
 </repositories>
 ```
 
-Then add the dependencies you need:
+Fügen Sie dann die benötigten Abhängigkeiten hinzu:
 
 ```xml
 <dependencies>
@@ -20,28 +20,28 @@ Then add the dependencies you need:
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>2.0.0</version>
+        <version>3.0.0</version>
     </dependency>
     
     <!-- Kernbibliothek (inkl. SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>2.0.0</version>
+        <version>3.0.0</version>
     </dependency>
     
-    <!-- PubSub-Bibliothek (für Live-Events) -->
+    <!-- PubSub‑Bibliothek (für Live‑Ereignisse) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>2.0.0</version>
+        <version>3.0.0</version>
     </dependency>
 </dependencies>
 ```
 
 ### Gradle
 
-Add the Repsy repository to your build.gradle file:
+Fügen Sie das Repsy-Repository zu Ihrer **build.gradle**‑Datei hinzu:
 
 ```groovy
 repositories {
@@ -53,28 +53,26 @@ repositories {
 
 dependencies {
     // API-Client
-    implementation "com.fastcomments:client:2.0.0"
+    implementation "com.fastcomments:client:3.0.0"
     
     // Kernbibliothek (inkl. SSO)
-    implementation "com.fastcomments:core:2.0.0"
+    implementation "com.fastcomments:core:3.0.0"
     
-    // PubSub-Bibliothek (für Live-Events)
-    implementation "com.fastcomments:pubsub:2.0.0"
+    // PubSub‑Bibliothek (für Live‑Ereignisse)
+    implementation "com.fastcomments:pubsub:3.0.0"
 }
 ```
 
 ### Library Contents
 
-This library contains three modules. The generated API client, the core Java library which contains hand-written utilities
-to make working with the API easier, and the `pubsub` module which is a library for subscribing to change feeds.
+Diese Bibliothek enthält drei Module: den generierten API‑Client, die Kern‑Java‑Bibliothek, die handgeschriebene Dienstprogramme zur vereinfachten Arbeit mit der API enthält, und das `pubsub`‑Modul, das eine Bibliothek zum Abonnieren von Änderungsfeeds bereitstellt.
 
-- [API-Client-Bibliotheksdokumentation](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Kernbibliotheksdokumentation, einschließlich SSO-Beispiele](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [PubSub-Bibliotheksdokumentation](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [API Client Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [PubSub Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
 ### Public vs Secured APIs
 
-For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains methods
-that can be made directly from a browser/mobile device/etc without authentication.
+Für den API‑Client gibt es drei Klassen, `DefaultApi`, `PublicApi` und `ModerationApi`. Die `DefaultApi` enthält Methoden, die Ihren API‑Schlüssel benötigen, und `PublicApi` enthält Methoden, die direkt aus einem Browser/Mobilgerät usw. ohne Authentifizierung aufgerufen werden können.
 
-The `ModerationApi` provides an extensive suite of live and fast moderation APIs. Every `ModerationApi` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.
+Die `ModerationApi` bietet eine umfangreiche Suite von Live‑ und schnellen Moderations‑APIs. Jede `ModerationApi`‑Methode akzeptiert einen `sso`‑Parameter und kann sich über SSO oder ein FastComments.com‑Session‑Cookie authentifizieren.

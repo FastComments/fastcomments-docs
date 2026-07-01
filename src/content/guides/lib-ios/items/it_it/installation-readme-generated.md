@@ -1,17 +1,16 @@
----
-Aggiungi FastCommentsUI al tuo progetto utilizzando Swift Package Manager.
+Add FastCommentsUI al tuo progetto usando Swift Package Manager.
 
-In Xcode: **File > Aggiungi dipendenze del pacchetto**, quindi inserisci l'URL del repository.
+In Xcode: **File > Add Package Dependencies**, then enter the repository URL.
 
-Oppure aggiungilo al tuo `Package.swift`:
+Or add it to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/fastcomments/fastcomments-ios.git", from: "1.0.0")
+    .package(url: "https://github.com/fastcomments/fastcomments-ios.git", from: "2.0.0")
 ]
 ```
 
-Poi aggiungi il prodotto al tuo target:
+Then add the product to your target:
 
 ```swift
 .target(
@@ -22,10 +21,9 @@ Poi aggiungi il prodotto al tuo target:
 )
 ```
 
-Importa entrambi i moduli dove necessario:
+Import both modules where needed:
 
 ```swift
 import FastCommentsUI
 import FastCommentsSwift
 ```
----

@@ -6,11 +6,11 @@
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/fastcomments/fastcomments-ios.git", from: "1.0.0")
+    .package(url: "https://github.com/fastcomments/fastcomments-ios.git", from: "2.0.0")
 ]
 ```
 
-Στη συνέχεια προσθέστε το προϊόν στο target σας:
+Στη συνέχεια, προσθέστε το προϊόν στον στόχο σας:
 
 ```swift
 .target(

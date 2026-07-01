@@ -1,8 +1,8 @@
-Tilføj FastComments SDK til din apps `build.gradle.kts`-fil:
+Tilføj FastComments SDK til din apps `build.gradle.kts` fil:
 
 ```kotlin
 dependencies {
-    implementation("com.fastcomments:sdk:0.0.1")
+    implementation("com.fastcomments:sdk:2.0.0")
 }
 ```
 

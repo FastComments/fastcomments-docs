@@ -20,21 +20,21 @@
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>2.0.0</version>
+        <version>3.0.0</version>
     </dependency>
     
-    <!-- Βιβλιοθήκη Πυρήνα (περιλαμβάνει SSO) -->
+    <!-- Βιβλιοθήκη Core (περιλαμβάνει SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>2.0.0</version>
+        <version>3.0.0</version>
     </dependency>
     
-    <!-- Βιβλιοθήκη PubSub (για ζωντανά γεγονότα) -->
+    <!-- Βιβλιοθήκη PubSub (για ζωντανά συμβάντα) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>2.0.0</version>
+        <version>3.0.0</version>
     </dependency>
 </dependencies>
 ```
@@ -53,26 +53,26 @@ repositories {
 
 dependencies {
     // Πελάτης API
-    implementation "com.fastcomments:client:2.0.0"
+    implementation "com.fastcomments:client:3.0.0"
     
-    // Βιβλιοθήκη Πυρήνα (περιλαμβάνει SSO)
-    implementation "com.fastcomments:core:2.0.0"
+    // Βιβλιοθήκη Core (περιλαμβάνει SSO)
+    implementation "com.fastcomments:core:3.0.0"
     
-    // Βιβλιοθήκη PubSub (για ζωντανά γεγονότα)
-    implementation "com.fastcomments:pubsub:2.0.0"
+    // Βιβλιοθήκη PubSub (για ζωντανά συμβάντα)
+    implementation "com.fastcomments:pubsub:3.0.0"
 }
 ```
 
 ### Library Contents
 
-Αυτή η βιβλιοθήκη περιέχει τρία modules. Το παραγόμενο API client, τη βασική Java βιβλιοθήκη που περιλαμβάνει χειρογράφως γραμμένα βοηθητικά εργαλεία για να κάνετε ευκολότερη τη χρήση του API, και το module `pubsub` που είναι μια βιβλιοθήκη για εγγραφή σε ροές αλλαγών.
+Αυτή η βιβλιοθήκη περιλαμβάνει τρία modules: τον παραγόμενο πελάτη API, τη βασική βιβλιοθήκη Java που περιέχει χειρογραφή utilities για να κάνει τη δουλειά με το API πιο εύκολη, και το module `pubsub` που είναι μια βιβλιοθήκη για εγγραφή σε ροές αλλαγών.
 
 - [Τεκμηρίωση Βιβλιοθήκης Πελάτη API](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Τεκμηρίωση Βιβλιοθήκης Πυρήνα, Συμπεριλαμβανομένων Παραδειγμάτων SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [Τεκμηρίωση Βασικής Βιβλιοθήκης, Συμπεριλαμβανομένων Παραδειγμάτων SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
 - [Τεκμηρίωση Βιβλιοθήκης PubSub](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
 ### Public vs Secured APIs
 
-Για τον API client, υπάρχουν τρεις κλάσεις, `DefaultApi`, `PublicApi` και `ModerationApi`. Η `DefaultApi` περιέχει μεθόδους που απαιτούν το κλειδί API σας, ενώ η `PublicApi` περιέχει μεθόδους που μπορούν να κληθούν απευθείας από πρόγραμμα περιήγησης/συσκευή κινητής κ.λπ. χωρίς έλεγχο ταυτότητας.
+Για τον πελάτη API, υπάρχουν τρεις κλάσεις, `DefaultApi`, `PublicApi` και `ModerationApi`. Η `DefaultApi` περιέχει μεθόδους που απαιτούν το κλειδί API σας, ενώ η `PublicApi` περιέχει μεθόδους που μπορούν να κληθούν απευθείας από πρόγραμμα περιήγησης/συσκευή κινητής χωρίς πιστοποίηση.
 
-Η `ModerationApi` παρέχει μια εκτενή σειρά ζωντανών και γρήγορων API συντονισμού. Κάθε μέθοδος της `ModerationApi` δέχεται μια παράμετρο `sso` και μπορεί να αυθεντικοποιηθεί μέσω SSO ή ενός cookie συνεδρίας FastComments.com.
+Η `ModerationApi` παρέχει μια εκτενή σειρά ζωντανών και γρήγορων APIs διαχείρισης. Κάθε μέθοδος της `ModerationApi` δέχεται μια παράμετρο `sso` και μπορεί να πιστοποιηθεί μέσω SSO ή ενός cookie συνεδρίας FastComments.com.

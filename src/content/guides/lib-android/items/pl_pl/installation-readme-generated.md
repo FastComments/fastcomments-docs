@@ -1,8 +1,9 @@
+---
 Dodaj SDK FastComments do pliku `build.gradle.kts` swojej aplikacji:
 
 ```kotlin
 dependencies {
-    implementation("com.fastcomments:sdk:0.0.1")
+    implementation("com.fastcomments:sdk:2.0.0")
 }
 ```
 
@@ -14,7 +15,8 @@ dependencyResolutionManagement {
         maven {
             url = uri("https://repo.repsy.io/mvn/winrid/fastcomments")
         }
-        // inne repozytoria...
+        // other repositories...
     }
 }
 ```
+---

@@ -1,6 +1,6 @@
 ### Maven
 
-Add the Repsy repository to your project's POM:
+Dodajte Repsy repozitorij u POM vašeg projekta:
 
 ```xml
 <repositories>
@@ -12,7 +12,7 @@ Add the Repsy repository to your project's POM:
 </repositories>
 ```
 
-Then add the dependencies you need:
+Zatim dodajte potrebne dependencije:
 
 ```xml
 <dependencies>
@@ -20,28 +20,28 @@ Then add the dependencies you need:
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>2.0.0</version>
+        <version>3.0.0</version>
     </dependency>
     
     <!-- Core Library (includes SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>2.0.0</version>
+        <version>3.0.0</version>
     </dependency>
     
     <!-- PubSub Library (for live events) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>2.0.0</version>
+        <version>3.0.0</version>
     </dependency>
 </dependencies>
 ```
 
 ### Gradle
 
-Add the Repsy repository to your build.gradle file:
+Dodajte Repsy repozitorij u vaš build.gradle fajl:
 
 ```groovy
 repositories {
@@ -53,28 +53,26 @@ repositories {
 
 dependencies {
     // API Client
-    implementation "com.fastcomments:client:2.0.0"
+    implementation "com.fastcomments:client:3.0.0"
     
     // Core Library (includes SSO)
-    implementation "com.fastcomments:core:2.0.0"
+    implementation "com.fastcomments:core:3.0.0"
     
     // PubSub Library (for live events)
-    implementation "com.fastcomments:pubsub:2.0.0"
+    implementation "com.fastcomments:pubsub:3.0.0"
 }
 ```
 
 ### Library Contents
 
-This library contains three modules. The generated API client, the core Java library which contains hand-written utilities
-to make working with the API easier, and the `pubsub` module which is a library for subscribing to change feeds.
+Ova biblioteka sadrži tri modula: generisani API klijent, core Java biblioteka koja sadrži ručno pisane alate za olakšavanje rada s API-jem, i `pubsub` modul koji je biblioteka za pretplatu na promjene podataka.
 
-- [Dokumentacija API klijentske biblioteke](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Dokumentacija osnovne biblioteke, uključujući primjere SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [Dokumentacija PubSub biblioteke](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [Dokumentacija API Klijenta Biblioteke](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Dokumentacija Core Biblioteke, uključujući SSO primjere](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [Dokumentacija PubSub Biblioteke](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
 ### Public vs Secured APIs
 
-For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains methods
-that can be made directly from a browser/mobile device/etc without authentication.
+Za API klijent postoje tri klase: `DefaultApi`, `PublicApi` i `ModerationApi`. `DefaultApi` sadrži metode koje zahtijevaju vaš API ključ, dok `PublicApi` sadrži metode koje se mogu pozvati direktno iz preglednika/mobilnog uređaja itd. bez autentifikacije.
 
-The `ModerationApi` provides an extensive suite of live and fast moderation APIs. Every `ModerationApi` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.
+`ModerationApi` pruža opsežan skup live i brzih moderacijskih API-ja. Svaka `ModerationApi` metoda prihvata `sso` parametar i može se autentifikovati putem SSO-a ili FastComments.com sesijskog kolačića.

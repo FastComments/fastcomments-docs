@@ -1,6 +1,6 @@
 ### Maven
 
-Add the Repsy repository to your project's POM:
+Dodaj repozytorium Repsy do pliku POM swojego projektu:
 
 ```xml
 <repositories>
@@ -12,7 +12,7 @@ Add the Repsy repository to your project's POM:
 </repositories>
 ```
 
-Then add the dependencies you need:
+Następnie dodaj potrzebne zależności:
 
 ```xml
 <dependencies>
@@ -20,28 +20,28 @@ Then add the dependencies you need:
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>2.0.0</version>
+        <version>3.0.0</version>
     </dependency>
     
     <!-- Core Library (includes SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>2.0.0</version>
+        <version>3.0.0</version>
     </dependency>
     
     <!-- PubSub Library (for live events) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>2.0.0</version>
+        <version>3.0.0</version>
     </dependency>
 </dependencies>
 ```
 
 ### Gradle
 
-Add the Repsy repository to your build.gradle file:
+Dodaj repozytorium Repsy do pliku **build.gradle**:
 
 ```groovy
 repositories {
@@ -53,20 +53,19 @@ repositories {
 
 dependencies {
     // API Client
-    implementation "com.fastcomments:client:2.0.0"
+    implementation "com.fastcomments:client:3.0.0"
     
     // Core Library (includes SSO)
-    implementation "com.fastcomments:core:2.0.0"
+    implementation "com.fastcomments:core:3.0.0"
     
     // PubSub Library (for live events)
-    implementation "com.fastcomments:pubsub:2.0.0"
+    implementation "com.fastcomments:pubsub:3.0.0"
 }
 ```
 
 ### Library Contents
 
-This library contains three modules. The generated API client, the core Java library which contains hand-written utilities
-to make working with the API easier, and the `pubsub` module which is a library for subscribing to change feeds.
+Ta biblioteka zawiera trzy moduły. Wygenerowany klient API, podstawowa biblioteka Java, która zawiera ręcznie napisane narzędzia ułatwiające pracę z API, oraz moduł `pubsub`, będący biblioteką do subskrybowania strumieni zmian.
 
 - [Dokumentacja biblioteki klienta API](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
 - [Dokumentacja biblioteki podstawowej, w tym przykłady SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
@@ -74,7 +73,6 @@ to make working with the API easier, and the `pubsub` module which is a library 
 
 ### Public vs Secured APIs
 
-For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains methods
-that can be made directly from a browser/mobile device/etc without authentication.
+W przypadku klienta API dostępne są trzy klasy: `DefaultApi`, `PublicApi` i `ModerationApi`. `DefaultApi` zawiera metody wymagające klucza API, natomiast `PublicApi` zawiera metody, które można wywołać bezpośrednio z przeglądarki, urządzenia mobilnego itp. bez uwierzytelnienia.
 
-The `ModerationApi` provides an extensive suite of live and fast moderation APIs. Every `ModerationApi` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.
+`ModerationApi` oferuje rozbudowany zestaw szybkich i bieżących interfejsów API do moderacji. Każda metoda `ModerationApi` przyjmuje parametr `sso` i może uwierzytelnić się poprzez SSO lub ciasteczko sesji FastComments.com.

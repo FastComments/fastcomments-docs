@@ -2,7 +2,7 @@ Add the FastComments SDK to your app's `build.gradle.kts` file:
 
 ```kotlin
 dependencies {
-    implementation("com.fastcomments:sdk:0.0.1")
+    implementation("com.fastcomments:sdk:2.0.0")
 }
 ```
 
