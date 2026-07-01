@@ -1,0 +1,7 @@
+{
+  "method": "createTenant",
+  "signatureHash": "47b528c629e29fd15f2849e342333da633e85d1d841db59587852aadf4341a4c",
+  "generatedAt": "2026-07-01T07:19:40.062Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nCreateTenantBody body;\nbody.setName(utility::conversions::to_string_t(\"Acme Corp\"));\nbody.setAdminEmail(utility::conversions::to_string_t(\"admin@acme.com\"));\nbody.setPlan(utility::conversions::to_string_t(\"enterprise\"));\nbody.setDescription(boost::optional<utility::string_t>(utility::conversions::to_string_t(\"Primary tenant for Acme\")));\n\napi->createTenant(tenantId, body).then([](pplx::task<std::shared_ptr<CreateTenantResponse>> t){\n    auto resp = t.get();\n});",
+  "model": "openai/gpt-oss-120b"
+}

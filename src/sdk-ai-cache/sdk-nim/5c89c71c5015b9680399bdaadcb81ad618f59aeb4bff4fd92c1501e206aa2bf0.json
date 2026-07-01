@@ -1,0 +1,7 @@
+{
+  "method": "updateNotification",
+  "signatureHash": "5c89c71c5015b9680399bdaadcb81ad618f59aeb4bff4fd92c1501e206aa2bf0",
+  "generatedAt": "2026-07-01T07:19:54.773Z",
+  "codeExample": "let body = UpdateNotificationBody(message: \"Your comment was approved\", isRead: false)\nlet (optResp, httpResp) = client.updateNotification(\n  tenantId = \"my-tenant-123\",\n  id = \"notif-789\",\n  updateNotificationBody = body,\n  userId = \"user-42\"\n)\nif optResp.isSome:\n  let _ = optResp.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "createTicket",
+  "signatureHash": "21181e8f0a97b5273269c3303172048c80609f95b94c75550ccdcb6090a03d67",
+  "generatedAt": "2026-07-01T07:19:49.447Z",
+  "codeExample": "let tenantId = \"my-tenant-123\"\nlet userId = \"user-456\"\nlet ticketBody = CreateTicketBody()\nlet (responseOpt, httpResponse) = client.createTicket(tenantId = tenantId, userId = userId, createTicketBody = ticketBody)\nif responseOpt.isSome:\n  let ticketResponse = responseOpt.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

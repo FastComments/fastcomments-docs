@@ -1,0 +1,7 @@
+{
+  "method": "setCommentText",
+  "signatureHash": "45daa8b6956b7a917bfe9061e5f5e19ad5c2917c4289c70701eb4fbcd086f235",
+  "generatedAt": "2026-07-01T07:19:46.941Z",
+  "codeExample": "auto tenantId = U(\"my-tenant-123\");\nauto commentId = U(\"cmt-456\");\nauto broadcastId = U(\"brd-789\");\n\nCommentTextUpdateRequest updateReq;\nupdateReq.text = U(\"Updated comment content\");\nupdateReq.isEdited = boost::make_optional(true);\n\nSetCommentTextOptions opts;\nopts.notifySubscribers = boost::make_optional(true);\n\napi->setCommentText(tenantId, commentId, broadcastId, updateReq, opts)\n    .then([](std::shared_ptr<PublicAPISetCommentTextResponse> resp) {\n    });",
+  "model": "openai/gpt-oss-120b"
+}

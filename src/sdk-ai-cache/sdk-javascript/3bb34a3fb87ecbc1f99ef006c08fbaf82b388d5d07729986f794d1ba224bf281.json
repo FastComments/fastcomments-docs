@@ -1,0 +1,7 @@
+{
+  "method": "searchUsers",
+  "signatureHash": "3bb34a3fb87ecbc1f99ef006c08fbaf82b388d5d07729986f794d1ba224bf281",
+  "generatedAt": "2026-07-01T07:19:54.087Z",
+  "codeExample": "async function demoSearch(): Promise<void> {\n    const tenantId: string = \"tenant_12345\";\n    const urlId: string = \"article-9876\";\n    const usernameStartsWith: string = \"john\";\n    const mentionGroupIds: string[] = [\"groupA\", \"groupB\"];\n    const sso: string = \"sso_abc123\";\n    const searchSection: SearchUsersSearchSectionEnum = SearchUsersSearchSectionEnum.Users;\n\n    const response: SearchUsersResponse1 = await searchUsers(\n        tenantId,\n        urlId,\n        usernameStartsWith,\n        mentionGroupIds,\n        sso,\n        searchSection\n    );\n\n    console.log(response);\n}\n\ndemoSearch();",
+  "model": "openai/gpt-oss-120b"
+}

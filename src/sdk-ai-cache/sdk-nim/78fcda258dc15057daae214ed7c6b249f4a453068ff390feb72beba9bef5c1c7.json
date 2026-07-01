@@ -1,0 +1,7 @@
+{
+  "method": "getComments",
+  "signatureHash": "78fcda258dc15057daae214ed7c6b249f4a453068ff390feb72beba9bef5c1c7",
+  "generatedAt": "2026-07-01T07:19:26.831Z",
+  "codeExample": "let options = GetCommentsOptions(\n  urlId = \"news/article-title\",\n  page = 0,\n  pageSize = 20,\n  sort = \"newest\",\n  includeDeleted = false,\n  includeReplies = true,\n  userIds = @[],\n  tags = @[]\n)\n\nlet (response, httpResponse) = client.getComments(tenantId = \"my-tenant-123\", options = options)\n\nif response.isSome:\n  let comments = response.get()\n  discard comments",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

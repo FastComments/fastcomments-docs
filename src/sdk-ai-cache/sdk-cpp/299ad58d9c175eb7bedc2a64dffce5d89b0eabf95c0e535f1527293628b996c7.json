@@ -1,0 +1,7 @@
+{
+  "method": "patchHashTag",
+  "signatureHash": "299ad58d9c175eb7bedc2a64dffce5d89b0eabf95c0e535f1527293628b996c7",
+  "generatedAt": "2026-07-01T07:19:50.007Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t tag = U(\"important\");\nauto body = std::make_shared<UpdateHashTagBody>();\nbody->name = U(\"important-updated\");\nbody->description = boost::optional<utility::string_t>(U(\"Updated description\"));\napi->patchHashTag(tenantId, tag, *body)\n   .then([](pplx::task<std::shared_ptr<UpdateHashTagResponse>> t){\n       try{\n           auto response = t.get();\n           std::cout << \"Updated tag ID: \" << response->id << std::endl;\n       }catch(const std::exception& e){\n           std::cerr << \"Patch failed: \" << e.what() << std::endl;\n       }\n   });",
+  "model": "openai/gpt-oss-120b"
+}

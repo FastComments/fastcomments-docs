@@ -1,0 +1,7 @@
+{
+  "method": "getVotes",
+  "signatureHash": "086bd92adb5fc2ad0441f7542412cbbcf242099958b7d4911612da3d2838ec48",
+  "generatedAt": "2026-07-01T07:19:51.197Z",
+  "codeExample": "let (optVotes, httpResp) = client.getVotes(tenantId = \"my-tenant-123\", urlId = \"news/article-42\")\nif optVotes.isSome:\n  let votes = optVotes.get()\n  discard votes",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

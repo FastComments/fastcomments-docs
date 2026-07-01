@@ -1,0 +1,7 @@
+{
+  "method": "replaceTenantPackage",
+  "signatureHash": "7a1e2abf223129bef4c4af2b4cbe8495cfcaf17c9c73957a4510618518c9ad66",
+  "generatedAt": "2026-07-01T07:19:52.064Z",
+  "codeExample": "let (optResp, httpResp) = client.replaceTenantPackage(\n  tenantId = \"my-tenant-123\",\n  id = \"pkg-456\",\n  replaceTenantPackageBody = ReplaceTenantPackageBody()\n)\nif optResp.isSome:\n  let resp = optResp.get()\n  discard resp",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

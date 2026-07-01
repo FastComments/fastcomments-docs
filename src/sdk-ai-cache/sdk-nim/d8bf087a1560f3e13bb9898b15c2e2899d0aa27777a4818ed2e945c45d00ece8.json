@@ -1,0 +1,7 @@
+{
+  "method": "unPinComment",
+  "signatureHash": "d8bf087a1560f3e13bb9898b15c2e2899d0aa27777a4818ed2e945c45d00ece8",
+  "generatedAt": "2026-07-01T07:19:48.162Z",
+  "codeExample": "let (responseOpt, httpResponse) = client.unPinComment(\n  tenantId = \"my-tenant-123\",\n  commentId = \"cmt-456789\",\n  broadcastId = \"broadcast-001\",\n  sso = \"\"\n)\n\nif responseOpt.isSome:\n  let resp = responseOpt.get()\n  echo resp",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

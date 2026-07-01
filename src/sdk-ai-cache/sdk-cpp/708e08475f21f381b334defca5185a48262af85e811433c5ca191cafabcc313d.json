@@ -1,0 +1,7 @@
+{
+  "method": "deleteCommentVote",
+  "signatureHash": "708e08475f21f381b334defca5185a48262af85e811433c5ca191cafabcc313d",
+  "generatedAt": "2026-07-01T07:20:04.839Z",
+  "codeExample": "auto options = DeleteCommentVoteOptions{};\noptions.reason = boost::optional<utility::string_t>(U(\"spam\"));\noptions.adminOverride = boost::optional<bool>(true);\n\napi->deleteCommentVote(\n    U(\"my-tenant-123\"),\n    U(\"cmt-456789\"),\n    U(\"vote-987\"),\n    U(\"url-abc123\"),\n    U(\"broadcast-001\"),\n    options\n).then([](std::shared_ptr<VoteDeleteResponse> resp){\n    if (resp) {\n        std::cout << \"Deleted vote, code: \" << resp->code << std::endl;\n    }\n});",
+  "model": "openai/gpt-oss-120b"
+}

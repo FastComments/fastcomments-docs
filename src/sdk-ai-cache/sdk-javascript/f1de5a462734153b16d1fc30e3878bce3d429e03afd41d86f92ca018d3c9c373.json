@@ -1,0 +1,7 @@
+{
+  "method": "getCommentText",
+  "signatureHash": "f1de5a462734153b16d1fc30e3878bce3d429e03afd41d86f92ca018d3c9c373",
+  "generatedAt": "2026-07-01T07:19:52.647Z",
+  "codeExample": "async function run() {\n  const tenantId: string = \"acme-corp-tenant\";\n  const commentId: string = \"cmt-5f2e9a1b\";\n  const editKey: string = \"edk-9b7c3\";\n  const ssoToken: string = \"sso-xyz789\";\n\n  const commentOnly: GetCommentTextResponse1 = await getCommentText(tenantId, commentId);\n  const commentWithEdit: GetCommentTextResponse1 = await getCommentText(tenantId, commentId, editKey);\n  const commentFull: GetCommentTextResponse1 = await getCommentText(tenantId, commentId, editKey, ssoToken);\n}\nrun();",
+  "model": "openai/gpt-oss-120b"
+}

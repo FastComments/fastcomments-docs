@@ -1,0 +1,7 @@
+{
+  "method": "blockFromCommentPublic",
+  "signatureHash": "23ece2ffcc2c2ba4bdd7d2977c8b911319f53bfdacaa14f9ad867f33c4ab30cd",
+  "generatedAt": "2026-07-01T07:19:38.077Z",
+  "codeExample": "async function demo() {\n  const tenantId: string = \"tenant_9f8b7c\";\n  const commentId: string = \"cmt_1234567890\";\n  const blockParams: PublicBlockFromCommentParams = {\n    reason: \"spam\",\n    durationHours: 24,\n  };\n  const ssoToken: string = \"sso_ABCDEF123456\";\n\n  const responseWithSso: BlockFromCommentPublicResponse = await blockFromCommentPublic(\n    tenantId,\n    commentId,\n    blockParams,\n    ssoToken\n  );\n\n  const responseWithoutSso: BlockFromCommentPublicResponse = await blockFromCommentPublic(\n    tenantId,\n    commentId,\n    blockParams\n  );\n\n  console.log(responseWithSso, responseWithoutSso);\n}\ndemo();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

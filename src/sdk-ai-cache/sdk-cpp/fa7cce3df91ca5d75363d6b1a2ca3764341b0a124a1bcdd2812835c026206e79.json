@@ -1,0 +1,7 @@
+{
+  "method": "postSetCommentApprovalStatus",
+  "signatureHash": "fa7cce3df91ca5d75363d6b1a2ca3764341b0a124a1bcdd2812835c026206e79",
+  "generatedAt": "2026-07-01T07:20:02.468Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto commentId = utility::conversions::to_string_t(\"comment-abc123\");\nauto options = std::make_shared<PostSetCommentApprovalStatusOptions>();\noptions->approved = boost::optional<bool>(true);\noptions->reason = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"Inappropriate content\"));\napi->postSetCommentApprovalStatus(tenantId, commentId, *options)\n    .then([](pplx::task<std::shared_ptr<SetCommentApprovedResponse>> task) {\n        try {\n            auto response = task.get();\n        } catch (const std::exception& ex) {\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

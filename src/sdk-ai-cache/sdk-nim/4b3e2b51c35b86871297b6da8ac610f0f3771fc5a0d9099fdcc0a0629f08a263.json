@@ -1,0 +1,7 @@
+{
+  "method": "getOfflineUsers",
+  "signatureHash": "4b3e2b51c35b86871297b6da8ac610f0f3771fc5a0d9099fdcc0a0629f08a263",
+  "generatedAt": "2026-07-01T07:19:33.143Z",
+  "codeExample": "let (offlineResp, httpResponse) = client.getOfflineUsers(\n  tenantId = \"my-tenant-123\",\n  urlId = \"news/article-title\",\n  options = GetOfflineUsersOptions()\n)\nif offlineResp.isSome:\n  let offline = offlineResp.get()\n  echo offline)",
+  "model": "openai/gpt-oss-120b"
+}

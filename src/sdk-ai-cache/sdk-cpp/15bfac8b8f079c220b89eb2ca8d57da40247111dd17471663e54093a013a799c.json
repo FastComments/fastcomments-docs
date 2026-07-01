@@ -1,0 +1,7 @@
+{
+  "method": "pinComment",
+  "signatureHash": "15bfac8b8f079c220b89eb2ca8d57da40247111dd17471663e54093a013a799c",
+  "generatedAt": "2026-07-01T07:19:42.270Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"comment-456\");\nutility::string_t broadcastId = U(\"broadcast-789\");\nboost::optional<utility::string_t> sso = U(\"sso-token-abc\");\n\napi->pinComment(tenantId, commentId, broadcastId, sso)\n    .then([](pplx::task<std::shared_ptr<ChangeCommentPinStatusResponse>> task) {\n        try {\n            auto response = task.get();\n        } catch (const std::exception&) {\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

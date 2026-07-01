@@ -1,0 +1,7 @@
+{
+  "method": "updateUserNotificationStatus",
+  "signatureHash": "c52a09b201a8cb08003f0c8e7fc0cf70af0b4e235649940b6b58c19c3df6e0d9",
+  "generatedAt": "2026-07-01T07:19:48.505Z",
+  "codeExample": "api->updateUserNotificationStatus(\n    U(\"my-tenant-123\"),\n    U(\"notif-456\"),\n    U(\"read\"),\n    boost::optional<utility::string_t>(U(\"sso-token-abc\"))\n).then([](std::shared_ptr<UpdateUserNotificationStatusResponse> resp) {\n}).wait();",
+  "model": "openai/gpt-oss-120b"
+}

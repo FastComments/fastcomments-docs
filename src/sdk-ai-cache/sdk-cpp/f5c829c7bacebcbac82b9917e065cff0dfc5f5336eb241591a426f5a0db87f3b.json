@@ -1,0 +1,7 @@
+{
+  "method": "getSSOUserByEmail",
+  "signatureHash": "f5c829c7bacebcbac82b9917e065cff0dfc5f5336eb241591a426f5a0db87f3b",
+  "generatedAt": "2026-07-01T07:19:56.173Z",
+  "codeExample": "auto correlationId = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"corr-001\"));\n\napi->getSSOUserByEmail(\n    utility::conversions::to_string_t(\"my-tenant-123\"),\n    utility::conversions::to_string_t(\"user@example.com\")\n).then([](pplx::task<std::shared_ptr<GetSSOUserByEmailAPIResponse>> t) {\n    try {\n        auto response = t.get();\n    } catch (const std::exception&) {\n    }\n});",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "pinComment",
+  "signatureHash": "1e2ea950c0eeafa2845f675efa7969e29c1565d129aa906e24c7cb322df01b79",
+  "generatedAt": "2026-07-01T07:19:37.130Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant-001';\n  const commentId: string = 'comment-5678';\n  const broadcastId: string = 'broadcast-2023';\n  const ssoToken: string = 'sso-xyz-789';\n\n  const pinResult: PinCommentResponse = await pinComment(tenantId, commentId, broadcastId);\n  const pinResultWithSso: PinCommentResponse = await pinComment(tenantId, commentId, broadcastId, ssoToken);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

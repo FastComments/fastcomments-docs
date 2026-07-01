@@ -1,0 +1,7 @@
+{
+  "method": "getAuditLogs",
+  "signatureHash": "5b0fed9159ab0f3d04d12eba7c5bc25642aa2403150becf697f012dd05428175",
+  "generatedAt": "2026-07-01T07:19:34.963Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant_42\";\n  const limit: number = 100;\n  const skip: number = 10;\n  const order: SORTDIR = \"desc\";\n  const after: number = Date.now() - 3 * 24 * 60 * 60 * 1000; // 3 days ago\n\n  const auditResponse: GetAuditLogsResponse1 = await getAuditLogs(\n    tenantId,\n    limit,\n    skip,\n    order,\n    after\n  );\n\n  console.log(auditResponse);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

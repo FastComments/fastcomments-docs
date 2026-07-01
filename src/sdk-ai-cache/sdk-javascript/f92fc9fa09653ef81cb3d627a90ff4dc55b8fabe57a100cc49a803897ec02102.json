@@ -1,0 +1,7 @@
+{
+  "method": "getApiIds",
+  "signatureHash": "f92fc9fa09653ef81cb3d627a90ff4dc55b8fabe57a100cc49a803897ec02102",
+  "generatedAt": "2026-07-01T07:19:38.425Z",
+  "codeExample": "const textSearch: string = \"urgent feedback\";\nconst byIPFromComment: string = \"203.0.113.42\";\nconst filters: string = \"status:approved\";\nconst afterId: string = \"comment-789\";\nconst demo: boolean = true;\nconst tenantId: string = \"tenant-001\";\n\nconst apiIds: GetApiIdsResponse = await getApiIds({\n  textSearch,\n  byIPFromComment,\n  filters,\n  afterId,\n  demo,\n  tenantId,\n});",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

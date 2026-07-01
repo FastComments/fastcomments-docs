@@ -1,0 +1,7 @@
+{
+  "method": "getCachedNotificationCount",
+  "signatureHash": "0137a9a52be157542435bd6aaff63a1cfa33916d61ebcde1ff8096564c4ed36f",
+  "generatedAt": "2026-07-01T07:19:52.065Z",
+  "codeExample": "auto tenantId = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"my-tenant-123\"));\nauto userId = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"user-456\"));\n\napi->getCachedNotificationCount(tenantId.value(), userId.value())\n    .then([](pplx::task<std::shared_ptr<GetCachedNotificationCountResponse>> task) {\n        try {\n            auto response = task.get();\n            // process response\n        } catch (const std::exception&) {\n            // handle error\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

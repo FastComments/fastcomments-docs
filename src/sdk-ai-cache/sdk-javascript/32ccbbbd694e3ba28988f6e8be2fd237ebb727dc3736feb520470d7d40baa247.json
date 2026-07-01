@@ -1,0 +1,7 @@
+{
+  "method": "addHashTag",
+  "signatureHash": "32ccbbbd694e3ba28988f6e8be2fd237ebb727dc3736feb520470d7d40baa247",
+  "generatedAt": "2026-07-01T07:19:37.346Z",
+  "codeExample": "const tenantId: string = \"tenant_9876\";\n\nconst newHashTag: CreateHashTagBody = {\n  tag: \"typescript\",\n  description: \"Discussions about TypeScript\"\n};\n\nconst responseWithTenant: AddHashTagResponse = await addHashTag(tenantId, newHashTag);\n\nconst responseWithoutTenant: AddHashTagResponse = await addHashTag(undefined, newHashTag);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

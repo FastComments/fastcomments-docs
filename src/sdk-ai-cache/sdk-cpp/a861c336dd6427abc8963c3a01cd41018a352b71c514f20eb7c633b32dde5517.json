@@ -1,0 +1,7 @@
+{
+  "method": "getUserBadgeProgressByUserId",
+  "signatureHash": "a861c336dd6427abc8963c3a01cd41018a352b71c514f20eb7c633b32dde5517",
+  "generatedAt": "2026-07-01T07:19:36.236Z",
+  "codeExample": "boost::optional<std::shared_ptr<APIGetUserBadgeProgressResponse>> responseOpt;\napi->getUserBadgeProgressByUserId(\n    utility::conversions::to_string_t(\"my-tenant-123\"),\n    utility::conversions::to_string_t(\"user@example.com\"))\n    .then([&responseOpt](pplx::task<std::shared_ptr<APIGetUserBadgeProgressResponse>> t) {\n        try {\n            responseOpt = t.get();\n        } catch (...) {\n            responseOpt = boost::none;\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

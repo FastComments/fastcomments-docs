@@ -1,0 +1,7 @@
+{
+  "method": "updateUserNotificationPageSubscriptionStatus",
+  "signatureHash": "ee4b5e35fa7bc5e62a84e9621e69bb128ef18e8bb890b484907701344554cc8f",
+  "generatedAt": "2026-07-01T07:19:48.236Z",
+  "codeExample": "let (optResp, httpResp) = client.updateUserNotificationPageSubscriptionStatus(\n  tenantId = \"my-tenant-123\",\n  urlId = \"news/article-456\",\n  url = \"https://example.com/news/article-456\",\n  pageTitle = \"Breaking News: Something Happened\",\n  subscribedOrUnsubscribed = \"subscribed\",\n  sso = \"\"\n)\n\nif optResp.isSome:\n  let resp = optResp.get()\n  # further processing with resp",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

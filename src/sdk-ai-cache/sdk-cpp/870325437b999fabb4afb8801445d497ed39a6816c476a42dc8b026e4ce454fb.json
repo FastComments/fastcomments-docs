@@ -1,0 +1,7 @@
+{
+  "method": "getOfflineUsers",
+  "signatureHash": "870325437b999fabb4afb8801445d497ed39a6816c476a42dc8b026e4ce454fb",
+  "generatedAt": "2026-07-01T07:19:30.160Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t urlId = U(\"page-456\");\nGetOfflineUsersOptions options;\noptions.limit = boost::optional<int>(50);\noptions.includeDetails = boost::optional<bool>(true);\n\napi->getOfflineUsers(tenantId, urlId, options)\n    .then([](pplx::task<std::shared_ptr<PageUsersOfflineResponse>> t) {\n        try {\n            auto response = t.get();\n        } catch (const std::exception&) {\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

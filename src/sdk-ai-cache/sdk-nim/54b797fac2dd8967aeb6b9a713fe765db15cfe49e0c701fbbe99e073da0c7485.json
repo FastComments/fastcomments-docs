@@ -1,0 +1,7 @@
+{
+  "method": "unBlockUserFromComment",
+  "signatureHash": "54b797fac2dd8967aeb6b9a713fe765db15cfe49e0c701fbbe99e073da0c7485",
+  "generatedAt": "2026-07-01T07:19:54.976Z",
+  "codeExample": "let (response, httpResponse) = client.unBlockUserFromComment(\n  tenantId = \"my-tenant-123\",\n  id = \"comment-456\",\n  unBlockFromCommentParams = UnBlockFromCommentParams(userId = \"user-789\", commentId = \"cmt-321\"),\n  options = UnBlockUserFromCommentOptions(),\n)\n\nif response.isSome:\n  let unblockSuccess = response.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

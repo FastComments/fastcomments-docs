@@ -1,0 +1,7 @@
+{
+  "method": "aggregateQuestionResults",
+  "signatureHash": "007a4163a1cc932409acf370339363b80e22907e7bc2fc73fbace0be679510aa",
+  "generatedAt": "2026-07-01T07:19:38.070Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nAggregateQuestionResultsOptions opts;\nopts.questionId = utility::conversions::to_string_t(\"question-789\");\nopts.startDate = boost::optional<utility::datetime>(utility::datetime::from_string(U(\"2023-01-01T00:00:00Z\"), utility::datetime::ISO_8601));\nopts.endDate = boost::optional<utility::datetime>(utility::datetime::from_string(U(\"2023-01-31T23:59:59Z\"), utility::datetime::ISO_8601));\napi->aggregateQuestionResults(tenantId, opts)\n    .then([](std::shared_ptr<AggregateQuestionResultsResponse> resp) {\n        static_cast<void>(resp);\n    });",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getManualBadgesForUser",
+  "signatureHash": "db10f0a7d6da9ee0718dc9fc0175985c5898d56e6c9917eaf21a84723cd5497d",
+  "generatedAt": "2026-07-01T07:19:37.323Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nGetManualBadgesForUserOptions options;\noptions.userEmail = boost::optional<utility::string_t>(U(\"user@example.com\"));\noptions.includeInactive = boost::optional<bool>(true);\napi->getManualBadgesForUser(tenantId, options).then([](pplx::task<std::shared_ptr<GetUserManualBadgesResponse>> task){\n    try{\n        auto response = task.get();\n    }catch(const std::exception&){\n    }\n});",
+  "model": "openai/gpt-oss-120b"
+}

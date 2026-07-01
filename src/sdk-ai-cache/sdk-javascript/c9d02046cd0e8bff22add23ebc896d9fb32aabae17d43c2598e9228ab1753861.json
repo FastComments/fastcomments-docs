@@ -1,0 +1,7 @@
+{
+  "method": "getUserNotificationCount",
+  "signatureHash": "c9d02046cd0e8bff22add23ebc896d9fb32aabae17d43c2598e9228ab1753861",
+  "generatedAt": "2026-07-01T07:19:35.351Z",
+  "codeExample": "async function demoGetUserNotificationCount() {\n    const tenantId: string = \"acme-corp-01\";\n\n    // Call with optional SSO token\n    const countWithSSO: GetUserNotificationCountResponse1 = await getUserNotificationCount(\n        tenantId,\n        \"sso-token-abc123\"\n    );\n\n    // Call without SSO token\n    const countWithoutSSO: GetUserNotificationCountResponse1 = await getUserNotificationCount(\n        tenantId\n    );\n\n    console.log(countWithSSO, countWithoutSSO);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

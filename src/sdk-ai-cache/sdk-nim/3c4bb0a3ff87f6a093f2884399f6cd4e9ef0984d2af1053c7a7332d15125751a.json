@@ -1,0 +1,7 @@
+{
+  "method": "getPagesPublic",
+  "signatureHash": "3c4bb0a3ff87f6a093f2884399f6cd4e9ef0984d2af1053c7a7332d15125751a",
+  "generatedAt": "2026-07-01T07:19:53.740Z",
+  "codeExample": "let (response, httpResponse) = client.getPagesPublic(tenantId = \"my-tenant-123\", options = GetPagesPublicOptions())\nif response.isSome:\n  let pages = response.get()\n  echo pages",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getSSOUsers",
+  "signatureHash": "41ee765da3c7410f8565befb6bbe627b6f546aacf78196aab5fc28cc93721ba7",
+  "generatedAt": "2026-07-01T07:19:47.877Z",
+  "codeExample": "async function runExample(): Promise<void> {\n    const tenantId: string = \"tenant_12345\";\n\n    // Call without optional `skip`\n    const firstPage: GetSSOUsersResponse = await getSSOUsers(tenantId);\n\n    // Call with optional `skip`\n    const secondPage: GetSSOUsersResponse = await getSSOUsers(tenantId, 100);\n\n    console.log(firstPage, secondPage);\n}\n\nrunExample();",
+  "model": "openai/gpt-oss-120b"
+}

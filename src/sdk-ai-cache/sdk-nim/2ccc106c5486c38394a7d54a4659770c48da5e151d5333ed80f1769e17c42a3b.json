@@ -1,0 +1,7 @@
+{
+  "method": "getQuestionConfigs",
+  "signatureHash": "2ccc106c5486c38394a7d54a4659770c48da5e151d5333ed80f1769e17c42a3b",
+  "generatedAt": "2026-07-01T07:19:20.319Z",
+  "codeExample": "let (response, httpResponse) = client.getQuestionConfigs(tenantId = \"my-tenant-123\", skip = 0.0)\nif response.isSome:\n  let configs = response.get()\n  echo configs",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "createQuestionResult",
+  "signatureHash": "4cb06e1d4659cb7af82d1e490b467c6665ac492855b93e67bce4b098e39b75ba",
+  "generatedAt": "2026-07-01T07:19:37.097Z",
+  "codeExample": "const tenantId: string = \"acme-corp-tenant\";\n\nconst metaItem: MetaItem = {\n  key: \"campaign\",\n  value: \"spring-launch\"\n};\n\nconst questionResultBody: CreateQuestionResultBody = {\n  questionId: \"question-42\",\n  answer: \"Positive\",\n  metadata: [metaItem]\n  // optional fields such as notes are omitted\n};\n\nconst result: CreateQuestionResultResponse1 = await createQuestionResult(tenantId, questionResultBody);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "updateQuestionResult",
+  "signatureHash": "dbd9f42b4566c97d443c9eb7296e2d0c5867c31510b0358a7aa8764fa1a57e37",
+  "generatedAt": "2026-07-01T07:19:55.513Z",
+  "codeExample": "async function runUpdate() {\n    const tenantId: string = \"acme-corp-01\";\n    const id: string = \"qr-20230915-001\";\n\n    const updateQuestionResultBody: UpdateQuestionResultBody = {\n        // required fields\n        answer: \"No\",\n        // optional fields\n        comment: \"User clarified their response\",\n        // anotherOptionalField?: value,\n    };\n\n    const result: UpdateQuestionResultResponse = await updateQuestionResult(\n        tenantId,\n        id,\n        updateQuestionResultBody\n    );\n\n    console.log(result);\n}\n\nrunUpdate();",
+  "model": "openai/gpt-oss-120b"
+}

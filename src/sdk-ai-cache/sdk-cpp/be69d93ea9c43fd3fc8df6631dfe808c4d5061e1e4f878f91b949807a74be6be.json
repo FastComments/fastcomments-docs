@@ -1,0 +1,7 @@
+{
+  "method": "getSSOUserById",
+  "signatureHash": "be69d93ea9c43fd3fc8df6631dfe808c4d5061e1e4f878f91b949807a74be6be",
+  "generatedAt": "2026-07-01T07:19:44.594Z",
+  "codeExample": "auto tenantId = U(\"my-tenant-123\");\nauto ssoUserId = U(\"user-789\");\napi->getSSOUserById(tenantId, ssoUserId)\n    .then([](std::shared_ptr<GetSSOUserByIdAPIResponse> resp) {\n        boost::optional<utility::string_t> email;\n        if (resp && resp->email) email = resp->email;\n        if (email) {\n            auto e = *email;\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

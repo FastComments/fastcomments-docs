@@ -1,0 +1,7 @@
+{
+  "method": "deleteTenant",
+  "signatureHash": "426983e51e7c52555d774a6f7e69a72bf697fcedbdc29173eaa0dc82c217aabb",
+  "generatedAt": "2026-07-01T07:19:43.199Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto userId = utility::conversions::to_string_t(\"user@example.com\");\nboost::optional<utility::string_t> sure = utility::conversions::to_string_t(\"true\");\napi->deleteTenant(tenantId, userId, sure)\n   .then([](pplx::task<std::shared_ptr<APIEmptyResponse>> t){\n       try{\n           auto resp = t.get();\n           auto result = std::make_shared<APIEmptyResponse>(*resp);\n       }catch(const std::exception&){})",
+  "model": "openai/gpt-oss-120b"
+}

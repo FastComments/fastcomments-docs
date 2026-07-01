@@ -1,0 +1,7 @@
+{
+  "method": "getCount",
+  "signatureHash": "92983182e9c10011c6427714530214d4a1f509baa6df29328d3510544a218e7b",
+  "generatedAt": "2026-07-01T07:19:37.046Z",
+  "codeExample": "async function main(): Promise<void> {\n  const count: GetCountResponse = await getCount({\n    textSearch: \"order issue\",\n    byIPFromComment: \"198.51.100.23\",\n    filter: \"pending\",\n    demo: true,\n    tenantId: \"acme_corp\",\n    sso: \"sso_abcdef123456\"\n  });\n  console.log(count);\n}\nmain();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

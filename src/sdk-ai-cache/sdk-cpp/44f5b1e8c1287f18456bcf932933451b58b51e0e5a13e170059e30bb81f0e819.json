@@ -1,0 +1,7 @@
+{
+  "method": "createEmailTemplate",
+  "signatureHash": "44f5b1e8c1287f18456bcf932933451b58b51e0e5a13e170059e30bb81f0e819",
+  "generatedAt": "2026-07-01T07:19:56.691Z",
+  "codeExample": "auto body = std::make_shared<CreateEmailTemplateBody>();\nbody->subject = utility::string_t(\"Welcome Email\");\nbody->htmlContent = utility::string_t(\"<h1>Welcome!</h1><p>Thanks for joining.</p>\");\nbody->fromEmail = utility::string_t(\"no-reply@myapp.com\");\nbody->replyTo = boost::optional<utility::string_t>(utility::string_t(\"support@myapp.com\"));\nbody->cc = boost::none;\napi->createEmailTemplate(utility::string_t(\"my-tenant-123\"), *body)\n    .then([](std::shared_ptr<CreateEmailTemplateResponse> resp) {\n        std::cout << \"Created template ID: \" << resp->id << std::endl;\n    });",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

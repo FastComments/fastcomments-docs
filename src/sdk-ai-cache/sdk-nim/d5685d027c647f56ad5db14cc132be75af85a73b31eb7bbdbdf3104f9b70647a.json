@@ -1,0 +1,7 @@
+{
+  "method": "getFeedPostsStats",
+  "signatureHash": "d5685d027c647f56ad5db14cc132be75af85a73b31eb7bbdbdf3104f9b70647a",
+  "generatedAt": "2026-07-01T07:19:26.970Z",
+  "codeExample": "let (statsOpt, httpResponse) = client.getFeedPostsStats(\n  tenantId = \"my-tenant-123\",\n  postIds = @[\"post-abc\", \"post-def\"],\n  sso = \"sso-token\",\n)\n\nif statsOpt.isSome:\n  let stats = statsOpt.get()\n  # use stats as needed\n\n\u0000",
+  "model": "openai/gpt-oss-120b"
+}

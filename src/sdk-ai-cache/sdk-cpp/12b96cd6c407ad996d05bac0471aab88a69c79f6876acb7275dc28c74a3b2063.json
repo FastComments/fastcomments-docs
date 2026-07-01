@@ -1,0 +1,7 @@
+{
+  "method": "updateEmailTemplate",
+  "signatureHash": "12b96cd6c407ad996d05bac0471aab88a69c79f6876acb7275dc28c74a3b2063",
+  "generatedAt": "2026-07-01T07:19:44.687Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t templateId = U(\"welcome-email\");\nUpdateEmailTemplateBody body;\nbody.subject = U(\"Welcome to Our Platform\");\nbody.content = U(\"<p>Hello {{userName}}, welcome aboard!</p>\");\nbody.isActive = boost::optional<bool>(true);\napi->updateEmailTemplate(tenantId, templateId, body)\n    .then([](std::shared_ptr<APIEmptyResponse> response) {\n        // success handling\n    })\n    .then([](pplx::task<void> t) {\n        try { t.get(); } catch (const std::exception &) { /* error handling */ }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

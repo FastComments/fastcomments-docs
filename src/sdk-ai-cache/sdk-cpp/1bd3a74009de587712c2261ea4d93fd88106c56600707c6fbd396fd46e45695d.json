@@ -1,0 +1,7 @@
+{
+  "method": "getApiIds",
+  "signatureHash": "1bd3a74009de587712c2261ea4d93fd88106c56600707c6fbd396fd46e45695d",
+  "generatedAt": "2026-07-01T07:19:34.937Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nGetApiIdsOptions options;\noptions.limit = boost::optional<int>(100);\noptions.cursor = boost::optional<utility::string_t>(U(\"next-page-token\"));\napi->getApiIds(tenantId, options).then([](pplx::task<std::shared_ptr<ModerationAPIGetCommentIdsResponse>> t){\n    try{\n        auto response = t.get();\n        auto ids = response->commentIds;\n    }catch(const std::exception&){\n    }\n});",
+  "model": "openai/gpt-oss-120b"
+}

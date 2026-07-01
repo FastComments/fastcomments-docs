@@ -1,0 +1,7 @@
+{
+  "method": "deleteVote",
+  "signatureHash": "1ffd7fa735253a00c266d8aa645a9cecc692ebc6e7229018ccdda8df6f08a5c2",
+  "generatedAt": "2026-07-01T07:19:29.648Z",
+  "codeExample": "let (voteRespOpt, httpResp) = client.deleteVote(tenantId = \"my-tenant-123\", id = \"comment-456\", editKey = \"\")\nif voteRespOpt.isSome:\n  let voteResp = voteRespOpt.get()\n  discard voteResp\n  discard httpResp",
+  "model": "openai/gpt-oss-120b"
+}

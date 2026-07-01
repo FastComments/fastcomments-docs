@@ -1,0 +1,7 @@
+{
+  "method": "getLogs",
+  "signatureHash": "c80e8c3a5ac089f2c0f90c69c0736e27eafa55540627ccfae2da8188be363b60",
+  "generatedAt": "2026-07-01T07:19:36.080Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"comment-456\");\nboost::optional<utility::string_t> sso = U(\"sso-token-abc\");\n\napi->getLogs(tenantId, commentId, sso).then([](pplx::task<std::shared_ptr<ModerationAPIGetLogsResponse>> t){\n    try{\n        auto response = t.get();\n    }catch(...){\n    }\n});",
+  "model": "openai/gpt-oss-120b"
+}

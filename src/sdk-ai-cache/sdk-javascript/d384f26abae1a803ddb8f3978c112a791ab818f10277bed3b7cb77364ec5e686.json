@@ -1,0 +1,7 @@
+{
+  "method": "saveCommentsBulk",
+  "signatureHash": "d384f26abae1a803ddb8f3978c112a791ab818f10277bed3b7cb77364ec5e686",
+  "generatedAt": "2026-07-01T07:19:54.344Z",
+  "codeExample": "const tenantId: string = \"tenant_9f8b7c6d\";\n\nconst bulkComments: CreateCommentParams[] = [\n  {\n    content: \"Welcome to the new forum thread!\",\n    authorId: \"user_42\",\n    mentions: [{ userId: \"user_84\", username: \"alice\" }],\n    hashtags: [{ tag: \"intro\" }]\n  },\n  {\n    content: \"Please review the updated guidelines.\",\n    authorId: \"moderator_1\",\n    mentions: [],\n    hashtags: [{ tag: \"guidelines\" }, { tag: \"update\" }]\n  }\n];\n\nconst results: SaveCommentsBulkResponse[] = await saveCommentsBulk(\n  tenantId,\n  bulkComments,\n  true,      // isLive\n  false,     // doSpamCheck\n  true,      // sendEmails\n  undefined  // populateNotifications (using default)\n);",
+  "model": "openai/gpt-oss-120b"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "deleteNotificationCount",
+  "signatureHash": "8b9c337d4c56fec08ded61e632ce22da8b5e9720a7e9bf48584061fd5eeb9e3f",
+  "generatedAt": "2026-07-01T07:19:24.437Z",
+  "codeExample": "let (apiRespOpt, httpResp) = client.deleteNotificationCount(tenantId = \"my-tenant-123\", id = \"notif-456\")\nif apiRespOpt.isSome:\n  let _ = apiRespOpt.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

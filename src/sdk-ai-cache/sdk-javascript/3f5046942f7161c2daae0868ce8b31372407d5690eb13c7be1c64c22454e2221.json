@@ -1,0 +1,7 @@
+{
+  "method": "saveComment",
+  "signatureHash": "3f5046942f7161c2daae0868ce8b31372407d5690eb13c7be1c64c22454e2221",
+  "generatedAt": "2026-07-01T07:19:39.423Z",
+  "codeExample": "async function submitComment() {\n  const tenantId: string = \"tenant_9f8e7d6c\";\n  const commentParams: CreateCommentParams = {\n    text: \"Great post, thanks for sharing!\",\n    authorId: \"user_123abc\",\n    mentions: [] as CommentUserMentionInfo[],\n    hashtags: [] as CommentUserHashTagInfo[]\n  };\n  const response: SaveCommentResponse = await saveComment(\n    tenantId,\n    commentParams,\n    true,   // isLive\n    false   // doSpamCheck\n  );\n  console.log(response);\n}\nsubmitComment();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

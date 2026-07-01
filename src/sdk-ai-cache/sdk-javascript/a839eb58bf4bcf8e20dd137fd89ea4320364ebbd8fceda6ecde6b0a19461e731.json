@@ -1,0 +1,7 @@
+{
+  "method": "createVote",
+  "signatureHash": "a839eb58bf4bcf8e20dd137fd89ea4320364ebbd8fceda6ecde6b0a19461e731",
+  "generatedAt": "2026-07-01T07:19:33.442Z",
+  "codeExample": "const tenantId: string = \"tenant_12345\";\nconst commentId: string = \"comment_987654\";\nconst direction: CreateVoteDirectionEnum = CreateVoteDirectionEnum.Upvote;\nconst userId: string = \"user_7f9a2b\";\n\nconst voteResult: CreateVoteResponse = await createVote(\n  tenantId,\n  commentId,\n  direction,\n  userId\n);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

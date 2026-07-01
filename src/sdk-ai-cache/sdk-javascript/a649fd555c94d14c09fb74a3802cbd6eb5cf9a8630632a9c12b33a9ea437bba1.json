@@ -1,0 +1,7 @@
+{
+  "method": "postSetCommentSpamStatus",
+  "signatureHash": "a649fd555c94d14c09fb74a3802cbd6eb5cf9a8630632a9c12b33a9ea437bba1",
+  "generatedAt": "2026-07-01T07:19:36.526Z",
+  "codeExample": "async function demoSpamStatus(): Promise<void> {\n  const commentId: string = \"cmt_5f2a1b3c4d6e7f8g9h0i\";\n\n  // Only required parameter\n  const resultSimple: PostSetCommentSpamStatusResponse = await postSetCommentSpamStatus(commentId, true);\n\n  // All optional parameters provided\n  const resultFull: PostSetCommentSpamStatusResponse = await postSetCommentSpamStatus(\n    commentId,\n    false,\n    true,\n    \"brd_1234abcd\",\n    \"tenant_42\",\n    \"sso_9876xyz\"\n  );\n\n  console.log(resultSimple, resultFull);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

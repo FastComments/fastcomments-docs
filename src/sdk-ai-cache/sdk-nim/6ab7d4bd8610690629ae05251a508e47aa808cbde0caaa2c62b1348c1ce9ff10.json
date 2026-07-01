@@ -1,0 +1,7 @@
+{
+  "method": "getUserBadge",
+  "signatureHash": "6ab7d4bd8610690629ae05251a508e47aa808cbde0caaa2c62b1348c1ce9ff10",
+  "generatedAt": "2026-07-01T07:19:19.522Z",
+  "codeExample": "let (badgeOpt, httpResp) = client.getUserBadge(tenantId = \"my-tenant-123\", id = \"user-789\")\nif badgeOpt.isSome:\n  let badge = badgeOpt.get()\n  echo badge\nelse:\n  echo \"No badge found\"\necho httpResp.statusCode",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

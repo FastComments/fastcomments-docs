@@ -1,0 +1,7 @@
+{
+  "method": "updateTenantPackage",
+  "signatureHash": "eed95fe05e400bceac0480da03e33805d40f02d50d0cdef9e4ec81199e0bf864",
+  "generatedAt": "2026-07-01T07:20:01.236Z",
+  "codeExample": "const tenantId: string = \"tenant-9876\";\nconst packageId: string = \"pkg-2023\";\n\nconst customConfig: CustomConfigParameters = {\n  enableSpamFilter: true,\n  spamRatingThreshold: 4,\n};\n\nconst updateBody: UpdateTenantPackageBody = {\n  displayName: \"Enterprise Pro\",\n  customConfig,\n};\n\nconst response: UpdateTenantPackageResponse = await updateTenantPackage(\n  tenantId,\n  packageId,\n  updateBody\n);",
+  "model": "openai/gpt-oss-120b"
+}

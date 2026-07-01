@@ -1,0 +1,7 @@
+{
+  "method": "getQuestionResults",
+  "signatureHash": "16dc3d92c161b1da9be3ff43d6db1035d246a27b4d6a7132a9ea599c58525649",
+  "generatedAt": "2026-07-01T07:19:55.309Z",
+  "codeExample": "let (response, httpResponse) = client.getQuestionResults(\n  tenantId = \"my-tenant-123\",\n  options = GetQuestionResultsOptions()\n)\n\nif response.isSome:\n  let results = response.get()\n  echo results",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

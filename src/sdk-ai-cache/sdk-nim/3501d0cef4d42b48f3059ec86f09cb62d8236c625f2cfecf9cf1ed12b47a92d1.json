@@ -1,0 +1,7 @@
+{
+  "method": "getSSOUsers",
+  "signatureHash": "3501d0cef4d42b48f3059ec86f09cb62d8236c625f2cfecf9cf1ed12b47a92d1",
+  "generatedAt": "2026-07-01T07:19:19.397Z",
+  "codeExample": "let (maybeResponse, httpResponse) = client.getSSOUsers(tenantId = \"my-tenant-123\", skip = 0)\nif maybeResponse.isSome:\n  let users = maybeResponse.get()\n  echo users\nelse:\n  echo \"No SSO users found\"\necho httpResponse.statusCode",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

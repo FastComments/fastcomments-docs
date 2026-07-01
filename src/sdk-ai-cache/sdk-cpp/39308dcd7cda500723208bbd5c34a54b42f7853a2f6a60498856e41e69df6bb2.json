@@ -1,0 +1,7 @@
+{
+  "method": "createFeedPostPublic",
+  "signatureHash": "39308dcd7cda500723208bbd5c34a54b42f7853a2f6a60498856e41e69df6bb2",
+  "generatedAt": "2026-07-01T07:19:54.282Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\n\nCreateFeedPostParams params;\nparams.title = U(\"Introducing Our New Feature\");\nparams.content = U(\"We are excited to announce the release of our latest update.\");\nparams.authorEmail = boost::optional<utility::string_t>(U(\"user@example.com\"));\nparams.tags = boost::optional<std::vector<utility::string_t>>({U(\"announcement\"), U(\"release\")});\n\nCreateFeedPostPublicOptions options;\n\napi->createFeedPostPublic(tenantId, params, options)\n    .then([](std::shared_ptr<CreateFeedPostResponse> resp) {\n        if (resp) {\n            std::wcout << U(\"Post created with ID: \") << resp->postId << std::endl;\n        }\n    });",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

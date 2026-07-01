@@ -1,0 +1,7 @@
+{
+  "method": "create_moderator",
+  "signatureHash": "df0cda0afb9b646fbabd80e88d788a1ae7f663e81569e1a1f820cc3cc7055b8b",
+  "generatedAt": "2026-07-01T07:19:33.997Z",
+  "codeExample": "async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params = CreateModeratorParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        create_moderator_body: models::CreateModeratorBody {\n            email: \"mod@example.com\".to_string(),\n            username: Some(\"mod_user\".to_string()),\n            permissions: vec![\"delete\".to_string(), \"edit\".to_string()],\n            ..Default::default()\n        },\n    };\n    let _response = create_moderator(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

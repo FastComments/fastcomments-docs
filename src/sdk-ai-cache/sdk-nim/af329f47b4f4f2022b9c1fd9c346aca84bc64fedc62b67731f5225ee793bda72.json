@@ -1,0 +1,7 @@
+{
+  "method": "addHashTagsBulk",
+  "signatureHash": "af329f47b4f4f2022b9c1fd9c346aca84bc64fedc62b67731f5225ee793bda72",
+  "generatedAt": "2026-07-01T07:19:49.142Z",
+  "codeExample": "let (optResp, httpResp) = client.addHashTagsBulk(\n  tenantId = \"my-tenant-123\",\n  bulkCreateHashTagsBody = BulkCreateHashTagsBody(\n    hashTags = @[\"news\", \"technology\"]\n  )\n)\n\nif optResp.isSome:\n  let resp = optResp.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

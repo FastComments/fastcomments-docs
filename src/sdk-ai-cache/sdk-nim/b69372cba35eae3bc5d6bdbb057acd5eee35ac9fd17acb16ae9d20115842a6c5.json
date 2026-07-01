@@ -1,0 +1,7 @@
+{
+  "method": "createTenant",
+  "signatureHash": "b69372cba35eae3bc5d6bdbb057acd5eee35ac9fd17acb16ae9d20115842a6c5",
+  "generatedAt": "2026-07-01T07:19:50.226Z",
+  "codeExample": "let (maybeResp, httpResp) = client.createTenant(tenantId = \"my-tenant-123\", createTenantBody = CreateTenantBody())\nif maybeResp.isSome:\n  let resp = maybeResp.get()\n  discard resp\ndiscard httpResp",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

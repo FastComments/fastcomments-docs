@@ -1,0 +1,7 @@
+{
+  "method": "createUserBadge",
+  "signatureHash": "0fc92aac6de1aca1c93cfa70ab70ea5d82ed1950131057ac33efdec333bc5edc",
+  "generatedAt": "2026-07-01T07:19:40.534Z",
+  "codeExample": "auto tenantId = U(\"my-tenant-123\");\nCreateUserBadgeParams badgeParams;\nbadgeParams.userEmail = U(\"user@example.com\");\nbadgeParams.badgeCode = U(\"gold\");\nbadgeParams.expirationDate = boost::optional<utility::datetime>(utility::datetime::utc_now() + utility::datetime::from_seconds(2592000));\napi->createUserBadge(tenantId, badgeParams).then([](std::shared_ptr<APICreateUserBadgeResponse> resp){\n    if (resp && resp->success) {\n        auto result = std::make_shared<APICreateUserBadgeResponse>(*resp);\n    }\n});",
+  "model": "openai/gpt-oss-120b"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "createCommentPublic",
+  "signatureHash": "28ded905b1d020b2bd0bd7ec8681c76d823b207a4853acbba6d57c2872783516",
+  "generatedAt": "2026-07-01T07:19:33.100Z",
+  "codeExample": "auto comment = CommentData();\ncomment.body = U(\"This is a test comment\");\ncomment.authorName = U(\"John Doe\");\ncomment.authorEmail = U(\"john.doe@example.com\");\n\nCreateCommentPublicOptions opts;\nopts.replyToCommentId = boost::optional<utility::string_t>(U(\"parent-123\"));\n\napi->createCommentPublic(\n    U(\"my-tenant-123\"),\n    U(\"article-456\"),\n    U(\"broadcast-789\"),\n    comment,\n    opts).then([](std::shared_ptr<SaveCommentsResponseWithPresence> res){\n        auto commentId = res->commentId;\n    });",
+  "model": "openai/gpt-oss-120b"
+}

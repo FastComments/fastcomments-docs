@@ -1,0 +1,7 @@
+{
+  "method": "patchHashTag",
+  "signatureHash": "a2807df10e792f2029ec0b0b4415d9d43b4c88a98f49830d7a9c3bb90e8de5b2",
+  "generatedAt": "2026-07-01T07:19:27.687Z",
+  "codeExample": "let updateBody = UpdateHashTagBody()\nlet (optResp, httpResp) = client.patchHashTag(\n  tenantId = \"my-tenant-123\",\n  tag = \"news\",\n  updateHashTagBody = updateBody\n)\nif optResp.isSome:\n  let resp = optResp.get()\n  echo resp\nelse:\n  echo \"No response\"",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "deleteVote",
+  "signatureHash": "a4b70d3dfb71a21b68fa0977ef34d525325b389437dd2153e2f5fcb0c91b332f",
+  "generatedAt": "2026-07-01T07:19:39.823Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto voteId = utility::conversions::to_string_t(\"vote-9876\");\nboost::optional<utility::string_t> editKey = utility::conversions::to_string_t(\"edit-abc123\");\n\napi->deleteVote(tenantId, voteId, editKey).then([](pplx::task<std::shared_ptr<VoteDeleteResponse>> task) {\n    try {\n        auto response = task.get();\n        // Process response as needed\n    } catch (const std::exception&) {\n        // Handle error\n    }\n});",
+  "model": "openai/gpt-oss-120b"
+}

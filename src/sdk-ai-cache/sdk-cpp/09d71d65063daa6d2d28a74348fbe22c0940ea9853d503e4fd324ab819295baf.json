@@ -1,0 +1,7 @@
+{
+  "method": "putSSOUser",
+  "signatureHash": "09d71d65063daa6d2d28a74348fbe22c0940ea9853d503e4fd324ab819295baf",
+  "generatedAt": "2026-07-01T07:19:39.741Z",
+  "codeExample": "UpdateAPISSOUserData userData;\nuserData.email = utility::conversions::to_string_t(\"alice@example.com\");\nuserData.first_name = utility::conversions::to_string_t(\"Alice\");\nuserData.last_name = utility::conversions::to_string_t(\"Smith\");\nuserData.role = utility::conversions::to_string_t(\"moderator\");\n\napi->putSSOUser(\n    utility::conversions::to_string_t(\"my-tenant-123\"),\n    utility::conversions::to_string_t(\"alice.smith\"),\n    userData,\n    boost::optional<bool>(true)\n).then([](pplx::task<std::shared_ptr<PutSSOUserAPIResponse>> t) {\n    auto response = t.get();\n});",
+  "model": "openai/gpt-oss-120b"
+}

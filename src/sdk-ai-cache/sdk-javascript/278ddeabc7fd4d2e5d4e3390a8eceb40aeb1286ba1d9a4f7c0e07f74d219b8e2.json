@@ -1,0 +1,7 @@
+{
+  "method": "getTickets",
+  "signatureHash": "278ddeabc7fd4d2e5d4e3390a8eceb40aeb1286ba1d9a4f7c0e07f74d219b8e2",
+  "generatedAt": "2026-07-01T07:19:53.060Z",
+  "codeExample": "async function loadTickets() {\n  const tenantId: string = \"acme-corp\";\n  const userId: string = \"john.doe\";\n  const state: number = 2; // e.g., closed\n  const skip: number = 10;\n  const limit: number = 5;\n\n  const ticketsFull: GetTicketsResponse1 = await getTickets(tenantId, userId, state, skip, limit);\n  const ticketsPartial: GetTicketsResponse1 = await getTickets(tenantId);\n}\n\nloadTickets();",
+  "model": "openai/gpt-oss-120b"
+}

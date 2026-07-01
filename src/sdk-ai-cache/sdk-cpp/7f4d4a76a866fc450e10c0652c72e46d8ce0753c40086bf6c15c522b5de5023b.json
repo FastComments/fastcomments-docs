@@ -1,0 +1,7 @@
+{
+  "method": "getTicket",
+  "signatureHash": "7f4d4a76a866fc450e10c0652c72e46d8ce0753c40086bf6c15c522b5de5023b",
+  "generatedAt": "2026-07-01T07:19:54.283Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t ticketId = U(\"ticket-789\");\nboost::optional<utility::string_t> userId = U(\"alice@example.com\");\napi->getTicket(tenantId, ticketId, userId).then([](pplx::task<std::shared_ptr<GetTicketResponse>> task){\n    try{\n        auto resp = task.get();\n    }catch(const std::exception&){\n    }\n});",
+  "model": "openai/gpt-oss-120b"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getSearchSuggest",
+  "signatureHash": "22ad7ff88d423803bdf9ebc4bca294ed5ddff64a2c2b48e9a60cd3ddc7335051",
+  "generatedAt": "2026-07-01T07:19:34.617Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nGetSearchSuggestOptions opts;\nopts.query = U(\"search term\");\nopts.limit = boost::optional<int>(5);\nopts.includeInactive = boost::optional<bool>(false);\napi->getSearchSuggest(tenantId, opts).then([](pplx::task<std::shared_ptr<ModerationSuggestResponse>> t){\n    try{\n        auto resp = t.get();\n    }catch(const std::exception&){ }\n}).wait();",
+  "model": "openai/gpt-oss-120b"
+}

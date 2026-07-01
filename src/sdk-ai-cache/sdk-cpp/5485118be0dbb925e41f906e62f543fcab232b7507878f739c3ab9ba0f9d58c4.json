@@ -1,0 +1,7 @@
+{
+  "method": "logoutPublic",
+  "signatureHash": "5485118be0dbb925e41f906e62f543fcab232b7507878f739c3ab9ba0f9d58c4",
+  "generatedAt": "2026-07-01T07:19:29.945Z",
+  "codeExample": "api->logoutPublic()\n    .then([](std::shared_ptr<APIEmptyResponse> /*resp*/) {\n        std::cout << \"Logout successful\\n\";\n    })\n    .then([](pplx::task<void> t) {\n        try {\n            t.get();\n        } catch (const std::exception& e) {\n            std::cerr << \"Logout failed: \" << e.what() << std::endl;\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

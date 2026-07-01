@@ -1,0 +1,7 @@
+{
+  "method": "getOnlineUsers",
+  "signatureHash": "dedf770caaede943f14e918a79f6501bce0d7218941a6befed2cbea606b7d895",
+  "generatedAt": "2026-07-01T07:19:53.451Z",
+  "codeExample": "let opts = GetOnlineUsersOptions()\nlet (onlineUsersOpt, httpResp) = client.getOnlineUsers(tenantId = \"my-tenant-123\", urlId = \"news/article-title\", options = opts)\nif onlineUsersOpt.isSome:\n  let onlineUsers = onlineUsersOpt.get()\n  echo onlineUsers",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

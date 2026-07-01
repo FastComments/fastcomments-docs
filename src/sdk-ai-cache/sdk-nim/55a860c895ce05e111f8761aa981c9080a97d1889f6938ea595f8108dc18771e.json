@@ -1,0 +1,7 @@
+{
+  "method": "voteComment",
+  "signatureHash": "55a860c895ce05e111f8761aa981c9080a97d1889f6938ea595f8108dc18771e",
+  "generatedAt": "2026-07-01T07:19:23.804Z",
+  "codeExample": "let (voteRespOpt, httpResp) = client.voteComment(\n  tenantId = \"my-tenant-123\",\n  commentId = \"comment-98765\",\n  urlId = \"blog/how-to-code\",\n  broadcastId = \"\",\n  voteBodyParams = VoteBodyParams(),\n  options = VoteCommentOptions()\n)\n\nif voteRespOpt.isSome:\n  let voteResp = voteRespOpt.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

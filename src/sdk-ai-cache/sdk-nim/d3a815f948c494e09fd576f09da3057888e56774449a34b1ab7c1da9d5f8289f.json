@@ -1,0 +1,7 @@
+{
+  "method": "getSearchPages",
+  "signatureHash": "d3a815f948c494e09fd576f09da3057888e56774449a34b1ab7c1da9d5f8289f",
+  "generatedAt": "2026-07-01T07:19:54.729Z",
+  "codeExample": "let (searchResp, httpResp) = client.getSearchPages(\n  tenantId = \"my-tenant-123\",\n  options = GetSearchPagesOptions(\n    page: 1,\n    pageSize: 20,\n    query: \"spam\"\n  )\n)\n\nif searchResp.isSome:\n  let resp = searchResp.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getSubscriptions",
+  "signatureHash": "fd8b29175c893856687ccb11179484a2d1205d4f6cd5ea5f2021677534ec5957",
+  "generatedAt": "2026-07-01T07:19:47.175Z",
+  "codeExample": "let (subscriptionsOpt, httpResp) = client.getSubscriptions(tenantId = \"my-tenant-123\", userId = \"user-456\")\nif subscriptionsOpt.isSome:\n  let subscriptions = subscriptionsOpt.get()\n  echo subscriptions",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

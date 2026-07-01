@@ -1,0 +1,7 @@
+{
+  "method": "getTenantDailyUsages",
+  "signatureHash": "c32176e4a6f73cb973e0e4f597d371ae78be221bd9e76b29f661eeb514001011",
+  "generatedAt": "2026-07-01T07:20:01.288Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nGetTenantDailyUsagesOptions opts;\nopts.startDate = boost::optional<utility::datetime>(utility::datetime::from_string(U(\"2023-01-01T00:00:00Z\")));\nopts.endDate   = boost::optional<utility::datetime>(utility::datetime::from_string(U(\"2023-01-31T23:59:59Z\")));\napi->getTenantDailyUsages(tenantId, opts).then([](std::shared_ptr<GetTenantDailyUsagesResponse> resp){\n    auto result = std::make_shared<GetTenantDailyUsagesResponse>(*resp);\n}).wait();",
+  "model": "openai/gpt-oss-120b"
+}

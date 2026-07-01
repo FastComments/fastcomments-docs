@@ -1,0 +1,7 @@
+{
+  "method": "createV2PageReact",
+  "signatureHash": "eda8d25cddffa2d22ac06a7f6c50bfc1fda2032a966c7e5e426e56bc2d2c8c74",
+  "generatedAt": "2026-07-01T07:19:37.551Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"acme-corp\";\n  const urlId: string = \"blog/posts/fastcomments-integration\";\n  const pageId: string = \"page-12345\";\n  const title: string = \"FastComments API Integration Guide\";\n\n  const responseWithoutTitle: CreateV2PageReactResponse = await createV2PageReact(tenantId, urlId, pageId);\n  const responseWithTitle: CreateV2PageReactResponse = await createV2PageReact(tenantId, urlId, pageId, title);\n\n  console.log(responseWithoutTitle, responseWithTitle);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "createV2PageReact",
+  "signatureHash": "c7c038668d6761f0499247a05b302d6a0cce25ff98a63951eafe40f3b2ccb7d6",
+  "generatedAt": "2026-07-01T07:19:34.399Z",
+  "codeExample": "api->createV2PageReact(\n    utility::string_t(U(\"my-tenant-789\")),\n    utility::string_t(U(\"https://example.com/articles/12345\")),\n    utility::string_t(U(\"user-42\")),\n    boost::optional<utility::string_t>(U(\"Helpful\"))\n).then([](pplx::task<std::shared_ptr<CreateV1PageReact>> task){\n    try{\n        auto response = task.get();\n    }catch(const std::exception&){ }\n});",
+  "model": "openai/gpt-oss-120b"
+}

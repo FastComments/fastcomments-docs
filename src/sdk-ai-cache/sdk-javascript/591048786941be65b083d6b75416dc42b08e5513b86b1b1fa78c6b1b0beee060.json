@@ -1,0 +1,7 @@
+{
+  "method": "putRemoveBadge",
+  "signatureHash": "591048786941be65b083d6b75416dc42b08e5513b86b1b1fa78c6b1b0beee060",
+  "generatedAt": "2026-07-01T07:19:54.166Z",
+  "codeExample": "const badgeId: string = \"badge-12345\";\nconst userId: string = \"user-9876\";\nconst commentId: string = \"comment-5555\";\nconst broadcastId: string = \"broadcast-001\";\n\nconst result: PutRemoveBadgeResponse = await putRemoveBadge(\n  badgeId,\n  userId,\n  commentId,\n  broadcastId\n);",
+  "model": "openai/gpt-oss-120b"
+}

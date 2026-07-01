@@ -1,0 +1,7 @@
+{
+  "method": "sendInvite",
+  "signatureHash": "d80869e5fbdab31327bc082d02efbd477fa7c9ff4e00107c3ea3acbb153b1449",
+  "generatedAt": "2026-07-01T07:19:42.540Z",
+  "codeExample": "const tenantId: string = \"acme-corp-tenant\";\nconst inviteId: string = \"invite-12345\";\nconst fromName: string = \"John Doe\";\n\nconst inviteResult: SendInviteResponse = await sendInvite(tenantId, inviteId, fromName);",
+  "model": "openai/gpt-oss-120b"
+}

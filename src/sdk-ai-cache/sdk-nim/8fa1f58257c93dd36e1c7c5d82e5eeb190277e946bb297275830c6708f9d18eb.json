@@ -1,0 +1,7 @@
+{
+  "method": "updateTenantUser",
+  "signatureHash": "8fa1f58257c93dd36e1c7c5d82e5eeb190277e946bb297275830c6708f9d18eb",
+  "generatedAt": "2026-07-01T07:19:53.137Z",
+  "codeExample": "let updateBody = UpdateTenantUserBody()\nlet (optResp, httpResp) = client.updateTenantUser(\n  tenantId = \"my-tenant-123\",\n  id = \"user-456\",\n  updateTenantUserBody = updateBody,\n  updateComments = \"Changed role to moderator\",\n)\nif optResp.isSome:\n  let _ = optResp.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getV1PageLikes",
+  "signatureHash": "33a02d834d27778ceddea64bc863cffe1aa92c3d9e3538b1f4d1e8d8b44a64de",
+  "generatedAt": "2026-07-01T07:19:48.667Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto urlId = utility::conversions::to_string_t(\"article-789\");\nboost::optional<utility::string_t> filter;\n\napi->getV1PageLikes(tenantId, urlId).then([=](pplx::task<std::shared_ptr<GetV1PageLikes>> task){\n    try{\n        auto raw = task.get();\n        auto likes = std::make_shared<GetV1PageLikes>(*raw);\n        auto total = likes->totalLikes;\n    }catch(...){\n    }\n});",
+  "model": "openai/gpt-oss-120b"
+}

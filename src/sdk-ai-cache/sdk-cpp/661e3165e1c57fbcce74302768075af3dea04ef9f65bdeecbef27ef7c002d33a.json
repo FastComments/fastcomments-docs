@@ -1,0 +1,7 @@
+{
+  "method": "postFlagComment",
+  "signatureHash": "661e3165e1c57fbcce74302768075af3dea04ef9f65bdeecbef27ef7c002d33a",
+  "generatedAt": "2026-07-01T07:19:38.214Z",
+  "codeExample": "PostFlagCommentOptions options;\noptions.reason = boost::optional<utility::string_t>(U(\"spam\"));\noptions.reportedBy = boost::optional<utility::string_t>(U(\"moderator@example.com\"));\n\napi->postFlagComment(U(\"my-tenant-123\"), U(\"comment-456\"), options)\n    .then([](std::shared_ptr<APIEmptyResponse> resp){\n        (void)resp;\n    })\n    .then([](pplx::task<void> t){\n        try{\n            t.get();\n        }catch(const std::exception&){\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

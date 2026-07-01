@@ -1,0 +1,7 @@
+{
+  "method": "createSubscription",
+  "signatureHash": "dbb601cfd50aee36b3568b36b1de623b5f3ad33458e474c6dfc2c3b5e4344661",
+  "generatedAt": "2026-07-01T07:19:41.949Z",
+  "codeExample": "auto tenantId = U(\"my-tenant-123\");\nCreateAPIUserSubscriptionData subscriptionData;\nsubscriptionData.email = U(\"user@example.com\");\nsubscriptionData.planId = U(\"premium-plan\");\nsubscriptionData.couponCode = boost::optional<utility::string_t>(U(\"WELCOME10\"));\napi->createSubscription(tenantId, subscriptionData)\n    .then([](pplx::task<std::shared_ptr<CreateSubscriptionAPIResponse>> task) {\n        try {\n            auto response = task.get();\n        } catch (const std::exception&) {\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

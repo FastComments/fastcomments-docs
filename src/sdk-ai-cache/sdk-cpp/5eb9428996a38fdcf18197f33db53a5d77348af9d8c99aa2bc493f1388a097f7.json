@@ -1,0 +1,7 @@
+{
+  "method": "getCommentsPublic",
+  "signatureHash": "5eb9428996a38fdcf18197f33db53a5d77348af9d8c99aa2bc493f1388a097f7",
+  "generatedAt": "2026-07-01T07:19:36.229Z",
+  "codeExample": "auto tenantId = U(\"my-tenant-123\");\nauto urlId = U(\"article-456\");\nGetCommentsPublicOptions opts;\nopts.pageSize = 20;\nopts.includeDeleted = false;\napi->getCommentsPublic(tenantId, urlId, opts).then([](std::shared_ptr<GetCommentsResponseWithPresence_PublicComment_> resp) {\n    (void)resp;\n});",
+  "model": "openai/gpt-oss-120b"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getManualBadges",
+  "signatureHash": "3db35c98930de5458044865b59099ab2d55a838d071e57ff273ec19716bb0495",
+  "generatedAt": "2026-07-01T07:19:33.390Z",
+  "codeExample": "let (manualBadgesOpt, httpResponse) = client.getManualBadges(tenantId = \"my-tenant-123\", sso = \"\")\nif manualBadgesOpt.isSome:\n  let manualBadges = manualBadgesOpt.get()\n  echo manualBadges",
+  "model": "openai/gpt-oss-120b"
+}

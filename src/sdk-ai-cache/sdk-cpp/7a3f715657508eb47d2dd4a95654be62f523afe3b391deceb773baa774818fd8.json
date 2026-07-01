@@ -1,0 +1,7 @@
+{
+  "method": "getComment",
+  "signatureHash": "7a3f715657508eb47d2dd4a95654be62f523afe3b391deceb773baa774818fd8",
+  "generatedAt": "2026-07-01T07:19:28.755Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto commentId = utility::conversions::to_string_t(\"comment-456\");\nboost::optional<int> maxDepth = boost::none;\napi->getComment(tenantId, commentId).then([](pplx::task<std::shared_ptr<APIGetCommentResponse>> t){\n    try{\n        auto resp = t.get();\n    }catch(const std::exception&){\n    }\n});",
+  "model": "openai/gpt-oss-120b"
+}

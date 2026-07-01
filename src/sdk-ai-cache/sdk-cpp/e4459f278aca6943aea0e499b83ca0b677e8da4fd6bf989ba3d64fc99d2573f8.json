@@ -1,0 +1,7 @@
+{
+  "method": "getCommentChildren",
+  "signatureHash": "e4459f278aca6943aea0e499b83ca0b677e8da4fd6bf989ba3d64fc99d2573f8",
+  "generatedAt": "2026-07-01T07:19:35.723Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"comment-456\");\nboost::optional<utility::string_t> sso = U(\"sso-token-abc\");\n\napi->getCommentChildren(tenantId, commentId, sso)\n    .then([](pplx::task<std::shared_ptr<ModerationAPIChildCommentsResponse>> task) {\n        try {\n            auto response = task.get();\n        } catch (const std::exception&) {\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "createModerator",
+  "signatureHash": "53ba06db1a5b4b19b33784131c231802da9ed31a214dd0d707376085758f9073",
+  "generatedAt": "2026-07-01T07:19:43.388Z",
+  "codeExample": "CreateModeratorBody moderatorBody;\nmoderatorBody.email = utility::conversions::to_string_t(\"moderator@example.com\");\nmoderatorBody.name = utility::conversions::to_string_t(\"John Moderator\");\nmoderatorBody.notes = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"Community moderator\"));\napi->createModerator(utility::conversions::to_string_t(\"my-tenant-123\"), moderatorBody)\n    .then([](std::shared_ptr<CreateModeratorResponse> resp) {});",
+  "model": "openai/gpt-oss-120b"
+}

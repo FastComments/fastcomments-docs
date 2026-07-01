@@ -1,0 +1,7 @@
+{
+  "method": "getUserReactsPublic",
+  "signatureHash": "a31ff24f313c488f5fb49d520d2352f42fe819f86f6b0501b407e3d9e74005ce",
+  "generatedAt": "2026-07-01T07:19:52.500Z",
+  "codeExample": "let opts = GetUserReactsPublicOptions(\n  limit = 20,\n  offset = 0,\n  includeDeleted = false\n)\n\nlet (response, httpResponse) = client.getUserReactsPublic(\n  tenantId = \"my-tenant-123\",\n  options = opts\n)\n\nif response.isSome:\n  let userReacts = response.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

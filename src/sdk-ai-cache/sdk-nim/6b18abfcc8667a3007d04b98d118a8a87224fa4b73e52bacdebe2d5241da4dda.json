@@ -1,0 +1,7 @@
+{
+  "method": "getEmailTemplate",
+  "signatureHash": "6b18abfcc8667a3007d04b98d118a8a87224fa4b73e52bacdebe2d5241da4dda",
+  "generatedAt": "2026-07-01T07:19:51.382Z",
+  "codeExample": "let (response, httpResponse) = client.getEmailTemplate(tenantId = \"my-tenant-123\", id = \"welcome-email\")\nif response.isSome:\n  let tmpl = response.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

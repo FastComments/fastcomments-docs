@@ -1,0 +1,7 @@
+{
+  "method": "updateUserNotificationCommentSubscriptionStatus",
+  "signatureHash": "d32b0f66bbac933a012d72a022a3b20fe4b26730f75a12b393959947f60643a5",
+  "generatedAt": "2026-07-01T07:19:53.612Z",
+  "codeExample": "let (optResp, httpResp) = client.updateUserNotificationCommentSubscriptionStatus(\n  tenantId = \"my-tenant-123\",\n  notificationId = \"notif-456\",\n  optedInOrOut = \"opted-in\",\n  commentId = \"comment-789\",\n  sso = \"\"\n)\n\nif optResp.isSome:\n  let resp = optResp.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

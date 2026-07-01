@@ -1,0 +1,7 @@
+{
+  "method": "updateTenantPackage",
+  "signatureHash": "284a301f0433e57a3565e68f6d99c8d9ed85e166e77d465b9d8bed569cd0455e",
+  "generatedAt": "2026-07-01T07:19:54.078Z",
+  "codeExample": "let body = UpdateTenantPackageBody()\nlet (optResp, httpResp) = client.updateTenantPackage(\n  tenantId = \"my-tenant-123\",\n  id = \"premium-plan\",\n  updateTenantPackageBody = body\n)\nif optResp.isSome:\n  let empty = optResp.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getPendingWebhookEvents",
+  "signatureHash": "36a24a70ac09d67002df9dc006cb4670b835137bdea1eff6863fe02d5d77f1b1",
+  "generatedAt": "2026-07-01T07:19:51.049Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-123\"));\nGetPendingWebhookEventsOptions opts;\nopts.pageSize = boost::optional<int>(100);\nopts.startAfter = boost::optional<utility::string_t>(U(\"event-abc-456\"));\napi->getPendingWebhookEvents(tenantId, opts)\n    .then([](pplx::task<std::shared_ptr<GetPendingWebhookEventsResponse>> task) {\n        try {\n            auto resp = task.get();\n            auto copy = std::make_shared<GetPendingWebhookEventsResponse>(*resp);\n        } catch (const std::exception&) {}\n    });",
+  "model": "openai/gpt-oss-120b"
+}

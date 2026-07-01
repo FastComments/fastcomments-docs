@@ -1,0 +1,7 @@
+{
+  "method": "setCommentText",
+  "signatureHash": "0ed2061390691e570d9f7db93646cdbbba1742c10ef5467f95bdb3974413c2b2",
+  "generatedAt": "2026-07-01T07:19:27.936Z",
+  "codeExample": "let commentUpdate = CommentTextUpdateRequest(text: \"Updated comment text\")\nlet opts = SetCommentTextOptions()\nlet (response, httpResponse) = client.setCommentText(\n  tenantId = \"my-tenant-123\",\n  commentId = \"cmt-456\",\n  broadcastId = \"broadcast-789\",\n  commentTextUpdateRequest = commentUpdate,\n  options = opts)\nif response.isSome:\n  let result = response.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

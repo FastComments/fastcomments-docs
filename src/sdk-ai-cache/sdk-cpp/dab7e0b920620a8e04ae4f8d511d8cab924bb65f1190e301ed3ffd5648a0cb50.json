@@ -1,0 +1,7 @@
+{
+  "method": "deleteV2PageReact",
+  "signatureHash": "dab7e0b920620a8e04ae4f8d511d8cab924bb65f1190e301ed3ffd5648a0cb50",
+  "generatedAt": "2026-07-01T07:19:37.688Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto urlId = utility::conversions::to_string_t(\"page-456\");\nauto reactId = utility::conversions::to_string_t(\"react-789\");\nboost::optional<utility::string_t> correlationId = utility::conversions::to_string_t(\"corr-001\");\n\napi->deleteV2PageReact(tenantId, urlId, reactId)\n   .then([](pplx::task<std::shared_ptr<CreateV1PageReact>> t) {\n        auto result = t.get();\n    });",
+  "model": "openai/gpt-oss-120b"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getGifLarge",
+  "signatureHash": "3f8150ea810a61e605da4dbe1587425a647c0260f7315e554c0d8b56cb724559",
+  "generatedAt": "2026-07-01T07:19:27.234Z",
+  "codeExample": "let (gifOpt, httpResp) = client.getGifLarge(\n  tenantId = \"my-tenant-123\",\n  largeInternalURLSanitized = \"https://cdn.example.com/gifs/large123.gif\")\nif gifOpt.isSome:\n  let gif = gifOpt.get()\n  echo gif",
+  "model": "openai/gpt-oss-120b"
+}

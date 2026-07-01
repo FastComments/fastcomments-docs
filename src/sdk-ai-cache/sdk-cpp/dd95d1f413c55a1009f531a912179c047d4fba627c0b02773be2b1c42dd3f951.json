@@ -1,0 +1,7 @@
+{
+  "method": "getDomainConfig",
+  "signatureHash": "dd95d1f413c55a1009f531a912179c047d4fba627c0b02773be2b1c42dd3f951",
+  "generatedAt": "2026-07-01T07:19:37.169Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t domain = U(\"myblog.example.com\");\n\napi->getDomainConfig(tenantId, domain)\n    .then([](std::shared_ptr<GetDomainConfigResponse> response) {\n        if (!response) return;\n        boost::optional<bool> moderationEnabled = response->moderationEnabled;\n        boost::optional<std::string> theme = response->theme;\n        if (moderationEnabled && *moderationEnabled) {\n            // handle enabled moderation\n        }\n        if (theme) {\n            // use theme value\n        }\n    })\n    .wait();",
+  "model": "openai/gpt-oss-120b"
+}

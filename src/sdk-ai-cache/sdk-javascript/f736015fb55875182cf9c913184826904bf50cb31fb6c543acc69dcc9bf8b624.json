@@ -1,0 +1,7 @@
+{
+  "method": "getModerators",
+  "signatureHash": "f736015fb55875182cf9c913184826904bf50cb31fb6c543acc69dcc9bf8b624",
+  "generatedAt": "2026-07-01T07:19:34.822Z",
+  "codeExample": "async function fetchModerators(): Promise<void> {\n  const tenantId: string = \"tenant-9876\";\n  const skip: number = 30; // optional pagination offset\n  const moderators: GetModeratorsResponse1 = await getModerators(tenantId, skip);\n  // Example without pagination:\n  // const allModerators: GetModeratorsResponse1 = await getModerators(tenantId);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

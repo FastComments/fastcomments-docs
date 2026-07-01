@@ -1,0 +1,7 @@
+{
+  "method": "logoutPublic",
+  "signatureHash": "9ff454a4d9fe06b8fffe5e49fe324728f8aeedcd5a180563cdbbcf14221ae56e",
+  "generatedAt": "2026-07-01T07:19:20.584Z",
+  "codeExample": "let (responseOpt, httpResponse) = client.logoutPublic(tenantId = \"my-tenant-123\", userId = \"user-456\")\nif responseOpt.isSome:\n  let emptyResponse = responseOpt.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

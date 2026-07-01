@@ -1,0 +1,7 @@
+{
+  "method": "getTicket",
+  "signatureHash": "733fab7720021c42b3358343476f2da5af9f6606ae12868b105de39478a4c62f",
+  "generatedAt": "2026-07-01T07:19:22.655Z",
+  "codeExample": "let (ticketOpt, httpResp) = client.getTicket(tenantId = \"my-tenant-123\", id = \"ticket-456\", userId = \"\")\nif ticketOpt.isSome:\n  let ticket = ticketOpt.get()\n  discard ticket",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "postBanUserUndo",
+  "signatureHash": "34d965045127ca006a9ffca08937b3b68b816e4ed5e1c87243e45e0126f61376",
+  "generatedAt": "2026-07-01T07:19:27.314Z",
+  "codeExample": "let (apiResp, httpResp) = client.postBanUserUndo(\n  tenantId = \"my-tenant-123\",\n  banUserUndoParams = BanUserUndoParams(userId = \"user-456\"),\n  sso = \"\"\n)\n\nif apiResp.isSome:\n  let _ = apiResp.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "addSSOUser",
+  "signatureHash": "10cd9d7fb618a6bb6d3a49172975dea5b29b86b5983a02c4e11c452e4849266f",
+  "generatedAt": "2026-07-01T07:19:26.221Z",
+  "codeExample": "let (optResp, httpResp) = client.addSSOUser(tenantId = \"my-tenant-123\", createAPISSOUserData = CreateAPISSOUserData())\nif optResp.isSome:\n  let userResp = optResp.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

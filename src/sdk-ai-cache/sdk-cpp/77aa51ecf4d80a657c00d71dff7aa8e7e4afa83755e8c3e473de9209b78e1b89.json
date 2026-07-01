@@ -1,0 +1,7 @@
+{
+  "method": "updateNotification",
+  "signatureHash": "77aa51ecf4d80a657c00d71dff7aa8e7e4afa83755e8c3e473de9209b78e1b89",
+  "generatedAt": "2026-07-01T07:19:52.683Z",
+  "codeExample": "auto updateBody = std::make_shared<UpdateNotificationBody>();\nupdateBody->title = utility::conversions::to_string_t(\"System Maintenance\");\nupdateBody->message = utility::conversions::to_string_t(\"Scheduled downtime at 02:00 UTC.\");\napi->updateNotification(\n    utility::conversions::to_string_t(\"my-tenant-123\"),\n    utility::conversions::to_string_t(\"notif-456\"),\n    updateBody,\n    boost::optional<utility::string_t>(utility::conversions::to_string_t(\"admin-user\"))\n).then([](std::shared_ptr<APIEmptyResponse>){});",
+  "model": "openai/gpt-oss-120b"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getPreBanSummary",
+  "signatureHash": "826778bbc98301707f6c5f83b04134247113b3197a490d50fed2aee1f892cf14",
+  "generatedAt": "2026-07-01T07:19:40.914Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto commentId = utility::conversions::to_string_t(\"cmt-456789\");\nGetPreBanSummaryOptions options;\noptions.locale = boost::optional<utility::string_t>{utility::conversions::to_string_t(\"en-US\")};\n\napi->getPreBanSummary(tenantId, commentId, options)\n    .then([](pplx::task<std::shared_ptr<PreBanSummary>> t) {\n        try {\n            auto summary = t.get();\n            // process summary\n        } catch (const std::exception&) {\n            // handle error\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

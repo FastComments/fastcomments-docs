@@ -1,0 +1,7 @@
+{
+  "method": "createSubscription",
+  "signatureHash": "0f5017e84b2afc02002d674f465fb243521d66ecedf821631017315ea55bf229",
+  "generatedAt": "2026-07-01T07:19:21.585Z",
+  "codeExample": "let (respOpt, httpResp) = client.createSubscription(\n  tenantId = \"my-tenant-123\",\n  createAPIUserSubscriptionData = default(CreateAPIUserSubscriptionData),\n)\n\nif respOpt.isSome:\n  let resp = respOpt.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

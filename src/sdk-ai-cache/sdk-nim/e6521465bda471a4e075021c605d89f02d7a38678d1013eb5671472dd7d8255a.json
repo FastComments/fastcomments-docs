@@ -1,0 +1,7 @@
+{
+  "method": "patchSSOUser",
+  "signatureHash": "e6521465bda471a4e075021c605d89f02d7a38678d1013eb5671472dd7d8255a",
+  "generatedAt": "2026-07-01T07:19:31.947Z",
+  "codeExample": "let updateData = UpdateAPISSOUserData()\nlet (responseOpt, httpResponse) = client.patchSSOUser(\n  tenantId = \"my-tenant-123\",\n  id = \"user-789\",\n  updateAPISSOUserData = updateData,\n  updateComments = true)\nif responseOpt.isSome:\n  let response = responseOpt.get()\n  echo response\necho httpResponse.statusCode",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

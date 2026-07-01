@@ -1,0 +1,7 @@
+{
+  "method": "createUserBadge",
+  "signatureHash": "ee2ef91bbb89fe85240c6496d710ad26706c8275c64c5fae88fe21de8137ab70",
+  "generatedAt": "2026-07-01T07:19:33.408Z",
+  "codeExample": "let (badgeRespOpt, httpResp) = client.createUserBadge(tenantId = \"my-tenant-123\", createUserBadgeParams = default(CreateUserBadgeParams))\nif badgeRespOpt.isSome:\n  let badgeResp = badgeRespOpt.get()",
+  "model": "openai/gpt-oss-120b"
+}

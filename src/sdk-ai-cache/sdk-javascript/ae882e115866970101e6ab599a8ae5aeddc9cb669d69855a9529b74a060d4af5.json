@@ -1,0 +1,7 @@
+{
+  "method": "postBanUserFromComment",
+  "signatureHash": "ae882e115866970101e6ab599a8ae5aeddc9cb669d69855a9529b74a060d4af5",
+  "generatedAt": "2026-07-01T07:19:35.507Z",
+  "codeExample": "async function runBan() {\n  const commentId: string = \"cmt_5f8a2b3c\";\n  const banEmail: boolean = true;\n  const banIP: boolean = false;\n  const deleteAllUsersComments: boolean = true;\n  const bannedUntil: string = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString();\n  const isShadowBan: boolean = false;\n  const banReason: string = \"Repeated spam posting\";\n  const tenantId: string = \"tenant_12345\";\n\n  const response: PostBanUserFromCommentResponse = await postBanUserFromComment(\n    commentId,\n    banEmail,\n    undefined,\n    banIP,\n    deleteAllUsersComments,\n    bannedUntil,\n    isShadowBan,\n    undefined,\n    banReason,\n    tenantId\n  );\n  console.log(response);\n}\nrunBan();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

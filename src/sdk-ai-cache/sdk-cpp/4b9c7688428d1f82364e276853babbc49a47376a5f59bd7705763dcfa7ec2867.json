@@ -1,0 +1,7 @@
+{
+  "method": "postBulkPreBanSummary",
+  "signatureHash": "4b9c7688428d1f82364e276853babbc49a47376a5f59bd7705763dcfa7ec2867",
+  "generatedAt": "2026-07-01T07:19:45.805Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nBulkPreBanParams bulkPreBanParams;\nbulkPreBanParams.emails = {\n    utility::conversions::to_string_t(\"spam1@example.com\"),\n    utility::conversions::to_string_t(\"spam2@example.com\")\n};\nbulkPreBanParams.reason = utility::conversions::to_string_t(\"spam\");\nPostBulkPreBanSummaryOptions options;\noptions.requestId = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"req-456\"));\napi->postBulkPreBanSummary(tenantId, bulkPreBanParams, options)\n    .then([](std::shared_ptr<BulkPreBanSummary> result) {\n        (void)result;\n    });",
+  "model": "openai/gpt-oss-120b"
+}

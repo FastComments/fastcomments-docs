@@ -1,0 +1,7 @@
+{
+  "method": "sendLoginLink",
+  "signatureHash": "b3f7597cb5d9b35b06465718e0e1775b6042e89c345bec158b75fe006e998340",
+  "generatedAt": "2026-07-01T07:19:41.455Z",
+  "codeExample": "async function demoSendLoginLink() {\n  const tenantId: string = \"acme-corp\";\n  const userId: string = \"user-9876\";\n  const redirectURL: string = \"https://app.acme-corp.com/auth/callback\";\n\n  const resultWithRedirect: SendLoginLinkResponse = await sendLoginLink(tenantId, userId, redirectURL);\n  const resultWithoutRedirect: SendLoginLinkResponse = await sendLoginLink(tenantId, userId);\n}",
+  "model": "openai/gpt-oss-120b"
+}

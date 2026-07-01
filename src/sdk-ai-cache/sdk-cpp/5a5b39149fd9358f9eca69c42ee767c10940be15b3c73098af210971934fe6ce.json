@@ -1,0 +1,7 @@
+{
+  "method": "getNotificationCount",
+  "signatureHash": "5a5b39149fd9358f9eca69c42ee767c10940be15b3c73098af210971934fe6ce",
+  "generatedAt": "2026-07-01T07:19:41.506Z",
+  "codeExample": "auto tenantId = U(\"my-tenant-123\");\nGetNotificationCountOptions options;\noptions.filter = boost::optional<utility::string_t>(U(\"unread\"));\noptions.maxCount = boost::optional<int>(10);\napi->getNotificationCount(tenantId, options)\n    .then([](pplx::task<std::shared_ptr<GetNotificationCountResponse>> t) {\n        try {\n            auto response = t.get();\n        } catch (const std::exception& ex) {\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

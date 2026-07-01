@@ -1,0 +1,7 @@
+{
+  "method": "getEventLog",
+  "signatureHash": "12c9c3fa84c3d4bd29bb7e7ce1075b966b0729939cf6dac6014e349598651d8d",
+  "generatedAt": "2026-07-01T07:19:56.106Z",
+  "codeExample": "auto startTime = int64_t(1622505600);\nboost::optional<int64_t> endTime = int64_t(1622592000);\napi->getEventLog(U(\"my-tenant-123\"), U(\"article-456\"), U(\"user@example.com\"), startTime, endTime)\n    .then([](std::shared_ptr<GetEventLogResponse> response){\n        auto copy = std::make_shared<GetEventLogResponse>(*response);\n        (void)copy;\n    });",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getUserBadgeProgressList",
+  "signatureHash": "c2381ad21ed5d16f6127618f19ef4f67a066e8828c902f8fac105f0940a700ac",
+  "generatedAt": "2026-07-01T07:19:41.216Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nGetUserBadgeProgressListOptions options;\noptions.userId = U(\"user@example.com\");\noptions.page = boost::optional<int>(1);\noptions.pageSize = boost::optional<int>(20);\napi->getUserBadgeProgressList(tenantId, options)\n    .then([](std::shared_ptr<APIGetUserBadgeProgressListResponse> resp) {\n        if (!resp) return;\n        for (const auto& badge : resp->badges) {\n            // process badge\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

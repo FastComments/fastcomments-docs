@@ -1,0 +1,7 @@
+{
+  "method": "create_question_config",
+  "signatureHash": "982a7182199700ddca0f25bd02bbfab6a16a67c0d8d185d0fe7583dce8c26f0a",
+  "generatedAt": "2026-07-01T07:19:37.031Z",
+  "codeExample": "let params = CreateQuestionConfigParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    create_question_config_body: models::CreateQuestionConfigBody {\n        description: Some(\"Survey for news article feedback\".to_string()),\n        custom_options: Some(vec![\n            QuestionConfigCustomOptionsInner {\n                option_key: \"allow_multiple\".to_string(),\n                option_value: \"true\".to_string(),\n            },\n        ]),\n        ..Default::default()\n    },\n};\n\nlet response = create_question_config(&configuration, params).await?;",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

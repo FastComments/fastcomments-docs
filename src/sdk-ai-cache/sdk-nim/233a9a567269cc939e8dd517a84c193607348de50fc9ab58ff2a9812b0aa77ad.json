@@ -1,0 +1,7 @@
+{
+  "method": "getSearchSites",
+  "signatureHash": "233a9a567269cc939e8dd517a84c193607348de50fc9ab58ff2a9812b0aa77ad",
+  "generatedAt": "2026-07-01T07:19:49.947Z",
+  "codeExample": "let (searchResult, httpResp) = client.getSearchSites(tenantId = \"my-tenant-123\", options = GetSearchSitesOptions())\nif searchResult.isSome:\n  let siteResp = searchResult.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

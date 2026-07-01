@@ -1,0 +1,7 @@
+{
+  "method": "deleteEmailTemplate",
+  "signatureHash": "1891af12286d54de477e805424eb9eb2fe21c4e65f7bda54a140a4d2b6f0304a",
+  "generatedAt": "2026-07-01T07:19:25.232Z",
+  "codeExample": "let (respOpt, httpResp) = client.deleteEmailTemplate(tenantId = \"my-tenant-123\", id = \"welcome-email\")\nif respOpt.isSome:\n  let emptyResp = respOpt.get()\n  echo \"Email template deleted\"\nelse:\n  echo \"Failed to delete email template\"",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

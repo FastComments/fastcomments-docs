@@ -1,0 +1,7 @@
+{
+  "method": "createTenantPackage",
+  "signatureHash": "4ad208781cef02bd3d34bb8e052b295685614b711799635c27820ca85e19183e",
+  "generatedAt": "2026-07-01T07:19:50.797Z",
+  "codeExample": "let (responseOpt, httpResponse) = client.createTenantPackage(\n  tenantId = \"my-tenant-123\",\n  createTenantPackageBody = CreateTenantPackageBody()\n)\n\nif responseOpt.isSome:\n  let response = responseOpt.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "updateTenantUser",
+  "signatureHash": "54ba3c43c2f6bf3b1168e942e2c20a5be2b1163ac62eba6b5d156ad16213329a",
+  "generatedAt": "2026-07-01T07:19:55.590Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t userId = U(\"user-456\");\nUpdateTenantUserBody body;\nbody.email = U(\"john.doe@example.com\");\nbody.role = U(\"admin\");\nboost::optional<utility::string_t> updateComments = U(\"Promoted to admin\");\n\napi->updateTenantUser(tenantId, userId, body, updateComments)\n    .then([](std::shared_ptr<APIEmptyResponse>){ });",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

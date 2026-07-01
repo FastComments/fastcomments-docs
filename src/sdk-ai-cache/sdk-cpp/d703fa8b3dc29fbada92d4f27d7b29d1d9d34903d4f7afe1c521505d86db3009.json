@@ -1,0 +1,7 @@
+{
+  "method": "deletePage",
+  "signatureHash": "d703fa8b3dc29fbada92d4f27d7b29d1d9d34903d4f7afe1c521505d86db3009",
+  "generatedAt": "2026-07-01T07:19:41.483Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto pageId   = utility::conversions::to_string_t(\"page-456\");\n\napi->deletePage(tenantId, pageId)\n   .then([](pplx::task<std::shared_ptr<DeletePageAPIResponse>> t) {\n       try {\n           auto response = t.get();\n           // process response as needed\n       } catch (const std::exception& ex) {\n           // handle error\n       }\n   });",
+  "model": "openai/gpt-oss-120b"
+}

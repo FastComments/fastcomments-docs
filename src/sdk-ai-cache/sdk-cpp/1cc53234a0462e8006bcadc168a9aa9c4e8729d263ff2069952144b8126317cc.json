@@ -1,0 +1,7 @@
+{
+  "method": "postSetCommentSpamStatus",
+  "signatureHash": "1cc53234a0462e8006bcadc168a9aa9c4e8729d263ff2069952144b8126317cc",
+  "generatedAt": "2026-07-01T07:19:54.409Z",
+  "codeExample": "auto options = PostSetCommentSpamStatusOptions{};\noptions.isSpam = true;\noptions.reason = boost::optional<utility::string_t>{U\"User reported spam\"};\n\napi->postSetCommentSpamStatus(U(\"my-tenant-123\"), U(\"comment-789\"), options)\n    .then([](std::shared_ptr<APIEmptyResponse> resp) {\n        auto copy = std::make_shared<APIEmptyResponse>(*resp);\n    })\n    .then([](pplx::task<void> t) {\n        try { t.get(); } catch(const std::exception&) {}\n    });",
+  "model": "openai/gpt-oss-120b"
+}

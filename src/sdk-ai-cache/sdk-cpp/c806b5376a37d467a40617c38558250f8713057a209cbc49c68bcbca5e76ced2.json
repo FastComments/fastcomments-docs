@@ -1,0 +1,7 @@
+{
+  "method": "getCommentVoteUserNames",
+  "signatureHash": "c806b5376a37d467a40617c38558250f8713057a209cbc49c68bcbca5e76ced2",
+  "generatedAt": "2026-07-01T07:19:48.962Z",
+  "codeExample": "auto task = api->getCommentVoteUserNames(\n    utility::conversions::to_string_t(\"my-tenant-123\"),\n    utility::conversions::to_string_t(\"comment-456\"),\n    static_cast<int32_t>(1),\n    boost::optional<utility::string_t>(utility::conversions::to_string_t(\"sso-token\"))\n).then([](pplx::task<std::shared_ptr<GetCommentVoteUserNamesSuccessResponse>> t){\n    try{\n        auto response = t.get();\n    }catch(const std::exception&){ }\n});",
+  "model": "openai/gpt-oss-120b"
+}

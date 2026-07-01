@@ -1,0 +1,7 @@
+{
+  "method": "deleteHashTag",
+  "signatureHash": "ddb6b352f1c5713bb8a9b01d504b500fb37964a23f1afdb62e30c8d1d4ea4f57",
+  "generatedAt": "2026-07-01T07:19:48.877Z",
+  "codeExample": "let (apiResp, httpResp) = client.deleteHashTag(tenantId = \"my-tenant-123\", tag = \"sports\", deleteHashTagRequestBody = DeleteHashTagRequestBody())\nif apiResp.isSome:\n  let emptyResp = apiResp.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getFeedPosts",
+  "signatureHash": "ada1e625fd4b2555f06d4bd17651a7fe4cb100aac5d688dc5ffb0ec3c4f62aad",
+  "generatedAt": "2026-07-01T07:19:52.986Z",
+  "codeExample": "let (feedResponseOpt, httpResp) = client.getFeedPosts(tenantId = \"my-tenant-123\", options = GetFeedPostsOptions())\nif feedResponseOpt.isSome:\n  let feedResponse = feedResponseOpt.get()\n  echo feedResponse",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

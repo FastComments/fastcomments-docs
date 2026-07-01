@@ -1,0 +1,7 @@
+{
+  "method": "getGifsTrending",
+  "signatureHash": "7af05a74780f99475e3a9dec7f98565533ac085912601273bcd696275995d194",
+  "generatedAt": "2026-07-01T07:19:31.585Z",
+  "codeExample": "let (maybeResponse, httpResponse) = client.getGifsTrending(\n  tenantId = \"my-tenant-123\",\n  options = GetGifsTrendingOptions()\n)\n\nif maybeResponse.isSome:\n  let gifs = maybeResponse.get()\n  echo gifs",
+  "model": "openai/gpt-oss-120b"
+}

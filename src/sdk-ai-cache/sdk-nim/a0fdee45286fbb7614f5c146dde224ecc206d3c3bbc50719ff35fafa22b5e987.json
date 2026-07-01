@@ -1,0 +1,7 @@
+{
+  "method": "addHashTag",
+  "signatureHash": "a0fdee45286fbb7614f5c146dde224ecc206d3c3bbc50719ff35fafa22b5e987",
+  "generatedAt": "2026-07-01T07:19:22.897Z",
+  "codeExample": "let (hashTagOpt, httpResp) = client.addHashTag(\n  tenantId = \"my-tenant-123\",\n  createHashTagBody = CreateHashTagBody(),\n)\n\nif hashTagOpt.isSome:\n  let tag = hashTagOpt.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

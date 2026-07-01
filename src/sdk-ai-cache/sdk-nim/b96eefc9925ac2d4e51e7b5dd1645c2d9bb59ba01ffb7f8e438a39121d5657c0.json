@@ -1,0 +1,7 @@
+{
+  "method": "sendLoginLink",
+  "signatureHash": "b96eefc9925ac2d4e51e7b5dd1645c2d9bb59ba01ffb7f8e438a39121d5657c0",
+  "generatedAt": "2026-07-01T07:19:27.307Z",
+  "codeExample": "let (maybeResp, httpResp) = client.sendLoginLink(\n  tenantId = \"my-tenant-123\",\n  id = \"user-456\",\n  redirectURL = \"https://myapp.example.com/login-success\"\n)\n\nif maybeResp.isSome:\n  let emptyResp = maybeResp.get()",
+  "model": "openai/gpt-oss-120b"
+}

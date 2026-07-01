@@ -1,0 +1,7 @@
+{
+  "method": "createTenant",
+  "signatureHash": "00f008eda14e1b573db27b27e79e1d527f567af5b5adf086f4e37385a3aa7e5f",
+  "generatedAt": "2026-07-01T07:19:36.990Z",
+  "codeExample": "async function example() {\n  const tenantId: string = 'tenant-2024-01';\n  const createTenantBody: CreateTenantBody = {\n    // required fields\n    name: 'Acme International',\n    // optional fields can be added as needed, e.g.:\n    // billingInfo: { address: '123 Main St', city: 'Metropolis' } as BillingInfo,\n  };\n  const response: CreateTenantResponse1 = await createTenant(tenantId, createTenantBody);\n  console.log(response);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

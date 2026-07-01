@@ -1,0 +1,7 @@
+{
+  "method": "bulkAggregateQuestionResults",
+  "signatureHash": "b0916fc0ec3a28c8cc13352f090bb4ce8aab2bfe7c7f5411cefbbca3613365d6",
+  "generatedAt": "2026-07-01T07:19:34.630Z",
+  "codeExample": "const tenantId: string = \"acme-corp\";\n\nconst request: BulkAggregateQuestionResultsRequest = {\n  questionIds: [\"product-satisfaction\", \"feature-usage\"],\n  startDate: \"2024-01-01T00:00:00Z\",\n  endDate: \"2024-01-31T23:59:59Z\",\n  timeBucket: \"day\"\n};\n\nconst result: BulkAggregateQuestionResultsResponse1 = await bulkAggregateQuestionResults(\n  tenantId,\n  request,\n  true\n);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

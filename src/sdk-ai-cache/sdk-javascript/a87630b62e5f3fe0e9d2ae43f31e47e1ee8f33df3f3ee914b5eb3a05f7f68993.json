@@ -1,0 +1,7 @@
+{
+  "method": "getCachedNotificationCount",
+  "signatureHash": "a87630b62e5f3fe0e9d2ae43f31e47e1ee8f33df3f3ee914b5eb3a05f7f68993",
+  "generatedAt": "2026-07-01T07:19:35.161Z",
+  "codeExample": "const tenantId: string = \"e3f1a9b2-4c5d-6e7f-8a9b-0c1d2e3f4a5b\";\nconst userId: string = \"u-20231101-001\";\n\nconst notificationResult: GetCachedNotificationCountResponse1 = await getCachedNotificationCount(tenantId, userId);\n\nconsole.log(notificationResult);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

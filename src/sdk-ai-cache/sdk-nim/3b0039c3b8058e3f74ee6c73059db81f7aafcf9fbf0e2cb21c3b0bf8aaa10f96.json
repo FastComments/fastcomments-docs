@@ -1,0 +1,7 @@
+{
+  "method": "getTrustFactor",
+  "signatureHash": "3b0039c3b8058e3f74ee6c73059db81f7aafcf9fbf0e2cb21c3b0bf8aaa10f96",
+  "generatedAt": "2026-07-01T07:19:30.264Z",
+  "codeExample": "let (trustOpt, httpResp) = client.getTrustFactor(tenantId = \"my-tenant-123\", options = GetTrustFactorOptions())\nif trustOpt.isSome:\n  let trust = trustOpt.get()\n  discard trust",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

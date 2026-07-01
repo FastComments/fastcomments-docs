@@ -1,0 +1,7 @@
+{
+  "method": "getPreBanSummary",
+  "signatureHash": "9b0c807b56e139e031528551c01434dfd7222be5da7f187dfad187dabcd0b4c5",
+  "generatedAt": "2026-07-01T07:19:54.183Z",
+  "codeExample": "let (preBanSummaryOpt, httpResponse) = client.getPreBanSummary(tenantId = \"my-tenant-123\", commentId = \"cmt-456\", options = GetPreBanSummaryOptions())\nif preBanSummaryOpt.isSome:\n  let summary = preBanSummaryOpt.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

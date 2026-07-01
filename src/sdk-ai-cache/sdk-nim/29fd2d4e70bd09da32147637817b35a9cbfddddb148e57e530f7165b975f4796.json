@@ -1,0 +1,7 @@
+{
+  "method": "postCommentsByIds",
+  "signatureHash": "29fd2d4e70bd09da32147637817b35a9cbfddddb148e57e530f7165b975f4796",
+  "generatedAt": "2026-07-01T07:19:31.716Z",
+  "codeExample": "let tenantId = \"my-tenant-123\"\nlet params = CommentsByIdsParams(commentIds = @[\"cmt-001\", \"cmt-002\"])\nlet (maybeResp, httpResp) = client.postCommentsByIds(tenantId = tenantId, commentsByIdsParams = params, sso = \"\")\nif maybeResp.isSome:\n  let resp = maybeResp.get()\n  # use resp as needed",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

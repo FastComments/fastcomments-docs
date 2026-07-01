@@ -1,0 +1,7 @@
+{
+  "method": "unLockComment",
+  "signatureHash": "a749bd85c5ef32b0ab60332b2ac44c4d06301eb19e2780c6f78001659f6c6561",
+  "generatedAt": "2026-07-01T07:19:31.429Z",
+  "codeExample": "let (maybeEmpty, httpResp) = client.unLockComment(tenantId = \"my-tenant-123\", commentId = \"comment-456\", broadcastId = \"\", sso = \"\")\nif maybeEmpty.isSome:\n  let emptyResp = maybeEmpty.get()\n  echo \"Comment unlocked\"\nelse:\n  echo \"Failed to unlock comment\"",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

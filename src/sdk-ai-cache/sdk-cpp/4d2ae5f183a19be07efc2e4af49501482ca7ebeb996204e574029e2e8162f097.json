@@ -1,0 +1,7 @@
+{
+  "method": "getSearchUsers",
+  "signatureHash": "4d2ae5f183a19be07efc2e4af49501482ca7ebeb996204e574029e2e8162f097",
+  "generatedAt": "2026-07-01T07:19:46.872Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-123\"));\nGetSearchUsersOptions opts;\nopts.query = utility::string_t(U(\"john.doe@example.com\"));\nopts.page = boost::optional<int>(1);\nopts.pageSize = boost::optional<int>(20);\n\napi->getSearchUsers(tenantId, opts)\n    .then([](std::shared_ptr<ModerationUserSearchResponse> resp) {\n        for (const auto& user : resp->users) {\n            std::wcout << user.id << L\" - \" << user.email << std::endl;\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

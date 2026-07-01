@@ -1,0 +1,7 @@
+{
+  "method": "sendInvite",
+  "signatureHash": "18b542d9ef64109de8c94b30ef91d6b39b9c6fd8205f4bd1430283e0c8c11897",
+  "generatedAt": "2026-07-01T07:19:47.924Z",
+  "codeExample": "boost::optional<utility::string_t> cc = utility::conversions::to_string_t(\"cc@example.com\");\napi->sendInvite(\n    utility::conversions::to_string_t(\"my-tenant-123\"),\n    utility::conversions::to_string_t(\"invitee@example.com\"),\n    utility::conversions::to_string_t(\"John Doe\")\n).then([](std::shared_ptr<APIEmptyResponse> resp) {\n    // handle successful invite\n});",
+  "model": "openai/gpt-oss-120b"
+}

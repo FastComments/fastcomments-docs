@@ -1,0 +1,7 @@
+{
+  "method": "getUserReactsPublic",
+  "signatureHash": "c5b2b24408e54c5fbc5c792c9a59d533a018b16082d2d23fd9572676f8c9edf4",
+  "generatedAt": "2026-07-01T07:19:40.439Z",
+  "codeExample": "auto options = GetUserReactsPublicOptions{};\noptions.userId = boost::optional<utility::string_t>(U(\"user@example.com\"));\noptions.limit = boost::optional<int>(50);\napi->getUserReactsPublic(U(\"my-tenant-123\"), options).then([](pplx::task<std::shared_ptr<UserReactsResponse>> t){\n    auto response = t.get();\n});",
+  "model": "openai/gpt-oss-120b"
+}

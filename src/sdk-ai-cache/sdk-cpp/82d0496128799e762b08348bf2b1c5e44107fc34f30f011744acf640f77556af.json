@@ -1,0 +1,7 @@
+{
+  "method": "changeTicketState",
+  "signatureHash": "82d0496128799e762b08348bf2b1c5e44107fc34f30f011744acf640f77556af",
+  "generatedAt": "2026-07-01T07:19:45.213Z",
+  "codeExample": "auto body = std::make_shared<ChangeTicketStateBody>();\nbody->state = U(\"closed\");\nbody->comment = boost::optional<utility::string_t>(U(\"Ticket resolved\"));\napi->changeTicketState(U(\"my-tenant-123\"), U(\"user@example.com\"), U(\"ticket-456\"), *body)\n    .then([](std::shared_ptr<ChangeTicketStateResponse>) {});",
+  "model": "openai/gpt-oss-120b"
+}

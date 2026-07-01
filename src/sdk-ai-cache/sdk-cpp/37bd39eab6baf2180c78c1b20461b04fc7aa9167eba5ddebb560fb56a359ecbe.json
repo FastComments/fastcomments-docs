@@ -1,0 +1,7 @@
+{
+  "method": "createTicket",
+  "signatureHash": "37bd39eab6baf2180c78c1b20461b04fc7aa9167eba5ddebb560fb56a359ecbe",
+  "generatedAt": "2026-07-01T07:19:37.676Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto userId = utility::conversions::to_string_t(\"john.doe@example.com\");\nCreateTicketBody ticketBody;\nticketBody.setSubject(utility::conversions::to_string_t(\"Login Issue\"));\nticketBody.setDescription(utility::conversions::to_string_t(\"Cannot log in after password reset.\"));\nboost::optional<int> priority = 2;\nticketBody.setPriority(priority);\napi->createTicket(tenantId, userId, ticketBody).then([](pplx::task<std::shared_ptr<CreateTicketResponse>> task){\n    try{\n        auto response = task.get();\n        // Use response as needed\n    }catch(const std::exception&){\n        // Handle error\n    }\n});",
+  "model": "openai/gpt-oss-120b"
+}

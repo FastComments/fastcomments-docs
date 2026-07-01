@@ -1,0 +1,7 @@
+{
+  "method": "deleteTenantUser",
+  "signatureHash": "7e9a357053e20aaa15c414c5d66d448a9b6b25b1d8443d671a27fdc338f2dcfa",
+  "generatedAt": "2026-07-01T07:19:43.514Z",
+  "codeExample": "DeleteTenantUserOptions options;\noptions.reason = boost::optional<utility::string_t>(U(\"User requested deletion\"));\n\napi->deleteTenantUser(U(\"my-tenant-123\"), U(\"user@example.com\"), options)\n    .then([](std::shared_ptr<APIEmptyResponse> resp){\n        (void)resp;\n    });",
+  "model": "openai/gpt-oss-120b"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getQuestionConfigs",
+  "signatureHash": "670b1c99380ba53fe2c95a02ab64d407ad8204c13bd154b31b97f94412287b77",
+  "generatedAt": "2026-07-01T07:20:01.346Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nboost::optional<double> skip = 10.0;\napi->getQuestionConfigs(tenantId, skip).then([](std::shared_ptr<GetQuestionConfigsResponse> resp){\n    auto config = std::make_shared<GetQuestionConfigsResponse>(*resp);\n});",
+  "model": "openai/gpt-oss-120b"
+}

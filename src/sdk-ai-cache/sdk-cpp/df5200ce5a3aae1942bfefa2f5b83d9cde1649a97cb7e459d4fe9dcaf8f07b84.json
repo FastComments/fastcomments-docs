@@ -1,0 +1,7 @@
+{
+  "method": "addSSOUser",
+  "signatureHash": "df5200ce5a3aae1942bfefa2f5b83d9cde1649a97cb7e459d4fe9dcaf8f07b84",
+  "generatedAt": "2026-07-01T07:20:20.625Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nCreateAPISSOUserData createAPISSOUserData;\ncreateAPISSOUserData.email = utility::conversions::to_string_t(\"john.doe@example.com\");\ncreateAPISSOUserData.externalId = utility::conversions::to_string_t(\"ext-9876\");\ncreateAPISSOUserData.firstName = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"John\"));\ncreateAPISSOUserData.lastName = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"Doe\"));\napi->addSSOUser(tenantId, createAPISSOUserData)\n    .then([](std::shared_ptr<AddSSOUserAPIResponse> resp) {\n    });",
+  "model": "openai/gpt-oss-120b"
+}

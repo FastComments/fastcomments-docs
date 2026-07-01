@@ -1,0 +1,7 @@
+{
+  "method": "postApiExport",
+  "signatureHash": "dadba74e238cdb5d6d28879bf1c716b539563c88db9cc5dae30390c768b88069",
+  "generatedAt": "2026-07-01T07:19:28.757Z",
+  "codeExample": "let (optExport, httpResp) = client.postApiExport(tenantId = \"my-tenant-123\", options = PostApiExportOptions())\nif optExport.isSome:\n  let export = optExport.get()\n  echo export",
+  "model": "openai/gpt-oss-120b"
+}

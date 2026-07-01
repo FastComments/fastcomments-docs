@@ -1,0 +1,7 @@
+{
+  "method": "deleteComment",
+  "signatureHash": "0c87141d787fa4b0b4f1d5d7cf6b423dfa3f6d2933fa5980c9b1813311bd4a4e",
+  "generatedAt": "2026-07-01T07:19:21.045Z",
+  "codeExample": "let (delResult, httpResponse) = client.deleteComment(\n  tenantId = \"my-tenant-123\",\n  id = \"comment-456\",\n  options = DeleteCommentOptions()\n)\n\nif delResult.isSome:\n  let result = delResult.get()\n  echo result",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

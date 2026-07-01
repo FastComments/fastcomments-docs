@@ -1,0 +1,7 @@
+{
+  "method": "getUsersInfo",
+  "signatureHash": "d11de5378e8f8a0cfb841a5d71e030e36ac837ac37827fe7ace7c86a8dae8be9",
+  "generatedAt": "2026-07-01T07:19:47.346Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t ids = U(\"alice@example.com,bob@example.com\");\nboost::optional<utility::string_t> locale = boost::make_optional(U(\"en-US\"));\n\napi->getUsersInfo(tenantId, ids).then([](pplx::task<std::shared_ptr<PageUsersInfoResponse>> t){\n    try{\n        auto response = t.get();\n        // process response\n    }catch(const std::exception&){\n        // handle error\n    }\n});",
+  "model": "openai/gpt-oss-120b"
+}

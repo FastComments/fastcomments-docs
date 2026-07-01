@@ -1,0 +1,7 @@
+{
+  "method": "getFeedPosts",
+  "signatureHash": "e7d037b6bf95c4663679b433e1f53552d175a410c07d79ac873ef4f3d705cfc7",
+  "generatedAt": "2026-07-01T07:19:56.253Z",
+  "codeExample": "auto opts = std::make_shared<GetFeedPostsOptions>();\nopts->maxResults = boost::optional<int>(50);\nopts->cursor = boost::optional<utility::string_t>(U(\"next-cursor\"));\napi->getFeedPosts(U(\"my-tenant-123\"), *opts).then([](std::shared_ptr<GetFeedPostsResponse> resp) {\n    auto count = resp->posts.size();\n});",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

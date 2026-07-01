@@ -1,0 +1,7 @@
+{
+  "method": "updateFeedPostPublic",
+  "signatureHash": "46fe7d6fcadf065e2a52c4431aa70f9d85ccfeb90675aeeaad3eda2557ddfe4e",
+  "generatedAt": "2026-07-01T07:19:37.936Z",
+  "codeExample": "async function updatePostExample() {\n  const tenantId: string = 'tenant-9f8b7c';\n  const postId: string = 'post-3a4d5e';\n  const updateParams: UpdateFeedPostParams = {\n    title: 'New Announcement',\n    content: 'We have updated our terms of service.',\n    media: [\n      {\n        url: 'https://cdn.example.com/assets/image.png',\n        type: 'image',\n        asset: {\n          width: 800,\n          height: 600,\n          size: 124000\n        } as FeedPostMediaItemAsset\n      } as FeedPostMediaItem\n    ],\n    link: {\n      url: 'https://example.com/terms',\n      title: 'Read the new TOS'\n    } as FeedPostLink\n  };\n  const broadcastId: string = 'broadcast-2023-09';\n  const sso: string = 'sso-abc123xyz';\n  const result: UpdateFeedPostPublicResponse = await updateFeedPostPublic(\n    tenantId,\n    postId,\n    updateParams,\n    broadcastId,\n    sso\n  );\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

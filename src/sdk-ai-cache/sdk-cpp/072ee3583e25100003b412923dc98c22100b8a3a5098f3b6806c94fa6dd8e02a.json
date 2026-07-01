@@ -1,0 +1,7 @@
+{
+  "method": "getTenant",
+  "signatureHash": "072ee3583e25100003b412923dc98c22100b8a3a5098f3b6806c94fa6dd8e02a",
+  "generatedAt": "2026-07-01T07:19:40.516Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto id = utility::conversions::to_string_t(\"tenant-admin-456\");\nboost::optional<utility::string_t> includeDetails = utility::conversions::to_string_t(\"full\");\napi->getTenant(tenantId, id)\n    .then([](std::shared_ptr<GetTenantResponse> resp) {\n        if (resp) {\n            std::wcout << resp->toString() << std::endl;\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

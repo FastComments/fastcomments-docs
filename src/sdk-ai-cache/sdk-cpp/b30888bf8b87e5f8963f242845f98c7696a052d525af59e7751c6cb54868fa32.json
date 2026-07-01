@@ -1,0 +1,7 @@
+{
+  "method": "getPagesPublic",
+  "signatureHash": "b30888bf8b87e5f8963f242845f98c7696a052d525af59e7751c6cb54868fa32",
+  "generatedAt": "2026-07-01T07:19:32.246Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nGetPagesPublicOptions options;\noptions.limit = boost::optional<int>(50);\noptions.cursor = boost::optional<utility::string_t>(U(\"cursor-token\"));\napi->getPagesPublic(tenantId, options).then([](pplx::task<std::shared_ptr<GetPublicPagesResponse>> task){\n    try{\n        auto response = task.get();\n        // process response if needed\n    }catch(const std::exception&){\n        // handle error if needed\n    }\n});",
+  "model": "openai/gpt-oss-120b"
+}

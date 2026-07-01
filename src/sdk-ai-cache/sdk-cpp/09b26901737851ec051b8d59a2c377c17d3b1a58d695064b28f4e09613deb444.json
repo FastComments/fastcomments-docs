@@ -1,0 +1,7 @@
+{
+  "method": "addDomainConfig",
+  "signatureHash": "09b26901737851ec051b8d59a2c377c17d3b1a58d695064b28f4e09613deb444",
+  "generatedAt": "2026-07-01T07:19:41.180Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nAddDomainConfigParams params;\nparams.domain = U(\"example.com\");\nparams.adminEmail = U(\"admin@example.com\");\nparams.notes = boost::optional<utility::string_t>(U(\"Primary domain\"));\napi->addDomainConfig(tenantId, params).then([](pplx::task<std::shared_ptr<AddDomainConfigResponse>> task){\n    try{\n        auto response = task.get();\n    }catch(const std::exception&){\n    }\n});",
+  "model": "openai/gpt-oss-120b"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getUserInternalProfile",
+  "signatureHash": "854c9e871bc06ab2cabb1d08709e68164cab25cd93ed9012226d3666c9a09fb2",
+  "generatedAt": "2026-07-01T07:19:37.783Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nGetUserInternalProfileOptions options;\noptions.email = boost::optional<utility::string_t>(U(\"user@example.com\"));\noptions.includeDetails = boost::optional<bool>(true);\n\napi->getUserInternalProfile(tenantId, options)\n    .then([](std::shared_ptr<GetUserInternalProfileResponse> response) {\n        if (response) {\n            auto name = response->displayName;\n            auto id = response->userId;\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

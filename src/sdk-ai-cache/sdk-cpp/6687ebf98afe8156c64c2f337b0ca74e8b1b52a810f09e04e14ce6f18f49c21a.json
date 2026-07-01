@@ -1,0 +1,7 @@
+{
+  "method": "unBlockUserFromComment",
+  "signatureHash": "6687ebf98afe8156c64c2f337b0ca74e8b1b52a810f09e04e14ce6f18f49c21a",
+  "generatedAt": "2026-07-01T07:19:43.525Z",
+  "codeExample": "auto params = std::make_shared<UnBlockFromCommentParams>();\nparams->commentId = U(\"cmt-12345\");\nparams->reason = U(\"resolved\");\nUnBlockUserFromCommentOptions opts;\nopts.notifyUser = boost::optional<bool>(true);\napi->unBlockUserFromComment(U(\"my-tenant-123\"), U(\"user-456\"), *params, opts)\n    .then([](pplx::task<std::shared_ptr<UnblockSuccess>> t){\n        try{\n            auto result = t.get();\n        }catch(...){}\n    });",
+  "model": "openai/gpt-oss-120b"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getTranslations",
+  "signatureHash": "b056229b31dd973c91dde1ff3b1c309e986658e54712b00f874d289a785e3f2d",
+  "generatedAt": "2026-07-01T07:19:51.237Z",
+  "codeExample": "utility::string_t ns = U(\"my-tenant-123\");\nutility::string_t comp = U(\"comments\");\nauto optsPtr = std::make_shared<GetTranslationsOptions>();\noptsPtr->language = boost::make_optional(U(\"en\"));\noptsPtr->fallback = boost::none;\napi->getTranslations(ns, comp, *optsPtr)\n    .then([](pplx::task<std::shared_ptr<GetTranslationsResponse>> t) {\n        try {\n            auto resp = t.get();\n        } catch (const std::exception& e) {\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

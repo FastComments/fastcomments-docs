@@ -1,0 +1,7 @@
+{
+  "method": "addPage",
+  "signatureHash": "36a41ba675b242ec50b1974ad4df99ca98c86a160fee8d69ea1626b5696cf6dd",
+  "generatedAt": "2026-07-01T07:19:29.426Z",
+  "codeExample": "auto createData = CreateAPIPageData{};\ncreateData.title = utility::string_t(U(\"Welcome Page\"));\ncreateData.url = utility::string_t(U(\"https://example.com/welcome\"));\ncreateData.description = boost::optional<utility::string_t>(utility::string_t(U(\"Landing page for new users\")));\n\napi->addPage(utility::string_t(U(\"my-tenant-123\")), createData)\n    .then([](std::shared_ptr<AddPageAPIResponse> response) {\n        if (response && response->success) {\n            // handle successful addition\n        } else {\n            // handle error\n        }\n    });",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

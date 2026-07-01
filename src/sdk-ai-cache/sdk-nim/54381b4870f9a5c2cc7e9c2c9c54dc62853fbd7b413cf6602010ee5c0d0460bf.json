@@ -1,0 +1,7 @@
+{
+  "method": "getCommentChildren",
+  "signatureHash": "54381b4870f9a5c2cc7e9c2c9c54dc62853fbd7b413cf6602010ee5c0d0460bf",
+  "generatedAt": "2026-07-01T07:19:21.807Z",
+  "codeExample": "let (childRespOpt, httpResp) = client.getCommentChildren(tenantId = \"my-tenant-123\", commentId = \"cmt-456789\", sso = \"\")\nif childRespOpt.isSome:\n  let childResp = childRespOpt.get()\n  echo childResp",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "postAdjustCommentVotes",
+  "signatureHash": "276888a8c120be35c3a8496299b8c88e20bcf0c38954ddd68665edd3befd09e4",
+  "generatedAt": "2026-07-01T07:19:56.564Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto commentId = utility::conversions::to_string_t(\"cmt-456789\");\nAdjustCommentVotesParams params;\nparams.voteDelta = 1;\nparams.userIdentifier = utility::conversions::to_string_t(\"user@example.com\");\nparams.reason = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"Helpful\"));\nPostAdjustCommentVotesOptions opts;\nopts.timeout = boost::optional<int>(30);\napi->postAdjustCommentVotes(tenantId, commentId, params, opts).then([](pplx::task<std::shared_ptr<AdjustVotesResponse>> t){\n    try{\n        auto resp = t.get();\n    }catch(const std::exception& e){\n    }\n});",
+  "model": "openai/gpt-oss-120b"
+}

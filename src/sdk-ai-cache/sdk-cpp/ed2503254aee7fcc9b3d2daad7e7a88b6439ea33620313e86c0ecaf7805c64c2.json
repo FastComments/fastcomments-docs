@@ -1,0 +1,7 @@
+{
+  "method": "unPinComment",
+  "signatureHash": "ed2503254aee7fcc9b3d2daad7e7a88b6439ea33620313e86c0ecaf7805c64c2",
+  "generatedAt": "2026-07-01T07:19:35.427Z",
+  "codeExample": "auto task = api->unPinComment(\n    utility::conversions::to_string_t(\"my-tenant-123\"),\n    utility::conversions::to_string_t(\"cmt-456789\"),\n    utility::conversions::to_string_t(\"broadcast-001\"),\n    boost::optional<utility::string_t>(utility::conversions::to_string_t(\"user@example.com\"))\n);\ntask.then([](std::shared_ptr<ChangeCommentPinStatusResponse> resp){\n    auto result = std::make_shared<ChangeCommentPinStatusResponse>(*resp);\n});",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

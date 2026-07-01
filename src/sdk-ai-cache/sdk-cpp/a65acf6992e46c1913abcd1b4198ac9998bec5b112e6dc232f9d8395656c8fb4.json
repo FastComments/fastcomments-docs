@@ -1,0 +1,7 @@
+{
+  "method": "getVotesForUser",
+  "signatureHash": "a65acf6992e46c1913abcd1b4198ac9998bec5b112e6dc232f9d8395656c8fb4",
+  "generatedAt": "2026-07-01T07:19:34.507Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-123\"));\nauto urlId = utility::string_t(U(\"post-456\"));\nGetVotesForUserOptions options;\noptions.page = boost::optional<int>(2);\noptions.pageSize = boost::optional<int>(50);\napi->getVotesForUser(tenantId, urlId, options).then([](std::shared_ptr<GetVotesForUserResponse> response) {\n    if (response) {\n        // handle response, e.g., iterate votes\n    }\n});",
+  "model": "openai/gpt-oss-120b"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "renderEmailTemplate",
+  "signatureHash": "401d81cec016b51959c56ba0700bf454d0a100c8f41a50c87e918feec970ff46",
+  "generatedAt": "2026-07-01T07:19:35.204Z",
+  "codeExample": "auto body = RenderEmailTemplateBody();\nbody.templateId = U(\"welcome-email\");\nbody.recipientEmail = U(\"user@example.com\");\nboost::optional<utility::string_t> locale = U(\"en-US\");\n\napi->renderEmailTemplate(U(\"my-tenant-123\"), body, locale)\n    .then([](std::shared_ptr<RenderEmailTemplateResponse> resp) {\n        std::cout << \"Email template rendered successfully\\n\";\n    });",
+  "model": "openai/gpt-oss-120b"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "deleteTenantPackage",
+  "signatureHash": "9c65b470a768d0a5236e2f0e804d52886df737cbc2e37a199697948ba9e5f26d",
+  "generatedAt": "2026-07-01T07:19:39.421Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto packageId = utility::conversions::to_string_t(\"pkg-456\");\nboost::optional<utility::string_t> optTenant = tenantId;\nboost::optional<utility::string_t> optPackage = packageId;\napi->deleteTenantPackage(optTenant.value(), optPackage.value())\n    .then([](std::shared_ptr<APIEmptyResponse>){ })\n    .then([](pplx::task<void> t){ try{ t.get(); }catch(const std::exception&){ } });",
+  "model": "openai/gpt-oss-120b"
+}

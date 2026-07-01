@@ -1,0 +1,7 @@
+{
+  "method": "resetUserNotificationCount",
+  "signatureHash": "4150ba0cac9953990b9bdc639edfdcbcf66d8d9e60eaacd711f99f2edfc2fae1",
+  "generatedAt": "2026-07-01T07:19:20.197Z",
+  "codeExample": "let (resetRespOpt, httpResp) = client.resetUserNotificationCount(tenantId = \"my-tenant-123\", sso = \"user-456\")\nif resetRespOpt.isSome:\n  let resetResp = resetRespOpt.get()\n  echo resetResp\nelse:\n  echo \"Reset notification count response not available\"",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

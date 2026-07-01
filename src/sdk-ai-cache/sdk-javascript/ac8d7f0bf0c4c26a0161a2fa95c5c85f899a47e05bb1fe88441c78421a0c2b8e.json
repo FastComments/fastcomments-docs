@@ -1,0 +1,7 @@
+{
+  "method": "addHashTagsBulk",
+  "signatureHash": "ac8d7f0bf0c4c26a0161a2fa95c5c85f899a47e05bb1fe88441c78421a0c2b8e",
+  "generatedAt": "2026-07-01T07:19:36.690Z",
+  "codeExample": "async () => {\n    const tenantId: string | undefined = \"tenant_9f8b7c6d\";\n    const bulkCreateHashTagsBody: BulkCreateHashTagsBody = {\n        tags: [\n            {\n                name: \"typescript\",\n                description: \"Discussions about TypeScript\",\n                color: \"#3178c6\"\n            },\n            {\n                name: \"fastcomments\",\n                description: \"Tags for FastComments integration\",\n                color: \"#00aaff\"\n            }\n        ]\n    };\n    const result: AddHashTagsBulkResponse = await addHashTagsBulk(tenantId, bulkCreateHashTagsBody);\n    console.log(result);\n}();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

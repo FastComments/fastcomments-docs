@@ -1,0 +1,7 @@
+{
+  "method": "bulkAggregateQuestionResults",
+  "signatureHash": "7174f0b29dd21ee60abe35ea340a94738c4193c4d247d53d99b2f0a4dc9b9f25",
+  "generatedAt": "2026-07-01T07:19:48.568Z",
+  "codeExample": "let request = BulkAggregateQuestionResultsRequest()\nlet (maybeResult, httpResp) = client.bulkAggregateQuestionResults(\n  tenantId = \"my-tenant-123\",\n  bulkAggregateQuestionResultsRequest = request,\n  forceRecalculate = false)\n\nif maybeResult.isSome:\n  let result = maybeResult.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

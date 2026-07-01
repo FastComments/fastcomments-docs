@@ -1,0 +1,7 @@
+{
+  "method": "updateNotification",
+  "signatureHash": "04ff48b6febe7c6f06b84dd37b38b7f53de95e09118ad912a240d66a1ae4f434",
+  "generatedAt": "2026-07-01T07:19:38.478Z",
+  "codeExample": "const tenantId: string = \"tenant_5f4d2c\";\nconst notificationId: string = \"notif_9b8a7c\";\n\nconst updateBody: UpdateNotificationBody = {\n  enabled: false,\n  sendEmail: true,\n  schedule: \"2023-12-01T08:00:00Z\"\n};\n\nconst userId: string = \"user_123e4567\";\n\nconst responseWithUser: UpdateNotificationResponse = await updateNotification(\n  tenantId,\n  notificationId,\n  updateBody,\n  userId\n);\n\nconst responseWithoutUser: UpdateNotificationResponse = await updateNotification(\n  tenantId,\n  notificationId,\n  updateBody\n);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

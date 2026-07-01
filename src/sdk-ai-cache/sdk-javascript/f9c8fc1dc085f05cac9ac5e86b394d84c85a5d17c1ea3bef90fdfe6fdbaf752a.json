@@ -1,0 +1,7 @@
+{
+  "method": "deleteQuestionConfig",
+  "signatureHash": "f9c8fc1dc085f05cac9ac5e86b394d84c85a5d17c1ea3bef90fdfe6fdbaf752a",
+  "generatedAt": "2026-07-01T07:19:33.195Z",
+  "codeExample": "async function runDeletion(): Promise<void> {\n  const tenantId: string = \"tenant_8f5a2c9d\";\n  const configId: string = \"questionConfig_4b7e1f\";\n  const deleteResult: DeleteQuestionConfigResponse = await deleteQuestionConfig(tenantId, configId);\n  console.log(deleteResult);\n}\nvoid runDeletion();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

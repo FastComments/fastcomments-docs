@@ -1,0 +1,7 @@
+{
+  "method": "getCommentsForUser",
+  "signatureHash": "fa768b91947dff0f01c5c6184f82ee9ec00f83da5dce8702293dc30e1477db8d",
+  "generatedAt": "2026-07-01T07:19:35.026Z",
+  "codeExample": "auto options = GetCommentsForUserOptions{\n    utility::conversions::to_string_t(\"my-tenant-123\"),\n    utility::conversions::to_string_t(\"user@example.com\"),\n    boost::optional<int>(50),\n    boost::optional<utility::string_t>(utility::conversions::to_string_t(\"next-page-token\"))\n};\n\napi->getCommentsForUser(options).then([](pplx::task<std::shared_ptr<GetCommentsForUserResponse>> task){\n    try{\n        auto response = task.get();\n    }catch(const std::exception&){}\n});",
+  "model": "openai/gpt-oss-120b"
+}

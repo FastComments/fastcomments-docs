@@ -1,0 +1,7 @@
+{
+  "method": "updateQuestionResult",
+  "signatureHash": "df11f13d0a0cafd9a1d1cd051984bbf53d306d88c88f0b474d60c182c4076894",
+  "generatedAt": "2026-07-01T07:19:49.850Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-123\"));\nauto questionId = utility::string_t(U(\"question-456\"));\nUpdateQuestionResultBody body;\nbody.result = U(\"approved\");\nbody.note = boost::optional<utility::string_t>(U(\"Reviewed by admin\"));\napi->updateQuestionResult(tenantId, questionId, body)\n    .then([](pplx::task<std::shared_ptr<APIEmptyResponse>> t) {\n        try {\n            auto respPtr = std::make_shared<APIEmptyResponse>(*t.get());\n        } catch (const std::exception&) {\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

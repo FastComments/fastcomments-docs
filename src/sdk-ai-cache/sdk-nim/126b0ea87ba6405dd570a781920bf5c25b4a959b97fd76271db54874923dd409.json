@@ -1,0 +1,7 @@
+{
+  "method": "flagComment",
+  "signatureHash": "126b0ea87ba6405dd570a781920bf5c25b4a959b97fd76271db54874923dd409",
+  "generatedAt": "2026-07-01T07:19:52.761Z",
+  "codeExample": "let options = FlagCommentOptions(reason: \"spam content\", note: \"Automated posting detected\", isSpam: true, categories: @[\"spam\"])\nlet (flagRes, httpRes) = client.flagComment(tenantId = \"my-tenant-123\", id = \"cmt-789\", options = options)\nif flagRes.isSome:\n  let res = flagRes.get()\n  discard res",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

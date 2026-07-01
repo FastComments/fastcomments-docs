@@ -1,0 +1,7 @@
+{
+  "method": "getV2PageReacts",
+  "signatureHash": "71d4046c17330d0ec03cd17e375cf48eeb617654640df0d5249cf370fa9369dd",
+  "generatedAt": "2026-07-01T07:19:26.528Z",
+  "codeExample": "let (reactsOpt, httpResp) = client.getV2PageReacts(tenantId = \"my-tenant-123\", urlId = \"news/article-title\")\nif reactsOpt.isSome:\n  let reacts = reactsOpt.get()\n  echo reacts",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

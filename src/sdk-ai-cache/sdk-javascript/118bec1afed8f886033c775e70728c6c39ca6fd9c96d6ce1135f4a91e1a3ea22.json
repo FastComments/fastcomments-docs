@@ -1,0 +1,7 @@
+{
+  "method": "getCommentChildren",
+  "signatureHash": "118bec1afed8f886033c775e70728c6c39ca6fd9c96d6ce1135f4a91e1a3ea22",
+  "generatedAt": "2026-07-01T07:19:36.595Z",
+  "codeExample": "const commentId: string = \"cmt_12345\";\nconst tenantId: string = \"tenant_xyz\";\nconst sso: string = \"sso_987654\";\n\nconst fullResponse: GetCommentChildrenResponse = await getCommentChildren(commentId, tenantId, sso);\nconst minimalResponse: GetCommentChildrenResponse = await getCommentChildren(commentId);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

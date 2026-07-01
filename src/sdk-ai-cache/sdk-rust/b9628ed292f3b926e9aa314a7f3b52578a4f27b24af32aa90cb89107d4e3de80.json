@@ -1,0 +1,7 @@
+{
+  "method": "delete_hash_tag",
+  "signatureHash": "b9628ed292f3b926e9aa314a7f3b52578a4f27b24af32aa90cb89107d4e3de80",
+  "generatedAt": "2026-07-01T07:19:34.496Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = DeleteHashTagParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        tag: \"news/article\".to_string(),\n        delete_hash_tag_request_body: Some(models::DeleteHashTagRequestBody {}),\n    };\n    delete_hash_tag(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

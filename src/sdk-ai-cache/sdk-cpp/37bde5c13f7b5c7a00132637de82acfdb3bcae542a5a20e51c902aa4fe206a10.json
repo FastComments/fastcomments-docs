@@ -1,0 +1,7 @@
+{
+  "method": "getFeedPostsPublic",
+  "signatureHash": "37bde5c13f7b5c7a00132637de82acfdb3bcae542a5a20e51c902aa4fe206a10",
+  "generatedAt": "2026-07-01T07:19:48.480Z",
+  "codeExample": "auto options = GetFeedPostsPublicOptions{};\noptions.limit = boost::optional<int>{20};\noptions.before = boost::optional<utility::string_t>{U(\"2023-01-01T00:00:00Z\")};\n\napi->getFeedPostsPublic(U(\"my-tenant-123\"), options).then([](pplx::task<std::shared_ptr<PublicFeedPostsResponse>> task){\n    try{\n        auto response = task.get();\n        auto processed = std::make_shared<PublicFeedPostsResponse>(*response);\n        // Use processed as needed\n    }catch(const std::exception&){\n        // Handle error\n    }\n});",
+  "model": "openai/gpt-oss-120b"
+}

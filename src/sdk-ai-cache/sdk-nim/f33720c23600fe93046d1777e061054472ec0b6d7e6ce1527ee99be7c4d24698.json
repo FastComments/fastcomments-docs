@@ -1,0 +1,7 @@
+{
+  "method": "postSetCommentApprovalStatus",
+  "signatureHash": "f33720c23600fe93046d1777e061054472ec0b6d7e6ce1527ee99be7c4d24698",
+  "generatedAt": "2026-07-01T07:19:29.803Z",
+  "codeExample": "let (approvedOpt, httpResp) = client.postSetCommentApprovalStatus(\n  tenantId = \"my-tenant-123\",\n  commentId = \"comment-7890\",\n  options = PostSetCommentApprovalStatusOptions()\n)\n\nif approvedOpt.isSome:\n  let approved = approvedOpt.get()\n  echo approved",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

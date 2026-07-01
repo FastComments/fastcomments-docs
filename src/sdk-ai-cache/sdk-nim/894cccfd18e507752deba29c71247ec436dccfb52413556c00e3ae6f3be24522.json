@@ -1,0 +1,7 @@
+{
+  "method": "putRemoveBadge",
+  "signatureHash": "894cccfd18e507752deba29c71247ec436dccfb52413556c00e3ae6f3be24522",
+  "generatedAt": "2026-07-01T07:19:29.185Z",
+  "codeExample": "let (maybeResp, httpResp) = client.putRemoveBadge(\n  tenantId = \"my-tenant-123\",\n  badgeId = \"badge-456\",\n  options = PutRemoveBadgeOptions()\n)\n\nif maybeResp.isSome:\n  let badgeResp = maybeResp.get()",
+  "model": "openai/gpt-oss-120b"
+}

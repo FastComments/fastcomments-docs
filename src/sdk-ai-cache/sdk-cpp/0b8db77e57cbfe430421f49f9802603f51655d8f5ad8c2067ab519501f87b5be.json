@@ -1,0 +1,7 @@
+{
+  "method": "getHashTags",
+  "signatureHash": "0b8db77e57cbfe430421f49f9802603f51655d8f5ad8c2067ab519501f87b5be",
+  "generatedAt": "2026-07-01T07:19:40.547Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-123\"));\nboost::optional<double> page = 2.0;\n\napi->getHashTags(tenantId, page).then([](pplx::task<std::shared_ptr<GetHashTagsResponse>> task) {\n    try {\n        auto resultPtr = task.get();\n        auto response = std::make_shared<GetHashTagsResponse>(*resultPtr);\n        // use response\n    } catch (const std::exception&) {\n        // handle error\n    }\n});",
+  "model": "openai/gpt-oss-120b"
+}

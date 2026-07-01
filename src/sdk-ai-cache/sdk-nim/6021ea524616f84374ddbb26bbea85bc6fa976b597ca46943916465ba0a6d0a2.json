@@ -1,0 +1,7 @@
+{
+  "method": "combineCommentsWithQuestionResults",
+  "signatureHash": "6021ea524616f84374ddbb26bbea85bc6fa976b597ca46943916465ba0a6d0a2",
+  "generatedAt": "2026-07-01T07:19:49.757Z",
+  "codeExample": "let (combineOpt, httpResponse) = client.combineCommentsWithQuestionResults(\n  tenantId = \"my-tenant-123\",\n  options = default(CombineCommentsWithQuestionResultsOptions)\n)\n\nif combineOpt.isSome:\n  let combineResult = combineOpt.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

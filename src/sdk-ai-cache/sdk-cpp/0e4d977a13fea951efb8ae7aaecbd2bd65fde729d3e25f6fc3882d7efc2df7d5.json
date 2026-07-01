@@ -1,0 +1,7 @@
+{
+  "method": "updateQuestionConfig",
+  "signatureHash": "0e4d977a13fea951efb8ae7aaecbd2bd65fde729d3e25f6fc3882d7efc2df7d5",
+  "generatedAt": "2026-07-01T07:19:57.411Z",
+  "codeExample": "UpdateQuestionConfigBody updateBody;\nupdateBody.enabled = true;\nupdateBody.maxResponses = boost::optional<int>{10};\nupdateBody.notes = boost::optional<utility::string_t>{U(\"Config updated via SDK\")};\n\napi->updateQuestionConfig(U(\"my-tenant-123\"), U(\"config-789\"), updateBody)\n    .then([](std::shared_ptr<APIEmptyResponse> resp) {\n    })\n    .then([](pplx::task<void> t) {\n        try { t.get(); } catch (const std::exception&) {}\n    });",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

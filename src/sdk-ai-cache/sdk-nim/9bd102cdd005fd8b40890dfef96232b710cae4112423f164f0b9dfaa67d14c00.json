@@ -1,0 +1,7 @@
+{
+  "method": "getUser",
+  "signatureHash": "9bd102cdd005fd8b40890dfef96232b710cae4112423f164f0b9dfaa67d14c00",
+  "generatedAt": "2026-07-01T07:19:24.178Z",
+  "codeExample": "let (userOpt, httpResp) = client.getUser(tenantId = \"my-tenant-123\", id = \"user-456\")\nif userOpt.isSome:\n  let user = userOpt.get()\n  echo user\nelse:\n  echo \"User not found\"",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

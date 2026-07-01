@@ -1,0 +1,7 @@
+{
+  "method": "aggregateQuestionResults",
+  "signatureHash": "2587f0e68a821735250243914c4d802b15189aa91caed9070be13871fa322d91",
+  "generatedAt": "2026-07-01T07:19:22.759Z",
+  "codeExample": "let opts = AggregateQuestionResultsOptions()\nlet (aggResultOpt, httpResp) = client.aggregateQuestionResults(tenantId = \"my-tenant-123\", options = opts)\nif aggResultOpt.isSome:\n  let aggResult = aggResultOpt.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

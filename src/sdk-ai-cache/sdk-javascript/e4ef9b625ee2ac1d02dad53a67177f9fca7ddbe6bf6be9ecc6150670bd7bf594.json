@@ -1,0 +1,7 @@
+{
+  "method": "getQuestionResult",
+  "signatureHash": "e4ef9b625ee2ac1d02dad53a67177f9fca7ddbe6bf6be9ecc6150670bd7bf594",
+  "generatedAt": "2026-07-01T07:19:36.372Z",
+  "codeExample": "async function fetchQuestionResult(): Promise<void> {\n    const tenantId: string = \"acme-corp-001\";\n    const questionId: string = \"question-7a9b8c\";\n    const result: GetQuestionResultResponse1 = await getQuestionResult(tenantId, questionId);\n\n    const question: QuestionResult | undefined = result.questionResult;\n    const firstMeta: MetaItem | undefined = result.meta?.[0];\n\n    console.log(question?.id, firstMeta?.key);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

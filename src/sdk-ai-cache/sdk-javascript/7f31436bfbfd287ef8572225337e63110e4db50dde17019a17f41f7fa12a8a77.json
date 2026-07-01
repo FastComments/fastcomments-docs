@@ -1,0 +1,7 @@
+{
+  "method": "updateTenant",
+  "signatureHash": "7f31436bfbfd287ef8572225337e63110e4db50dde17019a17f41f7fa12a8a77",
+  "generatedAt": "2026-07-01T07:19:37.995Z",
+  "codeExample": "const tenantId: string = \"c8f9e3d2-4b6a-11ee-8c99-0242ac130003\";\nconst id: string = \"tenant-config-01\";\n\nconst updateBody: UpdateTenantBody = {\n  domain: \"mytenant.fastcomments.io\",\n  branding: {\n    logoUrl: \"https://cdn.mytenant.com/assets/logo.png\"\n  },\n  description: \"Branding update for Q3\"\n};\n\nconst response: UpdateTenantResponse = await updateTenant(tenantId, id, updateBody);\nconsole.log(response);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

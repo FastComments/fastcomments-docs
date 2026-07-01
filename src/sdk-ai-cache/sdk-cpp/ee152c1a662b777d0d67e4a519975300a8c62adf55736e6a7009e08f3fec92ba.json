@@ -1,0 +1,7 @@
+{
+  "method": "getTenants",
+  "signatureHash": "ee152c1a662b777d0d67e4a519975300a8c62adf55736e6a7009e08f3fec92ba",
+  "generatedAt": "2026-07-01T07:19:52.251Z",
+  "codeExample": "GetTenantsOptions options;\noptions.includeDeleted = boost::make_optional(false);\noptions.searchTerm = boost::make_optional(utility::string_t(U(\"enterprise\")));\n\napi->getTenants(utility::string_t(U(\"my-tenant-123\")), options)\n    .then([](std::shared_ptr<GetTenantsResponse> response) {\n    })\n    .then([](pplx::task<void> t){ try{ t.get(); }catch(...){} });",
+  "model": "openai/gpt-oss-120b"
+}

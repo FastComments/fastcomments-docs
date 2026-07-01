@@ -1,0 +1,7 @@
+{
+  "method": "createV1PageReact",
+  "signatureHash": "1c0c687eca2dbbe38042e843173f5dcf66e8e676bce6f7dbc78ae1d39822293d",
+  "generatedAt": "2026-07-01T07:19:54.465Z",
+  "codeExample": "let (pageOpt, httpResp) = client.createV1PageReact(\n  tenantId = \"my-tenant-123\",\n  urlId = \"news/article-456\",\n  title = \"Breaking News: Nim Takes Over\"\n)\n\nif pageOpt.isSome:\n  let page = pageOpt.get()\n  discard page\n  discard httpResp",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

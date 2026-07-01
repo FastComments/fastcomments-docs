@@ -1,0 +1,7 @@
+{
+  "method": "blockUserFromComment",
+  "signatureHash": "36cca2639cb8af6d5a08e07cd3b4443f560e1ab83c5c217a7d9e93243a8c5825",
+  "generatedAt": "2026-07-01T07:19:52.438Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto commentId = utility::conversions::to_string_t(\"comment-789\");\nBlockFromCommentParams params;\nparams.reason = utility::conversions::to_string_t(\"Inappropriate content\");\nparams.durationDays = boost::optional<int>(30);\nBlockUserFromCommentOptions options;\noptions.notifyUser = boost::optional<bool>(true);\n\napi->blockUserFromComment(tenantId, commentId, params, options)\n    .then([](std::shared_ptr<BlockSuccess> result){ })\n    .then([](pplx::task<void> t){ try { t.get(); } catch (const std::exception&) { } });",
+  "model": "openai/gpt-oss-120b"
+}

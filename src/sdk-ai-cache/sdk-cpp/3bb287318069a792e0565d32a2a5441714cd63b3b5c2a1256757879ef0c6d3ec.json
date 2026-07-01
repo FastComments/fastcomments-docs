@@ -1,0 +1,7 @@
+{
+  "method": "putCloseThread",
+  "signatureHash": "3bb287318069a792e0565d32a2a5441714cd63b3b5c2a1256757879ef0c6d3ec",
+  "generatedAt": "2026-07-01T07:19:31.164Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-4321\"));\nauto urlId = utility::string_t(U(\"article-9876\"));\nboost::optional<utility::string_t> sso = boost::make_optional<utility::string_t>(U(\"user@example.com\"));\n\napi->putCloseThread(tenantId, urlId, sso).then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task){\n    try{\n        auto response = task.get();\n    }catch(const std::exception&){\n    }\n});",
+  "model": "openai/gpt-oss-120b"
+}

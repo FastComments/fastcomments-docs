@@ -1,0 +1,7 @@
+{
+  "method": "patchPage",
+  "signatureHash": "8e737021ff3adbad0136fe5a05d0e5fc85e022259ad0cad00d49f9b33a0e34f5",
+  "generatedAt": "2026-07-01T07:19:44.012Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t pageId = U(\"page-789\");\nUpdateAPIPageData update;\nupdate.title = boost::optional<utility::string_t>(U(\"Updated Page Title\"));\nupdate.metadata = boost::optional<utility::string_t>(U(\"{\\\"author\\\":\\\"jane.doe@example.com\\\"}\"));\napi->patchPage(tenantId, pageId, update)\n    .then([](std::shared_ptr<PatchPageAPIResponse> response) {\n        if (response && response->isSuccess) {\n            // handle success\n        }\n    })\n    .then([](pplx::task<void> t) {\n        try { t.get(); } catch (const std::exception&) {}\n    });",
+  "model": "openai/gpt-oss-120b"
+}

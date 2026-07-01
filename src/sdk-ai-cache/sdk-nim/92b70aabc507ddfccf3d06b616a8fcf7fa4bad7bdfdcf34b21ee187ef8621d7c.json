@@ -1,0 +1,7 @@
+{
+  "method": "getSSOUserByEmail",
+  "signatureHash": "92b70aabc507ddfccf3d06b616a8fcf7fa4bad7bdfdcf34b21ee187ef8621d7c",
+  "generatedAt": "2026-07-01T07:19:22.296Z",
+  "codeExample": "let (optResp, httpResp) = client.getSSOUserByEmail(tenantId = \"my-tenant-123\", email = \"john.doe@example.com\")\nif optResp.isSome:\n  let user = optResp.get()\n  discard user",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

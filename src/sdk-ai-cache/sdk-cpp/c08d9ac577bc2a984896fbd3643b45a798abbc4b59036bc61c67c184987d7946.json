@@ -1,0 +1,7 @@
+{
+  "method": "patchDomainConfig",
+  "signatureHash": "c08d9ac577bc2a984896fbd3643b45a798abbc4b59036bc61c67c184987d7946",
+  "generatedAt": "2026-07-01T07:19:32.598Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto domainToUpdate = utility::conversions::to_string_t(\"example.com\");\nPatchDomainConfigParams patchDomainConfigParams;\npatchDomainConfigParams.enableComments = boost::optional<bool>(true);\npatchDomainConfigParams.moderationLevel = boost::optional<int>(2);\npatchDomainConfigParams.customHeader = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"X-Custom-Header\"));\n\napi->patchDomainConfig(tenantId, domainToUpdate, patchDomainConfigParams)\n    .then([](std::shared_ptr<PatchDomainConfigResponse> resp) {\n        // success handling\n    })\n    .then([](pplx::task<void> t) {\n        try { t.get(); } catch (const std::exception& e) { /* error handling */ }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

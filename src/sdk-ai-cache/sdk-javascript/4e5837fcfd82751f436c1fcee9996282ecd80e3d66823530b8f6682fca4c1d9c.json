@@ -1,0 +1,7 @@
+{
+  "method": "aggregateQuestionResults",
+  "signatureHash": "4e5837fcfd82751f436c1fcee9996282ecd80e3d66823530b8f6682fca4c1d9c",
+  "generatedAt": "2026-07-01T07:19:35.118Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"acme-corp-123\";\n  const questionId: string = \"feedback-rating\";\n  const questionIds: string[] = [\"feedback-rating\", \"recommendation\"];\n  const urlId: string = \"https://myblog.com/articles/42\";\n  const timeBucket: AggregateTimeBucket = \"month\";\n  const startDate: Date = new Date(\"2023-01-01T00:00:00Z\");\n  const forceRecalculate: boolean = true;\n\n  const result: AggregateQuestionResultsResponse1 = await aggregateQuestionResults(\n    tenantId,\n    questionId,\n    questionIds,\n    urlId,\n    timeBucket,\n    startDate,\n    forceRecalculate\n  );\n\n  console.log(result);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

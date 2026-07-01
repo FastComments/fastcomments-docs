@@ -1,0 +1,7 @@
+{
+  "method": "getTickets",
+  "signatureHash": "8eb7d35eb5141216d7ed03b6eed3e8aa84b4df728ea191a105e0a1385f888640",
+  "generatedAt": "2026-07-01T07:19:33.257Z",
+  "codeExample": "auto options = GetTicketsOptions{};\noptions.page = boost::optional<int>(1);\noptions.status = boost::optional<utility::string_t>(U(\"open\"));\napi->getTickets(U(\"my-tenant-123\"), options).then([](pplx::task<std::shared_ptr<GetTicketsResponse>> task) {\n    try {\n        auto response = task.get();\n        auto responseCopy = std::make_shared<GetTicketsResponse>(*response);\n    } catch (const std::exception&) {\n    }\n});",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

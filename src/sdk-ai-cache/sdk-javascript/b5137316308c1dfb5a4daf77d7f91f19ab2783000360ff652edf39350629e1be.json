@@ -1,0 +1,7 @@
+{
+  "method": "getUserBadgeProgressByUserId",
+  "signatureHash": "b5137316308c1dfb5a4daf77d7f91f19ab2783000360ff652edf39350629e1be",
+  "generatedAt": "2026-07-01T07:19:49.340Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"acme-corp\";\n  const userId: string = \"user-12345\";\n\n  const badgeProgress: GetUserBadgeProgressByUserIdResponse = await getUserBadgeProgressByUserId(tenantId, userId);\n  console.log(badgeProgress);\n})();",
+  "model": "openai/gpt-oss-120b"
+}

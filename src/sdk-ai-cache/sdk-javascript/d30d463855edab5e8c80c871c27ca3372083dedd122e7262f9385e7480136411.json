@@ -1,0 +1,7 @@
+{
+  "method": "getCommentsPublic",
+  "signatureHash": "d30d463855edab5e8c80c871c27ca3372083dedd122e7262f9385e7480136411",
+  "generatedAt": "2026-07-01T07:20:03.081Z",
+  "codeExample": "async function fetchComments() {\n  const tenantId: string = 'acme-corp';\n  const urlId: string = 'blog/post-789';\n  const page: number = 1;\n  const direction: SortDirections = SortDirections.Desc;\n  const limit: number = 25;\n  const includeConfig: boolean = true;\n  const locale: string = 'en-GB';\n  const modules: string = 'reactions,attachments';\n  const isCrawler: boolean = false;\n  const includeNotificationCount: boolean = true;\n  const asTree: boolean = true;\n  const maxTreeDepth: number = 4;\n  const searchText: string = 'TypeScript';\n  const hashTags: string[] = ['typescript', 'api'];\n  const response: GetCommentsPublicResponse = await getCommentsPublic(\n    tenantId,\n    urlId,\n    page,\n    direction,\n    undefined,\n    undefined,\n    undefined,\n    limit,\n    undefined,\n    undefined,\n    undefined,\n    includeConfig,\n    undefined,\n    undefined,\n    locale,\n    modules,\n    isCrawler,\n    includeNotificationCount,\n    asTree,\n    maxTreeDepth,\n    undefined,\n    undefined,\n    searchText,\n    hashTags,\n    undefined,\n    undefined,\n    undefined,\n    undefined\n  );\n}",
+  "model": "openai/gpt-oss-120b"
+}

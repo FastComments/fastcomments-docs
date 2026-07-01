@@ -1,0 +1,7 @@
+{
+  "method": "updateTenant",
+  "signatureHash": "2e6b1d83c99f73edb9258f0055a196581cdb1a12ff4ab3d58aa785860a4b9b47",
+  "generatedAt": "2026-07-01T07:19:26.455Z",
+  "codeExample": "let updateBody = UpdateTenantBody(\n  name: \"My Tenant\",\n  description: \"Tenant for news site\",\n  isActive: true,\n  allowedDomains: @[\"example.com\", \"news.com\"]\n)\n\nlet (apiResp, httpResp) = client.updateTenant(\n  tenantId = \"my-tenant-123\",\n  id = \"tenant-456\",\n  updateTenantBody = updateBody\n)\n\nif apiResp.isSome:\n  let emptyResp = apiResp.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

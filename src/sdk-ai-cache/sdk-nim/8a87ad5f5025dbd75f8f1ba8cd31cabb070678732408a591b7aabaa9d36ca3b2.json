@@ -1,0 +1,7 @@
+{
+  "method": "aggregate",
+  "signatureHash": "8a87ad5f5025dbd75f8f1ba8cd31cabb070678732408a591b7aabaa9d36ca3b2",
+  "generatedAt": "2026-07-01T07:19:23.887Z",
+  "codeExample": "let (aggResp, httpResp) = client.aggregate(tenantId = \"my-tenant-123\", aggregationRequest = AggregationRequest(), options = AggregateOptions())\nif aggResp.isSome:\n  let response = aggResp.get()\n  echo response\necho httpResp",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

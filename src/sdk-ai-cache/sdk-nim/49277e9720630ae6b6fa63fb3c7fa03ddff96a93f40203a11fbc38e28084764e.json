@@ -1,0 +1,7 @@
+{
+  "method": "getTenantDailyUsages",
+  "signatureHash": "49277e9720630ae6b6fa63fb3c7fa03ddff96a93f40203a11fbc38e28084764e",
+  "generatedAt": "2026-07-01T07:19:25.511Z",
+  "codeExample": "let (respOpt, httpResp) = client.getTenantDailyUsages(\n  tenantId = \"my-tenant-123\",\n  options = default(GetTenantDailyUsagesOptions),\n)\nif respOpt.isSome:\n  let usage = respOpt.get()\n  echo usage\n  echo httpResp.statusCode",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

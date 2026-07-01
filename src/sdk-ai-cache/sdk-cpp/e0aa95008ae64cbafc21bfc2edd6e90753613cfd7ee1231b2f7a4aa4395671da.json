@@ -1,0 +1,7 @@
+{
+  "method": "postUnFlagComment",
+  "signatureHash": "e0aa95008ae64cbafc21bfc2edd6e90753613cfd7ee1231b2f7a4aa4395671da",
+  "generatedAt": "2026-07-01T07:19:40.816Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"cmt-456789\");\nPostUnFlagCommentOptions opts;\nopts.notifyUser = boost::optional<bool>(true);\napi->postUnFlagComment(tenantId, commentId, opts)\n    .then([](std::shared_ptr<APIEmptyResponse> resp) {\n        // processing can be done here\n    })\n    .then([](pplx::task<void> t) {\n        try { t.get(); } catch (const std::exception&) {}\n    });",
+  "model": "openai/gpt-oss-120b"
+}

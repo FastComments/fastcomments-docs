@@ -1,0 +1,7 @@
+{
+  "method": "deleteFeedPostPublic",
+  "signatureHash": "1a4cffae6536ccd10706f975614dca970e8d3b490f7164b0cf81f3bb2678ad8a",
+  "generatedAt": "2026-07-01T07:19:41.623Z",
+  "codeExample": "auto opts = std::make_shared<DeleteFeedPostPublicOptions>();\nopts->reason = boost::optional<utility::string_t>(U(\"Inappropriate content\"));\napi->deleteFeedPostPublic(U(\"my-tenant-123\"), U(\"post-789\"), *opts)\n    .then([](std::shared_ptr<DeleteFeedPostPublicResponse> resp) {\n        if (resp && resp->isSuccess()) {\n            // success logic\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

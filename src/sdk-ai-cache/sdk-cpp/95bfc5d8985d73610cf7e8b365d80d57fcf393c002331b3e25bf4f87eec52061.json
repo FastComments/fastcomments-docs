@@ -1,0 +1,7 @@
+{
+  "method": "deleteCommentPublic",
+  "signatureHash": "95bfc5d8985d73610cf7e8b365d80d57fcf393c002331b3e25bf4f87eec52061",
+  "generatedAt": "2026-07-01T07:19:33.196Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-123\"));\nauto commentId = utility::string_t(U(\"comment-456\"));\nauto broadcastId = utility::string_t(U(\"broadcast-789\"));\nDeleteCommentPublicOptions options;\noptions.force = boost::optional<bool>(true);\noptions.reason = boost::optional<utility::string_t>(U(\"Inappropriate content\"));\napi->deleteCommentPublic(tenantId, commentId, broadcastId, options)\n    .then([](pplx::task<std::shared_ptr<PublicAPIDeleteCommentResponse>> t){\n        try{\n            auto resp = t.get();\n        }catch(const std::exception& e){\n        }\n    });",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

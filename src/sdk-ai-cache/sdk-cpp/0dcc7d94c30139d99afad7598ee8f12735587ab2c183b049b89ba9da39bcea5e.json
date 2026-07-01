@@ -1,0 +1,7 @@
+{
+  "method": "getCounts",
+  "signatureHash": "0dcc7d94c30139d99afad7598ee8f12735587ab2c183b049b89ba9da39bcea5e",
+  "generatedAt": "2026-07-01T07:19:32.122Z",
+  "codeExample": "api->getCounts(\n    utility::conversions::to_string_t(\"my-tenant-123\"),\n    boost::optional<utility::string_t>(utility::conversions::to_string_t(\"john.doe@example.com\"))\n).then([](pplx::task<std::shared_ptr<GetBannedUsersCountResponse>> t){\n    try{\n        auto response = t.get();\n    }catch(const std::exception&){\n    }\n});",
+  "model": "openai/gpt-oss-120b"
+}

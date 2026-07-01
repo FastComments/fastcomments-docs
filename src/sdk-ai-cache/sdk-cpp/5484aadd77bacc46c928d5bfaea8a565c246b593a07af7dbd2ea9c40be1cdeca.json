@@ -1,0 +1,7 @@
+{
+  "method": "getGifsTrending",
+  "signatureHash": "5484aadd77bacc46c928d5bfaea8a565c246b593a07af7dbd2ea9c40be1cdeca",
+  "generatedAt": "2026-07-01T07:19:31.721Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nGetGifsTrendingOptions options;\noptions.limit = 10;\noptions.rating = boost::optional<utility::string_t>(U(\"G\"));\napi->getGifsTrending(tenantId, options).then([](std::shared_ptr<GetGifsTrendingResponse> response) {\n    for (const auto& gif : response->gifs) {\n        auto url = gif.url;\n    }\n});",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

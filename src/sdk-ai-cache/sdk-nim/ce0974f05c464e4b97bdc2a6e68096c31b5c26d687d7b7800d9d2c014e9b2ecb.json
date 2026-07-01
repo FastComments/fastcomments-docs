@@ -1,0 +1,7 @@
+{
+  "method": "postSetCommentSpamStatus",
+  "signatureHash": "ce0974f05c464e4b97bdc2a6e68096c31b5c26d687d7b7800d9d2c014e9b2ecb",
+  "generatedAt": "2026-07-01T07:19:31.582Z",
+  "codeExample": "let defaultOpts = PostSetCommentSpamStatusOptions()\nlet (maybeResp, httpResp) = client.postSetCommentSpamStatus(tenantId = \"my-tenant-123\", commentId = \"cmt-456789\", options = defaultOpts)\nif maybeResp.isSome:\n  let resp = maybeResp.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

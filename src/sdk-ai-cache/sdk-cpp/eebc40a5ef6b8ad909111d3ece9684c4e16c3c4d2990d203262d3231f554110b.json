@@ -1,0 +1,7 @@
+{
+  "method": "getEmailTemplateRenderErrors",
+  "signatureHash": "eebc40a5ef6b8ad909111d3ece9684c4e16c3c4d2990d203262d3231f554110b",
+  "generatedAt": "2026-07-01T07:19:37.917Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t id = U(\"email-template-789\");\nboost::optional<double> skip = 20.0;\n\napi->getEmailTemplateRenderErrors(tenantId, id, skip)\n    .then([](pplx::task<std::shared_ptr<GetEmailTemplateRenderErrorsResponse>> task) {\n        try {\n            auto response = task.get();\n            // Use response as needed\n        } catch (const std::exception& ex) {\n            // Handle error\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

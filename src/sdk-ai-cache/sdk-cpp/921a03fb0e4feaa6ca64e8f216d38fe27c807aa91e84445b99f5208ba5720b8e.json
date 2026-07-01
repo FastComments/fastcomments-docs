@@ -1,0 +1,7 @@
+{
+  "method": "postRemoveComment",
+  "signatureHash": "921a03fb0e4feaa6ca64e8f216d38fe27c807aa91e84445b99f5208ba5720b8e",
+  "generatedAt": "2026-07-01T07:19:26.615Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-123\"));\nauto commentId = utility::string_t(U(\"cmt-456789\"));\nPostRemoveCommentOptions options;\noptions.permanent = boost::optional<bool>(true);\napi->postRemoveComment(tenantId, commentId, options)\n    .then([](pplx::task<std::shared_ptr<PostRemoveCommentApiResponse>> task) {\n        try {\n            auto response = task.get();\n            // Process response\n        } catch (const std::exception& ex) {\n            // Handle error\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

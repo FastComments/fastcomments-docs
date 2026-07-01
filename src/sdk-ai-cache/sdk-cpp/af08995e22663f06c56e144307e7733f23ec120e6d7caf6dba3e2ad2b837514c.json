@@ -1,0 +1,7 @@
+{
+  "method": "putRemoveBadge",
+  "signatureHash": "af08995e22663f06c56e144307e7733f23ec120e6d7caf6dba3e2ad2b837514c",
+  "generatedAt": "2026-07-01T07:19:36.747Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t badgeId = U(\"badge-abc-456\");\nPutRemoveBadgeOptions options;\noptions.reason = boost::optional<utility::string_t>(U(\"Spamming\"));\napi->putRemoveBadge(tenantId, badgeId, options).then([](std::shared_ptr<RemoveUserBadgeResponse> resp) {\n    (void)resp;\n});",
+  "model": "openai/gpt-oss-120b"
+}

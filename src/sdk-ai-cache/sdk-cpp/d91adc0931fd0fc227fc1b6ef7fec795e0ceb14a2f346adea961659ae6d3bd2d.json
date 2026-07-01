@@ -1,0 +1,7 @@
+{
+  "method": "getV2PageReacts",
+  "signatureHash": "d91adc0931fd0fc227fc1b6ef7fec795e0ceb14a2f346adea961659ae6d3bd2d",
+  "generatedAt": "2026-07-01T07:20:02.898Z",
+  "codeExample": "auto tenantId = utility::string_t(\"my-tenant-123\");\nauto urlId = utility::string_t(\"https://example.com/article/42\");\nboost::optional<utility::string_t> locale = utility::string_t(\"en-US\");\napi->getV2PageReacts(tenantId, urlId)\n    .then([locale](std::shared_ptr<GetV2PageReacts> reacts){\n        if (locale) {}\n    })\n    .then([](pplx::task<void> t){\n        try { t.get(); } catch (...) {}\n    });",
+  "model": "openai/gpt-oss-120b"
+}

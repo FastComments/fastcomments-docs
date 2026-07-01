@@ -1,0 +1,7 @@
+{
+  "method": "createCommentPublic",
+  "signatureHash": "9397c4718dd73f83c735823c4bfc9559b331278119658e0cc12eadcc0eec5ebb",
+  "generatedAt": "2026-07-01T07:19:39.952Z",
+  "codeExample": "let\n  tenantId = \"my-tenant-123\"\n  urlId = \"news/article-title\"\n  broadcastId = \"broadcast-456\"\n  commentData = CommentData()\n  options = CreateCommentPublicOptions()\nlet (maybeResp, httpResp) = client.createCommentPublic(\n  tenantId = tenantId,\n  urlId = urlId,\n  broadcastId = broadcastId,\n  commentData = commentData,\n  options = options)\n\nif maybeResp.isSome:\n  let resp = maybeResp.get()\n  echo resp",
+  "model": "openai/gpt-oss-120b"
+}

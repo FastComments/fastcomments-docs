@@ -1,0 +1,7 @@
+{
+  "method": "createQuestionConfig",
+  "signatureHash": "c3fd569c313b51aaff08abcfd5aaf15e4ded773b3b9035f3c38c0e0a21f80015",
+  "generatedAt": "2026-07-01T07:19:43.075Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-123\"));\nCreateQuestionConfigBody configBody;\nconfigBody.question = utility::string_t(U(\"How satisfied are you with our service?\"));\nconfigBody.required = true;\nconfigBody.defaultAnswer = boost::optional<utility::string_t>(utility::string_t(U(\"Very satisfied\")));\napi->createQuestionConfig(tenantId, configBody).then([](pplx::task<std::shared_ptr<CreateQuestionConfigResponse>> task){\n    try{\n        auto response = task.get();\n    }catch(const std::exception&){}\n});",
+  "model": "openai/gpt-oss-120b"
+}

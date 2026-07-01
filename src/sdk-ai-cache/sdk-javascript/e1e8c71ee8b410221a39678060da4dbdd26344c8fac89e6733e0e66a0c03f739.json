@@ -1,0 +1,7 @@
+{
+  "method": "createSubscription",
+  "signatureHash": "e1e8c71ee8b410221a39678060da4dbdd26344c8fac89e6733e0e66a0c03f739",
+  "generatedAt": "2026-07-01T07:19:34.307Z",
+  "codeExample": "(async () => {\n    const tenantId: string = \"acme-corp-123\";\n\n    const subscriptionData: CreateAPIUserSubscriptionData = {\n        userId: \"user-456\",\n        planId: \"premium-monthly\",\n        startDate: new Date(),\n        trialPeriodDays: 14 // optional field\n    };\n\n    const result: CreateSubscriptionAPIResponse = await createSubscription(tenantId, subscriptionData);\n    console.log(result);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

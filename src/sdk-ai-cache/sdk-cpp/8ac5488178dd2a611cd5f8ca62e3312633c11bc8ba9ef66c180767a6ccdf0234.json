@@ -1,0 +1,7 @@
+{
+  "method": "saveComment",
+  "signatureHash": "8ac5488178dd2a611cd5f8ca62e3312633c11bc8ba9ef66c180767a6ccdf0234",
+  "generatedAt": "2026-07-01T07:19:42.841Z",
+  "codeExample": "CreateCommentParams commentParams;\ncommentParams.body = utility::string_t(U(\"Great article!\"));\ncommentParams.author = utility::string_t(U(\"jane.doe@example.com\"));\ncommentParams.parentId = boost::optional<utility::string_t>(utility::string_t(U(\"parent-789\")));\n\nSaveCommentOptions options;\noptions.preview = boost::optional<bool>(false);\n\napi->saveComment(utility::string_t(U(\"my-tenant-123\")), commentParams, options)\n    .then([](std::shared_ptr<APISaveCommentResponse> response) {\n        auto commentId = response->commentId;\n    });",
+  "model": "openai/gpt-oss-120b"
+}

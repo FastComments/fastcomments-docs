@@ -1,0 +1,7 @@
+{
+  "method": "lockComment",
+  "signatureHash": "917822bd1d0b12c61c36cc32d679511bc2803cdaa71568b2f6fa5030dbfd287b",
+  "generatedAt": "2026-07-01T07:19:50.115Z",
+  "codeExample": "let (lockResult, httpRes) = client.lockComment(\n  tenantId = \"my-tenant-123\",\n  commentId = \"comment-456\",\n  broadcastId = \"\",\n  sso = \"\")\n\nif lockResult.isSome:\n  let resp = lockResult.get()\n  discard resp",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

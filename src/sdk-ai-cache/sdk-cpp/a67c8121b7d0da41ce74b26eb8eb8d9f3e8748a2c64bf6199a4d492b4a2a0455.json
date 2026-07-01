@@ -1,0 +1,7 @@
+{
+  "method": "getQuestionResults",
+  "signatureHash": "a67c8121b7d0da41ce74b26eb8eb8d9f3e8748a2c64bf6199a4d492b4a2a0455",
+  "generatedAt": "2026-07-01T07:19:55.346Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nGetQuestionResultsOptions options;\noptions.questionId = boost::optional<utility::string_t>(U(\"question-456\"));\noptions.includeDeleted = boost::optional<bool>(false);\napi->getQuestionResults(tenantId, options)\n    .then([](pplx::task<std::shared_ptr<GetQuestionResultsResponse>> t) {\n        auto response = t.get();\n        // handle response\n    });",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

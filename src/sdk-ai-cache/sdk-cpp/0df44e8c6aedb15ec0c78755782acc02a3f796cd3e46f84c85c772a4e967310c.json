@@ -1,0 +1,7 @@
+{
+  "method": "resetUserNotifications",
+  "signatureHash": "0df44e8c6aedb15ec0c78755782acc02a3f796cd3e46f84c85c772a4e967310c",
+  "generatedAt": "2026-07-01T07:19:45.854Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-123\"));\nResetUserNotificationsOptions options;\noptions.email = boost::optional<utility::string_t>(U(\"user@example.com\"));\napi->resetUserNotifications(tenantId, options)\n    .then([](std::shared_ptr<ResetUserNotificationsResponse> resp) {\n        // Process response\n    });",
+  "model": "openai/gpt-oss-120b"
+}

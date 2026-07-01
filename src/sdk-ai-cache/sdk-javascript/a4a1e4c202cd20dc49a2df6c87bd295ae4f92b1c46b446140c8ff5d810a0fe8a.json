@@ -1,0 +1,7 @@
+{
+  "method": "getFeedPosts",
+  "signatureHash": "a4a1e4c202cd20dc49a2df6c87bd295ae4f92b1c46b446140c8ff5d810a0fe8a",
+  "generatedAt": "2026-07-01T07:19:33.676Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant_12345';\n  const afterId: string = 'post_9876';\n  const limit: number = 20;\n  const tags: string[] = ['news', 'sports'];\n\n  const feedResult: GetFeedPostsResponse1 = await getFeedPosts(tenantId, afterId, limit, tags);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

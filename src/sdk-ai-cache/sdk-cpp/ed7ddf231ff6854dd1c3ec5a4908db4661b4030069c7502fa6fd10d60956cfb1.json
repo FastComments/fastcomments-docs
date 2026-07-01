@@ -1,0 +1,7 @@
+{
+  "method": "getTenantPackages",
+  "signatureHash": "ed7ddf231ff6854dd1c3ec5a4908db4661b4030069c7502fa6fd10d60956cfb1",
+  "generatedAt": "2026-07-01T07:19:48.498Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-123\"));\nboost::optional<double> skip = 20.0;\napi->getTenantPackages(tenantId, skip)\n    .then([](std::shared_ptr<GetTenantPackagesResponse> resp) {\n        (void)resp;\n    });",
+  "model": "openai/gpt-oss-120b"
+}

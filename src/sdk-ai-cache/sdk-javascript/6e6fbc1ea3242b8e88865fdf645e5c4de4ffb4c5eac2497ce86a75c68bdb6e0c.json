@@ -1,0 +1,7 @@
+{
+  "method": "getEmailTemplates",
+  "signatureHash": "6e6fbc1ea3242b8e88865fdf645e5c4de4ffb4c5eac2497ce86a75c68bdb6e0c",
+  "generatedAt": "2026-07-01T07:19:31.218Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant_12345\";\n\n  // Call without optional 'skip'\n  const templates: GetEmailTemplatesResponse1 = await getEmailTemplates(tenantId);\n\n  // Call with optional 'skip' parameter\n  const pagedTemplates: GetEmailTemplatesResponse1 = await getEmailTemplates(tenantId, 20);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

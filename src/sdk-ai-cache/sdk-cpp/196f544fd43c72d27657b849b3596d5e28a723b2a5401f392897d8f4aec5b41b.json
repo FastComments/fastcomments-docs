@@ -1,0 +1,7 @@
+{
+  "method": "combineCommentsWithQuestionResults",
+  "signatureHash": "196f544fd43c72d27657b849b3596d5e28a723b2a5401f392897d8f4aec5b41b",
+  "generatedAt": "2026-07-01T07:19:56.293Z",
+  "codeExample": "utility::string_t tenantId = utility::string_t(\"my-tenant-123\");\nCombineCommentsWithQuestionResultsOptions options;\noptions.questionId = utility::string_t(\"question-789\");\noptions.maxComments = boost::optional<int>(50);\napi->combineCommentsWithQuestionResults(tenantId, options).then(\n    [](pplx::task<std::shared_ptr<CombineQuestionResultsWithCommentsResponse>> task){\n        try{\n            auto respPtr = task.get();\n            auto combined = std::make_shared<CombineQuestionResultsWithCommentsResponse>(*respPtr);\n            // Use combined as needed\n        }catch(const std::exception&){\n        }\n    });",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getBanUsersFromComment",
+  "signatureHash": "c667fa906ad4bea69cfb0e581371d2862ad93d6a93728eefd1f5c92797328614",
+  "generatedAt": "2026-07-01T07:19:39.340Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-123\"));\nauto commentId = utility::string_t(U(\"comment-456\"));\nboost::optional<utility::string_t> sso = boost::make_optional(utility::string_t(U(\"sso-token-abc\")));\n\napi->getBanUsersFromComment(tenantId, commentId, sso).then([](pplx::task<std::shared_ptr<GetBannedUsersFromCommentResponse>> task) {\n    try {\n        auto response = task.get();\n    } catch (const std::exception&) {\n    }\n});",
+  "model": "openai/gpt-oss-120b"
+}

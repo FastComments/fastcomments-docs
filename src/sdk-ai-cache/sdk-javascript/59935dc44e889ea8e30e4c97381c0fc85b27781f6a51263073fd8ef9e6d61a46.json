@@ -1,0 +1,7 @@
+{
+  "method": "postSetCommentText",
+  "signatureHash": "59935dc44e889ea8e30e4c97381c0fc85b27781f6a51263073fd8ef9e6d61a46",
+  "generatedAt": "2026-07-01T07:19:37.112Z",
+  "codeExample": "(async () => {\n  const commentId: string = \"cmt_9f8b7a6d5e4c3b2a1\";\n  const setParams: SetCommentTextParams = {\n    text: \"Edited comment to correct a typo and add clarification.\"\n  };\n  const broadcastId: string = \"brd_1a2b3c4d5e6f7g8h9\";\n  const tenantId: string = \"tenant_xyz123\";\n  const sso: string = \"sso_user_456def\";\n\n  const fullResult: PostSetCommentTextResponse = await postSetCommentText(\n    commentId,\n    setParams,\n    broadcastId,\n    tenantId,\n    sso\n  );\n\n  const minimalResult: PostSetCommentTextResponse = await postSetCommentText(\n    commentId,\n    setParams\n  );\n\n  console.log(fullResult, minimalResult);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

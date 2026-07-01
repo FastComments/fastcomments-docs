@@ -1,0 +1,7 @@
+{
+  "method": "postBulkPreBanSummary",
+  "signatureHash": "bb0368f00a205b6c0bb72382bb5d09f0e94b7114a5f0328616ee624e743d7d4c",
+  "generatedAt": "2026-07-01T07:19:57.128Z",
+  "codeExample": "async function runExample() {\n  const bulkPreBanParams: BulkPreBanParams = {\n    userIds: [10234, 56789],\n    emails: [\"spam_user@example.com\", \"abuse@badsite.org\"],\n    ips: [\"203.0.113.45\", \"198.51.100.22\"],\n    emailDomains: [\"maliciousdomain.com\"]\n  };\n\n  const includeByUserIdAndEmail: boolean = true;\n  const includeByIP: boolean = false;\n  const includeByEmailDomain: boolean = true;\n  const tenantId: string = \"tenant_8f4b2c1a\";\n  const sso: string = \"sso-3948abf0\";\n\n  const summary: PostBulkPreBanSummaryResponse = await postBulkPreBanSummary(\n    bulkPreBanParams,\n    includeByUserIdAndEmail,\n    includeByIP,\n    includeByEmailDomain,\n    tenantId,\n    sso\n  );\n\n  console.log(summary);\n}\n\nrunExample();",
+  "model": "openai/gpt-oss-120b"
+}

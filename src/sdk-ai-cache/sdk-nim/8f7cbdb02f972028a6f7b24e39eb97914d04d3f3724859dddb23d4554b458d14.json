@@ -1,0 +1,7 @@
+{
+  "method": "postSetCommentReviewStatus",
+  "signatureHash": "8f7cbdb02f972028a6f7b24e39eb97914d04d3f3724859dddb23d4554b458d14",
+  "generatedAt": "2026-07-01T07:19:28.368Z",
+  "codeExample": "let (apiResp, httpResp) = client.postSetCommentReviewStatus(\n  tenantId = \"my-tenant-123\",\n  commentId = \"cmt-7890\",\n  options = PostSetCommentReviewStatusOptions()\n)\n\nif apiResp.isSome:\n  let _ = apiResp.get()\n  discard\nelse:\n  discard",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

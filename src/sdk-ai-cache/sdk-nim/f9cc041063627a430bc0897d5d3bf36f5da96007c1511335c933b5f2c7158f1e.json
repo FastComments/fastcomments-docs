@@ -1,0 +1,7 @@
+{
+  "method": "deleteQuestionResult",
+  "signatureHash": "f9cc041063627a430bc0897d5d3bf36f5da96007c1511335c933b5f2c7158f1e",
+  "generatedAt": "2026-07-01T07:19:21.262Z",
+  "codeExample": "let (maybeResult, httpResp) = client.deleteQuestionResult(tenantId = \"my-tenant-123\", id = \"question-456\")\nif maybeResult.isSome:\n  let result = maybeResult.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

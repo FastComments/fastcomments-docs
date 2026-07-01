@@ -1,0 +1,7 @@
+{
+  "method": "reactFeedPostPublic",
+  "signatureHash": "946ea3601fed61858a4aecac81ee53afc1d00116beaf6449f5e2149068395b7a",
+  "generatedAt": "2026-07-01T07:19:45.517Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant_12345';\n  const postId: string = 'post_98765';\n  const reactBodyParams: ReactBodyParams = { reaction: 'thumbs_up' };\n  const isUndo: boolean = false;\n  const broadcastId: string = 'broadcast_abcde';\n  const sso: string = 'sso_token_xyz';\n\n  const response: ReactFeedPostPublicResponse = await reactFeedPostPublic(\n    tenantId,\n    postId,\n    reactBodyParams,\n    isUndo,\n    broadcastId,\n    sso\n  );\n\n  console.log(response);\n})();",
+  "model": "openai/gpt-oss-120b"
+}

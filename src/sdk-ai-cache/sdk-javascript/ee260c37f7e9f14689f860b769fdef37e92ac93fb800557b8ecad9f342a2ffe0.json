@@ -1,0 +1,7 @@
+{
+  "method": "getTenantDailyUsages",
+  "signatureHash": "ee260c37f7e9f14689f860b769fdef37e92ac93fb800557b8ecad9f342a2ffe0",
+  "generatedAt": "2026-07-01T07:19:37.020Z",
+  "codeExample": "async function fetchDailyUsage() {\n  const tenantId: string = \"tenant-9876\";\n  const yearNumber: number = 2024;\n  const monthNumber: number = 5; // May\n  const dayNumber: number = 12;\n  const skip: number = 0;\n\n  const fullResult: GetTenantDailyUsagesResponse1 = await getTenantDailyUsages(\n    tenantId,\n    yearNumber,\n    monthNumber,\n    dayNumber,\n    skip\n  );\n\n  // Using only required and one optional parameter\n  const partialResult: GetTenantDailyUsagesResponse1 = await getTenantDailyUsages(\n    tenantId,\n    yearNumber\n  );\n\n  console.log(fullResult, partialResult);\n}\n\nfetchDailyUsage();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

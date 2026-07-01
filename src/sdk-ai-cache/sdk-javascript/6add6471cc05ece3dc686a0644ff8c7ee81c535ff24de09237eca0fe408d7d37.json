@@ -1,0 +1,7 @@
+{
+  "method": "changeTicketState",
+  "signatureHash": "6add6471cc05ece3dc686a0644ff8c7ee81c535ff24de09237eca0fe408d7d37",
+  "generatedAt": "2026-07-01T07:19:37.912Z",
+  "codeExample": "const tenantId: string = \"acme-corp\";\nconst userId: string = \"user-97123\";\nconst ticketId: string = \"ticket-45001\";\n\nconst changeTicketStateBody: ChangeTicketStateBody = {\n  state: \"closed\",\n  // optional field in the body\n  comment: \"Issue resolved after code fix\"\n};\n\nconst response: ChangeTicketStateResponse1 = await changeTicketState(\n  tenantId,\n  userId,\n  ticketId,\n  changeTicketStateBody\n);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getSearchSuggest",
+  "signatureHash": "e3927caa78b73d0d3d9f99199549314847051d421c0368ffc5a24f48e4d6bf5c",
+  "generatedAt": "2026-07-01T07:19:45.696Z",
+  "codeExample": "async function example(): Promise<void> {\n    const term: string = \"fastcomments api\";\n    const tenant: string = \"tenant_001\";\n    const sso: string = \"sso_9a8b7c\";\n\n    const fullResult: GetSearchSuggestResponse = await getSearchSuggest(term, tenant, sso);\n    const partialResult: GetSearchSuggestResponse = await getSearchSuggest(term);\n}\n\nexample();",
+  "model": "openai/gpt-oss-120b"
+}

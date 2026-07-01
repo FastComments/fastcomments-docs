@@ -1,0 +1,7 @@
+{
+  "method": "updateUserNotificationPageSubscriptionStatus",
+  "signatureHash": "25ba342d5a72f8e74aaff8a53732eec1372778fe344a1f72e3c643563cd00a89",
+  "generatedAt": "2026-07-01T07:19:35.729Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t urlId = U(\"page-456\");\nutility::string_t url = U(\"https://example.com/articles/awesome-article\");\nutility::string_t pageTitle = U(\"Awesome Article\");\nutility::string_t subscription = U(\"subscribed\");\nboost::optional<utility::string_t> sso = boost::make_optional<utility::string_t>(U(\"sso-token-789\"));\n\napi->updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscription, sso)\n    .then([](std::shared_ptr<UpdateUserNotificationPageSubscriptionStatusResponse> resp) {\n        // process resp if needed\n    });",
+  "model": "openai/gpt-oss-120b"
+}

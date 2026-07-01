@@ -1,0 +1,7 @@
+{
+  "method": "getAuditLogs",
+  "signatureHash": "1353b6b56cfe55af1407fdb2ecc30a6855e29405fc55de45e5e25f5dad814c1c",
+  "generatedAt": "2026-07-01T07:19:47.167Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\n\nGetAuditLogsOptions options;\noptions.startDate = boost::optional<utility::datetime>(utility::datetime::from_string(U(\"2023-01-01T00:00:00Z\"), utility::datetime::RFC_1123));\noptions.endDate   = boost::optional<utility::datetime>(utility::datetime::from_string(U(\"2023-01-31T23:59:59Z\"), utility::datetime::RFC_1123));\noptions.limit     = boost::optional<int>(100);\n\napi->getAuditLogs(tenantId, options).then([](pplx::task<std::shared_ptr<GetAuditLogsResponse>> t) {\n    try {\n        auto response = t.get();\n        // use response\n    } catch (const std::exception& e) {\n        // handle error\n    }\n});",
+  "model": "openai/gpt-oss-120b"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getSearchUsers",
+  "signatureHash": "78a886bbf9a9f16611224e315750746a89fe35a79575f7ce85028328b0a56f03",
+  "generatedAt": "2026-07-01T07:19:33.340Z",
+  "codeExample": "let (searchRes, httpRes) = client.getSearchUsers(tenantId = \"my-tenant-123\", options = default(GetSearchUsersOptions))\nif searchRes.isSome:\n  let data = searchRes.get()\n  echo data",
+  "model": "openai/gpt-oss-120b"
+}

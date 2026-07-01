@@ -1,0 +1,7 @@
+{
+  "method": "getCommentText",
+  "signatureHash": "cf74e6d5c7a59db3dec840415f3a7b1b3c0878d2fb5e799caf2c58e4afe9c67f",
+  "generatedAt": "2026-07-01T07:19:30.933Z",
+  "codeExample": "let (maybeResponse, httpResponse) = client.getCommentText(\n  tenantId = \"my-tenant-123\",\n  commentId = \"comment-456\",\n  options = GetCommentTextOptions()\n)\n\nif maybeResponse.isSome:\n  let response = maybeResponse.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

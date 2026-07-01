@@ -1,0 +1,7 @@
+{
+  "method": "voteComment",
+  "signatureHash": "e69eac1bc7baf4933cf7d212f4aba2e01b5f65bea8b4187b0e961565facbba44",
+  "generatedAt": "2026-07-01T07:19:33.511Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto commentId = utility::conversions::to_string_t(\"comment-7890\");\nauto urlId = utility::conversions::to_string_t(\"article-456\");\nauto broadcastId = utility::conversions::to_string_t(\"broadcast-321\");\n\nVoteBodyParams voteParams;\nvoteParams.upvote = true;\nvoteParams.note = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"Great insight\"));\n\nVoteCommentOptions options;\noptions.dryRun = boost::optional<bool>(false);\n\napi->voteComment(tenantId, commentId, urlId, broadcastId, voteParams, options)\n   .then([](pplx::task<std::shared_ptr<VoteResponse>> t) {\n       try {\n           auto response = t.get();\n           // handle response\n       } catch (const std::exception&) {\n       }\n   });",
+  "model": "openai/gpt-oss-120b"
+}

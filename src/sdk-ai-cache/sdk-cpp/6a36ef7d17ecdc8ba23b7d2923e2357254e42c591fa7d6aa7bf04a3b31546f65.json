@@ -1,0 +1,7 @@
+{
+  "method": "postSetCommentReviewStatus",
+  "signatureHash": "6a36ef7d17ecdc8ba23b7d2923e2357254e42c591fa7d6aa7bf04a3b31546f65",
+  "generatedAt": "2026-07-01T07:19:38.420Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto commentId = utility::conversions::to_string_t(\"cmt-456789\");\nPostSetCommentReviewStatusOptions opts;\nopts.status = utility::conversions::to_string_t(\"approved\");\nopts.note = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"Looks good\"));\napi->postSetCommentReviewStatus(tenantId, commentId, opts)\n    .then([](pplx::task<std::shared_ptr<APIEmptyResponse>> t){\n        try{\n            auto resp = t.get();\n        }catch(const std::exception& e){\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

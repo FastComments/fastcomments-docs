@@ -1,0 +1,7 @@
+{
+  "method": "putReopenThread",
+  "signatureHash": "dc03d957a284f647b9464853561b9509aabce18290fc5560ad72c57f29eae234",
+  "generatedAt": "2026-07-01T07:19:55.796Z",
+  "codeExample": "async function exampleUsage() {\n  const urlId: string = \"thread-9f8b7c6a\";\n  const tenantId: string = \"tenant-001\";\n  const sso: string = \"sso-3f9d2e1a\";\n\n  const resultAll: PutReopenThreadResponse = await putReopenThread(urlId, tenantId, sso);\n  console.log(resultAll);\n\n  const resultMinimal: PutReopenThreadResponse = await putReopenThread(urlId);\n  console.log(resultMinimal);\n}",
+  "model": "openai/gpt-oss-120b"
+}

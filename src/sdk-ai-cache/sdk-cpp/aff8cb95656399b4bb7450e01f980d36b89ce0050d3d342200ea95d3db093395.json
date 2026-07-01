@@ -1,0 +1,7 @@
+{
+  "method": "deleteHashTag",
+  "signatureHash": "aff8cb95656399b4bb7450e01f980d36b89ce0050d3d342200ea95d3db093395",
+  "generatedAt": "2026-07-01T07:19:54.174Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-001\");\nauto tag = utility::conversions::to_string_t(\"news\");\nDeleteHashTagRequestBody requestBody;\nrequestBody.userId = utility::conversions::to_string_t(\"user-42\");\nrequestBody.reason = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"User request\"));\napi->deleteHashTag(tenantId, tag, requestBody)\n    .then([](std::shared_ptr<APIEmptyResponse> resp) {\n    });",
+  "model": "openai/gpt-oss-120b"
+}

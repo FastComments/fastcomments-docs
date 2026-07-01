@@ -1,0 +1,7 @@
+{
+  "method": "getComment",
+  "signatureHash": "262d427ab137e9adc46a010c3c665c84a414af38ad18098e2d46ebf21b360007",
+  "generatedAt": "2026-07-01T07:19:42.908Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"acme-corp\";\n  const commentId: string = \"comment-987654\";\n  const result: GetCommentResponse = await getComment(tenantId, commentId);\n  const badgeInfo: CommentUserBadgeInfo | undefined = result.comment?.user?.badgeInfo;\n  console.log(badgeInfo?.label);\n})();",
+  "model": "openai/gpt-oss-120b"
+}

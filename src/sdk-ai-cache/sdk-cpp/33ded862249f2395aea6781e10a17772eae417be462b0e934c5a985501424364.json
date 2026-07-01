@@ -1,0 +1,7 @@
+{
+  "method": "getSSOUsers",
+  "signatureHash": "33ded862249f2395aea6781e10a17772eae417be462b0e934c5a985501424364",
+  "generatedAt": "2026-07-01T07:19:40.283Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<int32_t> skip = 25;\napi->getSSOUsers(tenantId, skip).then([](pplx::task<std::shared_ptr<GetSSOUsersResponse>> t) {\n    try {\n        auto response = t.get();\n    } catch (const std::exception&) {\n    }\n});",
+  "model": "openai/gpt-oss-120b"
+}

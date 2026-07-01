@@ -1,0 +1,7 @@
+{
+  "method": "deleteModerationVote",
+  "signatureHash": "b22f84ded5d8a0c6bd52beb809c5d46cd327138ad580827b980323776e4a103b",
+  "generatedAt": "2026-07-01T07:19:32.587Z",
+  "codeExample": "let (respOpt, httpResp) = client.deleteModerationVote(\n  tenantId = \"my-tenant-123\",\n  commentId = \"cmt-987654\",\n  voteId = \"vote-abc123\",\n  options = DeleteModerationVoteOptions()\n)\n\nif respOpt.isSome:\n  let resp = respOpt.get()",
+  "model": "openai/gpt-oss-120b"
+}

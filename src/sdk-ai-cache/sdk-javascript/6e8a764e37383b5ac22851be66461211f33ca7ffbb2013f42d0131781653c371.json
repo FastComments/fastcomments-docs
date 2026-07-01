@@ -1,0 +1,7 @@
+{
+  "method": "createModerator",
+  "signatureHash": "6e8a764e37383b5ac22851be66461211f33ca7ffbb2013f42d0131781653c371",
+  "generatedAt": "2026-07-01T07:19:32.695Z",
+  "codeExample": "async function runExample() {\n  const tenantId: string = \"tenant_9876\";\n  const moderatorPayload: CreateModeratorBody = {\n    name: \"Alice Johnson\",\n    email: \"alice.johnson@example.com\"\n    // optional fields like description are omitted\n  };\n  const result: CreateModeratorResponse1 = await createModerator(tenantId, moderatorPayload);\n  console.log(result);\n}\n\nrunExample();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

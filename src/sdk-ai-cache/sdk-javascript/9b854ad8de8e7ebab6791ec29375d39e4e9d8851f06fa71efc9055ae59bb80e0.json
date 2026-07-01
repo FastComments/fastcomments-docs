@@ -1,0 +1,7 @@
+{
+  "method": "createFeedPost",
+  "signatureHash": "9b854ad8de8e7ebab6791ec29375d39e4e9d8851f06fa71efc9055ae59bb80e0",
+  "generatedAt": "2026-07-01T07:19:41.503Z",
+  "codeExample": "async function run() {\n  const tenantId = \"tenant-12345\";\n  const feedParams: CreateFeedPostParams = {\n    text: \"New product launch!\",\n    mediaItems: [{ type: \"image\", asset: { url: \"https://cdn.example.com/img.jpg\", width: 800, height: 600 } as FeedPostMediaItemAsset } as FeedPostMediaItem],\n    link: { url: \"https://example.com/product\", title: \"Product\" } as FeedPostLink\n  };\n  const result: CreateFeedPostResponse1 = await createFeedPost(tenantId, feedParams, \"broadcast-987\", true, false, true);\n  console.log(result);\n}\nrun();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

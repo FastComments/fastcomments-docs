@@ -1,0 +1,7 @@
+{
+  "method": "flagComment",
+  "signatureHash": "a9cf3846ed94f6f242f64145acc583ea17ce81877f1d47b14a1005fcf864d81f",
+  "generatedAt": "2026-07-01T07:19:42.035Z",
+  "codeExample": "auto opts = std::make_shared<FlagCommentOptions>();\nopts->reason = utility::conversions::to_string_t(\"spam\");\nopts->note = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"User posted duplicate links\"));\n\napi->flagComment(utility::conversions::to_string_t(\"my-tenant-123\"),\n                 utility::conversions::to_string_t(\"comment-456\"),\n                 *opts)\n    .then([](pplx::task<std::shared_ptr<FlagCommentResponse>> t) {\n        auto resp = t.get();\n    });",
+  "model": "openai/gpt-oss-120b"
+}

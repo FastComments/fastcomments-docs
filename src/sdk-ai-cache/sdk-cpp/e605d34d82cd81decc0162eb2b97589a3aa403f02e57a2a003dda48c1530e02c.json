@@ -1,0 +1,7 @@
+{
+  "method": "getCommentBanStatus",
+  "signatureHash": "e605d34d82cd81decc0162eb2b97589a3aa403f02e57a2a003dda48c1530e02c",
+  "generatedAt": "2026-07-01T07:19:54.745Z",
+  "codeExample": "auto tenantId = utility::string_t(U\"my-tenant-123\");\nauto commentId = utility::string_t(U\"comment-456\");\nboost::optional<utility::string_t> sso = utility::string_t(U\"user@example.com\");\n\napi->getCommentBanStatus(tenantId, commentId, sso).then([](pplx::task<std::shared_ptr<GetCommentBanStatusResponse>> t){\n    try{\n        auto response = t.get();\n    }catch(const std::exception&){ }\n});",
+  "model": "openai/gpt-oss-120b"
+}

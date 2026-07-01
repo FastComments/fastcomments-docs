@@ -1,0 +1,7 @@
+{
+  "method": "getAuditLogs",
+  "signatureHash": "d9576471464b16ce026a53c8d1839c92307771d1d1a391a2a617f72c3f904d19",
+  "generatedAt": "2026-07-01T07:19:21.335Z",
+  "codeExample": "let (auditOpt, httpResp) = client.getAuditLogs(tenantId = \"my-tenant-123\", options = GetAuditLogsOptions())\nif auditOpt.isSome:\n  let audit = auditOpt.get()\n  echo audit",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getBanUsersFromComment",
+  "signatureHash": "bf52736cdf37087587c9d8ad4aca25b2f79b7a50d005cfe664878d32969b903d",
+  "generatedAt": "2026-07-01T07:19:28.219Z",
+  "codeExample": "let (response, httpResponse) = client.getBanUsersFromComment(tenantId = \"my-tenant-001\", commentId = \"cmt-123456\", sso = \"\")\nif response.isSome:\n  let banInfo = response.get()\n  echo banInfo",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "putSSOUser",
+  "signatureHash": "898bda814537950553fa76ae38019519c6f3f3758e9030e027020caebdb76835",
+  "generatedAt": "2026-07-01T07:19:37.633Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant_abc123\";\n  const userId: string = \"user_456def\";\n\n  const updateData: UpdateAPISSOUserData = {\n    email: \"jane.doe@example.com\",\n    displayName: \"Jane Doe\",\n    isActive: true,\n  };\n\n  const response: PutSSOUserAPIResponse = await putSSOUser(tenantId, userId, updateData, true);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

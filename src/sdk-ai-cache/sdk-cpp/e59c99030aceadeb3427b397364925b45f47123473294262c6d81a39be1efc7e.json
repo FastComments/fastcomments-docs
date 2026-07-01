@@ -1,0 +1,7 @@
+{
+  "method": "getOnlineUsers",
+  "signatureHash": "e59c99030aceadeb3427b397364925b45f47123473294262c6d81a39be1efc7e",
+  "generatedAt": "2026-07-01T07:19:40.406Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t urlId = U(\"article-456\");\nauto options = std::make_shared<GetOnlineUsersOptions>();\noptions->maxResults = boost::optional<int>(100);\noptions->includeInactive = boost::optional<bool>(false);\napi->getOnlineUsers(tenantId, urlId, *options).then([](pplx::task<std::shared_ptr<PageUsersOnlineResponse>> task){\n    try{\n        auto response = task.get();\n    }catch(const std::exception&){\n    }\n});",
+  "model": "openai/gpt-oss-120b"
+}

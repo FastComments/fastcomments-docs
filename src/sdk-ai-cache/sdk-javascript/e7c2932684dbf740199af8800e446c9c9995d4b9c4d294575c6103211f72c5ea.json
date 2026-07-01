@@ -1,0 +1,7 @@
+{
+  "method": "getLogs",
+  "signatureHash": "e7c2932684dbf740199af8800e446c9c9995d4b9c4d294575c6103211f72c5ea",
+  "generatedAt": "2026-07-01T07:19:34.632Z",
+  "codeExample": "async function fetchLogs() {\r\n    const commentId: string = \"cmt_9a8b7c6d5e4f3a2b\";\r\n    const tenantId: string = \"tenant_9876\";\r\n    const sso: string = \"sso_abcdef123456\";\r\n\r\n    const fullResponse: GetLogsResponse = await getLogs(commentId, tenantId, sso);\r\n    const minimalResponse: GetLogsResponse = await getLogs(commentId);\r\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

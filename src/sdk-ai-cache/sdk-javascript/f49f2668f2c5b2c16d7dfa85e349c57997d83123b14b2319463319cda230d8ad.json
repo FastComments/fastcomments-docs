@@ -1,0 +1,7 @@
+{
+  "method": "voteComment",
+  "signatureHash": "f49f2668f2c5b2c16d7dfa85e349c57997d83123b14b2319463319cda230d8ad",
+  "generatedAt": "2026-07-01T07:19:37.516Z",
+  "codeExample": "const tenantId: string = \"acme-corp\";\nconst commentId: string = \"cmt_9f8e7d6c\";\nconst urlId: string = \"url_123456\";\nconst broadcastId: string = \"bcast_2024_01\";\n\nconst voteBodyParams: VoteBodyParams = {\n  vote: \"up\",               // e.g., \"up\" | \"down\"\n  weight: 1,                // optional weighting of the vote\n};\n\nconst sessionId: string = \"sess_abc123def\";\nconst sso: string = \"sso_token_xyz\";\n\nconst result: VoteCommentResponse = await voteComment(\n  tenantId,\n  commentId,\n  urlId,\n  broadcastId,\n  voteBodyParams,\n  sessionId,\n  sso\n);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

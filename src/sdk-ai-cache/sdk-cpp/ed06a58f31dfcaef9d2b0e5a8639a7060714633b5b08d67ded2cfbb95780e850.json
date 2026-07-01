@@ -1,0 +1,7 @@
+{
+  "method": "updateComment",
+  "signatureHash": "ed06a58f31dfcaef9d2b0e5a8639a7060714633b5b08d67ded2cfbb95780e850",
+  "generatedAt": "2026-07-01T07:19:45.275Z",
+  "codeExample": "auto tenantId = utility::string_t(\"my-tenant-123\");\nauto commentId = utility::string_t(\"cmt-789\");\nUpdatableCommentParams updatable;\nupdatable.body = utility::string_t(\"Edited comment content\");\nupdatable.isSpam = boost::optional<bool>(false);\nUpdateCommentOptions options;\noptions.notify = boost::optional<bool>(true);\napi->updateComment(tenantId, commentId, updatable, options)\n    .then([](std::shared_ptr<APIEmptyResponse>) {})\n    .then([](pplx::task<void> t) { try { t.get(); } catch(const std::exception&) {} });",
+  "model": "openai/gpt-oss-120b"
+}

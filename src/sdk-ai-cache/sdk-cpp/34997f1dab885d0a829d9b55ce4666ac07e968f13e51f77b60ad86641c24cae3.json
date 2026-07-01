@@ -1,0 +1,7 @@
+{
+  "method": "deleteV1PageReact",
+  "signatureHash": "34997f1dab885d0a829d9b55ce4666ac07e968f13e51f77b60ad86641c24cae3",
+  "generatedAt": "2026-07-01T07:19:36.031Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto urlId = utility::conversions::to_string_t(\"page-abc-456\");\napi->deleteV1PageReact(tenantId, urlId).then([](pplx::task<std::shared_ptr<CreateV1PageReact>> task){\n    try{\n        auto response = task.get();\n        boost::optional<std::shared_ptr<CreateV1PageReact>> optResponse = response;\n    }catch(...){\n    }\n});",
+  "model": "openai/gpt-oss-120b"
+}

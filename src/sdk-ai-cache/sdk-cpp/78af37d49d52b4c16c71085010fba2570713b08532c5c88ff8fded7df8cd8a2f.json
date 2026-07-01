@@ -1,0 +1,7 @@
+{
+  "method": "getModerationComment",
+  "signatureHash": "78af37d49d52b4c16c71085010fba2570713b08532c5c88ff8fded7df8cd8a2f",
+  "generatedAt": "2026-07-01T07:19:47.254Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto commentId = utility::conversions::to_string_t(\"comment-456\");\nGetModerationCommentOptions options;\noptions.includeDeleted = boost::optional<bool>(true);\noptions.locale = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"en-US\"));\napi->getModerationComment(tenantId, commentId, options)\n    .then([](pplx::task<std::shared_ptr<ModerationAPICommentResponse>> task) {\n        try {\n            auto response = task.get();\n            // Process response as needed\n        } catch (const std::exception& ex) {\n            // Handle error\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

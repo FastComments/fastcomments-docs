@@ -1,0 +1,7 @@
+{
+  "method": "unLockComment",
+  "signatureHash": "f904d3acda50a9c719338f2d50c7d6ca6a736f4188f2b804672b3a9589238e46",
+  "generatedAt": "2026-07-01T07:19:36.090Z",
+  "codeExample": "const tenantId: string = \"tenant_12345\";\nconst commentId: string = \"cmt_9876\";\nconst broadcastId: string = \"brd_001\";\nconst ssoToken: string | undefined = \"sso_token_abc\";\n\nasync function run() {\n  const unlocked: UnLockCommentResponse = await unLockComment(tenantId, commentId, broadcastId, ssoToken);\n  console.log(unlocked);\n\n  // Call without the optional sso parameter\n  const unlockedWithoutSso: UnLockCommentResponse = await unLockComment(tenantId, commentId, broadcastId);\n  console.log(unlockedWithoutSso);\n}\n\nrun();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "aggregate",
+  "signatureHash": "4b35e0a36c7eb965b8ab5b2b04d986c565623a8d9d4f90a976b1cf0b6e1c372d",
+  "generatedAt": "2026-07-01T07:19:28.859Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\n\nAggregationRequest aggregationRequest;\naggregationRequest.setMetric(U(\"commentCount\"));\naggregationRequest.setStartDate(U(\"2023-01-01T00:00:00Z\"));\naggregationRequest.setEndDate(U(\"2023-12-31T23:59:59Z\"));\naggregationRequest.setFilters({ U(\"status:approved\") });\n\nAggregateOptions options;\noptions.limit = boost::optional<int>(100);\noptions.includeMetadata = boost::optional<bool>(true);\n\napi->aggregate(tenantId, aggregationRequest, options)\n    .then([](pplx::task<std::shared_ptr<AggregateResponse>> task) {\n        try {\n            auto response = task.get();\n            // process response\n        } catch (const std::exception& e) {\n            // handle error\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

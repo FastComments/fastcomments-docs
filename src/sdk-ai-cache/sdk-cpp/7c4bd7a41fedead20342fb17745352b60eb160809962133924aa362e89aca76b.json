@@ -1,0 +1,7 @@
+{
+  "method": "getVotes",
+  "signatureHash": "7c4bd7a41fedead20342fb17745352b60eb160809962133924aa362e89aca76b",
+  "generatedAt": "2026-07-01T07:19:55.343Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-123\"));\nauto urlId = utility::string_t(U(\"article-456\"));\nboost::optional<utility::string_t> extraHeader = boost::none;\n\napi->getVotes(tenantId, urlId).then([=](pplx::task<std::shared_ptr<GetVotesResponse>> task) {\n    try {\n        auto original = task.get();\n        auto response = std::make_shared<GetVotesResponse>(*original);\n    } catch (...) {\n        // error handling\n    }\n});",
+  "model": "openai/gpt-oss-120b"
+}

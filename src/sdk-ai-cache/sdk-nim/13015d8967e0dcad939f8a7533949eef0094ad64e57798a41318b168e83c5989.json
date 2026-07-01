@@ -1,0 +1,7 @@
+{
+  "method": "getUserInternalProfile",
+  "signatureHash": "13015d8967e0dcad939f8a7533949eef0094ad64e57798a41318b168e83c5989",
+  "generatedAt": "2026-07-01T07:19:25.310Z",
+  "codeExample": "let (profileOpt, httpResp) = client.getUserInternalProfile(\n  tenantId = \"my-tenant-123\",\n  options = GetUserInternalProfileOptions()\n)\n\nif profileOpt.isSome:\n  let profile = profileOpt.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "deleteUserBadge",
+  "signatureHash": "d7aa2918f1fc440b35eb029c544ac2714dcca5b965c6ce967fe0495c3ddc88ec",
+  "generatedAt": "2026-07-01T07:19:34.436Z",
+  "codeExample": "async function exampleDeleteBadge(): Promise<void> {\n  const tenantId: string = \"tenant_9f8b7c6a\";\n  const badgeId: string = \"badge_4e3d2c1b\";\n  const result: DeleteUserBadgeResponse = await deleteUserBadge(tenantId, badgeId);\n  console.log(result);\n}\nexampleDeleteBadge();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

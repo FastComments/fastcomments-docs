@@ -1,0 +1,7 @@
+{
+  "method": "changeTicketState",
+  "signatureHash": "6b74c9d9b1a753cab873005e68d6b7f1cdcc6739881192b7b9e5c1a584a7d724",
+  "generatedAt": "2026-07-01T07:19:51.468Z",
+  "codeExample": "let (optResp, httpResp) = client.changeTicketState(\n  tenantId = \"my-tenant-001\",\n  userId = \"user-42\",\n  id = \"ticket-12345\",\n  changeTicketStateBody = ChangeTicketStateBody(state = \"closed\")\n)\n\nif optResp.isSome:\n  let resp = optResp.get()\n  echo resp",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

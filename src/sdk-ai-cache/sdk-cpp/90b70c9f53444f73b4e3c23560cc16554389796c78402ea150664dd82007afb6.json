@@ -1,0 +1,7 @@
+{
+  "method": "getUserBanPreference",
+  "signatureHash": "90b70c9f53444f73b4e3c23560cc16554389796c78402ea150664dd82007afb6",
+  "generatedAt": "2026-07-01T07:19:48.642Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-123\"));\nboost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U(\"user@example.com\"));\n\napi->getUserBanPreference(tenantId, sso)\n    .then([](pplx::task<std::shared_ptr<APIModerateGetUserBanPreferencesResponse>> t) {\n        try {\n            auto resp = t.get();\n        } catch (const std::exception&) {\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

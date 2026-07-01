@@ -1,0 +1,7 @@
+{
+  "method": "getUserBadge",
+  "signatureHash": "e9832c113d5eb2c77fd642356523e55789a10b8cf6007ffa92b8373f1e93cc4f",
+  "generatedAt": "2026-07-01T07:19:34.437Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t userId = U(\"user-456\");\napi->getUserBadge(tenantId, userId).then([](pplx::task<std::shared_ptr<APIGetUserBadgeResponse>> t){\n    try{\n        auto resp = t.get();\n        boost::optional<std::string> badgeUrl = resp->badge_url ? boost::optional<std::string>(*resp->badge_url) : boost::none;\n    }catch(const std::exception&){\n    }\n});",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

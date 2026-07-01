@@ -1,0 +1,7 @@
+{
+  "method": "deleteCommentVote",
+  "signatureHash": "4df45e03406b71f599bdede10252776802c7967cc0c3108ea3c7e2a275e2f0fc",
+  "generatedAt": "2026-07-01T07:19:54.134Z",
+  "codeExample": "let (response, httpResponse) = client.deleteCommentVote(\n  tenantId = \"my-tenant-123\",\n  commentId = \"cmt-456\",\n  voteId = \"vote-789\",\n  urlId = \"news/article-title\",\n  broadcastId = \"broadcast-001\",\n  options = DeleteCommentVoteOptions()\n)\n\nif response.isSome:\n  let voteDelete = response.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

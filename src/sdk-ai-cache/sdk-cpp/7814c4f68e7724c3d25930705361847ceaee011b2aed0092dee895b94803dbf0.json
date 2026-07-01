@@ -1,0 +1,7 @@
+{
+  "method": "putReopenThread",
+  "signatureHash": "7814c4f68e7724c3d25930705361847ceaee011b2aed0092dee895b94803dbf0",
+  "generatedAt": "2026-07-01T07:19:43.362Z",
+  "codeExample": "api->putReopenThread(utility::string_t(U(\"my-tenant-123\")), utility::string_t(U(\"thread-456\")), boost::make_optional<utility::string_t>(U(\"user@example.com\")))\n    .then([](std::shared_ptr<APIEmptyResponse> result){\n        std::cout << \"Thread reopened\" << std::endl;\n    });",
+  "model": "openai/gpt-oss-120b"
+}

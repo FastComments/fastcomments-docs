@@ -1,0 +1,7 @@
+{
+  "method": "deleteQuestionConfig",
+  "signatureHash": "0fd5beff9fe82de815e5a83fc6e82ddd8946af9c19b982e2e953a2524efae599",
+  "generatedAt": "2026-07-01T07:19:33.429Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto configId = utility::conversions::to_string_t(\"question-config-456\");\n\napi->deleteQuestionConfig(tenantId, configId)\n    .then([](std::shared_ptr<APIEmptyResponse> resp) {\n        // handle successful deletion\n    })\n    .then([](pplx::task<void> t) {\n        try {\n            t.get();\n        } catch (const std::exception&) {\n            // handle error\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

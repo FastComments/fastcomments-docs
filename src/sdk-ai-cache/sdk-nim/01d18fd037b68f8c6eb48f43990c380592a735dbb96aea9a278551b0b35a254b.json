@@ -1,0 +1,7 @@
+{
+  "method": "getSearchCommentsSummary",
+  "signatureHash": "01d18fd037b68f8c6eb48f43990c380592a735dbb96aea9a278551b0b35a254b",
+  "generatedAt": "2026-07-01T07:19:28.976Z",
+  "codeExample": "let (summaryOpt, httpResp) = client.getSearchCommentsSummary(\n  tenantId = \"my-tenant-123\",\n  options = GetSearchCommentsSummaryOptions()\n)\n\nif summaryOpt.isSome:\n  let summary = summaryOpt.get()\n  echo summary",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

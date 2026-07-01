@@ -1,0 +1,7 @@
+{
+  "method": "getModerators",
+  "signatureHash": "24fe5be84cdca9b4b7467f6df78f3ed5363de493e0228cabb03890c7de95aa0c",
+  "generatedAt": "2026-07-01T07:19:29.102Z",
+  "codeExample": "let (moderatorsOpt, httpResp) = client.getModerators(tenantId = \"my-tenant-123\", skip = 0.0)\nif moderatorsOpt.isSome:\n  let moderators = moderatorsOpt.get()\n  echo moderators",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

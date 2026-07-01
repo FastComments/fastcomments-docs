@@ -1,0 +1,7 @@
+{
+  "method": "getTenantPackage",
+  "signatureHash": "015a792560b50bea2f7282ae73f0538b462cca943f24c05762c2c281ebbe9cf3",
+  "generatedAt": "2026-07-01T07:19:37.215Z",
+  "codeExample": "async function fetchTenantPackage(): Promise<void> {\n    const tenantId: string = \"acme-tenant-2024\";\n    const packageId: string = \"premium-package-01\";\n    const response: GetTenantPackageResponse1 = await getTenantPackage(tenantId, packageId);\n\n    // Optional fields in the response\n    const tenantPackage: TenantPackage | undefined = response.tenantPackage;\n    const customConfig: CustomConfigParameters | undefined = response.customConfigParameters;\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

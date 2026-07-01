@@ -1,0 +1,7 @@
+{
+  "method": "deleteUserBadge",
+  "signatureHash": "b8252181eb4b27463b1375ed2a41b9dd21107d708d3ac7def43920243754290d",
+  "generatedAt": "2026-07-01T07:19:52.220Z",
+  "codeExample": "let (apiResponse, httpResponse) = client.deleteUserBadge(tenantId = \"my-tenant-123\", id = \"badge-456\")\nif apiResponse.isSome:\n  let success = apiResponse.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

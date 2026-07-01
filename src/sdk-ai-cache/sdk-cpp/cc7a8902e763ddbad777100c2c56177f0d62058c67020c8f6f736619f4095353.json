@@ -1,0 +1,7 @@
+{
+  "method": "updateUserBadge",
+  "signatureHash": "cc7a8902e763ddbad777100c2c56177f0d62058c67020c8f6f736619f4095353",
+  "generatedAt": "2026-07-01T07:19:57.773Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto userId = utility::conversions::to_string_t(\"user@example.com\");\nUpdateUserBadgeParams params;\nparams.badgeId = utility::conversions::to_string_t(\"vip-badge\");\nparams.expiration = boost::optional<utility::datetime>(utility::datetime::from_string(U(\"2024-12-31T23:59:59Z\")));\napi->updateUserBadge(tenantId, userId, params)\n    .then([](std::shared_ptr<APIEmptySuccessResponse> resp){\n        std::cout << \"Badge updated successfully\\n\";\n    })\n    .catch([](std::exception const& e){\n        std::cerr << \"Error updating badge: \" << e.what() << \"\\n\";\n    });",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

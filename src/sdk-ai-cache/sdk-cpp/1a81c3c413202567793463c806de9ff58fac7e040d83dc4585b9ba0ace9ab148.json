@@ -1,0 +1,7 @@
+{
+  "method": "getCommentText",
+  "signatureHash": "1a81c3c413202567793463c806de9ff58fac7e040d83dc4585b9ba0ace9ab148",
+  "generatedAt": "2026-07-01T07:19:55.334Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"cmt-456789\");\nauto options = std::make_shared<GetCommentTextOptions>();\noptions->language = boost::optional<utility::string_t>(U(\"en\"));\noptions->includeDeleted = boost::optional<bool>(false);\napi->getCommentText(tenantId, commentId, *options).then([](pplx::task<std::shared_ptr<PublicAPIGetCommentTextResponse>> task){\n    try{\n        auto response = task.get();\n        (void)response;\n    }catch(...){}\n});",
+  "model": "openai/gpt-oss-120b"
+}

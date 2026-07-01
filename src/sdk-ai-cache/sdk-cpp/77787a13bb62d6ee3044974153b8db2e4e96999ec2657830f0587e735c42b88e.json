@@ -1,0 +1,7 @@
+{
+  "method": "deleteUserBadge",
+  "signatureHash": "77787a13bb62d6ee3044974153b8db2e4e96999ec2657830f0587e735c42b88e",
+  "generatedAt": "2026-07-01T07:20:01.259Z",
+  "codeExample": "auto tenantId = boost::optional<utility::string_t>(U(\"my-tenant-123\"));\nauto badgeId = utility::string_t(U(\"badge-789\"));\napi->deleteUserBadge(tenantId.value(), badgeId)\n    .then([](std::shared_ptr<APIEmptySuccessResponse> resp){\n        auto copy = std::make_shared<APIEmptySuccessResponse>(*resp);\n    })\n    .then([](pplx::task<void> t){\n        try{ t.get(); } catch(const std::exception&){ }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

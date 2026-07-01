@@ -1,0 +1,7 @@
+{
+  "method": "createQuestionConfig",
+  "signatureHash": "e179bad8996ecae703ac4ef2aa8cc0e72213123c9bb5f5212202a4f35e65aa33",
+  "generatedAt": "2026-07-01T07:19:33.543Z",
+  "codeExample": "const tenantId: string = \"tenant_12345\";\n\nconst customOption: QuestionConfigCustomOptionsInner = {\n  label: \"Option A\",\n  value: \"a\",\n};\n\nconst createQuestionConfigBody: CreateQuestionConfigBody = {\n  questionText: \"What is your favorite color?\",\n  isActive: true,\n  // optional fields can be omitted\n  customOptions: [customOption],\n};\n\nconst response: CreateQuestionConfigResponse1 = await createQuestionConfig(\n  tenantId,\n  createQuestionConfigBody\n);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

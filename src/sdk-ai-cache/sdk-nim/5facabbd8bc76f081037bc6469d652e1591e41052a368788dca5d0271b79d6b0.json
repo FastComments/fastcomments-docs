@@ -1,0 +1,7 @@
+{
+  "method": "getEmailTemplateRenderErrors",
+  "signatureHash": "5facabbd8bc76f081037bc6469d652e1591e41052a368788dca5d0271b79d6b0",
+  "generatedAt": "2026-07-01T07:19:20.068Z",
+  "codeExample": "let (optResp, httpResp) = client.getEmailTemplateRenderErrors(\n  tenantId = \"my-tenant-123\",\n  id = \"welcome-template\",\n  skip = 0.0\n)\n\nif optResp.isSome:\n  let resp = optResp.get()\n  # use resp as needed\nelse:\n  # handle missing response\n  discard",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

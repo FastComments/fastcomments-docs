@@ -1,0 +1,7 @@
+{
+  "method": "getSearchSuggest",
+  "signatureHash": "e3140b7be92cc79f185fe21d986a2c9487e4e4abaf2519d04353e8c32a325d01",
+  "generatedAt": "2026-07-01T07:19:28.845Z",
+  "codeExample": "let (suggestOpt, httpResp) = client.getSearchSuggest(\n  tenantId = \"my-tenant-123\",\n  options = GetSearchSuggestOptions(),\n)\n\nif suggestOpt.isSome:\n  let suggest = suggestOpt.get()\n  echo suggest",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

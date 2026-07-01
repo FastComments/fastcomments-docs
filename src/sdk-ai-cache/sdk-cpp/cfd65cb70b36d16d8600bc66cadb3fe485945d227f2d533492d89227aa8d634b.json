@@ -1,0 +1,7 @@
+{
+  "method": "postRestoreDeletedComment",
+  "signatureHash": "cfd65cb70b36d16d8600bc66cadb3fe485945d227f2d533492d89227aa8d634b",
+  "generatedAt": "2026-07-01T07:19:36.864Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"cmt-987654\");\nPostRestoreDeletedCommentOptions options;\noptions.reason = boost::optional<utility::string_t>(U(\"Restoring after accidental delete\"));\noptions.notifyUser = boost::optional<bool>(true);\napi->postRestoreDeletedComment(tenantId, commentId, options)\n    .then([](std::shared_ptr<APIEmptyResponse> resp){\n    });",
+  "model": "openai/gpt-oss-120b"
+}

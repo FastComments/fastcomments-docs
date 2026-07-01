@@ -1,0 +1,7 @@
+{
+  "method": "getSearchSites",
+  "signatureHash": "79f95508c31efd67e3033d584983a0e732462d34985cc8354ff4e0b8eb6bf7a1",
+  "generatedAt": "2026-07-01T07:19:51.272Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-123\"));\nGetSearchSitesOptions options;\noptions.query = boost::make_optional(utility::string_t(U(\"example query\")));\noptions.limit = boost::make_optional(25);\n\napi->getSearchSites(tenantId, options)\n   .then([](pplx::task<std::shared_ptr<ModerationSiteSearchResponse>> t) {\n       try {\n           auto response = t.get();\n           auto respPtr = std::make_shared<ModerationSiteSearchResponse>(*response);\n           for (const auto& site : respPtr->sites) {\n               // processing logic\n           }\n       } catch (const std::exception&) {\n           // error handling\n       }\n   });",
+  "model": "openai/gpt-oss-120b"
+}

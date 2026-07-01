@@ -1,0 +1,7 @@
+{
+  "method": "postBanUserFromComment",
+  "signatureHash": "2b7458f0f371666565639ac8459d910d644381d15be9a3021391f29a3f949784",
+  "generatedAt": "2026-07-01T07:19:35.743Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"comment-456789\");\nPostBanUserFromCommentOptions options;\noptions.reason = boost::optional<utility::string_t>(U(\"spam\"));\noptions.durationDays = boost::optional<int>(30);\n\napi->postBanUserFromComment(tenantId, commentId, options)\n    .then([](std::shared_ptr<BanUserFromCommentResult> result) {\n        // result handling\n    })\n    .then([](pplx::task<void> t) {\n        try { t.get(); } catch (const std::exception& e) { /* error handling */ }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

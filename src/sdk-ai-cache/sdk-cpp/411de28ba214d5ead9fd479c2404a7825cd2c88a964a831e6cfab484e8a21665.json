@@ -1,0 +1,7 @@
+{
+  "method": "getTrustFactor",
+  "signatureHash": "411de28ba214d5ead9fd479c2404a7825cd2c88a964a831e6cfab484e8a21665",
+  "generatedAt": "2026-07-01T07:19:48.523Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-123\"));\nGetTrustFactorOptions options;\noptions.userEmail = boost::optional<utility::string_t>(U(\"user@example.com\"));\noptions.ipAddress = boost::optional<utility::string_t>(U(\"203.0.113.42\"));\napi->getTrustFactor(tenantId, options).then([](std::shared_ptr<GetUserTrustFactorResponse> resp) {\n    if (resp) {\n        std::cout << \"Trust factor: \" << resp->trustFactor << std::endl;\n    }\n});",
+  "model": "openai/gpt-oss-120b"
+}

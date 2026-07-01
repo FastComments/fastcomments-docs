@@ -1,0 +1,7 @@
+{
+  "method": "getCommentsPublic",
+  "signatureHash": "f85888328fab125f17fe08039fa9ab2befd079c2112e94b061c78b1bf8b12873",
+  "generatedAt": "2026-07-01T07:19:50.718Z",
+  "codeExample": "let (optResp, httpResp) = client.getCommentsPublic(\n  tenantId = \"my-tenant-123\",\n  urlId = \"news/article-title\",\n  options = GetCommentsPublicOptions(\n    page = 0,\n    pageSize = 10,\n    includeDeleted = false,\n    tags = @[]\n  )\n)\n\nif optResp.isSome:\n  let resp = optResp.get()\n  echo resp",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

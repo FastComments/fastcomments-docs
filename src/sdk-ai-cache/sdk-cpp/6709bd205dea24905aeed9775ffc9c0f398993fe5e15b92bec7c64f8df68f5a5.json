@@ -1,0 +1,7 @@
+{
+  "method": "getGifsSearch",
+  "signatureHash": "6709bd205dea24905aeed9775ffc9c0f398993fe5e15b92bec7c64f8df68f5a5",
+  "generatedAt": "2026-07-01T07:19:34.309Z",
+  "codeExample": "auto tenantId = U(\"my-tenant-123\");\nauto search = U(\"funny cats\");\nGetGifsSearchOptions options;\noptions.limit = boost::optional<int>(10);\noptions.rating = boost::optional<utility::string_t>(U(\"pg\"));\napi->getGifsSearch(tenantId, search, options).then([](pplx::task<std::shared_ptr<GetGifsSearchResponse>> task){\n    try{\n        auto response = task.get();\n    }catch(const std::exception&){\n    }\n});",
+  "model": "openai/gpt-oss-120b"
+}

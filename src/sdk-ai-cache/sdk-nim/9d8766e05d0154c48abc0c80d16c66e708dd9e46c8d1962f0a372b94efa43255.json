@@ -1,0 +1,7 @@
+{
+  "method": "getNotificationCount",
+  "signatureHash": "9d8766e05d0154c48abc0c80d16c66e708dd9e46c8d1962f0a372b94efa43255",
+  "generatedAt": "2026-07-01T07:19:48.972Z",
+  "codeExample": "let (notifOpt, httpResp) = client.getNotificationCount(tenantId = \"my-tenant-123\", options = GetNotificationCountOptions())\nif notifOpt.isSome:\n  let notif = notifOpt.get()\n  echo notif",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

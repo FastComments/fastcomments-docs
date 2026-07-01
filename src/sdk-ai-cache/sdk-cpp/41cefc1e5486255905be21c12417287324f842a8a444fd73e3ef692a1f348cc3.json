@@ -1,0 +1,7 @@
+{
+  "method": "getTenantUsers",
+  "signatureHash": "41cefc1e5486255905be21c12417287324f842a8a444fd73e3ef692a1f348cc3",
+  "generatedAt": "2026-07-01T07:19:47.273Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nboost::optional<double> skip = 10;\n\napi->getTenantUsers(tenantId, skip).then([](pplx::task<std::shared_ptr<GetTenantUsersResponse>> t){\n    try {\n        auto resp = t.get();\n    } catch (const std::exception&) {\n    }\n});",
+  "model": "openai/gpt-oss-120b"
+}

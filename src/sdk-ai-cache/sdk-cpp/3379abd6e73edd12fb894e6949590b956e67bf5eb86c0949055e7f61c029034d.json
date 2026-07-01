@@ -1,0 +1,7 @@
+{
+  "method": "getApiComments",
+  "signatureHash": "3379abd6e73edd12fb894e6949590b956e67bf5eb86c0949055e7f61c029034d",
+  "generatedAt": "2026-07-01T07:19:48.423Z",
+  "codeExample": "auto options = GetApiCommentsOptions{};\noptions.page = boost::make_optional(2);\noptions.authorEmail = boost::make_optional<utility::string_t>(U(\"user@example.com\"));\noptions.includeDeleted = boost::make_optional(false);\n\napi->getApiComments(U(\"my-tenant-123\"), options).then([](pplx::task<std::shared_ptr<ModerationAPIGetCommentsResponse>> task){\n    try{\n        auto response = task.get();\n    }catch(const std::exception&){\n    }\n});",
+  "model": "openai/gpt-oss-120b"
+}

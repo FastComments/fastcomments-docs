@@ -1,0 +1,7 @@
+{
+  "method": "getEmailTemplateRenderErrors",
+  "signatureHash": "851ebc00ca43f7adfd44b63c1fea558df3d6e9d234f67ed3231e6e5c16e12fd0",
+  "generatedAt": "2026-07-01T07:19:31.356Z",
+  "codeExample": "const tenantId: string = \"c2f5a8d9-4b3e-4f6a-9e1b-2d5c6f7a8b9c\";\nconst templateId: string = \"welcome-email-template\";\nconst skip: number = 20;\n\nconst result: GetEmailTemplateRenderErrorsResponse1 = await getEmailTemplateRenderErrors(\n  tenantId,\n  templateId,\n  skip\n);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

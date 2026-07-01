@@ -1,0 +1,7 @@
+{
+  "method": "postApiExport",
+  "signatureHash": "e1ba1ac3864fd23f58b2042d6a6a5a17bd727a558c8f3af7cd4d8f7061e7b123",
+  "generatedAt": "2026-07-01T07:19:36.060Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-123\"));\nPostApiExportOptions options;\noptions.format = utility::string_t(U(\"json\"));\noptions.email = utility::string_t(U(\"reports@example.com\"));\noptions.startDate = boost::optional<utility::datetime>(utility::datetime::from_string(U(\"2023-01-01T00:00:00Z\")));\noptions.endDate = boost::optional<utility::datetime>(utility::datetime::from_string(U(\"2023-01-31T23:59:59Z\")));\n\napi->postApiExport(tenantId, options)\n    .then([](std::shared_ptr<ModerationExportResponse> response) {\n        if (response) {\n            // handle successful export response\n        }\n    })\n    .wait();",
+  "model": "openai/gpt-oss-120b"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "uploadImage",
+  "signatureHash": "4cb234badcdab0b55bd50acd2a1956f98dabf6c4820dc05f997324947ff98c83",
+  "generatedAt": "2026-07-01T07:19:35.226Z",
+  "codeExample": "let (uploadResult, httpResponse) = client.uploadImage(\n  tenantId = \"my-tenant-123\",\n  file = \"images/avatar.jpg\",\n  options = UploadImageOptions()\n)\n\nif uploadResult.isSome:\n  let result = uploadResult.get()\n  # use result as needed",
+  "model": "openai/gpt-oss-120b"
+}

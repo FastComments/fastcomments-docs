@@ -1,0 +1,7 @@
+{
+  "method": "resetUserNotifications",
+  "signatureHash": "e59fbc08ab783944178ae04351cccba04774842309dd3f3841cce0c5ebf51865",
+  "generatedAt": "2026-07-01T07:19:28.642Z",
+  "codeExample": "let (maybeResp, httpResp) = client.resetUserNotifications(\n  tenantId = \"my-tenant-123\",\n  options = ResetUserNotificationsOptions())\nif maybeResp.isSome:\n  let resp = maybeResp.get()",
+  "model": "openai/gpt-oss-120b"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "get_search_users",
+  "signatureHash": "63a631f3df18f1203b93a9cbecd6137f60539f5278901726ed1896848518fbef",
+  "generatedAt": "2026-07-01T07:19:30.739Z",
+  "codeExample": "async fn run_example(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params = GetSearchUsersParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        value: Some(\"john.doe\".to_string()),\n        sso: Some(\"sso-provider\".to_string()),\n    };\n    let _response: ModerationUserSearchResponse = get_search_users(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

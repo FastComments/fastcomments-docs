@@ -1,0 +1,7 @@
+{
+  "method": "saveComment",
+  "signatureHash": "1d8981034523b42598898aed723ebab1a09c12004c30d157013c3b8dbc81809a",
+  "generatedAt": "2026-07-01T07:19:26.079Z",
+  "codeExample": "let commentParams = CreateCommentParams(\n  body: \"Great read, thanks!\",\n  name: \"Alice Smith\",\n  email: \"alice@example.com\",\n  parentId: \"\"\n)\n\nlet saveOpts = SaveCommentOptions(\n  isPreview: false,\n  isApproved: true,\n  skipSpamCheck: false\n)\n\nlet (apiResponse, httpResponse) = client.saveComment(\n  tenantId = \"my-tenant-123\",\n  createCommentParams = commentParams,\n  options = saveOpts\n)\n\nif apiResponse.isSome:\n  let saved = apiResponse.get()\n  echo saved",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getEmailTemplate",
+  "signatureHash": "dfdc8b5aefb370d84ce14944329a543062c02c0679549b39f18b2f8d616de0ac",
+  "generatedAt": "2026-07-01T07:19:33.817Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto templateId = utility::conversions::to_string_t(\"welcome-email\");\nboost::optional<utility::string_t> language = utility::conversions::to_string_t(\"en-US\");\n\napi->getEmailTemplate(tenantId, templateId)\n    .then([=](pplx::task<std::shared_ptr<GetEmailTemplateResponse>> task) {\n        try {\n            auto response = task.get();\n        } catch (const std::exception&) {\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

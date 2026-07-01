@@ -1,0 +1,7 @@
+{
+  "method": "getCount",
+  "signatureHash": "7b3c833194255ea9d2b0996e518db6261a45ad0df37643c1714b7115348d7dff",
+  "generatedAt": "2026-07-01T07:20:03.149Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nGetCountOptions options;\noptions.userEmail = boost::optional<utility::string_t>(U(\"user@example.com\"));\noptions.maxResults = boost::optional<int>(100);\napi->getCount(tenantId, options).then([](pplx::task<std::shared_ptr<ModerationAPICountCommentsResponse>> task){\n    try{\n        auto resp = task.get();\n        auto copy = std::make_shared<ModerationAPICountCommentsResponse>(*resp);\n        std::cout << \"Count: \" << copy->count << std::endl;\n    }catch(const std::exception& e){\n        std::cerr << \"Error: \" << e.what() << std::endl;\n    }\n});",
+  "model": "openai/gpt-oss-120b"
+}

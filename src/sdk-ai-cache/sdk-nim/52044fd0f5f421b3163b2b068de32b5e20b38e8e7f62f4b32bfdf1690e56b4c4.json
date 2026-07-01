@@ -1,0 +1,7 @@
+{
+  "method": "updateEmailTemplate",
+  "signatureHash": "52044fd0f5f421b3163b2b068de32b5e20b38e8e7f62f4b32bfdf1690e56b4c4",
+  "generatedAt": "2026-07-01T07:19:29.539Z",
+  "codeExample": "let updateBody = UpdateEmailTemplateBody(\n  subject: \"Welcome to FastComments\",\n  body: \"Hello {{user_name}}, thanks for joining!\",\n  enabled: true,\n)\n\nlet (maybeResp, httpResp) = client.updateEmailTemplate(\n  tenantId = \"my-tenant-123\",\n  id = \"welcome-email\",\n  updateEmailTemplateBody = updateBody,\n)\n\nif maybeResp.isSome:\n  let resp = maybeResp.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

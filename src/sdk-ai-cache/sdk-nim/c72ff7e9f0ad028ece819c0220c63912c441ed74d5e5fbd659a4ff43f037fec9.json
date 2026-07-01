@@ -1,0 +1,7 @@
+{
+  "method": "renderEmailTemplate",
+  "signatureHash": "c72ff7e9f0ad028ece819c0220c63912c441ed74d5e5fbd659a4ff43f037fec9",
+  "generatedAt": "2026-07-01T07:19:50.289Z",
+  "codeExample": "let body = RenderEmailTemplateBody()\nlet (responseOpt, httpResponse) = client.renderEmailTemplate(tenantId = \"my-tenant-123\", renderEmailTemplateBody = body, locale = \"en-US\")\nif responseOpt.isSome:\n  let response = responseOpt.get()\n  discard response\ndiscard httpResponse",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

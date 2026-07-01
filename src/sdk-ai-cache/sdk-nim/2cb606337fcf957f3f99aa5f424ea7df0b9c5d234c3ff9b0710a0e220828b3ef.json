@@ -1,0 +1,7 @@
+{
+  "method": "getCommentVoteUserNames",
+  "signatureHash": "2cb606337fcf957f3f99aa5f424ea7df0b9c5d234c3ff9b0710a0e220828b3ef",
+  "generatedAt": "2026-07-01T07:19:27.152Z",
+  "codeExample": "let (voteNamesOpt, httpRes) = client.getCommentVoteUserNames(\n  tenantId = \"my-tenant-123\",\n  commentId = \"cmt-987654321\",\n  dir = 0,\n  sso = \"\"\n)\n\nif voteNamesOpt.isSome:\n  let voteNames = voteNamesOpt.get()\n  echo voteNames",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getQuestionConfig",
+  "signatureHash": "04abf5bd8c726dc18fa2e710f68a3f2b29cdd8f690c1c534f863ae93e853f9ad",
+  "generatedAt": "2026-07-01T07:19:30.865Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto questionId = utility::conversions::to_string_t(\"question-456\");\n\napi->getQuestionConfig(tenantId, questionId)\n    .then([](pplx::task<std::shared_ptr<GetQuestionConfigResponse>> task) {\n        try {\n            auto response = task.get();\n            // Use response as needed\n        } catch (const std::exception&) {\n            // Handle error\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

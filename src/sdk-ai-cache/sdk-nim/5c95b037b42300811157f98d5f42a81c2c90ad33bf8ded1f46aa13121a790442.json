@@ -1,0 +1,7 @@
+{
+  "method": "getCachedNotificationCount",
+  "signatureHash": "5c95b037b42300811157f98d5f42a81c2c90ad33bf8ded1f46aa13121a790442",
+  "generatedAt": "2026-07-01T07:19:20.511Z",
+  "codeExample": "let (cachedCountOpt, httpResp) = client.getCachedNotificationCount(tenantId = \"my-tenant-123\", id = \"article-456\")\nif cachedCountOpt.isSome:\n  let cachedCount = cachedCountOpt.get()\n  echo cachedCount",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

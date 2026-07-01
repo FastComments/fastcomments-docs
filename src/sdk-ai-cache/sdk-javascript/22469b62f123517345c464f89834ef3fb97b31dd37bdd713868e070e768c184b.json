@@ -1,0 +1,7 @@
+{
+  "method": "putAwardBadge",
+  "signatureHash": "22469b62f123517345c464f89834ef3fb97b31dd37bdd713868e070e768c184b",
+  "generatedAt": "2026-07-01T07:19:35.331Z",
+  "codeExample": "(async () => {\n    const badgeId: string = \"badge-superstar\"\n    const userId: string = \"user-42\"\n    const commentId: string = \"comment-7f9c3\"\n    const broadcastId: string = \"broadcast-2023-09\"\n    const result: PutAwardBadgeResponse = await putAwardBadge(badgeId, userId, commentId, broadcastId)\n    console.log(result)\n})()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

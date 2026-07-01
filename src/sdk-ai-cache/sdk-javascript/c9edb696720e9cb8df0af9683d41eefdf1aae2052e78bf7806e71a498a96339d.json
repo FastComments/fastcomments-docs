@@ -1,0 +1,7 @@
+{
+  "method": "deleteTenantPackage",
+  "signatureHash": "c9edb696720e9cb8df0af9683d41eefdf1aae2052e78bf7806e71a498a96339d",
+  "generatedAt": "2026-07-01T07:19:35.216Z",
+  "codeExample": "async function removeTenantPackage(): Promise<void> {\n  const tenantId: string = \"tenant_12345\";\n  const packageId: string = \"pkg_67890\";\n\n  const result: DeleteTenantPackageResponse = await deleteTenantPackage(tenantId, packageId);\n  // use result as needed\n}\n\nremoveTenantPackage();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

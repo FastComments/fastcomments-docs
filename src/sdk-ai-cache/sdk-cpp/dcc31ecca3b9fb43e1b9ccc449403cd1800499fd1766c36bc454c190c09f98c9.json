@@ -1,0 +1,7 @@
+{
+  "method": "bulkAggregateQuestionResults",
+  "signatureHash": "dcc31ecca3b9fb43e1b9ccc449403cd1800499fd1766c36bc454c190c09f98c9",
+  "generatedAt": "2026-07-01T07:19:34.248Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nBulkAggregateQuestionResultsRequest request;\nrequest.questionIds = {\n    utility::conversions::to_string_t(\"q123\"),\n    utility::conversions::to_string_t(\"q456\")\n};\nrequest.startDate = utility::datetime::from_string(U(\"2023-01-01T00:00:00Z\"));\nrequest.endDate = utility::datetime::from_string(U(\"2023-01-31T23:59:59Z\"));\nboost::optional<bool> forceRecalc = true;\napi->bulkAggregateQuestionResults(tenantId, request, forceRecalc)\n   .then([](pplx::task<std::shared_ptr<BulkAggregateQuestionResultsResponse>> t) {\n       auto resp = t.get();\n   });",
+  "model": "openai/gpt-oss-120b"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "createVote",
+  "signatureHash": "7ca2829c0c0d3e554dfd9fb923b85e990ebe36f7da12a9f455294889cb356877",
+  "generatedAt": "2026-07-01T07:20:02.557Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto commentId = utility::conversions::to_string_t(\"cmt-456\");\nauto direction = utility::conversions::to_string_t(\"up\");\nauto optionsPtr = std::make_shared<CreateVoteOptions>();\noptionsPtr->userId = utility::conversions::to_string_t(\"user-789\");\noptionsPtr->ipAddress = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"192.168.1.100\"));\napi->createVote(tenantId, commentId, direction, *optionsPtr)\n    .then([](std::shared_ptr<VoteResponse> resp){});",
+  "model": "openai/gpt-oss-120b"
+}

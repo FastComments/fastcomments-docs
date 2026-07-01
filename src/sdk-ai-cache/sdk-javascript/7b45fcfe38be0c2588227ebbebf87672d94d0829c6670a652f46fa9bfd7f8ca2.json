@@ -1,0 +1,7 @@
+{
+  "method": "getGifsTrending",
+  "signatureHash": "7b45fcfe38be0c2588227ebbebf87672d94d0829c6670a652f46fa9bfd7f8ca2",
+  "generatedAt": "2026-07-01T07:19:33.866Z",
+  "codeExample": "async function runExample(): Promise<void> {\n  const tenantId: string = \"tenant_9f8b7c6d\";\n  const locale: string = \"en-US\";\n  const rating: string = \"PG-13\";\n  const page: number = 1;\n\n  const trendingAll: GetGifsTrendingResponse = await getGifsTrending(tenantId, locale, rating, page);\n  console.log(trendingAll);\n\n  // Using only the required parameter\n  const trendingMinimal: GetGifsTrendingResponse = await getGifsTrending(tenantId);\n  console.log(trendingMinimal);\n}\n\nrunExample();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

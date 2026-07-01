@@ -1,0 +1,7 @@
+{
+  "method": "postBanUserUndo",
+  "signatureHash": "1de4f7936ffd9d5b9f4d31356f1803d311585a8bf8b36bcbb506276ac6ec8e27",
+  "generatedAt": "2026-07-01T07:19:35.887Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-123\"));\nBanUserUndoParams banParams;\nbanParams.userId = utility::string_t(U(\"user-567\"));\nbanParams.reason = utility::string_t(U(\"reinstated\"));\nboost::optional<utility::string_t> sso = utility::string_t(U(\"sso-token-abc\"));\n\napi->postBanUserUndo(tenantId, banParams, sso).then([](std::shared_ptr<APIEmptyResponse> resp){\n    // handle success\n});",
+  "model": "openai/gpt-oss-120b"
+}

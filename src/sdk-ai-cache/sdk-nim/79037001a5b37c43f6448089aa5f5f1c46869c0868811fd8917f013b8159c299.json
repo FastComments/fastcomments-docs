@@ -1,0 +1,7 @@
+{
+  "method": "getApiIds",
+  "signatureHash": "79037001a5b37c43f6448089aa5f5f1c46869c0868811fd8917f013b8159c299",
+  "generatedAt": "2026-07-01T07:19:53.694Z",
+  "codeExample": "let opts = GetApiIdsOptions()\nlet (maybeResponse, httpResponse) = client.getApiIds(tenantId = \"my-tenant-123\", options = opts)\nif maybeResponse.isSome:\n  let response = maybeResponse.get()\n  echo response",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

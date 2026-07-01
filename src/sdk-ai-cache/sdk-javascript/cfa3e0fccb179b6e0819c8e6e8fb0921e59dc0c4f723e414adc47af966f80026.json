@@ -1,0 +1,7 @@
+{
+  "method": "updateSubscription",
+  "signatureHash": "cfa3e0fccb179b6e0819c8e6e8fb0921e59dc0c4f723e414adc47af966f80026",
+  "generatedAt": "2026-07-01T07:19:37.718Z",
+  "codeExample": "const tenantId: string = \"tenant_12345\";\nconst subscriptionId: string = \"sub_98765\";\n\nconst updateData: UpdateAPIUserSubscriptionData = {\n  planId: \"premium_plan\",\n  status: \"active\",\n  renewalDate: \"2024-12-31\",\n};\n\nconst userId: string = \"user_abcde\";\n\nconst response: UpdateSubscriptionAPIResponse = await updateSubscription(\n  tenantId,\n  subscriptionId,\n  updateData,\n  userId\n);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

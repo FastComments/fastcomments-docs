@@ -1,0 +1,7 @@
+{
+  "method": "lockComment",
+  "signatureHash": "9ca68f2bb1aad465fdf80aa0abf6f9600a80da9604455be41cd68bea396f6bd9",
+  "generatedAt": "2026-07-01T07:19:31.965Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto commentId = utility::conversions::to_string_t(\"comment-987\");\nauto broadcastId = utility::conversions::to_string_t(\"broadcast-654\");\nboost::optional<utility::string_t> sso = utility::conversions::to_string_t(\"sso-token-xyz\");\n\napi->lockComment(tenantId, commentId, broadcastId, sso).then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task){\n    try{\n        auto response = task.get();\n    }catch(const std::exception&){\n    }\n});",
+  "model": "openai/gpt-oss-120b"
+}

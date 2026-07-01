@@ -1,0 +1,7 @@
+{
+  "method": "createFeedPostPublic",
+  "signatureHash": "8ec64aa93f46cc681fbc5059db19332decd3c410888c1b7e7352a3cfd800cff9",
+  "generatedAt": "2026-07-01T07:19:51.290Z",
+  "codeExample": "let params = CreateFeedPostParams(\n  urlId: \"news/big-event\",\n  title: \"Big Event Happened\",\n  content: \"Full article content goes here.\",\n  tags: @[\"news\", \"event\"]\n)\n\nlet opts = CreateFeedPostPublicOptions(\n  sendNotifications: false,\n  allowComments: true\n)\n\nlet (response, httpResponse) = client.createFeedPostPublic(\n  tenantId = \"my-tenant-123\",\n  createFeedPostParams = params,\n  options = opts\n)\n\nif response.isSome:\n  let post = response.get()\n  echo post",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

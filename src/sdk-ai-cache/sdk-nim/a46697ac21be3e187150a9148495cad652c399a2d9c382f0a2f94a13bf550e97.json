@@ -1,0 +1,7 @@
+{
+  "method": "deleteDomainConfig",
+  "signatureHash": "a46697ac21be3e187150a9148495cad652c399a2d9c382f0a2f94a13bf550e97",
+  "generatedAt": "2026-07-01T07:19:49.374Z",
+  "codeExample": "let (optResp, httpResp) = client.deleteDomainConfig(tenantId = \"my-tenant-123\", domain = \"news.example.com\")\nif optResp.isSome:\n  let resp = optResp.get()\n  echo resp",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

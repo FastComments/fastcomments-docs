@@ -1,0 +1,7 @@
+{
+  "method": "updateFeedPostPublic",
+  "signatureHash": "fc27d18c00c0e71f6b6ce1d7230fc853e65f852039818bcd870dde613435b340",
+  "generatedAt": "2026-07-01T07:19:38.338Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t postId = U(\"post-456\");\nUpdateFeedPostParams params;\nparams.title = boost::optional<utility::string_t>(U(\"Updated Title\"));\nparams.body = boost::optional<utility::string_t>(U(\"Updated content of the post.\"));\nUpdateFeedPostPublicOptions options;\noptions.notifyFollowers = boost::optional<bool>(true);\napi->updateFeedPostPublic(tenantId, postId, params, options)\n    .then([](std::shared_ptr<CreateFeedPostResponse> resp) {\n        auto result = resp;\n    });",
+  "model": "openai/gpt-oss-120b"
+}

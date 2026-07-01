@@ -1,0 +1,7 @@
+{
+  "method": "postBanUserFromComment",
+  "signatureHash": "895256ca0777d26f589f8dfb01bce2ed751fcd6d43a397fdce1567248d9065eb",
+  "generatedAt": "2026-07-01T07:19:52.548Z",
+  "codeExample": "let (banResult, httpResp) = client.postBanUserFromComment(\n  tenantId = \"my-tenant-123\",\n  commentId = \"cmt-456\",\n  options = PostBanUserFromCommentOptions()\n)\n\nif banResult.isSome:\n  let result = banResult.get()\n  echo result",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

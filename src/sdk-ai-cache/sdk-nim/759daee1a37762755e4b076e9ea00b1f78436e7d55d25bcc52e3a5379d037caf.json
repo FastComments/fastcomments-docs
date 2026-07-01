@@ -1,0 +1,7 @@
+{
+  "method": "getCounts",
+  "signatureHash": "759daee1a37762755e4b076e9ea00b1f78436e7d55d25bcc52e3a5379d037caf",
+  "generatedAt": "2026-07-01T07:19:53.195Z",
+  "codeExample": "let (maybeCounts, httpRes) = client.getCounts(tenantId = \"my-tenant-123\", sso = \"\")\nif maybeCounts.isSome:\n  let counts = maybeCounts.get()\n  echo counts\nelse:\n  echo \"No counts returned\"",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

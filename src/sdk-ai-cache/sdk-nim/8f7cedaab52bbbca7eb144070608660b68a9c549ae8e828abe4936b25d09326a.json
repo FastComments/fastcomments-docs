@@ -1,0 +1,7 @@
+{
+  "method": "deleteV1PageReact",
+  "signatureHash": "8f7cedaab52bbbca7eb144070608660b68a9c549ae8e828abe4936b25d09326a",
+  "generatedAt": "2026-07-01T07:19:28.528Z",
+  "codeExample": "let (reactOpt, httpResp) = client.deleteV1PageReact(tenantId = \"my-tenant-123\", urlId = \"news/article-title\")\nif reactOpt.isSome:\n  let react = reactOpt.get()",
+  "model": "openai/gpt-oss-120b"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "deleteCommentPublic",
+  "signatureHash": "ffaba1fda5f5ecbb3fd151a32f70a15372cf209bf9b507e37efba2da6bac2c2f",
+  "generatedAt": "2026-07-01T07:19:22.024Z",
+  "codeExample": "let (responseOpt, httpResp) = client.deleteCommentPublic(\n  tenantId = \"my-tenant-123\",\n  commentId = \"cmt-456789\",\n  broadcastId = \"\",\n  options = DeleteCommentPublicOptions())\nif responseOpt.isSome:\n  let resp = responseOpt.get()\n  echo resp",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

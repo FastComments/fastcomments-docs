@@ -1,0 +1,7 @@
+{
+  "method": "getVotesForUser",
+  "signatureHash": "055b5d94af3659ef51c4cf6fd788395ebcd6f70355ab2015e48dc24d9e90f637",
+  "generatedAt": "2026-07-01T07:19:25.142Z",
+  "codeExample": "let (optResp, httpResp) = client.getVotesForUser(\n  tenantId = \"my-tenant-123\",\n  urlId = \"news/article-title\",\n  options = GetVotesForUserOptions()\n)\n\nif optResp.isSome:\n  let resp = optResp.get()\n  echo resp",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

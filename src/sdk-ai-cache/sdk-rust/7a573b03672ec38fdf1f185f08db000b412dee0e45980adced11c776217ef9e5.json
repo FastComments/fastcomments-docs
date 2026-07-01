@@ -1,0 +1,7 @@
+{
+  "method": "checked_comments_for_blocked",
+  "signatureHash": "7a573b03672ec38fdf1f185f08db000b412dee0e45980adced11c776217ef9e5",
+  "generatedAt": "2026-07-01T07:19:32.628Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = CheckedCommentsForBlockedParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_ids: \"cmt-001,cmt-002\".to_string(),\n        sso: Some(\"user@example.com\".to_string()),\n    };\n    let _response: CheckBlockedCommentsResponse = checked_comments_for_blocked(&config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

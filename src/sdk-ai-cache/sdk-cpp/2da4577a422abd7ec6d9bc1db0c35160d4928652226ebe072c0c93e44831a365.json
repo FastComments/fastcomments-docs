@@ -1,0 +1,7 @@
+{
+  "method": "getModerationCommentText",
+  "signatureHash": "2da4577a422abd7ec6d9bc1db0c35160d4928652226ebe072c0c93e44831a365",
+  "generatedAt": "2026-07-01T07:20:01.463Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"cmt-987654\");\nboost::optional<utility::string_t> sso = U(\"sso-token-abc\");\n\napi->getModerationCommentText(tenantId, commentId, sso)\n    .then([](pplx::task<std::shared_ptr<GetCommentTextResponse>> t) {\n        try {\n            auto resp = t.get();\n            auto text = std::make_shared<std::string>(resp->commentText);\n        } catch (const std::exception&) {\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

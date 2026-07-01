@@ -1,0 +1,7 @@
+{
+  "method": "flagCommentPublic",
+  "signatureHash": "bfe79c9e7021ffc96243330f507ebb3ee9a138e2b8d4614a8e139d9b701f3d07",
+  "generatedAt": "2026-07-01T07:19:37.507Z",
+  "codeExample": "async function demoFlagComment() {\n    const tenantId: string = \"acme-tenant-123\";\n    const commentId: string = \"comment-987654\";\n    const isFlagged: boolean = true;\n    const sso: string = \"sso-token-abc123\";\n\n    const result: FlagCommentPublicResponse = await flagCommentPublic(\n        tenantId,\n        commentId,\n        isFlagged,\n        sso\n    );\n\n    console.log(result);\n}\n\ndemoFlagComment();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

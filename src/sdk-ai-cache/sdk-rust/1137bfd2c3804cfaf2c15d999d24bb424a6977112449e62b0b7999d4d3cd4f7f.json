@@ -1,0 +1,7 @@
+{
+  "method": "post_ban_user_undo",
+  "signatureHash": "1137bfd2c3804cfaf2c15d999d24bb424a6977112449e62b0b7999d4d3cd4f7f",
+  "generatedAt": "2026-07-01T07:19:33.359Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = PostBanUserUndoParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        ban_user_undo_params: models::BanUserUndoParams {\n            user_id: \"user-42\".to_string(),\n            note: Some(\"ban appeal accepted\".to_string()),\n        },\n        sso: Some(\"sso-token-abc\".to_string()),\n    };\n    let _ = post_ban_user_undo(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}
