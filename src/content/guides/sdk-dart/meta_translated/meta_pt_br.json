@@ -1,6 +1,6 @@
 {
-  "name": "SDK Dart",
-  "pageHeader": "FastComments SDK Dart",
+  "name": "Dart SDK",
+  "pageHeader": "FastComments Dart SDK",
   "itemsOrdered": [
     {
       "name": "Layout",
@@ -9,13 +9,7 @@
       "type": "readme"
     },
     {
-      "name": "Regeneração",
-      "file": "regenerating-readme-generated.md",
-      "subCat": "Documentação",
-      "type": "readme"
-    },
-    {
-      "name": "Uso",
+      "name": "Use",
       "file": "use-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
@@ -27,15 +21,15 @@
       "type": "readme"
     },
     {
-      "name": "agregação",
+      "name": "aggregate",
       "file": "aggregate-api-generated.md",
-      "subCat": "Agregado",
+      "subCat": "Agregação",
       "type": "api"
     },
     {
       "name": "getAuditLogs",
       "file": "getauditlogs-api-generated.md",
-      "subCat": "Registros de Auditoria",
+      "subCat": "Logs de Auditoria",
       "type": "api"
     },
     {
@@ -47,13 +41,13 @@
     {
       "name": "blockFromCommentPublic",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "Bloquear a partir do Comentário",
+      "subCat": "Bloquear a partir do comentário",
       "type": "api"
     },
     {
       "name": "unBlockCommentPublic",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "Bloquear a partir do Comentário",
+      "subCat": "Bloquear a partir do comentário",
       "type": "api"
     },
     {
@@ -197,7 +191,7 @@
     {
       "name": "getCommentsForUser",
       "file": "getcommentsforuser-api-generated.md",
-      "subCat": "Comentários para Usuário",
+      "subCat": "Comentários por Usuário",
       "type": "api"
     },
     {
@@ -293,73 +287,73 @@
     {
       "name": "getEventLog",
       "file": "geteventlog-api-generated.md",
-      "subCat": "Registro de Eventos",
+      "subCat": "Log de Eventos",
       "type": "api"
     },
     {
       "name": "getGlobalEventLog",
       "file": "getglobaleventlog-api-generated.md",
-      "subCat": "Registro de Eventos",
+      "subCat": "Log de Eventos",
       "type": "api"
     },
     {
       "name": "createFeedPost",
       "file": "createfeedpost-api-generated.md",
-      "subCat": "Publicações de Feed",
+      "subCat": "Posts do Feed",
       "type": "api"
     },
     {
       "name": "createFeedPostPublic",
       "file": "createfeedpostpublic-api-generated.md",
-      "subCat": "Publicações de Feed",
+      "subCat": "Posts do Feed",
       "type": "api"
     },
     {
       "name": "deleteFeedPostPublic",
       "file": "deletefeedpostpublic-api-generated.md",
-      "subCat": "Publicações de Feed",
+      "subCat": "Posts do Feed",
       "type": "api"
     },
     {
       "name": "getFeedPosts",
       "file": "getfeedposts-api-generated.md",
-      "subCat": "Publicações de Feed",
+      "subCat": "Posts do Feed",
       "type": "api"
     },
     {
       "name": "getFeedPostsPublic",
       "file": "getfeedpostspublic-api-generated.md",
-      "subCat": "Publicações de Feed",
+      "subCat": "Posts do Feed",
       "type": "api"
     },
     {
       "name": "getFeedPostsStats",
       "file": "getfeedpostsstats-api-generated.md",
-      "subCat": "Publicações de Feed",
+      "subCat": "Posts do Feed",
       "type": "api"
     },
     {
       "name": "getUserReactsPublic",
       "file": "getuserreactspublic-api-generated.md",
-      "subCat": "Publicações de Feed",
+      "subCat": "Posts do Feed",
       "type": "api"
     },
     {
       "name": "reactFeedPostPublic",
       "file": "reactfeedpostpublic-api-generated.md",
-      "subCat": "Publicações de Feed",
+      "subCat": "Posts do Feed",
       "type": "api"
     },
     {
       "name": "updateFeedPost",
       "file": "updatefeedpost-api-generated.md",
-      "subCat": "Publicações de Feed",
+      "subCat": "Posts do Feed",
       "type": "api"
     },
     {
       "name": "updateFeedPostPublic",
       "file": "updatefeedpostpublic-api-generated.md",
-      "subCat": "Publicações de Feed",
+      "subCat": "Posts do Feed",
       "type": "api"
     },
     {
@@ -839,97 +833,97 @@
     {
       "name": "deletePendingWebhookEvent",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "Eventos Webhook Pendentes",
+      "subCat": "Eventos de Webhook Pendentes",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEventCount",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "Eventos Webhook Pendentes",
+      "subCat": "Eventos de Webhook Pendentes",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEvents",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "Eventos Webhook Pendentes",
+      "subCat": "Eventos de Webhook Pendentes",
       "type": "api"
     },
     {
       "name": "createQuestionConfig",
       "file": "createquestionconfig-api-generated.md",
-      "subCat": "Configurações de Perguntas",
+      "subCat": "Configurações de Pergunta",
       "type": "api"
     },
     {
       "name": "deleteQuestionConfig",
       "file": "deletequestionconfig-api-generated.md",
-      "subCat": "Configurações de Perguntas",
+      "subCat": "Configurações de Pergunta",
       "type": "api"
     },
     {
       "name": "getQuestionConfig",
       "file": "getquestionconfig-api-generated.md",
-      "subCat": "Configurações de Perguntas",
+      "subCat": "Configurações de Pergunta",
       "type": "api"
     },
     {
       "name": "getQuestionConfigs",
       "file": "getquestionconfigs-api-generated.md",
-      "subCat": "Configurações de Perguntas",
+      "subCat": "Configurações de Pergunta",
       "type": "api"
     },
     {
       "name": "updateQuestionConfig",
       "file": "updatequestionconfig-api-generated.md",
-      "subCat": "Configurações de Perguntas",
+      "subCat": "Configurações de Pergunta",
       "type": "api"
     },
     {
       "name": "createQuestionResult",
       "file": "createquestionresult-api-generated.md",
-      "subCat": "Resultados de Perguntas",
+      "subCat": "Resultados de Pergunta",
       "type": "api"
     },
     {
       "name": "deleteQuestionResult",
       "file": "deletequestionresult-api-generated.md",
-      "subCat": "Resultados de Perguntas",
+      "subCat": "Resultados de Pergunta",
       "type": "api"
     },
     {
       "name": "getQuestionResult",
       "file": "getquestionresult-api-generated.md",
-      "subCat": "Resultados de Perguntas",
+      "subCat": "Resultados de Pergunta",
       "type": "api"
     },
     {
       "name": "getQuestionResults",
       "file": "getquestionresults-api-generated.md",
-      "subCat": "Resultados de Perguntas",
+      "subCat": "Resultados de Pergunta",
       "type": "api"
     },
     {
       "name": "updateQuestionResult",
       "file": "updatequestionresult-api-generated.md",
-      "subCat": "Resultados de Perguntas",
+      "subCat": "Resultados de Pergunta",
       "type": "api"
     },
     {
       "name": "aggregateQuestionResults",
       "file": "aggregatequestionresults-api-generated.md",
-      "subCat": "Agregação de Resultados de Perguntas",
+      "subCat": "Agregação de Resultados de Pergunta",
       "type": "api"
     },
     {
       "name": "bulkAggregateQuestionResults",
       "file": "bulkaggregatequestionresults-api-generated.md",
-      "subCat": "Agregação de Resultados de Perguntas",
+      "subCat": "Agregação de Resultados de Pergunta",
       "type": "api"
     },
     {
       "name": "combineCommentsWithQuestionResults",
       "file": "combinecommentswithquestionresults-api-generated.md",
-      "subCat": "Agregação de Resultados de Perguntas",
+      "subCat": "Agregação de Resultados de Pergunta",
       "type": "api"
     },
     {

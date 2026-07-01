@@ -9,12 +9,6 @@
       "type": "readme"
     },
     {
-      "name": "Regenerating",
-      "file": "regenerating-readme-generated.md",
-      "subCat": "Documentation",
-      "type": "readme"
-    },
-    {
       "name": "Use",
       "file": "use-readme-generated.md",
       "subCat": "Documentation",

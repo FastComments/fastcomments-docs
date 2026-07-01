@@ -9,12 +9,6 @@
       "type": "readme"
     },
     {
-      "name": "Відновлення",
-      "file": "regenerating-readme-generated.md",
-      "subCat": "Документація",
-      "type": "readme"
-    },
-    {
       "name": "Використання",
       "file": "use-readme-generated.md",
       "subCat": "Документація",
@@ -27,1255 +21,1255 @@
       "type": "readme"
     },
     {
-      "name": "агрегувати",
+      "name": "aggregate",
       "file": "aggregate-api-generated.md",
-      "subCat": "Агрегат",
+      "subCat": "Агрегація",
       "type": "api"
     },
     {
-      "name": "getAuditLogs",
+      "name": "ОтриматиЖурналиАудиту",
       "file": "getauditlogs-api-generated.md",
       "subCat": "Журнали аудиту",
       "type": "api"
     },
     {
-      "name": "logoutPublic",
+      "name": "ВихідПублічний",
       "file": "logoutpublic-api-generated.md",
-      "subCat": "Авторизація",
+      "subCat": "Автентифікація",
       "type": "api"
     },
     {
-      "name": "blockFromCommentPublic",
+      "name": "ЗаблокуватиЗКоментуванняПублічний",
       "file": "blockfromcommentpublic-api-generated.md",
       "subCat": "Блокування з коментаря",
       "type": "api"
     },
     {
-      "name": "unBlockCommentPublic",
+      "name": "РозблокуватиКоментарПублічний",
       "file": "unblockcommentpublic-api-generated.md",
       "subCat": "Блокування з коментаря",
       "type": "api"
     },
     {
-      "name": "checkedCommentsForBlocked",
+      "name": "Перевірка заблокованих коментарів",
       "file": "checkedcommentsforblocked-api-generated.md",
       "subCat": "Перевірка заблокованих коментарів",
       "type": "api"
     },
     {
-      "name": "blockUserFromComment",
+      "name": "ЗаблокуватиКористувачаЗКоментаря",
       "file": "blockuserfromcomment-api-generated.md",
       "subCat": "Коментарі",
       "type": "api"
     },
     {
-      "name": "createCommentPublic",
+      "name": "СтворитиКоментарПублічний",
       "file": "createcommentpublic-api-generated.md",
       "subCat": "Коментарі",
       "type": "api"
     },
     {
-      "name": "deleteComment",
+      "name": "ВидалитиКоментар",
       "file": "deletecomment-api-generated.md",
       "subCat": "Коментарі",
       "type": "api"
     },
     {
-      "name": "deleteCommentPublic",
+      "name": "ВидалитиКоментарПублічний",
       "file": "deletecommentpublic-api-generated.md",
       "subCat": "Коментарі",
       "type": "api"
     },
     {
-      "name": "deleteCommentVote",
+      "name": "ВидалитиГолосЗаКоментар",
       "file": "deletecommentvote-api-generated.md",
       "subCat": "Коментарі",
       "type": "api"
     },
     {
-      "name": "flagComment",
+      "name": "ПозначитиКоментар",
       "file": "flagcomment-api-generated.md",
       "subCat": "Коментарі",
       "type": "api"
     },
     {
-      "name": "getComment",
+      "name": "ОтриматиКоментар",
       "file": "getcomment-api-generated.md",
       "subCat": "Коментарі",
       "type": "api"
     },
     {
-      "name": "getComments",
+      "name": "ОтриматиКоментарі",
       "file": "getcomments-api-generated.md",
       "subCat": "Коментарі",
       "type": "api"
     },
     {
-      "name": "getCommentsPublic",
+      "name": "ОтриматиКоментаріПублічні",
       "file": "getcommentspublic-api-generated.md",
       "subCat": "Коментарі",
       "type": "api"
     },
     {
-      "name": "getCommentText",
+      "name": "ОтриматиТекстКоментаря",
       "file": "getcommenttext-api-generated.md",
       "subCat": "Коментарі",
       "type": "api"
     },
     {
-      "name": "getCommentVoteUserNames",
+      "name": "ОтриматиІменаКористувачівГолосувшихЗаКоментар",
       "file": "getcommentvoteusernames-api-generated.md",
       "subCat": "Коментарі",
       "type": "api"
     },
     {
-      "name": "lockComment",
+      "name": "ЗаблокуватиКоментар",
       "file": "lockcomment-api-generated.md",
       "subCat": "Коментарі",
       "type": "api"
     },
     {
-      "name": "pinComment",
+      "name": "ЗакріпитиКоментар",
       "file": "pincomment-api-generated.md",
       "subCat": "Коментарі",
       "type": "api"
     },
     {
-      "name": "saveComment",
+      "name": "ЗберегтиКоментар",
       "file": "savecomment-api-generated.md",
       "subCat": "Коментарі",
       "type": "api"
     },
     {
-      "name": "saveCommentsBulk",
+      "name": "ЗберегтиКоментаріПакетно",
       "file": "savecommentsbulk-api-generated.md",
       "subCat": "Коментарі",
       "type": "api"
     },
     {
-      "name": "setCommentText",
+      "name": "ВстановитиТекстКоментаря",
       "file": "setcommenttext-api-generated.md",
       "subCat": "Коментарі",
       "type": "api"
     },
     {
-      "name": "unBlockUserFromComment",
+      "name": "РозблокуватиКористувачаЗКоментаря",
       "file": "unblockuserfromcomment-api-generated.md",
       "subCat": "Коментарі",
       "type": "api"
     },
     {
-      "name": "unFlagComment",
+      "name": "ЗнятиПозначкуЗКоментаря",
       "file": "unflagcomment-api-generated.md",
       "subCat": "Коментарі",
       "type": "api"
     },
     {
-      "name": "unLockComment",
+      "name": "РозблокуватиКоментар",
       "file": "unlockcomment-api-generated.md",
       "subCat": "Коментарі",
       "type": "api"
     },
     {
-      "name": "unPinComment",
+      "name": "ВідкріпитиКоментар",
       "file": "unpincomment-api-generated.md",
       "subCat": "Коментарі",
       "type": "api"
     },
     {
-      "name": "updateComment",
+      "name": "ОновитиКоментар",
       "file": "updatecomment-api-generated.md",
       "subCat": "Коментарі",
       "type": "api"
     },
     {
-      "name": "voteComment",
+      "name": "ГолосуватиЗаКоментар",
       "file": "votecomment-api-generated.md",
       "subCat": "Коментарі",
       "type": "api"
     },
     {
-      "name": "getCommentsForUser",
+      "name": "ОтриматиКоментаріДляКористувача",
       "file": "getcommentsforuser-api-generated.md",
       "subCat": "Коментарі для користувача",
       "type": "api"
     },
     {
-      "name": "addDomainConfig",
+      "name": "ДодатиКонфігураціюДомену",
       "file": "adddomainconfig-api-generated.md",
       "subCat": "Конфігурації домену",
       "type": "api"
     },
     {
-      "name": "deleteDomainConfig",
+      "name": "ВидалитиКонфігураціюДомену",
       "file": "deletedomainconfig-api-generated.md",
       "subCat": "Конфігурації домену",
       "type": "api"
     },
     {
-      "name": "getDomainConfig",
+      "name": "ОтриматиКонфігураціюДомену",
       "file": "getdomainconfig-api-generated.md",
       "subCat": "Конфігурації домену",
       "type": "api"
     },
     {
-      "name": "getDomainConfigs",
+      "name": "ОтриматиКонфігураціїДомену",
       "file": "getdomainconfigs-api-generated.md",
       "subCat": "Конфігурації домену",
       "type": "api"
     },
     {
-      "name": "patchDomainConfig",
+      "name": "ОновитиЧастковоКонфігураціюДомену",
       "file": "patchdomainconfig-api-generated.md",
       "subCat": "Конфігурації домену",
       "type": "api"
     },
     {
-      "name": "putDomainConfig",
+      "name": "ЗамінитиКонфігураціюДомену",
       "file": "putdomainconfig-api-generated.md",
       "subCat": "Конфігурації домену",
       "type": "api"
     },
     {
-      "name": "createEmailTemplate",
+      "name": "СтворитиШаблонЕлектронноїПошти",
       "file": "createemailtemplate-api-generated.md",
       "subCat": "Шаблони електронної пошти",
       "type": "api"
     },
     {
-      "name": "deleteEmailTemplate",
+      "name": "ВидалитиШаблонЕлектронноїПошти",
       "file": "deleteemailtemplate-api-generated.md",
       "subCat": "Шаблони електронної пошти",
       "type": "api"
     },
     {
-      "name": "deleteEmailTemplateRenderError",
+      "name": "ВидалитиПомилкуВідображенняШаблонуЕлПошти",
       "file": "deleteemailtemplaterendererror-api-generated.md",
       "subCat": "Шаблони електронної пошти",
       "type": "api"
     },
     {
-      "name": "getEmailTemplate",
+      "name": "ОтриматиШаблонЕлПошти",
       "file": "getemailtemplate-api-generated.md",
       "subCat": "Шаблони електронної пошти",
       "type": "api"
     },
     {
-      "name": "getEmailTemplateDefinitions",
+      "name": "ОтриматиВизначенняШаблонівЕлПошти",
       "file": "getemailtemplatedefinitions-api-generated.md",
       "subCat": "Шаблони електронної пошти",
       "type": "api"
     },
     {
-      "name": "getEmailTemplateRenderErrors",
+      "name": "ОтриматиПомилкиВідображенняШаблонівЕлПошти",
       "file": "getemailtemplaterendererrors-api-generated.md",
       "subCat": "Шаблони електронної пошти",
       "type": "api"
     },
     {
-      "name": "getEmailTemplates",
+      "name": "ОтриматиШаблониЕлПошти",
       "file": "getemailtemplates-api-generated.md",
       "subCat": "Шаблони електронної пошти",
       "type": "api"
     },
     {
-      "name": "renderEmailTemplate",
+      "name": "ВідобразитиШаблонЕлПошти",
       "file": "renderemailtemplate-api-generated.md",
       "subCat": "Шаблони електронної пошти",
       "type": "api"
     },
     {
-      "name": "updateEmailTemplate",
+      "name": "ОновитиШаблонЕлПошти",
       "file": "updateemailtemplate-api-generated.md",
       "subCat": "Шаблони електронної пошти",
       "type": "api"
     },
     {
-      "name": "getEventLog",
+      "name": "ОтриматиЖурналПодій",
       "file": "geteventlog-api-generated.md",
       "subCat": "Журнал подій",
       "type": "api"
     },
     {
-      "name": "getGlobalEventLog",
+      "name": "ОтриматиГлобальнийЖурналПодій",
       "file": "getglobaleventlog-api-generated.md",
       "subCat": "Журнал подій",
       "type": "api"
     },
     {
-      "name": "createFeedPost",
+      "name": "СтворитиПостУСтрічці",
       "file": "createfeedpost-api-generated.md",
-      "subCat": "Публікації в стрічці",
+      "subCat": "Пости у стрічці",
       "type": "api"
     },
     {
-      "name": "createFeedPostPublic",
+      "name": "СтворитиПостУСтрічціПублічний",
       "file": "createfeedpostpublic-api-generated.md",
-      "subCat": "Публікації в стрічці",
+      "subCat": "Пости у стрічці",
       "type": "api"
     },
     {
-      "name": "deleteFeedPostPublic",
+      "name": "ВидалитиПостУСтрічціПублічний",
       "file": "deletefeedpostpublic-api-generated.md",
-      "subCat": "Публікації в стрічці",
+      "subCat": "Пости у стрічці",
       "type": "api"
     },
     {
-      "name": "getFeedPosts",
+      "name": "ОтриматиПостиУСтрічці",
       "file": "getfeedposts-api-generated.md",
-      "subCat": "Публікації в стрічці",
+      "subCat": "Пости у стрічці",
       "type": "api"
     },
     {
-      "name": "getFeedPostsPublic",
+      "name": "ОтриматиПостиУСтрічціПублічні",
       "file": "getfeedpostspublic-api-generated.md",
-      "subCat": "Публікації в стрічці",
+      "subCat": "Пости у стрічці",
       "type": "api"
     },
     {
-      "name": "getFeedPostsStats",
+      "name": "ОтриматиСтатистикуПостівУСтрічці",
       "file": "getfeedpostsstats-api-generated.md",
-      "subCat": "Публікації в стрічці",
+      "subCat": "Пости у стрічці",
       "type": "api"
     },
     {
-      "name": "getUserReactsPublic",
+      "name": "ОтриматиРеакціїКористувачівПублічні",
       "file": "getuserreactspublic-api-generated.md",
-      "subCat": "Публікації в стрічці",
+      "subCat": "Пости у стрічці",
       "type": "api"
     },
     {
-      "name": "reactFeedPostPublic",
+      "name": "РеагуватиНаПостУСтрічціПублічний",
       "file": "reactfeedpostpublic-api-generated.md",
-      "subCat": "Публікації в стрічці",
+      "subCat": "Пости у стрічці",
       "type": "api"
     },
     {
-      "name": "updateFeedPost",
+      "name": "ОновитиПостУСтрічці",
       "file": "updatefeedpost-api-generated.md",
-      "subCat": "Публікації в стрічці",
+      "subCat": "Пости у стрічці",
       "type": "api"
     },
     {
-      "name": "updateFeedPostPublic",
+      "name": "ОновитиПостУСтрічціПублічний",
       "file": "updatefeedpostpublic-api-generated.md",
-      "subCat": "Публікації в стрічці",
+      "subCat": "Пости у стрічці",
       "type": "api"
     },
     {
-      "name": "flagCommentPublic",
+      "name": "ПозначитиКоментарПублічний",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Поскаржитись на коментар",
+      "subCat": "Позначити коментар",
       "type": "api"
     },
     {
-      "name": "getGifLarge",
+      "name": "ОтриматиВеликийGIF",
       "file": "getgiflarge-api-generated.md",
-      "subCat": "Гіфки",
+      "subCat": "GIF'и",
       "type": "api"
     },
     {
-      "name": "getGifsSearch",
+      "name": "ПошукGIF'ів",
       "file": "getgifssearch-api-generated.md",
-      "subCat": "Гіфки",
+      "subCat": "GIF'и",
       "type": "api"
     },
     {
-      "name": "getGifsTrending",
+      "name": "ТрендовіGIF'и",
       "file": "getgifstrending-api-generated.md",
-      "subCat": "Гіфки",
+      "subCat": "GIF'и",
       "type": "api"
     },
     {
-      "name": "addHashTag",
+      "name": "ДодатиХешТег",
       "file": "addhashtag-api-generated.md",
       "subCat": "Хештеги",
       "type": "api"
     },
     {
-      "name": "addHashTagsBulk",
+      "name": "ДодатиХешТегиПакетно",
       "file": "addhashtagsbulk-api-generated.md",
       "subCat": "Хештеги",
       "type": "api"
     },
     {
-      "name": "deleteHashTag",
+      "name": "ВидалитиХешТег",
       "file": "deletehashtag-api-generated.md",
       "subCat": "Хештеги",
       "type": "api"
     },
     {
-      "name": "getHashTags",
+      "name": "ОтриматиХешТеги",
       "file": "gethashtags-api-generated.md",
       "subCat": "Хештеги",
       "type": "api"
     },
     {
-      "name": "patchHashTag",
+      "name": "ОновитиЧастковоХешТег",
       "file": "patchhashtag-api-generated.md",
       "subCat": "Хештеги",
       "type": "api"
     },
     {
-      "name": "deleteModerationVote",
+      "name": "ВидалитиГолосМодерації",
       "file": "deletemoderationvote-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "getApiComments",
+      "name": "ОтриматиAPIКоментарі",
       "file": "getapicomments-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "getApiExportStatus",
+      "name": "ОтриматиСтатусЕкспортуAPI",
       "file": "getapiexportstatus-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "getApiIds",
+      "name": "ОтриматиAPIID",
       "file": "getapiids-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "getBanUsersFromComment",
+      "name": "ОтриматиЗабаненихКористувачівЗКоментаря",
       "file": "getbanusersfromcomment-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "getCommentBanStatus",
+      "name": "ОтриматиСтатусБанівКоментаря",
       "file": "getcommentbanstatus-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "getCommentChildren",
+      "name": "ОтриматиДочірніКоментарі",
       "file": "getcommentchildren-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "getCount",
+      "name": "ОтриматиКількість",
       "file": "getcount-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "getCounts",
+      "name": "ОтриматиКількості",
       "file": "getcounts-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "getLogs",
+      "name": "ОтриматиЛоги",
       "file": "getlogs-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "getManualBadges",
+      "name": "ОтриматиРучніЗначки",
       "file": "getmanualbadges-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "getManualBadgesForUser",
+      "name": "ОтриматиРучніЗначкиДляКористувача",
       "file": "getmanualbadgesforuser-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "getModerationComment",
+      "name": "ОтриматиКоментарМодерації",
       "file": "getmoderationcomment-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "getModerationCommentText",
+      "name": "ОтриматиТекстКоментаряМодерації",
       "file": "getmoderationcommenttext-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "getPreBanSummary",
+      "name": "ОтриматиПопереднєПідсумковеБанування",
       "file": "getprebansummary-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "getSearchCommentsSummary",
+      "name": "ОтриматиПідсумокПошукуКоментарів",
       "file": "getsearchcommentssummary-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "getSearchPages",
+      "name": "ОтриматиСторінкиПошуку",
       "file": "getsearchpages-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "getSearchSites",
+      "name": "ОтриматиСайтиПошуку",
       "file": "getsearchsites-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "getSearchSuggest",
+      "name": "ОтриматиПропозиціїПошуку",
       "file": "getsearchsuggest-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "getSearchUsers",
+      "name": "ОтриматиКористувачівПошуку",
       "file": "getsearchusers-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "getTrustFactor",
+      "name": "ОтриматиФакторДовіри",
       "file": "gettrustfactor-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "getUserBanPreference",
+      "name": "ОтриматиНалаштуванняБанівКористувача",
       "file": "getuserbanpreference-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "getUserInternalProfile",
+      "name": "ОтриматиВнутрішнійПрофільКористувача",
       "file": "getuserinternalprofile-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "postAdjustCommentVotes",
+      "name": "ВідправитиРегулюванняГолосівЗаКоментар",
       "file": "postadjustcommentvotes-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "postApiExport",
+      "name": "ВідправитиЕкспортAPI",
       "file": "postapiexport-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "postBanUserFromComment",
+      "name": "ЗабанитиКористувачаЗКоментаря",
       "file": "postbanuserfromcomment-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "postBanUserUndo",
+      "name": "СкасуватиБанКористувача",
       "file": "postbanuserundo-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "postBulkPreBanSummary",
+      "name": "ВідправитиПакетнеПопереднєБануванняПідсумок",
       "file": "postbulkprebansummary-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "postCommentsByIds",
+      "name": "ВідправитиКоментаріЗаID",
       "file": "postcommentsbyids-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "postFlagComment",
+      "name": "ПозначитиКоментар",
       "file": "postflagcomment-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "postRemoveComment",
+      "name": "ВидалитиКоментар",
       "file": "postremovecomment-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "postRestoreDeletedComment",
+      "name": "ВідновитиВидаленийКоментар",
       "file": "postrestoredeletedcomment-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "postSetCommentApprovalStatus",
+      "name": "ВстановитиСтатусЗатвердженняКоментаря",
       "file": "postsetcommentapprovalstatus-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "postSetCommentReviewStatus",
+      "name": "ВстановитиСтатусПереглядуКоментаря",
       "file": "postsetcommentreviewstatus-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "postSetCommentSpamStatus",
+      "name": "ВстановитиСтатусСпамуКоментаря",
       "file": "postsetcommentspamstatus-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "postSetCommentText",
+      "name": "ВстановитиТекстКоментаря",
       "file": "postsetcommenttext-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "postUnFlagComment",
+      "name": "ЗнятиПозначкуЗКоментаря",
       "file": "postunflagcomment-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "postVote",
+      "name": "Голосування",
       "file": "postvote-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "putAwardBadge",
+      "name": "НагородитиЗначком",
       "file": "putawardbadge-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "putCloseThread",
+      "name": "ЗакритиТему",
       "file": "putclosethread-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "putRemoveBadge",
+      "name": "ВидалитиЗначок",
       "file": "putremovebadge-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "putReopenThread",
+      "name": "ВідкритиТему",
       "file": "putreopenthread-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "setTrustFactor",
+      "name": "ВстановитиФакторДовіри",
       "file": "settrustfactor-api-generated.md",
       "subCat": "Модерація",
       "type": "api"
     },
     {
-      "name": "createModerator",
+      "name": "СтворитиМодератора",
       "file": "createmoderator-api-generated.md",
       "subCat": "Модератори",
       "type": "api"
     },
     {
-      "name": "deleteModerator",
+      "name": "ВидалитиМодератора",
       "file": "deletemoderator-api-generated.md",
       "subCat": "Модератори",
       "type": "api"
     },
     {
-      "name": "getModerator",
+      "name": "ОтриматиМодератора",
       "file": "getmoderator-api-generated.md",
       "subCat": "Модератори",
       "type": "api"
     },
     {
-      "name": "getModerators",
+      "name": "ОтриматиМодераторів",
       "file": "getmoderators-api-generated.md",
       "subCat": "Модератори",
       "type": "api"
     },
     {
-      "name": "sendInvite",
+      "name": "НадіслатиЗапрошення",
       "file": "sendinvite-api-generated.md",
       "subCat": "Модератори",
       "type": "api"
     },
     {
-      "name": "updateModerator",
+      "name": "ОновитиМодератора",
       "file": "updatemoderator-api-generated.md",
       "subCat": "Модератори",
       "type": "api"
     },
     {
-      "name": "deleteNotificationCount",
+      "name": "ВидалитиЛічильникПовідомлень",
       "file": "deletenotificationcount-api-generated.md",
-      "subCat": "Кількість сповіщень",
+      "subCat": "Лічильник сповіщень",
       "type": "api"
     },
     {
-      "name": "getCachedNotificationCount",
+      "name": "ОтриматиКешованийЛічильникПовідомлень",
       "file": "getcachednotificationcount-api-generated.md",
-      "subCat": "Кількість сповіщень",
+      "subCat": "Лічильник сповіщень",
       "type": "api"
     },
     {
-      "name": "getNotificationCount",
+      "name": "ОтриматиЛічильникПовідомлень",
       "file": "getnotificationcount-api-generated.md",
-      "subCat": "Сповіщення",
+      "subCat": "Повідомлення",
       "type": "api"
     },
     {
-      "name": "getNotifications",
+      "name": "ОтриматиПовідомлення",
       "file": "getnotifications-api-generated.md",
-      "subCat": "Сповіщення",
+      "subCat": "Повідомлення",
       "type": "api"
     },
     {
-      "name": "updateNotification",
+      "name": "ОновитиПовідомлення",
       "file": "updatenotification-api-generated.md",
-      "subCat": "Сповіщення",
+      "subCat": "Повідомлення",
       "type": "api"
     },
     {
-      "name": "createV1PageReact",
+      "name": "СтворитиРеакціюСторінкиV1",
       "file": "createv1pagereact-api-generated.md",
       "subCat": "Реакції на сторінці",
       "type": "api"
     },
     {
-      "name": "createV2PageReact",
+      "name": "СтворитиРеакціюСторінкиV2",
       "file": "createv2pagereact-api-generated.md",
       "subCat": "Реакції на сторінці",
       "type": "api"
     },
     {
-      "name": "deleteV1PageReact",
+      "name": "ВидалитиРеакціюСторінкиV1",
       "file": "deletev1pagereact-api-generated.md",
       "subCat": "Реакції на сторінці",
       "type": "api"
     },
     {
-      "name": "deleteV2PageReact",
+      "name": "ВидалитиРеакціюСторінкиV2",
       "file": "deletev2pagereact-api-generated.md",
       "subCat": "Реакції на сторінці",
       "type": "api"
     },
     {
-      "name": "getV1PageLikes",
+      "name": "ОтриматиЛайкиСторінкиV1",
       "file": "getv1pagelikes-api-generated.md",
       "subCat": "Реакції на сторінці",
       "type": "api"
     },
     {
-      "name": "getV2PageReacts",
+      "name": "ОтриматиРеакціїСторінкиV2",
       "file": "getv2pagereacts-api-generated.md",
       "subCat": "Реакції на сторінці",
       "type": "api"
     },
     {
-      "name": "getV2PageReactUsers",
+      "name": "ОтриматиКористувачівРеакційСторінкиV2",
       "file": "getv2pagereactusers-api-generated.md",
       "subCat": "Реакції на сторінці",
       "type": "api"
     },
     {
-      "name": "addPage",
+      "name": "ДодатиСторінку",
       "file": "addpage-api-generated.md",
       "subCat": "Сторінки",
       "type": "api"
     },
     {
-      "name": "deletePage",
+      "name": "ВидалитиСторінку",
       "file": "deletepage-api-generated.md",
       "subCat": "Сторінки",
       "type": "api"
     },
     {
-      "name": "getOfflineUsers",
+      "name": "ОтриматиОфлайнКористувачів",
       "file": "getofflineusers-api-generated.md",
       "subCat": "Сторінки",
       "type": "api"
     },
     {
-      "name": "getOnlineUsers",
+      "name": "ОтриматиОнлайнКористувачів",
       "file": "getonlineusers-api-generated.md",
       "subCat": "Сторінки",
       "type": "api"
     },
     {
-      "name": "getPageByURLId",
+      "name": "ОтриматиСторінкуЗаURLID",
       "file": "getpagebyurlid-api-generated.md",
       "subCat": "Сторінки",
       "type": "api"
     },
     {
-      "name": "getPages",
+      "name": "ОтриматиСторінки",
       "file": "getpages-api-generated.md",
       "subCat": "Сторінки",
       "type": "api"
     },
     {
-      "name": "getPagesPublic",
+      "name": "ОтриматиСторінкиПублічні",
       "file": "getpagespublic-api-generated.md",
       "subCat": "Сторінки",
       "type": "api"
     },
     {
-      "name": "getUsersInfo",
+      "name": "ОтриматиІнформаціюПроКористувачів",
       "file": "getusersinfo-api-generated.md",
       "subCat": "Сторінки",
       "type": "api"
     },
     {
-      "name": "patchPage",
+      "name": "ОновитиЧастковоСторінку",
       "file": "patchpage-api-generated.md",
       "subCat": "Сторінки",
       "type": "api"
     },
     {
-      "name": "deletePendingWebhookEvent",
+      "name": "ВидалитиОчікувануПодіюВебхука",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "Очікуючі події webhook",
+      "subCat": "Очікувані події вебхука",
       "type": "api"
     },
     {
-      "name": "getPendingWebhookEventCount",
+      "name": "ОтриматиКількістьОчікуванихПодійВебхука",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "Очікуючі події webhook",
+      "subCat": "Очікувані події вебхука",
       "type": "api"
     },
     {
-      "name": "getPendingWebhookEvents",
+      "name": "ОтриматиОчікуваніПодіїВебхука",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "Очікуючі події webhook",
+      "subCat": "Очікувані події вебхука",
       "type": "api"
     },
     {
-      "name": "createQuestionConfig",
+      "name": "СтворитиКонфігураціюПитання",
       "file": "createquestionconfig-api-generated.md",
       "subCat": "Конфігурації питань",
       "type": "api"
     },
     {
-      "name": "deleteQuestionConfig",
+      "name": "ВидалитиКонфігураціюПитання",
       "file": "deletequestionconfig-api-generated.md",
       "subCat": "Конфігурації питань",
       "type": "api"
     },
     {
-      "name": "getQuestionConfig",
+      "name": "ОтриматиКонфігураціюПитання",
       "file": "getquestionconfig-api-generated.md",
       "subCat": "Конфігурації питань",
       "type": "api"
     },
     {
-      "name": "getQuestionConfigs",
+      "name": "ОтриматиКонфігураціїПитань",
       "file": "getquestionconfigs-api-generated.md",
       "subCat": "Конфігурації питань",
       "type": "api"
     },
     {
-      "name": "updateQuestionConfig",
+      "name": "ОновитиКонфігураціюПитання",
       "file": "updatequestionconfig-api-generated.md",
       "subCat": "Конфігурації питань",
       "type": "api"
     },
     {
-      "name": "createQuestionResult",
+      "name": "СтворитиРезультатПитання",
       "file": "createquestionresult-api-generated.md",
       "subCat": "Результати питань",
       "type": "api"
     },
     {
-      "name": "deleteQuestionResult",
+      "name": "ВидалитиРезультатПитання",
       "file": "deletequestionresult-api-generated.md",
       "subCat": "Результати питань",
       "type": "api"
     },
     {
-      "name": "getQuestionResult",
+      "name": "ОтриматиРезультатПитання",
       "file": "getquestionresult-api-generated.md",
       "subCat": "Результати питань",
       "type": "api"
     },
     {
-      "name": "getQuestionResults",
+      "name": "ОтриматиРезультатиПитань",
       "file": "getquestionresults-api-generated.md",
       "subCat": "Результати питань",
       "type": "api"
     },
     {
-      "name": "updateQuestionResult",
+      "name": "ОновитиРезультатПитання",
       "file": "updatequestionresult-api-generated.md",
       "subCat": "Результати питань",
       "type": "api"
     },
     {
-      "name": "aggregateQuestionResults",
+      "name": "АгрегуватиРезультатиПитань",
       "file": "aggregatequestionresults-api-generated.md",
       "subCat": "Агрегація результатів питань",
       "type": "api"
     },
     {
-      "name": "bulkAggregateQuestionResults",
+      "name": "ПакетнаАгрегаціяРезультатівПитань",
       "file": "bulkaggregatequestionresults-api-generated.md",
       "subCat": "Агрегація результатів питань",
       "type": "api"
     },
     {
-      "name": "combineCommentsWithQuestionResults",
+      "name": "Об’єднатиКоментаріЗРезультатамиПитань",
       "file": "combinecommentswithquestionresults-api-generated.md",
       "subCat": "Агрегація результатів питань",
       "type": "api"
     },
     {
-      "name": "addSSOUser",
+      "name": "ДодатиSSOКористувача",
       "file": "addssouser-api-generated.md",
-      "subCat": "Користувачі SSO",
+      "subCat": "SSO користувачі",
       "type": "api"
     },
     {
-      "name": "deleteSSOUser",
+      "name": "ВидалитиSSOКористувача",
       "file": "deletessouser-api-generated.md",
-      "subCat": "Користувачі SSO",
+      "subCat": "SSO користувачі",
       "type": "api"
     },
     {
-      "name": "getSSOUserByEmail",
+      "name": "ОтриматиSSOКористувачаЗаEmail",
       "file": "getssouserbyemail-api-generated.md",
-      "subCat": "Користувачі SSO",
+      "subCat": "SSO користувачі",
       "type": "api"
     },
     {
-      "name": "getSSOUserById",
+      "name": "ОтриматиSSOКористувачаЗаID",
       "file": "getssouserbyid-api-generated.md",
-      "subCat": "Користувачі SSO",
+      "subCat": "SSO користувачі",
       "type": "api"
     },
     {
-      "name": "getSSOUsers",
+      "name": "ОтриматиSSOКористувачів",
       "file": "getssousers-api-generated.md",
-      "subCat": "Користувачі SSO",
+      "subCat": "SSO користувачі",
       "type": "api"
     },
     {
-      "name": "patchSSOUser",
+      "name": "ОновитиЧастковоSSOКористувача",
       "file": "patchssouser-api-generated.md",
-      "subCat": "Користувачі SSO",
+      "subCat": "SSO користувачі",
       "type": "api"
     },
     {
-      "name": "putSSOUser",
+      "name": "ЗамінитиSSOКористувача",
       "file": "putssouser-api-generated.md",
-      "subCat": "Користувачі SSO",
+      "subCat": "SSO користувачі",
       "type": "api"
     },
     {
-      "name": "createSubscription",
+      "name": "СтворитиПідписку",
       "file": "createsubscription-api-generated.md",
       "subCat": "Підписки",
       "type": "api"
     },
     {
-      "name": "deleteSubscription",
+      "name": "ВидалитиПідписку",
       "file": "deletesubscription-api-generated.md",
       "subCat": "Підписки",
       "type": "api"
     },
     {
-      "name": "getSubscriptions",
+      "name": "ОтриматиПідписки",
       "file": "getsubscriptions-api-generated.md",
       "subCat": "Підписки",
       "type": "api"
     },
     {
-      "name": "updateSubscription",
+      "name": "ОновитиПідписку",
       "file": "updatesubscription-api-generated.md",
       "subCat": "Підписки",
       "type": "api"
     },
     {
-      "name": "getTenantDailyUsages",
+      "name": "ОтриматиЩоденнеВикористанняОрендаря",
       "file": "gettenantdailyusages-api-generated.md",
       "subCat": "Щоденне використання орендаря",
       "type": "api"
     },
     {
-      "name": "createTenantPackage",
+      "name": "СтворитиПакетОрендаря",
       "file": "createtenantpackage-api-generated.md",
       "subCat": "Пакети орендаря",
       "type": "api"
     },
     {
-      "name": "deleteTenantPackage",
+      "name": "ВидалитиПакетОрендаря",
       "file": "deletetenantpackage-api-generated.md",
       "subCat": "Пакети орендаря",
       "type": "api"
     },
     {
-      "name": "getTenantPackage",
+      "name": "ОтриматиПакетОрендаря",
       "file": "gettenantpackage-api-generated.md",
       "subCat": "Пакети орендаря",
       "type": "api"
     },
     {
-      "name": "getTenantPackages",
+      "name": "ОтриматиПакетиОрендаря",
       "file": "gettenantpackages-api-generated.md",
       "subCat": "Пакети орендаря",
       "type": "api"
     },
     {
-      "name": "replaceTenantPackage",
+      "name": "ЗамінитиПакетОрендаря",
       "file": "replacetenantpackage-api-generated.md",
       "subCat": "Пакети орендаря",
       "type": "api"
     },
     {
-      "name": "updateTenantPackage",
+      "name": "ОновитиПакетОрендаря",
       "file": "updatetenantpackage-api-generated.md",
       "subCat": "Пакети орендаря",
       "type": "api"
     },
     {
-      "name": "createTenantUser",
+      "name": "СтворитиКористувачаОрендаря",
       "file": "createtenantuser-api-generated.md",
       "subCat": "Користувачі орендаря",
       "type": "api"
     },
     {
-      "name": "deleteTenantUser",
+      "name": "ВидалитиКористувачаОрендаря",
       "file": "deletetenantuser-api-generated.md",
       "subCat": "Користувачі орендаря",
       "type": "api"
     },
     {
-      "name": "getTenantUser",
+      "name": "ОтриматиКористувачаОрендаря",
       "file": "gettenantuser-api-generated.md",
       "subCat": "Користувачі орендаря",
       "type": "api"
     },
     {
-      "name": "getTenantUsers",
+      "name": "ОтриматиКористувачівОрендаря",
       "file": "gettenantusers-api-generated.md",
       "subCat": "Користувачі орендаря",
       "type": "api"
     },
     {
-      "name": "replaceTenantUser",
+      "name": "ЗамінитиКористувачаОрендаря",
       "file": "replacetenantuser-api-generated.md",
       "subCat": "Користувачі орендаря",
       "type": "api"
     },
     {
-      "name": "sendLoginLink",
+      "name": "НадіслатиПосиланняДляВходу",
       "file": "sendloginlink-api-generated.md",
       "subCat": "Користувачі орендаря",
       "type": "api"
     },
     {
-      "name": "updateTenantUser",
+      "name": "ОновитиКористувачаОрендаря",
       "file": "updatetenantuser-api-generated.md",
       "subCat": "Користувачі орендаря",
       "type": "api"
     },
     {
-      "name": "createTenant",
+      "name": "СтворитиОрендаря",
       "file": "createtenant-api-generated.md",
       "subCat": "Орендарі",
       "type": "api"
     },
     {
-      "name": "deleteTenant",
+      "name": "ВидалитиОрендаря",
       "file": "deletetenant-api-generated.md",
       "subCat": "Орендарі",
       "type": "api"
     },
     {
-      "name": "getTenant",
+      "name": "ОтриматиОрендаря",
       "file": "gettenant-api-generated.md",
       "subCat": "Орендарі",
       "type": "api"
     },
     {
-      "name": "getTenants",
+      "name": "ОтриматиОрендарів",
       "file": "gettenants-api-generated.md",
       "subCat": "Орендарі",
       "type": "api"
     },
     {
-      "name": "updateTenant",
+      "name": "ОновитиОрендаря",
       "file": "updatetenant-api-generated.md",
       "subCat": "Орендарі",
       "type": "api"
     },
     {
-      "name": "changeTicketState",
+      "name": "ЗмінитиСтанТікету",
       "file": "changeticketstate-api-generated.md",
       "subCat": "Тікети",
       "type": "api"
     },
     {
-      "name": "createTicket",
+      "name": "СтворитиТікет",
       "file": "createticket-api-generated.md",
       "subCat": "Тікети",
       "type": "api"
     },
     {
-      "name": "getTicket",
+      "name": "ОтриматиТікет",
       "file": "getticket-api-generated.md",
       "subCat": "Тікети",
       "type": "api"
     },
     {
-      "name": "getTickets",
+      "name": "ОтриматиТікети",
       "file": "gettickets-api-generated.md",
       "subCat": "Тікети",
       "type": "api"
     },
     {
-      "name": "getTranslations",
+      "name": "ОтриматиПереклади",
       "file": "gettranslations-api-generated.md",
       "subCat": "Переклади",
       "type": "api"
     },
     {
-      "name": "uploadImage",
+      "name": "ЗавантажитиЗображення",
       "file": "uploadimage-api-generated.md",
-      "subCat": "Завантажити зображення",
+      "subCat": "Завантаження зображення",
       "type": "api"
     },
     {
-      "name": "getUserBadgeProgressById",
+      "name": "ОтриматиПрогресЗначкаКористувачаЗаID",
       "file": "getuserbadgeprogressbyid-api-generated.md",
-      "subCat": "Прогрес бейджів користувача",
+      "subCat": "Прогрес значка користувача",
       "type": "api"
     },
     {
-      "name": "getUserBadgeProgressByUserId",
+      "name": "ОтриматиПрогресЗначкаКористувачаЗаUserID",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
-      "subCat": "Прогрес бейджів користувача",
+      "subCat": "Прогрес значка користувача",
       "type": "api"
     },
     {
-      "name": "getUserBadgeProgressList",
+      "name": "ОтриматиСписокПрогресуЗначківКористувачів",
       "file": "getuserbadgeprogresslist-api-generated.md",
-      "subCat": "Прогрес бейджів користувача",
+      "subCat": "Прогрес значка користувача",
       "type": "api"
     },
     {
-      "name": "createUserBadge",
+      "name": "СтворитиЗначокКористувача",
       "file": "createuserbadge-api-generated.md",
-      "subCat": "Бейджі користувача",
+      "subCat": "Значки користувачів",
       "type": "api"
     },
     {
-      "name": "deleteUserBadge",
+      "name": "ВидалитиЗначокКористувача",
       "file": "deleteuserbadge-api-generated.md",
-      "subCat": "Бейджі користувача",
+      "subCat": "Значки користувачів",
       "type": "api"
     },
     {
-      "name": "getUserBadge",
+      "name": "ОтриматиЗначокКористувача",
       "file": "getuserbadge-api-generated.md",
-      "subCat": "Бейджі користувача",
+      "subCat": "Значки користувачів",
       "type": "api"
     },
     {
-      "name": "getUserBadges",
+      "name": "ОтриматиЗначкиКористувачів",
       "file": "getuserbadges-api-generated.md",
-      "subCat": "Бейджі користувача",
+      "subCat": "Значки користувачів",
       "type": "api"
     },
     {
-      "name": "updateUserBadge",
+      "name": "ОновитиЗначокКористувача",
       "file": "updateuserbadge-api-generated.md",
-      "subCat": "Бейджі користувача",
+      "subCat": "Значки користувачів",
       "type": "api"
     },
     {
-      "name": "getUserNotificationCount",
+      "name": "ОтриматиЛічильникПовідомленьКористувача",
       "file": "getusernotificationcount-api-generated.md",
-      "subCat": "Сповіщення користувача",
+      "subCat": "Повідомлення користувача",
       "type": "api"
     },
     {
-      "name": "getUserNotifications",
+      "name": "ОтриматиПовідомленняКористувача",
       "file": "getusernotifications-api-generated.md",
-      "subCat": "Сповіщення користувача",
+      "subCat": "Повідомлення користувача",
       "type": "api"
     },
     {
-      "name": "resetUserNotificationCount",
+      "name": "СкинутиЛічильникПовідомленьКористувача",
       "file": "resetusernotificationcount-api-generated.md",
-      "subCat": "Сповіщення користувача",
+      "subCat": "Повідомлення користувача",
       "type": "api"
     },
     {
-      "name": "resetUserNotifications",
+      "name": "СкинутиПовідомленняКористувача",
       "file": "resetusernotifications-api-generated.md",
-      "subCat": "Сповіщення користувача",
+      "subCat": "Повідомлення користувача",
       "type": "api"
     },
     {
-      "name": "updateUserNotificationCommentSubscriptionStatus",
+      "name": "ОновитиСтатусПідпискиНаКоментаріДляПовідомленьКористувача",
       "file": "updateusernotificationcommentsubscriptionstatus-api-generated.md",
-      "subCat": "Сповіщення користувача",
+      "subCat": "Повідомлення користувача",
       "type": "api"
     },
     {
-      "name": "updateUserNotificationPageSubscriptionStatus",
+      "name": "ОновитиСтатусПідпискиНаСторінкиДляПовідомленьКористувача",
       "file": "updateusernotificationpagesubscriptionstatus-api-generated.md",
-      "subCat": "Сповіщення користувача",
+      "subCat": "Повідомлення користувача",
       "type": "api"
     },
     {
-      "name": "updateUserNotificationStatus",
+      "name": "ОновитиСтатусПовідомленняКористувача",
       "file": "updateusernotificationstatus-api-generated.md",
-      "subCat": "Сповіщення користувача",
+      "subCat": "Повідомлення користувача",
       "type": "api"
     },
     {
-      "name": "getUserPresenceStatuses",
+      "name": "ОтриматиСтатусиПрисутностіКористувачів",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "Статус присутності користувача",
+      "subCat": "Статус присутності користувачів",
       "type": "api"
     },
     {
-      "name": "searchUsers",
+      "name": "ПошукКористувачів",
       "file": "searchusers-api-generated.md",
       "subCat": "Пошук користувачів",
       "type": "api"
     },
     {
-      "name": "getUser",
+      "name": "ОтриматиКористувача",
       "file": "getuser-api-generated.md",
       "subCat": "Користувачі",
       "type": "api"
     },
     {
-      "name": "createVote",
+      "name": "СтворитиГолос",
       "file": "createvote-api-generated.md",
       "subCat": "Голоси",
       "type": "api"
     },
     {
-      "name": "deleteVote",
+      "name": "ВидалитиГолос",
       "file": "deletevote-api-generated.md",
       "subCat": "Голоси",
       "type": "api"
     },
     {
-      "name": "getVotes",
+      "name": "ОтриматиГолоси",
       "file": "getvotes-api-generated.md",
       "subCat": "Голоси",
       "type": "api"
     },
     {
-      "name": "getVotesForUser",
+      "name": "ОтриматиГолосиДляКористувача",
       "file": "getvotesforuser-api-generated.md",
       "subCat": "Голоси",
       "type": "api"

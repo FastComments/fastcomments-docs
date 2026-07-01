@@ -3,19 +3,13 @@
   "pageHeader": "FastComments Dart SDK",
   "itemsOrdered": [
     {
-      "name": "Lay-out",
+      "name": "Layout",
       "file": "layout-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"
     },
     {
-      "name": "Regenereren",
-      "file": "regenerating-readme-generated.md",
-      "subCat": "Documentatie",
-      "type": "readme"
-    },
-    {
-      "name": "Gebruik",
+      "name": "Use",
       "file": "use-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"
@@ -27,7 +21,7 @@
       "type": "readme"
     },
     {
-      "name": "aggregeren",
+      "name": "aggregate",
       "file": "aggregate-api-generated.md",
       "subCat": "Aggregatie",
       "type": "api"
@@ -35,7 +29,7 @@
     {
       "name": "getAuditLogs",
       "file": "getauditlogs-api-generated.md",
-      "subCat": "Auditlogs",
+      "subCat": "Auditlogboeken",
       "type": "api"
     },
     {
@@ -59,145 +53,145 @@
     {
       "name": "checkedCommentsForBlocked",
       "file": "checkedcommentsforblocked-api-generated.md",
-      "subCat": "Controleer geblokkeerde reacties",
+      "subCat": "Controle geblokkeerde commentaren",
       "type": "api"
     },
     {
       "name": "blockUserFromComment",
       "file": "blockuserfromcomment-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "createCommentPublic",
       "file": "createcommentpublic-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "deleteComment",
       "file": "deletecomment-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "deleteCommentPublic",
       "file": "deletecommentpublic-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "deleteCommentVote",
       "file": "deletecommentvote-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "flagComment",
       "file": "flagcomment-api-generated.md",
-      "subCat": "Markeer reactie",
+      "subCat": "Markeer commentaar",
       "type": "api"
     },
     {
       "name": "getComment",
       "file": "getcomment-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "getComments",
       "file": "getcomments-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "getCommentsPublic",
       "file": "getcommentspublic-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "getCommentText",
       "file": "getcommenttext-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "getCommentVoteUserNames",
       "file": "getcommentvoteusernames-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "lockComment",
       "file": "lockcomment-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "pinComment",
       "file": "pincomment-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "saveComment",
       "file": "savecomment-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "saveCommentsBulk",
       "file": "savecommentsbulk-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "setCommentText",
       "file": "setcommenttext-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "unBlockUserFromComment",
       "file": "unblockuserfromcomment-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "unFlagComment",
       "file": "unflagcomment-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "unLockComment",
       "file": "unlockcomment-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "unPinComment",
       "file": "unpincomment-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "updateComment",
       "file": "updatecomment-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "voteComment",
       "file": "votecomment-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "getCommentsForUser",
       "file": "getcommentsforuser-api-generated.md",
-      "subCat": "Reacties voor gebruiker",
+      "subCat": "Commentaren voor gebruiker",
       "type": "api"
     },
     {
@@ -239,133 +233,133 @@
     {
       "name": "createEmailTemplate",
       "file": "createemailtemplate-api-generated.md",
-      "subCat": "E‑mailtemplates",
+      "subCat": "E-mailsjablonen",
       "type": "api"
     },
     {
       "name": "deleteEmailTemplate",
       "file": "deleteemailtemplate-api-generated.md",
-      "subCat": "E‑mailtemplates",
+      "subCat": "E-mailsjablonen",
       "type": "api"
     },
     {
       "name": "deleteEmailTemplateRenderError",
       "file": "deleteemailtemplaterendererror-api-generated.md",
-      "subCat": "E‑mailtemplates",
+      "subCat": "E-mailsjablonen",
       "type": "api"
     },
     {
       "name": "getEmailTemplate",
       "file": "getemailtemplate-api-generated.md",
-      "subCat": "E‑mailtemplates",
+      "subCat": "E-mailsjablonen",
       "type": "api"
     },
     {
       "name": "getEmailTemplateDefinitions",
       "file": "getemailtemplatedefinitions-api-generated.md",
-      "subCat": "E‑mailtemplates",
+      "subCat": "E-mailsjablonen",
       "type": "api"
     },
     {
       "name": "getEmailTemplateRenderErrors",
       "file": "getemailtemplaterendererrors-api-generated.md",
-      "subCat": "E‑mailtemplates",
+      "subCat": "E-mailsjablonen",
       "type": "api"
     },
     {
       "name": "getEmailTemplates",
       "file": "getemailtemplates-api-generated.md",
-      "subCat": "E‑mailtemplates",
+      "subCat": "E-mailsjablonen",
       "type": "api"
     },
     {
       "name": "renderEmailTemplate",
       "file": "renderemailtemplate-api-generated.md",
-      "subCat": "E‑mailtemplates",
+      "subCat": "E-mailsjablonen",
       "type": "api"
     },
     {
       "name": "updateEmailTemplate",
       "file": "updateemailtemplate-api-generated.md",
-      "subCat": "E‑mailtemplates",
+      "subCat": "E-mailsjablonen",
       "type": "api"
     },
     {
       "name": "getEventLog",
       "file": "geteventlog-api-generated.md",
-      "subCat": "Evenementlogboek",
+      "subCat": "Evenementlog",
       "type": "api"
     },
     {
       "name": "getGlobalEventLog",
       "file": "getglobaleventlog-api-generated.md",
-      "subCat": "Evenementlogboek",
+      "subCat": "Evenementlog",
       "type": "api"
     },
     {
       "name": "createFeedPost",
       "file": "createfeedpost-api-generated.md",
-      "subCat": "Feedberichten",
+      "subCat": "Feed‑berichten",
       "type": "api"
     },
     {
       "name": "createFeedPostPublic",
       "file": "createfeedpostpublic-api-generated.md",
-      "subCat": "Feedberichten",
+      "subCat": "Feed‑berichten",
       "type": "api"
     },
     {
       "name": "deleteFeedPostPublic",
       "file": "deletefeedpostpublic-api-generated.md",
-      "subCat": "Feedberichten",
+      "subCat": "Feed‑berichten",
       "type": "api"
     },
     {
       "name": "getFeedPosts",
       "file": "getfeedposts-api-generated.md",
-      "subCat": "Feedberichten",
+      "subCat": "Feed‑berichten",
       "type": "api"
     },
     {
       "name": "getFeedPostsPublic",
       "file": "getfeedpostspublic-api-generated.md",
-      "subCat": "Feedberichten",
+      "subCat": "Feed‑berichten",
       "type": "api"
     },
     {
       "name": "getFeedPostsStats",
       "file": "getfeedpostsstats-api-generated.md",
-      "subCat": "Feedberichten",
+      "subCat": "Feed‑berichten",
       "type": "api"
     },
     {
       "name": "getUserReactsPublic",
       "file": "getuserreactspublic-api-generated.md",
-      "subCat": "Feedberichten",
+      "subCat": "Feed‑berichten",
       "type": "api"
     },
     {
       "name": "reactFeedPostPublic",
       "file": "reactfeedpostpublic-api-generated.md",
-      "subCat": "Feedberichten",
+      "subCat": "Feed‑berichten",
       "type": "api"
     },
     {
       "name": "updateFeedPost",
       "file": "updatefeedpost-api-generated.md",
-      "subCat": "Feedberichten",
+      "subCat": "Feed‑berichten",
       "type": "api"
     },
     {
       "name": "updateFeedPostPublic",
       "file": "updatefeedpostpublic-api-generated.md",
-      "subCat": "Feedberichten",
+      "subCat": "Feed‑berichten",
       "type": "api"
     },
     {
       "name": "flagCommentPublic",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Markeer reactie",
+      "subCat": "Markeer commentaar",
       "type": "api"
     },
     {
@@ -677,37 +671,37 @@
     {
       "name": "createModerator",
       "file": "createmoderator-api-generated.md",
-      "subCat": "Beheerders",
+      "subCat": "Moderators",
       "type": "api"
     },
     {
       "name": "deleteModerator",
       "file": "deletemoderator-api-generated.md",
-      "subCat": "Beheerders",
+      "subCat": "Moderators",
       "type": "api"
     },
     {
       "name": "getModerator",
       "file": "getmoderator-api-generated.md",
-      "subCat": "Beheerders",
+      "subCat": "Moderators",
       "type": "api"
     },
     {
       "name": "getModerators",
       "file": "getmoderators-api-generated.md",
-      "subCat": "Beheerders",
+      "subCat": "Moderators",
       "type": "api"
     },
     {
       "name": "sendInvite",
       "file": "sendinvite-api-generated.md",
-      "subCat": "Beheerders",
+      "subCat": "Moderators",
       "type": "api"
     },
     {
       "name": "updateModerator",
       "file": "updatemoderator-api-generated.md",
-      "subCat": "Beheerders",
+      "subCat": "Moderators",
       "type": "api"
     },
     {
@@ -743,43 +737,43 @@
     {
       "name": "createV1PageReact",
       "file": "createv1pagereact-api-generated.md",
-      "subCat": "Paginareacties",
+      "subCat": "Pagina-reacties",
       "type": "api"
     },
     {
       "name": "createV2PageReact",
       "file": "createv2pagereact-api-generated.md",
-      "subCat": "Paginareacties",
+      "subCat": "Pagina-reacties",
       "type": "api"
     },
     {
       "name": "deleteV1PageReact",
       "file": "deletev1pagereact-api-generated.md",
-      "subCat": "Paginareacties",
+      "subCat": "Pagina-reacties",
       "type": "api"
     },
     {
       "name": "deleteV2PageReact",
       "file": "deletev2pagereact-api-generated.md",
-      "subCat": "Paginareacties",
+      "subCat": "Pagina-reacties",
       "type": "api"
     },
     {
       "name": "getV1PageLikes",
       "file": "getv1pagelikes-api-generated.md",
-      "subCat": "Paginareacties",
+      "subCat": "Pagina-reacties",
       "type": "api"
     },
     {
       "name": "getV2PageReacts",
       "file": "getv2pagereacts-api-generated.md",
-      "subCat": "Paginareacties",
+      "subCat": "Pagina-reacties",
       "type": "api"
     },
     {
       "name": "getV2PageReactUsers",
       "file": "getv2pagereactusers-api-generated.md",
-      "subCat": "Paginareacties",
+      "subCat": "Pagina-reacties",
       "type": "api"
     },
     {
@@ -839,19 +833,19 @@
     {
       "name": "deletePendingWebhookEvent",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "In afwachting zijnde webhook‑gebeurtenissen",
+      "subCat": "In afwachting webhook‑gebeurtenissen",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEventCount",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "In afwachting zijnde webhook‑gebeurtenissen",
+      "subCat": "In afwachting webhook‑gebeurtenissen",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEvents",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "In afwachting zijnde webhook‑gebeurtenissen",
+      "subCat": "In afwachting webhook‑gebeurtenissen",
       "type": "api"
     },
     {
@@ -1001,7 +995,7 @@
     {
       "name": "getTenantDailyUsages",
       "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "Dagelijks gebruik tenant",
+      "subCat": "Dagelijks gebruik per tenant",
       "type": "api"
     },
     {
@@ -1241,13 +1235,13 @@
     {
       "name": "getUserPresenceStatuses",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "Aanwezigheidsstatus gebruiker",
+      "subCat": "Aanwezigheidsstatus van gebruiker",
       "type": "api"
     },
     {
       "name": "searchUsers",
       "file": "searchusers-api-generated.md",
-      "subCat": "Gebruikers zoeken",
+      "subCat": "Gebruiker zoeken",
       "type": "api"
     },
     {

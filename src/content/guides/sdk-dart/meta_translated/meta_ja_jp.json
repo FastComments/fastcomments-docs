@@ -9,12 +9,6 @@
       "type": "readme"
     },
     {
-      "name": "再生成",
-      "file": "regenerating-readme-generated.md",
-      "subCat": "ドキュメント",
-      "type": "readme"
-    },
-    {
       "name": "使用",
       "file": "use-readme-generated.md",
       "subCat": "ドキュメント",
@@ -39,27 +33,27 @@
       "type": "api"
     },
     {
-      "name": "ログアウト (公開)",
+      "name": "公開ログアウト",
       "file": "logoutpublic-api-generated.md",
       "subCat": "認証",
       "type": "api"
     },
     {
-      "name": "コメントからブロック (公開)",
+      "name": "公開コメントブロック",
       "file": "blockfromcommentpublic-api-generated.md",
       "subCat": "コメントからブロック",
       "type": "api"
     },
     {
-      "name": "コメントブロック解除 (公開)",
+      "name": "公開コメントブロック解除",
       "file": "unblockcommentpublic-api-generated.md",
       "subCat": "コメントからブロック",
       "type": "api"
     },
     {
-      "name": "ブロック対象コメントのチェック",
+      "name": "ブロック済みコメントの確認",
       "file": "checkedcommentsforblocked-api-generated.md",
-      "subCat": "ブロックされたコメントの確認",
+      "subCat": "ブロック済みコメントの確認",
       "type": "api"
     },
     {
@@ -69,7 +63,7 @@
       "type": "api"
     },
     {
-      "name": "コメント作成 (公開)",
+      "name": "公開コメント作成",
       "file": "createcommentpublic-api-generated.md",
       "subCat": "コメント",
       "type": "api"
@@ -81,7 +75,7 @@
       "type": "api"
     },
     {
-      "name": "コメント削除 (公開)",
+      "name": "公開コメント削除",
       "file": "deletecommentpublic-api-generated.md",
       "subCat": "コメント",
       "type": "api"
@@ -105,19 +99,19 @@
       "type": "api"
     },
     {
-      "name": "コメント一覧取得",
+      "name": "コメント取得一覧",
       "file": "getcomments-api-generated.md",
       "subCat": "コメント",
       "type": "api"
     },
     {
-      "name": "コメント一覧取得 (公開)",
+      "name": "公開コメント取得",
       "file": "getcommentspublic-api-generated.md",
       "subCat": "コメント",
       "type": "api"
     },
     {
-      "name": "コメント本文取得",
+      "name": "コメントテキスト取得",
       "file": "getcommenttext-api-generated.md",
       "subCat": "コメント",
       "type": "api"
@@ -135,7 +129,7 @@
       "type": "api"
     },
     {
-      "name": "コメントピン留め",
+      "name": "コメント固定",
       "file": "pincomment-api-generated.md",
       "subCat": "コメント",
       "type": "api"
@@ -153,7 +147,7 @@
       "type": "api"
     },
     {
-      "name": "コメント本文設定",
+      "name": "コメントテキスト設定",
       "file": "setcommenttext-api-generated.md",
       "subCat": "コメント",
       "type": "api"
@@ -177,7 +171,7 @@
       "type": "api"
     },
     {
-      "name": "コメントピン留め解除",
+      "name": "コメント固定解除",
       "file": "unpincomment-api-generated.md",
       "subCat": "コメント",
       "type": "api"
@@ -195,7 +189,7 @@
       "type": "api"
     },
     {
-      "name": "ユーザーのコメント取得",
+      "name": "ユーザー用コメント取得",
       "file": "getcommentsforuser-api-generated.md",
       "subCat": "ユーザー向けコメント",
       "type": "api"
@@ -225,13 +219,13 @@
       "type": "api"
     },
     {
-      "name": "ドメイン設定パッチ",
+      "name": "ドメイン設定パッチ適用",
       "file": "patchdomainconfig-api-generated.md",
       "subCat": "ドメイン設定",
       "type": "api"
     },
     {
-      "name": "ドメイン設定置換",
+      "name": "ドメイン設定更新",
       "file": "putdomainconfig-api-generated.md",
       "subCat": "ドメイン設定",
       "type": "api"
@@ -249,7 +243,7 @@
       "type": "api"
     },
     {
-      "name": "メールテンプレートレンダリングエラー削除",
+      "name": "メールテンプレート描画エラー削除",
       "file": "deleteemailtemplaterendererror-api-generated.md",
       "subCat": "メールテンプレート",
       "type": "api"
@@ -267,7 +261,7 @@
       "type": "api"
     },
     {
-      "name": "メールテンプレートレンダリングエラー取得",
+      "name": "メールテンプレート描画エラー取得",
       "file": "getemailtemplaterendererrors-api-generated.md",
       "subCat": "メールテンプレート",
       "type": "api"
@@ -279,7 +273,7 @@
       "type": "api"
     },
     {
-      "name": "メールテンプレートレンダリング",
+      "name": "メールテンプレート描画",
       "file": "renderemailtemplate-api-generated.md",
       "subCat": "メールテンプレート",
       "type": "api"
@@ -309,13 +303,13 @@
       "type": "api"
     },
     {
-      "name": "フィード投稿作成 (公開)",
+      "name": "公開フィード投稿作成",
       "file": "createfeedpostpublic-api-generated.md",
       "subCat": "フィード投稿",
       "type": "api"
     },
     {
-      "name": "フィード投稿削除 (公開)",
+      "name": "公開フィード投稿削除",
       "file": "deletefeedpostpublic-api-generated.md",
       "subCat": "フィード投稿",
       "type": "api"
@@ -327,7 +321,7 @@
       "type": "api"
     },
     {
-      "name": "フィード投稿取得 (公開)",
+      "name": "公開フィード投稿取得",
       "file": "getfeedpostspublic-api-generated.md",
       "subCat": "フィード投稿",
       "type": "api"
@@ -339,13 +333,13 @@
       "type": "api"
     },
     {
-      "name": "ユーザーリアクション取得 (公開)",
+      "name": "公開ユーザーリアクション取得",
       "file": "getuserreactspublic-api-generated.md",
       "subCat": "フィード投稿",
       "type": "api"
     },
     {
-      "name": "フィード投稿にリアクション (公開)",
+      "name": "公開フィード投稿にリアクション",
       "file": "reactfeedpostpublic-api-generated.md",
       "subCat": "フィード投稿",
       "type": "api"
@@ -357,13 +351,13 @@
       "type": "api"
     },
     {
-      "name": "フィード投稿更新 (公開)",
+      "name": "公開フィード投稿更新",
       "file": "updatefeedpostpublic-api-generated.md",
       "subCat": "フィード投稿",
       "type": "api"
     },
     {
-      "name": "コメント通報 (公開)",
+      "name": "公開コメント通報",
       "file": "flagcommentpublic-api-generated.md",
       "subCat": "コメント通報",
       "type": "api"
@@ -411,7 +405,7 @@
       "type": "api"
     },
     {
-      "name": "ハッシュタグパッチ",
+      "name": "ハッシュタグパッチ適用",
       "file": "patchhashtag-api-generated.md",
       "subCat": "ハッシュタグ",
       "type": "api"
@@ -441,31 +435,31 @@
       "type": "api"
     },
     {
-      "name": "コメントからのユーザーバン取得",
+      "name": "コメントからのBANユーザー取得",
       "file": "getbanusersfromcomment-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "コメントバンステータス取得",
+      "name": "コメントBANステータス取得",
       "file": "getcommentbanstatus-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "コメント子取得",
+      "name": "コメントの子取得",
       "file": "getcommentchildren-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "カウント取得",
+      "name": "件数取得",
       "file": "getcount-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "カウント一覧取得",
+      "name": "件数一覧取得",
       "file": "getcounts-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
@@ -483,7 +477,7 @@
       "type": "api"
     },
     {
-      "name": "ユーザーの手動バッジ取得",
+      "name": "ユーザー用手動バッジ取得",
       "file": "getmanualbadgesforuser-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
@@ -495,13 +489,13 @@
       "type": "api"
     },
     {
-      "name": "モデレーションコメント本文取得",
+      "name": "モデレーションコメントテキスト取得",
       "file": "getmoderationcommenttext-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "事前バンサマリー取得",
+      "name": "事前BANサマリー取得",
       "file": "getprebansummary-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
@@ -543,7 +537,7 @@
       "type": "api"
     },
     {
-      "name": "ユーザーバン設定取得",
+      "name": "ユーザーBAN設定取得",
       "file": "getuserbanpreference-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
@@ -567,25 +561,25 @@
       "type": "api"
     },
     {
-      "name": "コメントからユーザーをバン投稿",
+      "name": "コメントからユーザーBAN投稿",
       "file": "postbanuserfromcomment-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "ユーザーのバン取り消し投稿",
+      "name": "ユーザーBAN解除投稿",
       "file": "postbanuserundo-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "一括事前バンサマリー投稿",
+      "name": "一括事前BANサマリー投稿",
       "file": "postbulkprebansummary-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "IDでコメント取得投稿",
+      "name": "IDによるコメント投稿",
       "file": "postcommentsbyids-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
@@ -615,19 +609,19 @@
       "type": "api"
     },
     {
-      "name": "コメントレビュー状態設定投稿",
+      "name": "コメントレビューステータス設定投稿",
       "file": "postsetcommentreviewstatus-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "コメントスパム状態設定投稿",
+      "name": "コメントスパムステータス設定投稿",
       "file": "postsetcommentspamstatus-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "コメント本文設定投稿",
+      "name": "コメントテキスト設定投稿",
       "file": "postsetcommenttext-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
@@ -645,13 +639,13 @@
       "type": "api"
     },
     {
-      "name": "バッジ授与",
+      "name": "バッジ付与",
       "file": "putawardbadge-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "スレッドクローズ",
+      "name": "スレッド閉鎖",
       "file": "putclosethread-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
@@ -663,7 +657,7 @@
       "type": "api"
     },
     {
-      "name": "スレッド再オープン",
+      "name": "スレッド再開",
       "file": "putreopenthread-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
@@ -711,19 +705,19 @@
       "type": "api"
     },
     {
-      "name": "通知カウント削除",
+      "name": "通知数削除",
       "file": "deletenotificationcount-api-generated.md",
-      "subCat": "通知カウント",
+      "subCat": "通知数",
       "type": "api"
     },
     {
-      "name": "キャッシュ通知カウント取得",
+      "name": "キャッシュ通知数取得",
       "file": "getcachednotificationcount-api-generated.md",
-      "subCat": "通知カウント",
+      "subCat": "通知数",
       "type": "api"
     },
     {
-      "name": "通知カウント取得",
+      "name": "通知数取得",
       "file": "getnotificationcount-api-generated.md",
       "subCat": "通知",
       "type": "api"
@@ -741,43 +735,43 @@
       "type": "api"
     },
     {
-      "name": "V1ページリアクション作成",
+      "name": "ページリアクションV1作成",
       "file": "createv1pagereact-api-generated.md",
       "subCat": "ページリアクション",
       "type": "api"
     },
     {
-      "name": "V2ページリアクション作成",
+      "name": "ページリアクションV2作成",
       "file": "createv2pagereact-api-generated.md",
       "subCat": "ページリアクション",
       "type": "api"
     },
     {
-      "name": "V1ページリアクション削除",
+      "name": "ページリアクションV1削除",
       "file": "deletev1pagereact-api-generated.md",
       "subCat": "ページリアクション",
       "type": "api"
     },
     {
-      "name": "V2ページリアクション削除",
+      "name": "ページリアクションV2削除",
       "file": "deletev2pagereact-api-generated.md",
       "subCat": "ページリアクション",
       "type": "api"
     },
     {
-      "name": "V1ページいいね取得",
+      "name": "ページいいねV1取得",
       "file": "getv1pagelikes-api-generated.md",
       "subCat": "ページリアクション",
       "type": "api"
     },
     {
-      "name": "V2ページリアクション取得",
+      "name": "ページリアクションV2取得",
       "file": "getv2pagereacts-api-generated.md",
       "subCat": "ページリアクション",
       "type": "api"
     },
     {
-      "name": "V2ページリアクションユーザー取得",
+      "name": "ページリアクションV2ユーザー取得",
       "file": "getv2pagereactusers-api-generated.md",
       "subCat": "ページリアクション",
       "type": "api"
@@ -819,7 +813,7 @@
       "type": "api"
     },
     {
-      "name": "ページ取得 (公開)",
+      "name": "公開ページ取得",
       "file": "getpagespublic-api-generated.md",
       "subCat": "ページ",
       "type": "api"
@@ -831,7 +825,7 @@
       "type": "api"
     },
     {
-      "name": "ページパッチ",
+      "name": "ページパッチ適用",
       "file": "patchpage-api-generated.md",
       "subCat": "ページ",
       "type": "api"
@@ -957,19 +951,19 @@
       "type": "api"
     },
     {
-      "name": "SSOユーザー取得",
+      "name": "SSOユーザー一覧取得",
       "file": "getssousers-api-generated.md",
       "subCat": "SSOユーザー",
       "type": "api"
     },
     {
-      "name": "SSOユーザーパッチ",
+      "name": "SSOユーザーパッチ適用",
       "file": "patchssouser-api-generated.md",
       "subCat": "SSOユーザー",
       "type": "api"
     },
     {
-      "name": "SSOユーザー置換",
+      "name": "SSOユーザー更新",
       "file": "putssouser-api-generated.md",
       "subCat": "SSOユーザー",
       "type": "api"
@@ -1149,21 +1143,21 @@
       "type": "api"
     },
     {
-      "name": "バッジ進行状況取得(ID)",
+      "name": "バッジ進捗取得（ID）",
       "file": "getuserbadgeprogressbyid-api-generated.md",
-      "subCat": "ユーザーバッジ進行状況",
+      "subCat": "ユーザーバッジ進捗",
       "type": "api"
     },
     {
-      "name": "バッジ進行状況取得(ユーザーID)",
+      "name": "バッジ進捗取得（ユーザーID）",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
-      "subCat": "ユーザーバッジ進行状況",
+      "subCat": "ユーザーバッジ進捗",
       "type": "api"
     },
     {
-      "name": "バッジ進行状況一覧取得",
+      "name": "バッジ進捗一覧取得",
       "file": "getuserbadgeprogresslist-api-generated.md",
-      "subCat": "ユーザーバッジ進行状況",
+      "subCat": "ユーザーバッジ進捗",
       "type": "api"
     },
     {
@@ -1197,7 +1191,7 @@
       "type": "api"
     },
     {
-      "name": "ユーザー通知カウント取得",
+      "name": "ユーザー通知数取得",
       "file": "getusernotificationcount-api-generated.md",
       "subCat": "ユーザー通知",
       "type": "api"
@@ -1209,7 +1203,7 @@
       "type": "api"
     },
     {
-      "name": "ユーザー通知カウントリセット",
+      "name": "ユーザー通知数リセット",
       "file": "resetusernotificationcount-api-generated.md",
       "subCat": "ユーザー通知",
       "type": "api"
@@ -1233,15 +1227,15 @@
       "type": "api"
     },
     {
-      "name": "ユーザー通知ステータス更新",
+      "name": "通知ステータス更新",
       "file": "updateusernotificationstatus-api-generated.md",
       "subCat": "ユーザー通知",
       "type": "api"
     },
     {
-      "name": "ユーザー在席ステータス取得",
+      "name": "ユーザー在席状態取得",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "ユーザー在席ステータス",
+      "subCat": "ユーザー在席状態",
       "type": "api"
     },
     {

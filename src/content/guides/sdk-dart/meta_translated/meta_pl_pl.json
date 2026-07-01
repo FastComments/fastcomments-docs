@@ -9,12 +9,6 @@
       "type": "readme"
     },
     {
-      "name": "Regenerating",
-      "file": "regenerating-readme-generated.md",
-      "subCat": "Dokumentacja",
-      "type": "readme"
-    },
-    {
       "name": "Use",
       "file": "use-readme-generated.md",
       "subCat": "Dokumentacja",
@@ -59,7 +53,7 @@
     {
       "name": "checkedCommentsForBlocked",
       "file": "checkedcommentsforblocked-api-generated.md",
-      "subCat": "Sprawdź zablokowane komentarze",
+      "subCat": "Sprawdzanie zablokowanych komentarzy",
       "type": "api"
     },
     {
@@ -305,67 +299,67 @@
     {
       "name": "createFeedPost",
       "file": "createfeedpost-api-generated.md",
-      "subCat": "Posty na kanale",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
       "name": "createFeedPostPublic",
       "file": "createfeedpostpublic-api-generated.md",
-      "subCat": "Posty na kanale",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
       "name": "deleteFeedPostPublic",
       "file": "deletefeedpostpublic-api-generated.md",
-      "subCat": "Posty na kanale",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
       "name": "getFeedPosts",
       "file": "getfeedposts-api-generated.md",
-      "subCat": "Posty na kanale",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
       "name": "getFeedPostsPublic",
       "file": "getfeedpostspublic-api-generated.md",
-      "subCat": "Posty na kanale",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
       "name": "getFeedPostsStats",
       "file": "getfeedpostsstats-api-generated.md",
-      "subCat": "Posty na kanale",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
       "name": "getUserReactsPublic",
       "file": "getuserreactspublic-api-generated.md",
-      "subCat": "Posty na kanale",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
       "name": "reactFeedPostPublic",
       "file": "reactfeedpostpublic-api-generated.md",
-      "subCat": "Posty na kanale",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
       "name": "updateFeedPost",
       "file": "updatefeedpost-api-generated.md",
-      "subCat": "Posty na kanale",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
       "name": "updateFeedPostPublic",
       "file": "updatefeedpostpublic-api-generated.md",
-      "subCat": "Posty na kanale",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
       "name": "flagCommentPublic",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Oznacz komentarz",
+      "subCat": "Zgłoszenie komentarza",
       "type": "api"
     },
     {
@@ -389,31 +383,31 @@
     {
       "name": "addHashTag",
       "file": "addhashtag-api-generated.md",
-      "subCat": "Hashtagi",
+      "subCat": "Hasztagi",
       "type": "api"
     },
     {
       "name": "addHashTagsBulk",
       "file": "addhashtagsbulk-api-generated.md",
-      "subCat": "Hashtagi",
+      "subCat": "Hasztagi",
       "type": "api"
     },
     {
       "name": "deleteHashTag",
       "file": "deletehashtag-api-generated.md",
-      "subCat": "Hashtagi",
+      "subCat": "Hasztagi",
       "type": "api"
     },
     {
       "name": "getHashTags",
       "file": "gethashtags-api-generated.md",
-      "subCat": "Hashtagi",
+      "subCat": "Hasztagi",
       "type": "api"
     },
     {
       "name": "patchHashTag",
       "file": "patchhashtag-api-generated.md",
-      "subCat": "Hashtagi",
+      "subCat": "Hasztagi",
       "type": "api"
     },
     {
@@ -1001,7 +995,7 @@
     {
       "name": "getTenantDailyUsages",
       "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "Użycie dzienne najemcy",
+      "subCat": "Dzienne zużycie najemcy",
       "type": "api"
     },
     {
