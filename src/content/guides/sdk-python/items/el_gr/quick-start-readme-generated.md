@@ -1,25 +1,25 @@
 ### Using Authenticated APIs (DefaultApi)
 
-**Σημαντικό:** Πρέπει να ορίσετε το κλειδί API σας στη Διαμόρφωση (Configuration) πριν κάνετε πιστοποιημένα αιτήματα. Αν δεν το κάνετε, τα αιτήματα θα αποτύχουν με σφάλμα 401.
+**Σημαντικό:** Πρέπει να ορίσετε το κλειδί API σας στη Διαμόρφωση (Configuration) πριν κάνετε αυθεντοποιημένα αιτήματα. Εάν δεν το κάνετε, τα αιτήματα θα αποτύχουν με σφάλμα 401.
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
 from client.models import CreateAPISSOUserData
 
-# Δημιουργία και διαμόρφωση του πελάτη API
+# Create and configure the API client
 config = Configuration()
-config.host = "https://fastcomments.com/api"
+config.host = "https://fastcomments.com"
 
-# ΑΠΑΙΤΟΥΜΕΝΟ: Ορίστε το κλειδί API σας (ανακτήστε το από τον πίνακα ελέγχου FastComments)
-config.api_key = {"ApiKeyAuth": "YOUR_API_KEY_HERE"}
+# REQUIRED: Set your API key (get this from your FastComments dashboard)
+config.api_key = {"api_key": "YOUR_API_KEY_HERE"}
 
-# Δημιουργία της διεπαφής API με τον διαμορφωμένο πελάτη
+# Create the API instance with the configured client
 api_client = ApiClient(configuration=config)
 api = DefaultApi(api_client)
 
-# Τώρα μπορείτε να κάνετε πιστοποιημένα κλήσεις API
+# Now you can make authenticated API calls
 try:
-    # Παράδειγμα: Προσθήκη χρήστη SSO
+    # Example: Add an SSO user
     user_data = CreateAPISSOUserData(
         id="user-123",
         email="user@example.com",
@@ -31,20 +31,20 @@ try:
 
 except Exception as e:
     print(f"Error: {e}")
-    # Συνηθισμένα σφάλματα:
-    # - 404: Το κλειδί API λείπει ή είναι άκυρο
-    # - 400: Η επικύρωση του αιτήματος απέτυχε
+    # Common errors:
+    # - 401: API key is missing or invalid
+    # - 400: Request validation failed
 ```
 
 ### Using Public APIs (PublicApi)
 
-Τα δημόσια σημεία πρόσβασης δεν απαιτούν πιστοποίηση:
+Public endpoints don't require authentication:
 
 ```python
 from client import ApiClient, Configuration, PublicApi
 
 config = Configuration()
-config.host = "https://fastcomments.com/api"
+config.host = "https://fastcomments.com"
 
 api_client = ApiClient(configuration=config)
 public_api = PublicApi(api_client)
@@ -58,20 +58,20 @@ except Exception as e:
 
 ### Using the Moderation Dashboard (ModerationApi)
 
-Το `ModerationApi` τροφοδοτεί τον πίνακα ελέγχου του συντονιστή. Οι μέθοδοι καλούνται εκ μέρους ενός συντονιστή περνώντας ένα διακριτικό `sso`:
+The `ModerationApi` powers the moderator dashboard. Methods are called on behalf of a moderator by passing an `sso` token:
 
 ```python
 from client import ApiClient, Configuration, ModerationApi
 from client.api.moderation_api import GetCountOptions
 
 config = Configuration()
-config.host = "https://fastcomments.com/api"
+config.host = "https://fastcomments.com"
 
 api_client = ApiClient(configuration=config)
 moderation_api = ModerationApi(api_client)
 
 try:
-    # Καταμέτρηση των σχολίων που περιμένουν εποπτεία
+    # Count the comments awaiting moderation
     response = moderation_api.get_count(GetCountOptions(sso="SSO_TOKEN"))
     print(response)
 except Exception as e:
@@ -80,29 +80,26 @@ except Exception as e:
 
 ### Using SSO (Single Sign-On)
 
-Το SDK περιλαμβάνει εργαλεία για τη δημιουργία ασφαλών διακριτικών SSO:
+The SDK includes utilities for generating secure SSO tokens:
 
 ```python
 from sso import FastCommentsSSO, SecureSSOUserData
 
-# Δημιουργία δεδομένων χρήστη
+# Create user data (id, email, and username are required)
 user_data = SecureSSOUserData(
-    user_id="user-123",
+    id="user-123",
     email="user@example.com",
     username="johndoe",
     avatar="https://example.com/avatar.jpg"
 )
 
-# Δημιουργία παραδείγματος SSO με το μυστικό API σας
-sso = FastCommentsSSO.new_secure(
-    api_secret="YOUR_API_SECRET",
-    user_data=user_data
-)
+# Sign it with your API secret (HMAC-SHA256)
+sso = FastCommentsSSO.new_secure("YOUR_API_SECRET", user_data)
 
-# Δημιουργία του διακριτικού SSO
+# Generate the SSO token to pass to the widget or an API call
 sso_token = sso.create_token()
 
-# Χρησιμοποιήστε αυτό το διακριτικό στο frontend σας ή περάστε το σε κλήσεις API
+# Use this token in your frontend or pass to API calls
 print(f"SSO Token: {sso_token}")
 ```
 
@@ -112,7 +109,7 @@ For simple SSO (less secure, for testing):
 from sso import FastCommentsSSO, SimpleSSOUserData
 
 user_data = SimpleSSOUserData(
-    user_id="user-123",
+    username="johndoe",
     email="user@example.com"
 )
 
@@ -122,8 +119,8 @@ sso_token = sso.create_token()
 
 ### Common Issues
 
-1. **401 "missing-api-key" error**: Βεβαιωθείτε ότι έχετε ορίσει `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` πριν δημιουργήσετε το στιγμιότυπο DefaultApi.
-2. **Wrong API class**: Χρησιμοποιήστε `DefaultApi` για αιτήματα πιστοποιημένα από τον διακομιστή, `PublicApi` για αιτήματα από τον πελάτη/δημόσια, και `ModerationApi` για αιτήματα πίνακα ελέγχου συντονιστή.
-3. **Import errors**: Βεβαιωθείτε ότι εισάγετε από το σωστό module:
-   - **Πελάτης API**: `from client import ...`
-   - **Εργαλεία SSO**: `from sso import ...`
+1. **401 "missing-api-key" error**: Make sure you set `config.api_key = {"api_key": "YOUR_KEY"}` before creating the DefaultApi instance.
+2. **Wrong API class**: Use `DefaultApi` for server-side authenticated requests, `PublicApi` for client-side/public requests, and `ModerationApi` for moderator dashboard requests.
+3. **Import errors**: Make sure you're importing from the correct module:
+   - API client: `from client import ...`
+   - SSO utilities: `from sso import ...`

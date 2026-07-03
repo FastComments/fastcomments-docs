@@ -1,25 +1,25 @@
 ### Usando APIs Autenticadas (DefaultApi)
 
-**Importante:** Você deve definir sua chave de API na Configuração antes de fazer solicitações autenticadas. Se não o fizer, as solicitações falharão com erro 401.
+**Importante:** Você deve definir sua chave de API na Configuração antes de fazer solicitações autenticadas. Se não o fizer, as solicitações falharão com um erro 401.
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
 from client.models import CreateAPISSOUserData
 
-# Create and configure the API client
+# Crie e configure o cliente API
 config = Configuration()
-config.host = "https://fastcomments.com/api"
+config.host = "https://fastcomments.com"
 
-# REQUIRED: Set your API key (get this from your FastComments dashboard)
-config.api_key = {"ApiKeyAuth": "YOUR_API_KEY_HERE"}
+# OBRIGATÓRIO: Defina sua chave de API (obtenha isto no painel do FastComments)
+config.api_key = {"api_key": "YOUR_API_KEY_HERE"}
 
-# Create the API instance with the configured client
+# Crie a instância da API com o cliente configurado
 api_client = ApiClient(configuration=config)
 api = DefaultApi(api_client)
 
-# Now you can make authenticated API calls
+# Agora você pode fazer chamadas de API autenticadas
 try:
-    # Example: Add an SSO user
+    # Exemplo: Adicionar um usuário SSO
     user_data = CreateAPISSOUserData(
         id="user-123",
         email="user@example.com",
@@ -31,9 +31,9 @@ try:
 
 except Exception as e:
     print(f"Error: {e}")
-    # Common errors:
-    # - 401: API key is missing or invalid
-    # - 400: Request validation failed
+    # Erros comuns:
+    # - 401: chave de API está ausente ou inválida
+    # - 400: validação da solicitação falhou
 ```
 
 ### Usando APIs Públicas (PublicApi)
@@ -44,7 +44,7 @@ Endpoints públicos não requerem autenticação:
 from client import ApiClient, Configuration, PublicApi
 
 config = Configuration()
-config.host = "https://fastcomments.com/api"
+config.host = "https://fastcomments.com"
 
 api_client = ApiClient(configuration=config)
 public_api = PublicApi(api_client)
@@ -65,13 +65,13 @@ from client import ApiClient, Configuration, ModerationApi
 from client.api.moderation_api import GetCountOptions
 
 config = Configuration()
-config.host = "https://fastcomments.com/api"
+config.host = "https://fastcomments.com"
 
 api_client = ApiClient(configuration=config)
 moderation_api = ModerationApi(api_client)
 
 try:
-    # Count the comments awaiting moderation
+    # Contar os comentários que aguardam moderação
     response = moderation_api.get_count(GetCountOptions(sso="SSO_TOKEN"))
     print(response)
 except Exception as e:
@@ -85,34 +85,31 @@ O SDK inclui utilitários para gerar tokens SSO seguros:
 ```python
 from sso import FastCommentsSSO, SecureSSOUserData
 
-# Create user data
+# Crie os dados do usuário (id, email e nome de usuário são obrigatórios)
 user_data = SecureSSOUserData(
-    user_id="user-123",
+    id="user-123",
     email="user@example.com",
     username="johndoe",
     avatar="https://example.com/avatar.jpg"
 )
 
-# Create SSO instance with your API secret
-sso = FastCommentsSSO.new_secure(
-    api_secret="YOUR_API_SECRET",
-    user_data=user_data
-)
+# Assine com seu segredo da API (HMAC-SHA256)
+sso = FastCommentsSSO.new_secure("YOUR_API_SECRET", user_data)
 
-# Generate the SSO token
+# Gere o token SSO para passar ao widget ou a uma chamada de API
 sso_token = sso.create_token()
 
-# Use this token in your frontend or pass to API calls
+# Use este token no seu frontend ou passe para chamadas de API
 print(f"SSO Token: {sso_token}")
 ```
 
-Para SSO simples (menos seguro, para teste):
+Para SSO simples (menos seguro, para testes):
 
 ```python
 from sso import FastCommentsSSO, SimpleSSOUserData
 
 user_data = SimpleSSOUserData(
-    user_id="user-123",
+    username="johndoe",
     email="user@example.com"
 )
 
@@ -122,8 +119,8 @@ sso_token = sso.create_token()
 
 ### Problemas Comuns
 
-1. **Erro 401 "missing-api-key"**: Certifique‑se de definir `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` antes de criar a instância `DefaultApi`.
-2. **Classe de API errada**: Use `DefaultApi` para solicitações autenticadas do lado do servidor, `PublicApi` para solicitações client‑side/públicas e `ModerationApi` para solicitações do painel de moderador.
-3. **Erros de importação**: Certifique‑se de estar importando do módulo correto:
+1. **Erro 401 "missing-api-key"**: Certifique‑se de definir `config.api_key = {"api_key": "YOUR_KEY"}` antes de criar a instância DefaultApi.
+2. **Classe de API incorreta**: Use `DefaultApi` para solicitações autenticadas no servidor, `PublicApi` para solicitações do lado cliente/públicas, e `ModerationApi` para solicitações do painel de moderador.
+3. **Erros de importação**: Certifique‑se de que está importando do módulo correto:
    - Cliente da API: `from client import ...`
    - Utilitários SSO: `from sso import ...`

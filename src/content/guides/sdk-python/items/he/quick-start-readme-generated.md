@@ -1,25 +1,25 @@
 ### Using Authenticated APIs (DefaultApi)
 
-**חשוב:** עליך לקבוע את מפתח ה-API שלך בתצורה לפני ביצוע בקשות מאומתות. אם לא תעשה זאת, הבקשות יכשלו עם שגיאת 401.
+**חשוב:** עליך להגדיר את מפתח ה‑API שלך ב‑Configuration לפני ביצוע בקשות מאומתות. אם לא תעשה זאת, הבקשות יכשלו עם שגיאת 401.
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
 from client.models import CreateAPISSOUserData
 
-# צור והגדר את לקוח ה-API
+# יצור והגדרת לקוח ה‑API
 config = Configuration()
-config.host = "https://fastcomments.com/api"
+config.host = "https://fastcomments.com"
 
-# נחוץ: הגדר את מפתח ה-API שלך (קבל זאת מלוח הבקרה של FastComments)
-config.api_key = {"ApiKeyAuth": "YOUR_API_KEY_HERE"}
+# חובה: הגדר את מפתח ה‑API שלך (קבל זאת מלוח הבקרה של FastComments)
+config.api_key = {"api_key": "YOUR_API_KEY_HERE"}
 
-# צור את מופע ה-API עם הלקוח המוגדר
+# צור את מופע ה‑API עם הלקוח המוגדר
 api_client = ApiClient(configuration=config)
 api = DefaultApi(api_client)
 
-# עכשיו אתה יכול לבצע קריאות API מאומתות
+# עכשיו ניתן לבצע קריאות API מאומתות
 try:
-    # לדוגמה: הוסף משתמש SSO
+    # דוגמה: הוספת משתמש SSO
     user_data = CreateAPISSOUserData(
         id="user-123",
         email="user@example.com",
@@ -31,8 +31,8 @@ try:
 
 except Exception as e:
     print(f"Error: {e}")
-    # שגאים נפוצים:
-    # - 401: מפתח ה-API חסר או לא תקף
+    # שגיאות נפוצות:
+    # - 401: מפתח ה‑API חסר או לא תקין
     # - 400: אימות הבקשה נכשל
 ```
 
@@ -44,7 +44,7 @@ Public endpoints don't require authentication:
 from client import ApiClient, Configuration, PublicApi
 
 config = Configuration()
-config.host = "https://fastcomments.com/api"
+config.host = "https://fastcomments.com"
 
 api_client = ApiClient(configuration=config)
 public_api = PublicApi(api_client)
@@ -58,20 +58,20 @@ except Exception as e:
 
 ### Using the Moderation Dashboard (ModerationApi)
 
-`ModerationApi` powers the moderator dashboard. Methods are called on behalf of a moderator by passing an `sso` token:
+The `ModerationApi` powers the moderator dashboard. Methods are called on behalf of a moderator by passing an `sso` token:
 
 ```python
 from client import ApiClient, Configuration, ModerationApi
 from client.api.moderation_api import GetCountOptions
 
 config = Configuration()
-config.host = "https://fastcomments.com/api"
+config.host = "https://fastcomments.com"
 
 api_client = ApiClient(configuration=config)
 moderation_api = ModerationApi(api_client)
 
 try:
-    # ציין את מספר ההערות במחכה למודרציה
+    # ספירת ההערות שממתינות למודעות
     response = moderation_api.get_count(GetCountOptions(sso="SSO_TOKEN"))
     print(response)
 except Exception as e:
@@ -85,24 +85,21 @@ The SDK includes utilities for generating secure SSO tokens:
 ```python
 from sso import FastCommentsSSO, SecureSSOUserData
 
-# צור נתוני משתמש
+# יצירת נתוני משתמש (id, email, ו‑username נדרשים)
 user_data = SecureSSOUserData(
-    user_id="user-123",
+    id="user-123",
     email="user@example.com",
     username="johndoe",
     avatar="https://example.com/avatar.jpg"
 )
 
-# צור מופע SSO עם סוד ה-API שלך
-sso = FastCommentsSSO.new_secure(
-    api_secret="YOUR_API_SECRET",
-    user_data=user_data
-)
+# חתימה עם סוד ה‑API שלך (HMAC‑SHA256)
+sso = FastCommentsSSO.new_secure("YOUR_API_SECRET", user_data)
 
-# צור את אסימון ה-SSO
+# יצירת טוקן SSO להעברה לווידג'ט או לקריאת API
 sso_token = sso.create_token()
 
-# השתמש באסימון זה בצד הקליינט או העבר לקריאות ה-API
+# השתמש בטוקן זה בממשק הקדמי או העבר אותו לקריאות API
 print(f"SSO Token: {sso_token}")
 ```
 
@@ -112,7 +109,7 @@ For simple SSO (less secure, for testing):
 from sso import FastCommentsSSO, SimpleSSOUserData
 
 user_data = SimpleSSOUserData(
-    user_id="user-123",
+    username="johndoe",
     email="user@example.com"
 )
 
@@ -122,8 +119,8 @@ sso_token = sso.create_token()
 
 ### Common Issues
 
-1. **401 "missing-api-key" error**: ודא שהגדרת `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` לפני יצירת מופע DefaultApi.
-2. **Wrong API class**: השתמש ב-`DefaultApi` לבקשות מאומתות בצד השרת, `PublicApi` לבקשות ציבוריות/בצד הלקוח, ו-`ModerationApi` לבקשות ללוח המודרציה.
-3. **Import errors**: ודא שאתה מייבא מהמודול הנכון:
+1. **שגיאת 401 "missing-api-key":** ודא שהגדרת `config.api_key = {"api_key": "YOUR_KEY"}` לפני יצירת מופע ה‑DefaultApi.
+2. **מחלקת API שגויה:** השתמש ב‑`DefaultApi` לבקשות מאומתות בצד השרת, ב‑`PublicApi` לבקשות ציבוריות/צד הלקוח, וב‑`ModerationApi` לבקשות מדף המודרטור.
+3. **שגיאות ייבוא:** ודא שאתה מייבא מהמודול הנכון:
    - לקוח API: `from client import ...`
-   - כלים ל-SSO: `from sso import ...`
+   - כלי SSO: `from sso import ...`

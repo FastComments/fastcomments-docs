@@ -1,6 +1,6 @@
-### Gebruik geauthentiseerde API's (DefaultApi)
+### Gebruik geauthenticeerde API's (DefaultApi)
 
-**Belangrijk:** U moet uw API‑sleutel instellen in de Configuration voordat u geauthentiseerde verzoeken maakt. Als u dat niet doet, zullen verzoeken falen met een 401‑fout.
+**Belangrijk:** Je moet je API‑sleutel op de Configuration instellen voordat je geauthenticeerde verzoeken doet. Als je dat niet doet, zullen verzoeken falen met een 401‑fout.
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
@@ -8,16 +8,16 @@ from client.models import CreateAPISSOUserData
 
 # Maak en configureer de API-client
 config = Configuration()
-config.host = "https://fastcomments.com/api"
+config.host = "https://fastcomments.com"
 
-# VERPLICHT: Stel uw API-sleutel in (haal deze op vanuit uw FastComments-dashboard)
-config.api_key = {"ApiKeyAuth": "YOUR_API_KEY_HERE"}
+# VERPLICHT: Stel je API-sleutel in (haal deze op vanuit je FastComments-dashboard)
+config.api_key = {"api_key": "YOUR_API_KEY_HERE"}
 
 # Maak de API-instantie met de geconfigureerde client
 api_client = ApiClient(configuration=config)
 api = DefaultApi(api_client)
 
-# Nu kunt u geauthentiseerde API‑aanroepen doen
+# Nu kun je geauthenticeerde API-aanroepen doen
 try:
     # Voorbeeld: Voeg een SSO-gebruiker toe
     user_data = CreateAPISSOUserData(
@@ -33,18 +33,18 @@ except Exception as e:
     print(f"Error: {e}")
     # Veelvoorkomende fouten:
     # - 401: API-sleutel ontbreekt of is ongeldig
-    # - 400: Validatie van verzoek mislukt
+    # - 400: Verzoekvalidatie mislukt
 ```
 
 ### Gebruik openbare API's (PublicApi)
 
-Openbare eindpunten vereisen geen authenticatie:
+Openbare endpoints vereisen geen authenticatie:
 
 ```python
 from client import ApiClient, Configuration, PublicApi
 
 config = Configuration()
-config.host = "https://fastcomments.com/api"
+config.host = "https://fastcomments.com"
 
 api_client = ApiClient(configuration=config)
 public_api = PublicApi(api_client)
@@ -58,20 +58,20 @@ except Exception as e:
 
 ### Gebruik het moderatiedashboard (ModerationApi)
 
-`ModerationApi` voedt het moderatiedashboard. Methodes worden uitgevoerd namens een moderator door een `sso`‑token door te geven:
+De `ModerationApi` levert de functionaliteit voor het moderator‑dashboard. Methodes worden aangeroepen namens een moderator door een `sso`‑token mee te geven:
 
 ```python
 from client import ApiClient, Configuration, ModerationApi
 from client.api.moderation_api import GetCountOptions
 
 config = Configuration()
-config.host = "https://fastcomments.com/api"
+config.host = "https://fastcomments.com"
 
 api_client = ApiClient(configuration=config)
 moderation_api = ModerationApi(api_client)
 
 try:
-    # Tel de reacties die op moderatie wachten
+    # Tel de reacties die wacht op moderatie
     response = moderation_api.get_count(GetCountOptions(sso="SSO_TOKEN"))
     print(response)
 except Exception as e:
@@ -85,34 +85,31 @@ De SDK bevat hulpprogramma's voor het genereren van veilige SSO‑tokens:
 ```python
 from sso import FastCommentsSSO, SecureSSOUserData
 
-# Maak gebruikersgegevens
+# Maak gebruikersgegevens (id, e‑mail en gebruikersnaam zijn vereist)
 user_data = SecureSSOUserData(
-    user_id="user-123",
+    id="user-123",
     email="user@example.com",
     username="johndoe",
     avatar="https://example.com/avatar.jpg"
 )
 
-# Maak een SSO-instantie met uw API-geheim
-sso = FastCommentsSSO.new_secure(
-    api_secret="YOUR_API_SECRET",
-    user_data=user_data
-)
+# Onderteken met je API-geheim (HMAC-SHA256)
+sso = FastCommentsSSO.new_secure("YOUR_API_SECRET", user_data)
 
-# Genereer de SSO-token
+# Genereer de SSO-token om door te geven aan de widget of een API‑aanroep
 sso_token = sso.create_token()
 
-# Gebruik dit token in uw frontend of geef het door aan API‑aanroepen
+# Gebruik deze token in je frontend of geef door aan API‑aanroepen
 print(f"SSO Token: {sso_token}")
 ```
 
-Voor eenvoudige SSO (minder veilig, voor testen):
+Voor eenvoudig SSO (minder veilig, voor testen):
 
 ```python
 from sso import FastCommentsSSO, SimpleSSOUserData
 
 user_data = SimpleSSOUserData(
-    user_id="user-123",
+    username="johndoe",
     email="user@example.com"
 )
 
@@ -122,8 +119,8 @@ sso_token = sso.create_token()
 
 ### Veelvoorkomende problemen
 
-1. **401 "missing-api-key" fout**: Zorg ervoor dat u `config.api_key = {"ApiKeyAuth": "YOUR_KEY"}` instelt voordat u de DefaultApi‑instantie maakt.
-2. **Verkeerde API-klasse**: Gebruik `DefaultApi` voor server‑side geauthentiseerde verzoeken, `PublicApi` voor client‑side/openbare verzoeken, en `ModerationApi` voor verzoeken vanuit het moderatiedashboard.
-3. **Importfouten**: Zorg ervoor dat u importeert vanuit de juiste module:
-   - API-client: `from client import ...`
+1. **401 "missing-api-key" fout**: Zorg ervoor dat je `config.api_key = {\"api_key\": \"YOUR_KEY\"}` instelt voordat je de DefaultApi‑instantie maakt.
+2. **Verkeerde API-klasse**: Gebruik `DefaultApi` voor server‑side geauthenticeerde verzoeken, `PublicApi` voor client‑side/openbare verzoeken, en `ModerationApi` voor verzoeken van het moderator‑dashboard.
+3. **Importfouten**: Zorg ervoor dat je importeert vanuit de juiste module:
+   - API‑client: `from client import ...`
    - SSO‑hulpmiddelen: `from sso import ...`
