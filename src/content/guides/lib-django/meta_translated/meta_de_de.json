@@ -1,0 +1,72 @@
+{
+  "name": "Django-Paket",
+  "pageHeader": "Kommentare zu Ihrer Django-App hinzufügen",
+  "itemsOrdered": [
+    {
+      "name": "Anforderungen",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Installation",
+      "file": "installation-readme-generated.md",
+      "subCat": "Erste Schritte",
+      "type": "readme"
+    },
+    {
+      "name": "Schnellstart",
+      "file": "quickstart-readme-generated.md",
+      "subCat": "Verwendung",
+      "type": "readme"
+    },
+    {
+      "name": "Voraussetzungen für automatisches SSO",
+      "file": "prerequisites-for-automatic-sso-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Widget-Tags",
+      "file": "widget-tags-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "SSO (Single Sign-On)",
+      "file": "sso-single-sign-on-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Serverseitiger API-Zugriff",
+      "file": "server-side-api-access-readme-generated.md",
+      "subCat": "API-Referenz",
+      "type": "readme"
+    },
+    {
+      "name": "EU-Region",
+      "file": "eu-region-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Anpassen des Einbettungs-Markups",
+      "file": "customizing-the-embed-markup-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Einstellungsreferenz",
+      "file": "settings-reference-readme-generated.md",
+      "subCat": "API-Referenz",
+      "type": "readme"
+    },
+    {
+      "name": "Beispielprojekt",
+      "file": "example-project-readme-generated.md",
+      "subCat": "Verwendung",
+      "type": "readme"
+    }
+  ]
+}

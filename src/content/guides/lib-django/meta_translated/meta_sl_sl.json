@@ -1,0 +1,72 @@
+{
+  "name": "Django paket",
+  "pageHeader": "Dodajte komentarje v svojo Django aplikacijo",
+  "itemsOrdered": [
+    {
+      "name": "Zahteve",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Namestitev",
+      "file": "installation-readme-generated.md",
+      "subCat": "Začetek",
+      "type": "readme"
+    },
+    {
+      "name": "Hitri začetek",
+      "file": "quickstart-readme-generated.md",
+      "subCat": "Uporaba",
+      "type": "readme"
+    },
+    {
+      "name": "Predpogoji za samodejno SSO",
+      "file": "prerequisites-for-automatic-sso-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Oznake pripomočkov",
+      "file": "widget-tags-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "SSO (Enotna prijava)",
+      "file": "sso-single-sign-on-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Dostop do strežniškega API-ja",
+      "file": "server-side-api-access-readme-generated.md",
+      "subCat": "Referenca API",
+      "type": "readme"
+    },
+    {
+      "name": "EU regija",
+      "file": "eu-region-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Prilagajanje vdelane oznake",
+      "file": "customizing-the-embed-markup-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Referenca nastavitev",
+      "file": "settings-reference-readme-generated.md",
+      "subCat": "Referenca API",
+      "type": "readme"
+    },
+    {
+      "name": "Primer projekta",
+      "file": "example-project-readme-generated.md",
+      "subCat": "Uporaba",
+      "type": "readme"
+    }
+  ]
+}

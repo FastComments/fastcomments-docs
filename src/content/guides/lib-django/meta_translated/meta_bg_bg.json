@@ -1,0 +1,72 @@
+{
+  "name": "Пакет Django",
+  "pageHeader": "Добавете коментари към вашето Django приложение",
+  "itemsOrdered": [
+    {
+      "name": "Изисквания",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Инсталиране",
+      "file": "installation-readme-generated.md",
+      "subCat": "Започване",
+      "type": "readme"
+    },
+    {
+      "name": "Бърз старт",
+      "file": "quickstart-readme-generated.md",
+      "subCat": "Употреба",
+      "type": "readme"
+    },
+    {
+      "name": "Предпоставки за автоматично SSO",
+      "file": "prerequisites-for-automatic-sso-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Тагове за уиджети",
+      "file": "widget-tags-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "SSO (Единно влизане)",
+      "file": "sso-single-sign-on-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Достъп до API от сървъра",
+      "file": "server-side-api-access-readme-generated.md",
+      "subCat": "API справка",
+      "type": "readme"
+    },
+    {
+      "name": "Регион ЕС",
+      "file": "eu-region-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Персонализиране на кода за вграждане",
+      "file": "customizing-the-embed-markup-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Справка за настройки",
+      "file": "settings-reference-readme-generated.md",
+      "subCat": "API справка",
+      "type": "readme"
+    },
+    {
+      "name": "Примерен проект",
+      "file": "example-project-readme-generated.md",
+      "subCat": "Употреба",
+      "type": "readme"
+    }
+  ]
+}

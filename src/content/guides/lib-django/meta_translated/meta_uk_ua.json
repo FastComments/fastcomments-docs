@@ -1,0 +1,72 @@
+{
+  "name": "Пакет Django",
+  "pageHeader": "Додайте коментарі до вашого Django‑додатку",
+  "itemsOrdered": [
+    {
+      "name": "Вимоги",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Встановлення",
+      "file": "installation-readme-generated.md",
+      "subCat": "Початок роботи",
+      "type": "readme"
+    },
+    {
+      "name": "Швидкий старт",
+      "file": "quickstart-readme-generated.md",
+      "subCat": "Використання",
+      "type": "readme"
+    },
+    {
+      "name": "Передумови для автоматичного SSO",
+      "file": "prerequisites-for-automatic-sso-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Теги віджету",
+      "file": "widget-tags-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "SSO (єдиний вхід)",
+      "file": "sso-single-sign-on-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Доступ до API на боці сервера",
+      "file": "server-side-api-access-readme-generated.md",
+      "subCat": "Довідник API",
+      "type": "readme"
+    },
+    {
+      "name": "Регіон ЄС",
+      "file": "eu-region-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Налаштування вбудованої розмітки",
+      "file": "customizing-the-embed-markup-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Довідник налаштувань",
+      "file": "settings-reference-readme-generated.md",
+      "subCat": "Довідник API",
+      "type": "readme"
+    },
+    {
+      "name": "Приклад проекту",
+      "file": "example-project-readme-generated.md",
+      "subCat": "Використання",
+      "type": "readme"
+    }
+  ]
+}

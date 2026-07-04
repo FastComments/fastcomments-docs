@@ -1,0 +1,72 @@
+{
+  "name": "Django 套件",
+  "pageHeader": "在您的 Django 應用程式中添加評論",
+  "itemsOrdered": [
+    {
+      "name": "需求",
+      "file": "requirements-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "安裝",
+      "file": "installation-readme-generated.md",
+      "subCat": "入門指南",
+      "type": "readme"
+    },
+    {
+      "name": "快速入門",
+      "file": "quickstart-readme-generated.md",
+      "subCat": "使用方式",
+      "type": "readme"
+    },
+    {
+      "name": "自動單一登入的先決條件",
+      "file": "prerequisites-for-automatic-sso-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "小工具標籤",
+      "file": "widget-tags-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "SSO（單一登入）",
+      "file": "sso-single-sign-on-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "伺服器端 API 存取",
+      "file": "server-side-api-access-readme-generated.md",
+      "subCat": "API 參考",
+      "type": "readme"
+    },
+    {
+      "name": "歐盟區域",
+      "file": "eu-region-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "自訂內嵌標記",
+      "file": "customizing-the-embed-markup-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "設定參考",
+      "file": "settings-reference-readme-generated.md",
+      "subCat": "API 參考",
+      "type": "readme"
+    },
+    {
+      "name": "範例專案",
+      "file": "example-project-readme-generated.md",
+      "subCat": "使用方式",
+      "type": "readme"
+    }
+  ]
+}

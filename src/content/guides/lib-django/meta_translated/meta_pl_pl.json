@@ -1,0 +1,72 @@
+{
+  "name": "Pakiet Django",
+  "pageHeader": "Dodaj komentarze do swojej aplikacji Django",
+  "itemsOrdered": [
+    {
+      "name": "Wymagania",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Dokumentacja",
+      "type": "readme"
+    },
+    {
+      "name": "Instalacja",
+      "file": "installation-readme-generated.md",
+      "subCat": "Rozpoczęcie",
+      "type": "readme"
+    },
+    {
+      "name": "Szybki start",
+      "file": "quickstart-readme-generated.md",
+      "subCat": "Użycie",
+      "type": "readme"
+    },
+    {
+      "name": "Wymagania wstępne dla automatycznego SSO",
+      "file": "prerequisites-for-automatic-sso-readme-generated.md",
+      "subCat": "Dokumentacja",
+      "type": "readme"
+    },
+    {
+      "name": "Tagi widgetu",
+      "file": "widget-tags-readme-generated.md",
+      "subCat": "Dokumentacja",
+      "type": "readme"
+    },
+    {
+      "name": "SSO (Jednokrotne logowanie)",
+      "file": "sso-single-sign-on-readme-generated.md",
+      "subCat": "Dokumentacja",
+      "type": "readme"
+    },
+    {
+      "name": "Dostęp do API po stronie serwera",
+      "file": "server-side-api-access-readme-generated.md",
+      "subCat": "Referencja API",
+      "type": "readme"
+    },
+    {
+      "name": "Region UE",
+      "file": "eu-region-readme-generated.md",
+      "subCat": "Dokumentacja",
+      "type": "readme"
+    },
+    {
+      "name": "Dostosowywanie znacznika osadzania",
+      "file": "customizing-the-embed-markup-readme-generated.md",
+      "subCat": "Dokumentacja",
+      "type": "readme"
+    },
+    {
+      "name": "Referencja ustawień",
+      "file": "settings-reference-readme-generated.md",
+      "subCat": "Referencja API",
+      "type": "readme"
+    },
+    {
+      "name": "Projekt przykładowy",
+      "file": "example-project-readme-generated.md",
+      "subCat": "Użycie",
+      "type": "readme"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "name": "Django 패키지",
+  "pageHeader": "Django 앱에 댓글 추가",
+  "itemsOrdered": [
+    {
+      "name": "요구 사항",
+      "file": "requirements-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "설치",
+      "file": "installation-readme-generated.md",
+      "subCat": "시작하기",
+      "type": "readme"
+    },
+    {
+      "name": "빠른 시작",
+      "file": "quickstart-readme-generated.md",
+      "subCat": "사용법",
+      "type": "readme"
+    },
+    {
+      "name": "자동 SSO를 위한 사전 요구 사항",
+      "file": "prerequisites-for-automatic-sso-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "위젯 태그",
+      "file": "widget-tags-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "SSO (싱글 사인온)",
+      "file": "sso-single-sign-on-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "서버 측 API 접근",
+      "file": "server-side-api-access-readme-generated.md",
+      "subCat": "API 레퍼런스",
+      "type": "readme"
+    },
+    {
+      "name": "EU 지역",
+      "file": "eu-region-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "임베드 마크업 맞춤 설정",
+      "file": "customizing-the-embed-markup-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "설정 레퍼런스",
+      "file": "settings-reference-readme-generated.md",
+      "subCat": "API 레퍼런스",
+      "type": "readme"
+    },
+    {
+      "name": "예제 프로젝트",
+      "file": "example-project-readme-generated.md",
+      "subCat": "사용법",
+      "type": "readme"
+    }
+  ]
+}

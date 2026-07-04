@@ -1,0 +1,72 @@
+{
+  "name": "Paquete Django",
+  "pageHeader": "Agregar comentarios a tu aplicación Django",
+  "itemsOrdered": [
+    {
+      "name": "Requisitos",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Documentación",
+      "type": "readme"
+    },
+    {
+      "name": "Instalación",
+      "file": "installation-readme-generated.md",
+      "subCat": "Primeros pasos",
+      "type": "readme"
+    },
+    {
+      "name": "Guía rápida",
+      "file": "quickstart-readme-generated.md",
+      "subCat": "Uso",
+      "type": "readme"
+    },
+    {
+      "name": "Requisitos previos para SSO automático",
+      "file": "prerequisites-for-automatic-sso-readme-generated.md",
+      "subCat": "Documentación",
+      "type": "readme"
+    },
+    {
+      "name": "Etiquetas de widget",
+      "file": "widget-tags-readme-generated.md",
+      "subCat": "Documentación",
+      "type": "readme"
+    },
+    {
+      "name": "SSO (Inicio de sesión único)",
+      "file": "sso-single-sign-on-readme-generated.md",
+      "subCat": "Documentación",
+      "type": "readme"
+    },
+    {
+      "name": "Acceso a la API del lado del servidor",
+      "file": "server-side-api-access-readme-generated.md",
+      "subCat": "Referencia de API",
+      "type": "readme"
+    },
+    {
+      "name": "Región UE",
+      "file": "eu-region-readme-generated.md",
+      "subCat": "Documentación",
+      "type": "readme"
+    },
+    {
+      "name": "Personalizar el marcado incrustado",
+      "file": "customizing-the-embed-markup-readme-generated.md",
+      "subCat": "Documentación",
+      "type": "readme"
+    },
+    {
+      "name": "Referencia de configuraciones",
+      "file": "settings-reference-readme-generated.md",
+      "subCat": "Referencia de API",
+      "type": "readme"
+    },
+    {
+      "name": "Proyecto de ejemplo",
+      "file": "example-project-readme-generated.md",
+      "subCat": "Uso",
+      "type": "readme"
+    }
+  ]
+}

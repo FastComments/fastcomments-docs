@@ -1,0 +1,6 @@
+---
+- Python 3.10+
+- Django 4.2, 5.0, 5.1, ali 5.2
+- ID najemnika FastComments (uporabite `demo`, da ga preizkusite brez računa)
+- API skrivnost je potrebna le za Secure SSO
+---

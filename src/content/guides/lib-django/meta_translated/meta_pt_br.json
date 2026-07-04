@@ -1,0 +1,72 @@
+{
+  "name": "Pacote Django",
+  "pageHeader": "Adicionar Comentários ao seu aplicativo Django",
+  "itemsOrdered": [
+    {
+      "name": "Requisitos",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
+    {
+      "name": "Instalação",
+      "file": "installation-readme-generated.md",
+      "subCat": "Introdução",
+      "type": "readme"
+    },
+    {
+      "name": "Guia rápido",
+      "file": "quickstart-readme-generated.md",
+      "subCat": "Uso",
+      "type": "readme"
+    },
+    {
+      "name": "Pré-requisitos para SSO automático",
+      "file": "prerequisites-for-automatic-sso-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
+    {
+      "name": "Tags de widget",
+      "file": "widget-tags-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
+    {
+      "name": "SSO (Single Sign-On)",
+      "file": "sso-single-sign-on-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
+    {
+      "name": "Acesso à API do lado do servidor",
+      "file": "server-side-api-access-readme-generated.md",
+      "subCat": "Referência de API",
+      "type": "readme"
+    },
+    {
+      "name": "Região da UE",
+      "file": "eu-region-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
+    {
+      "name": "Personalizando a marcação incorporada",
+      "file": "customizing-the-embed-markup-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
+    {
+      "name": "Referência de configurações",
+      "file": "settings-reference-readme-generated.md",
+      "subCat": "Referência de API",
+      "type": "readme"
+    },
+    {
+      "name": "Projeto de exemplo",
+      "file": "example-project-readme-generated.md",
+      "subCat": "Uso",
+      "type": "readme"
+    }
+  ]
+}

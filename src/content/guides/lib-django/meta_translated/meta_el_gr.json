@@ -1,0 +1,72 @@
+{
+  "name": "Πακέτο Django",
+  "pageHeader": "Προσθήκη Σχολίων στην Εφαρμογή Django σας",
+  "itemsOrdered": [
+    {
+      "name": "Απαιτήσεις",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Εγκατάσταση",
+      "file": "installation-readme-generated.md",
+      "subCat": "Ξεκίνημα",
+      "type": "readme"
+    },
+    {
+      "name": "Γρήγορη Εκκίνηση",
+      "file": "quickstart-readme-generated.md",
+      "subCat": "Χρήση",
+      "type": "readme"
+    },
+    {
+      "name": "Προαπαιτούμενα για αυτόματη Ενιαία Σύνδεση (SSO)",
+      "file": "prerequisites-for-automatic-sso-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Ετικέτες Widget",
+      "file": "widget-tags-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "SSO (Ενιαία Σύνδεση)",
+      "file": "sso-single-sign-on-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Πρόσβαση API από τον διακομιστή",
+      "file": "server-side-api-access-readme-generated.md",
+      "subCat": "Αναφορά API",
+      "type": "readme"
+    },
+    {
+      "name": "Περιοχή ΕΕ",
+      "file": "eu-region-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Προσαρμογή του κώδικα ενσωμάτωσης",
+      "file": "customizing-the-embed-markup-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Αναφορά Ρυθμίσεων",
+      "file": "settings-reference-readme-generated.md",
+      "subCat": "Αναφορά API",
+      "type": "readme"
+    },
+    {
+      "name": "Παράδειγμα έργου",
+      "file": "example-project-readme-generated.md",
+      "subCat": "Χρήση",
+      "type": "readme"
+    }
+  ]
+}

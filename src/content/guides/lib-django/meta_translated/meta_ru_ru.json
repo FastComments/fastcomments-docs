@@ -1,0 +1,72 @@
+{
+  "name": "Пакет Django",
+  "pageHeader": "Добавьте комментарии в ваше Django‑приложение",
+  "itemsOrdered": [
+    {
+      "name": "Требования",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Установка",
+      "file": "installation-readme-generated.md",
+      "subCat": "Начало работы",
+      "type": "readme"
+    },
+    {
+      "name": "Быстрый старт",
+      "file": "quickstart-readme-generated.md",
+      "subCat": "Использование",
+      "type": "readme"
+    },
+    {
+      "name": "Требования для автоматического SSO",
+      "file": "prerequisites-for-automatic-sso-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Теги виджета",
+      "file": "widget-tags-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "SSO (Единый вход)",
+      "file": "sso-single-sign-on-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Доступ к API на стороне сервера",
+      "file": "server-side-api-access-readme-generated.md",
+      "subCat": "Справочник API",
+      "type": "readme"
+    },
+    {
+      "name": "Регион ЕС",
+      "file": "eu-region-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Настройка встраиваемой разметки",
+      "file": "customizing-the-embed-markup-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Справочник настроек",
+      "file": "settings-reference-readme-generated.md",
+      "subCat": "Справочник API",
+      "type": "readme"
+    },
+    {
+      "name": "Пример проекта",
+      "file": "example-project-readme-generated.md",
+      "subCat": "Использование",
+      "type": "readme"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "name": "Package Django",
+  "pageHeader": "Ajouter des commentaires à votre application Django",
+  "itemsOrdered": [
+    {
+      "name": "Exigences",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Installation",
+      "file": "installation-readme-generated.md",
+      "subCat": "Prise en main",
+      "type": "readme"
+    },
+    {
+      "name": "Démarrage rapide",
+      "file": "quickstart-readme-generated.md",
+      "subCat": "Utilisation",
+      "type": "readme"
+    },
+    {
+      "name": "Prérequis pour SSO automatique",
+      "file": "prerequisites-for-automatic-sso-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Balises de widget",
+      "file": "widget-tags-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "SSO (authentification unique)",
+      "file": "sso-single-sign-on-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Accès à l'API côté serveur",
+      "file": "server-side-api-access-readme-generated.md",
+      "subCat": "Référence API",
+      "type": "readme"
+    },
+    {
+      "name": "Région UE",
+      "file": "eu-region-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Personnalisation du balisage d'intégration",
+      "file": "customizing-the-embed-markup-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Référence des paramètres",
+      "file": "settings-reference-readme-generated.md",
+      "subCat": "Référence API",
+      "type": "readme"
+    },
+    {
+      "name": "Projet d'exemple",
+      "file": "example-project-readme-generated.md",
+      "subCat": "Utilisation",
+      "type": "readme"
+    }
+  ]
+}

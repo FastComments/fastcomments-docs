@@ -1,0 +1,6 @@
+---
+- Python 3.10+
+- Django 4.2, 5.0, 5.1, or 5.2
+- Identyfikator najemcy FastComments (użyj `demo`, aby wypróbować bez konta)
+- Tajny klucz API jest wymagany tylko dla Secure SSO
+---

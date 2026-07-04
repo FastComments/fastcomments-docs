@@ -1,0 +1,72 @@
+{
+  "name": "Πακέτο Django",
+  "pageHeader": "Προσθήκη σχολίων στην εφαρμογή Django σας",
+  "itemsOrdered": [
+    {
+      "name": "Απαιτήσεις",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Εγκατάσταση",
+      "file": "installation-readme-generated.md",
+      "subCat": "Ξεκινώντας",
+      "type": "readme"
+    },
+    {
+      "name": "Γρήγορη έναρξη",
+      "file": "quickstart-readme-generated.md",
+      "subCat": "Χρήση",
+      "type": "readme"
+    },
+    {
+      "name": "Προαπαιτούμενα για αυτόματη SSO",
+      "file": "prerequisites-for-automatic-sso-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Ετικέτες widget",
+      "file": "widget-tags-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "SSO (Μία Μοναδική Σύνδεση)",
+      "file": "sso-single-sign-on-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Πρόσβαση API από διακομιστή",
+      "file": "server-side-api-access-readme-generated.md",
+      "subCat": "Αναφορά API",
+      "type": "readme"
+    },
+    {
+      "name": "Περιοχή ΕΕ",
+      "file": "eu-region-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Προσαρμογή της ενσωματωμένης σήμανσης",
+      "file": "customizing-the-embed-markup-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Αναφορά ρυθμίσεων",
+      "file": "settings-reference-readme-generated.md",
+      "subCat": "Αναφορά API",
+      "type": "readme"
+    },
+    {
+      "name": "Παράδειγμα έργου",
+      "file": "example-project-readme-generated.md",
+      "subCat": "Χρήση",
+      "type": "readme"
+    }
+  ]
+}

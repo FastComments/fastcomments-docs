@@ -1,0 +1,72 @@
+{
+  "name": "Django 包",
+  "pageHeader": "为您的 Django 应用添加评论",
+  "itemsOrdered": [
+    {
+      "name": "要求",
+      "file": "requirements-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "安装",
+      "file": "installation-readme-generated.md",
+      "subCat": "入门指南",
+      "type": "readme"
+    },
+    {
+      "name": "快速入门",
+      "file": "quickstart-readme-generated.md",
+      "subCat": "使用说明",
+      "type": "readme"
+    },
+    {
+      "name": "自动单点登录的前提条件",
+      "file": "prerequisites-for-automatic-sso-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "小部件标签",
+      "file": "widget-tags-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "单点登录 (SSO)",
+      "file": "sso-single-sign-on-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "服务器端 API 访问",
+      "file": "server-side-api-access-readme-generated.md",
+      "subCat": "API 参考",
+      "type": "readme"
+    },
+    {
+      "name": "欧盟地区",
+      "file": "eu-region-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "自定义嵌入标记",
+      "file": "customizing-the-embed-markup-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "设置参考",
+      "file": "settings-reference-readme-generated.md",
+      "subCat": "API 参考",
+      "type": "readme"
+    },
+    {
+      "name": "示例项目",
+      "file": "example-project-readme-generated.md",
+      "subCat": "使用说明",
+      "type": "readme"
+    }
+  ]
+}

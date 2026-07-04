@@ -1,0 +1,72 @@
+{
+  "name": "Django Package",
+  "pageHeader": "Add Comments to Your Django App",
+  "itemsOrdered": [
+    {
+      "name": "Requirements",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Installation",
+      "file": "installation-readme-generated.md",
+      "subCat": "Getting Started",
+      "type": "readme"
+    },
+    {
+      "name": "Quickstart",
+      "file": "quickstart-readme-generated.md",
+      "subCat": "Usage",
+      "type": "readme"
+    },
+    {
+      "name": "Prerequisites for automatic SSO",
+      "file": "prerequisites-for-automatic-sso-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Widget tags",
+      "file": "widget-tags-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "SSO (Single Sign-On)",
+      "file": "sso-single-sign-on-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Server-side API access",
+      "file": "server-side-api-access-readme-generated.md",
+      "subCat": "API Reference",
+      "type": "readme"
+    },
+    {
+      "name": "EU region",
+      "file": "eu-region-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Customizing the embed markup",
+      "file": "customizing-the-embed-markup-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Settings reference",
+      "file": "settings-reference-readme-generated.md",
+      "subCat": "API Reference",
+      "type": "readme"
+    },
+    {
+      "name": "Example project",
+      "file": "example-project-readme-generated.md",
+      "subCat": "Usage",
+      "type": "readme"
+    }
+  ]
+}

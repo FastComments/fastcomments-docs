@@ -1,0 +1,72 @@
+{
+  "name": "Django パッケージ",
+  "pageHeader": "Django アプリにコメントを追加する",
+  "itemsOrdered": [
+    {
+      "name": "要件",
+      "file": "requirements-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "インストール",
+      "file": "installation-readme-generated.md",
+      "subCat": "はじめに",
+      "type": "readme"
+    },
+    {
+      "name": "クイックスタート",
+      "file": "quickstart-readme-generated.md",
+      "subCat": "使用",
+      "type": "readme"
+    },
+    {
+      "name": "自動シングルサインオンの前提条件",
+      "file": "prerequisites-for-automatic-sso-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "ウィジェットタグ",
+      "file": "widget-tags-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "SSO（シングルサインオン）",
+      "file": "sso-single-sign-on-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "サーバーサイド API アクセス",
+      "file": "server-side-api-access-readme-generated.md",
+      "subCat": "API リファレンス",
+      "type": "readme"
+    },
+    {
+      "name": "EU リージョン",
+      "file": "eu-region-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "埋め込みマークアップのカスタマイズ",
+      "file": "customizing-the-embed-markup-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "設定リファレンス",
+      "file": "settings-reference-readme-generated.md",
+      "subCat": "API リファレンス",
+      "type": "readme"
+    },
+    {
+      "name": "サンプルプロジェクト",
+      "file": "example-project-readme-generated.md",
+      "subCat": "使用",
+      "type": "readme"
+    }
+  ]
+}

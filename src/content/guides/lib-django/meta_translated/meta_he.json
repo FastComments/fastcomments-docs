@@ -1,0 +1,72 @@
+{
+  "name": "חבילת Django",
+  "pageHeader": "הוספת תגובות לאפליקציית Django שלך",
+  "itemsOrdered": [
+    {
+      "name": "דרישות",
+      "file": "requirements-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "התקנה",
+      "file": "installation-readme-generated.md",
+      "subCat": "התחלה",
+      "type": "readme"
+    },
+    {
+      "name": "התחלה מהירה",
+      "file": "quickstart-readme-generated.md",
+      "subCat": "שימוש",
+      "type": "readme"
+    },
+    {
+      "name": "דרישות קדם ל-SSO אוטומטי",
+      "file": "prerequisites-for-automatic-sso-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "תגי וידג'ט",
+      "file": "widget-tags-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "SSO (כניסה יחידה)",
+      "file": "sso-single-sign-on-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "גישה ל-API בצד השרת",
+      "file": "server-side-api-access-readme-generated.md",
+      "subCat": "מדריך API",
+      "type": "readme"
+    },
+    {
+      "name": "אזור האיחוד האירופי",
+      "file": "eu-region-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "התאמת קוד ההטמעה",
+      "file": "customizing-the-embed-markup-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "מדריך ההגדרות",
+      "file": "settings-reference-readme-generated.md",
+      "subCat": "מדריך API",
+      "type": "readme"
+    },
+    {
+      "name": "פרויקט לדוגמה",
+      "file": "example-project-readme-generated.md",
+      "subCat": "שימוש",
+      "type": "readme"
+    }
+  ]
+}

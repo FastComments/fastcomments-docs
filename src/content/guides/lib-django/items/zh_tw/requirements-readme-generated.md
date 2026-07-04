@@ -1,0 +1,6 @@
+---
+- Python 3.10+
+- Django 4.2, 5.0, 5.1, or 5.2
+- 一個 FastComments 租戶 ID（使用 `demo` 以在沒有帳戶的情況下試用）
+- 僅在 Secure SSO 時需要 API secret
+---

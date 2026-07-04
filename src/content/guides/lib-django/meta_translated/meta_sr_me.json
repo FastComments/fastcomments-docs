@@ -1,0 +1,72 @@
+{
+  "name": "Django paket",
+  "pageHeader": "Dodajte komentare u vašu Django aplikaciju",
+  "itemsOrdered": [
+    {
+      "name": "Zahtevi",
+      "file": "requirements-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Instalacija",
+      "file": "installation-readme-generated.md",
+      "subCat": "Početak",
+      "type": "readme"
+    },
+    {
+      "name": "Brzi početak",
+      "file": "quickstart-readme-generated.md",
+      "subCat": "Upotreba",
+      "type": "readme"
+    },
+    {
+      "name": "Preduslovi za automatski SSO",
+      "file": "prerequisites-for-automatic-sso-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Oznake widget‑a",
+      "file": "widget-tags-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "SSO (Jedinstveno prijavljivanje)",
+      "file": "sso-single-sign-on-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Pristup API‑ju na serveru",
+      "file": "server-side-api-access-readme-generated.md",
+      "subCat": "Referenca API‑ja",
+      "type": "readme"
+    },
+    {
+      "name": "EU region",
+      "file": "eu-region-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Prilagođavanje markup‑a za ugradnju",
+      "file": "customizing-the-embed-markup-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Referenca postavki",
+      "file": "settings-reference-readme-generated.md",
+      "subCat": "Referenca API‑ja",
+      "type": "readme"
+    },
+    {
+      "name": "Primer projekta",
+      "file": "example-project-readme-generated.md",
+      "subCat": "Upotreba",
+      "type": "readme"
+    }
+  ]
+}

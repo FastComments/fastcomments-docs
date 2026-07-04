@@ -1,0 +1,6 @@
+---
+- Python 3.10+
+- Django 4.2, 5.0, 5.1, veya 5.2
+- Bir FastComments kiracı kimliği (hesapsız deneme yapmak için `demo` kullanın)
+- Bir API gizli anahtarı yalnızca Secure SSO için gereklidir
+---
