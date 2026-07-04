@@ -1,7 +1,7 @@
 ---
 これは FastComments の公式 Django パッケージです。
 
-テンプレートタグを介して FastComments ウィジェットを追加し、サーバー側で Secure SSO に署名し、FastComments Python SDK を通じてフル API アクセスを提供する Django アプリです。
+テンプレートタグを使用した安全な SSO を備えたライブコメントおよびチャットコンポーネントです。
 
 ## Repository
 

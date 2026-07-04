@@ -1,8 +1,9 @@
-זהו החבילה הרשמית של Django עבור FastComments.
+---
+זהו חבילת Django הרשמית ל-FastComments.
 
-אפליקציית Django שמוסיפה את וידג'טים של FastComments דרך תגי תבנית, חותמת Secure SSO בצד השרת, ומספקת גישה מלאה ל‑API באמצעות FastComments Python SDK.
+רכיבי תגובות ושיחות בזמן אמת עם SSO מאובטח דרך תיוגי תבנית.
 
-## Repository
+## מאגר
 
 [הצג ב‑GitHub](https://github.com/FastComments/fastcomments-django)
 

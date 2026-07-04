@@ -1,6 +1,6 @@
 This is the official Django Package for FastComments.
 
-A Django app that adds the FastComments widgets via template tags, signs Secure SSO server-side, and provides full API access through the FastComments Python SDK.
+Live commenting and chat components with Secure SSO via template tags.
 
 ## Repository
 

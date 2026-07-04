@@ -1,7 +1,10 @@
+---
 Ovo je službeni Django paket za FastComments.
 
-Django aplikacija koja dodaje FastComments widgete putem template tagova, potpisuje Secure SSO na strani servera i pruža puni pristup API‑ju kroz FastComments Python SDK.
+Komponente za komentiranje uživo i chat s sigurnim SSO‑om putem oznaka predložaka.
 
-## Repository
+## Repozitorij
 
-[View on GitHub](https://github.com/FastComments/fastcomments-django)
+[Pogledaj na GitHubu](https://github.com/FastComments/fastcomments-django)
+
+---

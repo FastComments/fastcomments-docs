@@ -1,10 +1,7 @@
----
-Αυτό είναι το επίσημο πακέτο Django για το FastComments.
+This is the official Django Package for FastComments.
 
-Μια εφαρμογή Django που προσθέτει τα widgets FastComments μέσω ετικετών προτύπου, υπογράφει Secure SSO στο server‑side και παρέχει πλήρη πρόσβαση API μέσω του FastComments Python SDK.
+Live commenting and chat components with Secure SSO via template tags.
 
 ## Repository
 
 [View on GitHub](https://github.com/FastComments/fastcomments-django)
-
----

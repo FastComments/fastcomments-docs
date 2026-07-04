@@ -1,10 +1,10 @@
 ---
-Ceci est le package Django officiel pour FastComments.
+Ceci est le paquet Django officiel pour FastComments.
 
-Une application Django qui ajoute les widgets FastComments via des balises de modèle, signe le SSO sécurisé côté serveur, et fournit un accès complet à l'API via le SDK Python FastComments.
+Composants de commentaires en direct et de chat avec SSO sécurisé via les balises de modèle.
 
-## Repository
+## Dépôt
 
-[Voir sur GitHub](https://github.com/FastComments/fastcomments-django)
+[View on GitHub](https://github.com/FastComments/fastcomments-django)
 
 ---
