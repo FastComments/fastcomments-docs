@@ -468,6 +468,18 @@
         "readme"
       ],
       "description": "A Laravel package that wraps the FastComments PHP SDK and SSO library, providing Blade components, SSO integration, and full API access."
+    },
+    {
+      "id": "lib-django",
+      "name": "Django Package",
+      "pageHeader": "Add Comments to Your Django App",
+      "repo": "https://github.com/FastComments/fastcomments-django",
+      "branch": "main",
+      "language": "python",
+      "docGenerators": [
+        "readme"
+      ],
+      "description": "A Django app that adds the FastComments widgets via template tags, signs Secure SSO server-side, and provides full API access through the FastComments Python SDK."
     }
   ],
   "checkoutDirectory": "src/content/sdks-checkout",
