@@ -500,10 +500,17 @@ async fn build_one_guide(
         "locale": locale,
         "availableLocales": available_locales,
         "t": (*t.value).clone(),
-        // stableUrlId intentionally NOT passed to guide-layout — Node
-        // omits it from the layout context (`src/guides.js:238-248`),
-        // so the `{{#if stableUrlId}}` block in guide-layout.html always
-        // takes the `else` branch.
+        // stableUrlId MUST be passed so the main comments widget keys its
+        // thread on the default-locale URL, staying stable across locales
+        // and matching the floating page-likes widget in page.html. Without
+        // it the `{{#if stableUrlId}}` block falls back to
+        // window.location.pathname, so localized (and even the -en_us
+        // suffixed) pages load an empty thread while the floating widget
+        // still shows the count from the stable urlId.
+        "stableUrlId": format!(
+            "/{}",
+            guide_link(&guide.id, &locales.default_locale, &locales.default_locale)
+        ),
     });
     let guide_html = templates.render("guide-layout", &layout_ctx)?;
     // If the guide has an `index.md.html`, wrap the layout HTML through
