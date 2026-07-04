@@ -479,7 +479,7 @@
       "docGenerators": [
         "readme"
       ],
-      "description": "A Django app that adds the FastComments widgets via template tags, signs Secure SSO server-side, and provides full API access through the FastComments Python SDK."
+      "description": "Live commenting and chat components with Secure SSO via template tags."
     }
   ],
   "checkoutDirectory": "src/content/sdks-checkout",
