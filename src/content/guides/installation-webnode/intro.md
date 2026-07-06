@@ -1,2 +1,1 @@
-** NOTICE ** we are currently investigating complaints from customers regarding this documentation. It appears Webnode has removed the HTML Block feature, we are working
-with their support staff on this.
+Webnode's HTML block is what we'll use to embed the comment widget. Since June 26, 2023, this block is a paid Webnode feature: it is not available on the free plan, and projects created after that date need a premium package to use it. If you don't see the `HTML` option in the editor, upgrade your Webnode plan and it will appear.
