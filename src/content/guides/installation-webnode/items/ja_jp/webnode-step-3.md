@@ -1,19 +1,19 @@
----
-次に、このコードスニペットをコピーしてください:
+Now, copy this code snippet:
 
-[code-example-start config = {}; title = 'Installation Code'; isFunctional = false; code-example-end]
+[code-example-start config = {}; title = 'インストールコード'; isFunctional = false; code-example-end]
 
-次に、次のブロックに貼り付けてください:
+Then paste it in the block:
 
 <div class="screenshot white-bg">
     <div class="title">Step Three: Paste Code</div>
-    <img class="screenshot-image" src="/images/installation-guides/webnode-step-4.png" alt="コードを貼り付ける" />
+    <img class="screenshot-image" src="/images/installation-guides/webnode-step-4.png" alt="Paste Code" />
 </div>
 
-エディタでは次のように表示されます:
+It should look like this in the editor:
 
 <div class="screenshot white-bg">
     <div class="title">Step Three: Review</div>
-    <img class="screenshot-image" src="/images/installation-guides/webnode-step-5.png" alt="確認" />
+    <img class="screenshot-image" src="/images/installation-guides/webnode-step-5.png" alt="Review" />
 </div>
----
+
+Webnodeはエディタ内でHTMLブロックをレンダリングしないため、セキュリティ上の理由でコンテンツを表示できないというプレースホルダーが表示されます。これは想定通りです。コメントウィジェットは、公開した後にのみ表示されます。次にそれを行います。

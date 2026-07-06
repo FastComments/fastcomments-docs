@@ -1,5 +1,1 @@
----
-** OBVESTILO ** trenutno preiskujemo pritožbe strank v zvezi s to dokumentacijo. Zdi se, da je Webnode odstranil funkcijo HTML Block, delamo
-z njihovo podporo na tem.
-
----
+HTML blok Webnodea je tisto, kar bomo uporabili za vdelavo pripomočka za komentarje. Od 26. junija 2023 je ta blok plačljiva funkcija Webnode: ni na voljo v brezplačnem paketu, projekti, ustvarjeni po tem datumu, pa potrebujejo premium paket za njegovo uporabo. Če v urejevalniku ne vidite možnosti `HTML`, nadgradite svoj Webnode paket in se bo pojavila.
