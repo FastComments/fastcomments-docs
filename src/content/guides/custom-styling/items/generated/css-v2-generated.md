@@ -314,9 +314,10 @@ body { margin: 0; padding: 0; }
     .menu-content.corner-bottom-right { border-radius: 10px 10px 0 10px; }
     @media(max-width: 500px) { .comment .menu { padding: 10px 5px 10px 0; } } /* if top is too low, will go above highlighting for admin actions */
     .comment > .children { margin: 15px 0 0 15px }
-    /* "Powered by FastComments" footer. White-labeled tenants get .empty (no content, no border). To restyle/hide the footer for white-label, scope via .footer.empty. */
+    /* "Powered by FastComments" footer. White-labeled tenants get .empty (no content) - hidden entirely, like the live chat widget does. Custom tenant CSS can still restore it via .footer.empty. */
     .footer { height: 65px; margin-top: 25px; padding-top: 20px; text-align: center; font-size: 12px; }
     .footer:not(.empty) { border-top: 1px solid #ccc }
+    .footer.empty { display: none; }
     .footer a, .footer .logo { vertical-align: top; text-decoration: none; color: #201600; font-weight: bold; font-size: 14px } 
     .footer .logo { margin-top: -2px; padding-right: 2px; } 
     .comment.readonly .comment-vote-options { display: none }
