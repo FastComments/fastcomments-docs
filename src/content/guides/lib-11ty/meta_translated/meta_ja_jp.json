@@ -9,12 +9,6 @@
       "type": "readme"
     },
     {
-      "name": "ライブショーケース",
-      "file": "live-showcase-readme-generated.md",
-      "subCat": "ドキュメント",
-      "type": "readme"
-    },
-    {
       "name": "インストール",
       "file": "install-readme-generated.md",
       "subCat": "はじめに",
@@ -39,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "手動での使用（プラグインなし）",
+      "name": "手動使用（プラグインなし）",
       "file": "manual-usage-without-the-plugin-readme-generated.md",
       "subCat": "使用方法",
       "type": "readme"
@@ -57,7 +51,7 @@
       "type": "readme"
     },
     {
-      "name": "メンテナンス状況",
+      "name": "メンテナンスステータス",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "ドキュメント",
       "type": "readme"

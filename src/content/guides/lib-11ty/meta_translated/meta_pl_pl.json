@@ -9,15 +9,9 @@
       "type": "readme"
     },
     {
-      "name": "Prezentacja na żywo",
-      "file": "live-showcase-readme-generated.md",
-      "subCat": "Dokumentacja",
-      "type": "readme"
-    },
-    {
       "name": "Instalacja",
       "file": "install-readme-generated.md",
-      "subCat": "Pierwsze kroki",
+      "subCat": "Rozpoczęcie",
       "type": "readme"
     },
     {
@@ -27,7 +21,7 @@
       "type": "readme"
     },
     {
-      "name": "Shortcode'y",
+      "name": "Krótkie kody",
       "file": "shortcodes-readme-generated.md",
       "subCat": "Dokumentacja",
       "type": "readme"

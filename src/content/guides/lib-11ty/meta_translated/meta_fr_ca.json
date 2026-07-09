@@ -9,15 +9,9 @@
       "type": "readme"
     },
     {
-      "name": "Présentation en direct",
-      "file": "live-showcase-readme-generated.md",
-      "subCat": "Documentation",
-      "type": "readme"
-    },
-    {
-      "name": "Installation",
+      "name": "Installer",
       "file": "install-readme-generated.md",
-      "subCat": "Premiers pas",
+      "subCat": "Mise en route",
       "type": "readme"
     },
     {

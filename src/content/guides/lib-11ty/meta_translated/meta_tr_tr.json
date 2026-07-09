@@ -9,12 +9,6 @@
       "type": "readme"
     },
     {
-      "name": "Canlı Gösterim",
-      "file": "live-showcase-readme-generated.md",
-      "subCat": "Dokümantasyon",
-      "type": "readme"
-    },
-    {
       "name": "Kurulum",
       "file": "install-readme-generated.md",
       "subCat": "Başlarken",
@@ -39,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "Elle Kullanım (eklenti olmadan)",
+      "name": "Manuel Kullanım (eklenti olmadan)",
       "file": "manual-usage-without-the-plugin-readme-generated.md",
       "subCat": "Kullanım",
       "type": "readme"

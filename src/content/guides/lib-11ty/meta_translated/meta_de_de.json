@@ -1,16 +1,10 @@
 {
-  "name": "Eleventy (11ty)-Bibliothek",
-  "pageHeader": "Kommentare zu Ihrer Eleventy-(11ty)-Website hinzufügen",
+  "name": "Eleventy (11ty) Bibliothek",
+  "pageHeader": "Kommentare zu Ihrer Eleventy (11ty)-Website hinzufügen",
   "itemsOrdered": [
     {
       "name": "Live-Demo",
       "file": "live-demo-readme-generated.md",
-      "subCat": "Dokumentation",
-      "type": "readme"
-    },
-    {
-      "name": "Live-Präsentation",
-      "file": "live-showcase-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
     },
@@ -39,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "Manuelle Verwendung (ohne Plugin)",
+      "name": "Manuelle Nutzung (ohne das Plugin)",
       "file": "manual-usage-without-the-plugin-readme-generated.md",
       "subCat": "Verwendung",
       "type": "readme"
