@@ -138,7 +138,7 @@ body { margin: 0; padding: 0; }
     .toolbar .img-btn-wrap { display: inline-block; overflow: hidden }
     .toolbar .t-btn input[type=file] { position: absolute; padding: 40px; font-size: 100px; top: 0; left: 0; opacity: 0; cursor: pointer }
     .commenty-input:not(.show-default-hidden) .toolbar { width: 100%; margin-top: -50px; }
-    @media(max-width: 500px) { .toolbar { display: flex; width: 100%; padding-bottom: 12px; justify-content: space-evenly; } }
+    @media(max-width: 500px) { .toolbar { display: flex; width: 100%; padding-bottom: 12px; justify-content: space-evenly; align-items: center; } }
     @media(max-width: 500px) { .comment-input .toolbar { margin-top: 50px; border-bottom: 1px solid #bfbfbf; } }
     .comment-reply .auth-input, .comment-vote-auth.auth-input { margin: 10px 0; font-size: 13px }
     .comment-reply .auth-input .fc-login { margin: 10px 0 0; }
