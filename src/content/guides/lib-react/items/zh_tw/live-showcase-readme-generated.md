@@ -1,9 +1,11 @@
-要在本機查看針對公開 `demo` 租戶運行的所有 widget 和 flow，請克隆該儲存庫並執行：
+---
+若要在本機查看所有 widget 與 flow 在公共 `demo` 租戶上執行的情況，請克隆此儲存庫並執行以下指令：
 
 ```bash
 cd examples/example-showcase
 npm install
-npm start
+npm run dev
 ```
 
-每個 widget/flow 在 `examples/example-showcase/src/views/` 底下都有自己的視圖，你可以直接將它們複製到你自己的 React 應用程式中。
+每個 widget/flow 在 `examples/example-showcase/src/views/` 目錄下都有自己的視圖，您可以直接將其複製到自己的 React 應用程式中。
+---

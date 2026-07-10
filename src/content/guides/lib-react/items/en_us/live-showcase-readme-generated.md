@@ -3,7 +3,7 @@ To see every widget and flow running locally against the public `demo` tenant, c
 ```bash
 cd examples/example-showcase
 npm install
-npm start
+npm run dev
 ```
 
 Each widget/flow has its own view under `examples/example-showcase/src/views/` that you can copy straight into your own React app.

@@ -1,9 +1,9 @@
-Za ogled vseh widgetov in flowov, ki se izvajajo lokalno proti javnemu najemniku `demo`, klonirajte repozitorij in zaženite:
+To see every widget and flow running locally against the public `demo` tenant, clone the repo and run:
 
 ```bash
 cd examples/example-showcase
 npm install
-npm start
+npm run dev
 ```
 
-Vsak widget/flow ima svoj pogled v mapi `examples/example-showcase/src/views/`, ki ga lahko neposredno kopirate v svojo React aplikacijo.
+Each widget/flow has its own view under `examples/example-showcase/src/views/` that you can copy straight into your own React app.

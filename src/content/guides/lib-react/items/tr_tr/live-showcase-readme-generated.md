@@ -1,9 +1,11 @@
-Herkese açık `demo` kiracına karşı yerel olarak çalışan tüm widget'ları ve akışları görmek için repoyu klonlayın ve çalıştırın:
+---
+Her bir widget ve akışın, genel `demo` kiracısı üzerinde yerel olarak çalıştığını görmek için, depoyu klonlayın ve çalıştırın:
 
 ```bash
 cd examples/example-showcase
 npm install
-npm start
+npm run dev
 ```
 
-Her bir widget/akışın `examples/example-showcase/src/views/` altında kendi görünümü vardır; bunları doğrudan kendi React uygulamanıza kopyalayabilirsiniz.
+Her bir widget/akış, `examples/example-showcase/src/views/` altında kendi görünümüne sahiptir ve bunu doğrudan kendi React uygulamanıza kopyalayabilirsiniz.
+---

@@ -1,1 +1,3 @@
-Bireysel kullanım örnekleri (karanlık mod, sayfalama vb.) `examples/` altındaki kendi klasörlerinde bulunur. Her biri `npm install` ile kurulabilir ve `npm start` ile başlatılabilir.
+---
+Bireysel kullanım durumları (karanlık mod, sayfalama vb.) kendi klasörlerinde `examples/` altında bulunur. Her biri `npm install` ile kurulabilir ve `npm run dev` (Vite) ile başlatılabilir.
+---

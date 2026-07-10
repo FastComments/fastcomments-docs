@@ -1,1 +1,3 @@
-Појединачни сценарији употребе (тамни режим, пагинација, итд.) налазе се у својим фасциклама под `examples/`. Сваки се може поставити помоћу `npm install` и покренути са `npm start`.
+---
+Individualni slučajevi upotrebe (tamni režim, paginacija, itd.) nalaze se u svojim vlastitim folderima pod `examples/`. Svaki se može postaviti pomoću `npm install` i pokrenuti pomoću `npm run dev` (Vite).
+---

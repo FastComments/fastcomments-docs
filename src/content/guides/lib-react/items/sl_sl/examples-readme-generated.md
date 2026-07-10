@@ -1,1 +1,3 @@
-Posamezni primeri uporabe (temni način, straničenje itd.) se nahajajo v svojih mapah pod `examples/`. Vsak lahko nastavite z `npm install` in ga zaženete z `npm start`.
+---
+Posamezni primeri uporabe (temni način, paginacija itd.) so v svojih mapah pod `examples/`. Vsak je mogoče nastaviti z `npm install` in zagnati z `npm run dev` (Vite).
+---

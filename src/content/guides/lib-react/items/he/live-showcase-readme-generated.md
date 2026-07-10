@@ -1,9 +1,11 @@
-כדי לראות כל ווידג'ט ו-flow הפועלים מקומית מול ה-tenant הציבורי `demo`, שכפלו את המאגר והריצו:
+---
+כדי לראות כל וידג'ט וזרימה פועלים מקומית נגד ה‑tenant הציבורי `demo`, יש לשכפל את המאגר ולהריץ:
 
 ```bash
 cd examples/example-showcase
 npm install
-npm start
+npm run dev
 ```
 
-לכל ווידג'ט/flow יש תצוגה משלו ב-`examples/example-showcase/src/views/` שאותה תוכלו להעתיק ישירות לאפליקציית React שלכם.
+לכל וידג'ט/זרימה יש את התצוגה שלו תחת `examples/example-showcase/src/views/` שניתן להעתיק ישירות לאפליקציית React שלך.
+---
