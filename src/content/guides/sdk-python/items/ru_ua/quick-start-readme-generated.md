@@ -1,6 +1,6 @@
-### Using Authenticated APIs (DefaultApi)
+### Использование аутентифицированных API (DefaultApi)
 
-**Важно:** Вы должны установить ваш API‑ключ в объект Configuration перед выполнением аутентифицированных запросов. Если вы этого не сделаете, запросы завершятся ошибкой 401.
+**Важно:** Вы должны установить ваш API‑ключ в объект Configuration перед выполнением аутентифицированных запросов. Если не сделаете, запросы завершатся ошибкой 401.
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
@@ -17,9 +17,9 @@ config.api_key = {"api_key": "YOUR_API_KEY_HERE"}
 api_client = ApiClient(configuration=config)
 api = DefaultApi(api_client)
 
-# Теперь вы можете выполнять аутентифицированные запросы к API
+# Теперь вы можете выполнять аутентифицированные вызовы API
 try:
-    # Пример: добавить SSO‑пользователя
+    # Пример: Добавить SSO‑пользователя
     user_data = CreateAPISSOUserData(
         id="user-123",
         email="user@example.com",
@@ -31,12 +31,12 @@ try:
 
 except Exception as e:
     print(f"Error: {e}")
-    # Общие ошибки:
-    # - 401: API‑ключ отсутствует или неверен
+    # Распространённые ошибки:
+    # - 401: API‑ключ отсутствует или недействителен
     # - 400: Ошибка валидации запроса
 ```
 
-### Using Public APIs (PublicApi)
+### Использование публичных API (PublicApi)
 
 Публичные эндпоинты не требуют аутентификации:
 
@@ -56,7 +56,7 @@ except Exception as e:
     print(f"Error: {e}")
 ```
 
-### Using the Moderation Dashboard (ModerationApi)
+### Использование панели модерации (ModerationApi)
 
 `ModerationApi` обеспечивает работу панели модератора. Методы вызываются от имени модератора путем передачи токена `sso`:
 
@@ -78,9 +78,9 @@ except Exception as e:
     print(f"Error: {e}")
 ```
 
-### Using SSO (Single Sign-On)
+### Использование SSO (Single Sign-On)
 
-SDK включает утилиты для генерации защищённых токенов SSO:
+SDK включает утилиты для генерации безопасных SSO‑токенов:
 
 ```python
 from sso import FastCommentsSSO, SecureSSOUserData
@@ -93,13 +93,13 @@ user_data = SecureSSOUserData(
     avatar="https://example.com/avatar.jpg"
 )
 
-# Подписать его с помощью вашего API‑секрета (HMAC‑SHA256)
+# Подписать их вашим API‑секретом (HMAC‑SHA256)
 sso = FastCommentsSSO.new_secure("YOUR_API_SECRET", user_data)
 
-# Сгенерировать токен SSO для передачи в виджет или API‑запрос
+# Сгенерировать SSO‑токен для передачи в виджет или API‑запрос
 sso_token = sso.create_token()
 
-# Использовать этот токен во frontend'е или передавать в API‑запросах
+# Использовать этот токен во фронтенде или передавать в API‑запросы
 print(f"SSO Token: {sso_token}")
 ```
 
@@ -117,10 +117,47 @@ sso = FastCommentsSSO.new_simple(user_data)
 sso_token = sso.create_token()
 ```
 
-### Common Issues
+### Живые подписки (PubSub)
 
-1. **Ошибка 401 "missing-api-key"**: Убедитесь, что вы установили `config.api_key = {"api_key": "YOUR_KEY"}` перед созданием экземпляра DefaultApi.
-2. **Неправильный класс API**: Используйте `DefaultApi` для серверных аутентифицированных запросов, `PublicApi` — для клиентских/публичных запросов, и `ModerationApi` — для запросов панели модератора.
+Модуль `pubsub` позволяет подписываться на события комментариев в реальном времени (новые комментарии, голоса, правки, уведомления и т.д.) через WebSocket, аналогично `LiveEventSubscriber` из Java‑SDK FastComments. Требуется дополнительный пакет `pubsub`, который добавляет WebSocket‑клиент поверх сгенерированного API‑клиента:
+
+```bash
+pip install "fastcomments[pubsub] @ git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0"
+```
+
+```python
+from pubsub import LiveEventSubscriber
+
+subscriber = LiveEventSubscriber()
+
+def handle_live_event(event):
+    print(f"Live event: {event.type}")
+    if event.comment:
+        print(f"  comment: {event.comment.comment}")
+
+result = subscriber.subscribe_to_changes(
+    tenant_id_ws="YOUR_TENANT_ID",
+    url_id="page-url-id",
+    url_id_ws="page-url-id",
+    user_id_ws="a-unique-presence-id",  # например, UUID для этой сессии
+    handle_live_event=handle_live_event,
+    on_connection_status_change=lambda connected, last_event_time: print(
+        f"connected={connected}"
+    ),
+    region=None,  # установить "eu" для региона EU
+)
+
+# ...позже, когда обновления больше не нужны:
+result.close()
+```
+
+Подписчик запускает соединение в фоновом демон‑потоке, прозрачно переподключается с джиттером и получает любые события, пропущенные во время отключения, с эндпоинта event‑log при переподключении. Передайте необязательный callback `can_see_comments` (`List[str] -> Dict[str, str]`, возвращающий идентификаторы, которые пользователь **НЕ** может видеть), чтобы отфильтровать события для комментариев, которые пользователь не имеет права просматривать. Установите `disable_live_commenting=True`, чтобы `subscribe_to_changes` стал пустой операцией, возвращающей `None`.
+
+### Распространённые проблемы
+
+1. **401 ошибка "missing-api-key"**: Убедитесь, что вы установили `config.api_key = {"api_key": "YOUR_KEY"}` перед созданием экземпляра DefaultApi.
+2. **Неправильный класс API**: Используйте `DefaultApi` для серверных аутентифицированных запросов, `PublicApi` для клиентских/публичных запросов и `ModerationApi` для запросов панели модератора.
 3. **Ошибки импорта**: Убедитесь, что импортируете из правильного модуля:
-   - Клиент API: `from client import ...`
+   - API‑клиент: `from client import ...`
    - Утилиты SSO: `from sso import ...`
+   - Живые подписки: `from pubsub import ...` (требуется extra `pubsub`)

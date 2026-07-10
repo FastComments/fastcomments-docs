@@ -12,7 +12,7 @@
 </repositories>
 ```
 
-Στη συνέχεια προσθέστε τις εξαρτήσεις που χρειάζεστε:
+Στη συνέχεια, προσθέστε τις εξαρτήσεις που χρειάζεστε:
 
 ```xml
 <dependencies>
@@ -20,28 +20,28 @@
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>3.0.0</version>
+        <version>3.0.1</version>
     </dependency>
     
-    <!-- Βιβλιοθήκη Core (περιλαμβάνει SSO) -->
+    <!-- Κύρια Βιβλιοθήκη (περιλαμβάνει SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>3.0.0</version>
+        <version>3.0.1</version>
     </dependency>
     
-    <!-- Βιβλιοθήκη PubSub (για ζωντανά συμβάντα) -->
+    <!-- Βιβλιοθήκη PubSub (για ζωντανά γεγονότα) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>3.0.0</version>
+        <version>3.0.1</version>
     </dependency>
 </dependencies>
 ```
 
 ### Gradle
 
-Προσθέστε το αποθετήριο Repsy στο αρχείο `build.gradle` σας:
+Προσθέστε το αποθετήριο Repsy στο αρχείο **build.gradle** σας:
 
 ```groovy
 repositories {
@@ -53,19 +53,19 @@ repositories {
 
 dependencies {
     // Πελάτης API
-    implementation "com.fastcomments:client:3.0.0"
+    implementation "com.fastcomments:client:3.0.1"
     
-    // Βιβλιοθήκη Core (περιλαμβάνει SSO)
-    implementation "com.fastcomments:core:3.0.0"
+    // Κύρια Βιβλιοθήκη (περιλαμβάνει SSO)
+    implementation "com.fastcomments:core:3.0.1"
     
-    // Βιβλιοθήκη PubSub (για ζωντανά συμβάντα)
-    implementation "com.fastcomments:pubsub:3.0.0"
+    // Βιβλιοθήκη PubSub (για ζωντανά γεγονότα)
+    implementation "com.fastcomments:pubsub:3.0.1"
 }
 ```
 
 ### Library Contents
 
-Αυτή η βιβλιοθήκη περιλαμβάνει τρία modules: τον παραγόμενο πελάτη API, τη βασική βιβλιοθήκη Java που περιέχει χειρογραφή utilities για να κάνει τη δουλειά με το API πιο εύκολη, και το module `pubsub` που είναι μια βιβλιοθήκη για εγγραφή σε ροές αλλαγών.
+Αυτή η βιβλιοθήκη περιέχει τρία modules. Τον παραγόμενο πελάτη API, τη βασική βιβλιοθήκη Java που περιέχει χειρογράφους βοηθητικούς κώδικες για να διευκολύνει τη χρήση του API, και το module `pubsub` που είναι μια βιβλιοθήκη για την εγγραφή σε ροές αλλαγών.
 
 - [Τεκμηρίωση Βιβλιοθήκης Πελάτη API](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
 - [Τεκμηρίωση Βασικής Βιβλιοθήκης, Συμπεριλαμβανομένων Παραδειγμάτων SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
@@ -73,6 +73,6 @@ dependencies {
 
 ### Public vs Secured APIs
 
-Για τον πελάτη API, υπάρχουν τρεις κλάσεις, `DefaultApi`, `PublicApi` και `ModerationApi`. Η `DefaultApi` περιέχει μεθόδους που απαιτούν το κλειδί API σας, ενώ η `PublicApi` περιέχει μεθόδους που μπορούν να κληθούν απευθείας από πρόγραμμα περιήγησης/συσκευή κινητής χωρίς πιστοποίηση.
+Για τον πελάτη API, υπάρχουν τρεις κλάσεις, `DefaultApi`, `PublicApi` και `ModerationApi`. Η `DefaultApi` περιέχει μεθόδους που απαιτούν το κλειδί API σας, ενώ η `PublicApi` περιέχει μεθόδους που μπορούν να κληθούν απευθείας από έναν φυλλομετρητή/συσκευή κινητής κίνησης κ.λπ. χωρίς έλεγχο ταυτότητας.
 
-Η `ModerationApi` παρέχει μια εκτενή σειρά ζωντανών και γρήγορων APIs διαχείρισης. Κάθε μέθοδος της `ModerationApi` δέχεται μια παράμετρο `sso` και μπορεί να πιστοποιηθεί μέσω SSO ή ενός cookie συνεδρίας FastComments.com.
+Η `ModerationApi` παρέχει ένα εκτενές σύνολο ζωντανών και γρήγορων API διαχείρισης. Κάθε μέθοδος της `ModerationApi` δέχεται μια παράμετρο `sso` και μπορεί να πιστοποιηθεί μέσω SSO ή μέσω cookie συνεδρίας FastComments.com.

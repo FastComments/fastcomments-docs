@@ -1,26 +1,26 @@
-### Namestitev s GitHub-a
+### Namestitev iz GitHub-a
 
 Namestite neposredno iz oznake izdaj (priporočeno, popolnoma reproducibilno):
 
 ```bash
-pip install git+https://github.com/fastcomments/fastcomments-python.git@v3.0.0
+pip install git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0
 ```
 
-Zakažite oznako namesto veje, da so gradnje določljive. Enak zapis deluje v `requirements.txt`:
+Označite oznako namesto veje, da so gradnje deterministične. Enaka oblika deluje v `requirements.txt`:
 
 ```
-fastcomments @ git+https://github.com/fastcomments/fastcomments-python.git@v3.0.0
+fastcomments @ git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0
 ```
 
-Vsaka označena [GitHub izdaja](https://github.com/fastcomments/fastcomments-python/releases) ima tudi priloženo zgrajeno wheel, če raje neposredno namestite binarni artefakt.
+Vsaka označena [GitHub Release](https://github.com/fastcomments/fastcomments-python/releases) ima tudi priložen sestavljen paket (wheel), če raje neposredno namestite binarni artefakt.
 
 ### Vsebina knjižnice
 
-Ta knjižnica vsebuje dva modula: ustvarjenega API odjemalca in jedrno Python knjižnico, ki vsebuje ročno napisane pripomočke, ki olajšajo delo z API-jem, vključno s podporo za SSO.
+Ta knjižnica vsebuje dva modula: ustvarjenega API odjemalca in jedrno Python knjižnico, ki vsebuje ročno napisane pripomočke za olajšanje dela z API-jem, vključno s podporo SSO.
 
-- [Dokumentacija knjižnice API odjemalca](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
-- [Dokumentacija jedrne knjižnice, vključno s SSO primeri](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
+- [API Client Library Documentation](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
+- [Core Library Documentation, Including SSO Examples](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
 
-### Javni in zaščiteni API-ji
+### Javni vs Zavarovani API-ji
 
-Za API odjemalca so na voljo trije razredi, `DefaultApi`, `PublicApi` in `ModerationApi`. `DefaultApi` vsebuje metode, ki zahtevajo vaš API ključ, `PublicApi` vsebuje metode, ki jih je mogoče izvesti neposredno iz brskalnika/mobilne naprave itd. brez avtentikacije. `ModerationApi` ponuja obsežen nabor živo in hitro moderiranje API-jev. Vsaka metoda `ModerationApi` sprejme parameter `sso` in se lahko avtenticira prek SSO ali FastComments.com seje piškotka.
+Za API odjemalca obstajajo trije razredi, `DefaultApi`, `PublicApi` in `ModerationApi`. `DefaultApi` vsebuje metode, ki zahtevajo vaš API ključ, `PublicApi` pa vsebuje metode, ki jih je mogoče klicati neposredno iz brskalnika/mobilne naprave naprave/itd. brez avtentikacije. `ModerationApi` ponuja obsežen nabor živih in hitrih moderacijskih API-jev. Vsaka metoda `ModerationApi` sprejme parameter `sso` in se lahko avtenticira prek SSO ali piškotka seje FastComments.com.

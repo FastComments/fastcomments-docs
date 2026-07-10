@@ -1,26 +1,25 @@
----
 ### Utilisation des API authentifiées (DefaultApi)
 
-**Important :** Vous devez définir votre clé API dans la Configuration avant d'effectuer des requêtes authentifiées. Sinon, les requêtes échoueront avec une erreur 401.
+**Important :** Vous devez définir votre clé API dans la Configuration avant d’effectuer des requêtes authentifiées. Sinon, les requêtes échoueront avec une erreur 401.
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
 from client.models import CreateAPISSOUserData
 
-# Create and configure the API client
+# Créez et configurez le client API
 config = Configuration()
 config.host = "https://fastcomments.com"
 
-# REQUIRED: Set your API key (get this from your FastComments dashboard)
+# REQUIS : définissez votre clé API (obtenez‑la depuis votre tableau de bord FastComments)
 config.api_key = {"api_key": "YOUR_API_KEY_HERE"}
 
-# Create the API instance with the configured client
+# Créez l’instance API avec le client configuré
 api_client = ApiClient(configuration=config)
 api = DefaultApi(api_client)
 
-# Now you can make authenticated API calls
+# Vous pouvez maintenant effectuer des appels API authentifiés
 try:
-    # Example: Add an SSO user
+    # Exemple : ajouter un utilisateur SSO
     user_data = CreateAPISSOUserData(
         id="user-123",
         email="user@example.com",
@@ -32,14 +31,14 @@ try:
 
 except Exception as e:
     print(f"Error: {e}")
-    # Common errors:
-    # - 401: API key is missing or invalid
-    # - 400: Request validation failed
+    # Erreurs courantes :
+    # - 401 : la clé API est manquante ou invalide
+    # - 400 : la validation de la requête a échoué
 ```
 
 ### Utilisation des API publiques (PublicApi)
 
-Les points de terminaison publics ne nécessitent pas d'authentification :
+Les points de terminaison publics ne nécessitent pas d’authentification :
 
 ```python
 from client import ApiClient, Configuration, PublicApi
@@ -59,7 +58,7 @@ except Exception as e:
 
 ### Utilisation du tableau de bord de modération (ModerationApi)
 
-Le `ModerationApi` alimente le tableau de bord des modérateurs. Les méthodes sont appelées au nom d'un modérateur en transmettant un jeton `sso` :
+Le `ModerationApi` alimente le tableau de bord des modérateurs. Les méthodes sont appelées au nom d’un modérateur en transmettant un jeton `sso` :
 
 ```python
 from client import ApiClient, Configuration, ModerationApi
@@ -72,21 +71,21 @@ api_client = ApiClient(configuration=config)
 moderation_api = ModerationApi(api_client)
 
 try:
-    # Count the comments awaiting moderation
+    # Compter les commentaires en attente de modération
     response = moderation_api.get_count(GetCountOptions(sso="SSO_TOKEN"))
     print(response)
 except Exception as e:
     print(f"Error: {e}")
 ```
 
-### Utilisation du SSO (Single Sign-On)
+### Utilisation du SSO (Single Sign‑On)
 
 Le SDK comprend des utilitaires pour générer des jetons SSO sécurisés :
 
 ```python
 from sso import FastCommentsSSO, SecureSSOUserData
 
-# Create user data (id, email, and username are required)
+# Créez les données utilisateur (id, courriel et nom d’utilisateur sont requis)
 user_data = SecureSSOUserData(
     id="user-123",
     email="user@example.com",
@@ -94,13 +93,13 @@ user_data = SecureSSOUserData(
     avatar="https://example.com/avatar.jpg"
 )
 
-# Sign it with your API secret (HMAC-SHA256)
+# Signez‑les avec votre secret API (HMAC‑SHA256)
 sso = FastCommentsSSO.new_secure("YOUR_API_SECRET", user_data)
 
-# Generate the SSO token to pass to the widget or an API call
+# Générez le jeton SSO à transmettre au widget ou à un appel API
 sso_token = sso.create_token()
 
-# Use this token in your frontend or pass to API calls
+# Utilisez ce jeton dans votre interface ou transmettez‑le aux appels API
 print(f"SSO Token: {sso_token}")
 ```
 
@@ -118,10 +117,47 @@ sso = FastCommentsSSO.new_simple(user_data)
 sso_token = sso.create_token()
 ```
 
+### Souscriptions en direct (PubSub)
+
+Le module `pubsub` vous permet de vous abonner aux événements de commentaires en temps réel (nouveaux commentaires, votes, modifications, notifications, etc.) via un WebSocket, reproduisant le `LiveEventSubscriber` du SDK Java FastComments. Il nécessite l’extra `pubsub`, qui ajoute un client WebSocket au-dessus du client API généré :
+
+```bash
+pip install "fastcomments[pubsub] @ git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0"
+```
+
+```python
+from pubsub import LiveEventSubscriber
+
+subscriber = LiveEventSubscriber()
+
+def handle_live_event(event):
+    print(f"Live event: {event.type}")
+    if event.comment:
+        print(f"  comment: {event.comment.comment}")
+
+result = subscriber.subscribe_to_changes(
+    tenant_id_ws="YOUR_TENANT_ID",
+    url_id="page-url-id",
+    url_id_ws="page-url-id",
+    user_id_ws="a-unique-presence-id",  # p. ex. un UUID pour cette session
+    handle_live_event=handle_live_event,
+    on_connection_status_change=lambda connected, last_event_time: print(
+        f"connected={connected}"
+    ),
+    region=None,  # définissez sur "eu" pour la région UE
+)
+
+# ...plus tard, quand vous ne voulez plus de mises à jour :
+result.close()
+```
+
+L’abonné exécute la connexion sur un thread daemon en arrière‑plan, se reconnecte de façon transparente avec du jitter et récupère les événements manqués pendant la déconnexion depuis le point de terminaison du journal d’événements lors de la reconnexion. Transmettez un rappel optionnel `can_see_comments` (`List[str] -> Dict[str, str]`, renvoyant les identifiants que l’utilisateur ne doit PAS voir) pour filtrer les événements relatifs aux commentaires que l’utilisateur n’est pas autorisé à voir. Définissez `disable_live_commenting=True` pour que `subscribe_to_changes` devienne une opération nulle qui renvoie `None`.
+
 ### Problèmes courants
 
-1. **401 "missing-api-key" error** : Assurez‑vous de définir `config.api_key = {"api_key": "YOUR_KEY"}` avant de créer l'instance DefaultApi.
-2. **Wrong API class** : Utilisez `DefaultApi` pour les requêtes authentifiées côté serveur, `PublicApi` pour les requêtes côté client/public, et `ModerationApi` pour les requêtes du tableau de bord des modérateurs.
-3. **Import errors** : Assurez‑vous d'importer depuis le bon module :
-   - API client : `from client import ...`
-   - SSO utilities : `from sso import ...`
+1. **Erreur 401 « missing‑api‑key »** : Assurez‑vous d’avoir défini `config.api_key = {"api_key": "YOUR_KEY"}` avant de créer l’instance `DefaultApi`.
+2. **Classe API incorrecte** : Utilisez `DefaultApi` pour les requêtes authentifiées côté serveur, `PublicApi` pour les requêtes côté client/public, et `ModerationApi` pour les requêtes du tableau de bord des modérateurs.
+3. **Erreurs d’importation** : Assurez‑vous d’importer depuis le bon module :
+   - Client API : `from client import ...`
+   - Utilitaires SSO : `from sso import ...`
+   - Souscriptions en direct : `from pubsub import ...` (nécessite l’extra `pubsub`)

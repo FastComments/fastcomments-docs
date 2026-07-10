@@ -20,28 +20,28 @@ Następnie dodaj potrzebne zależności:
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>3.0.0</version>
+        <version>3.0.1</version>
     </dependency>
     
     <!-- Core Library (includes SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>3.0.0</version>
+        <version>3.0.1</version>
     </dependency>
     
     <!-- PubSub Library (for live events) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>3.0.0</version>
+        <version>3.0.1</version>
     </dependency>
 </dependencies>
 ```
 
 ### Gradle
 
-Dodaj repozytorium Repsy do pliku **build.gradle**:
+Dodaj repozytorium Repsy do pliku build.gradle:
 
 ```groovy
 repositories {
@@ -53,13 +53,13 @@ repositories {
 
 dependencies {
     // API Client
-    implementation "com.fastcomments:client:3.0.0"
+    implementation "com.fastcomments:client:3.0.1"
     
     // Core Library (includes SSO)
-    implementation "com.fastcomments:core:3.0.0"
+    implementation "com.fastcomments:core:3.0.1"
     
     // PubSub Library (for live events)
-    implementation "com.fastcomments:pubsub:3.0.0"
+    implementation "com.fastcomments:pubsub:3.0.1"
 }
 ```
 
@@ -73,6 +73,6 @@ Ta biblioteka zawiera trzy moduły. Wygenerowany klient API, podstawowa bibliote
 
 ### Public vs Secured APIs
 
-W przypadku klienta API dostępne są trzy klasy: `DefaultApi`, `PublicApi` i `ModerationApi`. `DefaultApi` zawiera metody wymagające klucza API, natomiast `PublicApi` zawiera metody, które można wywołać bezpośrednio z przeglądarki, urządzenia mobilnego itp. bez uwierzytelnienia.
+Dla klienta API istnieją trzy klasy: `DefaultApi`, `PublicApi` i `ModerationApi`. `DefaultApi` zawiera metody wymagające klucza API, natomiast `PublicApi` zawiera metody, które można wywołać bezpośrednio z przeglądarki, urządzenia mobilnego itp., bez uwierzytelnienia.
 
-`ModerationApi` oferuje rozbudowany zestaw szybkich i bieżących interfejsów API do moderacji. Każda metoda `ModerationApi` przyjmuje parametr `sso` i może uwierzytelnić się poprzez SSO lub ciasteczko sesji FastComments.com.
+`ModerationApi` oferuje rozbudowany zestaw szybkich i bieżących API moderacji. Każda metoda `ModerationApi` przyjmuje parametr `sso` i może uwierzytelnić się za pomocą SSO lub ciasteczka sesji FastComments.com.

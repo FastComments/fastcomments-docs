@@ -1,4 +1,4 @@
-### Usando APIs autenticadas (DefaultApi)
+### Uso de APIs autenticadas (DefaultApi)
 
 **Importante:** Debes establecer tu clave API en la Configuración antes de realizar solicitudes autenticadas. Si no lo haces, las solicitudes fallarán con un error 401.
 
@@ -36,7 +36,7 @@ except Exception as e:
     # - 400: Request validation failed
 ```
 
-### Usando APIs públicas (PublicApi)
+### Uso de APIs públicas (PublicApi)
 
 Los endpoints públicos no requieren autenticación:
 
@@ -56,7 +56,7 @@ except Exception as e:
     print(f"Error: {e}")
 ```
 
-### Usando el Panel de Moderación (ModerationApi)
+### Uso del panel de moderación (ModerationApi)
 
 El `ModerationApi` alimenta el panel de moderador. Los métodos se llaman en nombre de un moderador pasando un token `sso`:
 
@@ -78,7 +78,7 @@ except Exception as e:
     print(f"Error: {e}")
 ```
 
-### Usando SSO (Single Sign-On)
+### Uso de SSO (Single Sign-On)
 
 El SDK incluye utilidades para generar tokens SSO seguros:
 
@@ -117,10 +117,47 @@ sso = FastCommentsSSO.new_simple(user_data)
 sso_token = sso.create_token()
 ```
 
+### Suscripciones en tiempo real (PubSub)
+
+El módulo `pubsub` te permite suscribirte a eventos de comentarios en tiempo real (nuevos comentarios, votos, ediciones, notificaciones, etc.) a través de un WebSocket, replicando el `LiveEventSubscriber` del SDK Java de FastComments. Requiere el extra `pubsub`, que agrega un cliente WebSocket sobre el cliente API generado:
+
+```bash
+pip install "fastcomments[pubsub] @ git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0"
+```
+
+```python
+from pubsub import LiveEventSubscriber
+
+subscriber = LiveEventSubscriber()
+
+def handle_live_event(event):
+    print(f"Live event: {event.type}")
+    if event.comment:
+        print(f"  comment: {event.comment.comment}")
+
+result = subscriber.subscribe_to_changes(
+    tenant_id_ws="YOUR_TENANT_ID",
+    url_id="page-url-id",
+    url_id_ws="page-url-id",
+    user_id_ws="a-unique-presence-id",  # e.g. a UUID for this session
+    handle_live_event=handle_live_event,
+    on_connection_status_change=lambda connected, last_event_time: print(
+        f"connected={connected}"
+    ),
+    region=None,  # set to "eu" for the EU region
+)
+
+# ...later, when you no longer want updates:
+result.close()
+```
+
+El suscriptor ejecuta la conexión en un hilo daemon en segundo plano, se reconecta de forma transparente con jitter y recupera cualquier evento perdido mientras estaba desconectado del endpoint de registro de eventos al reconectar. Pasa un callback opcional `can_see_comments` (`List[str] -> Dict[str, str]`, que devuelve los IDs que el usuario NO puede ver) para filtrar los eventos de comentarios que el usuario no tiene permiso de ver. Establece `disable_live_commenting=True` para que `subscribe_to_changes` sea una operación nula que devuelve `None`.
+
 ### Problemas comunes
 
 1. **Error 401 "missing-api-key"**: Asegúrate de establecer `config.api_key = {"api_key": "YOUR_KEY"}` antes de crear la instancia DefaultApi.
-2. **Clase API incorrecta**: Usa `DefaultApi` para solicitudes autenticadas del lado del servidor, `PublicApi` para solicitudes del lado del cliente/públicas, y `ModerationApi` para solicitudes del panel de moderador.
-3. **Errores de importación**: Asegúrate de estar importando desde el módulo correcto:
+2 **Clase API incorrecta**: Usa `DefaultApi` para solicitudes autenticadas del lado del servidor, `PublicApi` para solicitudes del lado del cliente/públicas, y `ModerationApi` para solicitudes del panel de moderador.
+3 **Errores de importación**: Asegúrate de estar importando del módulo correcto:
    - Cliente API: `from client import ...`
    - Utilidades SSO: `from sso import ...`
+   - Suscripciones en tiempo real: `from pubsub import ...` (requiere el extra `pubsub`)

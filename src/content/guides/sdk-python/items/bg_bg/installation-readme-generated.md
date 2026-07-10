@@ -1,26 +1,26 @@
 ### Инсталиране от GitHub
 
-Инсталирайте директно от етикет на версия (препоръчително, напълно възпроизводимо):
+Инсталирайте директно от етикет на версия (препоръчително, напълно възпроизведимо):
 
 ```bash
-pip install git+https://github.com/fastcomments/fastcomments-python.git@v3.0.0
+pip install git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0
 ```
 
-Фиксирайте етикета вместо клон, за да бъдат компилациите детерминирани. Същият формат работи в `requirements.txt`:
+Закрепете етикета вместо клон, за да бъдат изграждането детерминистични. Същият формат работи в `requirements.txt`:
 
 ```
-fastcomments @ git+https://github.com/fastcomments/fastcomments-python.git@v3.0.0
+fastcomments @ git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0
 ```
 
-Всеки етикетиран [GitHub Release](https://github.com/fastcomments/fastcomments-python/releases) също има прикачен готов wheel, ако предпочитате да инсталирате бинарен артефакт директно.
+Всяко етикетирано [GitHub Release](https://github.com/fastcomments/fastcomments-python/releases) също има прикачено готово колело, ако предпочитате да инсталирате бинарен артефакт директно.
 
 ### Съдържание на библиотеката
 
-Тази библиотека съдържа два модула: генерирания клиент за API и основната Python библиотека, която съдържа ръчно написани помощни функции за улесняване на работата с API‑то, включително поддръжка на SSO.
+Тази библиотека съдържа два модула: генерирания API клиент и основната Python библиотека, която съдържа ръчно написани помощни функции за улесняване на работата с API, включително поддръжка на SSO.
 
-- [API Client Library Docs](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
-- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
+- [Документация за API клиентската библиотека](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
+- [Документация за основната библиотека, включително примери за SSO](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
 
-### Публични срещу защитени API‑та
+### Публични vs Защитени API
 
-За клиентския API има три класа – `DefaultApi`, `PublicApi` и `ModerationApi`. `DefaultApi` съдържа методи, които изискват вашия API ключ, а `PublicApi` съдържа методи, които могат да се извикат директно от браузър/мобилно устройство и пр. без автентификация. `ModerationApi` предоставя обширен набор от живи и бързи модерационни API‑та. Всеки метод на `ModerationApi` приема параметър `sso` и може да се автентикира чрез SSO или FastComments.com сесийна бисквитка.
+За API клиента има три класа, `DefaultApi`, `PublicApi` и `ModerationApi`. `DefaultApi` съдържа методи, които изискват вашия API ключ, а `PublicApi` съдържа методи, които могат да се извикат директно от браузър/мобилно устройство/и т.н. без удостоверяване. `ModerationApi` предоставя обширен набор от живи и бързи API за модериране. Всеки метод на `ModerationApi` приема параметър `sso` и може да се удостоверява чрез SSO или с FastComments.com сесийна бисквитка.

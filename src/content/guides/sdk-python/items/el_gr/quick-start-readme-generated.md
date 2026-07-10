@@ -1,6 +1,6 @@
-### Using Authenticated APIs (DefaultApi)
+### Χρήση Πιστοποιημένων API (DefaultApi)
 
-**Σημαντικό:** Πρέπει να ορίσετε το κλειδί API σας στη Διαμόρφωση (Configuration) πριν κάνετε αυθεντοποιημένα αιτήματα. Εάν δεν το κάνετε, τα αιτήματα θα αποτύχουν με σφάλμα 401.
+**Σημαντικό:** Πρέπει να ορίσετε το κλειδί API σας στη Διαμόρφωση (Configuration) πριν κάνετε πιστοποιημένα αιτήματα. Εάν δεν το κάνετε, τα αιτήματα θα αποτύχουν με σφάλμα 401.
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
@@ -36,9 +36,9 @@ except Exception as e:
     # - 400: Request validation failed
 ```
 
-### Using Public APIs (PublicApi)
+### Χρήση Δημόσιων API (PublicApi)
 
-Public endpoints don't require authentication:
+Τα δημόσια σημεία άκρου δεν απαιτούν πιστοποίηση:
 
 ```python
 from client import ApiClient, Configuration, PublicApi
@@ -56,9 +56,9 @@ except Exception as e:
     print(f"Error: {e}")
 ```
 
-### Using the Moderation Dashboard (ModerationApi)
+### Χρήση Πίνακα Ελέγχου Συντονισμού (ModerationApi)
 
-The `ModerationApi` powers the moderator dashboard. Methods are called on behalf of a moderator by passing an `sso` token:
+Το `ModerationApi` τροφοδοτεί τον πίνακα ελέγχου του συντονιστή. Οι μέθοδοι καλούνται εκ μέρους ενός συντονιστή με τη μεταβίβαση ενός διακριτικού `sso`:
 
 ```python
 from client import ApiClient, Configuration, ModerationApi
@@ -78,9 +78,9 @@ except Exception as e:
     print(f"Error: {e}")
 ```
 
-### Using SSO (Single Sign-On)
+### Χρήση SSO (Single Sign-On)
 
-The SDK includes utilities for generating secure SSO tokens:
+Το SDK περιλαμβάνει βοηθητικά εργαλεία για τη δημιουργία ασφαλών διακριτικών SSO:
 
 ```python
 from sso import FastCommentsSSO, SecureSSOUserData
@@ -103,7 +103,7 @@ sso_token = sso.create_token()
 print(f"SSO Token: {sso_token}")
 ```
 
-For simple SSO (less secure, for testing):
+Για απλό SSO (λιγότερο ασφαλές, για δοκιμές):
 
 ```python
 from sso import FastCommentsSSO, SimpleSSOUserData
@@ -117,10 +117,47 @@ sso = FastCommentsSSO.new_simple(user_data)
 sso_token = sso.create_token()
 ```
 
-### Common Issues
+### Ζωντανές Συνδρομές (PubSub)
 
-1. **401 "missing-api-key" error**: Make sure you set `config.api_key = {"api_key": "YOUR_KEY"}` before creating the DefaultApi instance.
-2. **Wrong API class**: Use `DefaultApi` for server-side authenticated requests, `PublicApi` for client-side/public requests, and `ModerationApi` for moderator dashboard requests.
-3. **Import errors**: Make sure you're importing from the correct module:
+Το module `pubsub` σας επιτρέπει να εγγραφείτε σε γεγονότα σχολίων σε πραγματικό χρόνο (νέα σχόλια, ψήφοι, επεξεργασίες, ειδοποιήσεις κ.λπ.) μέσω WebSocket, αντικατοπτρίζοντας το `LiveEventSubscriber` του FastComments Java SDK. Απαιτεί το πρόσθετο `pubsub`, το οποίο προσθέτει έναν πελάτη WebSocket πάνω από τον παραγόμενο πελάτη API:
+
+```bash
+pip install "fastcomments[pubsub] @ git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0"
+```
+
+```python
+from pubsub import LiveEventSubscriber
+
+subscriber = LiveEventSubscriber()
+
+def handle_live_event(event):
+    print(f"Live event: {event.type}")
+    if event.comment:
+        print(f"  comment: {event.comment.comment}")
+
+result = subscriber.subscribe_to_changes(
+    tenant_id_ws="YOUR_TENANT_ID",
+    url_id="page-url-id",
+    url_id_ws="page-url-id",
+    user_id_ws="a-unique-presence-id",  # e.g. a UUID for this session
+    handle_live_event=handle_live_event,
+    on_connection_status_change=lambda connected, last_event_time: print(
+        f"connected={connected}"
+    ),
+    region=None,  # set to "eu" for the EU region
+)
+
+# ...later, when you no longer want updates:
+result.close()
+```
+
+Ο συνδρομητής εκτελεί τη σύνδεση σε ένα νήμα daemon στο παρασκήνιο, επανασυνδέεται διαφανώς με jitter, και ανακτά τυχόν γεγονότα που χάθηκαν ενώ ήταν αποσυνδεδεμένος από το endpoint event‑log κατά την επανασύνδεση. Περνάτε ένα προαιρετικό callback `can_see_comments` (`List[str] -> Dict[str, str]`, που επιστρέφει τα IDs που ο χρήστης ΔΕΝ μπορεί να δει) για να φιλτράρετε τα γεγονότα για σχόλια που ο χρήστης δεν επιτρέπεται να δει. Ορίστε `disable_live_commenting=True` για να κάνετε το `subscribe_to_changes` μια λειτουργία no‑op που επιστρέφει `None`.
+
+### Κοινά Προβλήματα
+
+1. **401 "missing-api-key" error** Make sure you set `config.api_key = {"api_key": "YOUR_KEY"}` before creating the DefaultApi instance.
+2. **Wrong API class** Use `DefaultApi` for server-side authenticated requests, `PublicApi` for client-side/public requests, and `ModerationApi` for moderator dashboard requests.
+3. **Import errors** Make sure you're importing from the correct module:
    - API client: `from client import ...`
    - SSO utilities: `from sso import ...`
+   - Live subscriptions: `from pubsub import ...` (needs the `pubsub` extra)

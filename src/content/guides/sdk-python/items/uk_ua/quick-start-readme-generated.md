@@ -1,25 +1,25 @@
 ### Використання автентифікованих API (DefaultApi)
 
-**Important:** Ви повинні встановити ваш API-ключ у Configuration перед виконанням автентифікованих запитів. Якщо ви цього не зробите, запити завершаться помилкою 401.
+**Important:** Ви повинні встановити ваш API‑ключ у Configuration перед виконанням автентифікованих запитів. Якщо ви цього не зробите, запити завершаться помилкою 401.
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
 from client.models import CreateAPISSOUserData
 
-# Створіть та налаштуйте клієнт API
+# Створити та налаштувати API‑клієнт
 config = Configuration()
 config.host = "https://fastcomments.com"
 
-# ОБОВ’ЯЗКОВО: Встановіть ваш API-ключ (отримайте його у вашій панелі FastComments)
+# ОБОВ'ЯЗКОВО: Встановіть ваш API‑ключ (отримайте його у вашій панелі FastComments)
 config.api_key = {"api_key": "YOUR_API_KEY_HERE"}
 
-# Створіть екземпляр API з налаштованим клієнтом
+# Створити екземпляр API з налаштованим клієнтом
 api_client = ApiClient(configuration=config)
 api = DefaultApi(api_client)
 
-# Тепер ви можете робити автентифіковані виклики API
+# Тепер ви можете виконувати автентифіковані API‑виклики
 try:
-    # Приклад: Додати SSO користувача
+    # Приклад: Додати SSO‑користувача
     user_data = CreateAPISSOUserData(
         id="user-123",
         email="user@example.com",
@@ -31,9 +31,9 @@ try:
 
 except Exception as e:
     print(f"Error: {e}")
-    # Загальні помилки:
-    # - 401: API key відсутній або недійсний
-    # - 400: Перевірка запиту не вдалася
+    # Поширені помилки:
+    # - 401: API‑ключ відсутній або недійсний
+    # - 400: Не вдалося перевірити запит
 ```
 
 ### Використання публічних API (PublicApi)
@@ -58,7 +58,7 @@ except Exception as e:
 
 ### Використання панелі модерації (ModerationApi)
 
-`ModerationApi` забезпечує роботу панелі модератора. Методи викликаються від імені модератора шляхом передачі токена `sso`:
+`ModerationApi` забезпечує роботу панелі модератора. Методи викликаються від імені модератора шляхом передачі токену `sso`:
 
 ```python
 from client import ApiClient, Configuration, ModerationApi
@@ -71,7 +71,7 @@ api_client = ApiClient(configuration=config)
 moderation_api = ModerationApi(api_client)
 
 try:
-    # Підрахувати коментарі, що очікують модерації
+    # Count the comments awaiting moderation
     response = moderation_api.get_count(GetCountOptions(sso="SSO_TOKEN"))
     print(response)
 except Exception as e:
@@ -80,12 +80,12 @@ except Exception as e:
 
 ### Використання SSO (Single Sign-On)
 
-SDK включає утиліти для генерування безпечних SSO токенів:
+SDK включає утиліти для генерації безпечних SSO‑токенів:
 
 ```python
 from sso import FastCommentsSSO, SecureSSOUserData
 
-# Створити дані користувача (id, email та username обов’язкові)
+# Create user data (id, email, and username are required)
 user_data = SecureSSOUserData(
     id="user-123",
     email="user@example.com",
@@ -93,13 +93,13 @@ user_data = SecureSSOUserData(
     avatar="https://example.com/avatar.jpg"
 )
 
-# Підписати його вашим API секретом (HMAC-SHA256)
+# Sign it with your API secret (HMAC-SHA256)
 sso = FastCommentsSSO.new_secure("YOUR_API_SECRET", user_data)
 
-# Згенерувати SSO токен для передачі у віджет або API виклик
+# Generate the SSO token to pass to the widget or an API call
 sso_token = sso.create_token()
 
-# Використовуйте цей токен у вашому фронтенді або передайте у API виклики
+# Use this token in your frontend or pass to API calls
 print(f"SSO Token: {sso_token}")
 ```
 
@@ -117,10 +117,47 @@ sso = FastCommentsSSO.new_simple(user_data)
 sso_token = sso.create_token()
 ```
 
+### Живі підписки (PubSub)
+
+Модуль `pubsub` дозволяє підписатися на події коментарів у реальному часі (нові коментарі, голоси, редагування, сповіщення тощо) через WebSocket, повторюючи `LiveEventSubscriber` Java SDK FastComments. Для цього потрібен додатковий пакет `pubsub`, який додає WebSocket‑клієнт до згенерованого API‑клієнта:
+
+```bash
+pip install "fastcomments[pubsub] @ git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0"
+```
+
+```python
+from pubsub import LiveEventSubscriber
+
+subscriber = LiveEventSubscriber()
+
+def handle_live_event(event):
+    print(f"Live event: {event.type}")
+    if event.comment:
+        print(f"  comment: {event.comment.comment}")
+
+result = subscriber.subscribe_to_changes(
+    tenant_id_ws="YOUR_TENANT_ID",
+    url_id="page-url-id",
+    url_id_ws="page-url-id",
+    user_id_ws="a-unique-presence-id",  # напр., UUID для цієї сесії
+    handle_live_event=handle_live_event,
+    on_connection_status_change=lambda connected, last_event_time: print(
+        f"connected={connected}"
+    ),
+    region=None,  # встановити "eu" для регіону EU
+)
+
+# ...пізніше, коли ви більше не хочете оновлень:
+result.close()
+```
+
+Підписник запускає з’єднання у фоновому демон‑потоку, прозоро перепідключається з джиттером і отримує будь‑які події, пропущені під час відключення, з кінцевої точки event‑log при перепідключенні. Передайте необов’язковий зворотний виклик `can_see_comments` (`List[str] -> Dict[str, str]`, що повертає ідентифікатори, які користувач **НЕ** може бачити), щоб фільтрувати події для коментарів, які користувач не має права переглядати. Встановіть `disable_live_commenting=True`, щоб `subscribe_to_changes` не виконувало нічого і повертало `None`.
+
 ### Поширені проблеми
 
 1. **401 "missing-api-key" error**: Переконайтеся, що ви встановили `config.api_key = {"api_key": "YOUR_KEY"}` перед створенням екземпляра DefaultApi.
 2. **Wrong API class**: Використовуйте `DefaultApi` для серверних автентифікованих запитів, `PublicApi` для клієнтських/публічних запитів, та `ModerationApi` для запитів панелі модератора.
-3. **Import errors**: Переконайтеся, що ви імпортуєте з правильного модуля:
-   - API client: `from client import ...`
-   - SSO utilities: `from sso import ...`
+3. **Import errors**: Переконайтеся, що ви імпортуєте з правильного модуляля:
+   - API‑клієнт: `from client import ...`
+   - Утиліти SSO: `from sso import ...`
+   - Живі підписки: `from pubsub import ...` (потрібен додаток `pubsub`)

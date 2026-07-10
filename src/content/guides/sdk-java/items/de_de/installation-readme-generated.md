@@ -1,6 +1,6 @@
 ### Maven
 
-Fügen Sie das Repsy-Repository zu Ihrer Projekt‑POM hinzu:
+Fügen Sie das Repsy-Repository zu Ihrer Projekt-POM hinzu:
 
 ```xml
 <repositories>
@@ -20,28 +20,28 @@ Fügen Sie dann die benötigten Abhängigkeiten hinzu:
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>3.0.0</version>
+        <version>3.0.1</version>
     </dependency>
     
-    <!-- Kernbibliothek (inkl. SSO) -->
+    <!-- Core-Bibliothek (enthält SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>3.0.0</version>
+        <version>3.0.1</version>
     </dependency>
     
-    <!-- PubSub‑Bibliothek (für Live‑Ereignisse) -->
+    <!-- PubSub-Bibliothek (für Live-Ereignisse) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>3.0.0</version>
+        <version>3.0.1</version>
     </dependency>
 </dependencies>
 ```
 
 ### Gradle
 
-Fügen Sie das Repsy-Repository zu Ihrer **build.gradle**‑Datei hinzu:
+Fügen Sie das Repsy-Repository zu Ihrer `build.gradle`‑Datei hinzu:
 
 ```groovy
 repositories {
@@ -53,26 +53,26 @@ repositories {
 
 dependencies {
     // API-Client
-    implementation "com.fastcomments:client:3.0.0"
+    implementation "com.fastcomments:client:3.0.1"
     
-    // Kernbibliothek (inkl. SSO)
-    implementation "com.fastcomments:core:3.0.0"
+    // Core-Bibliothek (enthält SSO)
+    implementation "com.fastcomments:core:3.0.1"
     
-    // PubSub‑Bibliothek (für Live‑Ereignisse)
-    implementation "com.fastcomments:pubsub:3.0.0"
+    // PubSub-Bibliothek (für Live-Ereignisse)
+    implementation "com.fastcomments:pubsub:3.0.1"
 }
 ```
 
-### Library Contents
+### Bibliotheksinhalte
 
-Diese Bibliothek enthält drei Module: den generierten API‑Client, die Kern‑Java‑Bibliothek, die handgeschriebene Dienstprogramme zur vereinfachten Arbeit mit der API enthält, und das `pubsub`‑Modul, das eine Bibliothek zum Abonnieren von Änderungsfeeds bereitstellt.
+Diese Bibliothek enthält drei Module: den generierten API-Client, die Kern‑Java‑Bibliothek, die handgeschriebene Hilfsprogramme enthält, um die Arbeit mit der API zu erleichtern, und das `pubsub`‑Modul, das eine Bibliothek zum Abonnieren von Änderungsfeeds ist.
 
-- [API Client Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [PubSub Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [API-Client-Bibliotheksdokumentation](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Core-Bibliotheksdokumentation, einschließlich SSO-Beispielen](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [PubSub-Bibliotheksdokumentation](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### Public vs Secured APIs
+### Öffentliche vs gesicherte APIs
 
-Für den API‑Client gibt es drei Klassen, `DefaultApi`, `PublicApi` und `ModerationApi`. Die `DefaultApi` enthält Methoden, die Ihren API‑Schlüssel benötigen, und `PublicApi` enthält Methoden, die direkt aus einem Browser/Mobilgerät usw. ohne Authentifizierung aufgerufen werden können.
+Für den API-Client gibt es drei Klassen, `DefaultApi`, `PublicApi` und `ModerationApi`. `DefaultApi` enthält Methoden, die Ihren API-Schlüssel erfordern, und `PublicApi` enthält Methoden, die direkt von einem Browser/Mobilgerät usw. ohne Authentifizierung aufgerufen werden können.
 
-Die `ModerationApi` bietet eine umfangreiche Suite von Live‑ und schnellen Moderations‑APIs. Jede `ModerationApi`‑Methode akzeptiert einen `sso`‑Parameter und kann sich über SSO oder ein FastComments.com‑Session‑Cookie authentifizieren.
+`ModerationApi` bietet eine reiche Palette von Live- und schnellen Moderations-APIs. Jede `ModerationApi`‑Methode akzeptiert einen `sso`‑Parameter und kann sich über SSO oder ein FastComments.com‑Sitzungs‑Cookie authentifizieren.

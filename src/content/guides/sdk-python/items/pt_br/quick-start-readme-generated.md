@@ -1,16 +1,16 @@
 ### Usando APIs Autenticadas (DefaultApi)
 
-**Importante:** Você deve definir sua chave de API na Configuração antes de fazer solicitações autenticadas. Se não o fizer, as solicitações falharão com um erro 401.
+**Importante:** Você deve definir sua chave de API na Configuração antes de fazer solicitações autenticadas. Caso contrário, as solicitações falharão com um erro 401.
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
 from client.models import CreateAPISSOUserData
 
-# Crie e configure o cliente API
+# Crie e configure o cliente da API
 config = Configuration()
 config.host = "https://fastcomments.com"
 
-# OBRIGATÓRIO: Defina sua chave de API (obtenha isto no painel do FastComments)
+# OBRIGATÓRIO: Defina sua chave de API (obtenha-a no painel do FastComments)
 config.api_key = {"api_key": "YOUR_API_KEY_HERE"}
 
 # Crie a instância da API com o cliente configurado
@@ -32,8 +32,8 @@ try:
 except Exception as e:
     print(f"Error: {e}")
     # Erros comuns:
-    # - 401: chave de API está ausente ou inválida
-    # - 400: validação da solicitação falhou
+    # - 401: chave de API ausente ou inválida
+    # - 400: falha na validação da requisição
 ```
 
 ### Usando APIs Públicas (PublicApi)
@@ -58,7 +58,7 @@ except Exception as e:
 
 ### Usando o Painel de Moderação (ModerationApi)
 
-A `ModerationApi` alimenta o painel de moderador. Os métodos são chamados em nome de um moderador passando um token `sso`:
+O `ModerationApi` alimenta o painel de moderador. Os métodos são chamados em nome de um moderador ao passar um token `sso`:
 
 ```python
 from client import ApiClient, Configuration, ModerationApi
@@ -71,7 +71,7 @@ api_client = ApiClient(configuration=config)
 moderation_api = ModerationApi(api_client)
 
 try:
-    # Contar os comentários que aguardam moderação
+    # Contar os comentários aguardando moderação
     response = moderation_api.get_count(GetCountOptions(sso="SSO_TOKEN"))
     print(response)
 except Exception as e:
@@ -85,7 +85,7 @@ O SDK inclui utilitários para gerar tokens SSO seguros:
 ```python
 from sso import FastCommentsSSO, SecureSSOUserData
 
-# Crie os dados do usuário (id, email e nome de usuário são obrigatórios)
+# Crie os dados do usuário (id, email e username são obrigatórios)
 user_data = SecureSSOUserData(
     id="user-123",
     email="user@example.com",
@@ -99,7 +99,7 @@ sso = FastCommentsSSO.new_secure("YOUR_API_SECRET", user_data)
 # Gere o token SSO para passar ao widget ou a uma chamada de API
 sso_token = sso.create_token()
 
-# Use este token no seu frontend ou passe para chamadas de API
+# Use este token no frontend ou passe para chamadas de API
 print(f"SSO Token: {sso_token}")
 ```
 
@@ -117,10 +117,47 @@ sso = FastCommentsSSO.new_simple(user_data)
 sso_token = sso.create_token()
 ```
 
+### Assinaturas ao Vivo (PubSub)
+
+O módulo `pubsub` permite que você se inscreva em eventos de comentários em tempo real (novos comentários, votos, edições, notificações, etc.) via WebSocket, espelhando o `LiveEventSubscriber` do FastComments Java SDK. Ele requer o extra `pubsub`, que adiciona um cliente WebSocket sobre o cliente de API gerado:
+
+```bash
+pip install "fastcomments[pubsub] @ git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0"
+```
+
+```python
+from pubsub import LiveEventSubscriber
+
+subscriber = LiveEventSubscriber()
+
+def handle_live_event(event):
+    print(f"Live event: {event.type}")
+    if event.comment:
+        print(f"  comment: {event.comment.comment}")
+
+result = subscriber.subscribe_to_changes(
+    tenant_id_ws="YOUR_TENANT_ID",
+    url_id="page-url-id",
+    url_id_ws="page-url-id",
+    user_id_ws="a-unique-presence-id",  # ex.: um UUID para esta sessão
+    handle_live_event=handle_live_event,
+    on_connection_status_change=lambda connected, last_event_time: print(
+        f"connected={connected}"
+    ),
+    region=None,  # defina como "eu" para a região da UE
+)
+
+# ...mais tarde, quando não quiser mais atualizações:
+result.close()
+```
+
+O assinante executa a conexão em uma thread daemon em segundo plano, reconecta de forma transparente com jitter e busca quaisquer eventos perdidos enquanto estava desconectado do endpoint de registro de eventos ao reconectar. Passe um callback opcional `can_see_comments` (`List[str] -> Dict[str, str]`, retornando os IDs que o usuário **não** pode ver) para filtrar eventos de comentários que o usuário não tem permissão para visualizar. Defina `disable_live_commenting=True` para fazer `subscribe_to_changes` um no‑op que retorna `None`.
+
 ### Problemas Comuns
 
-1. **Erro 401 "missing-api-key"**: Certifique‑se de definir `config.api_key = {"api_key": "YOUR_KEY"}` antes de criar a instância DefaultApi.
-2. **Classe de API incorreta**: Use `DefaultApi` para solicitações autenticadas no servidor, `PublicApi` para solicitações do lado cliente/públicas, e `ModerationApi` para solicitações do painel de moderador.
-3. **Erros de importação**: Certifique‑se de que está importando do módulo correto:
+1. **Erro 401 "missing-api-key"**: Certifique‑se de definir `config.api_key = {"api_key": "YOUR_KEY"}` antes de criar a instância `DefaultApi`.
+2. **Classe de API incorreta**: Use `DefaultApi` para requisições autenticadas no lado do servidor, `PublicApi` para requisições públicas/no cliente e `ModerationApi` para requisições do painel de moderação.
+3. **Erros de importação**: Certifique‑se de estar importando do módulo correto:
    - Cliente da API: `from client import ...`
    - Utilitários SSO: `from sso import ...`
+   - Assinaturas ao vivo: `from pubsub import ...` (necessita do extra `pubsub`)
