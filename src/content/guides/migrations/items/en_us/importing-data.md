@@ -9,6 +9,7 @@ We natively support importing exports from the following providers:
 - Muut Comments
 - IntenseDebate
 - Just-Comments
+- Cusdis
 - WordPress (via the plugin)
 - AnyComment (Via WordPress Import/Export)
 

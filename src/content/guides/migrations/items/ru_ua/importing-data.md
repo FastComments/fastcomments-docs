@@ -1,6 +1,6 @@
-Хотя служба поддержки FastComments может помочь с миграциями, большинство из них можно выполнить и отслеживать легко без участия сотрудников поддержки.
+While FastComments Support can help with migrations, most can be performed and monitored easily without any intervention of support staff.
 
-Мы нативно поддерживаем импорт экспортов из следующих провайдеров:
+We natively support importing exports from the following providers:
 
 - Commento
 - Disqus
@@ -8,32 +8,30 @@
 - Muut Comments
 - IntenseDebate
 - Just-Comments
+- Cusdis
 - WordPress (via the plugin)
 - AnyComment (Via WordPress Import/Export)
 
-Перейдя [here](https://fastcomments.com/auth/my-account/manage-data/import) мы можем загрузить файл, содержащий данные для миграции.
+By navigating [here](https://fastcomments.com/auth/my-account/manage-data/import) we can upload the file containing the data to migrate.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; title='The Import Page Form' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; title='Форма страницы импорта' app-screenshot-end]
 
-### Мониторинг импортов
+### Monitoring Imports
 
-FastComments использует систему обработки заданий для обработки импортов и экспортов. Как только система возьмет ваше задание, она будет
-периодически сообщать о статусе задания в интерфейсе импорта или экспорта.
+FastComments uses a job processing system for processing imports and exports. Once the system has picked up your job, it will periodically report the status of the job in the import or export UI.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; title='Import Job Status' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; title='Статус задания импорта' app-screenshot-end]
 
-Обратите внимание, что статусы импортов и экспортов видны всем администраторам в аккаунте.
+Note that the status for Imports and Export are viewable by all administrators in the account.
 
-Если ваше задание завершится неудачей, оно не будет автоматически перезапущено. Импорт придется попытаться выполнить снова. Если какой-либо импорт или экспорт завершится неудачно,
-наши системные администраторы будут автоматически уведомлены. Если мы выявим проблему, мы свяжемся с вами, чтобы узнать, можем ли мы помочь.
+If your job fails, it will not automatically be restarted. The import will have to be attempted again. If any import or export fails, our system administrators are automatically notified. If we identify an issue, we'll reach out to you to see if we can help.
 
-### Повторный запуск импорта
+### Re-Running The Import
 
-В ходе некоторых миграций необходимо запускать импорт несколько раз. Например, часто выполняют первый проход
-миграции для тестирования, а затем запускают импорт снова с актуальными данными перед переключением.
+During some migrations, it is necessary to run the import multiple times. For example, it is common to do a first pass migration for testing, and then run the import again with the latest data before flipping the switch.
 
-Повторный импорт того же содержимого **не создаст дубликатов**.
+Re-importing the same content **will not create duplicates**.
 
-### Безопасность данных и срок хранения
+### Data Security and Expiration
 
-Файлы импорта недоступны извне никаким образом, и файлы импорта удаляются из нашей системы сразу после завершения импорта.
+Import files are not accessible via outside requests in any way, and import files are deleted from our system as soon as the import completes.

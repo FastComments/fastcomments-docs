@@ -1,6 +1,5 @@
----
-למרות ש-FastComments Support יכול לעזור בהעברות, רוב ההעברות ניתנות לביצוע ולעקיבה בקלות ללא כל התערבות
-של צוות התמיכה.
+While FastComments Support can help with migrations, most can be performed and monitored easily without any intervention
+of support staff.
 
 We natively support importing exports from the following providers:
 
@@ -10,33 +9,34 @@ We natively support importing exports from the following providers:
 - Muut Comments
 - IntenseDebate
 - Just-Comments
+- Cusdis
 - WordPress (via the plugin)
 - AnyComment (Via WordPress Import/Export)
 
-By navigating [כאן](https://fastcomments.com/auth/my-account/manage-data/import) ניתן להעלות את הקובץ המכיל את הנתונים להעברה.
+By navigating [here](https://fastcomments.com/auth/my-account/manage-data/import) we can upload the file containing the data to migrate.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; title='The Import Page Form' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; title='טופס דף הייבוא' app-screenshot-end]
 
-### ניטור ייבואים
+### Monitoring Imports
 
-FastComments משתמשת במערכת עיבוד עבודות לעיבוד ייבואים וייצוא. לאחר שהמערכת תקלוט את העבודה שלך, היא תדווח
-מדי פעם על מצב העבודה בממשק הייבוא או הייצוא.
+FastComments uses a job processing system for processing imports and exports. Once the system has picked up your job, it will
+periodically report the status of the job in the import or export UI.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; title='Import Job Status' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; title='מצב משימת הייבוא' app-screenshot-end]
 
-שימו לב שהמצב של הייבואים והייצוא ניתן לצפייה על-ידי כל המנהלים בחשבון.
+Note that the status for Imports and Export are viewable by all administrators in the account.
 
-אם העבודה שלך תיכשל, היא לא תתחיל מחדש אוטומטית. יש לנסות את הייבוא שוב. אם כל ייבוא או ייצוא ייכשל,
-מנהלי המערכת שלנו יודעו אוטומטית. אם נזהה בעיה, נפנה אליך כדי לבדוק אם נוכל לעזור.
+If your job fails, it will not automatically be restarted. The import will have to be attempted again. If any import or export fails,
+our system administrators are automatically notified. If we identify an issue, we'll reach out to you to see if we can help.
 
-### הרצת הייבוא מחדש
+### Re-Running The Import
 
-במהלך חלק מההעברות יש צורך להריץ את הייבוא מספר פעמים. לדוגמה, נפוץ לבצע העברה ראשונית לצורך בדיקות, ולאחר מכן להריץ את הייבוא שוב עם הנתונים העדכניים לפני הפעלת המערכת.
+During some migrations, it is necessary to run the import multiple times. For example, it is common to do a first pass
+migration for testing, and then run the import again with the latest data before flipping the switch.
 
-ייבוא חוזר של אותו תוכן **לא יגרום ליצירת כפילויות**.
+Re-importing the same content **will not create duplicates**.
 
-### אבטחת נתונים ותוקף
+### Data Security and Expiration
 
-קבצי הייבוא אינם נגישים על ידי בקשות חיצוניות בשום צורה, וקבצי הייבוא נמחקים מהמערכת שלנו מיד עם השלמת הייבוא.
-
----
+Import files are not accessible via outside requests in any way, and import files are deleted from our system as soon as
+the import completes.

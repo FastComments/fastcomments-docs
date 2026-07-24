@@ -1,7 +1,6 @@
----
-Ενώ η Υποστήριξη της FastComments μπορεί να βοηθήσει στις μεταφορές, οι περισσότερες μπορούν να πραγματοποιηθούν και να παρακολουθηθούν εύκολα χωρίς καμία παρέμβαση του προσωπικού υποστήριξης.
+While FastComments Support can help with migrations, most can be performed and monitored easily without any intervention of support staff.
 
-Υποστηρίζουμε εγγενώς την εισαγωγή εξαγωγών από τους ακόλουθους παρόχους:
+We natively support importing exports from the following providers:
 
 - Commento
 - Disqus
@@ -9,31 +8,30 @@
 - Muut Comments
 - IntenseDebate
 - Just-Comments
+- Cusdis
 - WordPress (via the plugin)
 - AnyComment (Via WordPress Import/Export)
 
 By navigating [here](https://fastcomments.com/auth/my-account/manage-data/import) we can upload the file containing the data to migrate.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; title='The Import Page Form' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; title='Η Φόρμα Σελίδας Εισαγωγής' app-screenshot-end]
 
-### Παρακολούθηση εισαγωγών
+### Παρακολούθηση Εισαγωγών
 
-Η FastComments χρησιμοποιεί ένα σύστημα επεξεργασίας εργασιών για την επεξεργασία εισαγωγών και εξαγωγών. Μόλις το σύστημα αναλάβει την εργασία σας, θα αναφέρει περιοδικά την κατάσταση της εργασίας στο import or export UI.
+FastComments uses a job processing system for processing imports and exports. Once the system has picked up your job, it will periodically report the status of the job in the import or export UI.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; title='Import Job Status' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; title='Κατάσταση Εργασίας Εισαγωγής' app-screenshot-end]
 
-Σημειώστε ότι η κατάσταση για τις Εισαγωγές και τις Εξαγωγές είναι ορατή σε όλους τους διαχειριστές του λογαριασμού.
+Note that the status for Imports and Export are viewable by all administrators in the account.
 
-Εάν η εργασία σας αποτύχει, δεν θα επανεκκινηθεί αυτόματα. Η εισαγωγή θα πρέπει να επιχειρηθεί ξανά. Εάν οποιαδήποτε εισαγωγή ή εξαγωγή αποτύχει, οι διαχειριστές συστήματός μας ειδοποιούνται αυτόματα. Εάν εντοπίσουμε κάποιο πρόβλημα, θα επικοινωνήσουμε μαζί σας για να δούμε αν μπορούμε να βοηθήσουμε.
+If your job fails, it will not automatically be restarted. The import will have to be attempted again. If any import or export fails, our system administrators are automatically notified. If we identify an issue, we'll reach out to you to see if we can help.
 
-### Επανεκτέλεση της εισαγωγής
+### Επανάληψη της Εισαγωγής
 
-Κατά τη διάρκεια ορισμένων μεταφορών, είναι απαραίτητο να εκτελεστεί η εισαγωγή πολλαπλές φορές. Για παράδειγμα, είναι συνηθισμένο να γίνεται μια πρώτη μετάβαση για δοκιμές, και στη συνέχεια να εκτελείται ξανά η εισαγωγή με τα πιο πρόσφατα δεδομένα πριν την ενεργοποίηση.
+During some migrations, it is necessary to run the import multiple times. For example, it is common to do a first pass migration for testing, and then run the import again with the latest data before flipping the switch.
 
-Η επανεισαγωγή του ίδιου περιεχομένου **δεν θα δημιουργήσει διπλότυπα**.
+Re-importing the same content **will not create duplicates**.
 
 ### Ασφάλεια Δεδομένων και Λήξη
 
-Τα αρχεία εισαγωγής δεν είναι προσβάσιμα μέσω εξωτερικών αιτήσεων με κανέναν τρόπο, και τα αρχεία εισαγωγής διαγράφονται από το σύστημά μας μόλις ολοκληρωθεί η εισαγωγή.
-
----
+Import files are not accessible via outside requests in any way, and import files are deleted from our system as soon as the import completes.

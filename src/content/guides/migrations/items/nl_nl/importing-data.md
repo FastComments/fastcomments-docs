@@ -1,6 +1,6 @@
-Hoewel FastComments Support kan helpen bij migraties, kunnen de meeste eenvoudig worden uitgevoerd en gemonitord zonder tussenkomst van ondersteunend personeel.
+While FastComments Support kan helpen bij migraties, kunnen de meeste eenvoudig worden uitgevoerd en gemonitord zonder tussenkomst van supportmedewerkers.
 
-We ondersteunen het importeren van exports van de volgende providers op native wijze:
+We ondersteunen native het importeren van exports van de volgende providers:
 
 - Commento
 - Disqus
@@ -8,29 +8,30 @@ We ondersteunen het importeren van exports van de volgende providers op native w
 - Muut Comments
 - IntenseDebate
 - Just-Comments
-- WordPress (via de plugin)
-- AnyComment (via WordPress Import/Export)
+- Cusdis
+- WordPress (via the plugin)
+- AnyComment (Via WordPress Import/Export)
 
-Door [hier](https://fastcomments.com/auth/my-account/manage-data/import) naartoe te navigeren kunt u het bestand uploaden met de te migreren gegevens.
+Door naar [hier](https://fastcomments.com/auth/my-account/manage-data/import) te navigeren kunnen we het bestand met de te migreren gegevens uploaden.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; title='The Import Page Form' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; title='Het importpagina-formulier' app-screenshot-end]
 
-### Monitoring Imports
+### Importen monitoren
 
-FastComments gebruikt een jobverwerkingssysteem voor het verwerken van imports en exports. Zodra het systeem uw taak heeft opgepakt, rapporteert het periodiek de status van de taak in de import- of export-UI.
+FastComments gebruikt een taakverwerkingssysteem voor het verwerken van importen en exporten. Zodra het systeem uw taak heeft opgepikt, zal het periodiek de status van de taak weergeven in de import- of export-UI.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; title='Import Job Status' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; title='Importtaakstatus' app-screenshot-end]
 
-Houd er rekening mee dat de status voor imports en exports door alle beheerders in het account bekeken kan worden.
+Houd er rekening mee dat de status van importen en exporten zichtbaar is voor alle beheerders in het account.
 
-Als uw taak faalt, wordt deze niet automatisch opnieuw gestart. De import moet opnieuw worden geprobeerd. Als een import of export faalt, worden onze systeembeheerders automatisch op de hoogte gesteld. Als we een probleem identificeren, nemen we contact met u op om te kijken of we kunnen helpen.
+Als uw taak faalt, wordt deze niet automatisch opnieuw gestart. De import moet opnieuw worden geprobeerd. Als een import of export faalt, worden onze systeembeheerders automatisch op de hoogte gebracht. Als we een probleem identificeren, nemen we contact met u op om te zien of we kunnen helpen.
 
-### Re-Running The Import
+### De import opnieuw uitvoeren
 
-Tijdens sommige migraties is het noodzakelijk om de import meerdere keren uit te voeren. Bijvoorbeeld, het is gebruikelijk om een eerste pass-migratie voor tests uit te voeren en vervolgens de import opnieuw te draaien met de nieuwste gegevens voordat u de schakelaar omzet.
+Tijdens sommige migraties is het nodig om de import meerdere keren uit te voeren. Bijvoorbeeld, het is gebruikelijk om eerst een testmigratie uit te voeren, en vervolgens de import opnieuw te draaien met de nieuwste gegevens voordat de omschakeling plaatsvindt.
 
-Het opnieuw importeren van dezelfde inhoud **zal geen duplicaten aanmaken**.
+Het opnieuw importeren van dezelfde inhoud **zal geen duplicaten creëren**.
 
-### Data Security and Expiration
+### Gegevensbeveiliging en vervaldatum
 
-Importbestanden zijn op geen enkele manier toegankelijk via externe verzoeken en importbestanden worden uit ons systeem verwijderd zodra de import is voltooid.
+Importbestanden zijn op geen enkele manier toegankelijk via externe verzoeken, en importbestanden worden uit ons systeem verwijderd zodra de import is voltooid.

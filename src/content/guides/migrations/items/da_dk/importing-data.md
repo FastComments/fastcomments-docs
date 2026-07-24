@@ -1,7 +1,6 @@
----
-Selvom FastComments Support kan hjælpe med migrationer, kan de fleste udføres og overvåges nemt uden nogen indblanding fra supportpersonale.
+While FastComments Support can help with migrations, most can be performed and monitored easily without any intervention of support staff.
 
-Vi understøtter indbygget import af eksporter fra følgende udbydere:
+We natively support importing exports from the following providers:
 
 - Commento
 - Disqus
@@ -9,31 +8,30 @@ Vi understøtter indbygget import af eksporter fra følgende udbydere:
 - Muut Comments
 - IntenseDebate
 - Just-Comments
-- WordPress (via pluginet)
+- Cusdis
+- WordPress (via the plugin)
 - AnyComment (Via WordPress Import/Export)
 
-Ved at navigere [her](https://fastcomments.com/auth/my-account/manage-data/import) kan vi uploade filen, der indeholder de data, der skal migreres.
+By navigating [here](https://fastcomments.com/auth/my-account/manage-data/import) we can upload the file containing the data to migrate.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; title='The Import Page Form' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; title='Importsideformular' app-screenshot-end]
 
-### Overvågning af importer
+### Overvågning af import
 
-FastComments bruger et jobbehandlingssystem til at behandle importer og eksporter. Når systemet har taget dit job op, vil det periodisk rapportere status for jobbet i import- eller eksport-UI'en.
+FastComments uses a job processing system for processing imports and exports. Once the system has picked up your job, it will periodically report the status of the job in the import or export UI.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; title='Import Job Status' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; title='Importjobstatus' app-screenshot-end]
 
-Bemærk, at status for importer og eksporter kan ses af alle administratorer på kontoen.
+Note that the status for Imports and Export are viewable by all administrators in the account.
 
-Hvis dit job fejler, vil det ikke blive genstartet automatisk. Importen skal forsøges igen. Hvis en import eller eksport fejler, bliver vores systemadministratorer automatisk underrettet. Hvis vi identificerer et problem, kontakter vi dig for at se, om vi kan hjælpe.
+If your job fails, it will not automatically be restarted. The import will have to be attempted again. If any import or export fails, our system administrators are automatically notified. If we identify an issue, we'll reach out to you to see if we can help.
 
-### Genkørsel af importen
+### Kørsel af importen igen
 
-Under nogle migrationer er det nødvendigt at køre importen flere gange. For eksempel er det almindeligt at lave en første gennemkørsel til test, og så køre importen igen med de nyeste data inden man skifter over.
+During some migrations, it is necessary to run the import multiple times. For example, it is common to do a first pass migration for testing, and then run the import again with the latest data before flipping the switch.
 
-Genimport af det samme indhold **vil ikke skabe dubletter**.
+Re-importing the same content **will not create duplicates**.
 
 ### Datasikkerhed og udløb
 
-Importfiler er ikke tilgængelige via eksterne forespørgsler på nogen måde, og importfiler slettes fra vores system så snart importen er fuldført.
-
----
+Import files are not accessible via outside requests in any way, and import files are deleted from our system as soon as the import completes.

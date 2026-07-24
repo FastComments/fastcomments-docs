@@ -1,6 +1,6 @@
-虽然 FastComments 支持团队可以协助迁移，但大多数迁移可以轻松执行并在无需支持人员介入的情况下进行监控。
+While FastComments Support can help with migrations, most can be performed and monitored easily without any intervention of support staff.
 
-我们原生支持从以下提供者导入导出的数据：
+We natively support importing exports from the following providers:
 
 - Commento
 - Disqus
@@ -8,31 +8,32 @@
 - Muut Comments
 - IntenseDebate
 - Just-Comments
-- WordPress（通过插件）
-- AnyComment（通过 WordPress 导入/导出）
+- Cusdis
+- WordPress (via the plugin)
+- AnyComment (Via WordPress Import/Export)
 
 By navigating [here](https://fastcomments.com/auth/my-account/manage-data/import) we can upload the file containing the data to migrate.
 
 [app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; title='导入页面表单' app-screenshot-end]
 
-### 监控导入
+### Monitoring Imports
 
-FastComments 使用作业处理系统来处理导入和导出。一旦系统开始处理您的作业，它会定期在导入或导出界面中报告该作业的状态。
+FastComments uses a job processing system for processing imports and exports. Once the system has picked up your job, it will periodically report the status of the job in the import or export UI.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; title='导入任务状态' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; title='导入作业状态' app-screenshot-end]
 
-请注意，导入和导出的状态可由帐户中的所有管理员查看。
+Note that the status for Imports and Export are viewable by all administrators in the account.
 
-如果您的作业失败，它不会自动重新启动。必须再次尝试导入。如果任何导入或导出失败，我们的系统管理员会自动收到通知。如果我们发现问题，我们会联系您，看看是否可以提供帮助。
+If your job fails, it will not automatically be restarted. The import will have to be attempted again. If any import or export fails, our system administrators are automatically notified. If we identify an issue, we'll reach out to you to see if we can help.
 
-### 重新运行导入
+### Re-Running The Import
 
-在某些迁移过程中，有必要多次运行导入。例如，通常会先进行一次测试性迁移，然后在切换之前使用最新数据再次运行导入。
+During some migrations, it is necessary to run the import multiple times. For example, it is common to do a first pass migration for testing, and then run the import again with the latest data before flipping the switch.
 
-重新导入相同内容**不会创建重复项**。
+Re-importing the same content **will not create duplicates**.
 
-### 数据安全与过期
+### Data Security and Expiration
 
-导入文件不会以任何方式通过外部请求被访问，且导入完成后导入文件会立即从我们的系统中删除。
+Import files are not accessible via outside requests in any way, and import files are deleted from our system as soon as the import completes.
 
 ---

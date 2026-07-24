@@ -1,6 +1,6 @@
-Иако FastComments подршка може помоћи при миграцијама, већина се може извршити и пратити једноставно без било какве интервенције особља за подршку.
+While FastComments podrška može pomoći pri migracijama, većinu možete izvesti i nadgledati lako bez ikakve intervencije osoblja za podršku.
 
-Нативно подржавамо увоз експортованих података од следећих провајдера:
+Nativno podržavamo uvoz i izvoz iz sledećih provajdera:
 
 - Commento
 - Disqus
@@ -8,29 +8,30 @@
 - Muut Comments
 - IntenseDebate
 - Just-Comments
-- WordPress (путем додатка)
-- AnyComment (Преко WordPress увоза/извоза)
+- Cusdis
+- WordPress (preko dodatka)
+- AnyComment (preko WordPress uvoza/izvoza)
 
-Кликом [here](https://fastcomments.com/auth/my-account/manage-data/import) можете отпремити фајл који садржи податке које желите да мигрирате.
+Navigacijom na [ovde](https://fastcomments.com/auth/my-account/manage-data/import) možete otpremiti fajl koji sadrži podatke za migraciju.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; title='The Import Page Form' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; title='Forma stranice za uvoz' app-screenshot-end]
 
-### Праћење увоза
+### Praćenje uvoza
 
-FastComments користи систем за обраду послова за обраду увоза и извоза. Када систем преузме ваш посао, он ће повремено пријављивати статус посла у интерфејсу за увоз или извоз.
+FastComments koristi sistem za obradu poslova prilikom obrade uvoza i izvoza. Kada sistem preuzme vaš posao, periodično će izveštavati o statusu posla u UI‑ju za uvoz ili izvoz.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; title='Import Job Status' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; title='Status posla uvoza' app-screenshot-end]
 
-Имајте у виду да су статуси увоза и извоза видљиви свим администраторима на налогу.
+Napomena: status uvoza i izvoza je vidljiv svim administratorima naloga.
 
-Ако ваш посао не успе, он се неће аутоматски поново покренути. Увоз ће морати бити покушан поново. Ако било који увоз или извоз пропадне, наши системски администратори ће аутоматски бити обавештени. Ако идентификујемо проблем, контактираћемо вас да видимо да ли можемо да помогнемо.
+Ako vaš posao ne uspe, neće se automatski ponovo pokrenuti. Uvoz će morati biti ponovo pokušan. Ako bilo koji uvoz ili izvoz ne uspe, naši sistemski administratori će biti automatski obavešteni. Ako identifikujemo problem, kontaktiraćemo vas da vidimo da li možemo pomoći.
 
-### Поновно покретање увоза
+### Ponovno pokretanje uvoza
 
-Током неких миграција потребно је покренути увоз више пута. На пример, уобичајено је урадити први пробни пролаз миграције, а затим поново покренути увоз са најновијим подацима пре него што се направи коначна промена.
+Tokom nekih migracija, neophodno je pokrenuti uvoz više puta. Na primer, uobičajeno je uraditi prvi prolaz migracije radi testiranja, a zatim ponovo pokrenuti uvoz sa najnovijim podacima pre nego što se pređe na finalnu fazu.
 
-Поновни увоз истог садржаја **неће створити дупликате**.
+Ponovni uvoz istog sadržaja **neće kreirati duplikate**.
 
-### Безбедност података и истицање
+### Bezbednost podataka i isteka
 
-Фајлови за увоз нису доступни преко спољних захтева ни на који начин, и фајлови за увоз се бришу из нашег система чим увоз буде завршен.
+Fajlovi za uvoz nisu dostupni putem spoljašnjih zahteva ni na koji način, a fajlovi za uvoz se brišu iz našeg sistema čim uvoz bude završen.

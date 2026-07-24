@@ -1,7 +1,6 @@
----
-Embora o Suporte do FastComments possa ajudar com migrações, a maioria pode ser realizada e monitorada facilmente sem qualquer intervenção da equipe de suporte.
+While FastComments Support can help with migrations, most can be performed and monitored easily without any intervention of support staff.
 
-Oferecemos suporte nativo para importar arquivos de exportação dos seguintes provedores:
+We natively support importing exports from the following providers:
 
 - Commento
 - Disqus
@@ -9,31 +8,34 @@ Oferecemos suporte nativo para importar arquivos de exportação dos seguintes p
 - Muut Comments
 - IntenseDebate
 - Just-Comments
-- WordPress (via o plugin)
+- Cusdis
+- WordPress (via the plugin)
 - AnyComment (Via WordPress Import/Export)
 
-Ao navegar [aqui](https://fastcomments.com/auth/my-account/manage-data/import) podemos fazer o upload do arquivo contendo os dados para migrar.
+By navigating [here](https://fastcomments.com/auth/my-account/manage-data/import) we can upload the file containing the data to migrate.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; title='The Import Page Form' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; title='Formulário da Página de Importação' app-screenshot-end]
 
-### Monitoramento de Importações
+### Monitoring Imports
 
-O FastComments usa um sistema de processamento de jobs para processar importações e exportações. Uma vez que o sistema iniciar o processamento da sua tarefa, ele reportará periodicamente o status da tarefa na interface de importação ou exportação.
+FastComments uses a job processing system for processing imports and exports. Once the system has picked up your job, it will
+periodically report the status of the job in the import or export UI.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; title='Import Job Status' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; title='Status do Trabalho de Importação' app-screenshot-end]
 
-Observe que o status de Importações e Exportações pode ser visualizado por todos os administradores da conta.
+Note that the status for Imports and Export are viewable by all administrators in the account.
 
-Se sua tarefa falhar, ela não será reiniciada automaticamente. A importação terá que ser tentada novamente. Se qualquer importação ou exportação falhar, nossos administradores de sistema são notificados automaticamente. Se identificarmos um problema, entraremos em contato com você para ver se podemos ajudar.
+If your job fails, it will not automatically be restarted. The import will have to be attempted again. If any import or export fails,
+our system administrators are automatically notified. If we identify an issue, we'll reach out to you to see if we can help.
 
-### Re-executando a Importação
+### Re-Running The Import
 
-Durante algumas migrações, é necessário executar a importação várias vezes. Por exemplo, é comum fazer uma primeira migração para testes e, em seguida, executar a importação novamente com os dados mais recentes antes de colocar em produção.
+During some migrations, it is necessary to run the import multiple times. For example, it is common to do a first pass
+migration for testing, and then run the import again with the latest data before flipping the switch.
 
-Reimportar o mesmo conteúdo **não criará duplicatas**.
+Re-importing the same content **will not create duplicates**.
 
-### Segurança dos Dados e Expiração
+### Data Security and Expiration
 
-Os arquivos de importação não são acessíveis por requisições externas de nenhuma forma, e os arquivos de importação são excluídos do nosso sistema assim que a importação é concluída.
-
----
+Import files are not accessible via outside requests in any way, and import files are deleted from our system as soon as
+the import completes.

@@ -1,6 +1,6 @@
-FastComments サポートは移行を手伝うことができますが、ほとんどの場合サポート担当者の介入なしで簡単に実行および監視できます。
+While FastComments Support can help with migrations, most can be performed and monitored easily without any intervention of support staff.
 
-次のプロバイダからのエクスポートのインポートをネイティブにサポートしています:
+We natively support importing exports from the following providers:
 
 - Commento
 - Disqus
@@ -8,29 +8,30 @@ FastComments サポートは移行を手伝うことができますが、ほと�
 - Muut Comments
 - IntenseDebate
 - Just-Comments
+- Cusdis
 - WordPress (via the plugin)
 - AnyComment (Via WordPress Import/Export)
 
-[こちら](https://fastcomments.com/auth/my-account/manage-data/import) に移動することで、移行するデータを含むファイルをアップロードできます。
+By navigating [here](https://fastcomments.com/auth/my-account/manage-data/import) we can upload the file containing the data to migrate.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; title='The Import Page Form' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; title='インポートページのフォーム' app-screenshot-end]
 
 ### インポートの監視
 
-FastComments はインポートとエクスポートの処理にジョブ処理システムを使用しています。システムがジョブを受け取ると、インポートまたはエクスポートの UI に定期的にジョブのステータスを報告します。
+FastComments uses a job processing system for processing imports and exports. Once the system has picked up your job, it will periodically report the status of the job in the import or export UI.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; title='Import Job Status' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; title='インポートジョブのステータス' app-screenshot-end]
 
-インポートとエクスポートのステータスはアカウント内のすべての管理者が表示できることに注意してください。
+Note that the status for Imports and Export are viewable by all administrators in the account.
 
-ジョブが失敗した場合、自動的に再起動されることはありません。インポートは再度試行する必要があります。インポートまたはエクスポートが失敗した場合、当社のシステム管理者に自動的に通知されます。問題が確認された場合は、支援できるかどうかご連絡します。
+If your job fails, it will not automatically be restarted. The import will have to be attempted again. If any import or export fails, our system administrators are automatically notified. If we identify an issue, we'll reach out to you to see if we can help.
 
 ### インポートの再実行
 
-一部の移行では、インポートを複数回実行する必要があります。たとえば、テストのために最初の試行的な移行を行い、切り替えの前に最新データで再度インポートを実行することが一般的です。
+During some migrations, it is necessary to run the import multiple times. For example, it is common to do a first pass migration for testing, and then run the import again with the latest data before flipping the switch.
 
-同じコンテンツを再インポートしても **重複は作成されません**。
+Re-importing the same content **will not create duplicates**.
 
-### データのセキュリティと保存期間
+### データのセキュリティと有効期限
 
-インポートファイルは外部からのリクエストでアクセスできないようになっており、インポートが完了すると当社のシステムから削除されます。
+Import files are not accessible via outside requests in any way, and import files are deleted from our system as soon as the import completes.
