@@ -1,65 +1,59 @@
 {
-  "name": "Библиотека Eleventy (11ty)",
-  "pageHeader": "Додајте коментаре на ваш Eleventy (11ty) сајт",
+  "name": "Eleventy (11ty) Biblioteka",
+  "pageHeader": "Dodajte komentare na svoju Eleventy (11ty) stranicu",
   "itemsOrdered": [
     {
-      "name": "Демонстрација уживо",
+      "name": "Demo uživo",
       "file": "live-demo-readme-generated.md",
-      "subCat": "Документација",
+      "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Приказ уживо",
-      "file": "live-showcase-readme-generated.md",
-      "subCat": "Документација",
-      "type": "readme"
-    },
-    {
-      "name": "Инсталација",
+      "name": "Instaliraj",
       "file": "install-readme-generated.md",
-      "subCat": "Почетак рада",
+      "subCat": "Početak rada",
       "type": "readme"
     },
     {
-      "name": "Брзи почетак",
+      "name": "Brzi početak",
       "file": "quick-start-readme-generated.md",
-      "subCat": "Документација",
+      "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Шорткодови",
+      "name": "Kratki kodovi",
       "file": "shortcodes-readme-generated.md",
-      "subCat": "Документација",
+      "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Опције додатка",
+      "name": "Opcije dodatka",
       "file": "plugin-options-readme-generated.md",
-      "subCat": "Конфигурација",
+      "subCat": "Konfiguracija",
       "type": "readme"
     },
     {
-      "name": "Ручна употреба (без додатка)",
+      "name": "Ručna upotreba (bez dodatka)",
       "file": "manual-usage-without-the-plugin-readme-generated.md",
-      "subCat": "Употреба",
+      "subCat": "Upotreba",
       "type": "readme"
     },
     {
-      "name": "Пример пројекта",
+      "name": "Primer projekta",
       "file": "example-project-readme-generated.md",
-      "subCat": "Употреба",
+      "subCat": "Upotreba",
       "type": "readme"
     },
     {
-      "name": "Линкови",
+      "name": "Linkovi",
       "file": "links-readme-generated.md",
-      "subCat": "Документација",
+      "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Статус одржавања",
+      "name": "Status održavanja",
       "file": "maintenance-status-readme-generated.md",
-      "subCat": "Документација",
+      "subCat": "Dokumentacija",
       "type": "readme"
     }
   ]

@@ -138,7 +138,7 @@ body { margin: 0; padding: 0; }
     .toolbar .img-btn-wrap { display: inline-block; overflow: hidden }
     .toolbar .t-btn input[type=file] { position: absolute; padding: 40px; font-size: 100px; top: 0; left: 0; opacity: 0; cursor: pointer }
     .commenty-input:not(.show-default-hidden) .toolbar { width: 100%; margin-top: -50px; }
-    @media(max-width: 500px) { .toolbar { display: flex; width: 100%; padding-bottom: 12px; justify-content: space-evenly; } }
+    @media(max-width: 500px) { .toolbar { display: flex; width: 100%; padding-bottom: 12px; justify-content: space-evenly; align-items: center; } }
     @media(max-width: 500px) { .comment-input .toolbar { margin-top: 50px; border-bottom: 1px solid #bfbfbf; } }
     .comment-reply .auth-input, .comment-vote-auth.auth-input { margin: 10px 0; font-size: 13px }
     .comment-reply .auth-input .fc-login { margin: 10px 0 0; }
@@ -314,9 +314,10 @@ body { margin: 0; padding: 0; }
     .menu-content.corner-bottom-right { border-radius: 10px 10px 0 10px; }
     @media(max-width: 500px) { .comment .menu { padding: 10px 5px 10px 0; } } /* if top is too low, will go above highlighting for admin actions */
     .comment > .children { margin: 15px 0 0 15px }
-    /* "Powered by FastComments" footer. White-labeled tenants get .empty (no content, no border). To restyle/hide the footer for white-label, scope via .footer.empty. */
+    /* "Powered by FastComments" footer. White-labeled tenants get .empty (no content) - hidden entirely, like the live chat widget does. Custom tenant CSS can still restore it via .footer.empty. */
     .footer { height: 65px; margin-top: 25px; padding-top: 20px; text-align: center; font-size: 12px; }
     .footer:not(.empty) { border-top: 1px solid #ccc }
+    .footer.empty { display: none; }
     .footer a, .footer .logo { vertical-align: top; text-decoration: none; color: #201600; font-weight: bold; font-size: 14px } 
     .footer .logo { margin-top: -2px; padding-right: 2px; } 
     .comment.readonly .comment-vote-options { display: none }

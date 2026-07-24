@@ -1,5 +1,1 @@
----
-** AVVISO ** stiamo attualmente indagando su reclami da parte dei clienti riguardanti questa documentazione. Sembra che Webnode abbia rimosso la funzionalità HTML Block, stiamo lavorando
-con il loro staff di supporto su questo.
-
----
+Il blocco HTML di Webnode è ciò che useremo per incorporare il widget dei commenti. Dal 26 giugno 2023, questo blocco è una funzionalità a pagamento di Webnode: non è disponibile nel piano gratuito e i progetti creati dopo tale data richiedono un pacchetto premium per usarlo. Se non vedi l'opzione `HTML` nell'editor, aggiorna il tuo piano Webnode e apparirà.

@@ -1,16 +1,10 @@
 {
   "name": "Бібліотека Eleventy (11ty)",
-  "pageHeader": "Додайте коментарі до свого сайту Eleventy (11ty)",
+  "pageHeader": "Додайте коментарі до вашого сайту Eleventy (11ty)",
   "itemsOrdered": [
     {
-      "name": "Жива демонстрація",
+      "name": "Онлайн демо",
       "file": "live-demo-readme-generated.md",
-      "subCat": "Документація",
-      "type": "readme"
-    },
-    {
-      "name": "Живий показ",
-      "file": "live-showcase-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"
     },
@@ -33,9 +27,9 @@
       "type": "readme"
     },
     {
-      "name": "Параметри плагіна",
+      "name": "Опції плагіна",
       "file": "plugin-options-readme-generated.md",
-      "subCat": "Налаштування",
+      "subCat": "Конфігурація",
       "type": "readme"
     },
     {
@@ -45,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Приклад проєкту",
+      "name": "Приклад проекту",
       "file": "example-project-readme-generated.md",
       "subCat": "Використання",
       "type": "readme"
@@ -57,7 +51,7 @@
       "type": "readme"
     },
     {
-      "name": "Статус підтримки",
+      "name": "Статус обслуговування",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"

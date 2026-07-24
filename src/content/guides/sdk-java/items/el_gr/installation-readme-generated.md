@@ -1,6 +1,6 @@
 ### Maven
 
-Add the Repsy repository to your project's POM:
+Προσθέστε το αποθετήριο Repsy στο POM του έργου σας:
 
 ```xml
 <repositories>
@@ -12,7 +12,7 @@ Add the Repsy repository to your project's POM:
 </repositories>
 ```
 
-Then add the dependencies you need:
+Στη συνέχεια προσθέστε τις εξαρτήσεις που χρειάζεστε:
 
 ```xml
 <dependencies>
@@ -20,28 +20,28 @@ Then add the dependencies you need:
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>3.0.0</version>
+        <version>3.0.1</version>
     </dependency>
     
     <!-- Core Library (includes SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>3.0.0</version>
+        <version>3.0.1</version>
     </dependency>
     
     <!-- PubSub Library (for live events) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>3.0.0</version>
+        <version>3.0.1</version>
     </dependency>
 </dependencies>
 ```
 
 ### Gradle
 
-Add the Repsy repository to your build.gradle file:
+Προσθέστε το αποθετήριο Repsy στο αρχείο `build.gradle` σας:
 
 ```groovy
 repositories {
@@ -53,28 +53,26 @@ repositories {
 
 dependencies {
     // API Client
-    implementation "com.fastcomments:client:3.0.0"
+    implementation "com.fastcomments:client:3.0.1"
     
     // Core Library (includes SSO)
-    implementation "com.fastcomments:core:3.0.0"
+    implementation "com.fastcomments:core:3.0.1"
     
     // PubSub Library (for live events)
-    implementation "com.fastcomments:pubsub:3.0.0"
+    implementation "com.fastcomments:pubsub:3.0.1"
 }
 ```
 
 ### Library Contents
 
-This library contains three modules. The generated API client, the core Java library which contains hand-written utilities
-to make working with the API easier, and the `pubsub` module which is a library for subscribing to change feeds.
+Αυτή η βιβλιοθήκη περιέχει τρία modules. Το παραγόμενο API client, τη βασική βιβλιοθήκη Java που περιλαμβάνει χειροκίνητες βοηθητικές λειτουργίες για να διευκολύνει τη χρήση του API, και το module `pubsub` που είναι μια βιβλιοθήκη για την εγγραφή σε ροές αλλαγών.
 
-- [Τεκμηρίωση Βιβλιοθήκης API Client Docs](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Τεκμηρίωση Βασικής Βιβλιοθήκης, Συμπεριλαμβανομένων Παραδειγμάτων SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [Τεκμηρίωση Βιβλιοθήκης PubSub Docs](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [API Client Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [PubSub Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
 ### Public vs Secured APIs
 
-For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains methods
-that can be made directly from a browser/mobile device/etc without authentication.
+Για το API client, υπάρχουν τρεις κλάσεις, `DefaultApi`, `PublicApi` και `ModerationApi`. Η `DefaultApi` περιέχει μεθόδους που απαιτούν το κλειδί API σας, ενώ η `PublicApi` περιέχει μεθόδους που μπορούν να κληθούν απευθείας από έναν φυλλομετρητή/συσκευή κινητής κίνησης κ.λπ. χωρίς έλεγχο ταυτότητας.
 
-The `ModerationApi` provides an extensive suite of live and fast moderation APIs. Every `ModerationApi` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.
+Η `ModerationApi` παρέχει ένα εκτενές σύνολο από ζωντανά και γρήγορα APIs διαχείρισης. Κάθε μέθοδος της `ModerationApi` δέχεται μια παράμετρο `sso` και μπορεί να πιστοποιηθεί μέσω SSO ή ενός cookie συνεδρίας FastComments.com.

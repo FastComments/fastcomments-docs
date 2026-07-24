@@ -1,23 +1,17 @@
 {
-  "name": "Библиотека Eleventy (11ty)",
-  "pageHeader": "Добавяне на коментари към вашия сайт Eleventy (11ty)",
+  "name": "Eleventy (11ty) библиотека",
+  "pageHeader": "Добавете коментари към вашия Eleventy (11ty) сайт",
   "itemsOrdered": [
     {
-      "name": "Демо на живо",
+      "name": "Демонстрация на живо",
       "file": "live-demo-readme-generated.md",
-      "subCat": "Документация",
-      "type": "readme"
-    },
-    {
-      "name": "Живо представяне",
-      "file": "live-showcase-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
     },
     {
       "name": "Инсталиране",
       "file": "install-readme-generated.md",
-      "subCat": "Първи стъпки",
+      "subCat": "Започване",
       "type": "readme"
     },
     {
@@ -27,19 +21,19 @@
       "type": "readme"
     },
     {
-      "name": "Шорткодове",
+      "name": "Шорткоди",
       "file": "shortcodes-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
     },
     {
-      "name": "Опции на плъгина",
+      "name": "Опции за плъгин",
       "file": "plugin-options-readme-generated.md",
       "subCat": "Конфигурация",
       "type": "readme"
     },
     {
-      "name": "Ръчно използване (без плъгин)",
+      "name": "Ръчно използване (без плъгина)",
       "file": "manual-usage-without-the-plugin-readme-generated.md",
       "subCat": "Използване",
       "type": "readme"
@@ -57,7 +51,7 @@
       "type": "readme"
     },
     {
-      "name": "Статус на поддръжката",
+      "name": "Състояние на поддръжката",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"

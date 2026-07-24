@@ -1,6 +1,6 @@
-### Korzystanie z uwierzytelnionych API (DefaultApi)
+### Using Authenticated APIs (DefaultApi)
 
-**Ważne:** Musisz ustawić swój klucz API w Configuration przed wykonywaniem uwierzytelnionych żądań. Jeśli tego nie zrobisz, żądania zakończą się błędem 401.
+**Ważne:** Musisz ustawić swój klucz API w konfiguracji przed wykonywaniem uwierzytelnionych żądań. Jeśli tego nie zrobisz, żądania zakończą się błędem 401.
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
@@ -13,7 +13,7 @@ config.host = "https://fastcomments.com"
 # WYMAGANE: Ustaw swój klucz API (pobierz go z panelu FastComments)
 config.api_key = {"api_key": "YOUR_API_KEY_HERE"}
 
-# Utwórz instancję API przy użyciu skonfigurowanego klienta
+# Utwórz instancję API z skonfigurowanym klientem
 api_client = ApiClient(configuration=config)
 api = DefaultApi(api_client)
 
@@ -33,10 +33,10 @@ except Exception as e:
     print(f"Error: {e}")
     # Typowe błędy:
     # - 401: Brak klucza API lub jest nieprawidłowy
-    # - 400: Niepowodzenie walidacji żądania
+    # - 400: Walidacja żądania nie powiodła się
 ```
 
-### Korzystanie z publicznych API (PublicApi)
+### Using Public APIs (PublicApi)
 
 Publiczne endpointy nie wymagają uwierzytelnienia:
 
@@ -56,9 +56,9 @@ except Exception as e:
     print(f"Error: {e}")
 ```
 
-### Korzystanie z panelu moderacji (ModerationApi)
+### Using the Moderation Dashboard (ModerationApi)
 
-`ModerationApi` obsługuje panel moderatora. Metody są wywoływane w imieniu moderatora poprzez przekazanie tokenu `sso`:
+`ModerationApi` napędza panel moderatora. Metody są wywoływane w imieniu moderatora poprzez przekazanie tokenu `sso`:
 
 ```python
 from client import ApiClient, Configuration, ModerationApi
@@ -78,7 +78,7 @@ except Exception as e:
     print(f"Error: {e}")
 ```
 
-### Korzystanie z SSO (Single Sign-On)
+### Using SSO (Single Sign-On)
 
 SDK zawiera narzędzia do generowania bezpiecznych tokenów SSO:
 
@@ -93,17 +93,17 @@ user_data = SecureSSOUserData(
     avatar="https://example.com/avatar.jpg"
 )
 
-# Podpisz go używając swojego sekretu API (HMAC-SHA256)
+# Podpisz go swoim sekretem API (HMAC-SHA256)
 sso = FastCommentsSSO.new_secure("YOUR_API_SECRET", user_data)
 
 # Wygeneruj token SSO, aby przekazać go do widgetu lub wywołania API
 sso_token = sso.create_token()
 
-# Użyj tego tokenu w frontendzie lub przekaż do wywołań API
+# Użyj tego tokenu w frontendzie lub przekaż go w wywołaniach API
 print(f"SSO Token: {sso_token}")
 ```
 
-For simple SSO (less secure, for testing):
+Dla prostego SSO (mniej bezpiecznego, do testów):
 
 ```python
 from sso import FastCommentsSSO, SimpleSSOUserData
@@ -117,10 +117,47 @@ sso = FastCommentsSSO.new_simple(user_data)
 sso_token = sso.create_token()
 ```
 
-### Typowe problemy
+### Live Subscriptions (PubSub)
+
+Moduł `pubsub` pozwala subskrybować zdarzenia komentarzy w czasie rzeczywistym (nowe komentarze, głosy, edycje, powiadomienia itp.) przez WebSocket, odzwierciedlając `LiveEventSubscriber` z FastComments Java SDK. Wymaga dodatkowego pakietu `pubsub`, który dodaje klienta WebSocket na szczycie wygenerowanego klienta API:
+
+```bash
+pip install "fastcomments[pubsub] @ git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0"
+```
+
+```python
+from pubsub import LiveEventSubscriber
+
+subscriber = LiveEventSubscriber()
+
+def handle_live_event(event):
+    print(f"Live event: {event.type}")
+    if event.comment:
+        print(f"  comment: {event.comment.comment}")
+
+result = subscriber.subscribe_to_changes(
+    tenant_id_ws="YOUR_TENANT_ID",
+    url_id="page-url-id",
+    url_id_ws="page-url-id",
+    user_id_ws="a-unique-presence-id",  # np. UUID dla tej sesji
+    handle_live_event=handle_live_event,
+    on_connection_status_change=lambda connected, last_event_time: print(
+        f"connected={connected}"
+    ),
+    region=None,  # ustaw na "eu" dla regionu UE
+)
+
+# ...później, gdy nie chcesz już otrzymywać aktualizacji:
+result.close()
+```
+
+Subskrybent uruchamia połączenie w tle w wątku demona, automatycznie ponownie łączy się z jitterem i pobiera wszelkie zdarzenia, które zostały pominięte podczas rozłączenia z endpointem event-log przy ponownym połączeniu. Przekaż opcjonalny callback `can_see_comments` (`List[str] -> Dict[str, str]`, zwracający identyfikatory, które użytkownik **NIE** może zobaczyć), aby odfiltrować zdarzenia dla komentarzy, które użytkownik nie ma zakaz wyświetlania. Ustaw `disable_live_commenting=True`, aby `subscribe_to_changes` stało się operacją pustą zwracającą `None`.
+
+### Common Issues
 
 1. **401 "missing-api-key" error**: Upewnij się, że ustawiłeś `config.api_key = {"api_key": "YOUR_KEY"}` przed utworzeniem instancji DefaultApi.
-2. **Wrong API class**: Użyj `DefaultApi` do żądań uwierzytelnionych po stronie serwera, `PublicApi` do żądań po stronie klienta/publicznych oraz `ModerationApi` do żądań panelu moderatora.
+2. **Wrong API class**: Użyj `DefaultApi` do uwierzytelnionych żądań po stronie serwera, `PublicApi` do żądań po stronie klienta/publicznych oraz `ModerationApi` do żądań panelu moderatora.
 3. **Import errors**: Upewnij się, że importujesz z właściwego modułu:
    - Klient API: `from client import ...`
    - Narzędzia SSO: `from sso import ...`
+   - Subskrypcje na żywo: `from pubsub import ...` (wymaga dodatkowego pakietu `pubsub`)

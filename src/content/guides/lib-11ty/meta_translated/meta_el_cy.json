@@ -1,39 +1,33 @@
 {
   "name": "Βιβλιοθήκη Eleventy (11ty)",
-  "pageHeader": "Προσθέστε σχόλια στον ιστότοπό σας Eleventy (11ty)",
+  "pageHeader": "Προσθήκη σχολίων στον ιστότοπό σας Eleventy (11ty)",
   "itemsOrdered": [
     {
-      "name": "Ζωντανή επίδειξη",
+      "name": "Ζωντανή Επίδειξη",
       "file": "live-demo-readme-generated.md",
-      "subCat": "Τεκμηρίωση",
-      "type": "readme"
-    },
-    {
-      "name": "Ζωντανή παρουσίαση",
-      "file": "live-showcase-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
     },
     {
       "name": "Εγκατάσταση",
       "file": "install-readme-generated.md",
-      "subCat": "Πρώτα βήματα",
+      "subCat": "Έναρξη",
       "type": "readme"
     },
     {
-      "name": "Γρήγορη εκκίνηση",
+      "name": "Γρήγορη Εκκίνηση",
       "file": "quick-start-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
     },
     {
-      "name": "Συντομοκώδικες",
+      "name": "Σύντομοι κώδικες",
       "file": "shortcodes-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
     },
     {
-      "name": "Επιλογές πρόσθετου",
+      "name": "Επιλογές προσθέτου",
       "file": "plugin-options-readme-generated.md",
       "subCat": "Διαμόρφωση",
       "type": "readme"

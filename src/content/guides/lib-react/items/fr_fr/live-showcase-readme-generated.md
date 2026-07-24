@@ -1,9 +1,11 @@
-Pour voir tous les widgets et flux s'exécutant localement contre le locataire public `demo`, clonez le dépôt et lancez :
+---
+Pour voir chaque widget et flux s'exécutant localement contre le locataire public `demo`, clonez le dépôt et exécutez :
 
 ```bash
 cd examples/example-showcase
 npm install
-npm start
+npm run dev
 ```
 
-Chaque widget/flux a sa propre vue sous `examples/example-showcase/src/views/` que vous pouvez copier directement dans votre propre application React.
+Chaque widget/flux possède sa propre vue sous `examples/example-showcase/src/views/` que vous pouvez copier directement dans votre propre application React.
+---

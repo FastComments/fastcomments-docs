@@ -1,6 +1,6 @@
 {
   "name": "Bibliothèque Eleventy (11ty)",
-  "pageHeader": "Ajouter des commentaires à votre site Eleventy (11ty)",
+  "pageHeader": "Ajoutez des commentaires à votre site Eleventy (11ty)",
   "itemsOrdered": [
     {
       "name": "Démo en direct",
@@ -9,15 +9,9 @@
       "type": "readme"
     },
     {
-      "name": "Vitrine en direct",
-      "file": "live-showcase-readme-generated.md",
-      "subCat": "Documentation",
-      "type": "readme"
-    },
-    {
-      "name": "Installation",
+      "name": "Installer",
       "file": "install-readme-generated.md",
-      "subCat": "Prise en main",
+      "subCat": "Premiers pas",
       "type": "readme"
     },
     {
@@ -27,7 +21,7 @@
       "type": "readme"
     },
     {
-      "name": "Shortcodes",
+      "name": "Raccourcis",
       "file": "shortcodes-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"

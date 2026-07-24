@@ -15,3 +15,5 @@ It should look like this in the editor:
     <div class="title">Step Three: Review</div>
     <img class="screenshot-image" src="/images/installation-guides/webnode-step-5.png" alt="Review" />
 </div>
+
+Webnode does not render HTML blocks inside the editor, so you'll see a placeholder saying the content can't be displayed for security reasons. This is expected. The comment widget only appears once you publish, which we'll do next.

@@ -1,6 +1,6 @@
 ### Kimlik Doğrulamalı API'leri Kullanma (DefaultApi)
 
-**Önemli:** Kimlik doğrulamalı isteklerde bulunmadan önce API anahtarınızı Configuration üzerine ayarlamalısınız. Aksi takdirde istekler 401 hatası ile başarısız olur.
+**Önemli:** Kimlik doğrulamalı istekler yapmadan önce API anahtarınızı Configuration üzerinde ayarlamalısınız. Bunu yapmazsanız, istekler 401 hatasıyla başarısız olur.
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
@@ -10,7 +10,7 @@ from client.models import CreateAPISSOUserData
 config = Configuration()
 config.host = "https://fastcomments.com"
 
-# GEREKLİ: API anahtarınızı ayarlayın (FastComments kontrol panelinizden alın)
+# GEREKLİ: API anahtarınızı ayarlayın (bunu FastComments kontrol panelinizden alın)
 config.api_key = {"api_key": "YOUR_API_KEY_HERE"}
 
 # Yapılandırılmış istemciyle API örneğini oluştur
@@ -19,7 +19,7 @@ api = DefaultApi(api_client)
 
 # Artık kimlik doğrulamalı API çağrıları yapabilirsiniz
 try:
-    # Örnek: Bir SSO kullanıcısı ekleme
+    # Örnek: Bir SSO kullanıcısı ekle
     user_data = CreateAPISSOUserData(
         id="user-123",
         email="user@example.com",
@@ -58,7 +58,7 @@ except Exception as e:
 
 ### Moderasyon Panosunu Kullanma (ModerationApi)
 
-`ModerationApi`, moderatör panosunu güçlendirir. Yöntemler, bir `sso` jetonu geçilerek moderatör adına çağrılır:
+`ModerationApi`, moderatör panosunu çalıştırır. Yöntemler, bir `sso` token'ı geçirerek moderatör adına çağrılır:
 
 ```python
 from client import ApiClient, Configuration, ModerationApi
@@ -71,21 +71,21 @@ api_client = ApiClient(configuration=config)
 moderation_api = ModerationApi(api_client)
 
 try:
-    # Moderasyonda bekleyen yorumları sayma
+    # Moderasyon bekleyen yorumları say
     response = moderation_api.get_count(GetCountOptions(sso="SSO_TOKEN"))
     print(response)
 except Exception as e:
     print(f"Error: {e}")
 ```
 
-### SSO (Tek Kullanımlı Oturum Açma) Kullanma
+### SSO (Tek Oturum Açma) Kullanımı
 
-SDK, güvenli SSO jetonları oluşturmak için yardımcı araçlar içerir:
+SDK, güvenli SSO token'ları oluşturmak için yardımcı programlar içerir:
 
 ```python
 from sso import FastCommentsSSO, SecureSSOUserData
 
-# Kullanıcı verilerini oluştur (id, email ve username zorunludur)
+# Kullanıcı verilerini oluştur (id, email ve kullanıcı adı gereklidir)
 user_data = SecureSSOUserData(
     id="user-123",
     email="user@example.com",
@@ -93,13 +93,13 @@ user_data = SecureSSOUserData(
     avatar="https://example.com/avatar.jpg"
 )
 
-# API gizli anahtarınızla imzalayın (HMAC-SHA256)
+# Bunu API gizli anahtarınızla imzalayın (HMAC-SHA256)
 sso = FastCommentsSSO.new_secure("YOUR_API_SECRET", user_data)
 
-# Widget'a veya API çağrısına geçirilecek SSO jetonunu oluştur
+# Widget'a veya bir API çağrısına geçirmek için SSO token'ı oluştur
 sso_token = sso.create_token()
 
-# Bu jetonu ön uçta kullanın veya API çağrılarına geçirin
+# Bu token'ı ön uçta kullanın veya API çağrılarına geçirin
 print(f"SSO Token: {sso_token}")
 ```
 
@@ -117,10 +117,47 @@ sso = FastCommentsSSO.new_simple(user_data)
 sso_token = sso.create_token()
 ```
 
+### Canlı Abonelikler (PubSub)
+
+`pubsub` modülü, WebSocket üzerinden gerçek zamanlı yorum olaylarına (yeni yorumlar, oylar, düzenlemeler, bildirimler vb.) abone olmanızı sağlar ve FastComments Java SDK'sının `LiveEventSubscriber`ını yansıtır. Bu, oluşturulan API istemcisinin üzerine bir WebSocket istemcisi ekleyen `pubsub` ekstra paketini gerektirir:
+
+```bash
+pip install "fastcomments[pubsub] @ git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0"
+```
+
+```python
+from pubsub import LiveEventSubscriber
+
+subscriber = LiveEventSubscriber()
+
+def handle_live_event(event):
+    print(f"Live event: {event.type}")
+    if event.comment:
+        print(f"  comment: {event.comment.comment}")
+
+result = subscriber.subscribe_to_changes(
+    tenant_id_ws="YOUR_TENANT_ID",
+    url_id="page-url-id",
+    url_id_ws="page-url-id",
+    user_id_ws="a-unique-presence-id",  # örn. bu oturum için bir UUID
+    handle_live_event=handle_live_event,
+    on_connection_status_change=lambda connected, last_event_time: print(
+        f"connected={connected}"
+    ),
+    region=None,  # EU bölgesi için "eu" olarak ayarlayın
+)
+
+# ...daha sonra, güncellemeleri artık istemediğinizde:
+result.close()
+```
+
+Abone, bağlantıyı arka plan daemon iş parçacığında çalıştırır, jitter ile şeffaf bir şekilde yeniden bağlanır ve yeniden bağlanma sırasında event-log uç noktasından kaçırılan olayları alır. Kullanıcının göremeyeceği yorumların kimliklerini döndüren isteğe bağlı bir `can_see_comments` geri çağırma fonksiyonu (`List[str] -> Dict[str, str]`) sağlayarak, kullanıcının görüntüleyemeyeceği yorum olaylarını filtreleyebilirsiniz. `disable_live_commenting=True` ayarını yaparak `subscribe_to_changes` işlevini hiçbir şey yapmayan ve `None` döndüren bir işlev haline getirebilirsiniz.
+
 ### Yaygın Sorunlar
 
 1. **401 "missing-api-key" hatası**: `DefaultApi` örneğini oluşturmadan önce `config.api_key = {"api_key": "YOUR_KEY"}` ayarladığınızdan emin olun.
-2. **Yanlış API sınıfı**: Sunucu tarafı kimlik doğrulamalı istekler için `DefaultApi`, istemci/öffentlich istekler için `PublicApi` ve moderatör paneli istekleri için `ModerationApi` kullanın.
-3. **İçe aktarma hataları**: Doğru modülden ithal ettiğinizden emin olun:
+2. **Yanlış API sınıfı**: Sunucu tarafı kimlik doğrulamalı istekler için `DefaultApi`, istemci tarafı/genel istekler için `PublicApi` ve moderatör panosu istekleri için `ModerationApi` kullanın.
+3. **İçe aktarma hataları**: Doğru modülden içe aktardığınızdan emin olun:
    - API istemcisi: `from client import ...`
-   - SSO yardımcıları: `from sso import ...`
+   - SSO yardımcı programları: `from sso import ...`
+   - Canlı abonelikler: `from pubsub import ...` (`pubsub` ekstra paketi gerekir)

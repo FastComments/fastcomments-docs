@@ -1,6 +1,6 @@
 {
   "name": "Eleventy (11ty) Bibliotek",
-  "pageHeader": "Tilføj kommentarer til dit Eleventy (11ty)-site",
+  "pageHeader": "Tilføj kommentarer til dit Eleventy (11ty) websted",
   "itemsOrdered": [
     {
       "name": "Live-demo",
@@ -9,15 +9,9 @@
       "type": "readme"
     },
     {
-      "name": "Live-præsentation",
-      "file": "live-showcase-readme-generated.md",
-      "subCat": "Dokumentation",
-      "type": "readme"
-    },
-    {
-      "name": "Installer",
+      "name": "Installér",
       "file": "install-readme-generated.md",
-      "subCat": "Kom godt i gang",
+      "subCat": "Kom i gang",
       "type": "readme"
     },
     {
@@ -33,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Pluginindstillinger",
+      "name": "Plugin-indstillinger",
       "file": "plugin-options-readme-generated.md",
       "subCat": "Konfiguration",
       "type": "readme"

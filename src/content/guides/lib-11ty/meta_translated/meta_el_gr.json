@@ -1,16 +1,10 @@
 {
   "name": "Βιβλιοθήκη Eleventy (11ty)",
-  "pageHeader": "Προσθέστε σχόλια στον ιστότοπό σας Eleventy (11ty)",
+  "pageHeader": "Προσθήκη σχολίων στον ιστότοπό σας Eleventy (11ty)",
   "itemsOrdered": [
     {
       "name": "Ζωντανή επίδειξη",
       "file": "live-demo-readme-generated.md",
-      "subCat": "Τεκμηρίωση",
-      "type": "readme"
-    },
-    {
-      "name": "Ζωντανή παρουσίαση",
-      "file": "live-showcase-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
     },
@@ -27,7 +21,7 @@
       "type": "readme"
     },
     {
-      "name": "Συντομοκώδικες",
+      "name": "Συνοπτικοί κώδικες",
       "file": "shortcodes-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"

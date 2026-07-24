@@ -1,5 +1,5 @@
 {
-  "name": "Eleventy (11ty) knjižnica",
+  "name": "Eleventy (11ty) biblioteka",
   "pageHeader": "Dodajte komentare na svoju Eleventy (11ty) stranicu",
   "itemsOrdered": [
     {
@@ -9,15 +9,9 @@
       "type": "readme"
     },
     {
-      "name": "Prikaz uživo",
-      "file": "live-showcase-readme-generated.md",
-      "subCat": "Dokumentacija",
-      "type": "readme"
-    },
-    {
       "name": "Instalacija",
       "file": "install-readme-generated.md",
-      "subCat": "Za početak",
+      "subCat": "Početak",
       "type": "readme"
     },
     {
@@ -27,7 +21,7 @@
       "type": "readme"
     },
     {
-      "name": "Shortcodeovi",
+      "name": "Kratki kodovi",
       "file": "shortcodes-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"

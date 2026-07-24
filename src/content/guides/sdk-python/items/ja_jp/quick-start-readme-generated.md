@@ -1,6 +1,6 @@
-### Using Authenticated APIs (DefaultApi)
+### 認証済み API の使用 (DefaultApi)
 
-**重要:** 認証されたリクエストを行う前に、Configuration に API キーを設定する必要があります。設定しない場合、リクエストは 401 エラーで失敗します。
+**重要:** 認証済みリクエストを行う前に、Configuration に API キーを設定する必要があります。設定しない場合、リクエストは 401 エラーで失敗します。
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
@@ -36,9 +36,9 @@ except Exception as e:
     # - 400: Request validation failed
 ```
 
-### Using Public APIs (PublicApi)
+### パブリック API の使用 (PublicApi)
 
-Public endpoints don't require authentication:
+パブリックエンドポイントは認証を必要としません:
 
 ```python
 from client import ApiClient, Configuration, PublicApi
@@ -56,9 +56,9 @@ except Exception as e:
     print(f"Error: {e}")
 ```
 
-### Using the Moderation Dashboard (ModerationApi)
+### モデレーターダッシュボードの使用 (ModerationApi)
 
-The `ModerationApi` powers the moderator dashboard. Methods are called on behalf of a moderator by passing an `sso` token:
+`ModerationApi` はモデレーターダッシュボードを提供します。メソッドは `sso` トークンを渡すことでモデレーターの代理として呼び出されます:
 
 ```python
 from client import ApiClient, Configuration, ModerationApi
@@ -78,9 +78,9 @@ except Exception as e:
     print(f"Error: {e}")
 ```
 
-### Using SSO (Single Sign-On)
+### SSO（シングルサインオン）の使用
 
-The SDK includes utilities for generating secure SSO tokens:
+SDK には安全な SSO トークンを生成するユーティリティが含まれています:
 
 ```python
 from sso import FastCommentsSSO, SecureSSOUserData
@@ -103,7 +103,7 @@ sso_token = sso.create_token()
 print(f"SSO Token: {sso_token}")
 ```
 
-For simple SSO (less secure, for testing):
+シンプル SSO（セキュリティが低く、テスト用）:
 
 ```python
 from sso import FastCommentsSSO, SimpleSSOUserData
@@ -117,10 +117,47 @@ sso = FastCommentsSSO.new_simple(user_data)
 sso_token = sso.create_token()
 ```
 
-### Common Issues
+### ライブサブスクリプション (PubSub)
 
-1. **401 "missing-api-key" error**: DefaultApi インスタンスを作成する前に `config.api_key = {"api_key": "YOUR_KEY"}` を設定してください。
-2. **Wrong API class**: サーバー側の認証リクエストには `DefaultApi`、クライアント側/公開リクエストには `PublicApi`、モデーターダッシュボードのリクエストには `ModerationApi` を使用してください。
-3. **Import errors**: 正しいモジュールからインポートしていることを確認してください:
-   - API client: `from client import ...`
-   - SSO utilities: `from sso import ...`
+`pubsub` モジュールを使用すると、WebSocket を介してリアルタイムのコメントイベント（新規コメント、投票、編集、通知など）を購読できます。これは FastComments の Java SDK の `LiveEventSubscriber` を鏡像しています。`pubsub` エクストラが必要で、生成された API クライアントに WebSocket クライアントを追加します:
+
+```bash
+pip install "fastcomments[pubsub] @ git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0"
+```
+
+```python
+from pubsub import LiveEventSubscriber
+
+subscriber = LiveEventSubscriber()
+
+def handle_live_event(event):
+    print(f"Live event: {event.type}")
+    if event.comment:
+        print(f"  comment: {event.comment.comment}")
+
+result = subscriber.subscribe_to_changes(
+    tenant_id_ws="YOUR_TENANT_ID",
+    url_id="page-url-id",
+    url_id_ws="page-url-id",
+    user_id_ws="a-unique-presence-id",  # e.g. a UUID for this session
+    handle_live_event=handle_live_event,
+    on_connection_status_change=lambda connected, last_event_time: print(
+        f"connected={connected}"
+    ),
+    region=None,  # set to "eu" for the EU region
+)
+
+# ...later, when you no longer want updates:
+result.close()
+```
+
+サブスクライバーはバックグラウンドのデーモンスレッドで接続を実行し、ジッター付きで透過的に再接続し、再接続時にイベントログエンドポイントから切断中に失われたイベントを取得します。オプションで `can_see_comments` コールバック（`List[str] -> Dict[str, str]`、ユーザーが閲覧できない ID を返す）を渡すことで、ユーザーが閲覧できないコメントのイベントをフィルタリングできます。`disable_live_commenting=True` を設定すると、`subscribe_to_changes` は何も行わず `None` を返すようになります。
+
+### 共通の問題
+
+1. **401 "missing-api-key" エラー**: DefaultApi インスタンスを作成する前に `config.api_key = {"api_key": "YOUR_KEY"}` を設定してください。
+2. **API クラスの誤り**: サーバー側の認証リクエストには `DefaultApi`、クライアント側/パブリックリクエストには `PublicApi`、モデレーターダッシュボードのリクエストには `ModerationApi` を使用してください。
+3. **インポートエラー**: 正しいモジュールからインポートしていることを確認してください:
+   - API クライアント: `from client import ...`
+   - SSO ユーティリティ: `from sso import ...`
+   - ライブサブスクリプション: `from pubsub import ...`（`pubsub` エクストラが必要）

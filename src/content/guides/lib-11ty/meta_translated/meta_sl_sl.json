@@ -1,23 +1,17 @@
 {
-  "name": "Knjižnica Eleventy (11ty)",
-  "pageHeader": "Dodajte komentarje na vaše spletno mesto Eleventy (11ty)",
+  "name": "Eleventy (11ty) knjižnica",
+  "pageHeader": "Dodajte komentarje na svoje Eleventy (11ty) spletno mesto",
   "itemsOrdered": [
     {
-      "name": "Predstavitev v živo",
+      "name": "Živa predstavitev",
       "file": "live-demo-readme-generated.md",
-      "subCat": "Dokumentacija",
-      "type": "readme"
-    },
-    {
-      "name": "Prikaz v živo",
-      "file": "live-showcase-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
       "name": "Namestitev",
       "file": "install-readme-generated.md",
-      "subCat": "Za začetek",
+      "subCat": "Začetek",
       "type": "readme"
     },
     {
@@ -45,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Vzorčni projekt",
+      "name": "Primer projekta",
       "file": "example-project-readme-generated.md",
       "subCat": "Uporaba",
       "type": "readme"
@@ -57,7 +51,7 @@
       "type": "readme"
     },
     {
-      "name": "Status vzdrževanja",
+      "name": "Stanje vzdrževanja",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"

@@ -1,9 +1,9 @@
-Да бисте видели све видгете и флоу које се покрећу локално против јавног `demo` тенанта, клонирајте репозиторијум и покрените:
+Da biste videli svaki widget i flow koji se pokreću lokalno protiv javnog `demo` tenant-a, klonirajte repozitorijum i pokrenite:
 
 ```bash
 cd examples/example-showcase
 npm install
-npm start
+npm run dev
 ```
 
-Сваки видгет/флоу има свој view у `examples/example-showcase/src/views/` који можете директно копирати у своју React апликацију.
+Svaki widget/flow ima svoj pogled u `examples/example-showcase/src/views/` koji možete direktno kopirati u svoju React aplikaciju.

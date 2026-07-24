@@ -1,9 +1,9 @@
-Para ver cada widget e fluxo sendo executados localmente contra o tenant público `demo`, clone o repositório e execute:
+Para ver cada widget e fluxo executando localmente contra o tenant público `demo`, clone o repositório e execute:
 
 ```bash
 cd examples/example-showcase
 npm install
-npm start
+npm run dev
 ```
 
-Cada widget/fluxo tem sua própria visualização em `examples/example-showcase/src/views/` que você pode copiar diretamente para o seu próprio app React.
+Cada widget/fluxo tem sua própria visualização em `examples/example-showcase/src/views/` que você pode copiar diretamente para seu próprio aplicativo React.

@@ -1,17 +1,19 @@
-Сада копирајте овај исечак кода:
+Now, copy this code snippet:
 
-[code-example-start config = {}; title = 'Installation Code'; isFunctional = false; code-example-end]
+[code-example-start config = {}; title = 'Инсталациони код'; isFunctional = false; code-example-end]
 
-Затим га залепите у овај блок:
+Then paste it in the block:
 
 <div class="screenshot white-bg">
-    <div class="title">Трећи корак: Налепите код</div>
+    <div class="title">Корак три: Налепите код</div>
     <img class="screenshot-image" src="/images/installation-guides/webnode-step-4.png" alt="Налепите код" />
 </div>
 
-У едитору би требало да изгледа овако:
+It should look like this in the editor:
 
 <div class="screenshot white-bg">
-    <div class="title">Трећи корак: Преглед</div>
+    <div class="title">Корак три: Преглед</div>
     <img class="screenshot-image" src="/images/installation-guides/webnode-step-5.png" alt="Преглед" />
 </div>
+
+Webnode не приказује HTML блокове унутар уређивача, па ћете видети резервни елемент који каже да садржај не може бити приказан из безбедносних разлога. Ово је очекивано. Виджет коментара се појављује само након што објавите, што ћемо урадити следеће.

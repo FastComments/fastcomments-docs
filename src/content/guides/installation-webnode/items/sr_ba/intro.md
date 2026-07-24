@@ -1,5 +1,3 @@
 ---
-** ВАЖНО ** ми тренутно истражујемо жалбе корисника у вези ове документације. Изгледа да је Webnode уклонио функцију HTML Block, радимо
-са њиховим тимом за подршку на овоме.
-
+Webnode‑ov HTML blok je ono što ćemo koristiti za ugradnju widgeta za komentare. Od 26. juna 2023. ovaj blok je plaćena funkcija Webnode‑a: nije dostupan u besplatnom planu, a projekti kreirani nakon tog datuma trebaju premium paket da ga koriste. Ako ne vidite opciju `HTML` u editoru, nadogradite svoj Webnode plan i ona će se pojaviti.
 ---

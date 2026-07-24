@@ -1,16 +1,10 @@
 {
   "name": "Библиотека Eleventy (11ty)",
-  "pageHeader": "Добавьте комментарии на свой сайт Eleventy (11ty)",
+  "pageHeader": "Добавьте комментарии к вашему сайту Eleventy (11ty)",
   "itemsOrdered": [
     {
-      "name": "Живая демонстрация",
+      "name": "Онлайн‑демо",
       "file": "live-demo-readme-generated.md",
-      "subCat": "Документация",
-      "type": "readme"
-    },
-    {
-      "name": "Показ в реальном времени",
-      "file": "live-showcase-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
     },

@@ -1,26 +1,26 @@
 ### התקנה מ‑GitHub
 
-התקן ישירות מתג רילייז (מומלץ, ניתן לשחזר במלואו):
+התקנה ישירה מתג שחרור (מומלץ, ניתן לשחזור מלא):
 
 ```bash
-pip install git+https://github.com/fastcomments/fastcomments-python.git@v3.0.0
+pip install git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0
 ```
 
-נעץ את התג במקום סניף כך שהבנייה תהיה דטרמיניסטית. אותה הצורה עובדת ב‑`requirements.txt`:
+קבעו את התג במקום סניף כדי שהבניות יהיו דטרמיניסטיות. אותה צורה עובדת ב‑`requirements.txt`:
 
 ```
-fastcomments @ git+https://github.com/fastcomments/fastcomments-python.git@v3.0.0
+fastcomments @ git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0
 ```
 
-לכל תיוג [GitHub Release](https://github.com/fastcomments/fastcomments-python/releases) יש גלגל (wheel) שנבנה מצורף אם אתה מעדיף להתקין ארטיפקט בינארי ישירות.
+לכל תוית [GitHub Release](https://github.com/fastcomments/fastcomments-python/releases) יש גלגל מצורף אם אתם מעדיפים להתקין ארטיפקט בינארי ישירות.
 
-### תוכן הספרייה
+### תכולת הספרייה
 
-ספרייה זו מכילה שני מודולים: לקוח ה‑API שנוצר והספרייה המרכזית של פייתון שמכילה כלי כתובים ידנית כדי להקל על העבודה עם ה‑API, כולל תמיכה ב‑SSO.
+ספרייה זו מכילה שני מודולים: לקוח ה‑API שנוצר והספרייה המרכזית של Python שמכילה כלי כתיבה ידנית שמקלים על העבודה עם ה‑API, כולל תמיכה ב‑SSO.
 
-- [API Client Library Docs](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
-- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
+- [תיעוד ספריית לקוח ה‑API](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
+- [תיעוד הספרייה המרכזית, כולל דוגמאות SSO](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
 
-### API ציבוריים לעומת מאובטחים
+### API ציבוריים מול מאובטחים
 
-ללקוח ה‑API יש שלושה מחלקות, `DefaultApi`, `PublicApi`, ו‑`ModerationApi`. ה‑`DefaultApi` מכילה שיטות הדורשות את מפתח ה‑API שלך, ו‑`PublicApi` מכילה שיטות שניתן לבצע ישירות מדפדפן/התקן נייד/וכו' ללא אימות. ה‑`ModerationApi` מספקת חבילה נרחבת של API למודרציה חיה ומהירה. כל שיטת `ModerationApi` מקבלת פרמטר `sso` ויכולה לבצע אימות דרך SSO או באמצעות עוגיית סשן של FastComments.com.
+ללקוח ה‑API יש שלוש מחלקות, `DefaultApi`, `PublicApi`, ו‑`ModerationApi`. ה‑`DefaultApi` מכילה שיטות הדורשות מפתח API, וה‑`PublicApi` מכילה שיטות שניתן לקרוא להן ישירות מדפדפן/מכשיר נייד/וכו׳ ללא אימות. ה‑`ModerationApi` מספקת סדרה נרחבת של API מודרציה בזמן אמת ומהירה. כל שיטה ב‑`ModerationApi` מקבלת פרמטר `sso` ויכולה לאמת באמצעות SSO או קובץ cookie של session ב‑FastComments.com.

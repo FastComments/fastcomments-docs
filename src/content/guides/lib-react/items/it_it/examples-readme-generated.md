@@ -1,1 +1,3 @@
-I singoli casi d'uso (modalità scura, paginazione, ecc.) si trovano nelle rispettive cartelle sotto `examples/`. Ciascuno può essere configurato con `npm install` e avviato con `npm start`.
+---
+I casi d'uso individuali (modalità scura, paginazione, ecc.) vivono nelle proprie cartelle sotto `examples/`. Ognuno può essere configurato con `npm install` e avviato con `npm run dev` (Vite).
+---

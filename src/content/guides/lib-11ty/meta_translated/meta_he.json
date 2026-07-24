@@ -9,15 +9,9 @@
       "type": "readme"
     },
     {
-      "name": "תצוגה חיה",
-      "file": "live-showcase-readme-generated.md",
-      "subCat": "תיעוד",
-      "type": "readme"
-    },
-    {
       "name": "התקנה",
       "file": "install-readme-generated.md",
-      "subCat": "התחלה מהירה",
+      "subCat": "התחלה",
       "type": "readme"
     },
     {
@@ -33,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "אפשרויות התוסף",
+      "name": "אפשרויות תוסף",
       "file": "plugin-options-readme-generated.md",
       "subCat": "תצורה",
       "type": "readme"

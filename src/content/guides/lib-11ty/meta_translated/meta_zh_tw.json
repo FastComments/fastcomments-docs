@@ -1,27 +1,21 @@
 {
   "name": "Eleventy（11ty）函式庫",
-  "pageHeader": "為你的 Eleventy（11ty）網站加入評論功能",
+  "pageHeader": "為您的 Eleventy（11ty）網站新增評論",
   "itemsOrdered": [
     {
-      "name": "線上示範",
+      "name": "即時示範",
       "file": "live-demo-readme-generated.md",
-      "subCat": "文件",
-      "type": "readme"
-    },
-    {
-      "name": "線上展示",
-      "file": "live-showcase-readme-generated.md",
       "subCat": "文件",
       "type": "readme"
     },
     {
       "name": "安裝",
       "file": "install-readme-generated.md",
-      "subCat": "快速開始",
+      "subCat": "入門指南",
       "type": "readme"
     },
     {
-      "name": "快速上手",
+      "name": "快速開始",
       "file": "quick-start-readme-generated.md",
       "subCat": "文件",
       "type": "readme"
@@ -33,21 +27,21 @@
       "type": "readme"
     },
     {
-      "name": "外掛選項",
+      "name": "插件選項",
       "file": "plugin-options-readme-generated.md",
       "subCat": "設定",
       "type": "readme"
     },
     {
-      "name": "手動使用（不使用外掛）",
+      "name": "手動使用（不使用插件）",
       "file": "manual-usage-without-the-plugin-readme-generated.md",
-      "subCat": "使用",
+      "subCat": "使用方式",
       "type": "readme"
     },
     {
       "name": "範例專案",
       "file": "example-project-readme-generated.md",
-      "subCat": "使用",
+      "subCat": "使用方式",
       "type": "readme"
     },
     {

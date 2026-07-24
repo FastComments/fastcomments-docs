@@ -1,5 +1,3 @@
 ---
-** HINWEIS ** wir untersuchen derzeit Beschwerden von Kunden bezüglich dieser Dokumentation. Es scheint, dass Webnode die HTML-Block-Funktion entfernt hat, wir arbeiten
-mit ihrem Support-Team daran.
-
+Webnode's HTML‑Block ist das, was wir verwenden werden, um das Kommentar‑Widget einzubetten. Seit dem 26. Juni 2023 ist dieser Block ein kostenpflichtiges Webnode‑Feature: Er ist nicht im Gratis‑Plan verfügbar, und Projekte, die nach diesem Datum erstellt wurden, benötigen ein Premium‑Paket, um ihn zu nutzen. Wenn Sie die `HTML`‑Option im Editor nicht sehen, aktualisieren Sie Ihren Webnode‑Plan und sie wird angezeigt.
 ---

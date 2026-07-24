@@ -1,1 +1,3 @@
-Pojedyncze przypadki użycia (tryb ciemny, paginacja itp.) znajdują się w swoich własnych folderach pod `examples/`. Każdy z nich można skonfigurować poleceniem `npm install` i uruchomić poleceniem `npm start`.
+---
+Poszczególne przypadki użycia (tryb ciemny, paginacja itp.) znajdują się w własnych folderach w `examples/`. Każdy z nich można skonfigurować przy użyciu `npm install` i uruchomić za pomocą `npm run dev` (Vite).
+---
