@@ -1,0 +1,52 @@
+{
+  "name": "Joomla Installation",
+  "pageHeader": "Add Live Commenting to Joomla Sites",
+  "icon": "3rd-party-products/joomla.svg",
+  "itemsOrdered": [
+    {
+      "name": "Quick Start",
+      "file": "joomla-quick-start.md",
+      "subCat": "TLDR"
+    },
+    {
+      "name": "Installation",
+      "file": "joomla-installation.md",
+      "subCat": "Joomla Installation"
+    },
+    {
+      "name": "Configuration",
+      "file": "joomla-configuration.md",
+      "subCat": "Joomla Installation"
+    },
+    {
+      "name": "Commenting Styles",
+      "file": "joomla-commenting-styles.md",
+      "subCat": "Joomla Installation"
+    },
+    {
+      "name": "Comment Counts",
+      "file": "joomla-comment-counts.md",
+      "subCat": "Joomla Installation"
+    },
+    {
+      "name": "Sidebar Modules",
+      "file": "joomla-modules.md",
+      "subCat": "Joomla Installation"
+    },
+    {
+      "name": "Single Sign-On (SSO)",
+      "file": "joomla-sso.md",
+      "subCat": "Joomla Installation"
+    },
+    {
+      "name": "EU Data Residency",
+      "file": "joomla-eu-data-residency.md",
+      "subCat": "Joomla Installation"
+    },
+    {
+      "name": "Requirements",
+      "file": "joomla-requirements.md",
+      "subCat": "Joomla Installation"
+    }
+  ]
+}
