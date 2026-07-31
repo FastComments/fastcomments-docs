@@ -4,34 +4,54 @@
   "icon": "3rd-party-products/webflow.svg",
   "itemsOrdered": [
     {
+      "name": "Install the FastComments App",
+      "file": "webflow-app-install.md",
+      "subCat": "FastComments App"
+    },
+    {
+      "name": "Add the Loader Script (One-Time)",
+      "file": "webflow-app-loader.md",
+      "subCat": "FastComments App"
+    },
+    {
+      "name": "Insert a Widget",
+      "file": "webflow-app-insert.md",
+      "subCat": "FastComments App"
+    },
+    {
+      "name": "Publish",
+      "file": "webflow-app-publish.md",
+      "subCat": "FastComments App"
+    },
+    {
       "name": "Step 1: Add an Embed Block",
       "file": "webflow-step-1.md",
-      "subCat": "Webflow Installation"
+      "subCat": "Manual Installation"
     },
     {
       "name": "Step 2: Paste Your FastComments.com Code",
       "file": "webflow-step-2.md",
-      "subCat": "Webflow Installation"
+      "subCat": "Manual Installation"
     },
     {
       "name": "Step 3: Publish",
       "file": "webflow-step-3.md",
-      "subCat": "Webflow Installation"
+      "subCat": "Manual Installation"
     },
     {
       "name": "Success",
       "file": "webflow-success.md",
-      "subCat": "Webflow Installation"
+      "subCat": "Manual Installation"
     },
     {
       "name": "Domain Errors",
       "file": "webflow-domain-errors.md",
-      "subCat": "Webflow Installation"
+      "subCat": "Troubleshooting"
     },
     {
       "name": "Customization",
       "file": "webflow-customize.md",
-      "subCat": "Webflow Installation"
+      "subCat": "Customization"
     }
   ]
 }
