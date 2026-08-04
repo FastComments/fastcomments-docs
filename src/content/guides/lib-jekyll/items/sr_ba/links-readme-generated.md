@@ -1,5 +1,0 @@
----
-- [FastComments документација](https://docs.fastcomments.com)
-- [Прилагођавање и конфигурација](https://docs.fastcomments.com/guide-customizations-and-configuration.html)
-- [Jekyll документација](https://jekyllrb.com/docs/)
----

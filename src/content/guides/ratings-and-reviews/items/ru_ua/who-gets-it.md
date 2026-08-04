@@ -1,1 +1,0 @@
-Все пакеты FastComments могут использовать Feedback module, который включает Ratings & Reviews.

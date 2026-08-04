@@ -1,1 +1,0 @@
-Испробајте све видгете уживо на <https://fastcomments.com/commenting-system-for-jekyll>.

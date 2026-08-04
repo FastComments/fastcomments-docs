@@ -1,1 +1,0 @@
-Individual use cases (dark mode, pagination, etc.) live in their own folders under `examples/`. Each can be set up with `npm install` and started with `npm run dev` (Vite).

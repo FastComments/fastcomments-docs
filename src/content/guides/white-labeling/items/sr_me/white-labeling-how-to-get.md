@@ -1,1 +1,0 @@
-White Labeling je dostupan na nekoliko planova FastComments.com. Pogledajte [naše cijene](https://fastcomments.com/traffic-pricing) da vidite različite pakete koji nude White Labeling.

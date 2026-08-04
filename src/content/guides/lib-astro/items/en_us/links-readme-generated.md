@@ -1,5 +1,0 @@
----
-- [FastComments Documentation](https://docs.fastcomments.com)
-- [Customization & Configuration](https://docs.fastcomments.com/guide-customizations-and-configuration.html)
-- [Astro Documentation](https://docs.astro.build)
----

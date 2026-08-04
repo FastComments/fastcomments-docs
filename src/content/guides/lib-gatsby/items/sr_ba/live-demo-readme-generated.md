@@ -1,1 +1,0 @@
-Пробајте сваки видгет уживо на <https://fastcomments.com/commenting-system-for-gatsby>.

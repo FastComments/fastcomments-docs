@@ -1,1 +1,0 @@
-За подршку, молимо посетите https://fastcomments.com/auth/my-account/help или пошаљите имејл на support@fastcomments.com

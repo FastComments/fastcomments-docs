@@ -1,6 +1,0 @@
-- C++17 или новее
-- CMake 3.14 или новее
-- OpenSSL
-- C++ REST SDK (cpprestsdk)
-- Boost
-- Google Test (автоматически загружается для тестирования)

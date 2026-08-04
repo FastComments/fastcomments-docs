@@ -1,1 +1,0 @@
-En conclusion, nous sommes impatients d'être votre partenaire d'affiliation! N'hésitez pas à poser vos questions ci-dessous.

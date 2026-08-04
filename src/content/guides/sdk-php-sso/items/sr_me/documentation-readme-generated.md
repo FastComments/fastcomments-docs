@@ -1,3 +1,0 @@
----
-За потпуну документацију о FastComments SSO-у, погледајте [FastComments документацију](https://docs.fastcomments.com/guide-customizations-and-configuration.html#sso).
----

@@ -1,1 +1,0 @@
-Svi FastComments paketi mogu koristiti Feedback modul, koji uključuje Ocjene & Recenzije.

@@ -1,1 +1,0 @@
-FastComments has an affiliate program that provides excellent recurring payouts to affiliates! Read on to learn more.

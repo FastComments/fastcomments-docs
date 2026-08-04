@@ -1,6 +1,0 @@
-1. Idite na <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">vašu FastComments LTI konfiguraciju</a>.
-2. Unesite **Configuration Name** i vaš **Platform URL** (npr. `https://yourschool.instructure.com`). Odaberite koja **Placements** omogućiti (Assignment View i/ili Editor Button — oba su po defaultu uključena). Kliknite **Create Configuration**. Čarobnjak prelazi na Korak 2 i prikazuje vaš **Configuration URL**.
-3. U Canvasu, idite na **Admin > Developer Keys > + Developer Key > LTI Key**. Postavite **Method** na "Enter URL" i zalijepite Configuration URL. Sačuvajte ključ, zatim postavite njegovo **State** na **ON** i kliknite **Allow** kada budete upitani.
-4. Kopirajte broj **Client ID** iz tabele Developer Keys u Canvasu. Vratite se u FastComments, zalijepite ga u polje **Client ID** i kliknite **Save & Continue**.
-5. Pregledajte sažetak konfiguracije i kliknite **Enable Integration** da aktivirate integraciju.
-6. Instalirajte External App u Canvasu (**Admin > Settings > Apps > + App > By Client ID**). Komentari će se automatski pojavljivati ispod zadataka, a instruktori mogu ugraditi FastComments u Pages, Quizzes i Announcements putem dugmeta na alatnoj traci Rich Content Editora.

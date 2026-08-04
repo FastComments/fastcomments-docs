@@ -1,2 +1,0 @@
-Prva stvar pri postavljanju je odlučiti kako će vaša pitanja biti prikazana. Na ovoj stranici, pri dnu koristimo preporučeni tip prikaza, koji je Side-by-Side izgled
-za ocjene i podocjene. Drugi izgled, koji je više namijenjen reakcijama na stranicu nego recenzijama, je vertikalni izgled koji se koristi na drugim stranicama dokumentacije.

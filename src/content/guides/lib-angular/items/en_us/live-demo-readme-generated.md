@@ -1,1 +1,0 @@
-Try every widget live at <https://fastcomments.com/commenting-system-for-angular>.

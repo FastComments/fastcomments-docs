@@ -1,5 +1,0 @@
----
-- [Τεκμηρίωση FastComments](https://docs.fastcomments.com)
-- [Προσαρμογή & Διαμόρφωση](https://docs.fastcomments.com/guide-customizations-and-configuration.html)
-- [Τεκμηρίωση Astro](https://docs.astro.build)
----

@@ -1,1 +1,0 @@
-Commento uses a drastically different SSO approach - they require you to have an endpoint that they invoke to authenticate the user. FastComments is the other way around - simply encode and hash the user's information using your secret key and pass it along.

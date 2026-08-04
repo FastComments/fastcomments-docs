@@ -1,5 +1,0 @@
----
-- [Документация FastComments](https://docs.fastcomments.com)
-- [Кастомизация і конфігурація](https://docs.fastcomments.com/guide-customizations-and-configuration.html)
-- [Документація Astro](https://docs.astro.build)
----

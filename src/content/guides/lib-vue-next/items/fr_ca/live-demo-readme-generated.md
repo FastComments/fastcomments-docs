@@ -1,1 +1,0 @@
-Essayez chaque widget en direct sur <https://fastcomments.com/commenting-system-for-vue>.

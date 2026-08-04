@@ -43,18 +43,6 @@
       "hreflang": "nl-NL",
       "flag": "🇳🇱"
     },
-    "en_us": {
-      "name": "English (North America)",
-      "nativeName": "English (US)",
-      "hreflang": "en-US",
-      "flag": "🇺🇸"
-    },
-    "fr_ca": {
-      "name": "French (Canada)",
-      "nativeName": "Français (Canada)",
-      "hreflang": "fr-CA",
-      "flag": "🇨🇦"
-    },
     "fr_fr": {
       "name": "French (France)",
       "nativeName": "Français (France)",
@@ -66,12 +54,6 @@
       "nativeName": "Deutsch",
       "hreflang": "de-DE",
       "flag": "🇩🇪"
-    },
-    "el_cy": {
-      "name": "Greek (Cyprus)",
-      "nativeName": "Ελληνικά (Κύπρος)",
-      "hreflang": "el-CY",
-      "flag": "🇨🇾"
     },
     "el_gr": {
       "name": "Greek (Greece)",
@@ -121,29 +103,11 @@
       "hreflang": "ru-RU",
       "flag": "🇷🇺"
     },
-    "ru_ua": {
-      "name": "Russian (Ukraine)",
-      "nativeName": "Русский (Украина)",
-      "hreflang": "ru-UA",
-      "flag": "🇺🇦"
-    },
-    "sr_ba": {
-      "name": "Serbian (Bosnia & Herzegovina)",
-      "nativeName": "Српски (БиХ)",
-      "hreflang": "sr-BA",
-      "flag": "🇧🇦"
-    },
     "sr_latn_rs": {
       "name": "Serbian (Latin Serbia)",
       "nativeName": "Srpski (Latinica)",
       "hreflang": "sr-Latn-RS",
       "flag": "🇷🇸"
-    },
-    "sr_me": {
-      "name": "Serbian (Montenegro)",
-      "nativeName": "Српски (Црна Гора)",
-      "hreflang": "sr-ME",
-      "flag": "🇲🇪"
     },
     "sr_rs": {
       "name": "Serbian (Serbia)",

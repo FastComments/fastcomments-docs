@@ -1,1 +1,0 @@
-These components are thin wrappers around our core VanillaJS widgets. We can update those widgets (fix bugs, add features) without publishing this repository, so a quiet release history does not mean FastComments is inactive. Check [our blog](https://blog.fastcomments.com/) for updates. Breaking changes to the underlying widgets ship with a version bump here.

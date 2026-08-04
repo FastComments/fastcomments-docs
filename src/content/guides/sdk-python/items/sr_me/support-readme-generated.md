@@ -1,5 +1,0 @@
----
-- [Документација](https://docs.fastcomments.com)
-- [GitHub Проблеми](https://github.com/fastcomments/fastcomments-python/issues)
-- [Подршка FastComments](https://fastcomments.com/auth/my-account/help)
----

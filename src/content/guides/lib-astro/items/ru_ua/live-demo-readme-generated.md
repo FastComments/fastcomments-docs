@@ -1,1 +1,0 @@
-Попробуйте все виджеты в действии на <https://fastcomments.com/commenting-system-for-astro>.

@@ -1,1 +1,0 @@
-Попробуйте каждый виджет вживую на <https://fastcomments.com/commenting-system-for-react>.

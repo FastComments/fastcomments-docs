@@ -1,2 +1,0 @@
-- Next.js 13, 14, 15, ou 16
-- React 18 ou 19
