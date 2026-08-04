@@ -942,12 +942,14 @@ fn build_index_page(
 ) -> Result<()> {
     let guides = root.walk(locale)?;
     let t = translations.for_locale(locale);
+    // Self-canonical per locale, mirroring the guide pages: each locale's home
+    // page canonicalizes to its OWN index URL. This also collapses `/` and
+    // `/index.html` (both served for the default locale) onto one canonical.
     let local_index_url = if locale == locales.default_locale {
         "index.html".to_string()
     } else {
         format!("index-{locale}.html")
     };
-    let _ = local_index_url; // for symmetry/log
 
     let getting_started: Vec<&Guide> = guides
         .iter()
@@ -1016,13 +1018,15 @@ fn build_index_page(
         .filter(|g| g.id.starts_with("sdk-") || g.id.starts_with("lib-"))
         .collect();
 
-    let available_locales = build_available_locales(locales, locale, |loc| {
+    let index_url_for = |loc: &str| {
         if loc == locales.default_locale {
             "index.html".to_string()
         } else {
             format!("index-{loc}.html")
         }
-    });
+    };
+    let available_locales = build_available_locales(locales, locale, index_url_for);
+    let alternate_locales = build_alternate_locales(locales, locale, index_url_for);
 
     let last_update_date = chrono::Local::now().format("%Y-%m-%d %H:%M:%S").to_string();
     let ctx = json!({
@@ -1035,6 +1039,9 @@ fn build_index_page(
         "locale": locale,
         "lang": locales.locales.get(locale).map(|l| l.hreflang.clone()).unwrap_or_default(),
         "availableLocales": available_locales,
+        "alternateLocales": alternate_locales,
+        "canonicalUrl": local_index_url,
+        "defaultUrl": "index.html",
         "t": (*t.value).clone(),
     });
     let html = templates.render("index", &ctx)?;
