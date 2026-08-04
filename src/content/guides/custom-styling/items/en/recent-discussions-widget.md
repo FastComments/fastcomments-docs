@@ -2,7 +2,7 @@ The Recent Discussions Widget displays a list of pages sorted by the most recent
 
 ## Basic Installation
 
-[inline-code-attrs-start title = 'Recent Discussions Widget Installation'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Recent Discussions Widget Styling Setup'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
