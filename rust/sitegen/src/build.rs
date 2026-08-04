@@ -930,6 +930,19 @@ pub fn guide_link(id: &str, locale: &str, default_locale: &str) -> String {
 }
 
 #[allow(clippy::too_many_arguments)]
+/// Reference URL for a locale's home page. The default locale's home is the
+/// bare site root (`/`), so it is referenced as "" (callers prefix `/` or the
+/// base URL); other locales use their `index-<locale>.html` file. The physical
+/// default-locale file is still written as `index.html` — only the *references*
+/// use `/`, so the `/index.html` alias is never linked and never crawled.
+fn home_ref_url(locale: &str, default_locale: &str) -> String {
+    if locale == default_locale {
+        String::new()
+    } else {
+        format!("index-{locale}.html")
+    }
+}
+
 fn build_index_page(
     locale: &str,
     root: &GuidesRoot,
@@ -942,14 +955,10 @@ fn build_index_page(
 ) -> Result<()> {
     let guides = root.walk(locale)?;
     let t = translations.for_locale(locale);
-    // Self-canonical per locale, mirroring the guide pages: each locale's home
-    // page canonicalizes to its OWN index URL. This also collapses `/` and
-    // `/index.html` (both served for the default locale) onto one canonical.
-    let local_index_url = if locale == locales.default_locale {
-        "index.html".to_string()
-    } else {
-        format!("index-{locale}.html")
-    };
+    // Self-canonical per locale, mirroring the guide pages. The default locale's
+    // home canonicalizes to the bare site root (`/`); non-default locales
+    // canonicalize to their own `index-<locale>.html`.
+    let local_index_url = home_ref_url(locale, &locales.default_locale);
 
     let getting_started: Vec<&Guide> = guides
         .iter()
@@ -1018,13 +1027,7 @@ fn build_index_page(
         .filter(|g| g.id.starts_with("sdk-") || g.id.starts_with("lib-"))
         .collect();
 
-    let index_url_for = |loc: &str| {
-        if loc == locales.default_locale {
-            "index.html".to_string()
-        } else {
-            format!("index-{loc}.html")
-        }
-    };
+    let index_url_for = |loc: &str| home_ref_url(loc, &locales.default_locale);
     let available_locales = build_available_locales(locales, locale, index_url_for);
     let alternate_locales = build_alternate_locales(locales, locale, index_url_for);
 
@@ -1041,7 +1044,7 @@ fn build_index_page(
         "availableLocales": available_locales,
         "alternateLocales": alternate_locales,
         "canonicalUrl": local_index_url,
-        "defaultUrl": "index.html",
+        "defaultUrl": "",
         "t": (*t.value).clone(),
     });
     let html = templates.render("index", &ctx)?;
@@ -1093,19 +1096,11 @@ fn write_sitemap(
 
     // Homepage entries per locale.
     for (loc, _) in &locales.locales {
-        let filename = if loc == &locales.default_locale {
-            "index.html".to_string()
-        } else {
-            format!("index-{loc}.html")
-        };
+        let filename = home_ref_url(loc, &locales.default_locale);
         sitemap.push_str("  <url>\n");
         sitemap.push_str(&format!("    <loc>{BASE}{filename}</loc>\n"));
         for (alt, info) in &locales.locales {
-            let alt_file = if alt == &locales.default_locale {
-                "index.html".to_string()
-            } else {
-                format!("index-{alt}.html")
-            };
+            let alt_file = home_ref_url(alt, &locales.default_locale);
             sitemap.push_str(&format!(
                 "    <xhtml:link rel=\"alternate\" hreflang=\"{}\" href=\"{BASE}{alt_file}\"/>\n",
                 info.hreflang
