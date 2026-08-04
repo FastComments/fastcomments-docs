@@ -533,16 +533,14 @@ async fn build_one_guide(
 
     // Render page.html.
     //
-    // canonicalUrl MUST be the default-locale URL on every page,
-    // including translated ones. Mirrors src/guides.js:283 (`canonicalUrl:
-    // defaultUrl`). Pointing each translated page's canonical at *itself*
-    // tells search engines each locale is its own primary document and
-    // neutralizes the hreflang model — risk of duplicate-content
-    // penalties and lost cross-locale link equity. Reviewer caught the
-    // regression because scripts/compare-html.py doesn't normalize the
-    // canonical link, so this slipped a parity check.
+    // Self-canonical per locale: each translated page canonicalizes to its OWN
+    // URL. This is the correct multilingual setup - hreflang alternates must point
+    // to canonical URLs, and the sitemap must list canonical URLs, so pointing every
+    // locale's canonical at the English URL is exactly what makes hreflang targets
+    // and sitemap entries "non-canonical". default_url is still used for the
+    // x-default hreflang and the stable comment urlId (shared across locales).
     let default_url = guide_link(&guide.id, &locales.default_locale, &locales.default_locale);
-    let canonical_url = default_url.clone();
+    let canonical_url = guide_link(&guide.id, locale, &locales.default_locale);
     let faq_json_ld = build_faq_json_ld(&meta);
     let page_ctx = json!({
         "title": meta.page_header.clone().unwrap_or_else(|| meta.name.clone().unwrap_or_default()),
