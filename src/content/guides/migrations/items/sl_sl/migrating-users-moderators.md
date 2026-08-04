@@ -5,7 +5,7 @@ organizaciji.
 
 Uporabnike lahko dodate preko tega vmesnika. Če imate veliko uporabnikov, jih lahko uvozimo za vas [prek podpore strankam](https://fastcomments.com/auth/my-account/help).
 
-Za dodajanje moderatorjev si oglejte [ustrezno dokumentacijo](/guide-moderation#moderators-adding).
+Za dodajanje moderatorjev si oglejte [ustrezno dokumentacijo](/guide-moderation.html#moderators-adding).
 
 ### Opomba o avtentikaciji
 

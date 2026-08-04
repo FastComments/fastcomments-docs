@@ -4,7 +4,7 @@ FastComments ile kiracınıza birçok kullanıcı eklenebilir ve izinleri kurulu
 
 Kullanıcılar bu kullanıcı arayüzü üzerinden eklenebilir. Çok sayıda kullanıcınız varsa, bunları sizin için [müşteri desteği aracılığıyla](https://fastcomments.com/auth/my-account/help) içe aktarabiliriz.
 
-Moderatör eklemek için, bkz. [ilgili dokümantasyon](/guide-moderation#moderators-adding).
+Moderatör eklemek için, bkz. [ilgili dokümantasyon](/guide-moderation.html#moderators-adding).
 
 ### Kimlik Doğrulama Hakkında Bir Not
 

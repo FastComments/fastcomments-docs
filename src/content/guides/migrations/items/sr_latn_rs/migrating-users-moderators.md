@@ -5,7 +5,7 @@ organizaciji.
 
 Korisnici se mogu dodati putem ovog UI. Ako imate mnogo korisnika, možemo ih uvesti za vas [putem korisničke podrške](https://fastcomments.com/auth/my-account/help).
 
-Za dodavanje moderatora, pogledajte [odgovarajuću dokumentaciju](/guide-moderation#moderators-adding).
+Za dodavanje moderatora, pogledajte [odgovarajuću dokumentaciju](/guide-moderation.html#moderators-adding).
 
 ### Napomena o autentifikaciji
 

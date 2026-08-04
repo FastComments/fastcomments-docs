@@ -4,7 +4,7 @@ Con FastComments puoi aggiungere molti utenti al tuo tenant e impostare le loro 
 
 Gli utenti possono essere aggiunti tramite questa interfaccia. Se hai molti utenti, possiamo importarli per te [tramite l'assistenza clienti](https://fastcomments.com/auth/my-account/help).
 
-Per aggiungere i moderatori, consulta [la documentazione corrispondente](/guide-moderation#moderators-adding).
+Per aggiungere i moderatori, consulta [la documentazione corrispondente](/guide-moderation.html#moderators-adding).
 
 ### Una nota sull'autenticazione
 

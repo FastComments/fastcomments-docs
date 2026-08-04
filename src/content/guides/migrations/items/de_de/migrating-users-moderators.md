@@ -5,7 +5,7 @@ Organisation eingerichtet werden.
 
 Benutzer können über diese Benutzeroberfläche hinzugefügt werden. Wenn Sie viele Benutzer haben, können wir sie für Sie importieren [über den Kundensupport](https://fastcomments.com/auth/my-account/help).
 
-Zum Hinzufügen von Moderatoren siehe [die entsprechende Dokumentation](/guide-moderation#moderators-adding).
+Zum Hinzufügen von Moderatoren siehe [die entsprechende Dokumentation](/guide-moderation.html#moderators-adding).
 
 ### Ein Hinweis zur Authentifizierung
 

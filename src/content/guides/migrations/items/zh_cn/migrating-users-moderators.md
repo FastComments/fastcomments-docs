@@ -4,7 +4,7 @@
 
 可以通过此用户界面添加用户。如果您有大量用户，我们可以通过[客户支持](https://fastcomments.com/auth/my-account/help)为您导入他们。
 
-有关添加版主，请参阅[相应文档](/guide-moderation#moderators-adding)。
+有关添加版主，请参阅[相应文档](/guide-moderation.html#moderators-adding)。
 
 ### 关于身份验证的说明
 

@@ -5,7 +5,7 @@ FastComments を使えば、テナントに多数のユーザーを追加でき�
 
 この UI からユーザーを追加できます。多数のユーザーがいる場合は、[カスタマーサポート経由](https://fastcomments.com/auth/my-account/help)で代わりにインポートできます。
 
-モデレーターを追加するには、[該当するドキュメント](/guide-moderation#moderators-adding)を参照してください。
+モデレーターを追加するには、[該当するドキュメント](/guide-moderation.html#moderators-adding)を参照してください。
 
 ### 認証に関する注意
 

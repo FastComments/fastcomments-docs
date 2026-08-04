@@ -4,7 +4,7 @@ Avec FastComments, plusieurs utilisateurs peuvent être ajoutés à votre locata
 
 Les utilisateurs peuvent être ajoutés via cette interface. Si vous avez plusieurs utilisateurs, nous pouvons les importer pour vous [via le support client](https://fastcomments.com/auth/my-account/help).
 
-Pour ajouter des modérateurs, consultez [la documentation correspondante](/guide-moderation#moderators-adding).
+Pour ajouter des modérateurs, consultez [la documentation correspondante](/guide-moderation.html#moderators-adding).
 
 ### Remarque sur l'authentification
 

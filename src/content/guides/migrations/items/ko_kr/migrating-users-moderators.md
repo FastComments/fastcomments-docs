@@ -4,7 +4,7 @@ FastComments를 사용하면 여러 사용자를 테넌트에 추가할 수 있�
 
 사용자는 이 UI를 통해 추가할 수 있습니다. 사용자가 많은 경우, [고객 지원을 통해](https://fastcomments.com/auth/my-account/help) 저희가 대신 가져와 드릴 수 있습니다.
 
-모더레이터를 추가하는 방법은 [해당 문서](/guide-moderation#moderators-adding)를 참조하세요.
+모더레이터를 추가하는 방법은 [해당 문서](/guide-moderation.html#moderators-adding)를 참조하세요.
 
 ### 인증에 대한 안내
 

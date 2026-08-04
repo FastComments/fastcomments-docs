@@ -4,7 +4,7 @@
 
 אפשר להוסיף משתמשים דרך ממשק המשתמש הזה. אם יש לכם הרבה משתמשים, אנו יכולים לייבא אותם בשבילכם [דרך תמיכת הלקוחות](https://fastcomments.com/auth/my-account/help).
 
-להוספת ממונים, ראו [התיעוד המתאים](/guide-moderation#moderators-adding).
+להוספת ממונים, ראו [התיעוד המתאים](/guide-moderation.html#moderators-adding).
 
 ### הערה לגבי אימות
 

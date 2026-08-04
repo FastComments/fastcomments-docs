@@ -5,7 +5,7 @@ organization.
 
 Users can be added via this UI. If you have many users, we can import them for you [via customer support](https://fastcomments.com/auth/my-account/help).
 
-For adding moderators, see [the corresponding documentation](/guide-moderation#moderators-adding).
+For adding moderators, see [the corresponding documentation](/guide-moderation.html#moderators-adding).
 
 ### A Note about Authentication
 

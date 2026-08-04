@@ -4,7 +4,7 @@
 
 可以透過這個使用者介面新增使用者。如果您有大量使用者，我們可以透過[客戶支援](https://fastcomments.com/auth/my-account/help)為您匯入他們。
 
-如要新增版主，請參閱[相關文件](/guide-moderation#moderators-adding)。
+如要新增版主，請參閱[相關文件](/guide-moderation.html#moderators-adding)。
 
 ### 關於驗證的注意事項
 

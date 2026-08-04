@@ -4,7 +4,7 @@ Met FastComments kunnen veel gebruikers aan uw tenant worden toegevoegd, en hun 
 
 Gebruikers kunnen via deze UI worden toegevoegd. Als u veel gebruikers heeft, kunnen we deze voor u importeren [via klantenservice](https://fastcomments.com/auth/my-account/help).
 
-Voor het toevoegen van moderators, zie [de bijbehorende documentatie](/guide-moderation#moderators-adding).
+Voor het toevoegen van moderators, zie [de bijbehorende documentatie](/guide-moderation.html#moderators-adding).
 
 ### Een opmerking over authenticatie
 

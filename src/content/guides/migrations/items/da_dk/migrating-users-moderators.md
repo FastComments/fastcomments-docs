@@ -5,7 +5,7 @@ organisation.
 
 Brugere kan tilføjes via denne brugergrænseflade. Hvis du har mange brugere, kan vi importere dem for dig [via kundesupport](https://fastcomments.com/auth/my-account/help).
 
-For at tilføje moderatorer, se [den tilsvarende dokumentation](/guide-moderation#moderators-adding).
+For at tilføje moderatorer, se [den tilsvarende dokumentation](/guide-moderation.html#moderators-adding).
 
 ### En bemærkning om autentificering
 
