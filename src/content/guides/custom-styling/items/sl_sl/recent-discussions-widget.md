@@ -1,8 +1,8 @@
-Pripomoček Nedavne razprave prikazuje seznam strani, razvrščen po najnovejši aktivnosti komentarjev. Vključuje naslov, datume zadnjih aktivnosti, število komentarjev z ikonami in samodejno zaznavanje temnega načina.
+The Recent Discussions Widget displays a list of pages sorted by the most recent comment activity. It includes a heading, last activity dates, comment counts with icons, and automatic dark mode detection.
 
 ## Osnovna namestitev
 
-[inline-code-attrs-start title = 'Namestitev pripomočka Nedavne razprave'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Nastavitev oblikovanja pripomočka Nedavne razprave'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
@@ -15,9 +15,9 @@ Pripomoček Nedavne razprave prikazuje seznam strani, razvrščen po najnovejši
 
 ## Možnosti konfiguracije
 
-- **tenantId** (obvezno): Vaš FastComments tenant ID
-- **count** (izbirno): Število prikazanih strani. Privzeto je `20`, največ `100`
-- **hasDarkBackground** (izbirno): Prisili temno oblikovanje. Če ni nastavljeno, se samodejno zazna glede na ozadje strani
+- **tenantId** (obvezno): Vaš FastComments najemniški ID
+- **count** (neobvezno): Število strani za prikaz. Privzeto je `20`, največ `100`
+- **hasDarkBackground** (neobvezno): Vsili oblikovanje temnega načina. Samodejno zaznano iz ozadja strani, če ni nastavljeno
 
 ## Struktura pripomočka
 
@@ -39,7 +39,7 @@ Pripomoček se izriše z naslednjo HTML strukturo:
 </div>
 [inline-code-end]
 
-## Privzeti CSS (referenca)
+## Privzeta referenca CSS
 
 [inline-code-attrs-start title = 'Privzeti CSS pripomočka Nedavne razprave'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -63,9 +63,9 @@ Pripomoček se izriše z naslednjo HTML strukturo:
 
 ## Primeri prilagoditev
 
-### Odstranitev obrobe vsebnika
+### Odstrani obrobo vsebnika
 
-[inline-code-attrs-start title = 'Odstranitev obrobe vsebnika'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Odstrani obrobo vsebnika'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rd2 {
     border: none !important;
@@ -73,9 +73,9 @@ Pripomoček se izriše z naslednjo HTML strukturo:
 }
 [inline-code-end]
 
-### Prilagojena barva povezav
+### Barva povezave po meri
 
-[inline-code-attrs-start title = 'Prilagojena barva povezav'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Barva povezave po meri'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 a.fc-rd2-title:hover {
     color: #e63946 !important;

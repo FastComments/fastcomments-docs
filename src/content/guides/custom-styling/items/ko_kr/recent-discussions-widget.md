@@ -1,8 +1,8 @@
-최근 토론 위젯은 최신 댓글 활동에 따라 정렬된 페이지 목록을 표시합니다. 헤딩, 마지막 활동 날짜, 아이콘이 포함된 댓글 수, 자동 다크 모드 감지를 포함합니다.
+The Recent Discussions Widget displays a list of pages sorted by the most recent comment activity. It includes a heading, last activity dates, comment counts with icons, and automatic dark mode detection.
 
-## 기본 설치
+## Basic Installation
 
-[inline-code-attrs-start title = '최근 토론 위젯 설치'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = '최근 토론 위젯 스타일 설정'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
@@ -13,15 +13,15 @@
 </script>
 [inline-code-end]
 
-## 구성 옵션
+## Configuration Options
 
-- **tenantId** (required): Your FastComments tenant ID
+- **tenantId** (required): FastComments 테넌트 ID
 - **count** (optional): 표시할 페이지 수. 기본값은 `20`, 최대 `100`
-- **hasDarkBackground** (optional): 다크 모드 스타일을 강제 적용합니다. 설정하지 않으면 페이지 배경에서 자동으로 감지됩니다
+- **hasDarkBackground** (optional): 다크 모드 스타일을 강제 적용합니다. 설정되지 않은 경우 페이지 배경에서 자동 감지됩니다
 
-## 위젯 구조
+## Widget Structure
 
-위젯은 다음 HTML 구조로 렌더링됩니다:
+The widget renders with the following HTML structure:
 
 [inline-code-attrs-start title = '최근 토론 위젯 HTML 구조'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -39,7 +39,7 @@
 </div>
 [inline-code-end]
 
-## 기본 CSS 참조
+## Default CSS Reference
 
 [inline-code-attrs-start title = '최근 토론 위젯 기본 CSS'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -61,9 +61,9 @@
 .fc-rd2-count { font-size: 12px; font-weight: 600; color: #666; }
 [inline-code-end]
 
-## 사용자 정의 예제
+## Customization Examples
 
-### 컨테이너 테두리 제거
+### Remove the Container Border
 
 [inline-code-attrs-start title = '컨테이너 테두리 제거'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -73,7 +73,7 @@
 }
 [inline-code-end]
 
-### 맞춤 링크 색상
+### Custom Link Color
 
 [inline-code-attrs-start title = '맞춤 링크 색상'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -81,5 +81,3 @@ a.fc-rd2-title:hover {
     color: #e63946 !important;
 }
 [inline-code-end]
-
----

@@ -1,8 +1,8 @@
-Джаджата Recent Discussions показва списък със страници, сортиран по най-новата активност по коментари. Тя включва заглавие, дати на последна активност, брой коментари с икони и автоматично откриване на тъмен режим.
+The Recent Discussions Widget displays a list of pages sorted by the most recent comment activity. It includes a heading, last activity dates, comment counts with icons, and automatic dark mode detection.
 
 ## Basic Installation
 
-[inline-code-attrs-start title = 'Инсталиране на Recent Discussions Widget'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Настройка на стилизирането на уиджета за последни дискусии'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
@@ -17,13 +17,13 @@
 
 - **tenantId** (required): Вашият FastComments tenant ID
 - **count** (optional): Брой страници за показване. По подразбиране е `20`, максимум `100`
-- **hasDarkBackground** (optional): Принудително тъмно оформление. Ако не е зададено, се открива автоматично от фона на страницата
+- **hasDarkBackground** (optional): Принудително прилагане на стилизация за тъмен режим. Автоматично се открива от фона на страницата, ако не е зададено
 
 ## Widget Structure
 
-Джаджата се изобразява със следната HTML структура:
+The widget renders with the following HTML structure:
 
-[inline-code-attrs-start title = 'HTML структура на Recent Discussions Widget'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'HTML структура на уиджета за последни дискусии'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div class="fc-rd2">
     <div class="fc-rd2-heading">Recent Discussions</div>
@@ -41,7 +41,7 @@
 
 ## Default CSS Reference
 
-[inline-code-attrs-start title = 'Стандартен CSS на Recent Discussions Widget'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'CSS по подразбиране за уиджета за последни дискусии'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rd2 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -65,7 +65,7 @@
 
 ### Remove the Container Border
 
-[inline-code-attrs-start title = 'Премахване на рамката на контейнера'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Премахване на границата на контейнера'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rd2 {
     border: none !important;
@@ -75,9 +75,11 @@
 
 ### Custom Link Color
 
-[inline-code-attrs-start title = 'Персонализиран цвят на връзките'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Персонализиран цвят на връзката'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 a.fc-rd2-title:hover {
     color: #e63946 !important;
 }
 [inline-code-end]
+
+---

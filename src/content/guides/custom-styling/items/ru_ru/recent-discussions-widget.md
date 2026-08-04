@@ -1,8 +1,8 @@
-Виджет «Последние обсуждения» отображает список страниц, отсортированных по последней активности комментариев. Он включает заголовок, даты последней активности, количество комментариев с иконками и автоматическое определение тёмной темы.
+The Recent Discussions Widget отображает список страниц, отсортированных по самой последней активности комментариев. Он включает заголовок, даты последней активности, количество комментариев с иконками и автоматическое определение темного режима.
 
-## Basic Installation
+## Базовая установка
 
-[inline-code-attrs-start title = 'Установка виджета «Последние обсуждения»'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Настройка стилей виджета Recent Discussions'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
@@ -13,17 +13,17 @@
 </script>
 [inline-code-end]
 
-## Configuration Options
+## Параметры конфигурации
 
-- **tenantId** (обязательно): Идентификатор вашего tenant в FastComments
-- **count** (необязательно): Количество страниц для отображения. По умолчанию `20`, максимум `100`
-- **hasDarkBackground** (необязательно): Принудительно включить оформление для тёмной темы. Если не задано, определяется автоматически по фону страницы
+- **tenantId** (required): Ваш идентификатор арендатора FastComments
+- **count** (optional): Количество страниц для отображения. По умолчанию `20`, максимум `100`
+- **hasDarkBackground** (optional): Принудительное применение стилей темного режима. Автоматически определяется из фона страницы, если не задано
 
-## Widget Structure
+## Структура виджета
 
-Виджет отображается со следующей HTML-структурой:
+Виджет рендерится со следующей HTML-структурой:
 
-[inline-code-attrs-start title = 'HTML-структура виджета «Последние обсуждения»'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'HTML-структура виджета Recent Discussions'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div class="fc-rd2">
     <div class="fc-rd2-heading">Recent Discussions</div>
@@ -39,9 +39,9 @@
 </div>
 [inline-code-end]
 
-## Default CSS Reference
+## Справка по CSS по умолчанию
 
-[inline-code-attrs-start title = 'CSS по умолчанию для виджета «Последние обсуждения»'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'CSS по умолчанию виджета Recent Discussions'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rd2 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -61,9 +61,9 @@
 .fc-rd2-count { font-size: 12px; font-weight: 600; color: #666; }
 [inline-code-end]
 
-## Customization Examples
+## Примеры настройки
 
-### Remove the Container Border
+### Удалить границу контейнера
 
 [inline-code-attrs-start title = 'Удалить границу контейнера'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -73,9 +73,9 @@
 }
 [inline-code-end]
 
-### Custom Link Color
+### Пользовательский цвет ссылки
 
-[inline-code-attrs-start title = 'Пользовательский цвет ссылок'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пользовательский цвет ссылки'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 a.fc-rd2-title:hover {
     color: #e63946 !important;

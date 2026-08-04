@@ -1,8 +1,8 @@
-Le widget Recent Discussions affiche une liste de pages triées par activité de commentaires la plus récente. Il inclut un en-tête, les dates de dernière activité, le nombre de commentaires avec icônes et la détection automatique du mode sombre.
+Le widget Recent Discussions affiche une liste de pages triées par l'activité de commentaires la plus récente. Il comprend un titre, les dates de la dernière activité, le nombre de commentaires avec des icônes, et la détection automatique du mode sombre.
 
-## Installation de base
+## Basic Installation
 
-[inline-code-attrs-start title = 'Installation du widget Recent Discussions'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Configuration du style du widget Recent Discussions'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
@@ -13,15 +13,15 @@ Le widget Recent Discussions affiche une liste de pages triées par activité de
 </script>
 [inline-code-end]
 
-## Options de configuration
+## Configuration Options
 
-- **tenantId** (required): Votre identifiant de tenant FastComments
-- **count** (optional): Nombre de pages à afficher. La valeur par défaut est `20`, maximum `100`
-- **hasDarkBackground** (optional): Forcer le style en mode sombre. Détecté automatiquement à partir de l'arrière-plan de la page si non défini
+- **tenantId** (obligatoire) : Votre identifiant de locataire FastComments
+- **count** (optionnel) : Nombre de pages à afficher. La valeur par défaut est `20`, maximum `100`
+- **hasDarkBackground** (optionnel) : Force le style du mode sombre. Détecté automatiquement à partir de l'arrière‑plan de la page si non défini
 
-## Structure du widget
+## Widget Structure
 
-Le widget s'affiche avec la structure HTML suivante :
+Le widget se rend avec la structure HTML suivante :
 
 [inline-code-attrs-start title = 'Structure HTML du widget Recent Discussions'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -73,13 +73,11 @@ Le widget s'affiche avec la structure HTML suivante :
 }
 [inline-code-end]
 
-### Couleur personnalisée des liens
+### Couleur de lien personnalisée
 
-[inline-code-attrs-start title = 'Couleur personnalisée des liens'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Couleur de lien personnalisée'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 a.fc-rd2-title:hover {
     color: #e63946 !important;
 }
 [inline-code-end]
-
----

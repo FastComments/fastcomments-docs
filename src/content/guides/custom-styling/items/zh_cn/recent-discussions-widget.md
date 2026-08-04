@@ -1,8 +1,8 @@
-最近讨论小部件显示按最近评论活动排序的页面列表。它包含标题、最后活动日期、带图标的评论计数，以及自动暗色模式检测。
+The Recent Discussions Widget displays a list of pages sorted by the most recent comment activity. It includes a heading, last activity dates, comment counts with icons, and automatic dark mode detection.
 
-## 基本安装
+## Basic Installation
 
-[inline-code-attrs-start title = '最近讨论小部件 安装'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = '最近讨论小部件样式设置'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
@@ -13,17 +13,17 @@
 </script>
 [inline-code-end]
 
-## 配置选项
+## Configuration Options
 
-- **tenantId** (required): Your FastComments tenant ID
-- **count** (optional): Number of pages to show. Default is `20`, max `100`
-- **hasDarkBackground** (optional): Force dark mode styling. Auto-detected from the page background if not set
+- **tenantId** (required): 您的 FastComments 租户 ID
+- **count** (optional): 要显示的页面数量。默认值为 `20`，最大 `100`
+- **hasDarkBackground** (optional): 强制暗模式样式。如果未设置，将自动从页面背景检测
 
-## 小部件结构
+## Widget Structure
 
-该小部件按以下 HTML 结构渲染：
+The widget renders with the following HTML structure:
 
-[inline-code-attrs-start title = '最近讨论小部件 HTML 结构'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '最近讨论小部件HTML结构'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div class="fc-rd2">
     <div class="fc-rd2-heading">Recent Discussions</div>
@@ -39,9 +39,9 @@
 </div>
 [inline-code-end]
 
-## 默认 CSS 参考
+## Default CSS Reference
 
-[inline-code-attrs-start title = '最近讨论小部件 默认 CSS'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '最近讨论小部件默认CSS'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rd2 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -61,9 +61,9 @@
 .fc-rd2-count { font-size: 12px; font-weight: 600; color: #666; }
 [inline-code-end]
 
-## 自定义示例
+## Customization Examples
 
-### 移除容器边框
+### Remove the Container Border
 
 [inline-code-attrs-start title = '移除容器边框'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -73,7 +73,7 @@
 }
 [inline-code-end]
 
-### 自定义链接颜色
+### Custom Link Color
 
 [inline-code-attrs-start title = '自定义链接颜色'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

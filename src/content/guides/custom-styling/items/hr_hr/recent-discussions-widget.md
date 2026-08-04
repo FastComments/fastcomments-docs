@@ -1,8 +1,8 @@
-Widget Nedavnih rasprava prikazuje popis stranica sortiran po najnovijoj aktivnosti komentara. Uključuje naslov, datume zadnje aktivnosti, brojače komentara s ikonama i automatsko otkrivanje tamnog načina rada.
+The Recent Discussions Widget displays a list of pages sorted by the most recent comment activity. It includes a heading, last activity dates, comment counts with icons, and automatic dark mode detection.
 
-## Osnovna instalacija
+## Basic Installation
 
-[inline-code-attrs-start title = 'Instalacija widgeta Nedavnih rasprava'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Postavke stilizacije widgeta Nedavnih rasprava'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
@@ -13,17 +13,17 @@ Widget Nedavnih rasprava prikazuje popis stranica sortiran po najnovijoj aktivno
 </script>
 [inline-code-end]
 
-## Opcije konfiguracije
+## Configuration Options
 
-- **tenantId** (required): Vaš FastComments tenant ID
-- **count** (optional): Broj stranica za prikaz. Zadano je `20`, maksimalno `100`
-- **hasDarkBackground** (optional): Prisilite tamni način prikaza. Ako nije postavljeno, automatski se otkriva prema pozadini stranice
+- **tenantId** (required): Your FastComments tenant ID
+- **count** (optional): Number of pages to show. Default is `20`, max `100`
+- **hasDarkBackground** (optional): Force dark mode styling. Auto-detected from the page background if not set
 
-## Struktura widgeta
+## Widget Structure
 
-Widget prikazuje sljedeću HTML strukturu:
+The widget renders with the following HTML structure:
 
-[inline-code-attrs-start title = 'HTML struktura Widgeta Nedavnih rasprava'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'HTML struktura widgeta Nedavnih rasprava'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div class="fc-rd2">
     <div class="fc-rd2-heading">Recent Discussions</div>
@@ -39,7 +39,7 @@ Widget prikazuje sljedeću HTML strukturu:
 </div>
 [inline-code-end]
 
-## Zadana CSS referenca
+## Default CSS Reference
 
 [inline-code-attrs-start title = 'Zadani CSS widgeta Nedavnih rasprava'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -61,11 +61,11 @@ Widget prikazuje sljedeću HTML strukturu:
 .fc-rd2-count { font-size: 12px; font-weight: 600; color: #666; }
 [inline-code-end]
 
-## Primjeri prilagodbe
+## Customization Examples
 
-### Uklonite obrub kontejnera
+### Remove the Container Border
 
-[inline-code-attrs-start title = 'Uklonite obrub kontejnera'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ukloni rub kontejnera'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rd2 {
     border: none !important;
@@ -73,7 +73,7 @@ Widget prikazuje sljedeću HTML strukturu:
 }
 [inline-code-end]
 
-### Prilagođena boja poveznice
+### Custom Link Color
 
 [inline-code-attrs-start title = 'Prilagođena boja poveznice'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

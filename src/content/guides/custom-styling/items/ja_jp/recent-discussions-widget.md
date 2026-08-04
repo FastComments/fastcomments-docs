@@ -1,8 +1,8 @@
-Recent Discussions ウィジェットは、最新のコメント活動順にページの一覧を表示します。見出し、最終アクティビティの日付、アイコン付きのコメント数、および自動ダークモード検出が含まれます。
+The Recent Discussions ウィジェットは、最新のコメント活動でソートされたページのリストを表示します。見出し、最終活動日時、アイコン付きのコメント数、そして自動ダークモード検出が含まれます。
 
 ## 基本インストール
 
-[inline-code-attrs-start title = '最近のディスカッション ウィジェットのインストール'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Recent Discussions ウィジェット スタイリング設定'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
@@ -15,15 +15,15 @@ Recent Discussions ウィジェットは、最新のコメント活動順にペ�
 
 ## 設定オプション
 
-- **tenantId** (required): Your FastComments tenant ID
-- **count** (optional): Number of pages to show. Default is `20`, max `100`
-- **hasDarkBackground** (optional): Force dark mode styling. Auto-detected from the page background if not set
+- **tenantId** (required): あなたの FastComments テナント ID
+- **count** (optional): 表示するページ数。デフォルトは `20`、最大 `100`
+- **hasDarkBackground** (optional): ダークモードのスタイリングを強制します。設定されていない場合はページの背景から自動検出されます
 
 ## ウィジェット構造
 
-ウィジェットは以下の HTML 構造でレンダリングされます：
+ウィジェットは以下の HTML 構造でレンダリングされます:
 
-[inline-code-attrs-start title = '最近のディスカッション ウィジェットの HTML 構造'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Recent Discussions ウィジェット HTML 構造'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div class="fc-rd2">
     <div class="fc-rd2-heading">Recent Discussions</div>
@@ -39,9 +39,9 @@ Recent Discussions ウィジェットは、最新のコメント活動順にペ�
 </div>
 [inline-code-end]
 
-## デフォルト CSS 参照
+## デフォルト CSS リファレンス
 
-[inline-code-attrs-start title = '最近のディスカッション ウィジェットのデフォルト CSS'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Recent Discussions ウィジェット デフォルト CSS'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rd2 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -63,9 +63,9 @@ Recent Discussions ウィジェットは、最新のコメント活動順にペ�
 
 ## カスタマイズ例
 
-### コンテナのボーダーを削除
+### コンテナの境界線を削除する
 
-[inline-code-attrs-start title = 'コンテナのボーダーを削除'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'コンテナの境界線を削除'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rd2 {
     border: none !important;
@@ -73,9 +73,9 @@ Recent Discussions ウィジェットは、最新のコメント活動順にペ�
 }
 [inline-code-end]
 
-### リンク色のカスタマイズ
+### カスタムリンクカラー
 
-[inline-code-attrs-start title = 'リンク色のカスタマイズ'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'カスタムリンクカラー'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 a.fc-rd2-title:hover {
     color: #e63946 !important;

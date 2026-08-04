@@ -1,8 +1,8 @@
-O Widget Discussões Recentes exibe uma lista de páginas ordenadas pela atividade de comentário mais recente. Inclui um cabeçalho, datas da última atividade, contagens de comentários com ícones e detecção automática de modo escuro.
+The Recent Discussions Widget displays a list of pages sorted by the most recent comment activity. It includes a heading, last activity dates, comment counts with icons, and automatic dark mode detection.
 
 ## Instalação Básica
 
-[inline-code-attrs-start title = 'Instalação do Widget de Discussões Recentes'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Configuração de Estilo do Widget de Discussões Recentes'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
@@ -15,9 +15,9 @@ O Widget Discussões Recentes exibe uma lista de páginas ordenadas pela ativida
 
 ## Opções de Configuração
 
-- **tenantId** (required): Seu ID de tenant do FastComments
+- **tenantId** (required): Seu ID de locatário FastComments
 - **count** (optional): Número de páginas a exibir. O padrão é `20`, máximo `100`
-- **hasDarkBackground** (optional): Força o estilo de modo escuro. Detectado automaticamente a partir do fundo da página se não for definido
+- **hasDarkBackground** (optional): Forçar estilo em modo escuro. Detectado automaticamente a partir do fundo da página se não definido
 
 ## Estrutura do Widget
 
@@ -39,9 +39,9 @@ O widget é renderizado com a seguinte estrutura HTML:
 </div>
 [inline-code-end]
 
-## Referência de CSS padrão
+## Referência de CSS Padrão
 
-[inline-code-attrs-start title = 'CSS padrão do Widget de Discussões Recentes'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'CSS Padrão do Widget de Discussões Recentes'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rd2 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -63,9 +63,9 @@ O widget é renderizado com a seguinte estrutura HTML:
 
 ## Exemplos de Personalização
 
-### Remover a borda do contêiner
+### Remover a Borda do Contêiner
 
-[inline-code-attrs-start title = 'Remover a borda do contêiner'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Remover Borda do Contêiner'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rd2 {
     border: none !important;
@@ -73,13 +73,11 @@ O widget é renderizado com a seguinte estrutura HTML:
 }
 [inline-code-end]
 
-### Cor personalizada do link
+### Cor de Link Personalizada
 
-[inline-code-attrs-start title = 'Cor personalizada do link'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Cor de Link Personalizada'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 a.fc-rd2-title:hover {
     color: #e63946 !important;
 }
 [inline-code-end]
-
----

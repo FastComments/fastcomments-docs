@@ -1,8 +1,8 @@
-近期討論小工具會顯示一個按最近評論活動排序的頁面清單。它包含標題、最後活動日期、帶圖示的留言數，以及自動深色模式偵測。
+The Recent Discussions Widget displays a list of pages sorted by the most recent comment activity. It includes a heading, last activity dates, comment counts with icons, and automatic dark mode detection.
 
 ## 基本安裝
 
-[inline-code-attrs-start title = '近期討論小工具 安裝'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = '最近討論小工具樣式設定'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
@@ -15,15 +15,15 @@
 
 ## 設定選項
 
-- **tenantId** (required): Your FastComments tenant ID
-- **count** (optional): Number of pages to show. Default is `20`, max `100`
-- **hasDarkBackground** (optional): Force dark mode styling. Auto-detected from the page background if not set
+- **tenantId**（required）: Your FastComments tenant ID
+- **count**（optional）: Number of pages to show. Default is `20`, max `100`
+- **hasDarkBackground**（optional）: Force dark mode styling. Auto-detected from the page background if not set
 
 ## 小工具結構
 
-該小工具會以以下 HTML 結構呈現：
+The widget renders with the following HTML structure:
 
-[inline-code-attrs-start title = '近期討論小工具 HTML 結構'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '最近討論小工具 HTML 結構'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div class="fc-rd2">
     <div class="fc-rd2-heading">Recent Discussions</div>
@@ -41,7 +41,7 @@
 
 ## 預設 CSS 參考
 
-[inline-code-attrs-start title = '近期討論小工具 預設 CSS'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '最近討論小工具 預設 CSS'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rd2 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -61,7 +61,7 @@
 .fc-rd2-count { font-size: 12px; font-weight: 600; color: #666; }
 [inline-code-end]
 
-## 自訂範例
+## 客製化範例
 
 ### 移除容器邊框
 

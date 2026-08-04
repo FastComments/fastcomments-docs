@@ -1,8 +1,8 @@
-Виџет Recent Discussions приказује листу страница сортирану по најновијој активности коментара. Обухвата наслов, датуме последње активности, број коментара са иконама и аутоматско детектовање тамног режима.
+The Recent Discussions Widget displays a list of pages sorted by the most recent comment activity. It includes a heading, last activity dates, comment counts with icons, and automatic dark mode detection.
 
-## Основна инсталација
+## Osnovna instalacija
 
-[inline-code-attrs-start title = 'Инсталација виџета Recent Discussions'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Postavke stilizacije vidžeta Recent Discussions'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
@@ -13,17 +13,17 @@
 </script>
 [inline-code-end]
 
-## Опције конфигурације
+## Opcije konfiguracije
 
-- **tenantId** (обавезно): Ваш FastComments tenant ID
-- **count** (опционо): Број страница за приказ. Подразумевано је `20`, максимум `100`
-- **hasDarkBackground** (опционо): Присиљава стилове тамног режима. Аутоматски се детектује из позадине странице ако није постављено
+- **tenantId** (obavezno): Vaš FastComments tenant ID
+- **count** (opciono): Broj stranica za prikaz. Podrazumevano je `20`, maksimalno `100`
+- **hasDarkBackground** (opciono): Forsirajte stil tamnog režima. Automatski se otkriva iz pozadine stranice ako nije postavljeno
 
-## Структура виџета
+## Struktura vidžeta
 
-Виџет се приказује са следећом HTML структуром:
+Vidžet se renderuje sa sledećom HTML strukturom:
 
-[inline-code-attrs-start title = 'HTML структура виџета Recent Discussions'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'HTML struktura vidžeta Recent Discussions'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div class="fc-rd2">
     <div class="fc-rd2-heading">Recent Discussions</div>
@@ -39,9 +39,9 @@
 </div>
 [inline-code-end]
 
-## Подразумевани CSS
+## Podrazumevani CSS referent
 
-[inline-code-attrs-start title = 'Подразумевани CSS виџета Recent Discussions'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Podrazumevani CSS vidžeta Recent Discussions'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rd2 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -61,11 +61,11 @@
 .fc-rd2-count { font-size: 12px; font-weight: 600; color: #666; }
 [inline-code-end]
 
-## Примери прилагођавања
+## Primeri prilagođavanja
 
-### Уклоните ивицу контејнера
+### Ukloni ivicu kontejnera
 
-[inline-code-attrs-start title = 'Уклоните ивицу контејнера'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ukloni ivicu kontejnera'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rd2 {
     border: none !important;
@@ -73,11 +73,13 @@
 }
 [inline-code-end]
 
-### Прилагођена боја везе
+### Prilagođena boja linka
 
-[inline-code-attrs-start title = 'Прилагођена боја везе'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Prilagođena boja linka'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 a.fc-rd2-title:hover {
     color: #e63946 !important;
 }
 [inline-code-end]
+
+---

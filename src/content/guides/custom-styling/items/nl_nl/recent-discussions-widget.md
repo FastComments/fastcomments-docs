@@ -1,8 +1,8 @@
-De Recent Discussions-widget toont een lijst met pagina's, gesorteerd op de meest recente reactie-activiteit. Het bevat een kop, datums van de laatste activiteit, aantallen reacties met pictogrammen en automatische detectie van de donkere modus.
+The Recent Discussions Widget displays a list of pages sorted by the most recent comment activity. It includes a heading, last activity dates, comment counts with icons, and automatic dark mode detection.
 
-## Basisinstallatie
+## Basic Installation
 
-[inline-code-attrs-start title = 'Installatie van de Recent Discussions-widget'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Instelling van de Recent Discussions Widget-styling'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
@@ -13,17 +13,17 @@ De Recent Discussions-widget toont een lijst met pagina's, gesorteerd op de mees
 </script>
 [inline-code-end]
 
-## Configuratie-opties
+## Configuratieopties
 
-- **tenantId** (vereist): Uw FastComments tenant-ID
-- **count** (optioneel): Aantal pagina's om te tonen. Standaard is `20`, max `100`
-- **hasDarkBackground** (optioneel): Forceren van donkere modus-styling. Wordt automatisch gedetecteerd op basis van de achtergrond van de pagina als dit niet is ingesteld
+- **tenantId** (verplicht): Uw FastComments-tenant-ID
+- **count** (optioneel): Aantal pagina's om weer te geven. Standaard is `20`, max `100`
+- **hasDarkBackground** (optioneel): Forceer donkere modus-styling. Wordt automatisch gedetecteerd van de paginabackground als het niet is ingesteld
 
 ## Widgetstructuur
 
-De widget wordt weergegeven met de volgende HTML-structuur:
+The widget renders with the following HTML structure:
 
-[inline-code-attrs-start title = 'HTML-structuur van de Recent Discussions-widget'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'HTML-structuur van de Recent Discussions Widget'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div class="fc-rd2">
     <div class="fc-rd2-heading">Recent Discussions</div>
@@ -41,7 +41,7 @@ De widget wordt weergegeven met de volgende HTML-structuur:
 
 ## Standaard CSS-referentie
 
-[inline-code-attrs-start title = 'Standaard CSS van de Recent Discussions-widget'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Standaard CSS van de Recent Discussions Widget'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rd2 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -61,9 +61,9 @@ De widget wordt weergegeven met de volgende HTML-structuur:
 .fc-rd2-count { font-size: 12px; font-weight: 600; color: #666; }
 [inline-code-end]
 
-## Aanpassingsvoorbeelden
+## Voorbeelden van aanpassingen
 
-### Containerrand verwijderen
+### Verwijder de containerrand
 
 [inline-code-attrs-start title = 'Containerrand verwijderen'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -81,5 +81,3 @@ a.fc-rd2-title:hover {
     color: #e63946 !important;
 }
 [inline-code-end]
-
----

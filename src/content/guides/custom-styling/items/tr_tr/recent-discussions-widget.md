@@ -1,8 +1,8 @@
-Recent Discussions Widget, en son yorum etkinliğine göre sıralanmış bir sayfa listesi gösterir. Başlık, son etkinlik tarihleri, simgeli yorum sayıları ve otomatik karanlık mod algılama içerir.
+The Recent Discussions Widget, en son yorum etkinliğine göre sıralanmış sayfaların bir listesini gösterir. Bir başlık, son etkinlik tarihleri, simgelerle birlikte yorum sayıları ve otomatik karanlık mod algılaması içerir.
 
-## Temel Kurulum
+## Basic Installation
 
-[inline-code-attrs-start title = 'Recent Discussions Widget Kurulumu'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Recent Discussions Widget Stil Kurulumu'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
@@ -13,13 +13,13 @@ Recent Discussions Widget, en son yorum etkinliğine göre sıralanmış bir say
 </script>
 [inline-code-end]
 
-## Yapılandırma Seçenekleri
+## Configuration Options
 
-- **tenantId** (gerekli): FastComments kiracı kimliğiniz
-- **count** (opsiyonel): Gösterilecek sayfa sayısı. Varsayılan `20`, maksimum `100`
-- **hasDarkBackground** (opsiyonel): Karanlık mod stilini zorlar. Ayarlanmazsa sayfa arka planından otomatik algılanır
+- **tenantId** (required): FastComments kiracı kimliğiniz
+- **count** (optional): Gösterilecek sayfa sayısı. Varsayılan `20`, maksimum `100`
+- **hasDarkBackground** (optional): Karanlık mod stilini zorla. Ayarlanmamışsa sayfa arka planından otomatik algılanır
 
-## Widget Yapısı
+## Widget Structure
 
 Widget aşağıdaki HTML yapısıyla render edilir:
 
@@ -39,7 +39,7 @@ Widget aşağıdaki HTML yapısıyla render edilir:
 </div>
 [inline-code-end]
 
-## Varsayılan CSS Referansı
+## Default CSS Reference
 
 [inline-code-attrs-start title = 'Recent Discussions Widget Varsayılan CSS'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -61,11 +61,11 @@ Widget aşağıdaki HTML yapısıyla render edilir:
 .fc-rd2-count { font-size: 12px; font-weight: 600; color: #666; }
 [inline-code-end]
 
-## Özelleştirme Örnekleri
+## Customization Examples
 
-### Konteyner Kenarlığını Kaldırma
+### Kapsayıcı Kenarlığını Kaldır
 
-[inline-code-attrs-start title = 'Konteyner Kenarlığını Kaldır'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Kapsayıcı Kenarlığını Kaldır'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rd2 {
     border: none !important;

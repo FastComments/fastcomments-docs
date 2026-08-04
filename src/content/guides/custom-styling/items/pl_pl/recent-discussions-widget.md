@@ -1,8 +1,8 @@
-Widżet Ostatnich dyskusji wyświetla listę stron posortowanych według najnowszej aktywności komentarzy. Zawiera nagłówek, daty ostatniej aktywności, liczniki komentarzy z ikonami oraz automatyczne wykrywanie trybu ciemnego.
+The Recent Discussions Widget displays a list of pages sorted by the most recent comment activity. It includes a heading, last activity dates, comment counts with icons, and automatic dark mode detection.
 
 ## Basic Installation
 
-[inline-code-attrs-start title = 'Instalacja widżetu Ostatnich dyskusji'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ustawienia stylizacji widżetu Ostatnie Dyskusje'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
@@ -15,15 +15,15 @@ Widżet Ostatnich dyskusji wyświetla listę stron posortowanych według najnows
 
 ## Configuration Options
 
-- **tenantId** (required): Twój identyfikator tenantu FastComments
-- **count** (optional): Liczba stron do wyświetlenia. Domyślnie `20`, maks. `100`
-- **hasDarkBackground** (optional): Wymuś stylizację w trybie ciemnym. Jeśli nie ustawiono, wykrywane automatycznie na podstawie tła strony
+- **tenantId** (required): Twoje ID najemcy FastComments
+- **count** (optional): Liczba stron do wyświetlenia. Domyślnie `20`, maksymalnie `100`
+- **hasDarkBackground** (optional): Wymusza stylizację trybu ciemnego. Automatycznie wykrywane z tła strony, jeśli nie ustawiono
 
 ## Widget Structure
 
 Widżet renderuje się z następującą strukturą HTML:
 
-[inline-code-attrs-start title = 'Struktura HTML widżetu Ostatnich dyskusji'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struktura HTML widżetu Ostatnie Dyskusje'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div class="fc-rd2">
     <div class="fc-rd2-heading">Recent Discussions</div>
@@ -41,7 +41,7 @@ Widżet renderuje się z następującą strukturą HTML:
 
 ## Default CSS Reference
 
-[inline-code-attrs-start title = 'Domyślny CSS widżetu Ostatnich dyskusji'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Domyślny CSS widżetu Ostatnie Dyskusje'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rd2 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -81,3 +81,5 @@ a.fc-rd2-title:hover {
     color: #e63946 !important;
 }
 [inline-code-end]
+
+---

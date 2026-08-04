@@ -1,8 +1,8 @@
-El widget de discusiones recientes muestra una lista de páginas ordenadas por la actividad de comentarios más reciente. Incluye un encabezado, fechas de última actividad, recuentos de comentarios con iconos y detección automática del modo oscuro.
+The Recent Discussions Widget displays a list of pages sorted by the most recent comment activity. It includes a heading, last activity dates, comment counts with icons, and automatic dark mode detection.
 
-## Instalación básica
+## Basic Installation
 
-[inline-code-attrs-start title = 'Instalación del widget de discusiones recientes'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Configuración de estilo del widget de discusiones recientes'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
@@ -13,13 +13,13 @@ El widget de discusiones recientes muestra una lista de páginas ordenadas por l
 </script>
 [inline-code-end]
 
-## Opciones de configuración
+## Configuration Options
 
-- **tenantId** (required): Tu ID de tenant de FastComments
+- **tenantId** (required): Tu ID de inquilino de FastComments
 - **count** (optional): Número de páginas a mostrar. El valor predeterminado es `20`, máximo `100`
-- **hasDarkBackground** (optional): Forzar el estilo de modo oscuro. Si no se establece, se detecta automáticamente a partir del fondo de la página
+- **hasDarkBackground** (optional): Forzar estilo de modo oscuro. Detectado automáticamente a partir del fondo de la página si no se establece
 
-## Estructura del widget
+## Widget Structure
 
 El widget se renderiza con la siguiente estructura HTML:
 
@@ -39,7 +39,7 @@ El widget se renderiza con la siguiente estructura HTML:
 </div>
 [inline-code-end]
 
-## Referencia de CSS predeterminado
+## Default CSS Reference
 
 [inline-code-attrs-start title = 'CSS predeterminado del widget de discusiones recientes'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -61,11 +61,11 @@ El widget se renderiza con la siguiente estructura HTML:
 .fc-rd2-count { font-size: 12px; font-weight: 600; color: #666; }
 [inline-code-end]
 
-## Ejemplos de personalización
+## Customization Examples
 
-### Quitar el borde del contenedor
+### Eliminar el borde del contenedor
 
-[inline-code-attrs-start title = 'Quitar borde del contenedor'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Eliminar borde del contenedor'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rd2 {
     border: none !important;
@@ -81,5 +81,3 @@ a.fc-rd2-title:hover {
     color: #e63946 !important;
 }
 [inline-code-end]
-
----
