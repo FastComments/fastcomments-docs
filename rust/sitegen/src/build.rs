@@ -1166,6 +1166,12 @@ fn write_sitemap(
         mb = format!("{:.1}", bytes as f64 / 1024.0 / 1024.0),
         "sitemap written"
     );
+
+    // Allow-all robots.txt written alongside the sitemap so it is served at
+    // /robots.txt. Without one, crawlers may treat the whole site as
+    // disallowed (Wrendex ROBOTS_TXT_INACCESSIBLE).
+    let robots = format!("User-agent: *\nAllow: /\nSitemap: {BASE}sitemap.xml\n");
+    std::fs::write(static_generated_dir.join("robots.txt"), robots)?;
     Ok(())
 }
 
