@@ -12,7 +12,8 @@ body { margin: 0; padding: 0; }
     .comment-reply .tos-checkbox input[type=checkbox] { margin: 0; width: auto; box-shadow: none }
     @keyframes backgroundToNormal { from { background: lightblue } to { background: inherit } }
     /* widget root. Scope custom rules under .fast-comments. Config-driven modifier classes also land here: .readonly, .hide-avatars, .disable-image-redirect, .single-line-comment-input, .vote-style-1, .new-to-bottom -- use them as conditional ancestors. */
-    .fast-comments { position: relative; width: 100%; font-size: 13px }
+    /* flow-root: establishes a block formatting context so child margins (e.g. .pagination's margin-top) cannot collapse out through the root. Escaped margins are excluded from offset/client/scrollHeight, which makes broadcastHeight() under-report and the embedding iframe clip the bottom of the widget. */
+    .fast-comments { position: relative; display: flow-root; width: 100%; font-size: 13px }
     .hidden { display: none }
     .invisible { visibility: hidden }
     .inline-block { display: inline-block }
