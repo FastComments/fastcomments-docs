@@ -59,10 +59,13 @@ pub struct FullPipelineConfig {
     /// per-snippet runnable pages.
     pub template_dir: PathBuf,
     /// When true, this invocation may write `code-*.html` snippet pages.
-    /// Sitegen only sets this for the default locale so parallel
-    /// guide×locale workers don't race on the same target filename.
-    /// Snippet contents are then deterministic + stable across builds.
+    /// Set for every locale so localized guides get matching localized code
+    /// pages (the slug embeds the translated title). Concurrent writers dedup
+    /// on the target filename via `SNIPPET_WRITTEN`, so first-writer-wins.
     pub write_snippets: bool,
+    /// `<html lang>` for generated code-snippet pages — the hreflang of the
+    /// locale this pass renders (e.g. `en`, `de`, `fr`).
+    pub lang: String,
 }
 
 #[derive(Debug, Clone)]
@@ -990,9 +993,8 @@ fn write_code_snippet_page(
     target_file_name: &str,
     lines_to_highlight: &[usize],
 ) -> Result<()> {
-    // Sitegen sets `write_snippets = true` only on the default-locale
-    // pass; non-default passes skip writing so parallel locale workers
-    // can't race on the same target_file_name.
+    // Every locale writes its own localized code pages (translated title →
+    // distinct slug). Concurrent writers dedup on target_file_name below.
     if !cfg.write_snippets {
         return Ok(());
     }
@@ -1022,7 +1024,7 @@ fn write_code_snippet_page(
         "highLightLineFrom": highlight_from,
         "highLightLineTo": highlight_to,
         "ExampleTenantId": EXAMPLE_TENANT_ID,
-        "lang": "en",
+        "lang": cfg.lang.clone(),
     });
     let rendered = {
         let guard = hb.lock().expect("code template mutex poisoned");

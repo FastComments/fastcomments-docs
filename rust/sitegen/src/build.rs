@@ -70,21 +70,42 @@ pub async fn run(args: Vec<String>) -> Result<()> {
     info!(url = %sidecar_proc.url, "content sidecar up");
     let sidecar = Arc::new(SidecarClient::new(sidecar_proc.url.clone()));
 
-    // Two pipeline configs — same shape but `write_snippets` flips per
-    // locale. Sitegen does default locale first (sequentially writes all
-    // snippet pages), then the rest in parallel.
+    // Every locale writes its code-* snippet pages so localized guides get
+    // matching localized code pages (the slug embeds the translated title).
+    // The default locale runs first (Phase A), claiming the English-title
+    // slugs; each other locale (Phase B) then writes its translated-title
+    // slugs. Concurrent writers dedup on filename via `SNIPPET_WRITTEN`.
+    let lang_for = |loc: &str| {
+        locales
+            .locales
+            .get(loc)
+            .map(|l| l.hreflang.clone())
+            .unwrap_or_else(|| loc.to_string())
+    };
     let cfg_default = Arc::new(FullPipelineConfig {
         snippets_dir: snippets_dir.clone(),
         static_generated_dir: static_generated_dir.clone(),
         template_dir: templates_dir.clone(),
         write_snippets: true,
+        lang: lang_for(&locales.default_locale),
     });
-    let cfg_other = Arc::new(FullPipelineConfig {
-        snippets_dir: snippets_dir.clone(),
-        static_generated_dir: static_generated_dir.clone(),
-        template_dir: templates_dir.clone(),
-        write_snippets: false,
-    });
+    let cfg_by_locale: std::collections::HashMap<String, Arc<FullPipelineConfig>> = locales
+        .locales
+        .keys()
+        .filter(|code| *code != &locales.default_locale)
+        .map(|code| {
+            (
+                code.clone(),
+                Arc::new(FullPipelineConfig {
+                    snippets_dir: snippets_dir.clone(),
+                    static_generated_dir: static_generated_dir.clone(),
+                    template_dir: templates_dir.clone(),
+                    write_snippets: true,
+                    lang: lang_for(code),
+                }),
+            )
+        })
+        .collect();
     let static_generated_dir = Arc::new(static_generated_dir);
     let guide_order = Arc::new(guide_order);
 
@@ -236,6 +257,7 @@ pub async fn run(args: Vec<String>) -> Result<()> {
             });
         while tasks.len() < parallelism {
             let Some((guide, locale)) = iter.next() else { break };
+            let cfg = cfg_by_locale.get(&locale).cloned().unwrap_or_else(|| cfg_default.clone());
             tasks.push(spawn_guide_task(
                 guide,
                 locale,
@@ -243,7 +265,7 @@ pub async fn run(args: Vec<String>) -> Result<()> {
                 locales.clone(),
                 translations.clone(),
                 templates.clone(),
-                cfg_other.clone(),
+                cfg,
                 sidecar.clone(),
                 guide_order.clone(),
                 static_generated_dir.clone(),
@@ -259,6 +281,7 @@ pub async fn run(args: Vec<String>) -> Result<()> {
                 Err(e) => warn!(error = %e, "guide task panicked"),
             }
             if let Some((guide, locale)) = iter.next() {
+                let cfg = cfg_by_locale.get(&locale).cloned().unwrap_or_else(|| cfg_default.clone());
                 tasks.push(spawn_guide_task(
                     guide,
                     locale,
@@ -266,7 +289,7 @@ pub async fn run(args: Vec<String>) -> Result<()> {
                     locales.clone(),
                     translations.clone(),
                     templates.clone(),
-                    cfg_other.clone(),
+                    cfg,
                     sidecar.clone(),
                     guide_order.clone(),
                     static_generated_dir.clone(),
