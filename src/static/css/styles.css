@@ -482,11 +482,11 @@ input:focus {
     min-height: 150px;
 }
 
-.search-result {
+/* Card surface shared by search results and the guide cards below. */
+.search-result,
+.guides .guide {
     display: flex;
     align-items: center;
-    padding: 14px 18px;
-    margin: 6px 0;
     text-align: left;
     text-decoration: none;
     color: #ffffff;
@@ -498,7 +498,8 @@ input:focus {
     transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.search-result:hover {
+.search-result:hover,
+.guides .guide:hover {
     transform: translateY(-1px);
     box-shadow: var(--fc-shadow-md);
     text-decoration: none;
@@ -506,13 +507,20 @@ input:focus {
 }
 
 @media (prefers-color-scheme: dark) {
-    .search-result {
+    .search-result,
+    .guides .guide {
         background: var(--fc-bg-subtle);
         border-color: var(--fc-border);
     }
 }
 
-.search-result .icon-container {
+.search-result {
+    padding: 14px 18px;
+    margin: 6px 0;
+}
+
+.search-result .icon-container,
+.guides .guide .icon-container {
     position: relative;
     display: inline-flex;
     align-items: center;
@@ -523,7 +531,8 @@ input:focus {
     flex-shrink: 0;
 }
 
-.search-result .icon-container img {
+.search-result .icon-container img,
+.guides .guide .icon-container img {
     width: 40px;
     image-rendering: -webkit-optimize-contrast;
 }
@@ -617,34 +626,15 @@ input:focus {
     letter-spacing: 0.02em;
 }
 
+/* Base card surface is shared with .search-result above. */
 .guides .guide {
     position: relative;
-    display: flex;
-    align-items: center;
     padding: 14px 40px 14px 16px;
     overflow: hidden;
-    text-decoration: none;
-    color: #ffffff;
-    background: var(--fc-card-bg);
-    box-sizing: border-box;
-    text-align: left;
-    border-radius: var(--fc-radius);
-    border: 1px solid transparent;
-    box-shadow: var(--fc-shadow-sm);
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.guides .guide:hover {
-    transform: translateY(-1px);
-    box-shadow: var(--fc-shadow-md);
-    text-decoration: none;
-    color: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
     .guides .guide {
-        background: var(--fc-bg-subtle);
-        border-color: var(--fc-border);
         color: var(--fc-text);
     }
 
@@ -655,19 +645,7 @@ input:focus {
 }
 
 .guides .guide .icon-container {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    min-height: 40px;
-    vertical-align: middle;
-    padding: 4px;
     margin-right: 12px;
-    flex-shrink: 0;
-}
-
-.guides .guide .icon-container img {
-    width: 40px;
-    image-rendering: -webkit-optimize-contrast;
 }
 
 .guides .guide .name,
