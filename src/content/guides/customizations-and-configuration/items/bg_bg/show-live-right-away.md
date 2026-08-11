@@ -21,4 +21,4 @@
 
 Това може да се персонализира без код, на страницата за персонализиране на уиджета:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.collapse-live-comments'; selector = '.collapse-live-comments'; alt='Настройка за скриване на живи коментари превключена, така че новите коментари се появяват веднага вместо зад бутон'; title='Показване на живи коментари веднага'; app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.collapse-live-comments'; selector = '.collapse-live-comments'; alt='Настройка за скриване на живи коментари превключена, така че новите коментари се появяват веднага вместо зад бутон'; title='Показване на живи коментари веднага' app-screenshot-end]

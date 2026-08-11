@@ -99,3 +99,44 @@ fn index_renders_with_translations_and_guides() {
     // {{lang}} substitution
     assert!(out.contains(r#"<html lang="en">"#));
 }
+
+/// The guide `<h1>` must fall back to the guide name when meta.json sets
+/// no `pageHeader`. 46 of the 108 guides set none, which shipped 1058
+/// pages (46 guides x 23 locales) with no `<h1>` at all.
+#[test]
+fn guide_layout_h1_falls_back_to_name() {
+    let reg = TemplateRegistry::load_from(repo_root().join("src/templates")).unwrap();
+    let ctx = |page_header: &str, name: &str| {
+        json!({
+            "id": "affiliates",
+            "name": name,
+            "pageHeader": page_header,
+            "heading": if page_header.is_empty() { name } else { page_header },
+            "url": "guide-affiliates.html",
+            "intro": "",
+            "conclusion": "",
+            "items": [],
+            "itemsBySubCat": {},
+            "isFallback": false,
+            "locale": "en",
+            "availableLocales": [],
+            "t": {"LOADING": "Loading"},
+        })
+    };
+
+    // No pageHeader -> h1 comes from the (already translated) guide name.
+    let out = reg.render("guide-layout", &ctx("", "Affiliates")).unwrap();
+    assert!(out.contains("<h1>Affiliates</h1>"), "missing h1 fallback:\n{out}");
+    assert_eq!(out.matches("<h1").count(), 1, "expected exactly one h1");
+
+    // pageHeader set -> it still wins.
+    let out = reg
+        .render("guide-layout", &ctx("Affiliate Program", "Affiliates"))
+        .unwrap();
+    assert!(out.contains("<h1>Affiliate Program</h1>"), "pageHeader should win:\n{out}");
+    assert_eq!(out.matches("<h1").count(), 1, "expected exactly one h1");
+
+    // Localized name (meta_translated/meta_fr_fr.json) flows through.
+    let out = reg.render("guide-layout", &ctx("", "Affiliés")).unwrap();
+    assert!(out.contains("<h1>Affiliés</h1>"), "localized name should render:\n{out}");
+}

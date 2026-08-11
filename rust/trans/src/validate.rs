@@ -21,15 +21,40 @@ use fcdocs_shared::locales::Locales;
 use tracing::info;
 
 use crate::discover::default_locale_files;
-use crate::images::{image_diff, ImageDiff};
+use crate::images::{extract_screenshot_bodies, image_diff, ImageDiff};
 
-/// One translated file whose images don't match the source's.
+/// Why a translated file fails the gate.
+#[derive(Debug, Clone)]
+pub enum Problem {
+    /// Its image references differ from the source's.
+    Images(ImageDiff),
+    /// An `[app-screenshot-*]` block doesn't evaluate as JavaScript -
+    /// usually an unescaped apostrophe in a translated `title` / `alt`,
+    /// which terminates the quoted value early. `sitegen` reacts to
+    /// this by logging `skip item ... error=eval app-screenshot config`
+    /// and dropping the ENTIRE page from the build, so it has to be a
+    /// hard failure here rather than a warning nobody reads.
+    UnparseableScreenshot { body: String, error: String },
+}
+
+impl Problem {
+    pub fn describe(&self) -> String {
+        match self {
+            Problem::Images(diff) => diff.describe(),
+            Problem::UnparseableScreenshot { body, error } => {
+                format!("app-screenshot block does not parse ({error}): [app-screenshot-start{body}app-screenshot-end]")
+            }
+        }
+    }
+}
+
+/// One translated file that fails the gate.
 #[derive(Debug, Clone)]
 pub struct Mismatch {
     pub guide_id: String,
     pub locale: String,
     pub filename: String,
-    pub diff: ImageDiff,
+    pub problem: Problem,
 }
 
 impl Mismatch {
@@ -39,9 +64,35 @@ impl Mismatch {
             self.guide_id,
             self.locale,
             self.filename,
-            self.diff.describe()
+            self.problem.describe()
         )
     }
+}
+
+/// The single definition of "this translated file is broken", shared by
+/// the gate, `trans check`, and `trans run`'s task discovery. They MUST
+/// agree: if `run` used a narrower rule it would skip a file the gate
+/// rejects, and the build would fail forever with nothing trying to fix
+/// it.
+pub fn file_problem(source: &str, translated: &str) -> Option<Problem> {
+    if let Some(diff) = image_diff(source, translated) {
+        return Some(Problem::Images(diff));
+    }
+    // Only the translation is evaluated. A source block that doesn't
+    // parse is an authoring bug, not a translation bug, and flagging it
+    // per-locale would report the same problem 28 times.
+    for body in extract_screenshot_bodies(translated) {
+        if let Err(e) = fcdocs_shared::markers::eval_marker_sync(
+            fcdocs_shared::sidecar::MarkerKind::ApiResourceHeader,
+            &body,
+        ) {
+            return Some(Problem::UnparseableScreenshot {
+                body,
+                error: format!("{e}").lines().next().unwrap_or("").to_string(),
+            });
+        }
+    }
+    None
 }
 
 /// Compare every existing translated item against its default-locale
@@ -80,12 +131,12 @@ pub fn audit(guides_dir: &Path, locales: &Locales) -> Vec<Mismatch> {
                 let Ok(translated) = std::fs::read_to_string(&target) else {
                     continue; // not translated yet - `check` owns that gap
                 };
-                if let Some(diff) = image_diff(&source, &translated) {
+                if let Some(problem) = file_problem(&source, &translated) {
                     out.push(Mismatch {
                         guide_id: guide_id.clone(),
                         locale: locale.clone(),
                         filename: src.filename.clone(),
-                        diff,
+                        problem,
                     });
                 }
             }
@@ -97,16 +148,83 @@ pub fn audit(guides_dir: &Path, locales: &Locales) -> Vec<Mismatch> {
     out
 }
 
+/// Rewrite every translated item's `[app-screenshot-*]` blocks from its
+/// source (see [`crate::images::merge_screenshot_blocks`]) and report
+/// how many files changed.
+///
+/// `trans run` does this to fresh LLM output, so this is for the
+/// back-catalog: translations written before the merge existed still
+/// carry corrupted URLs and unescaped apostrophes. Idempotent - a
+/// second run changes nothing.
+fn fix_screenshot_blocks(guides_dir: &Path, locales: &Locales) -> Result<usize> {
+    let mut fixed = 0usize;
+    let Ok(entries) = std::fs::read_dir(guides_dir) else {
+        return Ok(0);
+    };
+    for entry in entries.flatten() {
+        let Ok(ft) = entry.file_type() else { continue };
+        if !ft.is_dir() {
+            continue;
+        }
+        let guide_id = entry.file_name().to_string_lossy().into_owned();
+        let guide_dir = entry.path();
+        let items_dir = guide_dir.join("items");
+        if !items_dir.exists() {
+            continue;
+        }
+        for src in default_locale_files(&guide_dir, &locales.default_locale) {
+            let Ok(source) = std::fs::read_to_string(&src.source_path) else {
+                continue;
+            };
+            if crate::images::extract_screenshot_bodies(&source).is_empty() {
+                continue;
+            }
+            for (locale, _) in &locales.locales {
+                if locale == &locales.default_locale {
+                    continue;
+                }
+                let target = items_dir.join(locale).join(&src.filename);
+                let Ok(translated) = std::fs::read_to_string(&target) else {
+                    continue;
+                };
+                let merged = crate::images::merge_screenshot_blocks(&source, &translated);
+                if merged != translated {
+                    std::fs::write(&target, &merged)?;
+                    fixed += 1;
+                    info!("[fixed] {guide_id}/{locale}/{}", src.filename);
+                }
+            }
+        }
+    }
+    Ok(fixed)
+}
+
 /// Subcommand entry point. Exits non-zero (failing the build) when any
 /// translated file's images don't match the source's.
-pub async fn run() -> Result<()> {
+///
+/// `--fix` first rebuilds every translated `[app-screenshot-*]` block
+/// from its source. That is a maintenance action, never part of the
+/// build: build.sh calls this with no arguments so it only ever reports.
+pub async fn run_with<I: IntoIterator<Item = String>>(args: I) -> Result<()> {
+    let mut fix = false;
+    for arg in args {
+        match arg.as_str() {
+            "--fix" => fix = true,
+            other => anyhow::bail!("unknown arg: {other:?} (only --fix is supported)"),
+        }
+    }
     let repo = fcdocs_shared::repo::repo_root()?;
     let guides_dir = repo.join("src/content/guides");
     let locales = Locales::load_from(&repo.join("src/locales.json"))?;
 
+    if fix {
+        let n = fix_screenshot_blocks(&guides_dir, &locales)?;
+        info!(files = n, "rebuilt app-screenshot blocks from source");
+    }
+
     let mismatches = audit(&guides_dir, &locales);
     if mismatches.is_empty() {
-        info!("image parity OK - every translated item has the same images as its source");
+        info!("image parity OK - every translated item has the same images as its source, and every app-screenshot block parses");
         return Ok(());
     }
     // Print all of them, not a sample: this fails the build, so the
@@ -116,7 +234,7 @@ pub async fn run() -> Result<()> {
     }
     tracing::error!(
         count = mismatches.len(),
-        "translated items have image references that differ from the default locale"
+        "translated items have broken images (see [image-mismatch] lines above)"
     );
     std::process::exit(1);
 }
@@ -180,7 +298,10 @@ mod tests {
         let ms = audit(g, &locales_en_fr_de());
         assert_eq!(ms.len(), 1);
         assert_eq!(ms[0].locale, "fr_fr");
-        assert_eq!(ms[0].diff.missing.len(), 1);
+        match &ms[0].problem {
+            Problem::Images(d) => assert_eq!(d.missing.len(), 1),
+            other => panic!("expected an image diff, got {other:?}"),
+        }
     }
 
     #[test]
@@ -226,7 +347,42 @@ mod tests {
         let ms = audit(g, &locales_en_fr_de());
         assert_eq!(ms.len(), 1);
         assert_eq!(ms[0].locale, "fr_fr");
-        assert_eq!(ms[0].diff.extra.len(), 1);
+        match &ms[0].problem {
+            Problem::Images(d) => assert_eq!(d.extra.len(), 1),
+            other => panic!("expected an image diff, got {other:?}"),
+        }
+    }
+
+    #[test]
+    fn unparseable_screenshot_block_is_reported() {
+        // Unescaped apostrophe in the translated alt: the images match
+        // (alt isn't compared), but the body no longer evaluates as JS,
+        // so sitegen would silently drop the whole page.
+        let tmp = tempfile::tempdir().unwrap();
+        let g = tmp.path();
+        write(
+            g,
+            "a/items/en/x.md",
+            "[app-screenshot-start url='/w'; alt='Advanced options'; title='T' app-screenshot-end]",
+        );
+        write(
+            g,
+            "a/items/fr_fr/x.md",
+            "[app-screenshot-start url='/w'; alt='Options d'affichage'; title='Le T' app-screenshot-end]",
+        );
+        write(
+            g,
+            "a/items/de_de/x.md",
+            "[app-screenshot-start url='/w'; alt='Erweiterte Optionen'; title='Das T' app-screenshot-end]",
+        );
+        let ms = audit(g, &locales_en_fr_de());
+        assert_eq!(ms.len(), 1, "{ms:?}");
+        assert_eq!(ms[0].locale, "fr_fr");
+        assert!(
+            matches!(ms[0].problem, Problem::UnparseableScreenshot { .. }),
+            "{:?}",
+            ms[0].problem
+        );
     }
 
     #[test]

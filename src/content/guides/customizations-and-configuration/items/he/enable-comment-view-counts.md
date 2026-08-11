@@ -12,7 +12,7 @@
 
 ניתן להתאים זאת ללא קוד, בדף התאמת הווידג'ט:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-view-counts']; selector = '.enable-view-counts'; alt='דף התאמת הווידג''ט עם תיבת הסימון של ספירת הצפיות מסומנת כך שכל תגובה מציגה סמל עין וספירה'; title='הפעלת ספירת צפיות בתגובות' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-view-counts']; selector = '.enable-view-counts'; alt='דף התאמת הווידג\'ט עם תיבת הסימון של ספירת הצפיות מסומנת כך שכל תגובה מציגה סמל עין וספירה'; title='הפעלת ספירת צפיות בתגובות' app-screenshot-end]
 
 אנו עוקבים אחרי מזהה המשתמש* שצפה בתגובה, כך שאם אתה **צופה** בתגובה שוב היא לא תגדל. אם אתה **צופה** בתגובה שוב אחרי שנתיים, הספירה תגדל יותר.
 

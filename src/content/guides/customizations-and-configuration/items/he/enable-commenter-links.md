@@ -12,4 +12,4 @@
 
 זה ניתן להתאמה ללא קוד, בדף התאמת הווידג'ט:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.click-to-show-comments', '.commenter-links']; selector = '.commenter-links'; alt='דף התאמת הווידג''ט עם תיבת הסימון של קישורי המגיב מסומנת כדי להוסיף שדה כתובת אתר של משתמש לטופס ההערה'; title='הפעלת קישורי מגיב' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.click-to-show-comments', '.commenter-links']; selector = '.commenter-links'; alt='דף התאמת הווידג\'ט עם תיבת הסימון של קישורי המגיב מסומנת כדי להוסיף שדה כתובת אתר של משתמש לטופס ההערה'; title='הפעלת קישורי מגיב' app-screenshot-end]

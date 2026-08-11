@@ -60,19 +60,49 @@ When translating documentation files:
 
 Rule 11 is enforced by `trans validate-images`, a hard build gate - see below.
 
+### app-screenshot blocks are rebuilt, not trusted
+
+`[app-screenshot-*]` bodies are evaluated as **JavaScript** at build time, and the only
+translatable fields in them are `title` and `alt`. So `trans run` does NOT keep the
+translator's version of these blocks: `images::merge_screenshot_blocks` rebuilds each one
+from the English source and copies over only the translated `title` / `alt`, escaping any
+apostrophes. This is the same kind of deterministic post-processing as
+`sanitize_inline_code_attrs`, and it exists because prompt rules did not work - in one CI
+run the model dropped a word from the English sample text inside a percent-encoded `url=`
+(11 locales), replaced a 2KB fixture URL with `'...'`, and left Hebrew apostrophes
+unescaped in 17 files, all while the prompt explicitly forbade each one.
+
+Note that no quoting convention avoids this: Hebrew uses both `'` (geresh, in `הווידג'ט`)
+and `"` (gershayim, in `דוא"ל`), so single- and double-quoted values are equally exposed.
+Escaping has to happen in code.
+
+To repair the back-catalog (translations written before the merge existed):
+
+```bash
+./rust/target/release/trans validate-images --fix
+```
+
+It is idempotent, and `--fix` is a maintenance action only - `build.sh` runs the gate with
+no arguments so a build never rewrites content.
+
 ### Validating translations
 
 ```bash
 ./rust/target/release/trans validate-images
 ```
 
-Exits non-zero and lists every translated item whose images differ from the default-locale
-source. It runs as its own `build.sh` phase after `trans check` / `trans run`, so a bad
-translation fails the build rather than silently shipping a page with a missing, duplicated,
-or 404 image. `trans check` reports the same mismatches, and `trans run` re-translates any
-file that has one (even when the translation cache says it's fresh) so the gate can't
-deadlock the build. Extraction + comparison live in `rust/trans/src/images.rs`; the walker
-is `rust/trans/src/validate.rs`.
+Exits non-zero and lists every translated item that either (a) has different images than
+the default-locale source, or (b) contains an `[app-screenshot-*]` block that no longer
+parses as JavaScript. Case (b) matters because `sitegen` reacts to it by logging
+`skip item ... error=eval app-screenshot config` and dropping the **entire page** - a
+warning in a 6000-line build log that nobody sees.
+
+It runs as its own `build.sh` phase after `trans check` / `trans run`, so a bad translation
+fails the build rather than silently shipping a page with a missing, duplicated, or 404
+image. `trans check` reports the same problems, and `trans run` re-translates any file that
+has one (even when the translation cache says it's fresh) so the gate can't deadlock the
+build. Extraction + comparison + merge live in `rust/trans/src/images.rs`; the walker is
+`rust/trans/src/validate.rs`.
 
 ### Batching strategy
 

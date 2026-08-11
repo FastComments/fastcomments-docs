@@ -18,7 +18,7 @@
 
 这全部可以通过此页面上的 URL ID 输入字段实现，示例如下：
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.url-id'; alt='用于将自定义规则限定到单个页面或模式（如 */blog/*）的 URL ID 字段'; title='小部件自定义页面中的 URL ID 输入'; app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.url-id'; alt='用于将自定义规则限定到单个页面或模式（如 */blog/*）的 URL ID 字段'; title='小部件自定义页面中的 URL ID 输入' app-screenshot-end]
 
 此字段的值应与传入评论小部件的 *urlId* 参数匹配。如果希望自定义规则对 *urlId* 不敏感，请将此字段留空或输入 *。
 

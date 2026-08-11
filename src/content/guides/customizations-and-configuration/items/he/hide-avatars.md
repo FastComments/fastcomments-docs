@@ -7,6 +7,6 @@
 
 ניתן להתאים זאת ללא קוד, בעמוד התאמת הווידג'ט:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.hide-avatars'; alt='אפשרות הסתרת אווטארים בעמוד התאמת הווידג'ט, שמסירה את כל האווטארים מהווידג'ט של ההערות'; title='הסתרת אווטארים' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.hide-avatars'; alt='אפשרות הסתרת אווטארים בעמוד התאמת הווידג\'ט, שמסירה את כל האווטארים מהווידג\'ט של ההערות'; title='הסתרת אווטארים' app-screenshot-end]
 
 ---

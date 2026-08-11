@@ -8,6 +8,6 @@
 
 זה ניתן להתאמה ללא קוד, בדף התאמת הווידג'ט, תחת אפשרויות מתקדמות:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.show-advanced-option', '.absolute-dates']; selector = '.absolute-dates'; alt='אפשרויות מתקדמות בדף התאמת הווידג'ט עם המתג של תאריכים מוחלטים מופעל'; title='Use Absolute Dates' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.show-advanced-option', '.absolute-dates']; selector = '.absolute-dates'; alt='אפשרויות מתקדמות בדף התאמת הווידג\'ט עם המתג של תאריכים מוחלטים מופעל'; title='Use Absolute Dates' app-screenshot-end]
 
 ---

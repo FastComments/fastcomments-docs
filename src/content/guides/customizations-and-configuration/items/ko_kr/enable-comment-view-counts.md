@@ -12,7 +12,7 @@
 
 코드 없이 위젯 커스터마이징 페이지에서 이 설정을 맞춤화할 수 있습니다:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-view-counts']; selector = '.enable-view-counts'; alt='보기 카운트 체크박스가 선택된 위젯 커스터마이징 페이지로, 각 댓글에 눈 아이콘과 카운트가 표시됩니다.'; title='댓글 보기 카운트 활성화'; app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-view-counts']; selector = '.enable-view-counts'; alt='보기 카운트 체크박스가 선택된 위젯 커스터마이징 페이지로, 각 댓글에 눈 아이콘과 카운트가 표시됩니다.'; title='댓글 보기 카운트 활성화' app-screenshot-end]
 
 우리는 댓글을 본 사용자 ID*를 추적하므로, 같은 댓글을 다시 보면 카운트가 증가하지 않습니다. 두 년 후에 다시 보면 카운트가 증가합니다.
 

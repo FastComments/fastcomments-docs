@@ -503,7 +503,13 @@ async fn process_one_task(
         let raw = call_llm(client, api_key, model, &system, &prompt, &task.filename)
             .await
             .context("LLM call")?;
-        sanitize_inline_code_attrs(&raw)
+        // Two deterministic passes over the model's output, for the two
+        // markers whose bodies are evaluated as JavaScript at build
+        // time: escape apostrophes in [inline-code-attrs-*], and
+        // rebuild [app-screenshot-*] blocks from the source so only the
+        // translated title/alt survive. Neither marker tolerates a
+        // creative translator, and prompt rules alone did not stop one.
+        crate::images::merge_screenshot_blocks(&source, &sanitize_inline_code_attrs(&raw))
     };
 
     // Validate inline-code count parity. Mirrors the legacy Node translator:299-311.

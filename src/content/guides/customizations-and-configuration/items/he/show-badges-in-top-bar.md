@@ -4,7 +4,7 @@
 
 עם זאת, אנו יכולים להציג תגיות משתמש ליד שמם מעל טופס ההערה על ידי הפעלת תכונה זו בעמוד התאמת הווידג'ט:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.show-badges-in-top-bar'; alt='הצגת תגיות בתיבת הסימון של סרגל העליון בעמוד התאמת הווידג'ט, מציב תגיות ליד השם מעל טופס ההערה'; title='אפשרות הצגת תגיות בסרגל העליון' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.show-badges-in-top-bar'; alt='הצגת תגיות בתיבת הסימון של סרגל העליון בעמוד התאמת הווידג\'ט, מציב תגיות ליד השם מעל טופס ההערה'; title='אפשרות הצגת תגיות בסרגל העליון' app-screenshot-end]
 
 זה יציג את תגיות המשתמש לצד שמו באזור סרגל העליון, מה שהופך את הישגיו ומצבו לבולטים יותר כאשר הוא כותב תגובה.
 

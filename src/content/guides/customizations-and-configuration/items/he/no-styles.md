@@ -8,4 +8,4 @@
 
 זה ניתן להתאמה ללא קוד, בעמוד התאמת הווידג'ט, תחת אפשרויות מתקדמות:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.show-advanced-option', '.disable-all-default-styling']; selector = '.disable-all-default-styling'; alt='תיבת הסימון להשבתת כל סגנונות ברירת המחדל מופעלת תחת אפשרויות מתקדמות בעמוד התאמת הווידג'ט'; title='השבתת כל סגנונות ברירת המחדל' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.show-advanced-option', '.disable-all-default-styling']; selector = '.disable-all-default-styling'; alt='תיבת הסימון להשבתת כל סגנונות ברירת המחדל מופעלת תחת אפשרויות מתקדמות בעמוד התאמת הווידג\'ט'; title='השבתת כל סגנונות ברירת המחדל' app-screenshot-end]

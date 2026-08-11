@@ -7,7 +7,7 @@ FastComments נועדה להיות ניתנת להתאמה. הווידג'ט של
 
 בדף התאמת הווידג'ט, ראה את סעיף "הצגת אפשרויות מתקדמות", מתחתיו יש אזור המסומן "CSS מותאם":
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.show-advanced-option'; selector = '.custom-css'; alt='עורך CSS מותאם תחת אפשרות הצגת אפשרויות מתקדמות בדף התאמת הווידג'ט'; title='אזור קלט CSS מותאם' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.show-advanced-option'; selector = '.custom-css'; alt='עורך CSS מותאם תחת אפשרות הצגת אפשרויות מתקדמות בדף התאמת הווידג\'ט'; title='אזור קלט CSS מותאם' app-screenshot-end]
 
 לגישה זו יש כמה יתרונות:
 1. ה‑CSS שהוזן מצומצם לפני שנשלח למשתמש, והעיצוב נשמר עקבי בממשק העריכה.

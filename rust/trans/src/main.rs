@@ -38,7 +38,7 @@ async fn main() -> Result<()> {
     let cmd = args.next().unwrap_or_else(|| "check".to_string());
     match cmd.as_str() {
         "check" => check::run().await,
-        "validate-images" => validate::run().await,
+        "validate-images" => validate::run_with(args).await,
         "cleanup" => {
             let opts = cleanup::parse_options(args)?;
             cleanup::run_with(opts).await

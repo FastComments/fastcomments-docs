@@ -97,6 +97,99 @@ pub fn extract_image_refs(content: &str) -> Vec<ImageRef> {
     out
 }
 
+/// Every `[app-screenshot-*]` attribute body in `content`, in document
+/// order and unmodified. Used by the gate to check each one still
+/// evaluates as JavaScript, and by [`merge_screenshot_blocks`].
+pub fn extract_screenshot_bodies(content: &str) -> Vec<String> {
+    SCREENSHOT_RE
+        .captures_iter(content)
+        .map(|c| c[1].to_string())
+        .collect()
+}
+
+static TRANSLATABLE_ATTR_RE: Lazy<Regex> = Lazy::new(|| {
+    Regex::new(r"(?is)^(\s*(title|alt)\s*=\s*)'([\s\S]*)'(\s*)$").expect("attr regex")
+});
+
+/// Rebuild every `[app-screenshot-*]` block in `translated` from the
+/// corresponding block in `source`, carrying over ONLY the translated
+/// `title` / `alt` values (with apostrophes escaped).
+///
+/// Nothing else in these blocks is translatable - `url`, `selector`,
+/// `clickSelector(s)`, `actions`, `cacheBuster`, `linkUrl` are all
+/// technical - yet the translator rewrites the whole block, and in
+/// practice it corrupts them: it has silently dropped a word from the
+/// English sample text inside a percent-encoded `url=` query string
+/// (11 locales of mentions-notifications.md), replaced a 2KB fixture
+/// URL with `'...'` (moderation-via-email.md), and left apostrophes
+/// unescaped in translated Hebrew `alt=` text, which makes the body
+/// fail to parse and costs the ENTIRE page (`sitegen` logs `skip item
+/// ... error=eval app-screenshot config`). Prompt rules asking for all
+/// three did not prevent any of them.
+///
+/// So don't ask - reconstruct. This is the same class of deterministic
+/// post-processing as `sanitize_inline_code_attrs`, applied to the
+/// marker whose body has the tightest contract.
+///
+/// If the block counts don't match, the translation dropped or
+/// duplicated a screenshot; there's no safe pairing, so leave it alone
+/// and let the parity gate report it.
+pub fn merge_screenshot_blocks(source: &str, translated: &str) -> String {
+    let source_bodies = extract_screenshot_bodies(source);
+    if source_bodies.is_empty() || source_bodies.len() != extract_screenshot_bodies(translated).len()
+    {
+        return translated.to_string();
+    }
+    let mut i = 0usize;
+    SCREENSHOT_RE
+        .replace_all(translated, |caps: &regex::Captures| {
+            let merged = merge_one_screenshot(&source_bodies[i], &caps[1]);
+            i += 1;
+            format!("[app-screenshot-start{merged}app-screenshot-end]")
+        })
+        .into_owned()
+}
+
+fn merge_one_screenshot(source_body: &str, translated_body: &str) -> String {
+    // The translated body may be unparseable (that's half the point),
+    // so split it naively on "; " rather than with the quote-aware
+    // splitter - an unescaped apostrophe would desync quote tracking.
+    // A translated value containing "; " simply won't match, and the
+    // source's value is kept; that's lossy in a way nobody has hit,
+    // and it's always valid.
+    let mut translated_attrs: Vec<(String, String)> = Vec::new();
+    for token in translated_body.split("; ") {
+        if let Some(m) = TRANSLATABLE_ATTR_RE.captures(token) {
+            translated_attrs.push((m[2].to_ascii_lowercase(), escape_apostrophes(&m[3])));
+        }
+    }
+    // Rebuild from the SOURCE token list: same order, same separators,
+    // same technical attributes, byte for byte.
+    let rebuilt: Vec<String> = split_top_level_semicolons(source_body)
+        .iter()
+        .map(|token| match TRANSLATABLE_ATTR_RE.captures(token) {
+            Some(m) => {
+                let key = m[2].to_ascii_lowercase();
+                match translated_attrs.iter().find(|(k, _)| *k == key) {
+                    Some((_, value)) => format!("{}'{}'{}", &m[1], value, &m[4]),
+                    None => token.clone(),
+                }
+            }
+            None => token.clone(),
+        })
+        .collect();
+    rebuilt.join(";")
+}
+
+/// Escape unescaped `'` as `\'`, leaving already-escaped ones alone.
+/// Same NUL-placeholder trick as `run::sanitize_inline_code_attrs`.
+fn escape_apostrophes(value: &str) -> String {
+    value
+        .replace("\\'", "\u{0000}")
+        .replace('\'', "\\'")
+        .replace('\u{0000}', "\\'")
+}
+
 /// Normalize an `[app-screenshot-*]` attribute body for comparison:
 /// split on top-level `;`, drop the `title` and `alt` attributes (the
 /// two fields that are meant to be translated), whitespace-normalize
@@ -126,14 +219,30 @@ pub fn normalize_screenshot_attrs(body: &str) -> String {
                 parts.push(format!(
                     "{}={}",
                     key.trim(),
-                    value.split_whitespace().collect::<Vec<_>>().join(" ")
+                    normalize_value(value)
                 ));
             }
-            None => parts.push(token.split_whitespace().collect::<Vec<_>>().join(" ")),
+            None => parts.push(normalize_value(token)),
         }
     }
     parts.sort();
     parts.join("; ")
+}
+
+/// Whitespace-normalize an attribute value, then undo `\"` escaping.
+///
+/// The attrs body is evaluated as JavaScript, where `'a\"b'` and `'a"b'`
+/// are the same string - a translator that adds those backslashes has
+/// changed nothing the browser will see, so failing the build over it
+/// would be a false positive. (`\'` is NOT normalized: inside a
+/// single-quoted value the backslash is what keeps the string from
+/// terminating early, so removing it would change meaning.)
+fn normalize_value(value: &str) -> String {
+    value
+        .split_whitespace()
+        .collect::<Vec<_>>()
+        .join(" ")
+        .replace("\\\"", "\"")
 }
 
 /// Split on `;` that are not inside a single-quoted value. Backslash
@@ -358,6 +467,38 @@ mod tests {
     }
 
     #[test]
+    fn escaped_double_quotes_in_an_attr_value_are_equivalent() {
+        // Real he/webhooks-local-dev.md case: the model wrote
+        // `input[name=\"comment-created-url\"]` where the source has
+        // `input[name="comment-created-url"]`. The attrs body is
+        // evaluated as JS, so both produce the same selector string —
+        // failing the build over it is a false positive.
+        let en = "[app-screenshot-start url='/w'; actions=[{type: 'set-value', selector: 'input[name=\"x\"]', value: 'y'}] app-screenshot-end]";
+        let he = "[app-screenshot-start url='/w'; actions=[{type: 'set-value', selector: 'input[name=\\\"x\\\"]', value: 'y'}] app-screenshot-end]";
+        assert_eq!(image_diff(en, he), None);
+    }
+
+    #[test]
+    fn truncated_url_is_flagged() {
+        // Real fr_fr/moderation-via-email.md case: the model replaced a
+        // very long test-fixture URL with '...'. The screenshot would
+        // point at a nonexistent page.
+        let en = "[app-screenshot-start url='/test-e2e/email/digest?stats=%7B%22a%22%3A1%7D'; selector='.content'; title='T' app-screenshot-end]";
+        let fr = "[app-screenshot-start url='...'; selector='.content'; title='Le T' app-screenshot-end]";
+        assert!(image_diff(en, fr).is_some());
+    }
+
+    #[test]
+    fn text_edited_inside_a_url_is_flagged() {
+        // Real mentions-notifications.md case across 11 locales: the
+        // model "fixed" the English sample text embedded in a
+        // percent-encoded query parameter, dropping `you%20`.
+        let en = "[app-screenshot-start url='/e?comment=Hey%20I%20wanted%20you%20to%20see%20this.'; title='T' app-screenshot-end]";
+        let fr = "[app-screenshot-start url='/e?comment=Hey%20I%20wanted%20to%20see%20this.'; title='Le T' app-screenshot-end]";
+        assert!(image_diff(en, fr).is_some());
+    }
+
+    #[test]
     fn screenshot_url_change_is_flagged() {
         let en = "[app-screenshot-start url='/auth/import'; selector = '.content'; title='T' app-screenshot-end]";
         let de = "[app-screenshot-start url='/auth/importieren'; selector = '.content'; title='T' app-screenshot-end]";
@@ -418,6 +559,109 @@ mod tests {
         let d = image_diff(en, fr).expect("mismatch expected");
         assert!(d.missing.is_empty());
         assert_eq!(d.extra, vec![ImageRef::Html("/i/made-up.png".into())]);
+    }
+
+    // ---- merge_screenshot_blocks: the three real CI failures ----
+
+    #[test]
+    fn merge_restores_a_url_the_translator_edited() {
+        // 11 locales of mentions-notifications.md: the model dropped
+        // `you%20` from the English sample text inside the query string.
+        let en = "[app-screenshot-start url='/e?c=I%20wanted%20you%20to%20see%20this.'; selector='.content'; title='Mention Email' app-screenshot-end]";
+        let fr = "[app-screenshot-start url='/e?c=I%20wanted%20to%20see%20this.'; selector='.content'; title='E-mail de mention' app-screenshot-end]";
+        let merged = merge_screenshot_blocks(en, fr);
+        assert_eq!(image_diff(en, &merged), None, "url restored: {merged}");
+        assert!(merged.contains("title='E-mail de mention'"), "{merged}");
+    }
+
+    #[test]
+    fn merge_restores_a_truncated_url() {
+        // moderation-via-email.md: a 2KB fixture URL became '...'.
+        let en = "[app-screenshot-start url='/test-e2e/email/digest?stats=%7B%22a%22%3A1%7D'; linkUrl=false; selector = '.content'; alt='Digest email'; title='Digest' app-screenshot-end]";
+        let fr = "[app-screenshot-start url='...'; linkUrl=false; selector = '.content'; alt='E-mail de résumé'; title='Résumé' app-screenshot-end]";
+        let merged = merge_screenshot_blocks(en, fr);
+        assert_eq!(image_diff(en, &merged), None, "{merged}");
+        assert!(merged.contains("alt='E-mail de résumé'"), "{merged}");
+        assert!(merged.contains("title='Résumé'"), "{merged}");
+    }
+
+    #[test]
+    fn merge_escapes_apostrophes_in_translated_alt() {
+        // 16 he/ + 1 tr_tr/ files: an unescaped apostrophe in the
+        // translated alt ends the quoted value early, the body stops
+        // parsing as JS, and sitegen drops the whole page.
+        let en = "[app-screenshot-start url='/w'; alt='Advanced options'; title='Use Absolute Dates' app-screenshot-end]";
+        let he = "[app-screenshot-start url='/w'; alt='אפשרויות הווידג'ט'; title='Use Absolute Dates' app-screenshot-end]";
+        let merged = merge_screenshot_blocks(en, he);
+        assert!(
+            merged.contains(r"alt='אפשרויות הווידג\'ט'"),
+            "apostrophe must be escaped: {merged}"
+        );
+        assert!(merged.contains("url='/w'"), "{merged}");
+    }
+
+    #[test]
+    fn merge_keeps_already_escaped_apostrophes_single() {
+        let en = "[app-screenshot-start url='/w'; title='Usage' app-screenshot-end]";
+        let fr = "[app-screenshot-start url='/w'; title='Exemple d\\'utilisation' app-screenshot-end]";
+        let merged = merge_screenshot_blocks(en, fr);
+        assert!(merged.contains(r"title='Exemple d\'utilisation'"), "{merged}");
+        assert!(!merged.contains(r"d\\'utilisation"), "no double-escape: {merged}");
+    }
+
+    #[test]
+    fn merge_is_a_noop_when_the_translation_is_clean() {
+        let en = "text\n[app-screenshot-start url='/w'; selector='.c'; title='T' app-screenshot-end]\nmore";
+        let fr = "texte\n[app-screenshot-start url='/w'; selector='.c'; title='Le T' app-screenshot-end]\nplus";
+        let merged = merge_screenshot_blocks(en, fr);
+        assert_eq!(merged, fr);
+    }
+
+    #[test]
+    fn merge_preserves_prose_around_the_block() {
+        let en = "before\n[app-screenshot-start url='/w'; title='T' app-screenshot-end]\nafter";
+        let fr = "avant\n[app-screenshot-start url='/BAD'; title='Le T' app-screenshot-end]\napres";
+        let merged = merge_screenshot_blocks(en, fr);
+        assert!(merged.starts_with("avant\n"), "{merged}");
+        assert!(merged.ends_with("\napres"), "{merged}");
+        assert!(merged.contains("url='/w'"), "{merged}");
+    }
+
+    #[test]
+    fn merge_leaves_a_mismatched_block_count_alone() {
+        // Dropped or duplicated screenshot: there's no safe pairing, so
+        // the parity gate has to report it rather than us guessing.
+        let en = "[app-screenshot-start url='/a'; title='A' app-screenshot-end]\n[app-screenshot-start url='/b'; title='B' app-screenshot-end]";
+        let fr = "[app-screenshot-start url='/a'; title='Le A' app-screenshot-end]";
+        assert_eq!(merge_screenshot_blocks(en, fr), fr);
+        assert!(image_diff(en, fr).is_some(), "gate still catches it");
+    }
+
+    #[test]
+    fn merge_handles_content_with_no_screenshots() {
+        let en = "just prose";
+        let fr = "juste du texte";
+        assert_eq!(merge_screenshot_blocks(en, fr), fr);
+    }
+
+    #[test]
+    fn merge_keeps_source_value_when_the_translation_dropped_the_attr() {
+        let en = "[app-screenshot-start url='/w'; alt='Advanced options'; title='T' app-screenshot-end]";
+        let fr = "[app-screenshot-start url='/w'; title='Le T' app-screenshot-end]";
+        let merged = merge_screenshot_blocks(en, fr);
+        assert!(merged.contains("alt='Advanced options'"), "{merged}");
+        assert!(merged.contains("title='Le T'"), "{merged}");
+    }
+
+    #[test]
+    fn merge_preserves_multi_attr_ordering_and_spacing() {
+        let en = "[app-screenshot-start url='/w'; clickSelectors = ['.a', '.b']; selector = '.c'; alt='A'; title='T' app-screenshot-end]";
+        let fr = "[app-screenshot-start title='Le T'; alt='Le A'; url='/WRONG' app-screenshot-end]";
+        let merged = merge_screenshot_blocks(en, fr);
+        assert_eq!(
+            merged,
+            "[app-screenshot-start url='/w'; clickSelectors = ['.a', '.b']; selector = '.c'; alt='Le A'; title='Le T' app-screenshot-end]"
+        );
     }
 
     #[test]

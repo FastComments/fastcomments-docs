@@ -510,6 +510,13 @@ async fn build_one_guide(
         "id": guide.id,
         "name": meta.name.clone().unwrap_or_default(),
         "pageHeader": meta.page_header.clone().unwrap_or_default(),
+        // The <h1>. Falls back to the guide name (translated per locale in
+        // meta_translated/) exactly like the <title> below, because most
+        // guides set no pageHeader and were rendering no <h1> at all.
+        "heading": meta
+            .page_header
+            .clone()
+            .unwrap_or_else(|| meta.name.clone().unwrap_or_default()),
         "icon": meta.icon.as_deref().map(|i| format!("images/guide-icons/{i}")),
         "url": guide_link(&guide.id, locale, &locales.default_locale),
         "urlEncoded": url_encoded,

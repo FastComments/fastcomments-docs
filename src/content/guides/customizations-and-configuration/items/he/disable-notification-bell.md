@@ -17,4 +17,4 @@
 
 זה גם ניתן לבצע ללא קוד. בעמוד התאמת הווידג'ט, ראה את הסעיף "Disable Notification Bell" section.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-notification-bell']; selector = '.disable-notification-bell'; alt='דף התאמת הווידג''ט עם תיבת הסימון של השבתת פעמון ההתראות מסומנת'; title='השבתת פעמון ההתראות' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-notification-bell']; selector = '.disable-notification-bell'; alt='דף התאמת הווידג\'ט עם תיבת הסימון של השבתת פעמון ההתראות מסומנת'; title='השבתת פעמון ההתראות' app-screenshot-end]

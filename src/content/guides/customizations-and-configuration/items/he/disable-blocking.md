@@ -8,4 +8,4 @@
 
 ניתן גם לבצע זאת ללא קוד, מה שמאפשר גם אימות צד‑שרת תקין, דרך ממשק התאמה אישית של הווידג'ט:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-blocking']; selector = '.disable-blocking'; alt='אפשרות השבתת חסימה בממשק התאמה אישית של הווידג'ט, שמפסיקה משתמשים לחסום זה את זה'; title='השבתת חסימה' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-blocking']; selector = '.disable-blocking'; alt='אפשרות השבתת חסימה בממשק התאמה אישית של הווידג\'ט, שמפסיקה משתמשים לחסום זה את זה'; title='השבתת חסימה' app-screenshot-end]

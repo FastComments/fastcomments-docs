@@ -18,7 +18,7 @@
 
 כל זה אפשרי באמצעות שדה הקלט של מזהה ה‑URL בעמוד זה, שנראה כך:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.url-id'; alt='שדה מזהה URL המשמש להגדרת כלל התאמה לעמוד אחד, או לתבנית כגון */blog/*'; title='קלט מזהה URL בדף התאמת הווידג'ט' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.url-id'; alt='שדה מזהה URL המשמש להגדרת כלל התאמה לעמוד אחד, או לתבנית כגון */blog/*'; title='קלט מזהה URL בדף התאמת הווידג\'ט' app-screenshot-end]
 
 הערך בשדה זה צריך להתאים לפרמטר *urlId* שמועבר לווידג'ט התגובות. אם ברצונך שהכלל שלך יהיה בלתי תלוי ב‑*urlId*, השאר שדה זה ריק או הזן *.
 

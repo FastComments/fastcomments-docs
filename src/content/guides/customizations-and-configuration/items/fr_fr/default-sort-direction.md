@@ -24,6 +24,6 @@ Les valeurs valides pour **defaultSortDirection** sont :
 
 Cela peut également être fait sans code. Dans la page de personnalisation du widget, voir la section « Default Sort Direction ».
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.default-sort-direction'; alt='Sélecteur de direction de tri par défaut offrant le plus pertinent, le plus récent d\'abord et le plus ancien d\'abord'; title='Modification de la direction de tri par défaut'; app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.default-sort-direction'; alt='Sélecteur de direction de tri par défaut offrant le plus pertinent, le plus récent d\'abord et le plus ancien d\'abord'; title='Modification de la direction de tri par défaut' app-screenshot-end]
 
 Notez que les commentaires sur chaque page pour chaque direction de tri sont pré‑calculés, de sorte que toutes les directions de tri ont les mêmes performances.

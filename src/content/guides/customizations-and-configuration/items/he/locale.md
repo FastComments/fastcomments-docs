@@ -10,7 +10,7 @@
 
 זה ניתן להגדיר באמצעות ממשק התאמת הווידג'ט. ראה את האפשרות "Locale / Language":
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.locale-override'; alt='תפריט נפתח Locale / Language בעמוד התאמת הווידג'ט המשמש לשינוי ה‑locale שזוהה עבור המבקר'; title='Changing The Locale / Language' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.locale-override'; alt='תפריט נפתח Locale / Language בעמוד התאמת הווידג\'ט המשמש לשינוי ה‑locale שזוהה עבור המבקר'; title='Changing The Locale / Language' app-screenshot-end]
 
 #### דרך קוד
 

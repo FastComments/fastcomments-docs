@@ -12,4 +12,4 @@
 
 Мы также можем настроить это через пользовательский интерфейс настройки виджета, в разделе `Enable Third-Party Cookie Popup`:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.enable-third-party-cookie-bypass'; clickSelectors = ['.enable-third-party-cookie-bypass']; alt='Страница настройки виджета с отмеченным флажком «Включить всплывающее окно сторонних cookie»'; title='Включение обхода сторонних cookie'; app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.enable-third-party-cookie-bypass'; clickSelectors = ['.enable-third-party-cookie-bypass']; alt='Страница настройки виджета с отмеченным флажком «Включить всплывающее окно сторонних cookie»'; title='Включение обхода сторонних cookie' app-screenshot-end]

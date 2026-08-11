@@ -24,6 +24,6 @@ Važeće vrednosti za **defaultSortDirection** su:
 
 Ovo se takođe može uraditi bez koda. Na stranici za prilagođavanje vidžeta, pogledajte odeljak „Podrazumevani smer sortiranja“.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.default-sort-direction'; alt='Selektor podrazumevanog pravca sortiranja koji nudi Najrelevantnije, Najnovije prvo i Najstarije prvo'; title='Promena podrazumevanog pravca sortiranja'; app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.default-sort-direction'; alt='Selektor podrazumevanog pravca sortiranja koji nudi Najrelevantnije, Najnovije prvo i Najstarije prvo'; title='Promena podrazumevanog pravca sortiranja' app-screenshot-end]
 
 Napomena: komentari na svakoj stranici za svaki smer sortiranja su unapred izračunati, tako da svi smerovi sortiranja imaju istu performansu.

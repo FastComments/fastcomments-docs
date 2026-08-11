@@ -6,7 +6,7 @@ FastComments는 사용자 정의가 가능하도록 설계되었습니다. 보�
 
 위젯 커스터마이징 페이지에서 “고급 옵션 표시” 섹션을 확인하면 “Custom CSS” 라벨이 붙은 영역이 있습니다:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.show-advanced-option'; selector = '.custom-css'; alt='위젯 커스터마이징 페이지의 고급 옵션 표시 아래에 있는 Custom CSS 편집기'; title='Custom CSS 입력 영역'; app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.show-advanced-option'; selector = '.custom-css'; alt='위젯 커스터마이징 페이지의 고급 옵션 표시 아래에 있는 Custom CSS 편집기'; title='Custom CSS 입력 영역' app-screenshot-end]
 
 이 방법의 장점:
 1. 입력된 CSS는 사용자에게 전달되기 전에 최소화(minify)되며, 편집 UI에서 포맷이 일관되게 유지됩니다.
