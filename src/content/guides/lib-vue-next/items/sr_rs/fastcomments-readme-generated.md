@@ -1,5 +1,5 @@
 ---
-Ова документација садржи неколико примера како користити FastComments са Vue3.
+Ova dokumentacija sadrži nekoliko primera kako koristiti FastComments sa Vue3.
 
-За пун списак опција конфигурације, погледајте [fastcomments-typescript](https://github.com/FastComments/fastcomments-typescript) и [нашу документацију](https://docs.fastcomments.com/guide-customizations-and-configuration.html).
+Za potpuni spisak opcija konfiguracije, pogledajte [fastcomments-typescript](https://github.com/FastComments/fastcomments-typescript) i [našu dokumentaciju](https://docs.fastcomments.com/guide-customizations-and-configuration.html).
 ---

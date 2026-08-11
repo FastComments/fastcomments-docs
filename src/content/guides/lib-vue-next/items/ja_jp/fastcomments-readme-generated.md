@@ -1,5 +1,5 @@
 ---
-このドキュメントには、Vue3でFastCommentsを使用する方法のいくつかの例が含まれています。
+このドキュメントには、FastComments を Vue3 と共に使用するいくつかの例が含まれています。
 
-設定オプションの完全な一覧については、[fastcomments-typescript](https://github.com/FastComments/fastcomments-typescript) と [当社のドキュメント](https://docs.fastcomments.com/guide-customizations-and-configuration.html) を参照してください。
+設定オプションの完全なリストについては、[fastcomments-typescript](https://github.com/FastComments/fastcomments-typescript) と [our documentation](https://docs.fastcomments.com/guide-customizations-and-configuration.html) を参照してください。
 ---
