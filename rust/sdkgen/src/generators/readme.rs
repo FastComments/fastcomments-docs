@@ -85,7 +85,7 @@ fn parse_readme(
         out.push(DocSection {
             name: "Overview".to_string(),
             file: Some("overview-readme-generated.md".to_string()),
-            content: converted,
+            content: strip_leading_h1(&converted),
             sub_cat: Some("Getting Started".to_string()),
             type_: Some("readme".to_string()),
             sidebar_item_classes: None,
@@ -159,11 +159,9 @@ fn parse_docs_dir(
                 .map(|s| s.to_string_lossy().replace('-', " "))
                 .unwrap_or_default()
         });
-        // Strip leading H1. Mirror Node's `content.replace(/^#\s+.+\n/, '')`
-        // — NO multiline flag, so leading whitespace (e.g. left over from
-        // removed front matter) prevents the strip. Then trim.
-        static H1: Lazy<Regex> = Lazy::new(|| Regex::new(r"\A#\s+.+\n").expect("regex"));
-        let body = H1.replace(&converted, "").trim().to_string();
+        // Strip leading H1: the site renders the section `name` as the
+        // item's heading, so keeping it would emit a second <h1> on the page.
+        let body = strip_leading_h1(&converted);
         out.push(DocSection {
             name: title.clone(),
             file: Some(format!("{}-readme-generated.md", sanitize_filename(&title))),
@@ -178,11 +176,48 @@ fn parse_docs_dir(
 
 fn remove_front_matter(content: &str) -> String {
     // Mirror Node's `/^---\n[\s\S]*?\n---\n/` at base-generator.js:74.
-    // Use literal `\n` (not `\s*\n`) so we don't consume the blank line
-    // after the closing `---` — that blank line is what prevents the
-    // following H1 from being stripped by `\A#\s+.+\n`.
+    // The blank line it leaves behind is harmless: `strip_leading_h1`
+    // skips leading whitespace.
     static FM: Lazy<Regex> = Lazy::new(|| Regex::new(r"(?s)\A---\n.*?\n---\n").expect("regex"));
     FM.replace(content, "").into_owned()
+}
+
+/// Drop a document's own top-level heading, in either markdown form.
+///
+/// The generated item's `name` is rendered as the section heading by
+/// `sitegen`, so a leading H1 in the body is always a duplicate. Node's
+/// original `content.replace(/^#\s+.+\n/, '')` was anchored at offset 0
+/// with no multiline flag, so the blank line left by front-matter removal
+/// made it a no-op - that is how `# FastComments` reached every locale of
+/// `guide-lib-vue-next`.
+fn strip_leading_h1(content: &str) -> String {
+    let trimmed = content.trim_start();
+    let mut lines = trimmed.lines();
+    let Some(first) = lines.next() else {
+        return String::new();
+    };
+    // A document opening with a code fence has no heading to strip, and
+    // `# ...` inside that fence is a comment, not markdown.
+    if first.trim_start().starts_with("```") || first.trim_start().starts_with("~~~") {
+        return trimmed.trim().to_string();
+    }
+    static ATX: Lazy<Regex> = Lazy::new(|| Regex::new(r"\A#\s+\S").expect("regex"));
+    static SETEXT: Lazy<Regex> = Lazy::new(|| Regex::new(r"\A=+\s*\z").expect("regex"));
+    let skip = if ATX.is_match(first) {
+        1
+    } else if lines.next().is_some_and(|second| SETEXT.is_match(second)) && !first.trim().is_empty()
+    {
+        2
+    } else {
+        return trimmed.trim().to_string();
+    };
+    trimmed
+        .lines()
+        .skip(skip)
+        .collect::<Vec<_>>()
+        .join("\n")
+        .trim()
+        .to_string()
 }
 
 /// Full port of `convertRelativeLinks` in
@@ -382,14 +417,63 @@ fn generate_fallback(sdk: &crate::config::SdkConfig) -> Vec<DocSection> {
     vec![DocSection {
         name: "Overview".to_string(),
         file: None,
+        // No leading H1 - the section `name` is already rendered as the
+        // item's heading, and a second <h1> fails the build's heading gate.
         content: format!(
-            "# {name}\n\n{desc}\n\nFor more information, please visit the [GitHub repository]({repo}).\n",
-            name = sdk.name,
-            desc = sdk.description.clone().unwrap_or_else(|| "Official SDK for the FastComments API.".to_string()),
+            "{desc}\n\nFor more information, please visit the [GitHub repository]({repo}).\n",
+            desc = sdk.description.clone().unwrap_or_else(|| format!("Official {} for the FastComments API.", sdk.name)),
             repo = sdk.repo,
         ),
         sub_cat: Some("Getting Started".to_string()),
         type_: Some("readme".to_string()),
         sidebar_item_classes: None,
     }]
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn strips_atx_h1_after_front_matter_blank_line() {
+        // The exact shape of fastcomments-vue-next's docs/index.md.
+        let doc = "---\ntitle: Introduction\n---\n\n# FastComments\n\nThis documentation contains a few examples.\n";
+        let body = strip_leading_h1(&remove_front_matter(doc));
+        assert_eq!(body, "This documentation contains a few examples.");
+    }
+
+    #[test]
+    fn strips_atx_h1_with_no_front_matter() {
+        assert_eq!(strip_leading_h1("# Title\n\nBody text.\n"), "Body text.");
+    }
+
+    #[test]
+    fn strips_setext_h1() {
+        assert_eq!(strip_leading_h1("Title\n=====\n\nBody text.\n"), "Body text.");
+    }
+
+    #[test]
+    fn keeps_setext_h2_and_lower_headings() {
+        // `---` is an H2 underline, not an H1.
+        assert_eq!(strip_leading_h1("Title\n-----\n\nBody.\n"), "Title\n-----\n\nBody.");
+        assert_eq!(strip_leading_h1("## Section\n\nBody.\n"), "## Section\n\nBody.");
+    }
+
+    #[test]
+    fn keeps_body_that_has_no_leading_heading() {
+        let doc = "Upload and resize an image\n\n## Parameters\n";
+        assert_eq!(strip_leading_h1(doc), doc.trim());
+    }
+
+    #[test]
+    fn leaves_comments_inside_an_opening_code_fence_alone() {
+        let doc = "```bash\n# setup authorization\nexport KEY=1\n```\n";
+        assert_eq!(strip_leading_h1(doc), doc.trim());
+    }
+
+    #[test]
+    fn strips_only_the_first_heading() {
+        let doc = "# Title\n\nBody.\n\n# Later\n";
+        assert_eq!(strip_leading_h1(doc), "Body.\n\n# Later");
+    }
 }

@@ -187,6 +187,17 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
     exit 1
   fi
 
+  # Heading gate. Duplicate H1s dilute the page topic and reached
+  # production from two unrelated directions (a README H1 that survived
+  # sdkgen's strip, and translators promoting a leading paragraph to a
+  # heading), so this checks the rendered HTML - the only place both
+  # causes are visible. Pages with no H1 are warned about, not failed.
+  validate_headings_run() { ./rust/target/release/sitegen validate-headings; }
+  if ! phase "sitegen validate-headings" validate_headings_run; then
+    echo "ERROR: generated pages have more than one <h1>"
+    exit 1
+  fi
+
   # Static file copies.
   sitegen_static() { ./rust/target/release/sitegen build-static; }
   if ! phase "sitegen build-static" sitegen_static; then

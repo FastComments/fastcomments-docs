@@ -1,4 +1,4 @@
-# Prześlij i zmień rozmiar obrazu
+Prześlij i zmień rozmiar obrazu
 
 ## Parametry
 

@@ -1,4 +1,4 @@
-# Bild hochladen und skalieren
+Bild hochladen und skalieren
 
 ## Parameter
 

@@ -1,4 +1,4 @@
-# Subir y cambiar el tamaño de una imagen
+Subir y cambiar el tamaño de una imagen
 
 ## Parámetros
 

@@ -1,4 +1,4 @@
-# Afbeelding uploaden en verkleinen
+Afbeelding uploaden en verkleinen
 
 ## Parameters
 

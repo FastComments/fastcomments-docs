@@ -1,4 +1,4 @@
-# Bir görüntüyü yükle ve yeniden boyutlandır
+Bir görüntüyü yükle ve yeniden boyutlandır
 
 ## Parameters
 

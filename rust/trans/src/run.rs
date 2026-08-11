@@ -503,13 +503,17 @@ async fn process_one_task(
         let raw = call_llm(client, api_key, model, &system, &prompt, &task.filename)
             .await
             .context("LLM call")?;
-        // Two deterministic passes over the model's output, for the two
-        // markers whose bodies are evaluated as JavaScript at build
-        // time: escape apostrophes in [inline-code-attrs-*], and
-        // rebuild [app-screenshot-*] blocks from the source so only the
-        // translated title/alt survive. Neither marker tolerates a
-        // creative translator, and prompt rules alone did not stop one.
-        crate::images::merge_screenshot_blocks(&source, &sanitize_inline_code_attrs(&raw))
+        // Three deterministic passes over the model's output. Two are for
+        // the markers whose bodies are evaluated as JavaScript at build
+        // time: escape apostrophes in [inline-code-attrs-*], and rebuild
+        // [app-screenshot-*] blocks from the source so only the translated
+        // title/alt survive. Neither marker tolerates a creative
+        // translator, and prompt rules alone did not stop one. The third
+        // undoes a translator promoting the opening paragraph to a
+        // heading, which puts a second <h1> on the page.
+        let cleaned =
+            crate::images::merge_screenshot_blocks(&source, &sanitize_inline_code_attrs(&raw));
+        match_leading_heading(&source, &cleaned)
     };
 
     // Validate inline-code count parity. Mirrors the legacy Node translator:299-311.
@@ -778,6 +782,77 @@ fn build_prompt(content: &str, locale: &str, locales: &Locales) -> String {
     lines.join("\n")
 }
 
+/// Undo a translator turning the opening paragraph into a top-level heading.
+///
+/// The item `name` is already rendered as the section heading, so an H1 in
+/// the body is a second `<h1>` on the page - the `sitegen validate-headings`
+/// gate fails the build for it. Translators added one in both markdown forms
+/// (`# Title`, and `Title` over a `=====` underline) across 39 pages of the
+/// sdk-* guides while the English source had no heading there. Deterministic
+/// like the two passes above, for the same reason: the prompt already says
+/// "preserve all markdown formatting".
+///
+/// Only the leading heading is considered, and only when the source has none.
+fn match_leading_heading(source: &str, translated: &str) -> String {
+    if leading_h1_span(source).is_some() {
+        return translated.to_string();
+    }
+    let Some((start, span, kind)) = leading_h1_span(translated) else {
+        return translated.to_string();
+    };
+    let lines: Vec<&str> = translated.lines().collect();
+    // Keep trailing whitespace: two trailing spaces are a markdown hard
+    // line break, which matters once the line is a paragraph again.
+    let title = match kind {
+        H1Kind::Atx => lines[start].trim_start().trim_start_matches('#').trim_start(),
+        H1Kind::Setext => lines[start],
+    };
+    let mut out: Vec<String> = lines[..start].iter().map(|s| s.to_string()).collect();
+    out.push(title.to_string());
+    out.extend(lines[start + span..].iter().map(|s| s.to_string()));
+    out.join("\n")
+}
+
+enum H1Kind {
+    Atx,
+    Setext,
+}
+
+/// `(index of the heading's first line, lines it occupies, form)`.
+///
+/// Looks past a leading thematic break: translations are routinely wrapped
+/// in `---` rules, which is what hid `# FastComments` on 16 locales of
+/// `guide-lib-vue-next` from the first sweep.
+fn leading_h1_span(text: &str) -> Option<(usize, usize, H1Kind)> {
+    static ATX: Lazy<Regex> = Lazy::new(|| Regex::new(r"\A#\s+\S").expect("regex"));
+    static SETEXT: Lazy<Regex> = Lazy::new(|| Regex::new(r"\A=+\s*\z").expect("regex"));
+    static RULE: Lazy<Regex> =
+        Lazy::new(|| Regex::new(r"\A {0,3}(-{3,}|\*{3,}|_{3,})\s*\z").expect("regex"));
+    let lines: Vec<&str> = text.lines().collect();
+    let mut start = lines.iter().position(|l| !l.trim().is_empty())?;
+    if RULE.is_match(lines[start]) {
+        start = lines
+            .iter()
+            .enumerate()
+            .skip(start + 1)
+            .find(|(_, l)| !l.trim().is_empty())
+            .map(|(i, _)| i)?;
+    }
+    let first = lines[start];
+    // A document opening with a code fence has no heading; `#` inside it is
+    // a comment.
+    if first.trim_start().starts_with("```") || first.trim_start().starts_with("~~~") {
+        return None;
+    }
+    if ATX.is_match(first) {
+        return Some((start, 1, H1Kind::Atx));
+    }
+    if lines.get(start + 1).is_some_and(|l| SETEXT.is_match(l)) {
+        return Some((start, 2, H1Kind::Setext));
+    }
+    None
+}
+
 /// Verbatim port of `sanitizeInlineCodeAttrs` at the legacy Node translator:45-62.
 fn sanitize_inline_code_attrs(text: &str) -> String {
     static RE: Lazy<Regex> = Lazy::new(|| {
@@ -850,6 +925,55 @@ use fcdocs_shared::repo::repo_root;
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    // The two real shapes translators produced across 39 sdk-* pages.
+    #[test]
+    fn demotes_setext_h1_the_source_does_not_have() {
+        let en = "Upload and resize an image\n\n## Parameters\n";
+        let tr = "Upload and resize an image\n==========================\n\n## Parameters\n";
+        assert_eq!(
+            match_leading_heading(en, tr),
+            "Upload and resize an image\n\n## Parameters"
+        );
+    }
+
+    #[test]
+    fn demotes_atx_h1_the_source_does_not_have() {
+        let en = "List pages for a tenant.\n\n## Parameters\n";
+        let tr = "# 列出租户的页面\n\n## 参数\n";
+        assert_eq!(match_leading_heading(en, tr), "列出租户的页面\n\n## 参数");
+    }
+
+    #[test]
+    fn demotes_an_h1_hidden_behind_the_usual_leading_rule() {
+        let en = "This documentation contains a few examples.\n";
+        let tr = "---\n# FastComments\n\nDiese Dokumentation.\n---";
+        assert_eq!(
+            match_leading_heading(en, tr),
+            "---\nFastComments\n\nDiese Dokumentation.\n---"
+        );
+    }
+
+    #[test]
+    fn keeps_h1_the_source_also_has() {
+        let en = "# Title\n\nBody.\n";
+        let tr = "# Titre\n\nCorps.\n";
+        assert_eq!(match_leading_heading(en, tr), tr);
+    }
+
+    #[test]
+    fn leaves_translations_without_a_leading_heading_alone() {
+        let en = "Body.\n\n## Section\n";
+        let tr = "Corps.\n\n## Section\n";
+        assert_eq!(match_leading_heading(en, tr), tr);
+    }
+
+    #[test]
+    fn ignores_a_comment_in_an_opening_code_fence() {
+        let en = "```bash\n# setup\n```\n";
+        let tr = "```bash\n# configuration\n```\n";
+        assert_eq!(match_leading_heading(en, tr), tr);
+    }
 
     #[test]
     fn sanitize_replaces_unescaped_apostrophes() {

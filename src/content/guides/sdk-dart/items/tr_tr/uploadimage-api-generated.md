@@ -1,5 +1,4 @@
 Upload and resize an image
-===========================
 
 ## Parameters
 
