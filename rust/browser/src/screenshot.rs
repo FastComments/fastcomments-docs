@@ -18,7 +18,9 @@ use std::time::Duration;
 
 use anyhow::{Context, Result};
 use chromiumoxide::browser::{Browser, BrowserConfigBuilder, HeadlessMode};
-use chromiumoxide::cdp::browser_protocol::page::CaptureScreenshotFormat;
+use chromiumoxide::cdp::browser_protocol::page::{
+    CaptureScreenshotFormat, CaptureScreenshotParams, Viewport,
+};
 use chromiumoxide::Page;
 use futures::StreamExt;
 use serde::{Deserialize, Serialize};
@@ -98,14 +100,13 @@ impl Default for ScreenshotHost {
     }
 }
 
-/// Launch chromium with a fresh logged-in session and return the browser
-/// along with the page handle. Caller is responsible for dropping the
-/// browser when done (or using `BrowserGuard` below).
-pub async fn launch_logged_in(
+/// Launch chromium. Split out of `launch_logged_in` so tests (and any
+/// caller that doesn't need the demo account) can open their own page
+/// without the login navigation.
+pub async fn launch(
     width: u32,
     height: u32,
-    host_cfg: &ScreenshotHost,
-) -> Result<(Browser, Page, tokio::task::JoinHandle<()>)> {
+) -> Result<(Browser, tokio::task::JoinHandle<()>)> {
     let chrome = crate::chrome_binary().context(
         "no chromium binary located. Set CHROME_BIN or install chromium-browser.",
     )?;
@@ -145,6 +146,19 @@ pub async fn launch_logged_in(
             }
         }
     });
+
+    Ok((browser, handler_task))
+}
+
+/// Launch chromium with a fresh logged-in session and return the browser
+/// along with the page handle. Caller is responsible for dropping the
+/// browser when done.
+pub async fn launch_logged_in(
+    width: u32,
+    height: u32,
+    host_cfg: &ScreenshotHost,
+) -> Result<(Browser, Page, tokio::task::JoinHandle<()>)> {
+    let (browser, handler_task) = launch(width, height).await?;
 
     let page = browser
         .new_page(format!("{}/auth/login", host_cfg.host))
@@ -265,23 +279,126 @@ pub async fn capture(
         tokio::time::sleep(Duration::from_millis(ms)).await;
     }
 
-    let element = page
-        .find_element(&args.selector)
-        .await
-        .with_context(|| format!("find {} on {url}", args.selector))?;
-
     if let Some(parent) = target_path.parent() {
         std::fs::create_dir_all(parent)?;
     }
 
-    let png_bytes = element
-        .screenshot(CaptureScreenshotFormat::Png)
+    let png_bytes = capture_element_png(page, &args.selector)
         .await
-        .context("element.screenshot")?;
+        .with_context(|| format!("capture {} on {url}", args.selector))?;
+    if let Some(density) = png_byte_density(&png_bytes) {
+        // A flat, contentless capture compresses to almost nothing;
+        // anything with text or borders in it is an order of magnitude
+        // denser. 988 blank screenshots shipped before this warning
+        // existed, so it is worth the two reads of the IHDR header.
+        if density < FLAT_PNG_BYTES_PER_PIXEL {
+            tracing::warn!(
+                url = %url,
+                selector = %args.selector,
+                "captured image looks blank (no visible content); check the selector"
+            );
+        }
+    }
     std::fs::write(target_path, png_bytes)
         .with_context(|| format!("write {target_path:?}"))?;
 
     Ok(())
+}
+
+/// Below this many PNG bytes per pixel an image is a single flat colour
+/// in practice. Real captures of the docs UI land above 0.05.
+const FLAT_PNG_BYTES_PER_PIXEL: f64 = 0.02;
+
+/// Encoded bytes per pixel, read straight off the IHDR header. `None`
+/// when the buffer isn't a PNG or has no area.
+fn png_byte_density(png_bytes: &[u8]) -> Option<f64> {
+    if png_bytes.len() < 24 || &png_bytes[..8] != b"\x89PNG\r\n\x1a\n" {
+        return None;
+    }
+    let width = u32::from_be_bytes(png_bytes[16..20].try_into().ok()?) as f64;
+    let height = u32::from_be_bytes(png_bytes[20..24].try_into().ok()?) as f64;
+    let area = width * height;
+    if area <= 0.0 {
+        return None;
+    }
+    Some(png_bytes.len() as f64 / area)
+}
+
+/// Element bounds in document coordinates, as returned by
+/// `element_document_rect`'s injected script.
+#[derive(Debug, Clone, Copy, Deserialize)]
+struct DocumentRect {
+    x: f64,
+    y: f64,
+    width: f64,
+    height: f64,
+}
+
+/// Screenshot a single element, clipped to its box.
+///
+/// Deliberately does NOT use chromiumoxide's `Element::screenshot`:
+/// in 0.7 it adds the page scroll offset to the bounding box and then
+/// adds it a *second* time when building the clip
+/// (`chromiumoxide-0.7.0/src/element.rs:416-428`), so the clip lands
+/// roughly `2 * scrollY` down the page. Anything the browser had to
+/// scroll to reach — i.e. every marker below the fold — captured as a
+/// blank white rectangle of the right size, which is how ~55 docs
+/// screenshots shipped empty. Computing the rect in the page and
+/// capturing with `captureBeyondViewport` avoids the offset math
+/// entirely.
+pub async fn capture_element_png(page: &Page, selector: &str) -> Result<Vec<u8>> {
+    let rect = element_document_rect(page, selector).await?;
+    if rect.width < 1.0 || rect.height < 1.0 {
+        anyhow::bail!(
+            "element {selector} has no rendered size ({}x{}); it is hidden or collapsed",
+            rect.width,
+            rect.height
+        );
+    }
+
+    let clip = Viewport {
+        x: rect.x,
+        y: rect.y,
+        width: rect.width,
+        height: rect.height,
+        scale: 1.,
+    };
+    let png = page
+        .screenshot(
+            CaptureScreenshotParams::builder()
+                .format(CaptureScreenshotFormat::Png)
+                .clip(clip)
+                // The clip is in document coordinates, so it routinely
+                // sits outside the 1920x1080 viewport. Without this the
+                // out-of-viewport part comes back blank.
+                .capture_beyond_viewport(true)
+                .build(),
+        )
+        .await
+        .context("captureScreenshot")?;
+    Ok(png)
+}
+
+/// Scroll `selector` into view and return its bounds in document
+/// coordinates. The scroll mirrors puppeteer's
+/// `elementHandle.screenshot()`, which the marker corpus was authored
+/// against — lazy-loaded content inside a marker's target still needs
+/// to be brought on-screen before capture.
+async fn element_document_rect(page: &Page, selector: &str) -> Result<DocumentRect> {
+    let js = format!(
+        "(()=>{{const el=document.querySelector({});if(!el)return null;\
+         el.scrollIntoView({{block:'center',inline:'nearest'}});\
+         const r=el.getBoundingClientRect();\
+         return {{x:r.left+window.scrollX,y:r.top+window.scrollY,width:r.width,height:r.height}};}})()",
+        serde_json::to_string(selector).unwrap_or_else(|_| "''".to_string())
+    );
+    let rect: Option<DocumentRect> = page
+        .evaluate(js)
+        .await
+        .with_context(|| format!("measure {selector}"))?
+        .into_value()
+        .with_context(|| format!("decode bounds of {selector}"))?;
+    rect.with_context(|| format!("no element matched {selector}"))
 }
 
 async fn wait_for_selector(page: &Page, selector: &str, timeout: Duration) -> Result<()> {
@@ -369,6 +486,43 @@ fn escape_attr(value: &str) -> String {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn png_byte_density_flags_flat_images() {
+        // The exact shape of the shipped blanks: a 1570x31 checkbox row
+        // that encoded to 312 bytes because it had nothing in it.
+        let flat = fake_png(1570, 31, 312);
+        let density = png_byte_density(&flat).expect("density");
+        assert!(
+            density < FLAT_PNG_BYTES_PER_PIXEL,
+            "an empty checkbox row should read as flat, got {density}"
+        );
+
+        // Same element, actually rendered.
+        let real = fake_png(1570, 31, 5984);
+        let density = png_byte_density(&real).expect("density");
+        assert!(
+            density > FLAT_PNG_BYTES_PER_PIXEL,
+            "a rendered checkbox row should not read as flat, got {density}"
+        );
+    }
+
+    /// A buffer with a valid PNG signature and IHDR dimensions, padded
+    /// to `len`. Only the header and the total size matter here.
+    fn fake_png(width: u32, height: u32, len: usize) -> Vec<u8> {
+        let mut png = Vec::with_capacity(len);
+        png.extend_from_slice(b"\x89PNG\r\n\x1a\n");
+        png.extend_from_slice(&[0u8; 8]); // IHDR length + chunk type
+        png.extend_from_slice(&width.to_be_bytes());
+        png.extend_from_slice(&height.to_be_bytes());
+        png.resize(len, 0);
+        png
+    }
+
+    #[test]
+    fn png_byte_density_ignores_non_png() {
+        assert!(png_byte_density(b"not a png at all, really not").is_none());
+    }
 
     #[test]
     fn ensure_host_passes_through_absolute() {
