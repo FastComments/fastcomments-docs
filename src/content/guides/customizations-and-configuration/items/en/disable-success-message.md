@@ -6,4 +6,4 @@ By default, FastComments will show a success message after commenting. This can 
 
 This can also be done without code. In the widget customization page:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-success-message']; selector = '.disable-success-message'; title='Disable Success Message' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-success-message']; selector = '.disable-success-message'; alt='Widget customization page with the Disable Success Message checkbox checked to hide the post-comment confirmation'; title='Disable Success Message' app-screenshot-end]

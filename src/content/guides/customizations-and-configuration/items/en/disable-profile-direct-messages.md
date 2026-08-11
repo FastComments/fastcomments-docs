@@ -8,4 +8,4 @@ However, we can disable this tab:
 
 This can also be done without code. In the widget customization page, see the "Disable Direct Messages" section.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-profile-direct-messages']; selector = '.disable-profile-direct-messages'; title='Disable Profile Direct Messages' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-profile-direct-messages']; selector = '.disable-profile-direct-messages'; alt='Widget customization page with the Disable Direct Messages checkbox checked to hide the profile messages tab'; title='Disable Profile Direct Messages' app-screenshot-end]

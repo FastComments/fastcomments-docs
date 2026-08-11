@@ -6,7 +6,7 @@ We can enable spoiler support by setting the **enableSpoilers** flag to true:
 
 This can also be done without code. In the widget customization page, see the "Enable Spoilers" option.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-spoilers']; selector = '.enable-spoilers'; title='Enable Spoilers' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-spoilers']; selector = '.enable-spoilers'; alt='Widget customization page with the Enable Spoilers checkbox checked to add the SPOILER button to the editor'; title='Enable Spoilers' app-screenshot-end]
 
 When text is highlighted, and the now visible `SPOILER` button is clicked, text will be masked until the user mouses over it. For dark mode we do the same thing, with different
 colors that better match dark mode.

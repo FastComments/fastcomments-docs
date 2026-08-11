@@ -21,4 +21,4 @@ We can turn it on as follows:
 
 This can be customized without code, on the widget customization page:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.collapse-live-comments'; selector = '.collapse-live-comments'; title='Show Live Comments Right Away' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.collapse-live-comments'; selector = '.collapse-live-comments'; alt='Collapse live comments setting toggled so new comments appear instantly instead of behind a button'; title='Show Live Comments Right Away' app-screenshot-end]

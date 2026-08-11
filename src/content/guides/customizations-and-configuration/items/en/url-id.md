@@ -23,7 +23,7 @@ appear right away on some pages, while hiding them under notification buttons on
 
 This is all possible via the URL ID input field on this page, which looks like as follows:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.url-id'; title='URL ID Input in The Widget Customization Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.url-id'; alt='URL ID field used to scope a customization rule to one page, or to a pattern such as */blog/*'; title='URL ID Input in The Widget Customization Page' app-screenshot-end]
 
 The value in this field should match the *urlId* parameter passed into the comment widget. If you want your customization rule to be *urlId* agnostic, leave this field empty or enter *.
 

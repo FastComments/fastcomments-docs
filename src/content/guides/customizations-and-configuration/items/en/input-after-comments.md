@@ -7,4 +7,4 @@ to true we can move it to **after**.
 
 This can be customized without code, on the widget customization page:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.input-after-comments'; title='Moving The Reply Box to The Bottom' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.input-after-comments'; alt='Widget customization page option that places the comment input area after the comment thread instead of before it'; title='Moving The Reply Box to The Bottom' app-screenshot-end]

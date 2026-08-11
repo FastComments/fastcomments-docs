@@ -45,6 +45,12 @@ pub struct ScreenshotArgs {
     pub selector: String,
     #[serde(default)]
     pub title: String,
+    /// Accessible description of the captured image. Falls back to
+    /// `title` when unset. Deliberately absent from `target_file_name`
+    /// and from the sitegen image-cache key so editing it never
+    /// re-captures the screenshot.
+    #[serde(default)]
+    pub alt: String,
     #[serde(default, rename = "addProxySelect")]
     pub add_proxy_select: bool,
     #[serde(default)]
@@ -331,12 +337,33 @@ pub fn render_template(args: &ScreenshotArgs, target_file_name: &str, host: &str
             href = remote_page,
         ),
     };
+    let alt = if args.alt.trim().is_empty() {
+        &args.title
+    } else {
+        &args.alt
+    };
     format!(
-        "<div class=\"screenshot\">\n        <div class=\"title\">{title}</div>\n        {link}<img src='/images/{file}' class=\"screenshot-image\" >\n    </div>",
+        "<div class=\"screenshot\">\n        <div class=\"title\">{title}</div>\n        {link}<img src='/images/{file}' class=\"screenshot-image\" alt=\"{alt}\">\n    </div>",
         title = args.title,
         link = link_url_html,
         file = target_file_name,
+        alt = escape_attr(alt),
     )
+}
+
+/// Escape a string for use inside a double-quoted HTML attribute.
+fn escape_attr(value: &str) -> String {
+    let mut out = String::with_capacity(value.len());
+    for c in value.chars() {
+        match c {
+            '&' => out.push_str("&amp;"),
+            '<' => out.push_str("&lt;"),
+            '>' => out.push_str("&gt;"),
+            '"' => out.push_str("&quot;"),
+            _ => out.push(c),
+        }
+    }
+    out
 }
 
 #[cfg(test)]
@@ -409,5 +436,44 @@ mod tests {
         let html = render_template(&args, "abc.png", HOST);
         assert!(html.contains("screenshot-link"));
         assert!(html.contains("https://fastcomments.com/p"));
+    }
+
+    #[test]
+    fn render_template_emits_alt() {
+        let args = ScreenshotArgs {
+            url: "/p".into(),
+            title: "T".into(),
+            alt: "Widget customization page with the search box enabled".into(),
+            selector: "body".into(),
+            ..Default::default()
+        };
+        let html = render_template(&args, "abc.png", HOST);
+        assert!(html
+            .contains("alt=\"Widget customization page with the search box enabled\""));
+    }
+
+    #[test]
+    fn render_template_alt_falls_back_to_title() {
+        let args = ScreenshotArgs {
+            url: "/p".into(),
+            title: "The Import Page Form".into(),
+            selector: "body".into(),
+            ..Default::default()
+        };
+        let html = render_template(&args, "abc.png", HOST);
+        assert!(html.contains("alt=\"The Import Page Form\""));
+    }
+
+    #[test]
+    fn render_template_escapes_alt() {
+        let args = ScreenshotArgs {
+            url: "/p".into(),
+            title: "T".into(),
+            alt: "A \"quoted\" <tag> & more".into(),
+            selector: "body".into(),
+            ..Default::default()
+        };
+        let html = render_template(&args, "abc.png", HOST);
+        assert!(html.contains("alt=\"A &quot;quoted&quot; &lt;tag&gt; &amp; more\""));
     }
 }

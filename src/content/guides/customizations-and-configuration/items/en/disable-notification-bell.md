@@ -17,4 +17,4 @@ However, we can disable the notification bell entirely:
 
 This can also be done without code. In the widget customization page, see the "Disable Notification Bell" section.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-notification-bell']; selector = '.disable-notification-bell'; title='Disable Notification Bell' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-notification-bell']; selector = '.disable-notification-bell'; alt='Widget customization page with the Disable Notification Bell checkbox checked'; title='Disable Notification Bell' app-screenshot-end]

@@ -4,7 +4,7 @@ For security, this is not a client-side widget config flag. It is a server-side 
 
 This is done without code, on the widget customization page:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.allow-embeds'; selector = '.allow-embeds'; title='Allow Media Embeds' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.allow-embeds'; selector = '.allow-embeds'; alt='Media embeds setting turned on in the widget customization page, letting commenters paste trusted iframe embeds'; title='Allow Media Embeds' app-screenshot-end]
 
 ### Adding Your Own Providers
 

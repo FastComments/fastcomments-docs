@@ -5,7 +5,7 @@ you want to only show "Allen R.".
 
 This can be done without code in the Widget Customization UI, under the setting called `Commenter Name Format`:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.commenter-name-format select'; selector = '.commenter-name-format'; title='Change Name Format' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.commenter-name-format select'; selector = '.commenter-name-format'; alt='Commenter Name Format dropdown open with choices such as Capitalize, Last Initial and All Initials'; title='Change Name Format' app-screenshot-end]
 
 The available formats are:
 

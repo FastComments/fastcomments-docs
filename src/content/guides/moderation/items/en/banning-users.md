@@ -2,13 +2,13 @@ There are two ways to ban users from commenting on your site with FastComments.
 
 The first is if you already know their email, you can enter it on the <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">banned users</a> page.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; title='The Banned Users Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; alt='Banned users list under Moderate Comments, with the banned email addresses and a button to add a new ban'; title='The Banned Users Page' app-screenshot-end]
 
 This page can be accessed via Moderate Comments -> Banned Users
 
 When we go to ban a user, we can pick a type, either Permanent or Permanent Shadow Ban:
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; title='Banning a User' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; alt='New ban form with an email field and a ban type choice of Permanent or Permanent Shadow Ban'; title='Banning a User' app-screenshot-end]
 
 The second way to ban a user is by clicking the ban button that is placed on each comment on the Comment Moderation page.
 

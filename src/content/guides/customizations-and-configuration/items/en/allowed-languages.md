@@ -4,7 +4,7 @@ It may be desirable to limit the languages a community uses.
 
 This can be configured without code, on the widget customization page:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allowed-languages']; selector = '.allowed-languages'; title='Allowed Languages' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allowed-languages']; selector = '.allowed-languages'; alt='Allowed languages selector on the widget customization page for limiting which languages comments may use'; title='Allowed Languages' app-screenshot-end]
 
 The system will parse their comment and determine its language, and then match it with the allowed list.
 

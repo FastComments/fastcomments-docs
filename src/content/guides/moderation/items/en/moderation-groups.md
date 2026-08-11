@@ -4,11 +4,11 @@ When a Moderator belongs to one or more groups, they will only see comments from
 
 For example, let's say we run a site that displays videos by category. We may want to have different moderators for Cat, Dog, and Parrot videos, so [let's add those groups](https://fastcomments.com/auth/my-account/moderate-comments/moderation-groups).
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/moderation-groups?demo=true'; linkUrl='/auth/my-account/moderate-comments/moderation-groups'; selector = '.content'; title='The Moderation Groups Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/moderation-groups?demo=true'; linkUrl='/auth/my-account/moderate-comments/moderation-groups'; selector = '.content'; alt='Moderation groups list with the Cat, Dog and Parrot groups created for each video category'; title='The Moderation Groups Page' app-screenshot-end]
 
 When we add a moderator, we now have the option to select one or more groups the moderator will belong to:
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/moderator/new?demo=true'; linkUrl='/auth/my-account/moderate-comments/moderator/new'; selector = '.account-block'; title='Adding A Moderator and Selecting a Group' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/moderator/new?demo=true'; linkUrl='/auth/my-account/moderate-comments/moderator/new'; selector = '.account-block'; alt='Add a Moderator form with the group selector used to assign the moderator to one or more groups'; title='Adding A Moderator and Selecting a Group' app-screenshot-end]
 
 Finally, comments need to be tied to one or more groups so that the correct moderators see them.
 

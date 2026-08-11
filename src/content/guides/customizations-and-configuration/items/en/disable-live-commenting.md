@@ -13,4 +13,4 @@ However, we can disable this:
 
 This can also be done without code. In the widget customization page, see the "Disable Live Commenting" section.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-live-commenting']; selector = '.disable-live-commenting'; title='Disable Live Commenting' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-live-commenting']; selector = '.disable-live-commenting'; alt='Disable Live Commenting section of the widget customization page, turning off real-time thread updates'; title='Disable Live Commenting' app-screenshot-end]

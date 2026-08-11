@@ -8,5 +8,5 @@ This can be replaced with any string, and the value **[count]** will be replaced
 
 This can be customized without code, on the widget customization page:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.comment-count'; title='Customizing The Comment Count Text' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.comment-count'; alt='Comment count text field on the widget customization page, where [count] is replaced with the live total'; title='Customizing The Comment Count Text' app-screenshot-end]
 

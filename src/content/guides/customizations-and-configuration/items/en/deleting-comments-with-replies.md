@@ -9,4 +9,4 @@ You can restrict this in the following ways:
 
 This can be configured via the `Comment Thread Deletion` section in the Widget Customization UI.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.comment-thread-deletion-mode']; selector = '.comment-thread-deletion-mode'; title='Customize Delete Behavior for Replies' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.comment-thread-deletion-mode']; selector = '.comment-thread-deletion-mode'; alt='Comment Thread Deletion options in the widget customization UI for anonymizing or restricting deletes with replies'; title='Customize Delete Behavior for Replies' app-screenshot-end]

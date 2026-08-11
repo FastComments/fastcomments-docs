@@ -9,4 +9,4 @@ It may be desirable to disable this functionality. It can be done like so:
 
 This can also be done without code, which also enables proper server-side validation, via the Widget Customization UI:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-blocking']; selector = '.disable-blocking'; title='Disable Blocking' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-blocking']; selector = '.disable-blocking'; alt='Disable blocking option in the widget customization UI, which stops users from blocking each other'; title='Disable Blocking' app-screenshot-end]

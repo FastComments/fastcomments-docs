@@ -175,6 +175,7 @@ You preserve all markdown formatting and special tags exactly as they appear.`;
         lines.push('11. Reproduce EVERY image exactly once, in the same order as the source. This covers <img> tags, markdown ![alt](url) images, and [app-screenshot-start ... app-screenshot-end] blocks. Never drop an image, never repeat one, and never emit a section twice.');
         lines.push('12. NEVER translate or alter an image path: the src="..." of an <img>, the URL of a markdown image, and the url=/selector=/clickSelector= attributes of an [app-screenshot-*] block must be byte-for-byte identical to the source. Only the alt/title text may be translated.');
         lines.push('13. Inside [app-screenshot-start ... app-screenshot-end], keep the `; ` separator between EVERY attribute, including the one before title=. Dropping it breaks the build.');
+        lines.push('14. Inside [app-screenshot-start ... app-screenshot-end], the alt= attribute is the accessible description of the image. TRANSLATE its text like title=, keep it on the block, and escape any apostrophe in the translated value with a backslash.');
         lines.push('');
         lines.push('The title attributes in [inline-code-attrs-start] tags SHOULD be translated.');
         lines.push('For example: title = \'Example cURL Request\' should become title = \'Exemple de requête cURL\' in French.');

@@ -7,4 +7,4 @@ This validation is only for the Comment Widget and API. Imports are not affected
 
 This is done without code, on the widget customization page:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.restricted-link-domains-list'; selector = '.external-link-settings'; title='Restrict External Link Domains' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.restricted-link-domains-list'; selector = '.external-link-settings'; alt='External link settings with the restricted link domains list where allowed sites are entered'; title='Restrict External Link Domains' app-screenshot-end]

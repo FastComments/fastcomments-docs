@@ -8,4 +8,4 @@ We call this the header, and by default it is hidden.
 
 This can be customized without code, on the widget customization page, under Advanced Options:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.show-advanced-option'; selector = '.absolute-dates'; title='Specifying Header HTML' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.show-advanced-option'; selector = '.absolute-dates'; alt='Advanced Options area of the widget customization page where custom header HTML is entered'; title='Specifying Header HTML' app-screenshot-end]

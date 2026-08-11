@@ -8,7 +8,7 @@ This cannot be configured in the client side widget as pages are calculated serv
 
 Example configuration is shown below:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.page-size'; title='Custom Page Sizes' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.page-size'; alt='Page size selector on the widget customization page, where a value from 10 to 200 can be chosen'; title='Custom Page Sizes' app-screenshot-end]
 
 Page sizes can be customized globally, or per-domain, or per-page, by creating different customization rules.
 

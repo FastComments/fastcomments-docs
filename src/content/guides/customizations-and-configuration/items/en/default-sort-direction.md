@@ -24,6 +24,6 @@ The valid values for **defaultSortDirection** are:
 
 This can also be done without code. In the widget customization page, see the "Default Sort Direction" section.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.default-sort-direction'; title='Changing The Default Sort Direction' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.default-sort-direction'; alt='Default Sort Direction selector offering Most Relevant, Newest First, and Oldest First'; title='Changing The Default Sort Direction' app-screenshot-end]
 
 Note that, the comments on each page for each sort direction are pre-computed, so all sort directions have the same performance.

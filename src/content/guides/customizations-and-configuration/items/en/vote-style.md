@@ -10,6 +10,6 @@ We use the **voteStyle** flag as follows:
 
 We highly suggest you do this without code as it also enables server-side validations. In the widget customization page, see the "Vote Style" section.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.vote-style'; selector = '.vote-style'; title='Change Voting Style' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.vote-style'; selector = '.vote-style'; alt='Vote Style setting on the widget customization page, offering up and down arrows or heart voting'; title='Change Voting Style' app-screenshot-end]
 
 Voting can also be disabled, see `Disable Voting` above the style options.

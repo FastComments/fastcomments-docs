@@ -5,4 +5,4 @@ In some cases it's desirable to disable this feature, or control what hashtags c
 
 To do so, simply enable `Disable Automatic #hashtag Creation` via the Widget Customization UI.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-automatic-hash-tag-creation']; selector = '.disable-automatic-hash-tag-creation'; title='Disabling Automatic HashTag Creation' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-automatic-hash-tag-creation']; selector = '.disable-automatic-hash-tag-creation'; alt='Disable Automatic #hashtag Creation option enabled in the widget customization UI'; title='Disabling Automatic HashTag Creation' app-screenshot-end]

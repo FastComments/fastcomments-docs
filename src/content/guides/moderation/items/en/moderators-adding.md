@@ -1,12 +1,12 @@
 For administrators, at the top of the Comment Moderation page is an Add Moderators button.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.moderation-settings-options'; title='Comment Moderation Setting Buttons' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.moderation-settings-options'; alt='Row of buttons at the top of the Comment Moderation page, including the Add Moderators button'; title='Comment Moderation Setting Buttons' app-screenshot-end]
 
 If you already have moderators, this button will say "Edit Moderators".
 
 Let's take a look at the "Add a Moderator" page.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/moderator/new'; selector = '.account-block'; title='The Add a Moderator Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/moderator/new'; selector = '.account-block'; alt='Add a Moderator page asking only for the new moderator\'s name and email before sending the invite'; title='The Add a Moderator Page' app-screenshot-end]
 
 To add a moderator all that is needed is a name and an email.
 

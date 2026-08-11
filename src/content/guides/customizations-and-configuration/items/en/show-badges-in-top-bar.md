@@ -4,7 +4,7 @@ By default, FastComments will display user badges only on their comments within 
 
 However, we can show user badges next to their name above the comment form by enabling this feature in the widget customization page:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.show-badges-in-top-bar'; title='Show Badges in Top Bar Option' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.show-badges-in-top-bar'; alt='Show badges in top bar checkbox on the widget customization page, placing badges beside the name above the comment form'; title='Show Badges in Top Bar Option' app-screenshot-end]
 
 This will display the user's badges alongside their name in the top bar area, making their achievements and status more prominent when they're composing a comment.
 

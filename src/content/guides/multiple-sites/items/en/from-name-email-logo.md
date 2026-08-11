@@ -9,7 +9,7 @@ We'll also use our own logo in the footer of these emails.
 
 If you have FastComments Flex or Pro, this all can be customized on a per-domain basis via the "My Domains page":
 
-[app-screenshot-start url='/auth/my-account/configure-domains'; selector = '.content form'; title='Customizing From Name, Email, and Logo' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/configure-domains'; selector = '.content form'; alt='Per-domain email settings form with the From Name, From Email, and logo upload fields'; title='Customizing From Name, Email, and Logo' app-screenshot-end]
 
 When customizing the logo shown in emails, ensure that the size you are uploading is the same size that you want to show in the footer of the email.
 

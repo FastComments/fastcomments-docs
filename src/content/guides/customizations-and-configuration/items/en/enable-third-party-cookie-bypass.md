@@ -14,4 +14,4 @@ We can do this in code by setting the **enableThirdPartyCookieBypass** flag to t
 
 We can also set this up via the Widget Customization UI, under `Enable Third-Party Cookie Popup`:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.enable-third-party-cookie-bypass'; clickSelectors = ['.enable-third-party-cookie-bypass']; title='Enabling Third-Party Cookie Bypass' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.enable-third-party-cookie-bypass'; clickSelectors = ['.enable-third-party-cookie-bypass']; alt='Widget customization page with the Enable Third-Party Cookie Popup checkbox checked'; title='Enabling Third-Party Cookie Bypass' app-screenshot-end]

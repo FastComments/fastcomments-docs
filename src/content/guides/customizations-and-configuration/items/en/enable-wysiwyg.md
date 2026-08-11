@@ -9,4 +9,4 @@ extra code which allows users to bold, underline, etc their text without visible
 
 This can also be done without code. In the widget customization page, see the "Enable Advanced Formatting" option.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-wysiwyg']; selector = '.enable-search-label'; title='Enable WYSIWYG' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-wysiwyg']; selector = '.enable-search-label'; alt='Widget customization page with the Enable Advanced Formatting checkbox checked to turn on the WYSIWYG editor'; title='Enable WYSIWYG' app-screenshot-end]

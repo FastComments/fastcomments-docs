@@ -8,4 +8,4 @@ It may be necessary or desired to keep this relative date format, but also show 
 
 This can be customized without code, on the widget customization page, under Advanced Options. You will first have to enable Absolute Dates to see this option in the UI.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.show-advanced-option', '.absolute-dates', '.relative-and-absolute-dates']; selector = '.relative-and-absolute-dates'; title='Use Both Absolute and Relative Dates' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.show-advanced-option', '.absolute-dates', '.relative-and-absolute-dates']; selector = '.relative-and-absolute-dates'; alt='Advanced Options on the widget customization page with both absolute dates and the combined relative date setting enabled'; title='Use Both Absolute and Relative Dates' app-screenshot-end]

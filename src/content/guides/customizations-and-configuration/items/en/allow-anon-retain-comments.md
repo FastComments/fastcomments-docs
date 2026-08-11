@@ -4,4 +4,4 @@ By default, it does not.
 
 This can be configured, or disabled, via the <a href="https://fastcomments.com/auth/my-account/moderate-comments/settings" target="_blank">Moderation Settings</a> page.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/settings'; selector = '.account-block form'; title='Moderation Settings' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/settings'; selector = '.account-block form'; alt='Moderation Settings form where you set how many days unverified comments are kept before removal'; title='Moderation Settings' app-screenshot-end]

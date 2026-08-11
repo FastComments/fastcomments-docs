@@ -8,4 +8,4 @@ However, we can disable this functionality:
 
 This can also be done without code. In the widget customization page, see the "Disable Profiles" section.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-profiles']; selector = '.disable-profiles'; title='Disable Profiles' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-profiles']; selector = '.disable-profiles'; alt='Widget customization page with the Disable Profiles checkbox checked so avatars no longer open profiles'; title='Disable Profiles' app-screenshot-end]

@@ -3,7 +3,7 @@ between pages and articles.
 
 Here's what the comment copy page form looks like:
 
-[app-screenshot-start url='/auth/my-account/manage-data/copy-comments'; selector = '.account-block'; title='The Copy Comment Form' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/copy-comments'; selector = '.account-block'; alt='Copy comments form with the From URL ID field and the To URL ID and URL fields'; title='The Copy Comment Form' app-screenshot-end]
 
 ### Filling out the "From" Fields
 

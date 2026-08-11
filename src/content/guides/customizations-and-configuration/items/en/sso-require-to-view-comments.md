@@ -10,7 +10,7 @@ We can prevent viewing and interacting with our comment threads, when SSO is set
 
 When doing so, search for SSO, and you will find this option:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.require-sso'; selector = '.require-sso'; title='Require SSO To View Comments' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.require-sso'; selector = '.require-sso'; alt='Require SSO to view comments option enabled in a customization rule, with the security level choice'; title='Require SSO To View Comments' app-screenshot-end]
 
 Enable it and save the customization rule.
 

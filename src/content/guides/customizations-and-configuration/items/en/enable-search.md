@@ -8,4 +8,4 @@ However, we can turn this on by setting the **enableSearch** flag to true:
 
 This can also be done without code. In the widget customization page, see the "Enable Search Box" option.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-search-label']; selector = '.enable-search-label'; title='Enable Search Box' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-search-label']; selector = '.enable-search-label'; alt='Widget customization page with the Enable Search Box checkbox checked to show a search field in the widget'; title='Enable Search Box' app-screenshot-end]

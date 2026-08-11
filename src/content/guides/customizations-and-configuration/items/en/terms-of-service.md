@@ -8,7 +8,7 @@ When enabled:
 
 Navigate to the widget customization page and enable the "Require Terms of Service acceptance" checkbox. Once enabled, you'll see the following options:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.tos-enabled'; selector = '#tos-options'; title='Terms of Service Options' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.tos-enabled'; selector = '#tos-options'; alt='Terms of Service panel showing the TOS text mode selector and the last updated date field'; title='Terms of Service Options' app-screenshot-end]
 
 - **TOS Text Mode**: By default, the checkbox displays "I agree to the Terms of Service and Privacy Policy" with links to both documents. Select "Customize text per locale" to provide your own text for each language.
 - **TOS Last Updated Date**: When you update your Terms of Service, set this date. Users who accepted before this date will be required to accept again.

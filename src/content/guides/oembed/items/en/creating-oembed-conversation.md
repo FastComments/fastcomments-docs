@@ -2,7 +2,7 @@ With FastComments, a conversation has to be first created before it can be embed
 
 To do so, simply visit [fastcomments.com/create](https://fastcomments.com/create).
 
-[app-screenshot-start url='/create'; selector = '.content'; title='The Create a Conversation Form' app-screenshot-end]
+[app-screenshot-start url='/create'; selector = '.content'; alt='The fastcomments.com/create page with the conversation name field and the button that generates a secure link'; title='The Create a Conversation Form' app-screenshot-end]
 
 Once choosing a name, a secure link will be created. 
 

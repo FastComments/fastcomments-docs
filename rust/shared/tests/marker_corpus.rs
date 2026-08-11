@@ -130,3 +130,60 @@ fn related_parameter_corpus_parses() {
         "{failed} related-parameter config(s) failed to eval"
     );
 }
+
+#[test]
+fn app_screenshot_corpus_parses() {
+    let dir = repo_root().join("src/content/guides");
+    let (n, failed) = walk_markdown(
+        &dir,
+        MarkerKind::ApiResourceHeader,
+        "[app-screenshot-start",
+        "app-screenshot-end]",
+    );
+    println!("app-screenshot: {n} unique configs, {failed} failed");
+    // A block that fails to eval is dropped by build.rs with only a
+    // warning, so the page ships with the screenshot silently missing.
+    assert_eq!(failed, 0, "{failed} app-screenshot config(s) failed to eval");
+    assert!(n > 0, "expected to find at least one app-screenshot config");
+}
+
+#[test]
+fn english_app_screenshots_all_have_alt_text() {
+    use fcdocs_browser::ScreenshotArgs;
+
+    let dir = repo_root().join("src/content/guides");
+    let mut missing: Vec<String> = Vec::new();
+    let mut checked = 0usize;
+    for entry in walkdir::WalkDir::new(&dir).into_iter().filter_map(Result::ok) {
+        let p = entry.path();
+        if !entry.file_type().is_file() || p.extension().and_then(|s| s.to_str()) != Some("md") {
+            continue;
+        }
+        // Only the English source is hand-authored; every other locale
+        // is generated from it by `trans run`.
+        if !p.components().any(|c| c.as_os_str() == "en") {
+            continue;
+        }
+        let Ok(text) = std::fs::read_to_string(p) else {
+            continue;
+        };
+        for block in extract_blocks(&text, "[app-screenshot-start", "app-screenshot-end]") {
+            checked += 1;
+            let config = eval_marker_sync(MarkerKind::ApiResourceHeader, block)
+                .unwrap_or_else(|e| panic!("{}: {e}\n  block: {block}", p.display()));
+            let args: ScreenshotArgs =
+                serde_json::from_value(config).expect("deserialize screenshot args");
+            if args.alt.trim().is_empty() {
+                missing.push(format!("{}: title={:?}", p.display(), args.title));
+            }
+        }
+    }
+    println!("app-screenshot: {checked} English blocks checked");
+    assert!(checked > 0, "expected to find English app-screenshot blocks");
+    assert!(
+        missing.is_empty(),
+        "{} English screenshot(s) have no alt text:\n{}",
+        missing.len(),
+        missing.join("\n")
+    );
+}

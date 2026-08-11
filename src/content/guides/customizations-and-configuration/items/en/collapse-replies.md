@@ -8,7 +8,7 @@ This can be configured so that the user has to click "Show Replies" on the top-l
 
 This can be customized without code, on the widget customization page:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.collapse-replies'; title='Collapse Replies' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.collapse-replies'; alt='Collapse replies option in the widget customization UI, hiding child comments behind a Show Replies link'; title='Collapse Replies' app-screenshot-end]
 
 This setting will not affect the number of top-level comments initially loaded. If you have one top level comment, and 29 children, with this setting on you will:
 

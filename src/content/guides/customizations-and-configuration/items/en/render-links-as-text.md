@@ -5,4 +5,4 @@ Some sites may want to disable this, for example to discourage scammers. We prov
 
 This can be customized without code, on the widget customization page, for an entire domain, or page:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.show-advanced-option']; selector = '.comment-html-rendering-mode'; title='Render Links as Text' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.show-advanced-option']; selector = '.comment-html-rendering-mode'; alt='Comment HTML Rendering Option set to Links as Text under Advanced Options in widget customization'; title='Render Links as Text' app-screenshot-end]

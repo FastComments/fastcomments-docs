@@ -14,6 +14,6 @@ All customizable translations can be found <a href="https://fastcomments.com/aut
 However, there is an easier way, via the widget customization UI. In there, we can simply find the text that shows in the commenting widget in the EN_US locale, and specify
 a replacement.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.show-custom-text-option', '#custom-text-options .dropdown-btn', '.dropdown-items a[data-value="JUST_NOW"]']; selector = '#custom-text-options'; title='Custom Text' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.show-custom-text-option', '#custom-text-options .dropdown-btn', '.dropdown-items a[data-value="JUST_NOW"]']; selector = '#custom-text-options'; alt='Custom text panel with a widget string selected from the dropdown and a replacement text field'; title='Custom Text' app-screenshot-end]
 
 All translations overrides currently affect all locales.

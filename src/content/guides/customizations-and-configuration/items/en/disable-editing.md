@@ -4,7 +4,7 @@ However, it is possible to prevent this.
 
 In the widget customization page, see the "Disable Editing" option.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.disable-commenter-comment-edit'; selector = '.disable-commenter-comment-edit'; title='Disable Comment Editing' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.disable-commenter-comment-edit'; selector = '.disable-commenter-comment-edit'; alt='Disable Editing option on the widget customization page, preventing commenters from editing their comments'; title='Disable Comment Editing' app-screenshot-end]
 
 - This only impacts regular Commenters and not moderators or admins, who will still be able to edit.
 - This will also impact API integrations for when `contextUserId` is passed. 

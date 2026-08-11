@@ -98,12 +98,12 @@ pub fn extract_image_refs(content: &str) -> Vec<ImageRef> {
 }
 
 /// Normalize an `[app-screenshot-*]` attribute body for comparison:
-/// split on top-level `;`, drop the `title` attribute (the one field
-/// that's meant to be translated), whitespace-normalize each remaining
-/// `key = 'value'` pair, and sort.
+/// split on top-level `;`, drop the `title` and `alt` attributes (the
+/// two fields that are meant to be translated), whitespace-normalize
+/// each remaining `key = 'value'` pair, and sort.
 ///
-/// Splitting is quote-aware so a translated `title` containing a `;`
-/// doesn't shear the token stream and produce a phantom mismatch.
+/// Splitting is quote-aware so a translated `title` or `alt` containing
+/// a `;` doesn't shear the token stream and produce a phantom mismatch.
 /// A token that doesn't parse as `key = value` is kept verbatim - that
 /// is exactly the malformed case worth failing on (a missing `;`
 /// separator swallows the next attribute into the previous value, and
@@ -116,7 +116,10 @@ pub fn normalize_screenshot_attrs(body: &str) -> String {
             continue;
         }
         match token.split_once('=') {
-            Some((key, value)) if key.trim().eq_ignore_ascii_case("title") => {
+            Some((key, value))
+                if key.trim().eq_ignore_ascii_case("title")
+                    || key.trim().eq_ignore_ascii_case("alt") =>
+            {
                 let _ = value; // translated on purpose; never compared
             }
             Some((key, value)) => {
@@ -327,6 +330,31 @@ mod tests {
         let en = "[app-screenshot-start url='/auth/import?demo=true'; selector = '.content'; title='Import Job Status' app-screenshot-end]";
         let bg = "[app-screenshot-start url='/auth/import?demo=true'; selector = '.content' title='Статус на задачата' app-screenshot-end]";
         assert!(image_diff(en, bg).is_some());
+    }
+
+    #[test]
+    fn screenshot_alt_may_be_translated() {
+        let en = "[app-screenshot-start url='/auth/import'; selector = '.content'; alt='Import page with the provider field'; title='Import Job Status' app-screenshot-end]";
+        let bg = "[app-screenshot-start url='/auth/import'; selector = '.content'; alt='Страница за импортиране'; title='Статус на задачата' app-screenshot-end]";
+        assert_eq!(image_diff(en, bg), None);
+    }
+
+    #[test]
+    fn screenshot_dropped_alt_is_not_a_mismatch() {
+        // `alt` is translated prose, so its presence is never compared.
+        // A url change in the same block must still be caught.
+        let en = "[app-screenshot-start url='/a'; selector = '.b'; alt='A'; title='T' app-screenshot-end]";
+        let fr = "[app-screenshot-start url='/a'; selector = '.b'; title='Le T' app-screenshot-end]";
+        assert_eq!(image_diff(en, fr), None);
+        let de = "[app-screenshot-start url='/other'; selector = '.b'; alt='A'; title='T' app-screenshot-end]";
+        assert!(image_diff(en, de).is_some());
+    }
+
+    #[test]
+    fn semicolon_inside_translated_alt_does_not_shear_tokens() {
+        let en = "[app-screenshot-start url='/a'; selector = '.b'; alt='Options'; title='T' app-screenshot-end]";
+        let fr = "[app-screenshot-start url='/a'; selector = '.b'; alt='Options; avancées'; title='Le T' app-screenshot-end]";
+        assert_eq!(image_diff(en, fr), None);
     }
 
     #[test]

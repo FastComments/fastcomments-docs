@@ -8,7 +8,7 @@ Comments will also be unable to be edited or deleted.
 
 This can be customized without code, on the widget customization page, for an entire domain, or page:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.prevent-new-replies'; title='Making The Comment Thread Readonly' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.prevent-new-replies'; alt='Prevent new replies setting on the widget customization page, which locks a thread for a domain or page'; title='Making The Comment Thread Readonly' app-screenshot-end]
 
 ## Update!
 

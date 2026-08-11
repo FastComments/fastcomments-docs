@@ -11,7 +11,7 @@ usually change the language used to show text to the user.
 
 This can be defined using the widget customization UI. See the "Locale / Language" option:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.locale-override'; title='Changing The Locale / Language' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.locale-override'; alt='Locale / Language dropdown on the widget customization page used to override the visitor\'s detected locale'; title='Changing The Locale / Language' app-screenshot-end]
 
 #### Via Code
 

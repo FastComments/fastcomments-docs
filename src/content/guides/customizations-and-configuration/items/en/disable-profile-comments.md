@@ -8,4 +8,4 @@ However, we can disable this tab:
 
 This can also be done without code. In the widget customization page, see the "Disable Profile Comments" section.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-profile-comments']; selector = '.disable-profile-comments'; title='Disable Profile Comments' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-profile-comments']; selector = '.disable-profile-comments'; alt='Widget customization page with the Disable Profile Comments checkbox checked to hide the profile comments tab'; title='Disable Profile Comments' app-screenshot-end]

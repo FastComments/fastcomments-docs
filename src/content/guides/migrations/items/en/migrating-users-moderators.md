@@ -1,7 +1,7 @@
 With FastComments, many users can be added to your tenant, and their permissions can be setup based on the roles in your
 organization.
 
-[app-screenshot-start url='/auth/my-account/users/new/edit'; selector = '.account-block'; title='Adding a User' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/users/new/edit'; selector = '.account-block'; alt='New user form for adding someone to your tenant, with permission options for their role'; title='Adding a User' app-screenshot-end]
 
 Users can be added via this UI. If you have many users, we can import them for you [via customer support](https://fastcomments.com/auth/my-account/help).
 

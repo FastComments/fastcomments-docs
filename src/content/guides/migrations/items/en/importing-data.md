@@ -15,14 +15,14 @@ We natively support importing exports from the following providers:
 
 By navigating [here](https://fastcomments.com/auth/my-account/manage-data/import) we can upload the file containing the data to migrate.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; title='The Import Page Form' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; alt='FastComments import page with the provider selection and file upload fields for an export file'; title='The Import Page Form' app-screenshot-end]
 
 ### Monitoring Imports
 
 FastComments uses a job processing system for processing imports and exports. Once the system has picked up your job, it will
 periodically report the status of the job in the import or export UI.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; title='Import Job Status' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; alt='Import page showing a running import job and the status reported by the job processing system'; title='Import Job Status' app-screenshot-end]
 
 Note that the status for Imports and Export are viewable by all administrators in the account.
 

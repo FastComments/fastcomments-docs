@@ -1,6 +1,6 @@
 Navigate to your account dashboard and go to the [RSS Feed page](https://fastcomments.com/auth/my-account/rss).
 
-[app-screenshot-start url='/auth/my-account/rss'; selector = '.content'; title='RSS Feed Configuration' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/rss'; selector = '.content'; alt='Account RSS Feed page with the Enable RSS Feed Access checkbox, the feed URL, and Copy and View Feed buttons'; title='RSS Feed Configuration' app-screenshot-end]
 
 On the RSS Feed page, check the "Enable RSS Feed Access" checkbox to generate your unique RSS feed URL.
 

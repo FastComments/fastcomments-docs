@@ -9,4 +9,4 @@ This toolbar can be disabled in code or with the Customization UI.
 
 This can also be done without code. In the widget customization page, see the "Disable The Reply Toolbar" option.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-toolbar']; selector = '.disable-toolbar'; title='Disabling The Toolbar' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-toolbar']; selector = '.disable-toolbar'; alt='Widget customization page with the Disable The Reply Toolbar checkbox checked to remove formatting shortcuts'; title='Disabling The Toolbar' app-screenshot-end]

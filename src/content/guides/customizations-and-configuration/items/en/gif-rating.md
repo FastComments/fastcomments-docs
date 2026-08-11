@@ -10,4 +10,4 @@ This can be set in the code or via the UI. In the code we can do it as follows:
 
 In the UI, you'll find this under `Gif Picker Rating` as long as `Disable Image Uploads?` is not checked.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.gif-rating'; title='Setting The Gif Rating' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.gif-rating'; alt='Gif Picker Rating dropdown on the widget customization page offering g, pg, pg-13 and r'; title='Setting The Gif Rating' app-screenshot-end]
