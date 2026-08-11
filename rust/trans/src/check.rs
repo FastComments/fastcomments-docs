@@ -134,6 +134,14 @@ pub async fn run() -> Result<()> {
         }
     }
 
+    // Image parity check. Shares the walker with the
+    // `trans validate-images` build gate so both agree on what counts
+    // as a mismatch. Flagged here (not just at the gate) so build.sh
+    // branches into `trans run`, which re-translates the offending
+    // files instead of letting the gate fail with nothing having tried
+    // to fix it.
+    let image_mismatches = crate::validate::audit(&guides_dir, &locales);
+
     // UI translations gap check. See audit_ui_translations.
     let ui_audit = audit_ui_translations(&translations_json, &ui_cache, &locales);
     let ui_missing = ui_audit.missing;
@@ -152,6 +160,7 @@ pub async fn run() -> Result<()> {
         missing_meta_json = meta_missing,
         stale_meta_json = meta_stale,
         inline_code_mismatches = inline_code_errors.len(),
+        image_mismatches = image_mismatches.len(),
     );
     if !stale_sample.is_empty() {
         info!("first 10 stale UI strings (source value edited since translation):");
@@ -182,6 +191,12 @@ pub async fn run() -> Result<()> {
             );
         }
     }
+    if !image_mismatches.is_empty() {
+        info!("image mismatches (translated item's images differ from the source's):");
+        for m in image_mismatches.iter().take(10) {
+            info!("  {}", m.describe());
+        }
+    }
     if !needs_migration.is_empty() {
         warn!(
             count = needs_migration.len(),
@@ -199,6 +214,7 @@ pub async fn run() -> Result<()> {
         || meta_gaps > 0
         || !needs_migration.is_empty()
         || !inline_code_errors.is_empty()
+        || !image_mismatches.is_empty()
     {
         std::process::exit(1);
     }

@@ -49,6 +49,30 @@ When translating documentation files:
 8. **Preserve** inline code (backtick spans like \`tenantId\`) — do not translate the content.
 9. Keep the same line structure and paragraph breaks as the source.
 10. For `en_us` locale, just copy the source content verbatim (no translation needed).
+11. **Images must match the source exactly.** Reproduce every `<img>` tag, every markdown
+    `![alt](url)` image, and every `[app-screenshot-start ... app-screenshot-end]` block
+    exactly once, in source order. Never drop one, never duplicate one (and never emit the
+    English text alongside the translation - that's how duplicates get introduced), and
+    never alter an image path: `src="..."`, the markdown URL, and the `url=` / `selector=`
+    / `clickSelector=` attributes are technical identifiers. Only `alt` / `title` text is
+    translated. Inside `[app-screenshot-*]`, keep the `; ` separator between every
+    attribute, including the one before `title=`.
+
+Rule 11 is enforced by `trans validate-images`, a hard build gate - see below.
+
+### Validating translations
+
+```bash
+./rust/target/release/trans validate-images
+```
+
+Exits non-zero and lists every translated item whose images differ from the default-locale
+source. It runs as its own `build.sh` phase after `trans check` / `trans run`, so a bad
+translation fails the build rather than silently shipping a page with a missing, duplicated,
+or 404 image. `trans check` reports the same mismatches, and `trans run` re-translates any
+file that has one (even when the translation cache says it's fresh) so the gate can't
+deadlock the build. Extraction + comparison live in `rust/trans/src/images.rs`; the walker
+is `rust/trans/src/validate.rs`.
 
 ### Batching strategy
 

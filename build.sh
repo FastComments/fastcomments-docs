@@ -167,6 +167,19 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
     echo "All translations up to date."
   fi
 
+  # Image parity gate. Every translated item must reference the exact
+  # same images as its default-locale source (<img src>, markdown
+  # ![](url), and [app-screenshot-*] attributes minus the translatable
+  # title). A translator that drops, duplicates, or "translates" an
+  # image path silently ships a localized page with a missing or wrong
+  # picture, so this is a hard failure rather than a warning. Runs
+  # after the translation block so freshly-written output is covered.
+  validate_images_run() { ./rust/target/release/trans validate-images; }
+  if ! phase "trans validate-images" validate_images_run; then
+    echo "ERROR: translated guides do not have the same images as the reference locale"
+    exit 1
+  fi
+
   # MAX_BROWSERS=1 caps chromiumoxide concurrency for the screenshot marker.
   sitegen_build() { MAX_BROWSERS=1 ./rust/target/release/sitegen build; }
   if ! phase "sitegen build" sitegen_build; then

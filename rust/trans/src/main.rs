@@ -11,16 +11,22 @@
 //!               and prompt shapes as Node's the legacy Node translator.
 //!   `cleanup` - empties stale translation files matching Node's
 //!               cleanup-empty-translations.js + cleanup-empty-generated.js.
+//!   `validate-images`
+//!             - build gate: every translated item must reference the
+//!               exact same images as its default-locale source.
+//!               Exits non-zero on any mismatch.
 
 mod check;
 mod cleanup;
 mod discover;
+mod images;
 mod meta_json;
 mod json_translator;
 mod llm_client;
 mod run;
 mod snapshot;
 mod ui;
+mod validate;
 
 use anyhow::Result;
 
@@ -32,6 +38,7 @@ async fn main() -> Result<()> {
     let cmd = args.next().unwrap_or_else(|| "check".to_string());
     match cmd.as_str() {
         "check" => check::run().await,
+        "validate-images" => validate::run().await,
         "cleanup" => {
             let opts = cleanup::parse_options(args)?;
             cleanup::run_with(opts).await

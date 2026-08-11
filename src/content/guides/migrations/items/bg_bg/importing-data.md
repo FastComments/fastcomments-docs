@@ -1,7 +1,7 @@
----
-While FastComments Support can help with migrations, most can be performed and monitored easily without any intervention of support staff.
+Въпреки че поддръжката на FastComments може да съдейства при миграции, повечето от тях могат да бъдат извършени и наблюдавани лесно без каквато и да е намеса
+на екипа по поддръжката.
 
-We natively support importing exports from the following providers:
+Поддържаме нативно импортирането на експорти от следните доставчици:
 
 - Commento
 - Disqus
@@ -10,31 +10,33 @@ We natively support importing exports from the following providers:
 - IntenseDebate
 - Just-Comments
 - Cusdis
-- WordPress (via the plugin)
-- AnyComment (Via WordPress Import/Export)
+- WordPress (чрез плъгина)
+- AnyComment (чрез импортиране/експортиране на WordPress)
 
-By navigating [here](https://fastcomments.com/auth/my-account/manage-data/import) we can upload the file containing the data to migrate.
+Като отидем [тук](https://fastcomments.com/auth/my-account/manage-data/import), можем да качим файла, съдържащ данните за мигриране.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; title='Формулярът за импортиране' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; title='Формулярът на страницата за импортиране' app-screenshot-end]
 
-### Наблюдение на импорти
+### Наблюдение на импортите
 
-FastComments uses a job processing system for processing imports and exports. Once the system has picked up your job, it will periodically report the status of the job in the import or export UI.
+FastComments използва система за обработка на задачи за обработката на импорти и експорти. След като системата поеме вашата задача, тя
+периодично ще докладва състоянието ѝ в интерфейса за импортиране или експортиране.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content' title='Статус на задачата за импортиране' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; title='Състояние на задачата за импортиране' app-screenshot-end]
 
-Note that the status for Imports and Export are viewable by all administrators in the account.
+Имайте предвид, че състоянието на импортите и експортите е видимо за всички администратори в акаунта.
 
-If your job fails, it will not automatically be restarted. The import will have to be attempted again. If any import or export fails, our system administrators are automatically notified. If we identify an issue, we'll reach out to you to see if we can help.
+Ако задачата ви е неуспешна, тя няма да бъде рестартирана автоматично. Импортирането ще трябва да бъде опитано отново. Ако някое импортиране или експортиране е неуспешно,
+нашите системни администратори получават автоматично известие. Ако установим проблем, ще се свържем с вас, за да видим дали можем да помогнем.
 
 ### Повторно стартиране на импорта
 
-During some migrations, it is necessary to run the import multiple times. For example, it is common to do a first pass migration for testing, and then run the import again with the latest data before flipping the switch.
+По време на някои миграции е необходимо импортирането да се изпълни няколко пъти. Например, обичайна практика е да се направи първоначална
+миграция за тестване, а след това импортирането да се изпълни отново с най-новите данни, преди да се направи превключването.
 
-Re-importing the same content **will not create duplicates**.
+Повторното импортиране на едно и също съдържание **няма да създаде дубликати**.
 
-### Сигурност на данните и изтичане
+### Сигурност и изтичане на данните
 
-Import files are not accessible via outside requests in any way, and import files are deleted from our system as soon as the import completes.
-
----
+Файловете за импортиране не са достъпни по никакъв начин чрез външни заявки и се изтриват от нашата система веднага щом
+импортирането приключи.

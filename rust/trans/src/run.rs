@@ -516,6 +516,19 @@ async fn process_one_task(
                 task.guide_id, task.locale, task.filename, src_counts, tr_counts
             );
         }
+        // Same shape for image parity. This is only a warning here —
+        // the hard gate is `trans validate-images`, run as its own
+        // build.sh phase, so one bad file surfaces with every other
+        // bad file in one report instead of aborting the run mid-way.
+        if let Some(diff) = crate::images::image_diff(&source, &translation) {
+            warn!(
+                "[warning] image mismatch in {}/{}/{}: {}",
+                task.guide_id,
+                task.locale,
+                task.filename,
+                diff.describe()
+            );
+        }
     }
 
     // Save translated file.
@@ -667,9 +680,30 @@ fn build_task_list_filtered(
                 let target = items_path.join(locale).join(&src.filename);
                 let cache_key = cache_key(&guide_id, locale, &src.filename);
                 let cached_hash = cache.get(&cache_key);
-                let needs = force
+                let mut needs = force
                     || !target.exists()
                     || cached_hash != Some(&source_hash);
+                // Cache-fresh but the existing translation lost /
+                // duplicated / rewrote an image. Without this the
+                // `validate-images` gate would fail the build forever:
+                // `check` flags the mismatch, build.sh branches into
+                // `run`, and `run` skips the file because its hash
+                // still matches. Re-translate it instead. Same
+                // criterion as validate::audit, including the absence
+                // of a "source has no images" shortcut — an invented
+                // image fails the gate too and must be re-translated.
+                if !needs {
+                    if let Ok(translated) = std::fs::read_to_string(&target) {
+                        if let Some(diff) = crate::images::image_diff(&content, &translated) {
+                            warn!(
+                                "[image-mismatch] {guide_id}/{locale}/{}: {} - re-translating",
+                                src.filename,
+                                diff.describe()
+                            );
+                            needs = true;
+                        }
+                    }
+                }
                 if needs {
                     tasks.push(Task {
                         guide_id: guide_id.clone(),
@@ -720,6 +754,9 @@ fn build_prompt(content: &str, locale: &str, locales: &Locales) -> String {
     lines.push("8. PRESERVE all markdown formatting (headers, lists, bold, links, etc.)".to_string());
     lines.push("9. Translate ONLY the natural language text (descriptions, explanations)".to_string());
     lines.push("10. Keep the same line structure and paragraph breaks".to_string());
+    lines.push("11. Reproduce EVERY image exactly once, in the same order as the source. This covers <img> tags, markdown ![alt](url) images, and [app-screenshot-start ... app-screenshot-end] blocks. Never drop an image, never repeat one, and never emit a section twice.".to_string());
+    lines.push("12. NEVER translate or alter an image path: the src=\"...\" of an <img>, the URL of a markdown image, and the url=/selector=/clickSelector= attributes of an [app-screenshot-*] block must be byte-for-byte identical to the source. Only the alt/title text may be translated.".to_string());
+    lines.push("13. Inside [app-screenshot-start ... app-screenshot-end], keep the `; ` separator between EVERY attribute, including the one before title=. Dropping it breaks the build.".to_string());
     lines.push(String::new());
     lines.push("The title attributes in [inline-code-attrs-start] tags SHOULD be translated.".to_string());
     lines.push("For example: title = 'Example cURL Request' should become title = 'Exemple de requête cURL' in French.".to_string());
