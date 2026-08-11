@@ -1,16 +1,16 @@
-FastComments підтримує такі функції з SSR:
+FastComments підтримує наступні функції з SSR:
 
-- Налаштовуваний віджет коментарів.
+- Налаштовуваний віджет коментування.
 - Анонімне коментування.
-- Коментування при вході в систему.
+- Коментування під час входу в систему.
 - SSO.
 - Кореневі та вкладені відповіді.
-- Перегляд & пагінація гілок коментарів.
-- Голосування, включно з анонімним голосуванням.
+- Перегляд та пагінація потоків коментарів.
+- Голосування, включаючи анонімне голосування.
 - Зміна напрямку сортування за замовчуванням.
 
 ### Приклад
 
 Приклад FastComments SSR доступний [тут](https://fastcomments.com/ssr/comments?tenantId=L177BUDVvSe&urlId=ssr-test&url=https%3A%2F%2Ffastcomments.com%2Fssr%2Fcomments%2F%3FtenantId%3DL177BUDVvSe%26urlId%3Dssr-test).
 
-[app-screenshot-start url='https://fastcomments.com/ssr/comments?tenantId=L177BUDVvSe&urlId=ssr-test&url=https%3A%2F%2Ffastcomments.com%2Fssr%2Fcomments%2F%3FtenantId%3DL177BUDVvSe%26urlId%3Dssr-test'; selector = 'body'; title='FastComments SSR' app-screenshot-end]
+[app-screenshot-start url='https://fastcomments.com/ssr/comments?tenantId=L177BUDVvSe&urlId=ssr-test&url=https%3A%2F%2Ffastcomments.com%2Fssr%2Fcomments%2F%3FtenantId%3DL177BUDVvSe%26urlId%3Dssr-test'; selector = 'body'; alt='Потік коментарів, що рендериться на сервері, з вкладеними відповідями, кнопками голосування та полем вводу коментаря на прикладі сторінки SSR'; title='FastComments SSR' app-screenshot-end]

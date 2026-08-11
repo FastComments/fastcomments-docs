@@ -1,47 +1,47 @@
-Ponekad FastComments mora da pošalje e-poštu vašim korisnicima, posebno ako ne koristite Secure SSO.
+Ponekad FastComments mora da pošalje e‑mail vašim korisnicima, posebno ako ne koristite Secure SSO.
 
-Primeri za to uključuju verifikaciju naloga ili aktivnosti kada komentarišu prvi put. FastComments će im takođe slati obaveštenja za odgovore na njihove komentare.
+Primeri uključuju verifikaciju njihovog naloga ili aktivnosti kada prvi put komentarišu. FastComments
+će im takođe slati obaveštenja o odgovorima na njihove komentare.
 
-Kada FastComments pošalje e-poštu vašim korisnicima, koristićemo podrazumevano From Name i Email `FastComments Robot` i `noreply@fastcomments.com`.
+Kada FastComments šalje e‑mailove vašim korisnicima, koristićemo podrazumevano ime pošiljaoca i e‑mail `FastComments Robot` i `noreply@fastcomments.com`.
 
-Takođe ćemo koristiti naš logo u podnožju ovih e-poruka.
+Takođe ćemo koristiti naš logo u podnožju ovih e‑mailova.
 
-Ako imate FastComments Flex ili Pro, sve ovo se može prilagoditi po domenima putem "My Domains page":
+Ako imate FastComments Flex ili Pro, sve ovo se može prilagoditi po domenu putem stranice „My Domains“:
 
-[app-screenshot-start url='/auth/my-account/configure-domains'; selector = '.content form'; title='Customizing From Name, Email, and Logo' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/configure-domains'; selector = '.content form'; alt='Obrazac za podešavanje e‑mailova po domenu sa poljima Za ime, Za e‑mail i otpremanje loga'; title='Prilagođavanje imena pošiljaoca, e‑mail adrese i loga' app-screenshot-end]
 
-Kada prilagođavate logo koji se prikazuje u e-porukama, proverite da veličina koju otpremate odgovara veličini koju želite da prikažete u podnožju e-poruke.
+Kada prilagođavate logo koji se prikazuje u e‑mailovima, uverite se da je veličina koju otpremate ista kao veličina koju želite da se prikaže u podnožju e‑maila.
 
 ### Kada prilagođavate `From Domain`
 
-Ako prilagodite `From Domain`, provajderi i klijenti e-pošte treba da znaju da je FastComments ovlašćen da šalje e-poštu u ime vašeg domena. U suprotnom,
-definisanje `From Domain` bez sprovođenja koraka ispod verovatno će rezultovati time da e-poruke završe u neželjenoj pošti.
+Ako prilagodite `From Domain`, provajderi e‑maila i klijenti moraju da znaju da je FastComments ovlašćen da šalje e‑mailove u vaše ime. U suprotnom, definisanje `From Domain` bez praćenja koraka ispod verovatno će rezultirati slanjem e‑mailova u spam.
 
-#### 1. Setup SPF
+#### 1. Postavljanje SPF
 
-Da biste omogućili FastComments-u da bezbedno šalje e-poštu kao vaš domen, obavezno dodajte SPF zapis koji nam to dopušta.
+Da biste omogućili FastComments-u da sigurno šalje e‑mailove kao vaš domen, uverite se da ste dodali SPF zapis koji nam to dozvoljava.
 
-Obezbedite da postoje SPF zapisi koji omogućavaju `mail.fastcomments.com` i `sib.fastcomments.com` da šalju poštu u ime vašeg domena.
+Uverite se da postoje SPF zapisi koji dozvoljavaju `mail.fastcomments.com` i `sib.fastcomments.com` da šalju poštu kao vaš domen.
 
-Više informacija o tome kako to uraditi nalazi se ovde: https://mailtrap.io/blog/multiple-spf-records/
+Više informacija o tome možete pronaći ovde: https://mailtrap.io/blog/multiple-spf-records/
 
-#### 2. Setup DKIM
+#### 2. Postavljanje DKIM
 
-Pored SPF-a, trebalo bi da podesite i DKIM. Kada je vaša DNS konfiguracija spremna, možete kliknuti na "Show Advanced" na stranici za konfiguraciju domena
+Pored SPF-a, treba da postavite DKIM. Kada vaša DNS konfiguracija bude spremna, možete kliknuti „Prikaži napredno“ na stranici za konfiguraciju domena
 da biste prikazali DKIM podešavanja po domenu.
 
-Takođe možete [pozvati API](/guide-api.html#domain-config-structure) da podesite DKIM konfiguraciju.
+Takođe možete [pozvati API](/guide-api.html#domain-config-structure) da postavite DKIM konfiguraciju.
 
 ### Linkovi za odjavu
 
-Kada koristite SSO, funkcije za odjavu koje se koriste u e-porukama i obaveštenjima mogu se prilagoditi [putem DomainConfigs API](/guide-api.html#domain-config-structure).
+Kada koristite SSO, funkcije odjave koje se koriste u e‑mailovima i obaveštenjima mogu se prilagoditi [preko DomainConfigs API-ja](/guide-api.html#domain-config-structure).
 
-### Obfuskacija linkova u e-porukama
+### Obfuskacija linkova u e‑mailu
 
-Ako reputacija domena vašeg sajta uzrokuje da obaveštenja stižu u neželjenu poštu, možete usmeriti dugmad "view comment" preko `fastcomments.com` umesto da povezujete direktno na vašu stranicu. Provajderi poštanskih sandučeta ocenjuju svaki link u telu e-poruke prema reputaciji destinacije, pa kada je vaš domen označen, goli linkovi doprinose spam skoru bez obzira koliko je vaše slanje čisto podešeno.
+Ako reputacija domena vašeg sajta uzrokuje da obaveštajni e‑mailovi završe u spamu, možete usmeriti dugmad „view comment“ preko `fastcomments.com` umesto da direktno povežete na vašu stranicu. Provajderi poštanskih sandučića ocenjuju svaki link u telu e‑maila prema reputaciji odredišta, pa kada je vaš domen označen, same veze doprinose spam skor-u bez obzira koliko je vaša poštanska konfiguracija čista.
 
-Omogućite ovo pod "Show Advanced" na My Domains page, u sekciji "Email Link Obfuscation". Podešavanje je po domenu.
+Omogućite ovo pod „Prikaži napredno“ na stranici My Domains, u odeljku „Obfuskacija linkova u e‑mailu“. Podešavanje je po domenu.
 
-Kada je omogućeno, linkovi u mention, reply, new-comment, subscribed-page, profile-comment i digest e-porukama se prepisuju u kratke token-e koji preusmeravaju na originalnu stranicu pri kliku. Destinacija je vezana za vaš tenant: preusmeravanje će proslediti samo URL-ove čiji host odgovara jednom od vaših konfigurisанih domena, i tokeni automatski ističu nakon 30 dana.
+Kada je omogućeno, linkovi u e‑mailovima za pominjanje, odgovor, novi komentar, pretplaćenu stranicu, komentar profila i sažetke se prepisuju u kratke tokene koji preusmeravaju na originalnu stranicu po kliku. Odredište je vezano za vaš tenant: preusmeravanje vodi samo na URL‑ove čiji host odgovara jednom od vaših konfigurisanih domena, a tokeni automatski ističu posle 30 dana.
 
-Iskustvo pri kliku ostaje nepromenjeno. Čitaoci i dalje stižu na vašu stranicu sa komentarom skrolovanim u vidokrugu.
+Iskustvo klika ostaje nepromenjeno. Čitaoci i dalje dolaze na vašu stranicu sa komentarom pomerenim u vidno polje.

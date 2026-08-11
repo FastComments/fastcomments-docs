@@ -1,15 +1,17 @@
-Када корисници коментаришу, а нису пријављени, затражиће им се да наведу своју е-пошту.
+When users comment, and they are not logged in, they will be asked to provide their email.
 
-Ово ће креирати "неверификовану сесију" за тог корисника, и затражићемо од њега да потврди ту сесију путем е-поште.
+This will create an "unverified session" for that user, and we will ask them to verify that session via email.
 
-За неке сајтове или апликације пожељно је да кориснику не буде тражена е-пошта приликом коментарисања или гласања.
+For some sites, or applications, it's desirable not to ask the user for their email when commenting or voting.
 
-Омогућавање анонимног коментарисања чини поље за унос е-поште опционалним. Међутим, можемо га у потпуности онемогућити. Прво омогућите анонимно коментарисање, и онда ће се појавити опција да онемогућите поља за унос е-поште.
+Enabling anonymous commenting makes the email input field optional. However, we can disable it completely. First, enable
+anonymous commenting, and then the option to disable the email input fields will appear.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments', '.disable-email-inputs']; selector = '.disable-email-inputs'; title='Disable Email Inputs' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments', '.disable-email-inputs']; selector = '.disable-email-inputs'; alt='Опција за потпуно скривање поља за е‑мејл, приказана након што је анонимно коментарисање омогућено у UI прилагођавања'; title='Онемогући уношење е‑мејл поља' app-screenshot-end]
 
-Када је ово укључено, поља за е-пошту уопште се неће приказивати у свим нашим производима за коментарисање.
+With this on, the email fields will not show at all in all of our commenting products.
 
-Имајте на уму да ће са овом конфигурацијом сви коментари бити неверификовани осим ако корисник не креира налог и не пријави се на https://fastcomments.com.
+Note that, with this configuration, all comments will be unverified unless the user creates an account and logs into
+https://fastcomments.com.
 
-Можда ћете пожелети да размислите о [искључивању ознаке 'неверификовано'](/guide-customizations-and-configuration.html#disable-unverified-label).
+You may want to consider [disabling the unverified label](/guide-customizations-and-configuration.html#disable-unverified-label).

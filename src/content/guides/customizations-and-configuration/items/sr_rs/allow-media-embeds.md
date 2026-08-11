@@ -1,16 +1,13 @@
----
-По подразумеваној поставци FastComments не дозвољава iframe-ове у коментарима. Када омогућите уграђивање медија, коментатори могу налепити уграђени код (тај `<iframe>` исечак) са поузданих провајдера као што су YouTube, Vimeo, SoundCloud и Spotify, и он ће се приказати унутар коментара.
+By default FastComments does not allow iframes in comments. When you enable media embeds, commenters can paste the embed code (the `<iframe>` snippet) from trusted providers like YouTube, Vimeo, SoundCloud, and Spotify, and it will render inline in the comment.
 
-Из безбедносних разлога, ово није конфигурациона ознака видџета на клијентској страни. То је подешавање на серверској страни, верификовано када се сваки коментар снима, тако да се не може укључити са странице. Дозвољени су само iframe-ови који показују на уграђену листу поузданих провајдера. Било који други iframe се уклања.
+For security, this is not a client-side widget config flag. It is a server-side setting, validated when each comment is saved, so it cannot be turned on from the page. Only iframes pointing at a built-in list of trusted providers are allowed. Any other iframe is removed.
 
-Ово се ради без кода, на страници за прилагођавање видџета:
+This is done without code, on the widget customization page:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.allow-embeds'; selector = '.allow-embeds'; title='Allow Media Embeds' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.allow-embeds'; selector = '.allow-embeds'; alt='Podešavanje medijskih ugradnji uključeno na stranici prilagođavanja widgeta, omogućavajući komentatorima da nalepi pouzdane iframe ugradnje'; title='Dozvoli medijske ugradnje' app-screenshot-end]
 
-### Додавање сопствених провајдера
+### Adding Your Own Providers
 
-Ако желите да дозволите уграђивања са провајдера који није на уграђеној листи поузданих провајдера, додајте његов hostname у поље "Additional Embed Domains" на истој страници. Ови hostname-ови су дозвољени поред уграђених провајдера. Упоређивање је тачно, па укључите пун hostname (на пример, player.example.com). Све што не наведете остаје блокирано.
+If you want to allow embeds from a provider that is not on the built-in trusted list, add its hostname in the "Additional Embed Domains" field on the same page. These hostnames are allowed in addition to the built-in providers. Matching is exact, so include the full hostname (for example, player.example.com). Anything you do not list stays blocked.
 
-И обично поље за коментар и WYSIWYG уређивач подржавају налепљивање уграђивања. У WYSIWYG уређивачу уграђивање се убацује као блок који се може уклонити.
-
----
+Both the plain comment box and the WYSIWYG editor support pasting an embed. In the WYSIWYG editor the embed is inserted as a removable block.

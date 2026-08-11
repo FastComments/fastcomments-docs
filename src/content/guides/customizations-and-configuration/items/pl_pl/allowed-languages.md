@@ -1,14 +1,14 @@
 ---
-Domyślnie FastComments nie ogranicza języków używanych do komentowania. 
+Domyślnie FastComments nie ogranicza języków używanych w komentarzach. 
 
-Może być pożądane ograniczenie języków używanych przez społeczność.
+Może być pożądane ograniczenie języków, które społeczność używa.
 
-Można to skonfigurować bez użycia kodu, na stronie dostosowywania widżetu:
+Można to skonfigurować bez kodu, na stronie dostosowywania widgetu:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allowed-languages']; selector = '.allowed-languages'; title='Allowed Languages' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allowed-languages']; selector = '.allowed-languages'; alt='Selektor dozwolonych języków na stronie dostosowywania widgetu, służący do ograniczenia, jakich języków mogą używać komentarze'; title='Dozwolone języki' app-screenshot-end]
 
-System przeanalizuje ich komentarz i określi jego język, a następnie porówna go z listą dozwolonych języków.
+System przetworzy ich komentarz, określi jego język, a następnie dopasuje go do listy dozwolonych.
 
-Jeśli komentarz jest napisany w języku, który nie jest dozwolony, zostanie wyświetlony zlokalizowany komunikat o błędzie. 
+Jeśli komentarz zostanie napisany w języku, który nie jest dozwolony, wyświetlony zostanie zlokalizowany komunikat o błędzie. 
 
 ---

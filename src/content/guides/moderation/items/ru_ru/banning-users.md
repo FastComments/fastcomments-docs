@@ -1,27 +1,27 @@
-Существует два способа запретить пользователям комментировать на вашем сайте с помощью FastComments.
+There are two ways to ban users from commenting on your site with FastComments.
 
-Первый: если вы уже знаете их электронную почту, вы можете ввести её на странице <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">заблокированных пользователей</a>.
+The first is if you already know their email, you can enter it on the <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">забаненных пользователей</a> page.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; title='The Banned Users Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; alt='Список забаненных пользователей в разделе Moderate Comments, с адресами забаненных email и кнопкой для добавления нового бана'; title='Страница забаненных пользователей' app-screenshot-end]
 
-К этой странице можно получить доступ через Moderate Comments -> Banned Users
+This page can be accessed via Moderate Comments -> Banned Users
 
-Когда мы блокируем пользователя, можно выбрать тип, либо Permanent, либо Permanent Shadow Ban:
+When we go to ban a user, we can pick a type, either Permanent or Permanent Shadow Ban:
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; title='Banning a User' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; alt='Форма нового бана с полем email и выбором типа бана: Permanent или Permanent Shadow Ban'; title='Бан пользователя' app-screenshot-end]
 
-Второй способ заблокировать пользователя — нажать кнопку бана, которая размещена у каждого комментария на странице модерации комментариев.
+The second way to ban a user is by clicking the ban button that is placed on each comment on the Comment Moderation page.
 
-При нажатии кнопки бана появятся параметры, где можно указать тип и длительность бана.
+When we click the ban button, you'll be presented with some options, where we can specify the ban type and duration.
 
-### Алиасы электронной почты
+### Псевдонимы email
 
-При блокировке пользователя по электронной почте FastComments автоматически игнорирует `+` алиасы. Например, блокировка `user+alias@gmail.com` также заблокирует `user@gmail.com` и любую другую `+` вариацию этого адреса, такую как `user+other@gmail.com`.
+When banning a user by email, FastComments automatically ignores `+` aliases. For example, banning `user+alias@gmail.com` will also ban `user@gmail.com` and any other `+` variation of that address, such as `user+other@gmail.com`.
 
 ### Теневые баны
 
-Теневой бан — это тип блокировки, который создаёт видимость того, что комментарий или голос пользователя были успешно сохранены, хотя на самом деле это не так. Это может быть желаемым поведением в определённых ситуациях.
+A shadow-ban is a type of ban that makes it appear that the user's comment or vote was saved successfully, when in fact it was not. This may be desirable in certain situations.
 
-### Блокировка по IP-адресу
+### Бан по IP-адресу
 
-Если тенант не пожелает отказаться, FastComments поддерживает блокировку по IP, сохраняя хешированную версию IP-адреса комментатора.
+Unless a tenant wishes to opt out, FastComments supports banning via IP by storing a hashed version of the commenter's IP address.

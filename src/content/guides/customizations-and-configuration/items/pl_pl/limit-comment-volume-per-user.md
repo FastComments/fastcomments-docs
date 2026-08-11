@@ -1,13 +1,13 @@
 ---
-Domyślnie każdy użytkownik może przesłać do `5 comments` w tej samej minucie.
+Domyślnie każdy użytkownik może dodać maksymalnie `5 komentarzy` w ciągu jednej minuty.
 
-To jest śledzone na podstawie user id, anon user id i ip address (hashed).
+Jest to śledzone za pomocą identyfikatora użytkownika, anonimowego identyfikatora użytkownika oraz adresu IP (zaszyfrowanego).
 
-Można to dostosować bez użycia kodu, na stronie konfiguracji widgetu:
+Można to dostosować bez kodu, na stronie dostosowywania widżetu:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.max-comments-per-minute'; title='Limiting Comment Volume Per User' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.max-comments-per-minute'; alt='Pole maksymalnej liczby komentarzy na minutę na stronie dostosowywania widżetu, domyślnie ustawione na 5'; title='Ograniczanie liczby komentarzy na użytkownika' app-screenshot-end]
 
-Uwaga: jeśli używasz comment creation API, możesz chcieć przekazać oryginalny adres `ip` użytkownika w żądaniu do naszego backendu, aby rate limiting był stosowany
-per user, a nie globalnie dla twojego konta.
+Zauważ, że jeśli używasz API tworzenia komentarzy, możesz chcieć przekazać oryginalny adres `ip` użytkownika w żądaniu do naszego backendu, aby limitowanie było stosowane
+per użytkownika, a nie globalnie dla Twojego konta.
 
 ---

@@ -1,17 +1,17 @@
-Varsayılan olarak, FastComments sayfa boyutu `30`'dur. Bu, dizilerdeki yanıtları içerir.
+---
+Varsayılan olarak, FastComments sayfa boyutu `30`'dur. Bu, dizilerdeki yanıtları da içerir.
 
-Sayfa boyutu [Widget Yapılandırma UI](https://fastcomments.com/auth/my-account/customize-widget) içinde `10` ile `200` arasında değişen boyutlarda özelleştirilebilir.
+Sayfa boyutu, `10` ile `200` arasında değişen boyutlarda, [Widget Configuration UI](https://fastcomments.com/auth/my-account/customize-widget) içinde özelleştirilebilir.
 
-Sayfa boyutunu değiştirmek hesaplarınızdaki tüm yorum dizilerinin yeniden hesaplanmasını gerektirir. Bu birkaç dakika sürebilir.
+Sayfa boyutunu değiştirmenin, hesabınızdaki tüm yorum dizilerini yeniden hesaplamasını gerektirdiğini unutmayın. Bu birkaç dakika sürebilir.
 
 Sayfalar sunucu tarafında hesaplandığı için bu, istemci tarafı widget'ında yapılandırılamaz.
 
-Örnek yapılandırma aşağıda gösterilmiştir:
+Aşağıda örnek yapılandırma gösterilmiştir:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.page-size'; title='Custom Page Sizes' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.page-size'; alt='Widget özelleştirme sayfasındaki sayfa boyutu seçici, 10 ile 200 arasında bir değer seçilebilir'; title='Özel Sayfa Boyutları' app-screenshot-end]
 
-Sayfa boyutları, farklı özelleştirme kuralları oluşturarak genel olarak, alan bazında veya sayfa bazında özelleştirilebilir.
+Sayfa boyutları, farklı özelleştirme kuralları oluşturarak global olarak, alan adına göre veya sayfaya göre özelleştirilebilir.
 
-Bu, platformumuz aracılığıyla yorumları göstermek için kullanıyor olabileceğiniz tüm istemcileri, entegrasyonları ve çerçeveleri etkileyecektir.
-
+Bu, platformumuz üzerinden yorumları göstermek için kullandığınız tüm istemcileri, entegrasyonları ve çerçeveleri etkileyecektir.
 ---

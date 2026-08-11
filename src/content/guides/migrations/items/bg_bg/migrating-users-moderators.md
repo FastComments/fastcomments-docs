@@ -1,14 +1,12 @@
-С FastComments можете да добавите много потребители към вашия тенант, а техните разрешения могат да бъдат конфигурирани въз основа на ролите във вашата
-организация.
+With FastComments, many users can be added to your tenant, and their permissions can be setup based on the roles in your
+organization.
 
-[app-screenshot-start url='/auth/my-account/users/new/edit'; selector = '.account-block'; title='Adding a User' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/users/new/edit'; selector = '.account-block'; alt='Формуляр за нов потребител за добавяне на някой към вашия наемател, с опции за разрешения за тяхната роля'; title='Добавяне на потребител' app-screenshot-end]
 
-Потребителите могат да бъдат добавени чрез този потребителски интерфейс. Ако имате много потребители, можем да ги импортираме за вас [чрез клиентската поддръжка](https://fastcomments.com/auth/my-account/help).
+Users can be added via this UI. If you have many users, we can import them for you [via customer support](https://fastcomments.com/auth/my-account/help).
 
-За добавяне на модератори вижте [съответната документация](/guide-moderation.html#moderators-adding).
+For adding moderators, see [the corresponding documentation](/guide-moderation.html#moderators-adding).
 
-### Забележка относно удостоверяването
+### A Note about Authentication
 
-Възможно е вашите потребители да търсят място за въвеждане на парола. FastComments използва "магически връзки" за влизане - така че не са необходими пароли.
-
----
+Your users may be looking for a place to enter their password. FastComments uses "magic links" for logging in - so no passwords are required.

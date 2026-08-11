@@ -1,8 +1,5 @@
----
-Wenn Benutzer versuchen, für einen Kommentar abzustimmen und nicht angemeldet sind, werden sie aufgefordert, ihren Benutzernamen und ihre E-Mail anzugeben.
+When users attempt to vote on a comment, and they are not logged in, they will be asked to provide their username and email.
 
-Wir können diese Anforderung entfernen, sodass jeder für einen Kommentar abstimmen kann, ohne irgendwelche Informationen zu hinterlassen.
+We can remove this requirement, allowing anyone to vote on a comment without leaving any information.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-votes']; selector = '.allow-anonymous-votes'; title='Allow Anonymous Votes' app-screenshot-end]
-
----
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-votes']; selector = '.allow-anonymous-votes'; alt='Widget-Anpassungsseite mit aktivierter Option für anonyme Stimmen, sodass Abstimmungen keinen Namen oder keine E‑Mail benötigen'; title='Anonyme Stimmen zulassen' app-screenshot-end]

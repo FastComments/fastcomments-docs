@@ -1,13 +1,11 @@
-Følg de samme trin for `localhost`, som du ville for produktion. Sørg for, at du har opsat produktionsdomæner og API Secrets.
+Follow the same steps for `localhost` as you would production. Ensure you have production domains and API Secrets setup.
 
-Først, gå til [Webhooks admin](https://fastcomments.com/auth/my-account/manage-data/webhooks). Dette er tilgængeligt via Manage Data -> Webhooks.
+First, navigate to the [Webhooks admin](https://fastcomments.com/auth/my-account/manage-data/webhooks). This is accessible via Manage Data -> Webhooks.
 
-Konfigurationssiden ser sådan ud:
+The configuration page appears as follows:
 
-[app-screenshot-start url='/auth/my-account/manage-data/webhooks'; selector = '.content'; title='Webhooks Configuration'; cacheBuster = 'v3' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/webhooks'; selector = '.content'; alt='Webhooks-adminside med en domænevælger og et endpoint-URL-felt pr. kommentarhændelse, plus Send Test Payload'; title='Webhooks-konfiguration'; cacheBuster = 'v3' app-screenshot-end]
 
-På denne side kan du angive endpoints for hver type kommentarhændelse.
+In this page you can specify endpoints for each type of comment event.
 
-For hver type hændelse skal du sørge for at klikke på Send Test Payload for at sikre, at du har opsat din integration korrekt. Se næste afsnit, "Testing", for detaljer.
-
----
+For each type of event, be sure to click Send Test Payload to ensure you've set up your integration correctly. See the next section, "Testing", for details.

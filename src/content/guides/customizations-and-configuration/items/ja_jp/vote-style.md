@@ -1,17 +1,15 @@
 [related-parameter-start name = 'voteStyle'; type = 'number'; related-parameter-end]
 
-デフォルトでは、FastComments は投票オプションを上矢印と下矢印として表示し、ユーザーはコメントに対して賛成（アップ）または反対（ダウン）投票を行えます。
+デフォルトでは、FastComments は投票オプションを上下矢印として表示し、ユーザーはコメントに対して賛成または反対の投票ができます。
 
-ただし、投票ツールバーのスタイルを変更することができます。現在のオプションは、デフォルトの上下ボタン、またはハートスタイルの投票メカニズムです。
+ただし、投票ツールバーのスタイルを変更することが可能です。現在のオプションはデフォルトの上下ボタン、またはハートスタイルの投票メカニズムです。
 
-以下のように **voteStyle** フラグを使用します：
+**voteStyle** フラグは次のように使用します:
 
-[code-example-start config = {voteStyle: 1}; linesToHighlight = [6]; title = 'Enable Heart Button'; code-example-end]
+[code-example-start config = {voteStyle: 1}; linesToHighlight = [6]; title = 'ハートボタンを有効にする'; code-example-end]
 
-サーバー側の検証も有効になるため、コードを使わずに行うことを強く推奨します。ウィジェットのカスタマイズページで "Vote Style" セクションを参照してください。
+コードなしで行うことを強くお勧めします。これによりサーバー側の検証も有効になります。ウィジェットカスタマイズページの「Vote Style」セクションをご覧ください。
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.vote-style'; selector = '.vote-style'; title='Change Voting Style' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.vote-style'; selector = '.vote-style'; alt='ウィジェットカスタマイズページの投票スタイル設定、上下矢印またはハート投票を提供'; title='投票スタイルを変更する' app-screenshot-end]
 
 投票は無効にすることもできます。スタイルオプションの上にある `Disable Voting` を参照してください。
-
----

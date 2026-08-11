@@ -1,29 +1,31 @@
 [related-parameter-start name = 'defaultSortDirection'; type = 'string'; related-parameter-end]
 
-デフォルトでは、FastComments はコメントを「Most Relevant」（最も関連性が高い）ソート方向で並べます。
+デフォルトでは、FastComments はコメントを「最も関連性が高い」ソート方向で並べ替えます。
 
-「Most Relevant」ソートは、コメントが投稿された時間と投票数を考慮して並べ替えます。
+「最も関連性が高い」ソートは、コメントが投稿された時間と投票数を考慮して並べ替えます。
 
-ユーザーはコメントウィジェットの UI でソート方向を Oldest（古い順）または Newest First（新しい順）に変更できます。
+ユーザーはコメントウィジェットの UI で、ソート方向を「最も古い」または「最新」へ変更できます。
 
-ただし、デフォルトはこれら3つのいずれにも変更できます。例えば、最も古いコメントを先に表示したい場合:
+ただし、デフォルトを3つのいずれかに変更できます。たとえば、最も古いコメントを最初に表示したい場合は次のようにします：
 
-[code-example-start config = {defaultSortDirection: "OF"}; linesToHighlight = [6]; title = 'Changing The Default Sort To Oldest First'; code-example-end]
+[code-example-start config = {defaultSortDirection: "OF"}; linesToHighlight = [6]; title = 'デフォルトのソートを最も古い順に変更する'; code-example-end]
 
 **defaultSortDirection** の値を "OF" に設定して、方向を "OF" にします。
 
-新しい順（Newest First）のソート方向にするには、次のようにします:
+最新順のソート方向にするには、次のようにします：
 
-[code-example-start config = {defaultSortDirection: "NF"}; linesToHighlight = [6]; title = 'Changing The Default Sort To Newest First'; code-example-end]
+[code-example-start config = {defaultSortDirection: "NF"}; linesToHighlight = [6]; title = 'デフォルトのソートを最新順に変更する'; code-example-end]
 
-**defaultSortDirection** に使用できる値は次のとおりです:
+**defaultSortDirection** の有効な値は次のとおりです：
 
-- MR: "最新順"
-- NF: "新しい順"
-- OF: "古い順"
+- MR: "最新"
+- NF: "最新順"
+- OF: "最も古い順"
 
-これはコードなしでも行えます。ウィジェットのカスタマイズページの「デフォルトのソート方向」セクションを参照してください。
+これはコードなしでも行えます。ウィジェットのカスタマイズページで「Default Sort Direction」セクションをご覧ください。
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.default-sort-direction'; title='Changing The Default Sort Direction' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.default-sort-direction'; alt='「Default Sort Direction」セレクタは「最も関連性が高い」「最新順」「最も古い順」を提供します'; title='デフォルトのソート方向を変更する' app-screenshot-end]
 
-注意: 各ページのコメントは各ソート方向ごとに事前計算されているため、すべてのソート方向でパフォーマンスは同じです。
+各ページの各ソート方向のコメントは事前に計算されているため、すべてのソート方向で同じパフォーマンスになります。
+
+---

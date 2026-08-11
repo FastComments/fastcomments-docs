@@ -1,14 +1,12 @@
 [related-parameter-start name = 'disableBlocking'; type = 'boolean'; related-parameter-end]
 
-デフォルトでは、FastCommentsはユーザーが他のユーザーをブロックできるようになっています。ブロックされたユーザーのコメントはマスクされ、
-ユーザー間の通知が無効になり、その他の影響があります。
+デフォルトでは、FastComments はユーザーが他のユーザーをブロックできるようにしています。ユーザーをブロックすると、そのコメントが  
+マスクされ、ユーザー間の通知が防止されるなどの効果があります。
 
-この機能を無効化したい場合があります。次のように行えます：
+この機能を無効にしたい場合があります。以下のように実行できます：
 
-[code-example-start config = {disableBlocking: true}; linesToHighlight = [6]; title = 'Disable Blocking'; code-example-end]
+[code-example-start config = {disableBlocking: true}; linesToHighlight = [6]; title = 'ブロックの無効化'; code-example-end]
 
-これはコードを使わずに、ウィジェットカスタマイズUIを通じて行うこともでき、その場合はサーバー側での適切な検証も有効になります：
+コードを使用せずに、ウィジェットカスタマイズ UI を使用して実行することもでき、これにより適切なサーバー側検証も有効になります：
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-blocking']; selector = '.disable-blocking'; title='Disable Blocking' app-screenshot-end]
-
----
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-blocking']; selector = '.disable-blocking'; alt='ウィジェットカスタマイズ UI のブロック無効化オプション。ユーザーが互いにブロックするのを防止します'; title='ブロックの無効化' app-screenshot-end]

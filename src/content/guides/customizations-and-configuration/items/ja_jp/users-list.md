@@ -1,30 +1,30 @@
 [related-parameter-start name = 'usersListLocation'; type = 'number'; related-parameter-end]
 [related-parameter-start name = 'usersListIncludeOffline'; type = 'boolean'; related-parameter-end]
 
-デフォルトでは、FastComments はページ上にユーザーの一覧を表示しません。
+デフォルトでは、FastComments はページ上にユーザーリストを表示しません。
 
-コメントウィジェットの横に、現在ページを閲覧しているユーザーの一覧を表示できます。リストはユーザーの入退出に合わせてライブで更新され、名前、アバター、オンラインインジケーターを表示します。
+ページを現在閲覧しているユーザーのリストを、コメントウィジェットと一緒に表示できます。ユーザーが参加したり離脱したりするとリストはリアルタイムで更新され、名前、アバター、オンラインインジケーターが表示されます。
 
-レイアウトは3種類あります:
+There are three layout options:
 
-- `1` - 上部: コメントの上に表示される、重なり合うアバターの横並び。
-- `2` - 左: ウィジェットの左側に表示される、名前とオンラインドット付きのサイドバー。
-- `3` - 右: 同じサイドバーがウィジェットの右側に表示されます。
+- `1` - 上部: コメントの上に表示される、重なり合うアバターの横一列。
+- `2` - 左側: ウィジェットの左側に表示される、名前とオンラインドットのサイドバー。
+- `3` - 右側: ウィジェットの右側に表示される同様のサイドバー。
 
-この機能を有効にするには、**usersListLocation** フラグを設定します:
+Set the **usersListLocation** flag to enable the feature:
 
-[code-example-start config = {usersListLocation: 3}; linesToHighlight = [6]; title = 'Show Users List on the Right'; code-example-end]
+[code-example-start config = {usersListLocation: 3}; linesToHighlight = [6]; title = '右側にユーザーリストを表示'; code-example-end]
 
-デフォルトではリストは現在オンラインのユーザーのみを表示します。過去にページにコメントした（現在閲覧していない）人も含めるには、**usersListIncludeOffline** を true に設定してください:
+デフォルトでは、リストは現在オンラインのユーザーのみを表示します。過去にページにコメントしたが現在は閲覧していないユーザーも含めるには、**usersListIncludeOffline** を true に設定します：
 
-[code-example-start config = {usersListLocation: 3, usersListIncludeOffline: true}; linesToHighlight = [6, 7]; title = 'Include Past Commenters'; code-example-end]
+[code-example-start config = {usersListLocation: 3, usersListIncludeOffline: true}; linesToHighlight = [6, 7]; title = '過去のコメント投稿者を含める'; code-example-end]
 
-過去のコメント投稿者は緑のオンラインドットなしで表示され、誰が現在いるかがわかるようになっています。
+過去のコメント投稿者は緑色のオンラインドットが表示されないため、現在誰がオンラインかが明確になります。
 
-プロフィール非公開のユーザーは、匿名アバターと「非公開プロフィール」ラベルで表示され、個人を明らかにせずにカウントが正確に保たれます。
+プライベートプロフィールのユーザーは、汎用アバターと「プライベートプロフィール」ラベルで表示され、身元を明かさずにカウントが正確に保たれます。
 
-この設定はコードなしでも行えます。ウィジェットのカスタマイズページで「ユーザーリストの表示位置」オプションを確認してください。表示位置が Off（オフ）以外に設定されていると、その下に「過去のコメント投稿者を含める」チェックボックスが表示されます。
+コードを書かずに設定することもできます。ウィジェットのカスタマイズページで「Users List Location」オプションを確認してください。場所が Off 以外に設定されていると、下に「Include past commenters」チェックボックスが表示されます。
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.users-list-settings'; title='Users List Settings'; actions=[{type: 'set-value', selector: '#users-list-location-input', value: '3'}] app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.users-list-settings'; alt='ユーザーリストの位置が右に設定され、下に過去のコメント投稿者を含めるチェックボックスが表示されています'; title='ユーザーリスト設定'; actions=[{type: 'set-value', selector: '#users-list-location-input', value: '3'}] app-screenshot-end]
 
-ライブユーザーが500人を超える場合、リストは最大30秒遅れることがあります。
+過去 500 人のライブユーザーについて、リストは最大で 30 秒遅れています。

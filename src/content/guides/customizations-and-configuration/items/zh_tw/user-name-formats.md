@@ -1,10 +1,10 @@
-預設情況下，FastComments 會顯示使用者輸入的名稱，或透過 SSO 傳給我們的名稱。
+By default, FastComments will show the user's name as they entered it, or how it was passed to us via SSO.
 
-不過，可能希望以不同方式遮罩或顯示使用者名稱。例如，如果使用者的名字是 Allen Rex，您可能只想顯示 "Allen R."。
+However, it may be desirable to mask or show the user's name in a different way. For example, if the user's name is Allen Rex, maybe you want to only show "Allen R.".
 
-這可在 Widget 自訂 UI 中完成，無需撰寫程式碼，位於名為 `Commenter Name Format` 的設定下：
+This can be done without code in the Widget Customization UI, under the setting called `Commenter Name Format`:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.commenter-name-format select'; selector = '.commenter-name-format'; title='Change Name Format' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.commenter-name-format select'; selector = '.commenter-name-format'; alt='Commenter Name Format 下拉選單開啟，包含 Capitalize、Last Initial 與 All Initials 等選項'; title='變更名稱格式' app-screenshot-end]
 
 The available formats are:
 
@@ -13,7 +13,6 @@ The available formats are:
 - All Initials (display Example User as E. U.)
 - Show "Anonymous"
 
-變更後會立即生效。使用者自己仍會在評論區上方看到完整的使用者名稱，但他們的評論將顯示
-已被修改過的使用者名稱。
+The effect of changing this is immediate. User's will still see their full username at the top of the comment area, for themselves, but their comments will show the modified username.
 
-使用者名稱在伺服器端會被遮罩以保護使用者。
+Usernames are masked server-side to protect users.

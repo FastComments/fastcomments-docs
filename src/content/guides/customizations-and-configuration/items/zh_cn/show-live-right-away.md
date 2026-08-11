@@ -1,23 +1,21 @@
 [related-parameter-start name = 'showLiveRightAway'; type = 'boolean'; related-parameter-end]
 
-默认情况下，实时评论是启用的。这意味着如果有任何评论被添加、删除、编辑或置顶，这些更改应同时显示
-给查看该评论线程的所有用户。
+默认情况下，实时评论已启用。这意味着如果有任何评论被添加、删除、编辑或置顶，所有正在查看该评论线程的用户都会同时看到这些更改。
 
-但是，默认情况下，这些新评论将显示在一个动态出现的按钮下，按钮文本类似于 "Show 2 New Comments"。
+然而，默认情况下，这些新评论会出现在一个动态显示的按钮下，按钮文本类似于“显示 2 条新评论”。
 
-如果新评论是直接回复页面，按钮会显示在评论线程的顶部。如果它们是回复某条特定评论， 
-按钮会显示在该评论下方。
+如果新评论是直接回复页面的，按钮会显示在评论线程的顶部。如果它们是对特定评论的回复，按钮则会显示在该评论下方。
 
-这样做是为了防止页面大小不断变化，可能在用户尝试抓住滚动条时造成挫败感。
+这样做是为了防止页面大小不断变化，避免用户在尝试抓取滚动条时产生挫败感。
 
-对于某些用例，例如实时竞价或在线活动，这并不是期望的行为 - 您可能希望评论小部件更像一个 "chat" 框，新评论可以 "show right away"。
+对于某些使用场景，例如实时竞标或在线活动，这并不是期望的行为——您可能希望评论小部件更像一个“聊天”框，新评论能够“立即显示”。
 
-因此，用于启用该功能的标志名称为：**showLiveRightAway**。
+因此，启用此功能的标志名称为：**showLiveRightAway**。
 
-我们可以如下开启：
+我们可以按如下方式打开它：
 
-[code-example-start config = {showLiveRightAway: true}; linesToHighlight = [6]; title = 'Show Live Comments Right Away'; code-example-end]
+[code-example-start config = {showLiveRightAway: true}; linesToHighlight = [6]; title = '立即显示实时评论'; code-example-end]
 
-无需编码即可在小部件自定义页面上进行自定义：
+这可以在小部件自定义页面上无需代码进行自定义：
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.collapse-live-comments'; selector = '.collapse-live-comments'; title='Show Live Comments Right Away' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.collapse-live-comments'; selector = '.collapse-live-comments'; alt='折叠实时评论设置已切换，新评论会立即出现，而不是在按钮后面'; title='立即显示实时评论' app-screenshot-end]

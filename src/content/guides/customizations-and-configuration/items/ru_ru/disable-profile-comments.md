@@ -1,13 +1,11 @@
 [related-parameter-start name = 'disableProfileComments'; type = 'boolean'; related-parameter-end]
 
-По умолчанию FastComments отображает вкладку "Profile Comments" в профилях пользователей, позволяя посетителям оставлять комментарии в профиле пользователя.
+По умолчанию FastComments будет показывать вкладку «Комментарии к профилю» в профилях пользователей, позволяя посетителям оставлять комментарии в чьем‑то профиле.
 
-Однако эту вкладку можно отключить:
+Однако мы можем отключить эту вкладку:
 
-[code-example-start config = {disableProfileComments: true}; linesToHighlight = [6]; title = 'Disable Profile Comments'; code-example-end]
+[code-example-start config = {disableProfileComments: true}; linesToHighlight = [6]; title = 'Отключить комментарии к профилю'; code-example-end]
 
-Это также можно сделать без кода. На странице настройки виджета см. раздел "Отключить комментарии профиля".
+Это также можно сделать без кода. На странице настройки виджета смотрите раздел «Отключить комментарии к профилю».
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-profile-comments']; selector = '.disable-profile-comments'; title='Disable Profile Comments' app-screenshot-end]
-
----
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-profile-comments']; selector = '.disable-profile-comments'; alt='Страница настройки виджета с отмеченным флажком «Отключить комментарии к профилю», скрывающим вкладку комментариев к профилю'; title='Отключить комментарии к профилю' app-screenshot-end]

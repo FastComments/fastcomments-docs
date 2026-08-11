@@ -12,15 +12,15 @@ We natively support importing exports from the following providers:
 - WordPress (via the plugin)
 - AnyComment (Via WordPress Import/Export)
 
-By navigating [here](https://fastcomments.com/auth/my-account/manage-data/import) we can upload the file containing the data to migrate.
+By navigating [こちら](https://fastcomments.com/auth/my-account/manage-data/import) we can upload the file containing the data to migrate.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; title='インポートページのフォーム' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; alt='FastComments インポートページ（プロバイダー選択とエクスポートファイル用のファイルアップロードフィールド）'; title='インポートページのフォーム' app-screenshot-end]
 
 ### インポートの監視
 
 FastComments uses a job processing system for processing imports and exports. Once the system has picked up your job, it will periodically report the status of the job in the import or export UI.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; title='インポートジョブのステータス' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; alt='インポートページ（実行中のインポートジョブとジョブ処理システムが報告するステータスを表示）'; title='インポートジョブのステータス' app-screenshot-end]
 
 Note that the status for Imports and Export are viewable by all administrators in the account.
 
@@ -35,3 +35,5 @@ Re-importing the same content **will not create duplicates**.
 ### データのセキュリティと有効期限
 
 Import files are not accessible via outside requests in any way, and import files are deleted from our system as soon as the import completes.
+
+---

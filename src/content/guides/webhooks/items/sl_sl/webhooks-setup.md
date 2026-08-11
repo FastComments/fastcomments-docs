@@ -1,10 +1,10 @@
-Sledite enakim korakom za `localhost`, kot bi za produkcijsko okolje. Poskrbite, da imate nastavljene produkcijske domene in API skrivnosti.
+Follow the same steps for `localhost` as you would production. Ensure you have production domains and API Secrets setup.
 
-First, navigate to the [Webhooks admin](https://fastcomments.com/auth/my-account/manage-data/webhooks). This is accessible via Manage Data -> Webhooks.
+First, navigate to the [Skrbnik webhookov](https://fastcomments.com/auth/my-account/manage-data/webhooks). This is accessible via Manage Data -> Webhooks.
 
 The configuration page appears as follows:
 
-[app-screenshot-start url='/auth/my-account/manage-data/webhooks'; selector = '.content'; title='Webhooks Configuration'; cacheBuster = 'v3' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/webhooks'; selector = '.content'; alt='Stran skrbnika webhookov s selectorjem domene in poljem URL končne točke za vsak dogodek komentarja, plus Pošlji testni paket'; title='Konfiguracija webhookov'; cacheBuster = 'v3' app-screenshot-end]
 
 In this page you can specify endpoints for each type of comment event.
 

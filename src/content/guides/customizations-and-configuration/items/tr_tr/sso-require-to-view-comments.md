@@ -1,39 +1,40 @@
-FastComments SSO (<a href="#sso">ayrıntılar burada</a>) kullanıcılarınıza başka bir platforma giriş yapmadan yorum yapma imkanı sağlar.
+---
+FastComments SSO (<a href="#sso">detaylar burada</a>) kullanıcılarınıza başka bir platforma giriş yapmadan yorum yapma imkanı sunar.
 
-Ancak bu tek başına yorum dizilerinizi güvence altına almaz, çünkü varsayılan olarak yorum verileri herkese açık bilgidir - sayfayı görüntüleyebilen herkes yorumları görebilir.
+Ancak, bu tek başına yorum dizilerinizi güvenli hale getirmez, çünkü varsayılan olarak yorum verileri herkese açık bir bilgi olarak sunulur - sayfayı görebilen herkes yorumları görebilir.
 
-Bir ayarı değiştirerek, yorumların yalnızca bir yönetici veya geçerli bir SSO kullanıcısı tarafından alınmasına izin verecek şekilde sınırlandırabiliriz.
+Bir ayarı değiştirerek, yorumların yalnızca bir yönetici veya geçerli bir SSO kullanıcısı tarafından alınmasını kısıtlayabiliriz.
 
-#### Kod Gerektirmeyen Kurulum
+#### Kod Olmadan Kurulum
 
-SSO kurulduğunda yorum dizilerimizin görüntülenmesini ve etkileşimde bulunulmasını engellemek için bir <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">özelleştirme kuralı</a> oluşturabiliriz.
+SSO kurulduğunda, yorum dizilerimizi görüntülemeyi ve etkileşime girmeyi, bir <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">özelleştirme kuralı</a> oluşturarak önleyebiliriz.
 
-Bunu yaparken SSO'yu arayın ve şu seçeneği bulacaksınız:
+Bunu yaparken, SSO'yu arayın ve bu seçeneği bulacaksınız:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.require-sso'; selector = '.require-sso'; title='Require SSO To View Comments' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.require-sso'; selector = '.require-sso'; alt='Özelleştirme kuralında yorumları görüntülemek için SSO gerektirme seçeneği, güvenlik seviyesi seçeneğiyle etkinleştirildi'; title='Yorumları Görüntülemek İçin SSO Gerektir' app-screenshot-end]
 
-Etkinleştirin ve özelleştirme kuralını kaydedin.
+Bunu etkinleştirin ve özelleştirme kuralını kaydedin.
 
 #### Yalnızca Belirli Bir Alan Adı veya Sayfayı Korumak
 
-Yalnızca belirli bir Domain veya Sayfayı korumak için özelleştirme kuralını buna göre yapılandırmamız yeterlidir.
+Yalnızca belirli bir alan adı veya sayfayı korumak için, özelleştirme kuralını buna göre yapılandıracağız.
 
-Özelleştirme arayüzünün üst kısmında iki girdi alanı bulacaksınız: Domain ve URL ID.
+Özelleştirme arayüzünün üst kısmında iki giriş alanı bulacağız: Domain ve URL ID.
 
-Sadece belirli bir domaini korumak için ilgili domaini "domain" alanına girin.
+Sadece belirli bir alan adını korumak için, ilgili alan adını "domain" alanına girin.
 
-Belirli bir sayfayı korumak için sayfa URL'sini "URL ID" alanına girin. FastComments ile özel bir entegrasyonunuz varsa, burada bir URL yerine bir tür ID girebilirsiniz.
+Belirli bir sayfayı korumak için, "URL ID" alanına bir sayfa URL'si girin. FastComments ile özel bir entegrasyonunuz varsa, burada URL yerine bir kimlik türü girebilirsiniz.
 
-#### Güvenlik Düzeyleri
+#### Güvenlik Seviyeleri
 
-SSO gerekli olduğunda Simple SSO mu yoksa Secure SSO mu istediğinize karar vermelisiniz. Simple SSO'yu seçerseniz her iki yöntem de kabul edilir; ancak Secure SSO'yu seçerseniz içeriğin görüntülenebilmesi için API key'inizle hash'lenmiş bir Secure SSO yükü ile getirilmesi gerekir.
+SSO gerektirdiğinizde, Basit SSO mu yoksa Güvenli SSO mu istediğinize karar vermeniz gerekir. Basit SSO'yu seçerseniz, her ikisi de izin verilir, ancak Güvenli SSO'yu seçerseniz, içeriğin görüntülenebilmesi için API anahtarınızla hashlenmiş bir Güvenli SSO yüküyle alınması gerekir.
 
-Güvenlik düzeyi seçeneği, "Require SSO To View Comments" seçeneğini seçtiğinizde görünecektir.
+Güvenlik seviyesi seçeneği, "Yorumları Görüntülemek İçin SSO Gerektir" seçeneğini seçtiğinizde görünecektir.
 
 #### Okumanın Ötesinde Koruma
 
-Bu seçeneği etkinleştirmek, kullanıcı SSO ile giriş yapmadıkça sayfanın veya domainin yorum yapılmasına karşı korunmasını sağlar.
+Bu seçeneği etkinleştirmek, kullanıcı SSO üzerinden oturum açmadıkça sayfanın veya alan adının yorumlanmasını engelleyecektir.
 
-#### Uyarılar
+#### Dikkat Edilmesi Gerekenler
 
-SSO entegrasyonunuzdan önce yorum oluşturan kullanıcılar, SSO entegrasyonunuz aracılığıyla giriş yapmadıkça bunları göremeyeceklerdir.
+SSO entegrasyonunuzdan önce yorum oluşturan kullanıcılar, SSO entegrasyonunuz üzerinden oturum açmadıkça bu yorumları göremezler.

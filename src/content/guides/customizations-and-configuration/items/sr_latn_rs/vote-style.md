@@ -1,15 +1,15 @@
 [related-parameter-start name = 'voteStyle'; type = 'number'; related-parameter-end]
 
-Po podrazumevanju, FastComments prikazuje opcije glasanja kao strelice gore i dole, omogućavajući korisnicima da glasaju za ili protiv komentara.
+Podrazumevano, FastComments će prikazati opcije glasanja kao strelice za gore i dole, omogućavajući korisnicima da glasaju gore ili dole za komentar.
 
-Međutim, moguće je promeniti stil alatne trake za glasanje. Trenutne opcije su podrazumevana dugmad Gore/Dole, ili korišćenje stila glasanja sa srcem.
+Međutim, moguće je promeniti stil trake za glasanje. Trenutne opcije su podrazumevane dugmiće Up/Down, ili korišćenje mehanizma glasanja u obliku srca.
 
 Koristimo zastavicu **voteStyle** na sledeći način:
 
-[code-example-start config = {voteStyle: 1}; linesToHighlight = [6]; title = 'Enable Heart Button'; code-example-end]
+[code-example-start config = {voteStyle: 1}; linesToHighlight = [6]; title = 'Omogući dugme srca'; code-example-end]
 
-Toplo preporučujemo da ovo uradite bez koda, jer to takođe omogućava validacije na serverskoj strani. Na stranici za prilagođavanje widgeta pogledajte odeljak "Stil glasanja".
+Preporučujemo da ovo uradite bez koda, jer takođe omogućava server‑side validacije. Na stranici za prilagođavanje widgeta, pogledajte odeljak "Vote Style".
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.vote-style'; selector = '.vote-style'; title='Change Voting Style' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.vote-style'; selector = '.vote-style'; alt='Podešavanje stila glasanja na stranici za prilagođavanje widgeta, nudi strelice za gore i dole ili glasanje srcem'; title='Promeni stil glasanja' app-screenshot-end]
 
-Glasanje takođe može biti onemogućeno, pogledajte `Disable Voting` iznad opcija stila.
+Glasanje se takođe može onemogućiti, pogledajte `Disable Voting` iznad opcija stila.

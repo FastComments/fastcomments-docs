@@ -14,13 +14,13 @@ We natively support importing exports from the following providers:
 
 By navigating [here](https://fastcomments.com/auth/my-account/manage-data/import) we can upload the file containing the data to migrate.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; title='Obrazac stranice uvoza' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; alt='FastComments stranica za uvoz s odabirom pružatelja i poljima za učitavanje datoteke za izvoz'; title='Obrazac stranice uvoza' app-screenshot-end]
 
 ### Monitoring Imports
 
 FastComments uses a job processing system for processing imports and exports. Once the system has picked up your job, it will periodically report the status of the job in the import or export UI.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; title='Status zadatka uvoza' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; alt='Stranica uvoza koja prikazuje pokrenuti posao uvoza i status koji izvještava sustav za obradu poslova'; title='Status posla uvoza' app-screenshot-end]
 
 Note that the status for Imports and Export are viewable by all administrators in the account.
 
@@ -35,5 +35,3 @@ Re-importing the same content **will not create duplicates**.
 ### Data Security and Expiration
 
 Import files are not accessible via outside requests in any way, and import files are deleted from our system as soon as the import completes.
-
----

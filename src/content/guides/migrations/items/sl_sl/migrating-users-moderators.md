@@ -1,14 +1,11 @@
-Z FastComments lahko v vaš najemnik dodate veliko uporabnikov, njihove pravice pa lahko nastavite glede na vloge v vaši
-organizaciji.
+With FastComments lahko v svoj najemnik dodaš veliko uporabnikov, njihove dovoljenja pa lahko nastaviš glede na vloge v tvoji organizaciji.
 
-[app-screenshot-start url='/auth/my-account/users/new/edit'; selector = '.account-block'; title='Adding a User' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/users/new/edit'; selector = '.account-block'; alt='Obrazec za novega uporabnika za dodajanje osebe v vaš najemnik, z možnostmi dovoljenj za njihovo vlogo'; title='Dodajanje uporabnika' app-screenshot-end]
 
-Uporabnike lahko dodate preko tega vmesnika. Če imate veliko uporabnikov, jih lahko uvozimo za vas [prek podpore strankam](https://fastcomments.com/auth/my-account/help).
+Uporabnike lahko dodaš prek tega uporabniškega vmesnika. Če imaš veliko uporabnikov, jih lahko uvozimo zate [via customer support](https://fastcomments.com/auth/my-account/help).
 
-Za dodajanje moderatorjev si oglejte [ustrezno dokumentacijo](/guide-moderation.html#moderators-adding).
+Za dodajanje moderatorjev si oglej [the corresponding documentation](/guide-moderation.html#moderators-adding).
 
-### Opomba o avtentikaciji
+### A Note about Authentication
 
-Vaši uporabniki morda iščejo mesto za vnos gesla. FastComments uporablja "magic links" za prijavo - zato gesla niso potrebna.
-
----
+Your users may be looking for a place to enter their password. FastComments uses "magic links" for logging in - so no passwords are required.

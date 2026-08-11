@@ -1,9 +1,10 @@
-По подразумеваној вредности, сваки корисник може послати до `5 comments` у истом минуту.
+By default, each user can submit up to `5 comments` in the same minute.
 
-Ово се прати по user id, anon user id и ip address (хеширано).
+This is tracked by user id, anon user id, and ip address (hashed).
 
-Ово се може прилагодити без кода, на страници за прилагођавање виџета:
+This can be customized without code, on the widget customization page:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.max-comments-per-minute'; title='Ограничавање броја коментара по кориснику' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.max-comments-per-minute'; alt='Polje za maksimalan broj komentara po minutu na stranici za prilagođavanje widgeta, podrazumevano postavljeno na 5'; title='Ograničavanje broja komentara po korisniku' app-screenshot-end]
 
-Имајте на уму да ако користите API за креирање коментара можда желите да проследите корисникову оригиналну `ip` адресу у захтеву ка нашем бекенду како би ограничења брзине била примењена по кориснику, а не глобално за ваш налог.
+Note that if you're using the comment creation API may want to pass the user's original `ip` address in the request to our backend so rate limiting is applied
+per user and not globally to your account.

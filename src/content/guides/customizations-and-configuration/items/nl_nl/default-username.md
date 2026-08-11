@@ -1,9 +1,7 @@
 ---
-Wanneer gebruikers reageren of stemmen en ze niet zijn ingelogd, wordt hen gevraagd hun e-mailadres en gebruikersnaam op te geven.
+Wanneer gebruikers een reactie plaatsen of stemmen, en ze zijn niet ingelogd, wordt hen gevraagd hun e‑mail en gebruikersnaam op te geven.
 
-In het geval van anoniem reageren kan het soms wenselijk zijn een standaardgebruikersnaam te definiëren om de drempel
-bij het reageren te verlagen. Dit kan worden gedaan via de Customization UI. Anoniem reageren moet eerst worden ingeschakeld.
+In het geval van anoniem reageren, is het soms wenselijk om een standaardgebruikersnaam te definiëren om de wrijving bij het reageren te verminderen. Dit kan worden gedaan via de aanpassings‑UI. Anoniem reageren moet eerst worden ingeschakeld.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments']; selector = '.default-username-label'; title='Setting The Default Username' app-screenshot-end]
-
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments']; selector = '.default-username-label'; alt='Standaardgebruikersnaamveld dat verschijnt in de aanpassings‑UI zodra anoniem reageren is ingeschakeld'; title='Instellen van de standaardgebruikersnaam' app-screenshot-end]
 ---

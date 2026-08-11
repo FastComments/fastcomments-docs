@@ -1,10 +1,9 @@
 ---
-Когда пользователи вводят хештеги в форме `#someexampletag`, FastComments автоматически создаст этот `HashTag` и выделит его в их комментарии.
+When users enter hashtags, in the form of `#someexampletag`, FastComments will automatically create that `HashTag` and 
+highlight it in their comment.
 
-В некоторых случаях желательно отключить эту функцию или управлять тем, какие хештеги можно использовать через API.
+In some cases it's desirable to disable this feature, or control what hashtags can be used via the API.
 
-Для этого просто включите `Disable Automatic #hashtag Creation` в интерфейсе настройки виджета.
+To do so, simply enable `Disable Automatic #hashtag Creation` via the Widget Customization UI.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-automatic-hash-tag-creation']; selector = '.disable-automatic-hash-tag-creation'; title='Disabling Automatic HashTag Creation' app-screenshot-end]
-
----
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-automatic-hash-tag-creation']; selector = '.disable-automatic-hash-tag-creation'; alt='Опция отключения автоматического создания #hashtag включена в интерфейсе настройки виджета'; title='Отключение автоматического создания HashTag' app-screenshot-end]

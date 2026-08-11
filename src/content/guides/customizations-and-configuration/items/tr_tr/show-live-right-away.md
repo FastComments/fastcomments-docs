@@ -1,24 +1,21 @@
 [related-parameter-start name = 'showLiveRightAway'; type = 'boolean'; related-parameter-end]
 
-Varsayılan olarak canlı yorumlama etkinleştirilmiştir. Bu, herhangi bir yorum eklendiğinde, silindiğinde, düzenlendiğinde veya sabitlendiğinde değişikliklerin görünmesi gerektiği anlamına gelir
-yorum dizisini aynı anda görüntüleyen tüm kullanıcılara.
+Varsayılan olarak, canlı yorumlama etkinleştirilir. Bu, herhangi bir yorum eklenir, silinir, düzenlenir veya sabitlenirse, değişikliklerin aynı anda yorum dizisini izleyen tüm kullanıcılar tarafından görülmesi anlamına gelir.
 
-Ancak, varsayılan olarak bu yeni yorumlar, "Show 2 New Comments" gibi bir metne sahip dinamik olarak gösterilen bir düğmenin altında görünecektir.
+Ancak, varsayılan olarak bu yeni yorumlar, “Show 2 New Comments” benzeri bir metne sahip dinamik olarak gösterilen bir düğmenin altında görünür.
 
-Yeni yorumlar doğrudan sayfaya yapılan yanıtlar ise, düğme yorum dizisinin en üstünde gösterilir. Eğer belirli bir yoruma yanıt ise, 
-düğme o yorumun altında gösterilir.
+Yeni yorumlar doğrudan sayfaya yanıt ise, düğme yorum dizisinin en üstünde gösterilir. Belirli bir yoruma yanıt ise, düğme o yorumun altında gösterilir.
 
-Bu, sayfa boyutunun kullanıcının ekranında sürekli değişmesini önlemek içindir; bu, kaydırma çubuğunu yakalamaya çalışırken hayal kırıklığına neden olabilir.
+Bu, sayfa boyutunun kullanıcıda sürekli değişmesini önlemek içindir; kaydırma çubuğunu yakalamaya çalışırken hayal kırıklığına yol açabilir.
 
-Bazı kullanım durumları için, örneğin canlı teklif verme veya çevrimiçi etkinlikler gibi, bu istenen davranış değildir - yorum bileşeninin
-yeni yorumların "show right away" olduğu bir "chat" kutusuna daha çok benzemesini isteyebilirsiniz.
+Canlı teklif verme veya çevrimiçi etkinlikler gibi bazı kullanım senaryolarında bu istenen davranış değildir – yorum widget'ının yeni yorumların “hemen gösterildiği” bir “sohbet” kutusu gibi olmasını isteyebilirsiniz.
 
-Bu özelliği etkinleştiren bayrağın adı şudur: **showLiveRightAway**.
+Bu nedenle, bu özelliği etkinleştiren bayrağın adı: **showLiveRightAway**.
 
-Şu şekilde açabiliriz:
+Aşağıdaki gibi açabilirsiniz:
 
-[code-example-start config = {showLiveRightAway: true}; linesToHighlight = [6]; title = 'Show Live Comments Right Away'; code-example-end]
+[code-example-start config = {showLiveRightAway: true}; linesToHighlight = [6]; title = 'Canlı Yorumları Hemen Göster'; code-example-end]
 
-Bu, kod olmadan, bileşen özelleştirme sayfasında özelleştirilebilir:
+Bu, widget özelleştirme sayfasında kod olmadan özelleştirilebilir:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.collapse-live-comments'; selector = '.collapse-live-comments'; title='Show Live Comments Right Away' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.collapse-live-comments'; selector = '.collapse-live-comments'; alt='Canlı yorumları gizleme ayarı değiştirildi, yeni yorumlar bir düğmenin arkasında değil anında görünecek'; title='Canlı Yorumları Hemen Göster' app-screenshot-end]

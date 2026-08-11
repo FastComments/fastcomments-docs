@@ -1,23 +1,20 @@
 ---
-Από προεπιλογή, το FastComments θα εμφανίζει το όνομα του χρήστη όπως το εισήγαγε, ή όπως μας μεταφέρθηκε μέσω SSO.
+Από προεπιλογή, το FastComments θα εμφανίζει το όνομα του χρήστη όπως το εισήγαγε, ή όπως του μεταβιβάστηκε μέσω SSO.
 
-Ωστόσο, μπορεί να είναι επιθυμητό να αποκρύψετε ή να εμφανίσετε το όνομα του χρήστη με διαφορετικό τρόπο. Για παράδειγμα, αν το όνομα του χρήστη είναι Allen Rex, ίσως
-θέλετε να εμφανίζεται μόνο "Allen R.".
+Ωστόσο, μπορεί να είναι επιθυμητό να καλυφθεί ή να εμφανιστεί το όνομα του χρήστη με διαφορετικό τρόπο. Για παράδειγμα, εάν το όνομα του χρήστη είναι Allen Rex, ίσως θέλετε να εμφανίζεται μόνο «Allen R.».
 
-Αυτό μπορεί να γίνει χωρίς κώδικα στο UI προσαρμογής του Widget, στην ρύθμιση με την ονομασία `Commenter Name Format`:
+Αυτό μπορεί να γίνει χωρίς κώδικα στη διεπαφή προσαρμογής Widget, κάτω από τη ρύθμιση που ονομάζεται `Commenter Name Format`:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.commenter-name-format select'; selector = '.commenter-name-format'; title='Change Name Format' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.commenter-name-format select'; selector = '.commenter-name-format'; alt='Αναπτυσσόμενο μενού Commenter Name Format ανοιχτό με επιλογές όπως Capitalize, Last Initial και All Initials'; title='Αλλαγή μορφής ονόματος' app-screenshot-end]
 
 Οι διαθέσιμες μορφές είναι:
 
-- Capitalize (display example user as Example User)
-- Last Initial (display Example User as Example U.)
-- All Initials (display Example User as E. U.)
-- Show "Anonymous"
+- Capitalize (εμφανίζει το παράδειγμα χρήστη ως Example User)
+- Last Initial (εμφανίζει το Example User ως Example U.)
+- All Initials (εμφανίζει το Example User ως E. U.)
+- Εμφάνιση "Anonymous"
 
-Η επίδραση αυτής της αλλαγής είναι άμεση. Οι χρήστες θα βλέπουν ακόμα το πλήρες όνομα χρήστη τους στην κορυφή της περιοχής σχολίων, για τους ίδιους, αλλά τα σχόλιά τους θα εμφανίζουν
-το τροποποιημένο όνομα χρήστη.
+Η επίδραση της αλλαγής είναι άμεση. Οι χρήστες θα εξακολουθούν να βλέπουν το πλήρες όνομα χρήστη τους στην κορυφή της περιοχής σχολίων, για τον εαυτό τους, αλλά τα σχόλιά τους θα εμφανίζουν το τροποποιημένο όνομα χρήστη.
 
-Τα ονόματα χρήστη μάσκονται από την πλευρά του διακομιστή για την προστασία των χρηστών.
-
+Τα ονόματα χρηστών καλύπτονται από τον διακομιστή για την προστασία των χρηστών.
 ---

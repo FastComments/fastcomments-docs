@@ -1,12 +1,12 @@
-По умолчанию пользователи могут удалять свои собственные комментарии. Также удаление их комментария автоматически
-удаляет все дочерние и временные комментарии в ветке. Это поведение также действует в реальном времени.
+By default, users can delete their own comments. Also, deleting their comment automatically
+deletes all child and transient comments in the thread. This behavior is also live.
 
-Вы можете ограничить это следующими способами:
+You can restrict this in the following ways:
 
-- Вместо этого анонимизируйте удалённый комментарий (установите name и text в `[deleted]` или в произвольное значение).
-- Запретите удаление комментариев, если есть ответы. Отображается настраиваемое сообщение об ошибке.
-- Ограничьте удаление комментариев с ответами только для администраторов и модераторов.
+- Instead, anonymize the deleted comment (set name and text to `[deleted]` or a custom value).
+- Don't allow deleting comments when there are replies. A customizable error message is shown.
+- Restrict deleting when a comment has replies to only administrators and moderators.
 
-Это можно настроить в разделе `Comment Thread Deletion` в интерфейсе настройки виджета.
+This can be configured via the `Comment Thread Deletion` section in the Widget Customization UI.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.comment-thread-deletion-mode']; selector = '.comment-thread-deletion-mode'; title='Customize Delete Behavior for Replies' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.comment-thread-deletion-mode']; selector = '.comment-thread-deletion-mode'; alt='Параметры удаления ветки комментариев в пользовательском интерфейсе настройки виджета для анонимизации или ограничения удалений с ответами'; title='Настройка поведения удаления для ответов' app-screenshot-end]

@@ -1,27 +1,23 @@
-データを移動する必要がある場合、FastComments はページや記事間でコメントを移動するためのセルフサービスツールを提供します。
+データを移動する必要がある場合、FastComments はページや記事間でコメントを移動するためのセルフサービスツールを提供しています。
 
-コメントコピーのページフォームは次のようになります:
+以下はコメントコピー ページ フォームの外観です：
 
-[app-screenshot-start url='/auth/my-account/manage-data/copy-comments'; selector = '.account-block'; title='The Copy Comment Form' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/copy-comments'; selector = '.account-block'; alt='From URL ID フィールドと To URL ID および URL フィールドを含むコメントコピー フォーム'; title='コメントコピー フォーム' app-screenshot-end]
 
-### 「From」欄の記入方法
+### "From" フィールドの入力
 
-コメントをどこから移動するか決めるには、ソースの `URL ID` を把握するだけで十分です。
+コメントをどこから移動するか決めるには、単に元の `URL ID` を知る必要があります。
 
-コメントウィジェットの設定で `urlId` を渡していない場合、これはページ URL の「クリーン」バージョンになります。
+コメントウィジェット設定で `urlId` の値を渡していない場合、これはページ URL の「クリーン」バージョンになります。
 
-コメントが持つ `URL ID` の値は、エクスポートによって確認できます。
+`URL ID` の値はエクスポートすることで確認できます。
 
-### 「To」欄の記入方法
+### "To" フィールドの入力
 
-コメントをどこへ移動するか決めるには、ターゲットの `URL ID` と `URL` を把握する必要があります。
+コメントをどこへ移動するか決めるには、対象の `URL ID` と `URL` を知る必要があります。
 
-`URL ID` はコメントが格納されるバケットになります。`URL` フィールドは、メールやモデレーションツールから直接
-コメントへ移動できるようにするために使用されます。
+`URL ID` はコメントが入るバケットになります。`URL` フィールドは、メールやモデレーションツールからコメントへ直接ナビゲートできるように使用されます。
 
 #### WordPress
 
-WordPress を使用している場合、例えばマイグレーションツールの To/From `URL ID` フィールドには記事 ID を入力し、
-URL の代わりに用います。
-
----
+WordPress を使用している場合、マイグレーションツールの To/From `URL ID` フィールドに記事 ID を入力し、URL ではなく ID を使用します。

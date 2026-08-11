@@ -1,15 +1,15 @@
-Идите на контролну таблу свог налога и отворите [страницу RSS фида](https://fastcomments.com/auth/my-account/rss).
+Idite na kontrolnu tablu vašeg naloga i otvorite [RSS Feed stranicu](https://fastcomments.com/auth/my-account/rss).
 
-[app-screenshot-start url='/auth/my-account/rss'; selector = '.content'; title='RSS Feed Configuration' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/rss'; selector = '.content'; alt='Stranica RSS Feeda naloga sa poljem za potvrdu „Omogući pristup RSS Feedu“, URL-om feeda i dugmadima „Kopiraj“ i „Pogledaj feed“'; title='Konfiguracija RSS Feeda' app-screenshot-end]
 
-На страници RSS фида означите поље за потврду "Омогући приступ RSS фиду" да бисте генерисали свој јединствени RSS URL.
+Na RSS Feed stranici, označite polje „Omogući pristup RSS Feedu“ da biste generisali jedinstveni URL vašeg RSS feeda.
 
-Када омогућите фид, појавиће се безбедносно обавештење које објашњава да свако ко има линк може приступити вашим коментарима.
+Kada omogućite feed, pojaviće se obaveštenje o bezbednosti koje objašnjava da svako ko ima link može pristupiti vašim komentarima.
 
-Када је омогућен, ваш јединствени RSS URL ће се појавити. Кликните на дугме "Копирај" да копирате URL у међуспремник.
+Kada je omogućeno, pojaviće se vaš jedinstveni URL RSS feeda. Kliknite dugme „Kopiraj“ da biste kopirali URL u clipboard.
 
-Отворите апликацију RSS читача и додајте копирани URL као нову претплату на фид. Тачни кораци варирају у зависности од читача, али обично ћете тражити дугме "Додај фид" или "Претплати се", налепити ваш RSS URL и дати фиду име.
+Otvorite aplikaciju za čitanje RSS-a i dodajte kopirani URL kao novu pretplatu na feed. Tačni koraci se razlikuju po RSS čitaču, ali obično ćete tražiti dugme „Dodaj feed“ ili „Pretplati se“, nalepiti URL RSS feeda i dati feedu ime.
 
-Такође можете кликнути на дугме "Погледај фид" на страници RSS фида да бисте видели фид директно у вашем прегледачу.
+Takođe možete kliknuti dugme „Pogledaj feed“ na RSS Feed stranici da biste videli vaš feed direktno u pregledaču.
 
-Да бисте онемогућили приступ вашем RSS фиду, једноставно поништите избор у пољу "Омогући приступ RSS фиду". То ће спречити приступ фиду, иако ће URL остати исти ако га поново омогућите касније.
+Da biste onemogućili pristup vašem RSS feedu, jednostavno odznačite polje „Omogući pristup RSS Feedu“. Ovo će sprečiti pristup feedu, iako će URL ostati isti ako ga kasnije ponovo omogućite.

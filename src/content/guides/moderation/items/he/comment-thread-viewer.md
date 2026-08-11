@@ -1,15 +1,17 @@
-בעת ניהול ותצוגת שרשורי תגובות רצוי שתהיה אפשרות לדלג ישירות לשרשור כדי לקבל הקשר במהלך המודרציה.
+When moderating and viewing comment threads it is desirable to be able to jump directly to a thread to get context during moderating.
 
-זה אומר שהזרימה של המשתמש מתחילה בדף ניהול התגובות, ולאחר מכן יהיה עליו לעבור מתגובה בודדת אל הדף שמכיל את התגובה, להמתין לטעינת הדף, להמתין לטעינת התגובות, ואז לגלול אל אותה תגובה.
+This means that the user's flow starts in the Comment Moderation page, and would then have to go from an individual comment to
+the page containing that comment, wait for that page to load, wait for the comments to load, and then scroll to that comment.
 
-עם זאת, FastComments מספקת דרך מהירה יותר. בדף ניהול התגובות, לצד כל תגובה, יש כפתור "הצג תגובה" בפינה הימנית התחתונה.
+However, FastComments provides a faster way. In the Moderate Comments page, next to each comment, there is a "הצג תגובה" button in the bottom right.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=1&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.comments .comment-component'; title='A Comment' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=1&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.comments .comment-component'; alt='הודעה בודדת ברשימת המודרציה, עם כפתור \'הצג תגובה\' בפינה הימנית התחתונה'; title='הודעה' app-screenshot-end]
 
-אם לתגובה זו יש תגובות משנה, טקסט הכפתור יציג במקום זאת את מספר התגובות, אך לחיצה עליו תבצע את אותה פעולה.
+If this comment has replies, the button text will instead say the number of replies, but clicking it takes the same action.
 
-כפתור זה יוביל אותך אל ה-**מציג שרשורי תגובות**.
+This button will take you to the **Comment Thread Viewer**.
 
-ה-**מציג שרשורי תגובות** הוא יישום קטן, נטען במהירות ומאוחסן על ידי FastComments, שמציג את שרשור התגובות של הדף שבו נמצאת התגובה, ומגלגל אל אותה תגובה.
+The Comment Thread Viewer is a small, fast loading application hosted by FastComments that renders the comment thread for the page that
+the comment is on, and scrolls to that comment.
 
-זה מאפשר למנהלים לאסוף במהירות את ההקשר שהם צריכים, מבלי להמתין לטעינת דף נוסף.
+This allows moderators to gather the context they need to, quickly, without having to wait for another page to load.

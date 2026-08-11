@@ -1,19 +1,21 @@
-Za skrbnike je na vrhu strani za moderiranje komentarjev gumb Dodaj moderatorje.
+For administrators, at the top of the Comment Moderation page is an Add Moderators button.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.moderation-settings-options'; title='Comment Moderation Setting Buttons' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.moderation-settings-options'; alt='Vrstica gumbov na vrhu strani za moderiranje komentarjev, vključno z gumbom Dodaj moderatorje'; title='Gumbi nastavitev moderiranja komentarjev' app-screenshot-end]
 
-Če že imate moderatorje, bo ta gumb označen z "Uredi moderatorje".
+If you already have moderators, this button will say "Edit Moderators".
 
-Poglejmo stran "Dodaj moderatorja".
+Let's take a look at the "Add a Moderator" page.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/moderator/new'; selector = '.account-block'; title='The Add a Moderator Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/moderator/new'; selector = '.account-block'; alt='Stran Dodaj moderatorja, ki zahteva le ime in e‑naslov novega moderatorja, preden pošlje povabilo'; title='Stran Dodaj moderatorja' app-screenshot-end]
 
-Za dodajanje moderatorja sta potrebna le ime in e-poštni naslov.
+To add a moderator all that is needed is a name and an email.
 
-Če je e-poštni naslov povezan z obstoječim računom FastComments, bodo prek e-pošte povabljeni, da se pridružijo vašemu računu kot moderator.
+If the email is associated with an existing FastComments account, they will be invited via email to join your account as a moderator.
 
-Če podani e-poštni naslov ni povezan z obstoječim računom FastComments, bo zanje ustvarjen nov račun.
+If the given email is not associated with an existing FastComments account, a new one will be created for them.
 
-Povezava za povabilo bo poslana moderatorju in bo omogočila samodejno prijavo. V prihodnosti, če se bodo želeli prijaviti, lahko preprosto obiščejo
-<a href="https://fastcomments.com/auth/login" target="_blank">stran za prijavo</a> in vnesejo ime/e-poštni naslov, ki ste ga navedli prej. To jim bo poslalo
-povezavo za prijavo.
+An invite link will be sent to the moderator, which can automatically log them in. In the future if they wish to login, they can simply visit the
+<a href="https://fastcomments.com/auth/login" target="_blank">login page</a> and enter the name/email that you provided earlier. This will send them
+a link to login.
+
+Unless they log out, they will be logged in for thirty days.

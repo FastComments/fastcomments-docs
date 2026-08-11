@@ -1,9 +1,9 @@
 [related-parameter-start name = 'imageContentProfanityLevel'; type = 'string'; related-parameter-end]
 
-По умолчанию в виджете комментариев FastComments модерация изображений отключена `off`.
+По умолчанию виджет комментариев FastComments имеет модерацию изображений, отключённую `off`.
 
 Доступные варианты: `off`, `low`, `medium` и `high`.
 
-В интерфейсе настройки виджета это находится в разделе `Image Content Moderation Level`, при условии, что опция `Disable Image Uploads?` не отмечена.
+В пользовательском интерфейсе настройки виджета вы найдёте это под `Image Content Moderation Level`, пока параметр `Disable Image Uploads?` не отмечен.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.image-profanity-level'; title='Setting The Image Content Moderation Level' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.image-profanity-level'; alt='Выпадающий список уровня модерации изображений на странице настройки виджета, установленный в off, low, medium или high'; title='Настройка уровня модерации изображений' app-screenshot-end]

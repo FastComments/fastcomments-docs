@@ -1,20 +1,18 @@
 ---
-FastComments는 SSR에서 다음 기능을 지원합니다:
+FastComments는 SSR과 함께 다음 기능을 지원합니다:
 
 - 맞춤형 댓글 위젯.
-- 익명 댓글 작성.
-- 로그인 상태에서 댓글 작성.
+- 익명 댓글.
+- 로그인 상태에서 댓글 달기.
 - SSO.
-- 최상위 및 중첩 답글.
+- 루트 및 중첩 답글.
 - 댓글 스레드 보기 및 페이지 매김.
-- 투표(익명 투표 포함).
+- 투표, 익명 투표 포함.
 - 기본 정렬 방향 변경.
 
-### 예제
+### 예시
 
-FastComments SSR의 예제는 [여기](https://fastcomments.com/ssr/comments?tenantId=L177BUDVvSe&urlId=ssr-test&url=https%3A%2F%2Ffastcomments.com%2Fssr%2Fcomments%2F%3FtenantId%3DL177BUDVvSe%26urlId%3Dssr-test)에서 확인할 수 있습니다.
+FastComments SSR의 예시는 [여기](https://fastcomments.com/ssr/comments?tenantId=L177BUDVvSe&urlId=ssr-test&url=https%3A%2F%2Ffastcomments.com%2Fssr%2Fcomments%2F%3FtenantId%3DL177BUDVvSe%26urlId%3Dssr-test)에서 확인할 수 있습니다.
 
-[app-screenshot-start url='https://fastcomments.com/ssr/comments?tenantId=L177BUDVvSe&urlId=ssr-test&url=https%3A%2F%2Ffastcomments.com%2Fssr%2Fcomments%2F%3FtenantId%3DL177BUDVvSe%26urlId%3Dssr-test'; selector = 'body'; title='FastComments SSR' app-screenshot-end]
-
-
+[app-screenshot-start url='https://fastcomments.com/ssr/comments?tenantId=L177BUDVvSe&urlId=ssr-test&url=https%3A%2F%2Ffastcomments.com%2Fssr%2Fcomments%2F%3FtenantId%3DL177BUDVvSe%26urlId%3Dssr-test'; selector = 'body'; alt='SSR 예시 페이지에서 중첩된 답글, 투표 버튼 및 댓글 입력 상자가 포함된 서버 렌더링된 댓글 스레드'; title='FastComments SSR' app-screenshot-end]
 ---

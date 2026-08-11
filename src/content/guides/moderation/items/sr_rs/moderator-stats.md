@@ -1,14 +1,12 @@
-Посао који модератори обављају прати се и може се видети повратком на "Уреди модераторе" страницу.
+The work that moderators do is tracked and can be viewed by coming back to the "Edit Moderators" page.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/moderators?demo=true'; linkUrl='/auth/my-account/moderate-comments/moderators'; selector = '.account-block'; title='Moderator Stats' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/moderators?demo=true'; linkUrl='/auth/my-account/moderate-comments/moderators'; selector = '.account-block'; alt='Страница Edit Moderators која приказује сваког модератора са бројем коментара одобрених, обрисаних и означених као спам'; title='Статистика модератора' app-screenshot-end]
 
-Ова страница ће пратити различите статистике:
-- Одобрени коментари
-- Коментари означени као прегледани
-- Избрисани коментари
-- Измењени коментари
-- Коментари означени као спам
-- Забрањени корисници
-- Статус њихове позивнице (Прихваћено или На чекању)
-
----
+This page will track various statistics:
+- Comments Approved
+- Comments Marked Reviewed
+- Comments Deleted
+- Comments Edited
+- Comments Marked Spam
+- Users Banned
+- Their Invite Status (Accepted or Pending)

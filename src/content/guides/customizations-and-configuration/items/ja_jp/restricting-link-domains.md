@@ -1,12 +1,10 @@
----
-デフォルトでは、FastCommentsは任意の外部サイトへのリンクを許可します。
+By default, FastComments allows linking to any external site.
 
-これは、代わりに指定したサイトやドメインのリストに制限できます。サイト、またはドメインにリンクを投稿しようとすると、
-定義されたリストに含まれていない場合は、ユーザーにエラーが表示されます。
+This can be restricted to instead a desired list of sites, or domains. Attempting to post a link to a site, or domain,
+not in the defined list will cause an error to be shown to the user.
 
-この検証はコメントウィジェットとAPIにのみ適用されます。インポートは影響を受けません。
+This validation is only for the Comment Widget and API. Imports are not affected.
 
-これはコードを書くことなく、ウィジェットのカスタマイズページで行います：
+This is done without code, on the widget customization page:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.restricted-link-domains-list'; selector = '.external-link-settings'; title='Restrict External Link Domains' app-screenshot-end]
----
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.restricted-link-domains-list'; selector = '.external-link-settings'; alt='許可されたサイトが入力される制限付きリンクドメインリストを含む外部リンク設定'; title='外部リンクドメインを制限する' app-screenshot-end]

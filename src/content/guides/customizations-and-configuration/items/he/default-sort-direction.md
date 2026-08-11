@@ -1,29 +1,29 @@
 [related-parameter-start name = 'defaultSortDirection'; type = 'string'; related-parameter-end]
 
-ברירת המחדל של FastComments היא למיין את התגובות לפי כיוון המיון "הכי רלוונטי".
+בברירת מחדל, FastComments ימיין תגובות לפי כיוון המיון "הכי רלוונטי".
 
-מיון "הכי רלוונטי" לוקח בחשבון את זמן השארת התגובה ואת מספר ההצבעות בעת המיון.
+מיון הכי רלוונטי מתחשב בזמן שהתגובה נכתבה ובמספר הקולות לצורך המיון.
 
-המשתמש יכול לשנות את כיוון המיון ל־'הישן ראשון' או 'החדש ראשון' בממשק הווידג'ט של התגובות.
+המשתמש יכול לאחר מכן לשנות את כיוון המיון ל"ישן ראשון" או "חדש ראשון" בממשק הווידג'ט של התגובות.
 
-עם זאת, ניתן לשנות את ברירת המחדל לאחת משלוש האפשרויות. לדוגמה, אם תרצו להציג את התגובות הוותיקות ביותר תחילה:
+עם זאת, ניתן לשנות את ברירת המחדל לכל אחד משלושת האפשרויות. לדוגמה, אם ברצונך להציג את התגובות הישנות ביותר ראשונות:
 
-[code-example-start config = {defaultSortDirection: "OF"}; linesToHighlight = [6]; title = 'Changing The Default Sort To Oldest First'; code-example-end]
+[code-example-start config = {defaultSortDirection: "OF"}; linesToHighlight = [6]; title = 'שינוי המיון ברירת המחדל לישן ראשון'; code-example-end]
 
-קבענו את הערך של **defaultSortDirection** כ־"OF" כדי להגדיר את כיוון המיון כ־"OF".
+אנו מגדירים את ערך **defaultSortDirection** ל-"OF" כדי לקבוע את הכיוון ל-"OF".
 
-עבור כיוון המיון של 'החדש ראשון' נעשה את הפעולה הבאה:
+לכיוון המיון "חדש ראשון", נבצע את הפעולה הבאה:
 
-[code-example-start config = {defaultSortDirection: "NF"}; linesToHighlight = [6]; title = 'Changing The Default Sort To Newest First'; code-example-end]
+[code-example-start config = {defaultSortDirection: "NF"}; linesToHighlight = [6]; title = 'שינוי המיון ברירת המחדל לחדש ראשון'; code-example-end]
 
-הערכים התקפים עבור **defaultSortDirection** הם:
+הערכים החוקיים עבור **defaultSortDirection** הם:
 
-- MR: "העדכני ביותר"
-- NF: "החדש ראשון"
-- OF: "הישן ראשון"
+- MR: "Most Recent"
+- NF: "Newest First"
+- OF: "Oldest First"
 
-ניתן גם לבצע זאת ללא קוד. בדף התאמת הווידג'ט, ראו את הסעיף "כיוון מיון ברירת מחדל".
+ניתן לבצע זאת גם ללא קוד. בעמוד התאמת הווידג'ט, ראה את הסעיף "Default Sort Direction".
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.default-sort-direction'; title='Changing The Default Sort Direction' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.default-sort-direction'; alt='בוחר כיוון המיון ברירת המחדל המציע רלוונטיות מרבית, חדש ראשון, וישן ראשון'; title='שינוי כיוון המיון ברירת המחדל' app-screenshot-end]
 
-שימו לב שהתגובות בכל דף עבור כל כיוון מיון מחושבות מראש, ולכן לכל כיווני המיון ביצועים זהים.
+שימו לב, שהתגובות בכל דף עבור כל כיוון מיון מחושבות מראש, ולכן לכל כיווני המיון יש את אותה ביצועים.

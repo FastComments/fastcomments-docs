@@ -1,13 +1,13 @@
 ---
-預設情況下，FastComments 允許使用者編輯他們的留言。
+預設情況下，FastComments 允許使用者編輯他們的評論。
 
-不過，可以防止此行為。
+然而，也可以防止此行為。
 
-在 widget 自訂頁面，請查看 "停用編輯" 選項。
+在小工具自訂頁面中，請查看「停用編輯」選項。
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.disable-commenter-comment-edit'; selector = '.disable-commenter-comment-edit'; title='Disable Comment Editing' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.disable-commenter-comment-edit'; selector = '.disable-commenter-comment-edit'; alt='在小工具自訂頁面上的「停用編輯」選項，防止評論者編輯他們的評論'; title='停用評論編輯' app-screenshot-end]
 
-- 這只會影響一般的留言者（Commenters），不會影響版主或管理員，他們仍然可以編輯。
-- 當傳遞 `contextUserId` 時，這也會影響 API 整合。 
+- 這僅影響一般評論者，而不影響版主或管理員，他們仍然可以編輯。
+- 這也會影響在傳遞 `contextUserId` 時的 API 整合。 
 
 ---

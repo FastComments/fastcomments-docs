@@ -1,17 +1,17 @@
-モデレーションやコメントスレッドの閲覧時には、モデレート中に文脈を把握するためにスレッドへ直接ジャンプできることが望ましい。
+When moderating and viewing comment threads it is desirable to be able to jump directly to a thread to get context during moderating.
 
-これはユーザーのフローがコメントモデレーションページから始まり、個々のコメントから
-そのコメントを含むページへ移動し、ページの読み込みを待ち、コメントの読み込みを待ってからそのコメントまでスクロールする必要があることを意味します。
+This means that the user's flow starts in the Comment Moderation page, and would then have to go from an individual comment to
+the page containing that comment, wait for that page to load, wait for the comments to load, and then scroll to that comment.
 
-しかし、FastCommentsはより速い方法を提供します。コメントモデレーションページでは、各コメントの右下に "コメントを表示" ボタンがあります。
+However, FastComments provides a faster way. In the Moderate Comments page, next to each comment, there is a "View Comment" button in the bottom right.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=1&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.comments .comment-component'; title='A Comment' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=1&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.comments .comment-component'; alt='モデレーションリスト内の単一コメントで、右下に「View Comment」ボタンがあります'; title='コメント' app-screenshot-end]
 
-このコメントに返信がある場合、ボタンのテキストは返信数を表示しますが、クリックすると同じ動作になります。
+If this comment has replies, the button text will instead say the number of replies, but clicking it takes the same action.
 
-このボタンをクリックすると、**コメントスレッドビューア** に移動します。
+This button will take you to the **Comment Thread Viewer**.
 
-コメントスレッドビューアは、FastCommentsがホストする小規模で読み込みの速いアプリケーションで、そのコメントがあるページのコメントスレッドをレンダリングし、
-当該コメントまでスクロールします。
+The Comment Thread Viewer is a small, fast loading application hosted by FastComments that renders the comment thread for the page that
+the comment is on, and scrolls to that comment.
 
-これにより、モデレーターは別のページの読み込みを待つことなく、必要な文脈を素早く把握できます。
+This allows moderators to gather the context they need to, quickly, without having to wait for another page to load.

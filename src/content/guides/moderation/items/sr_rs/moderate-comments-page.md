@@ -1,14 +1,13 @@
----
-Место где се обавља већина модерације је страница модерације коментара. На пример, ево снимка екрана нашег тренутног демо налога:
+The place where most moderation takes place is the Comment Moderation page. For example, here's a screenshot of our current demo account:
 
-[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = 'body'; title='Comment Moderation Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = 'body'; alt='Пуна страница за модерацију коментара за демо налог, приказује филтере, претрагу и три коментара по страници'; title='Страница за модерацију коментара' app-screenshot-end]
 
-Поставили смо број по страници на три да би овај снимак екрана имао разумну величину. У пракси ћете обично радити са 50 коментара по страници.
+We've set the count per page to three to make this screenshot a reasonable size. In practice, you would be working with 50 comments per page by default.
 
-Страница за модерирање такође подржава [Тастатурске пречице](#keyboard-shortcuts) за навигацију између коментара и извођење радњи без коришћења миша. Притисните **?** на страници за модерирање да бисте видели све доступне пречице.
+The moderation page also supports [Keyboard Shortcuts](#keyboard-shortcuts) for navigating between comments and performing actions without using the mouse. Press **?** on the moderation page to see all available shortcuts.
 
-Страница је такође **уживо** — када стигну нови коментари који одговарају вашим тренутним филтерима, на врху се појави банер који вас упозорава. Погледајте [Жива модерација](#comment-actions-live) за детаље.
+The page is also **live** — when new comments arrive that match your current filters, a banner appears at the top alerting you. See [Live Moderating](#comment-actions-live) for details.
 
-Хајде да прођемо кроз функције приказане овде.
+Let's go into the features shown here.
 
 ---

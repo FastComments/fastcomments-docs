@@ -1,17 +1,17 @@
 ---
-Por padrão, o tamanho da página do FastComments é `30`. Isso inclui respostas em threads.
+Por padrão, o tamanho de página do FastComments é `30`. Isso inclui respostas em tópicos.
 
-O tamanho da página pode ser personalizado na [Interface de Configuração do Widget](https://fastcomments.com/auth/my-account/customize-widget) em tamanhos que variam de `10` a `200`.
+O tamanho de página pode ser personalizado na [Widget Configuration UI](https://fastcomments.com/auth/my-account/customize-widget) em tamanhos variados de `10` a `200`.
 
-Observe que alterar o tamanho da página requer recalcular todos os threads de comentários na sua conta. Isso pode levar alguns minutos.
+Observe que alterar o tamanho de página requer recalcular todos os tópicos de comentários em sua conta. Isso pode levar alguns minutos.
 
 Isso não pode ser configurado no widget do lado do cliente, pois as páginas são calculadas no servidor.
 
-Exemplo de configuração mostrado abaixo:
+Um exemplo de configuração é mostrado abaixo:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.page-size'; title='Custom Page Sizes' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.page-size'; alt='Seletor de tamanho de página na página de personalização do widget, onde um valor de 10 a 200 pode ser escolhido'; title='Tamanhos de Página Personalizados' app-screenshot-end]
 
-Os tamanhos de página podem ser personalizados globalmente, por domínio ou por página, criando regras de personalização diferentes.
+Os tamanhos de página podem ser personalizados globalmente, ou por domínio, ou por página, criando diferentes regras de personalização.
 
 Isso afetará todos os clientes, integrações e frameworks que você possa estar usando para exibir comentários através da nossa plataforma.
 

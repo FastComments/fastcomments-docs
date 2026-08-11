@@ -1,34 +1,29 @@
-FastComments は、リクエストがあなたのサイトから来ていることを確認するためにアカウントへのリクエストを認証します。このため
-FastComments をインストールしたいサイト（またはサイト群）を把握する必要があります。
+FastComments は、リクエストがあなたのサイトから来ていることを確認するために、アカウントへのリクエストを認証します。そのため、FastComments をインストールしたいサイト（または複数のサイト）を把握する必要があります。
 
-FastComments はドメインおよびサブドメインによる認証をサポートします。
+FastComments は、ドメインおよびサブドメインによる認証をサポートしています。
 
-サイト `https://example.com` を例に取りましょう。この場合、`example.com` はドメインです。`example.com` は `example.com` と `www.example.com` の両方をサポートします。ここでは "www" を「サブドメイン」と呼びます。
+サイト `https://example.com` を例に取ります。この場合、"`example.com`" がドメインです。`example.com` は `example.com` と `www.example.com` の両方をサポートします。"www" をサブドメインと呼びます。
 
-For Example:
+例:
 
-- To allow only `blog.example.com`:
-  - Add `blog.example.com` to your domains.
-- To allow `www.example.com`, `somesite.example.com`, and `example.com`:
-  - Add `example.com` to your domains.
-  - This is billed as having **one domain** associated with your account.
-- You can now add wildcard subdomains, for example *myname.vercel.app. 
-  - This is billed as having **one domain** associated with your account.
+- `blog.example.com` のみを許可する場合:
+  - `blog.example.com` をドメインに追加します。
+- `www.example.com`、`somesite.example.com`、および `example.com` を許可する場合:
+  - `example.com` をドメインに追加します。
+  - これは、アカウントに **1 つのドメイン** が関連付けられているものとして請求されます。
+- ワイルドカードサブドメインも追加できます。例: *myname.vercel.app* 
+  - これも、アカウントに **1 つのドメイン** が関連付けられているものとして請求されます。
 
-If you were using a blogging platform, and you were given a subdomain, you would want
-to add the **full domain including the subdomain** to your account, for example: `cats.blogger.com`.
+ブログプラットフォームを使用していて、サブドメインが付与されている場合は、アカウントに **サブドメインを含む完全なドメイン** を追加する必要があります。例: `cats.blogger.com`.
 
-We can add domains to our account by visiting the `My Domains` page and clicking `Add a Domain` at the bottom:
+`My Domains` ページにアクセスし、下部の `Add a Domain` をクリックしてドメインをアカウントに追加できます:
 
-[app-screenshot-start url='/auth/my-account/configure-domains'; selector = '.content'; title='The My Domains Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/configure-domains'; selector = '.content'; alt='アカウント上のドメインを一覧表示し、下部に「Add a Domain」ボタンがある My Domains ページ'; title='My Domains ページ' app-screenshot-end]
 
-During the trial period, **domains are automatically added to your account** when requests come from said domains. However,
-after this time they must be added explicitly for security. You should receive an email when this automated behavior occurs.
+トライアル期間中は、**ドメインからのリクエストがあると、ドメインが自動的にアカウントに追加されます**。ただし、この期間が終了した後は、セキュリティ上の理由で明示的に追加する必要があります。この自動的な動作が発生した際には、メールが送信されます。
 
-You do **not** have to add `localhost` for local development - it is allowed by default.
+ローカル開発用に `localhost` を追加する必要は **ありません**。デフォルトで許可されています。
 
-#### API 経由
+#### API 経由で
 
-ドメインは [DomainConfigs API 経由](/guide-api.html#domain-config-structure) でも追加・設定できます。
-
----
+ドメインは、[DomainConfigs API を使用して](/guide-api.html#domain-config-structure) 追加および構成することもできます。

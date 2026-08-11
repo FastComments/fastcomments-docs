@@ -1,21 +1,21 @@
-Za administratore, na vrhu stranice za moderisanje komentara nalazi se dugme Dodaj moderatore.
+For administrators, at the top of the Comment Moderation page is an Add Moderators button.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.moderation-settings-options'; title='Comment Moderation Setting Buttons' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.moderation-settings-options'; alt='Red dugmadi na vrhu stranice za moderaciju komentara, uključujući dugme „Dodaj moderatore“'; title='Dugmad za podešavanje moderacije komentara' app-screenshot-end]
 
-Ako već imate moderatore, ovo dugme će pisati "Uredi moderatore".
+If you already have moderators, this button will say "Edit Moderators".
 
-Pogledajmo stranicu "Dodaj moderatora".
+Let's take a look at the "Add a Moderator" page.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/moderator/new'; selector = '.account-block'; title='The Add a Moderator Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/moderator/new'; selector = '.account-block'; alt='Stranica „Dodaj moderatora“ koja traži samo ime i e‑mail novog moderatora pre slanja poziva'; title='Stranica „Dodaj moderatora“' app-screenshot-end]
 
-Da biste dodali moderatora, potrebno je samo ime i email.
+To add a moderator all that is needed is a name and an email.
 
-Ako je email povezan sa postojećim FastComments nalogom, biće pozvani putem emaila da se pridruže vašem nalogu kao moderator.
+If the email is associated with an existing FastComments account, they will be invited via email to join your account as a moderator.
 
-Ako dati email nije povezan sa postojećim FastComments nalogom, biće im kreiran novi nalog.
+If the given email is not associated with an existing FastComments account, a new one will be created for them.
 
-Poslaće se pozivni link moderatoru, koji ih može automatski prijaviti. U budućnosti, ako žele da se prijave, mogu jednostavno posetiti
-<a href="https://fastcomments.com/auth/login" target="_blank">stranicu za prijavu</a> i uneti ime/email koji ste prethodno naveli. Ovo će im poslati
-link za prijavu.
+An invite link will be sent to the moderator, which can automatically log them in. In the future if they wish to login, they can simply visit the
+<a href="https://fastcomments.com/auth/login" target="_blank">stranicu za prijavu</a> and enter the name/email that you provided earlier. This will send them
+a link to login.
 
-Ukoliko se ne odjave, biće prijavljeni trideset dana.
+Unless they log out, they will be logged in for thirty days.

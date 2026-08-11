@@ -1,19 +1,21 @@
 [related-parameter-start name = 'readonly'; type = 'boolean'; related-parameter-end]
 
-Kommentering kan låses, så der ikke kan efterlades nye kommentarer eller stemmer ved at sætte readonly-flaget til true.
+Kommentar kan låses, så ingen nye kommentarer eller stemmer kan afgives ved at sætte readonly-flaget til true.
 
 Kommentarer vil også ikke kunne redigeres eller slettes.
 
-[code-example-start config = {readonly: true}; linesToHighlight = [6]; title = 'Making The Comment Thread Readonly'; code-example-end]
+[code-example-start config = {readonly: true}; linesToHighlight = [6]; title = 'Gør kommentartråden skrivebeskyttet'; code-example-end]
 
-Dette kan tilpasses uden kode, på widget-tilpasningssiden, for et helt domæne, eller en side:
+Dette kan tilpasses uden kode på widget-tilpasningssiden, for et helt domæne eller en side:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.prevent-new-replies'; title='Making The Comment Thread Readonly' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.prevent-new-replies'; alt='Indstillingen for at forhindre nye svar på widget-tilpasningssiden, som låser en tråd for et domæne eller en side'; title='Gør kommentartråden skrivebeskyttet' app-screenshot-end]
 
-## Opdatering!
+## Update!
 
 Fra november 2022 kan tråde låses eller låses op **live** af administratorer og moderatorer via tre-punkts-menuen over svarområdet.
 
-Dette vil forhindre nye kommentarer, mens stemmegivning stadig er tilladt, og brugere kan slette deres kommentarer, hvis de ønsker det, mens `readonly` ikke tillader disse ting. 
+Dette vil forhindre nye kommentarer, mens stemmer stadig er tilladt, og brugere kan slette deres kommentarer, hvis de ønsker det, mens `readonly` ikke tillader disse ting. 
 
-Dette svarer til feltet `isClosed` i `Page` API'en.
+Dette svarer til `isClosed`-feltet i `Page`-API'en.
+
+---

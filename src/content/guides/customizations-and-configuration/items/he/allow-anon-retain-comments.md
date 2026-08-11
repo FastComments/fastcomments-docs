@@ -1,10 +1,7 @@
----
-ניתן להגדיר את FastComments כך שתסיר תגובות שאינן מאומתות לאחר מספר ימים רצוי. זה עוזר להילחם בספאם.
+FastComments ניתן להגדיר להסיר תגובות לא מאומתות לאחר מספר ימים רצוי. זה מסייע במאבק בספאם.
 
-כברירת מחדל, הוא לא עושה זאת.
+בברירת מחדל, הוא לא עושה זאת.
 
-ניתן להגדיר או להשבית זאת דרך עמוד <a href="https://fastcomments.com/auth/my-account/moderate-comments/settings" target="_blank">הגדרות המודרציה</a>.
+זה ניתן להגדיר, או לבטל, דרך דף <a href="https://fastcomments.com/auth/my-account/moderate-comments/settings" target="_blank">הגדרות מודרציה</a>.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/settings'; selector = '.account-block form'; title='Moderation Settings' app-screenshot-end]
-
----
+[app-screenshot-start url='/auth/my-account/moderate-comments/settings'; selector = '.account-block form'; alt='טופס הגדרות מודרציה שבו אתה מגדיר כמה ימים נשמרים תגובות לא מאומתות לפני הסרה'; title='הגדרות מודרציה' app-screenshot-end]

@@ -1,29 +1,29 @@
-יש שתי דרכים לחסום משתמשים מלהגיב באתר שלך באמצעות FastComments.
+There are two ways to ban users from commenting on your site with FastComments.
 
-הראשונה היא שאם כבר ידועה לך כתובת הדוא"ל שלהם, תוכל להזין אותה בעמוד ה- <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">משתמשים חסומים</a>.
+The first is if you already know their email, you can enter it on the <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">משתמשים חסומים</a> page.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; title='The Banned Users Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; alt='רשימת משתמשים חסומים תחת מודרציה של תגובות, עם כתובות האימייל החסומות וכפתור להוספת חסימה חדשה'; title='דף המשתמשים החסומים' app-screenshot-end]
 
-ניתן לגשת לעמוד זה דרך ניהול תגובות -> משתמשים חסומים
+This page can be accessed via Moderate Comments -> Banned Users
 
-כאשר נחסום משתמש, נוכל לבחור סוג — חסימה קבועה או חסימה סמויה קבועה:
+When we go to ban a user, we can pick a type, either Permanent or Permanent Shadow Ban:
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; title='Banning a User' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; alt='טופס חסימה חדש עם שדה אימייל ובחירת סוג החסימה קבוע או חסימה צללית קבועה'; title='חסימת משתמש' app-screenshot-end]
 
-הדרך השנייה לחסום משתמש היא על-ידי לחיצה על כפתור החסימה שממוקם על כל תגובה בעמוד ניהול התגובות.
+The second way to ban a user is by clicking the ban button that is placed on each comment on the Comment Moderation page.
 
-כאשר נלחץ על כפתור החסימה, יוצגו בפנינו כמה אפשרויות שבהן נוכל לציין את סוג החסימה ומשך הזמן שלה.
+When we click the ban button, you'll be presented with some options, where we can specify the ban type and duration.
 
-### סיומות דואר אלקטרוני (Email Aliases)
+### כינויים של אימייל
 
-בעת חסימת משתמש לפי דוא"ל, FastComments מתעלמת באופן אוטומטי מכינויים עם `+`. לדוגמה, חסימת `user+alias@gmail.com` תחסום גם את `user@gmail.com` ואת כל השינויים האחרים עם `+` של הכתובת הזו, כמו `user+other@gmail.com`.
+When banning a user by email, FastComments automatically ignores `+` aliases. For example, banning `user+alias@gmail.com` will also ban `user@gmail.com` and any other `+` variation of that address, such as `user+other@gmail.com`.
 
-### חסימות סמויות
+### חסימות צללית
 
-חסימה סמויה היא סוג של חסימה שגורמת לכך שנראה כאילו תגובת או הצבעת המשתמש נשמרה בהצלחה, בעוד שבפועל לא נשמרה. מצב זה עשוי להיות רצוי במצבים מסוימים.
+A shadow-ban is a type of ban that makes it appear that the user's comment or vote was saved successfully, when in fact it was not. This may be desirable in certain situations.
 
 ### חסימה באמצעות כתובת IP
 
-אלא אם שוכר מעוניין לבטל זאת, FastComments תומכת בחסימה לפי IP על ידי אחסון גרסה מוצפנת (hashed) של כתובת ה-IP של המגיב.
+Unless a tenant wishes to opt out, FastComments supports banning via IP by storing a hashed version of the commenter's IP address.
 
 ---

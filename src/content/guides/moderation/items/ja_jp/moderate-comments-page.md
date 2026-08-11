@@ -1,11 +1,11 @@
-モデレーションの大部分はコメントモデレーションページで行われます。例えば、こちらは現在のデモアカウントのスクリーンショットです:
+The place where most moderation takes place is the Comment Moderation page. For example, here's a screenshot of our current demo account:
 
-[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = 'body'; title='Comment Moderation Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = 'body'; alt='デモアカウント用のフルコメントモデレーションページで、フィルター、検索、ページあたり3件のコメントが表示されています'; title='コメントモデレーションページ' app-screenshot-end]
 
-このスクリーンショットを適切なサイズにするために、1ページあたりの件数を3件に設定しています。実際には、デフォルトで1ページあたり50件のコメントを扱います。
+We've set the count per page to three to make this screenshot a reasonable size. In practice, you would be working with 50 comments per page by default.
 
-モデレーションページでは、コメント間の移動やマウスを使わずに操作を行うための[キーボードショートカット](#keyboard-shortcuts)もサポートしています。モデレーションページで **?** を押すと、利用可能なすべてのショートカットが表示されます。
+The moderation page also supports [Keyboard Shortcuts](#keyboard-shortcuts) for navigating between comments and performing actions without using the mouse. Press **?** on the moderation page to see all available shortcuts.
 
-このページは**ライブ**でもあり、現在のフィルターに一致する新しいコメントが届くと、上部にバナーが表示されて通知します。詳細は[ライブモデレーション](#comment-actions-live)を参照してください。
+The page is also **live** — when new comments arrive that match your current filters, a banner appears at the top alerting you. See [Live Moderating](#comment-actions-live) for details.
 
-ここで表示されている機能について詳しく見ていきましょう。
+Let's go into the features shown here.

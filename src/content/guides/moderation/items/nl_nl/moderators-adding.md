@@ -1,21 +1,21 @@
-Voor beheerders staat bovenaan de pagina Reactie-moderatie een knop Moderators toevoegen.
+For administrators, at the top of the Comment Moderation page is an Add Moderators button.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.moderation-settings-options'; title='Comment Moderation Setting Buttons' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.moderation-settings-options'; alt='Rij knoppen bovenaan de pagina Commentaarmoderatie, inclusief de knop \'Moderators toevoegen\''; title='Instellingsknoppen voor commentaarmoderatie' app-screenshot-end]
 
-Als u al moderators heeft, zal deze knop "Moderators bewerken" aangeven.
+If you already have moderators, this button will say "Edit Moderators".
 
-Laten we naar de pagina "Moderator toevoegen" kijken.
+Let's take a look at the "Add a Moderator" page.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/moderator/new'; selector = '.account-block'; title='The Add a Moderator Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/moderator/new'; selector = '.account-block'; alt='Pagina \'Een moderator toevoegen\' die alleen vraagt om de naam en e‑mail van de nieuwe moderator voordat de uitnodiging wordt verzonden'; title='De pagina \'Een moderator toevoegen\'' app-screenshot-end]
 
-Om een moderator toe te voegen is alleen een naam en een e-mailadres nodig.
+To add a moderator all that is needed is a name and an email.
 
-Als het e-mailadres gekoppeld is aan een bestaand FastComments-account, wordt die persoon per e-mail uitgenodigd om moderator van uw account te worden.
+If the email is associated with an existing FastComments account, they will be invited via email to join your account as a moderator.
 
-Als het opgegeven e-mailadres niet gekoppeld is aan een bestaand FastComments-account, wordt er een nieuw account voor hen aangemaakt.
+If the given email is not associated with an existing FastComments account, a new one will be created for them.
 
-Er wordt een uitnodigingslink naar de moderator gestuurd, waarmee zij automatisch kunnen inloggen. In de toekomst als ze willen inloggen, kunnen ze eenvoudig de
-<a href="https://fastcomments.com/auth/login" target="_blank">inlogpagina</a> bezoeken en de naam/e-mail invoeren die u eerder hebt opgegeven. Dit stuurt hen
-een link om in te loggen.
+An invite link will be sent to the moderator, which can automatically log them in. In the future if they wish to login, they can simply visit the
+<a href="https://fastcomments.com/auth/login" target="_blank">inlogpagina</a> and enter the name/email that you provided earlier. This will send them
+a link to login.
 
-Tenzij ze uitloggen, blijven ze dertig dagen ingelogd.
+Unless they log out, they will be logged in for thirty days.

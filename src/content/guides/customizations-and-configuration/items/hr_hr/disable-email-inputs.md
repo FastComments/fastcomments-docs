@@ -1,17 +1,18 @@
-Kada korisnici komentiraju, a nisu prijavljeni, bit će im zatraženo da navedu svoju e-poštu.
+Kada korisnici komentiraju i nisu prijavljeni, bit će zatraženo da unesu svoju e‑mail adresu.
 
-To će stvoriti "nepotvrđenu sesiju" za tog korisnika, i zatražit ćemo od njih da potvrde tu sesiju putem e-pošte.
+Ovo će za tog korisnika stvoriti „nepotvrđenu sesiju“, a mi ćemo ih zamoliti da potvrde tu sesiju putem e‑maila.
 
-Za neke web-lokacije ili aplikacije poželjno je ne tražiti od korisnika njihovu e-poštu prilikom komentiranja ili glasovanja.
+Za neke web‑stranice ili aplikacije poželjno je da se korisniku ne traži e‑mail adresa prilikom komentiranja ili glasanja.
 
-Omogućavanje anonimnog komentiranja čini polje za unos e-pošte opcionalnim. Međutim, možemo ga u potpunosti onemogućiti. Prvo, omogućite
-anonymous commenting, and then the option to disable the email input fields will appear.
+Omogućavanje anonimnog komentiranja čini polje za unos e‑maila opcionalnim. Međutim, možemo ga potpuno onemogućiti. Prvo omogućite anonimno komentiranje, a zatim će se pojaviti opcija za onemogućavanje polja za unos e‑maila.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments', '.disable-email-inputs']; selector = '.disable-email-inputs'; title='Disable Email Inputs' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments', '.disable-email-inputs']; selector = '.disable-email-inputs'; alt='Opcija za potpuno skrivanje polja za e‑mail, prikazana nakon što je anonimno komentiranje omogućeno u sučelju prilagodbe'; title='Onemogući unos e‑maila' app-screenshot-end]
 
-Kad je ovo uključeno, polja za e-poštu se uopće neće prikazivati u svim našim proizvodima za komentiranje.
+S ovim postavkama, polja za e‑mail se neće uopće prikazivati u svim našim proizvodima za komentiranje.
 
-Imajte na umu da će, s ovom konfiguracijom, svi komentari biti nepotvrđeni osim ako korisnik ne stvori račun i ne prijavi se na
+Imajte na umu da će, uz ovu konfiguraciju, svi komentari biti nepotvrđeni, osim ako korisnik ne kreira račun i ne prijavi se na
 https://fastcomments.com.
 
-Možda biste htjeli razmotriti [onemogućavanje oznake 'nepotvrđeno'](/guide-customizations-and-configuration.html#disable-unverified-label).
+Možda ćete željeti razmotriti [onemogućavanje oznake nepotvrđenog](/guide-customizations-and-configuration.html#disable-unverified-label).
+
+---

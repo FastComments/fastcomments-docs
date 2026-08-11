@@ -1,23 +1,28 @@
-데이터를 이동해야 하는 경우, FastComments는 페이지와 기사 간에 댓글을 이동할 수 있는 셀프 서비스 도구를 제공합니다.
+In the event that data needs to be moved around, FastComments provides a self-service tool for moving comments
+between pages and articles.
 
 Here's what the comment copy page form looks like:
 
-[app-screenshot-start url='/auth/my-account/manage-data/copy-comments'; selector = '.account-block'; title='The Copy Comment Form' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/copy-comments'; selector = '.account-block'; alt='Copy comments form with the From URL ID field and the To URL ID and URL fields'; title='The Copy Comment Form' app-screenshot-end]
 
-### Filling out the "From" Fields
+### "From" 필드 입력하기
 
-댓글을 어디에서 이동할지 결정하려면, 소스 `URL ID`만 알면 됩니다.
+To decide where to move comments from, we simply need to know the source `URL ID`.
 
-댓글 위젯 구성에서 `urlId` 값을 전달하지 않는 경우, 이것은 페이지 URL의 "정규화된" 버전이 됩니다.
+If you aren't passing a value for `urlId` in the comment widget configuration, then this will be a "clean" version of the page URL.
 
-댓글들이 가진 `URL ID` 값을 내보내기하여 확인할 수 있습니다.
+You can see what values your comments have for `URL ID` by exporting them.
 
-### Filling out the "To" Fields
+### "To" 필드 입력하기
 
-댓글을 어디로 이동할지 결정하려면 대상 `URL ID`와 `URL`을 알아야 합니다.
+To decide where to move comments to, we need to know the target `URL ID` and `URL`.
 
-`URL ID`는 댓글이 들어갈 버킷이 됩니다. `URL` 필드는 이메일 및 모더레이션 도구에서 댓글로 직접 이동할 수 있도록 사용됩니다.
+The `URL ID` will be the bucket that the comment goes in. The `URL` field is used so that you can navigate directly
+to the comment from emails and moderation tools.
 
 #### WordPress
 
-WordPress를 사용하고 있다면, 예를 들어 마이그레이션 도구의 To/From `URL ID` 필드에 URL 대신 기사 ID를 입력하면 됩니다.
+If you are using WordPress, you would for example enter the Article IDs in the To/From `URL ID` fields in the migration tool,
+rather than a URL.
+
+---

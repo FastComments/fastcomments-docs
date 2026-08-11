@@ -1,37 +1,32 @@
 [related-parameter-start name = 'urlId'; type = 'string'; related-parameter-end]
 
-When rendering a comment thread, or leaving a comment, FastComments needs to know what page, or article, or product
-those comments belong to.
+Pri prikazivanju niza komentara ili ostavljanju komentara, FastComments mora znati kojoj stranici, članku ili proizvodu ti komentari pripadaju.
 
-To do this, we use something we call the "URL ID". It's either an identifier, like a string or a number, or a URL.
+Za to koristimo nešto što nazivamo "URL ID". To je ili identifikator, poput stringa ili broja, ili URL.
 
-By default, if you do not specify the urlId, it will become the page URL. We will take the current page URL, and clean it to remove
-any common marketing parameters or tracking identifiers.
+Prema zadanim postavkama, ako ne navedete urlId, on će postati URL stranice. Uzeti ćemo trenutni URL stranice i očistiti ga kako bismo uklonili sve uobičajene marketinške parametre ili identifikatore praćenja.
 
-In the case of third party integrations, like WordPress, our plugin will usually use the identifier that represents the current information being viewed as
-the URL ID, for example the article/page id.
+U slučaju integracija trećih strana, poput WordPressa, naš dodatak će obično koristiti identifikator koji predstavlja trenutno prikazane informacije kao URL ID, na primjer ID članka/stranice.
 
 [code-example-start config = {urlId: 'https://example.com/page'}; linesToHighlight = [6]; title = 'Definiranje prilagođenog URL ID-a'; code-example-end]
 
-One thing that we'll often reference in this document is the <a href="https://fastcomments.com/auth/my-account/customize-widget/new">Sučelje za prilagodbu widgeta</a>.
+Jedna stvar na koju ćemo često upućivati u ovom dokumentu je <a href="https://fastcomments.com/auth/my-account/customize-widget/new">Korisničko sučelje za prilagodbu widgeta</a>.
 
-This UI can be used to make many changes to the comment widget without using code.
+Ovo sučelje može se koristiti za mnoge promjene widgeta za komentare bez korištenja koda.
 
-When creating a customization rule, we'll often want it to apply to all pages to our site. However, in some cases we want to customize the comment widget
-on a particular page, either to apply custom styling, or maybe make comments for that particular page anonymous. You could also, for example, have live comments
-appear right away on some pages, while hiding them under notification buttons on others.
+Kada stvaramo pravilo prilagodbe, često ćemo željeti da se primijeni na sve stranice naše web stranice. Međutim, u nekim slučajevima želimo prilagoditi widget za komentare na određenoj stranici, bilo da primijenimo prilagođeni stil ili da učinimo komentare za tu stranicu anonimnim. Također, na primjer, možete imati da se živi komentari odmah prikazuju na nekim stranicama, dok se na drugima skrivaju ispod tipki za obavijesti.
 
-This is all possible via the URL ID input field on this page, which looks like as follows:
+Sve je to moguće putem polja za unos URL ID-a na ovoj stranici, koje izgleda ovako:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.url-id'; title='Unos URL ID-a na stranici za prilagodbu widgeta' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.url-id'; alt='Polje URL ID-a koje se koristi za ograničavanje pravila prilagodbe na jednu stranicu ili na uzorak poput */blog/*'; title='Unos URL ID-a na stranici za prilagodbu widgeta' app-screenshot-end]
 
-The value in this field should match the *urlId* parameter passed into the comment widget. If you want your customization rule to be *urlId* agnostic, leave this field empty or enter *.
+Vrijednost u ovom polju treba odgovarati parametru *urlId* koji se prosljeđuje widgetu za komentare. Ako želite da vaše pravilo prilagodbe bude neovisno o *urlId*, ostavite ovo polje prazno ili unesite *.
 
-As of 2023 the `URL ID` field in widget customization now also takes patterns! For example you may
-have `*/blog/*` to add styling specific to your blog and `*/store/*` to have styling specific to your store,
-all while using the same domain.
+Od 2023. godine polje `URL ID` u prilagodbi widgeta sada također prihvaća uzorke! Na primjer, možete imati `*/blog/*` za dodavanje stilova specifičnih za vaš blog i `*/store/*` za stilove specifične za vašu trgovinu, sve dok koristite istu domenu.
 
-### Napomene
+### Zamke
 
-1. If your page has hash parameters (like example.com#page-1) - this will become part of the URL ID, by default.
-2. During migrations, for example from WordPress to Gatsby, you may have to migrate the URL ID comment values after the initial migration. For that, reach out to us.
+1. Ako vaša stranica ima hash parametre (kao example.com#page-1) - to će po zadanim postavkama postati dio URL ID-a.
+2. Tijekom migracija, na primjer s WordPressa na Gatsby, možda ćete morati migrirati vrijednosti URL ID-a komentara nakon početne migracije. Za to nas kontaktirajte.
+
+---

@@ -1,14 +1,11 @@
----
 [related-parameter-start name = 'noStyles'; type = 'boolean'; related-parameter-end]
 
-Για μεγαλύτερα έργα προσαρμογής στυλ, μπορεί να είναι επιθυμητό να ξεκινήσετε με καθαρή αρχή και να μην χρησιμοποιήσετε καθόλου την προεπιλεγμένη μορφοποίηση.
+Για μεγαλύτερα προσαρμοσμένα έργα στυλ, μπορεί να είναι επιθυμητό να ξεκινήσετε από το μηδέν και να μην χρησιμοποιήσετε καθόλου το προεπιλεγμένο στυλ.
 
-Όλα τα προεπιλεγμένα στυλ μπορούν να αφαιρεθούν ορίζοντας την παράμετρο **noStyles** σε true, ως εξής:
+Όλο το προεπιλεγμένο στυλ μπορεί να αφαιρεθεί ορίζοντας την παράμετρο **noStyles** σε true, όπως φαίνεται παρακάτω:
 
 [code-example-start config = {noStyles: true}; linesToHighlight = [6]; title = 'Disabling All Default Styles'; code-example-end]
 
-Αυτό μπορεί να προσαρμοστεί χωρίς κώδικα, στη σελίδα προσαρμογής του widget, κάτω από τις Σύνθετες Επιλογές:
+Αυτό μπορεί να προσαρμοστεί χωρίς κώδικα, στη σελίδα προσαρμογής widget, κάτω από τις Προηγμένες Επιλογές:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.show-advanced-option', '.disable-all-default-styling']; selector = '.disable-all-default-styling'; title='Disabling All Default Styles' app-screenshot-end]
-
----
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.show-advanced-option', '.disable-all-default-styling']; selector = '.disable-all-default-styling'; alt='Απενεργοποίηση του πλαισίου ελέγχου για την απενεργοποίηση όλων των προεπιλεγμένων στυλ ενεργοποιημένο στις Προηγμένες Επιλογές στη σελίδα προσαρμογής widget'; title='Απενεργοποίηση Όλων των Προεπιλεγμένων Στυλ' app-screenshot-end]

@@ -1,10 +1,11 @@
-Yorum bileşeni her site için farklı şekilde <a href="/guide-customizations-and-configuration.html#custom-css" target="_blank">özelleştirilebilir</a>.
+Yorum widget'ı her site için farklı şekilde <a href="/guide-customizations-and-configuration.html#custom-css" target="_blank">özelleştirilebilir</a>.
 
-On the widget customization page, you'll find a dropdown labeled "domain". Selecting `All` in this field will apply the rule to all
-sites on your account, you can enter a specific domain which will restrict the settings or custom CSS you wish to apply to only that domain.
+Widget özelleştirme sayfasında, "domain" etiketiyle bir açılır menü bulacaksınız. Bu alanda `All` seçmek, kuralı hesabınızdaki tüm
+siteler için uygular; belirli bir domain girerek ayarları veya uygulamak istediğiniz özel CSS'i yalnızca o domaine sınırlayabilirsiniz.
 
-This allows you to have FastComments look or function completely different for each site.
+Bu, FastComments'in her site için tamamen farklı görünmesini veya çalışmasını sağlar.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = 'label.domain'; title='Customization Rule Domain' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = 'label.domain'; alt='Widget özelleştirme sayfasındaki domain açılır menüsü, All veya belirli bir siteye ayarlanmış'; title='Özelleştirme Kuralı Domaini' app-screenshot-end]
 
-Bir sitede kalın metin kullanıp anonim yorumlara izin verebilirken, başka bir sitede farklı bir stil uygulayabilir ve kullanıcıdan yorum yaparken e-posta bırakmasını isteyebilirsiniz.
+Bir site kalın metin kullanabilir ve anonim yorumlamaya izin verebilir, başka bir site ise
+farklı bir stil kullanabilir ve yorum yaparken kullanıcının e-posta adresini bırakmasını isteyebilir.

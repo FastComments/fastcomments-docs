@@ -1,21 +1,23 @@
-FastComments 允許您要求首次留言者在提交留言前接受您的服務條款。
+---
+FastComments 允許您在提交評論之前，要求首次評論者接受您的服務條款。
 
-When enabled:
-- **匿名使用者** 每次留言時都會看到服務條款核取方塊
-- **已驗證使用者** 只會在其第一次留言，或當您更新您的服務條款時看到該核取方塊
+啟用後：
+- **匿名使用者** 每次評論時都會看到服務條款勾選框
+- **已驗證使用者** 只會在他們的第一條評論時或當您更新服務條款時看到此勾選框
 
-### Configuration
+### 設定
 
-前往小工具自訂頁面並啟用「Require Terms of Service acceptance」核取方塊。啟用後，您會看到以下選項：
+前往小工具自訂頁面，勾選「要求接受服務條款」核取方塊。啟用後，您會看到以下選項：
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.tos-enabled'; selector = '#tos-options'; title='Terms of Service Options' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.tos-enabled'; selector = '#tos-options'; alt='服務條款面板，顯示 TOS 文字模式選擇器和最後更新日期欄位'; title='服務條款選項' app-screenshot-end]
 
-- **TOS Text Mode**：預設情況下，核取方塊會顯示「I agree to the Terms of Service and Privacy Policy」，並連結到兩份文件。選擇「Customize text per locale」以為每種語言提供自訂文字。
-- **TOS Last Updated Date**：當您更新您的服務條款時，請設定此日期。於此日期之前接受過的使用者將需要重新接受。
+- **TOS 文字模式**：預設情況下，勾選框顯示「我同意服務條款與隱私政策」並附有兩份文件的連結。選取「依語系自訂文字」以為每種語言提供您自己的文字。
+- **服務條款最後更新日期**：當您更新服務條款時，設定此日期。先前在此日期之前接受的使用者將需要再次接受。
 
-### How It Works
+### 運作方式
 
-- 服務條款接受時間戳記會以每位使用者及每則留言儲存
-- 當使用者接受服務條款時，該日期會記錄在其使用者檔案中（每租戶）
-- 如果您設定的「最後更新」日期晚於使用者接受的日期，他們將需要重新接受
-- 對於無法被追蹤的匿名使用者，該核取方塊會在每次留言提交時出現
+- 服務條款接受時間戳記會依使用者與評論分別儲存
+- 當使用者接受服務條款時，日期會記錄在其使用者資料中（每個租戶）
+- 如果您設定的「最後更新」日期晚於使用者的接受日期，他們將需要重新接受
+- 對於無法追蹤的匿名使用者，勾選框會在每次提交評論時出現
+---

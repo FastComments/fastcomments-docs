@@ -1,14 +1,11 @@
 [related-parameter-start name = 'disableBlocking'; type = 'boolean'; related-parameter-end]
 
-預設情況下，FastComments 允許使用者封鎖其他使用者。封鎖某位使用者會導致其評論
-被隱藏、阻止雙方之間的通知，等等。
+預設情況下，FastComments 允許使用者封鎖其他使用者。封鎖使用者會導致其評論被隱藏，阻止使用者之間的通知，等等。
 
-有時可能希望停用此功能。可以如此操作：
+可能需要停用此功能。可以這樣做：
 
-[code-example-start config = {disableBlocking: true}; linesToHighlight = [6]; title = 'Disable Blocking'; code-example-end]
+[code-example-start config = {disableBlocking: true}; linesToHighlight = [6]; title = '停用封鎖'; code-example-end]
 
-也可以透過 Widget 自訂介面在不寫程式碼的情況下完成，並同時啟用適當的伺服器端驗證：
+也可以不使用程式碼，透過小工具自訂 UI 來完成，這同時也能啟用正確的伺服器端驗證：
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-blocking']; selector = '.disable-blocking'; title='Disable Blocking' app-screenshot-end]
-
----
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-blocking']; selector = '.disable-blocking'; alt='在小工具自訂 UI 中的停用封鎖選項，可防止使用者互相封鎖'; title='停用封鎖' app-screenshot-end]

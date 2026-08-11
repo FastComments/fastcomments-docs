@@ -1,13 +1,13 @@
-デフォルトでは FastComments はコメント内の `\<iframe\>` を許可しません。メディア埋め込みを有効にすると、コメント投稿者は YouTube、Vimeo、SoundCloud、Spotify のような信頼されたプロバイダからの埋め込みコード（`<iframe>` スニペット）を貼り付けることができ、コメント内にインラインで表示されます。
+By default FastComments does not allow iframes in comments. When you enable media embeds, commenters can paste the embed code (the `<iframe>` snippet) from trusted providers like YouTube, Vimeo, SoundCloud, and Spotify, and it will render inline in the comment.
 
-セキュリティ上、これはクライアント側のウィジェット設定フラグではありません。これはサーバー側の設定であり、各コメントが保存される際に検証されるため、ページから有効化することはできません。組み込みの信頼できるプロバイダの一覧を指す iframe のみが許可され、その他の iframe は削除されます。
+For security, this is not a client-side widget config flag. It is a server-side setting, validated when each comment is saved, so it cannot be turned on from the page. Only iframes pointing at a built-in list of trusted providers are allowed. Any other iframe is removed.
 
-これはコード不要で、ウィジェットのカスタマイズページで行います:
+This is done without code, on the widget customization page:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.allow-embeds'; selector = '.allow-embeds'; title='Allow Media Embeds' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.allow-embeds'; selector = '.allow-embeds'; alt='ウィジェットカスタマイズページでメディア埋め込み設定が有効になり、コメント投稿者が信頼できる iframe 埋め込みを貼り付けられるようになります'; title='メディア埋め込みを許可' app-screenshot-end]
 
-### 独自プロバイダの追加
+### Adding Your Own Providers
 
-組み込みの信頼済みリストにないプロバイダの埋め込みを許可したい場合は、同じページの「Additional Embed Domains」フィールドにそのホスト名を追加してください。これらのホスト名は組み込みプロバイダに加えて許可されます。マッチングは完全一致なので、フルホスト名を含めてください（例: player.example.com）。リストに含めていないものはすべてブロックされたままです。
+If you want to allow embeds from a provider that is not on the built-in trusted list, add its hostname in the "Additional Embed Domains" field on the same page. These hostnames are allowed in addition to the built-in providers. Matching is exact, so include the full hostname (for example, player.example.com). Anything you do not list stays blocked.
 
-通常のコメント入力欄と WYSIWYG エディタの両方で埋め込みコードの貼り付けに対応しています。WYSIWYG エディタでは、埋め込みは削除可能なブロックとして挿入されます。
+Both the plain comment box and the WYSIWYG editor support pasting an embed. In the WYSIWYG editor the embed is inserted as a removable block.

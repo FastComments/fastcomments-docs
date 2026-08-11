@@ -1,13 +1,13 @@
 ---
-По подразбиране FastComments позволява на потребителите да изтриват коментарите си.
+По подразбиране FastComments позволява на потребителите да изтриват своите коментари.
 
-Въпреки това е възможно това да бъде предотвратено.
+Въпреки това, е възможно да се предотврати това.
 
-В страницата за персонализиране на уиджета вижте опцията "Изключване на изтриването".
+В страницата за персонализиране на уиджета, вижте опцията "Disable Deleting".
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.disable-commenter-comment-delete'; selector = '.disable-commenter-comment-delete'; title='Disable Comment Deleting' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.disable-commenter-comment-delete'; selector = '.disable-commenter-comment-delete'; alt='Опция за деактивиране на изтриването на страницата за персонализиране на уиджета, предотвратяваща коментаторите да премахват своите коментари'; title='Деактивиране на изтриване на коментари' app-screenshot-end]
 
-- Това засяга само обикновените Commenters и не засяга модераторите или администраторите, които все още ще могат да изтриват.
-- Това ще засегне и API интеграциите, когато бъде предаден `contextUserId`. 
+- Това засяга само обикновените коментатори и не модератори или администратори, които все още ще могат да изтриват.  
+- Това също ще засегне API интеграциите, когато се предава `contextUserId`. 
 
 ---

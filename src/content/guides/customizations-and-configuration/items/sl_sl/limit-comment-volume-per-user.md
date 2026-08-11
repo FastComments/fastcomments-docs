@@ -1,12 +1,12 @@
 ---
-Privzeto lahko vsak uporabnik odda do `5 comments` v isti minuti.
+By default, each user can submit up to `5 comments` in the same minute.
 
-To se spremlja po user id, anon user id in ip address (hashed).
+This is tracked by user id, anon user id, and ip address (hashed).
 
-To lahko prilagodite brez kode na strani za prilagajanje widgeta:
+This can be customized without code, on the widget customization page:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.max-comments-per-minute'; title='Limiting Comment Volume Per User' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.max-comments-per-minute'; alt='Polje največ komentarjev na minuto na strani za prilagajanje gradnika, privzeto nastavljeno na 5'; title='Omejevanje števila komentarjev na uporabnika' app-screenshot-end]
 
-Upoštevajte, da če uporabljate comment creation API, boste morda želeli v zahtevi do našega strežnika posredovati izvorni `ip` naslov uporabnika, tako da bo omejevanje hitrosti uporabljeno na posameznega uporabnika in ne globalno za vaš račun.
-
+Upoštevajte, da če uporabljate API za ustvarjanje komentarjev, boste morda želeli v zahtevo našemu strežniku poslati izvirni `ip` naslov uporabnika, da se omejitev hitrosti uporabi
+po uporabniku in ne globalno za vaš račun.
 ---

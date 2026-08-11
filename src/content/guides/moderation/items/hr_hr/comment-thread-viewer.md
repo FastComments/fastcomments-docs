@@ -1,18 +1,17 @@
-Pri moderiranju i pregledavanju niti komentara poželjno je moći se izravno prebaciti na određenu nit kako bi se dobio kontekst tijekom moderiranja.
+When moderating and viewing comment threads it is desirable to be able to jump directly to a thread to get context during moderating.
 
-To znači da korisnički tok započinje na stranici za moderiranje komentara, a zatim bi se morao kretati od pojedinačnog komentara do
-stranice koja sadrži taj komentar, pričekati da se ta stranica učita, pričekati da se učitaju komentari i potom skrolati do tog komentara.
+This means that the user's flow starts in the Comment Moderation page, and would then have to go from an individual comment to
+the page containing that comment, wait for that page to load, wait for the comments to load, and then scroll to that comment.
 
-Međutim, FastComments nudi brži način. Na stranici za moderiranje komentara, pored svakog komentara, u donjem desnom kutu nalazi se gumb "Pogledaj komentar".
+However, FastComments provides a faster way. In the Moderate Comments page, next to each comment, there is a "View Comment" button in the bottom right.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=1&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.comments .comment-component'; title='A Comment' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=1&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.comments .comment-component'; alt='Jedan komentar u popisu moderacije, s gumbom View Comment u njegovom donjem desnom kutu'; title='Komentar' app-screenshot-end]
 
-Ako ovaj komentar ima odgovore, tekst gumba umjesto toga će prikazati broj odgovora, ali klik na njega pokreće istu radnju.
+If this comment has replies, the button text will instead say the number of replies, but clicking it takes the same action.
 
-Taj gumb vodi vas u **Preglednik niti komentara**.
+This button will take you to the **Comment Thread Viewer**.
 
-Preglednik niti komentara je mala, brzo učitavajuća aplikacija koju hosta FastComments, koja prikazuje nit komentara za stranicu na kojoj se komentar nalazi i skrola do tog komentara.
+The Comment Thread Viewer is a small, fast loading application hosted by FastComments that renders the comment thread for the page that
+the comment is on, and scrolls to that comment.
 
-To moderatorima omogućuje brzo prikupljanje potrebnog konteksta bez čekanja da se učita druga stranica.
-
----
+This allows moderators to gather the context they need to, quickly, without having to wait for another page to load.

@@ -1,21 +1,19 @@
----
-FastComments zagotavlja avtomatiziran način za migracijo vaših komentarjev med domenami.
+FastComments nudi avtomatiziran način za migracijo vaših komentarjev med domenami.
 
-Migracija domene preprosto zahteva domeno `from` in domeno `to`.
+Migracija domen zahteva le domeno `from` in domeno `to`.
 
-To **premakne** komentarje, jih ne kopira. Če želite komentarje kopirati, nas kontaktirajte.
+To **premakne** komentarje, ne kopira jih. Če želite kopirati komentarje, nas kontaktirajte.
 
-[app-screenshot-start url='/auth/my-account/manage-data/migrate-domains?demo=true'; linkUrl='/auth/my-account/manage-data/migrate-domains'; selector = '.content'; title='Migrating Domains' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/migrate-domains?demo=true'; linkUrl='/auth/my-account/manage-data/migrate-domains'; selector = '.content'; alt='Orodje za migracijo domen s poljema za domeno \'from\' in \'to\' ter številom migriranih komentarjev'; title='Migriranje domen' app-screenshot-end]
 
-To je uporabno tudi na primer, če del vaše migracije na FastComments vključuje migracijo z drugega ponudnika, zato lahko vaš uvoz komentarjev
-vsebuje podatke, ki jih je treba migrirati. V tem primeru lahko zaženete uvoz in nato migracijo domene.
+To je tudi uporabno, na primer, če je del vaše migracije na FastComments migracija iz drugega ponudnika, zato lahko vaši uvoženi podatki komentarjev vsebujejo podatke, ki jih je treba migrirati. V tem primeru lahko najprej izvedete uvoz, nato pa migracijo domen.
 
 ### Spremljanje napredka
 
-Orodje za migracijo domen uporablja enak sistem obdelave opravil FastComments kot druga orodja za upravljanje podatkov.
+Orodje za migracijo domen uporablja isti FastComments sistem za obdelavo opravil kot ostala orodja za upravljanje podatkov.
 
-Pred začetkom migracije je lahko zamik. To je normalno, saj sistem periodično preverja nova opravila za obdelavo.
+Morda bo pred začetkom vaše migracije prišlo do zamude. To je normalno, saj sistem periodično preverja nova opravila za obdelavo.
 
-Med izvajanjem opravila bo prikazano število komentarjev, najdenih za migracijo, in doslej migrirano število.
+Ko se opravilo izvaja, bo prikazalo število najdenih komentarjev za migracijo in število doslej migriranih komentarjev.
 
 ---

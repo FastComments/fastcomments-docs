@@ -4,12 +4,10 @@ Največje število znakov, ki jih je dovoljeno vnesti v polje za vnos komentarja
 
 Privzeta vrednost je 2000.
 
-Elementi, kot so URL-ji slik, niso vključeni pri določanju dolžine.
+Stvari, kot so URL-ji slik, niso vključeni v določanje dolžine.
 
-[code-example-start config = {maxCommentCharacterLength: 500}; linesToHighlight = [6]; title = 'Limit Comment Length'; code-example-end]
+[code-example-start config = {maxCommentCharacterLength: 500}; linesToHighlight = [6]; title = 'Omeji dolžino komentarja'; code-example-end]
 
-To lahko prilagodite brez uporabe kode na strani za prilagajanje widgeta:
+To je mogoče prilagoditi brez kode na strani za prilagajanje gradnika:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.max-comment-size'; title='Limit Comment Length' app-screenshot-end]
-
----
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.max-comment-size'; alt='Polje največje velikosti komentarja na strani za prilagajanje gradnika, ki se uporablja za omejitev števila znakov, ki jih lahko komentar vsebuje'; title='Omeji dolžino komentarja' app-screenshot-end]

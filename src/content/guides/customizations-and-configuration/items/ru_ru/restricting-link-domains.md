@@ -1,13 +1,13 @@
 ---
-По умолчанию FastComments позволяет добавлять ссылки на любые внешние сайты.
+По умолчанию FastComments позволяет ссылаться на любой внешний сайт.
 
-Это можно ограничить до нужного списка сайтов или доменов. Попытка опубликовать ссылку на сайт или домен,
-не включённый в заданный список, приведёт к тому, что пользователю будет показана ошибка.
+Это можно ограничить желаемым списком сайтов или доменов. Попытка разместить ссылку на сайт или домен,
+не входящий в определённый список, вызовет ошибку, отображаемую пользователю.
 
 Эта проверка применяется только к виджету комментариев и API. Импорты не затрагиваются.
 
 Это делается без кода, на странице настройки виджета:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.restricted-link-domains-list'; selector = '.external-link-settings'; title='Restrict External Link Domains' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.restricted-link-domains-list'; selector = '.external-link-settings'; alt='Настройки внешних ссылок со списком ограниченных доменов, где вводятся разрешённые сайты'; title='Ограничить домены внешних ссылок' app-screenshot-end]
 
 ---

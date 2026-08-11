@@ -1,14 +1,14 @@
 ---
-כברירת מחדל, משתמשים יכולים למחוק את ההערות שלהם. בנוסף, מחיקת ההערה שלהם באופן אוטומטי
-מוחקת את כל ההערות הצאצאיות והזמניות בחוט. התנהגות זו גם פעילה.
+בברירת מחדל, משתמשים יכולים למחוק את ההערות שלהם. בנוסף, מחיקת ההערה שלהם מוחקת אוטומטית את כל ההערות הילדיות והזמניות בשרשור. התנהגות זו גם פעילה.
 
 ניתן להגביל זאת בדרכים הבאות:
 
-- במקום זאת, להפוך את ההערה שנמחקה ללא מזוהה (set name and text ל-`[deleted]` או לערך מותאם אישית).
-- למנוע מחיקת הערות כאשר יש תגובות. תוצג הודעת שגיאה הניתנת להתאמה.
-- למנוע מחיקה של הערה שיש לה תגובות אלא על ידי מנהלים ומודרטורים.
+- במקום זאת, אנונימיזציה של ההערה המחוקה (הגדרת שם וטקסט ל-`[deleted]` או ערך מותאם).
+- אל תאפשר מחיקת הערות כאשר יש תגובות. הודעת שגיאה שניתן להתאים מוצגת.
+- הגבל מחיקה כאשר להערה יש תגובות רק למנהלים ולמפקחים.
 
-ניתן להגדיר זאת דרך הסעיף `Comment Thread Deletion` ב-Widget Customization UI.
+ניתן להגדיר זאת דרך הסעיף `Comment Thread Deletion` בממשק התאמה אישית של הווידג'ט.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.comment-thread-deletion-mode']; selector = '.comment-thread-deletion-mode'; title='Customize Delete Behavior for Replies' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.comment-thread-deletion-mode']; selector = '.comment-thread-deletion-mode'; alt='אפשרויות מחיקת שרשור ההערות בממשק התאמה אישית של הווידג\'ט לאנונימיזציה או להגבלת מחיקות עם תגובות'; title='התאמת התנהגות מחיקה לתגובות' app-screenshot-end]
+
 ---

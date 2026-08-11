@@ -1,8 +1,8 @@
-По умолчанию FastComments отображает ссылки так: [https://exmaple.com](https://exmaple.com) - где URL ссылки становится кликабельной
-HTML-ссылкой.
+By default, FastComments will render links like this: [https://exmaple.com](https://exmaple.com) - where the link URL becomes a clickable  
+HTML anchor tag.
 
-Некоторые сайты могут захотеть отключить это, например, чтобы отпугнуть мошенников. Мы предоставляем эту возможность, установив `Comment HTML Rendering Option` в значение `Links as Text`.
+Some sites may want to disable this, for example to discourage scammers. We provide this by setting the `Comment HTML Rendering Option` to `Links as Text`.
 
-Это можно настроить без кода, на странице настройки виджета, для всего домена, или страницы:
+This can be customized without code, on the widget customization page, for an entire domain, or page:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.show-advanced-option']; selector = '.comment-html-rendering-mode'; title='Render Links as Text' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.show-advanced-option']; selector = '.comment-html-rendering-mode'; alt='Параметр «Comment HTML Rendering Option» установлен в «Links as Text» в разделе «Advanced Options» настройки виджета'; title='Отображать ссылки как текст' app-screenshot-end]

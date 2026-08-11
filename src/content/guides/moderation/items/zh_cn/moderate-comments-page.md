@@ -1,13 +1,13 @@
----
-大多数审核操作发生在评论审核页面。例如，下面是我们当前演示账户的一个截图：
+The place where most moderation takes place is the Comment Moderation page. For example, here's a screenshot of our current demo account:
 
-[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = 'body'; title='Comment Moderation Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = 'body'; alt='演示账户的完整评论审核页面，显示过滤器、搜索以及每页三个评论'; title='评论审核页面' app-screenshot-end]
 
-我们将每页数量设置为三条，以使此截图具有合理的大小。在实际使用中，默认每页您会处理50条评论。
+We've set the count per page to three to make this screenshot a reasonable size. In practice, you would be working with 50 comments per page by default.
 
-评论审核页面还支持[键盘快捷键](#keyboard-shortcuts)，用于在评论之间导航并在不使用鼠标的情况下执行操作。在审核页面按 **?** 可查看所有可用的快捷键。
+The moderation page also supports [Keyboard Shortcuts](#keyboard-shortcuts) for navigating between comments and performing actions without using the mouse. Press **?** on the moderation page to see all available shortcuts.
 
-该页面也是**实时**的 —— 当符合当前筛选条件的新评论到达时，页面顶部会出现一个横幅提醒您。详情请参见[实时审核](#comment-actions-live)。
+The page is also **live** — when new comments arrive that match your current filters, a banner appears at the top alerting you. See [Live Moderating](#comment-actions-live) for details.
 
-接下来我们来详细介绍此处显示的功能。
+Let's go into the features shown here.
+
 ---

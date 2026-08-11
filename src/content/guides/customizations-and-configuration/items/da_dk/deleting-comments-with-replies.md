@@ -1,14 +1,14 @@
-Som standard kan brugere slette deres egne kommentarer. Desuden medfører sletning af deres kommentar automatisk
-sletning af alle underordnede og midlertidige kommentarer i tråden. Denne adfærd gælder også i live-miljøet.
+---
+Som standard kan brugere slette deres egne kommentarer. Når de sletter deres kommentar, slettes også automatisk alle underkommentarer og midlertidige kommentarer i tråden. Denne funktion er også aktiv.
 
 Du kan begrænse dette på følgende måder:
 
-- I stedet anonymiser den slettede kommentar (sæt navn og tekst til `[deleted]` eller en brugerdefineret værdi).
-- Tillad ikke sletning af kommentarer, når der er svar. En tilpasset fejlmeddelelse vises.
+- I stedet kan du anonymisere den slettede kommentar (sæt navn og tekst til `[deleted]` eller en brugerdefineret værdi).
+- Tillad ikke sletning af kommentarer, når der er svar. En tilpasselig fejlmeddelelse vises.
 - Begræns sletning, når en kommentar har svar, til kun administratorer og moderatorer.
 
-Dette kan konfigureres via `Comment Thread Deletion`-sektionen i Widget Customization UI.
+Dette kan konfigureres via sektionen `Comment Thread Deletion` i Widget-tilpasnings‑UI.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.comment-thread-deletion-mode']; selector = '.comment-thread-deletion-mode'; title='Customize Delete Behavior for Replies' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.comment-thread-deletion-mode']; selector = '.comment-thread-deletion-mode'; alt='Indstillinger for sletning af kommentartråde i widget-tilpasnings‑UI for at anonymisere eller begrænse sletninger med svar'; title='Tilpas sletningsadfærd for svar' app-screenshot-end]
 
 ---

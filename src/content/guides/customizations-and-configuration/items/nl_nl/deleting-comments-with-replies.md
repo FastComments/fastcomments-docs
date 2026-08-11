@@ -1,14 +1,12 @@
-Standaard kunnen gebruikers hun eigen reacties verwijderen. Bovendien verwijdert het verwijderen van hun reactie automatisch
-alle onderliggende en tijdelijke reacties in de thread. Dit gedrag is ook live.
+By default, users can delete their own comments. Also, deleting their comment automatically  
+deletes all child and transient comments in the thread. This behavior is also live.
 
-U kunt dit op de volgende manieren beperken:
+You can restrict this in the following ways:
 
-- Anonimiseer in plaats daarvan de verwijderde reactie (stel naam en tekst in op `[deleted]` of een aangepaste waarde).
-- Sta het verwijderen van reacties niet toe wanneer er antwoorden zijn. Er wordt een aanpasbaar foutbericht weergegeven.
-- Beperk het verwijderen van reacties die antwoorden hebben tot alleen beheerders en moderators.
+- Instead, anonymize the deleted comment (set name and text to `[deleted]` or a custom value).
+- Don't allow deleting comments when there are replies. A customizable error message is shown.
+- Restrict deleting when a comment has replies to only administrators and moderators.
 
-Dit kan worden geconfigureerd via de `Comment Thread Deletion` sectie in de Widget Customization UI.
+This can be configured via the `Comment Thread Deletion` section in the Widget Customization UI.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.comment-thread-deletion-mode']; selector = '.comment-thread-deletion-mode'; title='Customize Delete Behavior for Replies' app-screenshot-end]
-
----
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.comment-thread-deletion-mode']; selector = '.comment-thread-deletion-mode'; alt='Opties voor het verwijderen van commentaarthreads in de widget-aanpassings-UI voor het anonimiseren of beperken van verwijderingen met antwoorden'; title='Pas het verwijdergedrag aan voor antwoorden' app-screenshot-end]

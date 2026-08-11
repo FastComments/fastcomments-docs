@@ -1,11 +1,12 @@
-По подразбиране потребителите могат да изтриват собствените си коментари. Освен това изтриването на техния коментар автоматично изтрива всички дъщерни и временни коментари в нишката. Това поведение е и в реално време.
+By default, users can delete their own comments. Also, deleting their comment automatically  
+deletes all child and transient comments in the thread. This behavior is also live.
 
-Можете да ограничите това по следните начини:
+You can restrict this in the following ways:
 
-- Вместо това анонимизирайте изтрития коментар (задайте name и text на `[deleted]` или персонализирана стойност).
-- Не позволявайте изтриването на коментари, когато има отговори. Показва се настройваемо съобщение за грешка.
-- Ограничете изтриването при коментари с отговори само до администратори и модератори.
+- Instead, anonymize the deleted comment (set name and text to `[deleted]` or a custom value).
+- Don't allow deleting comments when there are replies. A customizable error message is shown.
+- Restrict deleting when a comment has replies to only administrators and moderators.
 
-Това може да се конфигурира чрез секцията `Comment Thread Deletion` в UI за персонализиране на джаджата.
+This can be configured via the `Comment Thread Deletion` section in the Widget Customization UI.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.comment-thread-deletion-mode']; selector = '.comment-thread-deletion-mode'; title='Customize Delete Behavior for Replies' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.comment-thread-deletion-mode']; selector = '.comment-thread-deletion-mode'; alt='Опции за изтриване на нишка от коментари в UI за персонализиране на уиджета за анонимизиране или ограничаване на изтривания с отговори'; title='Персонализиране на поведението при изтриване за отговори' app-screenshot-end]

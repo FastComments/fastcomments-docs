@@ -1,12 +1,9 @@
----
 [related-parameter-start name = 'imageContentProfanityLevel'; type = 'string'; related-parameter-end]
 
-По подразумеваној поставци, FastComments коментарски виџет има модерацију садржаја слика искључену `off`.
+Podrazumevano, FastComments vidžet za komentare ima moderaciju sadržaja slika postavljenu na `off`.
 
-Доступне опције су `off`, `low`, `medium`, и `high`.
+Dostupne opcije su `off`, `low`, `medium` i `high`.
 
-У интерфејсу за прилагођавање виџета, ово ћете пронаћи под `Image Content Moderation Level`, под условом да опција `Disable Image Uploads?` није означена.
+U UI‑u za prilagođavanje vidžeta, ovo ćete naći pod `Image Content Moderation Level` sve dok opcija `Disable Image Uploads?` nije označena.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.image-profanity-level'; title='Setting The Image Content Moderation Level' app-screenshot-end]
-
----
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.image-profanity-level'; alt='Padajući meni nivoa moderacije sadržaja slika na stranici za prilagođavanje widgeta postavljen na off, low, medium ili high'; title='Postavljanje nivoa moderacije sadržaja slika' app-screenshot-end]

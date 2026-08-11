@@ -1,29 +1,27 @@
-Postoje dva načina da se korisnicima zabrani komentarisanje na vašem sajtu uz FastComments.
+There are two ways to ban users from commenting on your site with FastComments.
 
-Prvi je da, ako već znate njihov email, možete ga uneti na strani <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">zabranjeni korisnici</a>.
+The first is if you already know their email, you can enter it on the <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">zabranjeni korisnici</a> page.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; title='The Banned Users Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; alt='Lista zabranjenih korisnika pod Moderate Comments, sa zabranjenim email adresama i dugmetom za dodavanje nove zabrane'; title='Stranica zabranjenih korisnika' app-screenshot-end]
 
-Na ovu stranicu se može pristupiti putem Moderacija komentara -> Zabranjeni korisnici
+This page can be accessed via Moderate Comments -> Banned Users
 
-Kada idemo da zabrani korisnika, možemo izabrati tip, bilo Permanent ili Permanent Shadow Ban:
+When we go to ban a user, we can pick a type, either Permanent or Permanent Shadow Ban:
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; title='Banning a User' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; alt='Forma za novu zabranu sa poljem za email i izborom tipa zabrane: Permanentna ili Permanentna senka zabrane'; title='Zabranjivanje korisnika' app-screenshot-end]
 
-Drugi način za zabranu korisnika je klikom na dugme za zabranu koje se nalazi na svakom komentaru na stranici za moderaciju komentara.
+The second way to ban a user is by clicking the ban button that is placed on each comment on the Comment Moderation page.
 
-Kada kliknemo dugme za zabranu, biće vam prikazane neke opcije, gde možemo odrediti tip zabrane i trajanje.
+When we click the ban button, you'll be presented with some options, where we can specify the ban type and duration.
 
-### Email aliasi
+### Email Aliases
 
-Kada se korisnik zabrani po emailu, FastComments automatski ignoriše `+` alias-e. Na primer, zabrana `user+alias@gmail.com` će
-takođe zabraniti `user@gmail.com` i bilo koju drugu `+` varijaciju te adrese, kao što je `user+other@gmail.com`.
+When banning a user by email, FastComments automatically ignores `+` aliases. For example, banning `user+alias@gmail.com` will also ban `user@gmail.com` and any other `+` variation of that address, such as `user+other@gmail.com`.
 
-### Shadow banovi
+### Shadow Bans
 
-Shadow-ban je tip zabrane koji stvara utisak da je komentar ili glas korisnika uspešno sačuvan, kada zapravo nije. Ovo može biti
-poželjno u određenim situacijama.
+A shadow-ban is a type of ban that makes it appear that the user's comment or vote was saved successfully, when in fact it was not. This may be desirable in certain situations.
 
-### Zabrana putem IP adrese
+### Banning Via IP Address
 
-Osim ako tenant ne želi da se isključi, FastComments podržava zabranu putem IP-a čuvanjem heširane verzije IP adrese komentatora.
+Unless a tenant wishes to opt out, FastComments supports banning via IP by storing a hashed version of the commenter's IP address.

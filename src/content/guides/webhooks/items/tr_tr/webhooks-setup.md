@@ -1,11 +1,14 @@
-`localhost` için, production'da uyguladığınız aynı adımları izleyin. production alan adlarının ve API Secrets'in yapılandırıldığından emin olun.
+---
+Üretimde yaptığınız gibi `localhost` için aynı adımları izleyin. Üretim alan adlarınızın ve API Gizli Anahtarlarınızın ayarlandığından emin olun.
 
-First, navigate to the [Webhooks yönetimi](https://fastcomments.com/auth/my-account/manage-data/webhooks). This is accessible via Manage Data -> Webhooks.
+İlk olarak, [Webhooks admin](https://fastcomments.com/auth/my-account/manage-data/webhooks) adresine gidin. Bu, Manage Data -> Webhooks üzerinden erişilebilir.
 
-The configuration page appears as follows:
+Yapılandırma sayfası aşağıdaki gibi görünür:
 
-[app-screenshot-start url='/auth/my-account/manage-data/webhooks'; selector = '.content'; title='Webhooks Configuration'; cacheBuster = 'v3' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/webhooks'; selector = '.content'; alt='Yorum etkinliği başına bir alan adı seçici ve bir uç nokta URL alanı içeren Webhooks yönetim sayfası, ayrıca Test Yükü Gönder'; title='Webhooks Yapılandırması'; cacheBuster = 'v3' app-screenshot-end]
 
-In this page you can specify endpoints for each type of comment event.
+Bu sayfada, her yorum etkinliği türü için uç noktaları belirtebilirsiniz.
 
-For each type of event, be sure to click Send Test Payload to ensure you've set up your integration correctly. See the next section, "Testing", for details.
+Her etkinlik türü için, entegrasyonunuzu doğru şekilde kurduğunuzdan emin olmak amacıyla Test Yükü Gönder düğmesine tıkladığınızdan emin olun. Ayrıntılar için bir sonraki bölüm olan "Testing" kısmına bakın.
+
+---

@@ -1,46 +1,47 @@
-有時 FastComments 需要透過電子郵件聯絡你的使用者，特別是當你沒有使用安全 SSO 時。
+有時 FastComments 必須向您的使用者發送電子郵件，尤其是當您未使用安全單一登入 (SSO) 時。
 
-例如，當使用者首次留言時，我們會寄送電子郵件來驗證他們的帳號或活動。FastComments 也會寄送回覆通知給留言的使用者。
+例如，當使用者首次發表評論時，需要驗證其帳號或活動。FastComments 也會在有人回覆他們的評論時發送通知。
 
-當 FastComments 寄信給你的使用者時，我們會使用預設的寄件人名稱與電子郵件 `FastComments Robot` 和 `noreply@fastcomments.com`。
+當 FastComments 向您的使用者發送電子郵件時，我們會使用預設的寄件者名稱與電子郵件，分別為 `FastComments Robot` 與 `noreply@fastcomments.com`。
 
-在這些電子郵件的頁尾，我們也會使用我們自己的商標圖示。
+我們也會在這些電子郵件的頁腳使用我們自己的標誌。
 
-如果你有 FastComments Flex 或 Pro，可以在「我的網域」頁面上針對每個網域自訂這些設定：
+如果您使用 FastComments Flex 或 Pro，所有這些設定都可以透過「我的網域」頁面以每個網域為單位進行自訂：
 
-[app-screenshot-start url='/auth/my-account/configure-domains'; selector = '.content form'; title='自訂寄件人名稱、電子郵件與標誌' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/configure-domains'; selector = '.content form'; alt='每個網域的電子郵件設定表單，包含寄件者名稱、寄件者電子郵件與上傳標誌欄位'; title='自訂寄件者名稱、電子郵件與標誌' app-screenshot-end]
 
-當你自訂要在電子郵件中顯示的商標圖示時，請確保你上傳的尺寸就是你希望在電子郵件頁尾顯示的尺寸。
+在自訂電子郵件中顯示的標誌時，請確保您上傳的尺寸與您希望在電子郵件頁腳顯示的尺寸相同。
 
-### When Customizing The `From Domain`
+### 自訂 `From Domain` 時
 
-如果你自訂 `From Domain`，電子郵件提供者與用戶端需要知道 FastComments 已被授權代表你的網域發送電子郵件。否則，
-只定義了 `From Domain` 而沒有遵循下列步驟，電子郵件很可能會被判為垃圾郵件。
+如果您自訂 `From Domain`，電子郵件服務提供者與客戶端需要知道 FastComments 已獲授權代表您發送電子郵件。否則，僅定義 `From Domain` 而未遵循以下步驟，可能會導致電子郵件被歸類為垃圾郵件。
 
-#### 1. Setup SPF
+#### 1. 設定 SPF
 
-為了允許 FastComments 以你的網域安全地發送電子郵件，請確保你新增一個 SPF 紀錄來允許我們這麼做。
+為了讓 FastComments 能以您的網域安全地發送電子郵件，請確保您新增允許我們發送的 SPF 記錄。
 
-請確保有 SPF 紀錄允許 `mail.fastcomments.com` 與 `sib.fastcomments.com` 代表你的網域發送郵件。
+確保有 SPF 記錄允許 `mail.fastcomments.com` 與 `sib.fastcomments.com` 以您的網域發送郵件。
 
-有關如何操作的更多資訊請參考： https://mailtrap.io/blog/multiple-spf-records/
+更多關於如何執行此操作的資訊請參考此處：https://mailtrap.io/blog/multiple-spf-records/
 
-#### 2. Setup DKIM
+#### 2. 設定 DKIM
 
-除了 SPF，你也應該設定 DKIM。當你的 DNS 設定就緒後，你可以在網域設定頁面中點選「顯示進階」來顯示每個網域的 DKIM 設定。
+除了 SPF，您還應該設定 DKIM。當您的 DNS 設定完成後，您可以在網域設定頁面點擊「Show Advanced」以顯示每個網域的 DKIM 設定。
 
-你也可以 [呼叫 API](/guide-api.html#domain-config-structure) 來設定 DKIM 組態。
+您也可以[呼叫 API](/guide-api.html#domain-config-structure) 來設定 DKIM 配置。
 
-### Unsubscribe Links
+### 取消訂閱連結
 
-當使用 SSO 時，電子郵件與通知中使用的取消訂閱功能可以透過 [DomainConfigs API](/guide-api.html#domain-config-structure) 進行自訂。
+使用 SSO 時，電子郵件與通知中的取消訂閱功能可透過[DomainConfigs API](/guide-api.html#domain-config-structure) 進行自訂。
 
-### Email Link Obfuscation
+### 電子郵件連結混淆
 
-如果你網站的網域聲譽導致通知電子郵件進入垃圾郵件夾，你可以將「查看留言」按鈕透過 `fastcomments.com` 重新導向，而不是直接連到你的頁面。郵件提供者會根據電子郵件內文中的每個連結對目的地的聲譽進行評分，所以當你的網域被標記時，裸露的連結會無論你的寄送設定多乾淨，都對垃圾郵件分數產生負面影響。
+如果您網站的網域聲譽導致通知電子郵件被歸類為垃圾郵件，您可以將「檢視評論」按鈕導向 `fastcomments.com`，而非直接連結至您的頁面。郵箱服務提供者會根據目的地的聲譽對電子郵件正文中的每個連結進行評分，因此當您的網域被標記時，裸露的連結會提升垃圾郵件分數，無論您的發送設定多麼乾淨。
 
-可在「我的網域」頁面的「顯示進階」中啟用此功能，位於「Email Link Obfuscation」區段。此設定為每個網域單獨設定。
+在「我的網域」頁面的「Show Advanced」下的「Email Link Obfuscation」區段中啟用此功能。此設定以每個網域為單位。
 
-啟用後，提及、回覆、新留言、訂閱頁面、個人資料留言與彙整郵件中的連結會改寫為短代碼，點擊時會重新導向到原始頁面。目的地會綁定到你的租戶：重新導向只會轉發到 host 與你所設定的網域之一相符的 URL，且代碼在 30 天後自動失效。
+啟用後，提及、回覆、新評論、已訂閱頁面、個人檔案評論與摘要電子郵件中的連結會被重新寫成短代碼，點擊後會重新導向至原始頁面。目的地綁定至您的租戶：重新導向僅會轉發至主機符合您已設定網域之一的 URL，且代碼會在 30 天後自動過期。
 
-點擊後的使用者體驗不會改變。讀者仍會到達你的頁面，並且留言會自動捲動到畫面中。
+點擊後的體驗不會改變。讀者仍會在您的頁面上看到已捲動至評論的位置。
+
+---

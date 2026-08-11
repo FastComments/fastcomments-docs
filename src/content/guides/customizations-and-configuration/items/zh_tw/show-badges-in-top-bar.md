@@ -1,13 +1,15 @@
+---
 [related-parameter-start name = 'showBadgesInTopBar'; type = 'boolean'; related-parameter-end]
 
-預設情況下，FastComments 只會在留言串中的使用者留言旁顯示使用者徽章。
+預設情況下，FastComments 只會在評論串中的使用者評論上顯示使用者徽章。
 
-不過，我們可以在 widget 自訂頁面啟用此功能，將使用者徽章顯示在留言表單上方名字旁：
+然而，我們可以透過在小工具自訂頁面啟用此功能，將使用者徽章顯示在評論表單上方、名稱旁邊：
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.show-badges-in-top-bar'; title='Show Badges in Top Bar Option' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.show-badges-in-top-bar'; alt='在小工具自訂頁面上，顯示頂部列的徽章勾選框，將徽章放在評論表單上方的名稱旁邊'; title='在頂部列顯示徽章選項' app-screenshot-end]
 
-這會在頂部工具列區域於使用者名字旁顯示其徽章，讓他們在撰寫留言時的成就與身分更為顯眼。
+這將在頂部列區域中，將使用者的徽章與其名稱並排顯示，讓他們在撰寫評論時，其成就與身分更加顯眼。
 
-請注意，必須在小工具自訂介面中啟用此功能才能生效。即使在伺服器層級已開啟，你也可以在程式碼設定中將 **showBadgesInTopBar** 標記設為 false，以選擇性地停用它：
+請注意，此功能必須在小工具自訂 UI 中啟用才能生效。您也可以在程式碼設定中選擇性地將 **showBadgesInTopBar** 標誌設為 false，即使在伺服器層面已開啟，也能將其停用：
 
 [code-example-start config = {showBadgesInTopBar: false}; linesToHighlight = [6]; title = 'Disable Show Badges in Top Bar'; code-example-end]
+---

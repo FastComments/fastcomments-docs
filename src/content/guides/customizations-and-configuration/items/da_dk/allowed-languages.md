@@ -1,14 +1,11 @@
----
-Som standard begrænser FastComments ikke de sprog, der bruges til at kommentere. 
+By default, FastComments does not limit languages used to comment.  
 
-Det kan være ønskeligt at begrænse de sprog, et fællesskab bruger.
+It may be desirable to limit the languages a community uses.
 
-Dette kan konfigureres uden kode på siden til tilpasning af widgeten:
+This can be configured without code, on the widget customization page:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allowed-languages']; selector = '.allowed-languages'; title='Allowed Languages' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allowed-languages']; selector = '.allowed-languages'; alt='Tilladte sprogvælger på widget-tilpasningssiden for at begrænse hvilke sprog kommentarer kan bruge'; title='Tilladte sprog' app-screenshot-end]
 
-Systemet vil analysere kommentaren og bestemme sproget, og derefter sammenligne det med den tilladte liste.
+The system will parse their comment and determine its language, and then match it with the allowed list.
 
-Hvis kommentaren er skrevet på et sprog, der ikke er tilladt, vises en lokaliseret fejlmeddelelse. 
-
----
+If the comment is written in a language that is not allowed, then a localized error message is shown.

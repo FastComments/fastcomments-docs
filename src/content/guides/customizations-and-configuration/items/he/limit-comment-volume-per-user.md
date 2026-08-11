@@ -1,10 +1,10 @@
-בברירת מחדל, כל משתמש יכול לשלוח עד `5 comments` באותה דקה.
+By default, each user can submit up to `5 comments` in the same minute.
 
-המעקב נעשה באמצעות user id, anon user id וip address (hashed).
+This is tracked by user id, anon user id, and ip address (hashed).
 
-ניתן להתאים זאת ללא קוד, בדף התאמה אישית של הווידג'ט:
+This can be customized without code, on the widget customization page:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.max-comments-per-minute'; title='Limiting Comment Volume Per User' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.max-comments-per-minute'; alt='שדה מקסימום תגובות לדקה בעמוד התאמת הווידג\'ט, מוגדר ל‑5 כברירת מחדל'; title='הגבלת נפח תגובות לכל משתמש' app-screenshot-end]
 
-שים לב שאם אתה משתמש ב- comment creation API, ייתכן שתרצה להעביר את כתובת ה- `ip` המקורית של המשתמש בבקשה אל ה-backend שלנו כדי שמגבלת התדירות תחול
-לפי משתמש ולא באופן גלובלי על חשבונך.
+Note that if you're using the comment creation API may want to pass the user's original `ip` address in the request to our backend so rate limiting is applied
+per user and not globally to your account.

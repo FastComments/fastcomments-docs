@@ -1,32 +1,29 @@
-FastComments provjerava zahtjeve prema vašem računu kako bi vidio dolaze li s vaše stranice. Ovo je razlog zašto
-moramo znati na koju stranicu, ili stranice, želite instalirati FastComments.
+FastComments autentificira zahtjeve na vaš račun kako bi provjerio da dolaze s vaše web stranice. Zato trebamo znati koju stranicu ili stranice želite instalirati FastComments.
 
 FastComments podržava autentifikaciju putem domene, kao i poddomena.
 
-Uzmimo stranicu `https://example.com`. U ovom slučaju, "`example.com`" je domena. `example.com` podržava i `example.com`, i `www.example.com`. Nazivat ćemo "www" "poddomenom".
+Uzmimo stranicu `https://example.com`. U ovom slučaju, "`example.com`" je domena. `example.com` podržava i `example.com` i `www.example.com`. "www" ćemo nazvati "poddomenom".
 
 Na primjer:
 
-- To allow only `blog.example.com`:
-  - Add `blog.example.com` to your domains.
-- To allow `www.example.com`, `somesite.example.com`, and `example.com`:
-  - Add `example.com` to your domains.
-  - This is billed as having **one domain** associated with your account.
-- You can now add wildcard subdomains, for example *myname.vercel.app. 
-  - This is billed as having **one domain** associated with your account.
+- Za dopuštanje samo `blog.example.com`:
+  - Dodajte `blog.example.com` u svoje domene.
+- Za dopuštanje `www.example.com`, `somesite.example.com` i `example.com`:
+  - Dodajte `example.com` u svoje domene.
+  - Ovo se naplaćuje kao **jedna domena** povezana s vašim računom.
+- Sada možete dodati wildcard poddomene, na primjer *myname.vercel.app.
+  - Ovo se naplaćuje kao **jedna domena** povezana s vašim računom.
 
-Ako koristite platformu za bloganje, i dobili ste poddomenu, željeli biste
-dodati **punu domenu uključujući poddomenu** na svoj račun, na primjer: `cats.blogger.com`.
+Ako koristite platformu za bloganje i dobili ste poddomen, trebali biste dodati **cijelu domenu uključujući poddomen** na svoj račun, na primjer: `cats.blogger.com`.
 
-Domene možemo dodati na naš račun posjetom stranice `My Domains` i klikom na `Add a Domain` pri dnu:
+Domene možemo dodati na svoj račun posjetom stranici `My Domains` i klikom na `Add a Domain` na dnu:
 
-[app-screenshot-start url='/auth/my-account/configure-domains'; selector = '.content'; title='The My Domains Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/configure-domains'; selector = '.content'; alt='Stranica My Domains koja prikazuje domene na računu, s gumbom Add a Domain na dnu'; title='Stranica My Domains' app-screenshot-end]
 
-Tijekom probnog razdoblja, **domene se automatski dodaju na vaš račun** kada zahtjevi dolaze s tih domena. Međutim,
-nakon tog razdoblja moraju se dodati izričito radi sigurnosti. Trebali biste primiti e-poštu kada se ovo automatsko ponašanje dogodi.
+Tijekom probnog razdoblja, **domene se automatski dodaju na vaš račun** kada zahtjevi dolaze s tih domena. Međutim, nakon tog vremena moraju se dodati izričito radi sigurnosti. Trebali biste primiti e‑mail kada se ovo automatizirano ponašanje dogodi.
 
-Ne morate dodavati `localhost` za lokalni razvoj - on je dopušten prema zadanim postavkama.
+Ne morate dodavati `localhost` za lokalni razvoj – on je dopušten po zadanom.
 
 #### Putem API-ja
 
-Domene se također mogu dodati i konfigurirati [putem DomainConfigs API-ja](/guide-api.html#domain-config-structure).
+Domene se također mogu dodati i konfigurirati [putem DomainConfigs API](/guide-api.html#domain-config-structure).

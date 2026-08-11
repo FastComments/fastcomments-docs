@@ -1,24 +1,21 @@
----
-FastComments vam omogućuje zahtijevati od komentatora koji komentiraju po prvi put da prihvate vaše Uvjete korištenja prije nego što pošalju komentar.
+FastComments omogućuje da od prvog komentatora zahtijevate prihvaćanje vaših Terms of Service prije slanja komentara.
 
 When enabled:
-- **Anonimni korisnici** vidjet će potvrdni okvir za Uvjete korištenja svaki put kada komentiraju
-- **Prijavljeni korisnici** vidjet će potvrdni okvir samo pri svom prvom komentaru, ili kada ažurirate svoje Uvjete korištenja
+- **Anonymous users** će vidjeti TOS potvrdni okvir svaki put kad komentiraju
+- **Authenticated users** će vidjeti potvrdni okvir samo na svom prvom komentaru, ili kada ažurirate svoje Terms of Service
 
-### Konfiguracija
+### Configuration
 
-Idite na stranicu za prilagodbu widgeta i omogućite potvrdni okvir "Require Terms of Service acceptance". Nakon omogućavanja, vidjet ćete sljedeće opcije:
+Idite na stranicu prilagodbe widgeta i omogućite potvrdni okvir "Require Terms of Service acceptance". Nakon što je omogućeno, vidjet ćete sljedeće opcije:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.tos-enabled'; selector = '#tos-options'; title='Terms of Service Options' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.tos-enabled'; selector = '#tos-options'; alt='Panel Uvjeta pružanja usluge koji prikazuje odabir načina teksta TOS-a i polje datuma posljednjeg ažuriranja'; title='Opcije Uvjeta pružanja usluge' app-screenshot-end]
 
-- **Način prikaza teksta Uvjeta korištenja**: Po zadanom potvrdni okvir prikazuje "I agree to the Terms of Service and Privacy Policy" s poveznicama na oba dokumenta. Odaberite "Customize text per locale" da biste unijeli vlastiti tekst za svaki jezik.
-- **Datum posljednje izmjene Uvjeta korištenja**: Kada ažurirate svoje Uvjete korištenja, postavite ovaj datum. Korisnici koji su prihvatili prije tog datuma bit će obvezni ponovno prihvatiti.
+- **TOS Text Mode**: Po zadanom, potvrdni okvir prikazuje "I agree to the Terms of Service and Privacy Policy" s poveznicama na oba dokumenta. Odaberite "Customize text per locale" kako biste pružili vlastiti tekst za svaki jezik.
+- **TOS Last Updated Date**: Kada ažurirate svoje Terms of Service, postavite ovaj datum. Korisnici koji su prihvatili prije tog datuma morat će ponovno prihvatiti.
 
-### Kako to radi
+### How It Works
 
-- Vremenski pečat prihvaćanja Uvjeta pohranjuje se po korisniku i po komentaru
-- Kada korisnik prihvati Uvjete, datum se bilježi u njihovom korisničkom profilu (per-tenant)
-- Ako postavite datum "Posljednja izmjena" koji je nakon datuma prihvaćanja korisnika, morat će ponovno prihvatiti
-- Za anonimne korisnike koje nije moguće pratiti, potvrdni okvir pojavljuje se pri svakom slanju komentara
-
----
+- Vremenska oznaka prihvaćanja TOS-a pohranjuje se po korisniku i po komentaru
+- Kada korisnik prihvati TOS, datum se bilježi u njegovom korisničkom profilu (per-tenant)
+- Ako postavite datum "Last Updated" koji je nakon datuma prihvaćanja korisnika, morat će ponovno prihvatiti
+- Za anonimne korisnike koji se ne mogu pratiti, potvrdni okvir se pojavljuje pri svakom slanju komentara

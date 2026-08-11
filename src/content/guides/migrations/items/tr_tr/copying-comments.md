@@ -1,18 +1,20 @@
-Veri taşınması gerektiğinde, FastComments sayfalar ve makaleler arasında yorumları taşımak için kendi kendine hizmet aracı sağlar.
+In the event that data needs to be moved around, FastComments provides a self-service tool for moving comments between pages and articles.
 
-İşte yorum kopyalama sayfası formunun görünümü:
+Here's what the comment copy page form looks like:
 
-[app-screenshot-start url='/auth/my-account/manage-data/copy-comments'; selector = '.account-block'; title='The Copy Comment Form' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/copy-comments'; selector = '.account-block'; alt='Kaynak URL ID alanı ve Hedef URL ID ve URL alanlarını içeren yorum kopyalama formu'; title='Yorum Kopyalama Formu' app-screenshot-end]
 
 ### Filling out the "From" Fields
 
-Yorumların nereden taşınacağına karar vermek için, sadece kaynak `URL ID`'sini bilmamız yeterlidir.
+To decide where to move comments from, we simply need to know the source `URL ID`.
 
 If you aren't passing a value for `urlId` in the comment widget configuration, then this will be a "clean" version of the page URL.
 
+You can see what values your comments have for `URL ID` by exporting them.
+
 ### Filling out the "To" Fields
 
-Yorumların nereye taşınacağını belirlemek için hedef `URL ID` ve `URL`'yi bilmemiz gerekir.
+To decide where to move comments to, we need to know the target `URL ID` and `URL`.
 
 The `URL ID` will be the bucket that the comment goes in. The `URL` field is used so that you can navigate directly
 to the comment from emails and moderation tools.

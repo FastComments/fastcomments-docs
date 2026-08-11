@@ -1,10 +1,13 @@
-По умолчанию FastComments позволяет пользователям удалять свои комментарии.
+---
+По умолчанию FastComments позволяет пользователям удалять их комментарии.
 
-Однако это можно запретить.
+Однако это можно предотвратить.
 
-На странице настройки виджета найдите опцию "Отключить удаление".
+На странице настройки виджета найдите параметр «Отключить удаление».
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.disable-commenter-comment-delete'; selector = '.disable-commenter-comment-delete'; title='Disable Comment Deleting' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.disable-commenter-comment-delete'; selector = '.disable-commenter-comment-delete'; alt='Опция отключения удаления на странице настройки виджета, предотвращающая удаление комментариев пользователями'; title='Отключить удаление комментариев' app-screenshot-end]
 
-- Это влияет только на обычных комментаторов и не затрагивает модераторов или администраторов, которые по-прежнему смогут удалять.
-- Это также повлияет на интеграции через API в случаях, когда передаётся `contextUserId`.
+- Это затрагивает только обычных комментаторов и не затрагивает модераторов или администраторов, которые всё равно смогут удалять.  
+- Это также повлияет на интеграции API, когда передаётся `contextUserId`. 
+
+---

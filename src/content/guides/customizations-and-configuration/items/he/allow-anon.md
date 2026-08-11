@@ -1,10 +1,8 @@
----
-בברירת מחדל, FastComments ידרוש כתובת אימייל כדי להגיב. אין צורך שהיא תהיה כתובת אימייל תקפה, עם זאת עד שהמשתמש ילחץ על הקישור שנשלח אליו,
-התגובה שלהם תוצג עם התווית "תגובה לא מאומתת".
+By default, FastComments will require an email to comment. It does not have to be a valid email, however until the user clicks a link sent to them,  
+their comment will display an "Unverified Comment" label.
 
-עם זאת, ניתן להסיר את דרישת האימייל. שדה הקלט של האימייל עדיין יוצג, אך כבר לא יהיה חובה.
+However, we can remove the email requirement. The email input field will still show, but it will no longer be required.
 
-ניתן להגדיר זאת דרך ממשק ההתאמה אישית של הווידג'ט:
+This can be configured via the widget customization UI:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.allow-anonymous-comments'; title='Enabling Anonymous Comments' app-screenshot-end]
----
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.allow-anonymous-comments'; alt='אפשרות תגובות אנונימיות בממשק התאמה אישית של הווידגט, שמאפשרת לשדה האימייל להיות אופציונלי'; title='Enabling Anonymous Comments' app-screenshot-end]

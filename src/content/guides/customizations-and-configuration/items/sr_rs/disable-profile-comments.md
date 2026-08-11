@@ -1,11 +1,11 @@
 [related-parameter-start name = 'disableProfileComments'; type = 'boolean'; related-parameter-end]
 
-Подразумевано, FastComments ће приказати картицу "Profile Comments" на корисничким профилима, омогућавајући посетицима да остављају коментаре на нечијем профилу.
+Podrazumevano, FastComments prikazuje karticu „Komentari na profilu“ na korisničkim profilima, omogućavajući posetiocima da ostave komentare na nečijem profilu.
 
-Међутим, можемо онемогућити ову картицу:
+Međutim, možemo onemogućiti ovu karticu:
 
-[code-example-start config = {disableProfileComments: true}; linesToHighlight = [6]; title = 'Disable Profile Comments'; code-example-end]
+[code-example-start config = {disableProfileComments: true}; linesToHighlight = [6]; title = 'Onemogući komentare na profilu'; code-example-end]
 
-Ово се такође може урадити без кода. На страници за прилагођавање виџета погледајте одељак "Oнемогући коментаре на профилу".
+Ovo se takođe može uraditi bez koda. Na stranici za prilagođavanje widgeta, pogledajte odeljak „Onemogući komentare na profilu“.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-profile-comments']; selector = '.disable-profile-comments'; title='Disable Profile Comments' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-profile-comments']; selector = '.disable-profile-comments'; alt='Stranica za prilagođavanje widgeta sa označenim poljem Onemogući komentare na profilu da sakrije karticu komentara na profilu'; title='Onemogući komentare na profilu' app-screenshot-end]

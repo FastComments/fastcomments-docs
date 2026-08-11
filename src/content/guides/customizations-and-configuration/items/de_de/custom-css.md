@@ -1,59 +1,57 @@
 [related-parameter-start name = 'customCSS'; type = 'string'; related-parameter-end]
 
-FastComments ist so konzipiert, dass es anpassbar ist. Das Kommentierungs-Widget läuft aus Sicherheitsgründen in einem iframe, daher müssen Sie für benutzerdefiniertes Styling eine von zwei Vorgehensweisen verwenden.
+FastComments ist dafür ausgelegt, angepasst zu werden. Das Kommentierungs‑Widget selbst läuft aus Sicherheitsgründen in einem iframe, sodass Sie für benutzerdefiniertes Styling einen von zwei Ansätzen verfolgen müssen.
 
-Die erste, einfachste Vorgehensweise – und von uns bevorzugt – ist die Verwendung der [widget customization page](https://fastcomments.com/auth/my-account/customize-widget).
+Der erste, einfachste Ansatz, den wir bevorzugen, ist die Nutzung der [widget customization page](https://fastcomments.com/auth/my-account/customize-widget).
 
-In der Widget-Anpassungsseite sehen Sie den Abschnitt „Erweiterte Optionen anzeigen“ („Show Advanced Options“), unter dem es einen Bereich mit der Bezeichnung „Benutzerdefiniertes CSS“ („Custom CSS“) gibt:
+Auf der Widget‑Anpassungsseite finden Sie den Abschnitt „Show Advanced Options“, darunter ein Bereich mit der Bezeichnung „Custom CSS“:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.show-advanced-option'; selector = '.custom-css'; title='Custom CSS Input Area' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.show-advanced-option'; selector = '.custom-css'; alt='Custom CSS-Editor unter "Show Advanced Options" auf der Widget-Anpassungsseite'; title='Custom CSS Eingabebereich' app-screenshot-end]
 
-Diese Vorgehensweise hat einige Vorteile:
-1. Das eingegebene CSS wird vor dem Versand an den Nutzer minimiert, und das Format wird in der Bearbeitungsoberfläche konsistent beibehalten.
-2. Sie erhalten alle Vorteile der Widget-Anpassungsoberfläche, zum Beispiel die einfache Möglichkeit, das Kommentierungs-Widget für verschiedene Seiten unterschiedlich anzupassen.
-3. Wenn wir Änderungen am Kommentar-Widget vornehmen, wird Ihr benutzerdefiniertes Styling im Rahmen unseres Release-Prozesses getestet.
+Dieser Ansatz hat einige Vorteile:
+1. Das eingegebene CSS wird vor dem Versand an den Nutzer minifiziert, und die Formatierung bleibt in der Bearbeitungsoberfläche konsistent.
+2. Sie erhalten alle Vorteile der Widget‑Anpassungsoberfläche, zum Beispiel das einfache Anpassen des Kommentierungs‑Widgets für verschiedene Websites.
+3. Wenn wir Änderungen am Kommentierungs‑Widget vornehmen, wird Ihr benutzerdefiniertes Styling im Rahmen unseres Release‑Prozesses getestet.
 
-Die zweite Vorgehensweise besteht darin, den Parameter **customCSS** in der Widget-Konfiguration anzugeben, wie folgt:
+Der zweite Ansatz besteht darin, den **customCSS**‑Parameter in der Widget‑Konfiguration anzugeben, wie folgt:
 
-[code-example-start config = {customCSS: "button { background: red; }" }; linesToHighlight = [6]; title = 'Passing Custom CSS'; code-example-end]
+[code-example-start config = {customCSS: "button { background: red; }" }; linesToHighlight = [6]; title = 'Custom CSS übergeben'; code-example-end]
 
-Dies hat jedoch *Einschränkungen*:
-1. Es gibt eine Begrenzung dafür, wie viel benutzerdefiniertes CSS übergeben werden kann, bevor unsere Server die Anfrage aufgrund der Header-Größe ablehnen.
-2. Sie müssen das benutzerdefinierte CSS in Ihrer Infrastruktur und Ihrem Build-System verwalten. Das kann ebenso ein Vorteil wie ein Nachteil sein.
-3. In diesem Anwendungsfall entsteht ein zusätzlicher Overhead, da das benutzerdefinierte CSS **zweimal** über das Netzwerk gesendet werden muss: einmal an unsere Server und dann wieder in den iframe-Inhalt. Bei den meisten Payload-Größen ist dies jedoch nicht wahrnehmbar.
-4. Eine gängige Optimierung besteht darin, das CSS zu minimieren, um dessen Größe im Netzwerk zu reduzieren; bei dieser Vorgehensweise müssen Sie das jedoch selbst übernehmen.
-5. Ihr benutzerdefiniertes CSS wird bei unseren Änderungen nicht getestet.
+Allerdings hat dies *Einschränkungen*:
+1. Es gibt ein Limit, wie viel benutzerdefiniertes CSS übergeben werden kann, bevor unsere Server die Anfrage aufgrund der Header‑Größe ablehnen.
+2. Sie müssen das benutzerdefinierte CSS in Ihrer Infrastruktur und Ihrem Build‑System verwalten. Das kann auch ein Vorteil sein.
+3. Es entsteht ein zusätzlicher Aufwand, das benutzerdefinierte CSS in diesem Anwendungsfall **zweimal** über das Netzwerk zu senden, da es zuerst an unsere Server und dann zurück in den iframe‑Inhalt gesendet werden muss. Bei den meisten Payload‑Größen ist dies jedoch nicht bemerkbar.
+4. Eine gängige Optimierung ist das Minifizieren des CSS, um die Größe im Netzwerk zu reduzieren; bei diesem Ansatz müssen Sie das jedoch selbst erledigen.
+5. Ihr benutzerdefiniertes CSS wird nicht getestet, wenn wir Änderungen vornehmen.
 
-### Externe CSS-Dateien
+### External CSS Files
 
-Sie können dem Widget mitteilen, eine externe Datei zu laden, indem Sie `@import` verwenden!
+Sie können das Widget anweisen, eine externe Datei mit `@import` zu laden!
 
-Es wird empfohlen, das `@import` in eine Anpassungsregel zu setzen. Auf diese Weise können wir, falls wir jemals Änderungen am Kommentar-Widget vornehmen müssen, unsere Automatisierungstools verwenden, um Ihre Konfiguration zu überprüfen. Sie würden also zum Beispiel eine Anpassungsregel in der Widget-Anpassungsoberfläche erstellen, auf `Advanced` klicken und im Feld `Custom CSS` eingeben:
+Es wird empfohlen, das `@import` in einer Anpassungs‑Regel zu platzieren. Auf diese Weise können wir, falls wir jemals Änderungen am Kommentierungs‑Widget vornehmen müssen, unsere Automatisierungstools nutzen, um Ihre Einrichtung zu überprüfen. Zum Beispiel würden Sie in der Widget‑Anpassungs‑UI eine Anpassungs‑Regel erstellen, auf **Advanced** klicken und im Feld **Custom CSS** eingeben:
 
     @import url(https://example.com/styles.css);
 
-#### Im Code - Nicht empfohlen
+#### In Code - Nicht empfohlen
 
-Sie können eine externe CSS-Datei auch über die Eigenschaft `customCSS` laden:
+Sie können auch eine externe CSS‑Datei über die `customCSS`‑Eigenschaft laden:
 
-[code-example-start config = {customCSS: "@import url(https://example.com/styles.css);" }; linesToHighlight = [6]; title = 'External CSS File'; code-example-end]
+[code-example-start config = {customCSS: "@import url(https://example.com/styles.css);" }; linesToHighlight = [6]; title = 'Externe CSS-Datei'; code-example-end]
 
-Beachten Sie jedoch, dass Ihr CSS in diesem Fall von uns nicht getestet werden kann. 
+Beachten Sie jedoch, dass Ihr CSS in diesem Fall nicht von uns getestet werden kann. 
 
-### Styling des Benutzerprofil-Modals
+### User Profile Modal Styling
 
-Benutzerprofil-Modals können ebenfalls mit benutzerdefiniertem CSS gestaltet werden. Damit das benutzerdefinierte Styling jedoch auf Benutzerprofile angewendet wird, müssen alle CSS-Selektoren mit `.user-profile` vorangestellt sein. Ohne dieses Präfix wird benutzerdefiniertes Styling für Benutzerprofil-Modals ignoriert.
+Benutzerprofil‑Modale können ebenfalls mit benutzerdefiniertem CSS gestaltet werden. Damit das benutzerdefinierte Styling auf Benutzerprofile angewendet wird, muss jeder CSS‑Selektor mit `.user-profile` prefixed werden. Ohne dieses Präfix wird das Styling für Benutzerprofil‑Modale ignoriert.
 
 Zum Beispiel:
 
-[code-example-start config = {customCSS: ".user-profile .profile-name { color: blue; }" }; title = 'User Profile CSS'; code-example-end]
+[code-example-start config = {customCSS: ".user-profile .profile-name { color: blue; }" }; title = 'CSS für Benutzerprofil'; code-example-end]
 
-### Abwärtskompatibilität
+### Backwards Compatibility
 
-Bei FastComments wissen wir, dass unsere Kunden das Kommentierungs-Widget anpassen. Das ist beabsichtigt – das Letzte, was wir wollen, ist, dass unser Produkt Design-Inkonsistenzen in Ihrem Produkt verursacht.
+Bei FastComments wissen wir, dass unsere Kunden das Kommentierungs‑Widget anpassen. Das ist beabsichtigt – das Letzte, was wir wollen, ist, dass unser Produkt Design‑Inkonsistenzen in Ihrem Produkt verursacht.
 
-Da dies ein wichtiger Bestandteil unseres Produkts ist, verfügen wir über eine Build-Pipeline, die es uns ermöglicht, Änderungen am Kommentar-Widget pro Kunde bei jedem Release zu prüfen.
+Da dies ein wichtiger Teil unseres Produkts ist, haben wir eine Build‑Pipeline, die es uns ermöglicht, Änderungen am Kommentierungs‑Widget pro Kunde bei jedem Release zu prüfen.
 
-Wenn wir kleinere Probleme feststellen, werden wir Ihr Konto aktualisieren, um einen reibungslosen Release sicherzustellen. Wenn wir schwerwiegende, inkompatible Änderungen feststellen, erlaubt uns das, den Release zu stoppen.
-
----
+Wenn wir kleinere Probleme finden, aktualisieren wir Ihr Konto, um einen reibungslosen Release zu gewährleisten. Wenn wir größere, brechende Änderungen sehen, können wir den Release stoppen.

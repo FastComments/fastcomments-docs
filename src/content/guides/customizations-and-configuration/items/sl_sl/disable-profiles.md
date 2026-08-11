@@ -2,10 +2,12 @@
 
 Privzeto bo FastComments prikazal uporabnikov profil, ko kliknete na njihov avatar.
 
-Vendar pa lahko to funkcionalnost onemogočite:
+Vendar lahko to funkcionalnost onemogočimo:
 
-[code-example-start config = {disableProfiles: true}; linesToHighlight = [6]; title = 'Disable Profiles'; code-example-end]
+[code-example-start config = {disableProfiles: true}; linesToHighlight = [6]; title = 'Onemogoči profile'; code-example-end]
 
-To je mogoče narediti tudi brez kode. Na strani za prilagajanje widgeta si oglejte razdelek "Disable Profiles".
+To je mogoče storiti tudi brez kode. Na strani za prilagajanje gradnika si oglejte razdelek "Onemogoči profile".
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-profiles']; selector = '.disable-profiles'; title='Disable Profiles' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-profiles']; selector = '.disable-profiles'; alt='Stran za prilagajanje gradnika z izbranim potrditvenim poljem Onemogoči profile, tako da avatari ne odpirajo več profilov'; title='Onemogoči profile' app-screenshot-end]
+
+---

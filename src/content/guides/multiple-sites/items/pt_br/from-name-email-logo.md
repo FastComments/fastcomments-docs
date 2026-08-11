@@ -1,48 +1,45 @@
-Às vezes o FastComments precisa enviar e-mails para seus usuários, especialmente se você não estiver usando SSO seguro.
+Às vezes, o FastComments precisa enviar e‑mail aos seus usuários, especialmente se você não estiver usando SSO seguro.
 
-Exemplos disso incluem verificar a conta deles ou a atividade ao comentar pela primeira vez. O FastComments
-também enviará notificações para respostas aos comentários deles.
+Exemplos disso incluem a verificação da conta ou da atividade deles ao comentar pela primeira vez. O FastComments também enviará notificações de respostas aos comentários deles.
 
-Quando o FastComments envia e-mails para seus usuários, usaremos um Nome e E-mail padrão de From de `FastComments Robot` e `noreply@fastcomments.com`.
+Quando o FastComments envia e‑mail aos seus usuários, usaremos um Nome e E‑mail padrão de `FastComments Robot` e `noreply@fastcomments.com`.
 
-Também usaremos nosso próprio logo no rodapé desses e-mails.
+Também usaremos nosso próprio logotipo no rodapé desses e‑mails.
 
-Se você tiver FastComments Flex ou Pro, tudo isso pode ser personalizado por domínio através da "My Domains page":
+Se você tem FastComments Flex ou Pro, tudo isso pode ser personalizado por domínio na página "Meus Domínios":
 
-[app-screenshot-start url='/auth/my-account/configure-domains'; selector = '.content form'; title='Customizing From Name, Email, and Logo' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/configure-domains'; selector = '.content form'; alt='Formulário de configurações de e‑mail por domínio com os campos Nome do Remetente, E‑mail do Remetente e upload de logotipo'; title='Personalizando Nome do Remetente, E‑mail e Logotipo' app-screenshot-end]
 
-Ao personalizar o logo exibido nos e-mails, verifique se o tamanho que você está carregando é o mesmo que deseja mostrar no rodapé do e-mail.
+Ao personalizar o logotipo exibido nos e‑mails, certifique‑se de que o tamanho que você está enviando seja o mesmo tamanho que deseja exibir no rodapé do e‑mail.
 
-### When Customizing The `From Domain`
+### Ao Personalizar o `From Domain`
 
-Se você personalizar o `From Domain`, provedores e clientes de e-mail precisam saber que o FastComments está autorizado a enviar e-mails em seu nome. Caso contrário,
-definir o `From Domain` e não seguir os passos abaixo provavelmente fará com que os e-mails caiam como spam.
+Se você personalizar o `From Domain`, provedores de e‑mail e clientes precisam saber que o FastComments está autorizado a enviar e‑mails em seu nome. Caso contrário, definir o `From Domain` e não seguir os passos abaixo provavelmente fará com que os e‑mails vão para a pasta de spam.
 
-#### 1. Setup SPF
+#### 1. Configurar SPF
 
-Para permitir que o FastComments envie e-mails com segurança em nome do seu domínio, certifique-se de adicionar um registro SPF que nos permita fazer isso.
+Para permitir que o FastComments envie e‑mail com segurança como seu domínio, certifique‑se de adicionar um registro SPF que nos autorize a fazê‑lo.
 
-Certifique-se de que existam registros SPF que permitam que `mail.fastcomments.com` e `sib.fastcomments.com` enviem e-mail em nome do seu domínio.
+Certifique‑se de que existam registros SPF que permitam que `mail.fastcomments.com` e `sib.fastcomments.com` enviem e‑mail como seu domínio.
 
 Mais informações sobre como fazer isso estão aqui: https://mailtrap.io/blog/multiple-spf-records/
 
-#### 2. Setup DKIM
+#### 2. Configurar DKIM
 
-Além do SPF, você deve configurar o DKIM. Depois que a configuração do DNS estiver pronta, você pode clicar em "Mostrar Avançado" na página de configurações de domínio
-para exibir as configurações de DKIM por domínio.
+Além do SPF, você deve configurar DKIM. Quando sua configuração DNS estiver pronta, você pode clicar em "Show Advanced" na página de configurações de domínio para exibir as configurações DKIM por domínio.
 
-Você também pode [usar a API](/guide-api.html#domain-config-structure) para definir a configuração de DKIM.
+Você também pode [invocar a API](/guide-api.html#domain-config-structure) para definir a configuração DKIM.
 
-### Unsubscribe Links
+### Links de Cancelamento de Inscrição
 
-Ao usar SSO, os recursos de cancelamento de inscrição usados em e-mails e notificações podem ser personalizados [por meio da DomainConfigs API](/guide-api.html#domain-config-structure).
+Ao usar SSO, os recursos de cancelamento de inscrição usados em e‑mails e notificações podem ser personalizados [via a API DomainConfigs](/guide-api.html#domain-config-structure).
 
-### Email Link Obfuscation
+### Ofuscação de Links de E‑mail
 
-Se a reputação do domínio do seu site estiver fazendo com que os e-mails de notificação caiam em spam, você pode rotear os botões "view comment" através de `fastcomments.com` em vez de vincular diretamente à sua página. Os provedores de caixa de correio avaliam cada link no corpo do e-mail em relação à reputação do destino, então quando seu domínio está sendo sinalizado, os links diretos contribuem para a pontuação de spam independentemente de quão adequada seja sua configuração de envio.
+Se a reputação do domínio do seu site está fazendo com que os e‑mails de notificação caiam no spam, você pode direcionar os botões "ver comentário" através de `fastcomments.com` em vez de vinculá‑los diretamente à sua página. Os provedores de caixa de correio avaliam cada link no corpo do e‑mail com base na reputação do destino, portanto, quando seu domínio está sendo sinalizado, os links diretos contribuem para a pontuação de spam independentemente de quão limpa esteja sua configuração de envio.
 
-Ative isso em "Mostrar Avançado" na página My Domains, na seção "Email Link Obfuscation". A configuração é por domínio.
+Ative isso em "Show Advanced" na página Meus Domínios, na seção "Email Link Obfuscation". A configuração é por domínio.
 
-Quando ativado, os links em e-mails mention, reply, new-comment, subscribed-page, profile-comment, e digest são reescritos para tokens curtos que redirecionam para a página original ao serem clicados. O destino está vinculado ao seu tenant: o redirecionamento só encaminha para URLs cujo host corresponda a um dos seus domínios configurados, e os tokens expiram automaticamente após 30 dias.
+Quando ativado, os links em e‑mails de menção, resposta, novo comentário, página assinada, comentário de perfil e resumo são reescritos para tokens curtos que redirecionam para a página original ao serem clicados. O destino está vinculado ao seu locatário: o redirecionamento só encaminha URLs cujo host corresponda a um dos seus domínios configurados, e os tokens expiram automaticamente após 30 dias.
 
-A experiência após o clique permanece inalterada. Os leitores ainda chegam à sua página com o comentário deslocado para visualização.
+A experiência ao clicar permanece inalterada. Os leitores ainda chegam à sua página com o comentário já rolado para a visualização.

@@ -1,21 +1,20 @@
-For administratorer er der øverst på siden Comment Moderation en knap Add Moderators.
+For administratorer er der øverst på siden Kommentarmoderation en knap til Tilføj moderatorer‑knap.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.moderation-settings-options'; title='Comment Moderation Setting Buttons' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.moderation-settings-options'; alt='Række af knapper øverst på siden Kommentarmoderation, inklusive knappen Tilføj moderatorer'; title='Knapper til indstillinger for kommentarmoderation' app-screenshot-end]
 
-Hvis du allerede har moderatorer, vil denne knap hedde "Edit Moderators".
+Hvis du allerede har moderatorer, vil denne knap vise "Rediger moderatorer".
 
-Lad os se på siden "Add a Moderator".
+Lad os se på siden "Tilføj en moderator".
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/moderator/new'; selector = '.account-block'; title='The Add a Moderator Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/moderator/new'; selector = '.account-block'; alt='Tilføj en moderator-side, der kun beder om den nye moderators navn og e‑mail, før invitationen sendes'; title='Siden Tilføj en moderator' app-screenshot-end]
 
-For at tilføje en moderator kræves kun et navn og en e-mail.
+For at tilføje en moderator er det eneste, der kræves, et navn og en e‑mail.
 
-Hvis e-mailen er knyttet til en eksisterende FastComments-konto, vil vedkommende blive inviteret via e-mail til at tilslutte sig din konto som moderator.
+Hvis e‑mailen er knyttet til en eksisterende FastComments‑konto, vil de blive inviteret via e‑mail til at blive medlem af din konto som moderator.
 
-Hvis den angivne e-mail ikke er knyttet til en eksisterende FastComments-konto, vil der blive oprettet en ny konto til dem.
+Hvis den angivne e‑mail ikke er knyttet til en eksisterende FastComments‑konto, vil der blive oprettet en ny for dem.
 
-Der sendes et invitationslink til moderatoren, som kan logge dem ind automatisk. I fremtiden, hvis de ønsker at logge ind, kan de blot besøge
-<a href="https://fastcomments.com/auth/login" target="_blank">loginsiden</a> og indtaste det navn/e-mail, du tidligere angav. Dette vil sende dem
-et link til at logge ind.
+Et invitationslink vil blive sendt til moderatoren, som automatisk kan logge dem ind. I fremtiden, hvis de ønsker at logge ind, kan de blot besøge
+<a href="https://fastcomments.com/auth/login" target="_blank">login‑siden</a> og indtaste navnet/e‑mailen, som du tidligere har angivet. Dette vil sende dem et link til login.
 
-Medmindre de logger ud, forbliver de logget ind i 30 dage.
+Medmindre de logger ud, vil de være logget ind i tredive dage.

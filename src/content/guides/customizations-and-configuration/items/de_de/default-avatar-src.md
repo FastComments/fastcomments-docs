@@ -2,16 +2,14 @@
 
 Wenn ein Benutzer zum ersten Mal mit FastComments kommentiert, versuchen wir, sein Avatar von <a href="http://gravatar.com/" target="_blank">http://gravatar.com/</a> abzurufen.
 
-Wenn wir jedoch kein Avatarbild finden oder der Benutzer nie eines in seinem Konto einstellt, zeigen wir ein statisches Standard-Avatarbild an.
+Falls wir jedoch kein Avatar finden oder der Benutzer nie eines in seinem Konto festlegt, zeigen wir ein statisches Standard-Avatar-Bild an.
 
-Um ein eigenes statisches Avatarbild anzugeben, können wir die Einstellung *defaultAvatarSrc* verwenden.
+Um ein eigenes statisches Avatar-Bild anzugeben, können wir die Einstellung *defaultAvatarSrc* verwenden.
 
-[code-example-start config = {defaultAvatarSrc: "https://example.com/some-image.png"}; linesToHighlight = [6]; title = 'Override The Default Avatar'; code-example-end]
+[code-example-start config = {defaultAvatarSrc: "https://example.com/some-image.png"}; linesToHighlight = [6]; title = 'Standard-Avatar überschreiben'; code-example-end]
 
-Dies kann auch ohne Code erfolgen. Auf der Seite zur Anpassung des Widgets siehe den Abschnitt "Default Avatar".
+Dies kann auch ohne Code durchgeführt werden. Auf der Widget-Anpassungsseite finden Sie den Abschnitt „Standard-Avatar“.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.default-avatar'; title='Customizing The Default Avatar' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.default-avatar'; alt='Standard-Avatar-Abschnitt der Widget-Anpassungsseite, wo Sie die URL des Ersatz-Avatar-Bildes festlegen'; title='Anpassen des Standard-Avatars' app-screenshot-end]
 
-Beachten Sie, dass die Festlegung des Avatars für einen bestimmten Benutzer, z. B. bei SSO, in einem eigenen Abschnitt behandelt wird.
-
----
+Beachten Sie, dass das Festlegen des Avatars für einen bestimmten Benutzer, beispielsweise mit SSO, in einem eigenen Abschnitt behandelt wird.

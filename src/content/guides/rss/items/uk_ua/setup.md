@@ -1,15 +1,15 @@
-Перейдіть до панелі керування обліковим записом і відкрийте [сторінку RSS-стрічки](https://fastcomments.com/auth/my-account/rss).
+Navigate to your account dashboard and go to the [RSS Feed page](https://fastcomments.com/auth/my-account/rss).
 
-[app-screenshot-start url='/auth/my-account/rss'; selector = '.content'; title='Налаштування RSS-стрічки' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/rss'; selector = '.content'; alt='Сторінка RSS-стрічки облікового запису з прапорцем «Увімкнути доступ до RSS-стрічки», URL-адресою стрічки та кнопками «Копіювати» і «Переглянути стрічку»'; title='Налаштування RSS-стрічки' app-screenshot-end]
 
-На сторінці RSS-стрічки поставте прапорець "Увімкнути доступ до RSS-стрічки", щоб згенерувати унікальний URL вашої RSS-стрічки.
+On the RSS Feed page, check the "Enable RSS Feed Access" checkbox to generate your unique RSS feed URL.
 
-Коли ви ввімкнете стрічку, з’явиться повідомлення про безпеку, в якому пояснюється, що будь-хто, у кого є посилання, може отримати доступ до ваших коментарів.
+When you enable the feed, a security notice will appear explaining that anyone with the link can access your comments.
 
-Після ввімкнення з’явиться ваш унікальний URL RSS-стрічки. Натисніть кнопку "Копіювати", щоб скопіювати URL у буфер обміну.
+Once enabled, your unique RSS feed URL will appear. Click the "Copy" button to copy the URL to your clipboard.
 
-Відкрийте додаток для читання RSS-стрічок і додайте скопійований URL як нову підписку на стрічку. Точні кроки залежать від програми для читання RSS, але зазвичай потрібно знайти кнопку "Додати стрічку" або "Підписатися", вставити URL вашої RSS-стрічки та дати стрічці назву.
+Open your RSS reader application and add the copied URL as a new feed subscription. The exact steps vary by RSS reader, but typically you'll look for an "Add Feed" or "Subscribe" button, paste your RSS feed URL, and give the feed a name.
 
-Ви також можете натиснути кнопку "Переглянути стрічку" на сторінці RSS-стрічки, щоб побачити стрічку безпосередньо в браузері.
+You can also click the "View Feed" button on the RSS Feed page to see your feed directly in your browser.
 
-Щоб вимкнути доступ до вашої RSS-стрічки, просто зніміть прапорець "Увімкнути доступ до RSS-стрічки". Це заборонить доступ до стрічки, хоча URL залишатиметься тим самим, якщо ви згодом знову ввімкнете його.
+To disable access to your RSS feed, simply uncheck the "Enable RSS Feed Access" checkbox. This will prevent the feed from being accessed, though the URL will remain the same if you re-enable it later.

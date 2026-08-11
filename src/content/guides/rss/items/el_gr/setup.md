@@ -1,18 +1,15 @@
----
-Μεταβείτε στον πίνακα ελέγχου του λογαριασμού σας και πηγαίνετε στη [σελίδα ροής RSS](https://fastcomments.com/auth/my-account/rss).
+Navigate to your account dashboard and go to the [RSS Feed page](https://fastcomments.com/auth/my-account/rss).
 
-[app-screenshot-start url='/auth/my-account/rss'; selector = '.content'; title='RSS Feed Configuration' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/rss'; selector = '.content'; alt='Σελίδα RSS Feed λογαριασμού με το πλαίσιο ελέγχου \"Enable RSS Feed Access\", τη διεύθυνση URL του feed, και τα κουμπιά Copy και View Feed'; title='Διαμόρφωση RSS Feed' app-screenshot-end]
 
-Στη σελίδα ροής RSS, επιλέξτε το πλαίσιο ελέγχου "Ενεργοποίηση πρόσβασης ροής RSS" για να δημιουργήσετε το μοναδικό URL της ροής RSS σας.
+On the RSS Feed page, check the "Enable RSS Feed Access" checkbox to generate your unique RSS feed URL.
 
-Όταν ενεργοποιήσετε τη ροή, θα εμφανιστεί μια ειδοποίηση ασφαλείας που εξηγεί ότι οποιοσδήποτε διαθέτει τον σύνδεσμο μπορεί να έχει πρόσβαση στα σχόλιά σας.
+When you enable the feed, a security notice will appear explaining that anyone with the link can access your comments.
 
-Μόλις ενεργοποιηθεί, θα εμφανιστεί το μοναδικό URL της ροής RSS σας. Κάντε κλικ στο κουμπί "Αντιγραφή" για να αντιγράψετε το URL στο πρόχειρό σας.
+Once enabled, your unique RSS feed URL will appear. Click the "Copy" button to copy the URL to your clipboard.
 
-Ανοίξτε την εφαρμογή ανάγνωσης RSS και προσθέστε το αντιγραμμένο URL ως νέα συνδρομή ροής. Τα ακριβή βήματα διαφέρουν ανάλογα με τον αναγνώστη RSS, αλλά συνήθως θα αναζητήσετε ένα κουμπί "Προσθήκη ροής" ή "Εγγραφή", θα επικολλήσετε το URL της ροής RSS και θα δώσετε ένα όνομα στη ροή.
+Open your RSS reader application and add the copied URL as a new feed subscription. The exact steps vary by RSS reader, but typically you'll look for an "Add Feed" or "Subscribe" button, paste your RSS feed URL, and give the feed a name.
 
-Μπορείτε επίσης να κάνετε κλικ στο κουμπί "Προβολή ροής" στη σελίδα ροής RSS για να δείτε τη ροή απευθείας στο πρόγραμμα περιήγησής σας.
+You can also click the "View Feed" button on the RSS Feed page to see your feed directly in your browser.
 
-Για να απενεργοποιήσετε την πρόσβαση στη ροή RSS, απλά αποεπιλέξτε το πλαίσιο ελέγχου "Ενεργοποίηση πρόσβασης ροής RSS". Αυτό θα εμποδίσει την πρόσβαση στη ροή, αν και το URL θα παραμείνει το ίδιο αν το ενεργοποιήσετε ξανά αργότερα.
-
----
+To disable access to your RSS feed, simply uncheck the "Enable RSS Feed Access" checkbox. This will prevent the feed from being accessed, though the URL will remain the same if you re-enable it later.

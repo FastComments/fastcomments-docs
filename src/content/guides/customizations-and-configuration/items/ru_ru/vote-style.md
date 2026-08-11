@@ -1,17 +1,15 @@
 [related-parameter-start name = 'voteStyle'; type = 'number'; related-parameter-end]
 
-По умолчанию FastComments отображает варианты голосования в виде стрелок вверх и вниз, позволяя пользователям либо голосовать за комментарий, либо против него.
+По умолчанию FastComments отображает варианты голосования в виде стрелок вверх и вниз, позволяя пользователям ставить положительный или отрицательный голос комментария.
 
-Однако можно изменить стиль панели голосования. Текущие варианты — стандартные кнопки Up/Down или механизм голосования в стиле Heart.
+Однако возможно изменить стиль панели голосования. Текущие варианты — стандартные кнопки «Вверх/Вниз» или механизм голосования в виде сердца.
 
 Мы используем флаг **voteStyle** следующим образом:
 
-[code-example-start config = {voteStyle: 1}; linesToHighlight = [6]; title = 'Enable Heart Button'; code-example-end]
+[code-example-start config = {voteStyle: 1}; linesToHighlight = [6]; title = 'Включить кнопку сердца'; code-example-end]
 
-Мы настоятельно рекомендуем делать это без кода, так как это также включает серверную валидацию. На странице настройки виджета смотрите раздел "Vote Style".
+Мы настоятельно рекомендуем делать это без кода, так как это также включает серверные проверки. На странице настройки виджета см. раздел «Стиль голосования».
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.vote-style'; selector = '.vote-style'; title='Change Voting Style' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.vote-style'; selector = '.vote-style'; alt='Настройка стиля голосования на странице настройки виджета, предлагающая стрелки вверх и вниз или голосование в виде сердца'; title='Изменить стиль голосования' app-screenshot-end]
 
 Голосование также можно отключить, см. `Disable Voting` выше параметров стиля.
-
----

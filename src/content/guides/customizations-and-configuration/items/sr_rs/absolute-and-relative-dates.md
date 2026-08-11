@@ -1,14 +1,11 @@
----
 [related-parameter-start name = 'absoluteAndRelativeDates'; type = 'boolean'; related-parameter-end]
 
-По подразумеваној вредности користе се локализовани релативни датуми. На пример, поред недавно остављеног коментара можете видети „пре 11 минута“.
+Podrazumevano se koriste lokalizovani relativni datumi. Na primer, pored nedavno ostavljenog komentara možete videti "pre 11 minuta".
 
-Може бити потребно или жељено задржати овај формат релативног датука, али истовремено приказати и пун датум уз њега — у том случају подесите овај параметар на true. 
+Može biti potrebno ili poželjno zadržati ovaj relativni format datuma, ali takođe prikazati puni datum pored njega, u kom slučaju postavite ovaj parametar na true. 
 
 [code-example-start config = {absoluteAndRelativeDates: true}; linesToHighlight = [6]; title = 'Use Both Absolute and Relative Dates'; code-example-end]
 
-Ово се може прилагодити без кода, на страници за прилагођавање видгета, у оквиру Напредних опција. Прво ћете морати да омогућите Апсолутне датуме да бисте ову опцију видели у корисничком интерфејсу.
+Ovo se može prilagoditi bez koda, na stranici za prilagođavanje widgeta, pod naprednim opcijama. Prvo ćete morati da omogućite Apsolutne datume da biste videli ovu opciju u korisničkom interfejsu.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.show-advanced-option', '.absolute-dates', '.relative-and-absolute-dates']; selector = '.relative-and-absolute-dates'; title='Use Both Absolute and Relative Dates' app-screenshot-end]
-
----
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.show-advanced-option', '.absolute-dates', '.relative-and-absolute-dates']; selector = '.relative-and-absolute-dates'; alt='Napredne opcije na stranici za prilagođavanje widgeta sa oba apsolutna datuma i omogućenom kombinovanom postavkom relativnog datuma'; title='Koristite i apsolutne i relativne datume' app-screenshot-end]

@@ -1,15 +1,15 @@
-По подразумеваној вредности, величина странице у FastComments-у је `30`. Ово укључује одговоре у нитима.
+By default, the FastComments page size is `30`. This includes replies in threads.
 
-Величина странице може се прилагодити у [UI за конфигурацију видгета](https://fastcomments.com/auth/my-account/customize-widget) у различитим величинама у распону од `10` до `200`.
+The page size can be customized in the [Widget Configuration UI](https://fastcomments.com/auth/my-account/customize-widget) in varying sizes ranging from `10` to `200`.
 
-Имајте у виду да промена величине странице захтева прерачунавање свих нитова коментара на вашем налогу. Ово може потрајати неколико минута.
+Note that changing the page size requires recalculating all the comment threads in your account. This may take a couple of minutes.
 
-Ово се не може подесити у видгету на клијентској страни јер се странице израчунавају на серверској страни.
+This cannot be configured in the client side widget as pages are calculated server-side.
 
-Пример конфигурације је приказан испод:
+Example configuration is shown below:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.page-size'; title='Custom Page Sizes' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.page-size'; alt='Selektor veličine stranice na stranici za prilagođavanje widgeta, gde se može izabrati vrednost od 10 do 200'; title='Prilagođene veličine stranica' app-screenshot-end]
 
-Величине страница могу се прилагодити глобално, по домену или по страници креирањем различитих правила прилагођавања.
+Page sizes can be customized globally, or per-domain, or per-page, by creating different customization rules.
 
-Ово ће утицати на све клијенте, интеграције и фрејмворке које можда користите за приказ коментара преко наше платформе.
+This will affect all clients, integrations, and frameworks that you may be using to show comments via our platform.

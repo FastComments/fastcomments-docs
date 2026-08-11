@@ -1,25 +1,21 @@
 [related-parameter-start name = 'showLiveRightAway'; type = 'boolean'; related-parameter-end]
 
-デフォルトでは、ライブコメント機能は有効になっています。つまり、コメントが追加、削除、編集、またはピン留めされると、変更は表示される
-すべてのユーザーに同時に反映されます。
+デフォルトでは、ライブコメントが有効になっています。これは、コメントが追加、削除、編集、またはピン留めされた場合、変更がコメントスレッドを閲覧しているすべてのユーザーに同時に表示されることを意味します。
 
-ただし、デフォルトではそれらの新しいコメントは「Show 2 New Comments」のような文言が表示された動的なボタンの下に表示されます。
+しかし、デフォルトでは新しいコメントは「Show 2 New Comments」のようなテキストが表示された動的なボタンの下に表示されます。
 
-新しいコメントがページに直接対する返信である場合、そのボタンはコメントスレッドの上部に表示されます。特定のコメントへの返信である場合は、
-そのコメントの下にボタンが表示されます。
+新しいコメントがページへの直接の返信である場合、ボタンはコメントスレッドの上部に表示されます。特定のコメントへの返信である場合、ボタンはそのコメントの下に表示されます。
 
-これは、ページのサイズがユーザーに対して絶えず変化し、スクロールバーを掴もうとしたときにフラストレーションを引き起こす可能性があるのを防ぐためです。
+これは、ページサイズがユーザー側で常に変化するのを防ぎ、スクロールバーを掴もうとしたときのフラストレーションを防ぐためです。
 
-ライブ入札やオンラインイベントのようなユースケースでは、これは望ましくない動作であることがあります — コメントウィジェットが新しいコメントを「すぐに表示する」チャットボックスのようになってほしい場合があります。
+ライブ入札やオンラインイベントなどの一部のユースケースでは、この動作は望ましくありません。コメントウィジェットを「チャット」ボックスのように、新しいコメントが「すぐに表示」されるようにしたい場合があります。
 
-したがって、その機能を有効にするフラグの名前は次のとおりです: **showLiveRightAway**。
+したがって、その機能を有効にするフラグの名前は **showLiveRightAway** です。
 
-次のようにオンにできます:
+We can turn it on as follows:
 
-[code-example-start config = {showLiveRightAway: true}; linesToHighlight = [6]; title = 'Show Live Comments Right Away'; code-example-end]
+[code-example-start config = {showLiveRightAway: true}; linesToHighlight = [6]; title = 'ライブコメントをすぐに表示'; code-example-end]
 
-コードを使わず、ウィジェットのカスタマイズページでこれをカスタマイズすることもできます:
+This can be customized without code, on the widget customization page:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.collapse-live-comments'; selector = '.collapse-live-comments'; title='Show Live Comments Right Away' app-screenshot-end]
-
----
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.collapse-live-comments'; selector = '.collapse-live-comments'; alt='ライブコメントの折りたたみ設定が切り替わり、新しいコメントがボタンの背後ではなく即座に表示されるようになります'; title='ライブコメントをすぐに表示' app-screenshot-end]

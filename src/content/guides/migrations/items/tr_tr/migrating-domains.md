@@ -1,19 +1,19 @@
----
-FastComments, yorumlarınızı alanlar arasında taşımanız için otomatik bir yöntem sağlar.
+FastComments, yorumlarınızı alanlar arasında taşımanız için otomatik bir yol sağlar.
 
-Alan adı taşıma işlemi basitçe bir `from` ve bir `to` alan adı gerektirir.
+Alan taşıma işlemi sadece bir `from` ve bir `to` alanı gerektirir.
 
-Bu **yorumları taşır**, kopyalamaz. Yorumları kopyalamak istiyorsanız, bize ulaşın.
+Bu **yorumları taşır**, kopyalamaz. Yorumları kopyalamak isterseniz, bizimle iletişime geçin.
 
-[app-screenshot-start url='/auth/my-account/manage-data/migrate-domains?demo=true'; linkUrl='/auth/my-account/manage-data/migrate-domains'; selector = '.content'; title='Migrating Domains' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/migrate-domains?demo=true'; linkUrl='/auth/my-account/manage-data/migrate-domains'; selector = '.content'; alt='From ve to alanları ile taşınan yorum sayısını gösteren alan taşıma aracı'; title='Alanları Taşıma' app-screenshot-end]
 
-Bu, örneğin FastComments'e geçişiniz farklı bir sağlayıcıdan yapılıyorsa da yararlıdır; böylece yorum içe aktarma verileriniz taşınması gereken veriler içerebilir. Bu durumda, önce içe aktarmayı çalıştırabilir, ardından alan adı taşımasını yapabilirsiniz.
+Bu, örneğin FastComments'a geçişinizin bir kısmı farklı bir sağlayıcıdan taşıma gerektiriyorsa ve yorum içe aktarma
+verilerinizin taşınması gereken verileri içerebileceği durumlarda da faydalıdır. Bu durumda, önce içe aktarmayı çalıştırabilir, ardından alan taşımasını yapabilirsiniz.
 
-### İlerlemenin İzlenmesi
+### İlerlemeyi İzleme
 
-Alan Adı Taşıma aracı, diğer veri yönetimi araçlarıyla aynı FastComments iş işleme sistemini kullanır.
+Alan Taşıma aracı, diğer veri yönetim araçlarıyla aynı FastComments iş işleme sistemini kullanır.
 
-Taşınmanın başlaması öncesinde bir gecikme olabilir. Bu normaldir, çünkü sistem periyodik olarak işlenecek yeni işler için kontrol eder.
+Taşıma başlamadan önce bir gecikme olabilir. Bu normaldir, çünkü sistem periyodik olarak işlenmek üzere yeni işleri kontrol eder.
 
 İş çalıştıkça, taşınacak bulunan yorum sayısını ve şu ana kadar taşınan yorum sayısını gösterecektir.
 

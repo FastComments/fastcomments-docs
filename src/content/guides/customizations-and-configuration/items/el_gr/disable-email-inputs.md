@@ -1,15 +1,17 @@
-Όταν οι χρήστες σχολιάζουν και δεν έχουν συνδεθεί, θα τους ζητηθεί να δώσουν το email τους.
+When users comment, and they are not logged in, they will be asked to provide their email.
 
-Αυτό θα δημιουργήσει μια "μη επαληθευμένη συνεδρία" για αυτόν τον χρήστη, και θα τους ζητήσουμε να επαληθεύσουν αυτή τη συνεδρία μέσω email.
+This will create an “unverified session” for that user, and we will ask them to verify that session via email.
 
-Για ορισμένους ιστότοπους ή εφαρμογές, είναι επιθυμητό να μην ζητείται από τον χρήστη το email όταν σχολιάζει ή ψηφίζει.
+For some sites, or applications, it's desirable not to ask the user for their email when commenting or voting.
 
-Η ενεργοποίηση ανώνυμων σχολιασμών κάνει το πεδίο εισαγωγής email προαιρετικό. Ωστόσο, μπορούμε να το απενεργοποιήσουμε εντελώς. Πρώτα, ενεργοποιήστε τους ανώνυμους σχολιασμούς, και μετά θα εμφανιστεί η επιλογή για την απενεργοποίηση των πεδίων εισαγωγής email.
+Enabling anonymous commenting makes the email input field optional. However, we can disable it completely. First, enable
+anonymous commenting, and then the option to disable the email input fields will appear.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments', '.disable-email-inputs']; selector = '.disable-email-inputs'; title='Disable Email Inputs' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments', '.disable-email-inputs']; selector = '.disable-email-inputs'; alt='Επιλογή για απόκρυψη των πεδίων email εντελώς, εμφανίζεται μετά την ενεργοποίηση του ανώνυμου σχολιασμού στη διεπαφή προσαρμογής'; title='Απενεργοποίηση πεδίων email' app-screenshot-end]
 
-Με αυτό ενεργοποιημένο, τα πεδία email δεν θα εμφανίζονται καθόλου σε όλα τα προϊόντα σχολιασμού μας.
+With this on, the email fields will not show at all in all of our commenting products.
 
-Σημειώστε ότι, με αυτή τη διαμόρφωση, όλα τα σχόλια θα είναι μη επαληθευμένα εκτός αν ο χρήστης δημιουργήσει έναν λογαριασμό και συνδεθεί στο https://fastcomments.com.
+Note that, with this configuration, all comments will be unverified unless the user creates an account and logs into
+https://fastcomments.com.
 
-Ίσως θελήσετε να εξετάσετε την [απενεργοποίηση της ετικέτας μη επαληθευμένο](/guide-customizations-and-configuration.html#disable-unverified-label).
+You may want to consider [απενεργοποίηση της ετικέτας μη επαληθευμένου](/guide-customizations-and-configuration.html#disable-unverified-label).

@@ -7,6 +7,6 @@ Los avatares pueden eliminarse por completo del widget de comentarios, incluso s
 
 Esto se puede personalizar sin código, en la página de personalización del widget:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.hide-avatars'; title='Hiding Avatars' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.hide-avatars'; alt='Opción Ocultar avatares en la página de personalización del widget, que elimina todos los avatares del widget de comentarios'; title='Ocultar avatares' app-screenshot-end]
 
 ---

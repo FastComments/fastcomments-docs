@@ -1,13 +1,12 @@
-FastComments ile kiracınıza birçok kullanıcı eklenebilir ve izinleri kuruluşunuzdaki rollere göre yapılandırılabilir.
+---
+FastComments ile, birçok kullanıcı kiracınıza eklenebilir ve izinleri, kuruluşunuzdaki rollere göre ayarlanabilir.
 
-[app-screenshot-start url='/auth/my-account/users/new/edit'; selector = '.account-block'; title='Adding a User' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/users/new/edit'; selector = '.account-block'; alt='Kiracınıza birini eklemek için yeni kullanıcı formu, rolü için izin seçenekleriyle'; title='Kullanıcı Ekleme' app-screenshot-end]
 
-Kullanıcılar bu kullanıcı arayüzü üzerinden eklenebilir. Çok sayıda kullanıcınız varsa, bunları sizin için [müşteri desteği aracılığıyla](https://fastcomments.com/auth/my-account/help) içe aktarabiliriz.
+Kullanıcılar bu UI üzerinden eklenebilir. Çok sayıda kullanıcınız varsa, onları sizin için [müşteri desteği aracılığıyla](https://fastcomments.com/auth/my-account/help) içe aktarabiliriz.
 
-Moderatör eklemek için, bkz. [ilgili dokümantasyon](/guide-moderation.html#moderators-adding).
+Moderatör eklemek için, [ilgili belgeleri](/guide-moderation.html#moderators-adding) inceleyin.
 
 ### Kimlik Doğrulama Hakkında Bir Not
 
-Kullanıcılarınız şifre girecek bir yer arıyor olabilir. FastComments oturum açmak için "sihirli bağlantılar" kullanır - bu nedenle şifre gerekmez.
-
----
+Kullanıcılarınız şifre girebilecekleri bir yer arıyor olabilir. FastComments oturum açmak için "sihirli bağlantılar" kullanır - bu yüzden şifreye gerek yoktur.

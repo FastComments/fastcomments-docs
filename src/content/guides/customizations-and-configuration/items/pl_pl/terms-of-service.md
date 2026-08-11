@@ -1,21 +1,23 @@
-FastComments pozwala wymagać od komentujących po raz pierwszy zaakceptowania Warunków świadczenia usług przed przesłaniem komentarza.
+FastComments umożliwia wymóg akceptacji Warunków świadczenia usług przez komentujących po raz pierwszy przed wysłaniem komentarza.
 
-When enabled:
-- **Użytkownicy anonimowi** będą widzieć pole wyboru akceptacji Warunków świadczenia usług przy każdym komentowaniu
-- **Uwierzytelnieni użytkownicy** zobaczą pole wyboru tylko przy swoim pierwszym komentarzu, lub gdy zaktualizujesz swoje Warunki świadczenia usług
+Po włączeniu:
+- **Użytkownicy anonimowi** zobaczą pole wyboru TOS przy każdym komentarzu
+- **Użytkownicy uwierzytelnieni** zobaczą pole wyboru tylko przy swoim pierwszym komentarzu lub gdy zaktualizujesz swoje TOS
 
-### Configuration
+### Konfiguracja
 
-Przejdź do strony dostosowywania widżetu i włącz pole wyboru "Require Terms of Service acceptance". Po włączeniu zobaczysz następujące opcje:
+Przejdź do strony dostosowywania widżetu i włącz pole wyboru „Wymagaj akceptacji Warunków świadczenia usług”. Po włączeniu zobaczysz następujące opcje:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.tos-enabled'; selector = '#tos-options'; title='Terms of Service Options' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.tos-enabled'; selector = '#tos-options'; alt='Panel Warunków świadczenia usług pokazujący selektor trybu tekstu TOS i pole daty ostatniej aktualizacji'; title='Opcje Warunków świadczenia usług' app-screenshot-end]
 
-- **TOS Text Mode**: Domyślnie pole wyboru wyświetla "I agree to the Terms of Service and Privacy Policy" z linkami do obu dokumentów. Wybierz "Customize text per locale", aby dostarczyć własny tekst dla każdego języka.
-- **TOS Last Updated Date**: Gdy zaktualizujesz swoje Warunki świadczenia usług, ustaw tę datę. Użytkownicy, którzy zaakceptowali je przed tą datą, będą musieli ponownie zaakceptować.
+- **Tryb tekstu TOS**: Domyślnie pole wyboru wyświetla „Zgadzam się z Warunkami świadczenia usług i Polityką prywatności” z odnośnikami do obu dokumentów. Wybierz „Dostosuj tekst dla każdego języka”, aby podać własny tekst dla każdego języka.
+- **Data ostatniej aktualizacji TOS**: Gdy aktualizujesz swoje Warunki świadczenia usług, ustaw tę datę. Użytkownicy, którzy zaakceptowali je przed tą datą, będą musieli zaakceptować ponownie.
 
-### How It Works
+### Jak to działa
 
-- Znacznik czasu akceptacji Warunków świadczenia usług jest przechowywany dla każdego użytkownika i każdego komentarza
-- Gdy użytkownik zaakceptuje Warunki, data jest zapisywana w jego profilu użytkownika (per-tenant)
-- Jeśli ustawisz datę "Last Updated", która jest późniejsza niż data akceptacji użytkownika, użytkownicy będą musieli ponownie zaakceptować
-- Dla użytkowników anonimowych, których nie można śledzić, pole wyboru pojawia się przy każdym przesłaniu komentarza
+- Znacznik czasu akceptacji TOS jest przechowywany dla każdego użytkownika i każdego komentarza
+- Gdy użytkownik akceptuje TOS, data jest zapisywana w jego profilu użytkownika (per-tenant)
+- Jeśli ustawisz datę „Ostatniej aktualizacji”, która jest późniejsza niż data akceptacji użytkownika, będzie on musiał ponownie zaakceptować
+- Dla anonimowych użytkowników, których nie można śledzić, pole wyboru pojawia się przy każdym wysyłaniu komentarza
+
+---

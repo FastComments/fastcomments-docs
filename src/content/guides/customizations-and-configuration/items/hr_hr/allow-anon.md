@@ -1,8 +1,10 @@
-Po zadanim postavkama, FastComments će zahtijevati adresu e-pošte za komentiranje. Ne mora biti valjana adresa e-pošte, međutim dok korisnik ne klikne na poveznicu poslan na nju,
-njihov komentar će prikazati oznaku "Nepotvrđeni komentar".
+---
+Prema zadanim postavkama, FastComments će zahtijevati e‑mail za komentiranje. Ne mora biti valjani e‑mail, ali dok korisnik ne klikne na link koji mu je poslan,
+njegov komentar će prikazati oznaku „Neprovjeren komentar“.
 
-Međutim, možemo ukloniti zahtjev za adresom e-pošte. Polje za unos adrese e-pošte i dalje će se prikazivati, ali više neće biti obavezno.
+Međutim, možemo ukloniti zahtjev za e‑mailom. Polje za unos e‑maila i dalje će biti prikazano, ali više neće biti obavezno.
 
-Ovo se može konfigurirati putem korisničkog sučelja za prilagodbu widgeta:
+Ovo se može konfigurirati putem UI‑ja za prilagodbu widgeta:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.allow-anonymous-comments'; title='Enabling Anonymous Comments' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.allow-anonymous-comments'; alt='Opcija anonimnih komentara u UI prilagodbe widgeta, koja čini polje e‑maila opcionalnim'; title='Omogućavanje anonimnih komentara' app-screenshot-end]
+---

@@ -1,16 +1,16 @@
-当用户发表评论且未登录时，会要求他们提供电子邮件。
+When users comment, and they are not logged in, they will be asked to provide their email.
 
-这将为该用户创建一个“未验证会话”，我们会通过电子邮件要求他们验证该会话。
+This will create an "unverified session" for that user, and we will ask them to verify that session via email.
 
-对于某些网站或应用，在评论或投票时不要求用户提供电子邮件可能更合适。
+For some sites, or applications, it's desirable not to ask the user for their email when commenting or voting.
 
-启用匿名评论会使电子邮件输入字段为可选。但是，我们也可以完全禁用它。首先启用
-匿名评论，然后将出现禁用电子邮件输入字段的选项。
+Enabling anonymous commenting makes the email input field optional. However, we can disable it completely. First, enable anonymous commenting, and then the option to disable the email input fields will appear.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments', '.disable-email-inputs']; selector = '.disable-email-inputs'; title='Disable Email Inputs' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments', '.disable-email-inputs']; selector = '.disable-email-inputs'; alt='在自定义 UI 中启用匿名评论后显示的，完全隐藏电子邮件字段的选项'; title='禁用电子邮件输入' app-screenshot-end]
 
-开启此项后，我们所有评论产品中的电子邮件字段将完全不显示。
+With this on, the email fields will not show at all in all of our commenting products.
 
-请注意，在此配置下，除非用户创建账户并登录 https://fastcomments.com，否则所有评论都将处于未验证状态。
+Note that, with this configuration, all comments will be unverified unless the user creates an account and logs into
+https://fastcomments.com.
 
-您可能想考虑[禁用未验证标签](/guide-customizations-and-configuration.html#disable-unverified-label).
+You may want to consider [禁用未验证标签](/guide-customizations-and-configuration.html#disable-unverified-label).

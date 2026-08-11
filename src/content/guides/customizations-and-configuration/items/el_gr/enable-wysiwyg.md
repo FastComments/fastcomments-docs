@@ -1,14 +1,12 @@
 [related-parameter-start name = 'enableWYSIWYG'; type = 'boolean'; related-parameter-end]
 
-Σε προεπιλογή, οι λειτουργίες μορφοποίησης στο FastComments πραγματοποιούνται προσθέτοντας ορατά tags αγκύρωσης όπως `<b></b>` γύρω από το κείμενό σας. Το κλικ στη γραμμή εργαλείων
-ή η χρήση συντομεύσεων το κάνει αυτό για εσάς. Ωστόσο, κάποιες κοινότητες μπορεί να θέλουν να επιλέξουν τη χρήση μορφοποίησης χωρίς tags αγκύρωσης. Αυτό ονομάζεται ενεργοποίηση του
-WYSIWYG (ό,τι βλέπετε είναι ό,τι παίρνετε) επεξεργαστή. Αυτός ο επεξεργαστής φαίνεται ακριβώς ο ίδιος με τον προεπιλεγμένο, εκτός από το ότι φορτώνει κάποιο
-επιπλέον κώδικα που επιτρέπει στους χρήστες να κάνουν έντονη, υπογράμμιση κ.λπ. στο κείμενό τους χωρίς ορατά tags αγκύρωσης.
+Από προεπιλογή, οι λειτουργίες μορφοποίησης στο FastComments γίνονται προσθέτοντας ορατές ετικέτες αγκύρωσης όπως `<b></b>` γύρω από το κείμενό σας. Κάνοντας κλικ στη γραμμή εργαλείων  
+ή χρησιμοποιώντας συντομεύσεις γίνεται αυτό για εσάς. Ωστόσο, ορισμένες κοινότητες μπορεί να θέλουν να ενεργοποιήσουν τη μορφοποίηση χωρίς ετικέτες αγκύρωσης. Αυτό ονομάζεται ενεργοποίηση του  
+WYSIWYG (what you see is what you get) επεξεργαστή. Αυτός ο επεξεργαστής φαίνεται ακριβώς όπως ο προεπιλεγμένος, εκτός από το ότι φορτώνει επιπλέον  
+κώδικα που επιτρέπει στους χρήστες να κάνουν έντονη γραφή, υπογράμμιση, κ.λπ. το κείμενό τους χωρίς ορατές ετικέτες αγκύρωσης.
 
-[code-example-start config = {enableWYSIWYG: true}; linesToHighlight = [6]; title = 'Enabling WYSIWYG Editing'; code-example-end]
+[code-example-start config = {enableWYSIWYG: true}; linesToHighlight = [6]; title = 'Ενεργοποίηση επεξεργασίας WYSIWYG'; code-example-end]
 
-Αυτό μπορεί επίσης να γίνει χωρίς κώδικα. Στη σελίδα προσαρμογής του widget, δείτε την επιλογή "Ενεργοποίηση Προηγμένης Μορφοποίησης".
+Αυτό μπορεί επίσης να γίνει χωρίς κώδικα. Στη σελίδα προσαρμογής widget, δείτε την επιλογή "Enable Advanced Formatting" option.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-wysiwyg']; selector = '.enable-search-label'; title='Enable WYSIWYG' app-screenshot-end]
-
----
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-wysiwyg']; selector = '.enable-search-label'; alt='Σελίδα προσαρμογής widget με το πλαίσιο ελέγχου Enable Advanced Formatting επιλεγμένο για ενεργοποίηση του επεξεργαστή WYSIWYG editor'; title='Ενεργοποίηση WYSIWYG' app-screenshot-end]

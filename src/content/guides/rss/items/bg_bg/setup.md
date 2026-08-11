@@ -1,15 +1,15 @@
-Отидете в таблото за управление на акаунта си и отворете [страницата за RSS емисия](https://fastcomments.com/auth/my-account/rss).
+Navigate to your account dashboard and go to the [RSS Feed page](https://fastcomments.com/auth/my-account/rss).
 
-[app-screenshot-start url='/auth/my-account/rss'; selector = '.content'; title='RSS Feed Configuration' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/rss'; selector = '.content'; alt='Страница на акаунта за RSS хранилка с отметка „Enable RSS Feed Access“, URL на хранилката и бутони „Copy“ и „View Feed“'; title='Конфигурация на RSS хранилка' app-screenshot-end]
 
-На страницата за RSS емисия отметнете полето за избор "Разрешете достъп до RSS емисията", за да генерирате уникалния си URL за RSS емисия.
+On the RSS Feed page, check the "Enable RSS Feed Access" checkbox to generate your unique RSS feed URL.
 
-Когато активирате емисията, ще се появи предупреждение за сигурност, което обяснява, че всеки, който има връзката, може да получи достъп до вашите коментари.
+When you enable the feed, a security notice will appear explaining that anyone with the link can access your comments.
 
-След като е активирана, ще се появи уникалният ви URL за RSS емисия. Щракнете бутона "Копирай", за да копирате URL-а в клипборда си.
+Once enabled, your unique RSS feed URL will appear. Click the "Copy" button to copy the URL to your clipboard.
 
-Отворете приложението си за четене на RSS емисии и добавете копирания URL като нов абонамент за емисия. Точните стъпки зависят от четеца на RSS, но обикновено търсите бутон "Добавяне на емисия" или "Абониране", поставяте URL-а на RSS емисията и задавате име на емисията.
+Open your RSS reader application and add the copied URL as a new feed subscription. The exact steps vary by RSS reader, but typically you'll look for an "Add Feed" or "Subscribe" button, paste your RSS feed URL, and give the feed a name.
 
-Можете също да щракнете бутона "Преглед на емисията" на страницата за RSS емисия, за да видите емисията си директно в браузъра.
+You can also click the "View Feed" button on the RSS Feed page to see your feed directly in your browser.
 
-За да забраните достъпа до своята RSS емисия, просто премахнете отметката от полето "Разрешете достъп до RSS емисията". Това ще попречи на достъпа до емисията, въпреки че URL-ът ще остане същият, ако го активирате отново по-късно.
+To disable access to your RSS feed, simply uncheck the "Enable RSS Feed Access" checkbox. This will prevent the feed from being accessed, though the URL will remain the same if you re-enable it later.

@@ -1,18 +1,17 @@
----
-Quando si moderano e si visualizzano i thread dei commenti, è auspicabile poter saltare direttamente a un thread per ottenere il contesto durante la moderazione.
+When moderating and viewing comment threads it is desirable to be able to jump directly to a thread to get context during moderating.
 
-Ciò significa che il flusso dell'utente inizia nella pagina di moderazione dei commenti, e poi dovrebbe passare da un singolo commento alla pagina che contiene quel commento, attendere il caricamento della pagina, attendere il caricamento dei commenti e poi scorrere fino a quel commento.
+This means that the user's flow starts in the Comment Moderation page, and would then have to go from an individual comment to
+the page containing that comment, wait for that page to load, wait for the comments to load, and then scroll to that comment.
 
-Tuttavia, FastComments offre un modo più rapido. Nella pagina di moderazione dei commenti, accanto a ogni commento, c'è un pulsante "Visualizza commento" nell'angolo in basso a destra.
+However, FastComments provides a faster way. In the Moderate Comments page, next to each comment, there is a "Visualizza commento" button in the bottom right.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=1&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.comments .comment-component'; title='A Comment' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=1&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.comments .comment-component'; alt='Un singolo commento nella lista di moderazione, con il pulsante Visualizza commento nell\'angolo in basso a destra'; title='Un commento' app-screenshot-end]
 
-Se questo commento ha risposte, il testo del pulsante indicherà invece il numero di risposte, ma cliccarlo esegue la stessa azione.
+If this comment has replies, the button text will instead say the number of replies, but clicking it takes the same action.
 
-Questo pulsante ti porterà al **Visualizzatore del thread dei commenti**.
+This button will take you to the **Comment Thread Viewer**.
 
-Il Visualizzatore del thread dei commenti è una piccola applicazione a caricamento rapido ospitata da FastComments che visualizza il thread di commenti per la pagina su cui si trova il commento e scorre fino a quel commento.
+The Comment Thread Viewer is a small, fast loading application hosted by FastComments that renders the comment thread for the page that
+the comment is on, and scrolls to that comment.
 
-Questo permette ai moderatori di raccogliere rapidamente il contesto necessario, senza dover aspettare il caricamento di un'altra pagina.
-
----
+This allows moderators to gather the context they need to, quickly, without having to wait for another page to load.

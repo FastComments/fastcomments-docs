@@ -1,9 +1,9 @@
 ---
-Moderatörlerin yaptığı işler izlenir ve "Moderatörleri Düzenle" sayfasına geri dönerek görüntülenebilir.
+Moderatörlerin yaptığı işler izlenir ve "Edit Moderators" sayfasına geri dönerek görüntülenebilir.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/moderators?demo=true'; linkUrl='/auth/my-account/moderate-comments/moderators'; selector = '.account-block'; title='Moderator Stats' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/moderators?demo=true'; linkUrl='/auth/my-account/moderate-comments/moderators'; selector = '.account-block'; alt='Edit Moderators sayfası, onaylanan, silinen ve spam olarak işaretlenen yorum sayılarıyla her moderatörü listeler'; title='Moderatör İstatistikleri' app-screenshot-end]
 
-Bu sayfa çeşitli istatistikleri takip eder:
+Bu sayfa çeşitli istatistikleri izler:
 - Onaylanan Yorumlar
 - İncelendi Olarak İşaretlenen Yorumlar
 - Silinen Yorumlar
@@ -11,5 +11,4 @@ Bu sayfa çeşitli istatistikleri takip eder:
 - Spam Olarak İşaretlenen Yorumlar
 - Yasaklanan Kullanıcılar
 - Davet Durumları (Kabul Edildi veya Beklemede)
-
 ---

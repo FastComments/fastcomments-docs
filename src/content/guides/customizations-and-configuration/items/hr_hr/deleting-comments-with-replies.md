@@ -1,14 +1,11 @@
-Po zadanim postavkama, korisnici mogu izbrisati vlastite komentare. Također, brisanjem svog komentara automatski se
-brišu svi podređeni i privremeni komentari u niti. Ovo ponašanje je također aktivno.
+By default, users can delete their own comments. Also, deleting their comment automatically deletes all child and transient comments in the thread. This behavior is also live.
 
-To možete ograničiti na sljedeće načine:
+You can restrict this in the following ways:
 
-- Umjesto toga, anonimizirajte izbrisani komentar (postavite ime i tekst na `[deleted]` ili neku prilagođenu vrijednost).
-- Onemogućite brisanje komentara kada postoje odgovori. Prikazuje se prilagodljiva poruka o pogrešci.
-- Ograničite brisanje komentara koji imaju odgovore samo na administratore i moderatore.
+- Instead, anonymize the deleted comment (set name and text to `[deleted]` or a custom value).
+- Don't allow deleting comments when there are replies. A customizable error message is shown.
+- Restrict deleting when a comment has replies to only administrators and moderators.
 
-Ovo se može konfigurirati putem odjeljka `Comment Thread Deletion` u sučelju za prilagodbu widgeta.
+This can be configured via the `Comment Thread Deletion` section in the Widget Customization UI.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.comment-thread-deletion-mode']; selector = '.comment-thread-deletion-mode'; title='Prilagodite ponašanje brisanja za odgovore' app-screenshot-end]
-
----
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.comment-thread-deletion-mode']; selector = '.comment-thread-deletion-mode'; alt='Opcije brisanja niti komentara u UI prilagodbe widgeta za anonimiziranje ili ograničavanje brisanja s odgovorima'; title='Prilagodite ponašanje brisanja za odgovore' app-screenshot-end]

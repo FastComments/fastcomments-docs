@@ -1,13 +1,11 @@
-עם FastComments, ניתן להוסיף משתמשים רבים לשוכר (tenant) שלכם, ולהגדיר את ההרשאות שלהם בהתאם לתפקידים בארגון שלכם.
+עם FastComments, ניתן להוסיף משתמשים רבים לשוכר שלך, וההרשאות שלהם ניתן להגדיר על בסיס התפקידים בארגון שלך.
 
-[app-screenshot-start url='/auth/my-account/users/new/edit'; selector = '.account-block'; title='Adding a User' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/users/new/edit'; selector = '.account-block'; alt='טופס משתמש חדש להוספת מישהו לשוכר שלך, עם אפשרויות הרשאה לתפקיד שלו'; title='הוספת משתמש' app-screenshot-end]
 
-אפשר להוסיף משתמשים דרך ממשק המשתמש הזה. אם יש לכם הרבה משתמשים, אנו יכולים לייבא אותם בשבילכם [דרך תמיכת הלקוחות](https://fastcomments.com/auth/my-account/help).
+ניתן להוסיף משתמשים דרך ממשק המשתמש הזה. אם יש לך משתמשים רבים, אנחנו יכולים לייבא אותם עבורך [דרך תמיכת לקוחות](https://fastcomments.com/auth/my-account/help).
 
-להוספת ממונים, ראו [התיעוד המתאים](/guide-moderation.html#moderators-adding).
+להוספת ממונים, ראה [התיעוד המתאים](/guide-moderation.html#moderators-adding).
 
-### הערה לגבי אימות
+### הערה על אימות
 
-יתכן שהמשתמשים שלכם יחפשו מקום להזין את הסיסמה שלהם. FastComments משתמשת ב"קישורי קסם" לכניסה - לכן אין צורך בסיסמאות.
-
----
+המשתמשים שלך עשויים לחפש מקום להזין את הסיסמה שלהם. FastComments משתמש ב"קישורים קסומים" להתחברות - ולכן אין צורך בסיסמאות.

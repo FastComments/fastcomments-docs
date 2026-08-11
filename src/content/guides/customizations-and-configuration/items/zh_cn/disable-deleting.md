@@ -1,10 +1,10 @@
-默认情况下，FastComments 会允许用户删除他们的评论。
+By default, FastComments will allow users to delete their comments.
 
-但是，可以阻止此操作。
+However, it is possible to prevent this.
 
-在小部件自定义页面中，查看“禁用删除”选项。
+In the widget customization page, see the "Disable Deleting" option.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.disable-commenter-comment-delete'; selector = '.disable-commenter-comment-delete'; title='Disable Comment Deleting' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.disable-commenter-comment-delete'; selector = '.disable-commenter-comment-delete'; alt='在小部件自定义页面的 Disable Deleting 选项，防止评论者删除他们的评论'; title='禁用评论删除' app-screenshot-end]
 
-- 这只影响普通评论者，不影响版主或管理员，他们仍然可以删除。
-- 这也会影响 API 集成，在传入 `contextUserId` 时生效.
+- This only impacts regular Commenters and not moderators or admins, who will still be able to delete.
+- This will also impact API integrations for when `contextUserId` is passed.

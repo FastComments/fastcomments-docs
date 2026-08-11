@@ -1,12 +1,8 @@
 ---
-Chociaż FastComments obsługuje wykrywanie wulgaryzmów i spamu, można je dostosować. Wykrywanie wulgaryzmów lub spamu można
-wyłączyć osobno na stronie Ustawienia moderacji komentarzy.
+Chociaż FastComments obsługuje wykrywanie wulgaryzmów i spamu, można je dostosować. Wulgaryzmy lub wykrywanie spamu można wyłączyć indywidualnie na stronie Ustawień moderacji komentarzy.
 
-To również strona, na której znajdziesz konfigurację automatycznego zatwierdzania komentarzy lub konfigurację wygaśnięcia
-niezweryfikowanych komentarzy.
+To także strona, na której znajdziesz konfigurację automatycznego zatwierdzania komentarzy oraz ustawienia wygaśnięcia niezweryfikowanych komentarzy.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/settings'; selector = '.content'; title='Comment Moderation Settings' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/settings'; selector = '.content'; alt='Ustawienia moderacji z opcjami wykrywania wulgaryzmów i spamu, automatycznego zatwierdzania oraz wygaśnięcia niezweryfikowanych komentarzy'; title='Ustawienia moderacji komentarzy' app-screenshot-end]
 
-Dodatkowo listę zablokowanych słów można dostosować za pomocą przycisku na tej stronie.
-
----
+Dodatkowo czarną listę słów można dostosować za pomocą przycisku na tej stronie.

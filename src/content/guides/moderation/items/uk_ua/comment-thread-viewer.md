@@ -1,18 +1,17 @@
----
-Під час модерування та перегляду ланцюжків коментарів бажано мати можливість перейти безпосередньо до потрібного ланцюжка, щоб отримати контекст під час модерування.
+When moderating and viewing comment threads it is desirable to be able to jump directly to a thread to get context during moderating.
 
-Це означає, що послідовність дій користувача починається на сторінці модерації коментарів, і далі йому довелося б перейти від окремого коментаря до
-сторінки, що містить цей коментар, зачекати, поки ця сторінка завантажиться, дочекатися завантаження коментарів, а потім прокрутити до цього коментаря.
+This means that the user's flow starts in the Comment Moderation page, and would then have to go from an individual comment to
+the page containing that comment, wait for that page to load, wait for the comments to load, and then scroll to that comment.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=1&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.comments .comment-component'; title='A Comment' app-screenshot-end]
+However, FastComments provides a faster way. In the Moderate Comments page, next to each comment, there is a "View Comment" button in the bottom right.
 
-Якщо у цього коментаря є відповіді, текст кнопки замість цього покаже кількість відповідей, але натискання на неї виконує ту саму дію.
+[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=1&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.comments .comment-component'; alt='Один коментар у списку модерації, з кнопкою «Переглянути коментар» у правому нижньому куті'; title='Коментар' app-screenshot-end]
 
-Ця кнопка переведе вас до **Переглядача ланцюжка коментарів**.
+If this comment has replies, the button text will instead say the number of replies, but clicking it takes the same action.
 
-Переглядач ланцюжка коментарів — це невеликий, швидко завантажуваний додаток, розміщений компанією FastComments, який відтворює ланцюжок коментарів для сторінки, на якій
-знаходиться коментар, та прокручує до цього коментаря.
+This button will take you to the **Comment Thread Viewer**.
 
-Це дозволяє модераторам швидко отримати потрібний контекст, не чекаючи завантаження іншої сторінки.
+The Comment Thread Viewer is a small, fast loading application hosted by FastComments that renders the comment thread for the page that
+the comment is on, and scrolls to that comment.
 
----
+This allows moderators to gather the context they need to, quickly, without having to wait for another page to load.

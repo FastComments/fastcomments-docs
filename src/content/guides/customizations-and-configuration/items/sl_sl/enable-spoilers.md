@@ -1,14 +1,14 @@
 [related-parameter-start name = 'enableSpoilers'; type = 'boolean'; related-parameter-end]
 
-Podporo za spojlerje lahko omogočite tako, da nastavite zastavico **enableSpoilers** na true:
+We can enable spoiler support by setting the **enableSpoilers** flag to true:
 
-[code-example-start config = {enableSpoilers: true}; linesToHighlight = [6]; title = 'Enabling Spoilers'; code-example-end]
+[code-example-start config = {enableSpoilers: true}; linesToHighlight = [6]; title = 'Omogočanje spoilerjev'; code-example-end]
 
-To je mogoče narediti tudi brez kode. Na strani za prilagajanje pripomočka si oglejte možnost "Omogoči spojlerje".
+This can also be done without code. In the widget customization page, see the "Enable Spoilers" option.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-spoilers']; selector = '.enable-spoilers'; title='Enable Spoilers' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-spoilers']; selector = '.enable-spoilers'; alt='Stran za prilagajanje gradnika z označeno potrditveno polje Enable Spoilers, ki doda gumb SPOILER v urejevalnik'; title='Omogoči Spoilere' app-screenshot-end]
 
-Ko je besedilo označeno, in se klikne zdaj vidni gumb `SPOILER`, bo besedilo zatemnjeno, dokler uporabnik nanj ne premakne miške. Za temni način naredimo enako, z drugačnimi
-barvami, ki se bolje ujemajo s temnim načinom.
+When text is highlighted, and the now visible `SPOILER` button is clicked, text will be masked until the user mouses over it. For dark mode we do the same thing, with different
+colors that better match dark mode.
 
-To je tudi združljivo z urejevalnikom WYSIWYG.
+This is also compatible with the WYSIWYG editor.

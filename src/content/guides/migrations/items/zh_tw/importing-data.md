@@ -1,7 +1,6 @@
----
-雖然 FastComments 支援團隊可以協助遷移，但大多數遷移都可以輕鬆自行執行並監控，無需支援人員介入。
+While FastComments Support can help with migrations, most can be performed and monitored easily without any intervention of support staff.
 
-我們原生支援從以下服務提供者匯入匯出資料：
+We natively support importing exports from the following providers:
 
 - Commento
 - Disqus
@@ -13,28 +12,28 @@
 - WordPress (via the plugin)
 - AnyComment (Via WordPress Import/Export)
 
-透過前往 [此處](https://fastcomments.com/auth/my-account/manage-data/import) 我們可以上傳包含遷移資料的檔案。
+By navigating [此處](https://fastcomments.com/auth/my-account/manage-data/import) we can upload the file containing the data to migrate.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; title='匯入頁面表單' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; alt='FastComments 匯入頁面，包含提供者選擇與匯出檔案的檔案上傳欄位'; title='匯入頁面表單' app-screenshot-end]
 
 ### 監控匯入
 
-FastComments 使用工作處理系統來處理匯入與匯出。系統接收到您的工作後，會定期在匯入或匯出 UI 中報告工作狀態。
+FastComments uses a job processing system for processing imports and exports. Once the system has picked up your job, it will periodically report the status of the job in the import or export UI.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; title='匯入工作狀態' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; alt='匯入頁面顯示執行中的匯入工作以及工作處理系統回報的狀態'; title='匯入工作狀態' app-screenshot-end]
 
-請注意，匯入與匯出的狀態可由帳號中的所有管理員檢視。
+Note that the status for Imports and Export are viewable by all administrators in the account.
 
-如果您的工作失敗，系統不會自動重新啟動。必須再次嘗試匯入。如果任何匯入或匯出失敗，我們的系統管理員會自動收到通知。若我們發現問題，會聯繫您以了解是否能提供協助。
+If your job fails, it will not automatically be restarted. The import will have to be attempted again. If any import or export fails, our system administrators are automatically notified. If we identify an issue, we'll reach out to you to see if we can help.
 
 ### 重新執行匯入
 
-在某些遷移過程中，需要多次執行匯入。例如，常見的做法是先進行一次測試性的遷移，然後在正式切換前使用最新資料再次執行匯入。
+During some migrations, it is necessary to run the import multiple times. For example, it is common to do a first pass migration for testing, and then run the import again with the latest data before flipping the switch.
 
-重新匯入相同內容 **不會產生重複**。
+Re-importing the same content **will not create duplicates**.
 
 ### 資料安全與過期
 
-匯入檔案不會以任何方式透過外部請求存取，且匯入完成後，匯入檔案會立即從我們的系統中刪除。
+Import files are not accessible via outside requests in any way, and import files are deleted from our system as soon as the import completes.
 
 ---

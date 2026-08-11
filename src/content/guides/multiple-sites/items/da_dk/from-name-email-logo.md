@@ -1,46 +1,48 @@
-Nogle gange skal FastComments sende e-mails til dine brugere, især hvis du ikke bruger Secure SSO.
+Sometimes FastComments has to email your users, especially if you are not using Secure SSO.
 
-Eksempler på dette inkluderer at bekræfte deres konto eller aktivitet, når de kommenterer for første gang. FastComments
-sender dem også notifikationer om svar på deres kommentarer.
+Examples of this includes verifying their account or activity when commenting for the first time. FastComments
+will also send them notifications for replies to their comments.
 
-Når FastComments sender e-mails til dine brugere, bruger vi som standard From Name og Email `FastComments Robot` og `noreply@fastcomments.com`.
+When FastComments emails your users, we will use a default From Name and Email of `FastComments Robot` and `noreply@fastcomments.com`.
 
-Vi bruger også vores eget logo i footeren af disse e-mails.
+We'll also use our own logo in the footer of these emails.
 
-Hvis du har FastComments Flex eller Pro, kan dette alt sammen tilpasses på domæneniveau via "My Domains page":
+If you have FastComments Flex or Pro, this all can be customized on a per-domain basis via the "My Domains page":
 
-[app-screenshot-start url='/auth/my-account/configure-domains'; selector = '.content form'; title='Customizing From Name, Email, and Logo' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/configure-domains'; selector = '.content form'; alt='Per-domæne e‑mailindstillingsformular med Felterne Fra‑navn, Fra‑e‑mail og logo‑upload'; title='Tilpasning af Fra‑navn, e‑mail og logo' app-screenshot-end]
 
-Når du tilpasser logoet, der vises i e-mails, skal du sikre, at den størrelse, du uploader, er den samme størrelse, du ønsker vist i e-mailens footer.
+When customizing the logo shown in emails, ensure that the size you are uploading is the same size that you want to show in the footer of the email.
 
-### Når du tilpasser `From Domain`
+### When Customizing The `From Domain`
 
-Hvis du tilpasser `From Domain`, skal e-mailudbydere og klienter vide, at FastComments er autoriseret til at sende e-mails på dine vegne. Ellers vil det at definere `From Domain` uden at følge nedenstående trin sandsynligvis resultere i, at e-mails ryger i spam.
+If you customize the `From Domain`, Email providers and clients need to know that FastComments is authorized to send emails on your behalf. Otherwise,
+defining the `From Domain` and not following the below steps likely will result in emails going to spam.
 
-#### 1. Opsæt SPF
+#### 1. Setup SPF
 
-For at tillade FastComments sikkert at sende e-mail som dit domæne, skal du sørge for at tilføje en SPF-record, der tillader os at gøre det.
+To allow FastComments to securely send email as your domain, ensure you add an SPF record that allows us to do so.
 
-Sørg for, at der er SPF-records, der tillader `mail.fastcomments.com` og `sib.fastcomments.com` at sende mail som dit domæne.
+Ensure there are SPF records to allow `mail.fastcomments.com` and `sib.fastcomments.com` to send mail as your domain.
 
-Mere information om, hvordan du gør dette, findes her: https://mailtrap.io/blog/multiple-spf-records/
+Some more information on how to do this is here: https://mailtrap.io/blog/multiple-spf-records/
 
-#### 2. Opsæt DKIM
+#### 2. Setup DKIM
 
-Udover SPF bør du også opsætte DKIM. Når din DNS-konfiguration er klar, kan du klikke på "Show Advanced" på siden for domænekonfigurationer for at vise DKIM-indstillingerne per domæne.
+In addition to SPF, you should set up DKIM. Once your DNS configuration is ready, you can click "Show Advanced" in the domain configurations page
+to show the DKIM settings per-domain.
 
-Du kan også [kalde API'en](/guide-api.html#domain-config-structure) for at indstille DKIM-konfigurationen.
+You can also [invoke the API](/guide-api.html#domain-config-structure) to set DKIM configuration.
 
-### Afmeldingslinks
+### Unsubscribe Links
 
-Når du bruger SSO, kan afmeldingsfunktionerne, der bruges i e-mails og notifikationer, tilpasses [via the DomainConfigs API](/guide-api.html#domain-config-structure).
+When using SSO, the unsubscribe features used in emails and notifications can be customized [via the DomainConfigs API](/guide-api.html#domain-config-structure).
 
-### E-mail-linkopfuskning
+### Email Link Obfuscation
 
-Hvis dit sites domænerytelse medfører, at notifikations-e-mails lander i spam, kan du rute "view comment"-knapperne gennem `fastcomments.com` i stedet for at linke direkte til din side. Mailudbydere vurderer hvert link i e-mailens indhold i forhold til destinationens omdømme, så når dit domæne bliver flaget, bidrager de bare links til spam-scoret uanset hvor ren din afsenderopsætning er.
+If your site's domain reputation is causing notification emails to land in spam, you can route the "view comment" buttons through `fastcomments.com` instead of linking directly to your page. Mailbox providers score every link in the email body against the destination's reputation, so when your domain is being flagged the bare links contribute to the spam score regardless of how clean your sending setup is.
 
-Aktivér dette under "Show Advanced" på My Domains page, i sektionen "Email Link Obfuscation". Indstillingen er per domæne.
+Enable this under "Show Advanced" on the My Domains page, in the "Email Link Obfuscation" section. The setting is per-domain.
 
-Når det er aktiveret, omskrives links i mention, reply, new-comment, subscribed-page, profile-comment, og digest e-mails til korte tokens, der omdirigerer til den oprindelige side ved klik. Destinationen er bundet til din tenant: omdirigeringen videresender kun til URL'er hvis host matcher et af dine konfigurerede domæner, og tokens udløber automatisk efter 30 dage.
+When enabled, links in mention, reply, new-comment, subscribed-page, profile-comment, and digest emails are rewritten to short tokens that redirect to the original page on click. The destination is bound to your tenant: the redirect only forwards to URLs whose host matches one of your configured domains, and tokens auto-expire after 30 days.
 
-Den gennemklikkede oplevelse er uændret. Læsere lander stadig på din side med kommentaren scrollet i fokus.
+The clicked-through experience is unchanged. Readers still land on your page with the comment scrolled into view.

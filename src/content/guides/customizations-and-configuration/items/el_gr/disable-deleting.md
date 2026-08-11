@@ -1,12 +1,13 @@
+---
 Από προεπιλογή, το FastComments θα επιτρέπει στους χρήστες να διαγράφουν τα σχόλιά τους.
 
-Ωστόσο, είναι δυνατό να το αποτρέψετε.
+Ωστόσο, είναι δυνατόν να αποτραπεί αυτό.
 
-Στην σελίδα προσαρμογής του widget, δείτε την επιλογή "Disable Deleting".
+Στη σελίδα προσαρμογής widget, δείτε την επιλογή "Απενεργοποίηση Διαγραφής".
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.disable-commenter-comment-delete'; selector = '.disable-commenter-comment-delete'; title='Disable Comment Deleting' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.disable-commenter-comment-delete'; selector = '.disable-commenter-comment-delete'; alt='Επιλογή Απενεργοποίησης Διαγραφής στη σελίδα προσαρμογής widget, αποτρέποντας τους σχολιαστές από την αφαίρεση των σχολίων τους'; title='Απενεργοποίηση Διαγραφής Σχολίων' app-screenshot-end]
 
-- Αυτό επηρεάζει μόνο τους κανονικούς σχολιαστές και όχι τους συντονιστές ή τους διαχειριστές, οι οποίοι θα εξακολουθούν να μπορούν να διαγράψουν.
-- Αυτό θα επηρεάσει επίσης τις ενσωματώσεις API για όταν περνάει το `contextUserId`. 
+- Αυτό επηρεάζει μόνο τους κανονικούς Σχολιαστές και όχι τους συντονιστές ή διαχειριστές, οι οποίοι θα μπορούν ακόμη να διαγράψουν.  
+- Αυτό θα επηρεάσει επίσης τις ενσωματώσεις API όταν περνιέται το `contextUserId`. 
 
 ---

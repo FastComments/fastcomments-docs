@@ -1,29 +1,29 @@
-FastComments ile sitenizde yorum yapmayı engellemenin iki yolu vardır.
+There are two ways to ban users from commenting on your site with FastComments.
 
-İlki, e-posta adreslerini zaten biliyorsanız, bunu <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">Yasaklı Kullanıcılar</a> sayfasına girebilirsiniz.
+The first is if you already know their email, you can enter it on the <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">yasaklı kullanıcılar</a> page.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; title='The Banned Users Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; alt='Moderate Comments altında yasaklı kullanıcılar listesi, yasaklı e-posta adresleri ve yeni bir yasak eklemek için bir düğme'; title='Yasaklı Kullanıcılar Sayfası' app-screenshot-end]
 
-Bu sayfaya Yorumları Denetle -> Yasaklı Kullanıcılar yolunu izleyerek erişilebilir.
+This page can be accessed via Moderate Comments -> Banned Users
 
-Bir kullanıcıyı yasaklarken tür seçebiliriz; Kalıcı veya Kalıcı Gölge Yasaklama:
+When we go to ban a user, we can pick a type, either Permanent or Permanent Shadow Ban:
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; title='Banning a User' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; alt='Yeni yasak formu, bir e-posta alanı ve Kalıcı veya Kalıcı Gölge Yasak seçeneği'; title='Kullanıcıyı Yasaklama' app-screenshot-end]
 
-İkinci yol, Yorumları Denetleme sayfasındaki her yorumun üzerine yerleştirilen yasakla düğmesine tıklamaktır.
+The second way to ban a user is by clicking the ban button that is placed on each comment on the Comment Moderation page.
 
-Yasakla düğmesine tıkladığınızda, yasak türünü ve süresini belirleyebileceğiniz bazı seçenekler gösterilir.
+When we click the ban button, you'll be presented with some options, where we can specify the ban type and duration.
 
-### E-posta Takma Adları
+### Email Aliases
 
-Bir kullanıcıyı e-posta ile yasaklarken, FastComments otomatik olarak `+` takma adlarını yok sayar. Örneğin, `user+alias@gmail.com` adresini yasaklamak, aynı zamanda `user@gmail.com` adresini ve `user+other@gmail.com` gibi o adresin diğer `+` varyasyonlarını da yasaklayacaktır.
+When banning a user by email, FastComments automatically ignores `+` aliases. For example, banning `user+alias@gmail.com` will also ban `user@gmail.com` and any other `+` variation of that address, such as `user+other@gmail.com`.
 
-### Gölge Yasaklamalar
+### Shadow Bans
 
-Gölge yasaklama, kullanıcının yorumu veya oyu başarıyla kaydedilmiş gibi görünmesini sağlayan, ancak gerçekte kaydedilmediği bir yasaklama türüdür. Belirli durumlarda bu tercih edilebilir.
+A shadow-ban is a type of ban that makes it appear that the user's comment or vote was saved successfully, when in fact it was not. This may be desirable in certain situations.
 
-### IP Adresi ile Yasaklama
+### Banning Via IP Address
 
-Bir tenant vazgeçmek istemedikçe, FastComments yorumcunun IP adresinin hashlenmiş bir versiyonunu saklayarak IP ile yasaklamayı destekler.
+Unless a tenant wishes to opt out, FastComments supports banning via IP by storing a hashed version of the commenter's IP address.
 
 ---

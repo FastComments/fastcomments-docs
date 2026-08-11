@@ -1,13 +1,11 @@
 [related-parameter-start name = 'enableSearch'; type = 'boolean'; related-parameter-end]
 
-Som standard vises der ikke noget søgefelt i kommentar-widgeten.
+Som standard vises der ingen søgeboks i kommentarfunktionen.
 
-Du kan dog aktivere det ved at sætte flaget **enableSearch** til true:
+Vi kan dog aktivere dette ved at sætte **enableSearch**-flaget til true:
 
 [code-example-start config = {enableSearch: true}; linesToHighlight = [6]; title = 'Enabling Search'; code-example-end]
 
-Dette kan også gøres uden kode. På siden for tilpasning af widget'en, se indstillingen "Aktiver søgefelt".
+Dette kan også gøres uden kode. På siden for widget-tilpasning, se indstillingen "Enable Search Box".
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-search-label']; selector = '.enable-search-label'; title='Enable Search Box' app-screenshot-end]
-
----
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-search-label']; selector = '.enable-search-label'; alt='Widget-tilpasningsside med afkrydsningsfeltet Enable Search Box markeret for at vise et søgefelt i widget\'en'; title='Aktiver søgeboks' app-screenshot-end]

@@ -1,17 +1,15 @@
----
-נווט ללוח הבקרה של החשבון שלך ועבור אל [דף ה-RSS](https://fastcomments.com/auth/my-account/rss).
+Navigate to your account dashboard and go to the [RSS Feed page](https://fastcomments.com/auth/my-account/rss).
 
-[app-screenshot-start url='/auth/my-account/rss'; selector = '.content'; title='RSS Feed Configuration' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/rss'; selector = '.content'; alt='דף פיד RSS של החשבון עם תיבת הסימון הפעלת גישה לפיד RSS, כתובת ה‑URL של הפיד, וכפתורי העתק וצפה בפיד'; title='תצורת פיד RSS' app-screenshot-end]
 
-בדף ה-RSS, סמן את תיבת הסימון "הפעל גישה להזנת RSS" כדי ליצור את כתובת ה-RSS הייחודית שלך.
+On the RSS Feed page, check the "Enable RSS Feed Access" checkbox to generate your unique RSS feed URL.
 
-כאשר תפעיל את ההזנה, תופיע הודעת אבטחה שמסבירה שכל מי שיש לו את הקישור יכול לגשת להערות שלך.
+When you enable the feed, a security notice will appear explaining that anyone with the link can access your comments.
 
-לאחר ההפעלה תופיע כתובת ה-RSS הייחודית שלך. לחץ על כפתור "העתק" כדי להעתיק את הכתובת ללוח הגזירים שלך.
+Once enabled, your unique RSS feed URL will appear. Click the "Copy" button to copy the URL to your clipboard.
 
-פתח את אפליקציית קריאת ה-RSS שלך והוסף את הכתובת שהעתקת כמנוי הזנה חדש. השלבים המדויקים משתנים לפי קורא ה-RSS, אך בדרך כלל תחפש כפתור "הוסף הזנה" או "הירשם", תדביק את כתובת ה-RSS ותתן להזנה שם.
+Open your RSS reader application and add the copied URL as a new feed subscription. The exact steps vary by RSS reader, but typically you'll look for an "Add Feed" or "Subscribe" button, paste your RSS feed URL, and give the feed a name.
 
-תוכל גם ללחוץ על כפתור "הצג הזנה" בדף ה-RSS כדי לראות את ההזנה שלך ישירות בדפדפן.
+You can also click the "View Feed" button on the RSS Feed page to see your feed directly in your browser.
 
-כדי להשבית את הגישה להזנת ה-RSS שלך, פשוט הסר את הסימון מתיבת הסימון "הפעל גישה להזנת RSS". זה ימנע את הגישה להזנה, אך ה-URL יישאר זהה אם תפעיל אותה שוב מאוחר יותר.
----
+To disable access to your RSS feed, simply uncheck the "Enable RSS Feed Access" checkbox. This will prevent the feed from being accessed, though the URL will remain the same if you re-enable it later.

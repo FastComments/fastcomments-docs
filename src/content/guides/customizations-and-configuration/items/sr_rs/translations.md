@@ -1,19 +1,17 @@
 [related-parameter-start name = 'translations'; type = 'Record<string, string>'; related-parameter-end]
 
-Са FastComments-ом, сав текст у видгету за коментаре може се прилагодити.
+Sa FastComments, sav tekst u vidžetu za komentare je prilagodljiv.
 
-Можете да замените појединачни део текста, као што је дугме за слање, или сав текст у целом видгету за коментаре.
+Možete zameniti pojedinačni deo teksta, kao što je dugme za slanje, ili sav tekst u celom vidžetu za komentare.
 
-По подразумевању, текст у видгету за коментаре се преводи у складу са локалом корисника. Међутим, можемо да заменимо текст, ако смо сигурни
-да већина наших корисника користи исти локал/језик, на пример:
+Podrazumevano, tekst u vidžetu za komentare se prevodi prema lokalitetu korisnika. Međutim, možemo zameniti tekst ako smo sigurni da naša baza korisnika koristi isti lokal/jezik, na primer:
 
-[code-example-start config = {translations: { SUBMIT_REPLY: 'Reply' } }; linesToHighlight = [6, 7, 8]; title = 'Custom Text'; code-example-end]
+[code-example-start config = {translations: { SUBMIT_REPLY: 'Reply' } }; linesToHighlight = [6, 7, 8]; title = 'Prilagođeni tekst'; code-example-end]
 
-Све прилагодљиве преводе можете пронаћи <a href="https://fastcomments.com/auth/my-account/get-acct-code#translations" target="_blank">овде</a> у картици "напредне опције".
+Sve prilagodljive prevode možete pronaći <a href="https://fastcomments.com/auth/my-account/get-acct-code#translations" target="_blank">ovde</a> pod karticom „advanced options“ tab.
 
-Међутим, постоји једноставнији начин преко корисничког интерфејса за прилагођавање видгета. Тамо можемо једноставно пронаћи текст који се приказује у видгету за коментаре у EN_US локалу и одредити
-замену.
+Međutim, postoji jednostavniji način, putem UI-ja za prilagođavanje vidžeta. Tamo možemo jednostavno pronaći tekst koji se prikazuje u vidžetu za komentarisanje na EN_US lokalitetu i navesti zamenu.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.show-custom-text-option', '#custom-text-options .dropdown-btn', '.dropdown-items a[data-value="JUST_NOW"]']; selector = '#custom-text-options'; title='Custom Text' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.show-custom-text-option', '#custom-text-options .dropdown-btn', '.dropdown-items a[data-value="JUST_NOW"]']; selector = '#custom-text-options'; alt='Panel za prilagođeni tekst sa stringom vidžeta izabranim iz padajućeg menija i poljem za zamenu teksta'; title='Prilagođeni tekst' app-screenshot-end]
 
-Све измене превода тренутно утичу на све локале.
+Sva prepisivanja prevoda trenutno utiču na sve lokalitete.

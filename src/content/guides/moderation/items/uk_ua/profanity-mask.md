@@ -1,9 +1,10 @@
-За замовчуванням FastComments постачається з чорним списком приблизно ~450 фраз і слів.
+By default, FastComments comes with a word blacklist of ~450 phrases and words.
 
-Якщо в новому коментарі буде знайдено текст зі чорного списку слів, цей текст буде замінено зірочками (***).
+If text in the word blacklist is found in a new comment that text will be replaced with asterisks (***).
 
-Сторінку для налаштування чорного списку можна знайти в меню Модерація коментарів -> Змінити налаштування модерації -> Редагувати чорний список слів, або перейшовши безпосередньо <a href="https://fastcomments.com/auth/my-account/moderate-comments/blacklist" target="_blank">тут</a>.
+The page to customize the blacklist can be found via Moderate Comments -> Edit Moderation Settings -> Edit Word Blacklist, or
+by going directly <a href="https://fastcomments.com/auth/my-account/moderate-comments/blacklist" target="_blank">here</a>.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/blacklist?blurList=true'; linkUrl='/auth/my-account/moderate-comments/blacklist'; selector = '.account-block'; title='Comment Word Blacklist' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/blacklist?blurList=true'; linkUrl='/auth/my-account/moderate-comments/blacklist'; selector = '.account-block'; alt='Редактор чорного списку слів, де можна додавати або видаляти типові заблоковані слова та фрази'; title='Чорний список слів коментаря' app-screenshot-end]
 
-Крім того, ви можете вимкнути виявлення ненормативної лексики на сторінці <a href="https://fastcomments.com/auth/my-account/moderate-comments/settings" target="_blank">Змінити налаштування модерації</a>.
+Additionally, you can disable Profanity Detection on the <a href="https://fastcomments.com/auth/my-account/moderate-comments/settings" target="_blank">Edit Moderation Settings</a> page.

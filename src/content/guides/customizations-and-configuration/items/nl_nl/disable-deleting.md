@@ -1,12 +1,13 @@
-Standaard staat FastComments gebruikers toe hun reacties te verwijderen.
+---
+Standaard staat FastComments gebruikers toe hun opmerkingen te verwijderen.
 
 Het is echter mogelijk dit te voorkomen.
 
-Op de pagina voor het aanpassen van de widget, zie de "Disable Deleting" optie.
+Op de widget‑aanpassingspagina, zie de "Verwijderen uitschakelen" optie.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.disable-commenter-comment-delete'; selector = '.disable-commenter-comment-delete'; title='Disable Comment Deleting' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.disable-commenter-comment-delete'; selector = '.disable-commenter-comment-delete'; alt='Optie Verwijderen uitschakelen op de widget‑aanpassingspagina, waardoor commentatoren hun opmerkingen niet kunnen verwijderen'; title='Verwijderen van opmerkingen uitschakelen' app-screenshot-end]
 
-- Dit heeft alleen invloed op gewone Commenters en niet op moderators of admins, die nog steeds kunnen verwijderen.
-- Dit heeft ook invloed op API-integraties wanneer `contextUserId` wordt doorgegeven. 
+- Dit heeft alleen invloed op gewone commentatoren en niet op moderators of beheerders, die nog steeds kunnen verwijderen.
+- Dit zal ook van invloed zijn op API‑integraties wanneer `contextUserId` wordt doorgegeven. 
 
 ---

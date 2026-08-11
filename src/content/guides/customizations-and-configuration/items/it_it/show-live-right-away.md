@@ -1,26 +1,21 @@
 [related-parameter-start name = 'showLiveRightAway'; type = 'boolean'; related-parameter-end]
 
-Per impostazione predefinita, il commento live è abilitato. Ciò significa che se vengono aggiunti, eliminati, modificati o fissati dei commenti, le modifiche dovrebbero apparire
-a tutti gli utenti che stanno visualizzando il thread dei commenti nello stesso momento.
+Per impostazione predefinita, i commenti live sono abilitati. Ciò significa che se vengono aggiunti, eliminati, modificati o evidenziati commenti, le modifiche dovrebbero apparire a tutti gli utenti che visualizzano il thread dei commenti contemporaneamente.
 
-Tuttavia, per impostazione predefinita questi nuovi commenti appariranno sotto un pulsante mostrato dinamicamente con un testo simile a "Mostra 2 nuovi commenti".
+Tuttavia, per impostazione predefinita, questi nuovi commenti appariranno sotto un pulsante mostrato dinamicamente con un testo simile a "Show 2 New Comments".
 
-Se i nuovi commenti sono risposte dirette alla pagina, il pulsante verrà mostrato nella parte superiore del thread dei commenti. Se sono risposte a un commento particolare, 
-il pulsante verrà mostrato sotto quel commento.
+Se i nuovi commenti sono risposte direttamente alla pagina, il pulsante verrà mostrato in cima al thread dei commenti. Se sono risposte a un commento specifico, il pulsante verrà mostrato sotto quel commento.
 
-Questo serve per evitare che la dimensione della pagina cambi continuamente per l'utente, causando potenzialmente frustrazione quando si cerca di afferrare la barra di scorrimento.
+Questo serve a evitare che la dimensione della pagina cambi costantemente per l'utente, potenzialmente causando frustrazione quando si tenta di afferrare la barra di scorrimento.
 
-Per alcuni casi d'uso, come le offerte in tempo reale o gli eventi online, questo comportamento non è desiderato - potresti voler che il widget dei commenti sia
-più simile a una casella "chat" in cui i nuovi commenti "appaiono subito".
+Per alcuni casi d'uso, come aste live o eventi online, questo non è il comportamento desiderato - potresti voler che il widget dei commenti sia più simile a una "chat" in cui i nuovi commenti "show right away".
 
-Da qui il nome della flag che abilita questa funzionalità: **showLiveRightAway**.
+Ecco il nome del flag che abilita questa funzionalità: **showLiveRightAway**.
 
-Possiamo attivarla come segue:
+Possiamo attivarlo come segue:
 
-[code-example-start config = {showLiveRightAway: true}; linesToHighlight = [6]; title = 'Show Live Comments Right Away'; code-example-end]
+[code-example-start config = {showLiveRightAway: true}; linesToHighlight = [6]; title = 'Mostra i commenti live subito'; code-example-end]
 
-Questa impostazione può essere personalizzata senza codice, nella pagina di personalizzazione del widget:
+Questo può essere personalizzato senza codice, nella pagina di personalizzazione del widget:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.collapse-live-comments'; selector = '.collapse-live-comments'; title='Show Live Comments Right Away' app-screenshot-end]
-
----
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.collapse-live-comments'; selector = '.collapse-live-comments'; alt='Impostazione di collasso dei commenti live attivata così i nuovi commenti appaiono immediatamente invece che dietro un pulsante'; title='Mostra i commenti live subito' app-screenshot-end]

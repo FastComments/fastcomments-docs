@@ -1,27 +1,27 @@
-Der er to måder at udelukke brugere fra at kommentere på dit site med FastComments.
+Der er to måder at bandlyse brugere fra at kommentere på dit site med FastComments.
 
-Den første er, hvis du allerede kender deres e-mail, kan du indtaste den på <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">blokerede brugere</a> siden.
+Den første er, hvis du allerede kender deres e‑mail, kan du indtaste den på siden <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">bandlyste brugere</a>.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; title='The Banned Users Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; alt='Liste over bandlyste brugere under Moderer Kommentarer, med de bandlyste e-mailadresser og en knap til at tilføje en ny ban'; title='Siden for bandlyste brugere' app-screenshot-end]
 
-Denne side kan åbnes via Moderér kommentarer -> Blokerede brugere
+Denne side kan tilgås via Moderer Kommentarer -> Bandlyste Brugere
 
-Når vi udelukker en bruger, kan vi vælge en type: enten Permanent eller Permanent Shadow Ban:
+Når vi skal bandlyse en bruger, kan vi vælge en type, enten Permanent eller Permanent Skyggeban:
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; title='Banning a User' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; alt='Ny ban-formular med et e-mailfelt og et valg af ban-typen Permanent eller Permanent Skyggeban'; title='Bandlysning af en bruger' app-screenshot-end]
 
-Den anden måde at udelukke en bruger på er ved at klikke på blokér-knappen, som findes på hver kommentar på Kommentarmoderation-siden.
+Den anden måde at bandlyse en bruger på er ved at klikke på bandlysningsknappen, som er placeret på hver kommentar på siden Kommentar Moderation.
 
-Når du klikker på blokér-knappen, vises nogle valgmuligheder, hvor du kan angive type og varighed af blokeringen.
+Når vi klikker på bandlysningsknappen, får du vist nogle muligheder, hvor vi kan angive bandlystypen og varigheden.
 
-### E-mail-aliaser
+### E‑mail‑aliaser
 
-Når man udelukker en bruger via e-mail, ignorerer FastComments automatisk `+` aliaser. For eksempel vil udelukkelse af `user+alias@gmail.com` også udelukke `user@gmail.com` og enhver anden `+` variation af den adresse, såsom `user+other@gmail.com`.
+Når du bandlyser en bruger via e‑mail, ignorerer FastComments automatisk `+`‑aliaser. For eksempel vil bandlysning af `user+alias@gmail.com` også bandlyse `user@gmail.com` og enhver anden `+`‑variation af den adresse, såsom `user+other@gmail.com`.
 
-### Shadow Bans
+### Skyggebaner
 
-En shadow-ban er en type udelukkelse, der får det til at se ud som om brugerens kommentar eller stemme blev gemt succesfuldt, mens den i virkeligheden ikke blev det. Dette kan være ønskeligt i visse situationer.
+En skyggeban er en type ban, der får det til at se ud som om brugerens kommentar eller stemme blev gemt succesfuldt, selvom den i virkeligheden ikke blev det. Dette kan være ønskeligt i visse situationer.
 
-### Udelukkelse via IP-adresse
+### Bandlysning via IP‑adresse
 
-Medmindre en tenant ønsker at fravælge det, understøtter FastComments blokering via IP ved at gemme en hashet version af kommentatorens IP-adresse.
+Medmindre en lejer ønsker at fravælge, understøtter FastComments bandlysning via IP ved at gemme en hash‑version af kommentatorens IP‑adresse.

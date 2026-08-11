@@ -1,14 +1,11 @@
 [related-parameter-start name = 'disableBlocking'; type = 'boolean'; related-parameter-end]
 
-Varsayılan olarak, FastComments kullanıcıların diğer kullanıcıları engellemesine izin verir. Bir kullanıcıyı engellemek, yorumlarının
-gizlenmesine, kullanıcılar arasında bildirimlerin engellenmesine ve benzeri durumlara neden olur.
+Varsayılan olarak, FastComments kullanıcıların diğer kullanıcıları engellemesine izin verir. Bir kullanıcıyı engellemek, yorumlarının gizlenmesine, kullanıcılar arasındaki bildirimlerin engellenmesine ve benzeri durumlara yol açar.
 
-Bu işlevi devre dışı bırakmak isteyebilirsiniz. Şöyle yapılabilir:
+Bu işlevi devre dışı bırakmak istenebilir. Aşağıdaki gibi yapılabilir:
 
-[code-example-start config = {disableBlocking: true}; linesToHighlight = [6]; title = 'Disable Blocking'; code-example-end]
+[code-example-start config = {disableBlocking: true}; linesToHighlight = [6]; title = 'Engellemeyi Devre Dışı Bırak'; code-example-end]
 
-Bu, ayrıca uygun sunucu tarafı doğrulamasını etkinleştirerek, Widget Özelleştirme UI'si aracılığıyla kod yazmadan da yapılabilir:
+Bu aynı zamanda kod kullanmadan, sunucu tarafı doğrulamasını da etkinleştiren, Widget Özelleştirme UI'si aracılığıyla yapılabilir:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-blocking']; selector = '.disable-blocking'; title='Disable Blocking' app-screenshot-end]
-
----
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-blocking']; selector = '.disable-blocking'; alt='Widget özelleştirme UI\'sinde engelleme seçeneği, kullanıcıların birbirini engellemesini durdurur'; title='Engellemeyi Devre Dışı Bırak' app-screenshot-end]

@@ -1,14 +1,11 @@
----
 [related-parameter-start name = 'headerHTML'; type = 'string'; related-parameter-end]
 
-Nekaj besedila, na primer naslov ali sporočilo, se lahko prikaže pod številom komentarjev, vendar nad besedilom stanja prijave.
+Nekaj besedila, kot je glava ali sporočilo, se lahko prikaže pod številom komentarjev, a nad besedilom stanja prijave.
 
-To imenujemo naslov, privzeto pa je skrit.
+To imenujemo glava, privzeto pa je skrita.
 
-[code-example-start config = {headerHTML: "<h1>Leave a Comment!</h1>"}; linesToHighlight = [6]; title = 'Specifying Header HTML'; code-example-end]
+[code-example-start config = {headerHTML: "<h1>Leave a Comment!</h1>"}; linesToHighlight = [6]; title = 'Določanje HTML glave'; code-example-end]
 
-To lahko prilagodite brez kode, na strani za prilagajanje widgeta, v razdelku Napredne možnosti:
+To je mogoče prilagoditi brez kode na strani za prilagajanje gradnika, pod naprednimi možnostmi:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.show-advanced-option'; selector = '.absolute-dates'; title='Specifying Header HTML' app-screenshot-end]
-
----
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.show-advanced-option'; selector = '.absolute-dates'; alt='Območje naprednih možnosti na strani za prilagajanje gradnika, kjer se vnese prilagojeno HTML glave'; title='Določanje HTML glave' app-screenshot-end]

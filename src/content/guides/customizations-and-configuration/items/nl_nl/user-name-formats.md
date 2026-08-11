@@ -1,21 +1,20 @@
 ---
 Standaard toont FastComments de naam van de gebruiker zoals deze is ingevoerd, of zoals deze via SSO aan ons is doorgegeven.
 
-Het kan echter wenselijk zijn om de naam van de gebruiker te maskeren of op een andere manier weer te geven. Bijvoorbeeld, als de naam van de gebruiker Allen Rex is, wilt u misschien alleen "Allen R." tonen.
+Het kan echter wenselijk zijn om de naam van de gebruiker te maskeren of op een andere manier weer te geven. Bijvoorbeeld, als de naam van de gebruiker Allen Rex is, wil je misschien alleen "Allen R." tonen.
 
-Dit kan zonder code worden gedaan in de Widget Customization UI, onder de instelling genaamd `Commenter Name Format`:
+Dit kan zonder code worden gedaan in de Widget Customisatie UI, onder de instelling genaamd `Commenter Name Format`:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.commenter-name-format select'; selector = '.commenter-name-format'; title='Change Name Format' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.commenter-name-format select'; selector = '.commenter-name-format'; alt='Commentator Naamindeling dropdown geopend met keuzes zoals Capitalize, Last Initial en All Initials'; title='Naamindeling wijzigen' app-screenshot-end]
 
-De beschikbare formaten zijn:
+De beschikbare indelingen zijn:
 
-- Capitalize (toont Example User als Example User)
-- Last Initial (toont Example User als Example U.)
-- All Initials (toont Example User als E. U.)
+- Capitalize (toon voorbeeldgebruiker als Example User)
+- Last Initial (toon Example User als Example U.)
+- All Initials (toon Example User als E. U.)
 - Show "Anonymous"
 
-De wijziging is onmiddellijk van kracht. Gebruikers zullen hun volledige gebruikersnaam nog steeds boven het opmerkingengebied voor zichzelf zien, maar bij hun opmerkingen wordt de gewijzigde gebruikersnaam weergegeven.
+Het effect van het wijzigen hiervan is onmiddellijk. Gebruikers zullen nog steeds hun volledige gebruikersnaam bovenaan het reactiegebied zien, voor zichzelf, maar hun reacties zullen de aangepaste gebruikersnaam tonen.
 
-Gebruikersnamen worden aan de serverzijde gemaskeerd om gebruikers te beschermen.
-
+Gebruikersnamen worden server-side gemaskeerd om gebruikers te beschermen.
 ---

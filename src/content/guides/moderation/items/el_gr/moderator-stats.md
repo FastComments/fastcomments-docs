@@ -1,14 +1,12 @@
-Η εργασία που κάνουν οι διαχειριστές καταγράφεται και μπορείτε να την δείτε επιστρέφοντας στη σελίδα "Edit Moderators".
+The work that moderators do is tracked and can be viewed by coming back to the "Edit Moderators" page.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/moderators?demo=true'; linkUrl='/auth/my-account/moderate-comments/moderators'; selector = '.account-block'; title='Moderator Stats' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/moderators?demo=true'; linkUrl='/auth/my-account/moderate-comments/moderators'; selector = '.account-block'; alt='Σελίδα Επεξεργασία Συντονιστών που εμφανίζει κάθε συντονιστή με μετρήσεις των σχολίων που εγκρίθηκαν, διαγράφηκαν και σημειώθηκαν ως ανεπιθύμητα'; title='Στατιστικά Συντονιστών' app-screenshot-end]
 
-Αυτή η σελίδα θα καταγράφει διάφορα στατιστικά:
-- Σχόλια που εγκρίθηκαν
-- Σχόλια που επισημάνθηκαν ως εξετασμένα
-- Διαγραμμένα σχόλια
-- Επεξεργασμένα σχόλια
-- Σχόλια επισημασμένα ως ανεπιθύμητα
-- Αποκλεισμένοι χρήστες
-- Η κατάσταση πρόσκλησής τους (Αποδεκτή ή Εκκρεμεί)
-
----
+This page will track various statistics:
+- Comments Approved
+- Comments Marked Reviewed
+- Comments Deleted
+- Comments Edited
+- Comments Marked Spam
+- Users Banned
+- Their Invite Status (Accepted or Pending)

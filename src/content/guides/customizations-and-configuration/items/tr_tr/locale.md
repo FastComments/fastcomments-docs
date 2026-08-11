@@ -1,27 +1,29 @@
 [related-parameter-start name = 'locale'; type = 'string'; related-parameter-end]
 
-Varsayılan olarak, FastComments yorum bileşenini kullanıcının sistem ve tarayıcısı tarafından belirlenen yerel ayara (locale) göre gösterir.
+Varsayılan olarak, FastComments yorum widget'ını kullanıcının sistem ve tarayıcı tarafından belirlenen yerel ayarda render eder.
 
-Bir kullanıcı yorum yaptığında veya giriş yaptığında, son kullandıkları locale bilgisini güncelliyoruz ve e-postaları gönderirken bunu kullanıyoruz.
+Bir kullanıcı yorum yaptığında veya oturum açtığında, son kullandığı yerel ayarı günceller ve bunu e-posta gönderiminde de kullanırız.
 
-Bu, yorum bileşeninin kullanıcı için nasıl çevrileceğini etkiler. Locale, kullanıcının dil ve bölgesinden oluşur; bu yüzden locale'i yapılandırmak genellikle kullanıcıya gösterilen metnin dilini değiştirir.
+Bu, yorum widget'ının kullanıcı için nasıl çevrileceğini etkiler. Yerel ayar, kullanıcının dili ve bölgesinden oluşur, bu yüzden yerel ayarı yapılandırmak genellikle kullanıcıya gösterilen metnin dilini değiştirir.
 
 #### Arayüz Üzerinden
 
-Bu, bileşen özelleştirme kullanıcı arayüzü kullanılarak tanımlanabilir. "Yerel Ayar / Dil" seçeneğine bakın:
+Bu, widget özelleştirme UI'sı kullanılarak tanımlanabilir. "Locale / Language" seçeneğine bakın:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.locale-override'; title='Changing The Locale / Language' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.locale-override'; alt='Widget özelleştirme sayfasında ziyaretçinin algılanan yerel ayarını geçersiz kılmak için Dil / Dil açılır menüsü'; title='Dil / Yerel Ayarı Değiştirme' app-screenshot-end]
 
 #### Kod ile
 
-Bu, istenen bir yerel ayar (locale) ile geçersiz kılınabilir.
+Bu, istenen bir yerel ayar ile geçersiz kılınabilir.
 
-[code-example-start config = {locale: 'ru_ru'}; linesToHighlight = [6]; title = 'Manually Defining the User\'s Locale'; code-example-end]
+[code-example-start config = {locale: 'ru_ru'}; linesToHighlight = [6]; title = 'Kullanıcının Dilini Manuel Olarak Tanımlama'; code-example-end]
 
 ### Desteklenen Diller ve Yerel Ayar Kodları
 
-[Desteklenen dillerin ve karşılık gelen locale kodlarının tam listesini burada bulabilirsiniz.](/guide-supported-languages.html#supported-languages)
+[Desteklenen dillerin tam listesini ve ilgili yerel ayar kodlarını burada bulabilirsiniz.](/guide-supported-languages.html#supported-languages)
 
 ### SSO Notu
 
-SSO kullanıyorsanız, e-postaların ve diğer öğelerin kullanıcı için doğru şekilde yerelleştirilmesini sağlamak üzere kullanıcının locale bilgisini kullanıcı nesnesinde iletmek isteyebilirsiniz.
+SSO kullanıyorsanız, kullanıcının yerel ayarını kullanıcı nesnesine geçirmek isteyebilirsiniz, böylece e-postalar ve diğer öğeler onlar için doğru şekilde yerelleştirilir.
+
+---

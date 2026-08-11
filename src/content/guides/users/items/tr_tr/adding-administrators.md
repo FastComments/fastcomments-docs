@@ -1,15 +1,12 @@
----
 `Super Admin` iznine sahip kullanıcılar diğer moderatörleri ekleyebilir ve kaldırabilir.
 
-Bir kullanıcı [Kullanıcılar sayfasına](https://fastcomments.com/auth/my-account/users) gidip
-sayfanın altındaki `Add User`'a tıklayarak eklenebilir.
+Bir kullanıcı, [Kullanıcılar sayfasına](https://fastcomments.com/auth/my-account/users) giderek ve
+alttaki `Add User` düğmesine tıklayarak eklenebilir.
 
-[app-screenshot-start url='/auth/my-account/users'; selector = '.content'; title='The Users Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/users'; selector = '.content'; alt='Kullanıcıların sayfası, hesabın yöneticilerini listeler, alt kısımda \'Add User\' düğmesiyle'; title='Kullanıcılar Sayfası' app-screenshot-end]
 
-Bir kullanıcı eklerken avatarını, kullanıcı adını, e-posta adresini, yerel ayarını ve izinlerini belirleyebiliriz.
+Bir kullanıcı eklerken avatarını, kullanıcı adını, e-posta adresini, dilini ve izinlerini ayarlayabiliriz.
 
-[app-screenshot-start url='/auth/my-account/users/new/edit'; selector = '.content'; title='Adding a User' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/users/new/edit'; selector = '.content'; alt='Avatar, kullanıcı adı, e-posta, dil ve izin alanlarının doldurulduğu kullanıcı düzenleme formu'; title='Kullanıcı Ekleme' app-screenshot-end]
 
-Bir yönetici eklendiğinde kendisine bir karşılama e-postası ve giriş bağlantısı gönderilecektir.
-
----
+Bir yönetici eklediğinizde, ona bir karşılama e-postası ve giriş bağlantısı gönderilir.

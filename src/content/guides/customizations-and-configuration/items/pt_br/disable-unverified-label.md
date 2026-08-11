@@ -5,8 +5,6 @@ tem uma sessão de navegador não verificada. Leia mais sobre comentários não 
 
 [code-example-start config = {disableUnverifiedLabel: true}; linesToHighlight = [6]; title = 'Disable The Unverified Label'; code-example-end]
 
-Além disso, esse recurso pode ser usado, sem escrever código, na interface de Personalização:
+Além disso, esse recurso pode ser usado, sem escrever código, na interface de personalização:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-unverified-comment-label']; selector = '.disable-unverified-comment-label'; title='Disable The Unverified Label' app-screenshot-end]
-
----
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-unverified-comment-label']; selector = '.disable-unverified-comment-label'; alt='Página de personalização do widget com a caixa de seleção Desativar rótulo de comentário não verificado marcada'; title='Desativar o rótulo de comentário não verificado' app-screenshot-end]

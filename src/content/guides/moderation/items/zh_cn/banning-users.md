@@ -1,29 +1,29 @@
-使用 FastComments 禁止用户在您的网站上发表评论有两种方式。
+There are two ways to ban users from commenting on your site with FastComments.
 
-第一种是如果您已经知道他们的电子邮件，可以在 <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">封禁用户</a> 页面输入。
+The first is if you already know their email, you can enter it on the <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">被禁用户</a> page.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; title='The Banned Users Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; alt='在“Moderate Comments”下的被禁用户列表，显示被禁的电子邮件地址并有一个添加新禁令的按钮'; title='被禁用户页面' app-screenshot-end]
 
-此页面可通过 审核评论 -> 封禁用户 访问
+This page can be accessed via Moderate Comments -> Banned Users
 
-当我们要封禁用户时，我们可以选择一种类型，永久封禁或永久影子封禁：
+When we go to ban a user, we can pick a type, either Permanent or Permanent Shadow Ban:
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; title='Banning a User' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; alt='带有电子邮件字段和永久或永久影子禁用类型选择的新禁用表单'; title='禁用用户' app-screenshot-end]
 
-第二种封禁用户的方式是在“评论审核”页面的每条评论上点击封禁按钮。
+The second way to ban a user is by clicking the ban button that is placed on each comment on the Comment Moderation page.
 
-当我们点击封禁按钮时，会出现一些选项，我们可以在其中指定封禁类型和持续时间。
+When we click the ban button, you'll be presented with some options, where we can specify the ban type and duration.
 
 ### 电子邮件别名
 
-通过电子邮件封禁用户时，FastComments 会自动忽略 `+` 别名。例如，封禁 `user+alias@gmail.com` 也会封禁 `user@gmail.com` 以及该地址的任何其他 `+` 变体，例如 `user+other@gmail.com`。
+When banning a user by email, FastComments automatically ignores `+` aliases. For example, banning `user+alias@gmail.com` will also ban `user@gmail.com` and any other `+` variation of that address, such as `user+other@gmail.com`.
 
-### 影子封禁
+### 影子禁用
 
-影子封禁是一种封禁方式，它会让用户觉得他们的评论或投票已成功保存，实际上并未保存。在某些情况下，这可能是理想的做法。
+A shadow-ban is a type of ban that makes it appear that the user's comment or vote was saved successfully, when in fact it was not. This may be desirable in certain situations.
 
-### 通过 IP 地址封禁
+### 通过 IP 地址禁用
 
-除非租户选择退出，否则 FastComments 支持通过 IP 进行封禁，方法是存储评论者 IP 地址的哈希版本。
+Unless a tenant wishes to opt out, FastComments supports banning via IP by storing a hashed version of the commenter's IP address.
 
 ---

@@ -1,17 +1,15 @@
 [related-parameter-start name = 'enableCommenterLinks'; type = 'boolean'; related-parameter-end]
 
-Standaard vraagt FastComments de gebruiker alleen om hun reactie, hun gebruikersnaam en hun e-mail.
+Standaard vraagt FastComments alleen om de opmerking, de gebruikersnaam en het e-mailadres van de gebruiker.
 
-In sommige situaties wilt u echter dat de gebruiker een link naar hun eigen blog of website achterlaat.
+In sommige situaties wilt u echter dat de gebruiker een link naar zijn of haar eigen blog of website achterlaat.
 
-We kunnen het tonen van een extra invoerveld voor de website-URL van de gebruiker inschakelen door de vlag **enableCommenterLinks** op true te zetten:
+We kunnen het tonen van een extra invoerveld voor de website-URL van de gebruiker inschakelen door de **enableCommenterLinks**-vlag op true te zetten:
 
-[code-example-start config = {enableCommenterLinks: true}; linesToHighlight = [6]; title = 'Enabling Commenter Links'; code-example-end]
+[code-example-start config = {enableCommenterLinks: true}; linesToHighlight = [6]; title = 'Commentaarlinks inschakelen'; code-example-end]
 
-Wanneer die URL is opgegeven, wordt het account van de gebruiker bijgewerkt en zal hun gebruikersnaam bij alle eerdere en toekomstige reacties naar deze URL linken.
+Wanneer die URL wordt opgegeven, wordt het account van de gebruiker bijgewerkt en zal hun gebruikersnaam op alle eerdere en toekomstige reacties naar deze URL verwijzen.
 
-Dit kan zonder code worden aangepast op de pagina voor het aanpassen van de widget:
+Dit kan zonder code worden aangepast op de widget-aanpassingspagina:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.click-to-show-comments', '.commenter-links']; selector = '.commenter-links'; title='Enabling Commenter Links' app-screenshot-end]
-
----
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.click-to-show-comments', '.commenter-links']; selector = '.commenter-links'; alt='Widget-aanpassingspagina met het selectievakje voor commentaarlinks aangevinkt om een website-URL-veld toe te voegen aan het reactieformulier'; title='Commentaarlinks inschakelen' app-screenshot-end]

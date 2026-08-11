@@ -1,8 +1,8 @@
-По подразумевaњу, FastComments ће захтевати имејл да би се коментарисало. Не мора бити важећи имејл, међутим док корисник не кликне на линк послат њему,
-његов коментар ће приказивати ознаку „Непотврђени коментар“.
+By default, FastComments will require an email to comment. It does not have to be a valid email, however until the user clicks a link sent to them,
+their comment will display an "Unverified Comment" label.
 
-Међутим, можемо уклонити захтев за имејлом. Поље за унос имејла ће и даље бити видљиво, али више неће бити обавезно.
+However, we can remove the email requirement. The email input field will still show, but it will no longer be required.
 
-Ово се може конфигурисати преко интерфејса за прилагођавање виџета:
+This can be configured via the widget customization UI:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.allow-anonymous-comments'; title='Enabling Anonymous Comments' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.allow-anonymous-comments'; alt='Opcija anonimnih komentara u UI‑u za prilagođavanje widgeta, koja čini polje za e‑mail opcionalnim'; title='Omogućavanje anonimnih komentara' app-screenshot-end]

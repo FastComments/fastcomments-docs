@@ -1,10 +1,10 @@
-За замовчуванням FastComments дозволяє користувачам редагувати свої коментарі.
+By default, FastComments will allow users to edit their comments.
 
-Проте це можна заборонити.
+However, it is possible to prevent this.
 
-На сторінці налаштування віджета знайдіть опцію "Вимкнути редагування".
+In the widget customization page, see the "Disable Editing" option.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.disable-commenter-comment-edit'; selector = '.disable-commenter-comment-edit'; title='Disable Comment Editing' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.disable-commenter-comment-edit'; selector = '.disable-commenter-comment-edit'; alt='Параметр вимкнення редагування на сторінці налаштування віджету, що запобігає редагуванню коментарів користувачами'; title='Вимкнути редагування коментарів' app-screenshot-end]
 
-- Це впливає лише на звичайних коментаторів і не зачіпає модераторів або адміністраторів, які все одно зможуть редагувати.
-- Це також вплине на інтеграції через API, коли передається `contextUserId`.
+- This only impacts regular Commenters and not moderators or admins, who will still be able to edit.
+- This will also impact API integrations for when `contextUserId` is passed.

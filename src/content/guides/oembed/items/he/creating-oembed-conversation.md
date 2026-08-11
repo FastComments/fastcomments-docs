@@ -1,11 +1,12 @@
-עם FastComments, יש ליצור שיחה תחילה לפני שניתן להטמיע אותה.
+With FastComments, a conversation has to be first created before it can be embedded.
 
-לשם כך, פשוט בקרו ב-[fastcomments.com/create](https://fastcomments.com/create).
+To do so, simply visit [fastcomments.com/create](https://fastcomments.com/create).
 
-[app-screenshot-start url='/create'; selector = '.content'; title='The Create a Conversation Form' app-screenshot-end]
+[app-screenshot-start url='/create'; selector = '.content'; alt='דף fastcomments.com/create עם שדה שם השיחה והכפתור שמייצר קישור מאובטח'; title='טופס יצירת שיחה' app-screenshot-end]
 
-לאחר בחירת שם, ייווצר קישור מאובטח.
+Once choosing a name, a secure link will be created. 
 
-ניתן לבקר בקישור זה ולהשתמש בו כצ'אט עצמאי. לחלופין, ניתן לספק אותו ישירות לאפליקציה התומכת ב-oEmbed, או https://embed.ly, כדי להוסיף את השיחה.
+This link can be visited and used as its own chat. Or, it can be provided directly to an application that supports oEmbed, or https://embed.ly, to
+insert the conversation.
 
-ניתן להתאים אישית שיחות מוטמעות בדיוק כמו כל התקנה אחרת של FastComments באמצעות ממשק ההתאמה האישית. קראו על התאמה אישית של וידג'ט התגובות [כאן](/guide-customizations-and-configuration.html).
+Embedded conversations can be customized just like any other FastComments installation using the Customization UI. Read about customizing the comment widget [here](/guide-customizations-and-configuration.html).

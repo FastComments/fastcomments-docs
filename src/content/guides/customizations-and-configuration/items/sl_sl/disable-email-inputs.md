@@ -1,17 +1,18 @@
-Ko uporabniki komentirajo in niso prijavljeni, jih bomo prosili, naj navedo svoj e-poštni naslov.
+---
+Ko uporabniki komentirajo in niso prijavljeni, bodo pozvani, da vpišejo svoj e‑mail.
 
-To bo za tega uporabnika ustvarilo "nepreverjeno sejo", in jih bomo prosili, naj to sejo potrdijo preko e-pošte.
+To bo ustvarilo “nepreverjeno sejo” za tega uporabnika, in jih bomo prosili, da to sejo preverijo prek e‑maila.
 
-Za nekatere strani ali aplikacije je zaželeno, da uporabnika ne prosimo za e-poštni naslov med komentiranjem ali glasovanjem.
+Za nekatere strani ali aplikacije je zaželeno, da uporabnika ne sprašujemo po e‑mailu pri komentiranju ali glasovanju.
 
-Omogočanje anonimnega komentiranja naredi polje za vnos e-pošte neobvezno. Vendar ga lahko popolnoma onemogočimo. Najprej omogočite
-anonimno komentiranje, nato se bo prikazala možnost za onemogočanje polj za vnos e-pošte.
+Omogočanje anonimnih komentarjev naredi polje za vnos e‑maila neobvezno. Vendar ga lahko popolnoma onemogočimo. Najprej omogočite anonimne komentarje, nato se bo pojavila možnost onemogočanja polj za vnos e‑maila.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments', '.disable-email-inputs']; selector = '.disable-email-inputs'; title='Disable Email Inputs' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments', '.disable-email-inputs']; selector = '.disable-email-inputs'; alt='Možnost popolne skritja polj za e-pošto, prikazana po omogočitvi anonimnih komentarjev v vmesniku za prilagajanje'; title='Onemogoči vnos e-pošte' app-screenshot-end]
 
-Če je to omogočeno, polja za e-pošto se na vseh naših produktih za komentiranje sploh ne bodo prikazovala.
+Ko je to omogočeno, polja za e‑mail ne bodo prikazana v nobenem od naših produktov za komentiranje.
 
-Upoštevajte, da bodo s to konfiguracijo vsi komentarji nepreverjeni, razen če uporabnik ustvari račun in se prijavi v
-https://fastcomments.com.
+Upoštevajte, da bodo pri tej nastavitvi vsi komentarji nepreverjeni, razen če uporabnik ustvari račun in se prijavi na https://fastcomments.com.
 
-Morda boste želeli razmisliti o [onemogočitvi oznake nepreverjeno](/guide-customizations-and-configuration.html#disable-unverified-label).
+Morda boste želeli razmisliti o [onemogočanju oznake nepreverjenega](/guide-customizations-and-configuration.html#disable-unverified-label).
+
+---

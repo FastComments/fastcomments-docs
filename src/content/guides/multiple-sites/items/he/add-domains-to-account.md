@@ -1,32 +1,32 @@
-FastComments מאמתת בקשות לחשבונך כדי לוודא שהן מגיעות מהאתר שלך. לכן
-אנו צריכים לדעת באיזה אתר, או באילו אתרים, ברצונך להתקין את FastComments.
+FastComments מאמתת בקשות לחשבון שלך כדי לראות שהן מגיעות מהאתר שלך. זו הסיבה  
+שאנחנו צריכים לדעת איזה אתר, או אתרים, אתה רוצה להתקין עליהם את FastComments.
 
-FastComments תומכת באימות על ידי שם דומיין, כמו גם תתי-דומיינים.
+FastComments תומכת באימות באמצעות דומיין, וכן תתי‑דומיינים.
 
-ניקח את האתר `https://example.com`. במקרה זה, "`example.com`" הוא שם הדומיין. `example.com` תומך גם ב-`example.com`, וגם ב-`www.example.com`. ננקוב ב-"www" כ" תת-דומיין".
+נניח את האתר `https://example.com`. במקרה זה, "`example.com`" הוא הדומיין. `example.com` תומך גם ב-`example.com` וגם ב-`www.example.com`. נקרא ל-"www" כ-"תת‑דומיין".
 
-For Example:
+לדוגמה:
 
-- To allow only `blog.example.com`:
-  - Add `blog.example.com` to your domains.
-- To allow `www.example.com`, `somesite.example.com`, and `example.com`:
-  - Add `example.com` to your domains.
-  - This is billed as having **one domain** associated with your account.
-- You can now add wildcard subdomains, for example *myname.vercel.app. 
-  - This is billed as having **one domain** associated with your account.
+- כדי לאפשר רק `blog.example.com`:
+  - הוסף `blog.example.com` לדומיינים שלך.
+- כדי לאפשר `www.example.com`, `somesite.example.com`, ו-`example.com`:
+  - הוסף `example.com` לדומיינים שלך.
+  - זה מחושב כ-**דומיין אחד** המשויך לחשבון שלך.
+- כעת ניתן להוסיף תתי‑דומיינים עם תו כללי, לדוגמה *myname.vercel.app. 
+  - זה מחושב כ-**דומיין אחד** המשויך לחשבון שלך.
 
-אם השתמשת בפלטפורמת בלוגים, וניתן לך תת-דומיין, תרצה
-להוסיף את **הדומיין המלא כולל תת-הדומיין** לחשבונך, לדוגמה: `cats.blogger.com`.
+אם השתמשת בפלטפורמת בלוגים, וקיבלת תת‑דומיין, תרצה  
+להוסיף את **הדומיין המלא כולל תת‑הדומיין** לחשבון שלך, לדוגמה: `cats.blogger.com`.
 
-We can add domains to our account by visiting the `My Domains` page and clicking `Add a Domain` at the bottom:
+ניתן להוסיף דומיינים לחשבון שלנו על‑ידי ביקור בדף `My Domains` ולחיצה על `Add a Domain` בתחתית:
 
-[app-screenshot-start url='/auth/my-account/configure-domains'; selector = '.content'; title='The My Domains Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/configure-domains'; selector = '.content'; alt='דף My Domains המציג את הדומיינים בחשבון, עם כפתור Add a Domain בתחתית'; title='דף My Domains' app-screenshot-end]
 
-במהלך תקופת הניסיון, **דומיינים מתווספים אוטומטית לחשבונך** כאשר בקשות מגיעות מהדומיינים הנ"ל. עם זאת,
-לאחר תקופה זו הם חייבים להתווסף במפורש מטעמי אבטחה. עליך לקבל הודעת דואר אלקטרוני כאשר התנהגות אוטומטית זו מתרחשת.
+במהלך תקופת הניסיון, **הדומיינים מתווספים אוטומטית לחשבון שלך** כאשר בקשות מגיעות מהדומיינים הללו. עם זאת,  
+לאחר זמן זה יש להוסיף אותם במפורש לצורך אבטחה. אתה אמור לקבל אימייל כאשר התנהגות אוטומטית זו מתרחשת.
 
-אתה **לא** חייב להוסיף את `localhost` לפיתוח מקומי - הוא מותר כברירת מחדל.
+אתה **אינך** צריך להוסיף `localhost` לפיתוח מקומי - הוא מותר כברירת מחדל.
 
-#### דרך ה-API
+#### דרך ה‑API
 
-Domains can also be added and configured [via the DomainConfigs API](/guide-api.html#domain-config-structure).
+ניתן גם להוסיף ולתת תצורה לדומיינים [דרך ה‑DomainConfigs API](/guide-api.html#domain-config-structure).

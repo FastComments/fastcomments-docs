@@ -1,14 +1,11 @@
----
 [related-parameter-start name = 'disableProfiles'; type = 'boolean'; related-parameter-end]
 
-По подразумеваној вредности, FastComments ће приказати профил корисника када кликнете на њихов аватар.
+Podrazumevano, FastComments će prikazati profil korisnika kada kliknete na njegov avatar.
 
-Међутим, можемо онемогућити ову функционалност:
+Međutim, možemo onemogućiti ovu funkcionalnost:
 
-[code-example-start config = {disableProfiles: true}; linesToHighlight = [6]; title = 'Disable Profiles'; code-example-end]
+[code-example-start config = {disableProfiles: true}; linesToHighlight = [6]; title = 'Onemogući profile'; code-example-end]
 
-Ово се такође може урадити без кода. На страници за прилагођавање виџета, погледајте одељак "Онемогући профиле".
+Ovo se takođe može uraditi bez koda. Na stranici za prilagođavanje widgeta, pogledajte odeljak „Onemogući profile“.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-profiles']; selector = '.disable-profiles'; title='Disable Profiles' app-screenshot-end]
-
----
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-profiles']; selector = '.disable-profiles'; alt='Stranica za prilagođavanje widgeta sa označenim poljem za onemogućavanje profila, tako da avatari više ne otvaraju profile'; title='Onemogući profile' app-screenshot-end]

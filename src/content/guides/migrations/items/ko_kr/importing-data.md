@@ -14,13 +14,13 @@ We natively support importing exports from the following providers:
 
 By navigating [여기](https://fastcomments.com/auth/my-account/manage-data/import) we can upload the file containing the data to migrate.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; title='가져오기 페이지 양식' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; alt='FastComments 가져오기 페이지로, 제공업체 선택 및 내보내기 파일 업로드 필드가 있습니다.'; title='가져오기 페이지 양식' app-screenshot-end]
 
 ### 가져오기 모니터링
 
-FastComments uses a job processing system for processing imports and exports. Once the system has picked up your job, it will periodically report the status of the job in the import or export UI.
+FastComments는 가져오기와 내보내기를 처리하기 위해 작업 처리 시스템을 사용합니다. 시스템이 작업을 가져오면, 가져오기 또는 내보내기 UI에서 작업 상태를 주기적으로 보고합니다.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; title='가져오기 작업 상태' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; alt='실행 중인 가져오기 작업과 작업 처리 시스템이 보고하는 상태를 보여주는 가져오기 페이지'; title='가져오기 작업 상태' app-screenshot-end]
 
 Note that the status for Imports and Export are viewable by all administrators in the account.
 
@@ -35,3 +35,5 @@ Re-importing the same content **will not create duplicates**.
 ### 데이터 보안 및 만료
 
 Import files are not accessible via outside requests in any way, and import files are deleted from our system as soon as the import completes.
+
+---

@@ -1,27 +1,29 @@
 Existem duas maneiras de banir usuários de comentar em seu site com o FastComments.
 
-A primeira é se você já conhece o e-mail deles, você pode inseri-lo na <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">usuários banidos</a> page.
+A primeira é se você já souber o e‑mail deles, pode inseri‑lo na página de <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">usuários banidos</a>.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; title='The Banned Users Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; alt='Lista de usuários banidos em Moderar Comentários, com os endereços de e‑mail banidos e um botão para adicionar uma nova proibição'; title='Página de Usuários Banidos' app-screenshot-end]
 
-Esta página pode ser acessada via Moderate Comments -> Banned Users
+Esta página pode ser acessada via Moderar Comentários -> Usuários Banidos
 
-Quando vamos banir um usuário, podemos escolher um tipo, seja Permanent ou Permanent Shadow Ban:
+Ao banir um usuário, podemos escolher um tipo, seja Permanente ou Proibição Sombra Permanente:
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; title='Banning a User' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; alt='Novo formulário de proibição com um campo de e‑mail e uma escolha de tipo de proibição entre Permanente ou Proibição Sombra Permanente'; title='Banindo um Usuário' app-screenshot-end]
 
-A segunda forma de banir um usuário é clicando no botão de banir que está colocado em cada comentário na página de Comment Moderation.
+A segunda maneira de banir um usuário é clicando no botão de banimento que está colocado em cada comentário na página de Moderação de Comentários.
 
-Quando clicamos no botão de banir, serão apresentadas algumas opções, onde podemos especificar o tipo de banimento e a duração.
+Ao clicar no botão de banimento, serão apresentadas algumas opções, onde podemos especificar o tipo e a duração da proibição.
 
-### Email Aliases
+### Aliases de E‑mail
 
-Ao banir um usuário por e-mail, o FastComments ignora automaticamente `+` aliases. Por exemplo, banir `user+alias@gmail.com` também banirá `user@gmail.com` e qualquer outra variação com `+` desse endereço, como `user+other@gmail.com`.
+Ao banir um usuário por e‑mail, o FastComments ignora automaticamente aliases com `+`. Por exemplo, banir `user+alias@gmail.com` também banirá `user@gmail.com` e qualquer outra variação com `+` desse endereço, como `user+other@gmail.com`.
 
-### Shadow Bans
+### Proibições Sombra
 
-Um shadow-ban é um tipo de banimento que faz parecer que o comentário ou voto do usuário foi salvo com sucesso, quando na verdade não foi. Isso pode ser desejável em certas situações.
+Uma proibição sombra é um tipo de banimento que faz parecer que o comentário ou voto do usuário foi salvo com sucesso, quando na verdade não foi. Isso pode ser desejável em certas situações.
 
-### Banning Via IP Address
+### Banimento via Endereço IP
 
-A menos que um tenant deseje optar por não participar, o FastComments suporta banimento via IP armazenando uma versão hashed do endereço IP do comentarista.
+A menos que um locatário deseje optar por não participar, o FastComments oferece suporte ao banimento via IP armazenando uma versão hash do endereço IP do comentarista.
+
+---

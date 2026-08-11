@@ -1,14 +1,14 @@
 ---
 [related-parameter-start name = 'disableProfileDirectMessages'; type = 'boolean'; related-parameter-end]
 
-Domyślnie FastComments pokaże zakładkę "Wiadomości prywatne" na profilach użytkowników, pozwalając odwiedzającym wysyłać do użytkownika wiadomości prywatne.
+Domyślnie FastComments wyświetla zakładkę „Direct Messages” w profilach użytkowników, umożliwiając odwiedzającym wysyłanie bezpośrednich wiadomości do użytkownika.
 
-Możemy jednak wyłączyć tę zakładkę:
+Jednak możemy wyłączyć tę zakładkę:
 
-[code-example-start config = {disableProfileDirectMessages: true}; linesToHighlight = [6]; title = 'Disable Profile Direct Messages'; code-example-end]
+[code-example-start config = {disableProfileDirectMessages: true}; linesToHighlight = [6]; title = 'Wyłącz bezpośrednie wiadomości w profilu'; code-example-end]
 
-Można to również zrobić bez użycia kodu. Na stronie dostosowywania widgetu zobacz sekcję "Wyłącz wiadomości prywatne".
+Można to również zrobić bez kodu. Na stronie dostosowywania widgetu zobacz sekcję „Disable Direct Messages”.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-profile-direct-messages']; selector = '.disable-profile-direct-messages'; title='Disable Profile Direct Messages' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-profile-direct-messages']; selector = '.disable-profile-direct-messages'; alt='Strona dostosowywania widgetu z zaznaczonym polem wyboru Wyłącz bezpośrednie wiadomości, aby ukryć kartę wiadomości w profilu'; title='Wyłącz bezpośrednie wiadomości w profilu' app-screenshot-end]
 
 ---

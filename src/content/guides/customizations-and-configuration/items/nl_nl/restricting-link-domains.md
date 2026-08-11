@@ -1,12 +1,11 @@
 ---
-Standaard staat FastComments toe om naar elke externe site te linken.
+Standaard staat FastComments toe om te linken naar elke externe site.
 
-Dit kan worden beperkt tot een gewenste lijst van sites of domeinen. Als geprobeerd wordt een link te plaatsen naar een site of domein dat niet in de gedefinieerde lijst staat, wordt er een foutmelding aan de gebruiker weergegeven.
+Dit kan in plaats daarvan worden beperkt tot een gewenste lijst van sites of domeinen. Als je probeert een link naar een site of domein te plaatsen die niet in de gedefinieerde lijst staat, wordt er een foutmelding aan de gebruiker getoond.
 
-Deze validatie geldt alleen voor de Comment Widget en de API. Imports worden hier niet door beïnvloed.
+Deze validatie geldt alleen voor de Comment Widget en de API. Imports worden niet beïnvloed.
 
-Dit wordt gedaan zonder code, op de pagina voor het aanpassen van de widget:
+Dit wordt gedaan zonder code, op de widget‑aanpassingspagina:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.restricted-link-domains-list'; selector = '.external-link-settings'; title='Restrict External Link Domains' app-screenshot-end]
-
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.restricted-link-domains-list'; selector = '.external-link-settings'; alt='Instellingen voor externe links met de lijst van beperkte linkdomeinen waar toegestane sites worden ingevoerd'; title='Beperk externe linkdomeinen' app-screenshot-end]
 ---

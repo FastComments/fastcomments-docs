@@ -1,23 +1,25 @@
-若需要移動資料，FastComments 提供一個自助工具來在頁面和文章之間移動評論。
+如果需要搬移資料，FastComments 提供一個自行服務的工具，用於在頁面與文章之間搬移評論。
 
-Here's what the comment copy page form looks like:
+以下是評論複製頁面的表單樣子：
 
-[app-screenshot-start url='/auth/my-account/manage-data/copy-comments'; selector = '.account-block'; title='The Copy Comment Form' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/copy-comments'; selector = '.account-block'; alt='複製評論表單，包含「來源 URL ID」欄位以及「目標 URL ID」與「URL」欄位'; title='The Copy Comment Form' app-screenshot-end]
 
-### 填寫 "From" 欄位
+### 填寫「來源」欄位
 
-要決定要從哪裡移動評論，我們只需要知道來源的 `URL ID`。
+要決定從哪裡搬移評論，我們只需要知道來源的 `URL ID`。
 
-如果你在評論小工具設定中沒有傳入 `urlId` 的值，則這將是頁面 URL 的「乾淨」版本。
+如果在評論小工具設定中未傳遞 `urlId` 的值，則會使用頁面 URL 的「乾淨」版本。
 
-你可以透過匯出來查看評論的 `URL ID` 值。
+您可以透過匯出評論來查看每則評論的 `URL ID` 值。
 
-### 填寫 "To" 欄位
+### 填寫「目標」欄位
 
-要決定要將評論移動到哪裡，我們需要知道目標的 `URL ID` 與 `URL`。
+要決定將評論搬移到哪裡，我們需要知道目標的 `URL ID` 與 `URL`。
 
-`URL ID` 將是評論歸入的桶（bucket）。`URL` 欄位則用於讓你能從電子郵件和審核工具直接導向該評論。
+`URL ID` 會是評論所屬的儲存桶。`URL` 欄位則用於讓您能從電子郵件或審核工具直接導向該評論。
 
 #### WordPress
 
-如果你使用的是 WordPress，例如在遷移工具中的 To/From `URL ID` 欄位，你會填入文章 ID，而不是 URL。
+如果您使用 WordPress，則可以在遷移工具的「目標/來源」`URL ID` 欄位中直接輸入文章 ID，而非 URL。
+
+---

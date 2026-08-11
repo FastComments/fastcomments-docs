@@ -1,11 +1,13 @@
-Çoğu moderasyonun yapıldığı yer Yorum Moderasyonu sayfasıdır. Örneğin, işte mevcut demo hesabımızın bir ekran görüntüsü:
+The place where most moderation takes place is the Comment Moderation page. For example, here's a screenshot of our current demo account:
 
-[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = 'body'; title='Comment Moderation Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = 'body'; alt='Demo hesabı için tam Yorum Moderasyonu sayfası, filtreleri, aramayı ve sayfa başına üç yorum gösteriyor'; title='Yorum Moderasyonu Sayfası' app-screenshot-end]
 
-Bu ekran görüntüsünü makul bir boyutta tutmak için sayfa başına sayıyı üç olarak ayarladık. Gerçekte, varsayılan olarak sayfa başına 50 yorumla çalışırsınız.
+We've set the count per page to three to make this screenshot a reasonable size. In practice, you would be working with 50 comments per page by default.
 
-Moderasyon sayfası ayrıca yorumlar arasında gezinmek ve işlemleri fare kullanmadan gerçekleştirmek için [Klavye Kısayollarını](#keyboard-shortcuts) destekler. Tüm kullanılabilir kısayolları görmek için moderasyon sayfasında **?** tuşuna basın.
+The moderation page also supports [Keyboard Shortcuts](#keyboard-shortcuts) for navigating between comments and performing actions without using the mouse. Press **?** on the moderation page to see all available shortcuts.
 
-Sayfa ayrıca **canlı**dır — mevcut filtrelerinize uyan yeni yorumlar geldiğinde, sizi uyaran bir afiş üstte görünür. Ayrıntılar için [Canlı Moderasyon](#comment-actions-live) bölümüne bakın.
+The page is also **live** — when new comments arrive that match your current filters, a banner appears at the top alerting you. See [Live Moderating](#comment-actions-live) for details.
 
-Şimdi burada gösterilen özelliklere bakalım.
+Let's go into the features shown here.
+
+---

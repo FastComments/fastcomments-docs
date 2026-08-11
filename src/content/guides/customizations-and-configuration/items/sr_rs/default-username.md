@@ -1,8 +1,5 @@
----
-Када корисници коментаришу или гласају, а нису пријављени, затражиће им се адреса е-поште и корисничко име.
+Kada korisnici komentarišu ili glasaju, a nisu prijavljeni, biće zatraženo da unesu svoju e‑mail adresu i korisničko ime.
 
-У случају анонимног коментарисања, понекад је пожељно дефинисати подразумевано корисничко име како би се олакшало коментарисање. То се може подесити у интерфејсу за прилагођавање. Прво мора бити омогућено анонимно коментарисање.
+U slučaju anonimnog komentarisanja, ponekad je poželjno definisati podrazumevano korisničko ime kako bi se smanjila prepreka pri komentarisanju. Ovo se može uraditi iz UI‑ja za prilagođavanje. Anonimno komentarisanje mora biti prvo omogućeno.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments']; selector = '.default-username-label'; title='Setting The Default Username' app-screenshot-end]
-
----
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments']; selector = '.default-username-label'; alt='Polje podrazumevanog korisničkog imena koje se pojavljuje u UI prilagođavanja kada je omogućeno anonimno komentarisanje'; title='Podešavanje podrazumevanog korisničkog imena' app-screenshot-end]

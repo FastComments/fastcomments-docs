@@ -1,13 +1,13 @@
 [related-parameter-start name = 'disableProfiles'; type = 'boolean'; related-parameter-end]
 
-За замовчуванням FastComments показує профіль користувача, коли ви натискаєте на його аватар.
+За замовчуванням FastComments показує профіль користувача, коли ви клацаєте на його аватар.
 
-Проте цю функціональність можна вимкнути:
+Однак ми можемо вимкнути цю функціональність:
 
-[code-example-start config = {disableProfiles: true}; linesToHighlight = [6]; title = 'Disable Profiles'; code-example-end]
+[code-example-start config = {disableProfiles: true}; linesToHighlight = [6]; title = 'Вимкнути профілі'; code-example-end]
 
-Це також можна зробити без коду. На сторінці налаштування віджета див. розділ «Вимкнення профілів».
+Це також можна зробити без коду. На сторінці налаштування віджета, перегляньте розділ "Вимкнути профілі".
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-profiles']; selector = '.disable-profiles'; title='Disable Profiles' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-profiles']; selector = '.disable-profiles'; alt='Сторінка налаштування віджета з позначеним прапорцем \"Вимкнути профілі\", так що аватари більше не відкривають профілі'; title='Вимкнути профілі' app-screenshot-end]
 
 ---

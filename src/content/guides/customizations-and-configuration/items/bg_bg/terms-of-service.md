@@ -1,4 +1,4 @@
-FastComments ви позволява да изисквате от потребителите, които коментират за първи път, да приемат вашите Условия за ползване преди да изпратят коментар.
+FastComments ви позволява да изискате от коментаторите, които коментират за първи път, да приемат вашите Условия за ползване, преди да изпратят коментар.
 
 When enabled:
 - **Anonymous users** will see a TOS checkbox every time they comment
@@ -6,12 +6,12 @@ When enabled:
 
 ### Configuration
 
-Навигирайте до страницата за персонализиране на уиджета и включете отметката "Require Terms of Service acceptance". След като е включена, ще видите следните опции:
+Navigate to the widget customization page and enable the "Require Terms of Service acceptance" checkbox. Once enabled, you'll see the following options:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.tos-enabled'; selector = '#tos-options'; title='Terms of Service Options' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.tos-enabled'; selector = '#tos-options'; alt='Панел за Условията за ползване, показващ селектора за режим на текст и полето за дата на последно обновяване'; title='Опции за Условията за ползване' app-screenshot-end]
 
-- **TOS Text Mode**: По подразбиране отметката показва "I agree to the Terms of Service and Privacy Policy" с връзки към двата документа. Изберете "Customize text per locale", за да предоставите собствен текст за всеки език.
-- **TOS Last Updated Date**: Когато актуализирате вашите Условия за ползване, задайте тази дата. Потребителите, които са приели преди тази дата, ще трябва да приемат отново.
+- **TOS Text Mode**: By default, the checkbox displays "I agree to the Terms of Service and Privacy Policy" with links to both documents. Select "Customize text per locale" to provide your own text for each language.
+- **TOS Last Updated Date**: When you update your Terms of Service, set this date. Users who accepted before this date will be required to accept again.
 
 ### How It Works
 

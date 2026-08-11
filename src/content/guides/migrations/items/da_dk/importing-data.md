@@ -14,24 +14,24 @@ We natively support importing exports from the following providers:
 
 By navigating [here](https://fastcomments.com/auth/my-account/manage-data/import) we can upload the file containing the data to migrate.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; title='Importsideformular' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; alt='FastComments importside med udbyderudvælgelse og filuploadfelter for en eksportfil'; title='Importsideformularen' app-screenshot-end]
 
-### Overvågning af import
+### Monitoring Imports
 
 FastComments uses a job processing system for processing imports and exports. Once the system has picked up your job, it will periodically report the status of the job in the import or export UI.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; title='Importjobstatus' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; alt='Importside, der viser et kørende importjob og status rapporteret af jobbehandlingssystemet'; title='Importjobstatus' app-screenshot-end]
 
 Note that the status for Imports and Export are viewable by all administrators in the account.
 
 If your job fails, it will not automatically be restarted. The import will have to be attempted again. If any import or export fails, our system administrators are automatically notified. If we identify an issue, we'll reach out to you to see if we can help.
 
-### Kørsel af importen igen
+### Re-Running The Import
 
 During some migrations, it is necessary to run the import multiple times. For example, it is common to do a first pass migration for testing, and then run the import again with the latest data before flipping the switch.
 
 Re-importing the same content **will not create duplicates**.
 
-### Datasikkerhed og udløb
+### Data Security and Expiration
 
 Import files are not accessible via outside requests in any way, and import files are deleted from our system as soon as the import completes.

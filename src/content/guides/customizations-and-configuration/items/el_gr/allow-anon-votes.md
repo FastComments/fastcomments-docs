@@ -1,8 +1,8 @@
 ---
-Όταν οι χρήστες προσπαθούν να ψηφίσουν ένα σχόλιο και δεν έχουν συνδεθεί, θα τους ζητηθεί να δώσουν το όνομα χρήστη και το email τους.
+Όταν οι χρήστες προσπαθούν να ψηφίσουν ένα σχόλιο και δεν είναι συνδεδεμένοι, θα τους ζητηθεί να παρέχουν το όνομα χρήστη και το email τους.
 
-Μπορούμε να καταργήσουμε αυτήν την απαίτηση, επιτρέποντας σε οποιονδήποτε να ψηφίσει ένα σχόλιο χωρίς να αφήσει καμία πληροφορία.
+Μπορούμε να αφαιρέσουμε αυτήν την απαίτηση, επιτρέποντας σε οποιονδήποτε να ψηφίσει ένα σχόλιο χωρίς να αφήσει καμία πληροφορία.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-votes']; selector = '.allow-anonymous-votes'; title='Allow Anonymous Votes' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-votes']; selector = '.allow-anonymous-votes'; alt='Σελίδα προσαρμογής widget με την επιλογή ανώνυμων ψήφων ενεργοποιημένη, ώστε η ψήφος να μην χρειάζεται όνομα ή email'; title='Επιτρέψτε Ανώνυμες Ψήφους' app-screenshot-end]
 
 ---

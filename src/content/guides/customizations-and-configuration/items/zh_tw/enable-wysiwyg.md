@@ -1,15 +1,15 @@
 ---
 [related-parameter-start name = 'enableWYSIWYG'; type = 'boolean'; related-parameter-end]
 
-預設情況下，FastComments 的格式化功能是透過在文字周圍加入像 `<b></b>` 這類可見的標籤來完成。點擊工具列
-或使用快速鍵會為你執行這個動作。不過，有些社群可能希望選擇在沒有可見標籤的情況下使用格式化功能。這稱為啟用
-WYSIWYG（所見即所得）編輯器。這個編輯器的外觀與預設編輯器完全相同，不同之處在於它會載入一些
-額外的程式碼，讓使用者可以在不產生可見標籤的情況下將文字加粗、加底線等。
+預設情況下，FastComments 的格式化功能是透過在文字周圍加入可見的錨點標籤（例如 `<b></b>`）來實現。點擊工具列
+或使用快捷鍵會為您自動完成此操作。然而，某些社群可能希望使用不帶錨點標籤的格式化。這稱為啟用
+WYSIWYG（所見即所得）編輯器。此編輯器與預設編輯器外觀完全相同，只是會載入一些
+額外的程式碼，允許使用者在不顯示錨點標籤的情況下加粗、加底線等。
 
-[code-example-start config = {enableWYSIWYG: true}; linesToHighlight = [6]; title = 'Enabling WYSIWYG Editing'; code-example-end]
+[code-example-start config = {enableWYSIWYG: true}; linesToHighlight = [6]; title = '啟用 WYSIWYG 編輯'; code-example-end]
 
-這也可以在不撰寫程式碼的情況下完成。在小工具自訂頁面，請查看「啟用進階格式化」選項。
+這也可以不寫程式碼完成。在小工具自訂頁面中，請查看「啟用進階格式化」選項。
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-wysiwyg']; selector = '.enable-search-label'; title='Enable WYSIWYG' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-wysiwyg']; selector = '.enable-search-label'; alt='已勾選「啟用進階格式化」核取方塊以開啟 WYSIWYG 編輯器的小工具自訂頁面'; title='啟用 WYSIWYG' app-screenshot-end]
 
 ---

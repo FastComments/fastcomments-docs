@@ -1,14 +1,14 @@
 ---
-預設情況下，FastComments 不限制留言可使用的語言。 
+By default, FastComments does not limit languages used to comment. 
 
-有時可能需要限制社群使用的語言。
+It may be desirable to limit the languages a community uses.
 
-可以在小工具（widget）自訂頁面上設定，無需撰寫程式碼：
+This can be configured without code, on the widget customization page:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allowed-languages']; selector = '.allowed-languages'; title='Allowed Languages' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allowed-languages']; selector = '.allowed-languages'; alt='在小工具自訂頁面上，用於限制評論可使用語言的允許語言選擇器'; title='允許的語言' app-screenshot-end]
 
-系統會解析留言以判斷語言，並將其與允許語言清單比對。
+The system will parse their comment and determine its language, and then match it with the allowed list.
 
-如果留言使用的語言不在允許清單中，系統會顯示對應語言的錯誤訊息。 
+If the comment is written in a language that is not allowed, then a localized error message is shown. 
 
 ---

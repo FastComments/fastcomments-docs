@@ -1,12 +1,10 @@
----
-По умолчанию FastComments поставляется со списком запрещённых слов, содержащим примерно 450 фраз и слов.
+By default, FastComments comes with a word blacklist of ~450 phrases and words.
 
-Если в новом комментарии обнаружится текст из этого списка, он будет заменён на звёздочки (***).
+If text in the word blacklist is found in a new comment that text will be replaced with asterisks (***).
 
-Страницу для настройки черного списка можно найти через Модерировать комментарии -> Редактировать настройки модерации -> Редактировать черный список слов, или
-перейдя напрямую <a href="https://fastcomments.com/auth/my-account/moderate-comments/blacklist" target="_blank">сюда</a>.
+The page to customize the blacklist can be found via Moderate Comments -> Edit Moderation Settings -> Edit Word Blacklist, or
+by going directly <a href="https://fastcomments.com/auth/my-account/moderate-comments/blacklist" target="_blank">сюда</a>.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/blacklist?blurList=true'; linkUrl='/auth/my-account/moderate-comments/blacklist'; selector = '.account-block'; title='Comment Word Blacklist' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/blacklist?blurList=true'; linkUrl='/auth/my-account/moderate-comments/blacklist'; selector = '.account-block'; alt='Редактор черного списка слов, где можно добавить или удалить стандартные заблокированные слова и фразы'; title='Черный список слов комментариев' app-screenshot-end]
 
-Кроме того, вы можете отключить обнаружение ненормативной лексики на странице <a href="https://fastcomments.com/auth/my-account/moderate-comments/settings" target="_blank">Редактировать настройки модерации</a>.
----
+Additionally, you can disable Profanity Detection on the <a href="https://fastcomments.com/auth/my-account/moderate-comments/settings" target="_blank">Редактировать настройки модерации</a> page.

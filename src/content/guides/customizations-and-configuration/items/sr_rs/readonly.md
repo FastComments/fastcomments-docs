@@ -1,19 +1,19 @@
 [related-parameter-start name = 'readonly'; type = 'boolean'; related-parameter-end]
 
-Коментарисање се може закључати тако да се не могу остављати нови коментари или гласови подешавањем флага readonly на true.
+Komentarisanje se može zaključati tako da se ne mogu ostaviti novi komentari ili glasovi postavljanjem zastavice readonly na true.
 
-Коментари такође неће моћи да буду уређивани или избрисани.
+Komentari takođe neće moći da se uređuju ili brišu.
 
 [code-example-start config = {readonly: true}; linesToHighlight = [6]; title = 'Making The Comment Thread Readonly'; code-example-end]
 
-Ово се може прилагодити без кода, на страници за прилагођавање виџета, за цео домен или страницу:
+Ovo se može prilagoditi bez koda, na stranici za prilagođavanje widgeta, za ceo domen ili stranicu:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.prevent-new-replies'; title='Making The Comment Thread Readonly' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.prevent-new-replies'; alt='Postavka za sprečavanje novih odgovora na stranici za prilagođavanje widgeta, koja zaključava nit za domen ili stranicu'; title='Postavljanje niti komentara u režim samo za čitanje' app-screenshot-end]
 
-## Ажурирање!
+## Ažuriranje!
 
-Од новембра 2022. године, теме могу бити закључане или откључане **у реалном времену** од стране администратора и модератора преко менија са три тачке изнад поља за одговор.
+Od novembra 2022, niti se mogu zaključati ili otključati **uživo** od strane administratora i moderatora putem menija sa tri tačke iznad oblasti za odgovor.
 
-Ово ће спречити нове коментаре, али ће и даље дозвољавати гласање и омогућити корисницима да по жељи обришу своје коментаре, док `readonly` не дозвољава ове функције. 
+Ovo će sprečiti nove komentare, dok će i dalje omogućiti glasanje i omogućiti korisnicima da izbrišu svoje komentare po želji, dok `readonly` ne dozvoljava ove stvari. 
 
-Ово одговара пољу `isClosed` у `Page` API-ју.
+Ovo odgovara polju `isClosed` u `Page` API-ju.

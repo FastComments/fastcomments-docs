@@ -1,18 +1,18 @@
 [related-parameter-start name = 'collapseReplies'; type = 'boolean'; related-parameter-end]
 
-Από προεπιλογή, οι απαντήσεις στα σχόλια κορυφαίου επιπέδου εμφανίζονται.
+Από προεπιλογή, εμφανίζονται οι απαντήσεις σε σχόλια πρώτου επιπέδου.
 
-Αυτό μπορεί να ρυθμιστεί έτσι ώστε ο χρήστης να πρέπει να κάνει κλικ "Show Replies" στα σχόλια κορυφαίου επιπέδου για να δει τα παιδιά.
+Αυτό μπορεί να ρυθμιστεί ώστε ο χρήστης να πρέπει να κάνει κλικ στο «Show Replies» στα σχόλια πρώτου επιπέδου για να δει τα παιδικά σχόλια.
 
-[code-example-start config = {collapseReplies: true}; linesToHighlight = [6]; title = 'Collapse Replies to Top Level Comments'; code-example-end]
+[code-example-start config = {collapseReplies: true}; linesToHighlight = [6]; title = 'Σύμπτυξη Απαντήσεων σε Σχόλια Επί Πρώτου Επιπέδου'; code-example-end]
 
-Αυτό μπορεί να προσαρμοστεί χωρίς κώδικα, στη σελίδα προσαρμογής του widget:
+Αυτό μπορεί να προσαρμοστεί χωρίς κώδικα, στη σελίδα προσαρμογής widget:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.collapse-replies'; title='Collapse Replies' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.collapse-replies'; alt='Επιλογή σύμπτυξης απαντήσεων στη διεπαφή προσαρμογής widget, κρύβοντας τα παιδικά σχόλια πίσω από έναν σύνδεσμο Show Replies'; title='Σύμπτυξη Απαντήσεων' app-screenshot-end]
 
-Αυτή η ρύθμιση δεν θα επηρεάσει τον αριθμό των αρχικά φορτωμένων σχολίων κορυφαίου επιπέδου. Εάν έχετε ένα σχόλιο κορυφαίου επιπέδου και 29 απαντήσεις, με αυτή τη ρύθμιση ενεργοποιημένη θα:
+Αυτή η ρύθμιση δεν θα επηρεάσει τον αριθμό των σχολίων πρώτου επιπέδου που φορτώνονται αρχικά. Εάν έχετε ένα σχόλιο πρώτου επιπέδου και 29 παιδικά σχόλια, με αυτή τη ρύθμιση ενεργή θα:
 
-- Θα δείτε το σχόλιο κορυφαίου επιπέδου.
-- Θα δείτε Show Replies (29) κάτω από αυτό το σχόλιο.
+- Δείτε το σχόλιο πρώτου επιπέδου.
+- Δείτε το «Show Replies (29)» κάτω από αυτό το σχόλιο.
 
-Εάν επιθυμείτε να εμφανίζονται όλα τα σχόλια κορυφαίου επιπέδου σε συνδυασμό με αυτήν την επιλογή, ορίστε [starting page to -1](#starting-page).
+Εάν θέλετε να εμφανίσετε όλα τα σχόλια πρώτου επιπέδου σε συνδυασμό με αυτήν την επιλογή, ορίστε [starting page to -1](#starting-page).

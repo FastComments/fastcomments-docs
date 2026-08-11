@@ -1,11 +1,14 @@
-Следвайте същите стъпки за `localhost` както бихте направили за production. Уверете се, че сте настроили production домейни и API Secrets.
+---
+Follow the same steps for `localhost` as you would production. Ensure you have production domains and API Secrets setup.
 
-Първо, отидете на [Администриране на Webhooks](https://fastcomments.com/auth/my-account/manage-data/webhooks). Това е достъпно чрез Manage Data -> Webhooks.
+First, navigate to the [Администратор на уебкуки](https://fastcomments.com/auth/my-account/manage-data/webhooks). This is accessible via Управление на данни -> Уебкуки.
 
-Страницата за конфигурация изглежда по следния начин:
+The configuration page appears as follows:
 
-[app-screenshot-start url='/auth/my-account/manage-data/webhooks'; selector = '.content'; title='Webhooks Configuration'; cacheBuster = 'v3' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/webhooks'; selector = '.content'; alt='Страница за администриране на уебкуки с избирач на домейн и поле за URL на крайна точка за всяко събитие на коментар, плюс бутон „Изпрати тестово натоварване“'; title='Конфигурация на уебкуки'; cacheBuster = 'v3' app-screenshot-end]
 
-На тази страница можете да посочите endpoints за всеки тип събитие на коментар.
+In this page you can specify endpoints for each type of comment event.
 
-За всеки тип събитие задължително кликнете върху Send Test Payload, за да се уверите, че интеграцията е настроена правилно. Вижте следващия раздел, "Testing", за подробности.
+For each type of event, be sure to click Send Test Payload to ensure you've set up your integration correctly. See the next section, "Testing", for details.
+
+---

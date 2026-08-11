@@ -1,8 +1,11 @@
-Ko uporabniki vnesejo hashtage v obliki `#someexampletag`, bo FastComments samodejno ustvaril ta `HashTag` in
-ga označil v njihovem komentarju.
+---
+Ko uporabniki vnašajo hashtag-e v obliki `#someexampletag`, FastComments bo samodejno ustvaril ta `HashTag` in 
+poudaril ga v njihovem komentarju.
 
-V nekaterih primerih je zaželeno onemogočiti to funkcijo ali nadzorovati, kateri hashtagi so lahko uporabljeni preko API-ja.
+V nekaterih primerih je zaželeno onemogočiti to funkcijo ali nadzorovati, kateri hashtag-i se lahko uporabljajo prek API-ja.
 
-To naredite tako, da preprosto omogočite `Disable Automatic #hashtag Creation` v uporabniškem vmesniku za prilagajanje pripomočka.
+Za to preprosto omogočite `Disable Automatic #hashtag Creation` prek uporabniškega vmesnika za prilagajanje gradnikov.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-automatic-hash-tag-creation']; selector = '.disable-automatic-hash-tag-creation'; title='Disabling Automatic HashTag Creation' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-automatic-hash-tag-creation']; selector = '.disable-automatic-hash-tag-creation'; alt='Možnost onemogočanja samodejne ustvaritve #hashtag-a omogočena v uporabniškem vmesniku za prilagajanje gradnika'; title='Onemogočanje samodejne ustvaritve HashTag-a' app-screenshot-end]
+
+---

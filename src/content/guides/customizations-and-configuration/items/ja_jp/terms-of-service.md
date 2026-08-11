@@ -1,24 +1,23 @@
----
-FastCommentsでは、初めてコメントするユーザーに対して、コメントを送信する前に利用規約への同意を必須にすることができます。
+FastCommentsでは、初めてコメントするユーザーにコメントを送信する前に利用規約への同意を求めることができます。
 
-When enabled:
-- **Anonymous users** will see a TOS checkbox every time they comment
-- **Authenticated users** will see the checkbox only on their first comment, or when you update your TOS
+有効にすると:
+- **匿名ユーザー** はコメントするたびに利用規約のチェックボックスが表示されます
+- **認証済みユーザー** は最初のコメント時、または利用規約を更新したときのみチェックボックスが表示されます
 
-### 設定
+### Configuration
 
-ウィジェットのカスタマイズページに移動し、「Require Terms of Service acceptance」チェックボックスを有効にします。 有効にすると、以下のオプションが表示されます:
+ウィジェットのカスタマイズページに移動し、"利用規約の受諾を必須にする" チェックボックスを有効にします。有効化すると、以下のオプションが表示されます:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.tos-enabled'; selector = '#tos-options'; title='Terms of Service Options' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.tos-enabled'; selector = '#tos-options'; alt='利用規約パネルはTOSテキストモードセレクタと最終更新日フィールドを表示しています'; title='利用規約オプション' app-screenshot-end]
 
-- **TOS Text Mode**: デフォルトでは、チェックボックスには両方のドキュメントへのリンク付きで "I agree to the Terms of Service and Privacy Policy" と表示されます。 "Customize text per locale" を選択すると、各言語ごとに独自のテキストを指定できます。
-- **TOS Last Updated Date**: 利用規約を更新したときは、この日付を設定してください。この日付より前に同意したユーザーは再度同意が必要になります。
+- **TOS Text Mode**: デフォルトでは、チェックボックスは「利用規約およびプライバシーポリシーに同意します」というテキストと両方のドキュメントへのリンクを表示します。「ロケールごとにテキストをカスタマイズ」を選択すると、各言語向けに独自のテキストを提供できます。
+- **TOS Last Updated Date**: 利用規約を更新する際にこの日付を設定します。この日付以前に同意したユーザーは、再度同意が必要になります。
 
-### 仕組み
+### How It Works
 
-- 利用規約同意のタイムスタンプはユーザーごと・コメントごとに保存されます
-- ユーザーが利用規約に同意すると、その日付はユーザープロフィール（テナントごと）に記録されます
-- 設定した「最終更新日」がユーザーの同意日より後であれば、再度同意が必要になります
-- 追跡できない匿名ユーザーについては、チェックボックスが各コメント送信時に表示されます
+- TOS の受諾タイムスタンプはユーザーごと、コメントごとに保存されます
+- ユーザーが TOS に同意すると、その日付がユーザープロファイル（テナントごと）に記録されます
+- 「最終更新」日付をユーザーの受諾日より後に設定した場合、ユーザーは再度同意する必要があります
+- 追跡できない匿名ユーザーの場合、チェックボックスはすべてのコメント送信時に表示されます
 
 ---

@@ -1,13 +1,13 @@
-對於 `localhost`，請按照與 production 相同的步驟操作。請確保您已設定 production 網域與 API Secrets。
+---
+對於 `localhost` 請遵循與生產環境相同的步驟。確保已設定生產域名和 API 密鑰。
 
-首先，前往 [Webhooks 管理](https://fastcomments.com/auth/my-account/manage-data/webhooks)。可透過 Manage Data -> Webhooks 存取。
+首先，前往 [Webhooks admin](https://fastcomments.com/auth/my-account/manage-data/webhooks)。此頁面可透過「管理資料」->「Webhooks」存取。
 
-The configuration page appears as follows:
+設定頁面如下所示：
 
-[app-screenshot-start url='/auth/my-account/manage-data/webhooks'; selector = '.content'; title='Webhooks Configuration'; cacheBuster = 'v3' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/webhooks'; selector = '.content'; alt='Webhooks 管理頁面，包含每個評論事件的域名選擇器和端點 URL 欄位，以及「發送測試有效負載」'; title='Webhooks 設定'; cacheBuster = 'v3' app-screenshot-end]
 
-在此頁面中，您可以為每種類型的留言事件指定端點。
+在此頁面中，您可以為每種評論事件指定端點。
 
-對於每種事件類型，請務必點擊 Send Test Payload 以確認您的整合設定正確。詳情請參見下一節「Testing」。
-
+對於每種事件，請務必點擊「發送測試有效負載」以確保已正確設定整合。詳情請參閱下一節「Testing」。
 ---

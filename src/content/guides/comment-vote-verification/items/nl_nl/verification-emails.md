@@ -1,19 +1,22 @@
-Wanneer een gebruiker een opmerking of stem achterlaat en ze niet zijn ingelogd, of hun account is
-ongeverifieerd, ontvangen ze een e-mail waarin wordt gevraagd deze actie te verifiëren.
+---
+When a user leaves a comment, or vote, and they are not logged in, or their account is
+unverified, they will receive an email asking them to verify this action.
 
-We doen ons best je gebruikers niet te spammen met e-mails, en we sturen niet meer dan één
-verificatie-e-mail per sessie. Zie de sectie Sessions voor meer details.
+However, we do our best not to spam your users with emails, and won't send more than one
+verification email per session. See the Sessions section for more details.
 
-Standaard zien de verificatie-e-mails voor opmerkingen er als volgt uit:
+By default, the comment verification emails look like the following:
 
-[app-screenshot-start url='/test-e2e/email/commenter-verify-post?comment=%7B"commenterName"%3A"Alexander"%2C"comment"%3A"This%20is%20my%20comment."%2C"commentHTML"%3A"This%20is%20my%20comment."%2C"date"%3A1588812198540%7D&removedInDays=3&FC_DOMAIN=https%3A%2F%2Ffastcomments.com&tenant=%7B"removeUnverifiedComments"%3Atrue%7D&verifyPostUrl=http%3A%2F%2Fexample.com&locale=en_us&API_KEY=T0ph%20123!'; linkUrl=false; selector = '.content'; title='Comment Verification Email' app-screenshot-end]
+[app-screenshot-start url='/test-e2e/email/commenter-verify-post?comment=%7B"commenterName"%3A"Alexander"%2C"comment"%3A"This%20is%20my%20comment."%2C"commentHTML"%3A"This%20is%20my%20comment."%2C"date"%3A1588812198540%7D&removedInDays=3&FC_DOMAIN=https%3A%2F%2Ffastcomments.com&tenant=%7B"removeUnverifiedComments"%3Atrue%7D&verifyPostUrl=http%3A%2F%2Fexample.com&locale=en_us&API_KEY=T0ph%20123!'; linkUrl=false; selector = '.content'; alt='Standaard verificatie‑e‑mailtekst die Alexanders reactie citeert met een knop om het bericht te bevestigen'; title='Reactie Verificatie‑e‑mail' app-screenshot-end]
 
-Standaard zien de verificatie-e-mails voor stemmen er als volgt uit:
+By default, the vote verification emails look like the following:
 
-[app-screenshot-start url='/test-e2e/email/commenter-verify-vote?vote=%7B"commenterName"%3A"Devon"%2C"comment"%3A"This%20is%20my%20comment.%20I%20totally%20left%20it%20intentionally.%20Yup."%2C"date"%3A1588812198540%7D&commenterName=Devon&url=some%20-%20url&removedInDays=3&FC_DOMAIN=https%3A%2F%2Ffastcomments.com&tenant=%7B"removeUnverifiedComments"%3Atrue%7D&verifyUrl=http%3A%2F%2Fexample.com&locale=en_us&API_KEY=T0ph%20123!'; linkUrl=false; selector = '.content'; title='Vote Verification Email' app-screenshot-end]
+[app-screenshot-start url='/test-e2e/email/commenter-verify-vote?vote=%7B"commenterName"%3A"Devon"%2C"comment"%3A"This%20is%20my%20comment.%20I%20totally%20left%20it%20intentionally.%20Yup."%2C"date"%3A1588812198540%7D&commenterName=Devon&url=some%20-%20url&removedInDays=3&FC_DOMAIN=https%3A%2F%2Ffastcomments.com&tenant=%7B"removeUnverifiedComments"%3Atrue%7D&verifyUrl=http%3A%2F%2Fexample.com&locale=en_us&API_KEY=T0ph%20123!'; linkUrl=false; selector = '.content'; alt='Standaard e‑mail die Devon vraagt een stem te bevestigen, met de reactie waarop gestemd is en een bevestigingsknop'; title='Stem Verificatie‑e‑mail' app-screenshot-end]
 
-Standaard toont FastComments zijn logo en naam in de voettekst van deze e-mails:
+By default, FastComments will show its logo and name in the footer of these emails:
 
-[app-screenshot-start url='/test-e2e/email/commenter-verify-vote?vote=%7B"commenterName"%3A"Devon"%2C"comment"%3A"This%20is%20my%20comment.%20I%20totally%20left%20it%20intentionally.%20Yup."%2C"date"%3A1588812198540%7D&commenterName=Devon&url=some%20-%20url&removedInDays=3&FC_DOMAIN=https%3A%2F%2Ffastcomments.com&tenant=%7B"removeUnverifiedComments"%3Atrue%7D&verifyUrl=http%3A%2F%2Fexample.com&locale=en_us&API_KEY=T0ph%20123!'; linkUrl=false; selector = '.footer'; width = 700; title='Email Footer' app-screenshot-end]
+[app-screenshot-start url='/test-e2e/email/commenter-verify-vote?vote=%7B"commenterName"%3A"Devon"%2C"comment"%3A"This%20is%20my%20comment.%20I%20totally%20left%20it%20intentionally.%20Yup."%2C"date"%3A1588812198540%7D&commenterName=Devon&url=some%20-%20url&removedInDays=3&FC_DOMAIN=https%3A%2F%2Ffastcomments.com&tenant=%7B"removeUnverifiedComments"%3Atrue%7D&verifyUrl=http%3A%2F%2Fexample.com&locale=en_us&API_KEY=T0ph%20123!'; linkUrl=false; selector = '.footer'; width = 700; alt='Onderkant van een verificatie‑e‑mail die het standaard FastComments‑logo en -naam in de voettekst toont'; title='E‑mailvoettekst' app-screenshot-end]
 
-Als je op het Flex- of Pro-abonnement zit, [De afzendernaam, het e-mailadres en de branding kunnen worden aangepast](/guide-multiple-sites.html#from-name-email-logo).
+If you are on the Flex or Pro tiers, [The from name, email, and branding can be customized](/guide-multiple-sites.html#from-name-email-logo).
+
+---

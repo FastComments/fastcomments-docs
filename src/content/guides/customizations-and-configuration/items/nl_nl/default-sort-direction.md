@@ -1,29 +1,29 @@
 [related-parameter-start name = 'defaultSortDirection'; type = 'string'; related-parameter-end]
 
-Standaard sorteert FastComments reacties op basis van de "Most Relevant" sorteer­richting.
+Standaard sorteert FastComments opmerkingen op de sorteer richting "Meest Relevant".
 
-De "Most Relevant"-sortering houdt rekening met het tijdstip waarop de reactie is geplaatst en het aantal stemmen bij het sorteren.
+Meest Relevant sortering houdt rekening met de tijd waarop de opmerking is geplaatst en het aantal stemmen bij het sorteren.
 
-De gebruiker kan vervolgens in de comment-widget UI de sorteer­richting wijzigen naar ofwel Oldest of Newest First.
+De gebruiker kan vervolgens de sorteer richting wijzigen naar Oudste of Nieuwste eerst in de UI van de opmerking widget.
 
-We kunnen de standaardwaarde echter naar elk van de drie wijzigen. Bijvoorbeeld als je de oudste reacties eerst wilt tonen:
+We kunnen de standaard echter wijzigen naar een van de drie. Bijvoorbeeld als je de oudste opmerkingen eerst wilt weergeven:
 
-[code-example-start config = {defaultSortDirection: "OF"}; linesToHighlight = [6]; title = 'Changing The Default Sort To Oldest First'; code-example-end]
+[code-example-start config = {defaultSortDirection: "OF"}; linesToHighlight = [6]; title = 'De standaard sortering wijzigen naar oudste eerst'; code-example-end]
 
-We stellen de waarde van **defaultSortDirection** in op "OF" om de richting op "OF" te zetten.
+We stellen de waarde van **defaultSortDirection** in op "OF" om de richting in te stellen op "OF".
 
-Voor de newest-first sorteer­richting zouden we het volgende doen:
+Voor de nieuwste-eerst sorteer richting zouden we het volgende doen:
 
-[code-example-start config = {defaultSortDirection: "NF"}; linesToHighlight = [6]; title = 'Changing The Default Sort To Newest First'; code-example-end]
+[code-example-start config = {defaultSortDirection: "NF"}; linesToHighlight = [6]; title = 'De standaard sortering wijzigen naar nieuwste eerst'; code-example-end]
 
 De geldige waarden voor **defaultSortDirection** zijn:
 
-- MR: "Most Recent"
-- NF: "Newest First"
-- OF: "Oldest First"
+- MR: "Meest Recent"
+- NF: "Nieuwste eerst"
+- OF: "Oudste eerst"
 
-Dit kan ook zonder code. Op de pagina voor widget‑aanpassing, zie de sectie "Standaard sorteerrichting".
+Dit kan ook zonder code worden gedaan. Op de widget-aanpassingspagina, zie de sectie "Standaard sorteer richting".
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.default-sort-direction'; title='Changing The Default Sort Direction' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.default-sort-direction'; alt='Standaard sorteer richting selector die Meest Relevant, Nieuwste eerst en Oudste eerst aanbiedt'; title='De standaard sorteer richting wijzigen' app-screenshot-end]
 
-Let op: de reacties op elke pagina voor elke sorteer­richting worden vooraf berekend, dus alle sorteer­richtingen hebben dezelfde prestaties.
+Merk op dat de opmerkingen op elke pagina voor elke sorteer richting vooraf worden berekend, zodat alle sorteer richtingen dezelfde prestaties hebben.

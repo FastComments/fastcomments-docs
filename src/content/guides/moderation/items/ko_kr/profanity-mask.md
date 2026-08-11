@@ -1,13 +1,10 @@
----
-기본적으로 FastComments에는 약 450개의 문구와 단어로 구성된 단어 블랙리스트가 포함되어 있습니다.
+By default, FastComments comes with a word blacklist of ~450 phrases and words.
 
-새 댓글에서 단어 블랙리스트에 포함된 텍스트가 발견되면 해당 텍스트는 별표(***)로 대체됩니다.
+If text in the word blacklist is found in a new comment that text will be replaced with asterisks (***).
 
-단어 블랙리스트를 사용자화하는 페이지는 댓글 중재 -> 중재 설정 편집 -> 단어 블랙리스트 편집에서 찾을 수 있습니다, 또는
-직접 <a href="https://fastcomments.com/auth/my-account/moderate-comments/blacklist" target="_blank">여기</a>로 이동하세요.
+The page to customize the blacklist can be found via Moderate Comments -> Edit Moderation Settings -> Edit Word Blacklist, or
+by going directly <a href="https://fastcomments.com/auth/my-account/moderate-comments/blacklist" target="_blank">여기</a>.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/blacklist?blurList=true'; linkUrl='/auth/my-account/moderate-comments/blacklist'; selector = '.account-block'; title='Comment Word Blacklist' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/blacklist?blurList=true'; linkUrl='/auth/my-account/moderate-comments/blacklist'; selector = '.account-block'; alt='기본 차단된 단어와 구문을 추가하거나 제거할 수 있는 단어 블랙리스트 편집기'; title='댓글 단어 블랙리스트' app-screenshot-end]
 
-또한, <a href="https://fastcomments.com/auth/my-account/moderate-comments/settings" target="_blank">중재 설정 편집</a> 페이지에서 비속어 감지를 비활성화할 수 있습니다.
-
----
+Additionally, you can disable Profanity Detection on the <a href="https://fastcomments.com/auth/my-account/moderate-comments/settings" target="_blank">검토 설정 편집</a> page.

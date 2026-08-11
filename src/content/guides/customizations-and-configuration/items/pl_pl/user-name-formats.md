@@ -1,20 +1,18 @@
-Domyślnie FastComments pokaże nazwę użytkownika tak, jak ją wprowadził, lub tak, jak została przekazana przez SSO.
+Domyślnie FastComments wyświetla nazwę użytkownika tak, jak została wprowadzona, lub jak została przekazana nam przez SSO.
 
-Jednak może być pożądane zamaskowanie lub wyświetlenie nazwy użytkownika w inny sposób. Na przykład, jeśli nazwa użytkownika to Allen Rex, być może
-chcesz pokazywać tylko "Allen R.".
+Jednakże może być pożądane ukrycie lub wyświetlenie nazwy użytkownika w inny sposób. Na przykład, jeśli nazwa użytkownika to Allen Rex, może chcesz wyświetlać tylko „Allen R.”.
 
-Można to zrobić bez kodu w Widget Customization UI, w ustawieniu o nazwie `Commenter Name Format`:
+Można to zrobić bez kodu w interfejsie dostosowywania widgetu, w ustawieniu o nazwie `Commenter Name Format`:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.commenter-name-format select'; selector = '.commenter-name-format'; title='Change Name Format' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.commenter-name-format select'; selector = '.commenter-name-format'; alt='Dropdown Formatu Nazwy Komentującego otwarty z opcjami takimi jak Capitalize, Last Initial i All Initials'; title='Zmień format nazwy' app-screenshot-end]
 
-Dostępne formaty to:
+Dostępne formaty są:
 
-- Capitalize (wyświetla Example User jako Example User)
+- Capitalize (wyświetla przykładowego użytkownika jako Example User)
 - Last Initial (wyświetla Example User jako Example U.)
 - All Initials (wyświetla Example User jako E. U.)
-- Pokaż "Anonim"
+- Show "Anonymous"
 
-Efekt tej zmiany jest natychmiastowy. Użytkownicy nadal będą widzieć swoją pełną nazwę użytkownika na górze obszaru komentarzy, dla siebie, ale ich komentarze będą pokazywać
-zmodyfikowaną nazwę użytkownika.
+Efekt zmiany jest natychmiastowy. Użytkownicy nadal zobaczą swoją pełną nazwę użytkownika na górze obszaru komentarza, dla siebie, ale ich komentarze będą wyświetlać zmodyfikowaną nazwę użytkownika.
 
 Nazwy użytkowników są maskowane po stronie serwera w celu ochrony użytkowników.

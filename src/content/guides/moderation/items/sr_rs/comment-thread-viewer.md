@@ -1,18 +1,16 @@
----
-Када модерирате и прегледате нити коментара, пожељно је моћи директно прећи на одређену нити да бисте добили контекст током модерирања.
+Kada moderirate i pregledate niti komentara, poželjno je moći direktno skočiti na nit kako biste dobili kontekst tokom moderacije.
 
-То значи да кориснички ток почиње на страници за модерирање коментара, и затим би морао да пређе са појединачног коментара на страницу која садржи тај коментар, да сачека да се страница учита, да сачека да се коментари учитају, и затим да скролује до тог коментара.
+Ovo znači da korisnikov tok počinje na stranici **Comment Moderation**, a zatim bi morao da pređe sa pojedinačnog komentara na
+stranicu koja sadrži taj komentar, sačeka da se stranica učita, sačeka da se učitaju komentari i potom se pomeri do tog komentara.
 
-Међутим, FastComments нуди бржи начин. На страници Модерирање коментара, поред сваког коментара, у доњем десном углу налази се дугме "Прикажи коментар".
+Međutim, FastComments nudi brži način. Na stranici **Moderate Comments**, pored svakog komentara, nalazi se dugme „View Comment“ u donjem desnom uglu.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=1&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.comments .comment-component'; title='A Comment' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=1&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.comments .comment-component'; alt='Jedan komentar u listi moderacije, sa dugmetom View Comment u donjem desnom uglu'; title='Komentar' app-screenshot-end]
 
-Ако овај коментар има одговоре, текст на дугмету ће уместо тога показивати број одговора, али кликом на њега извршава се иста радња.
+Ako ovaj komentar ima odgovore, tekst na dugmetu će umesto toga prikazivati broj odgovora, ali klik na dugme izvršava istu radnju.
 
-Ово дугме ће вас одвести у **Прегледач нити коментара**.
+Ovo dugme će vas odvesti do **Comment Thread Viewer**‑a.
 
-Прегледач нити коментара је мала, брзо учитавајућа апликација коју хостује FastComments, а која приказује нит коментара за страницу на којој се тај коментар налази и скролује до тог коментара.
+**Comment Thread Viewer** je mala, brzo učitavajuća aplikacija koju hostuje FastComments i koja renderuje nit komentara za stranicu na kojoj se komentar nalazi, te se pomera do tog komentara.
 
-Ово омогућава модераторима да брзо прикупе потребни контекст, без потребе да чекају да се учита друга страница.
-
----
+Ovo omogućava moderatorima da brzo prikupe potreban kontekst, bez čekanja da se učita druga stranica.

@@ -1,9 +1,12 @@
 [related-parameter-start name = 'enableWYSIWYG'; type = 'boolean'; related-parameter-end]
 
-בברירת המחדל, פונקציות העיצוב ב-FastComments מתבצעות על ידי הוספת תגי עוגן גלויים כמו `<b></b>` סביב הטקסט שלך. לחיצה על סרגל הכלים או שימוש בקיצורי מקשים עושה זאת עבורך. עם זאת, קהילות מסוימות עשויות לרצות לבחור להשתמש בעיצוב ללא תגי עוגן גלויים. זה נקרא הפעלת העורך WYSIWYG (מה שאתה רואה הוא מה שאתה מקבל). העורך הזה נראה בדיוק כמו העורך של ברירת המחדל, למעט שהוא טוען קצת קוד נוסף שמאפשר למשתמשים להדגיש, לקו תחתון וכו' את הטקסט שלהם ללא תגי עוגן גלויים.
+בברירת מחדל, הפונקציות של עיצוב ב‑FastComments מתבצעות על‑ידי הוספת תגי עוגן גלויים כמו `<b></b>` סביב הטקסט שלך. לחיצה על סרגל הכלים
+או שימוש בקיצורים עושה זאת עבורך. עם זאת, קהילות מסוימות עשויות לרצות להשתמש בעיצוב ללא תגי עוגן. זה נקרא הפעלת
+WYSIWYG (what you see is what you get) editor. עורך זה נראה בדיוק כמו העורך ברירת המחדל, אלא שהוא טוען קוד נוסף
+המאפשר למשתמשים להדגיש, לקו תחתי, וכו' את הטקסט שלהם ללא תגי עוגן גלויים.
 
-[code-example-start config = {enableWYSIWYG: true}; linesToHighlight = [6]; title = 'Enabling WYSIWYG Editing'; code-example-end]
+[code-example-start config = {enableWYSIWYG: true}; linesToHighlight = [6]; title = 'הפעלת עריכת WYSIWYG'; code-example-end]
 
-ניתן גם לעשות זאת ללא קוד. בדף ההתאמה האישית של הווידג'ט, ראה את האפשרות "הפעלת עיצוב מתקדם".
+זה גם ניתן לבצע ללא קוד. בעמוד התאמה אישית של הווידג'ט, ראה את האפשרות "Enable Advanced Formatting".
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-wysiwyg']; selector = '.enable-search-label'; title='Enable WYSIWYG' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-wysiwyg']; selector = '.enable-search-label'; alt='דף התאמה אישית של הווידג\'ט עם תיבת הסימון Enable Advanced Formatting מסומנת כדי להפעיל את עורך ה‑WYSIWYG'; title='הפעלת WYSIWYG' app-screenshot-end]

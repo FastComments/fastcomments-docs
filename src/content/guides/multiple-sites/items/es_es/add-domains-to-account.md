@@ -1,29 +1,29 @@
-FastComments autentica las solicitudes a su cuenta para verificar que provienen de su sitio. Por eso necesitamos saber en qué sitio, o sitios, desea instalar FastComments.
+FastComments autentica las solicitudes a su cuenta para ver que provienen de su sitio. Por eso necesitamos saber qué sitio o sitios desea instalar FastComments.
 
-FastComments admite la autenticación por dominio, así como por subdominios.
+FastComments admite la autenticación mediante dominio, así como subdominios.
 
-Tomemos el sitio `https://example.com`. En este caso, "`example.com`" es el dominio. `example.com` admite tanto `example.com` como `www.example.com`. Llamaremos "www" el "subdominio".
+Tomemos el sitio `https://example.com`. En este caso, "`example.com`" es el dominio. `example.com` admite tanto `example.com` como `www.example.com`. Llamaremos al "www" el "subdominio".
 
-For Example:
+Por ejemplo:
 
-- To allow only `blog.example.com`:
-  - Add `blog.example.com` to your domains.
-- To allow `www.example.com`, `somesite.example.com`, and `example.com`:
-  - Add `example.com` to your domains.
-  - This is billed as having **one domain** associated with your account.
-- You can now add wildcard subdomains, for example *myname.vercel.app. 
-  - This is billed as having **one domain** associated with your account.
+- Para permitir solo `blog.example.com`:
+  - Añada `blog.example.com` a sus dominios.
+- Para permitir `www.example.com`, `somesite.example.com` y `example.com`:
+  - Añada `example.com` a sus dominios.
+  - Esto se factura como **un dominio** asociado a su cuenta.
+- Ahora puede añadir subdominios comodín, por ejemplo *myname.vercel.app.
+  - Esto se factura como **un dominio** asociado a su cuenta.
 
-Si estuviera usando una plataforma de blogs y le hubieran asignado un subdominio, querría añadir el **dominio completo incluyendo el subdominio** a su cuenta, por ejemplo: `cats.blogger.com`.
+Si estuviera usando una plataforma de blogs y le asignaran un subdominio, querría añadir el **dominio completo incluido el subdominio** a su cuenta, por ejemplo: `cats.blogger.com`.
 
-We can add domains to our account by visiting the `My Domains` page and clicking `Add a Domain` at the bottom:
+Podemos añadir dominios a nuestra cuenta visitando la página `My Domains` y haciendo clic en `Add a Domain` al final:
 
-[app-screenshot-start url='/auth/my-account/configure-domains'; selector = '.content'; title='The My Domains Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/configure-domains'; selector = '.content'; alt='Página My Domains que muestra los dominios en la cuenta, con el botón Añadir un dominio al final'; title='La página My Domains' app-screenshot-end]
 
-Durante el período de prueba, **los dominios se añaden automáticamente a su cuenta** cuando las solicitudes provienen de dichos dominios. Sin embargo, después de este periodo deben añadirse explícitamente por razones de seguridad. Debería recibir un correo electrónico cuando ocurra este comportamiento automatizado.
+Durante el período de prueba, **los dominios se añaden automáticamente a su cuenta** cuando las solicitudes provienen de dichos dominios. Sin embargo, después de este tiempo deben añadirse explícitamente por motivos de seguridad. Debería recibir un correo electrónico cuando ocurra este comportamiento automatizado.
 
-You do **not** have to add `localhost` for local development - it is allowed by default.
+No tiene que añadir `localhost` para desarrollo local; está permitido por defecto.
 
 #### A través de la API
 
-Domains can also be added and configured [via the DomainConfigs API](/guide-api.html#domain-config-structure).
+Los dominios también pueden añadirse y configurarse [a través de la API DomainConfigs](/guide-api.html#domain-config-structure).

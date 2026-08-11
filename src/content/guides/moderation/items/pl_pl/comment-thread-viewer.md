@@ -1,18 +1,17 @@
----
-Podczas moderowania i przeglądania wątków komentarzy pożądane jest, aby mieć możliwość bezpośredniego przejścia do wątku, by uzyskać kontekst podczas moderowania.
+When moderating and viewing comment threads it is desirable to be able to jump directly to a thread to get context during moderating.
 
-Oznacza to, że przepływ użytkownika zaczyna się na stronie Moderacja komentarzy, a następnie musiałby przejść od pojedynczego komentarza do strony zawierającej ten komentarz, poczekać na załadowanie tej strony, poczekać na załadowanie komentarzy, a następnie przewinąć do tego komentarza.
+This means that the user's flow starts in the Comment Moderation page, and would then have to go from an individual comment to
+the page containing that comment, wait for that page to load, wait for the comments to load, and then scroll to that comment.
 
-Jednak FastComments oferuje szybszy sposób. Na stronie Moderacja komentarzy, obok każdego komentarza, w prawym dolnym rogu znajduje się przycisk „Wyświetl komentarz”.
+However, FastComments provides a faster way. In the Moderate Comments page, next to each comment, there is a "View Comment" button in the bottom right.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=1&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.comments .comment-component'; title='A Comment' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=1&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.comments .comment-component'; alt='Pojedynczy komentarz na liście moderacji, z przyciskiem „View Comment” w prawym dolnym rogu'; title='Komentarz' app-screenshot-end]
 
-Jeżeli ten komentarz ma odpowiedzi, tekst przycisku zamiast tego pokaże liczbę odpowiedzi, ale kliknięcie wykonuje tę samą akcję.
+If this comment has replies, the button text will instead say the number of replies, but clicking it takes the same action.
 
-Ten przycisk przeniesie cię do **Widoku wątku komentarzy**.
+This button will take you to the **Comment Thread Viewer**.
 
-Widok wątku komentarzy to niewielka, szybko ładująca się aplikacja hostowana przez FastComments, która renderuje wątek komentarzy dla strony, na której znajduje się komentarz, i przewija do tego komentarza.
+The Comment Thread Viewer is a small, fast loading application hosted by FastComments that renders the comment thread for the page that
+the comment is on, and scrolls to that comment.
 
-Pozwala to moderatorom szybko uzyskać potrzebny kontekst, bez konieczności oczekiwania na załadowanie innej strony.
-
----
+This allows moderators to gather the context they need to, quickly, without having to wait for another page to load.

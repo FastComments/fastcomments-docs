@@ -1,13 +1,11 @@
 [related-parameter-start name = 'enableSearch'; type = 'boolean'; related-parameter-end]
 
-Po zadanim postavkama u widgetu za komentare nije prikazan okvir za pretraživanje.
+Prema zadanim postavkama, u widgetu za komentare se ne prikazuje polje za pretraživanje.
 
-Međutim, to možemo uključiti postavljanjem zastavice **enableSearch** na true:
+Međutim, možemo ga uključiti postavljanjem zastavice **enableSearch** na true:
 
-[code-example-start config = {enableSearch: true}; linesToHighlight = [6]; title = 'Enabling Search'; code-example-end]
+[code-example-start config = {enableSearch: true}; linesToHighlight = [6]; title = 'Omogućavanje pretraživanja'; code-example-end]
 
-Ovo se također može napraviti bez koda. Na stranici za prilagodbu widgeta potražite opciju "Omogući okvir za pretraživanje".
+Ovo se također može učiniti bez koda. Na stranici za prilagodbu widgeta, pogledajte opciju "Enable Search Box".
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-search-label']; selector = '.enable-search-label'; title='Enable Search Box' app-screenshot-end]
-
----
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-search-label']; selector = '.enable-search-label'; alt='Stranica za prilagodbu widgeta s označenim potvrdnim okvirom Enable Search Box kako bi se prikazalo polje za pretraživanje u widgetu'; title='Omogući polje za pretraživanje' app-screenshot-end]

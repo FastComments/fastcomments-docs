@@ -1,12 +1,15 @@
+---
 [related-parameter-start name = 'enableWYSIWYG'; type = 'boolean'; related-parameter-end]
 
-Par défaut, les fonctionnalités de formatage dans FastComments sont réalisées en ajoutant des balises visibles comme `<b></b>` autour de votre texte. Cliquer sur la barre d'outils
-ou utiliser des raccourcis effectue cela pour vous. Cependant, certaines communautés peuvent souhaiter opter pour un formatage sans balises visibles. On appelle cela l'activation de
-l'éditeur WYSIWYG (ce que vous voyez est ce que vous obtenez). Cet éditeur a exactement le même aspect que celui par défaut, sauf qu'il charge du
-code supplémentaire qui permet aux utilisateurs de mettre le texte en gras, de le souligner, etc. sans balises visibles.
+Par défaut, les fonctionnalités de formatage dans FastComments sont réalisées en ajoutant des balises d'ancrage visibles comme `<b></b>` autour de votre texte. Cliquer sur la barre d'outils
+ou utiliser des raccourcis le fait pour vous. Cependant, certaines communautés peuvent souhaiter activer le formatage sans balises d'ancrage. Cela s'appelle l'activation du
+WYSIWYG (what you see is what you get) éditeur. Cet éditeur ressemble exactement à celui par défaut, sauf qu'il charge du
+code supplémentaire qui permet aux utilisateurs de mettre du texte en gras, souligné, etc. sans balises d'ancrage visibles.
 
-[code-example-start config = {enableWYSIWYG: true}; linesToHighlight = [6]; title = 'Enabling WYSIWYG Editing'; code-example-end]
+[code-example-start config = {enableWYSIWYG: true}; linesToHighlight = [6]; title = 'Activation de l\'édition WYSIWYG'; code-example-end]
 
-Ceci peut aussi être fait sans code. Dans la page de personnalisation du widget, consultez l'option « Activer le formatage avancé ».
+Cela peut également être fait sans code. Dans la page de personnalisation du widget, voyez l'option "Enable Advanced Formatting".
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-wysiwyg']; selector = '.enable-search-label'; title='Enable WYSIWYG' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-wysiwyg']; selector = '.enable-search-label'; alt='Page de personnalisation du widget avec la case à cocher Enable Advanced Formatting cochée pour activer l\'éditeur WYSIWYG'; title='Activer WYSIWYG' app-screenshot-end]
+
+---

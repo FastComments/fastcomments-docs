@@ -1,13 +1,13 @@
-Domyślnie FastComments nie zezwala na iframy w komentarzach. Po włączeniu osadzania mediów, komentujący mogą wkleić kod osadzenia (fragment `<iframe>`) od zaufanych dostawców, takich jak YouTube, Vimeo, SoundCloud i Spotify, i zostanie on wyrenderowany bezpośrednio w komentarzu.
+By default FastComments does not allow iframes in comments. When you enable media embeds, commenters can paste the embed code (the `<iframe>` snippet) from trusted providers like YouTube, Vimeo, SoundCloud, and Spotify, and it will render inline in the comment.
 
-Ze względów bezpieczeństwa nie jest to flaga konfiguracji widgetu po stronie klienta. To ustawienie po stronie serwera, walidowane przy zapisywaniu każdego komentarza, więc nie można go włączyć z poziomu strony. Dozwolone są tylko iframy wskazujące na wbudowaną listę zaufanych dostawców. Każdy inny iframe jest usuwany.
+For security, this is not a client-side widget config flag. It is a server-side setting, validated when each comment is saved, so it cannot be turned on from the page. Only iframes pointing at a built-in list of trusted providers are allowed. Any other iframe is removed.
 
-To odbywa się bez kodu, na stronie dostosowywania widgetu:
+This is done without code, on the widget customization page:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.allow-embeds'; selector = '.allow-embeds'; title='Allow Media Embeds' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.allow-embeds'; selector = '.allow-embeds'; alt='Ustawienie osadzania mediów włączone na stronie dostosowywania widgetu, umożliwiające komentującym wklejanie zaufanych osadzonych iframe'; title='Zezwalaj na osadzanie mediów' app-screenshot-end]
 
-### Dodawanie własnych dostawców
+### Adding Your Own Providers
 
-Jeśli chcesz zezwolić na osadzanie z dostawcy, który nie znajduje się na wbudowanej liście zaufanych, dodaj jego nazwę hosta w polu "Dodatkowe domeny osadzeń" na tej samej stronie. Te nazwy hostów są dozwolone dodatkowo do wbudowanych dostawców. Dopasowanie jest dokładne, więc podaj pełną nazwę hosta (na przykład player.example.com). Wszystko, czego nie wymienisz, pozostanie zablokowane.
+If you want to allow embeds from a provider that is not on the built-in trusted list, add its hostname in the "Additional Embed Domains" field on the same page. These hostnames are allowed in addition to the built-in providers. Matching is exact, so include the full hostname (for example, player.example.com). Anything you do not list stays blocked.
 
-Zarówno zwykłe pole komentarza, jak i edytor WYSIWYG obsługują wklejanie osadzenia. W edytorze WYSIWYG osadzenie jest wstawiane jako blok, który można usunąć.
+Both the plain comment box and the WYSIWYG editor support pasting an embed. In the WYSIWYG editor the embed is inserted as a removable block.

@@ -1,11 +1,14 @@
-Det sted, hvor størstedelen af modereringen foregår, er kommentarmodereringssiden. For eksempel: her er et skærmbillede af vores nuværende demokonto:
+---
+Stedet hvor den meste moderation foregår er Comment Moderation siden. For eksempel, her er et screenshot af vores nuværende demo-konto:
 
-[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = 'body'; title='Comment Moderation Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = 'body'; alt='Fuld Kommentarmoderation side for demo-kontoen, viser filtre, søgning og tre kommentarer pr. side'; title='Kommentarmoderationsside' app-screenshot-end]
 
-Vi har sat antallet pr. side til tre for at holde dette skærmbillede i en rimelig størrelse. I praksis vil du som regel arbejde med 50 kommentarer pr. side som standard.
+Vi har sat antallet pr. side til tre for at gøre dette screenshot til en rimelig størrelse. I praksis vil du arbejde med 50 kommentarer pr. side som standard.
 
-Moderationssiden understøtter også [Tastaturgenveje](#keyboard-shortcuts) til at navigere mellem kommentarer og udføre handlinger uden at bruge musen. Tryk **?** på moderationssiden for at se alle tilgængelige genveje.
+Moderationssiden understøtter også [Keyboard Shortcuts](#keyboard-shortcuts) til at navigere mellem kommentarer og udføre handlinger uden at bruge musen. Tryk på **?** på moderationssiden for at se alle tilgængelige genveje.
 
-Siden er også **live** — når nye kommentarer ankommer, der matcher dine nuværende filtre, vises et banner øverst, der gør dig opmærksom på det. Se [Live-moderering](#comment-actions-live) for detaljer.
+Siden er også **live** — når nye kommentarer ankommer, som matcher dine aktuelle filtre, vises en banner øverst, der advarer dig. Se [Live Moderating](#comment-actions-live) for detaljer.
 
-Lad os gennemgå de viste funktioner.
+Lad os gå ind i funktionerne, der vises her.
+
+---

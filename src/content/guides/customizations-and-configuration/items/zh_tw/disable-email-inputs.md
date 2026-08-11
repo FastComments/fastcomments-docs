@@ -1,17 +1,19 @@
-當使用者發表留言且尚未登入時，系統會要求他們提供電子郵件。
+When users comment, and they are not logged in, they will be asked to provide their email.
 
-這會為該使用者建立一個「未驗證的工作階段」，並透過電子郵件要求他們驗證該工作階段。
+This will create an "unverified session" for that user, and we will ask them to verify that session via email.
 
-對於某些網站或應用程式，當使用者評論或投票時不要求提供電子郵件可能比較合適。
+For some sites, or applications, it's desirable not to ask the user for their email when commenting or voting.
 
-啟用匿名留言會使電子郵件輸入欄位變為選填。然而，我們也可以將其完全停用。請先啟用
-anonymous commenting，然後停用電子郵件輸入欄位的選項便會出現。
+Enabling anonymous commenting makes the email input field optional. However, we can disable it completely. First, enable
+anonymous commenting, and then the option to disable the email input fields will appear.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments', '.disable-email-inputs']; selector = '.disable-email-inputs'; title='Disable Email Inputs' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments', '.disable-email-inputs']; selector = '.disable-email-inputs'; alt='在自訂 UI 中啟用匿名評論後顯示的，完全隱藏電子郵件欄位的選項'; title='停用電子郵件輸入欄位' app-screenshot-end]
 
-啟用此設定後，電子郵件欄位將在我們所有的留言產品中完全不顯示。
+With this on, the email fields will not show at all in all of our commenting products.
 
-請注意，使用此設定時，所有留言都會是未驗證狀態，除非使用者創建帳號並登入
-https://fastcomments.com。
+Note that, with this configuration, all comments will be unverified unless the user creates an account and logs into
+https://fastcomments.com.
 
-您可能想考慮[停用「未驗證」標籤](/guide-customizations-and-configuration.html#disable-unverified-label)。
+You may want to consider [disabling the unverified label](/guide-customizations-and-configuration.html#disable-unverified-label).
+
+---

@@ -1,9 +1,10 @@
-За замовчуванням кожен користувач може надіслати до `5 comments` за ту саму хвилину.
+By default, each user can submit up to `5 comments` in the same minute.
 
-Це відстежується за user id, anon user id, та ip address (hashed).
+This is tracked by user id, anon user id, and ip address (hashed).
 
-Це можна налаштувати без коду, на сторінці налаштувань віджета:
+This can be customized without code, on the widget customization page:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.max-comments-per-minute'; title='Limiting Comment Volume Per User' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.max-comments-per-minute'; alt='Поле «Максимальна кількість коментарів за хвилину» на сторінці налаштування віджету, встановлене за замовчуванням на 5'; title='Limiting Comment Volume Per User' app-screenshot-end]
 
-Зверніть увагу, що якщо ви використовуєте comment creation API, можливо, варто передати оригінальну `ip` адресу користувача в запиті до нашого backend, щоб rate limiting застосовувався per user і не глобально до вашого акаунту.
+Note that if you're using the comment creation API may want to pass the user's original `ip` address in the request to our backend so rate limiting is applied
+до користувача і не глобально до вашого облікового запису.

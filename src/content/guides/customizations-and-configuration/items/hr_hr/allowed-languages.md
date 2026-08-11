@@ -1,11 +1,14 @@
-Po zadanom, FastComments ne ograničava jezike koji se koriste za komentiranje. 
+---
+By default, FastComments does not limit languages used to comment. 
 
-Može biti poželjno ograničiti jezike koje zajednica koristi.
+It may be desirable to limit the languages a community uses.
 
-Ovo se može konfigurirati bez koda, na stranici za prilagodbu widgeta:
+This can be configured without code, on the widget customization page:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allowed-languages']; selector = '.allowed-languages'; title='Allowed Languages' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allowed-languages']; selector = '.allowed-languages'; alt='Selektor dopuštenih jezika na stranici prilagodbe widgeta za ograničavanje koje jezike komentari mogu koristiti'; title='Dopušteni jezici' app-screenshot-end]
 
-Sustav će analizirati njihov komentar i odrediti njegov jezik, a zatim ga usporediti s popisom dopuštenih jezika.
+The system will parse their comment and determine its language, and then match it with the allowed list.
 
-Ako je komentar napisan na jeziku koji nije dopušten, prikazuje se lokalizirana poruka o pogrešci.
+If the comment is written in a language that is not allowed, then a localized error message is shown. 
+
+---

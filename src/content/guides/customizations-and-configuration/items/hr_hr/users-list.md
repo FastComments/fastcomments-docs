@@ -1,30 +1,30 @@
 [related-parameter-start name = 'usersListLocation'; type = 'number'; related-parameter-end]
 [related-parameter-start name = 'usersListIncludeOffline'; type = 'boolean'; related-parameter-end]
 
-Po zadanim postavkama, FastComments ne prikazuje listu korisnika na stranici.
+Prema zadanim postavkama, FastComments ne prikazuje popis korisnika na stranici.
 
-Možete prikazati listu osoba koje trenutno gledaju stranicu, uz widget za komentare. Lista se ažurira uživo kako korisnici dolaze i odlaze, i prikazuje njihovo ime, avatar i indikator online statusa.
+Možete prikazati popis ljudi koji trenutno pregledavaju stranicu, uz widget za komentare. Popis se ažurira u stvarnom vremenu kako se korisnici pridružuju i napuštaju stranicu, te prikazuje njihovo ime, avatar i indikator online statusa.
 
-Postoje tri opcije izgleda:
+Postoje tri opcije rasporeda:
 
-- `1` - Vrh: horizontalni red preklapajućih avatara prikazan iznad komentara.
-- `2` - Lijevo: bočna traka s imenima i točkama za online status prikazana lijevo od widgeta.
-- `3` - Desno: ista bočna traka prikazana desno od widgeta.
+- `1` - Vrh: vodoravni red preklapajućih avatara prikazan iznad komentara.
+- `2` - Lijevo: bočna traka s imenima i online točkicama prikazana s lijeve strane widgeta.
+- `3` - Desno: ista bočna traka prikazana s desne strane widgeta.
 
-Postavite zastavicu **usersListLocation** za omogućavanje značajke:
+Postavite zastavicu **usersListLocation** da omogućite ovu značajku:
 
-[code-example-start config = {usersListLocation: 3}; linesToHighlight = [6]; title = 'Show Users List on the Right'; code-example-end]
+[code-example-start config = {usersListLocation: 3}; linesToHighlight = [6]; title = 'Prikaži popis korisnika s desne strane'; code-example-end]
 
-Po zadanim postavkama lista prikazuje samo korisnike koji su trenutno online. Da biste uključili i osobe koje su komentirale na stranici u prošlosti (ali trenutno je ne gledaju), postavite **usersListIncludeOffline** na true:
+Prema zadanim postavkama popis prikazuje samo korisnike koji su trenutno online. Da biste također uključili osobe koje su u prošlosti komentirale stranicu (ali je trenutno ne pregledavaju), postavite **usersListIncludeOffline** na true:
 
-[code-example-start config = {usersListLocation: 3, usersListIncludeOffline: true}; linesToHighlight = [6, 7]; title = 'Include Past Commenters'; code-example-end]
+[code-example-start config = {usersListLocation: 3, usersListIncludeOffline: true}; linesToHighlight = [6, 7]; title = 'Uključi prošle komentatore'; code-example-end]
 
-Prošli komentatori se prikazuju bez zelene točkice online statusa kako bi bilo jasno tko je trenutno prisutan.
+Prošli komentatori se prikazuju bez zelenog online kruga kako bi bilo jasno tko je trenutno prisutan.
 
-Korisnici s privatnim profilima prikazuju se s generičkim avatarom i oznakom "Private Profile" kako bi broj ostao točan bez otkrivanja identiteta.
+Korisnici s privatnim profilima prikazani su generičkim avatarom i oznakom "Privatni profil" kako bi broj ostao točan, a identiteti ostali neotkriveni.
 
-Ovo se također može konfigurirati bez koda. Na stranici za prilagodbu widgeta, pogledajte opciju "Users List Location". Kada je lokacija postavljena na bilo što osim Off, ispod se pojavljuje potvrdni okvir "Include past commenters".
+Ovo se također može konfigurirati bez koda. Na stranici za prilagodbu widgeta, pogledajte opciju "Users List Location". Kada je lokacija postavljena na bilo koju vrijednost osim Off, pojavljuje se potvrdni okvir "Include past commenters" ispod nje.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.users-list-settings'; title='Users List Settings'; actions=[{type: 'set-value', selector: '#users-list-location-input', value: '3'}] app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.users-list-settings'; alt='Lokacija popisa korisnika postavljena na desno, s potvrdnim okvirom \'Uključi prošle komentatore\' prikazanim ispod'; title='Postavke popisa korisnika'; actions=[{type: 'set-value', selector: '#users-list-location-input', value: '3'}] app-screenshot-end]
 
-Ako je više od 500 korisnika uživo, lista može biti ažurirana s zakašnjenjem do 30 sekundi.
+Nakon 500 aktivnih korisnika, popis može biti za najviše 30 sekundi zastario.

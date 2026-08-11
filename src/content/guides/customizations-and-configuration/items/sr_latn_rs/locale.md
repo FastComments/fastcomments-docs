@@ -1,30 +1,29 @@
 [related-parameter-start name = 'locale'; type = 'string'; related-parameter-end]
 
-Po podrazumevanoj vrednosti, FastComments će prikazati widget za komentare u lokalu koji je određen podešavanjima sistema i pregledača korisnika.
+Podrazumevano, FastComments će prikazati vidžet za komentare u lokalizaciji koju određuje sistem i pregledač korisnika.
 
-Kada korisnik ostavi komentar ili se prijavi, ažuriramo njihov poslednji korišćeni lokal i koristimo ga i za slanje e‑poruka.
+Kada korisnik komentariše ili se prijavi, ažuriramo njegovu poslednju korišćenu lokalizaciju i koristimo je i za slanje e‑mailova.
 
-Ovo utiče na način na koji je widget za komentare preveden za korisnika. Lokal se sastoji od jezika korisnika i regiona, tako da konfiguracija lokala će
-obično promeniti jezik koji se koristi za prikaz teksta korisniku.
+Ovo utiče na to kako je vidžet za komentarisanje preveden za korisnika. Lokalizacija se sastoji od jezika i regiona korisnika, tako da podešavanje lokalizacije obično menja jezik koji se koristi za prikaz teksta korisniku.
 
-#### Preko korisničkog interfejsa
+#### Putem UI-ja
 
-Ovo se može definisati koristeći interfejs za prilagođavanje widgeta. Pogledajte opciju "Lokal / Jezik":
+Ovo se može definisati pomoću UI-ja za prilagođavanje vidžeta. Pogledajte opciju „Locale / Language“:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.locale-override'; title='Changing The Locale / Language' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.locale-override'; alt='Padajući meni Locale / Language na stranici za prilagođavanje vidžeta koji se koristi za prepisivanje otkrivene lokalizacije posetioca'; title='Promena lokalizacije / jezika' app-screenshot-end]
 
 #### Putem koda
 
-Ovo se može prebrisati željenim lokalom.
+Ovo se može prepisati željenom lokalizacijom.
 
-[code-example-start config = {locale: 'ru_ru'}; linesToHighlight = [6]; title = 'Manually Defining the User\'s Locale'; code-example-end]
+[code-example-start config = {locale: 'ru_ru'}; linesToHighlight = [6]; title = 'Ručno definisanje korisnikove lokalizacije'; code-example-end]
 
-### Podržani jezici i kodovi lokala
+### Podržani jezici i kodovi lokalizacije
 
-[Kompletan spisak podržanih jezika i odgovarajućih kodova lokala možete pronaći ovde.](/guide-supported-languages.html#supported-languages)
+[Možete pronaći kompletnu listu podržanih jezika i odgovarajućih kodova lokalizacije ovde.](/guide-supported-languages.html#supported-languages)
 
-### Napomena za SSO
+### Napomena o SSO
 
-Ako koristite SSO, možda ćete želeti da prosledite lokal korisnika u user object, tako da su e‑poruke i druge stvari pravilno lokalizovane za njih.
+Ako koristite SSO, možda ćete želeti da prosledite korisnikovu lokalizaciju u objektu korisnika, kako bi e‑mailovi i druge stvari bile pravilno lokalizovane za njih.
 
 ---

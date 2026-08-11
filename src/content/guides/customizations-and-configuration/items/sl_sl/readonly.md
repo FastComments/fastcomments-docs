@@ -1,22 +1,19 @@
----
 [related-parameter-start name = 'readonly'; type = 'boolean'; related-parameter-end]
 
-Komentiranje je mogoče zakleniti, tako da z nastavitvijo zastavice readonly na true ni mogoče oddajati novih komentarjev ali glasov.
+Komentiranje je mogoče zakleniti, tako da z nastavitvijo zastavice readonly na true ne morejo biti objavljeni novi komentarji ali glasovi.
 
-Komentarjev prav tako ne bo mogoče urejati ali brisati.
+Komentarji tudi ne bodo mogli biti urejani ali izbrisani.
 
-[code-example-start config = {readonly: true}; linesToHighlight = [6]; title = 'Making The Comment Thread Readonly'; code-example-end]
+[code-example-start config = {readonly: true}; linesToHighlight = [6]; title = 'Zaklepanje niti komentarjev'; code-example-end]
 
-To je mogoče prilagoditi brez kode, na strani za prilagajanje widgeta, za celotno domeno ali stran:
+To je mogoče prilagoditi brez kode, na strani za prilagajanje gradnika, za celotno domeno ali stran:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.prevent-new-replies'; title='Making The Comment Thread Readonly' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.prevent-new-replies'; alt='Nastavitev preprečevanja novih odgovorov na strani za prilagajanje gradnika, ki zaklene nit za domeno ali stran'; title='Zaklepanje niti komentarjev' app-screenshot-end]
 
 ## Posodobitev!
 
-Od novembra 2022 lahko administratorji in moderatorji teme zaklenejo ali odklenijo **v živo** preko menija s tremi pikami nad območjem za odgovor.
+Od novembra 2022 je mogoče niti zakleniti ali odkleniti **v živo** s strani skrbnikov in moderatorjev prek menija s tremi pikami nad območjem odgovora.
 
-To bo preprečilo nove komentarje, hkrati pa bo še vedno omogočalo glasovanje in uporabnikom dovoljevalo brisanje njihovih komentarjev, če si to želijo, medtem ko `readonly` tega ne omogoča. 
+To bo preprečilo nove komentarje, hkrati pa bo še vedno omogočalo glasovanje in omogočalo uporabnikom, da po želji izbrišejo svoje komentarje, medtem ko `readonly` teh stvari ne dovoljuje. 
 
 To ustreza polju `isClosed` v API-ju `Page`.
-
----

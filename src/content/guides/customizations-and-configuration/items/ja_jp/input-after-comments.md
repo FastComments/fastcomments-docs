@@ -1,13 +1,12 @@
----
 [related-parameter-start name = 'inputAfterComments'; type = 'boolean'; related-parameter-end]
 
-デフォルトではコメント入力欄はコメントスレッドの**前**にあります。しかし、この設定パラメータを
-true に設定すると、コメント入力欄をコメントスレッドの**後**に移動できます。
+デフォルトでは、コメント入力エリアはコメントスレッドの **前** にあります。 ただし、この設定パラメータ
+を true に設定すると、**後** に移動できます。
 
-[code-example-start config = {inputAfterComments: true}; linesToHighlight = [6]; title = 'Moving The Reply Box to The Bottom'; code-example-end]
+[code-example-start config = {inputAfterComments: true}; linesToHighlight = [6]; title = '返信ボックスを下部に移動'; code-example-end]
 
-コードを書かずに、ウィジェットのカスタマイズページで設定できます:
+コードを使用せずに、ウィジェットカスタマイズページでカスタマイズできます：
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.input-after-comments'; title='Moving The Reply Box to The Bottom' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.input-after-comments'; alt='コメントスレッドの前ではなく後にコメント入力エリアを配置するウィジェットカスタマイズページのオプション'; title='返信ボックスを下部に移動' app-screenshot-end]
 
 ---

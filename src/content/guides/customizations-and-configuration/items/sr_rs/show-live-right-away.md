@@ -1,26 +1,21 @@
 [related-parameter-start name = 'showLiveRightAway'; type = 'boolean'; related-parameter-end]
 
-Podrazumevano je omogućeno komentarisanje uživo. To znači da, ako se bilo koji komentari dodaju, brišu, uređuju ili prikače, promene bi trebalo da se pojave
-svim korisnicima koji u tom trenutku gledaju nit komentara.
+Podrazumevano, živo komentarisanje je omogućeno. Ovo znači da, ako se bilo koji komentar doda, obriše, izmeni ili zakači, promene bi trebalo da se pojave svim korisnicima koji gledaju nit komentara u isto vreme.
 
-Međutim, po defaultu ti novi komentari će se pojaviti ispod dinamički prikazanog dugmeta sa tekstom sličnim "Prikaži 2 nova komentara".
+Međutim, podrazumevano ti novi komentari će se pojaviti ispod dinamički prikazanog dugmeta sa tekstom sličnim "Prikaži 2 nova komentara".
 
-Ako su novi komentari odgovori direktno na stranicu, dugme će se prikazati na vrhu niti komentara. Ako su odgovori na određeni komentar, 
-dugme će se prikazati ispod tog komentara.
+Ako su novi komentari odgovori direktno na stranicu, dugme će se prikazati na vrhu nite komentara. Ako su odgovori na određeni komentar, dugme će se prikazati ispod tog komentara.
 
-Ovo je da bi se sprečilo stalno menjanje veličine stranice, što može izazvati frustraciju kada korisnik pokuša da uhvati traku za pomeranje.
+Ovo je da se spreči stalna promena veličine stranice kod korisnika, što može izazvati frustraciju prilikom pokušaja hvatanja klizača.
 
-Za neke slučajeve upotrebe, kao što su licitacije uživo ili onlajn događaji, ovo nije poželjno ponašanje - možda ćete želeti da widget za komentare bude
-više kao "chat" prozor gde se novi komentari "prikazuju odmah".
+Za neke slučajeve upotrebe, poput živog licitiranja ili online događaja, ovo nije željeno ponašanje – možda želite da vidžet za komentarisanje bude više poput "chat" kutije gde se novi komentari "prikazuju odmah".
 
-Otuda i ime zastavice koja omogućava tu opciju: **showLiveRightAway**.
+Stoga, ime zastavice koja omogućava tu funkcionalnost: **showLiveRightAway**.
 
-Možemo ga uključiti na sledeći način:
+Možemo je uključiti na sledeći način:
 
 [code-example-start config = {showLiveRightAway: true}; linesToHighlight = [6]; title = 'Prikaži komentare uživo odmah'; code-example-end]
 
-Ovo se može prilagoditi bez koda, na stranici za prilagođavanje widgeta:
+Ovo se može prilagoditi bez koda, na stranici za prilagođavanje vidžeta:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.collapse-live-comments'; selector = '.collapse-live-comments'; title='Prikaži komentare uživo odmah' app-screenshot-end]
-
----
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.collapse-live-comments'; selector = '.collapse-live-comments'; alt='Postavka za skrivanje živih komentara je prebačena tako da se novi komentari pojavljuju odmah umesto iza dugmeta'; title='Prikaži komentare uživo odmah' app-screenshot-end]

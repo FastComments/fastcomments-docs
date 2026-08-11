@@ -1,20 +1,19 @@
 ---
 FastComments поддържа следните функции с SSR:
 
-- Персонализируем коментарен уиджет.
+- Персонализируем уиджет за коментиране.
 - Анонимно коментиране.
-- Коментиране при влизане.
+- Коментиране, докато сте влезли.
 - SSO.
-- Коренни и вложени отговори.
-- Преглед и странициране на нишки с коментари.
+- Главни и вложени отговори.
+- Преглед и странициране на нишки от коментари.
 - Гласуване, включително анонимно гласуване.
-- Промяна на посоката на сортиране по подразбиране.
+- Промяна на подразбиращата се посока на сортиране.
 
 ### Пример
 
-Пример за FastComments SSR е наличен [тук](https://fastcomments.com/ssr/comments?tenantId=L177BUDVvSe&urlId=ssr-test&url=https%3A%2F%2Ffastcomments.com%2Fssr%2Fcomments%2F%3FtenantId%3DL177BUDVvSe%26urlId%3Dssr-test).
+Пример за FastComments SSR е достъпен [тук](https://fastcomments.com/ssr/comments?tenantId=L177BUDVvSe&urlId=ssr-test&url=https%3A%2F%2Ffastcomments.com%2Fssr%2Fcomments%2F%3FtenantId%3DL177BUDVvSe%26urlId%3Dssr-test).
 
-[app-screenshot-start url='https://fastcomments.com/ssr/comments?tenantId=L177BUDVvSe&urlId=ssr-test&url=https%3A%2F%2Ffastcomments.com%2Fssr%2Fcomments%2F%3FtenantId%3DL177BUDVvSe%26urlId%3Dssr-test'; selector = 'body'; title='FastComments SSR' app-screenshot-end]
-
+[app-screenshot-start url='https://fastcomments.com/ssr/comments?tenantId=L177BUDVvSe&urlId=ssr-test&url=https%3A%2F%2Ffastcomments.com%2Fssr%2Fcomments%2F%3FtenantId%3DL177BUDVvSe%26urlId%3Dssr-test'; selector = 'body'; alt='Сървърно рендерирана нишка от коментари с вложени отговори, бутони за гласуване и полето за коментари на примерната страница за SSR'; title='FastComments SSR' app-screenshot-end]
 
 ---

@@ -1,29 +1,29 @@
 [related-parameter-start name = 'defaultSortDirection'; type = 'string'; related-parameter-end]
 
-Domyślnie FastComments sortuje komentarze według kierunku sortowania „Most Relevant”.
+Domyślnie FastComments sortuje komentarze według kierunku sortowania „Najbardziej istotne”.
 
-Sortowanie „Most Relevant” bierze pod uwagę czas dodania komentarza oraz liczbę głosów przy ustalaniu kolejności.
+Sortowanie „Najbardziej istotne” uwzględnia czas pozostawienia komentarza oraz liczbę głosów przy sortowaniu.
 
-Użytkownik może następnie zmienić kierunek sortowania na Najstarsze najpierw lub Najnowsze najpierw w interfejsie widżetu komentarzy.
+Użytkownik może następnie zmienić kierunek sortowania na najstarsze lub najnowsze najpierw w interfejsie widżetu komentarzy.
 
-Możemy jednak ustawić domyślny kierunek na dowolny z tych trzech. Na przykład, jeśli chcesz pokazywać najpierw najstarsze komentarze:
+Możemy jednak zmienić domyślne ustawienie na dowolne z trzech. Na przykład, jeśli chcesz wyświetlać najstarsze komentarze jako pierwsze:
 
-[code-example-start config = {defaultSortDirection: "OF"}; linesToHighlight = [6]; title = 'Changing The Default Sort To Oldest First'; code-example-end]
+[code-example-start config = {defaultSortDirection: "OF"}; linesToHighlight = [6]; title = 'Zmiana domyślnego sortowania na najstarsze najpierw'; code-example-end]
 
-Ustawiamy wartość **defaultSortDirection** na "OF", aby ustawić kierunek na "OF".
+Ustawiamy wartość **defaultSortDirection** na „OF”, aby ustawić kierunek na „OF”.
 
-Aby ustawić kierunek sortowania na najnowsze najpierw, zrobimy następująco:
+Aby ustawić kierunek sortowania najnowsze najpierw, wykonujemy następujące kroki:
 
-[code-example-start config = {defaultSortDirection: "NF"}; linesToHighlight = [6]; title = 'Changing The Default Sort To Newest First'; code-example-end]
+[code-example-start config = {defaultSortDirection: "NF"}; linesToHighlight = [6]; title = 'Zmiana domyślnego sortowania na najnowsze najpierw'; code-example-end]
 
 Prawidłowe wartości dla **defaultSortDirection** to:
 
-- MR: "Most Recent"
-- NF: "Newest First"
-- OF: "Oldest First"
+- MR: "Najbardziej aktualne"
+- NF: "Najnowsze najpierw"
+- OF: "Najstarsze najpierw"
 
-Można to także zrobić bez użycia kodu. Na stronie dostosowywania widżetu zobacz sekcję „Domyślny kierunek sortowania”.
+Można to zrobić również bez kodu. Na stronie dostosowywania widżetu, zobacz sekcję „Domyślny kierunek sortowania”.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.default-sort-direction'; title='Changing The Default Sort Direction' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.default-sort-direction'; alt='Selektor domyślnego kierunku sortowania oferujący Najbardziej istotne, Najnowsze najpierw i Najstarsze najpierw'; title='Zmiana domyślnego kierunku sortowania' app-screenshot-end]
 
-Zauważ, że komentarze na każdej stronie dla każdego kierunku sortowania są wstępnie obliczane, więc wszystkie kierunki sortowania mają taką samą wydajność.
+Należy zauważyć, że komentarze na każdej stronie dla każdego kierunku sortowania są wstępnie obliczane, więc wszystkie kierunki sortowania mają taką samą wydajność.

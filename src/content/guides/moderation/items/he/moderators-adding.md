@@ -1,21 +1,21 @@
-עבור מנהלים, בראש דף ניהול התגובות יש כפתור "הוסף מנהלים".
+For administrators, at the top of the Comment Moderation page is an Add Moderators button.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.moderation-settings-options'; title='Comment Moderation Setting Buttons' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.moderation-settings-options'; alt='שורת כפתורים בחלק העליון של דף ניהול תגובות, כולל כפתור הוספת ממונים'; title='כפתורי הגדרות ניהול תגובות' app-screenshot-end]
 
-אם כבר יש לכם מנהלים, הכפתור יציג "ערוך מנהלים".
+If you already have moderators, this button will say "Edit Moderators".
 
-בואו נסתכל על הדף "הוספת מנהל".
+Let's take a look at the "Add a Moderator" page.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/moderator/new'; selector = '.account-block'; title='The Add a Moderator Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/moderator/new'; selector = '.account-block'; alt='דף הוספת ממון המבקש רק את שם הממון החדש והדוא"ל לפני שליחת ההזמנה'; title='דף הוספת ממון' app-screenshot-end]
 
-כדי להוסיף מנהל, כל שנדרש הוא שם וכתובת אימייל.
+To add a moderator all that is needed is a name and an email.
 
-אם כתובת האימייל מקושרת לחשבון FastComments קיים, תישלח להם הזמנה בדוא"ל להצטרף לחשבונכם כמנהל.
+If the email is associated with an existing FastComments account, they will be invited via email to join your account as a moderator.
 
-אם כתובת האימייל הנתונה אינה מקושרת לחשבון FastComments קיים, ייווצר עבורם חשבון חדש.
+If the given email is not associated with an existing FastComments account, a new one will be created for them.
 
-קישור הזמנה יישלח למנהל, שיכול להיכנס אוטומטית. בעתיד, אם ירצו להיכנס, הם יכולים פשוט לבקר ב<a href="https://fastcomments.com/auth/login" target="_blank">דף ההתחברות</a> ולהזין את השם/האימייל שסיפקתם קודם. זה ישלח להם קישור להתחברות.
+An invite link will be sent to the moderator, which can automatically log them in. In the future if they wish to login, they can simply visit the
+<a href="https://fastcomments.com/auth/login" target="_blank">דף הכניסה</a> and enter the name/email that you provided earlier. This will send them
+a link to login.
 
-אלא אם יתנתקו, הם יישארו מחוברים למשך שלושים יום.
-
----
+Unless they log out, they will be logged in for thirty days.

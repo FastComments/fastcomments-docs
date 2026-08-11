@@ -1,32 +1,32 @@
 [related-parameter-start name = 'urlId'; type = 'string'; related-parameter-end]
 
-コメントスレッドを表示したり、コメントを投稿したりする際、FastComments はそのコメントがどのページ、記事、または製品に属しているかを把握する必要があります。
+コメントスレッドを表示したり、コメントを投稿したりする際、FastComments はそのコメントが属するページ、記事、または製品を把握する必要があります。
 
-これを行うために、私たちは「URL ID」と呼んでいるものを使用します。これは文字列や数字のような識別子、または URL です。
+そのために、私たちは「URL ID」と呼ばれるものを使用します。これは文字列や数値のような識別子、または URL のいずれかです。
 
-デフォルトでは、urlId を指定しない場合、ページの URL が URL ID になります。現在のページの URL を取得し、一般的なマーケティングパラメータやトラッキング識別子を削除してクリーンにします。
+デフォルトでは、urlId を指定しない場合はページの URL が使用されます。現在のページ URL を取得し、一般的なマーケティングパラメータやトラッキング識別子を除去してクリーンにします。
 
-WordPress のようなサードパーティ統合の場合、プラグインは通常、表示中の情報を表す識別子（たとえば記事/ページ ID）を URL ID として使用します。
+WordPress などのサードパーティ統合の場合、プラグインは通常、現在表示されている情報を表す識別子（例：記事/ページ ID）を URL ID として使用します。
 
 [code-example-start config = {urlId: 'https://example.com/page'}; linesToHighlight = [6]; title = 'Defining a Custom URL ID'; code-example-end]
 
-本ドキュメントでよく参照するものの一つに、<a href="https://fastcomments.com/auth/my-account/customize-widget/new">Widget Customization UI</a> があります。
+このドキュメントで頻繁に参照するものの一つは、<a href="https://fastcomments.com/auth/my-account/customize-widget/new">ウィジェットカスタマイズ UI</a>です。
 
-この UI を使うと、コードを使わずにコメントウィジェットを多くの点で変更できます。
+この UI を使用すると、コードを書かずにコメントウィジェットに多数の変更を加えることができます。
 
-カスタマイズルールを作成する際、サイトのすべてのページに適用したいことがよくあります。しかし、特定のページに対してコメントウィジェットをカスタマイズしたい場合もあります。例えば、特定のページだけカスタムスタイリングを適用したり、そのページのコメントを匿名にしたりすることができます。また、あるページではライブコメントをすぐに表示し、別のページでは通知ボタンの下に隠す、といったことも可能です。
+カスタマイズルールを作成する際、通常はサイト全体のすべてのページに適用したいと考えます。しかし、特定のページでコメントウィジェットをカスタマイズしたい場合もあります。たとえば、カスタムスタイルを適用したり、そのページのコメントを匿名化したりすることが考えられます。また、例として、あるページではライブコメントをすぐに表示し、別のページでは通知ボタンの下に隠すことも可能です。
 
-これはすべて、このページの URL ID 入力フィールドを使って実現できます。見た目は次のようになっています:
+これらはすべて、このページの URL ID 入力フィールドを使用して実現できます。フィールドは以下のようになります：
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.url-id'; title='URL ID Input in The Widget Customization Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.url-id'; alt='カスタマイズルールを1ページ、または */blog/* のようなパターンに適用するために使用される URL ID フィールド'; title='ウィジェットカスタマイズページの URL ID 入力' app-screenshot-end]
 
-このフィールドの値は、コメントウィジェットに渡される *urlId* パラメータと一致している必要があります。カスタマイズルールを *urlId* 非依存にしたい場合は、このフィールドを空にするか * を入力してください。
+このフィールドの値は、コメントウィジェットに渡される *urlId* パラメータと一致する必要があります。カスタマイズルールを *urlId* に依存させたくない場合は、このフィールドを空にするか、* を入力してください。
 
-As of 2023 the `URL ID` field in widget customization now also takes patterns! For example you may
-have `*/blog/*` to add styling specific to your blog and `*/store/*` to have styling specific to your store,
-all while using the same domain.
+2023年現在、ウィジェットカスタマイズの `URL ID` フィールドはパターンも受け付けるようになりました！たとえば、`*/blog/*` を使用してブログ専用のスタイルを追加したり、`*/store/*` を使用してストア専用のスタイルを適用したりできますが、ドメインは同じままです。
 
-### 注意点
+### Gotchas
 
-1. ページにハッシュパラメータ（例: example.com#page-1）がある場合 - デフォルトではこれが URL ID の一部になります。
-2. WordPress から Gatsby への移行などのマイグレーション中は、初回の移行後に URL ID コメント値を移行する必要がある場合があります。その際はお問い合わせください。
+1. ページにハッシュパラメータ（例: example.com#page-1）が含まれている場合、デフォルトでそれが URL ID の一部になります。
+2. 移行中、たとえば WordPress から Gatsby への移行の場合、初回の移行後に URL ID のコメント値を移行する必要があるかもしれません。その際はお問い合わせください。
+
+---

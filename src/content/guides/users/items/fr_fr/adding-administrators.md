@@ -1,15 +1,12 @@
----
-Les utilisateurs disposant de la permission `Super Admin` peuvent ajouter et supprimer d'autres modérateurs.
+Users with the `Super Admin` permission can add and remove other moderators.
 
-Un utilisateur peut être ajouté en accédant [à la page Utilisateurs](https://fastcomments.com/auth/my-account/users) et
-en cliquant sur `Add User` en bas.
+A user can be added by navigating [to the Users page](https://fastcomments.com/auth/my-account/users) and
+clicking `Add User` at the bottom.
 
-[app-screenshot-start url='/auth/my-account/users'; selector = '.content'; title='The Users Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/users'; selector = '.content'; alt='Page des utilisateurs répertoriant les administrateurs du compte, avec le bouton Ajouter un utilisateur en bas'; title='La page des utilisateurs' app-screenshot-end]
 
-Lors de l'ajout d'un utilisateur, nous pouvons définir son avatar, son nom d'utilisateur, son e-mail, sa langue et ses permissions.
+When adding a user we can set their avatar, username, email, locale, and permissions.
 
-[app-screenshot-start url='/auth/my-account/users/new/edit'; selector = '.content'; title='Adding a User' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/users/new/edit'; selector = '.content'; alt='Formulaire de modification d\'utilisateur avec les champs avatar, nom d\'utilisateur, e‑mail, langue et permissions remplis'; title='Ajout d\'un utilisateur' app-screenshot-end]
 
-Lors de l'ajout d'un administrateur, un e-mail de bienvenue et un lien de connexion lui seront envoyés.
-
----
+When adding an administrator, they will be sent a welcome email and login link.

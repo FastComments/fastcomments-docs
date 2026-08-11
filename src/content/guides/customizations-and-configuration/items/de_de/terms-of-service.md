@@ -1,24 +1,21 @@
----
-FastComments ermöglicht es Ihnen, Erstkommentatoren zu verpflichten, Ihre Nutzungsbedingungen zu akzeptieren, bevor sie einen Kommentar absenden.
+FastComments ermöglicht es Ihnen, von Erstkommentatoren die Zustimmung zu Ihren Nutzungsbedingungen zu verlangen, bevor sie einen Kommentar absenden.
 
-When enabled:
-- **Anonymous users** will see a TOS checkbox every time they comment
-- **Authenticated users** will see the checkbox only on their first comment, or when you update your TOS
+Wenn aktiviert:
+- **Anonyme Benutzer** sehen bei jedem Kommentar ein Nutzungsbedingungen‑Kontrollkästchen
+- **Authentifizierte Benutzer** sehen das Kontrollkästchen nur bei ihrem ersten Kommentar oder wenn Sie Ihre Nutzungsbedingungen aktualisieren
 
 ### Konfiguration
 
-Navigieren Sie zur Seite zur Anpassung des Widgets und aktivieren Sie das Kontrollkästchen "Akzeptieren der Nutzungsbedingungen erforderlich". Sobald aktiviert, sehen Sie die folgenden Optionen:
+Navigieren Sie zur Seite zur Widget‑Anpassung und aktivieren Sie das Kontrollkästchen „Zustimmung zu den Nutzungsbedingungen erforderlich“. Sobald es aktiviert ist, sehen Sie die folgenden Optionen:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.tos-enabled'; selector = '#tos-options'; title='Terms of Service Options' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.tos-enabled'; selector = '#tos-options'; alt='Nutzungsbedingungen-Panel, das den Textmodus-Auswahl und das Feld für das zuletzt aktualisierte Datum anzeigt'; title='Optionen für die Nutzungsbedingungen' app-screenshot-end]
 
-- **TOS-Textmodus**: Standardmäßig zeigt das Kontrollkästchen "I agree to the Terms of Service and Privacy Policy" mit Links zu beiden Dokumenten an. Wählen Sie "Customize text per locale", um Ihren eigenen Text für jede Sprache bereitzustellen.
-- **Datum der letzten Aktualisierung der Nutzungsbedingungen**: Wenn Sie Ihre Nutzungsbedingungen aktualisieren, legen Sie dieses Datum fest. Benutzer, die vor diesem Datum zugestimmt haben, müssen erneut zustimmen.
+- **TOS-Textmodus**: Standardmäßig zeigt das Kontrollkästchen „Ich stimme den Nutzungsbedingungen und der Datenschutzerklärung zu“ mit Links zu beiden Dokumenten an. Wählen Sie „Text pro Sprache anpassen“, um Ihren eigenen Text für jede Sprache bereitzustellen.
+- **Datum der letzten Aktualisierung der Nutzungsbedingungen**: Wenn Sie Ihre Nutzungsbedingungen aktualisieren, setzen Sie dieses Datum. Benutzer, die vor diesem Datum zugestimmt haben, müssen erneut zustimmen.
 
-### Funktionsweise
+### So funktioniert es
 
-- Der Zeitstempel der TOS-Akzeptanz wird pro Benutzer und pro Kommentar gespeichert
-- Wenn ein Benutzer den TOS zustimmt, wird das Datum in seinem Benutzerprofil (pro Mandant) aufgezeichnet
-- Wenn Sie ein "Zuletzt aktualisiert"-Datum festlegen, das nach dem Zustimmungsdatum des Benutzers liegt, muss dieser erneut zustimmen
-- Bei anonymen Benutzern, die nicht nachverfolgt werden können, erscheint das Kontrollkästchen bei jeder Kommentarabgabe
-
----
+- Der Zeitstempel der Zustimmung zu den Nutzungsbedingungen wird pro Benutzer und pro Kommentar gespeichert
+- Wenn ein Benutzer den Nutzungsbedingungen zustimmt, wird das Datum in seinem Benutzerprofil (pro Mandant) aufgezeichnet
+- Wenn Sie ein „Letztes Aktualisierungsdatum“ festlegen, das nach dem Zustimmungsdatum des Benutzers liegt, muss er erneut zustimmen
+- Für anonyme Benutzer, die nicht nachverfolgt werden können, erscheint das Kontrollkästchen bei jeder Kommentarabgabe

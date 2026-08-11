@@ -1,20 +1,19 @@
 [related-parameter-start name = 'enableViewCounts'; type = 'boolean'; related-parameter-end]
 
-ברירת המחדל של FastComments אינה עוקבת מי צפה בכל תגובה ואינה מספקת סטטיסטיקות על כך.
+בברירת מחדל, FastComments אינו עוקב אחרי מי צפה בכל תגובה ולא מספק שום סטטיסטיקה בנושא זה.
 
-עם זאת, ניתן להפעיל תכונה זו, ואז המערכת תתחיל לעקוב כאשר כל משתמש גולל אל תגובה.
+עם זאת, אנו יכולים להפעיל תכונה זו, ואז המערכת תתחיל לעקוב כאשר כל משתמש גולל לתגובה.
 
-כאשר זה קורה, הספירה שלצד סמל עין שמוצג על כל תגובה תוגדל. הספירה מתעדכנת בזמן אמת ומוצגת בקיצור בהתאם לאזור המועדף של המשתמש.
+כאשר זה קורה, ספירה לצד סמל העין שמופיע על כל תגובה תגדל. הספירה מתעדכנת בזמן אמת ומקוצרת בהתאם לשפת המשתמש.
 
-ניתן להפעיל זאת על‑ידי הגדרת הדגל **enableViewCounts** כ‑true:
+אנו יכולים להפעיל זאת על ידי הגדרת הדגל **enableViewCounts** ל‑true:
 
-[code-example-start config = {enableViewCounts: true}; linesToHighlight = [6]; title = 'Enabling Comment View Counts'; code-example-end]
+[code-example-start config = {enableViewCounts: true}; linesToHighlight = [6]; title = 'הפעלת ספירת צפיות בתגובות'; code-example-end]
 
-ניתן להתאים זאת ללא קוד, בדף ההתאמה אישית של הווידג'ט:
+ניתן להתאים זאת ללא קוד, בדף התאמת הווידג'ט:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-view-counts']; selector = '.enable-view-counts'; title='Enabling Comment View Counts' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-view-counts']; selector = '.enable-view-counts'; alt='דף התאמת הווידג''ט עם תיבת הסימון של ספירת הצפיות מסומנת כך שכל תגובה מציגה סמל עין וספירה'; title='הפעלת ספירת צפיות בתגובות' app-screenshot-end]
 
-אנחנו עוקבים אחרי מזהה המשתמש* שצפה בתגובה, כדי שאם תצפה בתגובה שוב זה לא יגדיל את הספירה. אם תצפה בתגובה שוב
-לאחר שתי שנים, הספירה תגדל שוב.
+אנו עוקבים אחרי מזהה המשתמש* שצפה בתגובה, כך שאם אתה **צופה** בתגובה שוב היא לא תגדל. אם אתה **צופה** בתגובה שוב אחרי שנתיים, הספירה תגדל יותר.
 
-- *הערה: או מזהה מושב אנונימי, או כתובת ה‑IP של המשתמש כערך מוצפן.
+- *הערה: או מזהה הסשן האנונימי, או כתובת ה‑IP של המשתמש כערך מוצפן.

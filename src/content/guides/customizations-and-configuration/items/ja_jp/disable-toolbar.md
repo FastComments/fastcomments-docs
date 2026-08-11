@@ -1,12 +1,15 @@
+---
 [related-parameter-start name = 'disableToolbar'; type = 'boolean'; related-parameter-end]
 
-デフォルトでは、FastComments はコメントを作成する際に、テキストの装飾やアップロード
-画像のショートカットを提供するツールバーを表示します。
+デフォルトでは、FastComments はコメントを書いているときにツールバーを表示し、テキストの装飾や画像のアップロード
+のショートカットを提供します。
 
-このツールバーは、コードまたはカスタマイズ UI で無効にできます。
+このツールバーはコードまたはカスタマイズ UI で無効にできます。
 
-[code-example-start config = {disableToolbar: true}; linesToHighlight = [6]; title = 'Disabling The Toolbar'; code-example-end]
+[code-example-start config = {disableToolbar: true}; linesToHighlight = [6]; title = 'ツールバーの無効化'; code-example-end]
 
-これはコードを使わずに行うこともできます。ウィジェットのカスタマイズページで「返信ツールバーを無効にする」オプションを参照してください。
+コードを使用せずにこれを行うこともできます。ウィジェットのカスタマイズページで、"Disable The Reply Toolbar" オプションを確認してください。
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-toolbar']; selector = '.disable-toolbar'; title='Disabling The Toolbar' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-toolbar']; selector = '.disable-toolbar'; alt='「Disable The Reply Toolbar」チェックボックスがオンになってフォーマットショートカットが削除されたウィジェットカスタマイズページ'; title='ツールバーの無効化' app-screenshot-end]
+
+---

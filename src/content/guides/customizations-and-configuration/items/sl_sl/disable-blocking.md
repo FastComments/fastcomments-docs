@@ -1,11 +1,11 @@
 [related-parameter-start name = 'disableBlocking'; type = 'boolean'; related-parameter-end]
 
-Privzeto FastComments omogoča uporabnikom, da blokirajo druge uporabnike. Blokiranje uporabnika bo povzročilo, da bodo njegovi komentarji prikriti, preprečilo bo obvestila med uporabnikoma in podobno.
+Privzeto FastComments omogoča uporabnikom, da blokirajo druge uporabnike. Blokiranje uporabnika bo povzročilo, da se njihovi komentarji skrijejo, preprečuje obvestila med uporabniki in podobno.
 
-Morda boste želeli onemogočiti to funkcionalnost. To lahko storite tako:
+Morda bo zaželeno onemogočiti to funkcionalnost. To lahko storite na naslednji način:
 
-[code-example-start config = {disableBlocking: true}; linesToHighlight = [6]; title = 'Disable Blocking'; code-example-end]
+[code-example-start config = {disableBlocking: true}; linesToHighlight = [6]; title = 'Onemogoči blokiranje'; code-example-end]
 
-To je mogoče narediti tudi brez kode, kar omogoča tudi pravilno validacijo na strežniku, prek Widget Customization UI:
+To je mogoče storiti tudi brez kode, kar omogoča tudi ustrezno strežniško validacijo, prek uporabniškega vmesnika za prilagajanje gradnika:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-blocking']; selector = '.disable-blocking'; title='Disable Blocking' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-blocking']; selector = '.disable-blocking'; alt='Možnost onemogočanja blokiranja v uporabniškem vmesniku za prilagajanje gradnika, ki preprečuje uporabnikom, da bi se med seboj blokirali'; title='Onemogoči blokiranje' app-screenshot-end]

@@ -1,37 +1,36 @@
-Za lokalni razvoj uporabite orodje, kot je [ngrok](https://ngrok.com/).
+For Local development, use a tool like [ngrok](https://ngrok.com/).
 
-Da bi poenostavili ohranjanje varnosti sistema, lokalni razvoj sledi istemu postopku kot nastavitev in zavarovanje drugih okolij. 
+In order to simplify keeping the system secure, local development follows the same process as setting up and securing other environments. 
 
-### Korak 1: Dodajte "localhost" med domene v vašem računu.
+### Step 1: Add "localhost" to domains in your account.
 
-Dodajte "localhost" [kot domeno tukaj](https://fastcomments.com/auth/my-account/configure-domains).
+Add "localhost" [as a domain here](https://fastcomments.com/auth/my-account/configure-domains).
 
-[app-screenshot-start url='https://fastcomments.com/auth/my-account/configure-domains/new'; cacheBuster = 'v3'; selector = '.content .account-block'; title='Dodaj localhost'; actions=[{type: 'set-value', selector: 'input[name=domainNames]', value: 'localhost'}] app-screenshot-end]
+[app-screenshot-start url='https://fastcomments.com/auth/my-account/configure-domains/new'; cacheBuster = 'v3'; selector = '.content .account-block'; alt='Obrazec za dodajanje domene v nastavitvah računa z vpisanim localhost v polje imen domen'; title='Dodaj localhost'; actions=[{type: 'set-value', selector: 'input[name=domainNames]', value: 'localhost'}] app-screenshot-end]
 
-### Korak 2: Izberite API ključ
+### Step 2: Pick an API Key
 
-Dodali bomo konfiguracijo webhooka za vašo domeno, zato bomo potrebovali API ključ. [To lahko naredite tukaj.](https://fastcomments.com/auth/my-account/api-secret)
+We're going to be adding webhook configuration for your domain, so we'll need an API key. [You can do that here.](https://fastcomments.com/auth/my-account/api-secret)
 
-[app-screenshot-start url='https://fastcomments.com/auth/my-account/api-secret/add'; cacheBuster = 'v3'; selector = '.content .account-block'; title='Dodaj testni API ključ'; actions=[{type: 'set-value', selector: 'select[name=domain]', value: 'localhost'}, {type: 'set-value', selector: 'input[name=name]', value: 'Testing'}] app-screenshot-end]
+[app-screenshot-start url='https://fastcomments.com/auth/my-account/api-secret/add'; cacheBuster = 'v3'; selector = '.content .account-block'; alt='Nov obrazec za API skrivnost z povezanimi domenami nastavljeno na localhost in ključem po imenu Testing'; title='Dodaj testni API ključ'; actions=[{type: 'set-value', selector: 'select[name=domain]', value: 'localhost'}, {type: 'set-value', selector: 'input[name=name]', value: 'Testing'}] app-screenshot-end]
 
 Under "Associate with domain" - select your "localhost" domain.
 
-**NOTE: Alternatively, you can use one API Secret for all testing activity and staging environments. Simply add an API Secret for "All Domains", and give it a name like "test".**
+**OPOMBA:** Alternatively, you can use one API Secret for all testing activity and staging environments. Simply add an API Secret for "All Domains", and give it a name like "test".
 
-Poskrbite, da imate za svoje produkcijske domene definirano API skrivnost. Dogodki za vse ostale domene bodo uporabili nadomestno (testno) skrivnost.
+Ensure you have an API Secret defined for your production domain(s). Events for all other domains will use the wildcard (testing) secret.
 
-### Korak 3: Dodajte svoj webhook
+### Step 3: Add Your Webhook
 
-Med izvajanjem ngrok ali podobnega orodja nastavite vrednost za "localhost" [tukaj](https://fastcomments.com/auth/my-account/manage-data/webhooks).
+While running ngrok or similar tool, set the value for "localhost" [here](https://fastcomments.com/auth/my-account/manage-data/webhooks).
 
-[app-screenshot-start url='https://fastcomments.com/auth/my-account/manage-data/webhooks'; cacheBuster = 'v3'; selector = '.content'; title='Dodaj testni webhook'; actions=[{type: 'wait', selector: 'button[type=submit]'}, {type: 'set-value', selector: '#domain-select', value: 'localhost'}, {type: 'set-value', selector: 'input[name="comment-created-url"]', value: 'http://xxxx-xxxx-xxxx-xxxx.ngrok.io/some-route'}]; app-screenshot-end]
+[app-screenshot-start url='https://fastcomments.com/auth/my-account/manage-data/webhooks'; cacheBuster = 'v3'; selector = '.content'; alt='Upravljanje webhookov z izbrano domeno localhost in vpisanim ngrok URL-jem v končno točko za ustvarjene komentarje'; title='Dodaj testni webhook'; actions=[{type: 'wait', selector: 'button[type=submit]'}, {type: 'set-value', selector: '#domain-select', value: 'localhost'}, {type: 'set-value', selector: 'input[name="comment-created-url"]', value: 'http://xxxx-xxxx-xxxx-xxxx.ngrok.io/some-route'}]; app-screenshot-end]
 
 When clicking `Send Test Payload`, we will send two test events to check that you validate the API key.
 
 Once it validates, hit `Save`.
 
-### Korak 4: Dodajte komentar
+### Step 4: Add A Comment
 
-Zdaj lahko dodajate, urejate ali brišete komentarje in morali bi videti, da bo sistem klical vašo lokalno razvojno napravo z dogodki, pri čemer bo uporabljen vaš testni API ključ. Lahko pride do zamude do 30 sekund za prihod dogodkov do vaše naprave.
-
----
+Now you can add, edit, or delete comments and should see us call your local development machine with the events, using your testing API key. There may be up to 30 seconds delay
+for the events to reach your machine.

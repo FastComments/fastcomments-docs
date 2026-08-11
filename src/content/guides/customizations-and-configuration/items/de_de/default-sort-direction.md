@@ -1,29 +1,29 @@
 [related-parameter-start name = 'defaultSortDirection'; type = 'string'; related-parameter-end]
 
-Standardmäßig sortiert FastComments Kommentare nach der Sortierreihenfolge "Am relevantesten".
+Standardmäßig sortiert FastComments Kommentare nach der Sortierrichtung „Relevanteste“.
 
-Die Sortierung "Am relevantesten" berücksichtigt für die Sortierung den Zeitpunkt, zu dem der Kommentar abgegeben wurde, und die Anzahl der Stimmen.
+Die Sortierung nach „Relevanteste“ berücksichtigt sowohl die Zeit, zu der der Kommentar abgegeben wurde, als auch die Anzahl der Stimmen.
 
-Der Benutzer kann dann in der Benutzeroberfläche des Kommentar-Widgets die Sortierreihenfolge entweder auf Älteste oder Neueste zuerst ändern.
+Der Benutzer kann dann die Sortierrichtung im UI des Kommentar‑Widgets entweder zu „Älteste zuerst“ oder zu „Neueste zuerst“ ändern.
 
-Wir können das Standardverhalten jedoch auf eine der drei Optionen ändern. Wenn Sie beispielsweise die ältesten Kommentare zuerst anzeigen möchten:
+Wir können die Standardeinstellung jedoch auf eine der drei Optionen ändern. Zum Beispiel, wenn Sie die ältesten Kommentare zuerst anzeigen möchten:
 
-[code-example-start config = {defaultSortDirection: "OF"}; linesToHighlight = [6]; title = 'Changing The Default Sort To Oldest First'; code-example-end]
+[code-example-start config = {defaultSortDirection: "OF"}; linesToHighlight = [6]; title = 'Ändern der Standardsortierung zu Älteste zuerst'; code-example-end]
 
-Wir setzen den Wert von **defaultSortDirection** auf "OF", um die Sortierreihenfolge auf "OF" festzulegen.
+Wir setzen den Wert von **defaultSortDirection** auf „OF“, um die Richtung auf „OF“ zu setzen.
 
-Für die Sortierreihenfolge Neueste zuerst würden wir Folgendes tun:
+Für die Sortierrichtung „Neueste zuerst“ würden wir Folgendes tun:
 
-[code-example-start config = {defaultSortDirection: "NF"}; linesToHighlight = [6]; title = 'Changing The Default Sort To Newest First'; code-example-end]
+[code-example-start config = {defaultSortDirection: "NF"}; linesToHighlight = [6]; title = 'Ändern der Standardsortierung zu Neueste zuerst'; code-example-end]
 
-Gültige Werte für **defaultSortDirection** sind:
+Die gültigen Werte für **defaultSortDirection** sind:
 
-- MR: "Am neuesten"
+- MR: "Neueste"
 - NF: "Neueste zuerst"
 - OF: "Älteste zuerst"
 
-Dies kann auch ohne Code durchgeführt werden. Auf der Seite zur Anpassung des Widgets siehe den Abschnitt "Default Sort Direction".
+Dies kann auch ohne Code durchgeführt werden. Auf der Seite zur Widget‑Anpassung finden Sie den Abschnitt „Standard‑Sortierrichtung“.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.default-sort-direction'; title='Changing The Default Sort Direction' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.default-sort-direction'; alt='Standard Sortier‑Richtung‑Selektor, der Relevanteste, Neueste zuerst und Älteste zuerst anbietet'; title='Ändern der Standard‑Sortier‑Richtung' app-screenshot-end]
 
-Beachten Sie, dass die Kommentare auf jeder Seite für jede Sortierreihenfolge vorab berechnet werden, sodass alle Sortierreihenfolgen die gleiche Leistung haben.
+Beachten Sie, dass die Kommentare auf jeder Seite für jede Sortierrichtung vorab berechnet werden, sodass alle Sortierrichtungen die gleiche Leistung haben.

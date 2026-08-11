@@ -1,5 +1,3 @@
-點擊一個標籤（hashtag）後，我們可以篩選並查看該網站上具有相同標籤的評論。
+點擊標籤後，我們可以深入查看該網站上帶有相同標籤的評論。
 
-[app-screenshot-start url=`https://fastcomments.com/embed?config=%7B%22tenantId%22%3A%22L177BUDVvSe%22%2C%22urlId%22%3A%22prod-hash-tags%22%2C%22jumpToHashTag%22%3A%22%2523fastcomments%22%2C%22url%22%3A%22http%253A%252F%252Flocalhost%253A63342%252Ffastcomments%252Fscripts%252Flocal-test-production.html%253F_ijt%253D7au3nvlm34eon4dlhfpfhesmin%2526_ij_reload%253DRELOAD_ON_SAVE%22%2C%22pageTitle%22%3A%22%22%2C%22instanceId%22%3A%220.7455159872585999.1637700852138%22%7D&wId=comment-ui-v2`; selector = '.fast-comments'; title='Filtering by Hash Tags' app-screenshot-end]
-
----
+[app-screenshot-start url=`https://fastcomments.com/embed?config=%7B%22tenantId%22%3A%22L177BUDVvSe%22%2C%22urlId%22%3A%22prod-hash-tags%22%2C%22jumpToHashTag%22%3A%22%2523fastcomments%22%2C%22url%22%3A%22http%253A%252F%252Flocalhost%253A63342%252Ffastcomments%252Fscripts%252Flocal-test-production.html%253F_ijt%253D7au3nvlm34eon4dlhfpfhesmin%2526_ij_reload%253DRELOAD_ON_SAVE%22%2C%22pageTitle%22%3A%22%22%2C%22instanceId%22%3A%220.7455159872585999.1637700852138%22%7D&wId=comment-ui-v2`; selector = '.fast-comments'; alt='點擊該標籤後，評論小工具會過濾，只顯示標記為 #fastcomments 的評論。'; title='依雜湊標籤過濾' app-screenshot-end]

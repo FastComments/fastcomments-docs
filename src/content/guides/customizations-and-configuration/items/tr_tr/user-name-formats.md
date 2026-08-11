@@ -1,20 +1,20 @@
-Varsayılan olarak, FastComments kullanıcının adını girdiği şekilde veya SSO aracılığıyla bize iletildiği şekilde gösterir.
+By default, FastComments will show the user's name as they entered it, or how it was passed to us via SSO.
 
-Ancak, kullanıcının adını maskelemek veya farklı şekilde göstermek isteyebilirsiniz. Örneğin, kullanıcının adı Allen Rex ise, belki
-yalnızca "Allen R." göstermek istersiniz.
+However, it may be desirable to mask or show the user's name in a different way. For example, if the user's name is Allen Rex, maybe
+you want to only show "Allen R.".
 
-Bu, kod yazmadan Widget Özelleştirme UI'sında `Commenter Name Format` adlı ayar altında yapılabilir:
+This can be done without code in the Widget Customization UI, under the setting called `Commenter Name Format`:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.commenter-name-format select'; selector = '.commenter-name-format'; title='Change Name Format' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.commenter-name-format select'; selector = '.commenter-name-format'; alt='Commenter Name Format açılır menüsü, Capitalize, Last Initial ve All Initials gibi seçeneklerle birlikte açık'; title='İsim Biçimini Değiştir' app-screenshot-end]
 
-Mevcut biçimler şunlardır:
+The available formats are:
 
-- Capitalize (örnek kullanıcıyı Example User olarak gösterir)
-- Last Initial (Example User'ı Example U. olarak gösterir)
-- All Initials (Example User'ı E. U. olarak gösterir)
+- Capitalize (display example user as Example User)
+- Last Initial (display Example User as Example U.)
+- All Initials (display Example User as E. U.)
 - Show "Anonymous"
 
-Bu değişikliğin etkisi hemen geçerlidir. Kullanıcılar, kendileri için yorum alanının üst kısmında yine tam kullanıcı adlarını görecekler, ancak yorumlarında
-değiştirilmiş kullanıcı adı gösterilecektir.
+The effect of changing this is immediate. User's will still see their full username at the top of the comment area, for themselves, but their comments will show
+the modified username.
 
-Kullanıcı adları, kullanıcıları korumak için sunucu tarafında maskelenir.
+Usernames are masked server-side to protect users.

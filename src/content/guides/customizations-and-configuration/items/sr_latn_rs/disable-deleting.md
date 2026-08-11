@@ -1,13 +1,13 @@
 ---
-Po podrazumevanoj postavci, FastComments dozvoljava korisnicima da brišu svoje komentare.
+Podrazumevano, FastComments će dozvoliti korisnicima da brišu svoje komentare.
 
-Međutim, moguće je to onemogućiti.
+Međutim, moguće je sprečiti to.
 
-Na stranici za prilagođavanje widgeta, pogledajte opciju "Onemogući brisanje".
+Na stranici za prilagođavanje widgeta, pogledajte opciju "Disable Deleting".
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.disable-commenter-comment-delete'; selector = '.disable-commenter-comment-delete'; title='Disable Comment Deleting' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.disable-commenter-comment-delete'; selector = '.disable-commenter-comment-delete'; alt='Opcija Disable Deleting na stranici za prilagođavanje widgeta, sprečava komentatore da uklone svoje komentare'; title='Onemogući brisanje komentara' app-screenshot-end]
 
-- Ovo utiče samo na obične komentatore i ne odnosi se na moderatore ili administratore, koji će i dalje moći da brišu.
+- Ovo utiče samo na obične komentatore i ne na moderatore ili administratore, koji i dalje mogu da brišu.
 - Ovo će takođe uticati na API integracije kada se prosledi `contextUserId`. 
 
 ---

@@ -1,10 +1,11 @@
 ---
-Iako FastComments podržava otkrivanje psovki i neželjene pošte, može se prilagoditi. Otkrivanje psovki ili neželjne pošte može se pojedinačno isključiti putem stranice Postavke moderiranja komentara.
+Iako FastComments podržava otkrivanje psovki i spama, može se prilagoditi. Otkrivanje psovki ili spama može se
+pojedinačno isključiti putem stranice Postavke moderiranja komentara.
 
-Ovo je također stranica na kojoj ćete pronaći postavke za automatsko odobravanje komentara ili za konfiguriranje isteka neprovjerenih komentara.
+Ovo je također stranica na kojoj ćete pronaći konfiguraciju za automatsko odobravanje komentara, ili konfiguriranje isteka
+neprovjerenih komentara.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/settings'; selector = '.content'; title='Comment Moderation Settings' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/settings'; selector = '.content'; alt='Postavke moderiranja s opcijama za otkrivanje psovki i spama, automatsko odobravanje i isteka neprovjerenih komentara'; title='Postavke moderiranja komentara' app-screenshot-end]
 
-Dodatno, crnu listu riječi možete prilagoditi putem gumba na ovoj stranici.
-
+Dodatno, popis zabranjenih riječi može se prilagoditi putem gumba na ovoj stranici.
 ---

@@ -1,12 +1,14 @@
-Οι χρήστες με την άδεια `Super Admin` μπορούν να προσθέτουν και να αφαιρούν άλλους συντονιστές.
+---
+Οι χρήστες με το δικαίωμα `Super Admin` μπορούν να προσθέτουν και να αφαιρούν άλλους συντονιστές.
 
-Ένας χρήστης μπορεί να προστεθεί πηγαίνοντας [στη σελίδα Χρηστών](https://fastcomments.com/auth/my-account/users) και
-κάνoντας κλικ στο `Add User` στο κάτω μέρος.
+Μπορείτε να προσθέσετε έναν χρήστη πλοηγώντας [στη σελίδα Χρηστών](https://fastcomments.com/auth/my-account/users) και κάνοντας κλικ στο `Add User` στο κάτω μέρος.
 
-[app-screenshot-start url='/auth/my-account/users'; selector = '.content'; title='The Users Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/users'; selector = '.content'; alt='Σελίδα χρηστών που εμφανίζει τους διαχειριστές του λογαριασμού, με το κουμπί Προσθήκη Χρήστη στο κάτω μέρος'; title='Η Σελίδα Χρηστών' app-screenshot-end]
 
-Όταν προσθέτετε έναν χρήστη, μπορούμε να ορίσουμε το avatar, το όνομα χρήστη, το email, την τοπική ρύθμιση (locale) και τα δικαιώματά του.
+Κατά την προσθήκη ενός χρήστη, μπορούμε να ορίσουμε το avatar, το όνομα χρήστη, το email, τη γλώσσα και τα δικαιώματα.
 
-[app-screenshot-start url='/auth/my-account/users/new/edit'; selector = '.content'; title='Adding a User' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/users/new/edit'; selector = '.content'; alt='Φόρμα επεξεργασίας χρήστη με το avatar, το όνομα χρήστη, το email, τη γλώσσα και τα πεδία δικαιωμάτων συμπληρωμένα'; title='Προσθήκη Χρήστη' app-screenshot-end]
 
-Όταν προσθέτετε έναν διαχειριστή, θα του αποσταλεί ένα email καλωσορίσματος με σύνδεσμο σύνδεσης.
+Κατά την προσθήκη ενός διαχειριστή, θα του σταλεί ένα email καλωσορίσματος και ένας σύνδεσμος σύνδεσης.
+
+---

@@ -1,17 +1,15 @@
 [related-parameter-start name = 'defaultAvatarSrc'; type = 'string'; related-parameter-end]
 
-Wanneer een gebruiker voor het eerst met FastComments een reactie plaatst, proberen we hun avatar op te halen van <a href="http://gravatar.com/" target="_blank">http://gravatar.com/</a>.
+Wanneer een gebruiker voor het eerst een reactie plaatst met FastComments, proberen we hun avatar op te halen van <a href="http://gravatar.com/" target="_blank">http://gravatar.com/</a>.
 
-Als we echter geen avatar vinden, of de gebruiker er nooit een in zijn/haar account instelt, tonen we een statische standaardavatar-afbeelding.
+Als we echter geen avatar vinden, of de gebruiker er nooit een instelt in zijn account, tonen we een statische standaardavatarafbeelding.
 
-Om uw eigen statische avatar-afbeelding op te geven, kunt u de *defaultAvatarSrc*-instelling gebruiken.
+Om je eigen statische avatarafbeelding op te geven, kun je de *defaultAvatarSrc* instelling gebruiken.
 
-[code-example-start config = {defaultAvatarSrc: "https://example.com/some-image.png"}; linesToHighlight = [6]; title = 'Override The Default Avatar'; code-example-end]
+[code-example-start config = {defaultAvatarSrc: "https://example.com/some-image.png"}; linesToHighlight = [6]; title = 'Overschrijf de standaardavatar'; code-example-end]
 
-Dit kan ook zonder code. Op de pagina voor widget-aanpassing, zie de "Standaardavatar" sectie.
+Dit kan ook zonder code worden gedaan. Op de widget-aanpassingspagina, zie de sectie "Standaardavatar".
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.default-avatar'; title='Customizing The Default Avatar' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.default-avatar'; alt='Standaardavatarsectie van de widget-aanpassingspagina, waar je de URL van de fallback-avatarafbeelding instelt'; title='Aanpassen van de standaardavatar' app-screenshot-end]
 
-Houd er rekening mee dat het definiëren van de avatar voor een specifieke gebruiker, zoals bij SSO, in een aparte sectie wordt behandeld.
-
----
+Let op dat het definiëren van de avatar voor een specifieke gebruiker, bijvoorbeeld met SSO, in een eigen sectie wordt behandeld.

@@ -1,20 +1,21 @@
-관리자용으로, 댓글 검토(Comment Moderation) 페이지 상단에는 "Add Moderators" 버튼이 있습니다.
+For administrators, at the top of the Comment Moderation page is an Add Moderators button.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.moderation-settings-options'; title='Comment Moderation Setting Buttons' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.moderation-settings-options'; alt='댓글 검토 페이지 상단에 있는 버튼 행, 여기에는 \'Add Moderators\' 버튼이 포함됩니다.'; title='댓글 검토 설정 버튼' app-screenshot-end]
 
-이미 관리자가 있는 경우 이 버튼은 "Edit Moderators"라고 표시됩니다.
+If you already have moderators, this button will say "Edit Moderators".
 
-"Add a Moderator" 페이지를 살펴보겠습니다.
+Let's take a look at the "Add a Moderator" page.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/moderator/new'; selector = '.account-block'; title='The Add a Moderator Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/moderator/new'; selector = '.account-block'; alt='새 중재자의 이름과 이메일만 요청하는 \'Add a Moderator\' 페이지, 초대 전송 전'; title='Add a Moderator 페이지' app-screenshot-end]
 
-관리자를 추가하려면 이름과 이메일만 필요합니다.
+To add a moderator all that is needed is a name and an email.
 
-해당 이메일이 기존 FastComments 계정과 연동되어 있으면, 해당 사용자는 이메일을 통해 귀하의 계정에 관리자로 초대됩니다.
+If the email is associated with an existing FastComments account, they will be invited via email to join your account as a moderator.
 
-해당 이메일이 기존 FastComments 계정과 연동되어 있지 않다면, 신규 계정이 생성됩니다.
+If the given email is not associated with an existing FastComments account, a new one will be created for them.
 
-초대 링크가 관리자에게 전송되며, 이 링크로 자동 로그인할 수 있습니다. 향후 로그인을 원하면 간단히
-<a href="https://fastcomments.com/auth/login" target="_blank">로그인 페이지</a>를 방문하여 이전에 제공한 이름/이메일을 입력하면 됩니다. 그러면 로그인할 수 있는 링크가 전송됩니다.
+An invite link will be sent to the moderator, which can automatically log them in. In the future if they wish to login, they can simply visit the
+<a href="https://fastcomments.com/auth/login" target="_blank">login page</a> and enter the name/email that you provided earlier. This will send them
+a link to login.
 
-로그아웃하지 않는 한, 30일 동안 로그인 상태가 유지됩니다.
+Unless they log out, they will be logged in for thirty days.

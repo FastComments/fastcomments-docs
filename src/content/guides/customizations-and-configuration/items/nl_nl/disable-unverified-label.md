@@ -1,12 +1,11 @@
 [related-parameter-start name = 'disableUnverifiedLabel'; type = 'boolean'; related-parameter-end]
 
-Standaard toont FastComments een label "Niet-geverifieerde reactie" voor opmerkingen die zijn achtergelaten voor een gebruiker die
-een niet-geverifieerde browsersessie heeft. Lees meer over niet-geverifieerd reageren [hier](https://docs.fastcomments.com/guide-comment-vote-verification.html).
+Standaard toont FastComments een "Niet-geverifieerde reactie"-label voor reacties die zijn achtergelaten voor een gebruiker met een niet-geverifieerde browsersessie. Lees meer over niet-geverifieerde reacties [hier](https://docs.fastcomments.com/guide-comment-vote-verification.html).
 
 [code-example-start config = {disableUnverifiedLabel: true}; linesToHighlight = [6]; title = 'Disable The Unverified Label'; code-example-end]
 
-Daarnaast kan deze functie, zonder code te schrijven, worden gebruikt in de Aanpassings-UI:
+Bovendien kan deze functie, zonder code te schrijven, worden gebruikt in de UI voor aanpassing:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-unverified-comment-label']; selector = '.disable-unverified-comment-label'; title='Disable The Unverified Label' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-unverified-comment-label']; selector = '.disable-unverified-comment-label'; alt='Widget-aanpassingspagina met het selectievakje Uitschakel het label voor niet-geverifieerde opmerkingen aangevinkt'; title='Uitschakel het label voor niet-geverifieerde opmerkingen' app-screenshot-end]
 
 ---

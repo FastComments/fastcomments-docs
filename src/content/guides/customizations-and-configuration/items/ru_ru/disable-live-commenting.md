@@ -1,18 +1,16 @@
 [related-parameter-start name = 'disableLiveCommenting'; type = 'boolean'; related-parameter-end]
 
-По умолчанию в FastComments включено живое комментирование.
+По умолчанию FastComments будет иметь включённые живые комментарии.
 
-Это означает, что каждый, кто просматривает ветку комментариев, увидит одно и то же содержимое.
+Это означает, что каждый зритель ветки комментариев будет видеть одинаковый контент.
 
-Например, если добавлен комментарий, этот комментарий должен отображаться. Если комментарий отредактирован или удалён,
-то эти комментарии будут отредактированы или удалены для всех просматривающих ветку. То же самое относится к голосам и ко всем действиям модерации.
+Например, если добавлен комментарий, он должен отображаться. Если комментарий отредактирован или удалён,
+то эти комментарии будут отредактированы или удалены для всех зрителей ветки. То же самое относится к голосованиям и всем действиям модерации.
 
-Однако это можно отключить:
+Однако мы можем отключить это:
 
-[code-example-start config = {disableLiveCommenting: true}; linesToHighlight = [6]; title = 'Disable Live Commenting'; code-example-end]
+[code-example-start config = {disableLiveCommenting: true}; linesToHighlight = [6]; title = 'Отключить живые комментарии'; code-example-end]
 
-Это также можно сделать без кода. На странице настройки виджета см. раздел "Отключить живое комментирование".
+Это также можно сделать без кода. На странице настройки виджета см. раздел «Отключить живые комментарии».
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-live-commenting']; selector = '.disable-live-commenting'; title='Disable Live Commenting' app-screenshot-end]
-
----
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-live-commenting']; selector = '.disable-live-commenting'; alt='Раздел Отключить живые комментарии на странице настройки виджета, отключающий обновления ветки в реальном времени'; title='Отключить живые комментарии' app-screenshot-end]

@@ -1,12 +1,9 @@
----
-Иако FastComments подржава детекцију псовки и спама, може се прилагодити. Детекција псовки или спама може се
-појединачно искључити преко странице Подешавања модерације коментара.
+While FastComments supports profanity and spam detection, it can be customized. Profanity or Spam Detection can be
+turned off individually via the Comment Moderation Settings page.
 
-Ово је и страница на којој ћете пронаћи подешавања за аутоматско одобравање коментара, као и за конфигурисање истека
-неверификованих коментара.
+This is also the page where you will find the configuration for comment auto approval, or configuring the expiration
+of unverified comments.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/settings'; selector = '.content'; title='Comment Moderation Settings' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/settings'; selector = '.content'; alt='Podešavanja moderacije sa opcijama za detekciju psovki i spama, automatsko odobravanje i isteka neproverenih komentara'; title='Podešavanja moderacije komentara' app-screenshot-end]
 
-Поред тога, листа забрањених речи може се прилагодити преко дугмета на овој страници.
-
----
+Additionally, the word blacklist can be customized from a button on this page.

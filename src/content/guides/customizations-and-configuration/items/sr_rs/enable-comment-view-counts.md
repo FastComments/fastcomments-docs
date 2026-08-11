@@ -1,21 +1,19 @@
 [related-parameter-start name = 'enableViewCounts'; type = 'boolean'; related-parameter-end]
 
-По подразумеваној поставци, FastComments не прати ко је прегледао сваки коментар нити пружа било какву статистику у вези с тим.
+Podrazumevano, FastComments ne prati ko je pogledao svaki komentar niti pruža bilo kakve statistike u vezi s tim.
 
-Међутим, ову функцију можемо омогућити, и тада ће систем почети да прати када корисник скролује до коментара.
+Međutim, možemo omogućiti ovu funkciju, i tada će sistem početi da prati kako svaki korisnik skroluje do komentara.
 
-Када се то догоди, бројач поред иконе ока који се приказује на сваком коментару ће се повећати. Број се ажурира у реалном времену и скраћује се у складу са локалним подешавањима корисника.
+Kada se to desi, broj pored ikone oka prikazane na svakom komentaru će se povećati. Broj se ažurira u realnom vremenu i skraćuje prema lokalnom podešavanju korisnika.
 
-Ову опцију можемо омогућити постављањем флага **enableViewCounts** на true:
+Možemo ovo omogućiti postavljanjem zastavice **enableViewCounts** na true:
 
-[code-example-start config = {enableViewCounts: true}; linesToHighlight = [6]; title = 'Enabling Comment View Counts'; code-example-end]
+[code-example-start config = {enableViewCounts: true}; linesToHighlight = [6]; title = 'Omogućavanje broja pregleda komentara'; code-example-end]
 
-Ово се може прилагодити без кода, на страници за прилагођавање видгета:
+Ovo se može prilagoditi bez koda, na stranici za prilagođavanje widgeta:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-view-counts']; selector = '.enable-view-counts'; title='Enabling Comment View Counts' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-view-counts']; selector = '.enable-view-counts'; alt='Stranica za prilagođavanje widgeta sa označenim poljem za broj pregleda tako da svaki komentar prikazuje ikonu oka i broj'; title='Omogućavanje broja pregleda komentara' app-screenshot-end]
 
-Пратимо и ID корисника* који је прегледао коментар, тако да ако поново погледате коментар, бројач се неће повећати. Ако поново погледате коментар након две године, број ће се повећати поново.
+Pratimo ID korisnika* koji je pogledao komentar, tako da se pri ponovnom gledanju komentara ne povećava. Ako pogledate komentar ponovo nakon dve godine, broj će se povećati više.
 
-- *Напомена: или anon session id, или IP корисника као хеширана вредност.
-
----
+- *Napomena: ili anonimus ID sesije, ili IP korisnika kao heširana vrednost.

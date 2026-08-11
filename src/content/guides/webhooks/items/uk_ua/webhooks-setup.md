@@ -1,13 +1,11 @@
-Виконайте ті самі кроки для `localhost`, що й для production. Переконайтеся, що у вас налаштовані production domains та API Secrets.
+Follow the same steps for `localhost` as you would production. Ensure you have production domains and API Secrets setup.
 
-Спочатку перейдіть до [Webhooks admin](https://fastcomments.com/auth/my-account/manage-data/webhooks). Це доступно через Manage Data -> Webhooks.
+First, navigate to the [Адміністрування Webhooks](https://fastcomments.com/auth/my-account/manage-data/webhooks). This is accessible via Manage Data -> Webhooks.
 
 The configuration page appears as follows:
 
-[app-screenshot-start url='/auth/my-account/manage-data/webhooks'; selector = '.content'; title='Webhooks Configuration'; cacheBuster = 'v3' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/webhooks'; selector = '.content'; alt='Сторінка адміністрування Webhooks з вибором домену та полем URL кінцевої точки для кожної події коментаря, плюс Send Test Payload'; title='Налаштування Webhooks'; cacheBuster = 'v3' app-screenshot-end]
 
-На цій сторінці ви можете вказати endpoints для кожного типу події коментаря.
+In this page you can specify endpoints for each type of comment event.
 
-Для кожного типу подій обов'язково натискайте Send Test Payload, щоб переконатися, що інтеграція налаштована правильно. Деталі див. у наступному розділі "Testing".
-
----
+For each type of event, be sure to click Send Test Payload to ensure you've set up your integration correctly. See the next section, "Testing", for details.

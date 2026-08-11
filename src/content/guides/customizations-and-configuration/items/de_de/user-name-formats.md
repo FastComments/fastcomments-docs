@@ -1,20 +1,18 @@
-Standardmäßig zeigt FastComments den Namen des Benutzers so an, wie er ihn eingegeben hat, oder wie er uns über SSO übermittelt wurde.
+By default, FastComments will show the user's name as they entered it, or how it was passed to us via SSO.
 
-Es kann jedoch wünschenswert sein, den Namen des Benutzers zu maskieren oder anders anzuzeigen. Zum Beispiel, wenn der Name des Benutzers Allen Rex ist, möchten Sie vielleicht nur "Allen R." anzeigen.
+However, it may be desirable to mask or show the user's name in a different way. For example, if the user's name is Allen Rex, maybe you want to only show "Allen R.".
 
-Dies kann ohne Code in der Widget-Anpassungsoberfläche, unter der Einstellung `Commenter Name Format`, durchgeführt werden:
+This can be done without code in the Widget Customization UI, under the setting called `Commenter Name Format`:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.commenter-name-format select'; selector = '.commenter-name-format'; title='Change Name Format' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.commenter-name-format select'; selector = '.commenter-name-format'; alt='Commenter Name Format Dropdown geöffnet mit Auswahlmöglichkeiten wie Capitalize, Last Initial und All Initials'; title='Namensformat ändern' app-screenshot-end]
 
-Die verfügbaren Formate sind:
+The available formats are:
 
-- Großschreibung (zeigt Beispielbenutzer als Beispielbenutzer an)
-- Letzter Anfangsbuchstabe (zeigt Beispielbenutzer als Beispiel B. an)
-- Alle Initialen (zeigt Beispielbenutzer als B. B. an)
-- "Anonym" anzeigen
+- Capitalize (zeigt Beispielbenutzer als Example User)
+- Last Initial (zeigt Example User als Example U.)
+- All Initials (zeigt Example User als E. U.)
+- Show "Anonymous"
 
-Die Änderung wirkt sofort. Benutzer sehen ihren vollständigen Benutzernamen weiterhin oben im Kommentarbereich für sich selbst, aber in ihren Kommentaren wird der modifizierte Benutzername angezeigt.
+The effect of changing this is immediate. Benutzer sehen weiterhin ihren vollständigen Benutzernamen oben im Kommentarbereich für sich selbst, aber ihre Kommentare zeigen den modifizierten Benutzernamen.
 
-Benutzernamen werden serverseitig maskiert, um die Nutzer zu schützen.
-
----
+Usernames are masked server-side to protect users.

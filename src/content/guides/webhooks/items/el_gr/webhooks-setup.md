@@ -1,11 +1,11 @@
-Ακολουθήστε τα ίδια βήματα για το `localhost` όπως θα κάνατε στο production. Βεβαιωθείτε ότι έχετε ρυθμίσει production domains και API Secrets.
+Follow the same steps for `localhost` as you would production. Ensure you have production domains and API Secrets setup.
 
-Πρώτα, μεταβείτε στο [Διαχείριση Webhooks](https://fastcomments.com/auth/my-account/manage-data/webhooks). Αυτό είναι προσβάσιμο μέσω Διαχείριση Δεδομένων -> Webhooks.
+First, navigate to the [διαχειριστικό Webhooks](https://fastcomments.com/auth/my-account/manage-data/webhooks). This is accessible via Διαχείριση Δεδομένων -> Webhooks.
 
-Η σελίδα διαμόρφωσης εμφανίζεται ως εξής:
+The configuration page appears as follows:
 
-[app-screenshot-start url='/auth/my-account/manage-data/webhooks'; selector = '.content'; title='Webhooks Configuration'; cacheBuster = 'v3' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/webhooks'; selector = '.content'; alt='Σελίδα διαχείρισης Webhooks με επιλογέα τομέα και πεδίο URL τελικού σημείου ανά γεγονός σχολίου, συν τη λειτουργία Αποστολή Δοκιμαστικού Φορτίου'; title='Διαμόρφωση Webhooks'; cacheBuster = 'v3' app-screenshot-end]
 
-Σε αυτή τη σελίδα μπορείτε να καθορίσετε endpoints για κάθε τύπο γεγονότος σχολίου.
+In this page you can specify endpoints for each type of comment event.
 
-Για κάθε τύπο γεγονότος, βεβαιωθείτε ότι κάνετε κλικ στο Send Test Payload για να διασφαλίσετε ότι έχετε ρυθμίσει σωστά την ενσωμάτωσή σας. Δείτε την επόμενη ενότητα, "Testing", για λεπτομέρειες.
+For each type of event, be sure to click Send Test Payload to ensure you've set up your integration correctly. See the next section, "Testing", for details.

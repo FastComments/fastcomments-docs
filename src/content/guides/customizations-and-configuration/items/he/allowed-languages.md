@@ -1,13 +1,14 @@
-ברירת המחדל של FastComments היא שלא להגביל את השפות שבהן ניתן להגיב.
+---
+By default, FastComments does not limit languages used to comment. 
 
-ייתכן שתרצו להגביל את השפות שבהן משתמשת הקהילה.
+It may be desirable to limit the languages a community uses.
 
-ניתן להגדיר זאת ללא צורך בקוד, בדף התאמת הווידג'ט:
+This can be configured without code, on the widget customization page:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allowed-languages']; selector = '.allowed-languages'; title='Allowed Languages' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allowed-languages']; selector = '.allowed-languages'; alt='בוחר השפות המותרות בעמוד התאמת הווידג\'ט להגבלת השפות שהתגובות יכולות להשתמש בהן'; title='שפות מותרות' app-screenshot-end]
 
-המערכת תנתח את ההערה שלהם ותזהה את שפתה, ולאחר מכן תתאים אותה לרשימת השפות המותרות.
+The system will parse their comment and determine its language, and then match it with the allowed list.
 
-אם ההערה נכתבה בשפה שאינה מותרת, תוצג הודעת שגיאה מקומית.
+If the comment is written in a language that is not allowed, then a localized error message is shown. 
 
 ---

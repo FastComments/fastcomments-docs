@@ -1,13 +1,14 @@
+---
 [related-parameter-start name = 'noStyles'; type = 'boolean'; related-parameter-end]
 
-Daha büyük özelleştirilmiş stil projelerinde, temiz bir sayfadan başlamak ve varsayılan stilleri hiç kullanmamak tercih edilebilir.
+Daha büyük özelleştirilmiş stil projeleri için, sıfırdan başlamak ve varsayılan stili hiç kullanmamak isteyebilirsiniz.
 
-Tüm varsayılan stiller, **noStyles** parametresini true olarak ayarlayarak kaldırılabilir, şu şekilde:
+Tüm varsayılan stil, **noStyles** parametresini true olarak ayarlayarak aşağıdaki gibi kaldırılabilir:
 
-[code-example-start config = {noStyles: true}; linesToHighlight = [6]; title = 'Disabling All Default Styles'; code-example-end]
+[code-example-start config = {noStyles: true}; linesToHighlight = [6]; title = 'Tüm Varsayılan Stilleri Devre Dışı Bırakma'; code-example-end]
 
-Bu, kod kullanmadan, widget özelleştirme sayfasında, Gelişmiş Seçenekler altında özelleştirilebilir:
+Bu, kod yazmadan, widget özelleştirme sayfasında Gelişmiş Seçenekler altında özelleştirilebilir:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.show-advanced-option', '.disable-all-default-styling']; selector = '.disable-all-default-styling'; title='Disabling All Default Styles' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.show-advanced-option', '.disable-all-default-styling']; selector = '.disable-all-default-styling'; alt='Widget özelleştirme sayfasında Gelişmiş Seçenekler altında etkinleştirilen tüm varsayılan stil devre dışı bırakma onay kutusu'; title='Tüm Varsayılan Stilleri Devre Dışı Bırakma' app-screenshot-end]
 
 ---

@@ -1,18 +1,18 @@
-По подразумеваној поставци, FastComments ће приказати име корисника како су га унели, или како нам је прослеђено преко SSO.
+По подразумеваној поставци, FastComments ће приказати име корисника онако како је унето, или како је прослеђено преко SSO.
 
-Међутим, може бити пожељно прикрити или приказати име корисника на другачији начин. На пример, ако је име корисника Allen Rex, можда желите да прикажете само "Allen R.".
+Међутим, можда је потребно маскирати или приказати име корисника на другачији начин. На пример, ако је име корисника Аллен Рекс, можда желите да прикажете само „Аллен Р.“.
 
-Ово се може урадити без кода у Widget Customization UI, под поставком која се зове `Commenter Name Format`:
+Ово се може урадити без кода у UI-ју за прилагођавање виџета, под подешавањем названим `Commenter Name Format`:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.commenter-name-format select'; selector = '.commenter-name-format'; title='Change Name Format' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.commenter-name-format select'; selector = '.commenter-name-format'; alt='Коментатор Формат Име падајући мени отворен са изборима као што су Capitalize, Last Initial и All Initials'; title='Промени Формат Име' app-screenshot-end]
 
 Доступни формати су:
 
-- Име са великим почетним словом (прикажи Example User као Example User)
-- Иницијал презимена (прикажи Example User као Example U.)
-- Сви иницијали (прикажи Example User као E. U.)
-- Прикажи "Anonymous"
+- Capitalize (display example user as Example User)
+- Last Initial (display Example User as Example U.)
+- All Initials (display Example User as E. U.)
+- Show "Anonymous"
 
-Утицај промене је непосредан. Корисници ће и даље видети своје пуно корисничко име на врху подручја за коментаре, за себе, али ће њихови коментари показивати измењено корисничко име.
+Ефекат промене је одмах. Корисници ће и даље видети своје пуно корисничко име на врху простора за коментаре за себе, али њихови коментари ће приказивати измењено корисничко име.
 
-Корисничка имена се маскирају на серверској страни ради заштите корисника.
+Корисничка имена се маскирају на серверу ради заштите корисника.

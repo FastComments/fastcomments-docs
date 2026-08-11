@@ -1,13 +1,12 @@
-Com o FastComments, vários usuários podem ser adicionados ao seu tenant, e suas permissões podem ser configuradas com base nas funções da sua organização.
+With FastComments, many users can be added to your tenant, and their permissions can be setup based on the roles in your
+organization.
 
-[app-screenshot-start url='/auth/my-account/users/new/edit'; selector = '.account-block'; title='Adding a User' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/users/new/edit'; selector = '.account-block'; alt='Formulário de novo usuário para adicionar alguém ao seu tenant, com opções de permissão para sua função'; title='Adicionando um Usuário' app-screenshot-end]
 
-Usuários podem ser adicionados por meio desta interface. Se você tiver muitos usuários, podemos importá-los para você [via suporte ao cliente](https://fastcomments.com/auth/my-account/help).
+Users can be added via this UI. If you have many users, we can import them for you [via customer support](https://fastcomments.com/auth/my-account/help).
 
-Para adicionar moderadores, veja [a documentação correspondente](/guide-moderation.html#moderators-adding).
+For adding moderators, see [the corresponding documentation](/guide-moderation.html#moderators-adding).
 
-### Uma nota sobre autenticação
+### Uma Nota sobre Autenticação
 
-Seus usuários podem estar procurando um lugar para inserir sua senha. FastComments usa "magic links" para fazer login - portanto, nenhuma senha é necessária.
-
----
+Your users may be looking for a place to enter their password. FastComments uses "magic links" for logging in - so no passwords are required.

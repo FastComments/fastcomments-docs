@@ -1,9 +1,13 @@
-デフォルトでは、各ユーザーは同じ1分間に最大`5 comments`を投稿できます。
+---
+デフォルトでは、各ユーザーは同じ分内に最大 `5 コメント` を投稿できます。
 
-これは user id、anon user id、および ip address (hashed) によって追跡されます。
+これはユーザーID、匿名ユーザーID、IPアドレス（ハッシュ化）で追跡されます。
 
-これはウィジェットのカスタマイズページでコード不要でカスタマイズできます:
+コードを書かずに、ウィジェットカスタマイズページでカスタマイズできます。
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.max-comments-per-minute'; title='Limiting Comment Volume Per User' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.max-comments-per-minute'; alt='ウィジェットカスタマイズページの「1分あたりの最大コメント数」フィールド（デフォルトで5に設定）'; title='ユーザーごとのコメント量の制限' app-screenshot-end]
 
-注意: comment creation API を使用している場合、リクエストでユーザーの元の `ip` アドレスを当社のバックエンドに渡すことを検討してください。レート制限がユーザーごとに適用され、アカウント全体には適用されないようにするためです。
+コメント作成APIを使用している場合、レートリミットが適用されるように、ユーザーの元の `ip` アドレスをリクエストでバックエンドに渡す必要があることに注意してください
+ユーザー単位で適用され、アカウント全体に対しては適用されません。
+
+---

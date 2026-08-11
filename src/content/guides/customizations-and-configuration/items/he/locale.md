@@ -1,27 +1,27 @@
 [related-parameter-start name = 'locale'; type = 'string'; related-parameter-end]
 
-כברירת מחדל, FastComments יציג את ווידג'ט התגובות ב‑locale שנקבע על-ידי מערכת המשתמש והדפדפן.
+בברירת מחדל, FastComments יציג את וידג'ט ההערות במיקום (locale) שנקבע על ידי מערכת והדפדפן של המשתמש.
 
-כאשר משתמש מגיב או נכנס, אנו מעדכנים את ה‑locale האחרון שבו השתמש ומשתמשים בו גם לשליחת מיילים.
+כאשר משתמש מגיב או נכנס למערכת, אנו מעדכנים את ה‑locale האחרון שבו השתמש ומשתמשים בו גם לשליחת אימיילים.
 
-זה משפיע על האופן שבו ווידג'ט התגובות מתורגם עבור המשתמש. ה‑locale מורכב משפת המשתמש והאזור שלו, ולכן הגדרת ה‑locale בדרך כלל תשנה את השפה שבה מוצג הטקסט למשתמש.
+זה משפיע על האופן שבו וידג'ט ההערות מתורגם למשתמש. locale מורכב משפת המשתמש והאזור שלו, ולכן הגדרת locale בדרך כלל תשנה את השפה שבה מוצג הטקסט למשתמש.
 
-#### Via The UI
+#### דרך הממשק
 
-ניתן להגדיר זאת דרך ממשק התאמת הווידג'ט. ראו את האפשרות "Locale / Language":
+זה ניתן להגדיר באמצעות ממשק התאמת הווידג'ט. ראה את האפשרות "Locale / Language":
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.locale-override'; title='Changing The Locale / Language' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.locale-override'; alt='תפריט נפתח Locale / Language בעמוד התאמת הווידג'ט המשמש לשינוי ה‑locale שזוהה עבור המבקר'; title='Changing The Locale / Language' app-screenshot-end]
 
-#### Via Code
+#### דרך קוד
 
-ניתן לעקוף זאת ולהגדיר locale רצוי.
+זה ניתן לעקוף עם locale רצוי.
 
 [code-example-start config = {locale: 'ru_ru'}; linesToHighlight = [6]; title = 'Manually Defining the User\'s Locale'; code-example-end]
 
-### Supported Languages and Locale Codes
+### שפות נתמכות וקודי Locale
 
-[ניתן למצוא את הרשימה המלאה של השפות הנתמכות וקודי ה‑locale המתאימים כאן.](/guide-supported-languages.html#supported-languages)
+[אתה יכול למצוא את הרשימה המלאה של השפות הנתמכות וקודי ה‑locale המתאימים כאן.](/guide-supported-languages.html#supported-languages)
 
-### SSO Note
+### הערה על SSO
 
-אם אתם משתמשים ב‑SSO, ייתכן שתרצו להעביר את ה‑locale של המשתמש באובייקט המשתמש, כדי שמיילים ודברים אחרים יהיו מותאמים נכון עבורו.
+אם אתה משתמש ב‑SSO, ייתכן שתרצה להעביר את ה‑locale של המשתמש באובייקט המשתמש, כך שהאימיילים ודברים אחרים יתורגמו כראוי עבורו.

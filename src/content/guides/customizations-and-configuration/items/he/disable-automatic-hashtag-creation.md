@@ -1,8 +1,9 @@
-כאשר משתמשים מזינים האשטאגים בצורת `#someexampletag`, FastComments ייצור אוטומטית את ה-`HashTag` ויבליט 
-אתו בהערה שלהם.
+---
+כאשר משתמשים מזינים האשטאגים, בצורה של `#someexampletag`, FastComments תיצור אוטומטית את ה-`HashTag` הזה ותדגיש אותו בתגובה שלהם.
 
-במקרים מסוימים רצוי לבטל תכונה זו, או לשלוט אילו האשטאגים ניתנים לשימוש דרך ה-API.
+במקרים מסוימים רצוי להשבית תכונה זו, או לשלוט באילו האשטאגים ניתן להשתמש דרך ה-API.
 
-כדי לעשות זאת, פשוט הפעל את `Disable Automatic #hashtag Creation` דרך ממשק התאמה אישית של הווידג'ט.
+כדי לעשות זאת, פשוט אפשרו את `Disable Automatic #hashtag Creation` דרך ממשק התאמה אישית של הווידג'ט.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-automatic-hash-tag-creation']; selector = '.disable-automatic-hash-tag-creation'; title='Disabling Automatic HashTag Creation' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-automatic-hash-tag-creation']; selector = '.disable-automatic-hash-tag-creation'; alt='אפשרות השבתת יצירת האשטאג אוטומטית מופעלת בממשק התאמה אישית של הווידג\'ט'; title='השבתת יצירת HashTag אוטומטית' app-screenshot-end]
+---

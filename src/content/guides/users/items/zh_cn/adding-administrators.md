@@ -1,15 +1,12 @@
----
-具有 `Super Admin` 权限的用户可以添加和移除其他版主。
+Users with the `Super Admin` permission can add and remove other moderators.
 
-可以通过导航到[用户 页面](https://fastcomments.com/auth/my-account/users)并
-在底部点击 `Add User` 来添加用户。
+A user can be added by navigating [to the Users page](https://fastcomments.com/auth/my-account/users) and
+clicking `Add User` at the bottom.
 
-[app-screenshot-start url='/auth/my-account/users'; selector = '.content'; title='The Users Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/users'; selector = '.content'; alt='列出账户管理员的用户页面，底部有“Add User”按钮'; title='用户页面' app-screenshot-end]
 
-添加用户时，我们可以设置他们的头像、用户名、电子邮件、语言环境和权限。
+When adding a user we can set their avatar, username, email, locale, and permissions.
 
-[app-screenshot-start url='/auth/my-account/users/new/edit'; selector = '.content'; title='Adding a User' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/users/new/edit'; selector = '.content'; alt='用户编辑表单，已填写头像、用户名、电子邮件、语言和权限字段'; title='添加用户' app-screenshot-end]
 
-添加管理员时，他们会收到一封欢迎邮件和登录链接。
-
----
+When adding an administrator, they will be sent a welcome email and login link.

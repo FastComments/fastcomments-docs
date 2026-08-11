@@ -1,15 +1,15 @@
-Перейдите на панель управления вашей учётной записью и откройте [страницу RSS-канала](https://fastcomments.com/auth/my-account/rss).
+Navigate to your account dashboard and go to the [страницу RSS-ленты](https://fastcomments.com/auth/my-account/rss).
 
-[app-screenshot-start url='/auth/my-account/rss'; selector = '.content'; title='RSS Feed Configuration' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/rss'; selector = '.content'; alt='Страница RSS-ленты учётной записи с флажком "Включить доступ к RSS-ленте", URL ленты и кнопками "Копировать" и "Просмотр ленты"'; title='Конфигурация RSS-ленты' app-screenshot-end]
 
-На странице RSS-канала установите флажок «Включить доступ к RSS-каналу», чтобы сгенерировать уникальный URL вашего RSS-канала.
+On the RSS Feed page, check the "Enable RSS Feed Access" checkbox to generate your unique RSS feed URL.
 
-Когда вы включите канал, появится уведомление о безопасности с пояснением, что любой, у кого есть ссылка, сможет просматривать ваши комментарии.
+When you enable the feed, a security notice will appear explaining that anyone with the link can access your comments.
 
-После включения появится уникальный URL RSS-канала. Нажмите кнопку «Копировать», чтобы скопировать URL в буфер обмена.
+Once enabled, your unique RSS feed URL will appear. Click the "Copy" button to copy the URL to your clipboard.
 
-Откройте приложение для чтения RSS и добавьте скопированный URL как новую подписку на канал. Точные шаги зависят от используемого RSS-ридера, но обычно нужно найти кнопку «Добавить канал» или «Подписаться», вставить URL RSS-канала и задать имя каналу.
+Open your RSS reader application and add the copied URL as a new feed subscription. The exact steps vary by RSS reader, but typically you'll look for an "Add Feed" or "Subscribe" button, paste your RSS feed URL, and give the feed a name.
 
-Вы также можете нажать кнопку «Просмотреть канал» на странице RSS-канала, чтобы просмотреть канал прямо в браузере.
+You can also click the "View Feed" button on the RSS Feed page to see your feed directly in your browser.
 
-Чтобы отключить доступ к RSS-каналу, просто снимите флажок «Включить доступ к RSS-каналу». Это предотвратит доступ к каналу, хотя URL останется прежним, если вы включите его снова позже.
+To disable access to your RSS feed, simply uncheck the "Enable RSS Feed Access" checkbox. This will prevent the feed from being accessed, though the URL will remain the same if you re-enable it later.

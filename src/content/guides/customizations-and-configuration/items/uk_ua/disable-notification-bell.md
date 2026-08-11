@@ -1,20 +1,20 @@
 [related-parameter-start name = 'disableNotificationBell'; type = 'boolean'; related-parameter-end]
 
-За замовчуванням FastComments показує іконку дзвінка сповіщень у верхньому правому куті області коментарів.
+За замовчуванням FastComments показує сповіщувальний дзвінок у правому верхньому куті області коментарів.
 
-Ця іконка почервоніє і покаже кількість сповіщень у користувача. Приклади таких сповіщень:
+Цей дзвінок стане червоним і покаже кількість сповіщень, які має користувач. Приклади сповіщень:
 
 - Користувач відповів вам.
-- Користувач відповів у гілці, в якій ви коментували.
-- Користувач проголосував за ваш коментар.
-- Користувач відповів на сторінці, на яку ви підписані.
+- Користувач відповів у темі, в якій ви коментували.
+- Користувач поставив вашому коментарю лайк.
+- Користувач відповів на сторінку, на яку ви підписалися.
 
-Іконка дзвінка сповіщень також надає можливість підписатися на всю сторінку.
+Сповіщувальний дзвінок також забезпечує механізм підписки на всю сторінку.
 
-Однак можна повністю вимкнути іконку дзвінка сповіщень:
+Проте, ми можемо повністю вимкнути сповіщувальний дзвінок:
 
-[code-example-start config = {disableNotificationBell: true}; linesToHighlight = [6]; title = 'Disable Notification Bell'; code-example-end]
+[code-example-start config = {disableNotificationBell: true}; linesToHighlight = [6]; title = 'Вимкнути сповіщувальний дзвінок'; code-example-end]
 
-Це також можна зробити без коду. На сторінці налаштування віджета див. розділ "Disable Notification Bell".
+Це також можна зробити без коду. На сторінці налаштування віджету, дивіться розділ «Вимкнути сповіщувальний дзвінок».
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-notification-bell']; selector = '.disable-notification-bell'; title='Disable Notification Bell' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-notification-bell']; selector = '.disable-notification-bell'; alt='Сторінка налаштування віджету з позначеним прапорцем «Вимкнути сповіщувальний дзвінок»'; title='Вимкнути сповіщувальний дзвінок' app-screenshot-end]

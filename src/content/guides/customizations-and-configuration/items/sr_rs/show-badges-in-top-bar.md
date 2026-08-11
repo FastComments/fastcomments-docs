@@ -1,13 +1,13 @@
 [related-parameter-start name = 'showBadgesInTopBar'; type = 'boolean'; related-parameter-end]
 
-Po podrazumevanoj postavci, FastComments prikazuje bedževe korisnika samo pored njihovih komentara u okviru niti komentara.
+По подразумеваној поставци, FastComments ће приказивати корисничке значке само на њиховим коментарима унутар нити коментара.
 
-Međutim, možemo prikazati bedževe korisnika pored njihovog imena iznad forme za komentar omogućavanjem ove funkcije na stranici za prilagođavanje widgeta:
+Међутим, можемо приказати корисничке значке поред њиховог имена изнад форме за коментар тако што ћемо омогућити ову функцију на страници за прилагођавање виџета:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.show-badges-in-top-bar'; title='Show Badges in Top Bar Option' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.show-badges-in-top-bar'; alt='Поле за приказ значки у горњој траци на страници за прилагођавање виџета, поставља значке поред имена изнад форме за коментар'; title='Опција приказа значки у горњој траци' app-screenshot-end]
 
-Ovo će prikazati bedževe korisnika pored njihovog imena u gornjoj traci, čineći njihova postignuća i status istaknutijim dok pišu komentar.
+Ово ће приказати корисничке значке поред њиховог имена у области горње траке, чинећи њихова достигнућа и статус видљивијим док пишу коментар.
 
-Imajte na umu da ova funkcija mora biti omogućena u interfejsu za prilagođavanje widgeta da bi radila. Po želji možete postaviti zastavicu **showBadgesInTopBar** na false u konfiguraciji koda da biste je selektivno onemogućili čak i kada je uključena na nivou servera:
+Напомена: ова функција мора бити омогућена у корисничком интерфејсу за прилагођавање виџета да би радила. По потреби можете поставити заставицу **showBadgesInTopBar** на false у вашој конфигурацији кода да бисте селективно онемогућили функцију чак и када је укључена на нивоу сервера:
 
-[code-example-start config = {showBadgesInTopBar: false}; linesToHighlight = [6]; title = 'Disable Show Badges in Top Bar'; code-example-end]
+[code-example-start config = {showBadgesInTopBar: false}; linesToHighlight = [6]; title = 'Onemogući prikaz bedževa u gornjoj traci'; code-example-end]

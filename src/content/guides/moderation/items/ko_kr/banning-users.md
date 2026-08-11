@@ -1,29 +1,29 @@
-FastComments에서 사이트에 댓글을 달지 못하도록 사용자를 차단하는 방법은 두 가지가 있습니다.
+There are two ways to ban users from commenting on your site with FastComments.
 
 The first is if you already know their email, you can enter it on the <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">차단된 사용자</a> page.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; title='The Banned Users Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; alt='Moderate Comments 아래 차단된 사용자 목록, 차단된 이메일 주소와 새 차단을 추가하는 버튼'; title='차단된 사용자 페이지' app-screenshot-end]
 
 This page can be accessed via Moderate Comments -> Banned Users
 
-사용자를 차단할 때 차단 유형을 선택할 수 있으며, 영구 차단 또는 영구 섀도우 차단을 선택할 수 있습니다:
+When we go to ban a user, we can pick a type, either Permanent or Permanent Shadow Ban:
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; title='Banning a User' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; alt='이메일 필드와 영구 차단 또는 영구 섀도우 차단 선택이 있는 새 차단 양식'; title='사용자 차단' app-screenshot-end]
 
-사용자를 차단하는 두 번째 방법은 댓글 관리 페이지(Comment Moderation)의 각 댓글에 있는 차단 버튼을 클릭하는 것입니다.
+The second way to ban a user is by clicking the ban button that is placed on each comment on the Comment Moderation page.
 
-차단 버튼을 클릭하면 차단 유형과 기간을 지정할 수 있는 몇 가지 옵션이 표시됩니다.
+When we click the ban button, you'll be presented with some options, where we can specify the ban type and duration.
 
-### 이메일 별칭
+### Email Aliases
 
-이메일로 사용자를 차단할 때 FastComments는 자동으로 `+` 별칭을 무시합니다. 예를 들어, `user+alias@gmail.com`을 차단하면
-`user@gmail.com` 및 `user+other@gmail.com`과 같은 해당 주소의 다른 `+` 변형도 함께 차단됩니다.
+When banning a user by email, FastComments automatically ignores `+` aliases. For example, banning `user+alias@gmail.com` will
+also ban `user@gmail.com` and any other `+` variation of that address, such as `user+other@gmail.com`.
 
-### 섀도우 밴
+### Shadow Bans
 
-섀도우 밴은 사용자의 댓글이나 투표가 실제로는 저장되지 않았음에도 불구하고 성공적으로 저장된 것처럼 보이게 만드는 차단 유형입니다.
-특정 상황에서는 바람직할 수 있습니다.
+A shadow-ban is a type of ban that makes it appear that the user's comment or vote was saved successfully, when in fact it was not. This may be
+desirable in certain situations.
 
-### IP 주소로 차단
+### Banning Via IP Address
 
-테넌트가 옵트아웃하지 않는 한, FastComments는 댓글 작성자의 IP 주소를 해시한 값을 저장하여 IP를 통한 차단을 지원합니다.
+Unless a tenant wishes to opt out, FastComments supports banning via IP by storing a hashed version of the commenter's IP address.

@@ -1,60 +1,57 @@
 [related-parameter-start name = 'customCSS'; type = 'string'; related-parameter-end]
 
-FastComments został zaprojektowany z myślą o możliwościach dostosowywania. Sam widget komentarzy działa wewnątrz iframe ze względów bezpieczeństwa, więc aby zastosować
-niestandardowe style, musisz postępować według jednego z dwóch podejść.
+FastComments jest zaprojektowany tak, aby można go było dostosowywać. Sam widget komentarzy działa wewnątrz iframe ze względów bezpieczeństwa, więc aby zastosować własne style, musisz wybrać jedną z dwóch metod.
 
-Pierwsze, najłatwiejsze podejście i przez nas preferowane, to skorzystanie ze [strony dostosowywania widgetu](https://fastcomments.com/auth/my-account/customize-widget).
+Pierwsza, najprostsza metoda, którą polecamy, to użycie [strony dostosowywania widgetu](https://fastcomments.com/auth/my-account/customize-widget).
 
-W stronie dostosowywania widgetu zobacz sekcję "Show Advanced Options", pod którą znajduje się obszar oznaczony jako "Custom CSS":
+Na stronie dostosowywania widgetu, zobacz sekcję „Pokaż zaawansowane opcje”, pod którą znajduje się obszar oznaczony „Custom CSS”:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.show-advanced-option'; selector = '.custom-css'; title='Custom CSS Input Area' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.show-advanced-option'; selector = '.custom-css'; alt='Edytor niestandardowego CSS pod opcją Pokaż zaawansowane opcje na stronie dostosowywania widgetu'; title='Obszar wprowadzania niestandardowego CSS' app-screenshot-end]
 
-To podejście ma pewne zalety:
+Ta metoda ma kilka zalet:
 1. Wprowadzony CSS jest minifikowany przed wysłaniem do użytkownika, a formatowanie pozostaje spójne w interfejsie edycji.
-2. Otrzymujesz wszystkie korzyści z interfejsu personalizacji widgetu, na przykład łatwe dostosowywanie widgetu komentarzy w różny sposób dla różnych witryn.
-3. Gdy wprowadzimy zmiany w widgetcie komentarzy, Twoje niestandardowe style zostaną przetestowane w ramach naszego procesu wydawniczego.
+2. Otrzymujesz wszystkie korzyści płynące z UI dostosowywania widgetu, na przykład łatwe dostosowywanie widgetu komentarzy dla różnych witryn.
+3. Gdy wprowadzamy zmiany w widgetcie komentarzy, Twoje własne style będą testowane jako część naszego procesu wydawniczego.
 
-Drugie podejście polega na określeniu parametru **customCSS** w konfiguracji widgetu, w następujący sposób:
+Druga metoda polega na określeniu parametru **customCSS** w konfiguracji widgetu, w następujący sposób:
 
 [code-example-start config = {customCSS: "button { background: red; }" }; linesToHighlight = [6]; title = 'Passing Custom CSS'; code-example-end]
 
-Jednak ma to *ograniczenia*:
-1. Istnieje limit ilości niestandardowego CSS, który można przesłać, zanim nasze serwery odrzucą żądanie, ze względu na rozmiar nagłówków.
-2. Musisz zarządzać niestandardowym CSS w swojej infrastrukturze i systemie budowania. Może to być zaletą, a nie wadą.
-3. W tym przypadku istnieje dodatkowy narzut polegający na wysyłaniu niestandardowego CSS przez sieć **dwukrotnie**, ponieważ musi on zostać wysłany do naszych serwerów, a następnie zwrócony w zawartości iframe. Jednak dla większości rozmiarów danych przesyłanych nie jest to zauważalne.
-4. Częstą optymalizacją jest minifikacja CSS, aby zmniejszyć jego rozmiar przesyłany przez sieć — przy tym podejściu musisz się tym jednak zająć samodzielnie.
-5. Twój niestandardowy CSS nie będzie przez nas testowany przy wprowadzaniu zmian.
+Jednak ma ona *ograniczenia*:
+1. Istnieje limit ilości niestandardowego CSS, który może zostać przekazany, zanim nasze serwery odrzucą żądanie, ze względu na rozmiar nagłówków.
+2. Musisz zarządzać niestandardowym CSS w swojej infrastrukturze i systemie budowania. Może to być zarówno zaleta, jak i wada.
+3. W tym scenariuszu następuje dodatkowy koszt przesyłania niestandardowego CSS **dwukrotnie** przez sieć – najpierw do naszych serwerów, a potem z powrotem w treści iframe. Dla większości rozmiarów ładunku nie jest to zauważalne.
+4. Powszechną optymalizacją jest minifikacja CSS w celu zmniejszenia jego rozmiaru w sieci, jednak przy tej metodzie musisz to obsłużyć samodzielnie.
+5. Twój niestandardowy CSS nie będzie testowany, gdy wprowadzamy zmiany.
 
 ### Zewnętrzne pliki CSS
 
-Możesz polecić widgetowi pobranie zewnętrznego pliku używając `@import`!
+Możesz nakazać widgetowi pobranie zewnętrznego pliku, używając `@import`!
 
-Zaleca się umieszczenie `@import` w regule dostosowującej. W ten sposób, jeśli kiedykolwiek będziemy musieli wprowadzić zmianę w widgetcie komentarzy, możemy użyć naszych narzędzi automatyzacji do weryfikacji Twojej konfiguracji. Na przykład utworzyłbyś regułę dostosowania w interfejsie personalizacji widgetu, kliknął `Advanced` i wpisał w `Custom CSS`:
+Zaleca się umieszczenie `@import` w regule dostosowywania. Dzięki temu, jeśli kiedykolwiek będziemy musieli wprowadzić zmianę w widgetcie komentarzy, będziemy mogli użyć naszego automatycznego narzędzia weryfikacji Twojej konfiguracji. Na przykład, utwórz regułę dostosowywania w UI Dostosowywania Widgetu, kliknij `Advanced` i wprowadź w polu `Custom CSS`:
 
     @import url(https://example.com/styles.css);
 
-#### W kodzie - niezalecane
+#### W kodzie – niezalecane
 
-Możesz też załadować zewnętrzny plik CSS za pomocą właściwości `customCSS`:
+Możesz także załadować zewnętrzny plik CSS poprzez właściwość `customCSS`:
 
 [code-example-start config = {customCSS: "@import url(https://example.com/styles.css);" }; linesToHighlight = [6]; title = 'External CSS File'; code-example-end]
 
-Pamiętaj jednak, że jeśli to zrobisz, Twój CSS nie będzie przez nas testowany. 
+Jednak pamiętaj, że Twój CSS nie będzie mógł być testowany przez nas, jeśli użyjesz tej metody.
 
 ### Stylowanie modala profilu użytkownika
 
-Modalne okna profili użytkowników również można stylować za pomocą niestandardowego CSS. Jednak aby zapewnić zastosowanie niestandardowego stylowania do profili użytkowników, wszystkie selektory CSS muszą być poprzedzone prefiksem `.user-profile`. Bez tego prefiksu niestandardowe style będą ignorowane dla modalnych okien profilu użytkownika.
+Modale profilu użytkownika można również stylować przy użyciu niestandardowego CSS. Aby zapewnić, że własne style zostaną zastosowane do profili użytkowników, wszystkie selektory CSS muszą być poprzedzone prefiksem `.user-profile`. Bez tego prefiksu własne style będą ignorowane w modalach profilu użytkownika.
 
 Na przykład:
 
 [code-example-start config = {customCSS: ".user-profile .profile-name { color: blue; }" }; title = 'User Profile CSS'; code-example-end]
 
-### Kompatybilność wsteczna
+### Zgodność wsteczna
 
-W FastComments wiemy, że nasi klienci dostosowują widget komentarzy. To jest zamierzone — ostatnią rzeczą, jakiej chcemy, jest powodowanie niezgodności w projekcie Twojego produktu.
+W FastComments wiemy, że nasi klienci dostosowują widget komentarzy. To jest zamierzone – ostatnią rzeczą, jaką chcemy, jest spowodowanie niespójności projektowych w Twoim produkcie.
 
-Ponieważ jest to ważna część naszego produktu, mamy pipeline budowania, który pozwala nam przeglądać zmiany w widgetcie komentarzy dla każdego klienta przy każdym wydaniu.
+Ponieważ jest to ważna część naszego produktu, mamy pipeline budowania, który pozwala nam przeglądać zmiany w widgetcie komentarzy, per‑klient, przy każdym wydaniu.
 
-Jeśli znajdziemy drobne problemy, zaktualizujemy Twoje konto, aby zapewnić płynność wydania. Jeśli zauważymy poważne zmiany łamiące kompatybilność, pozwala nam to wstrzymać wydanie.
-
----
+Jeśli znajdziemy drobne problemy, zaktualizujemy Twoje konto, aby zapewnić płynne wydanie. Jeśli zauważymy poważne, łamiące zmiany, pozwoli nam to wstrzymać wydanie.

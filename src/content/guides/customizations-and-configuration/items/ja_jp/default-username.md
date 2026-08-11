@@ -1,9 +1,6 @@
 ---
-ユーザーがコメントや投票を行う際、ログインしていない場合は、メールアドレスとユーザー名の入力を求められます。
+ユーザーがコメントや投票を行い、ログインしていない場合、メールアドレスとユーザー名の入力を求められます。
 
-匿名でのコメントの場合、コメント時の摩擦を減らすためにデフォルトのユーザー名を定義することが望ましい場合があります
-コメントする際の手間を軽減できます。これはカスタマイズUIから行えます。匿名コメントは事前に有効化しておく必要があります。
+匿名コメントの場合、コメント時のハードルを下げるためにデフォルトのユーザー名を設定したいことがあります。これはカスタマイズ UI から行えます。匿名コメント機能はまず有効にする必要があります。
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments']; selector = '.default-username-label'; title='Setting The Default Username' app-screenshot-end]
-
----
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments']; selector = '.default-username-label'; alt='匿名コメントが有効になるとカスタマイズ UI に表示されるデフォルトユーザー名フィールド'; title='デフォルトユーザー名の設定' app-screenshot-end]

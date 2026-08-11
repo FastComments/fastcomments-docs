@@ -1,11 +1,9 @@
 [related-parameter-start name = 'hideAvatars'; type = 'boolean'; related-parameter-end]
 
-Аватари се могу потпуно уклонити из коментарског виџета, чак и ако корисници имају сопствени аватар. 
+Avatari se mogu potpuno ukloniti iz widgeta za komentare, čak i ako su korisnici definisali svoj avatar. 
 
-[code-example-start config = {hideAvatars: true}; linesToHighlight = [6]; title = 'Hiding Avatars'; code-example-end]
+[code-example-start config = {hideAvatars: true}; linesToHighlight = [6]; title = 'Sakrivanje avatara'; code-example-end]
 
-Ово се може прилагодити без кода, на страници за прилагођавање виџета:
+Ovo se može prilagoditi bez koda, na stranici za prilagođavanje widgeta:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.hide-avatars'; title='Hiding Avatars' app-screenshot-end]
-
----
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.hide-avatars'; alt='Opcija Sakrivanje avatara na stranici za prilagođavanje widgeta, koja uklanja sve avatare iz widgeta za komentare'; title='Sakrivanje avatara' app-screenshot-end]

@@ -1,12 +1,9 @@
----
 [related-parameter-start name = 'hideAvatars'; type = 'boolean'; related-parameter-end]
 
-Avatars kunnen volledig uit de reactie-widget worden verwijderd, zelfs als gebruikers hun eigen avatar hebben ingesteld. 
+Avatars kunnen volledig worden verwijderd uit de commentaarwidget, zelfs als gebruikers hun eigen avatar hebben gedefinieerd. 
 
-[code-example-start config = {hideAvatars: true}; linesToHighlight = [6]; title = 'Hiding Avatars'; code-example-end]
+[code-example-start config = {hideAvatars: true}; linesToHighlight = [6]; title = 'Avatars verbergen'; code-example-end]
 
-Dit kan zonder code worden aangepast op de pagina voor het aanpassen van de widget:
+Dit kan worden aangepast zonder code, op de widget‑aanpassingspagina:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.hide-avatars'; title='Hiding Avatars' app-screenshot-end]
-
----
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.hide-avatars'; alt='Optie Avatars verbergen op de widget‑aanpassingspagina, die alle avatars uit de commentaarwidget verwijdert'; title='Avatars verbergen' app-screenshot-end]

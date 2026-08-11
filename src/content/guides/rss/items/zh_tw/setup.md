@@ -1,15 +1,17 @@
-前往您的帳戶儀表板，然後前往 [RSS Feed 頁面](https://fastcomments.com/auth/my-account/rss)。
+---
+前往您的帳戶儀表板，然後前往 [RSS Feed page](https://fastcomments.com/auth/my-account/rss)。
 
-[app-screenshot-start url='/auth/my-account/rss'; selector = '.content'; title='RSS Feed Configuration' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/rss'; selector = '.content'; alt='帳戶 RSS Feed 頁面，包含「啟用 RSS Feed Access」核取方塊、Feed URL，以及「Copy」和「View Feed」按鈕'; title='RSS Feed 設定' app-screenshot-end]
 
-在 RSS Feed 頁面，勾選 "啟用 RSS Feed 存取" 核取方塊以產生您專屬的 RSS feed URL。
+在 RSS Feed 頁面上，勾選「Enable RSS Feed Access」核取方塊以產生您唯一的 RSS feed URL。
 
-當您啟用該訂閱時，會出現一則安全通知，說明持有該連結的任何人都可以存取您的留言。
+啟用 Feed 後，會顯示安全性通知，說明任何擁有此連結的人都能存取您的評論。
 
-啟用後，會顯示您的專屬 RSS feed URL。按一下 "複製" 按鈕即可將該 URL 複製到剪貼簿。
+啟用後，您唯一的 RSS feed URL 會顯示。點擊「Copy」按鈕將 URL 複製到剪貼簿。
 
-打開您的 RSS 閱讀器應用程式，並將複製的 URL 新增為一個訂閱源。實際步驟會依 RSS 閱讀器而異，但通常您會尋找 "Add Feed" 或 "Subscribe" 按鈕，貼上您的 RSS feed URL，並為該訂閱命名。
+打開您的 RSS 閱讀器應用程式，將剛複製的 URL 新增為訂閱 Feed。具體步驟因 RSS 閱讀器而異，但通常您會尋找「Add Feed」或「Subscribe」按鈕，貼上 RSS feed URL，並為該 Feed 命名。
 
-您也可以在 RSS Feed 頁面按一下 "View Feed" 按鈕，直接在瀏覽器中檢視您的訂閱。
+您也可以在 RSS Feed 頁面上點擊「View Feed」按鈕，直接在瀏覽器中檢視您的 Feed。
 
-若要停用 RSS 訂閱存取，只要取消勾選 "啟用 RSS Feed 存取" 核取方塊。這將阻止對該訂閱的存取，但若您之後重新啟用，URL 將維持不變。
+若要停用 RSS feed 存取，只需取消勾選「Enable RSS Feed Access」核取方塊。這會阻止 Feed 被存取，但若稍後重新啟用，URL 仍保持不變。
+---

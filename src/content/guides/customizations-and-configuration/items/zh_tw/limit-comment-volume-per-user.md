@@ -1,11 +1,10 @@
----
-預設情況下，每位使用者在同一分鐘內最多可以提交 `5 comments`。
+By default, each user can submit up to `5 comments` in the same minute.
 
-這是透過 user id、anon user id 與 ip address (hashed) 來追蹤。
+This is tracked by user id, anon user id, and ip address (hashed).
 
-這可以在小工具自訂頁面上無需撰寫程式地進行自訂：
+This can be customized without code, on the widget customization page:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.max-comments-per-minute'; title='Limiting Comment Volume Per User' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.max-comments-per-minute'; alt='每分鐘最大評論數欄位於小工具自訂頁面，預設為 5'; title='限制每位使用者的評論量' app-screenshot-end]
 
-請注意，如果您正在使用 comment creation API，可能想在發送到我們後端的請求中傳遞使用者原始的 `ip` 位址，以便速率限制能依使用者套用，而非全域套用到您的帳戶。
----
+Note that if you're using the comment creation API may want to pass the user's original `ip` address in the request to our backend so rate limiting is applied
+per user and not globally to your account.

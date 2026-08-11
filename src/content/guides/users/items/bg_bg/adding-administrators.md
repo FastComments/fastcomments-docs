@@ -1,12 +1,11 @@
-Потребители с разрешението `Super Admin` могат да добавят и премахват други модератори.
+Потребителите с разрешение `Super Admin` могат да добавят и премахват други модератори.
 
-Потребител може да бъде добавен като отидете [на страницата Потребители](https://fastcomments.com/auth/my-account/users) и
-кликнете `Add User` в долната част.
+Потребител може да бъде добавен, като отидете [на страницата Users](https://fastcomments.com/auth/my-account/users) и кликнете върху `Add User` в долната част.
 
-[app-screenshot-start url='/auth/my-account/users'; selector = '.content'; title='The Users Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/users'; selector = '.content'; alt='Страница с потребители, показваща администраторите в акаунта, с бутон „Add User“ в долната част'; title='Страницата с потребители' app-screenshot-end]
 
-При добавяне на потребител можем да зададем аватара, потребителското име, имейла, локала и разрешенията.
+При добавяне на потребител можем да зададем неговия аватар, потребителско име, имейл, локал и разрешения.
 
-[app-screenshot-start url='/auth/my-account/users/new/edit'; selector = '.content'; title='Adding a User' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/users/new/edit'; selector = '.content'; alt='Формуляр за редактиране на потребител с попълнени полета за аватар, потребителско име, имейл, локал и разрешения'; title='Добавяне на потребител' app-screenshot-end]
 
-На добавения администратор ще бъде изпратен имейл за добре дошли и връзка за влизане.
+При добавяне на администратор, ще му бъде изпратен приветствен имейл и връзка за вход.

@@ -1,23 +1,20 @@
----
 [related-parameter-start name = 'disableNotificationBell'; type = 'boolean'; related-parameter-end]
 
 Varsayılan olarak, FastComments yorum alanının sağ üst köşesinde bir bildirim zili gösterir.
 
-Bu zil kırmızı olur ve kullanıcının sahip olduğu bildirim sayısını gösterir. Bazı örnek bildirimler şunlardır:
+Bu zil kırmızıya döner ve kullanıcının sahip olduğu bildirim sayısını gösterir. Örnek bildirimler şunlardır:
 
 - Kullanıcı size yanıt verdi.
-- Kullanıcı, yorum yaptığınız bir başlıkta yanıt verdi.
-- Kullanıcı yorumunuza oy verdi.
+- Kullanıcı, yorum yaptığınız bir dizide yanıt verdi.
+- Kullanıcı yorumunuzu beğendi.
 - Kullanıcı, abone olduğunuz bir sayfaya yanıt verdi.
 
-Bildirim zili ayrıca bir sayfaya abone olma mekanizması da sağlar.
+Bildirim zili aynı zamanda bir bütün sayfaya abone olma mekanizması da sağlar.
 
-Ancak, bildirim zilini tamamen devre dışı bırakabiliriz:
+Bununla birlikte, bildirim zilini tamamen devre dışı bırakabiliriz:
 
-[code-example-start config = {disableNotificationBell: true}; linesToHighlight = [6]; title = 'Disable Notification Bell'; code-example-end]
+[code-example-start config = {disableNotificationBell: true}; linesToHighlight = [6]; title = 'Bildirim Zilini Devre Dışı Bırak'; code-example-end]
 
-Bu kod olmadan da yapılabilir. Widget özelleştirme sayfasında, "Bildirim Zilini Devre Dışı Bırak" bölümüne bakın.
+Bu aynı zamanda kod olmadan da yapılabilir. Widget özelleştirme sayfasında, "Bildirim Zilini Devre Dışı Bırak" bölümüne bakın.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-notification-bell']; selector = '.disable-notification-bell'; title='Disable Notification Bell' app-screenshot-end]
-
----
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-notification-bell']; selector = '.disable-notification-bell'; alt='Bildirim Zilini Devre Dışı Bırak kutucuğu işaretli widget özelleştirme sayfası'; title='Bildirim Zilini Devre Dışı Bırak' app-screenshot-end]

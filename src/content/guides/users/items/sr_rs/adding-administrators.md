@@ -1,12 +1,13 @@
-Корисници са дозволом `Super Admin` могу да додају и уклањају друге модераторе.
+Korisnici sa dozvolom `Super Admin` mogu da dodaju i uklanjaju druge moderatore.
 
-Корисника је могуће додати тако што ћете отићи [to the Users page](https://fastcomments.com/auth/my-account/users) и
-кликнути `Add User` на дну.
+Korisnika možete dodati tako što ćete otići na [na stranicu Korisnici](https://fastcomments.com/auth/my-account/users) i klikom na `Add User` na dnu.
 
-[app-screenshot-start url='/auth/my-account/users'; selector = '.content'; title='The Users Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/users'; selector = '.content'; alt='Stranica korisnika koja prikazuje administratore na nalogu, sa dugmetom `Add User` na dnu'; title='Stranica korisnika' app-screenshot-end]
 
-Када додајете корисника, можете да подесите њихов аватар, корисничко име, имејл, локал и дозволе.
+Kada se dodaje korisnik možemo postaviti njegov avatar, korisničko ime, e‑mail, jezik i dozvole.
 
-[app-screenshot-start url='/auth/my-account/users/new/edit'; selector = '.content'; title='Adding a User' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/users/new/edit'; selector = '.content'; alt='Forma za uređivanje korisnika sa popunjenim poljima avatar, korisničko ime, e‑mail, jezik i dozvole'; title='Dodavanje korisnika' app-screenshot-end]
 
-Када додате администратора, биће им послат имејл добродошлице и линк за пријаву.
+Kada se dodaje administrator, biće mu poslat e‑mail dobrodošlice i link za prijavu.
+
+---

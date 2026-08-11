@@ -1,12 +1,9 @@
----
-Obwohl FastComments die Erkennung von beleidigenden Inhalten und Spam unterstützt, lässt sie sich anpassen. Die Erkennung von beleidigenden Inhalten oder Spam kann
-auf der Seite 'Comment Moderation Settings' jeweils einzeln deaktiviert werden.
+While FastComments supports profanity and spam detection, it can be customized. Profanity or Spam Detection can be  
+turned off individually via the Comment Moderation Settings page.
 
-Dies ist auch die Seite, auf der Sie die Konfiguration für die automatische Genehmigung von Kommentaren oder die Einstellung des Ablaufs
-von nicht verifizierten Kommentaren finden.
+This is also the page where you will find the configuration for comment auto approval, or configuring the expiration  
+of unverified comments.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/settings'; selector = '.content'; title='Comment Moderation Settings' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/settings'; selector = '.content'; alt='Moderationseinstellungen mit Optionen für Profanitäts- und Spam-Erkennung, automatische Genehmigung und Ablauf nicht verifizierter Kommentare'; title='Einstellungen zur Kommentar-Moderation' app-screenshot-end]
 
-Zusätzlich kann die Wort-Blacklist über einen Button auf dieser Seite angepasst werden.
-
----
+Additionally, the word blacklist can be customized from a button on this page.

@@ -1,26 +1,26 @@
-Hvis data skal flyttes, stiller FastComments et selvbetjeningsværktøj til rådighed til at flytte kommentarer
-mellem sider og artikler.
+In the event that data needs to be moved around, FastComments provides a self-service tool for moving comments
+between pages and articles.
 
-Sådan ser formularen til kopiering af kommentarer ud:
+Here's what the comment copy page form looks like:
 
-[app-screenshot-start url='/auth/my-account/manage-data/copy-comments'; selector = '.account-block'; title='The Copy Comment Form' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/copy-comments'; selector = '.account-block'; alt='Kopier kommentarer formular med Fra URL ID-feltet og Til URL ID- og URL-felterne'; title='Kopier kommentarformular' app-screenshot-end]
 
-### Udfyldelse af "Fra"-felterne
+### Filling out the "From" Fields
 
-For at beslutte, hvor kommentarerne skal flyttes fra, behøver vi blot at kende kildens `URL ID`.
+To decide where to move comments from, we simply need to know the source `URL ID`.
 
-Hvis du ikke sender en værdi for `urlId` i kommentar-widgetens konfiguration, vil dette være en "ren" version af sidens URL.
+If you aren't passing a value for `urlId` in the comment widget configuration, then this will be a "clean" version of the page URL.
 
-Du kan se, hvilke værdier dine kommentarer har for `URL ID` ved at eksportere dem.
+You can see what values your comments have for `URL ID` by exporting them.
 
-### Udfyldelse af "Til"-felterne
+### Filling out the "To" Fields
 
-For at beslutte, hvor kommentarerne skal flyttes til, har vi brug for målets `URL ID` og `URL`.
+To decide where to move comments to, we need to know the target `URL ID` and `URL`.
 
-`URL ID` vil være den bucket, som kommentaren placeres i. Feltet `URL` bruges, så du kan navigere direkte
-til kommentaren fra e-mails og moderationsværktøjer.
+The `URL ID` will be the bucket that the comment goes in. The `URL` field is used so that you can navigate directly
+to the comment from emails and moderation tools.
 
 #### WordPress
 
-Hvis du bruger WordPress, ville du for eksempel indtaste artikel-ID'erne i Til/Fra `URL ID`-felterne i migrationsværktøjet,
-i stedet for en URL.
+If you are using WordPress, you would for example enter the Article IDs in the To/From `URL ID` fields in the migration tool,
+rather than a URL.

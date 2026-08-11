@@ -1,14 +1,13 @@
 [related-parameter-start name = 'enableSpoilers'; type = 'boolean'; related-parameter-end]
 
-スポイラー機能は**enableSpoilers**フラグをtrueに設定することで有効にできます:
+**enableSpoilers** フラグを true に設定することで、スポイラーサポートを有効にできます:
 
-[code-example-start config = {enableSpoilers: true}; linesToHighlight = [6]; title = 'Enabling Spoilers'; code-example-end]
+[code-example-start config = {enableSpoilers: true}; linesToHighlight = [6]; title = 'スポイラーの有効化'; code-example-end]
 
-これはコードを使わずに行うこともできます。ウィジェットのカスタマイズページで、"Enable Spoilers" オプションを参照してください。
+コードを使用せずにこれを行うこともできます。ウィジェットカスタマイズページで「Enable Spoilers」オプションを確認してください。
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-spoilers']; selector = '.enable-spoilers'; title='Enable Spoilers' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-spoilers']; selector = '.enable-spoilers'; alt='ウィジェットカスタマイズページで「Enable Spoilers」チェックボックスがオンになっており、エディタに SPOILER ボタンが追加されています'; title='スポイラーの有効化' app-screenshot-end]
 
-テキストがハイライトされ、表示された `SPOILER` ボタンがクリックされると、ユーザーがマウスオーバーするまでテキストはマスクされます。ダークモードでも同じ処理を行いますが、異なる
-色を使用してダークモードにより適合させます。
+テキストがハイライトされ、表示された `SPOILER` ボタンがクリックされると、テキストはマスクされ、ユーザーがマウスオーバーするまで隠れたままになります。ダークモードの場合は、同様の動作を行いますが、ダークモードにより適した異なる色を使用します。
 
-これはWYSIWYGエディタとも互換性があります。
+これは WYSIWYG エディタでも互換性があります。

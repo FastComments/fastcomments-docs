@@ -1,13 +1,13 @@
-Por padrão o FastComments não permite iframes em comentários. Quando você habilita incorporações de mídia, os comentaristas podem colar o código de incorporação (o trecho `<iframe>`) de provedores confiáveis como YouTube, Vimeo, SoundCloud e Spotify, e ele será renderizado inline no comentário.
+By default FastComments does not allow iframes in comments. When you enable media embeds, commenters can paste the embed code (the `<iframe>` snippet) from trusted providers like YouTube, Vimeo, SoundCloud, and Spotify, and it will render inline in the comment.
 
-Por segurança, isto não é uma flag de configuração do widget no lado do cliente. É uma configuração do lado do servidor, validada quando cada comentário é salvo, portanto não pode ser ativada a partir da página. Somente iframes apontando para uma lista interna de provedores confiáveis são permitidos. Qualquer outro iframe é removido.
+For security, this is not a client-side widget config flag. It is a server-side setting, validated when each comment is saved, so it cannot be turned on from the page. Only iframes pointing at a built-in list of trusted providers are allowed. Any other iframe is removed.
 
-Isso é feito sem código, na página de personalização do widget:
+This is done without code, on the widget customization page:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.allow-embeds'; selector = '.allow-embeds'; title='Allow Media Embeds' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.allow-embeds'; selector = '.allow-embeds'; alt='Configuração de incorporação de mídia ativada na página de personalização do widget, permitindo que os comentaristas coletem incorporações de iframe confiáveis'; title='Permitir Incorporações de Mídia' app-screenshot-end]
 
-### Adicionando Seus Próprios Provedores
+### Adding Your Own Providers
 
-Se você quiser permitir incorporações de um provedor que não esteja na lista interna de confiáveis, adicione seu hostname no campo "Domínios adicionais de incorporação" na mesma página. Esses hostnames são permitidos além dos provedores incorporados. A correspondência é exata, então inclua o hostname completo (por exemplo, player.example.com). Qualquer coisa que você não listar permanece bloqueada.
+If you want to allow embeds from a provider that is not on the built-in trusted list, add its hostname in the "Additional Embed Domains" field on the same page. These hostnames are allowed in addition to the built-in providers. Matching is exact, so include the full hostname (for example, player.example.com). Anything you do not list stays blocked.
 
-Tanto a caixa de comentário simples quanto o editor WYSIWYG suportam colar uma incorporação. No editor WYSIWYG a incorporação é inserida como um bloco removível.
+Both the plain comment box and the WYSIWYG editor support pasting an embed. In the WYSIWYG editor the embed is inserted as a removable block.

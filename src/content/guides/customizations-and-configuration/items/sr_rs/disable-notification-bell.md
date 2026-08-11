@@ -1,20 +1,20 @@
 [related-parameter-start name = 'disableNotificationBell'; type = 'boolean'; related-parameter-end]
 
-По подразумеваној поставци, FastComments ће приказати икону звона за обавештења у горњем десном углу области за коментаре.
+По подразумеваној поставци, FastComments ће приказати звонице за обавештења у горњем десном углу простора за коментаре.
 
-То звонце ће постати црвено и показати број обавештења које корисник има. Неки примери обавештења су:
+Ово звонице ће постати црвено и приказати број обавештења које корисник има. Неки примери обавештења су:
 
 - Корисник вам је одговорио.
-- Корисник је одговорио у нити у којој сте коментарисали.
-- Корисник је лајковао ваш коментар.
-- Корисник је одговорио на страницу на коју сте се претплатили.
+- Корисник је одговорио у теми у којој сте коментарисали.
+- Корисник је дао позитивну оцену вашем коментару.
+- Корисник је одговорио на страницу на коју сте претплаћени.
 
-Икона звона за обавештења такође пружа механизам за претплату на целу страницу.
+Звонице за обавештења такође пружају механизам за претплату на целу страницу.
 
-Међутим, можемо у потпуности онемогућити икону звона за обавештења:
+Међутим, можемо потпуно онемогућити звонице за обавештења:
 
-[code-example-start config = {disableNotificationBell: true}; linesToHighlight = [6]; title = 'Disable Notification Bell'; code-example-end]
+[code-example-start config = {disableNotificationBell: true}; linesToHighlight = [6]; title = 'Onemogući zvono obaveštenja'; code-example-end]
 
-Ово се такође може урадити и без кода. На страници за прилагођавање видгета, погледајте одељак „Онемогући икону звона за обавештења“.
+Ово се такође може урадити без кода. На страници за прилагођавање виџета, погледајте одељак „Onemogući zvono obaveštenja“.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-notification-bell']; selector = '.disable-notification-bell'; title='Disable Notification Bell' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-notification-bell']; selector = '.disable-notification-bell'; alt='Страница за прилагођавање виџета са означеним пољем за онемогућавање звона обавештења'; title='Onemogući zvono obaveštenja' app-screenshot-end]

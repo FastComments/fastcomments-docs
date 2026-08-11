@@ -1,5 +1,5 @@
-Када корисници покушају да гласају за коментар, а нису пријављени, од њих ће бити затражено да наведу своје корисничко име и имејл.
+Kada korisnici pokušaju da glasaju na komentar, a nisu prijavljeni, biće zatraženo da unesu svoje korisničko ime i email.
 
-Можемо уклонити овај захтев, омогућавајући свакоме да гласа за коментар без остављања икаквих података.
+Možemo ukloniti ovaj zahtev, omogućavajući svima da glasaju na komentar bez ostavljanja ikakvih informacija.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-votes']; selector = '.allow-anonymous-votes'; title='Allow Anonymous Votes' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-votes']; selector = '.allow-anonymous-votes'; alt='Stranica za prilagođavanje widgeta sa omogućenom opcijom anonimnog glasanja, tako da glasanje ne zahteva ime ili email'; title='Dozvoli anonimno glasanje' app-screenshot-end]

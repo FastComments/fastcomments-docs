@@ -1,13 +1,13 @@
 ---
-Som standard tillader FastComments brugere at redigere deres kommentarer.
+Som standard vil FastComments tillade brugere at redigere deres kommentarer.
 
 Det er dog muligt at forhindre dette.
 
-På siden til tilpasning af widgeten skal du se indstillingen "Deaktiver redigering".
+På widget-tilpasningssiden, se indstillingen "Disable Editing".
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.disable-commenter-comment-edit'; selector = '.disable-commenter-comment-edit'; title='Disable Comment Editing' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.disable-commenter-comment-edit'; selector = '.disable-commenter-comment-edit'; alt='Deaktiver redigering-indstillingen på widget-tilpasningssiden, som forhindrer kommentatorer i at redigere deres kommentarer'; title='Deaktiver kommentarredigering' app-screenshot-end]
 
 - Dette påvirker kun almindelige kommentatorer og ikke moderatorer eller administratorer, som stadig vil kunne redigere.
-- Dette vil også påvirke API-integrationer, når `contextUserId` sendes. 
+- Dette vil også påvirke API-integrationer, når `contextUserId` bliver videregivet. 
 
 ---

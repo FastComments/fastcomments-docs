@@ -1,18 +1,18 @@
 [related-parameter-start name = 'collapseReplies'; type = 'boolean'; related-parameter-end]
 
-預設情況下，頂層留言的回覆會顯示。
+默認情況下，頂層評論的回覆會顯示。
 
-可以設定成使用者需點選「顯示回覆」在頂層留言上才能查看子留言。
+可以將其設定為使用者必須點擊頂層評論上的「Show Replies」才能看到子回覆。
 
-[code-example-start config = {collapseReplies: true}; linesToHighlight = [6]; title = '將回覆摺疊至頂層留言'; code-example-end]
+[code-example-start config = {collapseReplies: true}; linesToHighlight = [6]; title = 'Collapse Replies to Top Level Comments'; code-example-end]
 
-這可在小工具自訂頁面上無需撰寫程式碼地自訂：
+這可以在小工具自訂頁面上，無需編寫程式碼即可自訂：
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.collapse-replies'; title='摺疊回覆' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.collapse-replies'; alt='在小工具自訂介面中的折疊回覆選項，將子評論隱藏在「Show Replies」連結後'; title='折疊回覆' app-screenshot-end]
 
-此設定不會影響最初載入的頂層留言數量。如果您有一則頂層留言和 29 則子留言，啟用此設定後您會：
+此設定不會影響最初載入的頂層評論數量。若您只有一則頂層評論，且有 29 個子評論，啟用此設定後，您將會：
 
-- 看見頂層留言。
-- 在該留言下方看到「顯示回覆 (29)」。
+- 看到該頂層評論。
+- 在此評論下看到「Show Replies (29)」。
 
-如果您希望在使用此選項的同時顯示所有頂層留言，請將 [起始頁面設為 -1](#starting-page)。
+若您希望在使用此選項的同時顯示所有頂層評論，請將 [起始頁面設為 -1](#starting-page) 設為 -1。

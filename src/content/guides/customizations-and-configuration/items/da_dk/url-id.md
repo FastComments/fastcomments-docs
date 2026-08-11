@@ -1,30 +1,32 @@
 [related-parameter-start name = 'urlId'; type = 'string'; related-parameter-end]
 
-Når en kommentartråd vises, eller når der afgives en kommentar, har FastComments brug for at vide, hvilken side, artikel eller produkt disse kommentarer tilhører.
+Når du gengiver en kommentartråd, eller efterlader en kommentar, skal FastComments vide, hvilken side, artikel eller produkt de kommentarer tilhører.
 
-Til dette bruger vi noget, vi kalder "URL ID". Det er enten en identifikator, som en streng eller et tal, eller en URL.
+For at gøre dette bruger vi noget, vi kalder "URL ID". Det er enten en identifikator, som en streng eller et tal, eller en URL.
 
-Som standard, hvis du ikke angiver urlId, vil det blive sidens URL. Vi tager den aktuelle side-URL og renser den for at fjerne almindelige marketingparametre eller tracking-identifikatorer.
+Som standard, hvis du ikke angiver urlId, vil den blive sidens URL. Vi tager den aktuelle sides URL og renser den for at fjerne eventuelle almindelige marketingparametre eller sporingsidentifikatorer.
 
-I tilfælde af tredjepartsintegrationer, som WordPress, vil vores plugin normalt bruge den identifikator, der repræsenterer den aktuelle viste information som URL ID, for eksempel artikel-/side-id.
+I tilfælde af tredjepartsintegrationer, som WordPress, vil vores plugin normalt bruge den identifikator, der repræsenterer den aktuelle information, der vises, som URL ID, for eksempel artikel-/side-id'et.
 
-[code-example-start config = {urlId: 'https://example.com/page'}; linesToHighlight = [6]; title = 'Defining a Custom URL ID'; code-example-end]
+[code-example-start config = {urlId: 'https://example.com/page'}; linesToHighlight = [6]; title = 'Definere en brugerdefineret URL ID'; code-example-end]
 
-Én ting, som vi ofte henviser til i dette dokument, er <a href="https://fastcomments.com/auth/my-account/customize-widget/new">Widget-tilpasningsbrugerflade</a>.
+En ting, vi ofte vil referere til i dette dokument, er <a href="https://fastcomments.com/auth/my-account/customize-widget/new">Widget-tilpasnings‑UI</a>.
 
-Denne brugerflade kan bruges til at foretage mange ændringer af kommentar-widgeten uden at bruge kode.
+Dette UI kan bruges til at foretage mange ændringer af kommentarfunktionen uden at bruge kode.
 
-Når du opretter en tilpasningsregel, vil vi ofte ønske, at den gælder for alle sider på vores site. Men i nogle tilfælde ønsker vi at tilpasse kommentar-widgeten på en bestemt side, enten for at anvende brugerdefineret styling, eller måske gøre kommentarer på den pågældende side anonyme. Du kan for eksempel også få live-kommentarer til at vises med det samme på nogle sider, mens de er skjult under notifikationsknapper på andre.
+Når du opretter en tilpasningsregel, vil vi ofte have den til at gælde for alle sider på vores site. I nogle tilfælde vil vi dog tilpasse kommentarfunktionen på en bestemt side, enten for at anvende brugerdefineret styling eller måske gøre kommentarer for den pågældende side anonyme. Du kunne også for eksempel få live‑kommentarer til at vises med det samme på nogle sider, mens de skjules under notifikationsknapper på andre.
 
-Alt dette er muligt via URL ID-indtastningsfeltet på denne side, som ser ud som følger:
+Alt dette er muligt via URL ID‑indtastningsfeltet på denne side, som ser ud som følger:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.url-id'; title='URL ID Input in The Widget Customization Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.url-id'; alt='URL ID-feltet bruges til at afgrænse en tilpasningsregel til én side eller til et mønster såsom */blog/*'; title='URL ID-indtastning på widget‑tilpasningssiden' app-screenshot-end]
 
-Værdien i dette felt bør matche *urlId*-parameteren, der gives til kommentar-widgeten. Hvis du vil have, at din tilpasningsregel skal være *urlId* agnostisk, lad dette felt stå tomt eller indtast *.
+Værdien i dette felt skal matche *urlId*-parameteren, der sendes til kommentarfunktionen. Hvis du vil have din tilpasningsregel til at være *urlId*-agnostisk, så lad dette felt stå tomt eller indtast *.
 
-Som af 2023 tager `URL ID`-feltet i widget-tilpasningen nu også mønstre! For eksempel kan du have `*/blog/*` for at tilføje styling specifikt til din blog og `*/store/*` for styling specifikt til din butik, alt sammen på samme domæne.
+Fra 2023 accepterer `URL ID`-feltet i widget‑tilpasning nu også mønstre! For eksempel kan du have `*/blog/*` for at tilføje styling specifik for din blog og `*/store/*` for at have styling specifik for din butik, alt sammen mens du bruger samme domæne.
 
 ### Faldgruber
 
-1. Hvis din side har hash-parametre (som example.com#page-1) - vil dette som standard blive en del af URL ID'en.  
-2. Under migrationer, for eksempel fra WordPress til Gatsby, kan det være nødvendigt at migrere kommentarværdierne for URL ID efter den indledende migration. Kontakt os i så fald.
+1. Hvis din side har hash‑parametre (som example.com#page-1) - vil dette som standard blive en del af URL ID.
+2. Under migrationer, for eksempel fra WordPress til Gatsby, kan du blive nødt til at migrere URL ID‑kommentarværdierne efter den første migration. I så fald kan du kontakte os.
+
+---

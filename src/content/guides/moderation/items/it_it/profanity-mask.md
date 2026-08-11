@@ -1,9 +1,10 @@
-Per impostazione predefinita, FastComments viene fornito con una blacklist di circa 450 parole e frasi.
+By default, FastComments comes with a word blacklist of ~450 phrases and words.
 
-Se nel testo di un nuovo commento è presente una voce della blacklist, quel testo verrà sostituito con asterischi (***).
+If text in the word blacklist is found in a new comment that text will be replaced with asterisks (***).
 
-La pagina per personalizzare la blacklist si trova in Modera commenti -> Modifica impostazioni di moderazione -> Modifica blacklist parole, oppure accedendo direttamente <a href="https://fastcomments.com/auth/my-account/moderate-comments/blacklist" target="_blank">qui</a>.
+The page to customize the blacklist can be found via Moderate Comments -> Edit Moderation Settings -> Edit Word Blacklist, or
+by going directly <a href="https://fastcomments.com/auth/my-account/moderate-comments/blacklist" target="_blank">here</a>.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/blacklist?blurList=true'; linkUrl='/auth/my-account/moderate-comments/blacklist'; selector = '.account-block'; title='Comment Word Blacklist' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/blacklist?blurList=true'; linkUrl='/auth/my-account/moderate-comments/blacklist'; selector = '.account-block'; alt='Editor della blacklist delle parole dove le parole e frasi predefinite bloccate possono essere aggiunte o rimosse'; title='Blacklist delle parole dei commenti' app-screenshot-end]
 
-Inoltre, puoi disabilitare il rilevamento delle parolacce nella pagina <a href="https://fastcomments.com/auth/my-account/moderate-comments/settings" target="_blank">Modifica impostazioni di moderazione</a>.
+Additionally, you can disable Profanity Detection on the <a href="https://fastcomments.com/auth/my-account/moderate-comments/settings" target="_blank">Edit Moderation Settings</a> page.

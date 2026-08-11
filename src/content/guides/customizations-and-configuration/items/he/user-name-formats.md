@@ -1,21 +1,21 @@
-בברירת מחדל, FastComments יציג את שם המשתמש כפי שהזין אותו, או כפי שהועבר אלינו דרך SSO.
+---
+בברירת מחדל, FastComments יציג את שם המשתמש כפי שהוזן, או כפי שהועבר אלינו דרך SSO.
 
-עם זאת, ייתכן שתרצו להסוות או להציג את שם המשתמש באופן שונה. לדוגמה, אם שם המשתמש הוא Allen Rex, אולי תרצו להציג רק "Allen R.".
+עם זאת, ייתכן ויהיה רצוי להסתיר או להציג את שם המשתמש בצורה שונה. לדוגמה, אם שם המשתמש הוא Allen Rex, אולי
+תרצה להציג רק "Allen R.".
 
-ניתן לעשות זאת ללא קוד בממשק התאמה אישית של הווידג'ט, תחת ההגדרה בשם `Commenter Name Format`:
+זה ניתן לבצע ללא קוד בממשק התאמה אישית של הווידג'ט, תחת ההגדרה שנקראת `Commenter Name Format`:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.commenter-name-format select'; selector = '.commenter-name-format'; title='Change Name Format' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.commenter-name-format select'; selector = '.commenter-name-format'; alt='תפריט נפתח של פורמט שם המגיב עם אפשרויות כגון Capitalize, Last Initial ו-All Initials'; title='שנה פורמט שם' app-screenshot-end]
 
 הפורמטים הזמינים הם:
 
-- Capitalize (יציג Example User כ־Example User)
-- Last Initial (יציג את Example User כ־Example U.)
-- All Initials (יציג את Example User כ־E. U.)
-- Show "Anonymous"
+- Capitalize (הצגת משתמש לדוגמה כ-Example User)
+- Last Initial (הצגת Example User כ-Example U.)
+- All Initials (הצגת Example User כ-E. U.)
+- הצג "Anonymous"
 
-השפעת השינוי מיידית. משתמשים עדיין יראו את שם המשתמש המלא בראש אזור התגובות, עבורם, אבל בתגובותיהם יוצג
-שם המשתמש המשונה.
+ההשפעה של שינוי זה מיידית. המשתמשים עדיין יראו את שם המשתמש המלא שלהם בחלק העליון של אזור ההערות, עבור עצמם, אך ההערות שלהם יציגו את שם המשתמש שהשתנה.
 
-שמות המשתמשים מוסווים בצד השרת כדי להגן על המשתמשים.
-
+שמות המשתמשים מוסתרים בצד השרת כדי להגן על המשתמשים.
 ---

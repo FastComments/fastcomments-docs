@@ -8,4 +8,4 @@ Isso pode ser substituído por qualquer string, e o valor **[count]** será subs
 
 Isso pode ser personalizado sem código, na página de personalização do widget:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.comment-count'; title='Customizing The Comment Count Text' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.comment-count'; alt='Campo de texto da contagem de comentários na página de personalização do widget, onde [count] é substituído pelo total ao vivo'; title='Personalizando o Texto da Contagem de Comentários' app-screenshot-end]

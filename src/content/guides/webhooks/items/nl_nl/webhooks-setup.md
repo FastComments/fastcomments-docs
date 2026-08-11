@@ -1,11 +1,14 @@
-Volg dezelfde stappen voor `localhost` zoals je dat voor productie zou doen. Zorg ervoor dat je productiedomeinen en API Secrets hebt ingesteld.
+---
+Volg dezelfde stappen voor `localhost` als voor productie. Zorg ervoor dat je productiedomeinen en API‑geheimen hebt ingesteld.
 
-Navigeer eerst naar de [Webhooks admin](https://fastcomments.com/auth/my-account/manage-data/webhooks). Dit is bereikbaar via Beheer gegevens -> Webhooks.
+Ga eerst naar de [Webhooks admin](https://fastcomments.com/auth/my-account/manage-data/webhooks). Deze is toegankelijk via Beheer gegevens -> Webhooks.
 
-De configuratiepagina ziet er als volgt uit:
+De configuratiepagina verschijnt als volgt:
 
-[app-screenshot-start url='/auth/my-account/manage-data/webhooks'; selector = '.content'; title='Webhooks Configuration'; cacheBuster = 'v3' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/webhooks'; selector = '.content'; alt='Webhooks-beheerpagina met een domeinselector en een eindpunt‑URL‑veld per reactie‑gebeurtenis, plus Send Test Payload'; title='Webhooks-configuratie'; cacheBuster = 'v3' app-screenshot-end]
 
-Op deze pagina kun je voor elk type reactiegebeurtenis eindpunten opgeven.
+Op deze pagina kun je eindpunten opgeven voor elk type reactie‑gebeurtenis.
 
-Voor elk type gebeurtenis, zorg ervoor dat je op Send Test Payload klikt om te controleren of je integratie correct is ingesteld. Zie de volgende sectie, "Testen", voor details.
+Voor elk type gebeurtenis moet je op 'Send Test Payload' klikken om er zeker van te zijn dat je integratie correct is ingesteld. Zie de volgende sectie, "Testing", voor details.
+
+---

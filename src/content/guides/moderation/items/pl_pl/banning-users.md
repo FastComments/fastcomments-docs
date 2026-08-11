@@ -1,27 +1,29 @@
-Istnieją dwa sposoby zablokowania użytkowników przed komentowaniem na Twojej stronie za pomocą FastComments.
+There are two ways to ban users from commenting on your site with FastComments.
 
-Pierwszy to, jeśli znasz już ich adres e-mail, możesz go wpisać na stronie <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">zbanowani użytkownicy</a>.
+The first is if you already know their email, you can enter it on the <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">banned users</a> page.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; title='The Banned Users Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; alt='Lista zbanowanych użytkowników w sekcji Moderowanie komentarzy, z zbanowanymi adresami e‑mail i przyciskiem dodania nowego zakazu'; title='Strona zbanowanych użytkowników' app-screenshot-end]
 
-Do tej strony można przejść poprzez Moderate Comments -> Banned Users
+This page can be accessed via Moderate Comments -> Banned Users
 
-Gdy zamierzamy zbanować użytkownika, możemy wybrać typ: albo Permanent albo Permanent Shadow Ban:
+When we go to ban a user, we can pick a type, either Permanent or Permanent Shadow Ban:
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; title='Banning a User' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; alt='Nowy formularz zakazu z polem e‑mail i wyborem typu zakazu: Permanentny lub Permanentny zakaz cienia'; title='Zbanowanie użytkownika' app-screenshot-end]
 
-Drugim sposobem zbanowania użytkownika jest kliknięcie przycisku ban, który znajduje się przy każdym komentarzu na stronie Comment Moderation.
+The second way to ban a user is by clicking the ban button that is placed on each comment on the Comment Moderation page.
 
-Po kliknięciu przycisku ban pojawią się opcje, w których możemy określić typ i czas trwania bana.
+When we click the ban button, you'll be presented with some options, where we can specify the ban type and duration.
 
-### Aliasy adresów e-mail
+### Email Aliases
 
-Podczas blokowania użytkownika po adresie e-mail FastComments automatycznie ignoruje aliasy z użyciem `+`. Na przykład zbanowanie `user+alias@gmail.com` spowoduje również zablokowanie `user@gmail.com` oraz każdej innej wariacji z `+`, takiej jak `user+other@gmail.com`.
+When banning a user by email, FastComments automatically ignores `+` aliases. For example, banning `user+alias@gmail.com` will
+also ban `user@gmail.com` and any other `+` variation of that address, such as `user+other@gmail.com`.
 
-### Shadow Bany
+### Shadow Bans
 
-Shadow-ban to rodzaj blokady, która sprawia, że wygląda, iż komentarz lub głos użytkownika został zapisany pomyślnie, podczas gdy w rzeczywistości nie został. Może to być pożądane w niektórych sytuacjach.
+A shadow-ban is a type of ban that makes it appear that the user's comment or vote was saved successfully, when in fact it was not. This may be
+desirable in certain situations.
 
-### Blokowanie przez adres IP
+### Banning Via IP Address
 
-O ile tenant nie zechce zrezygnować, FastComments obsługuje blokowanie po IP poprzez przechowywanie zhaszowanej wersji adresu IP komentującego.
+Unless a tenant wishes to opt out, FastComments supports banning via IP by storing a hashed version of the commenter's IP address.

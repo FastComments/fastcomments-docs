@@ -1,15 +1,15 @@
-アカウントのダッシュボードに移動し、[RSS フィードページ](https://fastcomments.com/auth/my-account/rss)にアクセスしてください。
+Navigate to your account dashboard and go to the [RSS Feed page](https://fastcomments.com/auth/my-account/rss).
 
-[app-screenshot-start url='/auth/my-account/rss'; selector = '.content'; title='RSS Feed Configuration' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/rss'; selector = '.content'; alt='「Enable RSS Feed Access」チェックボックス、フィード URL、コピーおよびビュー フィード ボタンがあるアカウント RSS フィードページ'; title='RSS フィード設定' app-screenshot-end]
 
-RSS フィードページで、"RSS フィードアクセスを有効にする" チェックボックスをオンにして、あなたの固有の RSS フィード URL を生成します。
+On the RSS Feed page, check the "Enable RSS Feed Access" checkbox to generate your unique RSS feed URL.
 
-フィードを有効にすると、リンクを知っている人は誰でもコメントにアクセスできることを説明するセキュリティ通知が表示されます。
+When you enable the feed, a security notice will appear explaining that anyone with the link can access your comments.
 
-有効にすると、あなたの固有の RSS フィード URL が表示されます。"コピー" ボタンをクリックして URL をクリップボードにコピーしてください。
+Once enabled, your unique RSS feed URL will appear. Click the "Copy" button to copy the URL to your clipboard.
 
-RSS リーダーアプリケーションを開き、コピーした URL を新しいフィード購読として追加します。具体的な手順は RSS リーダーによって異なりますが、通常は "フィードを追加" または "購読" ボタンを探して RSS フィード URL を貼り付け、フィードに名前を付けます。
+Open your RSS reader application and add the copied URL as a new feed subscription. The exact steps vary by RSS reader, but typically you'll look for an "Add Feed" or "Subscribe" button, paste your RSS feed URL, and give the feed a name.
 
-RSS フィードページの "フィードを表示" ボタンをクリックして、ブラウザで直接フィードを表示することもできます。
+You can also click the "View Feed" button on the RSS Feed page to see your feed directly in your browser.
 
-RSS フィードへのアクセスを無効にするには、単に "RSS フィードアクセスを有効にする" チェックボックスのチェックを外してください。これによりフィードへのアクセスは防止されますが、後で再度有効にした場合、URL は同じままです。
+To disable access to your RSS feed, simply uncheck the "Enable RSS Feed Access" checkbox. This will prevent the feed from being accessed, though the URL will remain the same if you re-enable it later.

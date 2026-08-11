@@ -1,13 +1,13 @@
 [related-parameter-start name = 'enableSpoilers'; type = 'boolean'; related-parameter-end]
 
-Можемо омогућити подршку за спојлере подешавањем заставице **enableSpoilers** на true:
+Možemo omogućiti podršku za spoiler postavljanjem **enableSpoilers** zastavice na true:
 
-[code-example-start config = {enableSpoilers: true}; linesToHighlight = [6]; title = 'Enabling Spoilers'; code-example-end]
+[code-example-start config = {enableSpoilers: true}; linesToHighlight = [6]; title = 'Omogućavanje Spoilera'; code-example-end]
 
-Ово се такође може урадити и без кода. На страници за прилагођавање виџета, погледајте опцију "Омогући спојлере".
+Ovo se takođe može uraditi bez koda. Na stranici za prilagođavanje widgeta, pogledajte opciju „Enable Spoilers“.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-spoilers']; selector = '.enable-spoilers'; title='Enable Spoilers' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-spoilers']; selector = '.enable-spoilers'; alt='Stranica za prilagođavanje widgeta sa označenim poljem Enable Spoilers da bi se dodalo dugme SPOILER u editor'; title='Omogući Spoilere' app-screenshot-end]
 
-Када је текст обележен, и када се кликне на сада видљиво дугме `SPOILER`, текст ће бити маскиран док корисник не помери курсор преко њега. За тамни режим радимо исто, али са другачијим бојама које боље одговарају тамном режиму.
+Kada je tekst označen, a sada vidljivo dugme `SPOILER` kliknuto, tekst će biti maskiran dok korisnik ne pređe mišem preko njega. Za tamni režim radimo isto, sa različitim bojama koje bolje odgovaraju tamnom režimu.
 
-Ово је такође компатибилно са WYSIWYG уређивачем.
+Ovo je takođe kompatibilno sa WYSIWYG editorom.

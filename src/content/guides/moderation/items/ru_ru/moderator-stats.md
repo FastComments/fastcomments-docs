@@ -1,15 +1,14 @@
----
-Работа модераторов отслеживается и её можно просмотреть, вернувшись на страницу «Редактировать модераторов».
+The work that moderators do is tracked and can be viewed by coming back to the “Edit Moderators” page.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/moderators?demo=true'; linkUrl='/auth/my-account/moderate-comments/moderators'; selector = '.account-block'; title='Moderator Stats' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/moderators?demo=true'; linkUrl='/auth/my-account/moderate-comments/moderators'; selector = '.account-block'; alt='Страница Edit Moderators, показывающая каждого модератора с подсчетом одобренных, удалённых и помеченных как спам комментариев'; title='Статистика модераторов' app-screenshot-end]
 
-На этой странице отслеживаются следующие показатели:
+This page will track various statistics:
 - Одобренные комментарии
-- Комментарии, помеченные как просмотренные
+- Комментарии, отмеченные как проверенные
 - Удалённые комментарии
 - Отредактированные комментарии
-- Комментарии, помеченные как спам
-- Заблокированные пользователи
-- Статус их приглашения (Принят или В ожидании)
+- Помеченные как спам комментарии
+- Забаненные пользователи
+- Статус их приглашения (Принято или в ожидании)
 
 ---

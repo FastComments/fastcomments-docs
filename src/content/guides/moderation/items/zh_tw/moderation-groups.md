@@ -1,19 +1,16 @@
----
-管理員可以被分配到群組中，以管理不同頁面或內容類別的評論。
+Moderators can be placed into groups to moderate different pages or categories of content.
 
-當一位管理員屬於一個或多個群組時，他們在審核評論頁面中只會看到來自那些群組的評論。
+When a Moderator belongs to one or more groups, they will only see comments from those groups in the Moderate Comments page.
 
-例如，假設我們經營一個依分類顯示影片的網站。我們可能希望為貓、狗和鸚鵡影片分配不同的管理員，因此 [新增這些群組](https://fastcomments.com/auth/my-account/moderate-comments/moderation-groups)。
+For example, let's say we run a site that displays videos by category. We may want to have different moderators for Cat, Dog, and Parrot videos, so [let's add those groups](https://fastcomments.com/auth/my-account/moderate-comments/moderation-groups).
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/moderation-groups?demo=true'; linkUrl='/auth/my-account/moderate-comments/moderation-groups'; selector = '.content'; title='The Moderation Groups Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/moderation-groups?demo=true'; linkUrl='/auth/my-account/moderate-comments/moderation-groups'; selector = '.content'; alt='已為每個影片類別建立的貓、狗與鸚鵡群組的審核群組清單'; title='審核群組頁面' app-screenshot-end]
 
-當我們新增一位管理員時，現在可以選擇一個或多個該管理員將屬於的群組：
+When we add a moderator, we now have the option to select one or more groups the moderator will belong to:
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/moderator/new?demo=true'; linkUrl='/auth/my-account/moderate-comments/moderator/new'; selector = '.account-block'; title='Adding A Moderator and Selecting a Group' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/moderator/new?demo=true'; linkUrl='/auth/my-account/moderate-comments/moderator/new'; selector = '.account-block'; alt='新增審核者表單，使用群組選擇器將審核者指派至一個或多個群組'; title='新增審核者並選擇群組' app-screenshot-end]
 
-最後，評論需要被綁定到一個或多個群組，才能讓正確的管理員看到它們。
+Finally, comments need to be tied to one or more groups so that the correct moderators see them.
 
-這可以透過 [新增一些群組](https://fastcomments.com/auth/my-account/moderate-comments/moderation-groups) 然後在評論小工具中指定對應的 `Moderation Group` ids 來設定，
-[如此處說明](/guide-customizations-and-configuration.html#moderation-group-ids).
-
----
+This can be setup by [adding some groups](https://fastcomments.com/auth/my-account/moderate-comments/moderation-groups) and then specifying the corresponding `Moderation Group` ids in the comment widget,
+[as instructed here](/guide-customizations-and-configuration.html#moderation-group-ids).

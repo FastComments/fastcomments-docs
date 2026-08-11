@@ -1,23 +1,23 @@
-Če je treba podatke premakniti, FastComments zagotavlja samoobslužno orodje za premikanje komentarjev med stranmi in članki.
+V primeru, da je treba podatke premikati, FastComments nudi orodje za samopostrežno premikanje komentarjev med stranmi in članki.
 
-Tako izgleda obrazec za kopiranje komentarjev:
+Tukaj je, kako izgleda obrazec za kopiranje komentarjev:
 
-[app-screenshot-start url='/auth/my-account/manage-data/copy-comments'; selector = '.account-block'; title='The Copy Comment Form' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/copy-comments'; selector = '.account-block'; alt='Obrazec za kopiranje komentarjev s poljem ID URL-ja iz in poljema ID URL-ja ter URL-ja za cilj'; title='Obrazec za kopiranje komentarjev' app-screenshot-end]
 
-### Filling out the "From" Fields
+### Izpolnjevanje polj "Od"
 
-Da določimo, od kod premakniti komentarje, potrebujemo le izvorni `URL ID`.
+Da bi določili, od kod premikati komentarje, preprosto potrebujemo izvorni `URL ID`.
 
-Če v konfiguraciji vtičnika za komentarje ne pošiljate vrednosti za `urlId`, bo to "čista" različica URL-ja strani.
+Če v konfiguraciji pripomočka za komentarje ne podajate vrednosti za `urlId`, bo to čista različica URL-ja strani.
 
-Z izvozom lahko vidite, katere vrednosti imajo vaši komentarji za `URL ID`.
+Vrednosti `URL ID`, ki jih imajo vaši komentarji, lahko vidite z njihovim izvozom.
 
-### Filling out the "To" Fields
+### Izpolnjevanje polj "Do"
 
-Da določimo, kam premakniti komentarje, moramo poznati ciljni `URL ID` in `URL`.
+Da bi določili, kam premikati komentarje, moramo poznati ciljni `URL ID` in `URL`.
 
-`URL ID` bo vedro, v katerega komentar spada. Polje `URL` se uporablja, da lahko do komentarja neposredno dostopate iz e-poštnih sporočil in orodij za moderiranje.
+`URL ID` bo koš, v katerega gre komentar. Polje `URL` se uporablja, da lahko neposredno odprete komentar iz e‑pošte in orodij za moderiranje.
 
 #### WordPress
 
-Če uporabljate WordPress, bi na primer v orodju za migracijo v polja To/From `URL ID` vnesli ID-je člankov namesto URL-ja.
+Če uporabljate WordPress, bi na primer v polja To/From `URL ID` v orodju za migracijo vnesli ID-je člankov, namesto URL-ja.

@@ -1,14 +1,12 @@
-Prace moderatorów są rejestrowane i można je przeglądać, wracając do strony "Edytuj moderatorów".
+The work that moderators do is tracked and can be viewed by coming back to the "Edit Moderators" page.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/moderators?demo=true'; linkUrl='/auth/my-account/moderate-comments/moderators'; selector = '.account-block'; title='Moderator Stats' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/moderators?demo=true'; linkUrl='/auth/my-account/moderate-comments/moderators'; selector = '.account-block'; alt='Strona Edytuj moderatorów wyświetlająca każdego moderatora z liczbą zatwierdzonych, usuniętych i oznaczonych jako spam komentarzy'; title='Statystyki moderatorów' app-screenshot-end]
 
-Na tej stronie będą śledzone różne statystyki:
+Ta strona będzie śledzić różne statystyki:
 - Zatwierdzone komentarze
-- Komentarze oznaczone jako przejrzane
+- Komentarze oznaczone jako przeglądane
 - Usunięte komentarze
 - Edytowane komentarze
 - Komentarze oznaczone jako spam
-- Zablokowani użytkownicy
-- Status ich zaproszenia (zaakceptowane lub oczekujące)
-
----
+- Użytkownicy zbanowani
+- Ich status zaproszenia (zaakceptowany lub oczekujący)

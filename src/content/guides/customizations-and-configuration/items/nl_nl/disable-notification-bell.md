@@ -1,22 +1,20 @@
 [related-parameter-start name = 'disableNotificationBell'; type = 'boolean'; related-parameter-end]
 
-Standaard toont FastComments een notificatiebel rechtsboven in het reactiegebied.
+Standaard toont FastComments een meldingsbel in de rechterbovenhoek van het reactiegebied.
 
-Deze bel wordt rood en toont een teller met het aantal meldingen dat de gebruiker heeft. Enkele voorbeelden van meldingen zijn:
+Deze bel wordt rood en toont een telling van het aantal meldingen dat de gebruiker heeft. Enkele voorbeeldmeldingen zijn:
 
-- Een gebruiker heeft op je gereageerd.
-- Een gebruiker heeft gereageerd in een thread waarop jij hebt gereageerd.
-- Een gebruiker heeft je reactie omhoog gestemd.
-- Een gebruiker heeft gereageerd op een pagina waarop je geabonneerd bent.
+- Gebruiker heeft op je gereageerd.
+- Gebruiker heeft gereageerd in een thread waarin je hebt gereageerd.
+- Gebruiker heeft je reactie upvoted.
+- Gebruiker heeft gereageerd op een pagina waarop je geabonneerd bent.
 
-De notificatiebel biedt ook de mogelijkheid om je op een gehele pagina te abonneren.
+De meldingsbel biedt ook een mechanisme om je op een volledige pagina te abonneren.
 
-We kunnen de notificatiebel echter volledig uitschakelen:
+We kunnen de meldingsbel echter volledig uitschakelen:
 
 [code-example-start config = {disableNotificationBell: true}; linesToHighlight = [6]; title = 'Disable Notification Bell'; code-example-end]
 
-Dit kan ook zonder code worden gedaan. Op de pagina voor widget-aanpassing, zie de sectie "Notificatiebel uitschakelen".
+Dit kan ook zonder code worden gedaan. Op de widget‑aanpassingspagina, zie de "Disable Notification Bell" sectie.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-notification-bell']; selector = '.disable-notification-bell'; title='Disable Notification Bell' app-screenshot-end]
-
----
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-notification-bell']; selector = '.disable-notification-bell'; alt='Widget‑aanpassingspagina met het selectievakje Disable Notification Bell aangevinkt'; title='Meldingsbel uitschakelen' app-screenshot-end]

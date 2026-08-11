@@ -1,13 +1,11 @@
----
-Место, где происходит большая часть модерации, — это страница модерации комментариев. Например, вот скриншот нашего текущего демонстрационного аккаунта:
+The place where most moderation takes place is the Comment Moderation page. For example, here's a screenshot of our current demo account:
 
-[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = 'body'; title='Comment Moderation Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = 'body'; alt='Полная страница модерации комментариев для демонстрационного аккаунта, показывающая фильтры, поиск и три комментария на странице'; title='Страница модерации комментариев' app-screenshot-end]
 
-Мы установили количество записей на страницу равным трём, чтобы сделать этот скриншот компактным. На практике по умолчанию вы будете работать с 50 комментариями на страницу.
+We've set the count per page to three to make this screenshot a reasonable size. In practice, you would be working with 50 comments per page by default.
 
-Страница модерации также поддерживает [Сочетания клавиш](#keyboard-shortcuts) для перехода между комментариями и выполнения действий без использования мыши. Нажмите **?** на странице модерации, чтобы увидеть все доступные сочетания клавиш.
+The moderation page also supports [Keyboard Shortcuts](#keyboard-shortcuts) for navigating between comments and performing actions without using the mouse. Press **?** on the moderation page to see all available shortcuts.
 
-Страница также работает **в реальном времени** — когда поступают новые комментарии, соответствующие текущим фильтрам, в верхней части появляется баннер с уведомлением. Подробнее см. в разделе [Живая модерация](#comment-actions-live).
+The page is also **live** — when new comments arrive that match your current filters, a banner appears at the top alerting you. See [Live Moderating](#comment-actions-live) for details.
 
-Давайте рассмотрим функции, показанные здесь.
----
+Let's go into the features shown here.

@@ -1,12 +1,9 @@
----
-Въпреки че FastComments поддържа откриване на нецензурни думи и спам, то може да бъде персонализирано. Откриването на нецензурни думи или спам може да бъде
-изключено поотделно чрез страницата с настройки за модериране на коментари.
+While FastComments supports profanity and spam detection, it can be customized. Profanity or Spam Detection can be  
+turned off individually via the Comment Moderation Settings page.
 
-Това е също страницата, където ще намерите конфигурацията за автоматично одобрение на коментари, или за конфигуриране на изтичането
-на непотвърдените коментари.
+This is also the page where you will find the configuration for comment auto approval, or configuring the expiration  
+of unverified comments.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/settings'; selector = '.content'; title='Comment Moderation Settings' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/settings'; selector = '.content'; alt='Настройки за модериране с опции за непристойни думи и откриване на спам, автоматично одобряване и изтичане на непроверени коментари'; title='Настройки за модериране на коментари' app-screenshot-end]
 
-Освен това, списъкът с блокирани думи може да бъде персонализиран чрез бутон на тази страница.
-
----
+Additionally, the word blacklist can be customized from a button on this page.

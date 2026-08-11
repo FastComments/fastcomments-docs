@@ -1,14 +1,14 @@
 ---
-Varsayılan olarak FastComments, yorum yaparken kullanılan dilleri kısıtlamaz. 
+Varsayılan olarak, FastComments yorumlarda kullanılan dilleri sınırlamaz. 
 
-Bir topluluğun kullandığı dilleri sınırlamak istenebilir.
+Bir topluluğun kullandığı dilleri sınırlamak isteyebilirsiniz.
 
-Bu, kod yazmadan widget özelleştirme sayfasından yapılandırılabilir:
+Bu, kod yazmadan, widget özelleştirme sayfasında yapılandırılabilir:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allowed-languages']; selector = '.allowed-languages'; title='Allowed Languages' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allowed-languages']; selector = '.allowed-languages'; alt='Widget özelleştirme sayfasında, yorumların kullanabileceği dilleri sınırlamak için izin verilen diller seçicisi'; title='İzin Verilen Diller' app-screenshot-end]
 
-Sistem, yorumu ayrıştırır ve dilini belirler, ardından izin verilen listeyle eşleştirir.
+Sistem, yorumlarını ayrıştırarak dilini belirler ve ardından izin verilen listelerle eşleştirir.
 
-Yorum izin verilmeyen bir dilde yazıldıysa, yerelleştirilmiş bir hata mesajı gösterilir. 
+Yorum, izin verilen bir dilde yazılmamışsa, yerelleştirilmiş bir hata mesajı gösterilir. 
 
 ---

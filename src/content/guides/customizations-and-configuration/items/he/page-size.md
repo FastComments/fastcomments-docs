@@ -1,18 +1,15 @@
----
-כברירת מחדל, גודל העמוד ב-FastComments הוא `30`. זה כולל גם תגובות בתוך השרשורים.
+By default, the FastComments page size is `30`. This includes replies in threads.
 
-גודל העמוד ניתן להתאמה ב[ממשק הגדרת הווידג'ט](https://fastcomments.com/auth/my-account/customize-widget) בטווחים שונים הנעים בין `10` ל-`200`.
+The page size can be customized in the [Widget Configuration UI](https://fastcomments.com/auth/my-account/customize-widget) in varying sizes ranging from `10` to `200`.
 
-שים לב ששינוי גודל העמוד דורש חישוב מחדש של כל השרשורים של התגובות בחשבונך. זה עשוי לקחת כמה דקות.
+Note that changing the page size requires recalculating all the comment threads in your account. This may take a couple of minutes.
 
-אין אפשרות להגדיר זאת בווידג'ט בצד הלקוח מכיוון שהדפים מחושבים בצד השרת.
+This cannot be configured in the client side widget as pages are calculated server-side.
 
-דוגמת תצורה מוצגת להלן:
+Example configuration is shown below:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.page-size'; title='Custom Page Sizes' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.page-size'; alt='בוחר גודל העמוד בעמוד התאמה של הווידג\'ט, שבו ניתן לבחור ערך בין 10 ל-200'; title='גדלים מותאמים אישית של עמוד' app-screenshot-end]
 
-ניתן להתאים את גדלי העמודים באופן גלובלי, לפי דומיין, או לפי עמוד, על ידי יצירת כללי התאמה שונים.
+Page sizes can be customized globally, or per-domain, or per-page, by creating different customization rules.
 
-זה ישפיע על כל הלקוחות, האינטגרציות והמסגרות שבהן אתה עשוי להשתמש כדי להציג תגובות באמצעות הפלטפורמה שלנו.
-
----
+This will affect all clients, integrations, and frameworks that you may be using to show comments via our platform.

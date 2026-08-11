@@ -1,7 +1,6 @@
-사용자가 댓글에 투표하려고 할 때 로그인되어 있지 않으면 사용자 이름과 이메일을 제공하라는 요청을 받습니다.
-
-이 요구사항을 제거하면 누구나 정보를 남기지 않고 댓글에 투표할 수 있습니다.
-
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-votes']; selector = '.allow-anonymous-votes'; title='Allow Anonymous Votes' app-screenshot-end]
-
 ---
+When users attempt to vote on a comment, and they are not logged in, they will be asked to provide their username and email.
+
+We can remove this requirement, allowing anyone to vote on a comment without leaving any information.
+
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-votes']; selector = '.allow-anonymous-votes'; alt='익명 투표 옵션이 활성화된 위젯 사용자 정의 페이지로, 투표에 이름이나 이메일이 필요하지 않습니다.'; title='익명 투표 허용' app-screenshot-end]

@@ -1,11 +1,11 @@
-Bei FastComments muss eine Konversation zuerst erstellt werden, bevor sie eingebettet werden kann.
+Mit FastComments muss ein Gespräch zuerst erstellt werden, bevor es eingebettet werden kann.
 
-Besuchen Sie dazu einfach [fastcomments.com/create](https://fastcomments.com/create).
+Dazu besuchen Sie einfach [fastcomments.com/create](https://fastcomments.com/create).
 
-[app-screenshot-start url='/create'; selector = '.content'; title='The Create a Conversation Form' app-screenshot-end]
+[app-screenshot-start url='/create'; selector = '.content'; alt='Die fastcomments.com/create Seite mit dem Feld für den Gesprächsnamen und dem Button, der einen sicheren Link erzeugt'; title='Das Formular zum Erstellen eines Gesprächs' app-screenshot-end]
 
-Nach der Auswahl eines Namens wird ein sicherer Link erstellt.
+Nachdem ein Name gewählt wurde, wird ein sicherer Link erstellt. 
 
-Dieser Link kann besucht und als eigener Chat verwendet werden. Oder er kann direkt einer Anwendung bereitgestellt werden, die oEmbed oder https://embed.ly unterstützt, um die Konversation einzufügen.
+Dieser Link kann besucht und als eigener Chat verwendet werden. Oder er kann direkt an eine Anwendung übergeben werden, die oEmbed unterstützt, oder https://embed.ly, um das Gespräch einzufügen.
 
-Eingebettete Konversationen können genau wie jede andere FastComments-Installation über die Anpassungsoberfläche angepasst werden. Lesen Sie [hier](/guide-customizations-and-configuration.html) mehr über die Anpassung des Kommentar-Widgets.
+Eingebettete Gespräche können, genau wie jede andere FastComments-Installation, über die Customization UI angepasst werden. Lesen Sie mehr über die Anpassung des Kommentar-Widgets [hier](/guide-customizations-and-configuration.html).

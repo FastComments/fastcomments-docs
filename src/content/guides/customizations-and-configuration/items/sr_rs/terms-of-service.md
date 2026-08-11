@@ -1,23 +1,21 @@
-FastComments вам омогућава да захтевате од корисника који коментаришу први пут да прихвате ваше Услове коришћења пре слања коментара.
+FastComments vam omogućava da od prvog komentatora zahtevate prihvatanje vaših Uslova korišćenja pre slanja komentara.
 
-Када је омогућено:
-- **Анонимни корисници** ће видети поље за потврду Услова коришћења сваки пут када коментаришу
-- **Аутентификовани корисници** ће видети поље за потврду само при свом првом коментару, или када ажурирате ваше Услове коришћења
+Kada je omogućeno:
+- **Anonimni korisnici** videće polje za potvrdu Uslova pri svakom komentaru
+- **Autentifikovani korisnici** videće polje samo pri svom prvom komentaru, ili kada ažurirate svoje Uslove korišćenja
 
-### Конфигурација
+### Konfiguracija
 
-Идите на страницу за прилагођавање видгета и омогућите поље за потврду "Require Terms of Service acceptance". Када га омогућите, видећете следеће опције:
+Idite na stranicu za prilagođavanje vidžeta i omogućite polje „Zahtevaj prihvatanje Uslova korišćenja“. Kada je omogućeno, videćete sledeće opcije:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.tos-enabled'; selector = '#tos-options'; title='Terms of Service Options' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.tos-enabled'; selector = '#tos-options'; alt='Panel uslova korišćenja koji prikazuje selektor režima teksta TOS-a i polje datuma poslednjeg ažuriranja'; title='Opcije uslova korišćenja' app-screenshot-end]
 
-- **Режим текста Услова коришћења**: По подразумеваној вредности, поље за потврду приказује "I agree to the Terms of Service and Privacy Policy" са линковима ка оба документа. Одаберите "Customize text per locale" да бисте навели сопствени текст за сваки језик.
-- **Датум последње измене Услова коришћења**: Када ажурирате Услове коришћења, подесите овај датум. Корисници који су прихватили пре тог датума ће морати поново да прихвате.
+- **TOS Text Mode**: Podrazumevano, polje prikazuje „Slažem se sa Uslovima korišćenja i Politikom privatnosti“ sa linkovima ka oba dokumenta. Izaberite „Prilagodi tekst po lokalu“ da biste obezbedili svoj tekst za svaki jezik.
+- **TOS Last Updated Date**: Kada ažurirate svoje Uslove korišćenja, postavite ovaj datum. Korisnici koji su prihvatili pre ovog datuma biće ponovo upitani da prihvate.
 
-### Како функционише
+### Kako funkcioniše
 
-- Време прихватања Услова коришћења се бележи по кориснику и по коментару
-- Када корисник прихвати Услове коришћења, датум се записује у њихов кориснички профил (per-tenant)
-- Ако подесите датум "Последња измена" који је после датума када је корисник прихватио, биће им потребно да поново прихвате
-- За анонимне кориснике које није могуће пратити, поље за потврду се појављује при сваком слању коментара
-
----
+- Vremenska oznaka prihvatanja Uslova čuva se po korisniku i po komentaru
+- Kada korisnik prihvati Uslove, datum se beleži na njegovom korisničkom profilu (po tenantu)
+- Ako postavite datum „Poslednje ažuriranje“ koji je posle datuma prihvatanja korisnika, moraće ponovo da prihvati
+- Za anonimne korisnike koji se ne mogu pratiti, polje se pojavljuje pri svakom slanju komentara

@@ -1,18 +1,18 @@
 [related-parameter-start name = 'disableLiveCommenting'; type = 'boolean'; related-parameter-end]
 
-По подразумеваној поставци, FastComments ће имати омогућено живо коментарисање.
+Podrazumevano, FastComments ima omogućeno komentarisanje u realnom vremenu.
 
-То значи да ће сваки посматрач нити коментара видети исти садржај.
+Ovo znači da svaki posmatrač niti komentara vidi isti sadržaj.
 
-На пример, ако се коментар дода, тај коментар ће се појавити. Ако се коментар уреди или уклони,
-тада ће ти коментари бити уређени или уклоњени за све посматраче нити. Исто важи за гласања и све радње модерације.
+Na primer, ako se doda komentar, taj komentar treba da se prikaže. Ako se komentar izmeni ili ukloni,
+tada će ti komentari biti izmenjeni ili uklonjeni za sve posmatrače niti. Isto važi i za glasove i sve akcije moderacije.
 
-Међутим, ово можемо онемогућити:
+Međutim, možemo ovo onemogućiti:
 
-[code-example-start config = {disableLiveCommenting: true}; linesToHighlight = [6]; title = 'Disable Live Commenting'; code-example-end]
+[code-example-start config = {disableLiveCommenting: true}; linesToHighlight = [6]; title = 'Onemogući komentarisanje u realnom vremenu'; code-example-end]
 
-Ово се такође може урадити и без кода. На страници за прилагођавање виџета, погледајте одељак "Онемогући живо коментарисање".
+Ovo se takođe može uraditi bez koda. Na stranici za prilagođavanje widgeta, pogledajte odeljak „Onemogući komentarisanje u realnom vremenu“.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-live-commenting']; selector = '.disable-live-commenting'; title='Disable Live Commenting' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-live-commenting']; selector = '.disable-live-commenting'; alt='Odeljak „Onemogući komentarisanje u realnom vremenu“ na stranici za prilagođavanje widgeta, isključivanje ažuriranja niti u realnom vremenu'; title='Onemogući komentarisanje u realnom vremenu' app-screenshot-end]
 
 ---

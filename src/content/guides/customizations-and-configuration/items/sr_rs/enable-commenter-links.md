@@ -1,17 +1,15 @@
 [related-parameter-start name = 'enableCommenterLinks'; type = 'boolean'; related-parameter-end]
 
-По подразумеваној поставци, FastComments ће тражити од корисника само њихов коментар, корисничко име и е-пошту.
+Podrazumevano, FastComments će tražiti od korisnika samo njihov komentar, korisničko ime i email.
 
-Међутим, у неким ситуацијама можда ћете пожелети да корисник остави везу до свог блога или веб-сајта.
+Međutim, u nekim situacijama možda ćete želeti da korisnik ostavi link ka svom blogu ili veb sajtu.
 
-Можемо омогућити приказ додатног поља за унос у које ће корисник оставити URL свог сајта тако што ћемо поставити флаг **enableCommenterLinks** на true:
+Možemo omogućiti prikaz dodatnog polja za unos URL-a veb sajta korisnika postavljanjem zastavice **enableCommenterLinks** na true:
 
 [code-example-start config = {enableCommenterLinks: true}; linesToHighlight = [6]; title = 'Enabling Commenter Links'; code-example-end]
 
-Када је тај URL наведен, налог корисника ће бити ажуриран и сва њихова корисничка имена на свим претходним и будућим коментарима ће водити на тај URL.
+Kada se navedeni URL unese, nalog korisnika će biti ažuriran i sve njegove korisničko ime na svim prošlim i budućim komentarima će biti povezano na ovaj URL.
 
-Ово се може прилагодити без кода, на страници за прилагођавање виџета:
+Ovo se može prilagoditi bez koda, na stranici za prilagođavanje widgeta:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.click-to-show-comments', '.commenter-links']; selector = '.commenter-links'; title='Enabling Commenter Links' app-screenshot-end]
-
----
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.click-to-show-comments', '.commenter-links']; selector = '.commenter-links'; alt='Stranica za prilagođavanje widgeta sa označenim poljem za linkove komentatora kako bi se dodalo polje za URL veb sajta u formu za komentar'; title='Enabling Commenter Links' app-screenshot-end]

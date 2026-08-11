@@ -1,10 +1,10 @@
 ---
-FastComments küfür ve spam tespitini destekler; ancak bu özellikler özelleştirilebilir. Küfür veya Spam Tespiti, Yorum Denetleme Ayarları sayfasından ayrı ayrı kapatılabilir.
+FastComments, küfür ve spam tespitini desteklese de, özelleştirilebilir. Küfür veya Spam Tespiti  
+Yorum Moderasyon Ayarları sayfası üzerinden ayrı ayrı kapatılabilir.
 
-Bu sayfa aynı zamanda yorumların otomatik onayı veya doğrulanmamış yorumların sona erme süresinin yapılandırmasını bulacağınız sayfadır.
+Bu aynı zamanda yorum otomatik onayı yapılandırmasını veya doğrulanmamış yorumların süresinin  
+ayarlanmasını bulacağınız sayfadır.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/settings'; selector = '.content'; title='Comment Moderation Settings' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/settings'; selector = '.content'; alt='Küfür ve spam tespiti, otomatik onay ve doğrulanmamış yorum süresi seçenekleriyle moderasyon ayarları'; title='Yorum Moderasyon Ayarları' app-screenshot-end]
 
 Ayrıca, kelime kara listesi bu sayfadaki bir düğmeden özelleştirilebilir.
-
----

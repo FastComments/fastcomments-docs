@@ -1,15 +1,15 @@
-Ao moderar e visualizar encadeamentos de comentários, é desejável poder ir diretamente para um encadeamento para obter contexto durante a moderação.
+Ao moderar e visualizar tópicos de comentários, é desejável poder pular diretamente para um tópico para obter contexto durante a moderação.
 
-Isso significa que o fluxo do usuário começa na página de Moderação de Comentários, e então teria que ir de um comentário individual para a página que contém esse comentário, esperar essa página carregar, esperar os comentários carregarem e então rolar até esse comentário.
+Isso significa que o fluxo do usuário começa na página de Moderação de Comentários e, em seguida, teria que ir de um comentário individual para a página que contém esse comentário, esperar a página carregar, esperar os comentários carregarem e então rolar até esse comentário.
 
-No entanto, o FastComments oferece uma forma mais rápida. Na página Moderar Comentários, ao lado de cada comentário, há um botão "Visualizar Comentário" no canto inferior direito.
+No entanto, o FastComments oferece uma maneira mais rápida. Na página Moderar Comentários, ao lado de cada comentário, há um botão "Ver Comentário" no canto inferior direito.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=1&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.comments .comment-component'; title='A Comment' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=1&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.comments .comment-component'; alt='Um único comentário na lista de moderação, com o botão Ver Comentário no canto inferior direito'; title='Um Comentário' app-screenshot-end]
 
-Se este comentário tiver respostas, o texto do botão exibirá o número de respostas, mas ao clicar ele realiza a mesma ação.
+Se este comentário tiver respostas, o texto do botão mostrará o número de respostas, mas ao clicar ele executa a mesma ação.
 
-Este botão o levará ao **Visualizador de Encadeamento de Comentários**.
+Este botão levará você ao **Visualizador de Tópico de Comentário**.
 
-O Visualizador de Encadeamento de Comentários é uma aplicação pequena e de carregamento rápido hospedada pela FastComments que renderiza o encadeamento de comentários da página em que o comentário está e rola até esse comentário.
+O Visualizador de Tópico de Comentário é uma aplicação pequena e de carregamento rápido hospedada pelo FastComments que renderiza o tópico de comentários da página onde o comentário está e rola até esse comentário.
 
-Isso permite que os moderadores reunam o contexto necessário, rapidamente, sem precisar esperar outra página carregar.
+Isso permite que os moderadores obtenham o contexto de que precisam, rapidamente, sem precisar esperar que outra página carregue.

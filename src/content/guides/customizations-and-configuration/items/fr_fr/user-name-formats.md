@@ -1,21 +1,18 @@
----
-Par défaut, FastComments affichera le nom de l'utilisateur tel qu'il l'a saisi, ou tel qu'il nous a été transmis via SSO.
+Par défaut, FastComments affichera le nom de l'utilisateur tel qu'il l'a saisi, ou tel qu'il nous a été transmis via SSO.  
 
-Cependant, il peut être souhaitable de masquer ou d'afficher le nom de l'utilisateur différemment. Par exemple, si le nom de l'utilisateur est Allen Rex, vous pouvez ne vouloir afficher que "Allen R.".
+Cependant, il peut être souhaitable de masquer ou d'afficher le nom de l'utilisateur d'une manière différente. Par exemple, si le nom de l'utilisateur est Allen Rex, vous voudrez peut‑être n'afficher que « Allen R. ».  
 
-Cela peut être fait sans code dans l'interface de personnalisation du widget, dans le paramètre appelé `Commenter Name Format` :
+Cela peut être fait sans code dans l'interface de personnalisation du widget, sous le paramètre appelé `Commenter Name Format` :
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.commenter-name-format select'; selector = '.commenter-name-format'; title='Change Name Format' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.commenter-name-format select'; selector = '.commenter-name-format'; alt='Liste déroulante du format du nom du commentateur ouverte avec des choix tels que Capitaliser, Initiale du nom de famille et Toutes les initiales'; title='Modifier le format du nom' app-screenshot-end]
 
 Les formats disponibles sont :
 
-- Capitaliser (display example user as Example User)
-- Initiale du nom de famille (display Example User as Example U.)
-- Toutes les initiales (display Example User as E. U.)
-- Afficher "Anonymous"
+- Capitaliser (affiche l'utilisateur d'exemple comme Example User)  
+- Initiale du nom de famille (affiche Example User comme Example U.)  
+- Toutes les initiales (affiche Example User comme E. U.)  
+- Afficher "Anonyme"
 
-L'effet de ce changement est immédiat. Les utilisateurs verront toujours leur nom d'utilisateur complet en haut de la zone de commentaire, pour eux-mêmes, mais leurs commentaires afficheront le nom d'utilisateur modifié.
+L'effet de ce changement est immédiat. Les utilisateurs verront toujours leur nom complet en haut de la zone de commentaire, pour eux-mêmes, mais leurs commentaires afficheront le nom modifié.  
 
 Les noms d'utilisateur sont masqués côté serveur pour protéger les utilisateurs.
-
----

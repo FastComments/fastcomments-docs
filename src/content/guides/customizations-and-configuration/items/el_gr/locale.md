@@ -1,30 +1,29 @@
 [related-parameter-start name = 'locale'; type = 'string'; related-parameter-end]
 
-By default, FastComments will render the comment widget in the locale determined by the user's system and browser.
+Από προεπιλογή, το FastComments θα εμφανίζει το widget σχολίων στη γλώσσα που καθορίζεται από το σύστημα και το πρόγραμμα περιήγησης του χρήστη.
 
-When a user comments or logs in, we update their last used locale and use this for sending emails, as well.
+Όταν ένας χρήστης σχολιάζει ή συνδέεται, ενημερώνουμε την τελευταία του χρησιμοποιημένη γλώσσα και τη χρησιμοποιούμε επίσης για την αποστολή email.
 
-This impacts how the commenting widget is translated for the user. Locale consists of the user's language and region, so configuring locale will
-usually change the language used to show text to the user.
+Αυτό επηρεάζει το πώς το widget σχολίων μεταφράζεται για τον χρήστη. Η γλώσσα αποτελείται από τη γλώσσα και την περιοχή του χρήστη, έτσι η ρύθμιση της γλώσσας συνήθως αλλάζει τη γλώσσα που χρησιμοποιείται για την εμφάνιση κειμένου στον χρήστη.
 
-#### Via The UI
+#### Μέσω της διεπαφής χρήστη
 
-This can be defined using the widget customization UI. See the "Locale / Language" option:
+Αυτό μπορεί να οριστεί χρησιμοποιώντας τη διεπαφή προσαρμογής του widget. Δείτε την επιλογή "Locale / Language":
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.locale-override'; title='Changing The Locale / Language' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.locale-override'; alt='Αναπτυσσόμενο μενού Locale / Language στη σελίδα προσαρμογής του widget που χρησιμοποιείται για την παράκαμψη της ανιχνευμένης γλώσσας του επισκέπτη'; title='Αλλαγή της γλώσσας / Locale' app-screenshot-end]
 
-#### Via Code
+#### Μέσω κώδικα
 
-This can be overridden with a desired locale.
+Αυτό μπορεί να παρακαμφθεί με μια επιθυμητή γλώσσα.
 
-[code-example-start config = {locale: 'ru_ru'}; linesToHighlight = [6]; title = 'Manually Defining the User\'s Locale'; code-example-end]
+[code-example-start config = {locale: 'ru_ru'}; linesToHighlight = [6]; title = 'Χειροκίνητος ορισμός της γλώσσας του χρήστη'; code-example-end]
 
-### Supported Languages and Locale Codes
+### Υποστηριζόμενες γλώσσες και κωδικοί γλώσσας
 
-[You can find the complete list of supported languages and the corresponding locale codes here.](/guide-supported-languages.html#supported-languages)
+[Μπορείτε να βρείτε την πλήρη λίστα των υποστηριζόμενων γλωσσών και των αντίστοιχων κωδικών γλώσσας εδώ.](/guide-supported-languages.html#supported-languages)
 
-### SSO Note
+### Σημείωση SSO
 
-If you're using SSO, you might want to pass the user's locale in the user object, so that emails and other things are localized correctly for them.
+Αν χρησιμοποιείτε SSO, ίσως θέλετε να περάσετε τη γλώσσα του χρήστη στο αντικείμενο χρήστη, ώστε τα email και άλλα στοιχεία να εντοπίζονται σωστά για αυτόν.
 
 ---

@@ -1,10 +1,12 @@
-Varsayılan olarak, her kullanıcı aynı dakika içinde en fazla `5 comments` gönderebilir.
+---
+Varsayılan olarak, her kullanıcı aynı dakikada en fazla `5 yorum` gönderebilir.
 
-Bu, user id, anon user id ve ip address (hashed) ile izlenir.
+Bu, kullanıcı kimliği, anonim kullanıcı kimliği ve IP adresi (hashlenmiş) ile izlenir.
 
-Bu, widget özelleştirme sayfasında kod yazmadan özelleştirilebilir:
+Bu, kod yazmadan, widget özelleştirme sayfasında özelleştirilebilir:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.max-comments-per-minute'; title='Limiting Comment Volume Per User' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.max-comments-per-minute'; alt='Widget özelleştirme sayfasındaki dakikada maksimum yorum alanı, varsayılan olarak 5 olarak ayarlanmıştır'; title='Kullanıcı Başına Yorum Hacmini Sınırlama' app-screenshot-end]
 
-Unutmayın ki, comment creation API'yi kullanıyorsanız, istekte kullanıcının orijinal `ip` adresini backend'imize göndermek isteyebilirsiniz, böylece rate limiting uygulanır
-kullanıcı bazında ve hesabınıza genel olarak değil.
+Yorum oluşturma API'sini kullanıyorsanız, oran sınırlamasının kullanıcı başına uygulanması ve hesabınıza genel olarak uygulanmaması için istekte kullanıcının orijinal `ip` adresini arka uca göndermek isteyebilirsiniz.
+
+---

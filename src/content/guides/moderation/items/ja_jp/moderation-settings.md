@@ -1,12 +1,9 @@
----
-FastCommentsは不適切な表現やスパム検出をサポートしていますが、カスタマイズ可能です。 不適切表現やスパム検出は
+FastComments は不適切な言葉やスパム検出をサポートしていますが、カスタマイズ可能です。不適切な言葉やスパム検出は  
 コメントモデレーション設定ページで個別にオフにできます。
 
-ここはまた、コメントの自動承認の設定や、未確認コメントの有効期限の
-設定を行うページでもあります。
+このページでは、コメントの自動承認設定や、未確認コメントの有効期限設定も  
+行えます。
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/settings'; selector = '.content'; title='Comment Moderation Settings' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/settings'; selector = '.content'; alt='不適切な言葉とスパム検出、コメントの自動承認、未確認コメントの期限切れオプションを含むモデレーション設定'; title='コメントモデレーション設定' app-screenshot-end]
 
-さらに、このページのボタンから単語のブラックリストをカスタマイズできます。
-
----
+さらに、このページのボタンから単語ブラックリストをカスタマイズできます。

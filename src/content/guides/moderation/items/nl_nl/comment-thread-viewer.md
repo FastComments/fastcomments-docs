@@ -1,19 +1,20 @@
-Bij het modereren en bekijken van reactiedraden is het wenselijk om direct naar een draad te kunnen springen om tijdens het modereren context te krijgen.
+---
+When moderating and viewing comment threads it is desirable to be able to jump directly to a thread to get context during moderating.
 
-Dit betekent dat de gebruikersstroom begint op de pagina Reacties modereren, en dan van een individuele reactie zou moeten gaan naar
-de pagina die die reactie bevat, wachten tot die pagina geladen is, wachten tot de reacties geladen zijn, en vervolgens naar die reactie scrollen.
+This means that the user's flow starts in the Comment Moderation page, and would then have to go from an individual comment to
+the page containing that comment, wait for that page to load, wait for the comments to load, and then scroll to that comment.
 
-FastComments biedt echter een snellere manier. Op de pagina Reacties modereren staat naast elke reactie rechtsonder een knop "Bekijk reactie".
+However, FastComments provides a faster way. In the Moderate Comments page, next to each comment, there is a "View Comment" button in the bottom right.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=1&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.comments .comment-component'; title='A Comment' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=1&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.comments .comment-component'; alt='Een enkel commentaar in de moderatielijst, met de knop Bekijk commentaar rechtsonder in de hoek'; title='Een commentaar' app-screenshot-end]
 
-Als deze reactie antwoorden heeft, geeft de knop in plaats daarvan het aantal antwoorden weer, maar door erop te klikken wordt dezelfde actie uitgevoerd.
+If this comment has replies, the button text will instead say the number of replies, but clicking it takes the same action.
 
-Deze knop brengt je naar de **Reactiedraadviewer**.
+This button will take you to the **Comment Thread Viewer**.
 
-De Reactiedraadviewer is een kleine, snel ladende applicatie gehost door FastComments die de reactiedraad voor de pagina waarop
-de reactie staat weergeeft, en naar die reactie scrolt.
+The Comment Thread Viewer is a small, fast loading application hosted by FastComments that renders the comment thread for the page that
+the comment is on, and scrolls to that comment.
 
-Hierdoor kunnen moderatoren snel de benodigde context verzamelen, zonder te hoeven wachten tot een andere pagina geladen is.
+This allows moderators to gather the context they need to, quickly, without having to wait for another page to load.
 
 ---

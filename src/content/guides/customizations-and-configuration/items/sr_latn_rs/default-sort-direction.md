@@ -1,29 +1,29 @@
 [related-parameter-start name = 'defaultSortDirection'; type = 'string'; related-parameter-end]
 
-Po defaultu, FastComments će sortirati komentare prema pravcu sortiranja "Most Relevant".
+Podrazumevano, FastComments sortira komentare po smeru sortiranja „Najrelevantnije“.
 
-Sortiranje "Most Relevant" uzima u obzir vreme kada je komentar ostavljen i broj glasova prilikom sortiranja.
+Sortiranje po najrelevantnijem uzima u obzir vreme kada je komentar ostavljen i broj glasova za sortiranje.
 
-Korisnik zatim može promeniti pravac sortiranja u UI-ju widgeta za komentare na Oldest ili Newest First.
+Korisnik zatim može da promeni smer sortiranja na „Najstarije prvo“ ili „Najnovije prvo“ u UI‑u vidžeta za komentare.
 
-Međutim, možemo promeniti podrazumevano na bilo koju od ove tri. Na primer, ako želite da prikažete najstarije komentare prvi:
+Međutim, podrazumevani smer možemo promeniti na bilo koji od tri. Na primer, ako želite da prikažete najstarije komentare prvo:
 
-[code-example-start config = {defaultSortDirection: "OF"}; linesToHighlight = [6]; title = 'Changing The Default Sort To Oldest First'; code-example-end]
+[code-example-start config = {defaultSortDirection: "OF"}; linesToHighlight = [6]; title = 'Promena podrazumevanog sortiranja na najstarije prvo'; code-example-end]
 
-Postavljamo vrednost **defaultSortDirection** na "OF" da bismo postavili smer na "OF".
+Postavljamo vrednost **defaultSortDirection** na „OF“ da bismo postavili smer na „OF“.
 
-Za sortiranje koje prikazuje najnovije prvo, uradili bismo sledeće:
+Za smer sortiranja „Najnovije prvo“, uradićemo sledeće:
 
-[code-example-start config = {defaultSortDirection: "NF"}; linesToHighlight = [6]; title = 'Changing The Default Sort To Newest First'; code-example-end]
+[code-example-start config = {defaultSortDirection: "NF"}; linesToHighlight = [6]; title = 'Promena podrazumevanog sortiranja na najnovije prvo'; code-example-end]
 
-Važeće vrednosti za **defaultSortDirection** su:
+Validne vrednosti za **defaultSortDirection** su:
 
-- MR: "Most Recent"
-- NF: "Newest First"
-- OF: "Oldest First"
+- MR: "Najnovije"
+- NF: "Najnovije prvo"
+- OF: "Najstarije prvo"
 
-Ovo se takođe može uraditi bez koda. Na stranici za prilagođavanje widgeta, pogledajte odeljak "Default Sort Direction".
+Ovo se takođe može uraditi bez koda. Na stranici za prilagođavanje vidžeta, pogledajte odeljak „Podrazumevani smer sortiranja“.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.default-sort-direction'; title='Changing The Default Sort Direction' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.default-sort-direction'; alt='Selektor podrazumevanog pravca sortiranja koji nudi Najrelevantnije, Najnovije prvo i Najstarije prvo'; title='Promena podrazumevanog pravca sortiranja' app-screenshot-end]
 
-Napomena: komentari na svakoj stranici za svaki pravac sortiranja su prethodno izračunati, tako da svi pravci sortiranja imaju isti nivo performansi.
+Napomena: komentari na svakoj stranici za svaki smer sortiranja su unapred izračunati, tako da svi smerovi sortiranja imaju istu performansu.

@@ -1,17 +1,17 @@
-Wenn Benutzer kommentieren und nicht eingeloggt sind, werden sie gebeten, ihre E-Mail anzugeben.
+When users comment, and they are not logged in, they will be asked to provide their email.
 
-Dies wird eine "unverifizierte Sitzung" für diesen Benutzer erstellen, und wir werden ihn per E-Mail auffordern, diese Sitzung zu verifizieren.
+This will create an "unverified session" for that user, and we will ask them to verify that session via email.
 
-Für einige Websites oder Anwendungen ist es wünschenswert, den Benutzer beim Kommentieren oder Abstimmen nicht nach seiner E-Mail zu fragen.
+For some sites, or applications, it's desirable not to ask the user for their email when commenting or voting.
 
-Das Aktivieren anonymen Kommentierens macht das E-Mail-Eingabefeld optional. Wir können es jedoch komplett deaktivieren. Aktivieren Sie zuerst
-anonymes Kommentieren, und dann erscheint die Option, die E-Mail-Eingabefelder zu deaktivieren.
+Enabling anonymous commenting makes the email input field optional. However, we can disable it completely. First, enable
+anonymous commenting, and then the option to disable the email input fields will appear.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments', '.disable-email-inputs']; selector = '.disable-email-inputs'; title='Disable Email Inputs' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments', '.disable-email-inputs']; selector = '.disable-email-inputs'; alt='Option, die E‑Mail‑Felder vollständig zu verbergen, angezeigt nachdem anonyme Kommentare in der Anpassungsoberfläche aktiviert wurden'; title='E‑Mail‑Eingaben deaktivieren' app-screenshot-end]
 
-Ist dies aktiviert, werden die E-Mail-Felder in allen unseren Kommentarsystemen überhaupt nicht angezeigt.
+With this on, the email fields will not show at all in all of our commenting products.
 
-Beachten Sie, dass mit dieser Konfiguration alle Kommentare unverifiziert sind, es sei denn, der Benutzer erstellt ein Konto und meldet sich bei
-https://fastcomments.com an.
+Note that, with this configuration, all comments will be unverified unless the user creates an account and logs into
+https://fastcomments.com.
 
-Sie sollten in Erwägung ziehen, [das „Unverified“-Label zu deaktivieren](/guide-customizations-and-configuration.html#disable-unverified-label).
+You may want to consider [Deaktivieren des nicht verifizierten Labels](/guide-customizations-and-configuration.html#disable-unverified-label).

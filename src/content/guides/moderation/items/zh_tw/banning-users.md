@@ -1,27 +1,29 @@
-在 FastComments 中，有兩種方式可以禁止使用者在您的網站發表評論。
+There are two ways to ban users from commenting on your site with FastComments.
 
-第一種是如果您已經知道他們的電子郵件，您可以在 <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">被封鎖的使用者</a> 頁面輸入該電子郵件。
+The first is if you already know their email, you can enter it on the <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">已封鎖的使用者</a> page.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; title='The Banned Users Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; alt='在「適度評論」下的已封鎖使用者清單，顯示已封鎖的電子郵件地址以及新增封鎖的按鈕'; title='已封鎖使用者頁面' app-screenshot-end]
 
-此頁面可以透過 Moderate Comments -> Banned Users 存取
+This page can be accessed via Moderate Comments -> Banned Users
 
-當我們封鎖使用者時，可以選擇類型：永久（Permanent）或永久隱形封鎖（Permanent Shadow Ban）：
+When we go to ban a user, we can pick a type, either Permanent or Permanent Shadow Ban:
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; title='Banning a User' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; alt='新封鎖表單，包含電子郵件欄位以及永久或永久陰影封鎖的封鎖類型選擇'; title='封鎖使用者' app-screenshot-end]
 
-第二種封鎖使用者的方式，是在 Comment Moderation 頁面中，點擊置於每則評論上的封鎖按鈕。
+The second way to ban a user is by clicking the ban button that is placed on each comment on the Comment Moderation page.
 
-當我們點擊封鎖按鈕時，會出現一些選項，可在其中指定封鎖類型與期限。
+When we click the ban button, you'll be presented with some options, where we can specify the ban type and duration.
 
 ### Email Aliases
 
-當透過電子郵件封鎖使用者時，FastComments 會自動忽略 `+` 別名。例如，封鎖 `user+alias@gmail.com` 也會封鎖 `user@gmail.com` 以及該地址的任何其他 `+` 變體，例如 `user+other@gmail.com`。
+When banning a user by email, FastComments automatically ignores `+` aliases. For example, banning `user+alias@gmail.com` will
+also ban `user@gmail.com` and any other `+` variation of that address, such as `user+other@gmail.com`.
 
 ### Shadow Bans
 
-隱形封鎖是一種會讓使用者以為其評論或投票已成功儲存，但實際上並未儲存的封鎖類型。在某些情況下，這是可取的做法。
+A shadow-ban is a type of ban that makes it appear that the user's comment or vote was saved successfully, when in fact it was not. This may be
+desirable in certain situations.
 
 ### Banning Via IP Address
 
-除非租戶選擇退出，FastComments 支援透過 IP 進行封鎖，方法是儲存評論者 IP 地址的雜湊版本。
+Unless a tenant wishes to opt out, FastComments supports banning via IP by storing a hashed version of the commenter's IP address.

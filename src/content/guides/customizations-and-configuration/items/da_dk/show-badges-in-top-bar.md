@@ -1,13 +1,13 @@
 [related-parameter-start name = 'showBadgesInTopBar'; type = 'boolean'; related-parameter-end]
 
-Som standard viser FastComments bruger-badges kun på deres kommentarer i kommentarsamtalen.
+Som standard vil FastComments kun vise brugerbadge på deres kommentarer inden for kommentartråden.
 
-Vi kan dog vise bruger-badges ved siden af deres navn over kommentarfeltet ved at aktivere denne funktion på siden til tilpasning af widgeten:
+Men vi kan vise brugerbadge ved siden af deres navn over kommentarfeltet ved at aktivere denne funktion på widget-tilpasningssiden:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.show-badges-in-top-bar'; title='Show Badges in Top Bar Option' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.show-badges-in-top-bar'; alt='Vis badge i topbjælke afkrydsningsfelt på widget-tilpasningssiden, placerer badge ved siden af navnet over kommentarfeltet'; title='Vis badge i topbjælke-indstilling' app-screenshot-end]
 
-Dette viser brugerens badges ved siden af deres navn i topbjælken, så deres præstationer og status fremhæves, når de skriver en kommentar.
+Dette vil vise brugerens badge ved siden af deres navn i topbjælkeområdet, så deres præstationer og status fremstår mere tydelige, når de skriver en kommentar.
 
-Bemærk, at denne funktion skal være aktiveret i widgetens tilpasnings‑UI for at fungere. Du kan valgfrit sætte flaget **showBadgesInTopBar** til false i din kodekonfiguration for selektivt at deaktivere det, selv når det er slået til på serverniveau:
+Bemærk, at denne funktion skal være aktiveret i widget-tilpasnings‑UI’en for at fungere. Du kan valgfrit sætte **showBadgesInTopBar**‑flaget til false i din kodekonfiguration for selektivt at deaktivere den, selvom den er slået til på serverniveau:
 
-[code-example-start config = {showBadgesInTopBar: false}; linesToHighlight = [6]; title = 'Disable Show Badges in Top Bar'; code-example-end]
+[code-example-start config = {showBadgesInTopBar: false}; linesToHighlight = [6]; title = 'Deaktiver visning af badge i topbjælke'; code-example-end]

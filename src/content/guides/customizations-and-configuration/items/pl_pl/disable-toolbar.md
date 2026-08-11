@@ -3,12 +3,12 @@
 Domyślnie FastComments wyświetla pasek narzędzi podczas pisania komentarza, aby zapewnić skróty do formatowania tekstu i przesyłania
 obrazów.
 
-This toolbar can be disabled in code or with the Customization UI.
+Ten pasek narzędzi można wyłączyć w kodzie lub za pomocą interfejsu UI dostosowywania.
 
-[code-example-start config = {disableToolbar: true}; linesToHighlight = [6]; title = 'Disabling The Toolbar'; code-example-end]
+[code-example-start config = {disableToolbar: true}; linesToHighlight = [6]; title = 'Wyłączanie paska narzędzi'; code-example-end]
 
-To można również zrobić bez użycia kodu. Na stronie dostosowywania widżetu zobacz opcję "Wyłącz pasek narzędzi odpowiedzi".
+Można to również zrobić bez kodu. Na stronie dostosowywania widgetu zobacz opcję „Disable The Reply Toolbar”.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-toolbar']; selector = '.disable-toolbar'; title='Disabling The Toolbar' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-toolbar']; selector = '.disable-toolbar'; alt='Strona dostosowywania widgetu z zaznaczonym polem wyboru Disable The Reply Toolbar, aby usunąć skróty formatowania'; title='Wyłączanie paska narzędzi' app-screenshot-end]
 
 ---

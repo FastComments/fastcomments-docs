@@ -1,18 +1,15 @@
----
-По подразбиране размерът на страницата в FastComments е `30`. Това включва отговорите в нишките.
+By default, the FastComments page size is `30`. This includes replies in threads.
 
-Размерът на страницата може да се персонализира в [Интерфейс за конфигурация на уиджета](https://fastcomments.com/auth/my-account/customize-widget) в различни стойности в диапазона от `10` до `200`.
+The page size can be customized in the [Widget Configuration UI](https://fastcomments.com/auth/my-account/customize-widget) in varying sizes ranging from `10` to `200`.
 
-Обърнете внимание, че промяната на размера на страницата изисква преизчисляване на всички нишки с коментари в акаунта ви. Това може да отнеме няколко минути.
+Note that changing the page size requires recalculating all the comment threads in your account. This may take a couple of minutes.
 
-Това не може да се конфигурира в клиентския уиджет, тъй като страниците се изчисляват на сървъра.
+This cannot be configured in the client side widget as pages are calculated server-side.
 
-Примерна конфигурация е показана по-долу:
+Example configuration is shown below:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.page-size'; title='Custom Page Sizes' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.page-size'; alt='Селектор за размер на страницата на страницата за персонализиране на уиджета, където може да се избере стойност от 10 до 200'; title='Персонализирани размери на страницата' app-screenshot-end]
 
-Размерите на страниците могат да се персонализират глобално, или на ниво домейн, или на ниво страница, чрез създаване на различни правила за персонализиране.
+Page sizes can be customized globally, or per-domain, or per-page, by creating different customization rules.
 
-Това ще засегне всички клиенти, интеграции и рамки, които използвате за показване на коментари чрез нашата платформа.
-
----
+This will affect all clients, integrations, and frameworks that you may be using to show comments via our platform.

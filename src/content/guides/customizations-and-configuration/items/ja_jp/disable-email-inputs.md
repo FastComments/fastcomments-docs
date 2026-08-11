@@ -1,17 +1,17 @@
-ユーザーがコメントを投稿する際、ログインしていない場合はメールアドレスの入力を求められます。
+When users comment, and they are not logged in, they will be asked to provide their email.
 
-これはそのユーザーの「未検証セッション」を作成し、メールでそのセッションの検証を求めます。
+This will create an "unverified session" for that user, and we will ask them to verify that session via email.
 
-一部のサイトやアプリケーションでは、コメントや投票時にユーザーにメールアドレスを求めたくない場合があります。
+For some sites, or applications, it's desirable not to ask the user for their email when commenting or voting.
 
-匿名コメントを有効にするとメール入力欄は任意になります。ただし、完全に無効化することもできます。まず、匿名コメントを有効にしてください。
-その後、メール入力欄を無効にするオプションが表示されます。
+Enabling anonymous commenting makes the email input field optional. However, we can disable it completely. First, enable
+anonymous commenting, and then the option to disable the email input fields will appear.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments', '.disable-email-inputs']; selector = '.disable-email-inputs'; title='Disable Email Inputs' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments', '.disable-email-inputs']; selector = '.disable-email-inputs'; alt='匿名コメントが有効になった後に表示される、メールフィールドを完全に非表示にするオプション'; title='メール入力を無効化' app-screenshot-end]
 
-これを有効にすると、当社のすべてのコメント製品でメール入力欄はまったく表示されなくなります。
+With this on, the email fields will not show at all in all of our commenting products.
 
-この設定では、ユーザーがアカウントを作成してログインしない限り、すべてのコメントは未検証になります。
-https://fastcomments.com
+Note that, with this configuration, all comments will be unverified unless the user creates an account and logs into
+https://fastcomments.com.
 
-[未検証ラベルを無効にする](/guide-customizations-and-configuration.html#disable-unverified-label)ことを検討してください。
+You may want to consider [未確認ラベルを無効化](/guide-customizations-and-configuration.html#disable-unverified-label).

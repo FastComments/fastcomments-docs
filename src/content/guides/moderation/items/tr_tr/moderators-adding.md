@@ -1,23 +1,20 @@
-Yöneticiler için, Yorum Denetleme sayfasının en üstünde Bir Moderatör Ekle düğmesi bulunur.
+---  
+Yöneticiler için, Yorum Moderasyonu sayfasının üst kısmında bir Moderatör Ekle düğmesi bulunur.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.moderation-settings-options'; title='Comment Moderation Setting Buttons' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.moderation-settings-options'; alt='Yorum Moderasyonu sayfasının üst kısmındaki düğme satırı, Moderatör Ekle düğmesi dahil'; title='Yorum Moderasyonu Ayar Düğmeleri' app-screenshot-end]
 
 Zaten moderatörleriniz varsa, bu düğme "Moderatörleri Düzenle" yazacaktır.
 
-Hadi "Bir Moderatör Ekle" sayfasına bir göz atalım.
+"Moderatör Ekle" sayfasına bir göz atalım.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/moderator/new'; selector = '.account-block'; title='The Add a Moderator Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/moderator/new'; selector = '.account-block'; alt='Moderatör Ekle sayfası, daveti göndermeden önce yalnızca yeni moderatörün adını ve e-posta adresini ister'; title='Moderatör Ekle Sayfası' app-screenshot-end]
 
-Bir moderatör eklemek için gereken tek şey bir isim ve bir e-posta adresidir.
+Bir moderatör eklemek için sadece bir isim ve bir e-posta adresi gerekir.
 
-E-posta mevcut bir FastComments hesabına bağlıysa, moderatör olarak hesabınıza katılmaları için e-posta ile davet edileceklerdir.
+E-posta mevcut bir FastComments hesabıyla ilişkiliyse, moderatör olarak hesabınıza katılmaları için e-posta yoluyla davet edilirler.
 
-Verilen e-posta mevcut bir FastComments hesabına bağlı değilse, onlar için yeni bir hesap oluşturulacaktır.
+Verilen e-posta mevcut bir FastComments hesabıyla ilişkili değilse, onlar için yeni bir hesap oluşturulur.
 
-Moderatore bir davet bağlantısı gönderilecektir; bu bağlantı onları otomatik olarak oturum açtırabilir. Gelecekte giriş yapmak isterlerse, basitçe ziyaret edebilirler
-<a href="https://fastcomments.com/auth/login" target="_blank">giriş sayfasını</a> ve daha önce verdiğiniz isim/e-posta adresini girebilirler. Bu onlara
-giriş yapmaları için bir bağlantı gönderecektir.
+Moderatöre bir davet bağlantısı gönderilir; bu bağlantı otomatik olarak oturum açmalarını sağlar. Gelecekte oturum açmak isterlerse, sadece şu adresi ziyaret edebilirler: <a href="https://fastcomments.com/auth/login" target="_blank">giriş sayfası</a> ve daha önce sağladığınız isim/e-posta adresini girerler. Bu, onlara bir giriş bağlantısı gönderir.
 
-Oturumlarını kapatmadıkları sürece, oturumları otuz gün boyunca açık kalacaktır.
-
----
+Çıkış yapmadıkları sürece, oturumları otuz gün boyunca açık kalır.

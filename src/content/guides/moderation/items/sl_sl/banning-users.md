@@ -1,29 +1,29 @@
-Obstajata dva načina, kako preprečiti uporabnikom komentiranje na vaši strani z uporabo FastComments.
+There are two ways to ban users from commenting on your site with FastComments.
 
-Prvi način je, da če že poznate njihov e-poštni naslov, ga lahko vnesete na stran <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">Prepovedani uporabniki</a>.
+The first is if you already know their email, you can enter it on the <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">prepovedani uporabniki</a> page.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; title='The Banned Users Page' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; alt='Seznam prepovedanih uporabnikov pod Moderiraj komentarje, z e‑mail naslovi, ki so prepovedani, in gumbom za dodajanje nove prepovedi'; title='Stran prepovedanih uporabnikov' app-screenshot-end]
 
-Do te strani je mogoče dostopati prek Moderiraj komentarje -> Prepovedani uporabniki
+This page can be accessed via Moderate Comments -> Banned Users
 
-Ko bomo uporabnika prepovedali, lahko izberemo tip, bodisi Trajna ali Trajna prikrita prepoved:
+When we go to ban a user, we can pick a type, either Permanent or Permanent Shadow Ban:
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; title='Banning a User' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; alt='Obrazec za novo prepoved z e‑mail poljem in izbiro vrste prepovedi: Permanent ali Permanent Shadow Ban'; title='Prepoved uporabnika' app-screenshot-end]
 
-Drugi način za prepoved uporabnika je s klikom gumba za prepoved, ki se nahaja pri vsakem komentarju na strani Moderacija komentarjev.
+The second way to ban a user is by clicking the ban button that is placed on each comment on the Comment Moderation page.
 
-Ko kliknete gumb za prepoved, se vam prikažejo nekatere možnosti, kjer lahko določimo tip prepovedi in trajanje.
+When we click the ban button, you'll be presented with some options, where we can specify the ban type and duration.
 
-### E-poštni aliasi
+### Email Aliases
 
-Pri prepovedi uporabnika po e-poštnem naslovu FastComments samodejno prezre `+` alias-e. Na primer, prepoved `user+alias@gmail.com` bo
-prav tako prepovedala `user@gmail.com` in katerokoli drugo `+` različico tega naslova, na primer `user+other@gmail.com`.
+When banning a user by email, FastComments automatically ignores `+` aliases. For example, banning `user+alias@gmail.com` will
+also ban `user@gmail.com` and any other `+` variation of that address, such as `user+other@gmail.com`.
 
-### Prikrite prepovedi
+### Shadow Bans
 
-Prikrita prepoved je vrsta prepovedi, ki daje videz, da je bil uporabnikov komentar ali glas uspešno shranjen, ko v resnici ni bil. To je lahko
-zaželeno v določenih situacijah.
+A shadow-ban is a type of ban that makes it appear that the user's comment or vote was saved successfully, when in fact it was not. This may be
+desirable in certain situations.
 
-### Prepoved prek IP naslova
+### Banning Via IP Address
 
-Če se najemnik noče izključiti, FastComments podpira prepoved po IP z shranjevanjem zgoščene (hashed) različice IP naslova komentatorja.
+Unless a tenant wishes to opt out, FastComments supports banning via IP by storing a hashed version of the commenter's IP address.
