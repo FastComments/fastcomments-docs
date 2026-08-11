@@ -3,7 +3,7 @@ and click to add a section:
 
 <div class="screenshot white-bg">
     <div class="title">Korak dva: Dodaj odsek</div>
-    <img class="screenshot-image" src="/images/installation/guide-webnode-step-2.png" alt="Dodaj odsek" />
+    <img class="screenshot-image" src="/images/installation-guides/webnode-step-2.png" alt="Dodaj odsek" />
 </div>
 
 Now let's put an HTML block in that section, where the code snippet will go. Select `HTML`:
@@ -12,5 +12,5 @@ Now let's put an HTML block in that section, where the code snippet will go. Sel
 
 <div class="screenshot white-bg">
     <div class="title">Korak tri: Dodaj blok kode</div>
-    <img class="screenshot-image" src="/images/installation/guide-webnode-step-3.png" alt="Dodaj HTML blok" />
+    <img class="screenshot-image" src="/images/installation-guides/webnode-step-3.png" alt="Dodaj HTML blok" />
 </div>
