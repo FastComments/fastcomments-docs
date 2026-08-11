@@ -207,7 +207,7 @@ pub async fn capture(
     host_cfg: &ScreenshotHost,
 ) -> Result<()> {
     let url = ensure_host(&args.url, &host_cfg.host);
-    page.goto(&url).await.with_context(|| format!("goto {url}"))?;
+    goto_with_retry(page, &url).await?;
 
     if args.add_proxy_select {
         // Mirrors Node `addProxySelectToPage` (src/app-screenshot-generator.js:16-21):
@@ -322,6 +322,32 @@ fn png_byte_density(png_bytes: &[u8]) -> Option<f64> {
         return None;
     }
     Some(png_bytes.len() as f64 / area)
+}
+
+/// How many times to attempt the initial navigation before giving up.
+const GOTO_ATTEMPTS: u32 = 3;
+
+/// Navigate, retrying transient aborts.
+///
+/// The pool reuses one page across every capture, and a marker's clicks
+/// can leave a navigation in flight; the next `goto` to the same URL
+/// then comes back `net::ERR_ABORTED`. sitegen treats a failed capture
+/// as "leave the image missing and warn", so a single flake used to
+/// ship a 404 into the docs — 8 in one build, still 4 after a rebuild.
+async fn goto_with_retry(page: &Page, url: &str) -> Result<()> {
+    let mut last_err = None;
+    for attempt in 1..=GOTO_ATTEMPTS {
+        match page.goto(url).await {
+            Ok(_) => return Ok(()),
+            Err(e) => {
+                tracing::debug!(url = %url, attempt, error = %e, "goto failed; retrying");
+                last_err = Some(e);
+                tokio::time::sleep(Duration::from_millis(500 * attempt as u64)).await;
+            }
+        }
+    }
+    Err(anyhow::anyhow!(last_err.expect("at least one attempt")))
+        .with_context(|| format!("goto {url} failed after {GOTO_ATTEMPTS} attempts"))
 }
 
 /// Element bounds in document coordinates, as returned by
