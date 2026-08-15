@@ -1,36 +1,37 @@
 {
-  "name": "Ortaklık Programı",
+  "name": "Ortaklar",
+  "pageHeader": "Bir Ortak Olarak Tekrarlayan Gelir Kazanın",
   "icon": "affiliates.png",
   "itemsOrdered": [
     {
-      "name": "Neden FastComments Ortağı Olmalısınız?",
+      "name": "FastComments Ortağı Olmak Neden?",
       "file": "why-to-be-fastcomments-affiliate.md",
-      "subCat": "Ortaklık Programı"
+      "subCat": "Ortaklar"
     },
     {
       "name": "Başlarken",
       "file": "getting-started.md",
-      "subCat": "Ortaklık Programı"
+      "subCat": "Ortaklar"
     },
     {
       "name": "Komisyon",
       "file": "commission.md",
-      "subCat": "Ortaklık Programı"
+      "subCat": "Ortaklar"
     },
     {
-      "name": "Ortaklık Paneli",
+      "name": "Ortaklar Kontrol Paneli",
       "file": "dashboard.md",
-      "subCat": "Ortaklık Programı"
+      "subCat": "Ortaklar"
     },
     {
       "name": "Ödeme Takvimi",
       "file": "payout-schedule.md",
-      "subCat": "Ortaklık Programı"
+      "subCat": "Ortaklar"
     },
     {
       "name": "Pazarlama Materyalleri",
       "file": "marketing-materials.md",
-      "subCat": "Ortaklık Programı"
+      "subCat": "Ortaklar"
     }
   ]
 }

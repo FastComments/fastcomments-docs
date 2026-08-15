@@ -1,14 +1,15 @@
 {
   "name": "Партнери",
+  "pageHeader": "Зарађујте поновљив приход као партнер",
   "icon": "affiliates.png",
   "itemsOrdered": [
     {
-      "name": "Зашто постати FastComments партнер?",
+      "name": "Зашто бити FastComments партнер?",
       "file": "why-to-be-fastcomments-affiliate.md",
       "subCat": "Партнери"
     },
     {
-      "name": "Како почети",
+      "name": "Почетак",
       "file": "getting-started.md",
       "subCat": "Партнери"
     },
@@ -18,7 +19,7 @@
       "subCat": "Партнери"
     },
     {
-      "name": "Контролни панел партнера",
+      "name": "Контролна табла партнера",
       "file": "dashboard.md",
       "subCat": "Партнери"
     },

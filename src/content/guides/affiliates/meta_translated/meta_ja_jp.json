@@ -1,19 +1,20 @@
 {
   "name": "アフィリエイト",
+  "pageHeader": "アフィリエイトとして継続的な収益を得る",
   "icon": "affiliates.png",
   "itemsOrdered": [
     {
-      "name": "なぜFastCommentsのアフィリエイトになるべきか？",
+      "name": "FastCommentsアフィリエイトになる理由は？",
       "file": "why-to-be-fastcomments-affiliate.md",
       "subCat": "アフィリエイト"
     },
     {
-      "name": "はじめに",
+      "name": "開始方法",
       "file": "getting-started.md",
       "subCat": "アフィリエイト"
     },
     {
-      "name": "報酬",
+      "name": "手数料",
       "file": "commission.md",
       "subCat": "アフィリエイト"
     },

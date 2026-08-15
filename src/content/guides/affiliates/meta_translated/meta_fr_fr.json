@@ -1,9 +1,10 @@
 {
   "name": "Affiliés",
+  "pageHeader": "Gagnez des revenus récurrents en tant qu'affilié",
   "icon": "affiliates.png",
   "itemsOrdered": [
     {
-      "name": "Pourquoi devenir affilié FastComments ?",
+      "name": "Pourquoi devenir affilié FastComments ?",
       "file": "why-to-be-fastcomments-affiliate.md",
       "subCat": "Affiliés"
     },
@@ -18,7 +19,7 @@
       "subCat": "Affiliés"
     },
     {
-      "name": "Tableau de bord des affiliés",
+      "name": "Le tableau de bord des affiliés",
       "file": "dashboard.md",
       "subCat": "Affiliés"
     },
@@ -28,7 +29,7 @@
       "subCat": "Affiliés"
     },
     {
-      "name": "Matériel marketing",
+      "name": "Supports marketing",
       "file": "marketing-materials.md",
       "subCat": "Affiliés"
     }

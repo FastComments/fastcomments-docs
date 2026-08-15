@@ -1,14 +1,15 @@
 {
   "name": "Afiliados",
+  "pageHeader": "Gana ingresos recurrentes como afiliado",
   "icon": "affiliates.png",
   "itemsOrdered": [
     {
-      "name": "¿Por qué ser afiliado de FastComments?",
+      "name": "¿Por qué ser un afiliado de FastComments?",
       "file": "why-to-be-fastcomments-affiliate.md",
       "subCat": "Afiliados"
     },
     {
-      "name": "Primeros pasos",
+      "name": "Cómo empezar",
       "file": "getting-started.md",
       "subCat": "Afiliados"
     },
@@ -18,7 +19,7 @@
       "subCat": "Afiliados"
     },
     {
-      "name": "El panel de afiliados",
+      "name": "Panel de afiliados",
       "file": "dashboard.md",
       "subCat": "Afiliados"
     },

@@ -1,36 +1,37 @@
 {
-  "name": "Партнёрская программа",
+  "name": "Партнеры",
+  "pageHeader": "Получайте регулярный доход в качестве партнера",
   "icon": "affiliates.png",
   "itemsOrdered": [
     {
-      "name": "Почему стоит стать партнёром FastComments?",
+      "name": "Почему стоит стать партнером FastComments?",
       "file": "why-to-be-fastcomments-affiliate.md",
-      "subCat": "Партнёрская программа"
+      "subCat": "Партнеры"
     },
     {
       "name": "Начало работы",
       "file": "getting-started.md",
-      "subCat": "Партнёрская программа"
+      "subCat": "Партнеры"
     },
     {
-      "name": "Комиссионные",
+      "name": "Комиссия",
       "file": "commission.md",
-      "subCat": "Партнёрская программа"
+      "subCat": "Партнеры"
     },
     {
-      "name": "Панель партнёра",
+      "name": "Панель управления партнёрами",
       "file": "dashboard.md",
-      "subCat": "Партнёрская программа"
+      "subCat": "Партнеры"
     },
     {
       "name": "График выплат",
       "file": "payout-schedule.md",
-      "subCat": "Партнёрская программа"
+      "subCat": "Партнеры"
     },
     {
       "name": "Маркетинговые материалы",
       "file": "marketing-materials.md",
-      "subCat": "Партнёрская программа"
+      "subCat": "Партнеры"
     }
   ]
 }

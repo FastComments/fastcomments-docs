@@ -1,36 +1,37 @@
 {
-  "name": "Affiliate-Programm",
+  "name": "Partner",
+  "pageHeader": "Erzielen Sie wiederkehrende Einnahmen als Affiliate",
   "icon": "affiliates.png",
   "itemsOrdered": [
     {
-      "name": "Warum FastComments-Affiliate werden?",
+      "name": "Warum ein FastComments-Affiliate werden?",
       "file": "why-to-be-fastcomments-affiliate.md",
-      "subCat": "Affiliate-Programm"
+      "subCat": "Partner"
     },
     {
       "name": "Erste Schritte",
       "file": "getting-started.md",
-      "subCat": "Affiliate-Programm"
+      "subCat": "Partner"
     },
     {
       "name": "Provision",
       "file": "commission.md",
-      "subCat": "Affiliate-Programm"
+      "subCat": "Partner"
     },
     {
-      "name": "Das Affiliate-Dashboard",
+      "name": "Affiliate-Dashboard",
       "file": "dashboard.md",
-      "subCat": "Affiliate-Programm"
+      "subCat": "Partner"
     },
     {
       "name": "Auszahlungsplan",
       "file": "payout-schedule.md",
-      "subCat": "Affiliate-Programm"
+      "subCat": "Partner"
     },
     {
       "name": "Marketingmaterialien",
       "file": "marketing-materials.md",
-      "subCat": "Affiliate-Programm"
+      "subCat": "Partner"
     }
   ]
 }

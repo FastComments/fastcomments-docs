@@ -1,36 +1,37 @@
 {
-  "name": "Affiliateprogramma",
+  "name": "Affiliates",
+  "pageHeader": "Verdien terugkerende inkomsten als affiliate",
   "icon": "affiliates.png",
   "itemsOrdered": [
     {
-      "name": "Waarom FastComments-affiliate worden?",
+      "name": "Waarom een FastComments affiliate zijn?",
       "file": "why-to-be-fastcomments-affiliate.md",
-      "subCat": "Affiliateprogramma"
+      "subCat": "Affiliates"
     },
     {
       "name": "Aan de slag",
       "file": "getting-started.md",
-      "subCat": "Affiliateprogramma"
+      "subCat": "Affiliates"
     },
     {
       "name": "Commissie",
       "file": "commission.md",
-      "subCat": "Affiliateprogramma"
+      "subCat": "Affiliates"
     },
     {
-      "name": "Het Affiliate-dashboard",
+      "name": "Het affiliates-dashboard",
       "file": "dashboard.md",
-      "subCat": "Affiliateprogramma"
+      "subCat": "Affiliates"
     },
     {
       "name": "Uitbetalingsschema",
       "file": "payout-schedule.md",
-      "subCat": "Affiliateprogramma"
+      "subCat": "Affiliates"
     },
     {
       "name": "Marketingmateriaal",
       "file": "marketing-materials.md",
-      "subCat": "Affiliateprogramma"
+      "subCat": "Affiliates"
     }
   ]
 }

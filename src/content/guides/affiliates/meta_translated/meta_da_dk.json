@@ -1,14 +1,15 @@
 {
   "name": "Affiliateprogram",
+  "pageHeader": "Tjen løbende indtægter som affiliate",
   "icon": "affiliates.png",
   "itemsOrdered": [
     {
-      "name": "Hvorfor blive FastComments-affiliate?",
+      "name": "Hvorfor være en FastComments affiliate?",
       "file": "why-to-be-fastcomments-affiliate.md",
       "subCat": "Affiliateprogram"
     },
     {
-      "name": "Kom godt i gang",
+      "name": "Kom i gang",
       "file": "getting-started.md",
       "subCat": "Affiliateprogram"
     },
@@ -18,7 +19,7 @@
       "subCat": "Affiliateprogram"
     },
     {
-      "name": "Affiliate-dashboardet",
+      "name": "Affiliate-dashboard",
       "file": "dashboard.md",
       "subCat": "Affiliateprogram"
     },
@@ -28,7 +29,7 @@
       "subCat": "Affiliateprogram"
     },
     {
-      "name": "Markedsføringsmaterialer",
+      "name": "Markedsføringsmateriale",
       "file": "marketing-materials.md",
       "subCat": "Affiliateprogram"
     }

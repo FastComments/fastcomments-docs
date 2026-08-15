@@ -1,5 +1,6 @@
 {
   "name": "שותפים",
+  "pageHeader": "הרוויח הכנסה חוזרת כשותף",
   "icon": "affiliates.png",
   "itemsOrdered": [
     {
@@ -18,12 +19,12 @@
       "subCat": "שותפים"
     },
     {
-      "name": "לוח המחוונים של השותפים",
+      "name": "לוח הבקרה של השותפים",
       "file": "dashboard.md",
       "subCat": "שותפים"
     },
     {
-      "name": "לוח זמנים לתשלומים",
+      "name": "לוח תשלומים",
       "file": "payout-schedule.md",
       "subCat": "שותפים"
     },
