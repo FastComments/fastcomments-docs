@@ -1,5 +1,6 @@
 {
   "name": "API",
+  "pageHeader": "即時評論 API",
   "icon": "api.png",
   "itemsOrdered": [
     {
@@ -8,7 +9,7 @@
       "subCat": "API 資源"
     },
     {
-      "name": "彙整您的資料",
+      "name": "彙總您的資料",
       "file": "aggregate-post.md",
       "subCat": "彙總"
     },
@@ -124,80 +125,80 @@
       "subCat": "電子郵件範本"
     },
     {
-      "name": "主題標籤結構",
+      "name": "標籤結構",
       "file": "hash-tag-structure.md",
-      "subCat": "主題標籤"
+      "subCat": "標籤"
     },
     {
       "name": "GET /api/v1/hash-tags",
       "file": "hash-tags-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "主題標籤"
+      "subCat": "標籤"
     },
     {
       "name": "PATCH /api/v1/hash-tags/:tag",
       "file": "hash-tag-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "主題標籤"
+      "subCat": "標籤"
     },
     {
       "name": "POST /api/v1/hash-tags",
       "file": "hash-tag-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "主題標籤"
+      "subCat": "標籤"
     },
     {
       "name": "POST /api/v1/hash-tags/bulk",
       "file": "hash-tag-bulk-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "主題標籤"
+      "subCat": "標籤"
     },
     {
       "name": "DELETE /api/v1/hash-tags/:tag",
       "file": "hash-tag-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "主題標籤"
+      "subCat": "標籤"
     },
     {
-      "name": "版主結構",
+      "name": "審核員結構",
       "file": "moderator-structure.md",
-      "subCat": "版主"
+      "subCat": "審核員"
     },
     {
       "name": "GET /api/v1/moderators/:id",
       "file": "moderator-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "版主"
+      "subCat": "審核員"
     },
     {
       "name": "GET /api/v1/moderators",
       "file": "moderators-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "版主"
+      "subCat": "審核員"
     },
     {
       "name": "PATCH /api/v1/moderators/:id",
       "file": "moderator-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "版主"
+      "subCat": "審核員"
     },
     {
       "name": "POST /api/v1/moderators",
       "file": "moderator-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "版主"
+      "subCat": "審核員"
     },
     {
       "name": "POST /api/v1/moderators/:id/send-invite",
       "file": "moderator-send-invite.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "版主"
+      "subCat": "審核員"
     },
     {
       "name": "DELETE /api/v1/moderators/:id",
       "file": "moderator-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "版主"
+      "subCat": "審核員"
     },
     {
       "name": "通知計數結構",
@@ -270,74 +271,74 @@
       "subCat": "頁面"
     },
     {
-      "name": "待處理 Webhook 事件結構",
+      "name": "待處理Webhook事件結構",
       "file": "pending-webhook-event-structure.md",
-      "subCat": "待處理 Webhook 事件"
+      "subCat": "待處理Webhook事件"
     },
     {
       "name": "GET /api/v1/pending-webhook-events",
       "file": "pending-webhook-events-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "待處理 Webhook 事件"
+      "subCat": "待處理Webhook事件"
     },
     {
       "name": "GET /api/v1/pending-webhook-events/count",
       "file": "pending-webhook-events-count.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "待處理 Webhook 事件"
+      "subCat": "待處理Webhook事件"
     },
     {
       "name": "DELETE /api/v1/pending-webhook-events/:id",
       "file": "pending-webhook-event-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "待處理 Webhook 事件"
+      "subCat": "待處理Webhook事件"
     },
     {
-      "name": "SSO 使用者結構",
+      "name": "單點登入使用者結構",
       "file": "sso-user-structure.md",
-      "subCat": "SSO 使用者"
+      "subCat": "單點登入使用者"
     },
     {
       "name": "GET /api/v1/sso-users",
       "file": "sso-users-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO 使用者"
+      "subCat": "單點登入使用者"
     },
     {
       "name": "GET /api/v1/sso-users/by-id/:id",
       "file": "sso-user-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO 使用者"
+      "subCat": "單點登入使用者"
     },
     {
       "name": "GET /api/v1/sso-users/by-email/:email",
       "file": "sso-user-get-by-email.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO 使用者"
+      "subCat": "單點登入使用者"
     },
     {
       "name": "PATCH /api/v1/sso-users/:id",
       "file": "sso-user-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO 使用者"
+      "subCat": "單點登入使用者"
     },
     {
       "name": "POST /api/v1/sso-users",
       "file": "sso-user-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO 使用者"
+      "subCat": "單點登入使用者"
     },
     {
       "name": "PUT /api/v1/sso-users/:id",
       "file": "sso-user-put.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO 使用者"
+      "subCat": "單點登入使用者"
     },
     {
       "name": "DELETE /api/v1/sso-users/:id",
       "file": "sso-user-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO 使用者"
+      "subCat": "單點登入使用者"
     },
     {
       "name": "訂閱結構",
@@ -406,39 +407,39 @@
       "subCat": "租戶"
     },
     {
-      "name": "租戶方案結構",
+      "name": "租戶套件結構",
       "file": "tenant-package-structure.md",
-      "subCat": "租戶方案"
+      "subCat": "租戶套件"
     },
     {
       "name": "GET /api/v1/tenant-packages/:id",
       "file": "tenant-package-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "租戶方案"
+      "subCat": "租戶套件"
     },
     {
       "name": "GET /api/v1/tenant-packages",
       "file": "tenant-packages-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "租戶方案"
+      "subCat": "租戶套件"
     },
     {
       "name": "POST /api/v1/tenant-packages",
       "file": "tenant-package-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "租戶方案"
+      "subCat": "租戶套件"
     },
     {
       "name": "PATCH /api/v1/tenant-packages/:id",
       "file": "tenant-package-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "租戶方案"
+      "subCat": "租戶套件"
     },
     {
       "name": "DELETE /api/v1/tenant-packages/:id",
       "file": "tenant-package-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "租戶方案"
+      "subCat": "租戶套件"
     },
     {
       "name": "租戶使用者結構",

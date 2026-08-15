@@ -1,5 +1,6 @@
 {
   "name": "API",
+  "pageHeader": "실시간 댓글 API",
   "icon": "api.png",
   "itemsOrdered": [
     {
@@ -200,19 +201,19 @@
       "subCat": "모더레이터"
     },
     {
-      "name": "알림 수 구조",
+      "name": "알림 카운트 구조",
       "file": "notification-count-structure.md",
-      "subCat": "알림 수"
+      "subCat": "알림 카운트"
     },
     {
       "name": "GET /api/v1/notification-count/:user_id",
       "file": "notification-count-get.md",
-      "subCat": "알림 수"
+      "subCat": "알림 카운트"
     },
     {
       "name": "DELETE /api/v1/notification-count/:user_id",
       "file": "notification-count-delete.md",
-      "subCat": "알림 수"
+      "subCat": "알림 카운트"
     },
     {
       "name": "알림 구조",
@@ -270,27 +271,27 @@
       "subCat": "페이지"
     },
     {
-      "name": "보류 중인 웹후크 이벤트 구조",
+      "name": "보류 중인 웹훅 이벤트 구조",
       "file": "pending-webhook-event-structure.md",
-      "subCat": "보류 중인 웹후크 이벤트"
+      "subCat": "보류 중인 웹훅 이벤트"
     },
     {
       "name": "GET /api/v1/pending-webhook-events",
       "file": "pending-webhook-events-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "보류 중인 웹후크 이벤트"
+      "subCat": "보류 중인 웹훅 이벤트"
     },
     {
       "name": "GET /api/v1/pending-webhook-events/count",
       "file": "pending-webhook-events-count.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "보류 중인 웹후크 이벤트"
+      "subCat": "보류 중인 웹훅 이벤트"
     },
     {
       "name": "DELETE /api/v1/pending-webhook-events/:id",
       "file": "pending-webhook-event-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "보류 중인 웹후크 이벤트"
+      "subCat": "보류 중인 웹훅 이벤트"
     },
     {
       "name": "SSO 사용자 구조",
@@ -360,15 +361,15 @@
       "subCat": "구독"
     },
     {
-      "name": "테넌트 일별 사용량 구조",
+      "name": "테넌트 일일 사용량 구조",
       "file": "tenant-daily-usage-structure.md",
-      "subCat": "테넌트 일별 사용량"
+      "subCat": "테넌트 일일 사용량"
     },
     {
       "name": "GET /api/v1/tenant-daily-usage",
       "file": "tenant-daily-usages-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "테넌트 일별 사용량"
+      "subCat": "테넌트 일일 사용량"
     },
     {
       "name": "테넌트 구조",
@@ -683,27 +684,27 @@
       "subCat": "사용자 배지"
     },
     {
-      "name": "사용자 배지 진행률 구조",
+      "name": "사용자 배지 진행 상황 구조",
       "file": "user-badge-progress-structure.md",
-      "subCat": "사용자 배지 진행률"
+      "subCat": "사용자 배지 진행 상황"
     },
     {
       "name": "GET /api/v1/user-badge-progress",
       "file": "user-badge-progress-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "사용자 배지 진행률"
+      "subCat": "사용자 배지 진행 상황"
     },
     {
       "name": "GET /api/v1/user-badge-progress/:id",
       "file": "user-badge-progress-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "사용자 배지 진행률"
+      "subCat": "사용자 배지 진행 상황"
     },
     {
       "name": "GET /api/v1/user-badge-progress/user/:userId",
       "file": "user-badge-progress-get-by-user-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "사용자 배지 진행률"
+      "subCat": "사용자 배지 진행 상황"
     }
   ]
 }

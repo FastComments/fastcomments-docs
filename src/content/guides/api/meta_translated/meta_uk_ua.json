@@ -1,5 +1,6 @@
 {
   "name": "API",
+  "pageHeader": "API живих коментарів",
   "icon": "api.png",
   "itemsOrdered": [
     {
@@ -8,7 +9,7 @@
       "subCat": "Ресурси API"
     },
     {
-      "name": "Агрегація даних",
+      "name": "Агрегуйте ваші дані",
       "file": "aggregate-post.md",
       "subCat": "Агрегації"
     },
@@ -132,31 +133,31 @@
       "name": "GET /api/v1/hash-tags",
       "file": "hash-tags-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Хештеги"
+      "subCat": "ештеги"
     },
     {
       "name": "PATCH /api/v1/hash-tags/:tag",
       "file": "hash-tag-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Хештеги"
+      "subCat": "ештеги"
     },
     {
       "name": "POST /api/v1/hash-tags",
       "file": "hash-tag-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Хештеги"
+      "subCat": "ештеги"
     },
     {
       "name": "POST /api/v1/hash-tags/bulk",
       "file": "hash-tag-bulk-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Хештеги"
+      "subCat": "ештеги"
     },
     {
       "name": "DELETE /api/v1/hash-tags/:tag",
       "file": "hash-tag-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Хештеги"
+      "subCat": "ештеги"
     },
     {
       "name": "Структура модератора",
@@ -200,7 +201,7 @@
       "subCat": "Модератори"
     },
     {
-      "name": "Структура лічильника сповіщень",
+      "name": "Структура кількості сповіщень",
       "file": "notification-count-structure.md",
       "subCat": "Кількість сповіщень"
     },
@@ -270,74 +271,74 @@
       "subCat": "Сторінки"
     },
     {
-      "name": "Структура очікуваної події вебхука",
+      "name": "Структура події очікуючого вебхука",
       "file": "pending-webhook-event-structure.md",
-      "subCat": "Очікувані події вебхуків"
+      "subCat": "Очікуючі події вебхука"
     },
     {
       "name": "GET /api/v1/pending-webhook-events",
       "file": "pending-webhook-events-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Очікувані події вебхуків"
+      "subCat": "Очікуючі події вебхука"
     },
     {
       "name": "GET /api/v1/pending-webhook-events/count",
       "file": "pending-webhook-events-count.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Очікувані події вебхуків"
+      "subCat": "Очікуючі події вебхука"
     },
     {
       "name": "DELETE /api/v1/pending-webhook-events/:id",
       "file": "pending-webhook-event-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Очікувані події вебхуків"
+      "subCat": "Очікуючі події вебхука"
     },
     {
-      "name": "Структура користувача SSO",
+      "name": "Структура SSO користувача",
       "file": "sso-user-structure.md",
-      "subCat": "Користувачі SSO"
+      "subCat": "SSO користувачі"
     },
     {
       "name": "GET /api/v1/sso-users",
       "file": "sso-users-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Користувачі SSO"
+      "subCat": "SSO користувачі"
     },
     {
       "name": "GET /api/v1/sso-users/by-id/:id",
       "file": "sso-user-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Користувачі SSO"
+      "subCat": "SSO користувачі"
     },
     {
       "name": "GET /api/v1/sso-users/by-email/:email",
       "file": "sso-user-get-by-email.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Користувачі SSO"
+      "subCat": "SSO користувачі"
     },
     {
       "name": "PATCH /api/v1/sso-users/:id",
       "file": "sso-user-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Користувачі SSO"
+      "subCat": "SSO користувачі"
     },
     {
       "name": "POST /api/v1/sso-users",
       "file": "sso-user-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Користувачі SSO"
+      "subCat": "SSO користувачі"
     },
     {
       "name": "PUT /api/v1/sso-users/:id",
       "file": "sso-user-put.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Користувачі SSO"
+      "subCat": "SSO користувачі"
     },
     {
       "name": "DELETE /api/v1/sso-users/:id",
       "file": "sso-user-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Користувачі SSO"
+      "subCat": "SSO користувачі"
     },
     {
       "name": "Структура підписки",
@@ -408,78 +409,78 @@
     {
       "name": "Структура пакету орендаря",
       "file": "tenant-package-structure.md",
-      "subCat": "Пакети орендарів"
+      "subCat": "Пакети орендаря"
     },
     {
       "name": "GET /api/v1/tenant-packages/:id",
       "file": "tenant-package-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Пакети орендарів"
+      "subCat": "Пакети орендаря"
     },
     {
       "name": "GET /api/v1/tenant-packages",
       "file": "tenant-packages-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Пакети орендарів"
+      "subCat": "Пакети орендаря"
     },
     {
       "name": "POST /api/v1/tenant-packages",
       "file": "tenant-package-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Пакети орендарів"
+      "subCat": "Пакети орендаря"
     },
     {
       "name": "PATCH /api/v1/tenant-packages/:id",
       "file": "tenant-package-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Пакети орендарів"
+      "subCat": "Пакети орендаря"
     },
     {
       "name": "DELETE /api/v1/tenant-packages/:id",
       "file": "tenant-package-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Пакети орендарів"
+      "subCat": "Пакети орендаря"
     },
     {
       "name": "Структура користувача орендаря",
       "file": "tenant-user-structure.md",
-      "subCat": "Користувачі орендарів"
+      "subCat": "Користувачі орендаря"
     },
     {
       "name": "GET /api/v1/tenant-users/:id",
       "file": "tenant-user-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Користувачі орендарів"
+      "subCat": "Користувачі орендаря"
     },
     {
       "name": "GET /api/v1/tenant-users",
       "file": "tenant-users-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Користувачі орендарів"
+      "subCat": "Користувачі орендаря"
     },
     {
       "name": "POST /api/v1/tenant-users",
       "file": "tenant-user-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Користувачі орендарів"
+      "subCat": "Користувачі орендаря"
     },
     {
       "name": "POST /api/v1/tenant-users/:id/send-login-link",
       "file": "tenant-user-send-login-link.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Користувачі орендарів"
+      "subCat": "Користувачі орендаря"
     },
     {
       "name": "PATCH /api/v1/tenant-users/:id",
       "file": "tenant-user-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Користувачі орендарів"
+      "subCat": "Користувачі орендаря"
     },
     {
       "name": "DELETE /api/v1/tenant-users/:id",
       "file": "tenant-user-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Користувачі орендарів"
+      "subCat": "Користувачі орендаря"
     },
     {
       "name": "Структура користувача",
@@ -525,127 +526,127 @@
       "name": "Структура конфігурації домену",
       "file": "domain-config-structure.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Налаштування домену"
+      "subCat": "Конфігурації домену"
     },
     {
       "name": "GET /api/v1/domain-configs",
       "file": "domain-configs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Налаштування домену"
+      "subCat": "Конфігурації домену"
     },
     {
       "name": "GET /api/v1/domain-configs/:domain",
       "file": "domain-config-get-by-domain.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Налаштування домену"
+      "subCat": "Конфігурації домену"
     },
     {
       "name": "POST /api/v1/domain-configs",
       "file": "domain-config-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Налаштування домену"
+      "subCat": "Конфігурації домену"
     },
     {
       "name": "PATCH /api/v1/domain-configs/:domain",
       "file": "domain-config-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Налаштування домену"
+      "subCat": "Конфігурації домену"
     },
     {
       "name": "PUT /api/v1/domain-configs/:domain",
       "file": "domain-config-put.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Налаштування домену"
+      "subCat": "Конфігурації домену"
     },
     {
       "name": "DELETE /api/v1/domain-configs/:domain",
       "file": "domain-config-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Налаштування домену"
+      "subCat": "Конфігурації домену"
     },
     {
-      "name": "Структура налаштувань запитання",
+      "name": "Структура конфігурації питання",
       "file": "question-config-structure.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Налаштування запитань"
+      "subCat": "Конфігурації питань"
     },
     {
       "name": "GET /api/v1/question-configs",
       "file": "question-configs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Налаштування запитань"
+      "subCat": "Конфігурації питань"
     },
     {
       "name": "GET /api/v1/question-configs/:id",
       "file": "question-config-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Налаштування запитань"
+      "subCat": "Конфігурації питань"
     },
     {
       "name": "POST /api/v1/question-configs",
       "file": "question-config-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Налаштування запитань"
+      "subCat": "Конфігурації питань"
     },
     {
       "name": "PATCH /api/v1/question-configs/:id",
       "file": "question-config-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Налаштування запитань"
+      "subCat": "Конфігурації питань"
     },
     {
       "name": "DELETE /api/v1/question-configs/:id",
       "file": "question-config-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Налаштування запитань"
+      "subCat": "Конфігурації питань"
     },
     {
-      "name": "Структура результату запитання",
+      "name": "Структура результату питання",
       "file": "question-result-structure.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Результати запитань"
+      "subCat": "Результати питань"
     },
     {
       "name": "GET /api/v1/question-results",
       "file": "question-results-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Результати запитань"
+      "subCat": "Результати питань"
     },
     {
       "name": "GET /api/v1/question-results/:id",
       "file": "question-result-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Результати запитань"
+      "subCat": "Результати питань"
     },
     {
       "name": "POST /api/v1/question-results",
       "file": "question-result-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Результати запитань"
+      "subCat": "Результати питань"
     },
     {
       "name": "PATCH /api/v1/question-results/:id",
       "file": "question-result-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Результати запитань"
+      "subCat": "Результати питань"
     },
     {
       "name": "DELETE /api/v1/question-results/:id",
       "file": "question-result-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Результати запитань"
+      "subCat": "Результати питань"
     },
     {
       "name": "GET /api/v1/question-results-aggregate",
       "file": "question-results-aggregate.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Агрегація результатів запитань"
+      "subCat": "Агрегація результатів питань"
     },
     {
       "name": "GET /api/v1/question-results-aggregate/combine/comments",
       "file": "question-results-combine-comments.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Агрегація результатів запитань"
+      "subCat": "Агрегація результатів питань"
     },
     {
       "name": "Структура значка користувача",
@@ -685,25 +686,25 @@
     {
       "name": "Структура прогресу значка користувача",
       "file": "user-badge-progress-structure.md",
-      "subCat": "Прогрес значків користувача"
+      "subCat": "Прогрес значка користувача"
     },
     {
       "name": "GET /api/v1/user-badge-progress",
       "file": "user-badge-progress-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Прогрес значків користувача"
+      "subCat": "Прогрес значка користувача"
     },
     {
       "name": "GET /api/v1/user-badge-progress/:id",
       "file": "user-badge-progress-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Прогрес значків користувача"
+      "subCat": "Прогрес значка користувача"
     },
     {
       "name": "GET /api/v1/user-badge-progress/user/:userId",
       "file": "user-badge-progress-get-by-user-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Прогрес значків користувача"
+      "subCat": "Прогрес значка користувача"
     }
   ]
 }

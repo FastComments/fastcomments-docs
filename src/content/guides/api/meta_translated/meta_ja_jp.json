@@ -1,11 +1,12 @@
 {
   "name": "API",
+  "pageHeader": "ライブコメント API",
   "icon": "api.png",
   "itemsOrdered": [
     {
-      "name": "APIリソース",
+      "name": "API リソース",
       "file": "api-resources.md",
-      "subCat": "APIリソース"
+      "subCat": "API リソース"
     },
     {
       "name": "データを集計する",
@@ -13,7 +14,7 @@
       "subCat": "集計"
     },
     {
-      "name": "監査ログの構造",
+      "name": "監査ログ構造",
       "file": "audit-log-structure.md",
       "subCat": "監査ログ"
     },
@@ -24,7 +25,7 @@
       "subCat": "監査ログ"
     },
     {
-      "name": "コメントの構造",
+      "name": "コメント構造",
       "file": "comment-structure.md",
       "subCat": "コメント"
     },
@@ -83,7 +84,7 @@
       "subCat": "コメント"
     },
     {
-      "name": "メールテンプレートの構造",
+      "name": "メールテンプレート構造",
       "file": "email-template-structure.md",
       "subCat": "メールテンプレート"
     },
@@ -124,7 +125,7 @@
       "subCat": "メールテンプレート"
     },
     {
-      "name": "ハッシュタグの構造",
+      "name": "ハッシュタグ構造",
       "file": "hash-tag-structure.md",
       "subCat": "ハッシュタグ"
     },
@@ -159,7 +160,7 @@
       "subCat": "ハッシュタグ"
     },
     {
-      "name": "モデレーターの構造",
+      "name": "モデレーター構造",
       "file": "moderator-structure.md",
       "subCat": "モデレーター"
     },
@@ -200,22 +201,22 @@
       "subCat": "モデレーター"
     },
     {
-      "name": "通知数の構造",
+      "name": "通知カウント構造",
       "file": "notification-count-structure.md",
-      "subCat": "通知数"
+      "subCat": "通知カウント"
     },
     {
       "name": "GET /api/v1/notification-count/:user_id",
       "file": "notification-count-get.md",
-      "subCat": "通知数"
+      "subCat": "通知カウント"
     },
     {
       "name": "DELETE /api/v1/notification-count/:user_id",
       "file": "notification-count-delete.md",
-      "subCat": "通知数"
+      "subCat": "通知カウント"
     },
     {
-      "name": "通知の構造",
+      "name": "通知構造",
       "file": "notification-structure.md",
       "subCat": "通知"
     },
@@ -235,7 +236,7 @@
       "subCat": "通知"
     },
     {
-      "name": "ページの構造",
+      "name": "ページ構造",
       "file": "page-structure.md",
       "subCat": "ページ"
     },
@@ -270,30 +271,30 @@
       "subCat": "ページ"
     },
     {
-      "name": "保留中のWebhookイベントの構造",
+      "name": "保留中Webhookイベント構造",
       "file": "pending-webhook-event-structure.md",
-      "subCat": "保留中のWebhookイベント"
+      "subCat": "保留中Webhookイベント"
     },
     {
       "name": "GET /api/v1/pending-webhook-events",
       "file": "pending-webhook-events-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "保留中のWebhookイベント"
+      "subCat": "保留中Webhookイベント"
     },
     {
       "name": "GET /api/v1/pending-webhook-events/count",
       "file": "pending-webhook-events-count.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "保留中のWebhookイベント"
+      "subCat": "保留中Webhookイベント"
     },
     {
       "name": "DELETE /api/v1/pending-webhook-events/:id",
       "file": "pending-webhook-event-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "保留中のWebhookイベント"
+      "subCat": "保留中Webhookイベント"
     },
     {
-      "name": "SSOユーザーの構造",
+      "name": "SSOユーザー構造",
       "file": "sso-user-structure.md",
       "subCat": "SSOユーザー"
     },
@@ -340,7 +341,7 @@
       "subCat": "SSOユーザー"
     },
     {
-      "name": "サブスクリプションの構造",
+      "name": "サブスクリプション構造",
       "file": "subscription-structure.md",
       "subCat": "サブスクリプション"
     },
@@ -360,7 +361,7 @@
       "subCat": "サブスクリプション"
     },
     {
-      "name": "テナント日次使用量の構造",
+      "name": "テナント日次使用量構造",
       "file": "tenant-daily-usage-structure.md",
       "subCat": "テナント日次使用量"
     },
@@ -371,7 +372,7 @@
       "subCat": "テナント日次使用量"
     },
     {
-      "name": "テナントの構造",
+      "name": "テナント構造",
       "file": "tenant-structure.md",
       "subCat": "テナント"
     },
@@ -406,7 +407,7 @@
       "subCat": "テナント"
     },
     {
-      "name": "テナントパッケージの構造",
+      "name": "テナントパッケージ構造",
       "file": "tenant-package-structure.md",
       "subCat": "テナントパッケージ"
     },
@@ -441,7 +442,7 @@
       "subCat": "テナントパッケージ"
     },
     {
-      "name": "テナントユーザーの構造",
+      "name": "テナントユーザー構造",
       "file": "tenant-user-structure.md",
       "subCat": "テナントユーザー"
     },
@@ -482,7 +483,7 @@
       "subCat": "テナントユーザー"
     },
     {
-      "name": "ユーザーの構造",
+      "name": "ユーザー構造",
       "file": "user-structure.md",
       "subCat": "ユーザー"
     },
@@ -493,7 +494,7 @@
       "subCat": "ユーザー"
     },
     {
-      "name": "投票の構造",
+      "name": "投票構造",
       "file": "vote-structure.md",
       "subCat": "投票"
     },
@@ -522,7 +523,7 @@
       "subCat": "投票"
     },
     {
-      "name": "ドメイン設定の構造",
+      "name": "ドメイン設定構造",
       "file": "domain-config-structure.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "ドメイン設定"
@@ -564,7 +565,7 @@
       "subCat": "ドメイン設定"
     },
     {
-      "name": "質問設定の構造",
+      "name": "質問設定構造",
       "file": "question-config-structure.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "質問設定"
@@ -600,7 +601,7 @@
       "subCat": "質問設定"
     },
     {
-      "name": "質問結果の構造",
+      "name": "質問結果構造",
       "file": "question-result-structure.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "質問結果"
@@ -639,16 +640,16 @@
       "name": "GET /api/v1/question-results-aggregate",
       "file": "question-results-aggregate.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "質問結果の集計"
+      "subCat": "質問結果集計"
     },
     {
       "name": "GET /api/v1/question-results-aggregate/combine/comments",
       "file": "question-results-combine-comments.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "質問結果の集計"
+      "subCat": "質問結果集計"
     },
     {
-      "name": "ユーザーバッジの構造",
+      "name": "ユーザーバッジ構造",
       "file": "user-badge-structure.md",
       "subCat": "ユーザーバッジ"
     },
@@ -683,7 +684,7 @@
       "subCat": "ユーザーバッジ"
     },
     {
-      "name": "ユーザーバッジ進捗の構造",
+      "name": "ユーザーバッジ進捗構造",
       "file": "user-badge-progress-structure.md",
       "subCat": "ユーザーバッジ進捗"
     },

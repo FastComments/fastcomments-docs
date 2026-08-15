@@ -1,14 +1,15 @@
 {
   "name": "API",
+  "pageHeader": "API de commentaires en direct",
   "icon": "api.png",
   "itemsOrdered": [
     {
-      "name": "Ressources de l'API",
+      "name": "Ressources API",
       "file": "api-resources.md",
-      "subCat": "Ressources de l'API"
+      "subCat": "Ressources API"
     },
     {
-      "name": "Agréger vos données",
+      "name": "Agrégerez vos données",
       "file": "aggregate-post.md",
       "subCat": "Agrégations"
     },
@@ -24,7 +25,7 @@
       "subCat": "Journaux d'audit"
     },
     {
-      "name": "Structure de commentaire",
+      "name": "Structure du commentaire",
       "file": "comment-structure.md",
       "subCat": "Commentaires"
     },
@@ -83,48 +84,48 @@
       "subCat": "Commentaires"
     },
     {
-      "name": "Structure de modèle d'e-mail",
+      "name": "Structure du modèle d'email",
       "file": "email-template-structure.md",
-      "subCat": "Modèles d'e-mail"
+      "subCat": "Modèles d'email"
     },
     {
       "name": "GET /api/v1/email-templates/:id",
       "file": "email-template-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Modèles d'e-mail"
+      "subCat": "Modèles d'email"
     },
     {
       "name": "GET /api/v1/email-templates",
       "file": "email-templates-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Modèles d'e-mail"
+      "subCat": "Modèles d'email"
     },
     {
       "name": "PATCH /api/v1/email-templates/:id",
       "file": "email-template-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Modèles d'e-mail"
+      "subCat": "Modèles d'email"
     },
     {
       "name": "POST /api/v1/email-templates",
       "file": "email-template-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Modèles d'e-mail"
+      "subCat": "Modèles d'email"
     },
     {
       "name": "POST /api/v1/email-templates/render",
       "file": "email-template-render.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Modèles d'e-mail"
+      "subCat": "Modèles d'email"
     },
     {
       "name": "DELETE /api/v1/email-templates/:id",
       "file": "email-template-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Modèles d'e-mail"
+      "subCat": "Modèles d'email"
     },
     {
-      "name": "Structure de hashtag",
+      "name": "Structure du hashtag",
       "file": "hash-tag-structure.md",
       "subCat": "Hashtags"
     },
@@ -215,7 +216,7 @@
       "subCat": "Compteur de notifications"
     },
     {
-      "name": "Structure des notifications",
+      "name": "Structure de notification",
       "file": "notification-structure.md",
       "subCat": "Notifications"
     },
@@ -235,7 +236,7 @@
       "subCat": "Notifications"
     },
     {
-      "name": "Structure de la page",
+      "name": "Structure de page",
       "file": "page-structure.md",
       "subCat": "Pages"
     },
@@ -360,129 +361,129 @@
       "subCat": "Abonnements"
     },
     {
-      "name": "Structure d'utilisation quotidienne du tenant",
+      "name": "Structure d'utilisation quotidienne du locataire",
       "file": "tenant-daily-usage-structure.md",
-      "subCat": "Utilisation quotidienne du tenant"
+      "subCat": "Utilisation quotidienne du locataire"
     },
     {
       "name": "GET /api/v1/tenant-daily-usage",
       "file": "tenant-daily-usages-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Utilisation quotidienne du tenant"
+      "subCat": "Utilisation quotidienne du locataire"
     },
     {
-      "name": "Structure du tenant",
+      "name": "Structure du locataire",
       "file": "tenant-structure.md",
-      "subCat": "Tenants"
+      "subCat": "Locataires"
     },
     {
       "name": "GET /api/v1/tenants/:id",
       "file": "tenant-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Tenants"
+      "subCat": "Locataires"
     },
     {
       "name": "GET /api/v1/tenants",
       "file": "tenants-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Tenants"
+      "subCat": "Locataires"
     },
     {
       "name": "POST /api/v1/tenants",
       "file": "tenant-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Tenants"
+      "subCat": "Locataires"
     },
     {
       "name": "PATCH /api/v1/tenants/:id",
       "file": "tenant-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Tenants"
+      "subCat": "Locataires"
     },
     {
       "name": "DELETE /api/v1/tenants/:id",
       "file": "tenant-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Tenants"
+      "subCat": "Locataires"
     },
     {
-      "name": "Structure du forfait du tenant",
+      "name": "Structure du forfait locataire",
       "file": "tenant-package-structure.md",
-      "subCat": "Forfaits du tenant"
+      "subCat": "Forfaits locataire"
     },
     {
       "name": "GET /api/v1/tenant-packages/:id",
       "file": "tenant-package-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Forfaits du tenant"
+      "subCat": "Forfaits locataire"
     },
     {
       "name": "GET /api/v1/tenant-packages",
       "file": "tenant-packages-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Forfaits du tenant"
+      "subCat": "Forfaits locataire"
     },
     {
       "name": "POST /api/v1/tenant-packages",
       "file": "tenant-package-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Forfaits du tenant"
+      "subCat": "Forfaits locataire"
     },
     {
       "name": "PATCH /api/v1/tenant-packages/:id",
       "file": "tenant-package-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Forfaits du tenant"
+      "subCat": "Forfaits locataire"
     },
     {
       "name": "DELETE /api/v1/tenant-packages/:id",
       "file": "tenant-package-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Forfaits du tenant"
+      "subCat": "Forfaits locataire"
     },
     {
-      "name": "Structure d'utilisateur du tenant",
+      "name": "Structure de l'utilisateur locataire",
       "file": "tenant-user-structure.md",
-      "subCat": "Utilisateurs du tenant"
+      "subCat": "Utilisateurs locataire"
     },
     {
       "name": "GET /api/v1/tenant-users/:id",
       "file": "tenant-user-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Utilisateurs du tenant"
+      "subCat": "Utilisateurs locataire"
     },
     {
       "name": "GET /api/v1/tenant-users",
       "file": "tenant-users-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Utilisateurs du tenant"
+      "subCat": "Utilisateurs locataire"
     },
     {
       "name": "POST /api/v1/tenant-users",
       "file": "tenant-user-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Utilisateurs du tenant"
+      "subCat": "Utilisateurs locataire"
     },
     {
       "name": "POST /api/v1/tenant-users/:id/send-login-link",
       "file": "tenant-user-send-login-link.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Utilisateurs du tenant"
+      "subCat": "Utilisateurs locataire"
     },
     {
       "name": "PATCH /api/v1/tenant-users/:id",
       "file": "tenant-user-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Utilisateurs du tenant"
+      "subCat": "Utilisateurs locataire"
     },
     {
       "name": "DELETE /api/v1/tenant-users/:id",
       "file": "tenant-user-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Utilisateurs du tenant"
+      "subCat": "Utilisateurs locataire"
     },
     {
-      "name": "Structure de l'utilisateur",
+      "name": "Structure d'utilisateur",
       "file": "user-structure.md",
       "subCat": "Utilisateurs"
     },
@@ -522,7 +523,7 @@
       "subCat": "Votes"
     },
     {
-      "name": "Structure de la configuration de domaine",
+      "name": "Structure de configuration de domaine",
       "file": "domain-config-structure.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Configurations de domaine"
@@ -564,88 +565,88 @@
       "subCat": "Configurations de domaine"
     },
     {
-      "name": "Structure de configuration des questions",
+      "name": "Structure de configuration de question",
       "file": "question-config-structure.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Configurations de questions"
+      "subCat": "Configurations de question"
     },
     {
       "name": "GET /api/v1/question-configs",
       "file": "question-configs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Configurations de questions"
+      "subCat": "Configurations de question"
     },
     {
       "name": "GET /api/v1/question-configs/:id",
       "file": "question-config-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Configurations de questions"
+      "subCat": "Configurations de question"
     },
     {
       "name": "POST /api/v1/question-configs",
       "file": "question-config-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Configurations de questions"
+      "subCat": "Configurations de question"
     },
     {
       "name": "PATCH /api/v1/question-configs/:id",
       "file": "question-config-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Configurations de questions"
+      "subCat": "Configurations de question"
     },
     {
       "name": "DELETE /api/v1/question-configs/:id",
       "file": "question-config-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Configurations de questions"
+      "subCat": "Configurations de question"
     },
     {
-      "name": "Structure des résultats des questions",
+      "name": "Structure du résultat de question",
       "file": "question-result-structure.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Résultats des questions"
+      "subCat": "Résultats de question"
     },
     {
       "name": "GET /api/v1/question-results",
       "file": "question-results-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Résultats des questions"
+      "subCat": "Résultats de question"
     },
     {
       "name": "GET /api/v1/question-results/:id",
       "file": "question-result-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Résultats des questions"
+      "subCat": "Résultats de question"
     },
     {
       "name": "POST /api/v1/question-results",
       "file": "question-result-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Résultats des questions"
+      "subCat": "Résultats de question"
     },
     {
       "name": "PATCH /api/v1/question-results/:id",
       "file": "question-result-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Résultats des questions"
+      "subCat": "Résultats de question"
     },
     {
       "name": "DELETE /api/v1/question-results/:id",
       "file": "question-result-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Résultats des questions"
+      "subCat": "Résultats de question"
     },
     {
       "name": "GET /api/v1/question-results-aggregate",
       "file": "question-results-aggregate.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Agrégation des résultats des questions"
+      "subCat": "Agrégation des résultats de question"
     },
     {
       "name": "GET /api/v1/question-results-aggregate/combine/comments",
       "file": "question-results-combine-comments.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Agrégation des résultats des questions"
+      "subCat": "Agrégation des résultats de question"
     },
     {
       "name": "Structure du badge utilisateur",
@@ -685,25 +686,25 @@
     {
       "name": "Structure de progression du badge utilisateur",
       "file": "user-badge-progress-structure.md",
-      "subCat": "Progression des badges utilisateur"
+      "subCat": "Progression du badge utilisateur"
     },
     {
       "name": "GET /api/v1/user-badge-progress",
       "file": "user-badge-progress-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Progression des badges utilisateur"
+      "subCat": "Progression du badge utilisateur"
     },
     {
       "name": "GET /api/v1/user-badge-progress/:id",
       "file": "user-badge-progress-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Progression des badges utilisateur"
+      "subCat": "Progression du badge utilisateur"
     },
     {
       "name": "GET /api/v1/user-badge-progress/user/:userId",
       "file": "user-badge-progress-get-by-user-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Progression des badges utilisateur"
+      "subCat": "Progression du badge utilisateur"
     }
   ]
 }

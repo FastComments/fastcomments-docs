@@ -1,5 +1,6 @@
 {
   "name": "API",
+  "pageHeader": "API do komentarzy na żywo",
   "icon": "api.png",
   "itemsOrdered": [
     {
@@ -15,13 +16,13 @@
     {
       "name": "Struktura dziennika audytu",
       "file": "audit-log-structure.md",
-      "subCat": "Dzienniki audytu"
+      "subCat": "Logi audytu"
     },
     {
       "name": "GET /api/v1/audit-logs",
       "file": "audit-logs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Dzienniki audytu"
+      "subCat": "Logi audytu"
     },
     {
       "name": "Struktura komentarza",
@@ -200,7 +201,7 @@
       "subCat": "Moderatorzy"
     },
     {
-      "name": "Struktura licznika powiadomień",
+      "name": "Struktura liczby powiadomień",
       "file": "notification-count-structure.md",
       "subCat": "Liczba powiadomień"
     },
@@ -360,15 +361,15 @@
       "subCat": "Subskrypcje"
     },
     {
-      "name": "Struktura dziennego zużycia najemcy",
+      "name": "Struktura dziennego użycia najemcy",
       "file": "tenant-daily-usage-structure.md",
-      "subCat": "Dzienne zużycie najemcy"
+      "subCat": "Użycie dzienne najemcy"
     },
     {
       "name": "GET /api/v1/tenant-daily-usage",
       "file": "tenant-daily-usages-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Dzienne zużycie najemcy"
+      "subCat": "Użycie dzienne najemcy"
     },
     {
       "name": "Struktura najemcy",
@@ -650,60 +651,60 @@
     {
       "name": "Struktura odznaki użytkownika",
       "file": "user-badge-structure.md",
-      "subCat": "Odznaki użytkowników"
+      "subCat": "Odznaki użytkownika"
     },
     {
       "name": "GET /api/v1/user-badges",
       "file": "user-badges-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Odznaki użytkowników"
+      "subCat": "Odznaki użytkownika"
     },
     {
       "name": "GET /api/v1/user-badges/:id",
       "file": "user-badge-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Odznaki użytkowników"
+      "subCat": "Odznaki użytkownika"
     },
     {
       "name": "POST /api/v1/user-badges",
       "file": "user-badge-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Odznaki użytkowników"
+      "subCat": "Odznaki użytkownika"
     },
     {
       "name": "PUT /api/v1/user-badges/:id",
       "file": "user-badge-put.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Odznaki użytkowników"
+      "subCat": "Odznaki użytkownika"
     },
     {
       "name": "DELETE /api/v1/user-badges/:id",
       "file": "user-badge-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Odznaki użytkowników"
+      "subCat": "Odznaki użytkownika"
     },
     {
       "name": "Struktura postępu odznaki użytkownika",
       "file": "user-badge-progress-structure.md",
-      "subCat": "Postęp odznaki użytkownika"
+      "subCat": "Postęp odznak użytkownika"
     },
     {
       "name": "GET /api/v1/user-badge-progress",
       "file": "user-badge-progress-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Postęp odznaki użytkownika"
+      "subCat": "Postęp odznak użytkownika"
     },
     {
       "name": "GET /api/v1/user-badge-progress/:id",
       "file": "user-badge-progress-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Postęp odznaki użytkownika"
+      "subCat": "Postęp odznak użytkownika"
     },
     {
       "name": "GET /api/v1/user-badge-progress/user/:userId",
       "file": "user-badge-progress-get-by-user-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Postęp odznaki użytkownika"
+      "subCat": "Postęp odznak użytkownika"
     }
   ]
 }

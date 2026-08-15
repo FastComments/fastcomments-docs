@@ -1,5 +1,6 @@
 {
   "name": "API",
+  "pageHeader": "API-ји за живо коментарисање",
   "icon": "api.png",
   "itemsOrdered": [
     {
@@ -8,20 +9,20 @@
       "subCat": "API ресурси"
     },
     {
-      "name": "Агрегирајте своје податке",
+      "name": "Агрегирајте ваше податке",
       "file": "aggregate-post.md",
       "subCat": "Агрегације"
     },
     {
-      "name": "Структура дневника ревизије",
+      "name": "Структура аудит логова",
       "file": "audit-log-structure.md",
-      "subCat": "Дневници ревизије"
+      "subCat": "Аудит логови"
     },
     {
       "name": "GET /api/v1/audit-logs",
       "file": "audit-logs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Дневници ревизије"
+      "subCat": "Аудит логови"
     },
     {
       "name": "Структура коментара",
@@ -83,80 +84,80 @@
       "subCat": "Коментари"
     },
     {
-      "name": "Структура шаблона имејла",
+      "name": "Структура шаблона е‑поште",
       "file": "email-template-structure.md",
-      "subCat": "Шаблони имејлова"
+      "subCat": "Шаблони е‑поште"
     },
     {
       "name": "GET /api/v1/email-templates/:id",
       "file": "email-template-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Шаблони имејлова"
+      "subCat": "Шаблони е‑поште"
     },
     {
       "name": "GET /api/v1/email-templates",
       "file": "email-templates-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Шаблони имејлова"
+      "subCat": "Шаблони е‑поште"
     },
     {
       "name": "PATCH /api/v1/email-templates/:id",
       "file": "email-template-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Шаблони имејлова"
+      "subCat": "Шаблони е‑поште"
     },
     {
       "name": "POST /api/v1/email-templates",
       "file": "email-template-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Шаблони имејлова"
+      "subCat": "Шаблони е‑поште"
     },
     {
       "name": "POST /api/v1/email-templates/render",
       "file": "email-template-render.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Шаблони имејлова"
+      "subCat": "Шаблони е‑поште"
     },
     {
       "name": "DELETE /api/v1/email-templates/:id",
       "file": "email-template-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Шаблони имејлова"
+      "subCat": "Шаблони е‑поште"
     },
     {
-      "name": "Структура хештега",
+      "name": "Структура хеш ознаке",
       "file": "hash-tag-structure.md",
-      "subCat": "Хештегови"
+      "subCat": "Хеш ознаке"
     },
     {
       "name": "GET /api/v1/hash-tags",
       "file": "hash-tags-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Хештегови"
+      "subCat": "Хеш ознаке"
     },
     {
       "name": "PATCH /api/v1/hash-tags/:tag",
       "file": "hash-tag-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Хештегови"
+      "subCat": "Хеш ознаке"
     },
     {
       "name": "POST /api/v1/hash-tags",
       "file": "hash-tag-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Хештегови"
+      "subCat": "Хеш ознаке"
     },
     {
       "name": "POST /api/v1/hash-tags/bulk",
       "file": "hash-tag-bulk-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Хештегови"
+      "subCat": "Хеш ознаке"
     },
     {
       "name": "DELETE /api/v1/hash-tags/:tag",
       "file": "hash-tag-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Хештегови"
+      "subCat": "Хеш ознаке"
     },
     {
       "name": "Структура модератора",
@@ -270,27 +271,27 @@
       "subCat": "Странице"
     },
     {
-      "name": "Структура чекајућег webhook догађаја",
+      "name": "Структура текућег вебхук догађаја",
       "file": "pending-webhook-event-structure.md",
-      "subCat": "Чекајући webhook догађаји"
+      "subCat": "Текући вебхук догађаји"
     },
     {
       "name": "GET /api/v1/pending-webhook-events",
       "file": "pending-webhook-events-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Чекајући webhook догађаји"
+      "subCat": "Текући вебхук догађаји"
     },
     {
       "name": "GET /api/v1/pending-webhook-events/count",
       "file": "pending-webhook-events-count.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Чекајући webhook догађаји"
+      "subCat": "Текући вебхук догађаји"
     },
     {
       "name": "DELETE /api/v1/pending-webhook-events/:id",
       "file": "pending-webhook-event-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Чекајући webhook догађаји"
+      "subCat": "Текући вебхук догађаји"
     },
     {
       "name": "Структура SSO корисника",
@@ -360,126 +361,126 @@
       "subCat": "Претплате"
     },
     {
-      "name": "Структура дневне употребе тенанта",
+      "name": "Структура дневне употребе станара",
       "file": "tenant-daily-usage-structure.md",
-      "subCat": "Дневна употреба тенанта"
+      "subCat": "Дневна употреба станара"
     },
     {
       "name": "GET /api/v1/tenant-daily-usage",
       "file": "tenant-daily-usages-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Дневна употреба тенанта"
+      "subCat": "Дневна употреба станара"
     },
     {
-      "name": "Структура тенанта",
+      "name": "Структура станара",
       "file": "tenant-structure.md",
-      "subCat": "Тенанти"
+      "subCat": "Станари"
     },
     {
       "name": "GET /api/v1/tenants/:id",
       "file": "tenant-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Тенанти"
+      "subCat": "Станари"
     },
     {
       "name": "GET /api/v1/tenants",
       "file": "tenants-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Тенанти"
+      "subCat": "Станари"
     },
     {
       "name": "POST /api/v1/tenants",
       "file": "tenant-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Тенанти"
+      "subCat": "Станари"
     },
     {
       "name": "PATCH /api/v1/tenants/:id",
       "file": "tenant-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Тенанти"
+      "subCat": "Станари"
     },
     {
       "name": "DELETE /api/v1/tenants/:id",
       "file": "tenant-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Тенанти"
+      "subCat": "Станари"
     },
     {
-      "name": "Структура пакета тенанта",
+      "name": "Структура пакета станара",
       "file": "tenant-package-structure.md",
-      "subCat": "Пакети тенанта"
+      "subCat": "Пакети станара"
     },
     {
       "name": "GET /api/v1/tenant-packages/:id",
       "file": "tenant-package-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Пакети тенанта"
+      "subCat": "Пакети станара"
     },
     {
       "name": "GET /api/v1/tenant-packages",
       "file": "tenant-packages-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Пакети тенанта"
+      "subCat": "Пакети станара"
     },
     {
       "name": "POST /api/v1/tenant-packages",
       "file": "tenant-package-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Пакети тенанта"
+      "subCat": "Пакети станара"
     },
     {
       "name": "PATCH /api/v1/tenant-packages/:id",
       "file": "tenant-package-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Пакети тенанта"
+      "subCat": "Пакети станара"
     },
     {
       "name": "DELETE /api/v1/tenant-packages/:id",
       "file": "tenant-package-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Пакети тенанта"
+      "subCat": "Пакети станара"
     },
     {
-      "name": "Структура корисника тенанта",
+      "name": "Структура корисника станара",
       "file": "tenant-user-structure.md",
-      "subCat": "Корисници тенанта"
+      "subCat": "Корисници станара"
     },
     {
       "name": "GET /api/v1/tenant-users/:id",
       "file": "tenant-user-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Корисници тенанта"
+      "subCat": "Корисници станара"
     },
     {
       "name": "GET /api/v1/tenant-users",
       "file": "tenant-users-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Корисници тенанта"
+      "subCat": "Корисници станара"
     },
     {
       "name": "POST /api/v1/tenant-users",
       "file": "tenant-user-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Корисници тенанта"
+      "subCat": "Корисници станара"
     },
     {
       "name": "POST /api/v1/tenant-users/:id/send-login-link",
       "file": "tenant-user-send-login-link.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Корисници тенанта"
+      "subCat": "Корисници станара"
     },
     {
       "name": "PATCH /api/v1/tenant-users/:id",
       "file": "tenant-user-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Корисници тенанта"
+      "subCat": "Корисници станара"
     },
     {
       "name": "DELETE /api/v1/tenant-users/:id",
       "file": "tenant-user-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Корисници тенанта"
+      "subCat": "Корисници станара"
     },
     {
       "name": "Структура корисника",
@@ -648,62 +649,62 @@
       "subCat": "Агрегација резултата питања"
     },
     {
-      "name": "Структура ознаке корисника",
+      "name": "Структура корисничке значке",
       "file": "user-badge-structure.md",
-      "subCat": "Ознаке корисника"
+      "subCat": "Корисничке значке"
     },
     {
       "name": "GET /api/v1/user-badges",
       "file": "user-badges-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Ознаке корисника"
+      "subCat": "Корисничке значке"
     },
     {
       "name": "GET /api/v1/user-badges/:id",
       "file": "user-badge-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Ознаке корисника"
+      "subCat": "Корисничке значке"
     },
     {
       "name": "POST /api/v1/user-badges",
       "file": "user-badge-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Ознаке корисника"
+      "subCat": "Корисничке значке"
     },
     {
       "name": "PUT /api/v1/user-badges/:id",
       "file": "user-badge-put.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Ознаке корисника"
+      "subCat": "Корисничке значке"
     },
     {
       "name": "DELETE /api/v1/user-badges/:id",
       "file": "user-badge-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Ознаке корисника"
+      "subCat": "Корисничке значке"
     },
     {
-      "name": "Структура напретка ознака корисника",
+      "name": "Структура напретка корисничке значке",
       "file": "user-badge-progress-structure.md",
-      "subCat": "Напредак ознака корисника"
+      "subCat": "Напредак корисничке значке"
     },
     {
       "name": "GET /api/v1/user-badge-progress",
       "file": "user-badge-progress-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Напредак ознака корисника"
+      "subCat": "Напредак корисничке значке"
     },
     {
       "name": "GET /api/v1/user-badge-progress/:id",
       "file": "user-badge-progress-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Напредак ознака корисника"
+      "subCat": "Напредак корисничке значке"
     },
     {
       "name": "GET /api/v1/user-badge-progress/user/:userId",
       "file": "user-badge-progress-get-by-user-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Напредак ознака корисника"
+      "subCat": "Напредак корисничке значке"
     }
   ]
 }

@@ -1,14 +1,15 @@
 {
   "name": "API",
+  "pageHeader": "API‑ji za live komentarisanje",
   "icon": "api.png",
   "itemsOrdered": [
     {
-      "name": "API resursi",
+      "name": "API Resursi",
       "file": "api-resources.md",
-      "subCat": "API resursi"
+      "subCat": "API Resursi"
     },
     {
-      "name": "Agregirajte podatke",
+      "name": "Agregirajte svoje podatke",
       "file": "aggregate-post.md",
       "subCat": "Agregacije"
     },
@@ -83,80 +84,80 @@
       "subCat": "Komentari"
     },
     {
-      "name": "Struktura šablona e-pošte",
+      "name": "Struktura šablona e‑maila",
       "file": "email-template-structure.md",
-      "subCat": "Šabloni e-pošte"
+      "subCat": "Šabloni e‑mailova"
     },
     {
       "name": "GET /api/v1/email-templates/:id",
       "file": "email-template-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Šabloni e-pošte"
+      "subCat": "Šabloni e‑mailova"
     },
     {
       "name": "GET /api/v1/email-templates",
       "file": "email-templates-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Šabloni e-pošte"
+      "subCat": "Šabloni e‑mailova"
     },
     {
       "name": "PATCH /api/v1/email-templates/:id",
       "file": "email-template-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Šabloni e-pošte"
+      "subCat": "Šabloni e‑mailova"
     },
     {
       "name": "POST /api/v1/email-templates",
       "file": "email-template-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Šabloni e-pošte"
+      "subCat": "Šabloni e‑mailova"
     },
     {
       "name": "POST /api/v1/email-templates/render",
       "file": "email-template-render.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Šabloni e-pošte"
+      "subCat": "Šabloni e‑mailova"
     },
     {
       "name": "DELETE /api/v1/email-templates/:id",
       "file": "email-template-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Šabloni e-pošte"
+      "subCat": "Šabloni e‑mailova"
     },
     {
-      "name": "Struktura haštagova",
+      "name": "Struktura hashtagova",
       "file": "hash-tag-structure.md",
-      "subCat": "Haštagovi"
+      "subCat": "Hashtagovi"
     },
     {
       "name": "GET /api/v1/hash-tags",
       "file": "hash-tags-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Haštagovi"
+      "subCat": "Hashtagovi"
     },
     {
       "name": "PATCH /api/v1/hash-tags/:tag",
       "file": "hash-tag-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Haštagovi"
+      "subCat": "Hashtagovi"
     },
     {
       "name": "POST /api/v1/hash-tags",
       "file": "hash-tag-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Haštagovi"
+      "subCat": "Hashtagovi"
     },
     {
       "name": "POST /api/v1/hash-tags/bulk",
       "file": "hash-tag-bulk-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Haštagovi"
+      "subCat": "Hashtagovi"
     },
     {
       "name": "DELETE /api/v1/hash-tags/:tag",
       "file": "hash-tag-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Haštagovi"
+      "subCat": "Hashtagovi"
     },
     {
       "name": "Struktura moderatora",
@@ -270,27 +271,27 @@
       "subCat": "Stranice"
     },
     {
-      "name": "Struktura očekivanog webhook događaja",
+      "name": "Struktura nadolazećeg webhook događaja",
       "file": "pending-webhook-event-structure.md",
-      "subCat": "Očekivani webhook događaji"
+      "subCat": "Nadolazeći webhook događaji"
     },
     {
       "name": "GET /api/v1/pending-webhook-events",
       "file": "pending-webhook-events-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Očekivani webhook događaji"
+      "subCat": "Nadolazeći webhook događaji"
     },
     {
       "name": "GET /api/v1/pending-webhook-events/count",
       "file": "pending-webhook-events-count.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Očekivani webhook događaji"
+      "subCat": "Nadolazeći webhook događaji"
     },
     {
       "name": "DELETE /api/v1/pending-webhook-events/:id",
       "file": "pending-webhook-event-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Očekivani webhook događaji"
+      "subCat": "Nadolazeći webhook događaji"
     },
     {
       "name": "Struktura SSO korisnika",
@@ -408,78 +409,78 @@
     {
       "name": "Struktura paketa zakupca",
       "file": "tenant-package-structure.md",
-      "subCat": "Paketi zakupaca"
+      "subCat": "Paketi zakupca"
     },
     {
       "name": "GET /api/v1/tenant-packages/:id",
       "file": "tenant-package-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Paketi zakupaca"
+      "subCat": "Paketi zakupca"
     },
     {
       "name": "GET /api/v1/tenant-packages",
       "file": "tenant-packages-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Paketi zakupaca"
+      "subCat": "Paketi zakupca"
     },
     {
       "name": "POST /api/v1/tenant-packages",
       "file": "tenant-package-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Paketi zakupaca"
+      "subCat": "Paketi zakupca"
     },
     {
       "name": "PATCH /api/v1/tenant-packages/:id",
       "file": "tenant-package-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Paketi zakupaca"
+      "subCat": "Paketi zakupca"
     },
     {
       "name": "DELETE /api/v1/tenant-packages/:id",
       "file": "tenant-package-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Paketi zakupaca"
+      "subCat": "Paketi zakupca"
     },
     {
       "name": "Struktura korisnika zakupca",
       "file": "tenant-user-structure.md",
-      "subCat": "Korisnici zakupaca"
+      "subCat": "Korisnici zakupca"
     },
     {
       "name": "GET /api/v1/tenant-users/:id",
       "file": "tenant-user-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Korisnici zakupaca"
+      "subCat": "Korisnici zakupca"
     },
     {
       "name": "GET /api/v1/tenant-users",
       "file": "tenant-users-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Korisnici zakupaca"
+      "subCat": "Korisnici zakupca"
     },
     {
       "name": "POST /api/v1/tenant-users",
       "file": "tenant-user-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Korisnici zakupaca"
+      "subCat": "Korisnici zakupca"
     },
     {
       "name": "POST /api/v1/tenant-users/:id/send-login-link",
       "file": "tenant-user-send-login-link.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Korisnici zakupaca"
+      "subCat": "Korisnici zakupca"
     },
     {
       "name": "PATCH /api/v1/tenant-users/:id",
       "file": "tenant-user-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Korisnici zakupaca"
+      "subCat": "Korisnici zakupca"
     },
     {
       "name": "DELETE /api/v1/tenant-users/:id",
       "file": "tenant-user-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Korisnici zakupaca"
+      "subCat": "Korisnici zakupca"
     },
     {
       "name": "Struktura korisnika",

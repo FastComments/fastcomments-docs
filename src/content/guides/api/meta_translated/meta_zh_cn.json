@@ -1,5 +1,6 @@
 {
   "name": "API",
+  "pageHeader": "实时评论 API",
   "icon": "api.png",
   "itemsOrdered": [
     {
@@ -83,45 +84,45 @@
       "subCat": "评论"
     },
     {
-      "name": "邮件模板结构",
+      "name": "电子邮件模板结构",
       "file": "email-template-structure.md",
-      "subCat": "邮件模板"
+      "subCat": "电子邮件模板"
     },
     {
       "name": "GET /api/v1/email-templates/:id",
       "file": "email-template-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "邮件模板"
+      "subCat": "电子邮件模板"
     },
     {
       "name": "GET /api/v1/email-templates",
       "file": "email-templates-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "邮件模板"
+      "subCat": "电子邮件模板"
     },
     {
       "name": "PATCH /api/v1/email-templates/:id",
       "file": "email-template-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "邮件模板"
+      "subCat": "电子邮件模板"
     },
     {
       "name": "POST /api/v1/email-templates",
       "file": "email-template-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "邮件模板"
+      "subCat": "电子邮件模板"
     },
     {
       "name": "POST /api/v1/email-templates/render",
       "file": "email-template-render.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "邮件模板"
+      "subCat": "电子邮件模板"
     },
     {
       "name": "DELETE /api/v1/email-templates/:id",
       "file": "email-template-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "邮件模板"
+      "subCat": "电子邮件模板"
     },
     {
       "name": "标签结构",
@@ -270,74 +271,74 @@
       "subCat": "页面"
     },
     {
-      "name": "待处理 Webhook 事件结构",
+      "name": "待处理Webhook事件结构",
       "file": "pending-webhook-event-structure.md",
-      "subCat": "待处理 Webhook 事件"
+      "subCat": "待处理Webhook事件"
     },
     {
       "name": "GET /api/v1/pending-webhook-events",
       "file": "pending-webhook-events-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "待处理 Webhook 事件"
+      "subCat": "待处理Webhook事件"
     },
     {
       "name": "GET /api/v1/pending-webhook-events/count",
       "file": "pending-webhook-events-count.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "待处理 Webhook 事件"
+      "subCat": "待处理Webhook事件"
     },
     {
       "name": "DELETE /api/v1/pending-webhook-events/:id",
       "file": "pending-webhook-event-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "待处理 Webhook 事件"
+      "subCat": "待处理Webhook事件"
     },
     {
-      "name": "SSO 用户结构",
+      "name": "单点登录用户结构",
       "file": "sso-user-structure.md",
-      "subCat": "SSO 用户"
+      "subCat": "单点登录用户"
     },
     {
       "name": "GET /api/v1/sso-users",
       "file": "sso-users-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO 用户"
+      "subCat": "单点登录用户"
     },
     {
       "name": "GET /api/v1/sso-users/by-id/:id",
       "file": "sso-user-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO 用户"
+      "subCat": "单点登录用户"
     },
     {
       "name": "GET /api/v1/sso-users/by-email/:email",
       "file": "sso-user-get-by-email.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO 用户"
+      "subCat": "单点登录用户"
     },
     {
       "name": "PATCH /api/v1/sso-users/:id",
       "file": "sso-user-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO 用户"
+      "subCat": "单点登录用户"
     },
     {
       "name": "POST /api/v1/sso-users",
       "file": "sso-user-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO 用户"
+      "subCat": "单点登录用户"
     },
     {
       "name": "PUT /api/v1/sso-users/:id",
       "file": "sso-user-put.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO 用户"
+      "subCat": "单点登录用户"
     },
     {
       "name": "DELETE /api/v1/sso-users/:id",
       "file": "sso-user-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO 用户"
+      "subCat": "单点登录用户"
     },
     {
       "name": "订阅结构",
@@ -360,15 +361,15 @@
       "subCat": "订阅"
     },
     {
-      "name": "租户每日使用量结构",
+      "name": "租户每日使用情况结构",
       "file": "tenant-daily-usage-structure.md",
-      "subCat": "租户每日使用量"
+      "subCat": "租户每日使用情况"
     },
     {
       "name": "GET /api/v1/tenant-daily-usage",
       "file": "tenant-daily-usages-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "租户每日使用量"
+      "subCat": "租户每日使用情况"
     },
     {
       "name": "租户结构",

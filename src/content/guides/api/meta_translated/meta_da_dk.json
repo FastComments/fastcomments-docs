@@ -1,5 +1,6 @@
 {
   "name": "API",
+  "pageHeader": "Live-kommentar-API'er",
   "icon": "api.png",
   "itemsOrdered": [
     {
@@ -8,20 +9,20 @@
       "subCat": "API-ressourcer"
     },
     {
-      "name": "Aggreger dine data",
+      "name": "Aggregér dine data",
       "file": "aggregate-post.md",
-      "subCat": "Aggregeringer"
+      "subCat": "Aggregationer"
     },
     {
-      "name": "Auditlog-struktur",
+      "name": "AuditLog-struktur",
       "file": "audit-log-structure.md",
-      "subCat": "Auditlogs"
+      "subCat": "AuditLogs"
     },
     {
       "name": "GET /api/v1/audit-logs",
       "file": "audit-logs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Auditlogs"
+      "subCat": "AuditLogs"
     },
     {
       "name": "Kommentarstruktur",
@@ -200,19 +201,19 @@
       "subCat": "Moderatorer"
     },
     {
-      "name": "Notifikationstællingsstruktur",
+      "name": "Notifikationsantalstruktur",
       "file": "notification-count-structure.md",
-      "subCat": "Notifikationstælling"
+      "subCat": "Notifikationsantal"
     },
     {
       "name": "GET /api/v1/notification-count/:user_id",
       "file": "notification-count-get.md",
-      "subCat": "Notifikationstælling"
+      "subCat": "Notifikationsantal"
     },
     {
       "name": "DELETE /api/v1/notification-count/:user_id",
       "file": "notification-count-delete.md",
-      "subCat": "Notifikationstælling"
+      "subCat": "Notifikationsantal"
     },
     {
       "name": "Notifikationsstruktur",
@@ -235,7 +236,7 @@
       "subCat": "Notifikationer"
     },
     {
-      "name": "Sidestruktur",
+      "name": "Side-struktur",
       "file": "page-structure.md",
       "subCat": "Sider"
     },
@@ -270,27 +271,27 @@
       "subCat": "Sider"
     },
     {
-      "name": "Ventende webhook-hændelse-struktur",
+      "name": "Afventende webhook-begivenhedsstruktur",
       "file": "pending-webhook-event-structure.md",
-      "subCat": "Ventende webhook-hændelser"
+      "subCat": "Afventende webhook-begivenheder"
     },
     {
       "name": "GET /api/v1/pending-webhook-events",
       "file": "pending-webhook-events-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Ventende webhook-hændelser"
+      "subCat": "Afventende webhook-begivenheder"
     },
     {
       "name": "GET /api/v1/pending-webhook-events/count",
       "file": "pending-webhook-events-count.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Ventende webhook-hændelser"
+      "subCat": "Afventende webhook-begivenheder"
     },
     {
       "name": "DELETE /api/v1/pending-webhook-events/:id",
       "file": "pending-webhook-event-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Ventende webhook-hændelser"
+      "subCat": "Afventende webhook-begivenheder"
     },
     {
       "name": "SSO-brugerstruktur",
@@ -360,7 +361,7 @@
       "subCat": "Abonnementer"
     },
     {
-      "name": "Lejers daglige forbrug - struktur",
+      "name": "Lejers daglige forbrugstruktur",
       "file": "tenant-daily-usage-structure.md",
       "subCat": "Lejers daglige forbrug"
     },
@@ -406,80 +407,80 @@
       "subCat": "Lejere"
     },
     {
-      "name": "Lejerpakke-struktur",
+      "name": "Lejers pakke-struktur",
       "file": "tenant-package-structure.md",
-      "subCat": "Lejerpakker"
+      "subCat": "Lejers pakker"
     },
     {
       "name": "GET /api/v1/tenant-packages/:id",
       "file": "tenant-package-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Lejerpakker"
+      "subCat": "Lejers pakker"
     },
     {
       "name": "GET /api/v1/tenant-packages",
       "file": "tenant-packages-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Lejerpakker"
+      "subCat": "Lejers pakker"
     },
     {
       "name": "POST /api/v1/tenant-packages",
       "file": "tenant-package-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Lejerpakker"
+      "subCat": "Lejers pakker"
     },
     {
       "name": "PATCH /api/v1/tenant-packages/:id",
       "file": "tenant-package-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Lejerpakker"
+      "subCat": "Lejers pakker"
     },
     {
       "name": "DELETE /api/v1/tenant-packages/:id",
       "file": "tenant-package-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Lejerpakker"
+      "subCat": "Lejers pakker"
     },
     {
-      "name": "Lejerbrugerstruktur",
+      "name": "Lejers brugerstruktur",
       "file": "tenant-user-structure.md",
-      "subCat": "Lejerbrugere"
+      "subCat": "Lejers brugere"
     },
     {
       "name": "GET /api/v1/tenant-users/:id",
       "file": "tenant-user-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Lejerbrugere"
+      "subCat": "Lejers brugere"
     },
     {
       "name": "GET /api/v1/tenant-users",
       "file": "tenant-users-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Lejerbrugere"
+      "subCat": "Lejers brugere"
     },
     {
       "name": "POST /api/v1/tenant-users",
       "file": "tenant-user-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Lejerbrugere"
+      "subCat": "Lejers brugere"
     },
     {
       "name": "POST /api/v1/tenant-users/:id/send-login-link",
       "file": "tenant-user-send-login-link.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Lejerbrugere"
+      "subCat": "Lejers brugere"
     },
     {
       "name": "PATCH /api/v1/tenant-users/:id",
       "file": "tenant-user-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Lejerbrugere"
+      "subCat": "Lejers brugere"
     },
     {
       "name": "DELETE /api/v1/tenant-users/:id",
       "file": "tenant-user-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Lejerbrugere"
+      "subCat": "Lejers brugere"
     },
     {
       "name": "Brugerstruktur",
@@ -600,52 +601,52 @@
       "subCat": "Spørgsmålskonfigurationer"
     },
     {
-      "name": "Spørgsmålresultatstruktur",
+      "name": "Spørgsmålsresultatstruktur",
       "file": "question-result-structure.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Spørgsmålresultater"
+      "subCat": "Spørgsmålsresultater"
     },
     {
       "name": "GET /api/v1/question-results",
       "file": "question-results-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Spørgsmålresultater"
+      "subCat": "Spørgsmålsresultater"
     },
     {
       "name": "GET /api/v1/question-results/:id",
       "file": "question-result-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Spørgsmålresultater"
+      "subCat": "Spørgsmålsresultater"
     },
     {
       "name": "POST /api/v1/question-results",
       "file": "question-result-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Spørgsmålresultater"
+      "subCat": "Spørgsmålsresultater"
     },
     {
       "name": "PATCH /api/v1/question-results/:id",
       "file": "question-result-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Spørgsmålresultater"
+      "subCat": "Spørgsmålsresultater"
     },
     {
       "name": "DELETE /api/v1/question-results/:id",
       "file": "question-result-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Spørgsmålresultater"
+      "subCat": "Spørgsmålsresultater"
     },
     {
       "name": "GET /api/v1/question-results-aggregate",
       "file": "question-results-aggregate.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Aggregering af spørgsmålresultater"
+      "subCat": "Spørgsmålsresultataggregation"
     },
     {
       "name": "GET /api/v1/question-results-aggregate/combine/comments",
       "file": "question-results-combine-comments.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Aggregering af spørgsmålresultater"
+      "subCat": "Spørgsmålsresultataggregation"
     },
     {
       "name": "Brugerbadge-struktur",
@@ -683,27 +684,27 @@
       "subCat": "Brugerbadges"
     },
     {
-      "name": "Brugerbadge-fremgangsstruktur",
+      "name": "Brugerbadge-fremdriftsstruktur",
       "file": "user-badge-progress-structure.md",
-      "subCat": "Brugerbadge-fremgang"
+      "subCat": "Brugerbadge-fremdrift"
     },
     {
       "name": "GET /api/v1/user-badge-progress",
       "file": "user-badge-progress-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Brugerbadge-fremgang"
+      "subCat": "Brugerbadge-fremdrift"
     },
     {
       "name": "GET /api/v1/user-badge-progress/:id",
       "file": "user-badge-progress-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Brugerbadge-fremgang"
+      "subCat": "Brugerbadge-fremdrift"
     },
     {
       "name": "GET /api/v1/user-badge-progress/user/:userId",
       "file": "user-badge-progress-get-by-user-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Brugerbadge-fremgang"
+      "subCat": "Brugerbadge-fremdrift"
     }
   ]
 }

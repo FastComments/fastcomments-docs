@@ -1,5 +1,6 @@
 {
-  "name": "ממשק API",
+  "name": "API",
+  "pageHeader": "API לתגובות חיות",
   "icon": "api.png",
   "itemsOrdered": [
     {
@@ -8,7 +9,7 @@
       "subCat": "משאבי API"
     },
     {
-      "name": "לאגד את הנתונים שלך",
+      "name": "צבר את הנתונים שלך",
       "file": "aggregate-post.md",
       "subCat": "אגרגציות"
     },
@@ -83,80 +84,80 @@
       "subCat": "תגובות"
     },
     {
-      "name": "מבנה תבנית דוא״ל",
+      "name": "מבנה תבנית אימייל",
       "file": "email-template-structure.md",
-      "subCat": "תבניות דוא״ל"
+      "subCat": "תבניות אימייל"
     },
     {
       "name": "GET /api/v1/email-templates/:id",
       "file": "email-template-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "תבניות דוא״ל"
+      "subCat": "תבניות אימייל"
     },
     {
       "name": "GET /api/v1/email-templates",
       "file": "email-templates-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "תבניות דוא״ל"
+      "subCat": "תבניות אימייל"
     },
     {
       "name": "PATCH /api/v1/email-templates/:id",
       "file": "email-template-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "תבניות דוא״ל"
+      "subCat": "תבניות אימייל"
     },
     {
       "name": "POST /api/v1/email-templates",
       "file": "email-template-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "תבניות דוא״ל"
+      "subCat": "תבניות אימייל"
     },
     {
       "name": "POST /api/v1/email-templates/render",
       "file": "email-template-render.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "תבניות דוא״ל"
+      "subCat": "תבניות אימייל"
     },
     {
       "name": "DELETE /api/v1/email-templates/:id",
       "file": "email-template-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "תבניות דוא״ל"
+      "subCat": "תבניות אימייל"
     },
     {
-      "name": "מבנה תגית",
+      "name": "מבנה האשטאג",
       "file": "hash-tag-structure.md",
-      "subCat": "תגיות"
+      "subCat": "האשטאגים"
     },
     {
       "name": "GET /api/v1/hash-tags",
       "file": "hash-tags-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "תגיות"
+      "subCat": "האשטאגים"
     },
     {
       "name": "PATCH /api/v1/hash-tags/:tag",
       "file": "hash-tag-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "תגיות"
+      "subCat": "האשטאגים"
     },
     {
       "name": "POST /api/v1/hash-tags",
       "file": "hash-tag-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "תגיות"
+      "subCat": "האשטאגים"
     },
     {
       "name": "POST /api/v1/hash-tags/bulk",
       "file": "hash-tag-bulk-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "תגיות"
+      "subCat": "האשטאגים"
     },
     {
       "name": "DELETE /api/v1/hash-tags/:tag",
       "file": "hash-tag-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "תגיות"
+      "subCat": "האשטאגים"
     },
     {
       "name": "מבנה מודרטור",
@@ -235,62 +236,62 @@
       "subCat": "התראות"
     },
     {
-      "name": "מבנה עמוד",
+      "name": "מבנה דף",
       "file": "page-structure.md",
-      "subCat": "עמודים"
+      "subCat": "דפים"
     },
     {
       "name": "GET /api/v1/pages",
       "file": "pages-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "עמודים"
+      "subCat": "דפים"
     },
     {
       "name": "GET /api/v1/pages/by-url-id",
       "file": "pages-get-by-url-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "עמודים"
+      "subCat": "דפים"
     },
     {
       "name": "PATCH /api/v1/pages/:id",
       "file": "page-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "עמודים"
+      "subCat": "דפים"
     },
     {
       "name": "POST /api/v1/pages",
       "file": "page-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "עמודים"
+      "subCat": "דפים"
     },
     {
       "name": "DELETE /api/v1/pages/:id",
       "file": "page-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "עמודים"
+      "subCat": "דפים"
     },
     {
-      "name": "מבנה אירוע Webhook ממתין",
+      "name": "מבנה אירוע ווב-הוק ממתין",
       "file": "pending-webhook-event-structure.md",
-      "subCat": "אירועי Webhook ממתינים"
+      "subCat": "אירועי ווב-הוק ממתינים"
     },
     {
       "name": "GET /api/v1/pending-webhook-events",
       "file": "pending-webhook-events-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "אירועי Webhook ממתינים"
+      "subCat": "אירועי ווב-הוק ממתינים"
     },
     {
       "name": "GET /api/v1/pending-webhook-events/count",
       "file": "pending-webhook-events-count.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "אירועי Webhook ממתינים"
+      "subCat": "אירועי ווב-הוק ממתינים"
     },
     {
       "name": "DELETE /api/v1/pending-webhook-events/:id",
       "file": "pending-webhook-event-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "אירועי Webhook ממתינים"
+      "subCat": "אירועי ווב-הוק ממתינים"
     },
     {
       "name": "מבנה משתמש SSO",
@@ -522,130 +523,130 @@
       "subCat": "הצבעות"
     },
     {
-      "name": "מבנה הגדרות דומיין",
+      "name": "מבנה תצורת דומיין",
       "file": "domain-config-structure.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "הגדרות דומיין"
+      "subCat": "תצורות דומיין"
     },
     {
       "name": "GET /api/v1/domain-configs",
       "file": "domain-configs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "הגדרות דומיין"
+      "subCat": "תצורות דומיין"
     },
     {
       "name": "GET /api/v1/domain-configs/:domain",
       "file": "domain-config-get-by-domain.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "הגדרות דומיין"
+      "subCat": "תצורות דומיין"
     },
     {
       "name": "POST /api/v1/domain-configs",
       "file": "domain-config-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "הגדרות דומיין"
+      "subCat": "תצורות דומיין"
     },
     {
       "name": "PATCH /api/v1/domain-configs/:domain",
       "file": "domain-config-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "הגדרות דומיין"
+      "subCat": "תצורות דומיין"
     },
     {
       "name": "PUT /api/v1/domain-configs/:domain",
       "file": "domain-config-put.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "הגדרות דומיין"
+      "subCat": "תצורות דומיין"
     },
     {
       "name": "DELETE /api/v1/domain-configs/:domain",
       "file": "domain-config-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "הגדרות דומיין"
+      "subCat": "תצורות דומיין"
     },
     {
-      "name": "מבנה הגדרות שאלה",
+      "name": "מבנה תצורת שאלה",
       "file": "question-config-structure.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "הגדרות שאלה"
+      "subCat": "תצורות שאלה"
     },
     {
       "name": "GET /api/v1/question-configs",
       "file": "question-configs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "הגדרות שאלה"
+      "subCat": "תצורות שאלה"
     },
     {
       "name": "GET /api/v1/question-configs/:id",
       "file": "question-config-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "הגדרות שאלה"
+      "subCat": "תצורות שאלה"
     },
     {
       "name": "POST /api/v1/question-configs",
       "file": "question-config-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "הגדרות שאלה"
+      "subCat": "תצורות שאלה"
     },
     {
       "name": "PATCH /api/v1/question-configs/:id",
       "file": "question-config-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "הגדרות שאלה"
+      "subCat": "תצורות שאלה"
     },
     {
       "name": "DELETE /api/v1/question-configs/:id",
       "file": "question-config-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "הגדרות שאלה"
+      "subCat": "תצורות שאלה"
     },
     {
       "name": "מבנה תוצאת שאלה",
       "file": "question-result-structure.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "תוצאות שאלות"
+      "subCat": "תוצאות שאלה"
     },
     {
       "name": "GET /api/v1/question-results",
       "file": "question-results-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "תוצאות שאלות"
+      "subCat": "תוצאות שאלה"
     },
     {
       "name": "GET /api/v1/question-results/:id",
       "file": "question-result-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "תוצאות שאלות"
+      "subCat": "תוצאות שאלה"
     },
     {
       "name": "POST /api/v1/question-results",
       "file": "question-result-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "תוצאות שאלות"
+      "subCat": "תוצאות שאלה"
     },
     {
       "name": "PATCH /api/v1/question-results/:id",
       "file": "question-result-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "תוצאות שאלות"
+      "subCat": "תוצאות שאלה"
     },
     {
       "name": "DELETE /api/v1/question-results/:id",
       "file": "question-result-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "תוצאות שאלות"
+      "subCat": "תוצאות שאלה"
     },
     {
       "name": "GET /api/v1/question-results-aggregate",
       "file": "question-results-aggregate.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "אגרגציית תוצאות שאלות"
+      "subCat": "אגרגציית תוצאות שאלה"
     },
     {
       "name": "GET /api/v1/question-results-aggregate/combine/comments",
       "file": "question-results-combine-comments.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "אגרגציית תוצאות שאלות"
+      "subCat": "אגרגציית תוצאות שאלה"
     },
     {
       "name": "מבנה תג משתמש",
@@ -683,27 +684,27 @@
       "subCat": "תגי משתמש"
     },
     {
-      "name": "מבנה התקדמות תגי משתמש",
+      "name": "מבנה התקדמות תג משתמש",
       "file": "user-badge-progress-structure.md",
-      "subCat": "התקדמות תגי משתמש"
+      "subCat": "התקדמות תג משתמש"
     },
     {
       "name": "GET /api/v1/user-badge-progress",
       "file": "user-badge-progress-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "התקדמות תגי משתמש"
+      "subCat": "התקדמות תג משתמש"
     },
     {
       "name": "GET /api/v1/user-badge-progress/:id",
       "file": "user-badge-progress-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "התקדמות תגי משתמש"
+      "subCat": "התקדמות תג משתמש"
     },
     {
       "name": "GET /api/v1/user-badge-progress/user/:userId",
       "file": "user-badge-progress-get-by-user-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "התקדמות תגי משתמש"
+      "subCat": "התקדמות תג משתמש"
     }
   ]
 }
