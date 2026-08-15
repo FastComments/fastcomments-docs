@@ -1,5 +1,6 @@
 {
   "name": "フィード",
+  "pageHeader": "ソーシャルフィードコンポーネントとAPI",
   "icon": "feed.svg",
   "itemsOrdered": [
     {

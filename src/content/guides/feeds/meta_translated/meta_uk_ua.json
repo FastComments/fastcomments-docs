@@ -1,5 +1,6 @@
 {
   "name": "Стрічки",
+  "pageHeader": "Компоненти та API соціальних стрічок",
   "icon": "feed.svg",
   "itemsOrdered": [
     {

@@ -1,5 +1,6 @@
 {
-  "name": "GIF 动图",
+  "name": "动图",
+  "pageHeader": "评论系统 GIF 集成",
   "icon": "gifs.png",
   "itemsOrdered": [
     {

@@ -1,16 +1,17 @@
 {
-  "name": "動態",
+  "name": "資訊流",
+  "pageHeader": "社交資訊流元件與 API",
   "icon": "feed.svg",
   "itemsOrdered": [
     {
-      "name": "個人化動態",
+      "name": "個人化資訊流",
       "file": "personalizing-feeds.md",
-      "subCat": "自訂"
+      "subCat": "客製化"
     },
     {
-      "name": "區域動態",
+      "name": "區域資訊流",
       "file": "regional-feeds.md",
-      "subCat": "自訂"
+      "subCat": "客製化"
     }
   ]
 }

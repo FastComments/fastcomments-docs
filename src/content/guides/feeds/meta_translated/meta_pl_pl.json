@@ -1,16 +1,17 @@
 {
   "name": "Kanały",
+  "pageHeader": "Komponenty i API kanałów społecznościowych",
   "icon": "feed.svg",
   "itemsOrdered": [
     {
       "name": "Personalizacja kanałów",
       "file": "personalizing-feeds.md",
-      "subCat": "Dostosowywanie"
+      "subCat": "Dostosowanie"
     },
     {
       "name": "Kanały regionalne",
       "file": "regional-feeds.md",
-      "subCat": "Dostosowywanie"
+      "subCat": "Dostosowanie"
     }
   ]
 }

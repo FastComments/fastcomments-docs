@@ -1,5 +1,6 @@
 {
   "name": "Flux",
+  "pageHeader": "Composants et API du flux social",
   "icon": "feed.svg",
   "itemsOrdered": [
     {

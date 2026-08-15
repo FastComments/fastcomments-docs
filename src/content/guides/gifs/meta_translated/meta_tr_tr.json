@@ -1,21 +1,22 @@
 {
-  "name": "GIF'ler",
+  "name": "Gif'ler",
+  "pageHeader": "Yorum Sistemi GIF Entegrasyonu",
   "icon": "gifs.png",
   "itemsOrdered": [
     {
       "name": "Desteklenen Animasyonlu Görüntü Türleri",
       "file": "types-of-animated-images-supported.md",
-      "subCat": "GIF'ler ve Animasyonlu Görüntüler"
+      "subCat": "Gif'ler ve Animasyonlu Görüntüler"
     },
     {
-      "name": "Kullanıcıların Yüklediği Animasyonlu Görüntüler",
+      "name": "Kullanıcı Tarafından Yüklenen Animasyonlu Görüntüler",
       "file": "user-uploaded-animated-images.md",
-      "subCat": "GIF'lerin Kullanımı"
+      "subCat": "Gif Kullanımı"
     },
     {
-      "name": "GIF Seçici",
+      "name": "Gif Seçici",
       "file": "gif-picker.md",
-      "subCat": "GIF'lerin Kullanımı"
+      "subCat": "Gif Kullanımı"
     }
   ]
 }

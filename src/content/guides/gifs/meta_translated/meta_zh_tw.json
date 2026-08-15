@@ -1,14 +1,15 @@
 {
-  "name": "GIF 動畫",
+  "name": "GIF 動圖",
+  "pageHeader": "評論系統 GIF 整合",
   "icon": "gifs.png",
   "itemsOrdered": [
     {
-      "name": "支援的動態影像類型",
+      "name": "支援的動畫圖像類型",
       "file": "types-of-animated-images-supported.md",
-      "subCat": "GIF 與動態影像"
+      "subCat": "GIF 與動畫圖像"
     },
     {
-      "name": "使用者上傳的動態影像",
+      "name": "使用者上傳的動畫圖像",
       "file": "user-uploaded-animated-images.md",
       "subCat": "使用 GIF"
     },

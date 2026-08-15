@@ -1,19 +1,20 @@
 {
   "name": "GIFs",
+  "pageHeader": "Ενσωμάτωση GIFs στο Σύστημα Σχολίων",
   "icon": "gifs.png",
   "itemsOrdered": [
     {
-      "name": "Τύποι υποστηριζόμενων κινούμενων εικόνων",
+      "name": "Τύποι Υποστηριζόμενων Κινούμενων Εικόνων",
       "file": "types-of-animated-images-supported.md",
-      "subCat": "GIFs και κινούμενες εικόνες"
+      "subCat": "GIFs & Κινούμενες Εικόνες"
     },
     {
-      "name": "Κινούμενες εικόνες που ανέβηκαν από χρήστες",
+      "name": "Κινούμενες Εικόνες που Ανεβάζει ο Χρήστης",
       "file": "user-uploaded-animated-images.md",
       "subCat": "Χρήση GIFs"
     },
     {
-      "name": "Επιλογέας GIF",
+      "name": "Ο Επιλογέας GIF",
       "file": "gif-picker.md",
       "subCat": "Χρήση GIFs"
     }

@@ -1,5 +1,6 @@
 {
   "name": "Ленты",
+  "pageHeader": "Компоненты и API социальных лент",
   "icon": "feed.svg",
   "itemsOrdered": [
     {

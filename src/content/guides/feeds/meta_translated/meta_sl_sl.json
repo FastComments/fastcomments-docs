@@ -1,9 +1,10 @@
 {
   "name": "Viri",
+  "pageHeader": "Komponente in API-ji za socialne tokove",
   "icon": "feed.svg",
   "itemsOrdered": [
     {
-      "name": "Prilagajanje virov",
+      "name": "Personalizacija virov",
       "file": "personalizing-feeds.md",
       "subCat": "Prilagoditev"
     },

@@ -1,19 +1,20 @@
 {
   "name": "GIFs",
+  "pageHeader": "Integração de GIFs no Sistema de Comentários",
   "icon": "gifs.png",
   "itemsOrdered": [
     {
-      "name": "Tipos de imagens animadas suportadas",
+      "name": "Tipos de Imagens Animadas Suportadas",
       "file": "types-of-animated-images-supported.md",
-      "subCat": "GIFs e imagens animadas"
+      "subCat": "GIFs e Imagens Animadas"
     },
     {
-      "name": "Imagens animadas enviadas pelo usuário",
+      "name": "Imagens Animadas Enviadas pelos Usuários",
       "file": "user-uploaded-animated-images.md",
       "subCat": "Usando GIFs"
     },
     {
-      "name": "Seletor de GIFs",
+      "name": "O Seletor de GIFs",
       "file": "gif-picker.md",
       "subCat": "Usando GIFs"
     }

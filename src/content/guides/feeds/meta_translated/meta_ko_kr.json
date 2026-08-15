@@ -1,5 +1,6 @@
 {
   "name": "피드",
+  "pageHeader": "소셜 피드 구성 요소 및 API",
   "icon": "feed.svg",
   "itemsOrdered": [
     {
@@ -8,7 +9,7 @@
       "subCat": "맞춤 설정"
     },
     {
-      "name": "지역별 피드",
+      "name": "지역 피드",
       "file": "regional-feeds.md",
       "subCat": "맞춤 설정"
     }

@@ -1,14 +1,15 @@
 {
-  "name": "Fuentes",
+  "name": "Feeds",
+  "pageHeader": "Componentes y API de Feed Social",
   "icon": "feed.svg",
   "itemsOrdered": [
     {
-      "name": "Personalización de Fuentes",
+      "name": "Personalizando Feeds",
       "file": "personalizing-feeds.md",
       "subCat": "Personalización"
     },
     {
-      "name": "Fuentes regionales",
+      "name": "Feeds Regionales",
       "file": "regional-feeds.md",
       "subCat": "Personalización"
     }

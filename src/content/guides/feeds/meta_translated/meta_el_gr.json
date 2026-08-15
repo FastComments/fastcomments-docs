@@ -1,14 +1,15 @@
 {
   "name": "Ροές",
+  "pageHeader": "Στοιχεία και API Κοινωνικών Ροών",
   "icon": "feed.svg",
   "itemsOrdered": [
     {
-      "name": "Εξατομίκευση ροών",
+      "name": "Προσωποποίηση Ροών",
       "file": "personalizing-feeds.md",
       "subCat": "Προσαρμογή"
     },
     {
-      "name": "Περιφερειακές ροές",
+      "name": "Περιφερειακές Ροές",
       "file": "regional-feeds.md",
       "subCat": "Προσαρμογή"
     }

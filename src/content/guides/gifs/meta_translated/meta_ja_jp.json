@@ -1,5 +1,6 @@
 {
   "name": "GIF",
+  "pageHeader": "コメントシステム GIF 統合",
   "icon": "gifs.png",
   "itemsOrdered": [
     {
@@ -10,12 +11,12 @@
     {
       "name": "ユーザーがアップロードしたアニメーション画像",
       "file": "user-uploaded-animated-images.md",
-      "subCat": "GIF の使い方"
+      "subCat": "GIF の使用"
     },
     {
-      "name": "GIFピッカー",
+      "name": "GIF ピッカー",
       "file": "gif-picker.md",
-      "subCat": "GIF の使い方"
+      "subCat": "GIF の使用"
     }
   ]
 }

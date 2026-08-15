@@ -1,5 +1,6 @@
 {
   "name": "גיפים",
+  "pageHeader": "שילוב גיפים במערכת ההערות",
   "icon": "gifs.png",
   "itemsOrdered": [
     {
@@ -8,12 +9,12 @@
       "subCat": "גיפים ותמונות מונפשות"
     },
     {
-      "name": "תמונות מונפשות שהועלו על ידי משתמשים",
+      "name": "תמונות מונפשות שהועלו על ידי משתמש",
       "file": "user-uploaded-animated-images.md",
       "subCat": "שימוש בגיפים"
     },
     {
-      "name": "בחירת גיפים",
+      "name": "בוחר הגיפים",
       "file": "gif-picker.md",
       "subCat": "שימוש בגיפים"
     }

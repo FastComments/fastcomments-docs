@@ -1,14 +1,15 @@
 {
-  "name": "הזנות",
+  "name": "פידים",
+  "pageHeader": "רכיבי פיד חברתי ו-API",
   "icon": "feed.svg",
   "itemsOrdered": [
     {
-      "name": "התאמה אישית של ההזנות",
+      "name": "התאמה אישית של פידים",
       "file": "personalizing-feeds.md",
       "subCat": "התאמה אישית"
     },
     {
-      "name": "הזנות אזוריות",
+      "name": "פידים אזוריים",
       "file": "regional-feeds.md",
       "subCat": "התאמה אישית"
     }

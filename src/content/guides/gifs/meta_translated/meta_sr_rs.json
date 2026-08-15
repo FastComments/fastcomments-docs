@@ -1,21 +1,22 @@
 {
-  "name": "Гифови",
+  "name": "Gifovi",
+  "pageHeader": "Integracija GIF-ova u sistem komentarisanja",
   "icon": "gifs.png",
   "itemsOrdered": [
     {
-      "name": "Врсте подржаних анимираних слика",
+      "name": "Podržani tipovi animiranih slika",
       "file": "types-of-animated-images-supported.md",
-      "subCat": "Гифови и анимиране слике"
+      "subCat": "Gif-ovi i animirane slike"
     },
     {
-      "name": "Анимиране слике отпремљене од корисника",
+      "name": "Korisnički otpremljene animirane slike",
       "file": "user-uploaded-animated-images.md",
-      "subCat": "Коришћење гифова"
+      "subCat": "Korišćenje GIF-ova"
     },
     {
-      "name": "Изборник гифова",
+      "name": "Izbor GIF-ova",
       "file": "gif-picker.md",
-      "subCat": "Коришћење гифова"
+      "subCat": "Korišćenje GIF-ova"
     }
   ]
 }

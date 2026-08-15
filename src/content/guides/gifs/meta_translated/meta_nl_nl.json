@@ -1,21 +1,22 @@
 {
-  "name": "Gifs",
+  "name": "GIF's",
+  "pageHeader": "Integratie van GIF's in het reactiesysteem",
   "icon": "gifs.png",
   "itemsOrdered": [
     {
       "name": "Ondersteunde typen geanimeerde afbeeldingen",
       "file": "types-of-animated-images-supported.md",
-      "subCat": "Gifs en geanimeerde afbeeldingen"
+      "subCat": "GIF's & geanimeerde afbeeldingen"
     },
     {
       "name": "Door gebruikers geüploade geanimeerde afbeeldingen",
       "file": "user-uploaded-animated-images.md",
-      "subCat": "Gifs gebruiken"
+      "subCat": "GIF's gebruiken"
     },
     {
-      "name": "De Gifkiezer",
+      "name": "De GIF-selectie",
       "file": "gif-picker.md",
-      "subCat": "Gifs gebruiken"
+      "subCat": "GIF's gebruiken"
     }
   ]
 }

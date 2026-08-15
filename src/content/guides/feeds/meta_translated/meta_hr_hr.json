@@ -1,9 +1,10 @@
 {
-  "name": "Feedovi",
+  "name": "Novosti",
+  "pageHeader": "Komponente i API-ji društvenih feedova",
   "icon": "feed.svg",
   "itemsOrdered": [
     {
-      "name": "Personalizacija feedova",
+      "name": "Personaliziranje feedova",
       "file": "personalizing-feeds.md",
       "subCat": "Prilagodba"
     },

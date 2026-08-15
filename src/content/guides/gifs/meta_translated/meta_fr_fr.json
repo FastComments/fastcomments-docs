@@ -1,21 +1,22 @@
 {
   "name": "Gifs",
+  "pageHeader": "Intégration des GIFs du système de commentaires",
   "icon": "gifs.png",
   "itemsOrdered": [
     {
-      "name": "Types d'images animées pris en charge",
+      "name": "Types d'images animées prises en charge",
       "file": "types-of-animated-images-supported.md",
-      "subCat": "Gifs et images animées"
+      "subCat": "GIFs et images animées"
     },
     {
-      "name": "Images animées téléchargées par l'utilisateur",
+      "name": "Images animées téléchargées par les utilisateurs",
       "file": "user-uploaded-animated-images.md",
-      "subCat": "Utilisation des Gifs"
+      "subCat": "Utilisation des GIFs"
     },
     {
-      "name": "Sélecteur de Gifs",
+      "name": "Sélecteur de GIF",
       "file": "gif-picker.md",
-      "subCat": "Utilisation des Gifs"
+      "subCat": "Utilisation des GIFs"
     }
   ]
 }

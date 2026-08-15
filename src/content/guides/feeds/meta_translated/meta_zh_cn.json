@@ -1,5 +1,6 @@
 {
   "name": "信息流",
+  "pageHeader": "社交信息流组件与 API",
   "icon": "feed.svg",
   "itemsOrdered": [
     {
@@ -8,7 +9,7 @@
       "subCat": "自定义"
     },
     {
-      "name": "区域信息流",
+      "name": "地区信息流",
       "file": "regional-feeds.md",
       "subCat": "自定义"
     }

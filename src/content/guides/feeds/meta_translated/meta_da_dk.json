@@ -1,14 +1,15 @@
 {
-  "name": "Nyhedsfeeds",
+  "name": "Feeds",
+  "pageHeader": "Sociale feed-komponenter og API'er",
   "icon": "feed.svg",
   "itemsOrdered": [
     {
-      "name": "Tilpasning af nyhedsfeeds",
+      "name": "Personliggørelse af feeds",
       "file": "personalizing-feeds.md",
       "subCat": "Tilpasning"
     },
     {
-      "name": "Regionale nyhedsfeeds",
+      "name": "Regionale feeds",
       "file": "regional-feeds.md",
       "subCat": "Tilpasning"
     }

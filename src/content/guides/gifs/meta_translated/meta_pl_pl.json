@@ -1,21 +1,22 @@
 {
   "name": "Gify",
+  "pageHeader": "Integracja GIF-ów w systemie komentarzy",
   "icon": "gifs.png",
   "itemsOrdered": [
     {
-      "name": "Obsługiwane rodzaje animowanych obrazów",
+      "name": "Typy obsługiwanych animowanych obrazów",
       "file": "types-of-animated-images-supported.md",
-      "subCat": "Gify i obrazy animowane"
+      "subCat": "Gify i animowane obrazy"
     },
     {
-      "name": "Animowane obrazy przesłane przez użytkowników",
+      "name": "Animowane obrazy przesłane przez użytkownika",
       "file": "user-uploaded-animated-images.md",
-      "subCat": "Korzystanie z gifów"
+      "subCat": "Używanie gifów"
     },
     {
-      "name": "Wybieracz gifów",
+      "name": "Wybór gifów",
       "file": "gif-picker.md",
-      "subCat": "Korzystanie z gifów"
+      "subCat": "Używanie gifów"
     }
   ]
 }

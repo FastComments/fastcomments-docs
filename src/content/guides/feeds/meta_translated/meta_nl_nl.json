@@ -1,16 +1,17 @@
 {
   "name": "Feeds",
+  "pageHeader": "Sociale Feedcomponenten & API's",
   "icon": "feed.svg",
   "itemsOrdered": [
     {
       "name": "Feeds personaliseren",
       "file": "personalizing-feeds.md",
-      "subCat": "Personalisatie"
+      "subCat": "Aanpassing"
     },
     {
-      "name": "Regionale feeds",
+      "name": "Regionale Feeds",
       "file": "regional-feeds.md",
-      "subCat": "Personalisatie"
+      "subCat": "Aanpassing"
     }
   ]
 }

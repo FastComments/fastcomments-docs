@@ -1,14 +1,15 @@
 {
   "name": "GIF'er",
+  "pageHeader": "Integration af GIF'er i kommentarsystemet",
   "icon": "gifs.png",
   "itemsOrdered": [
     {
-      "name": "Understøttede typer af animerede billeder",
+      "name": "Typer af understøttede animerede billeder",
       "file": "types-of-animated-images-supported.md",
-      "subCat": "GIF'er og animerede billeder"
+      "subCat": "GIF'er & animerede billeder"
     },
     {
-      "name": "Animerede billeder uploadet af brugere",
+      "name": "Brugeruploadede animerede billeder",
       "file": "user-uploaded-animated-images.md",
       "subCat": "Brug af GIF'er"
     },

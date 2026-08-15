@@ -1,5 +1,6 @@
 {
-  "name": "GIF(움직이는 이미지)",
+  "name": "GIF",
+  "pageHeader": "댓글 시스템 GIF 통합",
   "icon": "gifs.png",
   "itemsOrdered": [
     {
@@ -8,14 +9,14 @@
       "subCat": "GIF 및 애니메이션 이미지"
     },
     {
-      "name": "사용자가 업로드한 애니메이션 이미지",
+      "name": "사용자 업로드 애니메이션 이미지",
       "file": "user-uploaded-animated-images.md",
-      "subCat": "GIF 사용하기"
+      "subCat": "GIF 사용"
     },
     {
       "name": "GIF 선택기",
       "file": "gif-picker.md",
-      "subCat": "GIF 사용하기"
+      "subCat": "GIF 사용"
     }
   ]
 }

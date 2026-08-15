@@ -1,14 +1,15 @@
 {
-  "name": "Feed",
+  "name": "Flussi",
+  "pageHeader": "Componenti e API dei Feed Social",
   "icon": "feed.svg",
   "itemsOrdered": [
     {
-      "name": "Personalizzazione dei feed",
+      "name": "Personalizzazione dei Feed",
       "file": "personalizing-feeds.md",
       "subCat": "Personalizzazione"
     },
     {
-      "name": "Feed regionali",
+      "name": "Feed Regionali",
       "file": "regional-feeds.md",
       "subCat": "Personalizzazione"
     }

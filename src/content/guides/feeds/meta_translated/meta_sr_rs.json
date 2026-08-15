@@ -1,16 +1,17 @@
 {
-  "name": "Фидови",
+  "name": "Tokovi",
+  "pageHeader": "Komponente i API-ji društvenih tokova",
   "icon": "feed.svg",
   "itemsOrdered": [
     {
-      "name": "Прилагођавање фидова",
+      "name": "Personalizacija tokova",
       "file": "personalizing-feeds.md",
-      "subCat": "Прилагођавање"
+      "subCat": "Prilagođavanje"
     },
     {
-      "name": "Регионални фидови",
+      "name": "Regionalni tokovi",
       "file": "regional-feeds.md",
-      "subCat": "Прилагођавање"
+      "subCat": "Prilagođavanje"
     }
   ]
 }
