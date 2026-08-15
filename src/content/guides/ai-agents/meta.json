@@ -1,5 +1,6 @@
 {
   "name": "AI Agents",
+  "pageHeader": "AI Agents for Comment Moderation",
   "icon": "ai.png",
   "itemsOrdered": [
     {"name": "What Are AI Agents", "file": "what-are-ai-agents.md", "subCat": "Introduction"},
