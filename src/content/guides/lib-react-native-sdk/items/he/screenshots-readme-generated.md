@@ -2,9 +2,9 @@ Live threaded commenting with avatars, nested replies, votes, and the built-in r
 
 <table>
   <tr>
-    <td align="center"><b>הערות חיות</b><br/><img src="./demo-screenshots/light.png" width="260" alt="הערות חיות, ערכת נושא בהירה"/></td>
-    <td align="center"><b>ערכת נושא כהה</b><br/><img src="./demo-screenshots/dark.png" width="260" alt="הערות חיות, ערכת נושא כהה"/></td>
-    <td align="center"><b>צ'אט חי</b><br/><img src="./demo-screenshots/chat.png" width="260" alt="הגדרת צ'אט חי"/></td>
+    <td align="center"><b>הערות חיות</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-light.png" width="260" alt="הערות חיות, ערכת נושא בהירה"/></td>
+    <td align="center"><b>ערכת נושא כהה</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-dark.png" width="260" alt="הערות חיות, ערכת נושא כהה"/></td>
+    <td align="center"><b>צ'אט חי</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-chat.png" width="260" alt="הגדרת צ'אט חי"/></td>
   </tr>
 </table>
 

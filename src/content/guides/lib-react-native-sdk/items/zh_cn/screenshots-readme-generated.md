@@ -2,9 +2,9 @@ Live threaded commenting with avatars, nested replies, votes, and the built-in r
 
 <table>
   <tr>
-    <td align="center"><b>实时评论</b><br/><img src="./demo-screenshots/light.png" width="260" alt="实时评论，亮色主题"/></td>
-    <td align="center"><b>暗色主题</b><br/><img src="./demo-screenshots/dark.png" width="260" alt="实时评论，暗色主题"/></td>
-    <td align="center"><b>实时聊天</b><br/><img src="./demo-screenshots/chat.png" width="260" alt="实时聊天预设"/></td>
+    <td align="center"><b>实时评论</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-light.png" width="260" alt="实时评论，亮色主题"/></td>
+    <td align="center"><b>暗色主题</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-dark.png" width="260" alt="实时评论，暗色主题"/></td>
+    <td align="center"><b>实时聊天</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-chat.png" width="260" alt="实时聊天预设"/></td>
   </tr>
 </table>
 

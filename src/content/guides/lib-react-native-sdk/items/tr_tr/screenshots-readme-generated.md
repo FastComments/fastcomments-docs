@@ -2,9 +2,9 @@ Live threaded commenting with avatars, nested replies, votes, and the built-in r
 
 <table>
   <tr>
-    <td align="center"><b>Canlı Yorumlama</b><br/><img src="./demo-screenshots/light.png" width="260" alt="Canlı yorumlama, açık tema"/></td>
-    <td align="center"><b>Karanlık Tema</b><br/><img src="./demo-screenshots/dark.png" width="260" alt="Canlı yorumlama, karanlık tema"/></td>
-    <td align="center"><b>Canlı Sohbet</b><br/><img src="./demo-screenshots/chat.png" width="260" alt="Canlı sohbet ön ayarı"/></td>
+    <td align="center"><b>Canlı Yorumlama</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-light.png" width="260" alt="Canlı yorumlama, açık tema"/></td>
+    <td align="center"><b>Karanlık Tema</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-dark.png" width="260" alt="Canlı yorumlama, karanlık tema"/></td>
+    <td align="center"><b>Canlı Sohbet</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-chat.png" width="260" alt="Canlı sohbet ön ayarı"/></td>
   </tr>
 </table>
 

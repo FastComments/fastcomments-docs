@@ -107,6 +107,62 @@ pub fn extract_screenshot_bodies(content: &str) -> Vec<String> {
         .collect()
 }
 
+/// Every `<img src>` value in `content`, in document order. `<img>` tags
+/// without a `src` are skipped, matching [`extract_image_refs`].
+fn html_img_srcs(content: &str) -> Vec<String> {
+    IMG_TAG_RE
+        .find_iter(content)
+        .filter_map(|tag| IMG_SRC_RE.captures(tag.as_str()))
+        .map(|caps| {
+            caps.get(1)
+                .or_else(|| caps.get(2))
+                .map(|m| m.as_str().trim().to_string())
+                .unwrap_or_default()
+        })
+        .collect()
+}
+
+/// Rewrite every `<img src>` in `translated` to the value at the same
+/// position in `source`, leaving `alt` / `title` and the surrounding prose
+/// untouched.
+///
+/// A `src` is a technical identifier that must match the source byte-for-byte
+/// (translation rule 11), so when the source's path changes - `sdkgen` now
+/// rewrites relative README `<img src>` to a local copy under
+/// `images/sdk-images/` - every locale has to follow. Re-translating 23 files
+/// to move a path is both expensive and a fresh chance for the model to drift,
+/// and the parity gate would otherwise fail the build until it happened.
+///
+/// If the counts don't match, the translation dropped or duplicated an image;
+/// there's no safe pairing, so leave it alone and let the gate report it.
+pub fn merge_image_srcs(source: &str, translated: &str) -> String {
+    let source_srcs = html_img_srcs(source);
+    if source_srcs.is_empty() || source_srcs.len() != html_img_srcs(translated).len() {
+        return translated.to_string();
+    }
+    let mut i = 0usize;
+    IMG_TAG_RE
+        .replace_all(translated, |caps: &regex::Captures| {
+            let tag = &caps[0];
+            let Some(src_caps) = IMG_SRC_RE.captures(tag) else {
+                return tag.to_string();
+            };
+            let want = &source_srcs[i];
+            i += 1;
+            let found = src_caps.get(1).or_else(|| src_caps.get(2));
+            // Already correct: return verbatim so attribute spacing survives
+            // and a second `--fix` run is a no-op.
+            if found.is_some_and(|m| m.as_str().trim() == want) {
+                return tag.to_string();
+            }
+            let quote = if src_caps.get(1).is_some() { '"' } else { '\'' };
+            IMG_SRC_RE
+                .replace(tag, |_: &regex::Captures| format!("src={quote}{want}{quote}"))
+                .into_owned()
+        })
+        .into_owned()
+}
+
 static TRANSLATABLE_ATTR_RE: Lazy<Regex> = Lazy::new(|| {
     Regex::new(r"(?is)^(\s*(title|alt)\s*=\s*)'([\s\S]*)'(\s*)$").expect("attr regex")
 });
@@ -476,6 +532,48 @@ mod tests {
         let en = "[app-screenshot-start url='/w'; actions=[{type: 'set-value', selector: 'input[name=\"x\"]', value: 'y'}] app-screenshot-end]";
         let he = "[app-screenshot-start url='/w'; actions=[{type: 'set-value', selector: 'input[name=\\\"x\\\"]', value: 'y'}] app-screenshot-end]";
         assert_eq!(image_diff(en, he), None);
+    }
+
+    #[test]
+    fn merge_image_srcs_realigns_translated_srcs_and_keeps_alt() {
+        // Real lib-react-native-sdk case: sdkgen started rewriting the
+        // README's relative `<img src>` to a local copy, so every locale's
+        // stale path has to follow without re-translating the prose.
+        let en = "<img src=\"images/sdk-images/a.png\" width=\"260\" alt=\"Light\"/>";
+        let fr = "<img src=\"./demo-screenshots/light.png\" width=\"260\" alt=\"Clair\"/>";
+        let merged = merge_image_srcs(en, fr);
+        assert_eq!(
+            merged,
+            "<img src=\"images/sdk-images/a.png\" width=\"260\" alt=\"Clair\"/>"
+        );
+        assert_eq!(image_diff(en, &merged), None);
+        assert_eq!(merge_image_srcs(en, &merged), merged, "not idempotent");
+    }
+
+    #[test]
+    fn merge_image_srcs_keeps_quote_style_and_skips_srcless_imgs() {
+        let en = "Use `<img>`.\n<img src='/i/a.png'>\n<img src=\"/i/b.png\">";
+        let de = "Nutze `<img>`.\n<img src='/alt/a.png'>\n<img src=\"/alt/b.png\">";
+        assert_eq!(
+            merge_image_srcs(en, de),
+            "Nutze `<img>`.\n<img src='/i/a.png'>\n<img src=\"/i/b.png\">"
+        );
+    }
+
+    #[test]
+    fn merge_image_srcs_leaves_mismatched_counts_for_the_gate() {
+        // A dropped image has no safe pairing - the gate must report it.
+        let en = "<img src=\"/i/a.png\">\n<img src=\"/i/b.png\">";
+        let ja = "<img src=\"/old/a.png\">";
+        assert_eq!(merge_image_srcs(en, ja), ja);
+        assert!(image_diff(en, ja).is_some());
+    }
+
+    #[test]
+    fn merge_image_srcs_leaves_files_without_html_images_alone() {
+        let en = "![npm](https://img.shields.io/npm/v/x)";
+        let fr = "![npm](https://img.shields.io/npm/v/x)";
+        assert_eq!(merge_image_srcs(en, fr), fr);
     }
 
     #[test]

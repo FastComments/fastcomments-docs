@@ -221,10 +221,30 @@ fn strip_leading_h1(content: &str) -> String {
 }
 
 /// Full port of `convertRelativeLinks` in
-/// src/sdk-doc-generators/base-generator.js:155-206. When `sdk_id` and
-/// `repo_path` are provided, image links get copied to
-/// `src/static/generated/images/sdk-images/` (mirrors `copyImageToStatic`).
+/// src/sdk-doc-generators/base-generator.js:155-206, plus raw `<img src>`
+/// rewriting. When `sdk_id` and `repo_path` are provided, image links get
+/// copied to `src/static/generated/images/sdk-images/` (mirrors
+/// `copyImageToStatic`).
+///
+/// READMEs reach for an HTML `<img>` whenever markdown can't express the
+/// layout - fastcomments-react-native-sdk lays its screenshots out in a
+/// `<table>` - and those relative `src`s resolved against docs.fastcomments.com
+/// and 404'd until this handled them.
 pub fn convert_relative_links_for_sdk(
+    content: &str,
+    repo_url: &str,
+    branch: &str,
+    base_path: &str,
+    sdk_id: Option<&str>,
+    repo_path: Option<&std::path::Path>,
+) -> String {
+    map_outside_code_fences(content, &|chunk: &str| {
+        let chunk = convert_markdown_links(chunk, repo_url, branch, base_path, sdk_id, repo_path);
+        convert_html_img_srcs(&chunk, repo_url, branch, base_path, sdk_id, repo_path)
+    })
+}
+
+fn convert_markdown_links(
     content: &str,
     repo_url: &str,
     branch: &str,
@@ -248,6 +268,13 @@ pub fn convert_relative_links_for_sdk(
             return format!("{is_image}[{text}](#{sanitized})");
         }
 
+        if !is_image.is_empty() {
+            return match resolve_asset_href(href, repo_url, branch, base_path, sdk_id, repo_path) {
+                Some(url) => format!("![{text}]({url})"),
+                None => caps[0].to_string(),
+            };
+        }
+
         // Resolve to a repo-root-relative path.
         let resolved = if let Some(rest) = href.strip_prefix('/') {
             rest.to_string()
@@ -256,21 +283,119 @@ pub fn convert_relative_links_for_sdk(
         };
         let normalized = posix_normalize(&resolved);
         let repo_clean = repo_url.trim_end_matches(".git").trim_end_matches('/');
-
-        if !is_image.is_empty() {
-            if let (Some(id), Some(rp)) = (sdk_id, repo_path) {
-                if let Some(local) = copy_image_to_static(id, rp, &normalized) {
-                    return format!("![{text}]({local})");
-                }
-            }
-            // Fallback to raw.githubusercontent.com.
-            let raw_url = repo_clean.replace("https://github.com/", "https://raw.githubusercontent.com/");
-            return format!("![{text}]({raw_url}/{branch}/{normalized})");
-        }
-
         format!("[{text}]({repo_clean}/blob/{branch}/{normalized})")
     })
     .into_owned()
+}
+
+fn convert_html_img_srcs(
+    content: &str,
+    repo_url: &str,
+    branch: &str,
+    base_path: &str,
+    sdk_id: Option<&str>,
+    repo_path: Option<&std::path::Path>,
+) -> String {
+    // `\s` before `src`, not `\b`: `\b` also matches inside `data-src`, and
+    // the lazy `[^>]*?` would then rewrite the placeholder instead of the src.
+    static IMG_SRC: Lazy<Regex> = Lazy::new(|| {
+        Regex::new(r#"(?i)(<img\b[^>]*?\ssrc\s*=\s*)(["'])([^"']*)(["'])"#).expect("regex")
+    });
+    IMG_SRC
+        .replace_all(content, |caps: &regex::Captures| {
+            let prefix = &caps[1];
+            let open = &caps[2];
+            let href = &caps[3];
+            let close = &caps[4];
+            match resolve_asset_href(href, repo_url, branch, base_path, sdk_id, repo_path) {
+                Some(url) => format!("{prefix}{open}{url}{close}"),
+                None => caps[0].to_string(),
+            }
+        })
+        .into_owned()
+}
+
+/// Resolve one repo-relative image href to a URL the docs site can serve.
+/// `None` means the href is already absolute and must be left untouched.
+fn resolve_asset_href(
+    href: &str,
+    repo_url: &str,
+    branch: &str,
+    base_path: &str,
+    sdk_id: Option<&str>,
+    repo_path: Option<&std::path::Path>,
+) -> Option<String> {
+    let trimmed = href.trim();
+    if trimmed.is_empty()
+        || trimmed.starts_with('#')
+        || trimmed.starts_with("//")
+        || trimmed.starts_with("data:")
+        || trimmed.starts_with("http://")
+        || trimmed.starts_with("https://")
+    {
+        return None;
+    }
+    let resolved = match trimmed.strip_prefix('/') {
+        Some(rest) => rest.to_string(),
+        None => posix_join(base_path, trimmed),
+    };
+    let normalized = posix_normalize(&resolved);
+    if let (Some(id), Some(rp)) = (sdk_id, repo_path) {
+        if let Some(local) = copy_image_to_static(id, rp, &normalized) {
+            return Some(local);
+        }
+    }
+    // Fallback to raw.githubusercontent.com.
+    let repo_clean = repo_url.trim_end_matches(".git").trim_end_matches('/');
+    let raw_url = repo_clean.replace("https://github.com/", "https://raw.githubusercontent.com/");
+    Some(format!("{raw_url}/{branch}/{normalized}"))
+}
+
+/// Apply `f` to every part of `content` that is not inside a fenced code
+/// block. The lib-hugo / lib-11ty / lib-jekyll guides document
+/// `<img src="/hero.jpg">` and markdown links as sample user markup, and
+/// rewriting those turns working examples into nonsense.
+fn map_outside_code_fences(content: &str, f: &dyn Fn(&str) -> String) -> String {
+    let mut out = String::with_capacity(content.len());
+    let mut buf = String::new();
+    let mut fence: Option<(char, usize)> = None;
+    for line in content.split_inclusive('\n') {
+        let trimmed = line.trim_start();
+        // A fence marker is indented at most 3 spaces; more makes it a code block.
+        let marker = if line.len() - trimmed.len() <= 3 {
+            fence_marker(trimmed)
+        } else {
+            None
+        };
+        match fence {
+            Some((open_ch, open_len)) => {
+                out.push_str(line);
+                if matches!(marker, Some((ch, len)) if ch == open_ch && len >= open_len) {
+                    fence = None;
+                }
+            }
+            None => match marker {
+                Some(m) => {
+                    out.push_str(&f(&buf));
+                    buf.clear();
+                    out.push_str(line);
+                    fence = Some(m);
+                }
+                None => buf.push_str(line),
+            },
+        }
+    }
+    out.push_str(&f(&buf));
+    out
+}
+
+fn fence_marker(trimmed: &str) -> Option<(char, usize)> {
+    let ch = trimmed.chars().next()?;
+    if ch != '`' && ch != '~' {
+        return None;
+    }
+    let len = trimmed.chars().take_while(|c| *c == ch).count();
+    (len >= 3).then_some((ch, len))
 }
 
 fn posix_join(a: &str, b: &str) -> String {
@@ -475,5 +600,75 @@ mod tests {
     fn strips_only_the_first_heading() {
         let doc = "# Title\n\nBody.\n\n# Later\n";
         assert_eq!(strip_leading_h1(doc), "Body.\n\n# Later");
+    }
+
+    const REPO: &str = "https://github.com/FastComments/fastcomments-react-native-sdk";
+    const RAW: &str =
+        "https://raw.githubusercontent.com/FastComments/fastcomments-react-native-sdk/main";
+
+    fn convert(content: &str) -> String {
+        convert_relative_links_for_sdk(content, REPO, "main", "", None, None)
+    }
+
+    #[test]
+    fn rewrites_relative_html_img_src() {
+        // The screenshot table in fastcomments-react-native-sdk's README.
+        let doc = r#"<td><img src="./demo-screenshots/light.png" width="260" alt="Light"/></td>"#;
+        assert_eq!(
+            convert(doc),
+            format!(r#"<td><img src="{RAW}/demo-screenshots/light.png" width="260" alt="Light"/></td>"#)
+        );
+    }
+
+    #[test]
+    fn rewrites_root_relative_and_single_quoted_html_img_src() {
+        assert_eq!(
+            convert("<img src='/docs/a.png'><IMG SRC = \"b.png\">"),
+            format!("<img src='{RAW}/docs/a.png'><IMG SRC = \"{RAW}/b.png\">")
+        );
+    }
+
+    #[test]
+    fn rewrites_the_real_src_not_a_data_src_placeholder() {
+        assert_eq!(
+            convert(r#"<img data-src="./big.png" src="./thumb.png">"#),
+            format!(r#"<img data-src="./big.png" src="{RAW}/thumb.png">"#)
+        );
+    }
+
+    #[test]
+    fn leaves_absolute_html_img_src_alone() {
+        let doc = "<img src=\"https://img.shields.io/npm/v/x\"><img src=\"data:image/png;base64,AA\">";
+        assert_eq!(convert(doc), doc);
+    }
+
+    #[test]
+    fn leaves_html_img_inside_a_code_fence_alone() {
+        // lib-hugo / lib-11ty / lib-jekyll document this as sample user markup.
+        let doc = "Target an image:\n\n```text\n<img id=\"hero\" src=\"/hero.jpg\" alt=\"Hero\" />\n```\n\n<img src=\"./real.png\">\n";
+        assert_eq!(
+            convert(doc),
+            format!("Target an image:\n\n```text\n<img id=\"hero\" src=\"/hero.jpg\" alt=\"Hero\" />\n```\n\n<img src=\"{RAW}/real.png\">\n")
+        );
+    }
+
+    #[test]
+    fn leaves_markdown_links_inside_a_code_fence_alone() {
+        let doc = "~~~md\n![shot](./a.png)\n[docs](./b.md)\n~~~\n\n![shot](./a.png)\n";
+        assert_eq!(
+            convert(doc),
+            format!("~~~md\n![shot](./a.png)\n[docs](./b.md)\n~~~\n\n![shot]({RAW}/a.png)\n")
+        );
+    }
+
+    #[test]
+    fn still_rewrites_markdown_images_links_and_anchors() {
+        let doc = "![shot](./x/../y.png) [src](sub/f.ts) [top](#Getting Started) [ext](https://a.b)";
+        assert_eq!(
+            convert(doc),
+            format!(
+                "![shot]({RAW}/y.png) [src]({REPO}/blob/main/sub/f.ts) [top](#getting-started-readme-generated) [ext](https://a.b)"
+            )
+        );
     }
 }

@@ -2,9 +2,9 @@ Live threaded commenting with avatars, nested replies, votes, and the built-in r
 
 <table>
   <tr>
-    <td align="center"><b>Comente ao Vivo</b><br/><img src="./demo-screenshots/light.png" width="260" alt="Comente ao vivo, tema claro"/></td>
-    <td align="center"><b>Tema Escuro</b><br/><img src="./demo-screenshots/dark.png" width="260" alt="Comente ao vivo, tema escuro"/></td>
-    <td align="center"><b>Chat ao Vivo</b><br/><img src="./demo-screenshots/chat.png" width="260" alt="Pré-configuração de chat ao vivo"/></td>
+    <td align="center"><b>Comente ao Vivo</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-light.png" width="260" alt="Comente ao vivo, tema claro"/></td>
+    <td align="center"><b>Tema Escuro</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-dark.png" width="260" alt="Comente ao vivo, tema escuro"/></td>
+    <td align="center"><b>Chat ao Vivo</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-chat.png" width="260" alt="Pré-configuração de chat ao vivo"/></td>
   </tr>
 </table>
 

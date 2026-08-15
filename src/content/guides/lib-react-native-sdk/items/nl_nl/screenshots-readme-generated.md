@@ -2,9 +2,9 @@ Live gestructureerde reacties met avatars, geneste antwoorden, stemmen, en de in
 
 <table>
   <tr>
-    <td align="center"><b>Live Reacties</b><br/><img src="./demo-screenshots/light.png" width="260" alt="Live reacties, licht thema"/></td>
-    <td align="center"><b>Donker thema</b><br/><img src="./demo-screenshots/dark.png" width="260" alt="Live reacties, donker thema"/></td>
-    <td align="center"><b>Live chat</b><br/><img src="./demo-screenshots/chat.png" width="260" alt="Live-chat preset"/></td>
+    <td align="center"><b>Live Reacties</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-light.png" width="260" alt="Live reacties, licht thema"/></td>
+    <td align="center"><b>Donker thema</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-dark.png" width="260" alt="Live reacties, donker thema"/></td>
+    <td align="center"><b>Live chat</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-chat.png" width="260" alt="Live-chat preset"/></td>
   </tr>
 </table>
 

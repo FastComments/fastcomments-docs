@@ -2,9 +2,9 @@ Live trådet kommentering med avatarer, indlejrede svar, stemmer og den indbygge
 
 <table>
   <tr>
-    <td align="center"><b>Live‑kommentering</b><br/><img src="./demo-screenshots/light.png" width="260" alt="Live‑kommentering, lyst tema"/></td>
-    <td align="center"><b>Mørkt tema</b><br/><img src="./demo-screenshots/dark.png" width="260" alt="Live‑kommentering, mørkt tema"/></td>
-    <td align="center"><b>Live‑chat</b><br/><img src="./demo-screenshots/chat.png" width="260" alt="Live‑chat‑forudindstilling"/></td>
+    <td align="center"><b>Live‑kommentering</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-light.png" width="260" alt="Live‑kommentering, lyst tema"/></td>
+    <td align="center"><b>Mørkt tema</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-dark.png" width="260" alt="Live‑kommentering, mørkt tema"/></td>
+    <td align="center"><b>Live‑chat</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-chat.png" width="260" alt="Live‑chat‑forudindstilling"/></td>
   </tr>
 </table>
 

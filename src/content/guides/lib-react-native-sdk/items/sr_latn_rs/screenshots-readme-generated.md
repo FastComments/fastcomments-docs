@@ -2,9 +2,9 @@ Live threaded commenting with avatars, nested replies, votes, and the built-in r
 
 <table>
   <tr>
-    <td align="center"><b>Živo komentarisanje</b><br/><img src="./demo-screenshots/light.png" width="260" alt="Živo komentarisanje, svetla tema"/></td>
-    <td align="center"><b>Tamna tema</b><br/><img src="./demo-screenshots/dark.png" width="260" alt="Živo komentarisanje, tamna tema"/></td>
-    <td align="center"><b>Živi chat</b><br/><img src="./demo-screenshots/chat.png" width="260" alt="Živo chat podešavanje"/></td>
+    <td align="center"><b>Živo komentarisanje</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-light.png" width="260" alt="Živo komentarisanje, svetla tema"/></td>
+    <td align="center"><b>Tamna tema</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-dark.png" width="260" alt="Živo komentarisanje, tamna tema"/></td>
+    <td align="center"><b>Živi chat</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-chat.png" width="260" alt="Živo chat podešavanje"/></td>
   </tr>
 </table>
 

@@ -148,14 +148,16 @@ pub fn audit(guides_dir: &Path, locales: &Locales) -> Vec<Mismatch> {
     out
 }
 
-/// Rewrite every translated item's `[app-screenshot-*]` blocks from its
-/// source (see [`crate::images::merge_screenshot_blocks`]) and report
-/// how many files changed.
+/// Rewrite every translated item's `[app-screenshot-*]` blocks and
+/// `<img src>` values from its source (see
+/// [`crate::images::merge_screenshot_blocks`] and
+/// [`crate::images::merge_image_srcs`]) and report how many files changed.
 ///
 /// `trans run` does this to fresh LLM output, so this is for the
 /// back-catalog: translations written before the merge existed still
-/// carry corrupted URLs and unescaped apostrophes. Idempotent - a
-/// second run changes nothing.
+/// carry corrupted URLs and unescaped apostrophes, and translations of a
+/// generated item still carry whatever `src` the source had when they were
+/// written. Idempotent - a second run changes nothing.
 fn fix_screenshot_blocks(guides_dir: &Path, locales: &Locales) -> Result<usize> {
     let mut fixed = 0usize;
     let Ok(entries) = std::fs::read_dir(guides_dir) else {
@@ -176,7 +178,9 @@ fn fix_screenshot_blocks(guides_dir: &Path, locales: &Locales) -> Result<usize> 
             let Ok(source) = std::fs::read_to_string(&src.source_path) else {
                 continue;
             };
-            if crate::images::extract_screenshot_bodies(&source).is_empty() {
+            let has_screenshots = !crate::images::extract_screenshot_bodies(&source).is_empty();
+            let has_html_images = source.contains("<img");
+            if !has_screenshots && !has_html_images {
                 continue;
             }
             for (locale, _) in &locales.locales {
@@ -188,6 +192,7 @@ fn fix_screenshot_blocks(guides_dir: &Path, locales: &Locales) -> Result<usize> 
                     continue;
                 };
                 let merged = crate::images::merge_screenshot_blocks(&source, &translated);
+                let merged = crate::images::merge_image_srcs(&source, &merged);
                 if merged != translated {
                     std::fs::write(&target, &merged)?;
                     fixed += 1;
