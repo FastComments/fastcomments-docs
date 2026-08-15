@@ -1,5 +1,6 @@
 {
   "name": "oEmbed",
+  "pageHeader": "Embed Comments as an oEmbed",
   "icon": "oembed.png",
   "itemsOrdered": [
     {
