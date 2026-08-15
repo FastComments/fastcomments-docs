@@ -1,11 +1,12 @@
 {
   "name": "oEmbed",
+  "pageHeader": "Yorumları oEmbed olarak göm",
   "icon": "oembed.png",
   "itemsOrdered": [
     {
       "name": "oEmbed nedir?",
       "file": "about-oembed.md",
-      "subCat": "Arka Plan"
+      "subCat": "Arka plan"
     },
     {
       "name": "oEmbed Konuşması Oluşturma",

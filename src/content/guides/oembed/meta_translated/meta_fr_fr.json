@@ -1,9 +1,10 @@
 {
   "name": "oEmbed",
+  "pageHeader": "Intégrer les commentaires en tant qu'oEmbed",
   "icon": "oembed.png",
   "itemsOrdered": [
     {
-      "name": "Qu'est-ce que l'oEmbed ?",
+      "name": "Qu'est-ce que oEmbed ?",
       "file": "about-oembed.md",
       "subCat": "Contexte"
     },

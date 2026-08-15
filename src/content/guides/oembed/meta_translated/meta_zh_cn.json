@@ -1,5 +1,6 @@
 {
   "name": "oEmbed",
+  "pageHeader": "以 oEmbed 形式嵌入评论",
   "icon": "oembed.png",
   "itemsOrdered": [
     {

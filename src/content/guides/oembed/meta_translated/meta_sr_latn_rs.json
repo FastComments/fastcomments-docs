@@ -1,5 +1,6 @@
 {
   "name": "oEmbed",
+  "pageHeader": "Ugradi komentare kao oEmbed",
   "icon": "oembed.png",
   "itemsOrdered": [
     {
@@ -8,7 +9,7 @@
       "subCat": "Pozadina"
     },
     {
-      "name": "Kreiranje oEmbed konverzacije",
+      "name": "Kreiranje oEmbed razgovora",
       "file": "creating-oembed-conversation.md",
       "subCat": "Upotreba"
     }

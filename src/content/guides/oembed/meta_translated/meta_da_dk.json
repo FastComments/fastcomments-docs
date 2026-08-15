@@ -1,5 +1,6 @@
 {
   "name": "oEmbed",
+  "pageHeader": "Indlejr kommentarer som en oEmbed",
   "icon": "oembed.png",
   "itemsOrdered": [
     {
@@ -8,7 +9,7 @@
       "subCat": "Baggrund"
     },
     {
-      "name": "Oprettelse af en oEmbed-samtale",
+      "name": "Opret en oEmbed-samtale",
       "file": "creating-oembed-conversation.md",
       "subCat": "Brug"
     }

@@ -1,14 +1,15 @@
 {
   "name": "oEmbed",
+  "pageHeader": "Угради коментаре као оЕмбед",
   "icon": "oembed.png",
   "itemsOrdered": [
     {
-      "name": "Шта је oEmbed?",
+      "name": "Шта је оЕмбед?",
       "file": "about-oembed.md",
       "subCat": "Позадина"
     },
     {
-      "name": "Креирање oEmbed разговора",
+      "name": "Креирање оЕмбед разговора",
       "file": "creating-oembed-conversation.md",
       "subCat": "Употреба"
     }

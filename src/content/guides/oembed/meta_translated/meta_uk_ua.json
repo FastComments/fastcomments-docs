@@ -1,11 +1,12 @@
 {
   "name": "oEmbed",
+  "pageHeader": "Вбудувати коментарі як oEmbed",
   "icon": "oembed.png",
   "itemsOrdered": [
     {
       "name": "Що таке oEmbed?",
       "file": "about-oembed.md",
-      "subCat": "Загальна інформація"
+      "subCat": "Фон"
     },
     {
       "name": "Створення розмови oEmbed",

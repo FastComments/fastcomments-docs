@@ -1,16 +1,17 @@
 {
   "name": "oEmbed",
+  "pageHeader": "Вграждане на коментари като oEmbed",
   "icon": "oembed.png",
   "itemsOrdered": [
     {
       "name": "Какво е oEmbed?",
       "file": "about-oembed.md",
-      "subCat": "Предистория"
+      "subCat": "Фон"
     },
     {
       "name": "Създаване на oEmbed разговор",
       "file": "creating-oembed-conversation.md",
-      "subCat": "Използване"
+      "subCat": "Употреба"
     }
   ]
 }

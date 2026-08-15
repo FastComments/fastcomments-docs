@@ -1,5 +1,6 @@
 {
   "name": "oEmbed",
+  "pageHeader": "コメントをoEmbedとして埋め込む",
   "icon": "oembed.png",
   "itemsOrdered": [
     {
@@ -8,9 +9,9 @@
       "subCat": "背景"
     },
     {
-      "name": "oEmbedの会話を作成する",
+      "name": "oEmbed会話の作成",
       "file": "creating-oembed-conversation.md",
-      "subCat": "使い方"
+      "subCat": "使用方法"
     }
   ]
 }

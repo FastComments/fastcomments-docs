@@ -1,5 +1,6 @@
 {
   "name": "oEmbed",
+  "pageHeader": "Incorpora i commenti come oEmbed",
   "icon": "oembed.png",
   "itemsOrdered": [
     {
@@ -8,9 +9,9 @@
       "subCat": "Contesto"
     },
     {
-      "name": "Creazione di una conversazione oEmbed",
+      "name": "Creare una conversazione oEmbed",
       "file": "creating-oembed-conversation.md",
-      "subCat": "Utilizzo"
+      "subCat": "Uso"
     }
   ]
 }

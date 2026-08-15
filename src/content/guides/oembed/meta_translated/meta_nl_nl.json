@@ -1,5 +1,6 @@
 {
   "name": "oEmbed",
+  "pageHeader": "Reacties insluiten als een oEmbed",
   "icon": "oembed.png",
   "itemsOrdered": [
     {
@@ -8,7 +9,7 @@
       "subCat": "Achtergrond"
     },
     {
-      "name": "Een oEmbed-gesprek maken",
+      "name": "Een oEmbed-conversatie maken",
       "file": "creating-oembed-conversation.md",
       "subCat": "Gebruik"
     }

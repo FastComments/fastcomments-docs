@@ -1,11 +1,12 @@
 {
   "name": "oEmbed",
+  "pageHeader": "Встраивание комментариев как oEmbed",
   "icon": "oembed.png",
   "itemsOrdered": [
     {
       "name": "Что такое oEmbed?",
       "file": "about-oembed.md",
-      "subCat": "Фон"
+      "subCat": "Общее"
     },
     {
       "name": "Создание беседы oEmbed",

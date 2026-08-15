@@ -1,14 +1,15 @@
 {
   "name": "oEmbed",
+  "pageHeader": "Incorporar Comentários como um oEmbed",
   "icon": "oembed.png",
   "itemsOrdered": [
     {
-      "name": "O que é oEmbed?",
+      "name": "O que é o oEmbed?",
       "file": "about-oembed.md",
       "subCat": "Contexto"
     },
     {
-      "name": "Criando uma conversa com oEmbed",
+      "name": "Criando uma Conversa oEmbed",
       "file": "creating-oembed-conversation.md",
       "subCat": "Uso"
     }
